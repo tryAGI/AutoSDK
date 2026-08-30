@@ -69,6 +69,27 @@ public static class OpenApiExtensions
         public string Value { get; }
     }
 
+    private readonly struct JsonPathSegment
+    {
+        public JsonPathSegment(string propertyName)
+        {
+            PropertyName = propertyName;
+            Index = 0;
+            IsArrayIndex = false;
+        }
+
+        public JsonPathSegment(int index)
+        {
+            PropertyName = null;
+            Index = index;
+            IsArrayIndex = true;
+        }
+
+        public string? PropertyName { get; }
+        public int Index { get; }
+        public bool IsArrayIndex { get; }
+    }
+
     private sealed class OpenApiCompatibilityVisitor : OpenApiVisitorBase
     {
         private static readonly JsonSchemaType[] NonNullSchemaTypes =
@@ -444,11 +465,14 @@ public static class OpenApiExtensions
                 if (IsOpenApi31Document(rootObject))
                 {
                     var unsupportedKeywords = new List<string>();
-                    NormalizeOpenApi31Keywords(rootObject, "#", unsupportedKeywords);
+                    NormalizeOpenApi31Keywords(
+                        rootObject,
+                        isSchemaPosition: false,
+                        path: [],
+                        unsupportedKeywords);
                     ThrowOnUnsupportedOpenApi31Keywords(unsupportedKeywords);
                 }
-
-                if (TryGetOpenApi3CompatibilityMode(rootObject, out var isOpenApi30))
+                else if (TryGetOpenApi3CompatibilityMode(rootObject, out var isOpenApi30))
                 {
                     NormalizeOpenApi3CompatibilityKeywords(
                         rootObject,
@@ -580,30 +604,10 @@ public static class OpenApiExtensions
         switch (node)
         {
             case JsonObject jsonObject:
-                if (isSchemaPosition &&
-                    TryGetBooleanValue(jsonObject["nullable"], out var nullable) &&
-                    nullable)
-                {
-                    if (!jsonObject.TryGetPropertyValue("type", out var declaredType) ||
-                        declaredType == null)
-                    {
-                        jsonObject.Remove("nullable");
-                        jsonObject["type"] = "null";
-                    }
-                    else if (!isOpenApi30 && declaredType is JsonValue)
-                    {
-                        jsonObject["type"] = new JsonArray(declaredType.DeepClone(), "null");
-                        jsonObject.Remove("nullable");
-                    }
-                }
-
-                if (isSchemaPosition &&
-                    !jsonObject.ContainsKey("type") &&
-                    jsonObject["enum"] is JsonArray { Count: 1 } enumValues &&
-                    enumValues[0] is null)
-                {
-                    jsonObject["type"] = "null";
-                }
+                NormalizeOpenApi3SchemaCompatibilityKeywords(
+                    jsonObject,
+                    isSchemaPosition,
+                    isOpenApi30);
 
                 foreach (var property in jsonObject)
                 {
@@ -652,6 +656,37 @@ public static class OpenApiExtensions
                     NormalizeOpenApi3CompatibilityKeywords(item, isSchemaPosition: false, isOpenApi30);
                 }
                 break;
+        }
+    }
+
+    private static void NormalizeOpenApi3SchemaCompatibilityKeywords(
+        JsonObject jsonObject,
+        bool isSchemaPosition,
+        bool isOpenApi30)
+    {
+        if (isSchemaPosition &&
+            TryGetBooleanValue(jsonObject["nullable"], out var nullable) &&
+            nullable)
+        {
+            if (!jsonObject.TryGetPropertyValue("type", out var declaredType) ||
+                declaredType == null)
+            {
+                jsonObject.Remove("nullable");
+                jsonObject["type"] = "null";
+            }
+            else if (!isOpenApi30 && declaredType is JsonValue)
+            {
+                jsonObject["type"] = new JsonArray(declaredType.DeepClone(), "null");
+                jsonObject.Remove("nullable");
+            }
+        }
+
+        if (isSchemaPosition &&
+            !jsonObject.ContainsKey("type") &&
+            jsonObject["enum"] is JsonArray { Count: 1 } enumValues &&
+            enumValues[0] is null)
+        {
+            jsonObject["type"] = "null";
         }
     }
 
@@ -1535,35 +1570,98 @@ info:
 
     private static bool NormalizeOpenApi31Keywords(
         JsonNode? node,
-        string path,
+        bool isSchemaPosition,
+        List<JsonPathSegment> path,
         List<string> unsupportedKeywords)
     {
         return node switch
         {
-            JsonObject jsonObject => NormalizeOpenApi31Keywords(jsonObject, path, unsupportedKeywords),
-            JsonArray jsonArray => NormalizeOpenApi31Keywords(jsonArray, path, unsupportedKeywords),
+            JsonObject jsonObject => NormalizeOpenApi31Keywords(
+                jsonObject,
+                isSchemaPosition,
+                path,
+                unsupportedKeywords),
+            JsonArray jsonArray => NormalizeOpenApi31Keywords(
+                jsonArray,
+                path,
+                unsupportedKeywords),
             _ => false,
         };
     }
 
     private static bool NormalizeOpenApi31Keywords(
         JsonObject jsonObject,
-        string path,
+        bool isSchemaPosition,
+        List<JsonPathSegment> path,
         List<string> unsupportedKeywords)
     {
-        var changed = NormalizeOpenApi31SchemaKeywords(jsonObject, path, unsupportedKeywords);
+        var changed = NormalizeOpenApi31SchemaKeywords(
+            jsonObject,
+            isSchemaPosition,
+            path,
+            unsupportedKeywords);
+        NormalizeOpenApi3SchemaCompatibilityKeywords(
+            jsonObject,
+            isSchemaPosition,
+            isOpenApi30: false);
 
-        foreach (var property in jsonObject.ToList())
+        foreach (var property in jsonObject)
         {
             if (ShouldSkipOpenApi31KeywordTraversal(property.Key))
             {
                 continue;
             }
 
-            changed |= NormalizeOpenApi31Keywords(
-                property.Value,
-                AppendJsonPointer(path, property.Key),
-                unsupportedKeywords);
+            path.Add(new JsonPathSegment(property.Key));
+            if (property.Value is JsonObject schemaMap &&
+                property.Key is "schemas" or "properties" or "patternProperties")
+            {
+                foreach (var schema in schemaMap)
+                {
+                    path.Add(new JsonPathSegment(schema.Key));
+                    changed |= NormalizeOpenApi31Keywords(
+                        schema.Value,
+                        isSchemaPosition: true,
+                        path,
+                        unsupportedKeywords);
+                    path.RemoveAt(path.Count - 1);
+                }
+            }
+            else if (property.Value is JsonArray schemaArray &&
+                     property.Key is "allOf" or "anyOf" or "oneOf" or "prefixItems")
+            {
+                for (var index = 0; index < schemaArray.Count; index++)
+                {
+                    var schema = schemaArray[index];
+                    if (index == 0 &&
+                        property.Key is "anyOf" or "oneOf" &&
+                        schema is JsonObject primitiveVariant &&
+                        primitiveVariant["type"] != null)
+                    {
+                        primitiveVariant[PreservePrimitiveUnionExtension] = true;
+                    }
+
+                    path.Add(new JsonPathSegment(index));
+                    changed |= NormalizeOpenApi31Keywords(
+                        schema,
+                        isSchemaPosition: true,
+                        path,
+                        unsupportedKeywords);
+                    path.RemoveAt(path.Count - 1);
+                }
+            }
+            else
+            {
+                var childIsSchema = property.Key is
+                    "schema" or "items" or "additionalProperties" or "not" or
+                    "contains" or "propertyNames" or "contentSchema";
+                changed |= NormalizeOpenApi31Keywords(
+                    property.Value,
+                    childIsSchema,
+                    path,
+                    unsupportedKeywords);
+            }
+            path.RemoveAt(path.Count - 1);
         }
 
         return changed;
@@ -1571,17 +1669,20 @@ info:
 
     private static bool NormalizeOpenApi31Keywords(
         JsonArray jsonArray,
-        string path,
+        List<JsonPathSegment> path,
         List<string> unsupportedKeywords)
     {
         var changed = false;
 
         for (var i = 0; i < jsonArray.Count; i++)
         {
+            path.Add(new JsonPathSegment(i));
             changed |= NormalizeOpenApi31Keywords(
                 jsonArray[i],
-                AppendJsonPointer(path, i.ToString(CultureInfo.InvariantCulture)),
+                isSchemaPosition: false,
+                path,
                 unsupportedKeywords);
+            path.RemoveAt(path.Count - 1);
         }
 
         return changed;
@@ -1589,10 +1690,11 @@ info:
 
     private static bool NormalizeOpenApi31SchemaKeywords(
         JsonObject jsonObject,
-        string path,
+        bool isSchemaPosition,
+        List<JsonPathSegment> path,
         List<string> unsupportedKeywords)
     {
-        if (!LooksLikeSchemaObject(jsonObject, path))
+        if (!LooksLikeSchemaObject(jsonObject, isSchemaPosition))
         {
             return false;
         }
@@ -1676,7 +1778,7 @@ info:
 
     private static bool NormalizeUnevaluatedPropertiesKeyword(
         JsonObject jsonObject,
-        string path,
+        List<JsonPathSegment> path,
         List<string> unsupportedKeywords)
     {
         if (!jsonObject.TryGetPropertyValue("unevaluatedProperties", out var unevaluatedPropertiesNode))
@@ -1847,7 +1949,7 @@ info:
 
     private static bool NormalizePatternPropertiesKeyword(
         JsonObject jsonObject,
-        string path,
+        List<JsonPathSegment> path,
         List<string> unsupportedKeywords)
     {
         if (jsonObject["patternProperties"] is not JsonObject patternProperties)
@@ -1895,7 +1997,7 @@ info:
 
     private static void TrackUnsupportedOpenApi31Keyword(
         JsonObject jsonObject,
-        string path,
+        List<JsonPathSegment> path,
         List<string> unsupportedKeywords,
         string keyword,
         string detail)
@@ -1906,7 +2008,7 @@ info:
         }
 
         var message =
-            $"OpenAPI 3.1 keyword '{keyword}' is not supported yet at {path}. {detail} " +
+            $"OpenAPI 3.1 keyword '{keyword}' is not supported yet at {BuildJsonPointer(path)}. {detail} " +
             "Simplify the schema or use an OpenAPI override before generation.";
         if (!unsupportedKeywords.Contains(message))
         {
@@ -1952,19 +2054,44 @@ info:
         return propertyName.StartsWith("x-", StringComparison.OrdinalIgnoreCase);
     }
 
-    private static string AppendJsonPointer(string path, string segment)
+    private static string BuildJsonPointer(List<JsonPathSegment> path)
     {
-        return path + "/" + segment.Replace("~", "~0").Replace("/", "~1");
+        var builder = new StringBuilder("#");
+        foreach (var segment in path)
+        {
+            builder.Append('/');
+            if (segment.IsArrayIndex)
+            {
+                builder.Append(segment.Index.ToString(CultureInfo.InvariantCulture));
+                continue;
+            }
+
+            var propertyName = segment.PropertyName ?? string.Empty;
+            for (var index = 0; index < propertyName.Length; index++)
+            {
+                switch (propertyName[index])
+                {
+                    case '~':
+                        builder.Append("~0");
+                        break;
+                    case '/':
+                        builder.Append("~1");
+                        break;
+                    default:
+                        builder.Append(propertyName[index]);
+                        break;
+                }
+            }
+        }
+
+        return builder.ToString();
     }
 
     private static bool LooksLikeSchemaObject(
         JsonObject jsonObject,
-        string path)
+        bool isSchemaPosition)
     {
-        return path.EndsWith("/schema", StringComparison.Ordinal) ||
-               path.EndsWith("/items", StringComparison.Ordinal) ||
-               path.EndsWith("/additionalProperties", StringComparison.Ordinal) ||
-               path.EndsWith("/not", StringComparison.Ordinal) ||
+        return isSchemaPosition ||
                jsonObject.ContainsKey("$ref") ||
                jsonObject.ContainsKey("type") ||
                jsonObject.ContainsKey("properties") ||

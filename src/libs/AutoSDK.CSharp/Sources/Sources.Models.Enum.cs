@@ -1,5 +1,6 @@
 using AutoSDK.Extensions;
 using AutoSDK.Models;
+using System.Text;
 namespace AutoSDK.Generation;
 
 public static partial class Sources
@@ -79,30 +80,9 @@ public static partial class Sources
         }
 
         // Only Newtonsoft.Json supports EnumMemberAttribute
-        if (modelData.Settings.UsesNewtonsoftJson())
-        {
-            return $@" 
-    {modelData.Summary.ToXmlDocumentationSummary(level: 4)}
-    [global::System.Runtime.Serialization.DataContract]
-    public enum {modelData.ClassName}
-    {{
-{modelData.EnumValues.Select(property => @$"
-        {property.Summary.ToXmlDocumentationSummary(level: 8)}
-        [global::System.Runtime.Serialization.EnumMember(Value={property.Id.ToCSharpStringLiteral()})]
-        {property.Name},
-    ").Inject()}
-    }}".RemoveBlankLinesWhereOnlyWhitespaces();
-        }
-        
-        return $@" 
-    {modelData.Summary.ToXmlDocumentationSummary(level: 4)}
-    public enum {modelData.ClassName}
-    {{
-{modelData.EnumValues.Select(property => @$"
-        {property.Summary.ToXmlDocumentationSummary(level: 8)}
-        {property.Name},
-    ").Inject()}
-    }}".RemoveBlankLinesWhereOnlyWhitespaces();
+        return GenerateClosedEnumerationModel(
+            modelData,
+            includeEnumMemberAttributes: modelData.Settings.UsesNewtonsoftJson());
 //         
 //         return $@" 
 //     {modelData.Summary.ToXmlDocumentationSummary(level: 4)}
@@ -140,34 +120,89 @@ public static partial class Sources
  ".RemoveBlankLinesWhereOnlyWhitespaces();
         }
 
-        return $@" 
-    {"Enum extensions to do fast conversions without the reflection.".ToXmlDocumentationSummary(level: 4)}
-    public static class {modelData.ClassName}Extensions
-    {{
-        {"Converts an enum to a string.".ToXmlDocumentationSummary(level: 8)}
-        public static string ToValueString(this {modelData.ClassName} value)
-        {{
-            return value switch
-            {{
-{modelData.EnumValues.Select(property => @$" 
-                {modelData.ClassName}.{property.Name} => {property.Id.ToCSharpStringLiteral()},
- ").Inject()}
-                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
-            }};
-        }}
-        
-        {"Converts an string to a enum.".ToXmlDocumentationSummary(level: 8)}
-        public static {modelData.ClassName}? ToEnum(string value)
-        {{
-            return value switch
-            {{
-{modelData.EnumValues.Select(property => @$" 
-                {property.Id.ToCSharpStringLiteral()} => {modelData.ClassName}.{property.Name},
- ").Inject()}
-                _ => null,
-            }};
-        }}
-    }}
- ".RemoveBlankLinesWhereOnlyWhitespaces();
+        return GenerateClosedEnumExtensions(modelData);
+    }
+
+    private static string GenerateClosedEnumerationModel(
+        ModelData modelData,
+        bool includeEnumMemberAttributes)
+    {
+        var builder = new StringBuilder(256 + (modelData.EnumValues.Length * 160));
+        builder.Append("    ");
+        builder.Append(modelData.Summary.ToXmlDocumentationSummary(level: 4));
+        builder.Append('\n');
+        if (includeEnumMemberAttributes)
+        {
+            builder.Append("    [global::System.Runtime.Serialization.DataContract]\n");
+        }
+        builder.Append("    public enum ");
+        builder.Append(modelData.ClassName);
+        builder.Append("\n    {\n");
+        foreach (var property in modelData.EnumValues)
+        {
+            builder.Append("        ");
+            builder.Append(property.Summary.ToXmlDocumentationSummary(level: 8));
+            builder.Append('\n');
+            if (includeEnumMemberAttributes)
+            {
+                builder.Append("        [global::System.Runtime.Serialization.EnumMember(Value=");
+                builder.Append(property.Id.ToCSharpStringLiteral());
+                builder.Append(")]\n");
+            }
+            builder.Append("        ");
+            builder.Append(property.Name);
+            builder.Append(",\n");
+        }
+        builder.Append("    }");
+        return builder.ToString();
+    }
+
+    private static string GenerateClosedEnumExtensions(ModelData modelData)
+    {
+        var valueLiterals = new string[modelData.EnumValues.Length];
+        for (var index = 0; index < modelData.EnumValues.Length; index++)
+        {
+            valueLiterals[index] = modelData.EnumValues[index].Id.ToCSharpStringLiteral();
+        }
+
+        var builder = new StringBuilder(768 + (modelData.EnumValues.Length * 220));
+        builder.Append("    ");
+        builder.Append("Enum extensions to do fast conversions without the reflection.".ToXmlDocumentationSummary(level: 4));
+        builder.Append("\n    public static class ");
+        builder.Append(modelData.ClassName);
+        builder.Append("Extensions\n    {\n        ");
+        builder.Append("Converts an enum to a string.".ToXmlDocumentationSummary(level: 8));
+        builder.Append("\n        public static string ToValueString(this ");
+        builder.Append(modelData.ClassName);
+        builder.Append(" value)\n        {\n            return value switch\n            {\n");
+        for (var index = 0; index < modelData.EnumValues.Length; index++)
+        {
+            var property = modelData.EnumValues[index];
+            builder.Append("                ");
+            builder.Append(modelData.ClassName);
+            builder.Append('.');
+            builder.Append(property.Name);
+            builder.Append(" => ");
+            builder.Append(valueLiterals[index]);
+            builder.Append(",\n");
+        }
+        builder.Append("                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),\n            };\n        }\n        ");
+        builder.Append("Converts an string to a enum.".ToXmlDocumentationSummary(level: 8));
+        builder.Append("\n        public static ");
+        builder.Append(modelData.ClassName);
+        builder.Append("? ToEnum(string value)\n        {\n            return value switch\n            {\n");
+        for (var index = 0; index < modelData.EnumValues.Length; index++)
+        {
+            var property = modelData.EnumValues[index];
+            builder.Append("                ");
+            builder.Append(valueLiterals[index]);
+            builder.Append(" => ");
+            builder.Append(modelData.ClassName);
+            builder.Append('.');
+            builder.Append(property.Name);
+            builder.Append(",\n");
+        }
+        builder.Append("                _ => null,\n            };\n        }\n    }");
+        return builder.ToString();
     }
 }

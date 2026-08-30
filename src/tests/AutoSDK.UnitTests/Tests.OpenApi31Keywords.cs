@@ -1,11 +1,42 @@
 using AutoSDK.Extensions;
 using AutoSDK.Models;
+using System.Text.Json.Nodes;
+using Microsoft.OpenApi;
+using Microsoft.OpenApi.Reader;
 
 namespace AutoSDK.UnitTests;
 
 [TestClass]
 public class OpenApi31KeywordTests
 {
+    [TestMethod]
+    public void MicrosoftOpenApi310RetainsNativeKeywordsButStillDropsTupleKeywords()
+    {
+        var json = TestSpecCache.GetText("openapi31-keyword-normalization.json");
+        var readerSettings = new OpenApiReaderSettings
+        {
+            RuleSet = ValidationRuleSet.GetEmptyRuleSet(),
+        };
+
+        var result = new OpenApiJsonReader().Read(
+            JsonNode.Parse(json)!,
+            new Uri("https://openapi.net/"),
+            readerSettings);
+        var payload = (OpenApiSchema)result.Document!.Components!.Schemas!["Payload"];
+        var properties = payload.Properties!;
+
+        result.Diagnostic!.Errors.Should().BeEmpty();
+        payload.PropertyNames.Should().NotBeNull();
+        payload.DependentRequired.Should().ContainKey("blob");
+        payload.DependentSchemas.Should().ContainKey("json_payload");
+        payload.UnevaluatedProperties.Should().BeFalse();
+        ((OpenApiSchema)properties["blob"]).ContentEncoding.Should().Be("base64");
+
+        var pair = (OpenApiSchema)properties["pair"];
+        pair.Items.Should().BeNull();
+        pair.MaxItems.Should().BeNull();
+    }
+
     [TestMethod]
     public void NormalizesRepresentativeOpenApi31Keywords()
     {
