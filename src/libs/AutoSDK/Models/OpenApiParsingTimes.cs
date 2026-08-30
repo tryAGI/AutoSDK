@@ -17,11 +17,19 @@ public record struct OpenApiParsingTimes(
     public TimeSpan PostMissingPathParameters { get; set; }
     public TimeSpan PostOverridesAndNaming { get; set; }
     public TimeSpan PostSchemaSanitizers { get; set; }
+    public TimeSpan PostFernTypeNormalization { get; set; }
+    public TimeSpan PostNumericConstraintSanitization { get; set; }
+    public TimeSpan PostLargeIntegerFormatInference { get; set; }
+    public TimeSpan PostDiscriminatorSanitization { get; set; }
     public long AllocPostSetupAndInjection { get; set; }
     public long AllocPostDiscriminators { get; set; }
     public long AllocPostMissingPathParameters { get; set; }
     public long AllocPostOverridesAndNaming { get; set; }
     public long AllocPostSchemaSanitizers { get; set; }
+    public long AllocPostFernTypeNormalization { get; set; }
+    public long AllocPostNumericConstraintSanitization { get; set; }
+    public long AllocPostLargeIntegerFormatInference { get; set; }
+    public long AllocPostDiscriminatorSanitization { get; set; }
 
     public static OpenApiParsingTimes operator +(
         OpenApiParsingTimes left,
@@ -51,11 +59,19 @@ public record struct OpenApiParsingTimes(
             PostMissingPathParameters = left.PostMissingPathParameters + right.PostMissingPathParameters,
             PostOverridesAndNaming = left.PostOverridesAndNaming + right.PostOverridesAndNaming,
             PostSchemaSanitizers = left.PostSchemaSanitizers + right.PostSchemaSanitizers,
+            PostFernTypeNormalization = left.PostFernTypeNormalization + right.PostFernTypeNormalization,
+            PostNumericConstraintSanitization = left.PostNumericConstraintSanitization + right.PostNumericConstraintSanitization,
+            PostLargeIntegerFormatInference = left.PostLargeIntegerFormatInference + right.PostLargeIntegerFormatInference,
+            PostDiscriminatorSanitization = left.PostDiscriminatorSanitization + right.PostDiscriminatorSanitization,
             AllocPostSetupAndInjection = left.AllocPostSetupAndInjection + right.AllocPostSetupAndInjection,
             AllocPostDiscriminators = left.AllocPostDiscriminators + right.AllocPostDiscriminators,
             AllocPostMissingPathParameters = left.AllocPostMissingPathParameters + right.AllocPostMissingPathParameters,
             AllocPostOverridesAndNaming = left.AllocPostOverridesAndNaming + right.AllocPostOverridesAndNaming,
             AllocPostSchemaSanitizers = left.AllocPostSchemaSanitizers + right.AllocPostSchemaSanitizers,
+            AllocPostFernTypeNormalization = left.AllocPostFernTypeNormalization + right.AllocPostFernTypeNormalization,
+            AllocPostNumericConstraintSanitization = left.AllocPostNumericConstraintSanitization + right.AllocPostNumericConstraintSanitization,
+            AllocPostLargeIntegerFormatInference = left.AllocPostLargeIntegerFormatInference + right.AllocPostLargeIntegerFormatInference,
+            AllocPostDiscriminatorSanitization = left.AllocPostDiscriminatorSanitization + right.AllocPostDiscriminatorSanitization,
         };
     }
 }

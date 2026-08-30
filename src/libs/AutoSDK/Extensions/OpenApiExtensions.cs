@@ -345,10 +345,29 @@ public static class OpenApiExtensions
 
         var postSchemaSanitizersTime = Stopwatch.StartNew();
         var allocBeforePostSchemaSanitizers = GetParsingAllocatedBytes();
+        var postFernTypeNormalizationTime = Stopwatch.StartNew();
+        var allocBeforePostFernTypeNormalization = GetParsingAllocatedBytes();
         openApiDocument.NormalizeFernTypes();
+        postFernTypeNormalizationTime.Stop();
+        var allocPostFernTypeNormalization = GetParsingAllocatedBytes() - allocBeforePostFernTypeNormalization;
+
+        var postNumericConstraintSanitizationTime = Stopwatch.StartNew();
+        var allocBeforePostNumericConstraintSanitization = GetParsingAllocatedBytes();
         openApiDocument.SanitizeNumericConstraints();
+        postNumericConstraintSanitizationTime.Stop();
+        var allocPostNumericConstraintSanitization = GetParsingAllocatedBytes() - allocBeforePostNumericConstraintSanitization;
+
+        var postLargeIntegerFormatInferenceTime = Stopwatch.StartNew();
+        var allocBeforePostLargeIntegerFormatInference = GetParsingAllocatedBytes();
         openApiDocument.InferLargeIntegerFormats();
+        postLargeIntegerFormatInferenceTime.Stop();
+        var allocPostLargeIntegerFormatInference = GetParsingAllocatedBytes() - allocBeforePostLargeIntegerFormatInference;
+
+        var postDiscriminatorSanitizationTime = Stopwatch.StartNew();
+        var allocBeforePostDiscriminatorSanitization = GetParsingAllocatedBytes();
         openApiDocument.SanitizeDiscriminators();
+        postDiscriminatorSanitizationTime.Stop();
+        var allocPostDiscriminatorSanitization = GetParsingAllocatedBytes() - allocBeforePostDiscriminatorSanitization;
         postSchemaSanitizersTime.Stop();
         var allocPostSchemaSanitizers = GetParsingAllocatedBytes() - allocBeforePostSchemaSanitizers;
 
@@ -372,11 +391,19 @@ public static class OpenApiExtensions
             PostMissingPathParameters = postMissingPathParametersTime.Elapsed,
             PostOverridesAndNaming = postOverridesAndNamingTime.Elapsed,
             PostSchemaSanitizers = postSchemaSanitizersTime.Elapsed,
+            PostFernTypeNormalization = postFernTypeNormalizationTime.Elapsed,
+            PostNumericConstraintSanitization = postNumericConstraintSanitizationTime.Elapsed,
+            PostLargeIntegerFormatInference = postLargeIntegerFormatInferenceTime.Elapsed,
+            PostDiscriminatorSanitization = postDiscriminatorSanitizationTime.Elapsed,
             AllocPostSetupAndInjection = allocPostSetupAndInjection,
             AllocPostDiscriminators = allocPostDiscriminators,
             AllocPostMissingPathParameters = allocPostMissingPathParameters,
             AllocPostOverridesAndNaming = allocPostOverridesAndNaming,
             AllocPostSchemaSanitizers = allocPostSchemaSanitizers,
+            AllocPostFernTypeNormalization = allocPostFernTypeNormalization,
+            AllocPostNumericConstraintSanitization = allocPostNumericConstraintSanitization,
+            AllocPostLargeIntegerFormatInference = allocPostLargeIntegerFormatInference,
+            AllocPostDiscriminatorSanitization = allocPostDiscriminatorSanitization,
         };
 
         return openApiDocument;
@@ -2597,30 +2624,50 @@ info:
         if (concreteSchema.Discriminator?.Mapping is { Count: > 0 } mapping)
         {
             var discriminator = concreteSchema.Discriminator;
-            var validMappings = mapping
-                .Where(x => x.Value.Reference?.Id is { } id && componentIds.Contains(id))
-                .ToDictionary(x => x.Key, x => x.Value, StringComparer.Ordinal);
-            var hasCompositionChildren =
-                (concreteSchema.OneOf?.Count ?? 0) > 0 ||
-                (concreteSchema.AnyOf?.Count ?? 0) > 0 ||
-                (concreteSchema.AllOf?.Count ?? 0) > 0;
-            var hasDefaultMapping = discriminator?.DefaultMapping != null;
-
-            if (validMappings.Count == 0 && !hasCompositionChildren && !hasDefaultMapping)
+            var invalidMappingCount = 0;
+            foreach (var mappingEntry in mapping)
             {
-                concreteSchema.Discriminator = null;
-            }
-            else if (validMappings.Count != mapping.Count)
-            {
-                concreteSchema.Discriminator = new OpenApiDiscriminator
+                if (mappingEntry.Value.Reference?.Id is not { } id || !componentIds.Contains(id))
                 {
-                    PropertyName = discriminator?.PropertyName,
-                    Mapping = validMappings.Count > 0 ? validMappings : null,
-                    DefaultMapping = discriminator?.DefaultMapping,
-                    Extensions = discriminator?.Extensions != null
-                        ? new Dictionary<string, IOpenApiExtension>(discriminator.Extensions)
-                        : null,
-                };
+                    invalidMappingCount++;
+                }
+            }
+
+            if (invalidMappingCount > 0)
+            {
+                var validMappings = new Dictionary<string, OpenApiSchemaReference>(
+                    mapping.Count - invalidMappingCount,
+                    StringComparer.Ordinal);
+                foreach (var mappingEntry in mapping)
+                {
+                    if (mappingEntry.Value.Reference?.Id is { } id && componentIds.Contains(id))
+                    {
+                        validMappings.Add(mappingEntry.Key, mappingEntry.Value);
+                    }
+                }
+
+                var hasCompositionChildren =
+                    (concreteSchema.OneOf?.Count ?? 0) > 0 ||
+                    (concreteSchema.AnyOf?.Count ?? 0) > 0 ||
+                    (concreteSchema.AllOf?.Count ?? 0) > 0;
+                var hasDefaultMapping = discriminator?.DefaultMapping != null;
+
+                if (validMappings.Count == 0 && !hasCompositionChildren && !hasDefaultMapping)
+                {
+                    concreteSchema.Discriminator = null;
+                }
+                else
+                {
+                    concreteSchema.Discriminator = new OpenApiDiscriminator
+                    {
+                        PropertyName = discriminator?.PropertyName,
+                        Mapping = validMappings.Count > 0 ? validMappings : null,
+                        DefaultMapping = discriminator?.DefaultMapping,
+                        Extensions = discriminator?.Extensions != null
+                            ? new Dictionary<string, IOpenApiExtension>(discriminator.Extensions)
+                            : null,
+                    };
+                }
             }
         }
 

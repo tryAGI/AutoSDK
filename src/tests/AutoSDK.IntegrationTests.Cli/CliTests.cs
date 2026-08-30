@@ -396,10 +396,18 @@ public class CliTests
             ReadDiagnosticMilliseconds(firstResult.StandardError, "core_parsing_postprocess_missing_path_parameters_ms").Should().BeGreaterThanOrEqualTo(0);
             ReadDiagnosticMilliseconds(firstResult.StandardError, "core_parsing_postprocess_overrides_naming_ms").Should().BeGreaterThanOrEqualTo(0);
             ReadDiagnosticMilliseconds(firstResult.StandardError, "core_parsing_postprocess_schema_sanitizers_ms").Should().BeGreaterThan(0);
+            ReadDiagnosticMilliseconds(firstResult.StandardError, "core_parsing_postprocess_schema_sanitizers_fern_types_ms").Should().BeGreaterThanOrEqualTo(0);
+            ReadDiagnosticMilliseconds(firstResult.StandardError, "core_parsing_postprocess_schema_sanitizers_numeric_constraints_ms").Should().BeGreaterThanOrEqualTo(0);
+            ReadDiagnosticMilliseconds(firstResult.StandardError, "core_parsing_postprocess_schema_sanitizers_large_integer_formats_ms").Should().BeGreaterThanOrEqualTo(0);
+            ReadDiagnosticMilliseconds(firstResult.StandardError, "core_parsing_postprocess_schema_sanitizers_discriminators_ms").Should().BeGreaterThanOrEqualTo(0);
             ReadDiagnosticValue(firstResult.StandardError, "core_parsing_microsoft_reader_allocated_bytes").Should().BeGreaterThan(0);
             ReadDiagnosticValue(firstResult.StandardError, "core_parsing_compat_walker_allocated_bytes").Should().BeGreaterThan(0);
             ReadDiagnosticValue(firstResult.StandardError, "core_parsing_postprocess_allocated_bytes").Should().BeGreaterThan(0);
             ReadDiagnosticValue(firstResult.StandardError, "core_parsing_postprocess_schema_sanitizers_allocated_bytes").Should().BeGreaterThan(0);
+            ReadDiagnosticValue(firstResult.StandardError, "core_parsing_postprocess_schema_sanitizers_fern_types_allocated_bytes").Should().BeGreaterThanOrEqualTo(0);
+            ReadDiagnosticValue(firstResult.StandardError, "core_parsing_postprocess_schema_sanitizers_numeric_constraints_allocated_bytes").Should().BeGreaterThanOrEqualTo(0);
+            ReadDiagnosticValue(firstResult.StandardError, "core_parsing_postprocess_schema_sanitizers_large_integer_formats_allocated_bytes").Should().BeGreaterThanOrEqualTo(0);
+            ReadDiagnosticValue(firstResult.StandardError, "core_parsing_postprocess_schema_sanitizers_discriminators_allocated_bytes").Should().BeGreaterThanOrEqualTo(0);
             ReadDiagnosticValue(firstResult.StandardError, "core_compute_data_allocated_bytes").Should().BeGreaterThan(0);
             ReadDiagnosticValue(firstResult.StandardError, "core_compute_classes_allocated_bytes").Should().BeGreaterThan(0);
             ReadDiagnosticValue(firstResult.StandardError, "render_model_types_allocated_bytes").Should().BeGreaterThan(0);

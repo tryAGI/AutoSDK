@@ -90,6 +90,28 @@ internal static class BenchmarkProfileRunner
         }
 
         Console.WriteLine();
+        Console.WriteLine("OpenAPI schema sanitizer detail (average of 3 measured runs):");
+        Console.WriteLine(
+            "{0,-12} {1,10} {2,10} {3,10} {4,10} {5,11} {6,11} {7,11} {8,11}",
+            "Spec", "Fern", "Numeric", "Int64", "Discrim", "Fern MB", "Numeric MB", "Int64 MB", "Discrim MB");
+        Console.WriteLine(new string('-', 112));
+
+        foreach (var profile in profiles)
+        {
+            Console.WriteLine(
+                "{0,-12} {1,9:F1}ms {2,9:F1}ms {3,9:F1}ms {4,9:F1}ms {5,10:F1} {6,10:F1} {7,10:F1} {8,10:F1}",
+                profile.Name,
+                profile.PostFernTypeNormalizationMs,
+                profile.PostNumericConstraintSanitizationMs,
+                profile.PostLargeIntegerFormatInferenceMs,
+                profile.PostDiscriminatorSanitizationMs,
+                profile.PostFernTypeNormalizationAllocMb,
+                profile.PostNumericConstraintSanitizationAllocMb,
+                profile.PostLargeIntegerFormatInferenceAllocMb,
+                profile.PostDiscriminatorSanitizationAllocMb);
+        }
+
+        Console.WriteLine();
         Console.WriteLine("Allocations and output (average of 3 measured runs):");
         Console.WriteLine(
             "{0,-12} {1,10} {2,10} {3,10} {4,10} {5,8} {6,8} {7,8} {8,8} {9,8} {10,10}",
@@ -151,6 +173,14 @@ internal static class BenchmarkProfileRunner
         var postMissingPathParametersAllocMb = 0.0;
         var postOverridesAndNamingAllocMb = 0.0;
         var postSchemaSanitizersAllocMb = 0.0;
+        var postFernTypeNormalizationMs = 0.0;
+        var postNumericConstraintSanitizationMs = 0.0;
+        var postLargeIntegerFormatInferenceMs = 0.0;
+        var postDiscriminatorSanitizationMs = 0.0;
+        var postFernTypeNormalizationAllocMb = 0.0;
+        var postNumericConstraintSanitizationAllocMb = 0.0;
+        var postLargeIntegerFormatInferenceAllocMb = 0.0;
+        var postDiscriminatorSanitizationAllocMb = 0.0;
 
         var schemaCount = 0;
         var filteredSchemaCount = 0;
@@ -193,6 +223,14 @@ internal static class BenchmarkProfileRunner
             postMissingPathParametersAllocMb += BytesToMb(coreTimes.OpenApiParsing.AllocPostMissingPathParameters);
             postOverridesAndNamingAllocMb += BytesToMb(coreTimes.OpenApiParsing.AllocPostOverridesAndNaming);
             postSchemaSanitizersAllocMb += BytesToMb(coreTimes.OpenApiParsing.AllocPostSchemaSanitizers);
+            postFernTypeNormalizationMs += coreTimes.OpenApiParsing.PostFernTypeNormalization.TotalMilliseconds;
+            postNumericConstraintSanitizationMs += coreTimes.OpenApiParsing.PostNumericConstraintSanitization.TotalMilliseconds;
+            postLargeIntegerFormatInferenceMs += coreTimes.OpenApiParsing.PostLargeIntegerFormatInference.TotalMilliseconds;
+            postDiscriminatorSanitizationMs += coreTimes.OpenApiParsing.PostDiscriminatorSanitization.TotalMilliseconds;
+            postFernTypeNormalizationAllocMb += BytesToMb(coreTimes.OpenApiParsing.AllocPostFernTypeNormalization);
+            postNumericConstraintSanitizationAllocMb += BytesToMb(coreTimes.OpenApiParsing.AllocPostNumericConstraintSanitization);
+            postLargeIntegerFormatInferenceAllocMb += BytesToMb(coreTimes.OpenApiParsing.AllocPostLargeIntegerFormatInference);
+            postDiscriminatorSanitizationAllocMb += BytesToMb(coreTimes.OpenApiParsing.AllocPostDiscriminatorSanitization);
 
             var enrichStage = Measure(() => CSharpPipeline.Enrich(core));
             var data = enrichStage.Result;
@@ -259,6 +297,14 @@ internal static class BenchmarkProfileRunner
             PostMissingPathParametersAllocMb: postMissingPathParametersAllocMb / iterations,
             PostOverridesAndNamingAllocMb: postOverridesAndNamingAllocMb / iterations,
             PostSchemaSanitizersAllocMb: postSchemaSanitizersAllocMb / iterations,
+            PostFernTypeNormalizationMs: postFernTypeNormalizationMs / iterations,
+            PostNumericConstraintSanitizationMs: postNumericConstraintSanitizationMs / iterations,
+            PostLargeIntegerFormatInferenceMs: postLargeIntegerFormatInferenceMs / iterations,
+            PostDiscriminatorSanitizationMs: postDiscriminatorSanitizationMs / iterations,
+            PostFernTypeNormalizationAllocMb: postFernTypeNormalizationAllocMb / iterations,
+            PostNumericConstraintSanitizationAllocMb: postNumericConstraintSanitizationAllocMb / iterations,
+            PostLargeIntegerFormatInferenceAllocMb: postLargeIntegerFormatInferenceAllocMb / iterations,
+            PostDiscriminatorSanitizationAllocMb: postDiscriminatorSanitizationAllocMb / iterations,
             SchemaCount: schemaCount,
             FilteredSchemaCount: filteredSchemaCount,
             ClassCount: classCount,
@@ -351,6 +397,14 @@ internal static class BenchmarkProfileRunner
         double PostMissingPathParametersAllocMb,
         double PostOverridesAndNamingAllocMb,
         double PostSchemaSanitizersAllocMb,
+        double PostFernTypeNormalizationMs,
+        double PostNumericConstraintSanitizationMs,
+        double PostLargeIntegerFormatInferenceMs,
+        double PostDiscriminatorSanitizationMs,
+        double PostFernTypeNormalizationAllocMb,
+        double PostNumericConstraintSanitizationAllocMb,
+        double PostLargeIntegerFormatInferenceAllocMb,
+        double PostDiscriminatorSanitizationAllocMb,
         int SchemaCount,
         int FilteredSchemaCount,
         int ClassCount,

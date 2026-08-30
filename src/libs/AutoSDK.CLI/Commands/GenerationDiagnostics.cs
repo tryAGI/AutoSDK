@@ -58,6 +58,10 @@ internal readonly record struct GenerationDiagnostics(
         await WriteMillisecondsAsync(writer, "core_parsing_postprocess_missing_path_parameters_ms", CoreTimes.OpenApiParsing.PostMissingPathParameters).ConfigureAwait(false);
         await WriteMillisecondsAsync(writer, "core_parsing_postprocess_overrides_naming_ms", CoreTimes.OpenApiParsing.PostOverridesAndNaming).ConfigureAwait(false);
         await WriteMillisecondsAsync(writer, "core_parsing_postprocess_schema_sanitizers_ms", CoreTimes.OpenApiParsing.PostSchemaSanitizers).ConfigureAwait(false);
+        await WriteMillisecondsAsync(writer, "core_parsing_postprocess_schema_sanitizers_fern_types_ms", CoreTimes.OpenApiParsing.PostFernTypeNormalization).ConfigureAwait(false);
+        await WriteMillisecondsAsync(writer, "core_parsing_postprocess_schema_sanitizers_numeric_constraints_ms", CoreTimes.OpenApiParsing.PostNumericConstraintSanitization).ConfigureAwait(false);
+        await WriteMillisecondsAsync(writer, "core_parsing_postprocess_schema_sanitizers_large_integer_formats_ms", CoreTimes.OpenApiParsing.PostLargeIntegerFormatInference).ConfigureAwait(false);
+        await WriteMillisecondsAsync(writer, "core_parsing_postprocess_schema_sanitizers_discriminators_ms", CoreTimes.OpenApiParsing.PostDiscriminatorSanitization).ConfigureAwait(false);
         await WriteMillisecondsAsync(writer, "core_traversal_ms", CoreTimes.TraversalTree).ConfigureAwait(false);
         await WriteMillisecondsAsync(writer, "core_naming_ms", CoreTimes.Naming).ConfigureAwait(false);
         await WriteMillisecondsAsync(writer, "core_resolve_references_ms", CoreTimes.ResolveReferences).ConfigureAwait(false);
@@ -109,6 +113,10 @@ internal readonly record struct GenerationDiagnostics(
         await writer.WriteLineAsync($"  core_parsing_postprocess_missing_path_parameters_allocated_bytes: {CoreTimes.OpenApiParsing.AllocPostMissingPathParameters.ToString(CultureInfo.InvariantCulture)}").ConfigureAwait(false);
         await writer.WriteLineAsync($"  core_parsing_postprocess_overrides_naming_allocated_bytes: {CoreTimes.OpenApiParsing.AllocPostOverridesAndNaming.ToString(CultureInfo.InvariantCulture)}").ConfigureAwait(false);
         await writer.WriteLineAsync($"  core_parsing_postprocess_schema_sanitizers_allocated_bytes: {CoreTimes.OpenApiParsing.AllocPostSchemaSanitizers.ToString(CultureInfo.InvariantCulture)}").ConfigureAwait(false);
+        await writer.WriteLineAsync($"  core_parsing_postprocess_schema_sanitizers_fern_types_allocated_bytes: {CoreTimes.OpenApiParsing.AllocPostFernTypeNormalization.ToString(CultureInfo.InvariantCulture)}").ConfigureAwait(false);
+        await writer.WriteLineAsync($"  core_parsing_postprocess_schema_sanitizers_numeric_constraints_allocated_bytes: {CoreTimes.OpenApiParsing.AllocPostNumericConstraintSanitization.ToString(CultureInfo.InvariantCulture)}").ConfigureAwait(false);
+        await writer.WriteLineAsync($"  core_parsing_postprocess_schema_sanitizers_large_integer_formats_allocated_bytes: {CoreTimes.OpenApiParsing.AllocPostLargeIntegerFormatInference.ToString(CultureInfo.InvariantCulture)}").ConfigureAwait(false);
+        await writer.WriteLineAsync($"  core_parsing_postprocess_schema_sanitizers_discriminators_allocated_bytes: {CoreTimes.OpenApiParsing.AllocPostDiscriminatorSanitization.ToString(CultureInfo.InvariantCulture)}").ConfigureAwait(false);
         await writer.WriteLineAsync($"  core_traversal_allocated_bytes: {CoreTimes.AllocTraversalTree.ToString(CultureInfo.InvariantCulture)}").ConfigureAwait(false);
         await writer.WriteLineAsync($"  core_naming_allocated_bytes: {CoreTimes.AllocNaming.ToString(CultureInfo.InvariantCulture)}").ConfigureAwait(false);
         await writer.WriteLineAsync($"  core_resolve_references_allocated_bytes: {CoreTimes.AllocResolveReferences.ToString(CultureInfo.InvariantCulture)}").ConfigureAwait(false);
