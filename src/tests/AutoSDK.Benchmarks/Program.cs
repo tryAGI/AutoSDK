@@ -11,7 +11,7 @@ else if (args.Length > 0 && args[0] == "--profile-methods")
 }
 else if (args.Length > 0 && args[0] == "--profile-data")
 {
-    BenchmarkProfileRunner.RunDataComputation();
+    BenchmarkProfileRunner.RunDataComputation(args.ElementAtOrDefault(1));
 }
 else if (args.Length > 0 && args[0] == "--profile-naming")
 {

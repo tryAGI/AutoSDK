@@ -183,7 +183,7 @@ internal static class BenchmarkProfileRunner
         }
     }
 
-    public static void RunDataComputation()
+    public static void RunDataComputation(string? selectedSpec = null)
     {
         var fixture = new BenchmarkFixture();
         fixture.Setup();
@@ -192,7 +192,15 @@ internal static class BenchmarkProfileRunner
         Console.WriteLine("Spec            TotalMB     TypeMB    ModelMB PropertyMB   ParamMB   AnyOfMB  TypeCalls PropCalls");
         Console.WriteLine(new string('-', 112));
 
-        foreach (var specName in fixture.LargeSpecs)
+        var specNames = selectedSpec == null
+            ? fixture.LargeSpecs.ToArray()
+            : fixture.LargeSpecs.Where(name => string.Equals(name, selectedSpec, StringComparison.Ordinal)).ToArray();
+        if (specNames.Length == 0)
+        {
+            throw new ArgumentException($"Unknown benchmark spec '{selectedSpec}'.", nameof(selectedSpec));
+        }
+
+        foreach (var specName in specNames)
         {
             var core = fixture.PrepareCore(specName);
             long typeBytes = 0;
