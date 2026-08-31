@@ -11,7 +11,7 @@ namespace AutoSDK.Generation;
 
 public static class CSharpPipeline
 {
-    private const int MaxRenderParallelism = 4;
+    private const int MaxRenderParallelism = 8;
 
     public static Models.Data PrepareAndEnrich(
         ((string Text, Settings Settings) Context, Settings GlobalSettings) tuple,

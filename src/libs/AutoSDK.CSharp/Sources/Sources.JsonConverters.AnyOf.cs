@@ -342,7 +342,7 @@ public static partial class Sources
             }}
 ").Inject().TrimEnd(',');
 
-        return $@"#nullable enable
+        return NormalizedString.Create($@"#nullable enable
 {(anyOfData.IsNamed ? @"#pragma warning disable CS0618 // Type or member is obsolete
 " : "")}
 namespace {anyOfData.Namespace}.JsonConverters
@@ -382,7 +382,7 @@ namespace {anyOfData.Namespace}.JsonConverters
 {write}
         }}
     }}
-}}".RemoveBlankLinesWhereOnlyWhitespaces();
+}}");
     }
 
     public static string GenerateAnyOfJsonConverterFactory(

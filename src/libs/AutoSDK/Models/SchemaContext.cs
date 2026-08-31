@@ -193,6 +193,12 @@ public class SchemaContext(
     /// </summary>
     public string? CachedComputedClassName { get; set; }
 
+    /// <summary>
+    /// Cached generated namespace derived from the owning component id.
+    /// Schema settings and ancestry are immutable after the traversal tree is built.
+    /// </summary>
+    public string? CachedGeneratedNamespace { get; set; }
+
     private ValueHolder<AnyOfData>? _anyOfData;
     public AnyOfData? AnyOfData
     {
@@ -218,7 +224,10 @@ public class SchemaContext(
     }
     public string? VariantName { get; set; }
     
-    public bool IsModel => IsClass || IsEnum || IsAnyOfLikeStructure && IsComponent;
+    public bool IsModel =>
+        Type is "class" or "enum" ||
+        IsAnyOfLikeStructure && IsComponent ||
+        IsDerivedClass;
     
     public bool IsAnyOf => IsSchemaBooleanCached(IsAnyOfFlag)
         ? GetCachedSchemaBoolean(IsAnyOfFlag)

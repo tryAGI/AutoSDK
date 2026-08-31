@@ -50,7 +50,7 @@ public static class OpenApiEnumExtensions
         if ((context.Schema.Enum?.Any() ?? false) && context.Schema.Default is JsonValue && !string.IsNullOrWhiteSpace(defaultString))
         {
             var @enum = context.ComputeEnum();
-            if (!@enum.TryGetValue(context.Schema.Default.GetString() ?? string.Empty, out var result))
+            if (!@enum.TryGetValue(defaultString!, out var result))
             {
                 return context.TypeData.IsOpenEnum
                     ? $"{context.TypeData.CSharpTypeWithoutNullability}.FromValue({defaultString!.ToCSharpStringLiteral()})"
@@ -65,7 +65,7 @@ public static class OpenApiEnumExtensions
                 .Where(x => x.Hint is Hint.AnyOf)
                 .First(x => x.Schema.Enum?.Any() ?? false);
             var @enum = enumChildContext.ComputeEnum();
-            var defaultEnumValue = context.Schema.Default.GetString() ?? string.Empty;
+            var defaultEnumValue = defaultString ?? string.Empty;
             var value = @enum.TryGetValue(defaultEnumValue, out var result) ? result.Name : "";
 
             if (string.IsNullOrWhiteSpace(value))
@@ -79,7 +79,7 @@ public static class OpenApiEnumExtensions
                     .Where(x => x.Hint is Hint.AnyOf)
                     .Any(x => x.Schema.Type == Microsoft.OpenApi.JsonSchemaType.String))
                 {
-                    value = context.Schema.Default.GetString();
+                    value = defaultString;
                     if (!string.IsNullOrWhiteSpace(value))
                     {
                         return $"\"{value}\"";
@@ -97,9 +97,9 @@ public static class OpenApiEnumExtensions
                 .Where(x => x.Hint is Hint.OneOf)
                 .First(x => x.Schema.Enum?.Any() ?? false);
             var @enum = enumChildContext.ComputeEnum();
-            if (!@enum.TryGetValue(context.Schema.Default.GetString() ?? string.Empty, out var result))
+            if (!@enum.TryGetValue(defaultString ?? string.Empty, out var result))
             {
-                var defaultEnumValue = context.Schema.Default.GetString() ?? string.Empty;
+                var defaultEnumValue = defaultString ?? string.Empty;
                 return enumChildContext.TypeData.IsOpenEnum && !string.IsNullOrWhiteSpace(defaultEnumValue)
                     ? $"{enumChildContext.TypeData.CSharpTypeWithoutNullability}.FromValue({defaultEnumValue.ToCSharpStringLiteral()})"
                     : string.Empty;
@@ -113,9 +113,9 @@ public static class OpenApiEnumExtensions
                 .Where(x => x.Hint is Hint.AllOf)
                 .First(x => x.Schema.Enum?.Any() ?? false);
             var @enum = enumChildContext.ComputeEnum();
-            if (!@enum.TryGetValue(context.Schema.Default.GetString() ?? string.Empty, out var result))
+            if (!@enum.TryGetValue(defaultString ?? string.Empty, out var result))
             {
-                var defaultEnumValue = context.Schema.Default.GetString() ?? string.Empty;
+                var defaultEnumValue = defaultString ?? string.Empty;
                 return enumChildContext.TypeData.IsOpenEnum && !string.IsNullOrWhiteSpace(defaultEnumValue)
                     ? $"{enumChildContext.TypeData.CSharpTypeWithoutNullability}.FromValue({defaultEnumValue.ToCSharpStringLiteral()})"
                     : string.Empty;
@@ -123,8 +123,7 @@ public static class OpenApiEnumExtensions
 
             return enumChildContext.TypeData.CSharpTypeWithoutNullability + "." + result.Name;
         }
-        var defaultStringValue = context.Schema.Default?.GetString();
-        if (context.Schema.Default is JsonValue && !string.IsNullOrWhiteSpace(defaultStringValue))
+        if (context.Schema.Default is JsonValue && !string.IsNullOrWhiteSpace(defaultString))
         {
             if (context.Schema.Type != Microsoft.OpenApi.JsonSchemaType.String &&
                 (context.Schema.AnyOf ?? []).All(x => x.Type != Microsoft.OpenApi.JsonSchemaType.String) &&
@@ -134,10 +133,10 @@ public static class OpenApiEnumExtensions
                 return null;
             }
 
-            return $"\"{defaultStringValue}\"";
+            return $"\"{defaultString}\"";
         }
 
-        return context.Schema.Default?.GetString();
+        return defaultString;
     }
 
     public static Dictionary<string, PropertyData> ComputeEnum(

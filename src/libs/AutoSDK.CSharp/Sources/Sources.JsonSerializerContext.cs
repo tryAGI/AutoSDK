@@ -38,36 +38,35 @@ public static partial class Sources
             : "SourceGenerationContext";
         var typeInfoNames = generationState.TypeInfoNames;
         var nullableValueTypes = generationState.GetNullableValueTypes(types);
+        var typeComponents = generationState.GetJsonSerializableTypeComponents(types);
 
         var serializableTypeSet = types.IsEmpty
             ? default
             : BuildJsonSerializableTypeSet(
                 client,
-                types,
                 expandContextTypes: false,
-                typeInfoNames,
+                typeComponents,
                 nullableValueTypes);
         var useChunkedContext = serializableTypeSet.SerializableTypes is { Length: > MaxJsonSerializableAttributesPerContext };
         if (useChunkedContext)
         {
             serializableTypeSet = BuildJsonSerializableTypeSet(
                 client,
-                types,
                 expandContextTypes: true,
-                typeInfoNames,
+                typeComponents,
                 nullableValueTypes);
         }
 
         var jsonSerializableAttributes = types.IsEmpty
-            ? (Lines: Array.Empty<string>(), GuardLines: Array.Empty<string>())
-            : GenerateJsonSerializableAttributeLines(
+            ? Array.Empty<JsonSerializableAttributeRegistration>()
+            : GenerateJsonSerializableAttributeRegistrations(
                 client,
                 types,
                 serializableTypeSet,
                 typeInfoNames,
                 nullableValueTypes);
 
-        if (jsonSerializableAttributes.Lines.Length == 0)
+        if (jsonSerializableAttributes.Length == 0)
         {
             return GenerateEmptyJsonSerializerContext(
                 client,
@@ -85,8 +84,10 @@ public static partial class Sources
                 contextClassName,
                 jsonSerializableAttributes);
         }
-        
-        return $@"
+
+        using var builder = new PooledStringBuilder(
+            1024 + jsonSerializableAttributes.Sum(EstimateJsonSerializableAttributeLength));
+        builder.Append($@"
 #nullable enable
 
 #pragma warning disable CS0618 // Type or member is obsolete
@@ -95,12 +96,16 @@ public static partial class Sources
 namespace {client.Settings.Namespace}
 {{
     {string.Empty.ToXmlDocumentationSummary(level: 4)}
-{GenerateJsonSourceGenerationOptionsAttribute(client)}
-{(jsonSerializableAttributes.Lines.Length == 0 ? TrimmedLine : string.Join("\n", jsonSerializableAttributes.Lines))}
+");
+        AppendJsonSourceGenerationOptionsAttribute(builder, client);
+        builder.Append('\n');
+        AppendJsonSerializableAttributes(builder, jsonSerializableAttributes);
+        builder.Append($@"
     public sealed partial class {contextClassName} : global::System.Text.Json.Serialization.JsonSerializerContext
     {{
     }}
-}}".RemoveBlankLinesWhereOnlyWhitespaces();
+}}");
+        return builder.ToString();
     }
 
     private const int MaxJsonSerializableAttributesPerContext = 500;
@@ -109,7 +114,9 @@ namespace {client.Settings.Namespace}
         Client client,
         string contextClassName)
     {
-        return $@"
+        using var builder = new PooledStringBuilder(
+            1024 + client.Converters.Sum(static converter => converter.Length + 64));
+        builder.Append($@"
 #nullable enable
 
 #pragma warning disable CS0618 // Type or member is obsolete
@@ -118,7 +125,9 @@ namespace {client.Settings.Namespace}
 namespace {client.Settings.Namespace}
 {{
     {string.Empty.ToXmlDocumentationSummary(level: 4)}
-{GenerateJsonSourceGenerationOptionsAttribute(client)}
+");
+        AppendJsonSourceGenerationOptionsAttribute(builder, client);
+        builder.Append($@"
     public sealed partial class {contextClassName} : global::System.Text.Json.Serialization.JsonSerializerContext
     {{
         private static readonly global::System.Text.Json.JsonSerializerOptions DefaultOptions = CreateDefaultOptions();
@@ -152,24 +161,27 @@ namespace {client.Settings.Namespace}
             var options = new global::System.Text.Json.JsonSerializerOptions
             {{
                 DefaultIgnoreCondition = global::System.Text.Json.Serialization.JsonIgnoreCondition.WhenWritingNull,
-            }};
-{client.Converters.Select(x => $@"
-            options.Converters.Add(new {x}());").Inject()}
+            }};");
+        foreach (var converter in client.Converters)
+        {
+            builder.Append($@"
+            options.Converters.Add(new {converter}());");
+        }
 
+        builder.Append($@"
             return options;
         }}
     }}
-}}".RemoveBlankLinesWhereOnlyWhitespaces();
+}}");
+        return builder.ToString();
     }
 
     private static string GenerateChunkedJsonSerializerContext(
         Client client,
         string contextClassName,
-        (string[] Lines, string[] GuardLines) jsonSerializableAttributes)
+        JsonSerializableAttributeRegistration[] jsonSerializableAttributes)
     {
-        var chunks = SplitJsonSerializableAttributes(
-                jsonSerializableAttributes.Lines,
-                jsonSerializableAttributes.GuardLines)
+        var chunks = SplitJsonSerializableAttributes(jsonSerializableAttributes)
             .ToArray();
         var chunkClassNames = chunks
             .Select((_, index) => $"{contextClassName}Chunk{index}")
@@ -181,23 +193,42 @@ namespace {client.Settings.Namespace}
         var eagerConverters = client.Converters
             .Where(converter => !lazyConverterTypes.Contains(converter))
             .ToArray();
-        return $@"
+
+        var initialCapacity = 4096;
+        foreach (var chunk in chunks)
+        {
+            foreach (var registration in chunk)
+            {
+                initialCapacity = checked(
+                    initialCapacity + EstimateJsonSerializableAttributeLength(registration));
+            }
+        }
+
+        using var builder = new PooledStringBuilder(initialCapacity);
+        builder.Append($@"
 #nullable enable
 
 #pragma warning disable CS0618 // Type or member is obsolete
 #pragma warning disable CS3016 // Arrays as attribute arguments is not CLS-compliant
 
 namespace {client.Settings.Namespace}
-{{
-{chunks.Select((chunk, index) => $@"
+{{");
+        for (var index = 0; index < chunks.Length; index++)
+        {
+            builder.Append($@"
     {string.Empty.ToXmlDocumentationSummary(level: 4)}
-{GenerateJsonSourceGenerationOptionsAttribute(client, includeConverters: false)}
-{string.Join("\n", chunk)}
+");
+            AppendJsonSourceGenerationOptionsAttribute(builder, client, includeConverters: false);
+            builder.Append('\n');
+            AppendJsonSerializableAttributes(builder, chunks[index]);
+            builder.Append($@"
     internal sealed partial class {chunkClassNames[index]} : global::System.Text.Json.Serialization.JsonSerializerContext
     {{
     }}
-").Inject()}
-    {string.Empty.ToXmlDocumentationSummary(level: 4)}
+");
+        }
+
+        builder.Append($@"    {string.Empty.ToXmlDocumentationSummary(level: 4)}
     public sealed partial class {contextClassName} : global::System.Text.Json.Serialization.JsonSerializerContext
     {{
         private static readonly global::System.Text.Json.Serialization.Metadata.IJsonTypeInfoResolver Resolver = new LazyChunkResolver();
@@ -227,39 +258,62 @@ namespace {client.Settings.Namespace}
             {{
                 DefaultIgnoreCondition = global::System.Text.Json.Serialization.JsonIgnoreCondition.WhenWritingNull,
                 TypeInfoResolver = Resolver,
-            }};
-{eagerConverters.Select(x => $@"
-            options.Converters.Add(new {x}());").Inject()}
-{(lazyConverterRegistrations.Length == 0 ? TrimmedLine : @"
-            options.Converters.Add(new LazyEnumJsonConverterFactory());")}
+            }};");
+        foreach (var converter in eagerConverters)
+        {
+            builder.Append($@"
+            options.Converters.Add(new {converter}());");
+        }
+        if (lazyConverterRegistrations.Length > 0)
+        {
+            builder.Append(@"
+
+            options.Converters.Add(new LazyEnumJsonConverterFactory());");
+        }
+
+        builder.Append(@"
 
             return options;
-        }}
-{(lazyConverterRegistrations.Length == 0 ? TrimmedLine : $@"
+        }");
+        if (lazyConverterRegistrations.Length > 0)
+        {
+            builder.Append(@"
+
 
         private sealed class LazyEnumJsonConverterFactory : global::System.Text.Json.Serialization.JsonConverterFactory
-        {{
+        {
             public override bool CanConvert(global::System.Type typeToConvert)
-            {{
-                return
-{lazyConverterRegistrations.Select((registration, index) => $@"
-                    {(index == 0 ? "" : "|| ")}typeToConvert == typeof({registration.TargetType})
-").Inject().TrimEnd('\n')};
-            }}
+            {
+                return");
+            for (var index = 0; index < lazyConverterRegistrations.Length; index++)
+            {
+                var registration = lazyConverterRegistrations[index];
+                builder.Append(index == 0 ? "\n" : "\n\n");
+                builder.Append($@"                    {(index == 0 ? "" : "|| ")}typeToConvert == typeof({registration.TargetType})");
+            }
+            builder.Append(@";
+            }
 
             public override global::System.Text.Json.Serialization.JsonConverter CreateConverter(
                 global::System.Type typeToConvert,
                 global::System.Text.Json.JsonSerializerOptions options)
-            {{
-{lazyConverterRegistrations.Select(registration => $@"
-                if (typeToConvert == typeof({registration.TargetType}))
+            {");
+            for (var index = 0; index < lazyConverterRegistrations.Length; index++)
+            {
+                var registration = lazyConverterRegistrations[index];
+                builder.Append(index == 0 ? "\n" : "\n\n");
+                builder.Append($@"                if (typeToConvert == typeof({registration.TargetType}))
                 {{
                     return new {registration.ConverterType}();
-                }}
-").Inject()}
-                throw new global::System.NotSupportedException($""No generated enum converter is registered for '{{typeToConvert}}'."");
-            }}
-        }}")}
+                }}");
+            }
+            builder.Append(@"
+                throw new global::System.NotSupportedException($""No generated enum converter is registered for '{typeToConvert}'."");
+            }
+        }");
+        }
+
+        builder.Append($@"
 
         private sealed class LazyChunkResolver : global::System.Text.Json.Serialization.Metadata.IJsonTypeInfoResolver
         {{
@@ -308,7 +362,8 @@ namespace {client.Settings.Namespace}
             }}
         }}
     }}
-}}".RemoveBlankLinesWhereOnlyWhitespaces();
+}}");
+        return builder.ToString();
     }
 
     private readonly struct LazyConverterRegistration
@@ -370,7 +425,8 @@ namespace {client.Settings.Namespace}
         return registrations.ToArray();
     }
 
-    private static string GenerateJsonSourceGenerationOptionsAttribute(
+    private static void AppendJsonSourceGenerationOptionsAttribute(
+        PooledStringBuilder builder,
         Client client,
         bool includeConverters = true)
     {
@@ -378,26 +434,97 @@ namespace {client.Settings.Namespace}
             ? client.Converters
             : Array.Empty<string>();
 
-        return $@"    [global::System.Text.Json.Serialization.JsonSourceGenerationOptions(
+        builder.Append(@"    [global::System.Text.Json.Serialization.JsonSourceGenerationOptions(
         DefaultIgnoreCondition = global::System.Text.Json.Serialization.JsonIgnoreCondition.WhenWritingNull,
         Converters = new global::System.Type[]
-        {{
-{converters.Select(x => $@"
-            typeof({x}),
-").Inject()}
-        }})]";
+        {");
+        var firstConverter = true;
+        foreach (var converter in converters)
+        {
+            builder.Append('\n');
+            if (!firstConverter)
+            {
+                builder.Append('\n');
+            }
+            builder.Append("            typeof(");
+            builder.Append(converter);
+            builder.Append("),");
+            firstConverter = false;
+        }
+        builder.Append(@"
+        })]");
     }
 
-    private static IEnumerable<string[]> SplitJsonSerializableAttributes(
-        string[] jsonSerializableAttributes,
-        string[] guardAttributes)
+    private readonly struct JsonSerializableAttributeRegistration
     {
-        var guardAttributeSet = new HashSet<string>(guardAttributes, StringComparer.Ordinal);
-        var regularAttributes = jsonSerializableAttributes
-            .Where(x => !guardAttributeSet.Contains(x))
-            .ToArray();
+        public JsonSerializableAttributeRegistration(
+            string type,
+            string? typeInfoPropertyName,
+            string? generationMode,
+            bool isGuard)
+        {
+            Type = type;
+            TypeInfoPropertyName = typeInfoPropertyName;
+            GenerationMode = generationMode;
+            IsGuard = isGuard;
+        }
 
-        if (guardAttributes.Length >= MaxJsonSerializableAttributesPerContext)
+        public string Type { get; }
+
+        public string? TypeInfoPropertyName { get; }
+
+        public string? GenerationMode { get; }
+
+        public bool IsGuard { get; }
+    }
+
+    private static int EstimateJsonSerializableAttributeLength(
+        JsonSerializableAttributeRegistration registration)
+    {
+        return 96 +
+               registration.Type.Length +
+               (registration.TypeInfoPropertyName?.Length ?? 0) +
+               (registration.GenerationMode?.Length ?? 0);
+    }
+
+    private static void AppendJsonSerializableAttributes(
+        PooledStringBuilder builder,
+        JsonSerializableAttributeRegistration[] registrations)
+    {
+        for (var index = 0; index < registrations.Length; index++)
+        {
+            if (index > 0)
+            {
+                builder.Append('\n');
+            }
+
+            var registration = registrations[index];
+            builder.Append("    [global::System.Text.Json.Serialization.JsonSerializable(typeof(");
+            builder.Append(registration.Type);
+            builder.Append(')');
+            if (registration.TypeInfoPropertyName is not null)
+            {
+                builder.Append(", TypeInfoPropertyName = \"");
+                builder.Append(registration.TypeInfoPropertyName);
+                builder.Append('"');
+            }
+
+            if (registration.GenerationMode is not null)
+            {
+                builder.Append(", GenerationMode = global::System.Text.Json.Serialization.JsonSourceGenerationMode.");
+                builder.Append(registration.GenerationMode);
+            }
+
+            builder.Append(")]");
+        }
+    }
+
+    private static IEnumerable<JsonSerializableAttributeRegistration[]> SplitJsonSerializableAttributes(
+        JsonSerializableAttributeRegistration[] jsonSerializableAttributes)
+    {
+        var guardAttributeCount = jsonSerializableAttributes.Count(static registration => registration.IsGuard);
+
+        if (guardAttributeCount >= MaxJsonSerializableAttributesPerContext)
         {
             foreach (var chunk in ChunkJsonSerializableAttributes(jsonSerializableAttributes))
             {
@@ -407,61 +534,53 @@ namespace {client.Settings.Namespace}
             yield break;
         }
 
+        var guardAttributes = new JsonSerializableAttributeRegistration[guardAttributeCount];
+        var regularAttributes = new JsonSerializableAttributeRegistration[
+            jsonSerializableAttributes.Length - guardAttributeCount];
+        var guardIndex = 0;
+        var regularIndex = 0;
+        foreach (var registration in jsonSerializableAttributes)
+        {
+            if (registration.IsGuard)
+            {
+                guardAttributes[guardIndex++] = registration;
+            }
+            else
+            {
+                regularAttributes[regularIndex++] = registration;
+            }
+        }
+
         var regularAttributesPerContext = Math.Max(
             1,
-            MaxJsonSerializableAttributesPerContext - guardAttributes.Length);
+            MaxJsonSerializableAttributesPerContext - guardAttributeCount);
 
         for (var start = 0; start < regularAttributes.Length; start += regularAttributesPerContext)
         {
             var count = Math.Min(regularAttributesPerContext, regularAttributes.Length - start);
-            var chunk = new string[guardAttributes.Length + count];
-            Array.Copy(guardAttributes, chunk, guardAttributes.Length);
-            Array.Copy(regularAttributes, start, chunk, guardAttributes.Length, count);
+            var chunk = new JsonSerializableAttributeRegistration[guardAttributeCount + count];
+            Array.Copy(guardAttributes, chunk, guardAttributeCount);
+            Array.Copy(regularAttributes, start, chunk, guardAttributeCount, count);
             yield return chunk;
         }
 
         if (regularAttributes.Length == 0 &&
-            guardAttributes.Length > 0)
+            guardAttributeCount > 0)
         {
             yield return guardAttributes;
         }
     }
 
-    private static IEnumerable<string[]> ChunkJsonSerializableAttributes(string[] jsonSerializableAttributes)
+    private static IEnumerable<JsonSerializableAttributeRegistration[]> ChunkJsonSerializableAttributes(
+        JsonSerializableAttributeRegistration[] jsonSerializableAttributes)
     {
         for (var start = 0; start < jsonSerializableAttributes.Length; start += MaxJsonSerializableAttributesPerContext)
         {
             var count = Math.Min(MaxJsonSerializableAttributesPerContext, jsonSerializableAttributes.Length - start);
-            var chunk = new string[count];
+            var chunk = new JsonSerializableAttributeRegistration[count];
             Array.Copy(jsonSerializableAttributes, start, chunk, 0, count);
             yield return chunk;
         }
-    }
-
-    private static string GenerateJsonSerializableAttributes(
-        Client client,
-        EquatableArray<TypeData> types)
-    {
-        return string.Join("\n", GenerateJsonSerializableAttributeLines(client, types).Lines);
-    }
-
-    private static (string[] Lines, string[] GuardLines) GenerateJsonSerializableAttributeLines(
-        Client client,
-        EquatableArray<TypeData> types)
-    {
-        var typeInfoNames = new JsonTypeInfoNameCache();
-        var nullableValueTypes = GetNullableValueTypes(types);
-        return GenerateJsonSerializableAttributeLines(
-            client,
-            types,
-            BuildJsonSerializableTypeSet(
-                client,
-                types,
-                expandContextTypes: false,
-                typeInfoNames,
-                nullableValueTypes),
-            typeInfoNames,
-            nullableValueTypes);
     }
 
     private static (
@@ -469,25 +588,13 @@ namespace {client.Settings.Namespace}
         string[] ExplicitNullableValueTypes,
         string[] ContextTypes) BuildJsonSerializableTypeSet(
         Client client,
-        EquatableArray<TypeData> types,
         bool expandContextTypes,
-        JsonTypeInfoNameCache typeInfoNames,
+        JsonSerializableTypeComponents typeComponents,
         string[] nullableValueTypes)
     {
-        var distinctTypes = types
-            .Select(x => x.CSharpTypeWithoutNullability)
-            .Distinct()
-            .ToArray();
-
-        var concreteListTypes = GetConcreteListTypes(distinctTypes);
-        var explicitNullableValueTypes = GetExplicitNullableValueTypes(
-            distinctTypes,
-            concreteListTypes,
-            nullableValueTypes,
-            typeInfoNames);
         var contextNullableValueTypes = expandContextTypes
             ? nullableValueTypes
-            : explicitNullableValueTypes;
+            : typeComponents.ExplicitNullableValueTypes;
         var contextTypes = expandContextTypes
             ? new[]
             {
@@ -502,16 +609,16 @@ namespace {client.Settings.Namespace}
                 "global::System.Collections.Generic.List<object>",
             };
         var serializableTypes = contextTypes
-            .Concat(distinctTypes)
+            .Concat(typeComponents.DistinctTypes)
             .Concat(contextNullableValueTypes)
-            .Concat(concreteListTypes)
+            .Concat(typeComponents.ConcreteListTypes)
             .Distinct(StringComparer.Ordinal)
             .ToArray();
 
-        return (serializableTypes, explicitNullableValueTypes, contextTypes);
+        return (serializableTypes, typeComponents.ExplicitNullableValueTypes, contextTypes);
     }
 
-    private static (string[] Lines, string[] GuardLines) GenerateJsonSerializableAttributeLines(
+    private static JsonSerializableAttributeRegistration[] GenerateJsonSerializableAttributeRegistrations(
         Client client,
         EquatableArray<TypeData> types,
         (string[] SerializableTypes, string[] ExplicitNullableValueTypes, string[] ContextTypes) typeSet,
@@ -565,27 +672,22 @@ namespace {client.Settings.Namespace}
             serializableTypes,
             alwaysDefaultTypes: contextTypes);
 
-        var attributes = new List<string>(serializableTypes.Length);
-        var guardAttributes = new List<string>();
+        var registrations = new JsonSerializableAttributeRegistration[serializableTypes.Length];
 
-        foreach (var type in serializableTypes)
+        for (var index = 0; index < serializableTypes.Length; index++)
         {
+            var type = serializableTypes[index];
             explicitTypeInfoPropertyNames.TryGetValue(type, out var typeInfoPropertyName);
             string? generationMode = null;
             generationModes?.TryGetValue(type, out generationMode);
-            var attribute = GenerateJsonSerializableAttribute(
+            registrations[index] = new JsonSerializableAttributeRegistration(
                 type,
                 typeInfoPropertyName,
-                generationMode);
-            attributes.Add(attribute);
-
-            if (guardTypes.Contains(type))
-            {
-                guardAttributes.Add(attribute);
-            }
+                generationMode,
+                guardTypes.Contains(type));
         }
 
-        return (attributes.ToArray(), guardAttributes.ToArray());
+        return registrations;
     }
 
     /// <summary>
@@ -698,42 +800,48 @@ namespace {client.Settings.Namespace}
             : null;
     }
 
-    private static string GenerateJsonSerializableAttribute(
-        string type,
-        string? typeInfoPropertyName,
-        string? generationMode = null)
-    {
-        var arguments = string.Empty;
-        if (typeInfoPropertyName is not null)
-        {
-            arguments += $", TypeInfoPropertyName = \"{typeInfoPropertyName}\"";
-        }
-        if (generationMode is not null)
-        {
-            arguments += $", GenerationMode = global::System.Text.Json.Serialization.JsonSourceGenerationMode.{generationMode}";
-        }
-
-        return $"    [global::System.Text.Json.Serialization.JsonSerializable(typeof({type}){arguments})]";
-    }
-
     private static Dictionary<string, string> BuildExplicitTypeInfoPropertyNames(
         string[] types,
         HashSet<string> implicitlyDiscoveredTypes,
         JsonTypeInfoNameCache typeInfoNames)
     {
         var explicitNames = new Dictionary<string, string>(StringComparer.Ordinal);
-        var usedNames = new HashSet<string>(
-            types.Select(typeInfoNames.GetGenerated),
-            StringComparer.Ordinal);
+        var usedNames = new HashSet<string>(StringComparer.Ordinal);
+        var firstTypeByGeneratedName = new Dictionary<string, string>(StringComparer.Ordinal);
+        var collidingTypesByGeneratedName = new Dictionary<string, List<string>>(StringComparer.Ordinal);
+        var generatedNameOrder = new List<string>();
+        foreach (var type in types)
+        {
+            var generatedName = typeInfoNames.GetGenerated(type);
+            usedNames.Add(generatedName);
+            if (!firstTypeByGeneratedName.TryGetValue(generatedName, out var firstType))
+            {
+                firstTypeByGeneratedName.Add(generatedName, type);
+                generatedNameOrder.Add(generatedName);
+                continue;
+            }
+
+            if (!collidingTypesByGeneratedName.TryGetValue(generatedName, out var collidingTypes))
+            {
+                collidingTypes = [firstType];
+                collidingTypesByGeneratedName.Add(generatedName, collidingTypes);
+            }
+            collidingTypes.Add(type);
+        }
 
         // Phase 1: Handle collisions among explicitly registered types
-        foreach (var group in types.GroupBy(typeInfoNames.GetGenerated).Where(group => group.Count() > 1))
+        foreach (var generatedName in generatedNameOrder)
         {
-            var defaultType = group.FirstOrDefault(static type =>
+            if (!collidingTypesByGeneratedName.TryGetValue(generatedName, out var collidingTypes))
+            {
+                continue;
+            }
+
+            var defaultType = collidingTypes.FirstOrDefault(static type =>
                 ShouldKeepDefaultTypeInfoPropertyName(type) &&
                 !type.Contains("<", StringComparison.Ordinal));
 
-            foreach (var type in group)
+            foreach (var type in collidingTypes)
             {
                 if (defaultType is not null &&
                     type == defaultType)
@@ -805,14 +913,33 @@ namespace {client.Settings.Namespace}
         // discover both Nullable<T> and T. A generated model can share T's simple name even when
         // its runtime type is in a different namespace (for example Advantage.JsonElement versus
         // System.Text.Json.JsonElement), so disambiguate that explicit registration too.
-        var implicitlyDiscoveredRuntimeTypesByName = implicitlyDiscoveredTypes
-            .GroupBy(typeInfoNames.GetGenerated, StringComparer.Ordinal)
-            .ToDictionary(
-                static group => group.Key,
-                static group => new HashSet<string>(
-                    group.Select(NormalizeRuntimeTypeName),
-                    StringComparer.Ordinal),
-                StringComparer.Ordinal);
+        var firstImplicitRuntimeTypeByName = new Dictionary<string, string>(StringComparer.Ordinal);
+        var collidingImplicitRuntimeTypesByName = new Dictionary<string, HashSet<string>>(StringComparer.Ordinal);
+        foreach (var type in implicitlyDiscoveredTypes)
+        {
+            var generatedName = typeInfoNames.GetGenerated(type);
+            var runtimeType = NormalizeRuntimeTypeName(type);
+            if (!firstImplicitRuntimeTypeByName.TryGetValue(generatedName, out var firstRuntimeType))
+            {
+                firstImplicitRuntimeTypeByName.Add(generatedName, runtimeType);
+                continue;
+            }
+
+            if (string.Equals(firstRuntimeType, runtimeType, StringComparison.Ordinal))
+            {
+                continue;
+            }
+
+            if (!collidingImplicitRuntimeTypesByName.TryGetValue(generatedName, out var collidingRuntimeTypes))
+            {
+                collidingRuntimeTypes = new HashSet<string>(StringComparer.Ordinal)
+                {
+                    firstRuntimeType,
+                };
+                collidingImplicitRuntimeTypesByName.Add(generatedName, collidingRuntimeTypes);
+            }
+            collidingRuntimeTypes.Add(runtimeType);
+        }
 
         foreach (var type in types)
         {
@@ -822,10 +949,11 @@ namespace {client.Settings.Namespace}
             }
 
             var implicitName = typeInfoNames.GetGenerated(type);
-            if (!implicitlyDiscoveredRuntimeTypesByName.TryGetValue(
-                    implicitName,
-                    out var implicitlyDiscoveredRuntimeTypes) ||
-                implicitlyDiscoveredRuntimeTypes.Contains(NormalizeRuntimeTypeName(type)))
+            var runtimeType = NormalizeRuntimeTypeName(type);
+            if (!firstImplicitRuntimeTypeByName.TryGetValue(implicitName, out var firstRuntimeType) ||
+                string.Equals(firstRuntimeType, runtimeType, StringComparison.Ordinal) ||
+                collidingImplicitRuntimeTypesByName.TryGetValue(implicitName, out var collidingRuntimeTypes) &&
+                collidingRuntimeTypes.Contains(runtimeType))
             {
                 continue;
             }
@@ -878,24 +1006,33 @@ namespace {client.Settings.Namespace}
         var explicitNullableValueTypeSet = new HashSet<string>(
             explicitNullableValueTypes,
             StringComparer.Ordinal);
-        var guardedGeneratedNames = new HashSet<string>(
-            serializableTypes
-                .GroupBy(typeInfoNames.GetGenerated, StringComparer.Ordinal)
-                .Where(static group =>
-                    group.Count() > 1 &&
-                    group.Any(static type =>
-                        type.EndsWith("?", StringComparison.Ordinal) ||
-                        type.Contains("System.Collections.Generic.List<", StringComparison.Ordinal) ||
-                        type.Contains("System.Collections.Generic.IList<", StringComparison.Ordinal)))
-                .Select(static group => group.Key),
-            StringComparer.Ordinal);
+        var generatedNameCounts = new Dictionary<string, (int Count, bool HasGuardCandidate)>(StringComparer.Ordinal);
+        foreach (var type in serializableTypes)
+        {
+            var generatedName = typeInfoNames.GetGenerated(type);
+            var isGuardCandidate =
+                type.EndsWith("?", StringComparison.Ordinal) ||
+                type.Contains("System.Collections.Generic.List<", StringComparison.Ordinal) ||
+                type.Contains("System.Collections.Generic.IList<", StringComparison.Ordinal);
+            generatedNameCounts[generatedName] = generatedNameCounts.TryGetValue(generatedName, out var current)
+                ? (current.Count + 1, current.HasGuardCandidate || isGuardCandidate)
+                : (1, isGuardCandidate);
+        }
 
-        return new HashSet<string>(
-            serializableTypes.Where(type =>
-                explicitNullableValueTypeSet.Contains(type) ||
-                guardedGeneratedNames.Contains(typeInfoNames.GetGenerated(type)) ||
-                typeInfoNames.GetGenerated(type).Length > MaxGeneratedTypeInfoNameLength),
-            StringComparer.Ordinal);
+        var guardTypes = new HashSet<string>(StringComparer.Ordinal);
+        foreach (var type in serializableTypes)
+        {
+            var generatedName = typeInfoNames.GetGenerated(type);
+            var generatedNameState = generatedNameCounts[generatedName];
+            if (explicitNullableValueTypeSet.Contains(type) ||
+                generatedNameState is { Count: > 1, HasGuardCandidate: true } ||
+                generatedName.Length > MaxGeneratedTypeInfoNameLength)
+            {
+                guardTypes.Add(type);
+            }
+        }
+
+        return guardTypes;
     }
 
     private const int MaxExplicitTypeInfoPropertyNameLength = 120;
@@ -912,12 +1049,14 @@ namespace {client.Settings.Namespace}
                 .Concat(concreteListTypes)
                 .Select(typeInfoNames.GetGenerated),
             StringComparer.Ordinal);
-        var nullableNameCounts = nullableValueTypes
-            .GroupBy(typeInfoNames.GetGenerated, StringComparer.Ordinal)
-            .ToDictionary(
-                static group => group.Key,
-                static group => group.Count(),
-                StringComparer.Ordinal);
+        var nullableNameCounts = new Dictionary<string, int>(StringComparer.Ordinal);
+        foreach (var type in nullableValueTypes)
+        {
+            var generatedName = typeInfoNames.GetGenerated(type);
+            nullableNameCounts[generatedName] = nullableNameCounts.TryGetValue(generatedName, out var count)
+                ? count + 1
+                : 1;
+        }
 
         return nullableValueTypes
             .Where(type =>
@@ -992,87 +1131,132 @@ namespace {client.Settings.Namespace}
         EquatableArray<TypeData> types,
         string[] allDistinctTypes,
         string[] concreteListTypes,
-        string[] nullableValueTypes,
-        JsonTypeInfoNameCache typeInfoNames)
+        JsonTypeInfoNameCache typeInfoNames,
+        JsonSerializableTypeComponents typeComponents)
     {
-        var typeDataByNullableType = types
-            .GroupBy(static x => x.CSharpTypeWithNullability, StringComparer.Ordinal)
-            .ToDictionary(
-                static group => group.Key,
-                static group => group.First(),
-                StringComparer.Ordinal);
-        var contextCandidates = allDistinctTypes
-            .Concat(concreteListTypes)
-            .Select(type =>
-            {
-                typeDataByNullableType.TryGetValue(type, out var typeData);
-                return (
-                    Type: type,
-                    RuntimeType: NormalizeRuntimeTypeName(type),
-                    GeneratedNames: GetContextGeneratedTypeInfoPropertyNames(type, typeData, typeInfoNames));
-            })
-            .ToArray();
-        var duplicateContextNames = new HashSet<string>(
-            contextCandidates
-                .SelectMany(static x => x.GeneratedNames)
-                .GroupBy(static x => x, StringComparer.Ordinal)
-                .Where(static group => group.Count() > 1)
-                .Select(static group => group.Key),
-            StringComparer.Ordinal);
-        var registeredTypes = types
-            .Select(static x => x.CSharpTypeWithoutNullability)
-            .Distinct(StringComparer.Ordinal)
-            .ToArray();
-        var registeredConcreteListTypes = GetConcreteListTypes(registeredTypes);
-        var explicitNullableValueTypes = GetExplicitNullableValueTypes(
-            registeredTypes,
-            registeredConcreteListTypes,
-            nullableValueTypes,
-            typeInfoNames);
-        var registeredRuntimeTypesByName = registeredTypes
-            .Concat(explicitNullableValueTypes)
-            .Concat(registeredConcreteListTypes)
-            .GroupBy(typeInfoNames.GetGenerated, StringComparer.Ordinal)
-            .ToDictionary(
-                static group => group.Key,
-                static group => new HashSet<string>(
-                    group.Select(NormalizeRuntimeTypeName),
-                    StringComparer.Ordinal),
-                StringComparer.Ordinal);
-        var skippedTypes = new HashSet<string>(StringComparer.Ordinal);
-
-        foreach (var candidate in contextCandidates)
+        var typeDataByNullableType = new Dictionary<string, TypeData>(StringComparer.Ordinal);
+        foreach (var type in types)
         {
-            if (candidate.GeneratedNames.Any(duplicateContextNames.Contains))
+#if NET462 || NETSTANDARD2_0
+            if (!typeDataByNullableType.ContainsKey(type.CSharpTypeWithNullability))
             {
-                skippedTypes.Add(candidate.Type);
-                continue;
+                typeDataByNullableType.Add(type.CSharpTypeWithNullability, type);
             }
+#else
+            typeDataByNullableType.TryAdd(type.CSharpTypeWithNullability, type);
+#endif
+        }
 
-            if (candidate.GeneratedNames.Any(name =>
-                    registeredRuntimeTypesByName.TryGetValue(name, out var registeredRuntimeTypes) &&
-                    registeredRuntimeTypes.Any(type => !string.Equals(type, candidate.RuntimeType, StringComparison.Ordinal))))
-            {
-                skippedTypes.Add(candidate.Type);
-            }
+        var contextNameCounts = new Dictionary<string, int>(StringComparer.Ordinal);
+        foreach (var type in allDistinctTypes)
+        {
+            CountContextNames(type);
+        }
+        foreach (var type in concreteListTypes)
+        {
+            CountContextNames(type);
+        }
+
+        var registeredRuntimeTypesByName = new Dictionary<string, (string RuntimeType, bool HasDifferentRuntimeType)>(
+            StringComparer.Ordinal);
+        foreach (var type in typeComponents.DistinctTypes)
+        {
+            AddRegisteredRuntimeType(type);
+        }
+        foreach (var type in typeComponents.ExplicitNullableValueTypes)
+        {
+            AddRegisteredRuntimeType(type);
+        }
+        foreach (var type in typeComponents.ConcreteListTypes)
+        {
+            AddRegisteredRuntimeType(type);
+        }
+
+        var skippedTypes = new HashSet<string>(StringComparer.Ordinal);
+        foreach (var type in allDistinctTypes)
+        {
+            EvaluateCandidate(type);
+        }
+        foreach (var type in concreteListTypes)
+        {
+            EvaluateCandidate(type);
         }
 
         return skippedTypes;
-    }
 
-    private static string[] GetContextGeneratedTypeInfoPropertyNames(
-        string type,
-        TypeData? typeData,
-        JsonTypeInfoNameCache typeInfoNames)
-    {
-        if (typeData is { IsValueType: true } &&
-            type.EndsWith("?", StringComparison.Ordinal))
+        void GetContextNames(string type, out string first, out string? second)
         {
-            var nonNullableName = typeInfoNames.GetImplicit(type.Substring(0, type.Length - 1));
-            return [$"Nullable{nonNullableName}", nonNullableName];
+            typeDataByNullableType.TryGetValue(type, out var typeData);
+            if (typeData is { IsValueType: true } &&
+                type.EndsWith("?", StringComparison.Ordinal))
+            {
+                var nonNullableName = typeInfoNames.GetImplicit(type.Substring(0, type.Length - 1));
+                first = $"Nullable{nonNullableName}";
+                second = nonNullableName;
+                return;
+            }
+
+            first = typeInfoNames.GetImplicit(type);
+            second = null;
         }
 
-        return [typeInfoNames.GetImplicit(type)];
+        void CountContextNames(string type)
+        {
+            GetContextNames(type, out var first, out var second);
+            IncrementNameCount(first);
+            if (second is not null)
+            {
+                IncrementNameCount(second);
+            }
+        }
+
+        void IncrementNameCount(string name)
+        {
+            contextNameCounts[name] = contextNameCounts.TryGetValue(name, out var count)
+                ? count + 1
+                : 1;
+        }
+
+        void AddRegisteredRuntimeType(string type)
+        {
+            var name = typeInfoNames.GetGenerated(type);
+            var runtimeType = NormalizeRuntimeTypeName(type);
+            if (!registeredRuntimeTypesByName.TryGetValue(name, out var registered))
+            {
+                registeredRuntimeTypesByName.Add(name, (runtimeType, false));
+                return;
+            }
+
+            if (!string.Equals(registered.RuntimeType, runtimeType, StringComparison.Ordinal))
+            {
+                registeredRuntimeTypesByName[name] = (registered.RuntimeType, true);
+            }
+        }
+
+        void EvaluateCandidate(string type)
+        {
+            var runtimeType = NormalizeRuntimeTypeName(type);
+            GetContextNames(type, out var first, out var second);
+            if (IsDuplicateContextName(first) ||
+                second is not null && IsDuplicateContextName(second) ||
+                HasDifferentRegisteredRuntimeType(first, runtimeType) ||
+                second is not null && HasDifferentRegisteredRuntimeType(second, runtimeType))
+            {
+                skippedTypes.Add(type);
+            }
+        }
+
+        bool IsDuplicateContextName(string name)
+        {
+            return contextNameCounts[name] > 1;
+        }
+
+        bool HasDifferentRegisteredRuntimeType(string name, string runtimeType)
+        {
+            return registeredRuntimeTypesByName.TryGetValue(name, out var registered) &&
+                   (registered.HasDifferentRuntimeType ||
+                    !string.Equals(registered.RuntimeType, runtimeType, StringComparison.Ordinal));
+        }
     }
 
     private static string GetGeneratedTypeInfoPropertyName(string type)
@@ -1088,6 +1272,7 @@ namespace {client.Settings.Namespace}
     internal sealed class JsonSerializerContextGenerationState
     {
         private string[]? _nullableValueTypes;
+        private JsonSerializableTypeComponents? _jsonSerializableTypeComponents;
 
         public JsonTypeInfoNameCache TypeInfoNames { get; } = new();
 
@@ -1097,6 +1282,50 @@ namespace {client.Settings.Namespace}
                 ? Array.Empty<string>()
                 : Sources.GetNullableValueTypes(types);
         }
+
+        public JsonSerializableTypeComponents GetJsonSerializableTypeComponents(
+            EquatableArray<TypeData> types)
+        {
+            if (_jsonSerializableTypeComponents is { } components)
+            {
+                return components;
+            }
+
+            var distinctTypes = types
+                .Select(static type => type.CSharpTypeWithoutNullability)
+                .Distinct(StringComparer.Ordinal)
+                .ToArray();
+            var concreteListTypes = GetConcreteListTypes(distinctTypes);
+            components = new JsonSerializableTypeComponents(
+                distinctTypes,
+                concreteListTypes,
+                GetExplicitNullableValueTypes(
+                    distinctTypes,
+                    concreteListTypes,
+                    GetNullableValueTypes(types),
+                    TypeInfoNames));
+            _jsonSerializableTypeComponents = components;
+            return components;
+        }
+    }
+
+    internal readonly struct JsonSerializableTypeComponents
+    {
+        public JsonSerializableTypeComponents(
+            string[] distinctTypes,
+            string[] concreteListTypes,
+            string[] explicitNullableValueTypes)
+        {
+            DistinctTypes = distinctTypes;
+            ConcreteListTypes = concreteListTypes;
+            ExplicitNullableValueTypes = explicitNullableValueTypes;
+        }
+
+        public string[] DistinctTypes { get; }
+
+        public string[] ConcreteListTypes { get; }
+
+        public string[] ExplicitNullableValueTypes { get; }
     }
 
     internal sealed class JsonTypeInfoNameCache
@@ -1106,14 +1335,17 @@ namespace {client.Settings.Namespace}
 
         public string GetGenerated(string type)
         {
+            if (!type.EndsWith("?", StringComparison.Ordinal))
+            {
+                return GetImplicit(type);
+            }
+
             if (_generatedNames.TryGetValue(type, out var name))
             {
                 return name;
             }
 
-            name = type.EndsWith("?", StringComparison.Ordinal)
-                ? $"Nullable{GetImplicit(type.Substring(0, type.Length - 1))}"
-                : GetImplicit(type);
+            name = $"Nullable{GetImplicit(type.Substring(0, type.Length - 1))}";
             _generatedNames.Add(type, name);
 
             return name;
@@ -1132,37 +1364,9 @@ namespace {client.Settings.Namespace}
             return name;
         }
 
-        private string CreateImplicit(string type)
+        private static string CreateImplicit(string type)
         {
-            if (type.StartsWith("global::", StringComparison.Ordinal))
-            {
-                type = type.Substring("global::".Length);
-            }
-
-            if (CSharpAliasTypeInfoPropertyNames.TryGetValue(type, out var aliasName))
-            {
-                return aliasName;
-            }
-
-            if (type.EndsWith("[]", StringComparison.Ordinal))
-            {
-                return $"{GetImplicit(type.Substring(0, type.Length - 2))}Array";
-            }
-
-            if (type.EndsWith("?", StringComparison.Ordinal))
-            {
-                return GetImplicit(type.Substring(0, type.Length - 1));
-            }
-
-            var genericStart = type.IndexOf('<');
-            if (genericStart >= 0 && type.EndsWith(">", StringComparison.Ordinal))
-            {
-                var typeName = GetSimpleTypeName(type.Substring(0, genericStart));
-                var genericArguments = type.Substring(genericStart + 1, type.Length - genericStart - 2);
-                return typeName + string.Concat(SplitGenericArguments(genericArguments).Select(GetImplicit));
-            }
-
-            return GetSimpleTypeName(type);
+            return CreateImplicitTypeInfoPropertyName(type);
         }
     }
 
@@ -1258,60 +1462,156 @@ namespace {client.Settings.Namespace}
 
     private static string GetImplicitTypeInfoPropertyName(string type)
     {
-        if (type.StartsWith("global::", StringComparison.Ordinal))
-        {
-            type = type.Substring("global::".Length);
-        }
-
-        if (CSharpAliasTypeInfoPropertyNames.TryGetValue(type, out var aliasName))
-        {
-            return aliasName;
-        }
-
-        if (type.EndsWith("[]", StringComparison.Ordinal))
-        {
-            return $"{GetImplicitTypeInfoPropertyName(type.Substring(0, type.Length - 2))}Array";
-        }
-
-        if (type.EndsWith("?", StringComparison.Ordinal))
-        {
-            return GetImplicitTypeInfoPropertyName(type.Substring(0, type.Length - 1));
-        }
-
-        var genericStart = type.IndexOf('<');
-        if (genericStart >= 0 && type.EndsWith(">", StringComparison.Ordinal))
-        {
-            var typeName = GetSimpleTypeName(type.Substring(0, genericStart));
-            var genericArguments = type.Substring(genericStart + 1, type.Length - genericStart - 2);
-            return typeName + string.Concat(SplitGenericArguments(genericArguments).Select(GetImplicitTypeInfoPropertyName));
-        }
-
-        return GetSimpleTypeName(type);
+        return CreateImplicitTypeInfoPropertyName(type);
     }
 
-    private static IEnumerable<string> SplitGenericArguments(string genericArguments)
+    private static string CreateImplicitTypeInfoPropertyName(string type)
     {
-        var start = 0;
-        var depth = 0;
+        using var builder = new PooledStringBuilder(type.Length + 16);
+        AppendImplicitTypeInfoPropertyName(builder, type, 0, type.Length);
+        return builder.ToString();
+    }
 
-        for (var index = 0; index < genericArguments.Length; index++)
+    private static void AppendImplicitTypeInfoPropertyName(
+        PooledStringBuilder builder,
+        string type,
+        int start,
+        int length)
+    {
+        while (length > 0 && char.IsWhiteSpace(type[start]))
         {
-            switch (genericArguments[index])
+            start++;
+            length--;
+        }
+        while (length > 0 && char.IsWhiteSpace(type[start + length - 1]))
+        {
+            length--;
+        }
+
+        const string globalPrefix = "global::";
+        if (length >= globalPrefix.Length &&
+            type.AsSpan(start, globalPrefix.Length).SequenceEqual(globalPrefix.AsSpan()))
+        {
+            start += globalPrefix.Length;
+            length -= globalPrefix.Length;
+        }
+
+        if (TryGetCSharpAliasTypeInfoPropertyName(type.AsSpan(start, length), out var aliasName))
+        {
+            builder.Append(aliasName);
+            return;
+        }
+
+        if (length >= 2 &&
+            type[start + length - 2] == '[' &&
+            type[start + length - 1] == ']')
+        {
+            AppendImplicitTypeInfoPropertyName(builder, type, start, length - 2);
+            builder.Append("Array");
+            return;
+        }
+
+        if (length > 0 && type[start + length - 1] == '?')
+        {
+            AppendImplicitTypeInfoPropertyName(builder, type, start, length - 1);
+            return;
+        }
+
+        var end = start + length;
+        var genericStart = type.IndexOf('<', start, length);
+        if (genericStart >= 0 && type[end - 1] == '>')
+        {
+            AppendSimpleTypeName(builder, type, start, genericStart - start);
+            var argumentStart = genericStart + 1;
+            var argumentEnd = end - 1;
+            var depth = 0;
+            for (var index = argumentStart; index < argumentEnd; index++)
             {
-                case '<':
-                    depth++;
-                    break;
-                case '>':
-                    depth--;
-                    break;
-                case ',' when depth == 0:
-                    yield return genericArguments.Substring(start, index - start).Trim();
-                    start = index + 1;
-                    break;
+                switch (type[index])
+                {
+                    case '<':
+                        depth++;
+                        break;
+                    case '>':
+                        depth--;
+                        break;
+                    case ',' when depth == 0:
+                        AppendImplicitTypeInfoPropertyName(
+                            builder,
+                            type,
+                            argumentStart,
+                            index - argumentStart);
+                        argumentStart = index + 1;
+                        break;
+                }
+            }
+
+            AppendImplicitTypeInfoPropertyName(
+                builder,
+                type,
+                argumentStart,
+                argumentEnd - argumentStart);
+            return;
+        }
+
+        AppendSimpleTypeName(builder, type, start, length);
+    }
+
+    private static void AppendSimpleTypeName(
+        PooledStringBuilder builder,
+        string type,
+        int start,
+        int length)
+    {
+        var end = start + length;
+        var simpleStart = start;
+        for (var index = end - 1; index >= start; index--)
+        {
+            if (type[index] is '.' or ':')
+            {
+                simpleStart = index + 1;
+                break;
             }
         }
 
-        yield return genericArguments.Substring(start).Trim();
+        var simpleLength = end - simpleStart;
+        var arity = type.IndexOf('`', simpleStart, simpleLength);
+        if (arity >= 0)
+        {
+            simpleLength = arity - simpleStart;
+        }
+
+        builder.Append(type, simpleStart, simpleLength);
+    }
+
+    private static bool TryGetCSharpAliasTypeInfoPropertyName(
+        ReadOnlySpan<char> type,
+        out string name)
+    {
+        name = type.Length switch
+        {
+            3 when type.SequenceEqual("int".AsSpan()) => "Int32",
+            4 when type.SequenceEqual("bool".AsSpan()) => "Boolean",
+            4 when type.SequenceEqual("byte".AsSpan()) => "Byte",
+            4 when type.SequenceEqual("char".AsSpan()) => "Char",
+            4 when type.SequenceEqual("long".AsSpan()) => "Int64",
+            4 when type.SequenceEqual("nint".AsSpan()) => "IntPtr",
+            4 when type.SequenceEqual("uint".AsSpan()) => "UInt32",
+            4 when type.SequenceEqual("void".AsSpan()) => "Void",
+            5 when type.SequenceEqual("float".AsSpan()) => "Single",
+            5 when type.SequenceEqual("nuint".AsSpan()) => "UIntPtr",
+            5 when type.SequenceEqual("sbyte".AsSpan()) => "SByte",
+            5 when type.SequenceEqual("short".AsSpan()) => "Int16",
+            5 when type.SequenceEqual("ulong".AsSpan()) => "UInt64",
+            6 when type.SequenceEqual("double".AsSpan()) => "Double",
+            6 when type.SequenceEqual("object".AsSpan()) => "Object",
+            6 when type.SequenceEqual("string".AsSpan()) => "String",
+            6 when type.SequenceEqual("ushort".AsSpan()) => "UInt16",
+            7 when type.SequenceEqual("decimal".AsSpan()) => "Decimal",
+            _ => string.Empty,
+        };
+
+        return name.Length > 0;
     }
 
     private static string GetSimpleTypeName(string type)

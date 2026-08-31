@@ -117,6 +117,11 @@ public static class OpenApiSchemaExtensions
     {
         schema = schema ?? throw new ArgumentNullException(nameof(schema));
 
+        if (schema.OneOf is not { Count: > 0 })
+        {
+            return false;
+        }
+
         // Don't treat oneOf: [X, {type: null}] as a true OneOf - the branches
         // are disjoint and the schema is simply nullable X.
         if (schema.IsNullableOneOf())
@@ -124,9 +129,8 @@ public static class OpenApiSchemaExtensions
             return false;
         }
 
-        return
-            schema.OneOf is { Count: > 0 } &&
-            ((schema.Properties?.Count ?? 0) == 0 || HasOnlySharedBaseDiscriminatorWrapperProperty(schema));
+        return (schema.Properties?.Count ?? 0) == 0 ||
+               HasOnlySharedBaseDiscriminatorWrapperProperty(schema);
     }
 
     public static bool IsAnyOf(
@@ -134,15 +138,19 @@ public static class OpenApiSchemaExtensions
     {
         schema = schema ?? throw new ArgumentNullException(nameof(schema));
 
+        if (schema.AnyOf is not { Count: > 0 } ||
+            (schema.Properties?.Count ?? 0) != 0)
+        {
+            return false;
+        }
+
         // Don't treat anyOf: [X, {type: null}] as a true AnyOf - it's just nullable X
         if (schema.IsNullableAnyOfLike())
         {
             return false;
         }
 
-        return
-            schema.AnyOf is { Count: > 0 } &&
-            (schema.Properties?.Count ?? 0) == 0; // AnyOf with properties is not supported
+        return true;
     }
 
     public static bool IsAllOf(
@@ -233,6 +241,12 @@ public static class OpenApiSchemaExtensions
     {
         schema = schema ?? throw new ArgumentNullException(nameof(schema));
 
+        if (schema.Enum is not { Count: > 0 } ||
+            !(schema.Type == null || (schema.Type & JsonSchemaType.String) == JsonSchemaType.String))
+        {
+            return false;
+        }
+
         // Don't treat schemas with nullable anyOf/oneOf patterns as enums
         // Even if they have enum values, they're being used as nullable strings
         if (schema.IsNullableAnyOfLike())
@@ -240,9 +254,7 @@ public static class OpenApiSchemaExtensions
             return false;
         }
 
-        // Check if String flag is set (handles nullable types like ["string", "null"])
-        return schema.Enum is { Count: > 0 } &&
-               (schema.Type == null || (schema.Type & JsonSchemaType.String) == JsonSchemaType.String);
+        return true;
     }
 
     public static bool IsOpenEnum(

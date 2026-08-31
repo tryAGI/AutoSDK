@@ -9,10 +9,10 @@ internal sealed class InterpolatedStringHandlerAttribute : Attribute
 [AttributeUsage(AttributeTargets.Parameter)]
 internal sealed class InterpolatedStringHandlerArgumentAttribute : Attribute
 {
-    public InterpolatedStringHandlerArgumentAttribute(string argument)
+    public InterpolatedStringHandlerArgumentAttribute(params string[] arguments)
     {
-        Argument = argument;
-        Arguments = [argument];
+        Arguments = arguments;
+        Argument = arguments.Length > 0 ? arguments[0] : string.Empty;
     }
 
     public string Argument { get; }

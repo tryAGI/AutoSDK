@@ -628,7 +628,7 @@ namespace {endPoint.Settings.Namespace}
 {pagerCall}
         }}";
 
-        return $@"
+        return NormalizedString.Create($@"
         {$"Wraps {endPoint.MethodName} as an IAsyncEnumerable<{itemType}> that auto-pages over the response.".ClearForXml().ToXmlDocumentationSummary(level: 8)}
 {fixedParameters.Select(x => $@"
         {x.Summary.ToXmlDocumentationForParam(x.ParameterName, level: 8)}").Inject()}{(hasRequestBody ? @"
@@ -639,7 +639,7 @@ namespace {endPoint.Settings.Namespace}
 {fixedRequiredDecls}{requestBodyDecl}{fixedOptionalDecls}
             {initialParamType} {pageParameter.ParameterName} = null,
             global::System.Threading.CancellationToken cancellationToken = default){body}
-".RemoveBlankLinesWhereOnlyWhitespaces();
+");
     }
 
     private static string GenerateLocationWaitCompanion(
@@ -710,7 +710,7 @@ namespace {endPoint.Settings.Namespace}
                 cancellationToken: cancellationToken).ConfigureAwait(false);
         }}";
 
-        return $@"
+        return NormalizedString.Create($@"
         {$"Calls {endPoint.MethodName}, extracts the resource id from the response Location header, and polls the sibling {companion.SiblingMethodName} until it reaches a terminal status.".ToXmlDocumentationSummary(level: 8)}
 {parameterDocumentation}{(hasRequestBody ? @"
         /// <param name=""request""></param>" : TrimmedLine)}
@@ -723,7 +723,7 @@ namespace {endPoint.Settings.Namespace}
             global::{endPoint.Settings.Namespace}.AutoSDKPollingOptions? pollingOptions = default,
             global::{endPoint.Settings.Namespace}.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default){body}
-".RemoveBlankLinesWhereOnlyWhitespaces();
+");
     }
 
     private static bool SupportsPollingOperation(
@@ -821,7 +821,7 @@ namespace {endPoint.Settings.Namespace}
                 response: __lastResponse);
         }}";
 
-        return $@"
+        return NormalizedString.Create($@"
         {"Polls the endpoint until the configured polling criteria are satisfied.".ToXmlDocumentationSummary(level: 8)}
 {endPoint.Parameters.Where(x => x.Location != null).Select(x => $@"
         {x.Summary.ToXmlDocumentationForParam(x.ParameterName, level: 8)}").Inject()}
@@ -841,7 +841,7 @@ namespace {endPoint.Settings.Namespace}
             global::{endPoint.Settings.Namespace}.AutoSDKPollingOptions? pollingOptions = default,
             global::{endPoint.Settings.Namespace}.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default){body}
-".RemoveBlankLinesWhereOnlyWhitespaces();
+");
     }
 
     private static string GeneratePollingCriteriaExpression(
@@ -1430,8 +1430,17 @@ namespace {endPoint.Settings.Namespace}
                 else
                 {{
                     {afterErrorStatusHook}
-                }}
-{GenerateResponseCore(endPoint, wrapSuccessResponse: returnResponseWrapper, returnStreamResponse: returnStreamResponse, cancellationTokenVariableName: "__effectiveCancellationToken", readResponseAsStringExpression: "__effectiveReadResponseAsString", indentationLevel: 4)}
+                }}");
+        builder.Append('\n');
+        AppendResponseCore(
+            builder,
+            endPoint,
+            wrapSuccessResponse: returnResponseWrapper,
+            returnStreamResponse: returnStreamResponse,
+            cancellationTokenVariableName: "__effectiveCancellationToken",
+            readResponseAsStringExpression: "__effectiveReadResponseAsString",
+            indentationLevel: 4);
+        builder.Append($@"
 {(methodReturnsResponseStream ? @"
                 }
                 catch
@@ -1719,12 +1728,12 @@ namespace {endPoint.Settings.Namespace}
             : $@"            {contentName}.Headers.ContentType = new global::System.Net.Http.Headers.MediaTypeHeaderValue({contentType!.ToCSharpStringLiteral()});";
         var partName = $"\"{parameter.Id}\"".ToCSharpStringLiteral();
 
-        return $@"
+        return NormalizedString.Create($@"
             var {contentName} = new global::System.Net.Http.StringContent({serializedValue});
 {contentTypeAssignment}
             __httpRequestContent.Add(
                 content: {contentName},
-                name: {partName});".RemoveBlankLinesWhereOnlyWhitespaces();
+                name: {partName});");
     }
 
     private static string GenerateMultipartJsonSerializeExpression(
@@ -2428,23 +2437,23 @@ namespace {endPoint.Settings.Namespace}
     {
         if (endPoint.Settings.HasJsonSerializerContext())
         {
-            return $@" 
+            return NormalizedString.Create($@"{TrimmedLine}
             var __httpRequestContent = global::{endPoint.Settings.Namespace}.AutoSdkPolyfills.CreateJsonContent(
                 inputValue: request,
                 inputType: request.GetType(),
                 mediaType: ""{endPoint.RequestMediaType}"",
                 jsonSerializerContext: JsonSerializerContext);
             __httpRequest.Content = __httpRequestContent;
- ".RemoveBlankLinesWhereOnlyWhitespaces();
+ ");
         }
 
-        return $@" 
+        return NormalizedString.Create($@"{TrimmedLine}
             var __httpRequestContent = global::{endPoint.Settings.Namespace}.AutoSdkPolyfills.CreateJsonContent(
                 inputValue: request,
                 mediaType: ""{endPoint.RequestMediaType}"",
                 jsonSerializerOptions: JsonSerializerOptions);
             __httpRequest.Content = __httpRequestContent;
- ".RemoveBlankLinesWhereOnlyWhitespaces();
+ ");
     }
 
     private static string GenerateSystemNetHttpJsonReadCall(
@@ -2544,16 +2553,20 @@ namespace {endPoint.Settings.Namespace}
         string cancellationTokenVariableName = "cancellationToken",
         string readResponseAsStringExpression = "ReadResponseAsString")
     {
-        return GenerateResponseCore(
+        using var builder = new PooledStringBuilder(8192);
+        AppendResponseCore(
+            builder,
             endPoint,
             wrapSuccessResponse,
             returnStreamResponse,
             cancellationTokenVariableName,
             readResponseAsStringExpression,
             indentationLevel: 0);
+        return builder.ToString();
     }
 
-    private static string GenerateResponseCore(
+    private static void AppendResponseCore(
+        PooledStringBuilder builder,
         EndPoint endPoint,
         bool wrapSuccessResponse,
         bool returnStreamResponse,
@@ -2565,7 +2578,7 @@ namespace {endPoint.Settings.Namespace}
 
         if (endPoint.StreamFormat == StreamFormat.ServerSentEvents)
         {
-            return IndentedString.Create(indentationLevel, $@"
+            IndentedString.Append(builder, indentationLevel, $@"
             try
             {{
                 __response.EnsureSuccessStatusCode();
@@ -2627,6 +2640,7 @@ namespace {endPoint.Settings.Namespace}
                 yield return __streamedResponse;
             }}
  ");
+            return;
         }
 
         if (endPoint.StreamFormat == StreamFormat.Ndjson)
@@ -2722,7 +2736,7 @@ namespace {endPoint.Settings.Namespace}
                 yield return __streamedResponse;
             }}";
 
-            return IndentedString.Create(indentationLevel, $@"
+            IndentedString.Append(builder, indentationLevel, $@"
             try
             {{
                 __response.EnsureSuccessStatusCode();
@@ -2760,6 +2774,7 @@ namespace {endPoint.Settings.Namespace}
             ).ConfigureAwait(false);
 {streamReadLoop}
  ");
+            return;
         }
 
         if (endPoint.StreamFormat == StreamFormat.AwsEventStream)
@@ -2786,7 +2801,7 @@ namespace {endPoint.Settings.Namespace}
                 yield return __streamedResponse;"
                 : @"                continue;";
 
-            return IndentedString.Create(indentationLevel, $@"
+            IndentedString.Append(builder, indentationLevel, $@"
             try
             {{
                 __response.EnsureSuccessStatusCode();
@@ -2839,6 +2854,7 @@ namespace {endPoint.Settings.Namespace}
 {deserializeBlock}
             }}
  ");
+            return;
         }
 
         // If a response range is defined using an explicit code, the explicit code definition takes precedence over the range definition for that code
@@ -2906,7 +2922,7 @@ namespace {endPoint.Settings.Namespace}
 
         if (endPoint.RawStream || returnStreamResponse)
         {
-            return IndentedString.Create(indentationLevel, @$"{errors}
+            IndentedString.Append(builder, indentationLevel, @$"{errors}
 
             try
             {{
@@ -2952,9 +2968,10 @@ namespace {endPoint.Settings.Namespace}
                         h => h.Value));
             }}
  ");
+            return;
         }
 
-        return IndentedString.Create(indentationLevel, @$"{errors}
+        IndentedString.Append(builder, indentationLevel, @$"{errors}
 
             if ({readResponseAsStringExpression})
             {{
@@ -3298,7 +3315,7 @@ namespace {endPoint.Settings.Namespace}
 
         if (endPoint.RequestType.IsArray)
         {
-            return $@"
+            return NormalizedString.Create($@"
             var __httpRequestContentBuilder = new global::System.Text.StringBuilder();
             {(isJsonSequence ? string.Empty : "var __httpRequestContentFirst = true;")}
             foreach (var __requestItem in request)
@@ -3312,7 +3329,7 @@ namespace {endPoint.Settings.Namespace}
                 encoding: global::System.Text.Encoding.UTF8,
                 mediaType: ""{endPoint.RequestMediaType}"");
             __httpRequest.Content = __httpRequestContent;
- ".RemoveBlankLinesWhereOnlyWhitespaces();
+ ");
         }
 
         var singleItemBodyExpression = isJsonSequence
@@ -3325,14 +3342,14 @@ namespace {endPoint.Settings.Namespace}
                 valueExpression: "request",
                 settings: endPoint.Settings);
 
-        return $@"
+        return NormalizedString.Create($@"
             var __httpRequestContentBody = {singleItemBodyExpression};
             var __httpRequestContent = new global::System.Net.Http.StringContent(
                 content: __httpRequestContentBody,
                 encoding: global::System.Text.Encoding.UTF8,
                 mediaType: ""{endPoint.RequestMediaType}"");
             __httpRequest.Content = __httpRequestContent;
- ".RemoveBlankLinesWhereOnlyWhitespaces();
+ ");
     }
 
     public static string GenerateExtensionMethod(
@@ -3404,7 +3421,7 @@ namespace {endPoint.Settings.Namespace}
 
         var parameters = GetExtensionMethodParameters(endPoint).ToList();
 
-        return $@" 
+        return NormalizedString.Create($@"{TrimmedLine}
         {endPoint.Summary.ToXmlDocumentationSummary(level: 8)}
 {parameters.Select(x => $@"
         {x.Summary.ToXmlDocumentationForParam(x.ParameterName, level: 8)}").Inject()}
@@ -3423,7 +3440,7 @@ namespace {endPoint.Settings.Namespace}
 {x.DisableDeprecationWarningIfRequired}".TrimEnd()).Inject()}
             global::{endPoint.Settings.Namespace}.AutoSDKRequestOptions? requestOptions = default,
             {cancellationTokenAttribute}global::System.Threading.CancellationToken cancellationToken = default){body}
- ".RemoveBlankLinesWhereOnlyWhitespaces();
+ ");
     }
 
     private static string GenerateEndPointAttributes(EndPoint endPoint)

@@ -1,6 +1,5 @@
 using AutoSDK.Extensions;
 using AutoSDK.Models;
-using System.Text;
 namespace AutoSDK.Generation;
 
 public static partial class Sources
@@ -11,7 +10,7 @@ public static partial class Sources
     {
         if (modelData.IsOpenEnum)
         {
-            return @$"
+            return NormalizedString.Create($@"
     {modelData.Summary.ToXmlDocumentationSummary(level: 4)}
     public readonly partial struct {modelData.ClassName} : global::System.IEquatable<{modelData.ClassName}>
     {{
@@ -76,7 +75,7 @@ public static partial class Sources
 
         {string.Empty.ToXmlDocumentationSummary(level: 8)}
         public static bool operator !=({modelData.ClassName} left, {modelData.ClassName} right) => !left.Equals(right);
-    }}".RemoveBlankLinesWhereOnlyWhitespaces();
+    }}");
         }
 
         // Only Newtonsoft.Json supports EnumMemberAttribute
@@ -101,7 +100,7 @@ public static partial class Sources
     {
         if (modelData.IsOpenEnum)
         {
-            return @$"
+            return NormalizedString.Create($@"
     {"Enum extensions to do fast conversions without the reflection.".ToXmlDocumentationSummary(level: 4)}
     public static class {modelData.ClassName}Extensions
     {{
@@ -117,7 +116,7 @@ public static partial class Sources
             return {modelData.ClassName}.FromValue(value);
         }}
     }}
- ".RemoveBlankLinesWhereOnlyWhitespaces();
+ ");
         }
 
         return GenerateClosedEnumExtensions(modelData);
@@ -127,9 +126,18 @@ public static partial class Sources
         ModelData modelData,
         bool includeEnumMemberAttributes)
     {
-        var builder = new StringBuilder(256 + (modelData.EnumValues.Length * 160));
+        using var builder = new PooledStringBuilder(256 + (modelData.EnumValues.Length * 160));
+        AppendClosedEnumerationModel(builder, modelData, includeEnumMemberAttributes);
+        return builder.ToString();
+    }
+
+    private static void AppendClosedEnumerationModel(
+        PooledStringBuilder builder,
+        ModelData modelData,
+        bool includeEnumMemberAttributes)
+    {
         builder.Append("    ");
-        builder.Append(modelData.Summary.ToXmlDocumentationSummary(level: 4));
+        AppendXmlDocumentationSummary(builder, modelData.Summary, level: 4);
         builder.Append('\n');
         if (includeEnumMemberAttributes)
         {
@@ -141,7 +149,7 @@ public static partial class Sources
         foreach (var property in modelData.EnumValues)
         {
             builder.Append("        ");
-            builder.Append(property.Summary.ToXmlDocumentationSummary(level: 8));
+            AppendXmlDocumentationSummary(builder, property.Summary, level: 8);
             builder.Append('\n');
             if (includeEnumMemberAttributes)
             {
@@ -154,10 +162,18 @@ public static partial class Sources
             builder.Append(",\n");
         }
         builder.Append("    }");
-        return builder.ToString();
     }
 
     private static string GenerateClosedEnumExtensions(ModelData modelData)
+    {
+        using var builder = new PooledStringBuilder(768 + (modelData.EnumValues.Length * 220));
+        AppendClosedEnumExtensions(builder, modelData);
+        return builder.ToString();
+    }
+
+    private static void AppendClosedEnumExtensions(
+        PooledStringBuilder builder,
+        ModelData modelData)
     {
         var valueLiterals = new string[modelData.EnumValues.Length];
         for (var index = 0; index < modelData.EnumValues.Length; index++)
@@ -165,13 +181,15 @@ public static partial class Sources
             valueLiterals[index] = modelData.EnumValues[index].Id.ToCSharpStringLiteral();
         }
 
-        var builder = new StringBuilder(768 + (modelData.EnumValues.Length * 220));
         builder.Append("    ");
-        builder.Append("Enum extensions to do fast conversions without the reflection.".ToXmlDocumentationSummary(level: 4));
+        AppendXmlDocumentationSummary(
+            builder,
+            "Enum extensions to do fast conversions without the reflection.",
+            level: 4);
         builder.Append("\n    public static class ");
         builder.Append(modelData.ClassName);
         builder.Append("Extensions\n    {\n        ");
-        builder.Append("Converts an enum to a string.".ToXmlDocumentationSummary(level: 8));
+        AppendXmlDocumentationSummary(builder, "Converts an enum to a string.", level: 8);
         builder.Append("\n        public static string ToValueString(this ");
         builder.Append(modelData.ClassName);
         builder.Append(" value)\n        {\n            return value switch\n            {\n");
@@ -187,7 +205,7 @@ public static partial class Sources
             builder.Append(",\n");
         }
         builder.Append("                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),\n            };\n        }\n        ");
-        builder.Append("Converts an string to a enum.".ToXmlDocumentationSummary(level: 8));
+        AppendXmlDocumentationSummary(builder, "Converts an string to a enum.", level: 8);
         builder.Append("\n        public static ");
         builder.Append(modelData.ClassName);
         builder.Append("? ToEnum(string value)\n        {\n            return value switch\n            {\n");
@@ -203,6 +221,5 @@ public static partial class Sources
             builder.Append(",\n");
         }
         builder.Append("                _ => null,\n            };\n        }\n    }");
-        return builder.ToString();
     }
 }

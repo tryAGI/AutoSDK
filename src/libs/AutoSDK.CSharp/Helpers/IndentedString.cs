@@ -11,6 +11,121 @@ internal static class IndentedString
     {
         return handler.GetFormattedText();
     }
+
+    public static void Append(
+        PooledStringBuilder builder,
+        int indentationLevel,
+        [InterpolatedStringHandlerArgument(nameof(builder), nameof(indentationLevel))]
+        ref IndentedStringAppendHandler handler)
+    {
+    }
+}
+
+[InterpolatedStringHandler]
+internal ref struct IndentedStringAppendHandler
+{
+    private readonly PooledStringBuilder builder;
+    private readonly int indentationLength;
+    private bool atLineStart;
+
+    public IndentedStringAppendHandler(
+        int literalLength,
+        int formattedCount,
+        PooledStringBuilder builder,
+        int indentationLevel)
+    {
+#if NET8_0_OR_GREATER
+        ArgumentOutOfRangeException.ThrowIfNegative(indentationLevel);
+#else
+        if (indentationLevel < 0)
+        {
+            throw new ArgumentOutOfRangeException(nameof(indentationLevel));
+        }
+#endif
+
+        this.builder = builder;
+        indentationLength = checked(indentationLevel * 4);
+        atLineStart = true;
+    }
+
+    public void AppendLiteral(string value)
+    {
+        Append(value);
+    }
+
+    public void AppendFormatted(string? value)
+    {
+        Append(value);
+    }
+
+    public void AppendFormatted<T>(T value)
+    {
+        Append(value?.ToString());
+    }
+
+    public void AppendFormatted<T>(T value, string? format)
+    {
+        Append(value is IFormattable formattable
+            ? formattable.ToString(format, CultureInfo.CurrentCulture)
+            : value?.ToString());
+    }
+
+    private void Append(string? value)
+    {
+        if (value is not { Length: > 0 })
+        {
+            return;
+        }
+
+        var segmentStart = 0;
+        for (var index = 0; index < value.Length; index++)
+        {
+            if (value[index] != '\n')
+            {
+                continue;
+            }
+
+            AppendSegment(value, segmentStart, index - segmentStart, appendLineFeed: true);
+            segmentStart = index + 1;
+        }
+
+        if (segmentStart < value.Length)
+        {
+            AppendSegment(value, segmentStart, value.Length - segmentStart, appendLineFeed: false);
+        }
+    }
+
+    private void AppendSegment(string value, int startIndex, int count, bool appendLineFeed)
+    {
+        if (builder is NormalizedPooledStringBuilder normalizedBuilder)
+        {
+            normalizedBuilder.AppendIndentedSegment(
+                value,
+                startIndex,
+                count,
+                atLineStart ? indentationLength : 0,
+                appendLineFeed);
+            atLineStart = appendLineFeed;
+            return;
+        }
+
+        if (count > 0)
+        {
+            if (atLineStart && indentationLength > 0)
+            {
+                builder.Append(' ', indentationLength);
+            }
+
+            builder.Append(value, startIndex, count);
+            atLineStart = false;
+        }
+
+        if (appendLineFeed)
+        {
+            builder.Append('\n');
+            atLineStart = true;
+        }
+    }
 }
 
 [InterpolatedStringHandler]

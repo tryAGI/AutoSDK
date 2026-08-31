@@ -59,11 +59,18 @@ public static class CSharpNamespacedTypeNameResolver
     {
         context = context ?? throw new ArgumentNullException(nameof(context));
 
+        if (context.CachedGeneratedNamespace != null)
+        {
+            return context.CachedGeneratedNamespace;
+        }
+
         var componentId = FindOwningComponentId(context);
-        return componentId != null &&
-               TryResolve(componentId, context.Settings.ToSchemaNamingSettings(), context.Settings.Namespace, out var resolved)
+        var generatedNamespace = componentId != null &&
+                                 TryResolve(componentId, context.Settings.ToSchemaNamingSettings(), context.Settings.Namespace, out var resolved)
             ? resolved!.GeneratedNamespace
             : context.Settings.Namespace;
+        context.CachedGeneratedNamespace = generatedNamespace;
+        return generatedNamespace;
     }
 
     public static bool TryResolve(

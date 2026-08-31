@@ -33,13 +33,13 @@ public static partial class Sources
             .ToArray();
         var typeInfoNames = generationState.TypeInfoNames;
         var concreteListTypes = GetConcreteListTypes(allDistinctTypes);
-        var nullableValueTypes = generationState.GetNullableValueTypes(types);
+        var typeComponents = generationState.GetJsonSerializableTypeComponents(types);
         var skippedContextTypes = GetCollidingJsonSerializerContextTypes(
             types,
             allDistinctTypes,
             concreteListTypes,
-            nullableValueTypes,
-            typeInfoNames);
+            typeInfoNames,
+            typeComponents);
         var distinctTypes = allDistinctTypes
             .Where(ShouldIncludeInJsonSerializerContextTypes)
             .Where(x => !skippedContextTypes.Contains(x))
@@ -50,7 +50,18 @@ public static partial class Sources
             .Where(x => !skippedContextTypes.Contains(x))
             .ToArray();
 
-        return $@"
+        var initialCapacity = 2048;
+        foreach (var type in distinctTypes)
+        {
+            initialCapacity = checked(initialCapacity + type.Length + 128);
+        }
+        foreach (var type in concreteListTypes)
+        {
+            initialCapacity = checked(initialCapacity + type.Length + 128);
+        }
+
+        using var builder = new PooledStringBuilder(initialCapacity);
+        builder.Append($@"
 #nullable enable
 
 #pragma warning disable CS0618 // Type or member is obsolete
@@ -73,15 +84,27 @@ namespace {@namespace}
 
         {string.Empty.ToXmlDocumentationSummary(level: 8)}
         public global::System.Text.Json.JsonElement? JsonElement {{ get; set; }}
+");
+        for (var index = 0; index < distinctTypes.Length; index++)
+        {
+            builder.Append("\n        ");
+            AppendXmlDocumentationSummary(builder, string.Empty, level: 8);
+            builder.Append($@"
+        public {distinctTypes[index]} Type{index} {{ get; set; }}");
+        }
 
-{distinctTypes.Select((type, i) => @$"
-        {string.Empty.ToXmlDocumentationSummary(level: 8)}
-        public {type} Type{i} {{ get; set; }}").Inject()}
+        builder.Append('\n');
+        for (var index = 0; index < concreteListTypes.Length; index++)
+        {
+            builder.Append("\n        ");
+            AppendXmlDocumentationSummary(builder, string.Empty, level: 8);
+            builder.Append($@"
+        public {concreteListTypes[index]} ListType{index} {{ get; set; }}");
+        }
 
-{concreteListTypes.Select((type, i) => @$"
-        {string.Empty.ToXmlDocumentationSummary(level: 8)}
-        public {type} ListType{i} {{ get; set; }}").Inject()}
-    }}
-}}".RemoveBlankLinesWhereOnlyWhitespaces();
+        builder.Append(@"
+    }
+}");
+        return builder.ToString();
     }
 }

@@ -98,7 +98,7 @@ public static partial class Sources
 "
             : "\n";
         
-        return $@"{(anyOfData.IsNamed ? @"#pragma warning disable CS0618 // Type or member is obsolete
+        return NormalizedString.Create($@"{(anyOfData.IsNamed ? @"#pragma warning disable CS0618 // Type or member is obsolete
 " : "")}
 #nullable enable
 
@@ -297,6 +297,6 @@ namespace {anyOfData.Namespace}
         }}
     }}
 }}
-".RemoveBlankLinesWhereOnlyWhitespaces();
+");
     }
 }

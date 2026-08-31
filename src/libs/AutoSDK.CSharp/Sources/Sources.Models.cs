@@ -15,6 +15,48 @@ public static partial class Sources
             HasDeprecatedTypeReferences(modelData) ||
             HasDeprecatedBaseClass(modelData);
 
+        if (modelData.Settings.NamingConvention == NamingConvention.ConcatNames ||
+            modelData.Parents.AsSpan().Length == 0)
+        {
+            using var builder = new NormalizedPooledStringBuilder(4096);
+            builder.Append($@"
+{(suppressObsoleteWarnings ? @"#pragma warning disable CS0618 // Type or member is obsolete
+" : TrimmedLine)}
+#nullable enable
+
+namespace {modelData.Namespace}
+{{
+");
+            switch (modelData.Style)
+            {
+                case ModelStyle.Class:
+                    AppendClassModelCore(builder, modelData, cancellationToken);
+                    break;
+                case ModelStyle.Enumeration:
+                    if (modelData.IsOpenEnum)
+                    {
+                        builder.Append(GenerateEnumerationModel(modelData, cancellationToken));
+                        builder.Append("\n\n");
+                        builder.Append(GenerateEnumExtensions(modelData, cancellationToken));
+                    }
+                    else
+                    {
+                        AppendClosedEnumerationModel(
+                            builder,
+                            modelData,
+                            includeEnumMemberAttributes: modelData.Settings.UsesNewtonsoftJson());
+                        builder.Append("\n\n");
+                        AppendClosedEnumExtensions(builder, modelData);
+                    }
+                    break;
+                default:
+                    throw new NotSupportedException($"Model style {modelData.Style} is not supported.");
+            }
+            builder.Append(@"
+}");
+            return builder.ToString();
+        }
+
         return NormalizedString.Create($@"
 {(suppressObsoleteWarnings ? @"#pragma warning disable CS0618 // Type or member is obsolete
 " : TrimmedLine)}
@@ -286,6 +328,18 @@ public sealed partial class {modelData.Parents[level].Unbox<ModelData>().ClassNa
         bool normalizeOutput,
         CancellationToken cancellationToken)
     {
+        using PooledStringBuilder builder = normalizeOutput
+            ? new NormalizedPooledStringBuilder(Math.Max(4096, modelData.Properties.Length * 256))
+            : new PooledStringBuilder(Math.Max(4096, modelData.Properties.Length * 256));
+        AppendClassModelCore(builder, modelData, cancellationToken);
+        return builder.ToString();
+    }
+
+    private static void AppendClassModelCore(
+        PooledStringBuilder resultBuilder,
+        ModelData modelData,
+        CancellationToken cancellationToken)
+    {
         var jsonSerializer = modelData.Settings.GetSerializer();
         var isRequiredKeywordSupported = IsSupported(modelData.Settings.UseRequiredKeyword, modelData.Settings.TargetFramework);
         var requiredKeyword = isRequiredKeywordSupported
@@ -334,8 +388,9 @@ public sealed partial class {modelData.Parents[level].Unbox<ModelData>().ClassNa
             optionalConstructorPropertiesWithDefaults,
             optionalConstructorPropertiesWithoutDefaults);
 
-        using var resultBuilder = new PooledStringBuilder(Math.Max(4096, properties.Length * 256));
-        resultBuilder.Append($@"    {modelData.Summary.ToXmlDocumentationSummary(level: 4)}
+        resultBuilder.Append("    ");
+        AppendXmlDocumentationSummary(resultBuilder, modelData.Summary, level: 4);
+        resultBuilder.Append($@"
     {(modelData.IsDeprecated ? $"[global::System.Obsolete(\"{(!string.IsNullOrWhiteSpace(modelData.DeprecationMessage) ? modelData.DeprecationMessage.ClearForCSharp() : "This model marked as deprecated.")}\")]" : TrimmedLine)}
     {(modelData.Settings.UsesSystemTextJson() && modelData.IsBaseClass ? @$" 
     [global::System.Text.Json.Serialization.JsonPolymorphic(
@@ -423,10 +478,6 @@ public sealed partial class {modelData.Parents[level].Unbox<ModelData>().ClassNa
         resultBuilder.Append(leafFactory);
         resultBuilder.Append(@"
     }");
-        var result = resultBuilder.ToString();
-        return normalizeOutput
-            ? result.RemoveBlankLinesWhereOnlyWhitespaces()
-            : result;
     }
 
     private static void AppendPropertyDeclarations(
@@ -454,7 +505,7 @@ public sealed partial class {modelData.Parents[level].Unbox<ModelData>().ClassNa
             firstProperty = false;
 
             builder.Append("        ");
-            builder.Append(property.Summary.ToXmlDocumentationSummary(level: 8));
+            AppendXmlDocumentationSummary(builder, property.Summary, level: 8);
             builder.Append("\n        ");
             builder.Append(property.DefaultValue?.ClearForXml().ToXmlDocumentationDefault(level: 8));
             builder.Append("\n        ");
@@ -462,9 +513,30 @@ public sealed partial class {modelData.Parents[level].Unbox<ModelData>().ClassNa
             builder.Append("\n        ");
             builder.Append(GenerateValidationAttributes(modelData, property));
             builder.Append("\n        ");
-            builder.Append(jsonSerializer.GeneratePropertyAttribute(property.Id, property.IsRequired));
+            if (modelData.Settings.UsesSystemTextJson())
+            {
+                builder.Append("[global::System.Text.Json.Serialization.JsonPropertyName(\"");
+                builder.Append(property.Id);
+                builder.Append("\")]");
+            }
+            else
+            {
+                builder.Append(jsonSerializer.GeneratePropertyAttribute(property.Id, property.IsRequired));
+            }
             builder.Append("\n        ");
-            builder.Append(GeneratePropertyConverterAttribute(jsonSerializer, modelData.Settings, property));
+            if (modelData.Settings.UsesSystemTextJson())
+            {
+                if (!string.IsNullOrWhiteSpace(property.ConverterType))
+                {
+                    builder.Append("[global::System.Text.Json.Serialization.JsonConverter(typeof(");
+                    builder.Append(property.ConverterType);
+                    builder.Append("))]");
+                }
+            }
+            else
+            {
+                builder.Append(GeneratePropertyConverterAttribute(jsonSerializer, modelData.Settings, property));
+            }
             builder.Append("\n        ");
             builder.Append(property.IsRequired ? jsonSerializer.GenerateRequiredAttribute() : string.Empty);
             builder.Append("\n        ");
@@ -515,7 +587,11 @@ public sealed partial class {modelData.Parents[level].Unbox<ModelData>().ClassNa
                     hasDocumentation = true;
                 }
                 builder.Append("        ");
-                builder.Append(property.Summary.ToXmlDocumentationForParam(property.ParameterName, level: 8));
+                AppendXmlDocumentationForParam(
+                    builder,
+                    property.Summary,
+                    property.ParameterName,
+                    level: 8);
             }
         }
     }

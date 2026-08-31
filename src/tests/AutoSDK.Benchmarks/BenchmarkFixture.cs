@@ -41,10 +41,17 @@ internal sealed class BenchmarkFixture
 
     public CorePipelineResult PrepareCore(string specName)
     {
+        return PrepareCore(specName, CSharpPipeline.ApplyModelNaming);
+    }
+
+    public CorePipelineResult PrepareCore(
+        string specName,
+        Action<IReadOnlyList<SchemaContext>> applyNaming)
+    {
         return CorePipeline.Prepare(
             ((GetSpecText(specName), Settings), GlobalSettings: Settings),
             static (document, settings) => document.GetSchemas((CSharpSettings)settings),
-            CSharpPipeline.ApplyModelNaming,
+            applyNaming,
             static text => text.ToClassName(),
             static text => text.ToPropertyName());
     }

@@ -44,10 +44,28 @@ internal sealed class NormalizedPooledStringBuilder : PooledStringBuilder
 
     public override void Append(char value, int count)
     {
-        for (var index = 0; index < count; index++)
+        if (count <= 0)
         {
-            Append(value);
+            return;
         }
+
+        if (value is '\r' or '\n')
+        {
+            for (var index = 0; index < count; index++)
+            {
+                Append(value);
+            }
+            return;
+        }
+
+        if (skipLineFeed)
+        {
+            skipLineFeed = false;
+        }
+
+        BeginLine();
+        base.Append(value, count);
+        lineHasNonWhitespace |= !char.IsWhiteSpace(value);
     }
 
     public override void Append(string? value)
@@ -150,6 +168,40 @@ internal sealed class NormalizedPooledStringBuilder : PooledStringBuilder
         }
 
         return base.ToString();
+    }
+
+    internal void AppendIndentedSegment(
+        string value,
+        int startIndex,
+        int count,
+        int indentationLength,
+        bool appendLineFeed)
+    {
+        if (count > 0)
+        {
+            BeginLine();
+            if (indentationLength > 0)
+            {
+                base.Append(' ', indentationLength);
+            }
+            base.Append(value, startIndex, count);
+            if (!lineHasNonWhitespace)
+            {
+                for (var index = startIndex; index < startIndex + count; index++)
+                {
+                    if (!char.IsWhiteSpace(value[index]))
+                    {
+                        lineHasNonWhitespace = true;
+                        break;
+                    }
+                }
+            }
+        }
+
+        if (appendLineFeed)
+        {
+            FinishLine();
+        }
     }
 
     private void BeginLine()
