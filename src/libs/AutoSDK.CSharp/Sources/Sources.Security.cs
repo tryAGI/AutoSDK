@@ -169,41 +169,65 @@ namespace {settings.Namespace}
 }}";
     }
 
-    private static string GenerateSecurityRequirementsField(
+    private static void AppendSecurityRequirementsField(
+        PooledStringBuilder builder,
         EndPoint endPoint)
     {
-        var requirementInitializers = endPoint.AuthorizationRequirements
-            .Select((requirement, index) => $@"
-        private static readonly global::{endPoint.GlobalSettings.Namespace}.EndPointSecurityRequirement s_{endPoint.NotAsyncMethodName}SecurityRequirement{index} =
+        if (endPoint.AuthorizationRequirements.IsEmpty)
+        {
+            builder.Append($@"
+        private static readonly global::{endPoint.GlobalSettings.Namespace}.EndPointSecurityRequirement[] s_{endPoint.NotAsyncMethodName}SecurityRequirements =
+            global::System.Array.Empty<global::{endPoint.GlobalSettings.Namespace}.EndPointSecurityRequirement>();");
+            return;
+        }
+
+        for (var requirementIndex = 0; requirementIndex < endPoint.AuthorizationRequirements.Length; requirementIndex++)
+        {
+            if (requirementIndex > 0)
+            {
+                builder.Append('\n');
+            }
+            var requirement = endPoint.AuthorizationRequirements[requirementIndex];
+            builder.Append($@"
+        private static readonly global::{endPoint.GlobalSettings.Namespace}.EndPointSecurityRequirement s_{endPoint.NotAsyncMethodName}SecurityRequirement{requirementIndex} =
             new global::{endPoint.GlobalSettings.Namespace}.EndPointSecurityRequirement
             {{
                 Authorizations = new global::{endPoint.GlobalSettings.Namespace}.EndPointAuthorizationRequirement[]
-                {{{requirement.Authorizations.Select(authorization => $@"
-                    new global::{endPoint.GlobalSettings.Namespace}.EndPointAuthorizationRequirement
+                {{");
+            for (var authorizationIndex = 0; authorizationIndex < requirement.Authorizations.Length; authorizationIndex++)
+            {
+                var authorization = requirement.Authorizations[authorizationIndex];
+                if (authorizationIndex > 0)
+                {
+                    builder.Append('\n');
+                }
+                builder.Append($@"                    new global::{endPoint.GlobalSettings.Namespace}.EndPointAuthorizationRequirement
                     {{
                         Type = ""{authorization.Type:G}"",
                         SchemeId = ""{authorization.SchemeId}"",
                         Location = ""{authorization.In:G}"",
                         Name = ""{GetAuthorizationRuntimeName(authorization)}"",
                         FriendlyName = ""{authorization.FriendlyName}"",
-                    }},").Inject()}
-                }},
-            }};")
-            .ToArray();
-
-        if (requirementInitializers.Length == 0)
-        {
-            return $@"
-        private static readonly global::{endPoint.GlobalSettings.Namespace}.EndPointSecurityRequirement[] s_{endPoint.NotAsyncMethodName}SecurityRequirements =
-            global::System.Array.Empty<global::{endPoint.GlobalSettings.Namespace}.EndPointSecurityRequirement>();";
+                    }},");
+            }
+            builder.Append(@"
+                },
+            };");
         }
 
-        return $@"
-{string.Join("\n", requirementInitializers)}
+        builder.Append($@"
         private static readonly global::{endPoint.GlobalSettings.Namespace}.EndPointSecurityRequirement[] s_{endPoint.NotAsyncMethodName}SecurityRequirements =
             new global::{endPoint.GlobalSettings.Namespace}.EndPointSecurityRequirement[]
-            {{{endPoint.AuthorizationRequirements.Select((_, index) => $@"
-                s_{endPoint.NotAsyncMethodName}SecurityRequirement{index},").Inject()}
-            }};";
+            {{");
+        for (var index = 0; index < endPoint.AuthorizationRequirements.Length; index++)
+        {
+            if (index > 0)
+            {
+                builder.Append('\n');
+            }
+            builder.Append($@"                s_{endPoint.NotAsyncMethodName}SecurityRequirement{index},");
+        }
+        builder.Append(@"
+            };");
     }
 }

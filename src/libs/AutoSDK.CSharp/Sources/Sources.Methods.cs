@@ -40,6 +40,30 @@ public static partial class Sources
         return endPoint.Parameters.Where(static x => x.IsIdempotencyHeader);
     }
 
+    private static void AppendPrepareHookParameters(
+        PooledStringBuilder builder,
+        EndPoint endPoint,
+        bool passReferenceableByReference)
+    {
+        for (var index = 0; index < endPoint.Parameters.Length; index++)
+        {
+            var parameter = endPoint.Parameters[index];
+            if (parameter.Location is null)
+            {
+                continue;
+            }
+
+            builder.Append($@",
+            {(passReferenceableByReference && parameter.Type.IsReferenceable ? "ref " : string.Empty)}{parameter.Type.CSharpType} {parameter.ParameterName}");
+        }
+
+        if (!string.IsNullOrWhiteSpace(endPoint.RequestType.CSharpType))
+        {
+            builder.Append($@",
+            {endPoint.RequestType.CSharpTypeWithoutNullability} request");
+        }
+    }
+
     public static string GenerateEndPoint(
         EndPoint endPoint,
         CancellationToken cancellationToken = default)
@@ -76,20 +100,26 @@ namespace {endPoint.Settings.Namespace}
         private static readonly global::{endPoint.Settings.Namespace}.AutoSDKServer[] s_{endPoint.NotAsyncMethodName}Servers = new global::{endPoint.Settings.Namespace}.AutoSDKServer[]
         {{{GenerateServerDeclarations(endPoint.Servers, endPoint.Settings.Namespace, 12)}
         }};" : TrimmedLine)}
-{(!endPoint.AuthorizationRequirements.IsEmpty ? GenerateSecurityRequirementsField(endPoint) : TrimmedLine)}
+");
+        if (!endPoint.AuthorizationRequirements.IsEmpty)
+        {
+            builder.Append('\n');
+            AppendSecurityRequirementsField(builder, endPoint);
+        }
+        else
+        {
+            builder.Append(TrimmedLine);
+        }
+        builder.Append($@"
         partial void Prepare{endPoint.NotAsyncMethodName}Arguments(
-            global::System.Net.Http.HttpClient httpClient{endPoint.Parameters
-                .Where(x => x.Location != null)
-                .Select(x => $@",
-            {(x.Type.IsReferenceable ? "ref " : "")}{x.Type.CSharpType} {x.ParameterName}").Inject(emptyValue: "")}{(string.IsNullOrWhiteSpace(endPoint.RequestType.CSharpType) ? "" : @$",
-            {endPoint.RequestType.CSharpTypeWithoutNullability} request")});
+            global::System.Net.Http.HttpClient httpClient");
+        AppendPrepareHookParameters(builder, endPoint, passReferenceableByReference: true);
+        builder.Append($@");
         partial void Prepare{endPoint.NotAsyncMethodName}Request(
             global::System.Net.Http.HttpClient httpClient,
-            global::System.Net.Http.HttpRequestMessage httpRequestMessage{endPoint.Parameters
-                .Where(x => x.Location != null)
-                .Select(x => $@",
-            {x.Type.CSharpType} {x.ParameterName}").Inject(emptyValue: "")}{(string.IsNullOrWhiteSpace(endPoint.RequestType.CSharpType) ? "" : @$",
-            {endPoint.RequestType.CSharpTypeWithoutNullability} request")});
+            global::System.Net.Http.HttpRequestMessage httpRequestMessage");
+        AppendPrepareHookParameters(builder, endPoint, passReferenceableByReference: false);
+        builder.Append($@");
         partial void Process{endPoint.NotAsyncMethodName}Response(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage);
@@ -101,12 +131,14 @@ namespace {endPoint.Settings.Namespace}
 
 ");
         AppendMethodVariants(builder, endPoint);
+        builder.Append('\n');
+        AppendPollingMethods(builder, endPoint);
         builder.Append($@"
-{GeneratePollingMethods(endPoint)}
 {GenerateLocationWaitCompanion(endPoint)}
 {GenerateAutoPagingCompanion(endPoint)}
-{GenerateExtensionMethod(endPoint)}
 ");
+        AppendExtensionMethod(builder, endPoint);
+        builder.Append('\n');
         AppendMultipartStreamMethods(builder, endPoint);
         builder.Append(@"
     }
@@ -134,12 +166,14 @@ namespace {endPoint.Settings.Namespace}
     {{
 ");
         AppendMethodVariants(builder, endPoint, isInterface: true);
+        builder.Append('\n');
+        AppendPollingMethods(builder, endPoint, isInterface: true);
         builder.Append($@"
-{GeneratePollingMethods(endPoint, isInterface: true)}
 {GenerateLocationWaitCompanion(endPoint, isInterface: true)}
 {GenerateAutoPagingCompanion(endPoint, isInterface: true)}
-{GenerateExtensionMethod(endPoint, isInterface: true)}
 ");
+        AppendExtensionMethod(builder, endPoint, isInterface: true);
+        builder.Append('\n');
         AppendMultipartStreamMethods(builder, endPoint, isInterface: true);
         builder.Append(@"
     }
@@ -747,14 +781,57 @@ namespace {endPoint.Settings.Namespace}
                !pollingOperation.FailureCriteria.Any(static x => x.ContextType == PollingCriterionContextType.ResponseBody);
     }
 
-    private static string GeneratePollingMethods(
+    private static void AppendPollingMethods(
+        PooledStringBuilder builder,
         EndPoint endPoint,
         bool isInterface = false)
     {
-        return endPoint.PollingOperations
-            .Where(x => SupportsPollingOperation(endPoint, x))
-            .Select(x => GeneratePollingMethod(endPoint, x, isInterface))
-            .Inject();
+        var methodCount = 0;
+        for (var index = 0; index < endPoint.PollingOperations.Length; index++)
+        {
+            if (SupportsPollingOperation(endPoint, endPoint.PollingOperations[index]))
+            {
+                methodCount++;
+            }
+        }
+
+        if (methodCount == 0)
+        {
+            builder.Append(TrimmedLine);
+            return;
+        }
+
+        var methodIndex = 0;
+        for (var index = 0; index < endPoint.PollingOperations.Length; index++)
+        {
+            var pollingOperation = endPoint.PollingOperations[index];
+            if (!SupportsPollingOperation(endPoint, pollingOperation))
+            {
+                continue;
+            }
+
+            var method = GeneratePollingMethod(endPoint, pollingOperation, isInterface);
+            var start = 0;
+            if (methodIndex == 0)
+            {
+                while (start < method.Length && method[start] is '\r' or '\n')
+                {
+                    start++;
+                }
+            }
+
+            var end = method.Length;
+            if (methodIndex == methodCount - 1)
+            {
+                while (end > start && method[end - 1] is '\r' or '\n')
+                {
+                    end--;
+                }
+            }
+
+            builder.Append(method, start, end - start);
+            methodIndex++;
+        }
     }
 
     private static string GeneratePollingMethod(
@@ -1050,16 +1127,131 @@ namespace {endPoint.Settings.Namespace}
             : parameter.ParameterName;
     }
 
+    private static void AppendMethodInvocationArguments(
+        PooledStringBuilder builder,
+        EndPoint endPoint)
+    {
+        var hasArguments = false;
+
+        for (var index = 0; index < endPoint.Parameters.Length; index++)
+        {
+            var parameter = endPoint.Parameters[index];
+            if (parameter is { Location: not null, IsRequired: true } && !parameter.HasSchemaDefault)
+            {
+                if (hasArguments)
+                {
+                    builder.Append('\n');
+                }
+                builder.Append($"                {parameter.ParameterName}: {parameter.ParameterName},");
+                hasArguments = true;
+            }
+        }
+
+        if (!string.IsNullOrWhiteSpace(endPoint.RequestType.CSharpType))
+        {
+            builder.Append(hasArguments ? "\n\n" : "\n");
+            builder.Append("                request: request,");
+            hasArguments = true;
+        }
+
+        for (var index = 0; index < endPoint.Parameters.Length; index++)
+        {
+            var parameter = endPoint.Parameters[index];
+            if (parameter.Location is not null && (!parameter.IsRequired || parameter.HasSchemaDefault))
+            {
+                if (hasArguments)
+                {
+                    builder.Append('\n');
+                }
+                builder.Append($"                {parameter.ParameterName}: {parameter.ParameterName},");
+                hasArguments = true;
+            }
+        }
+
+        if (hasArguments)
+        {
+            builder.Append('\n');
+        }
+        builder.Append(@"                requestOptions: requestOptions,
+                cancellationToken: cancellationToken");
+    }
+
+    private static void AppendLocationMethodInvocationArguments(
+        PooledStringBuilder builder,
+        EndPoint endPoint)
+    {
+        var hasArguments = false;
+        for (var index = 0; index < endPoint.Parameters.Length; index++)
+        {
+            var parameter = endPoint.Parameters[index];
+            if (parameter.Location is null)
+            {
+                continue;
+            }
+            if (hasArguments)
+            {
+                builder.Append('\n');
+            }
+            builder.Append($"                {parameter.ParameterName}: {parameter.ParameterName},");
+            hasArguments = true;
+        }
+        if (!hasArguments)
+        {
+            builder.Append(TrimmedLine);
+        }
+    }
+
     private static string GenerateMethodInvocationArguments(EndPoint endPoint)
     {
-        return $@"{endPoint.Parameters.Where(x => x is { Location: not null, IsRequired: true } && !x.HasSchemaDefault).Select(x => $@"
-                {x.ParameterName}: {x.ParameterName},").Inject()}
-{(string.IsNullOrWhiteSpace(endPoint.RequestType.CSharpType) ? TrimmedLine : @"
-                request: request,")}
-{endPoint.Parameters.Where(x => x is { Location: not null } && (!x.IsRequired || x.HasSchemaDefault)).Select(x => $@"
-                {x.ParameterName}: {x.ParameterName},").Inject()}
-                requestOptions: requestOptions,
-                cancellationToken: cancellationToken".RemoveBlankLinesWhereOnlyWhitespaces();
+        using var builder = new PooledStringBuilder(Math.Max(256, endPoint.Parameters.Length * 96));
+        AppendMethodInvocationArguments(builder, endPoint);
+        return builder.ToString();
+    }
+
+    private static void AppendMethodParameterDeclarations(
+        PooledStringBuilder builder,
+        EndPoint endPoint)
+    {
+        var hasParameters = false;
+        for (var index = 0; index < endPoint.Parameters.Length; index++)
+        {
+            var parameter = endPoint.Parameters[index];
+            if (parameter is { Location: not null, IsRequired: true } && !parameter.HasSchemaDefault)
+            {
+                if (hasParameters)
+                {
+                    builder.Append('\n');
+                }
+                builder.Append($"            {parameter.Type.CSharpType} {parameter.ParameterName},");
+                hasParameters = true;
+            }
+        }
+
+        if (!string.IsNullOrWhiteSpace(endPoint.RequestType.CSharpType))
+        {
+            builder.Append(hasParameters ? "\n\n" : "\n");
+            builder.Append($"            {endPoint.RequestType.CSharpTypeWithoutNullability} request,");
+            hasParameters = true;
+        }
+
+        for (var index = 0; index < endPoint.Parameters.Length; index++)
+        {
+            var parameter = endPoint.Parameters[index];
+            if (parameter.Location is not null && (!parameter.IsRequired || parameter.HasSchemaDefault))
+            {
+                if (hasParameters)
+                {
+                    builder.Append('\n');
+                }
+                builder.Append($"            {parameter.Type.CSharpType} {parameter.ParameterName} = {parameter.ParameterDefaultValue},");
+                hasParameters = true;
+            }
+        }
+
+        if (!hasParameters)
+        {
+            builder.Append(TrimmedLine);
+        }
     }
 
     public static string GenerateMethod(
@@ -1178,23 +1370,51 @@ namespace {endPoint.Settings.Namespace}
         var multipartStreamParameters = useMultipartStreamRequest
             ? GetMultipartStreamMethodParameters(endPoint).ToArray()
             : Array.Empty<MethodParameter>();
-        builder.Append($@"        {endPoint.Summary.ToXmlDocumentationSummary(level: 8)}
-{(useMultipartStreamRequest ? multipartStreamParameters : endPoint.Parameters.Where(x => x.Location != null)).Select(x => $@"
-        {x.Summary.ToXmlDocumentationForParam(x.ParameterName, level: 8)}").Inject()}
-{(useMultipartStreamRequest || string.IsNullOrWhiteSpace(endPoint.RequestType.CSharpType) ? TrimmedLine : $@"{TrimmedLine}
-        /// <param name=""request""></param>")}
+        builder.Append($"        {endPoint.Summary.ToXmlDocumentationSummary(level: 8)}");
+        if (useMultipartStreamRequest)
+        {
+            for (var index = 0; index < multipartStreamParameters.Length; index++)
+            {
+                var parameter = multipartStreamParameters[index];
+                builder.Append('\n');
+                builder.Append($"        {parameter.Summary.ToXmlDocumentationForParam(parameter.ParameterName, level: 8)}");
+            }
+        }
+        else
+        {
+            for (var index = 0; index < endPoint.Parameters.Length; index++)
+            {
+                var parameter = endPoint.Parameters[index];
+                if (parameter.Location is null)
+                {
+                    continue;
+                }
+                builder.Append('\n');
+                builder.Append($"        {parameter.Summary.ToXmlDocumentationForParam(parameter.ParameterName, level: 8)}");
+            }
+        }
+        if (!useMultipartStreamRequest && !string.IsNullOrWhiteSpace(endPoint.RequestType.CSharpType))
+        {
+            builder.Append(@"
+        /// <param name=""request""></param>");
+        }
+        builder.Append($@"
         /// <param name=""requestOptions"">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name=""cancellationToken"">The token to cancel the operation with</param>
         /// <exception cref=""global::{endPoint.Settings.Namespace}.ApiException""></exception>{(string.IsNullOrWhiteSpace(endPoint.Remarks) ? "" : $@"
         {endPoint.Remarks.ToXmlDocumentationRemarks(level: 8)}")}
         {GenerateEndPointAttributes(endPoint)}
         {(isInterface ? "" : "public async ")}{taskType} {methodName}(
-{(useMultipartStreamRequest ? GenerateMultipartStreamParameterDeclarations(multipartStreamParameters) : $@"{endPoint.Parameters.Where(x => x is { Location: not null, IsRequired: true } && !x.HasSchemaDefault).Select(x => $@"
-            {x.Type.CSharpType} {x.ParameterName},").Inject()}
-{(string.IsNullOrWhiteSpace(endPoint.RequestType.CSharpType) ? TrimmedLine : @$"
-            {endPoint.RequestType.CSharpTypeWithoutNullability} request,")}
-{endPoint.Parameters.Where(x => x is { Location: not null } && (!x.IsRequired || x.HasSchemaDefault)).Select(x => $@"
-            {x.Type.CSharpType} {x.ParameterName} = {x.ParameterDefaultValue},").Inject()}")}
+");
+        if (useMultipartStreamRequest)
+        {
+            builder.Append(GenerateMultipartStreamParameterDeclarations(multipartStreamParameters));
+        }
+        else
+        {
+            AppendMethodParameterDeclarations(builder, endPoint);
+        }
+        builder.Append($@"
             global::{endPoint.Settings.Namespace}.AutoSDKRequestOptions? requestOptions = default,
             {cancellationTokenAttribute}global::System.Threading.CancellationToken cancellationToken = default){(isInterface ? ";" : string.Empty)}");
 
@@ -1207,23 +1427,27 @@ namespace {endPoint.Settings.Namespace}
         {
             if (string.IsNullOrWhiteSpace(endPoint.SuccessResponse.Type.CSharpType))
             {
-                builder.Append(@$"
+                builder.Append($@"
         {{
             await {GetResponseWrapperMethodName(endPoint)}(
-{GenerateMethodInvocationArguments(endPoint)}
+");
+                AppendMethodInvocationArguments(builder, endPoint);
+                builder.Append(@"
             ).ConfigureAwait(false);
-        }}");
+        }");
             }
             else
             {
-                builder.Append(@$"
+                builder.Append($@"
         {{
             var __response = await {GetResponseWrapperMethodName(endPoint)}(
-{GenerateMethodInvocationArguments(endPoint)}
+");
+                AppendMethodInvocationArguments(builder, endPoint);
+                builder.Append(@"
             ).ConfigureAwait(false);
 
             return __response.Body;
-        }}");
+        }");
             }
             return;
         }
@@ -3511,6 +3735,16 @@ namespace {endPoint.Settings.Namespace}
     public static string GenerateExtensionMethod(
         EndPoint endPoint, bool isInterface = false)
     {
+        using var builder = new NormalizedPooledStringBuilder(1024);
+        AppendExtensionMethod(builder, endPoint, isInterface);
+        return builder.ToString();
+    }
+
+    private static void AppendExtensionMethod(
+        PooledStringBuilder builder,
+        EndPoint endPoint,
+        bool isInterface = false)
+    {
         if (string.IsNullOrWhiteSpace(endPoint.RequestType.CSharpType) ||
             endPoint.RequestType.IsArray ||
             endPoint.RequestType.IsEnum ||
@@ -3518,7 +3752,8 @@ namespace {endPoint.Settings.Namespace}
             endPoint.RequestType.IsBinary ||
             endPoint.RequestType.CSharpTypeWithoutNullability is "string")
         {
-            return TrimmedLine;
+            builder.Append(TrimmedLine);
+            return;
         }
 
         // Skip convenience overload for discriminator base classes where all properties
@@ -3527,7 +3762,8 @@ namespace {endPoint.Settings.Namespace}
         if (endPoint.RequestType.IsBaseClass &&
             !endPoint.Parameters.Any(x => x.Location == null))
         {
-            return TrimmedLine;
+            builder.Append(TrimmedLine);
+            return;
         }
 
         var taskType = endPoint.RawStream
@@ -3550,53 +3786,115 @@ namespace {endPoint.Settings.Namespace}
         var configureAwaitResponse = !endPoint.EnumerableStream
             ? ".ConfigureAwait(false)"
             : string.Empty;
-        var body = isInterface
-            ? ";"
-            : @$"
-        {{
-{GenerateRequestInitialization(
-    endPoint,
-    "__request",
-    x => IsRequestStreamParameter(x) && endPoint.ForcedRequestStreamValue is bool forcedRequestStreamValue
-        ? forcedRequestStreamValue ? "true" : "false"
-        : x.ParameterName)}
-
-            {response}{endPoint.MethodName}(
-{endPoint.Parameters.Where(x => x.Location != null).Select(x => $@"
-                {x.ParameterName}: {x.ParameterName},").Inject()}
-                request: __request,
-                requestOptions: requestOptions,
-                cancellationToken: cancellationToken){configureAwaitResponse};
-{(endPoint.EnumerableStream ? @"
-            
-            await foreach (var __response in __enumerable)
-            {
-                yield return __response;
-            }" : TrimmedLine)}
-        }}";
-
         var parameters = GetExtensionMethodParameters(endPoint).ToList();
 
-        return NormalizedString.Create($@"{TrimmedLine}
-        {endPoint.Summary.ToXmlDocumentationSummary(level: 8)}
-{parameters.Select(x => $@"
-        {x.Summary.ToXmlDocumentationForParam(x.ParameterName, level: 8)}").Inject()}
+        builder.Append($@"{TrimmedLine}
+        {endPoint.Summary.ToXmlDocumentationSummary(level: 8)}");
+        for (var index = 0; index < parameters.Count; index++)
+        {
+            var parameter = parameters[index];
+            builder.Append('\n');
+            builder.Append($"        {parameter.Summary.ToXmlDocumentationForParam(parameter.ParameterName, level: 8)}");
+        }
+        builder.Append($@"
         /// <param name=""requestOptions"">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name=""cancellationToken"">The token to cancel the operation with</param>
         /// <exception cref=""global::System.InvalidOperationException""></exception>
         {GenerateEndPointAttributes(endPoint)}
         {(isInterface ? "" : "public async ")}{taskType} {endPoint.MethodName}(
-{parameters.Where(static x => x.IsRequired && !x.HasSchemaDefault).Select(x => $@"
-{x.DisableDeprecationWarningIfRequired}
-            {x.Type.CSharpType} {x.ParameterName},
-{x.DisableDeprecationWarningIfRequired}".TrimEnd()).Inject()}
-{parameters.Where(static x => !x.IsRequired || x.HasSchemaDefault).Select(x => $@"
-{x.DisableDeprecationWarningIfRequired}
-            {x.Type.CSharpType} {x.ParameterName} = {x.ParameterDefaultValue},
-{x.DisableDeprecationWarningIfRequired}".TrimEnd()).Inject()}
+");
+        var hasParameterDeclaration = false;
+        for (var index = 0; index < parameters.Count; index++)
+        {
+            var parameter = parameters[index];
+            if (!parameter.IsRequired || parameter.HasSchemaDefault)
+            {
+                continue;
+            }
+            AppendExtensionMethodParameterDeclaration(builder, parameter, hasDefaultValue: false, ref hasParameterDeclaration);
+        }
+        for (var index = 0; index < parameters.Count; index++)
+        {
+            var parameter = parameters[index];
+            if (parameter.IsRequired && !parameter.HasSchemaDefault)
+            {
+                continue;
+            }
+            AppendExtensionMethodParameterDeclaration(builder, parameter, hasDefaultValue: true, ref hasParameterDeclaration);
+        }
+        if (!hasParameterDeclaration)
+        {
+            builder.Append(TrimmedLine);
+        }
+        builder.Append($@"
             global::{endPoint.Settings.Namespace}.AutoSDKRequestOptions? requestOptions = default,
-            {cancellationTokenAttribute}global::System.Threading.CancellationToken cancellationToken = default){body}
+            {cancellationTokenAttribute}global::System.Threading.CancellationToken cancellationToken = default)");
+        if (isInterface)
+        {
+            builder.Append(';');
+        }
+        else
+        {
+            builder.Append(@"
+        {
+");
+            builder.Append(GenerateRequestInitialization(
+                endPoint,
+                "__request",
+                x => IsRequestStreamParameter(x) && endPoint.ForcedRequestStreamValue is bool forcedRequestStreamValue
+                    ? forcedRequestStreamValue ? "true" : "false"
+                    : x.ParameterName));
+            builder.Append($@"
+
+            {response}{endPoint.MethodName}(
+");
+            AppendLocationMethodInvocationArguments(builder, endPoint);
+            builder.Append($@"
+                request: __request,
+                requestOptions: requestOptions,
+                cancellationToken: cancellationToken){configureAwaitResponse};
+");
+            if (endPoint.EnumerableStream)
+            {
+                builder.Append(@"
+            
+            await foreach (var __response in __enumerable)
+            {
+                yield return __response;
+            }");
+            }
+            else
+            {
+                builder.Append(TrimmedLine);
+            }
+            builder.Append(@"
+        }");
+        }
+        builder.Append(@"
  ");
+    }
+
+    private static void AppendExtensionMethodParameterDeclaration(
+        PooledStringBuilder builder,
+        MethodParameter parameter,
+        bool hasDefaultValue,
+        ref bool hasParameterDeclaration)
+    {
+        if (hasParameterDeclaration)
+        {
+            builder.Append('\n');
+        }
+        builder.Append(parameter.DisableDeprecationWarningIfRequired);
+        builder.Append('\n');
+        builder.Append($"            {parameter.Type.CSharpType} {parameter.ParameterName}");
+        if (hasDefaultValue)
+        {
+            builder.Append($" = {parameter.ParameterDefaultValue}");
+        }
+        builder.Append(',');
+        builder.Append('\n');
+        builder.Append(parameter.DisableDeprecationWarningIfRequired);
+        hasParameterDeclaration = true;
     }
 
     private static string GenerateEndPointAttributes(EndPoint endPoint)
