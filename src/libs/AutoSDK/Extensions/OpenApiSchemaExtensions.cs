@@ -616,6 +616,10 @@ public static class OpenApiSchemaExtensions
 
         // Check if Integer flag is set (handles nullable types like ["integer", "null"])
         var isInteger = schema.Type != null && (schema.Type & JsonSchemaType.Integer) == JsonSchemaType.Integer;
+        var description = schema.Description;
+        var describesMilliseconds = description is not null &&
+            description.Contains("unix timestamp", StringComparison.OrdinalIgnoreCase) &&
+            description.Contains("millisecond", StringComparison.OrdinalIgnoreCase);
 
         return (isInteger &&
                schema.Format is
@@ -630,6 +634,7 @@ public static class OpenApiSchemaExtensions
                    null or
                    "int64" or
                    "int32" &&
+               !describesMilliseconds &&
                schema.Description?.IndexOf("unix timestamp", StringComparison.OrdinalIgnoreCase) >= 0);
     }
 }

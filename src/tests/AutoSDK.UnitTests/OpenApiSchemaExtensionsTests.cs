@@ -94,6 +94,26 @@ public sealed class OpenApiSchemaExtensionsTests
     }
 
     [TestMethod]
+    public void IsUnixTimestamp_DoesNotClassifyMillisecondIntegers()
+    {
+        var seconds = new OpenApiSchema
+        {
+            Type = JsonSchemaType.Integer,
+            Format = "int64",
+            Description = "The Unix timestamp in seconds.",
+        };
+        var milliseconds = new OpenApiSchema
+        {
+            Type = JsonSchemaType.Integer,
+            Format = "int64",
+            Description = "Start of the time range as a Unix timestamp in milliseconds.",
+        };
+
+        seconds.IsUnixTimestamp().Should().BeTrue();
+        milliseconds.IsUnixTimestamp().Should().BeFalse();
+    }
+
+    [TestMethod]
     public void ResolveBareReference_UsesResolvedTarget()
     {
         var reference = ParseSchemaReference("""
