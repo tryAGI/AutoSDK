@@ -292,7 +292,7 @@
     "appStoreConnect": {
       "source": {
         "repository": "tryAGI/AppStoreConnect",
-        "repositoryCommit": "b13f7ceccd6037cafaee24c22a1e4f65c44b9877",
+        "repositoryCommit": "21c95ff545850c7e47e332f0d4562f819227c789",
         "path": "src/libs/AppStoreConnect/openapi.json",
         "sha256": "ed0202ef37155b9334772482d2ea0be688c3046b284c895bcbea5455fbe54fd8"
       },
@@ -310,7 +310,7 @@
         "--diagnostics"
       ],
       "generatedFiles": 24895,
-      "generatedBytes": 143473560,
+      "generatedBytes": 143473963,
       "maximum": {
         "freshTotalMilliseconds": 6500,
         "freshOutputMilliseconds": 2300,
@@ -632,8 +632,8 @@
     }
   },
   "currentProviderCorpus": {
-    "generatorCommit": "6c1e9acfe3",
-    "baselineCliVersion": "0.32.1-dev.45+1b78661d2ad48e9c8499cb06907397e1b92b2c13",
+    "generatorCommit": "b0b2ec1168",
+    "baselineCliVersion": "0.32.1-dev.48+bc4c605e3affd79f4d23572d2b4c35f22d155911",
     "vapi": {
       "source": {
         "path": "src/tests/AutoSDK.Benchmarks/Specs/vapi-current.yaml",
@@ -641,26 +641,30 @@
       },
       "generatedFiles": 6466,
       "maximum": {
-        "totalAllocatedBytes": 675000000,
-        "pipelineAllocatedBytes": 330000000,
-        "coreComputeClassesAllocatedBytes": 55000000,
-        "coreSchemaModelsAllocatedBytes": 25000000,
-        "coreEndpointsAllocatedBytes": 25000000
+        "totalAllocatedBytes": 580000000,
+        "pipelineAllocatedBytes": 240000000,
+        "coreComputeDataAllocatedBytes": 100000000,
+        "coreComputeClassesAllocatedBytes": 42000000,
+        "coreSchemaModelsAllocatedBytes": 18000000,
+        "coreEndpointsAllocatedBytes": 20000000
       },
       "observedBefore": {
-        "totalAllocatedBytes": 721156128,
-        "pipelineAllocatedBytes": 406145520,
-        "coreComputeClassesAllocatedBytes": 172335200
+        "totalAllocatedBytes": 592029288,
+        "pipelineAllocatedBytes": 277111216,
+        "coreComputeClassesAllocatedBytes": 44250560,
+        "coreEndpointsAllocatedBytes": 19967480
       },
       "observedAfter": {
-        "totalAllocatedBytes": 592226176,
-        "pipelineAllocatedBytes": 278282024,
-        "coreComputeClassesAllocatedBytes": 44510368,
-        "coreSchemaModelsAllocatedBytes": 20516216,
-        "coreEndpointsAllocatedBytes": 20190488,
-        "totalAllocationReductionPercent": 17.9,
-        "pipelineAllocationReductionPercent": 31.5,
-        "coreComputeClassesAllocationReductionPercent": 74.2
+        "totalAllocatedBytes": 519802120,
+        "pipelineAllocatedBytes": 203072736,
+        "coreComputeDataAllocatedBytes": 81405224,
+        "coreComputeClassesAllocatedBytes": 33407320,
+        "coreSchemaModelsAllocatedBytes": 13873216,
+        "coreEndpointsAllocatedBytes": 15729808,
+        "totalAllocationReductionPercent": 12.2,
+        "pipelineAllocationReductionPercent": 26.7,
+        "coreComputeClassesAllocationReductionPercent": 24.5,
+        "coreEndpointsAllocationReductionPercent": 21.2
       }
     },
     "anthropic": {
@@ -670,24 +674,30 @@
       },
       "generatedFiles": 6376,
       "maximum": {
-        "totalAllocatedBytes": 650000000,
-        "pipelineAllocatedBytes": 300000000,
-        "coreComputeClassesAllocatedBytes": 45000000,
+        "totalAllocatedBytes": 580000000,
+        "pipelineAllocatedBytes": 245000000,
+        "coreComputeDataAllocatedBytes": 100000000,
+        "coreComputeClassesAllocatedBytes": 43000000,
+        "coreSchemaModelsAllocatedBytes": 15000000,
         "coreEndpointsAllocatedBytes": 25000000
       },
       "observedBefore": {
-        "totalAllocatedBytes": 583427072,
-        "pipelineAllocatedBytes": 265871640,
-        "coreComputeClassesAllocatedBytes": 53607912
+        "totalAllocatedBytes": 565546760,
+        "pipelineAllocatedBytes": 249054376,
+        "coreComputeClassesAllocatedBytes": 36703504,
+        "coreEndpointsAllocatedBytes": 19913960
       },
       "observedAfter": {
-        "totalAllocatedBytes": 566345120,
-        "pipelineAllocatedBytes": 249461080,
-        "coreComputeClassesAllocatedBytes": 37117544,
-        "coreEndpointsAllocatedBytes": 20327944,
-        "totalAllocationReductionPercent": 2.9,
-        "pipelineAllocationReductionPercent": 6.2,
-        "coreComputeClassesAllocationReductionPercent": 30.8
+        "totalAllocatedBytes": 522636984,
+        "pipelineAllocatedBytes": 205130960,
+        "coreComputeDataAllocatedBytes": 80425216,
+        "coreComputeClassesAllocatedBytes": 34340632,
+        "coreSchemaModelsAllocatedBytes": 10181704,
+        "coreEndpointsAllocatedBytes": 19852888,
+        "totalAllocationReductionPercent": 7.6,
+        "pipelineAllocationReductionPercent": 17.6,
+        "coreComputeClassesAllocationReductionPercent": 6.4,
+        "coreEndpointsAllocationReductionPercent": 0.3
       }
     },
     "openAi": {
@@ -697,55 +707,213 @@
       },
       "generatedFiles": 9941,
       "maximum": {
-        "totalAllocatedBytes": 875000000,
-        "pipelineAllocatedBytes": 400000000,
-        "coreComputeClassesAllocatedBytes": 75000000,
-        "coreEndpointsAllocatedBytes": 35000000
+        "totalAllocatedBytes": 790000000,
+        "pipelineAllocatedBytes": 330000000,
+        "coreComputeDataAllocatedBytes": 120000000,
+        "coreComputeClassesAllocatedBytes": 60000000,
+        "coreSchemaModelsAllocatedBytes": 22000000,
+        "coreEndpointsAllocatedBytes": 30000000
       },
       "observedBefore": {
-        "totalAllocatedBytes": 800809944,
-        "pipelineAllocatedBytes": 366610648,
-        "coreComputeClassesAllocatedBytes": 91292512
+        "totalAllocatedBytes": 763519664,
+        "pipelineAllocatedBytes": 329186400,
+        "coreComputeClassesAllocatedBytes": 54360144,
+        "coreEndpointsAllocatedBytes": 23361208
       },
       "observedAfter": {
-        "totalAllocatedBytes": 768151584,
-        "pipelineAllocatedBytes": 334951704,
-        "coreComputeClassesAllocatedBytes": 60147176,
-        "coreEndpointsAllocatedBytes": 29148016,
-        "totalAllocationReductionPercent": 4.1,
-        "pipelineAllocationReductionPercent": 8.6,
-        "coreComputeClassesAllocationReductionPercent": 34.1
+        "totalAllocatedBytes": 705287016,
+        "pipelineAllocatedBytes": 270615000,
+        "coreComputeDataAllocatedBytes": 94252608,
+        "coreComputeClassesAllocatedBytes": 47835872,
+        "coreSchemaModelsAllocatedBytes": 15967224,
+        "coreEndpointsAllocatedBytes": 23085960,
+        "totalAllocationReductionPercent": 7.6,
+        "pipelineAllocationReductionPercent": 17.8,
+        "coreComputeClassesAllocationReductionPercent": 12.0,
+        "coreEndpointsAllocationReductionPercent": 1.2
       }
     },
     "elevenLabs": {
       "source": {
         "path": "src/tests/AutoSDK.Benchmarks/Specs/elevenlabs-current.json",
-        "sha256": "89cec3e9d46fbbe6c5bcafa020918247563e82dec6bcc43c53493ab9f262de26"
+        "sha256": "10ca5b94b1027bf176217cff5e30d8eb13a6dce940c67f3ad475268c4692962f"
       },
-      "generatedFiles": 7121,
+      "generatedFiles": 7111,
       "maximum": {
-        "totalAllocatedBytes": 825000000,
-        "pipelineAllocatedBytes": 430000000,
-        "coreComputeClassesAllocatedBytes": 85000000,
-        "coreEndpointsAllocatedBytes": 45000000
+        "totalAllocatedBytes": 730000000,
+        "pipelineAllocatedBytes": 360000000,
+        "coreComputeDataAllocatedBytes": 155000000,
+        "coreComputeClassesAllocatedBytes": 70000000,
+        "coreSchemaModelsAllocatedBytes": 26000000,
+        "coreEndpointsAllocatedBytes": 33000000
       },
       "observedBefore": {
-        "totalAllocatedBytes": 733045984,
-        "pipelineAllocatedBytes": 376310416,
-        "coreComputeClassesAllocatedBytes": 85767904
+        "totalAllocatedBytes": 716023880,
+        "pipelineAllocatedBytes": 359695576,
+        "coreComputeDataAllocatedBytes": 147984112,
+        "coreComputeClassesAllocatedBytes": 69434624,
+        "coreEndpointsAllocatedBytes": 37371912
       },
       "observedAfter": {
-        "totalAllocatedBytes": 716930760,
-        "pipelineAllocatedBytes": 360150424,
-        "coreComputeClassesAllocatedBytes": 69480288,
-        "coreEndpointsAllocatedBytes": 37360608,
-        "totalAllocationReductionPercent": 2.2,
-        "pipelineAllocationReductionPercent": 4.3,
-        "coreComputeClassesAllocationReductionPercent": 19.0
+        "totalAllocatedBytes": 653127904,
+        "pipelineAllocatedBytes": 296049400,
+        "coreComputeDataAllocatedBytes": 122761024,
+        "coreComputeClassesAllocatedBytes": 52703640,
+        "coreSchemaModelsAllocatedBytes": 19073168,
+        "coreEndpointsAllocatedBytes": 24515240,
+        "totalAllocationReductionPercent": 8.8,
+        "pipelineAllocationReductionPercent": 17.7,
+        "coreComputeClassesAllocationReductionPercent": 24.1,
+        "coreEndpointsAllocationReductionPercent": 34.4
       }
     },
     "parity": {
-      "generatedFiles": 29904,
+      "generatedFiles": 29894,
+      "differentFiles": 0
+    }
+  },
+  "expandedProductionCorpus": {
+    "generatorCommit": "b0b2ec1168",
+    "baselineCliVersion": "0.32.1-dev.48+bc4c605e3affd79f4d23572d2b4c35f22d155911",
+    "appStoreConnect": {
+      "source": {
+        "repository": "tryAGI/AppStoreConnect",
+        "repositoryCommit": "21c95ff545850c7e47e332f0d4562f819227c789",
+        "path": "src/libs/AppStoreConnect/openapi.json",
+        "sha256": "ed0202ef37155b9334772482d2ea0be688c3046b284c895bcbea5455fbe54fd8"
+      },
+      "generatedFiles": 24895,
+      "generatedBytes": 143473963,
+      "maximum": {
+        "totalAllocatedBytes": 1850000000,
+        "pipelineAllocatedBytes": 550000000,
+        "coreComputeDataAllocatedBytes": 110000000,
+        "coreComputeClassesAllocatedBytes": 160000000,
+        "coreEndpointsAllocatedBytes": 75000000
+      },
+      "observedBefore": {
+        "totalAllocatedBytes": 2082683000,
+        "pipelineAllocatedBytes": 911061016,
+        "coreComputeClassesAllocatedBytes": 219832904,
+        "coreEndpointsAllocatedBytes": 108756456
+      },
+      "observedAfter": {
+        "totalAllocatedBytes": 1629050304,
+        "pipelineAllocatedBytes": 456750088,
+        "coreComputeDataAllocatedBytes": 86929792,
+        "coreComputeClassesAllocatedBytes": 131786680,
+        "coreEndpointsAllocatedBytes": 63031616,
+        "totalAllocationReductionPercent": 21.8,
+        "pipelineAllocationReductionPercent": 49.9,
+        "coreComputeClassesAllocationReductionPercent": 40.1,
+        "coreEndpointsAllocationReductionPercent": 42.0
+      }
+    },
+    "vercel": {
+      "source": {
+        "repository": "tryAGI/Vercel",
+        "repositoryCommit": "1e0ce16e37b0e2a91e88a61201f19d3418b36b29",
+        "path": "src/libs/Vercel/openapi.yaml",
+        "sha256": "ee9661504e0ecf42e9a24cc73128edf1c012f4387ef1248ee1f620ac04a298f5"
+      },
+      "generatedFiles": 22848,
+      "generatedBytes": 110914077,
+      "maximum": {
+        "totalAllocatedBytes": 1350000000,
+        "pipelineAllocatedBytes": 430000000,
+        "coreComputeDataAllocatedBytes": 90000000,
+        "coreComputeClassesAllocatedBytes": 105000000,
+        "coreEndpointsAllocatedBytes": 26000000
+      },
+      "observedBefore": {
+        "totalAllocatedBytes": 1269882856,
+        "pipelineAllocatedBytes": 440216496,
+        "coreComputeDataAllocatedBytes": 120498056,
+        "coreComputeClassesAllocatedBytes": 107656048,
+        "coreEndpointsAllocatedBytes": 33138712
+      },
+      "observedAfter": {
+        "totalAllocatedBytes": 1178777128,
+        "pipelineAllocatedBytes": 349995120,
+        "coreComputeDataAllocatedBytes": 70124288,
+        "coreComputeClassesAllocatedBytes": 84219776,
+        "coreSchemaModelsAllocatedBytes": 52206016,
+        "coreEndpointsAllocatedBytes": 20000712,
+        "totalAllocationReductionPercent": 7.2,
+        "pipelineAllocationReductionPercent": 20.5,
+        "coreComputeDataAllocationReductionPercent": 41.8,
+        "coreComputeClassesAllocationReductionPercent": 21.8,
+        "coreEndpointsAllocationReductionPercent": 39.6
+      }
+    },
+    "composio": {
+      "source": {
+        "repository": "tryAGI/Composio",
+        "repositoryCommit": "d029d0430b157bf18d1a99b14b887e103c40c64a",
+        "path": "src/libs/Composio/openapi.json",
+        "sha256": "6827024ac630defea43232dc6a0f5730c6b1d672422d42ffbf5838bc6472e3a6"
+      },
+      "generatedFiles": 3979,
+      "observedBefore": {
+        "totalAllocatedBytes": 285817696,
+        "pipelineAllocatedBytes": 109729312,
+        "coreComputeClassesAllocatedBytes": 24049648,
+        "coreEndpointsAllocatedBytes": 6958256
+      },
+      "observedAfter": {
+        "totalAllocatedBytes": 279304640,
+        "pipelineAllocatedBytes": 102811144,
+        "coreComputeDataAllocatedBytes": 14781200,
+        "coreComputeClassesAllocatedBytes": 20842768,
+        "coreEndpointsAllocatedBytes": 4474784
+      }
+    },
+    "novu": {
+      "source": {
+        "repository": "tryAGI/Novu",
+        "repositoryCommit": "f7c8ab10ef2d0d387405b0195676a5d61215289e",
+        "path": "src/libs/Novu/openapi.yaml",
+        "sha256": "6f9f935e92bf67bf229d2923a578654ad962082d79d4a4e7096d6c6270a203df"
+      },
+      "generatedFiles": 2709,
+      "observedBefore": {
+        "totalAllocatedBytes": 314026808,
+        "pipelineAllocatedBytes": 147156896,
+        "coreComputeClassesAllocatedBytes": 26639560,
+        "coreEndpointsAllocatedBytes": 15584896
+      },
+      "observedAfter": {
+        "totalAllocatedBytes": 267191024,
+        "pipelineAllocatedBytes": 99646432,
+        "coreComputeDataAllocatedBytes": 8643360,
+        "coreComputeClassesAllocatedBytes": 22410448,
+        "coreEndpointsAllocatedBytes": 15420128
+      }
+    },
+    "dId": {
+      "source": {
+        "repository": "tryAGI/DId",
+        "repositoryCommit": "402adc6b23e1c39fd853241e039468d79ef67d42",
+        "path": "src/libs/DId/openapi.json",
+        "sha256": "f758d7a492d70d190c105a7b81f3f59c68046c7c62c0ac27ef1b911754ca1394"
+      },
+      "generatedFiles": 8375,
+      "observedBefore": {
+        "totalAllocatedBytes": 428615248,
+        "pipelineAllocatedBytes": 119829944,
+        "coreComputeClassesAllocatedBytes": 28762744,
+        "coreEndpointsAllocatedBytes": 6621400
+      },
+      "observedAfter": {
+        "totalAllocatedBytes": 416293008,
+        "pipelineAllocatedBytes": 106630896,
+        "coreComputeDataAllocatedBytes": 20404784,
+        "coreComputeClassesAllocatedBytes": 23550888,
+        "coreEndpointsAllocatedBytes": 3796480
+      }
+    },
+    "parity": {
+      "generatedFiles": 62806,
       "differentFiles": 0
     }
   },
@@ -764,6 +932,7 @@
     "The enum-render thresholds use three-run medians for the optimized CLI; the public baseline is retained for comparison and wall time remains sensitive to concurrent machine load.",
     "The direct-render and schema-shape thresholds use allocation measurements because they are substantially more stable than wall time; exact CLI output was compared byte-for-byte with public AutoSDK.CLI 0.32.1-dev.42.",
     "The current provider corpus is benchmark-only and pinned by hash so provider spec updates do not silently move the allocation thresholds.",
-    "Current-provider CLI results use each provider's production generation arguments and were byte-identical to public AutoSDK.CLI 0.32.1-dev.45."
+    "Current-provider and expanded-production CLI results use each provider's production generation arguments and were byte-identical to public AutoSDK.CLI 0.32.1-dev.48.",
+    "App Store Connect and Vercel have enforced reference ceilings in this file; Composio, Novu, and D-ID remain comparative controls until repeated measurements justify tighter ceilings."
   ]
 }

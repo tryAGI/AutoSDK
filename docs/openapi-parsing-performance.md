@@ -198,6 +198,58 @@ gain after the binary-schema hotspot was removed. Neither experiment is present 
 the production pipeline. The pinned hashes, observed values, and allocation ceilings
 are stored in `src/tests/AutoSDK.Benchmarks/performance-budgets/large-spec-regeneration.json`.
 
+### Expanded production-spec enrichment pass
+
+A second pass used current App Store Connect, Vercel, Composio, Novu, and D-ID
+specifications in addition to the four pinned provider fixtures. App Store Connect was
+the decisive workload: its repeated schema references made Microsoft.OpenAPI's
+reference-holder convenience getters dominate `ComputeData`. Each getter resolves the
+same target through the workspace and creates a new cycle guard. AutoSDK now caches a
+generation context's effective schema only for bare references. References carrying any
+OpenAPI 3.1 JSON Schema sibling keyword continue through the reference holder, so
+sibling override behavior is preserved.
+
+The same trace found three independent allocation sources:
+
+- authorization requirement sets were rebuilt for every representation of every
+  endpoint even when operation- or document-level security was shared;
+- enum normalization always copied its dictionary twice, including the common path
+  where member names were already unique;
+- query parameter serialization used a multi-stage LINQ flattening pipeline, and status
+  polling repeatedly resolved the same reference while walking a schema.
+
+The retained implementation adds generation-scoped authorization and effective-schema
+caches, an allocation-free enum uniqueness fast path, a pre-sized enum dictionary, a
+single-pass query serializer, and one-time reference resolution in polling. A direct
+request-data cache and direct immutable-builder query output were measured but removed:
+the former added about 0.45 MB on App Store Connect and the latter did not reduce
+allocation.
+
+Fresh CLI allocation results against public `AutoSDK.CLI 0.32.1-dev.48` were:
+
+| Workload | Pipeline before | Pipeline after | Reduction | Total before | Total after |
+| --- | ---: | ---: | ---: | ---: | ---: |
+| App Store Connect | 911.1 MB | 456.8 MB | 49.9% | 2,082.7 MB | 1,629.1 MB |
+| Vercel | 440.2 MB | 350.0 MB | 20.5% | 1,269.9 MB | 1,178.8 MB |
+| Vapi | 277.1 MB | 203.1 MB | 26.7% | 592.0 MB | 519.8 MB |
+| Anthropic | 249.1 MB | 205.1 MB | 17.6% | 565.5 MB | 522.6 MB |
+| OpenAI | 329.2 MB | 270.6 MB | 17.8% | 763.5 MB | 705.3 MB |
+| ElevenLabs | 359.7 MB | 296.0 MB | 17.7% | 716.0 MB | 653.1 MB |
+| Composio | 109.7 MB | 102.8 MB | 6.3% | 285.8 MB | 279.3 MB |
+| Novu | 147.2 MB | 99.6 MB | 32.3% | 314.0 MB | 267.2 MB |
+| D-ID | 119.8 MB | 106.6 MB | 11.0% | 428.6 MB | 416.3 MB |
+
+All 92,700 generated files across the pinned and expanded corpora were byte-identical
+to the public CLI baseline. The full solution built for `net4.6.2`, `netstandard2.0`,
+and `net10.0`; 563 unit tests and 287 snapshot tests passed.
+
+After enrichment was cut in half on App Store Connect, the largest remaining phases
+are render (699.8 MB) and output writing (357.7 MB), not schema enrichment. Within
+render, method implementations allocate 242.1 MB, model JSON extensions 104.8 MB, and
+the serializer context 100.5 MB. Core parsing remains 139.8 MB and is mostly the
+Microsoft reader. These are the next profiling targets; the updated ceilings and exact
+spec hashes are recorded in the performance-budget JSON.
+
 `dotnet-trace` identifies the YAML package path as
 `OpenApiYamlReader.ReadCore -> YamlJsonParser.Parse`. The sampled descendants are
 primarily SharpYaml token scanning and materialization, including `FetchMoreTokens`,
