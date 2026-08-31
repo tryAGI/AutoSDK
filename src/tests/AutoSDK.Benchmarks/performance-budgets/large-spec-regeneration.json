@@ -21,16 +21,16 @@
         "--diagnostics"
       ],
       "generatedFiles": 16942,
-      "generatedBytes": 99215523,
+      "generatedBytes": 99200856,
       "maximum": {
         "freshTotalMilliseconds": 6000,
         "freshOutputMilliseconds": 1600,
         "freshOutputPhysicalWriteWorkerMilliseconds": 10000,
         "cacheHitTotalMilliseconds": 750,
         "cacheValidationMilliseconds": 650,
-        "totalAllocatedBytes": 2250000000,
-        "renderAllocatedBytes": 800000000,
-        "writeAllocatedBytes": 210000000
+        "totalAllocatedBytes": 1500000000,
+        "renderAllocatedBytes": 520000000,
+        "writeAllocatedBytes": 120000000
       },
       "baselineBeforeFreshFileDirectWrites": {
         "commit": "ff38ca9a1647b2acae2f27eaf4fc0baa014a6fd9",
@@ -317,9 +317,9 @@
         "freshOutputPhysicalWriteWorkerMilliseconds": 15000,
         "cacheHitTotalMilliseconds": 1100,
         "cacheValidationMilliseconds": 850,
-        "totalAllocatedBytes": 2750000000,
-        "renderAllocatedBytes": 1250000000,
-        "writeAllocatedBytes": 380000000
+        "totalAllocatedBytes": 1500000000,
+        "renderAllocatedBytes": 680000000,
+        "writeAllocatedBytes": 80000000
       },
       "baselineBeforeFreshFileDirectWrites": {
         "commit": "ff38ca9a1647b2acae2f27eaf4fc0baa014a6fd9",
@@ -632,7 +632,7 @@
     }
   },
   "currentProviderCorpus": {
-    "generatorCommit": "b0b2ec1168",
+    "generatorCommit": "850a1da375",
     "baselineCliVersion": "0.32.1-dev.48+bc4c605e3affd79f4d23572d2b4c35f22d155911",
     "vapi": {
       "source": {
@@ -641,7 +641,9 @@
       },
       "generatedFiles": 6466,
       "maximum": {
-        "totalAllocatedBytes": 580000000,
+        "totalAllocatedBytes": 500000000,
+        "renderAllocatedBytes": 230000000,
+        "writeAllocatedBytes": 50000000,
         "pipelineAllocatedBytes": 240000000,
         "coreComputeDataAllocatedBytes": 100000000,
         "coreComputeClassesAllocatedBytes": 42000000,
@@ -665,6 +667,11 @@
         "pipelineAllocationReductionPercent": 26.7,
         "coreComputeClassesAllocationReductionPercent": 24.5,
         "coreEndpointsAllocationReductionPercent": 21.2
+      },
+      "observedAfterRenderAndOutputStreaming": {
+        "totalAllocatedBytes": 465280072,
+        "renderAllocatedBytes": 198707552,
+        "writeAllocatedBytes": 37625832
       }
     },
     "anthropic": {
@@ -674,7 +681,9 @@
       },
       "generatedFiles": 6376,
       "maximum": {
-        "totalAllocatedBytes": 580000000,
+        "totalAllocatedBytes": 510000000,
+        "renderAllocatedBytes": 225000000,
+        "writeAllocatedBytes": 45000000,
         "pipelineAllocatedBytes": 245000000,
         "coreComputeDataAllocatedBytes": 100000000,
         "coreComputeClassesAllocatedBytes": 43000000,
@@ -698,6 +707,11 @@
         "pipelineAllocationReductionPercent": 17.6,
         "coreComputeClassesAllocationReductionPercent": 6.4,
         "coreEndpointsAllocationReductionPercent": 0.3
+      },
+      "observedAfterRenderAndOutputStreaming": {
+        "totalAllocatedBytes": 473252272,
+        "renderAllocatedBytes": 195454664,
+        "writeAllocatedBytes": 32346960
       }
     },
     "openAi": {
@@ -707,7 +721,9 @@
       },
       "generatedFiles": 9941,
       "maximum": {
-        "totalAllocatedBytes": 790000000,
+        "totalAllocatedBytes": 680000000,
+        "renderAllocatedBytes": 280000000,
+        "writeAllocatedBytes": 70000000,
         "pipelineAllocatedBytes": 330000000,
         "coreComputeDataAllocatedBytes": 120000000,
         "coreComputeClassesAllocatedBytes": 60000000,
@@ -731,6 +747,11 @@
         "pipelineAllocationReductionPercent": 17.8,
         "coreComputeClassesAllocationReductionPercent": 12.0,
         "coreEndpointsAllocationReductionPercent": 1.2
+      },
+      "observedAfterRenderAndOutputStreaming": {
+        "totalAllocatedBytes": 634950360,
+        "renderAllocatedBytes": 246370168,
+        "writeAllocatedBytes": 54810944
       }
     },
     "elevenLabs": {
@@ -740,7 +761,9 @@
       },
       "generatedFiles": 7111,
       "maximum": {
-        "totalAllocatedBytes": 730000000,
+        "totalAllocatedBytes": 640000000,
+        "renderAllocatedBytes": 250000000,
+        "writeAllocatedBytes": 50000000,
         "pipelineAllocatedBytes": 360000000,
         "coreComputeDataAllocatedBytes": 155000000,
         "coreComputeClassesAllocatedBytes": 70000000,
@@ -765,6 +788,11 @@
         "pipelineAllocationReductionPercent": 17.7,
         "coreComputeClassesAllocationReductionPercent": 24.1,
         "coreEndpointsAllocationReductionPercent": 34.4
+      },
+      "observedAfterRenderAndOutputStreaming": {
+        "totalAllocatedBytes": 593853984,
+        "renderAllocatedBytes": 216033080,
+        "writeAllocatedBytes": 34124888
       }
     },
     "parity": {
@@ -773,7 +801,7 @@
     }
   },
   "expandedProductionCorpus": {
-    "generatorCommit": "b0b2ec1168",
+    "generatorCommit": "850a1da375",
     "baselineCliVersion": "0.32.1-dev.48+bc4c605e3affd79f4d23572d2b4c35f22d155911",
     "appStoreConnect": {
       "source": {
@@ -785,7 +813,9 @@
       "generatedFiles": 24895,
       "generatedBytes": 143473963,
       "maximum": {
-        "totalAllocatedBytes": 1850000000,
+        "totalAllocatedBytes": 1450000000,
+        "renderAllocatedBytes": 680000000,
+        "writeAllocatedBytes": 80000000,
         "pipelineAllocatedBytes": 550000000,
         "coreComputeDataAllocatedBytes": 110000000,
         "coreComputeClassesAllocatedBytes": 160000000,
@@ -807,6 +837,11 @@
         "pipelineAllocationReductionPercent": 49.9,
         "coreComputeClassesAllocationReductionPercent": 40.1,
         "coreEndpointsAllocationReductionPercent": 42.0
+      },
+      "observedAfterRenderAndOutputStreaming": {
+        "totalAllocatedBytes": 1224342456,
+        "renderAllocatedBytes": 603205560,
+        "writeAllocatedBytes": 48281952
       }
     },
     "vercel": {
@@ -819,7 +854,9 @@
       "generatedFiles": 22848,
       "generatedBytes": 110914077,
       "maximum": {
-        "totalAllocatedBytes": 1350000000,
+        "totalAllocatedBytes": 1150000000,
+        "renderAllocatedBytes": 550000000,
+        "writeAllocatedBytes": 150000000,
         "pipelineAllocatedBytes": 430000000,
         "coreComputeDataAllocatedBytes": 90000000,
         "coreComputeClassesAllocatedBytes": 105000000,
@@ -844,6 +881,11 @@
         "coreComputeDataAllocationReductionPercent": 41.8,
         "coreComputeClassesAllocationReductionPercent": 21.8,
         "coreEndpointsAllocationReductionPercent": 39.6
+      },
+      "observedAfterRenderAndOutputStreaming": {
+        "totalAllocatedBytes": 1037217888,
+        "renderAllocatedBytes": 480615176,
+        "writeAllocatedBytes": 122275256
       }
     },
     "composio": {
@@ -854,6 +896,11 @@
         "sha256": "6827024ac630defea43232dc6a0f5730c6b1d672422d42ffbf5838bc6472e3a6"
       },
       "generatedFiles": 3979,
+      "maximum": {
+        "totalAllocatedBytes": 270000000,
+        "renderAllocatedBytes": 115000000,
+        "writeAllocatedBytes": 30000000
+      },
       "observedBefore": {
         "totalAllocatedBytes": 285817696,
         "pipelineAllocatedBytes": 109729312,
@@ -866,6 +913,11 @@
         "coreComputeDataAllocatedBytes": 14781200,
         "coreComputeClassesAllocatedBytes": 20842768,
         "coreEndpointsAllocatedBytes": 4474784
+      },
+      "observedAfterRenderAndOutputStreaming": {
+        "totalAllocatedBytes": 245841152,
+        "renderAllocatedBytes": 99916968,
+        "writeAllocatedBytes": 21035168
       }
     },
     "novu": {
@@ -876,6 +928,11 @@
         "sha256": "6f9f935e92bf67bf229d2923a578654ad962082d79d4a4e7096d6c6270a203df"
       },
       "generatedFiles": 2709,
+      "maximum": {
+        "totalAllocatedBytes": 250000000,
+        "renderAllocatedBytes": 100000000,
+        "writeAllocatedBytes": 25000000
+      },
       "observedBefore": {
         "totalAllocatedBytes": 314026808,
         "pipelineAllocatedBytes": 147156896,
@@ -888,6 +945,11 @@
         "coreComputeDataAllocatedBytes": 8643360,
         "coreComputeClassesAllocatedBytes": 22410448,
         "coreEndpointsAllocatedBytes": 15420128
+      },
+      "observedAfterRenderAndOutputStreaming": {
+        "totalAllocatedBytes": 227093104,
+        "renderAllocatedBytes": 83221584,
+        "writeAllocatedBytes": 13903880
       }
     },
     "dId": {
@@ -898,6 +960,11 @@
         "sha256": "f758d7a492d70d190c105a7b81f3f59c68046c7c62c0ac27ef1b911754ca1394"
       },
       "generatedFiles": 8375,
+      "maximum": {
+        "totalAllocatedBytes": 390000000,
+        "renderAllocatedBytes": 205000000,
+        "writeAllocatedBytes": 65000000
+      },
       "observedBefore": {
         "totalAllocatedBytes": 428615248,
         "pipelineAllocatedBytes": 119829944,
@@ -910,6 +977,11 @@
         "coreComputeDataAllocatedBytes": 20404784,
         "coreComputeClassesAllocatedBytes": 23550888,
         "coreEndpointsAllocatedBytes": 3796480
+      },
+      "observedAfterRenderAndOutputStreaming": {
+        "totalAllocatedBytes": 361863768,
+        "renderAllocatedBytes": 178212312,
+        "writeAllocatedBytes": 48025160
       }
     },
     "parity": {
@@ -933,6 +1005,7 @@
     "The direct-render and schema-shape thresholds use allocation measurements because they are substantially more stable than wall time; exact CLI output was compared byte-for-byte with public AutoSDK.CLI 0.32.1-dev.42.",
     "The current provider corpus is benchmark-only and pinned by hash so provider spec updates do not silently move the allocation thresholds.",
     "Current-provider and expanded-production CLI results use each provider's production generation arguments and were byte-identical to public AutoSDK.CLI 0.32.1-dev.48.",
-    "App Store Connect and Vercel have enforced reference ceilings in this file; Composio, Novu, and D-ID remain comparative controls until repeated measurements justify tighter ceilings."
+    "Render and output-streaming thresholds use commit 850a1da375; all 92700 pinned and expanded-corpus files were byte-identical to the pre-change outputs.",
+    "All expanded-production workloads now carry total, render, and write allocation ceilings; phase-specific enrichment ceilings remain limited to App Store Connect and Vercel."
   ]
 }

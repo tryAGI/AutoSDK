@@ -250,6 +250,57 @@ the serializer context 100.5 MB. Core parsing remains 139.8 MB and is mostly the
 Microsoft reader. These are the next profiling targets; the updated ceilings and exact
 spec hashes are recorded in the performance-budget JSON.
 
+### Direct response rendering and streamed output encoding
+
+The next allocation trace showed that response rendering built every exception block
+as a sequence of strings and then concatenated the complete sequence before appending
+it to the generated method. Request hook invocations repeated the same pattern five
+times per method. Both paths now append directly into the normalized pooled method
+builder. The shared operation, method, path, and HTTP-method literals are computed once
+per method, and specs with no declared error responses retain their original whitespace.
+
+Large serializer contexts had a separate growth pattern. App Store Connect's generated
+context contains 8.95 million characters and 8,288 lazy converter registrations, while
+its old initial-capacity estimate covered only 5.41 million characters. The retained
+estimate includes converter and chunk scaffolding, so the pooled builder rents its final
+bucket once. Collision-analysis dictionaries and sets are also sized from the known
+type counts and use single-pass nullable-type collection on the CLI target.
+
+The largest remaining allocation was outside rendering. `GeneratedFileWriter` first
+created a second normalized UTF-16 copy of every generated file, then encoded that copy
+to a pooled UTF-8 buffer. It now scans and encodes the retained spans directly into the
+UTF-8 buffer, preserving CRLF/LF endings and the exact normalized-line count without the
+intermediate string. Fresh-file writes already receive the complete byte buffer, so they
+use an unbuffered synchronous `FileStream` inside the existing eight-worker pool instead
+of allocating another 4 KB stream buffer and async state for each small file. Existing
+files still use atomic replacement, and comparisons use their existing pooled 64 KB
+buffer with duplicate stream buffering disabled.
+
+Fresh CLI allocations changed as follows after commit `850a1da375`:
+
+| Workload | Total before | Total after | Reduction | Render before | Render after | Write before | Write after |
+| --- | ---: | ---: | ---: | ---: | ---: | ---: | ---: |
+| App Store Connect | 1,629.1 MB | 1,224.3 MB | 24.8% | 699.8 MB | 603.2 MB | 357.7 MB | 48.3 MB |
+| Vercel | 1,178.8 MB | 1,037.2 MB | 12.0% | 491.8 MB | 480.6 MB | 254.2 MB | 122.3 MB |
+| Vapi | 519.8 MB | 465.3 MB | 10.5% | 200.4 MB | 198.7 MB | 90.0 MB | 37.6 MB |
+| Anthropic | 522.6 MB | 473.3 MB | 9.4% | 214.6 MB | 195.5 MB | 62.6 MB | 32.3 MB |
+| OpenAI | 705.3 MB | 635.0 MB | 10.0% | 259.6 MB | 246.4 MB | 111.9 MB | 54.8 MB |
+| ElevenLabs | 653.1 MB | 593.9 MB | 9.1% | 227.2 MB | 216.0 MB | 82.2 MB | 34.1 MB |
+| Composio | 279.3 MB | 245.8 MB | 12.0% | 105.3 MB | 99.9 MB | 49.3 MB | 21.0 MB |
+| Novu | 267.2 MB | 227.1 MB | 15.0% | 99.7 MB | 83.2 MB | 37.6 MB | 13.9 MB |
+| D-ID | 416.3 MB | 361.9 MB | 13.1% | 191.5 MB | 178.2 MB | 89.4 MB | 48.0 MB |
+
+On App Store Connect, method-implementation allocation fell from 242.1 MB to
+172.5 MB. The main serializer-context file fell from 100.5 MB to 79.0 MB and its
+context-types companion from 39.3 MB to 33.9 MB. A final three-run fresh-process median
+was 3,636 ms total and 1,414 ms for normalize/compare/write; allocation counts were
+stable even when wall time was affected by concurrent machine load.
+
+All 92,700 files in the pinned and expanded provider corpora were byte-identical to the
+pre-change outputs. The full solution built for `net4.6.2`, `netstandard2.0`, and
+`net10.0`; 564 unit tests and 287 snapshot tests passed. The unit coverage includes
+direct UTF-8 output for Cyrillic, CJK, emoji, CRLF, LF, and trailing whitespace.
+
 `dotnet-trace` identifies the YAML package path as
 `OpenApiYamlReader.ReadCore -> YamlJsonParser.Parse`. The sampled descendants are
 primarily SharpYaml token scanning and materialization, including `FetchMoreTokens`,
