@@ -261,6 +261,32 @@
           "differentFiles": 0,
           "baselineCliVersion": "0.32.1-dev.40"
         }
+      },
+      "directRenderAndSchemaShapeVerification": {
+        "generatorCommit": "4afb453d3a",
+        "maximum": {
+          "warmTotalAllocatedMegabytes": 1300,
+          "warmCoreNamingAllocatedMegabytes": 55,
+          "freshCliRenderAllocatedBytes": 600000000
+        },
+        "observedBefore": {
+          "warmTotalAllocatedMegabytes": 1383.8,
+          "warmCoreNamingAllocatedMegabytes": 84.8,
+          "freshCliRenderAllocatedBytes": 677601488
+        },
+        "observedAfter": {
+          "warmTotalAllocatedMegabytes": 1225.0,
+          "warmCoreNamingAllocatedMegabytes": 45.5,
+          "freshCliRenderAllocatedBytes": 474201776,
+          "warmTotalAllocationReductionPercent": 11.5,
+          "warmCoreNamingAllocationReductionPercent": 46.3,
+          "freshCliRenderAllocationReductionPercent": 30.0
+        },
+        "parity": {
+          "generatedFiles": 16942,
+          "differentFiles": 0,
+          "baselineCliVersion": "0.32.1-dev.42"
+        }
       }
     },
     "appStoreConnect": {
@@ -499,6 +525,24 @@
           "differentFiles": 0,
           "baselineCliVersion": "0.32.1-dev.40"
         }
+      },
+      "directRenderVerification": {
+        "generatorCommit": "4afb453d3a",
+        "maximum": {
+          "freshCliRenderAllocatedBytes": 850000000
+        },
+        "observedBefore": {
+          "freshCliRenderAllocatedBytes": 1016094224
+        },
+        "observedAfter": {
+          "freshCliRenderAllocatedBytes": 699830520,
+          "freshCliRenderAllocationReductionPercent": 31.1
+        },
+        "parity": {
+          "generatedFiles": 24895,
+          "differentFiles": 0,
+          "baselineCliVersion": "0.32.1-dev.42"
+        }
       }
     },
     "elevenLabsOpenApi31": {
@@ -558,6 +602,32 @@
           "differentFiles": 0,
           "baselineCliVersion": "0.32.1-dev.40"
         }
+      },
+      "directRenderAndSchemaShapeVerification": {
+        "generatorCommit": "4afb453d3a",
+        "maximum": {
+          "warmTotalAllocatedMegabytes": 400,
+          "warmCoreNamingAllocatedMegabytes": 35,
+          "freshCliRenderAllocatedBytes": 220000000
+        },
+        "observedBefore": {
+          "warmTotalAllocatedMegabytes": 422.0,
+          "warmCoreNamingAllocatedMegabytes": 49.8,
+          "freshCliRenderAllocatedBytes": 212349624
+        },
+        "observedAfter": {
+          "warmTotalAllocatedMegabytes": 363.7,
+          "warmCoreNamingAllocatedMegabytes": 25.8,
+          "freshCliRenderAllocatedBytes": 169880992,
+          "warmTotalAllocationReductionPercent": 13.8,
+          "warmCoreNamingAllocationReductionPercent": 48.2,
+          "freshCliRenderAllocationReductionPercent": 20.0
+        },
+        "parity": {
+          "generatedFiles": 4884,
+          "differentFiles": 0,
+          "baselineCliVersion": "0.32.1-dev.42"
+        }
       }
     }
   },
@@ -573,6 +643,7 @@
     "Parsing subphase budgets use the durable in-repository GitHub workload and the pinned App Store Connect workload; CLI values include cold-process startup and workload-specific post-processing options.",
     "Post-processing detail keeps its aggregate metric for compatibility and records nested phases whose wall times include a small amount of measurement overhead.",
     "The OpenAPI 3.1 compatibility boundary is based on direct Microsoft.OpenApi 3.10.2 reader probes and should be reevaluated on every major reader upgrade.",
-    "The enum-render thresholds use three-run medians for the optimized CLI; the public baseline is retained for comparison and wall time remains sensitive to concurrent machine load."
+    "The enum-render thresholds use three-run medians for the optimized CLI; the public baseline is retained for comparison and wall time remains sensitive to concurrent machine load.",
+    "The direct-render and schema-shape thresholds use allocation measurements because they are substantially more stable than wall time; exact CLI output was compared byte-for-byte with public AutoSDK.CLI 0.32.1-dev.42."
   ]
 }

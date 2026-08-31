@@ -130,6 +130,35 @@ enum phase from 60.255 ms to 35.854 ms; total render wall time remained within n
 run-to-run noise. Across ElevenLabs, GitHub, and App Store Connect, all 46,721 generated
 files remained byte-identical to the public CLI baseline.
 
+## Direct rendering and schema-shape fast paths
+
+After enum rendering was reduced, the remaining controlled render allocation was
+spread across model bodies, method responses, serializer-context registrations, and
+XML documentation. These paths now write directly into pooled normalized builders
+instead of composing large trees of temporary interpolated strings and enumerables.
+The render worker count is eight: a measured increase to sixteen made the workloads
+slower and was not retained.
+
+The core naming profile exposed a separate non-render hotspot. Simple schemas were
+paying for nullable `oneOf`/`anyOf` inspection through Microsoft.OpenApi collection
+accessors even when the relevant collection was empty. Shape predicates now reject
+those cases before union inspection, model classification checks the already-computed
+type first, and generated namespaces are cached on the immutable schema context.
+
+The final warm three-run profile measured the following allocation changes:
+
+| Workload | Total before | Total after | Core naming before | Core naming after |
+| --- | ---: | ---: | ---: | ---: |
+| GitHub | 1,383.8 MB | 1,225.0 MB | 84.8 MB | 45.5 MB |
+| ElevenLabs | 422.0 MB | 363.7 MB | 49.8 MB | 25.8 MB |
+
+Fresh CLI render allocation fell from 677,601,488 to 474,201,776 bytes on GitHub,
+from 1,016,094,224 to 699,830,520 bytes on App Store Connect, and from 212,349,624
+to 169,880,992 bytes on ElevenLabs. The generated output remained byte-identical to
+public `AutoSDK.CLI 0.32.1-dev.42` for all 46,721 files. The full snapshot suite also
+passed all 287 cases. Allocation ceilings for these paths are stored with the other
+large-spec budgets.
+
 `dotnet-trace` identifies the YAML package path as
 `OpenApiYamlReader.ReadCore -> YamlJsonParser.Parse`. The sampled descendants are
 primarily SharpYaml token scanning and materialization, including `FetchMoreTokens`,
