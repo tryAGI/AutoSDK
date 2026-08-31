@@ -631,6 +631,124 @@
       }
     }
   },
+  "currentProviderCorpus": {
+    "generatorCommit": "6c1e9acfe3",
+    "baselineCliVersion": "0.32.1-dev.45+1b78661d2ad48e9c8499cb06907397e1b92b2c13",
+    "vapi": {
+      "source": {
+        "path": "src/tests/AutoSDK.Benchmarks/Specs/vapi-current.yaml",
+        "sha256": "f889c136f331867362028dc8864999db0516c63960a4a49db1f9a010b4d14f67"
+      },
+      "generatedFiles": 6466,
+      "maximum": {
+        "totalAllocatedBytes": 675000000,
+        "pipelineAllocatedBytes": 330000000,
+        "coreComputeClassesAllocatedBytes": 55000000,
+        "coreSchemaModelsAllocatedBytes": 25000000,
+        "coreEndpointsAllocatedBytes": 25000000
+      },
+      "observedBefore": {
+        "totalAllocatedBytes": 721156128,
+        "pipelineAllocatedBytes": 406145520,
+        "coreComputeClassesAllocatedBytes": 172335200
+      },
+      "observedAfter": {
+        "totalAllocatedBytes": 592226176,
+        "pipelineAllocatedBytes": 278282024,
+        "coreComputeClassesAllocatedBytes": 44510368,
+        "coreSchemaModelsAllocatedBytes": 20516216,
+        "coreEndpointsAllocatedBytes": 20190488,
+        "totalAllocationReductionPercent": 17.9,
+        "pipelineAllocationReductionPercent": 31.5,
+        "coreComputeClassesAllocationReductionPercent": 74.2
+      }
+    },
+    "anthropic": {
+      "source": {
+        "path": "src/tests/AutoSDK.Benchmarks/Specs/anthropic-current.yaml",
+        "sha256": "6b1b61e44ceda0bbc58084044b07a88a919ebe6231c92d042213c6ebeb531289"
+      },
+      "generatedFiles": 6376,
+      "maximum": {
+        "totalAllocatedBytes": 650000000,
+        "pipelineAllocatedBytes": 300000000,
+        "coreComputeClassesAllocatedBytes": 45000000,
+        "coreEndpointsAllocatedBytes": 25000000
+      },
+      "observedBefore": {
+        "totalAllocatedBytes": 583427072,
+        "pipelineAllocatedBytes": 265871640,
+        "coreComputeClassesAllocatedBytes": 53607912
+      },
+      "observedAfter": {
+        "totalAllocatedBytes": 566345120,
+        "pipelineAllocatedBytes": 249461080,
+        "coreComputeClassesAllocatedBytes": 37117544,
+        "coreEndpointsAllocatedBytes": 20327944,
+        "totalAllocationReductionPercent": 2.9,
+        "pipelineAllocationReductionPercent": 6.2,
+        "coreComputeClassesAllocationReductionPercent": 30.8
+      }
+    },
+    "openAi": {
+      "source": {
+        "path": "src/tests/AutoSDK.Benchmarks/Specs/openai-current.yaml",
+        "sha256": "9045dde43bdbfa96b2fab82e0fb347e099db2c150526b7a1f52f101c41fcae0c"
+      },
+      "generatedFiles": 9941,
+      "maximum": {
+        "totalAllocatedBytes": 875000000,
+        "pipelineAllocatedBytes": 400000000,
+        "coreComputeClassesAllocatedBytes": 75000000,
+        "coreEndpointsAllocatedBytes": 35000000
+      },
+      "observedBefore": {
+        "totalAllocatedBytes": 800809944,
+        "pipelineAllocatedBytes": 366610648,
+        "coreComputeClassesAllocatedBytes": 91292512
+      },
+      "observedAfter": {
+        "totalAllocatedBytes": 768151584,
+        "pipelineAllocatedBytes": 334951704,
+        "coreComputeClassesAllocatedBytes": 60147176,
+        "coreEndpointsAllocatedBytes": 29148016,
+        "totalAllocationReductionPercent": 4.1,
+        "pipelineAllocationReductionPercent": 8.6,
+        "coreComputeClassesAllocationReductionPercent": 34.1
+      }
+    },
+    "elevenLabs": {
+      "source": {
+        "path": "src/tests/AutoSDK.Benchmarks/Specs/elevenlabs-current.json",
+        "sha256": "89cec3e9d46fbbe6c5bcafa020918247563e82dec6bcc43c53493ab9f262de26"
+      },
+      "generatedFiles": 7121,
+      "maximum": {
+        "totalAllocatedBytes": 825000000,
+        "pipelineAllocatedBytes": 430000000,
+        "coreComputeClassesAllocatedBytes": 85000000,
+        "coreEndpointsAllocatedBytes": 45000000
+      },
+      "observedBefore": {
+        "totalAllocatedBytes": 733045984,
+        "pipelineAllocatedBytes": 376310416,
+        "coreComputeClassesAllocatedBytes": 85767904
+      },
+      "observedAfter": {
+        "totalAllocatedBytes": 716930760,
+        "pipelineAllocatedBytes": 360150424,
+        "coreComputeClassesAllocatedBytes": 69480288,
+        "coreEndpointsAllocatedBytes": 37360608,
+        "totalAllocationReductionPercent": 2.2,
+        "pipelineAllocationReductionPercent": 4.3,
+        "coreComputeClassesAllocationReductionPercent": 19.0
+      }
+    },
+    "parity": {
+      "generatedFiles": 29904,
+      "differentFiles": 0
+    }
+  },
   "notes": [
     "Reference budgets only; they are not currently enforced by CI.",
     "Fresh timings use isolated empty output directories and allocations are more stable than wall time.",
@@ -644,6 +762,8 @@
     "Post-processing detail keeps its aggregate metric for compatibility and records nested phases whose wall times include a small amount of measurement overhead.",
     "The OpenAPI 3.1 compatibility boundary is based on direct Microsoft.OpenApi 3.10.2 reader probes and should be reevaluated on every major reader upgrade.",
     "The enum-render thresholds use three-run medians for the optimized CLI; the public baseline is retained for comparison and wall time remains sensitive to concurrent machine load.",
-    "The direct-render and schema-shape thresholds use allocation measurements because they are substantially more stable than wall time; exact CLI output was compared byte-for-byte with public AutoSDK.CLI 0.32.1-dev.42."
+    "The direct-render and schema-shape thresholds use allocation measurements because they are substantially more stable than wall time; exact CLI output was compared byte-for-byte with public AutoSDK.CLI 0.32.1-dev.42.",
+    "The current provider corpus is benchmark-only and pinned by hash so provider spec updates do not silently move the allocation thresholds.",
+    "Current-provider CLI results use each provider's production generation arguments and were byte-identical to public AutoSDK.CLI 0.32.1-dev.45."
   ]
 }

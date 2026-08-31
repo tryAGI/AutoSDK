@@ -159,6 +159,45 @@ public `AutoSDK.CLI 0.32.1-dev.42` for all 46,721 files. The full snapshot suite
 passed all 287 cases. Allocation ceilings for these paths are stored with the other
 large-spec budgets.
 
+## Current provider enrichment profiling
+
+The benchmark corpus now also pins current Vapi, Anthropic, OpenAI, and ElevenLabs
+specifications under `src/tests/AutoSDK.Benchmarks/Specs`. They are embedded only by
+the benchmark project, so updating the performance corpus does not change the older
+snapshot fixtures or generated SDK contracts. `--profile-enrichment` splits the former
+`core_compute_classes` aggregate into schema models, operations, endpoints,
+authorizations, converters, tags/clients, and JSON-context output. The CLI exposes the
+same timing and allocation fields through `--diagnostics`.
+
+Vapi exposed the largest new hotspot. Request representation selection recursively
+searched the same deeply connected `oneOf`/`allOf` schema graph for binary values for
+each operation. A generation-scoped binary-schema cache reduced Vapi endpoint
+allocations from 109.9 MB to 19.4 MB in the warm benchmark. The fresh CLI
+`core_compute_classes_allocated_bytes` fell from 172,335,200 to 44,510,368 bytes.
+Caching already-normalized enum data on each immutable `SchemaContext` removed a
+second full enum construction during lazy model creation and benefited every current
+provider workload.
+
+The fresh CLI allocation results against public `AutoSDK.CLI 0.32.1-dev.45` were:
+
+| Workload | Compute classes before | Compute classes after | Reduction | Total before | Total after |
+| --- | ---: | ---: | ---: | ---: | ---: |
+| Vapi | 172.3 MB | 44.5 MB | 74.2% | 721.2 MB | 592.2 MB |
+| Anthropic | 53.6 MB | 37.1 MB | 30.8% | 583.4 MB | 566.3 MB |
+| OpenAI | 91.3 MB | 60.1 MB | 34.1% | 800.8 MB | 768.2 MB |
+| ElevenLabs | 85.8 MB | 69.5 MB | 19.0% | 733.0 MB | 716.9 MB |
+
+All 29,904 generated files were byte-identical to the public CLI baseline. The unit
+suite passed 560 tests, the snapshot suite passed 287 tests, and the libraries built
+for `net4.6.2`, `netstandard2.0`, and `net10.0`.
+
+Parallel union rendering was re-tested at degrees 2, 4, and 8. Results varied by spec
+and run, with regressions on Vapi and OpenAI, while allocations stayed essentially
+unchanged. A request-union traversal index likewise added allocation without a stable
+gain after the binary-schema hotspot was removed. Neither experiment is present in
+the production pipeline. The pinned hashes, observed values, and allocation ceilings
+are stored in `src/tests/AutoSDK.Benchmarks/performance-budgets/large-spec-regeneration.json`.
+
 `dotnet-trace` identifies the YAML package path as
 `OpenApiYamlReader.ReadCore -> YamlJsonParser.Parse`. The sampled descendants are
 primarily SharpYaml token scanning and materialization, including `FetchMoreTokens`,
