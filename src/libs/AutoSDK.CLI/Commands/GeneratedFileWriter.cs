@@ -103,12 +103,12 @@ internal static class GeneratedFileWriter
             {
                 var file = pendingFiles[index];
                 var normalizeStart = collectDiagnostics ? Stopwatch.GetTimestamp() : 0;
-                var normalizedText = NormalizeTrailingWhitespace(file.Text, out var normalizedLines);
-                var byteCount = Utf8NoBom.GetByteCount(normalizedText);
-                var encodedContent = ArrayPool<byte>.Shared.Rent(byteCount);
+                var encodedContent = EncodeNormalizedText(
+                    file.Text,
+                    out var encodedLength,
+                    out var normalizedLines);
                 try
                 {
-                    var encodedLength = Utf8NoBom.GetBytes(normalizedText.AsSpan(), encodedContent);
                     var content = encodedContent.AsMemory(0, encodedLength);
                     var contentHash = ComputeContentHash(content.Span);
                     if (collectDiagnostics)
@@ -155,10 +155,10 @@ internal static class GeneratedFileWriter
                             // A fresh target has no prior complete version to preserve, so avoid
                             // a temporary-file rename for every generated file. FileShare.None
                             // keeps readers from observing the file until the write is complete.
-                            await WriteNewFileAsync(
+                            WriteNewFile(
                                 file.FullPath,
-                                content,
-                                itemCancellationToken).ConfigureAwait(false);
+                                content.Span,
+                                itemCancellationToken);
                             Interlocked.Increment(ref createdCount);
                         }
                         if (collectDiagnostics)
@@ -266,6 +266,8 @@ internal static class GeneratedFileWriter
             new FileStreamOptions
             {
                 Access = FileAccess.Read,
+                // Comparison already uses its own pooled 64 KB buffer.
+                BufferSize = 1,
                 Mode = FileMode.Open,
                 Options = FileOptions.Asynchronous | FileOptions.SequentialScan,
                 Share = FileShare.Read,
@@ -306,11 +308,12 @@ internal static class GeneratedFileWriter
         return Convert.ToHexString(hash);
     }
 
-    private static async Task WriteNewFileAsync(
+    private static void WriteNewFile(
         string path,
-        ReadOnlyMemory<byte> content,
+        ReadOnlySpan<byte> content,
         CancellationToken cancellationToken)
     {
+        cancellationToken.ThrowIfCancellationRequested();
         var created = false;
         try
         {
@@ -319,18 +322,16 @@ internal static class GeneratedFileWriter
                 new FileStreamOptions
                 {
                     Access = FileAccess.Write,
+                    // The complete encoded file is already buffered by the caller.
+                    BufferSize = 1,
                     Mode = FileMode.CreateNew,
-                    Options = FileOptions.Asynchronous | FileOptions.SequentialScan,
+                    Options = FileOptions.SequentialScan,
                     Share = FileShare.None,
                 });
             created = true;
-            try
+            using (stream)
             {
-                await stream.WriteAsync(content, cancellationToken).ConfigureAwait(false);
-            }
-            finally
-            {
-                await stream.DisposeAsync().ConfigureAwait(false);
+                stream.Write(content);
             }
         }
         catch
@@ -388,6 +389,8 @@ internal static class GeneratedFileWriter
                 new FileStreamOptions
                 {
                     Access = FileAccess.Write,
+                    // The complete encoded file is already buffered by the caller.
+                    BufferSize = 1,
                     Mode = FileMode.CreateNew,
                     Options = FileOptions.Asynchronous | FileOptions.SequentialScan,
                     Share = FileShare.None,
@@ -500,5 +503,57 @@ internal static class GeneratedFileWriter
                 sourceLineStart = index + 1;
             }
         });
+    }
+
+    private static byte[] EncodeNormalizedText(
+        string text,
+        out int encodedLength,
+        out int normalizedLineCount)
+    {
+        var encodedContent = ArrayPool<byte>.Shared.Rent(Utf8NoBom.GetByteCount(text));
+        encodedLength = 0;
+        normalizedLineCount = 0;
+        var lineStart = 0;
+        for (var index = 0; index <= text.Length; index++)
+        {
+            if (index != text.Length && text[index] != '\n')
+            {
+                continue;
+            }
+
+            var contentEnd = index;
+            var hasCarriageReturn = contentEnd > lineStart && text[contentEnd - 1] == '\r';
+            if (hasCarriageReturn)
+            {
+                contentEnd--;
+            }
+
+            var trimmedEnd = contentEnd;
+            while (trimmedEnd > lineStart && text[trimmedEnd - 1] is ' ' or '\t')
+            {
+                trimmedEnd--;
+            }
+
+            if (trimmedEnd != contentEnd)
+            {
+                normalizedLineCount++;
+            }
+
+            encodedLength += Utf8NoBom.GetBytes(
+                text.AsSpan(lineStart, trimmedEnd - lineStart),
+                encodedContent.AsSpan(encodedLength));
+            if (hasCarriageReturn)
+            {
+                encodedContent[encodedLength++] = (byte)'\r';
+            }
+            if (index != text.Length)
+            {
+                encodedContent[encodedLength++] = (byte)'\n';
+            }
+
+            lineStart = index + 1;
+        }
+
+        return encodedContent;
     }
 }

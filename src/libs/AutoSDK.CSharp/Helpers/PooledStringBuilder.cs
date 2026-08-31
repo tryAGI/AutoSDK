@@ -133,6 +133,11 @@ internal readonly ref struct PooledStringBuilderInterpolatedStringHandler
         builder.Append(value);
     }
 
+    public void AppendFormatted(Sources.HookInvocation value)
+    {
+        value.AppendTo(builder);
+    }
+
     public void AppendFormatted<T>(T value)
     {
         builder.Append(value?.ToString());

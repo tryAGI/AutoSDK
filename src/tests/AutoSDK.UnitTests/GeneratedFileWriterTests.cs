@@ -158,6 +158,32 @@ public class GeneratedFileWriterTests
     }
 
     [TestMethod]
+    public async Task WriteAsync_NormalizesUnicodeTextDirectlyIntoUtf8Output()
+    {
+        var tempDirectory = CreateTempDirectory();
+        try
+        {
+            var path = Path.Combine(tempDirectory, "Unicode.g.cs");
+            const string text = "Привет  \r\nemoji: 🧪\t\n終わり  ";
+
+            var result = await GeneratedFileWriter.WriteAsync(
+                [new GeneratedOutputFile(path, text)],
+                staleCandidates: [],
+                deleteStaleFiles: false);
+
+            const string expected = "Привет\r\nemoji: 🧪\n終わり";
+            (await File.ReadAllTextAsync(path)).Should().Be(expected);
+            result.NormalizedLineCount.Should().Be(3);
+            result.GeneratedBytes.Should().Be(Encoding.UTF8.GetByteCount(expected));
+            result.WrittenBytes.Should().Be(Encoding.UTF8.GetByteCount(expected));
+        }
+        finally
+        {
+            Directory.Delete(tempDirectory, recursive: true);
+        }
+    }
+
+    [TestMethod]
     public async Task WriteAtomicallyAsync_WhenAlreadyCancelled_PreservesExistingFile()
     {
         var tempDirectory = CreateTempDirectory();

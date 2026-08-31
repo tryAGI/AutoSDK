@@ -203,6 +203,22 @@ namespace {client.Settings.Namespace}
                     initialCapacity + EstimateJsonSerializableAttributeLength(registration));
             }
         }
+        foreach (var registration in lazyConverterRegistrations)
+        {
+            initialCapacity = checked(
+                initialCapacity +
+                384 +
+                (registration.TargetType.Length * 2) +
+                registration.ConverterType.Length);
+        }
+        foreach (var converter in eagerConverters)
+        {
+            initialCapacity = checked(initialCapacity + converter.Length + 64);
+        }
+        foreach (var chunkClassName in chunkClassNames)
+        {
+            initialCapacity = checked(initialCapacity + (chunkClassName.Length * 2) + 256);
+        }
 
         using var builder = new PooledStringBuilder(initialCapacity);
         builder.Append($@"
@@ -634,16 +650,21 @@ namespace {client.Settings.Namespace}
         // This causes SYSLIB1031 when the same type is also explicitly registered.
         // Only value types cause this — reference type nullability (string?, byte[]?) doesn't
         // create Nullable<T> wrappers and thus doesn't trigger implicit discovery.
-        var implicitlyDiscoveredTypes = new HashSet<string>(
-            nullableValueTypes
-                .Select(static type => type.Substring(0, type.Length - 1))
-                .Concat(contextTypes
-                    .Where(static type => string.Equals(
-                        type,
-                        "global::System.Text.Json.JsonElement?",
-                        StringComparison.Ordinal))
-                    .Select(static type => type.Substring(0, type.Length - 1))),
-            StringComparer.Ordinal);
+        var implicitlyDiscoveredTypes = CreateStringSet(nullableValueTypes.Length + contextTypes.Length);
+        foreach (var type in nullableValueTypes)
+        {
+            implicitlyDiscoveredTypes.Add(type.Substring(0, type.Length - 1));
+        }
+        foreach (var type in contextTypes)
+        {
+            if (string.Equals(
+                    type,
+                    "global::System.Text.Json.JsonElement?",
+                    StringComparison.Ordinal))
+            {
+                implicitlyDiscoveredTypes.Add(type.Substring(0, type.Length - 1));
+            }
+        }
 
         var explicitTypeInfoPropertyNames = BuildExplicitTypeInfoPropertyNames(
             serializableTypes,
@@ -806,8 +827,8 @@ namespace {client.Settings.Namespace}
         JsonTypeInfoNameCache typeInfoNames)
     {
         var explicitNames = new Dictionary<string, string>(StringComparer.Ordinal);
-        var usedNames = new HashSet<string>(StringComparer.Ordinal);
-        var firstTypeByGeneratedName = new Dictionary<string, string>(StringComparer.Ordinal);
+        var usedNames = CreateStringSet(types.Length);
+        var firstTypeByGeneratedName = new Dictionary<string, string>(types.Length, StringComparer.Ordinal);
         var collidingTypesByGeneratedName = new Dictionary<string, List<string>>(StringComparer.Ordinal);
         var generatedNameOrder = new List<string>();
         foreach (var type in types)
@@ -913,7 +934,9 @@ namespace {client.Settings.Namespace}
         // discover both Nullable<T> and T. A generated model can share T's simple name even when
         // its runtime type is in a different namespace (for example Advantage.JsonElement versus
         // System.Text.Json.JsonElement), so disambiguate that explicit registration too.
-        var firstImplicitRuntimeTypeByName = new Dictionary<string, string>(StringComparer.Ordinal);
+        var firstImplicitRuntimeTypeByName = new Dictionary<string, string>(
+            implicitlyDiscoveredTypes.Count,
+            StringComparer.Ordinal);
         var collidingImplicitRuntimeTypesByName = new Dictionary<string, HashSet<string>>(StringComparer.Ordinal);
         foreach (var type in implicitlyDiscoveredTypes)
         {
@@ -969,11 +992,14 @@ namespace {client.Settings.Namespace}
         // When STJ discovers Nullable<T> from JsonSerializerContextTypes, it names the TypeInfo
         // "Nullable{TypeName}". If another explicit type has that same implicit name, it collides.
         // Example: LLMModel? → STJ names it "NullableLLMModel", colliding with schema type NullableLLMModel.
-        var implicitNullableNames = new HashSet<string>(
-            implicitlyDiscoveredTypes
-                .Where(type => !ShouldKeepDefaultTypeInfoPropertyName(type))
-                .Select(type => $"Nullable{typeInfoNames.GetImplicit(type)}"),
-            StringComparer.Ordinal);
+        var implicitNullableNames = CreateStringSet(implicitlyDiscoveredTypes.Count);
+        foreach (var type in implicitlyDiscoveredTypes)
+        {
+            if (!ShouldKeepDefaultTypeInfoPropertyName(type))
+            {
+                implicitNullableNames.Add($"Nullable{typeInfoNames.GetImplicit(type)}");
+            }
+        }
 
         foreach (var type in types)
         {
@@ -1003,10 +1029,14 @@ namespace {client.Settings.Namespace}
         string[] explicitNullableValueTypes,
         JsonTypeInfoNameCache typeInfoNames)
     {
-        var explicitNullableValueTypeSet = new HashSet<string>(
-            explicitNullableValueTypes,
+        var explicitNullableValueTypeSet = CreateStringSet(explicitNullableValueTypes.Length);
+        foreach (var type in explicitNullableValueTypes)
+        {
+            explicitNullableValueTypeSet.Add(type);
+        }
+        var generatedNameCounts = new Dictionary<string, (int Count, bool HasGuardCandidate)>(
+            serializableTypes.Length,
             StringComparer.Ordinal);
-        var generatedNameCounts = new Dictionary<string, (int Count, bool HasGuardCandidate)>(StringComparer.Ordinal);
         foreach (var type in serializableTypes)
         {
             var generatedName = typeInfoNames.GetGenerated(type);
@@ -1019,7 +1049,7 @@ namespace {client.Settings.Namespace}
                 : (1, isGuardCandidate);
         }
 
-        var guardTypes = new HashSet<string>(StringComparer.Ordinal);
+        var guardTypes = CreateStringSet(explicitNullableValueTypes.Length);
         foreach (var type in serializableTypes)
         {
             var generatedName = typeInfoNames.GetGenerated(type);
@@ -1038,18 +1068,33 @@ namespace {client.Settings.Namespace}
     private const int MaxExplicitTypeInfoPropertyNameLength = 120;
     private const int MaxGeneratedTypeInfoNameLength = 120;
 
+    private static HashSet<string> CreateStringSet(int capacity)
+    {
+#if NET8_0_OR_GREATER
+        return new HashSet<string>(capacity, StringComparer.Ordinal);
+#else
+        return new HashSet<string>(StringComparer.Ordinal);
+#endif
+    }
+
     private static string[] GetExplicitNullableValueTypes(
         string[] distinctTypes,
         string[] concreteListTypes,
         string[] nullableValueTypes,
         JsonTypeInfoNameCache typeInfoNames)
     {
-        var explicitlyRegisteredNames = new HashSet<string>(
-            distinctTypes
-                .Concat(concreteListTypes)
-                .Select(typeInfoNames.GetGenerated),
+        var explicitlyRegisteredNames = CreateStringSet(distinctTypes.Length + concreteListTypes.Length);
+        foreach (var type in distinctTypes)
+        {
+            explicitlyRegisteredNames.Add(typeInfoNames.GetGenerated(type));
+        }
+        foreach (var type in concreteListTypes)
+        {
+            explicitlyRegisteredNames.Add(typeInfoNames.GetGenerated(type));
+        }
+        var nullableNameCounts = new Dictionary<string, int>(
+            nullableValueTypes.Length,
             StringComparer.Ordinal);
-        var nullableNameCounts = new Dictionary<string, int>(StringComparer.Ordinal);
         foreach (var type in nullableValueTypes)
         {
             var generatedName = typeInfoNames.GetGenerated(type);
@@ -1075,24 +1120,38 @@ namespace {client.Settings.Namespace}
         // collapse it to a generated reference model with the same C# name. Treat the runtime
         // type as a value type only when no occurrence identifies that name as a reference type;
         // otherwise typeof(ReferenceType?) is invalid C#.
-        var referenceTypes = new HashSet<string>(
-            types
-                .Where(static x => !x.IsValueType)
-                .Select(static x => x.CSharpTypeWithoutNullability)
-                .Concat(types.SelectMany(static x => x.SubTypes)
-                    .Select(static x => x.Unbox<TypeData>())
-                    .Where(static x => !x.IsValueType)
-                    .Select(static x => x.CSharpTypeWithoutNullability)),
-            StringComparer.Ordinal);
+        var referenceTypes = CreateStringSet(checked(types.Length * 2));
+        foreach (var type in types)
+        {
+            if (!type.IsValueType)
+            {
+                referenceTypes.Add(type.CSharpTypeWithoutNullability);
+            }
+            foreach (var boxedSubType in type.SubTypes)
+            {
+                var subType = boxedSubType.Unbox<TypeData>();
+                if (!subType.IsValueType)
+                {
+                    referenceTypes.Add(subType.CSharpTypeWithoutNullability);
+                }
+            }
+        }
 
-        return types
-            .Where(x => x.IsValueType &&
-                        !referenceTypes.Contains(x.CSharpTypeWithoutNullability) &&
-                        x.CSharpTypeWithNullability != x.CSharpTypeWithoutNullability &&
-                        x.CSharpTypeWithNullability.EndsWith("?", StringComparison.Ordinal))
-            .Select(static x => x.CSharpTypeWithNullability)
-            .Distinct(StringComparer.Ordinal)
-            .ToArray();
+        var seenNullableTypes = CreateStringSet(types.Length);
+        var nullableTypes = new List<string>();
+        foreach (var type in types)
+        {
+            if (type.IsValueType &&
+                !referenceTypes.Contains(type.CSharpTypeWithoutNullability) &&
+                type.CSharpTypeWithNullability != type.CSharpTypeWithoutNullability &&
+                type.CSharpTypeWithNullability.EndsWith("?", StringComparison.Ordinal) &&
+                seenNullableTypes.Add(type.CSharpTypeWithNullability))
+            {
+                nullableTypes.Add(type.CSharpTypeWithNullability);
+            }
+        }
+
+        return nullableTypes.ToArray();
     }
 
     public static bool HasOversizedGeneratedJsonSerializerContextTypeNames(
@@ -1134,7 +1193,9 @@ namespace {client.Settings.Namespace}
         JsonTypeInfoNameCache typeInfoNames,
         JsonSerializableTypeComponents typeComponents)
     {
-        var typeDataByNullableType = new Dictionary<string, TypeData>(StringComparer.Ordinal);
+        var typeDataByNullableType = new Dictionary<string, TypeData>(
+            types.Length,
+            StringComparer.Ordinal);
         foreach (var type in types)
         {
 #if NET462 || NETSTANDARD2_0
@@ -1147,7 +1208,9 @@ namespace {client.Settings.Namespace}
 #endif
         }
 
-        var contextNameCounts = new Dictionary<string, int>(StringComparer.Ordinal);
+        var contextNameCounts = new Dictionary<string, int>(
+            checked((allDistinctTypes.Length + concreteListTypes.Length) * 2),
+            StringComparer.Ordinal);
         foreach (var type in allDistinctTypes)
         {
             CountContextNames(type);
@@ -1158,6 +1221,10 @@ namespace {client.Settings.Namespace}
         }
 
         var registeredRuntimeTypesByName = new Dictionary<string, (string RuntimeType, bool HasDifferentRuntimeType)>(
+            checked(
+                typeComponents.DistinctTypes.Length +
+                typeComponents.ExplicitNullableValueTypes.Length +
+                typeComponents.ConcreteListTypes.Length),
             StringComparer.Ordinal);
         foreach (var type in typeComponents.DistinctTypes)
         {

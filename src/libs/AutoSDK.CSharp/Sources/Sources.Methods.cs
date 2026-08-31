@@ -909,9 +909,95 @@ namespace {endPoint.Settings.Namespace}
                 cancellationToken: {cancellationTokenVariableName})";
     }
 
-    private static string GenerateHookInvocation(
-        EndPoint endPoint,
-        string methodName,
+    internal readonly struct HookInvocationContext
+    {
+        internal HookInvocationContext(
+            string @namespace,
+            string operationIdExpression,
+            string methodNameExpression,
+            string pathTemplateExpression,
+            string httpMethodExpression)
+        {
+            Namespace = @namespace;
+            OperationIdExpression = operationIdExpression;
+            MethodNameExpression = methodNameExpression;
+            PathTemplateExpression = pathTemplateExpression;
+            HttpMethodExpression = httpMethodExpression;
+        }
+
+        internal string Namespace { get; }
+        internal string OperationIdExpression { get; }
+        internal string MethodNameExpression { get; }
+        internal string PathTemplateExpression { get; }
+        internal string HttpMethodExpression { get; }
+    }
+
+    internal readonly struct HookInvocation
+    {
+        internal HookInvocation(
+            HookInvocationContext context,
+            string helperMethodName,
+            string requestVariableName,
+            string responseExpression,
+            string exceptionExpression,
+            string attemptExpression,
+            string maxAttemptsExpression,
+            string willRetryExpression,
+            string cancellationTokenVariableName,
+            string retryDelayExpression,
+            string retryReasonExpression)
+        {
+            Context = context;
+            HelperMethodName = helperMethodName;
+            RequestVariableName = requestVariableName;
+            ResponseExpression = responseExpression;
+            ExceptionExpression = exceptionExpression;
+            AttemptExpression = attemptExpression;
+            MaxAttemptsExpression = maxAttemptsExpression;
+            WillRetryExpression = willRetryExpression;
+            CancellationTokenVariableName = cancellationTokenVariableName;
+            RetryDelayExpression = retryDelayExpression;
+            RetryReasonExpression = retryReasonExpression;
+        }
+
+        internal HookInvocationContext Context { get; }
+        internal string HelperMethodName { get; }
+        internal string RequestVariableName { get; }
+        internal string ResponseExpression { get; }
+        internal string ExceptionExpression { get; }
+        internal string AttemptExpression { get; }
+        internal string MaxAttemptsExpression { get; }
+        internal string WillRetryExpression { get; }
+        internal string CancellationTokenVariableName { get; }
+        internal string RetryDelayExpression { get; }
+        internal string RetryReasonExpression { get; }
+
+        internal void AppendTo(PooledStringBuilder builder)
+        {
+            builder.Append($@"await global::{Context.Namespace}.AutoSDKRequestOptionsSupport.{HelperMethodName}Async(
+                            clientOptions: Options,
+                            context: global::{Context.Namespace}.AutoSDKRequestOptionsSupport.CreateHookContext(
+                                operationId: {Context.OperationIdExpression},
+                                methodName: {Context.MethodNameExpression},
+                                pathTemplate: {Context.PathTemplateExpression},
+                                httpMethod: {Context.HttpMethodExpression},
+                                baseUri: BaseUri,
+                                request: {RequestVariableName}!,
+                                response: {ResponseExpression},
+                                exception: {ExceptionExpression},
+                                clientOptions: Options,
+                                requestOptions: requestOptions,
+                                attempt: {AttemptExpression},
+                                maxAttempts: {MaxAttemptsExpression},
+                                willRetry: {WillRetryExpression},
+                                retryDelay: {RetryDelayExpression},
+                                retryReason: {RetryReasonExpression},
+                                cancellationToken: {CancellationTokenVariableName})).ConfigureAwait(false);");
+        }
+    }
+
+    private static HookInvocation GenerateHookInvocation(
+        HookInvocationContext context,
         string helperMethodName,
         string requestVariableName,
         string responseExpression,
@@ -923,25 +1009,18 @@ namespace {endPoint.Settings.Namespace}
         string retryDelayExpression = "null",
         string retryReasonExpression = "global::System.String.Empty")
     {
-        return $@"await global::{endPoint.Settings.Namespace}.AutoSDKRequestOptionsSupport.{helperMethodName}Async(
-                            clientOptions: Options,
-                            context: global::{endPoint.Settings.Namespace}.AutoSDKRequestOptionsSupport.CreateHookContext(
-                                operationId: {endPoint.Id.ToCSharpStringLiteral()},
-                                methodName: {methodName.ToCSharpStringLiteral()},
-                                pathTemplate: {endPoint.Path.ToCSharpStringLiteral()},
-                                httpMethod: {endPoint.HttpMethod.Method.ToCSharpStringLiteral()},
-                                baseUri: BaseUri,
-                                request: {requestVariableName}!,
-                                response: {responseExpression},
-                                exception: {exceptionExpression},
-                                clientOptions: Options,
-                                requestOptions: requestOptions,
-                                attempt: {attemptExpression},
-                                maxAttempts: {maxAttemptsExpression},
-                                willRetry: {willRetryExpression},
-                                retryDelay: {retryDelayExpression},
-                                retryReason: {retryReasonExpression},
-                                cancellationToken: {cancellationTokenVariableName})).ConfigureAwait(false);";
+        return new HookInvocation(
+            context,
+            helperMethodName,
+            requestVariableName,
+            responseExpression,
+            exceptionExpression,
+            attemptExpression,
+            maxAttemptsExpression,
+            willRetryExpression,
+            cancellationTokenVariableName,
+            retryDelayExpression,
+            retryReasonExpression);
     }
 
     private static string GetSuccessResponseBodyType(EndPoint endPoint)
@@ -1096,65 +1175,6 @@ namespace {endPoint.Settings.Namespace}
         var cancellationTokenAttribute = endPoint.EnumerableStream && !isInterface
             ? "[global::System.Runtime.CompilerServices.EnumeratorCancellation] "
             : string.Empty;
-        var beforeRequestHook = !requiresImplementationBody ? string.Empty : GenerateHookInvocation(
-            endPoint,
-            endPoint.MethodName,
-            helperMethodName: "OnBeforeRequest",
-            requestVariableName: "__httpRequest",
-            responseExpression: "null",
-            exceptionExpression: "null",
-            attemptExpression: "__attempt",
-            maxAttemptsExpression: "__maxAttempts",
-            willRetryExpression: "false",
-            cancellationTokenVariableName: "__effectiveCancellationToken");
-        var afterSuccessHook = !requiresImplementationBody ? string.Empty : GenerateHookInvocation(
-            endPoint,
-            endPoint.MethodName,
-            helperMethodName: "OnAfterSuccess",
-            requestVariableName: "__httpRequest",
-            responseExpression: "__response",
-            exceptionExpression: "null",
-            attemptExpression: "__attemptNumber",
-            maxAttemptsExpression: "__maxAttempts",
-            willRetryExpression: "false",
-            cancellationTokenVariableName: "__effectiveCancellationToken");
-        var afterRetryableStatusHook = !requiresImplementationBody ? string.Empty : GenerateHookInvocation(
-            endPoint,
-            endPoint.MethodName,
-            helperMethodName: "OnAfterError",
-            requestVariableName: "__httpRequest",
-            responseExpression: "__response",
-            exceptionExpression: "null",
-            attemptExpression: "__attempt",
-            maxAttemptsExpression: "__maxAttempts",
-            willRetryExpression: "true",
-            cancellationTokenVariableName: "__effectiveCancellationToken",
-            retryDelayExpression: "__retryDelay",
-            retryReasonExpression: "\"status:\" + ((int)__response.StatusCode).ToString(global::System.Globalization.CultureInfo.InvariantCulture)");
-        var afterErrorStatusHook = !requiresImplementationBody ? string.Empty : GenerateHookInvocation(
-            endPoint,
-            endPoint.MethodName,
-            helperMethodName: "OnAfterError",
-            requestVariableName: "__httpRequest",
-            responseExpression: "__response",
-            exceptionExpression: "null",
-            attemptExpression: "__attemptNumber",
-            maxAttemptsExpression: "__maxAttempts",
-            willRetryExpression: "false",
-            cancellationTokenVariableName: "__effectiveCancellationToken");
-        var afterExceptionHook = !requiresImplementationBody ? string.Empty : GenerateHookInvocation(
-            endPoint,
-            endPoint.MethodName,
-            helperMethodName: "OnAfterError",
-            requestVariableName: "__httpRequest",
-            responseExpression: "null",
-            exceptionExpression: "__exception",
-            attemptExpression: "__attempt",
-            maxAttemptsExpression: "__maxAttempts",
-            willRetryExpression: "__willRetry",
-            cancellationTokenVariableName: "__effectiveCancellationToken",
-            retryDelayExpression: "__willRetry ? __retryDelay : (global::System.TimeSpan?)null",
-            retryReasonExpression: "\"exception\"");
         var multipartStreamParameters = useMultipartStreamRequest
             ? GetMultipartStreamMethodParameters(endPoint).ToArray()
             : Array.Empty<MethodParameter>();
@@ -1207,6 +1227,67 @@ namespace {endPoint.Settings.Namespace}
             }
             return;
         }
+
+        var hookContext = new HookInvocationContext(
+            endPoint.Settings.Namespace,
+            endPoint.Id.ToCSharpStringLiteral(),
+            endPoint.MethodName.ToCSharpStringLiteral(),
+            endPoint.Path.ToCSharpStringLiteral(),
+            endPoint.HttpMethod.Method.ToCSharpStringLiteral());
+        var beforeRequestHook = GenerateHookInvocation(
+            hookContext,
+            helperMethodName: "OnBeforeRequest",
+            requestVariableName: "__httpRequest",
+            responseExpression: "null",
+            exceptionExpression: "null",
+            attemptExpression: "__attempt",
+            maxAttemptsExpression: "__maxAttempts",
+            willRetryExpression: "false",
+            cancellationTokenVariableName: "__effectiveCancellationToken");
+        var afterSuccessHook = GenerateHookInvocation(
+            hookContext,
+            helperMethodName: "OnAfterSuccess",
+            requestVariableName: "__httpRequest",
+            responseExpression: "__response",
+            exceptionExpression: "null",
+            attemptExpression: "__attemptNumber",
+            maxAttemptsExpression: "__maxAttempts",
+            willRetryExpression: "false",
+            cancellationTokenVariableName: "__effectiveCancellationToken");
+        var afterRetryableStatusHook = GenerateHookInvocation(
+            hookContext,
+            helperMethodName: "OnAfterError",
+            requestVariableName: "__httpRequest",
+            responseExpression: "__response",
+            exceptionExpression: "null",
+            attemptExpression: "__attempt",
+            maxAttemptsExpression: "__maxAttempts",
+            willRetryExpression: "true",
+            cancellationTokenVariableName: "__effectiveCancellationToken",
+            retryDelayExpression: "__retryDelay",
+            retryReasonExpression: "\"status:\" + ((int)__response.StatusCode).ToString(global::System.Globalization.CultureInfo.InvariantCulture)");
+        var afterErrorStatusHook = GenerateHookInvocation(
+            hookContext,
+            helperMethodName: "OnAfterError",
+            requestVariableName: "__httpRequest",
+            responseExpression: "__response",
+            exceptionExpression: "null",
+            attemptExpression: "__attemptNumber",
+            maxAttemptsExpression: "__maxAttempts",
+            willRetryExpression: "false",
+            cancellationTokenVariableName: "__effectiveCancellationToken");
+        var afterExceptionHook = GenerateHookInvocation(
+            hookContext,
+            helperMethodName: "OnAfterError",
+            requestVariableName: "__httpRequest",
+            responseExpression: "null",
+            exceptionExpression: "__exception",
+            attemptExpression: "__attempt",
+            maxAttemptsExpression: "__maxAttempts",
+            willRetryExpression: "__willRetry",
+            cancellationTokenVariableName: "__effectiveCancellationToken",
+            retryDelayExpression: "__willRetry ? __retryDelay : (global::System.TimeSpan?)null",
+            retryReasonExpression: "\"exception\"");
 
         builder.Append(@$"
         {{
@@ -2857,73 +2938,21 @@ namespace {endPoint.Settings.Namespace}
             return;
         }
 
-        // If a response range is defined using an explicit code, the explicit code definition takes precedence over the range definition for that code
-        var orderedErrorResponses = endPoint.ErrorResponses
-            .Where(x => x is { IsPattern: false, IsDefault: false })
-            .Concat(endPoint.ErrorResponses.Where(x => x is { IsPattern: true, IsDefault: false }))
-            .Concat(endPoint.ErrorResponses.Where(x => x.IsDefault))
-            .ToArray();
-
-        var errors = endPoint.Settings.GenerateExceptions ? orderedErrorResponses.Select(x => $@"
-            // {x.Description.Replace('\n', ' ').Replace('\r', ' ')}
-{(x.IsDefault ? @" 
-            if (!__response.IsSuccessStatusCode)"
-    : x.IsPattern ? $@" 
-            if ((int)__response.StatusCode >= {x.Min} && (int)__response.StatusCode <= {x.Max})"
-    : @$" 
-            if ((int)__response.StatusCode == {x.StatusCode})")}
-            {{
-                string? __content_{x.StatusCode} = null;
-                global::System.Exception? __exception_{x.StatusCode} = null;
-{(!string.IsNullOrWhiteSpace(x.Type.CSharpTypeWithoutNullability) ? $@" 
-                {x.Type.CSharpTypeWithoutNullability}? __value_{x.StatusCode} = null;" : TrimmedLine)}
-                try
-                {{
-                    if ({readResponseAsStringExpression})
-                    {{
-                        __content_{x.StatusCode} = await __response.Content.ReadAsStringAsync({cancellationTokenVariableName}).ConfigureAwait(false);
-{(!string.IsNullOrWhiteSpace(x.Type.CSharpTypeWithoutNullability) ? $@" 
-                        __value_{x.StatusCode} = {jsonSerializer.GenerateDeserializeCall($"__content_{x.StatusCode}", x.Type, endPoint.Settings.JsonSerializerContext)};" : TrimmedLine)}
-                    }}
-                    else
-                    {{
-                        __content_{x.StatusCode} = await __response.Content.ReadAsStringAsync({cancellationTokenVariableName}).ConfigureAwait(false);
-{(!string.IsNullOrWhiteSpace(x.Type.CSharpTypeWithoutNullability) ? $@"
-                        __value_{x.StatusCode} = {jsonSerializer.GenerateDeserializeCall($"__content_{x.StatusCode}", x.Type, endPoint.Settings.JsonSerializerContext)};" : TrimmedLine)}
-                    }}
-                }}
-                catch (global::System.Exception __ex)
-                {{
-                    __exception_{x.StatusCode} = __ex;
-                }}
-
-{(!string.IsNullOrWhiteSpace(x.Type.CSharpTypeWithoutNullability) ? $@"
-                throw global::{endPoint.GlobalSettings.Namespace}.ApiException<{x.Type.CSharpTypeWithNullabilityForValueTypes}>.Create(
-                    statusCode: __response.StatusCode,
-                    message: __content_{x.StatusCode} ?? __response.ReasonPhrase ?? string.Empty,
-                    innerException: __exception_{x.StatusCode},
-                    responseBody: __content_{x.StatusCode},
-                    responseObject: __value_{x.StatusCode},
-                    responseHeaders: global::System.Linq.Enumerable.ToDictionary(
-                        __response.Headers,
-                        h => h.Key,
-                        h => h.Value));"
-    : $@"
-                throw global::{endPoint.GlobalSettings.Namespace}.ApiException.Create(
-                    statusCode: __response.StatusCode,
-                    message: __content_{x.StatusCode} ?? __response.ReasonPhrase ?? string.Empty,
-                    innerException: __exception_{x.StatusCode},
-                    responseBody: __content_{x.StatusCode},
-                    responseHeaders: global::System.Linq.Enumerable.ToDictionary(
-                        __response.Headers,
-                        h => h.Key,
-                        h => h.Value));")}
-            }}").Inject() : TrimmedLine;
+        var hasErrorResponses = AppendErrorResponses(
+            builder,
+            endPoint,
+            jsonSerializer,
+            cancellationTokenVariableName,
+            readResponseAsStringExpression,
+            indentationLevel);
+        if (hasErrorResponses)
+        {
+            builder.Append('\n');
+        }
 
         if (endPoint.RawStream || returnStreamResponse)
         {
-            IndentedString.Append(builder, indentationLevel, @$"{errors}
-
+            IndentedString.Append(builder, indentationLevel, @$"
             try
             {{
                 __response.EnsureSuccessStatusCode();
@@ -2971,8 +3000,7 @@ namespace {endPoint.Settings.Namespace}
             return;
         }
 
-        IndentedString.Append(builder, indentationLevel, @$"{errors}
-
+        IndentedString.Append(builder, indentationLevel, @$"
             if ({readResponseAsStringExpression})
             {{
                 var __content = await __response.Content.ReadAs{endPoint.ContentType switch
@@ -3061,6 +3089,134 @@ namespace {endPoint.Settings.Namespace}
                 }}
             }}
  ");
+    }
+
+    private static bool AppendErrorResponses(
+        PooledStringBuilder builder,
+        EndPoint endPoint,
+        IJsonSerializer jsonSerializer,
+        string cancellationTokenVariableName,
+        string readResponseAsStringExpression,
+        int indentationLevel)
+    {
+        if (!endPoint.Settings.GenerateExceptions)
+        {
+            return false;
+        }
+
+        var hasResponse = false;
+        for (var group = 0; group < 3; group++)
+        {
+            for (var index = 0; index < endPoint.ErrorResponses.Length; index++)
+            {
+                var response = endPoint.ErrorResponses[index];
+                var belongsToGroup = group switch
+                {
+                    0 => !response.IsPattern && !response.IsDefault,
+                    1 => response.IsPattern && !response.IsDefault,
+                    _ => response.IsDefault,
+                };
+                if (!belongsToGroup)
+                {
+                    continue;
+                }
+
+                if (hasResponse)
+                {
+                    builder.Append('\n');
+                }
+
+                AppendErrorResponse(
+                    builder,
+                    endPoint,
+                    response,
+                    jsonSerializer,
+                    cancellationTokenVariableName,
+                    readResponseAsStringExpression,
+                    indentationLevel);
+                hasResponse = true;
+            }
+        }
+
+        return hasResponse;
+    }
+
+    private static void AppendErrorResponse(
+        PooledStringBuilder builder,
+        EndPoint endPoint,
+        EndPointResponse response,
+        IJsonSerializer jsonSerializer,
+        string cancellationTokenVariableName,
+        string readResponseAsStringExpression,
+        int indentationLevel)
+    {
+        var description = response.Description.Replace('\n', ' ').Replace('\r', ' ');
+        if (response.IsDefault)
+        {
+            IndentedString.Append(builder, indentationLevel, $@"            // {description}
+            if (!__response.IsSuccessStatusCode)");
+        }
+        else if (response.IsPattern)
+        {
+            IndentedString.Append(builder, indentationLevel, $@"            // {description}
+            if ((int)__response.StatusCode >= {response.Min} && (int)__response.StatusCode <= {response.Max})");
+        }
+        else
+        {
+            IndentedString.Append(builder, indentationLevel, $@"            // {description}
+            if ((int)__response.StatusCode == {response.StatusCode})");
+        }
+
+        var hasResponseType = !string.IsNullOrWhiteSpace(response.Type.CSharpTypeWithoutNullability);
+        var contentVariableName = $"__content_{response.StatusCode}";
+        IndentedString.Append(builder, indentationLevel, $@"
+            {{
+                string? {contentVariableName} = null;
+                global::System.Exception? __exception_{response.StatusCode} = null;
+{(hasResponseType ? TrimmedLine + $@"
+                {response.Type.CSharpTypeWithoutNullability}? __value_{response.StatusCode} = null;" : TrimmedLine)}
+                try
+                {{
+                    if ({readResponseAsStringExpression})
+                    {{
+                        {contentVariableName} = await __response.Content.ReadAsStringAsync({cancellationTokenVariableName}).ConfigureAwait(false);
+{(hasResponseType ? TrimmedLine + $@"
+                        __value_{response.StatusCode} = {jsonSerializer.GenerateDeserializeCall(contentVariableName, response.Type, endPoint.Settings.JsonSerializerContext)};" : TrimmedLine)}
+                    }}
+                    else
+                    {{
+                        {contentVariableName} = await __response.Content.ReadAsStringAsync({cancellationTokenVariableName}).ConfigureAwait(false);
+{(hasResponseType ? $@"
+                        __value_{response.StatusCode} = {jsonSerializer.GenerateDeserializeCall(contentVariableName, response.Type, endPoint.Settings.JsonSerializerContext)};" : TrimmedLine)}
+                    }}
+                }}
+                catch (global::System.Exception __ex)
+                {{
+                    __exception_{response.StatusCode} = __ex;
+                }}
+
+{(hasResponseType ? $@"
+                throw global::{endPoint.GlobalSettings.Namespace}.ApiException<{response.Type.CSharpTypeWithNullabilityForValueTypes}>.Create(
+                    statusCode: __response.StatusCode,
+                    message: {contentVariableName} ?? __response.ReasonPhrase ?? string.Empty,
+                    innerException: __exception_{response.StatusCode},
+                    responseBody: {contentVariableName},
+                    responseObject: __value_{response.StatusCode},
+                    responseHeaders: global::System.Linq.Enumerable.ToDictionary(
+                        __response.Headers,
+                        h => h.Key,
+                        h => h.Value));"
+    : $@"
+                throw global::{endPoint.GlobalSettings.Namespace}.ApiException.Create(
+                    statusCode: __response.StatusCode,
+                    message: {contentVariableName} ?? __response.ReasonPhrase ?? string.Empty,
+                    innerException: __exception_{response.StatusCode},
+                    responseBody: {contentVariableName},
+                    responseHeaders: global::System.Linq.Enumerable.ToDictionary(
+                        __response.Headers,
+                        h => h.Key,
+                        h => h.Value));")}
+            }}");
     }
 
     public static string GenerateRequestData(
