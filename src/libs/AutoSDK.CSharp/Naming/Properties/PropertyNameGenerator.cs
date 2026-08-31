@@ -1,5 +1,6 @@
 using AutoSDK.Extensions;
 using AutoSDK.Models;
+using Microsoft.OpenApi;
 using System.Text;
 
 namespace AutoSDK.Naming.Properties;
@@ -21,9 +22,18 @@ public static class CSharpPropertyNameGenerator
         SchemaContext context)
     {
         context = context ?? throw new ArgumentNullException(nameof(context));
+        return ComputePropertyName(context, context.Schema);
+    }
+
+    internal static string ComputePropertyName(
+        SchemaContext context,
+        IOpenApiSchema schema)
+    {
+        context = context ?? throw new ArgumentNullException(nameof(context));
+        schema = schema ?? throw new ArgumentNullException(nameof(schema));
         var propertyName = context.PropertyName ?? throw new InvalidOperationException("Property name or parameter name is required.");
         if (context.Settings.UseExtensionNaming &&
-            OpenApiExtensions.TryGetPropertyNameOverride(context.Schema.Extensions, out var propertyNameOverride) &&
+            OpenApiExtensions.TryGetPropertyNameOverride(schema.Extensions, out var propertyNameOverride) &&
             !string.IsNullOrWhiteSpace(propertyNameOverride))
         {
             propertyName = propertyNameOverride;

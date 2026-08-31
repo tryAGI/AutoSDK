@@ -18,6 +18,7 @@ public static class CSharpSchemaDataFactory
     {
         context = context ?? throw new ArgumentNullException(nameof(context));
         var type = context.TypeData;
+        var schema = context.EffectiveSchema;
 
         if (context.IsAllOfForMetadata &&
             !type.SubTypes.IsEmpty)
@@ -29,16 +30,16 @@ public static class CSharpSchemaDataFactory
         }
 
         var propertyName = context.PropertyName ?? throw new InvalidOperationException("Property name or parameter name is required.");
-        var parentRequired = context.Parent?.Schema.Required;
+        var parentRequired = context.Parent?.EffectiveSchema.Required;
         var isRequired =
             parentRequired != null &&
             parentRequired.Contains(propertyName) &&
-            context.Schema is { WriteOnly: false };
+            schema is { WriteOnly: false };
         if (isRequired && type is { IsEnum: true, EnumValues.Length: 1 })
         {
             isRequired = false;
         }
-        if (isRequired && context.Schema.IsConst())
+        if (isRequired && schema.IsConst())
         {
             isRequired = false;
         }
@@ -47,40 +48,40 @@ public static class CSharpSchemaDataFactory
             isRequired = false;
         }
 
-        var isWriteOnly = context.Schema is { WriteOnly: true };
+        var isWriteOnly = schema is { WriteOnly: true };
         var finalType = isWriteOnly && !type.CSharpTypeNullability
             ? (type with { CSharpTypeNullability = true }).WithCSharpComputedValues()
             : type;
 
         return new PropertyData(
             Id: propertyName,
-            Name: CSharpPropertyNameGenerator.ComputePropertyName(context),
+            Name: CSharpPropertyNameGenerator.ComputePropertyName(context, schema),
             ParameterName: string.Empty,
             Type: finalType,
-            IsRequired: isRequired && context.Schema is { ReadOnly: false },
-            IsReadOnly: context.Schema.ReadOnly,
-            IsWriteOnly: context.Schema.WriteOnly,
+            IsRequired: isRequired && schema is { ReadOnly: false },
+            IsReadOnly: schema.ReadOnly,
+            IsWriteOnly: schema.WriteOnly,
             IsMultiPartFormDataFilename: false,
             Settings: context.Settings.ToEmitterSettings(),
-            IsDeprecated: context.Schema.IsDeprecated(),
-            DefaultValue: context.Schema is { ReadOnly: true } && !type.CSharpTypeNullability
+            IsDeprecated: schema.IsDeprecated(),
+            DefaultValue: schema is { ReadOnly: true } && !type.CSharpTypeNullability
                 ? "default!"
-                : context.GetDefaultValue(),
-            Example: context.Schema.GetLegacyExample()?.GetString() is { } example &&
+                : context.GetDefaultValue(schema),
+            Example: schema.GetLegacyExample()?.GetString() is { } example &&
                      !string.IsNullOrWhiteSpace(example)
                 ? example.ClearForXml()
                 : null,
-            MinLength: context.Schema.MinLength,
-            MaxLength: context.Schema.MaxLength,
-            MinItems: context.Schema.MinItems,
-            MaxItems: context.Schema.MaxItems,
-            Pattern: context.Schema.Pattern ?? string.Empty,
-            Minimum: context.Schema.Minimum ?? string.Empty,
-            Maximum: context.Schema.Maximum ?? string.Empty,
-            ExclusiveMinimum: context.Schema.ExclusiveMinimum ?? string.Empty,
-            ExclusiveMaximum: context.Schema.ExclusiveMaximum ?? string.Empty,
-            Summary: context.Schema.GetSummary(),
-            Description: context.Schema.Description ?? string.Empty,
+            MinLength: schema.MinLength,
+            MaxLength: schema.MaxLength,
+            MinItems: schema.MinItems,
+            MaxItems: schema.MaxItems,
+            Pattern: schema.Pattern ?? string.Empty,
+            Minimum: schema.Minimum ?? string.Empty,
+            Maximum: schema.Maximum ?? string.Empty,
+            ExclusiveMinimum: schema.ExclusiveMinimum ?? string.Empty,
+            ExclusiveMaximum: schema.ExclusiveMaximum ?? string.Empty,
+            Summary: schema.GetSummary(),
+            Description: schema.Description ?? string.Empty,
             ConverterType: type.ConverterType,
             DiscriminatorValue: string.Empty,
             DiscriminatorJsonValue: string.Empty,

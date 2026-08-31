@@ -112,6 +112,93 @@ public static class OpenApiSchemaExtensions
         return schema ?? throw new InvalidOperationException("Schema cannot be null");
     }
 
+    /// <summary>
+    /// Resolves a schema reference only when it contains no JSON Schema sibling keywords.
+    /// Microsoft.OpenAPI delegates every reference property getter through reference resolution;
+    /// using the target directly for bare references avoids repeating that work while preserving
+    /// the override semantics of OpenAPI 3.1 reference siblings.
+    /// </summary>
+    public static IOpenApiSchema ResolveBareReference(this IOpenApiSchema schema)
+    {
+        schema = schema ?? throw new ArgumentNullException(nameof(schema));
+
+        if (schema is not OpenApiSchemaReference schemaReference ||
+            HasSchemaSiblingKeywords(schemaReference.Reference))
+        {
+            return schema;
+        }
+
+        return schemaReference.Target ?? schemaReference.RecursiveTarget ?? schema;
+    }
+
+    private static bool HasSchemaSiblingKeywords(JsonSchemaReference reference)
+    {
+        return reference.Description != null ||
+               reference.Default != null ||
+               reference.Title != null ||
+               reference.Deprecated != null ||
+               reference.ReadOnly != null ||
+               reference.WriteOnly != null ||
+               reference.Examples != null ||
+               reference.Extensions != null ||
+               reference.SchemaId != null ||
+               reference.Schema != null ||
+               reference.Comment != null ||
+               reference.Vocabulary != null ||
+               reference.DynamicRef != null ||
+               reference.DynamicAnchor != null ||
+               reference.Definitions != null ||
+               reference.Anchor != null ||
+               reference.ExclusiveMaximum != null ||
+               reference.ExclusiveMinimum != null ||
+               reference.SchemaType != null ||
+               reference.Const != null ||
+               reference.Format != null ||
+               reference.Maximum != null ||
+               reference.Minimum != null ||
+               reference.MaxLength != null ||
+               reference.MinLength != null ||
+               reference.Pattern != null ||
+               reference.MultipleOf != null ||
+               reference.AllOf != null ||
+               reference.OneOf != null ||
+               reference.AnyOf != null ||
+               reference.Not != null ||
+               reference.Required != null ||
+               reference.Items != null ||
+               reference.MaxItems != null ||
+               reference.MinItems != null ||
+               reference.UniqueItems != null ||
+               reference.Contains != null ||
+               reference.MaxContains != null ||
+               reference.MinContains != null ||
+               reference.Properties != null ||
+               reference.PatternProperties != null ||
+               reference.MaxProperties != null ||
+               reference.MinProperties != null ||
+               reference.AdditionalPropertiesAllowed != null ||
+               reference.AdditionalProperties != null ||
+               reference.Discriminator != null ||
+#pragma warning disable CS0618 // A reference-level OpenAPI 3.0 example is still observable through the object model.
+               reference.Example != null ||
+#pragma warning restore CS0618
+               reference.Enum != null ||
+               reference.UnevaluatedProperties != null ||
+               reference.UnevaluatedPropertiesSchema != null ||
+               reference.ExternalDocs != null ||
+               reference.Xml != null ||
+               reference.UnrecognizedKeywords != null ||
+               reference.DependentRequired != null ||
+               reference.ContentEncoding != null ||
+               reference.ContentMediaType != null ||
+               reference.ContentSchema != null ||
+               reference.PropertyNames != null ||
+               reference.DependentSchemas != null ||
+               reference.If != null ||
+               reference.Then != null ||
+               reference.Else != null;
+    }
+
     public static bool IsOneOf(
         this IOpenApiSchema schema)
     {

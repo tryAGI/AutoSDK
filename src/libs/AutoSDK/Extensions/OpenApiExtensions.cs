@@ -3799,6 +3799,11 @@ info:
             return;
         }
 
+        if (schema is OpenApiSchemaReference { Target: { } target })
+        {
+            schema = target;
+        }
+
         if ((schema.OneOf is { Count: > 0 } || schema.AnyOf is { Count: > 0 }) &&
             schema.Discriminator?.PropertyName is { } discriminatorProperty &&
             string.Equals(discriminatorProperty, "status", StringComparison.OrdinalIgnoreCase))

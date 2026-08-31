@@ -16,6 +16,12 @@ namespace AutoSDK.Generation;
 
 public static class CSharpEndPointFactory
 {
+    internal sealed class EndPointCreationCache
+    {
+        internal RequestRepresentationPlanner.BinarySchemaCache BinarySchemas { get; } = new();
+        internal AuthorizationHelpers.RequirementSetCache AuthorizationRequirements { get; } = new();
+    }
+
     private readonly struct RequestPropertySelection
     {
         public RequestPropertySelection(
@@ -42,7 +48,7 @@ public static class CSharpEndPointFactory
     {
         return CreateEndPointWithCache(
             operation,
-            new RequestRepresentationPlanner.BinarySchemaCache(),
+            new EndPointCreationCache(),
             preferredMimeType,
             methodNameSuffix,
             forcedRequestStreamValue,
@@ -54,7 +60,7 @@ public static class CSharpEndPointFactory
 
     internal static EndPoint CreateEndPointWithCache(
         OperationContext operation,
-        RequestRepresentationPlanner.BinarySchemaCache binarySchemaCache,
+        EndPointCreationCache cache,
         string? preferredMimeType = null,
         string? methodNameSuffix = null,
         bool? forcedRequestStreamValue = null,
@@ -65,19 +71,16 @@ public static class CSharpEndPointFactory
     {
         operation = operation ?? throw new ArgumentNullException(nameof(operation));
 
-        var authorizationRequirements = AuthorizationHelpers.CreateRequirementSets(operation);
-        var authorizations = authorizationRequirements
-            .SelectMany(static x => x.Authorizations)
-            .GroupBy(AuthorizationHelpers.GetIdentity, StringComparer.Ordinal)
-            .Select(static x => x.First())
-            .ToImmutableArray();
+        var authorizationData = cache.AuthorizationRequirements.GetOrCreate(operation);
+        var authorizationRequirements = authorizationData.RequirementSets;
+        var authorizations = authorizationData.Authorizations;
 
         var parameters = operation.Schemas
             .Where(x => x is { Hint: Hint.Parameter, ParameterData: not null })
             .Select(x => x.ParameterData!.Value)
             .ToList();
 
-        var requestRepresentation = RequestRepresentationPlanner.Select(operation, binarySchemaCache);
+        var requestRepresentation = RequestRepresentationPlanner.Select(operation, cache.BinarySchemas);
         var requestMediaType = requestRepresentation.MediaType;
         var requestContext = requestRepresentation.SchemaContext;
         var requestItemContext = requestRepresentation.ItemSchemaContext;
@@ -111,7 +114,6 @@ public static class CSharpEndPointFactory
             .ToArray();
 
         var requestPropertySelection = GetRequestProperties(requestContext);
-
         foreach (var requestProperty in requestPropertySelection.Properties)
         {
             if (requestProperty.IsReadOnly)

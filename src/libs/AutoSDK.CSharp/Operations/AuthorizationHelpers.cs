@@ -1,4 +1,5 @@
 using System.Collections.Immutable;
+using System.Runtime.CompilerServices;
 using AutoSDK.Models;
 using Microsoft.OpenApi;
 
@@ -6,6 +7,58 @@ namespace AutoSDK.Generation;
 
 internal static class AuthorizationHelpers
 {
+    internal readonly struct AuthorizationRequirementData
+    {
+        internal AuthorizationRequirementData(
+            EquatableArray<AuthorizationRequirementSet> requirementSets,
+            EquatableArray<Authorization> authorizations)
+        {
+            RequirementSets = requirementSets;
+            Authorizations = authorizations;
+        }
+
+        internal EquatableArray<AuthorizationRequirementSet> RequirementSets { get; }
+        internal EquatableArray<Authorization> Authorizations { get; }
+    }
+
+    internal sealed class RequirementSetCache
+    {
+        private readonly Dictionary<IList<OpenApiSecurityRequirement>, AuthorizationRequirementData> _values =
+            new(SecurityRequirementListReferenceComparer.Instance);
+
+        internal AuthorizationRequirementData GetOrCreate(OperationContext operation)
+        {
+            operation = operation ?? throw new ArgumentNullException(nameof(operation));
+
+            var requirements = GetEffectiveSecurityRequirements(operation);
+            if (_values.TryGetValue(requirements, out var cached))
+            {
+                return cached;
+            }
+
+            var created = CreateRequirementData(operation, requirements);
+            _values.Add(requirements, created);
+            return created;
+        }
+    }
+
+    private sealed class SecurityRequirementListReferenceComparer : IEqualityComparer<IList<OpenApiSecurityRequirement>>
+    {
+        internal static SecurityRequirementListReferenceComparer Instance { get; } = new();
+
+        public bool Equals(
+            IList<OpenApiSecurityRequirement>? x,
+            IList<OpenApiSecurityRequirement>? y)
+        {
+            return ReferenceEquals(x, y);
+        }
+
+        public int GetHashCode(IList<OpenApiSecurityRequirement> obj)
+        {
+            return RuntimeHelpers.GetHashCode(obj);
+        }
+    }
+
     internal static IList<OpenApiSecurityRequirement> GetEffectiveSecurityRequirements(
         OperationContext operation)
     {
@@ -19,17 +72,46 @@ internal static class AuthorizationHelpers
     {
         operation = operation ?? throw new ArgumentNullException(nameof(operation));
 
-        return GetEffectiveSecurityRequirements(operation)
-            .Select(requirement => new AuthorizationRequirementSet(
-                Authorizations: requirement
-                    .OrderBy(static x => GetSecurityRequirementSortKey(x.Key), StringComparer.Ordinal)
-                    .Select(x => CSharpAuthorizationFactory.FromOpenApiSecurityScheme(
-                        x.Key,
-                        operation.Settings,
-                        operation.GlobalSettings))
-                    .ToImmutableArray()
-                    .AsEquatableArray()))
-            .ToImmutableArray();
+        return CreateRequirementData(operation, GetEffectiveSecurityRequirements(operation))
+            .RequirementSets
+            .AsImmutableArray();
+    }
+
+    private static AuthorizationRequirementData CreateRequirementData(
+        OperationContext operation,
+        IList<OpenApiSecurityRequirement> requirements)
+    {
+        var requirementSets = ImmutableArray.CreateBuilder<AuthorizationRequirementSet>(requirements.Count);
+        var distinctAuthorizations = ImmutableArray.CreateBuilder<Authorization>();
+        var seenIdentities = new HashSet<string>(StringComparer.Ordinal);
+
+        foreach (var requirement in requirements)
+        {
+            var requirementAuthorizations = ImmutableArray.CreateBuilder<Authorization>(requirement.Count);
+            IEnumerable<KeyValuePair<OpenApiSecuritySchemeReference, List<string>>> orderedSchemes = requirement.Count <= 1
+                ? requirement
+                : requirement.OrderBy(static x => GetSecurityRequirementSortKey(x.Key), StringComparer.Ordinal);
+
+            foreach (var pair in orderedSchemes)
+            {
+                var authorization = CSharpAuthorizationFactory.FromOpenApiSecurityScheme(
+                    pair.Key,
+                    operation.Settings,
+                    operation.GlobalSettings);
+                requirementAuthorizations.Add(authorization);
+                if (seenIdentities.Add(GetIdentity(authorization)))
+                {
+                    distinctAuthorizations.Add(authorization);
+                }
+            }
+
+            requirementSets.Add(new AuthorizationRequirementSet(
+                requirementAuthorizations.MoveToImmutable().AsEquatableArray()));
+        }
+
+        return new AuthorizationRequirementData(
+            requirementSets.MoveToImmutable().AsEquatableArray(),
+            distinctAuthorizations.ToImmutable().AsEquatableArray());
     }
 
     internal static string GetIdentity(Authorization authorization)

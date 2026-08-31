@@ -9,6 +9,16 @@ namespace AutoSDK.Enrichment;
 
 public static class CSharpModelDataFactory
 {
+    private sealed class PropertyDataIdComparer : IComparer<PropertyData>
+    {
+        public static PropertyDataIdComparer Instance { get; } = new();
+
+        public int Compare(PropertyData x, PropertyData y)
+        {
+            return string.Compare(x.Id, y.Id, StringComparison.Ordinal);
+        }
+    }
+
     public static ModelData CreateModelData(SchemaContext context)
     {
         context = context ?? throw new ArgumentNullException(nameof(context));
@@ -298,11 +308,12 @@ public static class CSharpModelDataFactory
         }
 
         var builder = ImmutableArray.CreateBuilder<PropertyData>(dict.Count);
-        foreach (var kvp in dict.OrderBy(x => x.Key, StringComparer.Ordinal))
+        foreach (var property in dict.Values)
         {
-            builder.Add(kvp.Value);
+            builder.Add(property);
         }
 
+        builder.Sort(PropertyDataIdComparer.Instance);
         return builder.MoveToImmutable();
     }
 }

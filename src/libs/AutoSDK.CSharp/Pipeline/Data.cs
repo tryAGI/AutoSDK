@@ -189,9 +189,12 @@ public static class Data
 #endif
 
         var endPointsTime = Stopwatch.StartNew();
-        var binarySchemaCache = new RequestRepresentationPlanner.BinarySchemaCache();
+        var endPointCreationCache = new CSharpEndPointFactory.EndPointCreationCache();
         var methods = filteredOperations
-            .SelectMany(operation => CreateEndPoints(operation, anyOfDatas, binarySchemaCache))
+            .SelectMany(operation => CreateEndPoints(
+                operation,
+                anyOfDatas,
+                endPointCreationCache))
             .ToImmutableArray();
         endPointsTime.Stop();
 #if NET
@@ -1020,7 +1023,7 @@ public static class Data
     private static List<EndPoint> CreateEndPoints(
         OperationContext operation,
         IReadOnlyCollection<AnyOfData> anyOfDatas,
-        RequestRepresentationPlanner.BinarySchemaCache binarySchemaCache)
+        CSharpEndPointFactory.EndPointCreationCache endPointCreationCache)
     {
         var fernStreaming = FernStreamingMetadata.TryCreate(operation);
         var responseContentTypes = (operation.Operation.Responses ?? new Dictionary<string, IOpenApiResponse>())
@@ -1056,7 +1059,7 @@ public static class Data
         {
             endPoints.Add(CSharpEndPointFactory.CreateEndPointWithCache(
                 operation,
-                binarySchemaCache,
+                endPointCreationCache,
                 preferredMimeType: "application/json",
                 forcedRequestStreamValue: false,
                 successResponseOverride: fernStreaming.RegularResponseOverride,
@@ -1067,7 +1070,7 @@ public static class Data
             var fernStreamMediaType = GetPreferredStreamMimeType(supportedResponseContentTypes, fernStreaming.StreamFormat);
             endPoints.Add(CSharpEndPointFactory.CreateEndPointWithCache(
                 operation,
-                binarySchemaCache,
+                endPointCreationCache,
                 preferredMimeType: fernStreamMediaType,
                 methodNameSuffix: GetStreamMethodSuffix(
                     hasRegularJsonVariant: true,
@@ -1090,7 +1093,7 @@ public static class Data
         {
             endPoints.Add(CSharpEndPointFactory.CreateEndPointWithCache(
                 operation,
-                binarySchemaCache,
+                endPointCreationCache,
                 preferredMimeType: GetPreferredStreamMimeType(supportedResponseContentTypes, fernStreaming.StreamFormat),
                 successResponseOverride: fernStreaming.StreamResponseOverride ?? fernStreaming.RegularResponseOverride,
                 streamFormatOverride: fernStreaming.StreamFormat,
@@ -1103,7 +1106,7 @@ public static class Data
         {
             endPoints.Add(CSharpEndPointFactory.CreateEndPointWithCache(
                 operation,
-                binarySchemaCache,
+                endPointCreationCache,
                 successResponseOverride: fernStreaming?.RegularResponseOverride,
                 anyOfDatas: anyOfDatas));
             return endPoints;
@@ -1122,7 +1125,7 @@ public static class Data
         var prototypes = orderedContentTypes
             .Select(contentType => CSharpEndPointFactory.CreateEndPointWithCache(
                 operation,
-                binarySchemaCache,
+                endPointCreationCache,
                 preferredMimeType: contentType,
                 forcedRequestStreamValue: hasRegularResponse && hasStreamingResponse
                     ? MediaTypeCapabilities.GetResponseSupport(contentType) == MediaTypeTransportSupport.Streaming
@@ -1163,7 +1166,7 @@ public static class Data
                 ? prototype
                 : CSharpEndPointFactory.CreateEndPointWithCache(
                     operation,
-                    binarySchemaCache,
+                    endPointCreationCache,
                     preferredMimeType: prototype.SuccessResponse.MimeType,
                     methodNameSuffix: suffix,
                     forcedRequestStreamValue: hasRegularResponse && hasStreamingResponse

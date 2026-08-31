@@ -1,6 +1,8 @@
 using AutoSDK.Generation;
+using AutoSDK.Extensions;
 using AutoSDK.Models;
 using AutoSDK.Serialization.Json;
+using System.Text.Json.Nodes;
 
 namespace AutoSDK.UnitTests;
 
@@ -271,5 +273,24 @@ public class EnumGenerationTests
         methodSource.Should()
             .Contain("path: $\"/v1/single-use-token/{(global::System.Uri.EscapeDataString(tokenType.ToValueString()))}\"");
         methodSource.Should().NotContain("path: $\"/v1/single-use-token/{tokenType}\"");
+    }
+
+    [TestMethod]
+    public void EnumGeneration_DisambiguatesCaseInsensitiveMemberNameCollisions()
+    {
+        IList<JsonNode> values =
+        [
+            JsonValue.Create("ready")!,
+            JsonValue.Create("Ready")!,
+            JsonValue.Create("READY")!,
+        ];
+
+        var result = values.ComputeEnum(
+            "Status",
+            string.Empty,
+            DefaultSettings.ToEnumNamingSettings());
+
+        result.Values.Select(static value => value.Name)
+            .Should().Equal("Ready", "Ready2", "Ready3");
     }
 }

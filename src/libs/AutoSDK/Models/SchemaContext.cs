@@ -20,7 +20,32 @@ public class SchemaContext(
     public IList<SchemaContext> Children { get; set; } = Array.Empty<SchemaContext>();
 
     public SchemaContextSettings Settings { get; set; } = settings;
-    public IOpenApiSchema Schema { get; set; } = schema;
+    private IOpenApiSchema _schema = schema;
+    private IOpenApiSchema? _effectiveSchema;
+    private bool _effectiveSchemaCached;
+    public IOpenApiSchema Schema
+    {
+        get => _schema;
+        set
+        {
+            _schema = value ?? throw new ArgumentNullException(nameof(value));
+            _effectiveSchema = null;
+            _effectiveSchemaCached = false;
+        }
+    }
+    public IOpenApiSchema EffectiveSchema
+    {
+        get
+        {
+            if (!_effectiveSchemaCached)
+            {
+                _effectiveSchema = _schema.ResolveBareReference();
+                _effectiveSchemaCached = true;
+            }
+
+            return _effectiveSchema!;
+        }
+    }
     public string Id { get; set; } = id;
     public string Type { get; set; } = type;
     
@@ -142,7 +167,9 @@ public class SchemaContext(
     private byte _cachedSchemaBooleanValues;
     public bool IsAllOfForMetadata => IsSchemaBooleanCached(IsAllOfForMetadataFlag)
         ? GetCachedSchemaBoolean(IsAllOfForMetadataFlag)
-        : CacheSchemaBoolean(IsAllOfForMetadataFlag, this.HasAllOfTypeForMetadata());
+        : CacheSchemaBoolean(
+            IsAllOfForMetadataFlag,
+            EffectiveSchema.HasAllOfTypeForMetadata(PropertyName));
     
     public bool IsClass =>
         Type == "class" ||
@@ -232,23 +259,23 @@ public class SchemaContext(
     
     public bool IsAnyOf => IsSchemaBooleanCached(IsAnyOfFlag)
         ? GetCachedSchemaBoolean(IsAnyOfFlag)
-        : CacheSchemaBoolean(IsAnyOfFlag, Schema.IsAnyOf());
+        : CacheSchemaBoolean(IsAnyOfFlag, EffectiveSchema.IsAnyOf());
     public bool IsOneOf => IsSchemaBooleanCached(IsOneOfFlag)
         ? GetCachedSchemaBoolean(IsOneOfFlag)
-        : CacheSchemaBoolean(IsOneOfFlag, Schema.IsOneOf());
+        : CacheSchemaBoolean(IsOneOfFlag, EffectiveSchema.IsOneOf());
     public bool HasAllOf => IsSchemaBooleanCached(HasAllOfFlag)
         ? GetCachedSchemaBoolean(HasAllOfFlag)
-        : CacheSchemaBoolean(HasAllOfFlag, Schema.IsAllOf());
+        : CacheSchemaBoolean(HasAllOfFlag, EffectiveSchema.IsAllOf());
     public bool IsAllOf => HasAllOf && !IsDerivedClass;
     public bool IsNullable => IsSchemaBooleanCached(IsNullableFlag)
         ? GetCachedSchemaBoolean(IsNullableFlag)
-        : CacheSchemaBoolean(IsNullableFlag, Schema.IsNullable());
+        : CacheSchemaBoolean(IsNullableFlag, EffectiveSchema.IsNullable());
     public bool IsNullableAnyOfLike => IsSchemaBooleanCached(IsNullableAnyOfLikeFlag)
         ? GetCachedSchemaBoolean(IsNullableAnyOfLikeFlag)
-        : CacheSchemaBoolean(IsNullableAnyOfLikeFlag, Schema.IsNullableAnyOfLike());
+        : CacheSchemaBoolean(IsNullableAnyOfLikeFlag, EffectiveSchema.IsNullableAnyOfLike());
     public bool IsBinary => IsSchemaBooleanCached(IsBinaryFlag)
         ? GetCachedSchemaBoolean(IsBinaryFlag)
-        : CacheSchemaBoolean(IsBinaryFlag, Schema.IsBinary());
+        : CacheSchemaBoolean(IsBinaryFlag, EffectiveSchema.IsBinary());
     public bool IsBaseClass => this is { IsComponent: true, Schema.Discriminator.Mapping: not null };
     public bool IsDerivedClass => IsSchemaBooleanCached(IsDerivedClassFlag)
         ? GetCachedSchemaBoolean(IsDerivedClassFlag)

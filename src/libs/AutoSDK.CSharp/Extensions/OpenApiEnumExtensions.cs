@@ -3,6 +3,7 @@ using System.Text.Json.Nodes;
 using AutoSDK.Models;
 using AutoSDK.Naming.Parameters;
 using AutoSDK.Naming.Properties;
+using Microsoft.OpenApi;
 
 namespace AutoSDK.Extensions;
 
@@ -31,23 +32,30 @@ public static class OpenApiEnumExtensions
     public static string? GetDefaultValue(this SchemaContext context)
     {
         context = context ?? throw new ArgumentNullException(nameof(context));
+        return GetDefaultValue(context, context.Schema);
+    }
+
+    internal static string? GetDefaultValue(this SchemaContext context, IOpenApiSchema schema)
+    {
+        context = context ?? throw new ArgumentNullException(nameof(context));
+        schema = schema ?? throw new ArgumentNullException(nameof(schema));
 
         if (context.TypeData.CSharpType == "object?" ||
-            context.Schema.Default is JsonArray or JsonObject ||
+            schema.Default is JsonArray or JsonObject ||
             context.TypeData.CSharpTypeNullability)
         {
             return string.Empty;
         }
 
-        if (context.Schema.IsConst() && context.Schema.Default == null &&
+        if (schema.IsConst() && schema.Default == null &&
             !context.TypeData.IsEnum &&
-            !(context.Schema.Enum?.Any() ?? false))
+            !(schema.Enum?.Any() ?? false))
         {
             return GetConstLiteral(context);
         }
 
-        var defaultString = context.Schema.Default?.GetString();
-        if ((context.Schema.Enum?.Any() ?? false) && context.Schema.Default is JsonValue && !string.IsNullOrWhiteSpace(defaultString))
+        var defaultString = schema.Default?.GetString();
+        if ((schema.Enum?.Any() ?? false) && schema.Default is JsonValue && !string.IsNullOrWhiteSpace(defaultString))
         {
             var @enum = context.ComputeEnum();
             if (!@enum.TryGetValue(defaultString!, out var result))
@@ -59,7 +67,7 @@ public static class OpenApiEnumExtensions
 
             return context.TypeData.CSharpTypeWithoutNullability + "." + result.Name;
         }
-        if ((context.Schema.AnyOf?.Any(x => x.Enum?.Any() ?? false) ?? false) && context.Schema.Default != null)
+        if ((schema.AnyOf?.Any(x => x.Enum?.Any() ?? false) ?? false) && schema.Default != null)
         {
             var enumChildContext = context.Children
                 .Where(x => x.Hint is Hint.AnyOf)
@@ -91,7 +99,7 @@ public static class OpenApiEnumExtensions
 
             return enumChildContext.TypeData.CSharpTypeWithoutNullability + "." + value;
         }
-        if ((context.Schema.OneOf?.Any(x => x.Enum?.Any() ?? false) ?? false) && context.Schema.Default != null)
+        if ((schema.OneOf?.Any(x => x.Enum?.Any() ?? false) ?? false) && schema.Default != null)
         {
             var enumChildContext = context.Children
                 .Where(x => x.Hint is Hint.OneOf)
@@ -107,7 +115,7 @@ public static class OpenApiEnumExtensions
 
             return enumChildContext.TypeData.CSharpTypeWithoutNullability + "." + result.Name;
         }
-        if ((context.Schema.AllOf?.Any(x => x.Enum?.Any() ?? false) ?? false) && context.Schema.Default != null)
+        if ((schema.AllOf?.Any(x => x.Enum?.Any() ?? false) ?? false) && schema.Default != null)
         {
             var enumChildContext = context.Children
                 .Where(x => x.Hint is Hint.AllOf)
@@ -123,12 +131,12 @@ public static class OpenApiEnumExtensions
 
             return enumChildContext.TypeData.CSharpTypeWithoutNullability + "." + result.Name;
         }
-        if (context.Schema.Default is JsonValue && !string.IsNullOrWhiteSpace(defaultString))
+        if (schema.Default is JsonValue && !string.IsNullOrWhiteSpace(defaultString))
         {
-            if (context.Schema.Type != Microsoft.OpenApi.JsonSchemaType.String &&
-                (context.Schema.AnyOf ?? []).All(x => x.Type != Microsoft.OpenApi.JsonSchemaType.String) &&
-                (context.Schema.AllOf ?? []).All(x => x.Type != Microsoft.OpenApi.JsonSchemaType.String) &&
-                (context.Schema.OneOf ?? []).All(x => x.Type != Microsoft.OpenApi.JsonSchemaType.String))
+            if (schema.Type != Microsoft.OpenApi.JsonSchemaType.String &&
+                (schema.AnyOf ?? []).All(x => x.Type != Microsoft.OpenApi.JsonSchemaType.String) &&
+                (schema.AllOf ?? []).All(x => x.Type != Microsoft.OpenApi.JsonSchemaType.String) &&
+                (schema.OneOf ?? []).All(x => x.Type != Microsoft.OpenApi.JsonSchemaType.String))
             {
                 return null;
             }
@@ -258,7 +266,7 @@ public static class OpenApiEnumExtensions
         @enum = @enum ?? throw new ArgumentNullException(nameof(@enum));
         enumName = enumName ?? throw new ArgumentNullException(nameof(enumName));
 
-        var values = new Dictionary<string, PropertyData>();
+        var values = new Dictionary<string, PropertyData>(@enum.Count, StringComparer.Ordinal);
         for (var i = 0; i < @enum.Count; i++)
         {
             var value = ((JsonNode?)@enum[i]).ToEnumValue(
@@ -521,6 +529,22 @@ public static class OpenApiEnumExtensions
         }
 
         var usedNames = new HashSet<string>(StringComparer.OrdinalIgnoreCase);
+        var hasCollision = false;
+        foreach (var property in values.Values)
+        {
+            if (!usedNames.Add(property.Name))
+            {
+                hasCollision = true;
+                break;
+            }
+        }
+
+        if (!hasCollision)
+        {
+            return values;
+        }
+
+        usedNames.Clear();
         var suffixes = new Dictionary<string, int>(StringComparer.OrdinalIgnoreCase);
         var result = new Dictionary<string, PropertyData>(values.Count, StringComparer.Ordinal);
 

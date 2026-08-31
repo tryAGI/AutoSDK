@@ -6189,7 +6189,7 @@
           "Dubbing"
         ],
         "summary": "Create Dubbing Project",
-        "description": "Create a dubbing project from an uploaded file or a source URL.",
+        "description": "Create a dubbing project from an uploaded file (`file`) or a source URL (`source_url`).\n\nReturns as soon as the project record exists, before the source has been fetched: the project starts `queued` and reaches `ready` once its source has been transcribed. Creating a project does not dub anything — add a language target to it for each language you want, or pass `target_language` to queue the first one here.\n\nPreparation can take minutes on a long source, so we recommend passing `webhook_ids` to be notified when the project turns `ready` or `failed`, rather than polling for it.",
         "operationId": "dubbing_project_create",
         "parameters": [
           {
@@ -6277,7 +6277,7 @@
           "Dubbing"
         ],
         "summary": "List Dubbing Projects",
-        "description": "List the workspace's dubbing projects (cursor-paginated).",
+        "description": "List the dubbing projects in your workspace that you can access, newest first, cursor-paginated. Listed projects carry no `language_ids`; fetch a project, or list its language targets, to see them.",
         "operationId": "dubbing_project_list",
         "parameters": [
           {
@@ -6293,10 +6293,10 @@
                   "type": "null"
                 }
               ],
-              "description": "Pagination cursor from a previous response's next_cursor.",
+              "description": "Pass the `next_cursor` from a previous response to fetch the page after it. Omit for the first page.",
               "title": "Cursor"
             },
-            "description": "Pagination cursor from a previous response's next_cursor."
+            "description": "Pass the `next_cursor` from a previous response to fetch the page after it. Omit for the first page."
           },
           {
             "name": "page_size",
@@ -6304,11 +6304,11 @@
             "required": false,
             "schema": {
               "type": "integer",
-              "description": "Number of projects per page (max 100).",
+              "description": "Number of projects per page. Clamped to between 1 and 100 rather than rejected, so a larger value returns a full page.",
               "default": 20,
               "title": "Page Size"
             },
-            "description": "Number of projects per page (max 100)."
+            "description": "Number of projects per page. Clamped to between 1 and 100 rather than rejected, so a larger value returns a full page."
           },
           {
             "name": "status",
@@ -6323,10 +6323,10 @@
                   "type": "null"
                 }
               ],
-              "description": "Filter to projects in this status (preparing, ready, failed).",
+              "description": "Filter to projects in this status: `queued`, `preparing`, `ready`, or `failed`. Omit to return every status.",
               "title": "Status"
             },
-            "description": "Filter to projects in this status (preparing, ready, failed)."
+            "description": "Filter to projects in this status: `queued`, `preparing`, `ready`, or `failed`. Omit to return every status."
           },
           {
             "name": "sort_direction",
@@ -6338,11 +6338,11 @@
                 "DESCENDING"
               ],
               "type": "string",
-              "description": "Sort by creation time (default 'DESCENDING').",
+              "description": "Sort by creation time; newest first by default.",
               "default": "DESCENDING",
               "title": "Sort Direction"
             },
-            "description": "Sort by creation time (default 'DESCENDING')."
+            "description": "Sort by creation time; newest first by default."
           },
           {
             "name": "xi-api-key",
@@ -6440,7 +6440,7 @@
           "Dubbing"
         ],
         "summary": "Get Dubbing Project",
-        "description": "Full project detail, including its language target ids.",
+        "description": "Full project detail, including the IDs of every language target under it. To follow a project to `ready`, we recommend a `webhook_ids` subscription rather than polling this endpoint.",
         "operationId": "dubbing_project_get",
         "parameters": [
           {
@@ -6544,7 +6544,7 @@
           "Dubbing"
         ],
         "summary": "Delete Dubbing Project",
-        "description": "Delete a project and its language targets.",
+        "description": "Delete a project, every language target under it, and their stored media and outputs. This cannot be undone, and a dub already running is still billed.",
         "operationId": "dubbing_project_delete",
         "parameters": [
           {
@@ -6612,7 +6612,7 @@
           "Dubbing"
         ],
         "summary": "Create Dubbing Language Target",
-        "description": "Queue a language target for a project (starts once the project is ready).",
+        "description": "Add a language to dub a project into, and queue the dub.\n\nThis is the call that produces dubbed audio, and it is billed per generation. The target is created `queued` and starts as soon as the project is `ready`, so it can be added at any point after the project is created. It inherits the project's dubbing model and cannot pick another.\n\nA project created with `webhook_ids` sends a `dubbing_language_completed` event carrying the output download URLs, so we recommend subscribing rather than polling this target to completion.",
         "operationId": "dubbing_language_create",
         "parameters": [
           {
@@ -6712,7 +6712,7 @@
           "Dubbing"
         ],
         "summary": "List Dubbing Language Targets",
-        "description": "List a project's language targets (cursor-paginated).",
+        "description": "List a project's language targets, cursor-paginated, each with signed output URLs once it has produced an output.",
         "operationId": "dubbing_language_list",
         "parameters": [
           {
@@ -6739,10 +6739,10 @@
                   "type": "null"
                 }
               ],
-              "description": "Pagination cursor from a previous response's next_cursor.",
+              "description": "Pass the `next_cursor` from a previous response to fetch the page after it. Omit for the first page.",
               "title": "Cursor"
             },
-            "description": "Pagination cursor from a previous response's next_cursor."
+            "description": "Pass the `next_cursor` from a previous response to fetch the page after it. Omit for the first page."
           },
           {
             "name": "page_size",
@@ -6750,11 +6750,11 @@
             "required": false,
             "schema": {
               "type": "integer",
-              "description": "Number of language targets per page (max 100).",
+              "description": "Number of language targets per page. Clamped to between 1 and 100 rather than rejected, so a larger value returns a full page.",
               "default": 20,
               "title": "Page Size"
             },
-            "description": "Number of language targets per page (max 100)."
+            "description": "Number of language targets per page. Clamped to between 1 and 100 rather than rejected, so a larger value returns a full page."
           },
           {
             "name": "status",
@@ -6769,10 +6769,10 @@
                   "type": "null"
                 }
               ],
-              "description": "Filter to targets in this status (queued, processing, completed, stale, failed).",
+              "description": "Filter to targets in this status: `queued`, `processing`, `completed`, `stale`, or `failed`. Omit to return every status.",
               "title": "Status"
             },
-            "description": "Filter to targets in this status (queued, processing, completed, stale, failed)."
+            "description": "Filter to targets in this status: `queued`, `processing`, `completed`, `stale`, or `failed`. Omit to return every status."
           },
           {
             "name": "xi-api-key",
@@ -6860,7 +6860,7 @@
           "Dubbing"
         ],
         "summary": "Get Dubbing Language Target",
-        "description": "Full language-target detail.",
+        "description": "Full language-target detail. Once the target reports `completed`, `outputs` carries the signed download URLs. To learn when that happens, we recommend the project's `webhook_ids` subscription rather than polling this endpoint; fetch here when a delivered URL has expired, or to reconcile after an edit.",
         "operationId": "dubbing_language_get",
         "parameters": [
           {
@@ -6963,7 +6963,7 @@
           "Dubbing"
         ],
         "summary": "Delete Dubbing Language Target",
-        "description": "Delete a language target.",
+        "description": "Delete a language target and its outputs, leaving the project and its other languages intact. This cannot be undone, and a dub already running is still billed.",
         "operationId": "dubbing_language_delete",
         "parameters": [
           {
@@ -7044,7 +7044,7 @@
           "Dubbing"
         ],
         "summary": "Get Dubbing Transcript",
-        "description": "The project's source transcript, as editable segments.",
+        "description": "The project's source transcript, as editable segments. Available once the project is `ready`.",
         "operationId": "dubbing_transcript_get",
         "parameters": [
           {
@@ -7135,7 +7135,7 @@
           "Dubbing"
         ],
         "summary": "Update Dubbing Transcript Segment",
-        "description": "Enterprise only. Edit a source segment's text, speaker, or timing.",
+        "description": "Enterprise only. Edit a source segment's text, speaker, or timing. Omitted fields are left unchanged. Bumps the project's `revision`, discards the affected translations in every language target, and marks any target that had already completed `stale`. No audio changes until you regenerate a target.",
         "operationId": "dubbing_transcript_segment_update",
         "parameters": [
           {
@@ -7246,7 +7246,7 @@
           "Dubbing"
         ],
         "summary": "Delete Dubbing Transcript Segment",
-        "description": "Enterprise only. Remove a source segment from the transcript.",
+        "description": "Enterprise only. Remove a source segment from the transcript so it is no longer dubbed. Bumps the project's `revision`, discards the affected translations in every language target, and marks any target that had already completed `stale`. No audio changes until you regenerate a target.",
         "operationId": "dubbing_transcript_segment_delete",
         "parameters": [
           {
@@ -7339,7 +7339,7 @@
           "Dubbing"
         ],
         "summary": "Update Dubbing Transcript Segments",
-        "description": "Enterprise only. Edit several source segments' text, speaker, or timing in one atomic request.",
+        "description": "Enterprise only. Edit several source segments' text, speaker, or timing in one atomic request: every edit applies or none does. Bumps the project's `revision`, discards the affected translations in every language target, and marks any target that had already completed `stale`. No audio changes until you regenerate a target.",
         "operationId": "dubbing_transcript_segments_update",
         "parameters": [
           {
@@ -7456,7 +7456,7 @@
           "Dubbing"
         ],
         "summary": "Add Dubbing Transcript Segment",
-        "description": "Enterprise only. Add a new source segment to the transcript.",
+        "description": "Enterprise only. Add a new source segment to the transcript. Its span must lie within the source media, last between 0.1 and 25 seconds, and not overlap another segment by the same speaker. Bumps the project's `revision`, discards the affected translations in every language target, and marks any target that had already completed `stale`. No audio changes until you regenerate a target.",
         "operationId": "dubbing_transcript_segment_add",
         "parameters": [
           {
@@ -7560,7 +7560,7 @@
           "Dubbing"
         ],
         "summary": "Get Dubbing Target Transcript",
-        "description": "A language target's transcript: source segments with their translations.",
+        "description": "A language target's transcript: source segments with their translations. Available once the target has produced an output. Returns a conflict while the target is still on its first dub, since it has no translations to return yet.",
         "operationId": "dubbing_target_transcript_get",
         "parameters": [
           {
@@ -7666,7 +7666,7 @@
           "Dubbing"
         ],
         "summary": "Update Dubbing Target Transcript Segment",
-        "description": "Enterprise only. Edit a segment's translation for a language target.",
+        "description": "Enterprise only. Edit a segment's translation for a language target. Omitted fields are left unchanged; an explicit null clears the field. Bumps the target's `revision` and marks it `stale` if it had already completed. The source transcript and the project's other languages are untouched, and no audio changes until you regenerate the target.",
         "operationId": "dubbing_target_transcript_segment_update",
         "parameters": [
           {
@@ -7793,7 +7793,7 @@
           "Dubbing"
         ],
         "summary": "Update Dubbing Target Transcript Segments",
-        "description": "Enterprise only. Edit several segments' translations for a language target in one atomic request.",
+        "description": "Enterprise only. Edit several segments' translations for a language target in one atomic request: every edit applies or none does. Bumps the target's `revision` and marks it `stale` if it had already completed. The source transcript and the project's other languages are untouched, and no audio changes until you regenerate the target.",
         "operationId": "dubbing_target_transcript_segments_update",
         "parameters": [
           {
@@ -7925,7 +7925,7 @@
           "Dubbing"
         ],
         "summary": "Regenerate Dubbing Target",
-        "description": "Enterprise only. Re-dub a target from its edited transcript, re-synthesizing only the edited regions (charged like a generation). Conflicts when the target has no edits to apply -- nothing is dispatched and nothing is charged.",
+        "description": "Enterprise only. Re-dub a target from its edited transcript, re-synthesizing only the edited regions (charged like a generation, less the free-regeneration allowance). Accepted asynchronously: the target returns to `processing` and sends a `dubbing_language_completed` event to the project's `webhook_ids` when the re-dub lands, carrying the new output URLs. Returns a conflict when the target has no edits to apply — nothing is dispatched and nothing is charged.",
         "operationId": "dubbing_target_transcript_regenerate",
         "parameters": [
           {
@@ -38983,10 +38983,14 @@
         "type": "string",
         "enum": [
           "knowledge_gap",
+          "incorrect_information",
+          "documentation_gap",
           "product_feedback",
+          "platform_bug",
           "tool_issue",
           "missing_tool",
-          "unnecessary_escalation"
+          "unnecessary_escalation",
+          "wrong_action"
         ],
         "title": "AgentConversationTicketIssueType"
       },
@@ -45733,7 +45737,7 @@
           "target_language": {
             "type": "string",
             "title": "Target Language",
-            "description": "BCP-47 language tag to dub the project into (e.g. 'fr', 'es-MX'); must be a language the dubbing model supports. A region-qualified tag must be one of the supported dialects."
+            "description": "BCP-47 language tag to dub the project into (for example, `fr` or `es-MX`). Must be one of the [languages the project's dubbing model supports](https://elevenlabs.io/docs/help-center/product/dubbing/which-languages-are-supported-in-dubbing), and a region-qualified tag must be one of the supported dialects."
           },
           "voice_settings": {
             "anyOf": [
@@ -45744,7 +45748,7 @@
                 "type": "null"
               }
             ],
-            "description": "Voice settings applied to the whole language (e.g. cloning strength)."
+            "description": "Voice settings applied to every speaker in this language. Omit to use the defaults."
           },
           "translations": {
             "anyOf": [
@@ -45760,7 +45764,7 @@
               }
             ],
             "title": "Translations",
-            "description": "Enterprise only. Optional translations to use instead of machine translation. A map from each source segment's external_id (or its id, if you supplied none) to the translated text; every source segment must be covered exactly once. At most 20000 entries, totalling at most 4 MiB of text."
+            "description": "Enterprise only. Optional translations to use instead of machine translation. A map from each source segment's `external_id` (or its `id`, if you supplied none) to the translated text; every source segment must be covered exactly once. At most 20,000 entries, totaling at most 4 MiB of text. See [Bring your own transcript](https://elevenlabs.io/docs/eleven-api/guides/how-to/dubbing/bring-your-own-transcript)."
           }
         },
         "type": "object",
@@ -45782,7 +45786,7 @@
               }
             ],
             "title": "File",
-            "description": "The source media file to dub. Provide this or source_url."
+            "description": "The source media file to dub: an audio or video file of at most 3 GiB. Provide this or `source_url`, not both."
           },
           "source_url": {
             "anyOf": [
@@ -45794,7 +45798,7 @@
               }
             ],
             "title": "Source Url",
-            "description": "Public URL to fetch the source media from. Provide this or file."
+            "description": "Public HTTP(S) URL the source media is fetched from server-side, subject to the same size and format limits as an upload. Provide this or `file`, not both."
           },
           "reference": {
             "anyOf": [
@@ -45806,7 +45810,7 @@
               }
             ],
             "title": "Reference",
-            "description": "Optional free-form string (max 500 characters) to identify the project on your end."
+            "description": "Optional free-form string (at most 500 characters) to identify the project on your end. Stored and echoed back verbatim; it does not affect the dub."
           },
           "source_language": {
             "anyOf": [
@@ -45837,7 +45841,7 @@
               }
             ],
             "title": "Model Id",
-            "description": "Default dubbing model id ('dubbing_v1' or 'dubbing_v2') for the project's language targets; a target may override it. Omit to use the system default."
+            "description": "Dubbing model (`dubbing_v1` or `dubbing_v2`) every language target of this project is dubbed with. Defaults to `dubbing_v2`. Fixed at create time — the source is prepared for this model, so neither the project nor an individual target can change it later."
           },
           "keyterms": {
             "items": {
@@ -45845,7 +45849,7 @@
             },
             "type": "array",
             "title": "Keyterms",
-            "description": "Key terms to bias transcription/translation toward (e.g. product or brand names). At most 1000 terms; each term at most 50 characters and 5 words; the characters `<>{}[]\\` are not allowed."
+            "description": "Key terms to bias transcription and translation toward (for example, product or brand names). At most 1,000 terms; each term at most 50 characters and 5 words; the characters `<>{}[]\\` are not allowed. Terms are trimmed and deduplicated."
           },
           "webhook_ids": {
             "items": {
@@ -45853,7 +45857,7 @@
             },
             "type": "array",
             "title": "Webhook Ids",
-            "description": "Ids of workspace webhooks to notify when this project becomes ready or fails, and when any of its languages completes or fails. At most 3; each must be a webhook configured in your workspace."
+            "description": "IDs of workspace webhooks to notify as this project progresses — the alternative to polling, and what we recommend. Each receives a `dubbing_project_ready` or `dubbing_project_failed` event for the project, and a `dubbing_language_completed` or `dubbing_language_failed` event for every language under it; `dubbing_language_completed` carries the output download URLs. At most 3 IDs, each already configured in your workspace — see [Webhooks](https://elevenlabs.io/docs/eleven-api/resources/webhooks) for how to create one and verify its signature. Delivery is best-effort and can repeat, so we recommend handling events idempotently."
           },
           "target_language": {
             "anyOf": [
@@ -45865,7 +45869,7 @@
               }
             ],
             "title": "Target Language",
-            "description": "Optional shortcut: also create a language target in this BCP-47 language, queued to start once the project is ready. Must be a language the dubbing model supports, and a region-qualified tag must be one of the supported dialects."
+            "description": "Optional shortcut: also create a language target in this BCP-47 language, queued to start once the project is ready — equivalent to creating the project and then creating one language target. Must be one of the [languages the dubbing model supports](https://elevenlabs.io/docs/help-center/product/dubbing/which-languages-are-supported-in-dubbing), and a region-qualified tag must be one of the supported dialects. Its ID is returned in `language_ids`."
           },
           "transcript": {
             "anyOf": [
@@ -45878,7 +45882,7 @@
               }
             ],
             "title": "Transcript",
-            "description": "Enterprise only. Optional JSON transcript to use instead of automatic transcription. When provided, source_language is required. Segments may include an optional external_id and an optional translation; if any segment includes a translation, target_language is required and every segment must include one (used to seed the target created via target_language)."
+            "description": "Enterprise only. Optional JSON transcript to use instead of transcribing the source: a `{\"segments\": [...]}` document, at most 20,000 segments and 4 MiB. See [Bring your own transcript](https://elevenlabs.io/docs/eleven-api/guides/how-to/dubbing/bring-your-own-transcript) for the segment fields and their constraints. `source_language` is required whenever a transcript is provided. If any segment carries a `translation`, `target_language` is required and every segment must carry one; those translations seed the target created via `target_language`, which then skips machine translation."
           }
         },
         "type": "object",
@@ -65627,7 +65631,7 @@
             "maxProperties": 500,
             "minProperties": 1,
             "title": "Segments",
-            "description": "Map of segment id to the partial update to apply to that segment."
+            "description": "Map of segment ID to the partial update to apply to that segment. At least one entry and at most 500."
           }
         },
         "type": "object",
@@ -65671,7 +65675,7 @@
             "maxProperties": 500,
             "minProperties": 1,
             "title": "Segments",
-            "description": "Map of segment id to the translation edit to apply to that segment."
+            "description": "Map of segment ID to the translation edit to apply to that segment. At least one entry and at most 500."
           }
         },
         "type": "object",
@@ -65710,17 +65714,17 @@
           "code": {
             "type": "string",
             "title": "Code",
-            "description": "Stable identifier for the failure, safe to branch on. New codes are added over time, so treat an unrecognized value as 'internal_error'."
+            "description": "Stable identifier for the failure, safe to branch on. New codes are added over time, so we recommend treating an unrecognized value as `internal_error`."
           },
           "message": {
             "type": "string",
             "title": "Message",
-            "description": "Human-readable description of the failure, for display. The wording may change at any time; branch on `code` instead."
+            "description": "Human-readable description of the failure, for display. The wording may change at any time, so we recommend branching on `code` instead."
           },
           "retryable": {
             "type": "boolean",
             "title": "Retryable",
-            "description": "Whether resubmitting the same input could succeed. False means the failure describes the input or the account, so an identical retry will fail the same way."
+            "description": "Whether resubmitting the same input could succeed. A value of false means the failure describes the input or the account, so an identical retry will fail the same way."
           }
         },
         "type": "object",
@@ -65751,7 +65755,7 @@
               }
             ],
             "title": "Next Cursor",
-            "description": "Cursor for the next page, or null when there are no more results."
+            "description": "Opaque cursor to pass back as `cursor` for the next page, or null when there are no more results."
           }
         },
         "type": "object",
@@ -65772,7 +65776,7 @@
               }
             ],
             "title": "Lossless Audio",
-            "description": "Signed URL of the dubbed lossless audio track."
+            "description": "Signed URL for the dubbed lossless audio track, in FLAC. The link expires one hour after it is issued; re-read the language target for a fresh one."
           }
         },
         "type": "object",
@@ -65806,7 +65810,7 @@
               "failed"
             ],
             "title": "Status",
-            "description": "Lifecycle status: 'queued' (waiting on the project), 'processing', 'completed', 'stale' (source/transcript changed), or 'failed'."
+            "description": "Lifecycle status: `queued` (waiting on the project to be ready, or on a worker), `processing` while it is being dubbed, `completed` once its output is available, `stale` when the transcript changed after the output was produced, or `failed`."
           },
           "model_id": {
             "anyOf": [
@@ -65818,7 +65822,7 @@
               }
             ],
             "title": "Model Id",
-            "description": "Effective dubbing model id (target override or project default)."
+            "description": "Dubbing model this target is dubbed with, inherited from the project and not selectable per language."
           },
           "voice_settings": {
             "anyOf": [
@@ -65829,7 +65833,7 @@
                 "type": "null"
               }
             ],
-            "description": "Voice settings applied to the whole language, or null if unset."
+            "description": "Voice settings applied to every speaker in this language, or null if the defaults apply."
           },
           "outputs": {
             "anyOf": [
@@ -65840,7 +65844,7 @@
                 "type": "null"
               }
             ],
-            "description": "Signed output URLs; null until the target has produced an output (present once 'completed', and kept while 'stale' -- compare `output_revision` against `revision` to tell whether the output is up to date)."
+            "description": "Signed output URLs; null until the target has produced an output (present once `completed`, and kept while `stale` — compare `output_revision` against `revision` to tell whether the output is up to date)."
           },
           "revision": {
             "type": "integer",
@@ -65857,7 +65861,7 @@
               }
             ],
             "title": "Output Revision",
-            "description": "The `revision` the current dubbed output was generated from; equal to `revision` when up to date, less than it when 'stale'. Null until a generation has completed."
+            "description": "The `revision` the current dubbed output was generated from; equal to `revision` when up to date, and lower when `stale`. This is null until a generation has completed."
           },
           "error": {
             "anyOf": [
@@ -65868,7 +65872,7 @@
                 "type": "null"
               }
             ],
-            "description": "Why this language failed; null unless `status` is 'failed', and also null for the few languages that failed before failure reporting was introduced. A code of 'project_failed' means the parent project failed, so read the project for the underlying cause."
+            "description": "Why this language failed; null unless `status` is `failed`, and also null for the few languages that failed before failure reporting was introduced. A code of `project_failed` means the parent project failed, so read the project for the underlying cause."
           },
           "warnings": {
             "items": {
@@ -66128,7 +66132,7 @@
               }
             ],
             "title": "Next Cursor",
-            "description": "Cursor for the next page, or null when there are no more results."
+            "description": "Opaque cursor to pass back as `cursor` for the next page, or null when there are no more results."
           }
         },
         "type": "object",
@@ -66154,7 +66158,7 @@
               "failed"
             ],
             "title": "Status",
-            "description": "Lifecycle status of the project: 'preparing'/'processing' while it transcribes, 'ready' once transcription is done, or 'failed'."
+            "description": "Lifecycle status of the project: `queued` before the source is picked up, `preparing` while it is transcribed, `ready` once transcription is done and language targets can start, or `failed`. A project is never reported as `processing` — that value belongs to language targets."
           },
           "reference": {
             "anyOf": [
@@ -66166,7 +66170,7 @@
               }
             ],
             "title": "Reference",
-            "description": "Optional free-form string the customer can provide to identify the project on their end."
+            "description": "The free-form string you supplied as `reference` when creating the project, or null if you supplied none."
           },
           "source_language": {
             "anyOf": [
@@ -66190,7 +66194,7 @@
               }
             ],
             "title": "Model Id",
-            "description": "Default dubbing model id applied to this project's language targets."
+            "description": "Dubbing model every language target of this project is dubbed with. Fixed at create time and not selectable per language."
           },
           "media": {
             "anyOf": [
@@ -66201,7 +66205,7 @@
                 "type": "null"
               }
             ],
-            "description": "Source media metadata; null until the project is ready."
+            "description": "Source media metadata, populated once the source has been fetched and decoded (shortly after create, before the project is `ready`); null until then."
           },
           "language_ids": {
             "items": {
@@ -66209,7 +66213,7 @@
             },
             "type": "array",
             "title": "Language Ids",
-            "description": "Identifiers of the language targets created under this project.",
+            "description": "Identifiers of the language targets under this project. Populated when a single project is fetched, and on create when `target_language` creates one. Always empty in list responses — list the project's language targets instead.",
             "default": []
           },
           "webhook_ids": {
@@ -66218,7 +66222,7 @@
             },
             "type": "array",
             "title": "Webhook Ids",
-            "description": "Workspace webhooks notified when this project becomes ready or fails, and when any of its languages completes or fails.",
+            "description": "IDs of the workspace webhooks notified as this project and its languages reach `ready`, `completed`, or `failed`.",
             "default": []
           },
           "revision": {
@@ -66235,7 +66239,7 @@
                 "type": "null"
               }
             ],
-            "description": "Why the project failed; null unless `status` is 'failed'. Also null for the few projects that failed before failure reporting was introduced."
+            "description": "Why the project failed; null unless `status` is `failed`. Also null for the few projects that failed before failure reporting was introduced."
           },
           "warnings": {
             "items": {
@@ -66281,12 +66285,12 @@
           "regenerated_seconds": {
             "type": "number",
             "title": "Regenerated Seconds",
-            "description": "Seconds of audio this re-dub covers -- the edited regions only, never the whole target. `charged_seconds` is the part of it that was billed."
+            "description": "Seconds of audio this re-dub covers — the edited regions only, never the whole target. `charged_seconds` is the part of it that was billed."
           },
           "charged_seconds": {
             "type": "number",
             "title": "Charged Seconds",
-            "description": "Seconds actually billed, after the free-regeneration allowance. Zero when the re-dub cost nothing -- the allowance covered all of it, or the project's included generation did."
+            "description": "Seconds actually billed, after the free-regeneration allowance. Zero when the re-dub cost nothing — either the allowance covered all of it, or the project's included generation did."
           },
           "free_regeneration_seconds_remaining": {
             "type": "number",
@@ -66443,7 +66447,7 @@
           "end_s"
         ],
         "title": "DubbingSegmentCreateRequest",
-        "description": "A new source segment; its id and word-level alignment are assigned by the server."
+        "description": "A new source segment; its ID and word-level alignment are assigned by the server."
       },
       "DubbingSegmentUpdateRequest": {
         "properties": {
@@ -66469,7 +66473,7 @@
               }
             ],
             "title": "Speaker Id",
-            "description": "New speaker id for the segment."
+            "description": "New speaker ID for the segment."
           },
           "start_s": {
             "anyOf": [
@@ -66524,7 +66528,7 @@
               }
             ],
             "title": "Duration S",
-            "description": "Duration of the source media in seconds."
+            "description": "Duration of the source media, in seconds."
           },
           "has_video": {
             "anyOf": [
@@ -66548,7 +66552,7 @@
               }
             ],
             "title": "Mime Type",
-            "description": "MIME type of the uploaded source media."
+            "description": "MIME type of the uploaded source media (null for URL sources)."
           }
         },
         "type": "object",
@@ -66627,7 +66631,7 @@
         },
         "type": "object",
         "title": "DubbingTargetSegmentUpdateRequest",
-        "description": "A partial edit to a target segment. An omitted field is left unchanged; a provided ``null``\nclears it (see each field for what clearing means)."
+        "description": "A partial edit to a target segment. An omitted field is left unchanged; a provided `null`\nclears it (see each field for what clearing means)."
       },
       "DubbingTargetSegmentUpdateResponse": {
         "properties": {
@@ -66817,14 +66821,14 @@
           "revision"
         ],
         "title": "DubbingTranscriptRevisionResponse",
-        "description": "The new revision after a source edit that returns no segment (e.g. a delete)."
+        "description": "The new revision after a source edit that returns no segment, such as a delete."
       },
       "DubbingTranscriptSegment": {
         "properties": {
           "id": {
             "type": "string",
             "title": "Id",
-            "description": "Stable identifier of the segment."
+            "description": "Stable identifier of the segment, used to address it in edit requests."
           },
           "text": {
             "type": "string",
@@ -66856,7 +66860,7 @@
               }
             ],
             "title": "External Id",
-            "description": "The caller-supplied external id for this segment, if one was provided."
+            "description": "The caller-supplied external ID for this segment, if one was provided."
           }
         },
         "type": "object",
@@ -67673,7 +67677,7 @@
         "type": "object",
         "title": "EndCallTriggerAction"
       },
-      "EndProcedureToolConfig-Input": {
+      "EndProcedureToolConfig": {
         "properties": {
           "system_tool_type": {
             "type": "string",
@@ -67683,26 +67687,14 @@
           },
           "procedures": {
             "additionalProperties": {
-              "$ref": "#/components/schemas/ProcedureAtVersion-Input"
-            },
-            "type": "object",
-            "title": "Procedures"
-          }
-        },
-        "type": "object",
-        "title": "EndProcedureToolConfig"
-      },
-      "EndProcedureToolConfig-Output": {
-        "properties": {
-          "system_tool_type": {
-            "type": "string",
-            "const": "end_procedure",
-            "title": "System Tool Type",
-            "default": "end_procedure"
-          },
-          "procedures": {
-            "additionalProperties": {
-              "$ref": "#/components/schemas/ProcedureAtVersion-Output"
+              "anyOf": [
+                {
+                  "$ref": "#/components/schemas/ProcedureVersionRef"
+                },
+                {
+                  "$ref": "#/components/schemas/ProcedureDraftRef"
+                }
+              ]
             },
             "type": "object",
             "title": "Procedures"
@@ -84790,196 +84782,6 @@
         "title": "PrivateKeyJWTResponse",
         "description": "Response model for Private Key JWT auth connections"
       },
-      "ProcedureAtVersion-Input": {
-        "properties": {
-          "procedure_id": {
-            "type": "string",
-            "title": "Procedure Id",
-            "description": "Procedure ID"
-          },
-          "name": {
-            "type": "string",
-            "maxLength": 200,
-            "title": "Name",
-            "description": "Procedure name"
-          },
-          "type": {
-            "$ref": "#/components/schemas/ProcedureType",
-            "default": "free_form"
-          },
-          "trigger": {
-            "type": "string",
-            "title": "Trigger",
-            "description": "When the agent should use this procedure. Empty string means this is a sub-procedure that should only start when another procedure references it.",
-            "default": ""
-          },
-          "referenced_tool_ids": {
-            "items": {
-              "type": "string"
-            },
-            "type": "array",
-            "title": "Referenced Tool Ids",
-            "description": "Tool IDs referenced in the procedure content"
-          },
-          "referenced_kb_ids": {
-            "items": {
-              "type": "string"
-            },
-            "type": "array",
-            "title": "Referenced Kb Ids",
-            "description": "Knowledge base IDs referenced in the procedure content"
-          },
-          "referenced_procedure_ids": {
-            "items": {
-              "type": "string"
-            },
-            "type": "array",
-            "title": "Referenced Procedure Ids",
-            "description": "Procedure IDs referenced in the procedure content"
-          },
-          "referenced_dynamic_variables": {
-            "items": {
-              "type": "string"
-            },
-            "type": "array",
-            "title": "Referenced Dynamic Variables",
-            "description": "Dynamic variable names used in the procedure content"
-          },
-          "content": {
-            "type": "string",
-            "maxLength": 50000,
-            "title": "Content",
-            "description": "Procedure content"
-          },
-          "guardrails": {
-            "items": {
-              "$ref": "#/components/schemas/CustomGuardrailConfig"
-            },
-            "type": "array",
-            "title": "Guardrails"
-          },
-          "agent_id": {
-            "type": "string",
-            "title": "Agent Id",
-            "description": "Agent ID of the procedure"
-          },
-          "version_id": {
-            "anyOf": [
-              {
-                "type": "string"
-              },
-              {
-                "type": "null"
-              }
-            ],
-            "title": "Version Id",
-            "description": "Version ID of a version of the procedure. None for a procedure never versioned."
-          }
-        },
-        "type": "object",
-        "required": [
-          "procedure_id",
-          "name",
-          "content",
-          "agent_id"
-        ],
-        "title": "ProcedureAtVersion"
-      },
-      "ProcedureAtVersion-Output": {
-        "properties": {
-          "procedure_id": {
-            "type": "string",
-            "title": "Procedure Id",
-            "description": "Procedure ID"
-          },
-          "name": {
-            "type": "string",
-            "maxLength": 200,
-            "title": "Name",
-            "description": "Procedure name"
-          },
-          "type": {
-            "$ref": "#/components/schemas/ProcedureType",
-            "default": "free_form"
-          },
-          "trigger": {
-            "type": "string",
-            "title": "Trigger",
-            "description": "When the agent should use this procedure. Empty string means this is a sub-procedure that should only start when another procedure references it.",
-            "default": ""
-          },
-          "referenced_tool_ids": {
-            "items": {
-              "type": "string"
-            },
-            "type": "array",
-            "title": "Referenced Tool Ids",
-            "description": "Tool IDs referenced in the procedure content"
-          },
-          "referenced_kb_ids": {
-            "items": {
-              "type": "string"
-            },
-            "type": "array",
-            "title": "Referenced Kb Ids",
-            "description": "Knowledge base IDs referenced in the procedure content"
-          },
-          "referenced_procedure_ids": {
-            "items": {
-              "type": "string"
-            },
-            "type": "array",
-            "title": "Referenced Procedure Ids",
-            "description": "Procedure IDs referenced in the procedure content"
-          },
-          "referenced_dynamic_variables": {
-            "items": {
-              "type": "string"
-            },
-            "type": "array",
-            "title": "Referenced Dynamic Variables",
-            "description": "Dynamic variable names used in the procedure content"
-          },
-          "content": {
-            "type": "string",
-            "maxLength": 50000,
-            "title": "Content",
-            "description": "Procedure content"
-          },
-          "guardrails": {
-            "items": {
-              "$ref": "#/components/schemas/CustomGuardrailConfig"
-            },
-            "type": "array",
-            "title": "Guardrails"
-          },
-          "agent_id": {
-            "type": "string",
-            "title": "Agent Id",
-            "description": "Agent ID of the procedure"
-          },
-          "version_id": {
-            "anyOf": [
-              {
-                "type": "string"
-              },
-              {
-                "type": "null"
-              }
-            ],
-            "title": "Version Id",
-            "description": "Version ID of a version of the procedure. None for a procedure never versioned."
-          }
-        },
-        "type": "object",
-        "required": [
-          "procedure_id",
-          "name",
-          "content",
-          "agent_id"
-        ],
-        "title": "ProcedureAtVersion"
-      },
       "ProcedureAtVersionResponseModel": {
         "properties": {
           "procedure_id": {
@@ -85038,6 +84840,24 @@
           "type": "free_form",
           "version_id": "agtprcv_7rbqxer9o12cyxi55ckw6sgz1dl4"
         }
+      },
+      "ProcedureDraftRef": {
+        "properties": {
+          "procedure_id": {
+            "type": "string",
+            "title": "Procedure Id",
+            "description": "Procedure ID"
+          },
+          "version_id": {
+            "type": "null",
+            "title": "Version Id"
+          }
+        },
+        "type": "object",
+        "required": [
+          "procedure_id"
+        ],
+        "title": "ProcedureDraftRef"
       },
       "ProcedureDraftResponseModel": {
         "properties": {
@@ -95088,7 +94908,7 @@
           "status": "ok"
         }
       },
-      "StartProcedureToolConfig-Input": {
+      "StartProcedureToolConfig": {
         "properties": {
           "system_tool_type": {
             "type": "string",
@@ -95098,26 +94918,14 @@
           },
           "procedures": {
             "additionalProperties": {
-              "$ref": "#/components/schemas/ProcedureAtVersion-Input"
-            },
-            "type": "object",
-            "title": "Procedures"
-          }
-        },
-        "type": "object",
-        "title": "StartProcedureToolConfig"
-      },
-      "StartProcedureToolConfig-Output": {
-        "properties": {
-          "system_tool_type": {
-            "type": "string",
-            "const": "start_procedure",
-            "title": "System Tool Type",
-            "default": "start_procedure"
-          },
-          "procedures": {
-            "additionalProperties": {
-              "$ref": "#/components/schemas/ProcedureAtVersion-Output"
+              "anyOf": [
+                {
+                  "$ref": "#/components/schemas/ProcedureVersionRef"
+                },
+                {
+                  "$ref": "#/components/schemas/ProcedureDraftRef"
+                }
+              ]
             },
             "type": "object",
             "title": "Procedures"
@@ -96479,10 +96287,10 @@
                 "$ref": "#/components/schemas/KnowledgeBaseToolConfig"
               },
               {
-                "$ref": "#/components/schemas/StartProcedureToolConfig-Input"
+                "$ref": "#/components/schemas/StartProcedureToolConfig"
               },
               {
-                "$ref": "#/components/schemas/EndProcedureToolConfig-Input"
+                "$ref": "#/components/schemas/EndProcedureToolConfig"
               },
               {
                 "$ref": "#/components/schemas/RunSubagentToolConfig-Input"
@@ -96493,14 +96301,14 @@
               "propertyName": "system_tool_type",
               "mapping": {
                 "end_call": "#/components/schemas/EndCallToolConfig",
-                "end_procedure": "#/components/schemas/EndProcedureToolConfig-Input",
+                "end_procedure": "#/components/schemas/EndProcedureToolConfig",
                 "knowledge_base": "#/components/schemas/KnowledgeBaseToolConfig",
                 "knowledge_base_rag": "#/components/schemas/KnowledgeBaseRagToolConfig",
                 "language_detection": "#/components/schemas/LanguageDetectionToolConfig",
                 "play_keypad_touch_tone": "#/components/schemas/PlayDTMFToolConfig",
                 "run_subagent": "#/components/schemas/RunSubagentToolConfig-Input",
                 "skip_turn": "#/components/schemas/SkipTurnToolConfig",
-                "start_procedure": "#/components/schemas/StartProcedureToolConfig-Input",
+                "start_procedure": "#/components/schemas/StartProcedureToolConfig",
                 "transfer_to_agent": "#/components/schemas/TransferToAgentToolConfig-Input",
                 "transfer_to_number": "#/components/schemas/TransferToNumberToolConfig-Input",
                 "voicemail_detection": "#/components/schemas/VoicemailDetectionToolConfig"
@@ -96647,10 +96455,10 @@
                 "$ref": "#/components/schemas/KnowledgeBaseToolConfig"
               },
               {
-                "$ref": "#/components/schemas/StartProcedureToolConfig-Output"
+                "$ref": "#/components/schemas/StartProcedureToolConfig"
               },
               {
-                "$ref": "#/components/schemas/EndProcedureToolConfig-Output"
+                "$ref": "#/components/schemas/EndProcedureToolConfig"
               },
               {
                 "$ref": "#/components/schemas/RunSubagentToolConfig-Output"
@@ -96661,14 +96469,14 @@
               "propertyName": "system_tool_type",
               "mapping": {
                 "end_call": "#/components/schemas/EndCallToolConfig",
-                "end_procedure": "#/components/schemas/EndProcedureToolConfig-Output",
+                "end_procedure": "#/components/schemas/EndProcedureToolConfig",
                 "knowledge_base": "#/components/schemas/KnowledgeBaseToolConfig",
                 "knowledge_base_rag": "#/components/schemas/KnowledgeBaseRagToolConfig",
                 "language_detection": "#/components/schemas/LanguageDetectionToolConfig",
                 "play_keypad_touch_tone": "#/components/schemas/PlayDTMFToolConfig",
                 "run_subagent": "#/components/schemas/RunSubagentToolConfig-Output",
                 "skip_turn": "#/components/schemas/SkipTurnToolConfig",
-                "start_procedure": "#/components/schemas/StartProcedureToolConfig-Output",
+                "start_procedure": "#/components/schemas/StartProcedureToolConfig",
                 "transfer_to_agent": "#/components/schemas/TransferToAgentToolConfig-Output",
                 "transfer_to_number": "#/components/schemas/TransferToNumberToolConfig-Output",
                 "voicemail_detection": "#/components/schemas/VoicemailDetectionToolConfig"
@@ -105563,7 +105371,7 @@
             "type": "string",
             "const": "voices_not_permitted",
             "title": "Type",
-            "description": "Identifies this warning; branch on it to read the fields below."
+            "description": "Identifies this warning; branch on it to read the other fields."
           },
           "speaker_ids": {
             "items": {
@@ -105571,12 +105379,12 @@
             },
             "type": "array",
             "title": "Speaker Ids",
-            "description": "Speakers whose voices were not permitted for cloning. The dub used a replacement voice for each of them; the rest of the speakers are unaffected."
+            "description": "Speakers whose voices were not permitted for cloning. The dub used a replacement voice for each of them; all other speakers are unaffected."
           },
           "message": {
             "type": "string",
             "title": "Message",
-            "description": "Human-readable description of the warning, for display. The wording may change at any time; branch on `type` instead."
+            "description": "Human-readable description of the warning, for display. The wording may change at any time, so we recommend branching on `type` instead."
           }
         },
         "type": "object",

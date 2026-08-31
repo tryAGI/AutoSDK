@@ -47,56 +47,82 @@ public static class ParameterSerializer
     {
         parameters = parameters ?? throw new ArgumentNullException(nameof(parameters));
 
-        return parameters
-            .Where(x => x.Location == ParameterLocation.Query)
-            .SelectMany(SerializeQueryParameter)
-            .ToList();
+        var serialized = new List<MethodParameter>(parameters.Count);
+        AppendSerializedQueryParameters(parameters, serialized);
+        return serialized;
+    }
+
+    private static void AppendSerializedQueryParameters(
+        IList<MethodParameter> parameters,
+        ICollection<MethodParameter> serialized)
+    {
+        for (var i = 0; i < parameters.Count; i++)
+        {
+            if (parameters[i].Location == ParameterLocation.Query)
+            {
+                AppendSerializedQueryParameter(parameters[i], serialized);
+            }
+        }
     }
 
     public static IReadOnlyCollection<MethodParameter> SerializeQueryParameter(MethodParameter parameter)
     {
+        var serialized = new List<MethodParameter>(1);
+        AppendSerializedQueryParameter(parameter, serialized);
+        return serialized;
+    }
+
+    private static void AppendSerializedQueryParameter(
+        MethodParameter parameter,
+        ICollection<MethodParameter> serialized)
+    {
         if (parameter.Location != ParameterLocation.Query)
         {
-            return [parameter];
+            serialized.Add(parameter);
+            return;
         }
 
         if (parameter.Type.CSharpTypeWithoutNullability == "string")
         {
-            return [parameter with
+            serialized.Add(parameter with
             {
                 Value = parameter.ArgumentName,
-            }];
+            });
+            return;
         }
 
         if (parameter.Type.IsAnyOfLike)
         {
-            return [parameter with
+            serialized.Add(parameter with
             {
                 Value = $"{parameter.ArgumentName}{(parameter.Type.CSharpTypeNullability ? "?" : "")}.ToString(){(parameter.IsRequired ? " ?? string.Empty" : "")}",
-            }];
+            });
+            return;
         }
 
         if (parameter.Type.IsEnum)
         {
-            return [parameter with
+            serialized.Add(parameter with
             {
                 Value = $"{parameter.ParameterName}{(parameter.Type.CSharpTypeNullability ? "?" : "")}.ToValueString()",
-            }];
+            });
+            return;
         }
 
         if (parameter.Type.IsArray)
         {
-            return [parameter with
+            var itemParameter = (parameter with
+            {
+                Name = "x",
+                ParameterName = string.Empty,
+                ArgumentName = string.Empty,
+                Type = (parameter.Type.SubTypes[0].Unbox<TypeData>() with { CSharpTypeNullability = false }).WithCSharpComputedValues(),
+                IsRequired = true,
+            }).WithCSharpParameterNames();
+            serialized.Add(parameter with
             {
                 Value = parameter.ArgumentName,
-                Selector = SerializeQueryParameter((parameter with
-                {
-                    Name = "x",
-                    ParameterName = string.Empty,
-                    ArgumentName = string.Empty,
-                    Type = (parameter.Type.SubTypes[0].Unbox<TypeData>() with { CSharpTypeNullability = false }).WithCSharpComputedValues(),
-                    IsRequired = true,
-                }).WithCSharpParameterNames()).FirstOrDefault().Value ?? "x",
+                Selector = GetFirstSerializedValue(itemParameter) ?? "x",
                 Delimiter = parameter.Style switch
                 {
                     ParameterStyle.Form => ",",
@@ -105,7 +131,8 @@ public static class ParameterSerializer
                     _ => throw new NotSupportedException($"Parameter style '{parameter.Style}' is not supported."),
                 },
                 Explode = parameter.Explode,
-            }];
+            });
+            return;
         }
 
         if (!parameter.Type.IsEnum && parameter.Type.Properties.Length != 0)
@@ -126,63 +153,82 @@ public static class ParameterSerializer
             switch (parameter.Style, parameter.Explode)
             {
                 case (ParameterStyle.Form, true):
-                    return pairs.Select(x => (parameter with
+                    foreach (var pair in pairs)
                     {
-                        Id = x.Name,
-                        Name = x.Name,
-                        ParameterName = string.Empty,
-                        ArgumentName = string.Empty,
-                        Value = x.Value,
-                        Explode = parameter.Explode,
-                    }).WithCSharpParameterNames()).ToArray();
+                        serialized.Add((parameter with
+                        {
+                            Id = pair.Name,
+                            Name = pair.Name,
+                            ParameterName = string.Empty,
+                            ArgumentName = string.Empty,
+                            Value = pair.Value,
+                            Explode = parameter.Explode,
+                        }).WithCSharpParameterNames());
+                    }
+                    return;
                 case (ParameterStyle.Form, false):
-                    return [parameter with
+                    serialized.Add(parameter with
                     {
                         Value = $"{parameter.Name.ToParameterName()}={string.Join(",", pairs.Select(x => $"{x.Name},{x.Value}"))}",
                         Explode = parameter.Explode,
-                    }];
+                    });
+                    return;
                 case (ParameterStyle.DeepObject, true):
-                    return pairs.Select(x => (parameter with
+                    foreach (var pair in pairs)
                     {
-                        Id = $"{parameter.Name.ToParameterName()}[{x.Name}]",
-                        Name = parameter.Name.ToParameterName(),
-                        ParameterName = string.Empty,
-                        ArgumentName = string.Empty,
-                        Value = x.Value,
-                        Explode = parameter.Explode,
-                    }).WithCSharpParameterNames()).ToArray();
+                        serialized.Add((parameter with
+                        {
+                            Id = $"{parameter.Name.ToParameterName()}[{pair.Name}]",
+                            Name = parameter.Name.ToParameterName(),
+                            ParameterName = string.Empty,
+                            ArgumentName = string.Empty,
+                            Value = pair.Value,
+                            Explode = parameter.Explode,
+                        }).WithCSharpParameterNames());
+                    }
+                    return;
                 default:
-                    return [];
+                    return;
             }
         }
 
         if (parameter.Type.IsDate)
         {
-            return [parameter with
+            serialized.Add(parameter with
             {
                 Value = $"{parameter.ArgumentName}{(parameter.Type.CSharpTypeNullability ? "?" : "")}.ToString(\"yyyy-MM-dd\")",
-            }];
+            });
+            return;
         }
 
         if (parameter.Type.IsDateTime)
         {
-            return [parameter with
+            serialized.Add(parameter with
             {
                 Value = $"{parameter.ArgumentName}{(parameter.Type.CSharpTypeNullability ? "?" : "")}.ToString(\"yyyy-MM-ddTHH:mm:ssZ\")",
-            }];
+            });
+            return;
         }
 
         if (parameter.Type.CSharpTypeWithoutNullability == "bool")
         {
-            return [parameter with
+            serialized.Add(parameter with
             {
                 Value = $"{parameter.ArgumentName}{(parameter.Type.CSharpTypeNullability ? "?" : "")}.ToString().ToLowerInvariant()",
-            }];
+            });
+            return;
         }
 
-        return [parameter with
+        serialized.Add(parameter with
         {
             Value = $"{parameter.ArgumentName}{(parameter.Type.CSharpTypeNullability ? "?" : "")}.ToString(){(parameter.IsRequired ? "!" : "")}",
-        }];
+        });
+    }
+
+    private static string? GetFirstSerializedValue(MethodParameter parameter)
+    {
+        var serialized = new List<MethodParameter>(1);
+        AppendSerializedQueryParameter(parameter, serialized);
+        return serialized.Count == 0 ? null : serialized[0].Value;
     }
 }

@@ -1,5 +1,7 @@
 using AutoSDK.Extensions;
 using Microsoft.OpenApi;
+using Microsoft.OpenApi.Reader;
+using System.Text.Json.Nodes;
 
 namespace AutoSDK.UnitTests;
 
@@ -89,5 +91,67 @@ public sealed class OpenApiSchemaExtensionsTests
         empty.IsAnyOf().Should().BeFalse();
         empty.IsOneOf().Should().BeFalse();
         empty.IsAllOf().Should().BeFalse();
+    }
+
+    [TestMethod]
+    public void ResolveBareReference_UsesResolvedTarget()
+    {
+        var reference = ParseSchemaReference("""
+            "value": { "$ref": "#/components/schemas/Target" }
+            """);
+
+        var resolved = reference.ResolveBareReference();
+
+        resolved.Should().NotBeSameAs(reference);
+        resolved.Description.Should().Be("target description");
+    }
+
+    [TestMethod]
+    public void ResolveBareReference_PreservesSiblingOverrides()
+    {
+        var reference = ParseSchemaReference("""
+            "value": {
+              "$ref": "#/components/schemas/Target",
+              "description": "sibling description"
+            }
+            """);
+
+        var resolved = reference.ResolveBareReference();
+
+        resolved.Should().BeSameAs(reference);
+        resolved.Description.Should().Be("sibling description");
+    }
+
+    private static IOpenApiSchema ParseSchemaReference(string propertyJson)
+    {
+        var json = $$"""
+            {
+              "openapi": "3.1.0",
+              "info": { "title": "Reference", "version": "1.0.0" },
+              "paths": {},
+              "components": {
+                "schemas": {
+                  "Target": {
+                    "type": "string",
+                    "description": "target description"
+                  },
+                  "Container": {
+                    "type": "object",
+                    "properties": { {{propertyJson}} }
+                  }
+                }
+              }
+            }
+            """;
+        var settings = new OpenApiReaderSettings
+        {
+            RuleSet = ValidationRuleSet.GetEmptyRuleSet(),
+        };
+        var result = new OpenApiJsonReader().Read(
+            JsonNode.Parse(json)!,
+            new Uri("https://openapi.net/"),
+            settings);
+
+        return result.Document!.Components!.Schemas!["Container"].Properties!["value"];
     }
 }
