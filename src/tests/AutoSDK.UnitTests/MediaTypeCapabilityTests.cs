@@ -2,6 +2,7 @@ using AutoSDK.Extensions;
 using AutoSDK.Generation;
 using AutoSDK.Helpers;
 using AutoSDK.Models;
+using Microsoft.OpenApi;
 
 namespace AutoSDK.UnitTests;
 
@@ -18,6 +19,37 @@ public class MediaTypeCapabilityTests
         GenerateSdk = true,
         GenerateJsonSerializerContextTypes = true,
     };
+
+    [TestMethod]
+    public void BinarySchemaCache_HandlesCyclesWithoutBinaryValues()
+    {
+        var first = new OpenApiSchema { Type = JsonSchemaType.Object };
+        var second = new OpenApiSchema { Type = JsonSchemaType.Object };
+        first.Properties = new Dictionary<string, IOpenApiSchema> { ["second"] = second };
+        second.Properties = new Dictionary<string, IOpenApiSchema> { ["first"] = first };
+        var cache = new RequestRepresentationPlanner.BinarySchemaCache();
+
+        cache.ContainsBinary(first).Should().BeFalse();
+        cache.ContainsBinary(second).Should().BeFalse();
+    }
+
+    [TestMethod]
+    public void BinarySchemaCache_PropagatesBinaryValuesAcrossCycles()
+    {
+        var first = new OpenApiSchema { Type = JsonSchemaType.Object };
+        var second = new OpenApiSchema { Type = JsonSchemaType.Object };
+        var binary = new OpenApiSchema { Type = JsonSchemaType.String, Format = "binary" };
+        first.Properties = new Dictionary<string, IOpenApiSchema>
+        {
+            ["second"] = second,
+            ["content"] = binary,
+        };
+        second.Properties = new Dictionary<string, IOpenApiSchema> { ["first"] = first };
+        var cache = new RequestRepresentationPlanner.BinarySchemaCache();
+
+        cache.ContainsBinary(first).Should().BeTrue();
+        cache.ContainsBinary(second).Should().BeTrue();
+    }
 
     [TestMethod]
     public void CapabilityMatrix_CoversTypedRawStreamingAndUnsupportedStates()

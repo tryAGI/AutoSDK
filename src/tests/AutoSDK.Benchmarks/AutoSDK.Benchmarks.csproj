@@ -11,6 +11,7 @@
 
   <ItemGroup Label="Resources">
     <EmbeddedResource Include="$(MSBuildThisFileDirectory)../../../specs/*.*" Visible="false" />
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)Specs/*.*" Visible="false" />
   </ItemGroup>
 
   <ItemGroup>

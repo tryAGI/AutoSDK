@@ -17,5 +17,6 @@ public record struct Times(
     long AllocComputeData = 0,
     long AllocComputeDataClasses = 0,
     long AllocFilterTags = 0,
-    OpenApiParsingTimes OpenApiParsing = default
+    OpenApiParsingTimes OpenApiParsing = default,
+    DataEnrichmentTimes DataEnrichment = default
 );

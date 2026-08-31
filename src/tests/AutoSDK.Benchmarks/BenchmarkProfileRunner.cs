@@ -13,6 +13,109 @@ namespace AutoSDK.Benchmarks;
 
 internal static class BenchmarkProfileRunner
 {
+    public static void RunDataEnrichment(string? selectedSpec = null)
+    {
+        var fixture = new BenchmarkFixture();
+        fixture.Setup();
+
+        Console.WriteLine("ComputeClasses subphases (average of 3 measured runs):");
+        Console.WriteLine("Spec             Schemas Operations Endpoints     Auth Converters  Clients JsonTypes");
+        Console.WriteLine(new string('-', 91));
+        var profiles = new Dictionary<string, DataEnrichmentTimes[]>(StringComparer.Ordinal);
+        var specNames = selectedSpec == null
+            ? fixture.LargeSpecs.ToArray()
+            : fixture.LargeSpecs.Where(name => string.Equals(name, selectedSpec, StringComparison.Ordinal)).ToArray();
+        if (specNames.Length == 0)
+        {
+            throw new ArgumentException($"Unknown benchmark spec '{selectedSpec}'.", nameof(selectedSpec));
+        }
+
+        var shapes = new Dictionary<string, (int Methods, int Parameters, int MaxParameters, int UnionSchemas, int Unions)>(StringComparer.Ordinal);
+        foreach (var specName in specNames)
+        {
+            _ = CSharpPipeline.Enrich(fixture.PrepareCore(specName));
+            var times = new DataEnrichmentTimes[3];
+            Models.Data data = default;
+            for (var iteration = 0; iteration < times.Length; iteration++)
+            {
+                data = CSharpPipeline.Enrich(fixture.PrepareCore(specName));
+                times[iteration] = data.Times.DataEnrichment;
+            }
+            profiles.Add(specName, times);
+            shapes.Add(specName, (
+                data.Methods.Length,
+                data.Methods.Sum(static method => method.Parameters.Length),
+                data.Methods.IsEmpty ? 0 : data.Methods.Max(static method => method.Parameters.Length),
+                data.FilteredSchemas.Count(static schema =>
+                    !schema.IsReference && schema.IsAnyOfLikeStructure && schema.AnyOfData.HasValue),
+                data.AnyOfs.Length));
+
+            Console.WriteLine(
+                "{0,-16} {1,7:F1}ms {2,8:F1}ms {3,8:F1}ms {4,7:F1}ms {5,8:F1}ms {6,7:F1}ms {7,8:F1}ms",
+                specName,
+                times.Average(static x => x.CollectSchemas.TotalMilliseconds),
+                times.Average(static x => x.Operations.TotalMilliseconds),
+                times.Average(static x => x.EndPoints.TotalMilliseconds),
+                times.Average(static x => x.Authorizations.TotalMilliseconds),
+                times.Average(static x => x.Converters.TotalMilliseconds),
+                times.Average(static x => x.TagsAndClients.TotalMilliseconds),
+                times.Average(static x => x.JsonTypesAndOutputs.TotalMilliseconds));
+        }
+
+        Console.WriteLine();
+        Console.WriteLine("ComputeClasses subphase allocations (average of 3 measured runs):");
+        Console.WriteLine("Spec           SchemasMB OperationsMB EndpointsMB  AuthMB ConvMB ClientsMB JsonTypesMB");
+        Console.WriteLine(new string('-', 91));
+        foreach (var specName in specNames)
+        {
+            var times = profiles[specName];
+
+            Console.WriteLine(
+                "{0,-16} {1,8:F1} {2,12:F1} {3,11:F1} {4,7:F1} {5,6:F1} {6,9:F1} {7,11:F1}",
+                specName,
+                times.Average(static x => BytesToMb(x.AllocCollectSchemas)),
+                times.Average(static x => BytesToMb(x.AllocOperations)),
+                times.Average(static x => BytesToMb(x.AllocEndPoints)),
+                times.Average(static x => BytesToMb(x.AllocAuthorizations)),
+                times.Average(static x => BytesToMb(x.AllocConverters)),
+                times.Average(static x => BytesToMb(x.AllocTagsAndClients)),
+                times.Average(static x => BytesToMb(x.AllocJsonTypesAndOutputs)));
+        }
+
+        Console.WriteLine();
+        Console.WriteLine("Endpoint shapes:");
+        Console.WriteLine("Spec              Methods Parameters MaxParams UnionSchemas Unions");
+        Console.WriteLine(new string('-', 72));
+        foreach (var specName in specNames)
+        {
+            var shape = shapes[specName];
+            Console.WriteLine(
+                "{0,-16} {1,7} {2,10} {3,9} {4,12} {5,6}",
+                specName,
+                shape.Methods,
+                shape.Parameters,
+                shape.MaxParameters,
+                shape.UnionSchemas,
+                shape.Unions);
+        }
+
+        Console.WriteLine();
+        Console.WriteLine("Schema collection split:");
+        Console.WriteLine("Spec             Polymorphic  SchemaModels  PolyMB  ModelsMB");
+        Console.WriteLine(new string('-', 66));
+        foreach (var specName in specNames)
+        {
+            var times = profiles[specName];
+            Console.WriteLine(
+                "{0,-16} {1,9:F1}ms {2,11:F1}ms {3,7:F1} {4,9:F1}",
+                specName,
+                times.Average(static x => x.PolymorphicArrays.TotalMilliseconds),
+                times.Average(static x => x.SchemaModels.TotalMilliseconds),
+                times.Average(static x => BytesToMb(x.AllocPolymorphicArrays)),
+                times.Average(static x => BytesToMb(x.AllocSchemaModels)));
+        }
+    }
+
     public static void RunModelNaming()
     {
         var fixture = new BenchmarkFixture();
@@ -188,6 +291,37 @@ internal static class BenchmarkProfileRunner
                 typeCalls,
                 propertyCalls);
 
+            var classModels = Measure(() =>
+            {
+                var count = 0;
+                foreach (var schema in core.FilteredSchemas)
+                {
+                    if (!schema.IsReference && !schema.IsAnyOfLikeStructure && schema.ClassData.HasValue)
+                    {
+                        count++;
+                    }
+                }
+                return count;
+            });
+            var enumModels = Measure(() =>
+            {
+                var count = 0;
+                foreach (var schema in core.FilteredSchemas)
+                {
+                    if (!schema.IsReference && !schema.IsAnyOfLikeStructure && schema.EnumData.HasValue)
+                    {
+                        count++;
+                    }
+                }
+                return count;
+            });
+            Console.WriteLine(
+                "  model creation: classes={0:F1} MB ({1}) enums={2:F1} MB ({3})",
+                BytesToMb(classModels.AllocBytes),
+                classModels.Result,
+                BytesToMb(enumModels.AllocBytes),
+                enumModels.Result);
+
             long propertyNameBytes = 0;
             long defaultValueBytes = 0;
             long exampleBytes = 0;
@@ -267,6 +401,25 @@ internal static class BenchmarkProfileRunner
             WriteMethodRenderMeasurement(specName, "request", data.Methods, static endpoint => Sources.GenerateRequestData(endpoint));
             WriteMethodRenderMeasurement(specName, "response", data.Methods, static endpoint => Sources.GenerateResponse(endpoint));
             WriteMethodRenderMeasurement(specName, "extension", data.Methods, static endpoint => Sources.GenerateExtensionMethod(endpoint));
+        }
+    }
+
+    public static void RunUnionRendering()
+    {
+        var fixture = new BenchmarkFixture();
+        fixture.Setup();
+
+        Console.WriteLine("Union rendering comparison (median of 3 measured runs):");
+        Console.WriteLine("Spec                 Mode       Time     Alloc MB        Chars  Unions");
+        Console.WriteLine(new string('-', 78));
+
+        foreach (var specName in fixture.LargeSpecs)
+        {
+            var data = fixture.PrepareAndEnrich(specName);
+            WriteUnionRenderMeasurement(specName, "sequential", data.AnyOfs, maxDegreeOfParallelism: 1);
+            WriteUnionRenderMeasurement(specName, "parallel-2", data.AnyOfs, maxDegreeOfParallelism: 2);
+            WriteUnionRenderMeasurement(specName, "parallel-4", data.AnyOfs, maxDegreeOfParallelism: 4);
+            WriteUnionRenderMeasurement(specName, "parallel-8", data.AnyOfs, maxDegreeOfParallelism: 8);
         }
     }
 
@@ -674,6 +827,80 @@ internal static class BenchmarkProfileRunner
             median.Elapsed.TotalMilliseconds,
             BytesToMb(median.AllocBytes),
             median.Result);
+    }
+
+    private static void WriteUnionRenderMeasurement(
+        string specName,
+        string mode,
+        EquatableArray<AnyOfData> anyOfs,
+        int maxDegreeOfParallelism)
+    {
+        const int repetitions = 3;
+        _ = RenderAnyOfs(anyOfs, maxDegreeOfParallelism);
+        var measurements = new Measured<long>[3];
+        for (var iteration = 0; iteration < measurements.Length; iteration++)
+        {
+            measurements[iteration] = Measure(() =>
+            {
+                long characters = 0;
+                for (var repetition = 0; repetition < repetitions; repetition++)
+                {
+                    characters += RenderAnyOfs(anyOfs, maxDegreeOfParallelism);
+                }
+
+                return characters;
+            });
+        }
+
+        Array.Sort(measurements, static (left, right) => left.Elapsed.CompareTo(right.Elapsed));
+        var median = measurements[1];
+        Console.WriteLine(
+            "{0,-20} {1,-10} {2,8:F1}ms {3,11:F1} {4,12} {5,7}",
+            specName,
+            mode,
+            median.Elapsed.TotalMilliseconds / repetitions,
+            BytesToMb(median.AllocBytes) / repetitions,
+            median.Result / repetitions,
+            anyOfs.Length);
+    }
+
+    private static long RenderAnyOfs(
+        EquatableArray<AnyOfData> anyOfs,
+        int maxDegreeOfParallelism)
+    {
+        var files = new FileWithName[anyOfs.Length * 4];
+        if (maxDegreeOfParallelism == 1)
+        {
+            for (var index = 0; index < anyOfs.Length; index++)
+            {
+                RenderAnyOf(index);
+            }
+        }
+        else
+        {
+            Parallel.For(
+                0,
+                anyOfs.Length,
+                new ParallelOptions { MaxDegreeOfParallelism = maxDegreeOfParallelism },
+                RenderAnyOf);
+        }
+
+        long characters = 0;
+        for (var index = 0; index < files.Length; index++)
+        {
+            characters += files[index].Text.Length;
+        }
+
+        return characters;
+
+        void RenderAnyOf(int index)
+        {
+            var anyOf = anyOfs[index];
+            files[index * 4] = Sources.AnyOf(anyOf);
+            files[(index * 4) + 1] = Sources.AnyOfJsonExtensions(anyOf);
+            files[(index * 4) + 2] = Sources.AnyOfJsonConverter(anyOf);
+            files[(index * 4) + 3] = Sources.AnyOfValidation(anyOf);
+        }
     }
 
     private static long RenderAll(

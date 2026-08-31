@@ -13,6 +13,10 @@ internal sealed class BenchmarkFixture
     {
         ["GitHub"] = string.Empty,
         ["ElevenLabs"] = string.Empty,
+        ["ElevenLabsCurrent"] = string.Empty,
+        ["VapiCurrent"] = string.Empty,
+        ["AnthropicCurrent"] = string.Empty,
+        ["OpenAICurrent"] = string.Empty,
     };
 
     public Settings Settings { get; private set; }
@@ -23,6 +27,10 @@ internal sealed class BenchmarkFixture
     {
         _specs["GitHub"] = new H.Resource("github.yaml").AsString();
         _specs["ElevenLabs"] = new H.Resource("elevenlabs.json").AsString();
+        _specs["ElevenLabsCurrent"] = new H.Resource("elevenlabs-current.json").AsString();
+        _specs["VapiCurrent"] = new H.Resource("vapi-current.yaml").AsString();
+        _specs["AnthropicCurrent"] = new H.Resource("anthropic-current.yaml").AsString();
+        _specs["OpenAICurrent"] = new H.Resource("openai-current.yaml").AsString();
 
         Settings = Settings.Default with
         {

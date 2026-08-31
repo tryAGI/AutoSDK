@@ -99,9 +99,16 @@ public static class Data
 #endif
 
         var computeDataClassesTime = Stopwatch.StartNew();
+        var collectSchemasTime = Stopwatch.StartNew();
+        var polymorphicArraysTime = Stopwatch.StartNew();
         var (suppressedLegacyPolymorphicSchemas, generatedPolymorphicTypes) =
             CollectPolymorphicArrayGenerationState(filteredSchemas, settings);
+        polymorphicArraysTime.Stop();
+#if NET
+        var allocAfterPolymorphicArrays = GC.GetTotalAllocatedBytes(precise: true);
+#endif
 
+        var schemaModelsTime = Stopwatch.StartNew();
         var classesBuilder = ImmutableArray.CreateBuilder<ModelData>();
         var enumsBuilder = ImmutableArray.CreateBuilder<ModelData>();
         var anyOfSet = new HashSet<AnyOfData>();
@@ -141,7 +148,13 @@ public static class Data
         var classes = classesBuilder.ToImmutable();
         var enums = enumsBuilder.ToImmutable();
         var anyOfDatas = anyOfBuilder.ToImmutable();
+        schemaModelsTime.Stop();
+        collectSchemasTime.Stop();
+#if NET
+        var allocAfterCollectSchemas = GC.GetTotalAllocatedBytes(precise: true);
+#endif
 
+        var operationsTime = Stopwatch.StartNew();
         var operations = openApiDocument.GetOperations(settings, globalSettings, filteredSchemas, provisionalTags);
         ModelNameGenerator.ResolveCollisions(operations);
 
@@ -170,11 +183,22 @@ public static class Data
                 })
                 .ToArray()
             : [];
+        operationsTime.Stop();
+#if NET
+        var allocAfterOperations = GC.GetTotalAllocatedBytes(precise: true);
+#endif
 
+        var endPointsTime = Stopwatch.StartNew();
+        var binarySchemaCache = new RequestRepresentationPlanner.BinarySchemaCache();
         var methods = filteredOperations
-            .SelectMany(operation => CreateEndPoints(operation, anyOfDatas))
+            .SelectMany(operation => CreateEndPoints(operation, anyOfDatas, binarySchemaCache))
             .ToImmutableArray();
+        endPointsTime.Stop();
+#if NET
+        var allocAfterEndPoints = GC.GetTotalAllocatedBytes(precise: true);
+#endif
 
+        var authorizationsTime = Stopwatch.StartNew();
         var authorizationsByIdentity = AuthorizationHelpers.CreateResolvedAuthorizationMap(
             (openApiDocument.Security ?? [])
             .SelectMany(requirement => requirement.OrderBy(
@@ -188,7 +212,12 @@ public static class Data
             normalizedMethodsBuilder.Add(AuthorizationHelpers.NormalizeEndPoint(method, authorizationsByIdentity));
         }
         methods = normalizedMethodsBuilder.MoveToImmutable();
+        authorizationsTime.Stop();
+#if NET
+        var allocAfterAuthorizations = GC.GetTotalAllocatedBytes(precise: true);
+#endif
 
+        var convertersTime = Stopwatch.StartNew();
         if (settings.GenerateCli)
         {
             foreach (var group in methods
@@ -261,7 +290,12 @@ public static class Data
 
         convertersBuilder.Add($"global::{globalSettings.Namespace}.JsonConverters.UnixTimestampJsonConverter");
         var converters = convertersBuilder.ToImmutable();
+        convertersTime.Stop();
+#if NET
+        var allocAfterConverters = GC.GetTotalAllocatedBytes(precise: true);
+#endif
 
+        var tagsAndClientsTime = Stopwatch.StartNew();
         var activeTagNames = new HashSet<string>(
             methods.Select(m => m.Tag.Name),
             StringComparer.Ordinal);
@@ -355,7 +389,12 @@ public static class Data
                             methods))))
                 .ToArray();
         }
+        tagsAndClientsTime.Stop();
+#if NET
+        var allocAfterTagsAndClients = GC.GetTotalAllocatedBytes(precise: true);
+#endif
 
+        var jsonTypesAndOutputsTime = Stopwatch.StartNew();
         var types = CollectJsonSerializerContextTypes(
             filteredSchemas,
             generatedPolymorphicTypes,
@@ -382,11 +421,39 @@ public static class Data
         var outputAnyOfDatas = skipModels
             ? ImmutableArray<AnyOfData>.Empty
             : anyOfDatas;
+        jsonTypesAndOutputsTime.Stop();
+#if NET
+        var allocAfterJsonTypesAndOutputs = GC.GetTotalAllocatedBytes(precise: true);
+#endif
 
         computeDataClassesTime.Stop();
 #if NET
         var allocAfterClasses = GC.GetTotalAllocatedBytes(precise: true);
 #endif
+
+        var dataEnrichmentTimes = new DataEnrichmentTimes(
+            CollectSchemas: collectSchemasTime.Elapsed,
+            Operations: operationsTime.Elapsed,
+            EndPoints: endPointsTime.Elapsed,
+            Authorizations: authorizationsTime.Elapsed,
+            Converters: convertersTime.Elapsed,
+            TagsAndClients: tagsAndClientsTime.Elapsed,
+            JsonTypesAndOutputs: jsonTypesAndOutputsTime.Elapsed,
+            PolymorphicArrays: polymorphicArraysTime.Elapsed,
+            SchemaModels: schemaModelsTime.Elapsed
+#if NET
+            ,
+            AllocCollectSchemas: allocAfterCollectSchemas - allocAfterData,
+            AllocOperations: allocAfterOperations - allocAfterCollectSchemas,
+            AllocEndPoints: allocAfterEndPoints - allocAfterOperations,
+            AllocAuthorizations: allocAfterAuthorizations - allocAfterEndPoints,
+            AllocConverters: allocAfterConverters - allocAfterAuthorizations,
+            AllocTagsAndClients: allocAfterTagsAndClients - allocAfterConverters,
+            AllocJsonTypesAndOutputs: allocAfterJsonTypesAndOutputs - allocAfterTagsAndClients,
+            AllocPolymorphicArrays: allocAfterPolymorphicArrays - allocAfterData,
+            AllocSchemaModels: allocAfterCollectSchemas - allocAfterPolymorphicArrays
+#endif
+        );
 
         return new Models.Data(
             Classes: outputClasses,
@@ -422,7 +489,8 @@ public static class Data
                 Filtering: coreTimes.Filtering,
                 ComputeData: computeDataTime.Elapsed,
                 ComputeDataClasses: computeDataClassesTime.Elapsed,
-                Total: totalTime.Elapsed
+                Total: totalTime.Elapsed,
+                DataEnrichment: dataEnrichmentTimes
 #if NET
                 ,
                 AllocParsing: coreTimes.AllocParsing,
@@ -951,7 +1019,8 @@ public static class Data
 
     private static List<EndPoint> CreateEndPoints(
         OperationContext operation,
-        IReadOnlyCollection<AnyOfData> anyOfDatas)
+        IReadOnlyCollection<AnyOfData> anyOfDatas,
+        RequestRepresentationPlanner.BinarySchemaCache binarySchemaCache)
     {
         var fernStreaming = FernStreamingMetadata.TryCreate(operation);
         var responseContentTypes = (operation.Operation.Responses ?? new Dictionary<string, IOpenApiResponse>())
@@ -985,8 +1054,9 @@ public static class Data
 
         if (fernStreaming?.HasRequestStreamCondition == true)
         {
-            endPoints.Add(CSharpEndPointFactory.CreateEndPoint(
+            endPoints.Add(CSharpEndPointFactory.CreateEndPointWithCache(
                 operation,
+                binarySchemaCache,
                 preferredMimeType: "application/json",
                 forcedRequestStreamValue: false,
                 successResponseOverride: fernStreaming.RegularResponseOverride,
@@ -995,8 +1065,9 @@ public static class Data
                 AcceptMediaType = "application/json",
             });
             var fernStreamMediaType = GetPreferredStreamMimeType(supportedResponseContentTypes, fernStreaming.StreamFormat);
-            endPoints.Add(CSharpEndPointFactory.CreateEndPoint(
+            endPoints.Add(CSharpEndPointFactory.CreateEndPointWithCache(
                 operation,
+                binarySchemaCache,
                 preferredMimeType: fernStreamMediaType,
                 methodNameSuffix: GetStreamMethodSuffix(
                     hasRegularJsonVariant: true,
@@ -1017,8 +1088,9 @@ public static class Data
             !hasSse &&
             !hasSequentialJson)
         {
-            endPoints.Add(CSharpEndPointFactory.CreateEndPoint(
+            endPoints.Add(CSharpEndPointFactory.CreateEndPointWithCache(
                 operation,
+                binarySchemaCache,
                 preferredMimeType: GetPreferredStreamMimeType(supportedResponseContentTypes, fernStreaming.StreamFormat),
                 successResponseOverride: fernStreaming.StreamResponseOverride ?? fernStreaming.RegularResponseOverride,
                 streamFormatOverride: fernStreaming.StreamFormat,
@@ -1029,8 +1101,9 @@ public static class Data
 
         if (supportedResponseContentTypes.Length == 0)
         {
-            endPoints.Add(CSharpEndPointFactory.CreateEndPoint(
+            endPoints.Add(CSharpEndPointFactory.CreateEndPointWithCache(
                 operation,
+                binarySchemaCache,
                 successResponseOverride: fernStreaming?.RegularResponseOverride,
                 anyOfDatas: anyOfDatas));
             return endPoints;
@@ -1047,8 +1120,9 @@ public static class Data
                 MediaTypeCapabilities.GetResponseSupport(contentType) != MediaTypeTransportSupport.Streaming)
             .ToArray();
         var prototypes = orderedContentTypes
-            .Select(contentType => CSharpEndPointFactory.CreateEndPoint(
+            .Select(contentType => CSharpEndPointFactory.CreateEndPointWithCache(
                 operation,
+                binarySchemaCache,
                 preferredMimeType: contentType,
                 forcedRequestStreamValue: hasRegularResponse && hasStreamingResponse
                     ? MediaTypeCapabilities.GetResponseSupport(contentType) == MediaTypeTransportSupport.Streaming
@@ -1087,8 +1161,9 @@ public static class Data
                     hasBufferedBinaryStreamCompanion);
             var candidate = index == 0
                 ? prototype
-                : CSharpEndPointFactory.CreateEndPoint(
+                : CSharpEndPointFactory.CreateEndPointWithCache(
                     operation,
+                    binarySchemaCache,
                     preferredMimeType: prototype.SuccessResponse.MimeType,
                     methodNameSuffix: suffix,
                     forcedRequestStreamValue: hasRegularResponse && hasStreamingResponse

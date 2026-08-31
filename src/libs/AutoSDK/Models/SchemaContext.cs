@@ -115,6 +115,7 @@ public class SchemaContext(
     public bool IsOperation => OperationPath != null;
     
     public TypeData TypeData { get; set; } = TypeData.Default;
+    public Dictionary<string, PropertyData>? CachedCSharpEnumData { get; set; }
     private bool _dataComputed;
     private bool _tagsComputed;
     private int _lastInputsHash;

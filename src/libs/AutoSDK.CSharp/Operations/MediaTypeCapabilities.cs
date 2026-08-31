@@ -221,6 +221,26 @@ public static class MediaTypeCapabilities
         };
     }
 
+    internal static bool CanEncodeRequest(
+        string? mediaType,
+        IOpenApiSchema? schema,
+        RequestRepresentationPlanner.BinarySchemaCache binarySchemaCache)
+    {
+        if (schema == null && GetRequestSupport(mediaType) == MediaTypeTransportSupport.Raw)
+        {
+            return true;
+        }
+
+        return GetRequestSupport(mediaType) switch
+        {
+            MediaTypeTransportSupport.Typed => true,
+            MediaTypeTransportSupport.Raw when Classify(mediaType) is MediaTypeKind.MessagePack or MediaTypeKind.Protobuf =>
+                binarySchemaCache.ContainsBinary(schema),
+            MediaTypeTransportSupport.Raw => IsRawTextSchema(schema) || binarySchemaCache.ContainsBinary(schema),
+            _ => false,
+        };
+    }
+
     public static string GetRequestLimitation(string mediaType, IOpenApiSchema? schema)
     {
         var support = GetRequestSupport(mediaType);

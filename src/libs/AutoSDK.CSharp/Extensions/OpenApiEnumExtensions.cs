@@ -143,6 +143,10 @@ public static class OpenApiEnumExtensions
         this SchemaContext context)
     {
         context = context ?? throw new ArgumentNullException(nameof(context));
+        if (context.CachedCSharpEnumData is { } cached)
+        {
+            return cached;
+        }
 
         var @enum = (context.Schema.Enum ?? []).ComputeEnum(
             enumName: context.Id,
@@ -228,7 +232,9 @@ public static class OpenApiEnumExtensions
             ApplySpeakeasyEnumDescriptions(speakeasyEnumDescriptionsNode, @enum);
         }
 
-        return EnsureUniqueEnumMemberNamesCaseInsensitive(@enum);
+        var result = EnsureUniqueEnumMemberNamesCaseInsensitive(@enum);
+        context.CachedCSharpEnumData = result;
+        return result;
     }
 
     public static Dictionary<string, PropertyData> ComputeEnum(

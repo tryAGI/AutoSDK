@@ -32,7 +32,114 @@ internal readonly struct RequestRepresentationPlan
 
 internal static class RequestRepresentationPlanner
 {
+    internal sealed class BinarySchemaCache
+    {
+        private readonly Dictionary<IOpenApiSchema, bool> _results = new();
+        private readonly HashSet<IOpenApiSchema> _visited = new();
+
+        public bool ContainsBinary(IOpenApiSchema? schema)
+        {
+            if (schema == null)
+            {
+                return false;
+            }
+
+            if (_results.TryGetValue(schema, out var cached))
+            {
+                return cached;
+            }
+
+            _visited.Clear();
+            var result = ContainsBinaryCore(schema);
+            if (!result)
+            {
+                foreach (var visitedSchema in _visited)
+                {
+                    _results[visitedSchema] = false;
+                }
+            }
+
+            _results[schema] = result;
+            return result;
+        }
+
+        private bool ContainsBinaryCore(IOpenApiSchema? schema)
+        {
+            if (schema == null)
+            {
+                return false;
+            }
+
+            if (_results.TryGetValue(schema, out var cached))
+            {
+                return cached;
+            }
+
+            if (!_visited.Add(schema))
+            {
+                return false;
+            }
+
+            var resolved = schema.ResolveIfRequired();
+            if (!ReferenceEquals(resolved, schema))
+            {
+                if (_results.TryGetValue(resolved, out cached))
+                {
+                    if (cached)
+                    {
+                        _results[schema] = true;
+                    }
+                    return cached;
+                }
+
+                if (!_visited.Add(resolved))
+                {
+                    return false;
+                }
+            }
+
+            if (resolved.IsBinary() ||
+                ContainsBinaryCore(resolved.Items) ||
+                ContainsBinaryCore(resolved.Properties?.Values) ||
+                ContainsBinaryCore(resolved.AnyOf) ||
+                ContainsBinaryCore(resolved.OneOf) ||
+                ContainsBinaryCore(resolved.AllOf))
+            {
+                _results[resolved] = true;
+                _results[schema] = true;
+                return true;
+            }
+
+            return false;
+        }
+
+        private bool ContainsBinaryCore(IEnumerable<IOpenApiSchema>? schemas)
+        {
+            if (schemas == null)
+            {
+                return false;
+            }
+
+            foreach (var schema in schemas)
+            {
+                if (ContainsBinaryCore(schema))
+                {
+                    return true;
+                }
+            }
+
+            return false;
+        }
+    }
+
     public static RequestRepresentationPlan Select(OperationContext operation)
+    {
+        return Select(operation, new BinarySchemaCache());
+    }
+
+    internal static RequestRepresentationPlan Select(
+        OperationContext operation,
+        BinarySchemaCache binarySchemaCache)
     {
         operation = operation ?? throw new ArgumentNullException(nameof(operation));
 
@@ -45,7 +152,7 @@ internal static class RequestRepresentationPlanner
         var candidates = content
             .Select(x => CreateCandidate(operation, x.Key, x.Value))
             .ToArray();
-        return Select(candidates);
+        return Select(candidates, binarySchemaCache);
     }
 
     public static RequestRepresentationPlan Select(OpenApiOperation operation)
@@ -65,10 +172,12 @@ internal static class RequestRepresentationPlanner
                 schemaContext: null,
                 itemSchemaContext: null))
             .ToArray();
-        return Select(candidates);
+        return Select(candidates, new BinarySchemaCache());
     }
 
-    private static RequestRepresentationPlan Select(RequestRepresentationPlan[] candidates)
+    private static RequestRepresentationPlan Select(
+        RequestRepresentationPlan[] candidates,
+        BinarySchemaCache binarySchemaCache)
     {
         var selected = candidates[0];
 
@@ -77,11 +186,11 @@ internal static class RequestRepresentationPlanner
         // the same UploadFile schema for JSON, form, and multipart representations; JSON
         // is first even though only multipart represents the declared wire shape.
         if (!selected.MediaType.IsMimeType("multipart/form-data") &&
-            ContainsBinary(selected.MediaTypeData?.Schema))
+            binarySchemaCache.ContainsBinary(selected.MediaTypeData?.Schema))
         {
-            var multipart = candidates.FirstOrDefault(static candidate =>
+            var multipart = candidates.FirstOrDefault(candidate =>
                 candidate.MediaType.IsMimeType("multipart/form-data") &&
-                ContainsBinary(candidate.MediaTypeData?.Schema));
+                binarySchemaCache.ContainsBinary(candidate.MediaTypeData?.Schema));
             if (!string.IsNullOrWhiteSpace(multipart.MediaType))
             {
                 selected = multipart;
@@ -90,12 +199,14 @@ internal static class RequestRepresentationPlanner
 
         if (!MediaTypeCapabilities.CanEncodeRequest(
                 selected.MediaType,
-                selected.MediaTypeData?.Schema))
+                selected.MediaTypeData?.Schema,
+                binarySchemaCache))
         {
-            var supported = candidates.FirstOrDefault(static candidate =>
+            var supported = candidates.FirstOrDefault(candidate =>
                 MediaTypeCapabilities.CanEncodeRequest(
                     candidate.MediaType,
-                    candidate.MediaTypeData?.Schema));
+                    candidate.MediaTypeData?.Schema,
+                    binarySchemaCache));
             if (string.IsNullOrWhiteSpace(supported.MediaType))
             {
                 if (MediaTypeCapabilities.GetRequestSupport(selected.MediaType) == MediaTypeTransportSupport.Raw)
@@ -123,7 +234,7 @@ internal static class RequestRepresentationPlanner
 
     internal static bool ContainsBinary(IOpenApiSchema? schema)
     {
-        return ContainsBinary(schema, new HashSet<IOpenApiSchema>());
+        return new BinarySchemaCache().ContainsBinary(schema);
     }
 
     private static RequestRepresentationPlan CreateCandidate(
@@ -144,46 +255,4 @@ internal static class RequestRepresentationPlanner
                 x.IsMediaTypeItemSchema));
     }
 
-    private static bool ContainsBinary(
-        IOpenApiSchema? schema,
-        HashSet<IOpenApiSchema> visited)
-    {
-        if (schema == null || !visited.Add(schema))
-        {
-            return false;
-        }
-
-        var resolved = schema.ResolveIfRequired();
-        if (!ReferenceEquals(resolved, schema) && !visited.Add(resolved))
-        {
-            return false;
-        }
-
-        if (resolved.IsBinary())
-        {
-            return true;
-        }
-
-        if (ContainsBinary(resolved.Items, visited))
-        {
-            return true;
-        }
-
-        if (resolved.Properties != null &&
-            resolved.Properties.Values.Any(property => ContainsBinary(property, visited)))
-        {
-            return true;
-        }
-
-        return ContainsBinary(resolved.AnyOf, visited) ||
-               ContainsBinary(resolved.OneOf, visited) ||
-               ContainsBinary(resolved.AllOf, visited);
-    }
-
-    private static bool ContainsBinary(
-        IEnumerable<IOpenApiSchema>? schemas,
-        HashSet<IOpenApiSchema> visited)
-    {
-        return schemas != null && schemas.Any(schema => ContainsBinary(schema, visited));
-    }
 }

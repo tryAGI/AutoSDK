@@ -40,6 +40,29 @@ public static class CSharpEndPointFactory
         string? streamTerminator = null,
         IReadOnlyCollection<AnyOfData>? anyOfDatas = null)
     {
+        return CreateEndPointWithCache(
+            operation,
+            new RequestRepresentationPlanner.BinarySchemaCache(),
+            preferredMimeType,
+            methodNameSuffix,
+            forcedRequestStreamValue,
+            successResponseOverride,
+            streamFormatOverride,
+            streamTerminator,
+            anyOfDatas);
+    }
+
+    internal static EndPoint CreateEndPointWithCache(
+        OperationContext operation,
+        RequestRepresentationPlanner.BinarySchemaCache binarySchemaCache,
+        string? preferredMimeType = null,
+        string? methodNameSuffix = null,
+        bool? forcedRequestStreamValue = null,
+        EndPointResponse? successResponseOverride = null,
+        StreamFormat? streamFormatOverride = null,
+        string? streamTerminator = null,
+        IReadOnlyCollection<AnyOfData>? anyOfDatas = null)
+    {
         operation = operation ?? throw new ArgumentNullException(nameof(operation));
 
         var authorizationRequirements = AuthorizationHelpers.CreateRequirementSets(operation);
@@ -54,7 +77,7 @@ public static class CSharpEndPointFactory
             .Select(x => x.ParameterData!.Value)
             .ToList();
 
-        var requestRepresentation = RequestRepresentationPlanner.Select(operation);
+        var requestRepresentation = RequestRepresentationPlanner.Select(operation, binarySchemaCache);
         var requestMediaType = requestRepresentation.MediaType;
         var requestContext = requestRepresentation.SchemaContext;
         var requestItemContext = requestRepresentation.ItemSchemaContext;

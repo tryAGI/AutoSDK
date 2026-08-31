@@ -68,6 +68,15 @@ internal readonly record struct GenerationDiagnostics(
         await WriteMillisecondsAsync(writer, "core_filtering_ms", CoreTimes.Filtering).ConfigureAwait(false);
         await WriteMillisecondsAsync(writer, "core_compute_data_ms", CoreTimes.ComputeData).ConfigureAwait(false);
         await WriteMillisecondsAsync(writer, "core_compute_classes_ms", CoreTimes.ComputeDataClasses).ConfigureAwait(false);
+        await WriteMillisecondsAsync(writer, "core_collect_schemas_ms", CoreTimes.DataEnrichment.CollectSchemas).ConfigureAwait(false);
+        await WriteMillisecondsAsync(writer, "core_polymorphic_arrays_ms", CoreTimes.DataEnrichment.PolymorphicArrays).ConfigureAwait(false);
+        await WriteMillisecondsAsync(writer, "core_schema_models_ms", CoreTimes.DataEnrichment.SchemaModels).ConfigureAwait(false);
+        await WriteMillisecondsAsync(writer, "core_operations_ms", CoreTimes.DataEnrichment.Operations).ConfigureAwait(false);
+        await WriteMillisecondsAsync(writer, "core_endpoints_ms", CoreTimes.DataEnrichment.EndPoints).ConfigureAwait(false);
+        await WriteMillisecondsAsync(writer, "core_authorizations_ms", CoreTimes.DataEnrichment.Authorizations).ConfigureAwait(false);
+        await WriteMillisecondsAsync(writer, "core_converters_ms", CoreTimes.DataEnrichment.Converters).ConfigureAwait(false);
+        await WriteMillisecondsAsync(writer, "core_tags_clients_ms", CoreTimes.DataEnrichment.TagsAndClients).ConfigureAwait(false);
+        await WriteMillisecondsAsync(writer, "core_json_types_outputs_ms", CoreTimes.DataEnrichment.JsonTypesAndOutputs).ConfigureAwait(false);
         await WriteMillisecondsAsync(writer, "render_ms", Render).ConfigureAwait(false);
         foreach (var phase in RenderPhases)
         {
@@ -123,6 +132,15 @@ internal readonly record struct GenerationDiagnostics(
         await writer.WriteLineAsync($"  core_filtering_allocated_bytes: {CoreTimes.AllocFiltering.ToString(CultureInfo.InvariantCulture)}").ConfigureAwait(false);
         await writer.WriteLineAsync($"  core_compute_data_allocated_bytes: {CoreTimes.AllocComputeData.ToString(CultureInfo.InvariantCulture)}").ConfigureAwait(false);
         await writer.WriteLineAsync($"  core_compute_classes_allocated_bytes: {CoreTimes.AllocComputeDataClasses.ToString(CultureInfo.InvariantCulture)}").ConfigureAwait(false);
+        await writer.WriteLineAsync($"  core_collect_schemas_allocated_bytes: {CoreTimes.DataEnrichment.AllocCollectSchemas.ToString(CultureInfo.InvariantCulture)}").ConfigureAwait(false);
+        await writer.WriteLineAsync($"  core_polymorphic_arrays_allocated_bytes: {CoreTimes.DataEnrichment.AllocPolymorphicArrays.ToString(CultureInfo.InvariantCulture)}").ConfigureAwait(false);
+        await writer.WriteLineAsync($"  core_schema_models_allocated_bytes: {CoreTimes.DataEnrichment.AllocSchemaModels.ToString(CultureInfo.InvariantCulture)}").ConfigureAwait(false);
+        await writer.WriteLineAsync($"  core_operations_allocated_bytes: {CoreTimes.DataEnrichment.AllocOperations.ToString(CultureInfo.InvariantCulture)}").ConfigureAwait(false);
+        await writer.WriteLineAsync($"  core_endpoints_allocated_bytes: {CoreTimes.DataEnrichment.AllocEndPoints.ToString(CultureInfo.InvariantCulture)}").ConfigureAwait(false);
+        await writer.WriteLineAsync($"  core_authorizations_allocated_bytes: {CoreTimes.DataEnrichment.AllocAuthorizations.ToString(CultureInfo.InvariantCulture)}").ConfigureAwait(false);
+        await writer.WriteLineAsync($"  core_converters_allocated_bytes: {CoreTimes.DataEnrichment.AllocConverters.ToString(CultureInfo.InvariantCulture)}").ConfigureAwait(false);
+        await writer.WriteLineAsync($"  core_tags_clients_allocated_bytes: {CoreTimes.DataEnrichment.AllocTagsAndClients.ToString(CultureInfo.InvariantCulture)}").ConfigureAwait(false);
+        await writer.WriteLineAsync($"  core_json_types_outputs_allocated_bytes: {CoreTimes.DataEnrichment.AllocJsonTypesAndOutputs.ToString(CultureInfo.InvariantCulture)}").ConfigureAwait(false);
         await writer.WriteLineAsync($"  render_allocated_bytes: {RenderAllocatedBytes.ToString(CultureInfo.InvariantCulture)}").ConfigureAwait(false);
         await writer.WriteLineAsync($"  snippet_allocated_bytes: {SnippetAllocatedBytes.ToString(CultureInfo.InvariantCulture)}").ConfigureAwait(false);
         await writer.WriteLineAsync($"  write_allocated_bytes: {WriteAllocatedBytes.ToString(CultureInfo.InvariantCulture)}").ConfigureAwait(false);

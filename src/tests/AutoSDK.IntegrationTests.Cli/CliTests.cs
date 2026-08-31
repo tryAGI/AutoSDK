@@ -410,6 +410,10 @@ public class CliTests
             ReadDiagnosticValue(firstResult.StandardError, "core_parsing_postprocess_schema_sanitizers_discriminators_allocated_bytes").Should().BeGreaterThanOrEqualTo(0);
             ReadDiagnosticValue(firstResult.StandardError, "core_compute_data_allocated_bytes").Should().BeGreaterThan(0);
             ReadDiagnosticValue(firstResult.StandardError, "core_compute_classes_allocated_bytes").Should().BeGreaterThan(0);
+            ReadDiagnosticValue(firstResult.StandardError, "core_schema_models_allocated_bytes").Should().BeGreaterThan(0);
+            ReadDiagnosticValue(firstResult.StandardError, "core_operations_allocated_bytes").Should().BeGreaterThan(0);
+            ReadDiagnosticValue(firstResult.StandardError, "core_endpoints_allocated_bytes").Should().BeGreaterThan(0);
+            ReadDiagnosticValue(firstResult.StandardError, "core_json_types_outputs_allocated_bytes").Should().BeGreaterThan(0);
             ReadDiagnosticValue(firstResult.StandardError, "render_model_types_allocated_bytes").Should().BeGreaterThan(0);
             ReadDiagnosticValue(firstResult.StandardError, "render_method_implementations_allocated_bytes").Should().BeGreaterThan(0);
             ReadDiagnosticValue(firstResult.StandardError, "render_model_types_files").Should().BeGreaterThan(0);
