@@ -34,9 +34,20 @@ public static class OpenApiExtensions
         }
     }
 
+    private enum YamlKey : byte
+    {
+        None,
+        Other,
+        Type,
+        Enum,
+        AnyOf,
+        OneOf,
+        Nullable,
+    }
+
     private readonly struct YamlLine
     {
-        public YamlLine(int start, int end, int rawIndent, int keyStart, bool hasSequenceMarker, string? key)
+        public YamlLine(int start, int end, int rawIndent, int keyStart, bool hasSequenceMarker, YamlKey key)
         {
             Start = start;
             End = end;
@@ -52,7 +63,7 @@ public static class OpenApiExtensions
         public int KeyStart { get; }
         public int KeyIndent => KeyStart - Start;
         public bool HasSequenceMarker { get; }
-        public string? Key { get; }
+        public YamlKey Key { get; }
     }
 
     private readonly struct TextReplacement
@@ -298,10 +309,14 @@ public static class OpenApiExtensions
 #if NET
         var allocBeforeCompatibilityWalker = GC.GetTotalAllocatedBytes(precise: true);
 #endif
-        new OpenApiWalker(new OpenApiCompatibilityVisitor(
-            restoreCollapsedPrimitiveUnions:
-                diagnostics?.SpecificationVersion == OpenApiSpecVersion.OpenApi3_0,
-            normalizeNullEnumValues: normalizeJsonNullEnumValues)).Walk(openApiDocument);
+        var restoreCollapsedPrimitiveUnions =
+            diagnostics?.SpecificationVersion == OpenApiSpecVersion.OpenApi3_0;
+        if (restoreCollapsedPrimitiveUnions || normalizeJsonNullEnumValues)
+        {
+            new OpenApiWalker(new OpenApiCompatibilityVisitor(
+                restoreCollapsedPrimitiveUnions,
+                normalizeNullEnumValues: normalizeJsonNullEnumValues)).Walk(openApiDocument);
+        }
         compatibilityWalkerTime.Stop();
 #if NET
         var allocCompatibilityWalker = GC.GetTotalAllocatedBytes(precise: true) - allocBeforeCompatibilityWalker;
@@ -632,7 +647,8 @@ public static class OpenApiExtensions
                         for (var index = 0; index < schemaArray.Count; index++)
                         {
                             var schema = schemaArray[index];
-                            if (index == 0 &&
+                            if (isOpenApi30 &&
+                                index == 0 &&
                                 property.Key is "anyOf" or "oneOf" &&
                                 schema is JsonObject primitiveVariant &&
                                 primitiveVariant["type"] != null)
@@ -717,7 +733,7 @@ public static class OpenApiExtensions
         for (var i = 0; i < lines.Count; i++)
         {
             var line = lines[i];
-            if (string.Equals(line.Key, "nullable", StringComparison.Ordinal) &&
+            if (line.Key == YamlKey.Nullable &&
                 TryGetYamlBooleanTrue(text, line, out var valueEnd))
             {
                 if (!TryFindYamlSiblingType(lines, i, out var typeLineIndex))
@@ -754,7 +770,7 @@ public static class OpenApiExtensions
                     new string(' ', line.KeyIndent) + "type: \"null\"" + newline));
             }
 
-            if (IsFirstDirectYamlPrimitiveUnionVariant(lines, i))
+            if (isOpenApi30 && IsFirstDirectYamlPrimitiveUnionVariant(lines, i))
             {
                 var insertionStart = line.End < text.Length ? line.End + 1 : line.End;
                 var marker = new string(' ', line.KeyIndent) +
@@ -822,8 +838,7 @@ public static class OpenApiExtensions
         int lineIndex)
     {
         var line = lines[lineIndex];
-        if (!line.HasSequenceMarker ||
-            !string.Equals(line.Key, "type", StringComparison.Ordinal))
+        if (!line.HasSequenceMarker || line.Key != YamlKey.Type)
         {
             return false;
         }
@@ -831,7 +846,7 @@ public static class OpenApiExtensions
         for (var i = lineIndex - 1; i >= 0; i--)
         {
             var parent = lines[i];
-            if (parent.Key == null)
+            if (parent.Key == YamlKey.None)
             {
                 continue;
             }
@@ -840,7 +855,7 @@ public static class OpenApiExtensions
                 continue;
             }
 
-            if (parent.Key is not ("anyOf" or "oneOf"))
+            if (parent.Key is not (YamlKey.AnyOf or YamlKey.OneOf))
             {
                 return false;
             }
@@ -912,11 +927,11 @@ public static class OpenApiExtensions
         return lines;
     }
 
-    private static string? TryReadYamlKey(string text, ref int position, int lineEnd)
+    private static YamlKey TryReadYamlKey(string text, ref int position, int lineEnd)
     {
         if (position >= lineEnd || text[position] == '#')
         {
-            return null;
+            return YamlKey.None;
         }
 
         var quote = text[position] is '\'' or '"' ? text[position++] : '\0';
@@ -929,7 +944,7 @@ public static class OpenApiExtensions
             }
             if (position >= lineEnd)
             {
-                return null;
+                return YamlKey.None;
             }
 
             var key = GetTrackedYamlKey(text, keyStart, position - keyStart);
@@ -938,7 +953,7 @@ public static class OpenApiExtensions
             {
                 position++;
             }
-            return position < lineEnd && text[position] == ':' ? key : null;
+            return position < lineEnd && text[position] == ':' ? key : YamlKey.None;
         }
 
         while (position < lineEnd &&
@@ -954,19 +969,19 @@ public static class OpenApiExtensions
         }
         return position < lineEnd && text[position] == ':'
             ? GetTrackedYamlKey(text, keyStart, keyEnd - keyStart)
-            : null;
+            : YamlKey.None;
     }
 
-    private static string GetTrackedYamlKey(string text, int start, int length)
+    private static YamlKey GetTrackedYamlKey(string text, int start, int length)
     {
         return length switch
         {
-            4 when string.CompareOrdinal(text, start, "type", 0, 4) == 0 => "type",
-            4 when string.CompareOrdinal(text, start, "enum", 0, 4) == 0 => "enum",
-            5 when string.CompareOrdinal(text, start, "anyOf", 0, 5) == 0 => "anyOf",
-            5 when string.CompareOrdinal(text, start, "oneOf", 0, 5) == 0 => "oneOf",
-            8 when string.CompareOrdinal(text, start, "nullable", 0, 8) == 0 => "nullable",
-            _ => string.Empty,
+            4 when string.CompareOrdinal(text, start, "type", 0, 4) == 0 => YamlKey.Type,
+            4 when string.CompareOrdinal(text, start, "enum", 0, 4) == 0 => YamlKey.Enum,
+            5 when string.CompareOrdinal(text, start, "anyOf", 0, 5) == 0 => YamlKey.AnyOf,
+            5 when string.CompareOrdinal(text, start, "oneOf", 0, 5) == 0 => YamlKey.OneOf,
+            8 when string.CompareOrdinal(text, start, "nullable", 0, 8) == 0 => YamlKey.Nullable,
+            _ => YamlKey.Other,
         };
     }
 
@@ -1011,7 +1026,7 @@ public static class OpenApiExtensions
         for (var i = schemaKeywordLineIndex - 1; i >= 0; i--)
         {
             var candidate = lines[i];
-            if (candidate.Key == null)
+            if (candidate.Key == YamlKey.None)
             {
                 continue;
             }
@@ -1023,7 +1038,7 @@ public static class OpenApiExtensions
             {
                 if (!schemaKeywordLine.HasSequenceMarker &&
                     candidate.KeyIndent == schemaKeywordLine.KeyIndent &&
-                    string.Equals(candidate.Key, "type", StringComparison.Ordinal))
+                    candidate.Key == YamlKey.Type)
                 {
                     typeLineIndex = i;
                     return true;
@@ -1031,7 +1046,7 @@ public static class OpenApiExtensions
                 break;
             }
             if (candidate.KeyIndent == schemaKeywordLine.KeyIndent &&
-                string.Equals(candidate.Key, "type", StringComparison.Ordinal))
+                candidate.Key == YamlKey.Type)
             {
                 typeLineIndex = i;
                 return true;
@@ -1041,7 +1056,7 @@ public static class OpenApiExtensions
         for (var i = schemaKeywordLineIndex + 1; i < lines.Count; i++)
         {
             var candidate = lines[i];
-            if (candidate.Key == null)
+            if (candidate.Key == YamlKey.None)
             {
                 continue;
             }
@@ -1051,7 +1066,7 @@ public static class OpenApiExtensions
                 break;
             }
             if (candidate.KeyIndent == schemaKeywordLine.KeyIndent &&
-                string.Equals(candidate.Key, "type", StringComparison.Ordinal))
+                candidate.Key == YamlKey.Type)
             {
                 typeLineIndex = i;
                 return true;
@@ -1116,13 +1131,13 @@ public static class OpenApiExtensions
         int enumLineIndex)
     {
         var enumLine = lines[enumLineIndex];
-        if (!string.Equals(enumLine.Key, "enum", StringComparison.Ordinal))
+        if (enumLine.Key != YamlKey.Enum)
         {
             return false;
         }
 
         var itemIndex = enumLineIndex + 1;
-        while (itemIndex < lines.Count && lines[itemIndex].Key == null &&
+        while (itemIndex < lines.Count && lines[itemIndex].Key == YamlKey.None &&
                lines[itemIndex].KeyStart >= lines[itemIndex].End)
         {
             itemIndex++;
@@ -1143,7 +1158,7 @@ public static class OpenApiExtensions
         for (var i = itemIndex + 1; i < lines.Count; i++)
         {
             var candidate = lines[i];
-            if (candidate.Key == null && candidate.KeyStart >= candidate.End)
+            if (candidate.Key == YamlKey.None && candidate.KeyStart >= candidate.End)
             {
                 continue;
             }
@@ -1169,7 +1184,7 @@ public static class OpenApiExtensions
             end--;
         }
         if (end - start == 4 &&
-            string.Equals(text.Substring(start, 4), "null", StringComparison.OrdinalIgnoreCase))
+            string.Compare(text, start, "null", 0, 4, StringComparison.OrdinalIgnoreCase) == 0)
         {
             return true;
         }
@@ -1177,7 +1192,7 @@ public static class OpenApiExtensions
         return end - start == 6 &&
                text[start] is '\'' or '"' &&
                text[end - 1] == text[start] &&
-               string.Equals(text.Substring(start + 1, 4), "null", StringComparison.OrdinalIgnoreCase);
+               string.Compare(text, start + 1, "null", 0, 4, StringComparison.OrdinalIgnoreCase) == 0;
     }
 
     private static void ApplyFernRequestNames(this OpenApiDocument openApiDocument)

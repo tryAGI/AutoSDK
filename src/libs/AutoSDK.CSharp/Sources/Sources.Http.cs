@@ -91,38 +91,63 @@ public static partial class Sources
 
         // Build query params
         var parameters = op.Parameters ?? [];
-        var queryParams = parameters
-            .Where(p => p.In == ParameterLocation.Query)
-            .ToList();
-        var queryString = queryParams.Count > 0
-            ? "?" + string.Join("&", queryParams.Select(p =>
-                string.Format(CultureInfo.InvariantCulture, "{0}={1}", p.Name, GetHttpParameterValue(p))))
-            : "";
-
-        // Also check for ApiKey-in-query auth params
         var securityRequirements = GetEffectiveSecurityRequirements(operation);
-        var apiKeyQueryParams = GetApiKeyQueryParams(securityRequirements);
-        if (apiKeyQueryParams.Count > 0)
+        sb.Append(method).Append(" {{host}}").Append(path);
+        var hasQueryParameter = false;
+        foreach (var parameter in parameters)
         {
-            var separator = queryParams.Count > 0 ? "&" : "?";
-            queryString += separator + string.Join("&", apiKeyQueryParams);
+            if (parameter.In != ParameterLocation.Query)
+            {
+                continue;
+            }
+
+            sb.Append(hasQueryParameter ? '&' : '?')
+                .Append(parameter.Name)
+                .Append('=')
+                .Append(GetHttpParameterValue(parameter));
+            hasQueryParameter = true;
         }
 
-        sb.Append(method).Append(" {{host}}").Append(path).AppendLine(queryString);
+        foreach (var requirement in securityRequirements)
+        {
+            foreach (var scheme in requirement.Keys)
+            {
+                if (scheme.Type != SecuritySchemeType.ApiKey ||
+                    scheme.In != ParameterLocation.Query ||
+                    string.IsNullOrWhiteSpace(scheme.Name))
+                {
+                    continue;
+                }
+
+                sb.Append(hasQueryParameter ? '&' : '?')
+                    .Append(scheme.Name)
+                    .Append("={{api_key}}");
+                hasQueryParameter = true;
+            }
+        }
+        sb.AppendLine();
 
         // Auth headers
-        foreach (var authHeader in GetHttpAuthHeaders(securityRequirements))
+        var seenAuthHeaders = new HashSet<string>();
+        foreach (var requirement in securityRequirements)
         {
-            sb.AppendLine(authHeader);
+            foreach (var scheme in requirement.Keys)
+            {
+                var authHeader = GetAuthHeaderForScheme(scheme);
+                if (authHeader != null && seenAuthHeaders.Add(authHeader))
+                {
+                    sb.AppendLine(authHeader);
+                }
+            }
         }
 
         // Custom header parameters
-        var headerParams = parameters
-            .Where(p => p.In == ParameterLocation.Header)
-            .ToList();
-        foreach (var header in headerParams)
+        foreach (var header in parameters)
         {
-            sb.Append(header.Name).Append(": ").AppendLine(GetHttpParameterValue(header));
+            if (header.In == ParameterLocation.Header)
+            {
+                sb.Append(header.Name).Append(": ").AppendLine(GetHttpParameterValue(header));
+            }
         }
 
         // Request body handling
@@ -436,27 +461,6 @@ public static partial class Sources
         return operation.GlobalSecurityRequirements;
     }
 
-    private static List<string> GetHttpAuthHeaders(
-        IList<OpenApiSecurityRequirement> securityRequirements)
-    {
-        var headers = new List<string>();
-        var seen = new HashSet<string>();
-
-        foreach (var requirement in securityRequirements)
-        {
-            foreach (var kvp in requirement)
-            {
-                var header = GetAuthHeaderForScheme(kvp.Key);
-                if (header != null && seen.Add(header))
-                {
-                    headers.Add(header);
-                }
-            }
-        }
-
-        return headers;
-    }
-
     private static string? GetAuthHeaderForScheme(OpenApiSecuritySchemeReference scheme)
     {
         return (scheme.Type, scheme.Scheme?.ToUpperInvariant(), scheme.In) switch
@@ -473,27 +477,6 @@ public static partial class Sources
             (SecuritySchemeType.OpenIdConnect, _, _) => "Authorization: Bearer {{token}}",
             _ => null,
         };
-    }
-
-    private static List<string> GetApiKeyQueryParams(
-        IList<OpenApiSecurityRequirement> securityRequirements)
-    {
-        var result = new List<string>();
-
-        foreach (var requirement in securityRequirements)
-        {
-            foreach (var kvp in requirement)
-            {
-                if (kvp.Key.Type == SecuritySchemeType.ApiKey &&
-                    kvp.Key.In == ParameterLocation.Query &&
-                    !string.IsNullOrWhiteSpace(kvp.Key.Name))
-                {
-                    result.Add(kvp.Key.Name + "={{api_key}}");
-                }
-            }
-        }
-
-        return result;
     }
 
     private static string? GetHttpAcceptTypes(OpenApiOperation operation)

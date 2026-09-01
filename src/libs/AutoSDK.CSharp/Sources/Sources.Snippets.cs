@@ -49,9 +49,10 @@ public static partial class Sources
             }
         }
 
+        var legacyExamples = new Dictionary<IOpenApiSchema, JsonNode?>();
         var snippets = new List<GeneratedSdkSnippetDocument>();
         foreach (var operation in operations
-                     .Where(static x => HasSnippetSource(x.Operation))
+                     .Where(x => HasSnippetSource(x.Operation, legacyExamples))
                      .OrderBy(static x => x.Tag.SafeName, StringComparer.Ordinal)
                      .ThenBy(static x => x.MethodName, StringComparer.Ordinal))
         {
@@ -598,33 +599,80 @@ public static partial class Sources
         return typeName is "byte" or "sbyte" or "short" or "ushort" or "int" or "uint" or "long" or "ulong";
     }
 
-    private static bool HasSnippetSource(OpenApiOperation operation)
+    private static bool HasSnippetSource(
+        OpenApiOperation operation,
+        Dictionary<IOpenApiSchema, JsonNode?> legacyExamples)
     {
         if (TryGetPreferredCodeSample(operation, out _))
         {
             return true;
         }
 
-        if ((operation.Parameters ?? []).Any(static x =>
-                (x.Examples?.Count ?? 0) > 0 ||
-                x.Example != null))
+        if (operation.Parameters != null)
         {
-            return true;
+            foreach (var parameter in operation.Parameters)
+            {
+                if (parameter.Examples is { Count: > 0 } || parameter.Example != null)
+                {
+                    return true;
+                }
+            }
         }
 
-        if ((operation.RequestBody?.Content ?? new Dictionary<string, IOpenApiMediaType>()).Any(static x =>
-                (x.Value.Examples?.Count ?? 0) > 0 ||
-                x.Value.Example != null ||
-                x.Value.Schema?.GetLegacyExample() != null))
+        if (operation.RequestBody?.Content != null)
         {
-            return true;
+            foreach (var mediaType in operation.RequestBody.Content.Values)
+            {
+                if (mediaType.Examples is { Count: > 0 } ||
+                    mediaType.Example != null ||
+                    GetCachedLegacyExample(mediaType.Schema, legacyExamples) != null)
+                {
+                    return true;
+                }
+            }
         }
 
-        return (operation.Responses ?? new Dictionary<string, IOpenApiResponse>()).Any(static x =>
-            (x.Value.Content ?? new Dictionary<string, IOpenApiMediaType>()).Any(static y =>
-                (y.Value.Examples?.Count ?? 0) > 0 ||
-                y.Value.Example != null ||
-                y.Value.Schema?.GetLegacyExample() != null));
+        if (operation.Responses != null)
+        {
+            foreach (var response in operation.Responses.Values)
+            {
+                if (response.Content == null)
+                {
+                    continue;
+                }
+
+                foreach (var mediaType in response.Content.Values)
+                {
+                    if (mediaType.Examples is { Count: > 0 } ||
+                        mediaType.Example != null ||
+                        GetCachedLegacyExample(mediaType.Schema, legacyExamples) != null)
+                    {
+                        return true;
+                    }
+                }
+            }
+        }
+
+        return false;
+    }
+
+    private static JsonNode? GetCachedLegacyExample(
+        IOpenApiSchema? schema,
+        Dictionary<IOpenApiSchema, JsonNode?> legacyExamples)
+    {
+        if (schema == null)
+        {
+            return null;
+        }
+
+        if (legacyExamples.TryGetValue(schema, out var example))
+        {
+            return example;
+        }
+
+        example = schema.GetLegacyExample();
+        legacyExamples.Add(schema, example);
+        return example;
     }
 
     private static bool TryGetPreferredCodeSample(
@@ -644,9 +692,16 @@ public static partial class Sources
             return false;
         }
 
-        var source = samplesArray
-            .OfType<JsonObject>()
-            .FirstOrDefault(static sample => HasSnippetLang(sample, "csharp") || HasSnippetLang(sample, "c#"));
+        JsonObject? source = null;
+        foreach (var sample in samplesArray)
+        {
+            if (sample is JsonObject sampleObject &&
+                (HasSnippetLang(sampleObject, "csharp") || HasSnippetLang(sampleObject, "c#")))
+            {
+                source = sampleObject;
+                break;
+            }
+        }
         if (source == null ||
             !source.TryGetPropertyValue("source", out var sourceNode) ||
             sourceNode is not JsonValue sourceValue ||

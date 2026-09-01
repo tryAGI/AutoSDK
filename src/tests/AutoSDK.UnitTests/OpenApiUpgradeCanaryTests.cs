@@ -103,6 +103,34 @@ components:
         nullableText.Type.Should().Be(JsonSchemaType.String | JsonSchemaType.Null);
     }
 
+    [TestMethod]
+    [TestCategory("OpenApiUpgradeCanary")]
+    public void OpenApi31_YamlPrimitiveUnionNeedsNoCompatibilityMarker()
+    {
+        const string specification = """
+openapi: 3.1.0
+info:
+  title: Compatibility canary
+  version: 1.0.0
+paths: {}
+components:
+  schemas:
+    Choice:
+      oneOf:
+        - type: string
+        - type: integer
+""";
+
+        var document = specification.GetOpenApiDocument(CanarySettings);
+        var choice = document.Components!.Schemas!["Choice"];
+
+        choice.OneOf.Should().HaveCount(2);
+        choice.OneOf![0].Type.Should().Be(JsonSchemaType.String);
+        choice.OneOf[1].Type.Should().Be(JsonSchemaType.Integer);
+        (choice.Extensions?.ContainsKey("x-autosdk-preserve-primitive-union") ?? false)
+            .Should().BeFalse();
+    }
+
     private static PreparedData Prepare(string specificationName)
     {
         var settings = CanarySettings;
