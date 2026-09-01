@@ -361,32 +361,80 @@ public sealed partial class {modelData.Parents[level].Unbox<ModelData>().ClassNa
         var inheritedRequiredPropertiesByName = modelData.InheritedRequiredProperties
             .ToDictionary(static x => x.Name, static x => x, StringComparer.Ordinal);
 
-        var constructorProperties = properties
-            .Where(x => x.IsRequired || !x.IsDeprecated || inheritedRequiredPropertiesByName.ContainsKey(x.Name))
-            .ToArray();
         var constructorBaseOnlyRequiredProperties = inheritedRequiredPropertiesByName.Values
             .Where(x => properties.All(y => !string.Equals(y.Name, x.Name, StringComparison.Ordinal)))
             .ToArray();
-        var requiredConstructorProperties = constructorProperties
-            .Where(x => x.IsRequired || inheritedRequiredPropertiesByName.ContainsKey(x.Name))
-            .ToArray();
-        var optionalConstructorProperties = constructorProperties
-            .Where(x => !x.IsRequired && !inheritedRequiredPropertiesByName.ContainsKey(x.Name))
-            .ToArray();
-        var optionalConstructorPropertiesWithoutDefaults = optionalConstructorProperties
-            .Where(x => x.Type.CSharpTypeNullability || string.IsNullOrWhiteSpace(x.DefaultValue))
-            .ToArray();
-        var optionalConstructorPropertiesWithDefaults = optionalConstructorProperties
-            .Where(x => !x.Type.CSharpTypeNullability && !string.IsNullOrWhiteSpace(x.DefaultValue))
-            .ToArray();
-        var hasConstructor = constructorProperties.Length > 0 || constructorBaseOnlyRequiredProperties.Length > 0;
+        var constructorPropertyCount = 0;
+        var requiredConstructorPropertyCount = 0;
+        var optionalConstructorPropertyWithoutDefaultCount = 0;
+        var optionalConstructorPropertyWithDefaultCount = 0;
+        for (var index = 0; index < properties.Length; index++)
+        {
+            var property = properties[index];
+            if (!property.IsRequired &&
+                property.IsDeprecated &&
+                !inheritedRequiredPropertiesByName.ContainsKey(property.Name))
+            {
+                continue;
+            }
+
+            constructorPropertyCount++;
+            if (property.IsRequired || inheritedRequiredPropertiesByName.ContainsKey(property.Name))
+            {
+                requiredConstructorPropertyCount++;
+            }
+            else if (property.Type.CSharpTypeNullability || string.IsNullOrWhiteSpace(property.DefaultValue))
+            {
+                optionalConstructorPropertyWithoutDefaultCount++;
+            }
+            else
+            {
+                optionalConstructorPropertyWithDefaultCount++;
+            }
+        }
+
+        var requiredConstructorProperties = requiredConstructorPropertyCount == 0
+            ? Array.Empty<PropertyData>()
+            : new PropertyData[requiredConstructorPropertyCount];
+        var optionalConstructorPropertiesWithoutDefaults = optionalConstructorPropertyWithoutDefaultCount == 0
+            ? Array.Empty<PropertyData>()
+            : new PropertyData[optionalConstructorPropertyWithoutDefaultCount];
+        var optionalConstructorPropertiesWithDefaults = optionalConstructorPropertyWithDefaultCount == 0
+            ? Array.Empty<PropertyData>()
+            : new PropertyData[optionalConstructorPropertyWithDefaultCount];
+        var requiredConstructorPropertyIndex = 0;
+        var optionalConstructorPropertyWithoutDefaultIndex = 0;
+        var optionalConstructorPropertyWithDefaultIndex = 0;
+        for (var index = 0; index < properties.Length; index++)
+        {
+            var property = properties[index];
+            if (!property.IsRequired &&
+                property.IsDeprecated &&
+                !inheritedRequiredPropertiesByName.ContainsKey(property.Name))
+            {
+                continue;
+            }
+
+            if (property.IsRequired || inheritedRequiredPropertiesByName.ContainsKey(property.Name))
+            {
+                requiredConstructorProperties[requiredConstructorPropertyIndex++] = property;
+            }
+            else if (property.Type.CSharpTypeNullability || string.IsNullOrWhiteSpace(property.DefaultValue))
+            {
+                optionalConstructorPropertiesWithoutDefaults[optionalConstructorPropertyWithoutDefaultIndex++] = property;
+            }
+            else
+            {
+                optionalConstructorPropertiesWithDefaults[optionalConstructorPropertyWithDefaultIndex++] = property;
+            }
+        }
+        var hasConstructor = constructorPropertyCount > 0 || constructorBaseOnlyRequiredProperties.Length > 0;
 
         var leafFactory = TryGetCascadingLeafFactory(
             modelData,
             requiredConstructorProperties,
             constructorBaseOnlyRequiredProperties,
-            optionalConstructorPropertiesWithDefaults,
-            optionalConstructorPropertiesWithoutDefaults);
+            optionalConstructorPropertiesWithDefaults);
 
         resultBuilder.Append("    ");
         AppendXmlDocumentationSummary(resultBuilder, modelData.Summary, level: 4);
@@ -454,7 +502,7 @@ public sealed partial class {modelData.Parents[level].Unbox<ModelData>().ClassNa
 ");
             AppendConstructorAssignments(
                 resultBuilder,
-                constructorProperties,
+                properties,
                 constructorBaseOnlyRequiredProperties,
                 inheritedRequiredPropertiesByName);
             resultBuilder.Append(@"
@@ -646,13 +694,20 @@ public sealed partial class {modelData.Parents[level].Unbox<ModelData>().ClassNa
 
     private static void AppendConstructorAssignments(
         PooledStringBuilder builder,
-        PropertyData[] constructorProperties,
+        IReadOnlyList<PropertyData> properties,
         PropertyData[] baseOnlyRequiredProperties,
         Dictionary<string, PropertyData> inheritedRequiredPropertiesByName)
     {
         var hasAssignment = false;
-        foreach (var property in constructorProperties)
+        foreach (var property in properties)
         {
+            if (!property.IsRequired &&
+                property.IsDeprecated &&
+                !inheritedRequiredPropertiesByName.ContainsKey(property.Name))
+            {
+                continue;
+            }
+
             AppendAssignment(
                 target: "this",
                 property,
@@ -703,8 +758,7 @@ public sealed partial class {modelData.Parents[level].Unbox<ModelData>().ClassNa
         ModelData modelData,
         PropertyData[] requiredConstructorProperties,
         PropertyData[] constructorBaseOnlyRequiredProperties,
-        PropertyData[] optionalConstructorPropertiesWithDefaults,
-        PropertyData[] optionalConstructorPropertiesWithoutDefaults)
+        PropertyData[] optionalConstructorPropertiesWithDefaults)
     {
         // Cascading leaf factory: if exactly one constructor parameter is "meaningful"
         // (no const default — the leaf, typically an enum or scalar discriminator value)
@@ -723,26 +777,59 @@ public sealed partial class {modelData.Parents[level].Unbox<ModelData>().ClassNa
         // Const-discriminator fields show up as either required-with-default (rare)
         // or optional-with-default. Both are emitted with `param = default` in the
         // generated constructor, so we treat them uniformly as the const-fields set.
-        var leafCandidates = requiredConstructorProperties
-            .Concat(constructorBaseOnlyRequiredProperties)
-            .Where(static x => string.IsNullOrWhiteSpace(x.DefaultValue))
-            .ToArray();
-        if (leafCandidates.Length != 1)
+        var leaf = PropertyData.Default;
+        var leafCount = 0;
+        foreach (var property in requiredConstructorProperties)
+        {
+            if (string.IsNullOrWhiteSpace(property.DefaultValue))
+            {
+                leaf = property;
+                leafCount++;
+            }
+        }
+        foreach (var property in constructorBaseOnlyRequiredProperties)
+        {
+            if (string.IsNullOrWhiteSpace(property.DefaultValue))
+            {
+                leaf = property;
+                leafCount++;
+            }
+        }
+        if (leafCount != 1)
         {
             return string.Empty;
         }
 
-        var constFields = requiredConstructorProperties
-            .Concat(constructorBaseOnlyRequiredProperties)
-            .Concat(optionalConstructorPropertiesWithDefaults)
-            .Where(static x => !string.IsNullOrWhiteSpace(x.DefaultValue))
-            .ToArray();
-        if (constFields.Length == 0)
+        var hasConstField = false;
+        var hasRequiredConstField = false;
+        foreach (var property in requiredConstructorProperties)
+        {
+            if (!string.IsNullOrWhiteSpace(property.DefaultValue))
+            {
+                hasConstField = true;
+                hasRequiredConstField |= property.IsRequired;
+            }
+        }
+        foreach (var property in constructorBaseOnlyRequiredProperties)
+        {
+            if (!string.IsNullOrWhiteSpace(property.DefaultValue))
+            {
+                hasConstField = true;
+                hasRequiredConstField |= property.IsRequired;
+            }
+        }
+        foreach (var property in optionalConstructorPropertiesWithDefaults)
+        {
+            if (!string.IsNullOrWhiteSpace(property.DefaultValue))
+            {
+                hasConstField = true;
+                hasRequiredConstField |= property.IsRequired;
+            }
+        }
+        if (!hasConstField)
         {
             return string.Empty;
         }
-
-        var leaf = leafCandidates[0];
 
         // Skip when the leaf is itself a complex collection or wrapper — the From
         // factory adds no value over the constructor in those cases and risks
@@ -761,7 +848,7 @@ public sealed partial class {modelData.Parents[level].Unbox<ModelData>().ClassNa
         // fields would still trigger CS9035 unless the initializer also assigns
         // them. Forcing the consumer to override the discriminator defeats the
         // factory's purpose, so we leave those classes alone.
-        if (constFields.Any(static x => x.IsRequired))
+        if (hasRequiredConstField)
         {
             return string.Empty;
         }
