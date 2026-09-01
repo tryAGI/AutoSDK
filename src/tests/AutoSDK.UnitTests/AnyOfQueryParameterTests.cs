@@ -13,7 +13,7 @@ public class AnyOfQueryParameterTests
     };
 
     [TestMethod]
-    public void OptionalAnyOfQueryParameter_DoesNotSendEmptyValue()
+    public void OptionalAnyOfQueryParameter_WithArrayVariant_UsesRepeatedValues()
     {
         var endPoint = LoadEndPoint(@"openapi: 3.0.1
 info:
@@ -28,8 +28,8 @@ paths:
           in: query
           required: false
           schema:
-            anyOf:
-              - type: string
+            oneOf:
+              - type: boolean
               - type: array
                 items:
                   type: string
@@ -40,9 +40,11 @@ paths:
 
         var generatedCode = Sources.GenerateEndPoint(endPoint);
 
-        // Optional AnyOf params should use ?.ToString() — NOT ?.ToString() ?? string.Empty
-        // which would send ?expand= (empty value) instead of skipping the param
-        generatedCode.Should().Contain(@"AddOptionalParameter(""expand"", expand?.ToString())");
+        generatedCode.Should().Contain(@"AddOptionalParameter(""expand"", expand?.Match(");
+        generatedCode.Should().Contain("static x => (global::System.Collections.Generic.IEnumerable<string?>)new string?[] { x?.ToString().ToLowerInvariant() }");
+        generatedCode.Should().Contain("global::System.Linq.Enumerable.Select(x, static item => item)");
+        generatedCode.Should().Contain("validate: false), delimiter: \",\", explode: true)");
+        generatedCode.Should().NotContain(@"expand?.ToString()");
         generatedCode.Should().NotContain(@"expand?.ToString() ?? string.Empty");
     }
 

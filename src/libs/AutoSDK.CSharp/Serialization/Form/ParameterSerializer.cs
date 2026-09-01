@@ -135,6 +135,14 @@ public static class ParameterSerializer
             return;
         }
 
+        if (parameter.Type.IsAnyOfLike &&
+            parameter.Type.SubTypes.Any(static x => x.Unbox<TypeData>().IsArray) &&
+            TrySerializeUnionWithArray(parameter, out var serializedUnion))
+        {
+            serialized.Add(serializedUnion);
+            return;
+        }
+
         if (parameter.Type.IsAnyOfLike)
         {
             serialized.Add(parameter with
@@ -274,5 +282,85 @@ public static class ParameterSerializer
         var serialized = new List<MethodParameter>(1);
         AppendSerializedQueryParameter(parameter, serialized);
         return serialized.Count == 0 ? null : serialized[0].Value;
+    }
+
+    private static bool TrySerializeUnionWithArray(
+        MethodParameter parameter,
+        out MethodParameter serialized)
+    {
+        serialized = default;
+
+        var variants = parameter.Type.SubTypes
+            .Select(static x => x.Unbox<TypeData>())
+            .ToArray();
+        if (variants.Length == 0 ||
+            variants.Any(static x => x.IsAnyOfLike) ||
+            variants.Any(static x => x.IsArray && x.SubTypes.IsEmpty))
+        {
+            return false;
+        }
+
+        var arrayType = variants.First(static x => x.IsArray);
+        var variantSerializers = variants.Select(variant =>
+        {
+            if (variant.IsArray)
+            {
+                var itemParameter = CreateUnionVariantParameter(
+                    parameter,
+                    variant.SubTypes[0].Unbox<TypeData>(),
+                    "item");
+                var itemValue = GetFirstSerializedValue(itemParameter);
+                return itemValue is null
+                    ? null
+                    : $"static x => (global::System.Collections.Generic.IEnumerable<string?>)global::System.Linq.Enumerable.Select(x, static item => {itemValue})";
+            }
+
+            var scalarParameter = CreateUnionVariantParameter(parameter, variant, "x");
+            var scalarValue = GetFirstSerializedValue(scalarParameter);
+            return scalarValue is null
+                ? null
+                : $"static x => (global::System.Collections.Generic.IEnumerable<string?>)new string?[] {{ {scalarValue} }}";
+        }).ToArray();
+        if (variantSerializers.Any(static x => x is null))
+        {
+            return false;
+        }
+
+        var matchExpression = $"{parameter.ArgumentName}{(parameter.Type.CSharpTypeNullability ? "?" : string.Empty)}.Match(\n" +
+                              string.Join(",\n", variantSerializers!) +
+                              ",\nvalidate: false)";
+        if (parameter.IsRequired)
+        {
+            matchExpression += " ?? global::System.Array.Empty<string?>()";
+        }
+
+        serialized = parameter with
+        {
+            Value = matchExpression,
+            Type = arrayType,
+            Delimiter = parameter.Style switch
+            {
+                ParameterStyle.Form => ",",
+                ParameterStyle.SpaceDelimited => "%20",
+                ParameterStyle.PipeDelimited => "|",
+                _ => throw new NotSupportedException($"Parameter style '{parameter.Style}' is not supported."),
+            },
+        };
+        return true;
+    }
+
+    private static MethodParameter CreateUnionVariantParameter(
+        MethodParameter parameter,
+        TypeData type,
+        string argumentName)
+    {
+        return (parameter with
+        {
+            Name = argumentName,
+            ParameterName = argumentName,
+            ArgumentName = argumentName,
+            Type = type.WithCSharpComputedValues(),
+            IsRequired = true,
+        }).WithCSharpComputedValues();
     }
 }
