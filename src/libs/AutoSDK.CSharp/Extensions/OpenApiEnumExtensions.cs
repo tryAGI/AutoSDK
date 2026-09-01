@@ -156,7 +156,8 @@ public static class OpenApiEnumExtensions
             return cached;
         }
 
-        var @enum = (context.Schema.Enum ?? []).ComputeEnum(
+        var @enum = ComputeEnumValues(
+            context.Schema.Enum ?? [],
             enumName: context.Id,
             description: context.Parameter?.Description ?? context.Schema.Description ?? string.Empty,
             context.Settings.ToEnumNamingSettings());
@@ -263,6 +264,16 @@ public static class OpenApiEnumExtensions
         string description,
         EnumNamingSettings settings)
     {
+        return EnsureUniqueEnumMemberNamesCaseInsensitive(
+            ComputeEnumValues(@enum, enumName, description, settings));
+    }
+
+    private static Dictionary<string, PropertyData> ComputeEnumValues(
+        IList<JsonNode> @enum,
+        string enumName,
+        string description,
+        EnumNamingSettings settings)
+    {
         @enum = @enum ?? throw new ArgumentNullException(nameof(@enum));
         enumName = enumName ?? throw new ArgumentNullException(nameof(enumName));
 
@@ -308,7 +319,7 @@ public static class OpenApiEnumExtensions
             }
         }
 
-        return EnsureUniqueEnumMemberNamesCaseInsensitive(values);
+        return values;
     }
 
     public static PropertyData ToEnumValue(
@@ -381,18 +392,37 @@ public static class OpenApiEnumExtensions
             return string.Empty;
         }
 
-        var lines = description.Split(["\n"], StringSplitOptions.RemoveEmptyEntries);
-        var line = lines.FirstOrDefault(line => line.Contains(id) && line.Contains(":"));
-
-        if (line == null)
+        var lineStart = 0;
+        while (lineStart <= description.Length)
         {
-            return string.Empty;
+            var lineEnd = description.IndexOf('\n', lineStart);
+            if (lineEnd < 0)
+            {
+                lineEnd = description.Length;
+            }
+
+            var lineLength = lineEnd - lineStart;
+            if (lineLength > 0 &&
+                description.IndexOf(id, lineStart, lineLength, StringComparison.Ordinal) >= 0)
+            {
+                var separatorIndex = description.IndexOf(':', lineStart, lineLength);
+                if (separatorIndex >= 0)
+                {
+                    return description
+                        .Substring(separatorIndex + 1, lineEnd - separatorIndex - 1)
+                        .Trim();
+                }
+            }
+
+            if (lineEnd == description.Length)
+            {
+                break;
+            }
+
+            lineStart = lineEnd + 1;
         }
 
-        var index = line.IndexOf(':');
-        return index >= 0
-            ? line.Substring(index + 1).Trim()
-            : line.Trim();
+        return string.Empty;
     }
 
     private static void ApplyFernEnumItem(JsonObject itemObj, Dictionary<string, PropertyData> @enum, int index)
