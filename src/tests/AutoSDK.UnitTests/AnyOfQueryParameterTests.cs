@@ -49,6 +49,43 @@ paths:
     }
 
     [TestMethod]
+    public void OptionalAnyOfQueryParameter_WithEnumArrayVariant_DoesNotEmitSelector()
+    {
+        var endPoint = LoadEndPoint(@"openapi: 3.0.1
+info:
+  title: Test
+  version: 1.0.0
+paths:
+  /items:
+    get:
+      operationId: listItems
+      parameters:
+        - name: data_type
+          in: query
+          required: false
+          schema:
+            anyOf:
+              - type: array
+                items:
+                  type: string
+                  enum: [kv, llm]
+              - type: string
+                enum: [kv, llm]
+              - type: 'null'
+      responses:
+        '200':
+          description: OK
+");
+
+        var generatedCode = Sources.GenerateEndPoint(endPoint);
+
+        generatedCode.Should().Contain(@"AddOptionalParameter(""data_type"", dataType?.Match(");
+        generatedCode.Should().Contain("global::System.Linq.Enumerable.Select(x, static item => item.ToValueString())");
+        generatedCode.Should().Contain("validate: false), delimiter: \",\", explode: true)");
+        generatedCode.Should().NotContain("selector: static x =>");
+    }
+
+    [TestMethod]
     public void RequiredAnyOfQueryParameter_UsesNullCoalescing()
     {
         var endPoint = LoadEndPoint(@"openapi: 3.0.1

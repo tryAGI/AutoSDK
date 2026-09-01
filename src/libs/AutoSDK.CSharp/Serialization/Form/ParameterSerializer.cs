@@ -301,13 +301,29 @@ public static class ParameterSerializer
         }
 
         var arrayType = variants.First(static x => x.IsArray);
+        var serializedArrayType = (arrayType with
+        {
+            CSharpTypeRaw = "global::System.Collections.Generic.IEnumerable<string?>",
+            CSharpTypeNullability = parameter.Type.CSharpTypeNullability,
+            SubTypes = ImmutableArray.Create(
+                (TypeData.Default with
+                {
+                    CSharpTypeRaw = "string",
+                    CSharpTypeNullability = true,
+                    IsNullable = true,
+                    Namespace = "System",
+                    GeneratedNamespace = arrayType.GeneratedNamespace,
+                }).WithCSharpComputedValues().Box())
+                .AsEquatableArray(),
+        }).WithCSharpComputedValues();
         var variantSerializers = variants.Select(variant =>
         {
             if (variant.IsArray)
             {
                 var itemParameter = CreateUnionVariantParameter(
                     parameter,
-                    variant.SubTypes[0].Unbox<TypeData>(),
+                    (variant.SubTypes[0].Unbox<TypeData>() with { CSharpTypeNullability = false })
+                        .WithCSharpComputedValues(),
                     "item");
                 var itemValue = GetFirstSerializedValue(itemParameter);
                 return itemValue is null
@@ -337,7 +353,7 @@ public static class ParameterSerializer
         serialized = parameter with
         {
             Value = matchExpression,
-            Type = arrayType,
+            Type = serializedArrayType,
             Delimiter = parameter.Style switch
             {
                 ParameterStyle.Form => ",",
