@@ -139,7 +139,8 @@ internal static class RequestRepresentationPlanner
 
     internal static RequestRepresentationPlan Select(
         OperationContext operation,
-        BinarySchemaCache binarySchemaCache)
+        BinarySchemaCache binarySchemaCache,
+        string? preferredMediaType = null)
     {
         operation = operation ?? throw new ArgumentNullException(nameof(operation));
 
@@ -152,7 +153,90 @@ internal static class RequestRepresentationPlanner
         var candidates = content
             .Select(x => CreateCandidate(operation, x.Key, x.Value))
             .ToArray();
+
+        if (!string.IsNullOrWhiteSpace(preferredMediaType))
+        {
+            var preferred = candidates.FirstOrDefault(candidate =>
+                candidate.MediaType.IsMimeType(preferredMediaType!));
+            if (string.IsNullOrWhiteSpace(preferred.MediaType))
+            {
+                throw new InvalidOperationException(
+                    $"Request media type '{preferredMediaType}' is not declared by the operation.");
+            }
+
+            if (!MediaTypeCapabilities.CanEncodeRequest(
+                    preferred.MediaType,
+                    preferred.MediaTypeData?.Schema,
+                    binarySchemaCache))
+            {
+                if (MediaTypeCapabilities.GetRequestSupport(preferred.MediaType) ==
+                    MediaTypeTransportSupport.Raw)
+                {
+                    return new RequestRepresentationPlan(
+                        preferred.MediaType,
+                        preferred.MediaTypeData,
+                        schemaContext: null,
+                        itemSchemaContext: null);
+                }
+
+                throw new InvalidOperationException(MediaTypeCapabilities.GetRequestLimitation(
+                    preferred.MediaType,
+                    preferred.MediaTypeData?.Schema));
+            }
+
+            return preferred;
+        }
+
         return Select(candidates, binarySchemaCache);
+    }
+
+    internal static IReadOnlyList<string> GetDistinctSupportedMediaTypes(
+        OperationContext operation,
+        BinarySchemaCache binarySchemaCache)
+    {
+        operation = operation ?? throw new ArgumentNullException(nameof(operation));
+
+        var content = operation.Operation.RequestBody?.Content;
+        if (content == null || content.Count == 0)
+        {
+            return [RequestRepresentationPlan.Default.MediaType];
+        }
+
+        var candidates = content
+            .Select(x => CreateCandidate(operation, x.Key, x.Value))
+            .ToArray();
+        var primary = Select(candidates, binarySchemaCache);
+        var mediaTypes = new List<string> { primary.MediaType };
+        var representedTransportSupports = new HashSet<MediaTypeTransportSupport>
+        {
+            MediaTypeCapabilities.GetRequestSupport(primary.MediaType),
+        };
+
+        foreach (var candidate in candidates)
+        {
+            if (candidate.MediaType.IsMimeType(primary.MediaType) ||
+                !MediaTypeCapabilities.CanEncodeRequest(
+                    candidate.MediaType,
+                    candidate.MediaTypeData?.Schema,
+                    binarySchemaCache))
+            {
+                continue;
+            }
+
+            // Equivalent typed representations (for example JSON plus multipart with
+            // the same body shape) should not multiply methods. Emit a companion only
+            // when the operation exposes a genuinely different transport contract,
+            // such as typed JSON plus raw audio bytes.
+            if (!representedTransportSupports.Add(
+                    MediaTypeCapabilities.GetRequestSupport(candidate.MediaType)))
+            {
+                continue;
+            }
+
+            mediaTypes.Add(candidate.MediaType);
+        }
+
+        return mediaTypes;
     }
 
     public static RequestRepresentationPlan Select(OpenApiOperation operation)

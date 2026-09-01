@@ -108,6 +108,59 @@ public class MediaTypeCapabilityTests
     }
 
     [TestMethod]
+    public void JsonAndBinaryRequests_GenerateTypedAndRawCompanionMethods()
+    {
+        var data = AutoSDK.Generation.Data.Prepare(((CreateRequestSpec("""
+          application/json:
+            schema:
+              type: object
+              required: [url]
+              properties:
+                url:
+                  type: string
+          application/octet-stream:
+            schema:
+              type: string
+              format: binary
+"""), DefaultSettings), GlobalSettings: DefaultSettings));
+
+        data.Methods.Select(static method => method.NotAsyncMethodName)
+            .Should().BeEquivalentTo("Run", "RunWithBytes");
+
+        var json = data.Methods.Single(static method => method.NotAsyncMethodName == "Run");
+        json.RequestMediaType.Should().Be("application/json");
+        json.Parameters.Should().Contain(parameter => parameter.ParameterName == "url");
+
+        var binary = data.Methods.Single(static method => method.NotAsyncMethodName == "RunWithBytes");
+        binary.RequestMediaType.Should().Be("application/octet-stream");
+        binary.RequestType.CSharpTypeWithoutNullability.Should().Be("byte[]");
+        Sources.GenerateEndPoint(binary)
+            .Should().Contain("new global::System.Net.Http.ByteArrayContent(request)");
+    }
+
+    [TestMethod]
+    public void JsonAndMultipartRequests_KeepSingleTypedRepresentation()
+    {
+        var data = AutoSDK.Generation.Data.Prepare(((CreateRequestSpec("""
+          application/json:
+            schema:
+              type: object
+              properties:
+                prompt:
+                  type: string
+          multipart/form-data:
+            schema:
+              type: object
+              properties:
+                prompt:
+                  type: string
+"""), DefaultSettings), GlobalSettings: DefaultSettings));
+
+        data.Methods.Should().ContainSingle()
+            .Which.RequestMediaType.Should().Be("application/json");
+    }
+
+    [TestMethod]
     public void TypedMessagePackWithoutAlternative_GeneratesRawBytePassThrough()
     {
         var data = AutoSDK.Generation.Data.Prepare(((CreateRequestSpec("""

@@ -1060,6 +1060,30 @@ public static class Data
         CSharpEndPointFactory.EndPointCreationCache endPointCreationCache,
         ImmutableArray<EndPoint>.Builder endPoints)
     {
+        var requestMediaTypes = RequestRepresentationPlanner.GetDistinctSupportedMediaTypes(
+            operation,
+            endPointCreationCache.BinarySchemas);
+        for (var index = 0; index < requestMediaTypes.Count; index++)
+        {
+            var requestMediaType = requestMediaTypes[index];
+            AppendEndPointsForRequest(
+                operation,
+                anyOfDatas,
+                endPointCreationCache,
+                endPoints,
+                requestMediaType,
+                index == 0 ? null : GetRequestMethodSuffix(requestMediaType));
+        }
+    }
+
+    private static void AppendEndPointsForRequest(
+        OperationContext operation,
+        IReadOnlyCollection<AnyOfData> anyOfDatas,
+        CSharpEndPointFactory.EndPointCreationCache endPointCreationCache,
+        ImmutableArray<EndPoint>.Builder endPoints,
+        string preferredRequestMediaType,
+        string? requestMethodNameSuffix)
+    {
         var fernStreaming = FernStreamingMetadata.TryCreate(operation);
         var responseContentTypes = (operation.Operation.Responses ?? new Dictionary<string, IOpenApiResponse>())
             .SelectMany(response => (response.Value?.Content ?? new Dictionary<string, IOpenApiMediaType>())
@@ -1096,7 +1120,9 @@ public static class Data
                 preferredMimeType: "application/json",
                 forcedRequestStreamValue: false,
                 successResponseOverride: fernStreaming.RegularResponseOverride,
-                anyOfDatas: anyOfDatas) with
+                anyOfDatas: anyOfDatas,
+                methodNameSuffix: requestMethodNameSuffix,
+                preferredRequestMediaType: preferredRequestMediaType) with
             {
                 AcceptMediaType = "application/json",
             });
@@ -1105,15 +1131,18 @@ public static class Data
                 operation,
                 endPointCreationCache,
                 preferredMimeType: fernStreamMediaType,
-                methodNameSuffix: GetStreamMethodSuffix(
-                    hasRegularJsonVariant: true,
-                    hasAnotherStreamingVariant: false,
-                    streamFormat: fernStreaming.StreamFormat),
+                methodNameSuffix: CombineMethodSuffixes(
+                    requestMethodNameSuffix,
+                    GetStreamMethodSuffix(
+                        hasRegularJsonVariant: true,
+                        hasAnotherStreamingVariant: false,
+                        streamFormat: fernStreaming.StreamFormat)),
                 forcedRequestStreamValue: true,
                 successResponseOverride: fernStreaming.StreamResponseOverride,
                 streamFormatOverride: fernStreaming.StreamFormat,
                 streamTerminator: fernStreaming.Terminator,
-                anyOfDatas: anyOfDatas) with
+                anyOfDatas: anyOfDatas,
+                preferredRequestMediaType: preferredRequestMediaType) with
             {
                 AcceptMediaType = fernStreamMediaType ?? string.Empty,
             });
@@ -1131,7 +1160,9 @@ public static class Data
                 successResponseOverride: fernStreaming.StreamResponseOverride ?? fernStreaming.RegularResponseOverride,
                 streamFormatOverride: fernStreaming.StreamFormat,
                 streamTerminator: fernStreaming.Terminator,
-                anyOfDatas: anyOfDatas));
+                anyOfDatas: anyOfDatas,
+                methodNameSuffix: requestMethodNameSuffix,
+                preferredRequestMediaType: preferredRequestMediaType));
             return;
         }
 
@@ -1141,7 +1172,9 @@ public static class Data
                 operation,
                 endPointCreationCache,
                 successResponseOverride: fernStreaming?.RegularResponseOverride,
-                anyOfDatas: anyOfDatas));
+                anyOfDatas: anyOfDatas,
+                methodNameSuffix: requestMethodNameSuffix,
+                preferredRequestMediaType: preferredRequestMediaType));
             return;
         }
 
@@ -1169,7 +1202,9 @@ public static class Data
                     ? MediaTypeCapabilities.GetResponseSupport(contentType) == MediaTypeTransportSupport.Streaming
                     : null,
                 streamTerminator: fernStreaming?.Terminator,
-                anyOfDatas: anyOfDatas);
+                anyOfDatas: anyOfDatas,
+                methodNameSuffix: requestMethodNameSuffix,
+                preferredRequestMediaType: preferredRequestMediaType);
             var isDuplicate = false;
             for (var index = 0; index < distinctPrototypeCount; index++)
             {
@@ -1209,13 +1244,14 @@ public static class Data
         for (var index = 0; index < distinctPrototypeCount; index++)
         {
             var prototype = prototypes[index];
-            var suffix = index == 0
+            var responseSuffix = index == 0
                 ? null
                 : GetResponseMethodSuffix(
                     prototype,
                     hasRegularResponse,
                     streamingVariantCount,
                     hasBufferedBinaryStreamCompanion);
+            var suffix = CombineMethodSuffixes(requestMethodNameSuffix, responseSuffix);
             var candidate = index == 0
                 ? prototype
                 : CSharpEndPointFactory.CreateEndPointWithCache(
@@ -1227,10 +1263,35 @@ public static class Data
                         ? prototype.EnumerableStream
                         : null,
                     streamTerminator: fernStreaming?.Terminator,
-                    anyOfDatas: anyOfDatas);
+                    anyOfDatas: anyOfDatas,
+                    preferredRequestMediaType: preferredRequestMediaType);
             endPoints.Add(candidate with { AcceptMediaType = candidate.SuccessResponse.MimeType });
         }
 
+    }
+
+    private static string GetRequestMethodSuffix(string mediaType) =>
+        MediaTypeCapabilities.Classify(mediaType) switch
+        {
+            MediaTypeKind.Json => "WithJson",
+            MediaTypeKind.MultipartFormData => "WithMultipartForm",
+            MediaTypeKind.FormUrlEncoded => "WithForm",
+            MediaTypeKind.Binary => "WithBytes",
+            MediaTypeKind.Text => "WithText",
+            MediaTypeKind.MessagePack => "WithMessagePack",
+            MediaTypeKind.Protobuf => "WithProtobuf",
+            MediaTypeKind.SequentialJson => "WithJsonSequence",
+            _ => "WithRawBody",
+        };
+
+    private static string? CombineMethodSuffixes(string? first, string? second)
+    {
+        if (string.IsNullOrWhiteSpace(first))
+        {
+            return second;
+        }
+
+        return string.IsNullOrWhiteSpace(second) ? first : first + second;
     }
 
     private static string GetResponseMethodSuffix(

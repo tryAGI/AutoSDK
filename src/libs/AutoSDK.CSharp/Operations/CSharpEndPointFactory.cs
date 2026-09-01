@@ -44,7 +44,8 @@ public static class CSharpEndPointFactory
         EndPointResponse? successResponseOverride = null,
         StreamFormat? streamFormatOverride = null,
         string? streamTerminator = null,
-        IReadOnlyCollection<AnyOfData>? anyOfDatas = null)
+        IReadOnlyCollection<AnyOfData>? anyOfDatas = null,
+        string? preferredRequestMediaType = null)
     {
         return CreateEndPointWithCache(
             operation,
@@ -55,7 +56,8 @@ public static class CSharpEndPointFactory
             successResponseOverride,
             streamFormatOverride,
             streamTerminator,
-            anyOfDatas);
+            anyOfDatas,
+            preferredRequestMediaType);
     }
 
     internal static EndPoint CreateEndPointWithCache(
@@ -67,7 +69,8 @@ public static class CSharpEndPointFactory
         EndPointResponse? successResponseOverride = null,
         StreamFormat? streamFormatOverride = null,
         string? streamTerminator = null,
-        IReadOnlyCollection<AnyOfData>? anyOfDatas = null)
+        IReadOnlyCollection<AnyOfData>? anyOfDatas = null,
+        string? preferredRequestMediaType = null)
     {
         operation = operation ?? throw new ArgumentNullException(nameof(operation));
 
@@ -75,7 +78,10 @@ public static class CSharpEndPointFactory
         var authorizationRequirements = authorizationData.RequirementSets;
         var authorizations = authorizationData.Authorizations;
 
-        var requestRepresentation = RequestRepresentationPlanner.Select(operation, cache.BinarySchemas);
+        var requestRepresentation = RequestRepresentationPlanner.Select(
+            operation,
+            cache.BinarySchemas,
+            preferredRequestMediaType);
         var requestMediaType = requestRepresentation.MediaType;
         var requestContext = requestRepresentation.SchemaContext;
         var requestItemContext = requestRepresentation.ItemSchemaContext;
