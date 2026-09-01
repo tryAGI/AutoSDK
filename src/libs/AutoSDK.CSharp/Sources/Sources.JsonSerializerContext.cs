@@ -1444,9 +1444,11 @@ namespace {client.Settings.Namespace}
             : type;
     }
 
-    private static bool ShouldIncludeInJsonSerializerContextTypes(string type)
+    private static bool ShouldIncludeInJsonSerializerContextTypes(
+        string type,
+        JsonTypeInfoNameCache typeInfoNames)
     {
-        var implicitName = GetImplicitTypeInfoPropertyName(type);
+        var implicitName = typeInfoNames.GetImplicit(type);
         if (implicitName.Length > MaxGeneratedTypeInfoNameLength)
         {
             return false;

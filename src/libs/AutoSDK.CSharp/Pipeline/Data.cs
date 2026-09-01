@@ -193,10 +193,11 @@ public static class Data
         var methods = ImmutableArray.CreateBuilder<EndPoint>(filteredOperations.Length);
         foreach (var operation in filteredOperations)
         {
-            methods.AddRange(CreateEndPoints(
+            AppendEndPoints(
                 operation,
                 anyOfDatas,
-                endPointCreationCache));
+                endPointCreationCache,
+                methods);
         }
         endPointsTime.Stop();
 #if NET
@@ -1020,10 +1021,11 @@ public static class Data
             : documentServers;
     }
 
-    private static List<EndPoint> CreateEndPoints(
+    private static void AppendEndPoints(
         OperationContext operation,
         IReadOnlyCollection<AnyOfData> anyOfDatas,
-        CSharpEndPointFactory.EndPointCreationCache endPointCreationCache)
+        CSharpEndPointFactory.EndPointCreationCache endPointCreationCache,
+        ImmutableArray<EndPoint>.Builder endPoints)
     {
         var fernStreaming = FernStreamingMetadata.TryCreate(operation);
         var responseContentTypes = (operation.Operation.Responses ?? new Dictionary<string, IOpenApiResponse>())
@@ -1052,8 +1054,6 @@ public static class Data
             contentType.IsSequentialJsonMimeType());
         var hasSse = supportedResponseContentTypes.Any(static contentType =>
             contentType.IsServerSentEventsMimeType());
-
-        var endPoints = new List<EndPoint>();
 
         if (fernStreaming?.HasRequestStreamCondition == true)
         {
@@ -1084,7 +1084,7 @@ public static class Data
             {
                 AcceptMediaType = fernStreamMediaType ?? string.Empty,
             });
-            return endPoints;
+            return;
         }
 
         if (fernStreaming != null &&
@@ -1099,7 +1099,7 @@ public static class Data
                 streamFormatOverride: fernStreaming.StreamFormat,
                 streamTerminator: fernStreaming.Terminator,
                 anyOfDatas: anyOfDatas));
-            return endPoints;
+            return;
         }
 
         if (supportedResponseContentTypes.Length == 0)
@@ -1109,7 +1109,7 @@ public static class Data
                 endPointCreationCache,
                 successResponseOverride: fernStreaming?.RegularResponseOverride,
                 anyOfDatas: anyOfDatas));
-            return endPoints;
+            return;
         }
 
         var hasRegularResponse = supportedResponseContentTypes.Any(static contentType =>
@@ -1122,8 +1122,13 @@ public static class Data
             .ThenByDescending(static contentType =>
                 MediaTypeCapabilities.GetResponseSupport(contentType) != MediaTypeTransportSupport.Streaming)
             .ToArray();
-        var prototypes = orderedContentTypes
-            .Select(contentType => CSharpEndPointFactory.CreateEndPointWithCache(
+        var prototypes = new EndPoint[orderedContentTypes.Length];
+        var distinctPrototypeCount = 0;
+        var streamingVariantCount = 0;
+        var hasBufferedBinaryStreamCompanion = false;
+        foreach (var contentType in orderedContentTypes)
+        {
+            var prototype = CSharpEndPointFactory.CreateEndPointWithCache(
                 operation,
                 endPointCreationCache,
                 preferredMimeType: contentType,
@@ -1131,36 +1136,52 @@ public static class Data
                     ? MediaTypeCapabilities.GetResponseSupport(contentType) == MediaTypeTransportSupport.Streaming
                     : null,
                 streamTerminator: fernStreaming?.Terminator,
-                anyOfDatas: anyOfDatas))
-            .ToArray();
-        var distinctPrototypes = prototypes
-            .GroupBy(static endPoint => (
-                endPoint.StreamFormat,
-                endPoint.ContentType,
-                endPoint.SuccessResponse.Type.CSharpTypeWithoutNullability))
-            .Select(static group => group.First())
-            .ToArray();
-        var hasBufferedBinaryStreamCompanion = distinctPrototypes.Any(static candidate =>
-            !candidate.EnumerableStream &&
-            candidate.ContentType == ContentType.ByteArray &&
-            candidate.SuccessResponse.Type.IsBinary &&
-            candidate.SuccessResponse.Type.CSharpTypeWithoutNullability == "byte[]");
+                anyOfDatas: anyOfDatas);
+            var isDuplicate = false;
+            for (var index = 0; index < distinctPrototypeCount; index++)
+            {
+                var existing = prototypes[index];
+                if (existing.StreamFormat == prototype.StreamFormat &&
+                    existing.ContentType == prototype.ContentType &&
+                    string.Equals(
+                        existing.SuccessResponse.Type.CSharpTypeWithoutNullability,
+                        prototype.SuccessResponse.Type.CSharpTypeWithoutNullability,
+                        StringComparison.Ordinal))
+                {
+                    isDuplicate = true;
+                    break;
+                }
+            }
 
-        if (distinctPrototypes.Length == 1)
-        {
-            endPoints.Add(distinctPrototypes[0]);
-            return endPoints;
+            if (isDuplicate)
+            {
+                continue;
+            }
+
+            prototypes[distinctPrototypeCount++] = prototype;
+            streamingVariantCount += prototype.EnumerableStream ? 1 : 0;
+            hasBufferedBinaryStreamCompanion |=
+                !prototype.EnumerableStream &&
+                prototype.ContentType == ContentType.ByteArray &&
+                prototype.SuccessResponse.Type.IsBinary &&
+                prototype.SuccessResponse.Type.CSharpTypeWithoutNullability == "byte[]";
         }
 
-        for (var index = 0; index < distinctPrototypes.Length; index++)
+        if (distinctPrototypeCount == 1)
         {
-            var prototype = distinctPrototypes[index];
+            endPoints.Add(prototypes[0]);
+            return;
+        }
+
+        for (var index = 0; index < distinctPrototypeCount; index++)
+        {
+            var prototype = prototypes[index];
             var suffix = index == 0
                 ? null
                 : GetResponseMethodSuffix(
                     prototype,
                     hasRegularResponse,
-                    distinctPrototypes.Count(static candidate => candidate.EnumerableStream),
+                    streamingVariantCount,
                     hasBufferedBinaryStreamCompanion);
             var candidate = index == 0
                 ? prototype
@@ -1177,7 +1198,6 @@ public static class Data
             endPoints.Add(candidate with { AcceptMediaType = candidate.SuccessResponse.MimeType });
         }
 
-        return endPoints;
     }
 
     private static string GetResponseMethodSuffix(

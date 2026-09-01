@@ -41,12 +41,12 @@ public static partial class Sources
             typeInfoNames,
             typeComponents);
         var distinctTypes = allDistinctTypes
-            .Where(ShouldIncludeInJsonSerializerContextTypes)
+            .Where(type => ShouldIncludeInJsonSerializerContextTypes(type, typeInfoNames))
             .Where(x => !skippedContextTypes.Contains(x))
             .ToArray();
 
         concreteListTypes = concreteListTypes
-            .Where(ShouldIncludeInJsonSerializerContextTypes)
+            .Where(type => ShouldIncludeInJsonSerializerContextTypes(type, typeInfoNames))
             .Where(x => !skippedContextTypes.Contains(x))
             .ToArray();
 
