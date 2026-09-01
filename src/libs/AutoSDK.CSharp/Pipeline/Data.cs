@@ -109,10 +109,9 @@ public static class Data
 #endif
 
         var schemaModelsTime = Stopwatch.StartNew();
-        var classesBuilder = ImmutableArray.CreateBuilder<ModelData>();
-        var enumsBuilder = ImmutableArray.CreateBuilder<ModelData>();
+        var classCount = 0;
+        var enumCount = 0;
         var anyOfSet = new HashSet<AnyOfData>();
-        var anyOfBuilder = ImmutableArray.CreateBuilder<AnyOfData>();
         foreach (var schema in filteredSchemas)
         {
             if (schema.IsReference)
@@ -120,6 +119,40 @@ public static class Data
                 continue;
             }
             if (IsSuppressedLegacyPolymorphicSchema(schema, suppressedLegacyPolymorphicSchemas))
+            {
+                continue;
+            }
+
+            if (schema.IsAnyOfLikeStructure)
+            {
+                if (schema.AnyOfData is { } anyOf)
+                {
+                    anyOfSet.Add(anyOf);
+                }
+            }
+            else
+            {
+                if (schema.IsClass && !schema.Schema.IsNullableOneOf())
+                {
+                    classCount++;
+                }
+
+                if (schema.IsEnum)
+                {
+                    enumCount++;
+                }
+            }
+        }
+
+        var anyOfCount = anyOfSet.Count;
+        anyOfSet.Clear();
+        var classesBuilder = ImmutableArray.CreateBuilder<ModelData>(classCount);
+        var enumsBuilder = ImmutableArray.CreateBuilder<ModelData>(enumCount);
+        var anyOfBuilder = ImmutableArray.CreateBuilder<AnyOfData>(anyOfCount);
+        foreach (var schema in filteredSchemas)
+        {
+            if (schema.IsReference ||
+                IsSuppressedLegacyPolymorphicSchema(schema, suppressedLegacyPolymorphicSchemas))
             {
                 continue;
             }
@@ -145,9 +178,9 @@ public static class Data
             }
         }
 
-        var classes = classesBuilder.ToImmutable();
-        var enums = enumsBuilder.ToImmutable();
-        var anyOfDatas = anyOfBuilder.ToImmutable();
+        var classes = classesBuilder.MoveToImmutable();
+        var enums = enumsBuilder.MoveToImmutable();
+        var anyOfDatas = anyOfBuilder.MoveToImmutable();
         schemaModelsTime.Stop();
         collectSchemasTime.Stop();
 #if NET
