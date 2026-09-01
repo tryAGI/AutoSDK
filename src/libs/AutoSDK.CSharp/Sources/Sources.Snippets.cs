@@ -32,15 +32,22 @@ public static partial class Sources
         operations = operations ?? throw new ArgumentNullException(nameof(operations));
         endPoints = endPoints ?? throw new ArgumentNullException(nameof(endPoints));
 
-        var primaryEndPoints = endPoints
-            .Where(static x => !string.IsNullOrWhiteSpace(x.Id))
-            .GroupBy(static x => x.Id, StringComparer.Ordinal)
-            .ToDictionary(
-                static x => x.Key,
-                static x => x
-                    .OrderBy(static y => y.Stream)
-                    .First(),
-                StringComparer.Ordinal);
+        var primaryEndPoints = new Dictionary<string, EndPoint>(
+            endPoints.Count,
+            StringComparer.Ordinal);
+        foreach (var endPoint in endPoints)
+        {
+            if (string.IsNullOrWhiteSpace(endPoint.Id))
+            {
+                continue;
+            }
+
+            if (!primaryEndPoints.TryGetValue(endPoint.Id, out var existing) ||
+                (existing.Stream && !endPoint.Stream))
+            {
+                primaryEndPoints[endPoint.Id] = endPoint;
+            }
+        }
 
         var snippets = new List<GeneratedSdkSnippetDocument>();
         foreach (var operation in operations
