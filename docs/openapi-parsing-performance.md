@@ -350,6 +350,69 @@ the only failures were the two pre-existing ElevenLabs serializer cases caused b
 independent Unix-millisecond integer change in `b6fdda515c`, and no other `.received`
 files remained.
 
+### Collection compaction after streamed rendering
+
+The next allocation profiles showed that the remaining avoidable cost was spread across
+several collection boundaries rather than one renderer. Endpoint enrichment created a
+temporary list per operation and grouped response prototypes; snippet generation grouped
+every generated endpoint even though it needed one non-streaming method per operation id.
+Schema collection grew large immutable builders before copying them, enum descriptions
+split the same text once per value, model rendering materialized up to five overlapping
+`PropertyData` arrays, and query parameters were copied from a list into their final
+immutable array.
+
+These paths now use one-pass selection, exact-capacity builders, direct description scans,
+and a single final parameter representation. The serializer-context type pass also reuses
+its generation-scoped type-info-name cache. Fresh isolated CLI allocations after
+`56d07d95ce` were:
+
+| Workload | Total at `3c9695df7d` | Total after | Reduction | Pipeline after | Render after | Model types after | Endpoints after |
+| --- | ---: | ---: | ---: | ---: | ---: | ---: | ---: |
+| App Store Connect | 1,138.2 MB | 1,077.0 MB | 5.4% | 422.4 MB | 501.8 MB | 39.6 MB | 42.3 MB |
+| Vapi | 427.0 MB | 409.4 MB | 4.1% | 194.2 MB | 176.8 MB | 35.1 MB | 12.3 MB |
+
+Relative to the streamed-output baseline at `850a1da375`, total allocation is down 12.0%
+on both App Store Connect (1,224.3 MB to 1,077.0 MB) and Vapi (465.3 MB to 409.4 MB).
+All 24,895 App Store Connect files and all 6,466 Vapi files stayed byte-identical through
+every retained step. The Release solution builds with zero warnings, all 566 unit tests
+pass, and the focused endpoint, inheritance, leaf-factory, and multi-representation
+snapshot lanes pass. The post-change trace leaves final UTF-16 output strings, the
+Microsoft.OpenApi reader/reference resolver, and required schema/model structures as the
+dominant costs; further reductions there require either changing generated representation
+or upstream reader behavior rather than removing another local materialization boundary.
+
+### GitHub compatibility and snippet follow-up
+
+The 7.9 MB pinned GitHub YAML adds a materially different shape: 16,942 generated files,
+8,343 enums, and a 748-entry snippet manifest. Its fresh trace showed 292.8 MB in parsing,
+including 219.3 MB in the Microsoft reader, plus 68.4 MB in snippet generation. Internal
+snippet counters attributed 26.3 MB to HTTP fallback generation, 13.5 MB to attempted C#
+examples, 7.9 MB to source selection, and 5.6 MB to final JSON serialization. Most of that
+is the required example/schema traversal and final text, but HTTP query/header assembly and
+legacy-example discovery still had avoidable intermediate collections.
+
+Commit `963e350978` now streams query parameters, security query values, and headers directly
+into the HTTP builder, caches repeated legacy-example lookups during snippet selection, and
+scans source collections without LINQ materialization. More importantly, the YAML
+compatibility line index now stores a byte-sized key classification instead of a string
+reference per source line. GitHub compatibility-normalization allocation fell from 23.81 MB
+to 21.11 MB (-2.70 MB), while all 16,942 files remained byte-identical. Fresh total
+allocation was 1,060.3 MB, with 554.6 MB in the pipeline, 348.6 MB in rendering, 68.5 MB in
+snippets, and 30.9 MB in output processing.
+
+The compatibility layer remains necessary for Microsoft.OpenApi 3.10.2's semantic gaps:
+OpenAPI 3.0 primitive-union restoration and JSON null-enum normalization are still retained.
+The generator now avoids inserting the private primitive-union marker for OpenAPI 3.1 and
+skips the post-reader compatibility walk only for YAML 3.1, where that walk is otherwise a
+no-op. A dedicated OpenAPI 3.1 YAML canary covers this boundary.
+
+The same build produced 6,466 byte-identical Vapi files at 408.3 MB total allocation and
+24,895 byte-identical App Store Connect files at 1,076.4 MB. The remaining GitHub hotspots
+are structurally bounded: the upstream reader is 219.3 MB, the required OpenAPI 3.0
+compatibility walk is 22.1 MB, and the largest render phases mostly consist of final UTF-16
+source strings plus their pooled construction buffers. Further local changes tested in the
+snippet path either saved less than 1 MB or regressed allocations, so they were not kept.
+
 ## Upstream issue draft
 
 **Title:** Reduce YAML materialization cost for large OpenAPI documents

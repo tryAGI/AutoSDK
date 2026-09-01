@@ -28,9 +28,11 @@
         "freshOutputPhysicalWriteWorkerMilliseconds": 10000,
         "cacheHitTotalMilliseconds": 750,
         "cacheValidationMilliseconds": 650,
-        "totalAllocatedBytes": 1500000000,
-        "renderAllocatedBytes": 520000000,
-        "writeAllocatedBytes": 120000000
+        "totalAllocatedBytes": 1150000000,
+        "pipelineAllocatedBytes": 620000000,
+        "renderAllocatedBytes": 400000000,
+        "snippetAllocatedBytes": 80000000,
+        "writeAllocatedBytes": 60000000
       },
       "baselineBeforeFreshFileDirectWrites": {
         "commit": "ff38ca9a1647b2acae2f27eaf4fc0baa014a6fd9",
@@ -120,7 +122,7 @@
           "compatibilityWalkerMilliseconds": 75,
           "postProcessingMilliseconds": 400,
           "jsonSyntaxAllocatedBytes": 1000000,
-          "compatibilityNormalizationAllocatedBytes": 50000000,
+        "compatibilityNormalizationAllocatedBytes": 30000000,
           "microsoftReaderAllocatedBytes": 250000000,
           "compatibilityWalkerAllocatedBytes": 40000000,
           "postProcessingAllocatedBytes": 300000000
@@ -282,12 +284,25 @@
           "warmCoreNamingAllocationReductionPercent": 46.3,
           "freshCliRenderAllocationReductionPercent": 30.0
         },
-        "parity": {
-          "generatedFiles": 16942,
-          "differentFiles": 0,
-          "baselineCliVersion": "0.32.1-dev.42"
-        }
+      "parity": {
+        "generatedFiles": 16942,
+        "differentFiles": 0,
+        "baselineCliVersion": "0.32.1-dev.42"
       }
+    },
+    "compatibilityAndSnippetCompactionVerification": {
+      "generatorCommit": "963e350978",
+      "totalAllocatedBytes": 1060287528,
+      "pipelineAllocatedBytes": 554603440,
+      "parsingAllocatedBytes": 290095600,
+      "compatibilityNormalizationAllocatedBytes": 21106952,
+      "compatibilityWalkerAllocatedBytes": 22089760,
+      "renderAllocatedBytes": 348603480,
+      "snippetAllocatedBytes": 68520840,
+      "writeAllocatedBytes": 30858744,
+      "generatedFiles": 16942,
+      "differentFiles": 0
+    }
     },
     "appStoreConnect": {
       "source": {
@@ -644,17 +659,18 @@
       },
       "generatedFiles": 6466,
       "maximum": {
-        "totalAllocatedBytes": 470000000,
-        "renderAllocatedBytes": 210000000,
-        "writeAllocatedBytes": 50000000,
-        "pipelineAllocatedBytes": 225000000,
-        "coreComputeDataAllocatedBytes": 100000000,
-        "coreComputeClassesAllocatedBytes": 42000000,
-        "coreSchemaModelsAllocatedBytes": 18000000,
-        "coreEndpointsAllocatedBytes": 20000000,
-        "modelJsonAllocatedBytes": 25000000,
-        "methodImplementationAllocatedBytes": 20000000,
-        "methodInterfaceAllocatedBytes": 5000000
+        "totalAllocatedBytes": 450000000,
+        "renderAllocatedBytes": 200000000,
+        "writeAllocatedBytes": 30000000,
+        "pipelineAllocatedBytes": 215000000,
+        "coreComputeDataAllocatedBytes": 90000000,
+        "coreComputeClassesAllocatedBytes": 35000000,
+        "coreSchemaModelsAllocatedBytes": 15000000,
+        "coreEndpointsAllocatedBytes": 16000000,
+        "modelTypeAllocatedBytes": 45000000,
+        "modelJsonAllocatedBytes": 22000000,
+        "methodImplementationAllocatedBytes": 16000000,
+        "methodInterfaceAllocatedBytes": 4000000
       },
       "observedBefore": {
         "totalAllocatedBytes": 592029288,
@@ -687,6 +703,40 @@
         "modelJsonAllocatedBytes": 16632880,
         "methodImplementationAllocatedBytes": 12810376,
         "methodInterfaceAllocatedBytes": 2258968,
+        "differentFiles": 0
+      },
+      "observedAfterCollectionCompaction": {
+        "generatorCommit": "56d07d95ce",
+        "totalAllocatedBytes": 409375112,
+        "pipelineAllocatedBytes": 194231960,
+        "coreComputeDataAllocatedBytes": 78263944,
+        "coreComputeClassesAllocatedBytes": 27712792,
+        "coreSchemaModelsAllocatedBytes": 12140368,
+        "coreEndpointsAllocatedBytes": 12309816,
+        "renderAllocatedBytes": 176769496,
+        "modelTypeAllocatedBytes": 35074016,
+        "modelJsonAllocatedBytes": 16632568,
+        "methodImplementationAllocatedBytes": 12557704,
+        "methodInterfaceAllocatedBytes": 2246872,
+        "snippetAllocatedBytes": 3628824,
+        "writeAllocatedBytes": 13103384,
+        "differentFiles": 0
+      },
+      "observedAfterCompatibilityAndSnippetCompaction": {
+        "generatorCommit": "963e350978",
+        "totalAllocatedBytes": 408345648,
+        "pipelineAllocatedBytes": 193246896,
+        "coreComputeDataAllocatedBytes": 77499256,
+        "coreComputeClassesAllocatedBytes": 27482560,
+        "coreSchemaModelsAllocatedBytes": 12140440,
+        "coreEndpointsAllocatedBytes": 12079512,
+        "renderAllocatedBytes": 177701800,
+        "modelTypeAllocatedBytes": 35438840,
+        "modelJsonAllocatedBytes": 16681448,
+        "methodImplementationAllocatedBytes": 12303024,
+        "methodInterfaceAllocatedBytes": 2247080,
+        "snippetAllocatedBytes": 3688496,
+        "writeAllocatedBytes": 11974768,
         "differentFiles": 0
       }
     },
@@ -829,13 +879,15 @@
       "generatedFiles": 24895,
       "generatedBytes": 143473963,
       "maximum": {
-        "totalAllocatedBytes": 1300000000,
-        "renderAllocatedBytes": 600000000,
+        "totalAllocatedBytes": 1150000000,
+        "renderAllocatedBytes": 550000000,
         "writeAllocatedBytes": 80000000,
-        "pipelineAllocatedBytes": 500000000,
-        "coreComputeDataAllocatedBytes": 110000000,
-        "coreComputeClassesAllocatedBytes": 160000000,
-        "coreEndpointsAllocatedBytes": 75000000,
+        "pipelineAllocatedBytes": 460000000,
+        "coreComputeDataAllocatedBytes": 100000000,
+        "coreComputeClassesAllocatedBytes": 115000000,
+        "coreSchemaModelsAllocatedBytes": 40000000,
+        "coreEndpointsAllocatedBytes": 50000000,
+        "modelTypeAllocatedBytes": 50000000,
         "modelJsonAllocatedBytes": 90000000,
         "methodImplementationAllocatedBytes": 160000000,
         "methodInterfaceAllocatedBytes": 20000000
@@ -870,6 +922,40 @@
         "modelJsonAllocatedBytes": 73050632,
         "methodImplementationAllocatedBytes": 141163232,
         "methodInterfaceAllocatedBytes": 13159704,
+        "differentFiles": 0
+      },
+      "observedAfterCollectionCompaction": {
+        "generatorCommit": "56d07d95ce",
+        "totalAllocatedBytes": 1076957112,
+        "pipelineAllocatedBytes": 422425176,
+        "coreComputeDataAllocatedBytes": 84795496,
+        "coreComputeClassesAllocatedBytes": 97145656,
+        "coreSchemaModelsAllocatedBytes": 32028848,
+        "coreEndpointsAllocatedBytes": 42282464,
+        "renderAllocatedBytes": 501804848,
+        "modelTypeAllocatedBytes": 39623968,
+        "modelJsonAllocatedBytes": 73053192,
+        "methodImplementationAllocatedBytes": 141311192,
+        "methodInterfaceAllocatedBytes": 13159576,
+        "snippetAllocatedBytes": 43823192,
+        "writeAllocatedBytes": 47964904,
+        "differentFiles": 0
+      },
+      "observedAfterCompatibilityAndSnippetCompaction": {
+        "generatorCommit": "963e350978",
+        "totalAllocatedBytes": 1076388856,
+        "pipelineAllocatedBytes": 421328672,
+        "coreComputeDataAllocatedBytes": 83806264,
+        "coreComputeClassesAllocatedBytes": 97028760,
+        "coreSchemaModelsAllocatedBytes": 32028920,
+        "coreEndpointsAllocatedBytes": 42169040,
+        "renderAllocatedBytes": 502093560,
+        "modelTypeAllocatedBytes": 39689288,
+        "modelJsonAllocatedBytes": 73053216,
+        "methodImplementationAllocatedBytes": 141151888,
+        "methodInterfaceAllocatedBytes": 13159576,
+        "snippetAllocatedBytes": 43706160,
+        "writeAllocatedBytes": 48032520,
         "differentFiles": 0
       }
     },
@@ -1036,6 +1122,8 @@
     "Current-provider and expanded-production CLI results use each provider's production generation arguments and were byte-identical to public AutoSDK.CLI 0.32.1-dev.48.",
     "Render and output-streaming thresholds use commit 850a1da375; all 92700 pinned and expanded-corpus files were byte-identical to the pre-change outputs.",
     "Endpoint and model-JSON thresholds use commit 3c9695df7d; App Store Connect and Vapi remained byte-identical to their pre-change outputs, and the snapshot corpus had no related regressions.",
+    "Collection-compaction thresholds use commit 56d07d95ce and cover endpoint prototype selection, serializer-context type-name caching, snippet endpoint lookup, exact model collection sizing, enum description scanning, constructor-property classification, and direct immutable query-parameter materialization.",
+    "Compatibility and snippet-scan thresholds use commit 963e350978; the OpenAPI 3.0 compatibility behavior is retained, OpenAPI 3.1 YAML skips its no-op post-reader walk, and GitHub, App Store Connect, and Vapi outputs remained byte-identical.",
     "All expanded-production workloads now carry total, render, and write allocation ceilings; phase-specific enrichment ceilings remain limited to App Store Connect and Vercel."
   ]
 }
