@@ -1,4 +1,4 @@
-﻿//HintName: G.IUsageClient.Get3.g.cs
+//HintName: G.IUsageClient.Get3.g.cs
 #nullable enable
 
 namespace G
@@ -41,8 +41,8 @@ namespace G
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::G.ApiException"></exception>
         global::System.Threading.Tasks.Task<global::G.UsageCharactersResponseModel> Get3Async(
-            global::System.DateTimeOffset startUnix,
-            global::System.DateTimeOffset endUnix,
+            int startUnix,
+            int endUnix,
             bool? includeWorkspaceMetrics = default,
             global::G.BreakdownTypes? breakdownType = default,
             global::G.UsageAggregationInterval? aggregationInterval = default,
@@ -87,8 +87,8 @@ namespace G
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::G.ApiException"></exception>
         global::System.Threading.Tasks.Task<global::G.AutoSDKHttpResponse<global::G.UsageCharactersResponseModel>> Get3AsResponseAsync(
-            global::System.DateTimeOffset startUnix,
-            global::System.DateTimeOffset endUnix,
+            int startUnix,
+            int endUnix,
             bool? includeWorkspaceMetrics = default,
             global::G.BreakdownTypes? breakdownType = default,
             global::G.UsageAggregationInterval? aggregationInterval = default,

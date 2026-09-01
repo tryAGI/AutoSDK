@@ -1,4 +1,4 @@
-﻿//HintName: G.UsageClient.Get3.g.cs
+//HintName: G.UsageClient.Get3.g.cs
 
 #nullable enable
 
@@ -8,8 +8,8 @@ namespace G
     {
         partial void PrepareGet3Arguments(
             global::System.Net.Http.HttpClient httpClient,
-            ref global::System.DateTimeOffset startUnix,
-            ref global::System.DateTimeOffset endUnix,
+            ref int startUnix,
+            ref int endUnix,
             ref bool? includeWorkspaceMetrics,
             ref global::G.BreakdownTypes? breakdownType,
             ref global::G.UsageAggregationInterval? aggregationInterval,
@@ -19,8 +19,8 @@ namespace G
         partial void PrepareGet3Request(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
-            global::System.DateTimeOffset startUnix,
-            global::System.DateTimeOffset endUnix,
+            int startUnix,
+            int endUnix,
             bool? includeWorkspaceMetrics,
             global::G.BreakdownTypes? breakdownType,
             global::G.UsageAggregationInterval? aggregationInterval,
@@ -72,8 +72,8 @@ namespace G
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::G.ApiException"></exception>
         public async global::System.Threading.Tasks.Task<global::G.UsageCharactersResponseModel> Get3Async(
-            global::System.DateTimeOffset startUnix,
-            global::System.DateTimeOffset endUnix,
+            int startUnix,
+            int endUnix,
             bool? includeWorkspaceMetrics = default,
             global::G.BreakdownTypes? breakdownType = default,
             global::G.UsageAggregationInterval? aggregationInterval = default,
@@ -134,8 +134,8 @@ namespace G
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::G.ApiException"></exception>
         public async global::System.Threading.Tasks.Task<global::G.AutoSDKHttpResponse<global::G.UsageCharactersResponseModel>> Get3AsResponseAsync(
-            global::System.DateTimeOffset startUnix,
-            global::System.DateTimeOffset endUnix,
+            int startUnix,
+            int endUnix,
             bool? includeWorkspaceMetrics = default,
             global::G.BreakdownTypes? breakdownType = default,
             global::G.UsageAggregationInterval? aggregationInterval = default,
