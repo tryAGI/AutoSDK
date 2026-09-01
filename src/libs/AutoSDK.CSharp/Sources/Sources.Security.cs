@@ -194,6 +194,10 @@ namespace {settings.Namespace}
             {{
                 Authorizations = new global::{endPoint.GlobalSettings.Namespace}.EndPointAuthorizationRequirement[]
                 {{");
+            if (requirement.Authorizations.IsEmpty)
+            {
+                builder.Append(' ');
+            }
             for (var authorizationIndex = 0; authorizationIndex < requirement.Authorizations.Length; authorizationIndex++)
             {
                 var authorization = requirement.Authorizations[authorizationIndex];

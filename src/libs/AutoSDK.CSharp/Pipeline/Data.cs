@@ -190,12 +190,14 @@ public static class Data
 
         var endPointsTime = Stopwatch.StartNew();
         var endPointCreationCache = new CSharpEndPointFactory.EndPointCreationCache();
-        var methods = filteredOperations
-            .SelectMany(operation => CreateEndPoints(
+        var methods = ImmutableArray.CreateBuilder<EndPoint>(filteredOperations.Length);
+        foreach (var operation in filteredOperations)
+        {
+            methods.AddRange(CreateEndPoints(
                 operation,
                 anyOfDatas,
-                endPointCreationCache))
-            .ToImmutableArray();
+                endPointCreationCache));
+        }
         endPointsTime.Stop();
 #if NET
         var allocAfterEndPoints = GC.GetTotalAllocatedBytes(precise: true);
@@ -209,12 +211,10 @@ public static class Data
                 StringComparer.Ordinal))
             .Select(x => CSharpAuthorizationFactory.FromOpenApiSecurityScheme(x.Key, settings, globalSettings))
             .Concat(methods.SelectMany(x => x.Authorizations)));
-        var normalizedMethodsBuilder = ImmutableArray.CreateBuilder<EndPoint>(methods.Length);
-        foreach (var method in methods)
+        for (var index = 0; index < methods.Count; index++)
         {
-            normalizedMethodsBuilder.Add(AuthorizationHelpers.NormalizeEndPoint(method, authorizationsByIdentity));
+            methods[index] = AuthorizationHelpers.NormalizeEndPoint(methods[index], authorizationsByIdentity);
         }
-        methods = normalizedMethodsBuilder.MoveToImmutable();
         authorizationsTime.Stop();
 #if NET
         var allocAfterAuthorizations = GC.GetTotalAllocatedBytes(precise: true);
@@ -306,19 +306,17 @@ public static class Data
             .Where(tag => tag.Name != null && activeTagNames.Contains(tag.Name))
             .ToArray();
         var resolvedIncludedTagsMap = CSharpClientNameGenerator.ResolveTags(settings, activeIncludedTags);
-        var resolvedMethodsBuilder = ImmutableArray.CreateBuilder<EndPoint>(methods.Length);
-        foreach (var method in methods)
+        for (var index = 0; index < methods.Count; index++)
         {
-            resolvedMethodsBuilder.Add(ResolveEndPointTag(method, resolvedIncludedTagsMap));
+            methods[index] = ResolveEndPointTag(methods[index], resolvedIncludedTagsMap);
         }
-        resolvedMethodsBuilder.Sort(static (left, right) =>
+        methods.Sort(static (left, right) =>
         {
             var tagComparison = StringComparer.Ordinal.Compare(left.Tag.SafeName, right.Tag.SafeName);
             return tagComparison != 0
                 ? tagComparison
                 : StringComparer.Ordinal.Compare(left.NotAsyncMethodName, right.NotAsyncMethodName);
         });
-        methods = resolvedMethodsBuilder.MoveToImmutable();
         var resolvedIncludedTags = activeIncludedTags
             .Select(tag => resolvedIncludedTagsMap[tag.Name!])
             .OrderBy(tag => tag.SafeName, StringComparer.Ordinal)
@@ -328,9 +326,9 @@ public static class Data
         var documentServers = CSharpServerFactory.CreateServerOptions(openApiDocument.Servers);
         var clientServersByClass = BuildClientServerMap(methods, rootClassName, documentServers);
         var usesServerSelectionSupport = clientServersByClass.Values.Any(static servers => servers.Length > 1);
-        methods = ApplyClientServerSelectionSupport(methods, clientServersByClass, usesServerSelectionSupport);
-        methods = ApplyLocationWaitCompanions(methods);
-        methods = ApplyPageableMetadata(methods, classes, settings);
+        ApplyClientServerSelectionSupport(methods, clientServersByClass, usesServerSelectionSupport);
+        ApplyLocationWaitCompanions(methods);
+        ApplyPageableMetadata(methods, classes, settings);
         var rootClientServers = GetClientServers(rootClassName, clientServersByClass, documentServers);
 
         Client[] clients = settings.GenerateSdk || settings.GenerateConstructors
@@ -461,7 +459,9 @@ public static class Data
         return new Models.Data(
             Classes: outputClasses,
             Enums: outputEnums,
-            Methods: methods,
+            Methods: methods.Capacity == methods.Count
+                ? methods.MoveToImmutable()
+                : methods.ToImmutable(),
             Clients: clients.ToImmutableArray(),
             AnyOfs: outputAnyOfDatas,
             Types: types,
@@ -564,28 +564,27 @@ public static class Data
         }
     }
 
-    private static ImmutableArray<EndPoint> ApplyClientServerSelectionSupport(
-        ImmutableArray<EndPoint> methods,
+    private static void ApplyClientServerSelectionSupport(
+        ImmutableArray<EndPoint>.Builder methods,
         Dictionary<string, EquatableArray<ServerOption>> clientServersByClass,
         bool usesServerSelectionSupport)
     {
-        if (!usesServerSelectionSupport || methods.IsEmpty)
+        if (!usesServerSelectionSupport || methods.Count == 0)
         {
-            return methods;
+            return;
         }
 
-        var builder = ImmutableArray.CreateBuilder<EndPoint>(methods.Length);
-        foreach (var method in methods)
+        for (var index = 0; index < methods.Count; index++)
         {
-            builder.Add(method with
+            var method = methods[index];
+            methods[index] = method with
             {
                 UsesServerSelectionSupport = usesServerSelectionSupport,
                 ClientUsesServerSelectionSupport =
                     clientServersByClass.TryGetValue(method.ClassName, out var servers) &&
                     servers.Length > 1,
-            });
+            };
         }
-        return builder.MoveToImmutable();
     }
 
     private static bool NeedsScopedServerResolver(
@@ -608,151 +607,153 @@ public static class Data
     /// a <c>&lt;Method&gt;AutoPagingAsync</c> companion backed by
     /// <c>AutoSDKPager.OffsetAsync</c>.
     /// </summary>
-    private static ImmutableArray<EndPoint> ApplyPageableMetadata(
-        ImmutableArray<EndPoint> methods,
+    private static void ApplyPageableMetadata(
+        ImmutableArray<EndPoint>.Builder methods,
         ImmutableArray<ModelData> classes,
         CSharpSettings settings)
     {
-        if (!settings.GeneratePageableHelpers || methods.IsEmpty)
+        if (!settings.GeneratePageableHelpers || methods.Count == 0)
         {
-            return methods;
+            return;
         }
 
         var classByName = classes
             .Where(static c => !string.IsNullOrEmpty(c.GlobalClassName))
             .ToDictionary(static c => c.GlobalClassName, static c => c, StringComparer.Ordinal);
 
-        return methods
-            .Select(method =>
+        for (var index = 0; index < methods.Count; index++)
+        {
+            var method = methods[index];
+            if (method.HttpMethod != System.Net.Http.HttpMethod.Get ||
+                method.HasPageableHelper ||
+                string.IsNullOrWhiteSpace(method.SuccessResponse.Type.CSharpType))
             {
-                if (method.HttpMethod != System.Net.Http.HttpMethod.Get ||
-                    method.HasPageableHelper ||
-                    string.IsNullOrWhiteSpace(method.SuccessResponse.Type.CSharpType))
+                continue;
+            }
+
+            var responseClassName = method.SuccessResponse.Type.CSharpTypeWithoutNullability;
+            if (!classByName.TryGetValue(responseClassName, out var responseClass))
+            {
+                continue;
+            }
+
+            // Locate the single array property on the response. Multiple array
+            // properties make the items field ambiguous and skip detection.
+            PropertyData? itemsProperty = null;
+            foreach (var property in responseClass.Properties)
+            {
+                if (!property.Type.IsArray ||
+                    property.Type.SubTypes.Length == 0 ||
+                    string.IsNullOrWhiteSpace(property.Type.SubTypes[0].Unbox<TypeData>().CSharpType))
                 {
-                    return method;
+                    continue;
                 }
 
-                var responseClassName = method.SuccessResponse.Type.CSharpTypeWithoutNullability;
-                if (!classByName.TryGetValue(responseClassName, out var responseClass))
+                if (itemsProperty != null)
                 {
-                    return method;
+                    itemsProperty = null;
+                    break;
                 }
 
-                // Locate the single array property on the response. Multiple array
-                // properties make the items field ambiguous and skip detection.
-                PropertyData? itemsProperty = null;
+                itemsProperty = property;
+            }
+
+            if (itemsProperty is null)
+            {
+                continue;
+            }
+
+            var itemType = itemsProperty.Value.Type.SubTypes[0].Unbox<TypeData>();
+
+            // Offset style takes priority — it requires a known page-number query
+            // parameter, which is a stronger signal than a cursor-named param.
+            var pageParam = method.Parameters
+                .FirstOrDefault(static p =>
+                    p.Location == Microsoft.OpenApi.ParameterLocation.Query &&
+                    IsOffsetPageParameter(p));
+            if (!string.IsNullOrEmpty(pageParam.ParameterName))
+            {
+                // Also pick up a sibling has_more/has_next bool so the generated
+                // auto-paging helper stops on an explicit "no more pages" signal
+                // rather than waiting for an empty page.
+                PropertyData? hasMoreProperty = null;
                 foreach (var property in responseClass.Properties)
                 {
-                    if (!property.Type.IsArray ||
-                        property.Type.SubTypes.Length == 0 ||
-                        string.IsNullOrWhiteSpace(property.Type.SubTypes[0].Unbox<TypeData>().CSharpType))
+                    if (!IsHasMoreProperty(property))
                     {
                         continue;
                     }
 
-                    if (itemsProperty != null)
+                    if (hasMoreProperty != null)
                     {
-                        return method;
+                        // Multiple has_more candidates → ambiguous, skip the predicate.
+                        hasMoreProperty = null;
+                        break;
                     }
 
-                    itemsProperty = property;
+                    hasMoreProperty = property;
                 }
 
-                if (itemsProperty is null)
-                {
-                    return method;
-                }
-
-                var itemType = itemsProperty.Value.Type.SubTypes[0].Unbox<TypeData>();
-
-                // Offset style takes priority — it requires a known page-number query
-                // parameter, which is a stronger signal than a cursor-named param.
-                var pageParam = method.Parameters
-                    .FirstOrDefault(static p =>
-                        p.Location == Microsoft.OpenApi.ParameterLocation.Query &&
-                        IsOffsetPageParameter(p));
-                if (!string.IsNullOrEmpty(pageParam.ParameterName))
-                {
-                    // Also pick up a sibling has_more/has_next bool so the generated
-                    // auto-paging helper stops on an explicit "no more pages" signal
-                    // rather than waiting for an empty page.
-                    PropertyData? hasMoreProperty = null;
-                    foreach (var property in responseClass.Properties)
-                    {
-                        if (!IsHasMoreProperty(property))
-                        {
-                            continue;
-                        }
-
-                        if (hasMoreProperty != null)
-                        {
-                            // Multiple has_more candidates → ambiguous, skip the predicate.
-                            hasMoreProperty = null;
-                            break;
-                        }
-
-                        hasMoreProperty = property;
-                    }
-
-                    return method with
-                    {
-                        PageableMetadata = new PageableMetadata(
-                            Style: PageableStyle.Offset,
-                            PageParameterName: pageParam.ParameterName,
-                            ItemsPropertyName: itemsProperty.Value.Name,
-                            ItemType: itemType,
-                            NextCursorPropertyName: string.Empty,
-                            HasMorePropertyName: hasMoreProperty?.Name ?? string.Empty,
-                            HasMorePropertyIsNullable: hasMoreProperty?.Type.CSharpTypeNullability ?? false),
-                    };
-                }
-
-                // Cursor style: known cursor-named query parameter (string-typed) plus
-                // a response property that exposes the next cursor / next page token.
-                var cursorParam = method.Parameters
-                    .Where(static p =>
-                        p.Location == Microsoft.OpenApi.ParameterLocation.Query &&
-                        IsCursorPageParameter(p))
-                    .OrderByDescending(static p => GetCursorPageParameterPriority(p.Id))
-                    .FirstOrDefault();
-                if (string.IsNullOrEmpty(cursorParam.ParameterName))
-                {
-                    return method;
-                }
-
-                PropertyData? nextCursorProperty = null;
-                foreach (var property in responseClass.Properties)
-                {
-                    if (!IsNextCursorProperty(property))
-                    {
-                        continue;
-                    }
-
-                    if (nextCursorProperty != null)
-                    {
-                        // Multiple plausible next-cursor properties → ambiguous, skip.
-                        return method;
-                    }
-
-                    nextCursorProperty = property;
-                }
-
-                if (nextCursorProperty is null)
-                {
-                    return method;
-                }
-
-                return method with
+                methods[index] = method with
                 {
                     PageableMetadata = new PageableMetadata(
-                        Style: PageableStyle.Cursor,
-                        PageParameterName: cursorParam.ParameterName,
+                        Style: PageableStyle.Offset,
+                        PageParameterName: pageParam.ParameterName,
                         ItemsPropertyName: itemsProperty.Value.Name,
                         ItemType: itemType,
-                        NextCursorPropertyName: nextCursorProperty.Value.Name),
+                        NextCursorPropertyName: string.Empty,
+                        HasMorePropertyName: hasMoreProperty?.Name ?? string.Empty,
+                        HasMorePropertyIsNullable: hasMoreProperty?.Type.CSharpTypeNullability ?? false),
                 };
-            })
-            .ToImmutableArray();
+                continue;
+            }
+
+            // Cursor style: known cursor-named query parameter (string-typed) plus
+            // a response property that exposes the next cursor / next page token.
+            var cursorParam = method.Parameters
+                .Where(static p =>
+                    p.Location == Microsoft.OpenApi.ParameterLocation.Query &&
+                    IsCursorPageParameter(p))
+                .OrderByDescending(static p => GetCursorPageParameterPriority(p.Id))
+                .FirstOrDefault();
+            if (string.IsNullOrEmpty(cursorParam.ParameterName))
+            {
+                continue;
+            }
+
+            PropertyData? nextCursorProperty = null;
+            foreach (var property in responseClass.Properties)
+            {
+                if (!IsNextCursorProperty(property))
+                {
+                    continue;
+                }
+
+                if (nextCursorProperty != null)
+                {
+                    // Multiple plausible next-cursor properties → ambiguous, skip.
+                    nextCursorProperty = null;
+                    break;
+                }
+
+                nextCursorProperty = property;
+            }
+
+            if (nextCursorProperty is null)
+            {
+                continue;
+            }
+
+            methods[index] = method with
+            {
+                PageableMetadata = new PageableMetadata(
+                    Style: PageableStyle.Cursor,
+                    PageParameterName: cursorParam.ParameterName,
+                    ItemsPropertyName: itemsProperty.Value.Name,
+                    ItemType: itemType,
+                    NextCursorPropertyName: nextCursorProperty.Value.Name),
+            };
+        }
     }
 
     private static bool IsOffsetPageParameter(MethodParameter parameter)
@@ -870,14 +871,14 @@ public static class Data
     /// that calls the create operation, extracts the resource id from the response
     /// <c>Location</c> header, and dispatches to the sibling's polling helper.
     /// </summary>
-    private static ImmutableArray<EndPoint> ApplyLocationWaitCompanions(
-        ImmutableArray<EndPoint> methods)
+    private static void ApplyLocationWaitCompanions(
+        ImmutableArray<EndPoint>.Builder methods)
     {
         if (!methods.Any(static m =>
                 m.HasLocationHeaderOnSuccess &&
                 m.HttpMethod != System.Net.Http.HttpMethod.Get))
         {
-            return methods;
+            return;
         }
 
         var pollingHelpersByPath = methods
@@ -888,52 +889,51 @@ public static class Data
             .ToDictionary(static m => UnwrapPreparedPath(m.Path), static m => m, StringComparer.Ordinal);
         if (pollingHelpersByPath.Count == 0)
         {
-            return methods;
+            return;
         }
 
-        return methods
-            .Select(method =>
+        for (var index = 0; index < methods.Count; index++)
+        {
+            var method = methods[index];
+            if (!method.HasLocationHeaderOnSuccess ||
+                method.HttpMethod == System.Net.Http.HttpMethod.Get ||
+                string.IsNullOrEmpty(method.Path))
             {
-                if (!method.HasLocationHeaderOnSuccess ||
-                    method.HttpMethod == System.Net.Http.HttpMethod.Get ||
-                    string.IsNullOrEmpty(method.Path))
-                {
-                    return method;
-                }
+                continue;
+            }
 
-                var sibling = FindLocationSiblingGet(method, pollingHelpersByPath);
-                if (sibling == null)
-                {
-                    return method;
-                }
+            var sibling = FindLocationSiblingGet(method, pollingHelpersByPath);
+            if (sibling == null)
+            {
+                continue;
+            }
 
-                var siblingValue = sibling.Value;
-                var pollingOperation = siblingValue.PollingOperations.FirstOrDefault();
-                if (pollingOperation.Name is null or { Length: 0 })
-                {
-                    return method;
-                }
+            var siblingValue = sibling.Value;
+            var pollingOperation = siblingValue.PollingOperations.FirstOrDefault();
+            if (pollingOperation.Name is null or { Length: 0 })
+            {
+                continue;
+            }
 
-                var idParameter = siblingValue.Parameters
-                    .FirstOrDefault(static p =>
-                        p.Location == Microsoft.OpenApi.ParameterLocation.Path);
-                if (string.IsNullOrEmpty(idParameter.ParameterName))
-                {
-                    return method;
-                }
+            var idParameter = siblingValue.Parameters
+                .FirstOrDefault(static p =>
+                    p.Location == Microsoft.OpenApi.ParameterLocation.Path);
+            if (string.IsNullOrEmpty(idParameter.ParameterName))
+            {
+                continue;
+            }
 
-                return method with
-                {
-                    LocationWaitCompanion = new LocationWaitCompanion(
-                        SiblingMethodName: siblingValue.NotAsyncMethodName,
-                        SiblingPollingMethodName:
-                            $"{siblingValue.NotAsyncMethodName}{pollingOperation.Name.ToPropertyName()}Async",
-                        SiblingPath: siblingValue.Path,
-                        SiblingIdParameterName: idParameter.ParameterName,
-                        SiblingReturnType: siblingValue.SuccessResponse.Type),
-                };
-            })
-            .ToImmutableArray();
+            methods[index] = method with
+            {
+                LocationWaitCompanion = new LocationWaitCompanion(
+                    SiblingMethodName: siblingValue.NotAsyncMethodName,
+                    SiblingPollingMethodName:
+                        $"{siblingValue.NotAsyncMethodName}{pollingOperation.Name.ToPropertyName()}Async",
+                    SiblingPath: siblingValue.Path,
+                    SiblingIdParameterName: idParameter.ParameterName,
+                    SiblingReturnType: siblingValue.SuccessResponse.Type),
+            };
+        }
     }
 
     // The path stored on EndPoint is a C# string-interpolation literal — e.g. `"/v1/tasks"`
