@@ -75,11 +75,6 @@ public static class CSharpEndPointFactory
         var authorizationRequirements = authorizationData.RequirementSets;
         var authorizations = authorizationData.Authorizations;
 
-        var parameters = operation.Schemas
-            .Where(x => x is { Hint: Hint.Parameter, ParameterData: not null })
-            .Select(x => x.ParameterData!.Value)
-            .ToList();
-
         var requestRepresentation = RequestRepresentationPlanner.Select(operation, cache.BinarySchemas);
         var requestMediaType = requestRepresentation.MediaType;
         var requestContext = requestRepresentation.SchemaContext;
@@ -114,6 +109,30 @@ public static class CSharpEndPointFactory
             .ToArray();
 
         var requestPropertySelection = GetRequestProperties(requestContext);
+        var parameterCount = 0;
+        foreach (var schema in operation.Schemas)
+        {
+            if (schema is { Hint: Hint.Parameter, ParameterData: not null })
+            {
+                parameterCount++;
+            }
+        }
+        for (var index = 0; index < requestPropertySelection.Properties.Length; index++)
+        {
+            if (!requestPropertySelection.Properties[index].IsReadOnly)
+            {
+                parameterCount++;
+            }
+        }
+
+        var parameters = new List<MethodParameter>(parameterCount);
+        foreach (var schema in operation.Schemas)
+        {
+            if (schema is { Hint: Hint.Parameter, ParameterData: not null } parameter)
+            {
+                parameters.Add(parameter.ParameterData.Value);
+            }
+        }
         foreach (var requestProperty in requestPropertySelection.Properties)
         {
             if (requestProperty.IsReadOnly)
@@ -158,7 +177,7 @@ public static class CSharpEndPointFactory
         DeduplicateMethodParameterNames(parameters);
 
         var preparedPath = operation.OperationPath.PreparePath(parameters);
-        var queryParameters = ParameterSerializer.SerializeQueryParameters(parameters);
+        var queryParameters = ParameterSerializer.SerializeQueryParametersImmutable(parameters);
 
         var successResponse = responses.Any(x => x.Is2XX && !string.IsNullOrWhiteSpace(x.Type.CSharpTypeRaw))
             ? responses.First(x => x.Is2XX && !string.IsNullOrWhiteSpace(x.Type.CSharpTypeRaw))
@@ -241,7 +260,7 @@ public static class CSharpEndPointFactory
             ErrorResponses: responses.Where(x => !x.Is2XX).ToImmutableArray(),
             Authorizations: authorizations,
             AuthorizationRequirements: authorizationRequirements,
-            QueryParameters: queryParameters.ToImmutableArray(),
+            QueryParameters: queryParameters,
             HttpMethod: operation.OperationType,
             ContentType: successResponse.ContentType,
             Summary: operation.Operation.GetXmlDocumentationSummary(),

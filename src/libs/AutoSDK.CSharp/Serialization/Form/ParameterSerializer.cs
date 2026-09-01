@@ -1,3 +1,4 @@
+using System.Collections.Immutable;
 using AutoSDK.Extensions;
 using AutoSDK.Helpers;
 using AutoSDK.Models;
@@ -50,6 +51,49 @@ public static class ParameterSerializer
         var serialized = new List<MethodParameter>(parameters.Count);
         AppendSerializedQueryParameters(parameters, serialized);
         return serialized;
+    }
+
+    internal static ImmutableArray<MethodParameter> SerializeQueryParametersImmutable(
+        IList<MethodParameter> parameters)
+    {
+        parameters = parameters ?? throw new ArgumentNullException(nameof(parameters));
+
+        var serializedCount = 0;
+        for (var i = 0; i < parameters.Count; i++)
+        {
+            var parameter = parameters[i];
+            if (parameter.Location != ParameterLocation.Query)
+            {
+                continue;
+            }
+
+            if (!parameter.Type.IsEnum &&
+                !parameter.Type.IsAnyOfLike &&
+                !parameter.Type.IsArray &&
+                parameter.Type.CSharpTypeWithoutNullability != "string" &&
+                parameter.Type.Properties.Length != 0)
+            {
+                serializedCount += (parameter.Style, parameter.Explode) switch
+                {
+                    (ParameterStyle.Form, true) or (ParameterStyle.DeepObject, true) => parameter.Properties.Length,
+                    (ParameterStyle.Form, false) => 1,
+                    _ => 0,
+                };
+            }
+            else
+            {
+                serializedCount++;
+            }
+        }
+
+        if (serializedCount == 0)
+        {
+            return [];
+        }
+
+        var serialized = ImmutableArray.CreateBuilder<MethodParameter>(serializedCount);
+        AppendSerializedQueryParameters(parameters, serialized);
+        return serialized.MoveToImmutable();
     }
 
     private static void AppendSerializedQueryParameters(
