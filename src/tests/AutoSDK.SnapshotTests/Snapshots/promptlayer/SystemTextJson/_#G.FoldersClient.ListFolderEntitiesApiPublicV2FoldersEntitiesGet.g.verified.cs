@@ -1,4 +1,4 @@
-﻿//HintName: G.FoldersClient.ListFolderEntitiesApiPublicV2FoldersEntitiesGet.g.cs
+//HintName: G.FoldersClient.ListFolderEntitiesApiPublicV2FoldersEntitiesGet.g.cs
 
 #nullable enable
 
@@ -153,7 +153,10 @@ namespace G
                             __pathBuilder
                                 .AddRequiredParameter("workspace_id", workspaceId.ToString()!)
                                 .AddOptionalParameter("folder_id", folderId?.ToString())
-                                .AddOptionalParameter("filter_type", filterType?.ToString())
+                                .AddOptionalParameter("filter_type", filterType?.Match(
+                static x => (global::System.Collections.Generic.IEnumerable<string?>)new string?[] { x?.ToValueString() },
+                static x => (global::System.Collections.Generic.IEnumerable<string?>)global::System.Linq.Enumerable.Select(x, static item => item.ToValueString()),
+                validate: false), delimiter: ",", explode: true)
                                 .AddOptionalParameter("search_query", searchQuery)
                                 .AddOptionalParameter("flatten", flatten?.ToString().ToLowerInvariant())
                                 .AddOptionalParameter("include_metadata", includeMetadata?.ToString().ToLowerInvariant())

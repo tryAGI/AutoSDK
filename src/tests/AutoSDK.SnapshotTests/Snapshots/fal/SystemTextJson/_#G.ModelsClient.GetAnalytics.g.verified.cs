@@ -1,4 +1,4 @@
-﻿//HintName: G.ModelsClient.GetAnalytics.g.cs
+//HintName: G.ModelsClient.GetAnalytics.g.cs
 
 #nullable enable
 
@@ -304,8 +304,14 @@ namespace G
                                 .AddOptionalParameter("timezone", timezone)
                                 .AddOptionalParameter("timeframe", timeframe?.ToValueString())
                                 .AddOptionalParameter("bound_to_timeframe", boundToTimeframe?.ToValueString())
-                                .AddRequiredParameter("endpoint_id", endpointId.ToString() ?? string.Empty)
-                                .AddOptionalParameter("expand", expand?.ToString())
+                                .AddRequiredParameter("endpoint_id", endpointId.Match(
+                static x => (global::System.Collections.Generic.IEnumerable<string?>)new string?[] { x },
+                static x => (global::System.Collections.Generic.IEnumerable<string?>)global::System.Linq.Enumerable.Select(x, static item => item),
+                validate: false) ?? global::System.Array.Empty<string?>(), delimiter: ",", explode: true)
+                                .AddOptionalParameter("expand", expand?.Match(
+                static x => (global::System.Collections.Generic.IEnumerable<string?>)new string?[] { x },
+                static x => (global::System.Collections.Generic.IEnumerable<string?>)global::System.Linq.Enumerable.Select(x, static item => item),
+                validate: false), delimiter: ",", explode: true)
                                 ;
                             var __path = __pathBuilder.ToString();
                 __path = global::G.AutoSDKRequestOptionsSupport.AppendQueryParameters(

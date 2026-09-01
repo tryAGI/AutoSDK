@@ -1,4 +1,4 @@
-﻿//HintName: G.UsersClient.GetUser.g.cs
+//HintName: G.UsersClient.GetUser.g.cs
 
 #nullable enable
 
@@ -213,10 +213,22 @@ namespace G
                                 .AddOptionalParameter("limit", limit?.ToString())
                                 .AddOptionalParameter("starting_after", startingAfter?.ToString())
                                 .AddOptionalParameter("ending_before", endingBefore?.ToString())
-                                .AddOptionalParameter("ids", ids?.ToString())
-                                .AddOptionalParameter("given_name", givenName?.ToString())
-                                .AddOptionalParameter("family_name", familyName?.ToString())
-                                .AddOptionalParameter("email", email?.ToString())
+                                .AddOptionalParameter("ids", ids?.Match(
+                static x => (global::System.Collections.Generic.IEnumerable<string?>)new string?[] { x?.ToString()! },
+                static x => (global::System.Collections.Generic.IEnumerable<string?>)global::System.Linq.Enumerable.Select(x, static item => item.ToString()!),
+                validate: false), delimiter: ",", explode: true)
+                                .AddOptionalParameter("given_name", givenName?.Match(
+                static x => (global::System.Collections.Generic.IEnumerable<string?>)new string?[] { x },
+                static x => (global::System.Collections.Generic.IEnumerable<string?>)global::System.Linq.Enumerable.Select(x, static item => item),
+                validate: false), delimiter: ",", explode: true)
+                                .AddOptionalParameter("family_name", familyName?.Match(
+                static x => (global::System.Collections.Generic.IEnumerable<string?>)new string?[] { x },
+                static x => (global::System.Collections.Generic.IEnumerable<string?>)global::System.Linq.Enumerable.Select(x, static item => item),
+                validate: false), delimiter: ",", explode: true)
+                                .AddOptionalParameter("email", email?.Match(
+                static x => (global::System.Collections.Generic.IEnumerable<string?>)new string?[] { x },
+                static x => (global::System.Collections.Generic.IEnumerable<string?>)global::System.Linq.Enumerable.Select(x, static item => item),
+                validate: false), delimiter: ",", explode: true)
                                 .AddOptionalParameter("org_name", orgName)
                                 ;
                             var __path = __pathBuilder.ToString();

@@ -1,4 +1,4 @@
-﻿//HintName: G.ToolsClient.GetTools.g.cs
+//HintName: G.ToolsClient.GetTools.g.cs
 
 #nullable enable
 
@@ -245,7 +245,10 @@ namespace G
                             __pathBuilder
                                 .AddOptionalParameter("toolkit_slug", toolkitSlug)
                                 .AddOptionalParameter("tool_slugs", toolSlugs)
-                                .AddOptionalParameter("auth_config_ids", authConfigIds?.ToString())
+                                .AddOptionalParameter("auth_config_ids", authConfigIds?.Match(
+                static x => (global::System.Collections.Generic.IEnumerable<string?>)new string?[] { x },
+                static x => (global::System.Collections.Generic.IEnumerable<string?>)global::System.Linq.Enumerable.Select(x, static item => item),
+                validate: false), delimiter: ",", explode: true)
                                 .AddOptionalParameter("important", important?.ToValueString())
                                 .AddOptionalParameter("tags", tags, delimiter: ",", explode: true)
                                 .AddOptionalParameter("scopes", scopes, delimiter: ",", explode: true)

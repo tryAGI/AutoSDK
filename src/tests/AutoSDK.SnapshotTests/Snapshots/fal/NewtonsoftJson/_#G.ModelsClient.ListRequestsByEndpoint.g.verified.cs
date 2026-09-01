@@ -1,4 +1,4 @@
-﻿//HintName: G.ModelsClient.ListRequestsByEndpoint.g.cs
+//HintName: G.ModelsClient.ListRequestsByEndpoint.g.cs
 
 #nullable enable
 
@@ -271,7 +271,10 @@ namespace G
                                 .AddOptionalParameter("end", end?.ToString())
                                 .AddOptionalParameter("status", status?.ToValueString())
                                 .AddOptionalParameter("request_id", requestId?.ToString())
-                                .AddOptionalParameter("expand", expand?.ToString())
+                                .AddOptionalParameter("expand", expand?.Match(
+                static x => (global::System.Collections.Generic.IEnumerable<string?>)new string?[] { x },
+                static x => (global::System.Collections.Generic.IEnumerable<string?>)global::System.Linq.Enumerable.Select(x, static item => item),
+                validate: false), delimiter: ",", explode: true)
                                 .AddOptionalParameter("sort_by", sortBy?.ToValueString())
                                 ;
                             var __path = __pathBuilder.ToString();

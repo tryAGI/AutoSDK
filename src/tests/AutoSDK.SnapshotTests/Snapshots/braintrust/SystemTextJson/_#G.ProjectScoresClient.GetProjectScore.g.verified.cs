@@ -1,4 +1,4 @@
-﻿//HintName: G.ProjectScoresClient.GetProjectScore.g.cs
+//HintName: G.ProjectScoresClient.GetProjectScore.g.cs
 
 #nullable enable
 
@@ -221,12 +221,18 @@ namespace G
                                 .AddOptionalParameter("limit", limit?.ToString())
                                 .AddOptionalParameter("starting_after", startingAfter?.ToString())
                                 .AddOptionalParameter("ending_before", endingBefore?.ToString())
-                                .AddOptionalParameter("ids", ids?.ToString())
+                                .AddOptionalParameter("ids", ids?.Match(
+                static x => (global::System.Collections.Generic.IEnumerable<string?>)new string?[] { x?.ToString()! },
+                static x => (global::System.Collections.Generic.IEnumerable<string?>)global::System.Linq.Enumerable.Select(x, static item => item.ToString()!),
+                validate: false), delimiter: ",", explode: true)
                                 .AddOptionalParameter("project_score_name", projectScoreName)
                                 .AddOptionalParameter("project_name", projectName)
                                 .AddOptionalParameter("project_id", projectId?.ToString())
                                 .AddOptionalParameter("org_name", orgName)
-                                .AddOptionalParameter("score_type", scoreType?.ToString())
+                                .AddOptionalParameter("score_type", scoreType?.Match(
+                static x => (global::System.Collections.Generic.IEnumerable<string?>)new string?[] { x?.ToValueString() },
+                static x => (global::System.Collections.Generic.IEnumerable<string?>)global::System.Linq.Enumerable.Select(x, static item => item.ToString() ?? string.Empty),
+                validate: false), delimiter: ",", explode: true)
                                 ;
                             var __path = __pathBuilder.ToString();
                 __path = global::G.AutoSDKRequestOptionsSupport.AppendQueryParameters(

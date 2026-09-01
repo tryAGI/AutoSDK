@@ -1,4 +1,4 @@
-﻿//HintName: G.DatasetsClient.ReadDatasets.g.cs
+//HintName: G.DatasetsClient.ReadDatasets.g.cs
 
 #nullable enable
 
@@ -241,7 +241,11 @@ namespace G
                                 baseUri: HttpClient.BaseAddress);
                             __pathBuilder
                                 .AddOptionalParameter("id", id?.ToString())
-                                .AddOptionalParameter("data_type", dataType?.ToString())
+                                .AddOptionalParameter("data_type", dataType?.Match(
+                static x => (global::System.Collections.Generic.IEnumerable<string?>)global::System.Linq.Enumerable.Select(x, static item => item.ToValueString()),
+                static x => (global::System.Collections.Generic.IEnumerable<string?>)new string?[] { x?.ToValueString() },
+                static x => (global::System.Collections.Generic.IEnumerable<string?>)new string?[] { x?.ToString()! },
+                validate: false), delimiter: ",", explode: true)
                                 .AddOptionalParameter("name", name)
                                 .AddOptionalParameter("name_contains", nameContains)
                                 .AddOptionalParameter("metadata", metadata)

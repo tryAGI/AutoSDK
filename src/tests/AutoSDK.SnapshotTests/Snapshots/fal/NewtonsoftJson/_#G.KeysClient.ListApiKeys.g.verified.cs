@@ -1,4 +1,4 @@
-﻿//HintName: G.KeysClient.ListApiKeys.g.cs
+//HintName: G.KeysClient.ListApiKeys.g.cs
 
 #nullable enable
 
@@ -171,7 +171,10 @@ namespace G
                             __pathBuilder
                                 .AddOptionalParameter("limit", limit?.ToString())
                                 .AddOptionalParameter("cursor", cursor)
-                                .AddOptionalParameter("expand", expand?.ToString())
+                                .AddOptionalParameter("expand", expand?.Match(
+                static x => (global::System.Collections.Generic.IEnumerable<string?>)new string?[] { x },
+                static x => (global::System.Collections.Generic.IEnumerable<string?>)global::System.Linq.Enumerable.Select(x, static item => item),
+                validate: false), delimiter: ",", explode: true)
                                 ;
                             var __path = __pathBuilder.ToString();
                 __path = global::G.AutoSDKRequestOptionsSupport.AppendQueryParameters(

@@ -1,4 +1,4 @@
-﻿//HintName: G.PromptTemplatesClient.GetAllPromptTemplatesGet.g.cs
+//HintName: G.PromptTemplatesClient.GetAllPromptTemplatesGet.g.cs
 
 #nullable enable
 
@@ -136,7 +136,10 @@ namespace G
                                 .AddOptionalParameter("per_page", perPage?.ToString())
                                 .AddOptionalParameter("label", label)
                                 .AddOptionalParameter("name", name)
-                                .AddOptionalParameter("tags", tags?.ToString())
+                                .AddOptionalParameter("tags", tags?.Match(
+                static x => (global::System.Collections.Generic.IEnumerable<string?>)new string?[] { x },
+                static x => (global::System.Collections.Generic.IEnumerable<string?>)global::System.Linq.Enumerable.Select(x, static item => item),
+                validate: false), delimiter: ",", explode: true)
                                 .AddOptionalParameter("status", status?.ToValueString())
                                 ;
                             var __path = __pathBuilder.ToString();

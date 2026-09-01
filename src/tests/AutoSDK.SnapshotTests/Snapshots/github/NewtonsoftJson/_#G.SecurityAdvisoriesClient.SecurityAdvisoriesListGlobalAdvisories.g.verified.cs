@@ -1,4 +1,4 @@
-﻿//HintName: G.SecurityAdvisoriesClient.SecurityAdvisoriesListGlobalAdvisories.g.cs
+//HintName: G.SecurityAdvisoriesClient.SecurityAdvisoriesListGlobalAdvisories.g.cs
 
 #nullable enable
 
@@ -293,9 +293,15 @@ namespace G
                                 .AddOptionalParameter("cve_id", cveId)
                                 .AddOptionalParameter("ecosystem", ecosystem?.ToValueString())
                                 .AddOptionalParameter("severity", severity?.ToValueString())
-                                .AddOptionalParameter("cwes", cwes?.ToString())
+                                .AddOptionalParameter("cwes", cwes?.Match(
+                static x => (global::System.Collections.Generic.IEnumerable<string?>)new string?[] { x },
+                static x => (global::System.Collections.Generic.IEnumerable<string?>)global::System.Linq.Enumerable.Select(x, static item => item),
+                validate: false), delimiter: ",", explode: true)
                                 .AddOptionalParameter("is_withdrawn", isWithdrawn?.ToString().ToLowerInvariant())
-                                .AddOptionalParameter("affects", affects?.ToString())
+                                .AddOptionalParameter("affects", affects?.Match(
+                static x => (global::System.Collections.Generic.IEnumerable<string?>)new string?[] { x },
+                static x => (global::System.Collections.Generic.IEnumerable<string?>)global::System.Linq.Enumerable.Select(x, static item => item),
+                validate: false), delimiter: ",", explode: true)
                                 .AddOptionalParameter("published", published)
                                 .AddOptionalParameter("updated", updated)
                                 .AddOptionalParameter("modified", modified)

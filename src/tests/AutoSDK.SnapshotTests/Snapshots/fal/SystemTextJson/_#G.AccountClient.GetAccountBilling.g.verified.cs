@@ -1,4 +1,4 @@
-﻿//HintName: G.AccountClient.GetAccountBilling.g.cs
+//HintName: G.AccountClient.GetAccountBilling.g.cs
 
 #nullable enable
 
@@ -127,7 +127,10 @@ namespace G
                                 path: "/account/billing",
                                 baseUri: HttpClient.BaseAddress);
                             __pathBuilder
-                                .AddOptionalParameter("expand", expand?.ToString())
+                                .AddOptionalParameter("expand", expand?.Match(
+                static x => (global::System.Collections.Generic.IEnumerable<string?>)new string?[] { x },
+                static x => (global::System.Collections.Generic.IEnumerable<string?>)global::System.Linq.Enumerable.Select(x, static item => item),
+                validate: false), delimiter: ",", explode: true)
                                 ;
                             var __path = __pathBuilder.ToString();
                 __path = global::G.AutoSDKRequestOptionsSupport.AppendQueryParameters(
