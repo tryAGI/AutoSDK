@@ -317,9 +317,12 @@
         "freshOutputPhysicalWriteWorkerMilliseconds": 15000,
         "cacheHitTotalMilliseconds": 1100,
         "cacheValidationMilliseconds": 850,
-        "totalAllocatedBytes": 1500000000,
-        "renderAllocatedBytes": 680000000,
-        "writeAllocatedBytes": 80000000
+        "totalAllocatedBytes": 1300000000,
+        "renderAllocatedBytes": 600000000,
+        "writeAllocatedBytes": 80000000,
+        "modelJsonAllocatedBytes": 90000000,
+        "methodImplementationAllocatedBytes": 160000000,
+        "methodInterfaceAllocatedBytes": 20000000
       },
       "baselineBeforeFreshFileDirectWrites": {
         "commit": "ff38ca9a1647b2acae2f27eaf4fc0baa014a6fd9",
@@ -641,14 +644,17 @@
       },
       "generatedFiles": 6466,
       "maximum": {
-        "totalAllocatedBytes": 500000000,
-        "renderAllocatedBytes": 230000000,
+        "totalAllocatedBytes": 470000000,
+        "renderAllocatedBytes": 210000000,
         "writeAllocatedBytes": 50000000,
-        "pipelineAllocatedBytes": 240000000,
+        "pipelineAllocatedBytes": 225000000,
         "coreComputeDataAllocatedBytes": 100000000,
         "coreComputeClassesAllocatedBytes": 42000000,
         "coreSchemaModelsAllocatedBytes": 18000000,
-        "coreEndpointsAllocatedBytes": 20000000
+        "coreEndpointsAllocatedBytes": 20000000,
+        "modelJsonAllocatedBytes": 25000000,
+        "methodImplementationAllocatedBytes": 20000000,
+        "methodInterfaceAllocatedBytes": 5000000
       },
       "observedBefore": {
         "totalAllocatedBytes": 592029288,
@@ -672,6 +678,16 @@
         "totalAllocatedBytes": 465280072,
         "renderAllocatedBytes": 198707552,
         "writeAllocatedBytes": 37625832
+      },
+      "observedAfterEndpointAndModelJsonStreaming": {
+        "generatorCommit": "3c9695df7d",
+        "totalAllocatedBytes": 426962096,
+        "pipelineAllocatedBytes": 201986080,
+        "renderAllocatedBytes": 185470336,
+        "modelJsonAllocatedBytes": 16632880,
+        "methodImplementationAllocatedBytes": 12810376,
+        "methodInterfaceAllocatedBytes": 2258968,
+        "differentFiles": 0
       }
     },
     "anthropic": {
@@ -813,13 +829,16 @@
       "generatedFiles": 24895,
       "generatedBytes": 143473963,
       "maximum": {
-        "totalAllocatedBytes": 1450000000,
-        "renderAllocatedBytes": 680000000,
+        "totalAllocatedBytes": 1300000000,
+        "renderAllocatedBytes": 600000000,
         "writeAllocatedBytes": 80000000,
-        "pipelineAllocatedBytes": 550000000,
+        "pipelineAllocatedBytes": 500000000,
         "coreComputeDataAllocatedBytes": 110000000,
         "coreComputeClassesAllocatedBytes": 160000000,
-        "coreEndpointsAllocatedBytes": 75000000
+        "coreEndpointsAllocatedBytes": 75000000,
+        "modelJsonAllocatedBytes": 90000000,
+        "methodImplementationAllocatedBytes": 160000000,
+        "methodInterfaceAllocatedBytes": 20000000
       },
       "observedBefore": {
         "totalAllocatedBytes": 2082683000,
@@ -842,6 +861,16 @@
         "totalAllocatedBytes": 1224342456,
         "renderAllocatedBytes": 603205560,
         "writeAllocatedBytes": 48281952
+      },
+      "observedAfterEndpointAndModelJsonStreaming": {
+        "generatorCommit": "3c9695df7d",
+        "totalAllocatedBytes": 1138200144,
+        "pipelineAllocatedBytes": 452615024,
+        "renderAllocatedBytes": 523409896,
+        "modelJsonAllocatedBytes": 73050632,
+        "methodImplementationAllocatedBytes": 141163232,
+        "methodInterfaceAllocatedBytes": 13159704,
+        "differentFiles": 0
       }
     },
     "vercel": {
@@ -1006,6 +1035,7 @@
     "The current provider corpus is benchmark-only and pinned by hash so provider spec updates do not silently move the allocation thresholds.",
     "Current-provider and expanded-production CLI results use each provider's production generation arguments and were byte-identical to public AutoSDK.CLI 0.32.1-dev.48.",
     "Render and output-streaming thresholds use commit 850a1da375; all 92700 pinned and expanded-corpus files were byte-identical to the pre-change outputs.",
+    "Endpoint and model-JSON thresholds use commit 3c9695df7d; App Store Connect and Vapi remained byte-identical to their pre-change outputs, and the snapshot corpus had no related regressions.",
     "All expanded-production workloads now carry total, render, and write allocation ceilings; phase-specific enrichment ceilings remain limited to App Store Connect and Vercel."
   ]
 }

@@ -316,6 +316,40 @@ were 127.7 ms with the normal settings and 134.5 ms with both candidates. Reader
 allocations were unchanged at approximately 66.1 MB. This is noise or a regression,
 not an optimization.
 
+### Endpoint enrichment and streamed model JSON
+
+The next endpoint trace showed a large value-type `EndPoint` array being materialized
+by `SelectMany(...).ToImmutableArray()` and then copied again while authorization,
+tag, server-selection, location-wait, and pageable metadata were applied. These passes
+now update one immutable-array builder and create the immutable result only at the
+pipeline boundary. On App Store Connect this reduced sampled `Data.Enrich` allocation
+from 209.2 MB to approximately 205.2 MB and sampled `EndPoint[]` allocation from
+34.3 MB to approximately 29.7 MB. The smaller result is retained because it also
+removes the iterator/materialization hotspot without changing endpoint order.
+
+Model JSON extensions were the larger remaining render opportunity. Their generated
+App Store Connect text is 34.2 million characters, but the old nested interpolated
+blocks materialized default-context and options overloads before copying them into the
+normalized output. The System.Text.Json renderer now appends those blocks directly to
+one pooled normalized builder. Exact spacing for context-enabled, context-disabled,
+base-class, raw-model, and anonymous-security shapes is preserved.
+
+Fresh isolated CLI allocation results after `3c9695df7d` were:
+
+| Workload | Total before | Total after | Reduction | Render before | Render after | Model JSON after |
+| --- | ---: | ---: | ---: | ---: | ---: | ---: |
+| App Store Connect | 1,224.3 MB | 1,138.2 MB | 7.0% | 603.2 MB | 523.4 MB | 73.1 MB |
+| Vapi | 465.3 MB | 427.0 MB | 8.2% | 198.7 MB | 185.5 MB | 16.6 MB |
+
+For App Store Connect, model-JSON allocation fell from 104.8 MB to 73.1 MB
+(30.3%), method implementations fell from 172.5 MB to 141.2 MB, and method
+interfaces fell from 28.8 MB to 13.2 MB. All 24,895 App Store Connect files and all
+6,466 Vapi files were byte-identical to their pre-change directories. The full Release
+solution build and 565 unit tests passed. The snapshot suite passed 285 of 287 cases;
+the only failures were the two pre-existing ElevenLabs serializer cases caused by the
+independent Unix-millisecond integer change in `b6fdda515c`, and no other `.received`
+files remained.
+
 ## Upstream issue draft
 
 **Title:** Reduce YAML materialization cost for large OpenAPI documents
