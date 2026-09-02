@@ -175,6 +175,17 @@ public class RequestOptionsGenerationTests
     }
 
     [TestMethod]
+    public void GenerateHttpResponse_EmitsConditionalEtagRequestHelper()
+    {
+        var source = Sources.GenerateHttpResponse(DefaultSettings);
+
+        source.Should().Contain("public static class AutoSDKConditionalRequests");
+        source.Should().Contain("requestOptions.Headers[\"If-None-Match\"] = entityTag!");
+        source.Should().Contain("exception.StatusCode == global::System.Net.HttpStatusCode.NotModified");
+        source.Should().Contain("GetEntityTag(exception.ResponseHeaders) ?? entityTag");
+    }
+
+    [TestMethod]
     public void GeneratePageableHelpers_SuppressedWhenOptInFlagIsOff()
     {
         var settings = DefaultSettings with { GeneratePageableHelpers = false };
