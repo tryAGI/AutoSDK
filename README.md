@@ -186,6 +186,81 @@ With the option on, the CLI reports how the analysis landed, so a spec whose typ
 Direction-aware JSON generation modes: 384 request-only, 704 response-only, 395 bidirectional, 311 unclassified of 1794 registered types. Registered converters disable source-generated fast-path serialization, so single-direction types use Metadata.
 ```
 
+## Modular Package Families (`--split-by-tags`)
+A large spec generates one very large assembly. `specs/github.yaml` produces about 17,000 source files and 36 tag clients, and a consumer that calls three endpoints still pays for all of it in restore, IDE load, compiler memory, build time and NuGet validation.
+
+Pass `--split-by-tags` to `autosdk generate` to emit a family of projects grouped by OpenAPI tag instead:
+
+```bash
+autosdk generate specs/github.yaml \
+  --namespace GitHub \
+  --clientClassName GitHubClient \
+  --split-by-tags \
+  --package-id tryAGI.GitHub
+```
+
+```text
+GeneratedPackages/
+  tryAGI.GitHub.Core/      shared models, unions, converters, JSON serializer context, runtime support
+  tryAGI.GitHub.Actions/   the actions tag's client and operations
+  tryAGI.GitHub.Issues/    the issues tag's client and operations
+  ...
+  tryAGI.GitHub/           the root client, its authorization partials, and any untagged operations
+  tryAGI.GitHub.slnx
+  autosdk-packages.json
+```
+
+The reference graph is `base → tag* → Core`, so a consumer can reference `tryAGI.GitHub.Issues` alone, while a consumer that references `tryAGI.GitHub` keeps the full-SDK experience unchanged — `new GitHubClient(...).Issues.<Operation>Async(...)` works exactly as it does in single-project mode, because every package shares one namespace.
+
+This is opt-in and does not change existing generation. It is a CLI-only mode: a Roslyn source generator cannot create project files, so setting `<AutoSDK_SplitByTags>` in a `.csproj` reports `OAG004` and generates the normal single-project output.
+
+### How files are assigned
+
+| Generated file | Package |
+| --- | --- |
+| A tag's client, its interface, and its operation partials | that tag's package |
+| Models, enums, unions, converters, the JSON serializer context, and all runtime support types | `Core` |
+| The root client, its interface, authorization partials, DI extensions, and **untagged operations** | the base package |
+
+Untagged operations are generated as partials of the root client, and C# `partial` types cannot span assemblies — so the base package is the only place they can compile.
+
+Models all live in `Core`; splitting them per tag needs transitive schema-dependency analysis to prove no type is duplicated or orphaned, and is not attempted here. That shapes what the mode buys today. Measured on `specs/github.yaml` (38 packages):
+
+| | single project | `…Core` | `…Issues` | base package |
+| --- | --- | --- | --- | --- |
+| generated files | 17,034 | 15,024 | 82 | 2 |
+| cold build | 40.5 s | 42.3 s | 1.2 s | 3.1 s |
+| package size | 28.1 MB | 26.1 MB | 0.09 MB | 0.01 MB |
+
+Rebuilding one tag takes ~1 s instead of ~40 s, and a cold build of all 38 projects is 37.3 s — no slower than the single project, because tag projects compile in parallel. But because `Core` holds 88% of the files, a consumer referencing one tag package still downloads ~26 MB of the ~28 MB. Until models are split, the win is in build and IDE time rather than in package size.
+
+### Cross-assembly plumbing
+
+Two things have to change once the SDK spans assemblies, and both are confined to this mode:
+
+- **Shared runtime members** (`EndPointSecurityResolver`, `AutoSDKRequestOptionsSupport`, the polling helpers, `AutoSDKHttpResponse.CreateHeaders`, `AutoSDKServerConfiguration`, `ResponseStream`, and each client's deferred serializer-context hook) are `internal` in single-project mode. Split mode widens them to `public` and marks them `[EditorBrowsable(Never)]` so they stay out of IntelliSense. Pass `--strong-name-public-key <hex>` to keep them `internal` and have AutoSDK emit `InternalsVisibleTo` across the family instead — use this when the generated assemblies are strong-named.
+- **OAuth2 support types** (`OAuth2Token`, `IOAuth2TokenStore`, `AutoSDKOAuth2Coordinator`, `AutoSDKOAuth2Helpers`, …) are normally nested inside the root client class. That would place them in the base package while tag clients and tag operation bodies also need them, making every tag assembly reference the base package that already references it. Split mode emits them as namespace-level types in `Core` (`GitHub.AutoSDKOAuth2.g.cs`), so `client.AuthorizeUsingOAuth2(new OAuth2Token { … })` replaces `new GitHubClient.OAuth2Token { … }`.
+
+### Package naming
+
+Tag package ids are `<package-id>.<Tag>`, using the same sanitized, collision-resolved tag names the tag clients already use, so they are stable across runs. A tag whose package would shadow the base or `Core` package gets an `Api` suffix. `--package-id` defaults to the namespace.
+
+Use `--package-map` to group small or closely related tags into one package, and to pin names against upstream tag renames:
+
+```json
+{
+  "tags": {
+    "repos": "Repos",
+    "git": "Repos",
+    "pulls": "Repos"
+  }
+}
+```
+
+`autosdk-packages.json` is the machine-readable result — base/core ids, and per package its id, kind, project path, assembly name, owned tags and client classes. It carries no timestamps, so regeneration is byte-stable and safe to commit. Each project uses a plain `ProjectReference` to `Core`, which `dotnet pack` converts into a package dependency, so the same file serves repository builds and published packages. With `--clean-stale-files`, regenerating after a tag is renamed or grouped away removes the retired project; a directory that still holds files AutoSDK did not generate is reported and left alone.
+
+Split mode needs at least two tags, and is rejected together with `--single-file`, `--generate-cli` and mixed-mode gRPC generation. (`--generate-cli` replaces model and client generation rather than adding to it, so there would be no clients to split — generate the family first, then run `autosdk cli-project` against it.)
+
 ## Vendor Extension Compatibility
 When `AutoSDK_UseExtensionNaming` or `--use-extension-naming` is enabled, AutoSDK consumes a curated set of third-party SDK metadata instead of treating every vendor extension as noise.
 

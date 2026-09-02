@@ -123,6 +123,32 @@ Important settings:
 - `AutoSDK_ModelStyle`: Class/Record/ReadonlyRecordStruct
 - `AutoSDK_MethodNamingConvention`: SimpleOperationId/MethodAndPath/OperationIdWithDots
 - `AutoSDK_UseExtensionNaming`: Use OpenAPI `x-` extensions for naming/grouping (default: true)
+- `AutoSDK_SplitByTags`: CLI-only. Emit a per-tag package family instead of one project (default: false)
+
+#### Split-by-tags package families (CLI only)
+
+`autosdk generate --split-by-tags --package-id <id>` emits `<id>.Core` (models, converters,
+serializer context, runtime support), one package per OpenAPI tag, a base package holding the root
+client plus any untagged operations, a `.slnx`, and a deterministic `autosdk-packages.json`.
+Reference graph is `base -> tag* -> Core`.
+
+Two things only this mode changes, both gated on `Settings.SplitByTags`:
+
+- Shared runtime members (`EndPointSecurityResolver`, `AutoSDKRequestOptionsSupport`, polling
+  helpers, `AutoSDKHttpResponse.CreateHeaders`, `AutoSDKServerConfiguration`, `ResponseStream`,
+  `JsonSerializerContextProvider`) become `public` + `[EditorBrowsable(Never)]` via
+  `Sources.SharedMemberModifier` / `SharedNestedMemberModifier`. With
+  `--strong-name-public-key` they stay `internal` and the generated projects emit
+  `InternalsVisibleTo` instead.
+- The OAuth2 support types are hoisted out of the root client class into a namespace-level
+  `{Ns}.AutoSDKOAuth2.g.cs` in Core (`Sources.OAuth2SupportTypes`). Left nested they would sit in
+  the base package while tag clients and tag operation bodies need them, so every tag assembly
+  would reference the base package that already references it.
+
+A Roslyn generator cannot create projects, so `SdkGenerator` forces `SplitByTags` off and reports
+`OAG004`. The guarantee that the family actually compiles as separate assemblies is
+`CliSplitByTagsTests` in `AutoSDK.IntegrationTests.Cli`, which builds the generated `.slnx` plus a
+tag-only and a base-package consumer — not a hand-maintained list of members.
 
 #### OpenAPI `x-` Extension Support
 

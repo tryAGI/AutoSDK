@@ -49,6 +49,11 @@ Generates a C# SDK from an OpenAPI or AsyncAPI specification.
 | `--types-namespace` | | string | (none) | Namespace for type references instead of the main namespace. Used for cross-namespace schema referencing where models live in a different namespace |
 | `--generate-models` | | bool | `true` | Generate model classes, enums, and JSON converters. Set to `false` when referencing types from an existing namespace via `--types-namespace` |
 | `--json-serializer-context` | | string | `SourceGenerationContext` | Override the `JsonSerializerContext` class name. Useful when generating multiple specs into the same project |
+| `--split-by-tags` | | bool | `false` | Emit a family of per-tag projects/packages instead of one project: `<package-id>.Core`, one package per OpenAPI tag, a base package that reassembles the full SDK, a solution, and `autosdk-packages.json`. Needs at least two tags; cannot be combined with `--single-file`, `--generate-cli` or `--grpc-input` |
+| `--package-id` | | string | Namespace | Base NuGet package id for `--split-by-tags`, e.g. `tryAGI.GitHub` |
+| `--packages-output` | | string | `GeneratedPackages` | Directory the package family is written to, relative to `--output` |
+| `--package-map` | | string | (none) | JSON file of the form `{"tags":{"<tag>":"<PackageSuffix>"}}` overriding package names. Several tags may share a suffix to group them into one package |
+| `--strong-name-public-key` | | string | (none) | Hex-encoded strong-name public key of the generated assemblies. Keeps shared runtime members `internal` and emits `InternalsVisibleTo` across the family instead of widening them to `public` |
 
 **Examples:**
 
@@ -84,6 +89,14 @@ autosdk generate openapi.yaml \
   --namespace MyApi \
   --clientClassName MyApiClient \
   --compute-discriminators
+
+# Modular package family, one package per OpenAPI tag
+autosdk generate openapi.yaml \
+  --namespace MyApi \
+  --clientClassName MyApiClient \
+  --split-by-tags \
+  --package-id MyCompany.MyApi \
+  --clean-stale-files
 
 # Generate validation methods
 autosdk generate openapi.yaml \
