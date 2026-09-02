@@ -12,7 +12,7 @@ public static partial class Sources
 
 namespace {settings.Namespace}
 {{
-    internal sealed class ResponseStream : global::System.IO.Stream
+    {SharedMemberModifier(settings)} sealed class ResponseStream : global::System.IO.Stream
     {{
         private readonly global::System.Net.Http.HttpResponseMessage _response;
         private readonly global::System.IO.Stream _stream;

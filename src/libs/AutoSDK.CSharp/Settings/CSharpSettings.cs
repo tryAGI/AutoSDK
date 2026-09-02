@@ -89,7 +89,11 @@ public record struct CSharpSettings(
     ImmutableArray<string> OpenApiOverrides,
     bool GenerateWebSocketClient,
     string WebSocketClientClassName,
-    string TypesNamespace)
+    string TypesNamespace,
+    bool SplitByTags,
+    string BasePackageId,
+    string PackageMapPath,
+    string StrongNamePublicKey)
 {
     public static CSharpSettings Default => FromSettings(Settings.Default);
 
@@ -199,7 +203,11 @@ public record struct CSharpSettings(
             OpenApiOverrides: settings.OpenApiOverrides,
             GenerateWebSocketClient: settings.GenerateWebSocketClient,
             WebSocketClientClassName: settings.WebSocketClientClassName,
-            TypesNamespace: settings.TypesNamespace);
+            TypesNamespace: settings.TypesNamespace,
+            SplitByTags: settings.SplitByTags,
+            BasePackageId: settings.BasePackageId,
+            PackageMapPath: settings.PackageMapPath,
+            StrongNamePublicKey: settings.StrongNamePublicKey);
     }
 
     public Settings ToSettings()
@@ -308,7 +316,11 @@ public record struct CSharpSettings(
             OpenApiOverrides: OpenApiOverrides,
             GenerateWebSocketClient: GenerateWebSocketClient,
             WebSocketClientClassName: WebSocketClientClassName,
-            TypesNamespace: TypesNamespace);
+            TypesNamespace: TypesNamespace,
+            SplitByTags: SplitByTags,
+            BasePackageId: BasePackageId,
+            PackageMapPath: PackageMapPath,
+            StrongNamePublicKey: StrongNamePublicKey);
     }
 
     public static implicit operator CSharpSettings(Settings settings)

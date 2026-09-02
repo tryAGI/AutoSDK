@@ -59,7 +59,7 @@ namespace {settings.Namespace}
         public global::System.Uri Uri {{ get; }}
     }}
 
-    internal sealed class AutoSDKServerConfiguration
+    {SharedMemberModifier(settings)} sealed class AutoSDKServerConfiguration
     {{
         public global::System.Uri? ExplicitBaseUri {{ get; set; }}
         public global::{settings.Namespace}.AutoSDKServer? SelectedServer {{ get; set; }}

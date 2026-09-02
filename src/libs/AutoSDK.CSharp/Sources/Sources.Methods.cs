@@ -967,13 +967,12 @@ namespace {endPoint.Settings.Namespace}
         bool forceResponseHeadersRead = false)
     {
         var hasOAuth2Authorization = endPoint.Authorizations.Any(static x => x.Type is SecuritySchemeType.OAuth2);
-        var rootClassName = endPoint.Settings.ClassName.Replace(".", string.Empty);
         var completionOption = $"global::System.Net.Http.HttpCompletionOption.{(forceResponseHeadersRead || endPoint.Stream
             ? nameof(HttpCompletionOption.ResponseHeadersRead)
             : nameof(HttpCompletionOption.ResponseContentRead))}";
 
         return hasOAuth2Authorization
-            ? $@"global::{endPoint.Settings.Namespace}.{rootClassName}.AutoSDKOAuth2Helpers.SendAsync(
+            ? $@"{OAuth2TypeReference(endPoint.Settings, "AutoSDKOAuth2Helpers")}.SendAsync(
                 httpClient: HttpClient,
                 request: {requestVariableName},
                 completionOption: {completionOption},

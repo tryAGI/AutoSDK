@@ -394,6 +394,31 @@ public static partial class Sources
             Text: GenerateAuthorizationInterface(authorization));
     }
     
+    /// <summary>
+    /// The OAuth2 support types emitted as namespace-level types, so split-by-tags families can
+    /// keep them in the Core package instead of nesting them in the facade's root client.
+    /// </summary>
+    /// <remarks>
+    /// Empty outside split mode, where the types stay nested exactly as before. Only the first
+    /// OAuth2 authorization contributes, matching the nested form: the type family is emitted once
+    /// per document, not once per scheme.
+    /// </remarks>
+    public static FileWithName OAuth2SupportTypes(
+        EquatableArray<Authorization> authorizations,
+        CancellationToken cancellationToken = default)
+    {
+        var oAuth2Authorization = authorizations
+            .FirstOrDefault(static x => x.Type is SecuritySchemeType.OAuth2 && x.Settings.SplitByTags);
+        if (oAuth2Authorization.Settings.Namespace is null or "")
+        {
+            return FileWithName.Empty;
+        }
+
+        return new FileWithName(
+            Name: $"{oAuth2Authorization.Settings.Namespace}.AutoSDKOAuth2.g.cs",
+            Text: GenerateOAuth2SupportTypesFile(oAuth2Authorization));
+    }
+
     public static FileWithName MainAuthorizationConstructor(
         EquatableArray<Authorization> authorizations,
         CancellationToken cancellationToken = default)

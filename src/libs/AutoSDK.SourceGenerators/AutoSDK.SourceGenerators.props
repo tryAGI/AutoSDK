@@ -195,6 +195,22 @@
          When set, type references use this namespace instead of the main Namespace.
          Used for cross-namespace schema referencing where models live in a different namespace. Default: Empty (uses Namespace) -->
     <CompilerVisibleProperty Include="AutoSDK_TypesNamespace"/>
+    <!-- true/false. Default: false. Emits a family of per-tag projects/packages instead of a
+         single project. Only the `autosdk generate` CLI can honour this, because a Roslyn source
+         generator cannot create .csproj files; setting it here reports OAG004. -->
+    <CompilerVisibleProperty Include="AutoSDK_SplitByTags"/>
+    <!-- Base NuGet package id for the generated family, e.g. 'tryAGI.GitHub'. Tag packages become
+         '<BasePackageId>.<Tag>' and shared code lands in '<BasePackageId>.Core'.
+         Default: Empty (falls back to Namespace). Only used when SplitByTags is true. -->
+    <CompilerVisibleProperty Include="AutoSDK_BasePackageId"/>
+    <!-- Path to a JSON file mapping OpenAPI tag names to package suffixes, so several small or
+         closely related tags can share one package and unstable upstream tag names do not force
+         package churn. Default: Empty. Only used when SplitByTags is true. -->
+    <CompilerVisibleProperty Include="AutoSDK_PackageMapPath"/>
+    <!-- Hex-encoded strong-name public key of the generated assemblies. When set, shared runtime
+         members stay `internal` and AutoSDK emits InternalsVisibleTo across the family instead of
+         widening them to public. Default: Empty. Only used when SplitByTags is true. -->
+    <CompilerVisibleProperty Include="AutoSDK_StrongNamePublicKey"/>
   </ItemGroup>
 
   <ItemGroup>

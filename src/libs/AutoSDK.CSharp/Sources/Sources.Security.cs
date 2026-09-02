@@ -13,28 +13,28 @@ public static partial class Sources
 
 namespace {settings.Namespace}
 {{
-    internal sealed class EndPointAuthorizationRequirement
+    {SharedMemberModifier(settings)} sealed class EndPointAuthorizationRequirement
     {{
-        internal string Type {{ get; set; }} = string.Empty;
+        {SharedNestedMemberModifier(settings)} string Type {{ get; set; }} = string.Empty;
 
-        internal string SchemeId {{ get; set; }} = string.Empty;
+        {SharedNestedMemberModifier(settings)} string SchemeId {{ get; set; }} = string.Empty;
 
-        internal string Location {{ get; set; }} = string.Empty;
+        {SharedNestedMemberModifier(settings)} string Location {{ get; set; }} = string.Empty;
 
-        internal string Name {{ get; set; }} = string.Empty;
+        {SharedNestedMemberModifier(settings)} string Name {{ get; set; }} = string.Empty;
 
-        internal string FriendlyName {{ get; set; }} = string.Empty;
+        {SharedNestedMemberModifier(settings)} string FriendlyName {{ get; set; }} = string.Empty;
     }}
 
-    internal sealed class EndPointSecurityRequirement
+    {SharedMemberModifier(settings)} sealed class EndPointSecurityRequirement
     {{
-        internal global::System.Collections.Generic.IReadOnlyList<EndPointAuthorizationRequirement> Authorizations {{ get; set; }} =
+        {SharedNestedMemberModifier(settings)} global::System.Collections.Generic.IReadOnlyList<EndPointAuthorizationRequirement> Authorizations {{ get; set; }} =
             global::System.Array.Empty<EndPointAuthorizationRequirement>();
     }}
 
-    internal static class EndPointSecurityResolver
+    {SharedMemberModifier(settings)} static class EndPointSecurityResolver
     {{
-        internal static global::System.Collections.Generic.List<EndPointAuthorization> ResolveAuthorizations(
+        {SharedNestedMemberModifier(settings)} static global::System.Collections.Generic.List<EndPointAuthorization> ResolveAuthorizations(
             global::System.Collections.Generic.IReadOnlyList<EndPointAuthorization> availableAuthorizations,
             global::System.Collections.Generic.IReadOnlyList<EndPointSecurityRequirement> securityRequirements,
             string operationName)

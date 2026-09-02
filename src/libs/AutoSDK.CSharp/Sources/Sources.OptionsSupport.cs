@@ -554,9 +554,9 @@ namespace {settings.Namespace}
 
 {(includePollingSupport ? GeneratePollingRuntimeSupport(settings) : TrimmedLine)}
 
-    internal static class AutoSDKRequestOptionsSupport
+    {SharedMemberModifier(settings)} static class AutoSDKRequestOptionsSupport
     {{
-        internal static global::{settings.Namespace}.AutoSDKHookContext CreateHookContext(
+        {SharedNestedMemberModifier(settings)} static global::{settings.Namespace}.AutoSDKHookContext CreateHookContext(
             string operationId,
             string methodName,
             string pathTemplate,
@@ -595,28 +595,28 @@ namespace {settings.Namespace}
             }};
         }}
 
-        internal static global::System.Threading.Tasks.Task OnBeforeRequestAsync(
+        {SharedNestedMemberModifier(settings)} static global::System.Threading.Tasks.Task OnBeforeRequestAsync(
             global::{settings.Namespace}.AutoSDKClientOptions clientOptions,
             global::{settings.Namespace}.AutoSDKHookContext context)
         {{
             return InvokeHooksAsync(clientOptions, static (hook, hookContext) => hook.OnBeforeRequestAsync(hookContext), context);
         }}
 
-        internal static global::System.Threading.Tasks.Task OnAfterSuccessAsync(
+        {SharedNestedMemberModifier(settings)} static global::System.Threading.Tasks.Task OnAfterSuccessAsync(
             global::{settings.Namespace}.AutoSDKClientOptions clientOptions,
             global::{settings.Namespace}.AutoSDKHookContext context)
         {{
             return InvokeHooksAsync(clientOptions, static (hook, hookContext) => hook.OnAfterSuccessAsync(hookContext), context);
         }}
 
-        internal static global::System.Threading.Tasks.Task OnAfterErrorAsync(
+        {SharedNestedMemberModifier(settings)} static global::System.Threading.Tasks.Task OnAfterErrorAsync(
             global::{settings.Namespace}.AutoSDKClientOptions clientOptions,
             global::{settings.Namespace}.AutoSDKHookContext context)
         {{
             return InvokeHooksAsync(clientOptions, static (hook, hookContext) => hook.OnAfterErrorAsync(hookContext), context);
         }}
 
-        internal static bool GetReadResponseAsString(
+        {SharedNestedMemberModifier(settings)} static bool GetReadResponseAsString(
             global::{settings.Namespace}.AutoSDKClientOptions clientOptions,
             global::{settings.Namespace}.AutoSDKRequestOptions? requestOptions,
             bool fallbackValue)
@@ -626,7 +626,7 @@ namespace {settings.Namespace}
                    fallbackValue;
         }}
 
-        internal static global::System.Threading.CancellationTokenSource? CreateTimeoutCancellationTokenSource(
+        {SharedNestedMemberModifier(settings)} static global::System.Threading.CancellationTokenSource? CreateTimeoutCancellationTokenSource(
             global::{settings.Namespace}.AutoSDKClientOptions clientOptions,
             global::{settings.Namespace}.AutoSDKRequestOptions? requestOptions,
             global::System.Threading.CancellationToken cancellationToken)
@@ -642,7 +642,7 @@ namespace {settings.Namespace}
             return cancellationTokenSource;
         }}
 
-        internal static int GetMaxAttempts(
+        {SharedNestedMemberModifier(settings)} static int GetMaxAttempts(
             global::{settings.Namespace}.AutoSDKClientOptions clientOptions,
             global::{settings.Namespace}.AutoSDKRequestOptions? requestOptions,
             bool supportsRetry)
@@ -658,7 +658,7 @@ namespace {settings.Namespace}
             return maxAttempts < 1 ? 1 : maxAttempts;
         }}
 
-        internal static global::System.TimeSpan GetRetryDelay(
+        {SharedNestedMemberModifier(settings)} static global::System.TimeSpan GetRetryDelay(
             global::{settings.Namespace}.AutoSDKClientOptions clientOptions,
             global::{settings.Namespace}.AutoSDKRequestOptions? requestOptions,
             global::System.Net.Http.HttpResponseMessage? response,
@@ -702,7 +702,7 @@ namespace {settings.Namespace}
             return ClampRetryDelay(delay, retryOptions);
         }}
 
-        internal static async global::System.Threading.Tasks.Task DelayBeforeRetryAsync(
+        {SharedNestedMemberModifier(settings)} static async global::System.Threading.Tasks.Task DelayBeforeRetryAsync(
             global::System.TimeSpan retryDelay,
             global::System.Threading.CancellationToken cancellationToken)
         {{
@@ -842,7 +842,7 @@ namespace {settings.Namespace}
             return delay;
         }}
 
-        internal static bool ShouldRetryStatusCode(
+        {SharedNestedMemberModifier(settings)} static bool ShouldRetryStatusCode(
             global::System.Net.HttpStatusCode statusCode)
         {{
             return (int)statusCode switch
@@ -858,7 +858,7 @@ namespace {settings.Namespace}
             }};
         }}
 
-        internal static string AppendQueryParameters(
+        {SharedNestedMemberModifier(settings)} static string AppendQueryParameters(
             string path,
             global::System.Collections.Generic.Dictionary<string, string> clientParameters,
             global::System.Collections.Generic.Dictionary<string, string>? requestParameters)
@@ -877,7 +877,7 @@ namespace {settings.Namespace}
             return builder.ToString();
         }}
 
-        internal static void ApplyHeaders(
+        {SharedNestedMemberModifier(settings)} static void ApplyHeaders(
             global::System.Net.Http.HttpRequestMessage request,
             global::System.Collections.Generic.Dictionary<string, string> clientHeaders,
             global::System.Collections.Generic.Dictionary<string, string>? requestHeaders)
@@ -1006,7 +1006,7 @@ namespace {settings.Namespace}
     private static string GeneratePollingRuntimeSupport(CSharpSettings settings)
     {
         return $@"
-    internal readonly struct AutoSDKResolvedPollingOptions
+    {SharedMemberModifier(settings)} readonly struct AutoSDKResolvedPollingOptions
     {{
         public AutoSDKResolvedPollingOptions(
             global::System.TimeSpan initialDelay,
@@ -1025,9 +1025,9 @@ namespace {settings.Namespace}
         public int MaxAttempts {{ get; }}
     }}
 
-    internal static class AutoSDKPollingSupport
+    {SharedMemberModifier(settings)} static class AutoSDKPollingSupport
     {{
-        internal static global::{settings.Namespace}.AutoSDKResolvedPollingOptions ResolvePollingOptions(
+        {SharedNestedMemberModifier(settings)} static global::{settings.Namespace}.AutoSDKResolvedPollingOptions ResolvePollingOptions(
             global::{settings.Namespace}.AutoSDKPollingOptions? pollingOptions,
             global::System.TimeSpan defaultInitialDelay,
             global::System.TimeSpan defaultInterval,
@@ -1057,7 +1057,7 @@ namespace {settings.Namespace}
                 maxAttempts: maxAttempts);
         }}
 
-        internal static global::System.Threading.Tasks.Task DelayAsync(
+        {SharedNestedMemberModifier(settings)} static global::System.Threading.Tasks.Task DelayAsync(
             global::System.TimeSpan delay,
             global::System.Threading.CancellationToken cancellationToken)
         {{
@@ -1066,7 +1066,7 @@ namespace {settings.Namespace}
                 : global::System.Threading.Tasks.Task.Delay(delay, cancellationToken);
         }}
 
-        internal static string GetStatusCodeValue(global::System.Net.HttpStatusCode statusCode)
+        {SharedNestedMemberModifier(settings)} static string GetStatusCodeValue(global::System.Net.HttpStatusCode statusCode)
         {{
             return ((int)statusCode).ToString(global::System.Globalization.CultureInfo.InvariantCulture);
         }}
@@ -1077,7 +1077,7 @@ namespace {settings.Namespace}
         /// GET-by-id polling helper. Returns null when <paramref name=""locationHeaderValues""/>
         /// is empty or the value cannot be parsed as a URI/path with at least one segment.
         /// </summary>
-        internal static string? ExtractIdFromLocationHeader(
+        {SharedNestedMemberModifier(settings)} static string? ExtractIdFromLocationHeader(
             global::System.Collections.Generic.IEnumerable<string>? locationHeaderValues)
         {{
             if (locationHeaderValues == null)
@@ -1119,7 +1119,7 @@ namespace {settings.Namespace}
             return null;
         }}
 
-        internal static bool MatchesStatusCode(
+        {SharedNestedMemberModifier(settings)} static bool MatchesStatusCode(
             global::System.Net.HttpStatusCode statusCode,
             string @operator,
             string expectedValue)
@@ -1127,7 +1127,7 @@ namespace {settings.Namespace}
             return CompareValues(GetStatusCodeValue(statusCode), @operator, expectedValue);
         }}
 
-        internal static bool MatchesSimpleCondition(
+        {SharedNestedMemberModifier(settings)} static bool MatchesSimpleCondition(
             object? body,
             string jsonPointer,
             string @operator,
@@ -1137,7 +1137,7 @@ namespace {settings.Namespace}
                    CompareValues(actualValue, @operator, expectedValue);
         }}
 
-        internal static bool MatchesRegexCondition(
+        {SharedNestedMemberModifier(settings)} static bool MatchesRegexCondition(
             object? body,
             string jsonPointer,
             string pattern)
@@ -1146,7 +1146,7 @@ namespace {settings.Namespace}
                    MatchesRegexValue(actualValue, pattern);
         }}
 
-        internal static bool MatchesRegexValue(
+        {SharedNestedMemberModifier(settings)} static bool MatchesRegexValue(
             string? value,
             string pattern)
         {{

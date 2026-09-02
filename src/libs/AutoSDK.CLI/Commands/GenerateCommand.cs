@@ -6,6 +6,7 @@ using AutoSDK.Generation;
 using AutoSDK.Helpers;
 using AutoSDK.Models;
 using AutoSDK.Naming.Methods;
+using AutoSDK.Packaging;
 
 namespace AutoSDK.CLI.Commands;
 
@@ -486,6 +487,41 @@ internal sealed class GenerateCommand : Command
         Description = "Delete stale AutoSDK-generated .g.cs, single-file, and snippet-manifest outputs that are no longer produced. Use only with a dedicated generated output directory.",
     };
 
+    private Option<bool> SplitByTags { get; } = new(
+        name: "--split-by-tags")
+    {
+        DefaultValueFactory = _ => false,
+        Description = "Emit a family of per-tag projects/packages instead of one project: a shared '<package-id>.Core', one package per OpenAPI tag, a base package that reassembles the full SDK, a solution, and a deterministic autosdk-packages.json manifest. Consumers can then reference only the tags they use.",
+    };
+
+    private Option<string> PackageId { get; } = new(
+        name: "--package-id")
+    {
+        DefaultValueFactory = _ => string.Empty,
+        Description = "Base NuGet package id for --split-by-tags, e.g. 'tryAGI.GitHub'. Tag packages become '<package-id>.<Tag>' and shared code lands in '<package-id>.Core'. Defaults to the namespace.",
+    };
+
+    private Option<string> PackagesOutput { get; } = new(
+        name: "--packages-output")
+    {
+        DefaultValueFactory = _ => "GeneratedPackages",
+        Description = "Directory the --split-by-tags package family is written to, relative to --output.",
+    };
+
+    private Option<string> PackageMap { get; } = new(
+        name: "--package-map")
+    {
+        DefaultValueFactory = _ => string.Empty,
+        Description = "Path to a JSON file of the form {\"tags\":{\"<tag>\":\"<PackageSuffix>\"}} that overrides --split-by-tags package names. Several tags may map to the same suffix to group them into one package.",
+    };
+
+    private Option<string> StrongNamePublicKey { get; } = new(
+        name: "--strong-name-public-key")
+    {
+        DefaultValueFactory = _ => string.Empty,
+        Description = "Hex-encoded strong-name public key of the generated assemblies. When set, --split-by-tags keeps shared runtime members internal and emits InternalsVisibleTo across the family instead of widening them to public.",
+    };
+
     public GenerateCommand() : base(name: "generate", description: "Generates client SDK code from OpenAPI/AsyncAPI, or scaffolds a C# gRPC project from a local .proto, descriptor set, or Buf module input.")
     {
         Arguments.Add(Input);
@@ -553,6 +589,11 @@ internal sealed class GenerateCommand : Command
         Options.Add(Language);
         Options.Add(Diagnostics);
         Options.Add(CleanStaleFiles);
+        Options.Add(SplitByTags);
+        Options.Add(PackageId);
+        Options.Add(PackagesOutput);
+        Options.Add(PackageMap);
+        Options.Add(StrongNamePublicKey);
 
         SetAction(HandleAsync);
     }
@@ -571,6 +612,12 @@ internal sealed class GenerateCommand : Command
         var apiOutputSubdirectory = parseResult.GetRequiredValue(ApiOutputSubdirectory);
         var grpcOutputSubdirectory = parseResult.GetRequiredValue(GrpcOutputSubdirectory);
         
+        var splitByTags = parseResult.GetRequiredValue(SplitByTags);
+        var packageIdValue = parseResult.GetRequiredValue(PackageId);
+        var packagesOutputValue = parseResult.GetRequiredValue(PackagesOutput);
+        var packageMapValue = parseResult.GetRequiredValue(PackageMap);
+        var strongNamePublicKeyValue = parseResult.GetRequiredValue(StrongNamePublicKey).Trim();
+
         var namespaceValue = parseResult.GetRequiredValue(Namespace);
         var contextName = parseResult.GetRequiredValue(JsonSerializerContextName);
         var contextClassName = string.IsNullOrWhiteSpace(contextName)
@@ -607,6 +654,43 @@ internal sealed class GenerateCommand : Command
                 StringComparison.OrdinalIgnoreCase))
         {
             throw new ArgumentException("--api-output-subdirectory and --grpc-output-subdirectory must be different.");
+        }
+
+        if (splitByTags)
+        {
+            if (singleFile)
+            {
+                throw new ArgumentException("--split-by-tags and --single-file are mutually exclusive.");
+            }
+
+            if (grpcInputs.Length > 0)
+            {
+                throw new ArgumentException("--split-by-tags does not support mixed-mode gRPC generation. Generate the gRPC sidecars separately.");
+            }
+
+            // --generate-cli replaces model/client generation rather than adding to it, so the
+            // family would have no clients to split and its Core would hold command classes that
+            // reference tag clients — the one direction the graph must never point.
+            if (parseResult.GetRequiredValue(GenerateCli))
+            {
+                throw new ArgumentException("--split-by-tags and --generate-cli are mutually exclusive. Generate the SDK family first, then run 'autosdk cli-project' against it.");
+            }
+
+            if (string.IsNullOrWhiteSpace(packagesOutputValue))
+            {
+                throw new ArgumentException("--packages-output must be non-empty.");
+            }
+
+            if (!string.IsNullOrEmpty(strongNamePublicKeyValue) &&
+                !strongNamePublicKeyValue.All(Uri.IsHexDigit))
+            {
+                throw new ArgumentException("--strong-name-public-key must be the hex-encoded public key, with no '0x' prefix or separators.");
+            }
+
+            if (!string.IsNullOrWhiteSpace(packageMapValue) && !File.Exists(packageMapValue))
+            {
+                throw new ArgumentException($"--package-map file '{packageMapValue}' does not exist.");
+            }
         }
 
         if (!generateModels && string.IsNullOrWhiteSpace(typesNamespaceValue))
@@ -675,6 +759,10 @@ internal sealed class GenerateCommand : Command
             GenerateWebSocketClient = true,
             WebSocketClientClassName = parseResult.GetRequiredValue(WebSocketClientClassName),
             TypesNamespace = typesNamespaceValue,
+            SplitByTags = splitByTags,
+            BasePackageId = packageIdValue,
+            PackageMapPath = packageMapValue,
+            StrongNamePublicKey = strongNamePublicKeyValue,
         };
             
         if (!string.Equals(language, "csharp", StringComparison.OrdinalIgnoreCase))
@@ -746,11 +834,16 @@ internal sealed class GenerateCommand : Command
             return;
         }
 
+        var packagesRoot = splitByTags
+            ? Path.Combine(output, packagesOutputValue)
+            : string.Empty;
         var apiOutput = grpcInputs.Length > 0
             ? Path.Combine(output, apiOutputSubdirectory)
             : output;
         var staleCandidates = cleanStaleFiles
-            ? CollectStaleGeneratedFiles(apiOutput, output, name).ToArray()
+            ? (splitByTags
+                ? CollectStalePackageFamilyFiles(packagesRoot).ToArray()
+                : CollectStaleGeneratedFiles(apiOutput, output, name).ToArray())
             : [];
         var generatorFingerprint = string.Empty;
         var cacheValidation = new GenerationCacheValidation(false, "mixed_mode_disabled", default, []);
@@ -861,7 +954,36 @@ internal sealed class GenerateCommand : Command
             : [];
 
         var generatedOutputs = new List<GeneratedOutputFile>(files.Count + 2);
-        if (singleFile)
+        PackagePlan? packagePlan = null;
+        if (splitByTags)
+        {
+            var tagPackageOverrides = string.IsNullOrWhiteSpace(packageMapValue)
+                ? null
+                : await PackageMapFile.ReadAsync(packageMapValue).ConfigureAwait(false);
+
+            if (!PackagePlanner.TryCreate(data, tagPackageOverrides, out var plan, out var planError))
+            {
+                throw new InvalidOperationException(planError);
+            }
+
+            packagePlan = plan;
+            foreach (var file in files)
+            {
+                generatedOutputs.Add(new GeneratedOutputFile(
+                    Path.Combine(
+                        packagesRoot,
+                        plan!.Value.ResolvePackageId(file.Name),
+                        PackageFamilyScaffolder.GeneratedDirectoryName,
+                        file.Name),
+                    file.Text));
+            }
+
+            foreach (var (relativePath, text) in PackageFamilyScaffolder.CreateFiles(plan!.Value, strongNamePublicKeyValue))
+            {
+                generatedOutputs.Add(new GeneratedOutputFile(Path.Combine(packagesRoot, relativePath), text));
+            }
+        }
+        else if (singleFile)
         {
             var text = string.Join(Environment.NewLine, files.Select(x => x.Text));
             generatedOutputs.Add(new GeneratedOutputFile(Path.Combine(apiOutput, $"{name}.cs"), text));
@@ -918,6 +1040,18 @@ internal sealed class GenerateCommand : Command
             collectDiagnostics: diagnosticsEnabled).ConfigureAwait(false);
         writeTime.Stop();
         var allocationAfterWrite = GetAllocatedBytes(diagnosticsEnabled);
+
+        if (cleanStaleFiles && packagePlan is not null)
+        {
+            RemoveStalePackageDirectories(packagesRoot, packagePlan.Value);
+        }
+
+        if (packagePlan is not null)
+        {
+            Console.WriteLine(
+                $"Generated {packagePlan.Value.Packages.Length} packages into {packagesRoot} " +
+                $"({packagePlan.Value.TagPackages.Count()} tag package(s) plus Core and the base package).");
+        }
 
         var cacheWriteTime = Stopwatch.StartNew();
         if (grpcInputs.IsEmpty)
@@ -979,6 +1113,83 @@ internal sealed class GenerateCommand : Command
     private static long GetAllocatedBytes(bool diagnosticsEnabled)
     {
         return diagnosticsEnabled ? GC.GetTotalAllocatedBytes(precise: true) : 0;
+    }
+
+    /// <summary>
+    /// AutoSDK-owned files under a split-by-tags packages root that a regeneration may no longer
+    /// produce: generated sources, the per-package projects, the solution and the manifest.
+    /// </summary>
+    /// <remarks>
+    /// Deliberately narrow. Anything else a repository keeps under the packages root — hand-written
+    /// extensions, README files, test projects — is not AutoSDK's to delete.
+    /// </remarks>
+    private static IEnumerable<string> CollectStalePackageFamilyFiles(string packagesRoot)
+    {
+        if (!Directory.Exists(packagesRoot))
+        {
+            yield break;
+        }
+
+        foreach (var path in Directory.EnumerateFiles(packagesRoot, "*.g.cs", SearchOption.AllDirectories))
+        {
+            yield return path;
+        }
+
+        foreach (var path in Directory.EnumerateFiles(packagesRoot, "*.csproj", SearchOption.AllDirectories))
+        {
+            yield return path;
+        }
+
+        foreach (var path in Directory.EnumerateFiles(packagesRoot, "*.slnx", SearchOption.TopDirectoryOnly))
+        {
+            yield return path;
+        }
+
+        var manifest = Path.Combine(packagesRoot, PackageFamilyScaffolder.ManifestFileName);
+        if (File.Exists(manifest))
+        {
+            yield return manifest;
+        }
+    }
+
+    /// <summary>
+    /// Removes package directories the current plan no longer contains, after stale files inside
+    /// them have already been deleted.
+    /// </summary>
+    /// <remarks>
+    /// Only directories that are empty once stale-file cleanup has run are removed, so a directory
+    /// still holding user-owned files is preserved rather than silently discarded.
+    /// </remarks>
+    private static void RemoveStalePackageDirectories(string packagesRoot, PackagePlan plan)
+    {
+        if (!Directory.Exists(packagesRoot))
+        {
+            return;
+        }
+
+        var expected = new HashSet<string>(
+            plan.Packages.Select(static x => x.DirectoryName),
+            StringComparer.OrdinalIgnoreCase);
+
+        // Materialized up front: deleting while a lazy enumeration is in flight is not safe.
+        foreach (var directory in Directory.GetDirectories(packagesRoot))
+        {
+            if (expected.Contains(Path.GetFileName(directory)))
+            {
+                continue;
+            }
+
+            // Only files count as content. Stale-file cleanup leaves the empty `Generated` folder
+            // behind, and treating that as user content would keep every retired package forever.
+            if (Directory.EnumerateFiles(directory, "*", SearchOption.AllDirectories).Any())
+            {
+                Console.WriteLine(
+                    $"Warning: '{directory}' is no longer part of the generated package family but still contains files. Leaving it in place.");
+                continue;
+            }
+
+            Directory.Delete(directory, recursive: true);
+        }
     }
 
     private static IEnumerable<string> CollectStaleGeneratedFiles(

@@ -1,0 +1,218 @@
+openapi: "3.0.0"
+info:
+  version: 1.0.0
+  title: Split By Tags Fixture
+  description: |
+    Two-tag fixture for split-by-tags package families. Deliberately exercises the parts of the
+    generator that have to cross an assembly boundary once the SDK is split:
+      - two tags, so the family has two independently consumable tag packages
+      - a model shared by both tags, proving models belong in Core rather than in a tag package
+      - an untagged operation, which is a partial of the root client and must land in the facade
+      - OAuth2 security, whose support types are nested in the root client and would otherwise
+        make every tag assembly reference the facade that already references it
+      - a paged response and a streaming response, so the pageable and response-stream runtime
+        helpers are reachable from tag operation bodies
+  license:
+    name: MIT
+servers:
+  - url: https://api.example.com/v1
+security:
+  - oauth2:
+      - read
+      - write
+paths:
+  /status:
+    get:
+      summary: Service status, deliberately untagged.
+      operationId: getStatus
+      responses:
+        '200':
+          description: The current service status.
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Status"
+  /albums:
+    get:
+      summary: List albums.
+      operationId: listAlbums
+      tags:
+        - albums
+      parameters:
+        - name: limit
+          in: query
+          required: false
+          schema:
+            type: integer
+            format: int32
+        - name: offset
+          in: query
+          required: false
+          schema:
+            type: integer
+            format: int32
+      responses:
+        '200':
+          description: A page of albums.
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/AlbumPage"
+        default:
+          description: Unexpected error.
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Error"
+  /albums/{albumId}:
+    get:
+      summary: Get one album.
+      operationId: getAlbum
+      tags:
+        - albums
+      parameters:
+        - name: albumId
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: The album.
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Album"
+  /artists/{artistId}:
+    get:
+      summary: Get one artist.
+      operationId: getArtist
+      tags:
+        - artists
+      parameters:
+        - name: artistId
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: The artist.
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Artist"
+  /artists/{artistId}/albums:
+    get:
+      summary: List an artist's albums. Returns the same Album model the albums tag uses.
+      operationId: listArtistAlbums
+      tags:
+        - artists
+      parameters:
+        - name: artistId
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: A page of albums.
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/AlbumPage"
+  /artists/{artistId}/portrait:
+    get:
+      summary: Download an artist portrait as a stream.
+      operationId: getArtistPortrait
+      tags:
+        - artists
+      parameters:
+        - name: artistId
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: The portrait bytes.
+          content:
+            application/octet-stream:
+              schema:
+                type: string
+                format: binary
+tags:
+  - name: albums
+    description: Album catalogue operations.
+  - name: artists
+    description: Artist catalogue operations.
+components:
+  securitySchemes:
+    oauth2:
+      type: oauth2
+      flows:
+        authorizationCode:
+          authorizationUrl: https://api.example.com/oauth/authorize
+          tokenUrl: https://api.example.com/oauth/token
+          refreshUrl: https://api.example.com/oauth/token
+          scopes:
+            read: Read access.
+            write: Write access.
+  schemas:
+    Status:
+      type: object
+      required:
+        - healthy
+      properties:
+        healthy:
+          type: boolean
+        version:
+          type: string
+    Album:
+      type: object
+      required:
+        - id
+        - name
+      properties:
+        id:
+          type: string
+        name:
+          type: string
+        artist:
+          $ref: "#/components/schemas/Artist"
+    Artist:
+      type: object
+      required:
+        - id
+        - name
+      properties:
+        id:
+          type: string
+        name:
+          type: string
+    AlbumPage:
+      type: object
+      required:
+        - items
+      properties:
+        items:
+          type: array
+          maxItems: 100
+          items:
+            $ref: "#/components/schemas/Album"
+        next:
+          type: string
+        total:
+          type: integer
+          format: int32
+    Error:
+      type: object
+      required:
+        - code
+        - message
+      properties:
+        code:
+          type: integer
+          format: int32
+        message:
+          type: string

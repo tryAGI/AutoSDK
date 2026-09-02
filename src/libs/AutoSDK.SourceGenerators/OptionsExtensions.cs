@@ -130,7 +130,11 @@ public static class OptionsExtensions
                                []).Where(static x => !string.IsNullOrWhiteSpace(x)).ToImmutableArray(),
             GenerateWebSocketClient: options.GetBoolGlobalOption(nameof(Settings.GenerateWebSocketClient), prefix, defaultValue: Settings.Default.GenerateWebSocketClient),
             WebSocketClientClassName: options.GetGlobalOption(nameof(Settings.WebSocketClientClassName), prefix) ?? string.Empty,
-            TypesNamespace: options.GetGlobalOption(nameof(Settings.TypesNamespace), prefix) ?? string.Empty);
+            TypesNamespace: options.GetGlobalOption(nameof(Settings.TypesNamespace), prefix) ?? string.Empty,
+            SplitByTags: options.GetBoolGlobalOption(nameof(Settings.SplitByTags), prefix, defaultValue: Settings.Default.SplitByTags),
+            BasePackageId: options.GetGlobalOption(nameof(Settings.BasePackageId), prefix) ?? string.Empty,
+            PackageMapPath: options.GetGlobalOption(nameof(Settings.PackageMapPath), prefix) ?? string.Empty,
+            StrongNamePublicKey: options.GetGlobalOption(nameof(Settings.StrongNamePublicKey), prefix) ?? string.Empty);
         
         string? GetOptionFromAdditionalText(string name)
         {

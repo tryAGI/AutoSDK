@@ -15,7 +15,6 @@ public static partial class Sources
             !hasOptions &&
             client.Settings.FromCli &&
             client.Settings.ShouldGenerateJsonSerializerContextTypes();
-        var rootClassName = client.Settings.ClassName.Replace(".", string.Empty);
         var hasServerSelection = client.Servers.Length > 1;
         var suppressDeprecatedWarningsForJsonSerializerOptions =
             hasOptions &&
@@ -61,10 +60,10 @@ namespace {client.Settings.Namespace}
         public global::System.Func<string> CreateIdempotencyKey { get; set; } = () => global::System.Guid.NewGuid().ToString(""D"");" : TrimmedLine)}
 {(client.HasOAuth2Support ? $@"
 
-        internal global::{client.Settings.Namespace}.{rootClassName}.AutoSDKOAuth2Coordinator AutoSDKOAuth2State {{ get; set; }} = new global::{client.Settings.Namespace}.{rootClassName}.AutoSDKOAuth2Coordinator();" : TrimmedLine)}
+        {SharedNestedMemberModifier(client.Settings)} {OAuth2TypeReference(client.Settings, "AutoSDKOAuth2Coordinator")} AutoSDKOAuth2State {{ get; set; }} = new {OAuth2TypeReference(client.Settings, "AutoSDKOAuth2Coordinator")}();" : TrimmedLine)}
 {(client.UsesServerSelectionSupport ? $@"
 
-        internal global::{client.Settings.Namespace}.AutoSDKServerConfiguration AutoSDKServerConfiguration {{ get; set; }} = new global::{client.Settings.Namespace}.AutoSDKServerConfiguration();" : TrimmedLine)}
+        {SharedNestedMemberModifier(client.Settings)} global::{client.Settings.Namespace}.AutoSDKServerConfiguration AutoSDKServerConfiguration {{ get; set; }} = new global::{client.Settings.Namespace}.AutoSDKServerConfiguration();" : TrimmedLine)}
         
 {(hasOptions ? $@" 
         {string.Empty.ToXmlDocumentationSummary(level: 8)}
@@ -74,7 +73,7 @@ namespace {client.Settings.Namespace}
                 ? $" = {serializer.CreateDefaultSettings(client.Converters)};"
                 : $" = new {serializer.GetOptionsType()}();")}
 {(suppressDeprecatedWarningsForJsonSerializerOptions ? "        #pragma warning restore CS0618 // Type or member is obsolete" : TrimmedLine)}" : shouldDeferJsonSerializerContext ? $@"
-        internal global::System.Lazy<global::System.Text.Json.Serialization.JsonSerializerContext> JsonSerializerContextProvider {{ get; set; }} = new(() => {GetDefaultJsonSerializerContextExpression(client.Settings)});
+        {SharedNestedMemberModifier(client.Settings)} global::System.Lazy<global::System.Text.Json.Serialization.JsonSerializerContext> JsonSerializerContextProvider {{ get; set; }} = new(() => {GetDefaultJsonSerializerContextExpression(client.Settings)});
 
         {string.Empty.ToXmlDocumentationSummary(level: 8)}
         public global::System.Text.Json.Serialization.JsonSerializerContext JsonSerializerContext

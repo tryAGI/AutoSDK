@@ -95,8 +95,31 @@ public record struct Settings(
 
     bool GenerateWebSocketClient,
     string WebSocketClientClassName,
-    string TypesNamespace)
+    string TypesNamespace,
+
+    bool SplitByTags,
+    string BasePackageId,
+    string PackageMapPath,
+    string StrongNamePublicKey)
 {
+    /// <summary>
+    /// Accessibility emitted for shared runtime members that generated tag assemblies must reach
+    /// across an assembly boundary when <see cref="SplitByTags"/> is enabled.
+    /// Stays <c>internal</c> in the default single-project mode, and also in split mode when
+    /// <see cref="StrongNamePublicKey"/> lets AutoSDK emit <c>InternalsVisibleTo</c> instead.
+    /// </summary>
+    public string SharedMemberAccessibility =>
+        SplitByTags && string.IsNullOrWhiteSpace(StrongNamePublicKey)
+            ? "public"
+            : "internal";
+
+    /// <summary>
+    /// True when shared runtime members are widened to <c>public</c> and therefore need
+    /// <c>[EditorBrowsable(Never)]</c> so they stay out of consumer IntelliSense.
+    /// </summary>
+    public bool HidesSharedMembersFromIntelliSense =>
+        SplitByTags && string.IsNullOrWhiteSpace(StrongNamePublicKey);
+
     public static Settings Default => new(
         TargetFramework: "net10.0",
         Namespace: string.Empty,
@@ -180,6 +203,10 @@ public record struct Settings(
         OpenApiOverrides: ImmutableArray<string>.Empty,
         GenerateWebSocketClient: true,
         WebSocketClientClassName: string.Empty,
-        TypesNamespace: string.Empty
+        TypesNamespace: string.Empty,
+        SplitByTags: false,
+        BasePackageId: string.Empty,
+        PackageMapPath: string.Empty,
+        StrongNamePublicKey: string.Empty
     );
 }

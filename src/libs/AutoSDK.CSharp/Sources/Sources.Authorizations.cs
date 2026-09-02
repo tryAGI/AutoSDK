@@ -703,7 +703,7 @@ namespace {authorization.Settings.Namespace}
         var hasScopeEnum = GetDistinctOAuth2Scopes(authorization).Length != 0;
 
         return $@"
-{GenerateOAuth2SupportTypes(authorization)}
+{(authorization.Settings.SplitByTags ? TrimmedLine : GenerateOAuth2SupportTypes(authorization))}
 {GenerateOAuth2ScopeEnum(authorization)}
 {GenerateOAuth2SecurityMetadataMembers(authorization)}
         /// <summary>
@@ -871,8 +871,6 @@ namespace {authorization.Settings.Namespace}
 
     private static string GenerateOAuth2AuthorizationInterfaceMembers(Authorization authorization)
     {
-        var rootClassName = authorization.Settings.ClassName.Replace(".", string.Empty);
-
         return $@"
         /// <summary>
         /// Gets the OAuth2 metadata URL declared by the security scheme, if any.
@@ -887,7 +885,7 @@ namespace {authorization.Settings.Namespace}
         /// <summary>
         /// Gets or sets the OAuth2 token store.
         /// </summary>
-        public global::{authorization.Settings.Namespace}.{rootClassName}.IOAuth2TokenStore OAuth2TokenStore {{ get; set; }}
+        public {OAuth2TypeReference(authorization.Settings, "IOAuth2TokenStore")} OAuth2TokenStore {{ get; set; }}
 
         /// <summary>
         /// Gets or sets a value indicating whether OAuth2 tokens should be refreshed automatically.
@@ -904,13 +902,13 @@ namespace {authorization.Settings.Namespace}
         /// </summary>
         /// <param name=""refreshTokenAsync""></param>
         public void ConfigureOAuth2TokenRefresh(
-            global::System.Func<global::System.Threading.CancellationToken, global::System.Threading.Tasks.Task<global::{authorization.Settings.Namespace}.{rootClassName}.OAuth2Token>> refreshTokenAsync);
+            global::System.Func<global::System.Threading.CancellationToken, global::System.Threading.Tasks.Task<{OAuth2TypeReference(authorization.Settings, "OAuth2Token")}>> refreshTokenAsync);
 
         /// <summary>
         /// Gets the currently stored OAuth2 token.
         /// </summary>
         /// <returns>The stored OAuth2 token, if present.</returns>
-        public global::{authorization.Settings.Namespace}.{rootClassName}.OAuth2Token? GetOAuth2Token();
+        public {OAuth2TypeReference(authorization.Settings, "OAuth2Token")}? GetOAuth2Token();
 
         /// <summary>
         /// Clears the stored OAuth2 token.
@@ -931,7 +929,7 @@ namespace {authorization.Settings.Namespace}
         /// <param name=""token""></param>
 {GetAuthorizationObsoleteAttribute(authorization, 8)}
         public void {authorization.MethodName}(
-            global::{authorization.Settings.Namespace}.{rootClassName}.OAuth2Token token);
+            {OAuth2TypeReference(authorization.Settings, "OAuth2Token")} token);
 {authorization.Flows.Select(x => GenerateOAuth2AuthorizationFlowInterfaceMember(authorization, x)).Inject()}
 ".Trim('\r', '\n');
     }
@@ -1422,8 +1420,8 @@ namespace {authorization.Settings.Namespace}
         var hasScopeEnum = GetDistinctOAuth2Scopes(authorization).Length != 0;
         var obsoleteAttribute = GetAuthorizationObsoleteAttribute(authorization, 8);
         var scopeEnumType = $"global::{authorization.Settings.Namespace}.{rootClassName}.OAuth2Scope";
-        var deviceAuthorizationResponseType = $"global::{authorization.Settings.Namespace}.{rootClassName}.OAuth2DeviceAuthorizationResponse";
-        var tokenType = $"global::{authorization.Settings.Namespace}.{rootClassName}.OAuth2Token";
+        var deviceAuthorizationResponseType = OAuth2TypeReference(authorization.Settings, "OAuth2DeviceAuthorizationResponse");
+        var tokenType = OAuth2TypeReference(authorization.Settings, "OAuth2Token");
 
         return flow.Type switch
         {
@@ -2021,9 +2019,9 @@ namespace {authorization.Settings.Namespace}
             }}
         }}
 
-        internal static class AutoSDKOAuth2Helpers
+        {SharedMemberModifier(authorization.Settings)} static class AutoSDKOAuth2Helpers
         {{
-            internal static void SetAuthorization(
+            {SharedNestedMemberModifier(authorization.Settings)} static void SetAuthorization(
                 global::System.Collections.Generic.List<global::{authorization.GlobalSettings.Namespace}.EndPointAuthorization> authorizations,
                 OAuth2Token? token)
             {{
@@ -2053,7 +2051,7 @@ namespace {authorization.Settings.Namespace}
                 }});
             }}
 
-            internal static async global::System.Threading.Tasks.Task<global::System.Net.Http.HttpResponseMessage> SendAsync(
+            {SharedNestedMemberModifier(authorization.Settings)} static async global::System.Threading.Tasks.Task<global::System.Net.Http.HttpResponseMessage> SendAsync(
                 global::System.Net.Http.HttpClient httpClient,
                 global::System.Net.Http.HttpRequestMessage request,
                 global::System.Net.Http.HttpCompletionOption completionOption,
@@ -2168,6 +2166,48 @@ namespace {authorization.Settings.Namespace}
                 return clone;
             }}
         }}".Trim('\r', '\n');
+    }
+
+    /// <summary>
+    /// Emits the OAuth2 support types as namespace-level types instead of nesting them inside the
+    /// root client class.
+    /// </summary>
+    /// <remarks>
+    /// Only used by split-by-tags generation. The nested form would put these types in the facade
+    /// assembly, while tag clients (which hold an <c>AutoSDKOAuth2Coordinator</c>) and tag
+    /// operation bodies (which call <c>AutoSDKOAuth2Helpers.SendAsync</c>) also need them — so the
+    /// tag assemblies would have to reference the facade that already references them. Hoisting
+    /// the family into the Core package breaks that cycle. The emitted members are unchanged; only
+    /// their enclosing scope and indentation differ.
+    /// </remarks>
+    public static string GenerateOAuth2SupportTypesFile(Authorization authorization)
+    {
+        return $@"
+#nullable enable
+
+namespace {authorization.Settings.Namespace}
+{{
+{Unindent(GenerateOAuth2SupportTypes(authorization), levels: 1)}
+}}".RemoveBlankLinesWhereOnlyWhitespaces();
+    }
+
+    /// <summary>
+    /// Removes <paramref name="levels"/> four-space indentation levels from every line that has
+    /// them, so a block generated for a nested scope can be emitted at an outer one.
+    /// </summary>
+    private static string Unindent(string text, int levels)
+    {
+        var prefix = new string(' ', 4 * levels);
+        var lines = text.Split('\n');
+        for (var index = 0; index < lines.Length; index++)
+        {
+            if (lines[index].StartsWith(prefix, StringComparison.Ordinal))
+            {
+                lines[index] = lines[index].Substring(prefix.Length);
+            }
+        }
+
+        return string.Join("\n", lines);
     }
 
     private static string GenerateOAuth2ScopeEnum(Authorization authorization)

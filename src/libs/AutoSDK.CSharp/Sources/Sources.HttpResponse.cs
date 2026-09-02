@@ -60,7 +60,7 @@ namespace {settings.Namespace}
         /// </summary>
         public global::System.Uri? RequestUri {{ get; }}
 
-        internal static global::System.Collections.Generic.Dictionary<string, global::System.Collections.Generic.IEnumerable<string>> CreateHeaders(
+        {SharedNestedMemberModifier(settings)} static global::System.Collections.Generic.Dictionary<string, global::System.Collections.Generic.IEnumerable<string>> CreateHeaders(
             global::System.Net.Http.HttpResponseMessage response)
         {{
             response = response ?? throw new global::System.ArgumentNullException(nameof(response));
@@ -138,7 +138,7 @@ namespace {settings.Namespace}
     /// </summary>
     public sealed class AutoSDKConditionalResponse<T>
     {{
-        internal AutoSDKConditionalResponse(
+        {SharedNestedMemberModifier(settings)} AutoSDKConditionalResponse(
             bool notModified,
             string? entityTag,
             global::{settings.Namespace}.AutoSDKHttpResponse<T>? response)

@@ -17,6 +17,13 @@ public class SdkGenerator : IIncrementalGenerator
         category: "Usage",
         defaultSeverity: DiagnosticSeverity.Error,
         isEnabledByDefault: true);
+    private static readonly DiagnosticDescriptor SplitByTagsRequiresCliDescriptor = new(
+        id: "OAG004",
+        title: "Split-by-tags generation requires the AutoSDK CLI",
+        messageFormat: "AutoSDK_SplitByTags is ignored by the source generator because a Roslyn generator cannot create projects. Run 'autosdk generate --split-by-tags' instead.",
+        category: "Usage",
+        defaultSeverity: DiagnosticSeverity.Warning,
+        isEnabledByDefault: true);
     private static readonly DiagnosticDescriptor JsonSerializerContextCompositionDescriptor = new(
         id: "OAG003",
         title: "Generated converters composed with JSON serializer context",
@@ -31,8 +38,14 @@ public class SdkGenerator : IIncrementalGenerator
 
     public void Initialize(IncrementalGeneratorInitializationContext context)
     {
-        var settings = context.DetectSettings();
-        context.RegisterSourceOutput(settings, ReportInvalidSettings);
+        var declaredSettings = context.DetectSettings();
+        context.RegisterSourceOutput(declaredSettings, ReportInvalidSettings);
+
+        // Split-by-tags changes the shape of the emitted code *and* requires new project files.
+        // A Roslyn generator cannot create projects, so honouring only half of the mode would leave
+        // consumers with code that never compiles. It is reported through OAG004 and switched off
+        // here so generator output is exactly what it was before the mode existed.
+        var settings = declaredSettings.Select(static (x, _) => x with { SplitByTags = false });
 
         var data = context.AdditionalTextsProvider
             .Combine(context.AnalyzerConfigOptionsProvider)
@@ -41,7 +54,7 @@ public class SdkGenerator : IIncrementalGenerator
                 pair.Right.GetOption(pair.Left, "AsyncApiSpecification", prefix: "AutoSDK")?.ToUpperInvariant() == "TRUE")
             .Select((pair, cancellationToken) => (
                 GetContent(pair.Left, cancellationToken),
-                pair.Right.GetSettings(prefix: "AutoSDK", additionalText: pair.Left)))
+                pair.Right.GetSettings(prefix: "AutoSDK", additionalText: pair.Left) with { SplitByTags = false }))
             .Combine(settings)
             .SelectAndReportExceptions(CSharpPipeline.PrepareAndEnrich, context, Id);
 
@@ -389,6 +402,13 @@ public class SdkGenerator : IIncrementalGenerator
         {
             context.ReportDiagnostic(Diagnostic.Create(
                 ConfigurationBindingRequiresDependencyInjectionDescriptor,
+                Location.None));
+        }
+
+        if (settings.SplitByTags)
+        {
+            context.ReportDiagnostic(Diagnostic.Create(
+                SplitByTagsRequiresCliDescriptor,
                 Location.None));
         }
     }
