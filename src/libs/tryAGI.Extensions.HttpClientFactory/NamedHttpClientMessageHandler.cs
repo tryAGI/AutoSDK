@@ -1,9 +1,16 @@
 namespace tryAGI.Extensions.HttpClientFactory;
 
-internal sealed class NamedHttpClientMessageHandler(
-    IHttpClientFactory httpClientFactory,
-    string clientName) : HttpMessageHandler
+internal sealed class NamedHttpClientMessageHandler : HttpMessageHandler
 {
+    private readonly HttpClient _client;
+
+    public NamedHttpClientMessageHandler(IHttpClientFactory httpClientFactory, string clientName)
+    {
+        ArgumentNullException.ThrowIfNull(httpClientFactory);
+        ArgumentException.ThrowIfNullOrWhiteSpace(clientName);
+        _client = httpClientFactory.CreateClient(clientName);
+    }
+
     protected override async Task<HttpResponseMessage> SendAsync(
         HttpRequestMessage request,
         CancellationToken cancellationToken)
@@ -11,12 +18,21 @@ internal sealed class NamedHttpClientMessageHandler(
         ArgumentNullException.ThrowIfNull(request);
 
         using var forwardedRequest = await CloneAsync(request, cancellationToken).ConfigureAwait(false);
-        using var client = httpClientFactory.CreateClient(clientName);
-        return await client.SendAsync(
+        return await _client.SendAsync(
                 forwardedRequest,
                 HttpCompletionOption.ResponseHeadersRead,
                 cancellationToken)
             .ConfigureAwait(false);
+    }
+
+    protected override void Dispose(bool disposing)
+    {
+        if (disposing)
+        {
+            _client.Dispose();
+        }
+
+        base.Dispose(disposing);
     }
 
     private static async Task<HttpRequestMessage> CloneAsync(

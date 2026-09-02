@@ -52,6 +52,20 @@ public sealed class TransportAdapterTests
     }
 
     [TestMethod]
+    public async Task OctokitAdapter_ReusesNamedClientAcrossRequests()
+    {
+        var handler = new RecordingHandler(_ => JsonResponse("{\"id\":1,\"name\":\"repo\",\"full_name\":\"owner/repo\",\"owner\":{\"login\":\"owner\",\"id\":2},\"private\":false,\"html_url\":\"https://github.com/owner/repo\",\"url\":\"https://api.github.com/repos/owner/repo\"}"));
+        var factory = new RecordingHttpClientFactory(handler);
+        var client = factory.CreateOctokitClient("github", new ProductHeaderValue("tryAGI-tests"));
+
+        await client.Repository.Get("owner", "first");
+        await client.Repository.Get("owner", "second");
+
+        factory.Names.Should().Equal("github");
+        handler.Requests.Should().HaveCount(2);
+    }
+
+    [TestMethod]
     public async Task OctokitRequestScope_CancelsHighLevelOperationTransport()
     {
         var handler = new RecordingHandler(async (_, cancellationToken) =>
