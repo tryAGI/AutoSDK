@@ -617,9 +617,17 @@ public static partial class Sources
         CSharpSettings settings,
         CancellationToken cancellationToken = default)
     {
+        return HttpResponse(settings, settings.Namespace, cancellationToken);
+    }
+
+    public static FileWithName HttpResponse(
+        CSharpSettings settings,
+        string exceptionNamespace,
+        CancellationToken cancellationToken = default)
+    {
         return new FileWithName(
             Name: $"{settings.Namespace}.AutoSDKHttpResponse.g.cs",
-            Text: GenerateHttpResponse(settings));
+            Text: GenerateHttpResponse(settings, exceptionNamespace));
     }
 
     public static FileWithName AwsEventStreamSupport(

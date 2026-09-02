@@ -5,8 +5,12 @@ namespace AutoSDK.Generation;
 
 public static partial class Sources
 {
-    public static string GenerateHttpResponse(CSharpSettings settings)
+    public static string GenerateHttpResponse(
+        CSharpSettings settings,
+        string? exceptionNamespace = null)
     {
+        exceptionNamespace ??= settings.Namespace;
+
         return $@"
 #nullable enable
 
@@ -186,7 +190,7 @@ namespace {settings.Namespace}
                     entityTag: GetEntityTag(response.Headers),
                     response: response);
             }}
-            catch (global::{settings.Namespace}.ApiException exception)
+            catch (global::{exceptionNamespace}.ApiException exception)
                 when (exception.StatusCode == global::System.Net.HttpStatusCode.NotModified)
             {{
                 return new global::{settings.Namespace}.AutoSDKConditionalResponse<T>(

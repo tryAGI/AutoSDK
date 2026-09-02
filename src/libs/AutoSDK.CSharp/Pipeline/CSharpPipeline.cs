@@ -333,7 +333,7 @@ public static class CSharpPipeline
                         : [])
                     .Concat(data.Methods.Any(static x => x.GenerateResponseWrapper && !x.EnumerableStream) ||
                             settings.GeneratePageableHelpers
-                        ? [Sources.HttpResponse(settings, cancellationToken)]
+                        ? [Sources.HttpResponse(settings, settings.Namespace, cancellationToken)]
                         : [])
                     .Concat(data.Methods.Any(static x => Sources.ShouldGenerateResponseStreamSupport(x))
                         ? [Sources.ResponseStream(data.Converters.Settings, cancellationToken)]

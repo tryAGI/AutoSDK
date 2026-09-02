@@ -119,7 +119,10 @@ public class SdkGenerator : IIncrementalGenerator
             .AddSource(context);
         data
             .SelectAndReportExceptions((x, c) => x.Methods.Any(y => y.GenerateResponseWrapper && !y.EnumerableStream)
-                ? Sources.HttpResponse(x.Converters.Settings, c)
+                ? Sources.HttpResponse(
+                    x.Converters.Settings,
+                    x.Converters.GlobalSettings.Namespace,
+                    c)
                 : FileWithName.Empty
                 .AsFileWithName(), context, Id)
             .AddSource(context);
