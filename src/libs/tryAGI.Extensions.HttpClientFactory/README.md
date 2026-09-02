@@ -1,8 +1,9 @@
 # tryAGI.Extensions.HttpClientFactory
 
-Reusable adapters that let official provider SDKs use named
-`IHttpClientFactory` pipelines without duplicating request forwarding code in
-each application.
+An intentionally small transport adapter that lets the Google APIs .NET SDK use
+a named `IHttpClientFactory` pipeline. It is not an HTTP client or a generated
+provider SDK: it only bridges Google's `Google.Apis.Http.IHttpClientFactory`
+abstraction to the standard .NET factory.
 
 ## Google APIs
 
@@ -21,25 +22,6 @@ var calendar = new CalendarService(initializer);
 
 The adapter defaults Google SDK retries to one attempt so the named client can
 own resilience. Pass a different `numberOfTries` only when that is intentional.
-
-## Octokit
-
-```csharp
-using Octokit;
-using tryAGI.Extensions.HttpClientFactory.Octokit;
-
-var github = httpClientFactory.CreateOctokitClient(
-    "GitHub",
-    new ProductHeaderValue("my-application"));
-github.Credentials = new Credentials(token, AuthenticationType.Bearer);
-
-using var request = github.BeginRequestScope(cancellationToken);
-var issue = await github.Issue.Get("owner", "repository", 42);
-```
-
-`BeginRequestScope` flows cancellation through high-level Octokit methods that
-do not expose a `CancellationToken`. The scope is async-flow-local and supports
-nesting, so concurrent operations can use different tokens safely.
 
 Named clients continue to own DNS rotation, telemetry, resilience handlers,
 proxies, and test transports. Provider credentials and product-level policy

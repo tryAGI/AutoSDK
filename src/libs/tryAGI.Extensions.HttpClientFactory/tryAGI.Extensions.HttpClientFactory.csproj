@@ -2,14 +2,13 @@
 
   <PropertyGroup>
     <TargetFramework>net10.0</TargetFramework>
-    <Description>Reusable IHttpClientFactory transport adapters for official .NET SDKs.</Description>
-    <PackageTags>httpclientfactory;google;octokit;github;sdk;transport</PackageTags>
+    <Description>Adapts named IHttpClientFactory clients to the Google APIs .NET SDK transport.</Description>
+    <PackageTags>httpclientfactory;google;google-apis;sdk;transport</PackageTags>
   </PropertyGroup>
 
   <ItemGroup>
     <PackageReference Include="Google.Apis.Core" Version="1.76.0" />
     <PackageReference Include="Microsoft.Extensions.Http" Version="10.0.11" />
-    <PackageReference Include="Octokit" Version="14.0.0" />
   </ItemGroup>
 
   <ItemGroup>
