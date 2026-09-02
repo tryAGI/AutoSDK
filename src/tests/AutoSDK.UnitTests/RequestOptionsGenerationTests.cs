@@ -58,6 +58,9 @@ public class RequestOptionsGenerationTests
         supportSource.Should().Contain("public sealed class AutoSDKClientOptions");
         supportSource.Should().Contain("public sealed class AutoSDKRequestOptions");
         supportSource.Should().Contain("public sealed class AutoSDKRetryOptions");
+        supportSource.Should().Contain("if (request.Headers.TryAddWithoutValidation(header.Key, header.Value ?? string.Empty))");
+        supportSource.Should().Contain("request.Content.Headers.Remove(header.Key);");
+        supportSource.Should().NotContain("request.Content?.Headers.Remove(header.Key);");
         supportSource.Should().Contain("public global::System.TimeSpan InitialDelay { get; set; } = global::System.TimeSpan.FromSeconds(1);");
         supportSource.Should().Contain("public global::System.TimeSpan MaxDelay { get; set; } = global::System.TimeSpan.FromSeconds(30);");
         supportSource.Should().Contain("public double BackoffMultiplier { get; set; } = 2D;");
