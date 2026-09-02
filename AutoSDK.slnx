@@ -5,6 +5,7 @@
     <Project Path="src/libs/AutoSDK.Docs/AutoSDK.Docs.csproj" />
     <Project Path="src/libs/AutoSDK.SourceGenerators/AutoSDK.SourceGenerators.csproj" />
     <Project Path="src/libs/AutoSDK/AutoSDK.csproj" />
+    <Project Path="src/libs/tryAGI.Extensions.HttpClientFactory/tryAGI.Extensions.HttpClientFactory.csproj" />
     <File Path="src/libs/Directory.Build.props" />
   </Folder>
   <Folder Name="/examples/">
@@ -152,6 +153,7 @@
     <Project Path="src/tests/AutoSDK.IntegrationTests.Cli/AutoSDK.IntegrationTests.Cli.csproj" />
     <Project Path="src/tests/AutoSDK.SnapshotTests/AutoSDK.SnapshotTests.csproj" />
     <Project Path="src/tests/AutoSDK.UnitTests/AutoSDK.UnitTests.csproj" />
+    <Project Path="src/tests/tryAGI.Extensions.HttpClientFactory.Tests/tryAGI.Extensions.HttpClientFactory.Tests.csproj" />
     <Project Path="src/tests/TrimmingHelper/TrimmingHelper.csproj" />
   </Folder>
 </Solution>
