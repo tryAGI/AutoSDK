@@ -51,6 +51,25 @@ public sealed class TransportAdapterTests
         handler.Requests[0].Authorization.Should().Be("Bearer secret");
     }
 
+    [TestMethod]
+    public async Task OctokitRequestScope_CancelsHighLevelOperationTransport()
+    {
+        var handler = new RecordingHandler(async (_, cancellationToken) =>
+        {
+            await Task.Delay(Timeout.InfiniteTimeSpan, cancellationToken);
+            return JsonResponse("{}");
+        });
+        var factory = new RecordingHttpClientFactory(handler);
+        var client = factory.CreateOctokitClient("github", new ProductHeaderValue("tryAGI-tests"));
+        using var cancellation = new CancellationTokenSource();
+        using var requestScope = client.BeginRequestScope(cancellation.Token);
+
+        var request = client.Repository.Get("owner", "repo");
+        await cancellation.CancelAsync();
+
+        await request.Invoking(static task => task).Should().ThrowAsync<OperationCanceledException>();
+    }
+
     private static HttpResponseMessage JsonResponse(string json) => new(HttpStatusCode.OK)
     {
         Content = new StringContent(json, Encoding.UTF8, "application/json"),
@@ -67,9 +86,21 @@ public sealed class TransportAdapterTests
         }
     }
 
-    private sealed class RecordingHandler(
-        Func<HttpRequestMessage, HttpResponseMessage> responseFactory) : HttpMessageHandler
+    private sealed class RecordingHandler : HttpMessageHandler
     {
+        private readonly Func<HttpRequestMessage, CancellationToken, Task<HttpResponseMessage>> _responseFactory;
+
+        public RecordingHandler(Func<HttpRequestMessage, HttpResponseMessage> responseFactory)
+            : this((request, _) => Task.FromResult(responseFactory(request)))
+        {
+        }
+
+        public RecordingHandler(
+            Func<HttpRequestMessage, CancellationToken, Task<HttpResponseMessage>> responseFactory)
+        {
+            _responseFactory = responseFactory;
+        }
+
         public List<RecordedRequest> Requests { get; } = [];
 
         protected override async Task<HttpResponseMessage> SendAsync(
@@ -82,7 +113,7 @@ public sealed class TransportAdapterTests
                 request.Content is null
                     ? null
                     : await request.Content.ReadAsStringAsync(cancellationToken)));
-            return responseFactory(request);
+            return await _responseFactory(request, cancellationToken);
         }
     }
 

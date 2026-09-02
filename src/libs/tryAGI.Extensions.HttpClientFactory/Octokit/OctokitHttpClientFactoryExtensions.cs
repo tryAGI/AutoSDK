@@ -22,10 +22,23 @@ public static class OctokitHttpClientFactoryExtensions
         ArgumentNullException.ThrowIfNull(productHeader);
 
 #pragma warning disable CA2000 // Octokit owns the adapter for the lifetime of the returned client connection.
-        var adapter = new HttpClientAdapter(
-            () => new NamedHttpClientMessageHandler(httpClientFactory, clientName));
+        var adapter = new OctokitHttpClientAdapter(
+            new HttpClientAdapter(
+                () => new NamedHttpClientMessageHandler(httpClientFactory, clientName)));
         var client = new GitHubClient(new Connection(productHeader, adapter));
 #pragma warning restore CA2000
         return client;
+    }
+
+    /// <summary>
+    /// Flows a cancellation token into Octokit's transport for high-level REST methods whose public
+    /// signatures do not expose one. The scope is async-flow-local and may be nested.
+    /// </summary>
+    public static IDisposable BeginRequestScope(
+        this GitHubClient client,
+        CancellationToken cancellationToken)
+    {
+        ArgumentNullException.ThrowIfNull(client);
+        return OctokitRequestCancellation.Push(cancellationToken);
     }
 }
