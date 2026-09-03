@@ -978,18 +978,25 @@ internal sealed class GenerateCommand : Command
             }
 
             packagePlan = plan;
+            var generatedFileCounts = new Dictionary<string, int>(StringComparer.Ordinal);
             foreach (var file in files)
             {
+                var packageId = plan!.Value.ResolvePackageId(file.Name);
+                generatedFileCounts[packageId] =
+                    generatedFileCounts.TryGetValue(packageId, out var count) ? count + 1 : 1;
                 generatedOutputs.Add(new GeneratedOutputFile(
                     Path.Combine(
                         packagesRoot,
-                        plan!.Value.ResolvePackageId(file.Name),
+                        packageId,
                         PackageFamilyScaffolder.GeneratedDirectoryName,
                         file.Name),
                     file.Text));
             }
 
-            foreach (var (relativePath, text) in PackageFamilyScaffolder.CreateFiles(plan!.Value, strongNamePublicKeyValue))
+            foreach (var (relativePath, text) in PackageFamilyScaffolder.CreateFiles(
+                plan!.Value,
+                strongNamePublicKeyValue,
+                generatedFileCounts))
             {
                 generatedOutputs.Add(new GeneratedOutputFile(Path.Combine(packagesRoot, relativePath), text));
             }

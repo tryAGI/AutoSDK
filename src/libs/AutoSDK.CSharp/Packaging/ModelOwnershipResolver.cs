@@ -117,13 +117,13 @@ public static class ModelOwnershipResolver
             referencesBySource.Add(($"global::{anyOf.Namespace}.{anyOf.Name}", references));
         }
 
-        // Converter registrations are a reference the model graph does not show. The anonymous
-        // union converters are generic instantiations named in Core's options -- e.g.
-        // OneOfJsonConverter<VariantA, VariantB> -- so every type they mention has to stay where
-        // Core can see it.
+        // Converter registrations are a reference the model graph does not show. An anonymous union
+        // converter is a generic instantiation -- OneOfJsonConverter<VariantA, VariantB> -- so it
+        // has to be registered somewhere that can see every argument. One package can, as long as
+        // all the arguments agree on it; when they do not, none can, and they all go back to Core.
         var converterTypeNames = data.Converters.Converters
-            .SelectMany(GetGlobalTypeNames)
-            .Distinct(StringComparer.Ordinal)
+            .Select(x => GetGlobalTypeNames(x).Distinct(StringComparer.Ordinal).ToArray())
+            .Where(static x => x.Length > 1)
             .ToArray();
 
         bool changed;
@@ -131,9 +131,17 @@ public static class ModelOwnershipResolver
         {
             changed = false;
 
-            foreach (var name in converterTypeNames)
+            foreach (var names in converterTypeNames)
             {
-                changed |= owners.Remove(name);
+                if (CountDistinctOwners(names, owners) < 2)
+                {
+                    continue;
+                }
+
+                foreach (var name in names)
+                {
+                    changed |= owners.Remove(name);
+                }
             }
 
             foreach (var (source, references) in referencesBySource)
@@ -165,6 +173,23 @@ public static class ModelOwnershipResolver
             }
         }
         while (changed);
+    }
+
+    private static int CountDistinctOwners(
+        IReadOnlyList<string> names,
+        Dictionary<string, string> owners)
+    {
+        HashSet<string>? distinct = null;
+        foreach (var name in names)
+        {
+            if (owners.TryGetValue(name, out var owner))
+            {
+                distinct ??= new HashSet<string>(StringComparer.Ordinal);
+                distinct.Add(owner);
+            }
+        }
+
+        return distinct?.Count ?? 0;
     }
 
     /// <summary>
@@ -322,6 +347,19 @@ public static class ModelOwnershipResolver
             }
 
             Add(byTag, tag, $"global::{value.Namespace}.JsonConverters.{value.Name}JsonConverter");
+        }
+
+        // Anonymous union converters are generic instantiations rather than named types, so they
+        // are placed by the arguments they close over. Resolve returns null unless every owned
+        // argument agrees, which is exactly when one package can see them all.
+        var byModel = new HashSet<string>(byTag.Values.SelectMany(static x => x), StringComparer.Ordinal);
+        foreach (var converter in data.Converters.Converters)
+        {
+            if (!byModel.Contains(converter) &&
+                ResolveTypeOwner(converter, owners) is { } converterTag)
+            {
+                Add(byTag, converterTag, converter);
+            }
         }
 
         var result = new Dictionary<string, ImmutableArray<string>>(byTag.Count, StringComparer.Ordinal);

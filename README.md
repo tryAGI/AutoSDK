@@ -238,6 +238,8 @@ Rebuilding one tag takes ~1 s instead of ~40 s, and a cold build of all 38 proje
 
 Reachability is a proposal, not the proof. The schema graph AutoSDK builds is depth- and cycle-limited, so on a specification the size of GitHub's a model can end up referenced by a generated type the walk never connected it to. So the **generated C# reference graph** is checked afterwards, and any type referenced from outside the package that claimed it is moved back to `Core`, repeatedly until nothing crosses a boundary it should not. Demotion only ever moves types towards `Core`, so this settles.
 
+One rough edge remains. A tag context registers only the types its package owns, so System.Text.Json discovers the Core types it reaches implicitly, through properties — and the name it derives for one of those can collide with another type's (`Nullable<RepositorySquashMergeCommitTitle>` against a schema that really is called `NullableRepositorySquashMergeCommitTitle`). Single-project generation never hits this because it registers both halves with disambiguated names. It surfaces as `SYSLIB1031` on four types in one of `specs/github.yaml`'s 38 packages; the chained resolver still resolves them through `Core`, so it is noise rather than a wrong result, and `scripts/test-split-by-tags-large-spec.sh` prints the count so it stays visible.
+
 Four things are pinned to `Core` by that pass rather than by reachability: a polymorphic family (a base class names every subtype, so it moves as a unit or not at all), a chain of nested models (a nested `partial` cannot span assemblies), anything named by an anonymous `AnyOf`/`OneOf` converter (those generic instantiations are registered in `Core`'s options), and any type two tags both reach.
 
 ### Cross-assembly plumbing

@@ -62,11 +62,11 @@ public class ModelOwnershipResolverTests
     }
 
     [TestMethod]
-    public void Resolve_KeepsUnionVariantsInCore()
+    public void Resolve_KeepsEveryTypeAConverterNamesInOnePackage()
     {
-        // The generated converter for an anonymous union is a generic instantiation registered in
-        // Core's options, so Core has to be able to see every variant. Letting the albums tag take
-        // them produced a Core file naming types that were no longer there.
+        // The generated converter for an anonymous union is a generic instantiation, so whichever
+        // package registers it has to see every argument. Splitting the arguments across packages
+        // produced a context naming types that were not there.
         const string spec = """
 openapi: 3.0.3
 info:
@@ -116,12 +116,16 @@ paths:
 
         foreach (var converter in data.Converters.Converters)
         {
-            foreach (var owned in owners.Keys)
-            {
-                converter.Should().NotContain(
-                    owned,
-                    because: $"'{owned}' is registered by a converter Core keeps, so it cannot move out of Core");
-            }
+            var mentioned = owners
+                .Where(pair => converter.Contains(pair.Key, StringComparison.Ordinal))
+                .Select(static pair => pair.Value)
+                .Distinct(StringComparer.Ordinal)
+                .ToArray();
+
+            mentioned.Should().HaveCountLessThanOrEqualTo(
+                1,
+                because: $"'{converter}' has to be registered by a package that can see all of it, " +
+                    "so its arguments cannot be split across tag packages");
         }
     }
 }

@@ -27,9 +27,15 @@ internal static class PackageFamilyScaffolder
     /// Builds every non-source artifact of the family: one .csproj per package, the solution and
     /// the manifest. Paths are relative to the packages root.
     /// </summary>
+    /// <param name="generatedFileCounts">
+    /// Generated sources routed to each package id. Recorded in the manifest so a repository can
+    /// track how the family is balanced -- how much of it is still shared -- without re-deriving
+    /// the routing or counting files on disk.
+    /// </param>
     public static IReadOnlyList<(string RelativePath, string Text)> CreateFiles(
         PackagePlan plan,
-        string strongNamePublicKey)
+        string strongNamePublicKey,
+        IReadOnlyDictionary<string, int>? generatedFileCounts = null)
     {
         var files = new List<(string, string)>(plan.Packages.Length + 2);
 
@@ -41,7 +47,7 @@ internal static class PackageFamilyScaffolder
         }
 
         files.Add(($"{plan.BasePackageId}.slnx", CreateSolutionFile(plan)));
-        files.Add((ManifestFileName, CreateManifest(plan)));
+        files.Add((ManifestFileName, CreateManifest(plan, generatedFileCounts)));
 
         return files;
     }
@@ -191,7 +197,9 @@ internal static class PackageFamilyScaffolder
     /// The stable machine-readable tag-to-package map, so a generated repository can build, test,
     /// document and publish the family without rediscovering names.
     /// </summary>
-    private static string CreateManifest(PackagePlan plan)
+    private static string CreateManifest(
+        PackagePlan plan,
+        IReadOnlyDictionary<string, int>? generatedFileCounts)
     {
         var builder = new StringBuilder();
         builder.AppendLine("{");
@@ -213,7 +221,9 @@ internal static class PackageFamilyScaffolder
                 $"""      "projectPath": {Quote($"{package.DirectoryName}/{package.PackageId}.csproj")},"""));
             builder.AppendLine(FormattableString.Invariant($"""      "assemblyName": {Quote(package.PackageId)},"""));
             builder.AppendLine(FormattableString.Invariant($"""      "tags": {QuoteArray(package.Tags)},"""));
-            builder.AppendLine(FormattableString.Invariant($"""      "clientClassNames": {QuoteArray(package.ClientClassNames)}"""));
+            builder.AppendLine(FormattableString.Invariant($"""      "clientClassNames": {QuoteArray(package.ClientClassNames)},"""));
+            builder.AppendLine(FormattableString.Invariant(
+                $"""      "generatedFileCount": {(generatedFileCounts is not null && generatedFileCounts.TryGetValue(package.PackageId, out var fileCount) ? fileCount : 0)}"""));
             builder.AppendLine(FormattableString.Invariant($"    }}{comma}"));
         }
 
