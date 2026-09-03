@@ -840,6 +840,20 @@ internal sealed class GenerateCommand : Command
         var apiOutput = grpcInputs.Length > 0
             ? Path.Combine(output, apiOutputSubdirectory)
             : output;
+
+        // The tag overrides live in a file that Settings records only by path, and the packages
+        // root comes from an option that never reaches Settings at all. Both reshape the output
+        // tree, so both have to be read before the cache is consulted and folded into its key --
+        // otherwise editing the map in place is a cache hit that leaves a stale family on disk.
+        IReadOnlyDictionary<string, string>? tagPackageOverrides = null;
+        var packagingInputs = string.Empty;
+        if (splitByTags)
+        {
+            tagPackageOverrides = string.IsNullOrWhiteSpace(packageMapValue)
+                ? null
+                : await PackageMapFile.ReadAsync(packageMapValue).ConfigureAwait(false);
+            packagingInputs = DescribePackagingInputs(packagesOutputValue, tagPackageOverrides);
+        }
         var staleCandidates = cleanStaleFiles
             ? (splitByTags
                 ? CollectStalePackageFamilyFiles(packagesRoot).ToArray()
@@ -861,7 +875,8 @@ internal sealed class GenerateCommand : Command
                 yaml,
                 settings,
                 singleFile,
-                name);
+                name,
+                packagingInputs);
             cacheValidation = await GenerationCache.TryValidateAsync(
                 output,
                 generatorFingerprint,
@@ -957,10 +972,6 @@ internal sealed class GenerateCommand : Command
         PackagePlan? packagePlan = null;
         if (splitByTags)
         {
-            var tagPackageOverrides = string.IsNullOrWhiteSpace(packageMapValue)
-                ? null
-                : await PackageMapFile.ReadAsync(packageMapValue).ConfigureAwait(false);
-
             if (!PackagePlanner.TryCreate(data, tagPackageOverrides, out var plan, out var planError))
             {
                 throw new InvalidOperationException(planError);
@@ -1113,6 +1124,27 @@ internal sealed class GenerateCommand : Command
     private static long GetAllocatedBytes(bool diagnosticsEnabled)
     {
         return diagnosticsEnabled ? GC.GetTotalAllocatedBytes(precise: true) : 0;
+    }
+
+    /// <summary>
+    /// A deterministic description of the split-by-tags inputs that shape the output tree but are
+    /// not carried by <c>Settings</c>, for the generation cache key.
+    /// </summary>
+    /// <remarks>
+    /// Describes the <em>parsed</em> overrides rather than the file's bytes, so reformatting the
+    /// map or reordering its keys is still a cache hit while a genuine remapping is not.
+    /// </remarks>
+    private static string DescribePackagingInputs(
+        string packagesOutput,
+        IReadOnlyDictionary<string, string>? tagPackageOverrides)
+    {
+        return tagPackageOverrides is null
+            ? packagesOutput
+            : packagesOutput + "\n" + string.Join(
+                "\n",
+                tagPackageOverrides
+                    .OrderBy(static x => x.Key, StringComparer.Ordinal)
+                    .Select(static x => $"{x.Key}={x.Value}"));
     }
 
     /// <summary>

@@ -141,14 +141,23 @@ internal static class GenerationCache
         }
     }
 
+    /// <param name="packagingInputs">
+    /// Generation inputs that shape the output tree but are not carried by <paramref name="settings"/>.
+    /// Split-by-tags reads its tag overrides out of a file whose <em>path</em> is all
+    /// <see cref="Settings.PackageMapPath"/> records, and computes the packages root from an option
+    /// that never reaches <see cref="Settings"/> at all — so without this both an edit to the map in
+    /// place and a change of packages root would hit the cache and leave a stale family on disk.
+    /// </param>
     public static string CreateGeneratorFingerprint(
         string inputText,
         Settings settings,
         bool singleFile,
-        string inputName)
+        string inputName,
+        string packagingInputs = "")
     {
         inputText = inputText ?? throw new ArgumentNullException(nameof(inputText));
         inputName = inputName ?? throw new ArgumentNullException(nameof(inputName));
+        packagingInputs = packagingInputs ?? throw new ArgumentNullException(nameof(packagingInputs));
 
         using var hash = IncrementalHash.CreateHash(HashAlgorithmName.SHA256);
         Append(hash, FormatVersion.ToString(System.Globalization.CultureInfo.InvariantCulture));
@@ -165,6 +174,7 @@ internal static class GenerationCache
             JsonSerializer.SerializeToUtf8Bytes(
                 fingerprint,
                 CliJsonSerializerContext.Default.GenerationFingerprint));
+        Append(hash, packagingInputs);
 
         return Convert.ToHexString(hash.GetHashAndReset());
     }

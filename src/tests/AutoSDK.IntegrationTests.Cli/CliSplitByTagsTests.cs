@@ -233,6 +233,48 @@ public class CliSplitByTagsTests
     }
 
     [TestMethod]
+    public async Task Generate_SplitByTags_RepacksWhenThePackageMapIsEditedInPlace()
+    {
+        var outputDirectory = CreateTempDirectory();
+
+        try
+        {
+            var repositoryDirectory = GetRepositoryDirectory();
+            var packagesRoot = Path.Combine(outputDirectory, "GeneratedPackages");
+
+            // Settings records the map by path only, so an edit in place changes nothing the
+            // generation cache used to look at. The whole family would then stay on the previous
+            // grouping while reporting a cache hit.
+            var packageMapPath = await WriteGroupingPackageMapAsync(outputDirectory, "Catalog");
+            var first = await GenerateAsync(
+                repositoryDirectory,
+                outputDirectory,
+                extraArguments: ["--package-map", packageMapPath]);
+            first.ExitCode.Should().Be(0);
+            Directory.Exists(Path.Combine(packagesRoot, $"{PackageId}.Catalog")).Should().BeTrue();
+
+            await WriteGroupingPackageMapAsync(outputDirectory, "Media");
+            var second = await GenerateAsync(
+                repositoryDirectory,
+                outputDirectory,
+                extraArguments: ["--package-map", packageMapPath]);
+            Console.WriteLine(second.StandardOutput);
+            Console.WriteLine(second.StandardError);
+            second.ExitCode.Should().Be(0);
+            second.StandardOutput.Should().NotContain(
+                "Generation cache hit.",
+                because: "the map's contents are part of the output tree and so must be part of the cache key");
+
+            Directory.Exists(Path.Combine(packagesRoot, $"{PackageId}.Media")).Should().BeTrue();
+            Directory.Exists(Path.Combine(packagesRoot, $"{PackageId}.Catalog")).Should().BeFalse();
+        }
+        finally
+        {
+            TryDeleteDirectory(outputDirectory);
+        }
+    }
+
+    [TestMethod]
     public async Task Generate_SplitByTags_WithStrongNameKey_KeepsMembersInternalAndStillBuilds()
     {
         var outputDirectory = CreateTempDirectory();
@@ -409,14 +451,16 @@ public class CliSplitByTagsTests
         return RunDotnetAsync(repositoryDirectory, arguments);
     }
 
-    private static async Task<string> WriteGroupingPackageMapAsync(string outputDirectory)
+    private static async Task<string> WriteGroupingPackageMapAsync(
+        string outputDirectory,
+        string suffix = "Catalog")
     {
         var path = Path.Combine(outputDirectory, "package-map.json");
-        await File.WriteAllTextAsync(path, """
+        await File.WriteAllTextAsync(path, $$"""
         {
           "tags": {
-            "albums": "Catalog",
-            "artists": "Catalog"
+            "albums": "{{suffix}}",
+            "artists": "{{suffix}}"
           }
         }
         """);
