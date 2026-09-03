@@ -5,7 +5,9 @@ using System.Linq;
 using AutoSDK.Extensions;
 using AutoSDK.Helpers;
 using AutoSDK.Models;
+using AutoSDK.Naming.Clients;
 using AutoSDK.Naming.Models;
+using AutoSDK.Packaging;
 
 namespace AutoSDK.Generation;
 
@@ -256,7 +258,16 @@ public static class CSharpPipeline
                 AddIfNotEmpty(methodImplementationFiles[index]);
                 AddIfNotEmpty(methodInterfaceFiles[index]);
             }
-            AddPhase("clients_auth", () => data.Clients
+            // In split-by-tags mode the models no longer all live in one assembly, so neither can
+            // the [JsonSerializable] registrations: each package registers what it owns and chains
+            // onto the package it references. Everywhere else this stays one context.
+            var modelOwners = settings.SplitByTags
+                ? ModelOwnershipResolver.Resolve(data)
+                : EmptyOwners;
+            var clients = modelOwners.Count == 0
+                ? data.Clients
+                : ApplyPackageSerializerContexts(data, modelOwners);
+            AddPhase("clients_auth", () => clients
                         .SelectMany(x => new[]
                         {
                             Sources.Client(x, cancellationToken),
@@ -279,21 +290,27 @@ public static class CSharpPipeline
                             Sources.AnyOfValidation(x, cancellationToken),
                         }));
             var serializerContextGenerationState = new Sources.JsonSerializerContextGenerationState();
-            var serializerContextFile = MeasurePhase(
+            var serializerContextFiles = MeasurePhase(
                 "serializer_context",
-                () => [Sources.JsonSerializerContext(
-                    data.Converters,
-                    data.Types,
-                    serializerContextGenerationState,
-                    cancellationToken)]);
+                () => modelOwners.Count == 0
+                    ? [Sources.JsonSerializerContext(
+                        data.Converters,
+                        data.Types,
+                        serializerContextGenerationState,
+                        fallbackResolverExpressions: null,
+                        cancellationToken)]
+                    : CreatePackageJsonSerializerContexts(data, modelOwners, cancellationToken));
             var serializerContextTypesFile = MeasurePhase(
                 "serializer_context_types",
                 () => [Sources.JsonSerializerContextTypes(
                     data.Converters,
-                    data.Types,
+                    modelOwners.Count == 0 ? data.Types : GetCoreTypes(data, modelOwners),
                     serializerContextGenerationState,
                     cancellationToken)]);
-            AddIfNotEmpty(serializerContextFile[0]);
+            foreach (var file in serializerContextFiles)
+            {
+                AddIfNotEmpty(file);
+            }
             AddIfNotEmpty(serializerContextTypesFile[0]);
             AddPhase("support", () => new[] { Sources.Polyfills(settings, cancellationToken) }
                     .Concat([Sources.Exceptions(settings, cancellationToken)])
@@ -449,6 +466,180 @@ public static class CSharpPipeline
         });
 
         return files;
+    }
+
+    private static readonly IReadOnlyDictionary<string, string> EmptyOwners =
+        new Dictionary<string, string>(StringComparer.Ordinal);
+
+    /// <summary>
+    /// The types that stay in the Core package: everything no single tag exclusively owns.
+    /// </summary>
+    private static EquatableArray<TypeData> GetCoreTypes(
+        Models.Data data,
+        IReadOnlyDictionary<string, string> modelOwners)
+    {
+        return data.Types
+            .Where(x => ModelOwnershipResolver.ResolveTypeOwner(x.CSharpTypeWithoutNullability, modelOwners) is null)
+            .ToImmutableArray()
+            .AsEquatableArray();
+    }
+
+    /// <summary>
+    /// One serializer context per package: Core registers what it keeps, each tag registers what it
+    /// took and chains onto Core, and the facade chains all of them so the root client can still
+    /// hand one context down to every sub-client.
+    /// </summary>
+    private static FileWithName[] CreatePackageJsonSerializerContexts(
+        Models.Data data,
+        IReadOnlyDictionary<string, string> modelOwners,
+        CancellationToken cancellationToken)
+    {
+        var settings = data.Converters.Settings;
+        var convertersByTag = ModelOwnershipResolver.ResolveConverters(data, modelOwners);
+        var ownedConverters = new HashSet<string>(
+            convertersByTag.Values.SelectMany(static x => x),
+            StringComparer.Ordinal);
+
+        // A context registers the converters for every type it can be asked to resolve, not just
+        // the ones it owns. A chained resolver builds its JsonTypeInfo against the *calling*
+        // context's options, so a converter declared only on Core would silently stop applying the
+        // moment a tag context resolved a Core type through it.
+        var coreConverters = data.Converters.Converters
+            .Where(x => !ownedConverters.Contains(x))
+            .ToImmutableArray();
+        var coreClient = data.Converters with { Converters = coreConverters };
+        var files = new List<FileWithName>
+        {
+            Sources.JsonSerializerContext(
+                coreClient,
+                GetCoreTypes(data, modelOwners),
+                new Sources.JsonSerializerContextGenerationState(),
+                // Empty rather than null: Core chains onto nothing, but still needs the shape that
+                // publishes a resolver for the tag packages above it.
+                fallbackResolverExpressions: [],
+                cancellationToken),
+        };
+
+        var coreResolver = $"global::{settings.JsonSerializerContext}.TypeInfoResolver";
+        var chain = new List<string> { coreResolver };
+        foreach (var tag in data.Tags.OrderBy(static x => x.SafeName, StringComparer.Ordinal))
+        {
+            if (tag.Name is null)
+            {
+                continue;
+            }
+
+            var tagTypes = data.Types
+                .Where(x => string.Equals(
+                    ModelOwnershipResolver.ResolveTypeOwner(x.CSharpTypeWithoutNullability, modelOwners),
+                    tag.Name,
+                    StringComparison.Ordinal))
+                .ToImmutableArray();
+            if (tagTypes.Length == 0)
+            {
+                continue;
+            }
+
+            var contextName = GetPackageContextName(settings.Namespace, tag.SafeName);
+            files.Add(Sources.JsonSerializerContext(
+                CreatePackageContextClient(
+                    data.Converters,
+                    tag.SafeName,
+                    contextName,
+                    convertersByTag.TryGetValue(tag.Name, out var converters)
+                        ? coreConverters.AddRange(converters)
+                        : coreConverters),
+                tagTypes.AsEquatableArray(),
+                new Sources.JsonSerializerContextGenerationState(),
+                // Core last: a tag's own registrations must win over the ones it left behind.
+                fallbackResolverExpressions: [coreResolver],
+                cancellationToken));
+            chain.Add($"global::{contextName}.TypeInfoResolver");
+        }
+
+        if (chain.Count > 1)
+        {
+            var rootClassName = settings.ClassName.Replace(".", string.Empty);
+            files.Add(Sources.JsonSerializerContext(
+                CreatePackageContextClient(
+                    data.Converters,
+                    rootClassName,
+                    GetPackageContextName(settings.Namespace, rootClassName),
+                    // The facade resolves through every package, so it registers every converter.
+                    data.Converters.Converters),
+                ImmutableArray<TypeData>.Empty.AsEquatableArray(),
+                new Sources.JsonSerializerContextGenerationState(),
+                fallbackResolverExpressions: chain,
+                cancellationToken));
+        }
+
+        return files.ToArray();
+    }
+
+    /// <summary>
+    /// The context class a package owns, e.g. <c>Fixture.AlbumsSourceGenerationContext</c>.
+    /// </summary>
+    internal static string GetPackageContextName(string @namespace, string safeName)
+    {
+        return $"{@namespace}.{safeName}SourceGenerationContext";
+    }
+
+    /// <summary>
+    /// A stand-in client that carries just what the context emitter reads: the file name, the
+    /// context's own fully-qualified name, and the converters that package registers.
+    /// </summary>
+    private static Client CreatePackageContextClient(
+        Client template,
+        string safeName,
+        string contextName,
+        ImmutableArray<string> converters)
+    {
+        return template with
+        {
+            FileNameWithoutExtension = $"{template.Settings.Namespace}.{safeName}",
+            Settings = template.Settings with { JsonSerializerContext = contextName },
+            Converters = converters,
+        };
+    }
+
+    /// <summary>
+    /// Points each client at the context of the package it ships in.
+    /// </summary>
+    /// <remarks>
+    /// A tag client that took models from Core must default to its own context or those models
+    /// would not resolve; the root client takes the chained one, which it then hands down to every
+    /// sub-client exactly as it does in single-project mode.
+    /// </remarks>
+    private static EquatableArray<Client> ApplyPackageSerializerContexts(
+        Models.Data data,
+        IReadOnlyDictionary<string, string> modelOwners)
+    {
+        var settings = data.Converters.Settings;
+        var owningTags = new HashSet<string>(modelOwners.Values, StringComparer.Ordinal);
+        var contextByClientClassName = new Dictionary<string, string>(StringComparer.Ordinal);
+        foreach (var tag in data.Tags)
+        {
+            if (tag.Name is not null && owningTags.Contains(tag.Name))
+            {
+                contextByClientClassName[CSharpClientNameGenerator.Generate(tag)] =
+                    GetPackageContextName(settings.Namespace, tag.SafeName);
+            }
+        }
+
+        if (contextByClientClassName.Count == 0)
+        {
+            return data.Clients;
+        }
+
+        var rootClassName = settings.ClassName.Replace(".", string.Empty);
+        contextByClientClassName[rootClassName] = GetPackageContextName(settings.Namespace, rootClassName);
+
+        return data.Clients
+            .Select(client => contextByClientClassName.TryGetValue(client.ClassName, out var contextName)
+                ? client with { Settings = client.Settings with { JsonSerializerContext = contextName } }
+                : client)
+            .ToImmutableArray()
+            .AsEquatableArray();
     }
 
     private static FileWithName[] GenerateClassTypeFiles(

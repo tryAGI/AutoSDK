@@ -17,15 +17,27 @@ public static partial class Sources
             client,
             types,
             new JsonSerializerContextGenerationState(),
+            fallbackResolverExpressions: null,
             cancellationToken);
     }
 
+    /// <param name="fallbackResolverExpressions">
+    /// Resolvers to consult after this context's own types, e.g. the Core package's context in a
+    /// split-by-tags family. When any are given the chained shape is emitted regardless of type
+    /// count -- a bare source-generated context has no way to delegate, and the facade's context
+    /// has no types of its own at all.
+    /// </param>
     internal static string GenerateJsonSerializerContext(
         Client client,
         EquatableArray<TypeData> types,
         JsonSerializerContextGenerationState generationState,
+        IReadOnlyList<string>? fallbackResolverExpressions = null,
         CancellationToken cancellationToken = default)
     {
+        // Any non-null list -- empty included -- selects the chained shape. In a split family even
+        // the package at the bottom of the chain needs it, because that shape is what exposes an
+        // options-agnostic resolver for the packages above it to chain onto.
+        var hasFallbacks = fallbackResolverExpressions is not null;
         if (!client.Settings.FromCli ||
             !client.Settings.ShouldGenerateJsonSerializerContextTypes())
         {
@@ -47,7 +59,9 @@ public static partial class Sources
                 expandContextTypes: false,
                 typeComponents,
                 nullableValueTypes);
-        var useChunkedContext = serializableTypeSet.SerializableTypes is { Length: > MaxJsonSerializableAttributesPerContext };
+        var useChunkedContext =
+            hasFallbacks ||
+            serializableTypeSet.SerializableTypes is { Length: > MaxJsonSerializableAttributesPerContext };
         if (useChunkedContext)
         {
             serializableTypeSet = BuildJsonSerializableTypeSet(
@@ -66,7 +80,7 @@ public static partial class Sources
                 typeInfoNames,
                 nullableValueTypes);
 
-        if (jsonSerializableAttributes.Length == 0)
+        if (jsonSerializableAttributes.Length == 0 && !hasFallbacks)
         {
             return GenerateEmptyJsonSerializerContext(
                 client,
@@ -82,7 +96,8 @@ public static partial class Sources
             return GenerateChunkedJsonSerializerContext(
                 client,
                 contextClassName,
-                jsonSerializableAttributes);
+                jsonSerializableAttributes,
+                fallbackResolverExpressions);
         }
 
         using var builder = new PooledStringBuilder(
@@ -179,13 +194,24 @@ namespace {client.Settings.Namespace}
     private static string GenerateChunkedJsonSerializerContext(
         Client client,
         string contextClassName,
-        JsonSerializableAttributeRegistration[] jsonSerializableAttributes)
+        JsonSerializableAttributeRegistration[] jsonSerializableAttributes,
+        IReadOnlyList<string>? fallbackResolverExpressions = null)
     {
         var chunks = SplitJsonSerializableAttributes(jsonSerializableAttributes)
             .ToArray();
         var chunkClassNames = chunks
             .Select((_, index) => $"{contextClassName}Chunk{index}")
             .ToArray();
+
+        // The fallback goes last so this package's own types always win, and it is an expression
+        // rather than a class name because it names a context in another assembly.
+        var resolverExpressions = chunkClassNames
+            .Select(static className => $"new {className}(new global::System.Text.Json.JsonSerializerOptions())")
+            .ToList();
+        if (fallbackResolverExpressions is not null)
+        {
+            resolverExpressions.AddRange(fallbackResolverExpressions);
+        }
         var lazyConverterRegistrations = GetLazyEnumConverterRegistrations(client.Converters);
         var lazyConverterTypes = new HashSet<string>(
             lazyConverterRegistrations.Select(static registration => registration.ConverterType),
@@ -248,6 +274,18 @@ namespace {client.Settings.Namespace}
     public sealed partial class {contextClassName} : global::System.Text.Json.Serialization.JsonSerializerContext
     {{
         private static readonly global::System.Text.Json.Serialization.Metadata.IJsonTypeInfoResolver Resolver = new LazyChunkResolver();
+{(client.Settings.SplitByTags ? $@"
+        /// <summary>
+        /// This package's types, as a resolver another package in the family can chain onto.
+        /// </summary>
+        /// <remarks>
+        /// Not <c>Default</c>: a context is bound to the options it was built with, so handing one
+        /// to a resolver running under different options throws. This forwards the caller's options
+        /// down to each chunk instead.
+        /// </remarks>
+        [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Never)]
+        public static global::System.Text.Json.Serialization.Metadata.IJsonTypeInfoResolver TypeInfoResolver => Resolver;
+" : TrimmedLine)}
 
         private static readonly global::System.Text.Json.JsonSerializerOptions DefaultOptions = CreateDefaultOptions();
 
@@ -334,7 +372,7 @@ namespace {client.Settings.Namespace}
         private sealed class LazyChunkResolver : global::System.Text.Json.Serialization.Metadata.IJsonTypeInfoResolver
         {{
             private readonly object _gate = new();
-            private readonly global::System.Text.Json.Serialization.Metadata.IJsonTypeInfoResolver?[] _resolvers = new global::System.Text.Json.Serialization.Metadata.IJsonTypeInfoResolver?[{chunkClassNames.Length}];
+            private readonly global::System.Text.Json.Serialization.Metadata.IJsonTypeInfoResolver?[] _resolvers = new global::System.Text.Json.Serialization.Metadata.IJsonTypeInfoResolver?[{resolverExpressions.Count}];
 
             public global::System.Text.Json.Serialization.Metadata.JsonTypeInfo? GetTypeInfo(
                 global::System.Type type,
@@ -370,8 +408,8 @@ namespace {client.Settings.Namespace}
             {{
                 return index switch
                 {{
-{chunkClassNames.Select((className, index) => $@"
-                    {index} => new {className}(new global::System.Text.Json.JsonSerializerOptions()),
+{resolverExpressions.Select((expression, index) => $@"
+                    {index} => {expression},
 ").Inject()}
                     _ => throw new global::System.ArgumentOutOfRangeException(nameof(index)),
                 }};

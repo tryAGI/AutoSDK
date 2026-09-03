@@ -105,12 +105,21 @@ Important settings:
 
 #### Split-by-tags package families (CLI only)
 
-`autosdk generate --split-by-tags --package-id <id>` emits `<id>.Core` (models, converters,
+`autosdk generate --split-by-tags --package-id <id>` emits `<id>.Core` (shared models, converters,
 serializer context, runtime support), one package per OpenAPI tag, a base package holding the root
 client plus any untagged operations, a `.slnx`, and a deterministic `autosdk-packages.json`.
 Reference graph is `base -> tag* -> Core`.
 
-Two things only this mode changes, both gated on `Settings.SplitByTags`:
+A model, enum or named union reached by exactly one tag ships in that tag's package;
+`ModelOwnershipResolver` decides that and both `PackagePlanner` (routing files) and `CSharpPipeline`
+(emitting a matching serializer context per package) must get the same answer, which is why the
+decision lives in one place and is recomputed rather than carried on `Data`.
+`TagOwnershipAnalyzer` proposes ownership from schema reachability; the resolver then verifies it
+against the generated C# reference graph and demotes anything that would cross a package boundary,
+because the schema graph is depth- and cycle-limited and under-reports on large specs
+(`specs/github.yaml` is the case that proved it).
+
+Three things only this mode changes, all gated on `Settings.SplitByTags`:
 
 - Shared runtime members (`EndPointSecurityResolver`, `AutoSDKRequestOptionsSupport`, polling
   helpers, `AutoSDKHttpResponse.CreateHeaders`, `AutoSDKServerConfiguration`, `ResponseStream`,
@@ -118,6 +127,12 @@ Two things only this mode changes, both gated on `Settings.SplitByTags`:
   `Sources.SharedMemberModifier` / `SharedNestedMemberModifier`. With
   `--strong-name-public-key` they stay `internal` and the generated projects emit
   `InternalsVisibleTo` instead.
+- Each package emits its own JSON serializer context (`Core` keeps `SourceGenerationContext`, a tag
+  gets `{Ns}.{Tag}SourceGenerationContext`, the facade `{Ns}.{RootClient}SourceGenerationContext`),
+  chained through a generated `TypeInfoResolver` property. Chain through that, never through a
+  context's `Default`: a context is bound to the options it was built with and throws when a
+  resolver hands it different ones. Every context also registers the converters for everything it
+  can be asked to resolve, not just what it owns.
 - The OAuth2 support types are hoisted out of the root client class into a namespace-level
   `{Ns}.AutoSDKOAuth2.g.cs` in Core (`Sources.OAuth2SupportTypes`). Left nested they would sit in
   the base package while tag clients and tag operation bodies need them, so every tag assembly

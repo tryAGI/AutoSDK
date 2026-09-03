@@ -219,26 +219,33 @@ This is opt-in and does not change existing generation. It is a CLI-only mode: a
 | Generated file | Package |
 | --- | --- |
 | A tag's client, its interface, and its operation partials | that tag's package |
-| Models, enums, unions, converters, the JSON serializer context, and all runtime support types | `Core` |
+| A model, enum or named union **exactly one tag can reach**, with its converters | that tag's package |
+| Everything shared, untagged, or unreachable, plus all runtime support types | `Core` |
 | The root client, its interface, authorization partials, DI extensions, and **untagged operations** | the base package |
 
 Untagged operations are generated as partials of the root client, and C# `partial` types cannot span assemblies — so the base package is the only place they can compile.
 
-Models all live in `Core`; splitting them per tag needs transitive schema-dependency analysis to prove no type is duplicated or orphaned, and is not attempted here. That shapes what the mode buys today. Measured on `specs/github.yaml` (38 packages):
+Model ownership is "the set of tags that reach it": one tag means that tag's package, two or more means `Core`. Measured on `specs/github.yaml` (38 packages):
 
 | | single project | `…Core` | `…Issues` | base package |
 | --- | --- | --- | --- | --- |
-| generated files | 17,034 | 15,024 | 82 | 2 |
-| cold build | 40.5 s | 42.3 s | 1.2 s | 3.1 s |
-| package size | 28.1 MB | 26.1 MB | 0.09 MB | 0.01 MB |
+| generated files | 17,034 | 11,901 | 284 | 3 |
+| package size | 28.1 MB | 19.0 MB | 0.50 MB | 0.01 MB |
 
-Rebuilding one tag takes ~1 s instead of ~40 s, and a cold build of all 38 projects is 37.3 s — no slower than the single project, because tag projects compile in parallel. But because `Core` holds 88% of the files, a consumer referencing one tag package still downloads ~26 MB of the ~28 MB. Until models are split, the win is in build and IDE time rather than in package size.
+Rebuilding one tag takes ~1 s instead of ~40 s, and a cold build of all 38 projects is no slower than the single project because tag projects compile in parallel. A consumer of `…Issues` alone now pulls ~19.5 MB rather than the ~26.2 MB it did when every model lived in `Core`.
+
+### How ownership is decided
+
+Reachability is a proposal, not the proof. The schema graph AutoSDK builds is depth- and cycle-limited, so on a specification the size of GitHub's a model can end up referenced by a generated type the walk never connected it to. So the **generated C# reference graph** is checked afterwards, and any type referenced from outside the package that claimed it is moved back to `Core`, repeatedly until nothing crosses a boundary it should not. Demotion only ever moves types towards `Core`, so this settles.
+
+Four things are pinned to `Core` by that pass rather than by reachability: a polymorphic family (a base class names every subtype, so it moves as a unit or not at all), a chain of nested models (a nested `partial` cannot span assemblies), anything named by an anonymous `AnyOf`/`OneOf` converter (those generic instantiations are registered in `Core`'s options), and any type two tags both reach.
 
 ### Cross-assembly plumbing
 
-Two things have to change once the SDK spans assemblies, and both are confined to this mode:
+Three things have to change once the SDK spans assemblies, and all are confined to this mode:
 
 - **Shared runtime members** (`EndPointSecurityResolver`, `AutoSDKRequestOptionsSupport`, the polling helpers, `AutoSDKHttpResponse.CreateHeaders`, `AutoSDKServerConfiguration`, `ResponseStream`, and each client's deferred serializer-context hook) are `internal` in single-project mode. Split mode widens them to `public` and marks them `[EditorBrowsable(Never)]` so they stay out of IntelliSense. Pass `--strong-name-public-key <hex>` to keep them `internal` and have AutoSDK emit `InternalsVisibleTo` across the family instead — use this when the generated assemblies are strong-named.
+- **The JSON serializer context** is one class registering every type, and a `[JsonSerializable]` cannot name a type in another assembly. So each package gets its own: `Core` registers what it keeps, each tag registers what it took and chains onto `Core`, and the base package chains all of them so the root client still hands one context down to every sub-client. Chaining goes through a generated `TypeInfoResolver` rather than each context's `Default`, because a context is bound to the options it was built with and handing one to a resolver running under different options throws at runtime.
 - **OAuth2 support types** (`OAuth2Token`, `IOAuth2TokenStore`, `AutoSDKOAuth2Coordinator`, `AutoSDKOAuth2Helpers`, …) are normally nested inside the root client class. That would place them in the base package while tag clients and tag operation bodies also need them, making every tag assembly reference the base package that already references it. Split mode emits them as namespace-level types in `Core` (`GitHub.AutoSDKOAuth2.g.cs`), so `client.AuthorizeUsingOAuth2(new OAuth2Token { … })` replaces `new GitHubClient.OAuth2Token { … }`.
 
 ### Package naming

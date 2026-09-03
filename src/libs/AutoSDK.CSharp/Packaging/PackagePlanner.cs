@@ -138,6 +138,8 @@ public static class PackagePlanner
             Assign(fileToPackageId, $"{endPoint.InterfaceFileNameWithoutExtension}.g.cs", tagPackageId);
         }
 
+        AssignModelFiles(data, tagPackageIds, fileToPackageId);
+
         var packages = ImmutableArray.CreateBuilder<PackageDescriptor>();
         packages.Add(new PackageDescriptor(
             PackageId: corePackageId,
@@ -172,6 +174,82 @@ public static class PackagePlanner
             Packages: packages.ToImmutable(),
             FileToPackageId: fileToPackageId);
         return true;
+    }
+
+    /// <summary>
+    /// Routes the files of every model a single tag exclusively owns into that tag's package.
+    /// </summary>
+    /// <remarks>
+    /// A model contributes more than one file and they are not all under the same name prefix --
+    /// an enum's converters sit under <c>{Namespace}.JsonConverters.</c> rather than
+    /// <c>{Namespace}.Models.</c> -- so the names are derived from the emitters rather than matched
+    /// by prefix. Assigning a name no emitter produces is harmless: the map is consulted per
+    /// emitted file.
+    /// </remarks>
+    private static void AssignModelFiles(
+        Data data,
+        Dictionary<string, string> tagPackageIds,
+        Dictionary<string, string> fileToPackageId)
+    {
+        var owners = ModelOwnershipResolver.Resolve(data);
+        if (owners.Count == 0)
+        {
+            return;
+        }
+
+        foreach (var model in data.Classes.Concat(data.Enums))
+        {
+            if (!owners.TryGetValue(model.GlobalClassName, out var tag) ||
+                !tagPackageIds.TryGetValue(tag, out var packageId))
+            {
+                continue;
+            }
+
+            Assign(fileToPackageId, $"{model.FileNameWithoutExtension}.g.cs", packageId);
+            Assign(fileToPackageId, $"{model.FileNameWithoutExtension}.Json.g.cs", packageId);
+            Assign(fileToPackageId, $"{model.FileNameWithoutExtension}.IValidatableObject.g.cs", packageId);
+            Assign(fileToPackageId, $"{model.FileNameWithoutExtension}.BinaryPayloads.g.cs", packageId);
+
+            if (model.Style == ModelStyle.Enumeration)
+            {
+                Assign(fileToPackageId, $"{model.Namespace}.JsonConverters.{model.ClassName}.g.cs", packageId);
+                Assign(fileToPackageId, $"{model.Namespace}.JsonConverters.{model.ClassName}Nullable.g.cs", packageId);
+            }
+        }
+
+        foreach (var anyOf in data.AnyOfs)
+        {
+            if (!anyOf.IsNamed ||
+                !owners.TryGetValue($"global::{anyOf.Namespace}.{anyOf.Name}", out var tag) ||
+                !tagPackageIds.TryGetValue(tag, out var packageId))
+            {
+                continue;
+            }
+
+            var name = $"{anyOf.Namespace}.Models.{anyOf.Name}";
+            Assign(fileToPackageId, $"{name}.g.cs", packageId);
+            Assign(fileToPackageId, $"{name}.Json.g.cs", packageId);
+            Assign(fileToPackageId, $"{name}.IValidatableObject.g.cs", packageId);
+            Assign(fileToPackageId, $"{anyOf.Namespace}.JsonConverters.{anyOf.Name}.g.cs", packageId);
+        }
+
+        // Each tag that owns models gets its own serializer context, chained onto Core's. Their
+        // file names sit outside the root-client prefixes, so they need routing explicitly; the
+        // facade's context is named after the root client and already falls through to the base
+        // package on the prefix rule.
+        var settings = data.Converters.Settings;
+        var owningTags = new HashSet<string>(owners.Values, StringComparer.Ordinal);
+        foreach (var tag in data.Tags)
+        {
+            if (tag.Name is null ||
+                !owningTags.Contains(tag.Name) ||
+                !tagPackageIds.TryGetValue(tag.Name, out var packageId))
+            {
+                continue;
+            }
+
+            Assign(fileToPackageId, $"{settings.Namespace}.{tag.SafeName}.JsonSerializerContext.g.cs", packageId);
+        }
     }
 
     private static ImmutableArray<string> BuildRootClientFilePrefixes(

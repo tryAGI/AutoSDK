@@ -300,6 +300,7 @@ public static partial class Sources
             client,
             types,
             new JsonSerializerContextGenerationState(),
+            fallbackResolverExpressions: null,
             cancellationToken);
     }
 
@@ -307,6 +308,7 @@ public static partial class Sources
         Client client,
         EquatableArray<TypeData> types,
         JsonSerializerContextGenerationState generationState,
+        IReadOnlyList<string>? fallbackResolverExpressions = null,
         CancellationToken cancellationToken = default)
     {
         if (!client.Settings.FromCli ||
@@ -323,7 +325,12 @@ public static partial class Sources
         
         return new FileWithName(
             Name: $"{fileNameWithoutExtension}.JsonSerializerContext.g.cs",
-            Text: GenerateJsonSerializerContext(client, types, generationState, cancellationToken));
+            Text: GenerateJsonSerializerContext(
+                client,
+                types,
+                generationState,
+                fallbackResolverExpressions,
+                cancellationToken));
     }
     
     public static FileWithName JsonSerializerContextConverters(

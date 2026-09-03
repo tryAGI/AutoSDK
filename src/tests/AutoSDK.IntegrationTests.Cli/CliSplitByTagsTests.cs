@@ -52,27 +52,51 @@ public class CliSplitByTagsTests
             var artists = GeneratedFileNames(packagesRoot, $"{PackageId}.Artists");
             var facade = GeneratedFileNames(packagesRoot, PackageId);
 
-            // Shared surface belongs to Core exactly once.
+            // Shared surface belongs to Core exactly once. Album and AlbumPage are returned by
+            // operations on both tags, so no single tag can claim them.
             core.Should().Contain($"{Namespace}.Models.Album.g.cs");
+            core.Should().Contain($"{Namespace}.Models.AlbumPage.g.cs");
+            core.Should().Contain($"{Namespace}.Models.Artist.g.cs");
             core.Should().Contain($"{Namespace}.OptionsSupport.g.cs");
             core.Should().Contain($"{Namespace}.Security.g.cs");
             core.Should().Contain($"{Namespace}.JsonSerializerContext.g.cs");
+
+            // Status is reached only by the untagged operation, which claims nothing.
+            core.Should().Contain($"{Namespace}.Models.Status.g.cs");
 
             // The OAuth2 support types are hoisted out of the root client so tag assemblies can
             // reach them without referencing the facade.
             core.Should().Contain($"{Namespace}.AutoSDKOAuth2.g.cs");
 
-            // A tag package carries its client and nothing else.
+            // A tag package carries its client, the models only it reaches, and a serializer
+            // context for them chained onto Core's.
             albums.Should().Contain($"{Namespace}.AlbumsClient.g.cs");
             albums.Should().Contain($"{Namespace}.AlbumsClient.ListAlbums.g.cs");
+            albums.Should().Contain($"{Namespace}.Models.AlbumCreate.g.cs");
+            albums.Should().Contain($"{Namespace}.Models.Error.g.cs");
+            albums.Should().Contain($"{Namespace}.Albums.JsonSerializerContext.g.cs");
             albums.Should().NotContain(x => x.StartsWith($"{Namespace}.ArtistsClient.", StringComparison.Ordinal));
-            albums.Should().NotContain(x => x.StartsWith($"{Namespace}.Models.", StringComparison.Ordinal));
+
+            // An enum takes its generated converters with it, and those sit under a different name
+            // prefix than the model itself.
             artists.Should().Contain($"{Namespace}.ArtistsClient.GetArtist.g.cs");
+            artists.Should().Contain($"{Namespace}.Models.ArtistImport.g.cs");
+            artists.Should().Contain($"{Namespace}.Models.ArtistImportStatus.g.cs");
+            artists.Should().Contain($"{Namespace}.JsonConverters.ArtistImportStatus.g.cs");
+            artists.Should().Contain($"{Namespace}.JsonConverters.ArtistImportStatusNullable.g.cs");
+
+            // Neither tag may take a model the other one also reaches.
+            albums.Should().NotContain(x => x.StartsWith($"{Namespace}.Models.Album.", StringComparison.Ordinal));
+            artists.Should().NotContain(x => x.StartsWith($"{Namespace}.Models.Artist.g", StringComparison.Ordinal));
 
             // Root-client partials — including the untagged operation — stay together in the facade.
             facade.Should().Contain($"{Namespace}.{ClientClassName}.g.cs");
             facade.Should().Contain($"{Namespace}.{ClientClassName}.GetStatus.g.cs");
             facade.Should().Contain($"{Namespace}.{ClientClassName}.Authorizations.OAuth2.g.cs");
+
+            // The facade's context chains Core and every tag context, so the root client can hand
+            // one context down to its sub-clients exactly as it does in single-project mode.
+            facade.Should().Contain($"{Namespace}.{ClientClassName}.JsonSerializerContext.g.cs");
 
             var allFiles = core.Concat(albums).Concat(artists).Concat(facade).ToArray();
             allFiles.Should().OnlyHaveUniqueItems(
@@ -330,6 +354,11 @@ public class CliSplitByTagsTests
                         return StubHandler.Json("{\"healthy\":true,\"version\":\"1.0\"}");
                     }
 
+                    if (path.Contains("/imports/", StringComparison.Ordinal))
+                    {
+                        return StubHandler.Json("{\"id\":\"i1\",\"status\":\"completed\",\"importedCount\":7}");
+                    }
+
                     if (path.Contains("/artists/", StringComparison.Ordinal))
                     {
                         return StubHandler.Json("{\"id\":\"ar1\",\"name\":\"Artist\"}");
@@ -346,11 +375,18 @@ public class CliSplitByTagsTests
                 Artist artist = await client.Artists.GetArtistAsync("artist-id");
                 Status status = await client.GetStatusAsync();
                 Console.WriteLine("full=" + albums.Items.Count + "," + artist.Name + "," + status.Healthy);
+
+                // A model and an enum converter that both live in a tag assembly, resolved through
+                // the context the root client hands down. A converter registered only on the
+                // package that owns it would not be applied here.
+                ArtistImport import = await client.Artists.GetArtistImportAsync("i1");
+                Console.WriteLine("import=" + import.Status + "," + import.ImportedCount);
                 """);
 
             var output = await RunConsumerAsync(consumerDirectory, "FullConsumer");
 
             output.Should().Contain("full=1,Artist,True");
+            output.Should().Contain("import=Completed,7");
         });
     }
 
