@@ -135,7 +135,7 @@ public class CliSplitByTagsTests
     }
 
     [TestMethod]
-    public async Task Generate_SplitByTags_ConsumerReferencingOneTagPackageCanCallIt()
+    public async Task Generate_SplitByTags_TagOnlyConsumerExercisesTheSharedRuntimeAtRuntime()
     {
         await WithGeneratedFamilyAsync(async (_, outputDirectory) =>
         {
@@ -143,7 +143,9 @@ public class CliSplitByTagsTests
             var consumerDirectory = Path.Combine(outputDirectory, "TagOnlyConsumer");
             Directory.CreateDirectory(consumerDirectory);
 
-            // Deliberately references neither the base package nor the other tag package.
+            // Deliberately references neither the base package nor the other tag package. Every
+            // runtime type touched below lives in Core while the code driving it was generated
+            // into the albums assembly, so this is the cross-assembly path in both directions.
             await WriteConsumerAsync(
                 consumerDirectory,
                 "TagOnlyConsumer",
@@ -151,23 +153,153 @@ public class CliSplitByTagsTests
                 $$"""
                 using {{Namespace}};
 
-                using var client = new AlbumsClient();
-                client.Authorizations.Add(new EndPointAuthorization { Type = "Http", Name = "Bearer", Value = "token" });
+                var albumJson = "{\"id\":\"a1\",\"name\":\"First\"}";
+                var pageOne = "{\"items\":[{\"id\":\"a1\",\"name\":\"First\"},{\"id\":\"a2\",\"name\":\"Second\"}],\"next_cursor\":\"c2\",\"total\":3}";
+                var pageTwo = "{\"items\":[{\"id\":\"a3\",\"name\":\"Third\"}],\"total\":3}";
 
-                AlbumPage page = await client.ListAlbumsAsync(limit: 10, offset: 0);
-                Album album = await client.GetAlbumAsync("album-id");
-                Console.WriteLine($"{page.Items.Count} {album.Name}");
+                var handler = new StubHandler((request, body) =>
+                {
+                    if (request.Method == HttpMethod.Post)
+                    {
+                        // Echoing the name back turns a broken request-side serializer into a
+                        // wrong value rather than a silent pass.
+                        var sent = System.Text.Json.JsonDocument.Parse(body).RootElement.GetProperty("name").GetString();
+                        return StubHandler.Json("{\"id\":\"a9\",\"name\":\"" + sent + "\"}", System.Net.HttpStatusCode.Created);
+                    }
+
+                    var path = request.RequestUri!.AbsolutePath;
+                    if (path.EndsWith("/albums", StringComparison.Ordinal))
+                    {
+                        return StubHandler.Json(request.RequestUri!.Query.Contains("cursor=c2", StringComparison.Ordinal)
+                            ? pageTwo
+                            : pageOne);
+                    }
+
+                    return StubHandler.Json(albumJson);
+                });
+
+                using var httpClient = new HttpClient(handler);
+                using var client = new AlbumsClient(httpClient, disposeHttpClient: false);
+                // EndPointSecurityResolver lives in Core and matches this against the OAuth2
+                // requirement literals that were generated into the tag assembly.
+                client.Authorizations.Add(new EndPointAuthorization
+                {
+                    Type = "OAuth2",
+                    SchemeId = "Oauth2",
+                    Location = "Header",
+                    Name = "Bearer",
+                    Value = "token",
+                });
+
+                // AutoSDKPager is a Core type; the helper driving it was generated into this tag.
+                var names = new List<string>();
+                await foreach (var album in client.ListAlbumsAutoPagingAsync(limit: 2))
+                {
+                    names.Add(album.Name);
+                }
+                Console.WriteLine("paged=" + string.Join(",", names));
+
+                // AutoSDKServerConfiguration is a Core type the tag client mutates and reads back.
+                client.SelectedServer = client.AvailableServers[1];
+                var one = await client.GetAlbumAsync("a1");
+                Console.WriteLine("single=" + one.Name);
+                Console.WriteLine("server=" + new Uri(handler.Uris[^1]).Host);
+
+                // AutoSDKRequestOptions crosses the boundary into a tag operation body, and the
+                // echoed name proves the source-generated context round-tripped the request model.
+                var created = await client.CreateAlbumAsync(
+                    new AlbumCreate { Name = "Round Trip" },
+                    new AutoSDKRequestOptions { Headers = { ["X-Test"] = "on" } });
+                Console.WriteLine("created=" + created.Name);
+                Console.WriteLine("header=" + handler.Headers[^1]);
                 """);
 
-            var buildResult = await RunDotnetAsync(
-                consumerDirectory,
-                "build",
-                "--disable-build-servers",
-                Path.Combine(consumerDirectory, "TagOnlyConsumer.csproj"));
+            var output = await RunConsumerAsync(consumerDirectory, "TagOnlyConsumer");
 
-            Console.WriteLine(buildResult.StandardOutput);
-            Console.WriteLine(buildResult.StandardError);
-            buildResult.ExitCode.Should().Be(0);
+            output.Should().Contain("paged=First,Second,Third");
+            output.Should().Contain("single=First");
+            output.Should().Contain("server=sandbox.example.com");
+            output.Should().Contain("created=Round Trip");
+            output.Should().Contain("header=on");
+        });
+    }
+
+    [TestMethod]
+    public async Task Generate_SplitByTags_TagOnlyConsumerPollsAndStreamsAtRuntime()
+    {
+        await WithGeneratedFamilyAsync(async (_, outputDirectory) =>
+        {
+            var packagesRoot = Path.Combine(outputDirectory, "GeneratedPackages");
+            var consumerDirectory = Path.Combine(outputDirectory, "PollingConsumer");
+            Directory.CreateDirectory(consumerDirectory);
+
+            await WriteConsumerAsync(
+                consumerDirectory,
+                "PollingConsumer",
+                Path.Combine(packagesRoot, $"{PackageId}.Artists", $"{PackageId}.Artists.csproj"),
+                $$"""
+                using {{Namespace}};
+
+                var polls = 0;
+                var handler = new StubHandler((request, body) =>
+                {
+                    var path = request.RequestUri!.AbsolutePath;
+                    if (path.Contains("/portrait", StringComparison.Ordinal))
+                    {
+                        return StubHandler.Bytes(new byte[] { 1, 2, 3, 4 });
+                    }
+
+                    if (path.Contains("/imports/", StringComparison.Ordinal))
+                    {
+                        polls++;
+                        // The first attempt is still running, so the helper has to actually loop.
+                        return StubHandler.Json(polls < 2
+                            ? "{\"id\":\"i1\",\"status\":\"running\"}"
+                            : "{\"id\":\"i1\",\"status\":\"completed\",\"importedCount\":7}");
+                    }
+
+                    return StubHandler.Json("{\"id\":\"ar1\",\"name\":\"Artist\"}");
+                });
+
+                using var httpClient = new HttpClient(handler);
+                using var client = new ArtistsClient(httpClient, disposeHttpClient: false);
+                // EndPointSecurityResolver lives in Core and matches this against the OAuth2
+                // requirement literals that were generated into the tag assembly.
+                client.Authorizations.Add(new EndPointAuthorization
+                {
+                    Type = "OAuth2",
+                    SchemeId = "Oauth2",
+                    Location = "Header",
+                    Name = "Bearer",
+                    Value = "token",
+                });
+
+                // ResponseStream is a Core type constructed inside this tag assembly's body.
+                var portrait = await client.GetArtistPortraitAsync("ar1");
+                Console.WriteLine("portrait=" + portrait.Length);
+
+                // AutoSDKPollingSupport is a Core type; the wait loop is generated into the tag.
+                var import = await client.GetArtistImportWaitAsync(
+                    "i1",
+                    new AutoSDKPollingOptions
+                    {
+                        InitialDelay = TimeSpan.Zero,
+                        Interval = TimeSpan.FromMilliseconds(10),
+                        MaxAttempts = 5,
+                    });
+                Console.WriteLine("polls=" + polls);
+
+                // The status enum and its converter live in Core, reached through a tag response.
+                Console.WriteLine("status=" + import.Status);
+                Console.WriteLine("imported=" + import.ImportedCount);
+                """);
+
+            var output = await RunConsumerAsync(consumerDirectory, "PollingConsumer");
+
+            output.Should().Contain("portrait=4");
+            output.Should().Contain("polls=2");
+            output.Should().Contain("status=Completed");
+            output.Should().Contain("imported=7");
         });
     }
 
@@ -181,7 +313,8 @@ public class CliSplitByTagsTests
             Directory.CreateDirectory(consumerDirectory);
 
             // The tag-client properties, the untagged operation and OAuth2 all still hang off the
-            // one root client, exactly as they do in single-project mode.
+            // one root client, exactly as they do in single-project mode -- and one serializer
+            // context has to resolve models owned by Core through both tag assemblies.
             await WriteConsumerAsync(
                 consumerDirectory,
                 "FullConsumer",
@@ -189,24 +322,35 @@ public class CliSplitByTagsTests
                 $$"""
                 using {{Namespace}};
 
-                using var client = new {{ClientClassName}}();
+                var handler = new StubHandler((request, body) =>
+                {
+                    var path = request.RequestUri!.AbsolutePath;
+                    if (path.EndsWith("/status", StringComparison.Ordinal))
+                    {
+                        return StubHandler.Json("{\"healthy\":true,\"version\":\"1.0\"}");
+                    }
+
+                    if (path.Contains("/artists/", StringComparison.Ordinal))
+                    {
+                        return StubHandler.Json("{\"id\":\"ar1\",\"name\":\"Artist\"}");
+                    }
+
+                    return StubHandler.Json("{\"items\":[{\"id\":\"a1\",\"name\":\"First\"}],\"total\":1}");
+                });
+
+                using var httpClient = new HttpClient(handler);
+                using var client = new {{ClientClassName}}(httpClient, disposeHttpClient: false);
                 client.AuthorizeUsingOAuth2(new OAuth2Token { AccessToken = "token" });
 
-                AlbumPage albums = await client.Albums.ListAlbumsAsync(limit: 10, offset: 0);
+                AlbumPage albums = await client.Albums.ListAlbumsAsync(limit: 10);
                 Artist artist = await client.Artists.GetArtistAsync("artist-id");
                 Status status = await client.GetStatusAsync();
-                Console.WriteLine($"{albums.Items.Count} {artist.Name} {status.Healthy}");
+                Console.WriteLine("full=" + albums.Items.Count + "," + artist.Name + "," + status.Healthy);
                 """);
 
-            var buildResult = await RunDotnetAsync(
-                consumerDirectory,
-                "build",
-                "--disable-build-servers",
-                Path.Combine(consumerDirectory, "FullConsumer.csproj"));
+            var output = await RunConsumerAsync(consumerDirectory, "FullConsumer");
 
-            Console.WriteLine(buildResult.StandardOutput);
-            Console.WriteLine(buildResult.StandardError);
-            buildResult.ExitCode.Should().Be(0);
+            output.Should().Contain("full=1,Artist,True");
         });
     }
 
@@ -444,6 +588,7 @@ public class CliSplitByTagsTests
             "--split-by-tags",
             "--package-id", PackageId,
             "--generate-pageable-helpers",
+            "--auto-detect-status-polling",
             "--clean-stale-files",
             .. extraArguments,
         ];
@@ -466,6 +611,92 @@ public class CliSplitByTagsTests
         """);
 
         return path;
+    }
+
+    /// <summary>
+    /// Builds and runs a generated consumer, returning its stdout.
+    /// </summary>
+    /// <remarks>
+    /// The load-bearing difference from a plain build: a serializer context chained across
+    /// assemblies, a pager, and a polling loop all compile whether or not they resolve at runtime.
+    /// Only executing them proves the family actually works once split.
+    /// </remarks>
+    private static async Task<string> RunConsumerAsync(string directory, string projectName)
+    {
+        var result = await RunDotnetAsync(
+            directory,
+            "run",
+            "--disable-build-servers",
+            "--no-launch-profile",
+            "--project",
+            Path.Combine(directory, $"{projectName}.csproj"));
+
+        Console.WriteLine(result.StandardOutput);
+        Console.WriteLine(result.StandardError);
+        result.ExitCode.Should().Be(0);
+
+        return result.StandardOutput;
+    }
+
+    /// <summary>
+    /// A canned-response <see cref="HttpMessageHandler"/> dropped next to each consumer, so the
+    /// runtime assertions stay hermetic and need no network.
+    /// </summary>
+    private static Task WriteStubHandlerAsync(string directory)
+    {
+        return File.WriteAllTextAsync(
+            Path.Combine(directory, "StubHandler.cs"),
+            """
+            using System.Net;
+            using System.Text;
+
+            internal sealed class StubHandler : HttpMessageHandler
+            {
+                private readonly Func<HttpRequestMessage, string, HttpResponseMessage> respond;
+
+                public StubHandler(Func<HttpRequestMessage, string, HttpResponseMessage> respond)
+                {
+                    this.respond = respond;
+                }
+
+                public List<string> Uris { get; } = new();
+
+                public List<string> Headers { get; } = new();
+
+                protected override async Task<HttpResponseMessage> SendAsync(
+                    HttpRequestMessage request,
+                    CancellationToken cancellationToken)
+                {
+                    var body = request.Content is null
+                        ? string.Empty
+                        : await request.Content.ReadAsStringAsync(cancellationToken);
+
+                    Uris.Add(request.RequestUri!.ToString());
+                    Headers.Add(request.Headers.TryGetValues("X-Test", out var values)
+                        ? string.Join(",", values)
+                        : string.Empty);
+
+                    return respond(request, body);
+                }
+
+                public static HttpResponseMessage Json(string json, HttpStatusCode status = HttpStatusCode.OK)
+                {
+                    return new HttpResponseMessage(status)
+                    {
+                        Content = new StringContent(json, Encoding.UTF8, "application/json"),
+                    };
+                }
+
+                public static HttpResponseMessage Bytes(byte[] bytes)
+                {
+                    var content = new ByteArrayContent(bytes);
+                    content.Headers.ContentType =
+                        new System.Net.Http.Headers.MediaTypeHeaderValue("application/octet-stream");
+
+                    return new HttpResponseMessage(HttpStatusCode.OK) { Content = content };
+                }
+            }
+            """);
     }
 
     private static async Task WriteConsumerAsync(
@@ -495,6 +726,7 @@ public class CliSplitByTagsTests
             """);
 
         await File.WriteAllTextAsync(Path.Combine(directory, "Program.cs"), program);
+        await WriteStubHandlerAsync(directory);
     }
 
     private static string[] GeneratedFileNames(string packagesRoot, string packageId)

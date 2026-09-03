@@ -6,16 +6,20 @@ info:
     Two-tag fixture for split-by-tags package families. Deliberately exercises the parts of the
     generator that have to cross an assembly boundary once the SDK is split:
       - two tags, so the family has two independently consumable tag packages
-      - a model shared by both tags, proving models belong in Core rather than in a tag package
+      - a model shared by both tags, proving shared models belong in Core
+      - a model reachable from exactly one tag, so per-tag model ownership has something to move
       - an untagged operation, which is a partial of the root client and must land in the facade
       - OAuth2 security, whose support types are nested in the root client and would otherwise
         make every tag assembly reference the facade that already references it
-      - a paged response and a streaming response, so the pageable and response-stream runtime
-        helpers are reachable from tag operation bodies
-  license:
-    name: MIT
+      - two servers, so the server-selection support type is generated
+      - a cursor-paged response, a streaming response, a request body, and a status-polling
+        operation, so the pageable / response-stream / request-options / polling runtime helpers
+        are all reachable from tag operation bodies
 servers:
   - url: https://api.example.com/v1
+    description: Production.
+  - url: https://sandbox.example.com/v1
+    description: Sandbox.
 security:
   - oauth2:
       - read
@@ -45,12 +49,11 @@ paths:
           schema:
             type: integer
             format: int32
-        - name: offset
+        - name: cursor
           in: query
           required: false
           schema:
-            type: integer
-            format: int32
+            type: string
       responses:
         '200':
           description: A page of albums.
@@ -64,6 +67,24 @@ paths:
             application/json:
               schema:
                 $ref: "#/components/schemas/Error"
+    post:
+      summary: Create an album. Its request body is reachable only from the albums tag.
+      operationId: createAlbum
+      tags:
+        - albums
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/AlbumCreate"
+      responses:
+        '201':
+          description: The created album.
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Album"
   /albums/{albumId}:
     get:
       summary: Get one album.
@@ -141,6 +162,25 @@ paths:
               schema:
                 type: string
                 format: binary
+  /artists/imports/{importId}:
+    get:
+      summary: Get an artist import job. Its status enum drives the generated polling helper.
+      operationId: getArtistImport
+      tags:
+        - artists
+      parameters:
+        - name: importId
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: The import job.
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/ArtistImport"
 tags:
   - name: albums
     description: Album catalogue operations.
@@ -180,6 +220,15 @@ components:
           type: string
         artist:
           $ref: "#/components/schemas/Artist"
+    AlbumCreate:
+      type: object
+      required:
+        - name
+      properties:
+        name:
+          type: string
+        artistId:
+          type: string
     Artist:
       type: object
       required:
@@ -190,6 +239,24 @@ components:
           type: string
         name:
           type: string
+    ArtistImport:
+      type: object
+      required:
+        - id
+        - status
+      properties:
+        id:
+          type: string
+        status:
+          type: string
+          enum:
+            - pending
+            - running
+            - completed
+            - failed
+        importedCount:
+          type: integer
+          format: int32
     AlbumPage:
       type: object
       required:
@@ -200,7 +267,7 @@ components:
           maxItems: 100
           items:
             $ref: "#/components/schemas/Album"
-        next:
+        next_cursor:
           type: string
         total:
           type: integer
