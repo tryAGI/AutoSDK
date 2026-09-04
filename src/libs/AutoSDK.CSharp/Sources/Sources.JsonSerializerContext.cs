@@ -123,6 +123,57 @@ namespace {client.Settings.Namespace}
         return builder.ToString();
     }
 
+    /// <summary>
+    /// Types whose System.Text.Json type-info name collides with another type's, computed over the
+    /// whole family rather than one package's share of it.
+    /// </summary>
+    /// <remarks>
+    /// Single-project generation registers every type in one context, so a collision is visible and
+    /// gets disambiguated. A split family's tag context registers only what its package owns and
+    /// lets System.Text.Json discover the rest implicitly through properties -- and an implicitly
+    /// discovered type gets the name STJ derives for it, which is exactly the name the collision was
+    /// about (SYSLIB1031). Handing each context the colliding types lets it name them apart.
+    /// </remarks>
+    internal static string[] GetCollidingTypeInfoNameTypes(
+        Client client,
+        EquatableArray<TypeData> types)
+    {
+        if (types.IsEmpty)
+        {
+            return Array.Empty<string>();
+        }
+
+        var generationState = new JsonSerializerContextGenerationState();
+        var typeSet = BuildJsonSerializableTypeSet(
+            client,
+            expandContextTypes: true,
+            generationState.GetJsonSerializableTypeComponents(types),
+            generationState.GetNullableValueTypes(types));
+
+        var typesByGeneratedName = new Dictionary<string, List<string>>(StringComparer.Ordinal);
+        foreach (var type in typeSet.SerializableTypes)
+        {
+            var name = generationState.TypeInfoNames.GetGenerated(type);
+            if (!typesByGeneratedName.TryGetValue(name, out var colliding))
+            {
+                colliding = [];
+                typesByGeneratedName[name] = colliding;
+            }
+
+            colliding.Add(type);
+        }
+
+        return typesByGeneratedName.Values
+            .Where(static x => x.Count > 1)
+            .SelectMany(static x => x)
+            // The nullable spelling is derived again by whichever context registers the type, so
+            // the underlying type is what a caller needs to add.
+            .Select(static x => x.EndsWith("?", StringComparison.Ordinal) ? x.Substring(0, x.Length - 1) : x)
+            .Distinct(StringComparer.Ordinal)
+            .OrderBy(static x => x, StringComparer.Ordinal)
+            .ToArray();
+    }
+
     private const int MaxJsonSerializableAttributesPerContext = 500;
 
     private static string GenerateEmptyJsonSerializerContext(

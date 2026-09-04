@@ -56,19 +56,23 @@ if [[ $build_status -ne 0 ]]; then
   exit "$build_status"
 fi
 
-# A tag context can implicitly discover a Core type through a property, and STJ then derives a
-# type-info name for it that may collide with another type's. Single-project generation avoids this
-# by registering both halves with disambiguated names; a per-package context registers only its own.
-# Reported rather than failed on: the chained resolver still resolves the type through Core, so the
-# effect today is noise. See the split-by-tags section of README.md.
+# A tag context registers only its own share and lets System.Text.Json discover the rest of the
+# family implicitly, so a name the two halves of a collision share would surface here as SYSLIB1031.
+# Generation adds the family-wide colliding types to every context to prevent that; this is the
+# check that it kept working, because the warning is invisible in a single-project build.
 collisions=$(grep -c "SYSLIB1031" "$build_log" || true)
 echo
 echo "System.Text.Json name collisions across package contexts (SYSLIB1031): $collisions"
+if [[ $collisions -ne 0 ]]; then
+  echo "Expected none. A consumer building with TreatWarningsAsErrors would fail on these." >&2
+  exit 1
+fi
 
 echo
 echo "Package family file counts:"
 python3 - "$packages_root/autosdk-packages.json" <<'PY'
 import json
+import os
 import sys
 
 with open(sys.argv[1], encoding="utf-8") as handle:
@@ -84,5 +88,19 @@ for package in sorted(packages, key=lambda p: -p.get("generatedFileCount", 0))[:
 
 print(f"  {'(total)':<40} {total:>7}")
 print()
-print(f"Core holds {core.get('generatedFileCount', 0) * 100 // max(total, 1)}% of the family.")
+
+share = core.get("generatedFileCount", 0) * 100 // max(total, 1)
+budget = int(os.environ.get("SPLIT_BY_TAGS_MAX_CORE_SHARE", "72"))
+print(f"Core holds {share}% of the family (budget {budget}%).")
+
+# Core is what every consumer downloads no matter which tag they wanted, so its share is the number
+# this mode exists to move. A model quietly demoted back to Core -- by a new reference edge, a
+# converter that can no longer be placed -- shows up here and nowhere else.
+if share > budget:
+    print(
+        f"Core's share grew past the budget. Something stopped being splittable; find it before "
+        f"raising SPLIT_BY_TAGS_MAX_CORE_SHARE.",
+        file=sys.stderr,
+    )
+    raise SystemExit(1)
 PY

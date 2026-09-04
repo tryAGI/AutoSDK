@@ -520,6 +520,19 @@ public static class CSharpPipeline
                 cancellationToken),
         };
 
+        // Types whose type-info name collides family-wide are added to every context that is not
+        // Core's. A context registers only its own share and lets System.Text.Json discover the
+        // rest implicitly, which is where the collision would otherwise surface as SYSLIB1031;
+        // registering both halves lets the context name them apart. Only Core-owned ones, since
+        // those are the only types every package in the family can see.
+        var collidingTypes = new HashSet<string>(
+            Sources.GetCollidingTypeInfoNameTypes(data.Converters, data.Types),
+            StringComparer.Ordinal);
+        var sharedCollidingTypes = data.Types
+            .Where(x => collidingTypes.Contains(x.CSharpTypeWithoutNullability) &&
+                        ModelOwnershipResolver.ResolveTypeOwner(x.CSharpTypeWithoutNullability, modelOwners) is null)
+            .ToImmutableArray();
+
         var coreResolver = $"global::{settings.JsonSerializerContext}.TypeInfoResolver";
         var chain = new List<string> { coreResolver };
         foreach (var tag in data.Tags.OrderBy(static x => x.SafeName, StringComparer.Ordinal))
@@ -549,7 +562,7 @@ public static class CSharpPipeline
                     convertersByTag.TryGetValue(tag.Name, out var converters)
                         ? coreConverters.AddRange(converters)
                         : coreConverters),
-                tagTypes.AsEquatableArray(),
+                tagTypes.AddRange(sharedCollidingTypes).AsEquatableArray(),
                 new Sources.JsonSerializerContextGenerationState(),
                 // Core last: a tag's own registrations must win over the ones it left behind.
                 fallbackResolverExpressions: [coreResolver],
@@ -567,7 +580,7 @@ public static class CSharpPipeline
                     GetPackageContextName(settings.Namespace, rootClassName),
                     // The facade resolves through every package, so it registers every converter.
                     data.Converters.Converters),
-                ImmutableArray<TypeData>.Empty.AsEquatableArray(),
+                sharedCollidingTypes.AsEquatableArray(),
                 new Sources.JsonSerializerContextGenerationState(),
                 fallbackResolverExpressions: chain,
                 cancellationToken));
