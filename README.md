@@ -232,7 +232,7 @@ Model ownership is "the set of tags that reach it": one tag means that tag's pac
 | generated files | 17,034 | 11,901 | 284 | 3 |
 | package size | 28.1 MB | 19.0 MB | 0.50 MB | 0.01 MB |
 
-Rebuilding one tag takes ~1 s instead of ~40 s, and a cold build of all 38 projects is no slower than the single project because tag projects compile in parallel. A consumer of `…Issues` alone now pulls ~19.5 MB rather than the ~26.2 MB it did when every model lived in `Core`.
+A cold build of all 38 projects is 69 s against the single project's 72 s — no slower, because they compile in parallel — and rebuilding one tag after a change is 8.6 s rather than a full 72 s. That per-tag figure was ~1 s before models were split; a tag package now carries the models only it reaches, so there is more to compile. The same change is what cut what a consumer downloads, so the two move against each other: pay ~8 s a rebuild, save ~40% a restore.
 
 ### How ownership is decided
 
