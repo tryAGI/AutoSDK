@@ -268,6 +268,12 @@ Use `--package-map` to group small or closely related tags into one package, and
 
 `autosdk-packages.json` is the machine-readable result — base/core ids, and per package its id, kind, project path, assembly name, owned tags and client classes. It carries no timestamps, so regeneration is byte-stable and safe to commit. Each project uses a plain `ProjectReference` to `Core`, which `dotnet pack` converts into a package dependency, so the same file serves repository builds and published packages. With `--clean-stale-files`, regenerating after a tag is renamed or grouped away removes the retired project; a directory that still holds files AutoSDK did not generate is reported and left alone.
 
+### Publishing a family
+
+`dotnet pack` the generated `.slnx` with a single `--property:Version=` for the whole family, and push the output directory in one step. Both matter: NuGet resolves a tag package's dependency on `Core` by the version its nuspec names, so a family published at mixed versions can hand a consumer a `Core` its tag package was never built against, and a partial push leaves the metapackage depending on versions that are not on the feed yet.
+
+A solution build wires the packages together with `ProjectReference`s, which resolve whatever is on disk — it never exercises the dependency graph a consumer actually restores. Verify that separately by packing to a local directory and restoring one tag package from it as a package; a consumer that names only `<id>.Issues` must pull `<id>.Core` in behind it. Measured on `tryAGI/GitHub.NET`'s configuration, that consumer restores 2 assemblies of the 48 while a metapackage consumer restores all 48 and keeps `new GitHubClient().Issues` working unchanged.
+
 Split mode needs at least two tags, and is rejected together with `--single-file`, `--generate-cli` and mixed-mode gRPC generation. (`--generate-cli` replaces model and client generation rather than adding to it, so there would be no clients to split — generate the family first, then run `autosdk cli-project` against it.)
 
 ## Vendor Extension Compatibility
