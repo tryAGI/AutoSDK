@@ -116,6 +116,25 @@ public static class CSharpPipeline
         CancellationToken cancellationToken)
     {
         var settings = data.Converters.Settings;
+
+        // In split-by-tags mode the models no longer all live in one assembly, so neither can the
+        // [JsonSerializable] registrations: each package registers what it owns and chains onto the
+        // package it references. Everything a model emits then has to name that same context --
+        // including its own ToJson()/FromJson() defaults, which would otherwise point at Core's and
+        // throw for a model that moved out of it. Everywhere else this stays one context.
+        var modelOwners = settings.SplitByTags
+            ? ModelOwnershipResolver.Resolve(data)
+            : EmptyOwners;
+        if (modelOwners.Count != 0)
+        {
+            var contextNamesByTag = BuildContextNamesByTag(data);
+            data = data with
+            {
+                Classes = RetargetSerializerContext(data.Classes, modelOwners, contextNamesByTag),
+                Enums = RetargetSerializerContext(data.Enums, modelOwners, contextNamesByTag),
+                AnyOfs = RetargetSerializerContext(data.AnyOfs, modelOwners, contextNamesByTag),
+            };
+        }
         var webSocketMessageModels = data.Classes
             .Where(x => data.WebSocketOperations.Any(y => string.Equals(
                 y.MessageType.CSharpTypeWithoutNullability,
@@ -258,12 +277,6 @@ public static class CSharpPipeline
                 AddIfNotEmpty(methodImplementationFiles[index]);
                 AddIfNotEmpty(methodInterfaceFiles[index]);
             }
-            // In split-by-tags mode the models no longer all live in one assembly, so neither can
-            // the [JsonSerializable] registrations: each package registers what it owns and chains
-            // onto the package it references. Everywhere else this stays one context.
-            var modelOwners = settings.SplitByTags
-                ? ModelOwnershipResolver.Resolve(data)
-                : EmptyOwners;
             var clients = modelOwners.Count == 0
                 ? data.Clients
                 : ApplyPackageSerializerContexts(data, modelOwners);
@@ -466,6 +479,70 @@ public static class CSharpPipeline
         });
 
         return files;
+    }
+
+    /// <summary>
+    /// Maps an owning tag name to the serializer context class its package emits.
+    /// </summary>
+    private static Dictionary<string, string> BuildContextNamesByTag(Models.Data data)
+    {
+        var settings = data.Converters.Settings;
+        var result = new Dictionary<string, string>(StringComparer.Ordinal);
+        foreach (var tag in data.Tags)
+        {
+            if (tag.Name is not null)
+            {
+                result[tag.Name] = GetPackageContextName(settings.Namespace, tag.SafeName);
+            }
+        }
+
+        return result;
+    }
+
+    /// <summary>
+    /// Points each model's generated JSON helpers at the context of the package it ships in.
+    /// </summary>
+    /// <remarks>
+    /// <c>ToJson()</c> and <c>FromJson(string)</c> take no context and fall back to the configured
+    /// one, which is Core's. A model that moved into a tag package is not registered there, so the
+    /// fallback throws at runtime for exactly the models the split moved.
+    /// </remarks>
+    private static EquatableArray<ModelData> RetargetSerializerContext(
+        EquatableArray<ModelData> models,
+        IReadOnlyDictionary<string, string> modelOwners,
+        IReadOnlyDictionary<string, string> contextNamesByTag)
+    {
+        return models
+            .Select(model => ResolveContextName(model.GlobalClassName, modelOwners, contextNamesByTag) is { } contextName
+                ? model with { Settings = model.Settings with { JsonSerializerContext = contextName } }
+                : model)
+            .ToImmutableArray()
+            .AsEquatableArray();
+    }
+
+    private static EquatableArray<AnyOfData> RetargetSerializerContext(
+        EquatableArray<AnyOfData> anyOfs,
+        IReadOnlyDictionary<string, string> modelOwners,
+        IReadOnlyDictionary<string, string> contextNamesByTag)
+    {
+        return anyOfs
+            .Select(anyOf => anyOf.IsNamed &&
+                    ResolveContextName($"global::{anyOf.Namespace}.{anyOf.Name}", modelOwners, contextNamesByTag) is { } contextName
+                ? anyOf with { Settings = anyOf.Settings with { JsonSerializerContext = contextName } }
+                : anyOf)
+            .ToImmutableArray()
+            .AsEquatableArray();
+    }
+
+    private static string? ResolveContextName(
+        string globalClassName,
+        IReadOnlyDictionary<string, string> modelOwners,
+        IReadOnlyDictionary<string, string> contextNamesByTag)
+    {
+        return modelOwners.TryGetValue(globalClassName, out var tagName) &&
+               contextNamesByTag.TryGetValue(tagName, out var contextName)
+            ? contextName
+            : null;
     }
 
     private static readonly IReadOnlyDictionary<string, string> EmptyOwners =

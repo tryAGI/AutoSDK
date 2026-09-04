@@ -236,6 +236,11 @@ public class CliSplitByTagsTests
                     new AutoSDKRequestOptions { Headers = { ["X-Test"] = "on" } });
                 Console.WriteLine("created=" + created.Name);
                 Console.WriteLine("header=" + handler.Headers[^1]);
+
+                // The generated helpers default to a context, and for a model that moved out of
+                // Core that has to be its own package's -- Core's does not register it.
+                var draft = new AlbumCreate { Name = "Direct" };
+                Console.WriteLine("selfjson=" + AlbumCreate.FromJson(draft.ToJson())!.Name);
                 """);
 
             var output = await RunConsumerAsync(consumerDirectory, "TagOnlyConsumer");
@@ -245,6 +250,7 @@ public class CliSplitByTagsTests
             output.Should().Contain("server=sandbox.example.com");
             output.Should().Contain("created=Round Trip");
             output.Should().Contain("header=on");
+            output.Should().Contain("selfjson=Direct");
         });
     }
 
@@ -381,12 +387,24 @@ public class CliSplitByTagsTests
                 // package that owns it would not be applied here.
                 ArtistImport import = await client.Artists.GetArtistImportAsync("i1");
                 Console.WriteLine("import=" + import.Status + "," + import.ImportedCount);
+
+                // One context resolving models from two different tag assemblies and from Core,
+                // in both directions. This is what the chained resolver exists to do.
+                var context = client.JsonSerializerContext;
+                var fromAlbums = new AlbumCreate { Name = "From Albums" };
+                var fromArtists = new ArtistImport { Id = "i2", Status = ArtistImportStatus.Running };
+                var shared = new Artist { Id = "ar2", Name = "Shared" };
+                Console.WriteLine("cross="
+                    + AlbumCreate.FromJson(fromAlbums.ToJson(context), context)!.Name + ","
+                    + ArtistImport.FromJson(fromArtists.ToJson(context), context)!.Status + ","
+                    + Artist.FromJson(shared.ToJson(context), context)!.Name);
                 """);
 
             var output = await RunConsumerAsync(consumerDirectory, "FullConsumer");
 
             output.Should().Contain("full=1,Artist,True");
             output.Should().Contain("import=Completed,7");
+            output.Should().Contain("cross=From Albums,Running,Shared");
         });
     }
 
