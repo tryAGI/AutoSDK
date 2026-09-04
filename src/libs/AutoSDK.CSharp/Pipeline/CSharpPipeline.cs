@@ -310,7 +310,7 @@ public static class CSharpPipeline
                         data.Converters,
                         data.Types,
                         serializerContextGenerationState,
-                        fallbackResolverExpressions: null,
+                        fallbackContextNames: null,
                         cancellationToken)]
                     : CreatePackageJsonSerializerContexts(data, modelOwners, cancellationToken));
             var serializerContextTypesFile = MeasurePhase(
@@ -577,10 +577,11 @@ public static class CSharpPipeline
             convertersByTag.Values.SelectMany(static x => x),
             StringComparer.Ordinal);
 
-        // A context registers the converters for every type it can be asked to resolve, not just
-        // the ones it owns. A chained resolver builds its JsonTypeInfo against the *calling*
-        // context's options, so a converter declared only on Core would silently stop applying the
-        // moment a tag context resolved a Core type through it.
+        // Each package carries only the converters it owns and picks up the rest by calling down
+        // the chain, which every generated context does before it builds its options. A chained
+        // resolver builds its JsonTypeInfo against the *calling* context's options, so the
+        // converters still have to arrive there -- but written once per package rather than copied
+        // into all of them, which on a large family is most of the generated context.
         var coreConverters = data.Converters.Converters
             .Where(x => !ownedConverters.Contains(x))
             .ToImmutableArray();
@@ -593,7 +594,7 @@ public static class CSharpPipeline
                 new Sources.JsonSerializerContextGenerationState(),
                 // Empty rather than null: Core chains onto nothing, but still needs the shape that
                 // publishes a resolver for the tag packages above it.
-                fallbackResolverExpressions: [],
+                fallbackContextNames: [],
                 cancellationToken),
         };
 
@@ -610,8 +611,8 @@ public static class CSharpPipeline
                         ModelOwnershipResolver.ResolveTypeOwner(x.CSharpTypeWithoutNullability, modelOwners) is null)
             .ToImmutableArray();
 
-        var coreResolver = $"global::{settings.JsonSerializerContext}.TypeInfoResolver";
-        var chain = new List<string> { coreResolver };
+        var coreContext = $"global::{settings.JsonSerializerContext}";
+        var chain = new List<string> { coreContext };
         foreach (var tag in data.Tags.OrderBy(static x => x.SafeName, StringComparer.Ordinal))
         {
             if (tag.Name is null)
@@ -637,14 +638,14 @@ public static class CSharpPipeline
                     tag.SafeName,
                     contextName,
                     convertersByTag.TryGetValue(tag.Name, out var converters)
-                        ? coreConverters.AddRange(converters)
-                        : coreConverters),
+                        ? converters
+                        : ImmutableArray<string>.Empty),
                 tagTypes.AddRange(sharedCollidingTypes).AsEquatableArray(),
                 new Sources.JsonSerializerContextGenerationState(),
                 // Core last: a tag's own registrations must win over the ones it left behind.
-                fallbackResolverExpressions: [coreResolver],
+                fallbackContextNames: [coreContext],
                 cancellationToken));
-            chain.Add($"global::{contextName}.TypeInfoResolver");
+            chain.Add($"global::{contextName}");
         }
 
         if (chain.Count > 1)
@@ -655,11 +656,12 @@ public static class CSharpPipeline
                     data.Converters,
                     rootClassName,
                     GetPackageContextName(settings.Namespace, rootClassName),
-                    // The facade resolves through every package, so it registers every converter.
-                    data.Converters.Converters),
+                    // The facade owns no models, so it contributes nothing of its own and picks up
+                    // every package's converters through the chain.
+                    ImmutableArray<string>.Empty),
                 sharedCollidingTypes.AsEquatableArray(),
                 new Sources.JsonSerializerContextGenerationState(),
-                fallbackResolverExpressions: chain,
+                fallbackContextNames: chain,
                 cancellationToken));
         }
 

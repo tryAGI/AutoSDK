@@ -300,7 +300,7 @@ public static partial class Sources
             client,
             types,
             new JsonSerializerContextGenerationState(),
-            fallbackResolverExpressions: null,
+            fallbackContextNames: null,
             cancellationToken);
     }
 
@@ -308,7 +308,7 @@ public static partial class Sources
         Client client,
         EquatableArray<TypeData> types,
         JsonSerializerContextGenerationState generationState,
-        IReadOnlyList<string>? fallbackResolverExpressions = null,
+        IReadOnlyList<string>? fallbackContextNames = null,
         CancellationToken cancellationToken = default)
     {
         if (!client.Settings.FromCli ||
@@ -329,7 +329,7 @@ public static partial class Sources
                 client,
                 types,
                 generationState,
-                fallbackResolverExpressions,
+                fallbackContextNames,
                 cancellationToken));
     }
     

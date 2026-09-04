@@ -17,27 +17,28 @@ public static partial class Sources
             client,
             types,
             new JsonSerializerContextGenerationState(),
-            fallbackResolverExpressions: null,
+            fallbackContextNames: null,
             cancellationToken);
     }
 
-    /// <param name="fallbackResolverExpressions">
-    /// Resolvers to consult after this context's own types, e.g. the Core package's context in a
+    /// <param name="fallbackContextNames">
+    /// Fully-qualified contexts to consult after this one's own types, e.g. the Core package's in a
     /// split-by-tags family. When any are given the chained shape is emitted regardless of type
-    /// count -- a bare source-generated context has no way to delegate, and the facade's context
-    /// has no types of its own at all.
+    /// count -- a bare source-generated context has no way to delegate, and the facade's context has
+    /// no types of its own at all. Each also contributes its converters, so a context registers only
+    /// the ones its own package owns.
     /// </param>
     internal static string GenerateJsonSerializerContext(
         Client client,
         EquatableArray<TypeData> types,
         JsonSerializerContextGenerationState generationState,
-        IReadOnlyList<string>? fallbackResolverExpressions = null,
+        IReadOnlyList<string>? fallbackContextNames = null,
         CancellationToken cancellationToken = default)
     {
         // Any non-null list -- empty included -- selects the chained shape. In a split family even
         // the package at the bottom of the chain needs it, because that shape is what exposes an
         // options-agnostic resolver for the packages above it to chain onto.
-        var hasFallbacks = fallbackResolverExpressions is not null;
+        var hasFallbacks = fallbackContextNames is not null;
         if (!client.Settings.FromCli ||
             !client.Settings.ShouldGenerateJsonSerializerContextTypes())
         {
@@ -97,7 +98,7 @@ public static partial class Sources
                 client,
                 contextClassName,
                 jsonSerializableAttributes,
-                fallbackResolverExpressions);
+                fallbackContextNames);
         }
 
         using var builder = new PooledStringBuilder(
@@ -246,7 +247,7 @@ namespace {client.Settings.Namespace}
         Client client,
         string contextClassName,
         JsonSerializableAttributeRegistration[] jsonSerializableAttributes,
-        IReadOnlyList<string>? fallbackResolverExpressions = null)
+        IReadOnlyList<string>? fallbackContextNames = null)
     {
         var chunks = SplitJsonSerializableAttributes(jsonSerializableAttributes)
             .ToArray();
@@ -259,9 +260,9 @@ namespace {client.Settings.Namespace}
         var resolverExpressions = chunkClassNames
             .Select(static className => $"new {className}(new global::System.Text.Json.JsonSerializerOptions())")
             .ToList();
-        if (fallbackResolverExpressions is not null)
+        if (fallbackContextNames is not null)
         {
-            resolverExpressions.AddRange(fallbackResolverExpressions);
+            resolverExpressions.AddRange(fallbackContextNames.Select(static x => $"{x}.TypeInfoResolver"));
         }
         var lazyConverterRegistrations = GetLazyEnumConverterRegistrations(client.Converters);
         var lazyConverterTypes = new HashSet<string>(
@@ -357,13 +358,23 @@ namespace {client.Settings.Namespace}
             return Resolver.GetTypeInfo(type, Options);
         }}
 
-        private static global::System.Text.Json.JsonSerializerOptions CreateDefaultOptions()
-        {{
-            var options = new global::System.Text.Json.JsonSerializerOptions
-            {{
-                DefaultIgnoreCondition = global::System.Text.Json.Serialization.JsonIgnoreCondition.WhenWritingNull,
-                TypeInfoResolver = Resolver,
-            }};");
+        {(fallbackContextNames is null ? "" : @"/// <summary>
+        /// Adds this package's converters to <paramref name=""options""/>.
+        /// </summary>
+        /// <remarks>
+        /// A converter has to be on the options a chained resolver builds its JsonTypeInfo against,
+        /// and a context resolves types from every package below it. Each package contributes only
+        /// what it owns and calls down the chain for the rest, so the family's converter table is
+        /// written once rather than copied into all of them.
+        /// </remarks>
+        [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Never)]
+        public")} static {(fallbackContextNames is null ? "void AddConverters" : "void AddConverters")}(global::System.Text.Json.JsonSerializerOptions options)
+        {{");
+        foreach (var name in fallbackContextNames ?? (IReadOnlyList<string>)Array.Empty<string>())
+        {
+            builder.Append($@"
+            {name}.AddConverters(options);");
+        }
         foreach (var converter in eagerConverters)
         {
             builder.Append($@"
@@ -372,11 +383,20 @@ namespace {client.Settings.Namespace}
         if (lazyConverterRegistrations.Length > 0)
         {
             builder.Append(@"
-
             options.Converters.Add(new LazyEnumJsonConverterFactory());");
         }
 
         builder.Append(@"
+        }
+
+        private static global::System.Text.Json.JsonSerializerOptions CreateDefaultOptions()
+        {
+            var options = new global::System.Text.Json.JsonSerializerOptions
+            {
+                DefaultIgnoreCondition = global::System.Text.Json.Serialization.JsonIgnoreCondition.WhenWritingNull,
+                TypeInfoResolver = Resolver,
+            };
+            AddConverters(options);
 
             return options;
         }");
