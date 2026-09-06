@@ -5478,7 +5478,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::G.AdditionalFormatResponseModel>? Type1361 { get; set; }
+        public global::System.Collections.Generic.IList<global::G.AdditionalFormatResponseModel?>? Type1361 { get; set; }
         /// <summary>
         /// 
         /// </summary>
@@ -7227,7 +7227,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.List<global::G.AdditionalFormatResponseModel>? ListType146 { get; set; }
+        public global::System.Collections.Generic.List<global::G.AdditionalFormatResponseModel?>? ListType146 { get; set; }
         /// <summary>
         /// 
         /// </summary>

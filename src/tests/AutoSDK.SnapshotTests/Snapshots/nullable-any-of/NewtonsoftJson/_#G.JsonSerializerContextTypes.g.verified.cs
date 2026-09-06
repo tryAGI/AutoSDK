@@ -59,6 +59,14 @@ namespace G
         /// 
         /// </summary>
         public global::G.FooInline? Type6 { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::System.Collections.Generic.IList<global::G.FooClassRef?>? Type7 { get; set; }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::System.Collections.Generic.List<global::G.FooClassRef?>? ListType0 { get; set; }
     }
 }

@@ -834,7 +834,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::G.Payload>? Type200 { get; set; }
+        public global::System.Collections.Generic.IList<global::G.Payload?>? Type200 { get; set; }
         /// <summary>
         /// 
         /// </summary>
@@ -2495,7 +2495,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.List<global::G.Payload>? ListType17 { get; set; }
+        public global::System.Collections.Generic.List<global::G.Payload?>? ListType17 { get; set; }
         /// <summary>
         /// 
         /// </summary>

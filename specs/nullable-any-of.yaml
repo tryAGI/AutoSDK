@@ -55,3 +55,17 @@ components:
               properties:
                 label:
                   type: string
+        # An array whose items are a nullable union: the item type itself must be
+        # nullable, and `anyOf` must behave the same as `oneOf` here.
+        anyOfItems:
+          type: array
+          items:
+            anyOf:
+              - type: "null"
+              - $ref: "#/components/schemas/FooClassRef"
+        oneOfItems:
+          type: array
+          items:
+            oneOf:
+              - type: "null"
+              - $ref: "#/components/schemas/FooClassRef"

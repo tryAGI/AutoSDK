@@ -34,6 +34,18 @@ namespace G
         public global::G.FooInline? Inline { get; set; }
 
         /// <summary>
+        /// 
+        /// </summary>
+        [global::Newtonsoft.Json.JsonProperty("anyOfItems")]
+        public global::System.Collections.Generic.IList<global::G.FooClassRef?>? AnyOfItems { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::Newtonsoft.Json.JsonProperty("oneOfItems")]
+        public global::System.Collections.Generic.IList<global::G.FooClassRef?>? OneOfItems { get; set; }
+
+        /// <summary>
         /// Additional properties that are not explicitly defined in the schema
         /// </summary>
         [global::Newtonsoft.Json.JsonExtensionData]
@@ -46,16 +58,22 @@ namespace G
         /// <param name="enumRef"></param>
         /// <param name="oneOfClassRef"></param>
         /// <param name="inline"></param>
+        /// <param name="anyOfItems"></param>
+        /// <param name="oneOfItems"></param>
         public Foo(
             global::G.FooClassRef? classRef,
             global::G.FooEnumRef? enumRef,
             global::G.FooClassRef? oneOfClassRef,
-            global::G.FooInline? inline)
+            global::G.FooInline? inline,
+            global::System.Collections.Generic.IList<global::G.FooClassRef?>? anyOfItems,
+            global::System.Collections.Generic.IList<global::G.FooClassRef?>? oneOfItems)
         {
             this.ClassRef = classRef;
             this.EnumRef = enumRef;
             this.OneOfClassRef = oneOfClassRef;
             this.Inline = inline;
+            this.AnyOfItems = anyOfItems;
+            this.OneOfItems = oneOfItems;
         }
 
         /// <summary>

@@ -1,4 +1,4 @@
-﻿//HintName: G.Models.SpeechToTextChunkResponseModel.g.cs
+//HintName: G.Models.SpeechToTextChunkResponseModel.g.cs
 
 #nullable enable
 
@@ -44,7 +44,7 @@ namespace G
         /// Requested additional formats of the transcript.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("additional_formats")]
-        public global::System.Collections.Generic.IList<global::G.AdditionalFormatResponseModel>? AdditionalFormats { get; set; }
+        public global::System.Collections.Generic.IList<global::G.AdditionalFormatResponseModel?>? AdditionalFormats { get; set; }
 
         /// <summary>
         /// The transcription ID of the response.
@@ -97,7 +97,7 @@ namespace G
             string text,
             global::System.Collections.Generic.IList<global::G.SpeechToTextWordResponseModel> words,
             int? channelIndex,
-            global::System.Collections.Generic.IList<global::G.AdditionalFormatResponseModel>? additionalFormats,
+            global::System.Collections.Generic.IList<global::G.AdditionalFormatResponseModel?>? additionalFormats,
             string? transcriptionId,
             global::System.Collections.Generic.IList<global::G.DetectedEntity>? entities)
         {
