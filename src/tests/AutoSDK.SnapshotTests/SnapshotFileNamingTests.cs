@@ -58,6 +58,62 @@ public sealed class SnapshotFileNamingTests
             Environment.NewLine + string.Join(Environment.NewLine, mismatches.OrderBy(x => x, StringComparer.Ordinal)));
     }
 
+    /// <summary>
+    /// The same hazard one level up. A `.verified.txt` baseline is named after its test method, so
+    /// its own filename carries no casing to get wrong — but the directory holding it is derived
+    /// from the spec's filename (`callerName` is <c>Path.GetFileNameWithoutExtension(fileName)</c>),
+    /// and a directory can be mis-cased in exactly the same way a file can.
+    ///
+    /// A directory that matches a spec only when case is ignored is therefore a real defect; one
+    /// that matches no spec at all is named after a test method (`Empty`, `ParallelGeneration`, …)
+    /// and is none of this test's business.
+    /// </summary>
+    [TestMethod]
+    public void EverySpecNamedSnapshotDirectoryMatchesItsSpecFileCasing()
+    {
+        var projectDirectory = GetProjectDirectory();
+        var snapshots = Path.Combine(projectDirectory, "Snapshots");
+        var specs = Path.GetFullPath(Path.Combine(projectDirectory, "..", "..", "..", "specs"));
+        if (!Directory.Exists(snapshots) || !Directory.Exists(specs))
+        {
+            Assert.Inconclusive($"Expected '{snapshots}' and '{specs}' to exist.");
+            return;
+        }
+
+        var specStemsByLowercase = Directory.EnumerateFiles(specs)
+            .Select(Path.GetFileNameWithoutExtension)
+            .OfType<string>()
+            .Distinct(StringComparer.Ordinal)
+            .ToLookup(x => x.ToLowerInvariant(), StringComparer.Ordinal);
+
+        // Snapshots/<callerName>/... and Snapshots/CLI/<callerName>/...
+        var candidates = Directory.EnumerateDirectories(snapshots)
+            .Where(x => !string.Equals(Path.GetFileName(x), "CLI", StringComparison.Ordinal))
+            .Concat(Directory.Exists(Path.Combine(snapshots, "CLI"))
+                ? Directory.EnumerateDirectories(Path.Combine(snapshots, "CLI"))
+                : []);
+
+        var mismatches = new List<string>();
+        foreach (var directory in candidates)
+        {
+            var name = Path.GetFileName(directory);
+            var specStems = specStemsByLowercase[name.ToLowerInvariant()].ToArray();
+            if (specStems.Length == 0 || specStems.Contains(name, StringComparer.Ordinal))
+            {
+                continue;
+            }
+
+            mismatches.Add(
+                $"{Path.GetRelativePath(snapshots, directory)}{Environment.NewLine}" +
+                $"    matches spec '{specStems[0]}' only when case is ignored");
+        }
+
+        mismatches.Should().BeEmpty(
+            "a snapshot directory is named after its spec file, so a casing difference reads as a " +
+            "missing directory on a case-sensitive filesystem:" +
+            Environment.NewLine + string.Join(Environment.NewLine, mismatches.OrderBy(x => x, StringComparer.Ordinal)));
+    }
+
     private static string? ReadHintName(string path)
     {
         using var reader = new StreamReader(path, detectEncodingFromByteOrderMarks: true);
