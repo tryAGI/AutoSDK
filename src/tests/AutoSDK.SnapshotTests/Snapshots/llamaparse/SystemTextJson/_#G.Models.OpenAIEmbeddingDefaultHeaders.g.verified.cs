@@ -1,11 +1,11 @@
-﻿//HintName: G.Models.OpenAIEmbeddingDefaultHeaders.g.cs
+//HintName: G.Models.OpenAIEmbeddingDefaultHeaders.g.cs
 
 #nullable enable
 
 namespace G
 {
     /// <summary>
-    /// The default headers for API requests.
+    /// 
     /// </summary>
     public sealed partial class OpenAIEmbeddingDefaultHeaders
     {

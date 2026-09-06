@@ -1,4 +1,4 @@
-﻿//HintName: G.Models.AnthropicModelSettings.g.cs
+//HintName: G.Models.AnthropicModelSettings.g.cs
 
 #nullable enable
 
@@ -54,13 +54,13 @@ namespace G
         /// Soft control for how verbose model output should be, used for GPT-5 models.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("verbosity")]
-        public global::G.AnthropicModelSettingsVerbosity2? Verbosity { get; set; }
+        public global::G.AnthropicModelSettingsVerbosity? Verbosity { get; set; }
 
         /// <summary>
         /// Effort level for supported Anthropic models (controls token spending). 'max' is only available on Opus 4.6. Not setting this gives similar performance to 'high'.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("effort")]
-        public global::G.AnthropicModelSettingsEffort2? Effort { get; set; }
+        public global::G.AnthropicModelSettingsEffort? Effort { get; set; }
 
         /// <summary>
         /// Enable strict mode for tool calling. When true, tool outputs are guaranteed to match JSON schemas.<br/>
@@ -121,8 +121,8 @@ namespace G
             double? temperature,
             global::G.AnthropicThinking? thinking,
             global::G.ResponseFormatVariant12? responseFormat,
-            global::G.AnthropicModelSettingsVerbosity2? verbosity,
-            global::G.AnthropicModelSettingsEffort2? effort,
+            global::G.AnthropicModelSettingsVerbosity? verbosity,
+            global::G.AnthropicModelSettingsEffort? effort,
             bool? strict)
         {
             this.MaxOutputTokens = maxOutputTokens;

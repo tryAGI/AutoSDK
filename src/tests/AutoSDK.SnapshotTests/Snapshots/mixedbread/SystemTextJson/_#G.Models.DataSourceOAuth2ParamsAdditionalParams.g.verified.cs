@@ -1,11 +1,11 @@
-﻿//HintName: G.Models.DataSourceOAuth2ParamsAdditionalParams.g.cs
+//HintName: G.Models.DataSourceOAuth2ParamsAdditionalParams.g.cs
 
 #nullable enable
 
 namespace G
 {
     /// <summary>
-    /// Additional parameters for the OAuth2 flow
+    /// 
     /// </summary>
     public sealed partial class DataSourceOAuth2ParamsAdditionalParams
     {

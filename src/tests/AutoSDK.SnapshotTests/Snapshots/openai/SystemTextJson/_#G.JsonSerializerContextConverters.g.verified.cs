@@ -1,4 +1,4 @@
-﻿//HintName: G.JsonSerializerContextConverters.g.cs
+//HintName: G.JsonSerializerContextConverters.g.cs
 
 #nullable enable
 
@@ -1259,14 +1259,14 @@ namespace G
             typeof(global::G.JsonConverters.RefusalContentTypeNullableJsonConverter),
             typeof(global::G.JsonConverters.ComputerCallOutputItemParamTypeJsonConverter),
             typeof(global::G.JsonConverters.ComputerCallOutputItemParamTypeNullableJsonConverter),
-            typeof(global::G.JsonConverters.ComputerCallOutputItemParamStatus2JsonConverter),
-            typeof(global::G.JsonConverters.ComputerCallOutputItemParamStatus2NullableJsonConverter),
+            typeof(global::G.JsonConverters.ComputerCallOutputItemParamStatusJsonConverter),
+            typeof(global::G.JsonConverters.ComputerCallOutputItemParamStatusNullableJsonConverter),
             typeof(global::G.JsonConverters.FunctionCallOutputItemParamTypeJsonConverter),
             typeof(global::G.JsonConverters.FunctionCallOutputItemParamTypeNullableJsonConverter),
-            typeof(global::G.JsonConverters.FunctionCallOutputItemParamStatus2JsonConverter),
-            typeof(global::G.JsonConverters.FunctionCallOutputItemParamStatus2NullableJsonConverter),
-            typeof(global::G.JsonConverters.ItemReferenceParamType2JsonConverter),
-            typeof(global::G.JsonConverters.ItemReferenceParamType2NullableJsonConverter),
+            typeof(global::G.JsonConverters.FunctionCallOutputItemParamStatusJsonConverter),
+            typeof(global::G.JsonConverters.FunctionCallOutputItemParamStatusNullableJsonConverter),
+            typeof(global::G.JsonConverters.ItemReferenceParamTypeJsonConverter),
+            typeof(global::G.JsonConverters.ItemReferenceParamTypeNullableJsonConverter),
             typeof(global::G.JsonConverters.CreateBatchRequestEndpointJsonConverter),
             typeof(global::G.JsonConverters.CreateBatchRequestEndpointNullableJsonConverter),
             typeof(global::G.JsonConverters.CreateBatchRequestCompletionWindowJsonConverter),

@@ -1,4 +1,4 @@
-﻿//HintName: G.Models.CustomChartSeriesCreate.g.cs
+//HintName: G.Models.CustomChartSeriesCreate.g.cs
 
 #nullable enable
 
@@ -20,7 +20,7 @@ namespace G
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("filters")]
-        public global::G.CustomChartSeriesFilters2? Filters { get; set; }
+        public global::G.CustomChartSeriesFilters? Filters { get; set; }
 
         /// <summary>
         /// Metrics you can chart. Feedback metrics are not available for organization-scoped charts.
@@ -71,7 +71,7 @@ namespace G
         public CustomChartSeriesCreate(
             string name,
             global::G.CustomChartMetric metric,
-            global::G.CustomChartSeriesFilters2? filters,
+            global::G.CustomChartSeriesFilters? filters,
             string? feedbackKey,
             global::System.Guid? workspaceId,
             global::G.RunStatsGroupBy? groupBy)

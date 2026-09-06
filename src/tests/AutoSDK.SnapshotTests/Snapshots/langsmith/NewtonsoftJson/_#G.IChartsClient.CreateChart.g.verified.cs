@@ -1,4 +1,4 @@
-﻿//HintName: G.IChartsClient.CreateChart.g.cs
+//HintName: G.IChartsClient.CreateChart.g.cs
 #nullable enable
 
 namespace G
@@ -56,7 +56,7 @@ namespace G
             int? index = default,
             global::System.Guid? sectionId = default,
             object? metadata = default,
-            global::G.CustomChartSeriesFilters2? commonFilters = default,
+            global::G.CustomChartSeriesFilters? commonFilters = default,
             global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }

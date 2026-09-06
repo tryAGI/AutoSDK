@@ -1,4 +1,4 @@
-﻿//HintName: G.ILlamaExtractClient.RunJobApiV1ExtractionJobsPost.g.cs
+//HintName: G.ILlamaExtractClient.RunJobApiV1ExtractionJobsPost.g.cs
 #nullable enable
 
 namespace G
@@ -74,7 +74,7 @@ namespace G
             global::System.Guid fileId,
             bool? fromUi = default,
             string? session = default,
-            global::G.ExtractJobCreatePriority2? priority = default,
+            global::G.ExtractJobCreatePriority? priority = default,
             global::System.Collections.Generic.IList<global::G.WebhookConfiguration>? webhookConfigurations = default,
             global::G.AnyOf<object, string, object>? dataSchemaOverride = default,
             global::G.ExtractConfig? configOverride = default,

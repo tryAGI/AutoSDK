@@ -1,12 +1,11 @@
-﻿//HintName: G.Models.PassageMetadata.g.cs
+//HintName: G.Models.PassageMetadata.g.cs
 
 #nullable enable
 
 namespace G
 {
     /// <summary>
-    /// The metadata of the passage.<br/>
-    /// Default Value: {}
+    /// 
     /// </summary>
     public sealed partial class PassageMetadata
     {

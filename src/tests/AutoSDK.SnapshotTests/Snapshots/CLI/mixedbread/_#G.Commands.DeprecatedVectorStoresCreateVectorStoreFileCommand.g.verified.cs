@@ -1,4 +1,4 @@
-﻿//HintName: G.Commands.DeprecatedVectorStoresCreateVectorStoreFileCommand.g.cs
+//HintName: G.Commands.DeprecatedVectorStoresCreateVectorStoreFileCommand.g.cs
 
 #nullable enable
 
@@ -14,7 +14,7 @@ namespace G
             global::System.CommandLine.ParseResult parseResult,
             global::G.AnyOf<string, global::System.Guid?> vectorStoreIdentifier,
             object? metadata,
-            global::G.StoreFileConfig2? config,
+            global::G.StoreFileConfig? config,
             string? externalId,
             bool? overwrite,
             global::System.Guid fileId,
@@ -43,7 +43,7 @@ namespace G
             Description = @"Optional metadata for the file",
         };
 
-        private global::System.CommandLine.Option<global::G.StoreFileConfig2?> Config { get; } = new(
+        private global::System.CommandLine.Option<global::G.StoreFileConfig?> Config { get; } = new(
             name: "config")
         {
             Description = @"Configuration for adding the file",

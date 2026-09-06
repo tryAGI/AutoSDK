@@ -1,11 +1,11 @@
-﻿//HintName: G.Models.DataSourceMetadata.g.cs
+//HintName: G.Models.DataSourceMetadata.g.cs
 
 #nullable enable
 
 namespace G
 {
     /// <summary>
-    /// The metadata of the data source
+    /// 
     /// </summary>
     public sealed partial class DataSourceMetadata
     {

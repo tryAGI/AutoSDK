@@ -1,11 +1,11 @@
-﻿//HintName: G.Models.ExtractionJobError.g.cs
+//HintName: G.Models.ExtractionJobError.g.cs
 
 #nullable enable
 
 namespace G
 {
     /// <summary>
-    /// Error information if failed
+    /// 
     /// </summary>
     public sealed partial class ExtractionJobError
     {

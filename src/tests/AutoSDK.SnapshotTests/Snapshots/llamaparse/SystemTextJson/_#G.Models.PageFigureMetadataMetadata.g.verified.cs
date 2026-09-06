@@ -1,11 +1,11 @@
-﻿//HintName: G.Models.PageFigureMetadataMetadata.g.cs
+//HintName: G.Models.PageFigureMetadataMetadata.g.cs
 
 #nullable enable
 
 namespace G
 {
     /// <summary>
-    /// Metadata for the figure
+    /// 
     /// </summary>
     public sealed partial class PageFigureMetadataMetadata
     {

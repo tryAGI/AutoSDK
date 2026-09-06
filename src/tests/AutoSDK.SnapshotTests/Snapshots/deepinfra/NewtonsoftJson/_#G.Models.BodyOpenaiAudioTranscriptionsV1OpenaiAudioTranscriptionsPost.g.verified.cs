@@ -1,4 +1,4 @@
-﻿//HintName: G.Models.BodyOpenaiAudioTranscriptionsV1OpenaiAudioTranscriptionsPost.g.cs
+//HintName: G.Models.BodyOpenaiAudioTranscriptionsV1OpenaiAudioTranscriptionsPost.g.cs
 
 #nullable enable
 
@@ -43,7 +43,7 @@ namespace G
         /// Default Value: json
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("response_format")]
-        public global::G.BodyOpenaiAudioTranscriptionsV1OpenaiAudioTranscriptionsPostResponseFormat2? ResponseFormat { get; set; }
+        public global::G.BodyOpenaiAudioTranscriptionsV1OpenaiAudioTranscriptionsPostResponseFormat? ResponseFormat { get; set; }
 
         /// <summary>
         /// Default Value: 0
@@ -84,7 +84,7 @@ namespace G
             string model,
             string? language,
             string? prompt,
-            global::G.BodyOpenaiAudioTranscriptionsV1OpenaiAudioTranscriptionsPostResponseFormat2? responseFormat,
+            global::G.BodyOpenaiAudioTranscriptionsV1OpenaiAudioTranscriptionsPostResponseFormat? responseFormat,
             double? temperature,
             global::System.Collections.Generic.IList<global::G.BodyOpenaiAudioTranscriptionsV1OpenaiAudioTranscriptionsPostTimestampGranularitiesVariant1Item>? timestampGranularities)
         {

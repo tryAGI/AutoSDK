@@ -1,11 +1,11 @@
-﻿//HintName: G.Models.BodyCreateANewVoiceFromVoicePreviewV1TextToVoicePostLabels.g.cs
+//HintName: G.Models.BodyCreateANewVoiceFromVoicePreviewV1TextToVoicePostLabels.g.cs
 
 #nullable enable
 
 namespace G
 {
     /// <summary>
-    /// Optional, metadata to add to the created voice. Defaults to None.
+    /// 
     /// </summary>
     public sealed partial class BodyCreateANewVoiceFromVoicePreviewV1TextToVoicePostLabels
     {

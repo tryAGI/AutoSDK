@@ -1,11 +1,11 @@
-﻿//HintName: G.Models.VectorStoreUpdateParamsMetadata.g.cs
+//HintName: G.Models.VectorStoreUpdateParamsMetadata.g.cs
 
 #nullable enable
 
 namespace G
 {
     /// <summary>
-    /// Optional metadata key-value pairs
+    /// 
     /// </summary>
     public sealed partial class VectorStoreUpdateParamsMetadata
     {

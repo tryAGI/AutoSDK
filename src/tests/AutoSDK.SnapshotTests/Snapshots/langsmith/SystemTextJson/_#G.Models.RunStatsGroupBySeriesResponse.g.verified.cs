@@ -1,4 +1,4 @@
-﻿//HintName: G.Models.RunStatsGroupBySeriesResponse.g.cs
+//HintName: G.Models.RunStatsGroupBySeriesResponse.g.cs
 
 #nullable enable
 
@@ -27,7 +27,7 @@ namespace G
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("set_by")]
-        public global::G.RunStatsGroupBySeriesResponseSetBy2? SetBy { get; set; }
+        public global::G.RunStatsGroupBySeriesResponseSetBy? SetBy { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -47,7 +47,7 @@ namespace G
         public RunStatsGroupBySeriesResponse(
             global::G.RunStatsGroupBySeriesResponseAttribute attribute,
             string? path,
-            global::G.RunStatsGroupBySeriesResponseSetBy2? setBy)
+            global::G.RunStatsGroupBySeriesResponseSetBy? setBy)
         {
             this.Attribute = attribute;
             this.Path = path;

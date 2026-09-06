@@ -1,11 +1,11 @@
-﻿//HintName: G.Models.PipelineFileConfigHash.g.cs
+//HintName: G.Models.PipelineFileConfigHash.g.cs
 
 #nullable enable
 
 namespace G
 {
     /// <summary>
-    /// Hashes for the configuration of the pipeline.
+    /// 
     /// </summary>
     public sealed partial class PipelineFileConfigHash
     {

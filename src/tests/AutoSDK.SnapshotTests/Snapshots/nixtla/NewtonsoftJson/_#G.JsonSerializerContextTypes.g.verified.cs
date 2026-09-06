@@ -190,7 +190,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.MultiSeriesCrossValidationFewshotLoss2? Type39 { get; set; }
+        public global::G.MultiSeriesCrossValidationFewshotLoss? Type39 { get; set; }
         /// <summary>
         /// 
         /// </summary>
@@ -202,7 +202,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.MultiSeriesForecastFewshotLoss2? Type42 { get; set; }
+        public global::G.MultiSeriesForecastFewshotLoss? Type42 { get; set; }
         /// <summary>
         /// 
         /// </summary>
@@ -238,7 +238,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.SingleSeriesForecastFewshotLoss2? Type51 { get; set; }
+        public global::G.SingleSeriesForecastFewshotLoss? Type51 { get; set; }
         /// <summary>
         /// 
         /// </summary>

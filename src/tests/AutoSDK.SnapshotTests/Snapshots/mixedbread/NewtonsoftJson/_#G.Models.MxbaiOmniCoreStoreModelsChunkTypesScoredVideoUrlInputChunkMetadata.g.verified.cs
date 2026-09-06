@@ -1,11 +1,11 @@
-﻿//HintName: G.Models.MxbaiOmniCoreStoreModelsChunkTypesScoredVideoUrlInputChunkMetadata.g.cs
+//HintName: G.Models.MxbaiOmniCoreStoreModelsChunkTypesScoredVideoUrlInputChunkMetadata.g.cs
 
 #nullable enable
 
 namespace G
 {
     /// <summary>
-    /// file metadata
+    /// 
     /// </summary>
     public sealed partial class MxbaiOmniCoreStoreModelsChunkTypesScoredVideoUrlInputChunkMetadata
     {

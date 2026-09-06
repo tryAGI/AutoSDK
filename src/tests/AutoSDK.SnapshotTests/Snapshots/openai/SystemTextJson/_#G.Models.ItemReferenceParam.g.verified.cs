@@ -1,4 +1,4 @@
-﻿//HintName: G.Models.ItemReferenceParam.g.cs
+//HintName: G.Models.ItemReferenceParam.g.cs
 
 #nullable enable
 
@@ -13,7 +13,7 @@ namespace G
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        public global::G.ItemReferenceParamType2? Type { get; set; }
+        public global::G.ItemReferenceParamType? Type { get; set; }
 
         /// <summary>
         /// The ID of the item to reference.
@@ -40,7 +40,7 @@ namespace G
 #endif
         public ItemReferenceParam(
             string id,
-            global::G.ItemReferenceParamType2? type)
+            global::G.ItemReferenceParamType? type)
         {
             this.Type = type;
             this.Id = id ?? throw new global::System.ArgumentNullException(nameof(id));

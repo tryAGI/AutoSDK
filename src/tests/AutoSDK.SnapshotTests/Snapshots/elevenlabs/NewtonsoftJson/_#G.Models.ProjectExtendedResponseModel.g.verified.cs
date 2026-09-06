@@ -1,4 +1,4 @@
-﻿//HintName: G.Models.ProjectExtendedResponseModel.g.cs
+//HintName: G.Models.ProjectExtendedResponseModel.g.cs
 
 #pragma warning disable CS0618 // Type or member is obsolete
 
@@ -99,7 +99,7 @@ namespace G
         /// The target audience of the project.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("target_audience")]
-        public global::G.ProjectExtendedResponseModelTargetAudience2? TargetAudience { get; set; }
+        public global::G.ProjectExtendedResponseModelTargetAudience? TargetAudience { get; set; }
 
         /// <summary>
         /// Two-letter language code (ISO 639-1) of the language of the project.
@@ -155,7 +155,7 @@ namespace G
         /// Whether the project is fiction.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("fiction")]
-        public global::G.ProjectExtendedResponseModelFiction2? Fiction { get; set; }
+        public global::G.ProjectExtendedResponseModelFiction? Fiction { get; set; }
 
         /// <summary>
         /// Whether quality check is enabled for this project.
@@ -179,7 +179,7 @@ namespace G
         /// The source type of the project.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("source_type")]
-        public global::G.ProjectExtendedResponseModelSourceType2? SourceType { get; set; }
+        public global::G.ProjectExtendedResponseModelSourceType? SourceType { get; set; }
 
         /// <summary>
         /// Whether chapters are enabled for the project.<br/>
@@ -217,7 +217,7 @@ namespace G
         /// The aspect ratio of the project.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("aspect_ratio")]
-        public global::G.ProjectExtendedResponseModelAspectRatio2? AspectRatio { get; set; }
+        public global::G.ProjectExtendedResponseModelAspectRatio? AspectRatio { get; set; }
 
         /// <summary>
         /// Agent-related settings for the project
@@ -460,21 +460,21 @@ namespace G
             string? description,
             global::System.Collections.Generic.IList<string>? genres,
             string? coverImageUrl,
-            global::G.ProjectExtendedResponseModelTargetAudience2? targetAudience,
+            global::G.ProjectExtendedResponseModelTargetAudience? targetAudience,
             string? language,
             string? contentType,
             string? originalPublicationDate,
             bool? matureContent,
             string? isbnNumber,
-            global::G.ProjectExtendedResponseModelFiction2? fiction,
+            global::G.ProjectExtendedResponseModelFiction? fiction,
             global::G.ProjectCreationMetaResponseModel? creationMeta,
-            global::G.ProjectExtendedResponseModelSourceType2? sourceType,
+            global::G.ProjectExtendedResponseModelSourceType? sourceType,
             bool? chaptersEnabled,
             bool? captionsEnabled,
             global::G.CaptionStyleModel? captionStyle,
             global::System.Collections.Generic.Dictionary<string, global::G.CaptionStyleModel>? captionStyleTemplateOverrides,
             string? publicShareId,
-            global::G.ProjectExtendedResponseModelAspectRatio2? aspectRatio,
+            global::G.ProjectExtendedResponseModelAspectRatio? aspectRatio,
             global::G.StudioAgentSettingsModel? agentSettings,
             object? experimental,
             global::System.Collections.Generic.IList<global::G.VoiceResponseModel>? baseVoices,

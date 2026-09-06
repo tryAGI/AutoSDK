@@ -1,4 +1,4 @@
-﻿//HintName: G.Models.BodyOpenaiAudioTranslationsV1OpenaiAudioTranslationsPost.g.cs
+//HintName: G.Models.BodyOpenaiAudioTranslationsV1OpenaiAudioTranslationsPost.g.cs
 
 #nullable enable
 
@@ -37,7 +37,7 @@ namespace G
         /// Default Value: json
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("response_format")]
-        public global::G.BodyOpenaiAudioTranslationsV1OpenaiAudioTranslationsPostResponseFormat2? ResponseFormat { get; set; }
+        public global::G.BodyOpenaiAudioTranslationsV1OpenaiAudioTranslationsPostResponseFormat? ResponseFormat { get; set; }
 
         /// <summary>
         /// Default Value: 0
@@ -69,7 +69,7 @@ namespace G
             string filename,
             string model,
             string? prompt,
-            global::G.BodyOpenaiAudioTranslationsV1OpenaiAudioTranslationsPostResponseFormat2? responseFormat,
+            global::G.BodyOpenaiAudioTranslationsV1OpenaiAudioTranslationsPostResponseFormat? responseFormat,
             double? temperature)
         {
             this.File = file ?? throw new global::System.ArgumentNullException(nameof(file));

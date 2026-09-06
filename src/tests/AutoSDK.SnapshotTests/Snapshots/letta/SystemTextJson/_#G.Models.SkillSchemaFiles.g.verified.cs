@@ -1,11 +1,11 @@
-﻿//HintName: G.Models.SkillSchemaFiles.g.cs
+//HintName: G.Models.SkillSchemaFiles.g.cs
 
 #nullable enable
 
 namespace G
 {
     /// <summary>
-    /// Skill files as path -&gt; content mapping. Must include 'SKILL.md' key if provided.
+    /// 
     /// </summary>
     public sealed partial class SkillSchemaFiles
     {

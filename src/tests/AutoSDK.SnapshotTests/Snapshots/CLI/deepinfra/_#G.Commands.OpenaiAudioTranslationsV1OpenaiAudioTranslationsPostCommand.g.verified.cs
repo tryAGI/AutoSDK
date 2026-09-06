@@ -1,4 +1,4 @@
-﻿//HintName: G.Commands.OpenaiAudioTranslationsV1OpenaiAudioTranslationsPostCommand.g.cs
+//HintName: G.Commands.OpenaiAudioTranslationsV1OpenaiAudioTranslationsPostCommand.g.cs
 
 #nullable enable
 
@@ -18,7 +18,7 @@ namespace G
             string filename,
             string model,
             string? prompt,
-            global::G.BodyOpenaiAudioTranslationsV1OpenaiAudioTranslationsPostResponseFormat2? responseFormat,
+            global::G.BodyOpenaiAudioTranslationsV1OpenaiAudioTranslationsPostResponseFormat? responseFormat,
             double? temperature,
             global::System.Threading.CancellationToken cancellationToken);
         partial void Complete(
@@ -63,7 +63,7 @@ namespace G
             Description = @"",
         };
 
-        private global::System.CommandLine.Option<global::G.BodyOpenaiAudioTranslationsV1OpenaiAudioTranslationsPostResponseFormat2?> ResponseFormat { get; } = new(
+        private global::System.CommandLine.Option<global::G.BodyOpenaiAudioTranslationsV1OpenaiAudioTranslationsPostResponseFormat?> ResponseFormat { get; } = new(
             name: "responseFormat")
         {
             Description = @"",

@@ -1,11 +1,11 @@
-﻿//HintName: G.Models.StdioMCPServerEnv.g.cs
+//HintName: G.Models.StdioMCPServerEnv.g.cs
 
 #nullable enable
 
 namespace G
 {
     /// <summary>
-    /// Environment variables to set
+    /// 
     /// </summary>
     public sealed partial class StdioMCPServerEnv
     {

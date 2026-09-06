@@ -1,4 +1,4 @@
-﻿//HintName: G.Models.ProjectResponseModel.g.cs
+//HintName: G.Models.ProjectResponseModel.g.cs
 
 #pragma warning disable CS0618 // Type or member is obsolete
 
@@ -106,7 +106,7 @@ namespace G
         /// The target audience of the project.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("target_audience")]
-        public global::G.ProjectResponseModelTargetAudience2? TargetAudience { get; set; }
+        public global::G.ProjectResponseModelTargetAudience? TargetAudience { get; set; }
 
         /// <summary>
         /// Two-letter language code (ISO 639-1) of the language of the project.
@@ -165,7 +165,7 @@ namespace G
         /// Whether the project is fiction.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("fiction")]
-        public global::G.ProjectResponseModelFiction2? Fiction { get; set; }
+        public global::G.ProjectResponseModelFiction? Fiction { get; set; }
 
         /// <summary>
         /// Whether quality check is enabled for this project.
@@ -191,7 +191,7 @@ namespace G
         /// The source type of the project.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("source_type")]
-        public global::G.ProjectResponseModelSourceType2? SourceType { get; set; }
+        public global::G.ProjectResponseModelSourceType? SourceType { get; set; }
 
         /// <summary>
         /// Whether chapters are enabled for the project.<br/>
@@ -229,7 +229,7 @@ namespace G
         /// The aspect ratio of the project.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("aspect_ratio")]
-        public global::G.ProjectResponseModelAspectRatio2? AspectRatio { get; set; }
+        public global::G.ProjectResponseModelAspectRatio? AspectRatio { get; set; }
 
         /// <summary>
         /// Agent-related settings for the project
@@ -376,21 +376,21 @@ namespace G
             string? description,
             global::System.Collections.Generic.IList<string>? genres,
             string? coverImageUrl,
-            global::G.ProjectResponseModelTargetAudience2? targetAudience,
+            global::G.ProjectResponseModelTargetAudience? targetAudience,
             string? language,
             string? contentType,
             string? originalPublicationDate,
             bool? matureContent,
             string? isbnNumber,
-            global::G.ProjectResponseModelFiction2? fiction,
+            global::G.ProjectResponseModelFiction? fiction,
             global::G.ProjectCreationMetaResponseModel? creationMeta,
-            global::G.ProjectResponseModelSourceType2? sourceType,
+            global::G.ProjectResponseModelSourceType? sourceType,
             bool? chaptersEnabled,
             bool? captionsEnabled,
             global::G.CaptionStyleModel? captionStyle,
             global::System.Collections.Generic.Dictionary<string, global::G.CaptionStyleModel>? captionStyleTemplateOverrides,
             string? publicShareId,
-            global::G.ProjectResponseModelAspectRatio2? aspectRatio,
+            global::G.ProjectResponseModelAspectRatio? aspectRatio,
             global::G.StudioAgentSettingsModel? agentSettings)
         {
             this.ProjectId = projectId ?? throw new global::System.ArgumentNullException(nameof(projectId));

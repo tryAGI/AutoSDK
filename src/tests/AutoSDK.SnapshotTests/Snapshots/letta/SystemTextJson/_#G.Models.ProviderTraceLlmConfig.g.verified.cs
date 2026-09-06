@@ -1,11 +1,11 @@
-﻿//HintName: G.Models.ProviderTraceLlmConfig.g.cs
+//HintName: G.Models.ProviderTraceLlmConfig.g.cs
 
 #nullable enable
 
 namespace G
 {
     /// <summary>
-    /// LLM configuration used for this call (non-summarization calls only)
+    /// 
     /// </summary>
     public sealed partial class ProviderTraceLlmConfig
     {

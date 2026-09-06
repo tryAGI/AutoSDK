@@ -1,11 +1,11 @@
-﻿//HintName: G.Models.RetrievalParamsSearchFiltersInferenceSchema.g.cs
+//HintName: G.Models.RetrievalParamsSearchFiltersInferenceSchema.g.cs
 
 #nullable enable
 
 namespace G
 {
     /// <summary>
-    /// JSON Schema that will be used to infer search_filters. Omit or leave as null to skip inference.
+    /// 
     /// </summary>
     public sealed partial class RetrievalParamsSearchFiltersInferenceSchema
     {

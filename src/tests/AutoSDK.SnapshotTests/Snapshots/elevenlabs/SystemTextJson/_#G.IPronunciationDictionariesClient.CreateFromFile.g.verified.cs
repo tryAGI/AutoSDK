@@ -1,4 +1,4 @@
-﻿//HintName: G.IPronunciationDictionariesClient.CreateFromFile.g.cs
+//HintName: G.IPronunciationDictionariesClient.CreateFromFile.g.cs
 #nullable enable
 
 namespace G
@@ -70,7 +70,7 @@ namespace G
             byte[]? file = default,
             string? filename = default,
             string? description = default,
-            global::G.BodyAddAPronunciationDictionaryV1PronunciationDictionariesAddFromFilePostWorkspaceAccess2? workspaceAccess = default,
+            global::G.BodyAddAPronunciationDictionaryV1PronunciationDictionariesAddFromFilePostWorkspaceAccess? workspaceAccess = default,
             global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }

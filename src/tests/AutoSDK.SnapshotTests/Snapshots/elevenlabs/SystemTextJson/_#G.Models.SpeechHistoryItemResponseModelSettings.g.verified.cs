@@ -1,11 +1,11 @@
-﻿//HintName: G.Models.SpeechHistoryItemResponseModelSettings.g.cs
+//HintName: G.Models.SpeechHistoryItemResponseModelSettings.g.cs
 
 #nullable enable
 
 namespace G
 {
     /// <summary>
-    /// The settings of the history item.
+    /// 
     /// </summary>
     public sealed partial class SpeechHistoryItemResponseModelSettings
     {

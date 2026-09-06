@@ -570,7 +570,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.AddPronunciationDictionaryResponseModelPermissionOnResource2? Type134 { get; set; }
+        public global::G.AddPronunciationDictionaryResponseModelPermissionOnResource? Type134 { get; set; }
         /// <summary>
         /// 
         /// </summary>
@@ -1250,7 +1250,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.BodyAddAPronunciationDictionaryV1PronunciationDictionariesAddFromFilePostWorkspaceAccess2? Type304 { get; set; }
+        public global::G.BodyAddAPronunciationDictionaryV1PronunciationDictionariesAddFromFilePostWorkspaceAccess? Type304 { get; set; }
         /// <summary>
         /// 
         /// </summary>
@@ -1274,7 +1274,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.BodyAddAPronunciationDictionaryV1PronunciationDictionariesAddFromRulesPostWorkspaceAccess2? Type310 { get; set; }
+        public global::G.BodyAddAPronunciationDictionaryV1PronunciationDictionariesAddFromRulesPostWorkspaceAccess? Type310 { get; set; }
         /// <summary>
         /// 
         /// </summary>
@@ -1318,7 +1318,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.BodyAudioIsolationStreamV1AudioIsolationStreamPostFileFormat2? Type321 { get; set; }
+        public global::G.BodyAudioIsolationStreamV1AudioIsolationStreamPostFileFormat? Type321 { get; set; }
         /// <summary>
         /// 
         /// </summary>
@@ -1326,7 +1326,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.BodyAudioIsolationV1AudioIsolationPostFileFormat2? Type323 { get; set; }
+        public global::G.BodyAudioIsolationV1AudioIsolationPostFileFormat? Type323 { get; set; }
         /// <summary>
         /// 
         /// </summary>
@@ -1394,19 +1394,19 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.BodyCreateStudioProjectV1StudioProjectsPostTargetAudience2? Type340 { get; set; }
+        public global::G.BodyCreateStudioProjectV1StudioProjectsPostTargetAudience? Type340 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.BodyCreateStudioProjectV1StudioProjectsPostFiction2? Type341 { get; set; }
+        public global::G.BodyCreateStudioProjectV1StudioProjectsPostFiction? Type341 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.BodyCreateStudioProjectV1StudioProjectsPostApplyTextNormalization2? Type342 { get; set; }
+        public global::G.BodyCreateStudioProjectV1StudioProjectsPostApplyTextNormalization? Type342 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.BodyCreateStudioProjectV1StudioProjectsPostSourceType2? Type343 { get; set; }
+        public global::G.BodyCreateStudioProjectV1StudioProjectsPostSourceType? Type343 { get; set; }
         /// <summary>
         /// 
         /// </summary>
@@ -1494,7 +1494,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.BodyCreatePodcastV1StudioPodcastsPostApplyTextNormalization2? Type365 { get; set; }
+        public global::G.BodyCreatePodcastV1StudioPodcastsPostApplyTextNormalization? Type365 { get; set; }
         /// <summary>
         /// 
         /// </summary>
@@ -1514,7 +1514,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.BodyCreatesAudioNativeEnabledProjectV1AudioNativePostApplyTextNormalization2? Type370 { get; set; }
+        public global::G.BodyCreatesAudioNativeEnabledProjectV1AudioNativePostApplyTextNormalization? Type370 { get; set; }
         /// <summary>
         /// 
         /// </summary>
@@ -1630,7 +1630,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.RenderType2? Type399 { get; set; }
+        public global::G.RenderType? Type399 { get; set; }
         /// <summary>
         /// 
         /// </summary>
@@ -1718,7 +1718,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.BodySpeechToSpeechStreamingV1SpeechToSpeechVoiceIdStreamPostFileFormat2? Type421 { get; set; }
+        public global::G.BodySpeechToSpeechStreamingV1SpeechToSpeechVoiceIdStreamPostFileFormat? Type421 { get; set; }
         /// <summary>
         /// 
         /// </summary>
@@ -1726,7 +1726,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.BodySpeechToSpeechV1SpeechToSpeechVoiceIdPostFileFormat2? Type423 { get; set; }
+        public global::G.BodySpeechToSpeechV1SpeechToSpeechVoiceIdPostFileFormat? Type423 { get; set; }
         /// <summary>
         /// 
         /// </summary>
@@ -2034,15 +2034,15 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.CaptionStyleModelTextAlign2? Type500 { get; set; }
+        public global::G.CaptionStyleModelTextAlign? Type500 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.CaptionStyleModelTextStyle2? Type501 { get; set; }
+        public global::G.CaptionStyleModelTextStyle? Type501 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.CaptionStyleModelTextWeight2? Type502 { get; set; }
+        public global::G.CaptionStyleModelTextWeight? Type502 { get; set; }
         /// <summary>
         /// 
         /// </summary>
@@ -2094,7 +2094,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.ChapterContentBlockInputModelSubType2? Type515 { get; set; }
+        public global::G.ChapterContentBlockInputModelSubType? Type515 { get; set; }
         /// <summary>
         /// 
         /// </summary>
@@ -2630,7 +2630,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.ConversationHistoryTranscriptOtherToolsResultCommonModelType2? Type649 { get; set; }
+        public global::G.ConversationHistoryTranscriptOtherToolsResultCommonModelType? Type649 { get; set; }
         /// <summary>
         /// 
         /// </summary>
@@ -2810,7 +2810,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.ConversationSummaryResponseModelDirection2? Type694 { get; set; }
+        public global::G.ConversationSummaryResponseModelDirection? Type694 { get; set; }
         /// <summary>
         /// 
         /// </summary>
@@ -3178,7 +3178,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.DirectPublishingReadResponseModelDisplayMode2? Type786 { get; set; }
+        public global::G.DirectPublishingReadResponseModelDisplayMode? Type786 { get; set; }
         /// <summary>
         /// 
         /// </summary>
@@ -3190,7 +3190,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.DirectPublishingReadResponseModelTargetAudience2? Type789 { get; set; }
+        public global::G.DirectPublishingReadResponseModelTargetAudience? Type789 { get; set; }
         /// <summary>
         /// 
         /// </summary>
@@ -3202,7 +3202,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.DirectPublishingReadResponseModelPayoutType2? Type792 { get; set; }
+        public global::G.DirectPublishingReadResponseModelPayoutType? Type792 { get; set; }
         /// <summary>
         /// 
         /// </summary>
@@ -3414,7 +3414,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.ExtendedSubscriptionResponseModelCurrency2? Type845 { get; set; }
+        public global::G.ExtendedSubscriptionResponseModelCurrency? Type845 { get; set; }
         /// <summary>
         /// 
         /// </summary>
@@ -3862,7 +3862,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.GetPronunciationDictionaryMetadataResponseModelPermissionOnResource2? Type957 { get; set; }
+        public global::G.GetPronunciationDictionaryMetadataResponseModelPermissionOnResource? Type957 { get; set; }
         /// <summary>
         /// 
         /// </summary>
@@ -3870,7 +3870,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.GetPronunciationDictionaryWithRulesResponseModelPermissionOnResource2? Type959 { get; set; }
+        public global::G.GetPronunciationDictionaryWithRulesResponseModelPermissionOnResource? Type959 { get; set; }
         /// <summary>
         /// 
         /// </summary>
@@ -4066,7 +4066,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.InvoiceResponseModelPaymentIntentStatus2? Type1008 { get; set; }
+        public global::G.InvoiceResponseModelPaymentIntentStatus? Type1008 { get; set; }
         /// <summary>
         /// 
         /// </summary>
@@ -4754,7 +4754,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.ProjectExtendedResponseModelTargetAudience2? Type1180 { get; set; }
+        public global::G.ProjectExtendedResponseModelTargetAudience? Type1180 { get; set; }
         /// <summary>
         /// 
         /// </summary>
@@ -4766,11 +4766,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.ProjectExtendedResponseModelFiction2? Type1183 { get; set; }
+        public global::G.ProjectExtendedResponseModelFiction? Type1183 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.ProjectExtendedResponseModelSourceType2? Type1184 { get; set; }
+        public global::G.ProjectExtendedResponseModelSourceType? Type1184 { get; set; }
         /// <summary>
         /// 
         /// </summary>
@@ -4778,7 +4778,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.ProjectExtendedResponseModelAspectRatio2? Type1186 { get; set; }
+        public global::G.ProjectExtendedResponseModelAspectRatio? Type1186 { get; set; }
         /// <summary>
         /// 
         /// </summary>
@@ -4862,7 +4862,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.ProjectResponseModelTargetAudience2? Type1207 { get; set; }
+        public global::G.ProjectResponseModelTargetAudience? Type1207 { get; set; }
         /// <summary>
         /// 
         /// </summary>
@@ -4874,15 +4874,15 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.ProjectResponseModelFiction2? Type1210 { get; set; }
+        public global::G.ProjectResponseModelFiction? Type1210 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.ProjectResponseModelSourceType2? Type1211 { get; set; }
+        public global::G.ProjectResponseModelSourceType? Type1211 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.ProjectResponseModelAspectRatio2? Type1212 { get; set; }
+        public global::G.ProjectResponseModelAspectRatio? Type1212 { get; set; }
         /// <summary>
         /// 
         /// </summary>
@@ -5034,7 +5034,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.PronunciationDictionaryVersionResponseModelPermissionOnResource2? Type1250 { get; set; }
+        public global::G.PronunciationDictionaryVersionResponseModelPermissionOnResource? Type1250 { get; set; }
         /// <summary>
         /// 
         /// </summary>
@@ -5154,7 +5154,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.ResourceMetadataResponseModelAnonymousAccessLevelOverride2? Type1280 { get; set; }
+        public global::G.ResourceMetadataResponseModelAnonymousAccessLevelOverride? Type1280 { get; set; }
         /// <summary>
         /// 
         /// </summary>
@@ -5270,7 +5270,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.SampleConfigDBModelParentType2? Type1309 { get; set; }
+        public global::G.SampleConfigDBModelParentType? Type1309 { get; set; }
         /// <summary>
         /// 
         /// </summary>
@@ -5450,7 +5450,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.SpeechHistoryItemResponseModelVoiceCategory2? Type1354 { get; set; }
+        public global::G.SpeechHistoryItemResponseModelVoiceCategory? Type1354 { get; set; }
         /// <summary>
         /// 
         /// </summary>
@@ -5458,7 +5458,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.SpeechHistoryItemResponseModelSource2? Type1356 { get; set; }
+        public global::G.SpeechHistoryItemResponseModelSource? Type1356 { get; set; }
         /// <summary>
         /// 
         /// </summary>
@@ -5534,7 +5534,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.SubscriptionResponseModelCurrency2? Type1375 { get; set; }
+        public global::G.SubscriptionResponseModelCurrency? Type1375 { get; set; }
         /// <summary>
         /// 
         /// </summary>
@@ -5642,7 +5642,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.ToolAnnotations2? Type1402 { get; set; }
+        public global::G.ToolAnnotations? Type1402 { get; set; }
         /// <summary>
         /// 
         /// </summary>
@@ -5882,7 +5882,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.VoiceResponseModelSafetyControl2? Type1462 { get; set; }
+        public global::G.VoiceResponseModelSafetyControl? Type1462 { get; set; }
         /// <summary>
         /// 
         /// </summary>
@@ -6030,7 +6030,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.WidgetConfigInputSyntaxHighlightTheme2? Type1499 { get; set; }
+        public global::G.WidgetConfigInputSyntaxHighlightTheme? Type1499 { get; set; }
         /// <summary>
         /// 
         /// </summary>
@@ -6050,11 +6050,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.WidgetConfigOutputSyntaxHighlightTheme2? Type1504 { get; set; }
+        public global::G.WidgetConfigOutputSyntaxHighlightTheme? Type1504 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.WidgetConfigResponseModelSyntaxHighlightTheme2? Type1505 { get; set; }
+        public global::G.WidgetConfigResponseModelSyntaxHighlightTheme? Type1505 { get; set; }
         /// <summary>
         /// 
         /// </summary>
@@ -6406,11 +6406,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.GetSpeechHistorySortDirection2? Type1593 { get; set; }
+        public global::G.GetSpeechHistorySortDirection? Type1593 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.GetSpeechHistorySource2? Type1594 { get; set; }
+        public global::G.GetSpeechHistorySource? Type1594 { get; set; }
         /// <summary>
         /// 
         /// </summary>
@@ -6462,7 +6462,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.GetPronunciationDictionariesMetadataSort2? Type1607 { get; set; }
+        public global::G.GetPronunciationDictionariesMetadataSort? Type1607 { get; set; }
         /// <summary>
         /// 
         /// </summary>

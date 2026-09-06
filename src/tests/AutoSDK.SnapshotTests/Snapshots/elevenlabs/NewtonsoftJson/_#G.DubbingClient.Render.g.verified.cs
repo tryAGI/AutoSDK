@@ -1,4 +1,4 @@
-﻿//HintName: G.DubbingClient.Render.g.cs
+//HintName: G.DubbingClient.Render.g.cs
 
 #nullable enable
 
@@ -499,7 +499,7 @@ namespace G
         public async global::System.Threading.Tasks.Task<global::G.DubbingRenderResponseModel> RenderAsync(
             string dubbingId,
             string language,
-            global::G.RenderType2 renderType,
+            global::G.RenderType renderType,
             string? xiApiKey = default,
             bool? normalizeVolume = default,
             global::G.AutoSDKRequestOptions? requestOptions = default,

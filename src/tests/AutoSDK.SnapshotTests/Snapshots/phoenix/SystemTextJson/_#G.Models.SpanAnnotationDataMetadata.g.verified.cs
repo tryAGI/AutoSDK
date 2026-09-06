@@ -1,11 +1,11 @@
-﻿//HintName: G.Models.SpanAnnotationDataMetadata.g.cs
+//HintName: G.Models.SpanAnnotationDataMetadata.g.cs
 
 #nullable enable
 
 namespace G
 {
     /// <summary>
-    /// Metadata for the annotation
+    /// 
     /// </summary>
     public sealed partial class SpanAnnotationDataMetadata
     {

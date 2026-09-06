@@ -1,11 +1,11 @@
-﻿//HintName: G.Models.FileIdPresignedUrlFormFields.g.cs
+//HintName: G.Models.FileIdPresignedUrlFormFields.g.cs
 
 #nullable enable
 
 namespace G
 {
     /// <summary>
-    /// Form fields for a presigned POST request
+    /// 
     /// </summary>
     public sealed partial class FileIdPresignedUrlFormFields
     {

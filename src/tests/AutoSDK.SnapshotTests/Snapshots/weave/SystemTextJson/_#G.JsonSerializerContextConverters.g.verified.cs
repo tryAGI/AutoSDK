@@ -1,4 +1,4 @@
-﻿//HintName: G.JsonSerializerContextConverters.g.cs
+//HintName: G.JsonSerializerContextConverters.g.cs
 
 #nullable enable
 
@@ -21,8 +21,8 @@ namespace G
             typeof(global::G.JsonConverters.CallMetricSpecMetricNullableJsonConverter),
             typeof(global::G.JsonConverters.ConvertSpecToJsonConverter),
             typeof(global::G.JsonConverters.ConvertSpecToNullableJsonConverter),
-            typeof(global::G.JsonConverters.EvalResultsScorerStatsValueType2JsonConverter),
-            typeof(global::G.JsonConverters.EvalResultsScorerStatsValueType2NullableJsonConverter),
+            typeof(global::G.JsonConverters.EvalResultsScorerStatsValueTypeJsonConverter),
+            typeof(global::G.JsonConverters.EvalResultsScorerStatsValueTypeNullableJsonConverter),
             typeof(global::G.JsonConverters.FeedbackMetricSpecValueTypeJsonConverter),
             typeof(global::G.JsonConverters.FeedbackMetricSpecValueTypeNullableJsonConverter),
             typeof(global::G.JsonConverters.FeedbackPayloadPathValueTypeJsonConverter),

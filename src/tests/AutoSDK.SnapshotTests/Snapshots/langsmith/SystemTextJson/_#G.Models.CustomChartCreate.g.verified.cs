@@ -1,4 +1,4 @@
-﻿//HintName: G.Models.CustomChartCreate.g.cs
+//HintName: G.Models.CustomChartCreate.g.cs
 
 #nullable enable
 
@@ -59,7 +59,7 @@ namespace G
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("common_filters")]
-        public global::G.CustomChartSeriesFilters2? CommonFilters { get; set; }
+        public global::G.CustomChartSeriesFilters? CommonFilters { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -91,7 +91,7 @@ namespace G
             int? index,
             global::System.Guid? sectionId,
             object? metadata,
-            global::G.CustomChartSeriesFilters2? commonFilters)
+            global::G.CustomChartSeriesFilters? commonFilters)
         {
             this.Title = title ?? throw new global::System.ArgumentNullException(nameof(title));
             this.Description = description;

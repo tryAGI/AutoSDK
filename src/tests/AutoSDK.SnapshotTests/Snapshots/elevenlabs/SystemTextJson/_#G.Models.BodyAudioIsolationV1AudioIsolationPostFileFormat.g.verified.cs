@@ -1,21 +1,52 @@
-﻿//HintName: G.Models.BodyAudioIsolationV1AudioIsolationPostFileFormat.g.cs
+//HintName: G.Models.BodyAudioIsolationV1AudioIsolationPostFileFormat.g.cs
 
 #nullable enable
 
 namespace G
 {
     /// <summary>
-    /// The format of input audio. Options are 'pcm_s16le_16' or 'other' For `pcm_s16le_16`, the input audio must be 16-bit PCM at a 16kHz sample rate, single channel (mono), and little-endian byte order. Latency will be lower than with passing an encoded waveform.<br/>
-    /// Default Value: other
+    /// 
     /// </summary>
-    public sealed partial class BodyAudioIsolationV1AudioIsolationPostFileFormat
+    public enum BodyAudioIsolationV1AudioIsolationPostFileFormat
     {
-
         /// <summary>
-        /// Additional properties that are not explicitly defined in the schema
+        /// 
         /// </summary>
-        [global::System.Text.Json.Serialization.JsonExtensionData]
-        public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
+        Other,
+        /// <summary>
+        /// 
+        /// </summary>
+        PcmS16le16,
+    }
 
+    /// <summary>
+    /// Enum extensions to do fast conversions without the reflection.
+    /// </summary>
+    public static class BodyAudioIsolationV1AudioIsolationPostFileFormatExtensions
+    {
+        /// <summary>
+        /// Converts an enum to a string.
+        /// </summary>
+        public static string ToValueString(this BodyAudioIsolationV1AudioIsolationPostFileFormat value)
+        {
+            return value switch
+            {
+                BodyAudioIsolationV1AudioIsolationPostFileFormat.Other => "other",
+                BodyAudioIsolationV1AudioIsolationPostFileFormat.PcmS16le16 => "pcm_s16le_16",
+                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
+            };
+        }
+        /// <summary>
+        /// Converts an string to a enum.
+        /// </summary>
+        public static BodyAudioIsolationV1AudioIsolationPostFileFormat? ToEnum(string value)
+        {
+            return value switch
+            {
+                "other" => BodyAudioIsolationV1AudioIsolationPostFileFormat.Other,
+                "pcm_s16le_16" => BodyAudioIsolationV1AudioIsolationPostFileFormat.PcmS16le16,
+                _ => null,
+            };
+        }
     }
 }

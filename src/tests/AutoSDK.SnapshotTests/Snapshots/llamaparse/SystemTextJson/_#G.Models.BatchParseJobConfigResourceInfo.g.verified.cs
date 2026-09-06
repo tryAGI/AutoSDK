@@ -1,11 +1,11 @@
-﻿//HintName: G.Models.BatchParseJobConfigResourceInfo.g.cs
+//HintName: G.Models.BatchParseJobConfigResourceInfo.g.cs
 
 #nullable enable
 
 namespace G
 {
     /// <summary>
-    /// The resource info about the file
+    /// 
     /// </summary>
     public sealed partial class BatchParseJobConfigResourceInfo
     {

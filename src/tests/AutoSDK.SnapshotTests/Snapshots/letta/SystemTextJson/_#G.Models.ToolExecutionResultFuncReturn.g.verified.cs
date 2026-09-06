@@ -1,11 +1,11 @@
-﻿//HintName: G.Models.ToolExecutionResultFuncReturn.g.cs
+//HintName: G.Models.ToolExecutionResultFuncReturn.g.cs
 
 #nullable enable
 
 namespace G
 {
     /// <summary>
-    /// The function return object
+    /// 
     /// </summary>
     public sealed partial class ToolExecutionResultFuncReturn
     {

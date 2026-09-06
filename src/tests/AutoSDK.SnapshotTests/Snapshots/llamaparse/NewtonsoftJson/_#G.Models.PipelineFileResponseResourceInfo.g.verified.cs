@@ -1,11 +1,11 @@
-﻿//HintName: G.Models.PipelineFileResponseResourceInfo.g.cs
+//HintName: G.Models.PipelineFileResponseResourceInfo.g.cs
 
 #nullable enable
 
 namespace G
 {
     /// <summary>
-    /// Resource information for the file.
+    /// 
     /// </summary>
     public sealed partial class PipelineFileResponseResourceInfo
     {

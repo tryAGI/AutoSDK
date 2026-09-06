@@ -1,11 +1,11 @@
-﻿//HintName: G.Models.MxbaiOmniApiRoutesV1DeprecatedVectorStoresModelsScoredVideoUrlInputChunkMetadata.g.cs
+//HintName: G.Models.MxbaiOmniApiRoutesV1DeprecatedVectorStoresModelsScoredVideoUrlInputChunkMetadata.g.cs
 
 #nullable enable
 
 namespace G
 {
     /// <summary>
-    /// file metadata
+    /// 
     /// </summary>
     public sealed partial class MxbaiOmniApiRoutesV1DeprecatedVectorStoresModelsScoredVideoUrlInputChunkMetadata
     {

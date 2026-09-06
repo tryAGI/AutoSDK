@@ -1,11 +1,11 @@
-﻿//HintName: G.Models.LlamaParseWebhookConfigurationWebhookHeaders.g.cs
+//HintName: G.Models.LlamaParseWebhookConfigurationWebhookHeaders.g.cs
 
 #nullable enable
 
 namespace G
 {
     /// <summary>
-    /// Custom HTTP headers to include in webhook requests. Use for authentication tokens or custom routing. Example: {'Authorization': 'Bearer xyz'}
+    /// 
     /// </summary>
     public sealed partial class LlamaParseWebhookConfigurationWebhookHeaders
     {

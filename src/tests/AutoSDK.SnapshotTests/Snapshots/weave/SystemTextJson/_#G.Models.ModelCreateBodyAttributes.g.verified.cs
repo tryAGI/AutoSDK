@@ -1,11 +1,11 @@
-﻿//HintName: G.Models.ModelCreateBodyAttributes.g.cs
+//HintName: G.Models.ModelCreateBodyAttributes.g.cs
 
 #nullable enable
 
 namespace G
 {
     /// <summary>
-    /// Additional attributes to be stored with the model
+    /// 
     /// </summary>
     public sealed partial class ModelCreateBodyAttributes
     {

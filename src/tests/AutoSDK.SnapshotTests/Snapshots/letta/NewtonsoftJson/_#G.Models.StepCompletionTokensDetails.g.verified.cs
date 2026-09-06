@@ -1,11 +1,11 @@
-﻿//HintName: G.Models.StepCompletionTokensDetails.g.cs
+//HintName: G.Models.StepCompletionTokensDetails.g.cs
 
 #nullable enable
 
 namespace G
 {
     /// <summary>
-    /// Detailed completion token breakdown (e.g., reasoning_tokens).
+    /// 
     /// </summary>
     public sealed partial class StepCompletionTokensDetails
     {

@@ -1,4 +1,4 @@
-﻿//HintName: G.Models.GetPronunciationDictionaryWithRulesResponseModel.g.cs
+//HintName: G.Models.GetPronunciationDictionaryWithRulesResponseModel.g.cs
 
 #nullable enable
 
@@ -41,7 +41,7 @@ namespace G
         /// The permission on the resource of the pronunciation dictionary.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("permission_on_resource")]
-        public global::G.GetPronunciationDictionaryWithRulesResponseModelPermissionOnResource2? PermissionOnResource { get; set; }
+        public global::G.GetPronunciationDictionaryWithRulesResponseModelPermissionOnResource? PermissionOnResource { get; set; }
 
         /// <summary>
         /// The user ID of the creator of the pronunciation dictionary.
@@ -127,7 +127,7 @@ namespace G
             string createdBy,
             global::System.DateTimeOffset creationTimeUnix,
             global::System.Collections.Generic.IList<global::G.AnyOf<global::G.PronunciationDictionaryAliasRuleResponseModel, global::G.PronunciationDictionaryPhonemeRuleResponseModel>> rules,
-            global::G.GetPronunciationDictionaryWithRulesResponseModelPermissionOnResource2? permissionOnResource,
+            global::G.GetPronunciationDictionaryWithRulesResponseModelPermissionOnResource? permissionOnResource,
             int? archivedTimeUnix,
             string? description)
         {

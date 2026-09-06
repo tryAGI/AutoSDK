@@ -1,4 +1,4 @@
-﻿//HintName: G.Models.ConversationSummaryResponseModel.g.cs
+//HintName: G.Models.ConversationSummaryResponseModel.g.cs
 
 #nullable enable
 
@@ -105,7 +105,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("direction")]
-        public global::G.ConversationSummaryResponseModelDirection2? Direction { get; set; }
+        public global::G.ConversationSummaryResponseModelDirection? Direction { get; set; }
 
         /// <summary>
         /// 
@@ -155,7 +155,7 @@ namespace G
             string? mainLanguage,
             global::G.ConversationInitiationSource? conversationInitiationSource,
             global::System.Collections.Generic.IList<string>? toolNames,
-            global::G.ConversationSummaryResponseModelDirection2? direction,
+            global::G.ConversationSummaryResponseModelDirection? direction,
             double? rating)
         {
             this.AgentId = agentId ?? throw new global::System.ArgumentNullException(nameof(agentId));

@@ -1,4 +1,4 @@
-﻿//HintName: G.Models.ExtractConfig.g.cs
+//HintName: G.Models.ExtractConfig.g.cs
 
 #pragma warning disable CS0618 // Type or member is obsolete
 
@@ -15,7 +15,7 @@ namespace G
         /// The priority for the request. This field may be ignored or overwritten depending on the organization tier.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("priority")]
-        public global::G.ExtractConfigPriority2? Priority { get; set; }
+        public global::G.ExtractConfigPriority? Priority { get; set; }
 
         /// <summary>
         /// The extraction target specified.<br/>
@@ -189,7 +189,7 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public ExtractConfig(
-            global::G.ExtractConfigPriority2? priority,
+            global::G.ExtractConfigPriority? priority,
             global::G.ExtractTarget? extractionTarget,
             global::G.ExtractMode? extractionMode,
             global::G.PublicModelName? parseModel,

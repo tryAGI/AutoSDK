@@ -1,11 +1,11 @@
-﻿//HintName: G.Models.AggregateRequestFilter.g.cs
+//HintName: G.Models.AggregateRequestFilter.g.cs
 
 #nullable enable
 
 namespace G
 {
     /// <summary>
-    /// A filter object or expression that filters resources listed in the response.
+    /// 
     /// </summary>
     public sealed partial class AggregateRequestFilter
     {

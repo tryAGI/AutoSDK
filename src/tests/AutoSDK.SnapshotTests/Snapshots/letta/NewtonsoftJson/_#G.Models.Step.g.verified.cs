@@ -1,4 +1,4 @@
-﻿//HintName: G.Models.Step.g.cs
+//HintName: G.Models.Step.g.cs
 
 #pragma warning disable CS0618 // Type or member is obsolete
 
@@ -168,7 +168,7 @@ namespace G
         /// The feedback for this step. Must be either 'positive' or 'negative'.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("feedback")]
-        public global::G.StepFeedback2? Feedback { get; set; }
+        public global::G.StepFeedback? Feedback { get; set; }
 
         /// <summary>
         /// The project that the agent that executed this step belongs to (cloud only).
@@ -193,7 +193,7 @@ namespace G
         /// Default Value: pending
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("status")]
-        public global::G.StepStatus2? Status { get; set; }
+        public global::G.StepStatus? Status { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -318,11 +318,11 @@ namespace G
             string? tid,
             string? traceId,
             string? requestId,
-            global::G.StepFeedback2? feedback,
+            global::G.StepFeedback? feedback,
             string? projectId,
             string? errorType,
             object? errorData,
-            global::G.StepStatus2? status)
+            global::G.StepStatus? status)
         {
             this.Id = id ?? throw new global::System.ArgumentNullException(nameof(id));
             this.Origin = origin;

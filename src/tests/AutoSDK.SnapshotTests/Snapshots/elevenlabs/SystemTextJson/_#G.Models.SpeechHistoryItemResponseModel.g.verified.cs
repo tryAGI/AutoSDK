@@ -1,4 +1,4 @@
-﻿//HintName: G.Models.SpeechHistoryItemResponseModel.g.cs
+//HintName: G.Models.SpeechHistoryItemResponseModel.g.cs
 
 #nullable enable
 
@@ -44,7 +44,7 @@ namespace G
         /// The category of the voice. Either 'premade', 'cloned', 'generated' or 'professional'.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("voice_category")]
-        public global::G.SpeechHistoryItemResponseModelVoiceCategory2? VoiceCategory { get; set; }
+        public global::G.SpeechHistoryItemResponseModelVoiceCategory? VoiceCategory { get; set; }
 
         /// <summary>
         /// The text used to generate the audio item.
@@ -111,7 +111,7 @@ namespace G
         /// The source of the history item. Either TTS (text to speech), STS (speech to text), AN (audio native), Projects, Dubbing, PlayAPI, PD (pronunciation dictionary) or ConvAI (Agents Platform).
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("source")]
-        public global::G.SpeechHistoryItemResponseModelSource2? Source { get; set; }
+        public global::G.SpeechHistoryItemResponseModelSource? Source { get; set; }
 
         /// <summary>
         /// The alignments of the history item.
@@ -202,12 +202,12 @@ namespace G
             string? voiceId,
             string? modelId,
             string? voiceName,
-            global::G.SpeechHistoryItemResponseModelVoiceCategory2? voiceCategory,
+            global::G.SpeechHistoryItemResponseModelVoiceCategory? voiceCategory,
             string? text,
             object? settings,
             global::G.FeedbackResponseModel? feedback,
             string? shareLinkId,
-            global::G.SpeechHistoryItemResponseModelSource2? source,
+            global::G.SpeechHistoryItemResponseModelSource? source,
             global::G.HistoryAlignmentsResponseModel? alignments,
             global::System.Collections.Generic.IList<global::G.DialogueInputResponseModel>? dialogue)
         {

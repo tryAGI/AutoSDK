@@ -1,4 +1,4 @@
-﻿//HintName: G.IApi.OpenaiAudioTranscriptionsV1OpenaiAudioTranscriptionsPost.g.cs
+//HintName: G.IApi.OpenaiAudioTranscriptionsV1OpenaiAudioTranscriptionsPost.g.cs
 #nullable enable
 
 namespace G
@@ -65,7 +65,7 @@ namespace G
             string? xiApiKey = default,
             string? language = default,
             string? prompt = default,
-            global::G.BodyOpenaiAudioTranscriptionsV1OpenaiAudioTranscriptionsPostResponseFormat2? responseFormat = default,
+            global::G.BodyOpenaiAudioTranscriptionsV1OpenaiAudioTranscriptionsPostResponseFormat? responseFormat = default,
             double? temperature = default,
             global::System.Collections.Generic.IList<global::G.BodyOpenaiAudioTranscriptionsV1OpenaiAudioTranscriptionsPostTimestampGranularitiesVariant1Item>? timestampGranularities = default,
             global::G.AutoSDKRequestOptions? requestOptions = default,
@@ -101,7 +101,7 @@ namespace G
             string? xiApiKey = default,
             string? language = default,
             string? prompt = default,
-            global::G.BodyOpenaiAudioTranscriptionsV1OpenaiAudioTranscriptionsPostResponseFormat2? responseFormat = default,
+            global::G.BodyOpenaiAudioTranscriptionsV1OpenaiAudioTranscriptionsPostResponseFormat? responseFormat = default,
             double? temperature = default,
             global::System.Collections.Generic.IList<global::G.BodyOpenaiAudioTranscriptionsV1OpenaiAudioTranscriptionsPostTimestampGranularitiesVariant1Item>? timestampGranularities = default,
             global::G.AutoSDKRequestOptions? requestOptions = default,
@@ -136,7 +136,7 @@ namespace G
             string? xiApiKey = default,
             string? language = default,
             string? prompt = default,
-            global::G.BodyOpenaiAudioTranscriptionsV1OpenaiAudioTranscriptionsPostResponseFormat2? responseFormat = default,
+            global::G.BodyOpenaiAudioTranscriptionsV1OpenaiAudioTranscriptionsPostResponseFormat? responseFormat = default,
             double? temperature = default,
             global::System.Collections.Generic.IList<global::G.BodyOpenaiAudioTranscriptionsV1OpenaiAudioTranscriptionsPostTimestampGranularitiesVariant1Item>? timestampGranularities = default,
             global::G.AutoSDKRequestOptions? requestOptions = default,

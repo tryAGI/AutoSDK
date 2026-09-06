@@ -1,11 +1,11 @@
-﻿//HintName: G.Models.FineTuningResponseModelMessage.g.cs
+//HintName: G.Models.FineTuningResponseModelMessage.g.cs
 
 #nullable enable
 
 namespace G
 {
     /// <summary>
-    /// The message of the fine-tuning process.
+    /// 
     /// </summary>
     public sealed partial class FineTuningResponseModelMessage
     {

@@ -1,4 +1,4 @@
-﻿//HintName: G.Models.PlaygroundPromptCanvasPayload.g.cs
+//HintName: G.Models.PlaygroundPromptCanvasPayload.g.cs
 
 #nullable enable
 
@@ -31,13 +31,13 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("artifact_length")]
-        public global::G.PlaygroundPromptCanvasPayloadArtifactLength2? ArtifactLength { get; set; }
+        public global::G.PlaygroundPromptCanvasPayloadArtifactLength? ArtifactLength { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("reading_level")]
-        public global::G.PlaygroundPromptCanvasPayloadReadingLevel2? ReadingLevel { get; set; }
+        public global::G.PlaygroundPromptCanvasPayloadReadingLevel? ReadingLevel { get; set; }
 
         /// <summary>
         /// 
@@ -81,8 +81,8 @@ namespace G
             global::System.Collections.Generic.Dictionary<string, string> secrets,
             global::G.Highlight? highlighted,
             global::G.Artifact? artifact,
-            global::G.PlaygroundPromptCanvasPayloadArtifactLength2? artifactLength,
-            global::G.PlaygroundPromptCanvasPayloadReadingLevel2? readingLevel,
+            global::G.PlaygroundPromptCanvasPayloadArtifactLength? artifactLength,
+            global::G.PlaygroundPromptCanvasPayloadReadingLevel? readingLevel,
             string? customAction)
         {
             this.Messages = messages ?? throw new global::System.ArgumentNullException(nameof(messages));

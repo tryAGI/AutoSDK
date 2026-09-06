@@ -1,4 +1,4 @@
-﻿//HintName: G.Api.g.cs
+//HintName: G.Api.g.cs
 
 #nullable enable
 
@@ -45,17 +45,17 @@ namespace G
 
                     new global::G.JsonConverters.ApplyStatusDetailsStatusNullableJsonConverter(),
 
-                    new global::G.JsonConverters.AutoModeParsingConfTier2JsonConverter(),
+                    new global::G.JsonConverters.AutoModeParsingConfTierJsonConverter(),
 
-                    new global::G.JsonConverters.AutoModeParsingConfTier2NullableJsonConverter(),
+                    new global::G.JsonConverters.AutoModeParsingConfTierNullableJsonConverter(),
 
                     new global::G.JsonConverters.AutoModeParsingConfVersionJsonConverter(),
 
                     new global::G.JsonConverters.AutoModeParsingConfVersionNullableJsonConverter(),
 
-                    new global::G.JsonConverters.AutoModeParsingConfSpecializedChartParsing2JsonConverter(),
+                    new global::G.JsonConverters.AutoModeParsingConfSpecializedChartParsingJsonConverter(),
 
-                    new global::G.JsonConverters.AutoModeParsingConfSpecializedChartParsing2NullableJsonConverter(),
+                    new global::G.JsonConverters.AutoModeParsingConfSpecializedChartParsingNullableJsonConverter(),
 
                     new global::G.JsonConverters.BatchFileStatusJsonConverter(),
 
@@ -69,9 +69,9 @@ namespace G
 
                     new global::G.JsonConverters.BatchJobTypeNullableJsonConverter(),
 
-                    new global::G.JsonConverters.BatchParseJobConfigPriority2JsonConverter(),
+                    new global::G.JsonConverters.BatchParseJobConfigPriorityJsonConverter(),
 
-                    new global::G.JsonConverters.BatchParseJobConfigPriority2NullableJsonConverter(),
+                    new global::G.JsonConverters.BatchParseJobConfigPriorityNullableJsonConverter(),
 
                     new global::G.JsonConverters.BatchParseJobConfigImagesToSaveVariant1ItemJsonConverter(),
 
@@ -125,9 +125,9 @@ namespace G
 
                     new global::G.JsonConverters.ConfigurationUpdateRequestParametersVariant1DiscriminatorProductTypeNullableJsonConverter(),
 
-                    new global::G.JsonConverters.DataSourceReaderVersionMetadataReaderVersion2JsonConverter(),
+                    new global::G.JsonConverters.DataSourceReaderVersionMetadataReaderVersionJsonConverter(),
 
-                    new global::G.JsonConverters.DataSourceReaderVersionMetadataReaderVersion2NullableJsonConverter(),
+                    new global::G.JsonConverters.DataSourceReaderVersionMetadataReaderVersionNullableJsonConverter(),
 
                     new global::G.JsonConverters.DiffingStatusDetailsStatusJsonConverter(),
 
@@ -149,9 +149,9 @@ namespace G
 
                     new global::G.JsonConverters.EmbeddingModelConfigUpdateEmbeddingConfigVariant1DiscriminatorTypeNullableJsonConverter(),
 
-                    new global::G.JsonConverters.ExtractConfigPriority2JsonConverter(),
+                    new global::G.JsonConverters.ExtractConfigPriorityJsonConverter(),
 
-                    new global::G.JsonConverters.ExtractConfigPriority2NullableJsonConverter(),
+                    new global::G.JsonConverters.ExtractConfigPriorityNullableJsonConverter(),
 
                     new global::G.JsonConverters.ExtractConfigurationTierJsonConverter(),
 
@@ -165,9 +165,9 @@ namespace G
 
                     new global::G.JsonConverters.ExtractJobStatusNullableJsonConverter(),
 
-                    new global::G.JsonConverters.ExtractJobCreatePriority2JsonConverter(),
+                    new global::G.JsonConverters.ExtractJobCreatePriorityJsonConverter(),
 
-                    new global::G.JsonConverters.ExtractJobCreatePriority2NullableJsonConverter(),
+                    new global::G.JsonConverters.ExtractJobCreatePriorityNullableJsonConverter(),
 
                     new global::G.JsonConverters.ExtractModeJsonConverter(),
 
@@ -221,9 +221,9 @@ namespace G
 
                     new global::G.JsonConverters.HeaderItemItemDiscriminatorTypeNullableJsonConverter(),
 
-                    new global::G.JsonConverters.ImageMetadataCategory2JsonConverter(),
+                    new global::G.JsonConverters.ImageMetadataCategoryJsonConverter(),
 
-                    new global::G.JsonConverters.ImageMetadataCategory2NullableJsonConverter(),
+                    new global::G.JsonConverters.ImageMetadataCategoryNullableJsonConverter(),
 
                     new global::G.JsonConverters.JobNameMappingJsonConverter(),
 
@@ -237,17 +237,17 @@ namespace G
 
                     new global::G.JsonConverters.LlamaParseOutputOptionsImagesToSaveItemNullableJsonConverter(),
 
-                    new global::G.JsonConverters.LlamaParseParametersPriority2JsonConverter(),
+                    new global::G.JsonConverters.LlamaParseParametersPriorityJsonConverter(),
 
-                    new global::G.JsonConverters.LlamaParseParametersPriority2NullableJsonConverter(),
+                    new global::G.JsonConverters.LlamaParseParametersPriorityNullableJsonConverter(),
 
                     new global::G.JsonConverters.LlamaParseParametersImagesToSaveVariant1ItemJsonConverter(),
 
                     new global::G.JsonConverters.LlamaParseParametersImagesToSaveVariant1ItemNullableJsonConverter(),
 
-                    new global::G.JsonConverters.LlamaParseProcessingOptionsSpecializedChartParsing2JsonConverter(),
+                    new global::G.JsonConverters.LlamaParseProcessingOptionsSpecializedChartParsingJsonConverter(),
 
-                    new global::G.JsonConverters.LlamaParseProcessingOptionsSpecializedChartParsing2NullableJsonConverter(),
+                    new global::G.JsonConverters.LlamaParseProcessingOptionsSpecializedChartParsingNullableJsonConverter(),
 
                     new global::G.JsonConverters.LlamaParseSupportedFileExtensionsJsonConverter(),
 
@@ -317,25 +317,25 @@ namespace G
 
                     new global::G.JsonConverters.PipelineEmbeddingConfigDiscriminatorTypeNullableJsonConverter(),
 
-                    new global::G.JsonConverters.PipelineStatus2JsonConverter(),
+                    new global::G.JsonConverters.PipelineStatusJsonConverter(),
 
-                    new global::G.JsonConverters.PipelineStatus2NullableJsonConverter(),
+                    new global::G.JsonConverters.PipelineStatusNullableJsonConverter(),
 
                     new global::G.JsonConverters.PipelineCreateEmbeddingConfigVariant1DiscriminatorTypeJsonConverter(),
 
                     new global::G.JsonConverters.PipelineCreateEmbeddingConfigVariant1DiscriminatorTypeNullableJsonConverter(),
 
-                    new global::G.JsonConverters.PipelineDataSourceStatus2JsonConverter(),
+                    new global::G.JsonConverters.PipelineDataSourceStatusJsonConverter(),
 
-                    new global::G.JsonConverters.PipelineDataSourceStatus2NullableJsonConverter(),
+                    new global::G.JsonConverters.PipelineDataSourceStatusNullableJsonConverter(),
 
-                    new global::G.JsonConverters.PipelineFileStatus2JsonConverter(),
+                    new global::G.JsonConverters.PipelineFileStatusJsonConverter(),
 
-                    new global::G.JsonConverters.PipelineFileStatus2NullableJsonConverter(),
+                    new global::G.JsonConverters.PipelineFileStatusNullableJsonConverter(),
 
-                    new global::G.JsonConverters.PipelineFileResponseStatus2JsonConverter(),
+                    new global::G.JsonConverters.PipelineFileResponseStatusJsonConverter(),
 
-                    new global::G.JsonConverters.PipelineFileResponseStatus2NullableJsonConverter(),
+                    new global::G.JsonConverters.PipelineFileResponseStatusNullableJsonConverter(),
 
                     new global::G.JsonConverters.PipelineTypeJsonConverter(),
 
@@ -417,25 +417,25 @@ namespace G
 
                     new global::G.JsonConverters.ListConfigurationsApiV1BetaConfigurationsGetProductTypeVariant1ItemNullableJsonConverter(),
 
-                    new global::G.JsonConverters.ListSplitJobsApiV1BetaSplitJobsGetStatus2JsonConverter(),
+                    new global::G.JsonConverters.ListSplitJobsApiV1BetaSplitJobsGetStatusJsonConverter(),
 
-                    new global::G.JsonConverters.ListSplitJobsApiV1BetaSplitJobsGetStatus2NullableJsonConverter(),
+                    new global::G.JsonConverters.ListSplitJobsApiV1BetaSplitJobsGetStatusNullableJsonConverter(),
 
                     new global::G.JsonConverters.ListPipelineFilesApiV1BetaPipelinesPipelineIdFilesGetStatusesVariant1ItemJsonConverter(),
 
                     new global::G.JsonConverters.ListPipelineFilesApiV1BetaPipelinesPipelineIdFilesGetStatusesVariant1ItemNullableJsonConverter(),
 
-                    new global::G.JsonConverters.ListParseJobsApiV2ParseGetStatus2JsonConverter(),
+                    new global::G.JsonConverters.ListParseJobsApiV2ParseGetStatusJsonConverter(),
 
-                    new global::G.JsonConverters.ListParseJobsApiV2ParseGetStatus2NullableJsonConverter(),
+                    new global::G.JsonConverters.ListParseJobsApiV2ParseGetStatusNullableJsonConverter(),
 
-                    new global::G.JsonConverters.ListClassifyJobsApiV2ClassifyGetStatus2JsonConverter(),
+                    new global::G.JsonConverters.ListClassifyJobsApiV2ClassifyGetStatusJsonConverter(),
 
-                    new global::G.JsonConverters.ListClassifyJobsApiV2ClassifyGetStatus2NullableJsonConverter(),
+                    new global::G.JsonConverters.ListClassifyJobsApiV2ClassifyGetStatusNullableJsonConverter(),
 
-                    new global::G.JsonConverters.ListExtractJobsApiV2ExtractGetStatus2JsonConverter(),
+                    new global::G.JsonConverters.ListExtractJobsApiV2ExtractGetStatusJsonConverter(),
 
-                    new global::G.JsonConverters.ListExtractJobsApiV2ExtractGetStatus2NullableJsonConverter(),
+                    new global::G.JsonConverters.ListExtractJobsApiV2ExtractGetStatusNullableJsonConverter(),
 
                     new global::G.JsonConverters.UnixTimestampJsonConverter(),
                 }

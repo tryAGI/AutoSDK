@@ -1,11 +1,11 @@
-﻿//HintName: G.Models.StoreMetadata.g.cs
+//HintName: G.Models.StoreMetadata.g.cs
 
 #nullable enable
 
 namespace G
 {
     /// <summary>
-    /// Additional metadata associated with the store
+    /// 
     /// </summary>
     public sealed partial class StoreMetadata
     {

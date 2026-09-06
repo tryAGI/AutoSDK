@@ -1,4 +1,4 @@
-﻿//HintName: G.Models.BodySpeechToSpeechStreamingV1SpeechToSpeechVoiceIdStreamPost.g.cs
+//HintName: G.Models.BodySpeechToSpeechStreamingV1SpeechToSpeechVoiceIdStreamPost.g.cs
 
 #nullable enable
 
@@ -54,7 +54,7 @@ namespace G
         /// Default Value: other
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("file_format")]
-        public global::G.BodySpeechToSpeechStreamingV1SpeechToSpeechVoiceIdStreamPostFileFormat2? FileFormat { get; set; }
+        public global::G.BodySpeechToSpeechStreamingV1SpeechToSpeechVoiceIdStreamPostFileFormat? FileFormat { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -99,7 +99,7 @@ namespace G
             string? voiceSettings,
             int? seed,
             bool? removeBackgroundNoise,
-            global::G.BodySpeechToSpeechStreamingV1SpeechToSpeechVoiceIdStreamPostFileFormat2? fileFormat)
+            global::G.BodySpeechToSpeechStreamingV1SpeechToSpeechVoiceIdStreamPostFileFormat? fileFormat)
         {
             this.Audio = audio ?? throw new global::System.ArgumentNullException(nameof(audio));
             this.Audioname = audioname ?? throw new global::System.ArgumentNullException(nameof(audioname));

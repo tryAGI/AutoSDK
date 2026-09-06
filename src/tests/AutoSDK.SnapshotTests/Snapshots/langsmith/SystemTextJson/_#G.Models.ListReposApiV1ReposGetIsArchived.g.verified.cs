@@ -1,4 +1,4 @@
-﻿//HintName: G.Models.ListReposApiV1ReposGetIsArchived.g.cs
+//HintName: G.Models.ListReposApiV1ReposGetIsArchived.g.cs
 
 #nullable enable
 
@@ -7,14 +7,52 @@ namespace G
     /// <summary>
     /// 
     /// </summary>
-    public sealed partial class ListReposApiV1ReposGetIsArchived
+    public enum ListReposApiV1ReposGetIsArchived
     {
-
         /// <summary>
-        /// Additional properties that are not explicitly defined in the schema
+        /// 
         /// </summary>
-        [global::System.Text.Json.Serialization.JsonExtensionData]
-        public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
+        Allow,
+        /// <summary>
+        /// 
+        /// </summary>
+        False,
+        /// <summary>
+        /// 
+        /// </summary>
+        True,
+    }
 
+    /// <summary>
+    /// Enum extensions to do fast conversions without the reflection.
+    /// </summary>
+    public static class ListReposApiV1ReposGetIsArchivedExtensions
+    {
+        /// <summary>
+        /// Converts an enum to a string.
+        /// </summary>
+        public static string ToValueString(this ListReposApiV1ReposGetIsArchived value)
+        {
+            return value switch
+            {
+                ListReposApiV1ReposGetIsArchived.Allow => "allow",
+                ListReposApiV1ReposGetIsArchived.False => "false",
+                ListReposApiV1ReposGetIsArchived.True => "true",
+                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
+            };
+        }
+        /// <summary>
+        /// Converts an string to a enum.
+        /// </summary>
+        public static ListReposApiV1ReposGetIsArchived? ToEnum(string value)
+        {
+            return value switch
+            {
+                "allow" => ListReposApiV1ReposGetIsArchived.Allow,
+                "false" => ListReposApiV1ReposGetIsArchived.False,
+                "true" => ListReposApiV1ReposGetIsArchived.True,
+                _ => null,
+            };
+        }
     }
 }

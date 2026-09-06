@@ -1,4 +1,4 @@
-﻿//HintName: G.IV2Client.ListExtractJobsApiV2ExtractGet.g.cs
+//HintName: G.IV2Client.ListExtractJobsApiV2ExtractGet.g.cs
 #nullable enable
 
 namespace G
@@ -53,7 +53,7 @@ namespace G
             string? configurationId = default,
             string? documentInputType = default,
             string? documentInputValue = default,
-            global::G.ListExtractJobsApiV2ExtractGetStatus2? status = default,
+            global::G.ListExtractJobsApiV2ExtractGetStatus? status = default,
             int? pageSize = default,
             string? pageToken = default,
             global::System.DateTime? createdAtOnOrAfter = default,
@@ -113,7 +113,7 @@ namespace G
             string? configurationId = default,
             string? documentInputType = default,
             string? documentInputValue = default,
-            global::G.ListExtractJobsApiV2ExtractGetStatus2? status = default,
+            global::G.ListExtractJobsApiV2ExtractGetStatus? status = default,
             int? pageSize = default,
             string? pageToken = default,
             global::System.DateTime? createdAtOnOrAfter = default,

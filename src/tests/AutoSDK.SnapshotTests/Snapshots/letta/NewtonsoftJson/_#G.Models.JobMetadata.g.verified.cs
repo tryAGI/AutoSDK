@@ -1,11 +1,11 @@
-﻿//HintName: G.Models.JobMetadata.g.cs
+//HintName: G.Models.JobMetadata.g.cs
 
 #nullable enable
 
 namespace G
 {
     /// <summary>
-    /// The metadata of the job.
+    /// 
     /// </summary>
     public sealed partial class JobMetadata
     {

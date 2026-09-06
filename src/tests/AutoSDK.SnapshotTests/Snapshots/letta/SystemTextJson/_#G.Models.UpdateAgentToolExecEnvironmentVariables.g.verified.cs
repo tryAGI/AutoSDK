@@ -1,11 +1,11 @@
-﻿//HintName: G.Models.UpdateAgentToolExecEnvironmentVariables.g.cs
+//HintName: G.Models.UpdateAgentToolExecEnvironmentVariables.g.cs
 
 #nullable enable
 
 namespace G
 {
     /// <summary>
-    /// Deprecated: use `secrets` field instead
+    /// 
     /// </summary>
     public sealed partial class UpdateAgentToolExecEnvironmentVariables
     {

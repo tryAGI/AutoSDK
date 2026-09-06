@@ -1,4 +1,4 @@
-﻿//HintName: G.Models.EvalResultsScorerStats.g.cs
+//HintName: G.Models.EvalResultsScorerStats.g.cs
 
 #nullable enable
 
@@ -25,7 +25,7 @@ namespace G
         /// Type of the leaf value: binary (bool) or continuous (number).
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("value_type")]
-        public global::G.EvalResultsScorerStatsValueType2? ValueType { get; set; }
+        public global::G.EvalResultsScorerStatsValueType? ValueType { get; set; }
 
         /// <summary>
         /// Default Value: 0
@@ -103,7 +103,7 @@ namespace G
         public EvalResultsScorerStats(
             string scorerKey,
             string? path,
-            global::G.EvalResultsScorerStatsValueType2? valueType,
+            global::G.EvalResultsScorerStatsValueType? valueType,
             int? trialCount,
             int? numericCount,
             double? numericMean,

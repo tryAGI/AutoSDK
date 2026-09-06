@@ -1,11 +1,11 @@
-﻿//HintName: G.Models.StepErrorData.g.cs
+//HintName: G.Models.StepErrorData.g.cs
 
 #nullable enable
 
 namespace G
 {
     /// <summary>
-    /// Error details including message, traceback, and additional context
+    /// 
     /// </summary>
     public sealed partial class StepErrorData
     {

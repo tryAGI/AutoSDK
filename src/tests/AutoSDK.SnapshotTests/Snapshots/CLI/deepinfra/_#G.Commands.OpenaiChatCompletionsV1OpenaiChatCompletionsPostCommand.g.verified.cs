@@ -1,4 +1,4 @@
-﻿//HintName: G.Commands.OpenaiChatCompletionsV1OpenaiChatCompletionsPostCommand.g.cs
+//HintName: G.Commands.OpenaiChatCompletionsV1OpenaiChatCompletionsPostCommand.g.cs
 
 #nullable enable
 
@@ -35,7 +35,7 @@ namespace G
             int? seed,
             bool? logprobs,
             global::G.StreamOptions? streamOptions,
-            global::G.OpenAIChatCompletionsInReasoningEffort2? reasoningEffort,
+            global::G.OpenAIChatCompletionsInReasoningEffort? reasoningEffort,
             global::System.Threading.CancellationToken cancellationToken);
         partial void Complete(
             global::System.CommandLine.ParseResult parseResult,
@@ -183,7 +183,7 @@ The total length of input tokens and generated tokens is limited by the model's 
             Description = @"streaming options",
         };
 
-        private global::System.CommandLine.Option<global::G.OpenAIChatCompletionsInReasoningEffort2?> ReasoningEffort { get; } = new(
+        private global::System.CommandLine.Option<global::G.OpenAIChatCompletionsInReasoningEffort?> ReasoningEffort { get; } = new(
             name: "reasoningEffort")
         {
             Description = @"Constrains effort on reasoning for reasoning models. Currently supported values are none, low, medium, and high. Reducing reasoning effort can result in faster responses and fewer tokens used on reasoning in a response. Setting to none disables reasoning entirely if the model supports.",

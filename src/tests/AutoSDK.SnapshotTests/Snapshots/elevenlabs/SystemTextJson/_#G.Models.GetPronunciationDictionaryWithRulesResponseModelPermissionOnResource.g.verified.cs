@@ -1,20 +1,64 @@
-﻿//HintName: G.Models.GetPronunciationDictionaryWithRulesResponseModelPermissionOnResource.g.cs
+//HintName: G.Models.GetPronunciationDictionaryWithRulesResponseModelPermissionOnResource.g.cs
 
 #nullable enable
 
 namespace G
 {
     /// <summary>
-    /// The permission on the resource of the pronunciation dictionary.
+    /// 
     /// </summary>
-    public sealed partial class GetPronunciationDictionaryWithRulesResponseModelPermissionOnResource
+    public enum GetPronunciationDictionaryWithRulesResponseModelPermissionOnResource
     {
-
         /// <summary>
-        /// Additional properties that are not explicitly defined in the schema
+        /// 
         /// </summary>
-        [global::System.Text.Json.Serialization.JsonExtensionData]
-        public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
+        Admin,
+        /// <summary>
+        /// 
+        /// </summary>
+        Commenter,
+        /// <summary>
+        /// 
+        /// </summary>
+        Editor,
+        /// <summary>
+        /// 
+        /// </summary>
+        Viewer,
+    }
 
+    /// <summary>
+    /// Enum extensions to do fast conversions without the reflection.
+    /// </summary>
+    public static class GetPronunciationDictionaryWithRulesResponseModelPermissionOnResourceExtensions
+    {
+        /// <summary>
+        /// Converts an enum to a string.
+        /// </summary>
+        public static string ToValueString(this GetPronunciationDictionaryWithRulesResponseModelPermissionOnResource value)
+        {
+            return value switch
+            {
+                GetPronunciationDictionaryWithRulesResponseModelPermissionOnResource.Admin => "admin",
+                GetPronunciationDictionaryWithRulesResponseModelPermissionOnResource.Commenter => "commenter",
+                GetPronunciationDictionaryWithRulesResponseModelPermissionOnResource.Editor => "editor",
+                GetPronunciationDictionaryWithRulesResponseModelPermissionOnResource.Viewer => "viewer",
+                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
+            };
+        }
+        /// <summary>
+        /// Converts an string to a enum.
+        /// </summary>
+        public static GetPronunciationDictionaryWithRulesResponseModelPermissionOnResource? ToEnum(string value)
+        {
+            return value switch
+            {
+                "admin" => GetPronunciationDictionaryWithRulesResponseModelPermissionOnResource.Admin,
+                "commenter" => GetPronunciationDictionaryWithRulesResponseModelPermissionOnResource.Commenter,
+                "editor" => GetPronunciationDictionaryWithRulesResponseModelPermissionOnResource.Editor,
+                "viewer" => GetPronunciationDictionaryWithRulesResponseModelPermissionOnResource.Viewer,
+                _ => null,
+            };
+        }
     }
 }

@@ -1,20 +1,52 @@
-﻿//HintName: G.Models.WidgetConfigResponseModelSyntaxHighlightTheme.g.cs
+//HintName: G.Models.WidgetConfigResponseModelSyntaxHighlightTheme.g.cs
 
 #nullable enable
 
 namespace G
 {
     /// <summary>
-    /// Theme for code block syntax highlighting. Defaults to auto-detection by the widget when not set.
+    /// 
     /// </summary>
-    public sealed partial class WidgetConfigResponseModelSyntaxHighlightTheme
+    public enum WidgetConfigResponseModelSyntaxHighlightTheme
     {
-
         /// <summary>
-        /// Additional properties that are not explicitly defined in the schema
+        /// 
         /// </summary>
-        [global::System.Text.Json.Serialization.JsonExtensionData]
-        public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
+        Dark,
+        /// <summary>
+        /// 
+        /// </summary>
+        Light,
+    }
 
+    /// <summary>
+    /// Enum extensions to do fast conversions without the reflection.
+    /// </summary>
+    public static class WidgetConfigResponseModelSyntaxHighlightThemeExtensions
+    {
+        /// <summary>
+        /// Converts an enum to a string.
+        /// </summary>
+        public static string ToValueString(this WidgetConfigResponseModelSyntaxHighlightTheme value)
+        {
+            return value switch
+            {
+                WidgetConfigResponseModelSyntaxHighlightTheme.Dark => "dark",
+                WidgetConfigResponseModelSyntaxHighlightTheme.Light => "light",
+                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
+            };
+        }
+        /// <summary>
+        /// Converts an string to a enum.
+        /// </summary>
+        public static WidgetConfigResponseModelSyntaxHighlightTheme? ToEnum(string value)
+        {
+            return value switch
+            {
+                "dark" => WidgetConfigResponseModelSyntaxHighlightTheme.Dark,
+                "light" => WidgetConfigResponseModelSyntaxHighlightTheme.Light,
+                _ => null,
+            };
+        }
     }
 }

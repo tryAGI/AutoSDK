@@ -1,20 +1,64 @@
-﻿//HintName: G.Models.ProjectResponseModelTargetAudience.g.cs
+//HintName: G.Models.ProjectResponseModelTargetAudience.g.cs
 
 #nullable enable
 
 namespace G
 {
     /// <summary>
-    /// The target audience of the project.
+    /// 
     /// </summary>
-    public sealed partial class ProjectResponseModelTargetAudience
+    public enum ProjectResponseModelTargetAudience
     {
-
         /// <summary>
-        /// Additional properties that are not explicitly defined in the schema
+        /// 
         /// </summary>
-        [global::System.Text.Json.Serialization.JsonExtensionData]
-        public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
+        Adult,
+        /// <summary>
+        /// 
+        /// </summary>
+        AllAges,
+        /// <summary>
+        /// 
+        /// </summary>
+        Children,
+        /// <summary>
+        /// 
+        /// </summary>
+        YoungAdult,
+    }
 
+    /// <summary>
+    /// Enum extensions to do fast conversions without the reflection.
+    /// </summary>
+    public static class ProjectResponseModelTargetAudienceExtensions
+    {
+        /// <summary>
+        /// Converts an enum to a string.
+        /// </summary>
+        public static string ToValueString(this ProjectResponseModelTargetAudience value)
+        {
+            return value switch
+            {
+                ProjectResponseModelTargetAudience.Adult => "adult",
+                ProjectResponseModelTargetAudience.AllAges => "all ages",
+                ProjectResponseModelTargetAudience.Children => "children",
+                ProjectResponseModelTargetAudience.YoungAdult => "young adult",
+                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
+            };
+        }
+        /// <summary>
+        /// Converts an string to a enum.
+        /// </summary>
+        public static ProjectResponseModelTargetAudience? ToEnum(string value)
+        {
+            return value switch
+            {
+                "adult" => ProjectResponseModelTargetAudience.Adult,
+                "all ages" => ProjectResponseModelTargetAudience.AllAges,
+                "children" => ProjectResponseModelTargetAudience.Children,
+                "young adult" => ProjectResponseModelTargetAudience.YoungAdult,
+                _ => null,
+            };
+        }
     }
 }

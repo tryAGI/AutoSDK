@@ -1,4 +1,4 @@
-﻿//HintName: G.Api.g.cs
+//HintName: G.Api.g.cs
 
 #nullable enable
 
@@ -49,9 +49,9 @@ namespace G
 
                     new global::G.JsonConverters.EdgeConditionalOperatorNullableJsonConverter(),
 
-                    new global::G.JsonConverters.GetPromptTemplateProvider2JsonConverter(),
+                    new global::G.JsonConverters.GetPromptTemplateProviderJsonConverter(),
 
-                    new global::G.JsonConverters.GetPromptTemplateProvider2NullableJsonConverter(),
+                    new global::G.JsonConverters.GetPromptTemplateProviderNullableJsonConverter(),
 
                     new global::G.JsonConverters.CompletionPromptContentItemDiscriminatorTypeJsonConverter(),
 
@@ -261,9 +261,9 @@ namespace G
 
                     new global::G.JsonConverters.LogRequestStatusNullableJsonConverter(),
 
-                    new global::G.JsonConverters.LogRequestErrorType2JsonConverter(),
+                    new global::G.JsonConverters.LogRequestErrorTypeJsonConverter(),
 
-                    new global::G.JsonConverters.LogRequestErrorType2NullableJsonConverter(),
+                    new global::G.JsonConverters.LogRequestErrorTypeNullableJsonConverter(),
 
                     new global::G.JsonConverters.LogRequestResponseStatusJsonConverter(),
 

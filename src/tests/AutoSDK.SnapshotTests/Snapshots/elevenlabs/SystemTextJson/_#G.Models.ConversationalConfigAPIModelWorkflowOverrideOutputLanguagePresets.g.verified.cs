@@ -1,11 +1,11 @@
-﻿//HintName: G.Models.ConversationalConfigAPIModelWorkflowOverrideOutputLanguagePresets.g.cs
+//HintName: G.Models.ConversationalConfigAPIModelWorkflowOverrideOutputLanguagePresets.g.cs
 
 #nullable enable
 
 namespace G
 {
     /// <summary>
-    /// Language presets for conversations
+    /// 
     /// </summary>
     public sealed partial class ConversationalConfigAPIModelWorkflowOverrideOutputLanguagePresets
     {

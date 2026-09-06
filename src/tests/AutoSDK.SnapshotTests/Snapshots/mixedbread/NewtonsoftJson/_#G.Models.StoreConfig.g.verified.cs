@@ -1,20 +1,59 @@
-﻿//HintName: G.Models.StoreConfig.g.cs
+//HintName: G.Models.StoreConfig.g.cs
 
 #nullable enable
 
 namespace G
 {
     /// <summary>
-    /// Store-level configuration defaults
+    /// Configuration for a store.
     /// </summary>
     public sealed partial class StoreConfig
     {
+        /// <summary>
+        /// Contextualize files with metadata<br/>
+        /// Default Value: false
+        /// </summary>
+        [global::Newtonsoft.Json.JsonProperty("contextualization")]
+        public global::G.AnyOf<bool?, global::G.ContextualizationConfig>? Contextualization { get; set; }
+
+        /// <summary>
+        /// Whether to save original content in the store. When False, only vectors are indexed without the original content (index-only mode). This is useful for data privacy. Note: Reranking is not supported when content is not saved.<br/>
+        /// Default Value: true
+        /// </summary>
+        [global::Newtonsoft.Json.JsonProperty("save_content")]
+        public bool? SaveContent { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
         /// </summary>
         [global::Newtonsoft.Json.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="StoreConfig" /> class.
+        /// </summary>
+        /// <param name="contextualization">
+        /// Contextualize files with metadata<br/>
+        /// Default Value: false
+        /// </param>
+        /// <param name="saveContent">
+        /// Whether to save original content in the store. When False, only vectors are indexed without the original content (index-only mode). This is useful for data privacy. Note: Reranking is not supported when content is not saved.<br/>
+        /// Default Value: true
+        /// </param>
+        public StoreConfig(
+            global::G.AnyOf<bool?, global::G.ContextualizationConfig>? contextualization,
+            bool? saveContent)
+        {
+            this.Contextualization = contextualization;
+            this.SaveContent = saveContent;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="StoreConfig" /> class.
+        /// </summary>
+        public StoreConfig()
+        {
+        }
 
     }
 }

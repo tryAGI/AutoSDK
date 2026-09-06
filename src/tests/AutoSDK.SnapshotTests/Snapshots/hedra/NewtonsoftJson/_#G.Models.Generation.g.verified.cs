@@ -1,4 +1,4 @@
-﻿//HintName: G.Models.Generation.g.cs
+//HintName: G.Models.Generation.g.cs
 
 #nullable enable
 
@@ -81,7 +81,7 @@ namespace G
         /// Generation error if any. Value is not present unless the status of the generation is 'error' and error_message field is not present.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("error")]
-        public global::G.GenerationError2? Error { get; set; }
+        public global::G.GenerationError? Error { get; set; }
 
         /// <summary>
         /// Error message. Value is not present unless the status of the generation is 'error' and error field is not present.
@@ -149,7 +149,7 @@ namespace G
             string? batchGenerationId,
             global::G.Asset? asset,
             int? audioStartMs,
-            global::G.GenerationError2? error,
+            global::G.GenerationError? error,
             string? errorMessage)
         {
             this.Id = id;

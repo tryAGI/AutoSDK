@@ -1,4 +1,4 @@
-﻿//HintName: G.Models.VoiceResponseModel.g.cs
+//HintName: G.Models.VoiceResponseModel.g.cs
 
 #nullable enable
 
@@ -98,7 +98,7 @@ namespace G
         /// The safety controls of the voice.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("safety_control")]
-        public global::G.VoiceResponseModelSafetyControl2? SafetyControl { get; set; }
+        public global::G.VoiceResponseModelSafetyControl? SafetyControl { get; set; }
 
         /// <summary>
         /// The voice verification of the voice.
@@ -245,7 +245,7 @@ namespace G
             global::G.VoiceSharingResponseModel? sharing,
             global::System.Collections.Generic.IList<global::G.VerifiedVoiceLanguageResponseModel>? verifiedLanguages,
             global::System.Collections.Generic.IList<string>? collectionIds,
-            global::G.VoiceResponseModelSafetyControl2? safetyControl,
+            global::G.VoiceResponseModelSafetyControl? safetyControl,
             global::G.VoiceVerificationResponseModel? voiceVerification,
             string? permissionOnResource,
             bool? isOwner,

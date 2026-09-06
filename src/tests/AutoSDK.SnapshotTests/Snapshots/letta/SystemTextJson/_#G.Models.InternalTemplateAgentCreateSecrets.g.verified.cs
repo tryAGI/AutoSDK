@@ -1,11 +1,11 @@
-﻿//HintName: G.Models.InternalTemplateAgentCreateSecrets.g.cs
+//HintName: G.Models.InternalTemplateAgentCreateSecrets.g.cs
 
 #nullable enable
 
 namespace G
 {
     /// <summary>
-    /// The environment variables for tool execution specific to this agent.
+    /// 
     /// </summary>
     public sealed partial class InternalTemplateAgentCreateSecrets
     {

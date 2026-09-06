@@ -1,20 +1,84 @@
-﻿//HintName: G.Models.ImageMetadataBbox.g.cs
+//HintName: G.Models.ImageMetadataBBox.g.cs
 
 #nullable enable
 
 namespace G
 {
     /// <summary>
-    /// Bounding box of the image on its page
+    /// Bounding box for an image on its page.
     /// </summary>
-    public sealed partial class ImageMetadataBbox
+    public sealed partial class ImageMetadataBBox
     {
+        /// <summary>
+        /// X coordinate of the bounding box
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("x")]
+        [global::System.Text.Json.Serialization.JsonRequired]
+        public required int X { get; set; }
+
+        /// <summary>
+        /// Y coordinate of the bounding box
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("y")]
+        [global::System.Text.Json.Serialization.JsonRequired]
+        public required int Y { get; set; }
+
+        /// <summary>
+        /// Width of the bounding box
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("w")]
+        [global::System.Text.Json.Serialization.JsonRequired]
+        public required int W { get; set; }
+
+        /// <summary>
+        /// Height of the bounding box
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("h")]
+        [global::System.Text.Json.Serialization.JsonRequired]
+        public required int H { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
         /// </summary>
         [global::System.Text.Json.Serialization.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="ImageMetadataBBox" /> class.
+        /// </summary>
+        /// <param name="x">
+        /// X coordinate of the bounding box
+        /// </param>
+        /// <param name="y">
+        /// Y coordinate of the bounding box
+        /// </param>
+        /// <param name="w">
+        /// Width of the bounding box
+        /// </param>
+        /// <param name="h">
+        /// Height of the bounding box
+        /// </param>
+#if NET7_0_OR_GREATER
+        [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
+        public ImageMetadataBBox(
+            int x,
+            int y,
+            int w,
+            int h)
+        {
+            this.X = x;
+            this.Y = y;
+            this.W = w;
+            this.H = h;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="ImageMetadataBBox" /> class.
+        /// </summary>
+        public ImageMetadataBBox()
+        {
+        }
 
     }
 }

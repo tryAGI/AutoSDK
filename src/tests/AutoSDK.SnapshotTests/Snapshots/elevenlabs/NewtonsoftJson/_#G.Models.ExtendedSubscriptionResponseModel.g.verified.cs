@@ -1,4 +1,4 @@
-﻿//HintName: G.Models.ExtendedSubscriptionResponseModel.g.cs
+//HintName: G.Models.ExtendedSubscriptionResponseModel.g.cs
 
 #nullable enable
 
@@ -109,7 +109,7 @@ namespace G
         /// The currency of the user's subscription.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("currency")]
-        public global::G.ExtendedSubscriptionResponseModelCurrency2? Currency { get; set; }
+        public global::G.ExtendedSubscriptionResponseModelCurrency? Currency { get; set; }
 
         /// <summary>
         /// The status of the user's subscription.
@@ -255,7 +255,7 @@ namespace G
             int? maxCharacterLimitExtension,
             int? nextCharacterCountResetUnix,
             int? maxVoiceAddEdits,
-            global::G.ExtendedSubscriptionResponseModelCurrency2? currency,
+            global::G.ExtendedSubscriptionResponseModelCurrency? currency,
             global::G.BillingPeriod? billingPeriod,
             global::G.CharacterRefreshPeriod? characterRefreshPeriod,
             global::G.InvoiceResponseModel? nextInvoice,

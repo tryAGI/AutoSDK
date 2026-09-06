@@ -1,4 +1,4 @@
-﻿//HintName: G.Models.Message.g.cs
+//HintName: G.Models.Message.g.cs
 
 #pragma warning disable CS0618 // Type or member is obsolete
 
@@ -81,7 +81,7 @@ namespace G
         /// In non-streaming mode this value is always non-null. In streaming mode, it is null in the `message_start` event and non-null otherwise.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("stop_reason")]
-        public global::G.MessageStopReason2? StopReason { get; set; }
+        public global::G.MessageStopReason? StopReason { get; set; }
 
         /// <summary>
         /// Which custom stop sequence was generated, if any.<br/>
@@ -177,7 +177,7 @@ namespace G
             global::System.Collections.Generic.IList<global::G.ContentBlock3> content,
             global::G.Model model,
             global::G.Usage usage,
-            global::G.MessageStopReason2? stopReason,
+            global::G.MessageStopReason? stopReason,
             string? stopSequence,
             global::G.MessageType type = global::G.MessageType.Message,
             global::G.MessageRole role = global::G.MessageRole.Assistant)

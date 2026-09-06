@@ -1,11 +1,11 @@
-﻿//HintName: G.Models.MCPServerConfigUpdateRequestModelRequestHeaders.g.cs
+//HintName: G.Models.MCPServerConfigUpdateRequestModelRequestHeaders.g.cs
 
 #nullable enable
 
 namespace G
 {
     /// <summary>
-    /// The headers to include in requests to the MCP server
+    /// 
     /// </summary>
     public sealed partial class MCPServerConfigUpdateRequestModelRequestHeaders
     {

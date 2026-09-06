@@ -1,4 +1,4 @@
-﻿//HintName: G.Models.ConversationHistoryTranscriptOtherToolsResultCommonModelType.g.cs
+//HintName: G.Models.ConversationHistoryTranscriptOtherToolsResultCommonModelType.g.cs
 
 #nullable enable
 
@@ -7,14 +7,52 @@ namespace G
     /// <summary>
     /// 
     /// </summary>
-    public sealed partial class ConversationHistoryTranscriptOtherToolsResultCommonModelType
+    public enum ConversationHistoryTranscriptOtherToolsResultCommonModelType
     {
-
         /// <summary>
-        /// Additional properties that are not explicitly defined in the schema
+        /// 
         /// </summary>
-        [global::System.Text.Json.Serialization.JsonExtensionData]
-        public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
+        Client,
+        /// <summary>
+        /// 
+        /// </summary>
+        Mcp,
+        /// <summary>
+        /// 
+        /// </summary>
+        Webhook,
+    }
 
+    /// <summary>
+    /// Enum extensions to do fast conversions without the reflection.
+    /// </summary>
+    public static class ConversationHistoryTranscriptOtherToolsResultCommonModelTypeExtensions
+    {
+        /// <summary>
+        /// Converts an enum to a string.
+        /// </summary>
+        public static string ToValueString(this ConversationHistoryTranscriptOtherToolsResultCommonModelType value)
+        {
+            return value switch
+            {
+                ConversationHistoryTranscriptOtherToolsResultCommonModelType.Client => "client",
+                ConversationHistoryTranscriptOtherToolsResultCommonModelType.Mcp => "mcp",
+                ConversationHistoryTranscriptOtherToolsResultCommonModelType.Webhook => "webhook",
+                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
+            };
+        }
+        /// <summary>
+        /// Converts an string to a enum.
+        /// </summary>
+        public static ConversationHistoryTranscriptOtherToolsResultCommonModelType? ToEnum(string value)
+        {
+            return value switch
+            {
+                "client" => ConversationHistoryTranscriptOtherToolsResultCommonModelType.Client,
+                "mcp" => ConversationHistoryTranscriptOtherToolsResultCommonModelType.Mcp,
+                "webhook" => ConversationHistoryTranscriptOtherToolsResultCommonModelType.Webhook,
+                _ => null,
+            };
+        }
     }
 }

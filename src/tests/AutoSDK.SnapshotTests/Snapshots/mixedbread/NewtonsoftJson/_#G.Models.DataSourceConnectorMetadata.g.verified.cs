@@ -1,11 +1,11 @@
-﻿//HintName: G.Models.DataSourceConnectorMetadata.g.cs
+//HintName: G.Models.DataSourceConnectorMetadata.g.cs
 
 #nullable enable
 
 namespace G
 {
     /// <summary>
-    /// The metadata of the connector
+    /// 
     /// </summary>
     public sealed partial class DataSourceConnectorMetadata
     {

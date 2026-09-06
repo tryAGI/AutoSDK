@@ -1,4 +1,4 @@
-﻿//HintName: G.Models.SingleSeriesForecast.g.cs
+//HintName: G.Models.SingleSeriesForecast.g.cs
 
 #pragma warning disable CS0618 // Type or member is obsolete
 
@@ -23,7 +23,7 @@ namespace G
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("fewshot_loss")]
         [global::System.Obsolete("This property marked as deprecated.")]
-        public global::G.SingleSeriesForecastFewshotLoss2? FewshotLoss { get; set; }
+        public global::G.SingleSeriesForecastFewshotLoss? FewshotLoss { get; set; }
 
         /// <summary>
         /// Model to use as a string. Common options are (but not restricted to) `timegpt-1` and `timegpt-1-long-horizon.` Full options vary by different users. Contact support@nixtla.io for more information. We recommend using `timegpt-1-long-horizon` for forecasting if you want to predict more than one seasonal period given the frequency of your data.<br/>

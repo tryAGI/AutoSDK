@@ -1,4 +1,4 @@
-﻿//HintName: G.Api.g.cs
+//HintName: G.Api.g.cs
 
 #nullable enable
 
@@ -68,14 +68,14 @@ namespace G
                     new global::G.JsonConverters.CreateModelRequestType2NullableJsonConverter(),
                     new global::G.JsonConverters.CreateModelRequestTrainMode2JsonConverter(),
                     new global::G.JsonConverters.CreateModelRequestTrainMode2NullableJsonConverter(),
+                    new global::G.JsonConverters.PatchModelRequestVisibilityJsonConverter(),
+                    new global::G.JsonConverters.PatchModelRequestVisibilityNullableJsonConverter(),
                     new global::G.JsonConverters.PatchModelRequestVisibility2JsonConverter(),
                     new global::G.JsonConverters.PatchModelRequestVisibility2NullableJsonConverter(),
+                    new global::G.JsonConverters.PatchModelRequestVisibility3JsonConverter(),
+                    new global::G.JsonConverters.PatchModelRequestVisibility3NullableJsonConverter(),
                     new global::G.JsonConverters.PatchModelRequestVisibility4JsonConverter(),
                     new global::G.JsonConverters.PatchModelRequestVisibility4NullableJsonConverter(),
-                    new global::G.JsonConverters.PatchModelRequestVisibility6JsonConverter(),
-                    new global::G.JsonConverters.PatchModelRequestVisibility6NullableJsonConverter(),
-                    new global::G.JsonConverters.PatchModelRequestVisibility8JsonConverter(),
-                    new global::G.JsonConverters.PatchModelRequestVisibility8NullableJsonConverter(),
                     new global::G.JsonConverters.CreateTtsModelJsonConverter(),
                     new global::G.JsonConverters.CreateTtsModelNullableJsonConverter(),
                     new global::G.JsonConverters.GetModelSortByJsonConverter(),

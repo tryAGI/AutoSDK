@@ -1,4 +1,4 @@
-﻿//HintName: G.Models.PipelineFile.g.cs
+//HintName: G.Models.PipelineFile.g.cs
 
 #nullable enable
 
@@ -103,7 +103,7 @@ namespace G
         /// Status of the pipeline file.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("status")]
-        public global::G.PipelineFileStatus2? Status { get; set; }
+        public global::G.PipelineFileStatus? Status { get; set; }
 
         /// <summary>
         /// The last time the status was updated.
@@ -205,7 +205,7 @@ namespace G
             global::System.Guid? dataSourceId,
             object? configHash,
             int? indexedPageCount,
-            global::G.PipelineFileStatus2? status,
+            global::G.PipelineFileStatus? status,
             global::System.DateTime? statusUpdatedAt,
             global::System.DateTime? createdAt,
             global::System.DateTime? updatedAt)

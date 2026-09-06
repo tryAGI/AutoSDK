@@ -1,4 +1,4 @@
-﻿//HintName: G.Models.Me.g.cs
+//HintName: G.Models.Me.g.cs
 
 #nullable enable
 
@@ -124,7 +124,7 @@ namespace G
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("vercel_connection")]
-        public global::G.MeVercelConnection2? VercelConnection { get; set; }
+        public global::G.MeVercelConnection? VercelConnection { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -192,7 +192,7 @@ namespace G
             string? teamRole,
             string? teamDisplayName,
             bool? isTeamUpgradeEnabled,
-            global::G.MeVercelConnection2? vercelConnection)
+            global::G.MeVercelConnection? vercelConnection)
         {
             this.Uid = uid ?? throw new global::System.ArgumentNullException(nameof(uid));
             this.Email = email;

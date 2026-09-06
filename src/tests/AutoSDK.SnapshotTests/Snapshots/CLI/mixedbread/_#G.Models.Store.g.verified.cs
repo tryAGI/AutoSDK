@@ -1,4 +1,4 @@
-﻿//HintName: G.Models.Store.g.cs
+//HintName: G.Models.Store.g.cs
 
 #nullable enable
 
@@ -46,7 +46,7 @@ namespace G
         /// Store-level configuration defaults
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("config")]
-        public global::G.StoreConfig2? Config { get; set; }
+        public global::G.StoreConfig? Config { get; set; }
 
         /// <summary>
         /// Counts of files in different states
@@ -188,7 +188,7 @@ namespace G
             string? description,
             bool? isPublic,
             object? metadata,
-            global::G.StoreConfig2? config,
+            global::G.StoreConfig? config,
             global::G.FileCounts? fileCounts,
             global::G.ExpiresAfter? expiresAfter,
             global::G.StoreStatus? status,

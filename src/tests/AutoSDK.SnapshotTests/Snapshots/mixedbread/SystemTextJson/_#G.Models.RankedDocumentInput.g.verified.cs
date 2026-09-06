@@ -1,11 +1,11 @@
-﻿//HintName: G.Models.RankedDocumentInput.g.cs
+//HintName: G.Models.RankedDocumentInput.g.cs
 
 #nullable enable
 
 namespace G
 {
     /// <summary>
-    /// The input document.
+    /// 
     /// </summary>
     public sealed partial class RankedDocumentInput
     {

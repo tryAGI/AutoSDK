@@ -1,4 +1,4 @@
-﻿//HintName: G.IPronunciationDictionariesClient.CreateFromRules.g.cs
+//HintName: G.IPronunciationDictionariesClient.CreateFromRules.g.cs
 #nullable enable
 
 namespace G
@@ -68,7 +68,7 @@ namespace G
             string name,
             string? xiApiKey = default,
             string? description = default,
-            global::G.BodyAddAPronunciationDictionaryV1PronunciationDictionariesAddFromRulesPostWorkspaceAccess2? workspaceAccess = default,
+            global::G.BodyAddAPronunciationDictionaryV1PronunciationDictionariesAddFromRulesPostWorkspaceAccess? workspaceAccess = default,
             global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }

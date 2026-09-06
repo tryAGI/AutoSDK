@@ -1,11 +1,11 @@
-﻿//HintName: G.Models.BodyCreateANewBranchV1ConvaiAgentsAgentIdBranchesPostPlatformSettings.g.cs
+//HintName: G.Models.BodyCreateANewBranchV1ConvaiAgentsAgentIdBranchesPostPlatformSettings.g.cs
 
 #nullable enable
 
 namespace G
 {
     /// <summary>
-    /// Changes to apply to platform settings
+    /// 
     /// </summary>
     public sealed partial class BodyCreateANewBranchV1ConvaiAgentsAgentIdBranchesPostPlatformSettings
     {

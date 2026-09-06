@@ -1,11 +1,11 @@
-﻿//HintName: G.Models.DataSourceConnectorError.g.cs
+//HintName: G.Models.DataSourceConnectorError.g.cs
 
 #nullable enable
 
 namespace G
 {
     /// <summary>
-    /// The sync error of the connector
+    /// 
     /// </summary>
     public sealed partial class DataSourceConnectorError
     {

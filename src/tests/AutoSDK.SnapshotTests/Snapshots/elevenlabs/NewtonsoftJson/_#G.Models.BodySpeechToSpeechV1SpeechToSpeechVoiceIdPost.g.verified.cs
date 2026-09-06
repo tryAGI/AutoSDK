@@ -1,4 +1,4 @@
-﻿//HintName: G.Models.BodySpeechToSpeechV1SpeechToSpeechVoiceIdPost.g.cs
+//HintName: G.Models.BodySpeechToSpeechV1SpeechToSpeechVoiceIdPost.g.cs
 
 #nullable enable
 
@@ -52,7 +52,7 @@ namespace G
         /// Default Value: other
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("file_format")]
-        public global::G.BodySpeechToSpeechV1SpeechToSpeechVoiceIdPostFileFormat2? FileFormat { get; set; }
+        public global::G.BodySpeechToSpeechV1SpeechToSpeechVoiceIdPostFileFormat? FileFormat { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -94,7 +94,7 @@ namespace G
             string? voiceSettings,
             int? seed,
             bool? removeBackgroundNoise,
-            global::G.BodySpeechToSpeechV1SpeechToSpeechVoiceIdPostFileFormat2? fileFormat)
+            global::G.BodySpeechToSpeechV1SpeechToSpeechVoiceIdPostFileFormat? fileFormat)
         {
             this.Audio = audio ?? throw new global::System.ArgumentNullException(nameof(audio));
             this.Audioname = audioname ?? throw new global::System.ArgumentNullException(nameof(audioname));

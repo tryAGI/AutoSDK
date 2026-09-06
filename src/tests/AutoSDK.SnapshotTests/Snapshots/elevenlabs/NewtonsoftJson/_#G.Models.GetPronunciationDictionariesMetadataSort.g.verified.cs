@@ -1,21 +1,55 @@
-﻿//HintName: G.Models.GetPronunciationDictionariesMetadataSort.g.cs
+//HintName: G.Models.GetPronunciationDictionariesMetadataSort.g.cs
 
 #nullable enable
 
 namespace G
 {
     /// <summary>
-    /// Which field to sort by, one of 'created_at_unix' or 'name'.<br/>
-    /// Default Value: creation_time_unix
+    /// 
     /// </summary>
-    public sealed partial class GetPronunciationDictionariesMetadataSort
+    [global::System.Runtime.Serialization.DataContract]
+    public enum GetPronunciationDictionariesMetadataSort
     {
-
         /// <summary>
-        /// Additional properties that are not explicitly defined in the schema
+        /// 
         /// </summary>
-        [global::Newtonsoft.Json.JsonExtensionData]
-        public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
+        [global::System.Runtime.Serialization.EnumMember(Value="creation_time_unix")]
+        CreationTimeUnix,
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Runtime.Serialization.EnumMember(Value="name")]
+        Name,
+    }
 
+    /// <summary>
+    /// Enum extensions to do fast conversions without the reflection.
+    /// </summary>
+    public static class GetPronunciationDictionariesMetadataSortExtensions
+    {
+        /// <summary>
+        /// Converts an enum to a string.
+        /// </summary>
+        public static string ToValueString(this GetPronunciationDictionariesMetadataSort value)
+        {
+            return value switch
+            {
+                GetPronunciationDictionariesMetadataSort.CreationTimeUnix => "creation_time_unix",
+                GetPronunciationDictionariesMetadataSort.Name => "name",
+                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
+            };
+        }
+        /// <summary>
+        /// Converts an string to a enum.
+        /// </summary>
+        public static GetPronunciationDictionariesMetadataSort? ToEnum(string value)
+        {
+            return value switch
+            {
+                "creation_time_unix" => GetPronunciationDictionariesMetadataSort.CreationTimeUnix,
+                "name" => GetPronunciationDictionariesMetadataSort.Name,
+                _ => null,
+            };
+        }
     }
 }

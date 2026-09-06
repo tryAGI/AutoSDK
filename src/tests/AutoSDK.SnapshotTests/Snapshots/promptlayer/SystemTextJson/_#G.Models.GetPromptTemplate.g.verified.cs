@@ -1,4 +1,4 @@
-﻿//HintName: G.Models.GetPromptTemplate.g.cs
+//HintName: G.Models.GetPromptTemplate.g.cs
 
 #nullable enable
 
@@ -31,7 +31,7 @@ namespace G
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("provider")]
-        public global::G.GetPromptTemplateProvider2? Provider { get; set; }
+        public global::G.GetPromptTemplateProvider? Provider { get; set; }
 
         /// <summary>
         /// 
@@ -89,7 +89,7 @@ namespace G
             int? version,
             int? workspaceId,
             string? label,
-            global::G.GetPromptTemplateProvider2? provider,
+            global::G.GetPromptTemplateProvider? provider,
             global::System.Collections.Generic.Dictionary<string, string>? inputVariables,
             global::System.Collections.Generic.Dictionary<string, string>? metadataFilters,
             string? model,

@@ -218,7 +218,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.GetPromptTemplateProvider2? Type46 { get; set; }
+        public global::G.GetPromptTemplateProvider? Type46 { get; set; }
         /// <summary>
         /// 
         /// </summary>
@@ -866,7 +866,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.LogRequestErrorType2? Type208 { get; set; }
+        public global::G.LogRequestErrorType? Type208 { get; set; }
         /// <summary>
         /// 
         /// </summary>

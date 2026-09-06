@@ -1,4 +1,4 @@
-﻿//HintName: G.Api.g.cs
+//HintName: G.Api.g.cs
 
 #nullable enable
 
@@ -46,12 +46,12 @@ namespace G
                 {
                     new global::G.JsonConverters.SuspendReasonJsonConverter(),
                     new global::G.JsonConverters.SuspendReasonNullableJsonConverter(),
-                    new global::G.JsonConverters.BodyOpenaiAudioTranscriptionsV1OpenaiAudioTranscriptionsPostResponseFormat2JsonConverter(),
-                    new global::G.JsonConverters.BodyOpenaiAudioTranscriptionsV1OpenaiAudioTranscriptionsPostResponseFormat2NullableJsonConverter(),
+                    new global::G.JsonConverters.BodyOpenaiAudioTranscriptionsV1OpenaiAudioTranscriptionsPostResponseFormatJsonConverter(),
+                    new global::G.JsonConverters.BodyOpenaiAudioTranscriptionsV1OpenaiAudioTranscriptionsPostResponseFormatNullableJsonConverter(),
                     new global::G.JsonConverters.BodyOpenaiAudioTranscriptionsV1OpenaiAudioTranscriptionsPostTimestampGranularitiesVariant1ItemJsonConverter(),
                     new global::G.JsonConverters.BodyOpenaiAudioTranscriptionsV1OpenaiAudioTranscriptionsPostTimestampGranularitiesVariant1ItemNullableJsonConverter(),
-                    new global::G.JsonConverters.BodyOpenaiAudioTranslationsV1OpenaiAudioTranslationsPostResponseFormat2JsonConverter(),
-                    new global::G.JsonConverters.BodyOpenaiAudioTranslationsV1OpenaiAudioTranslationsPostResponseFormat2NullableJsonConverter(),
+                    new global::G.JsonConverters.BodyOpenaiAudioTranslationsV1OpenaiAudioTranslationsPostResponseFormatJsonConverter(),
+                    new global::G.JsonConverters.BodyOpenaiAudioTranslationsV1OpenaiAudioTranslationsPostResponseFormatNullableJsonConverter(),
                     new global::G.JsonConverters.DeployGPUsJsonConverter(),
                     new global::G.JsonConverters.DeployGPUsNullableJsonConverter(),
                     new global::G.JsonConverters.DeployTypeJsonConverter(),
@@ -68,8 +68,8 @@ namespace G
                     new global::G.JsonConverters.ModelProviderNullableJsonConverter(),
                     new global::G.JsonConverters.OpenAIBatchesInEndpointJsonConverter(),
                     new global::G.JsonConverters.OpenAIBatchesInEndpointNullableJsonConverter(),
-                    new global::G.JsonConverters.OpenAIChatCompletionsInReasoningEffort2JsonConverter(),
-                    new global::G.JsonConverters.OpenAIChatCompletionsInReasoningEffort2NullableJsonConverter(),
+                    new global::G.JsonConverters.OpenAIChatCompletionsInReasoningEffortJsonConverter(),
+                    new global::G.JsonConverters.OpenAIChatCompletionsInReasoningEffortNullableJsonConverter(),
                     new global::G.JsonConverters.ResponseFormatTypeJsonConverter(),
                     new global::G.JsonConverters.ResponseFormatTypeNullableJsonConverter(),
                     new global::G.JsonConverters.SchemaVariantKeyJsonConverter(),

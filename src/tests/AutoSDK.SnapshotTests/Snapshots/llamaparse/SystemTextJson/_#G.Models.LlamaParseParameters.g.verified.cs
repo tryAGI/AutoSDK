@@ -1,4 +1,4 @@
-﻿//HintName: G.Models.LlamaParseParameters.g.cs
+//HintName: G.Models.LlamaParseParameters.g.cs
 
 #nullable enable
 
@@ -19,7 +19,7 @@ namespace G
         /// The priority for the request. This field may be ignored or overwritten depending on the organization tier.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("priority")]
-        public global::G.LlamaParseParametersPriority2? Priority { get; set; }
+        public global::G.LlamaParseParametersPriority? Priority { get; set; }
 
         /// <summary>
         /// 
@@ -984,7 +984,7 @@ namespace G
 #endif
         public LlamaParseParameters(
             global::System.Collections.Generic.IList<global::G.WebhookConfiguration>? webhookConfigurations,
-            global::G.LlamaParseParametersPriority2? priority,
+            global::G.LlamaParseParametersPriority? priority,
             global::System.Collections.Generic.IList<global::G.ParserLanguages>? languages,
             string? parsingInstruction,
             bool? disableOcr,

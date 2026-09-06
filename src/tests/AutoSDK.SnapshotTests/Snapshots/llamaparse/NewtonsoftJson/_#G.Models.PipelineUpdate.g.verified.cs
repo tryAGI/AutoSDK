@@ -1,4 +1,4 @@
-﻿//HintName: G.Models.PipelineUpdate.g.cs
+//HintName: G.Models.PipelineUpdate.g.cs
 
 #pragma warning disable CS0618 // Type or member is obsolete
 
@@ -70,7 +70,7 @@ namespace G
         /// Metadata configuration for the pipeline.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("metadata_config")]
-        public global::G.PipelineMetadataConfig2? MetadataConfig { get; set; }
+        public global::G.PipelineMetadataConfig? MetadataConfig { get; set; }
 
         /// <summary>
         /// 
@@ -131,7 +131,7 @@ namespace G
             global::G.DataSinkCreate? dataSink,
             global::G.PresetRetrievalParams? presetRetrievalParameters,
             string? status,
-            global::G.PipelineMetadataConfig2? metadataConfig,
+            global::G.PipelineMetadataConfig? metadataConfig,
             string? name,
             global::System.Guid? managedPipelineId)
         {

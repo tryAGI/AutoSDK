@@ -1,20 +1,64 @@
-﻿//HintName: G.Models.LlamaParseParametersPriority.g.cs
+//HintName: G.Models.LlamaParseParametersPriority.g.cs
 
 #nullable enable
 
 namespace G
 {
     /// <summary>
-    /// The priority for the request. This field may be ignored or overwritten depending on the organization tier.
+    /// 
     /// </summary>
-    public sealed partial class LlamaParseParametersPriority
+    public enum LlamaParseParametersPriority
     {
-
         /// <summary>
-        /// Additional properties that are not explicitly defined in the schema
+        /// 
         /// </summary>
-        [global::System.Text.Json.Serialization.JsonExtensionData]
-        public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
+        Critical,
+        /// <summary>
+        /// 
+        /// </summary>
+        High,
+        /// <summary>
+        /// 
+        /// </summary>
+        Low,
+        /// <summary>
+        /// 
+        /// </summary>
+        Medium,
+    }
 
+    /// <summary>
+    /// Enum extensions to do fast conversions without the reflection.
+    /// </summary>
+    public static class LlamaParseParametersPriorityExtensions
+    {
+        /// <summary>
+        /// Converts an enum to a string.
+        /// </summary>
+        public static string ToValueString(this LlamaParseParametersPriority value)
+        {
+            return value switch
+            {
+                LlamaParseParametersPriority.Critical => "critical",
+                LlamaParseParametersPriority.High => "high",
+                LlamaParseParametersPriority.Low => "low",
+                LlamaParseParametersPriority.Medium => "medium",
+                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
+            };
+        }
+        /// <summary>
+        /// Converts an string to a enum.
+        /// </summary>
+        public static LlamaParseParametersPriority? ToEnum(string value)
+        {
+            return value switch
+            {
+                "critical" => LlamaParseParametersPriority.Critical,
+                "high" => LlamaParseParametersPriority.High,
+                "low" => LlamaParseParametersPriority.Low,
+                "medium" => LlamaParseParametersPriority.Medium,
+                _ => null,
+            };
+        }
     }
 }

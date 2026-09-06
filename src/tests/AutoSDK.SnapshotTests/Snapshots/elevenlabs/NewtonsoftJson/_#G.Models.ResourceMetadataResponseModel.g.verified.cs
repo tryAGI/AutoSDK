@@ -1,4 +1,4 @@
-﻿//HintName: G.Models.ResourceMetadataResponseModel.g.cs
+//HintName: G.Models.ResourceMetadataResponseModel.g.cs
 
 #nullable enable
 
@@ -38,7 +38,7 @@ namespace G
         /// The access level for anonymous users. If None, the resource is not shared publicly.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("anonymous_access_level_override")]
-        public global::G.ResourceMetadataResponseModelAnonymousAccessLevelOverride2? AnonymousAccessLevelOverride { get; set; }
+        public global::G.ResourceMetadataResponseModelAnonymousAccessLevelOverride? AnonymousAccessLevelOverride { get; set; }
 
         /// <summary>
         /// A mapping of roles to group IDs. When the resource is shared with a user, the group id is the user's id.
@@ -89,7 +89,7 @@ namespace G
             global::System.Collections.Generic.IList<global::G.ShareOptionResponseModel> shareOptions,
             string? resourceName,
             string? creatorUserId,
-            global::G.ResourceMetadataResponseModelAnonymousAccessLevelOverride2? anonymousAccessLevelOverride)
+            global::G.ResourceMetadataResponseModelAnonymousAccessLevelOverride? anonymousAccessLevelOverride)
         {
             this.ResourceId = resourceId ?? throw new global::System.ArgumentNullException(nameof(resourceId));
             this.ResourceName = resourceName;

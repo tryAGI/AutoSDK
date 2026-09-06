@@ -1,20 +1,52 @@
-﻿//HintName: G.Models.GetSpeechHistorySource.g.cs
+//HintName: G.Models.GetSpeechHistorySource.g.cs
 
 #nullable enable
 
 namespace G
 {
     /// <summary>
-    /// Source of the generated history item
+    /// 
     /// </summary>
-    public sealed partial class GetSpeechHistorySource
+    public enum GetSpeechHistorySource
     {
-
         /// <summary>
-        /// Additional properties that are not explicitly defined in the schema
+        /// 
         /// </summary>
-        [global::System.Text.Json.Serialization.JsonExtensionData]
-        public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
+        Sts,
+        /// <summary>
+        /// 
+        /// </summary>
+        Tts,
+    }
 
+    /// <summary>
+    /// Enum extensions to do fast conversions without the reflection.
+    /// </summary>
+    public static class GetSpeechHistorySourceExtensions
+    {
+        /// <summary>
+        /// Converts an enum to a string.
+        /// </summary>
+        public static string ToValueString(this GetSpeechHistorySource value)
+        {
+            return value switch
+            {
+                GetSpeechHistorySource.Sts => "STS",
+                GetSpeechHistorySource.Tts => "TTS",
+                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
+            };
+        }
+        /// <summary>
+        /// Converts an string to a enum.
+        /// </summary>
+        public static GetSpeechHistorySource? ToEnum(string value)
+        {
+            return value switch
+            {
+                "STS" => GetSpeechHistorySource.Sts,
+                "TTS" => GetSpeechHistorySource.Tts,
+                _ => null,
+            };
+        }
     }
 }

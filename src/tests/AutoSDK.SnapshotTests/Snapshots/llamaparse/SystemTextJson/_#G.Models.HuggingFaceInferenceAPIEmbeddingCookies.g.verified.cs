@@ -1,11 +1,11 @@
-﻿//HintName: G.Models.HuggingFaceInferenceAPIEmbeddingCookies.g.cs
+//HintName: G.Models.HuggingFaceInferenceAPIEmbeddingCookies.g.cs
 
 #nullable enable
 
 namespace G
 {
     /// <summary>
-    /// Additional cookies to send to the server.
+    /// 
     /// </summary>
     public sealed partial class HuggingFaceInferenceAPIEmbeddingCookies
     {

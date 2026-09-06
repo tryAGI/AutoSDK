@@ -1,11 +1,11 @@
-﻿//HintName: G.Models.OutputMediaContentProviderMetadata.g.cs
+//HintName: G.Models.OutputMediaContentProviderMetadata.g.cs
 
 #nullable enable
 
 namespace G
 {
     /// <summary>
-    /// Default Value: openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464
+    /// 
     /// </summary>
     public sealed partial class OutputMediaContentProviderMetadata
     {

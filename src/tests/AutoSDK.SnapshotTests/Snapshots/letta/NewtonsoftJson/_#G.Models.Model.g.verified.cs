@@ -1,4 +1,4 @@
-﻿//HintName: G.Models.Model.g.cs
+//HintName: G.Models.Model.g.cs
 
 #pragma warning disable CS0618 // Type or member is obsolete
 
@@ -125,7 +125,7 @@ namespace G
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("reasoning_effort")]
         [global::System.Obsolete("This property marked as deprecated.")]
-        public global::G.ModelReasoningEffort2? ReasoningEffort { get; set; }
+        public global::G.ModelReasoningEffort? ReasoningEffort { get; set; }
 
         /// <summary>
         /// Deprecated: Configurable thinking budget for extended thinking.<br/>
@@ -139,7 +139,7 @@ namespace G
         /// The effort level for Anthropic models that support it (Opus 4.5, Opus 4.6). Controls token spending and thinking behavior. Not setting this gives similar performance to 'high'.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("effort")]
-        public global::G.ModelEffort2? Effort { get; set; }
+        public global::G.ModelEffort? Effort { get; set; }
 
         /// <summary>
         /// Deprecated: Positive values penalize new tokens based on their existing frequency in the text so far.
@@ -153,14 +153,14 @@ namespace G
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("compatibility_type")]
         [global::System.Obsolete("This property marked as deprecated.")]
-        public global::G.ModelCompatibilityType2? CompatibilityType { get; set; }
+        public global::G.ModelCompatibilityType? CompatibilityType { get; set; }
 
         /// <summary>
         /// Deprecated: Soft control for how verbose model output should be.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("verbosity")]
         [global::System.Obsolete("This property marked as deprecated.")]
-        public global::G.ModelVerbosity2? Verbosity { get; set; }
+        public global::G.ModelVerbosity? Verbosity { get; set; }
 
         /// <summary>
         /// Deprecated: The cost tier for the model (cloud only).
@@ -288,7 +288,7 @@ namespace G
             string? displayName,
             string? providerName,
             string? modelType,
-            global::G.ModelEffort2? effort,
+            global::G.ModelEffort? effort,
             global::G.ResponseFormatVariant110? responseFormat,
             bool? strict,
             bool? returnLogprobs,

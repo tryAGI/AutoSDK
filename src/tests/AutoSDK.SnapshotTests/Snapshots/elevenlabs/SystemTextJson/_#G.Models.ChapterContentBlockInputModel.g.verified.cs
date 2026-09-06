@@ -1,4 +1,4 @@
-﻿//HintName: G.Models.ChapterContentBlockInputModel.g.cs
+//HintName: G.Models.ChapterContentBlockInputModel.g.cs
 
 #nullable enable
 
@@ -13,7 +13,7 @@ namespace G
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("sub_type")]
-        public global::G.ChapterContentBlockInputModelSubType2? SubType { get; set; }
+        public global::G.ChapterContentBlockInputModelSubType? SubType { get; set; }
 
         /// <summary>
         /// 
@@ -45,7 +45,7 @@ namespace G
 #endif
         public ChapterContentBlockInputModel(
             global::System.Collections.Generic.IList<global::G.ChapterContentParagraphTtsNodeInputModel> nodes,
-            global::G.ChapterContentBlockInputModelSubType2? subType,
+            global::G.ChapterContentBlockInputModelSubType? subType,
             string? blockId)
         {
             this.SubType = subType;

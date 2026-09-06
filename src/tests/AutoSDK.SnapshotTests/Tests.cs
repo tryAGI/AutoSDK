@@ -33,6 +33,8 @@ public partial class Tests
     [DataRow("leonardo.yaml", JsonSerializerType.SystemTextJson)]
     [DataRow("mystic.yaml", JsonSerializerType.NewtonsoftJson)]
     [DataRow("mystic.yaml", JsonSerializerType.SystemTextJson)]
+    [DataRow("nullable-any-of.yaml", JsonSerializerType.NewtonsoftJson)]
+    [DataRow("nullable-any-of.yaml", JsonSerializerType.SystemTextJson)]
     [DataRow("ollama.yaml", JsonSerializerType.NewtonsoftJson)]
     [DataRow("ollama.yaml", JsonSerializerType.SystemTextJson)]
     [DataRow("openai.yaml", JsonSerializerType.NewtonsoftJson)]

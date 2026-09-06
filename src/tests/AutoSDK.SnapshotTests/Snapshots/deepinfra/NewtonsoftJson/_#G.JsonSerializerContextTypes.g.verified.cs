@@ -170,7 +170,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.BodyOpenaiAudioTranscriptionsV1OpenaiAudioTranscriptionsPostResponseFormat2? Type34 { get; set; }
+        public global::G.BodyOpenaiAudioTranscriptionsV1OpenaiAudioTranscriptionsPostResponseFormat? Type34 { get; set; }
         /// <summary>
         /// 
         /// </summary>
@@ -186,7 +186,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.BodyOpenaiAudioTranslationsV1OpenaiAudioTranslationsPostResponseFormat2? Type38 { get; set; }
+        public global::G.BodyOpenaiAudioTranslationsV1OpenaiAudioTranslationsPostResponseFormat? Type38 { get; set; }
         /// <summary>
         /// 
         /// </summary>
@@ -454,7 +454,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.MeVercelConnection2? Type105 { get; set; }
+        public global::G.MeVercelConnection? Type105 { get; set; }
         /// <summary>
         /// 
         /// </summary>
@@ -578,7 +578,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.OpenAIChatCompletionsInReasoningEffort2? Type136 { get; set; }
+        public global::G.OpenAIChatCompletionsInReasoningEffort? Type136 { get; set; }
         /// <summary>
         /// 
         /// </summary>

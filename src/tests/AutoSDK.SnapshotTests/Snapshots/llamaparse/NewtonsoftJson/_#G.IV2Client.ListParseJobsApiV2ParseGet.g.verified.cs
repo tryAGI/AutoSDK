@@ -1,4 +1,4 @@
-﻿//HintName: G.IV2Client.ListParseJobsApiV2ParseGet.g.cs
+//HintName: G.IV2Client.ListParseJobsApiV2ParseGet.g.cs
 #nullable enable
 
 namespace G
@@ -39,7 +39,7 @@ namespace G
         global::System.Threading.Tasks.Task<global::G.ParseJobQueryResponse> ListParseJobsApiV2ParseGetAsync(
             int? pageSize = default,
             string? pageToken = default,
-            global::G.ListParseJobsApiV2ParseGetStatus2? status = default,
+            global::G.ListParseJobsApiV2ParseGetStatus? status = default,
             global::System.DateTime? createdAtOnOrAfter = default,
             global::System.DateTime? createdAtOnOrBefore = default,
             global::System.Collections.Generic.IList<string>? jobIds = default,
@@ -82,7 +82,7 @@ namespace G
         global::System.Threading.Tasks.Task<global::G.AutoSDKHttpResponse<global::G.ParseJobQueryResponse>> ListParseJobsApiV2ParseGetAsResponseAsync(
             int? pageSize = default,
             string? pageToken = default,
-            global::G.ListParseJobsApiV2ParseGetStatus2? status = default,
+            global::G.ListParseJobsApiV2ParseGetStatus? status = default,
             global::System.DateTime? createdAtOnOrAfter = default,
             global::System.DateTime? createdAtOnOrBefore = default,
             global::System.Collections.Generic.IList<string>? jobIds = default,

@@ -1,4 +1,4 @@
-﻿//HintName: G.StudioClient.CreatePodcast.g.cs
+//HintName: G.StudioClient.CreatePodcast.g.cs
 
 #nullable enable
 
@@ -592,7 +592,7 @@ namespace G
             string? instructionsPrompt = default,
             global::System.Collections.Generic.IList<string>? highlights = default,
             string? callbackUrl = default,
-            global::G.BodyCreatePodcastV1StudioPodcastsPostApplyTextNormalization2? applyTextNormalization = default,
+            global::G.BodyCreatePodcastV1StudioPodcastsPostApplyTextNormalization? applyTextNormalization = default,
             global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {

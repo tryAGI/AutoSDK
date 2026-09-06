@@ -654,7 +654,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.BetaMessageStopReason2? Type155 { get; set; }
+        public global::G.BetaMessageStopReason? Type155 { get; set; }
         /// <summary>
         /// 
         /// </summary>
@@ -702,7 +702,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.BetaMessageDeltaStopReason2? Type167 { get; set; }
+        public global::G.BetaMessageDeltaStopReason? Type167 { get; set; }
         /// <summary>
         /// 
         /// </summary>
@@ -1098,7 +1098,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.BetaToolType2? Type266 { get; set; }
+        public global::G.BetaToolType? Type266 { get; set; }
         /// <summary>
         /// 
         /// </summary>
@@ -1542,7 +1542,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.MessageStopReason2? Type377 { get; set; }
+        public global::G.MessageStopReason? Type377 { get; set; }
         /// <summary>
         /// 
         /// </summary>
@@ -1586,7 +1586,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.MessageDeltaStopReason2? Type388 { get; set; }
+        public global::G.MessageDeltaStopReason? Type388 { get; set; }
         /// <summary>
         /// 
         /// </summary>

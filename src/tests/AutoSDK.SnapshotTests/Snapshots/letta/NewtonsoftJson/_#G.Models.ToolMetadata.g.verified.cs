@@ -1,11 +1,11 @@
-﻿//HintName: G.Models.ToolMetadata.g.cs
+//HintName: G.Models.ToolMetadata.g.cs
 
 #nullable enable
 
 namespace G
 {
     /// <summary>
-    /// A dictionary of additional metadata for the tool.
+    /// 
     /// </summary>
     public sealed partial class ToolMetadata
     {

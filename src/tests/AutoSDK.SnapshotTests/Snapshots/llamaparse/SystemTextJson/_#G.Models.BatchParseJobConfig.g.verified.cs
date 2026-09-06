@@ -1,4 +1,4 @@
-﻿//HintName: G.Models.BatchParseJobConfig.g.cs
+//HintName: G.Models.BatchParseJobConfig.g.cs
 
 #nullable enable
 
@@ -25,7 +25,7 @@ namespace G
         /// The priority for the request. This field may be ignored or overwritten depending on the organization tier.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("priority")]
-        public global::G.BatchParseJobConfigPriority2? Priority { get; set; }
+        public global::G.BatchParseJobConfigPriority? Priority { get; set; }
 
         /// <summary>
         /// The custom metadata to attach to the documents.
@@ -1052,7 +1052,7 @@ namespace G
 #endif
         public BatchParseJobConfig(
             global::System.Collections.Generic.IList<global::G.WebhookConfiguration>? webhookConfigurations,
-            global::G.BatchParseJobConfigPriority2? priority,
+            global::G.BatchParseJobConfigPriority? priority,
             object? customMetadata,
             object? resourceInfo,
             global::System.Collections.Generic.IList<global::G.ParserLanguages>? languages,

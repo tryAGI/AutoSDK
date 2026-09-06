@@ -1,20 +1,55 @@
-﻿//HintName: G.Models.WidgetConfigInputSyntaxHighlightTheme.g.cs
+//HintName: G.Models.WidgetConfigInputSyntaxHighlightTheme.g.cs
 
 #nullable enable
 
 namespace G
 {
     /// <summary>
-    /// Theme for code block syntax highlighting. Defaults to auto-detection by the widget when not set.
+    /// 
     /// </summary>
-    public sealed partial class WidgetConfigInputSyntaxHighlightTheme
+    [global::System.Runtime.Serialization.DataContract]
+    public enum WidgetConfigInputSyntaxHighlightTheme
     {
-
         /// <summary>
-        /// Additional properties that are not explicitly defined in the schema
+        /// 
         /// </summary>
-        [global::Newtonsoft.Json.JsonExtensionData]
-        public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
+        [global::System.Runtime.Serialization.EnumMember(Value="dark")]
+        Dark,
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Runtime.Serialization.EnumMember(Value="light")]
+        Light,
+    }
 
+    /// <summary>
+    /// Enum extensions to do fast conversions without the reflection.
+    /// </summary>
+    public static class WidgetConfigInputSyntaxHighlightThemeExtensions
+    {
+        /// <summary>
+        /// Converts an enum to a string.
+        /// </summary>
+        public static string ToValueString(this WidgetConfigInputSyntaxHighlightTheme value)
+        {
+            return value switch
+            {
+                WidgetConfigInputSyntaxHighlightTheme.Dark => "dark",
+                WidgetConfigInputSyntaxHighlightTheme.Light => "light",
+                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
+            };
+        }
+        /// <summary>
+        /// Converts an string to a enum.
+        /// </summary>
+        public static WidgetConfigInputSyntaxHighlightTheme? ToEnum(string value)
+        {
+            return value switch
+            {
+                "dark" => WidgetConfigInputSyntaxHighlightTheme.Dark,
+                "light" => WidgetConfigInputSyntaxHighlightTheme.Light,
+                _ => null,
+            };
+        }
     }
 }

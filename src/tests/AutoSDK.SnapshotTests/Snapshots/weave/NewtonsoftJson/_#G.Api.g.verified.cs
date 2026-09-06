@@ -1,4 +1,4 @@
-﻿//HintName: G.Api.g.cs
+//HintName: G.Api.g.cs
 
 #nullable enable
 
@@ -62,9 +62,9 @@ namespace G
 
                     new global::G.JsonConverters.ConvertSpecToNullableJsonConverter(),
 
-                    new global::G.JsonConverters.EvalResultsScorerStatsValueType2JsonConverter(),
+                    new global::G.JsonConverters.EvalResultsScorerStatsValueTypeJsonConverter(),
 
-                    new global::G.JsonConverters.EvalResultsScorerStatsValueType2NullableJsonConverter(),
+                    new global::G.JsonConverters.EvalResultsScorerStatsValueTypeNullableJsonConverter(),
 
                     new global::G.JsonConverters.FeedbackMetricSpecValueTypeJsonConverter(),
 

@@ -1,4 +1,4 @@
-﻿//HintName: G.Models.ConversationHistoryTranscriptOtherToolsResultCommonModel.g.cs
+//HintName: G.Models.ConversationHistoryTranscriptOtherToolsResultCommonModel.g.cs
 
 #nullable enable
 
@@ -72,7 +72,7 @@ namespace G
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        public global::G.ConversationHistoryTranscriptOtherToolsResultCommonModelType2? Type { get; set; }
+        public global::G.ConversationHistoryTranscriptOtherToolsResultCommonModelType? Type { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -108,7 +108,7 @@ namespace G
             string? errorType,
             string? rawErrorMessage,
             global::System.Collections.Generic.IList<global::G.DynamicVariableUpdateCommonModel>? dynamicVariableUpdates,
-            global::G.ConversationHistoryTranscriptOtherToolsResultCommonModelType2? type)
+            global::G.ConversationHistoryTranscriptOtherToolsResultCommonModelType? type)
         {
             this.RequestId = requestId ?? throw new global::System.ArgumentNullException(nameof(requestId));
             this.ToolName = toolName ?? throw new global::System.ArgumentNullException(nameof(toolName));

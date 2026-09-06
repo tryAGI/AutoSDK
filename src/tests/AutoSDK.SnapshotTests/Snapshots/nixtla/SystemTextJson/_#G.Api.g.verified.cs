@@ -1,4 +1,4 @@
-﻿//HintName: G.Api.g.cs
+//HintName: G.Api.g.cs
 
 #nullable enable
 
@@ -53,20 +53,20 @@ namespace G
                     new global::G.JsonConverters.FinetunedModelLossNullableJsonConverter(),
                     new global::G.JsonConverters.ForecastInputFinetuneLossJsonConverter(),
                     new global::G.JsonConverters.ForecastInputFinetuneLossNullableJsonConverter(),
-                    new global::G.JsonConverters.MultiSeriesCrossValidationFewshotLoss2JsonConverter(),
-                    new global::G.JsonConverters.MultiSeriesCrossValidationFewshotLoss2NullableJsonConverter(),
+                    new global::G.JsonConverters.MultiSeriesCrossValidationFewshotLossJsonConverter(),
+                    new global::G.JsonConverters.MultiSeriesCrossValidationFewshotLossNullableJsonConverter(),
                     new global::G.JsonConverters.MultiSeriesCrossValidationFinetuneLossJsonConverter(),
                     new global::G.JsonConverters.MultiSeriesCrossValidationFinetuneLossNullableJsonConverter(),
-                    new global::G.JsonConverters.MultiSeriesForecastFewshotLoss2JsonConverter(),
-                    new global::G.JsonConverters.MultiSeriesForecastFewshotLoss2NullableJsonConverter(),
+                    new global::G.JsonConverters.MultiSeriesForecastFewshotLossJsonConverter(),
+                    new global::G.JsonConverters.MultiSeriesForecastFewshotLossNullableJsonConverter(),
                     new global::G.JsonConverters.MultiSeriesForecastFinetuneLossJsonConverter(),
                     new global::G.JsonConverters.MultiSeriesForecastFinetuneLossNullableJsonConverter(),
                     new global::G.JsonConverters.OnlineAnomalyInputThresholdMethodJsonConverter(),
                     new global::G.JsonConverters.OnlineAnomalyInputThresholdMethodNullableJsonConverter(),
                     new global::G.JsonConverters.OnlineAnomalyInputFinetuneLossJsonConverter(),
                     new global::G.JsonConverters.OnlineAnomalyInputFinetuneLossNullableJsonConverter(),
-                    new global::G.JsonConverters.SingleSeriesForecastFewshotLoss2JsonConverter(),
-                    new global::G.JsonConverters.SingleSeriesForecastFewshotLoss2NullableJsonConverter(),
+                    new global::G.JsonConverters.SingleSeriesForecastFewshotLossJsonConverter(),
+                    new global::G.JsonConverters.SingleSeriesForecastFewshotLossNullableJsonConverter(),
                     new global::G.JsonConverters.SingleSeriesForecastFinetuneLossJsonConverter(),
                     new global::G.JsonConverters.SingleSeriesForecastFinetuneLossNullableJsonConverter(),
                     new global::G.JsonConverters.AnyOfJsonConverter<int?, double?>(),

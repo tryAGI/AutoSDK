@@ -1171,7 +1171,7 @@ namespace G
             string? voiceSettings = default,
             int? seed = default,
             bool? removeBackgroundNoise = default,
-            global::G.BodySpeechToSpeechV1SpeechToSpeechVoiceIdPostFileFormat2? fileFormat = default,
+            global::G.BodySpeechToSpeechV1SpeechToSpeechVoiceIdPostFileFormat? fileFormat = default,
             global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
@@ -1263,7 +1263,7 @@ namespace G
             string? voiceSettings = default,
             int? seed = default,
             bool? removeBackgroundNoise = default,
-            global::G.BodySpeechToSpeechV1SpeechToSpeechVoiceIdPostFileFormat2? fileFormat = default,
+            global::G.BodySpeechToSpeechV1SpeechToSpeechVoiceIdPostFileFormat? fileFormat = default,
             global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
@@ -1819,7 +1819,7 @@ namespace G
             string? voiceSettings = default,
             int? seed = default,
             bool? removeBackgroundNoise = default,
-            global::G.BodySpeechToSpeechV1SpeechToSpeechVoiceIdPostFileFormat2? fileFormat = default,
+            global::G.BodySpeechToSpeechV1SpeechToSpeechVoiceIdPostFileFormat? fileFormat = default,
             global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
@@ -2346,7 +2346,7 @@ namespace G
             string? voiceSettings = default,
             int? seed = default,
             bool? removeBackgroundNoise = default,
-            global::G.BodySpeechToSpeechV1SpeechToSpeechVoiceIdPostFileFormat2? fileFormat = default,
+            global::G.BodySpeechToSpeechV1SpeechToSpeechVoiceIdPostFileFormat? fileFormat = default,
             global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {

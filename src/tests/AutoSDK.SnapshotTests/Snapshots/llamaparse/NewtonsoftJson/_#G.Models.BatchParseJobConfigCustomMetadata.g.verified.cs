@@ -1,11 +1,11 @@
-﻿//HintName: G.Models.BatchParseJobConfigCustomMetadata.g.cs
+//HintName: G.Models.BatchParseJobConfigCustomMetadata.g.cs
 
 #nullable enable
 
 namespace G
 {
     /// <summary>
-    /// The custom metadata to attach to the documents.
+    /// 
     /// </summary>
     public sealed partial class BatchParseJobConfigCustomMetadata
     {

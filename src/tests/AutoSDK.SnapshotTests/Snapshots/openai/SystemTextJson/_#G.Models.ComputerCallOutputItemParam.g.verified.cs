@@ -1,4 +1,4 @@
-﻿//HintName: G.Models.ComputerCallOutputItemParam.g.cs
+//HintName: G.Models.ComputerCallOutputItemParam.g.cs
 
 #nullable enable
 
@@ -48,7 +48,7 @@ namespace G
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("status")]
-        public global::G.ComputerCallOutputItemParamStatus2? Status { get; set; }
+        public global::G.ComputerCallOutputItemParamStatus? Status { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -80,7 +80,7 @@ namespace G
             global::G.ComputerScreenshotImage output,
             string? id,
             global::System.Collections.Generic.IList<global::G.ComputerCallSafetyCheckParam>? acknowledgedSafetyChecks,
-            global::G.ComputerCallOutputItemParamStatus2? status,
+            global::G.ComputerCallOutputItemParamStatus? status,
             global::G.ComputerCallOutputItemParamType type = global::G.ComputerCallOutputItemParamType.ComputerCallOutput)
         {
             this.Id = id;

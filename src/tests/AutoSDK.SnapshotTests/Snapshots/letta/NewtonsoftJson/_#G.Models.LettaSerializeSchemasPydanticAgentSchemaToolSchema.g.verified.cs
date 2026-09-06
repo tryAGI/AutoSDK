@@ -1,4 +1,4 @@
-﻿//HintName: G.Models.LettaSerializeSchemasPydanticAgentSchemaToolSchema.g.cs
+//HintName: G.Models.LettaSerializeSchemasPydanticAgentSchemaToolSchema.g.cs
 
 #nullable enable
 
@@ -31,7 +31,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("json_schema", Required = global::Newtonsoft.Json.Required.Always)]
-        public global::G.ToolJSONSchema3 JsonSchema { get; set; } = default!;
+        public global::G.ToolJSONSchema2 JsonSchema { get; set; } = default!;
 
         /// <summary>
         /// 
@@ -105,7 +105,7 @@ namespace G
         public LettaSerializeSchemasPydanticAgentSchemaToolSchema(
             string createdAt,
             string description,
-            global::G.ToolJSONSchema3 jsonSchema,
+            global::G.ToolJSONSchema2 jsonSchema,
             string name,
             int returnCharLimit,
             string sourceType,

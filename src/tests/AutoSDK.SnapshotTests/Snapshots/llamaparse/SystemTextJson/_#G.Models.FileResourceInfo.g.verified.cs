@@ -1,11 +1,11 @@
-﻿//HintName: G.Models.FileResourceInfo.g.cs
+//HintName: G.Models.FileResourceInfo.g.cs
 
 #nullable enable
 
 namespace G
 {
     /// <summary>
-    /// Resource information for the file
+    /// 
     /// </summary>
     public sealed partial class FileResourceInfo
     {

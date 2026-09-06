@@ -1,4 +1,4 @@
-﻿//HintName: G.Models.Tool.g.cs
+//HintName: G.Models.Tool.g.cs
 
 #nullable enable
 
@@ -43,7 +43,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("annotations")]
-        public global::G.ToolAnnotations2? Annotations { get; set; }
+        public global::G.ToolAnnotations? Annotations { get; set; }
 
         /// <summary>
         /// 
@@ -73,7 +73,7 @@ namespace G
             string? title,
             string? description,
             object? outputSchema,
-            global::G.ToolAnnotations2? annotations,
+            global::G.ToolAnnotations? annotations,
             object? meta)
         {
             this.Name = name ?? throw new global::System.ArgumentNullException(nameof(name));

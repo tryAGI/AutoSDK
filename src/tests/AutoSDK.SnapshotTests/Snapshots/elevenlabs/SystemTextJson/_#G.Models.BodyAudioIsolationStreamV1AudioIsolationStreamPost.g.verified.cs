@@ -1,4 +1,4 @@
-﻿//HintName: G.Models.BodyAudioIsolationStreamV1AudioIsolationStreamPost.g.cs
+//HintName: G.Models.BodyAudioIsolationStreamV1AudioIsolationStreamPost.g.cs
 
 #nullable enable
 
@@ -28,7 +28,7 @@ namespace G
         /// Default Value: other
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("file_format")]
-        public global::G.BodyAudioIsolationStreamV1AudioIsolationStreamPostFileFormat2? FileFormat { get; set; }
+        public global::G.BodyAudioIsolationStreamV1AudioIsolationStreamPostFileFormat? FileFormat { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -55,7 +55,7 @@ namespace G
         public BodyAudioIsolationStreamV1AudioIsolationStreamPost(
             byte[] audio,
             string audioname,
-            global::G.BodyAudioIsolationStreamV1AudioIsolationStreamPostFileFormat2? fileFormat)
+            global::G.BodyAudioIsolationStreamV1AudioIsolationStreamPostFileFormat? fileFormat)
         {
             this.Audio = audio ?? throw new global::System.ArgumentNullException(nameof(audio));
             this.Audioname = audioname ?? throw new global::System.ArgumentNullException(nameof(audioname));

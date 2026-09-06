@@ -1,4 +1,4 @@
-﻿//HintName: G.IPipelinesClient.UpsertPipelineApiV1PipelinesPut.g.cs
+//HintName: G.IPipelinesClient.UpsertPipelineApiV1PipelinesPut.g.cs
 #nullable enable
 
 namespace G
@@ -109,7 +109,7 @@ namespace G
             global::G.PresetRetrievalParams? presetRetrievalParameters = default,
             global::G.LlamaParseParameters? llamaParseParameters = default,
             string? status = default,
-            global::G.PipelineMetadataConfig2? metadataConfig = default,
+            global::G.PipelineMetadataConfig? metadataConfig = default,
             global::G.PipelineType? pipelineType = default,
             global::System.Guid? managedPipelineId = default,
             global::G.AutoSDKRequestOptions? requestOptions = default,

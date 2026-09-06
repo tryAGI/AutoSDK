@@ -1,20 +1,58 @@
-﻿//HintName: G.Models.AnthropicModelSettingsVerbosity.g.cs
+//HintName: G.Models.AnthropicModelSettingsVerbosity.g.cs
 
 #nullable enable
 
 namespace G
 {
     /// <summary>
-    /// Soft control for how verbose model output should be, used for GPT-5 models.
+    /// 
     /// </summary>
-    public sealed partial class AnthropicModelSettingsVerbosity
+    public enum AnthropicModelSettingsVerbosity
     {
-
         /// <summary>
-        /// Additional properties that are not explicitly defined in the schema
+        /// 
         /// </summary>
-        [global::System.Text.Json.Serialization.JsonExtensionData]
-        public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
+        High,
+        /// <summary>
+        /// 
+        /// </summary>
+        Low,
+        /// <summary>
+        /// 
+        /// </summary>
+        Medium,
+    }
 
+    /// <summary>
+    /// Enum extensions to do fast conversions without the reflection.
+    /// </summary>
+    public static class AnthropicModelSettingsVerbosityExtensions
+    {
+        /// <summary>
+        /// Converts an enum to a string.
+        /// </summary>
+        public static string ToValueString(this AnthropicModelSettingsVerbosity value)
+        {
+            return value switch
+            {
+                AnthropicModelSettingsVerbosity.High => "high",
+                AnthropicModelSettingsVerbosity.Low => "low",
+                AnthropicModelSettingsVerbosity.Medium => "medium",
+                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
+            };
+        }
+        /// <summary>
+        /// Converts an string to a enum.
+        /// </summary>
+        public static AnthropicModelSettingsVerbosity? ToEnum(string value)
+        {
+            return value switch
+            {
+                "high" => AnthropicModelSettingsVerbosity.High,
+                "low" => AnthropicModelSettingsVerbosity.Low,
+                "medium" => AnthropicModelSettingsVerbosity.Medium,
+                _ => null,
+            };
+        }
     }
 }

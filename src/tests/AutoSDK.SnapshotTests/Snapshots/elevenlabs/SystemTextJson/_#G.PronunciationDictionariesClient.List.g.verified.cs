@@ -10,7 +10,7 @@ namespace G
             global::System.Net.Http.HttpClient httpClient,
             ref string? cursor,
             ref int? pageSize,
-            ref global::G.GetPronunciationDictionariesMetadataSort2? sort,
+            ref global::G.GetPronunciationDictionariesMetadataSort? sort,
             ref string? sortDirection,
             ref string? xiApiKey);
         partial void PrepareListRequest(
@@ -18,7 +18,7 @@ namespace G
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
             string? cursor,
             int? pageSize,
-            global::G.GetPronunciationDictionariesMetadataSort2? sort,
+            global::G.GetPronunciationDictionariesMetadataSort? sort,
             string? sortDirection,
             string? xiApiKey);
         partial void ProcessListResponse(
@@ -58,7 +58,7 @@ namespace G
         public async global::System.Threading.Tasks.Task<global::G.GetPronunciationDictionariesMetadataResponseModel> ListAsync(
             string? cursor = default,
             int? pageSize = default,
-            global::G.GetPronunciationDictionariesMetadataSort2? sort = default,
+            global::G.GetPronunciationDictionariesMetadataSort? sort = default,
             string? sortDirection = default,
             string? xiApiKey = default,
             global::G.AutoSDKRequestOptions? requestOptions = default,
@@ -104,7 +104,7 @@ namespace G
         public async global::System.Threading.Tasks.Task<global::G.AutoSDKHttpResponse<global::G.GetPronunciationDictionariesMetadataResponseModel>> ListAsResponseAsync(
             string? cursor = default,
             int? pageSize = default,
-            global::G.GetPronunciationDictionariesMetadataSort2? sort = default,
+            global::G.GetPronunciationDictionariesMetadataSort? sort = default,
             string? sortDirection = default,
             string? xiApiKey = default,
             global::G.AutoSDKRequestOptions? requestOptions = default,

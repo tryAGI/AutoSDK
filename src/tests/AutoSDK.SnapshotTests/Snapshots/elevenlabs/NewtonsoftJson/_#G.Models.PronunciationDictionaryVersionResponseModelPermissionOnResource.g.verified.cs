@@ -1,4 +1,4 @@
-﻿//HintName: G.Models.PronunciationDictionaryVersionResponseModelPermissionOnResource.g.cs
+//HintName: G.Models.PronunciationDictionaryVersionResponseModelPermissionOnResource.g.cs
 
 #nullable enable
 
@@ -7,14 +7,63 @@ namespace G
     /// <summary>
     /// 
     /// </summary>
-    public sealed partial class PronunciationDictionaryVersionResponseModelPermissionOnResource
+    [global::System.Runtime.Serialization.DataContract]
+    public enum PronunciationDictionaryVersionResponseModelPermissionOnResource
     {
-
         /// <summary>
-        /// Additional properties that are not explicitly defined in the schema
+        /// 
         /// </summary>
-        [global::Newtonsoft.Json.JsonExtensionData]
-        public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
+        [global::System.Runtime.Serialization.EnumMember(Value="admin")]
+        Admin,
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Runtime.Serialization.EnumMember(Value="commenter")]
+        Commenter,
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Runtime.Serialization.EnumMember(Value="editor")]
+        Editor,
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Runtime.Serialization.EnumMember(Value="viewer")]
+        Viewer,
+    }
 
+    /// <summary>
+    /// Enum extensions to do fast conversions without the reflection.
+    /// </summary>
+    public static class PronunciationDictionaryVersionResponseModelPermissionOnResourceExtensions
+    {
+        /// <summary>
+        /// Converts an enum to a string.
+        /// </summary>
+        public static string ToValueString(this PronunciationDictionaryVersionResponseModelPermissionOnResource value)
+        {
+            return value switch
+            {
+                PronunciationDictionaryVersionResponseModelPermissionOnResource.Admin => "admin",
+                PronunciationDictionaryVersionResponseModelPermissionOnResource.Commenter => "commenter",
+                PronunciationDictionaryVersionResponseModelPermissionOnResource.Editor => "editor",
+                PronunciationDictionaryVersionResponseModelPermissionOnResource.Viewer => "viewer",
+                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
+            };
+        }
+        /// <summary>
+        /// Converts an string to a enum.
+        /// </summary>
+        public static PronunciationDictionaryVersionResponseModelPermissionOnResource? ToEnum(string value)
+        {
+            return value switch
+            {
+                "admin" => PronunciationDictionaryVersionResponseModelPermissionOnResource.Admin,
+                "commenter" => PronunciationDictionaryVersionResponseModelPermissionOnResource.Commenter,
+                "editor" => PronunciationDictionaryVersionResponseModelPermissionOnResource.Editor,
+                "viewer" => PronunciationDictionaryVersionResponseModelPermissionOnResource.Viewer,
+                _ => null,
+            };
+        }
     }
 }

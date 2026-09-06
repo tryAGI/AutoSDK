@@ -1,11 +1,11 @@
-﻿//HintName: G.Models.CreateStreamableHTTPMCPServerCustomHeaders.g.cs
+//HintName: G.Models.CreateStreamableHTTPMCPServerCustomHeaders.g.cs
 
 #nullable enable
 
 namespace G
 {
     /// <summary>
-    /// Custom HTTP headers to include with requests
+    /// 
     /// </summary>
     public sealed partial class CreateStreamableHTTPMCPServerCustomHeaders
     {

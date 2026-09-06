@@ -1,11 +1,11 @@
-﻿//HintName: G.Models.ModelReadResAttributes.g.cs
+//HintName: G.Models.ModelReadResAttributes.g.cs
 
 #nullable enable
 
 namespace G
 {
     /// <summary>
-    /// Additional attributes stored with the model
+    /// 
     /// </summary>
     public sealed partial class ModelReadResAttributes
     {

@@ -1,4 +1,4 @@
-﻿//HintName: G.Models.CaptionStyleModel.g.cs
+//HintName: G.Models.CaptionStyleModel.g.cs
 
 #nullable enable
 
@@ -37,19 +37,19 @@ namespace G
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("text_align")]
-        public global::G.CaptionStyleModelTextAlign2? TextAlign { get; set; }
+        public global::G.CaptionStyleModelTextAlign? TextAlign { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("text_style")]
-        public global::G.CaptionStyleModelTextStyle2? TextStyle { get; set; }
+        public global::G.CaptionStyleModelTextStyle? TextStyle { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("text_weight")]
-        public global::G.CaptionStyleModelTextWeight2? TextWeight { get; set; }
+        public global::G.CaptionStyleModelTextWeight? TextWeight { get; set; }
 
         /// <summary>
         /// 
@@ -201,9 +201,9 @@ namespace G
             string? textFont,
             double? textScale,
             string? textColor,
-            global::G.CaptionStyleModelTextAlign2? textAlign,
-            global::G.CaptionStyleModelTextStyle2? textStyle,
-            global::G.CaptionStyleModelTextWeight2? textWeight,
+            global::G.CaptionStyleModelTextAlign? textAlign,
+            global::G.CaptionStyleModelTextStyle? textStyle,
+            global::G.CaptionStyleModelTextWeight? textWeight,
             global::G.StudioTextStyleShadowModel? textShadow,
             global::G.StudioTextStyleOutlineModel? textOutline,
             bool? backgroundEnabled,

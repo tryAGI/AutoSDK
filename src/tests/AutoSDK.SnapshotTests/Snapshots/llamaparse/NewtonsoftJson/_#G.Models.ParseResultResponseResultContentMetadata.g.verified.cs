@@ -1,11 +1,11 @@
-﻿//HintName: G.Models.ParseResultResponseResultContentMetadata.g.cs
+//HintName: G.Models.ParseResultResponseResultContentMetadata.g.cs
 
 #nullable enable
 
 namespace G
 {
     /// <summary>
-    /// Metadata including size, existence, and presigned URLs for result files
+    /// 
     /// </summary>
     public sealed partial class ParseResultResponseResultContentMetadata
     {

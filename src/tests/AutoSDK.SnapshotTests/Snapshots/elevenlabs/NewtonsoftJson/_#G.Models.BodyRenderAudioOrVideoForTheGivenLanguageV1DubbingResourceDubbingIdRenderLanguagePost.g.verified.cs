@@ -1,4 +1,4 @@
-﻿//HintName: G.Models.BodyRenderAudioOrVideoForTheGivenLanguageV1DubbingResourceDubbingIdRenderLanguagePost.g.cs
+//HintName: G.Models.BodyRenderAudioOrVideoForTheGivenLanguageV1DubbingResourceDubbingIdRenderLanguagePost.g.cs
 
 #nullable enable
 
@@ -13,8 +13,8 @@ namespace G
         /// The type of the render. One of ['mp4', 'aac', 'mp3', 'wav', 'aaf', 'tracks_zip', 'clips_zip']
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("render_type", Required = global::Newtonsoft.Json.Required.Always)]
-        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.RenderType2JsonConverter))]
-        public global::G.RenderType2 RenderType { get; set; } = default!;
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.RenderTypeJsonConverter))]
+        public global::G.RenderType RenderType { get; set; } = default!;
 
         /// <summary>
         /// Whether to normalize the volume of the rendered audio.<br/>
@@ -40,7 +40,7 @@ namespace G
         /// Default Value: false
         /// </param>
         public BodyRenderAudioOrVideoForTheGivenLanguageV1DubbingResourceDubbingIdRenderLanguagePost(
-            global::G.RenderType2 renderType,
+            global::G.RenderType renderType,
             bool? normalizeVolume)
         {
             this.RenderType = renderType;

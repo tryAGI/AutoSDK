@@ -1,20 +1,69 @@
-﻿//HintName: G.Models.BatchParseJobConfigPriority.g.cs
+//HintName: G.Models.BatchParseJobConfigPriority.g.cs
 
 #nullable enable
 
 namespace G
 {
     /// <summary>
-    /// The priority for the request. This field may be ignored or overwritten depending on the organization tier.
+    /// 
     /// </summary>
-    public sealed partial class BatchParseJobConfigPriority
+    [global::System.Runtime.Serialization.DataContract]
+    public enum BatchParseJobConfigPriority
     {
-
         /// <summary>
-        /// Additional properties that are not explicitly defined in the schema
+        /// 
         /// </summary>
-        [global::Newtonsoft.Json.JsonExtensionData]
-        public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
+        [global::System.Runtime.Serialization.EnumMember(Value="critical")]
+        Critical,
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Runtime.Serialization.EnumMember(Value="high")]
+        High,
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Runtime.Serialization.EnumMember(Value="low")]
+        Low,
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Runtime.Serialization.EnumMember(Value="medium")]
+        Medium,
+    }
 
+    /// <summary>
+    /// Enum extensions to do fast conversions without the reflection.
+    /// </summary>
+    public static class BatchParseJobConfigPriorityExtensions
+    {
+        /// <summary>
+        /// Converts an enum to a string.
+        /// </summary>
+        public static string ToValueString(this BatchParseJobConfigPriority value)
+        {
+            return value switch
+            {
+                BatchParseJobConfigPriority.Critical => "critical",
+                BatchParseJobConfigPriority.High => "high",
+                BatchParseJobConfigPriority.Low => "low",
+                BatchParseJobConfigPriority.Medium => "medium",
+                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
+            };
+        }
+        /// <summary>
+        /// Converts an string to a enum.
+        /// </summary>
+        public static BatchParseJobConfigPriority? ToEnum(string value)
+        {
+            return value switch
+            {
+                "critical" => BatchParseJobConfigPriority.Critical,
+                "high" => BatchParseJobConfigPriority.High,
+                "low" => BatchParseJobConfigPriority.Low,
+                "medium" => BatchParseJobConfigPriority.Medium,
+                _ => null,
+            };
+        }
     }
 }

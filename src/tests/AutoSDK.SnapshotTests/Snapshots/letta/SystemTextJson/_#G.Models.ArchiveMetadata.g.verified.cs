@@ -1,11 +1,11 @@
-﻿//HintName: G.Models.ArchiveMetadata.g.cs
+//HintName: G.Models.ArchiveMetadata.g.cs
 
 #nullable enable
 
 namespace G
 {
     /// <summary>
-    /// Additional metadata
+    /// 
     /// </summary>
     public sealed partial class ArchiveMetadata
     {

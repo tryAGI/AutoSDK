@@ -1,11 +1,11 @@
-﻿//HintName: G.Models.ToolRunFromSourceArgsJsonSchema.g.cs
+//HintName: G.Models.ToolRunFromSourceArgsJsonSchema.g.cs
 
 #nullable enable
 
 namespace G
 {
     /// <summary>
-    /// The args JSON schema of the function.
+    /// 
     /// </summary>
     public sealed partial class ToolRunFromSourceArgsJsonSchema
     {

@@ -1,11 +1,11 @@
-﻿//HintName: G.Models.PassageCreateRequestMetadata.g.cs
+//HintName: G.Models.PassageCreateRequestMetadata.g.cs
 
 #nullable enable
 
 namespace G
 {
     /// <summary>
-    /// Optional metadata for the passage
+    /// 
     /// </summary>
     public sealed partial class PassageCreateRequestMetadata
     {

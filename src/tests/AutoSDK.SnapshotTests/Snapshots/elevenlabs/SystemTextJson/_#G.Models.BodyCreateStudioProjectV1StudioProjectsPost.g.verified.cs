@@ -1,4 +1,4 @@
-﻿//HintName: G.Models.BodyCreateStudioProjectV1StudioProjectsPost.g.cs
+//HintName: G.Models.BodyCreateStudioProjectV1StudioProjectsPost.g.cs
 
 #nullable enable
 
@@ -101,7 +101,7 @@ namespace G
         /// An optional target audience of the Studio project.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("target_audience")]
-        public global::G.BodyCreateStudioProjectV1StudioProjectsPostTargetAudience2? TargetAudience { get; set; }
+        public global::G.BodyCreateStudioProjectV1StudioProjectsPostTargetAudience? TargetAudience { get; set; }
 
         /// <summary>
         /// An optional language of the Studio project. Two-letter language code (ISO 639-1).
@@ -216,7 +216,7 @@ namespace G
         /// An optional specification of whether the content of this Studio project is fiction.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("fiction")]
-        public global::G.BodyCreateStudioProjectV1StudioProjectsPostFiction2? Fiction { get; set; }
+        public global::G.BodyCreateStudioProjectV1StudioProjectsPostFiction? Fiction { get; set; }
 
         /// <summary>
         ///     This parameter controls text normalization with four modes: 'auto', 'on', 'apply_english' and 'off'.<br/>
@@ -226,7 +226,7 @@ namespace G
         ///     
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("apply_text_normalization")]
-        public global::G.BodyCreateStudioProjectV1StudioProjectsPostApplyTextNormalization2? ApplyTextNormalization { get; set; }
+        public global::G.BodyCreateStudioProjectV1StudioProjectsPostApplyTextNormalization? ApplyTextNormalization { get; set; }
 
         /// <summary>
         /// Whether to auto convert the Studio project to audio or not.<br/>
@@ -246,7 +246,7 @@ namespace G
         /// The type of Studio project to create.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("source_type")]
-        public global::G.BodyCreateStudioProjectV1StudioProjectsPostSourceType2? SourceType { get; set; }
+        public global::G.BodyCreateStudioProjectV1StudioProjectsPostSourceType? SourceType { get; set; }
 
         /// <summary>
         ///     Optional voice settings overrides for the project, encoded as a list of JSON strings.<br/>
@@ -453,7 +453,7 @@ namespace G
             string? author,
             string? description,
             global::System.Collections.Generic.IList<string>? genres,
-            global::G.BodyCreateStudioProjectV1StudioProjectsPostTargetAudience2? targetAudience,
+            global::G.BodyCreateStudioProjectV1StudioProjectsPostTargetAudience? targetAudience,
             string? language,
             string? contentType,
             string? originalPublicationDate,
@@ -463,11 +463,11 @@ namespace G
             bool? volumeNormalization,
             global::System.Collections.Generic.IList<string>? pronunciationDictionaryLocators,
             string? callbackUrl,
-            global::G.BodyCreateStudioProjectV1StudioProjectsPostFiction2? fiction,
-            global::G.BodyCreateStudioProjectV1StudioProjectsPostApplyTextNormalization2? applyTextNormalization,
+            global::G.BodyCreateStudioProjectV1StudioProjectsPostFiction? fiction,
+            global::G.BodyCreateStudioProjectV1StudioProjectsPostApplyTextNormalization? applyTextNormalization,
             bool? autoConvert,
             bool? autoAssignVoices,
-            global::G.BodyCreateStudioProjectV1StudioProjectsPostSourceType2? sourceType,
+            global::G.BodyCreateStudioProjectV1StudioProjectsPostSourceType? sourceType,
             global::System.Collections.Generic.IList<string>? voiceSettings,
             bool? createPublishingRead)
         {

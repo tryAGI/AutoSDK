@@ -1,4 +1,4 @@
-﻿//HintName: G.Models.ListRulesApiV1RunsRulesGetType.g.cs
+//HintName: G.Models.ListRulesApiV1RunsRulesGetType.g.cs
 
 #nullable enable
 
@@ -7,14 +7,49 @@ namespace G
     /// <summary>
     /// 
     /// </summary>
-    public sealed partial class ListRulesApiV1RunsRulesGetType
+    [global::System.Runtime.Serialization.DataContract]
+    public enum ListRulesApiV1RunsRulesGetType
     {
-
         /// <summary>
-        /// Additional properties that are not explicitly defined in the schema
+        /// 
         /// </summary>
-        [global::Newtonsoft.Json.JsonExtensionData]
-        public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
+        [global::System.Runtime.Serialization.EnumMember(Value="dataset")]
+        Dataset,
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Runtime.Serialization.EnumMember(Value="session")]
+        Session,
+    }
 
+    /// <summary>
+    /// Enum extensions to do fast conversions without the reflection.
+    /// </summary>
+    public static class ListRulesApiV1RunsRulesGetTypeExtensions
+    {
+        /// <summary>
+        /// Converts an enum to a string.
+        /// </summary>
+        public static string ToValueString(this ListRulesApiV1RunsRulesGetType value)
+        {
+            return value switch
+            {
+                ListRulesApiV1RunsRulesGetType.Dataset => "dataset",
+                ListRulesApiV1RunsRulesGetType.Session => "session",
+                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
+            };
+        }
+        /// <summary>
+        /// Converts an string to a enum.
+        /// </summary>
+        public static ListRulesApiV1RunsRulesGetType? ToEnum(string value)
+        {
+            return value switch
+            {
+                "dataset" => ListRulesApiV1RunsRulesGetType.Dataset,
+                "session" => ListRulesApiV1RunsRulesGetType.Session,
+                _ => null,
+            };
+        }
     }
 }

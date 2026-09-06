@@ -1,11 +1,11 @@
-﻿//HintName: G.Models.InternalTemplateAgentCreateMetadata.g.cs
+//HintName: G.Models.InternalTemplateAgentCreateMetadata.g.cs
 
 #nullable enable
 
 namespace G
 {
     /// <summary>
-    /// The metadata of the agent.
+    /// 
     /// </summary>
     public sealed partial class InternalTemplateAgentCreateMetadata
     {

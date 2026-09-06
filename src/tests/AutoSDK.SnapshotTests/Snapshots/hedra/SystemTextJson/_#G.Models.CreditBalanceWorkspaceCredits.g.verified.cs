@@ -1,11 +1,11 @@
-﻿//HintName: G.Models.CreditBalanceWorkspaceCredits.g.cs
+//HintName: G.Models.CreditBalanceWorkspaceCredits.g.cs
 
 #nullable enable
 
 namespace G
 {
     /// <summary>
-    /// Credits for each workspace mapped by workspace_id. Only included if user is in a workspace.
+    /// 
     /// </summary>
     public sealed partial class CreditBalanceWorkspaceCredits
     {

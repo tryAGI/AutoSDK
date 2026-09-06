@@ -1,11 +1,11 @@
-﻿//HintName: G.Models.FileCreateFromUrlRequestHeaders.g.cs
+//HintName: G.Models.FileCreateFromUrlRequestHeaders.g.cs
 
 #nullable enable
 
 namespace G
 {
     /// <summary>
-    /// Headers to include in the request when downloading the file
+    /// 
     /// </summary>
     public sealed partial class FileCreateFromUrlRequestHeaders
     {

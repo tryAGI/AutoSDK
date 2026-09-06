@@ -1,4 +1,4 @@
-﻿//HintName: G.ISpeechToSpeechClient.Stream.g.cs
+//HintName: G.ISpeechToSpeechClient.Stream.g.cs
 #nullable enable
 
 #pragma warning disable CS0618 // Type or member is obsolete
@@ -155,7 +155,7 @@ namespace G
             string? voiceSettings = default,
             int? seed = default,
             bool? removeBackgroundNoise = default,
-            global::G.BodySpeechToSpeechStreamingV1SpeechToSpeechVoiceIdStreamPostFileFormat2? fileFormat = default,
+            global::G.BodySpeechToSpeechStreamingV1SpeechToSpeechVoiceIdStreamPostFileFormat? fileFormat = default,
             global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
 
@@ -225,7 +225,7 @@ namespace G
             string? voiceSettings = default,
             int? seed = default,
             bool? removeBackgroundNoise = default,
-            global::G.BodySpeechToSpeechStreamingV1SpeechToSpeechVoiceIdStreamPostFileFormat2? fileFormat = default,
+            global::G.BodySpeechToSpeechStreamingV1SpeechToSpeechVoiceIdStreamPostFileFormat? fileFormat = default,
             global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
@@ -294,7 +294,7 @@ namespace G
             string? voiceSettings = default,
             int? seed = default,
             bool? removeBackgroundNoise = default,
-            global::G.BodySpeechToSpeechStreamingV1SpeechToSpeechVoiceIdStreamPostFileFormat2? fileFormat = default,
+            global::G.BodySpeechToSpeechStreamingV1SpeechToSpeechVoiceIdStreamPostFileFormat? fileFormat = default,
             global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }

@@ -1,4 +1,4 @@
-﻿//HintName: G.Models.StoreFile.g.cs
+//HintName: G.Models.StoreFile.g.cs
 
 #nullable enable
 
@@ -84,7 +84,7 @@ namespace G
         /// Configuration for the file
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("config")]
-        public global::G.StoreFileConfig2? Config { get; set; }
+        public global::G.StoreFileConfig? Config { get; set; }
 
         /// <summary>
         /// Type of the object<br/>
@@ -167,7 +167,7 @@ namespace G
             int? version,
             long? usageBytes,
             int? usageTokens,
-            global::G.StoreFileConfig2? config,
+            global::G.StoreFileConfig? config,
             string? @object,
             global::System.Collections.Generic.IList<global::G.ChunksVariant1Item3>? chunks)
         {

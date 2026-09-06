@@ -1,4 +1,4 @@
-﻿//HintName: G.Models.ExtractJobCreate.g.cs
+//HintName: G.Models.ExtractJobCreate.g.cs
 
 #nullable enable
 
@@ -13,7 +13,7 @@ namespace G
         /// The priority for the request. This field may be ignored or overwritten depending on the organization tier.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("priority")]
-        public global::G.ExtractJobCreatePriority2? Priority { get; set; }
+        public global::G.ExtractJobCreatePriority? Priority { get; set; }
 
         /// <summary>
         /// Outbound webhook endpoints to notify on job status changes
@@ -75,7 +75,7 @@ namespace G
         public ExtractJobCreate(
             global::System.Guid extractionAgentId,
             global::System.Guid fileId,
-            global::G.ExtractJobCreatePriority2? priority,
+            global::G.ExtractJobCreatePriority? priority,
             global::System.Collections.Generic.IList<global::G.WebhookConfiguration>? webhookConfigurations,
             global::G.AnyOf<object, string, object>? dataSchemaOverride,
             global::G.ExtractConfig? configOverride)

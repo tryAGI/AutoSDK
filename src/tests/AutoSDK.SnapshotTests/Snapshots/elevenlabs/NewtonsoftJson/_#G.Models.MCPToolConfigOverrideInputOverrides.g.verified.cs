@@ -1,11 +1,11 @@
-﻿//HintName: G.Models.MCPToolConfigOverrideInputOverrides.g.cs
+//HintName: G.Models.MCPToolConfigOverrideInputOverrides.g.cs
 
 #nullable enable
 
 namespace G
 {
     /// <summary>
-    /// Mapping of json path to input override configuration
+    /// 
     /// </summary>
     public sealed partial class MCPToolConfigOverrideInputOverrides
     {

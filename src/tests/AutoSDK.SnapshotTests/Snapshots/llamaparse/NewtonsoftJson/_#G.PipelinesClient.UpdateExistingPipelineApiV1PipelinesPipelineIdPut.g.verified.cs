@@ -1,4 +1,4 @@
-﻿//HintName: G.PipelinesClient.UpdateExistingPipelineApiV1PipelinesPipelineIdPut.g.cs
+//HintName: G.PipelinesClient.UpdateExistingPipelineApiV1PipelinesPipelineIdPut.g.cs
 
 #nullable enable
 
@@ -554,7 +554,7 @@ namespace G
             global::G.DataSinkCreate? dataSink = default,
             global::G.PresetRetrievalParams? presetRetrievalParameters = default,
             string? status = default,
-            global::G.PipelineMetadataConfig2? metadataConfig = default,
+            global::G.PipelineMetadataConfig? metadataConfig = default,
             string? name = default,
             global::System.Guid? managedPipelineId = default,
             global::G.AutoSDKRequestOptions? requestOptions = default,

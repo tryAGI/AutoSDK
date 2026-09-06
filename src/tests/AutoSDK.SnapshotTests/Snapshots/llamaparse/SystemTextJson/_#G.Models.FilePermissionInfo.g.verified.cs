@@ -1,11 +1,11 @@
-﻿//HintName: G.Models.FilePermissionInfo.g.cs
+//HintName: G.Models.FilePermissionInfo.g.cs
 
 #nullable enable
 
 namespace G
 {
     /// <summary>
-    /// Permission information for the file
+    /// 
     /// </summary>
     public sealed partial class FilePermissionInfo
     {

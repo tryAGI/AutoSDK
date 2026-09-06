@@ -482,7 +482,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.CustomChartSeriesFilters2? Type112 { get; set; }
+        public global::G.CustomChartSeriesFilters? Type112 { get; set; }
         /// <summary>
         /// 
         /// </summary>
@@ -570,7 +570,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.AnyOf<global::G.CustomChartSeriesFilters2, global::G.Missing, object>? Type134 { get; set; }
+        public global::G.AnyOf<global::G.CustomChartSeriesFilters, global::G.Missing, object>? Type134 { get; set; }
         /// <summary>
         /// 
         /// </summary>
@@ -1298,11 +1298,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.PlaygroundPromptCanvasPayloadArtifactLength2? Type316 { get; set; }
+        public global::G.PlaygroundPromptCanvasPayloadArtifactLength? Type316 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.PlaygroundPromptCanvasPayloadReadingLevel2? Type317 { get; set; }
+        public global::G.PlaygroundPromptCanvasPayloadReadingLevel? Type317 { get; set; }
         /// <summary>
         /// 
         /// </summary>
@@ -1534,7 +1534,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.RunStatsGroupBySeriesResponseSetBy2? Type375 { get; set; }
+        public global::G.RunStatsGroupBySeriesResponseSetBy? Type375 { get; set; }
         /// <summary>
         /// 
         /// </summary>
@@ -2014,7 +2014,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.ListRulesApiV1RunsRulesGetType2? Type495 { get; set; }
+        public global::G.ListRulesApiV1RunsRulesGetType? Type495 { get; set; }
         /// <summary>
         /// 
         /// </summary>
@@ -2022,11 +2022,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.ListReposApiV1ReposGetIsArchived2? Type497 { get; set; }
+        public global::G.ListReposApiV1ReposGetIsArchived? Type497 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.ListReposApiV1ReposGetIsPublic2? Type498 { get; set; }
+        public global::G.ListReposApiV1ReposGetIsPublic? Type498 { get; set; }
         /// <summary>
         /// 
         /// </summary>
@@ -2034,11 +2034,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.ListRepoTagsApiV1ReposTagsGetIsArchived2? Type500 { get; set; }
+        public global::G.ListRepoTagsApiV1ReposTagsGetIsArchived? Type500 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.ListRepoTagsApiV1ReposTagsGetIsPublic2? Type501 { get; set; }
+        public global::G.ListRepoTagsApiV1ReposTagsGetIsPublic? Type501 { get; set; }
         /// <summary>
         /// 
         /// </summary>

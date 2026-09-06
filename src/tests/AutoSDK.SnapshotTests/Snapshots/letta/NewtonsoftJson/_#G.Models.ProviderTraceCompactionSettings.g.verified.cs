@@ -1,11 +1,11 @@
-﻿//HintName: G.Models.ProviderTraceCompactionSettings.g.cs
+//HintName: G.Models.ProviderTraceCompactionSettings.g.cs
 
 #nullable enable
 
 namespace G
 {
     /// <summary>
-    /// Compaction/summarization settings (summarization calls only)
+    /// 
     /// </summary>
     public sealed partial class ProviderTraceCompactionSettings
     {

@@ -62,7 +62,7 @@ namespace G
             string? description = default,
             byte[]? coverImage = default,
             string? coverImagename = default,
-            global::G.PatchModelRequestVisibility8? visibility = default,
+            global::G.PatchModelRequestVisibility4? visibility = default,
             global::G.AnyOf<global::System.Collections.Generic.IList<string>, string>? tags = default,
             global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);

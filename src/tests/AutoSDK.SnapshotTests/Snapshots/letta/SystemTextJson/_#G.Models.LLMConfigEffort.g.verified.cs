@@ -1,20 +1,64 @@
-﻿//HintName: G.Models.LLMConfigEffort.g.cs
+//HintName: G.Models.LLMConfigEffort.g.cs
 
 #nullable enable
 
 namespace G
 {
     /// <summary>
-    /// The effort level for Anthropic models that support it (Opus 4.5, Opus 4.6). Controls token spending and thinking behavior. Not setting this gives similar performance to 'high'.
+    /// 
     /// </summary>
-    public sealed partial class LLMConfigEffort
+    public enum LLMConfigEffort
     {
-
         /// <summary>
-        /// Additional properties that are not explicitly defined in the schema
+        /// 
         /// </summary>
-        [global::System.Text.Json.Serialization.JsonExtensionData]
-        public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
+        High,
+        /// <summary>
+        /// 
+        /// </summary>
+        Low,
+        /// <summary>
+        /// 
+        /// </summary>
+        Max,
+        /// <summary>
+        /// 
+        /// </summary>
+        Medium,
+    }
 
+    /// <summary>
+    /// Enum extensions to do fast conversions without the reflection.
+    /// </summary>
+    public static class LLMConfigEffortExtensions
+    {
+        /// <summary>
+        /// Converts an enum to a string.
+        /// </summary>
+        public static string ToValueString(this LLMConfigEffort value)
+        {
+            return value switch
+            {
+                LLMConfigEffort.High => "high",
+                LLMConfigEffort.Low => "low",
+                LLMConfigEffort.Max => "max",
+                LLMConfigEffort.Medium => "medium",
+                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
+            };
+        }
+        /// <summary>
+        /// Converts an string to a enum.
+        /// </summary>
+        public static LLMConfigEffort? ToEnum(string value)
+        {
+            return value switch
+            {
+                "high" => LLMConfigEffort.High,
+                "low" => LLMConfigEffort.Low,
+                "max" => LLMConfigEffort.Max,
+                "medium" => LLMConfigEffort.Medium,
+                _ => null,
+            };
+        }
     }
 }

@@ -1,4 +1,4 @@
-﻿//HintName: G.IRunClient.ListRules.g.cs
+//HintName: G.IRunClient.ListRules.g.cs
 #nullable enable
 
 namespace G
@@ -20,7 +20,7 @@ namespace G
         global::System.Threading.Tasks.Task<global::System.Collections.Generic.IList<global::G.RunRulesSchema>> ListRulesAsync(
             global::System.Guid? datasetId = default,
             global::System.Guid? sessionId = default,
-            global::G.ListRulesApiV1RunsRulesGetType2? type = default,
+            global::G.ListRulesApiV1RunsRulesGetType? type = default,
             string? nameContains = default,
             global::System.Collections.Generic.IList<global::System.Guid>? id = default,
             global::G.AutoSDKRequestOptions? requestOptions = default,
@@ -40,7 +40,7 @@ namespace G
         global::System.Threading.Tasks.Task<global::G.AutoSDKHttpResponse<global::System.Collections.Generic.IList<global::G.RunRulesSchema>>> ListRulesAsResponseAsync(
             global::System.Guid? datasetId = default,
             global::System.Guid? sessionId = default,
-            global::G.ListRulesApiV1RunsRulesGetType2? type = default,
+            global::G.ListRulesApiV1RunsRulesGetType? type = default,
             string? nameContains = default,
             global::System.Collections.Generic.IList<global::System.Guid>? id = default,
             global::G.AutoSDKRequestOptions? requestOptions = default,

@@ -1,4 +1,4 @@
-﻿//HintName: G.Models.Pipeline.g.cs
+//HintName: G.Models.Pipeline.g.cs
 
 #nullable enable
 
@@ -111,13 +111,13 @@ namespace G
         /// Status of the pipeline.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("status")]
-        public global::G.PipelineStatus2? Status { get; set; }
+        public global::G.PipelineStatus? Status { get; set; }
 
         /// <summary>
         /// Metadata configuration for the pipeline.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("metadata_config")]
-        public global::G.PipelineMetadataConfig2? MetadataConfig { get; set; }
+        public global::G.PipelineMetadataConfig? MetadataConfig { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -194,8 +194,8 @@ namespace G
             global::G.PresetRetrievalParams? presetRetrievalParameters,
             global::G.LlamaParseParameters? llamaParseParameters,
             global::G.DataSink? dataSink,
-            global::G.PipelineStatus2? status,
-            global::G.PipelineMetadataConfig2? metadataConfig)
+            global::G.PipelineStatus? status,
+            global::G.PipelineMetadataConfig? metadataConfig)
         {
             this.Id = id;
             this.CreatedAt = createdAt;

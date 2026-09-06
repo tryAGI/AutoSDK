@@ -1,11 +1,11 @@
-﻿//HintName: G.Models.FolderMetadata.g.cs
+//HintName: G.Models.FolderMetadata.g.cs
 
 #nullable enable
 
 namespace G
 {
     /// <summary>
-    /// Metadata associated with the folder.
+    /// 
     /// </summary>
     public sealed partial class FolderMetadata
     {
