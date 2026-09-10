@@ -1,11 +1,11 @@
-﻿//HintName: G.Models.FineTuningResponseModelProgress.g.cs
+//HintName: G.Models.FineTuningResponseModelProgress.g.cs
 
 #nullable enable
 
 namespace G
 {
     /// <summary>
-    /// The progress of the fine-tuning process.
+    /// 
     /// </summary>
     public sealed partial class FineTuningResponseModelProgress
     {

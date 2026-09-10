@@ -1,11 +1,11 @@
-﻿//HintName: G.Models.LettaSchemasAgentFileAgentSchemaMetadata.g.cs
+//HintName: G.Models.LettaSchemasAgentFileAgentSchemaMetadata.g.cs
 
 #nullable enable
 
 namespace G
 {
     /// <summary>
-    /// The metadata of the agent.
+    /// 
     /// </summary>
     public sealed partial class LettaSchemasAgentFileAgentSchemaMetadata
     {

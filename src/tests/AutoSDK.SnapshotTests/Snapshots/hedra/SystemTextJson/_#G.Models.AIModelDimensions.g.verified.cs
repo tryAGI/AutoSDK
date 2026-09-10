@@ -1,11 +1,11 @@
-﻿//HintName: G.Models.AIModelDimensions.g.cs
+//HintName: G.Models.AIModelDimensions.g.cs
 
 #nullable enable
 
 namespace G
 {
     /// <summary>
-    /// Width and height for each aspect_ratio and resolution tuple.
+    /// 
     /// </summary>
     public sealed partial class AIModelDimensions
     {

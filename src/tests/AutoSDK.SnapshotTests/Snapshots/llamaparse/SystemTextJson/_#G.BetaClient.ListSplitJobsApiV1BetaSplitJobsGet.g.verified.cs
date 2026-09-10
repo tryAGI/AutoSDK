@@ -28,7 +28,7 @@ namespace G
             };
         partial void PrepareListSplitJobsApiV1BetaSplitJobsGetArguments(
             global::System.Net.Http.HttpClient httpClient,
-            ref global::G.ListSplitJobsApiV1BetaSplitJobsGetStatus2? status,
+            ref global::G.ListSplitJobsApiV1BetaSplitJobsGetStatus? status,
             global::System.Collections.Generic.IList<string>? jobIds,
             global::System.DateTime? createdAtOnOrAfter,
             global::System.DateTime? createdAtOnOrBefore,
@@ -40,7 +40,7 @@ namespace G
         partial void PrepareListSplitJobsApiV1BetaSplitJobsGetRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
-            global::G.ListSplitJobsApiV1BetaSplitJobsGetStatus2? status,
+            global::G.ListSplitJobsApiV1BetaSplitJobsGetStatus? status,
             global::System.Collections.Generic.IList<string>? jobIds,
             global::System.DateTime? createdAtOnOrAfter,
             global::System.DateTime? createdAtOnOrBefore,
@@ -84,7 +84,7 @@ namespace G
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::G.ApiException"></exception>
         public async global::System.Threading.Tasks.Task<global::G.SplitJobQueryResponse> ListSplitJobsApiV1BetaSplitJobsGetAsync(
-            global::G.ListSplitJobsApiV1BetaSplitJobsGetStatus2? status = default,
+            global::G.ListSplitJobsApiV1BetaSplitJobsGetStatus? status = default,
             global::System.Collections.Generic.IList<string>? jobIds = default,
             global::System.DateTime? createdAtOnOrAfter = default,
             global::System.DateTime? createdAtOnOrBefore = default,
@@ -138,7 +138,7 @@ namespace G
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::G.ApiException"></exception>
         public async global::System.Threading.Tasks.Task<global::G.AutoSDKHttpResponse<global::G.SplitJobQueryResponse>> ListSplitJobsApiV1BetaSplitJobsGetAsResponseAsync(
-            global::G.ListSplitJobsApiV1BetaSplitJobsGetStatus2? status = default,
+            global::G.ListSplitJobsApiV1BetaSplitJobsGetStatus? status = default,
             global::System.Collections.Generic.IList<string>? jobIds = default,
             global::System.DateTime? createdAtOnOrAfter = default,
             global::System.DateTime? createdAtOnOrBefore = default,

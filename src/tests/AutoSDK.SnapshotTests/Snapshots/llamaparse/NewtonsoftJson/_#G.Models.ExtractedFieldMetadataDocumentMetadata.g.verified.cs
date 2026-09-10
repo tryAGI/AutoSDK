@@ -1,11 +1,11 @@
-﻿//HintName: G.Models.ExtractedFieldMetadataDocumentMetadata.g.cs
+//HintName: G.Models.ExtractedFieldMetadataDocumentMetadata.g.cs
 
 #nullable enable
 
 namespace G
 {
     /// <summary>
-    /// Document-level metadata (citations, confidence) keyed by field name
+    /// 
     /// </summary>
     public sealed partial class ExtractedFieldMetadataDocumentMetadata
     {

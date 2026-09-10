@@ -1,11 +1,11 @@
-﻿//HintName: G.Models.CreateExperimentRequestBodyMetadata.g.cs
+//HintName: G.Models.CreateExperimentRequestBodyMetadata.g.cs
 
 #nullable enable
 
 namespace G
 {
     /// <summary>
-    /// Metadata for the experiment
+    /// 
     /// </summary>
     public sealed partial class CreateExperimentRequestBodyMetadata
     {

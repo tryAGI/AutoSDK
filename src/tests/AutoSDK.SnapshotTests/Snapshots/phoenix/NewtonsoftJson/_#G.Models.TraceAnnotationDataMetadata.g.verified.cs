@@ -1,11 +1,11 @@
-﻿//HintName: G.Models.TraceAnnotationDataMetadata.g.cs
+//HintName: G.Models.TraceAnnotationDataMetadata.g.cs
 
 #nullable enable
 
 namespace G
 {
     /// <summary>
-    /// Metadata for the annotation
+    /// 
     /// </summary>
     public sealed partial class TraceAnnotationDataMetadata
     {

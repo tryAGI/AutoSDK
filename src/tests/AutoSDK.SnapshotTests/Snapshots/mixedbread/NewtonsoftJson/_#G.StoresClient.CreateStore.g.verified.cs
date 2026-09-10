@@ -1,4 +1,4 @@
-﻿//HintName: G.StoresClient.CreateStore.g.cs
+//HintName: G.StoresClient.CreateStore.g.cs
 
 #nullable enable
 
@@ -545,7 +545,7 @@ namespace G
             bool? isPublic = default,
             global::G.ExpiresAfter? expiresAfter = default,
             object? metadata = default,
-            global::G.StoreConfig2? config = default,
+            global::G.StoreConfig? config = default,
             global::System.Collections.Generic.IList<global::System.Guid>? fileIds = default,
             global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default)

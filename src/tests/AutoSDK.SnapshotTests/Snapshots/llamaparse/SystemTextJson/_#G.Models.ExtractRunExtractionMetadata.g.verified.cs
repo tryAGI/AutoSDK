@@ -1,11 +1,11 @@
-﻿//HintName: G.Models.ExtractRunExtractionMetadata.g.cs
+//HintName: G.Models.ExtractRunExtractionMetadata.g.cs
 
 #nullable enable
 
 namespace G
 {
     /// <summary>
-    /// The metadata extracted from the file
+    /// 
     /// </summary>
     public sealed partial class ExtractRunExtractionMetadata
     {

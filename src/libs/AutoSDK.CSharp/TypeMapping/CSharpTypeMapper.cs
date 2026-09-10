@@ -541,7 +541,7 @@ public static class CSharpTypeMapper
             var child = children[i];
             if (child.Hint == Hint.ArrayItem && child.TypeData != TypeData.Default)
             {
-                return child.IsNullable || child.Schema.IsNullableOneOf()
+                return child.IsNullable || child.IsNullableAnyOfLike
                     ? child.TypeData.CSharpTypeWithNullability
                     : child.TypeData.CSharpTypeWithoutNullability;
             }

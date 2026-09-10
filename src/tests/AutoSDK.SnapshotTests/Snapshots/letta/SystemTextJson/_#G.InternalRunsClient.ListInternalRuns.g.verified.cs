@@ -64,7 +64,7 @@ namespace G
             ref string? conversationId,
             int? durationPercentile,
             int? durationValue,
-            ref global::G.ListInternalRunsDurationOperator2? durationOperator,
+            ref global::G.ListInternalRunsDurationOperator? durationOperator,
             global::System.DateTime? startDate,
             global::System.DateTime? endDate);
         partial void PrepareListInternalRunsRequest(
@@ -91,7 +91,7 @@ namespace G
             string? conversationId,
             int? durationPercentile,
             int? durationValue,
-            global::G.ListInternalRunsDurationOperator2? durationOperator,
+            global::G.ListInternalRunsDurationOperator? durationOperator,
             global::System.DateTime? startDate,
             global::System.DateTime? endDate);
         partial void ProcessListInternalRunsResponse(
@@ -210,7 +210,7 @@ namespace G
             string? conversationId = default,
             int? durationPercentile = default,
             int? durationValue = default,
-            global::G.ListInternalRunsDurationOperator2? durationOperator = default,
+            global::G.ListInternalRunsDurationOperator? durationOperator = default,
             global::System.DateTime? startDate = default,
             global::System.DateTime? endDate = default,
             global::G.AutoSDKRequestOptions? requestOptions = default,
@@ -354,7 +354,7 @@ namespace G
             string? conversationId = default,
             int? durationPercentile = default,
             int? durationValue = default,
-            global::G.ListInternalRunsDurationOperator2? durationOperator = default,
+            global::G.ListInternalRunsDurationOperator? durationOperator = default,
             global::System.DateTime? startDate = default,
             global::System.DateTime? endDate = default,
             global::G.AutoSDKRequestOptions? requestOptions = default,

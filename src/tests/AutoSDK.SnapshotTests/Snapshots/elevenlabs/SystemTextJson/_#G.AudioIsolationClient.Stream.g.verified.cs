@@ -470,7 +470,7 @@ namespace G
             byte[] audio,
             string audioname,
             string? xiApiKey = default,
-            global::G.BodyAudioIsolationStreamV1AudioIsolationStreamPostFileFormat2? fileFormat = default,
+            global::G.BodyAudioIsolationStreamV1AudioIsolationStreamPostFileFormat? fileFormat = default,
             global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
@@ -512,7 +512,7 @@ namespace G
             global::System.IO.Stream audio,
             string audioname,
             string? xiApiKey = default,
-            global::G.BodyAudioIsolationStreamV1AudioIsolationStreamPostFileFormat2? fileFormat = default,
+            global::G.BodyAudioIsolationStreamV1AudioIsolationStreamPostFileFormat? fileFormat = default,
             global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
@@ -923,7 +923,7 @@ namespace G
             global::System.IO.Stream audio,
             string audioname,
             string? xiApiKey = default,
-            global::G.BodyAudioIsolationStreamV1AudioIsolationStreamPostFileFormat2? fileFormat = default,
+            global::G.BodyAudioIsolationStreamV1AudioIsolationStreamPostFileFormat? fileFormat = default,
             global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {

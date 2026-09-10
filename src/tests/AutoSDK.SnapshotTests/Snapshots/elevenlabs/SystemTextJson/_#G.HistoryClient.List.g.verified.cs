@@ -14,9 +14,9 @@ namespace G
             ref string? modelId,
             int? dateBeforeUnix,
             int? dateAfterUnix,
-            ref global::G.GetSpeechHistorySortDirection2? sortDirection,
+            ref global::G.GetSpeechHistorySortDirection? sortDirection,
             ref string? search,
-            ref global::G.GetSpeechHistorySource2? source,
+            ref global::G.GetSpeechHistorySource? source,
             ref string? xiApiKey);
         partial void PrepareListRequest(
             global::System.Net.Http.HttpClient httpClient,
@@ -27,9 +27,9 @@ namespace G
             string? modelId,
             int? dateBeforeUnix,
             int? dateAfterUnix,
-            global::G.GetSpeechHistorySortDirection2? sortDirection,
+            global::G.GetSpeechHistorySortDirection? sortDirection,
             string? search,
-            global::G.GetSpeechHistorySource2? source,
+            global::G.GetSpeechHistorySource? source,
             string? xiApiKey);
         partial void ProcessListResponse(
             global::System.Net.Http.HttpClient httpClient,
@@ -86,9 +86,9 @@ namespace G
             string? modelId = default,
             int? dateBeforeUnix = default,
             int? dateAfterUnix = default,
-            global::G.GetSpeechHistorySortDirection2? sortDirection = default,
+            global::G.GetSpeechHistorySortDirection? sortDirection = default,
             string? search = default,
-            global::G.GetSpeechHistorySource2? source = default,
+            global::G.GetSpeechHistorySource? source = default,
             string? xiApiKey = default,
             global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default)
@@ -156,9 +156,9 @@ namespace G
             string? modelId = default,
             int? dateBeforeUnix = default,
             int? dateAfterUnix = default,
-            global::G.GetSpeechHistorySortDirection2? sortDirection = default,
+            global::G.GetSpeechHistorySortDirection? sortDirection = default,
             string? search = default,
-            global::G.GetSpeechHistorySource2? source = default,
+            global::G.GetSpeechHistorySource? source = default,
             string? xiApiKey = default,
             global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default)

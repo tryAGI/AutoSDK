@@ -1,4 +1,4 @@
-﻿//HintName: G.Api.g.cs
+//HintName: G.Api.g.cs
 
 #nullable enable
 
@@ -245,9 +245,9 @@ namespace G
 
                     new global::G.JsonConverters.BetaMessageRoleNullableJsonConverter(),
 
-                    new global::G.JsonConverters.BetaMessageStopReason2JsonConverter(),
+                    new global::G.JsonConverters.BetaMessageStopReasonJsonConverter(),
 
-                    new global::G.JsonConverters.BetaMessageStopReason2NullableJsonConverter(),
+                    new global::G.JsonConverters.BetaMessageStopReasonNullableJsonConverter(),
 
                     new global::G.JsonConverters.BetaMessageBatchTypeJsonConverter(),
 
@@ -261,9 +261,9 @@ namespace G
 
                     new global::G.JsonConverters.BetaMessageBatchIndividualResponseResultDiscriminatorTypeNullableJsonConverter(),
 
-                    new global::G.JsonConverters.BetaMessageDeltaStopReason2JsonConverter(),
+                    new global::G.JsonConverters.BetaMessageDeltaStopReasonJsonConverter(),
 
-                    new global::G.JsonConverters.BetaMessageDeltaStopReason2NullableJsonConverter(),
+                    new global::G.JsonConverters.BetaMessageDeltaStopReasonNullableJsonConverter(),
 
                     new global::G.JsonConverters.BetaMessageDeltaEventTypeJsonConverter(),
 
@@ -465,9 +465,9 @@ namespace G
 
                     new global::G.JsonConverters.BetaThinkingContentBlockDeltaTypeNullableJsonConverter(),
 
-                    new global::G.JsonConverters.BetaToolType2JsonConverter(),
+                    new global::G.JsonConverters.BetaToolTypeJsonConverter(),
 
-                    new global::G.JsonConverters.BetaToolType2NullableJsonConverter(),
+                    new global::G.JsonConverters.BetaToolTypeNullableJsonConverter(),
 
                     new global::G.JsonConverters.BetaToolCacheControlVariant1DiscriminatorTypeJsonConverter(),
 
@@ -593,9 +593,9 @@ namespace G
 
                     new global::G.JsonConverters.MessageRoleNullableJsonConverter(),
 
-                    new global::G.JsonConverters.MessageStopReason2JsonConverter(),
+                    new global::G.JsonConverters.MessageStopReasonJsonConverter(),
 
-                    new global::G.JsonConverters.MessageStopReason2NullableJsonConverter(),
+                    new global::G.JsonConverters.MessageStopReasonNullableJsonConverter(),
 
                     new global::G.JsonConverters.MessageBatchTypeJsonConverter(),
 
@@ -609,9 +609,9 @@ namespace G
 
                     new global::G.JsonConverters.MessageBatchIndividualResponseResultDiscriminatorTypeNullableJsonConverter(),
 
-                    new global::G.JsonConverters.MessageDeltaStopReason2JsonConverter(),
+                    new global::G.JsonConverters.MessageDeltaStopReasonJsonConverter(),
 
-                    new global::G.JsonConverters.MessageDeltaStopReason2NullableJsonConverter(),
+                    new global::G.JsonConverters.MessageDeltaStopReasonNullableJsonConverter(),
 
                     new global::G.JsonConverters.MessageDeltaEventTypeJsonConverter(),
 

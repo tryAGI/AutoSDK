@@ -1,11 +1,11 @@
-﻿//HintName: G.Models.ExtractV2SchemaGenerateRequestDataSchema.g.cs
+//HintName: G.Models.ExtractV2SchemaGenerateRequestDataSchema.g.cs
 
 #nullable enable
 
 namespace G
 {
     /// <summary>
-    /// Optional schema to validate, refine, or extend
+    /// 
     /// </summary>
     public sealed partial class ExtractV2SchemaGenerateRequestDataSchema
     {

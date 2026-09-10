@@ -1,4 +1,4 @@
-﻿//HintName: G.IV2Client.ListClassifyJobsApiV2ClassifyGet.g.cs
+//HintName: G.IV2Client.ListClassifyJobsApiV2ClassifyGet.g.cs
 #nullable enable
 
 namespace G
@@ -41,7 +41,7 @@ namespace G
         global::System.Threading.Tasks.Task<global::G.ClassifyV2JobQueryResponse> ListClassifyJobsApiV2ClassifyGetAsync(
             int? pageSize = default,
             string? pageToken = default,
-            global::G.ListClassifyJobsApiV2ClassifyGetStatus2? status = default,
+            global::G.ListClassifyJobsApiV2ClassifyGetStatus? status = default,
             global::System.Collections.Generic.IList<string>? jobIds = default,
             string? configurationId = default,
             global::System.DateTime? createdAtOnOrAfter = default,
@@ -87,7 +87,7 @@ namespace G
         global::System.Threading.Tasks.Task<global::G.AutoSDKHttpResponse<global::G.ClassifyV2JobQueryResponse>> ListClassifyJobsApiV2ClassifyGetAsResponseAsync(
             int? pageSize = default,
             string? pageToken = default,
-            global::G.ListClassifyJobsApiV2ClassifyGetStatus2? status = default,
+            global::G.ListClassifyJobsApiV2ClassifyGetStatus? status = default,
             global::System.Collections.Generic.IList<string>? jobIds = default,
             string? configurationId = default,
             global::System.DateTime? createdAtOnOrAfter = default,

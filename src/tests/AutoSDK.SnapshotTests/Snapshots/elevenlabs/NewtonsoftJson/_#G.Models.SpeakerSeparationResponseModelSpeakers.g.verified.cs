@@ -1,11 +1,11 @@
-﻿//HintName: G.Models.SpeakerSeparationResponseModelSpeakers.g.cs
+//HintName: G.Models.SpeakerSeparationResponseModelSpeakers.g.cs
 
 #nullable enable
 
 namespace G
 {
     /// <summary>
-    /// The speakers of the sample.
+    /// 
     /// </summary>
     public sealed partial class SpeakerSeparationResponseModelSpeakers
     {

@@ -1,11 +1,11 @@
-﻿//HintName: G.Models.BodyCreateANewBranchV1ConvaiAgentsAgentIdBranchesPostConversationConfig.g.cs
+//HintName: G.Models.BodyCreateANewBranchV1ConvaiAgentsAgentIdBranchesPostConversationConfig.g.cs
 
 #nullable enable
 
 namespace G
 {
     /// <summary>
-    /// Changes to apply to conversation config
+    /// 
     /// </summary>
     public sealed partial class BodyCreateANewBranchV1ConvaiAgentsAgentIdBranchesPostConversationConfig
     {

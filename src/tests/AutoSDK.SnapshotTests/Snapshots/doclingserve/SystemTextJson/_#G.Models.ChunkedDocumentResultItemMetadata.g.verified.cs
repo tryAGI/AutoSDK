@@ -1,11 +1,11 @@
-﻿//HintName: G.Models.ChunkedDocumentResultItemMetadata.g.cs
+//HintName: G.Models.ChunkedDocumentResultItemMetadata.g.cs
 
 #nullable enable
 
 namespace G
 {
     /// <summary>
-    /// Additional metadata associated with this chunk
+    /// 
     /// </summary>
     public sealed partial class ChunkedDocumentResultItemMetadata
     {

@@ -1,11 +1,11 @@
-﻿//HintName: G.Models.SourceCreateMetadata.g.cs
+//HintName: G.Models.SourceCreateMetadata.g.cs
 
 #nullable enable
 
 namespace G
 {
     /// <summary>
-    /// Metadata associated with the source.
+    /// 
     /// </summary>
     public sealed partial class SourceCreateMetadata
     {

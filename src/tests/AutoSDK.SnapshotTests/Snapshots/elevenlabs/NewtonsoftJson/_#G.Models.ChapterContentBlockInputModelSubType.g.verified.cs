@@ -1,4 +1,4 @@
-﻿//HintName: G.Models.ChapterContentBlockInputModelSubType.g.cs
+//HintName: G.Models.ChapterContentBlockInputModelSubType.g.cs
 
 #nullable enable
 
@@ -7,14 +7,63 @@ namespace G
     /// <summary>
     /// 
     /// </summary>
-    public sealed partial class ChapterContentBlockInputModelSubType
+    [global::System.Runtime.Serialization.DataContract]
+    public enum ChapterContentBlockInputModelSubType
     {
-
         /// <summary>
-        /// Additional properties that are not explicitly defined in the schema
+        /// 
         /// </summary>
-        [global::Newtonsoft.Json.JsonExtensionData]
-        public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
+        [global::System.Runtime.Serialization.EnumMember(Value="h1")]
+        H1,
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Runtime.Serialization.EnumMember(Value="h2")]
+        H2,
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Runtime.Serialization.EnumMember(Value="h3")]
+        H3,
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Runtime.Serialization.EnumMember(Value="p")]
+        P,
+    }
 
+    /// <summary>
+    /// Enum extensions to do fast conversions without the reflection.
+    /// </summary>
+    public static class ChapterContentBlockInputModelSubTypeExtensions
+    {
+        /// <summary>
+        /// Converts an enum to a string.
+        /// </summary>
+        public static string ToValueString(this ChapterContentBlockInputModelSubType value)
+        {
+            return value switch
+            {
+                ChapterContentBlockInputModelSubType.H1 => "h1",
+                ChapterContentBlockInputModelSubType.H2 => "h2",
+                ChapterContentBlockInputModelSubType.H3 => "h3",
+                ChapterContentBlockInputModelSubType.P => "p",
+                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
+            };
+        }
+        /// <summary>
+        /// Converts an string to a enum.
+        /// </summary>
+        public static ChapterContentBlockInputModelSubType? ToEnum(string value)
+        {
+            return value switch
+            {
+                "h1" => ChapterContentBlockInputModelSubType.H1,
+                "h2" => ChapterContentBlockInputModelSubType.H2,
+                "h3" => ChapterContentBlockInputModelSubType.H3,
+                "p" => ChapterContentBlockInputModelSubType.P,
+                _ => null,
+            };
+        }
     }
 }

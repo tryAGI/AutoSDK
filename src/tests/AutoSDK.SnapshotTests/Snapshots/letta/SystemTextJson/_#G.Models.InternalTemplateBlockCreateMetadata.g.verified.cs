@@ -1,12 +1,11 @@
-﻿//HintName: G.Models.InternalTemplateBlockCreateMetadata.g.cs
+//HintName: G.Models.InternalTemplateBlockCreateMetadata.g.cs
 
 #nullable enable
 
 namespace G
 {
     /// <summary>
-    /// Metadata of the block.<br/>
-    /// Default Value: {}
+    /// 
     /// </summary>
     public sealed partial class InternalTemplateBlockCreateMetadata
     {

@@ -1,20 +1,69 @@
-﻿//HintName: G.Models.SpeechHistoryItemResponseModelVoiceCategory.g.cs
+//HintName: G.Models.SpeechHistoryItemResponseModelVoiceCategory.g.cs
 
 #nullable enable
 
 namespace G
 {
     /// <summary>
-    /// The category of the voice. Either 'premade', 'cloned', 'generated' or 'professional'.
+    /// 
     /// </summary>
-    public sealed partial class SpeechHistoryItemResponseModelVoiceCategory
+    [global::System.Runtime.Serialization.DataContract]
+    public enum SpeechHistoryItemResponseModelVoiceCategory
     {
-
         /// <summary>
-        /// Additional properties that are not explicitly defined in the schema
+        /// 
         /// </summary>
-        [global::Newtonsoft.Json.JsonExtensionData]
-        public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
+        [global::System.Runtime.Serialization.EnumMember(Value="cloned")]
+        Cloned,
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Runtime.Serialization.EnumMember(Value="generated")]
+        Generated,
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Runtime.Serialization.EnumMember(Value="premade")]
+        Premade,
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Runtime.Serialization.EnumMember(Value="professional")]
+        Professional,
+    }
 
+    /// <summary>
+    /// Enum extensions to do fast conversions without the reflection.
+    /// </summary>
+    public static class SpeechHistoryItemResponseModelVoiceCategoryExtensions
+    {
+        /// <summary>
+        /// Converts an enum to a string.
+        /// </summary>
+        public static string ToValueString(this SpeechHistoryItemResponseModelVoiceCategory value)
+        {
+            return value switch
+            {
+                SpeechHistoryItemResponseModelVoiceCategory.Cloned => "cloned",
+                SpeechHistoryItemResponseModelVoiceCategory.Generated => "generated",
+                SpeechHistoryItemResponseModelVoiceCategory.Premade => "premade",
+                SpeechHistoryItemResponseModelVoiceCategory.Professional => "professional",
+                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
+            };
+        }
+        /// <summary>
+        /// Converts an string to a enum.
+        /// </summary>
+        public static SpeechHistoryItemResponseModelVoiceCategory? ToEnum(string value)
+        {
+            return value switch
+            {
+                "cloned" => SpeechHistoryItemResponseModelVoiceCategory.Cloned,
+                "generated" => SpeechHistoryItemResponseModelVoiceCategory.Generated,
+                "premade" => SpeechHistoryItemResponseModelVoiceCategory.Premade,
+                "professional" => SpeechHistoryItemResponseModelVoiceCategory.Professional,
+                _ => null,
+            };
+        }
     }
 }

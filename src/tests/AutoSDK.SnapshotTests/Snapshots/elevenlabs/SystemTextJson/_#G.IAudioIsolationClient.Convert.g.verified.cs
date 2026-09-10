@@ -1,4 +1,4 @@
-﻿//HintName: G.IAudioIsolationClient.Convert.g.cs
+//HintName: G.IAudioIsolationClient.Convert.g.cs
 #nullable enable
 
 namespace G
@@ -83,7 +83,7 @@ namespace G
             byte[] audio,
             string audioname,
             string? xiApiKey = default,
-            global::G.BodyAudioIsolationV1AudioIsolationPostFileFormat2? fileFormat = default,
+            global::G.BodyAudioIsolationV1AudioIsolationPostFileFormat? fileFormat = default,
             string? previewB64 = default,
             global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
@@ -115,7 +115,7 @@ namespace G
             global::System.IO.Stream audio,
             string audioname,
             string? xiApiKey = default,
-            global::G.BodyAudioIsolationV1AudioIsolationPostFileFormat2? fileFormat = default,
+            global::G.BodyAudioIsolationV1AudioIsolationPostFileFormat? fileFormat = default,
             string? previewB64 = default,
             global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
@@ -146,7 +146,7 @@ namespace G
             global::System.IO.Stream audio,
             string audioname,
             string? xiApiKey = default,
-            global::G.BodyAudioIsolationV1AudioIsolationPostFileFormat2? fileFormat = default,
+            global::G.BodyAudioIsolationV1AudioIsolationPostFileFormat? fileFormat = default,
             string? previewB64 = default,
             global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
@@ -177,7 +177,7 @@ namespace G
             global::System.IO.Stream audio,
             string audioname,
             string? xiApiKey = default,
-            global::G.BodyAudioIsolationV1AudioIsolationPostFileFormat2? fileFormat = default,
+            global::G.BodyAudioIsolationV1AudioIsolationPostFileFormat? fileFormat = default,
             string? previewB64 = default,
             global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);

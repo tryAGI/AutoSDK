@@ -1,11 +1,11 @@
-﻿//HintName: G.Models.EvaluationRunFinishBodySummary.g.cs
+//HintName: G.Models.EvaluationRunFinishBodySummary.g.cs
 
 #nullable enable
 
 namespace G
 {
     /// <summary>
-    /// Optional summary dictionary for the evaluation run
+    /// 
     /// </summary>
     public sealed partial class EvaluationRunFinishBodySummary
     {

@@ -132,12 +132,12 @@ public static class Data
             }
             else
             {
-                if (schema.IsClass && !schema.Schema.IsNullableOneOf())
+                if (schema.IsClass && !schema.IsNullableUnionWrapper)
                 {
                     classCount++;
                 }
 
-                if (schema.IsEnum)
+                if (schema.IsEnum && !schema.IsNullableUnionWrapper)
                 {
                     enumCount++;
                 }

@@ -1,11 +1,11 @@
-﻿//HintName: G.Models.DeleteRequestFilter.g.cs
+//HintName: G.Models.DeleteRequestFilter.g.cs
 
 #nullable enable
 
 namespace G
 {
     /// <summary>
-    /// Optional filters to select which items to delete
+    /// 
     /// </summary>
     public sealed partial class DeleteRequestFilter
     {

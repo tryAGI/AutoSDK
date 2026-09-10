@@ -1,4 +1,4 @@
-﻿//HintName: G.Models.GeneratedVideoInputs.g.cs
+//HintName: G.Models.GeneratedVideoInputs.g.cs
 
 #nullable enable
 
@@ -49,7 +49,7 @@ namespace G
         /// For motion control models: 'video' matches reference video orientation (better for complex motions, max 30s), 'image' preserves character image orientation (better for camera movements, max 10s).
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("character_orientation")]
-        public global::G.GeneratedVideoInputsCharacterOrientation2? CharacterOrientation { get; set; }
+        public global::G.GeneratedVideoInputsCharacterOrientation? CharacterOrientation { get; set; }
 
         /// <summary>
         /// If true, automatically enhance the prompt before generation.<br/>
@@ -117,7 +117,7 @@ namespace G
             string? aspectRatio,
             int? durationMs,
             global::G.AnyOf<global::System.Collections.Generic.IList<double>, global::System.Collections.Generic.IList<global::System.Collections.Generic.IList<double>>, object>? boundingBoxTarget,
-            global::G.GeneratedVideoInputsCharacterOrientation2? characterOrientation,
+            global::G.GeneratedVideoInputsCharacterOrientation? characterOrientation,
             bool? enhancePrompt,
             global::System.Collections.Generic.IList<global::G.VideoShot>? multiPrompt,
             string? shotType)

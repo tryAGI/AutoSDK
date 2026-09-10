@@ -1,4 +1,4 @@
-﻿//HintName: G.Models.BodyAudioIsolationV1AudioIsolationPost.g.cs
+//HintName: G.Models.BodyAudioIsolationV1AudioIsolationPost.g.cs
 
 #nullable enable
 
@@ -28,7 +28,7 @@ namespace G
         /// Default Value: other
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("file_format")]
-        public global::G.BodyAudioIsolationV1AudioIsolationPostFileFormat2? FileFormat { get; set; }
+        public global::G.BodyAudioIsolationV1AudioIsolationPostFileFormat? FileFormat { get; set; }
 
         /// <summary>
         /// Optional preview image base64 for tracking this generation.
@@ -64,7 +64,7 @@ namespace G
         public BodyAudioIsolationV1AudioIsolationPost(
             byte[] audio,
             string audioname,
-            global::G.BodyAudioIsolationV1AudioIsolationPostFileFormat2? fileFormat,
+            global::G.BodyAudioIsolationV1AudioIsolationPostFileFormat? fileFormat,
             string? previewB64)
         {
             this.Audio = audio ?? throw new global::System.ArgumentNullException(nameof(audio));

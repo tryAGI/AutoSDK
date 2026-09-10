@@ -1,11 +1,11 @@
-﻿//HintName: G.Models.UpdateAgentSecrets.g.cs
+//HintName: G.Models.UpdateAgentSecrets.g.cs
 
 #nullable enable
 
 namespace G
 {
     /// <summary>
-    /// The environment variables for tool execution specific to this agent.
+    /// 
     /// </summary>
     public sealed partial class UpdateAgentSecrets
     {

@@ -358,7 +358,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.GeneratedVideoInputsCharacterOrientation2? Type81 { get; set; }
+        public global::G.GeneratedVideoInputsCharacterOrientation? Type81 { get; set; }
         /// <summary>
         /// 
         /// </summary>
@@ -386,7 +386,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.GenerationError2? Type88 { get; set; }
+        public global::G.GenerationError? Type88 { get; set; }
         /// <summary>
         /// 
         /// </summary>

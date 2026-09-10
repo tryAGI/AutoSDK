@@ -1,11 +1,11 @@
-﻿//HintName: G.Models.WebhookConfigurationWebhookHeaders.g.cs
+//HintName: G.Models.WebhookConfigurationWebhookHeaders.g.cs
 
 #nullable enable
 
 namespace G
 {
     /// <summary>
-    /// Custom HTTP headers sent with each webhook request (e.g. auth tokens)
+    /// 
     /// </summary>
     public sealed partial class WebhookConfigurationWebhookHeaders
     {

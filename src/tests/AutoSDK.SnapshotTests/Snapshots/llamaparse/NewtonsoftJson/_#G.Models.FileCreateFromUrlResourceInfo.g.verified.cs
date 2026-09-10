@@ -1,11 +1,11 @@
-﻿//HintName: G.Models.FileCreateFromUrlResourceInfo.g.cs
+//HintName: G.Models.FileCreateFromUrlResourceInfo.g.cs
 
 #nullable enable
 
 namespace G
 {
     /// <summary>
-    /// Resource information for the file
+    /// 
     /// </summary>
     public sealed partial class FileCreateFromUrlResourceInfo
     {

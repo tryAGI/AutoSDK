@@ -1,4 +1,4 @@
-﻿//HintName: G.Models.Batch.g.cs
+//HintName: G.Models.Batch.g.cs
 
 #nullable enable
 
@@ -28,7 +28,7 @@ namespace G
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("payloads")]
-        public global::System.Collections.Generic.IList<global::G.Payload>? Payloads { get; set; }
+        public global::System.Collections.Generic.IList<global::G.Payload?>? Payloads { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -48,7 +48,7 @@ namespace G
         public Batch(
             global::System.Collections.Generic.IList<global::G.ExtendedPointId> ids,
             global::G.BatchVectorStruct vectors,
-            global::System.Collections.Generic.IList<global::G.Payload>? payloads)
+            global::System.Collections.Generic.IList<global::G.Payload?>? payloads)
         {
             this.Ids = ids ?? throw new global::System.ArgumentNullException(nameof(ids));
             this.Vectors = vectors;

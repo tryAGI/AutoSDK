@@ -1,4 +1,4 @@
-﻿//HintName: G.Models.BetaTool.g.cs
+//HintName: G.Models.BetaTool.g.cs
 
 #nullable enable
 
@@ -13,7 +13,7 @@ namespace G
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        public global::G.BetaToolType2? Type { get; set; }
+        public global::G.BetaToolType? Type { get; set; }
 
         /// <summary>
         /// Description of what this tool does.<br/>
@@ -73,7 +73,7 @@ namespace G
         public BetaTool(
             string name,
             global::G.BetaInputSchema inputSchema,
-            global::G.BetaToolType2? type,
+            global::G.BetaToolType? type,
             string? description,
             global::G.CacheControlVariant113? cacheControl)
         {

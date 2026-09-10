@@ -1,11 +1,11 @@
-﻿//HintName: G.Models.LettaSchemasMessageToolReturnInputToolCallId.g.cs
+//HintName: G.Models.LettaSchemasMessageToolReturnInputToolCallId.g.cs
 
 #nullable enable
 
 namespace G
 {
     /// <summary>
-    /// The ID for the tool call
+    /// 
     /// </summary>
     public sealed partial class LettaSchemasMessageToolReturnInputToolCallId
     {

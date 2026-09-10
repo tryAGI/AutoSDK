@@ -1,4 +1,4 @@
-﻿//HintName: G.Models.BetaMessage.g.cs
+//HintName: G.Models.BetaMessage.g.cs
 
 #pragma warning disable CS0618 // Type or member is obsolete
 
@@ -77,7 +77,7 @@ namespace G
         /// In non-streaming mode this value is always non-null. In streaming mode, it is null in the `message_start` event and non-null otherwise.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("stop_reason")]
-        public global::G.BetaMessageStopReason2? StopReason { get; set; }
+        public global::G.BetaMessageStopReason? StopReason { get; set; }
 
         /// <summary>
         /// Which custom stop sequence was generated, if any.<br/>
@@ -169,7 +169,7 @@ namespace G
             global::System.Collections.Generic.IList<global::G.BetaContentBlock> content,
             global::G.Model model,
             global::G.BetaUsage usage,
-            global::G.BetaMessageStopReason2? stopReason,
+            global::G.BetaMessageStopReason? stopReason,
             string? stopSequence,
             global::G.BetaMessageType type = global::G.BetaMessageType.Message,
             global::G.BetaMessageRole role = global::G.BetaMessageRole.Assistant)

@@ -1,4 +1,4 @@
-﻿//HintName: G.IReposClient.ListRepoTags.g.cs
+//HintName: G.IReposClient.ListRepoTags.g.cs
 #nullable enable
 
 namespace G
@@ -36,8 +36,8 @@ namespace G
             string? query = default,
             bool? hasCommits = default,
             global::System.Collections.Generic.IList<string>? tags = default,
-            global::G.ListRepoTagsApiV1ReposTagsGetIsArchived2? isArchived = default,
-            global::G.ListRepoTagsApiV1ReposTagsGetIsPublic2? isPublic = default,
+            global::G.ListRepoTagsApiV1ReposTagsGetIsArchived? isArchived = default,
+            global::G.ListRepoTagsApiV1ReposTagsGetIsPublic? isPublic = default,
             string? upstreamRepoOwner = default,
             string? upstreamRepoHandle = default,
             global::System.Collections.Generic.IList<global::System.Guid>? tagValueId = default,
@@ -74,8 +74,8 @@ namespace G
             string? query = default,
             bool? hasCommits = default,
             global::System.Collections.Generic.IList<string>? tags = default,
-            global::G.ListRepoTagsApiV1ReposTagsGetIsArchived2? isArchived = default,
-            global::G.ListRepoTagsApiV1ReposTagsGetIsPublic2? isPublic = default,
+            global::G.ListRepoTagsApiV1ReposTagsGetIsArchived? isArchived = default,
+            global::G.ListRepoTagsApiV1ReposTagsGetIsPublic? isPublic = default,
             string? upstreamRepoOwner = default,
             string? upstreamRepoHandle = default,
             global::System.Collections.Generic.IList<global::System.Guid>? tagValueId = default,

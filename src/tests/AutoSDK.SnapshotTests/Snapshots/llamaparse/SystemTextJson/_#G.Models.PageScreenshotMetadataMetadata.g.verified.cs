@@ -1,11 +1,11 @@
-﻿//HintName: G.Models.PageScreenshotMetadataMetadata.g.cs
+//HintName: G.Models.PageScreenshotMetadataMetadata.g.cs
 
 #nullable enable
 
 namespace G
 {
     /// <summary>
-    /// Metadata for the screenshot
+    /// 
     /// </summary>
     public sealed partial class PageScreenshotMetadataMetadata
     {

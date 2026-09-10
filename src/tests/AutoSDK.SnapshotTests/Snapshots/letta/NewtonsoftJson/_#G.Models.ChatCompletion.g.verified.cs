@@ -1,4 +1,4 @@
-﻿//HintName: G.Models.ChatCompletion.g.cs
+//HintName: G.Models.ChatCompletion.g.cs
 
 #nullable enable
 
@@ -44,7 +44,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("service_tier")]
-        public global::G.ChatCompletionServiceTier2? ServiceTier { get; set; }
+        public global::G.ChatCompletionServiceTier? ServiceTier { get; set; }
 
         /// <summary>
         /// 
@@ -80,7 +80,7 @@ namespace G
             global::System.Collections.Generic.IList<global::G.Choice> choices,
             int created,
             string model,
-            global::G.ChatCompletionServiceTier2? serviceTier,
+            global::G.ChatCompletionServiceTier? serviceTier,
             string? systemFingerprint,
             global::G.CompletionUsage? usage,
             string @object = "chat.completion")

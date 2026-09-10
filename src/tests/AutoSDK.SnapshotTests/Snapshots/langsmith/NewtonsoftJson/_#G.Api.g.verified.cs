@@ -1,4 +1,4 @@
-﻿//HintName: G.Api.g.cs
+//HintName: G.Api.g.cs
 
 #nullable enable
 
@@ -153,13 +153,13 @@ namespace G
 
                     new global::G.JsonConverters.PaymentPlanTierNullableJsonConverter(),
 
-                    new global::G.JsonConverters.PlaygroundPromptCanvasPayloadArtifactLength2JsonConverter(),
+                    new global::G.JsonConverters.PlaygroundPromptCanvasPayloadArtifactLengthJsonConverter(),
 
-                    new global::G.JsonConverters.PlaygroundPromptCanvasPayloadArtifactLength2NullableJsonConverter(),
+                    new global::G.JsonConverters.PlaygroundPromptCanvasPayloadArtifactLengthNullableJsonConverter(),
 
-                    new global::G.JsonConverters.PlaygroundPromptCanvasPayloadReadingLevel2JsonConverter(),
+                    new global::G.JsonConverters.PlaygroundPromptCanvasPayloadReadingLevelJsonConverter(),
 
-                    new global::G.JsonConverters.PlaygroundPromptCanvasPayloadReadingLevel2NullableJsonConverter(),
+                    new global::G.JsonConverters.PlaygroundPromptCanvasPayloadReadingLevelNullableJsonConverter(),
 
                     new global::G.JsonConverters.PlaygroundPromptCanvasPayloadTemplateFormatJsonConverter(),
 
@@ -197,9 +197,9 @@ namespace G
 
                     new global::G.JsonConverters.RunStatsGroupBySeriesResponseAttributeNullableJsonConverter(),
 
-                    new global::G.JsonConverters.RunStatsGroupBySeriesResponseSetBy2JsonConverter(),
+                    new global::G.JsonConverters.RunStatsGroupBySeriesResponseSetByJsonConverter(),
 
-                    new global::G.JsonConverters.RunStatsGroupBySeriesResponseSetBy2NullableJsonConverter(),
+                    new global::G.JsonConverters.RunStatsGroupBySeriesResponseSetByNullableJsonConverter(),
 
                     new global::G.JsonConverters.RunTypeEnumJsonConverter(),
 
@@ -265,25 +265,25 @@ namespace G
 
                     new global::G.JsonConverters.BatchIngestRunsRequestPostItemRunTypeNullableJsonConverter(),
 
-                    new global::G.JsonConverters.ListRulesApiV1RunsRulesGetType2JsonConverter(),
+                    new global::G.JsonConverters.ListRulesApiV1RunsRulesGetTypeJsonConverter(),
 
-                    new global::G.JsonConverters.ListRulesApiV1RunsRulesGetType2NullableJsonConverter(),
+                    new global::G.JsonConverters.ListRulesApiV1RunsRulesGetTypeNullableJsonConverter(),
 
-                    new global::G.JsonConverters.ListReposApiV1ReposGetIsArchived2JsonConverter(),
+                    new global::G.JsonConverters.ListReposApiV1ReposGetIsArchivedJsonConverter(),
 
-                    new global::G.JsonConverters.ListReposApiV1ReposGetIsArchived2NullableJsonConverter(),
+                    new global::G.JsonConverters.ListReposApiV1ReposGetIsArchivedNullableJsonConverter(),
 
-                    new global::G.JsonConverters.ListReposApiV1ReposGetIsPublic2JsonConverter(),
+                    new global::G.JsonConverters.ListReposApiV1ReposGetIsPublicJsonConverter(),
 
-                    new global::G.JsonConverters.ListReposApiV1ReposGetIsPublic2NullableJsonConverter(),
+                    new global::G.JsonConverters.ListReposApiV1ReposGetIsPublicNullableJsonConverter(),
 
-                    new global::G.JsonConverters.ListRepoTagsApiV1ReposTagsGetIsArchived2JsonConverter(),
+                    new global::G.JsonConverters.ListRepoTagsApiV1ReposTagsGetIsArchivedJsonConverter(),
 
-                    new global::G.JsonConverters.ListRepoTagsApiV1ReposTagsGetIsArchived2NullableJsonConverter(),
+                    new global::G.JsonConverters.ListRepoTagsApiV1ReposTagsGetIsArchivedNullableJsonConverter(),
 
-                    new global::G.JsonConverters.ListRepoTagsApiV1ReposTagsGetIsPublic2JsonConverter(),
+                    new global::G.JsonConverters.ListRepoTagsApiV1ReposTagsGetIsPublicJsonConverter(),
 
-                    new global::G.JsonConverters.ListRepoTagsApiV1ReposTagsGetIsPublic2NullableJsonConverter(),
+                    new global::G.JsonConverters.ListRepoTagsApiV1ReposTagsGetIsPublicNullableJsonConverter(),
 
                     new global::G.JsonConverters.UnixTimestampJsonConverter(),
                 }

@@ -386,7 +386,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.StoreFileConfig2? Type88 { get; set; }
+        public global::G.StoreFileConfig? Type88 { get; set; }
         /// <summary>
         /// 
         /// </summary>
@@ -922,7 +922,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.StoreConfig2? Type222 { get; set; }
+        public global::G.StoreConfig? Type222 { get; set; }
         /// <summary>
         /// 
         /// </summary>

@@ -1,4 +1,4 @@
-﻿//HintName: G.Models.PipelineDataSource.g.cs
+//HintName: G.Models.PipelineDataSource.g.cs
 
 #nullable enable
 
@@ -98,7 +98,7 @@ namespace G
         /// The status of the data source in the pipeline.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("status")]
-        public global::G.PipelineDataSourceStatus2? Status { get; set; }
+        public global::G.PipelineDataSourceStatus? Status { get; set; }
 
         /// <summary>
         /// The last time the status was updated.
@@ -174,7 +174,7 @@ namespace G
             global::G.DataSourceReaderVersionMetadata? versionMetadata,
             double? syncInterval,
             string? syncScheduleSetBy,
-            global::G.PipelineDataSourceStatus2? status,
+            global::G.PipelineDataSourceStatus? status,
             global::System.DateTime? statusUpdatedAt)
         {
             this.Id = id;

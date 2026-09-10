@@ -1,11 +1,11 @@
-﻿//HintName: G.Models.VectorStoreMetadata.g.cs
+//HintName: G.Models.VectorStoreMetadata.g.cs
 
 #nullable enable
 
 namespace G
 {
     /// <summary>
-    /// Additional metadata associated with the vector store
+    /// 
     /// </summary>
     public sealed partial class VectorStoreMetadata
     {

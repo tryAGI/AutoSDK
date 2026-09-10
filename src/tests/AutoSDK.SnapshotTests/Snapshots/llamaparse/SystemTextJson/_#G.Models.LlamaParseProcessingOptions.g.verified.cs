@@ -1,4 +1,4 @@
-﻿//HintName: G.Models.LlamaParseProcessingOptions.g.cs
+//HintName: G.Models.LlamaParseProcessingOptions.g.cs
 
 #nullable enable
 
@@ -40,7 +40,7 @@ namespace G
         /// Enable AI-powered chart analysis. Modes: 'efficient' (fast, lower cost), 'agentic' (balanced), 'agentic_plus' (highest accuracy). Automatically enables extract_layout and precise_bounding_box when set
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("specialized_chart_parsing")]
-        public global::G.LlamaParseProcessingOptionsSpecializedChartParsing2? SpecializedChartParsing { get; set; }
+        public global::G.LlamaParseProcessingOptionsSpecializedChartParsing? SpecializedChartParsing { get; set; }
 
         /// <summary>
         /// Cost optimization settings. Only available with 'agentic' or 'agentic_plus' tiers
@@ -92,7 +92,7 @@ namespace G
             global::G.LlamaParseOcrParameters? ocrParameters,
             bool? aggressiveTableExtraction,
             bool? disableHeuristics,
-            global::G.LlamaParseProcessingOptionsSpecializedChartParsing2? specializedChartParsing,
+            global::G.LlamaParseProcessingOptionsSpecializedChartParsing? specializedChartParsing,
             global::G.LlamaParseCostOptimizerParameters? costOptimizer,
             global::System.Collections.Generic.IList<global::G.AutoModeConfigurationEntry>? autoModeConfiguration)
         {

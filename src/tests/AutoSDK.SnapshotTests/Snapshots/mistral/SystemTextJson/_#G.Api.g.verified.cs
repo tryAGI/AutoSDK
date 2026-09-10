@@ -1,4 +1,4 @@
-﻿//HintName: G.Api.g.cs
+//HintName: G.Api.g.cs
 
 #nullable enable
 
@@ -175,8 +175,8 @@ namespace G
                     new global::G.JsonConverters.CompletionResponseStreamChoiceFinishReasonNullableJsonConverter(),
                     new global::G.JsonConverters.ChatCompletionChoiceFinishReasonJsonConverter(),
                     new global::G.JsonConverters.ChatCompletionChoiceFinishReasonNullableJsonConverter(),
-                    new global::G.JsonConverters.JobsApiRoutesFineTuningGetFineTuningJobsStatus2JsonConverter(),
-                    new global::G.JsonConverters.JobsApiRoutesFineTuningGetFineTuningJobsStatus2NullableJsonConverter(),
+                    new global::G.JsonConverters.JobsApiRoutesFineTuningGetFineTuningJobsStatusJsonConverter(),
+                    new global::G.JsonConverters.JobsApiRoutesFineTuningGetFineTuningJobsStatusNullableJsonConverter(),
                     new global::G.JsonConverters.RetrieveModelV1ModelsModelIdGetResponseDiscriminatorTypeJsonConverter(),
                     new global::G.JsonConverters.RetrieveModelV1ModelsModelIdGetResponseDiscriminatorTypeNullableJsonConverter(),
                     new global::G.JsonConverters.JobsApiRoutesFineTuningCreateFineTuningJobResponseVariant1DiscriminatorJobTypeJsonConverter(),

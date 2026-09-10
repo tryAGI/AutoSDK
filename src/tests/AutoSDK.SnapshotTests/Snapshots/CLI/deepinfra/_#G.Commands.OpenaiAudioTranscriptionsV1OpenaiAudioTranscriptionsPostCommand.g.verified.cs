@@ -1,4 +1,4 @@
-﻿//HintName: G.Commands.OpenaiAudioTranscriptionsV1OpenaiAudioTranscriptionsPostCommand.g.cs
+//HintName: G.Commands.OpenaiAudioTranscriptionsV1OpenaiAudioTranscriptionsPostCommand.g.cs
 
 #nullable enable
 
@@ -19,7 +19,7 @@ namespace G
             string model,
             string? language,
             string? prompt,
-            global::G.BodyOpenaiAudioTranscriptionsV1OpenaiAudioTranscriptionsPostResponseFormat2? responseFormat,
+            global::G.BodyOpenaiAudioTranscriptionsV1OpenaiAudioTranscriptionsPostResponseFormat? responseFormat,
             double? temperature,
             global::System.Collections.Generic.IList<global::G.BodyOpenaiAudioTranscriptionsV1OpenaiAudioTranscriptionsPostTimestampGranularitiesVariant1Item>? timestampGranularities,
             global::System.Threading.CancellationToken cancellationToken);
@@ -71,7 +71,7 @@ namespace G
             Description = @"",
         };
 
-        private global::System.CommandLine.Option<global::G.BodyOpenaiAudioTranscriptionsV1OpenaiAudioTranscriptionsPostResponseFormat2?> ResponseFormat { get; } = new(
+        private global::System.CommandLine.Option<global::G.BodyOpenaiAudioTranscriptionsV1OpenaiAudioTranscriptionsPostResponseFormat?> ResponseFormat { get; } = new(
             name: "responseFormat")
         {
             Description = @"",

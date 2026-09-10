@@ -1,11 +1,11 @@
-﻿//HintName: G.Models.CloudGoogleDriveDataSourceServiceAccountKey.g.cs
+//HintName: G.Models.CloudGoogleDriveDataSourceServiceAccountKey.g.cs
 
 #nullable enable
 
 namespace G
 {
     /// <summary>
-    /// The service account key JSON to use for authentication.
+    /// A dictionary containing secret values
     /// </summary>
     public sealed partial class CloudGoogleDriveDataSourceServiceAccountKey
     {

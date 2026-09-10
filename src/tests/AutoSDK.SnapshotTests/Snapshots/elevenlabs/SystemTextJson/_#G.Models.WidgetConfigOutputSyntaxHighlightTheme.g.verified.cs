@@ -1,20 +1,52 @@
-﻿//HintName: G.Models.WidgetConfigOutputSyntaxHighlightTheme.g.cs
+//HintName: G.Models.WidgetConfigOutputSyntaxHighlightTheme.g.cs
 
 #nullable enable
 
 namespace G
 {
     /// <summary>
-    /// Theme for code block syntax highlighting. Defaults to auto-detection by the widget when not set.
+    /// 
     /// </summary>
-    public sealed partial class WidgetConfigOutputSyntaxHighlightTheme
+    public enum WidgetConfigOutputSyntaxHighlightTheme
     {
-
         /// <summary>
-        /// Additional properties that are not explicitly defined in the schema
+        /// 
         /// </summary>
-        [global::System.Text.Json.Serialization.JsonExtensionData]
-        public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
+        Dark,
+        /// <summary>
+        /// 
+        /// </summary>
+        Light,
+    }
 
+    /// <summary>
+    /// Enum extensions to do fast conversions without the reflection.
+    /// </summary>
+    public static class WidgetConfigOutputSyntaxHighlightThemeExtensions
+    {
+        /// <summary>
+        /// Converts an enum to a string.
+        /// </summary>
+        public static string ToValueString(this WidgetConfigOutputSyntaxHighlightTheme value)
+        {
+            return value switch
+            {
+                WidgetConfigOutputSyntaxHighlightTheme.Dark => "dark",
+                WidgetConfigOutputSyntaxHighlightTheme.Light => "light",
+                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
+            };
+        }
+        /// <summary>
+        /// Converts an string to a enum.
+        /// </summary>
+        public static WidgetConfigOutputSyntaxHighlightTheme? ToEnum(string value)
+        {
+            return value switch
+            {
+                "dark" => WidgetConfigOutputSyntaxHighlightTheme.Dark,
+                "light" => WidgetConfigOutputSyntaxHighlightTheme.Light,
+                _ => null,
+            };
+        }
     }
 }

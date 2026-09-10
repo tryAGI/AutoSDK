@@ -1,4 +1,4 @@
-﻿//HintName: G.IPronunciationDictionariesClient.List.g.cs
+//HintName: G.IPronunciationDictionariesClient.List.g.cs
 #nullable enable
 
 namespace G
@@ -33,7 +33,7 @@ namespace G
         global::System.Threading.Tasks.Task<global::G.GetPronunciationDictionariesMetadataResponseModel> ListAsync(
             string? cursor = default,
             int? pageSize = default,
-            global::G.GetPronunciationDictionariesMetadataSort2? sort = default,
+            global::G.GetPronunciationDictionariesMetadataSort? sort = default,
             string? sortDirection = default,
             string? xiApiKey = default,
             global::G.AutoSDKRequestOptions? requestOptions = default,
@@ -66,7 +66,7 @@ namespace G
         global::System.Threading.Tasks.Task<global::G.AutoSDKHttpResponse<global::G.GetPronunciationDictionariesMetadataResponseModel>> ListAsResponseAsync(
             string? cursor = default,
             int? pageSize = default,
-            global::G.GetPronunciationDictionariesMetadataSort2? sort = default,
+            global::G.GetPronunciationDictionariesMetadataSort? sort = default,
             string? sortDirection = default,
             string? xiApiKey = default,
             global::G.AutoSDKRequestOptions? requestOptions = default,

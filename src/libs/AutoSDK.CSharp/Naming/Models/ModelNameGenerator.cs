@@ -238,7 +238,9 @@ public static class ModelNameGenerator
             var hasCollisions = false;
             foreach (var context in contexts)
             {
-                if (context.IsReference || (!context.IsClass && !context.IsEnum && !context.IsAnyOfLikeStructure))
+                if (context.IsReference ||
+                    context.IsNullableUnionWrapper ||
+                    (!context.IsClass && !context.IsEnum && !context.IsAnyOfLikeStructure))
                 {
                     continue;
                 }

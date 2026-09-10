@@ -1,11 +1,11 @@
-﻿//HintName: G.Models.ProjectExtendedResponseModelCaptionStyleTemplateOverrides.g.cs
+//HintName: G.Models.ProjectExtendedResponseModelCaptionStyleTemplateOverrides.g.cs
 
 #nullable enable
 
 namespace G
 {
     /// <summary>
-    /// Styling changes that have been made to the provided templates
+    /// 
     /// </summary>
     public sealed partial class ProjectExtendedResponseModelCaptionStyleTemplateOverrides
     {

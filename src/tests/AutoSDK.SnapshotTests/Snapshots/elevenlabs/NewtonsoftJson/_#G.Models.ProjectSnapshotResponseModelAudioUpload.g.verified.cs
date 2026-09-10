@@ -1,11 +1,11 @@
-﻿//HintName: G.Models.ProjectSnapshotResponseModelAudioUpload.g.cs
+//HintName: G.Models.ProjectSnapshotResponseModelAudioUpload.g.cs
 
 #nullable enable
 
 namespace G
 {
     /// <summary>
-    /// (Deprecated)
+    /// 
     /// </summary>
     public sealed partial class ProjectSnapshotResponseModelAudioUpload
     {

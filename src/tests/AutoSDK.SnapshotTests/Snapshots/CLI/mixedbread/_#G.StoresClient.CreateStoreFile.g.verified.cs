@@ -1,4 +1,4 @@
-﻿//HintName: G.StoresClient.CreateStoreFile.g.cs
+//HintName: G.StoresClient.CreateStoreFile.g.cs
 
 #nullable enable
 
@@ -558,7 +558,7 @@ namespace G
             global::G.AnyOf<string, global::System.Guid?> storeIdentifier,
             global::System.Guid fileId,
             object? metadata = default,
-            global::G.StoreFileConfig2? config = default,
+            global::G.StoreFileConfig? config = default,
             string? externalId = default,
             bool? overwrite = default,
             global::G.AutoSDKRequestOptions? requestOptions = default,

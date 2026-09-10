@@ -1,4 +1,4 @@
-﻿//HintName: G.DeprecatedVectorStoresClient.CreateVectorStoreFile.g.cs
+//HintName: G.DeprecatedVectorStoresClient.CreateVectorStoreFile.g.cs
 
 #nullable enable
 
@@ -546,7 +546,7 @@ namespace G
             global::G.AnyOf<string, global::System.Guid?> vectorStoreIdentifier,
             global::System.Guid fileId,
             object? metadata = default,
-            global::G.StoreFileConfig2? config = default,
+            global::G.StoreFileConfig? config = default,
             string? externalId = default,
             bool? overwrite = default,
             global::G.AutoSDKRequestOptions? requestOptions = default,

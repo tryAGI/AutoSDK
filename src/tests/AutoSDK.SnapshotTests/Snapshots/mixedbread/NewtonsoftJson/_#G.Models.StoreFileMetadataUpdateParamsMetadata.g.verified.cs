@@ -1,11 +1,11 @@
-﻿//HintName: G.Models.StoreFileMetadataUpdateParamsMetadata.g.cs
+//HintName: G.Models.StoreFileMetadataUpdateParamsMetadata.g.cs
 
 #nullable enable
 
 namespace G
 {
     /// <summary>
-    /// Updated metadata for the file
+    /// 
     /// </summary>
     public sealed partial class StoreFileMetadataUpdateParamsMetadata
     {

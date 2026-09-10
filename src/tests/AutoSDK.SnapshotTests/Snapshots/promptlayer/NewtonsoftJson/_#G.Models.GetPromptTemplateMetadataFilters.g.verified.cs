@@ -1,11 +1,11 @@
-﻿//HintName: G.Models.GetPromptTemplateMetadataFilters.g.cs
+//HintName: G.Models.GetPromptTemplateMetadataFilters.g.cs
 
 #nullable enable
 
 namespace G
 {
     /// <summary>
-    /// Optional dictionary of key values used for A/B release labels.
+    /// 
     /// </summary>
     public sealed partial class GetPromptTemplateMetadataFilters
     {

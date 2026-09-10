@@ -1,4 +1,4 @@
-﻿//HintName: G.Models.ImageMetadata.g.cs
+//HintName: G.Models.ImageMetadata.g.cs
 
 #nullable enable
 
@@ -45,13 +45,13 @@ namespace G
         /// Image category: 'screenshot' (full page), 'embedded' (images in document), or 'layout' (cropped from layout detection)
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("category")]
-        public global::G.ImageMetadataCategory2? Category { get; set; }
+        public global::G.ImageMetadataCategory? Category { get; set; }
 
         /// <summary>
         /// Bounding box of the image on its page
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("bbox")]
-        public global::G.ImageMetadataBBox2? Bbox { get; set; }
+        public global::G.ImageMetadataBBox? Bbox { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -92,8 +92,8 @@ namespace G
             string? contentType,
             long? sizeBytes,
             string? presignedUrl,
-            global::G.ImageMetadataCategory2? category,
-            global::G.ImageMetadataBBox2? bbox)
+            global::G.ImageMetadataCategory? category,
+            global::G.ImageMetadataBBox? bbox)
         {
             this.Index = index;
             this.Filename = filename ?? throw new global::System.ArgumentNullException(nameof(filename));

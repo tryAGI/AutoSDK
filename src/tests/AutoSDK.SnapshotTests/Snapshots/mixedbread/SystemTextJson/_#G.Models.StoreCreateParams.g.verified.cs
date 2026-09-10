@@ -1,4 +1,4 @@
-﻿//HintName: G.Models.StoreCreateParams.g.cs
+//HintName: G.Models.StoreCreateParams.g.cs
 
 #nullable enable
 
@@ -44,7 +44,7 @@ namespace G
         /// Store-level configuration defaults
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("config")]
-        public global::G.StoreConfig2? Config { get; set; }
+        public global::G.StoreConfig? Config { get; set; }
 
         /// <summary>
         /// Optional list of file IDs
@@ -92,7 +92,7 @@ namespace G
             bool? isPublic,
             global::G.ExpiresAfter? expiresAfter,
             object? metadata,
-            global::G.StoreConfig2? config,
+            global::G.StoreConfig? config,
             global::System.Collections.Generic.IList<global::System.Guid>? fileIds)
         {
             this.Name = name;

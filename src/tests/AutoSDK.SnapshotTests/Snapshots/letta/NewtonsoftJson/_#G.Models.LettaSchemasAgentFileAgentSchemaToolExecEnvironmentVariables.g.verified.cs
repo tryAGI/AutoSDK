@@ -1,13 +1,12 @@
-﻿//HintName: G.Models.LettaSchemasAgentFileAgentSchemaToolExecEnvironmentVariables.g.cs
+//HintName: G.Models.LettaSchemasAgentFileAgentSchemaToolExecEnvironmentVariables.g.cs
 
 #nullable enable
 
 namespace G
 {
     /// <summary>
-    /// Deprecated: Use `secrets` field instead. Environment variables for tool execution.
+    /// 
     /// </summary>
-    [global::System.Obsolete("This model marked as deprecated.")]
     public sealed partial class LettaSchemasAgentFileAgentSchemaToolExecEnvironmentVariables
     {
 

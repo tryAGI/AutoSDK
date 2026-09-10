@@ -1,4 +1,4 @@
-﻿//HintName: G.Models.PatchModelRequest3.g.cs
+//HintName: G.Models.PatchModelRequest3.g.cs
 
 #nullable enable
 
@@ -37,7 +37,7 @@ namespace G
         /// Default Value: openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("visibility")]
-        public global::G.PatchModelRequestVisibility6? Visibility { get; set; }
+        public global::G.PatchModelRequestVisibility3? Visibility { get; set; }
 
         /// <summary>
         /// 
@@ -79,7 +79,7 @@ namespace G
             string? description,
             byte[]? coverImage,
             string? coverImagename,
-            global::G.PatchModelRequestVisibility6? visibility,
+            global::G.PatchModelRequestVisibility3? visibility,
             global::G.AnyOf<global::System.Collections.Generic.IList<string>, string>? tags)
         {
             this.Title = title;

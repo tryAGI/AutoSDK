@@ -194,7 +194,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.PatchModelRequestVisibility2? Type40 { get; set; }
+        public global::G.PatchModelRequestVisibility? Type40 { get; set; }
         /// <summary>
         /// 
         /// </summary>
@@ -206,7 +206,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.PatchModelRequestVisibility4? Type43 { get; set; }
+        public global::G.PatchModelRequestVisibility2? Type43 { get; set; }
         /// <summary>
         /// 
         /// </summary>
@@ -214,7 +214,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.PatchModelRequestVisibility6? Type45 { get; set; }
+        public global::G.PatchModelRequestVisibility3? Type45 { get; set; }
         /// <summary>
         /// 
         /// </summary>
@@ -222,7 +222,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.PatchModelRequestVisibility8? Type47 { get; set; }
+        public global::G.PatchModelRequestVisibility4? Type47 { get; set; }
         /// <summary>
         /// 
         /// </summary>

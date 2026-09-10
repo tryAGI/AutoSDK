@@ -1,4 +1,4 @@
-﻿//HintName: G.JsonSerializerContextConverters.g.cs
+//HintName: G.JsonSerializerContextConverters.g.cs
 
 #nullable enable
 
@@ -141,8 +141,8 @@ namespace G
             typeof(global::G.JsonConverters.CompletionResponseStreamChoiceFinishReasonNullableJsonConverter),
             typeof(global::G.JsonConverters.ChatCompletionChoiceFinishReasonJsonConverter),
             typeof(global::G.JsonConverters.ChatCompletionChoiceFinishReasonNullableJsonConverter),
-            typeof(global::G.JsonConverters.JobsApiRoutesFineTuningGetFineTuningJobsStatus2JsonConverter),
-            typeof(global::G.JsonConverters.JobsApiRoutesFineTuningGetFineTuningJobsStatus2NullableJsonConverter),
+            typeof(global::G.JsonConverters.JobsApiRoutesFineTuningGetFineTuningJobsStatusJsonConverter),
+            typeof(global::G.JsonConverters.JobsApiRoutesFineTuningGetFineTuningJobsStatusNullableJsonConverter),
             typeof(global::G.JsonConverters.RetrieveModelV1ModelsModelIdGetResponseDiscriminatorTypeJsonConverter),
             typeof(global::G.JsonConverters.RetrieveModelV1ModelsModelIdGetResponseDiscriminatorTypeNullableJsonConverter),
             typeof(global::G.JsonConverters.JobsApiRoutesFineTuningCreateFineTuningJobResponseVariant1DiscriminatorJobTypeJsonConverter),

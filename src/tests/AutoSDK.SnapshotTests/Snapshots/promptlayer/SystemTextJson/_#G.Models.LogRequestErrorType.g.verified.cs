@@ -1,31 +1,88 @@
-﻿//HintName: G.Models.LogRequestErrorType.g.cs
+//HintName: G.Models.LogRequestErrorType.g.cs
 
 #nullable enable
 
 namespace G
 {
     /// <summary>
-    /// Categorized error type.<br/>
-    /// | Value | Description | Allowed Statuses |<br/>
-    /// |-------|-------------|------------------|<br/>
-    /// | `PROVIDER_RATE_LIMIT` | Rate limit hit on provider API | WARNING, ERROR |<br/>
-    /// | `PROVIDER_QUOTA_LIMIT` | Account quota or spending limit exceeded | WARNING, ERROR |<br/>
-    /// | `VARIABLE_MISSING_OR_EMPTY` | Required template variable was missing or empty | WARNING |<br/>
-    /// | `PROVIDER_TIMEOUT` | Request timed out | ERROR |<br/>
-    /// | `PROVIDER_AUTH_ERROR` | Authentication failed with provider | ERROR |<br/>
-    /// | `PROVIDER_ERROR` | General provider-side error | ERROR |<br/>
-    /// | `TEMPLATE_RENDER_ERROR` | Failed to render prompt template | ERROR |<br/>
-    /// | `UNKNOWN_ERROR` | Uncategorized error | WARNING, ERROR |<br/>
-    /// Default Value: openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464
+    /// 
     /// </summary>
-    public sealed partial class LogRequestErrorType
+    public enum LogRequestErrorType
     {
-
         /// <summary>
-        /// Additional properties that are not explicitly defined in the schema
+        /// 
         /// </summary>
-        [global::System.Text.Json.Serialization.JsonExtensionData]
-        public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
+        ProviderAuthError,
+        /// <summary>
+        /// 
+        /// </summary>
+        ProviderError,
+        /// <summary>
+        /// 
+        /// </summary>
+        ProviderQuotaLimit,
+        /// <summary>
+        /// 
+        /// </summary>
+        ProviderRateLimit,
+        /// <summary>
+        /// 
+        /// </summary>
+        ProviderTimeout,
+        /// <summary>
+        /// 
+        /// </summary>
+        TemplateRenderError,
+        /// <summary>
+        /// 
+        /// </summary>
+        UnknownError,
+        /// <summary>
+        /// 
+        /// </summary>
+        VariableMissingOrEmpty,
+    }
 
+    /// <summary>
+    /// Enum extensions to do fast conversions without the reflection.
+    /// </summary>
+    public static class LogRequestErrorTypeExtensions
+    {
+        /// <summary>
+        /// Converts an enum to a string.
+        /// </summary>
+        public static string ToValueString(this LogRequestErrorType value)
+        {
+            return value switch
+            {
+                LogRequestErrorType.ProviderAuthError => "PROVIDER_AUTH_ERROR",
+                LogRequestErrorType.ProviderError => "PROVIDER_ERROR",
+                LogRequestErrorType.ProviderQuotaLimit => "PROVIDER_QUOTA_LIMIT",
+                LogRequestErrorType.ProviderRateLimit => "PROVIDER_RATE_LIMIT",
+                LogRequestErrorType.ProviderTimeout => "PROVIDER_TIMEOUT",
+                LogRequestErrorType.TemplateRenderError => "TEMPLATE_RENDER_ERROR",
+                LogRequestErrorType.UnknownError => "UNKNOWN_ERROR",
+                LogRequestErrorType.VariableMissingOrEmpty => "VARIABLE_MISSING_OR_EMPTY",
+                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
+            };
+        }
+        /// <summary>
+        /// Converts an string to a enum.
+        /// </summary>
+        public static LogRequestErrorType? ToEnum(string value)
+        {
+            return value switch
+            {
+                "PROVIDER_AUTH_ERROR" => LogRequestErrorType.ProviderAuthError,
+                "PROVIDER_ERROR" => LogRequestErrorType.ProviderError,
+                "PROVIDER_QUOTA_LIMIT" => LogRequestErrorType.ProviderQuotaLimit,
+                "PROVIDER_RATE_LIMIT" => LogRequestErrorType.ProviderRateLimit,
+                "PROVIDER_TIMEOUT" => LogRequestErrorType.ProviderTimeout,
+                "TEMPLATE_RENDER_ERROR" => LogRequestErrorType.TemplateRenderError,
+                "UNKNOWN_ERROR" => LogRequestErrorType.UnknownError,
+                "VARIABLE_MISSING_OR_EMPTY" => LogRequestErrorType.VariableMissingOrEmpty,
+                _ => null,
+            };
+        }
     }
 }

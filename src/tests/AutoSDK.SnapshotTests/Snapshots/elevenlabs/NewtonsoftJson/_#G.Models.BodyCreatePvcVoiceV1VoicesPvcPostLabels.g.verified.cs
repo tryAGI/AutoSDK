@@ -1,11 +1,11 @@
-﻿//HintName: G.Models.BodyCreatePvcVoiceV1VoicesPvcPostLabels.g.cs
+//HintName: G.Models.BodyCreatePvcVoiceV1VoicesPvcPostLabels.g.cs
 
 #nullable enable
 
 namespace G
 {
     /// <summary>
-    /// Labels for the voice. Keys can be language, accent, gender, or age.
+    /// 
     /// </summary>
     public sealed partial class BodyCreatePvcVoiceV1VoicesPvcPostLabels
     {

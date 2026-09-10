@@ -1,11 +1,11 @@
-﻿//HintName: G.Models.UpdateAgentMetadata.g.cs
+//HintName: G.Models.UpdateAgentMetadata.g.cs
 
 #nullable enable
 
 namespace G
 {
     /// <summary>
-    /// The metadata of the agent.
+    /// 
     /// </summary>
     public sealed partial class UpdateAgentMetadata
     {

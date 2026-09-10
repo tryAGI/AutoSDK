@@ -1,11 +1,11 @@
-﻿//HintName: G.Models.OpenAITextToSpeechInExtraBody.g.cs
+//HintName: G.Models.OpenAITextToSpeechInExtraBody.g.cs
 
 #nullable enable
 
 namespace G
 {
     /// <summary>
-    /// Extra body parameters for the model.
+    /// 
     /// </summary>
     public sealed partial class OpenAITextToSpeechInExtraBody
     {

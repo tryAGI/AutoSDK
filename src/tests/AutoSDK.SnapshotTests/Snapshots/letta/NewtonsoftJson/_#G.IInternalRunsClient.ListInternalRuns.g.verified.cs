@@ -1,4 +1,4 @@
-﻿//HintName: G.IInternalRunsClient.ListInternalRuns.g.cs
+//HintName: G.IInternalRunsClient.ListInternalRuns.g.cs
 #nullable enable
 
 #pragma warning disable CS0618 // Type or member is obsolete
@@ -114,7 +114,7 @@ namespace G
             string? conversationId = default,
             int? durationPercentile = default,
             int? durationValue = default,
-            global::G.ListInternalRunsDurationOperator2? durationOperator = default,
+            global::G.ListInternalRunsDurationOperator? durationOperator = default,
             global::System.DateTime? startDate = default,
             global::System.DateTime? endDate = default,
             global::G.AutoSDKRequestOptions? requestOptions = default,
@@ -226,7 +226,7 @@ namespace G
             string? conversationId = default,
             int? durationPercentile = default,
             int? durationValue = default,
-            global::G.ListInternalRunsDurationOperator2? durationOperator = default,
+            global::G.ListInternalRunsDurationOperator? durationOperator = default,
             global::System.DateTime? startDate = default,
             global::System.DateTime? endDate = default,
             global::G.AutoSDKRequestOptions? requestOptions = default,

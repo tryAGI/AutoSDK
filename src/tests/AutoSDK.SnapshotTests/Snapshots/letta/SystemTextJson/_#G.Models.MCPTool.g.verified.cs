@@ -1,4 +1,4 @@
-﻿//HintName: G.Models.MCPTool.g.cs
+//HintName: G.Models.MCPTool.g.cs
 
 #nullable enable
 
@@ -57,7 +57,7 @@ namespace G
         /// Schema health status for OpenAI strict mode
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("health")]
-        public global::G.MCPToolHealth2? Health { get; set; }
+        public global::G.MCPToolHealth? Health { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -89,7 +89,7 @@ namespace G
             object? outputSchema,
             global::G.ToolAnnotations? annotations,
             object? meta,
-            global::G.MCPToolHealth2? health)
+            global::G.MCPToolHealth? health)
         {
             this.Name = name ?? throw new global::System.ArgumentNullException(nameof(name));
             this.Title = title;

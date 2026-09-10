@@ -1,11 +1,11 @@
-﻿//HintName: G.Models.BodyPatchesAnAgentSettingsV1ConvaiAgentsAgentIdPatchConversationConfig.g.cs
+//HintName: G.Models.BodyPatchesAnAgentSettingsV1ConvaiAgentsAgentIdPatchConversationConfig.g.cs
 
 #nullable enable
 
 namespace G
 {
     /// <summary>
-    /// Conversation configuration for an agent
+    /// 
     /// </summary>
     public sealed partial class BodyPatchesAnAgentSettingsV1ConvaiAgentsAgentIdPatchConversationConfig
     {

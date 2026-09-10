@@ -1,20 +1,52 @@
-﻿//HintName: G.Models.WidgetConfigInputSyntaxHighlightTheme.g.cs
+//HintName: G.Models.WidgetConfigInputSyntaxHighlightTheme.g.cs
 
 #nullable enable
 
 namespace G
 {
     /// <summary>
-    /// Theme for code block syntax highlighting. Defaults to auto-detection by the widget when not set.
+    /// 
     /// </summary>
-    public sealed partial class WidgetConfigInputSyntaxHighlightTheme
+    public enum WidgetConfigInputSyntaxHighlightTheme
     {
-
         /// <summary>
-        /// Additional properties that are not explicitly defined in the schema
+        /// 
         /// </summary>
-        [global::System.Text.Json.Serialization.JsonExtensionData]
-        public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
+        Dark,
+        /// <summary>
+        /// 
+        /// </summary>
+        Light,
+    }
 
+    /// <summary>
+    /// Enum extensions to do fast conversions without the reflection.
+    /// </summary>
+    public static class WidgetConfigInputSyntaxHighlightThemeExtensions
+    {
+        /// <summary>
+        /// Converts an enum to a string.
+        /// </summary>
+        public static string ToValueString(this WidgetConfigInputSyntaxHighlightTheme value)
+        {
+            return value switch
+            {
+                WidgetConfigInputSyntaxHighlightTheme.Dark => "dark",
+                WidgetConfigInputSyntaxHighlightTheme.Light => "light",
+                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
+            };
+        }
+        /// <summary>
+        /// Converts an string to a enum.
+        /// </summary>
+        public static WidgetConfigInputSyntaxHighlightTheme? ToEnum(string value)
+        {
+            return value switch
+            {
+                "dark" => WidgetConfigInputSyntaxHighlightTheme.Dark,
+                "light" => WidgetConfigInputSyntaxHighlightTheme.Light,
+                _ => null,
+            };
+        }
     }
 }

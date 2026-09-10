@@ -1,4 +1,4 @@
-﻿//HintName: G.Models.PronunciationDictionaryVersionResponseModel.g.cs
+//HintName: G.Models.PronunciationDictionaryVersionResponseModel.g.cs
 
 #nullable enable
 
@@ -48,7 +48,7 @@ namespace G
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("permission_on_resource")]
-        public global::G.PronunciationDictionaryVersionResponseModelPermissionOnResource2? PermissionOnResource { get; set; }
+        public global::G.PronunciationDictionaryVersionResponseModelPermissionOnResource? PermissionOnResource { get; set; }
 
         /// <summary>
         /// 
@@ -99,7 +99,7 @@ namespace G
             string versionName,
             string createdBy,
             int creationTimeUnix,
-            global::G.PronunciationDictionaryVersionResponseModelPermissionOnResource2? permissionOnResource,
+            global::G.PronunciationDictionaryVersionResponseModelPermissionOnResource? permissionOnResource,
             int? archivedTimeUnix)
         {
             this.VersionId = versionId ?? throw new global::System.ArgumentNullException(nameof(versionId));

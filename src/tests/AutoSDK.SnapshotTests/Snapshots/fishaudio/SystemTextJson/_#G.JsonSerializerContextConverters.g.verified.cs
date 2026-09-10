@@ -1,4 +1,4 @@
-﻿//HintName: G.JsonSerializerContextConverters.g.cs
+//HintName: G.JsonSerializerContextConverters.g.cs
 
 #nullable enable
 
@@ -35,14 +35,14 @@ namespace G
             typeof(global::G.JsonConverters.CreateModelRequestType2NullableJsonConverter),
             typeof(global::G.JsonConverters.CreateModelRequestTrainMode2JsonConverter),
             typeof(global::G.JsonConverters.CreateModelRequestTrainMode2NullableJsonConverter),
+            typeof(global::G.JsonConverters.PatchModelRequestVisibilityJsonConverter),
+            typeof(global::G.JsonConverters.PatchModelRequestVisibilityNullableJsonConverter),
             typeof(global::G.JsonConverters.PatchModelRequestVisibility2JsonConverter),
             typeof(global::G.JsonConverters.PatchModelRequestVisibility2NullableJsonConverter),
+            typeof(global::G.JsonConverters.PatchModelRequestVisibility3JsonConverter),
+            typeof(global::G.JsonConverters.PatchModelRequestVisibility3NullableJsonConverter),
             typeof(global::G.JsonConverters.PatchModelRequestVisibility4JsonConverter),
             typeof(global::G.JsonConverters.PatchModelRequestVisibility4NullableJsonConverter),
-            typeof(global::G.JsonConverters.PatchModelRequestVisibility6JsonConverter),
-            typeof(global::G.JsonConverters.PatchModelRequestVisibility6NullableJsonConverter),
-            typeof(global::G.JsonConverters.PatchModelRequestVisibility8JsonConverter),
-            typeof(global::G.JsonConverters.PatchModelRequestVisibility8NullableJsonConverter),
             typeof(global::G.JsonConverters.CreateTtsModelJsonConverter),
             typeof(global::G.JsonConverters.CreateTtsModelNullableJsonConverter),
             typeof(global::G.JsonConverters.GetModelSortByJsonConverter),

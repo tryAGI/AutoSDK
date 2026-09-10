@@ -62,7 +62,7 @@ namespace G
             global::System.Net.Http.HttpClient httpClient,
             global::System.Guid? datasetId,
             global::System.Guid? sessionId,
-            ref global::G.ListRulesApiV1RunsRulesGetType2? type,
+            ref global::G.ListRulesApiV1RunsRulesGetType? type,
             ref string? nameContains,
             global::System.Collections.Generic.IList<global::System.Guid>? id);
         partial void PrepareListRulesRequest(
@@ -70,7 +70,7 @@ namespace G
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
             global::System.Guid? datasetId,
             global::System.Guid? sessionId,
-            global::G.ListRulesApiV1RunsRulesGetType2? type,
+            global::G.ListRulesApiV1RunsRulesGetType? type,
             string? nameContains,
             global::System.Collections.Generic.IList<global::System.Guid>? id);
         partial void ProcessListRulesResponse(
@@ -97,7 +97,7 @@ namespace G
         public async global::System.Threading.Tasks.Task<global::System.Collections.Generic.IList<global::G.RunRulesSchema>> ListRulesAsync(
             global::System.Guid? datasetId = default,
             global::System.Guid? sessionId = default,
-            global::G.ListRulesApiV1RunsRulesGetType2? type = default,
+            global::G.ListRulesApiV1RunsRulesGetType? type = default,
             string? nameContains = default,
             global::System.Collections.Generic.IList<global::System.Guid>? id = default,
             global::G.AutoSDKRequestOptions? requestOptions = default,
@@ -130,7 +130,7 @@ namespace G
         public async global::System.Threading.Tasks.Task<global::G.AutoSDKHttpResponse<global::System.Collections.Generic.IList<global::G.RunRulesSchema>>> ListRulesAsResponseAsync(
             global::System.Guid? datasetId = default,
             global::System.Guid? sessionId = default,
-            global::G.ListRulesApiV1RunsRulesGetType2? type = default,
+            global::G.ListRulesApiV1RunsRulesGetType? type = default,
             string? nameContains = default,
             global::System.Collections.Generic.IList<global::System.Guid>? id = default,
             global::G.AutoSDKRequestOptions? requestOptions = default,

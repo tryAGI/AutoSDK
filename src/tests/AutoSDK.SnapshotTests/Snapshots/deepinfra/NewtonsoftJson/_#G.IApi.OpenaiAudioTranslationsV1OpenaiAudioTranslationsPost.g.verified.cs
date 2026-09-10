@@ -1,4 +1,4 @@
-﻿//HintName: G.IApi.OpenaiAudioTranslationsV1OpenaiAudioTranslationsPost.g.cs
+//HintName: G.IApi.OpenaiAudioTranslationsV1OpenaiAudioTranslationsPost.g.cs
 #nullable enable
 
 namespace G
@@ -62,7 +62,7 @@ namespace G
             string? xDeepinfraSource = default,
             string? xiApiKey = default,
             string? prompt = default,
-            global::G.BodyOpenaiAudioTranslationsV1OpenaiAudioTranslationsPostResponseFormat2? responseFormat = default,
+            global::G.BodyOpenaiAudioTranslationsV1OpenaiAudioTranslationsPostResponseFormat? responseFormat = default,
             double? temperature = default,
             global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
@@ -94,7 +94,7 @@ namespace G
             string? xDeepinfraSource = default,
             string? xiApiKey = default,
             string? prompt = default,
-            global::G.BodyOpenaiAudioTranslationsV1OpenaiAudioTranslationsPostResponseFormat2? responseFormat = default,
+            global::G.BodyOpenaiAudioTranslationsV1OpenaiAudioTranslationsPostResponseFormat? responseFormat = default,
             double? temperature = default,
             global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
@@ -125,7 +125,7 @@ namespace G
             string? xDeepinfraSource = default,
             string? xiApiKey = default,
             string? prompt = default,
-            global::G.BodyOpenaiAudioTranslationsV1OpenaiAudioTranslationsPostResponseFormat2? responseFormat = default,
+            global::G.BodyOpenaiAudioTranslationsV1OpenaiAudioTranslationsPostResponseFormat? responseFormat = default,
             double? temperature = default,
             global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);

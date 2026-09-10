@@ -1,4 +1,4 @@
-﻿//HintName: G.IRequestClient.LogRequest.g.cs
+//HintName: G.IRequestClient.LogRequest.g.cs
 #nullable enable
 
 namespace G
@@ -129,7 +129,7 @@ namespace G
             int? score = default,
             string? apiType = default,
             global::G.LogRequestStatus? status = default,
-            global::G.LogRequestErrorType2? errorType = default,
+            global::G.LogRequestErrorType? errorType = default,
             string? errorMessage = default,
             global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);

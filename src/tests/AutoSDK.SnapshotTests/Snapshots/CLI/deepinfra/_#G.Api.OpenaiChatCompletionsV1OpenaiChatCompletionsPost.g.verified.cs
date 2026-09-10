@@ -1,4 +1,4 @@
-﻿//HintName: G.Api.OpenaiChatCompletionsV1OpenaiChatCompletionsPost.g.cs
+//HintName: G.Api.OpenaiChatCompletionsV1OpenaiChatCompletionsPost.g.cs
 
 #nullable enable
 
@@ -614,7 +614,7 @@ namespace G
             int? seed = default,
             bool? logprobs = default,
             global::G.StreamOptions? streamOptions = default,
-            global::G.OpenAIChatCompletionsInReasoningEffort2? reasoningEffort = default,
+            global::G.OpenAIChatCompletionsInReasoningEffort? reasoningEffort = default,
             global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {

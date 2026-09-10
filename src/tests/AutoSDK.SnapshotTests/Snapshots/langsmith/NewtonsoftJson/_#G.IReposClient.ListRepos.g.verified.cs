@@ -1,4 +1,4 @@
-﻿//HintName: G.IReposClient.ListRepos.g.cs
+//HintName: G.IReposClient.ListRepos.g.cs
 #nullable enable
 
 namespace G
@@ -42,8 +42,8 @@ namespace G
             string? query = default,
             bool? hasCommits = default,
             global::System.Collections.Generic.IList<string>? tags = default,
-            global::G.ListReposApiV1ReposGetIsArchived2? isArchived = default,
-            global::G.ListReposApiV1ReposGetIsPublic2? isPublic = default,
+            global::G.ListReposApiV1ReposGetIsArchived? isArchived = default,
+            global::G.ListReposApiV1ReposGetIsPublic? isPublic = default,
             string? upstreamRepoOwner = default,
             string? upstreamRepoHandle = default,
             global::System.Collections.Generic.IList<global::System.Guid>? tagValueId = default,
@@ -88,8 +88,8 @@ namespace G
             string? query = default,
             bool? hasCommits = default,
             global::System.Collections.Generic.IList<string>? tags = default,
-            global::G.ListReposApiV1ReposGetIsArchived2? isArchived = default,
-            global::G.ListReposApiV1ReposGetIsPublic2? isPublic = default,
+            global::G.ListReposApiV1ReposGetIsArchived? isArchived = default,
+            global::G.ListReposApiV1ReposGetIsPublic? isPublic = default,
             string? upstreamRepoOwner = default,
             string? upstreamRepoHandle = default,
             global::System.Collections.Generic.IList<global::System.Guid>? tagValueId = default,

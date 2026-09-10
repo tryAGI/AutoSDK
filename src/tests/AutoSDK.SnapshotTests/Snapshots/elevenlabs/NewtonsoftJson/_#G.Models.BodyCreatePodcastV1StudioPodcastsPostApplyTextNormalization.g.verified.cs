@@ -1,24 +1,69 @@
-﻿//HintName: G.Models.BodyCreatePodcastV1StudioPodcastsPostApplyTextNormalization.g.cs
+//HintName: G.Models.BodyCreatePodcastV1StudioPodcastsPostApplyTextNormalization.g.cs
 
 #nullable enable
 
 namespace G
 {
     /// <summary>
-    ///     This parameter controls text normalization with four modes: 'auto', 'on', 'apply_english' and 'off'.<br/>
-    ///     When set to 'auto', the system will automatically decide whether to apply text normalization<br/>
-    ///     (e.g., spelling out numbers). With 'on', text normalization will always be applied, while<br/>
-    ///     with 'off', it will be skipped. 'apply_english' is the same as 'on' but will assume that text is in English.<br/>
-    ///     
+    /// 
     /// </summary>
-    public sealed partial class BodyCreatePodcastV1StudioPodcastsPostApplyTextNormalization
+    [global::System.Runtime.Serialization.DataContract]
+    public enum BodyCreatePodcastV1StudioPodcastsPostApplyTextNormalization
     {
-
         /// <summary>
-        /// Additional properties that are not explicitly defined in the schema
+        /// 
         /// </summary>
-        [global::Newtonsoft.Json.JsonExtensionData]
-        public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
+        [global::System.Runtime.Serialization.EnumMember(Value="apply_english")]
+        ApplyEnglish,
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Runtime.Serialization.EnumMember(Value="auto")]
+        Auto,
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Runtime.Serialization.EnumMember(Value="off")]
+        Off,
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Runtime.Serialization.EnumMember(Value="on")]
+        On,
+    }
 
+    /// <summary>
+    /// Enum extensions to do fast conversions without the reflection.
+    /// </summary>
+    public static class BodyCreatePodcastV1StudioPodcastsPostApplyTextNormalizationExtensions
+    {
+        /// <summary>
+        /// Converts an enum to a string.
+        /// </summary>
+        public static string ToValueString(this BodyCreatePodcastV1StudioPodcastsPostApplyTextNormalization value)
+        {
+            return value switch
+            {
+                BodyCreatePodcastV1StudioPodcastsPostApplyTextNormalization.ApplyEnglish => "apply_english",
+                BodyCreatePodcastV1StudioPodcastsPostApplyTextNormalization.Auto => "auto",
+                BodyCreatePodcastV1StudioPodcastsPostApplyTextNormalization.Off => "off",
+                BodyCreatePodcastV1StudioPodcastsPostApplyTextNormalization.On => "on",
+                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
+            };
+        }
+        /// <summary>
+        /// Converts an string to a enum.
+        /// </summary>
+        public static BodyCreatePodcastV1StudioPodcastsPostApplyTextNormalization? ToEnum(string value)
+        {
+            return value switch
+            {
+                "apply_english" => BodyCreatePodcastV1StudioPodcastsPostApplyTextNormalization.ApplyEnglish,
+                "auto" => BodyCreatePodcastV1StudioPodcastsPostApplyTextNormalization.Auto,
+                "off" => BodyCreatePodcastV1StudioPodcastsPostApplyTextNormalization.Off,
+                "on" => BodyCreatePodcastV1StudioPodcastsPostApplyTextNormalization.On,
+                _ => null,
+            };
+        }
     }
 }

@@ -1,11 +1,11 @@
-﻿//HintName: G.Models.ScoredVectorStoreFileLastError.g.cs
+//HintName: G.Models.ScoredVectorStoreFileLastError.g.cs
 
 #nullable enable
 
 namespace G
 {
     /// <summary>
-    /// Last error message if processing failed
+    /// 
     /// </summary>
     public sealed partial class ScoredVectorStoreFileLastError
     {

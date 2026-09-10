@@ -1,11 +1,11 @@
-﻿//HintName: G.Models.ToolJsonSchema.g.cs
+//HintName: G.Models.ToolJsonSchema.g.cs
 
 #nullable enable
 
 namespace G
 {
     /// <summary>
-    /// The JSON schema of the function.
+    /// 
     /// </summary>
     public sealed partial class ToolJsonSchema
     {

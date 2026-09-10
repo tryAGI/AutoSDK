@@ -378,11 +378,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.AnthropicModelSettingsVerbosity2? Type86 { get; set; }
+        public global::G.AnthropicModelSettingsVerbosity? Type86 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.AnthropicModelSettingsEffort2? Type87 { get; set; }
+        public global::G.AnthropicModelSettingsEffort? Type87 { get; set; }
         /// <summary>
         /// 
         /// </summary>
@@ -622,7 +622,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.ChatCompletionServiceTier2? Type147 { get; set; }
+        public global::G.ChatCompletionServiceTier? Type147 { get; set; }
         /// <summary>
         /// 
         /// </summary>
@@ -1538,19 +1538,19 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.LLMConfigReasoningEffort2? Type376 { get; set; }
+        public global::G.LLMConfigReasoningEffort? Type376 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.LLMConfigEffort2? Type377 { get; set; }
+        public global::G.LLMConfigEffort? Type377 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.LLMConfigCompatibilityType2? Type378 { get; set; }
+        public global::G.LLMConfigCompatibilityType? Type378 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.LLMConfigVerbosity2? Type379 { get; set; }
+        public global::G.LLMConfigVerbosity? Type379 { get; set; }
         /// <summary>
         /// 
         /// </summary>
@@ -1766,7 +1766,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.MCPToolHealth2? Type433 { get; set; }
+        public global::G.MCPToolHealth? Type433 { get; set; }
         /// <summary>
         /// 
         /// </summary>
@@ -1870,19 +1870,19 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.ModelReasoningEffort2? Type459 { get; set; }
+        public global::G.ModelReasoningEffort? Type459 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.ModelEffort2? Type460 { get; set; }
+        public global::G.ModelEffort? Type460 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.ModelCompatibilityType2? Type461 { get; set; }
+        public global::G.ModelCompatibilityType? Type461 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.ModelVerbosity2? Type462 { get; set; }
+        public global::G.ModelVerbosity? Type462 { get; set; }
         /// <summary>
         /// 
         /// </summary>
@@ -2138,11 +2138,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.StepFeedback2? Type526 { get; set; }
+        public global::G.StepFeedback? Type526 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.StepStatus2? Type527 { get; set; }
+        public global::G.StepStatus? Type527 { get; set; }
         /// <summary>
         /// 
         /// </summary>
@@ -2214,7 +2214,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.ToolJSONSchema3? Type545 { get; set; }
+        public global::G.ToolJSONSchema2? Type545 { get; set; }
         /// <summary>
         /// 
         /// </summary>
@@ -3582,7 +3582,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.ListInternalRunsDurationOperator2? Type887 { get; set; }
+        public global::G.ListInternalRunsDurationOperator? Type887 { get; set; }
         /// <summary>
         /// 
         /// </summary>
@@ -3630,7 +3630,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.ListStepsFeedback2? Type899 { get; set; }
+        public global::G.ListStepsFeedback? Type899 { get; set; }
         /// <summary>
         /// 
         /// </summary>

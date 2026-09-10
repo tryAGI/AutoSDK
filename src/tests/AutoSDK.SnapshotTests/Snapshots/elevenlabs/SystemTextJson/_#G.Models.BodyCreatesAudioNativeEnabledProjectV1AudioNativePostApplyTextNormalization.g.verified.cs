@@ -1,24 +1,64 @@
-﻿//HintName: G.Models.BodyCreatesAudioNativeEnabledProjectV1AudioNativePostApplyTextNormalization.g.cs
+//HintName: G.Models.BodyCreatesAudioNativeEnabledProjectV1AudioNativePostApplyTextNormalization.g.cs
 
 #nullable enable
 
 namespace G
 {
     /// <summary>
-    ///     This parameter controls text normalization with four modes: 'auto', 'on', 'apply_english' and 'off'.<br/>
-    ///     When set to 'auto', the system will automatically decide whether to apply text normalization<br/>
-    ///     (e.g., spelling out numbers). With 'on', text normalization will always be applied, while<br/>
-    ///     with 'off', it will be skipped. 'apply_english' is the same as 'on' but will assume that text is in English.<br/>
-    ///     
+    /// 
     /// </summary>
-    public sealed partial class BodyCreatesAudioNativeEnabledProjectV1AudioNativePostApplyTextNormalization
+    public enum BodyCreatesAudioNativeEnabledProjectV1AudioNativePostApplyTextNormalization
     {
-
         /// <summary>
-        /// Additional properties that are not explicitly defined in the schema
+        /// 
         /// </summary>
-        [global::System.Text.Json.Serialization.JsonExtensionData]
-        public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
+        ApplyEnglish,
+        /// <summary>
+        /// 
+        /// </summary>
+        Auto,
+        /// <summary>
+        /// 
+        /// </summary>
+        Off,
+        /// <summary>
+        /// 
+        /// </summary>
+        On,
+    }
 
+    /// <summary>
+    /// Enum extensions to do fast conversions without the reflection.
+    /// </summary>
+    public static class BodyCreatesAudioNativeEnabledProjectV1AudioNativePostApplyTextNormalizationExtensions
+    {
+        /// <summary>
+        /// Converts an enum to a string.
+        /// </summary>
+        public static string ToValueString(this BodyCreatesAudioNativeEnabledProjectV1AudioNativePostApplyTextNormalization value)
+        {
+            return value switch
+            {
+                BodyCreatesAudioNativeEnabledProjectV1AudioNativePostApplyTextNormalization.ApplyEnglish => "apply_english",
+                BodyCreatesAudioNativeEnabledProjectV1AudioNativePostApplyTextNormalization.Auto => "auto",
+                BodyCreatesAudioNativeEnabledProjectV1AudioNativePostApplyTextNormalization.Off => "off",
+                BodyCreatesAudioNativeEnabledProjectV1AudioNativePostApplyTextNormalization.On => "on",
+                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
+            };
+        }
+        /// <summary>
+        /// Converts an string to a enum.
+        /// </summary>
+        public static BodyCreatesAudioNativeEnabledProjectV1AudioNativePostApplyTextNormalization? ToEnum(string value)
+        {
+            return value switch
+            {
+                "apply_english" => BodyCreatesAudioNativeEnabledProjectV1AudioNativePostApplyTextNormalization.ApplyEnglish,
+                "auto" => BodyCreatesAudioNativeEnabledProjectV1AudioNativePostApplyTextNormalization.Auto,
+                "off" => BodyCreatesAudioNativeEnabledProjectV1AudioNativePostApplyTextNormalization.Off,
+                "on" => BodyCreatesAudioNativeEnabledProjectV1AudioNativePostApplyTextNormalization.On,
+                _ => null,
+            };
+        }
     }
 }

@@ -166,7 +166,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.AutoModeParsingConfTier2? Type33 { get; set; }
+        public global::G.AutoModeParsingConfTier? Type33 { get; set; }
         /// <summary>
         /// 
         /// </summary>
@@ -178,7 +178,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.AutoModeParsingConfSpecializedChartParsing2? Type36 { get; set; }
+        public global::G.AutoModeParsingConfSpecializedChartParsing? Type36 { get; set; }
         /// <summary>
         /// 
         /// </summary>
@@ -286,7 +286,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.BatchParseJobConfigPriority2? Type63 { get; set; }
+        public global::G.BatchParseJobConfigPriority? Type63 { get; set; }
         /// <summary>
         /// 
         /// </summary>
@@ -782,7 +782,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.DataSourceReaderVersionMetadataReaderVersion2? Type187 { get; set; }
+        public global::G.DataSourceReaderVersionMetadataReaderVersion? Type187 { get; set; }
         /// <summary>
         /// 
         /// </summary>
@@ -966,7 +966,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.ExtractConfigPriority2? Type233 { get; set; }
+        public global::G.ExtractConfigPriority? Type233 { get; set; }
         /// <summary>
         /// 
         /// </summary>
@@ -1018,7 +1018,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.ExtractJobCreatePriority2? Type246 { get; set; }
+        public global::G.ExtractJobCreatePriority? Type246 { get; set; }
         /// <summary>
         /// 
         /// </summary>
@@ -1086,7 +1086,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.ExtractV2JobMetadata2? Type263 { get; set; }
+        public global::G.ExtractV2JobMetadata? Type263 { get; set; }
         /// <summary>
         /// 
         /// </summary>
@@ -1306,11 +1306,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.ImageMetadataCategory2? Type318 { get; set; }
+        public global::G.ImageMetadataCategory? Type318 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.ImageMetadataBBox2? Type319 { get; set; }
+        public global::G.ImageMetadataBBox? Type319 { get; set; }
         /// <summary>
         /// 
         /// </summary>
@@ -1442,7 +1442,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.LlamaParseParametersPriority2? Type352 { get; set; }
+        public global::G.LlamaParseParametersPriority? Type352 { get; set; }
         /// <summary>
         /// 
         /// </summary>
@@ -1466,7 +1466,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.LlamaParseProcessingOptionsSpecializedChartParsing2? Type358 { get; set; }
+        public global::G.LlamaParseProcessingOptionsSpecializedChartParsing? Type358 { get; set; }
         /// <summary>
         /// 
         /// </summary>
@@ -1794,11 +1794,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.PipelineStatus2? Type440 { get; set; }
+        public global::G.PipelineStatus? Type440 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.PipelineMetadataConfig2? Type441 { get; set; }
+        public global::G.PipelineMetadataConfig? Type441 { get; set; }
         /// <summary>
         /// 
         /// </summary>
@@ -1826,7 +1826,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.PipelineDataSourceStatus2? Type448 { get; set; }
+        public global::G.PipelineDataSourceStatus? Type448 { get; set; }
         /// <summary>
         /// 
         /// </summary>
@@ -1838,7 +1838,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.PipelineFileStatus2? Type451 { get; set; }
+        public global::G.PipelineFileStatus? Type451 { get; set; }
         /// <summary>
         /// 
         /// </summary>
@@ -1858,7 +1858,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.PipelineFileResponseStatus2? Type456 { get; set; }
+        public global::G.PipelineFileResponseStatus? Type456 { get; set; }
         /// <summary>
         /// 
         /// </summary>
@@ -2178,7 +2178,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.ListSplitJobsApiV1BetaSplitJobsGetStatus2? Type536 { get; set; }
+        public global::G.ListSplitJobsApiV1BetaSplitJobsGetStatus? Type536 { get; set; }
         /// <summary>
         /// 
         /// </summary>
@@ -2190,15 +2190,15 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.ListParseJobsApiV2ParseGetStatus2? Type539 { get; set; }
+        public global::G.ListParseJobsApiV2ParseGetStatus? Type539 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.ListClassifyJobsApiV2ClassifyGetStatus2? Type540 { get; set; }
+        public global::G.ListClassifyJobsApiV2ClassifyGetStatus? Type540 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.ListExtractJobsApiV2ExtractGetStatus2? Type541 { get; set; }
+        public global::G.ListExtractJobsApiV2ExtractGetStatus? Type541 { get; set; }
         /// <summary>
         /// 
         /// </summary>

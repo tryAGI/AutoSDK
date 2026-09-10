@@ -1,21 +1,52 @@
-﻿//HintName: G.Models.ModelCompatibilityType.g.cs
+//HintName: G.Models.ModelCompatibilityType.g.cs
 
 #nullable enable
 
 namespace G
 {
     /// <summary>
-    /// Deprecated: The framework compatibility type for the model.
+    /// 
     /// </summary>
-    [global::System.Obsolete("This model marked as deprecated.")]
-    public sealed partial class ModelCompatibilityType
+    public enum ModelCompatibilityType
     {
-
         /// <summary>
-        /// Additional properties that are not explicitly defined in the schema
+        /// 
         /// </summary>
-        [global::System.Text.Json.Serialization.JsonExtensionData]
-        public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
+        Gguf,
+        /// <summary>
+        /// 
+        /// </summary>
+        Mlx,
+    }
 
+    /// <summary>
+    /// Enum extensions to do fast conversions without the reflection.
+    /// </summary>
+    public static class ModelCompatibilityTypeExtensions
+    {
+        /// <summary>
+        /// Converts an enum to a string.
+        /// </summary>
+        public static string ToValueString(this ModelCompatibilityType value)
+        {
+            return value switch
+            {
+                ModelCompatibilityType.Gguf => "gguf",
+                ModelCompatibilityType.Mlx => "mlx",
+                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
+            };
+        }
+        /// <summary>
+        /// Converts an string to a enum.
+        /// </summary>
+        public static ModelCompatibilityType? ToEnum(string value)
+        {
+            return value switch
+            {
+                "gguf" => ModelCompatibilityType.Gguf,
+                "mlx" => ModelCompatibilityType.Mlx,
+                _ => null,
+            };
+        }
     }
 }

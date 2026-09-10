@@ -183,7 +183,7 @@ public class SchemaContext(
         {
             if (!_classDataComputed)
             {
-                if (IsClass && !Schema.IsNullableOneOf())
+                if (IsClass && !IsNullableUnionWrapper)
                 {
                     _classData = new ValueHolder<ModelData>(
                         ModelDataFactory?.Invoke(this) ?? throw new InvalidOperationException("ModelDataFactory is not initialized."));
@@ -203,7 +203,7 @@ public class SchemaContext(
         {
             if (!_enumDataComputed)
             {
-                if (IsEnum)
+                if (IsEnum && !IsNullableUnionWrapper)
                 {
                     _enumData = new ValueHolder<ModelData>(
                         ModelDataFactory?.Invoke(this) ?? throw new InvalidOperationException("ModelDataFactory is not initialized."));
@@ -305,6 +305,15 @@ public class SchemaContext(
             : Children.First(x => x.ReferenceId == allOf[1].GetReferenceId())
             : throw new InvalidOperationException("Schema is not derived class.");
     
+    /// <summary>
+    /// True for an `anyOf`/`oneOf: [null, X]` wrapper. <see cref="ComputeType"/> reports the type of X
+    /// for it, so it looks like a class/enum, but it owns no members of its own: the property it sits on
+    /// is simply `X?`. Such a wrapper must neither emit a model nor take part in name collision
+    /// resolution, otherwise it emits a phantom empty type and can steal the unsuffixed name from the
+    /// real X.
+    /// </summary>
+    public bool IsNullableUnionWrapper => Schema.IsNullableAnyOfLike();
+
     public bool IsAnyOfLikeStructure => IsAnyOf || IsOneOf || IsAllOf;
     public bool IsNamedAnyOfLike => IsAnyOfLikeStructure &&
                                     (IsComponent || Schema.Discriminator != null);

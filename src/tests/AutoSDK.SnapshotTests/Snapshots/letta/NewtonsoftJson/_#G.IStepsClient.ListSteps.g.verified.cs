@@ -1,4 +1,4 @@
-﻿//HintName: G.IStepsClient.ListSteps.g.cs
+//HintName: G.IStepsClient.ListSteps.g.cs
 #nullable enable
 
 namespace G
@@ -71,7 +71,7 @@ namespace G
             string? model = default,
             string? agentId = default,
             global::System.Collections.Generic.IList<string>? traceIds = default,
-            global::G.ListStepsFeedback2? feedback = default,
+            global::G.ListStepsFeedback? feedback = default,
             bool? hasFeedback = default,
             global::System.Collections.Generic.IList<string>? tags = default,
             string? projectId = default,
@@ -144,7 +144,7 @@ namespace G
             string? model = default,
             string? agentId = default,
             global::System.Collections.Generic.IList<string>? traceIds = default,
-            global::G.ListStepsFeedback2? feedback = default,
+            global::G.ListStepsFeedback? feedback = default,
             bool? hasFeedback = default,
             global::System.Collections.Generic.IList<string>? tags = default,
             string? projectId = default,

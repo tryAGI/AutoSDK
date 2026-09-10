@@ -1,4 +1,4 @@
-﻿//HintName: G.Models.DeprecatedStoreFileUpsertParams.g.cs
+//HintName: G.Models.DeprecatedStoreFileUpsertParams.g.cs
 
 #pragma warning disable CS0618 // Type or member is obsolete
 
@@ -21,7 +21,7 @@ namespace G
         /// Configuration for adding the file
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("config")]
-        public global::G.StoreFileConfig2? Config { get; set; }
+        public global::G.StoreFileConfig? Config { get; set; }
 
         /// <summary>
         /// External identifier for this file in the store
@@ -47,7 +47,7 @@ namespace G
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("experimental")]
         [global::System.Obsolete("This property marked as deprecated.")]
-        public global::G.StoreFileConfig2? Experimental { get; set; }
+        public global::G.StoreFileConfig? Experimental { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -77,7 +77,7 @@ namespace G
         public DeprecatedStoreFileUpsertParams(
             global::System.Guid fileId,
             object? metadata,
-            global::G.StoreFileConfig2? config,
+            global::G.StoreFileConfig? config,
             string? externalId,
             bool? overwrite)
         {

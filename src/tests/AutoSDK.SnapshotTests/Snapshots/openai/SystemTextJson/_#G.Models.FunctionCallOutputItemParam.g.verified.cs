@@ -1,4 +1,4 @@
-﻿//HintName: G.Models.FunctionCallOutputItemParam.g.cs
+//HintName: G.Models.FunctionCallOutputItemParam.g.cs
 
 #nullable enable
 
@@ -42,7 +42,7 @@ namespace G
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("status")]
-        public global::G.FunctionCallOutputItemParamStatus2? Status { get; set; }
+        public global::G.FunctionCallOutputItemParamStatus? Status { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -72,7 +72,7 @@ namespace G
             string callId,
             string output,
             string? id,
-            global::G.FunctionCallOutputItemParamStatus2? status,
+            global::G.FunctionCallOutputItemParamStatus? status,
             global::G.FunctionCallOutputItemParamType type = global::G.FunctionCallOutputItemParamType.FunctionCallOutput)
         {
             this.Id = id;

@@ -1,4 +1,4 @@
-﻿//HintName: G.Models.DirectPublishingReadResponseModel.g.cs
+//HintName: G.Models.DirectPublishingReadResponseModel.g.cs
 
 #nullable enable
 
@@ -79,7 +79,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("display_mode")]
-        public global::G.DirectPublishingReadResponseModelDisplayMode2? DisplayMode { get; set; }
+        public global::G.DirectPublishingReadResponseModelDisplayMode? DisplayMode { get; set; }
 
         /// <summary>
         /// 
@@ -109,7 +109,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("target_audience")]
-        public global::G.DirectPublishingReadResponseModelTargetAudience2? TargetAudience { get; set; }
+        public global::G.DirectPublishingReadResponseModelTargetAudience? TargetAudience { get; set; }
 
         /// <summary>
         /// 
@@ -223,7 +223,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("payout_type")]
-        public global::G.DirectPublishingReadResponseModelPayoutType2? PayoutType { get; set; }
+        public global::G.DirectPublishingReadResponseModelPayoutType? PayoutType { get; set; }
 
         /// <summary>
         /// 
@@ -377,12 +377,12 @@ namespace G
             string? description,
             string? articleImageUrl,
             string? language,
-            global::G.DirectPublishingReadResponseModelDisplayMode2? displayMode,
+            global::G.DirectPublishingReadResponseModelDisplayMode? displayMode,
             global::System.Collections.Generic.IList<global::G.DirectPublishingReadResponseModelGenreVariant1Item>? genre,
             string? fiction,
             string? contentType,
             string? originalFileType,
-            global::G.DirectPublishingReadResponseModelTargetAudience2? targetAudience,
+            global::G.DirectPublishingReadResponseModelTargetAudience? targetAudience,
             bool? matureContent,
             string? origin,
             string? publicationDate,
@@ -401,7 +401,7 @@ namespace G
             global::System.Collections.Generic.IList<string>? distributionTerritories,
             string? edition,
             global::System.Collections.Generic.IList<global::G.Contributor>? contributors,
-            global::G.DirectPublishingReadResponseModelPayoutType2? payoutType,
+            global::G.DirectPublishingReadResponseModelPayoutType? payoutType,
             double? listPrice,
             string? currency,
             string? originalAudioProjectExportId,

@@ -1,11 +1,11 @@
-﻿//HintName: G.Models.ParseResultResponseJobMetadata.g.cs
+//HintName: G.Models.ParseResultResponseJobMetadata.g.cs
 
 #nullable enable
 
 namespace G
 {
     /// <summary>
-    /// Job execution metadata (if requested)
+    /// 
     /// </summary>
     public sealed partial class ParseResultResponseJobMetadata
     {

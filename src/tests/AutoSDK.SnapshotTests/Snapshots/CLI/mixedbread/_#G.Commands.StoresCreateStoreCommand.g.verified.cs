@@ -1,4 +1,4 @@
-﻿//HintName: G.Commands.StoresCreateStoreCommand.g.cs
+//HintName: G.Commands.StoresCreateStoreCommand.g.cs
 
 #nullable enable
 
@@ -17,7 +17,7 @@ namespace G
             bool? isPublic,
             global::G.ExpiresAfter? expiresAfter,
             object? metadata,
-            global::G.StoreConfig2? config,
+            global::G.StoreConfig? config,
             global::System.Collections.Generic.IList<global::System.Guid>? fileIds,
             global::System.Threading.CancellationToken cancellationToken);
         partial void Complete(
@@ -57,7 +57,7 @@ namespace G
             Description = @"Optional metadata key-value pairs",
         };
 
-        private global::System.CommandLine.Option<global::G.StoreConfig2?> Config { get; } = new(
+        private global::System.CommandLine.Option<global::G.StoreConfig?> Config { get; } = new(
             name: "config")
         {
             Description = @"Store-level configuration defaults",

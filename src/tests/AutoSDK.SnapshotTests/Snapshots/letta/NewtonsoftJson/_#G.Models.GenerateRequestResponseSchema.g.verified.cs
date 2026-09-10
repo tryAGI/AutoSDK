@@ -1,11 +1,11 @@
-﻿//HintName: G.Models.GenerateRequestResponseSchema.g.cs
+//HintName: G.Models.GenerateRequestResponseSchema.g.cs
 
 #nullable enable
 
 namespace G
 {
     /// <summary>
-    /// JSON schema for structured output. When provided, the LLM will be forced to return a response matching this schema via tool calling. The schema should follow JSON Schema format with 'properties' and optionally 'required' fields.
+    /// 
     /// </summary>
     public sealed partial class GenerateRequestResponseSchema
     {

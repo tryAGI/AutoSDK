@@ -1,4 +1,4 @@
-﻿//HintName: G.Models.GenerationStatusResponse.g.cs
+//HintName: G.Models.GenerationStatusResponse.g.cs
 
 #nullable enable
 
@@ -57,7 +57,7 @@ namespace G
         /// Generation error if any. Value is not present unless the status of the generation is 'error' and error_message field is not present.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("error")]
-        public global::G.GenerationError2? Error { get; set; }
+        public global::G.GenerationError? Error { get; set; }
 
         /// <summary>
         /// Error message. Value is not present unless the status of the generation is 'error'
@@ -144,7 +144,7 @@ namespace G
             global::G.GenerationStatus status,
             double progress,
             string createdAt,
-            global::G.GenerationError2? error,
+            global::G.GenerationError? error,
             string? errorMessage,
             string? url,
             string? downloadUrl,

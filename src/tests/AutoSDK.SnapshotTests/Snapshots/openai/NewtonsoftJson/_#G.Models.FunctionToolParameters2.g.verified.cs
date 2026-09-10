@@ -1,11 +1,11 @@
-﻿//HintName: G.Models.FunctionToolParameters2.g.cs
+//HintName: G.Models.FunctionToolParameters2.g.cs
 
 #nullable enable
 
 namespace G
 {
     /// <summary>
-    /// A JSON schema object describing the parameters of the function.
+    /// 
     /// </summary>
     public sealed partial class FunctionToolParameters2
     {

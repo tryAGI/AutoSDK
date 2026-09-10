@@ -1,11 +1,11 @@
-﻿//HintName: G.Models.ManifestDescriptionUiManifest.g.cs
+//HintName: G.Models.ManifestDescriptionUiManifest.g.cs
 
 #nullable enable
 
 namespace G
 {
     /// <summary>
-    /// Configuration for UI representation of the block (icon, section, etc.)
+    /// 
     /// </summary>
     public sealed partial class ManifestDescriptionUiManifest
     {

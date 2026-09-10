@@ -1,21 +1,55 @@
-﻿//HintName: G.Models.BodySpeechToSpeechV1SpeechToSpeechVoiceIdPostFileFormat.g.cs
+//HintName: G.Models.BodySpeechToSpeechV1SpeechToSpeechVoiceIdPostFileFormat.g.cs
 
 #nullable enable
 
 namespace G
 {
     /// <summary>
-    /// The format of input audio. Options are 'pcm_s16le_16' or 'other' For `pcm_s16le_16`, the input audio must be 16-bit PCM at a 16kHz sample rate, single channel (mono), and little-endian byte order. Latency will be lower than with passing an encoded waveform.<br/>
-    /// Default Value: other
+    /// 
     /// </summary>
-    public sealed partial class BodySpeechToSpeechV1SpeechToSpeechVoiceIdPostFileFormat
+    [global::System.Runtime.Serialization.DataContract]
+    public enum BodySpeechToSpeechV1SpeechToSpeechVoiceIdPostFileFormat
     {
-
         /// <summary>
-        /// Additional properties that are not explicitly defined in the schema
+        /// 
         /// </summary>
-        [global::Newtonsoft.Json.JsonExtensionData]
-        public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
+        [global::System.Runtime.Serialization.EnumMember(Value="other")]
+        Other,
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Runtime.Serialization.EnumMember(Value="pcm_s16le_16")]
+        PcmS16le16,
+    }
 
+    /// <summary>
+    /// Enum extensions to do fast conversions without the reflection.
+    /// </summary>
+    public static class BodySpeechToSpeechV1SpeechToSpeechVoiceIdPostFileFormatExtensions
+    {
+        /// <summary>
+        /// Converts an enum to a string.
+        /// </summary>
+        public static string ToValueString(this BodySpeechToSpeechV1SpeechToSpeechVoiceIdPostFileFormat value)
+        {
+            return value switch
+            {
+                BodySpeechToSpeechV1SpeechToSpeechVoiceIdPostFileFormat.Other => "other",
+                BodySpeechToSpeechV1SpeechToSpeechVoiceIdPostFileFormat.PcmS16le16 => "pcm_s16le_16",
+                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
+            };
+        }
+        /// <summary>
+        /// Converts an string to a enum.
+        /// </summary>
+        public static BodySpeechToSpeechV1SpeechToSpeechVoiceIdPostFileFormat? ToEnum(string value)
+        {
+            return value switch
+            {
+                "other" => BodySpeechToSpeechV1SpeechToSpeechVoiceIdPostFileFormat.Other,
+                "pcm_s16le_16" => BodySpeechToSpeechV1SpeechToSpeechVoiceIdPostFileFormat.PcmS16le16,
+                _ => null,
+            };
+        }
     }
 }

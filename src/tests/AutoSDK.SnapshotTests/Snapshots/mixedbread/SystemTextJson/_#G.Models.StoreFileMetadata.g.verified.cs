@@ -1,11 +1,11 @@
-﻿//HintName: G.Models.StoreFileMetadata.g.cs
+//HintName: G.Models.StoreFileMetadata.g.cs
 
 #nullable enable
 
 namespace G
 {
     /// <summary>
-    /// Optional file metadata
+    /// 
     /// </summary>
     public sealed partial class StoreFileMetadata
     {

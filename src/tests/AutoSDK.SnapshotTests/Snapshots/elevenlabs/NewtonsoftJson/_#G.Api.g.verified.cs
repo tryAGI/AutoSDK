@@ -1,4 +1,4 @@
-﻿//HintName: G.Api.g.cs
+//HintName: G.Api.g.cs
 
 #nullable enable
 
@@ -166,9 +166,9 @@ namespace G
 
                     new global::G.JsonConverters.ASTOrOperatorNodeOutputChildrenItemDiscriminatorTypeNullableJsonConverter(),
 
-                    new global::G.JsonConverters.AddPronunciationDictionaryResponseModelPermissionOnResource2JsonConverter(),
+                    new global::G.JsonConverters.AddPronunciationDictionaryResponseModelPermissionOnResourceJsonConverter(),
 
-                    new global::G.JsonConverters.AddPronunciationDictionaryResponseModelPermissionOnResource2NullableJsonConverter(),
+                    new global::G.JsonConverters.AddPronunciationDictionaryResponseModelPermissionOnResourceNullableJsonConverter(),
 
                     new global::G.JsonConverters.AgentDefinitionSourceJsonConverter(),
 
@@ -226,21 +226,21 @@ namespace G
 
                     new global::G.JsonConverters.BillingPeriodNullableJsonConverter(),
 
-                    new global::G.JsonConverters.BodyAddAPronunciationDictionaryV1PronunciationDictionariesAddFromFilePostWorkspaceAccess2JsonConverter(),
+                    new global::G.JsonConverters.BodyAddAPronunciationDictionaryV1PronunciationDictionariesAddFromFilePostWorkspaceAccessJsonConverter(),
 
-                    new global::G.JsonConverters.BodyAddAPronunciationDictionaryV1PronunciationDictionariesAddFromFilePostWorkspaceAccess2NullableJsonConverter(),
+                    new global::G.JsonConverters.BodyAddAPronunciationDictionaryV1PronunciationDictionariesAddFromFilePostWorkspaceAccessNullableJsonConverter(),
 
-                    new global::G.JsonConverters.BodyAddAPronunciationDictionaryV1PronunciationDictionariesAddFromRulesPostWorkspaceAccess2JsonConverter(),
+                    new global::G.JsonConverters.BodyAddAPronunciationDictionaryV1PronunciationDictionariesAddFromRulesPostWorkspaceAccessJsonConverter(),
 
-                    new global::G.JsonConverters.BodyAddAPronunciationDictionaryV1PronunciationDictionariesAddFromRulesPostWorkspaceAccess2NullableJsonConverter(),
+                    new global::G.JsonConverters.BodyAddAPronunciationDictionaryV1PronunciationDictionariesAddFromRulesPostWorkspaceAccessNullableJsonConverter(),
 
-                    new global::G.JsonConverters.BodyAudioIsolationStreamV1AudioIsolationStreamPostFileFormat2JsonConverter(),
+                    new global::G.JsonConverters.BodyAudioIsolationStreamV1AudioIsolationStreamPostFileFormatJsonConverter(),
 
-                    new global::G.JsonConverters.BodyAudioIsolationStreamV1AudioIsolationStreamPostFileFormat2NullableJsonConverter(),
+                    new global::G.JsonConverters.BodyAudioIsolationStreamV1AudioIsolationStreamPostFileFormatNullableJsonConverter(),
 
-                    new global::G.JsonConverters.BodyAudioIsolationV1AudioIsolationPostFileFormat2JsonConverter(),
+                    new global::G.JsonConverters.BodyAudioIsolationV1AudioIsolationPostFileFormatJsonConverter(),
 
-                    new global::G.JsonConverters.BodyAudioIsolationV1AudioIsolationPostFileFormat2NullableJsonConverter(),
+                    new global::G.JsonConverters.BodyAudioIsolationV1AudioIsolationPostFileFormatNullableJsonConverter(),
 
                     new global::G.JsonConverters.BodyComposeMusicWithADetailedResponseV1MusicDetailedPostModelIdJsonConverter(),
 
@@ -254,21 +254,21 @@ namespace G
 
                     new global::G.JsonConverters.BodyCreateStudioProjectV1StudioProjectsPostQualityPresetNullableJsonConverter(),
 
-                    new global::G.JsonConverters.BodyCreateStudioProjectV1StudioProjectsPostTargetAudience2JsonConverter(),
+                    new global::G.JsonConverters.BodyCreateStudioProjectV1StudioProjectsPostTargetAudienceJsonConverter(),
 
-                    new global::G.JsonConverters.BodyCreateStudioProjectV1StudioProjectsPostTargetAudience2NullableJsonConverter(),
+                    new global::G.JsonConverters.BodyCreateStudioProjectV1StudioProjectsPostTargetAudienceNullableJsonConverter(),
 
-                    new global::G.JsonConverters.BodyCreateStudioProjectV1StudioProjectsPostFiction2JsonConverter(),
+                    new global::G.JsonConverters.BodyCreateStudioProjectV1StudioProjectsPostFictionJsonConverter(),
 
-                    new global::G.JsonConverters.BodyCreateStudioProjectV1StudioProjectsPostFiction2NullableJsonConverter(),
+                    new global::G.JsonConverters.BodyCreateStudioProjectV1StudioProjectsPostFictionNullableJsonConverter(),
 
-                    new global::G.JsonConverters.BodyCreateStudioProjectV1StudioProjectsPostApplyTextNormalization2JsonConverter(),
+                    new global::G.JsonConverters.BodyCreateStudioProjectV1StudioProjectsPostApplyTextNormalizationJsonConverter(),
 
-                    new global::G.JsonConverters.BodyCreateStudioProjectV1StudioProjectsPostApplyTextNormalization2NullableJsonConverter(),
+                    new global::G.JsonConverters.BodyCreateStudioProjectV1StudioProjectsPostApplyTextNormalizationNullableJsonConverter(),
 
-                    new global::G.JsonConverters.BodyCreateStudioProjectV1StudioProjectsPostSourceType2JsonConverter(),
+                    new global::G.JsonConverters.BodyCreateStudioProjectV1StudioProjectsPostSourceTypeJsonConverter(),
 
-                    new global::G.JsonConverters.BodyCreateStudioProjectV1StudioProjectsPostSourceType2NullableJsonConverter(),
+                    new global::G.JsonConverters.BodyCreateStudioProjectV1StudioProjectsPostSourceTypeNullableJsonConverter(),
 
                     new global::G.JsonConverters.BodyCreatePodcastV1StudioPodcastsPostQualityPresetJsonConverter(),
 
@@ -278,13 +278,13 @@ namespace G
 
                     new global::G.JsonConverters.BodyCreatePodcastV1StudioPodcastsPostDurationScaleNullableJsonConverter(),
 
-                    new global::G.JsonConverters.BodyCreatePodcastV1StudioPodcastsPostApplyTextNormalization2JsonConverter(),
+                    new global::G.JsonConverters.BodyCreatePodcastV1StudioPodcastsPostApplyTextNormalizationJsonConverter(),
 
-                    new global::G.JsonConverters.BodyCreatePodcastV1StudioPodcastsPostApplyTextNormalization2NullableJsonConverter(),
+                    new global::G.JsonConverters.BodyCreatePodcastV1StudioPodcastsPostApplyTextNormalizationNullableJsonConverter(),
 
-                    new global::G.JsonConverters.BodyCreatesAudioNativeEnabledProjectV1AudioNativePostApplyTextNormalization2JsonConverter(),
+                    new global::G.JsonConverters.BodyCreatesAudioNativeEnabledProjectV1AudioNativePostApplyTextNormalizationJsonConverter(),
 
-                    new global::G.JsonConverters.BodyCreatesAudioNativeEnabledProjectV1AudioNativePostApplyTextNormalization2NullableJsonConverter(),
+                    new global::G.JsonConverters.BodyCreatesAudioNativeEnabledProjectV1AudioNativePostApplyTextNormalizationNullableJsonConverter(),
 
                     new global::G.JsonConverters.BodyDubAVideoOrAnAudioFileV1DubbingPostModeJsonConverter(),
 
@@ -306,13 +306,13 @@ namespace G
 
                     new global::G.JsonConverters.BodyShareWorkspaceResourceV1WorkspaceResourcesResourceIdSharePostRoleNullableJsonConverter(),
 
-                    new global::G.JsonConverters.BodySpeechToSpeechStreamingV1SpeechToSpeechVoiceIdStreamPostFileFormat2JsonConverter(),
+                    new global::G.JsonConverters.BodySpeechToSpeechStreamingV1SpeechToSpeechVoiceIdStreamPostFileFormatJsonConverter(),
 
-                    new global::G.JsonConverters.BodySpeechToSpeechStreamingV1SpeechToSpeechVoiceIdStreamPostFileFormat2NullableJsonConverter(),
+                    new global::G.JsonConverters.BodySpeechToSpeechStreamingV1SpeechToSpeechVoiceIdStreamPostFileFormatNullableJsonConverter(),
 
-                    new global::G.JsonConverters.BodySpeechToSpeechV1SpeechToSpeechVoiceIdPostFileFormat2JsonConverter(),
+                    new global::G.JsonConverters.BodySpeechToSpeechV1SpeechToSpeechVoiceIdPostFileFormatJsonConverter(),
 
-                    new global::G.JsonConverters.BodySpeechToSpeechV1SpeechToSpeechVoiceIdPostFileFormat2NullableJsonConverter(),
+                    new global::G.JsonConverters.BodySpeechToSpeechV1SpeechToSpeechVoiceIdPostFileFormatNullableJsonConverter(),
 
                     new global::G.JsonConverters.BodySpeechToTextV1SpeechToTextPostModelIdJsonConverter(),
 
@@ -386,17 +386,17 @@ namespace G
 
                     new global::G.JsonConverters.CaptionStyleHorizontalPlacementModelAlignNullableJsonConverter(),
 
-                    new global::G.JsonConverters.CaptionStyleModelTextAlign2JsonConverter(),
+                    new global::G.JsonConverters.CaptionStyleModelTextAlignJsonConverter(),
 
-                    new global::G.JsonConverters.CaptionStyleModelTextAlign2NullableJsonConverter(),
+                    new global::G.JsonConverters.CaptionStyleModelTextAlignNullableJsonConverter(),
 
-                    new global::G.JsonConverters.CaptionStyleModelTextStyle2JsonConverter(),
+                    new global::G.JsonConverters.CaptionStyleModelTextStyleJsonConverter(),
 
-                    new global::G.JsonConverters.CaptionStyleModelTextStyle2NullableJsonConverter(),
+                    new global::G.JsonConverters.CaptionStyleModelTextStyleNullableJsonConverter(),
 
-                    new global::G.JsonConverters.CaptionStyleModelTextWeight2JsonConverter(),
+                    new global::G.JsonConverters.CaptionStyleModelTextWeightJsonConverter(),
 
-                    new global::G.JsonConverters.CaptionStyleModelTextWeight2NullableJsonConverter(),
+                    new global::G.JsonConverters.CaptionStyleModelTextWeightNullableJsonConverter(),
 
                     new global::G.JsonConverters.CaptionStyleSectionAnimationModelEnterTypeJsonConverter(),
 
@@ -418,9 +418,9 @@ namespace G
 
                     new global::G.JsonConverters.CaptionStyleWordAnimationModelExitTypeNullableJsonConverter(),
 
-                    new global::G.JsonConverters.ChapterContentBlockInputModelSubType2JsonConverter(),
+                    new global::G.JsonConverters.ChapterContentBlockInputModelSubTypeJsonConverter(),
 
-                    new global::G.JsonConverters.ChapterContentBlockInputModelSubType2NullableJsonConverter(),
+                    new global::G.JsonConverters.ChapterContentBlockInputModelSubTypeNullableJsonConverter(),
 
                     new global::G.JsonConverters.ChapterResponseModelStateJsonConverter(),
 
@@ -482,9 +482,9 @@ namespace G
 
                     new global::G.JsonConverters.ConversationHistoryTranscriptCommonModelOutputRoleNullableJsonConverter(),
 
-                    new global::G.JsonConverters.ConversationHistoryTranscriptOtherToolsResultCommonModelType2JsonConverter(),
+                    new global::G.JsonConverters.ConversationHistoryTranscriptOtherToolsResultCommonModelTypeJsonConverter(),
 
-                    new global::G.JsonConverters.ConversationHistoryTranscriptOtherToolsResultCommonModelType2NullableJsonConverter(),
+                    new global::G.JsonConverters.ConversationHistoryTranscriptOtherToolsResultCommonModelTypeNullableJsonConverter(),
 
                     new global::G.JsonConverters.ConversationHistoryTranscriptResponseModelRoleJsonConverter(),
 
@@ -518,9 +518,9 @@ namespace G
 
                     new global::G.JsonConverters.ConversationSummaryResponseModelStatusNullableJsonConverter(),
 
-                    new global::G.JsonConverters.ConversationSummaryResponseModelDirection2JsonConverter(),
+                    new global::G.JsonConverters.ConversationSummaryResponseModelDirectionJsonConverter(),
 
-                    new global::G.JsonConverters.ConversationSummaryResponseModelDirection2NullableJsonConverter(),
+                    new global::G.JsonConverters.ConversationSummaryResponseModelDirectionNullableJsonConverter(),
 
                     new global::G.JsonConverters.ConversationTokenPurposeJsonConverter(),
 
@@ -542,21 +542,21 @@ namespace G
 
                     new global::G.JsonConverters.DependentAvailableToolIdentifierAccessLevelNullableJsonConverter(),
 
-                    new global::G.JsonConverters.DirectPublishingReadResponseModelDisplayMode2JsonConverter(),
+                    new global::G.JsonConverters.DirectPublishingReadResponseModelDisplayModeJsonConverter(),
 
-                    new global::G.JsonConverters.DirectPublishingReadResponseModelDisplayMode2NullableJsonConverter(),
+                    new global::G.JsonConverters.DirectPublishingReadResponseModelDisplayModeNullableJsonConverter(),
 
                     new global::G.JsonConverters.DirectPublishingReadResponseModelGenreVariant1ItemJsonConverter(),
 
                     new global::G.JsonConverters.DirectPublishingReadResponseModelGenreVariant1ItemNullableJsonConverter(),
 
-                    new global::G.JsonConverters.DirectPublishingReadResponseModelTargetAudience2JsonConverter(),
+                    new global::G.JsonConverters.DirectPublishingReadResponseModelTargetAudienceJsonConverter(),
 
-                    new global::G.JsonConverters.DirectPublishingReadResponseModelTargetAudience2NullableJsonConverter(),
+                    new global::G.JsonConverters.DirectPublishingReadResponseModelTargetAudienceNullableJsonConverter(),
 
-                    new global::G.JsonConverters.DirectPublishingReadResponseModelPayoutType2JsonConverter(),
+                    new global::G.JsonConverters.DirectPublishingReadResponseModelPayoutTypeJsonConverter(),
 
-                    new global::G.JsonConverters.DirectPublishingReadResponseModelPayoutType2NullableJsonConverter(),
+                    new global::G.JsonConverters.DirectPublishingReadResponseModelPayoutTypeNullableJsonConverter(),
 
                     new global::G.JsonConverters.DocumentUsageModeEnumJsonConverter(),
 
@@ -586,9 +586,9 @@ namespace G
 
                     new global::G.JsonConverters.ExportOptionsDiscriminatorFormatNullableJsonConverter(),
 
-                    new global::G.JsonConverters.ExtendedSubscriptionResponseModelCurrency2JsonConverter(),
+                    new global::G.JsonConverters.ExtendedSubscriptionResponseModelCurrencyJsonConverter(),
 
-                    new global::G.JsonConverters.ExtendedSubscriptionResponseModelCurrency2NullableJsonConverter(),
+                    new global::G.JsonConverters.ExtendedSubscriptionResponseModelCurrencyNullableJsonConverter(),
 
                     new global::G.JsonConverters.FineTuningResponseModelState2JsonConverter(),
 
@@ -630,13 +630,13 @@ namespace G
 
                     new global::G.JsonConverters.GetKnowledgeBaseSummaryURLResponseModelDependentAgentDiscriminatorTypeNullableJsonConverter(),
 
-                    new global::G.JsonConverters.GetPronunciationDictionaryMetadataResponseModelPermissionOnResource2JsonConverter(),
+                    new global::G.JsonConverters.GetPronunciationDictionaryMetadataResponseModelPermissionOnResourceJsonConverter(),
 
-                    new global::G.JsonConverters.GetPronunciationDictionaryMetadataResponseModelPermissionOnResource2NullableJsonConverter(),
+                    new global::G.JsonConverters.GetPronunciationDictionaryMetadataResponseModelPermissionOnResourceNullableJsonConverter(),
 
-                    new global::G.JsonConverters.GetPronunciationDictionaryWithRulesResponseModelPermissionOnResource2JsonConverter(),
+                    new global::G.JsonConverters.GetPronunciationDictionaryWithRulesResponseModelPermissionOnResourceJsonConverter(),
 
-                    new global::G.JsonConverters.GetPronunciationDictionaryWithRulesResponseModelPermissionOnResource2NullableJsonConverter(),
+                    new global::G.JsonConverters.GetPronunciationDictionaryWithRulesResponseModelPermissionOnResourceNullableJsonConverter(),
 
                     new global::G.JsonConverters.GetToolDependentAgentsResponseModelAgentDiscriminatorTypeJsonConverter(),
 
@@ -650,9 +650,9 @@ namespace G
 
                     new global::G.JsonConverters.IntegrationTypeNullableJsonConverter(),
 
-                    new global::G.JsonConverters.InvoiceResponseModelPaymentIntentStatus2JsonConverter(),
+                    new global::G.JsonConverters.InvoiceResponseModelPaymentIntentStatusJsonConverter(),
 
-                    new global::G.JsonConverters.InvoiceResponseModelPaymentIntentStatus2NullableJsonConverter(),
+                    new global::G.JsonConverters.InvoiceResponseModelPaymentIntentStatusNullableJsonConverter(),
 
                     new global::G.JsonConverters.InvoiceResponseModelPaymentIntentStatusseJsonConverter(),
 
@@ -778,9 +778,9 @@ namespace G
 
                     new global::G.JsonConverters.ProjectCreationMetaResponseModelTypeNullableJsonConverter(),
 
-                    new global::G.JsonConverters.ProjectExtendedResponseModelTargetAudience2JsonConverter(),
+                    new global::G.JsonConverters.ProjectExtendedResponseModelTargetAudienceJsonConverter(),
 
-                    new global::G.JsonConverters.ProjectExtendedResponseModelTargetAudience2NullableJsonConverter(),
+                    new global::G.JsonConverters.ProjectExtendedResponseModelTargetAudienceNullableJsonConverter(),
 
                     new global::G.JsonConverters.ProjectExtendedResponseModelStateJsonConverter(),
 
@@ -790,17 +790,17 @@ namespace G
 
                     new global::G.JsonConverters.ProjectExtendedResponseModelAccessLevelNullableJsonConverter(),
 
-                    new global::G.JsonConverters.ProjectExtendedResponseModelFiction2JsonConverter(),
+                    new global::G.JsonConverters.ProjectExtendedResponseModelFictionJsonConverter(),
 
-                    new global::G.JsonConverters.ProjectExtendedResponseModelFiction2NullableJsonConverter(),
+                    new global::G.JsonConverters.ProjectExtendedResponseModelFictionNullableJsonConverter(),
 
-                    new global::G.JsonConverters.ProjectExtendedResponseModelSourceType2JsonConverter(),
+                    new global::G.JsonConverters.ProjectExtendedResponseModelSourceTypeJsonConverter(),
 
-                    new global::G.JsonConverters.ProjectExtendedResponseModelSourceType2NullableJsonConverter(),
+                    new global::G.JsonConverters.ProjectExtendedResponseModelSourceTypeNullableJsonConverter(),
 
-                    new global::G.JsonConverters.ProjectExtendedResponseModelAspectRatio2JsonConverter(),
+                    new global::G.JsonConverters.ProjectExtendedResponseModelAspectRatioJsonConverter(),
 
-                    new global::G.JsonConverters.ProjectExtendedResponseModelAspectRatio2NullableJsonConverter(),
+                    new global::G.JsonConverters.ProjectExtendedResponseModelAspectRatioNullableJsonConverter(),
 
                     new global::G.JsonConverters.ProjectExtendedResponseModelQualityPresetJsonConverter(),
 
@@ -814,9 +814,9 @@ namespace G
 
                     new global::G.JsonConverters.ProjectExternalAudioResponseModelSourceContextVariant1DiscriminatorSourceTypeNullableJsonConverter(),
 
-                    new global::G.JsonConverters.ProjectResponseModelTargetAudience2JsonConverter(),
+                    new global::G.JsonConverters.ProjectResponseModelTargetAudienceJsonConverter(),
 
-                    new global::G.JsonConverters.ProjectResponseModelTargetAudience2NullableJsonConverter(),
+                    new global::G.JsonConverters.ProjectResponseModelTargetAudienceNullableJsonConverter(),
 
                     new global::G.JsonConverters.ProjectResponseModelStateJsonConverter(),
 
@@ -826,17 +826,17 @@ namespace G
 
                     new global::G.JsonConverters.ProjectResponseModelAccessLevelNullableJsonConverter(),
 
-                    new global::G.JsonConverters.ProjectResponseModelFiction2JsonConverter(),
+                    new global::G.JsonConverters.ProjectResponseModelFictionJsonConverter(),
 
-                    new global::G.JsonConverters.ProjectResponseModelFiction2NullableJsonConverter(),
+                    new global::G.JsonConverters.ProjectResponseModelFictionNullableJsonConverter(),
 
-                    new global::G.JsonConverters.ProjectResponseModelSourceType2JsonConverter(),
+                    new global::G.JsonConverters.ProjectResponseModelSourceTypeJsonConverter(),
 
-                    new global::G.JsonConverters.ProjectResponseModelSourceType2NullableJsonConverter(),
+                    new global::G.JsonConverters.ProjectResponseModelSourceTypeNullableJsonConverter(),
 
-                    new global::G.JsonConverters.ProjectResponseModelAspectRatio2JsonConverter(),
+                    new global::G.JsonConverters.ProjectResponseModelAspectRatioJsonConverter(),
 
-                    new global::G.JsonConverters.ProjectResponseModelAspectRatio2NullableJsonConverter(),
+                    new global::G.JsonConverters.ProjectResponseModelAspectRatioNullableJsonConverter(),
 
                     new global::G.JsonConverters.PromptAgentAPIModelInputBackupLlmConfigDiscriminatorPreferenceJsonConverter(),
 
@@ -862,9 +862,9 @@ namespace G
 
                     new global::G.JsonConverters.PromptAgentAPIModelWorkflowOverrideOutputToolsVariant1ItemDiscriminatorTypeNullableJsonConverter(),
 
-                    new global::G.JsonConverters.PronunciationDictionaryVersionResponseModelPermissionOnResource2JsonConverter(),
+                    new global::G.JsonConverters.PronunciationDictionaryVersionResponseModelPermissionOnResourceJsonConverter(),
 
-                    new global::G.JsonConverters.PronunciationDictionaryVersionResponseModelPermissionOnResource2NullableJsonConverter(),
+                    new global::G.JsonConverters.PronunciationDictionaryVersionResponseModelPermissionOnResourceNullableJsonConverter(),
 
                     new global::G.JsonConverters.RAGIndexStatusJsonConverter(),
 
@@ -882,17 +882,17 @@ namespace G
 
                     new global::G.JsonConverters.RenderStatusNullableJsonConverter(),
 
-                    new global::G.JsonConverters.RenderType2JsonConverter(),
+                    new global::G.JsonConverters.RenderTypeJsonConverter(),
 
-                    new global::G.JsonConverters.RenderType2NullableJsonConverter(),
+                    new global::G.JsonConverters.RenderTypeNullableJsonConverter(),
 
                     new global::G.JsonConverters.ResourceAccessInfoRoleJsonConverter(),
 
                     new global::G.JsonConverters.ResourceAccessInfoRoleNullableJsonConverter(),
 
-                    new global::G.JsonConverters.ResourceMetadataResponseModelAnonymousAccessLevelOverride2JsonConverter(),
+                    new global::G.JsonConverters.ResourceMetadataResponseModelAnonymousAccessLevelOverrideJsonConverter(),
 
-                    new global::G.JsonConverters.ResourceMetadataResponseModelAnonymousAccessLevelOverride2NullableJsonConverter(),
+                    new global::G.JsonConverters.ResourceMetadataResponseModelAnonymousAccessLevelOverrideNullableJsonConverter(),
 
                     new global::G.JsonConverters.ResponseFilterModeJsonConverter(),
 
@@ -922,9 +922,9 @@ namespace G
 
                     new global::G.JsonConverters.SafetyRuleNullableJsonConverter(),
 
-                    new global::G.JsonConverters.SampleConfigDBModelParentType2JsonConverter(),
+                    new global::G.JsonConverters.SampleConfigDBModelParentTypeJsonConverter(),
 
-                    new global::G.JsonConverters.SampleConfigDBModelParentType2NullableJsonConverter(),
+                    new global::G.JsonConverters.SampleConfigDBModelParentTypeNullableJsonConverter(),
 
                     new global::G.JsonConverters.SeatTypeJsonConverter(),
 
@@ -950,17 +950,17 @@ namespace G
 
                     new global::G.JsonConverters.SpeakerSeparationResponseModelStatusNullableJsonConverter(),
 
-                    new global::G.JsonConverters.SpeechHistoryItemResponseModelVoiceCategory2JsonConverter(),
+                    new global::G.JsonConverters.SpeechHistoryItemResponseModelVoiceCategoryJsonConverter(),
 
-                    new global::G.JsonConverters.SpeechHistoryItemResponseModelVoiceCategory2NullableJsonConverter(),
+                    new global::G.JsonConverters.SpeechHistoryItemResponseModelVoiceCategoryNullableJsonConverter(),
 
                     new global::G.JsonConverters.SpeechHistoryItemResponseModelStateJsonConverter(),
 
                     new global::G.JsonConverters.SpeechHistoryItemResponseModelStateNullableJsonConverter(),
 
-                    new global::G.JsonConverters.SpeechHistoryItemResponseModelSource2JsonConverter(),
+                    new global::G.JsonConverters.SpeechHistoryItemResponseModelSourceJsonConverter(),
 
-                    new global::G.JsonConverters.SpeechHistoryItemResponseModelSource2NullableJsonConverter(),
+                    new global::G.JsonConverters.SpeechHistoryItemResponseModelSourceNullableJsonConverter(),
 
                     new global::G.JsonConverters.SpeechToTextWordResponseModelTypeJsonConverter(),
 
@@ -974,9 +974,9 @@ namespace G
 
                     new global::G.JsonConverters.StudioClipReferenceClipTypeNullableJsonConverter(),
 
-                    new global::G.JsonConverters.SubscriptionResponseModelCurrency2JsonConverter(),
+                    new global::G.JsonConverters.SubscriptionResponseModelCurrencyJsonConverter(),
 
-                    new global::G.JsonConverters.SubscriptionResponseModelCurrency2NullableJsonConverter(),
+                    new global::G.JsonConverters.SubscriptionResponseModelCurrencyNullableJsonConverter(),
 
                     new global::G.JsonConverters.SubscriptionStatusTypeJsonConverter(),
 
@@ -1114,9 +1114,9 @@ namespace G
 
                     new global::G.JsonConverters.VoiceResponseModelCategoryNullableJsonConverter(),
 
-                    new global::G.JsonConverters.VoiceResponseModelSafetyControl2JsonConverter(),
+                    new global::G.JsonConverters.VoiceResponseModelSafetyControlJsonConverter(),
 
-                    new global::G.JsonConverters.VoiceResponseModelSafetyControl2NullableJsonConverter(),
+                    new global::G.JsonConverters.VoiceResponseModelSafetyControlNullableJsonConverter(),
 
                     new global::G.JsonConverters.VoiceSharingResponseModelStatusJsonConverter(),
 
@@ -1166,17 +1166,17 @@ namespace G
 
                     new global::G.JsonConverters.WhatsAppTemplateHeaderComponentParamsParameterDiscriminatorTypeNullableJsonConverter(),
 
-                    new global::G.JsonConverters.WidgetConfigInputSyntaxHighlightTheme2JsonConverter(),
+                    new global::G.JsonConverters.WidgetConfigInputSyntaxHighlightThemeJsonConverter(),
 
-                    new global::G.JsonConverters.WidgetConfigInputSyntaxHighlightTheme2NullableJsonConverter(),
+                    new global::G.JsonConverters.WidgetConfigInputSyntaxHighlightThemeNullableJsonConverter(),
 
-                    new global::G.JsonConverters.WidgetConfigOutputSyntaxHighlightTheme2JsonConverter(),
+                    new global::G.JsonConverters.WidgetConfigOutputSyntaxHighlightThemeJsonConverter(),
 
-                    new global::G.JsonConverters.WidgetConfigOutputSyntaxHighlightTheme2NullableJsonConverter(),
+                    new global::G.JsonConverters.WidgetConfigOutputSyntaxHighlightThemeNullableJsonConverter(),
 
-                    new global::G.JsonConverters.WidgetConfigResponseModelSyntaxHighlightTheme2JsonConverter(),
+                    new global::G.JsonConverters.WidgetConfigResponseModelSyntaxHighlightThemeJsonConverter(),
 
-                    new global::G.JsonConverters.WidgetConfigResponseModelSyntaxHighlightTheme2NullableJsonConverter(),
+                    new global::G.JsonConverters.WidgetConfigResponseModelSyntaxHighlightThemeNullableJsonConverter(),
 
                     new global::G.JsonConverters.WidgetEndFeedbackTypeJsonConverter(),
 
@@ -1258,13 +1258,13 @@ namespace G
 
                     new global::G.JsonConverters.WorkspaceResourceTypeNullableJsonConverter(),
 
-                    new global::G.JsonConverters.GetSpeechHistorySortDirection2JsonConverter(),
+                    new global::G.JsonConverters.GetSpeechHistorySortDirectionJsonConverter(),
 
-                    new global::G.JsonConverters.GetSpeechHistorySortDirection2NullableJsonConverter(),
+                    new global::G.JsonConverters.GetSpeechHistorySortDirectionNullableJsonConverter(),
 
-                    new global::G.JsonConverters.GetSpeechHistorySource2JsonConverter(),
+                    new global::G.JsonConverters.GetSpeechHistorySourceJsonConverter(),
 
-                    new global::G.JsonConverters.GetSpeechHistorySource2NullableJsonConverter(),
+                    new global::G.JsonConverters.GetSpeechHistorySourceNullableJsonConverter(),
 
                     new global::G.JsonConverters.TextToSpeechFullOutputFormatJsonConverter(),
 
@@ -1310,9 +1310,9 @@ namespace G
 
                     new global::G.JsonConverters.GetDubbingTranscriptsFormatTypeNullableJsonConverter(),
 
-                    new global::G.JsonConverters.GetPronunciationDictionariesMetadataSort2JsonConverter(),
+                    new global::G.JsonConverters.GetPronunciationDictionariesMetadataSortJsonConverter(),
 
-                    new global::G.JsonConverters.GetPronunciationDictionariesMetadataSort2NullableJsonConverter(),
+                    new global::G.JsonConverters.GetPronunciationDictionariesMetadataSortNullableJsonConverter(),
 
                     new global::G.JsonConverters.ListChatResponseTestsRouteSortModeJsonConverter(),
 

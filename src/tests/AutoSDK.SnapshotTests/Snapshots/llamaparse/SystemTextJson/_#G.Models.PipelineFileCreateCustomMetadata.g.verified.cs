@@ -1,11 +1,11 @@
-﻿//HintName: G.Models.PipelineFileCreateCustomMetadata.g.cs
+//HintName: G.Models.PipelineFileCreateCustomMetadata.g.cs
 
 #nullable enable
 
 namespace G
 {
     /// <summary>
-    /// Custom metadata for the file
+    /// 
     /// </summary>
     public sealed partial class PipelineFileCreateCustomMetadata
     {

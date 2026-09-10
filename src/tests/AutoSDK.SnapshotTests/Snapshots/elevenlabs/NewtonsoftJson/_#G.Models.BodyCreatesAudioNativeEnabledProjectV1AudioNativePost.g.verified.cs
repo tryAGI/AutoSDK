@@ -1,4 +1,4 @@
-﻿//HintName: G.Models.BodyCreatesAudioNativeEnabledProjectV1AudioNativePost.g.cs
+//HintName: G.Models.BodyCreatesAudioNativeEnabledProjectV1AudioNativePost.g.cs
 
 #pragma warning disable CS0618 // Type or member is obsolete
 
@@ -103,7 +103,7 @@ namespace G
         ///     
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("apply_text_normalization")]
-        public global::G.BodyCreatesAudioNativeEnabledProjectV1AudioNativePostApplyTextNormalization2? ApplyTextNormalization { get; set; }
+        public global::G.BodyCreatesAudioNativeEnabledProjectV1AudioNativePostApplyTextNormalization? ApplyTextNormalization { get; set; }
 
         /// <summary>
         /// A list of pronunciation dictionary locators (pronunciation_dictionary_id, version_id) encoded as a list of JSON strings for pronunciation dictionaries to be applied to the text. A list of json encoded strings is required as adding projects may occur through formData as opposed to jsonBody. To specify multiple dictionaries use multiple --form lines in your curl, such as --form 'pronunciation_dictionary_locators="{\"pronunciation_dictionary_id\":\"Vmd4Zor6fplcA7WrINey\",\"version_id\":\"hRPaxjlTdR7wFMhV4w0b\"}"' --form 'pronunciation_dictionary_locators="{\"pronunciation_dictionary_id\":\"JzWtcGQMJ6bnlWwyMo7e\",\"version_id\":\"lbmwxiLu4q6txYxgdZqn\"}"'.
@@ -172,7 +172,7 @@ namespace G
             byte[]? file,
             string? filename,
             bool? autoConvert,
-            global::G.BodyCreatesAudioNativeEnabledProjectV1AudioNativePostApplyTextNormalization2? applyTextNormalization,
+            global::G.BodyCreatesAudioNativeEnabledProjectV1AudioNativePostApplyTextNormalization? applyTextNormalization,
             global::System.Collections.Generic.IList<string>? pronunciationDictionaryLocators)
         {
             this.Name = name ?? throw new global::System.ArgumentNullException(nameof(name));

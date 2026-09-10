@@ -1,4 +1,4 @@
-﻿//HintName: G.Models.Render.g.cs
+//HintName: G.Models.Render.g.cs
 
 #nullable enable
 
@@ -31,7 +31,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("type")]
-        public global::G.RenderType2? Type { get; set; }
+        public global::G.RenderType? Type { get; set; }
 
         /// <summary>
         /// 
@@ -66,7 +66,7 @@ namespace G
             int version,
             global::G.RenderStatus status,
             string? language,
-            global::G.RenderType2? type,
+            global::G.RenderType? type,
             global::G.DubbingMediaReference? mediaRef)
         {
             this.Id = id ?? throw new global::System.ArgumentNullException(nameof(id));

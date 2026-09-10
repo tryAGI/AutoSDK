@@ -1,4 +1,4 @@
-﻿//HintName: G.Models.PatchModelRequest4.g.cs
+//HintName: G.Models.PatchModelRequest4.g.cs
 
 #nullable enable
 
@@ -37,7 +37,7 @@ namespace G
         /// Default Value: openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("visibility")]
-        public global::G.PatchModelRequestVisibility8? Visibility { get; set; }
+        public global::G.PatchModelRequestVisibility4? Visibility { get; set; }
 
         /// <summary>
         /// 
@@ -75,7 +75,7 @@ namespace G
             string? description,
             byte[]? coverImage,
             string? coverImagename,
-            global::G.PatchModelRequestVisibility8? visibility,
+            global::G.PatchModelRequestVisibility4? visibility,
             global::G.AnyOf<global::System.Collections.Generic.IList<string>, string>? tags)
         {
             this.Title = title;

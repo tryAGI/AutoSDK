@@ -1,4 +1,4 @@
-﻿//HintName: G.Models.AddPronunciationDictionaryResponseModel.g.cs
+//HintName: G.Models.AddPronunciationDictionaryResponseModel.g.cs
 
 #nullable enable
 
@@ -56,7 +56,7 @@ namespace G
         /// The permission on the resource of the pronunciation dictionary.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("permission_on_resource")]
-        public global::G.AddPronunciationDictionaryResponseModelPermissionOnResource2? PermissionOnResource { get; set; }
+        public global::G.AddPronunciationDictionaryResponseModelPermissionOnResource? PermissionOnResource { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -99,7 +99,7 @@ namespace G
             string versionId,
             int versionRulesNum,
             string? description,
-            global::G.AddPronunciationDictionaryResponseModelPermissionOnResource2? permissionOnResource)
+            global::G.AddPronunciationDictionaryResponseModelPermissionOnResource? permissionOnResource)
         {
             this.Id = id ?? throw new global::System.ArgumentNullException(nameof(id));
             this.Name = name ?? throw new global::System.ArgumentNullException(nameof(name));

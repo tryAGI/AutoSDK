@@ -1,4 +1,4 @@
-﻿//HintName: G.Models.PipelineCreate.g.cs
+//HintName: G.Models.PipelineCreate.g.cs
 
 #nullable enable
 
@@ -68,7 +68,7 @@ namespace G
         /// Metadata configuration for the pipeline.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("metadata_config")]
-        public global::G.PipelineMetadataConfig2? MetadataConfig { get; set; }
+        public global::G.PipelineMetadataConfig? MetadataConfig { get; set; }
 
         /// <summary>
         /// 
@@ -150,7 +150,7 @@ namespace G
             global::G.PresetRetrievalParams? presetRetrievalParameters,
             global::G.LlamaParseParameters? llamaParseParameters,
             string? status,
-            global::G.PipelineMetadataConfig2? metadataConfig,
+            global::G.PipelineMetadataConfig? metadataConfig,
             global::G.PipelineType? pipelineType,
             global::System.Guid? managedPipelineId)
         {

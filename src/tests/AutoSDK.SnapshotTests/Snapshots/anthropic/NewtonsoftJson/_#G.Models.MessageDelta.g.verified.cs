@@ -1,4 +1,4 @@
-﻿//HintName: G.Models.MessageDelta.g.cs
+//HintName: G.Models.MessageDelta.g.cs
 
 #nullable enable
 
@@ -13,7 +13,7 @@ namespace G
         /// Default Value: openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("stop_reason")]
-        public global::G.MessageDeltaStopReason2? StopReason { get; set; }
+        public global::G.MessageDeltaStopReason? StopReason { get; set; }
 
         /// <summary>
         /// Default Value: openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464
@@ -37,7 +37,7 @@ namespace G
         /// Default Value: openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464
         /// </param>
         public MessageDelta(
-            global::G.MessageDeltaStopReason2? stopReason,
+            global::G.MessageDeltaStopReason? stopReason,
             string? stopSequence)
         {
             this.StopReason = stopReason;

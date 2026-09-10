@@ -1,11 +1,11 @@
-﻿//HintName: G.Models.OpenAIBatchesInMetadata.g.cs
+//HintName: G.Models.OpenAIBatchesInMetadata.g.cs
 
 #nullable enable
 
 namespace G
 {
     /// <summary>
-    /// Optional metadata to be stored with the batch.
+    /// 
     /// </summary>
     public sealed partial class OpenAIBatchesInMetadata
     {

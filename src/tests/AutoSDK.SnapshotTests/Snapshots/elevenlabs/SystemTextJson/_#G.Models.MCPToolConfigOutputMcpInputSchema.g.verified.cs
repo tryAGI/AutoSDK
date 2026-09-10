@@ -1,11 +1,11 @@
-﻿//HintName: G.Models.MCPToolConfigOutputMcpInputSchema.g.cs
+//HintName: G.Models.MCPToolConfigOutputMcpInputSchema.g.cs
 
 #nullable enable
 
 namespace G
 {
     /// <summary>
-    /// Original inputSchema dict for consistent hashing
+    /// 
     /// </summary>
     public sealed partial class MCPToolConfigOutputMcpInputSchema
     {

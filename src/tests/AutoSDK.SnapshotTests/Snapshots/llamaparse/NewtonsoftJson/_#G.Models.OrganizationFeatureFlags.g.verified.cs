@@ -1,11 +1,11 @@
-﻿//HintName: G.Models.OrganizationFeatureFlags.g.cs
+//HintName: G.Models.OrganizationFeatureFlags.g.cs
 
 #nullable enable
 
 namespace G
 {
     /// <summary>
-    /// Feature flags for the organization.
+    /// 
     /// </summary>
     public sealed partial class OrganizationFeatureFlags
     {

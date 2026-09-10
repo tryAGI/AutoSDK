@@ -1,11 +1,11 @@
-﻿//HintName: G.Models.EvaluationCreateBodyEvalAttributes.g.cs
+//HintName: G.Models.EvaluationCreateBodyEvalAttributes.g.cs
 
 #nullable enable
 
 namespace G
 {
     /// <summary>
-    /// Optional attributes for the evaluation
+    /// 
     /// </summary>
     public sealed partial class EvaluationCreateBodyEvalAttributes
     {

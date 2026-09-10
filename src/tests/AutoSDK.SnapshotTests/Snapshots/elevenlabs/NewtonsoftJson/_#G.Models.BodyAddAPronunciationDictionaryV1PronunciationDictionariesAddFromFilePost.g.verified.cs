@@ -1,4 +1,4 @@
-﻿//HintName: G.Models.BodyAddAPronunciationDictionaryV1PronunciationDictionariesAddFromFilePost.g.cs
+//HintName: G.Models.BodyAddAPronunciationDictionaryV1PronunciationDictionariesAddFromFilePost.g.cs
 
 #nullable enable
 
@@ -37,7 +37,7 @@ namespace G
         /// Should be one of 'admin', 'editor' or 'viewer'. If not provided, defaults to no access.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("workspace_access")]
-        public global::G.BodyAddAPronunciationDictionaryV1PronunciationDictionariesAddFromFilePostWorkspaceAccess2? WorkspaceAccess { get; set; }
+        public global::G.BodyAddAPronunciationDictionaryV1PronunciationDictionariesAddFromFilePostWorkspaceAccess? WorkspaceAccess { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -68,7 +68,7 @@ namespace G
             byte[]? file,
             string? filename,
             string? description,
-            global::G.BodyAddAPronunciationDictionaryV1PronunciationDictionariesAddFromFilePostWorkspaceAccess2? workspaceAccess)
+            global::G.BodyAddAPronunciationDictionaryV1PronunciationDictionariesAddFromFilePostWorkspaceAccess? workspaceAccess)
         {
             this.Name = name ?? throw new global::System.ArgumentNullException(nameof(name));
             this.File = file;

@@ -1,4 +1,4 @@
-﻿//HintName: G.Models.AutoModeParsingConf.g.cs
+//HintName: G.Models.AutoModeParsingConf.g.cs
 
 #nullable enable
 
@@ -16,7 +16,7 @@ namespace G
         /// Override the parsing tier for matched pages. Must be paired with version
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("tier")]
-        public global::G.AutoModeParsingConfTier2? Tier { get; set; }
+        public global::G.AutoModeParsingConfTier? Tier { get; set; }
 
         /// <summary>
         /// Tier version when overriding tier. Required when tier is specified
@@ -64,7 +64,7 @@ namespace G
         /// Enable specialized chart parsing with the specified mode
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("specialized_chart_parsing")]
-        public global::G.AutoModeParsingConfSpecializedChartParsing2? SpecializedChartParsing { get; set; }
+        public global::G.AutoModeParsingConfSpecializedChartParsing? SpecializedChartParsing { get; set; }
 
         /// <summary>
         /// Whether to use high resolution OCR
@@ -148,7 +148,7 @@ namespace G
         /// Presentation-specific parsing options
         /// </param>
         public AutoModeParsingConf(
-            global::G.AutoModeParsingConfTier2? tier,
+            global::G.AutoModeParsingConfTier? tier,
             global::G.AnyOf<global::G.AutoModeParsingConfVersion?, string, object>? version,
             string? customPrompt,
             global::G.AutoModeIgnoreOptions? ignore,
@@ -156,7 +156,7 @@ namespace G
             bool? outlinedTableExtraction,
             bool? adaptiveLongTable,
             bool? extractLayout,
-            global::G.AutoModeParsingConfSpecializedChartParsing2? specializedChartParsing,
+            global::G.AutoModeParsingConfSpecializedChartParsing? specializedChartParsing,
             bool? highResOcr,
             string? language,
             global::G.AutoModeCropBox? cropBox,

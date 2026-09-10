@@ -1,4 +1,4 @@
-﻿//HintName: G.Models.WidgetConfigOutput.g.cs
+//HintName: G.Models.WidgetConfigOutput.g.cs
 
 #nullable enable
 
@@ -288,7 +288,7 @@ namespace G
         /// Theme for code block syntax highlighting. Defaults to auto-detection by the widget when not set.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("syntax_highlight_theme")]
-        public global::G.WidgetConfigOutputSyntaxHighlightTheme2? SyntaxHighlightTheme { get; set; }
+        public global::G.WidgetConfigOutputSyntaxHighlightTheme? SyntaxHighlightTheme { get; set; }
 
         /// <summary>
         /// Text contents of the widget
@@ -550,7 +550,7 @@ namespace G
             bool? showAgentStatus,
             bool? showConversationId,
             bool? stripAudioTags,
-            global::G.WidgetConfigOutputSyntaxHighlightTheme2? syntaxHighlightTheme,
+            global::G.WidgetConfigOutputSyntaxHighlightTheme? syntaxHighlightTheme,
             global::G.WidgetTextContents? textContents,
             global::G.WidgetStyles? styles,
             bool? languageSelector,

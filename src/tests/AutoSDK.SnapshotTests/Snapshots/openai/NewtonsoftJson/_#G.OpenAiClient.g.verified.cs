@@ -1,4 +1,4 @@
-﻿//HintName: G.OpenAiClient.g.cs
+//HintName: G.OpenAiClient.g.cs
 
 #nullable enable
 
@@ -2538,21 +2538,21 @@ namespace G
 
                     new global::G.JsonConverters.ComputerCallOutputItemParamTypeNullableJsonConverter(),
 
-                    new global::G.JsonConverters.ComputerCallOutputItemParamStatus2JsonConverter(),
+                    new global::G.JsonConverters.ComputerCallOutputItemParamStatusJsonConverter(),
 
-                    new global::G.JsonConverters.ComputerCallOutputItemParamStatus2NullableJsonConverter(),
+                    new global::G.JsonConverters.ComputerCallOutputItemParamStatusNullableJsonConverter(),
 
                     new global::G.JsonConverters.FunctionCallOutputItemParamTypeJsonConverter(),
 
                     new global::G.JsonConverters.FunctionCallOutputItemParamTypeNullableJsonConverter(),
 
-                    new global::G.JsonConverters.FunctionCallOutputItemParamStatus2JsonConverter(),
+                    new global::G.JsonConverters.FunctionCallOutputItemParamStatusJsonConverter(),
 
-                    new global::G.JsonConverters.FunctionCallOutputItemParamStatus2NullableJsonConverter(),
+                    new global::G.JsonConverters.FunctionCallOutputItemParamStatusNullableJsonConverter(),
 
-                    new global::G.JsonConverters.ItemReferenceParamType2JsonConverter(),
+                    new global::G.JsonConverters.ItemReferenceParamTypeJsonConverter(),
 
-                    new global::G.JsonConverters.ItemReferenceParamType2NullableJsonConverter(),
+                    new global::G.JsonConverters.ItemReferenceParamTypeNullableJsonConverter(),
 
                     new global::G.JsonConverters.CreateBatchRequestEndpointJsonConverter(),
 

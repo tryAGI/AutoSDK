@@ -1,11 +1,11 @@
-﻿//HintName: G.Models.ClientToolSchemaParameters.g.cs
+//HintName: G.Models.ClientToolSchemaParameters.g.cs
 
 #nullable enable
 
 namespace G
 {
     /// <summary>
-    /// JSON Schema for the function parameters
+    /// 
     /// </summary>
     public sealed partial class ClientToolSchemaParameters
     {

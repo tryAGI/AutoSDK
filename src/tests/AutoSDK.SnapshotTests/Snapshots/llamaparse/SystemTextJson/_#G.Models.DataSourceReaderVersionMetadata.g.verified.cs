@@ -1,4 +1,4 @@
-﻿//HintName: G.Models.DataSourceReaderVersionMetadata.g.cs
+//HintName: G.Models.DataSourceReaderVersionMetadata.g.cs
 
 #nullable enable
 
@@ -13,7 +13,7 @@ namespace G
         /// The version of the reader to use for this data source.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("reader_version")]
-        public global::G.DataSourceReaderVersionMetadataReaderVersion2? ReaderVersion { get; set; }
+        public global::G.DataSourceReaderVersionMetadataReaderVersion? ReaderVersion { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -31,7 +31,7 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public DataSourceReaderVersionMetadata(
-            global::G.DataSourceReaderVersionMetadataReaderVersion2? readerVersion)
+            global::G.DataSourceReaderVersionMetadataReaderVersion? readerVersion)
         {
             this.ReaderVersion = readerVersion;
         }

@@ -1,4 +1,4 @@
-﻿//HintName: G.JsonSerializerContextConverters.g.cs
+//HintName: G.JsonSerializerContextConverters.g.cs
 
 #nullable enable
 
@@ -13,12 +13,12 @@ namespace G
         {
             typeof(global::G.JsonConverters.SuspendReasonJsonConverter),
             typeof(global::G.JsonConverters.SuspendReasonNullableJsonConverter),
-            typeof(global::G.JsonConverters.BodyOpenaiAudioTranscriptionsV1OpenaiAudioTranscriptionsPostResponseFormat2JsonConverter),
-            typeof(global::G.JsonConverters.BodyOpenaiAudioTranscriptionsV1OpenaiAudioTranscriptionsPostResponseFormat2NullableJsonConverter),
+            typeof(global::G.JsonConverters.BodyOpenaiAudioTranscriptionsV1OpenaiAudioTranscriptionsPostResponseFormatJsonConverter),
+            typeof(global::G.JsonConverters.BodyOpenaiAudioTranscriptionsV1OpenaiAudioTranscriptionsPostResponseFormatNullableJsonConverter),
             typeof(global::G.JsonConverters.BodyOpenaiAudioTranscriptionsV1OpenaiAudioTranscriptionsPostTimestampGranularitiesVariant1ItemJsonConverter),
             typeof(global::G.JsonConverters.BodyOpenaiAudioTranscriptionsV1OpenaiAudioTranscriptionsPostTimestampGranularitiesVariant1ItemNullableJsonConverter),
-            typeof(global::G.JsonConverters.BodyOpenaiAudioTranslationsV1OpenaiAudioTranslationsPostResponseFormat2JsonConverter),
-            typeof(global::G.JsonConverters.BodyOpenaiAudioTranslationsV1OpenaiAudioTranslationsPostResponseFormat2NullableJsonConverter),
+            typeof(global::G.JsonConverters.BodyOpenaiAudioTranslationsV1OpenaiAudioTranslationsPostResponseFormatJsonConverter),
+            typeof(global::G.JsonConverters.BodyOpenaiAudioTranslationsV1OpenaiAudioTranslationsPostResponseFormatNullableJsonConverter),
             typeof(global::G.JsonConverters.DeployGPUsJsonConverter),
             typeof(global::G.JsonConverters.DeployGPUsNullableJsonConverter),
             typeof(global::G.JsonConverters.DeployTypeJsonConverter),
@@ -35,8 +35,8 @@ namespace G
             typeof(global::G.JsonConverters.ModelProviderNullableJsonConverter),
             typeof(global::G.JsonConverters.OpenAIBatchesInEndpointJsonConverter),
             typeof(global::G.JsonConverters.OpenAIBatchesInEndpointNullableJsonConverter),
-            typeof(global::G.JsonConverters.OpenAIChatCompletionsInReasoningEffort2JsonConverter),
-            typeof(global::G.JsonConverters.OpenAIChatCompletionsInReasoningEffort2NullableJsonConverter),
+            typeof(global::G.JsonConverters.OpenAIChatCompletionsInReasoningEffortJsonConverter),
+            typeof(global::G.JsonConverters.OpenAIChatCompletionsInReasoningEffortNullableJsonConverter),
             typeof(global::G.JsonConverters.ResponseFormatTypeJsonConverter),
             typeof(global::G.JsonConverters.ResponseFormatTypeNullableJsonConverter),
             typeof(global::G.JsonConverters.SchemaVariantKeyJsonConverter),

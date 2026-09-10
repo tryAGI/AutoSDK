@@ -1,4 +1,4 @@
-﻿//HintName: G.Api.g.cs
+//HintName: G.Api.g.cs
 
 #nullable enable
 
@@ -64,13 +64,13 @@ namespace G
 
                     new global::G.JsonConverters.AnthropicModelSettingsResponseFormatVariant1DiscriminatorTypeNullableJsonConverter(),
 
-                    new global::G.JsonConverters.AnthropicModelSettingsVerbosity2JsonConverter(),
+                    new global::G.JsonConverters.AnthropicModelSettingsVerbosityJsonConverter(),
 
-                    new global::G.JsonConverters.AnthropicModelSettingsVerbosity2NullableJsonConverter(),
+                    new global::G.JsonConverters.AnthropicModelSettingsVerbosityNullableJsonConverter(),
 
-                    new global::G.JsonConverters.AnthropicModelSettingsEffort2JsonConverter(),
+                    new global::G.JsonConverters.AnthropicModelSettingsEffortJsonConverter(),
 
-                    new global::G.JsonConverters.AnthropicModelSettingsEffort2NullableJsonConverter(),
+                    new global::G.JsonConverters.AnthropicModelSettingsEffortNullableJsonConverter(),
 
                     new global::G.JsonConverters.AnthropicThinkingTypeJsonConverter(),
 
@@ -92,9 +92,9 @@ namespace G
 
                     new global::G.JsonConverters.BedrockModelSettingsResponseFormatVariant1DiscriminatorTypeNullableJsonConverter(),
 
-                    new global::G.JsonConverters.ChatCompletionServiceTier2JsonConverter(),
+                    new global::G.JsonConverters.ChatCompletionServiceTierJsonConverter(),
 
-                    new global::G.JsonConverters.ChatCompletionServiceTier2NullableJsonConverter(),
+                    new global::G.JsonConverters.ChatCompletionServiceTierNullableJsonConverter(),
 
                     new global::G.JsonConverters.ChatGPTOAuthReasoningReasoningEffortJsonConverter(),
 
@@ -252,21 +252,21 @@ namespace G
 
                     new global::G.JsonConverters.LLMConfigModelEndpointTypeNullableJsonConverter(),
 
-                    new global::G.JsonConverters.LLMConfigReasoningEffort2JsonConverter(),
+                    new global::G.JsonConverters.LLMConfigReasoningEffortJsonConverter(),
 
-                    new global::G.JsonConverters.LLMConfigReasoningEffort2NullableJsonConverter(),
+                    new global::G.JsonConverters.LLMConfigReasoningEffortNullableJsonConverter(),
 
-                    new global::G.JsonConverters.LLMConfigEffort2JsonConverter(),
+                    new global::G.JsonConverters.LLMConfigEffortJsonConverter(),
 
-                    new global::G.JsonConverters.LLMConfigEffort2NullableJsonConverter(),
+                    new global::G.JsonConverters.LLMConfigEffortNullableJsonConverter(),
 
-                    new global::G.JsonConverters.LLMConfigCompatibilityType2JsonConverter(),
+                    new global::G.JsonConverters.LLMConfigCompatibilityTypeJsonConverter(),
 
-                    new global::G.JsonConverters.LLMConfigCompatibilityType2NullableJsonConverter(),
+                    new global::G.JsonConverters.LLMConfigCompatibilityTypeNullableJsonConverter(),
 
-                    new global::G.JsonConverters.LLMConfigVerbosity2JsonConverter(),
+                    new global::G.JsonConverters.LLMConfigVerbosityJsonConverter(),
 
-                    new global::G.JsonConverters.LLMConfigVerbosity2NullableJsonConverter(),
+                    new global::G.JsonConverters.LLMConfigVerbosityNullableJsonConverter(),
 
                     new global::G.JsonConverters.LLMConfigResponseFormatVariant1DiscriminatorTypeJsonConverter(),
 
@@ -328,21 +328,21 @@ namespace G
 
                     new global::G.JsonConverters.ModelModelEndpointTypeNullableJsonConverter(),
 
-                    new global::G.JsonConverters.ModelReasoningEffort2JsonConverter(),
+                    new global::G.JsonConverters.ModelReasoningEffortJsonConverter(),
 
-                    new global::G.JsonConverters.ModelReasoningEffort2NullableJsonConverter(),
+                    new global::G.JsonConverters.ModelReasoningEffortNullableJsonConverter(),
 
-                    new global::G.JsonConverters.ModelEffort2JsonConverter(),
+                    new global::G.JsonConverters.ModelEffortJsonConverter(),
 
-                    new global::G.JsonConverters.ModelEffort2NullableJsonConverter(),
+                    new global::G.JsonConverters.ModelEffortNullableJsonConverter(),
 
-                    new global::G.JsonConverters.ModelCompatibilityType2JsonConverter(),
+                    new global::G.JsonConverters.ModelCompatibilityTypeJsonConverter(),
 
-                    new global::G.JsonConverters.ModelCompatibilityType2NullableJsonConverter(),
+                    new global::G.JsonConverters.ModelCompatibilityTypeNullableJsonConverter(),
 
-                    new global::G.JsonConverters.ModelVerbosity2JsonConverter(),
+                    new global::G.JsonConverters.ModelVerbosityJsonConverter(),
 
-                    new global::G.JsonConverters.ModelVerbosity2NullableJsonConverter(),
+                    new global::G.JsonConverters.ModelVerbosityNullableJsonConverter(),
 
                     new global::G.JsonConverters.ModelResponseFormatVariant1DiscriminatorTypeJsonConverter(),
 
@@ -388,13 +388,13 @@ namespace G
 
                     new global::G.JsonConverters.SearchAllMessagesRequestSearchModeNullableJsonConverter(),
 
-                    new global::G.JsonConverters.StepFeedback2JsonConverter(),
+                    new global::G.JsonConverters.StepFeedbackJsonConverter(),
 
-                    new global::G.JsonConverters.StepFeedback2NullableJsonConverter(),
+                    new global::G.JsonConverters.StepFeedbackNullableJsonConverter(),
 
-                    new global::G.JsonConverters.StepStatus2JsonConverter(),
+                    new global::G.JsonConverters.StepStatusJsonConverter(),
 
-                    new global::G.JsonConverters.StepStatus2NullableJsonConverter(),
+                    new global::G.JsonConverters.StepStatusNullableJsonConverter(),
 
                     new global::G.JsonConverters.StopReasonTypeJsonConverter(),
 
@@ -888,9 +888,9 @@ namespace G
 
                     new global::G.JsonConverters.ListInternalRunsOrderByNullableJsonConverter(),
 
-                    new global::G.JsonConverters.ListInternalRunsDurationOperator2JsonConverter(),
+                    new global::G.JsonConverters.ListInternalRunsDurationOperatorJsonConverter(),
 
-                    new global::G.JsonConverters.ListInternalRunsDurationOperator2NullableJsonConverter(),
+                    new global::G.JsonConverters.ListInternalRunsDurationOperatorNullableJsonConverter(),
 
                     new global::G.JsonConverters.ListBlocksOrderJsonConverter(),
 
@@ -928,9 +928,9 @@ namespace G
 
                     new global::G.JsonConverters.ListStepsOrderNullableJsonConverter(),
 
-                    new global::G.JsonConverters.ListStepsFeedback2JsonConverter(),
+                    new global::G.JsonConverters.ListStepsFeedbackJsonConverter(),
 
-                    new global::G.JsonConverters.ListStepsFeedback2NullableJsonConverter(),
+                    new global::G.JsonConverters.ListStepsFeedbackNullableJsonConverter(),
 
                     new global::G.JsonConverters.ListMessagesForStepOrderJsonConverter(),
 

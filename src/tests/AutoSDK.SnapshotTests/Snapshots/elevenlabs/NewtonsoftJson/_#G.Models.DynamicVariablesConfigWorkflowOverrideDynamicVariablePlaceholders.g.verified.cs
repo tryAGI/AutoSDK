@@ -1,11 +1,11 @@
-﻿//HintName: G.Models.DynamicVariablesConfigWorkflowOverrideDynamicVariablePlaceholders.g.cs
+//HintName: G.Models.DynamicVariablesConfigWorkflowOverrideDynamicVariablePlaceholders.g.cs
 
 #nullable enable
 
 namespace G
 {
     /// <summary>
-    /// A dictionary of dynamic variable placeholders and their values
+    /// 
     /// </summary>
     public sealed partial class DynamicVariablesConfigWorkflowOverrideDynamicVariablePlaceholders
     {

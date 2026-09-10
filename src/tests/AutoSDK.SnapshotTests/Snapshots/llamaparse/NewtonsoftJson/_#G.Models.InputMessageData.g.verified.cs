@@ -1,11 +1,11 @@
-﻿//HintName: G.Models.InputMessageData.g.cs
+//HintName: G.Models.InputMessageData.g.cs
 
 #nullable enable
 
 namespace G
 {
     /// <summary>
-    /// Additional data to be stored with the message.
+    /// 
     /// </summary>
     public sealed partial class InputMessageData
     {

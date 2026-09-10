@@ -1,11 +1,11 @@
-﻿//HintName: G.Models.SourceSchemaMetadata.g.cs
+//HintName: G.Models.SourceSchemaMetadata.g.cs
 
 #nullable enable
 
 namespace G
 {
     /// <summary>
-    /// Metadata associated with the source.
+    /// 
     /// </summary>
     public sealed partial class SourceSchemaMetadata
     {

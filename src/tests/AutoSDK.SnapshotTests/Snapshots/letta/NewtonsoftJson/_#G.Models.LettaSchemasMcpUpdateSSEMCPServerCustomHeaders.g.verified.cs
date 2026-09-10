@@ -1,11 +1,11 @@
-﻿//HintName: G.Models.LettaSchemasMcpUpdateSSEMCPServerCustomHeaders.g.cs
+//HintName: G.Models.LettaSchemasMcpUpdateSSEMCPServerCustomHeaders.g.cs
 
 #nullable enable
 
 namespace G
 {
     /// <summary>
-    /// Custom authentication headers as key-value pairs
+    /// 
     /// </summary>
     public sealed partial class LettaSchemasMcpUpdateSSEMCPServerCustomHeaders
     {

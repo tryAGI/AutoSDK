@@ -1,4 +1,4 @@
-﻿//HintName: G.Models.ExtractV2Job.g.cs
+//HintName: G.Models.ExtractV2Job.g.cs
 
 #nullable enable
 
@@ -72,7 +72,7 @@ namespace G
         /// Custom metadata - limited to enterprise plans.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("metadata")]
-        public global::G.ExtractV2JobMetadata2? Metadata { get; set; }
+        public global::G.ExtractV2JobMetadata? Metadata { get; set; }
 
         /// <summary>
         /// Creation timestamp
@@ -148,7 +148,7 @@ namespace G
             string? errorMessage,
             global::G.AnyOf<object, global::System.Collections.Generic.IList<object>, object>? extractResult,
             global::G.ExtractJobMetadata? extractMetadata,
-            global::G.ExtractV2JobMetadata2? metadata)
+            global::G.ExtractV2JobMetadata? metadata)
         {
             this.Id = id ?? throw new global::System.ArgumentNullException(nameof(id));
             this.ProjectId = projectId ?? throw new global::System.ArgumentNullException(nameof(projectId));

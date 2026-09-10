@@ -1,4 +1,4 @@
-﻿//HintName: G.Models.BodyCreatePodcastV1StudioPodcastsPost.g.cs
+//HintName: G.Models.BodyCreatePodcastV1StudioPodcastsPost.g.cs
 
 #nullable enable
 
@@ -146,7 +146,7 @@ namespace G
         ///     
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("apply_text_normalization")]
-        public global::G.BodyCreatePodcastV1StudioPodcastsPostApplyTextNormalization2? ApplyTextNormalization { get; set; }
+        public global::G.BodyCreatePodcastV1StudioPodcastsPostApplyTextNormalization? ApplyTextNormalization { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -270,7 +270,7 @@ namespace G
             string? instructionsPrompt,
             global::System.Collections.Generic.IList<string>? highlights,
             string? callbackUrl,
-            global::G.BodyCreatePodcastV1StudioPodcastsPostApplyTextNormalization2? applyTextNormalization)
+            global::G.BodyCreatePodcastV1StudioPodcastsPostApplyTextNormalization? applyTextNormalization)
         {
             this.ModelId = modelId ?? throw new global::System.ArgumentNullException(nameof(modelId));
             this.Mode = mode;

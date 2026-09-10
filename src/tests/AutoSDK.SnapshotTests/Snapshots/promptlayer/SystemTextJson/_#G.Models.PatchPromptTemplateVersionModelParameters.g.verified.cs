@@ -1,11 +1,11 @@
-﻿//HintName: G.Models.PatchPromptTemplateVersionModelParameters.g.cs
+//HintName: G.Models.PatchPromptTemplateVersionModelParameters.g.cs
 
 #nullable enable
 
 namespace G
 {
     /// <summary>
-    /// Parameters to shallow-merge into the existing model parameters (e.g. temperature, max_tokens). Existing keys not specified here are preserved.
+    /// 
     /// </summary>
     public sealed partial class PatchPromptTemplateVersionModelParameters
     {

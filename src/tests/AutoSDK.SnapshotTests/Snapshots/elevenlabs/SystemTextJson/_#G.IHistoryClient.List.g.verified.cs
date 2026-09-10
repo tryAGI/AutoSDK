@@ -1,4 +1,4 @@
-﻿//HintName: G.IHistoryClient.List.g.cs
+//HintName: G.IHistoryClient.List.g.cs
 #nullable enable
 
 namespace G
@@ -51,9 +51,9 @@ namespace G
             string? modelId = default,
             int? dateBeforeUnix = default,
             int? dateAfterUnix = default,
-            global::G.GetSpeechHistorySortDirection2? sortDirection = default,
+            global::G.GetSpeechHistorySortDirection? sortDirection = default,
             string? search = default,
-            global::G.GetSpeechHistorySource2? source = default,
+            global::G.GetSpeechHistorySource? source = default,
             string? xiApiKey = default,
             global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
@@ -103,9 +103,9 @@ namespace G
             string? modelId = default,
             int? dateBeforeUnix = default,
             int? dateAfterUnix = default,
-            global::G.GetSpeechHistorySortDirection2? sortDirection = default,
+            global::G.GetSpeechHistorySortDirection? sortDirection = default,
             string? search = default,
-            global::G.GetSpeechHistorySource2? source = default,
+            global::G.GetSpeechHistorySource? source = default,
             string? xiApiKey = default,
             global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);

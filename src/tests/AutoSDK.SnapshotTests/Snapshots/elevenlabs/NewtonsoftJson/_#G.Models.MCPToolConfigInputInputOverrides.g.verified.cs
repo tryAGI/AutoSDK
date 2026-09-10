@@ -1,11 +1,11 @@
-﻿//HintName: G.Models.MCPToolConfigInputInputOverrides.g.cs
+//HintName: G.Models.MCPToolConfigInputInputOverrides.g.cs
 
 #nullable enable
 
 namespace G
 {
     /// <summary>
-    /// Input parameter overrides for this tool
+    /// 
     /// </summary>
     public sealed partial class MCPToolConfigInputInputOverrides
     {

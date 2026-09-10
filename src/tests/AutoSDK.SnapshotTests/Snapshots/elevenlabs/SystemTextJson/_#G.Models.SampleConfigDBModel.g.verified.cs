@@ -1,4 +1,4 @@
-﻿//HintName: G.Models.SampleConfigDBModel.g.cs
+//HintName: G.Models.SampleConfigDBModel.g.cs
 
 #nullable enable
 
@@ -25,7 +25,7 @@ namespace G
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("parent_type")]
-        public global::G.SampleConfigDBModelParentType2? ParentType { get; set; }
+        public global::G.SampleConfigDBModelParentType? ParentType { get; set; }
 
         /// <summary>
         /// 
@@ -54,7 +54,7 @@ namespace G
         public SampleConfigDBModel(
             bool? isSample,
             string? parentId,
-            global::G.SampleConfigDBModelParentType2? parentType,
+            global::G.SampleConfigDBModelParentType? parentType,
             global::System.Collections.Generic.IList<string>? chapterIds)
         {
             this.IsSample = isSample;

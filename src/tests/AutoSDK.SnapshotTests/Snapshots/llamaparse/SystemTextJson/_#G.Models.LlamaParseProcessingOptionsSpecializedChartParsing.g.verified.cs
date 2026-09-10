@@ -1,20 +1,58 @@
-﻿//HintName: G.Models.LlamaParseProcessingOptionsSpecializedChartParsing.g.cs
+//HintName: G.Models.LlamaParseProcessingOptionsSpecializedChartParsing.g.cs
 
 #nullable enable
 
 namespace G
 {
     /// <summary>
-    /// Enable AI-powered chart analysis. Modes: 'efficient' (fast, lower cost), 'agentic' (balanced), 'agentic_plus' (highest accuracy). Automatically enables extract_layout and precise_bounding_box when set
+    /// 
     /// </summary>
-    public sealed partial class LlamaParseProcessingOptionsSpecializedChartParsing
+    public enum LlamaParseProcessingOptionsSpecializedChartParsing
     {
-
         /// <summary>
-        /// Additional properties that are not explicitly defined in the schema
+        /// 
         /// </summary>
-        [global::System.Text.Json.Serialization.JsonExtensionData]
-        public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
+        Agentic,
+        /// <summary>
+        /// 
+        /// </summary>
+        AgenticPlus,
+        /// <summary>
+        /// 
+        /// </summary>
+        Efficient,
+    }
 
+    /// <summary>
+    /// Enum extensions to do fast conversions without the reflection.
+    /// </summary>
+    public static class LlamaParseProcessingOptionsSpecializedChartParsingExtensions
+    {
+        /// <summary>
+        /// Converts an enum to a string.
+        /// </summary>
+        public static string ToValueString(this LlamaParseProcessingOptionsSpecializedChartParsing value)
+        {
+            return value switch
+            {
+                LlamaParseProcessingOptionsSpecializedChartParsing.Agentic => "agentic",
+                LlamaParseProcessingOptionsSpecializedChartParsing.AgenticPlus => "agentic_plus",
+                LlamaParseProcessingOptionsSpecializedChartParsing.Efficient => "efficient",
+                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
+            };
+        }
+        /// <summary>
+        /// Converts an string to a enum.
+        /// </summary>
+        public static LlamaParseProcessingOptionsSpecializedChartParsing? ToEnum(string value)
+        {
+            return value switch
+            {
+                "agentic" => LlamaParseProcessingOptionsSpecializedChartParsing.Agentic,
+                "agentic_plus" => LlamaParseProcessingOptionsSpecializedChartParsing.AgenticPlus,
+                "efficient" => LlamaParseProcessingOptionsSpecializedChartParsing.Efficient,
+                _ => null,
+            };
+        }
     }
 }

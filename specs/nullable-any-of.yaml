@@ -1,0 +1,71 @@
+openapi: "3.0.1"
+info:
+  version: 1.0.0
+  title: Nullable anyOf
+# `anyOf: [null, X]` is what ASP.NET Core emits for a nullable complex property.
+# Each `Foo.*` property below derives the inline wrapper name `Foo` + property name,
+# which collides with the component schema the wrapper points at. The wrapper owns no
+# members, so it must not emit a type of its own nor take the unsuffixed name from the
+# real one.
+paths:
+  /foo:
+    get:
+      operationId: getFoo
+      responses:
+        '200':
+          description: ok
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Foo"
+components:
+  schemas:
+    FooClassRef:
+      type: object
+      properties:
+        label:
+          type: string
+        personId:
+          type: integer
+          format: int64
+    FooEnumRef:
+      type: string
+      enum:
+        - a
+        - b
+    Foo:
+      type: object
+      properties:
+        classRef:
+          anyOf:
+            - type: "null"
+            - $ref: "#/components/schemas/FooClassRef"
+        enumRef:
+          anyOf:
+            - type: "null"
+            - $ref: "#/components/schemas/FooEnumRef"
+        oneOfClassRef:
+          oneOf:
+            - type: "null"
+            - $ref: "#/components/schemas/FooClassRef"
+        inline:
+          anyOf:
+            - type: "null"
+            - type: object
+              properties:
+                label:
+                  type: string
+        # An array whose items are a nullable union: the item type itself must be
+        # nullable, and `anyOf` must behave the same as `oneOf` here.
+        anyOfItems:
+          type: array
+          items:
+            anyOf:
+              - type: "null"
+              - $ref: "#/components/schemas/FooClassRef"
+        oneOfItems:
+          type: array
+          items:
+            oneOf:
+              - type: "null"
+              - $ref: "#/components/schemas/FooClassRef"

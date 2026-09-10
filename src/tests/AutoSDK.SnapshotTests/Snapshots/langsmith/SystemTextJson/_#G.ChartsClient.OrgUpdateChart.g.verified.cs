@@ -1,4 +1,4 @@
-﻿//HintName: G.ChartsClient.OrgUpdateChart.g.cs
+//HintName: G.ChartsClient.OrgUpdateChart.g.cs
 
 #nullable enable
 
@@ -555,7 +555,7 @@ namespace G
             global::G.AnyOf<global::System.Collections.Generic.IList<global::G.CustomChartSeriesUpdate>, global::G.Missing>? series = default,
             global::G.AnyOf<global::System.Guid?, global::G.Missing>? sectionId = default,
             global::G.AnyOf<object, global::G.Missing, object>? metadata = default,
-            global::G.AnyOf<global::G.CustomChartSeriesFilters2, global::G.Missing, object>? commonFilters = default,
+            global::G.AnyOf<global::G.CustomChartSeriesFilters, global::G.Missing, object>? commonFilters = default,
             global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {

@@ -1,4 +1,4 @@
-﻿//HintName: G.Models.InvoiceResponseModel.g.cs
+//HintName: G.Models.InvoiceResponseModel.g.cs
 
 #nullable enable
 
@@ -56,7 +56,7 @@ namespace G
         /// Deprecated. Use [payment_intent_statusses] instead. The status of this invoice's first payment intent. None when there is no payment intent.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("payment_intent_status")]
-        public global::G.InvoiceResponseModelPaymentIntentStatus2? PaymentIntentStatus { get; set; }
+        public global::G.InvoiceResponseModelPaymentIntentStatus? PaymentIntentStatus { get; set; }
 
         /// <summary>
         /// The statuses of this invoice's payment intents. Empty list when there are no payment intents.
@@ -109,7 +109,7 @@ namespace G
             int? taxCents,
             double? discountPercentOff,
             double? discountAmountOff,
-            global::G.InvoiceResponseModelPaymentIntentStatus2? paymentIntentStatus)
+            global::G.InvoiceResponseModelPaymentIntentStatus? paymentIntentStatus)
         {
             this.AmountDueCents = amountDueCents;
             this.SubtotalCents = subtotalCents;

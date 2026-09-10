@@ -1,0 +1,74 @@
+{
+  "asyncapi": "3.0.0",
+  "info": {
+    "title": "Nullable anyOf (AsyncAPI)",
+    "version": "1.0.0",
+    "description": "The AsyncAPI counterpart of nullable-any-of.yaml. AsyncAPI schemas run through the same CSharpTypeMapper as OpenAPI ones, so `anyOf: [null, X]` array items must resolve to a nullable item type here too, identically to the `oneOf` form."
+  },
+  "servers": {
+    "ws": { "host": "example.com", "protocol": "wss" }
+  },
+  "channels": {
+    "main": {
+      "address": "/ws",
+      "messages": {
+        "Event": { "$ref": "#/components/messages/Event" }
+      }
+    }
+  },
+  "operations": {
+    "receiveEvent": {
+      "action": "receive",
+      "channel": { "$ref": "#/channels/main" },
+      "messages": [ { "$ref": "#/channels/main/messages/Event" } ]
+    }
+  },
+  "components": {
+    "messages": {
+      "Event": { "payload": { "$ref": "#/components/schemas/Event" } }
+    },
+    "schemas": {
+      "Word": {
+        "type": "object",
+        "properties": {
+          "text": { "type": "string" },
+          "start": { "type": "number" }
+        }
+      },
+      "Event": {
+        "type": "object",
+        "properties": {
+          "type": { "type": "string" },
+          "anyOfItems": {
+            "type": "array",
+            "items": {
+              "anyOf": [
+                { "type": "null" },
+                { "$ref": "#/components/schemas/Word" }
+              ]
+            }
+          },
+          "oneOfItems": {
+            "type": "array",
+            "items": {
+              "oneOf": [
+                { "type": "null" },
+                { "$ref": "#/components/schemas/Word" }
+              ]
+            }
+          },
+          "plainItems": {
+            "type": "array",
+            "items": { "$ref": "#/components/schemas/Word" }
+          },
+          "nullableRef": {
+            "anyOf": [
+              { "type": "null" },
+              { "$ref": "#/components/schemas/Word" }
+            ]
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,11 +1,11 @@
-﻿//HintName: G.Models.LettaSchemasAgentFileToolSchemaJsonSchema.g.cs
+//HintName: G.Models.LettaSchemasAgentFileToolSchemaJsonSchema.g.cs
 
 #nullable enable
 
 namespace G
 {
     /// <summary>
-    /// The JSON schema of the function.
+    /// 
     /// </summary>
     public sealed partial class LettaSchemasAgentFileToolSchemaJsonSchema
     {

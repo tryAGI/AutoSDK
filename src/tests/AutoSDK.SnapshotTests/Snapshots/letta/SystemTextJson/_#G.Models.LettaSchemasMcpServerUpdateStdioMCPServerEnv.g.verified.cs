@@ -1,11 +1,11 @@
-﻿//HintName: G.Models.LettaSchemasMcpServerUpdateStdioMCPServerEnv.g.cs
+//HintName: G.Models.LettaSchemasMcpServerUpdateStdioMCPServerEnv.g.cs
 
 #nullable enable
 
 namespace G
 {
     /// <summary>
-    /// Environment variables to set
+    /// 
     /// </summary>
     public sealed partial class LettaSchemasMcpServerUpdateStdioMCPServerEnv
     {

@@ -538,7 +538,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.EvalResultsScorerStatsValueType2? Type126 { get; set; }
+        public global::G.EvalResultsScorerStatsValueType? Type126 { get; set; }
         /// <summary>
         /// 
         /// </summary>

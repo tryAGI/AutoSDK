@@ -1,4 +1,4 @@
-﻿//HintName: G.ChartsClient.OrgCreateChart.g.cs
+//HintName: G.ChartsClient.OrgCreateChart.g.cs
 
 #nullable enable
 
@@ -530,7 +530,7 @@ namespace G
             int? index = default,
             global::System.Guid? sectionId = default,
             object? metadata = default,
-            global::G.CustomChartSeriesFilters2? commonFilters = default,
+            global::G.CustomChartSeriesFilters? commonFilters = default,
             global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {

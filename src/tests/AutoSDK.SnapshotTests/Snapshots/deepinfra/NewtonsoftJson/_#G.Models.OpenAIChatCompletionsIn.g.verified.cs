@@ -1,4 +1,4 @@
-﻿//HintName: G.Models.OpenAIChatCompletionsIn.g.cs
+//HintName: G.Models.OpenAIChatCompletionsIn.g.cs
 
 #nullable enable
 
@@ -143,7 +143,7 @@ namespace G
         /// Constrains effort on reasoning for reasoning models. Currently supported values are none, low, medium, and high. Reducing reasoning effort can result in faster responses and fewer tokens used on reasoning in a response. Setting to none disables reasoning entirely if the model supports.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("reasoning_effort")]
-        public global::G.OpenAIChatCompletionsInReasoningEffort2? ReasoningEffort { get; set; }
+        public global::G.OpenAIChatCompletionsInReasoningEffort? ReasoningEffort { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -248,7 +248,7 @@ namespace G
             int? seed,
             bool? logprobs,
             global::G.StreamOptions? streamOptions,
-            global::G.OpenAIChatCompletionsInReasoningEffort2? reasoningEffort)
+            global::G.OpenAIChatCompletionsInReasoningEffort? reasoningEffort)
         {
             this.Model = model ?? throw new global::System.ArgumentNullException(nameof(model));
             this.Messages = messages ?? throw new global::System.ArgumentNullException(nameof(messages));

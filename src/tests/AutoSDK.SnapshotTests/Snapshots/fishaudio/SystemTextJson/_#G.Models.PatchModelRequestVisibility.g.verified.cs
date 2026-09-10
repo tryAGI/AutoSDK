@@ -1,20 +1,58 @@
-﻿//HintName: G.Models.PatchModelRequestVisibility.g.cs
+//HintName: G.Models.PatchModelRequestVisibility.g.cs
 
 #nullable enable
 
 namespace G
 {
     /// <summary>
-    /// Default Value: openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464
+    /// 
     /// </summary>
-    public sealed partial class PatchModelRequestVisibility
+    public enum PatchModelRequestVisibility
     {
-
         /// <summary>
-        /// Additional properties that are not explicitly defined in the schema
+        /// 
         /// </summary>
-        [global::System.Text.Json.Serialization.JsonExtensionData]
-        public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
+        Private,
+        /// <summary>
+        /// 
+        /// </summary>
+        Public,
+        /// <summary>
+        /// 
+        /// </summary>
+        Unlist,
+    }
 
+    /// <summary>
+    /// Enum extensions to do fast conversions without the reflection.
+    /// </summary>
+    public static class PatchModelRequestVisibilityExtensions
+    {
+        /// <summary>
+        /// Converts an enum to a string.
+        /// </summary>
+        public static string ToValueString(this PatchModelRequestVisibility value)
+        {
+            return value switch
+            {
+                PatchModelRequestVisibility.Private => "private",
+                PatchModelRequestVisibility.Public => "public",
+                PatchModelRequestVisibility.Unlist => "unlist",
+                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
+            };
+        }
+        /// <summary>
+        /// Converts an string to a enum.
+        /// </summary>
+        public static PatchModelRequestVisibility? ToEnum(string value)
+        {
+            return value switch
+            {
+                "private" => PatchModelRequestVisibility.Private,
+                "public" => PatchModelRequestVisibility.Public,
+                "unlist" => PatchModelRequestVisibility.Unlist,
+                _ => null,
+            };
+        }
     }
 }

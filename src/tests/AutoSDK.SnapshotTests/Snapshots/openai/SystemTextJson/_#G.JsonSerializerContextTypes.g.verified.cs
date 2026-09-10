@@ -6802,7 +6802,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.ComputerCallOutputItemParamStatus2? Type1692 { get; set; }
+        public global::G.ComputerCallOutputItemParamStatus? Type1692 { get; set; }
         /// <summary>
         /// 
         /// </summary>
@@ -6810,11 +6810,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.FunctionCallOutputItemParamStatus2? Type1694 { get; set; }
+        public global::G.FunctionCallOutputItemParamStatus? Type1694 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.ItemReferenceParamType2? Type1695 { get; set; }
+        public global::G.ItemReferenceParamType? Type1695 { get; set; }
         /// <summary>
         /// 
         /// </summary>

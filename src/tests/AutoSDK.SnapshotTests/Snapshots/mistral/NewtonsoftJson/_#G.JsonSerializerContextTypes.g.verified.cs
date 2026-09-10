@@ -1086,7 +1086,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.JobsApiRoutesFineTuningGetFineTuningJobsStatus2? Type263 { get; set; }
+        public global::G.JobsApiRoutesFineTuningGetFineTuningJobsStatus? Type263 { get; set; }
         /// <summary>
         /// 
         /// </summary>

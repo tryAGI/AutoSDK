@@ -1,4 +1,4 @@
-﻿//HintName: G.Models.BodyAddAPronunciationDictionaryV1PronunciationDictionariesAddFromRulesPost.g.cs
+//HintName: G.Models.BodyAddAPronunciationDictionaryV1PronunciationDictionariesAddFromRulesPost.g.cs
 
 #nullable enable
 
@@ -33,7 +33,7 @@ namespace G
         /// Should be one of 'admin', 'editor' or 'viewer'. If not provided, defaults to no access.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("workspace_access")]
-        public global::G.BodyAddAPronunciationDictionaryV1PronunciationDictionariesAddFromRulesPostWorkspaceAccess2? WorkspaceAccess { get; set; }
+        public global::G.BodyAddAPronunciationDictionaryV1PronunciationDictionariesAddFromRulesPostWorkspaceAccess? WorkspaceAccess { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -62,7 +62,7 @@ namespace G
             global::System.Collections.Generic.IList<global::G.AnyOf<global::G.PronunciationDictionaryAliasRuleRequestModel, global::G.PronunciationDictionaryPhonemeRuleRequestModel>> rules,
             string name,
             string? description,
-            global::G.BodyAddAPronunciationDictionaryV1PronunciationDictionariesAddFromRulesPostWorkspaceAccess2? workspaceAccess)
+            global::G.BodyAddAPronunciationDictionaryV1PronunciationDictionariesAddFromRulesPostWorkspaceAccess? workspaceAccess)
         {
             this.Rules = rules ?? throw new global::System.ArgumentNullException(nameof(rules));
             this.Name = name ?? throw new global::System.ArgumentNullException(nameof(name));

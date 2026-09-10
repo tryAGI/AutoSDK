@@ -1,4 +1,4 @@
-﻿//HintName: G.Models.ExtractConfig.g.cs
+//HintName: G.Models.ExtractConfig.g.cs
 
 #pragma warning disable CS0618 // Type or member is obsolete
 
@@ -15,7 +15,7 @@ namespace G
         /// The priority for the request. This field may be ignored or overwritten depending on the organization tier.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("priority")]
-        public global::G.ExtractConfigPriority2? Priority { get; set; }
+        public global::G.ExtractConfigPriority? Priority { get; set; }
 
         /// <summary>
         /// The extraction target specified.<br/>
@@ -185,7 +185,7 @@ namespace G
         /// Comma-separated list of page numbers or ranges to extract from (1-based, e.g., '1,3,5-7,9' or '1-3,8-10').
         /// </param>
         public ExtractConfig(
-            global::G.ExtractConfigPriority2? priority,
+            global::G.ExtractConfigPriority? priority,
             global::G.ExtractTarget? extractionTarget,
             global::G.ExtractMode? extractionMode,
             global::G.PublicModelName? parseModel,

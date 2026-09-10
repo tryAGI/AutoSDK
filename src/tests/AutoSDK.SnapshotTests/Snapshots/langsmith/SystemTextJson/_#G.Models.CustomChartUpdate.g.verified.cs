@@ -1,4 +1,4 @@
-﻿//HintName: G.Models.CustomChartUpdate.g.cs
+//HintName: G.Models.CustomChartUpdate.g.cs
 
 #nullable enable
 
@@ -62,8 +62,8 @@ namespace G
         /// Default Value: {"__missing__":"__missing__"}
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("common_filters")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.AnyOfJsonConverter<global::G.CustomChartSeriesFilters2, global::G.Missing, object>))]
-        public global::G.AnyOf<global::G.CustomChartSeriesFilters2, global::G.Missing, object>? CommonFilters { get; set; }
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.AnyOfJsonConverter<global::G.CustomChartSeriesFilters, global::G.Missing, object>))]
+        public global::G.AnyOf<global::G.CustomChartSeriesFilters, global::G.Missing, object>? CommonFilters { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -109,7 +109,7 @@ namespace G
             global::G.AnyOf<global::System.Collections.Generic.IList<global::G.CustomChartSeriesUpdate>, global::G.Missing>? series,
             global::G.AnyOf<global::System.Guid?, global::G.Missing>? sectionId,
             global::G.AnyOf<object, global::G.Missing, object>? metadata,
-            global::G.AnyOf<global::G.CustomChartSeriesFilters2, global::G.Missing, object>? commonFilters)
+            global::G.AnyOf<global::G.CustomChartSeriesFilters, global::G.Missing, object>? commonFilters)
         {
             this.Title = title;
             this.Description = description;

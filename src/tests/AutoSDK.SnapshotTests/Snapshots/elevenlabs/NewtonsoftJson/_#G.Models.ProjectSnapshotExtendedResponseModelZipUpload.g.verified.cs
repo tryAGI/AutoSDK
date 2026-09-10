@@ -1,11 +1,11 @@
-﻿//HintName: G.Models.ProjectSnapshotExtendedResponseModelZipUpload.g.cs
+//HintName: G.Models.ProjectSnapshotExtendedResponseModelZipUpload.g.cs
 
 #nullable enable
 
 namespace G
 {
     /// <summary>
-    /// (Deprecated)
+    /// 
     /// </summary>
     public sealed partial class ProjectSnapshotExtendedResponseModelZipUpload
     {

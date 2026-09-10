@@ -1,11 +1,11 @@
-﻿//HintName: G.Models.DeprecatedStoreFileUpsertParamsMetadata.g.cs
+//HintName: G.Models.DeprecatedStoreFileUpsertParamsMetadata.g.cs
 
 #nullable enable
 
 namespace G
 {
     /// <summary>
-    /// Optional metadata for the file
+    /// 
     /// </summary>
     public sealed partial class DeprecatedStoreFileUpsertParamsMetadata
     {

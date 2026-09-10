@@ -1,11 +1,11 @@
-﻿//HintName: G.Models.RunMetadata.g.cs
+//HintName: G.Models.RunMetadata.g.cs
 
 #nullable enable
 
 namespace G
 {
     /// <summary>
-    /// Additional metadata for the run.
+    /// 
     /// </summary>
     public sealed partial class RunMetadata
     {

@@ -1,11 +1,11 @@
-﻿//HintName: G.Models.FeedbackStatsResWindowStats.g.cs
+//HintName: G.Models.FeedbackStatsResWindowStats.g.cs
 
 #nullable enable
 
 namespace G
 {
     /// <summary>
-    /// Aggregations over the full query window, keyed by metric slug (e.g. 'output_score'). Each value maps agg name to result.
+    /// 
     /// </summary>
     public sealed partial class FeedbackStatsResWindowStats
     {

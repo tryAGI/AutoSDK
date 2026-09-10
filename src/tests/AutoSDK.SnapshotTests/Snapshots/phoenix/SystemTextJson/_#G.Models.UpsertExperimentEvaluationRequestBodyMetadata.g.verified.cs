@@ -1,11 +1,11 @@
-﻿//HintName: G.Models.UpsertExperimentEvaluationRequestBodyMetadata.g.cs
+//HintName: G.Models.UpsertExperimentEvaluationRequestBodyMetadata.g.cs
 
 #nullable enable
 
 namespace G
 {
     /// <summary>
-    /// Metadata for the evaluation
+    /// 
     /// </summary>
     public sealed partial class UpsertExperimentEvaluationRequestBodyMetadata
     {
