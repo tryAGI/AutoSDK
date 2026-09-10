@@ -4,6 +4,7 @@ using AutoSDK.JsonConverters;
 
 namespace AutoSDK.UnitTests;
 
+[DoNotParallelize]
 public partial class JsonTests
 {
     [TestMethod]

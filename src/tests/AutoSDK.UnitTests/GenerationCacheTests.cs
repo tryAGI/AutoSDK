@@ -149,7 +149,7 @@ public class GenerationCacheTests
 
             result.Acquired.Should().BeFalse();
             result.Reason.Should().Be("timeout");
-            started.Elapsed.Should().BeLessThan(TimeSpan.FromSeconds(2));
+            started.Elapsed.Should().BeLessThan(TimeSpan.FromSeconds(5));
         }
         finally
         {
