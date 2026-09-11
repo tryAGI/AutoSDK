@@ -494,6 +494,9 @@ public static class AsyncApiData
                     var methodName = direction == WebSocketDirection.Send
                         ? $"Send{methodBaseName}Async"
                         : $"Receive{methodBaseName}Async";
+                    var contentType = channel.Messages.TryGetValue(messageName, out var message)
+                        ? message.ContentType
+                        : "application/json";
 
                     var wsOp = new WebSocketEndPoint(
                         Id: messageName,
@@ -504,6 +507,7 @@ public static class AsyncApiData
                         Direction: direction,
                         MessageType: messageType,
                         MessageName: messageName,
+                        ContentType: contentType,
                         Summary: operation.Summary,
                         Settings: settings,
                         GlobalSettings: globalSettings);

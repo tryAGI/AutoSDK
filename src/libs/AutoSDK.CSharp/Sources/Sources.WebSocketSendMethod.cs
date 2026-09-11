@@ -38,9 +38,28 @@ public static partial class Sources
         // CSharpType already includes global:: prefix and nullable suffix
         var nonNullableType = endPoint.MessageType.CSharpTypeWithoutNullability;
 
-        var serializeCall = hasOptions
-            ? $"global::System.Text.Json.JsonSerializer.Serialize(message, typeof({nonNullableType}), JsonSerializerOptions)"
-            : $"global::System.Text.Json.JsonSerializer.Serialize(message, typeof({nonNullableType}), JsonSerializerContext)";
+        var messageValidation = endPoint.MessageType.IsValueType
+            ? string.Empty
+            : "            message = message ?? throw new global::System.ArgumentNullException(nameof(message));\n\n";
+        var isBinaryFrame = endPoint.MessageType.IsBinary ||
+            string.Equals(endPoint.ContentType, "application/octet-stream", StringComparison.OrdinalIgnoreCase);
+        var isPlainTextFrame = string.Equals(
+            endPoint.ContentType,
+            "text/plain",
+            StringComparison.OrdinalIgnoreCase);
+        var sendStatement = isBinaryFrame
+            ? @"            await SendAsync(
+                new global::System.ArraySegment<byte>(message),
+                global::System.Net.WebSockets.WebSocketMessageType.Binary,
+                endOfMessage: true,
+                cancellationToken).ConfigureAwait(false);"
+            : isPlainTextFrame
+                ? $"            await SendAsync({(endPoint.MessageType.IsEnum ? "message.ToValueString()" : "message")}, cancellationToken).ConfigureAwait(false);"
+                : $@"            var json = {(hasOptions
+                    ? $"global::System.Text.Json.JsonSerializer.Serialize(message, typeof({nonNullableType}), JsonSerializerOptions)"
+                    : $"global::System.Text.Json.JsonSerializer.Serialize(message, typeof({nonNullableType}), JsonSerializerContext)")};
+
+            await SendAsync(json, cancellationToken).ConfigureAwait(false);";
 
         var convenienceOverload = GenerateWebSocketBinaryPayloadOverload(endPoint, messageModel);
 
@@ -58,11 +77,7 @@ namespace {endPoint.Settings.Namespace}
             {nonNullableType} message,
             global::System.Threading.CancellationToken cancellationToken = default)
         {{
-            message = message ?? throw new global::System.ArgumentNullException(nameof(message));
-
-            var json = {serializeCall};
-
-            await SendAsync(json, cancellationToken).ConfigureAwait(false);
+{messageValidation}{sendStatement}
         }}
 {(!string.IsNullOrWhiteSpace(convenienceOverload) ? convenienceOverload : TrimmedLine)}
     }}

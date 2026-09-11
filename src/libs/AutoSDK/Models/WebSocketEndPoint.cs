@@ -12,6 +12,7 @@ public record struct WebSocketEndPoint(
     WebSocketDirection Direction,
     TypeData MessageType,
     string MessageName,
+    string ContentType,
     string Summary,
     Settings Settings,
     Settings GlobalSettings)

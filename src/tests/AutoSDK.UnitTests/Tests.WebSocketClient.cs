@@ -154,6 +154,7 @@ public partial class Tests
             Direction: WebSocketDirection.Receive,
             MessageType: sessionStartedType,
             MessageName: "SessionStarted",
+            ContentType: "application/json",
             Summary: string.Empty,
             Settings: settings,
             GlobalSettings: settings);
@@ -699,6 +700,7 @@ components:
                 GeneratedNamespace = "G",
             }).WithCSharpComputedValues(),
             MessageName: "InputAudioBufferAppend",
+            ContentType: "application/json",
             Summary: "Sends audio to the realtime session.",
             Settings: settings,
             GlobalSettings: settings);
@@ -712,6 +714,64 @@ components:
         sendSource.Should().Contain("string? eventId = default");
         sendSource.Should().Contain("Audio = global::System.Convert.ToBase64String(audio.Span),");
         sendSource.Should().Contain("EventId = eventId,");
+    }
+
+    [TestMethod]
+    public void WebSocketSendMethod_UsesDeclaredBinaryAndPlainTextFrameTypes()
+    {
+        var settings = Settings.Default with
+        {
+            Namespace = "G",
+            JsonSerializerContext = "G.SourceGenerationContext",
+        };
+        var binaryType = (TypeData.Default with
+        {
+            CSharpTypeRaw = "byte[]",
+            IsArray = true,
+            IsBinary = true,
+            Namespace = "System",
+            GeneratedNamespace = "G",
+        }).WithCSharpComputedValues();
+        var commandType = (TypeData.Default with
+        {
+            CSharpTypeRaw = "global::G.FinalizeCommand",
+            IsEnum = true,
+            IsValueType = true,
+            Namespace = "G",
+            GeneratedNamespace = "G",
+        }).WithCSharpComputedValues();
+
+        WebSocketEndPoint CreateEndPoint(
+            string id,
+            TypeData messageType,
+            string contentType)
+        {
+            return new WebSocketEndPoint(
+                Id: id,
+                ClassName: "RealtimeClient",
+                MethodName: $"Send{id}Async",
+                FileNameWithoutExtension: $"G.RealtimeClient.{id}",
+                ChannelAddress: "/realtime",
+                Direction: WebSocketDirection.Send,
+                MessageType: messageType,
+                MessageName: id,
+                ContentType: contentType,
+                Summary: string.Empty,
+                Settings: settings,
+                GlobalSettings: settings);
+        }
+
+        var binarySource = Sources.GenerateWebSocketSendMethod(
+            CreateEndPoint("Audio", binaryType, "application/octet-stream"));
+        var textSource = Sources.GenerateWebSocketSendMethod(
+            CreateEndPoint("Finalize", commandType, "text/plain"));
+
+        binarySource.Should().Contain("global::System.Net.WebSockets.WebSocketMessageType.Binary");
+        binarySource.Should().Contain("new global::System.ArraySegment<byte>(message)");
+        binarySource.Should().NotContain("JsonSerializer.Serialize");
+        textSource.Should().Contain("SendAsync(message.ToValueString(), cancellationToken)");
+        textSource.Should().NotContain("ArgumentNullException");
+        textSource.Should().NotContain("JsonSerializer.Serialize");
     }
 
     [TestMethod]
