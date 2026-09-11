@@ -86,6 +86,73 @@ paths:
     }
 
     [TestMethod]
+    public void OptionalNullableEnumQueryParameter_UsesWireValue()
+    {
+        var endPoint = LoadEndPoint(@"openapi: 3.1.0
+info:
+  title: Test
+  version: 1.0.0
+paths:
+  /voices:
+    get:
+      operationId: listVoices
+      parameters:
+        - name: gender
+          in: query
+          required: false
+          schema:
+            anyOf:
+              - $ref: '#/components/schemas/VoiceGender'
+              - type: 'null'
+      responses:
+        '200':
+          description: OK
+components:
+  schemas:
+    VoiceGender:
+      type: string
+      enum: [male, female, neutral]
+");
+
+        var generatedCode = Sources.GenerateEndPoint(endPoint);
+
+        generatedCode.Should().Contain(@"AddOptionalParameter(""gender"", gender?.ToValueString())");
+        generatedCode.Should().NotContain(@"AddOptionalParameter(""gender"", gender?.ToString())");
+    }
+
+    [TestMethod]
+    public void OptionalNullableArrayQueryParameter_UsesRepeatedValues()
+    {
+        var endPoint = LoadEndPoint(@"openapi: 3.1.0
+info:
+  title: Test
+  version: 1.0.0
+paths:
+  /voices:
+    get:
+      operationId: listVoices
+      parameters:
+        - name: style
+          in: query
+          required: false
+          schema:
+            anyOf:
+              - type: array
+                items:
+                  type: string
+              - type: 'null'
+      responses:
+        '200':
+          description: OK
+");
+
+        var generatedCode = Sources.GenerateEndPoint(endPoint);
+
+        generatedCode.Should().Contain(@"AddOptionalParameter(""style"", style, delimiter: "","", explode: true)");
+        generatedCode.Should().NotContain(@"AddOptionalParameter(""style"", style?.ToString())");
+    }
+
+    [TestMethod]
     public void RequiredAnyOfQueryParameter_UsesNullCoalescing()
     {
         var endPoint = LoadEndPoint(@"openapi: 3.0.1
