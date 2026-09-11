@@ -1,4 +1,4 @@
-﻿//HintName: G.ToolsClient.CountTools.g.cs
+//HintName: G.ToolsClient.CountTools.g.cs
 
 #nullable enable
 
@@ -213,11 +213,11 @@ namespace G
                                 defaultBaseUrl: "https://app.letta.com/"));
                             __pathBuilder
                                 .AddOptionalParameter("name", name)
-                                .AddOptionalParameter("names", names?.ToString())
-                                .AddOptionalParameter("tool_ids", toolIds?.ToString())
+                                .AddOptionalParameter("names", names, delimiter: ",", explode: true)
+                                .AddOptionalParameter("tool_ids", toolIds, delimiter: ",", explode: true)
                                 .AddOptionalParameter("search", search)
-                                .AddOptionalParameter("tool_types", toolTypes?.ToString())
-                                .AddOptionalParameter("exclude_tool_types", excludeToolTypes?.ToString())
+                                .AddOptionalParameter("tool_types", toolTypes, delimiter: ",", explode: true)
+                                .AddOptionalParameter("exclude_tool_types", excludeToolTypes, delimiter: ",", explode: true)
                                 .AddOptionalParameter("return_only_letta_tools", returnOnlyLettaTools?.ToString().ToLowerInvariant())
                                 .AddOptionalParameter("exclude_letta_tools", excludeLettaTools?.ToString().ToLowerInvariant())
                                 ;

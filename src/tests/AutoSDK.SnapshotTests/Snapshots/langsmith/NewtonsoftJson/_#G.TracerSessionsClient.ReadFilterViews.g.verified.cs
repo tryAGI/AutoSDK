@@ -128,6 +128,12 @@ namespace G
                 securityRequirements: s_ReadFilterViewsSecurityRequirements,
                 operationName: "ReadFilterViewsAsync");
 
+            var typeValue = type switch
+            {
+                global::G.FilterViewType.Runs => "runs",
+                global::G.FilterViewType.Threads => "threads",
+                _ => throw new global::System.NotImplementedException("Enum value not implemented."),
+            };
             using var __timeoutCancellationTokenSource = global::G.AutoSDKRequestOptionsSupport.CreateTimeoutCancellationTokenSource(
                 clientOptions: Options,
                 requestOptions: requestOptions,
@@ -149,7 +155,7 @@ namespace G
                                 path: $"/api/v1/sessions/{sessionId}/views",
                                 baseUri: HttpClient.BaseAddress);
                             __pathBuilder
-                                .AddOptionalParameter("type", type?.ToString())
+                                .AddOptionalParameter("type", type?.ToValueString())
                                 ;
                             var __path = __pathBuilder.ToString();
                 __path = global::G.AutoSDKRequestOptionsSupport.AppendQueryParameters(

@@ -137,6 +137,12 @@ namespace G
                 global::G.OrganizationDashboardType.Credits => "credits",
                 _ => throw new global::System.NotImplementedException("Enum value not implemented."),
             };
+            var colorSchemeValue = colorScheme switch
+            {
+                global::G.OrganizationDashboardColorScheme.Light => "light",
+                global::G.OrganizationDashboardColorScheme.Dark => "dark",
+                _ => throw new global::System.NotImplementedException("Enum value not implemented."),
+            };
             using var __timeoutCancellationTokenSource = global::G.AutoSDKRequestOptionsSupport.CreateTimeoutCancellationTokenSource(
                 clientOptions: Options,
                 requestOptions: requestOptions,
@@ -159,7 +165,7 @@ namespace G
                                 baseUri: HttpClient.BaseAddress);
                             __pathBuilder
                                 .AddRequiredParameter("type", type.ToValueString())
-                                .AddOptionalParameter("color_scheme", colorScheme?.ToString()!)
+                                .AddOptionalParameter("color_scheme", colorScheme?.ToValueString())
                                 ;
                             var __path = __pathBuilder.ToString();
                 __path = global::G.AutoSDKRequestOptionsSupport.AppendQueryParameters(

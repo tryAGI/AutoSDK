@@ -172,6 +172,23 @@ namespace G
                 securityRequirements: s_ListBatchJobsApiV1BetaBatchProcessingGetSecurityRequirements,
                 operationName: "ListBatchJobsApiV1BetaBatchProcessingGetAsync");
 
+            var jobTypeValue = jobType switch
+            {
+                global::G.BatchJobType.Parse => "parse",
+                global::G.BatchJobType.Extract => "extract",
+                global::G.BatchJobType.Classify => "classify",
+                _ => throw new global::System.NotImplementedException("Enum value not implemented."),
+            };
+            var statusValue = status switch
+            {
+                global::G.BatchJobStatus.Pending => "pending",
+                global::G.BatchJobStatus.Running => "running",
+                global::G.BatchJobStatus.Dispatched => "dispatched",
+                global::G.BatchJobStatus.Completed => "completed",
+                global::G.BatchJobStatus.Failed => "failed",
+                global::G.BatchJobStatus.Cancelled => "cancelled",
+                _ => throw new global::System.NotImplementedException("Enum value not implemented."),
+            };
             using var __timeoutCancellationTokenSource = global::G.AutoSDKRequestOptionsSupport.CreateTimeoutCancellationTokenSource(
                 clientOptions: Options,
                 requestOptions: requestOptions,
@@ -194,8 +211,8 @@ namespace G
                                 baseUri: HttpClient.BaseAddress);
                             __pathBuilder
                                 .AddOptionalParameter("directory_id", directoryId)
-                                .AddOptionalParameter("job_type", jobType?.ToString())
-                                .AddOptionalParameter("status", status?.ToString())
+                                .AddOptionalParameter("job_type", jobType?.ToValueString())
+                                .AddOptionalParameter("status", status?.ToValueString())
                                 .AddOptionalParameter("limit", limit?.ToString())
                                 .AddOptionalParameter("offset", offset?.ToString())
                                 .AddOptionalParameter("project_id", projectId?.ToString())

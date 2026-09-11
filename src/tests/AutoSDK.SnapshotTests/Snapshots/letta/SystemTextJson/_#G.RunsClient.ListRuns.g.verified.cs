@@ -285,10 +285,10 @@ namespace G
                                 defaultBaseUrl: "https://app.letta.com/"));
                             __pathBuilder
                                 .AddOptionalParameter("agent_id", agentId)
-                                .AddOptionalParameter("agent_ids", agentIds?.ToString())
-                                .AddOptionalParameter("statuses", statuses?.ToString())
+                                .AddOptionalParameter("agent_ids", agentIds, delimiter: ",", explode: true)
+                                .AddOptionalParameter("statuses", statuses, delimiter: ",", explode: true)
                                 .AddOptionalParameter("background", background?.ToString().ToLowerInvariant())
-                                .AddOptionalParameter("stop_reason", stopReason?.ToString())
+                                .AddOptionalParameter("stop_reason", stopReason?.ToValueString())
                                 .AddOptionalParameter("conversation_id", conversationId)
                                 .AddOptionalParameter("before", before)
                                 .AddOptionalParameter("after", after)

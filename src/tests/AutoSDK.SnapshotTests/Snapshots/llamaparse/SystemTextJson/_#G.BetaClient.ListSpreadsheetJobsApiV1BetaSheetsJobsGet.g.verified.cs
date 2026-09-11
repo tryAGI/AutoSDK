@@ -204,10 +204,10 @@ namespace G
                                 baseUri: HttpClient.BaseAddress);
                             __pathBuilder
                                 .AddOptionalParameter("include_results", includeResults?.ToString().ToLowerInvariant())
-                                .AddOptionalParameter("status", status?.ToString())
+                                .AddOptionalParameter("status", status?.ToValueString())
                                 .AddOptionalParameter("created_at_on_or_after", createdAtOnOrAfter?.ToString())
                                 .AddOptionalParameter("created_at_on_or_before", createdAtOnOrBefore?.ToString())
-                                .AddOptionalParameter("job_ids", jobIds?.ToString())
+                                .AddOptionalParameter("job_ids", jobIds, delimiter: ",", explode: true)
                                 .AddOptionalParameter("project_id", projectId?.ToString())
                                 .AddOptionalParameter("organization_id", organizationId?.ToString())
                                 .AddOptionalParameter("page_size", pageSize?.ToString())

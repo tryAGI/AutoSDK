@@ -331,7 +331,7 @@ namespace G
                             __pathBuilder
                                 .AddOptionalParameter("cursor", cursor)
                                 .AddOptionalParameter("agent_id", agentId)
-                                .AddOptionalParameter("call_successful", callSuccessful?.ToString())
+                                .AddOptionalParameter("call_successful", callSuccessful?.ToValueString())
                                 .AddOptionalParameter("call_start_before_unix", callStartBeforeUnix?.ToString())
                                 .AddOptionalParameter("call_start_after_unix", callStartAfterUnix?.ToString())
                                 .AddOptionalParameter("call_duration_min_secs", callDurationMinSecs?.ToString())
@@ -340,14 +340,14 @@ namespace G
                                 .AddOptionalParameter("rating_min", ratingMin?.ToString())
                                 .AddOptionalParameter("has_feedback_comment", hasFeedbackComment?.ToString().ToLowerInvariant())
                                 .AddOptionalParameter("user_id", userId)
-                                .AddOptionalParameter("evaluation_params", evaluationParams?.ToString())
-                                .AddOptionalParameter("data_collection_params", dataCollectionParams?.ToString())
-                                .AddOptionalParameter("tool_names", toolNames?.ToString())
-                                .AddOptionalParameter("main_languages", mainLanguages?.ToString())
+                                .AddOptionalParameter("evaluation_params", evaluationParams, delimiter: ",", explode: true)
+                                .AddOptionalParameter("data_collection_params", dataCollectionParams, delimiter: ",", explode: true)
+                                .AddOptionalParameter("tool_names", toolNames, delimiter: ",", explode: true)
+                                .AddOptionalParameter("main_languages", mainLanguages, delimiter: ",", explode: true)
                                 .AddOptionalParameter("page_size", pageSize?.ToString())
                                 .AddOptionalParameter("summary_mode", summaryMode?.ToValueString())
                                 .AddOptionalParameter("search", search)
-                                .AddOptionalParameter("conversation_initiation_source", conversationInitiationSource?.ToString())
+                                .AddOptionalParameter("conversation_initiation_source", conversationInitiationSource?.ToValueString())
                                 .AddOptionalParameter("branch_id", branchId)
                                 ;
                             var __path = __pathBuilder.ToString();

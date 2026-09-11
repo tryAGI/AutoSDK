@@ -311,10 +311,10 @@ namespace G
                                 .AddOptionalParameter("end_date", endDate)
                                 .AddOptionalParameter("model", model)
                                 .AddOptionalParameter("agent_id", agentId)
-                                .AddOptionalParameter("trace_ids", traceIds?.ToString())
-                                .AddOptionalParameter("feedback", feedback?.ToString())
+                                .AddOptionalParameter("trace_ids", traceIds, delimiter: ",", explode: true)
+                                .AddOptionalParameter("feedback", feedback?.ToValueString())
                                 .AddOptionalParameter("has_feedback", hasFeedback?.ToString().ToLowerInvariant())
-                                .AddOptionalParameter("tags", tags?.ToString())
+                                .AddOptionalParameter("tags", tags, delimiter: ",", explode: true)
                                 .AddOptionalParameter("project_id", projectId)
                                 ;
                             var __path = __pathBuilder.ToString();

@@ -285,6 +285,12 @@ namespace G
                 global::G.ListStepsOrder.Desc => "desc",
                 _ => throw new global::System.NotImplementedException("Enum value not implemented."),
             };
+            var feedbackValue = feedback switch
+            {
+                global::G.ListStepsFeedback.Positive => "positive",
+                global::G.ListStepsFeedback.Negative => "negative",
+                _ => throw new global::System.NotImplementedException("Enum value not implemented."),
+            };
             using var __timeoutCancellationTokenSource = global::G.AutoSDKRequestOptionsSupport.CreateTimeoutCancellationTokenSource(
                 clientOptions: Options,
                 requestOptions: requestOptions,
@@ -317,10 +323,10 @@ namespace G
                                 .AddOptionalParameter("end_date", endDate)
                                 .AddOptionalParameter("model", model)
                                 .AddOptionalParameter("agent_id", agentId)
-                                .AddOptionalParameter("trace_ids", traceIds?.ToString())
-                                .AddOptionalParameter("feedback", feedback?.ToString())
+                                .AddOptionalParameter("trace_ids", traceIds, delimiter: ",", explode: true)
+                                .AddOptionalParameter("feedback", feedback?.ToValueString())
                                 .AddOptionalParameter("has_feedback", hasFeedback?.ToString().ToLowerInvariant())
-                                .AddOptionalParameter("tags", tags?.ToString())
+                                .AddOptionalParameter("tags", tags, delimiter: ",", explode: true)
                                 .AddOptionalParameter("project_id", projectId)
                                 ;
                             var __path = __pathBuilder.ToString();

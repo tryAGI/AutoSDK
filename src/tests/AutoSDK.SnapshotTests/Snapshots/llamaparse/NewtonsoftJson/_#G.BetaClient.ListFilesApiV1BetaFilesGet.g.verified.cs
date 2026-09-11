@@ -1,4 +1,4 @@
-﻿//HintName: G.BetaClient.ListFilesApiV1BetaFilesGet.g.cs
+//HintName: G.BetaClient.ListFilesApiV1BetaFilesGet.g.cs
 
 #nullable enable
 
@@ -203,7 +203,7 @@ namespace G
                             __pathBuilder
                                 .AddOptionalParameter("page_size", pageSize?.ToString())
                                 .AddOptionalParameter("page_token", pageToken)
-                                .AddOptionalParameter("file_ids", fileIds?.ToString())
+                                .AddOptionalParameter("file_ids", fileIds, selector: static x => x.ToString()!, delimiter: ",", explode: true)
                                 .AddOptionalParameter("file_name", fileName)
                                 .AddOptionalParameter("external_file_id", externalFileId)
                                 .AddOptionalParameter("order_by", orderBy)

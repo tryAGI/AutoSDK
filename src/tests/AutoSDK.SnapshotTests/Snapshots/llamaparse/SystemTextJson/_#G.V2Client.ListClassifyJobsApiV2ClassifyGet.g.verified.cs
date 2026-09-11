@@ -215,8 +215,8 @@ namespace G
                             __pathBuilder
                                 .AddOptionalParameter("page_size", pageSize?.ToString())
                                 .AddOptionalParameter("page_token", pageToken)
-                                .AddOptionalParameter("status", status?.ToString())
-                                .AddOptionalParameter("job_ids", jobIds?.ToString())
+                                .AddOptionalParameter("status", status?.ToValueString())
+                                .AddOptionalParameter("job_ids", jobIds, delimiter: ",", explode: true)
                                 .AddOptionalParameter("configuration_id", configurationId)
                                 .AddOptionalParameter("created_at_on_or_after", createdAtOnOrAfter?.ToString())
                                 .AddOptionalParameter("created_at_on_or_before", createdAtOnOrBefore?.ToString())

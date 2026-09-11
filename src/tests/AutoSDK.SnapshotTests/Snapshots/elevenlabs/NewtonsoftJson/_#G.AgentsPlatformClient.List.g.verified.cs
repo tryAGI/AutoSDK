@@ -164,6 +164,12 @@ namespace G
                 global::G.SortDirection.Desc => "desc",
                 _ => throw new global::System.NotImplementedException("Enum value not implemented."),
             };
+            var sortByValue = sortBy switch
+            {
+                global::G.AgentSortBy.Name => "name",
+                global::G.AgentSortBy.CreatedAt => "created_at",
+                _ => throw new global::System.NotImplementedException("Enum value not implemented."),
+            };
             using var __timeoutCancellationTokenSource = global::G.AutoSDKRequestOptionsSupport.CreateTimeoutCancellationTokenSource(
                 clientOptions: Options,
                 requestOptions: requestOptions,
@@ -190,7 +196,7 @@ namespace G
                                 .AddOptionalParameter("archived", archived?.ToString().ToLowerInvariant())
                                 .AddOptionalParameter("show_only_owned_agents", showOnlyOwnedAgents?.ToString().ToLowerInvariant())
                                 .AddOptionalParameter("sort_direction", sortDirection?.ToValueString())
-                                .AddOptionalParameter("sort_by", sortBy?.ToString())
+                                .AddOptionalParameter("sort_by", sortBy?.ToValueString())
                                 .AddOptionalParameter("cursor", cursor)
                                 ;
                             var __path = __pathBuilder.ToString();

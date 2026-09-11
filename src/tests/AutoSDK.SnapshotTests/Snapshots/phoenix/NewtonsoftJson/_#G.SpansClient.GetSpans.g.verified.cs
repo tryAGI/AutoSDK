@@ -1,4 +1,4 @@
-﻿//HintName: G.SpansClient.GetSpans.g.cs
+//HintName: G.SpansClient.GetSpans.g.cs
 
 #nullable enable
 
@@ -201,11 +201,11 @@ namespace G
                                 .AddOptionalParameter("limit", limit?.ToString())
                                 .AddOptionalParameter("start_time", startTime?.ToString())
                                 .AddOptionalParameter("end_time", endTime?.ToString())
-                                .AddOptionalParameter("trace_id", traceId?.ToString())
+                                .AddOptionalParameter("trace_id", traceId, delimiter: ",", explode: true)
                                 .AddOptionalParameter("parent_id", parentId)
-                                .AddOptionalParameter("name", name?.ToString())
-                                .AddOptionalParameter("span_kind", spanKind?.ToString())
-                                .AddOptionalParameter("status_code", statusCode?.ToString())
+                                .AddOptionalParameter("name", name, delimiter: ",", explode: true)
+                                .AddOptionalParameter("span_kind", spanKind, delimiter: ",", explode: true)
+                                .AddOptionalParameter("status_code", statusCode, delimiter: ",", explode: true)
                                 ;
                             var __path = __pathBuilder.ToString();
                 __path = global::G.AutoSDKRequestOptionsSupport.AppendQueryParameters(

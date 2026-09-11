@@ -1,4 +1,4 @@
-﻿//HintName: G.PublicClient.CountSharedExamples.g.cs
+//HintName: G.PublicClient.CountSharedExamples.g.cs
 
 #nullable enable
 
@@ -121,7 +121,7 @@ namespace G
                                 path: $"/api/v1/public/{shareToken}/examples/count",
                                 baseUri: HttpClient.BaseAddress);
                             __pathBuilder
-                                .AddOptionalParameter("id", id?.ToString())
+                                .AddOptionalParameter("id", id, selector: static x => x.ToString()!, delimiter: ",", explode: true)
                                 .AddOptionalParameter("as_of", asOf?.ToString())
                                 .AddOptionalParameter("metadata", metadata)
                                 .AddOptionalParameter("filter", filter)

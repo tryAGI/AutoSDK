@@ -216,6 +216,19 @@ namespace G
                 securityRequirements: s_ListRepoTagsSecurityRequirements,
                 operationName: "ListRepoTagsAsync");
 
+            var isArchivedValue = isArchived switch
+            {
+                global::G.ListRepoTagsApiV1ReposTagsGetIsArchived.True => "true",
+                global::G.ListRepoTagsApiV1ReposTagsGetIsArchived.Allow => "allow",
+                global::G.ListRepoTagsApiV1ReposTagsGetIsArchived.False => "false",
+                _ => throw new global::System.NotImplementedException("Enum value not implemented."),
+            };
+            var isPublicValue = isPublic switch
+            {
+                global::G.ListRepoTagsApiV1ReposTagsGetIsPublic.True => "true",
+                global::G.ListRepoTagsApiV1ReposTagsGetIsPublic.False => "false",
+                _ => throw new global::System.NotImplementedException("Enum value not implemented."),
+            };
             using var __timeoutCancellationTokenSource = global::G.AutoSDKRequestOptionsSupport.CreateTimeoutCancellationTokenSource(
                 clientOptions: Options,
                 requestOptions: requestOptions,
@@ -243,12 +256,12 @@ namespace G
                                 .AddOptionalParameter("tenant_id", tenantId?.ToString())
                                 .AddOptionalParameter("query", query)
                                 .AddOptionalParameter("has_commits", hasCommits?.ToString().ToLowerInvariant())
-                                .AddOptionalParameter("tags", tags?.ToString())
-                                .AddOptionalParameter("is_archived", isArchived?.ToString())
-                                .AddOptionalParameter("is_public", isPublic?.ToString())
+                                .AddOptionalParameter("tags", tags, delimiter: ",", explode: true)
+                                .AddOptionalParameter("is_archived", isArchived?.ToValueString())
+                                .AddOptionalParameter("is_public", isPublic?.ToValueString())
                                 .AddOptionalParameter("upstream_repo_owner", upstreamRepoOwner)
                                 .AddOptionalParameter("upstream_repo_handle", upstreamRepoHandle)
-                                .AddOptionalParameter("tag_value_id", tagValueId?.ToString())
+                                .AddOptionalParameter("tag_value_id", tagValueId, selector: static x => x.ToString()!, delimiter: ",", explode: true)
                                 ;
                             var __path = __pathBuilder.ToString();
                 __path = global::G.AutoSDKRequestOptionsSupport.AppendQueryParameters(

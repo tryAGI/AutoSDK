@@ -1,4 +1,4 @@
-﻿//HintName: G.AgentsClient.SearchArchivalMemory.g.cs
+//HintName: G.AgentsClient.SearchArchivalMemory.g.cs
 
 #nullable enable
 
@@ -215,7 +215,7 @@ namespace G
                                 defaultBaseUrl: "https://app.letta.com/"));
                             __pathBuilder
                                 .AddRequiredParameter("query", query)
-                                .AddOptionalParameter("tags", tags?.ToString())
+                                .AddOptionalParameter("tags", tags, delimiter: ",", explode: true)
                                 .AddOptionalParameter("tag_match_mode", tagMatchMode?.ToValueString())
                                 .AddOptionalParameter("top_k", topK?.ToString())
                                 .AddOptionalParameter("start_datetime", startDatetime?.ToString())

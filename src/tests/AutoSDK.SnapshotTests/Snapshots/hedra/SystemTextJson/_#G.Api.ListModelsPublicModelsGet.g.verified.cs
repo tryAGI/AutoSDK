@@ -1,4 +1,4 @@
-﻿//HintName: G.Api.ListModelsPublicModelsGet.g.cs
+//HintName: G.Api.ListModelsPublicModelsGet.g.cs
 
 #nullable enable
 
@@ -107,7 +107,7 @@ namespace G
                                 path: "/public/models",
                                 baseUri: HttpClient.BaseAddress);
                             __pathBuilder
-                                .AddOptionalParameter("types", types?.ToString())
+                                .AddOptionalParameter("types", types, delimiter: ",", explode: true)
                                 ;
                             var __path = __pathBuilder.ToString();
                 __path = global::G.AutoSDKRequestOptionsSupport.AppendQueryParameters(

@@ -1,4 +1,4 @@
-﻿//HintName: G.BetaClient.ListUsageMetricsApiV1BetaUsageMetricsGet.g.cs
+//HintName: G.BetaClient.ListUsageMetricsApiV1BetaUsageMetricsGet.g.cs
 
 #nullable enable
 
@@ -256,8 +256,8 @@ namespace G
                                 .AddOptionalParameter("include_total", includeTotal?.ToString().ToLowerInvariant())
                                 .AddOptionalParameter("project_id", projectId?.ToString())
                                 .AddOptionalParameter("user_id", userId)
-                                .AddOptionalParameter("event_types", eventTypes?.ToString())
-                                .AddOptionalParameter("days", days?.ToString())
+                                .AddOptionalParameter("event_types", eventTypes, delimiter: ",", explode: true)
+                                .AddOptionalParameter("days", days, delimiter: ",", explode: true)
                                 .AddOptionalParameter("day_on_or_before", dayOnOrBefore)
                                 .AddOptionalParameter("day_on_or_after", dayOnOrAfter)
                                 .AddOptionalParameter("event_aggregation_type", eventAggregationType)

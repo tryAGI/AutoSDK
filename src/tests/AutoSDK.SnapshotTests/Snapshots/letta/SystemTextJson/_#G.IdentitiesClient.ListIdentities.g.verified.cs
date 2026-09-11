@@ -225,7 +225,7 @@ namespace G
                                 .AddOptionalParameter("name", name)
                                 .AddOptionalParameter("project_id", projectId)
                                 .AddOptionalParameter("identifier_key", identifierKey)
-                                .AddOptionalParameter("identity_type", identityType?.ToString())
+                                .AddOptionalParameter("identity_type", identityType?.ToValueString())
                                 .AddOptionalParameter("before", before)
                                 .AddOptionalParameter("after", after)
                                 .AddOptionalParameter("limit", limit?.ToString())

@@ -1,4 +1,4 @@
-﻿//HintName: G.VoicesClient.Search.g.cs
+//HintName: G.VoicesClient.Search.g.cs
 
 #nullable enable
 
@@ -233,7 +233,7 @@ namespace G
                                 .AddOptionalParameter("fine_tuning_state", fineTuningState)
                                 .AddOptionalParameter("collection_id", collectionId)
                                 .AddOptionalParameter("include_total_count", includeTotalCount?.ToString().ToLowerInvariant())
-                                .AddOptionalParameter("voice_ids", voiceIds?.ToString())
+                                .AddOptionalParameter("voice_ids", voiceIds, delimiter: ",", explode: true)
                                 ;
                             var __path = __pathBuilder.ToString();
                 __path = global::G.AutoSDKRequestOptionsSupport.AppendQueryParameters(

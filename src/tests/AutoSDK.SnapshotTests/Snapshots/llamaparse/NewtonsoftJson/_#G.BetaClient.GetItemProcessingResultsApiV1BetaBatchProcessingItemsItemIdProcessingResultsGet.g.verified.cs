@@ -130,6 +130,13 @@ namespace G
                 securityRequirements: s_GetItemProcessingResultsApiV1BetaBatchProcessingItemsItemIdProcessingResultsGetSecurityRequirements,
                 operationName: "GetItemProcessingResultsApiV1BetaBatchProcessingItemsItemIdProcessingResultsGetAsync");
 
+            var jobTypeValue = jobType switch
+            {
+                global::G.BatchJobType.Parse => "parse",
+                global::G.BatchJobType.Extract => "extract",
+                global::G.BatchJobType.Classify => "classify",
+                _ => throw new global::System.NotImplementedException("Enum value not implemented."),
+            };
             using var __timeoutCancellationTokenSource = global::G.AutoSDKRequestOptionsSupport.CreateTimeoutCancellationTokenSource(
                 clientOptions: Options,
                 requestOptions: requestOptions,
@@ -151,7 +158,7 @@ namespace G
                                 path: $"/api/v1/beta/batch-processing/items/{itemId}/processing-results",
                                 baseUri: HttpClient.BaseAddress);
                             __pathBuilder
-                                .AddOptionalParameter("job_type", jobType?.ToString())
+                                .AddOptionalParameter("job_type", jobType?.ToValueString())
                                 .AddOptionalParameter("project_id", projectId?.ToString())
                                 .AddOptionalParameter("organization_id", organizationId?.ToString())
                                 ;

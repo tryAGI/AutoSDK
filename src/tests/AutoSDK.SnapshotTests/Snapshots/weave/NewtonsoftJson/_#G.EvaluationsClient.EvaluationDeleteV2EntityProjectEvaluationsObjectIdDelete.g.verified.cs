@@ -1,4 +1,4 @@
-﻿//HintName: G.EvaluationsClient.EvaluationDeleteV2EntityProjectEvaluationsObjectIdDelete.g.cs
+//HintName: G.EvaluationsClient.EvaluationDeleteV2EntityProjectEvaluationsObjectIdDelete.g.cs
 
 #nullable enable
 
@@ -137,7 +137,7 @@ namespace G
                                 path: $"/v2/{entity}/{project}/evaluations/{objectId}",
                                 baseUri: HttpClient.BaseAddress);
                             __pathBuilder
-                                .AddOptionalParameter("digests", digests?.ToString())
+                                .AddOptionalParameter("digests", digests, delimiter: ",", explode: true)
                                 ;
                             var __path = __pathBuilder.ToString();
                 __path = global::G.AutoSDKRequestOptionsSupport.AppendQueryParameters(

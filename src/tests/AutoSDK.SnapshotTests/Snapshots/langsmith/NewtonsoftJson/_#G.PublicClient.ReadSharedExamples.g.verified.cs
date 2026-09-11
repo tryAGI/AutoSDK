@@ -1,4 +1,4 @@
-﻿//HintName: G.PublicClient.ReadSharedExamples.g.cs
+//HintName: G.PublicClient.ReadSharedExamples.g.cs
 
 #nullable enable
 
@@ -157,7 +157,7 @@ namespace G
                                 path: $"/api/v1/public/{shareToken}/examples",
                                 baseUri: HttpClient.BaseAddress);
                             __pathBuilder
-                                .AddOptionalParameter("id", id?.ToString())
+                                .AddOptionalParameter("id", id, selector: static x => x.ToString()!, delimiter: ",", explode: true)
                                 .AddOptionalParameter("as_of", asOf?.ToString())
                                 .AddOptionalParameter("metadata", metadata)
                                 .AddOptionalParameter("offset", offset?.ToString())

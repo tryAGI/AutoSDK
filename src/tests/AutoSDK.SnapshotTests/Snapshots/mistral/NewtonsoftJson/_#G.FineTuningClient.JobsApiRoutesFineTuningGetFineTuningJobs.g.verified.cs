@@ -172,6 +172,20 @@ namespace G
                 securityRequirements: s_JobsApiRoutesFineTuningGetFineTuningJobsSecurityRequirements,
                 operationName: "JobsApiRoutesFineTuningGetFineTuningJobsAsync");
 
+            var statusValue = status switch
+            {
+                global::G.JobsApiRoutesFineTuningGetFineTuningJobsStatus.Queued => "QUEUED",
+                global::G.JobsApiRoutesFineTuningGetFineTuningJobsStatus.Started => "STARTED",
+                global::G.JobsApiRoutesFineTuningGetFineTuningJobsStatus.Validating => "VALIDATING",
+                global::G.JobsApiRoutesFineTuningGetFineTuningJobsStatus.Validated => "VALIDATED",
+                global::G.JobsApiRoutesFineTuningGetFineTuningJobsStatus.Running => "RUNNING",
+                global::G.JobsApiRoutesFineTuningGetFineTuningJobsStatus.FailedValidation => "FAILED_VALIDATION",
+                global::G.JobsApiRoutesFineTuningGetFineTuningJobsStatus.Failed => "FAILED",
+                global::G.JobsApiRoutesFineTuningGetFineTuningJobsStatus.Success => "SUCCESS",
+                global::G.JobsApiRoutesFineTuningGetFineTuningJobsStatus.Cancelled => "CANCELLED",
+                global::G.JobsApiRoutesFineTuningGetFineTuningJobsStatus.CancellationRequested => "CANCELLATION_REQUESTED",
+                _ => throw new global::System.NotImplementedException("Enum value not implemented."),
+            };
             using var __timeoutCancellationTokenSource = global::G.AutoSDKRequestOptionsSupport.CreateTimeoutCancellationTokenSource(
                 clientOptions: Options,
                 requestOptions: requestOptions,
@@ -199,7 +213,7 @@ namespace G
                                 .AddOptionalParameter("created_after", createdAfter?.ToString())
                                 .AddOptionalParameter("created_before", createdBefore?.ToString())
                                 .AddOptionalParameter("created_by_me", createdByMe?.ToString().ToLowerInvariant())
-                                .AddOptionalParameter("status", status?.ToString())
+                                .AddOptionalParameter("status", status?.ToValueString())
                                 .AddOptionalParameter("wandb_project", wandbProject)
                                 .AddOptionalParameter("wandb_name", wandbName)
                                 .AddOptionalParameter("suffix", suffix)

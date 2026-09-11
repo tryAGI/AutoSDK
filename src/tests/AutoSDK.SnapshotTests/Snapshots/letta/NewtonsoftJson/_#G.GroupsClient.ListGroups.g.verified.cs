@@ -185,6 +185,16 @@ namespace G
                 securityRequirements: s_ListGroupsSecurityRequirements,
                 operationName: "ListGroupsAsync");
 
+            var managerTypeValue = managerType switch
+            {
+                global::G.ManagerType.RoundRobin => "round_robin",
+                global::G.ManagerType.Supervisor => "supervisor",
+                global::G.ManagerType.Dynamic => "dynamic",
+                global::G.ManagerType.Sleeptime => "sleeptime",
+                global::G.ManagerType.VoiceSleeptime => "voice_sleeptime",
+                global::G.ManagerType.Swarm => "swarm",
+                _ => throw new global::System.NotImplementedException("Enum value not implemented."),
+            };
             var orderValue = order switch
             {
                 global::G.ListGroupsOrder.Asc => "asc",
@@ -214,7 +224,7 @@ namespace G
                                 servers: s_ListGroupsServers,
                                 defaultBaseUrl: "https://app.letta.com/"));
                             __pathBuilder
-                                .AddOptionalParameter("manager_type", managerType?.ToString())
+                                .AddOptionalParameter("manager_type", managerType?.ToValueString())
                                 .AddOptionalParameter("before", before)
                                 .AddOptionalParameter("after", after)
                                 .AddOptionalParameter("limit", limit?.ToString())

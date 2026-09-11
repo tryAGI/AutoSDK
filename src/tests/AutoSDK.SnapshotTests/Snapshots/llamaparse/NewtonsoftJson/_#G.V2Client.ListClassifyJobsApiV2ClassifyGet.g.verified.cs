@@ -192,6 +192,14 @@ namespace G
                 securityRequirements: s_ListClassifyJobsApiV2ClassifyGetSecurityRequirements,
                 operationName: "ListClassifyJobsApiV2ClassifyGetAsync");
 
+            var statusValue = status switch
+            {
+                global::G.ListClassifyJobsApiV2ClassifyGetStatus.Pending => "PENDING",
+                global::G.ListClassifyJobsApiV2ClassifyGetStatus.Running => "RUNNING",
+                global::G.ListClassifyJobsApiV2ClassifyGetStatus.Completed => "COMPLETED",
+                global::G.ListClassifyJobsApiV2ClassifyGetStatus.Failed => "FAILED",
+                _ => throw new global::System.NotImplementedException("Enum value not implemented."),
+            };
             using var __timeoutCancellationTokenSource = global::G.AutoSDKRequestOptionsSupport.CreateTimeoutCancellationTokenSource(
                 clientOptions: Options,
                 requestOptions: requestOptions,
@@ -215,8 +223,8 @@ namespace G
                             __pathBuilder
                                 .AddOptionalParameter("page_size", pageSize?.ToString())
                                 .AddOptionalParameter("page_token", pageToken)
-                                .AddOptionalParameter("status", status?.ToString())
-                                .AddOptionalParameter("job_ids", jobIds?.ToString())
+                                .AddOptionalParameter("status", status?.ToValueString())
+                                .AddOptionalParameter("job_ids", jobIds, delimiter: ",", explode: true)
                                 .AddOptionalParameter("configuration_id", configurationId)
                                 .AddOptionalParameter("created_at_on_or_after", createdAtOnOrAfter?.ToString())
                                 .AddOptionalParameter("created_at_on_or_before", createdAtOnOrBefore?.ToString())

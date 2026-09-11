@@ -178,9 +178,9 @@ namespace G
                                 .AddOptionalParameter("search", search)
                                 .AddOptionalParameter("page_size", pageSize?.ToString())
                                 .AddOptionalParameter("show_only_owned_documents", showOnlyOwnedDocuments?.ToString().ToLowerInvariant())
-                                .AddOptionalParameter("types", types?.ToString())
+                                .AddOptionalParameter("types", types, selector: static x => x.ToValueString(), delimiter: ",", explode: true)
                                 .AddOptionalParameter("sort_direction", sortDirection?.ToValueString())
-                                .AddOptionalParameter("sort_by", sortBy?.ToString())
+                                .AddOptionalParameter("sort_by", sortBy?.ToValueString())
                                 .AddOptionalParameter("cursor", cursor)
                                 ;
                             var __path = __pathBuilder.ToString();

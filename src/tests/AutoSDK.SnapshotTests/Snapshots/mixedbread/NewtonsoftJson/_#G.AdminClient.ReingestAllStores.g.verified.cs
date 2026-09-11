@@ -1,4 +1,4 @@
-﻿//HintName: G.AdminClient.ReingestAllStores.g.cs
+//HintName: G.AdminClient.ReingestAllStores.g.cs
 
 #nullable enable
 
@@ -174,7 +174,7 @@ namespace G
                                 servers: s_ReingestAllStoresServers,
                                 defaultBaseUrl: "https://api.mixedbread.com/"));
                             __pathBuilder
-                                .AddOptionalParameter("statuses", statuses?.ToString())
+                                .AddOptionalParameter("statuses", statuses, selector: static x => x.ToValueString(), delimiter: ",", explode: true)
                                 .AddOptionalParameter("billable", billable?.ToString().ToLowerInvariant())
                                 ;
                             var __path = __pathBuilder.ToString();

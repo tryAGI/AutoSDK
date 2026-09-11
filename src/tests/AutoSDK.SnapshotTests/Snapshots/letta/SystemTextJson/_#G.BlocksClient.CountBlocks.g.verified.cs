@@ -1,4 +1,4 @@
-﻿//HintName: G.BlocksClient.CountBlocks.g.cs
+//HintName: G.BlocksClient.CountBlocks.g.cs
 
 #nullable enable
 
@@ -197,7 +197,7 @@ namespace G
                                 .AddOptionalParameter("label", label)
                                 .AddOptionalParameter("templates_only", templatesOnly?.ToString().ToLowerInvariant())
                                 .AddOptionalParameter("name", name)
-                                .AddOptionalParameter("tags", tags?.ToString())
+                                .AddOptionalParameter("tags", tags, delimiter: ",", explode: true)
                                 .AddOptionalParameter("match_all_tags", matchAllTags?.ToString().ToLowerInvariant())
                                 .AddOptionalParameter("project_id", projectId)
                                 ;

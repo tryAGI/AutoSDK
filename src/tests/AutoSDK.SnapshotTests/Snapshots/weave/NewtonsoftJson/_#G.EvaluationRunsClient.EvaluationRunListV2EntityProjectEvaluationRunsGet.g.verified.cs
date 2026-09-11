@@ -1,4 +1,4 @@
-﻿//HintName: G.EvaluationRunsClient.EvaluationRunListV2EntityProjectEvaluationRunsGet.g.cs
+//HintName: G.EvaluationRunsClient.EvaluationRunListV2EntityProjectEvaluationRunsGet.g.cs
 
 #nullable enable
 
@@ -123,9 +123,9 @@ namespace G
                                 path: $"/v2/{entity}/{project}/evaluation_runs",
                                 baseUri: HttpClient.BaseAddress);
                             __pathBuilder
-                                .AddOptionalParameter("evaluations", evaluations?.ToString())
-                                .AddOptionalParameter("models", models?.ToString())
-                                .AddOptionalParameter("evaluation_run_ids", evaluationRunIds?.ToString())
+                                .AddOptionalParameter("evaluations", evaluations, delimiter: ",", explode: true)
+                                .AddOptionalParameter("models", models, delimiter: ",", explode: true)
+                                .AddOptionalParameter("evaluation_run_ids", evaluationRunIds, delimiter: ",", explode: true)
                                 .AddOptionalParameter("limit", limit?.ToString())
                                 .AddOptionalParameter("offset", offset?.ToString())
                                 ;

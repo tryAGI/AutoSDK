@@ -107,6 +107,22 @@ public static class CSharpSchemaDataFactory
         var type = context.TypeData;
         if ((parameter.In == ParameterLocation.Query ||
              parameter.In == ParameterLocation.QueryString) &&
+            context.IsNullableAnyOfLike &&
+            FindNonNullAnyOfLikeChildTypeData(context.Children) is { } underlyingType)
+        {
+            type = (type with
+            {
+                IsArray = underlyingType.IsArray,
+                IsEnum = underlyingType.IsEnum,
+                IsOpenEnum = underlyingType.IsOpenEnum,
+                Properties = underlyingType.Properties,
+                EnumValues = underlyingType.EnumValues,
+                SubTypes = underlyingType.SubTypes,
+            }).WithCSharpComputedValues();
+        }
+
+        if ((parameter.In == ParameterLocation.Query ||
+             parameter.In == ParameterLocation.QueryString) &&
             (context.IsClass || context.ResolvedReference?.IsClass == true))
         {
             var props = (context.ResolvedReference?.ClassData ?? context.ClassData)?.Properties;
@@ -172,6 +188,22 @@ public static class CSharpSchemaDataFactory
             DisableDeprecationWarningIfRequired: " ")
             .WithCSharpParameterNames()
             .WithCSharpComputedValues();
+    }
+
+    private static TypeData? FindNonNullAnyOfLikeChildTypeData(IList<SchemaContext> children)
+    {
+        for (var i = 0; i < children.Count; i++)
+        {
+            var child = children[i];
+            if (child.Hint is (Hint.AnyOf or Hint.OneOf) &&
+                !child.Schema.IsNullType() &&
+                child.TypeData != TypeData.Default)
+            {
+                return child.TypeData;
+            }
+        }
+
+        return null;
     }
 
     public static AnyOfData CreateAnyOfData(SchemaContext context)

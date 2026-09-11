@@ -1,4 +1,4 @@
-﻿//HintName: G.ToolsClient.ListTools.g.cs
+//HintName: G.ToolsClient.ListTools.g.cs
 
 #nullable enable
 
@@ -274,11 +274,11 @@ namespace G
                                 .AddOptionalParameter("order", order?.ToValueString())
                                 .AddOptionalParameter("order_by", orderBy)
                                 .AddOptionalParameter("name", name)
-                                .AddOptionalParameter("names", names?.ToString())
-                                .AddOptionalParameter("tool_ids", toolIds?.ToString())
+                                .AddOptionalParameter("names", names, delimiter: ",", explode: true)
+                                .AddOptionalParameter("tool_ids", toolIds, delimiter: ",", explode: true)
                                 .AddOptionalParameter("search", search)
-                                .AddOptionalParameter("tool_types", toolTypes?.ToString())
-                                .AddOptionalParameter("exclude_tool_types", excludeToolTypes?.ToString())
+                                .AddOptionalParameter("tool_types", toolTypes, delimiter: ",", explode: true)
+                                .AddOptionalParameter("exclude_tool_types", excludeToolTypes, delimiter: ",", explode: true)
                                 .AddOptionalParameter("return_only_letta_tools", returnOnlyLettaTools?.ToString().ToLowerInvariant())
                                 ;
                             var __path = __pathBuilder.ToString();

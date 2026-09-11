@@ -136,6 +136,13 @@ namespace G
                 securityRequirements: s_FilesApiRoutesListFilesSecurityRequirements,
                 operationName: "FilesApiRoutesListFilesAsync");
 
+            var purposeValue = purpose switch
+            {
+                global::G.FilePurpose.FineTune => "fine-tune",
+                global::G.FilePurpose.Batch => "batch",
+                global::G.FilePurpose.Ocr => "ocr",
+                _ => throw new global::System.NotImplementedException("Enum value not implemented."),
+            };
             using var __timeoutCancellationTokenSource = global::G.AutoSDKRequestOptionsSupport.CreateTimeoutCancellationTokenSource(
                 clientOptions: Options,
                 requestOptions: requestOptions,
@@ -159,10 +166,10 @@ namespace G
                             __pathBuilder
                                 .AddOptionalParameter("page", page?.ToString())
                                 .AddOptionalParameter("page_size", pageSize?.ToString())
-                                .AddOptionalParameter("sample_type", sampleType?.ToString())
-                                .AddOptionalParameter("source", source?.ToString())
+                                .AddOptionalParameter("sample_type", sampleType, selector: static x => x.ToValueString(), delimiter: ",", explode: true)
+                                .AddOptionalParameter("source", source, selector: static x => x.ToValueString(), delimiter: ",", explode: true)
                                 .AddOptionalParameter("search", search)
-                                .AddOptionalParameter("purpose", purpose?.ToString())
+                                .AddOptionalParameter("purpose", purpose?.ToValueString())
                                 ;
                             var __path = __pathBuilder.ToString();
                 __path = global::G.AutoSDKRequestOptionsSupport.AppendQueryParameters(

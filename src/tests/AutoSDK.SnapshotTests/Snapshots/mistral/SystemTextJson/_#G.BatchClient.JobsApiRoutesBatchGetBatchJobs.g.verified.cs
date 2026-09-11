@@ -1,4 +1,4 @@
-﻿//HintName: G.BatchClient.JobsApiRoutesBatchGetBatchJobs.g.cs
+//HintName: G.BatchClient.JobsApiRoutesBatchGetBatchJobs.g.cs
 
 #nullable enable
 
@@ -175,7 +175,7 @@ namespace G
                                 .AddOptionalParameter("metadata", metadata?.ToString())
                                 .AddOptionalParameter("created_after", createdAfter?.ToString())
                                 .AddOptionalParameter("created_by_me", createdByMe?.ToString().ToLowerInvariant())
-                                .AddOptionalParameter("status", status?.ToString())
+                                .AddOptionalParameter("status", status, selector: static x => x.ToValueString(), delimiter: ",", explode: true)
                                 ;
                             var __path = __pathBuilder.ToString();
                 __path = global::G.AutoSDKRequestOptionsSupport.AppendQueryParameters(

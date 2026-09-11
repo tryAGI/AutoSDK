@@ -152,7 +152,7 @@ namespace G
                                 .AddOptionalParameter("project_id", projectId?.ToString())
                                 .AddOptionalParameter("project_name", projectName)
                                 .AddOptionalParameter("pipeline_name", pipelineName)
-                                .AddOptionalParameter("pipeline_type", pipelineType?.ToString())
+                                .AddOptionalParameter("pipeline_type", pipelineType?.ToValueString())
                                 .AddOptionalParameter("organization_id", organizationId?.ToString())
                                 ;
                             var __path = __pathBuilder.ToString();

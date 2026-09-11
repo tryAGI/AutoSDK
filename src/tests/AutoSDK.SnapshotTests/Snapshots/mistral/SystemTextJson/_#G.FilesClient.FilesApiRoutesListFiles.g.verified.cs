@@ -159,10 +159,10 @@ namespace G
                             __pathBuilder
                                 .AddOptionalParameter("page", page?.ToString())
                                 .AddOptionalParameter("page_size", pageSize?.ToString())
-                                .AddOptionalParameter("sample_type", sampleType?.ToString())
-                                .AddOptionalParameter("source", source?.ToString())
+                                .AddOptionalParameter("sample_type", sampleType, selector: static x => x.ToValueString(), delimiter: ",", explode: true)
+                                .AddOptionalParameter("source", source, selector: static x => x.ToValueString(), delimiter: ",", explode: true)
                                 .AddOptionalParameter("search", search)
-                                .AddOptionalParameter("purpose", purpose?.ToString())
+                                .AddOptionalParameter("purpose", purpose?.ToValueString())
                                 ;
                             var __path = __pathBuilder.ToString();
                 __path = global::G.AutoSDKRequestOptionsSupport.AppendQueryParameters(

@@ -208,7 +208,7 @@ namespace G
                                 servers: s_ListGroupsServers,
                                 defaultBaseUrl: "https://app.letta.com/"));
                             __pathBuilder
-                                .AddOptionalParameter("manager_type", managerType?.ToString())
+                                .AddOptionalParameter("manager_type", managerType?.ToValueString())
                                 .AddOptionalParameter("before", before)
                                 .AddOptionalParameter("after", after)
                                 .AddOptionalParameter("limit", limit?.ToString())

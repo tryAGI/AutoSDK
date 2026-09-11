@@ -178,6 +178,18 @@ namespace G
                 source: ref source,
                 xiApiKey: ref xiApiKey);
 
+            var sortDirectionValue = sortDirection switch
+            {
+                global::G.GetSpeechHistorySortDirection.Asc => "asc",
+                global::G.GetSpeechHistorySortDirection.Desc => "desc",
+                _ => throw new global::System.NotImplementedException("Enum value not implemented."),
+            };
+            var sourceValue = source switch
+            {
+                global::G.GetSpeechHistorySource.Tts => "TTS",
+                global::G.GetSpeechHistorySource.Sts => "STS",
+                _ => throw new global::System.NotImplementedException("Enum value not implemented."),
+            };
             using var __timeoutCancellationTokenSource = global::G.AutoSDKRequestOptionsSupport.CreateTimeoutCancellationTokenSource(
                 clientOptions: Options,
                 requestOptions: requestOptions,
@@ -205,9 +217,9 @@ namespace G
                                 .AddOptionalParameter("model_id", modelId)
                                 .AddOptionalParameter("date_before_unix", dateBeforeUnix?.ToString())
                                 .AddOptionalParameter("date_after_unix", dateAfterUnix?.ToString())
-                                .AddOptionalParameter("sort_direction", sortDirection?.ToString())
+                                .AddOptionalParameter("sort_direction", sortDirection?.ToValueString())
                                 .AddOptionalParameter("search", search)
-                                .AddOptionalParameter("source", source?.ToString())
+                                .AddOptionalParameter("source", source?.ToValueString())
                                 ;
                             var __path = __pathBuilder.ToString();
                 __path = global::G.AutoSDKRequestOptionsSupport.AppendQueryParameters(

@@ -306,10 +306,38 @@ namespace G
                 cursor: ref cursor,
                 xiApiKey: ref xiApiKey);
 
+            var callSuccessfulValue = callSuccessful switch
+            {
+                global::G.EvaluationSuccessResult.Success => "success",
+                global::G.EvaluationSuccessResult.Failure => "failure",
+                global::G.EvaluationSuccessResult.Unknown => "unknown",
+                _ => throw new global::System.NotImplementedException("Enum value not implemented."),
+            };
             var summaryModeValue = summaryMode switch
             {
                 global::G.TextSearchConversationMessagesRouteSummaryMode.Exclude => "exclude",
                 global::G.TextSearchConversationMessagesRouteSummaryMode.Include => "include",
+                _ => throw new global::System.NotImplementedException("Enum value not implemented."),
+            };
+            var conversationInitiationSourceValue = conversationInitiationSource switch
+            {
+                global::G.ConversationInitiationSource.Unknown => "unknown",
+                global::G.ConversationInitiationSource.AndroidSdk => "android_sdk",
+                global::G.ConversationInitiationSource.NodeJsSdk => "node_js_sdk",
+                global::G.ConversationInitiationSource.ReactNativeSdk => "react_native_sdk",
+                global::G.ConversationInitiationSource.ReactSdk => "react_sdk",
+                global::G.ConversationInitiationSource.JsSdk => "js_sdk",
+                global::G.ConversationInitiationSource.PythonSdk => "python_sdk",
+                global::G.ConversationInitiationSource.Widget => "widget",
+                global::G.ConversationInitiationSource.SipTrunk => "sip_trunk",
+                global::G.ConversationInitiationSource.Twilio => "twilio",
+                global::G.ConversationInitiationSource.Genesys => "genesys",
+                global::G.ConversationInitiationSource.SwiftSdk => "swift_sdk",
+                global::G.ConversationInitiationSource.Whatsapp => "whatsapp",
+                global::G.ConversationInitiationSource.FlutterSdk => "flutter_sdk",
+                global::G.ConversationInitiationSource.ZendeskIntegration => "zendesk_integration",
+                global::G.ConversationInitiationSource.SlackIntegration => "slack_integration",
+                global::G.ConversationInitiationSource.TemplatePreview => "template_preview",
                 _ => throw new global::System.NotImplementedException("Enum value not implemented."),
             };
             using var __timeoutCancellationTokenSource = global::G.AutoSDKRequestOptionsSupport.CreateTimeoutCancellationTokenSource(
@@ -335,7 +363,7 @@ namespace G
                             __pathBuilder
                                 .AddRequiredParameter("text_query", textQuery)
                                 .AddOptionalParameter("agent_id", agentId)
-                                .AddOptionalParameter("call_successful", callSuccessful?.ToString())
+                                .AddOptionalParameter("call_successful", callSuccessful?.ToValueString())
                                 .AddOptionalParameter("call_start_before_unix", callStartBeforeUnix?.ToString())
                                 .AddOptionalParameter("call_start_after_unix", callStartAfterUnix?.ToString())
                                 .AddOptionalParameter("call_duration_min_secs", callDurationMinSecs?.ToString())
@@ -344,13 +372,13 @@ namespace G
                                 .AddOptionalParameter("rating_min", ratingMin?.ToString())
                                 .AddOptionalParameter("has_feedback_comment", hasFeedbackComment?.ToString().ToLowerInvariant())
                                 .AddOptionalParameter("user_id", userId)
-                                .AddOptionalParameter("evaluation_params", evaluationParams?.ToString())
-                                .AddOptionalParameter("data_collection_params", dataCollectionParams?.ToString())
-                                .AddOptionalParameter("tool_names", toolNames?.ToString())
-                                .AddOptionalParameter("main_languages", mainLanguages?.ToString())
+                                .AddOptionalParameter("evaluation_params", evaluationParams, delimiter: ",", explode: true)
+                                .AddOptionalParameter("data_collection_params", dataCollectionParams, delimiter: ",", explode: true)
+                                .AddOptionalParameter("tool_names", toolNames, delimiter: ",", explode: true)
+                                .AddOptionalParameter("main_languages", mainLanguages, delimiter: ",", explode: true)
                                 .AddOptionalParameter("page_size", pageSize?.ToString())
                                 .AddOptionalParameter("summary_mode", summaryMode?.ToValueString())
-                                .AddOptionalParameter("conversation_initiation_source", conversationInitiationSource?.ToString())
+                                .AddOptionalParameter("conversation_initiation_source", conversationInitiationSource?.ToValueString())
                                 .AddOptionalParameter("branch_id", branchId)
                                 .AddOptionalParameter("cursor", cursor)
                                 ;

@@ -1,4 +1,4 @@
-﻿//HintName: G.AnnotationsClient.ListSpanAnnotationsBySpanIds.g.cs
+//HintName: G.AnnotationsClient.ListSpanAnnotationsBySpanIds.g.cs
 
 #nullable enable
 
@@ -148,8 +148,8 @@ namespace G
                                 baseUri: HttpClient.BaseAddress);
                             __pathBuilder
                                 .AddRequiredParameter("span_ids", spanIds, delimiter: ",", explode: true)
-                                .AddOptionalParameter("include_annotation_names", includeAnnotationNames?.ToString())
-                                .AddOptionalParameter("exclude_annotation_names", excludeAnnotationNames?.ToString())
+                                .AddOptionalParameter("include_annotation_names", includeAnnotationNames, delimiter: ",", explode: true)
+                                .AddOptionalParameter("exclude_annotation_names", excludeAnnotationNames, delimiter: ",", explode: true)
                                 .AddOptionalParameter("cursor", cursor)
                                 .AddOptionalParameter("limit", limit?.ToString())
                                 ;

@@ -199,7 +199,7 @@ namespace G
                                 .AddOptionalParameter("created_after", createdAfter?.ToString())
                                 .AddOptionalParameter("created_before", createdBefore?.ToString())
                                 .AddOptionalParameter("created_by_me", createdByMe?.ToString().ToLowerInvariant())
-                                .AddOptionalParameter("status", status?.ToString())
+                                .AddOptionalParameter("status", status?.ToValueString())
                                 .AddOptionalParameter("wandb_project", wandbProject)
                                 .AddOptionalParameter("wandb_name", wandbName)
                                 .AddOptionalParameter("suffix", suffix)

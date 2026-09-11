@@ -261,6 +261,23 @@ namespace G
                 securityRequirements: s_ListRunsSecurityRequirements,
                 operationName: "ListRunsAsync");
 
+            var stopReasonValue = stopReason switch
+            {
+                global::G.StopReasonType.EndTurn => "end_turn",
+                global::G.StopReasonType.Error => "error",
+                global::G.StopReasonType.LlmApiError => "llm_api_error",
+                global::G.StopReasonType.InvalidLlmResponse => "invalid_llm_response",
+                global::G.StopReasonType.InvalidToolCall => "invalid_tool_call",
+                global::G.StopReasonType.MaxSteps => "max_steps",
+                global::G.StopReasonType.MaxTokensExceeded => "max_tokens_exceeded",
+                global::G.StopReasonType.NoToolCall => "no_tool_call",
+                global::G.StopReasonType.ToolRule => "tool_rule",
+                global::G.StopReasonType.Cancelled => "cancelled",
+                global::G.StopReasonType.InsufficientCredits => "insufficient_credits",
+                global::G.StopReasonType.RequiresApproval => "requires_approval",
+                global::G.StopReasonType.ContextWindowOverflowInSystemPrompt => "context_window_overflow_in_system_prompt",
+                _ => throw new global::System.NotImplementedException("Enum value not implemented."),
+            };
             var orderValue = order switch
             {
                 global::G.ListRunsOrder.Asc => "asc",
@@ -291,10 +308,10 @@ namespace G
                                 defaultBaseUrl: "https://app.letta.com/"));
                             __pathBuilder
                                 .AddOptionalParameter("agent_id", agentId)
-                                .AddOptionalParameter("agent_ids", agentIds?.ToString())
-                                .AddOptionalParameter("statuses", statuses?.ToString())
+                                .AddOptionalParameter("agent_ids", agentIds, delimiter: ",", explode: true)
+                                .AddOptionalParameter("statuses", statuses, delimiter: ",", explode: true)
                                 .AddOptionalParameter("background", background?.ToString().ToLowerInvariant())
-                                .AddOptionalParameter("stop_reason", stopReason?.ToString())
+                                .AddOptionalParameter("stop_reason", stopReason?.ToValueString())
                                 .AddOptionalParameter("conversation_id", conversationId)
                                 .AddOptionalParameter("before", before)
                                 .AddOptionalParameter("after", after)

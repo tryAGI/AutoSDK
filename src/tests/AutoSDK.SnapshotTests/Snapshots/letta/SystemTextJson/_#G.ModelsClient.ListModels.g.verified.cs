@@ -144,9 +144,9 @@ namespace G
                                 servers: s_ListModelsServers,
                                 defaultBaseUrl: "https://app.letta.com/"));
                             __pathBuilder
-                                .AddOptionalParameter("provider_category", providerCategory?.ToString())
+                                .AddOptionalParameter("provider_category", providerCategory, selector: static x => x.ToValueString(), delimiter: ",", explode: true)
                                 .AddOptionalParameter("provider_name", providerName)
-                                .AddOptionalParameter("provider_type", providerType?.ToString())
+                                .AddOptionalParameter("provider_type", providerType?.ToValueString())
                                 ;
                             var __path = __pathBuilder.ToString();
                 __path = global::G.AutoSDKRequestOptionsSupport.AppendQueryParameters(

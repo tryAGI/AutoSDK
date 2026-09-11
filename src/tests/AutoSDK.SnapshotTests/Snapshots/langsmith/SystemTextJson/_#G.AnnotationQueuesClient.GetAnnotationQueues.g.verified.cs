@@ -1,4 +1,4 @@
-﻿//HintName: G.AnnotationQueuesClient.GetAnnotationQueues.g.cs
+//HintName: G.AnnotationQueuesClient.GetAnnotationQueues.g.cs
 
 #nullable enable
 
@@ -195,12 +195,12 @@ namespace G
                                 path: "/api/v1/annotation-queues",
                                 baseUri: HttpClient.BaseAddress);
                             __pathBuilder
-                                .AddOptionalParameter("ids", ids?.ToString())
+                                .AddOptionalParameter("ids", ids, selector: static x => x.ToString()!, delimiter: ",", explode: true)
                                 .AddOptionalParameter("name", name)
                                 .AddOptionalParameter("name_contains", nameContains)
                                 .AddOptionalParameter("offset", offset?.ToString())
                                 .AddOptionalParameter("limit", limit?.ToString())
-                                .AddOptionalParameter("tag_value_id", tagValueId?.ToString())
+                                .AddOptionalParameter("tag_value_id", tagValueId, selector: static x => x.ToString()!, delimiter: ",", explode: true)
                                 .AddOptionalParameter("dataset_id", datasetId?.ToString())
                                 ;
                             var __path = __pathBuilder.ToString();

@@ -191,8 +191,8 @@ namespace G
                                 path: "/api/v1/beta/split/jobs",
                                 baseUri: HttpClient.BaseAddress);
                             __pathBuilder
-                                .AddOptionalParameter("status", status?.ToString())
-                                .AddOptionalParameter("job_ids", jobIds?.ToString())
+                                .AddOptionalParameter("status", status?.ToValueString())
+                                .AddOptionalParameter("job_ids", jobIds, delimiter: ",", explode: true)
                                 .AddOptionalParameter("created_at_on_or_after", createdAtOnOrAfter?.ToString())
                                 .AddOptionalParameter("created_at_on_or_before", createdAtOnOrBefore?.ToString())
                                 .AddOptionalParameter("project_id", projectId?.ToString())

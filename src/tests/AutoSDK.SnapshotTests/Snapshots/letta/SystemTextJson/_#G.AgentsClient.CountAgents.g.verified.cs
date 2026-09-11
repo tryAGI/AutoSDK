@@ -241,15 +241,15 @@ namespace G
                                 defaultBaseUrl: "https://app.letta.com/"));
                             __pathBuilder
                                 .AddOptionalParameter("name", name)
-                                .AddOptionalParameter("tags", tags?.ToString())
+                                .AddOptionalParameter("tags", tags, delimiter: ",", explode: true)
                                 .AddOptionalParameter("match_all_tags", matchAllTags?.ToString().ToLowerInvariant())
                                 .AddOptionalParameter("query_text", queryText)
                                 .AddOptionalParameter("project_id", projectId)
                                 .AddOptionalParameter("template_id", templateId)
                                 .AddOptionalParameter("base_template_id", baseTemplateId)
                                 .AddOptionalParameter("identity_id", identityId)
-                                .AddOptionalParameter("identifier_keys", identifierKeys?.ToString())
-                                .AddOptionalParameter("last_stop_reason", lastStopReason?.ToString())
+                                .AddOptionalParameter("identifier_keys", identifierKeys, delimiter: ",", explode: true)
+                                .AddOptionalParameter("last_stop_reason", lastStopReason?.ToValueString())
                                 ;
                             var __path = __pathBuilder.ToString();
                 __path = global::G.AutoSDKRequestOptionsSupport.AppendQueryParameters(

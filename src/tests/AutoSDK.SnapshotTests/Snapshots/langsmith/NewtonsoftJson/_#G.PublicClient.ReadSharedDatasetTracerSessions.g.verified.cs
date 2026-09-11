@@ -1,4 +1,4 @@
-﻿//HintName: G.PublicClient.ReadSharedDatasetTracerSessions.g.cs
+//HintName: G.PublicClient.ReadSharedDatasetTracerSessions.g.cs
 
 #nullable enable
 
@@ -202,7 +202,7 @@ namespace G
                                 path: $"/api/v1/public/{shareToken}/datasets/sessions",
                                 baseUri: HttpClient.BaseAddress);
                             __pathBuilder
-                                .AddOptionalParameter("id", id?.ToString())
+                                .AddOptionalParameter("id", id, selector: static x => x.ToString()!, delimiter: ",", explode: true)
                                 .AddOptionalParameter("name", name)
                                 .AddOptionalParameter("name_contains", nameContains)
                                 .AddOptionalParameter("dataset_version", datasetVersion)

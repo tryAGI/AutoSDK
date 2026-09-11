@@ -224,6 +224,12 @@ namespace G
                 securityRequirements: s_ReadFeedbacksSecurityRequirements,
                 operationName: "ReadFeedbacksAsync");
 
+            var levelValue = level switch
+            {
+                global::G.FeedbackLevel.Run => "run",
+                global::G.FeedbackLevel.Session => "session",
+                _ => throw new global::System.NotImplementedException("Enum value not implemented."),
+            };
             using var __timeoutCancellationTokenSource = global::G.AutoSDKRequestOptionsSupport.CreateTimeoutCancellationTokenSource(
                 clientOptions: Options,
                 requestOptions: requestOptions,
@@ -245,16 +251,16 @@ namespace G
                                 path: "/api/v1/feedback",
                                 baseUri: HttpClient.BaseAddress);
                             __pathBuilder
-                                .AddOptionalParameter("run", run?.ToString())
-                                .AddOptionalParameter("key", key?.ToString())
-                                .AddOptionalParameter("session", session?.ToString())
-                                .AddOptionalParameter("source", source?.ToString())
+                                .AddOptionalParameter("run", run, selector: static x => x.ToString()!, delimiter: ",", explode: true)
+                                .AddOptionalParameter("key", key, delimiter: ",", explode: true)
+                                .AddOptionalParameter("session", session, selector: static x => x.ToString()!, delimiter: ",", explode: true)
+                                .AddOptionalParameter("source", source, selector: static x => x.ToValueString(), delimiter: ",", explode: true)
                                 .AddOptionalParameter("limit", limit?.ToString())
                                 .AddOptionalParameter("offset", offset?.ToString())
-                                .AddOptionalParameter("user", user?.ToString())
+                                .AddOptionalParameter("user", user, selector: static x => x.ToString()!, delimiter: ",", explode: true)
                                 .AddOptionalParameter("has_comment", hasComment?.ToString().ToLowerInvariant())
                                 .AddOptionalParameter("has_score", hasScore?.ToString().ToLowerInvariant())
-                                .AddOptionalParameter("level", level?.ToString())
+                                .AddOptionalParameter("level", level?.ToValueString())
                                 .AddOptionalParameter("max_created_at", maxCreatedAt?.ToString())
                                 .AddOptionalParameter("min_created_at", minCreatedAt?.ToString())
                                 .AddOptionalParameter("include_user_names", includeUserNames?.ToString().ToLowerInvariant())

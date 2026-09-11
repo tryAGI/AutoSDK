@@ -1,4 +1,4 @@
-﻿//HintName: G.VoicesClient.GetShared.g.cs
+//HintName: G.VoicesClient.GetShared.g.cs
 
 #nullable enable
 
@@ -317,8 +317,8 @@ namespace G
                                 .AddOptionalParameter("language", language)
                                 .AddOptionalParameter("locale", locale)
                                 .AddOptionalParameter("search", search)
-                                .AddOptionalParameter("use_cases", useCases?.ToString())
-                                .AddOptionalParameter("descriptives", descriptives?.ToString())
+                                .AddOptionalParameter("use_cases", useCases, delimiter: ",", explode: true)
+                                .AddOptionalParameter("descriptives", descriptives, delimiter: ",", explode: true)
                                 .AddOptionalParameter("featured", featured?.ToString().ToLowerInvariant())
                                 .AddOptionalParameter("min_notice_period_days", minNoticePeriodDays?.ToString())
                                 .AddOptionalParameter("include_custom_rates", includeCustomRates?.ToString().ToLowerInvariant())

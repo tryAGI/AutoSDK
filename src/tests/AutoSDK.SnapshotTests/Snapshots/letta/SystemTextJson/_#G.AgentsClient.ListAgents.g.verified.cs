@@ -361,7 +361,7 @@ namespace G
                                 defaultBaseUrl: "https://app.letta.com/"));
                             __pathBuilder
                                 .AddOptionalParameter("name", name)
-                                .AddOptionalParameter("tags", tags?.ToString())
+                                .AddOptionalParameter("tags", tags, delimiter: ",", explode: true)
                                 .AddOptionalParameter("match_all_tags", matchAllTags?.ToString().ToLowerInvariant())
                                 .AddOptionalParameter("before", before)
                                 .AddOptionalParameter("after", after)
@@ -371,14 +371,14 @@ namespace G
                                 .AddOptionalParameter("template_id", templateId)
                                 .AddOptionalParameter("base_template_id", baseTemplateId)
                                 .AddOptionalParameter("identity_id", identityId)
-                                .AddOptionalParameter("identifier_keys", identifierKeys?.ToString())
-                                .AddOptionalParameter("include_relationships", includeRelationships?.ToString())
+                                .AddOptionalParameter("identifier_keys", identifierKeys, delimiter: ",", explode: true)
+                                .AddOptionalParameter("include_relationships", includeRelationships, delimiter: ",", explode: true)
                                 .AddOptionalParameter("include", include, selector: static x => x.ToValueString(), delimiter: ",", explode: true)
                                 .AddOptionalParameter("order", order?.ToValueString())
                                 .AddOptionalParameter("order_by", orderBy?.ToValueString())
                                 .AddOptionalParameter("ascending", ascending?.ToString().ToLowerInvariant())
                                 .AddOptionalParameter("sort_by", sortBy)
-                                .AddOptionalParameter("last_stop_reason", lastStopReason?.ToString())
+                                .AddOptionalParameter("last_stop_reason", lastStopReason?.ToValueString())
                                 ;
                             var __path = __pathBuilder.ToString();
                 __path = global::G.AutoSDKRequestOptionsSupport.AppendQueryParameters(

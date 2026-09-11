@@ -1,4 +1,4 @@
-﻿//HintName: G.TracesClient.ListProjectTraces.g.cs
+//HintName: G.TracesClient.ListProjectTraces.g.cs
 
 #nullable enable
 
@@ -196,7 +196,7 @@ namespace G
                                 .AddOptionalParameter("limit", limit?.ToString())
                                 .AddOptionalParameter("cursor", cursor)
                                 .AddOptionalParameter("include_spans", includeSpans?.ToString().ToLowerInvariant())
-                                .AddOptionalParameter("session_identifier", sessionIdentifier?.ToString())
+                                .AddOptionalParameter("session_identifier", sessionIdentifier, delimiter: ",", explode: true)
                                 ;
                             var __path = __pathBuilder.ToString();
                 __path = global::G.AutoSDKRequestOptionsSupport.AppendQueryParameters(

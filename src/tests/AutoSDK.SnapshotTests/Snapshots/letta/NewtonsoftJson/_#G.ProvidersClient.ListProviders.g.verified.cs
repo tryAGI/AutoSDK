@@ -189,6 +189,32 @@ namespace G
                 global::G.ListProvidersOrder.Desc => "desc",
                 _ => throw new global::System.NotImplementedException("Enum value not implemented."),
             };
+            var providerTypeValue = providerType switch
+            {
+                global::G.ProviderType.Anthropic => "anthropic",
+                global::G.ProviderType.Azure => "azure",
+                global::G.ProviderType.Bedrock => "bedrock",
+                global::G.ProviderType.Cerebras => "cerebras",
+                global::G.ProviderType.ChatgptOauth => "chatgpt_oauth",
+                global::G.ProviderType.Deepseek => "deepseek",
+                global::G.ProviderType.GoogleAi => "google_ai",
+                global::G.ProviderType.GoogleVertex => "google_vertex",
+                global::G.ProviderType.Groq => "groq",
+                global::G.ProviderType.HuggingFace => "hugging-face",
+                global::G.ProviderType.Letta => "letta",
+                global::G.ProviderType.LmstudioOpenai => "lmstudio_openai",
+                global::G.ProviderType.Minimax => "minimax",
+                global::G.ProviderType.Mistral => "mistral",
+                global::G.ProviderType.Ollama => "ollama",
+                global::G.ProviderType.Openai => "openai",
+                global::G.ProviderType.Together => "together",
+                global::G.ProviderType.Vllm => "vllm",
+                global::G.ProviderType.Sglang => "sglang",
+                global::G.ProviderType.Openrouter => "openrouter",
+                global::G.ProviderType.Xai => "xai",
+                global::G.ProviderType.Zai => "zai",
+                _ => throw new global::System.NotImplementedException("Enum value not implemented."),
+            };
             using var __timeoutCancellationTokenSource = global::G.AutoSDKRequestOptionsSupport.CreateTimeoutCancellationTokenSource(
                 clientOptions: Options,
                 requestOptions: requestOptions,
@@ -218,7 +244,7 @@ namespace G
                                 .AddOptionalParameter("order", order?.ToValueString())
                                 .AddOptionalParameter("order_by", orderBy)
                                 .AddOptionalParameter("name", name)
-                                .AddOptionalParameter("provider_type", providerType?.ToString())
+                                .AddOptionalParameter("provider_type", providerType?.ToValueString())
                                 ;
                             var __path = __pathBuilder.ToString();
                 __path = global::G.AutoSDKRequestOptionsSupport.AppendQueryParameters(

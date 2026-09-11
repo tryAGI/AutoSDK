@@ -156,6 +156,16 @@ namespace G
                 securityRequirements: s_ListBatchJobItemsApiV1BetaBatchProcessingJobIdItemsGetSecurityRequirements,
                 operationName: "ListBatchJobItemsApiV1BetaBatchProcessingJobIdItemsGetAsync");
 
+            var statusValue = status switch
+            {
+                global::G.BatchFileStatus.Pending => "pending",
+                global::G.BatchFileStatus.Processing => "processing",
+                global::G.BatchFileStatus.Completed => "completed",
+                global::G.BatchFileStatus.Failed => "failed",
+                global::G.BatchFileStatus.Skipped => "skipped",
+                global::G.BatchFileStatus.Cancelled => "cancelled",
+                _ => throw new global::System.NotImplementedException("Enum value not implemented."),
+            };
             using var __timeoutCancellationTokenSource = global::G.AutoSDKRequestOptionsSupport.CreateTimeoutCancellationTokenSource(
                 clientOptions: Options,
                 requestOptions: requestOptions,
@@ -177,7 +187,7 @@ namespace G
                                 path: $"/api/v1/beta/batch-processing/{jobId}/items",
                                 baseUri: HttpClient.BaseAddress);
                             __pathBuilder
-                                .AddOptionalParameter("status", status?.ToString())
+                                .AddOptionalParameter("status", status?.ToValueString())
                                 .AddOptionalParameter("limit", limit?.ToString())
                                 .AddOptionalParameter("offset", offset?.ToString())
                                 .AddOptionalParameter("project_id", projectId?.ToString())

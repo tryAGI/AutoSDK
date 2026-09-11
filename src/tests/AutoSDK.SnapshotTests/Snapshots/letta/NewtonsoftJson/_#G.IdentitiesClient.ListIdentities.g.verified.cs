@@ -199,6 +199,13 @@ namespace G
                 securityRequirements: s_ListIdentitiesSecurityRequirements,
                 operationName: "ListIdentitiesAsync");
 
+            var identityTypeValue = identityType switch
+            {
+                global::G.IdentityType.Org => "org",
+                global::G.IdentityType.User => "user",
+                global::G.IdentityType.Other => "other",
+                _ => throw new global::System.NotImplementedException("Enum value not implemented."),
+            };
             var orderValue = order switch
             {
                 global::G.ListIdentitiesOrder.Asc => "asc",
@@ -231,7 +238,7 @@ namespace G
                                 .AddOptionalParameter("name", name)
                                 .AddOptionalParameter("project_id", projectId)
                                 .AddOptionalParameter("identifier_key", identifierKey)
-                                .AddOptionalParameter("identity_type", identityType?.ToString())
+                                .AddOptionalParameter("identity_type", identityType?.ToValueString())
                                 .AddOptionalParameter("before", before)
                                 .AddOptionalParameter("after", after)
                                 .AddOptionalParameter("limit", limit?.ToString())

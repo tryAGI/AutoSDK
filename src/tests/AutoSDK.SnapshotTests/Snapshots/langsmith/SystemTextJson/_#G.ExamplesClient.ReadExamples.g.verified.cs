@@ -1,4 +1,4 @@
-﻿//HintName: G.ExamplesClient.ReadExamples.g.cs
+//HintName: G.ExamplesClient.ReadExamples.g.cs
 
 #nullable enable
 
@@ -251,11 +251,11 @@ namespace G
                                 path: "/api/v1/examples",
                                 baseUri: HttpClient.BaseAddress);
                             __pathBuilder
-                                .AddOptionalParameter("id", id?.ToString())
+                                .AddOptionalParameter("id", id, selector: static x => x.ToString()!, delimiter: ",", explode: true)
                                 .AddOptionalParameter("as_of", asOf?.ToString())
                                 .AddOptionalParameter("metadata", metadata)
-                                .AddOptionalParameter("full_text_contains", fullTextContains?.ToString())
-                                .AddOptionalParameter("splits", splits?.ToString())
+                                .AddOptionalParameter("full_text_contains", fullTextContains, delimiter: ",", explode: true)
+                                .AddOptionalParameter("splits", splits, delimiter: ",", explode: true)
                                 .AddOptionalParameter("dataset", dataset?.ToString())
                                 .AddOptionalParameter("offset", offset?.ToString())
                                 .AddOptionalParameter("limit", limit?.ToString())

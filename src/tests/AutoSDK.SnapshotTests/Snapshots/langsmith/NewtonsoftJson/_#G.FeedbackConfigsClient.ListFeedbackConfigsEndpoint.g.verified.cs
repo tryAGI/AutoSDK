@@ -1,4 +1,4 @@
-﻿//HintName: G.FeedbackConfigsClient.ListFeedbackConfigsEndpoint.g.cs
+//HintName: G.FeedbackConfigsClient.ListFeedbackConfigsEndpoint.g.cs
 
 #nullable enable
 
@@ -151,7 +151,7 @@ namespace G
                                 path: "/api/v1/feedback-configs",
                                 baseUri: HttpClient.BaseAddress);
                             __pathBuilder
-                                .AddOptionalParameter("key", key?.ToString())
+                                .AddOptionalParameter("key", key, delimiter: ",", explode: true)
                                 .AddOptionalParameter("read_after_write", readAfterWrite?.ToString().ToLowerInvariant())
                                 ;
                             var __path = __pathBuilder.ToString();

@@ -395,6 +395,23 @@ namespace G
                 securityRequirements: s_ListInternalRunsSecurityRequirements,
                 operationName: "ListInternalRunsAsync");
 
+            var stopReasonValue = stopReason switch
+            {
+                global::G.StopReasonType.EndTurn => "end_turn",
+                global::G.StopReasonType.Error => "error",
+                global::G.StopReasonType.LlmApiError => "llm_api_error",
+                global::G.StopReasonType.InvalidLlmResponse => "invalid_llm_response",
+                global::G.StopReasonType.InvalidToolCall => "invalid_tool_call",
+                global::G.StopReasonType.MaxSteps => "max_steps",
+                global::G.StopReasonType.MaxTokensExceeded => "max_tokens_exceeded",
+                global::G.StopReasonType.NoToolCall => "no_tool_call",
+                global::G.StopReasonType.ToolRule => "tool_rule",
+                global::G.StopReasonType.Cancelled => "cancelled",
+                global::G.StopReasonType.InsufficientCredits => "insufficient_credits",
+                global::G.StopReasonType.RequiresApproval => "requires_approval",
+                global::G.StopReasonType.ContextWindowOverflowInSystemPrompt => "context_window_overflow_in_system_prompt",
+                _ => throw new global::System.NotImplementedException("Enum value not implemented."),
+            };
             var stepCountOperatorValue = stepCountOperator switch
             {
                 global::G.ComparisonOperator.Eq => "eq",
@@ -412,6 +429,13 @@ namespace G
             {
                 global::G.ListInternalRunsOrderBy.CreatedAt => "created_at",
                 global::G.ListInternalRunsOrderBy.Duration => "duration",
+                _ => throw new global::System.NotImplementedException("Enum value not implemented."),
+            };
+            var durationOperatorValue = durationOperator switch
+            {
+                global::G.ListInternalRunsDurationOperator.Gt => "gt",
+                global::G.ListInternalRunsDurationOperator.Lt => "lt",
+                global::G.ListInternalRunsDurationOperator.Eq => "eq",
                 _ => throw new global::System.NotImplementedException("Enum value not implemented."),
             };
             using var __timeoutCancellationTokenSource = global::G.AutoSDKRequestOptionsSupport.CreateTimeoutCancellationTokenSource(
@@ -439,14 +463,14 @@ namespace G
                             __pathBuilder
                                 .AddOptionalParameter("run_id", runId)
                                 .AddOptionalParameter("agent_id", agentId)
-                                .AddOptionalParameter("agent_ids", agentIds?.ToString())
-                                .AddOptionalParameter("statuses", statuses?.ToString())
+                                .AddOptionalParameter("agent_ids", agentIds, delimiter: ",", explode: true)
+                                .AddOptionalParameter("statuses", statuses, delimiter: ",", explode: true)
                                 .AddOptionalParameter("background", background?.ToString().ToLowerInvariant())
-                                .AddOptionalParameter("stop_reason", stopReason?.ToString())
+                                .AddOptionalParameter("stop_reason", stopReason?.ToValueString())
                                 .AddOptionalParameter("template_family", templateFamily)
                                 .AddOptionalParameter("step_count", stepCount?.ToString())
                                 .AddOptionalParameter("step_count_operator", stepCountOperator?.ToValueString())
-                                .AddOptionalParameter("tools_used", toolsUsed?.ToString())
+                                .AddOptionalParameter("tools_used", toolsUsed, delimiter: ",", explode: true)
                                 .AddOptionalParameter("before", before)
                                 .AddOptionalParameter("after", after)
                                 .AddOptionalParameter("limit", limit?.ToString())
@@ -458,7 +482,7 @@ namespace G
                                 .AddOptionalParameter("conversation_id", conversationId)
                                 .AddOptionalParameter("duration_percentile", durationPercentile?.ToString())
                                 .AddOptionalParameter("duration_value", durationValue?.ToString())
-                                .AddOptionalParameter("duration_operator", durationOperator?.ToString())
+                                .AddOptionalParameter("duration_operator", durationOperator?.ToValueString())
                                 .AddOptionalParameter("start_date", startDate?.ToString())
                                 .AddOptionalParameter("end_date", endDate?.ToString())
                                 ;

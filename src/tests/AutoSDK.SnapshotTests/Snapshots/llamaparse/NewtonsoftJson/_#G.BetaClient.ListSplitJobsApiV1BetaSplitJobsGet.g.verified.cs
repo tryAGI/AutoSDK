@@ -170,6 +170,15 @@ namespace G
                 securityRequirements: s_ListSplitJobsApiV1BetaSplitJobsGetSecurityRequirements,
                 operationName: "ListSplitJobsApiV1BetaSplitJobsGetAsync");
 
+            var statusValue = status switch
+            {
+                global::G.ListSplitJobsApiV1BetaSplitJobsGetStatus.Pending => "pending",
+                global::G.ListSplitJobsApiV1BetaSplitJobsGetStatus.Processing => "processing",
+                global::G.ListSplitJobsApiV1BetaSplitJobsGetStatus.Completed => "completed",
+                global::G.ListSplitJobsApiV1BetaSplitJobsGetStatus.Failed => "failed",
+                global::G.ListSplitJobsApiV1BetaSplitJobsGetStatus.Cancelled => "cancelled",
+                _ => throw new global::System.NotImplementedException("Enum value not implemented."),
+            };
             using var __timeoutCancellationTokenSource = global::G.AutoSDKRequestOptionsSupport.CreateTimeoutCancellationTokenSource(
                 clientOptions: Options,
                 requestOptions: requestOptions,
@@ -191,8 +200,8 @@ namespace G
                                 path: "/api/v1/beta/split/jobs",
                                 baseUri: HttpClient.BaseAddress);
                             __pathBuilder
-                                .AddOptionalParameter("status", status?.ToString())
-                                .AddOptionalParameter("job_ids", jobIds?.ToString())
+                                .AddOptionalParameter("status", status?.ToValueString())
+                                .AddOptionalParameter("job_ids", jobIds, delimiter: ",", explode: true)
                                 .AddOptionalParameter("created_at_on_or_after", createdAtOnOrAfter?.ToString())
                                 .AddOptionalParameter("created_at_on_or_before", createdAtOnOrBefore?.ToString())
                                 .AddOptionalParameter("project_id", projectId?.ToString())

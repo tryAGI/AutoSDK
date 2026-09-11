@@ -120,6 +120,12 @@ namespace G
                 sortDirection: ref sortDirection,
                 xiApiKey: ref xiApiKey);
 
+            var sortValue = sort switch
+            {
+                global::G.GetPronunciationDictionariesMetadataSort.CreationTimeUnix => "creation_time_unix",
+                global::G.GetPronunciationDictionariesMetadataSort.Name => "name",
+                _ => throw new global::System.NotImplementedException("Enum value not implemented."),
+            };
             using var __timeoutCancellationTokenSource = global::G.AutoSDKRequestOptionsSupport.CreateTimeoutCancellationTokenSource(
                 clientOptions: Options,
                 requestOptions: requestOptions,
@@ -143,7 +149,7 @@ namespace G
                             __pathBuilder
                                 .AddOptionalParameter("cursor", cursor)
                                 .AddOptionalParameter("page_size", pageSize?.ToString())
-                                .AddOptionalParameter("sort", sort?.ToString())
+                                .AddOptionalParameter("sort", sort?.ToValueString())
                                 .AddOptionalParameter("sort_direction", sortDirection)
                                 ;
                             var __path = __pathBuilder.ToString();

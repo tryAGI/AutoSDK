@@ -1,4 +1,4 @@
-﻿//HintName: G.BlocksClient.ListBlocks.g.cs
+//HintName: G.BlocksClient.ListBlocks.g.cs
 
 #nullable enable
 
@@ -362,9 +362,9 @@ namespace G
                                 .AddOptionalParameter("templates_only", templatesOnly?.ToString().ToLowerInvariant())
                                 .AddOptionalParameter("name", name)
                                 .AddOptionalParameter("identity_id", identityId)
-                                .AddOptionalParameter("identifier_keys", identifierKeys?.ToString())
+                                .AddOptionalParameter("identifier_keys", identifierKeys, delimiter: ",", explode: true)
                                 .AddOptionalParameter("project_id", projectId)
-                                .AddOptionalParameter("tags", tags?.ToString())
+                                .AddOptionalParameter("tags", tags, delimiter: ",", explode: true)
                                 .AddOptionalParameter("match_all_tags", matchAllTags?.ToString().ToLowerInvariant())
                                 .AddOptionalParameter("limit", limit?.ToString())
                                 .AddOptionalParameter("before", before)
@@ -376,7 +376,7 @@ namespace G
                                 .AddOptionalParameter("value_search", valueSearch)
                                 .AddOptionalParameter("connected_to_agents_count_gt", connectedToAgentsCountGt?.ToString())
                                 .AddOptionalParameter("connected_to_agents_count_lt", connectedToAgentsCountLt?.ToString())
-                                .AddOptionalParameter("connected_to_agents_count_eq", connectedToAgentsCountEq?.ToString())
+                                .AddOptionalParameter("connected_to_agents_count_eq", connectedToAgentsCountEq, selector: static x => x.ToString()!, delimiter: ",", explode: true)
                                 ;
                             var __path = __pathBuilder.ToString();
                 __path = global::G.AutoSDKRequestOptionsSupport.AppendQueryParameters(

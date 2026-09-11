@@ -200,6 +200,14 @@ namespace G
                 global::G.SortDirection.Desc => "desc",
                 _ => throw new global::System.NotImplementedException("Enum value not implemented."),
             };
+            var sortByValue = sortBy switch
+            {
+                global::G.KnowledgeBaseSortBy.Name => "name",
+                global::G.KnowledgeBaseSortBy.CreatedAt => "created_at",
+                global::G.KnowledgeBaseSortBy.UpdatedAt => "updated_at",
+                global::G.KnowledgeBaseSortBy.Size => "size",
+                _ => throw new global::System.NotImplementedException("Enum value not implemented."),
+            };
             using var __timeoutCancellationTokenSource = global::G.AutoSDKRequestOptionsSupport.CreateTimeoutCancellationTokenSource(
                 clientOptions: Options,
                 requestOptions: requestOptions,
@@ -224,12 +232,12 @@ namespace G
                                 .AddOptionalParameter("page_size", pageSize?.ToString())
                                 .AddOptionalParameter("search", search)
                                 .AddOptionalParameter("show_only_owned_documents", showOnlyOwnedDocuments?.ToString().ToLowerInvariant())
-                                .AddOptionalParameter("types", types?.ToString())
+                                .AddOptionalParameter("types", types, selector: static x => x.ToValueString(), delimiter: ",", explode: true)
                                 .AddOptionalParameter("parent_folder_id", parentFolderId)
                                 .AddOptionalParameter("ancestor_folder_id", ancestorFolderId)
                                 .AddOptionalParameter("folders_first", foldersFirst?.ToString().ToLowerInvariant())
                                 .AddOptionalParameter("sort_direction", sortDirection?.ToValueString())
-                                .AddOptionalParameter("sort_by", sortBy?.ToString())
+                                .AddOptionalParameter("sort_by", sortBy?.ToValueString())
                                 .AddOptionalParameter("cursor", cursor)
                                 ;
                             var __path = __pathBuilder.ToString();

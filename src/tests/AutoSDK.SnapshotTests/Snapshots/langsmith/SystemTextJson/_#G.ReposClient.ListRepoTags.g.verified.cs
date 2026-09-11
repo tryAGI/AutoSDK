@@ -243,12 +243,12 @@ namespace G
                                 .AddOptionalParameter("tenant_id", tenantId?.ToString())
                                 .AddOptionalParameter("query", query)
                                 .AddOptionalParameter("has_commits", hasCommits?.ToString().ToLowerInvariant())
-                                .AddOptionalParameter("tags", tags?.ToString())
-                                .AddOptionalParameter("is_archived", isArchived?.ToString())
-                                .AddOptionalParameter("is_public", isPublic?.ToString())
+                                .AddOptionalParameter("tags", tags, delimiter: ",", explode: true)
+                                .AddOptionalParameter("is_archived", isArchived?.ToValueString())
+                                .AddOptionalParameter("is_public", isPublic?.ToValueString())
                                 .AddOptionalParameter("upstream_repo_owner", upstreamRepoOwner)
                                 .AddOptionalParameter("upstream_repo_handle", upstreamRepoHandle)
-                                .AddOptionalParameter("tag_value_id", tagValueId?.ToString())
+                                .AddOptionalParameter("tag_value_id", tagValueId, selector: static x => x.ToString()!, delimiter: ",", explode: true)
                                 ;
                             var __path = __pathBuilder.ToString();
                 __path = global::G.AutoSDKRequestOptionsSupport.AppendQueryParameters(

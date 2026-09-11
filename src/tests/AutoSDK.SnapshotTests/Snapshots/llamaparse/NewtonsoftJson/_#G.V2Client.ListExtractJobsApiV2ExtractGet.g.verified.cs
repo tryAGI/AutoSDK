@@ -232,6 +232,16 @@ namespace G
                 securityRequirements: s_ListExtractJobsApiV2ExtractGetSecurityRequirements,
                 operationName: "ListExtractJobsApiV2ExtractGetAsync");
 
+            var statusValue = status switch
+            {
+                global::G.ListExtractJobsApiV2ExtractGetStatus.Pending => "PENDING",
+                global::G.ListExtractJobsApiV2ExtractGetStatus.Throttled => "THROTTLED",
+                global::G.ListExtractJobsApiV2ExtractGetStatus.Running => "RUNNING",
+                global::G.ListExtractJobsApiV2ExtractGetStatus.Completed => "COMPLETED",
+                global::G.ListExtractJobsApiV2ExtractGetStatus.Failed => "FAILED",
+                global::G.ListExtractJobsApiV2ExtractGetStatus.Cancelled => "CANCELLED",
+                _ => throw new global::System.NotImplementedException("Enum value not implemented."),
+            };
             using var __timeoutCancellationTokenSource = global::G.AutoSDKRequestOptionsSupport.CreateTimeoutCancellationTokenSource(
                 clientOptions: Options,
                 requestOptions: requestOptions,
@@ -256,12 +266,12 @@ namespace G
                                 .AddOptionalParameter("configuration_id", configurationId)
                                 .AddOptionalParameter("document_input_type", documentInputType)
                                 .AddOptionalParameter("document_input_value", documentInputValue)
-                                .AddOptionalParameter("status", status?.ToString())
+                                .AddOptionalParameter("status", status?.ToValueString())
                                 .AddOptionalParameter("page_size", pageSize?.ToString())
                                 .AddOptionalParameter("page_token", pageToken)
                                 .AddOptionalParameter("created_at_on_or_after", createdAtOnOrAfter?.ToString())
                                 .AddOptionalParameter("created_at_on_or_before", createdAtOnOrBefore?.ToString())
-                                .AddOptionalParameter("job_ids", jobIds?.ToString())
+                                .AddOptionalParameter("job_ids", jobIds, delimiter: ",", explode: true)
                                 .AddOptionalParameter("expand", expand, delimiter: ",", explode: true)
                                 .AddOptionalParameter("project_id", projectId?.ToString())
                                 .AddOptionalParameter("organization_id", organizationId?.ToString())

@@ -217,6 +217,23 @@ namespace G
                 securityRequirements: s_CountAgentsSecurityRequirements,
                 operationName: "CountAgentsAsync");
 
+            var lastStopReasonValue = lastStopReason switch
+            {
+                global::G.StopReasonType.EndTurn => "end_turn",
+                global::G.StopReasonType.Error => "error",
+                global::G.StopReasonType.LlmApiError => "llm_api_error",
+                global::G.StopReasonType.InvalidLlmResponse => "invalid_llm_response",
+                global::G.StopReasonType.InvalidToolCall => "invalid_tool_call",
+                global::G.StopReasonType.MaxSteps => "max_steps",
+                global::G.StopReasonType.MaxTokensExceeded => "max_tokens_exceeded",
+                global::G.StopReasonType.NoToolCall => "no_tool_call",
+                global::G.StopReasonType.ToolRule => "tool_rule",
+                global::G.StopReasonType.Cancelled => "cancelled",
+                global::G.StopReasonType.InsufficientCredits => "insufficient_credits",
+                global::G.StopReasonType.RequiresApproval => "requires_approval",
+                global::G.StopReasonType.ContextWindowOverflowInSystemPrompt => "context_window_overflow_in_system_prompt",
+                _ => throw new global::System.NotImplementedException("Enum value not implemented."),
+            };
             using var __timeoutCancellationTokenSource = global::G.AutoSDKRequestOptionsSupport.CreateTimeoutCancellationTokenSource(
                 clientOptions: Options,
                 requestOptions: requestOptions,
@@ -241,15 +258,15 @@ namespace G
                                 defaultBaseUrl: "https://app.letta.com/"));
                             __pathBuilder
                                 .AddOptionalParameter("name", name)
-                                .AddOptionalParameter("tags", tags?.ToString())
+                                .AddOptionalParameter("tags", tags, delimiter: ",", explode: true)
                                 .AddOptionalParameter("match_all_tags", matchAllTags?.ToString().ToLowerInvariant())
                                 .AddOptionalParameter("query_text", queryText)
                                 .AddOptionalParameter("project_id", projectId)
                                 .AddOptionalParameter("template_id", templateId)
                                 .AddOptionalParameter("base_template_id", baseTemplateId)
                                 .AddOptionalParameter("identity_id", identityId)
-                                .AddOptionalParameter("identifier_keys", identifierKeys?.ToString())
-                                .AddOptionalParameter("last_stop_reason", lastStopReason?.ToString())
+                                .AddOptionalParameter("identifier_keys", identifierKeys, delimiter: ",", explode: true)
+                                .AddOptionalParameter("last_stop_reason", lastStopReason?.ToValueString())
                                 ;
                             var __path = __pathBuilder.ToString();
                 __path = global::G.AutoSDKRequestOptionsSupport.AppendQueryParameters(

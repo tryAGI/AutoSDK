@@ -1,4 +1,4 @@
-﻿//HintName: G.DatasetsClient.ReadComparativeExperiments.g.cs
+//HintName: G.DatasetsClient.ReadComparativeExperiments.g.cs
 
 #nullable enable
 
@@ -223,7 +223,7 @@ namespace G
                             __pathBuilder
                                 .AddOptionalParameter("name", name)
                                 .AddOptionalParameter("name_contains", nameContains)
-                                .AddOptionalParameter("id", id?.ToString())
+                                .AddOptionalParameter("id", id, selector: static x => x.ToString()!, delimiter: ",", explode: true)
                                 .AddOptionalParameter("offset", offset?.ToString())
                                 .AddOptionalParameter("limit", limit?.ToString())
                                 .AddOptionalParameter("sort_by", sortBy?.ToValueString())

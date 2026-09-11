@@ -1,4 +1,4 @@
-﻿//HintName: G.DeprecatedVectorStoresClient.ListVectorStoreFiles.g.cs
+//HintName: G.DeprecatedVectorStoresClient.ListVectorStoreFiles.g.cs
 
 #nullable enable
 
@@ -208,7 +208,7 @@ namespace G
                                 .AddOptionalParameter("after", after)
                                 .AddOptionalParameter("before", before)
                                 .AddOptionalParameter("include_total", includeTotal?.ToString().ToLowerInvariant())
-                                .AddOptionalParameter("statuses", statuses?.ToString())
+                                .AddOptionalParameter("statuses", statuses, selector: static x => x.ToValueString(), delimiter: ",", explode: true)
                                 ;
                             var __path = __pathBuilder.ToString();
                 __path = global::G.AutoSDKRequestOptionsSupport.AppendQueryParameters(

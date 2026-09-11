@@ -1,4 +1,4 @@
-﻿//HintName: G.WorkspacesClient.GetCurrentWorkspaceStats.g.cs
+//HintName: G.WorkspacesClient.GetCurrentWorkspaceStats.g.cs
 
 #nullable enable
 
@@ -139,7 +139,7 @@ namespace G
                                 path: "/api/v1/workspaces/current/stats",
                                 baseUri: HttpClient.BaseAddress);
                             __pathBuilder
-                                .AddOptionalParameter("tag_value_id", tagValueId?.ToString())
+                                .AddOptionalParameter("tag_value_id", tagValueId, selector: static x => x.ToString()!, delimiter: ",", explode: true)
                                 ;
                             var __path = __pathBuilder.ToString();
                 __path = global::G.AutoSDKRequestOptionsSupport.AppendQueryParameters(

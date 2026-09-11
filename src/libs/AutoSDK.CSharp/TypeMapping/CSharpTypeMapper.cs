@@ -67,10 +67,6 @@ public static class CSharpTypeMapper
         var isBinary = context.IsBinary;
         var isBase64 = schema.IsBase64();
         var generatedNamespace = context.GetGeneratedNamespace();
-        var nullableUnionUnderlyingType = context.IsNullableAnyOfLike
-            ? FindNonNullAnyOfLikeChildTypeData(context.Children)
-            : null;
-
         var resolvedSchema = schema.ResolveIfRequired();
 
         string? cachedType = null;
@@ -181,12 +177,6 @@ public static class CSharpTypeMapper
             boxedSubTypes = [(TypeData.Default with { CSharpTypeRaw = "byte" }).WithCSharpComputedValues().Box()];
         }
 
-        if (nullableUnionUnderlyingType is { } underlyingType)
-        {
-            properties = underlyingType.Properties.AsImmutableArray();
-            boxedSubTypes = underlyingType.SubTypes.AsImmutableArray();
-        }
-
         var enumValues = ImmutableArray<string>.Empty;
         if (isEnum)
         {
@@ -205,11 +195,6 @@ public static class CSharpTypeMapper
                 enumValues = idBuilder.MoveToImmutable();
             }
         }
-        else if (nullableUnionUnderlyingType is { IsEnum: true } underlyingEnumType)
-        {
-            enumValues = underlyingEnumType.EnumValues.AsImmutableArray();
-        }
-
         var type = cachedType ?? GetCSharpTypeCore(context, isArray, isAnyOf, isOneOf, isAllOf);
         var isNullable = context.IsNullable || context.IsNullableAnyOfLike;
         var collapsed = (isAnyOf || isOneOf || isAllOf) && IsCollapsedAnyOfLike(context);
@@ -222,9 +207,9 @@ public static class CSharpTypeMapper
             IsDerivedClass: context.IsDerivedClass,
             IsValueType: IsValueType(context),
             IsNullable: isNullable,
-            IsArray: nullableUnionUnderlyingType?.IsArray ?? isArray,
-            IsEnum: nullableUnionUnderlyingType?.IsEnum ?? isEnum,
-            IsOpenEnum: nullableUnionUnderlyingType?.IsOpenEnum ?? isOpenEnum,
+            IsArray: isArray,
+            IsEnum: isEnum,
+            IsOpenEnum: isOpenEnum,
             IsBase64: isBase64,
             IsDate: schema.IsDate(),
             IsDateTime: schema.IsDateTime(),
@@ -571,22 +556,6 @@ public static class CSharpTypeMapper
             if (child.Hint is (Hint.AnyOf or Hint.OneOf) && !child.Schema.IsNullType())
             {
                 return child.TypeData.CSharpTypeWithoutNullability;
-            }
-        }
-
-        return null;
-    }
-
-    private static TypeData? FindNonNullAnyOfLikeChildTypeData(IList<SchemaContext> children)
-    {
-        for (var i = 0; i < children.Count; i++)
-        {
-            var child = children[i];
-            if (child.Hint is (Hint.AnyOf or Hint.OneOf) &&
-                !child.Schema.IsNullType() &&
-                child.TypeData != TypeData.Default)
-            {
-                return child.TypeData;
             }
         }
 

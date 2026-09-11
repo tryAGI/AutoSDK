@@ -1,4 +1,4 @@
-﻿//HintName: G.DatasetsClient.DatasetDeleteV2EntityProjectDatasetsObjectIdDelete.g.cs
+//HintName: G.DatasetsClient.DatasetDeleteV2EntityProjectDatasetsObjectIdDelete.g.cs
 
 #nullable enable
 
@@ -137,7 +137,7 @@ namespace G
                                 path: $"/v2/{entity}/{project}/datasets/{objectId}",
                                 baseUri: HttpClient.BaseAddress);
                             __pathBuilder
-                                .AddOptionalParameter("digests", digests?.ToString())
+                                .AddOptionalParameter("digests", digests, delimiter: ",", explode: true)
                                 ;
                             var __path = __pathBuilder.ToString();
                 __path = global::G.AutoSDKRequestOptionsSupport.AppendQueryParameters(

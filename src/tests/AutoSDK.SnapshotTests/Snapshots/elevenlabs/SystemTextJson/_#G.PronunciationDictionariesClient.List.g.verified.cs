@@ -143,7 +143,7 @@ namespace G
                             __pathBuilder
                                 .AddOptionalParameter("cursor", cursor)
                                 .AddOptionalParameter("page_size", pageSize?.ToString())
-                                .AddOptionalParameter("sort", sort?.ToString())
+                                .AddOptionalParameter("sort", sort?.ToValueString())
                                 .AddOptionalParameter("sort_direction", sortDirection)
                                 ;
                             var __path = __pathBuilder.ToString();

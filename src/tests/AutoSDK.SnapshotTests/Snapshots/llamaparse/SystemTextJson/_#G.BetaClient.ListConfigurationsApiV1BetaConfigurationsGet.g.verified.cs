@@ -1,4 +1,4 @@
-﻿//HintName: G.BetaClient.ListConfigurationsApiV1BetaConfigurationsGet.g.cs
+//HintName: G.BetaClient.ListConfigurationsApiV1BetaConfigurationsGet.g.cs
 
 #nullable enable
 
@@ -187,7 +187,7 @@ namespace G
                                 path: "/api/v1/beta/configurations",
                                 baseUri: HttpClient.BaseAddress);
                             __pathBuilder
-                                .AddOptionalParameter("product_type", productType?.ToString())
+                                .AddOptionalParameter("product_type", productType, selector: static x => x.ToValueString(), delimiter: ",", explode: true)
                                 .AddOptionalParameter("name", name)
                                 .AddOptionalParameter("page_size", pageSize?.ToString())
                                 .AddOptionalParameter("page_token", pageToken)

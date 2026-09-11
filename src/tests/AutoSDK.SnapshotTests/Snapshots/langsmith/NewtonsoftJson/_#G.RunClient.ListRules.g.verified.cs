@@ -152,6 +152,12 @@ namespace G
                 securityRequirements: s_ListRulesSecurityRequirements,
                 operationName: "ListRulesAsync");
 
+            var typeValue = type switch
+            {
+                global::G.ListRulesApiV1RunsRulesGetType.Session => "session",
+                global::G.ListRulesApiV1RunsRulesGetType.Dataset => "dataset",
+                _ => throw new global::System.NotImplementedException("Enum value not implemented."),
+            };
             using var __timeoutCancellationTokenSource = global::G.AutoSDKRequestOptionsSupport.CreateTimeoutCancellationTokenSource(
                 clientOptions: Options,
                 requestOptions: requestOptions,
@@ -175,9 +181,9 @@ namespace G
                             __pathBuilder
                                 .AddOptionalParameter("dataset_id", datasetId?.ToString())
                                 .AddOptionalParameter("session_id", sessionId?.ToString())
-                                .AddOptionalParameter("type", type?.ToString())
+                                .AddOptionalParameter("type", type?.ToValueString())
                                 .AddOptionalParameter("name_contains", nameContains)
-                                .AddOptionalParameter("id", id?.ToString())
+                                .AddOptionalParameter("id", id, selector: static x => x.ToString()!, delimiter: ",", explode: true)
                                 ;
                             var __path = __pathBuilder.ToString();
                 __path = global::G.AutoSDKRequestOptionsSupport.AppendQueryParameters(

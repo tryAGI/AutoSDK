@@ -1,4 +1,4 @@
-﻿//HintName: G.TracerSessionsClient.ReadTracerSessions.g.cs
+//HintName: G.TracerSessionsClient.ReadTracerSessions.g.cs
 
 #nullable enable
 
@@ -305,8 +305,8 @@ namespace G
                                 baseUri: HttpClient.BaseAddress);
                             __pathBuilder
                                 .AddOptionalParameter("reference_free", referenceFree?.ToString().ToLowerInvariant())
-                                .AddOptionalParameter("reference_dataset", referenceDataset?.ToString())
-                                .AddOptionalParameter("id", id?.ToString())
+                                .AddOptionalParameter("reference_dataset", referenceDataset, selector: static x => x.ToString()!, delimiter: ",", explode: true)
+                                .AddOptionalParameter("id", id, selector: static x => x.ToString()!, delimiter: ",", explode: true)
                                 .AddOptionalParameter("name", name)
                                 .AddOptionalParameter("name_contains", nameContains)
                                 .AddOptionalParameter("dataset_version", datasetVersion)
@@ -316,7 +316,7 @@ namespace G
                                 .AddOptionalParameter("sort_by_feedback_key", sortByFeedbackKey)
                                 .AddOptionalParameter("offset", offset?.ToString())
                                 .AddOptionalParameter("limit", limit?.ToString())
-                                .AddOptionalParameter("tag_value_id", tagValueId?.ToString())
+                                .AddOptionalParameter("tag_value_id", tagValueId, selector: static x => x.ToString()!, delimiter: ",", explode: true)
                                 .AddOptionalParameter("facets", facets?.ToString().ToLowerInvariant())
                                 .AddOptionalParameter("filter", filter)
                                 .AddOptionalParameter("include_stats", includeStats?.ToString().ToLowerInvariant())

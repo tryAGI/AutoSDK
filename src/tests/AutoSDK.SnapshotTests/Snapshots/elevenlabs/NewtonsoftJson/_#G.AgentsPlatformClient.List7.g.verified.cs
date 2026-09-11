@@ -160,6 +160,12 @@ namespace G
                 global::G.SortDirection.Desc => "desc",
                 _ => throw new global::System.NotImplementedException("Enum value not implemented."),
             };
+            var sortByValue = sortBy switch
+            {
+                global::G.ToolSortBy.Name => "name",
+                global::G.ToolSortBy.CreatedAt => "created_at",
+                _ => throw new global::System.NotImplementedException("Enum value not implemented."),
+            };
             using var __timeoutCancellationTokenSource = global::G.AutoSDKRequestOptionsSupport.CreateTimeoutCancellationTokenSource(
                 clientOptions: Options,
                 requestOptions: requestOptions,
@@ -184,9 +190,9 @@ namespace G
                                 .AddOptionalParameter("search", search)
                                 .AddOptionalParameter("page_size", pageSize?.ToString())
                                 .AddOptionalParameter("show_only_owned_documents", showOnlyOwnedDocuments?.ToString().ToLowerInvariant())
-                                .AddOptionalParameter("types", types?.ToString())
+                                .AddOptionalParameter("types", types, selector: static x => x.ToValueString(), delimiter: ",", explode: true)
                                 .AddOptionalParameter("sort_direction", sortDirection?.ToValueString())
-                                .AddOptionalParameter("sort_by", sortBy?.ToString())
+                                .AddOptionalParameter("sort_by", sortBy?.ToValueString())
                                 .AddOptionalParameter("cursor", cursor)
                                 ;
                             var __path = __pathBuilder.ToString();

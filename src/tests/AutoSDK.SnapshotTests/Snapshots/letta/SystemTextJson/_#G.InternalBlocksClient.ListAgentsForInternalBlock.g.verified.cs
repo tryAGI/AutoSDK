@@ -1,4 +1,4 @@
-﻿//HintName: G.InternalBlocksClient.ListAgentsForInternalBlock.g.cs
+//HintName: G.InternalBlocksClient.ListAgentsForInternalBlock.g.cs
 
 #nullable enable
 
@@ -229,7 +229,7 @@ namespace G
                                 .AddOptionalParameter("limit", limit?.ToString())
                                 .AddOptionalParameter("order", order?.ToValueString())
                                 .AddOptionalParameter("order_by", orderBy)
-                                .AddOptionalParameter("include_relationships", includeRelationships?.ToString())
+                                .AddOptionalParameter("include_relationships", includeRelationships, delimiter: ",", explode: true)
                                 .AddOptionalParameter("include", include, delimiter: ",", explode: true)
                                 ;
                             var __path = __pathBuilder.ToString();

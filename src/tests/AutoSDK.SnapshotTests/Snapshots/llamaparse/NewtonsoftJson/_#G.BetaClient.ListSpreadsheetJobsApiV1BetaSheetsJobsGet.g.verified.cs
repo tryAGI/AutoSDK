@@ -182,6 +182,15 @@ namespace G
                 securityRequirements: s_ListSpreadsheetJobsApiV1BetaSheetsJobsGetSecurityRequirements,
                 operationName: "ListSpreadsheetJobsApiV1BetaSheetsJobsGetAsync");
 
+            var statusValue = status switch
+            {
+                global::G.StatusEnum.Pending => "PENDING",
+                global::G.StatusEnum.Success => "SUCCESS",
+                global::G.StatusEnum.Error => "ERROR",
+                global::G.StatusEnum.PartialSuccess => "PARTIAL_SUCCESS",
+                global::G.StatusEnum.Cancelled => "CANCELLED",
+                _ => throw new global::System.NotImplementedException("Enum value not implemented."),
+            };
             using var __timeoutCancellationTokenSource = global::G.AutoSDKRequestOptionsSupport.CreateTimeoutCancellationTokenSource(
                 clientOptions: Options,
                 requestOptions: requestOptions,
@@ -204,10 +213,10 @@ namespace G
                                 baseUri: HttpClient.BaseAddress);
                             __pathBuilder
                                 .AddOptionalParameter("include_results", includeResults?.ToString().ToLowerInvariant())
-                                .AddOptionalParameter("status", status?.ToString())
+                                .AddOptionalParameter("status", status?.ToValueString())
                                 .AddOptionalParameter("created_at_on_or_after", createdAtOnOrAfter?.ToString())
                                 .AddOptionalParameter("created_at_on_or_before", createdAtOnOrBefore?.ToString())
-                                .AddOptionalParameter("job_ids", jobIds?.ToString())
+                                .AddOptionalParameter("job_ids", jobIds, delimiter: ",", explode: true)
                                 .AddOptionalParameter("project_id", projectId?.ToString())
                                 .AddOptionalParameter("organization_id", organizationId?.ToString())
                                 .AddOptionalParameter("page_size", pageSize?.ToString())

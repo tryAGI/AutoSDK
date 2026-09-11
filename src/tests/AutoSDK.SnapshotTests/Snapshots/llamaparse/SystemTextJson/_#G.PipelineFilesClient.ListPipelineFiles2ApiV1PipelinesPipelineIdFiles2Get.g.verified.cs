@@ -1,4 +1,4 @@
-﻿//HintName: G.PipelineFilesClient.ListPipelineFiles2ApiV1PipelinesPipelineIdFiles2Get.g.cs
+//HintName: G.PipelineFilesClient.ListPipelineFiles2ApiV1PipelinesPipelineIdFiles2Get.g.cs
 
 #nullable enable
 
@@ -186,7 +186,7 @@ namespace G
                                 .AddOptionalParameter("data_source_id", dataSourceId?.ToString())
                                 .AddOptionalParameter("only_manually_uploaded", onlyManuallyUploaded?.ToString().ToLowerInvariant())
                                 .AddOptionalParameter("file_name_contains", fileNameContains)
-                                .AddOptionalParameter("statuses", statuses?.ToString())
+                                .AddOptionalParameter("statuses", statuses, selector: static x => x.ToValueString(), delimiter: ",", explode: true)
                                 .AddOptionalParameter("limit", limit?.ToString())
                                 .AddOptionalParameter("offset", offset?.ToString())
                                 .AddOptionalParameter("order_by", orderBy)

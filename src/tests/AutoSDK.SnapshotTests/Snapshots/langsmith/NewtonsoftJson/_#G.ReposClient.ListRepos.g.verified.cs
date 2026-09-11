@@ -244,6 +244,19 @@ namespace G
                 securityRequirements: s_ListReposSecurityRequirements,
                 operationName: "ListReposAsync");
 
+            var isArchivedValue = isArchived switch
+            {
+                global::G.ListReposApiV1ReposGetIsArchived.True => "true",
+                global::G.ListReposApiV1ReposGetIsArchived.Allow => "allow",
+                global::G.ListReposApiV1ReposGetIsArchived.False => "false",
+                _ => throw new global::System.NotImplementedException("Enum value not implemented."),
+            };
+            var isPublicValue = isPublic switch
+            {
+                global::G.ListReposApiV1ReposGetIsPublic.True => "true",
+                global::G.ListReposApiV1ReposGetIsPublic.False => "false",
+                _ => throw new global::System.NotImplementedException("Enum value not implemented."),
+            };
             using var __timeoutCancellationTokenSource = global::G.AutoSDKRequestOptionsSupport.CreateTimeoutCancellationTokenSource(
                 clientOptions: Options,
                 requestOptions: requestOptions,
@@ -272,12 +285,12 @@ namespace G
                                 .AddOptionalParameter("tenant_id", tenantId?.ToString())
                                 .AddOptionalParameter("query", query)
                                 .AddOptionalParameter("has_commits", hasCommits?.ToString().ToLowerInvariant())
-                                .AddOptionalParameter("tags", tags?.ToString())
-                                .AddOptionalParameter("is_archived", isArchived?.ToString())
-                                .AddOptionalParameter("is_public", isPublic?.ToString())
+                                .AddOptionalParameter("tags", tags, delimiter: ",", explode: true)
+                                .AddOptionalParameter("is_archived", isArchived?.ToValueString())
+                                .AddOptionalParameter("is_public", isPublic?.ToValueString())
                                 .AddOptionalParameter("upstream_repo_owner", upstreamRepoOwner)
                                 .AddOptionalParameter("upstream_repo_handle", upstreamRepoHandle)
-                                .AddOptionalParameter("tag_value_id", tagValueId?.ToString())
+                                .AddOptionalParameter("tag_value_id", tagValueId, selector: static x => x.ToString()!, delimiter: ",", explode: true)
                                 .AddOptionalParameter("sort_field", sortField)
                                 .AddOptionalParameter("sort_direction", sortDirection?.ToString())
                                 ;

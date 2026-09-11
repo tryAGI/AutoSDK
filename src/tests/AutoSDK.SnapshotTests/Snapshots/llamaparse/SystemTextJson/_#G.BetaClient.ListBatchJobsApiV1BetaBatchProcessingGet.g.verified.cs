@@ -194,8 +194,8 @@ namespace G
                                 baseUri: HttpClient.BaseAddress);
                             __pathBuilder
                                 .AddOptionalParameter("directory_id", directoryId)
-                                .AddOptionalParameter("job_type", jobType?.ToString())
-                                .AddOptionalParameter("status", status?.ToString())
+                                .AddOptionalParameter("job_type", jobType?.ToValueString())
+                                .AddOptionalParameter("status", status?.ToValueString())
                                 .AddOptionalParameter("limit", limit?.ToString())
                                 .AddOptionalParameter("offset", offset?.ToString())
                                 .AddOptionalParameter("project_id", projectId?.ToString())

@@ -128,6 +128,12 @@ namespace G
                 securityRequirements: s_SearchPipelinesApiV1PipelinesGetSecurityRequirements,
                 operationName: "SearchPipelinesApiV1PipelinesGetAsync");
 
+            var pipelineTypeValue = pipelineType switch
+            {
+                global::G.PipelineType.Playground => "PLAYGROUND",
+                global::G.PipelineType.Managed => "MANAGED",
+                _ => throw new global::System.NotImplementedException("Enum value not implemented."),
+            };
             using var __timeoutCancellationTokenSource = global::G.AutoSDKRequestOptionsSupport.CreateTimeoutCancellationTokenSource(
                 clientOptions: Options,
                 requestOptions: requestOptions,
@@ -152,7 +158,7 @@ namespace G
                                 .AddOptionalParameter("project_id", projectId?.ToString())
                                 .AddOptionalParameter("project_name", projectName)
                                 .AddOptionalParameter("pipeline_name", pipelineName)
-                                .AddOptionalParameter("pipeline_type", pipelineType?.ToString())
+                                .AddOptionalParameter("pipeline_type", pipelineType?.ToValueString())
                                 .AddOptionalParameter("organization_id", organizationId?.ToString())
                                 ;
                             var __path = __pathBuilder.ToString();

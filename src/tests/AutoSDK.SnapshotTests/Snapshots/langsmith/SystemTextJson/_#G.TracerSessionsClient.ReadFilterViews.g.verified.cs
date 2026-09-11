@@ -149,7 +149,7 @@ namespace G
                                 path: $"/api/v1/sessions/{sessionId}/views",
                                 baseUri: HttpClient.BaseAddress);
                             __pathBuilder
-                                .AddOptionalParameter("type", type?.ToString())
+                                .AddOptionalParameter("type", type?.ToValueString())
                                 ;
                             var __path = __pathBuilder.ToString();
                 __path = global::G.AutoSDKRequestOptionsSupport.AppendQueryParameters(
