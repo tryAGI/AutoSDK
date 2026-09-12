@@ -113,6 +113,8 @@
     <!-- true/false. Default: false. Emits an `AutoSDKPager` runtime helper class with trim/AOT-safe `OffsetAsync` and
          `CursorAsync` overloads that wrap raw page methods into `IAsyncEnumerable<TItem>` streams. -->
     <CompilerVisibleProperty Include="AutoSDK_GeneratePageableHelpers"/>
+    <!-- true/false. Default: false. Removes a leading operationId group only when it matches the selected tag/client name at a word boundary. -->
+    <CompilerVisibleProperty Include="AutoSDK_StripRedundantOperationIdTagPrefixes"/>
     <!-- List of ids separated by ;. Default: Empty(all models) -->
     <CompilerVisibleProperty Include="AutoSDK_IncludeOperationIds"/>
     <!-- List of ids separated by ;. Default: Empty -->

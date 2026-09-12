@@ -4,6 +4,7 @@ using AutoSDK.Generation;
 using AutoSDK.Naming.Methods;
 using AutoSDK.Extensions;
 using AutoSDK.Helpers;
+using AutoSDK.Naming.Models;
 using AutoSDK.TypeMapping;
 using Microsoft.OpenApi;
 
@@ -11,6 +12,84 @@ namespace AutoSDK.UnitTests;
 
 public partial class NamingTests
 {
+    [TestMethod]
+    [DataRow("media_transcribe", "media", "Transcribe")]
+    [DataRow("media-transcribe", "media", "Transcribe")]
+    [DataRow("mediaTranscribe", "media", "Transcribe")]
+    [DataRow("speechToText_transcribe", "speech-to-text", "Transcribe")]
+    [DataRow("deployment_list", "deployments", "List")]
+    [DataRow("deployments_list", "deployments", "List")]
+    [DataRow("metadata_get", "media", "MetadataGet")]
+    [DataRow("media", "media", "Media")]
+    public void OperationIdMethodNames_StripOnlyRedundantTagPrefixes(
+        string operationId,
+        string tag,
+        string expectedMethodName)
+    {
+        var operations = PrepareOperations($$"""
+                                           paths:
+                                             /items:
+                                               get:
+                                                 tags:
+                                                   - {{tag}}
+                                                 operationId: {{operationId}}
+                                                 responses:
+                                                   '200':
+                                                     description: OK
+                                           """);
+
+        operations.Should().ContainSingle()
+            .Which.MethodName.Should().Be(expectedMethodName);
+    }
+
+    [TestMethod]
+    public void OperationIdMethodNames_ResolveCollisionsAfterStrippingRedundantTagPrefixes()
+    {
+        var operations = PrepareOperations("""
+                                           paths:
+                                             /first:
+                                               get:
+                                                 tags:
+                                                   - media
+                                                 operationId: media_transcribe
+                                                 responses:
+                                                   '200':
+                                                     description: OK
+                                             /second:
+                                               get:
+                                                 tags:
+                                                   - media
+                                                 operationId: transcribe
+                                                 responses:
+                                                   '200':
+                                                     description: OK
+                                           """);
+
+        ModelNameGenerator.ResolveCollisions(operations);
+
+        operations.Select(static operation => operation.MethodName)
+            .Should().Equal("Transcribe", "Transcribe2");
+    }
+
+    [TestMethod]
+    public void OperationIdMethodNames_PreserveExistingTagPrefixesByDefault()
+    {
+        var operations = PrepareOperations("""
+                                           paths:
+                                             /items:
+                                               get:
+                                                 tags:
+                                                   - media
+                                                 operationId: media_transcribe
+                                                 responses:
+                                                   '200':
+                                                     description: OK
+                                           """, stripRedundantTagPrefixes: false);
+
+        operations.Should().ContainSingle()
+            .Which.MethodName.Should().Be("MediaTranscribe");
+    }
+
     [TestMethod]
     public void SummaryMethodNames_RemoveApostrophesFromIdentifiers()
     {
@@ -186,5 +265,29 @@ public partial class NamingTests
         modelData.Value.IsDeprecated.Should().BeTrue();
         property.IsDeprecated.Should().BeTrue();
         property.Type.IsDeprecated.Should().BeTrue();
+    }
+
+    private static IReadOnlyList<OperationContext> PrepareOperations(
+        string paths,
+        bool stripRedundantTagPrefixes = true)
+    {
+        var settings = Settings.Default with
+        {
+            Namespace = "TestSdk",
+            ClassName = "TestClient",
+            MethodNamingConvention = MethodNamingConvention.OperationId,
+            StripRedundantOperationIdTagPrefixes = stripRedundantTagPrefixes,
+        };
+        var yaml = $$"""
+                     openapi: 3.0.1
+                     info:
+                       title: Test
+                       version: 1.0.0
+                     {{paths}}
+                     """;
+        var document = yaml.GetOpenApiDocument(settings);
+        var schemas = document.GetSchemas(settings);
+
+        return document.GetOperations(settings, globalSettings: settings, filteredSchemas: schemas);
     }
 }

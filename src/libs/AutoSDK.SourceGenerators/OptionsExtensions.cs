@@ -79,6 +79,7 @@ public static class OptionsExtensions
             CloudSigningHelperClassName: options.GetGlobalOption(nameof(Settings.CloudSigningHelperClassName), prefix) ?? Settings.Default.CloudSigningHelperClassName,
             AutoDetectStatusPolling: options.GetBoolGlobalOption(nameof(Settings.AutoDetectStatusPolling), prefix, defaultValue: Settings.Default.AutoDetectStatusPolling),
             GeneratePageableHelpers: options.GetBoolGlobalOption(nameof(Settings.GeneratePageableHelpers), prefix, defaultValue: Settings.Default.GeneratePageableHelpers),
+            StripRedundantOperationIdTagPrefixes: options.GetBoolGlobalOption(nameof(Settings.StripRedundantOperationIdTagPrefixes), prefix, defaultValue: Settings.Default.StripRedundantOperationIdTagPrefixes),
             IncludeOperationIds: (options.GetGlobalOption(nameof(Settings.IncludeOperationIds), prefix)?.Split(';') ??
                                    []).ToImmutableArray(),
             ExcludeOperationIds: (options.GetGlobalOption(nameof(Settings.ExcludeOperationIds), prefix)?.Split(';') ??

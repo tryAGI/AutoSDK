@@ -357,6 +357,13 @@ internal sealed class GenerateCommand : Command
         Description = "Emit an AutoSDKPager runtime helper with OffsetAsync and CursorAsync overloads that turn raw page methods into IAsyncEnumerable<TItem> streams.",
     };
 
+    private Option<bool> StripRedundantOperationIdTagPrefixes { get; } = new(
+        name: "--strip-redundant-operation-id-tag-prefixes")
+    {
+        DefaultValueFactory = _ => Settings.Default.StripRedundantOperationIdTagPrefixes,
+        Description = "Strip a leading operationId group when it redundantly matches the selected tag/client name at a word boundary.",
+    };
+
     private Option<string[]> SecuritySchemes { get; } = new(
         name: "--security-scheme")
     {
@@ -572,6 +579,7 @@ internal sealed class GenerateCommand : Command
         Options.Add(CloudSigningHelperClassName);
         Options.Add(AutoDetectStatusPolling);
         Options.Add(GeneratePageableHelpers);
+        Options.Add(StripRedundantOperationIdTagPrefixes);
         Options.Add(SecuritySchemes);
         Options.Add(AuthorizationEnvironmentVariables);
         Options.Add(BaseUrl);
@@ -749,6 +757,7 @@ internal sealed class GenerateCommand : Command
             CloudSigningHelperClassName = parseResult.GetRequiredValue(CloudSigningHelperClassName),
             AutoDetectStatusPolling = parseResult.GetRequiredValue(AutoDetectStatusPolling),
             GeneratePageableHelpers = parseResult.GetRequiredValue(GeneratePageableHelpers),
+            StripRedundantOperationIdTagPrefixes = parseResult.GetRequiredValue(StripRedundantOperationIdTagPrefixes),
             FromCli = true,
             GenerateCli = parseResult.GetRequiredValue(GenerateCli),
             SecuritySchemes = parseResult.GetRequiredValue(SecuritySchemes).ToImmutableArray(),
