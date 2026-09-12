@@ -122,6 +122,12 @@ internal sealed class CliProjectCommand : Command
         Description = "Exclude deprecated operations.",
     };
 
+    private Option<bool> StripRedundantOperationIdTagPrefixes { get; } = new("--strip-redundant-operation-id-tag-prefixes")
+    {
+        DefaultValueFactory = _ => Settings.Default.StripRedundantOperationIdTagPrefixes,
+        Description = "Strip a leading tag name from operationId-based method names when it is redundant with the generated client.",
+    };
+
     private Option<bool> IgnoreOpenApiErrors { get; } = new("--ignore-openapi-errors")
     {
         DefaultValueFactory = _ => Settings.Default.IgnoreOpenApiErrors,
@@ -181,6 +187,7 @@ internal sealed class CliProjectCommand : Command
         Options.Add(CredentialFile);
         Options.Add(BaseUrlEnvVar);
         Options.Add(ExcludeDeprecatedOperations);
+        Options.Add(StripRedundantOperationIdTagPrefixes);
         Options.Add(IgnoreOpenApiErrors);
         Options.Add(IgnoreOpenApiWarnings);
         Options.Add(SecuritySchemes);
@@ -244,6 +251,7 @@ internal sealed class CliProjectCommand : Command
             ClassName = clientClassName,
             MethodNamingConvention = parseResult.GetRequiredValue(MethodNamingConvention),
             ExcludeDeprecatedOperations = parseResult.GetRequiredValue(ExcludeDeprecatedOperations),
+            StripRedundantOperationIdTagPrefixes = parseResult.GetRequiredValue(StripRedundantOperationIdTagPrefixes),
             IgnoreOpenApiErrors = parseResult.GetRequiredValue(IgnoreOpenApiErrors),
             IgnoreOpenApiWarnings = parseResult.GetRequiredValue(IgnoreOpenApiWarnings),
             GenerateJsonSerializerContextTypes = true,

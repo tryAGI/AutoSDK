@@ -453,6 +453,7 @@ components:
             operationCommand.Should().Contain("name: name,");
             operationCommand.Should().Contain("tags: tags,");
             operationCommand.Should().Contain("enabled: enabled,");
+
             operationCommand.Should().Contain("priority: priority,");
             operationCommand.Should().Contain("@params: @params,");
             operationCommand.Should().Contain("mode: mode,");
@@ -875,6 +876,105 @@ components:
             Console.WriteLine(buildResult.StandardOutput);
             Console.WriteLine(buildResult.StandardError);
             buildResult.ExitCode.Should().Be(0);
+        }
+        finally
+        {
+            TryDeleteDirectory(rootDirectory);
+        }
+    }
+
+    [TestMethod]
+    public async Task CliProject_UsesTheSdkOperationIdTagPrefixPolicy()
+    {
+        const string spec = """
+openapi: 3.0.1
+info:
+  title: Media API
+  version: 1.0.0
+paths:
+  /transcribe:
+    post:
+      operationId: media_transcribe
+      tags:
+        - Media
+      responses:
+        '200':
+          description: OK
+""";
+
+        var rootDirectory = Path.Combine(Path.GetTempPath(), Path.GetRandomFileName());
+        var sdkDirectory = Path.Combine(rootDirectory, "sdk");
+        var cliDirectory = Path.Combine(rootDirectory, "cli");
+        Directory.CreateDirectory(rootDirectory);
+
+        try
+        {
+            var specPath = Path.Combine(rootDirectory, "openapi.yaml");
+            await File.WriteAllTextAsync(specPath, spec).ConfigureAwait(false);
+            var repositoryDirectory = GetRepositoryDirectory();
+
+            var generateResult = await RunDotnetAsync(
+                    repositoryDirectory,
+                    "run",
+                    "--disable-build-servers",
+                    "--no-launch-profile",
+                    "--project", "src/libs/AutoSDK.CLI",
+                    "generate", specPath,
+                    "--namespace", "MediaSdk",
+                    "--clientClassName", "MediaSdkClient",
+                    "--strip-redundant-operation-id-tag-prefixes",
+                    "--targetFramework", "net10.0",
+                    "--output", sdkDirectory)
+                .ConfigureAwait(false);
+            generateResult.ExitCode.Should().Be(0, generateResult.StandardError);
+
+            var sdkProjectPath = Path.Combine(sdkDirectory, "MediaSdk.csproj");
+            await File.WriteAllTextAsync(
+                    sdkProjectPath,
+                    """
+                    <Project Sdk="Microsoft.NET.Sdk">
+                      <PropertyGroup>
+                        <TargetFramework>net10.0</TargetFramework>
+                        <LangVersion>preview</LangVersion>
+                        <Nullable>enable</Nullable>
+                        <ImplicitUsings>enable</ImplicitUsings>
+                      </PropertyGroup>
+                    </Project>
+                    """)
+                .ConfigureAwait(false);
+
+            var cliProjectResult = await RunDotnetAsync(
+                    repositoryDirectory,
+                    "run",
+                    "--disable-build-servers",
+                    "--no-launch-profile",
+                    "--project", "src/libs/AutoSDK.CLI",
+                    "cli-project", specPath,
+                    "--sdk-project", sdkProjectPath,
+                    "--namespace", "MediaSdk",
+                    "--clientClassName", "MediaSdkClient",
+                    "--strip-redundant-operation-id-tag-prefixes",
+                    "--targetFramework", "net10.0",
+                    "--output", cliDirectory,
+                    "--package-id", "MediaSdk.CLI",
+                    "--tool-command-name", "media-sdk")
+                .ConfigureAwait(false);
+            cliProjectResult.ExitCode.Should().Be(0, cliProjectResult.StandardError);
+
+            var operationCommandPath = Directory
+                .EnumerateFiles(Path.Combine(cliDirectory, "Commands"), "*Transcribe*ApiCommand.g.cs")
+                .Single();
+            var operationCommand = await File.ReadAllTextAsync(operationCommandPath).ConfigureAwait(false);
+            operationCommand.Should().Contain("client.TranscribeAsync(");
+            operationCommand.Should().NotContain("client.MediaTranscribeAsync(");
+
+            var buildResult = await RunDotnetAsync(
+                    cliDirectory,
+                    "build",
+                    "--disable-build-servers",
+                    Path.Combine(cliDirectory, "MediaSdk.CLI.csproj"))
+                .ConfigureAwait(false);
+            buildResult.ExitCode.Should().Be(0, buildResult.StandardOutput + buildResult.StandardError);
         }
         finally
         {

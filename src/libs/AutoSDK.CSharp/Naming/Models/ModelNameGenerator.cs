@@ -35,19 +35,19 @@ public static class ModelNameGenerator
         {
             Hint.ArrayItem => "Item",
             Hint.Request => string.Concat(
-                operation?.OperationId
+                GetOperationName(settings, operation)
                     ?? (operationType != null && operationPath != null
                         ? MethodAndPathNameHelper.DeriveNameFromMethodAndPath(operationType.Method, operationPath)
                         : null),
                 "Request"),
             Hint.Response => string.Concat(
-                operation?.OperationId
+                GetOperationName(settings, operation)
                     ?? (operationType != null && operationPath != null
                         ? MethodAndPathNameHelper.DeriveNameFromMethodAndPath(operationType.Method, operationPath)
                         : null),
                 "Response"),
             Hint.Parameter => string.Concat(
-                operation?.OperationId
+                GetOperationName(settings, operation)
                     ?? (operationType != null && operationPath != null
                         ? MethodAndPathNameHelper.DeriveNameFromMethodAndPath(operationType.Method, operationPath)
                         : null),
@@ -104,19 +104,19 @@ public static class ModelNameGenerator
         {
             Hint.ArrayItem => "Item",
             Hint.Request => string.Concat(
-                context.Operation?.OperationId
+                GetOperationName(context.Settings.ToSchemaNamingSettings(), context.Operation)
                     ?? (context.OperationType != null && context.OperationPath != null
                         ? MethodAndPathNameHelper.DeriveNameFromMethodAndPath(context.OperationType.Method, context.OperationPath)
                         : null),
                 "Request"),
             Hint.Response => string.Concat(
-                context.Operation?.OperationId
+                GetOperationName(context.Settings.ToSchemaNamingSettings(), context.Operation)
                     ?? (context.OperationType != null && context.OperationPath != null
                         ? MethodAndPathNameHelper.DeriveNameFromMethodAndPath(context.OperationType.Method, context.OperationPath)
                         : null),
                 "Response"),
             Hint.Parameter => string.Concat(
-                context.Operation?.OperationId
+                GetOperationName(context.Settings.ToSchemaNamingSettings(), context.Operation)
                     ?? (context.OperationType != null && context.OperationPath != null
                         ? MethodAndPathNameHelper.DeriveNameFromMethodAndPath(context.OperationType.Method, context.OperationPath)
                         : null),
@@ -127,6 +127,19 @@ public static class ModelNameGenerator
             _ when context.PropertyName != null => ResolvePropertyName(context),
             _ => null,
         })?.ToCSharpName(context.Settings, context.Parent);
+    }
+
+    private static string? GetOperationName(SchemaNamingSettings settings, OpenApiOperation? operation)
+    {
+        var operationId = operation?.OperationId;
+        if (!settings.StripRedundantOperationIdTagPrefixes || operationId == null)
+        {
+            return operationId;
+        }
+
+        return OperationIdGenerator.StripRedundantTagPrefix(
+            operationId,
+            operation!.Tags?.Select(static tag => tag.Name) ?? []);
     }
 
     public static string ComputeClassName(this SchemaContext context)

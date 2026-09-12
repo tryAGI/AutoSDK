@@ -91,6 +91,46 @@ public partial class NamingTests
     }
 
     [TestMethod]
+    public void OperationIdModelNames_StripTheSameRedundantTagPrefixAsMethods()
+    {
+        var settings = Settings.Default with
+        {
+            Namespace = "TestSdk",
+            ClassName = "TestClient",
+            MethodNamingConvention = MethodNamingConvention.OperationId,
+            StripRedundantOperationIdTagPrefixes = true,
+        };
+        var document = """
+                       openapi: 3.0.1
+                       info:
+                         title: Test
+                         version: 1.0.0
+                       paths:
+                         /synthesize:
+                           post:
+                             tags:
+                               - textToSpeech
+                             operationId: textToSpeech_synthesize
+                             requestBody:
+                               content:
+                                 application/json:
+                                   schema:
+                                     type: object
+                                     properties:
+                                       text:
+                                         type: string
+                             responses:
+                               '200':
+                                 description: OK
+                       """.GetOpenApiDocument(settings);
+
+        var request = document.GetSchemas(settings)
+            .Single(schema => schema.Hint == Hint.Request);
+
+        request.ComputeClassName().Should().Be("SynthesizeRequest");
+    }
+
+    [TestMethod]
     public void SummaryMethodNames_RemoveApostrophesFromIdentifiers()
     {
         var settings = Settings.Default with

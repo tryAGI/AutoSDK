@@ -140,7 +140,8 @@ public static class CSharpSettingsExtensions
             clsCompliantEnumPrefix: settings.ClsCompliantEnumPrefix,
             useExtensionNaming: settings.UseExtensionNaming,
             namespaceDelimiter: settings.NamespaceDelimiter,
-            identifierCharacterSet: settings.IdentifierCharacterSet);
+            identifierCharacterSet: settings.IdentifierCharacterSet,
+            stripRedundantOperationIdTagPrefixes: settings.StripRedundantOperationIdTagPrefixes);
     }
 
     public static SchemaContextSettings ToSchemaContextSettings(this CSharpSettings settings)
@@ -165,7 +166,8 @@ public static class CSharpSettingsExtensions
             ModelStyle: settings.ModelStyle,
             NamespaceDelimiter: settings.NamespaceDelimiter,
             ExcludedModelNamespaceMode: settings.ExcludedModelNamespaceMode,
-            IdentifierCharacterSet: settings.IdentifierCharacterSet);
+            IdentifierCharacterSet: settings.IdentifierCharacterSet,
+            StripRedundantOperationIdTagPrefixes: settings.StripRedundantOperationIdTagPrefixes);
     }
 
     public static EnumNamingSettings ToEnumNamingSettings(this CSharpSettings settings)

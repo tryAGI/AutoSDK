@@ -25,11 +25,17 @@ public class OperationIdGenerator : IMethodNameGenerator
             .UseWordSeparator(CSharpMethodNamingSeparators.MethodSeparators);
     }
 
-    private static string StripRedundantTagPrefix(string operationId, Tag tag)
+    internal static string StripRedundantTagPrefix(string operationId, Tag tag)
     {
-        var candidates = new[] { tag.Name, tag.SafeName, tag.SingularizedName }
+        return StripRedundantTagPrefix(operationId, [tag.Name, tag.SafeName, tag.SingularizedName]);
+    }
+
+    internal static string StripRedundantTagPrefix(string operationId, IEnumerable<string?> groupNames)
+    {
+        var candidates = groupNames
             .Where(static value => !string.IsNullOrWhiteSpace(value))
-            .Select(NormalizeGroupName)
+            .Select(static value => NormalizeGroupName(value!))
+            .SelectMany(static candidate => new[] { candidate, Singularize(candidate) })
             .Where(static candidate => candidate.Length > 0)
             .Distinct(StringComparer.OrdinalIgnoreCase)
             .OrderByDescending(static candidate => candidate.Length);
@@ -62,6 +68,13 @@ public class OperationIdGenerator : IMethodNameGenerator
         }
 
         return operationId;
+    }
+
+    private static string Singularize(string value)
+    {
+        return value.EndsWith("ies", StringComparison.OrdinalIgnoreCase)
+            ? value.Substring(0, value.Length - 3) + "y"
+            : value.TrimEnd('s');
     }
 
     private static string NormalizeGroupName(string value)

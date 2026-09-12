@@ -6,25 +6,29 @@ public readonly struct SchemaNamingSettings : IEquatable<SchemaNamingSettings>
         string clsCompliantEnumPrefix,
         bool useExtensionNaming,
         string namespaceDelimiter,
-        IdentifierCharacterSet identifierCharacterSet = IdentifierCharacterSet.UnicodeLetters)
+        IdentifierCharacterSet identifierCharacterSet = IdentifierCharacterSet.UnicodeLetters,
+        bool stripRedundantOperationIdTagPrefixes = false)
     {
         ClsCompliantEnumPrefix = clsCompliantEnumPrefix;
         UseExtensionNaming = useExtensionNaming;
         NamespaceDelimiter = namespaceDelimiter;
         IdentifierCharacterSet = identifierCharacterSet;
+        StripRedundantOperationIdTagPrefixes = stripRedundantOperationIdTagPrefixes;
     }
 
     public string ClsCompliantEnumPrefix { get; }
     public bool UseExtensionNaming { get; }
     public string NamespaceDelimiter { get; }
     public IdentifierCharacterSet IdentifierCharacterSet { get; }
+    public bool StripRedundantOperationIdTagPrefixes { get; }
 
     public bool Equals(SchemaNamingSettings other)
     {
         return string.Equals(ClsCompliantEnumPrefix, other.ClsCompliantEnumPrefix, StringComparison.Ordinal) &&
                UseExtensionNaming == other.UseExtensionNaming &&
                string.Equals(NamespaceDelimiter, other.NamespaceDelimiter, StringComparison.Ordinal) &&
-               IdentifierCharacterSet == other.IdentifierCharacterSet;
+               IdentifierCharacterSet == other.IdentifierCharacterSet &&
+               StripRedundantOperationIdTagPrefixes == other.StripRedundantOperationIdTagPrefixes;
     }
 
     public override bool Equals(object? obj)
@@ -40,6 +44,7 @@ public readonly struct SchemaNamingSettings : IEquatable<SchemaNamingSettings>
             hashCode = (hashCode * 397) ^ UseExtensionNaming.GetHashCode();
             hashCode = (hashCode * 397) ^ StringComparer.Ordinal.GetHashCode(NamespaceDelimiter ?? string.Empty);
             hashCode = (hashCode * 397) ^ (int)IdentifierCharacterSet;
+            hashCode = (hashCode * 397) ^ StripRedundantOperationIdTagPrefixes.GetHashCode();
             return hashCode;
         }
     }

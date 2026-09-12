@@ -49,7 +49,8 @@ public static class SettingsConversions
             clsCompliantEnumPrefix: settings.ClsCompliantEnumPrefix,
             useExtensionNaming: settings.UseExtensionNaming,
             namespaceDelimiter: settings.NamespaceDelimiter,
-            identifierCharacterSet: settings.IdentifierCharacterSet);
+            identifierCharacterSet: settings.IdentifierCharacterSet,
+            stripRedundantOperationIdTagPrefixes: settings.StripRedundantOperationIdTagPrefixes);
     }
 
     public static SchemaNamingSettings ToSchemaNamingSettings(this SchemaContextSettings settings)
@@ -58,7 +59,8 @@ public static class SettingsConversions
             clsCompliantEnumPrefix: settings.ClsCompliantEnumPrefix,
             useExtensionNaming: settings.UseExtensionNaming,
             namespaceDelimiter: settings.NamespaceDelimiter,
-            identifierCharacterSet: settings.IdentifierCharacterSet);
+            identifierCharacterSet: settings.IdentifierCharacterSet,
+            stripRedundantOperationIdTagPrefixes: settings.StripRedundantOperationIdTagPrefixes);
     }
 
     public static SchemaContextSettings ToSchemaContextSettings(this Settings settings)
@@ -83,7 +85,8 @@ public static class SettingsConversions
             ModelStyle: settings.ModelStyle,
             NamespaceDelimiter: settings.NamespaceDelimiter,
             ExcludedModelNamespaceMode: settings.ExcludedModelNamespaceMode,
-            IdentifierCharacterSet: settings.IdentifierCharacterSet);
+            IdentifierCharacterSet: settings.IdentifierCharacterSet,
+            StripRedundantOperationIdTagPrefixes: settings.StripRedundantOperationIdTagPrefixes);
     }
 
     public static EmitterSettings ToEmitterSettings(this SchemaContextSettings settings)
