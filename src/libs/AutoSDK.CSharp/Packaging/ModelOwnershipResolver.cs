@@ -195,7 +195,7 @@ public static class ModelOwnershipResolver
     /// <summary>
     /// Every <c>global::</c>-qualified type name appearing in a generated type expression.
     /// </summary>
-    private static IEnumerable<string> GetGlobalTypeNames(string expression)
+    internal static IEnumerable<string> GetGlobalTypeNames(string expression)
     {
         var index = 0;
         while (index < expression.Length)

@@ -1,4 +1,5 @@
 ﻿using System.Diagnostics;
+using System.Runtime.InteropServices;
 using System.Text;
 using System.Text.RegularExpressions;
 using Google.Protobuf;
@@ -4629,6 +4630,30 @@ components:
     }
 
     [TestMethod]
+    public async Task Generate_LargeMultiTagClient_TrimmedLeafRetainsOnlyReachableSerializerGraph()
+    {
+        const int modelsPerTag = 180;
+        var spec = CreateLargeMultiTagSerializerSpec(modelsPerTag);
+
+        await GenerateFromContentAsync(
+            fileName: "tree-shakeable-contexts.yaml",
+            specContent: spec,
+            targetFramework: "net10.0",
+            clientClassName: "OagClient",
+            assertGeneratedOutput: outputDirectory =>
+            {
+                File.Exists(Path.Combine(outputDirectory, "Oag.Alpha.JsonSerializerContext.g.cs"))
+                    .Should().BeTrue();
+                File.Exists(Path.Combine(outputDirectory, "Oag.Delta.JsonSerializerContext.g.cs"))
+                    .Should().BeTrue();
+                return Task.CompletedTask;
+            },
+            assertBuiltOutput: outputDirectory => AssertTreeShakeableTrimmedConsumersAsync(
+                outputDirectory,
+                modelsPerTag));
+    }
+
+    [TestMethod]
     public async Task Generate_WithHugeUnionDeprecatedConverterTypes_SuppressesCS0618_AndBuilds()
     {
         var policyNames = new[]
@@ -6136,6 +6161,227 @@ components:
         {
             TryDeleteDirectory(tempSpecDirectory);
         }
+    }
+
+    private static string CreateLargeMultiTagSerializerSpec(int modelsPerTag)
+    {
+        var tags = new[] { "alpha", "beta", "gamma", "delta", "epsilon", "zeta", "eta", "theta" };
+        var builder = new StringBuilder(
+            """
+            openapi: 3.0.3
+            info:
+              title: Large tree-shakeable contexts
+              version: 1.0.0
+            servers:
+              - url: https://example.test
+            paths:
+            """);
+        builder.AppendLine();
+
+        foreach (var tag in tags)
+        {
+            var modelPrefix = char.ToUpperInvariant(tag[0]) + tag.Substring(1) + "Model";
+            builder.AppendLine($"  /{tag}:");
+            builder.AppendLine("    post:");
+            builder.AppendLine($"      operationId: create{char.ToUpperInvariant(tag[0]) + tag.Substring(1)}");
+            builder.AppendLine($"      tags: [{tag}]");
+            builder.AppendLine("      requestBody:");
+            builder.AppendLine("        required: true");
+            builder.AppendLine("        content:");
+            builder.AppendLine("          application/json:");
+            builder.AppendLine("            schema:");
+            builder.AppendLine("              type: array");
+            builder.AppendLine("              items:");
+            builder.AppendLine($"                $ref: '#/components/schemas/{modelPrefix}0'");
+            builder.AppendLine("      responses:");
+            builder.AppendLine("        '200':");
+            builder.AppendLine("          description: OK");
+            builder.AppendLine("          content:");
+            builder.AppendLine("            application/json:");
+            builder.AppendLine("              schema:");
+            builder.AppendLine("                type: array");
+            builder.AppendLine("                items:");
+            builder.AppendLine($"                  $ref: '#/components/schemas/{modelPrefix}0'");
+        }
+
+        builder.AppendLine("components:");
+        builder.AppendLine("  schemas:");
+        foreach (var tag in tags)
+        {
+            var modelPrefix = char.ToUpperInvariant(tag[0]) + tag.Substring(1) + "Model";
+            for (var index = 0; index < modelsPerTag; index++)
+            {
+                builder.AppendLine($"    {modelPrefix}{index}:");
+                builder.AppendLine("      type: object");
+                builder.AppendLine("      properties:");
+                builder.AppendLine("        value:");
+                builder.AppendLine("          type: string");
+                builder.AppendLine("        description:");
+                builder.AppendLine("          type: string");
+                builder.AppendLine("        externalId:");
+                builder.AppendLine("          type: string");
+                if (index + 1 < modelsPerTag)
+                {
+                    builder.AppendLine("        next:");
+                    builder.AppendLine($"          $ref: '#/components/schemas/{modelPrefix}{index + 1}'");
+                }
+            }
+        }
+
+        return builder.ToString();
+    }
+
+    private static async Task AssertTreeShakeableTrimmedConsumersAsync(
+        string outputDirectory,
+        int modelsPerTag)
+    {
+        var projectPath = Path.Combine(outputDirectory, "Oag.csproj");
+        var project = await File.ReadAllTextAsync(projectPath).ConfigureAwait(false);
+        project = project.Replace(
+            "<TreatWarningsAsErrors>true</TreatWarningsAsErrors>",
+            "<TreatWarningsAsErrors>true</TreatWarningsAsErrors>\n    <IsTrimmable>true</IsTrimmable>\n  </PropertyGroup>\n  <ItemGroup>\n    <Compile Remove=\"LeafConsumer/**/*.cs;RootConsumer/**/*.cs\" />\n  </ItemGroup>\n  <PropertyGroup>",
+            StringComparison.Ordinal);
+        await File.WriteAllTextAsync(projectPath, project).ConfigureAwait(false);
+
+        var leafAssembly = await PublishAndRunTreeShakeableConsumerAsync(
+            outputDirectory,
+            "LeafConsumer",
+            useRootClient: false).ConfigureAwait(false);
+        var rootAssembly = await PublishAndRunTreeShakeableConsumerAsync(
+            outputDirectory,
+            "RootConsumer",
+            useRootClient: true).ConfigureAwait(false);
+
+        var leafSize = new FileInfo(leafAssembly).Length;
+        var rootSize = new FileInfo(rootAssembly).Length;
+        Console.WriteLine($"Tree-shakeable Oag.dll: leaf={leafSize:N0} bytes, root={rootSize:N0} bytes");
+
+        leafSize.Should().BeLessThan(
+            (long)(rootSize * 0.35),
+            $"one {modelsPerTag}-model tag graph should be materially smaller than the aggregate root graph");
+    }
+
+    private static async Task<string> PublishAndRunTreeShakeableConsumerAsync(
+        string outputDirectory,
+        string consumerName,
+        bool useRootClient)
+    {
+        var consumerDirectory = Path.Combine(outputDirectory, consumerName);
+        var publishDirectory = Path.Combine(consumerDirectory, "publish");
+        Directory.CreateDirectory(consumerDirectory);
+
+        await File.WriteAllTextAsync(
+            Path.Combine(consumerDirectory, $"{consumerName}.csproj"),
+            $$"""
+            <Project Sdk="Microsoft.NET.Sdk">
+              <PropertyGroup>
+                <OutputType>Exe</OutputType>
+                <TargetFramework>net10.0</TargetFramework>
+                <ImplicitUsings>enable</ImplicitUsings>
+                <Nullable>enable</Nullable>
+                <PublishTrimmed>true</PublishTrimmed>
+                <TrimMode>full</TrimMode>
+                <EnableTrimAnalyzer>true</EnableTrimAnalyzer>
+                <SuppressTrimAnalysisWarnings>false</SuppressTrimAnalysisWarnings>
+                <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
+              </PropertyGroup>
+              <ItemGroup>
+                <ProjectReference Include="{{Path.GetRelativePath(consumerDirectory, Path.Combine(outputDirectory, "Oag.csproj"))}}" />
+              </ItemGroup>
+            </Project>
+            """).ConfigureAwait(false);
+
+        var clientSetup = useRootClient
+            ? "using var root = new OagClient(httpClient, disposeHttpClient: false);\nusing var client = root.Alpha;"
+            : "using var client = new AlphaClient(httpClient, disposeHttpClient: false);";
+        await File.WriteAllTextAsync(
+            Path.Combine(consumerDirectory, "Program.cs"),
+            $$"""
+            using System.Net;
+            using System.Text;
+            using Oag;
+
+            using var handler = new RecordingHandler();
+            using var httpClient = new HttpClient(handler) { BaseAddress = new Uri("https://example.test") };
+            {{clientSetup}}
+
+            var response = await client.CreateAlphaAsync(
+                request: [new AlphaModel0 { Value = "request-value" }]).ConfigureAwait(false);
+            return response is { Count: 1 } &&
+                   response[0].Value == "response-value" &&
+                   handler.Body?.Contains("request-value", StringComparison.Ordinal) == true
+                ? 0
+                : 1;
+
+            sealed class RecordingHandler : HttpMessageHandler
+            {
+                public string? Body { get; private set; }
+
+                protected override async Task<HttpResponseMessage> SendAsync(
+                    HttpRequestMessage request,
+                    CancellationToken cancellationToken)
+                {
+                    Body = request.Content is null
+                        ? null
+                        : await request.Content.ReadAsStringAsync(cancellationToken).ConfigureAwait(false);
+                    return new HttpResponseMessage(HttpStatusCode.OK)
+                    {
+                        Content = new StringContent(
+                            "[{\"value\":\"response-value\"}]",
+                            Encoding.UTF8,
+                            "application/json"),
+                    };
+                }
+            }
+            """).ConfigureAwait(false);
+
+        var publish = await RunDotnetAsync(
+            consumerDirectory,
+            "publish",
+            "--disable-build-servers",
+            Path.Combine(consumerDirectory, $"{consumerName}.csproj"),
+            "-c", "Release",
+            "-r", RuntimeInformation.RuntimeIdentifier,
+            "--self-contained", "true",
+            "-o", publishDirectory).ConfigureAwait(false);
+        Console.WriteLine(publish.StandardOutput);
+        Console.WriteLine(publish.StandardError);
+        publish.ExitCode.Should().Be(0);
+        publish.StandardOutput.Should().NotContain("warning IL");
+        publish.StandardError.Should().NotContain("warning IL");
+
+        var executable = Path.Combine(
+            publishDirectory,
+            OperatingSystem.IsWindows() ? $"{consumerName}.exe" : consumerName);
+        var run = await RunProcessAsync(executable, publishDirectory).ConfigureAwait(false);
+        Console.WriteLine(run.StandardOutput);
+        Console.WriteLine(run.StandardError);
+        run.ExitCode.Should().Be(0);
+
+        var assemblyPath = Path.Combine(publishDirectory, "Oag.dll");
+        File.Exists(assemblyPath).Should().BeTrue();
+        return assemblyPath;
+    }
+
+    private static async Task<(int ExitCode, string StandardOutput, string StandardError)> RunProcessAsync(
+        string executable,
+        string workingDirectory)
+    {
+        using var process = new Process
+        {
+            StartInfo = new ProcessStartInfo(executable)
+            {
+                WorkingDirectory = workingDirectory,
+                RedirectStandardOutput = true,
+                RedirectStandardError = true,
+                UseShellExecute = false,
+            },
+        };
+        process.Start();
+        var standardOutput = process.StandardOutput.ReadToEndAsync();
+        var standardError = process.StandardError.ReadToEndAsync();
+        await process.WaitForExitAsync().ConfigureAwait(false);
+        return (process.ExitCode, await standardOutput.ConfigureAwait(false), await standardError.ConfigureAwait(false));
     }
 
     private static async Task AssertProtoInputShowsGrpcNotSupportedMessageAsync(

@@ -125,6 +125,9 @@ public static class CSharpPipeline
         var modelOwners = settings.SplitByTags
             ? ModelOwnershipResolver.Resolve(data)
             : EmptyOwners;
+        var tagReachability = ShouldGenerateTreeShakeableTagContexts(data)
+            ? TagOwnershipAnalyzer.Analyze(data.FilteredSchemas)
+            : EmptyTagReachability;
         if (modelOwners.Count != 0)
         {
             var contextNamesByTag = BuildContextNamesByTag(data);
@@ -277,9 +280,11 @@ public static class CSharpPipeline
                 AddIfNotEmpty(methodImplementationFiles[index]);
                 AddIfNotEmpty(methodInterfaceFiles[index]);
             }
-            var clients = modelOwners.Count == 0
-                ? data.Clients
-                : ApplyPackageSerializerContexts(data, modelOwners);
+            var clients = modelOwners.Count != 0
+                ? ApplyPackageSerializerContexts(data, modelOwners)
+                : tagReachability.Count != 0
+                    ? ApplyTagSerializerContexts(data, tagReachability)
+                    : data.Clients;
             AddPhase("clients_auth", () => clients
                         .SelectMany(x => new[]
                         {
@@ -313,14 +318,20 @@ public static class CSharpPipeline
             var serializerContextGenerationState = new Sources.JsonSerializerContextGenerationState();
             var serializerContextFiles = MeasurePhase(
                 "serializer_context",
-                () => modelOwners.Count == 0
-                    ? [Sources.JsonSerializerContext(
-                        data.Converters,
-                        data.Types,
-                        serializerContextGenerationState,
-                        fallbackContextNames: null,
-                        cancellationToken)]
-                    : CreatePackageJsonSerializerContexts(data, modelOwners, cancellationToken));
+                () => modelOwners.Count != 0
+                    ? CreatePackageJsonSerializerContexts(data, modelOwners, cancellationToken)
+                    : [
+                        Sources.JsonSerializerContext(
+                            data.Converters,
+                            data.Types,
+                            serializerContextGenerationState,
+                            fallbackContextNames: null,
+                            cancellationToken),
+                        .. CreateTreeShakeableTagJsonSerializerContexts(
+                            data,
+                            tagReachability,
+                            cancellationToken),
+                    ]);
             var serializerContextTypesFile = MeasurePhase(
                 "serializer_context_types",
                 () => [Sources.JsonSerializerContextTypes(
@@ -556,6 +567,118 @@ public static class CSharpPipeline
     private static readonly IReadOnlyDictionary<string, string> EmptyOwners =
         new Dictionary<string, string>(StringComparer.Ordinal);
 
+    private static readonly IReadOnlyDictionary<string, ImmutableArray<string>> EmptyTagReachability =
+        new Dictionary<string, ImmutableArray<string>>(StringComparer.Ordinal);
+
+    private static bool ShouldGenerateTreeShakeableTagContexts(Models.Data data)
+    {
+        var settings = data.Converters.Settings;
+        return !settings.SplitByTags &&
+               settings.GroupByTags &&
+               settings.FromCli &&
+               settings.ShouldGenerateJsonSerializerContextTypes() &&
+               data.Tags.Length > 1;
+    }
+
+    /// <summary>
+    /// Emits one self-contained serializer context per tag client. Unlike the aggregate root
+    /// context, these contexts deliberately do not register JsonSerializerContextTypes: that
+    /// carrier names every generated model and would make one leaf client root the whole SDK.
+    /// </summary>
+    private static FileWithName[] CreateTreeShakeableTagJsonSerializerContexts(
+        Models.Data data,
+        IReadOnlyDictionary<string, ImmutableArray<string>> tagReachability,
+        CancellationToken cancellationToken)
+    {
+        if (tagReachability.Count == 0)
+        {
+            return [];
+        }
+
+        var files = new List<FileWithName>(data.Tags.Length);
+        foreach (var tag in data.Tags.OrderBy(static x => x.SafeName, StringComparer.Ordinal))
+        {
+            if (tag.Name is null)
+            {
+                continue;
+            }
+
+            var tagTypes = data.Types
+                .Where(type => IsReachableFromTag(type.CSharpTypeWithoutNullability, tag.Name, tagReachability))
+                .ToImmutableArray()
+                .AsEquatableArray();
+            var contextName = GetPackageContextName(data.Converters.Settings.Namespace, tag.SafeName);
+            files.Add(Sources.JsonSerializerContext(
+                CreatePackageContextClient(
+                    data.Converters,
+                    tag.SafeName,
+                    contextName,
+                    GetReachableConverters(data, tag.Name, tagReachability)),
+                tagTypes,
+                new Sources.JsonSerializerContextGenerationState(),
+                // A non-null empty chain selects the expanded context shape, which avoids the
+                // aggregate JsonSerializerContextTypes carrier without rooting another context.
+                fallbackContextNames: [],
+                cancellationToken));
+        }
+
+        return files.ToArray();
+    }
+
+    private static ImmutableArray<string> GetReachableConverters(
+        Models.Data data,
+        string tagName,
+        IReadOnlyDictionary<string, ImmutableArray<string>> tagReachability)
+    {
+        var converterTargets = new Dictionary<string, string>(StringComparer.Ordinal);
+        foreach (var value in data.Enums.Where(static x => x.Style == ModelStyle.Enumeration))
+        {
+            converterTargets[$"global::{value.Namespace}.JsonConverters.{value.ClassName}JsonConverter"] =
+                value.GlobalClassName;
+            converterTargets[$"global::{value.Namespace}.JsonConverters.{value.ClassName}NullableJsonConverter"] =
+                value.GlobalClassName;
+        }
+
+        foreach (var value in data.AnyOfs.Where(static x => x.IsNamed && x.Settings.UsesSystemTextJson()))
+        {
+            converterTargets[$"global::{value.Namespace}.JsonConverters.{value.Name}JsonConverter"] =
+                $"global::{value.Namespace}.{value.Name}";
+        }
+
+        var generatedTypes = new HashSet<string>(
+            data.Classes.Select(static x => x.GlobalClassName)
+                .Concat(data.Enums.Select(static x => x.GlobalClassName))
+                .Concat(data.AnyOfs
+                    .Where(static x => x.IsNamed)
+                    .Select(static x => $"global::{x.Namespace}.{x.Name}")),
+            StringComparer.Ordinal);
+
+        return data.Converters.Converters
+            .Where(converter =>
+            {
+                if (converterTargets.TryGetValue(converter, out var target))
+                {
+                    return IsReachableFromTag(target, tagName, tagReachability);
+                }
+
+                var referencedModels = ModelOwnershipResolver.GetGlobalTypeNames(converter)
+                    .Where(generatedTypes.Contains)
+                    .ToArray();
+                return referencedModels.Length == 0 || referencedModels.All(
+                    model => IsReachableFromTag(model, tagName, tagReachability));
+            })
+            .ToImmutableArray();
+    }
+
+    private static bool IsReachableFromTag(
+        string typeName,
+        string tagName,
+        IReadOnlyDictionary<string, ImmutableArray<string>> tagReachability)
+    {
+        return tagReachability.TryGetValue(typeName, out var tags) &&
+               tags.Contains(tagName, StringComparer.Ordinal);
+    }
+
     /// <summary>
     /// The types that stay in the Core package: everything no single tag exclusively owns.
     /// </summary>
@@ -733,6 +856,39 @@ public static class CSharpPipeline
 
         var rootClassName = settings.ClassName.Replace(".", string.Empty);
         contextByClientClassName[rootClassName] = GetPackageContextName(settings.Namespace, rootClassName);
+
+        return data.Clients
+            .Select(client => contextByClientClassName.TryGetValue(client.ClassName, out var contextName)
+                ? client with { Settings = client.Settings with { JsonSerializerContext = contextName } }
+                : client)
+            .ToImmutableArray()
+            .AsEquatableArray();
+    }
+
+    /// <summary>
+    /// Points directly constructed tag clients at their own reachable serializer graph while the
+    /// root client keeps the aggregate context and continues to share it with child instances.
+    /// </summary>
+    private static EquatableArray<Client> ApplyTagSerializerContexts(
+        Models.Data data,
+        IReadOnlyDictionary<string, ImmutableArray<string>> tagReachability)
+    {
+        if (tagReachability.Count == 0)
+        {
+            return data.Clients;
+        }
+
+        var contextByClientClassName = new Dictionary<string, string>(StringComparer.Ordinal);
+        foreach (var tag in data.Tags)
+        {
+            if (tag.Name is null)
+            {
+                continue;
+            }
+
+            contextByClientClassName[CSharpClientNameGenerator.Generate(tag)] =
+                GetPackageContextName(data.Converters.Settings.Namespace, tag.SafeName);
+        }
 
         return data.Clients
             .Select(client => contextByClientClassName.TryGetValue(client.ClassName, out var contextName)
