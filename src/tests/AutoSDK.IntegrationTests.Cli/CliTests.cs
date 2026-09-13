@@ -3889,6 +3889,8 @@ openapi: 3.0.3
 info:
   title: Auth Override
   version: 1.0.0
+servers:
+  - url: https://example.test
 components:
   securitySchemes:
     queryKey:
@@ -3899,6 +3901,7 @@ paths:
   /chat:
     get:
       operationId: getChat
+      tags: [chat]
       security:
         - queryKey: []
       parameters:
@@ -3920,6 +3923,13 @@ paths:
                 properties:
                   ok:
                     type: boolean
+  /messages:
+    get:
+      operationId: getMessages
+      tags: [messages]
+      responses:
+        '204':
+          description: OK
 """;
 
         await GenerateFromContentAsync(
@@ -3940,6 +3950,79 @@ paths:
                 content.Should().NotContain("ApiKeyInQuery");
                 content.Should().NotContain("string? authorization = default");
                 content.Should().Contain("string? keep = default");
+
+                File.Exists(Path.Combine(outputDirectory, "AuthOverride.AuthOverrideClient.Constructors.Bearer.g.cs"))
+                    .Should().BeTrue();
+                File.Exists(Path.Combine(outputDirectory, "AuthOverride.ChatClient.Constructors.Bearer.g.cs"))
+                    .Should().BeTrue();
+
+                await File.WriteAllTextAsync(
+                    Path.Combine(outputDirectory, "Directory.Build.props"),
+                    """
+                    <Project>
+                      <PropertyGroup>
+                        <OutputType>Exe</OutputType>
+                      </PropertyGroup>
+                    </Project>
+                    """);
+                await File.WriteAllTextAsync(
+                    Path.Combine(outputDirectory, "Program.cs"),
+                    """
+                    using System.Net;
+                    using AuthOverride;
+
+                    using var handler = new RecordingHandler();
+                    using var httpClient = new HttpClient(handler);
+
+                    using (var rootClient = new AuthOverrideClient(
+                        "root-token",
+                        httpClient,
+                        disposeHttpClient: false))
+                    {
+                        await rootClient.Chat.GetChatAsync().ConfigureAwait(false);
+                    }
+
+                    using (var tagClient = new ChatClient(
+                        "tag-token",
+                        httpClient,
+                        disposeHttpClient: false))
+                    {
+                        await tagClient.GetChatAsync().ConfigureAwait(false);
+                    }
+
+                    return handler.AuthorizationHeaders.SequenceEqual(
+                        ["Bearer root-token", "Bearer tag-token"],
+                        StringComparer.Ordinal)
+                        ? 0
+                        : 1;
+
+                    sealed class RecordingHandler : HttpMessageHandler
+                    {
+                        public List<string> AuthorizationHeaders { get; } = [];
+
+                        protected override Task<HttpResponseMessage> SendAsync(
+                            HttpRequestMessage request,
+                            CancellationToken cancellationToken)
+                        {
+                            AuthorizationHeaders.Add(request.Headers.Authorization?.ToString() ?? string.Empty);
+                            return Task.FromResult(new HttpResponseMessage(HttpStatusCode.OK)
+                            {
+                                Content = new StringContent("{\"ok\":true}", System.Text.Encoding.UTF8, "application/json"),
+                            });
+                        }
+                    }
+                    """);
+            },
+            assertBuiltOutput: async outputDirectory =>
+            {
+                var runResult = await RunDotnetAsync(
+                    outputDirectory,
+                    "run",
+                    "--no-build",
+                    "--project", Path.Combine(outputDirectory, "Oag.csproj"));
+                Console.WriteLine(runResult.StandardOutput);
+                Console.WriteLine(runResult.StandardError);
+                runResult.ExitCode.Should().Be(0);
             },
             additionalArguments: ["--security-scheme", "Http:Header:Bearer"]);
     }
@@ -5886,6 +5969,7 @@ components:
         string clientClassName = "",
         string? expectedGeneratedFile = null,
         Func<string, Task>? assertGeneratedOutput = null,
+        Func<string, Task>? assertBuiltOutput = null,
         bool enableNetAnalyzers = true,
         params string[] additionalArguments)
     {
@@ -5976,6 +6060,11 @@ components:
             Console.WriteLine(buildResult.StandardOutput);
             Console.WriteLine(buildResult.StandardError);
             buildResult.ExitCode.Should().Be(0);
+
+            if (assertBuiltOutput != null)
+            {
+                await assertBuiltOutput(tempDirectory);
+            }
         }
         finally
         {
@@ -6020,6 +6109,7 @@ components:
         string clientClassName = "",
         string? expectedGeneratedFile = null,
         Func<string, Task>? assertGeneratedOutput = null,
+        Func<string, Task>? assertBuiltOutput = null,
         params string[] additionalArguments)
     {
         var tempSpecDirectory = Path.Combine(Path.GetTempPath(), Path.GetRandomFileName());
@@ -6039,6 +6129,7 @@ components:
                 clientClassName: clientClassName,
                 expectedGeneratedFile: expectedGeneratedFile,
                 assertGeneratedOutput: assertGeneratedOutput,
+                assertBuiltOutput: assertBuiltOutput,
                 additionalArguments: additionalArguments);
         }
         finally

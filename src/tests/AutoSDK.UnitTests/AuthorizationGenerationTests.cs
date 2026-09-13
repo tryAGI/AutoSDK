@@ -17,6 +17,59 @@ public class AuthorizationGenerationTests
     };
 
     [TestMethod]
+    public void GenerateFiles_BearerOverride_EmitsConvenienceConstructorsForRootAndTagClients()
+    {
+        const string yaml = """
+                            openapi: 3.0.3
+                            info:
+                              title: Multi-tag bearer auth
+                              version: 1.0.0
+                            paths:
+                              /builds:
+                                get:
+                                  operationId: getBuilds
+                                  tags: [builds]
+                                  responses:
+                                    '204':
+                                      description: OK
+                              /apps:
+                                get:
+                                  operationId: getApps
+                                  tags: [apps]
+                                  responses:
+                                    '204':
+                                      description: OK
+                            """;
+
+        var settings = DefaultSettings with
+        {
+            ClassName = "AppStoreConnectClient",
+            GenerateSdk = true,
+            GenerateModels = true,
+            GenerateMethods = true,
+            GenerateConstructors = true,
+            GroupByTags = true,
+            SecuritySchemes = ImmutableArray.Create("Http:Header:Bearer"),
+        };
+
+        var data = CSharpPipeline.PrepareAndEnrich(((yaml, settings), settings));
+        var files = CSharpPipeline.GenerateFiles(data).ToDictionary(x => x.Name, StringComparer.Ordinal);
+
+        files.Should().ContainKey("G.AppStoreConnectClient.Constructors.Bearer.g.cs");
+        files.Should().ContainKey("G.BuildsClient.Constructors.Bearer.g.cs");
+        files.Should().ContainKey("G.AppsClient.Constructors.Bearer.g.cs");
+        files.Should().ContainKey("G.BuildsClient.Authorizations.Bearer.g.cs");
+        files.Should().ContainKey("G.IBuildsClient.Authorizations.Bearer.g.cs");
+
+        files["G.BuildsClient.Constructors.Bearer.g.cs"].Text
+            .Should().Contain("public BuildsClient(")
+            .And.Contain("string apiKey,")
+            .And.Contain("AuthorizeUsingBearer(apiKey);");
+        files["G.AppStoreConnectClient.g.cs"].Text
+            .Should().Contain("authorizations: Authorizations");
+    }
+
+    [TestMethod]
     public void Prepare_DeduplicatesTopLevelAuthorizations_WithSameFriendlyName()
     {
         const string yaml = """

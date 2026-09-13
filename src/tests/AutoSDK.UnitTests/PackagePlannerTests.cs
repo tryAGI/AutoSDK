@@ -94,6 +94,9 @@ paths:
         plan.ResolvePackageId("Catalogue.IAlbumsClient.g.cs").Should().Be("tryAGI.Catalogue.Albums");
         plan.ResolvePackageId("Catalogue.AlbumsClient.ListAlbums.g.cs").Should().Be("tryAGI.Catalogue.Albums");
         plan.ResolvePackageId("Catalogue.IAlbumsClient.ListAlbums.g.cs").Should().Be("tryAGI.Catalogue.Albums");
+        plan.ResolvePackageId("Catalogue.AlbumsClient.Authorizations.Bearer.g.cs").Should().Be("tryAGI.Catalogue.Albums");
+        plan.ResolvePackageId("Catalogue.IAlbumsClient.Authorizations.Bearer.g.cs").Should().Be("tryAGI.Catalogue.Albums");
+        plan.ResolvePackageId("Catalogue.AlbumsClient.Constructors.Bearer.g.cs").Should().Be("tryAGI.Catalogue.Albums");
     }
 
     [TestMethod]

@@ -174,6 +174,17 @@ public class SdkGenerator : IIncrementalGenerator
             .SelectAndReportExceptions((x, c) => Sources.MainAuthorizationConstructor(x, c)
                 .AsFileWithName(), context, Id)
             .AddSource(context);
+        data
+            .SelectMany(static (x, _) => x.Clients
+                .Where(static client => client.Id != "MainConstructor")
+                .SelectMany(client => new[]
+                {
+                    Sources.ClientAuthorization(client, x.Authorizations),
+                    Sources.ClientAuthorizationInterface(client, x.Authorizations),
+                    Sources.ClientAuthorizationConstructor(client, x.Authorizations),
+                }))
+            .SelectAndReportExceptions(static (x, _) => x.AsFileWithName(), context, Id)
+            .AddSource(context);
         
         data
             .SelectMany(static (x, _) => x.Classes)

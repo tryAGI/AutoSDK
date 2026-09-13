@@ -47,7 +47,7 @@ public record struct PackagePlan(
     /// </summary>
     /// <remarks>
     /// Files whose owner is derivable from the model (tag clients, tag interfaces and their
-    /// operation partials) are resolved from <see cref="FileToPackageId"/>. Anything that is a
+    /// partials) are resolved from <see cref="FileToPackageId"/> or the owning client prefix. Anything that is a
     /// partial of the root client class goes to the facade, because C# partial types cannot span
     /// assemblies. Everything else — models, enums, unions, converters, the JSON serializer
     /// context and the runtime support types — is shared, so it goes to Core.
@@ -66,6 +66,18 @@ public record struct PackagePlan(
             if (fileName.StartsWith(prefix, StringComparison.Ordinal))
             {
                 return BasePackageId;
+            }
+        }
+
+        foreach (var package in TagPackages)
+        {
+            foreach (var className in package.ClientClassNames)
+            {
+                if (fileName.StartsWith($"{Namespace}.{className}.", StringComparison.Ordinal) ||
+                    fileName.StartsWith($"{Namespace}.I{className}.", StringComparison.Ordinal))
+                {
+                    return package.PackageId;
+                }
             }
         }
 

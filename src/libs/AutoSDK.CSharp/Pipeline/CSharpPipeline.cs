@@ -292,6 +292,14 @@ public static class CSharpPipeline
                             Sources.Authorization(x, cancellationToken),
                             Sources.AuthorizationInterface(x, cancellationToken),
                         }))
+                    .Concat(clients
+                        .Where(static x => x.Id != "MainConstructor")
+                        .SelectMany(x => new[]
+                        {
+                            Sources.ClientAuthorization(x, data.Authorizations, cancellationToken),
+                            Sources.ClientAuthorizationInterface(x, data.Authorizations, cancellationToken),
+                            Sources.ClientAuthorizationConstructor(x, data.Authorizations, cancellationToken),
+                        }))
                     .Concat([Sources.MainAuthorizationConstructor(data.Authorizations, cancellationToken)])
                     .Concat([Sources.OAuth2SupportTypes(data.Authorizations, cancellationToken)]));
             AddPhase("unions", () => data.AnyOfs

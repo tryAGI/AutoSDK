@@ -441,6 +441,80 @@ public static partial class Sources
             Name: $"{mainAuthorization.Settings.Namespace}.{mainAuthorization.Settings.ClassName}.Constructors.{mainAuthorization.FriendlyName}.g.cs",
             Text: GenerateMainAuthorizationConstructor(mainAuthorization));
     }
+
+    public static FileWithName ClientAuthorization(
+        Client client,
+        EquatableArray<Authorization> authorizations,
+        CancellationToken cancellationToken = default)
+    {
+        if (!TryCreatePrimaryClientAuthorization(client, authorizations, out var authorization))
+        {
+            return FileWithName.Empty;
+        }
+
+        return new FileWithName(
+            Name: $"{authorization.Settings.Namespace}.{client.ClassName}.Authorizations.{authorization.FriendlyName}.g.cs",
+            Text: GenerateAuthorization(authorization));
+    }
+
+    public static FileWithName ClientAuthorizationInterface(
+        Client client,
+        EquatableArray<Authorization> authorizations,
+        CancellationToken cancellationToken = default)
+    {
+        if (!TryCreatePrimaryClientAuthorization(client, authorizations, out var authorization))
+        {
+            return FileWithName.Empty;
+        }
+
+        return new FileWithName(
+            Name: $"{authorization.Settings.Namespace}.I{client.ClassName}.Authorizations.{authorization.FriendlyName}.g.cs",
+            Text: GenerateAuthorizationInterface(authorization));
+    }
+
+    public static FileWithName ClientAuthorizationConstructor(
+        Client client,
+        EquatableArray<Authorization> authorizations,
+        CancellationToken cancellationToken = default)
+    {
+        if (!TryCreatePrimaryClientAuthorization(client, authorizations, out var authorization))
+        {
+            return FileWithName.Empty;
+        }
+
+        return new FileWithName(
+            Name: $"{authorization.Settings.Namespace}.{client.ClassName}.Constructors.{authorization.FriendlyName}.g.cs",
+            Text: GenerateMainAuthorizationConstructor(authorization));
+    }
+
+    private static bool TryCreatePrimaryClientAuthorization(
+        Client client,
+        EquatableArray<Authorization> authorizations,
+        out Authorization authorization)
+    {
+        authorization = default;
+        if (client.Id == "MainConstructor" || authorizations.IsEmpty)
+        {
+            return false;
+        }
+
+        var primaryAuthorization = authorizations[0];
+        if (primaryAuthorization.Settings.SecuritySchemes.IsDefaultOrEmpty ||
+            primaryAuthorization.Type is not SecuritySchemeType.Http and not SecuritySchemeType.ApiKey ||
+            GetMainAuthorizationConstructorParameters(primaryAuthorization).Length == 0)
+        {
+            return false;
+        }
+
+        authorization = primaryAuthorization with
+        {
+            Settings = primaryAuthorization.Settings with
+            {
+                ClassName = client.ClassName,
+            },
+        };
+        return true;
+    }
     
     public static FileWithName Polyfills(
         CSharpSettings settings,
