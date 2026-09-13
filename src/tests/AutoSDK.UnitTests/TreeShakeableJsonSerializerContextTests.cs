@@ -46,6 +46,40 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/SharedResult'
+  /genres:
+    post:
+      operationId: createGenre
+      tags: [genres]
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Genre'
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/SharedResult'
+  /labels:
+    post:
+      operationId: createLabel
+      tags: [labels]
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Label'
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/SharedResult'
 components:
   schemas:
     Album:
@@ -68,6 +102,50 @@ components:
     ArtistKind:
       type: string
       enum: [solo, group]
+    Genre:
+      type: object
+      properties:
+        detail:
+          $ref: '#/components/schemas/GenreDetail'
+    GenreDetail:
+      type: object
+      properties:
+        name:
+          type: string
+        next:
+          $ref: '#/components/schemas/GenreDetail2'
+    GenreDetail2:
+      type: object
+      properties:
+        next:
+          $ref: '#/components/schemas/GenreDetail3'
+    GenreDetail3:
+      type: object
+      properties:
+        name:
+          type: string
+    Label:
+      type: object
+      properties:
+        detail:
+          $ref: '#/components/schemas/LabelDetail'
+    LabelDetail:
+      type: object
+      properties:
+        name:
+          type: string
+        next:
+          $ref: '#/components/schemas/LabelDetail2'
+    LabelDetail2:
+      type: object
+      properties:
+        next:
+          $ref: '#/components/schemas/LabelDetail3'
+    LabelDetail3:
+      type: object
+      properties:
+        name:
+          type: string
     SharedResult:
       type: object
       properties:
@@ -122,5 +200,69 @@ components:
         artistsContext.Should().Contain("global::Catalogue.SharedResult");
         artistsContext.Should().NotContain("global::Catalogue.Album");
         artistsContext.Should().NotContain("global::Catalogue.JsonSerializerContextTypes");
+    }
+
+    [TestMethod]
+    public void GenerateFiles_GroupedCli_KeepsDenseLeafGraphsOnAggregateContext()
+    {
+        const string denseSpec = """
+openapi: 3.0.3
+info:
+  title: Dense tag contexts
+  version: 1.0.0
+paths:
+  /albums:
+    get:
+      operationId: getAlbums
+      tags: [albums]
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/SharedResult'
+  /artists:
+    get:
+      operationId: getArtists
+      tags: [artists]
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/SharedResult'
+components:
+  schemas:
+    SharedResult:
+      type: object
+      properties:
+        id:
+          type: string
+""";
+        var settings = Settings.Default with
+        {
+            Namespace = "Catalogue",
+            ClassName = "CatalogueClient",
+            GenerateModels = true,
+            GenerateMethods = true,
+            GenerateConstructors = true,
+            GenerateSdk = true,
+            GenerateJsonSerializerContextTypes = true,
+            JsonSerializerContext = "Catalogue.SourceGenerationContext",
+            GroupByTags = true,
+            FromCli = true,
+        };
+
+        var data = CSharpPipeline.PrepareAndEnrich(((denseSpec, settings), settings));
+        var files = CSharpPipeline.GenerateFiles(data).ToDictionary(static x => x.Name, StringComparer.Ordinal);
+
+        files.Should().NotContainKey("Catalogue.Albums.JsonSerializerContext.g.cs");
+        files.Should().NotContainKey("Catalogue.Artists.JsonSerializerContext.g.cs");
+        files["Catalogue.AlbumsClient.g.cs"].Text
+            .Should().Contain("global::Catalogue.SourceGenerationContext.Default");
+        files["Catalogue.ArtistsClient.g.cs"].Text
+            .Should().Contain("global::Catalogue.SourceGenerationContext.Default");
     }
 }

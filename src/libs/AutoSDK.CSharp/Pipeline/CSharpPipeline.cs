@@ -570,6 +570,11 @@ public static class CSharpPipeline
     private static readonly IReadOnlyDictionary<string, ImmutableArray<string>> EmptyTagReachability =
         new Dictionary<string, ImmutableArray<string>>(StringComparer.Ordinal);
 
+    // Contexts that retain a large fraction of the aggregate graph cost more to compile than the
+    // linker savings justify. Keep those clients on the aggregate context instead of multiplying
+    // near-root serializer graphs across every tag.
+    private const int MaximumTagContextReachabilityPercentage = 35;
+
     private static bool ShouldGenerateTreeShakeableTagContexts(Models.Data data)
     {
         var settings = data.Converters.Settings;
@@ -598,7 +603,7 @@ public static class CSharpPipeline
         var files = new List<FileWithName>(data.Tags.Length);
         foreach (var tag in data.Tags.OrderBy(static x => x.SafeName, StringComparer.Ordinal))
         {
-            if (tag.Name is null)
+            if (tag.Name is null || !ShouldGenerateTagSerializerContext(data, tag.Name, tagReachability))
             {
                 continue;
             }
@@ -623,6 +628,23 @@ public static class CSharpPipeline
         }
 
         return files.ToArray();
+    }
+
+    private static bool ShouldGenerateTagSerializerContext(
+        Models.Data data,
+        string tagName,
+        IReadOnlyDictionary<string, ImmutableArray<string>> tagReachability)
+    {
+        if (data.Types.Length == 0)
+        {
+            return false;
+        }
+
+        var reachableTypeCount = data.Types.Count(
+            type => IsReachableFromTag(type.CSharpTypeWithoutNullability, tagName, tagReachability));
+        return reachableTypeCount != 0 &&
+               (long)reachableTypeCount * 100 <
+               (long)data.Types.Length * MaximumTagContextReachabilityPercentage;
     }
 
     private static ImmutableArray<string> GetReachableConverters(
@@ -881,7 +903,7 @@ public static class CSharpPipeline
         var contextByClientClassName = new Dictionary<string, string>(StringComparer.Ordinal);
         foreach (var tag in data.Tags)
         {
-            if (tag.Name is null)
+            if (tag.Name is null || !ShouldGenerateTagSerializerContext(data, tag.Name, tagReachability))
             {
                 continue;
             }
