@@ -1,9 +1,14 @@
-﻿//HintName: G.Api.Authorizations.OAuth2.g.cs
+//HintName: G.Api.Authorizations.OAuth2.g.cs
 
 #nullable enable
 
 namespace G
 {
+    using OAuth2DeviceAuthorizationResponse = global::G.Api.OAuth2DeviceAuthorizationResponse;
+    using OAuth2Token = global::G.Api.OAuth2Token;
+    using IOAuth2TokenStore = global::G.Api.IOAuth2TokenStore;
+    using AutoSDKOAuth2Helpers = global::G.Api.AutoSDKOAuth2Helpers;
+
     public sealed partial class Api
     {
         /// <summary>

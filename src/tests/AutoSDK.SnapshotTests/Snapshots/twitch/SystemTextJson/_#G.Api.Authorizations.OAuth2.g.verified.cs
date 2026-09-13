@@ -1,9 +1,14 @@
-﻿//HintName: G.Api.Authorizations.OAuth2.g.cs
+//HintName: G.Api.Authorizations.OAuth2.g.cs
 
 #nullable enable
 
 namespace G
 {
+    using OAuth2DeviceAuthorizationResponse = global::G.Api.OAuth2DeviceAuthorizationResponse;
+    using OAuth2Token = global::G.Api.OAuth2Token;
+    using IOAuth2TokenStore = global::G.Api.IOAuth2TokenStore;
+    using AutoSDKOAuth2Helpers = global::G.Api.AutoSDKOAuth2Helpers;
+
     public sealed partial class Api
     {
         /// <summary>
@@ -480,7 +485,217 @@ namespace G
         /// </summary>
         public enum OAuth2Scope
         {
-            Analytics_read_extensions,            Analytics_read_games,            Bits_read,            Channel_manage_ads,            Channel_read_ads,            Channel_manage_broadcast,            Channel_read_charity,            Channel_edit_commercial,            Channel_read_editors,            Channel_manage_extensions,            Channel_read_goals,            Channel_read_guestStar,            Channel_manage_guestStar,            Channel_read_hypeTrain,            Channel_manage_moderators,            Channel_read_polls,            Channel_manage_polls,            Channel_read_predictions,            Channel_manage_predictions,            Channel_manage_raids,            Channel_read_redemptions,            Channel_manage_redemptions,            Channel_manage_schedule,            Channel_read_streamKey,            Channel_read_subscriptions,            Channel_manage_videos,            Channel_read_vips,            Channel_manage_vips,            Clips_edit,            Moderation_read,            Moderator_manage_announcements,            Moderator_manage_automod,            Moderator_read_automodSettings,            Moderator_manage_automodSettings,            Moderator_manage_bannedUsers,            Moderator_read_blockedTerms,            Moderator_manage_blockedTerms,            Moderator_manage_chatMessages,            Moderator_read_chatSettings,            Moderator_manage_chatSettings,            Moderator_read_chatters,            Moderator_read_followers,            Moderator_read_guestStar,            Moderator_manage_guestStar,            Moderator_read_shieldMode,            Moderator_manage_shieldMode,            Moderator_read_shoutouts,            Moderator_manage_shoutouts,            Moderator_read_unbanRequests,            Moderator_manage_unbanRequests,            User_edit,            User_read_blockedUsers,            User_manage_blockedUsers,            User_read_broadcast,            User_manage_chatColor,            User_read_email,            User_read_emotes,            User_read_follows,            User_read_moderatedChannels,            User_read_subscriptions,            User_manage_whispers,            Channel_bot,            Channel_moderate,            Chat_edit,            Chat_read,            User_bot,            User_read_chat,            User_write_chat,            Whispers_read,            Whispers_edit,
+            /// <summary>
+            /// OAuth2 scope <c>analytics:read:extensions</c>.
+            /// </summary>
+            Analytics_read_extensions,            /// <summary>
+            /// OAuth2 scope <c>analytics:read:games</c>.
+            /// </summary>
+            Analytics_read_games,            /// <summary>
+            /// OAuth2 scope <c>bits:read</c>.
+            /// </summary>
+            Bits_read,            /// <summary>
+            /// OAuth2 scope <c>channel:manage:ads</c>.
+            /// </summary>
+            Channel_manage_ads,            /// <summary>
+            /// OAuth2 scope <c>channel:read:ads</c>.
+            /// </summary>
+            Channel_read_ads,            /// <summary>
+            /// OAuth2 scope <c>channel:manage:broadcast</c>.
+            /// </summary>
+            Channel_manage_broadcast,            /// <summary>
+            /// OAuth2 scope <c>channel:read:charity</c>.
+            /// </summary>
+            Channel_read_charity,            /// <summary>
+            /// OAuth2 scope <c>channel:edit:commercial</c>.
+            /// </summary>
+            Channel_edit_commercial,            /// <summary>
+            /// OAuth2 scope <c>channel:read:editors</c>.
+            /// </summary>
+            Channel_read_editors,            /// <summary>
+            /// OAuth2 scope <c>channel:manage:extensions</c>.
+            /// </summary>
+            Channel_manage_extensions,            /// <summary>
+            /// OAuth2 scope <c>channel:read:goals</c>.
+            /// </summary>
+            Channel_read_goals,            /// <summary>
+            /// OAuth2 scope <c>channel:read:guest_star</c>.
+            /// </summary>
+            Channel_read_guestStar,            /// <summary>
+            /// OAuth2 scope <c>channel:manage:guest_star</c>.
+            /// </summary>
+            Channel_manage_guestStar,            /// <summary>
+            /// OAuth2 scope <c>channel:read:hype_train</c>.
+            /// </summary>
+            Channel_read_hypeTrain,            /// <summary>
+            /// OAuth2 scope <c>channel:manage:moderators</c>.
+            /// </summary>
+            Channel_manage_moderators,            /// <summary>
+            /// OAuth2 scope <c>channel:read:polls</c>.
+            /// </summary>
+            Channel_read_polls,            /// <summary>
+            /// OAuth2 scope <c>channel:manage:polls</c>.
+            /// </summary>
+            Channel_manage_polls,            /// <summary>
+            /// OAuth2 scope <c>channel:read:predictions</c>.
+            /// </summary>
+            Channel_read_predictions,            /// <summary>
+            /// OAuth2 scope <c>channel:manage:predictions</c>.
+            /// </summary>
+            Channel_manage_predictions,            /// <summary>
+            /// OAuth2 scope <c>channel:manage:raids</c>.
+            /// </summary>
+            Channel_manage_raids,            /// <summary>
+            /// OAuth2 scope <c>channel:read:redemptions</c>.
+            /// </summary>
+            Channel_read_redemptions,            /// <summary>
+            /// OAuth2 scope <c>channel:manage:redemptions</c>.
+            /// </summary>
+            Channel_manage_redemptions,            /// <summary>
+            /// OAuth2 scope <c>channel:manage:schedule</c>.
+            /// </summary>
+            Channel_manage_schedule,            /// <summary>
+            /// OAuth2 scope <c>channel:read:stream_key</c>.
+            /// </summary>
+            Channel_read_streamKey,            /// <summary>
+            /// OAuth2 scope <c>channel:read:subscriptions</c>.
+            /// </summary>
+            Channel_read_subscriptions,            /// <summary>
+            /// OAuth2 scope <c>channel:manage:videos</c>.
+            /// </summary>
+            Channel_manage_videos,            /// <summary>
+            /// OAuth2 scope <c>channel:read:vips</c>.
+            /// </summary>
+            Channel_read_vips,            /// <summary>
+            /// OAuth2 scope <c>channel:manage:vips</c>.
+            /// </summary>
+            Channel_manage_vips,            /// <summary>
+            /// OAuth2 scope <c>clips:edit</c>.
+            /// </summary>
+            Clips_edit,            /// <summary>
+            /// OAuth2 scope <c>moderation:read</c>.
+            /// </summary>
+            Moderation_read,            /// <summary>
+            /// OAuth2 scope <c>moderator:manage:announcements</c>.
+            /// </summary>
+            Moderator_manage_announcements,            /// <summary>
+            /// OAuth2 scope <c>moderator:manage:automod</c>.
+            /// </summary>
+            Moderator_manage_automod,            /// <summary>
+            /// OAuth2 scope <c>moderator:read:automod_settings</c>.
+            /// </summary>
+            Moderator_read_automodSettings,            /// <summary>
+            /// OAuth2 scope <c>moderator:manage:automod_settings</c>.
+            /// </summary>
+            Moderator_manage_automodSettings,            /// <summary>
+            /// OAuth2 scope <c>moderator:manage:banned_users</c>.
+            /// </summary>
+            Moderator_manage_bannedUsers,            /// <summary>
+            /// OAuth2 scope <c>moderator:read:blocked_terms</c>.
+            /// </summary>
+            Moderator_read_blockedTerms,            /// <summary>
+            /// OAuth2 scope <c>moderator:manage:blocked_terms</c>.
+            /// </summary>
+            Moderator_manage_blockedTerms,            /// <summary>
+            /// OAuth2 scope <c>moderator:manage:chat_messages</c>.
+            /// </summary>
+            Moderator_manage_chatMessages,            /// <summary>
+            /// OAuth2 scope <c>moderator:read:chat_settings</c>.
+            /// </summary>
+            Moderator_read_chatSettings,            /// <summary>
+            /// OAuth2 scope <c>moderator:manage:chat_settings</c>.
+            /// </summary>
+            Moderator_manage_chatSettings,            /// <summary>
+            /// OAuth2 scope <c>moderator:read:chatters</c>.
+            /// </summary>
+            Moderator_read_chatters,            /// <summary>
+            /// OAuth2 scope <c>moderator:read:followers</c>.
+            /// </summary>
+            Moderator_read_followers,            /// <summary>
+            /// OAuth2 scope <c>moderator:read:guest_star</c>.
+            /// </summary>
+            Moderator_read_guestStar,            /// <summary>
+            /// OAuth2 scope <c>moderator:manage:guest_star</c>.
+            /// </summary>
+            Moderator_manage_guestStar,            /// <summary>
+            /// OAuth2 scope <c>moderator:read:shield_mode</c>.
+            /// </summary>
+            Moderator_read_shieldMode,            /// <summary>
+            /// OAuth2 scope <c>moderator:manage:shield_mode</c>.
+            /// </summary>
+            Moderator_manage_shieldMode,            /// <summary>
+            /// OAuth2 scope <c>moderator:read:shoutouts</c>.
+            /// </summary>
+            Moderator_read_shoutouts,            /// <summary>
+            /// OAuth2 scope <c>moderator:manage:shoutouts</c>.
+            /// </summary>
+            Moderator_manage_shoutouts,            /// <summary>
+            /// OAuth2 scope <c>moderator:read:unban_requests</c>.
+            /// </summary>
+            Moderator_read_unbanRequests,            /// <summary>
+            /// OAuth2 scope <c>moderator:manage:unban_requests</c>.
+            /// </summary>
+            Moderator_manage_unbanRequests,            /// <summary>
+            /// OAuth2 scope <c>user:edit</c>.
+            /// </summary>
+            User_edit,            /// <summary>
+            /// OAuth2 scope <c>user:read:blocked_users</c>.
+            /// </summary>
+            User_read_blockedUsers,            /// <summary>
+            /// OAuth2 scope <c>user:manage:blocked_users</c>.
+            /// </summary>
+            User_manage_blockedUsers,            /// <summary>
+            /// OAuth2 scope <c>user:read:broadcast</c>.
+            /// </summary>
+            User_read_broadcast,            /// <summary>
+            /// OAuth2 scope <c>user:manage:chat_color</c>.
+            /// </summary>
+            User_manage_chatColor,            /// <summary>
+            /// OAuth2 scope <c>user:read:email</c>.
+            /// </summary>
+            User_read_email,            /// <summary>
+            /// OAuth2 scope <c>user:read:emotes</c>.
+            /// </summary>
+            User_read_emotes,            /// <summary>
+            /// OAuth2 scope <c>user:read:follows</c>.
+            /// </summary>
+            User_read_follows,            /// <summary>
+            /// OAuth2 scope <c>user:read:moderated_channels</c>.
+            /// </summary>
+            User_read_moderatedChannels,            /// <summary>
+            /// OAuth2 scope <c>user:read:subscriptions</c>.
+            /// </summary>
+            User_read_subscriptions,            /// <summary>
+            /// OAuth2 scope <c>user:manage:whispers</c>.
+            /// </summary>
+            User_manage_whispers,            /// <summary>
+            /// OAuth2 scope <c>channel:bot</c>.
+            /// </summary>
+            Channel_bot,            /// <summary>
+            /// OAuth2 scope <c>channel:moderate</c>.
+            /// </summary>
+            Channel_moderate,            /// <summary>
+            /// OAuth2 scope <c>chat:edit</c>.
+            /// </summary>
+            Chat_edit,            /// <summary>
+            /// OAuth2 scope <c>chat:read</c>.
+            /// </summary>
+            Chat_read,            /// <summary>
+            /// OAuth2 scope <c>user:bot</c>.
+            /// </summary>
+            User_bot,            /// <summary>
+            /// OAuth2 scope <c>user:read:chat</c>.
+            /// </summary>
+            User_read_chat,            /// <summary>
+            /// OAuth2 scope <c>user:write:chat</c>.
+            /// </summary>
+            User_write_chat,            /// <summary>
+            /// OAuth2 scope <c>whispers:read</c>.
+            /// </summary>
+            Whispers_read,            /// <summary>
+            /// OAuth2 scope <c>whispers:edit</c>.
+            /// </summary>
+            Whispers_edit,
         }
         /// <summary>
         /// Gets the OAuth2 metadata URL declared by the security scheme, if any.

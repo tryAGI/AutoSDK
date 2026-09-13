@@ -24,6 +24,7 @@ public static partial class Sources
 
 namespace {authorization.Settings.Namespace}
 {{
+{GenerateOAuth2SupportTypeAliases(authorization)}
     public sealed partial class {authorization.Settings.ClassName}
     {{
 {GenerateOAuth2AuthorizationMembers(authorization)}
@@ -703,7 +704,7 @@ namespace {authorization.Settings.Namespace}
         var hasScopeEnum = GetDistinctOAuth2Scopes(authorization).Length != 0;
 
         return $@"
-{(authorization.Settings.SplitByTags ? TrimmedLine : GenerateOAuth2SupportTypes(authorization))}
+{(ShouldGenerateNestedOAuth2SupportTypes(authorization) ? GenerateOAuth2SupportTypes(authorization) : TrimmedLine)}
 {GenerateOAuth2ScopeEnum(authorization)}
 {GenerateOAuth2SecurityMetadataMembers(authorization)}
         /// <summary>
@@ -869,6 +870,29 @@ namespace {authorization.Settings.Namespace}
 ".Trim('\r', '\n');
     }
 
+    private static bool ShouldGenerateNestedOAuth2SupportTypes(Authorization authorization)
+    {
+        return !authorization.Settings.SplitByTags &&
+               string.Equals(
+                   authorization.Settings.ClassName.Replace(".", string.Empty),
+                   authorization.GlobalSettings.ClassName.Replace(".", string.Empty),
+                   StringComparison.Ordinal);
+    }
+
+    private static string GenerateOAuth2SupportTypeAliases(Authorization authorization)
+    {
+        if (authorization.Settings.SplitByTags)
+        {
+            return string.Empty;
+        }
+
+        return $@"    using OAuth2DeviceAuthorizationResponse = {OAuth2TypeReference(authorization, "OAuth2DeviceAuthorizationResponse")};
+    using OAuth2Token = {OAuth2TypeReference(authorization, "OAuth2Token")};
+    using IOAuth2TokenStore = {OAuth2TypeReference(authorization, "IOAuth2TokenStore")};
+    using AutoSDKOAuth2Helpers = {OAuth2TypeReference(authorization, "AutoSDKOAuth2Helpers")};
+";
+    }
+
     private static string GenerateOAuth2AuthorizationInterfaceMembers(Authorization authorization)
     {
         return $@"
@@ -885,7 +909,7 @@ namespace {authorization.Settings.Namespace}
         /// <summary>
         /// Gets or sets the OAuth2 token store.
         /// </summary>
-        public {OAuth2TypeReference(authorization.Settings, "IOAuth2TokenStore")} OAuth2TokenStore {{ get; set; }}
+        public {OAuth2TypeReference(authorization, "IOAuth2TokenStore")} OAuth2TokenStore {{ get; set; }}
 
         /// <summary>
         /// Gets or sets a value indicating whether OAuth2 tokens should be refreshed automatically.
@@ -902,13 +926,13 @@ namespace {authorization.Settings.Namespace}
         /// </summary>
         /// <param name=""refreshTokenAsync""></param>
         public void ConfigureOAuth2TokenRefresh(
-            global::System.Func<global::System.Threading.CancellationToken, global::System.Threading.Tasks.Task<{OAuth2TypeReference(authorization.Settings, "OAuth2Token")}>> refreshTokenAsync);
+            global::System.Func<global::System.Threading.CancellationToken, global::System.Threading.Tasks.Task<{OAuth2TypeReference(authorization, "OAuth2Token")}>> refreshTokenAsync);
 
         /// <summary>
         /// Gets the currently stored OAuth2 token.
         /// </summary>
         /// <returns>The stored OAuth2 token, if present.</returns>
-        public {OAuth2TypeReference(authorization.Settings, "OAuth2Token")}? GetOAuth2Token();
+        public {OAuth2TypeReference(authorization, "OAuth2Token")}? GetOAuth2Token();
 
         /// <summary>
         /// Clears the stored OAuth2 token.
@@ -929,7 +953,7 @@ namespace {authorization.Settings.Namespace}
         /// <param name=""token""></param>
 {GetAuthorizationObsoleteAttribute(authorization, 8)}
         public void {authorization.MethodName}(
-            {OAuth2TypeReference(authorization.Settings, "OAuth2Token")} token);
+            {OAuth2TypeReference(authorization, "OAuth2Token")} token);
 {authorization.Flows.Select(x => GenerateOAuth2AuthorizationFlowInterfaceMember(authorization, x)).Inject()}
 ".Trim('\r', '\n');
     }
@@ -1420,8 +1444,8 @@ namespace {authorization.Settings.Namespace}
         var hasScopeEnum = GetDistinctOAuth2Scopes(authorization).Length != 0;
         var obsoleteAttribute = GetAuthorizationObsoleteAttribute(authorization, 8);
         var scopeEnumType = $"global::{authorization.Settings.Namespace}.{rootClassName}.OAuth2Scope";
-        var deviceAuthorizationResponseType = OAuth2TypeReference(authorization.Settings, "OAuth2DeviceAuthorizationResponse");
-        var tokenType = OAuth2TypeReference(authorization.Settings, "OAuth2Token");
+        var deviceAuthorizationResponseType = OAuth2TypeReference(authorization, "OAuth2DeviceAuthorizationResponse");
+        var tokenType = OAuth2TypeReference(authorization, "OAuth2Token");
 
         return flow.Type switch
         {
@@ -2224,7 +2248,10 @@ namespace {authorization.Settings.Namespace}
         /// </summary>
         public enum OAuth2Scope
         {{
-{scopes.Select(scope => $"            {scope.ToEnumValue(string.Empty, authorization.Settings).Name},").Inject()}
+{scopes.Select(scope => $@"            /// <summary>
+            /// OAuth2 scope <c>{scope.ClearForXml()}</c>.
+            /// </summary>
+            {scope.ToEnumValue(string.Empty, authorization.Settings).Name},").Inject()}
         }}".Trim('\r', '\n');
     }
 

@@ -53,4 +53,16 @@ public static partial class Sources
             ? $"global::{settings.Namespace}.{typeName}"
             : $"global::{settings.Namespace}.{settings.ClassName.Replace(".", string.Empty)}.{typeName}";
     }
+
+    /// <summary>
+    /// Resolves OAuth2 support types from an authorization partial. A leaf authorization still
+    /// shares the support family nested in the root client in single-project mode; only its
+    /// containing partial class changes.
+    /// </summary>
+    internal static string OAuth2TypeReference(Authorization authorization, string typeName)
+    {
+        return authorization.Settings.SplitByTags
+            ? $"global::{authorization.Settings.Namespace}.{typeName}"
+            : $"global::{authorization.GlobalSettings.Namespace}.{authorization.GlobalSettings.ClassName.Replace(".", string.Empty)}.{typeName}";
+    }
 }

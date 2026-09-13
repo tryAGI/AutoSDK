@@ -4029,6 +4029,106 @@ paths:
     }
 
     [TestMethod]
+    public async Task Generate_WithOAuth2_BuildsAndRunsDirectLeafAccessTokenConstructor()
+    {
+        const string spec = """
+openapi: 3.0.3
+info:
+  title: OAuth2 leaf client
+  version: 1.0.0
+servers:
+  - url: https://example.test
+security:
+  - OAuth2: [read]
+paths:
+  /chat:
+    get:
+      operationId: getChat
+      tags: [chat]
+      responses:
+        '204':
+          description: OK
+  /messages:
+    get:
+      operationId: getMessages
+      tags: [messages]
+      responses:
+        '204':
+          description: OK
+components:
+  securitySchemes:
+    OAuth2:
+      type: oauth2
+      flows:
+        clientCredentials:
+          tokenUrl: https://example.test/oauth/token
+          scopes:
+            read: Read access
+""";
+
+        await GenerateFromContentAsync(
+            fileName: "oauth2-leaf.yaml",
+            specContent: spec,
+            targetFramework: "net10.0",
+            namespaceValue: "OAuthLeaf",
+            clientClassName: "OAuthLeafClient",
+            assertGeneratedOutput: async outputDirectory =>
+            {
+                File.Exists(Path.Combine(outputDirectory, "OAuthLeaf.ChatClient.Constructors.OAuth2.g.cs"))
+                    .Should().BeTrue();
+                await File.WriteAllTextAsync(
+                    Path.Combine(outputDirectory, "Directory.Build.props"),
+                    """
+                    <Project>
+                      <PropertyGroup>
+                        <OutputType>Exe</OutputType>
+                      </PropertyGroup>
+                    </Project>
+                    """).ConfigureAwait(false);
+                await File.WriteAllTextAsync(
+                    Path.Combine(outputDirectory, "Program.cs"),
+                    """
+                    using System.Net;
+                    using OAuthLeaf;
+
+                    using var handler = new RecordingHandler();
+                    using var httpClient = new HttpClient(handler);
+                    using var client = new ChatClient(
+                        "leaf-token",
+                        httpClient,
+                        disposeHttpClient: false);
+
+                    await client.GetChatAsync().ConfigureAwait(false);
+                    return handler.Authorization == "Bearer leaf-token" ? 0 : 1;
+
+                    sealed class RecordingHandler : HttpMessageHandler
+                    {
+                        public string? Authorization { get; private set; }
+
+                        protected override Task<HttpResponseMessage> SendAsync(
+                            HttpRequestMessage request,
+                            CancellationToken cancellationToken)
+                        {
+                            Authorization = request.Headers.Authorization?.ToString();
+                            return Task.FromResult(new HttpResponseMessage(HttpStatusCode.NoContent));
+                        }
+                    }
+                    """).ConfigureAwait(false);
+            },
+            assertBuiltOutput: async outputDirectory =>
+            {
+                var run = await RunDotnetAsync(
+                    outputDirectory,
+                    "run",
+                    "--no-build",
+                    "--project", Path.Combine(outputDirectory, "Oag.csproj")).ConfigureAwait(false);
+                Console.WriteLine(run.StandardOutput);
+                Console.WriteLine(run.StandardError);
+                run.ExitCode.Should().Be(0);
+            });
+    }
+
+    [TestMethod]
     public async Task Generate_WithRemainingOfficialSecuritySchemes_BuildsAndEmitsSupport()
     {
         const string spec = """

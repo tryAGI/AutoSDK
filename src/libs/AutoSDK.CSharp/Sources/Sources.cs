@@ -499,8 +499,12 @@ public static partial class Sources
         }
 
         var primaryAuthorization = authorizations[0];
-        if (primaryAuthorization.Settings.SecuritySchemes.IsDefaultOrEmpty ||
-            primaryAuthorization.Type is not SecuritySchemeType.Http and not SecuritySchemeType.ApiKey ||
+        var supportsConfiguredSimpleScheme =
+            primaryAuthorization.Type is SecuritySchemeType.Http or SecuritySchemeType.ApiKey &&
+            !primaryAuthorization.Settings.SecuritySchemes.IsDefaultOrEmpty;
+        var supportsTokenScheme =
+            primaryAuthorization.Type is SecuritySchemeType.OAuth2 or SecuritySchemeType.OpenIdConnect;
+        if ((!supportsConfiguredSimpleScheme && !supportsTokenScheme) ||
             GetMainAuthorizationConstructorParameters(primaryAuthorization).Length == 0)
         {
             return false;

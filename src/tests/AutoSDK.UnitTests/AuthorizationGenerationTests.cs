@@ -70,6 +70,125 @@ public class AuthorizationGenerationTests
     }
 
     [TestMethod]
+    public void GenerateFiles_OAuth2_EmitsLeafConstructorsUsingRootSupportTypes()
+    {
+        const string yaml = """
+                            openapi: 3.0.3
+                            info:
+                              title: Multi-tag OAuth2
+                              version: 1.0.0
+                            security:
+                              - OAuth2: [read]
+                            paths:
+                              /builds:
+                                get:
+                                  operationId: getBuilds
+                                  tags: [builds]
+                                  responses:
+                                    '204':
+                                      description: OK
+                              /apps:
+                                get:
+                                  operationId: getApps
+                                  tags: [apps]
+                                  responses:
+                                    '204':
+                                      description: OK
+                            components:
+                              securitySchemes:
+                                OAuth2:
+                                  type: oauth2
+                                  flows:
+                                    clientCredentials:
+                                      tokenUrl: https://example.test/oauth/token
+                                      scopes:
+                                        read: Read access
+                            """;
+
+        var settings = DefaultSettings with
+        {
+            ClassName = "AppStoreConnectClient",
+            GenerateSdk = true,
+            GenerateModels = true,
+            GenerateMethods = true,
+            GenerateConstructors = true,
+            GroupByTags = true,
+        };
+
+        var data = CSharpPipeline.PrepareAndEnrich(((yaml, settings), settings));
+        var files = CSharpPipeline.GenerateFiles(data).ToDictionary(x => x.Name, StringComparer.Ordinal);
+
+        files.Should().ContainKey("G.BuildsClient.Constructors.OAuth2.g.cs");
+        files["G.BuildsClient.Constructors.OAuth2.g.cs"].Text
+            .Should().Contain("public BuildsClient(")
+            .And.Contain("string accessToken,")
+            .And.Contain("AuthorizeUsingOAuth2(accessToken);");
+        files["G.AppStoreConnectClient.Authorizations.OAuth2.g.cs"].Text
+            .Should().Contain("public sealed class AutoSDKOAuth2Coordinator");
+        files["G.BuildsClient.Authorizations.OAuth2.g.cs"].Text
+            .Should().NotContain("public sealed class AutoSDKOAuth2Coordinator")
+            .And.Contain("using OAuth2Token = global::G.AppStoreConnectClient.OAuth2Token;")
+            .And.Contain("using AutoSDKOAuth2Helpers = global::G.AppStoreConnectClient.AutoSDKOAuth2Helpers;");
+        files["G.BuildsClient.g.cs"].Text
+            .Should().Contain("global::G.AppStoreConnectClient.AutoSDKOAuth2Coordinator");
+    }
+
+    [TestMethod]
+    public void GenerateFiles_OpenIdConnect_EmitsAccessTokenConstructorsForLeafClients()
+    {
+        const string yaml = """
+                            openapi: 3.0.3
+                            info:
+                              title: Multi-tag OpenID Connect
+                              version: 1.0.0
+                            security:
+                              - oidc: []
+                            paths:
+                              /builds:
+                                get:
+                                  operationId: getBuilds
+                                  tags: [builds]
+                                  responses:
+                                    '204':
+                                      description: OK
+                              /apps:
+                                get:
+                                  operationId: getApps
+                                  tags: [apps]
+                                  responses:
+                                    '204':
+                                      description: OK
+                            components:
+                              securitySchemes:
+                                oidc:
+                                  type: openIdConnect
+                                  openIdConnectUrl: https://example.test/.well-known/openid-configuration
+                            """;
+
+        var settings = DefaultSettings with
+        {
+            ClassName = "AppStoreConnectClient",
+            GenerateSdk = true,
+            GenerateModels = true,
+            GenerateMethods = true,
+            GenerateConstructors = true,
+            GroupByTags = true,
+        };
+
+        var data = CSharpPipeline.PrepareAndEnrich(((yaml, settings), settings));
+        var files = CSharpPipeline.GenerateFiles(data).ToDictionary(x => x.Name, StringComparer.Ordinal);
+
+        files.Should().ContainKey("G.BuildsClient.Constructors.OpenIdConnect.g.cs");
+        files["G.BuildsClient.Constructors.OpenIdConnect.g.cs"].Text
+            .Should().Contain("public BuildsClient(")
+            .And.Contain("string accessToken,")
+            .And.Contain("AuthorizeUsingOpenIdConnect(accessToken);");
+        files["G.BuildsClient.Authorizations.OpenIdConnect.g.cs"].Text
+            .Should().Contain("public string OpenIdConnectDiscoveryUrl")
+            .And.Contain("Name = tokenType");
+    }
+
+    [TestMethod]
     public void Prepare_DeduplicatesTopLevelAuthorizations_WithSameFriendlyName()
     {
         const string yaml = """
