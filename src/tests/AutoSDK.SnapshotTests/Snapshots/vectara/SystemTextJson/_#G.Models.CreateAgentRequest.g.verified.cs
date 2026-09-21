@@ -1,4 +1,4 @@
-﻿//HintName: G.Models.CreateAgentRequest.g.cs
+//HintName: G.Models.CreateAgentRequest.g.cs
 
 #nullable enable
 
@@ -42,7 +42,7 @@ namespace G
         /// <example>{"customer_search":{"type":"corpora_search","argument_override":{"query":"customer support documentation"}}}</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("tool_configurations")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required object ToolConfigurations { get; set; }
+        public required global::System.Collections.Generic.Dictionary<string, global::G.AgentToolConfiguration> ToolConfigurations { get; set; }
 
         /// <summary>
         /// A map of skills available to the agent, keyed by skill name.<br/>
@@ -193,7 +193,7 @@ namespace G
 #endif
         public CreateAgentRequest(
             string name,
-            object toolConfigurations,
+            global::System.Collections.Generic.Dictionary<string, global::G.AgentToolConfiguration> toolConfigurations,
             global::G.AgentModel model,
             string? key,
             string? description,

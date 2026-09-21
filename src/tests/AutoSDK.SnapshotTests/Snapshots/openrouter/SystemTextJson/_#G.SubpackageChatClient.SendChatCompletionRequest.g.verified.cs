@@ -974,7 +974,7 @@ namespace G
             global::System.Collections.Generic.IList<global::G.ChatFunctionTool>? tools = default,
             double? topP = default,
             global::G.ChatDebugOptions? debug = default,
-            object? imageConfig = default,
+            global::System.Collections.Generic.Dictionary<string, global::G.ChatRequestImageConfig>? imageConfig = default,
             global::System.Collections.Generic.IList<global::G.ChatRequestModalitiesItems>? modalities = default,
             global::G.ChatRequestCacheControl? cacheControl = default,
             global::G.ChatRequestServiceTier? serviceTier = default,

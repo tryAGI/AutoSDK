@@ -1,4 +1,4 @@
-﻿//HintName: G.AgentsClient.Replace.g.cs
+//HintName: G.AgentsClient.Replace.g.cs
 
 #nullable enable
 
@@ -682,7 +682,7 @@ namespace G
         public async global::System.Threading.Tasks.Task<global::G.Agent> ReplaceAsync(
             string agentKey,
             string name,
-            object toolConfigurations,
+            global::System.Collections.Generic.Dictionary<string, global::G.AgentToolConfiguration> toolConfigurations,
             global::G.AgentModel model,
             int? requestTimeout = default,
             int? requestTimeoutMillis = default,

@@ -1,4 +1,4 @@
-﻿//HintName: G.Models.VectorStruct.g.cs
+//HintName: G.Models.VectorStruct.g.cs
 #pragma warning disable CS0618 // Type or member is obsolete
 
 #nullable enable
@@ -88,9 +88,9 @@ namespace G
         /// Example: {"image-embeddings":[0.8730000257492065,0.140625,0.897599995136261]}
         /// </summary>
 #if NET6_0_OR_GREATER
-        public object? VectorStructVariant3 { get; init; }
+        public global::System.Collections.Generic.Dictionary<string, global::G.Vector>? VectorStructVariant3 { get; init; }
 #else
-        public object? VectorStructVariant3 { get; }
+        public global::System.Collections.Generic.Dictionary<string, global::G.Vector>? VectorStructVariant3 { get; }
 #endif
 
         /// <summary>
@@ -108,7 +108,7 @@ namespace G
 #if NET6_0_OR_GREATER
             [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
 #endif
-            out object? value)
+            out global::System.Collections.Generic.Dictionary<string, global::G.Vector>? value)
         {
             value = VectorStructVariant3;
             return IsVectorStructVariant3;
@@ -117,7 +117,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public object PickVectorStructVariant3() => IsVectorStructVariant3
+        public global::System.Collections.Generic.Dictionary<string, global::G.Vector> PickVectorStructVariant3() => IsVectorStructVariant3
             ? VectorStructVariant3!
             : throw new global::System.InvalidOperationException($"Expected union variant 'VectorStructVariant3' but the value was {ToString()}.");
 
@@ -237,6 +237,29 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static implicit operator VectorStruct(global::System.Collections.Generic.Dictionary<string, global::G.Vector> value) => new VectorStruct((global::System.Collections.Generic.Dictionary<string, global::G.Vector>?)value);
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static implicit operator global::System.Collections.Generic.Dictionary<string, global::G.Vector>?(VectorStruct @this) => @this.VectorStructVariant3;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public VectorStruct(global::System.Collections.Generic.Dictionary<string, global::G.Vector>? value)
+        {
+            VectorStructVariant3 = value;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static VectorStruct FromVectorStructVariant3(global::System.Collections.Generic.Dictionary<string, global::G.Vector>? value) => new VectorStruct(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator VectorStruct(global::G.Document value) => new VectorStruct((global::G.Document?)value);
 
         /// <summary>
@@ -309,7 +332,7 @@ namespace G
         public VectorStruct(
             global::System.Collections.Generic.IList<float>? vectorStructVariant1,
             global::System.Collections.Generic.IList<global::System.Collections.Generic.IList<float>>? vectorStructVariant2,
-            object? vectorStructVariant3,
+            global::System.Collections.Generic.Dictionary<string, global::G.Vector>? vectorStructVariant3,
             global::G.Document? document,
             global::G.Image? image,
             global::G.InferenceObject? inferenceObject
@@ -361,7 +384,7 @@ namespace G
         public TResult? Match<TResult>(
             global::System.Func<global::System.Collections.Generic.IList<float>, TResult>? vectorStructVariant1 = null,
             global::System.Func<global::System.Collections.Generic.IList<global::System.Collections.Generic.IList<float>>, TResult>? vectorStructVariant2 = null,
-            global::System.Func<object, TResult>? vectorStructVariant3 = null,
+            global::System.Func<global::System.Collections.Generic.Dictionary<string, global::G.Vector>, TResult>? vectorStructVariant3 = null,
             global::System.Func<global::G.Document, TResult>? document = null,
             global::System.Func<global::G.Image, TResult>? image = null,
             global::System.Func<global::G.InferenceObject, TResult>? inferenceObject = null,
@@ -408,7 +431,7 @@ namespace G
 
             global::System.Action<global::System.Collections.Generic.IList<global::System.Collections.Generic.IList<float>>>? vectorStructVariant2 = null,
 
-            global::System.Action<object>? vectorStructVariant3 = null,
+            global::System.Action<global::System.Collections.Generic.Dictionary<string, global::G.Vector>>? vectorStructVariant3 = null,
 
             global::System.Action<global::G.Document>? document = null,
 
@@ -454,7 +477,7 @@ namespace G
         public void Switch(
             global::System.Action<global::System.Collections.Generic.IList<float>>? vectorStructVariant1 = null,
             global::System.Action<global::System.Collections.Generic.IList<global::System.Collections.Generic.IList<float>>>? vectorStructVariant2 = null,
-            global::System.Action<object>? vectorStructVariant3 = null,
+            global::System.Action<global::System.Collections.Generic.Dictionary<string, global::G.Vector>>? vectorStructVariant3 = null,
             global::System.Action<global::G.Document>? document = null,
             global::System.Action<global::G.Image>? image = null,
             global::System.Action<global::G.InferenceObject>? inferenceObject = null,
@@ -503,7 +526,7 @@ namespace G
                 VectorStructVariant2,
                 typeof(global::System.Collections.Generic.IList<global::System.Collections.Generic.IList<float>>),
                 VectorStructVariant3,
-                typeof(object),
+                typeof(global::System.Collections.Generic.Dictionary<string, global::G.Vector>),
                 Document,
                 typeof(global::G.Document),
                 Image,
@@ -528,7 +551,7 @@ namespace G
             return
                 global::System.Collections.Generic.EqualityComparer<global::System.Collections.Generic.IList<float>?>.Default.Equals(VectorStructVariant1, other.VectorStructVariant1) &&
                 global::System.Collections.Generic.EqualityComparer<global::System.Collections.Generic.IList<global::System.Collections.Generic.IList<float>>?>.Default.Equals(VectorStructVariant2, other.VectorStructVariant2) &&
-                global::System.Collections.Generic.EqualityComparer<object?>.Default.Equals(VectorStructVariant3, other.VectorStructVariant3) &&
+                global::System.Collections.Generic.EqualityComparer<global::System.Collections.Generic.Dictionary<string, global::G.Vector>?>.Default.Equals(VectorStructVariant3, other.VectorStructVariant3) &&
                 global::System.Collections.Generic.EqualityComparer<global::G.Document?>.Default.Equals(Document, other.Document) &&
                 global::System.Collections.Generic.EqualityComparer<global::G.Image?>.Default.Equals(Image, other.Image) &&
                 global::System.Collections.Generic.EqualityComparer<global::G.InferenceObject?>.Default.Equals(InferenceObject, other.InferenceObject) 

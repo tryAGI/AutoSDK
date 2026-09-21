@@ -1,4 +1,4 @@
-﻿//HintName: G.SubpackageIndexesSubpackageIndexesVideosClient.List.g.cs
+//HintName: G.SubpackageIndexesSubpackageIndexesVideosClient.List.g.cs
 
 #nullable enable
 
@@ -21,7 +21,7 @@ namespace G
             ref double? size,
             ref string? createdAt,
             ref string? updatedAt,
-            object? userMetadata,
+            global::System.Collections.Generic.Dictionary<string, global::G.IndexesIndexIdVideosGetParametersUserMetadataSchema>? userMetadata,
             ref string xApiKey);
         partial void PrepareListRequest(
             global::System.Net.Http.HttpClient httpClient,
@@ -39,7 +39,7 @@ namespace G
             double? size,
             string? createdAt,
             string? updatedAt,
-            object? userMetadata,
+            global::System.Collections.Generic.Dictionary<string, global::G.IndexesIndexIdVideosGetParametersUserMetadataSchema>? userMetadata,
             string xApiKey);
         partial void ProcessListResponse(
             global::System.Net.Http.HttpClient httpClient,
@@ -96,7 +96,7 @@ namespace G
             double? size = default,
             string? createdAt = default,
             string? updatedAt = default,
-            object? userMetadata = default,
+            global::System.Collections.Generic.Dictionary<string, global::G.IndexesIndexIdVideosGetParametersUserMetadataSchema>? userMetadata = default,
             global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
@@ -168,7 +168,7 @@ namespace G
             double? size = default,
             string? createdAt = default,
             string? updatedAt = default,
-            object? userMetadata = default,
+            global::System.Collections.Generic.Dictionary<string, global::G.IndexesIndexIdVideosGetParametersUserMetadataSchema>? userMetadata = default,
             global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {

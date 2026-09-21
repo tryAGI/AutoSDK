@@ -1,4 +1,4 @@
-﻿//HintName: G.Models.GraphData.g.cs
+//HintName: G.Models.GraphData.g.cs
 
 #nullable enable
 
@@ -20,7 +20,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("nodes", Required = global::Newtonsoft.Json.Required.Always)]
-        public object Nodes { get; set; } = default!;
+        public global::System.Collections.Generic.Dictionary<string, global::G.GraphNode> Nodes { get; set; } = default!;
 
         /// <summary>
         /// 
@@ -41,7 +41,7 @@ namespace G
         /// <param name="edges"></param>
         /// <param name="type"></param>
         public GraphData(
-            object nodes,
+            global::System.Collections.Generic.Dictionary<string, global::G.GraphNode> nodes,
             global::System.Collections.Generic.Dictionary<string, global::G.GraphEdge> edges,
             global::G.GraphDataType type)
         {

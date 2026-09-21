@@ -121,7 +121,7 @@ namespace G
         /// Provider-specific image configuration options. Keys and values vary by model/provider. See https://openrouter.ai/docs/features/multimodal/image-generation for more details.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("image_config")]
-        public object? ImageConfig { get; set; }
+        public global::System.Collections.Generic.Dictionary<string, global::G.ResponsesRequestImageConfig>? ImageConfig { get; set; }
 
         /// <summary>
         /// Output modalities for the response. Supported values are "text" and "image".
@@ -307,7 +307,7 @@ namespace G
             double? presencePenalty,
             double? frequencyPenalty,
             double? topK,
-            object? imageConfig,
+            global::System.Collections.Generic.Dictionary<string, global::G.ResponsesRequestImageConfig>? imageConfig,
             global::System.Collections.Generic.IList<global::G.OutputModalityEnum>? modalities,
             string? promptCacheKey,
             string? previousResponseId,

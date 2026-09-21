@@ -1,4 +1,4 @@
-﻿//HintName: G.Models.GraphData.g.cs
+//HintName: G.Models.GraphData.g.cs
 
 #nullable enable
 
@@ -21,7 +21,7 @@ namespace G
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("nodes")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required object Nodes { get; set; }
+        public required global::System.Collections.Generic.Dictionary<string, global::G.GraphNode> Nodes { get; set; }
 
         /// <summary>
         /// 
@@ -46,7 +46,7 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public GraphData(
-            object nodes,
+            global::System.Collections.Generic.Dictionary<string, global::G.GraphNode> nodes,
             global::System.Collections.Generic.Dictionary<string, global::G.GraphEdge> edges,
             global::G.GraphDataType type)
         {

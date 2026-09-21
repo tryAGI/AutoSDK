@@ -1,4 +1,4 @@
-﻿//HintName: G.Api.CreateNamespacesByNamespaceSchema.g.cs
+//HintName: G.Api.CreateNamespacesByNamespaceSchema.g.cs
 
 #nullable enable
 
@@ -29,12 +29,12 @@ namespace G
         partial void PrepareCreateNamespacesByNamespaceSchemaArguments(
             global::System.Net.Http.HttpClient httpClient,
             ref string @namespace,
-            object request);
+            global::System.Collections.Generic.Dictionary<string, global::G.AttributeSchema> request);
         partial void PrepareCreateNamespacesByNamespaceSchemaRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
             string @namespace,
-            object request);
+            global::System.Collections.Generic.Dictionary<string, global::G.AttributeSchema> request);
         partial void ProcessCreateNamespacesByNamespaceSchemaResponse(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage);
@@ -55,7 +55,7 @@ namespace G
         public async global::System.Threading.Tasks.Task<global::System.Collections.Generic.Dictionary<string, global::G.AttributeSchemaConfig>> CreateNamespacesByNamespaceSchemaAsync(
             string @namespace,
 
-            object request,
+            global::System.Collections.Generic.Dictionary<string, global::G.AttributeSchema> request,
             global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
@@ -80,7 +80,7 @@ namespace G
         public async global::System.Threading.Tasks.Task<global::G.AutoSDKHttpResponse<global::System.Collections.Generic.Dictionary<string, global::G.AttributeSchemaConfig>>> CreateNamespacesByNamespaceSchemaAsResponseAsync(
             string @namespace,
 
-            object request,
+            global::System.Collections.Generic.Dictionary<string, global::G.AttributeSchema> request,
             global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
@@ -490,7 +490,7 @@ namespace G
             global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
-            var __request = new object
+            var __request = new global::System.Collections.Generic.Dictionary<string, global::G.AttributeSchema>
             {
             };
 

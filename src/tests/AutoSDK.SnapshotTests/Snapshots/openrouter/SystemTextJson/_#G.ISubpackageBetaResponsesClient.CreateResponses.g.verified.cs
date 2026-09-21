@@ -116,7 +116,7 @@ namespace G
             double? presencePenalty = default,
             double? frequencyPenalty = default,
             double? topK = default,
-            object? imageConfig = default,
+            global::System.Collections.Generic.Dictionary<string, global::G.ResponsesRequestImageConfig>? imageConfig = default,
             global::System.Collections.Generic.IList<global::G.OutputModalityEnum>? modalities = default,
             string? promptCacheKey = default,
             string? previousResponseId = default,

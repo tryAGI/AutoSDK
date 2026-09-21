@@ -1,4 +1,4 @@
-﻿//HintName: G.ISubpackageIndexesSubpackageIndexesVideosClient.List.g.cs
+//HintName: G.ISubpackageIndexesSubpackageIndexesVideosClient.List.g.cs
 #nullable enable
 
 namespace G
@@ -51,7 +51,7 @@ namespace G
             double? size = default,
             string? createdAt = default,
             string? updatedAt = default,
-            object? userMetadata = default,
+            global::System.Collections.Generic.Dictionary<string, global::G.IndexesIndexIdVideosGetParametersUserMetadataSchema>? userMetadata = default,
             global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
@@ -100,7 +100,7 @@ namespace G
             double? size = default,
             string? createdAt = default,
             string? updatedAt = default,
-            object? userMetadata = default,
+            global::System.Collections.Generic.Dictionary<string, global::G.IndexesIndexIdVideosGetParametersUserMetadataSchema>? userMetadata = default,
             global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }

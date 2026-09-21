@@ -1,4 +1,4 @@
-﻿//HintName: G.Models.StoredPromptTemplate.g.cs
+//HintName: G.Models.StoredPromptTemplate.g.cs
 
 #nullable enable
 
@@ -20,7 +20,7 @@ namespace G
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("variables")]
-        public object? Variables { get; set; }
+        public global::System.Collections.Generic.Dictionary<string, global::G.StoredPromptTemplateVariables>? Variables { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -38,7 +38,7 @@ namespace G
 #endif
         public StoredPromptTemplate(
             string id,
-            object? variables)
+            global::System.Collections.Generic.Dictionary<string, global::G.StoredPromptTemplateVariables>? variables)
         {
             this.Id = id ?? throw new global::System.ArgumentNullException(nameof(id));
             this.Variables = variables;

@@ -1,4 +1,4 @@
-﻿//HintName: G.Models.CollectionTelemetry.g.cs
+//HintName: G.Models.CollectionTelemetry.g.cs
 
 #nullable enable
 
@@ -49,7 +49,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("shard_clean_tasks")]
-        public object? ShardCleanTasks { get; set; }
+        public global::System.Collections.Generic.Dictionary<string, global::G.ShardCleanStatusTelemetry>? ShardCleanTasks { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -74,7 +74,7 @@ namespace G
             global::System.Collections.Generic.IList<global::G.ReplicaSetTelemetry>? shards,
             global::System.Collections.Generic.IList<global::G.ShardTransferInfo>? transfers,
             global::System.Collections.Generic.IList<global::G.ReshardingInfo>? resharding,
-            object? shardCleanTasks)
+            global::System.Collections.Generic.Dictionary<string, global::G.ShardCleanStatusTelemetry>? shardCleanTasks)
         {
             this.Id = id ?? throw new global::System.ArgumentNullException(nameof(id));
             this.InitTimeMs = initTimeMs;

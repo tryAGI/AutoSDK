@@ -1,4 +1,4 @@
-﻿//HintName: G.Models.Agent.g.cs
+//HintName: G.Models.Agent.g.cs
 
 #nullable enable
 
@@ -39,7 +39,7 @@ namespace G
         /// </summary>
         /// <example>{"customer_search":{"type":"corpora_search","argument_override":{"query":"customer support documentation"}}}</example>
         [global::Newtonsoft.Json.JsonProperty("tool_configurations", Required = global::Newtonsoft.Json.Required.Always)]
-        public object ToolConfigurations { get; set; } = default!;
+        public global::System.Collections.Generic.Dictionary<string, global::G.AgentToolConfiguration> ToolConfigurations { get; set; } = default!;
 
         /// <summary>
         /// A map of skills available to the agent, keyed by skill name.<br/>
@@ -207,7 +207,7 @@ namespace G
         public Agent(
             string key,
             string name,
-            object toolConfigurations,
+            global::System.Collections.Generic.Dictionary<string, global::G.AgentToolConfiguration> toolConfigurations,
             global::G.AgentModel model,
             global::G.FirstAgentStep firstStep,
             bool enabled,

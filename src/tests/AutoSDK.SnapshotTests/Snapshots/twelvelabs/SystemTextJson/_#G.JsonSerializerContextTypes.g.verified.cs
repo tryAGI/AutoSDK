@@ -1346,15 +1346,23 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::G.IndexesIndexIdIndexedAssetsIndexedAssetIdGetParametersEmbeddingOptionSchemaItems>? Type328 { get; set; }
+        public global::System.Collections.Generic.Dictionary<string, global::G.IndexesIndexIdIndexedAssetsGetParametersUserMetadataSchema>? Type328 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::G.IndexesIndexIdVideosVideoIdGetParametersEmbeddingOptionSchemaItems>? Type329 { get; set; }
+        public global::System.Collections.Generic.IList<global::G.IndexesIndexIdIndexedAssetsIndexedAssetIdGetParametersEmbeddingOptionSchemaItems>? Type329 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::G.EmbedTasksTaskIdGetParametersEmbeddingOptionSchemaItems>? Type330 { get; set; }
+        public global::System.Collections.Generic.Dictionary<string, global::G.IndexesIndexIdVideosGetParametersUserMetadataSchema>? Type330 { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::System.Collections.Generic.IList<global::G.IndexesIndexIdVideosVideoIdGetParametersEmbeddingOptionSchemaItems>? Type331 { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::System.Collections.Generic.IList<global::G.EmbedTasksTaskIdGetParametersEmbeddingOptionSchemaItems>? Type332 { get; set; }
 
         /// <summary>
         /// 

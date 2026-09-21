@@ -37,6 +37,22 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/PetMatch'
+  /surveys/{surveyId}:
+    get:
+      operationId: getSurvey
+      parameters:
+        - name: surveyId
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: The requested survey
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Survey'
 components:
   schemas:
     PetMood:
@@ -78,3 +94,90 @@ components:
       anyOf:
         - $ref: '#/components/schemas/Cat'
         - $ref: '#/components/schemas/Dog'
+    Survey:
+      type: object
+      required:
+        - questions
+        - answers
+      properties:
+        questions:
+          type: object
+          additionalProperties:
+            $ref: '#/components/schemas/Question'
+        answers:
+          type: object
+          additionalProperties:
+            $ref: '#/components/schemas/Answer'
+    Question:
+      oneOf:
+        - $ref: '#/components/schemas/TextQuestion'
+        - $ref: '#/components/schemas/ChoiceQuestion'
+      discriminator:
+        propertyName: type
+        mapping:
+          text: '#/components/schemas/TextQuestion'
+          choice: '#/components/schemas/ChoiceQuestion'
+    Answer:
+      anyOf:
+        - $ref: '#/components/schemas/TextAnswer'
+        - $ref: '#/components/schemas/ChoiceAnswer'
+      discriminator:
+        propertyName: type
+        mapping:
+          text: '#/components/schemas/TextAnswer'
+          choice: '#/components/schemas/ChoiceAnswer'
+    TextQuestion:
+      type: object
+      required:
+        - type
+        - prompt
+      properties:
+        type:
+          type: string
+          enum:
+            - text
+        prompt:
+          type: string
+    ChoiceQuestion:
+      type: object
+      required:
+        - type
+        - prompt
+        - options
+      properties:
+        type:
+          type: string
+          enum:
+            - choice
+        prompt:
+          type: string
+        options:
+          type: array
+          items:
+            type: string
+    TextAnswer:
+      type: object
+      required:
+        - type
+        - value
+      properties:
+        type:
+          type: string
+          enum:
+            - text
+        value:
+          type: string
+    ChoiceAnswer:
+      type: object
+      required:
+        - type
+        - values
+      properties:
+        type:
+          type: string
+          enum:
+            - choice
+        values:
+          type: array
+          items:
+            type: string

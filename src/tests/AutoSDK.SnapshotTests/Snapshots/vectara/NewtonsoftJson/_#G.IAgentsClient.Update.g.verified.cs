@@ -1,4 +1,4 @@
-﻿//HintName: G.IAgentsClient.Update.g.cs
+//HintName: G.IAgentsClient.Update.g.cs
 #nullable enable
 
 namespace G
@@ -123,7 +123,7 @@ namespace G
             int? requestTimeoutMillis = default,
             string? name = default,
             string? description = default,
-            object? toolConfigurations = default,
+            global::System.Collections.Generic.Dictionary<string, global::G.AgentToolConfiguration>? toolConfigurations = default,
             global::System.Collections.Generic.Dictionary<string, global::G.AgentSkill>? skills = default,
             global::G.AgentModel? model = default,
             global::G.UpdateFirstAgentStep? firstStep = default,

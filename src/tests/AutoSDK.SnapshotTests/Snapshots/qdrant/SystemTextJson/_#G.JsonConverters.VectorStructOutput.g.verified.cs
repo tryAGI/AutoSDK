@@ -1,4 +1,4 @@
-﻿//HintName: G.JsonConverters.VectorStructOutput.g.cs
+//HintName: G.JsonConverters.VectorStructOutput.g.cs
 #nullable enable
 #pragma warning disable CS0618 // Type or member is obsolete
 
@@ -52,7 +52,7 @@ namespace G.JsonConverters
             }
             var __score2 = 0;
             {
-                var __ti = typeInfoResolver.GetTypeInfo(typeof(object), options);
+                var __ti = typeInfoResolver.GetTypeInfo(typeof(global::System.Collections.Generic.Dictionary<string, global::G.VectorOutput>), options);
                 if (__ti != null && __ti.Kind == global::System.Text.Json.Serialization.Metadata.JsonTypeInfoKind.Object)
                 {
                     foreach (var __prop in __ti.Properties)
@@ -69,7 +69,7 @@ namespace G.JsonConverters
 
             global::System.Collections.Generic.IList<float>? vectorStructOutputVariant1 = default;
             global::System.Collections.Generic.IList<global::System.Collections.Generic.IList<float>>? vectorStructOutputVariant2 = default;
-            object? vectorStructOutputVariant3 = default;
+            global::System.Collections.Generic.Dictionary<string, global::G.VectorOutput>? vectorStructOutputVariant3 = default;
             if (__bestIndex >= 0)
             {
                 if (__bestIndex == 0)
@@ -111,8 +111,8 @@ namespace G.JsonConverters
                     try
                     {
 
-                        var typeInfo = typeInfoResolver.GetTypeInfo(typeof(object), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<object> ??
-                                       throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(object).Name}");
+                        var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::System.Collections.Generic.Dictionary<string, global::G.VectorOutput>), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::System.Collections.Generic.Dictionary<string, global::G.VectorOutput>> ??
+                                       throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::System.Collections.Generic.Dictionary<string, global::G.VectorOutput>).Name}");
                         vectorStructOutputVariant3 = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
                     }
                     catch (global::System.Text.Json.JsonException)
@@ -163,8 +163,8 @@ namespace G.JsonConverters
                 try
                 {
 
-                    var typeInfo = typeInfoResolver.GetTypeInfo(typeof(object), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<object> ??
-                                   throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(object).Name}");
+                    var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::System.Collections.Generic.Dictionary<string, global::G.VectorOutput>), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::System.Collections.Generic.Dictionary<string, global::G.VectorOutput>> ??
+                                   throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::System.Collections.Generic.Dictionary<string, global::G.VectorOutput>).Name}");
                     vectorStructOutputVariant3 = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
                 }
                 catch (global::System.Text.Json.JsonException)
@@ -209,8 +209,8 @@ namespace G.JsonConverters
             }
             else if (value.IsVectorStructOutputVariant3)
             {
-                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(object), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<object?> ??
-                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(object).Name}");
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::System.Collections.Generic.Dictionary<string, global::G.VectorOutput>), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::System.Collections.Generic.Dictionary<string, global::G.VectorOutput>?> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::System.Collections.Generic.Dictionary<string, global::G.VectorOutput>).Name}");
                 global::System.Text.Json.JsonSerializer.Serialize(writer, value.VectorStructOutputVariant3!, typeInfo);
             }
         }

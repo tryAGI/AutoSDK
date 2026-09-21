@@ -1,4 +1,4 @@
-﻿//HintName: G.Models.Write.g.cs
+//HintName: G.Models.Write.g.cs
 
 #nullable enable
 
@@ -68,7 +68,7 @@ namespace G
         /// The schema of the attributes attached to the documents.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("schema")]
-        public object? Schema { get; set; }
+        public global::System.Collections.Generic.Dictionary<string, global::G.AttributeSchema>? Schema { get; set; }
 
         /// <summary>
         /// 
@@ -189,7 +189,7 @@ namespace G
             object? patchCondition,
             object? deleteCondition,
             global::G.DistanceMetric? distanceMetric,
-            object? schema,
+            global::System.Collections.Generic.Dictionary<string, global::G.AttributeSchema>? schema,
             global::G.OneOf<string, global::G.WriteCopyFromNamespace>? copyFromNamespace,
             object? deleteByFilter,
             bool? deleteByFilterAllowPartial,

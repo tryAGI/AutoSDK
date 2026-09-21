@@ -1,4 +1,4 @@
-﻿//HintName: G.Models.CreateGenerationBody.g.cs
+//HintName: G.Models.CreateGenerationBody.g.cs
 
 #nullable enable
 
@@ -25,7 +25,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("modelParameters")]
-        public object? ModelParameters { get; set; }
+        public global::System.Collections.Generic.Dictionary<string, global::G.MapValue>? ModelParameters { get; set; }
 
         /// <summary>
         /// 
@@ -77,7 +77,7 @@ namespace G
         public CreateGenerationBody(
             global::System.DateTime? completionStartTime,
             string? model,
-            object? modelParameters,
+            global::System.Collections.Generic.Dictionary<string, global::G.MapValue>? modelParameters,
             global::G.IngestionUsage? usage,
             global::G.UsageDetails? usageDetails,
             global::System.Collections.Generic.Dictionary<string, double>? costDetails,

@@ -1,4 +1,4 @@
-﻿//HintName: G.Models.UpdateGenerationBody.g.cs
+//HintName: G.Models.UpdateGenerationBody.g.cs
 
 #nullable enable
 
@@ -25,7 +25,7 @@ namespace G
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("modelParameters")]
-        public object? ModelParameters { get; set; }
+        public global::System.Collections.Generic.Dictionary<string, global::G.MapValue>? ModelParameters { get; set; }
 
         /// <summary>
         /// 
@@ -82,7 +82,7 @@ namespace G
         public UpdateGenerationBody(
             global::System.DateTime? completionStartTime,
             string? model,
-            object? modelParameters,
+            global::System.Collections.Generic.Dictionary<string, global::G.MapValue>? modelParameters,
             global::G.IngestionUsage? usage,
             string? promptName,
             global::G.UsageDetails? usageDetails,

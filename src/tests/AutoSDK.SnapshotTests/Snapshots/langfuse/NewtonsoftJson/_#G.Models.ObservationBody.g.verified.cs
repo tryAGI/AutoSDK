@@ -1,4 +1,4 @@
-﻿//HintName: G.Models.ObservationBody.g.cs
+//HintName: G.Models.ObservationBody.g.cs
 
 #nullable enable
 
@@ -62,7 +62,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("modelParameters")]
-        public object? ModelParameters { get; set; }
+        public global::System.Collections.Generic.Dictionary<string, global::G.MapValue>? ModelParameters { get; set; }
 
         /// <summary>
         /// 
@@ -157,7 +157,7 @@ namespace G
             global::System.DateTime? endTime,
             global::System.DateTime? completionStartTime,
             string? model,
-            object? modelParameters,
+            global::System.Collections.Generic.Dictionary<string, global::G.MapValue>? modelParameters,
             object? input,
             string? version,
             object? metadata,

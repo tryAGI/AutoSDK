@@ -126,275 +126,279 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.AttributeSchema? Type23 { get; set; }
+        public global::System.Collections.Generic.Dictionary<string, global::G.AttributeSchema>? Type23 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.OneOf<string, global::G.WriteCopyFromNamespace>? Type24 { get; set; }
+        public global::G.AttributeSchema? Type24 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.WriteCopyFromNamespace? Type25 { get; set; }
+        public global::G.OneOf<string, global::G.WriteCopyFromNamespace>? Type25 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.PatchByFilter? Type26 { get; set; }
+        public global::G.WriteCopyFromNamespace? Type26 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.Encryption2? Type27 { get; set; }
+        public global::G.PatchByFilter? Type27 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.WriteBilling? Type28 { get; set; }
+        public global::G.Encryption2? Type28 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.QueryBilling? Type29 { get; set; }
+        public global::G.WriteBilling? Type29 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.WriteResult? Type30 { get; set; }
+        public global::G.QueryBilling? Type30 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public int? Type31 { get; set; }
+        public global::G.WriteResult? Type31 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.Query? Type32 { get; set; }
+        public int? Type32 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.IncludeAttributes? Type33 { get; set; }
+        public global::G.Query? Type33 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<string>? Type34 { get; set; }
+        public global::G.IncludeAttributes? Type34 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.AnyOf<int?, global::G.Limit2>? Type35 { get; set; }
+        public global::System.Collections.Generic.IList<string>? Type35 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.Limit2? Type36 { get; set; }
+        public global::G.AnyOf<int?, global::G.Limit2>? Type36 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.QueryConfig? Type37 { get; set; }
+        public global::G.Limit2? Type37 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.VectorEncoding? Type38 { get; set; }
+        public global::G.QueryConfig? Type38 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.QueryConfigConsistency? Type39 { get; set; }
+        public global::G.VectorEncoding? Type39 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.QueryPerformance? Type40 { get; set; }
+        public global::G.QueryConfigConsistency? Type40 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public double? Type41 { get; set; }
+        public global::G.QueryPerformance? Type41 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.QueryResult? Type42 { get; set; }
+        public double? Type42 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.SingleQueryResult? Type43 { get; set; }
+        public global::G.QueryResult? Type43 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.QueryResultVariant2? Type44 { get; set; }
+        public global::G.SingleQueryResult? Type44 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.MultiQueryResult? Type45 { get; set; }
+        public global::G.QueryResultVariant2? Type45 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::G.SingleQueryResult>? Type46 { get; set; }
+        public global::G.MultiQueryResult? Type46 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::G.AggregationGroup>? Type47 { get; set; }
+        public global::System.Collections.Generic.IList<global::G.SingleQueryResult>? Type47 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.AggregationGroup? Type48 { get; set; }
+        public global::System.Collections.Generic.IList<global::G.AggregationGroup>? Type48 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<object>? Type49 { get; set; }
+        public global::G.AggregationGroup? Type49 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.OneOf<global::System.Collections.Generic.IList<global::G.Vector2>, global::G.Vector2?>? Type50 { get; set; }
+        public global::System.Collections.Generic.IList<object>? Type50 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::G.Vector2>? Type51 { get; set; }
+        public global::G.OneOf<global::System.Collections.Generic.IList<global::G.Vector2>, global::G.Vector2?>? Type51 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.Vector2? Type52 { get; set; }
+        public global::System.Collections.Generic.IList<global::G.Vector2>? Type52 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Guid? Type53 { get; set; }
+        public global::G.Vector2? Type53 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<double>? Type54 { get; set; }
+        public global::System.Guid? Type54 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.LimitPer? Type55 { get; set; }
+        public global::System.Collections.Generic.IList<double>? Type55 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.FullTextSearch? Type56 { get; set; }
+        public global::G.LimitPer? Type56 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.Ann? Type57 { get; set; }
+        public global::G.FullTextSearch? Type57 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.FullTextSearchConfig? Type58 { get; set; }
+        public global::G.Ann? Type58 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.Language? Type59 { get; set; }
+        public global::G.FullTextSearchConfig? Type59 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.Tokenizer? Type60 { get; set; }
+        public global::G.Language? Type60 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.AnnConfig? Type61 { get; set; }
+        public global::G.Tokenizer? Type61 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.EncryptionCmek? Type62 { get; set; }
+        public global::G.AnnConfig? Type62 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.ErrorResponse? Type63 { get; set; }
+        public global::G.EncryptionCmek? Type63 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.AggregateBy? Type64 { get; set; }
+        public global::G.ErrorResponse? Type64 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public byte[]? Type65 { get; set; }
+        public global::G.AggregateBy? Type65 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.Expr? Type66 { get; set; }
+        public byte[]? Type66 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.ExprRefNew? Type67 { get; set; }
+        public global::G.Expr? Type67 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.Bm25ClauseParams? Type68 { get; set; }
+        public global::G.ExprRefNew? Type68 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.ContainsAllTokensFilterParams? Type69 { get; set; }
+        public global::G.Bm25ClauseParams? Type69 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.ContainsAnyTokenFilterParams? Type70 { get; set; }
+        public global::G.ContainsAllTokensFilterParams? Type70 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.SaturateParams? Type71 { get; set; }
+        public global::G.ContainsAnyTokenFilterParams? Type71 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.DecayParams? Type72 { get; set; }
+        public global::G.SaturateParams? Type72 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.Filter? Type73 { get; set; }
+        public global::G.DecayParams? Type73 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.RankByText? Type74 { get; set; }
+        public global::G.Filter? Type74 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.RankByAttributeOrder? Type75 { get; set; }
+        public global::G.RankByText? Type75 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<byte[]>? Type76 { get; set; }
+        public global::G.RankByAttributeOrder? Type76 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.RankBy? Type77 { get; set; }
+        public global::System.Collections.Generic.IList<byte[]>? Type77 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.CreateNamespacesDebugRecallRequest? Type78 { get; set; }
+        public global::G.RankBy? Type78 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.AllOf<global::G.QueryConfig, global::G.Query>? Type79 { get; set; }
+        public global::G.CreateNamespacesDebugRecallRequest? Type79 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.AllOf<global::G.QueryConfig, global::G.CreateNamespacesMultiQueryRequest2>? Type80 { get; set; }
+        public global::G.AllOf<global::G.QueryConfig, global::G.Query>? Type80 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.CreateNamespacesMultiQueryRequest2? Type81 { get; set; }
+        public global::G.AllOf<global::G.QueryConfig, global::G.CreateNamespacesMultiQueryRequest2>? Type81 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::G.Query>? Type82 { get; set; }
+        public global::G.CreateNamespacesMultiQueryRequest2? Type82 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.GetNamespacesResponse? Type83 { get; set; }
+        public global::System.Collections.Generic.IList<global::G.Query>? Type83 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::G.NamespaceSummary>? Type84 { get; set; }
+        public global::G.GetNamespacesResponse? Type84 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.GetNamespacesHintCacheWarmResponse? Type85 { get; set; }
+        public global::System.Collections.Generic.IList<global::G.NamespaceSummary>? Type85 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.CreateNamespacesDebugRecallResponse? Type86 { get; set; }
+        public global::G.GetNamespacesHintCacheWarmResponse? Type86 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::G.CreateNamespacesDebugRecallResponseGroundTruthItem>? Type87 { get; set; }
+        public global::G.CreateNamespacesDebugRecallResponse? Type87 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.CreateNamespacesDebugRecallResponseGroundTruthItem? Type88 { get; set; }
+        public global::System.Collections.Generic.IList<global::G.CreateNamespacesDebugRecallResponseGroundTruthItem>? Type88 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.DeleteNamespacesResponse? Type89 { get; set; }
+        public global::G.CreateNamespacesDebugRecallResponseGroundTruthItem? Type89 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.CreateNamespacesExplainQueryResponse? Type90 { get; set; }
+        public global::G.DeleteNamespacesResponse? Type90 { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::G.CreateNamespacesExplainQueryResponse? Type91 { get; set; }
 
         /// <summary>
         /// 

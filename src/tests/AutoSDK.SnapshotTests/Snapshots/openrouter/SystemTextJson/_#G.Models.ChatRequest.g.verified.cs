@@ -188,7 +188,7 @@ namespace G
         /// Provider-specific image configuration options. Keys and values vary by model/provider. See https://openrouter.ai/docs/guides/overview/multimodal/image-generation for more details.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("image_config")]
-        public object? ImageConfig { get; set; }
+        public global::System.Collections.Generic.Dictionary<string, global::G.ChatRequestImageConfig>? ImageConfig { get; set; }
 
         /// <summary>
         /// Output modalities for the response. Supported values are "text", "image", and "audio".
@@ -346,7 +346,7 @@ namespace G
             global::System.Collections.Generic.IList<global::G.ChatFunctionTool>? tools,
             double? topP,
             global::G.ChatDebugOptions? debug,
-            object? imageConfig,
+            global::System.Collections.Generic.Dictionary<string, global::G.ChatRequestImageConfig>? imageConfig,
             global::System.Collections.Generic.IList<global::G.ChatRequestModalitiesItems>? modalities,
             global::G.ChatRequestCacheControl? cacheControl,
             global::G.ChatRequestServiceTier? serviceTier)

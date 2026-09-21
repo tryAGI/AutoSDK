@@ -1,4 +1,4 @@
-﻿//HintName: G.IApi.CreateNamespacesByNamespaceSchema.g.cs
+//HintName: G.IApi.CreateNamespacesByNamespaceSchema.g.cs
 #nullable enable
 
 namespace G
@@ -16,7 +16,7 @@ namespace G
         global::System.Threading.Tasks.Task<global::System.Collections.Generic.Dictionary<string, global::G.AttributeSchemaConfig>> CreateNamespacesByNamespaceSchemaAsync(
             string @namespace,
 
-            object request,
+            global::System.Collections.Generic.Dictionary<string, global::G.AttributeSchema> request,
             global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
@@ -30,7 +30,7 @@ namespace G
         global::System.Threading.Tasks.Task<global::G.AutoSDKHttpResponse<global::System.Collections.Generic.Dictionary<string, global::G.AttributeSchemaConfig>>> CreateNamespacesByNamespaceSchemaAsResponseAsync(
             string @namespace,
 
-            object request,
+            global::System.Collections.Generic.Dictionary<string, global::G.AttributeSchema> request,
             global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>

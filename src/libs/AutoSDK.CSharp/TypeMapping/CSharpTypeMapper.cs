@@ -445,8 +445,12 @@ public static class CSharpTypeMapper
                  !context.Schema.AdditionalPropertiesAllowed) =>
                 $"global::{generatedNamespace}.{context.Id}",
 
-            ("object", _) when context.Schema.AdditionalProperties?.Type is not null =>
-                $"global::System.Collections.Generic.Dictionary<string, {FindChildCSharpType(context.Children, Hint.AdditionalProperties)}>",
+            ("object", _) when
+                context.Schema.AdditionalProperties is { } additionalProperties &&
+                (additionalProperties.Type is not null ||
+                 HasReferencedUnionAdditionalProperties(context.Children)) &&
+                FindChildCSharpType(context.Children, Hint.AdditionalProperties) is { Length: > 0 } additionalPropertiesType =>
+                $"global::System.Collections.Generic.Dictionary<string, {additionalPropertiesType}>",
 
             ("object", _) or (null, _) when
                 (context.IsComponent || context.Schema.IsSchemaReference()) &&
@@ -530,6 +534,26 @@ public static class CSharpTypeMapper
         }
 
         return null;
+    }
+
+    private static bool HasReferencedUnionAdditionalProperties(IList<SchemaContext> children)
+    {
+        for (var i = 0; i < children.Count; i++)
+        {
+            var child = children[i];
+            if (child is
+                {
+                    Hint: Hint.AdditionalProperties,
+                    IsReference: true,
+                    ResolvedReference: { } referencedUnion,
+                } &&
+                (referencedUnion.IsOneOf || referencedUnion.IsAnyOf))
+            {
+                return true;
+            }
+        }
+
+        return false;
     }
 
     private static string? FindArrayItemType(IList<SchemaContext> children)

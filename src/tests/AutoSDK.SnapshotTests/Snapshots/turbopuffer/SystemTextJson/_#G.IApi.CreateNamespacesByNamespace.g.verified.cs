@@ -1,4 +1,4 @@
-﻿//HintName: G.IApi.CreateNamespacesByNamespace.g.cs
+//HintName: G.IApi.CreateNamespacesByNamespace.g.cs
 #nullable enable
 
 namespace G
@@ -98,7 +98,7 @@ namespace G
             object? patchCondition = default,
             object? deleteCondition = default,
             global::G.DistanceMetric? distanceMetric = default,
-            object? schema = default,
+            global::System.Collections.Generic.Dictionary<string, global::G.AttributeSchema>? schema = default,
             global::G.OneOf<string, global::G.WriteCopyFromNamespace>? copyFromNamespace = default,
             object? deleteByFilter = default,
             bool? deleteByFilterAllowPartial = default,

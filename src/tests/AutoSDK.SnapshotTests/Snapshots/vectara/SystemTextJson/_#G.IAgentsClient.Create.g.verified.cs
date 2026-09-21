@@ -1,4 +1,4 @@
-﻿//HintName: G.IAgentsClient.Create.g.cs
+//HintName: G.IAgentsClient.Create.g.cs
 #nullable enable
 
 namespace G
@@ -178,7 +178,7 @@ namespace G
         /// <exception cref="global::System.InvalidOperationException"></exception>
         global::System.Threading.Tasks.Task<global::G.Agent> CreateAsync(
             string name,
-            object toolConfigurations,
+            global::System.Collections.Generic.Dictionary<string, global::G.AgentToolConfiguration> toolConfigurations,
             global::G.AgentModel model,
             int? requestTimeout = default,
             int? requestTimeoutMillis = default,

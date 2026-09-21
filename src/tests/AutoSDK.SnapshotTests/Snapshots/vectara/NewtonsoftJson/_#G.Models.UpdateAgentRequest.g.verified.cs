@@ -1,4 +1,4 @@
-﻿//HintName: G.Models.UpdateAgentRequest.g.cs
+//HintName: G.Models.UpdateAgentRequest.g.cs
 
 #nullable enable
 
@@ -34,7 +34,7 @@ namespace G
         /// </summary>
         /// <example>{"customer_search":{"type":"corpora_search","argument_override":{"query":"customer support documentation"}}}</example>
         [global::Newtonsoft.Json.JsonProperty("tool_configurations")]
-        public object? ToolConfigurations { get; set; }
+        public global::System.Collections.Generic.Dictionary<string, global::G.AgentToolConfiguration>? ToolConfigurations { get; set; }
 
         /// <summary>
         /// A map of skills available to the agent. Set to null to clear all skills.<br/>
@@ -169,7 +169,7 @@ namespace G
         public UpdateAgentRequest(
             string? name,
             string? description,
-            object? toolConfigurations,
+            global::System.Collections.Generic.Dictionary<string, global::G.AgentToolConfiguration>? toolConfigurations,
             global::System.Collections.Generic.Dictionary<string, global::G.AgentSkill>? skills,
             global::G.AgentModel? model,
             global::G.UpdateFirstAgentStep? firstStep,
