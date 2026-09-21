@@ -1,4 +1,4 @@
-//HintName: G.Models.UltravoxV1SelectedTool.g.cs
+﻿//HintName: G.Models.UltravoxV1SelectedTool.g.cs
 
 #nullable enable
 
@@ -51,7 +51,7 @@ namespace G
         ///  can be overridden regardless of whether it is required to be.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("parameterOverrides")]
-        public global::System.Collections.Generic.Dictionary<string, global::G.GoogleProtobufValue>? ParameterOverrides { get; set; }
+        public object? ParameterOverrides { get; set; }
 
         /// <summary>
         /// For internal use. Relates this tool to a stage transition definition within a call template for attribution.
@@ -102,7 +102,7 @@ namespace G
             global::G.UltravoxV1BaseToolDefinition? temporaryTool,
             string? nameOverride,
             global::System.Collections.Generic.Dictionary<string, string>? authTokens,
-            global::System.Collections.Generic.Dictionary<string, global::G.GoogleProtobufValue>? parameterOverrides,
+            object? parameterOverrides,
             string? transitionId)
         {
             this.ToolId = toolId;
