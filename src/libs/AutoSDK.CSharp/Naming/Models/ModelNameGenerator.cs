@@ -276,56 +276,8 @@ public static class ModelNameGenerator
                 if (group.Count <= 1) continue;
                 for (var i = 1; i < group.Count; i++)
                 {
-                    RenameModelAndDescendants(group[i], (i + 1).ToString(CultureInfo.InvariantCulture));
+                    group[i].Id += $"{i + 1}";
                 }
-            }
-        }
-    }
-
-    private static void RenameModelAndDescendants(SchemaContext context, string suffix)
-    {
-        var oldId = context.Id;
-        var newId = oldId + suffix;
-        RenameContext(context, oldId, newId);
-        foreach (var child in context.Children)
-        {
-            RenameDescendants(child, oldId, newId);
-        }
-    }
-
-    private static void RenameDescendants(SchemaContext context, string oldPrefix, string newPrefix)
-    {
-        if (!context.IsReference)
-        {
-            RenameContext(context, oldPrefix, newPrefix);
-            foreach (var child in context.Children)
-            {
-                RenameDescendants(child, oldPrefix, newPrefix);
-            }
-        }
-    }
-
-    private static void RenameContext(SchemaContext context, string oldPrefix, string newPrefix)
-    {
-        static string Rename(string value, string oldPrefix, string newPrefix) =>
-            value.StartsWith(oldPrefix, StringComparison.Ordinal)
-                ? newPrefix + value.Substring(oldPrefix.Length)
-                : value;
-
-        context.Id = Rename(context.Id, oldPrefix, newPrefix);
-        if (context.ClassName is { } className)
-        {
-            context.ClassName = Rename(className, oldPrefix, newPrefix);
-        }
-        if (context.CachedComputedClassName is { } computedClassName)
-        {
-            context.CachedComputedClassName = Rename(computedClassName, oldPrefix, newPrefix);
-        }
-        foreach (var link in context.Links)
-        {
-            if (link.Id == oldPrefix)
-            {
-                link.Id = newPrefix;
             }
         }
     }
