@@ -237,7 +237,14 @@ public static class CSharpSchemaDataFactory
             {
                 if (context.Children[i].Hint == Hint.Discriminator)
                 {
-                    discriminatorType = context.Children[i].TypeData;
+                    var discriminatorContext = context.Children[i];
+                    discriminatorType = (discriminatorContext.TypeData with
+                    {
+                        CSharpTypeRaw = discriminatorContext.GetGlobalClassName(),
+                        IsValueType = false,
+                        IsEnum = false,
+                        IsOpenEnum = false,
+                    }).WithCSharpComputedValues();
                     break;
                 }
             }

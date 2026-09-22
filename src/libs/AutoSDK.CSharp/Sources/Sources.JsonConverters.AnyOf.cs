@@ -310,7 +310,7 @@ public static partial class Sources
 {(anyOfData.IsTrimming ? TrimmedLine + $@"
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof({x.Type.CSharpTypeWithoutNullability}), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<{x.Type.CSharpTypeWithNullabilityForNonValueTypes}> ??
                                throw new global::System.InvalidOperationException($""Cannot get type info for {{typeof({x.Type.CSharpTypeWithoutNullability}).Name}}"");
-                var __element{i} = global::System.Text.Json.JsonSerializer.SerializeToElement(value.{x.Name}!{(x.Type.IsValueType ? ".Value" : string.Empty)}, typeInfo);
+                var __element{i} = global::System.Text.Json.JsonSerializer.SerializeToElement(value.{x.Name}!{(HasNullableValueVariant(x.Type) ? ".Value" : string.Empty)}, typeInfo);
  " : TrimmedLine + $@"
                 var __element{i} = global::System.Text.Json.JsonSerializer.SerializeToElement(value.{x.Name}, typeof({x.Type.CSharpTypeWithoutNullability}), options);
  ")}
@@ -335,7 +335,7 @@ public static partial class Sources
 {(anyOfData.IsTrimming ? TrimmedLine + $@"
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof({x.Type.CSharpTypeWithoutNullability}), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<{x.Type.CSharpTypeWithNullabilityForNonValueTypes}> ??
                                throw new global::System.InvalidOperationException($""Cannot get type info for {{typeof({x.Type.CSharpTypeWithoutNullability}).Name}}"");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.{x.Name}!{(x.Type.IsValueType ? ".Value" : string.Empty)}, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.{x.Name}!{(HasNullableValueVariant(x.Type) ? ".Value" : string.Empty)}, typeInfo);
  " : TrimmedLine + $@"
                 global::System.Text.Json.JsonSerializer.Serialize(writer, value.{x.Name}, typeof({x.Type.CSharpTypeWithoutNullability}), options);
  ")}

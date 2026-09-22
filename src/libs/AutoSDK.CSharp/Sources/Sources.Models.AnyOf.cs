@@ -5,6 +5,13 @@ namespace AutoSDK.Generation;
 
 public static partial class Sources
 {
+    private static bool HasNullableValueVariant(TypeData type) =>
+        type.IsValueType &&
+        (type.IsAnyOfLike || type.IsEnum ||
+         type.CSharpTypeWithoutNullability is "bool" or "byte" or "sbyte" or "short" or "ushort" or
+             "int" or "uint" or "long" or "ulong" or "float" or "double" or "decimal" or "char" ||
+         type.CSharpTypeWithoutNullability.StartsWith("global::System.", StringComparison.Ordinal));
+
     public static string GenerateAnyOf(
         AnyOfData anyOfData,
         CancellationToken cancellationToken = default)
@@ -141,7 +148,7 @@ namespace {anyOfData.Namespace}
 
         {string.Empty.ToXmlDocumentationSummary(level: 8)}
         public {x.Type.CSharpTypeWithoutNullability} Pick{x.Name}() => Is{x.Name}
-            ? {x.Name}{(x.Type.IsValueType ? "!.Value" : "!")}
+            ? {x.Name}{(HasNullableValueVariant(x.Type) ? "!.Value" : "!")}
             : throw new global::System.InvalidOperationException($""Expected union variant '{x.Name}' but the value was {{ToString()}}."");
 ").Inject()}
 {anyOfData.Properties
