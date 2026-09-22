@@ -450,6 +450,48 @@ internal sealed class GenerateCommand : Command
         AllowMultipleArgumentsPerToken = true,
     };
 
+    private Option<string[]> IncludePaths { get; } = new("--include-path")
+    {
+        DefaultValueFactory = _ => Array.Empty<string>(),
+        Description = "Include operations at these exact OpenAPI path templates. Repeatable; combined with other include selectors by intersection.",
+        AllowMultipleArgumentsPerToken = true,
+    };
+
+    private Option<string[]> ExcludePaths { get; } = new("--exclude-path")
+    {
+        DefaultValueFactory = _ => Array.Empty<string>(),
+        Description = "Exclude operations at these exact OpenAPI path templates. Repeatable.",
+        AllowMultipleArgumentsPerToken = true,
+    };
+
+    private Option<string[]> IncludeOperationIds { get; } = new("--include-operation-id")
+    {
+        DefaultValueFactory = _ => Array.Empty<string>(),
+        Description = "Include operations with these exact operationId values. Repeatable.",
+        AllowMultipleArgumentsPerToken = true,
+    };
+
+    private Option<string[]> ExcludeOperationIds { get; } = new("--exclude-operation-id")
+    {
+        DefaultValueFactory = _ => Array.Empty<string>(),
+        Description = "Exclude operations with these exact operationId values. Repeatable.",
+        AllowMultipleArgumentsPerToken = true,
+    };
+
+    private Option<string[]> IncludeTags { get; } = new("--include-tag")
+    {
+        DefaultValueFactory = _ => Array.Empty<string>(),
+        Description = "Include operations carrying any of these exact OpenAPI tags. Repeatable.",
+        AllowMultipleArgumentsPerToken = true,
+    };
+
+    private Option<string[]> ExcludeTags { get; } = new("--exclude-tag")
+    {
+        DefaultValueFactory = _ => Array.Empty<string>(),
+        Description = "Exclude operations carrying any of these exact OpenAPI tags. Repeatable.",
+        AllowMultipleArgumentsPerToken = true,
+    };
+
     private Option<string[]> ExcludeModels { get; } = new(
         name: "--exclude-models")
     {
@@ -591,6 +633,12 @@ internal sealed class GenerateCommand : Command
         Options.Add(NamespaceDelimiter);
         Options.Add(IncludeModels);
         Options.Add(ExcludeModels);
+        Options.Add(IncludePaths);
+        Options.Add(ExcludePaths);
+        Options.Add(IncludeOperationIds);
+        Options.Add(ExcludeOperationIds);
+        Options.Add(IncludeTags);
+        Options.Add(ExcludeTags);
         Options.Add(ExcludedModelNamespaceMode);
         Options.Add(GenerateModels);
         Options.Add(Language);
@@ -718,6 +766,12 @@ internal sealed class GenerateCommand : Command
             GenerateJsonSerializerContextTypes = true,
             DirectionAwareJsonGenerationMode = parseResult.GetRequiredValue(DirectionAwareJsonGenerationMode),
             GenerateModels = generateModels,
+            IncludePaths = parseResult.GetRequiredValue(IncludePaths).ToImmutableArray(),
+            ExcludePaths = parseResult.GetRequiredValue(ExcludePaths).ToImmutableArray(),
+            IncludeOperationIds = parseResult.GetRequiredValue(IncludeOperationIds).ToImmutableArray(),
+            ExcludeOperationIds = parseResult.GetRequiredValue(ExcludeOperationIds).ToImmutableArray(),
+            IncludeTags = parseResult.GetRequiredValue(IncludeTags).ToImmutableArray(),
+            ExcludeTags = parseResult.GetRequiredValue(ExcludeTags).ToImmutableArray(),
             IncludeModels = parseResult.GetRequiredValue(IncludeModels).ToImmutableArray(),
             ExcludeModels = parseResult.GetRequiredValue(ExcludeModels).ToImmutableArray(),
             NamespaceDelimiter = namespaceDelimiterValue,

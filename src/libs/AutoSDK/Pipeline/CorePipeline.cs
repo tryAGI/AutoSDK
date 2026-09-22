@@ -68,6 +68,12 @@ public static class CorePipeline
             out var openApiParsingTimes,
             cancellationToken);
 
+        var hasOperationSelectors = HasOperationSelectors(settings);
+        if (hasOperationSelectors)
+        {
+            SelectOpenApiOperations(openApiDocument, settings);
+        }
+
         parsingTime.Stop();
 #if NET
         var allocAfterParsing = GC.GetTotalAllocatedBytes(precise: true);
@@ -121,6 +127,13 @@ public static class CorePipeline
         foreach (var tag in settings.ExcludeTags)
         {
             excludedOperationIds.UnionWith(openApiDocument.FindAllOperationIdsForTag(tag));
+        }
+        if (hasOperationSelectors)
+        {
+            // The document already contains only selected operations. Reapplying ID filters in
+            // the C# pipeline would turn a path/tag intersection back into a union.
+            includedOperationIds.Clear();
+            excludedOperationIds.Clear();
         }
 
         var allTags = openApiDocument.Tags!;
@@ -215,18 +228,51 @@ public static class CorePipeline
         var includedModels = new HashSet<string>(settings.IncludeModels);
         var excludedModels = new HashSet<string>(settings.ExcludeModels);
 
-        var hasTagFilters = settings.IncludeTags.Length > 0 || settings.ExcludeTags.Length > 0;
         var hasModelFilters = includedModels.Count > 0 || excludedModels.Count > 0;
+        var selectedOperations = hasOperationSelectors
+            ? new HashSet<OpenApiOperation>(
+                (openApiDocument.Paths ?? new OpenApiPaths())
+                    .SelectMany(static path => path.Value.Operations?.Values.AsEnumerable() ?? Enumerable.Empty<OpenApiOperation>()))
+            : null;
+        if (selectedOperations != null)
+        {
+            var pendingCallbacks = new Queue<OpenApiOperation>(selectedOperations);
+            while (pendingCallbacks.Count > 0)
+            {
+                var operation = pendingCallbacks.Dequeue();
+                if (operation.Callbacks == null)
+                {
+                    continue;
+                }
+                foreach (var callback in operation.Callbacks.Values)
+                {
+                    if (callback.PathItems == null)
+                    {
+                        continue;
+                    }
+                    foreach (var path in callback.PathItems)
+                    {
+                        foreach (var nested in path.Value.Operations?.Values.AsEnumerable() ?? Enumerable.Empty<OpenApiOperation>())
+                        {
+                            if (selectedOperations.Add(nested))
+                            {
+                                pendingCallbacks.Enqueue(nested);
+                            }
+                        }
+                    }
+                }
+            }
+        }
         var skipModels = !settings.GenerateModels && !settings.GenerateSdk;
         var includeAllSchemas = (settings.GenerateModels || settings.GenerateSdk) &&
-                                !hasTagFilters &&
+                                !hasOperationSelectors &&
                                 !hasModelFilters;
         var includeOperationSchemas = settings.GenerateMethods ||
                                       settings.GenerateConstructors ||
                                       settings.GenerateCli ||
                                       includedOperationIds.Count > 0 ||
                                       excludedOperationIds.Count > 0 ||
-                                      hasTagFilters ||
+                                      hasOperationSelectors ||
                                       settings.ExcludeDeprecatedOperations;
 
         IReadOnlyList<SchemaContext> filteredSchemas;
@@ -236,8 +282,6 @@ public static class CorePipeline
         }
         else
         {
-            var includeTagsArr = settings.IncludeTags.ToArray();
-            var excludeTagsArr = settings.ExcludeTags.ToArray();
             var collected = new HashSet<SchemaContext>();
             bool CanExpandReference(SchemaContext resolvedReference)
             {
@@ -256,10 +300,12 @@ public static class CorePipeline
             for (var i = 0; i < schemas.Count; i++)
             {
                 var schema = schemas[i];
-                var shouldIncludeSchema = settings.GenerateModels || settings.GenerateSdk;
+                var shouldIncludeSchema = (settings.GenerateModels || settings.GenerateSdk) &&
+                                          !hasOperationSelectors;
                 if (!shouldIncludeSchema)
                 {
-                    if (!includeOperationSchemas || schema.Operation == null)
+                    if (!includeOperationSchemas || schema.Operation == null ||
+                        selectedOperations != null && !selectedOperations.Contains(schema.Operation))
                     {
                         continue;
                     }
@@ -290,16 +336,6 @@ public static class CorePipeline
                     continue;
                 }
 
-                if (includeTagsArr.Length > 0 && !schema.HasAnyTag(includeTagsArr))
-                {
-                    continue;
-                }
-
-                if (excludeTagsArr.Length > 0 && schema.HasAnyTag(excludeTagsArr))
-                {
-                    continue;
-                }
-
                 if (hasModelFilters && schema.IsComponent)
                 {
                     if (includedModels.Count > 0 && !includedModels.Contains(schema.ComponentId!))
@@ -315,9 +351,19 @@ public static class CorePipeline
                     }
                 }
 
-                schema.CollectWithAllChildren(
-                    collected,
-                    hasModelFilters ? CanExpandReference : null);
+                if (hasOperationSelectors)
+                {
+                    CollectSelectedOperationClosure(
+                        schema,
+                        collected,
+                        hasModelFilters ? CanExpandReference : null);
+                }
+                else
+                {
+                    schema.CollectWithAllChildren(
+                        collected,
+                        hasModelFilters ? CanExpandReference : null);
+                }
             }
 
             if (skipModels)
@@ -358,11 +404,19 @@ public static class CorePipeline
             filteredSchemas = filtered;
         }
 
+        var selectedTagNames = hasOperationSelectors
+            ? new HashSet<string>(
+                (openApiDocument.Paths ?? new OpenApiPaths())
+                    .SelectMany(static path => path.Value.Operations?.Values.AsEnumerable() ?? Enumerable.Empty<OpenApiOperation>())
+                    .SelectMany(static operation => operation.Tags?.AsEnumerable() ?? Enumerable.Empty<OpenApiTagReference>())
+                    .Where(static tag => tag.Name != null)
+                    .Select(static tag => tag.Name!),
+                StringComparer.Ordinal)
+            : null;
         var includedTags = allTags
             .Where(x =>
                 x.Name != null &&
-                (settings.IncludeTags.Length == 0 || settings.IncludeTags.Contains(x.Name)) &&
-                !settings.ExcludeTags.Contains(x.Name))
+                (selectedTagNames == null || selectedTagNames.Contains(x.Name)))
             .ToImmutableArray();
 
         filteringTime.Stop();
@@ -408,6 +462,135 @@ public static class CorePipeline
                 OpenApiParsing: openApiParsingTimes
 #endif
             ));
+    }
+
+    private static bool HasOperationSelectors(Settings settings)
+    {
+        return settings.IncludePaths.Length > 0 ||
+               settings.ExcludePaths.Length > 0 ||
+               settings.IncludeOperationIds.Length > 0 ||
+               settings.ExcludeOperationIds.Length > 0 ||
+               settings.IncludeTags.Length > 0 ||
+               settings.ExcludeTags.Length > 0;
+    }
+
+    private static void SelectOpenApiOperations(OpenApiDocument document, Settings settings)
+    {
+        var includePaths = new HashSet<string>(settings.IncludePaths, StringComparer.Ordinal);
+        var excludePaths = new HashSet<string>(settings.ExcludePaths, StringComparer.Ordinal);
+        var includeIds = new HashSet<string>(settings.IncludeOperationIds, StringComparer.Ordinal);
+        var excludeIds = new HashSet<string>(settings.ExcludeOperationIds, StringComparer.Ordinal);
+        var includeTags = new HashSet<string>(settings.IncludeTags, StringComparer.Ordinal);
+        var excludeTags = new HashSet<string>(settings.ExcludeTags, StringComparer.Ordinal);
+        var seenPaths = new HashSet<string>(StringComparer.Ordinal);
+        var seenIds = new HashSet<string>(StringComparer.Ordinal);
+        var seenTags = new HashSet<string>(StringComparer.Ordinal);
+        var selectedCount = 0;
+
+        foreach (var path in document.Paths ?? new OpenApiPaths())
+        {
+            var operations = path.Value.Operations;
+            if (operations == null)
+            {
+                continue;
+            }
+
+            foreach (var entry in operations.ToArray())
+            {
+                seenPaths.Add(path.Key);
+                var operation = entry.Value;
+                if (operation.OperationId is { } id)
+                {
+                    seenIds.Add(id);
+                }
+                foreach (var tag in operation.Tags?.AsEnumerable() ?? Enumerable.Empty<OpenApiTagReference>())
+                {
+                    if (tag.Name is { } name)
+                    {
+                        seenTags.Add(name);
+                    }
+                }
+
+                var selected = (includePaths.Count == 0 || includePaths.Contains(path.Key)) &&
+                               !excludePaths.Contains(path.Key) &&
+                               (includeIds.Count == 0 || operation.OperationId is { } includedId && includeIds.Contains(includedId)) &&
+                               (operation.OperationId == null || !excludeIds.Contains(operation.OperationId)) &&
+                               (includeTags.Count == 0 || operation.Tags?.Any(tag => tag.Name != null && includeTags.Contains(tag.Name)) == true) &&
+                               operation.Tags?.Any(tag => tag.Name != null && excludeTags.Contains(tag.Name)) != true &&
+                               (!settings.ExcludeDeprecatedOperations || !operation.IsDeprecated());
+                if (selected)
+                {
+                    selectedCount++;
+                }
+                else
+                {
+                    operations.Remove(entry.Key);
+                }
+            }
+        }
+
+        ValidateSelectorMatches("path", includePaths, excludePaths, seenPaths);
+        ValidateSelectorMatches("operation ID", includeIds, excludeIds, seenIds);
+        ValidateSelectorMatches("tag", includeTags, excludeTags, seenTags);
+        if (selectedCount == 0)
+        {
+            throw new ArgumentException("Operation selectors matched no OpenAPI operations after include/exclude rules were combined.");
+        }
+
+        // Top-level webhooks are independent inbound operations. Path selectors choose outbound
+        // operations; callbacks attached to those operations remain in their selected graph.
+        document.Webhooks?.Clear();
+    }
+
+    private static void ValidateSelectorMatches(
+        string kind,
+        HashSet<string> included,
+        HashSet<string> excluded,
+        HashSet<string> seen)
+    {
+        foreach (var value in included.Concat(excluded))
+        {
+            if (!seen.Contains(value))
+            {
+                throw new ArgumentException($"OpenAPI {kind} selector '{value}' matched no operations.");
+            }
+        }
+    }
+
+    private static void CollectSelectedOperationClosure(
+        SchemaContext root,
+        HashSet<SchemaContext> target,
+        Predicate<SchemaContext>? shouldExpandReference)
+    {
+        var pending = new Stack<SchemaContext>();
+        pending.Push(root);
+        while (pending.Count > 0)
+        {
+            var schema = pending.Pop();
+            if (!target.Add(schema))
+            {
+                continue;
+            }
+
+            if (schema.IsReference)
+            {
+                if (schema.ResolvedReference is not { } resolved)
+                {
+                    throw new ArgumentException($"Selected operation has an unresolved OpenAPI reference '{schema.ReferenceId}'.");
+                }
+                if (shouldExpandReference == null || shouldExpandReference(resolved))
+                {
+                    pending.Push(resolved);
+                }
+            }
+            else
+            {
+                for (var index = schema.Children.Count - 1; index >= 0; index--)
+                {
+                    pending.Push(schema.Children[index]);
+                }
+            }
+        }
     }
 
     private static CorePipelineResult PrepareAsyncApi(

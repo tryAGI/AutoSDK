@@ -80,6 +80,10 @@ public static class OptionsExtensions
             AutoDetectStatusPolling: options.GetBoolGlobalOption(nameof(Settings.AutoDetectStatusPolling), prefix, defaultValue: Settings.Default.AutoDetectStatusPolling),
             GeneratePageableHelpers: options.GetBoolGlobalOption(nameof(Settings.GeneratePageableHelpers), prefix, defaultValue: Settings.Default.GeneratePageableHelpers),
             StripRedundantOperationIdTagPrefixes: options.GetBoolGlobalOption(nameof(Settings.StripRedundantOperationIdTagPrefixes), prefix, defaultValue: Settings.Default.StripRedundantOperationIdTagPrefixes),
+            IncludePaths: (options.GetGlobalOption(nameof(Settings.IncludePaths), prefix)?.Split(';') ??
+                           []).ToImmutableArray(),
+            ExcludePaths: (options.GetGlobalOption(nameof(Settings.ExcludePaths), prefix)?.Split(';') ??
+                           []).ToImmutableArray(),
             IncludeOperationIds: (options.GetGlobalOption(nameof(Settings.IncludeOperationIds), prefix)?.Split(';') ??
                                    []).ToImmutableArray(),
             ExcludeOperationIds: (options.GetGlobalOption(nameof(Settings.ExcludeOperationIds), prefix)?.Split(';') ??

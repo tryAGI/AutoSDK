@@ -186,6 +186,17 @@ With the option on, the CLI reports how the analysis landed, so a spec whose typ
 Direction-aware JSON generation modes: 384 request-only, 704 response-only, 395 bidirectional, 311 unclassified of 1794 registered types. Registered converters disable source-generated fast-path serialization, so single-direction types use Metadata.
 ```
 
+## Focused OpenAPI Operation Profiles
+
+`autosdk generate` accepts repeatable `--include-path` / `--exclude-path`, `--include-operation-id` / `--exclude-operation-id`, and `--include-tag` / `--exclude-tag` selectors. Paths are exact OpenAPI templates such as `'/v1/apps/{id}'`; operation IDs and tags are exact, case-sensitive values. Values within one include category are alternatives, while different include categories must all match. Any matching exclude selector removes the operation. Without selectors, generation keeps the full API surface.
+
+```bash
+autosdk generate openapi.yaml --namespace MyApi --output Generated \
+  --include-tag apps --include-path '/v1/apps/{id}'
+```
+
+Selected operations retain their reachable request, response, callback, and referenced model graph, including transitive references. Unrelated operations and models are omitted. A selector that names no operation, or a combination that selects none, produces an error. Source-generator projects can use the semicolon-separated `AutoSDK_IncludePaths`, `AutoSDK_ExcludePaths`, `AutoSDK_IncludeOperationIds`, `AutoSDK_ExcludeOperationIds`, `AutoSDK_IncludeTags`, and `AutoSDK_ExcludeTags` properties.
+
 ## Modular Package Families (`--split-by-tags`)
 A large spec generates one very large assembly. `specs/github.yaml` produces about 17,000 source files and 36 tag clients, and a consumer that calls three endpoints still pays for all of it in restore, IDE load, compiler memory, build time and NuGet validation.
 

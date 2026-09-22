@@ -115,13 +115,16 @@
     <CompilerVisibleProperty Include="AutoSDK_GeneratePageableHelpers"/>
     <!-- true/false. Default: false. Removes a leading operationId group only when it matches the selected tag/client name at a word boundary. -->
     <CompilerVisibleProperty Include="AutoSDK_StripRedundantOperationIdTagPrefixes"/>
-    <!-- List of ids separated by ;. Default: Empty(all models) -->
+    <!-- Exact OpenAPI path templates separated by ;. Default: Empty (all paths). -->
+    <CompilerVisibleProperty Include="AutoSDK_IncludePaths"/>
+    <CompilerVisibleProperty Include="AutoSDK_ExcludePaths"/>
+    <!-- Exact operation IDs separated by ;. Default: Empty (all operations). -->
     <CompilerVisibleProperty Include="AutoSDK_IncludeOperationIds"/>
-    <!-- List of ids separated by ;. Default: Empty -->
+    <!-- Exact operation IDs separated by ;. Default: Empty. -->
     <CompilerVisibleProperty Include="AutoSDK_ExcludeOperationIds"/>
-    <!-- List of ids separated by ;. Default: Empty(all models) -->
+    <!-- Exact operation tags separated by ;. Default: Empty (all tags). -->
     <CompilerVisibleProperty Include="AutoSDK_IncludeTags"/>
-    <!-- List of ids separated by ;. Default: Empty -->
+    <!-- Exact operation tags separated by ;. Default: Empty. -->
     <CompilerVisibleProperty Include="AutoSDK_ExcludeTags"/>
     <!-- Use naming/grouping metadata such as x-fern-sdk-method-name, x-fern-sdk-group-name, x-oaiMeta.name, x-speakeasy-*, and x-stainless-naming for .NET. true/false. Default: false -->
     <CompilerVisibleProperty Include="AutoSDK_UseExtensionNaming"/>
