@@ -590,6 +590,17 @@ public class RequestOptionsGenerationTests
 
 namespace G
 {
+    public sealed class AutoSDKRequestOptions
+    {
+        public global::System.Collections.Generic.Dictionary<string, string> Headers { get; } = new();
+        public global::System.Collections.Generic.Dictionary<string, string> QueryParameters { get; } = new();
+        public global::System.TimeSpan? Timeout { get; set; }
+        public object? Retry { get; set; }
+        public bool? ReadResponseAsString { get; set; }
+        public object? Authorizations { get; set; }
+        internal string? PaginationUrl { get; set; }
+    }
+
     public partial class Api
     {
         public global::System.Threading.Tasks.Task<ListAssistantsResponse> ListAssistantsAsync(

@@ -319,7 +319,10 @@ namespace {settings.Namespace}
     /// Per-request overrides applied on top of <see cref=""AutoSDKClientOptions""/>.
     /// </summary>
     public sealed class AutoSDKRequestOptions
-    {{
+    {{{(settings.GeneratePageableHelpers ? @"
+        // Set only by AutoSDKPager on a generated next-URL paging call.
+        internal string? PaginationUrl { get; set; }
+" : string.Empty)}
         /// <summary>
         /// Additional headers applied after generated and client-level headers.
         /// </summary>

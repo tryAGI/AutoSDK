@@ -49,7 +49,9 @@ public record struct EndPoint(
     LocationWaitCompanion LocationWaitCompanion = default,
     PageableMetadata PageableMetadata = default,
     bool HasCallScopedSecurity = false,
-    string AcceptMediaType = ""
+    string AcceptMediaType = "",
+    string PaginationItemsPropertyId = "",
+    string PaginationNextUrlPropertyPath = ""
 )
 {
     public bool Stream => StreamFormat != StreamFormat.None;
@@ -65,6 +67,7 @@ public enum PageableStyle
     None,
     Offset,
     Cursor,
+    NextUrl,
 }
 
 public record struct PageableMetadata(
@@ -74,7 +77,8 @@ public record struct PageableMetadata(
     TypeData ItemType,
     string NextCursorPropertyName = "",
     string HasMorePropertyName = "",
-    bool HasMorePropertyIsNullable = false)
+    bool HasMorePropertyIsNullable = false,
+    string LinksPropertyName = "")
 {
     public static PageableMetadata Empty => new(
         Style: PageableStyle.None,

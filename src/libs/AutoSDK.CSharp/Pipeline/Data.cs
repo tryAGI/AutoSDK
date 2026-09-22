@@ -634,12 +634,10 @@ public static class Data
     }
 
     /// <summary>
-    /// Auto-detects offset/page-number pagination for endpoints that have a
-    /// `page`/`page_number`/`pageIndex` query parameter and a 2XX response whose schema
-    /// has exactly one array property. The result is stored on the endpoint's
-    /// <see cref="EndPoint.PageableMetadata"/> so <see cref="Sources.Methods"/> can emit
-    /// a <c>&lt;Method&gt;AutoPagingAsync</c> companion backed by
-    /// <c>AutoSDKPager.OffsetAsync</c>.
+    /// Detects next-URL, offset, and cursor pagination for GET endpoints with a single
+    /// response item array. The result is stored on the endpoint's
+    /// <see cref="EndPoint.PageableMetadata"/> so the source emitter can generate an
+    /// operation-specific <c>&lt;Method&gt;AutoPagingAsync</c> companion.
     /// </summary>
     private static void ApplyPageableMetadata(
         ImmutableArray<EndPoint>.Builder methods,
@@ -678,7 +676,9 @@ public static class Data
             {
                 if (!property.Type.IsArray ||
                     property.Type.SubTypes.Length == 0 ||
-                    string.IsNullOrWhiteSpace(property.Type.SubTypes[0].Unbox<TypeData>().CSharpType))
+                    string.IsNullOrWhiteSpace(property.Type.SubTypes[0].Unbox<TypeData>().CSharpType) ||
+                    !string.IsNullOrEmpty(method.PaginationItemsPropertyId) &&
+                    !string.Equals(property.Id, method.PaginationItemsPropertyId, StringComparison.Ordinal))
                 {
                     continue;
                 }
@@ -698,6 +698,36 @@ public static class Data
             }
 
             var itemType = itemsProperty.Value.Type.SubTypes[0].Unbox<TypeData>();
+
+            // JSON:API collection responses expose a body-embedded links.next URL. It is a
+            // stronger continuation signal than a page-number or cursor-looking query parameter:
+            // the server's URL is authoritative and can carry opaque paging state.
+            if (TryGetNextUrlProperty(
+                    responseClass,
+                    classByName,
+                    method.PaginationNextUrlPropertyPath,
+                    out var linksPropertyName,
+                    out var nextUrlPropertyName))
+            {
+                methods[index] = method with
+                {
+                    PageableMetadata = new PageableMetadata(
+                        Style: PageableStyle.NextUrl,
+                        PageParameterName: string.Empty,
+                        ItemsPropertyName: itemsProperty.Value.Name,
+                        ItemType: itemType,
+                        NextCursorPropertyName: nextUrlPropertyName,
+                        LinksPropertyName: linksPropertyName),
+                };
+                continue;
+            }
+
+            // An explicit but unresolved continuation path must not silently turn into a
+            // different paging style. The spec author chose the URL semantics.
+            if (!string.IsNullOrEmpty(method.PaginationNextUrlPropertyPath))
+            {
+                continue;
+            }
 
             // Offset style takes priority — it requires a known page-number query
             // parameter, which is a stronger signal than a cursor-named param.
@@ -788,6 +818,64 @@ public static class Data
                     NextCursorPropertyName: nextCursorProperty.Value.Name),
             };
         }
+    }
+
+    private static bool TryGetNextUrlProperty(
+        ModelData responseClass,
+        Dictionary<string, ModelData> classByName,
+        string overridePath,
+        out string linksPropertyName,
+        out string nextUrlPropertyName)
+    {
+        var candidates = new List<(string Links, string Next)>();
+        foreach (var property in responseClass.Properties)
+        {
+            if (IsStringUrlProperty(property) &&
+                (!string.IsNullOrEmpty(overridePath)
+                    ? string.Equals(property.Id, overridePath, StringComparison.Ordinal)
+                    : string.Equals(property.Id, "next_url", StringComparison.OrdinalIgnoreCase) ||
+                      string.Equals(property.Id, "nextUrl", StringComparison.OrdinalIgnoreCase) ||
+                      string.Equals(property.Id, "next_link", StringComparison.OrdinalIgnoreCase) ||
+                      string.Equals(property.Id, "nextLink", StringComparison.OrdinalIgnoreCase)))
+            {
+                candidates.Add((string.Empty, property.Name));
+            }
+
+            if (!string.Equals(property.Id, "links", StringComparison.OrdinalIgnoreCase) ||
+                property.Type.IsArray ||
+                !classByName.TryGetValue(property.Type.CSharpTypeWithoutNullability, out var linksClass))
+            {
+                continue;
+            }
+
+            foreach (var link in linksClass.Properties)
+            {
+                if (IsStringUrlProperty(link) &&
+                    (!string.IsNullOrEmpty(overridePath)
+                        ? string.Equals($"{property.Id}.{link.Id}", overridePath, StringComparison.Ordinal)
+                        : string.Equals(link.Id, "next", StringComparison.OrdinalIgnoreCase)))
+                {
+                    candidates.Add((property.Name, link.Name));
+                }
+            }
+        }
+
+        if (candidates.Count == 1)
+        {
+            linksPropertyName = candidates[0].Links;
+            nextUrlPropertyName = candidates[0].Next;
+            return true;
+        }
+
+        linksPropertyName = string.Empty;
+        nextUrlPropertyName = string.Empty;
+        return false;
+    }
+
+    private static bool IsStringUrlProperty(PropertyData property)
+    {
+        return !property.Type.IsArray &&
+               string.Equals(property.Type.CSharpTypeWithoutNullability, "string", StringComparison.Ordinal);
     }
 
     private static bool IsOffsetPageParameter(MethodParameter parameter)

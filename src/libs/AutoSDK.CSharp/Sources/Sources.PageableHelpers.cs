@@ -23,6 +23,85 @@ namespace {settings.Namespace}
     /// </summary>
     public static class AutoSDKPager
     {{
+        /// <summary>Copies request options for one generated next-URL page request.</summary>
+        [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Never)]
+        public static global::{settings.Namespace}.AutoSDKRequestOptions CreatePageRequestOptions(
+            global::{settings.Namespace}.AutoSDKRequestOptions? source,
+            string? nextUrl)
+        {{
+            var clone = new global::{settings.Namespace}.AutoSDKRequestOptions();
+            if (source is not null)
+            {{
+                foreach (var header in source.Headers)
+                {{
+                    clone.Headers[header.Key] = header.Value;
+                }}
+                foreach (var query in source.QueryParameters)
+                {{
+                    clone.QueryParameters[query.Key] = query.Value;
+                }}
+                clone.Timeout = source.Timeout;
+                clone.Retry = source.Retry;
+                clone.ReadResponseAsString = source.ReadResponseAsString;
+                clone.Authorizations = source.Authorizations;
+            }}
+            clone.PaginationUrl = nextUrl;
+            return clone;
+        }}
+
+        /// <summary>Returns a validated next-page URL, or null for an ordinary request.</summary>
+        [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Never)]
+        public static string? ResolvePageUrl(
+            string path,
+            global::{settings.Namespace}.AutoSDKRequestOptions? requestOptions,
+            global::System.Uri? baseAddress)
+        {{
+            var nextUrl = requestOptions?.PaginationUrl;
+            if (string.IsNullOrWhiteSpace(nextUrl))
+            {{
+                return null;
+            }}
+
+            if (baseAddress is null &&
+                global::System.Uri.TryCreate(path, global::System.UriKind.Absolute, out var pathUri) &&
+                (pathUri.Scheme == global::System.Uri.UriSchemeHttp || pathUri.Scheme == global::System.Uri.UriSchemeHttps))
+            {{
+                baseAddress = pathUri;
+            }}
+            if (baseAddress is not null)
+            {{
+                var resolved = new global::System.Uri(baseAddress, nextUrl!);
+                EnsureSameOrigin(resolved.AbsoluteUri, baseAddress);
+                return resolved.AbsoluteUri;
+            }}
+            if (global::System.Uri.TryCreate(nextUrl, global::System.UriKind.Absolute, out _))
+            {{
+                throw new global::System.InvalidOperationException(
+                    ""Cannot follow an absolute next-page URL without a known base address."");
+            }}
+
+            return nextUrl;
+        }}
+
+        /// <summary>Uses the HTTP client's origin, or the operation server when it has one.</summary>
+        [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Never)]
+        public static global::System.Uri? GetPaginationBaseAddress(
+            global::System.Uri? clientBaseAddress,
+            string operationBaseUrl)
+        {{
+            if (clientBaseAddress is not null)
+            {{
+                return clientBaseAddress;
+            }}
+
+            return global::System.Uri.TryCreate(
+                operationBaseUrl,
+                global::System.UriKind.Absolute,
+                out var serverBaseAddress)
+                ? serverBaseAddress
+                : null;
+        }}
+
         /// <summary>
         /// Paginates through offset/page-number-style endpoints. Calls <paramref name=""fetchPage""/>
         /// repeatedly with an incrementing page number until the page returns no items, or the
@@ -87,7 +166,7 @@ namespace {settings.Namespace}
         /// <summary>
         /// Paginates through cursor/next-page-token-style endpoints. Calls <paramref name=""fetchPage""/>
         /// with the cursor returned by the previous page until <paramref name=""extractNextCursor""/>
-        /// returns null or whitespace.
+        /// returns null or whitespace, or a cursor repeats.
         /// </summary>
         /// <typeparam name=""TPage""></typeparam>
         /// <typeparam name=""TItem""></typeparam>
@@ -109,9 +188,14 @@ namespace {settings.Namespace}
             extractNextCursor = extractNextCursor ?? throw new global::System.ArgumentNullException(nameof(extractNextCursor));
 
             var cursor = initialCursor;
+            var seenCursors = new global::System.Collections.Generic.HashSet<string>(global::System.StringComparer.Ordinal);
             while (true)
             {{
                 cancellationToken.ThrowIfCancellationRequested();
+                if (!string.IsNullOrWhiteSpace(cursor) && !seenCursors.Add(cursor!))
+                {{
+                    yield break;
+                }}
 
                 var response = await fetchPage(cursor, cancellationToken).ConfigureAwait(false);
                 if (response is null)
@@ -169,9 +253,14 @@ namespace {settings.Namespace}
             }}
 
             var url = initialUrl;
+            var seenUrls = new global::System.Collections.Generic.HashSet<string>(global::System.StringComparer.Ordinal);
             while (true)
             {{
                 cancellationToken.ThrowIfCancellationRequested();
+                if (!string.IsNullOrWhiteSpace(url) && !seenUrls.Add(url!))
+                {{
+                    yield break;
+                }}
 
                 var response = await fetchPage(url, cancellationToken).ConfigureAwait(false);
                 if (response is null)
@@ -237,7 +326,7 @@ namespace {settings.Namespace}
         /// Paginates through APIs that embed an absolute <c>next</c> URL in the response body
         /// (Firecrawl, Slack, Linear, Notion, HubSpot, etc.). Calls <paramref name=""fetchPage""/>
         /// with the URL returned by <paramref name=""extractNextUrl""/> from the previous page
-        /// until the extractor returns null/whitespace.
+        /// until the extractor returns null/whitespace or a URL repeats.
         ///
         /// <para><b>Security:</b> when <paramref name=""baseAddress""/> is provided, every next-URL
         /// origin must match it before the next fetch runs. An unchecked walker would let a
@@ -267,12 +356,17 @@ namespace {settings.Namespace}
             extractNextUrl = extractNextUrl ?? throw new global::System.ArgumentNullException(nameof(extractNextUrl));
 
             var url = initialUrl;
+            var seenUrls = new global::System.Collections.Generic.HashSet<string>(global::System.StringComparer.Ordinal);
             while (true)
             {{
                 cancellationToken.ThrowIfCancellationRequested();
 
                 if (!string.IsNullOrWhiteSpace(url))
                 {{
+                    if (!seenUrls.Add(url!))
+                    {{
+                        yield break;
+                    }}
                     EnsureSameOrigin(url!, baseAddress);
                 }}
 
@@ -304,7 +398,8 @@ namespace {settings.Namespace}
         /// <summary>
         /// Validates that <paramref name=""nextUrl""/> shares an origin with <paramref name=""baseAddress""/>.
         /// Throws when they differ so an embedded foreign URL can't redirect the SDK (and the
-        /// caller's <c>Authorization</c> header) to a hostile host. When <paramref name=""baseAddress""/>
+        /// caller's <c>Authorization</c> header) to a hostile host. Relative URLs are resolved
+        /// before comparison, including protocol-relative URLs. When <paramref name=""baseAddress""/>
         /// is null, validation is skipped — callers should pass <c>HttpClient.BaseAddress</c>.
         /// </summary>
         public static void EnsureSameOrigin(string nextUrl, global::System.Uri? baseAddress)
@@ -314,11 +409,7 @@ namespace {settings.Namespace}
                 return;
             }}
 
-            if (!global::System.Uri.TryCreate(nextUrl, global::System.UriKind.Absolute, out var absolute))
-            {{
-                // Relative URLs are safe — they're resolved against the client's BaseAddress on send.
-                return;
-            }}
+            var absolute = new global::System.Uri(baseAddress, nextUrl);
 
             if (!string.Equals(absolute.Scheme, baseAddress.Scheme, global::System.StringComparison.OrdinalIgnoreCase) ||
                 !string.Equals(absolute.Host, baseAddress.Host, global::System.StringComparison.OrdinalIgnoreCase) ||

@@ -574,6 +574,11 @@ namespace {endPoint.Settings.Namespace}
         var responseType = endPoint.SuccessResponse.Type.CSharpTypeWithoutNullability;
         var namespacePrefix = $"global::{endPoint.Settings.Namespace}";
 
+        if (metadata.Style == PageableStyle.NextUrl)
+        {
+            return GenerateNextUrlAutoPagingCompanion(endPoint, isInterface);
+        }
+
         if (metadata.Style != PageableStyle.Offset &&
             metadata.Style != PageableStyle.Cursor)
         {
@@ -672,6 +677,63 @@ namespace {endPoint.Settings.Namespace}
         {(isInterface ? "" : "public ")}global::System.Collections.Generic.IAsyncEnumerable<{itemType}> {methodName}(
 {fixedRequiredDecls}{requestBodyDecl}{fixedOptionalDecls}
             {initialParamType} {pageParameter.ParameterName} = null,
+            global::System.Threading.CancellationToken cancellationToken = default){body}
+");
+    }
+
+    private static string GenerateNextUrlAutoPagingCompanion(EndPoint endPoint, bool isInterface)
+    {
+        var metadata = endPoint.PageableMetadata;
+        var itemType = metadata.ItemType.CSharpTypeWithoutNullability;
+        var responseType = endPoint.SuccessResponse.Type.CSharpTypeWithoutNullability;
+        var namespacePrefix = $"global::{endPoint.Settings.Namespace}";
+        var methodName = GetAutoPagingCompanionMethodName(endPoint);
+        var parameters = endPoint.Parameters.Where(static x => x.Location != null).ToArray();
+        var required = parameters.Where(static x => x.IsRequired && !x.HasSchemaDefault).ToArray();
+        var optional = parameters.Where(static x => !x.IsRequired || x.HasSchemaDefault).ToArray();
+        var hasRequestBody = !string.IsNullOrWhiteSpace(endPoint.RequestType.CSharpType);
+        var requiredDecls = required.Select(x => $@"
+            {x.Type.CSharpType} {x.ParameterName},").Inject();
+        var optionalDecls = optional.Select(x => $@"
+            {x.Type.CSharpType} {x.ParameterName} = {x.ParameterDefaultValue},").Inject();
+        var requestBodyDecl = hasRequestBody
+            ? $@"
+            {endPoint.RequestType.CSharpTypeWithoutNullability} request,"
+            : TrimmedLine;
+        var underlyingArgs = parameters.Select(x => $"{x.ParameterName}: {x.ParameterName}").ToList();
+        if (hasRequestBody)
+        {
+            underlyingArgs.Add("request: request");
+        }
+        underlyingArgs.Add($"requestOptions: {namespacePrefix}.AutoSDKPager.CreatePageRequestOptions(requestOptions, __nextUrl)");
+        underlyingArgs.Add("cancellationToken: __ct");
+        var underlyingArgList = string.Join(",\n                    ", underlyingArgs);
+        var nextUrlExpression = string.IsNullOrEmpty(metadata.LinksPropertyName)
+            ? $"__response.{metadata.NextCursorPropertyName}"
+            : $"__response.{metadata.LinksPropertyName}?.{metadata.NextCursorPropertyName}";
+        var pagerCall = $@"            return {namespacePrefix}.AutoSDKPager.NextUrlAsync<{responseType}, {itemType}>(
+                fetchPage: (__nextUrl, __ct) => {endPoint.MethodName}(
+                    {underlyingArgList}),
+                extractItems: static __response => __response is null
+                    ? null
+                    : (global::System.Collections.Generic.IEnumerable<{itemType}>?)__response.{metadata.ItemsPropertyName},
+                extractNextUrl: static __response => __response is null ? null : {nextUrlExpression},
+                baseAddress: {namespacePrefix}.AutoSDKPager.GetPaginationBaseAddress(HttpClient.BaseAddress, ""{EscapeCSharpStringLiteral(endPoint.BaseUrl)}""),
+                cancellationToken: cancellationToken);";
+        var body = isInterface ? ";" : $@"
+        {{
+{pagerCall}
+        }}";
+        return NormalizedString.Create($@"
+        {$"Wraps {endPoint.MethodName} as an IAsyncEnumerable<{itemType}> that follows the response's next-page URL.".ClearForXml().ToXmlDocumentationSummary(level: 8)}
+{parameters.Select(x => $@"
+        {x.Summary.ToXmlDocumentationForParam(x.ParameterName, level: 8)}").Inject()}{(hasRequestBody ? @"
+        /// <param name=""request""></param>" : TrimmedLine)}
+        /// <param name=""requestOptions"">Options forwarded to every page request.</param>
+        /// <param name=""cancellationToken""></param>
+        {(isInterface ? "" : "public ")}global::System.Collections.Generic.IAsyncEnumerable<{itemType}> {methodName}(
+{requiredDecls}{requestBodyDecl}{optionalDecls}
+            {namespacePrefix}.AutoSDKRequestOptions? requestOptions = null,
             global::System.Threading.CancellationToken cancellationToken = default){body}
 ");
     }
@@ -1565,10 +1627,22 @@ namespace {endPoint.Settings.Namespace}
             global::System.Net.Http.HttpRequestMessage __CreateHttpRequest()
             {{
 {GeneratePathAndQueryCore(endPoint, authorizationVariableName: endPoint.AuthorizationRequirements.IsEmpty ? "Authorizations" : "__authorizations", indentationLevel: 4)}
+{(endPoint.PageableMetadata.Style == PageableStyle.NextUrl ? $@"
+                var __pageUrl = global::{endPoint.Settings.Namespace}.AutoSDKPager.ResolvePageUrl(
+                    __path,
+                    requestOptions,
+                    global::{endPoint.Settings.Namespace}.AutoSDKPager.GetPaginationBaseAddress(HttpClient.BaseAddress, ""{EscapeCSharpStringLiteral(endPoint.BaseUrl)}""));
+                if (__pageUrl is not null)
+                {{
+                    __path = __pageUrl;
+                }}
+                else
+                {{" : TrimmedLine)}
                 __path = global::{endPoint.Settings.Namespace}.AutoSDKRequestOptionsSupport.AppendQueryParameters(
                     path: __path,
                     clientParameters: Options.QueryParameters,
                     requestParameters: requestOptions?.QueryParameters);
+{(endPoint.PageableMetadata.Style == PageableStyle.NextUrl ? @"                }" : TrimmedLine)}
                 var __httpRequest = new global::System.Net.Http.HttpRequestMessage(
                     method: {GetHttpMethod(endPoint.HttpMethod)},
                     requestUri: new global::System.Uri(__path, global::System.UriKind.RelativeOrAbsolute));

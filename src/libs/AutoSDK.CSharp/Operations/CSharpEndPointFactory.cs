@@ -313,7 +313,15 @@ public static class CSharpEndPointFactory
             // global `security` where each operation lists the same single scheme). The
             // marker signals to consumer DelegatingHandlers that the auth this op resolved
             // is NOT the account default and should not be replaced by rotation logic.
-            HasCallScopedSecurity: HasCallScopedSecurityOverride(operation));
+            HasCallScopedSecurity: HasCallScopedSecurityOverride(operation),
+            PaginationItemsPropertyId: OpenApiExtensions.TryGetExtensionStringValue(
+                operation.Operation.Extensions, "x-autosdk-pageable-items", out var pageableItems)
+                ? pageableItems
+                : string.Empty,
+            PaginationNextUrlPropertyPath: OpenApiExtensions.TryGetExtensionStringValue(
+                operation.Operation.Extensions, "x-autosdk-pageable-next-url", out var pageableNextUrl)
+                ? pageableNextUrl
+                : string.Empty);
     }
 
     private static bool HasCallScopedSecurityOverride(OperationContext operation)

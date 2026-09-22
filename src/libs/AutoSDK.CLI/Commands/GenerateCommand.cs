@@ -354,7 +354,7 @@ internal sealed class GenerateCommand : Command
         name: "--generate-pageable-helpers")
     {
         DefaultValueFactory = _ => Settings.Default.GeneratePageableHelpers,
-        Description = "Emit an AutoSDKPager runtime helper with OffsetAsync and CursorAsync overloads that turn raw page methods into IAsyncEnumerable<TItem> streams.",
+        Description = "Emit AutoSDKPager and operation-specific IAsyncEnumerable<TItem> helpers for offset, cursor, and response next-URL pagination.",
     };
 
     private Option<bool> StripRedundantOperationIdTagPrefixes { get; } = new(
