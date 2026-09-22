@@ -425,8 +425,7 @@ internal sealed class GenerateCommand : Command
         name: "--direction-aware-json-generation-mode")
     {
         DefaultValueFactory = _ => Settings.Default.DirectionAwareJsonGenerationMode,
-        Description = "Infer per-type serialization direction from the operation graph and emit the narrowest safe JsonSourceGenerationMode on each [JsonSerializable] registration. " +
-                      "Types reached only through responses drop their unused fast-path serializer; types reached in both directions keep the default mode.",
+        Description = "Infer serialization direction from the operation graph. With custom converters, set Metadata once for the whole context to omit unreachable fast-path writers; without converters, narrow safe individual registrations.",
     };
 
     private Option<string> TypesNamespace { get; } = new(

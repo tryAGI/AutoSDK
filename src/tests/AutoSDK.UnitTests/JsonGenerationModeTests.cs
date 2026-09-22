@@ -223,7 +223,7 @@ public class JsonGenerationModeTests
     }
 
     [TestMethod]
-    public void JsonSerializerContext_NarrowsSingleDirectionTypesToMetadataWhenConvertersDisableTheFastPath()
+    public void JsonSerializerContext_UsesContextWideMetadataWhenConvertersDisableTheFastPath()
     {
         var data = Prepare(CliSettings with { DirectionAwareJsonGenerationMode = true });
 
@@ -233,10 +233,10 @@ public class JsonGenerationModeTests
 
         var file = Sources.JsonSerializerContext(data.Converters, data.Types);
 
-        file.Text.Should().Contain(
-            "JsonSerializable(typeof(global::G.ItemResponse), GenerationMode = global::System.Text.Json.Serialization.JsonSourceGenerationMode.Metadata)");
-        file.Text.Should().Contain(
-            "JsonSerializable(typeof(global::G.CreateItemRequest), GenerationMode = global::System.Text.Json.Serialization.JsonSourceGenerationMode.Metadata)");
+        file.Text.Should().Contain("GenerationMode = global::System.Text.Json.Serialization.JsonSourceGenerationMode.Metadata,");
+        file.Text.Should().Contain("JsonSerializable(typeof(global::G.ItemResponse))");
+        file.Text.Should().Contain("JsonSerializable(typeof(global::G.CreateItemRequest))");
+        file.Text.Should().NotContain("JsonSerializable(typeof(global::G.ItemResponse), GenerationMode");
         file.Text.Should().NotContain("JsonSourceGenerationMode.Serialization");
         file.Text.Should().Contain("JsonSerializable(typeof(global::G.SharedModel))");
         file.Text.Should().Contain("JsonSerializable(typeof(global::G.UnusedModel))");
@@ -310,6 +310,26 @@ public class JsonGenerationModeTests
             "JsonSerializable(typeof(global::G.Model0), GenerationMode = global::System.Text.Json.Serialization.JsonSourceGenerationMode.Metadata)");
         file.Text.Should().Contain(
             "JsonSerializable(typeof(global::System.Collections.Generic.Dictionary<string, string>))");
+    }
+
+    [TestMethod]
+    public void JsonSerializerContext_UsesContextWideMetadataInsideSplitContextsWithConverters()
+    {
+        var settings = CliSettings with { DirectionAwareJsonGenerationMode = true };
+        var client = CreateClient(settings, converters: ["global::G.JsonConverters.UnixTimestampJsonConverter"]);
+        var types = Enumerable.Range(0, 520)
+            .Select(index => ResponseType($"global::G.Model{index}"))
+            .ToImmutableArray()
+            .AsEquatableArray();
+
+        var file = Sources.JsonSerializerContext(client, types);
+
+        file.Text.Should().Contain("internal sealed partial class SourceGenerationContextChunk0");
+        file.Text.Should().Contain("internal sealed partial class SourceGenerationContextChunk1");
+        file.Text.Split("GenerationMode = global::System.Text.Json.Serialization.JsonSourceGenerationMode.Metadata,").Length
+            .Should().Be(3, "each of the two chunks should declare Metadata once");
+        file.Text.Should().Contain("JsonSerializable(typeof(global::G.Model0))");
+        file.Text.Should().NotContain("JsonSerializable(typeof(global::G.Model0), GenerationMode");
     }
 
     [TestMethod]

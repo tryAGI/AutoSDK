@@ -170,12 +170,12 @@ Direction is propagated from every operation's request bodies, parameters, and s
 | Classification | Emitted mode | Effect |
 | --- | --- | --- |
 | Response-only | `Metadata` | Drops the fast-path writer that the response path never runs. |
-| Request-only | `Serialization` | Drops property metadata. Only applied when the SDK registers no converters *and* the type has no generated `FromJson` helper (see below); otherwise `Metadata`. |
-| Used in both directions, or not reachable from any operation | `Default` | Unchanged — narrowing on an unclassified type is never attempted. |
+| Request-only | `Serialization` | Drops property metadata when the SDK registers no converters and the type has no generated `FromJson` helper. |
+| Used in both directions, or not reachable from any operation | `Default` | Unchanged when the fast path is available. |
 
 Two safety rules keep the narrowing wire-compatible:
 
-- `System.Text.Json` disables source-generated fast-path serialization for the whole context when its options carry custom converters, and a `Serialization`-only registration has no property metadata to fall back on. Since generated SDKs always register at least the unix-timestamp converter, request-only types normally narrow to `Metadata` (dropping the fast-path writer that could never run) rather than to `Serialization`.
+- `System.Text.Json` disables source-generated fast-path serialization for the whole context when its options carry custom converters, and a `Serialization`-only registration has no property metadata to fall back on. Since generated SDKs normally register at least the unix-timestamp converter, direction-aware mode sets `Metadata` once on the context instead of repeating it on individual registrations. This removes unreachable writers for all types while preserving request serialization and response deserialization.
 - Generated models expose public `FromJson`/`FromJsonStreamAsync` helpers, which need property metadata. Request-only models that generate those helpers therefore keep `Default` whenever the fast path is actually usable.
 
 Serialized and deserialized payloads are byte-identical with the option on or off; it only removes generated code that the runtime would never execute.

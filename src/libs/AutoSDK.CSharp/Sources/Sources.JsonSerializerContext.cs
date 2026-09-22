@@ -560,7 +560,16 @@ namespace {client.Settings.Namespace}
             : Array.Empty<string>();
 
         builder.Append(@"    [global::System.Text.Json.Serialization.JsonSourceGenerationOptions(
-        DefaultIgnoreCondition = global::System.Text.Json.Serialization.JsonIgnoreCondition.WhenWritingNull,
+        DefaultIgnoreCondition = global::System.Text.Json.Serialization.JsonIgnoreCondition.WhenWritingNull,");
+        // Custom converters disable the STJ fast path for the entire context. Set the mode once
+        // instead of repeating Metadata on every request/response registration. This also drops
+        // unreachable fast-path writers for bidirectional and unclassified types.
+        if (client.Settings.DirectionAwareJsonGenerationMode && client.Converters.Length > 0)
+        {
+            builder.Append(@"
+        GenerationMode = global::System.Text.Json.Serialization.JsonSourceGenerationMode.Metadata,");
+        }
+        builder.Append(@"
         Converters = new global::System.Type[]
         {");
         var firstConverter = true;
@@ -843,12 +852,13 @@ namespace {client.Settings.Namespace}
             return null;
         }
 
-        // System.Text.Json disables source-generated fast-path serialization for every type in a
-        // context whose options carry custom converters, and a `Serialization`-only registration
-        // has no property metadata to fall back on. So `Serialization` is only usable when the
-        // SDK registers no converters, and when it does register them the generated fast-path
-        // writers are unreachable code that `Metadata` drops.
-        var fastPathAvailable = client.Converters.Length == 0;
+        // Custom converters disable the fast path for every type. The context-wide Metadata
+        // mode handles that case without per-type attributes, including implicitly discovered
+        // types. Only converter-free contexts need direction-specific overrides.
+        if (client.Converters.Length > 0)
+        {
+            return null;
+        }
 
         var directions = new Dictionary<string, JsonSerializationDirection>(StringComparer.Ordinal);
         var generatedJsonHelperTypes = new HashSet<string>(StringComparer.Ordinal);
@@ -892,10 +902,9 @@ namespace {client.Settings.Namespace}
                 JsonSerializationDirection.Response => "Metadata",
                 // The generated FromJson helpers need property metadata, so types that expose
                 // them can only keep their fast path through the default mode.
-                JsonSerializationDirection.Request => fastPathAvailable && !generatedJsonHelperTypes.Contains(lookupType)
+                JsonSerializationDirection.Request => !generatedJsonHelperTypes.Contains(lookupType)
                     ? "Serialization"
-                    // Without a reachable fast path the generated writer is dead weight too.
-                    : fastPathAvailable ? null : "Metadata",
+                    : null,
                 _ => null,
             };
 

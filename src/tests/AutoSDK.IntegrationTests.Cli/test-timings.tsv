@@ -44,6 +44,7 @@ Generate_KlingAISdk	15.535351
 Generate_LabelStudioSdk	67.156899
 Generate_LakeraSdk	12.276016
 Generate_LargeMultiTagClient_TrimmedLeafRetainsOnlyReachableSerializerGraph	190.008849
+Generate_LargeDirectionalGraph_DoesNotInflateReleaseOrTrimmedAssemblies	180.000000
 Generate_LangfuseSdk	36.068151
 Generate_LangsmithSdk	67.734608
 Generate_LettaSdk	87.990431
