@@ -42,6 +42,34 @@ namespace G
             {
                 Converters =
                 {
+                    new global::G.JsonConverters.MigrationsStartForOrgRequestExcludeItemJsonConverter(),
+
+                    new global::G.JsonConverters.MigrationsStartForOrgRequestExcludeItemNullableJsonConverter(),
+
+                    new global::G.JsonConverters.MigrationsStartImportRequestVcsJsonConverter(),
+
+                    new global::G.JsonConverters.MigrationsStartImportRequestVcsNullableJsonConverter(),
+
+                    new global::G.JsonConverters.MigrationsUpdateImportRequestVcsJsonConverter(),
+
+                    new global::G.JsonConverters.MigrationsUpdateImportRequestVcsNullableJsonConverter(),
+
+                    new global::G.JsonConverters.MigrationsSetLfsPreferenceRequestUseLfsJsonConverter(),
+
+                    new global::G.JsonConverters.MigrationsSetLfsPreferenceRequestUseLfsNullableJsonConverter(),
+
+                    new global::G.JsonConverters.MigrationsStartForAuthenticatedUserRequestExcludeItemJsonConverter(),
+
+                    new global::G.JsonConverters.MigrationsStartForAuthenticatedUserRequestExcludeItemNullableJsonConverter(),
+
+                    new global::G.JsonConverters.MigrationsListForOrgExcludeItemJsonConverter(),
+
+                    new global::G.JsonConverters.MigrationsListForOrgExcludeItemNullableJsonConverter(),
+
+                    new global::G.JsonConverters.MigrationsGetStatusForOrgExcludeItemJsonConverter(),
+
+                    new global::G.JsonConverters.MigrationsGetStatusForOrgExcludeItemNullableJsonConverter(),
+
                     new global::G.JsonConverters.RepositorySquashMergeCommitTitleJsonConverter(),
 
                     new global::G.JsonConverters.RepositorySquashMergeCommitTitleNullableJsonConverter(),
@@ -85,34 +113,6 @@ namespace G
                     new global::G.JsonConverters.ImportStatusJsonConverter(),
 
                     new global::G.JsonConverters.ImportStatusNullableJsonConverter(),
-
-                    new global::G.JsonConverters.MigrationsStartForOrgRequestExcludeItemJsonConverter(),
-
-                    new global::G.JsonConverters.MigrationsStartForOrgRequestExcludeItemNullableJsonConverter(),
-
-                    new global::G.JsonConverters.MigrationsStartImportRequestVcsJsonConverter(),
-
-                    new global::G.JsonConverters.MigrationsStartImportRequestVcsNullableJsonConverter(),
-
-                    new global::G.JsonConverters.MigrationsUpdateImportRequestVcsJsonConverter(),
-
-                    new global::G.JsonConverters.MigrationsUpdateImportRequestVcsNullableJsonConverter(),
-
-                    new global::G.JsonConverters.MigrationsSetLfsPreferenceRequestUseLfsJsonConverter(),
-
-                    new global::G.JsonConverters.MigrationsSetLfsPreferenceRequestUseLfsNullableJsonConverter(),
-
-                    new global::G.JsonConverters.MigrationsStartForAuthenticatedUserRequestExcludeItemJsonConverter(),
-
-                    new global::G.JsonConverters.MigrationsStartForAuthenticatedUserRequestExcludeItemNullableJsonConverter(),
-
-                    new global::G.JsonConverters.MigrationsListForOrgExcludeItemJsonConverter(),
-
-                    new global::G.JsonConverters.MigrationsListForOrgExcludeItemNullableJsonConverter(),
-
-                    new global::G.JsonConverters.MigrationsGetStatusForOrgExcludeItemJsonConverter(),
-
-                    new global::G.JsonConverters.MigrationsGetStatusForOrgExcludeItemNullableJsonConverter(),
 
                     new global::G.JsonConverters.UnixTimestampJsonConverter(),
                 }
