@@ -246,6 +246,8 @@ Model ownership is "the set of tags that reach it": one tag means that tag's pac
 
 A cold build of all 38 projects is 69 s against the single project's 72 s — no slower, because they compile in parallel — and rebuilding one tag after a change is 8.6 s rather than a full 72 s. That per-tag figure was ~1 s before models were split; a tag package now carries the models only it reaches, so there is more to compile. The same change is what cut what a consumer downloads, so the two move against each other: pay ~8 s a rebuild, save ~40% a restore.
 
+The [2026-09-23 GitHub.NET canary](docs/github-split-by-tags-canary-2026-09-23.md) uses that repository's newer 20,677-file specification and records source counts, NuGet sizes, restore/build/validation times, sampled compiler memory, and local-feed consumer checks for both `Issues` and the facade.
+
 ### How ownership is decided
 
 Reachability is a proposal, not the proof. The schema graph AutoSDK builds is depth- and cycle-limited, so on a specification the size of GitHub's a model can end up referenced by a generated type the walk never connected it to. So the **generated C# reference graph** is checked afterwards, and any type referenced from outside the package that claimed it is moved back to `Core`, repeatedly until nothing crosses a boundary it should not. Demotion only ever moves types towards `Core`, so this settles.
