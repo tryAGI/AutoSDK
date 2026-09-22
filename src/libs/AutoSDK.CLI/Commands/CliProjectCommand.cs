@@ -1743,6 +1743,7 @@ internal static class CliProjectScaffolder
                     <PackAsTool>true</PackAsTool>
                     <GeneratePackageOnBuild Condition=" '$(Configuration)' == 'Release' ">true</GeneratePackageOnBuild>
                     <PackageId>{XmlEscape(model.PackageId)}</PackageId>
+                    <PackageLicenseExpression>MIT</PackageLicenseExpression>
                     <PackageReadmeFile>README.md</PackageReadmeFile>
                     <ToolCommandName>{XmlEscape(model.ToolCommandName)}</ToolCommandName>
                     <UserSecretsId>{XmlEscape(model.UserSecretsId)}</UserSecretsId>

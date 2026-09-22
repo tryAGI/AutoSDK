@@ -413,6 +413,7 @@ components:
 
             var cliProject = await File.ReadAllTextAsync(Path.Combine(cliDirectory, "Oag.CLI.csproj")).ConfigureAwait(false);
             cliProject.Should().Contain("<PackAsTool>true</PackAsTool>");
+            cliProject.Should().Contain("<PackageLicenseExpression>MIT</PackageLicenseExpression>");
             cliProject.Should().Contain("<GeneratePackageOnBuild Condition=\" '$(Configuration)' == 'Release' \">true</GeneratePackageOnBuild>");
             cliProject.Should().Contain("<PackageReadmeFile>README.md</PackageReadmeFile>");
             cliProject.Should().Contain("<None Include=\"README.md\" Pack=\"true\" PackagePath=\"\\\" />");
