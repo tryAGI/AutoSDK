@@ -15,6 +15,11 @@ updates:
           - "*"
     ignore:
       - dependency-name: "Microsoft.CodeAnalysis.CSharp"
+      # Verify 33+ requires an explicit SponsorCheck license declaration.
+      # Review licensing before accepting a new major version.
+      - dependency-name: "Verify.MSTest"
+        update-types:
+          - "version-update:semver-major"
 
   - package-ecosystem: "github-actions"
     directory: "/"
