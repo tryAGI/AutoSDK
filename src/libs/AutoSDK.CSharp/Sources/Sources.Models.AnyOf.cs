@@ -28,7 +28,7 @@ public static partial class Sources
             : anyOfData.Name;
         var discriminatorPropertyType = anyOfData.DiscriminatorType != null && anyOfData.DiscriminatorPropertyName != null
             ? (anyOfData.DiscriminatorPropertyIsEnum
-                ? $"{anyOfData.DiscriminatorType.Value.CSharpTypeWithoutNullability}{anyOfData.DiscriminatorPropertyName}"
+                ? anyOfData.DiscriminatorPropertyTypeName ?? $"{anyOfData.DiscriminatorType.Value.CSharpTypeWithoutNullability}{anyOfData.DiscriminatorPropertyName}"
                 : "string")
             : "string";
         var useLinearOneOfValidation =

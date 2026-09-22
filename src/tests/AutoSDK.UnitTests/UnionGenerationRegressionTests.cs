@@ -37,6 +37,7 @@ public class UnionGenerationRegressionTests
             Count: 2,
             DiscriminatorType: null,
             DiscriminatorPropertyName: null,
+            DiscriminatorPropertyTypeName: null,
             DiscriminatorPropertyIsEnum: false,
             IsTrimming: true,
             Namespace: "G",
@@ -145,9 +146,20 @@ public class UnionGenerationRegressionTests
             .ToArray();
 
         unions.Should().HaveCount(2);
+        unions.Should().OnlyContain(union => union.DiscriminatorPropertyIsEnum);
+        unions.Should().Contain(union => union.DiscriminatorPropertyTypeName !=
+            $"{union.DiscriminatorType!.Value.CSharpTypeWithoutNullability}{union.DiscriminatorPropertyName}");
         foreach (var union in unions)
         {
             emittedClasses.Should().Contain(union.DiscriminatorType!.Value.CSharpTypeWithoutNullability);
+            if (union.DiscriminatorPropertyIsEnum)
+            {
+                emittedEnums.Should().Contain(union.DiscriminatorPropertyTypeName);
+                var generatedModel = Sources.GenerateAnyOf(union);
+                var generatedConverter = Sources.GenerateAnyOfJsonConverter(union);
+                generatedModel.Should().Contain($"{union.DiscriminatorPropertyTypeName}?");
+                generatedConverter.Should().Contain($"{union.DiscriminatorPropertyTypeName}.");
+            }
         }
         foreach (var discriminator in data.Classes.Where(model => model.ClassName.Contains("Discriminator", StringComparison.Ordinal)))
         {

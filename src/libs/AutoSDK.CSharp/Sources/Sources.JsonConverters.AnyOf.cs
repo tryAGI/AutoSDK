@@ -27,6 +27,8 @@ public static partial class Sources
                                (anyOfData.DiscriminatorPropertyIsEnum
                                    ? anyOfData.Properties.All(x => !string.IsNullOrWhiteSpace(x.DiscriminatorValue))
                                    : anyOfData.Properties.All(x => !string.IsNullOrWhiteSpace(x.DiscriminatorJsonValue)));
+        var discriminatorEnumTypeName = anyOfData.DiscriminatorPropertyTypeName ??
+                                        $"{anyOfData.DiscriminatorType?.CSharpTypeWithoutNullability}{anyOfData.DiscriminatorPropertyName}";
         var hasPropertyInfo = anyOfData.Properties.Any(x => !x.JsonPropertyNames.IsEmpty);
         var hasNestedPropertyInfo = anyOfData.Properties.Any(x => x.JsonPropertyNames.Any(propName => propName.Contains('.')));
         var useLinearFallbackGuard = anyOfData.Properties.Length >= AnyOfLinearFallbackGuardThreshold;
@@ -90,7 +92,7 @@ public static partial class Sources
 {anyOfData.Properties.Select((x, i) => TrimmedLine + $@"
             {x.Type.CSharpTypeWithNullability} {x.ParameterName} = default;
             if (discriminator?.{anyOfData.DiscriminatorPropertyName} == {(anyOfData.DiscriminatorPropertyIsEnum
-                ? $"{anyOfData.DiscriminatorType!.Value.CSharpTypeWithoutNullability}{anyOfData.DiscriminatorPropertyName}.{x.DiscriminatorValue}"
+                ? $"{discriminatorEnumTypeName}.{x.DiscriminatorValue}"
                 : $"\"{x.DiscriminatorJsonValue}\"")})
             {{
 {(anyOfData.IsTrimming ? TrimmedLine + $@"

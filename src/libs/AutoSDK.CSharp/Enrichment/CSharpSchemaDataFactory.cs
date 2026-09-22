@@ -228,6 +228,7 @@ public static class CSharpSchemaDataFactory
         var className = context.Id.ToClassName();
         TypeData? discriminatorType = null;
         string? discriminatorPropertyName = null;
+        string? discriminatorPropertyTypeName = null;
         var discriminatorPropertyIsEnum = false;
 
         if (context.Schema.Discriminator != null &&
@@ -245,6 +246,12 @@ public static class CSharpSchemaDataFactory
                         IsEnum = false,
                         IsOpenEnum = false,
                     }).WithCSharpComputedValues();
+                    var discriminatorProperty = discriminatorContext.Children.FirstOrDefault(child =>
+                        string.Equals(child.PropertyName, context.Schema.Discriminator.PropertyName, StringComparison.Ordinal));
+                    if (discriminatorProperty?.IsEnum == true)
+                    {
+                        discriminatorPropertyTypeName = discriminatorProperty.GetGlobalClassName();
+                    }
                     break;
                 }
             }
@@ -335,6 +342,7 @@ public static class CSharpSchemaDataFactory
             Count: count,
             DiscriminatorType: discriminatorType,
             DiscriminatorPropertyName: discriminatorPropertyName,
+            DiscriminatorPropertyTypeName: discriminatorPropertyTypeName,
             DiscriminatorPropertyIsEnum: discriminatorPropertyIsEnum,
             IsTrimming: context.Settings.UsesSystemTextJsonContext(),
             Namespace: context.GetGeneratedNamespace(),
