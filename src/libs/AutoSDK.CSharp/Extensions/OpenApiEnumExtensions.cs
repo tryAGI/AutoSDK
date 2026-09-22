@@ -55,6 +55,12 @@ public static class OpenApiEnumExtensions
         }
 
         var defaultString = schema.Default?.GetString();
+        if (context.TypeData.CSharpTypeWithoutNullability == "bool" &&
+            bool.TryParse(defaultString, out var booleanDefault))
+        {
+            return booleanDefault ? "true" : "false";
+        }
+
         if ((schema.Enum?.Any() ?? false) && schema.Default is JsonValue && !string.IsNullOrWhiteSpace(defaultString))
         {
             var @enum = context.ComputeEnum();

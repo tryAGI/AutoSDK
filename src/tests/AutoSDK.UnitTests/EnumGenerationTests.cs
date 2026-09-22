@@ -18,6 +18,35 @@ public class EnumGenerationTests
     };
 
     [TestMethod]
+    public void BooleanEnumDefault_EmitsBooleanLiteral()
+    {
+        const string yaml = """
+                            openapi: 3.0.1
+                            info:
+                              title: BooleanEnumDefault
+                              version: 1.0.0
+                            paths: {}
+                            components:
+                              schemas:
+                                TestResult:
+                                  type: object
+                                  required: [success]
+                                  properties:
+                                    success:
+                                      type: boolean
+                                      enum: [true]
+                                      default: true
+                            """;
+
+        var data = AutoSDK.Generation.Data.Prepare(((yaml, DefaultSettings), GlobalSettings: DefaultSettings));
+        var model = data.Classes.Single(x => x.ClassName == "TestResult");
+        var generatedModel = Sources.GenerateModel(model);
+
+        model.Properties.Single(x => x.Name == "Success").DefaultValue.Should().Be("true");
+        generatedModel.Should().NotContain("bool.True");
+    }
+
+    [TestMethod]
     [DataRow(JsonSerializerType.SystemTextJson)]
     [DataRow(JsonSerializerType.NewtonsoftJson)]
     public void EnumGeneration_EscapesQuotedStringValues(JsonSerializerType jsonSerializerType)
