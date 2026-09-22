@@ -175,6 +175,46 @@ paths:
     }
 
     [TestMethod]
+    public void TryCreate_CaseOnlyAndSanitizedOverrideCollisionsGetDistinctPackageIds()
+    {
+        foreach (var artistSuffix in new[] { "media", "Media/" })
+        {
+            var plan = CreatePlan(
+                TwoTagSpec,
+                tagPackageOverrides: new Dictionary<string, string>(StringComparer.Ordinal)
+                {
+                    ["albums"] = "Media",
+                    ["artists"] = artistSuffix,
+                });
+
+            plan.ResolvePackageId("Catalogue.AlbumsClient.g.cs").Should().Be("tryAGI.Catalogue.Media");
+            plan.ResolvePackageId("Catalogue.ArtistsClient.g.cs").Should().Be(artistSuffix == "media"
+                ? "tryAGI.Catalogue.media2"
+                : "tryAGI.Catalogue.Media2");
+            plan.Packages.Select(x => x.PackageId.ToLowerInvariant()).Should().OnlyHaveUniqueItems();
+        }
+    }
+
+    [TestMethod]
+    public void TryCreate_OperationWithTwoTags_RoutesEachGeneratedPartialToItsTagPackage()
+    {
+        var yaml = TwoTagSpec.Replace("  /artists:\n", """
+  /shared:
+    get:
+      operationId: listShared
+      tags: [albums, artists]
+      responses:
+        '200':
+          description: OK
+  /artists:
+""" + "\n", StringComparison.Ordinal);
+        var plan = CreatePlan(yaml);
+
+        plan.ResolvePackageId("Catalogue.AlbumsClient.ListShared.g.cs").Should().Be("tryAGI.Catalogue.Albums");
+        plan.ResolvePackageId("Catalogue.ArtistsClient.ListShared.g.cs").Should().Be("tryAGI.Catalogue.Artists");
+    }
+
+    [TestMethod]
     public void TryCreate_TagNamedCore_DoesNotShadowTheSharedPackage()
     {
         var plan = CreatePlan(

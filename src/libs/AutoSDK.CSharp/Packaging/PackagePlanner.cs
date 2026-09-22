@@ -281,8 +281,14 @@ public static class PackagePlanner
         string corePackageId)
     {
         var result = new Dictionary<string, string>(StringComparer.Ordinal);
+        var occupied = new Dictionary<string, (string PackageId, string? GroupKey)>(StringComparer.OrdinalIgnoreCase)
+        {
+            [basePackageId] = (basePackageId, null),
+            [corePackageId] = (corePackageId, null),
+        };
 
-        foreach (var tag in tags.OrderBy(static x => x.SafeName, StringComparer.Ordinal))
+        foreach (var tag in tags.OrderBy(static x => x.SafeName, StringComparer.Ordinal)
+                     .ThenBy(static x => x.Name, StringComparer.Ordinal))
         {
             if (tag.Name is null)
             {
@@ -292,7 +298,8 @@ public static class PackagePlanner
             string? overrideSuffix = null;
             tagPackageOverrides?.TryGetValue(tag.Name, out overrideSuffix);
 
-            var suffix = SanitizeSuffix(overrideSuffix) ?? tag.SafeName;
+            var overrideSafeSuffix = SanitizeSuffix(overrideSuffix);
+            var suffix = overrideSafeSuffix ?? tag.SafeName;
             if (string.IsNullOrEmpty(suffix))
             {
                 continue;
@@ -309,7 +316,30 @@ public static class PackagePlanner
                 packageId = $"{basePackageId}.{suffix}{ReservedNameSuffix}";
             }
 
+            var groupKey = overrideSafeSuffix is null ? null : overrideSuffix;
+            if (occupied.TryGetValue(packageId, out var owner))
+            {
+                // Repeating the exact override intentionally groups tags. Case-only or
+                // sanitized-name collisions cannot produce distinct NuGet package IDs and
+                // often share one directory on case-insensitive filesystems.
+                if (groupKey is not null &&
+                    string.Equals(owner.GroupKey, groupKey, StringComparison.Ordinal))
+                {
+                    result[tag.Name] = owner.PackageId;
+                    continue;
+                }
+
+                var collisionIndex = 2;
+                do
+                {
+                    packageId = $"{basePackageId}.{suffix}{collisionIndex}";
+                    collisionIndex++;
+                }
+                while (occupied.ContainsKey(packageId));
+            }
+
             result[tag.Name] = packageId;
+            occupied[packageId] = (packageId, groupKey);
         }
 
         return result;

@@ -41,6 +41,66 @@ public class CliSplitByTagsTests
     }
 
     [TestMethod]
+    public async Task Generate_SplitByTags_PackedTagAndFacadeRestoreTheirPackageDependencies()
+    {
+        await WithGeneratedFamilyAsync(async (_, outputDirectory) =>
+        {
+            var packagesRoot = Path.Combine(outputDirectory, "GeneratedPackages");
+            var feed = Path.Combine(outputDirectory, "feed");
+            Directory.CreateDirectory(feed);
+            foreach (var packageId in new[] { $"{PackageId}.Core", $"{PackageId}.Albums", $"{PackageId}.Artists", PackageId })
+            {
+                var project = Path.Combine(packagesRoot, packageId, $"{packageId}.csproj");
+                var pack = await RunDotnetAsync(packagesRoot,
+                    "pack", project, "-c", "Release", "--disable-build-servers",
+                    "-p:Version=1.0.0", "-o", feed);
+                pack.ExitCode.Should().Be(0, pack.StandardError + pack.StandardOutput);
+                File.Exists(Path.Combine(feed, $"{packageId}.1.0.0.nupkg")).Should().BeTrue();
+            }
+
+            foreach (var (packageId, expected, excluded) in new[]
+                     {
+                         ($"{PackageId}.Albums", $"{PackageId}.Core/1.0.0", $"{PackageId}.Artists/1.0.0"),
+                         (PackageId, $"{PackageId}.Artists/1.0.0", "missing-package/1.0.0"),
+                     })
+            {
+                var consumer = Path.Combine(outputDirectory, "consumer-" + packageId);
+                Directory.CreateDirectory(consumer);
+                await File.WriteAllTextAsync(Path.Combine(consumer, "Consumer.csproj"), $"""
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <TargetFramework>net10.0</TargetFramework>
+  </PropertyGroup>
+  <ItemGroup>
+    <PackageReference Include="{packageId}" Version="1.0.0" />
+  </ItemGroup>
+</Project>
+""");
+                await File.WriteAllTextAsync(Path.Combine(consumer, "NuGet.Config"), $"""
+<configuration>
+  <packageSources>
+    <clear />
+    <add key="canary" value="{feed}" />
+  </packageSources>
+  <packageSourceMapping>
+    <clear />
+    <packageSource key="canary">
+      <package pattern="{PackageId}*" />
+    </packageSource>
+  </packageSourceMapping>
+</configuration>
+""");
+                var restore = await RunDotnetAsync(consumer,
+                    "restore", "Consumer.csproj", "--disable-build-servers");
+                restore.ExitCode.Should().Be(0, restore.StandardError + restore.StandardOutput);
+                var assets = await File.ReadAllTextAsync(Path.Combine(consumer, "obj", "project.assets.json"));
+                assets.ToLowerInvariant().Should().Contain(expected.ToLowerInvariant());
+                assets.ToLowerInvariant().Should().NotContain(excluded.ToLowerInvariant());
+            }
+        });
+    }
+
+    [TestMethod]
     public async Task Generate_SplitByTags_RoutesEachGeneratedFileToExactlyOnePackage()
     {
         await WithGeneratedFamilyAsync((_, outputDirectory) =>
