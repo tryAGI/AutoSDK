@@ -16,6 +16,7 @@ jobs:
     uses: tryAGI/workflows/.github/workflows/generated-sdk-publish.yml@main
     with:
       project-path: src/libs/$SolutionName$/$SolutionName$.csproj
+      auto-stable-release: true
       enable-caching: false
       additional-test-arguments: '--logger GitHubActions'
     secrets:
