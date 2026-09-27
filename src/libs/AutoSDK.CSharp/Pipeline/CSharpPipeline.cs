@@ -574,6 +574,8 @@ public static class CSharpPipeline
     // linker savings justify. Keep those clients on the aggregate context instead of multiplying
     // near-root serializer graphs across every tag.
     private const int MaximumTagContextReachabilityPercentage = 35;
+    private const int AggregateContextFallbackTagThreshold = 32;
+    private const int AggregateContextFallbackTypeThreshold = 1000;
 
     private static bool ShouldGenerateTreeShakeableTagContexts(Models.Data data)
     {
@@ -600,6 +602,14 @@ public static class CSharpPipeline
             return [];
         }
 
+        // A very large grouped SDK can otherwise make the compiler process the same source
+        // generation graph hundreds of times. Keep the public per-tag context types, but have
+        // them delegate to the already-generated aggregate context in this case.
+        var reuseAggregateContext = data.Tags.Length >= AggregateContextFallbackTagThreshold &&
+                                    data.Types.Length >= AggregateContextFallbackTypeThreshold;
+        var aggregateContextName = data.Converters.Settings.JsonSerializerContext.StartsWith("global::", StringComparison.Ordinal)
+            ? data.Converters.Settings.JsonSerializerContext
+            : $"global::{data.Converters.Settings.JsonSerializerContext}";
         var files = new List<FileWithName>(data.Tags.Length);
         foreach (var tag in data.Tags.OrderBy(static x => x.SafeName, StringComparer.Ordinal))
         {
@@ -608,22 +618,26 @@ public static class CSharpPipeline
                 continue;
             }
 
-            var tagTypes = data.Types
-                .Where(type => IsReachableFromTag(type.CSharpTypeWithoutNullability, tag.Name, tagReachability))
-                .ToImmutableArray()
-                .AsEquatableArray();
+            var tagTypes = reuseAggregateContext
+                ? ImmutableArray<TypeData>.Empty.AsEquatableArray()
+                : data.Types
+                    .Where(type => IsReachableFromTag(type.CSharpTypeWithoutNullability, tag.Name, tagReachability))
+                    .ToImmutableArray()
+                    .AsEquatableArray();
             var contextName = GetPackageContextName(data.Converters.Settings.Namespace, tag.SafeName);
             files.Add(Sources.JsonSerializerContext(
                 CreatePackageContextClient(
                     data.Converters,
                     tag.SafeName,
                     contextName,
-                    GetReachableConverters(data, tag.Name, tagReachability)),
+                    reuseAggregateContext
+                        ? ImmutableArray<string>.Empty
+                        : GetReachableConverters(data, tag.Name, tagReachability)),
                 tagTypes,
                 new Sources.JsonSerializerContextGenerationState(),
-                // A non-null empty chain selects the expanded context shape, which avoids the
-                // aggregate JsonSerializerContextTypes carrier without rooting another context.
-                fallbackContextNames: [],
+                // An empty chain keeps small tag contexts independent; the large-SDK chain
+                // delegates to the aggregate resolver without duplicating its registrations.
+                fallbackContextNames: reuseAggregateContext ? [aggregateContextName] : [],
                 cancellationToken));
         }
 

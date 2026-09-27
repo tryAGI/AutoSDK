@@ -536,6 +536,8 @@ public partial class JsonTests
         file.Text.Should().Contain("internal sealed partial class SourceGenerationContextChunk0");
         file.Text.Should().Contain("internal sealed partial class SourceGenerationContextChunk1");
         file.Text.Should().Contain("private sealed class LazyChunkResolver");
+        file.Text.Should().Contain("internal static global::System.Text.Json.Serialization.Metadata.IJsonTypeInfoResolver TypeInfoResolver => Resolver;");
+        file.Text.Should().Contain("internal static void AddConverters(global::System.Text.Json.JsonSerializerOptions options)");
         file.Text.Should().NotContain("global::System.Text.Json.Serialization.Metadata.JsonTypeInfoResolver.Combine(");
         file.Text.Should().Contain("public static SourceGenerationContext Default { get; } = new(DefaultOptions);");
         file.Text.Should().NotContain("JsonSerializable(typeof(global::G.JsonSerializerContextTypes))");

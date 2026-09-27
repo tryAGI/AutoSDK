@@ -1,11 +1,50 @@
+using System.Collections.Immutable;
 using AutoSDK.Generation;
+using AutoSDK.Helpers;
 using AutoSDK.Models;
+using AutoSDK.Serialization.Json;
 
 namespace AutoSDK.UnitTests;
 
 [TestClass]
 public class TreeShakeableJsonSerializerContextTests
 {
+    [TestMethod]
+    public void AggregateFallbackContext_KeepsPublicTagContextWithoutDuplicateRegistrations()
+    {
+        var settings = Settings.Default with
+        {
+            Namespace = "Catalogue",
+            JsonSerializerType = JsonSerializerType.SystemTextJson,
+            JsonSerializerContext = "Catalogue.AlbumsSourceGenerationContext",
+            GenerateJsonSerializerContextTypes = true,
+            FromCli = true,
+        };
+        var client = new Client(
+            Id: "Albums",
+            ClassName: "AlbumsClient",
+            FileNameWithoutExtension: "Catalogue.Albums",
+            InterfaceFileNameWithoutExtension: "IAlbums",
+            BaseUrl: string.Empty,
+            Clients: ImmutableArray<PropertyData>.Empty,
+            Summary: string.Empty,
+            BaseUrlSummary: string.Empty,
+            Settings: settings,
+            GlobalSettings: settings,
+            Converters: ImmutableArray<string>.Empty);
+
+        var generated = Sources.GenerateJsonSerializerContext(
+            client,
+            ImmutableArray<TypeData>.Empty.AsEquatableArray(),
+            new Sources.JsonSerializerContextGenerationState(),
+            fallbackContextNames: ["global::Catalogue.SourceGenerationContext"]);
+
+        generated.Should().Contain("public sealed partial class AlbumsSourceGenerationContext");
+        generated.Should().Contain("global::Catalogue.SourceGenerationContext.TypeInfoResolver");
+        generated.Should().Contain("global::Catalogue.SourceGenerationContext.AddConverters(options);");
+        generated.Should().NotContain("[global::System.Text.Json.Serialization.JsonSerializable(");
+    }
+
     private const string Spec = """
 openapi: 3.0.3
 info:

@@ -337,7 +337,10 @@ namespace {client.Settings.Namespace}
         /// </remarks>
         [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Never)]
         public static global::System.Text.Json.Serialization.Metadata.IJsonTypeInfoResolver TypeInfoResolver => Resolver;
-" : TrimmedLine)}
+" : $@"
+        [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Never)]
+        internal static global::System.Text.Json.Serialization.Metadata.IJsonTypeInfoResolver TypeInfoResolver => Resolver;
+")}
 
         private static readonly global::System.Text.Json.JsonSerializerOptions DefaultOptions = CreateDefaultOptions();
 
@@ -368,7 +371,7 @@ namespace {client.Settings.Namespace}
         /// written once rather than copied into all of them.
         /// </remarks>
         [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Never)]
-        public")} static {(fallbackContextNames is null ? "void AddConverters" : "void AddConverters")}(global::System.Text.Json.JsonSerializerOptions options)
+")}        {(fallbackContextNames is null ? "internal" : "public")} static void AddConverters(global::System.Text.Json.JsonSerializerOptions options)
         {{");
         foreach (var name in fallbackContextNames ?? (IReadOnlyList<string>)Array.Empty<string>())
         {
