@@ -59,6 +59,56 @@ public class UnionGenerationRegressionTests
     }
 
     [TestMethod]
+    public void CollapsedAllOfAroundNamedUnion_UsesNullableValueMember()
+    {
+        var innerUnion = (TypeData.Default with
+        {
+            CSharpTypeRaw = "global::G.InnerUnion",
+            Namespace = "G",
+            GeneratedNamespace = "G",
+            IsValueType = true,
+            AnyOfCount = 2,
+        }).WithCSharpComputedValues();
+        var collapsedWrapper = (TypeData.Default with
+        {
+            CSharpTypeRaw = "global::G.InnerUnion",
+            Namespace = "G",
+            GeneratedNamespace = "G",
+            IsValueType = true,
+            SubTypes = ImmutableArray.Create(innerUnion.Box()).AsEquatableArray(),
+        }).WithCSharpComputedValues();
+        var other = (TypeData.Default with
+        {
+            CSharpTypeRaw = "string",
+            Namespace = "G",
+            GeneratedNamespace = "G",
+        }).WithCSharpComputedValues();
+        var properties = ImmutableArray.Create(
+            PropertyData.Default with { Name = "Inner", ParameterName = "inner", Type = collapsedWrapper },
+            PropertyData.Default with { Name = "Other", ParameterName = "other", Type = other })
+            .AsEquatableArray();
+        var union = new AnyOfData(
+            SubType: "OneOf",
+            Count: 2,
+            DiscriminatorType: null,
+            DiscriminatorPropertyName: null,
+            DiscriminatorPropertyTypeName: null,
+            DiscriminatorPropertyIsEnum: false,
+            IsTrimming: true,
+            Namespace: "G",
+            Name: "OuterUnion",
+            Summary: string.Empty,
+            Properties: properties,
+            Settings: EmitterSettings.Default with { Namespace = "G", TargetFramework = "net10.0" });
+
+        var model = Sources.GenerateAnyOf(union);
+        var converter = Sources.GenerateAnyOfJsonConverter(union);
+
+        model.Should().Contain("Inner!.Value");
+        converter.Should().Contain("value.Inner!.Value, typeInfo");
+    }
+
+    [TestMethod]
     public void CollidingResponseDiscriminators_ReferenceEmittedModels()
     {
         var settings = Settings.Default with

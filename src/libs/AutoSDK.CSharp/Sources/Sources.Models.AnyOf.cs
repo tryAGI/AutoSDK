@@ -1,4 +1,5 @@
 using AutoSDK.Extensions;
+using AutoSDK.Helpers;
 using AutoSDK.Models;
 
 namespace AutoSDK.Generation;
@@ -8,6 +9,7 @@ public static partial class Sources
     private static bool HasNullableValueVariant(TypeData type) =>
         type.IsValueType &&
         (type.IsAnyOfLike || type.IsEnum ||
+         (type.SubTypes.Length == 1 && type.SubTypes[0].Unbox<TypeData>().IsAnyOfLike) ||
          type.CSharpTypeWithoutNullability is "bool" or "byte" or "sbyte" or "short" or "ushort" or
              "int" or "uint" or "long" or "ulong" or "float" or "double" or "decimal" or "char" ||
          type.CSharpTypeWithoutNullability.StartsWith("global::System.", StringComparison.Ordinal));
