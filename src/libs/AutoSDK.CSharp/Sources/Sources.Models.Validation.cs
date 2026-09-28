@@ -153,7 +153,8 @@ namespace {@namespace}
     private static IEnumerable<string> GenerateValidationStatements(
         PropertyData property)
     {
-        if (!TryGetValidationParseExpression(property.Type.CSharpTypeWithoutNullability, out var parseExpressionFactory))
+        if (!TryGetValidationParseExpression(property.Type.CSharpTypeWithoutNullability, out var parseExpressionFactory) ||
+            parseExpressionFactory is null)
         {
             yield break;
         }
@@ -290,7 +291,7 @@ namespace {@namespace}
 
     private static bool TryGetValidationParseExpression(
         string csharpTypeWithoutNullability,
-        out Func<string, string> parseExpressionFactory)
+        out Func<string, string>? parseExpressionFactory)
     {
         switch (csharpTypeWithoutNullability)
         {
@@ -310,7 +311,7 @@ namespace {@namespace}
                 parseExpressionFactory = static value => $"global::System.Decimal.Parse({value.ToCSharpStringLiteral()}, global::System.Globalization.CultureInfo.InvariantCulture)";
                 return true;
             default:
-                parseExpressionFactory = null!;
+                parseExpressionFactory = null;
                 return false;
         }
     }

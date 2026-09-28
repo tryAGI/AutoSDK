@@ -69,6 +69,9 @@ public class RequestOptionsGenerationTests
         supportSource.Should().Contain("public bool UseRetryAfterHeader { get; set; } = true;");
         supportSource.Should().Contain("public interface IAutoSDKHook");
         supportSource.Should().Contain("public sealed class AutoSDKHookContext");
+        supportSource.Should().Contain("public global::System.Net.Http.HttpRequestMessage? Request { get; set; }");
+        supportSource.Should().Contain("public global::G.AutoSDKClientOptions? ClientOptions { get; set; }");
+        supportSource.Should().NotContain("null!");
         supportSource.Should().Contain("public global::System.TimeSpan? RetryDelay { get; set; }");
         supportSource.Should().Contain("public string RetryReason { get; set; } = string.Empty;");
         supportSource.Should().Contain("public global::System.Collections.Generic.List<global::G.IAutoSDKHook> Hooks { get; }");

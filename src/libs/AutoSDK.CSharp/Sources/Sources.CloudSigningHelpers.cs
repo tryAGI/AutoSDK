@@ -179,7 +179,8 @@ namespace {settings.Namespace}
                 throw new global::System.ArgumentNullException(nameof(context));
             }}
 
-            return _signer.SignAsync(context.Request, context.CancellationToken);
+            var request = context.Request ?? throw new global::System.InvalidOperationException(""A request is required for cloud signing."");
+            return _signer.SignAsync(request, context.CancellationToken);
         }}
     }}
 

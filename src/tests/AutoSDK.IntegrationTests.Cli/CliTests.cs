@@ -3815,6 +3815,18 @@ components:
                     });
                 Require(GetHeader(hookRequest, "api-key") == "hook-key", "cloud signing hook");
 
+                var incompleteContext = new AutoSDKHookContext();
+                Require(incompleteContext.Request is null && incompleteContext.ClientOptions is null, "incomplete hook context is explicitly nullable");
+                try
+                {
+                    await CloudRequestSigner.CreateHook(CloudRequestSigner.CreateAzureApiKey("hook-key"))
+                        .OnBeforeRequestAsync(incompleteContext);
+                    throw new InvalidOperationException("Missing request was accepted by cloud signing hook.");
+                }
+                catch (InvalidOperationException exception) when (exception.Message == "A request is required for cloud signing.")
+                {
+                }
+
                 IReadOnlyList<string>? requestedScopes = null;
                 using var azureTokenRequest = new HttpRequestMessage(HttpMethod.Post, "https://example.openai.azure.com/openai/deployments/demo/chat/completions");
                 var tokenSigner = CloudRequestSigner.CreateAzureBearerToken(

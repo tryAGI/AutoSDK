@@ -1,4 +1,4 @@
-﻿//HintName: G.CloudRequestSigner.g.cs
+//HintName: G.CloudRequestSigner.g.cs
 #pragma warning disable CS1591
 #nullable enable
 
@@ -152,7 +152,8 @@ namespace G
                 throw new global::System.ArgumentNullException(nameof(context));
             }
 
-            return _signer.SignAsync(context.Request, context.CancellationToken);
+            var request = context.Request ?? throw new global::System.InvalidOperationException("A request is required for cloud signing.");
+            return _signer.SignAsync(request, context.CancellationToken);
         }
     }
 
