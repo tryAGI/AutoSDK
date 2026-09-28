@@ -806,9 +806,11 @@ components:
             cliOptions.Should().Contain("new(\"--json\")");
             cliOptions.Should().Contain("new(\"--output-dir\")");
 
+            var listCommandClassName = Path.GetFileNameWithoutExtension(
+                Path.GetFileNameWithoutExtension(listCommandPath));
             await File.WriteAllTextAsync(
                     Path.Combine(cliDirectory, "CommandAliases.cs"),
-                    """
+                    $$"""
                     using System.CommandLine;
 
                     namespace Oag.CLI.Commands;
@@ -818,7 +820,7 @@ components:
                         static partial void CustomizeCommand(ref Command command) => command.Aliases.Add("catalog");
                     }
 
-                    internal static partial class WidgetsListCommandApiCommand
+                    internal static partial class {{listCommandClassName}}
                     {
                         static partial void CustomizeCommand(ref Command command) => command.Aliases.Add("show");
                     }
