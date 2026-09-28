@@ -544,11 +544,13 @@ internal enum CliProjectFormatHint
 
 internal sealed record CliProjectOperationMetadata(
     CliProjectWaitMode WaitMode,
-    ImmutableDictionary<string, CliProjectFormatHint> ResponseFormatHints)
+    ImmutableDictionary<string, CliProjectFormatHint> ResponseFormatHints,
+    ImmutableHashSet<string> JsonOnlyWebhookParameterNames)
 {
     public static CliProjectOperationMetadata Default { get; } = new(
         CliProjectWaitMode.Auto,
-        ImmutableDictionary<string, CliProjectFormatHint>.Empty.WithComparers(StringComparer.OrdinalIgnoreCase));
+        ImmutableDictionary<string, CliProjectFormatHint>.Empty.WithComparers(StringComparer.OrdinalIgnoreCase),
+        ImmutableHashSet<string>.Empty.WithComparer(StringComparer.OrdinalIgnoreCase));
 }
 
 internal sealed record CliProjectMetadata(
@@ -565,6 +567,9 @@ internal sealed record CliProjectMetadata(
                 var metadata = new CliProjectOperationMetadata(
                     GetWaitMode(operation.Value.Extensions),
                     GetResponseFormatHints(
+                        operation.Value,
+                        openApiDocument.Components?.Schemas ?? new Dictionary<string, IOpenApiSchema>()),
+                    GetJsonOnlyWebhookParameterNames(
                         operation.Value,
                         openApiDocument.Components?.Schemas ?? new Dictionary<string, IOpenApiSchema>()));
 
@@ -669,6 +674,34 @@ internal sealed record CliProjectMetadata(
                string.Equals(mode, "always", StringComparison.OrdinalIgnoreCase)
             ? CliProjectWaitMode.Enabled
             : CliProjectWaitMode.Auto;
+    }
+
+    private static ImmutableHashSet<string> GetJsonOnlyWebhookParameterNames(
+        OpenApiOperation operation,
+        IDictionary<string, IOpenApiSchema> componentSchemas)
+    {
+        var schema = operation.RequestBody?.Content?
+            .Select(static content => content.Value.Schema)
+            .FirstOrDefault(static candidate => candidate is not null);
+        if (schema is null)
+        {
+            return ImmutableHashSet<string>.Empty.WithComparer(StringComparer.OrdinalIgnoreCase);
+        }
+
+        var referenceId = schema.IsSchemaReference() ? schema.GetReferenceId() : null;
+        if (!string.IsNullOrWhiteSpace(referenceId) &&
+            componentSchemas.TryGetValue(referenceId, out var referencedSchema))
+        {
+            schema = referencedSchema;
+        }
+
+        return (schema.ResolveIfRequired().Properties ?? new Dictionary<string, IOpenApiSchema>())
+            .Where(static property =>
+                (property.Value.Extensions?.TryGetValue("x-cli-webhook", out var extension) ?? false) &&
+                TryReadExtensionBoolean(extension, out var enabled) &&
+                !enabled)
+            .Select(static property => property.Key)
+            .ToImmutableHashSet(StringComparer.OrdinalIgnoreCase);
     }
 
     private static ImmutableDictionary<string, CliProjectFormatHint> GetResponseFormatHints(
@@ -1053,6 +1086,7 @@ internal sealed record CliProjectOperation(
     ImmutableArray<CliProjectDirectOptionSetUsage> DirectOptionSets,
     ImmutableArray<CliProjectNestedOptionSetUsage> NestedOptionSets,
     ImmutableArray<CliProjectWebhookUsage> WebhookUsages,
+    ImmutableHashSet<string> JsonOnlyWebhookParameterNames,
     bool HasDirectRequestBody,
     bool SupportsBaseBody,
     string BaseBodyPropertyPathPrefix,
@@ -1126,7 +1160,9 @@ internal sealed record CliProjectOperation(
             .ToImmutableArray();
         var directOptionSets = CreateDirectOptionSetUsages(endPoint, allOptionParameters, optionSetsByModelType);
         var nestedOptionSets = CreateNestedOptionSetUsages(allOptionParameters, optionSetsByModelType);
-        var webhookUsages = CreateWebhookUsages(allOptionParameters, classesByName);
+        var operationMetadata = metadata.GetOperation(endPoint);
+        var jsonOnlyWebhookParameterNames = operationMetadata.JsonOnlyWebhookParameterNames;
+        var webhookUsages = CreateWebhookUsages(allOptionParameters, classesByName, jsonOnlyWebhookParameterNames);
         var consumedDirectParameterNames = directOptionSets
             .SelectMany(static usage => usage.Parameters)
             .Select(static parameter => parameter.MethodParameter.ParameterName)
@@ -1151,7 +1187,8 @@ internal sealed record CliProjectOperation(
         var baseBodyPropertyPathPrefix = ResolveBaseBodyPropertyPathPrefix(endPoint, allOptionParameters, classesByName);
         var supportsBaseBody = !hasDirectRequestBody &&
             baseBodyPropertyPathPrefix is not null &&
-            allOptionParameters.Any(IsMergeableBaseBodyField);
+            (allOptionParameters.Any(IsMergeableBaseBodyField) ||
+             allOptionParameters.Any(parameter => jsonOnlyWebhookParameterNames.Contains(parameter.Id)));
         var (supportsOutputDirectory, outputDirectoryItemsPropertyName) = DetectOutputDirectorySupport(endPoint, classesByName);
 
         return new CliProjectOperation(
@@ -1163,11 +1200,12 @@ internal sealed record CliProjectOperation(
             directOptionSets,
             nestedOptionSets,
             webhookUsages,
+            jsonOnlyWebhookParameterNames,
             hasDirectRequestBody,
             supportsBaseBody,
             baseBodyPropertyPathPrefix ?? string.Empty,
-            ResolveWaitSupport(endPoint, metadata.GetOperation(endPoint).WaitMode),
-            metadata.GetOperation(endPoint).ResponseFormatHints,
+            ResolveWaitSupport(endPoint, operationMetadata.WaitMode),
+            operationMetadata.ResponseFormatHints,
             !string.IsNullOrWhiteSpace(responseType),
             responseType,
             endPoint.RawStream,
@@ -1389,12 +1427,13 @@ internal sealed record CliProjectOperation(
 
     private static ImmutableArray<CliProjectWebhookUsage> CreateWebhookUsages(
         ImmutableArray<MethodParameter> optionParameters,
-        IReadOnlyDictionary<string, ModelData> classesByName)
+        IReadOnlyDictionary<string, ModelData> classesByName,
+        ImmutableHashSet<string> jsonOnlyWebhookParameterNames)
     {
         static bool HasProperty(PropertyData property) => !string.IsNullOrWhiteSpace(property.Name);
 
         return optionParameters
-            .Where(static parameter => parameter.Location is null)
+            .Where(parameter => parameter.Location is null && !jsonOnlyWebhookParameterNames.Contains(parameter.Id))
             .Select(parameter =>
             {
                 if (!classesByName.TryGetValue(parameter.Type.CSharpTypeWithoutNullability, out var model))
@@ -2281,9 +2320,10 @@ internal static class CliProjectScaffolder
 
                      public static T DeserializeJsonValue<T>(string json, JsonSerializerContext context)
                      {
-                         _ = context;
-                         return JsonSerializer.Deserialize<T>(json) ??
-                             throw new CliException($"Unable to deserialize generated CLI value as {typeof(T).Name}.");
+                         var value = JsonSerializer.Deserialize(json, typeof(T), context);
+                         return value is T typed
+                             ? typed
+                             : throw new CliException($"Unable to deserialize generated CLI value as {typeof(T).Name}.");
                      }
 
                      public static string SerializeKeyValuePairs(IEnumerable<string> pairs)
@@ -3347,7 +3387,11 @@ internal static class CliProjectScaffolder
         // no newline (`};    private static ...`).
         var fields = operation.PositionalParameters
             .Select(parameter => GenerateParameterField(parameter, required: true))
-            .Concat(operation.OptionParameters.Select(parameter => GenerateParameterField(parameter, required: false)))
+            .Concat(operation.OptionParameters.Select(parameter => GenerateParameterField(
+                parameter,
+                required: false,
+                jsonOnlyWebhook: operation.JsonOnlyWebhookParameterNames.Contains(parameter.Id),
+                allowBaseBody: operation.SupportsBaseBody)))
             .Concat(string.IsNullOrWhiteSpace(reusableFields) ? [] : [reusableFields])
             .Inject();
         var addSymbols = operation.PositionalParameters
@@ -3463,7 +3507,9 @@ internal static class CliProjectScaffolder
                 .Select(parameter => $@"
                         var {parameter.ParameterName} = parseResult.GetRequiredValue({ParameterSymbolName(parameter)});"))
             .Concat(operation.OptionParameters.Select(parameter =>
-                operation.SupportsBaseBody && CliProjectOperation.IsMergeableBaseBodyField(parameter)
+                operation.JsonOnlyWebhookParameterNames.Contains(parameter.Id)
+                    ? GenerateJsonOnlyWebhookParseLine(model, operation, parameter)
+                    : operation.SupportsBaseBody && CliProjectOperation.IsMergeableBaseBodyField(parameter)
                     ? $@"
                         var {parameter.ParameterName} = {GenerateBaseBodyMergeExpression(ParameterSymbolName(parameter), "__requestBase", operation.BaseBodyPropertyPath(parameter), parameter.ParameterName)};"
                     : $@"
@@ -3526,8 +3572,26 @@ internal static class CliProjectScaffolder
                  """;
     }
 
-    private static string GenerateParameterField(MethodParameter parameter, bool required)
+    private static string GenerateParameterField(
+        MethodParameter parameter,
+        bool required,
+        bool jsonOnlyWebhook = false,
+        bool allowBaseBody = false)
     {
+        if (jsonOnlyWebhook)
+        {
+            var requiredProperty = parameter.IsRequired && !parameter.HasSchemaDefault && !allowBaseBody
+                ? "\n        Required = true,"
+                : string.Empty;
+            return $@"
+    private static Option<string?> {ParameterSymbolName(parameter)} {{ get; }} = new(
+        name: {Literal($"--{ToKebabCase(parameter.Id)}-json")})
+    {{
+        Description = "Request {parameter.Id} object as JSON.",{requiredProperty}
+    }};
+";
+        }
+
         var isNullableBoolOption =
             !required &&
             !parameter.IsRequired &&
@@ -3559,6 +3623,27 @@ internal static class CliProjectScaffolder
         Description = {Literal(parameter.Description)},{requiredProperty}{defaultProperty}
     }};
 ";
+    }
+
+    private static string GenerateJsonOnlyWebhookParseLine(
+        CliProjectModel model,
+        CliProjectOperation operation,
+        MethodParameter parameter)
+    {
+        var optionName = ParameterSymbolName(parameter);
+        var modelType = parameter.Type.CSharpTypeWithoutNullability;
+        var baseValue = operation.SupportsBaseBody
+            ? GenerateBaseBodyFallbackExpression("__requestBase", operation.BaseBodyPropertyPath(parameter), parameter.ParameterName)
+            : "default";
+        var requiredValue = parameter.IsRequired && !parameter.HasSchemaDefault
+            ? $" ?? throw new CliException({Literal($"Specify --{ToKebabCase(parameter.Id)}-json or include {parameter.Id} in the base request body.")})"
+            : string.Empty;
+        return $@"
+                        var {parameter.ParameterName} = (CliRuntime.WasSpecified(parseResult, {optionName})
+                            ? CliRuntime.DeserializeJsonValue<{modelType}>(
+                                parseResult.GetRequiredValue({optionName}),
+                                global::{model.JsonSerializerContextFullName}.Default)
+                            : {baseValue}){requiredValue};";
     }
 
     private static string GenerateDirectOptionSetFieldDeclaration(CliProjectDirectOptionSetUsage usage)

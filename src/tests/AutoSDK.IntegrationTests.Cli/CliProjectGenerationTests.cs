@@ -157,6 +157,20 @@ paths:
       responses:
         '200':
           description: OK
+  /crawl/manual:
+    post:
+      operationId: crawlManual
+      tags:
+        - Crawling
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/CrawlManualRequest'
+      responses:
+        '200':
+          description: OK
   /widgets/{id}/cancel:
     post:
       operationId: widgetsCancel
@@ -304,6 +318,17 @@ components:
         scrapeOptions:
           $ref: '#/components/schemas/ScrapeOptions'
         webhook:
+          $ref: '#/components/schemas/WebhookConfig'
+    CrawlManualRequest:
+      type: object
+      required:
+        - url
+        - webhook
+      properties:
+        url:
+          type: string
+        webhook:
+          x-cli-webhook: false
           $ref: '#/components/schemas/WebhookConfig'
     WebhookConfig:
       type: object
@@ -574,6 +599,15 @@ components:
             crawlCommand.Should().Contain("Url = __webhookWebhookUrlRequired,");
             crawlCommand.Should().Contain("throw new CliException(@\"Specify --webhook-url or include webhook in the base request body.\")");
             crawlCommand.Should().Contain("webhook: webhook!,");
+
+            var manualCrawlCommandPath = Directory
+                .EnumerateFiles(Path.Combine(cliDirectory, "Commands"), "*CrawlManual*ApiCommand.g.cs")
+                .Single();
+            var manualCrawlCommand = await File.ReadAllTextAsync(manualCrawlCommandPath).ConfigureAwait(false);
+            manualCrawlCommand.Should().Contain("--webhook-json");
+            manualCrawlCommand.Should().NotContain("--webhook-url");
+            manualCrawlCommand.Should().Contain("DeserializeJsonValue<global::Oag.WebhookConfig>");
+            manualCrawlCommand.Should().Contain("__requestBase");
 
             // #340: a path-template parameter is hoisted to a positional Argument, not a --flag.
             var pathCommandPath = Directory
