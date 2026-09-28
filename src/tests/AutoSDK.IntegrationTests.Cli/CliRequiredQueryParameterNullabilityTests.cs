@@ -21,7 +21,8 @@ public class CliRequiredQueryParameterNullabilityTests
                 var generatedFile = Path.Combine(outputDirectory, "Oag.ExcludedClient.GetModelParamsModelParamsGet.g.cs");
                 var content = await File.ReadAllTextAsync(generatedFile);
 
-                content.Should().Contain(".AddRequiredParameter(\"model\", model.ToString()!)");
+                content.Should().Contain(".AddRequiredParameter(\"model\", model.ToString() ?? throw new global::System.InvalidOperationException(\"A required query parameter returned null from ToString().\"))");
+                content.Should().NotContain("model.ToString()!");
             });
     }
 
