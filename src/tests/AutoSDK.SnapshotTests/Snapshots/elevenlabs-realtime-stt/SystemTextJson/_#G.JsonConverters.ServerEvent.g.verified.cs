@@ -1,4 +1,4 @@
-﻿//HintName: G.JsonConverters.ServerEvent.g.cs
+//HintName: G.JsonConverters.ServerEvent.g.cs
 #nullable enable
 #pragma warning disable CS0618 // Type or member is obsolete
 
@@ -78,25 +78,25 @@ namespace G.JsonConverters
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.SessionStartedPayload), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.SessionStartedPayload?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.SessionStartedPayload).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.SessionStarted!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickSessionStarted(), typeInfo);
             }
             else if (value.IsPartialTranscript)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.PartialTranscriptPayload), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.PartialTranscriptPayload?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.PartialTranscriptPayload).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PartialTranscript!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickPartialTranscript(), typeInfo);
             }
             else if (value.IsCommittedTranscript)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.CommittedTranscriptPayload), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.CommittedTranscriptPayload?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.CommittedTranscriptPayload).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.CommittedTranscript!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickCommittedTranscript(), typeInfo);
             }
             else if (value.IsError)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.ErrorPayload), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.ErrorPayload?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.ErrorPayload).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Error!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickError(), typeInfo);
             }
         }
     }

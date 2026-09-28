@@ -1,4 +1,4 @@
-﻿//HintName: G.Models.DependentAgentsItem5.g.cs
+//HintName: G.Models.DependentAgentsItem5.g.cs
 #pragma warning disable CS0618 // Type or member is obsolete
 
 #nullable enable
@@ -48,8 +48,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.DependentAvailableAgentIdentifier PickAvailable() => IsAvailable
-            ? Available!
+        public global::G.DependentAvailableAgentIdentifier PickAvailable() => Available is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Available' but the value was {ToString()}.");
 
         /// <summary>
@@ -86,8 +86,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.DependentUnknownAgentIdentifier PickUnknown() => IsUnknown
-            ? Unknown!
+        public global::G.DependentUnknownAgentIdentifier PickUnknown() => Unknown is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Unknown' but the value was {ToString()}.");
         /// <summary>
         /// 
@@ -187,13 +187,13 @@ namespace G
                 Validate();
             }
 
-            if (IsAvailable && available != null)
+            if (Available is { } __value0 && available != null)
             {
-                return available(Available!);
+                return available(__value0);
             }
-            else if (IsUnknown && unknown != null)
+            else if (Unknown is { } __value1 && unknown != null)
             {
-                return unknown(Unknown!);
+                return unknown(__value1);
             }
 
             return default(TResult);
@@ -213,13 +213,13 @@ namespace G
                 Validate();
             }
 
-            if (IsAvailable)
+            if (Available is { } __value0)
             {
-                available?.Invoke(Available!);
+                available?.Invoke(__value0);
             }
-            else if (IsUnknown)
+            else if (Unknown is { } __value1)
             {
-                unknown?.Invoke(Unknown!);
+                unknown?.Invoke(__value1);
             }
         }
 
@@ -236,13 +236,13 @@ namespace G
                 Validate();
             }
 
-            if (IsAvailable)
+            if (Available is { } __value0)
             {
-                available?.Invoke(Available!);
+                available?.Invoke(__value0);
             }
-            else if (IsUnknown)
+            else if (Unknown is { } __value1)
             {
-                unknown?.Invoke(Unknown!);
+                unknown?.Invoke(__value1);
             }
         }
 

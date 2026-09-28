@@ -1,4 +1,4 @@
-﻿//HintName: G.JsonConverters.ApprovalsVariant1Item.g.cs
+//HintName: G.JsonConverters.ApprovalsVariant1Item.g.cs
 #nullable enable
 #pragma warning disable CS0618 // Type or member is obsolete
 
@@ -60,13 +60,13 @@ namespace G.JsonConverters
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.ApprovalReturn), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.ApprovalReturn?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.ApprovalReturn).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Approval!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickApproval(), typeInfo);
             }
             else if (value.IsTool)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.LettaSchemasLettaMessageToolReturn), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.LettaSchemasLettaMessageToolReturn?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.LettaSchemasLettaMessageToolReturn).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Tool!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickTool(), typeInfo);
             }
         }
     }

@@ -1,4 +1,4 @@
-﻿//HintName: G.LlamaExtractClient.GetLatestRunFromUiApiV1ExtractionRunsLatestFromUiGet.g.cs
+//HintName: G.LlamaExtractClient.GetLatestRunFromUiApiV1ExtractionRunsLatestFromUiGet.g.cs
 
 #nullable enable
 
@@ -169,7 +169,7 @@ namespace G
                 PrepareGetLatestRunFromUiApiV1ExtractionRunsLatestFromUiGetRequest(
                     httpClient: HttpClient,
                     httpRequestMessage: __httpRequest,
-                    extractionAgentId: extractionAgentId!,
+                    extractionAgentId: extractionAgentId,
                     session: session);
 
                 global::G.AutoSDKHttpRequestOptions.StampAuthorizationOverride(__httpRequest);
@@ -194,7 +194,7 @@ namespace G
                                 pathTemplate: "\"/api/v1/extraction/runs/latest-from-ui\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: null,
                                 exception: null,
                                 clientOptions: Options,
@@ -228,7 +228,7 @@ namespace G
                                 pathTemplate: "\"/api/v1/extraction/runs/latest-from-ui\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: null,
                                 exception: __exception,
                                 clientOptions: Options,
@@ -269,7 +269,7 @@ namespace G
                                 pathTemplate: "\"/api/v1/extraction/runs/latest-from-ui\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: __response,
                                 exception: null,
                                 clientOptions: Options,
@@ -317,7 +317,7 @@ namespace G
                                 pathTemplate: "\"/api/v1/extraction/runs/latest-from-ui\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: __response,
                                 exception: null,
                                 clientOptions: Options,
@@ -339,7 +339,7 @@ namespace G
                                 pathTemplate: "\"/api/v1/extraction/runs/latest-from-ui\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: __response,
                                 exception: null,
                                 clientOptions: Options,

@@ -1,4 +1,4 @@
-﻿//HintName: G.ScheduleClient.UpdateChannelStreamSchedule.g.cs
+//HintName: G.ScheduleClient.UpdateChannelStreamSchedule.g.cs
 
 #nullable enable
 
@@ -184,7 +184,7 @@ namespace G
                 PrepareUpdateChannelStreamScheduleRequest(
                     httpClient: HttpClient,
                     httpRequestMessage: __httpRequest,
-                    broadcasterId: broadcasterId!,
+                    broadcasterId: broadcasterId,
                     isVacationEnabled: isVacationEnabled,
                     vacationStartTime: vacationStartTime,
                     vacationEndTime: vacationEndTime,
@@ -212,7 +212,7 @@ namespace G
                                 pathTemplate: "\"/schedule/settings\"",
                                 httpMethod: "PATCH",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: null,
                                 exception: null,
                                 clientOptions: Options,
@@ -249,7 +249,7 @@ namespace G
                                 pathTemplate: "\"/schedule/settings\"",
                                 httpMethod: "PATCH",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: null,
                                 exception: __exception,
                                 clientOptions: Options,
@@ -290,7 +290,7 @@ namespace G
                                 pathTemplate: "\"/schedule/settings\"",
                                 httpMethod: "PATCH",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: __response,
                                 exception: null,
                                 clientOptions: Options,
@@ -338,7 +338,7 @@ namespace G
                                 pathTemplate: "\"/schedule/settings\"",
                                 httpMethod: "PATCH",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: __response,
                                 exception: null,
                                 clientOptions: Options,
@@ -360,7 +360,7 @@ namespace G
                                 pathTemplate: "\"/schedule/settings\"",
                                 httpMethod: "PATCH",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: __response,
                                 exception: null,
                                 clientOptions: Options,

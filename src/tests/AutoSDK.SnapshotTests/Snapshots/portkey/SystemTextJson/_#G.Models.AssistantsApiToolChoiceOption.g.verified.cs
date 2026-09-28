@@ -1,4 +1,4 @@
-﻿//HintName: G.Models.AssistantsApiToolChoiceOption.g.cs
+//HintName: G.Models.AssistantsApiToolChoiceOption.g.cs
 #pragma warning disable CS0618 // Type or member is obsolete
 
 #nullable enable
@@ -47,8 +47,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.AssistantsApiToolChoiceOptionEnum PickEnum() => IsEnum
-            ? Enum!.Value
+        public global::G.AssistantsApiToolChoiceOptionEnum PickEnum() => Enum is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Enum' but the value was {ToString()}.");
 
         /// <summary>
@@ -84,8 +84,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.AssistantsNamedToolChoice PickNamed() => IsNamed
-            ? Named!
+        public global::G.AssistantsNamedToolChoice PickNamed() => Named is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Named' but the value was {ToString()}.");
         /// <summary>
         /// 
@@ -182,13 +182,13 @@ namespace G
                 Validate();
             }
 
-            if (IsEnum && @enum != null)
+            if (Enum is { } __value0 && @enum != null)
             {
-                return @enum(Enum!);
+                return @enum(__value0);
             }
-            else if (IsNamed && named != null)
+            else if (Named is { } __value1 && named != null)
             {
-                return named(Named!);
+                return named(__value1);
             }
 
             return default(TResult);
@@ -208,13 +208,13 @@ namespace G
                 Validate();
             }
 
-            if (IsEnum)
+            if (Enum is { } __value0)
             {
-                @enum?.Invoke(Enum!);
+                @enum?.Invoke(__value0);
             }
-            else if (IsNamed)
+            else if (Named is { } __value1)
             {
-                named?.Invoke(Named!);
+                named?.Invoke(__value1);
             }
         }
 
@@ -231,13 +231,13 @@ namespace G
                 Validate();
             }
 
-            if (IsEnum)
+            if (Enum is { } __value0)
             {
-                @enum?.Invoke(Enum!);
+                @enum?.Invoke(__value0);
             }
-            else if (IsNamed)
+            else if (Named is { } __value1)
             {
-                named?.Invoke(Named!);
+                named?.Invoke(__value1);
             }
         }
 

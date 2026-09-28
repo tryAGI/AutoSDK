@@ -1,4 +1,4 @@
-﻿//HintName: G.Models.UserFamilyName.g.cs
+//HintName: G.Models.UserFamilyName.g.cs
 #pragma warning disable CS0618 // Type or member is obsolete
 
 #nullable enable
@@ -43,8 +43,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public string PickUserFamilyNameVariant1() => IsUserFamilyNameVariant1
-            ? UserFamilyNameVariant1!
+        public string PickUserFamilyNameVariant1() => UserFamilyNameVariant1 is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'UserFamilyNameVariant1' but the value was {ToString()}.");
 
         /// <summary>
@@ -80,8 +80,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<string> PickUserFamilyNameVariant2() => IsUserFamilyNameVariant2
-            ? UserFamilyNameVariant2!
+        public global::System.Collections.Generic.IList<string> PickUserFamilyNameVariant2() => UserFamilyNameVariant2 is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'UserFamilyNameVariant2' but the value was {ToString()}.");
         /// <summary>
         /// 
@@ -155,13 +155,13 @@ namespace G
                 Validate();
             }
 
-            if (IsUserFamilyNameVariant1 && userFamilyNameVariant1 != null)
+            if (UserFamilyNameVariant1 is { } __value0 && userFamilyNameVariant1 != null)
             {
-                return userFamilyNameVariant1(UserFamilyNameVariant1!);
+                return userFamilyNameVariant1(__value0);
             }
-            else if (IsUserFamilyNameVariant2 && userFamilyNameVariant2 != null)
+            else if (UserFamilyNameVariant2 is { } __value1 && userFamilyNameVariant2 != null)
             {
-                return userFamilyNameVariant2(UserFamilyNameVariant2!);
+                return userFamilyNameVariant2(__value1);
             }
 
             return default(TResult);
@@ -181,13 +181,13 @@ namespace G
                 Validate();
             }
 
-            if (IsUserFamilyNameVariant1)
+            if (UserFamilyNameVariant1 is { } __value0)
             {
-                userFamilyNameVariant1?.Invoke(UserFamilyNameVariant1!);
+                userFamilyNameVariant1?.Invoke(__value0);
             }
-            else if (IsUserFamilyNameVariant2)
+            else if (UserFamilyNameVariant2 is { } __value1)
             {
-                userFamilyNameVariant2?.Invoke(UserFamilyNameVariant2!);
+                userFamilyNameVariant2?.Invoke(__value1);
             }
         }
 
@@ -204,13 +204,13 @@ namespace G
                 Validate();
             }
 
-            if (IsUserFamilyNameVariant1)
+            if (UserFamilyNameVariant1 is { } __value0)
             {
-                userFamilyNameVariant1?.Invoke(UserFamilyNameVariant1!);
+                userFamilyNameVariant1?.Invoke(__value0);
             }
-            else if (IsUserFamilyNameVariant2)
+            else if (UserFamilyNameVariant2 is { } __value1)
             {
-                userFamilyNameVariant2?.Invoke(UserFamilyNameVariant2!);
+                userFamilyNameVariant2?.Invoke(__value1);
             }
         }
 

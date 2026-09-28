@@ -1,4 +1,4 @@
-﻿//HintName: G.Models.GraphNode.g.cs
+//HintName: G.Models.GraphNode.g.cs
 #pragma warning disable CS0618 // Type or member is obsolete
 
 #nullable enable
@@ -43,8 +43,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.GraphNodeVariant1 PickGraphNodeVariant1() => IsGraphNodeVariant1
-            ? GraphNodeVariant1!
+        public global::G.GraphNodeVariant1 PickGraphNodeVariant1() => GraphNodeVariant1 is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'GraphNodeVariant1' but the value was {ToString()}.");
 
         /// <summary>
@@ -80,8 +80,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.GraphNodeVariant2 PickGraphNodeVariant2() => IsGraphNodeVariant2
-            ? GraphNodeVariant2!
+        public global::G.GraphNodeVariant2 PickGraphNodeVariant2() => GraphNodeVariant2 is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'GraphNodeVariant2' but the value was {ToString()}.");
 
         /// <summary>
@@ -117,8 +117,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.GraphNodeVariant3 PickGraphNodeVariant3() => IsGraphNodeVariant3
-            ? GraphNodeVariant3!
+        public global::G.GraphNodeVariant3 PickGraphNodeVariant3() => GraphNodeVariant3 is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'GraphNodeVariant3' but the value was {ToString()}.");
 
         /// <summary>
@@ -154,8 +154,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.GraphNodeVariant4 PickGraphNodeVariant4() => IsGraphNodeVariant4
-            ? GraphNodeVariant4!
+        public global::G.GraphNodeVariant4 PickGraphNodeVariant4() => GraphNodeVariant4 is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'GraphNodeVariant4' but the value was {ToString()}.");
 
         /// <summary>
@@ -191,8 +191,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.GraphNodeVariant5 PickGraphNodeVariant5() => IsGraphNodeVariant5
-            ? GraphNodeVariant5!
+        public global::G.GraphNodeVariant5 PickGraphNodeVariant5() => GraphNodeVariant5 is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'GraphNodeVariant5' but the value was {ToString()}.");
 
         /// <summary>
@@ -228,8 +228,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.GraphNodeVariant6 PickGraphNodeVariant6() => IsGraphNodeVariant6
-            ? GraphNodeVariant6!
+        public global::G.GraphNodeVariant6 PickGraphNodeVariant6() => GraphNodeVariant6 is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'GraphNodeVariant6' but the value was {ToString()}.");
 
         /// <summary>
@@ -265,8 +265,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.GraphNodeVariant7 PickGraphNodeVariant7() => IsGraphNodeVariant7
-            ? GraphNodeVariant7!
+        public global::G.GraphNodeVariant7 PickGraphNodeVariant7() => GraphNodeVariant7 is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'GraphNodeVariant7' but the value was {ToString()}.");
 
         /// <summary>
@@ -302,8 +302,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.GraphNodeVariant8 PickGraphNodeVariant8() => IsGraphNodeVariant8
-            ? GraphNodeVariant8!
+        public global::G.GraphNodeVariant8 PickGraphNodeVariant8() => GraphNodeVariant8 is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'GraphNodeVariant8' but the value was {ToString()}.");
         /// <summary>
         /// 
@@ -568,37 +568,37 @@ namespace G
                 Validate();
             }
 
-            if (IsGraphNodeVariant1 && graphNodeVariant1 != null)
+            if (GraphNodeVariant1 is { } __value0 && graphNodeVariant1 != null)
             {
-                return graphNodeVariant1(GraphNodeVariant1!);
+                return graphNodeVariant1(__value0);
             }
-            else if (IsGraphNodeVariant2 && graphNodeVariant2 != null)
+            else if (GraphNodeVariant2 is { } __value1 && graphNodeVariant2 != null)
             {
-                return graphNodeVariant2(GraphNodeVariant2!);
+                return graphNodeVariant2(__value1);
             }
-            else if (IsGraphNodeVariant3 && graphNodeVariant3 != null)
+            else if (GraphNodeVariant3 is { } __value2 && graphNodeVariant3 != null)
             {
-                return graphNodeVariant3(GraphNodeVariant3!);
+                return graphNodeVariant3(__value2);
             }
-            else if (IsGraphNodeVariant4 && graphNodeVariant4 != null)
+            else if (GraphNodeVariant4 is { } __value3 && graphNodeVariant4 != null)
             {
-                return graphNodeVariant4(GraphNodeVariant4!);
+                return graphNodeVariant4(__value3);
             }
-            else if (IsGraphNodeVariant5 && graphNodeVariant5 != null)
+            else if (GraphNodeVariant5 is { } __value4 && graphNodeVariant5 != null)
             {
-                return graphNodeVariant5(GraphNodeVariant5!);
+                return graphNodeVariant5(__value4);
             }
-            else if (IsGraphNodeVariant6 && graphNodeVariant6 != null)
+            else if (GraphNodeVariant6 is { } __value5 && graphNodeVariant6 != null)
             {
-                return graphNodeVariant6(GraphNodeVariant6!);
+                return graphNodeVariant6(__value5);
             }
-            else if (IsGraphNodeVariant7 && graphNodeVariant7 != null)
+            else if (GraphNodeVariant7 is { } __value6 && graphNodeVariant7 != null)
             {
-                return graphNodeVariant7(GraphNodeVariant7!);
+                return graphNodeVariant7(__value6);
             }
-            else if (IsGraphNodeVariant8 && graphNodeVariant8 != null)
+            else if (GraphNodeVariant8 is { } __value7 && graphNodeVariant8 != null)
             {
-                return graphNodeVariant8(GraphNodeVariant8!);
+                return graphNodeVariant8(__value7);
             }
 
             return default(TResult);
@@ -630,37 +630,37 @@ namespace G
                 Validate();
             }
 
-            if (IsGraphNodeVariant1)
+            if (GraphNodeVariant1 is { } __value0)
             {
-                graphNodeVariant1?.Invoke(GraphNodeVariant1!);
+                graphNodeVariant1?.Invoke(__value0);
             }
-            else if (IsGraphNodeVariant2)
+            else if (GraphNodeVariant2 is { } __value1)
             {
-                graphNodeVariant2?.Invoke(GraphNodeVariant2!);
+                graphNodeVariant2?.Invoke(__value1);
             }
-            else if (IsGraphNodeVariant3)
+            else if (GraphNodeVariant3 is { } __value2)
             {
-                graphNodeVariant3?.Invoke(GraphNodeVariant3!);
+                graphNodeVariant3?.Invoke(__value2);
             }
-            else if (IsGraphNodeVariant4)
+            else if (GraphNodeVariant4 is { } __value3)
             {
-                graphNodeVariant4?.Invoke(GraphNodeVariant4!);
+                graphNodeVariant4?.Invoke(__value3);
             }
-            else if (IsGraphNodeVariant5)
+            else if (GraphNodeVariant5 is { } __value4)
             {
-                graphNodeVariant5?.Invoke(GraphNodeVariant5!);
+                graphNodeVariant5?.Invoke(__value4);
             }
-            else if (IsGraphNodeVariant6)
+            else if (GraphNodeVariant6 is { } __value5)
             {
-                graphNodeVariant6?.Invoke(GraphNodeVariant6!);
+                graphNodeVariant6?.Invoke(__value5);
             }
-            else if (IsGraphNodeVariant7)
+            else if (GraphNodeVariant7 is { } __value6)
             {
-                graphNodeVariant7?.Invoke(GraphNodeVariant7!);
+                graphNodeVariant7?.Invoke(__value6);
             }
-            else if (IsGraphNodeVariant8)
+            else if (GraphNodeVariant8 is { } __value7)
             {
-                graphNodeVariant8?.Invoke(GraphNodeVariant8!);
+                graphNodeVariant8?.Invoke(__value7);
             }
         }
 
@@ -683,37 +683,37 @@ namespace G
                 Validate();
             }
 
-            if (IsGraphNodeVariant1)
+            if (GraphNodeVariant1 is { } __value0)
             {
-                graphNodeVariant1?.Invoke(GraphNodeVariant1!);
+                graphNodeVariant1?.Invoke(__value0);
             }
-            else if (IsGraphNodeVariant2)
+            else if (GraphNodeVariant2 is { } __value1)
             {
-                graphNodeVariant2?.Invoke(GraphNodeVariant2!);
+                graphNodeVariant2?.Invoke(__value1);
             }
-            else if (IsGraphNodeVariant3)
+            else if (GraphNodeVariant3 is { } __value2)
             {
-                graphNodeVariant3?.Invoke(GraphNodeVariant3!);
+                graphNodeVariant3?.Invoke(__value2);
             }
-            else if (IsGraphNodeVariant4)
+            else if (GraphNodeVariant4 is { } __value3)
             {
-                graphNodeVariant4?.Invoke(GraphNodeVariant4!);
+                graphNodeVariant4?.Invoke(__value3);
             }
-            else if (IsGraphNodeVariant5)
+            else if (GraphNodeVariant5 is { } __value4)
             {
-                graphNodeVariant5?.Invoke(GraphNodeVariant5!);
+                graphNodeVariant5?.Invoke(__value4);
             }
-            else if (IsGraphNodeVariant6)
+            else if (GraphNodeVariant6 is { } __value5)
             {
-                graphNodeVariant6?.Invoke(GraphNodeVariant6!);
+                graphNodeVariant6?.Invoke(__value5);
             }
-            else if (IsGraphNodeVariant7)
+            else if (GraphNodeVariant7 is { } __value6)
             {
-                graphNodeVariant7?.Invoke(GraphNodeVariant7!);
+                graphNodeVariant7?.Invoke(__value6);
             }
-            else if (IsGraphNodeVariant8)
+            else if (GraphNodeVariant8 is { } __value7)
             {
-                graphNodeVariant8?.Invoke(GraphNodeVariant8!);
+                graphNodeVariant8?.Invoke(__value7);
             }
         }
 

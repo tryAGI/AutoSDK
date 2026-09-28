@@ -1,4 +1,4 @@
-﻿//HintName: G.Models.ChatContentEndEvent.g.cs
+//HintName: G.Models.ChatContentEndEvent.g.cs
 #pragma warning disable CS0618 // Type or member is obsolete
 
 #nullable enable
@@ -43,8 +43,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.ChatStreamEventType PickStreamType() => IsStreamType
-            ? StreamType!
+        public global::G.ChatStreamEventType PickStreamType() => StreamType is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'StreamType' but the value was {ToString()}.");
 
         /// <summary>
@@ -80,8 +80,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.ChatContentEndEventMa278i PickMa278i() => IsMa278i
-            ? Ma278i!
+        public global::G.ChatContentEndEventMa278i PickMa278i() => Ma278i is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Ma278i' but the value was {ToString()}.");
         /// <summary>
         /// 
@@ -178,13 +178,13 @@ namespace G
                 Validate();
             }
 
-            if (IsStreamType && streamType != null)
+            if (StreamType is { } __value0 && streamType != null)
             {
-                return streamType(StreamType!);
+                return streamType(__value0);
             }
-            else if (IsMa278i && ma278i != null)
+            else if (Ma278i is { } __value1 && ma278i != null)
             {
-                return ma278i(Ma278i!);
+                return ma278i(__value1);
             }
 
             return default(TResult);
@@ -204,13 +204,13 @@ namespace G
                 Validate();
             }
 
-            if (IsStreamType)
+            if (StreamType is { } __value0)
             {
-                streamType?.Invoke(StreamType!);
+                streamType?.Invoke(__value0);
             }
-            else if (IsMa278i)
+            else if (Ma278i is { } __value1)
             {
-                ma278i?.Invoke(Ma278i!);
+                ma278i?.Invoke(__value1);
             }
         }
 
@@ -227,13 +227,13 @@ namespace G
                 Validate();
             }
 
-            if (IsStreamType)
+            if (StreamType is { } __value0)
             {
-                streamType?.Invoke(StreamType!);
+                streamType?.Invoke(__value0);
             }
-            else if (IsMa278i)
+            else if (Ma278i is { } __value1)
             {
-                ma278i?.Invoke(Ma278i!);
+                ma278i?.Invoke(__value1);
             }
         }
 

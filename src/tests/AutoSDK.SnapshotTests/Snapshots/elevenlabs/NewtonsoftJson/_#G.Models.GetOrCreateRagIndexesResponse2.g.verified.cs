@@ -1,4 +1,4 @@
-﻿//HintName: G.Models.GetOrCreateRagIndexesResponse2.g.cs
+//HintName: G.Models.GetOrCreateRagIndexesResponse2.g.cs
 #pragma warning disable CS0618 // Type or member is obsolete
 
 #nullable enable
@@ -48,8 +48,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.RAGIndexBatchSuccessfulResponseModel PickSuccess() => IsSuccess
-            ? Success!
+        public global::G.RAGIndexBatchSuccessfulResponseModel PickSuccess() => Success is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Success' but the value was {ToString()}.");
 
         /// <summary>
@@ -85,8 +85,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.BatchFailureResponseModel PickFailure() => IsFailure
-            ? Failure!
+        public global::G.BatchFailureResponseModel PickFailure() => Failure is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Failure' but the value was {ToString()}.");
         /// <summary>
         /// 
@@ -186,13 +186,13 @@ namespace G
                 Validate();
             }
 
-            if (IsSuccess && success != null)
+            if (Success is { } __value0 && success != null)
             {
-                return success(Success!);
+                return success(__value0);
             }
-            else if (IsFailure && failure != null)
+            else if (Failure is { } __value1 && failure != null)
             {
-                return failure(Failure!);
+                return failure(__value1);
             }
 
             return default(TResult);
@@ -212,13 +212,13 @@ namespace G
                 Validate();
             }
 
-            if (IsSuccess)
+            if (Success is { } __value0)
             {
-                success?.Invoke(Success!);
+                success?.Invoke(__value0);
             }
-            else if (IsFailure)
+            else if (Failure is { } __value1)
             {
-                failure?.Invoke(Failure!);
+                failure?.Invoke(__value1);
             }
         }
 
@@ -235,13 +235,13 @@ namespace G
                 Validate();
             }
 
-            if (IsSuccess)
+            if (Success is { } __value0)
             {
-                success?.Invoke(Success!);
+                success?.Invoke(__value0);
             }
-            else if (IsFailure)
+            else if (Failure is { } __value1)
             {
-                failure?.Invoke(Failure!);
+                failure?.Invoke(__value1);
             }
         }
 

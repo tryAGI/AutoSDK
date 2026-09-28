@@ -1,4 +1,4 @@
-﻿//HintName: G.AgentsClient.Get.g.cs
+//HintName: G.AgentsClient.Get.g.cs
 
 #nullable enable
 
@@ -200,7 +200,7 @@ namespace G
                     httpRequestMessage: __httpRequest,
                     requestTimeout: requestTimeout,
                     requestTimeoutMillis: requestTimeoutMillis,
-                    agentKey: agentKey!);
+                    agentKey: agentKey);
 
                 return __httpRequest;
             }
@@ -222,7 +222,7 @@ namespace G
                                 pathTemplate: "$\"/v2/agents/{agentKey}\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: null,
                                 exception: null,
                                 clientOptions: Options,
@@ -259,7 +259,7 @@ namespace G
                                 pathTemplate: "$\"/v2/agents/{agentKey}\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: null,
                                 exception: __exception,
                                 clientOptions: Options,
@@ -300,7 +300,7 @@ namespace G
                                 pathTemplate: "$\"/v2/agents/{agentKey}\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: __response,
                                 exception: null,
                                 clientOptions: Options,
@@ -348,7 +348,7 @@ namespace G
                                 pathTemplate: "$\"/v2/agents/{agentKey}\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: __response,
                                 exception: null,
                                 clientOptions: Options,
@@ -370,7 +370,7 @@ namespace G
                                 pathTemplate: "$\"/v2/agents/{agentKey}\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: __response,
                                 exception: null,
                                 clientOptions: Options,

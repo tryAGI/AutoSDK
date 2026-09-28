@@ -1,4 +1,4 @@
-﻿//HintName: G.JsonConverters.CreateTextTo3DTaskRequest.g.cs
+//HintName: G.JsonConverters.CreateTextTo3DTaskRequest.g.cs
 #nullable enable
 #pragma warning disable CS0618 // Type or member is obsolete
 
@@ -60,13 +60,13 @@ namespace G.JsonConverters
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.TextTo3DPreviewRequest), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.TextTo3DPreviewRequest?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.TextTo3DPreviewRequest).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Preview!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickPreview(), typeInfo);
             }
             else if (value.IsRefine)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.TextTo3DRefineRequest), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.TextTo3DRefineRequest?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.TextTo3DRefineRequest).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Refine!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickRefine(), typeInfo);
             }
         }
     }

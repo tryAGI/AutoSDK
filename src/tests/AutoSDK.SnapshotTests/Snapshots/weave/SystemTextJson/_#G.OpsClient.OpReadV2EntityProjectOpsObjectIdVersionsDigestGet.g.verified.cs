@@ -1,4 +1,4 @@
-﻿//HintName: G.OpsClient.OpReadV2EntityProjectOpsObjectIdVersionsDigestGet.g.cs
+//HintName: G.OpsClient.OpReadV2EntityProjectOpsObjectIdVersionsDigestGet.g.cs
 
 #nullable enable
 
@@ -189,10 +189,10 @@ namespace G
                 PrepareOpReadV2EntityProjectOpsObjectIdVersionsDigestGetRequest(
                     httpClient: HttpClient,
                     httpRequestMessage: __httpRequest,
-                    entity: entity!,
-                    project: project!,
-                    objectId: objectId!,
-                    digest: digest!,
+                    entity: entity,
+                    project: project,
+                    objectId: objectId,
+                    digest: digest,
                     eager: eager);
 
                 return __httpRequest;
@@ -215,7 +215,7 @@ namespace G
                                 pathTemplate: "$\"/v2/{entity}/{project}/ops/{objectId}/versions/{digest}\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: null,
                                 exception: null,
                                 clientOptions: Options,
@@ -249,7 +249,7 @@ namespace G
                                 pathTemplate: "$\"/v2/{entity}/{project}/ops/{objectId}/versions/{digest}\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: null,
                                 exception: __exception,
                                 clientOptions: Options,
@@ -290,7 +290,7 @@ namespace G
                                 pathTemplate: "$\"/v2/{entity}/{project}/ops/{objectId}/versions/{digest}\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: __response,
                                 exception: null,
                                 clientOptions: Options,
@@ -338,7 +338,7 @@ namespace G
                                 pathTemplate: "$\"/v2/{entity}/{project}/ops/{objectId}/versions/{digest}\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: __response,
                                 exception: null,
                                 clientOptions: Options,
@@ -360,7 +360,7 @@ namespace G
                                 pathTemplate: "$\"/v2/{entity}/{project}/ops/{objectId}/versions/{digest}\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: __response,
                                 exception: null,
                                 clientOptions: Options,

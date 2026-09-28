@@ -1,4 +1,4 @@
-﻿//HintName: G.PackagesClient.PackagesRestorePackageForUser.g.cs
+//HintName: G.PackagesClient.PackagesRestorePackageForUser.g.cs
 
 #nullable enable
 
@@ -145,9 +145,9 @@ namespace G
                 PreparePackagesRestorePackageForUserRequest(
                     httpClient: HttpClient,
                     httpRequestMessage: __httpRequest,
-                    packageType: packageType!,
-                    packageName: packageName!,
-                    username: username!,
+                    packageType: packageType,
+                    packageName: packageName,
+                    username: username,
                     token: token);
 
                 return __httpRequest;
@@ -170,7 +170,7 @@ namespace G
                                 pathTemplate: "$\"/users/{username}/packages/{(global::System.Uri.EscapeDataString(packageType.ToValueString()))}/{packageName}/restore\"",
                                 httpMethod: "POST",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: null,
                                 exception: null,
                                 clientOptions: Options,
@@ -204,7 +204,7 @@ namespace G
                                 pathTemplate: "$\"/users/{username}/packages/{(global::System.Uri.EscapeDataString(packageType.ToValueString()))}/{packageName}/restore\"",
                                 httpMethod: "POST",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: null,
                                 exception: __exception,
                                 clientOptions: Options,
@@ -245,7 +245,7 @@ namespace G
                                 pathTemplate: "$\"/users/{username}/packages/{(global::System.Uri.EscapeDataString(packageType.ToValueString()))}/{packageName}/restore\"",
                                 httpMethod: "POST",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: __response,
                                 exception: null,
                                 clientOptions: Options,
@@ -293,7 +293,7 @@ namespace G
                                 pathTemplate: "$\"/users/{username}/packages/{(global::System.Uri.EscapeDataString(packageType.ToValueString()))}/{packageName}/restore\"",
                                 httpMethod: "POST",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: __response,
                                 exception: null,
                                 clientOptions: Options,
@@ -315,7 +315,7 @@ namespace G
                                 pathTemplate: "$\"/users/{username}/packages/{(global::System.Uri.EscapeDataString(packageType.ToValueString()))}/{packageName}/restore\"",
                                 httpMethod: "POST",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: __response,
                                 exception: null,
                                 clientOptions: Options,

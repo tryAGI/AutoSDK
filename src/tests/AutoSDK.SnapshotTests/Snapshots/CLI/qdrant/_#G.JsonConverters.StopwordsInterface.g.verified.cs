@@ -1,4 +1,4 @@
-﻿//HintName: G.JsonConverters.StopwordsInterface.g.cs
+//HintName: G.JsonConverters.StopwordsInterface.g.cs
 #nullable enable
 #pragma warning disable CS0618 // Type or member is obsolete
 
@@ -129,13 +129,13 @@ namespace G.JsonConverters
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.Language), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.Language> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.Language).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Language!.Value, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickLanguage(), typeInfo);
             }
             else if (value.IsSet)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.StopwordsSet), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.StopwordsSet?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.StopwordsSet).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Set!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickSet(), typeInfo);
             }
         }
     }

@@ -1,4 +1,4 @@
-﻿//HintName: G.Models.GenerateStreamEnd.g.cs
+//HintName: G.Models.GenerateStreamEnd.g.cs
 #pragma warning disable CS0618 // Type or member is obsolete
 
 #nullable enable
@@ -43,8 +43,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.GenerateStreamEvent PickEvent() => IsEvent
-            ? Event!
+        public global::G.GenerateStreamEvent PickEvent() => Event is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Event' but the value was {ToString()}.");
 
         /// <summary>
@@ -80,8 +80,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.GenerateStreamEndUbzr0t PickUbzr0t() => IsUbzr0t
-            ? Ubzr0t!
+        public global::G.GenerateStreamEndUbzr0t PickUbzr0t() => Ubzr0t is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Ubzr0t' but the value was {ToString()}.");
         /// <summary>
         /// 
@@ -178,13 +178,13 @@ namespace G
                 Validate();
             }
 
-            if (IsEvent && @event != null)
+            if (Event is { } __value0 && @event != null)
             {
-                return @event(Event!);
+                return @event(__value0);
             }
-            else if (IsUbzr0t && ubzr0t != null)
+            else if (Ubzr0t is { } __value1 && ubzr0t != null)
             {
-                return ubzr0t(Ubzr0t!);
+                return ubzr0t(__value1);
             }
 
             return default(TResult);
@@ -204,13 +204,13 @@ namespace G
                 Validate();
             }
 
-            if (IsEvent)
+            if (Event is { } __value0)
             {
-                @event?.Invoke(Event!);
+                @event?.Invoke(__value0);
             }
-            else if (IsUbzr0t)
+            else if (Ubzr0t is { } __value1)
             {
-                ubzr0t?.Invoke(Ubzr0t!);
+                ubzr0t?.Invoke(__value1);
             }
         }
 
@@ -227,13 +227,13 @@ namespace G
                 Validate();
             }
 
-            if (IsEvent)
+            if (Event is { } __value0)
             {
-                @event?.Invoke(Event!);
+                @event?.Invoke(__value0);
             }
-            else if (IsUbzr0t)
+            else if (Ubzr0t is { } __value1)
             {
-                ubzr0t?.Invoke(Ubzr0t!);
+                ubzr0t?.Invoke(__value1);
             }
         }
 

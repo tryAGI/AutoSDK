@@ -1,4 +1,4 @@
-﻿//HintName: G.JsonConverters.QuantizationConfig.g.cs
+//HintName: G.JsonConverters.QuantizationConfig.g.cs
 #nullable enable
 #pragma warning disable CS0618 // Type or member is obsolete
 
@@ -182,19 +182,19 @@ namespace G.JsonConverters
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.ScalarQuantization), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.ScalarQuantization?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.ScalarQuantization).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Scalar!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickScalar(), typeInfo);
             }
             else if (value.IsProduct)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.ProductQuantization), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.ProductQuantization?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.ProductQuantization).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Product!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickProduct(), typeInfo);
             }
             else if (value.IsBinary)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.BinaryQuantization), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.BinaryQuantization?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.BinaryQuantization).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Binary!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickBinary(), typeInfo);
             }
         }
     }

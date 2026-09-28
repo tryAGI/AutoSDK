@@ -1,4 +1,4 @@
-﻿//HintName: G.Models.TranscriptParams.g.cs
+//HintName: G.Models.TranscriptParams.g.cs
 #pragma warning disable CS0618 // Type or member is obsolete
 
 #nullable enable
@@ -44,8 +44,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.TranscriptParamsVariant1 PickTranscriptParamsVariant1() => IsTranscriptParamsVariant1
-            ? TranscriptParamsVariant1!
+        public global::G.TranscriptParamsVariant1 PickTranscriptParamsVariant1() => TranscriptParamsVariant1 is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'TranscriptParamsVariant1' but the value was {ToString()}.");
 
         /// <summary>
@@ -82,8 +82,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.TranscriptOptionalParams PickOptional() => IsOptional
-            ? Optional!
+        public global::G.TranscriptOptionalParams PickOptional() => Optional is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Optional' but the value was {ToString()}.");
         /// <summary>
         /// 
@@ -180,13 +180,13 @@ namespace G
                 Validate();
             }
 
-            if (IsTranscriptParamsVariant1 && transcriptParamsVariant1 != null)
+            if (TranscriptParamsVariant1 is { } __value0 && transcriptParamsVariant1 != null)
             {
-                return transcriptParamsVariant1(TranscriptParamsVariant1!);
+                return transcriptParamsVariant1(__value0);
             }
-            else if (IsOptional && optional != null)
+            else if (Optional is { } __value1 && optional != null)
             {
-                return optional(Optional!);
+                return optional(__value1);
             }
 
             return default(TResult);
@@ -206,13 +206,13 @@ namespace G
                 Validate();
             }
 
-            if (IsTranscriptParamsVariant1)
+            if (TranscriptParamsVariant1 is { } __value0)
             {
-                transcriptParamsVariant1?.Invoke(TranscriptParamsVariant1!);
+                transcriptParamsVariant1?.Invoke(__value0);
             }
-            else if (IsOptional)
+            else if (Optional is { } __value1)
             {
-                optional?.Invoke(Optional!);
+                optional?.Invoke(__value1);
             }
         }
 
@@ -229,13 +229,13 @@ namespace G
                 Validate();
             }
 
-            if (IsTranscriptParamsVariant1)
+            if (TranscriptParamsVariant1 is { } __value0)
             {
-                transcriptParamsVariant1?.Invoke(TranscriptParamsVariant1!);
+                transcriptParamsVariant1?.Invoke(__value0);
             }
-            else if (IsOptional)
+            else if (Optional is { } __value1)
             {
-                optional?.Invoke(Optional!);
+                optional?.Invoke(__value1);
             }
         }
 

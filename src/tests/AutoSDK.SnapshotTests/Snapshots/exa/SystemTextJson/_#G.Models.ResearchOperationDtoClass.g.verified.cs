@@ -1,4 +1,4 @@
-﻿//HintName: G.Models.ResearchOperationDtoClass.g.cs
+//HintName: G.Models.ResearchOperationDtoClass.g.cs
 #pragma warning disable CS0618 // Type or member is obsolete
 
 #nullable enable
@@ -48,8 +48,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.ResearchOperationDtoClassVariant1 PickThink() => IsThink
-            ? Think!
+        public global::G.ResearchOperationDtoClassVariant1 PickThink() => Think is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Think' but the value was {ToString()}.");
 
         /// <summary>
@@ -85,8 +85,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.ResearchOperationDtoClassVariant2 PickSearch() => IsSearch
-            ? Search!
+        public global::G.ResearchOperationDtoClassVariant2 PickSearch() => Search is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Search' but the value was {ToString()}.");
 
         /// <summary>
@@ -122,8 +122,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.ResearchOperationDtoClassVariant3 PickCrawl() => IsCrawl
-            ? Crawl!
+        public global::G.ResearchOperationDtoClassVariant3 PickCrawl() => Crawl is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Crawl' but the value was {ToString()}.");
         /// <summary>
         /// 
@@ -251,17 +251,17 @@ namespace G
                 Validate();
             }
 
-            if (IsThink && think != null)
+            if (Think is { } __value0 && think != null)
             {
-                return think(Think!);
+                return think(__value0);
             }
-            else if (IsSearch && search != null)
+            else if (Search is { } __value1 && search != null)
             {
-                return search(Search!);
+                return search(__value1);
             }
-            else if (IsCrawl && crawl != null)
+            else if (Crawl is { } __value2 && crawl != null)
             {
-                return crawl(Crawl!);
+                return crawl(__value2);
             }
 
             return default(TResult);
@@ -283,17 +283,17 @@ namespace G
                 Validate();
             }
 
-            if (IsThink)
+            if (Think is { } __value0)
             {
-                think?.Invoke(Think!);
+                think?.Invoke(__value0);
             }
-            else if (IsSearch)
+            else if (Search is { } __value1)
             {
-                search?.Invoke(Search!);
+                search?.Invoke(__value1);
             }
-            else if (IsCrawl)
+            else if (Crawl is { } __value2)
             {
-                crawl?.Invoke(Crawl!);
+                crawl?.Invoke(__value2);
             }
         }
 
@@ -311,17 +311,17 @@ namespace G
                 Validate();
             }
 
-            if (IsThink)
+            if (Think is { } __value0)
             {
-                think?.Invoke(Think!);
+                think?.Invoke(__value0);
             }
-            else if (IsSearch)
+            else if (Search is { } __value1)
             {
-                search?.Invoke(Search!);
+                search?.Invoke(__value1);
             }
-            else if (IsCrawl)
+            else if (Crawl is { } __value2)
             {
-                crawl?.Invoke(Crawl!);
+                crawl?.Invoke(__value2);
             }
         }
 

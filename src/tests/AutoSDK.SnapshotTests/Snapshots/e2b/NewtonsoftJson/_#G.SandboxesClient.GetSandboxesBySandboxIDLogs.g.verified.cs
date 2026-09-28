@@ -1,4 +1,4 @@
-﻿//HintName: G.SandboxesClient.GetSandboxesBySandboxIDLogs.g.cs
+//HintName: G.SandboxesClient.GetSandboxesBySandboxIDLogs.g.cs
 
 #nullable enable
 
@@ -196,7 +196,7 @@ namespace G
                 PrepareGetSandboxesBySandboxIDLogsRequest(
                     httpClient: HttpClient,
                     httpRequestMessage: __httpRequest,
-                    sandboxID: sandboxID!,
+                    sandboxID: sandboxID,
                     start: start,
                     limit: limit);
 
@@ -222,7 +222,7 @@ namespace G
                                 pathTemplate: "$\"/sandboxes/{sandboxID}/logs\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: null,
                                 exception: null,
                                 clientOptions: Options,
@@ -256,7 +256,7 @@ namespace G
                                 pathTemplate: "$\"/sandboxes/{sandboxID}/logs\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: null,
                                 exception: __exception,
                                 clientOptions: Options,
@@ -297,7 +297,7 @@ namespace G
                                 pathTemplate: "$\"/sandboxes/{sandboxID}/logs\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: __response,
                                 exception: null,
                                 clientOptions: Options,
@@ -345,7 +345,7 @@ namespace G
                                 pathTemplate: "$\"/sandboxes/{sandboxID}/logs\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: __response,
                                 exception: null,
                                 clientOptions: Options,
@@ -367,7 +367,7 @@ namespace G
                                 pathTemplate: "$\"/sandboxes/{sandboxID}/logs\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: __response,
                                 exception: null,
                                 clientOptions: Options,

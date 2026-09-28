@@ -1,4 +1,4 @@
-﻿//HintName: G.Models.UsageDetails.g.cs
+//HintName: G.Models.UsageDetails.g.cs
 #pragma warning disable CS0618 // Type or member is obsolete
 
 #nullable enable
@@ -43,8 +43,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.Dictionary<string, int> PickUsageDetailsVariant1() => IsUsageDetailsVariant1
-            ? UsageDetailsVariant1!
+        public global::System.Collections.Generic.Dictionary<string, int> PickUsageDetailsVariant1() => UsageDetailsVariant1 is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'UsageDetailsVariant1' but the value was {ToString()}.");
 
         /// <summary>
@@ -80,8 +80,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.OpenAICompletionUsageSchema PickOpenAICompletionUsageSchema() => IsOpenAICompletionUsageSchema
-            ? OpenAICompletionUsageSchema!
+        public global::G.OpenAICompletionUsageSchema PickOpenAICompletionUsageSchema() => OpenAICompletionUsageSchema is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'OpenAICompletionUsageSchema' but the value was {ToString()}.");
 
         /// <summary>
@@ -117,8 +117,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.OpenAIResponseUsageSchema PickOpenAIResponseUsageSchema() => IsOpenAIResponseUsageSchema
-            ? OpenAIResponseUsageSchema!
+        public global::G.OpenAIResponseUsageSchema PickOpenAIResponseUsageSchema() => OpenAIResponseUsageSchema is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'OpenAIResponseUsageSchema' but the value was {ToString()}.");
         /// <summary>
         /// 
@@ -243,17 +243,17 @@ namespace G
                 Validate();
             }
 
-            if (IsUsageDetailsVariant1 && usageDetailsVariant1 != null)
+            if (UsageDetailsVariant1 is { } __value0 && usageDetailsVariant1 != null)
             {
-                return usageDetailsVariant1(UsageDetailsVariant1!);
+                return usageDetailsVariant1(__value0);
             }
-            else if (IsOpenAICompletionUsageSchema && openAICompletionUsageSchema != null)
+            else if (OpenAICompletionUsageSchema is { } __value1 && openAICompletionUsageSchema != null)
             {
-                return openAICompletionUsageSchema(OpenAICompletionUsageSchema!);
+                return openAICompletionUsageSchema(__value1);
             }
-            else if (IsOpenAIResponseUsageSchema && openAIResponseUsageSchema != null)
+            else if (OpenAIResponseUsageSchema is { } __value2 && openAIResponseUsageSchema != null)
             {
-                return openAIResponseUsageSchema(OpenAIResponseUsageSchema!);
+                return openAIResponseUsageSchema(__value2);
             }
 
             return default(TResult);
@@ -275,17 +275,17 @@ namespace G
                 Validate();
             }
 
-            if (IsUsageDetailsVariant1)
+            if (UsageDetailsVariant1 is { } __value0)
             {
-                usageDetailsVariant1?.Invoke(UsageDetailsVariant1!);
+                usageDetailsVariant1?.Invoke(__value0);
             }
-            else if (IsOpenAICompletionUsageSchema)
+            else if (OpenAICompletionUsageSchema is { } __value1)
             {
-                openAICompletionUsageSchema?.Invoke(OpenAICompletionUsageSchema!);
+                openAICompletionUsageSchema?.Invoke(__value1);
             }
-            else if (IsOpenAIResponseUsageSchema)
+            else if (OpenAIResponseUsageSchema is { } __value2)
             {
-                openAIResponseUsageSchema?.Invoke(OpenAIResponseUsageSchema!);
+                openAIResponseUsageSchema?.Invoke(__value2);
             }
         }
 
@@ -303,17 +303,17 @@ namespace G
                 Validate();
             }
 
-            if (IsUsageDetailsVariant1)
+            if (UsageDetailsVariant1 is { } __value0)
             {
-                usageDetailsVariant1?.Invoke(UsageDetailsVariant1!);
+                usageDetailsVariant1?.Invoke(__value0);
             }
-            else if (IsOpenAICompletionUsageSchema)
+            else if (OpenAICompletionUsageSchema is { } __value1)
             {
-                openAICompletionUsageSchema?.Invoke(OpenAICompletionUsageSchema!);
+                openAICompletionUsageSchema?.Invoke(__value1);
             }
-            else if (IsOpenAIResponseUsageSchema)
+            else if (OpenAIResponseUsageSchema is { } __value2)
             {
-                openAIResponseUsageSchema?.Invoke(OpenAIResponseUsageSchema!);
+                openAIResponseUsageSchema?.Invoke(__value2);
             }
         }
 

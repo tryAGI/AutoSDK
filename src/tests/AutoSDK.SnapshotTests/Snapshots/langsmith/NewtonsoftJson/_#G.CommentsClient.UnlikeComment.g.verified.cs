@@ -1,4 +1,4 @@
-﻿//HintName: G.CommentsClient.UnlikeComment.g.cs
+//HintName: G.CommentsClient.UnlikeComment.g.cs
 
 #nullable enable
 
@@ -194,9 +194,9 @@ namespace G
                 PrepareUnlikeCommentRequest(
                     httpClient: HttpClient,
                     httpRequestMessage: __httpRequest,
-                    owner: owner!,
-                    repo: repo!,
-                    parentCommentId: parentCommentId!);
+                    owner: owner,
+                    repo: repo,
+                    parentCommentId: parentCommentId);
 
                 global::G.AutoSDKHttpRequestOptions.StampAuthorizationOverride(__httpRequest);
 
@@ -220,7 +220,7 @@ namespace G
                                 pathTemplate: "$\"/api/v1/comments/{owner}/{repo}/{parentCommentId}/like\"",
                                 httpMethod: "DELETE",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: null,
                                 exception: null,
                                 clientOptions: Options,
@@ -254,7 +254,7 @@ namespace G
                                 pathTemplate: "$\"/api/v1/comments/{owner}/{repo}/{parentCommentId}/like\"",
                                 httpMethod: "DELETE",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: null,
                                 exception: __exception,
                                 clientOptions: Options,
@@ -295,7 +295,7 @@ namespace G
                                 pathTemplate: "$\"/api/v1/comments/{owner}/{repo}/{parentCommentId}/like\"",
                                 httpMethod: "DELETE",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: __response,
                                 exception: null,
                                 clientOptions: Options,
@@ -343,7 +343,7 @@ namespace G
                                 pathTemplate: "$\"/api/v1/comments/{owner}/{repo}/{parentCommentId}/like\"",
                                 httpMethod: "DELETE",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: __response,
                                 exception: null,
                                 clientOptions: Options,
@@ -365,7 +365,7 @@ namespace G
                                 pathTemplate: "$\"/api/v1/comments/{owner}/{repo}/{parentCommentId}/like\"",
                                 httpMethod: "DELETE",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: __response,
                                 exception: null,
                                 clientOptions: Options,

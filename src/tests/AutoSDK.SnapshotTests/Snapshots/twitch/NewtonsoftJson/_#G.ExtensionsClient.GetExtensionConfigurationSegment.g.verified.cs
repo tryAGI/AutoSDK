@@ -1,4 +1,4 @@
-﻿//HintName: G.ExtensionsClient.GetExtensionConfigurationSegment.g.cs
+//HintName: G.ExtensionsClient.GetExtensionConfigurationSegment.g.cs
 
 #nullable enable
 
@@ -183,8 +183,8 @@ namespace G
                     httpClient: HttpClient,
                     httpRequestMessage: __httpRequest,
                     broadcasterId: broadcasterId,
-                    extensionId: extensionId!,
-                    segment: segment!);
+                    extensionId: extensionId,
+                    segment: segment);
 
                 global::G.AutoSDKHttpRequestOptions.StampAuthorizationOverride(__httpRequest);
 
@@ -208,7 +208,7 @@ namespace G
                                 pathTemplate: "\"/extensions/configurations\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: null,
                                 exception: null,
                                 clientOptions: Options,
@@ -245,7 +245,7 @@ namespace G
                                 pathTemplate: "\"/extensions/configurations\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: null,
                                 exception: __exception,
                                 clientOptions: Options,
@@ -286,7 +286,7 @@ namespace G
                                 pathTemplate: "\"/extensions/configurations\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: __response,
                                 exception: null,
                                 clientOptions: Options,
@@ -334,7 +334,7 @@ namespace G
                                 pathTemplate: "\"/extensions/configurations\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: __response,
                                 exception: null,
                                 clientOptions: Options,
@@ -356,7 +356,7 @@ namespace G
                                 pathTemplate: "\"/extensions/configurations\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: __response,
                                 exception: null,
                                 clientOptions: Options,

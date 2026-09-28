@@ -1,4 +1,4 @@
-﻿//HintName: G.JsonConverters.FeedbackStrategy.g.cs
+//HintName: G.JsonConverters.FeedbackStrategy.g.cs
 #nullable enable
 #pragma warning disable CS0618 // Type or member is obsolete
 
@@ -101,7 +101,7 @@ namespace G.JsonConverters
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.NaiveFeedbackStrategy), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.NaiveFeedbackStrategy?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.NaiveFeedbackStrategy).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Naive!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickNaive(), typeInfo);
             }
         }
     }

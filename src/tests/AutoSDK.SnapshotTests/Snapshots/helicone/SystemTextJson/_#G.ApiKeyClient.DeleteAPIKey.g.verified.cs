@@ -1,4 +1,4 @@
-﻿//HintName: G.ApiKeyClient.DeleteAPIKey.g.cs
+//HintName: G.ApiKeyClient.DeleteAPIKey.g.cs
 
 #nullable enable
 
@@ -161,7 +161,7 @@ namespace G
                 PrepareDeleteAPIKeyRequest(
                     httpClient: HttpClient,
                     httpRequestMessage: __httpRequest,
-                    apiKeyId: apiKeyId!);
+                    apiKeyId: apiKeyId);
 
                 global::G.AutoSDKHttpRequestOptions.StampAuthorizationOverride(__httpRequest);
 
@@ -185,7 +185,7 @@ namespace G
                                 pathTemplate: "$\"/v1/api-keys/{apiKeyId}\"",
                                 httpMethod: "DELETE",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: null,
                                 exception: null,
                                 clientOptions: Options,
@@ -219,7 +219,7 @@ namespace G
                                 pathTemplate: "$\"/v1/api-keys/{apiKeyId}\"",
                                 httpMethod: "DELETE",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: null,
                                 exception: __exception,
                                 clientOptions: Options,
@@ -260,7 +260,7 @@ namespace G
                                 pathTemplate: "$\"/v1/api-keys/{apiKeyId}\"",
                                 httpMethod: "DELETE",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: __response,
                                 exception: null,
                                 clientOptions: Options,
@@ -308,7 +308,7 @@ namespace G
                                 pathTemplate: "$\"/v1/api-keys/{apiKeyId}\"",
                                 httpMethod: "DELETE",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: __response,
                                 exception: null,
                                 clientOptions: Options,
@@ -330,7 +330,7 @@ namespace G
                                 pathTemplate: "$\"/v1/api-keys/{apiKeyId}\"",
                                 httpMethod: "DELETE",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: __response,
                                 exception: null,
                                 clientOptions: Options,

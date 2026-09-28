@@ -1,4 +1,4 @@
-﻿//HintName: G.JsonConverters.StreamAnalyzeResponse.g.cs
+//HintName: G.JsonConverters.StreamAnalyzeResponse.g.cs
 #nullable enable
 #pragma warning disable CS0618 // Type or member is obsolete
 
@@ -181,19 +181,19 @@ namespace G.JsonConverters
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.StreamStartResponse), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.StreamStartResponse?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.StreamStartResponse).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.StreamStartResponse!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickStreamStartResponse(), typeInfo);
             }
             else if (value.IsStreamTextResponse)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.StreamTextResponse), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.StreamTextResponse?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.StreamTextResponse).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.StreamTextResponse!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickStreamTextResponse(), typeInfo);
             }
             else if (value.IsStreamEndResponse)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.StreamEndResponse), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.StreamEndResponse?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.StreamEndResponse).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.StreamEndResponse!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickStreamEndResponse(), typeInfo);
             }
         }
     }

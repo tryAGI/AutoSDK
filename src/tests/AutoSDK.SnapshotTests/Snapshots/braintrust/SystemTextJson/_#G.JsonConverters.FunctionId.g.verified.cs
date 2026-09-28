@@ -1,4 +1,4 @@
-﻿//HintName: G.JsonConverters.FunctionId.g.cs
+//HintName: G.JsonConverters.FunctionId.g.cs
 #nullable enable
 #pragma warning disable CS0618 // Type or member is obsolete
 
@@ -355,43 +355,43 @@ namespace G.JsonConverters
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.FunctionIdFunctionId1), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.FunctionIdFunctionId1?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.FunctionIdFunctionId1).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Id1!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickId1(), typeInfo);
             }
             else if (value.IsProjectSlug)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.FunctionIdProjectSlug), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.FunctionIdProjectSlug?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.FunctionIdProjectSlug).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.ProjectSlug!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickProjectSlug(), typeInfo);
             }
             else if (value.IsGlobalFunction)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.FunctionIdGlobalFunction), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.FunctionIdGlobalFunction?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.FunctionIdGlobalFunction).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.GlobalFunction!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickGlobalFunction(), typeInfo);
             }
             else if (value.IsPromptSessionId)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.FunctionIdPromptSessionId), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.FunctionIdPromptSessionId?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.FunctionIdPromptSessionId).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PromptSessionId!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickPromptSessionId(), typeInfo);
             }
             else if (value.IsInlineCode)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.FunctionIdInlineCode), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.FunctionIdInlineCode?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.FunctionIdInlineCode).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.InlineCode!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickInlineCode(), typeInfo);
             }
             else if (value.IsInlineFunction)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.FunctionIdInlineFunction), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.FunctionIdInlineFunction?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.FunctionIdInlineFunction).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.InlineFunction!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickInlineFunction(), typeInfo);
             }
             else if (value.IsInlinePrompt)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.FunctionIdInlinePrompt), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.FunctionIdInlinePrompt?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.FunctionIdInlinePrompt).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.InlinePrompt!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickInlinePrompt(), typeInfo);
             }
         }
     }

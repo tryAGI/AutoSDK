@@ -1,4 +1,4 @@
-﻿//HintName: G.Models.ResponseOutputItem.g.cs
+//HintName: G.Models.ResponseOutputItem.g.cs
 #pragma warning disable CS0618 // Type or member is obsolete
 
 #nullable enable
@@ -48,8 +48,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.ResponseOutputMessage PickMessage() => IsMessage
-            ? Message!
+        public global::G.ResponseOutputMessage PickMessage() => Message is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Message' but the value was {ToString()}.");
 
         /// <summary>
@@ -85,8 +85,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.ResponseOutputFunctionCall PickFunctionCall() => IsFunctionCall
-            ? FunctionCall!
+        public global::G.ResponseOutputFunctionCall PickFunctionCall() => FunctionCall is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'FunctionCall' but the value was {ToString()}.");
 
         /// <summary>
@@ -122,8 +122,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.ResponseOutputReasoning PickReasoning() => IsReasoning
-            ? Reasoning!
+        public global::G.ResponseOutputReasoning PickReasoning() => Reasoning is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Reasoning' but the value was {ToString()}.");
         /// <summary>
         /// 
@@ -251,17 +251,17 @@ namespace G
                 Validate();
             }
 
-            if (IsMessage && message != null)
+            if (Message is { } __value0 && message != null)
             {
-                return message(Message!);
+                return message(__value0);
             }
-            else if (IsFunctionCall && functionCall != null)
+            else if (FunctionCall is { } __value1 && functionCall != null)
             {
-                return functionCall(FunctionCall!);
+                return functionCall(__value1);
             }
-            else if (IsReasoning && reasoning != null)
+            else if (Reasoning is { } __value2 && reasoning != null)
             {
-                return reasoning(Reasoning!);
+                return reasoning(__value2);
             }
 
             return default(TResult);
@@ -283,17 +283,17 @@ namespace G
                 Validate();
             }
 
-            if (IsMessage)
+            if (Message is { } __value0)
             {
-                message?.Invoke(Message!);
+                message?.Invoke(__value0);
             }
-            else if (IsFunctionCall)
+            else if (FunctionCall is { } __value1)
             {
-                functionCall?.Invoke(FunctionCall!);
+                functionCall?.Invoke(__value1);
             }
-            else if (IsReasoning)
+            else if (Reasoning is { } __value2)
             {
-                reasoning?.Invoke(Reasoning!);
+                reasoning?.Invoke(__value2);
             }
         }
 
@@ -311,17 +311,17 @@ namespace G
                 Validate();
             }
 
-            if (IsMessage)
+            if (Message is { } __value0)
             {
-                message?.Invoke(Message!);
+                message?.Invoke(__value0);
             }
-            else if (IsFunctionCall)
+            else if (FunctionCall is { } __value1)
             {
-                functionCall?.Invoke(FunctionCall!);
+                functionCall?.Invoke(__value1);
             }
-            else if (IsReasoning)
+            else if (Reasoning is { } __value2)
             {
-                reasoning?.Invoke(Reasoning!);
+                reasoning?.Invoke(__value2);
             }
         }
 

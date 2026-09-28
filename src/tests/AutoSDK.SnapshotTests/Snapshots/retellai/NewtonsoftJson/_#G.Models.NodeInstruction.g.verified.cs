@@ -1,4 +1,4 @@
-﻿//HintName: G.Models.NodeInstruction.g.cs
+//HintName: G.Models.NodeInstruction.g.cs
 #pragma warning disable CS0618 // Type or member is obsolete
 
 #nullable enable
@@ -43,8 +43,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.NodeInstructionPrompt PickPrompt() => IsPrompt
-            ? Prompt!
+        public global::G.NodeInstructionPrompt PickPrompt() => Prompt is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Prompt' but the value was {ToString()}.");
 
         /// <summary>
@@ -80,8 +80,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.NodeInstructionStaticText PickStaticText() => IsStaticText
-            ? StaticText!
+        public global::G.NodeInstructionStaticText PickStaticText() => StaticText is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'StaticText' but the value was {ToString()}.");
         /// <summary>
         /// 
@@ -178,13 +178,13 @@ namespace G
                 Validate();
             }
 
-            if (IsPrompt && prompt != null)
+            if (Prompt is { } __value0 && prompt != null)
             {
-                return prompt(Prompt!);
+                return prompt(__value0);
             }
-            else if (IsStaticText && staticText != null)
+            else if (StaticText is { } __value1 && staticText != null)
             {
-                return staticText(StaticText!);
+                return staticText(__value1);
             }
 
             return default(TResult);
@@ -204,13 +204,13 @@ namespace G
                 Validate();
             }
 
-            if (IsPrompt)
+            if (Prompt is { } __value0)
             {
-                prompt?.Invoke(Prompt!);
+                prompt?.Invoke(__value0);
             }
-            else if (IsStaticText)
+            else if (StaticText is { } __value1)
             {
-                staticText?.Invoke(StaticText!);
+                staticText?.Invoke(__value1);
             }
         }
 
@@ -227,13 +227,13 @@ namespace G
                 Validate();
             }
 
-            if (IsPrompt)
+            if (Prompt is { } __value0)
             {
-                prompt?.Invoke(Prompt!);
+                prompt?.Invoke(__value0);
             }
-            else if (IsStaticText)
+            else if (StaticText is { } __value1)
             {
-                staticText?.Invoke(StaticText!);
+                staticText?.Invoke(__value1);
             }
         }
 

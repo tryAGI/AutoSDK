@@ -1,4 +1,4 @@
-﻿//HintName: G.ReportsClient.DeleteReportsByName.g.cs
+//HintName: G.ReportsClient.DeleteReportsByName.g.cs
 
 #nullable enable
 
@@ -103,7 +103,7 @@ namespace G
                 PrepareDeleteReportsByNameRequest(
                     httpClient: HttpClient,
                     httpRequestMessage: __httpRequest,
-                    reportName: reportName!);
+                    reportName: reportName);
 
                 return __httpRequest;
             }
@@ -125,7 +125,7 @@ namespace G
                                 pathTemplate: "$\"/reports/name/{reportName}\"",
                                 httpMethod: "DELETE",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: null,
                                 exception: null,
                                 clientOptions: Options,
@@ -159,7 +159,7 @@ namespace G
                                 pathTemplate: "$\"/reports/name/{reportName}\"",
                                 httpMethod: "DELETE",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: null,
                                 exception: __exception,
                                 clientOptions: Options,
@@ -200,7 +200,7 @@ namespace G
                                 pathTemplate: "$\"/reports/name/{reportName}\"",
                                 httpMethod: "DELETE",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: __response,
                                 exception: null,
                                 clientOptions: Options,
@@ -248,7 +248,7 @@ namespace G
                                 pathTemplate: "$\"/reports/name/{reportName}\"",
                                 httpMethod: "DELETE",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: __response,
                                 exception: null,
                                 clientOptions: Options,
@@ -270,7 +270,7 @@ namespace G
                                 pathTemplate: "$\"/reports/name/{reportName}\"",
                                 httpMethod: "DELETE",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: __response,
                                 exception: null,
                                 clientOptions: Options,

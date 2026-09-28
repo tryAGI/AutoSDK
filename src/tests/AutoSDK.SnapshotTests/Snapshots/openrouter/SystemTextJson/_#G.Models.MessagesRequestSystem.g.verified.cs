@@ -1,4 +1,4 @@
-﻿//HintName: G.Models.MessagesRequestSystem.g.cs
+//HintName: G.Models.MessagesRequestSystem.g.cs
 #pragma warning disable CS0618 // Type or member is obsolete
 
 #nullable enable
@@ -43,8 +43,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public string PickMessagesRequestSystemVariant1() => IsMessagesRequestSystemVariant1
-            ? MessagesRequestSystemVariant1!
+        public string PickMessagesRequestSystemVariant1() => MessagesRequestSystemVariant1 is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'MessagesRequestSystemVariant1' but the value was {ToString()}.");
 
         /// <summary>
@@ -80,8 +80,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::G.MessagesRequestSystemOneOf1Items> PickMessagesRequestSystem1() => IsMessagesRequestSystem1
-            ? MessagesRequestSystem1!
+        public global::System.Collections.Generic.IList<global::G.MessagesRequestSystemOneOf1Items> PickMessagesRequestSystem1() => MessagesRequestSystem1 is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'MessagesRequestSystem1' but the value was {ToString()}.");
         /// <summary>
         /// 
@@ -155,13 +155,13 @@ namespace G
                 Validate();
             }
 
-            if (IsMessagesRequestSystemVariant1 && messagesRequestSystemVariant1 != null)
+            if (MessagesRequestSystemVariant1 is { } __value0 && messagesRequestSystemVariant1 != null)
             {
-                return messagesRequestSystemVariant1(MessagesRequestSystemVariant1!);
+                return messagesRequestSystemVariant1(__value0);
             }
-            else if (IsMessagesRequestSystem1 && messagesRequestSystem1 != null)
+            else if (MessagesRequestSystem1 is { } __value1 && messagesRequestSystem1 != null)
             {
-                return messagesRequestSystem1(MessagesRequestSystem1!);
+                return messagesRequestSystem1(__value1);
             }
 
             return default(TResult);
@@ -181,13 +181,13 @@ namespace G
                 Validate();
             }
 
-            if (IsMessagesRequestSystemVariant1)
+            if (MessagesRequestSystemVariant1 is { } __value0)
             {
-                messagesRequestSystemVariant1?.Invoke(MessagesRequestSystemVariant1!);
+                messagesRequestSystemVariant1?.Invoke(__value0);
             }
-            else if (IsMessagesRequestSystem1)
+            else if (MessagesRequestSystem1 is { } __value1)
             {
-                messagesRequestSystem1?.Invoke(MessagesRequestSystem1!);
+                messagesRequestSystem1?.Invoke(__value1);
             }
         }
 
@@ -204,13 +204,13 @@ namespace G
                 Validate();
             }
 
-            if (IsMessagesRequestSystemVariant1)
+            if (MessagesRequestSystemVariant1 is { } __value0)
             {
-                messagesRequestSystemVariant1?.Invoke(MessagesRequestSystemVariant1!);
+                messagesRequestSystemVariant1?.Invoke(__value0);
             }
-            else if (IsMessagesRequestSystem1)
+            else if (MessagesRequestSystem1 is { } __value1)
             {
-                messagesRequestSystem1?.Invoke(MessagesRequestSystem1!);
+                messagesRequestSystem1?.Invoke(__value1);
             }
         }
 

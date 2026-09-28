@@ -1,4 +1,4 @@
-﻿//HintName: G.Models.PullRequestWebhook.g.cs
+//HintName: G.Models.PullRequestWebhook.g.cs
 #pragma warning disable CS0618 // Type or member is obsolete
 
 #nullable enable
@@ -43,8 +43,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.PullRequest PickPullRequest() => IsPullRequest
-            ? PullRequest!
+        public global::G.PullRequest PickPullRequest() => PullRequest is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'PullRequest' but the value was {ToString()}.");
 
         /// <summary>
@@ -80,8 +80,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.PullRequestWebhookVariant2 PickPullRequestWebhookVariant2() => IsPullRequestWebhookVariant2
-            ? PullRequestWebhookVariant2!
+        public global::G.PullRequestWebhookVariant2 PickPullRequestWebhookVariant2() => PullRequestWebhookVariant2 is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'PullRequestWebhookVariant2' but the value was {ToString()}.");
         /// <summary>
         /// 
@@ -178,13 +178,13 @@ namespace G
                 Validate();
             }
 
-            if (IsPullRequest && pullRequest != null)
+            if (PullRequest is { } __value0 && pullRequest != null)
             {
-                return pullRequest(PullRequest!);
+                return pullRequest(__value0);
             }
-            else if (IsPullRequestWebhookVariant2 && pullRequestWebhookVariant2 != null)
+            else if (PullRequestWebhookVariant2 is { } __value1 && pullRequestWebhookVariant2 != null)
             {
-                return pullRequestWebhookVariant2(PullRequestWebhookVariant2!);
+                return pullRequestWebhookVariant2(__value1);
             }
 
             return default(TResult);
@@ -204,13 +204,13 @@ namespace G
                 Validate();
             }
 
-            if (IsPullRequest)
+            if (PullRequest is { } __value0)
             {
-                pullRequest?.Invoke(PullRequest!);
+                pullRequest?.Invoke(__value0);
             }
-            else if (IsPullRequestWebhookVariant2)
+            else if (PullRequestWebhookVariant2 is { } __value1)
             {
-                pullRequestWebhookVariant2?.Invoke(PullRequestWebhookVariant2!);
+                pullRequestWebhookVariant2?.Invoke(__value1);
             }
         }
 
@@ -227,13 +227,13 @@ namespace G
                 Validate();
             }
 
-            if (IsPullRequest)
+            if (PullRequest is { } __value0)
             {
-                pullRequest?.Invoke(PullRequest!);
+                pullRequest?.Invoke(__value0);
             }
-            else if (IsPullRequestWebhookVariant2)
+            else if (PullRequestWebhookVariant2 is { } __value1)
             {
-                pullRequestWebhookVariant2?.Invoke(PullRequestWebhookVariant2!);
+                pullRequestWebhookVariant2?.Invoke(__value1);
             }
         }
 

@@ -1,4 +1,4 @@
-﻿//HintName: G.PageFiguresClient.GenerateFilePageFigurePresignedUrlApiV1FilesIdPageFiguresPageIndexFigureNamePresignedUrlPost.g.cs
+//HintName: G.PageFiguresClient.GenerateFilePageFigurePresignedUrlApiV1FilesIdPageFiguresPageIndexFigureNamePresignedUrlPost.g.cs
 
 #nullable enable
 
@@ -208,9 +208,9 @@ namespace G
                 PrepareGenerateFilePageFigurePresignedUrlApiV1FilesIdPageFiguresPageIndexFigureNamePresignedUrlPostRequest(
                     httpClient: HttpClient,
                     httpRequestMessage: __httpRequest,
-                    id: id!,
-                    pageIndex: pageIndex!,
-                    figureName: figureName!,
+                    id: id,
+                    pageIndex: pageIndex,
+                    figureName: figureName,
                     projectId: projectId,
                     organizationId: organizationId,
                     session: session);
@@ -237,7 +237,7 @@ namespace G
                                 pathTemplate: "$\"/api/v1/files/{id}/page-figures/{pageIndex}/{figureName}/presigned_url\"",
                                 httpMethod: "POST",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: null,
                                 exception: null,
                                 clientOptions: Options,
@@ -271,7 +271,7 @@ namespace G
                                 pathTemplate: "$\"/api/v1/files/{id}/page-figures/{pageIndex}/{figureName}/presigned_url\"",
                                 httpMethod: "POST",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: null,
                                 exception: __exception,
                                 clientOptions: Options,
@@ -312,7 +312,7 @@ namespace G
                                 pathTemplate: "$\"/api/v1/files/{id}/page-figures/{pageIndex}/{figureName}/presigned_url\"",
                                 httpMethod: "POST",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: __response,
                                 exception: null,
                                 clientOptions: Options,
@@ -360,7 +360,7 @@ namespace G
                                 pathTemplate: "$\"/api/v1/files/{id}/page-figures/{pageIndex}/{figureName}/presigned_url\"",
                                 httpMethod: "POST",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: __response,
                                 exception: null,
                                 clientOptions: Options,
@@ -382,7 +382,7 @@ namespace G
                                 pathTemplate: "$\"/api/v1/files/{id}/page-figures/{pageIndex}/{figureName}/presigned_url\"",
                                 httpMethod: "POST",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: __response,
                                 exception: null,
                                 clientOptions: Options,

@@ -1,4 +1,4 @@
-﻿//HintName: G.Models.ResponseStreamEvent.g.cs
+//HintName: G.Models.ResponseStreamEvent.g.cs
 #pragma warning disable CS0618 // Type or member is obsolete
 
 #nullable enable
@@ -48,8 +48,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.ResponseAudioDeltaEvent PickResponseAudioDelta() => IsResponseAudioDelta
-            ? ResponseAudioDelta!
+        public global::G.ResponseAudioDeltaEvent PickResponseAudioDelta() => ResponseAudioDelta is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'ResponseAudioDelta' but the value was {ToString()}.");
 
         /// <summary>
@@ -85,8 +85,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.ResponseAudioDoneEvent PickResponseAudioDone() => IsResponseAudioDone
-            ? ResponseAudioDone!
+        public global::G.ResponseAudioDoneEvent PickResponseAudioDone() => ResponseAudioDone is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'ResponseAudioDone' but the value was {ToString()}.");
 
         /// <summary>
@@ -122,8 +122,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.ResponseAudioTranscriptDeltaEvent PickResponseAudioTranscriptDelta() => IsResponseAudioTranscriptDelta
-            ? ResponseAudioTranscriptDelta!
+        public global::G.ResponseAudioTranscriptDeltaEvent PickResponseAudioTranscriptDelta() => ResponseAudioTranscriptDelta is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'ResponseAudioTranscriptDelta' but the value was {ToString()}.");
 
         /// <summary>
@@ -159,8 +159,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.ResponseAudioTranscriptDoneEvent PickResponseAudioTranscriptDone() => IsResponseAudioTranscriptDone
-            ? ResponseAudioTranscriptDone!
+        public global::G.ResponseAudioTranscriptDoneEvent PickResponseAudioTranscriptDone() => ResponseAudioTranscriptDone is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'ResponseAudioTranscriptDone' but the value was {ToString()}.");
 
         /// <summary>
@@ -196,8 +196,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.ResponseCodeInterpreterCallCodeDeltaEvent PickResponseCodeInterpreterCallCodeDelta() => IsResponseCodeInterpreterCallCodeDelta
-            ? ResponseCodeInterpreterCallCodeDelta!
+        public global::G.ResponseCodeInterpreterCallCodeDeltaEvent PickResponseCodeInterpreterCallCodeDelta() => ResponseCodeInterpreterCallCodeDelta is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'ResponseCodeInterpreterCallCodeDelta' but the value was {ToString()}.");
 
         /// <summary>
@@ -233,8 +233,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.ResponseCodeInterpreterCallCodeDoneEvent PickResponseCodeInterpreterCallCodeDone() => IsResponseCodeInterpreterCallCodeDone
-            ? ResponseCodeInterpreterCallCodeDone!
+        public global::G.ResponseCodeInterpreterCallCodeDoneEvent PickResponseCodeInterpreterCallCodeDone() => ResponseCodeInterpreterCallCodeDone is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'ResponseCodeInterpreterCallCodeDone' but the value was {ToString()}.");
 
         /// <summary>
@@ -270,8 +270,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.ResponseCodeInterpreterCallCompletedEvent PickResponseCodeInterpreterCallCompleted() => IsResponseCodeInterpreterCallCompleted
-            ? ResponseCodeInterpreterCallCompleted!
+        public global::G.ResponseCodeInterpreterCallCompletedEvent PickResponseCodeInterpreterCallCompleted() => ResponseCodeInterpreterCallCompleted is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'ResponseCodeInterpreterCallCompleted' but the value was {ToString()}.");
 
         /// <summary>
@@ -307,8 +307,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.ResponseCodeInterpreterCallInProgressEvent PickResponseCodeInterpreterCallInProgress() => IsResponseCodeInterpreterCallInProgress
-            ? ResponseCodeInterpreterCallInProgress!
+        public global::G.ResponseCodeInterpreterCallInProgressEvent PickResponseCodeInterpreterCallInProgress() => ResponseCodeInterpreterCallInProgress is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'ResponseCodeInterpreterCallInProgress' but the value was {ToString()}.");
 
         /// <summary>
@@ -344,8 +344,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.ResponseCodeInterpreterCallInterpretingEvent PickResponseCodeInterpreterCallInterpreting() => IsResponseCodeInterpreterCallInterpreting
-            ? ResponseCodeInterpreterCallInterpreting!
+        public global::G.ResponseCodeInterpreterCallInterpretingEvent PickResponseCodeInterpreterCallInterpreting() => ResponseCodeInterpreterCallInterpreting is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'ResponseCodeInterpreterCallInterpreting' but the value was {ToString()}.");
 
         /// <summary>
@@ -381,8 +381,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.ResponseCompletedEvent PickResponseCompleted() => IsResponseCompleted
-            ? ResponseCompleted!
+        public global::G.ResponseCompletedEvent PickResponseCompleted() => ResponseCompleted is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'ResponseCompleted' but the value was {ToString()}.");
 
         /// <summary>
@@ -418,8 +418,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.ResponseContentPartAddedEvent PickResponseContentPartAdded() => IsResponseContentPartAdded
-            ? ResponseContentPartAdded!
+        public global::G.ResponseContentPartAddedEvent PickResponseContentPartAdded() => ResponseContentPartAdded is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'ResponseContentPartAdded' but the value was {ToString()}.");
 
         /// <summary>
@@ -455,8 +455,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.ResponseContentPartDoneEvent PickResponseContentPartDone() => IsResponseContentPartDone
-            ? ResponseContentPartDone!
+        public global::G.ResponseContentPartDoneEvent PickResponseContentPartDone() => ResponseContentPartDone is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'ResponseContentPartDone' but the value was {ToString()}.");
 
         /// <summary>
@@ -492,8 +492,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.ResponseCreatedEvent PickResponseCreated() => IsResponseCreated
-            ? ResponseCreated!
+        public global::G.ResponseCreatedEvent PickResponseCreated() => ResponseCreated is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'ResponseCreated' but the value was {ToString()}.");
 
         /// <summary>
@@ -529,8 +529,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.ResponseErrorEvent PickError() => IsError
-            ? Error!
+        public global::G.ResponseErrorEvent PickError() => Error is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Error' but the value was {ToString()}.");
 
         /// <summary>
@@ -566,8 +566,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.ResponseFileSearchCallCompletedEvent PickResponseFileSearchCallCompleted() => IsResponseFileSearchCallCompleted
-            ? ResponseFileSearchCallCompleted!
+        public global::G.ResponseFileSearchCallCompletedEvent PickResponseFileSearchCallCompleted() => ResponseFileSearchCallCompleted is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'ResponseFileSearchCallCompleted' but the value was {ToString()}.");
 
         /// <summary>
@@ -603,8 +603,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.ResponseFileSearchCallInProgressEvent PickResponseFileSearchCallInProgress() => IsResponseFileSearchCallInProgress
-            ? ResponseFileSearchCallInProgress!
+        public global::G.ResponseFileSearchCallInProgressEvent PickResponseFileSearchCallInProgress() => ResponseFileSearchCallInProgress is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'ResponseFileSearchCallInProgress' but the value was {ToString()}.");
 
         /// <summary>
@@ -640,8 +640,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.ResponseFileSearchCallSearchingEvent PickResponseFileSearchCallSearching() => IsResponseFileSearchCallSearching
-            ? ResponseFileSearchCallSearching!
+        public global::G.ResponseFileSearchCallSearchingEvent PickResponseFileSearchCallSearching() => ResponseFileSearchCallSearching is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'ResponseFileSearchCallSearching' but the value was {ToString()}.");
 
         /// <summary>
@@ -677,8 +677,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.ResponseFunctionCallArgumentsDeltaEvent PickResponseFunctionCallArgumentsDelta() => IsResponseFunctionCallArgumentsDelta
-            ? ResponseFunctionCallArgumentsDelta!
+        public global::G.ResponseFunctionCallArgumentsDeltaEvent PickResponseFunctionCallArgumentsDelta() => ResponseFunctionCallArgumentsDelta is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'ResponseFunctionCallArgumentsDelta' but the value was {ToString()}.");
 
         /// <summary>
@@ -714,8 +714,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.ResponseFunctionCallArgumentsDoneEvent PickResponseFunctionCallArgumentsDone() => IsResponseFunctionCallArgumentsDone
-            ? ResponseFunctionCallArgumentsDone!
+        public global::G.ResponseFunctionCallArgumentsDoneEvent PickResponseFunctionCallArgumentsDone() => ResponseFunctionCallArgumentsDone is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'ResponseFunctionCallArgumentsDone' but the value was {ToString()}.");
 
         /// <summary>
@@ -751,8 +751,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.ResponseInProgressEvent PickResponseInProgress() => IsResponseInProgress
-            ? ResponseInProgress!
+        public global::G.ResponseInProgressEvent PickResponseInProgress() => ResponseInProgress is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'ResponseInProgress' but the value was {ToString()}.");
 
         /// <summary>
@@ -788,8 +788,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.ResponseFailedEvent PickResponseFailed() => IsResponseFailed
-            ? ResponseFailed!
+        public global::G.ResponseFailedEvent PickResponseFailed() => ResponseFailed is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'ResponseFailed' but the value was {ToString()}.");
 
         /// <summary>
@@ -825,8 +825,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.ResponseIncompleteEvent PickResponseIncomplete() => IsResponseIncomplete
-            ? ResponseIncomplete!
+        public global::G.ResponseIncompleteEvent PickResponseIncomplete() => ResponseIncomplete is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'ResponseIncomplete' but the value was {ToString()}.");
 
         /// <summary>
@@ -862,8 +862,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.ResponseOutputItemAddedEvent PickResponseOutputItemAdded() => IsResponseOutputItemAdded
-            ? ResponseOutputItemAdded!
+        public global::G.ResponseOutputItemAddedEvent PickResponseOutputItemAdded() => ResponseOutputItemAdded is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'ResponseOutputItemAdded' but the value was {ToString()}.");
 
         /// <summary>
@@ -899,8 +899,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.ResponseOutputItemDoneEvent PickResponseOutputItemDone() => IsResponseOutputItemDone
-            ? ResponseOutputItemDone!
+        public global::G.ResponseOutputItemDoneEvent PickResponseOutputItemDone() => ResponseOutputItemDone is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'ResponseOutputItemDone' but the value was {ToString()}.");
 
         /// <summary>
@@ -936,8 +936,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.ResponseReasoningSummaryPartAddedEvent PickResponseReasoningSummaryPartAdded() => IsResponseReasoningSummaryPartAdded
-            ? ResponseReasoningSummaryPartAdded!
+        public global::G.ResponseReasoningSummaryPartAddedEvent PickResponseReasoningSummaryPartAdded() => ResponseReasoningSummaryPartAdded is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'ResponseReasoningSummaryPartAdded' but the value was {ToString()}.");
 
         /// <summary>
@@ -973,8 +973,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.ResponseReasoningSummaryPartDoneEvent PickResponseReasoningSummaryPartDone() => IsResponseReasoningSummaryPartDone
-            ? ResponseReasoningSummaryPartDone!
+        public global::G.ResponseReasoningSummaryPartDoneEvent PickResponseReasoningSummaryPartDone() => ResponseReasoningSummaryPartDone is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'ResponseReasoningSummaryPartDone' but the value was {ToString()}.");
 
         /// <summary>
@@ -1010,8 +1010,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.ResponseReasoningSummaryTextDeltaEvent PickResponseReasoningSummaryTextDelta() => IsResponseReasoningSummaryTextDelta
-            ? ResponseReasoningSummaryTextDelta!
+        public global::G.ResponseReasoningSummaryTextDeltaEvent PickResponseReasoningSummaryTextDelta() => ResponseReasoningSummaryTextDelta is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'ResponseReasoningSummaryTextDelta' but the value was {ToString()}.");
 
         /// <summary>
@@ -1047,8 +1047,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.ResponseReasoningSummaryTextDoneEvent PickResponseReasoningSummaryTextDone() => IsResponseReasoningSummaryTextDone
-            ? ResponseReasoningSummaryTextDone!
+        public global::G.ResponseReasoningSummaryTextDoneEvent PickResponseReasoningSummaryTextDone() => ResponseReasoningSummaryTextDone is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'ResponseReasoningSummaryTextDone' but the value was {ToString()}.");
 
         /// <summary>
@@ -1084,8 +1084,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.ResponseRefusalDeltaEvent PickResponseRefusalDelta() => IsResponseRefusalDelta
-            ? ResponseRefusalDelta!
+        public global::G.ResponseRefusalDeltaEvent PickResponseRefusalDelta() => ResponseRefusalDelta is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'ResponseRefusalDelta' but the value was {ToString()}.");
 
         /// <summary>
@@ -1121,8 +1121,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.ResponseRefusalDoneEvent PickResponseRefusalDone() => IsResponseRefusalDone
-            ? ResponseRefusalDone!
+        public global::G.ResponseRefusalDoneEvent PickResponseRefusalDone() => ResponseRefusalDone is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'ResponseRefusalDone' but the value was {ToString()}.");
 
         /// <summary>
@@ -1158,8 +1158,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.ResponseTextDeltaEvent PickResponseOutputTextDelta() => IsResponseOutputTextDelta
-            ? ResponseOutputTextDelta!
+        public global::G.ResponseTextDeltaEvent PickResponseOutputTextDelta() => ResponseOutputTextDelta is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'ResponseOutputTextDelta' but the value was {ToString()}.");
 
         /// <summary>
@@ -1195,8 +1195,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.ResponseTextDoneEvent PickResponseOutputTextDone() => IsResponseOutputTextDone
-            ? ResponseOutputTextDone!
+        public global::G.ResponseTextDoneEvent PickResponseOutputTextDone() => ResponseOutputTextDone is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'ResponseOutputTextDone' but the value was {ToString()}.");
 
         /// <summary>
@@ -1232,8 +1232,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.ResponseWebSearchCallCompletedEvent PickResponseWebSearchCallCompleted() => IsResponseWebSearchCallCompleted
-            ? ResponseWebSearchCallCompleted!
+        public global::G.ResponseWebSearchCallCompletedEvent PickResponseWebSearchCallCompleted() => ResponseWebSearchCallCompleted is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'ResponseWebSearchCallCompleted' but the value was {ToString()}.");
 
         /// <summary>
@@ -1269,8 +1269,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.ResponseWebSearchCallInProgressEvent PickResponseWebSearchCallInProgress() => IsResponseWebSearchCallInProgress
-            ? ResponseWebSearchCallInProgress!
+        public global::G.ResponseWebSearchCallInProgressEvent PickResponseWebSearchCallInProgress() => ResponseWebSearchCallInProgress is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'ResponseWebSearchCallInProgress' but the value was {ToString()}.");
 
         /// <summary>
@@ -1306,8 +1306,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.ResponseWebSearchCallSearchingEvent PickResponseWebSearchCallSearching() => IsResponseWebSearchCallSearching
-            ? ResponseWebSearchCallSearching!
+        public global::G.ResponseWebSearchCallSearchingEvent PickResponseWebSearchCallSearching() => ResponseWebSearchCallSearching is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'ResponseWebSearchCallSearching' but the value was {ToString()}.");
 
         /// <summary>
@@ -1343,8 +1343,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.ResponseImageGenCallCompletedEvent PickResponseImageGenerationCallCompleted() => IsResponseImageGenerationCallCompleted
-            ? ResponseImageGenerationCallCompleted!
+        public global::G.ResponseImageGenCallCompletedEvent PickResponseImageGenerationCallCompleted() => ResponseImageGenerationCallCompleted is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'ResponseImageGenerationCallCompleted' but the value was {ToString()}.");
 
         /// <summary>
@@ -1380,8 +1380,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.ResponseImageGenCallGeneratingEvent PickResponseImageGenerationCallGenerating() => IsResponseImageGenerationCallGenerating
-            ? ResponseImageGenerationCallGenerating!
+        public global::G.ResponseImageGenCallGeneratingEvent PickResponseImageGenerationCallGenerating() => ResponseImageGenerationCallGenerating is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'ResponseImageGenerationCallGenerating' but the value was {ToString()}.");
 
         /// <summary>
@@ -1417,8 +1417,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.ResponseImageGenCallInProgressEvent PickResponseImageGenerationCallInProgress() => IsResponseImageGenerationCallInProgress
-            ? ResponseImageGenerationCallInProgress!
+        public global::G.ResponseImageGenCallInProgressEvent PickResponseImageGenerationCallInProgress() => ResponseImageGenerationCallInProgress is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'ResponseImageGenerationCallInProgress' but the value was {ToString()}.");
 
         /// <summary>
@@ -1454,8 +1454,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.ResponseImageGenCallPartialImageEvent PickResponseImageGenerationCallPartialImage() => IsResponseImageGenerationCallPartialImage
-            ? ResponseImageGenerationCallPartialImage!
+        public global::G.ResponseImageGenCallPartialImageEvent PickResponseImageGenerationCallPartialImage() => ResponseImageGenerationCallPartialImage is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'ResponseImageGenerationCallPartialImage' but the value was {ToString()}.");
 
         /// <summary>
@@ -1491,8 +1491,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.ResponseMCPCallArgumentsDeltaEvent PickResponseMcpCallArgumentsDelta() => IsResponseMcpCallArgumentsDelta
-            ? ResponseMcpCallArgumentsDelta!
+        public global::G.ResponseMCPCallArgumentsDeltaEvent PickResponseMcpCallArgumentsDelta() => ResponseMcpCallArgumentsDelta is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'ResponseMcpCallArgumentsDelta' but the value was {ToString()}.");
 
         /// <summary>
@@ -1528,8 +1528,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.ResponseMCPCallArgumentsDoneEvent PickResponseMcpCallArgumentsDone() => IsResponseMcpCallArgumentsDone
-            ? ResponseMcpCallArgumentsDone!
+        public global::G.ResponseMCPCallArgumentsDoneEvent PickResponseMcpCallArgumentsDone() => ResponseMcpCallArgumentsDone is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'ResponseMcpCallArgumentsDone' but the value was {ToString()}.");
 
         /// <summary>
@@ -1565,8 +1565,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.ResponseMCPCallCompletedEvent PickResponseMcpCallCompleted() => IsResponseMcpCallCompleted
-            ? ResponseMcpCallCompleted!
+        public global::G.ResponseMCPCallCompletedEvent PickResponseMcpCallCompleted() => ResponseMcpCallCompleted is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'ResponseMcpCallCompleted' but the value was {ToString()}.");
 
         /// <summary>
@@ -1602,8 +1602,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.ResponseMCPCallFailedEvent PickResponseMcpCallFailed() => IsResponseMcpCallFailed
-            ? ResponseMcpCallFailed!
+        public global::G.ResponseMCPCallFailedEvent PickResponseMcpCallFailed() => ResponseMcpCallFailed is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'ResponseMcpCallFailed' but the value was {ToString()}.");
 
         /// <summary>
@@ -1639,8 +1639,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.ResponseMCPCallInProgressEvent PickResponseMcpCallInProgress() => IsResponseMcpCallInProgress
-            ? ResponseMcpCallInProgress!
+        public global::G.ResponseMCPCallInProgressEvent PickResponseMcpCallInProgress() => ResponseMcpCallInProgress is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'ResponseMcpCallInProgress' but the value was {ToString()}.");
 
         /// <summary>
@@ -1676,8 +1676,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.ResponseMCPListToolsCompletedEvent PickResponseMcpListToolsCompleted() => IsResponseMcpListToolsCompleted
-            ? ResponseMcpListToolsCompleted!
+        public global::G.ResponseMCPListToolsCompletedEvent PickResponseMcpListToolsCompleted() => ResponseMcpListToolsCompleted is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'ResponseMcpListToolsCompleted' but the value was {ToString()}.");
 
         /// <summary>
@@ -1713,8 +1713,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.ResponseMCPListToolsFailedEvent PickResponseMcpListToolsFailed() => IsResponseMcpListToolsFailed
-            ? ResponseMcpListToolsFailed!
+        public global::G.ResponseMCPListToolsFailedEvent PickResponseMcpListToolsFailed() => ResponseMcpListToolsFailed is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'ResponseMcpListToolsFailed' but the value was {ToString()}.");
 
         /// <summary>
@@ -1750,8 +1750,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.ResponseMCPListToolsInProgressEvent PickResponseMcpListToolsInProgress() => IsResponseMcpListToolsInProgress
-            ? ResponseMcpListToolsInProgress!
+        public global::G.ResponseMCPListToolsInProgressEvent PickResponseMcpListToolsInProgress() => ResponseMcpListToolsInProgress is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'ResponseMcpListToolsInProgress' but the value was {ToString()}.");
 
         /// <summary>
@@ -1787,8 +1787,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.ResponseOutputTextAnnotationAddedEvent PickResponseOutputTextAnnotationAdded() => IsResponseOutputTextAnnotationAdded
-            ? ResponseOutputTextAnnotationAdded!
+        public global::G.ResponseOutputTextAnnotationAddedEvent PickResponseOutputTextAnnotationAdded() => ResponseOutputTextAnnotationAdded is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'ResponseOutputTextAnnotationAdded' but the value was {ToString()}.");
 
         /// <summary>
@@ -1824,8 +1824,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.ResponseQueuedEvent PickResponseQueued() => IsResponseQueued
-            ? ResponseQueued!
+        public global::G.ResponseQueuedEvent PickResponseQueued() => ResponseQueued is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'ResponseQueued' but the value was {ToString()}.");
 
         /// <summary>
@@ -1861,8 +1861,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.ResponseReasoningDeltaEvent PickResponseReasoningDelta() => IsResponseReasoningDelta
-            ? ResponseReasoningDelta!
+        public global::G.ResponseReasoningDeltaEvent PickResponseReasoningDelta() => ResponseReasoningDelta is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'ResponseReasoningDelta' but the value was {ToString()}.");
 
         /// <summary>
@@ -1898,8 +1898,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.ResponseReasoningDoneEvent PickResponseReasoningDone() => IsResponseReasoningDone
-            ? ResponseReasoningDone!
+        public global::G.ResponseReasoningDoneEvent PickResponseReasoningDone() => ResponseReasoningDone is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'ResponseReasoningDone' but the value was {ToString()}.");
 
         /// <summary>
@@ -1935,8 +1935,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.ResponseReasoningSummaryDeltaEvent PickResponseReasoningSummaryDelta() => IsResponseReasoningSummaryDelta
-            ? ResponseReasoningSummaryDelta!
+        public global::G.ResponseReasoningSummaryDeltaEvent PickResponseReasoningSummaryDelta() => ResponseReasoningSummaryDelta is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'ResponseReasoningSummaryDelta' but the value was {ToString()}.");
 
         /// <summary>
@@ -1972,8 +1972,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.ResponseReasoningSummaryDoneEvent PickResponseReasoningSummaryDone() => IsResponseReasoningSummaryDone
-            ? ResponseReasoningSummaryDone!
+        public global::G.ResponseReasoningSummaryDoneEvent PickResponseReasoningSummaryDone() => ResponseReasoningSummaryDone is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'ResponseReasoningSummaryDone' but the value was {ToString()}.");
         /// <summary>
         /// 
@@ -3501,217 +3501,217 @@ namespace G
                 Validate();
             }
 
-            if (IsResponseAudioDelta && responseAudioDelta != null)
+            if (ResponseAudioDelta is { } __value0 && responseAudioDelta != null)
             {
-                return responseAudioDelta(ResponseAudioDelta!);
+                return responseAudioDelta(__value0);
             }
-            else if (IsResponseAudioDone && responseAudioDone != null)
+            else if (ResponseAudioDone is { } __value1 && responseAudioDone != null)
             {
-                return responseAudioDone(ResponseAudioDone!);
+                return responseAudioDone(__value1);
             }
-            else if (IsResponseAudioTranscriptDelta && responseAudioTranscriptDelta != null)
+            else if (ResponseAudioTranscriptDelta is { } __value2 && responseAudioTranscriptDelta != null)
             {
-                return responseAudioTranscriptDelta(ResponseAudioTranscriptDelta!);
+                return responseAudioTranscriptDelta(__value2);
             }
-            else if (IsResponseAudioTranscriptDone && responseAudioTranscriptDone != null)
+            else if (ResponseAudioTranscriptDone is { } __value3 && responseAudioTranscriptDone != null)
             {
-                return responseAudioTranscriptDone(ResponseAudioTranscriptDone!);
+                return responseAudioTranscriptDone(__value3);
             }
-            else if (IsResponseCodeInterpreterCallCodeDelta && responseCodeInterpreterCallCodeDelta != null)
+            else if (ResponseCodeInterpreterCallCodeDelta is { } __value4 && responseCodeInterpreterCallCodeDelta != null)
             {
-                return responseCodeInterpreterCallCodeDelta(ResponseCodeInterpreterCallCodeDelta!);
+                return responseCodeInterpreterCallCodeDelta(__value4);
             }
-            else if (IsResponseCodeInterpreterCallCodeDone && responseCodeInterpreterCallCodeDone != null)
+            else if (ResponseCodeInterpreterCallCodeDone is { } __value5 && responseCodeInterpreterCallCodeDone != null)
             {
-                return responseCodeInterpreterCallCodeDone(ResponseCodeInterpreterCallCodeDone!);
+                return responseCodeInterpreterCallCodeDone(__value5);
             }
-            else if (IsResponseCodeInterpreterCallCompleted && responseCodeInterpreterCallCompleted != null)
+            else if (ResponseCodeInterpreterCallCompleted is { } __value6 && responseCodeInterpreterCallCompleted != null)
             {
-                return responseCodeInterpreterCallCompleted(ResponseCodeInterpreterCallCompleted!);
+                return responseCodeInterpreterCallCompleted(__value6);
             }
-            else if (IsResponseCodeInterpreterCallInProgress && responseCodeInterpreterCallInProgress != null)
+            else if (ResponseCodeInterpreterCallInProgress is { } __value7 && responseCodeInterpreterCallInProgress != null)
             {
-                return responseCodeInterpreterCallInProgress(ResponseCodeInterpreterCallInProgress!);
+                return responseCodeInterpreterCallInProgress(__value7);
             }
-            else if (IsResponseCodeInterpreterCallInterpreting && responseCodeInterpreterCallInterpreting != null)
+            else if (ResponseCodeInterpreterCallInterpreting is { } __value8 && responseCodeInterpreterCallInterpreting != null)
             {
-                return responseCodeInterpreterCallInterpreting(ResponseCodeInterpreterCallInterpreting!);
+                return responseCodeInterpreterCallInterpreting(__value8);
             }
-            else if (IsResponseCompleted && responseCompleted != null)
+            else if (ResponseCompleted is { } __value9 && responseCompleted != null)
             {
-                return responseCompleted(ResponseCompleted!);
+                return responseCompleted(__value9);
             }
-            else if (IsResponseContentPartAdded && responseContentPartAdded != null)
+            else if (ResponseContentPartAdded is { } __value10 && responseContentPartAdded != null)
             {
-                return responseContentPartAdded(ResponseContentPartAdded!);
+                return responseContentPartAdded(__value10);
             }
-            else if (IsResponseContentPartDone && responseContentPartDone != null)
+            else if (ResponseContentPartDone is { } __value11 && responseContentPartDone != null)
             {
-                return responseContentPartDone(ResponseContentPartDone!);
+                return responseContentPartDone(__value11);
             }
-            else if (IsResponseCreated && responseCreated != null)
+            else if (ResponseCreated is { } __value12 && responseCreated != null)
             {
-                return responseCreated(ResponseCreated!);
+                return responseCreated(__value12);
             }
-            else if (IsError && error != null)
+            else if (Error is { } __value13 && error != null)
             {
-                return error(Error!);
+                return error(__value13);
             }
-            else if (IsResponseFileSearchCallCompleted && responseFileSearchCallCompleted != null)
+            else if (ResponseFileSearchCallCompleted is { } __value14 && responseFileSearchCallCompleted != null)
             {
-                return responseFileSearchCallCompleted(ResponseFileSearchCallCompleted!);
+                return responseFileSearchCallCompleted(__value14);
             }
-            else if (IsResponseFileSearchCallInProgress && responseFileSearchCallInProgress != null)
+            else if (ResponseFileSearchCallInProgress is { } __value15 && responseFileSearchCallInProgress != null)
             {
-                return responseFileSearchCallInProgress(ResponseFileSearchCallInProgress!);
+                return responseFileSearchCallInProgress(__value15);
             }
-            else if (IsResponseFileSearchCallSearching && responseFileSearchCallSearching != null)
+            else if (ResponseFileSearchCallSearching is { } __value16 && responseFileSearchCallSearching != null)
             {
-                return responseFileSearchCallSearching(ResponseFileSearchCallSearching!);
+                return responseFileSearchCallSearching(__value16);
             }
-            else if (IsResponseFunctionCallArgumentsDelta && responseFunctionCallArgumentsDelta != null)
+            else if (ResponseFunctionCallArgumentsDelta is { } __value17 && responseFunctionCallArgumentsDelta != null)
             {
-                return responseFunctionCallArgumentsDelta(ResponseFunctionCallArgumentsDelta!);
+                return responseFunctionCallArgumentsDelta(__value17);
             }
-            else if (IsResponseFunctionCallArgumentsDone && responseFunctionCallArgumentsDone != null)
+            else if (ResponseFunctionCallArgumentsDone is { } __value18 && responseFunctionCallArgumentsDone != null)
             {
-                return responseFunctionCallArgumentsDone(ResponseFunctionCallArgumentsDone!);
+                return responseFunctionCallArgumentsDone(__value18);
             }
-            else if (IsResponseInProgress && responseInProgress != null)
+            else if (ResponseInProgress is { } __value19 && responseInProgress != null)
             {
-                return responseInProgress(ResponseInProgress!);
+                return responseInProgress(__value19);
             }
-            else if (IsResponseFailed && responseFailed != null)
+            else if (ResponseFailed is { } __value20 && responseFailed != null)
             {
-                return responseFailed(ResponseFailed!);
+                return responseFailed(__value20);
             }
-            else if (IsResponseIncomplete && responseIncomplete != null)
+            else if (ResponseIncomplete is { } __value21 && responseIncomplete != null)
             {
-                return responseIncomplete(ResponseIncomplete!);
+                return responseIncomplete(__value21);
             }
-            else if (IsResponseOutputItemAdded && responseOutputItemAdded != null)
+            else if (ResponseOutputItemAdded is { } __value22 && responseOutputItemAdded != null)
             {
-                return responseOutputItemAdded(ResponseOutputItemAdded!);
+                return responseOutputItemAdded(__value22);
             }
-            else if (IsResponseOutputItemDone && responseOutputItemDone != null)
+            else if (ResponseOutputItemDone is { } __value23 && responseOutputItemDone != null)
             {
-                return responseOutputItemDone(ResponseOutputItemDone!);
+                return responseOutputItemDone(__value23);
             }
-            else if (IsResponseReasoningSummaryPartAdded && responseReasoningSummaryPartAdded != null)
+            else if (ResponseReasoningSummaryPartAdded is { } __value24 && responseReasoningSummaryPartAdded != null)
             {
-                return responseReasoningSummaryPartAdded(ResponseReasoningSummaryPartAdded!);
+                return responseReasoningSummaryPartAdded(__value24);
             }
-            else if (IsResponseReasoningSummaryPartDone && responseReasoningSummaryPartDone != null)
+            else if (ResponseReasoningSummaryPartDone is { } __value25 && responseReasoningSummaryPartDone != null)
             {
-                return responseReasoningSummaryPartDone(ResponseReasoningSummaryPartDone!);
+                return responseReasoningSummaryPartDone(__value25);
             }
-            else if (IsResponseReasoningSummaryTextDelta && responseReasoningSummaryTextDelta != null)
+            else if (ResponseReasoningSummaryTextDelta is { } __value26 && responseReasoningSummaryTextDelta != null)
             {
-                return responseReasoningSummaryTextDelta(ResponseReasoningSummaryTextDelta!);
+                return responseReasoningSummaryTextDelta(__value26);
             }
-            else if (IsResponseReasoningSummaryTextDone && responseReasoningSummaryTextDone != null)
+            else if (ResponseReasoningSummaryTextDone is { } __value27 && responseReasoningSummaryTextDone != null)
             {
-                return responseReasoningSummaryTextDone(ResponseReasoningSummaryTextDone!);
+                return responseReasoningSummaryTextDone(__value27);
             }
-            else if (IsResponseRefusalDelta && responseRefusalDelta != null)
+            else if (ResponseRefusalDelta is { } __value28 && responseRefusalDelta != null)
             {
-                return responseRefusalDelta(ResponseRefusalDelta!);
+                return responseRefusalDelta(__value28);
             }
-            else if (IsResponseRefusalDone && responseRefusalDone != null)
+            else if (ResponseRefusalDone is { } __value29 && responseRefusalDone != null)
             {
-                return responseRefusalDone(ResponseRefusalDone!);
+                return responseRefusalDone(__value29);
             }
-            else if (IsResponseOutputTextDelta && responseOutputTextDelta != null)
+            else if (ResponseOutputTextDelta is { } __value30 && responseOutputTextDelta != null)
             {
-                return responseOutputTextDelta(ResponseOutputTextDelta!);
+                return responseOutputTextDelta(__value30);
             }
-            else if (IsResponseOutputTextDone && responseOutputTextDone != null)
+            else if (ResponseOutputTextDone is { } __value31 && responseOutputTextDone != null)
             {
-                return responseOutputTextDone(ResponseOutputTextDone!);
+                return responseOutputTextDone(__value31);
             }
-            else if (IsResponseWebSearchCallCompleted && responseWebSearchCallCompleted != null)
+            else if (ResponseWebSearchCallCompleted is { } __value32 && responseWebSearchCallCompleted != null)
             {
-                return responseWebSearchCallCompleted(ResponseWebSearchCallCompleted!);
+                return responseWebSearchCallCompleted(__value32);
             }
-            else if (IsResponseWebSearchCallInProgress && responseWebSearchCallInProgress != null)
+            else if (ResponseWebSearchCallInProgress is { } __value33 && responseWebSearchCallInProgress != null)
             {
-                return responseWebSearchCallInProgress(ResponseWebSearchCallInProgress!);
+                return responseWebSearchCallInProgress(__value33);
             }
-            else if (IsResponseWebSearchCallSearching && responseWebSearchCallSearching != null)
+            else if (ResponseWebSearchCallSearching is { } __value34 && responseWebSearchCallSearching != null)
             {
-                return responseWebSearchCallSearching(ResponseWebSearchCallSearching!);
+                return responseWebSearchCallSearching(__value34);
             }
-            else if (IsResponseImageGenerationCallCompleted && responseImageGenerationCallCompleted != null)
+            else if (ResponseImageGenerationCallCompleted is { } __value35 && responseImageGenerationCallCompleted != null)
             {
-                return responseImageGenerationCallCompleted(ResponseImageGenerationCallCompleted!);
+                return responseImageGenerationCallCompleted(__value35);
             }
-            else if (IsResponseImageGenerationCallGenerating && responseImageGenerationCallGenerating != null)
+            else if (ResponseImageGenerationCallGenerating is { } __value36 && responseImageGenerationCallGenerating != null)
             {
-                return responseImageGenerationCallGenerating(ResponseImageGenerationCallGenerating!);
+                return responseImageGenerationCallGenerating(__value36);
             }
-            else if (IsResponseImageGenerationCallInProgress && responseImageGenerationCallInProgress != null)
+            else if (ResponseImageGenerationCallInProgress is { } __value37 && responseImageGenerationCallInProgress != null)
             {
-                return responseImageGenerationCallInProgress(ResponseImageGenerationCallInProgress!);
+                return responseImageGenerationCallInProgress(__value37);
             }
-            else if (IsResponseImageGenerationCallPartialImage && responseImageGenerationCallPartialImage != null)
+            else if (ResponseImageGenerationCallPartialImage is { } __value38 && responseImageGenerationCallPartialImage != null)
             {
-                return responseImageGenerationCallPartialImage(ResponseImageGenerationCallPartialImage!);
+                return responseImageGenerationCallPartialImage(__value38);
             }
-            else if (IsResponseMcpCallArgumentsDelta && responseMcpCallArgumentsDelta != null)
+            else if (ResponseMcpCallArgumentsDelta is { } __value39 && responseMcpCallArgumentsDelta != null)
             {
-                return responseMcpCallArgumentsDelta(ResponseMcpCallArgumentsDelta!);
+                return responseMcpCallArgumentsDelta(__value39);
             }
-            else if (IsResponseMcpCallArgumentsDone && responseMcpCallArgumentsDone != null)
+            else if (ResponseMcpCallArgumentsDone is { } __value40 && responseMcpCallArgumentsDone != null)
             {
-                return responseMcpCallArgumentsDone(ResponseMcpCallArgumentsDone!);
+                return responseMcpCallArgumentsDone(__value40);
             }
-            else if (IsResponseMcpCallCompleted && responseMcpCallCompleted != null)
+            else if (ResponseMcpCallCompleted is { } __value41 && responseMcpCallCompleted != null)
             {
-                return responseMcpCallCompleted(ResponseMcpCallCompleted!);
+                return responseMcpCallCompleted(__value41);
             }
-            else if (IsResponseMcpCallFailed && responseMcpCallFailed != null)
+            else if (ResponseMcpCallFailed is { } __value42 && responseMcpCallFailed != null)
             {
-                return responseMcpCallFailed(ResponseMcpCallFailed!);
+                return responseMcpCallFailed(__value42);
             }
-            else if (IsResponseMcpCallInProgress && responseMcpCallInProgress != null)
+            else if (ResponseMcpCallInProgress is { } __value43 && responseMcpCallInProgress != null)
             {
-                return responseMcpCallInProgress(ResponseMcpCallInProgress!);
+                return responseMcpCallInProgress(__value43);
             }
-            else if (IsResponseMcpListToolsCompleted && responseMcpListToolsCompleted != null)
+            else if (ResponseMcpListToolsCompleted is { } __value44 && responseMcpListToolsCompleted != null)
             {
-                return responseMcpListToolsCompleted(ResponseMcpListToolsCompleted!);
+                return responseMcpListToolsCompleted(__value44);
             }
-            else if (IsResponseMcpListToolsFailed && responseMcpListToolsFailed != null)
+            else if (ResponseMcpListToolsFailed is { } __value45 && responseMcpListToolsFailed != null)
             {
-                return responseMcpListToolsFailed(ResponseMcpListToolsFailed!);
+                return responseMcpListToolsFailed(__value45);
             }
-            else if (IsResponseMcpListToolsInProgress && responseMcpListToolsInProgress != null)
+            else if (ResponseMcpListToolsInProgress is { } __value46 && responseMcpListToolsInProgress != null)
             {
-                return responseMcpListToolsInProgress(ResponseMcpListToolsInProgress!);
+                return responseMcpListToolsInProgress(__value46);
             }
-            else if (IsResponseOutputTextAnnotationAdded && responseOutputTextAnnotationAdded != null)
+            else if (ResponseOutputTextAnnotationAdded is { } __value47 && responseOutputTextAnnotationAdded != null)
             {
-                return responseOutputTextAnnotationAdded(ResponseOutputTextAnnotationAdded!);
+                return responseOutputTextAnnotationAdded(__value47);
             }
-            else if (IsResponseQueued && responseQueued != null)
+            else if (ResponseQueued is { } __value48 && responseQueued != null)
             {
-                return responseQueued(ResponseQueued!);
+                return responseQueued(__value48);
             }
-            else if (IsResponseReasoningDelta && responseReasoningDelta != null)
+            else if (ResponseReasoningDelta is { } __value49 && responseReasoningDelta != null)
             {
-                return responseReasoningDelta(ResponseReasoningDelta!);
+                return responseReasoningDelta(__value49);
             }
-            else if (IsResponseReasoningDone && responseReasoningDone != null)
+            else if (ResponseReasoningDone is { } __value50 && responseReasoningDone != null)
             {
-                return responseReasoningDone(ResponseReasoningDone!);
+                return responseReasoningDone(__value50);
             }
-            else if (IsResponseReasoningSummaryDelta && responseReasoningSummaryDelta != null)
+            else if (ResponseReasoningSummaryDelta is { } __value51 && responseReasoningSummaryDelta != null)
             {
-                return responseReasoningSummaryDelta(ResponseReasoningSummaryDelta!);
+                return responseReasoningSummaryDelta(__value51);
             }
-            else if (IsResponseReasoningSummaryDone && responseReasoningSummaryDone != null)
+            else if (ResponseReasoningSummaryDone is { } __value52 && responseReasoningSummaryDone != null)
             {
-                return responseReasoningSummaryDone(ResponseReasoningSummaryDone!);
+                return responseReasoningSummaryDone(__value52);
             }
 
             return default(TResult);
@@ -3833,217 +3833,217 @@ namespace G
                 Validate();
             }
 
-            if (IsResponseAudioDelta)
+            if (ResponseAudioDelta is { } __value0)
             {
-                responseAudioDelta?.Invoke(ResponseAudioDelta!);
+                responseAudioDelta?.Invoke(__value0);
             }
-            else if (IsResponseAudioDone)
+            else if (ResponseAudioDone is { } __value1)
             {
-                responseAudioDone?.Invoke(ResponseAudioDone!);
+                responseAudioDone?.Invoke(__value1);
             }
-            else if (IsResponseAudioTranscriptDelta)
+            else if (ResponseAudioTranscriptDelta is { } __value2)
             {
-                responseAudioTranscriptDelta?.Invoke(ResponseAudioTranscriptDelta!);
+                responseAudioTranscriptDelta?.Invoke(__value2);
             }
-            else if (IsResponseAudioTranscriptDone)
+            else if (ResponseAudioTranscriptDone is { } __value3)
             {
-                responseAudioTranscriptDone?.Invoke(ResponseAudioTranscriptDone!);
+                responseAudioTranscriptDone?.Invoke(__value3);
             }
-            else if (IsResponseCodeInterpreterCallCodeDelta)
+            else if (ResponseCodeInterpreterCallCodeDelta is { } __value4)
             {
-                responseCodeInterpreterCallCodeDelta?.Invoke(ResponseCodeInterpreterCallCodeDelta!);
+                responseCodeInterpreterCallCodeDelta?.Invoke(__value4);
             }
-            else if (IsResponseCodeInterpreterCallCodeDone)
+            else if (ResponseCodeInterpreterCallCodeDone is { } __value5)
             {
-                responseCodeInterpreterCallCodeDone?.Invoke(ResponseCodeInterpreterCallCodeDone!);
+                responseCodeInterpreterCallCodeDone?.Invoke(__value5);
             }
-            else if (IsResponseCodeInterpreterCallCompleted)
+            else if (ResponseCodeInterpreterCallCompleted is { } __value6)
             {
-                responseCodeInterpreterCallCompleted?.Invoke(ResponseCodeInterpreterCallCompleted!);
+                responseCodeInterpreterCallCompleted?.Invoke(__value6);
             }
-            else if (IsResponseCodeInterpreterCallInProgress)
+            else if (ResponseCodeInterpreterCallInProgress is { } __value7)
             {
-                responseCodeInterpreterCallInProgress?.Invoke(ResponseCodeInterpreterCallInProgress!);
+                responseCodeInterpreterCallInProgress?.Invoke(__value7);
             }
-            else if (IsResponseCodeInterpreterCallInterpreting)
+            else if (ResponseCodeInterpreterCallInterpreting is { } __value8)
             {
-                responseCodeInterpreterCallInterpreting?.Invoke(ResponseCodeInterpreterCallInterpreting!);
+                responseCodeInterpreterCallInterpreting?.Invoke(__value8);
             }
-            else if (IsResponseCompleted)
+            else if (ResponseCompleted is { } __value9)
             {
-                responseCompleted?.Invoke(ResponseCompleted!);
+                responseCompleted?.Invoke(__value9);
             }
-            else if (IsResponseContentPartAdded)
+            else if (ResponseContentPartAdded is { } __value10)
             {
-                responseContentPartAdded?.Invoke(ResponseContentPartAdded!);
+                responseContentPartAdded?.Invoke(__value10);
             }
-            else if (IsResponseContentPartDone)
+            else if (ResponseContentPartDone is { } __value11)
             {
-                responseContentPartDone?.Invoke(ResponseContentPartDone!);
+                responseContentPartDone?.Invoke(__value11);
             }
-            else if (IsResponseCreated)
+            else if (ResponseCreated is { } __value12)
             {
-                responseCreated?.Invoke(ResponseCreated!);
+                responseCreated?.Invoke(__value12);
             }
-            else if (IsError)
+            else if (Error is { } __value13)
             {
-                error?.Invoke(Error!);
+                error?.Invoke(__value13);
             }
-            else if (IsResponseFileSearchCallCompleted)
+            else if (ResponseFileSearchCallCompleted is { } __value14)
             {
-                responseFileSearchCallCompleted?.Invoke(ResponseFileSearchCallCompleted!);
+                responseFileSearchCallCompleted?.Invoke(__value14);
             }
-            else if (IsResponseFileSearchCallInProgress)
+            else if (ResponseFileSearchCallInProgress is { } __value15)
             {
-                responseFileSearchCallInProgress?.Invoke(ResponseFileSearchCallInProgress!);
+                responseFileSearchCallInProgress?.Invoke(__value15);
             }
-            else if (IsResponseFileSearchCallSearching)
+            else if (ResponseFileSearchCallSearching is { } __value16)
             {
-                responseFileSearchCallSearching?.Invoke(ResponseFileSearchCallSearching!);
+                responseFileSearchCallSearching?.Invoke(__value16);
             }
-            else if (IsResponseFunctionCallArgumentsDelta)
+            else if (ResponseFunctionCallArgumentsDelta is { } __value17)
             {
-                responseFunctionCallArgumentsDelta?.Invoke(ResponseFunctionCallArgumentsDelta!);
+                responseFunctionCallArgumentsDelta?.Invoke(__value17);
             }
-            else if (IsResponseFunctionCallArgumentsDone)
+            else if (ResponseFunctionCallArgumentsDone is { } __value18)
             {
-                responseFunctionCallArgumentsDone?.Invoke(ResponseFunctionCallArgumentsDone!);
+                responseFunctionCallArgumentsDone?.Invoke(__value18);
             }
-            else if (IsResponseInProgress)
+            else if (ResponseInProgress is { } __value19)
             {
-                responseInProgress?.Invoke(ResponseInProgress!);
+                responseInProgress?.Invoke(__value19);
             }
-            else if (IsResponseFailed)
+            else if (ResponseFailed is { } __value20)
             {
-                responseFailed?.Invoke(ResponseFailed!);
+                responseFailed?.Invoke(__value20);
             }
-            else if (IsResponseIncomplete)
+            else if (ResponseIncomplete is { } __value21)
             {
-                responseIncomplete?.Invoke(ResponseIncomplete!);
+                responseIncomplete?.Invoke(__value21);
             }
-            else if (IsResponseOutputItemAdded)
+            else if (ResponseOutputItemAdded is { } __value22)
             {
-                responseOutputItemAdded?.Invoke(ResponseOutputItemAdded!);
+                responseOutputItemAdded?.Invoke(__value22);
             }
-            else if (IsResponseOutputItemDone)
+            else if (ResponseOutputItemDone is { } __value23)
             {
-                responseOutputItemDone?.Invoke(ResponseOutputItemDone!);
+                responseOutputItemDone?.Invoke(__value23);
             }
-            else if (IsResponseReasoningSummaryPartAdded)
+            else if (ResponseReasoningSummaryPartAdded is { } __value24)
             {
-                responseReasoningSummaryPartAdded?.Invoke(ResponseReasoningSummaryPartAdded!);
+                responseReasoningSummaryPartAdded?.Invoke(__value24);
             }
-            else if (IsResponseReasoningSummaryPartDone)
+            else if (ResponseReasoningSummaryPartDone is { } __value25)
             {
-                responseReasoningSummaryPartDone?.Invoke(ResponseReasoningSummaryPartDone!);
+                responseReasoningSummaryPartDone?.Invoke(__value25);
             }
-            else if (IsResponseReasoningSummaryTextDelta)
+            else if (ResponseReasoningSummaryTextDelta is { } __value26)
             {
-                responseReasoningSummaryTextDelta?.Invoke(ResponseReasoningSummaryTextDelta!);
+                responseReasoningSummaryTextDelta?.Invoke(__value26);
             }
-            else if (IsResponseReasoningSummaryTextDone)
+            else if (ResponseReasoningSummaryTextDone is { } __value27)
             {
-                responseReasoningSummaryTextDone?.Invoke(ResponseReasoningSummaryTextDone!);
+                responseReasoningSummaryTextDone?.Invoke(__value27);
             }
-            else if (IsResponseRefusalDelta)
+            else if (ResponseRefusalDelta is { } __value28)
             {
-                responseRefusalDelta?.Invoke(ResponseRefusalDelta!);
+                responseRefusalDelta?.Invoke(__value28);
             }
-            else if (IsResponseRefusalDone)
+            else if (ResponseRefusalDone is { } __value29)
             {
-                responseRefusalDone?.Invoke(ResponseRefusalDone!);
+                responseRefusalDone?.Invoke(__value29);
             }
-            else if (IsResponseOutputTextDelta)
+            else if (ResponseOutputTextDelta is { } __value30)
             {
-                responseOutputTextDelta?.Invoke(ResponseOutputTextDelta!);
+                responseOutputTextDelta?.Invoke(__value30);
             }
-            else if (IsResponseOutputTextDone)
+            else if (ResponseOutputTextDone is { } __value31)
             {
-                responseOutputTextDone?.Invoke(ResponseOutputTextDone!);
+                responseOutputTextDone?.Invoke(__value31);
             }
-            else if (IsResponseWebSearchCallCompleted)
+            else if (ResponseWebSearchCallCompleted is { } __value32)
             {
-                responseWebSearchCallCompleted?.Invoke(ResponseWebSearchCallCompleted!);
+                responseWebSearchCallCompleted?.Invoke(__value32);
             }
-            else if (IsResponseWebSearchCallInProgress)
+            else if (ResponseWebSearchCallInProgress is { } __value33)
             {
-                responseWebSearchCallInProgress?.Invoke(ResponseWebSearchCallInProgress!);
+                responseWebSearchCallInProgress?.Invoke(__value33);
             }
-            else if (IsResponseWebSearchCallSearching)
+            else if (ResponseWebSearchCallSearching is { } __value34)
             {
-                responseWebSearchCallSearching?.Invoke(ResponseWebSearchCallSearching!);
+                responseWebSearchCallSearching?.Invoke(__value34);
             }
-            else if (IsResponseImageGenerationCallCompleted)
+            else if (ResponseImageGenerationCallCompleted is { } __value35)
             {
-                responseImageGenerationCallCompleted?.Invoke(ResponseImageGenerationCallCompleted!);
+                responseImageGenerationCallCompleted?.Invoke(__value35);
             }
-            else if (IsResponseImageGenerationCallGenerating)
+            else if (ResponseImageGenerationCallGenerating is { } __value36)
             {
-                responseImageGenerationCallGenerating?.Invoke(ResponseImageGenerationCallGenerating!);
+                responseImageGenerationCallGenerating?.Invoke(__value36);
             }
-            else if (IsResponseImageGenerationCallInProgress)
+            else if (ResponseImageGenerationCallInProgress is { } __value37)
             {
-                responseImageGenerationCallInProgress?.Invoke(ResponseImageGenerationCallInProgress!);
+                responseImageGenerationCallInProgress?.Invoke(__value37);
             }
-            else if (IsResponseImageGenerationCallPartialImage)
+            else if (ResponseImageGenerationCallPartialImage is { } __value38)
             {
-                responseImageGenerationCallPartialImage?.Invoke(ResponseImageGenerationCallPartialImage!);
+                responseImageGenerationCallPartialImage?.Invoke(__value38);
             }
-            else if (IsResponseMcpCallArgumentsDelta)
+            else if (ResponseMcpCallArgumentsDelta is { } __value39)
             {
-                responseMcpCallArgumentsDelta?.Invoke(ResponseMcpCallArgumentsDelta!);
+                responseMcpCallArgumentsDelta?.Invoke(__value39);
             }
-            else if (IsResponseMcpCallArgumentsDone)
+            else if (ResponseMcpCallArgumentsDone is { } __value40)
             {
-                responseMcpCallArgumentsDone?.Invoke(ResponseMcpCallArgumentsDone!);
+                responseMcpCallArgumentsDone?.Invoke(__value40);
             }
-            else if (IsResponseMcpCallCompleted)
+            else if (ResponseMcpCallCompleted is { } __value41)
             {
-                responseMcpCallCompleted?.Invoke(ResponseMcpCallCompleted!);
+                responseMcpCallCompleted?.Invoke(__value41);
             }
-            else if (IsResponseMcpCallFailed)
+            else if (ResponseMcpCallFailed is { } __value42)
             {
-                responseMcpCallFailed?.Invoke(ResponseMcpCallFailed!);
+                responseMcpCallFailed?.Invoke(__value42);
             }
-            else if (IsResponseMcpCallInProgress)
+            else if (ResponseMcpCallInProgress is { } __value43)
             {
-                responseMcpCallInProgress?.Invoke(ResponseMcpCallInProgress!);
+                responseMcpCallInProgress?.Invoke(__value43);
             }
-            else if (IsResponseMcpListToolsCompleted)
+            else if (ResponseMcpListToolsCompleted is { } __value44)
             {
-                responseMcpListToolsCompleted?.Invoke(ResponseMcpListToolsCompleted!);
+                responseMcpListToolsCompleted?.Invoke(__value44);
             }
-            else if (IsResponseMcpListToolsFailed)
+            else if (ResponseMcpListToolsFailed is { } __value45)
             {
-                responseMcpListToolsFailed?.Invoke(ResponseMcpListToolsFailed!);
+                responseMcpListToolsFailed?.Invoke(__value45);
             }
-            else if (IsResponseMcpListToolsInProgress)
+            else if (ResponseMcpListToolsInProgress is { } __value46)
             {
-                responseMcpListToolsInProgress?.Invoke(ResponseMcpListToolsInProgress!);
+                responseMcpListToolsInProgress?.Invoke(__value46);
             }
-            else if (IsResponseOutputTextAnnotationAdded)
+            else if (ResponseOutputTextAnnotationAdded is { } __value47)
             {
-                responseOutputTextAnnotationAdded?.Invoke(ResponseOutputTextAnnotationAdded!);
+                responseOutputTextAnnotationAdded?.Invoke(__value47);
             }
-            else if (IsResponseQueued)
+            else if (ResponseQueued is { } __value48)
             {
-                responseQueued?.Invoke(ResponseQueued!);
+                responseQueued?.Invoke(__value48);
             }
-            else if (IsResponseReasoningDelta)
+            else if (ResponseReasoningDelta is { } __value49)
             {
-                responseReasoningDelta?.Invoke(ResponseReasoningDelta!);
+                responseReasoningDelta?.Invoke(__value49);
             }
-            else if (IsResponseReasoningDone)
+            else if (ResponseReasoningDone is { } __value50)
             {
-                responseReasoningDone?.Invoke(ResponseReasoningDone!);
+                responseReasoningDone?.Invoke(__value50);
             }
-            else if (IsResponseReasoningSummaryDelta)
+            else if (ResponseReasoningSummaryDelta is { } __value51)
             {
-                responseReasoningSummaryDelta?.Invoke(ResponseReasoningSummaryDelta!);
+                responseReasoningSummaryDelta?.Invoke(__value51);
             }
-            else if (IsResponseReasoningSummaryDone)
+            else if (ResponseReasoningSummaryDone is { } __value52)
             {
-                responseReasoningSummaryDone?.Invoke(ResponseReasoningSummaryDone!);
+                responseReasoningSummaryDone?.Invoke(__value52);
             }
         }
 
@@ -4111,217 +4111,217 @@ namespace G
                 Validate();
             }
 
-            if (IsResponseAudioDelta)
+            if (ResponseAudioDelta is { } __value0)
             {
-                responseAudioDelta?.Invoke(ResponseAudioDelta!);
+                responseAudioDelta?.Invoke(__value0);
             }
-            else if (IsResponseAudioDone)
+            else if (ResponseAudioDone is { } __value1)
             {
-                responseAudioDone?.Invoke(ResponseAudioDone!);
+                responseAudioDone?.Invoke(__value1);
             }
-            else if (IsResponseAudioTranscriptDelta)
+            else if (ResponseAudioTranscriptDelta is { } __value2)
             {
-                responseAudioTranscriptDelta?.Invoke(ResponseAudioTranscriptDelta!);
+                responseAudioTranscriptDelta?.Invoke(__value2);
             }
-            else if (IsResponseAudioTranscriptDone)
+            else if (ResponseAudioTranscriptDone is { } __value3)
             {
-                responseAudioTranscriptDone?.Invoke(ResponseAudioTranscriptDone!);
+                responseAudioTranscriptDone?.Invoke(__value3);
             }
-            else if (IsResponseCodeInterpreterCallCodeDelta)
+            else if (ResponseCodeInterpreterCallCodeDelta is { } __value4)
             {
-                responseCodeInterpreterCallCodeDelta?.Invoke(ResponseCodeInterpreterCallCodeDelta!);
+                responseCodeInterpreterCallCodeDelta?.Invoke(__value4);
             }
-            else if (IsResponseCodeInterpreterCallCodeDone)
+            else if (ResponseCodeInterpreterCallCodeDone is { } __value5)
             {
-                responseCodeInterpreterCallCodeDone?.Invoke(ResponseCodeInterpreterCallCodeDone!);
+                responseCodeInterpreterCallCodeDone?.Invoke(__value5);
             }
-            else if (IsResponseCodeInterpreterCallCompleted)
+            else if (ResponseCodeInterpreterCallCompleted is { } __value6)
             {
-                responseCodeInterpreterCallCompleted?.Invoke(ResponseCodeInterpreterCallCompleted!);
+                responseCodeInterpreterCallCompleted?.Invoke(__value6);
             }
-            else if (IsResponseCodeInterpreterCallInProgress)
+            else if (ResponseCodeInterpreterCallInProgress is { } __value7)
             {
-                responseCodeInterpreterCallInProgress?.Invoke(ResponseCodeInterpreterCallInProgress!);
+                responseCodeInterpreterCallInProgress?.Invoke(__value7);
             }
-            else if (IsResponseCodeInterpreterCallInterpreting)
+            else if (ResponseCodeInterpreterCallInterpreting is { } __value8)
             {
-                responseCodeInterpreterCallInterpreting?.Invoke(ResponseCodeInterpreterCallInterpreting!);
+                responseCodeInterpreterCallInterpreting?.Invoke(__value8);
             }
-            else if (IsResponseCompleted)
+            else if (ResponseCompleted is { } __value9)
             {
-                responseCompleted?.Invoke(ResponseCompleted!);
+                responseCompleted?.Invoke(__value9);
             }
-            else if (IsResponseContentPartAdded)
+            else if (ResponseContentPartAdded is { } __value10)
             {
-                responseContentPartAdded?.Invoke(ResponseContentPartAdded!);
+                responseContentPartAdded?.Invoke(__value10);
             }
-            else if (IsResponseContentPartDone)
+            else if (ResponseContentPartDone is { } __value11)
             {
-                responseContentPartDone?.Invoke(ResponseContentPartDone!);
+                responseContentPartDone?.Invoke(__value11);
             }
-            else if (IsResponseCreated)
+            else if (ResponseCreated is { } __value12)
             {
-                responseCreated?.Invoke(ResponseCreated!);
+                responseCreated?.Invoke(__value12);
             }
-            else if (IsError)
+            else if (Error is { } __value13)
             {
-                error?.Invoke(Error!);
+                error?.Invoke(__value13);
             }
-            else if (IsResponseFileSearchCallCompleted)
+            else if (ResponseFileSearchCallCompleted is { } __value14)
             {
-                responseFileSearchCallCompleted?.Invoke(ResponseFileSearchCallCompleted!);
+                responseFileSearchCallCompleted?.Invoke(__value14);
             }
-            else if (IsResponseFileSearchCallInProgress)
+            else if (ResponseFileSearchCallInProgress is { } __value15)
             {
-                responseFileSearchCallInProgress?.Invoke(ResponseFileSearchCallInProgress!);
+                responseFileSearchCallInProgress?.Invoke(__value15);
             }
-            else if (IsResponseFileSearchCallSearching)
+            else if (ResponseFileSearchCallSearching is { } __value16)
             {
-                responseFileSearchCallSearching?.Invoke(ResponseFileSearchCallSearching!);
+                responseFileSearchCallSearching?.Invoke(__value16);
             }
-            else if (IsResponseFunctionCallArgumentsDelta)
+            else if (ResponseFunctionCallArgumentsDelta is { } __value17)
             {
-                responseFunctionCallArgumentsDelta?.Invoke(ResponseFunctionCallArgumentsDelta!);
+                responseFunctionCallArgumentsDelta?.Invoke(__value17);
             }
-            else if (IsResponseFunctionCallArgumentsDone)
+            else if (ResponseFunctionCallArgumentsDone is { } __value18)
             {
-                responseFunctionCallArgumentsDone?.Invoke(ResponseFunctionCallArgumentsDone!);
+                responseFunctionCallArgumentsDone?.Invoke(__value18);
             }
-            else if (IsResponseInProgress)
+            else if (ResponseInProgress is { } __value19)
             {
-                responseInProgress?.Invoke(ResponseInProgress!);
+                responseInProgress?.Invoke(__value19);
             }
-            else if (IsResponseFailed)
+            else if (ResponseFailed is { } __value20)
             {
-                responseFailed?.Invoke(ResponseFailed!);
+                responseFailed?.Invoke(__value20);
             }
-            else if (IsResponseIncomplete)
+            else if (ResponseIncomplete is { } __value21)
             {
-                responseIncomplete?.Invoke(ResponseIncomplete!);
+                responseIncomplete?.Invoke(__value21);
             }
-            else if (IsResponseOutputItemAdded)
+            else if (ResponseOutputItemAdded is { } __value22)
             {
-                responseOutputItemAdded?.Invoke(ResponseOutputItemAdded!);
+                responseOutputItemAdded?.Invoke(__value22);
             }
-            else if (IsResponseOutputItemDone)
+            else if (ResponseOutputItemDone is { } __value23)
             {
-                responseOutputItemDone?.Invoke(ResponseOutputItemDone!);
+                responseOutputItemDone?.Invoke(__value23);
             }
-            else if (IsResponseReasoningSummaryPartAdded)
+            else if (ResponseReasoningSummaryPartAdded is { } __value24)
             {
-                responseReasoningSummaryPartAdded?.Invoke(ResponseReasoningSummaryPartAdded!);
+                responseReasoningSummaryPartAdded?.Invoke(__value24);
             }
-            else if (IsResponseReasoningSummaryPartDone)
+            else if (ResponseReasoningSummaryPartDone is { } __value25)
             {
-                responseReasoningSummaryPartDone?.Invoke(ResponseReasoningSummaryPartDone!);
+                responseReasoningSummaryPartDone?.Invoke(__value25);
             }
-            else if (IsResponseReasoningSummaryTextDelta)
+            else if (ResponseReasoningSummaryTextDelta is { } __value26)
             {
-                responseReasoningSummaryTextDelta?.Invoke(ResponseReasoningSummaryTextDelta!);
+                responseReasoningSummaryTextDelta?.Invoke(__value26);
             }
-            else if (IsResponseReasoningSummaryTextDone)
+            else if (ResponseReasoningSummaryTextDone is { } __value27)
             {
-                responseReasoningSummaryTextDone?.Invoke(ResponseReasoningSummaryTextDone!);
+                responseReasoningSummaryTextDone?.Invoke(__value27);
             }
-            else if (IsResponseRefusalDelta)
+            else if (ResponseRefusalDelta is { } __value28)
             {
-                responseRefusalDelta?.Invoke(ResponseRefusalDelta!);
+                responseRefusalDelta?.Invoke(__value28);
             }
-            else if (IsResponseRefusalDone)
+            else if (ResponseRefusalDone is { } __value29)
             {
-                responseRefusalDone?.Invoke(ResponseRefusalDone!);
+                responseRefusalDone?.Invoke(__value29);
             }
-            else if (IsResponseOutputTextDelta)
+            else if (ResponseOutputTextDelta is { } __value30)
             {
-                responseOutputTextDelta?.Invoke(ResponseOutputTextDelta!);
+                responseOutputTextDelta?.Invoke(__value30);
             }
-            else if (IsResponseOutputTextDone)
+            else if (ResponseOutputTextDone is { } __value31)
             {
-                responseOutputTextDone?.Invoke(ResponseOutputTextDone!);
+                responseOutputTextDone?.Invoke(__value31);
             }
-            else if (IsResponseWebSearchCallCompleted)
+            else if (ResponseWebSearchCallCompleted is { } __value32)
             {
-                responseWebSearchCallCompleted?.Invoke(ResponseWebSearchCallCompleted!);
+                responseWebSearchCallCompleted?.Invoke(__value32);
             }
-            else if (IsResponseWebSearchCallInProgress)
+            else if (ResponseWebSearchCallInProgress is { } __value33)
             {
-                responseWebSearchCallInProgress?.Invoke(ResponseWebSearchCallInProgress!);
+                responseWebSearchCallInProgress?.Invoke(__value33);
             }
-            else if (IsResponseWebSearchCallSearching)
+            else if (ResponseWebSearchCallSearching is { } __value34)
             {
-                responseWebSearchCallSearching?.Invoke(ResponseWebSearchCallSearching!);
+                responseWebSearchCallSearching?.Invoke(__value34);
             }
-            else if (IsResponseImageGenerationCallCompleted)
+            else if (ResponseImageGenerationCallCompleted is { } __value35)
             {
-                responseImageGenerationCallCompleted?.Invoke(ResponseImageGenerationCallCompleted!);
+                responseImageGenerationCallCompleted?.Invoke(__value35);
             }
-            else if (IsResponseImageGenerationCallGenerating)
+            else if (ResponseImageGenerationCallGenerating is { } __value36)
             {
-                responseImageGenerationCallGenerating?.Invoke(ResponseImageGenerationCallGenerating!);
+                responseImageGenerationCallGenerating?.Invoke(__value36);
             }
-            else if (IsResponseImageGenerationCallInProgress)
+            else if (ResponseImageGenerationCallInProgress is { } __value37)
             {
-                responseImageGenerationCallInProgress?.Invoke(ResponseImageGenerationCallInProgress!);
+                responseImageGenerationCallInProgress?.Invoke(__value37);
             }
-            else if (IsResponseImageGenerationCallPartialImage)
+            else if (ResponseImageGenerationCallPartialImage is { } __value38)
             {
-                responseImageGenerationCallPartialImage?.Invoke(ResponseImageGenerationCallPartialImage!);
+                responseImageGenerationCallPartialImage?.Invoke(__value38);
             }
-            else if (IsResponseMcpCallArgumentsDelta)
+            else if (ResponseMcpCallArgumentsDelta is { } __value39)
             {
-                responseMcpCallArgumentsDelta?.Invoke(ResponseMcpCallArgumentsDelta!);
+                responseMcpCallArgumentsDelta?.Invoke(__value39);
             }
-            else if (IsResponseMcpCallArgumentsDone)
+            else if (ResponseMcpCallArgumentsDone is { } __value40)
             {
-                responseMcpCallArgumentsDone?.Invoke(ResponseMcpCallArgumentsDone!);
+                responseMcpCallArgumentsDone?.Invoke(__value40);
             }
-            else if (IsResponseMcpCallCompleted)
+            else if (ResponseMcpCallCompleted is { } __value41)
             {
-                responseMcpCallCompleted?.Invoke(ResponseMcpCallCompleted!);
+                responseMcpCallCompleted?.Invoke(__value41);
             }
-            else if (IsResponseMcpCallFailed)
+            else if (ResponseMcpCallFailed is { } __value42)
             {
-                responseMcpCallFailed?.Invoke(ResponseMcpCallFailed!);
+                responseMcpCallFailed?.Invoke(__value42);
             }
-            else if (IsResponseMcpCallInProgress)
+            else if (ResponseMcpCallInProgress is { } __value43)
             {
-                responseMcpCallInProgress?.Invoke(ResponseMcpCallInProgress!);
+                responseMcpCallInProgress?.Invoke(__value43);
             }
-            else if (IsResponseMcpListToolsCompleted)
+            else if (ResponseMcpListToolsCompleted is { } __value44)
             {
-                responseMcpListToolsCompleted?.Invoke(ResponseMcpListToolsCompleted!);
+                responseMcpListToolsCompleted?.Invoke(__value44);
             }
-            else if (IsResponseMcpListToolsFailed)
+            else if (ResponseMcpListToolsFailed is { } __value45)
             {
-                responseMcpListToolsFailed?.Invoke(ResponseMcpListToolsFailed!);
+                responseMcpListToolsFailed?.Invoke(__value45);
             }
-            else if (IsResponseMcpListToolsInProgress)
+            else if (ResponseMcpListToolsInProgress is { } __value46)
             {
-                responseMcpListToolsInProgress?.Invoke(ResponseMcpListToolsInProgress!);
+                responseMcpListToolsInProgress?.Invoke(__value46);
             }
-            else if (IsResponseOutputTextAnnotationAdded)
+            else if (ResponseOutputTextAnnotationAdded is { } __value47)
             {
-                responseOutputTextAnnotationAdded?.Invoke(ResponseOutputTextAnnotationAdded!);
+                responseOutputTextAnnotationAdded?.Invoke(__value47);
             }
-            else if (IsResponseQueued)
+            else if (ResponseQueued is { } __value48)
             {
-                responseQueued?.Invoke(ResponseQueued!);
+                responseQueued?.Invoke(__value48);
             }
-            else if (IsResponseReasoningDelta)
+            else if (ResponseReasoningDelta is { } __value49)
             {
-                responseReasoningDelta?.Invoke(ResponseReasoningDelta!);
+                responseReasoningDelta?.Invoke(__value49);
             }
-            else if (IsResponseReasoningDone)
+            else if (ResponseReasoningDone is { } __value50)
             {
-                responseReasoningDone?.Invoke(ResponseReasoningDone!);
+                responseReasoningDone?.Invoke(__value50);
             }
-            else if (IsResponseReasoningSummaryDelta)
+            else if (ResponseReasoningSummaryDelta is { } __value51)
             {
-                responseReasoningSummaryDelta?.Invoke(ResponseReasoningSummaryDelta!);
+                responseReasoningSummaryDelta?.Invoke(__value51);
             }
-            else if (IsResponseReasoningSummaryDone)
+            else if (ResponseReasoningSummaryDone is { } __value52)
             {
-                responseReasoningSummaryDone?.Invoke(ResponseReasoningSummaryDone!);
+                responseReasoningSummaryDone?.Invoke(__value52);
             }
         }
 

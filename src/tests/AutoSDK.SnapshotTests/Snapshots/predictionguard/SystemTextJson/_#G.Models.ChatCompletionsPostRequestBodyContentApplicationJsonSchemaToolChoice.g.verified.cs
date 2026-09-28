@@ -1,4 +1,4 @@
-﻿//HintName: G.Models.ChatCompletionsPostRequestBodyContentApplicationJsonSchemaToolChoice.g.cs
+//HintName: G.Models.ChatCompletionsPostRequestBodyContentApplicationJsonSchemaToolChoice.g.cs
 #pragma warning disable CS0618 // Type or member is obsolete
 
 #nullable enable
@@ -43,8 +43,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public string PickChatCompletionsPostRequestBodyContentApplicationJsonSchemaToolChoiceVariant1() => IsChatCompletionsPostRequestBodyContentApplicationJsonSchemaToolChoiceVariant1
-            ? ChatCompletionsPostRequestBodyContentApplicationJsonSchemaToolChoiceVariant1!
+        public string PickChatCompletionsPostRequestBodyContentApplicationJsonSchemaToolChoiceVariant1() => ChatCompletionsPostRequestBodyContentApplicationJsonSchemaToolChoiceVariant1 is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'ChatCompletionsPostRequestBodyContentApplicationJsonSchemaToolChoiceVariant1' but the value was {ToString()}.");
 
         /// <summary>
@@ -80,8 +80,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.ChatCompletionsPostRequestBodyContentApplicationJsonSchemaToolChoice1 PickChatCompletionsPostRequestBodyContentApplicationJsonSchemaToolChoice1() => IsChatCompletionsPostRequestBodyContentApplicationJsonSchemaToolChoice1
-            ? ChatCompletionsPostRequestBodyContentApplicationJsonSchemaToolChoice1!
+        public global::G.ChatCompletionsPostRequestBodyContentApplicationJsonSchemaToolChoice1 PickChatCompletionsPostRequestBodyContentApplicationJsonSchemaToolChoice1() => ChatCompletionsPostRequestBodyContentApplicationJsonSchemaToolChoice1 is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'ChatCompletionsPostRequestBodyContentApplicationJsonSchemaToolChoice1' but the value was {ToString()}.");
         /// <summary>
         /// 
@@ -178,13 +178,13 @@ namespace G
                 Validate();
             }
 
-            if (IsChatCompletionsPostRequestBodyContentApplicationJsonSchemaToolChoiceVariant1 && chatCompletionsPostRequestBodyContentApplicationJsonSchemaToolChoiceVariant1 != null)
+            if (ChatCompletionsPostRequestBodyContentApplicationJsonSchemaToolChoiceVariant1 is { } __value0 && chatCompletionsPostRequestBodyContentApplicationJsonSchemaToolChoiceVariant1 != null)
             {
-                return chatCompletionsPostRequestBodyContentApplicationJsonSchemaToolChoiceVariant1(ChatCompletionsPostRequestBodyContentApplicationJsonSchemaToolChoiceVariant1!);
+                return chatCompletionsPostRequestBodyContentApplicationJsonSchemaToolChoiceVariant1(__value0);
             }
-            else if (IsChatCompletionsPostRequestBodyContentApplicationJsonSchemaToolChoice1 && chatCompletionsPostRequestBodyContentApplicationJsonSchemaToolChoice1 != null)
+            else if (ChatCompletionsPostRequestBodyContentApplicationJsonSchemaToolChoice1 is { } __value1 && chatCompletionsPostRequestBodyContentApplicationJsonSchemaToolChoice1 != null)
             {
-                return chatCompletionsPostRequestBodyContentApplicationJsonSchemaToolChoice1(ChatCompletionsPostRequestBodyContentApplicationJsonSchemaToolChoice1!);
+                return chatCompletionsPostRequestBodyContentApplicationJsonSchemaToolChoice1(__value1);
             }
 
             return default(TResult);
@@ -204,13 +204,13 @@ namespace G
                 Validate();
             }
 
-            if (IsChatCompletionsPostRequestBodyContentApplicationJsonSchemaToolChoiceVariant1)
+            if (ChatCompletionsPostRequestBodyContentApplicationJsonSchemaToolChoiceVariant1 is { } __value0)
             {
-                chatCompletionsPostRequestBodyContentApplicationJsonSchemaToolChoiceVariant1?.Invoke(ChatCompletionsPostRequestBodyContentApplicationJsonSchemaToolChoiceVariant1!);
+                chatCompletionsPostRequestBodyContentApplicationJsonSchemaToolChoiceVariant1?.Invoke(__value0);
             }
-            else if (IsChatCompletionsPostRequestBodyContentApplicationJsonSchemaToolChoice1)
+            else if (ChatCompletionsPostRequestBodyContentApplicationJsonSchemaToolChoice1 is { } __value1)
             {
-                chatCompletionsPostRequestBodyContentApplicationJsonSchemaToolChoice1?.Invoke(ChatCompletionsPostRequestBodyContentApplicationJsonSchemaToolChoice1!);
+                chatCompletionsPostRequestBodyContentApplicationJsonSchemaToolChoice1?.Invoke(__value1);
             }
         }
 
@@ -227,13 +227,13 @@ namespace G
                 Validate();
             }
 
-            if (IsChatCompletionsPostRequestBodyContentApplicationJsonSchemaToolChoiceVariant1)
+            if (ChatCompletionsPostRequestBodyContentApplicationJsonSchemaToolChoiceVariant1 is { } __value0)
             {
-                chatCompletionsPostRequestBodyContentApplicationJsonSchemaToolChoiceVariant1?.Invoke(ChatCompletionsPostRequestBodyContentApplicationJsonSchemaToolChoiceVariant1!);
+                chatCompletionsPostRequestBodyContentApplicationJsonSchemaToolChoiceVariant1?.Invoke(__value0);
             }
-            else if (IsChatCompletionsPostRequestBodyContentApplicationJsonSchemaToolChoice1)
+            else if (ChatCompletionsPostRequestBodyContentApplicationJsonSchemaToolChoice1 is { } __value1)
             {
-                chatCompletionsPostRequestBodyContentApplicationJsonSchemaToolChoice1?.Invoke(ChatCompletionsPostRequestBodyContentApplicationJsonSchemaToolChoice1!);
+                chatCompletionsPostRequestBodyContentApplicationJsonSchemaToolChoice1?.Invoke(__value1);
             }
         }
 

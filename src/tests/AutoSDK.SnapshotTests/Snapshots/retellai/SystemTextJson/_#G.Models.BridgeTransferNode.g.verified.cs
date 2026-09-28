@@ -1,4 +1,4 @@
-﻿//HintName: G.Models.BridgeTransferNode.g.cs
+//HintName: G.Models.BridgeTransferNode.g.cs
 #pragma warning disable CS0618 // Type or member is obsolete
 
 #nullable enable
@@ -43,8 +43,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.NodeBase PickBase() => IsBase
-            ? Base!.Value
+        public global::G.NodeBase PickBase() => Base is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Base' but the value was {ToString()}.");
 
         /// <summary>
@@ -80,8 +80,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.BridgeTransferNodeVariant2 PickBridgeTransferNodeVariant2() => IsBridgeTransferNodeVariant2
-            ? BridgeTransferNodeVariant2!
+        public global::G.BridgeTransferNodeVariant2 PickBridgeTransferNodeVariant2() => BridgeTransferNodeVariant2 is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'BridgeTransferNodeVariant2' but the value was {ToString()}.");
         /// <summary>
         /// 
@@ -178,13 +178,13 @@ namespace G
                 Validate();
             }
 
-            if (IsBase && @base != null)
+            if (Base is { } __value0 && @base != null)
             {
-                return @base(Base!);
+                return @base(__value0);
             }
-            else if (IsBridgeTransferNodeVariant2 && bridgeTransferNodeVariant2 != null)
+            else if (BridgeTransferNodeVariant2 is { } __value1 && bridgeTransferNodeVariant2 != null)
             {
-                return bridgeTransferNodeVariant2(BridgeTransferNodeVariant2!);
+                return bridgeTransferNodeVariant2(__value1);
             }
 
             return default(TResult);
@@ -204,13 +204,13 @@ namespace G
                 Validate();
             }
 
-            if (IsBase)
+            if (Base is { } __value0)
             {
-                @base?.Invoke(Base!);
+                @base?.Invoke(__value0);
             }
-            else if (IsBridgeTransferNodeVariant2)
+            else if (BridgeTransferNodeVariant2 is { } __value1)
             {
-                bridgeTransferNodeVariant2?.Invoke(BridgeTransferNodeVariant2!);
+                bridgeTransferNodeVariant2?.Invoke(__value1);
             }
         }
 
@@ -227,13 +227,13 @@ namespace G
                 Validate();
             }
 
-            if (IsBase)
+            if (Base is { } __value0)
             {
-                @base?.Invoke(Base!);
+                @base?.Invoke(__value0);
             }
-            else if (IsBridgeTransferNodeVariant2)
+            else if (BridgeTransferNodeVariant2 is { } __value1)
             {
-                bridgeTransferNodeVariant2?.Invoke(BridgeTransferNodeVariant2!);
+                bridgeTransferNodeVariant2?.Invoke(__value1);
             }
         }
 

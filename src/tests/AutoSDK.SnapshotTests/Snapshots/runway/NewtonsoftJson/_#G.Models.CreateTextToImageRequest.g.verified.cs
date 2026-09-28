@@ -1,4 +1,4 @@
-﻿//HintName: G.Models.CreateTextToImageRequest.g.cs
+//HintName: G.Models.CreateTextToImageRequest.g.cs
 #pragma warning disable CS0618 // Type or member is obsolete
 
 #nullable enable
@@ -48,8 +48,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.CreateTextToImageRequestGen4ImageTurbo PickGen4ImageTurbo() => IsGen4ImageTurbo
-            ? Gen4ImageTurbo!
+        public global::G.CreateTextToImageRequestGen4ImageTurbo PickGen4ImageTurbo() => Gen4ImageTurbo is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Gen4ImageTurbo' but the value was {ToString()}.");
 
         /// <summary>
@@ -85,8 +85,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.CreateTextToImageRequestGen4Image PickGen4Image() => IsGen4Image
-            ? Gen4Image!
+        public global::G.CreateTextToImageRequestGen4Image PickGen4Image() => Gen4Image is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Gen4Image' but the value was {ToString()}.");
 
         /// <summary>
@@ -122,8 +122,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.CreateTextToImageRequestGemini25Flash PickGemini25Flash() => IsGemini25Flash
-            ? Gemini25Flash!
+        public global::G.CreateTextToImageRequestGemini25Flash PickGemini25Flash() => Gemini25Flash is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Gemini25Flash' but the value was {ToString()}.");
         /// <summary>
         /// 
@@ -251,17 +251,17 @@ namespace G
                 Validate();
             }
 
-            if (IsGen4ImageTurbo && gen4ImageTurbo != null)
+            if (Gen4ImageTurbo is { } __value0 && gen4ImageTurbo != null)
             {
-                return gen4ImageTurbo(Gen4ImageTurbo!);
+                return gen4ImageTurbo(__value0);
             }
-            else if (IsGen4Image && gen4Image != null)
+            else if (Gen4Image is { } __value1 && gen4Image != null)
             {
-                return gen4Image(Gen4Image!);
+                return gen4Image(__value1);
             }
-            else if (IsGemini25Flash && gemini25Flash != null)
+            else if (Gemini25Flash is { } __value2 && gemini25Flash != null)
             {
-                return gemini25Flash(Gemini25Flash!);
+                return gemini25Flash(__value2);
             }
 
             return default(TResult);
@@ -283,17 +283,17 @@ namespace G
                 Validate();
             }
 
-            if (IsGen4ImageTurbo)
+            if (Gen4ImageTurbo is { } __value0)
             {
-                gen4ImageTurbo?.Invoke(Gen4ImageTurbo!);
+                gen4ImageTurbo?.Invoke(__value0);
             }
-            else if (IsGen4Image)
+            else if (Gen4Image is { } __value1)
             {
-                gen4Image?.Invoke(Gen4Image!);
+                gen4Image?.Invoke(__value1);
             }
-            else if (IsGemini25Flash)
+            else if (Gemini25Flash is { } __value2)
             {
-                gemini25Flash?.Invoke(Gemini25Flash!);
+                gemini25Flash?.Invoke(__value2);
             }
         }
 
@@ -311,17 +311,17 @@ namespace G
                 Validate();
             }
 
-            if (IsGen4ImageTurbo)
+            if (Gen4ImageTurbo is { } __value0)
             {
-                gen4ImageTurbo?.Invoke(Gen4ImageTurbo!);
+                gen4ImageTurbo?.Invoke(__value0);
             }
-            else if (IsGen4Image)
+            else if (Gen4Image is { } __value1)
             {
-                gen4Image?.Invoke(Gen4Image!);
+                gen4Image?.Invoke(__value1);
             }
-            else if (IsGemini25Flash)
+            else if (Gemini25Flash is { } __value2)
             {
-                gemini25Flash?.Invoke(Gemini25Flash!);
+                gemini25Flash?.Invoke(__value2);
             }
         }
 

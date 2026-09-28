@@ -1,4 +1,4 @@
-﻿//HintName: G.Api.GetTestRun.g.cs
+//HintName: G.Api.GetTestRun.g.cs
 
 #nullable enable
 
@@ -146,7 +146,7 @@ namespace G
                 PrepareGetTestRunRequest(
                     httpClient: HttpClient,
                     httpRequestMessage: __httpRequest,
-                    testCaseJobId: testCaseJobId!);
+                    testCaseJobId: testCaseJobId);
 
                 return __httpRequest;
             }
@@ -168,7 +168,7 @@ namespace G
                                 pathTemplate: "$\"/get-test-run/{testCaseJobId}\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: null,
                                 exception: null,
                                 clientOptions: Options,
@@ -202,7 +202,7 @@ namespace G
                                 pathTemplate: "$\"/get-test-run/{testCaseJobId}\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: null,
                                 exception: __exception,
                                 clientOptions: Options,
@@ -243,7 +243,7 @@ namespace G
                                 pathTemplate: "$\"/get-test-run/{testCaseJobId}\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: __response,
                                 exception: null,
                                 clientOptions: Options,
@@ -291,7 +291,7 @@ namespace G
                                 pathTemplate: "$\"/get-test-run/{testCaseJobId}\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: __response,
                                 exception: null,
                                 clientOptions: Options,
@@ -313,7 +313,7 @@ namespace G
                                 pathTemplate: "$\"/get-test-run/{testCaseJobId}\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: __response,
                                 exception: null,
                                 clientOptions: Options,

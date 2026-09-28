@@ -1,4 +1,4 @@
-﻿//HintName: G.AgentsPlatformClient.Delete6.g.cs
+//HintName: G.AgentsPlatformClient.Delete6.g.cs
 
 #nullable enable
 
@@ -127,7 +127,7 @@ namespace G
                 PrepareDelete6Request(
                     httpClient: HttpClient,
                     httpRequestMessage: __httpRequest,
-                    toolId: toolId!,
+                    toolId: toolId,
                     xiApiKey: xiApiKey);
 
                 return __httpRequest;
@@ -150,7 +150,7 @@ namespace G
                                 pathTemplate: "$\"/v1/convai/tools/{toolId}\"",
                                 httpMethod: "DELETE",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: null,
                                 exception: null,
                                 clientOptions: Options,
@@ -184,7 +184,7 @@ namespace G
                                 pathTemplate: "$\"/v1/convai/tools/{toolId}\"",
                                 httpMethod: "DELETE",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: null,
                                 exception: __exception,
                                 clientOptions: Options,
@@ -225,7 +225,7 @@ namespace G
                                 pathTemplate: "$\"/v1/convai/tools/{toolId}\"",
                                 httpMethod: "DELETE",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: __response,
                                 exception: null,
                                 clientOptions: Options,
@@ -273,7 +273,7 @@ namespace G
                                 pathTemplate: "$\"/v1/convai/tools/{toolId}\"",
                                 httpMethod: "DELETE",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: __response,
                                 exception: null,
                                 clientOptions: Options,
@@ -295,7 +295,7 @@ namespace G
                                 pathTemplate: "$\"/v1/convai/tools/{toolId}\"",
                                 httpMethod: "DELETE",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: __response,
                                 exception: null,
                                 clientOptions: Options,

@@ -1,4 +1,4 @@
-﻿//HintName: G.ToolsClient.GetToolsByToolSlug.g.cs
+//HintName: G.ToolsClient.GetToolsByToolSlug.g.cs
 
 #nullable enable
 
@@ -212,7 +212,7 @@ namespace G
                 PrepareGetToolsByToolSlugRequest(
                     httpClient: HttpClient,
                     httpRequestMessage: __httpRequest,
-                    toolSlug: toolSlug!,
+                    toolSlug: toolSlug,
                     version: version,
                     toolkitVersions: toolkitVersions);
 
@@ -238,7 +238,7 @@ namespace G
                                 pathTemplate: "$\"/api/v3/tools/{toolSlug}\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: null,
                                 exception: null,
                                 clientOptions: Options,
@@ -272,7 +272,7 @@ namespace G
                                 pathTemplate: "$\"/api/v3/tools/{toolSlug}\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: null,
                                 exception: __exception,
                                 clientOptions: Options,
@@ -313,7 +313,7 @@ namespace G
                                 pathTemplate: "$\"/api/v3/tools/{toolSlug}\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: __response,
                                 exception: null,
                                 clientOptions: Options,
@@ -361,7 +361,7 @@ namespace G
                                 pathTemplate: "$\"/api/v3/tools/{toolSlug}\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: __response,
                                 exception: null,
                                 clientOptions: Options,
@@ -383,7 +383,7 @@ namespace G
                                 pathTemplate: "$\"/api/v3/tools/{toolSlug}\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: __response,
                                 exception: null,
                                 clientOptions: Options,

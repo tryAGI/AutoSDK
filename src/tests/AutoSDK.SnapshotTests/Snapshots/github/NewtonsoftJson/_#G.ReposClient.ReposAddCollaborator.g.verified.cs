@@ -1,4 +1,4 @@
-﻿//HintName: G.ReposClient.ReposAddCollaborator.g.cs
+//HintName: G.ReposClient.ReposAddCollaborator.g.cs
 
 #nullable enable
 
@@ -172,9 +172,9 @@ namespace G
                 PrepareReposAddCollaboratorRequest(
                     httpClient: HttpClient,
                     httpRequestMessage: __httpRequest,
-                    owner: owner!,
-                    repo: repo!,
-                    username: username!,
+                    owner: owner,
+                    repo: repo,
+                    username: username,
                     request: request);
 
                 return __httpRequest;
@@ -197,7 +197,7 @@ namespace G
                                 pathTemplate: "$\"/repos/{owner}/{repo}/collaborators/{username}\"",
                                 httpMethod: "PUT",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: null,
                                 exception: null,
                                 clientOptions: Options,
@@ -231,7 +231,7 @@ namespace G
                                 pathTemplate: "$\"/repos/{owner}/{repo}/collaborators/{username}\"",
                                 httpMethod: "PUT",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: null,
                                 exception: __exception,
                                 clientOptions: Options,
@@ -272,7 +272,7 @@ namespace G
                                 pathTemplate: "$\"/repos/{owner}/{repo}/collaborators/{username}\"",
                                 httpMethod: "PUT",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: __response,
                                 exception: null,
                                 clientOptions: Options,
@@ -320,7 +320,7 @@ namespace G
                                 pathTemplate: "$\"/repos/{owner}/{repo}/collaborators/{username}\"",
                                 httpMethod: "PUT",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: __response,
                                 exception: null,
                                 clientOptions: Options,
@@ -342,7 +342,7 @@ namespace G
                                 pathTemplate: "$\"/repos/{owner}/{repo}/collaborators/{username}\"",
                                 httpMethod: "PUT",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: __response,
                                 exception: null,
                                 clientOptions: Options,

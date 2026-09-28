@@ -1,4 +1,4 @@
-﻿//HintName: G.Models.CreateInterruptRequest.g.cs
+//HintName: G.Models.CreateInterruptRequest.g.cs
 #pragma warning disable CS0618 // Type or member is obsolete
 
 #nullable enable
@@ -43,8 +43,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.CreateInputRequestBase PickInputBase() => IsInputBase
-            ? InputBase!
+        public global::G.CreateInputRequestBase PickInputBase() => InputBase is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'InputBase' but the value was {ToString()}.");
 
         /// <summary>
@@ -80,8 +80,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.CreateInterruptRequestVariant2 PickCreateInterruptRequestVariant2() => IsCreateInterruptRequestVariant2
-            ? CreateInterruptRequestVariant2!
+        public global::G.CreateInterruptRequestVariant2 PickCreateInterruptRequestVariant2() => CreateInterruptRequestVariant2 is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'CreateInterruptRequestVariant2' but the value was {ToString()}.");
         /// <summary>
         /// 
@@ -178,13 +178,13 @@ namespace G
                 Validate();
             }
 
-            if (IsInputBase && inputBase != null)
+            if (InputBase is { } __value0 && inputBase != null)
             {
-                return inputBase(InputBase!);
+                return inputBase(__value0);
             }
-            else if (IsCreateInterruptRequestVariant2 && createInterruptRequestVariant2 != null)
+            else if (CreateInterruptRequestVariant2 is { } __value1 && createInterruptRequestVariant2 != null)
             {
-                return createInterruptRequestVariant2(CreateInterruptRequestVariant2!);
+                return createInterruptRequestVariant2(__value1);
             }
 
             return default(TResult);
@@ -204,13 +204,13 @@ namespace G
                 Validate();
             }
 
-            if (IsInputBase)
+            if (InputBase is { } __value0)
             {
-                inputBase?.Invoke(InputBase!);
+                inputBase?.Invoke(__value0);
             }
-            else if (IsCreateInterruptRequestVariant2)
+            else if (CreateInterruptRequestVariant2 is { } __value1)
             {
-                createInterruptRequestVariant2?.Invoke(CreateInterruptRequestVariant2!);
+                createInterruptRequestVariant2?.Invoke(__value1);
             }
         }
 
@@ -227,13 +227,13 @@ namespace G
                 Validate();
             }
 
-            if (IsInputBase)
+            if (InputBase is { } __value0)
             {
-                inputBase?.Invoke(InputBase!);
+                inputBase?.Invoke(__value0);
             }
-            else if (IsCreateInterruptRequestVariant2)
+            else if (CreateInterruptRequestVariant2 is { } __value1)
             {
-                createInterruptRequestVariant2?.Invoke(CreateInterruptRequestVariant2!);
+                createInterruptRequestVariant2?.Invoke(__value1);
             }
         }
 

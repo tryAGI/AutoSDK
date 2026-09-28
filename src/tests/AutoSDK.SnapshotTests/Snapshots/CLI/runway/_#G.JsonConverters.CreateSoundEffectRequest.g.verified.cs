@@ -1,4 +1,4 @@
-﻿//HintName: G.JsonConverters.CreateSoundEffectRequest.g.cs
+//HintName: G.JsonConverters.CreateSoundEffectRequest.g.cs
 #nullable enable
 #pragma warning disable CS0618 // Type or member is obsolete
 
@@ -51,7 +51,7 @@ namespace G.JsonConverters
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.CreateSoundEffectRequestElevenTextToSoundV2), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.CreateSoundEffectRequestElevenTextToSoundV2?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.CreateSoundEffectRequestElevenTextToSoundV2).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.ElevenTextToSoundV2!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickElevenTextToSoundV2(), typeInfo);
             }
         }
     }

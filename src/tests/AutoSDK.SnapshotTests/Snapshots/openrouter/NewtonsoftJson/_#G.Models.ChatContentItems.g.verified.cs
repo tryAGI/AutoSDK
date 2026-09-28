@@ -1,4 +1,4 @@
-﻿//HintName: G.Models.ChatContentItems.g.cs
+//HintName: G.Models.ChatContentItems.g.cs
 #pragma warning disable CS0618 // Type or member is obsolete
 
 #nullable enable
@@ -43,8 +43,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.ChatContentText PickChatContentText() => IsChatContentText
-            ? ChatContentText!
+        public global::G.ChatContentText PickChatContentText() => ChatContentText is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'ChatContentText' but the value was {ToString()}.");
 
         /// <summary>
@@ -80,8 +80,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.ChatContentImage PickChatContentImage() => IsChatContentImage
-            ? ChatContentImage!
+        public global::G.ChatContentImage PickChatContentImage() => ChatContentImage is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'ChatContentImage' but the value was {ToString()}.");
 
         /// <summary>
@@ -117,8 +117,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.ChatContentAudio PickChatContentAudio() => IsChatContentAudio
-            ? ChatContentAudio!
+        public global::G.ChatContentAudio PickChatContentAudio() => ChatContentAudio is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'ChatContentAudio' but the value was {ToString()}.");
 
         /// <summary>
@@ -154,8 +154,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.ChatContentItems3 PickChatContentItems3() => IsChatContentItems3
-            ? ChatContentItems3!.Value
+        public global::G.ChatContentItems3 PickChatContentItems3() => ChatContentItems3 is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'ChatContentItems3' but the value was {ToString()}.");
 
         /// <summary>
@@ -191,8 +191,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.ChatContentFile PickChatContentFile() => IsChatContentFile
-            ? ChatContentFile!
+        public global::G.ChatContentFile PickChatContentFile() => ChatContentFile is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'ChatContentFile' but the value was {ToString()}.");
         /// <summary>
         /// 
@@ -373,25 +373,25 @@ namespace G
                 Validate();
             }
 
-            if (IsChatContentText && chatContentText != null)
+            if (ChatContentText is { } __value0 && chatContentText != null)
             {
-                return chatContentText(ChatContentText!);
+                return chatContentText(__value0);
             }
-            else if (IsChatContentImage && chatContentImage != null)
+            else if (ChatContentImage is { } __value1 && chatContentImage != null)
             {
-                return chatContentImage(ChatContentImage!);
+                return chatContentImage(__value1);
             }
-            else if (IsChatContentAudio && chatContentAudio != null)
+            else if (ChatContentAudio is { } __value2 && chatContentAudio != null)
             {
-                return chatContentAudio(ChatContentAudio!);
+                return chatContentAudio(__value2);
             }
-            else if (IsChatContentItems3 && chatContentItems3 != null)
+            else if (ChatContentItems3 is { } __value3 && chatContentItems3 != null)
             {
-                return chatContentItems3(ChatContentItems3!);
+                return chatContentItems3(__value3);
             }
-            else if (IsChatContentFile && chatContentFile != null)
+            else if (ChatContentFile is { } __value4 && chatContentFile != null)
             {
-                return chatContentFile(ChatContentFile!);
+                return chatContentFile(__value4);
             }
 
             return default(TResult);
@@ -417,25 +417,25 @@ namespace G
                 Validate();
             }
 
-            if (IsChatContentText)
+            if (ChatContentText is { } __value0)
             {
-                chatContentText?.Invoke(ChatContentText!);
+                chatContentText?.Invoke(__value0);
             }
-            else if (IsChatContentImage)
+            else if (ChatContentImage is { } __value1)
             {
-                chatContentImage?.Invoke(ChatContentImage!);
+                chatContentImage?.Invoke(__value1);
             }
-            else if (IsChatContentAudio)
+            else if (ChatContentAudio is { } __value2)
             {
-                chatContentAudio?.Invoke(ChatContentAudio!);
+                chatContentAudio?.Invoke(__value2);
             }
-            else if (IsChatContentItems3)
+            else if (ChatContentItems3 is { } __value3)
             {
-                chatContentItems3?.Invoke(ChatContentItems3!);
+                chatContentItems3?.Invoke(__value3);
             }
-            else if (IsChatContentFile)
+            else if (ChatContentFile is { } __value4)
             {
-                chatContentFile?.Invoke(ChatContentFile!);
+                chatContentFile?.Invoke(__value4);
             }
         }
 
@@ -455,25 +455,25 @@ namespace G
                 Validate();
             }
 
-            if (IsChatContentText)
+            if (ChatContentText is { } __value0)
             {
-                chatContentText?.Invoke(ChatContentText!);
+                chatContentText?.Invoke(__value0);
             }
-            else if (IsChatContentImage)
+            else if (ChatContentImage is { } __value1)
             {
-                chatContentImage?.Invoke(ChatContentImage!);
+                chatContentImage?.Invoke(__value1);
             }
-            else if (IsChatContentAudio)
+            else if (ChatContentAudio is { } __value2)
             {
-                chatContentAudio?.Invoke(ChatContentAudio!);
+                chatContentAudio?.Invoke(__value2);
             }
-            else if (IsChatContentItems3)
+            else if (ChatContentItems3 is { } __value3)
             {
-                chatContentItems3?.Invoke(ChatContentItems3!);
+                chatContentItems3?.Invoke(__value3);
             }
-            else if (IsChatContentFile)
+            else if (ChatContentFile is { } __value4)
             {
-                chatContentFile?.Invoke(ChatContentFile!);
+                chatContentFile?.Invoke(__value4);
             }
         }
 

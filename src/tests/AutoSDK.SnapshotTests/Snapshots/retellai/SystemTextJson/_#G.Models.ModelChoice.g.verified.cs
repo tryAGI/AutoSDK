@@ -1,4 +1,4 @@
-﻿//HintName: G.Models.ModelChoice.g.cs
+//HintName: G.Models.ModelChoice.g.cs
 #pragma warning disable CS0618 // Type or member is obsolete
 
 #nullable enable
@@ -43,8 +43,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.ModelChoiceCascading PickCascading() => IsCascading
-            ? Cascading!
+        public global::G.ModelChoiceCascading PickCascading() => Cascading is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Cascading' but the value was {ToString()}.");
         /// <summary>
         /// 
@@ -103,9 +103,9 @@ namespace G
                 Validate();
             }
 
-            if (IsCascading && cascading != null)
+            if (Cascading is { } __value0 && cascading != null)
             {
-                return cascading(Cascading!);
+                return cascading(__value0);
             }
 
             return default(TResult);
@@ -123,9 +123,9 @@ namespace G
                 Validate();
             }
 
-            if (IsCascading)
+            if (Cascading is { } __value0)
             {
-                cascading?.Invoke(Cascading!);
+                cascading?.Invoke(__value0);
             }
         }
 
@@ -141,9 +141,9 @@ namespace G
                 Validate();
             }
 
-            if (IsCascading)
+            if (Cascading is { } __value0)
             {
-                cascading?.Invoke(Cascading!);
+                cascading?.Invoke(__value0);
             }
         }
 

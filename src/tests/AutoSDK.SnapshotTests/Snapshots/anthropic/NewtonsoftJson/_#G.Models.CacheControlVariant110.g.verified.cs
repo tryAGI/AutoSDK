@@ -1,4 +1,4 @@
-﻿//HintName: G.Models.CacheControlVariant110.g.cs
+//HintName: G.Models.CacheControlVariant110.g.cs
 #pragma warning disable CS0618 // Type or member is obsolete
 
 #nullable enable
@@ -48,8 +48,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.BetaCacheControlEphemeral PickEphemeral() => IsEphemeral
-            ? Ephemeral!
+        public global::G.BetaCacheControlEphemeral PickEphemeral() => Ephemeral is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Ephemeral' but the value was {ToString()}.");
         /// <summary>
         /// 
@@ -121,9 +121,9 @@ namespace G
                 Validate();
             }
 
-            if (IsEphemeral && ephemeral != null)
+            if (Ephemeral is { } __value0 && ephemeral != null)
             {
-                return ephemeral(Ephemeral!);
+                return ephemeral(__value0);
             }
 
             return default(TResult);
@@ -141,9 +141,9 @@ namespace G
                 Validate();
             }
 
-            if (IsEphemeral)
+            if (Ephemeral is { } __value0)
             {
-                ephemeral?.Invoke(Ephemeral!);
+                ephemeral?.Invoke(__value0);
             }
         }
 
@@ -159,9 +159,9 @@ namespace G
                 Validate();
             }
 
-            if (IsEphemeral)
+            if (Ephemeral is { } __value0)
             {
-                ephemeral?.Invoke(Ephemeral!);
+                ephemeral?.Invoke(__value0);
             }
         }
 

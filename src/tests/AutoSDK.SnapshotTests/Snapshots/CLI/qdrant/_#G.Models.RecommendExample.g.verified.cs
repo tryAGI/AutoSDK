@@ -1,4 +1,4 @@
-﻿//HintName: G.Models.RecommendExample.g.cs
+//HintName: G.Models.RecommendExample.g.cs
 #pragma warning disable CS0618 // Type or member is obsolete
 
 #nullable enable
@@ -43,8 +43,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.ExtendedPointId PickExtendedPointId() => IsExtendedPointId
-            ? ExtendedPointId!.Value
+        public global::G.ExtendedPointId PickExtendedPointId() => ExtendedPointId is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'ExtendedPointId' but the value was {ToString()}.");
 
         /// <summary>
@@ -80,8 +80,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<float> PickRecommendExampleVariant2() => IsRecommendExampleVariant2
-            ? RecommendExampleVariant2!
+        public global::System.Collections.Generic.IList<float> PickRecommendExampleVariant2() => RecommendExampleVariant2 is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'RecommendExampleVariant2' but the value was {ToString()}.");
 
         /// <summary>
@@ -117,8 +117,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.SparseVector PickSparseVector() => IsSparseVector
-            ? SparseVector!
+        public global::G.SparseVector PickSparseVector() => SparseVector is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'SparseVector' but the value was {ToString()}.");
         /// <summary>
         /// 
@@ -220,17 +220,17 @@ namespace G
                 Validate();
             }
 
-            if (IsExtendedPointId && extendedPointId != null)
+            if (ExtendedPointId is { } __value0 && extendedPointId != null)
             {
-                return extendedPointId(ExtendedPointId!);
+                return extendedPointId(__value0);
             }
-            else if (IsRecommendExampleVariant2 && recommendExampleVariant2 != null)
+            else if (RecommendExampleVariant2 is { } __value1 && recommendExampleVariant2 != null)
             {
-                return recommendExampleVariant2(RecommendExampleVariant2!);
+                return recommendExampleVariant2(__value1);
             }
-            else if (IsSparseVector && sparseVector != null)
+            else if (SparseVector is { } __value2 && sparseVector != null)
             {
-                return sparseVector(SparseVector!);
+                return sparseVector(__value2);
             }
 
             return default(TResult);
@@ -252,17 +252,17 @@ namespace G
                 Validate();
             }
 
-            if (IsExtendedPointId)
+            if (ExtendedPointId is { } __value0)
             {
-                extendedPointId?.Invoke(ExtendedPointId!);
+                extendedPointId?.Invoke(__value0);
             }
-            else if (IsRecommendExampleVariant2)
+            else if (RecommendExampleVariant2 is { } __value1)
             {
-                recommendExampleVariant2?.Invoke(RecommendExampleVariant2!);
+                recommendExampleVariant2?.Invoke(__value1);
             }
-            else if (IsSparseVector)
+            else if (SparseVector is { } __value2)
             {
-                sparseVector?.Invoke(SparseVector!);
+                sparseVector?.Invoke(__value2);
             }
         }
 
@@ -280,17 +280,17 @@ namespace G
                 Validate();
             }
 
-            if (IsExtendedPointId)
+            if (ExtendedPointId is { } __value0)
             {
-                extendedPointId?.Invoke(ExtendedPointId!);
+                extendedPointId?.Invoke(__value0);
             }
-            else if (IsRecommendExampleVariant2)
+            else if (RecommendExampleVariant2 is { } __value1)
             {
-                recommendExampleVariant2?.Invoke(RecommendExampleVariant2!);
+                recommendExampleVariant2?.Invoke(__value1);
             }
-            else if (IsSparseVector)
+            else if (SparseVector is { } __value2)
             {
-                sparseVector?.Invoke(SparseVector!);
+                sparseVector?.Invoke(__value2);
             }
         }
 

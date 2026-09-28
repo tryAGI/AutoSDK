@@ -1,4 +1,4 @@
-﻿//HintName: G.Models.CreateScoreValue.g.cs
+//HintName: G.Models.CreateScoreValue.g.cs
 #pragma warning disable CS0618 // Type or member is obsolete
 
 #nullable enable
@@ -43,8 +43,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public double PickCreateScoreValueVariant1() => IsCreateScoreValueVariant1
-            ? CreateScoreValueVariant1!.Value
+        public double PickCreateScoreValueVariant1() => CreateScoreValueVariant1 is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'CreateScoreValueVariant1' but the value was {ToString()}.");
 
         /// <summary>
@@ -80,8 +80,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public string PickCreateScoreValueVariant2() => IsCreateScoreValueVariant2
-            ? CreateScoreValueVariant2!
+        public string PickCreateScoreValueVariant2() => CreateScoreValueVariant2 is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'CreateScoreValueVariant2' but the value was {ToString()}.");
         /// <summary>
         /// 
@@ -178,13 +178,13 @@ namespace G
                 Validate();
             }
 
-            if (IsCreateScoreValueVariant1 && createScoreValueVariant1 != null)
+            if (CreateScoreValueVariant1 is { } __value0 && createScoreValueVariant1 != null)
             {
-                return createScoreValueVariant1(CreateScoreValueVariant1!);
+                return createScoreValueVariant1(__value0);
             }
-            else if (IsCreateScoreValueVariant2 && createScoreValueVariant2 != null)
+            else if (CreateScoreValueVariant2 is { } __value1 && createScoreValueVariant2 != null)
             {
-                return createScoreValueVariant2(CreateScoreValueVariant2!);
+                return createScoreValueVariant2(__value1);
             }
 
             return default(TResult);
@@ -204,13 +204,13 @@ namespace G
                 Validate();
             }
 
-            if (IsCreateScoreValueVariant1)
+            if (CreateScoreValueVariant1 is { } __value0)
             {
-                createScoreValueVariant1?.Invoke(CreateScoreValueVariant1!);
+                createScoreValueVariant1?.Invoke(__value0);
             }
-            else if (IsCreateScoreValueVariant2)
+            else if (CreateScoreValueVariant2 is { } __value1)
             {
-                createScoreValueVariant2?.Invoke(CreateScoreValueVariant2!);
+                createScoreValueVariant2?.Invoke(__value1);
             }
         }
 
@@ -227,13 +227,13 @@ namespace G
                 Validate();
             }
 
-            if (IsCreateScoreValueVariant1)
+            if (CreateScoreValueVariant1 is { } __value0)
             {
-                createScoreValueVariant1?.Invoke(CreateScoreValueVariant1!);
+                createScoreValueVariant1?.Invoke(__value0);
             }
-            else if (IsCreateScoreValueVariant2)
+            else if (CreateScoreValueVariant2 is { } __value1)
             {
-                createScoreValueVariant2?.Invoke(CreateScoreValueVariant2!);
+                createScoreValueVariant2?.Invoke(__value1);
             }
         }
 

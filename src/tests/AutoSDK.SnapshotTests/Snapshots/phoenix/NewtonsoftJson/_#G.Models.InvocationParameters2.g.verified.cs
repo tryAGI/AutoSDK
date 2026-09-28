@@ -1,4 +1,4 @@
-﻿//HintName: G.Models.InvocationParameters2.g.cs
+//HintName: G.Models.InvocationParameters2.g.cs
 #pragma warning disable CS0618 // Type or member is obsolete
 
 #nullable enable
@@ -48,8 +48,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.PromptOpenAIInvocationParameters PickOpenai() => IsOpenai
-            ? Openai!
+        public global::G.PromptOpenAIInvocationParameters PickOpenai() => Openai is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Openai' but the value was {ToString()}.");
 
         /// <summary>
@@ -85,8 +85,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.PromptAzureOpenAIInvocationParameters PickAzureOpenai() => IsAzureOpenai
-            ? AzureOpenai!
+        public global::G.PromptAzureOpenAIInvocationParameters PickAzureOpenai() => AzureOpenai is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'AzureOpenai' but the value was {ToString()}.");
 
         /// <summary>
@@ -122,8 +122,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.PromptAnthropicInvocationParameters PickAnthropic() => IsAnthropic
-            ? Anthropic!
+        public global::G.PromptAnthropicInvocationParameters PickAnthropic() => Anthropic is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Anthropic' but the value was {ToString()}.");
 
         /// <summary>
@@ -159,8 +159,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.PromptGoogleInvocationParameters PickGoogle() => IsGoogle
-            ? Google!
+        public global::G.PromptGoogleInvocationParameters PickGoogle() => Google is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Google' but the value was {ToString()}.");
 
         /// <summary>
@@ -196,8 +196,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.PromptDeepSeekInvocationParameters PickDeepseek() => IsDeepseek
-            ? Deepseek!
+        public global::G.PromptDeepSeekInvocationParameters PickDeepseek() => Deepseek is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Deepseek' but the value was {ToString()}.");
 
         /// <summary>
@@ -233,8 +233,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.PromptXAIInvocationParameters PickXai() => IsXai
-            ? Xai!
+        public global::G.PromptXAIInvocationParameters PickXai() => Xai is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Xai' but the value was {ToString()}.");
 
         /// <summary>
@@ -270,8 +270,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.PromptOllamaInvocationParameters PickOllama() => IsOllama
-            ? Ollama!
+        public global::G.PromptOllamaInvocationParameters PickOllama() => Ollama is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Ollama' but the value was {ToString()}.");
 
         /// <summary>
@@ -307,8 +307,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.PromptAwsInvocationParameters PickAws() => IsAws
-            ? Aws!
+        public global::G.PromptAwsInvocationParameters PickAws() => Aws is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Aws' but the value was {ToString()}.");
 
         /// <summary>
@@ -344,8 +344,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.PromptCerebrasInvocationParameters PickCerebras() => IsCerebras
-            ? Cerebras!
+        public global::G.PromptCerebrasInvocationParameters PickCerebras() => Cerebras is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Cerebras' but the value was {ToString()}.");
 
         /// <summary>
@@ -381,8 +381,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.PromptFireworksInvocationParameters PickFireworks() => IsFireworks
-            ? Fireworks!
+        public global::G.PromptFireworksInvocationParameters PickFireworks() => Fireworks is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Fireworks' but the value was {ToString()}.");
 
         /// <summary>
@@ -418,8 +418,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.PromptGroqInvocationParameters PickGroq() => IsGroq
-            ? Groq!
+        public global::G.PromptGroqInvocationParameters PickGroq() => Groq is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Groq' but the value was {ToString()}.");
 
         /// <summary>
@@ -455,8 +455,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.PromptMoonshotInvocationParameters PickMoonshot() => IsMoonshot
-            ? Moonshot!
+        public global::G.PromptMoonshotInvocationParameters PickMoonshot() => Moonshot is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Moonshot' but the value was {ToString()}.");
 
         /// <summary>
@@ -492,8 +492,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.PromptPerplexityInvocationParameters PickPerplexity() => IsPerplexity
-            ? Perplexity!
+        public global::G.PromptPerplexityInvocationParameters PickPerplexity() => Perplexity is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Perplexity' but the value was {ToString()}.");
 
         /// <summary>
@@ -529,8 +529,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.PromptTogetherInvocationParameters PickTogether() => IsTogether
-            ? Together!
+        public global::G.PromptTogetherInvocationParameters PickTogether() => Together is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Together' but the value was {ToString()}.");
         /// <summary>
         /// 
@@ -966,61 +966,61 @@ namespace G
                 Validate();
             }
 
-            if (IsOpenai && openai != null)
+            if (Openai is { } __value0 && openai != null)
             {
-                return openai(Openai!);
+                return openai(__value0);
             }
-            else if (IsAzureOpenai && azureOpenai != null)
+            else if (AzureOpenai is { } __value1 && azureOpenai != null)
             {
-                return azureOpenai(AzureOpenai!);
+                return azureOpenai(__value1);
             }
-            else if (IsAnthropic && anthropic != null)
+            else if (Anthropic is { } __value2 && anthropic != null)
             {
-                return anthropic(Anthropic!);
+                return anthropic(__value2);
             }
-            else if (IsGoogle && google != null)
+            else if (Google is { } __value3 && google != null)
             {
-                return google(Google!);
+                return google(__value3);
             }
-            else if (IsDeepseek && deepseek != null)
+            else if (Deepseek is { } __value4 && deepseek != null)
             {
-                return deepseek(Deepseek!);
+                return deepseek(__value4);
             }
-            else if (IsXai && xai != null)
+            else if (Xai is { } __value5 && xai != null)
             {
-                return xai(Xai!);
+                return xai(__value5);
             }
-            else if (IsOllama && ollama != null)
+            else if (Ollama is { } __value6 && ollama != null)
             {
-                return ollama(Ollama!);
+                return ollama(__value6);
             }
-            else if (IsAws && aws != null)
+            else if (Aws is { } __value7 && aws != null)
             {
-                return aws(Aws!);
+                return aws(__value7);
             }
-            else if (IsCerebras && cerebras != null)
+            else if (Cerebras is { } __value8 && cerebras != null)
             {
-                return cerebras(Cerebras!);
+                return cerebras(__value8);
             }
-            else if (IsFireworks && fireworks != null)
+            else if (Fireworks is { } __value9 && fireworks != null)
             {
-                return fireworks(Fireworks!);
+                return fireworks(__value9);
             }
-            else if (IsGroq && groq != null)
+            else if (Groq is { } __value10 && groq != null)
             {
-                return groq(Groq!);
+                return groq(__value10);
             }
-            else if (IsMoonshot && moonshot != null)
+            else if (Moonshot is { } __value11 && moonshot != null)
             {
-                return moonshot(Moonshot!);
+                return moonshot(__value11);
             }
-            else if (IsPerplexity && perplexity != null)
+            else if (Perplexity is { } __value12 && perplexity != null)
             {
-                return perplexity(Perplexity!);
+                return perplexity(__value12);
             }
-            else if (IsTogether && together != null)
+            else if (Together is { } __value13 && together != null)
             {
-                return together(Together!);
+                return together(__value13);
             }
 
             return default(TResult);
@@ -1064,61 +1064,61 @@ namespace G
                 Validate();
             }
 
-            if (IsOpenai)
+            if (Openai is { } __value0)
             {
-                openai?.Invoke(Openai!);
+                openai?.Invoke(__value0);
             }
-            else if (IsAzureOpenai)
+            else if (AzureOpenai is { } __value1)
             {
-                azureOpenai?.Invoke(AzureOpenai!);
+                azureOpenai?.Invoke(__value1);
             }
-            else if (IsAnthropic)
+            else if (Anthropic is { } __value2)
             {
-                anthropic?.Invoke(Anthropic!);
+                anthropic?.Invoke(__value2);
             }
-            else if (IsGoogle)
+            else if (Google is { } __value3)
             {
-                google?.Invoke(Google!);
+                google?.Invoke(__value3);
             }
-            else if (IsDeepseek)
+            else if (Deepseek is { } __value4)
             {
-                deepseek?.Invoke(Deepseek!);
+                deepseek?.Invoke(__value4);
             }
-            else if (IsXai)
+            else if (Xai is { } __value5)
             {
-                xai?.Invoke(Xai!);
+                xai?.Invoke(__value5);
             }
-            else if (IsOllama)
+            else if (Ollama is { } __value6)
             {
-                ollama?.Invoke(Ollama!);
+                ollama?.Invoke(__value6);
             }
-            else if (IsAws)
+            else if (Aws is { } __value7)
             {
-                aws?.Invoke(Aws!);
+                aws?.Invoke(__value7);
             }
-            else if (IsCerebras)
+            else if (Cerebras is { } __value8)
             {
-                cerebras?.Invoke(Cerebras!);
+                cerebras?.Invoke(__value8);
             }
-            else if (IsFireworks)
+            else if (Fireworks is { } __value9)
             {
-                fireworks?.Invoke(Fireworks!);
+                fireworks?.Invoke(__value9);
             }
-            else if (IsGroq)
+            else if (Groq is { } __value10)
             {
-                groq?.Invoke(Groq!);
+                groq?.Invoke(__value10);
             }
-            else if (IsMoonshot)
+            else if (Moonshot is { } __value11)
             {
-                moonshot?.Invoke(Moonshot!);
+                moonshot?.Invoke(__value11);
             }
-            else if (IsPerplexity)
+            else if (Perplexity is { } __value12)
             {
-                perplexity?.Invoke(Perplexity!);
+                perplexity?.Invoke(__value12);
             }
-            else if (IsTogether)
+            else if (Together is { } __value13)
             {
-                together?.Invoke(Together!);
+                together?.Invoke(__value13);
             }
         }
 
@@ -1147,61 +1147,61 @@ namespace G
                 Validate();
             }
 
-            if (IsOpenai)
+            if (Openai is { } __value0)
             {
-                openai?.Invoke(Openai!);
+                openai?.Invoke(__value0);
             }
-            else if (IsAzureOpenai)
+            else if (AzureOpenai is { } __value1)
             {
-                azureOpenai?.Invoke(AzureOpenai!);
+                azureOpenai?.Invoke(__value1);
             }
-            else if (IsAnthropic)
+            else if (Anthropic is { } __value2)
             {
-                anthropic?.Invoke(Anthropic!);
+                anthropic?.Invoke(__value2);
             }
-            else if (IsGoogle)
+            else if (Google is { } __value3)
             {
-                google?.Invoke(Google!);
+                google?.Invoke(__value3);
             }
-            else if (IsDeepseek)
+            else if (Deepseek is { } __value4)
             {
-                deepseek?.Invoke(Deepseek!);
+                deepseek?.Invoke(__value4);
             }
-            else if (IsXai)
+            else if (Xai is { } __value5)
             {
-                xai?.Invoke(Xai!);
+                xai?.Invoke(__value5);
             }
-            else if (IsOllama)
+            else if (Ollama is { } __value6)
             {
-                ollama?.Invoke(Ollama!);
+                ollama?.Invoke(__value6);
             }
-            else if (IsAws)
+            else if (Aws is { } __value7)
             {
-                aws?.Invoke(Aws!);
+                aws?.Invoke(__value7);
             }
-            else if (IsCerebras)
+            else if (Cerebras is { } __value8)
             {
-                cerebras?.Invoke(Cerebras!);
+                cerebras?.Invoke(__value8);
             }
-            else if (IsFireworks)
+            else if (Fireworks is { } __value9)
             {
-                fireworks?.Invoke(Fireworks!);
+                fireworks?.Invoke(__value9);
             }
-            else if (IsGroq)
+            else if (Groq is { } __value10)
             {
-                groq?.Invoke(Groq!);
+                groq?.Invoke(__value10);
             }
-            else if (IsMoonshot)
+            else if (Moonshot is { } __value11)
             {
-                moonshot?.Invoke(Moonshot!);
+                moonshot?.Invoke(__value11);
             }
-            else if (IsPerplexity)
+            else if (Perplexity is { } __value12)
             {
-                perplexity?.Invoke(Perplexity!);
+                perplexity?.Invoke(__value12);
             }
-            else if (IsTogether)
+            else if (Together is { } __value13)
             {
-                together?.Invoke(Together!);
+                together?.Invoke(__value13);
             }
         }
 

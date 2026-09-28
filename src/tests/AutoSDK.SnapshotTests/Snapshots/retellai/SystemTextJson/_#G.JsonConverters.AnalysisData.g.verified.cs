@@ -1,4 +1,4 @@
-﻿//HintName: G.JsonConverters.AnalysisData.g.cs
+//HintName: G.JsonConverters.AnalysisData.g.cs
 #nullable enable
 #pragma warning disable CS0618 // Type or member is obsolete
 
@@ -219,25 +219,25 @@ namespace G.JsonConverters
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.StringAnalysisData), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.StringAnalysisData?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.StringAnalysisData).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.String!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickString(), typeInfo);
             }
             else if (value.IsEnum)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.EnumAnalysisData), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.EnumAnalysisData?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.EnumAnalysisData).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Enum!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickEnum(), typeInfo);
             }
             else if (value.IsBoolean)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.BooleanAnalysisData), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.BooleanAnalysisData?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.BooleanAnalysisData).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Boolean!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickBoolean(), typeInfo);
             }
             else if (value.IsNumber)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.NumberAnalysisData), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.NumberAnalysisData?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.NumberAnalysisData).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Number!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickNumber(), typeInfo);
             }
         }
     }

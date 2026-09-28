@@ -1,4 +1,4 @@
-﻿//HintName: G.JsonConverters.AuthParamsVariant1.g.cs
+//HintName: G.JsonConverters.AuthParamsVariant1.g.cs
 #nullable enable
 #pragma warning disable CS0618 // Type or member is obsolete
 
@@ -60,13 +60,13 @@ namespace G.JsonConverters
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.DataSourceOAuth2Params), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.DataSourceOAuth2Params?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.DataSourceOAuth2Params).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Oauth2!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickOauth2(), typeInfo);
             }
             else if (value.IsApiKey)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.DataSourceApiKeyParams), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.DataSourceApiKeyParams?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.DataSourceApiKeyParams).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.ApiKey!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickApiKey(), typeInfo);
             }
         }
     }

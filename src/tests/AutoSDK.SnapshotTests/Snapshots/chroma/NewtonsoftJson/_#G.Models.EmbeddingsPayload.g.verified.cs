@@ -1,4 +1,4 @@
-﻿//HintName: G.Models.EmbeddingsPayload.g.cs
+//HintName: G.Models.EmbeddingsPayload.g.cs
 #pragma warning disable CS0618 // Type or member is obsolete
 
 #nullable enable
@@ -43,8 +43,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::System.Collections.Generic.IList<float>> PickEmbeddingsPayloadVariant1() => IsEmbeddingsPayloadVariant1
-            ? EmbeddingsPayloadVariant1!
+        public global::System.Collections.Generic.IList<global::System.Collections.Generic.IList<float>> PickEmbeddingsPayloadVariant1() => EmbeddingsPayloadVariant1 is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'EmbeddingsPayloadVariant1' but the value was {ToString()}.");
 
         /// <summary>
@@ -80,8 +80,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<string> PickEmbeddingsPayloadVariant2() => IsEmbeddingsPayloadVariant2
-            ? EmbeddingsPayloadVariant2!
+        public global::System.Collections.Generic.IList<string> PickEmbeddingsPayloadVariant2() => EmbeddingsPayloadVariant2 is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'EmbeddingsPayloadVariant2' but the value was {ToString()}.");
 
         /// <summary>
@@ -133,13 +133,13 @@ namespace G
                 Validate();
             }
 
-            if (IsEmbeddingsPayloadVariant1 && embeddingsPayloadVariant1 != null)
+            if (EmbeddingsPayloadVariant1 is { } __value0 && embeddingsPayloadVariant1 != null)
             {
-                return embeddingsPayloadVariant1(EmbeddingsPayloadVariant1!);
+                return embeddingsPayloadVariant1(__value0);
             }
-            else if (IsEmbeddingsPayloadVariant2 && embeddingsPayloadVariant2 != null)
+            else if (EmbeddingsPayloadVariant2 is { } __value1 && embeddingsPayloadVariant2 != null)
             {
-                return embeddingsPayloadVariant2(EmbeddingsPayloadVariant2!);
+                return embeddingsPayloadVariant2(__value1);
             }
 
             return default(TResult);
@@ -159,13 +159,13 @@ namespace G
                 Validate();
             }
 
-            if (IsEmbeddingsPayloadVariant1)
+            if (EmbeddingsPayloadVariant1 is { } __value0)
             {
-                embeddingsPayloadVariant1?.Invoke(EmbeddingsPayloadVariant1!);
+                embeddingsPayloadVariant1?.Invoke(__value0);
             }
-            else if (IsEmbeddingsPayloadVariant2)
+            else if (EmbeddingsPayloadVariant2 is { } __value1)
             {
-                embeddingsPayloadVariant2?.Invoke(EmbeddingsPayloadVariant2!);
+                embeddingsPayloadVariant2?.Invoke(__value1);
             }
         }
 
@@ -182,13 +182,13 @@ namespace G
                 Validate();
             }
 
-            if (IsEmbeddingsPayloadVariant1)
+            if (EmbeddingsPayloadVariant1 is { } __value0)
             {
-                embeddingsPayloadVariant1?.Invoke(EmbeddingsPayloadVariant1!);
+                embeddingsPayloadVariant1?.Invoke(__value0);
             }
-            else if (IsEmbeddingsPayloadVariant2)
+            else if (EmbeddingsPayloadVariant2 is { } __value1)
             {
-                embeddingsPayloadVariant2?.Invoke(EmbeddingsPayloadVariant2!);
+                embeddingsPayloadVariant2?.Invoke(__value1);
             }
         }
 

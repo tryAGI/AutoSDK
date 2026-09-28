@@ -1,4 +1,4 @@
-﻿//HintName: G.GuestStarClient.GetGuestStarSession.g.cs
+//HintName: G.GuestStarClient.GetGuestStarSession.g.cs
 
 #nullable enable
 
@@ -123,8 +123,8 @@ namespace G
                 PrepareGetGuestStarSessionRequest(
                     httpClient: HttpClient,
                     httpRequestMessage: __httpRequest,
-                    broadcasterId: broadcasterId!,
-                    moderatorId: moderatorId!);
+                    broadcasterId: broadcasterId,
+                    moderatorId: moderatorId);
 
                 return __httpRequest;
             }
@@ -146,7 +146,7 @@ namespace G
                                 pathTemplate: "\"/guest_star/session\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: null,
                                 exception: null,
                                 clientOptions: Options,
@@ -180,7 +180,7 @@ namespace G
                                 pathTemplate: "\"/guest_star/session\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: null,
                                 exception: __exception,
                                 clientOptions: Options,
@@ -221,7 +221,7 @@ namespace G
                                 pathTemplate: "\"/guest_star/session\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: __response,
                                 exception: null,
                                 clientOptions: Options,
@@ -269,7 +269,7 @@ namespace G
                                 pathTemplate: "\"/guest_star/session\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: __response,
                                 exception: null,
                                 clientOptions: Options,
@@ -291,7 +291,7 @@ namespace G
                                 pathTemplate: "\"/guest_star/session\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: __response,
                                 exception: null,
                                 clientOptions: Options,

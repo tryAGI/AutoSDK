@@ -1,4 +1,4 @@
-﻿//HintName: G.JsonConverters.TrackerStatus.g.cs
+//HintName: G.JsonConverters.TrackerStatus.g.cs
 #nullable enable
 #pragma warning disable CS0618 // Type or member is obsolete
 
@@ -166,19 +166,19 @@ namespace G.JsonConverters
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.TrackerStatusEnum), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.TrackerStatusEnum> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.TrackerStatusEnum).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Enum!.Value, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickEnum(), typeInfo);
             }
             else if (value.IsEnum2)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.TrackerStatusEnum2), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.TrackerStatusEnum2?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.TrackerStatusEnum2).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Enum2!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickEnum2(), typeInfo);
             }
             else if (value.IsEnum3)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.TrackerStatusEnum3), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.TrackerStatusEnum3?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.TrackerStatusEnum3).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Enum3!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickEnum3(), typeInfo);
             }
         }
     }

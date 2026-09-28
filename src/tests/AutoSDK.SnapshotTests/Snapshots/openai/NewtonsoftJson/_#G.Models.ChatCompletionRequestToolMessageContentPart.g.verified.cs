@@ -1,4 +1,4 @@
-﻿//HintName: G.Models.ChatCompletionRequestToolMessageContentPart.g.cs
+//HintName: G.Models.ChatCompletionRequestToolMessageContentPart.g.cs
 #pragma warning disable CS0618 // Type or member is obsolete
 
 #nullable enable
@@ -43,8 +43,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.ChatCompletionRequestMessageContentPartText PickTextContentPart() => IsTextContentPart
-            ? TextContentPart!
+        public global::G.ChatCompletionRequestMessageContentPartText PickTextContentPart() => TextContentPart is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'TextContentPart' but the value was {ToString()}.");
         /// <summary>
         /// 
@@ -103,9 +103,9 @@ namespace G
                 Validate();
             }
 
-            if (IsTextContentPart && textContentPart != null)
+            if (TextContentPart is { } __value0 && textContentPart != null)
             {
-                return textContentPart(TextContentPart!);
+                return textContentPart(__value0);
             }
 
             return default(TResult);
@@ -123,9 +123,9 @@ namespace G
                 Validate();
             }
 
-            if (IsTextContentPart)
+            if (TextContentPart is { } __value0)
             {
-                textContentPart?.Invoke(TextContentPart!);
+                textContentPart?.Invoke(__value0);
             }
         }
 
@@ -141,9 +141,9 @@ namespace G
                 Validate();
             }
 
-            if (IsTextContentPart)
+            if (TextContentPart is { } __value0)
             {
-                textContentPart?.Invoke(TextContentPart!);
+                textContentPart?.Invoke(__value0);
             }
         }
 

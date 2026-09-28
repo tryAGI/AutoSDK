@@ -1,4 +1,4 @@
-﻿//HintName: G.Models.Input.g.cs
+//HintName: G.Models.Input.g.cs
 #pragma warning disable CS0618 // Type or member is obsolete
 
 #nullable enable
@@ -48,8 +48,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.CompletionPrompt PickCompletion() => IsCompletion
-            ? Completion!
+        public global::G.CompletionPrompt PickCompletion() => Completion is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Completion' but the value was {ToString()}.");
 
         /// <summary>
@@ -85,8 +85,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.ChatPrompt PickChat() => IsChat
-            ? Chat!
+        public global::G.ChatPrompt PickChat() => Chat is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Chat' but the value was {ToString()}.");
         /// <summary>
         /// 
@@ -186,13 +186,13 @@ namespace G
                 Validate();
             }
 
-            if (IsCompletion && completion != null)
+            if (Completion is { } __value0 && completion != null)
             {
-                return completion(Completion!);
+                return completion(__value0);
             }
-            else if (IsChat && chat != null)
+            else if (Chat is { } __value1 && chat != null)
             {
-                return chat(Chat!);
+                return chat(__value1);
             }
 
             return default(TResult);
@@ -212,13 +212,13 @@ namespace G
                 Validate();
             }
 
-            if (IsCompletion)
+            if (Completion is { } __value0)
             {
-                completion?.Invoke(Completion!);
+                completion?.Invoke(__value0);
             }
-            else if (IsChat)
+            else if (Chat is { } __value1)
             {
-                chat?.Invoke(Chat!);
+                chat?.Invoke(__value1);
             }
         }
 
@@ -235,13 +235,13 @@ namespace G
                 Validate();
             }
 
-            if (IsCompletion)
+            if (Completion is { } __value0)
             {
-                completion?.Invoke(Completion!);
+                completion?.Invoke(__value0);
             }
-            else if (IsChat)
+            else if (Chat is { } __value1)
             {
-                chat?.Invoke(Chat!);
+                chat?.Invoke(__value1);
             }
         }
 

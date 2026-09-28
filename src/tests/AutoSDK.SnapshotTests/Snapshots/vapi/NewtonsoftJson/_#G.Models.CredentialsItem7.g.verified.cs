@@ -1,4 +1,4 @@
-﻿//HintName: G.Models.CredentialsItem7.g.cs
+//HintName: G.Models.CredentialsItem7.g.cs
 #pragma warning disable CS0618 // Type or member is obsolete
 
 #nullable enable
@@ -48,8 +48,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.CreateAnthropicCredentialDTO PickAnthropic() => IsAnthropic
-            ? Anthropic!
+        public global::G.CreateAnthropicCredentialDTO PickAnthropic() => Anthropic is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Anthropic' but the value was {ToString()}.");
 
         /// <summary>
@@ -85,8 +85,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.CreateAnthropicBedrockCredentialDTO PickAnthropicBedrock() => IsAnthropicBedrock
-            ? AnthropicBedrock!
+        public global::G.CreateAnthropicBedrockCredentialDTO PickAnthropicBedrock() => AnthropicBedrock is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'AnthropicBedrock' but the value was {ToString()}.");
 
         /// <summary>
@@ -122,8 +122,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.CreateAnyscaleCredentialDTO PickAnyscale() => IsAnyscale
-            ? Anyscale!
+        public global::G.CreateAnyscaleCredentialDTO PickAnyscale() => Anyscale is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Anyscale' but the value was {ToString()}.");
 
         /// <summary>
@@ -159,8 +159,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.CreateAssemblyAICredentialDTO PickAssemblyAi() => IsAssemblyAi
-            ? AssemblyAi!
+        public global::G.CreateAssemblyAICredentialDTO PickAssemblyAi() => AssemblyAi is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'AssemblyAi' but the value was {ToString()}.");
 
         /// <summary>
@@ -196,8 +196,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.CreateAzureCredentialDTO PickAzure() => IsAzure
-            ? Azure!
+        public global::G.CreateAzureCredentialDTO PickAzure() => Azure is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Azure' but the value was {ToString()}.");
 
         /// <summary>
@@ -233,8 +233,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.CreateAzureOpenAICredentialDTO PickAzureOpenai() => IsAzureOpenai
-            ? AzureOpenai!
+        public global::G.CreateAzureOpenAICredentialDTO PickAzureOpenai() => AzureOpenai is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'AzureOpenai' but the value was {ToString()}.");
 
         /// <summary>
@@ -270,8 +270,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.CreateByoSipTrunkCredentialDTO PickByoSipTrunk() => IsByoSipTrunk
-            ? ByoSipTrunk!
+        public global::G.CreateByoSipTrunkCredentialDTO PickByoSipTrunk() => ByoSipTrunk is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'ByoSipTrunk' but the value was {ToString()}.");
 
         /// <summary>
@@ -307,8 +307,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.CreateCartesiaCredentialDTO PickCartesia() => IsCartesia
-            ? Cartesia!
+        public global::G.CreateCartesiaCredentialDTO PickCartesia() => Cartesia is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Cartesia' but the value was {ToString()}.");
 
         /// <summary>
@@ -344,8 +344,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.CreateCerebrasCredentialDTO PickCerebras() => IsCerebras
-            ? Cerebras!
+        public global::G.CreateCerebrasCredentialDTO PickCerebras() => Cerebras is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Cerebras' but the value was {ToString()}.");
 
         /// <summary>
@@ -381,8 +381,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.CreateCloudflareCredentialDTO PickCloudflare() => IsCloudflare
-            ? Cloudflare!
+        public global::G.CreateCloudflareCredentialDTO PickCloudflare() => Cloudflare is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Cloudflare' but the value was {ToString()}.");
 
         /// <summary>
@@ -418,8 +418,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.CreateCustomLLMCredentialDTO PickCustomLlm() => IsCustomLlm
-            ? CustomLlm!
+        public global::G.CreateCustomLLMCredentialDTO PickCustomLlm() => CustomLlm is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'CustomLlm' but the value was {ToString()}.");
 
         /// <summary>
@@ -455,8 +455,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.CreateDeepgramCredentialDTO PickDeepgram() => IsDeepgram
-            ? Deepgram!
+        public global::G.CreateDeepgramCredentialDTO PickDeepgram() => Deepgram is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Deepgram' but the value was {ToString()}.");
 
         /// <summary>
@@ -492,8 +492,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.CreateDeepInfraCredentialDTO PickDeepinfra() => IsDeepinfra
-            ? Deepinfra!
+        public global::G.CreateDeepInfraCredentialDTO PickDeepinfra() => Deepinfra is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Deepinfra' but the value was {ToString()}.");
 
         /// <summary>
@@ -529,8 +529,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.CreateDeepSeekCredentialDTO PickDeepSeek() => IsDeepSeek
-            ? DeepSeek!
+        public global::G.CreateDeepSeekCredentialDTO PickDeepSeek() => DeepSeek is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'DeepSeek' but the value was {ToString()}.");
 
         /// <summary>
@@ -566,8 +566,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.CreateElevenLabsCredentialDTO PickElevenlabs() => IsElevenlabs
-            ? Elevenlabs!
+        public global::G.CreateElevenLabsCredentialDTO PickElevenlabs() => Elevenlabs is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Elevenlabs' but the value was {ToString()}.");
 
         /// <summary>
@@ -603,8 +603,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.CreateGcpCredentialDTO PickGcp() => IsGcp
-            ? Gcp!
+        public global::G.CreateGcpCredentialDTO PickGcp() => Gcp is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Gcp' but the value was {ToString()}.");
 
         /// <summary>
@@ -640,8 +640,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.CreateGladiaCredentialDTO PickGladia() => IsGladia
-            ? Gladia!
+        public global::G.CreateGladiaCredentialDTO PickGladia() => Gladia is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Gladia' but the value was {ToString()}.");
 
         /// <summary>
@@ -677,8 +677,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.CreateGoHighLevelCredentialDTO PickGohighlevel() => IsGohighlevel
-            ? Gohighlevel!
+        public global::G.CreateGoHighLevelCredentialDTO PickGohighlevel() => Gohighlevel is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Gohighlevel' but the value was {ToString()}.");
 
         /// <summary>
@@ -714,8 +714,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.CreateGoogleCredentialDTO PickGoogle() => IsGoogle
-            ? Google!
+        public global::G.CreateGoogleCredentialDTO PickGoogle() => Google is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Google' but the value was {ToString()}.");
 
         /// <summary>
@@ -751,8 +751,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.CreateGroqCredentialDTO PickGroq() => IsGroq
-            ? Groq!
+        public global::G.CreateGroqCredentialDTO PickGroq() => Groq is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Groq' but the value was {ToString()}.");
 
         /// <summary>
@@ -788,8 +788,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.CreateHumeCredentialDTO PickHume() => IsHume
-            ? Hume!
+        public global::G.CreateHumeCredentialDTO PickHume() => Hume is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Hume' but the value was {ToString()}.");
 
         /// <summary>
@@ -825,8 +825,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.CreateInflectionAICredentialDTO PickInflectionAi() => IsInflectionAi
-            ? InflectionAi!
+        public global::G.CreateInflectionAICredentialDTO PickInflectionAi() => InflectionAi is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'InflectionAi' but the value was {ToString()}.");
 
         /// <summary>
@@ -862,8 +862,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.CreateLangfuseCredentialDTO PickLangfuse() => IsLangfuse
-            ? Langfuse!
+        public global::G.CreateLangfuseCredentialDTO PickLangfuse() => Langfuse is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Langfuse' but the value was {ToString()}.");
 
         /// <summary>
@@ -899,8 +899,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.CreateLmntCredentialDTO PickLmnt() => IsLmnt
-            ? Lmnt!
+        public global::G.CreateLmntCredentialDTO PickLmnt() => Lmnt is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Lmnt' but the value was {ToString()}.");
 
         /// <summary>
@@ -936,8 +936,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.CreateMakeCredentialDTO PickMake() => IsMake
-            ? Make!
+        public global::G.CreateMakeCredentialDTO PickMake() => Make is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Make' but the value was {ToString()}.");
 
         /// <summary>
@@ -973,8 +973,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.CreateMistralCredentialDTO PickMistral() => IsMistral
-            ? Mistral!
+        public global::G.CreateMistralCredentialDTO PickMistral() => Mistral is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Mistral' but the value was {ToString()}.");
 
         /// <summary>
@@ -1010,8 +1010,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.CreateNeuphonicCredentialDTO PickNeuphonic() => IsNeuphonic
-            ? Neuphonic!
+        public global::G.CreateNeuphonicCredentialDTO PickNeuphonic() => Neuphonic is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Neuphonic' but the value was {ToString()}.");
 
         /// <summary>
@@ -1047,8 +1047,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.CreateOpenAICredentialDTO PickOpenai() => IsOpenai
-            ? Openai!
+        public global::G.CreateOpenAICredentialDTO PickOpenai() => Openai is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Openai' but the value was {ToString()}.");
 
         /// <summary>
@@ -1084,8 +1084,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.CreateOpenRouterCredentialDTO PickOpenrouter() => IsOpenrouter
-            ? Openrouter!
+        public global::G.CreateOpenRouterCredentialDTO PickOpenrouter() => Openrouter is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Openrouter' but the value was {ToString()}.");
 
         /// <summary>
@@ -1121,8 +1121,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.CreatePerplexityAICredentialDTO PickPerplexityAi() => IsPerplexityAi
-            ? PerplexityAi!
+        public global::G.CreatePerplexityAICredentialDTO PickPerplexityAi() => PerplexityAi is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'PerplexityAi' but the value was {ToString()}.");
 
         /// <summary>
@@ -1158,8 +1158,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.CreatePlayHTCredentialDTO PickPlayht() => IsPlayht
-            ? Playht!
+        public global::G.CreatePlayHTCredentialDTO PickPlayht() => Playht is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Playht' but the value was {ToString()}.");
 
         /// <summary>
@@ -1195,8 +1195,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.CreateRimeAICredentialDTO PickRimeAi() => IsRimeAi
-            ? RimeAi!
+        public global::G.CreateRimeAICredentialDTO PickRimeAi() => RimeAi is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'RimeAi' but the value was {ToString()}.");
 
         /// <summary>
@@ -1232,8 +1232,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.CreateRunpodCredentialDTO PickRunpod() => IsRunpod
-            ? Runpod!
+        public global::G.CreateRunpodCredentialDTO PickRunpod() => Runpod is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Runpod' but the value was {ToString()}.");
 
         /// <summary>
@@ -1269,8 +1269,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.CreateS3CredentialDTO PickS3() => IsS3
-            ? S3!
+        public global::G.CreateS3CredentialDTO PickS3() => S3 is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'S3' but the value was {ToString()}.");
 
         /// <summary>
@@ -1306,8 +1306,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.CreateSmallestAICredentialDTO PickSmallestAi() => IsSmallestAi
-            ? SmallestAi!
+        public global::G.CreateSmallestAICredentialDTO PickSmallestAi() => SmallestAi is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'SmallestAi' but the value was {ToString()}.");
 
         /// <summary>
@@ -1343,8 +1343,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.CreateSpeechmaticsCredentialDTO PickSpeechmatics() => IsSpeechmatics
-            ? Speechmatics!
+        public global::G.CreateSpeechmaticsCredentialDTO PickSpeechmatics() => Speechmatics is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Speechmatics' but the value was {ToString()}.");
 
         /// <summary>
@@ -1380,8 +1380,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.CreateSonioxCredentialDTO PickSoniox() => IsSoniox
-            ? Soniox!
+        public global::G.CreateSonioxCredentialDTO PickSoniox() => Soniox is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Soniox' but the value was {ToString()}.");
 
         /// <summary>
@@ -1417,8 +1417,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.CreateSupabaseCredentialDTO PickSupabase() => IsSupabase
-            ? Supabase!
+        public global::G.CreateSupabaseCredentialDTO PickSupabase() => Supabase is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Supabase' but the value was {ToString()}.");
 
         /// <summary>
@@ -1454,8 +1454,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.CreateTavusCredentialDTO PickTavus() => IsTavus
-            ? Tavus!
+        public global::G.CreateTavusCredentialDTO PickTavus() => Tavus is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Tavus' but the value was {ToString()}.");
 
         /// <summary>
@@ -1491,8 +1491,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.CreateTogetherAICredentialDTO PickTogetherAi() => IsTogetherAi
-            ? TogetherAi!
+        public global::G.CreateTogetherAICredentialDTO PickTogetherAi() => TogetherAi is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'TogetherAi' but the value was {ToString()}.");
 
         /// <summary>
@@ -1528,8 +1528,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.CreateTrieveCredentialDTO PickTrieve() => IsTrieve
-            ? Trieve!
+        public global::G.CreateTrieveCredentialDTO PickTrieve() => Trieve is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Trieve' but the value was {ToString()}.");
 
         /// <summary>
@@ -1565,8 +1565,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.CreateTwilioCredentialDTO PickTwilio() => IsTwilio
-            ? Twilio!
+        public global::G.CreateTwilioCredentialDTO PickTwilio() => Twilio is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Twilio' but the value was {ToString()}.");
 
         /// <summary>
@@ -1602,8 +1602,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.CreateVonageCredentialDTO PickVonage() => IsVonage
-            ? Vonage!
+        public global::G.CreateVonageCredentialDTO PickVonage() => Vonage is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Vonage' but the value was {ToString()}.");
 
         /// <summary>
@@ -1639,8 +1639,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.CreateWebhookCredentialDTO PickWebhook() => IsWebhook
-            ? Webhook!
+        public global::G.CreateWebhookCredentialDTO PickWebhook() => Webhook is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Webhook' but the value was {ToString()}.");
 
         /// <summary>
@@ -1676,8 +1676,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.CreateCustomCredentialDTO PickCustomCredential() => IsCustomCredential
-            ? CustomCredential!
+        public global::G.CreateCustomCredentialDTO PickCustomCredential() => CustomCredential is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'CustomCredential' but the value was {ToString()}.");
 
         /// <summary>
@@ -1713,8 +1713,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.CreateXAiCredentialDTO PickXai() => IsXai
-            ? Xai!
+        public global::G.CreateXAiCredentialDTO PickXai() => Xai is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Xai' but the value was {ToString()}.");
 
         /// <summary>
@@ -1750,8 +1750,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.CreateGoogleCalendarOAuth2ClientCredentialDTO PickGoogleCalendarOauth2Client() => IsGoogleCalendarOauth2Client
-            ? GoogleCalendarOauth2Client!
+        public global::G.CreateGoogleCalendarOAuth2ClientCredentialDTO PickGoogleCalendarOauth2Client() => GoogleCalendarOauth2Client is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'GoogleCalendarOauth2Client' but the value was {ToString()}.");
 
         /// <summary>
@@ -1787,8 +1787,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.CreateGoogleCalendarOAuth2AuthorizationCredentialDTO PickGoogleCalendarOauth2Authorization() => IsGoogleCalendarOauth2Authorization
-            ? GoogleCalendarOauth2Authorization!
+        public global::G.CreateGoogleCalendarOAuth2AuthorizationCredentialDTO PickGoogleCalendarOauth2Authorization() => GoogleCalendarOauth2Authorization is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'GoogleCalendarOauth2Authorization' but the value was {ToString()}.");
 
         /// <summary>
@@ -1824,8 +1824,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.CreateGoogleSheetsOAuth2AuthorizationCredentialDTO PickGoogleSheetsOauth2Authorization() => IsGoogleSheetsOauth2Authorization
-            ? GoogleSheetsOauth2Authorization!
+        public global::G.CreateGoogleSheetsOAuth2AuthorizationCredentialDTO PickGoogleSheetsOauth2Authorization() => GoogleSheetsOauth2Authorization is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'GoogleSheetsOauth2Authorization' but the value was {ToString()}.");
 
         /// <summary>
@@ -1861,8 +1861,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.CreateSlackOAuth2AuthorizationCredentialDTO PickSlackOauth2Authorization() => IsSlackOauth2Authorization
-            ? SlackOauth2Authorization!
+        public global::G.CreateSlackOAuth2AuthorizationCredentialDTO PickSlackOauth2Authorization() => SlackOauth2Authorization is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'SlackOauth2Authorization' but the value was {ToString()}.");
 
         /// <summary>
@@ -1898,8 +1898,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.CreateGoHighLevelMCPCredentialDTO PickGhlOauth2Authorization() => IsGhlOauth2Authorization
-            ? GhlOauth2Authorization!
+        public global::G.CreateGoHighLevelMCPCredentialDTO PickGhlOauth2Authorization() => GhlOauth2Authorization is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'GhlOauth2Authorization' but the value was {ToString()}.");
 
         /// <summary>
@@ -1935,8 +1935,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.CreateInworldCredentialDTO PickInworld() => IsInworld
-            ? Inworld!
+        public global::G.CreateInworldCredentialDTO PickInworld() => Inworld is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Inworld' but the value was {ToString()}.");
 
         /// <summary>
@@ -1972,8 +1972,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.CreateMinimaxCredentialDTO PickMinimax() => IsMinimax
-            ? Minimax!
+        public global::G.CreateMinimaxCredentialDTO PickMinimax() => Minimax is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Minimax' but the value was {ToString()}.");
 
         /// <summary>
@@ -2009,8 +2009,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.CreateWellSaidCredentialDTO PickWellsaid() => IsWellsaid
-            ? Wellsaid!
+        public global::G.CreateWellSaidCredentialDTO PickWellsaid() => Wellsaid is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Wellsaid' but the value was {ToString()}.");
 
         /// <summary>
@@ -2046,8 +2046,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.CreateEmailCredentialDTO PickEmail() => IsEmail
-            ? Email!
+        public global::G.CreateEmailCredentialDTO PickEmail() => Email is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Email' but the value was {ToString()}.");
 
         /// <summary>
@@ -2083,8 +2083,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.CreateSlackWebhookCredentialDTO PickSlackWebhook() => IsSlackWebhook
-            ? SlackWebhook!
+        public global::G.CreateSlackWebhookCredentialDTO PickSlackWebhook() => SlackWebhook is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'SlackWebhook' but the value was {ToString()}.");
         /// <summary>
         /// 
@@ -3696,229 +3696,229 @@ namespace G
                 Validate();
             }
 
-            if (IsAnthropic && anthropic != null)
+            if (Anthropic is { } __value0 && anthropic != null)
             {
-                return anthropic(Anthropic!);
+                return anthropic(__value0);
             }
-            else if (IsAnthropicBedrock && anthropicBedrock != null)
+            else if (AnthropicBedrock is { } __value1 && anthropicBedrock != null)
             {
-                return anthropicBedrock(AnthropicBedrock!);
+                return anthropicBedrock(__value1);
             }
-            else if (IsAnyscale && anyscale != null)
+            else if (Anyscale is { } __value2 && anyscale != null)
             {
-                return anyscale(Anyscale!);
+                return anyscale(__value2);
             }
-            else if (IsAssemblyAi && assemblyAi != null)
+            else if (AssemblyAi is { } __value3 && assemblyAi != null)
             {
-                return assemblyAi(AssemblyAi!);
+                return assemblyAi(__value3);
             }
-            else if (IsAzure && azure != null)
+            else if (Azure is { } __value4 && azure != null)
             {
-                return azure(Azure!);
+                return azure(__value4);
             }
-            else if (IsAzureOpenai && azureOpenai != null)
+            else if (AzureOpenai is { } __value5 && azureOpenai != null)
             {
-                return azureOpenai(AzureOpenai!);
+                return azureOpenai(__value5);
             }
-            else if (IsByoSipTrunk && byoSipTrunk != null)
+            else if (ByoSipTrunk is { } __value6 && byoSipTrunk != null)
             {
-                return byoSipTrunk(ByoSipTrunk!);
+                return byoSipTrunk(__value6);
             }
-            else if (IsCartesia && cartesia != null)
+            else if (Cartesia is { } __value7 && cartesia != null)
             {
-                return cartesia(Cartesia!);
+                return cartesia(__value7);
             }
-            else if (IsCerebras && cerebras != null)
+            else if (Cerebras is { } __value8 && cerebras != null)
             {
-                return cerebras(Cerebras!);
+                return cerebras(__value8);
             }
-            else if (IsCloudflare && cloudflare != null)
+            else if (Cloudflare is { } __value9 && cloudflare != null)
             {
-                return cloudflare(Cloudflare!);
+                return cloudflare(__value9);
             }
-            else if (IsCustomLlm && customLlm != null)
+            else if (CustomLlm is { } __value10 && customLlm != null)
             {
-                return customLlm(CustomLlm!);
+                return customLlm(__value10);
             }
-            else if (IsDeepgram && deepgram != null)
+            else if (Deepgram is { } __value11 && deepgram != null)
             {
-                return deepgram(Deepgram!);
+                return deepgram(__value11);
             }
-            else if (IsDeepinfra && deepinfra != null)
+            else if (Deepinfra is { } __value12 && deepinfra != null)
             {
-                return deepinfra(Deepinfra!);
+                return deepinfra(__value12);
             }
-            else if (IsDeepSeek && deepSeek != null)
+            else if (DeepSeek is { } __value13 && deepSeek != null)
             {
-                return deepSeek(DeepSeek!);
+                return deepSeek(__value13);
             }
-            else if (IsElevenlabs && elevenlabs != null)
+            else if (Elevenlabs is { } __value14 && elevenlabs != null)
             {
-                return elevenlabs(Elevenlabs!);
+                return elevenlabs(__value14);
             }
-            else if (IsGcp && gcp != null)
+            else if (Gcp is { } __value15 && gcp != null)
             {
-                return gcp(Gcp!);
+                return gcp(__value15);
             }
-            else if (IsGladia && gladia != null)
+            else if (Gladia is { } __value16 && gladia != null)
             {
-                return gladia(Gladia!);
+                return gladia(__value16);
             }
-            else if (IsGohighlevel && gohighlevel != null)
+            else if (Gohighlevel is { } __value17 && gohighlevel != null)
             {
-                return gohighlevel(Gohighlevel!);
+                return gohighlevel(__value17);
             }
-            else if (IsGoogle && google != null)
+            else if (Google is { } __value18 && google != null)
             {
-                return google(Google!);
+                return google(__value18);
             }
-            else if (IsGroq && groq != null)
+            else if (Groq is { } __value19 && groq != null)
             {
-                return groq(Groq!);
+                return groq(__value19);
             }
-            else if (IsHume && hume != null)
+            else if (Hume is { } __value20 && hume != null)
             {
-                return hume(Hume!);
+                return hume(__value20);
             }
-            else if (IsInflectionAi && inflectionAi != null)
+            else if (InflectionAi is { } __value21 && inflectionAi != null)
             {
-                return inflectionAi(InflectionAi!);
+                return inflectionAi(__value21);
             }
-            else if (IsLangfuse && langfuse != null)
+            else if (Langfuse is { } __value22 && langfuse != null)
             {
-                return langfuse(Langfuse!);
+                return langfuse(__value22);
             }
-            else if (IsLmnt && lmnt != null)
+            else if (Lmnt is { } __value23 && lmnt != null)
             {
-                return lmnt(Lmnt!);
+                return lmnt(__value23);
             }
-            else if (IsMake && make != null)
+            else if (Make is { } __value24 && make != null)
             {
-                return make(Make!);
+                return make(__value24);
             }
-            else if (IsMistral && mistral != null)
+            else if (Mistral is { } __value25 && mistral != null)
             {
-                return mistral(Mistral!);
+                return mistral(__value25);
             }
-            else if (IsNeuphonic && neuphonic != null)
+            else if (Neuphonic is { } __value26 && neuphonic != null)
             {
-                return neuphonic(Neuphonic!);
+                return neuphonic(__value26);
             }
-            else if (IsOpenai && openai != null)
+            else if (Openai is { } __value27 && openai != null)
             {
-                return openai(Openai!);
+                return openai(__value27);
             }
-            else if (IsOpenrouter && openrouter != null)
+            else if (Openrouter is { } __value28 && openrouter != null)
             {
-                return openrouter(Openrouter!);
+                return openrouter(__value28);
             }
-            else if (IsPerplexityAi && perplexityAi != null)
+            else if (PerplexityAi is { } __value29 && perplexityAi != null)
             {
-                return perplexityAi(PerplexityAi!);
+                return perplexityAi(__value29);
             }
-            else if (IsPlayht && playht != null)
+            else if (Playht is { } __value30 && playht != null)
             {
-                return playht(Playht!);
+                return playht(__value30);
             }
-            else if (IsRimeAi && rimeAi != null)
+            else if (RimeAi is { } __value31 && rimeAi != null)
             {
-                return rimeAi(RimeAi!);
+                return rimeAi(__value31);
             }
-            else if (IsRunpod && runpod != null)
+            else if (Runpod is { } __value32 && runpod != null)
             {
-                return runpod(Runpod!);
+                return runpod(__value32);
             }
-            else if (IsS3 && s3 != null)
+            else if (S3 is { } __value33 && s3 != null)
             {
-                return s3(S3!);
+                return s3(__value33);
             }
-            else if (IsSmallestAi && smallestAi != null)
+            else if (SmallestAi is { } __value34 && smallestAi != null)
             {
-                return smallestAi(SmallestAi!);
+                return smallestAi(__value34);
             }
-            else if (IsSpeechmatics && speechmatics != null)
+            else if (Speechmatics is { } __value35 && speechmatics != null)
             {
-                return speechmatics(Speechmatics!);
+                return speechmatics(__value35);
             }
-            else if (IsSoniox && soniox != null)
+            else if (Soniox is { } __value36 && soniox != null)
             {
-                return soniox(Soniox!);
+                return soniox(__value36);
             }
-            else if (IsSupabase && supabase != null)
+            else if (Supabase is { } __value37 && supabase != null)
             {
-                return supabase(Supabase!);
+                return supabase(__value37);
             }
-            else if (IsTavus && tavus != null)
+            else if (Tavus is { } __value38 && tavus != null)
             {
-                return tavus(Tavus!);
+                return tavus(__value38);
             }
-            else if (IsTogetherAi && togetherAi != null)
+            else if (TogetherAi is { } __value39 && togetherAi != null)
             {
-                return togetherAi(TogetherAi!);
+                return togetherAi(__value39);
             }
-            else if (IsTrieve && trieve != null)
+            else if (Trieve is { } __value40 && trieve != null)
             {
-                return trieve(Trieve!);
+                return trieve(__value40);
             }
-            else if (IsTwilio && twilio != null)
+            else if (Twilio is { } __value41 && twilio != null)
             {
-                return twilio(Twilio!);
+                return twilio(__value41);
             }
-            else if (IsVonage && vonage != null)
+            else if (Vonage is { } __value42 && vonage != null)
             {
-                return vonage(Vonage!);
+                return vonage(__value42);
             }
-            else if (IsWebhook && webhook != null)
+            else if (Webhook is { } __value43 && webhook != null)
             {
-                return webhook(Webhook!);
+                return webhook(__value43);
             }
-            else if (IsCustomCredential && customCredential != null)
+            else if (CustomCredential is { } __value44 && customCredential != null)
             {
-                return customCredential(CustomCredential!);
+                return customCredential(__value44);
             }
-            else if (IsXai && xai != null)
+            else if (Xai is { } __value45 && xai != null)
             {
-                return xai(Xai!);
+                return xai(__value45);
             }
-            else if (IsGoogleCalendarOauth2Client && googleCalendarOauth2Client != null)
+            else if (GoogleCalendarOauth2Client is { } __value46 && googleCalendarOauth2Client != null)
             {
-                return googleCalendarOauth2Client(GoogleCalendarOauth2Client!);
+                return googleCalendarOauth2Client(__value46);
             }
-            else if (IsGoogleCalendarOauth2Authorization && googleCalendarOauth2Authorization != null)
+            else if (GoogleCalendarOauth2Authorization is { } __value47 && googleCalendarOauth2Authorization != null)
             {
-                return googleCalendarOauth2Authorization(GoogleCalendarOauth2Authorization!);
+                return googleCalendarOauth2Authorization(__value47);
             }
-            else if (IsGoogleSheetsOauth2Authorization && googleSheetsOauth2Authorization != null)
+            else if (GoogleSheetsOauth2Authorization is { } __value48 && googleSheetsOauth2Authorization != null)
             {
-                return googleSheetsOauth2Authorization(GoogleSheetsOauth2Authorization!);
+                return googleSheetsOauth2Authorization(__value48);
             }
-            else if (IsSlackOauth2Authorization && slackOauth2Authorization != null)
+            else if (SlackOauth2Authorization is { } __value49 && slackOauth2Authorization != null)
             {
-                return slackOauth2Authorization(SlackOauth2Authorization!);
+                return slackOauth2Authorization(__value49);
             }
-            else if (IsGhlOauth2Authorization && ghlOauth2Authorization != null)
+            else if (GhlOauth2Authorization is { } __value50 && ghlOauth2Authorization != null)
             {
-                return ghlOauth2Authorization(GhlOauth2Authorization!);
+                return ghlOauth2Authorization(__value50);
             }
-            else if (IsInworld && inworld != null)
+            else if (Inworld is { } __value51 && inworld != null)
             {
-                return inworld(Inworld!);
+                return inworld(__value51);
             }
-            else if (IsMinimax && minimax != null)
+            else if (Minimax is { } __value52 && minimax != null)
             {
-                return minimax(Minimax!);
+                return minimax(__value52);
             }
-            else if (IsWellsaid && wellsaid != null)
+            else if (Wellsaid is { } __value53 && wellsaid != null)
             {
-                return wellsaid(Wellsaid!);
+                return wellsaid(__value53);
             }
-            else if (IsEmail && email != null)
+            else if (Email is { } __value54 && email != null)
             {
-                return email(Email!);
+                return email(__value54);
             }
-            else if (IsSlackWebhook && slackWebhook != null)
+            else if (SlackWebhook is { } __value55 && slackWebhook != null)
             {
-                return slackWebhook(SlackWebhook!);
+                return slackWebhook(__value55);
             }
 
             return default(TResult);
@@ -4046,229 +4046,229 @@ namespace G
                 Validate();
             }
 
-            if (IsAnthropic)
+            if (Anthropic is { } __value0)
             {
-                anthropic?.Invoke(Anthropic!);
+                anthropic?.Invoke(__value0);
             }
-            else if (IsAnthropicBedrock)
+            else if (AnthropicBedrock is { } __value1)
             {
-                anthropicBedrock?.Invoke(AnthropicBedrock!);
+                anthropicBedrock?.Invoke(__value1);
             }
-            else if (IsAnyscale)
+            else if (Anyscale is { } __value2)
             {
-                anyscale?.Invoke(Anyscale!);
+                anyscale?.Invoke(__value2);
             }
-            else if (IsAssemblyAi)
+            else if (AssemblyAi is { } __value3)
             {
-                assemblyAi?.Invoke(AssemblyAi!);
+                assemblyAi?.Invoke(__value3);
             }
-            else if (IsAzure)
+            else if (Azure is { } __value4)
             {
-                azure?.Invoke(Azure!);
+                azure?.Invoke(__value4);
             }
-            else if (IsAzureOpenai)
+            else if (AzureOpenai is { } __value5)
             {
-                azureOpenai?.Invoke(AzureOpenai!);
+                azureOpenai?.Invoke(__value5);
             }
-            else if (IsByoSipTrunk)
+            else if (ByoSipTrunk is { } __value6)
             {
-                byoSipTrunk?.Invoke(ByoSipTrunk!);
+                byoSipTrunk?.Invoke(__value6);
             }
-            else if (IsCartesia)
+            else if (Cartesia is { } __value7)
             {
-                cartesia?.Invoke(Cartesia!);
+                cartesia?.Invoke(__value7);
             }
-            else if (IsCerebras)
+            else if (Cerebras is { } __value8)
             {
-                cerebras?.Invoke(Cerebras!);
+                cerebras?.Invoke(__value8);
             }
-            else if (IsCloudflare)
+            else if (Cloudflare is { } __value9)
             {
-                cloudflare?.Invoke(Cloudflare!);
+                cloudflare?.Invoke(__value9);
             }
-            else if (IsCustomLlm)
+            else if (CustomLlm is { } __value10)
             {
-                customLlm?.Invoke(CustomLlm!);
+                customLlm?.Invoke(__value10);
             }
-            else if (IsDeepgram)
+            else if (Deepgram is { } __value11)
             {
-                deepgram?.Invoke(Deepgram!);
+                deepgram?.Invoke(__value11);
             }
-            else if (IsDeepinfra)
+            else if (Deepinfra is { } __value12)
             {
-                deepinfra?.Invoke(Deepinfra!);
+                deepinfra?.Invoke(__value12);
             }
-            else if (IsDeepSeek)
+            else if (DeepSeek is { } __value13)
             {
-                deepSeek?.Invoke(DeepSeek!);
+                deepSeek?.Invoke(__value13);
             }
-            else if (IsElevenlabs)
+            else if (Elevenlabs is { } __value14)
             {
-                elevenlabs?.Invoke(Elevenlabs!);
+                elevenlabs?.Invoke(__value14);
             }
-            else if (IsGcp)
+            else if (Gcp is { } __value15)
             {
-                gcp?.Invoke(Gcp!);
+                gcp?.Invoke(__value15);
             }
-            else if (IsGladia)
+            else if (Gladia is { } __value16)
             {
-                gladia?.Invoke(Gladia!);
+                gladia?.Invoke(__value16);
             }
-            else if (IsGohighlevel)
+            else if (Gohighlevel is { } __value17)
             {
-                gohighlevel?.Invoke(Gohighlevel!);
+                gohighlevel?.Invoke(__value17);
             }
-            else if (IsGoogle)
+            else if (Google is { } __value18)
             {
-                google?.Invoke(Google!);
+                google?.Invoke(__value18);
             }
-            else if (IsGroq)
+            else if (Groq is { } __value19)
             {
-                groq?.Invoke(Groq!);
+                groq?.Invoke(__value19);
             }
-            else if (IsHume)
+            else if (Hume is { } __value20)
             {
-                hume?.Invoke(Hume!);
+                hume?.Invoke(__value20);
             }
-            else if (IsInflectionAi)
+            else if (InflectionAi is { } __value21)
             {
-                inflectionAi?.Invoke(InflectionAi!);
+                inflectionAi?.Invoke(__value21);
             }
-            else if (IsLangfuse)
+            else if (Langfuse is { } __value22)
             {
-                langfuse?.Invoke(Langfuse!);
+                langfuse?.Invoke(__value22);
             }
-            else if (IsLmnt)
+            else if (Lmnt is { } __value23)
             {
-                lmnt?.Invoke(Lmnt!);
+                lmnt?.Invoke(__value23);
             }
-            else if (IsMake)
+            else if (Make is { } __value24)
             {
-                make?.Invoke(Make!);
+                make?.Invoke(__value24);
             }
-            else if (IsMistral)
+            else if (Mistral is { } __value25)
             {
-                mistral?.Invoke(Mistral!);
+                mistral?.Invoke(__value25);
             }
-            else if (IsNeuphonic)
+            else if (Neuphonic is { } __value26)
             {
-                neuphonic?.Invoke(Neuphonic!);
+                neuphonic?.Invoke(__value26);
             }
-            else if (IsOpenai)
+            else if (Openai is { } __value27)
             {
-                openai?.Invoke(Openai!);
+                openai?.Invoke(__value27);
             }
-            else if (IsOpenrouter)
+            else if (Openrouter is { } __value28)
             {
-                openrouter?.Invoke(Openrouter!);
+                openrouter?.Invoke(__value28);
             }
-            else if (IsPerplexityAi)
+            else if (PerplexityAi is { } __value29)
             {
-                perplexityAi?.Invoke(PerplexityAi!);
+                perplexityAi?.Invoke(__value29);
             }
-            else if (IsPlayht)
+            else if (Playht is { } __value30)
             {
-                playht?.Invoke(Playht!);
+                playht?.Invoke(__value30);
             }
-            else if (IsRimeAi)
+            else if (RimeAi is { } __value31)
             {
-                rimeAi?.Invoke(RimeAi!);
+                rimeAi?.Invoke(__value31);
             }
-            else if (IsRunpod)
+            else if (Runpod is { } __value32)
             {
-                runpod?.Invoke(Runpod!);
+                runpod?.Invoke(__value32);
             }
-            else if (IsS3)
+            else if (S3 is { } __value33)
             {
-                s3?.Invoke(S3!);
+                s3?.Invoke(__value33);
             }
-            else if (IsSmallestAi)
+            else if (SmallestAi is { } __value34)
             {
-                smallestAi?.Invoke(SmallestAi!);
+                smallestAi?.Invoke(__value34);
             }
-            else if (IsSpeechmatics)
+            else if (Speechmatics is { } __value35)
             {
-                speechmatics?.Invoke(Speechmatics!);
+                speechmatics?.Invoke(__value35);
             }
-            else if (IsSoniox)
+            else if (Soniox is { } __value36)
             {
-                soniox?.Invoke(Soniox!);
+                soniox?.Invoke(__value36);
             }
-            else if (IsSupabase)
+            else if (Supabase is { } __value37)
             {
-                supabase?.Invoke(Supabase!);
+                supabase?.Invoke(__value37);
             }
-            else if (IsTavus)
+            else if (Tavus is { } __value38)
             {
-                tavus?.Invoke(Tavus!);
+                tavus?.Invoke(__value38);
             }
-            else if (IsTogetherAi)
+            else if (TogetherAi is { } __value39)
             {
-                togetherAi?.Invoke(TogetherAi!);
+                togetherAi?.Invoke(__value39);
             }
-            else if (IsTrieve)
+            else if (Trieve is { } __value40)
             {
-                trieve?.Invoke(Trieve!);
+                trieve?.Invoke(__value40);
             }
-            else if (IsTwilio)
+            else if (Twilio is { } __value41)
             {
-                twilio?.Invoke(Twilio!);
+                twilio?.Invoke(__value41);
             }
-            else if (IsVonage)
+            else if (Vonage is { } __value42)
             {
-                vonage?.Invoke(Vonage!);
+                vonage?.Invoke(__value42);
             }
-            else if (IsWebhook)
+            else if (Webhook is { } __value43)
             {
-                webhook?.Invoke(Webhook!);
+                webhook?.Invoke(__value43);
             }
-            else if (IsCustomCredential)
+            else if (CustomCredential is { } __value44)
             {
-                customCredential?.Invoke(CustomCredential!);
+                customCredential?.Invoke(__value44);
             }
-            else if (IsXai)
+            else if (Xai is { } __value45)
             {
-                xai?.Invoke(Xai!);
+                xai?.Invoke(__value45);
             }
-            else if (IsGoogleCalendarOauth2Client)
+            else if (GoogleCalendarOauth2Client is { } __value46)
             {
-                googleCalendarOauth2Client?.Invoke(GoogleCalendarOauth2Client!);
+                googleCalendarOauth2Client?.Invoke(__value46);
             }
-            else if (IsGoogleCalendarOauth2Authorization)
+            else if (GoogleCalendarOauth2Authorization is { } __value47)
             {
-                googleCalendarOauth2Authorization?.Invoke(GoogleCalendarOauth2Authorization!);
+                googleCalendarOauth2Authorization?.Invoke(__value47);
             }
-            else if (IsGoogleSheetsOauth2Authorization)
+            else if (GoogleSheetsOauth2Authorization is { } __value48)
             {
-                googleSheetsOauth2Authorization?.Invoke(GoogleSheetsOauth2Authorization!);
+                googleSheetsOauth2Authorization?.Invoke(__value48);
             }
-            else if (IsSlackOauth2Authorization)
+            else if (SlackOauth2Authorization is { } __value49)
             {
-                slackOauth2Authorization?.Invoke(SlackOauth2Authorization!);
+                slackOauth2Authorization?.Invoke(__value49);
             }
-            else if (IsGhlOauth2Authorization)
+            else if (GhlOauth2Authorization is { } __value50)
             {
-                ghlOauth2Authorization?.Invoke(GhlOauth2Authorization!);
+                ghlOauth2Authorization?.Invoke(__value50);
             }
-            else if (IsInworld)
+            else if (Inworld is { } __value51)
             {
-                inworld?.Invoke(Inworld!);
+                inworld?.Invoke(__value51);
             }
-            else if (IsMinimax)
+            else if (Minimax is { } __value52)
             {
-                minimax?.Invoke(Minimax!);
+                minimax?.Invoke(__value52);
             }
-            else if (IsWellsaid)
+            else if (Wellsaid is { } __value53)
             {
-                wellsaid?.Invoke(Wellsaid!);
+                wellsaid?.Invoke(__value53);
             }
-            else if (IsEmail)
+            else if (Email is { } __value54)
             {
-                email?.Invoke(Email!);
+                email?.Invoke(__value54);
             }
-            else if (IsSlackWebhook)
+            else if (SlackWebhook is { } __value55)
             {
-                slackWebhook?.Invoke(SlackWebhook!);
+                slackWebhook?.Invoke(__value55);
             }
         }
 
@@ -4339,229 +4339,229 @@ namespace G
                 Validate();
             }
 
-            if (IsAnthropic)
+            if (Anthropic is { } __value0)
             {
-                anthropic?.Invoke(Anthropic!);
+                anthropic?.Invoke(__value0);
             }
-            else if (IsAnthropicBedrock)
+            else if (AnthropicBedrock is { } __value1)
             {
-                anthropicBedrock?.Invoke(AnthropicBedrock!);
+                anthropicBedrock?.Invoke(__value1);
             }
-            else if (IsAnyscale)
+            else if (Anyscale is { } __value2)
             {
-                anyscale?.Invoke(Anyscale!);
+                anyscale?.Invoke(__value2);
             }
-            else if (IsAssemblyAi)
+            else if (AssemblyAi is { } __value3)
             {
-                assemblyAi?.Invoke(AssemblyAi!);
+                assemblyAi?.Invoke(__value3);
             }
-            else if (IsAzure)
+            else if (Azure is { } __value4)
             {
-                azure?.Invoke(Azure!);
+                azure?.Invoke(__value4);
             }
-            else if (IsAzureOpenai)
+            else if (AzureOpenai is { } __value5)
             {
-                azureOpenai?.Invoke(AzureOpenai!);
+                azureOpenai?.Invoke(__value5);
             }
-            else if (IsByoSipTrunk)
+            else if (ByoSipTrunk is { } __value6)
             {
-                byoSipTrunk?.Invoke(ByoSipTrunk!);
+                byoSipTrunk?.Invoke(__value6);
             }
-            else if (IsCartesia)
+            else if (Cartesia is { } __value7)
             {
-                cartesia?.Invoke(Cartesia!);
+                cartesia?.Invoke(__value7);
             }
-            else if (IsCerebras)
+            else if (Cerebras is { } __value8)
             {
-                cerebras?.Invoke(Cerebras!);
+                cerebras?.Invoke(__value8);
             }
-            else if (IsCloudflare)
+            else if (Cloudflare is { } __value9)
             {
-                cloudflare?.Invoke(Cloudflare!);
+                cloudflare?.Invoke(__value9);
             }
-            else if (IsCustomLlm)
+            else if (CustomLlm is { } __value10)
             {
-                customLlm?.Invoke(CustomLlm!);
+                customLlm?.Invoke(__value10);
             }
-            else if (IsDeepgram)
+            else if (Deepgram is { } __value11)
             {
-                deepgram?.Invoke(Deepgram!);
+                deepgram?.Invoke(__value11);
             }
-            else if (IsDeepinfra)
+            else if (Deepinfra is { } __value12)
             {
-                deepinfra?.Invoke(Deepinfra!);
+                deepinfra?.Invoke(__value12);
             }
-            else if (IsDeepSeek)
+            else if (DeepSeek is { } __value13)
             {
-                deepSeek?.Invoke(DeepSeek!);
+                deepSeek?.Invoke(__value13);
             }
-            else if (IsElevenlabs)
+            else if (Elevenlabs is { } __value14)
             {
-                elevenlabs?.Invoke(Elevenlabs!);
+                elevenlabs?.Invoke(__value14);
             }
-            else if (IsGcp)
+            else if (Gcp is { } __value15)
             {
-                gcp?.Invoke(Gcp!);
+                gcp?.Invoke(__value15);
             }
-            else if (IsGladia)
+            else if (Gladia is { } __value16)
             {
-                gladia?.Invoke(Gladia!);
+                gladia?.Invoke(__value16);
             }
-            else if (IsGohighlevel)
+            else if (Gohighlevel is { } __value17)
             {
-                gohighlevel?.Invoke(Gohighlevel!);
+                gohighlevel?.Invoke(__value17);
             }
-            else if (IsGoogle)
+            else if (Google is { } __value18)
             {
-                google?.Invoke(Google!);
+                google?.Invoke(__value18);
             }
-            else if (IsGroq)
+            else if (Groq is { } __value19)
             {
-                groq?.Invoke(Groq!);
+                groq?.Invoke(__value19);
             }
-            else if (IsHume)
+            else if (Hume is { } __value20)
             {
-                hume?.Invoke(Hume!);
+                hume?.Invoke(__value20);
             }
-            else if (IsInflectionAi)
+            else if (InflectionAi is { } __value21)
             {
-                inflectionAi?.Invoke(InflectionAi!);
+                inflectionAi?.Invoke(__value21);
             }
-            else if (IsLangfuse)
+            else if (Langfuse is { } __value22)
             {
-                langfuse?.Invoke(Langfuse!);
+                langfuse?.Invoke(__value22);
             }
-            else if (IsLmnt)
+            else if (Lmnt is { } __value23)
             {
-                lmnt?.Invoke(Lmnt!);
+                lmnt?.Invoke(__value23);
             }
-            else if (IsMake)
+            else if (Make is { } __value24)
             {
-                make?.Invoke(Make!);
+                make?.Invoke(__value24);
             }
-            else if (IsMistral)
+            else if (Mistral is { } __value25)
             {
-                mistral?.Invoke(Mistral!);
+                mistral?.Invoke(__value25);
             }
-            else if (IsNeuphonic)
+            else if (Neuphonic is { } __value26)
             {
-                neuphonic?.Invoke(Neuphonic!);
+                neuphonic?.Invoke(__value26);
             }
-            else if (IsOpenai)
+            else if (Openai is { } __value27)
             {
-                openai?.Invoke(Openai!);
+                openai?.Invoke(__value27);
             }
-            else if (IsOpenrouter)
+            else if (Openrouter is { } __value28)
             {
-                openrouter?.Invoke(Openrouter!);
+                openrouter?.Invoke(__value28);
             }
-            else if (IsPerplexityAi)
+            else if (PerplexityAi is { } __value29)
             {
-                perplexityAi?.Invoke(PerplexityAi!);
+                perplexityAi?.Invoke(__value29);
             }
-            else if (IsPlayht)
+            else if (Playht is { } __value30)
             {
-                playht?.Invoke(Playht!);
+                playht?.Invoke(__value30);
             }
-            else if (IsRimeAi)
+            else if (RimeAi is { } __value31)
             {
-                rimeAi?.Invoke(RimeAi!);
+                rimeAi?.Invoke(__value31);
             }
-            else if (IsRunpod)
+            else if (Runpod is { } __value32)
             {
-                runpod?.Invoke(Runpod!);
+                runpod?.Invoke(__value32);
             }
-            else if (IsS3)
+            else if (S3 is { } __value33)
             {
-                s3?.Invoke(S3!);
+                s3?.Invoke(__value33);
             }
-            else if (IsSmallestAi)
+            else if (SmallestAi is { } __value34)
             {
-                smallestAi?.Invoke(SmallestAi!);
+                smallestAi?.Invoke(__value34);
             }
-            else if (IsSpeechmatics)
+            else if (Speechmatics is { } __value35)
             {
-                speechmatics?.Invoke(Speechmatics!);
+                speechmatics?.Invoke(__value35);
             }
-            else if (IsSoniox)
+            else if (Soniox is { } __value36)
             {
-                soniox?.Invoke(Soniox!);
+                soniox?.Invoke(__value36);
             }
-            else if (IsSupabase)
+            else if (Supabase is { } __value37)
             {
-                supabase?.Invoke(Supabase!);
+                supabase?.Invoke(__value37);
             }
-            else if (IsTavus)
+            else if (Tavus is { } __value38)
             {
-                tavus?.Invoke(Tavus!);
+                tavus?.Invoke(__value38);
             }
-            else if (IsTogetherAi)
+            else if (TogetherAi is { } __value39)
             {
-                togetherAi?.Invoke(TogetherAi!);
+                togetherAi?.Invoke(__value39);
             }
-            else if (IsTrieve)
+            else if (Trieve is { } __value40)
             {
-                trieve?.Invoke(Trieve!);
+                trieve?.Invoke(__value40);
             }
-            else if (IsTwilio)
+            else if (Twilio is { } __value41)
             {
-                twilio?.Invoke(Twilio!);
+                twilio?.Invoke(__value41);
             }
-            else if (IsVonage)
+            else if (Vonage is { } __value42)
             {
-                vonage?.Invoke(Vonage!);
+                vonage?.Invoke(__value42);
             }
-            else if (IsWebhook)
+            else if (Webhook is { } __value43)
             {
-                webhook?.Invoke(Webhook!);
+                webhook?.Invoke(__value43);
             }
-            else if (IsCustomCredential)
+            else if (CustomCredential is { } __value44)
             {
-                customCredential?.Invoke(CustomCredential!);
+                customCredential?.Invoke(__value44);
             }
-            else if (IsXai)
+            else if (Xai is { } __value45)
             {
-                xai?.Invoke(Xai!);
+                xai?.Invoke(__value45);
             }
-            else if (IsGoogleCalendarOauth2Client)
+            else if (GoogleCalendarOauth2Client is { } __value46)
             {
-                googleCalendarOauth2Client?.Invoke(GoogleCalendarOauth2Client!);
+                googleCalendarOauth2Client?.Invoke(__value46);
             }
-            else if (IsGoogleCalendarOauth2Authorization)
+            else if (GoogleCalendarOauth2Authorization is { } __value47)
             {
-                googleCalendarOauth2Authorization?.Invoke(GoogleCalendarOauth2Authorization!);
+                googleCalendarOauth2Authorization?.Invoke(__value47);
             }
-            else if (IsGoogleSheetsOauth2Authorization)
+            else if (GoogleSheetsOauth2Authorization is { } __value48)
             {
-                googleSheetsOauth2Authorization?.Invoke(GoogleSheetsOauth2Authorization!);
+                googleSheetsOauth2Authorization?.Invoke(__value48);
             }
-            else if (IsSlackOauth2Authorization)
+            else if (SlackOauth2Authorization is { } __value49)
             {
-                slackOauth2Authorization?.Invoke(SlackOauth2Authorization!);
+                slackOauth2Authorization?.Invoke(__value49);
             }
-            else if (IsGhlOauth2Authorization)
+            else if (GhlOauth2Authorization is { } __value50)
             {
-                ghlOauth2Authorization?.Invoke(GhlOauth2Authorization!);
+                ghlOauth2Authorization?.Invoke(__value50);
             }
-            else if (IsInworld)
+            else if (Inworld is { } __value51)
             {
-                inworld?.Invoke(Inworld!);
+                inworld?.Invoke(__value51);
             }
-            else if (IsMinimax)
+            else if (Minimax is { } __value52)
             {
-                minimax?.Invoke(Minimax!);
+                minimax?.Invoke(__value52);
             }
-            else if (IsWellsaid)
+            else if (Wellsaid is { } __value53)
             {
-                wellsaid?.Invoke(Wellsaid!);
+                wellsaid?.Invoke(__value53);
             }
-            else if (IsEmail)
+            else if (Email is { } __value54)
             {
-                email?.Invoke(Email!);
+                email?.Invoke(__value54);
             }
-            else if (IsSlackWebhook)
+            else if (SlackWebhook is { } __value55)
             {
-                slackWebhook?.Invoke(SlackWebhook!);
+                slackWebhook?.Invoke(__value55);
             }
         }
 

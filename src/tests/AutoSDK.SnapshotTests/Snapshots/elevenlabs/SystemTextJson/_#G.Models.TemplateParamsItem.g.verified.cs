@@ -1,4 +1,4 @@
-﻿//HintName: G.Models.TemplateParamsItem.g.cs
+//HintName: G.Models.TemplateParamsItem.g.cs
 #pragma warning disable CS0618 // Type or member is obsolete
 
 #nullable enable
@@ -48,8 +48,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.WhatsAppTemplateHeaderComponentParams PickHeader() => IsHeader
-            ? Header!
+        public global::G.WhatsAppTemplateHeaderComponentParams PickHeader() => Header is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Header' but the value was {ToString()}.");
 
         /// <summary>
@@ -85,8 +85,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.WhatsAppTemplateBodyComponentParams PickBody() => IsBody
-            ? Body!
+        public global::G.WhatsAppTemplateBodyComponentParams PickBody() => Body is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Body' but the value was {ToString()}.");
 
         /// <summary>
@@ -122,8 +122,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.WhatsAppTemplateButtonComponentParams PickButton() => IsButton
-            ? Button!
+        public global::G.WhatsAppTemplateButtonComponentParams PickButton() => Button is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Button' but the value was {ToString()}.");
         /// <summary>
         /// 
@@ -251,17 +251,17 @@ namespace G
                 Validate();
             }
 
-            if (IsHeader && header != null)
+            if (Header is { } __value0 && header != null)
             {
-                return header(Header!);
+                return header(__value0);
             }
-            else if (IsBody && body != null)
+            else if (Body is { } __value1 && body != null)
             {
-                return body(Body!);
+                return body(__value1);
             }
-            else if (IsButton && button != null)
+            else if (Button is { } __value2 && button != null)
             {
-                return button(Button!);
+                return button(__value2);
             }
 
             return default(TResult);
@@ -283,17 +283,17 @@ namespace G
                 Validate();
             }
 
-            if (IsHeader)
+            if (Header is { } __value0)
             {
-                header?.Invoke(Header!);
+                header?.Invoke(__value0);
             }
-            else if (IsBody)
+            else if (Body is { } __value1)
             {
-                body?.Invoke(Body!);
+                body?.Invoke(__value1);
             }
-            else if (IsButton)
+            else if (Button is { } __value2)
             {
-                button?.Invoke(Button!);
+                button?.Invoke(__value2);
             }
         }
 
@@ -311,17 +311,17 @@ namespace G
                 Validate();
             }
 
-            if (IsHeader)
+            if (Header is { } __value0)
             {
-                header?.Invoke(Header!);
+                header?.Invoke(__value0);
             }
-            else if (IsBody)
+            else if (Body is { } __value1)
             {
-                body?.Invoke(Body!);
+                body?.Invoke(__value1);
             }
-            else if (IsButton)
+            else if (Button is { } __value2)
             {
-                button?.Invoke(Button!);
+                button?.Invoke(__value2);
             }
         }
 

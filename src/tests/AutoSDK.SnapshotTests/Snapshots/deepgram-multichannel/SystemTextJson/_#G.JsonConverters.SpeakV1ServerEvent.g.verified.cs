@@ -1,4 +1,4 @@
-﻿//HintName: G.JsonConverters.SpeakV1ServerEvent.g.cs
+//HintName: G.JsonConverters.SpeakV1ServerEvent.g.cs
 #nullable enable
 #pragma warning disable CS0618 // Type or member is obsolete
 
@@ -60,13 +60,13 @@ namespace G.JsonConverters
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.AudioResponsePayload), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.AudioResponsePayload?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.AudioResponsePayload).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.AudioResponse!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickAudioResponse(), typeInfo);
             }
             else if (value.IsSpeakMetadata)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.SpeakMetadataPayload), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.SpeakMetadataPayload?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.SpeakMetadataPayload).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.SpeakMetadata!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickSpeakMetadata(), typeInfo);
             }
         }
     }

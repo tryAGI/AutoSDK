@@ -1,4 +1,4 @@
-﻿//HintName: G.Models.IvrAction.g.cs
+//HintName: G.Models.IvrAction.g.cs
 #pragma warning disable CS0618 // Type or member is obsolete
 
 #nullable enable
@@ -43,8 +43,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.IvrActionHangup PickHangup() => IsHangup
-            ? Hangup!
+        public global::G.IvrActionHangup PickHangup() => Hangup is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Hangup' but the value was {ToString()}.");
         /// <summary>
         /// 
@@ -103,9 +103,9 @@ namespace G
                 Validate();
             }
 
-            if (IsHangup && hangup != null)
+            if (Hangup is { } __value0 && hangup != null)
             {
-                return hangup(Hangup!);
+                return hangup(__value0);
             }
 
             return default(TResult);
@@ -123,9 +123,9 @@ namespace G
                 Validate();
             }
 
-            if (IsHangup)
+            if (Hangup is { } __value0)
             {
-                hangup?.Invoke(Hangup!);
+                hangup?.Invoke(__value0);
             }
         }
 
@@ -141,9 +141,9 @@ namespace G
                 Validate();
             }
 
-            if (IsHangup)
+            if (Hangup is { } __value0)
             {
-                hangup?.Invoke(Hangup!);
+                hangup?.Invoke(__value0);
             }
         }
 

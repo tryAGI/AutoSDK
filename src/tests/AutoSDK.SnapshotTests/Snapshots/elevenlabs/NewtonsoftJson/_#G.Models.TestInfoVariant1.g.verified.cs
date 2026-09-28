@@ -1,4 +1,4 @@
-﻿//HintName: G.Models.TestInfoVariant1.g.cs
+//HintName: G.Models.TestInfoVariant1.g.cs
 #pragma warning disable CS0618 // Type or member is obsolete
 
 #nullable enable
@@ -48,8 +48,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.ResponseUnitTestModel PickLlm() => IsLlm
-            ? Llm!
+        public global::G.ResponseUnitTestModel PickLlm() => Llm is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Llm' but the value was {ToString()}.");
 
         /// <summary>
@@ -85,8 +85,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.ToolCallUnitTestModel PickTool() => IsTool
-            ? Tool!
+        public global::G.ToolCallUnitTestModel PickTool() => Tool is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Tool' but the value was {ToString()}.");
 
         /// <summary>
@@ -122,8 +122,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.SimulationTestModel PickSimulation() => IsSimulation
-            ? Simulation!
+        public global::G.SimulationTestModel PickSimulation() => Simulation is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Simulation' but the value was {ToString()}.");
         /// <summary>
         /// 
@@ -251,17 +251,17 @@ namespace G
                 Validate();
             }
 
-            if (IsLlm && llm != null)
+            if (Llm is { } __value0 && llm != null)
             {
-                return llm(Llm!);
+                return llm(__value0);
             }
-            else if (IsTool && tool != null)
+            else if (Tool is { } __value1 && tool != null)
             {
-                return tool(Tool!);
+                return tool(__value1);
             }
-            else if (IsSimulation && simulation != null)
+            else if (Simulation is { } __value2 && simulation != null)
             {
-                return simulation(Simulation!);
+                return simulation(__value2);
             }
 
             return default(TResult);
@@ -283,17 +283,17 @@ namespace G
                 Validate();
             }
 
-            if (IsLlm)
+            if (Llm is { } __value0)
             {
-                llm?.Invoke(Llm!);
+                llm?.Invoke(__value0);
             }
-            else if (IsTool)
+            else if (Tool is { } __value1)
             {
-                tool?.Invoke(Tool!);
+                tool?.Invoke(__value1);
             }
-            else if (IsSimulation)
+            else if (Simulation is { } __value2)
             {
-                simulation?.Invoke(Simulation!);
+                simulation?.Invoke(__value2);
             }
         }
 
@@ -311,17 +311,17 @@ namespace G
                 Validate();
             }
 
-            if (IsLlm)
+            if (Llm is { } __value0)
             {
-                llm?.Invoke(Llm!);
+                llm?.Invoke(__value0);
             }
-            else if (IsTool)
+            else if (Tool is { } __value1)
             {
-                tool?.Invoke(Tool!);
+                tool?.Invoke(__value1);
             }
-            else if (IsSimulation)
+            else if (Simulation is { } __value2)
             {
-                simulation?.Invoke(Simulation!);
+                simulation?.Invoke(__value2);
             }
         }
 

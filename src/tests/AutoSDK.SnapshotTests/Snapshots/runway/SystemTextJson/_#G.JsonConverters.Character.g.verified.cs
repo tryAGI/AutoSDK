@@ -1,4 +1,4 @@
-﻿//HintName: G.JsonConverters.Character.g.cs
+//HintName: G.JsonConverters.Character.g.cs
 #nullable enable
 #pragma warning disable CS0618 // Type or member is obsolete
 
@@ -60,13 +60,13 @@ namespace G.JsonConverters
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.CreateCharacterPerformanceRequestActTwoCharacterCharacterImage), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.CreateCharacterPerformanceRequestActTwoCharacterCharacterImage?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.CreateCharacterPerformanceRequestActTwoCharacterCharacterImage).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Image!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickImage(), typeInfo);
             }
             else if (value.IsVideo)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.CreateCharacterPerformanceRequestActTwoCharacterCharacterVideo), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.CreateCharacterPerformanceRequestActTwoCharacterCharacterVideo?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.CreateCharacterPerformanceRequestActTwoCharacterCharacterVideo).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Video!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickVideo(), typeInfo);
             }
         }
     }

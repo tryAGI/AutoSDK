@@ -1,4 +1,4 @@
-﻿//HintName: G.Models.MessagesMessageParamContentOneOf1Items.g.cs
+//HintName: G.Models.MessagesMessageParamContentOneOf1Items.g.cs
 #pragma warning disable CS0618 // Type or member is obsolete
 
 #nullable enable
@@ -43,8 +43,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.MessagesMessageParamContentOneOf1Items0 PickMessagesMessageParamContentOneOf1Items0() => IsMessagesMessageParamContentOneOf1Items0
-            ? MessagesMessageParamContentOneOf1Items0!
+        public global::G.MessagesMessageParamContentOneOf1Items0 PickMessagesMessageParamContentOneOf1Items0() => MessagesMessageParamContentOneOf1Items0 is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'MessagesMessageParamContentOneOf1Items0' but the value was {ToString()}.");
 
         /// <summary>
@@ -80,8 +80,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.MessagesMessageParamContentOneOf1Items1 PickMessagesMessageParamContentOneOf1Items1() => IsMessagesMessageParamContentOneOf1Items1
-            ? MessagesMessageParamContentOneOf1Items1!
+        public global::G.MessagesMessageParamContentOneOf1Items1 PickMessagesMessageParamContentOneOf1Items1() => MessagesMessageParamContentOneOf1Items1 is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'MessagesMessageParamContentOneOf1Items1' but the value was {ToString()}.");
 
         /// <summary>
@@ -117,8 +117,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.MessagesMessageParamContentOneOf1Items2 PickMessagesMessageParamContentOneOf1Items2() => IsMessagesMessageParamContentOneOf1Items2
-            ? MessagesMessageParamContentOneOf1Items2!
+        public global::G.MessagesMessageParamContentOneOf1Items2 PickMessagesMessageParamContentOneOf1Items2() => MessagesMessageParamContentOneOf1Items2 is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'MessagesMessageParamContentOneOf1Items2' but the value was {ToString()}.");
 
         /// <summary>
@@ -154,8 +154,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.MessagesMessageParamContentOneOf1Items3 PickMessagesMessageParamContentOneOf1Items3() => IsMessagesMessageParamContentOneOf1Items3
-            ? MessagesMessageParamContentOneOf1Items3!
+        public global::G.MessagesMessageParamContentOneOf1Items3 PickMessagesMessageParamContentOneOf1Items3() => MessagesMessageParamContentOneOf1Items3 is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'MessagesMessageParamContentOneOf1Items3' but the value was {ToString()}.");
 
         /// <summary>
@@ -191,8 +191,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.MessagesMessageParamContentOneOf1Items4 PickMessagesMessageParamContentOneOf1Items4() => IsMessagesMessageParamContentOneOf1Items4
-            ? MessagesMessageParamContentOneOf1Items4!
+        public global::G.MessagesMessageParamContentOneOf1Items4 PickMessagesMessageParamContentOneOf1Items4() => MessagesMessageParamContentOneOf1Items4 is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'MessagesMessageParamContentOneOf1Items4' but the value was {ToString()}.");
 
         /// <summary>
@@ -228,8 +228,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.MessagesMessageParamContentOneOf1Items5 PickMessagesMessageParamContentOneOf1Items5() => IsMessagesMessageParamContentOneOf1Items5
-            ? MessagesMessageParamContentOneOf1Items5!
+        public global::G.MessagesMessageParamContentOneOf1Items5 PickMessagesMessageParamContentOneOf1Items5() => MessagesMessageParamContentOneOf1Items5 is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'MessagesMessageParamContentOneOf1Items5' but the value was {ToString()}.");
 
         /// <summary>
@@ -265,8 +265,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.MessagesMessageParamContentOneOf1Items6 PickMessagesMessageParamContentOneOf1Items6() => IsMessagesMessageParamContentOneOf1Items6
-            ? MessagesMessageParamContentOneOf1Items6!
+        public global::G.MessagesMessageParamContentOneOf1Items6 PickMessagesMessageParamContentOneOf1Items6() => MessagesMessageParamContentOneOf1Items6 is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'MessagesMessageParamContentOneOf1Items6' but the value was {ToString()}.");
 
         /// <summary>
@@ -302,8 +302,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.MessagesMessageParamContentOneOf1Items7 PickMessagesMessageParamContentOneOf1Items7() => IsMessagesMessageParamContentOneOf1Items7
-            ? MessagesMessageParamContentOneOf1Items7!
+        public global::G.MessagesMessageParamContentOneOf1Items7 PickMessagesMessageParamContentOneOf1Items7() => MessagesMessageParamContentOneOf1Items7 is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'MessagesMessageParamContentOneOf1Items7' but the value was {ToString()}.");
 
         /// <summary>
@@ -339,8 +339,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.MessagesMessageParamContentOneOf1Items8 PickMessagesMessageParamContentOneOf1Items8() => IsMessagesMessageParamContentOneOf1Items8
-            ? MessagesMessageParamContentOneOf1Items8!
+        public global::G.MessagesMessageParamContentOneOf1Items8 PickMessagesMessageParamContentOneOf1Items8() => MessagesMessageParamContentOneOf1Items8 is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'MessagesMessageParamContentOneOf1Items8' but the value was {ToString()}.");
 
         /// <summary>
@@ -376,8 +376,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.MessagesMessageParamContentOneOf1Items9 PickMessagesMessageParamContentOneOf1Items9() => IsMessagesMessageParamContentOneOf1Items9
-            ? MessagesMessageParamContentOneOf1Items9!
+        public global::G.MessagesMessageParamContentOneOf1Items9 PickMessagesMessageParamContentOneOf1Items9() => MessagesMessageParamContentOneOf1Items9 is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'MessagesMessageParamContentOneOf1Items9' but the value was {ToString()}.");
         /// <summary>
         /// 
@@ -698,45 +698,45 @@ namespace G
                 Validate();
             }
 
-            if (IsMessagesMessageParamContentOneOf1Items0 && messagesMessageParamContentOneOf1Items0 != null)
+            if (MessagesMessageParamContentOneOf1Items0 is { } __value0 && messagesMessageParamContentOneOf1Items0 != null)
             {
-                return messagesMessageParamContentOneOf1Items0(MessagesMessageParamContentOneOf1Items0!);
+                return messagesMessageParamContentOneOf1Items0(__value0);
             }
-            else if (IsMessagesMessageParamContentOneOf1Items1 && messagesMessageParamContentOneOf1Items1 != null)
+            else if (MessagesMessageParamContentOneOf1Items1 is { } __value1 && messagesMessageParamContentOneOf1Items1 != null)
             {
-                return messagesMessageParamContentOneOf1Items1(MessagesMessageParamContentOneOf1Items1!);
+                return messagesMessageParamContentOneOf1Items1(__value1);
             }
-            else if (IsMessagesMessageParamContentOneOf1Items2 && messagesMessageParamContentOneOf1Items2 != null)
+            else if (MessagesMessageParamContentOneOf1Items2 is { } __value2 && messagesMessageParamContentOneOf1Items2 != null)
             {
-                return messagesMessageParamContentOneOf1Items2(MessagesMessageParamContentOneOf1Items2!);
+                return messagesMessageParamContentOneOf1Items2(__value2);
             }
-            else if (IsMessagesMessageParamContentOneOf1Items3 && messagesMessageParamContentOneOf1Items3 != null)
+            else if (MessagesMessageParamContentOneOf1Items3 is { } __value3 && messagesMessageParamContentOneOf1Items3 != null)
             {
-                return messagesMessageParamContentOneOf1Items3(MessagesMessageParamContentOneOf1Items3!);
+                return messagesMessageParamContentOneOf1Items3(__value3);
             }
-            else if (IsMessagesMessageParamContentOneOf1Items4 && messagesMessageParamContentOneOf1Items4 != null)
+            else if (MessagesMessageParamContentOneOf1Items4 is { } __value4 && messagesMessageParamContentOneOf1Items4 != null)
             {
-                return messagesMessageParamContentOneOf1Items4(MessagesMessageParamContentOneOf1Items4!);
+                return messagesMessageParamContentOneOf1Items4(__value4);
             }
-            else if (IsMessagesMessageParamContentOneOf1Items5 && messagesMessageParamContentOneOf1Items5 != null)
+            else if (MessagesMessageParamContentOneOf1Items5 is { } __value5 && messagesMessageParamContentOneOf1Items5 != null)
             {
-                return messagesMessageParamContentOneOf1Items5(MessagesMessageParamContentOneOf1Items5!);
+                return messagesMessageParamContentOneOf1Items5(__value5);
             }
-            else if (IsMessagesMessageParamContentOneOf1Items6 && messagesMessageParamContentOneOf1Items6 != null)
+            else if (MessagesMessageParamContentOneOf1Items6 is { } __value6 && messagesMessageParamContentOneOf1Items6 != null)
             {
-                return messagesMessageParamContentOneOf1Items6(MessagesMessageParamContentOneOf1Items6!);
+                return messagesMessageParamContentOneOf1Items6(__value6);
             }
-            else if (IsMessagesMessageParamContentOneOf1Items7 && messagesMessageParamContentOneOf1Items7 != null)
+            else if (MessagesMessageParamContentOneOf1Items7 is { } __value7 && messagesMessageParamContentOneOf1Items7 != null)
             {
-                return messagesMessageParamContentOneOf1Items7(MessagesMessageParamContentOneOf1Items7!);
+                return messagesMessageParamContentOneOf1Items7(__value7);
             }
-            else if (IsMessagesMessageParamContentOneOf1Items8 && messagesMessageParamContentOneOf1Items8 != null)
+            else if (MessagesMessageParamContentOneOf1Items8 is { } __value8 && messagesMessageParamContentOneOf1Items8 != null)
             {
-                return messagesMessageParamContentOneOf1Items8(MessagesMessageParamContentOneOf1Items8!);
+                return messagesMessageParamContentOneOf1Items8(__value8);
             }
-            else if (IsMessagesMessageParamContentOneOf1Items9 && messagesMessageParamContentOneOf1Items9 != null)
+            else if (MessagesMessageParamContentOneOf1Items9 is { } __value9 && messagesMessageParamContentOneOf1Items9 != null)
             {
-                return messagesMessageParamContentOneOf1Items9(MessagesMessageParamContentOneOf1Items9!);
+                return messagesMessageParamContentOneOf1Items9(__value9);
             }
 
             return default(TResult);
@@ -772,45 +772,45 @@ namespace G
                 Validate();
             }
 
-            if (IsMessagesMessageParamContentOneOf1Items0)
+            if (MessagesMessageParamContentOneOf1Items0 is { } __value0)
             {
-                messagesMessageParamContentOneOf1Items0?.Invoke(MessagesMessageParamContentOneOf1Items0!);
+                messagesMessageParamContentOneOf1Items0?.Invoke(__value0);
             }
-            else if (IsMessagesMessageParamContentOneOf1Items1)
+            else if (MessagesMessageParamContentOneOf1Items1 is { } __value1)
             {
-                messagesMessageParamContentOneOf1Items1?.Invoke(MessagesMessageParamContentOneOf1Items1!);
+                messagesMessageParamContentOneOf1Items1?.Invoke(__value1);
             }
-            else if (IsMessagesMessageParamContentOneOf1Items2)
+            else if (MessagesMessageParamContentOneOf1Items2 is { } __value2)
             {
-                messagesMessageParamContentOneOf1Items2?.Invoke(MessagesMessageParamContentOneOf1Items2!);
+                messagesMessageParamContentOneOf1Items2?.Invoke(__value2);
             }
-            else if (IsMessagesMessageParamContentOneOf1Items3)
+            else if (MessagesMessageParamContentOneOf1Items3 is { } __value3)
             {
-                messagesMessageParamContentOneOf1Items3?.Invoke(MessagesMessageParamContentOneOf1Items3!);
+                messagesMessageParamContentOneOf1Items3?.Invoke(__value3);
             }
-            else if (IsMessagesMessageParamContentOneOf1Items4)
+            else if (MessagesMessageParamContentOneOf1Items4 is { } __value4)
             {
-                messagesMessageParamContentOneOf1Items4?.Invoke(MessagesMessageParamContentOneOf1Items4!);
+                messagesMessageParamContentOneOf1Items4?.Invoke(__value4);
             }
-            else if (IsMessagesMessageParamContentOneOf1Items5)
+            else if (MessagesMessageParamContentOneOf1Items5 is { } __value5)
             {
-                messagesMessageParamContentOneOf1Items5?.Invoke(MessagesMessageParamContentOneOf1Items5!);
+                messagesMessageParamContentOneOf1Items5?.Invoke(__value5);
             }
-            else if (IsMessagesMessageParamContentOneOf1Items6)
+            else if (MessagesMessageParamContentOneOf1Items6 is { } __value6)
             {
-                messagesMessageParamContentOneOf1Items6?.Invoke(MessagesMessageParamContentOneOf1Items6!);
+                messagesMessageParamContentOneOf1Items6?.Invoke(__value6);
             }
-            else if (IsMessagesMessageParamContentOneOf1Items7)
+            else if (MessagesMessageParamContentOneOf1Items7 is { } __value7)
             {
-                messagesMessageParamContentOneOf1Items7?.Invoke(MessagesMessageParamContentOneOf1Items7!);
+                messagesMessageParamContentOneOf1Items7?.Invoke(__value7);
             }
-            else if (IsMessagesMessageParamContentOneOf1Items8)
+            else if (MessagesMessageParamContentOneOf1Items8 is { } __value8)
             {
-                messagesMessageParamContentOneOf1Items8?.Invoke(MessagesMessageParamContentOneOf1Items8!);
+                messagesMessageParamContentOneOf1Items8?.Invoke(__value8);
             }
-            else if (IsMessagesMessageParamContentOneOf1Items9)
+            else if (MessagesMessageParamContentOneOf1Items9 is { } __value9)
             {
-                messagesMessageParamContentOneOf1Items9?.Invoke(MessagesMessageParamContentOneOf1Items9!);
+                messagesMessageParamContentOneOf1Items9?.Invoke(__value9);
             }
         }
 
@@ -835,45 +835,45 @@ namespace G
                 Validate();
             }
 
-            if (IsMessagesMessageParamContentOneOf1Items0)
+            if (MessagesMessageParamContentOneOf1Items0 is { } __value0)
             {
-                messagesMessageParamContentOneOf1Items0?.Invoke(MessagesMessageParamContentOneOf1Items0!);
+                messagesMessageParamContentOneOf1Items0?.Invoke(__value0);
             }
-            else if (IsMessagesMessageParamContentOneOf1Items1)
+            else if (MessagesMessageParamContentOneOf1Items1 is { } __value1)
             {
-                messagesMessageParamContentOneOf1Items1?.Invoke(MessagesMessageParamContentOneOf1Items1!);
+                messagesMessageParamContentOneOf1Items1?.Invoke(__value1);
             }
-            else if (IsMessagesMessageParamContentOneOf1Items2)
+            else if (MessagesMessageParamContentOneOf1Items2 is { } __value2)
             {
-                messagesMessageParamContentOneOf1Items2?.Invoke(MessagesMessageParamContentOneOf1Items2!);
+                messagesMessageParamContentOneOf1Items2?.Invoke(__value2);
             }
-            else if (IsMessagesMessageParamContentOneOf1Items3)
+            else if (MessagesMessageParamContentOneOf1Items3 is { } __value3)
             {
-                messagesMessageParamContentOneOf1Items3?.Invoke(MessagesMessageParamContentOneOf1Items3!);
+                messagesMessageParamContentOneOf1Items3?.Invoke(__value3);
             }
-            else if (IsMessagesMessageParamContentOneOf1Items4)
+            else if (MessagesMessageParamContentOneOf1Items4 is { } __value4)
             {
-                messagesMessageParamContentOneOf1Items4?.Invoke(MessagesMessageParamContentOneOf1Items4!);
+                messagesMessageParamContentOneOf1Items4?.Invoke(__value4);
             }
-            else if (IsMessagesMessageParamContentOneOf1Items5)
+            else if (MessagesMessageParamContentOneOf1Items5 is { } __value5)
             {
-                messagesMessageParamContentOneOf1Items5?.Invoke(MessagesMessageParamContentOneOf1Items5!);
+                messagesMessageParamContentOneOf1Items5?.Invoke(__value5);
             }
-            else if (IsMessagesMessageParamContentOneOf1Items6)
+            else if (MessagesMessageParamContentOneOf1Items6 is { } __value6)
             {
-                messagesMessageParamContentOneOf1Items6?.Invoke(MessagesMessageParamContentOneOf1Items6!);
+                messagesMessageParamContentOneOf1Items6?.Invoke(__value6);
             }
-            else if (IsMessagesMessageParamContentOneOf1Items7)
+            else if (MessagesMessageParamContentOneOf1Items7 is { } __value7)
             {
-                messagesMessageParamContentOneOf1Items7?.Invoke(MessagesMessageParamContentOneOf1Items7!);
+                messagesMessageParamContentOneOf1Items7?.Invoke(__value7);
             }
-            else if (IsMessagesMessageParamContentOneOf1Items8)
+            else if (MessagesMessageParamContentOneOf1Items8 is { } __value8)
             {
-                messagesMessageParamContentOneOf1Items8?.Invoke(MessagesMessageParamContentOneOf1Items8!);
+                messagesMessageParamContentOneOf1Items8?.Invoke(__value8);
             }
-            else if (IsMessagesMessageParamContentOneOf1Items9)
+            else if (MessagesMessageParamContentOneOf1Items9 is { } __value9)
             {
-                messagesMessageParamContentOneOf1Items9?.Invoke(MessagesMessageParamContentOneOf1Items9!);
+                messagesMessageParamContentOneOf1Items9?.Invoke(__value9);
             }
         }
 

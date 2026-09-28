@@ -1,4 +1,4 @@
-﻿//HintName: G.Models.MessageOrToolCall.g.cs
+//HintName: G.Models.MessageOrToolCall.g.cs
 #pragma warning disable CS0618 // Type or member is obsolete
 
 #nullable enable
@@ -43,8 +43,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.Message PickMessage() => IsMessage
-            ? Message!
+        public global::G.Message PickMessage() => Message is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Message' but the value was {ToString()}.");
 
         /// <summary>
@@ -80,8 +80,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.ToolCallInvocationMessage PickInvocation() => IsInvocation
-            ? Invocation!
+        public global::G.ToolCallInvocationMessage PickInvocation() => Invocation is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Invocation' but the value was {ToString()}.");
 
         /// <summary>
@@ -117,8 +117,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.ToolCallResultMessage PickResult() => IsResult
-            ? Result!
+        public global::G.ToolCallResultMessage PickResult() => Result is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Result' but the value was {ToString()}.");
 
         /// <summary>
@@ -154,8 +154,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.NodeTransitionMessage PickNodeTransition() => IsNodeTransition
-            ? NodeTransition!
+        public global::G.NodeTransitionMessage PickNodeTransition() => NodeTransition is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'NodeTransition' but the value was {ToString()}.");
 
         /// <summary>
@@ -191,8 +191,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.StateTransitionMessage PickStateTransition() => IsStateTransition
-            ? StateTransition!
+        public global::G.StateTransitionMessage PickStateTransition() => StateTransition is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'StateTransition' but the value was {ToString()}.");
         /// <summary>
         /// 
@@ -373,25 +373,25 @@ namespace G
                 Validate();
             }
 
-            if (IsMessage && message != null)
+            if (Message is { } __value0 && message != null)
             {
-                return message(Message!);
+                return message(__value0);
             }
-            else if (IsInvocation && invocation != null)
+            else if (Invocation is { } __value1 && invocation != null)
             {
-                return invocation(Invocation!);
+                return invocation(__value1);
             }
-            else if (IsResult && result != null)
+            else if (Result is { } __value2 && result != null)
             {
-                return result(Result!);
+                return result(__value2);
             }
-            else if (IsNodeTransition && nodeTransition != null)
+            else if (NodeTransition is { } __value3 && nodeTransition != null)
             {
-                return nodeTransition(NodeTransition!);
+                return nodeTransition(__value3);
             }
-            else if (IsStateTransition && stateTransition != null)
+            else if (StateTransition is { } __value4 && stateTransition != null)
             {
-                return stateTransition(StateTransition!);
+                return stateTransition(__value4);
             }
 
             return default(TResult);
@@ -417,25 +417,25 @@ namespace G
                 Validate();
             }
 
-            if (IsMessage)
+            if (Message is { } __value0)
             {
-                message?.Invoke(Message!);
+                message?.Invoke(__value0);
             }
-            else if (IsInvocation)
+            else if (Invocation is { } __value1)
             {
-                invocation?.Invoke(Invocation!);
+                invocation?.Invoke(__value1);
             }
-            else if (IsResult)
+            else if (Result is { } __value2)
             {
-                result?.Invoke(Result!);
+                result?.Invoke(__value2);
             }
-            else if (IsNodeTransition)
+            else if (NodeTransition is { } __value3)
             {
-                nodeTransition?.Invoke(NodeTransition!);
+                nodeTransition?.Invoke(__value3);
             }
-            else if (IsStateTransition)
+            else if (StateTransition is { } __value4)
             {
-                stateTransition?.Invoke(StateTransition!);
+                stateTransition?.Invoke(__value4);
             }
         }
 
@@ -455,25 +455,25 @@ namespace G
                 Validate();
             }
 
-            if (IsMessage)
+            if (Message is { } __value0)
             {
-                message?.Invoke(Message!);
+                message?.Invoke(__value0);
             }
-            else if (IsInvocation)
+            else if (Invocation is { } __value1)
             {
-                invocation?.Invoke(Invocation!);
+                invocation?.Invoke(__value1);
             }
-            else if (IsResult)
+            else if (Result is { } __value2)
             {
-                result?.Invoke(Result!);
+                result?.Invoke(__value2);
             }
-            else if (IsNodeTransition)
+            else if (NodeTransition is { } __value3)
             {
-                nodeTransition?.Invoke(NodeTransition!);
+                nodeTransition?.Invoke(__value3);
             }
-            else if (IsStateTransition)
+            else if (StateTransition is { } __value4)
             {
-                stateTransition?.Invoke(StateTransition!);
+                stateTransition?.Invoke(__value4);
             }
         }
 

@@ -1,4 +1,4 @@
-﻿//HintName: G.JsonConverters.OptimizersStatus.g.cs
+//HintName: G.JsonConverters.OptimizersStatus.g.cs
 #nullable enable
 #pragma warning disable CS0618 // Type or member is obsolete
 
@@ -128,13 +128,13 @@ namespace G.JsonConverters
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.OptimizersStatusEnum), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.OptimizersStatusEnum> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.OptimizersStatusEnum).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Enum!.Value, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickEnum(), typeInfo);
             }
             else if (value.IsEnum2)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.OptimizersStatusEnum2), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.OptimizersStatusEnum2?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.OptimizersStatusEnum2).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Enum2!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickEnum2(), typeInfo);
             }
         }
     }

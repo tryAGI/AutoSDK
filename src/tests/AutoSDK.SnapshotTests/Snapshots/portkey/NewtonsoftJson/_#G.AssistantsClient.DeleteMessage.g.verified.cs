@@ -1,4 +1,4 @@
-﻿//HintName: G.AssistantsClient.DeleteMessage.g.cs
+//HintName: G.AssistantsClient.DeleteMessage.g.cs
 
 #nullable enable
 
@@ -273,8 +273,8 @@ namespace G
                 PrepareDeleteMessageRequest(
                     httpClient: HttpClient,
                     httpRequestMessage: __httpRequest,
-                    threadId: threadId!,
-                    messageId: messageId!);
+                    threadId: threadId,
+                    messageId: messageId);
 
                 global::G.AutoSDKHttpRequestOptions.StampAuthorizationOverride(__httpRequest);
 
@@ -298,7 +298,7 @@ namespace G
                                 pathTemplate: "$\"/threads/{threadId}/messages/{messageId}\"",
                                 httpMethod: "DELETE",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: null,
                                 exception: null,
                                 clientOptions: Options,
@@ -332,7 +332,7 @@ namespace G
                                 pathTemplate: "$\"/threads/{threadId}/messages/{messageId}\"",
                                 httpMethod: "DELETE",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: null,
                                 exception: __exception,
                                 clientOptions: Options,
@@ -373,7 +373,7 @@ namespace G
                                 pathTemplate: "$\"/threads/{threadId}/messages/{messageId}\"",
                                 httpMethod: "DELETE",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: __response,
                                 exception: null,
                                 clientOptions: Options,
@@ -421,7 +421,7 @@ namespace G
                                 pathTemplate: "$\"/threads/{threadId}/messages/{messageId}\"",
                                 httpMethod: "DELETE",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: __response,
                                 exception: null,
                                 clientOptions: Options,
@@ -443,7 +443,7 @@ namespace G
                                 pathTemplate: "$\"/threads/{threadId}/messages/{messageId}\"",
                                 httpMethod: "DELETE",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: __response,
                                 exception: null,
                                 clientOptions: Options,

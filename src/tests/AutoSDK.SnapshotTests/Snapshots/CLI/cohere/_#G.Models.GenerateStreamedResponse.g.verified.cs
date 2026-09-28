@@ -1,4 +1,4 @@
-﻿//HintName: G.Models.GenerateStreamedResponse.g.cs
+//HintName: G.Models.GenerateStreamedResponse.g.cs
 #pragma warning disable CS0618 // Type or member is obsolete
 
 #nullable enable
@@ -48,8 +48,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.GenerateStreamText PickTextGeneration() => IsTextGeneration
-            ? TextGeneration!.Value
+        public global::G.GenerateStreamText PickTextGeneration() => TextGeneration is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'TextGeneration' but the value was {ToString()}.");
 
         /// <summary>
@@ -85,8 +85,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.GenerateStreamEnd PickStreamEnd() => IsStreamEnd
-            ? StreamEnd!.Value
+        public global::G.GenerateStreamEnd PickStreamEnd() => StreamEnd is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'StreamEnd' but the value was {ToString()}.");
 
         /// <summary>
@@ -122,8 +122,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.GenerateStreamError PickStreamError() => IsStreamError
-            ? StreamError!.Value
+        public global::G.GenerateStreamError PickStreamError() => StreamError is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'StreamError' but the value was {ToString()}.");
         /// <summary>
         /// 
@@ -251,17 +251,17 @@ namespace G
                 Validate();
             }
 
-            if (IsTextGeneration && textGeneration != null)
+            if (TextGeneration is { } __value0 && textGeneration != null)
             {
-                return textGeneration(TextGeneration!);
+                return textGeneration(__value0);
             }
-            else if (IsStreamEnd && streamEnd != null)
+            else if (StreamEnd is { } __value1 && streamEnd != null)
             {
-                return streamEnd(StreamEnd!);
+                return streamEnd(__value1);
             }
-            else if (IsStreamError && streamError != null)
+            else if (StreamError is { } __value2 && streamError != null)
             {
-                return streamError(StreamError!);
+                return streamError(__value2);
             }
 
             return default(TResult);
@@ -283,17 +283,17 @@ namespace G
                 Validate();
             }
 
-            if (IsTextGeneration)
+            if (TextGeneration is { } __value0)
             {
-                textGeneration?.Invoke(TextGeneration!);
+                textGeneration?.Invoke(__value0);
             }
-            else if (IsStreamEnd)
+            else if (StreamEnd is { } __value1)
             {
-                streamEnd?.Invoke(StreamEnd!);
+                streamEnd?.Invoke(__value1);
             }
-            else if (IsStreamError)
+            else if (StreamError is { } __value2)
             {
-                streamError?.Invoke(StreamError!);
+                streamError?.Invoke(__value2);
             }
         }
 
@@ -311,17 +311,17 @@ namespace G
                 Validate();
             }
 
-            if (IsTextGeneration)
+            if (TextGeneration is { } __value0)
             {
-                textGeneration?.Invoke(TextGeneration!);
+                textGeneration?.Invoke(__value0);
             }
-            else if (IsStreamEnd)
+            else if (StreamEnd is { } __value1)
             {
-                streamEnd?.Invoke(StreamEnd!);
+                streamEnd?.Invoke(__value1);
             }
-            else if (IsStreamError)
+            else if (StreamError is { } __value2)
             {
-                streamError?.Invoke(StreamError!);
+                streamError?.Invoke(__value2);
             }
         }
 

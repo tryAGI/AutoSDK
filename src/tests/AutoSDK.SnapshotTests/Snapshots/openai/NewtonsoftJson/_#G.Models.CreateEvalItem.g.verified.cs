@@ -1,4 +1,4 @@
-﻿//HintName: G.Models.CreateEvalItem.g.cs
+//HintName: G.Models.CreateEvalItem.g.cs
 #pragma warning disable CS0618 // Type or member is obsolete
 
 #nullable enable
@@ -43,8 +43,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.CreateEvalItemSimpleInputMessage PickSimpleInputMessage() => IsSimpleInputMessage
-            ? SimpleInputMessage!
+        public global::G.CreateEvalItemSimpleInputMessage PickSimpleInputMessage() => SimpleInputMessage is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'SimpleInputMessage' but the value was {ToString()}.");
 
         /// <summary>
@@ -84,8 +84,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.EvalItem PickEvalMessageObject() => IsEvalMessageObject
-            ? EvalMessageObject!
+        public global::G.EvalItem PickEvalMessageObject() => EvalMessageObject is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'EvalMessageObject' but the value was {ToString()}.");
         /// <summary>
         /// 
@@ -182,13 +182,13 @@ namespace G
                 Validate();
             }
 
-            if (IsSimpleInputMessage && simpleInputMessage != null)
+            if (SimpleInputMessage is { } __value0 && simpleInputMessage != null)
             {
-                return simpleInputMessage(SimpleInputMessage!);
+                return simpleInputMessage(__value0);
             }
-            else if (IsEvalMessageObject && evalMessageObject != null)
+            else if (EvalMessageObject is { } __value1 && evalMessageObject != null)
             {
-                return evalMessageObject(EvalMessageObject!);
+                return evalMessageObject(__value1);
             }
 
             return default(TResult);
@@ -208,13 +208,13 @@ namespace G
                 Validate();
             }
 
-            if (IsSimpleInputMessage)
+            if (SimpleInputMessage is { } __value0)
             {
-                simpleInputMessage?.Invoke(SimpleInputMessage!);
+                simpleInputMessage?.Invoke(__value0);
             }
-            else if (IsEvalMessageObject)
+            else if (EvalMessageObject is { } __value1)
             {
-                evalMessageObject?.Invoke(EvalMessageObject!);
+                evalMessageObject?.Invoke(__value1);
             }
         }
 
@@ -231,13 +231,13 @@ namespace G
                 Validate();
             }
 
-            if (IsSimpleInputMessage)
+            if (SimpleInputMessage is { } __value0)
             {
-                simpleInputMessage?.Invoke(SimpleInputMessage!);
+                simpleInputMessage?.Invoke(__value0);
             }
-            else if (IsEvalMessageObject)
+            else if (EvalMessageObject is { } __value1)
             {
-                evalMessageObject?.Invoke(EvalMessageObject!);
+                evalMessageObject?.Invoke(__value1);
             }
         }
 

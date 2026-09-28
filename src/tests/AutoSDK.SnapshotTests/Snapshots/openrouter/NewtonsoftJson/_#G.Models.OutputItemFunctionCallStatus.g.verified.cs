@@ -1,4 +1,4 @@
-﻿//HintName: G.Models.OutputItemFunctionCallStatus.g.cs
+//HintName: G.Models.OutputItemFunctionCallStatus.g.cs
 #pragma warning disable CS0618 // Type or member is obsolete
 
 #nullable enable
@@ -43,8 +43,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.OutputItemFunctionCallStatus0 PickOutputItemFunctionCallStatus0() => IsOutputItemFunctionCallStatus0
-            ? OutputItemFunctionCallStatus0!.Value
+        public global::G.OutputItemFunctionCallStatus0 PickOutputItemFunctionCallStatus0() => OutputItemFunctionCallStatus0 is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'OutputItemFunctionCallStatus0' but the value was {ToString()}.");
 
         /// <summary>
@@ -80,8 +80,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.OutputItemFunctionCallStatus1 PickOutputItemFunctionCallStatus1() => IsOutputItemFunctionCallStatus1
-            ? OutputItemFunctionCallStatus1!.Value
+        public global::G.OutputItemFunctionCallStatus1 PickOutputItemFunctionCallStatus1() => OutputItemFunctionCallStatus1 is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'OutputItemFunctionCallStatus1' but the value was {ToString()}.");
 
         /// <summary>
@@ -117,8 +117,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.OutputItemFunctionCallStatus2 PickOutputItemFunctionCallStatus2() => IsOutputItemFunctionCallStatus2
-            ? OutputItemFunctionCallStatus2!.Value
+        public global::G.OutputItemFunctionCallStatus2 PickOutputItemFunctionCallStatus2() => OutputItemFunctionCallStatus2 is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'OutputItemFunctionCallStatus2' but the value was {ToString()}.");
         /// <summary>
         /// 
@@ -243,17 +243,17 @@ namespace G
                 Validate();
             }
 
-            if (IsOutputItemFunctionCallStatus0 && outputItemFunctionCallStatus0 != null)
+            if (OutputItemFunctionCallStatus0 is { } __value0 && outputItemFunctionCallStatus0 != null)
             {
-                return outputItemFunctionCallStatus0(OutputItemFunctionCallStatus0!);
+                return outputItemFunctionCallStatus0(__value0);
             }
-            else if (IsOutputItemFunctionCallStatus1 && outputItemFunctionCallStatus1 != null)
+            else if (OutputItemFunctionCallStatus1 is { } __value1 && outputItemFunctionCallStatus1 != null)
             {
-                return outputItemFunctionCallStatus1(OutputItemFunctionCallStatus1!);
+                return outputItemFunctionCallStatus1(__value1);
             }
-            else if (IsOutputItemFunctionCallStatus2 && outputItemFunctionCallStatus2 != null)
+            else if (OutputItemFunctionCallStatus2 is { } __value2 && outputItemFunctionCallStatus2 != null)
             {
-                return outputItemFunctionCallStatus2(OutputItemFunctionCallStatus2!);
+                return outputItemFunctionCallStatus2(__value2);
             }
 
             return default(TResult);
@@ -275,17 +275,17 @@ namespace G
                 Validate();
             }
 
-            if (IsOutputItemFunctionCallStatus0)
+            if (OutputItemFunctionCallStatus0 is { } __value0)
             {
-                outputItemFunctionCallStatus0?.Invoke(OutputItemFunctionCallStatus0!);
+                outputItemFunctionCallStatus0?.Invoke(__value0);
             }
-            else if (IsOutputItemFunctionCallStatus1)
+            else if (OutputItemFunctionCallStatus1 is { } __value1)
             {
-                outputItemFunctionCallStatus1?.Invoke(OutputItemFunctionCallStatus1!);
+                outputItemFunctionCallStatus1?.Invoke(__value1);
             }
-            else if (IsOutputItemFunctionCallStatus2)
+            else if (OutputItemFunctionCallStatus2 is { } __value2)
             {
-                outputItemFunctionCallStatus2?.Invoke(OutputItemFunctionCallStatus2!);
+                outputItemFunctionCallStatus2?.Invoke(__value2);
             }
         }
 
@@ -303,17 +303,17 @@ namespace G
                 Validate();
             }
 
-            if (IsOutputItemFunctionCallStatus0)
+            if (OutputItemFunctionCallStatus0 is { } __value0)
             {
-                outputItemFunctionCallStatus0?.Invoke(OutputItemFunctionCallStatus0!);
+                outputItemFunctionCallStatus0?.Invoke(__value0);
             }
-            else if (IsOutputItemFunctionCallStatus1)
+            else if (OutputItemFunctionCallStatus1 is { } __value1)
             {
-                outputItemFunctionCallStatus1?.Invoke(OutputItemFunctionCallStatus1!);
+                outputItemFunctionCallStatus1?.Invoke(__value1);
             }
-            else if (IsOutputItemFunctionCallStatus2)
+            else if (OutputItemFunctionCallStatus2 is { } __value2)
             {
-                outputItemFunctionCallStatus2?.Invoke(OutputItemFunctionCallStatus2!);
+                outputItemFunctionCallStatus2?.Invoke(__value2);
             }
         }
 

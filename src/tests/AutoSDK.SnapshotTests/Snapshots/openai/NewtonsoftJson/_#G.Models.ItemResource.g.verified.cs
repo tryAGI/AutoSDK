@@ -1,4 +1,4 @@
-﻿//HintName: G.Models.ItemResource.g.cs
+//HintName: G.Models.ItemResource.g.cs
 #pragma warning disable CS0618 // Type or member is obsolete
 
 #nullable enable
@@ -43,8 +43,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.InputMessageResource PickInputMessage() => IsInputMessage
-            ? InputMessage!.Value
+        public global::G.InputMessageResource PickInputMessage() => InputMessage is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'InputMessage' but the value was {ToString()}.");
 
         /// <summary>
@@ -80,8 +80,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.OutputMessage PickMessage() => IsMessage
-            ? Message!
+        public global::G.OutputMessage PickMessage() => Message is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Message' but the value was {ToString()}.");
 
         /// <summary>
@@ -118,8 +118,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.FileSearchToolCall PickFileSearchCall() => IsFileSearchCall
-            ? FileSearchCall!
+        public global::G.FileSearchToolCall PickFileSearchCall() => FileSearchCall is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'FileSearchCall' but the value was {ToString()}.");
 
         /// <summary>
@@ -156,8 +156,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.ComputerToolCall PickComputerCall() => IsComputerCall
-            ? ComputerCall!
+        public global::G.ComputerToolCall PickComputerCall() => ComputerCall is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'ComputerCall' but the value was {ToString()}.");
 
         /// <summary>
@@ -193,8 +193,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.ComputerToolCallOutputResource PickComputerToolCallOutput() => IsComputerToolCallOutput
-            ? ComputerToolCallOutput!.Value
+        public global::G.ComputerToolCallOutputResource PickComputerToolCallOutput() => ComputerToolCallOutput is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'ComputerToolCallOutput' but the value was {ToString()}.");
 
         /// <summary>
@@ -231,8 +231,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.WebSearchToolCall PickWebSearchCall() => IsWebSearchCall
-            ? WebSearchCall!
+        public global::G.WebSearchToolCall PickWebSearchCall() => WebSearchCall is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'WebSearchCall' but the value was {ToString()}.");
 
         /// <summary>
@@ -268,8 +268,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.FunctionToolCallResource PickFunctionToolCall() => IsFunctionToolCall
-            ? FunctionToolCall!.Value
+        public global::G.FunctionToolCallResource PickFunctionToolCall() => FunctionToolCall is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'FunctionToolCall' but the value was {ToString()}.");
 
         /// <summary>
@@ -305,8 +305,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.FunctionToolCallOutputResource PickFunctionToolCallOutput() => IsFunctionToolCallOutput
-            ? FunctionToolCallOutput!.Value
+        public global::G.FunctionToolCallOutputResource PickFunctionToolCallOutput() => FunctionToolCallOutput is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'FunctionToolCallOutput' but the value was {ToString()}.");
 
         /// <summary>
@@ -342,8 +342,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.ImageGenToolCall PickImageGenerationCall() => IsImageGenerationCall
-            ? ImageGenerationCall!
+        public global::G.ImageGenToolCall PickImageGenerationCall() => ImageGenerationCall is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'ImageGenerationCall' but the value was {ToString()}.");
 
         /// <summary>
@@ -379,8 +379,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.CodeInterpreterToolCall PickCodeInterpreterCall() => IsCodeInterpreterCall
-            ? CodeInterpreterCall!
+        public global::G.CodeInterpreterToolCall PickCodeInterpreterCall() => CodeInterpreterCall is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'CodeInterpreterCall' but the value was {ToString()}.");
 
         /// <summary>
@@ -416,8 +416,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.LocalShellToolCall PickLocalShellCall() => IsLocalShellCall
-            ? LocalShellCall!
+        public global::G.LocalShellToolCall PickLocalShellCall() => LocalShellCall is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'LocalShellCall' but the value was {ToString()}.");
 
         /// <summary>
@@ -453,8 +453,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.LocalShellToolCallOutput PickLocalShellCallOutput() => IsLocalShellCallOutput
-            ? LocalShellCallOutput!
+        public global::G.LocalShellToolCallOutput PickLocalShellCallOutput() => LocalShellCallOutput is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'LocalShellCallOutput' but the value was {ToString()}.");
 
         /// <summary>
@@ -490,8 +490,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.MCPListTools PickMcpListTools() => IsMcpListTools
-            ? McpListTools!
+        public global::G.MCPListTools PickMcpListTools() => McpListTools is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'McpListTools' but the value was {ToString()}.");
 
         /// <summary>
@@ -527,8 +527,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.MCPApprovalRequest PickMcpApprovalRequest() => IsMcpApprovalRequest
-            ? McpApprovalRequest!
+        public global::G.MCPApprovalRequest PickMcpApprovalRequest() => McpApprovalRequest is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'McpApprovalRequest' but the value was {ToString()}.");
 
         /// <summary>
@@ -564,8 +564,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.MCPApprovalResponseResource PickMcpApprovalResponse() => IsMcpApprovalResponse
-            ? McpApprovalResponse!
+        public global::G.MCPApprovalResponseResource PickMcpApprovalResponse() => McpApprovalResponse is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'McpApprovalResponse' but the value was {ToString()}.");
 
         /// <summary>
@@ -601,8 +601,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.MCPToolCall PickMcpCall() => IsMcpCall
-            ? McpCall!
+        public global::G.MCPToolCall PickMcpCall() => McpCall is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'McpCall' but the value was {ToString()}.");
         /// <summary>
         /// 
@@ -1091,69 +1091,69 @@ namespace G
                 Validate();
             }
 
-            if (IsInputMessage && inputMessage != null)
+            if (InputMessage is { } __value0 && inputMessage != null)
             {
-                return inputMessage(InputMessage!);
+                return inputMessage(__value0);
             }
-            else if (IsMessage && message != null)
+            else if (Message is { } __value1 && message != null)
             {
-                return message(Message!);
+                return message(__value1);
             }
-            else if (IsFileSearchCall && fileSearchCall != null)
+            else if (FileSearchCall is { } __value2 && fileSearchCall != null)
             {
-                return fileSearchCall(FileSearchCall!);
+                return fileSearchCall(__value2);
             }
-            else if (IsComputerCall && computerCall != null)
+            else if (ComputerCall is { } __value3 && computerCall != null)
             {
-                return computerCall(ComputerCall!);
+                return computerCall(__value3);
             }
-            else if (IsComputerToolCallOutput && computerToolCallOutput != null)
+            else if (ComputerToolCallOutput is { } __value4 && computerToolCallOutput != null)
             {
-                return computerToolCallOutput(ComputerToolCallOutput!);
+                return computerToolCallOutput(__value4);
             }
-            else if (IsWebSearchCall && webSearchCall != null)
+            else if (WebSearchCall is { } __value5 && webSearchCall != null)
             {
-                return webSearchCall(WebSearchCall!);
+                return webSearchCall(__value5);
             }
-            else if (IsFunctionToolCall && functionToolCall != null)
+            else if (FunctionToolCall is { } __value6 && functionToolCall != null)
             {
-                return functionToolCall(FunctionToolCall!);
+                return functionToolCall(__value6);
             }
-            else if (IsFunctionToolCallOutput && functionToolCallOutput != null)
+            else if (FunctionToolCallOutput is { } __value7 && functionToolCallOutput != null)
             {
-                return functionToolCallOutput(FunctionToolCallOutput!);
+                return functionToolCallOutput(__value7);
             }
-            else if (IsImageGenerationCall && imageGenerationCall != null)
+            else if (ImageGenerationCall is { } __value8 && imageGenerationCall != null)
             {
-                return imageGenerationCall(ImageGenerationCall!);
+                return imageGenerationCall(__value8);
             }
-            else if (IsCodeInterpreterCall && codeInterpreterCall != null)
+            else if (CodeInterpreterCall is { } __value9 && codeInterpreterCall != null)
             {
-                return codeInterpreterCall(CodeInterpreterCall!);
+                return codeInterpreterCall(__value9);
             }
-            else if (IsLocalShellCall && localShellCall != null)
+            else if (LocalShellCall is { } __value10 && localShellCall != null)
             {
-                return localShellCall(LocalShellCall!);
+                return localShellCall(__value10);
             }
-            else if (IsLocalShellCallOutput && localShellCallOutput != null)
+            else if (LocalShellCallOutput is { } __value11 && localShellCallOutput != null)
             {
-                return localShellCallOutput(LocalShellCallOutput!);
+                return localShellCallOutput(__value11);
             }
-            else if (IsMcpListTools && mcpListTools != null)
+            else if (McpListTools is { } __value12 && mcpListTools != null)
             {
-                return mcpListTools(McpListTools!);
+                return mcpListTools(__value12);
             }
-            else if (IsMcpApprovalRequest && mcpApprovalRequest != null)
+            else if (McpApprovalRequest is { } __value13 && mcpApprovalRequest != null)
             {
-                return mcpApprovalRequest(McpApprovalRequest!);
+                return mcpApprovalRequest(__value13);
             }
-            else if (IsMcpApprovalResponse && mcpApprovalResponse != null)
+            else if (McpApprovalResponse is { } __value14 && mcpApprovalResponse != null)
             {
-                return mcpApprovalResponse(McpApprovalResponse!);
+                return mcpApprovalResponse(__value14);
             }
-            else if (IsMcpCall && mcpCall != null)
+            else if (McpCall is { } __value15 && mcpCall != null)
             {
-                return mcpCall(McpCall!);
+                return mcpCall(__value15);
             }
 
             return default(TResult);
@@ -1201,69 +1201,69 @@ namespace G
                 Validate();
             }
 
-            if (IsInputMessage)
+            if (InputMessage is { } __value0)
             {
-                inputMessage?.Invoke(InputMessage!);
+                inputMessage?.Invoke(__value0);
             }
-            else if (IsMessage)
+            else if (Message is { } __value1)
             {
-                message?.Invoke(Message!);
+                message?.Invoke(__value1);
             }
-            else if (IsFileSearchCall)
+            else if (FileSearchCall is { } __value2)
             {
-                fileSearchCall?.Invoke(FileSearchCall!);
+                fileSearchCall?.Invoke(__value2);
             }
-            else if (IsComputerCall)
+            else if (ComputerCall is { } __value3)
             {
-                computerCall?.Invoke(ComputerCall!);
+                computerCall?.Invoke(__value3);
             }
-            else if (IsComputerToolCallOutput)
+            else if (ComputerToolCallOutput is { } __value4)
             {
-                computerToolCallOutput?.Invoke(ComputerToolCallOutput!);
+                computerToolCallOutput?.Invoke(__value4);
             }
-            else if (IsWebSearchCall)
+            else if (WebSearchCall is { } __value5)
             {
-                webSearchCall?.Invoke(WebSearchCall!);
+                webSearchCall?.Invoke(__value5);
             }
-            else if (IsFunctionToolCall)
+            else if (FunctionToolCall is { } __value6)
             {
-                functionToolCall?.Invoke(FunctionToolCall!);
+                functionToolCall?.Invoke(__value6);
             }
-            else if (IsFunctionToolCallOutput)
+            else if (FunctionToolCallOutput is { } __value7)
             {
-                functionToolCallOutput?.Invoke(FunctionToolCallOutput!);
+                functionToolCallOutput?.Invoke(__value7);
             }
-            else if (IsImageGenerationCall)
+            else if (ImageGenerationCall is { } __value8)
             {
-                imageGenerationCall?.Invoke(ImageGenerationCall!);
+                imageGenerationCall?.Invoke(__value8);
             }
-            else if (IsCodeInterpreterCall)
+            else if (CodeInterpreterCall is { } __value9)
             {
-                codeInterpreterCall?.Invoke(CodeInterpreterCall!);
+                codeInterpreterCall?.Invoke(__value9);
             }
-            else if (IsLocalShellCall)
+            else if (LocalShellCall is { } __value10)
             {
-                localShellCall?.Invoke(LocalShellCall!);
+                localShellCall?.Invoke(__value10);
             }
-            else if (IsLocalShellCallOutput)
+            else if (LocalShellCallOutput is { } __value11)
             {
-                localShellCallOutput?.Invoke(LocalShellCallOutput!);
+                localShellCallOutput?.Invoke(__value11);
             }
-            else if (IsMcpListTools)
+            else if (McpListTools is { } __value12)
             {
-                mcpListTools?.Invoke(McpListTools!);
+                mcpListTools?.Invoke(__value12);
             }
-            else if (IsMcpApprovalRequest)
+            else if (McpApprovalRequest is { } __value13)
             {
-                mcpApprovalRequest?.Invoke(McpApprovalRequest!);
+                mcpApprovalRequest?.Invoke(__value13);
             }
-            else if (IsMcpApprovalResponse)
+            else if (McpApprovalResponse is { } __value14)
             {
-                mcpApprovalResponse?.Invoke(McpApprovalResponse!);
+                mcpApprovalResponse?.Invoke(__value14);
             }
-            else if (IsMcpCall)
+            else if (McpCall is { } __value15)
             {
-                mcpCall?.Invoke(McpCall!);
+                mcpCall?.Invoke(__value15);
             }
         }
 
@@ -1294,69 +1294,69 @@ namespace G
                 Validate();
             }
 
-            if (IsInputMessage)
+            if (InputMessage is { } __value0)
             {
-                inputMessage?.Invoke(InputMessage!);
+                inputMessage?.Invoke(__value0);
             }
-            else if (IsMessage)
+            else if (Message is { } __value1)
             {
-                message?.Invoke(Message!);
+                message?.Invoke(__value1);
             }
-            else if (IsFileSearchCall)
+            else if (FileSearchCall is { } __value2)
             {
-                fileSearchCall?.Invoke(FileSearchCall!);
+                fileSearchCall?.Invoke(__value2);
             }
-            else if (IsComputerCall)
+            else if (ComputerCall is { } __value3)
             {
-                computerCall?.Invoke(ComputerCall!);
+                computerCall?.Invoke(__value3);
             }
-            else if (IsComputerToolCallOutput)
+            else if (ComputerToolCallOutput is { } __value4)
             {
-                computerToolCallOutput?.Invoke(ComputerToolCallOutput!);
+                computerToolCallOutput?.Invoke(__value4);
             }
-            else if (IsWebSearchCall)
+            else if (WebSearchCall is { } __value5)
             {
-                webSearchCall?.Invoke(WebSearchCall!);
+                webSearchCall?.Invoke(__value5);
             }
-            else if (IsFunctionToolCall)
+            else if (FunctionToolCall is { } __value6)
             {
-                functionToolCall?.Invoke(FunctionToolCall!);
+                functionToolCall?.Invoke(__value6);
             }
-            else if (IsFunctionToolCallOutput)
+            else if (FunctionToolCallOutput is { } __value7)
             {
-                functionToolCallOutput?.Invoke(FunctionToolCallOutput!);
+                functionToolCallOutput?.Invoke(__value7);
             }
-            else if (IsImageGenerationCall)
+            else if (ImageGenerationCall is { } __value8)
             {
-                imageGenerationCall?.Invoke(ImageGenerationCall!);
+                imageGenerationCall?.Invoke(__value8);
             }
-            else if (IsCodeInterpreterCall)
+            else if (CodeInterpreterCall is { } __value9)
             {
-                codeInterpreterCall?.Invoke(CodeInterpreterCall!);
+                codeInterpreterCall?.Invoke(__value9);
             }
-            else if (IsLocalShellCall)
+            else if (LocalShellCall is { } __value10)
             {
-                localShellCall?.Invoke(LocalShellCall!);
+                localShellCall?.Invoke(__value10);
             }
-            else if (IsLocalShellCallOutput)
+            else if (LocalShellCallOutput is { } __value11)
             {
-                localShellCallOutput?.Invoke(LocalShellCallOutput!);
+                localShellCallOutput?.Invoke(__value11);
             }
-            else if (IsMcpListTools)
+            else if (McpListTools is { } __value12)
             {
-                mcpListTools?.Invoke(McpListTools!);
+                mcpListTools?.Invoke(__value12);
             }
-            else if (IsMcpApprovalRequest)
+            else if (McpApprovalRequest is { } __value13)
             {
-                mcpApprovalRequest?.Invoke(McpApprovalRequest!);
+                mcpApprovalRequest?.Invoke(__value13);
             }
-            else if (IsMcpApprovalResponse)
+            else if (McpApprovalResponse is { } __value14)
             {
-                mcpApprovalResponse?.Invoke(McpApprovalResponse!);
+                mcpApprovalResponse?.Invoke(__value14);
             }
-            else if (IsMcpCall)
+            else if (McpCall is { } __value15)
             {
-                mcpCall?.Invoke(McpCall!);
+                mcpCall?.Invoke(__value15);
             }
         }
 

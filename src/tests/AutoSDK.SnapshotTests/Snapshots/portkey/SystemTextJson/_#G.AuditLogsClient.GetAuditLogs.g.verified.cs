@@ -1,4 +1,4 @@
-﻿//HintName: G.AuditLogsClient.GetAuditLogs.g.cs
+//HintName: G.AuditLogsClient.GetAuditLogs.g.cs
 
 #nullable enable
 
@@ -299,9 +299,9 @@ namespace G
                 PrepareGetAuditLogsRequest(
                     httpClient: HttpClient,
                     httpRequestMessage: __httpRequest,
-                    startTime: startTime!,
-                    endTime: endTime!,
-                    organisationId: organisationId!,
+                    startTime: startTime,
+                    endTime: endTime,
+                    organisationId: organisationId,
                     method: method,
                     uri: uri,
                     requestId: requestId,
@@ -336,7 +336,7 @@ namespace G
                                 pathTemplate: "\"/audit-logs\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: null,
                                 exception: null,
                                 clientOptions: Options,
@@ -370,7 +370,7 @@ namespace G
                                 pathTemplate: "\"/audit-logs\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: null,
                                 exception: __exception,
                                 clientOptions: Options,
@@ -411,7 +411,7 @@ namespace G
                                 pathTemplate: "\"/audit-logs\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: __response,
                                 exception: null,
                                 clientOptions: Options,
@@ -459,7 +459,7 @@ namespace G
                                 pathTemplate: "\"/audit-logs\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: __response,
                                 exception: null,
                                 clientOptions: Options,
@@ -481,7 +481,7 @@ namespace G
                                 pathTemplate: "\"/audit-logs\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: __response,
                                 exception: null,
                                 clientOptions: Options,

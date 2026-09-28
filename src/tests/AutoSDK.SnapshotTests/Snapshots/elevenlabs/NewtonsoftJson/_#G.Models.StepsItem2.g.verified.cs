@@ -1,4 +1,4 @@
-﻿//HintName: G.Models.StepsItem2.g.cs
+//HintName: G.Models.StepsItem2.g.cs
 #pragma warning disable CS0618 // Type or member is obsolete
 
 #nullable enable
@@ -48,8 +48,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.WorkflowToolEdgeStepModel PickEdge() => IsEdge
-            ? Edge!
+        public global::G.WorkflowToolEdgeStepModel PickEdge() => Edge is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Edge' but the value was {ToString()}.");
 
         /// <summary>
@@ -85,8 +85,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.WorkflowToolNestedToolsStepModelOutput PickNestedTools() => IsNestedTools
-            ? NestedTools!
+        public global::G.WorkflowToolNestedToolsStepModelOutput PickNestedTools() => NestedTools is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'NestedTools' but the value was {ToString()}.");
 
         /// <summary>
@@ -122,8 +122,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.WorkflowToolMaxIterationsExceededStepModel PickMaxIterationsExceeded() => IsMaxIterationsExceeded
-            ? MaxIterationsExceeded!
+        public global::G.WorkflowToolMaxIterationsExceededStepModel PickMaxIterationsExceeded() => MaxIterationsExceeded is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'MaxIterationsExceeded' but the value was {ToString()}.");
         /// <summary>
         /// 
@@ -251,17 +251,17 @@ namespace G
                 Validate();
             }
 
-            if (IsEdge && edge != null)
+            if (Edge is { } __value0 && edge != null)
             {
-                return edge(Edge!);
+                return edge(__value0);
             }
-            else if (IsNestedTools && nestedTools != null)
+            else if (NestedTools is { } __value1 && nestedTools != null)
             {
-                return nestedTools(NestedTools!);
+                return nestedTools(__value1);
             }
-            else if (IsMaxIterationsExceeded && maxIterationsExceeded != null)
+            else if (MaxIterationsExceeded is { } __value2 && maxIterationsExceeded != null)
             {
-                return maxIterationsExceeded(MaxIterationsExceeded!);
+                return maxIterationsExceeded(__value2);
             }
 
             return default(TResult);
@@ -283,17 +283,17 @@ namespace G
                 Validate();
             }
 
-            if (IsEdge)
+            if (Edge is { } __value0)
             {
-                edge?.Invoke(Edge!);
+                edge?.Invoke(__value0);
             }
-            else if (IsNestedTools)
+            else if (NestedTools is { } __value1)
             {
-                nestedTools?.Invoke(NestedTools!);
+                nestedTools?.Invoke(__value1);
             }
-            else if (IsMaxIterationsExceeded)
+            else if (MaxIterationsExceeded is { } __value2)
             {
-                maxIterationsExceeded?.Invoke(MaxIterationsExceeded!);
+                maxIterationsExceeded?.Invoke(__value2);
             }
         }
 
@@ -311,17 +311,17 @@ namespace G
                 Validate();
             }
 
-            if (IsEdge)
+            if (Edge is { } __value0)
             {
-                edge?.Invoke(Edge!);
+                edge?.Invoke(__value0);
             }
-            else if (IsNestedTools)
+            else if (NestedTools is { } __value1)
             {
-                nestedTools?.Invoke(NestedTools!);
+                nestedTools?.Invoke(__value1);
             }
-            else if (IsMaxIterationsExceeded)
+            else if (MaxIterationsExceeded is { } __value2)
             {
-                maxIterationsExceeded?.Invoke(MaxIterationsExceeded!);
+                maxIterationsExceeded?.Invoke(__value2);
             }
         }
 

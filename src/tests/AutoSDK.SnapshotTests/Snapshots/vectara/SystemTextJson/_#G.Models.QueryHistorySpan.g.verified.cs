@@ -1,4 +1,4 @@
-﻿//HintName: G.Models.QueryHistorySpan.g.cs
+//HintName: G.Models.QueryHistorySpan.g.cs
 #pragma warning disable CS0618 // Type or member is obsolete
 
 #nullable enable
@@ -48,8 +48,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.RephraseSpan PickRephrase() => IsRephrase
-            ? Rephrase!
+        public global::G.RephraseSpan PickRephrase() => Rephrase is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Rephrase' but the value was {ToString()}.");
 
         /// <summary>
@@ -85,8 +85,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.SearchSpan PickSearch() => IsSearch
-            ? Search!
+        public global::G.SearchSpan PickSearch() => Search is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Search' but the value was {ToString()}.");
 
         /// <summary>
@@ -122,8 +122,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.RerankSpan PickRerank() => IsRerank
-            ? Rerank!
+        public global::G.RerankSpan PickRerank() => Rerank is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Rerank' but the value was {ToString()}.");
 
         /// <summary>
@@ -159,8 +159,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.GenerationSpan PickGeneration() => IsGeneration
-            ? Generation!
+        public global::G.GenerationSpan PickGeneration() => Generation is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Generation' but the value was {ToString()}.");
 
         /// <summary>
@@ -196,8 +196,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.FactualConsistencyScoreSpan PickFcs() => IsFcs
-            ? Fcs!
+        public global::G.FactualConsistencyScoreSpan PickFcs() => Fcs is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Fcs' but the value was {ToString()}.");
 
         /// <summary>
@@ -233,8 +233,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.RewrittenQuerySpan PickRewrittenQuery() => IsRewrittenQuery
-            ? RewrittenQuery!
+        public global::G.RewrittenQuerySpan PickRewrittenQuery() => RewrittenQuery is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'RewrittenQuery' but the value was {ToString()}.");
         /// <summary>
         /// 
@@ -446,29 +446,29 @@ namespace G
                 Validate();
             }
 
-            if (IsRephrase && rephrase != null)
+            if (Rephrase is { } __value0 && rephrase != null)
             {
-                return rephrase(Rephrase!);
+                return rephrase(__value0);
             }
-            else if (IsSearch && search != null)
+            else if (Search is { } __value1 && search != null)
             {
-                return search(Search!);
+                return search(__value1);
             }
-            else if (IsRerank && rerank != null)
+            else if (Rerank is { } __value2 && rerank != null)
             {
-                return rerank(Rerank!);
+                return rerank(__value2);
             }
-            else if (IsGeneration && generation != null)
+            else if (Generation is { } __value3 && generation != null)
             {
-                return generation(Generation!);
+                return generation(__value3);
             }
-            else if (IsFcs && fcs != null)
+            else if (Fcs is { } __value4 && fcs != null)
             {
-                return fcs(Fcs!);
+                return fcs(__value4);
             }
-            else if (IsRewrittenQuery && rewrittenQuery != null)
+            else if (RewrittenQuery is { } __value5 && rewrittenQuery != null)
             {
-                return rewrittenQuery(RewrittenQuery!);
+                return rewrittenQuery(__value5);
             }
 
             return default(TResult);
@@ -496,29 +496,29 @@ namespace G
                 Validate();
             }
 
-            if (IsRephrase)
+            if (Rephrase is { } __value0)
             {
-                rephrase?.Invoke(Rephrase!);
+                rephrase?.Invoke(__value0);
             }
-            else if (IsSearch)
+            else if (Search is { } __value1)
             {
-                search?.Invoke(Search!);
+                search?.Invoke(__value1);
             }
-            else if (IsRerank)
+            else if (Rerank is { } __value2)
             {
-                rerank?.Invoke(Rerank!);
+                rerank?.Invoke(__value2);
             }
-            else if (IsGeneration)
+            else if (Generation is { } __value3)
             {
-                generation?.Invoke(Generation!);
+                generation?.Invoke(__value3);
             }
-            else if (IsFcs)
+            else if (Fcs is { } __value4)
             {
-                fcs?.Invoke(Fcs!);
+                fcs?.Invoke(__value4);
             }
-            else if (IsRewrittenQuery)
+            else if (RewrittenQuery is { } __value5)
             {
-                rewrittenQuery?.Invoke(RewrittenQuery!);
+                rewrittenQuery?.Invoke(__value5);
             }
         }
 
@@ -539,29 +539,29 @@ namespace G
                 Validate();
             }
 
-            if (IsRephrase)
+            if (Rephrase is { } __value0)
             {
-                rephrase?.Invoke(Rephrase!);
+                rephrase?.Invoke(__value0);
             }
-            else if (IsSearch)
+            else if (Search is { } __value1)
             {
-                search?.Invoke(Search!);
+                search?.Invoke(__value1);
             }
-            else if (IsRerank)
+            else if (Rerank is { } __value2)
             {
-                rerank?.Invoke(Rerank!);
+                rerank?.Invoke(__value2);
             }
-            else if (IsGeneration)
+            else if (Generation is { } __value3)
             {
-                generation?.Invoke(Generation!);
+                generation?.Invoke(__value3);
             }
-            else if (IsFcs)
+            else if (Fcs is { } __value4)
             {
-                fcs?.Invoke(Fcs!);
+                fcs?.Invoke(__value4);
             }
-            else if (IsRewrittenQuery)
+            else if (RewrittenQuery is { } __value5)
             {
-                rewrittenQuery?.Invoke(RewrittenQuery!);
+                rewrittenQuery?.Invoke(__value5);
             }
         }
 

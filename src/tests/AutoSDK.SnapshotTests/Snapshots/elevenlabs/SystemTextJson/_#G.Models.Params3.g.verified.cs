@@ -1,4 +1,4 @@
-﻿//HintName: G.Models.Params3.g.cs
+//HintName: G.Models.Params3.g.cs
 #pragma warning disable CS0618 // Type or member is obsolete
 
 #nullable enable
@@ -48,8 +48,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.EndCallToolConfig PickEndCall() => IsEndCall
-            ? EndCall!
+        public global::G.EndCallToolConfig PickEndCall() => EndCall is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'EndCall' but the value was {ToString()}.");
 
         /// <summary>
@@ -85,8 +85,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.LanguageDetectionToolConfig PickLanguageDetection() => IsLanguageDetection
-            ? LanguageDetection!
+        public global::G.LanguageDetectionToolConfig PickLanguageDetection() => LanguageDetection is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'LanguageDetection' but the value was {ToString()}.");
 
         /// <summary>
@@ -122,8 +122,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.TransferToAgentToolConfig PickTransferToAgent() => IsTransferToAgent
-            ? TransferToAgent!
+        public global::G.TransferToAgentToolConfig PickTransferToAgent() => TransferToAgent is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'TransferToAgent' but the value was {ToString()}.");
 
         /// <summary>
@@ -159,8 +159,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.TransferToNumberToolConfigOutput PickTransferToNumber() => IsTransferToNumber
-            ? TransferToNumber!
+        public global::G.TransferToNumberToolConfigOutput PickTransferToNumber() => TransferToNumber is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'TransferToNumber' but the value was {ToString()}.");
 
         /// <summary>
@@ -203,8 +203,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.SkipTurnToolConfig PickSkipTurn() => IsSkipTurn
-            ? SkipTurn!
+        public global::G.SkipTurnToolConfig PickSkipTurn() => SkipTurn is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'SkipTurn' but the value was {ToString()}.");
 
         /// <summary>
@@ -242,8 +242,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.PlayDTMFToolConfig PickPlayKeypadTouchTone() => IsPlayKeypadTouchTone
-            ? PlayKeypadTouchTone!
+        public global::G.PlayDTMFToolConfig PickPlayKeypadTouchTone() => PlayKeypadTouchTone is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'PlayKeypadTouchTone' but the value was {ToString()}.");
 
         /// <summary>
@@ -282,8 +282,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.VoicemailDetectionToolConfig PickVoicemailDetection() => IsVoicemailDetection
-            ? VoicemailDetection!
+        public global::G.VoicemailDetectionToolConfig PickVoicemailDetection() => VoicemailDetection is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'VoicemailDetection' but the value was {ToString()}.");
 
         /// <summary>
@@ -319,8 +319,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.MemoryEntrySearchToolConfig PickMemoryEntrySearch() => IsMemoryEntrySearch
-            ? MemoryEntrySearch!
+        public global::G.MemoryEntrySearchToolConfig PickMemoryEntrySearch() => MemoryEntrySearch is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'MemoryEntrySearch' but the value was {ToString()}.");
 
         /// <summary>
@@ -356,8 +356,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.MemoryEntryCreateToolConfig PickMemoryEntryCreate() => IsMemoryEntryCreate
-            ? MemoryEntryCreate!
+        public global::G.MemoryEntryCreateToolConfig PickMemoryEntryCreate() => MemoryEntryCreate is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'MemoryEntryCreate' but the value was {ToString()}.");
 
         /// <summary>
@@ -393,8 +393,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.MemoryEntryUpdateToolConfig PickMemoryEntryUpdate() => IsMemoryEntryUpdate
-            ? MemoryEntryUpdate!
+        public global::G.MemoryEntryUpdateToolConfig PickMemoryEntryUpdate() => MemoryEntryUpdate is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'MemoryEntryUpdate' but the value was {ToString()}.");
 
         /// <summary>
@@ -430,8 +430,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.MemoryEntryDeleteToolConfig PickMemoryEntryDelete() => IsMemoryEntryDelete
-            ? MemoryEntryDelete!
+        public global::G.MemoryEntryDeleteToolConfig PickMemoryEntryDelete() => MemoryEntryDelete is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'MemoryEntryDelete' but the value was {ToString()}.");
 
         /// <summary>
@@ -467,8 +467,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.AgentPromptChangeToolConfig PickAgentPromptChange() => IsAgentPromptChange
-            ? AgentPromptChange!
+        public global::G.AgentPromptChangeToolConfig PickAgentPromptChange() => AgentPromptChange is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'AgentPromptChange' but the value was {ToString()}.");
         /// <summary>
         /// 
@@ -848,53 +848,53 @@ namespace G
                 Validate();
             }
 
-            if (IsEndCall && endCall != null)
+            if (EndCall is { } __value0 && endCall != null)
             {
-                return endCall(EndCall!);
+                return endCall(__value0);
             }
-            else if (IsLanguageDetection && languageDetection != null)
+            else if (LanguageDetection is { } __value1 && languageDetection != null)
             {
-                return languageDetection(LanguageDetection!);
+                return languageDetection(__value1);
             }
-            else if (IsTransferToAgent && transferToAgent != null)
+            else if (TransferToAgent is { } __value2 && transferToAgent != null)
             {
-                return transferToAgent(TransferToAgent!);
+                return transferToAgent(__value2);
             }
-            else if (IsTransferToNumber && transferToNumber != null)
+            else if (TransferToNumber is { } __value3 && transferToNumber != null)
             {
-                return transferToNumber(TransferToNumber!);
+                return transferToNumber(__value3);
             }
-            else if (IsSkipTurn && skipTurn != null)
+            else if (SkipTurn is { } __value4 && skipTurn != null)
             {
-                return skipTurn(SkipTurn!);
+                return skipTurn(__value4);
             }
-            else if (IsPlayKeypadTouchTone && playKeypadTouchTone != null)
+            else if (PlayKeypadTouchTone is { } __value5 && playKeypadTouchTone != null)
             {
-                return playKeypadTouchTone(PlayKeypadTouchTone!);
+                return playKeypadTouchTone(__value5);
             }
-            else if (IsVoicemailDetection && voicemailDetection != null)
+            else if (VoicemailDetection is { } __value6 && voicemailDetection != null)
             {
-                return voicemailDetection(VoicemailDetection!);
+                return voicemailDetection(__value6);
             }
-            else if (IsMemoryEntrySearch && memoryEntrySearch != null)
+            else if (MemoryEntrySearch is { } __value7 && memoryEntrySearch != null)
             {
-                return memoryEntrySearch(MemoryEntrySearch!);
+                return memoryEntrySearch(__value7);
             }
-            else if (IsMemoryEntryCreate && memoryEntryCreate != null)
+            else if (MemoryEntryCreate is { } __value8 && memoryEntryCreate != null)
             {
-                return memoryEntryCreate(MemoryEntryCreate!);
+                return memoryEntryCreate(__value8);
             }
-            else if (IsMemoryEntryUpdate && memoryEntryUpdate != null)
+            else if (MemoryEntryUpdate is { } __value9 && memoryEntryUpdate != null)
             {
-                return memoryEntryUpdate(MemoryEntryUpdate!);
+                return memoryEntryUpdate(__value9);
             }
-            else if (IsMemoryEntryDelete && memoryEntryDelete != null)
+            else if (MemoryEntryDelete is { } __value10 && memoryEntryDelete != null)
             {
-                return memoryEntryDelete(MemoryEntryDelete!);
+                return memoryEntryDelete(__value10);
             }
-            else if (IsAgentPromptChange && agentPromptChange != null)
+            else if (AgentPromptChange is { } __value11 && agentPromptChange != null)
             {
-                return agentPromptChange(AgentPromptChange!);
+                return agentPromptChange(__value11);
             }
 
             return default(TResult);
@@ -934,53 +934,53 @@ namespace G
                 Validate();
             }
 
-            if (IsEndCall)
+            if (EndCall is { } __value0)
             {
-                endCall?.Invoke(EndCall!);
+                endCall?.Invoke(__value0);
             }
-            else if (IsLanguageDetection)
+            else if (LanguageDetection is { } __value1)
             {
-                languageDetection?.Invoke(LanguageDetection!);
+                languageDetection?.Invoke(__value1);
             }
-            else if (IsTransferToAgent)
+            else if (TransferToAgent is { } __value2)
             {
-                transferToAgent?.Invoke(TransferToAgent!);
+                transferToAgent?.Invoke(__value2);
             }
-            else if (IsTransferToNumber)
+            else if (TransferToNumber is { } __value3)
             {
-                transferToNumber?.Invoke(TransferToNumber!);
+                transferToNumber?.Invoke(__value3);
             }
-            else if (IsSkipTurn)
+            else if (SkipTurn is { } __value4)
             {
-                skipTurn?.Invoke(SkipTurn!);
+                skipTurn?.Invoke(__value4);
             }
-            else if (IsPlayKeypadTouchTone)
+            else if (PlayKeypadTouchTone is { } __value5)
             {
-                playKeypadTouchTone?.Invoke(PlayKeypadTouchTone!);
+                playKeypadTouchTone?.Invoke(__value5);
             }
-            else if (IsVoicemailDetection)
+            else if (VoicemailDetection is { } __value6)
             {
-                voicemailDetection?.Invoke(VoicemailDetection!);
+                voicemailDetection?.Invoke(__value6);
             }
-            else if (IsMemoryEntrySearch)
+            else if (MemoryEntrySearch is { } __value7)
             {
-                memoryEntrySearch?.Invoke(MemoryEntrySearch!);
+                memoryEntrySearch?.Invoke(__value7);
             }
-            else if (IsMemoryEntryCreate)
+            else if (MemoryEntryCreate is { } __value8)
             {
-                memoryEntryCreate?.Invoke(MemoryEntryCreate!);
+                memoryEntryCreate?.Invoke(__value8);
             }
-            else if (IsMemoryEntryUpdate)
+            else if (MemoryEntryUpdate is { } __value9)
             {
-                memoryEntryUpdate?.Invoke(MemoryEntryUpdate!);
+                memoryEntryUpdate?.Invoke(__value9);
             }
-            else if (IsMemoryEntryDelete)
+            else if (MemoryEntryDelete is { } __value10)
             {
-                memoryEntryDelete?.Invoke(MemoryEntryDelete!);
+                memoryEntryDelete?.Invoke(__value10);
             }
-            else if (IsAgentPromptChange)
+            else if (AgentPromptChange is { } __value11)
             {
-                agentPromptChange?.Invoke(AgentPromptChange!);
+                agentPromptChange?.Invoke(__value11);
             }
         }
 
@@ -1007,53 +1007,53 @@ namespace G
                 Validate();
             }
 
-            if (IsEndCall)
+            if (EndCall is { } __value0)
             {
-                endCall?.Invoke(EndCall!);
+                endCall?.Invoke(__value0);
             }
-            else if (IsLanguageDetection)
+            else if (LanguageDetection is { } __value1)
             {
-                languageDetection?.Invoke(LanguageDetection!);
+                languageDetection?.Invoke(__value1);
             }
-            else if (IsTransferToAgent)
+            else if (TransferToAgent is { } __value2)
             {
-                transferToAgent?.Invoke(TransferToAgent!);
+                transferToAgent?.Invoke(__value2);
             }
-            else if (IsTransferToNumber)
+            else if (TransferToNumber is { } __value3)
             {
-                transferToNumber?.Invoke(TransferToNumber!);
+                transferToNumber?.Invoke(__value3);
             }
-            else if (IsSkipTurn)
+            else if (SkipTurn is { } __value4)
             {
-                skipTurn?.Invoke(SkipTurn!);
+                skipTurn?.Invoke(__value4);
             }
-            else if (IsPlayKeypadTouchTone)
+            else if (PlayKeypadTouchTone is { } __value5)
             {
-                playKeypadTouchTone?.Invoke(PlayKeypadTouchTone!);
+                playKeypadTouchTone?.Invoke(__value5);
             }
-            else if (IsVoicemailDetection)
+            else if (VoicemailDetection is { } __value6)
             {
-                voicemailDetection?.Invoke(VoicemailDetection!);
+                voicemailDetection?.Invoke(__value6);
             }
-            else if (IsMemoryEntrySearch)
+            else if (MemoryEntrySearch is { } __value7)
             {
-                memoryEntrySearch?.Invoke(MemoryEntrySearch!);
+                memoryEntrySearch?.Invoke(__value7);
             }
-            else if (IsMemoryEntryCreate)
+            else if (MemoryEntryCreate is { } __value8)
             {
-                memoryEntryCreate?.Invoke(MemoryEntryCreate!);
+                memoryEntryCreate?.Invoke(__value8);
             }
-            else if (IsMemoryEntryUpdate)
+            else if (MemoryEntryUpdate is { } __value9)
             {
-                memoryEntryUpdate?.Invoke(MemoryEntryUpdate!);
+                memoryEntryUpdate?.Invoke(__value9);
             }
-            else if (IsMemoryEntryDelete)
+            else if (MemoryEntryDelete is { } __value10)
             {
-                memoryEntryDelete?.Invoke(MemoryEntryDelete!);
+                memoryEntryDelete?.Invoke(__value10);
             }
-            else if (IsAgentPromptChange)
+            else if (AgentPromptChange is { } __value11)
             {
-                agentPromptChange?.Invoke(AgentPromptChange!);
+                agentPromptChange?.Invoke(__value11);
             }
         }
 

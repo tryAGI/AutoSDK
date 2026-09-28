@@ -1,4 +1,4 @@
-﻿//HintName: G.Models.VideoSegmentation.g.cs
+//HintName: G.Models.VideoSegmentation.g.cs
 #pragma warning disable CS0618 // Type or member is obsolete
 
 #nullable enable
@@ -43,8 +43,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.VideoSegmentation0 PickVideoSegmentation0() => IsVideoSegmentation0
-            ? VideoSegmentation0!
+        public global::G.VideoSegmentation0 PickVideoSegmentation0() => VideoSegmentation0 is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'VideoSegmentation0' but the value was {ToString()}.");
 
         /// <summary>
@@ -80,8 +80,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.VideoSegmentation1 PickVideoSegmentation1() => IsVideoSegmentation1
-            ? VideoSegmentation1!
+        public global::G.VideoSegmentation1 PickVideoSegmentation1() => VideoSegmentation1 is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'VideoSegmentation1' but the value was {ToString()}.");
         /// <summary>
         /// 
@@ -178,13 +178,13 @@ namespace G
                 Validate();
             }
 
-            if (IsVideoSegmentation0 && videoSegmentation0 != null)
+            if (VideoSegmentation0 is { } __value0 && videoSegmentation0 != null)
             {
-                return videoSegmentation0(VideoSegmentation0!);
+                return videoSegmentation0(__value0);
             }
-            else if (IsVideoSegmentation1 && videoSegmentation1 != null)
+            else if (VideoSegmentation1 is { } __value1 && videoSegmentation1 != null)
             {
-                return videoSegmentation1(VideoSegmentation1!);
+                return videoSegmentation1(__value1);
             }
 
             return default(TResult);
@@ -204,13 +204,13 @@ namespace G
                 Validate();
             }
 
-            if (IsVideoSegmentation0)
+            if (VideoSegmentation0 is { } __value0)
             {
-                videoSegmentation0?.Invoke(VideoSegmentation0!);
+                videoSegmentation0?.Invoke(__value0);
             }
-            else if (IsVideoSegmentation1)
+            else if (VideoSegmentation1 is { } __value1)
             {
-                videoSegmentation1?.Invoke(VideoSegmentation1!);
+                videoSegmentation1?.Invoke(__value1);
             }
         }
 
@@ -227,13 +227,13 @@ namespace G
                 Validate();
             }
 
-            if (IsVideoSegmentation0)
+            if (VideoSegmentation0 is { } __value0)
             {
-                videoSegmentation0?.Invoke(VideoSegmentation0!);
+                videoSegmentation0?.Invoke(__value0);
             }
-            else if (IsVideoSegmentation1)
+            else if (VideoSegmentation1 is { } __value1)
             {
-                videoSegmentation1?.Invoke(VideoSegmentation1!);
+                videoSegmentation1?.Invoke(__value1);
             }
         }
 

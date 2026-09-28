@@ -1,4 +1,4 @@
-﻿//HintName: G.Models.CreateToolRequest.g.cs
+//HintName: G.Models.CreateToolRequest.g.cs
 #pragma warning disable CS0618 // Type or member is obsolete
 
 #nullable enable
@@ -49,8 +49,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.CreateLambdaToolRequest PickLambda() => IsLambda
-            ? Lambda!
+        public global::G.CreateLambdaToolRequest PickLambda() => Lambda is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Lambda' but the value was {ToString()}.");
         /// <summary>
         /// 
@@ -122,9 +122,9 @@ namespace G
                 Validate();
             }
 
-            if (IsLambda && lambda != null)
+            if (Lambda is { } __value0 && lambda != null)
             {
-                return lambda(Lambda!);
+                return lambda(__value0);
             }
 
             return default(TResult);
@@ -142,9 +142,9 @@ namespace G
                 Validate();
             }
 
-            if (IsLambda)
+            if (Lambda is { } __value0)
             {
-                lambda?.Invoke(Lambda!);
+                lambda?.Invoke(__value0);
             }
         }
 
@@ -160,9 +160,9 @@ namespace G
                 Validate();
             }
 
-            if (IsLambda)
+            if (Lambda is { } __value0)
             {
-                lambda?.Invoke(Lambda!);
+                lambda?.Invoke(__value0);
             }
         }
 

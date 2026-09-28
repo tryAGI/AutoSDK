@@ -1,4 +1,4 @@
-﻿//HintName: G.Models.MatchCondition.g.cs
+//HintName: G.Models.MatchCondition.g.cs
 #pragma warning disable CS0618 // Type or member is obsolete
 
 #nullable enable
@@ -43,8 +43,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.MatchValue PickValue() => IsValue
-            ? Value!
+        public global::G.MatchValue PickValue() => Value is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Value' but the value was {ToString()}.");
 
         /// <summary>
@@ -80,8 +80,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.MatchText PickText() => IsText
-            ? Text!
+        public global::G.MatchText PickText() => Text is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Text' but the value was {ToString()}.");
 
         /// <summary>
@@ -117,8 +117,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.MatchTextAny PickTextAny() => IsTextAny
-            ? TextAny!
+        public global::G.MatchTextAny PickTextAny() => TextAny is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'TextAny' but the value was {ToString()}.");
 
         /// <summary>
@@ -154,8 +154,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.MatchPhrase PickPhrase() => IsPhrase
-            ? Phrase!
+        public global::G.MatchPhrase PickPhrase() => Phrase is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Phrase' but the value was {ToString()}.");
 
         /// <summary>
@@ -191,8 +191,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.MatchAny PickAny() => IsAny
-            ? Any!
+        public global::G.MatchAny PickAny() => Any is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Any' but the value was {ToString()}.");
 
         /// <summary>
@@ -228,8 +228,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.MatchExcept PickExcept() => IsExcept
-            ? Except!
+        public global::G.MatchExcept PickExcept() => Except is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Except' but the value was {ToString()}.");
         /// <summary>
         /// 
@@ -438,29 +438,29 @@ namespace G
                 Validate();
             }
 
-            if (IsValue && value != null)
+            if (Value is { } __value0 && value != null)
             {
-                return value(Value!);
+                return value(__value0);
             }
-            else if (IsText && text != null)
+            else if (Text is { } __value1 && text != null)
             {
-                return text(Text!);
+                return text(__value1);
             }
-            else if (IsTextAny && textAny != null)
+            else if (TextAny is { } __value2 && textAny != null)
             {
-                return textAny(TextAny!);
+                return textAny(__value2);
             }
-            else if (IsPhrase && phrase != null)
+            else if (Phrase is { } __value3 && phrase != null)
             {
-                return phrase(Phrase!);
+                return phrase(__value3);
             }
-            else if (IsAny && any != null)
+            else if (Any is { } __value4 && any != null)
             {
-                return any(Any!);
+                return any(__value4);
             }
-            else if (IsExcept && except != null)
+            else if (Except is { } __value5 && except != null)
             {
-                return except(Except!);
+                return except(__value5);
             }
 
             return default(TResult);
@@ -488,29 +488,29 @@ namespace G
                 Validate();
             }
 
-            if (IsValue)
+            if (Value is { } __value0)
             {
-                value?.Invoke(Value!);
+                value?.Invoke(__value0);
             }
-            else if (IsText)
+            else if (Text is { } __value1)
             {
-                text?.Invoke(Text!);
+                text?.Invoke(__value1);
             }
-            else if (IsTextAny)
+            else if (TextAny is { } __value2)
             {
-                textAny?.Invoke(TextAny!);
+                textAny?.Invoke(__value2);
             }
-            else if (IsPhrase)
+            else if (Phrase is { } __value3)
             {
-                phrase?.Invoke(Phrase!);
+                phrase?.Invoke(__value3);
             }
-            else if (IsAny)
+            else if (Any is { } __value4)
             {
-                any?.Invoke(Any!);
+                any?.Invoke(__value4);
             }
-            else if (IsExcept)
+            else if (Except is { } __value5)
             {
-                except?.Invoke(Except!);
+                except?.Invoke(__value5);
             }
         }
 
@@ -531,29 +531,29 @@ namespace G
                 Validate();
             }
 
-            if (IsValue)
+            if (Value is { } __value0)
             {
-                value?.Invoke(Value!);
+                value?.Invoke(__value0);
             }
-            else if (IsText)
+            else if (Text is { } __value1)
             {
-                text?.Invoke(Text!);
+                text?.Invoke(__value1);
             }
-            else if (IsTextAny)
+            else if (TextAny is { } __value2)
             {
-                textAny?.Invoke(TextAny!);
+                textAny?.Invoke(__value2);
             }
-            else if (IsPhrase)
+            else if (Phrase is { } __value3)
             {
-                phrase?.Invoke(Phrase!);
+                phrase?.Invoke(__value3);
             }
-            else if (IsAny)
+            else if (Any is { } __value4)
             {
-                any?.Invoke(Any!);
+                any?.Invoke(__value4);
             }
-            else if (IsExcept)
+            else if (Except is { } __value5)
             {
-                except?.Invoke(Except!);
+                except?.Invoke(__value5);
             }
         }
 

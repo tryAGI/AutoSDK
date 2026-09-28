@@ -1,4 +1,4 @@
-﻿//HintName: G.Models.ToolChoice.g.cs
+//HintName: G.Models.ToolChoice.g.cs
 #pragma warning disable CS0618 // Type or member is obsolete
 
 #nullable enable
@@ -48,8 +48,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.PromptToolChoiceNone PickNone() => IsNone
-            ? None!
+        public global::G.PromptToolChoiceNone PickNone() => None is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'None' but the value was {ToString()}.");
 
         /// <summary>
@@ -85,8 +85,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.PromptToolChoiceZeroOrMore PickZeroOrMore() => IsZeroOrMore
-            ? ZeroOrMore!
+        public global::G.PromptToolChoiceZeroOrMore PickZeroOrMore() => ZeroOrMore is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'ZeroOrMore' but the value was {ToString()}.");
 
         /// <summary>
@@ -122,8 +122,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.PromptToolChoiceOneOrMore PickOneOrMore() => IsOneOrMore
-            ? OneOrMore!
+        public global::G.PromptToolChoiceOneOrMore PickOneOrMore() => OneOrMore is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'OneOrMore' but the value was {ToString()}.");
 
         /// <summary>
@@ -159,8 +159,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.PromptToolChoiceSpecificFunctionTool PickSpecificFunction() => IsSpecificFunction
-            ? SpecificFunction!
+        public global::G.PromptToolChoiceSpecificFunctionTool PickSpecificFunction() => SpecificFunction is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'SpecificFunction' but the value was {ToString()}.");
         /// <summary>
         /// 
@@ -316,21 +316,21 @@ namespace G
                 Validate();
             }
 
-            if (IsNone && none != null)
+            if (None is { } __value0 && none != null)
             {
-                return none(None!);
+                return none(__value0);
             }
-            else if (IsZeroOrMore && zeroOrMore != null)
+            else if (ZeroOrMore is { } __value1 && zeroOrMore != null)
             {
-                return zeroOrMore(ZeroOrMore!);
+                return zeroOrMore(__value1);
             }
-            else if (IsOneOrMore && oneOrMore != null)
+            else if (OneOrMore is { } __value2 && oneOrMore != null)
             {
-                return oneOrMore(OneOrMore!);
+                return oneOrMore(__value2);
             }
-            else if (IsSpecificFunction && specificFunction != null)
+            else if (SpecificFunction is { } __value3 && specificFunction != null)
             {
-                return specificFunction(SpecificFunction!);
+                return specificFunction(__value3);
             }
 
             return default(TResult);
@@ -354,21 +354,21 @@ namespace G
                 Validate();
             }
 
-            if (IsNone)
+            if (None is { } __value0)
             {
-                none?.Invoke(None!);
+                none?.Invoke(__value0);
             }
-            else if (IsZeroOrMore)
+            else if (ZeroOrMore is { } __value1)
             {
-                zeroOrMore?.Invoke(ZeroOrMore!);
+                zeroOrMore?.Invoke(__value1);
             }
-            else if (IsOneOrMore)
+            else if (OneOrMore is { } __value2)
             {
-                oneOrMore?.Invoke(OneOrMore!);
+                oneOrMore?.Invoke(__value2);
             }
-            else if (IsSpecificFunction)
+            else if (SpecificFunction is { } __value3)
             {
-                specificFunction?.Invoke(SpecificFunction!);
+                specificFunction?.Invoke(__value3);
             }
         }
 
@@ -387,21 +387,21 @@ namespace G
                 Validate();
             }
 
-            if (IsNone)
+            if (None is { } __value0)
             {
-                none?.Invoke(None!);
+                none?.Invoke(__value0);
             }
-            else if (IsZeroOrMore)
+            else if (ZeroOrMore is { } __value1)
             {
-                zeroOrMore?.Invoke(ZeroOrMore!);
+                zeroOrMore?.Invoke(__value1);
             }
-            else if (IsOneOrMore)
+            else if (OneOrMore is { } __value2)
             {
-                oneOrMore?.Invoke(OneOrMore!);
+                oneOrMore?.Invoke(__value2);
             }
-            else if (IsSpecificFunction)
+            else if (SpecificFunction is { } __value3)
             {
-                specificFunction?.Invoke(SpecificFunction!);
+                specificFunction?.Invoke(__value3);
             }
         }
 

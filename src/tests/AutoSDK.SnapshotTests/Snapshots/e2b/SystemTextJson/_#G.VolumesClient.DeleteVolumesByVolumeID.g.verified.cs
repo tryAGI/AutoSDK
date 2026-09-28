@@ -1,4 +1,4 @@
-﻿//HintName: G.VolumesClient.DeleteVolumesByVolumeID.g.cs
+//HintName: G.VolumesClient.DeleteVolumesByVolumeID.g.cs
 
 #nullable enable
 
@@ -163,7 +163,7 @@ namespace G
                 PrepareDeleteVolumesByVolumeIDRequest(
                     httpClient: HttpClient,
                     httpRequestMessage: __httpRequest,
-                    volumeID: volumeID!);
+                    volumeID: volumeID);
 
                 global::G.AutoSDKHttpRequestOptions.StampAuthorizationOverride(__httpRequest);
 
@@ -187,7 +187,7 @@ namespace G
                                 pathTemplate: "$\"/volumes/{volumeID}\"",
                                 httpMethod: "DELETE",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: null,
                                 exception: null,
                                 clientOptions: Options,
@@ -221,7 +221,7 @@ namespace G
                                 pathTemplate: "$\"/volumes/{volumeID}\"",
                                 httpMethod: "DELETE",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: null,
                                 exception: __exception,
                                 clientOptions: Options,
@@ -262,7 +262,7 @@ namespace G
                                 pathTemplate: "$\"/volumes/{volumeID}\"",
                                 httpMethod: "DELETE",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: __response,
                                 exception: null,
                                 clientOptions: Options,
@@ -310,7 +310,7 @@ namespace G
                                 pathTemplate: "$\"/volumes/{volumeID}\"",
                                 httpMethod: "DELETE",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: __response,
                                 exception: null,
                                 clientOptions: Options,
@@ -332,7 +332,7 @@ namespace G
                                 pathTemplate: "$\"/volumes/{volumeID}\"",
                                 httpMethod: "DELETE",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: __response,
                                 exception: null,
                                 clientOptions: Options,

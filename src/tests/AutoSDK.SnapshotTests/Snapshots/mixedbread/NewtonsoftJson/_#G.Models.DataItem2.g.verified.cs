@@ -1,4 +1,4 @@
-﻿//HintName: G.Models.DataItem2.g.cs
+//HintName: G.Models.DataItem2.g.cs
 #pragma warning disable CS0618 // Type or member is obsolete
 
 #nullable enable
@@ -48,8 +48,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.MxbaiOmniCoreStoreModelsChunkTypesScoredTextInputChunk PickText() => IsText
-            ? Text!
+        public global::G.MxbaiOmniCoreStoreModelsChunkTypesScoredTextInputChunk PickText() => Text is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Text' but the value was {ToString()}.");
 
         /// <summary>
@@ -85,8 +85,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.MxbaiOmniCoreStoreModelsChunkTypesScoredImageUrlInputChunk PickImageUrl() => IsImageUrl
-            ? ImageUrl!
+        public global::G.MxbaiOmniCoreStoreModelsChunkTypesScoredImageUrlInputChunk PickImageUrl() => ImageUrl is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'ImageUrl' but the value was {ToString()}.");
 
         /// <summary>
@@ -122,8 +122,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.MxbaiOmniCoreStoreModelsChunkTypesScoredAudioUrlInputChunk PickAudioUrl() => IsAudioUrl
-            ? AudioUrl!
+        public global::G.MxbaiOmniCoreStoreModelsChunkTypesScoredAudioUrlInputChunk PickAudioUrl() => AudioUrl is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'AudioUrl' but the value was {ToString()}.");
 
         /// <summary>
@@ -159,8 +159,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.MxbaiOmniCoreStoreModelsChunkTypesScoredVideoUrlInputChunk PickVideoUrl() => IsVideoUrl
-            ? VideoUrl!
+        public global::G.MxbaiOmniCoreStoreModelsChunkTypesScoredVideoUrlInputChunk PickVideoUrl() => VideoUrl is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'VideoUrl' but the value was {ToString()}.");
         /// <summary>
         /// 
@@ -316,21 +316,21 @@ namespace G
                 Validate();
             }
 
-            if (IsText && text != null)
+            if (Text is { } __value0 && text != null)
             {
-                return text(Text!);
+                return text(__value0);
             }
-            else if (IsImageUrl && imageUrl != null)
+            else if (ImageUrl is { } __value1 && imageUrl != null)
             {
-                return imageUrl(ImageUrl!);
+                return imageUrl(__value1);
             }
-            else if (IsAudioUrl && audioUrl != null)
+            else if (AudioUrl is { } __value2 && audioUrl != null)
             {
-                return audioUrl(AudioUrl!);
+                return audioUrl(__value2);
             }
-            else if (IsVideoUrl && videoUrl != null)
+            else if (VideoUrl is { } __value3 && videoUrl != null)
             {
-                return videoUrl(VideoUrl!);
+                return videoUrl(__value3);
             }
 
             return default(TResult);
@@ -354,21 +354,21 @@ namespace G
                 Validate();
             }
 
-            if (IsText)
+            if (Text is { } __value0)
             {
-                text?.Invoke(Text!);
+                text?.Invoke(__value0);
             }
-            else if (IsImageUrl)
+            else if (ImageUrl is { } __value1)
             {
-                imageUrl?.Invoke(ImageUrl!);
+                imageUrl?.Invoke(__value1);
             }
-            else if (IsAudioUrl)
+            else if (AudioUrl is { } __value2)
             {
-                audioUrl?.Invoke(AudioUrl!);
+                audioUrl?.Invoke(__value2);
             }
-            else if (IsVideoUrl)
+            else if (VideoUrl is { } __value3)
             {
-                videoUrl?.Invoke(VideoUrl!);
+                videoUrl?.Invoke(__value3);
             }
         }
 
@@ -387,21 +387,21 @@ namespace G
                 Validate();
             }
 
-            if (IsText)
+            if (Text is { } __value0)
             {
-                text?.Invoke(Text!);
+                text?.Invoke(__value0);
             }
-            else if (IsImageUrl)
+            else if (ImageUrl is { } __value1)
             {
-                imageUrl?.Invoke(ImageUrl!);
+                imageUrl?.Invoke(__value1);
             }
-            else if (IsAudioUrl)
+            else if (AudioUrl is { } __value2)
             {
-                audioUrl?.Invoke(AudioUrl!);
+                audioUrl?.Invoke(__value2);
             }
-            else if (IsVideoUrl)
+            else if (VideoUrl is { } __value3)
             {
-                videoUrl?.Invoke(VideoUrl!);
+                videoUrl?.Invoke(__value3);
             }
         }
 

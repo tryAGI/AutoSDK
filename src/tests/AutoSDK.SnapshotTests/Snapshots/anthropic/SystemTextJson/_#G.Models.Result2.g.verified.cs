@@ -1,4 +1,4 @@
-﻿//HintName: G.Models.Result2.g.cs
+//HintName: G.Models.Result2.g.cs
 #pragma warning disable CS0618 // Type or member is obsolete
 
 #nullable enable
@@ -49,8 +49,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.SucceededResult PickSucceeded() => IsSucceeded
-            ? Succeeded!
+        public global::G.SucceededResult PickSucceeded() => Succeeded is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Succeeded' but the value was {ToString()}.");
 
         /// <summary>
@@ -86,8 +86,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.ErroredResult PickErrored() => IsErrored
-            ? Errored!
+        public global::G.ErroredResult PickErrored() => Errored is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Errored' but the value was {ToString()}.");
 
         /// <summary>
@@ -123,8 +123,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.CanceledResult PickCanceled() => IsCanceled
-            ? Canceled!
+        public global::G.CanceledResult PickCanceled() => Canceled is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Canceled' but the value was {ToString()}.");
 
         /// <summary>
@@ -160,8 +160,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.ExpiredResult PickExpired() => IsExpired
-            ? Expired!
+        public global::G.ExpiredResult PickExpired() => Expired is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Expired' but the value was {ToString()}.");
         /// <summary>
         /// 
@@ -317,21 +317,21 @@ namespace G
                 Validate();
             }
 
-            if (IsSucceeded && succeeded != null)
+            if (Succeeded is { } __value0 && succeeded != null)
             {
-                return succeeded(Succeeded!);
+                return succeeded(__value0);
             }
-            else if (IsErrored && errored != null)
+            else if (Errored is { } __value1 && errored != null)
             {
-                return errored(Errored!);
+                return errored(__value1);
             }
-            else if (IsCanceled && canceled != null)
+            else if (Canceled is { } __value2 && canceled != null)
             {
-                return canceled(Canceled!);
+                return canceled(__value2);
             }
-            else if (IsExpired && expired != null)
+            else if (Expired is { } __value3 && expired != null)
             {
-                return expired(Expired!);
+                return expired(__value3);
             }
 
             return default(TResult);
@@ -355,21 +355,21 @@ namespace G
                 Validate();
             }
 
-            if (IsSucceeded)
+            if (Succeeded is { } __value0)
             {
-                succeeded?.Invoke(Succeeded!);
+                succeeded?.Invoke(__value0);
             }
-            else if (IsErrored)
+            else if (Errored is { } __value1)
             {
-                errored?.Invoke(Errored!);
+                errored?.Invoke(__value1);
             }
-            else if (IsCanceled)
+            else if (Canceled is { } __value2)
             {
-                canceled?.Invoke(Canceled!);
+                canceled?.Invoke(__value2);
             }
-            else if (IsExpired)
+            else if (Expired is { } __value3)
             {
-                expired?.Invoke(Expired!);
+                expired?.Invoke(__value3);
             }
         }
 
@@ -388,21 +388,21 @@ namespace G
                 Validate();
             }
 
-            if (IsSucceeded)
+            if (Succeeded is { } __value0)
             {
-                succeeded?.Invoke(Succeeded!);
+                succeeded?.Invoke(__value0);
             }
-            else if (IsErrored)
+            else if (Errored is { } __value1)
             {
-                errored?.Invoke(Errored!);
+                errored?.Invoke(__value1);
             }
-            else if (IsCanceled)
+            else if (Canceled is { } __value2)
             {
-                canceled?.Invoke(Canceled!);
+                canceled?.Invoke(__value2);
             }
-            else if (IsExpired)
+            else if (Expired is { } __value3)
             {
-                expired?.Invoke(Expired!);
+                expired?.Invoke(__value3);
             }
         }
 

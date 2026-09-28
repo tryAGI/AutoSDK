@@ -1,4 +1,4 @@
-﻿//HintName: G.Models.BaseInputsOneOf1ItemsOneOf1Role.g.cs
+//HintName: G.Models.BaseInputsOneOf1ItemsOneOf1Role.g.cs
 #pragma warning disable CS0618 // Type or member is obsolete
 
 #nullable enable
@@ -43,8 +43,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.BaseInputsOneOf1ItemsOneOf1Role0 PickBaseInputsOneOf1ItemsOneOf1Role0() => IsBaseInputsOneOf1ItemsOneOf1Role0
-            ? BaseInputsOneOf1ItemsOneOf1Role0!.Value
+        public global::G.BaseInputsOneOf1ItemsOneOf1Role0 PickBaseInputsOneOf1ItemsOneOf1Role0() => BaseInputsOneOf1ItemsOneOf1Role0 is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'BaseInputsOneOf1ItemsOneOf1Role0' but the value was {ToString()}.");
 
         /// <summary>
@@ -80,8 +80,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.BaseInputsOneOf1ItemsOneOf1Role1 PickBaseInputsOneOf1ItemsOneOf1Role1() => IsBaseInputsOneOf1ItemsOneOf1Role1
-            ? BaseInputsOneOf1ItemsOneOf1Role1!.Value
+        public global::G.BaseInputsOneOf1ItemsOneOf1Role1 PickBaseInputsOneOf1ItemsOneOf1Role1() => BaseInputsOneOf1ItemsOneOf1Role1 is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'BaseInputsOneOf1ItemsOneOf1Role1' but the value was {ToString()}.");
 
         /// <summary>
@@ -117,8 +117,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.BaseInputsOneOf1ItemsOneOf1Role2 PickBaseInputsOneOf1ItemsOneOf1Role2() => IsBaseInputsOneOf1ItemsOneOf1Role2
-            ? BaseInputsOneOf1ItemsOneOf1Role2!.Value
+        public global::G.BaseInputsOneOf1ItemsOneOf1Role2 PickBaseInputsOneOf1ItemsOneOf1Role2() => BaseInputsOneOf1ItemsOneOf1Role2 is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'BaseInputsOneOf1ItemsOneOf1Role2' but the value was {ToString()}.");
         /// <summary>
         /// 
@@ -243,17 +243,17 @@ namespace G
                 Validate();
             }
 
-            if (IsBaseInputsOneOf1ItemsOneOf1Role0 && baseInputsOneOf1ItemsOneOf1Role0 != null)
+            if (BaseInputsOneOf1ItemsOneOf1Role0 is { } __value0 && baseInputsOneOf1ItemsOneOf1Role0 != null)
             {
-                return baseInputsOneOf1ItemsOneOf1Role0(BaseInputsOneOf1ItemsOneOf1Role0!);
+                return baseInputsOneOf1ItemsOneOf1Role0(__value0);
             }
-            else if (IsBaseInputsOneOf1ItemsOneOf1Role1 && baseInputsOneOf1ItemsOneOf1Role1 != null)
+            else if (BaseInputsOneOf1ItemsOneOf1Role1 is { } __value1 && baseInputsOneOf1ItemsOneOf1Role1 != null)
             {
-                return baseInputsOneOf1ItemsOneOf1Role1(BaseInputsOneOf1ItemsOneOf1Role1!);
+                return baseInputsOneOf1ItemsOneOf1Role1(__value1);
             }
-            else if (IsBaseInputsOneOf1ItemsOneOf1Role2 && baseInputsOneOf1ItemsOneOf1Role2 != null)
+            else if (BaseInputsOneOf1ItemsOneOf1Role2 is { } __value2 && baseInputsOneOf1ItemsOneOf1Role2 != null)
             {
-                return baseInputsOneOf1ItemsOneOf1Role2(BaseInputsOneOf1ItemsOneOf1Role2!);
+                return baseInputsOneOf1ItemsOneOf1Role2(__value2);
             }
 
             return default(TResult);
@@ -275,17 +275,17 @@ namespace G
                 Validate();
             }
 
-            if (IsBaseInputsOneOf1ItemsOneOf1Role0)
+            if (BaseInputsOneOf1ItemsOneOf1Role0 is { } __value0)
             {
-                baseInputsOneOf1ItemsOneOf1Role0?.Invoke(BaseInputsOneOf1ItemsOneOf1Role0!);
+                baseInputsOneOf1ItemsOneOf1Role0?.Invoke(__value0);
             }
-            else if (IsBaseInputsOneOf1ItemsOneOf1Role1)
+            else if (BaseInputsOneOf1ItemsOneOf1Role1 is { } __value1)
             {
-                baseInputsOneOf1ItemsOneOf1Role1?.Invoke(BaseInputsOneOf1ItemsOneOf1Role1!);
+                baseInputsOneOf1ItemsOneOf1Role1?.Invoke(__value1);
             }
-            else if (IsBaseInputsOneOf1ItemsOneOf1Role2)
+            else if (BaseInputsOneOf1ItemsOneOf1Role2 is { } __value2)
             {
-                baseInputsOneOf1ItemsOneOf1Role2?.Invoke(BaseInputsOneOf1ItemsOneOf1Role2!);
+                baseInputsOneOf1ItemsOneOf1Role2?.Invoke(__value2);
             }
         }
 
@@ -303,17 +303,17 @@ namespace G
                 Validate();
             }
 
-            if (IsBaseInputsOneOf1ItemsOneOf1Role0)
+            if (BaseInputsOneOf1ItemsOneOf1Role0 is { } __value0)
             {
-                baseInputsOneOf1ItemsOneOf1Role0?.Invoke(BaseInputsOneOf1ItemsOneOf1Role0!);
+                baseInputsOneOf1ItemsOneOf1Role0?.Invoke(__value0);
             }
-            else if (IsBaseInputsOneOf1ItemsOneOf1Role1)
+            else if (BaseInputsOneOf1ItemsOneOf1Role1 is { } __value1)
             {
-                baseInputsOneOf1ItemsOneOf1Role1?.Invoke(BaseInputsOneOf1ItemsOneOf1Role1!);
+                baseInputsOneOf1ItemsOneOf1Role1?.Invoke(__value1);
             }
-            else if (IsBaseInputsOneOf1ItemsOneOf1Role2)
+            else if (BaseInputsOneOf1ItemsOneOf1Role2 is { } __value2)
             {
-                baseInputsOneOf1ItemsOneOf1Role2?.Invoke(BaseInputsOneOf1ItemsOneOf1Role2!);
+                baseInputsOneOf1ItemsOneOf1Role2?.Invoke(__value2);
             }
         }
 

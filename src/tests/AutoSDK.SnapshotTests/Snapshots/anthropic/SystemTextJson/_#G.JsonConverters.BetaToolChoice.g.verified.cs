@@ -1,4 +1,4 @@
-﻿//HintName: G.JsonConverters.BetaToolChoice.g.cs
+//HintName: G.JsonConverters.BetaToolChoice.g.cs
 #nullable enable
 #pragma warning disable CS0618 // Type or member is obsolete
 
@@ -69,19 +69,19 @@ namespace G.JsonConverters
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.BetaToolChoiceAuto), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.BetaToolChoiceAuto?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.BetaToolChoiceAuto).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Auto!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickAuto(), typeInfo);
             }
             else if (value.IsAny)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.BetaToolChoiceAny), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.BetaToolChoiceAny?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.BetaToolChoiceAny).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Any!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickAny(), typeInfo);
             }
             else if (value.IsTool)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.BetaToolChoiceTool), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.BetaToolChoiceTool?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.BetaToolChoiceTool).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Tool!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickTool(), typeInfo);
             }
         }
     }

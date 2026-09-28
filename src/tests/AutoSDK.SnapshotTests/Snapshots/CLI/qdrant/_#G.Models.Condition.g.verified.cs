@@ -1,4 +1,4 @@
-﻿//HintName: G.Models.Condition.g.cs
+//HintName: G.Models.Condition.g.cs
 #pragma warning disable CS0618 // Type or member is obsolete
 
 #nullable enable
@@ -43,8 +43,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.FieldCondition PickField() => IsField
-            ? Field!
+        public global::G.FieldCondition PickField() => Field is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Field' but the value was {ToString()}.");
 
         /// <summary>
@@ -80,8 +80,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.IsEmptyCondition PickIsEmpty() => IsIsEmpty
-            ? IsEmpty!
+        public global::G.IsEmptyCondition PickIsEmpty() => IsEmpty is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'IsEmpty' but the value was {ToString()}.");
 
         /// <summary>
@@ -117,8 +117,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.IsNullCondition PickIsNull() => IsIsNull
-            ? IsNull!
+        public global::G.IsNullCondition PickIsNull() => IsNull is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'IsNull' but the value was {ToString()}.");
 
         /// <summary>
@@ -154,8 +154,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.HasIdCondition PickHasId() => IsHasId
-            ? HasId!
+        public global::G.HasIdCondition PickHasId() => HasId is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'HasId' but the value was {ToString()}.");
 
         /// <summary>
@@ -191,8 +191,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.HasVectorCondition PickHasVector() => IsHasVector
-            ? HasVector!
+        public global::G.HasVectorCondition PickHasVector() => HasVector is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'HasVector' but the value was {ToString()}.");
 
         /// <summary>
@@ -228,8 +228,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.NestedCondition PickNested() => IsNested
-            ? Nested!
+        public global::G.NestedCondition PickNested() => Nested is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Nested' but the value was {ToString()}.");
 
         /// <summary>
@@ -265,8 +265,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.Filter PickFilter() => IsFilter
-            ? Filter!
+        public global::G.Filter PickFilter() => Filter is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Filter' but the value was {ToString()}.");
         /// <summary>
         /// 
@@ -503,33 +503,33 @@ namespace G
                 Validate();
             }
 
-            if (IsField && field != null)
+            if (Field is { } __value0 && field != null)
             {
-                return field(Field!);
+                return field(__value0);
             }
-            else if (IsIsEmpty && isEmpty != null)
+            else if (IsEmpty is { } __value1 && isEmpty != null)
             {
-                return isEmpty(IsEmpty!);
+                return isEmpty(__value1);
             }
-            else if (IsIsNull && isNull != null)
+            else if (IsNull is { } __value2 && isNull != null)
             {
-                return isNull(IsNull!);
+                return isNull(__value2);
             }
-            else if (IsHasId && hasId != null)
+            else if (HasId is { } __value3 && hasId != null)
             {
-                return hasId(HasId!);
+                return hasId(__value3);
             }
-            else if (IsHasVector && hasVector != null)
+            else if (HasVector is { } __value4 && hasVector != null)
             {
-                return hasVector(HasVector!);
+                return hasVector(__value4);
             }
-            else if (IsNested && nested != null)
+            else if (Nested is { } __value5 && nested != null)
             {
-                return nested(Nested!);
+                return nested(__value5);
             }
-            else if (IsFilter && filter != null)
+            else if (Filter is { } __value6 && filter != null)
             {
-                return filter(Filter!);
+                return filter(__value6);
             }
 
             return default(TResult);
@@ -559,33 +559,33 @@ namespace G
                 Validate();
             }
 
-            if (IsField)
+            if (Field is { } __value0)
             {
-                field?.Invoke(Field!);
+                field?.Invoke(__value0);
             }
-            else if (IsIsEmpty)
+            else if (IsEmpty is { } __value1)
             {
-                isEmpty?.Invoke(IsEmpty!);
+                isEmpty?.Invoke(__value1);
             }
-            else if (IsIsNull)
+            else if (IsNull is { } __value2)
             {
-                isNull?.Invoke(IsNull!);
+                isNull?.Invoke(__value2);
             }
-            else if (IsHasId)
+            else if (HasId is { } __value3)
             {
-                hasId?.Invoke(HasId!);
+                hasId?.Invoke(__value3);
             }
-            else if (IsHasVector)
+            else if (HasVector is { } __value4)
             {
-                hasVector?.Invoke(HasVector!);
+                hasVector?.Invoke(__value4);
             }
-            else if (IsNested)
+            else if (Nested is { } __value5)
             {
-                nested?.Invoke(Nested!);
+                nested?.Invoke(__value5);
             }
-            else if (IsFilter)
+            else if (Filter is { } __value6)
             {
-                filter?.Invoke(Filter!);
+                filter?.Invoke(__value6);
             }
         }
 
@@ -607,33 +607,33 @@ namespace G
                 Validate();
             }
 
-            if (IsField)
+            if (Field is { } __value0)
             {
-                field?.Invoke(Field!);
+                field?.Invoke(__value0);
             }
-            else if (IsIsEmpty)
+            else if (IsEmpty is { } __value1)
             {
-                isEmpty?.Invoke(IsEmpty!);
+                isEmpty?.Invoke(__value1);
             }
-            else if (IsIsNull)
+            else if (IsNull is { } __value2)
             {
-                isNull?.Invoke(IsNull!);
+                isNull?.Invoke(__value2);
             }
-            else if (IsHasId)
+            else if (HasId is { } __value3)
             {
-                hasId?.Invoke(HasId!);
+                hasId?.Invoke(__value3);
             }
-            else if (IsHasVector)
+            else if (HasVector is { } __value4)
             {
-                hasVector?.Invoke(HasVector!);
+                hasVector?.Invoke(__value4);
             }
-            else if (IsNested)
+            else if (Nested is { } __value5)
             {
-                nested?.Invoke(Nested!);
+                nested?.Invoke(__value5);
             }
-            else if (IsFilter)
+            else if (Filter is { } __value6)
             {
-                filter?.Invoke(Filter!);
+                filter?.Invoke(__value6);
             }
         }
 

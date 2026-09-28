@@ -1,4 +1,4 @@
-﻿//HintName: G.Models.FunctionCallOutputItemOutput.g.cs
+//HintName: G.Models.FunctionCallOutputItemOutput.g.cs
 #pragma warning disable CS0618 // Type or member is obsolete
 
 #nullable enable
@@ -43,8 +43,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public string PickFunctionCallOutputItemOutputVariant1() => IsFunctionCallOutputItemOutputVariant1
-            ? FunctionCallOutputItemOutputVariant1!
+        public string PickFunctionCallOutputItemOutputVariant1() => FunctionCallOutputItemOutputVariant1 is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'FunctionCallOutputItemOutputVariant1' but the value was {ToString()}.");
 
         /// <summary>
@@ -80,8 +80,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::G.FunctionCallOutputItemOutputOneOf1Items> PickFunctionCallOutputItemOutput1() => IsFunctionCallOutputItemOutput1
-            ? FunctionCallOutputItemOutput1!
+        public global::System.Collections.Generic.IList<global::G.FunctionCallOutputItemOutputOneOf1Items> PickFunctionCallOutputItemOutput1() => FunctionCallOutputItemOutput1 is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'FunctionCallOutputItemOutput1' but the value was {ToString()}.");
         /// <summary>
         /// 
@@ -155,13 +155,13 @@ namespace G
                 Validate();
             }
 
-            if (IsFunctionCallOutputItemOutputVariant1 && functionCallOutputItemOutputVariant1 != null)
+            if (FunctionCallOutputItemOutputVariant1 is { } __value0 && functionCallOutputItemOutputVariant1 != null)
             {
-                return functionCallOutputItemOutputVariant1(FunctionCallOutputItemOutputVariant1!);
+                return functionCallOutputItemOutputVariant1(__value0);
             }
-            else if (IsFunctionCallOutputItemOutput1 && functionCallOutputItemOutput1 != null)
+            else if (FunctionCallOutputItemOutput1 is { } __value1 && functionCallOutputItemOutput1 != null)
             {
-                return functionCallOutputItemOutput1(FunctionCallOutputItemOutput1!);
+                return functionCallOutputItemOutput1(__value1);
             }
 
             return default(TResult);
@@ -181,13 +181,13 @@ namespace G
                 Validate();
             }
 
-            if (IsFunctionCallOutputItemOutputVariant1)
+            if (FunctionCallOutputItemOutputVariant1 is { } __value0)
             {
-                functionCallOutputItemOutputVariant1?.Invoke(FunctionCallOutputItemOutputVariant1!);
+                functionCallOutputItemOutputVariant1?.Invoke(__value0);
             }
-            else if (IsFunctionCallOutputItemOutput1)
+            else if (FunctionCallOutputItemOutput1 is { } __value1)
             {
-                functionCallOutputItemOutput1?.Invoke(FunctionCallOutputItemOutput1!);
+                functionCallOutputItemOutput1?.Invoke(__value1);
             }
         }
 
@@ -204,13 +204,13 @@ namespace G
                 Validate();
             }
 
-            if (IsFunctionCallOutputItemOutputVariant1)
+            if (FunctionCallOutputItemOutputVariant1 is { } __value0)
             {
-                functionCallOutputItemOutputVariant1?.Invoke(FunctionCallOutputItemOutputVariant1!);
+                functionCallOutputItemOutputVariant1?.Invoke(__value0);
             }
-            else if (IsFunctionCallOutputItemOutput1)
+            else if (FunctionCallOutputItemOutput1 is { } __value1)
             {
-                functionCallOutputItemOutput1?.Invoke(FunctionCallOutputItemOutput1!);
+                functionCallOutputItemOutput1?.Invoke(__value1);
             }
         }
 

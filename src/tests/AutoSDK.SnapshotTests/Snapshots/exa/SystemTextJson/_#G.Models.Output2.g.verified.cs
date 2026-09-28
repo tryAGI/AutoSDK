@@ -1,4 +1,4 @@
-﻿//HintName: G.Models.Output2.g.cs
+//HintName: G.Models.Output2.g.cs
 #pragma warning disable CS0618 // Type or member is obsolete
 
 #nullable enable
@@ -48,8 +48,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.ResearchEventDtoClassVariant2Variant3OutputVariant1 PickTasks() => IsTasks
-            ? Tasks!
+        public global::G.ResearchEventDtoClassVariant2Variant3OutputVariant1 PickTasks() => Tasks is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Tasks' but the value was {ToString()}.");
 
         /// <summary>
@@ -85,8 +85,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.ResearchEventDtoClassVariant2Variant3OutputVariant2 PickStop() => IsStop
-            ? Stop!
+        public global::G.ResearchEventDtoClassVariant2Variant3OutputVariant2 PickStop() => Stop is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Stop' but the value was {ToString()}.");
         /// <summary>
         /// 
@@ -186,13 +186,13 @@ namespace G
                 Validate();
             }
 
-            if (IsTasks && tasks != null)
+            if (Tasks is { } __value0 && tasks != null)
             {
-                return tasks(Tasks!);
+                return tasks(__value0);
             }
-            else if (IsStop && stop != null)
+            else if (Stop is { } __value1 && stop != null)
             {
-                return stop(Stop!);
+                return stop(__value1);
             }
 
             return default(TResult);
@@ -212,13 +212,13 @@ namespace G
                 Validate();
             }
 
-            if (IsTasks)
+            if (Tasks is { } __value0)
             {
-                tasks?.Invoke(Tasks!);
+                tasks?.Invoke(__value0);
             }
-            else if (IsStop)
+            else if (Stop is { } __value1)
             {
-                stop?.Invoke(Stop!);
+                stop?.Invoke(__value1);
             }
         }
 
@@ -235,13 +235,13 @@ namespace G
                 Validate();
             }
 
-            if (IsTasks)
+            if (Tasks is { } __value0)
             {
-                tasks?.Invoke(Tasks!);
+                tasks?.Invoke(__value0);
             }
-            else if (IsStop)
+            else if (Stop is { } __value1)
             {
-                stop?.Invoke(Stop!);
+                stop?.Invoke(__value1);
             }
         }
 

@@ -1,4 +1,4 @@
-﻿//HintName: G.Models.ChatRequestResponseFormat.g.cs
+//HintName: G.Models.ChatRequestResponseFormat.g.cs
 #pragma warning disable CS0618 // Type or member is obsolete
 
 #nullable enable
@@ -43,8 +43,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.ChatFormatTextConfig PickChatFormatTextConfig() => IsChatFormatTextConfig
-            ? ChatFormatTextConfig!
+        public global::G.ChatFormatTextConfig PickChatFormatTextConfig() => ChatFormatTextConfig is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'ChatFormatTextConfig' but the value was {ToString()}.");
 
         /// <summary>
@@ -80,8 +80,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.FormatJsonObjectConfig PickFormatJsonObjectConfig() => IsFormatJsonObjectConfig
-            ? FormatJsonObjectConfig!
+        public global::G.FormatJsonObjectConfig PickFormatJsonObjectConfig() => FormatJsonObjectConfig is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'FormatJsonObjectConfig' but the value was {ToString()}.");
 
         /// <summary>
@@ -117,8 +117,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.ChatFormatJsonSchemaConfig PickChatFormatJsonSchemaConfig() => IsChatFormatJsonSchemaConfig
-            ? ChatFormatJsonSchemaConfig!
+        public global::G.ChatFormatJsonSchemaConfig PickChatFormatJsonSchemaConfig() => ChatFormatJsonSchemaConfig is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'ChatFormatJsonSchemaConfig' but the value was {ToString()}.");
 
         /// <summary>
@@ -154,8 +154,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.ChatFormatGrammarConfig PickChatFormatGrammarConfig() => IsChatFormatGrammarConfig
-            ? ChatFormatGrammarConfig!
+        public global::G.ChatFormatGrammarConfig PickChatFormatGrammarConfig() => ChatFormatGrammarConfig is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'ChatFormatGrammarConfig' but the value was {ToString()}.");
 
         /// <summary>
@@ -191,8 +191,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.ChatFormatPythonConfig PickChatFormatPythonConfig() => IsChatFormatPythonConfig
-            ? ChatFormatPythonConfig!
+        public global::G.ChatFormatPythonConfig PickChatFormatPythonConfig() => ChatFormatPythonConfig is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'ChatFormatPythonConfig' but the value was {ToString()}.");
         /// <summary>
         /// 
@@ -373,25 +373,25 @@ namespace G
                 Validate();
             }
 
-            if (IsChatFormatTextConfig && chatFormatTextConfig != null)
+            if (ChatFormatTextConfig is { } __value0 && chatFormatTextConfig != null)
             {
-                return chatFormatTextConfig(ChatFormatTextConfig!);
+                return chatFormatTextConfig(__value0);
             }
-            else if (IsFormatJsonObjectConfig && formatJsonObjectConfig != null)
+            else if (FormatJsonObjectConfig is { } __value1 && formatJsonObjectConfig != null)
             {
-                return formatJsonObjectConfig(FormatJsonObjectConfig!);
+                return formatJsonObjectConfig(__value1);
             }
-            else if (IsChatFormatJsonSchemaConfig && chatFormatJsonSchemaConfig != null)
+            else if (ChatFormatJsonSchemaConfig is { } __value2 && chatFormatJsonSchemaConfig != null)
             {
-                return chatFormatJsonSchemaConfig(ChatFormatJsonSchemaConfig!);
+                return chatFormatJsonSchemaConfig(__value2);
             }
-            else if (IsChatFormatGrammarConfig && chatFormatGrammarConfig != null)
+            else if (ChatFormatGrammarConfig is { } __value3 && chatFormatGrammarConfig != null)
             {
-                return chatFormatGrammarConfig(ChatFormatGrammarConfig!);
+                return chatFormatGrammarConfig(__value3);
             }
-            else if (IsChatFormatPythonConfig && chatFormatPythonConfig != null)
+            else if (ChatFormatPythonConfig is { } __value4 && chatFormatPythonConfig != null)
             {
-                return chatFormatPythonConfig(ChatFormatPythonConfig!);
+                return chatFormatPythonConfig(__value4);
             }
 
             return default(TResult);
@@ -417,25 +417,25 @@ namespace G
                 Validate();
             }
 
-            if (IsChatFormatTextConfig)
+            if (ChatFormatTextConfig is { } __value0)
             {
-                chatFormatTextConfig?.Invoke(ChatFormatTextConfig!);
+                chatFormatTextConfig?.Invoke(__value0);
             }
-            else if (IsFormatJsonObjectConfig)
+            else if (FormatJsonObjectConfig is { } __value1)
             {
-                formatJsonObjectConfig?.Invoke(FormatJsonObjectConfig!);
+                formatJsonObjectConfig?.Invoke(__value1);
             }
-            else if (IsChatFormatJsonSchemaConfig)
+            else if (ChatFormatJsonSchemaConfig is { } __value2)
             {
-                chatFormatJsonSchemaConfig?.Invoke(ChatFormatJsonSchemaConfig!);
+                chatFormatJsonSchemaConfig?.Invoke(__value2);
             }
-            else if (IsChatFormatGrammarConfig)
+            else if (ChatFormatGrammarConfig is { } __value3)
             {
-                chatFormatGrammarConfig?.Invoke(ChatFormatGrammarConfig!);
+                chatFormatGrammarConfig?.Invoke(__value3);
             }
-            else if (IsChatFormatPythonConfig)
+            else if (ChatFormatPythonConfig is { } __value4)
             {
-                chatFormatPythonConfig?.Invoke(ChatFormatPythonConfig!);
+                chatFormatPythonConfig?.Invoke(__value4);
             }
         }
 
@@ -455,25 +455,25 @@ namespace G
                 Validate();
             }
 
-            if (IsChatFormatTextConfig)
+            if (ChatFormatTextConfig is { } __value0)
             {
-                chatFormatTextConfig?.Invoke(ChatFormatTextConfig!);
+                chatFormatTextConfig?.Invoke(__value0);
             }
-            else if (IsFormatJsonObjectConfig)
+            else if (FormatJsonObjectConfig is { } __value1)
             {
-                formatJsonObjectConfig?.Invoke(FormatJsonObjectConfig!);
+                formatJsonObjectConfig?.Invoke(__value1);
             }
-            else if (IsChatFormatJsonSchemaConfig)
+            else if (ChatFormatJsonSchemaConfig is { } __value2)
             {
-                chatFormatJsonSchemaConfig?.Invoke(ChatFormatJsonSchemaConfig!);
+                chatFormatJsonSchemaConfig?.Invoke(__value2);
             }
-            else if (IsChatFormatGrammarConfig)
+            else if (ChatFormatGrammarConfig is { } __value3)
             {
-                chatFormatGrammarConfig?.Invoke(ChatFormatGrammarConfig!);
+                chatFormatGrammarConfig?.Invoke(__value3);
             }
-            else if (IsChatFormatPythonConfig)
+            else if (ChatFormatPythonConfig is { } __value4)
             {
-                chatFormatPythonConfig?.Invoke(ChatFormatPythonConfig!);
+                chatFormatPythonConfig?.Invoke(__value4);
             }
         }
 

@@ -1,4 +1,4 @@
-﻿//HintName: G.Models.BetaToolChoice.g.cs
+//HintName: G.Models.BetaToolChoice.g.cs
 #pragma warning disable CS0618 // Type or member is obsolete
 
 #nullable enable
@@ -48,8 +48,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.BetaToolChoiceAuto PickAuto() => IsAuto
-            ? Auto!
+        public global::G.BetaToolChoiceAuto PickAuto() => Auto is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Auto' but the value was {ToString()}.");
 
         /// <summary>
@@ -85,8 +85,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.BetaToolChoiceAny PickAny() => IsAny
-            ? Any!
+        public global::G.BetaToolChoiceAny PickAny() => Any is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Any' but the value was {ToString()}.");
 
         /// <summary>
@@ -122,8 +122,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.BetaToolChoiceTool PickTool() => IsTool
-            ? Tool!
+        public global::G.BetaToolChoiceTool PickTool() => Tool is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Tool' but the value was {ToString()}.");
         /// <summary>
         /// 
@@ -251,17 +251,17 @@ namespace G
                 Validate();
             }
 
-            if (IsAuto && auto != null)
+            if (Auto is { } __value0 && auto != null)
             {
-                return auto(Auto!);
+                return auto(__value0);
             }
-            else if (IsAny && any != null)
+            else if (Any is { } __value1 && any != null)
             {
-                return any(Any!);
+                return any(__value1);
             }
-            else if (IsTool && tool != null)
+            else if (Tool is { } __value2 && tool != null)
             {
-                return tool(Tool!);
+                return tool(__value2);
             }
 
             return default(TResult);
@@ -283,17 +283,17 @@ namespace G
                 Validate();
             }
 
-            if (IsAuto)
+            if (Auto is { } __value0)
             {
-                auto?.Invoke(Auto!);
+                auto?.Invoke(__value0);
             }
-            else if (IsAny)
+            else if (Any is { } __value1)
             {
-                any?.Invoke(Any!);
+                any?.Invoke(__value1);
             }
-            else if (IsTool)
+            else if (Tool is { } __value2)
             {
-                tool?.Invoke(Tool!);
+                tool?.Invoke(__value2);
             }
         }
 
@@ -311,17 +311,17 @@ namespace G
                 Validate();
             }
 
-            if (IsAuto)
+            if (Auto is { } __value0)
             {
-                auto?.Invoke(Auto!);
+                auto?.Invoke(__value0);
             }
-            else if (IsAny)
+            else if (Any is { } __value1)
             {
-                any?.Invoke(Any!);
+                any?.Invoke(__value1);
             }
-            else if (IsTool)
+            else if (Tool is { } __value2)
             {
-                tool?.Invoke(Tool!);
+                tool?.Invoke(__value2);
             }
         }
 

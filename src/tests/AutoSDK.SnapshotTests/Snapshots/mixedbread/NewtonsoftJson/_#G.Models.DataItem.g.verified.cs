@@ -1,4 +1,4 @@
-﻿//HintName: G.Models.DataItem.g.cs
+//HintName: G.Models.DataItem.g.cs
 #pragma warning disable CS0618 // Type or member is obsolete
 
 #nullable enable
@@ -48,8 +48,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.StoreIngestionEvent PickIngestion() => IsIngestion
-            ? Ingestion!
+        public global::G.StoreIngestionEvent PickIngestion() => Ingestion is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Ingestion' but the value was {ToString()}.");
 
         /// <summary>
@@ -85,8 +85,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.StoreSearchEvent PickSearch() => IsSearch
-            ? Search!
+        public global::G.StoreSearchEvent PickSearch() => Search is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Search' but the value was {ToString()}.");
         /// <summary>
         /// 
@@ -186,13 +186,13 @@ namespace G
                 Validate();
             }
 
-            if (IsIngestion && ingestion != null)
+            if (Ingestion is { } __value0 && ingestion != null)
             {
-                return ingestion(Ingestion!);
+                return ingestion(__value0);
             }
-            else if (IsSearch && search != null)
+            else if (Search is { } __value1 && search != null)
             {
-                return search(Search!);
+                return search(__value1);
             }
 
             return default(TResult);
@@ -212,13 +212,13 @@ namespace G
                 Validate();
             }
 
-            if (IsIngestion)
+            if (Ingestion is { } __value0)
             {
-                ingestion?.Invoke(Ingestion!);
+                ingestion?.Invoke(__value0);
             }
-            else if (IsSearch)
+            else if (Search is { } __value1)
             {
-                search?.Invoke(Search!);
+                search?.Invoke(__value1);
             }
         }
 
@@ -235,13 +235,13 @@ namespace G
                 Validate();
             }
 
-            if (IsIngestion)
+            if (Ingestion is { } __value0)
             {
-                ingestion?.Invoke(Ingestion!);
+                ingestion?.Invoke(__value0);
             }
-            else if (IsSearch)
+            else if (Search is { } __value1)
             {
-                search?.Invoke(Search!);
+                search?.Invoke(__value1);
             }
         }
 

@@ -1,4 +1,4 @@
-﻿//HintName: G.SecretScanningClient.SecretScanningListAlertsForRepo.g.cs
+//HintName: G.SecretScanningClient.SecretScanningListAlertsForRepo.g.cs
 
 #nullable enable
 
@@ -225,8 +225,8 @@ namespace G
                 PrepareSecretScanningListAlertsForRepoRequest(
                     httpClient: HttpClient,
                     httpRequestMessage: __httpRequest,
-                    owner: owner!,
-                    repo: repo!,
+                    owner: owner,
+                    repo: repo,
                     state: state,
                     secretType: secretType,
                     resolution: resolution,
@@ -258,7 +258,7 @@ namespace G
                                 pathTemplate: "$\"/repos/{owner}/{repo}/secret-scanning/alerts\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: null,
                                 exception: null,
                                 clientOptions: Options,
@@ -292,7 +292,7 @@ namespace G
                                 pathTemplate: "$\"/repos/{owner}/{repo}/secret-scanning/alerts\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: null,
                                 exception: __exception,
                                 clientOptions: Options,
@@ -333,7 +333,7 @@ namespace G
                                 pathTemplate: "$\"/repos/{owner}/{repo}/secret-scanning/alerts\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: __response,
                                 exception: null,
                                 clientOptions: Options,
@@ -381,7 +381,7 @@ namespace G
                                 pathTemplate: "$\"/repos/{owner}/{repo}/secret-scanning/alerts\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: __response,
                                 exception: null,
                                 clientOptions: Options,
@@ -403,7 +403,7 @@ namespace G
                                 pathTemplate: "$\"/repos/{owner}/{repo}/secret-scanning/alerts\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: __response,
                                 exception: null,
                                 clientOptions: Options,

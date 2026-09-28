@@ -1,4 +1,4 @@
-﻿//HintName: G.BetaClient.UpdateParseConfigurationApiV1BetaParseConfigurationsConfigIdPut.g.cs
+//HintName: G.BetaClient.UpdateParseConfigurationApiV1BetaParseConfigurationsConfigIdPut.g.cs
 
 #nullable enable
 
@@ -223,7 +223,7 @@ namespace G
                 PrepareUpdateParseConfigurationApiV1BetaParseConfigurationsConfigIdPutRequest(
                     httpClient: HttpClient,
                     httpRequestMessage: __httpRequest,
-                    configId: configId!,
+                    configId: configId,
                     projectId: projectId,
                     organizationId: organizationId,
                     session: session,
@@ -251,7 +251,7 @@ namespace G
                                 pathTemplate: "$\"/api/v1/beta/parse-configurations/{configId}\"",
                                 httpMethod: "PUT",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: null,
                                 exception: null,
                                 clientOptions: Options,
@@ -285,7 +285,7 @@ namespace G
                                 pathTemplate: "$\"/api/v1/beta/parse-configurations/{configId}\"",
                                 httpMethod: "PUT",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: null,
                                 exception: __exception,
                                 clientOptions: Options,
@@ -326,7 +326,7 @@ namespace G
                                 pathTemplate: "$\"/api/v1/beta/parse-configurations/{configId}\"",
                                 httpMethod: "PUT",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: __response,
                                 exception: null,
                                 clientOptions: Options,
@@ -374,7 +374,7 @@ namespace G
                                 pathTemplate: "$\"/api/v1/beta/parse-configurations/{configId}\"",
                                 httpMethod: "PUT",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: __response,
                                 exception: null,
                                 clientOptions: Options,
@@ -396,7 +396,7 @@ namespace G
                                 pathTemplate: "$\"/api/v1/beta/parse-configurations/{configId}\"",
                                 httpMethod: "PUT",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: __response,
                                 exception: null,
                                 clientOptions: Options,

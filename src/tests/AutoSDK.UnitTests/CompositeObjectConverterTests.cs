@@ -88,14 +88,14 @@ public class CompositeObjectConverterTests
 
         generatedAnyOf.Should().Contain("JsonTypeInfo<T1?>");
         generatedAnyOf.Should().Contain("JsonTypeInfo<T2?>");
-        generatedAnyOf.Should().Contain("JsonSerializer.Serialize(writer, value.Value1!, typeInfo);");
-        generatedAnyOf.Should().Contain("JsonSerializer.Serialize(writer, value.Value2!, typeInfo);");
+        generatedAnyOf.Should().Contain("JsonSerializer.Serialize(writer, value.PickValue1(), typeInfo);");
+        generatedAnyOf.Should().Contain("JsonSerializer.Serialize(writer, value.PickValue2(), typeInfo);");
         generatedAnyOf.Should().Contain("            }\n\n            if (value1 == null && value2 == null)");
 
         generatedAllOf.Should().Contain("JsonTypeInfo<T1?>");
         generatedAllOf.Should().Contain("JsonTypeInfo<T2?>");
-        generatedAllOf.Should().Contain("JsonSerializer.SerializeToElement(value.Value1!, typeInfo);");
-        generatedAllOf.Should().Contain("JsonSerializer.SerializeToElement(value.Value2!, typeInfo);");
+        generatedAllOf.Should().Contain("JsonSerializer.SerializeToElement(value.PickValue1(), typeInfo);");
+        generatedAllOf.Should().Contain("JsonSerializer.SerializeToElement(value.PickValue2(), typeInfo);");
         generatedAllOf.Should().Contain("writer.WriteStartObject();");
         generatedAllOf.Should().Contain("__writtenPropertyNames.Add(__property.Name)");
         generatedAllOf.Should().NotContain("else if (value.IsValue2)");

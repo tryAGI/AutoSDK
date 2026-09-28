@@ -1,4 +1,4 @@
-﻿//HintName: G.Models.SkillLoadEvent.g.cs
+//HintName: G.Models.SkillLoadEvent.g.cs
 #pragma warning disable CS0618 // Type or member is obsolete
 
 #nullable enable
@@ -43,8 +43,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.AgentEventBase PickAgentBase() => IsAgentBase
-            ? AgentBase!
+        public global::G.AgentEventBase PickAgentBase() => AgentBase is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'AgentBase' but the value was {ToString()}.");
 
         /// <summary>
@@ -80,8 +80,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.SkillLoadEventVariant2 PickSkillLoadEventVariant2() => IsSkillLoadEventVariant2
-            ? SkillLoadEventVariant2!
+        public global::G.SkillLoadEventVariant2 PickSkillLoadEventVariant2() => SkillLoadEventVariant2 is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'SkillLoadEventVariant2' but the value was {ToString()}.");
         /// <summary>
         /// 
@@ -178,13 +178,13 @@ namespace G
                 Validate();
             }
 
-            if (IsAgentBase && agentBase != null)
+            if (AgentBase is { } __value0 && agentBase != null)
             {
-                return agentBase(AgentBase!);
+                return agentBase(__value0);
             }
-            else if (IsSkillLoadEventVariant2 && skillLoadEventVariant2 != null)
+            else if (SkillLoadEventVariant2 is { } __value1 && skillLoadEventVariant2 != null)
             {
-                return skillLoadEventVariant2(SkillLoadEventVariant2!);
+                return skillLoadEventVariant2(__value1);
             }
 
             return default(TResult);
@@ -204,13 +204,13 @@ namespace G
                 Validate();
             }
 
-            if (IsAgentBase)
+            if (AgentBase is { } __value0)
             {
-                agentBase?.Invoke(AgentBase!);
+                agentBase?.Invoke(__value0);
             }
-            else if (IsSkillLoadEventVariant2)
+            else if (SkillLoadEventVariant2 is { } __value1)
             {
-                skillLoadEventVariant2?.Invoke(SkillLoadEventVariant2!);
+                skillLoadEventVariant2?.Invoke(__value1);
             }
         }
 
@@ -227,13 +227,13 @@ namespace G
                 Validate();
             }
 
-            if (IsAgentBase)
+            if (AgentBase is { } __value0)
             {
-                agentBase?.Invoke(AgentBase!);
+                agentBase?.Invoke(__value0);
             }
-            else if (IsSkillLoadEventVariant2)
+            else if (SkillLoadEventVariant2 is { } __value1)
             {
-                skillLoadEventVariant2?.Invoke(SkillLoadEventVariant2!);
+                skillLoadEventVariant2?.Invoke(__value1);
             }
         }
 

@@ -1,4 +1,4 @@
-﻿//HintName: G.ModerationClient.UnbanUser.g.cs
+//HintName: G.ModerationClient.UnbanUser.g.cs
 
 #nullable enable
 
@@ -168,9 +168,9 @@ namespace G
                 PrepareUnbanUserRequest(
                     httpClient: HttpClient,
                     httpRequestMessage: __httpRequest,
-                    broadcasterId: broadcasterId!,
-                    moderatorId: moderatorId!,
-                    userId: userId!);
+                    broadcasterId: broadcasterId,
+                    moderatorId: moderatorId,
+                    userId: userId);
 
                 global::G.AutoSDKHttpRequestOptions.StampAuthorizationOverride(__httpRequest);
 
@@ -194,7 +194,7 @@ namespace G
                                 pathTemplate: "\"/moderation/bans\"",
                                 httpMethod: "DELETE",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: null,
                                 exception: null,
                                 clientOptions: Options,
@@ -231,7 +231,7 @@ namespace G
                                 pathTemplate: "\"/moderation/bans\"",
                                 httpMethod: "DELETE",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: null,
                                 exception: __exception,
                                 clientOptions: Options,
@@ -272,7 +272,7 @@ namespace G
                                 pathTemplate: "\"/moderation/bans\"",
                                 httpMethod: "DELETE",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: __response,
                                 exception: null,
                                 clientOptions: Options,
@@ -320,7 +320,7 @@ namespace G
                                 pathTemplate: "\"/moderation/bans\"",
                                 httpMethod: "DELETE",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: __response,
                                 exception: null,
                                 clientOptions: Options,
@@ -342,7 +342,7 @@ namespace G
                                 pathTemplate: "\"/moderation/bans\"",
                                 httpMethod: "DELETE",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: __response,
                                 exception: null,
                                 clientOptions: Options,

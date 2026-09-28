@@ -1,4 +1,4 @@
-﻿//HintName: G.Models.RetellResponseEngine.g.cs
+//HintName: G.Models.RetellResponseEngine.g.cs
 #pragma warning disable CS0618 // Type or member is obsolete
 
 #nullable enable
@@ -43,8 +43,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.ResponseEngineRetellLm PickLm() => IsLm
-            ? Lm!
+        public global::G.ResponseEngineRetellLm PickLm() => Lm is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Lm' but the value was {ToString()}.");
 
         /// <summary>
@@ -80,8 +80,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.ResponseEngineConversationFlow PickConversationFlow() => IsConversationFlow
-            ? ConversationFlow!
+        public global::G.ResponseEngineConversationFlow PickConversationFlow() => ConversationFlow is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'ConversationFlow' but the value was {ToString()}.");
         /// <summary>
         /// 
@@ -178,13 +178,13 @@ namespace G
                 Validate();
             }
 
-            if (IsLm && lm != null)
+            if (Lm is { } __value0 && lm != null)
             {
-                return lm(Lm!);
+                return lm(__value0);
             }
-            else if (IsConversationFlow && conversationFlow != null)
+            else if (ConversationFlow is { } __value1 && conversationFlow != null)
             {
-                return conversationFlow(ConversationFlow!);
+                return conversationFlow(__value1);
             }
 
             return default(TResult);
@@ -204,13 +204,13 @@ namespace G
                 Validate();
             }
 
-            if (IsLm)
+            if (Lm is { } __value0)
             {
-                lm?.Invoke(Lm!);
+                lm?.Invoke(__value0);
             }
-            else if (IsConversationFlow)
+            else if (ConversationFlow is { } __value1)
             {
-                conversationFlow?.Invoke(ConversationFlow!);
+                conversationFlow?.Invoke(__value1);
             }
         }
 
@@ -227,13 +227,13 @@ namespace G
                 Validate();
             }
 
-            if (IsLm)
+            if (Lm is { } __value0)
             {
-                lm?.Invoke(Lm!);
+                lm?.Invoke(__value0);
             }
-            else if (IsConversationFlow)
+            else if (ConversationFlow is { } __value1)
             {
-                conversationFlow?.Invoke(ConversationFlow!);
+                conversationFlow?.Invoke(__value1);
             }
         }
 

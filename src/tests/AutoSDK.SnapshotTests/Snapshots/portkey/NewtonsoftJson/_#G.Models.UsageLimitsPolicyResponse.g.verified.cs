@@ -1,4 +1,4 @@
-﻿//HintName: G.Models.UsageLimitsPolicyResponse.g.cs
+//HintName: G.Models.UsageLimitsPolicyResponse.g.cs
 #pragma warning disable CS0618 // Type or member is obsolete
 
 #nullable enable
@@ -43,8 +43,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.UsageLimitsPolicy PickUsageLimitsPolicy() => IsUsageLimitsPolicy
-            ? UsageLimitsPolicy!
+        public global::G.UsageLimitsPolicy PickUsageLimitsPolicy() => UsageLimitsPolicy is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'UsageLimitsPolicy' but the value was {ToString()}.");
 
         /// <summary>
@@ -80,8 +80,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.UsageLimitsPolicyResponseVariant2 PickUsageLimitsPolicyResponseVariant2() => IsUsageLimitsPolicyResponseVariant2
-            ? UsageLimitsPolicyResponseVariant2!
+        public global::G.UsageLimitsPolicyResponseVariant2 PickUsageLimitsPolicyResponseVariant2() => UsageLimitsPolicyResponseVariant2 is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'UsageLimitsPolicyResponseVariant2' but the value was {ToString()}.");
         /// <summary>
         /// 
@@ -178,13 +178,13 @@ namespace G
                 Validate();
             }
 
-            if (IsUsageLimitsPolicy && usageLimitsPolicy != null)
+            if (UsageLimitsPolicy is { } __value0 && usageLimitsPolicy != null)
             {
-                return usageLimitsPolicy(UsageLimitsPolicy!);
+                return usageLimitsPolicy(__value0);
             }
-            else if (IsUsageLimitsPolicyResponseVariant2 && usageLimitsPolicyResponseVariant2 != null)
+            else if (UsageLimitsPolicyResponseVariant2 is { } __value1 && usageLimitsPolicyResponseVariant2 != null)
             {
-                return usageLimitsPolicyResponseVariant2(UsageLimitsPolicyResponseVariant2!);
+                return usageLimitsPolicyResponseVariant2(__value1);
             }
 
             return default(TResult);
@@ -204,13 +204,13 @@ namespace G
                 Validate();
             }
 
-            if (IsUsageLimitsPolicy)
+            if (UsageLimitsPolicy is { } __value0)
             {
-                usageLimitsPolicy?.Invoke(UsageLimitsPolicy!);
+                usageLimitsPolicy?.Invoke(__value0);
             }
-            else if (IsUsageLimitsPolicyResponseVariant2)
+            else if (UsageLimitsPolicyResponseVariant2 is { } __value1)
             {
-                usageLimitsPolicyResponseVariant2?.Invoke(UsageLimitsPolicyResponseVariant2!);
+                usageLimitsPolicyResponseVariant2?.Invoke(__value1);
             }
         }
 
@@ -227,13 +227,13 @@ namespace G
                 Validate();
             }
 
-            if (IsUsageLimitsPolicy)
+            if (UsageLimitsPolicy is { } __value0)
             {
-                usageLimitsPolicy?.Invoke(UsageLimitsPolicy!);
+                usageLimitsPolicy?.Invoke(__value0);
             }
-            else if (IsUsageLimitsPolicyResponseVariant2)
+            else if (UsageLimitsPolicyResponseVariant2 is { } __value1)
             {
-                usageLimitsPolicyResponseVariant2?.Invoke(UsageLimitsPolicyResponseVariant2!);
+                usageLimitsPolicyResponseVariant2?.Invoke(__value1);
             }
         }
 

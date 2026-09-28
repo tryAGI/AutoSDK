@@ -1,4 +1,4 @@
-﻿//HintName: G.Api.OktaLoginOktaLoginGet.g.cs
+//HintName: G.Api.OktaLoginOktaLoginGet.g.cs
 
 #nullable enable
 
@@ -124,7 +124,7 @@ namespace G
                 PrepareOktaLoginOktaLoginGetRequest(
                     httpClient: HttpClient,
                     httpRequestMessage: __httpRequest,
-                    teamId: teamId!,
+                    teamId: teamId,
                     origin: origin,
                     loginId: loginId);
 
@@ -148,7 +148,7 @@ namespace G
                                 pathTemplate: "\"/okta/login\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: null,
                                 exception: null,
                                 clientOptions: Options,
@@ -182,7 +182,7 @@ namespace G
                                 pathTemplate: "\"/okta/login\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: null,
                                 exception: __exception,
                                 clientOptions: Options,
@@ -223,7 +223,7 @@ namespace G
                                 pathTemplate: "\"/okta/login\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: __response,
                                 exception: null,
                                 clientOptions: Options,
@@ -271,7 +271,7 @@ namespace G
                                 pathTemplate: "\"/okta/login\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: __response,
                                 exception: null,
                                 clientOptions: Options,
@@ -293,7 +293,7 @@ namespace G
                                 pathTemplate: "\"/okta/login\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: __response,
                                 exception: null,
                                 clientOptions: Options,

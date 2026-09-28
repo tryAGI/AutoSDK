@@ -1,4 +1,4 @@
-﻿//HintName: G.Models.SparseIndexType.g.cs
+//HintName: G.Models.SparseIndexType.g.cs
 #pragma warning disable CS0618 // Type or member is obsolete
 
 #nullable enable
@@ -43,8 +43,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.SparseIndexTypeVariant1 PickSparseIndexTypeVariant1() => IsSparseIndexTypeVariant1
-            ? SparseIndexTypeVariant1!.Value
+        public global::G.SparseIndexTypeVariant1 PickSparseIndexTypeVariant1() => SparseIndexTypeVariant1 is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'SparseIndexTypeVariant1' but the value was {ToString()}.");
 
         /// <summary>
@@ -80,8 +80,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.SparseIndexTypeVariant2 PickSparseIndexTypeVariant2() => IsSparseIndexTypeVariant2
-            ? SparseIndexTypeVariant2!.Value
+        public global::G.SparseIndexTypeVariant2 PickSparseIndexTypeVariant2() => SparseIndexTypeVariant2 is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'SparseIndexTypeVariant2' but the value was {ToString()}.");
 
         /// <summary>
@@ -117,8 +117,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.SparseIndexTypeVariant3 PickSparseIndexTypeVariant3() => IsSparseIndexTypeVariant3
-            ? SparseIndexTypeVariant3!.Value
+        public global::G.SparseIndexTypeVariant3 PickSparseIndexTypeVariant3() => SparseIndexTypeVariant3 is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'SparseIndexTypeVariant3' but the value was {ToString()}.");
         /// <summary>
         /// 
@@ -243,17 +243,17 @@ namespace G
                 Validate();
             }
 
-            if (IsSparseIndexTypeVariant1 && sparseIndexTypeVariant1 != null)
+            if (SparseIndexTypeVariant1 is { } __value0 && sparseIndexTypeVariant1 != null)
             {
-                return sparseIndexTypeVariant1(SparseIndexTypeVariant1!);
+                return sparseIndexTypeVariant1(__value0);
             }
-            else if (IsSparseIndexTypeVariant2 && sparseIndexTypeVariant2 != null)
+            else if (SparseIndexTypeVariant2 is { } __value1 && sparseIndexTypeVariant2 != null)
             {
-                return sparseIndexTypeVariant2(SparseIndexTypeVariant2!);
+                return sparseIndexTypeVariant2(__value1);
             }
-            else if (IsSparseIndexTypeVariant3 && sparseIndexTypeVariant3 != null)
+            else if (SparseIndexTypeVariant3 is { } __value2 && sparseIndexTypeVariant3 != null)
             {
-                return sparseIndexTypeVariant3(SparseIndexTypeVariant3!);
+                return sparseIndexTypeVariant3(__value2);
             }
 
             return default(TResult);
@@ -275,17 +275,17 @@ namespace G
                 Validate();
             }
 
-            if (IsSparseIndexTypeVariant1)
+            if (SparseIndexTypeVariant1 is { } __value0)
             {
-                sparseIndexTypeVariant1?.Invoke(SparseIndexTypeVariant1!);
+                sparseIndexTypeVariant1?.Invoke(__value0);
             }
-            else if (IsSparseIndexTypeVariant2)
+            else if (SparseIndexTypeVariant2 is { } __value1)
             {
-                sparseIndexTypeVariant2?.Invoke(SparseIndexTypeVariant2!);
+                sparseIndexTypeVariant2?.Invoke(__value1);
             }
-            else if (IsSparseIndexTypeVariant3)
+            else if (SparseIndexTypeVariant3 is { } __value2)
             {
-                sparseIndexTypeVariant3?.Invoke(SparseIndexTypeVariant3!);
+                sparseIndexTypeVariant3?.Invoke(__value2);
             }
         }
 
@@ -303,17 +303,17 @@ namespace G
                 Validate();
             }
 
-            if (IsSparseIndexTypeVariant1)
+            if (SparseIndexTypeVariant1 is { } __value0)
             {
-                sparseIndexTypeVariant1?.Invoke(SparseIndexTypeVariant1!);
+                sparseIndexTypeVariant1?.Invoke(__value0);
             }
-            else if (IsSparseIndexTypeVariant2)
+            else if (SparseIndexTypeVariant2 is { } __value1)
             {
-                sparseIndexTypeVariant2?.Invoke(SparseIndexTypeVariant2!);
+                sparseIndexTypeVariant2?.Invoke(__value1);
             }
-            else if (IsSparseIndexTypeVariant3)
+            else if (SparseIndexTypeVariant3 is { } __value2)
             {
-                sparseIndexTypeVariant3?.Invoke(SparseIndexTypeVariant3!);
+                sparseIndexTypeVariant3?.Invoke(__value2);
             }
         }
 

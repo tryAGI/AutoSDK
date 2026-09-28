@@ -1,4 +1,4 @@
-﻿//HintName: G.Models.OutputContent.g.cs
+//HintName: G.Models.OutputContent.g.cs
 #pragma warning disable CS0618 // Type or member is obsolete
 
 #nullable enable
@@ -43,8 +43,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.OutputText PickOutputText() => IsOutputText
-            ? OutputText!
+        public global::G.OutputText PickOutputText() => OutputText is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'OutputText' but the value was {ToString()}.");
 
         /// <summary>
@@ -80,8 +80,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.Refusal PickRefusal() => IsRefusal
-            ? Refusal!
+        public global::G.Refusal PickRefusal() => Refusal is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Refusal' but the value was {ToString()}.");
         /// <summary>
         /// 
@@ -178,13 +178,13 @@ namespace G
                 Validate();
             }
 
-            if (IsOutputText && outputText != null)
+            if (OutputText is { } __value0 && outputText != null)
             {
-                return outputText(OutputText!);
+                return outputText(__value0);
             }
-            else if (IsRefusal && refusal != null)
+            else if (Refusal is { } __value1 && refusal != null)
             {
-                return refusal(Refusal!);
+                return refusal(__value1);
             }
 
             return default(TResult);
@@ -204,13 +204,13 @@ namespace G
                 Validate();
             }
 
-            if (IsOutputText)
+            if (OutputText is { } __value0)
             {
-                outputText?.Invoke(OutputText!);
+                outputText?.Invoke(__value0);
             }
-            else if (IsRefusal)
+            else if (Refusal is { } __value1)
             {
-                refusal?.Invoke(Refusal!);
+                refusal?.Invoke(__value1);
             }
         }
 
@@ -227,13 +227,13 @@ namespace G
                 Validate();
             }
 
-            if (IsOutputText)
+            if (OutputText is { } __value0)
             {
-                outputText?.Invoke(OutputText!);
+                outputText?.Invoke(__value0);
             }
-            else if (IsRefusal)
+            else if (Refusal is { } __value1)
             {
-                refusal?.Invoke(Refusal!);
+                refusal?.Invoke(__value1);
             }
         }
 

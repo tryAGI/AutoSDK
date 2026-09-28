@@ -1,4 +1,4 @@
-﻿//HintName: G.Models.ReferencesItem.g.cs
+//HintName: G.Models.ReferencesItem.g.cs
 #pragma warning disable CS0618 // Type or member is obsolete
 
 #nullable enable
@@ -48,8 +48,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.CreateVideoToVideoRequestGen4AlephReferenceImageReference PickImage() => IsImage
-            ? Image!
+        public global::G.CreateVideoToVideoRequestGen4AlephReferenceImageReference PickImage() => Image is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Image' but the value was {ToString()}.");
         /// <summary>
         /// 
@@ -121,9 +121,9 @@ namespace G
                 Validate();
             }
 
-            if (IsImage && image != null)
+            if (Image is { } __value0 && image != null)
             {
-                return image(Image!);
+                return image(__value0);
             }
 
             return default(TResult);
@@ -141,9 +141,9 @@ namespace G
                 Validate();
             }
 
-            if (IsImage)
+            if (Image is { } __value0)
             {
-                image?.Invoke(Image!);
+                image?.Invoke(__value0);
             }
         }
 
@@ -159,9 +159,9 @@ namespace G
                 Validate();
             }
 
-            if (IsImage)
+            if (Image is { } __value0)
             {
-                image?.Invoke(Image!);
+                image?.Invoke(__value0);
             }
         }
 

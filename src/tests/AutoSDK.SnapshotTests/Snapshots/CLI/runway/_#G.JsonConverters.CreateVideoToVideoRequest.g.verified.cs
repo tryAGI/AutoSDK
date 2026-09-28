@@ -1,4 +1,4 @@
-﻿//HintName: G.JsonConverters.CreateVideoToVideoRequest.g.cs
+//HintName: G.JsonConverters.CreateVideoToVideoRequest.g.cs
 #nullable enable
 #pragma warning disable CS0618 // Type or member is obsolete
 
@@ -51,7 +51,7 @@ namespace G.JsonConverters
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.CreateVideoToVideoRequestGen4Aleph), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.CreateVideoToVideoRequestGen4Aleph?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.CreateVideoToVideoRequestGen4Aleph).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Gen4Aleph!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickGen4Aleph(), typeInfo);
             }
         }
     }

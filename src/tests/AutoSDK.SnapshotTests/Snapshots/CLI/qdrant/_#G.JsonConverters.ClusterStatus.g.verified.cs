@@ -1,4 +1,4 @@
-﻿//HintName: G.JsonConverters.ClusterStatus.g.cs
+//HintName: G.JsonConverters.ClusterStatus.g.cs
 #nullable enable
 #pragma warning disable CS0618 // Type or member is obsolete
 
@@ -147,13 +147,13 @@ namespace G.JsonConverters
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.ClusterStatusVariant1), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.ClusterStatusVariant1?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.ClusterStatusVariant1).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.ClusterStatusVariant1!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickClusterStatusVariant1(), typeInfo);
             }
             else if (value.IsClusterStatusVariant2)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.ClusterStatusVariant2), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.ClusterStatusVariant2?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.ClusterStatusVariant2).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.ClusterStatusVariant2!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickClusterStatusVariant2(), typeInfo);
             }
         }
     }

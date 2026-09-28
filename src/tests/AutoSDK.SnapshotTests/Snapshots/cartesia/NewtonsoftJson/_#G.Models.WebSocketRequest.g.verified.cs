@@ -1,4 +1,4 @@
-﻿//HintName: G.Models.WebSocketRequest.g.cs
+//HintName: G.Models.WebSocketRequest.g.cs
 #pragma warning disable CS0618 // Type or member is obsolete
 
 #nullable enable
@@ -43,8 +43,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.GenerationRequest PickGenerationRequest() => IsGenerationRequest
-            ? GenerationRequest!
+        public global::G.GenerationRequest PickGenerationRequest() => GenerationRequest is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'GenerationRequest' but the value was {ToString()}.");
 
         /// <summary>
@@ -80,8 +80,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.CancelContextRequest PickCancelContextRequest() => IsCancelContextRequest
-            ? CancelContextRequest!
+        public global::G.CancelContextRequest PickCancelContextRequest() => CancelContextRequest is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'CancelContextRequest' but the value was {ToString()}.");
         /// <summary>
         /// 
@@ -178,13 +178,13 @@ namespace G
                 Validate();
             }
 
-            if (IsGenerationRequest && generationRequest != null)
+            if (GenerationRequest is { } __value0 && generationRequest != null)
             {
-                return generationRequest(GenerationRequest!);
+                return generationRequest(__value0);
             }
-            else if (IsCancelContextRequest && cancelContextRequest != null)
+            else if (CancelContextRequest is { } __value1 && cancelContextRequest != null)
             {
-                return cancelContextRequest(CancelContextRequest!);
+                return cancelContextRequest(__value1);
             }
 
             return default(TResult);
@@ -204,13 +204,13 @@ namespace G
                 Validate();
             }
 
-            if (IsGenerationRequest)
+            if (GenerationRequest is { } __value0)
             {
-                generationRequest?.Invoke(GenerationRequest!);
+                generationRequest?.Invoke(__value0);
             }
-            else if (IsCancelContextRequest)
+            else if (CancelContextRequest is { } __value1)
             {
-                cancelContextRequest?.Invoke(CancelContextRequest!);
+                cancelContextRequest?.Invoke(__value1);
             }
         }
 
@@ -227,13 +227,13 @@ namespace G
                 Validate();
             }
 
-            if (IsGenerationRequest)
+            if (GenerationRequest is { } __value0)
             {
-                generationRequest?.Invoke(GenerationRequest!);
+                generationRequest?.Invoke(__value0);
             }
-            else if (IsCancelContextRequest)
+            else if (CancelContextRequest is { } __value1)
             {
-                cancelContextRequest?.Invoke(CancelContextRequest!);
+                cancelContextRequest?.Invoke(__value1);
             }
         }
 

@@ -1,4 +1,4 @@
-﻿//HintName: G.Api.RetrieveConversationApi.g.cs
+//HintName: G.Api.RetrieveConversationApi.g.cs
 
 #nullable enable
 
@@ -166,7 +166,7 @@ namespace G
                 PrepareRetrieveConversationApiRequest(
                     httpClient: HttpClient,
                     httpRequestMessage: __httpRequest,
-                    conversationId: conversationId!);
+                    conversationId: conversationId);
 
                 return __httpRequest;
             }
@@ -188,7 +188,7 @@ namespace G
                                 pathTemplate: "\"/v1/conversation/retrieve\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: null,
                                 exception: null,
                                 clientOptions: Options,
@@ -222,7 +222,7 @@ namespace G
                                 pathTemplate: "\"/v1/conversation/retrieve\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: null,
                                 exception: __exception,
                                 clientOptions: Options,
@@ -263,7 +263,7 @@ namespace G
                                 pathTemplate: "\"/v1/conversation/retrieve\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: __response,
                                 exception: null,
                                 clientOptions: Options,
@@ -311,7 +311,7 @@ namespace G
                                 pathTemplate: "\"/v1/conversation/retrieve\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: __response,
                                 exception: null,
                                 clientOptions: Options,
@@ -333,7 +333,7 @@ namespace G
                                 pathTemplate: "\"/v1/conversation/retrieve\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: __response,
                                 exception: null,
                                 clientOptions: Options,

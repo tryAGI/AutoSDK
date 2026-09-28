@@ -1,4 +1,4 @@
-﻿//HintName: G.Models.ToolDetailsVariant12.g.cs
+//HintName: G.Models.ToolDetailsVariant12.g.cs
 #pragma warning disable CS0618 // Type or member is obsolete
 
 #nullable enable
@@ -48,8 +48,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.ConversationHistoryTranscriptToolCallWebhookDetails PickWebhook() => IsWebhook
-            ? Webhook!
+        public global::G.ConversationHistoryTranscriptToolCallWebhookDetails PickWebhook() => Webhook is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Webhook' but the value was {ToString()}.");
 
         /// <summary>
@@ -85,8 +85,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.ConversationHistoryTranscriptToolCallClientDetails PickClient() => IsClient
-            ? Client!
+        public global::G.ConversationHistoryTranscriptToolCallClientDetails PickClient() => Client is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Client' but the value was {ToString()}.");
 
         /// <summary>
@@ -122,8 +122,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.ConversationHistoryTranscriptToolCallMCPDetails PickMcp() => IsMcp
-            ? Mcp!
+        public global::G.ConversationHistoryTranscriptToolCallMCPDetails PickMcp() => Mcp is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Mcp' but the value was {ToString()}.");
 
         /// <summary>
@@ -159,8 +159,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.ConversationHistoryTranscriptToolCallApiIntegrationWebhookDetails PickApiIntegrationWebhook() => IsApiIntegrationWebhook
-            ? ApiIntegrationWebhook!
+        public global::G.ConversationHistoryTranscriptToolCallApiIntegrationWebhookDetails PickApiIntegrationWebhook() => ApiIntegrationWebhook is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'ApiIntegrationWebhook' but the value was {ToString()}.");
         /// <summary>
         /// 
@@ -316,21 +316,21 @@ namespace G
                 Validate();
             }
 
-            if (IsWebhook && webhook != null)
+            if (Webhook is { } __value0 && webhook != null)
             {
-                return webhook(Webhook!);
+                return webhook(__value0);
             }
-            else if (IsClient && client != null)
+            else if (Client is { } __value1 && client != null)
             {
-                return client(Client!);
+                return client(__value1);
             }
-            else if (IsMcp && mcp != null)
+            else if (Mcp is { } __value2 && mcp != null)
             {
-                return mcp(Mcp!);
+                return mcp(__value2);
             }
-            else if (IsApiIntegrationWebhook && apiIntegrationWebhook != null)
+            else if (ApiIntegrationWebhook is { } __value3 && apiIntegrationWebhook != null)
             {
-                return apiIntegrationWebhook(ApiIntegrationWebhook!);
+                return apiIntegrationWebhook(__value3);
             }
 
             return default(TResult);
@@ -354,21 +354,21 @@ namespace G
                 Validate();
             }
 
-            if (IsWebhook)
+            if (Webhook is { } __value0)
             {
-                webhook?.Invoke(Webhook!);
+                webhook?.Invoke(__value0);
             }
-            else if (IsClient)
+            else if (Client is { } __value1)
             {
-                client?.Invoke(Client!);
+                client?.Invoke(__value1);
             }
-            else if (IsMcp)
+            else if (Mcp is { } __value2)
             {
-                mcp?.Invoke(Mcp!);
+                mcp?.Invoke(__value2);
             }
-            else if (IsApiIntegrationWebhook)
+            else if (ApiIntegrationWebhook is { } __value3)
             {
-                apiIntegrationWebhook?.Invoke(ApiIntegrationWebhook!);
+                apiIntegrationWebhook?.Invoke(__value3);
             }
         }
 
@@ -387,21 +387,21 @@ namespace G
                 Validate();
             }
 
-            if (IsWebhook)
+            if (Webhook is { } __value0)
             {
-                webhook?.Invoke(Webhook!);
+                webhook?.Invoke(__value0);
             }
-            else if (IsClient)
+            else if (Client is { } __value1)
             {
-                client?.Invoke(Client!);
+                client?.Invoke(__value1);
             }
-            else if (IsMcp)
+            else if (Mcp is { } __value2)
             {
-                mcp?.Invoke(Mcp!);
+                mcp?.Invoke(__value2);
             }
-            else if (IsApiIntegrationWebhook)
+            else if (ApiIntegrationWebhook is { } __value3)
             {
-                apiIntegrationWebhook?.Invoke(ApiIntegrationWebhook!);
+                apiIntegrationWebhook?.Invoke(__value3);
             }
         }
 

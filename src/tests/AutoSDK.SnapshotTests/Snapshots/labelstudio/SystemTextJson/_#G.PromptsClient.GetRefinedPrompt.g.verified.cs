@@ -1,4 +1,4 @@
-﻿//HintName: G.PromptsClient.GetRefinedPrompt.g.cs
+//HintName: G.PromptsClient.GetRefinedPrompt.g.cs
 
 #nullable enable
 
@@ -179,9 +179,9 @@ namespace G
                 PrepareGetRefinedPromptRequest(
                     httpClient: HttpClient,
                     httpRequestMessage: __httpRequest,
-                    promptId: promptId!,
+                    promptId: promptId,
                     refinementJobId: refinementJobId,
-                    versionId: versionId!);
+                    versionId: versionId);
 
                 return __httpRequest;
             }
@@ -203,7 +203,7 @@ namespace G
                                 pathTemplate: "$\"/api/prompts/{promptId}/versions/{versionId}/refine\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: null,
                                 exception: null,
                                 clientOptions: Options,
@@ -237,7 +237,7 @@ namespace G
                                 pathTemplate: "$\"/api/prompts/{promptId}/versions/{versionId}/refine\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: null,
                                 exception: __exception,
                                 clientOptions: Options,
@@ -278,7 +278,7 @@ namespace G
                                 pathTemplate: "$\"/api/prompts/{promptId}/versions/{versionId}/refine\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: __response,
                                 exception: null,
                                 clientOptions: Options,
@@ -326,7 +326,7 @@ namespace G
                                 pathTemplate: "$\"/api/prompts/{promptId}/versions/{versionId}/refine\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: __response,
                                 exception: null,
                                 clientOptions: Options,
@@ -348,7 +348,7 @@ namespace G
                                 pathTemplate: "$\"/api/prompts/{promptId}/versions/{versionId}/refine\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: __response,
                                 exception: null,
                                 clientOptions: Options,

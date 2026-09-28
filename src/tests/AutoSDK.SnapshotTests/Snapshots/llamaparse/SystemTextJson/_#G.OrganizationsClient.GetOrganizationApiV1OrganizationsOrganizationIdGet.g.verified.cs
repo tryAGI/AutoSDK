@@ -1,4 +1,4 @@
-﻿//HintName: G.OrganizationsClient.GetOrganizationApiV1OrganizationsOrganizationIdGet.g.cs
+//HintName: G.OrganizationsClient.GetOrganizationApiV1OrganizationsOrganizationIdGet.g.cs
 
 #nullable enable
 
@@ -168,7 +168,7 @@ namespace G
                 PrepareGetOrganizationApiV1OrganizationsOrganizationIdGetRequest(
                     httpClient: HttpClient,
                     httpRequestMessage: __httpRequest,
-                    organizationId: organizationId!,
+                    organizationId: organizationId,
                     session: session);
 
                 global::G.AutoSDKHttpRequestOptions.StampAuthorizationOverride(__httpRequest);
@@ -193,7 +193,7 @@ namespace G
                                 pathTemplate: "$\"/api/v1/organizations/{organizationId}\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: null,
                                 exception: null,
                                 clientOptions: Options,
@@ -227,7 +227,7 @@ namespace G
                                 pathTemplate: "$\"/api/v1/organizations/{organizationId}\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: null,
                                 exception: __exception,
                                 clientOptions: Options,
@@ -268,7 +268,7 @@ namespace G
                                 pathTemplate: "$\"/api/v1/organizations/{organizationId}\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: __response,
                                 exception: null,
                                 clientOptions: Options,
@@ -316,7 +316,7 @@ namespace G
                                 pathTemplate: "$\"/api/v1/organizations/{organizationId}\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: __response,
                                 exception: null,
                                 clientOptions: Options,
@@ -338,7 +338,7 @@ namespace G
                                 pathTemplate: "$\"/api/v1/organizations/{organizationId}\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: __response,
                                 exception: null,
                                 clientOptions: Options,

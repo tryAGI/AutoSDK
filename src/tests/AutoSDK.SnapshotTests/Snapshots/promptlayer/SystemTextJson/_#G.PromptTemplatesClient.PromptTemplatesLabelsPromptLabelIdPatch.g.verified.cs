@@ -1,4 +1,4 @@
-﻿//HintName: G.PromptTemplatesClient.PromptTemplatesLabelsPromptLabelIdPatch.g.cs
+//HintName: G.PromptTemplatesClient.PromptTemplatesLabelsPromptLabelIdPatch.g.cs
 
 #nullable enable
 
@@ -122,7 +122,7 @@ namespace G
                 PreparePromptTemplatesLabelsPromptLabelIdPatchRequest(
                     httpClient: HttpClient,
                     httpRequestMessage: __httpRequest,
-                    promptLabelId: promptLabelId!,
+                    promptLabelId: promptLabelId,
                     request: request);
 
                 return __httpRequest;
@@ -145,7 +145,7 @@ namespace G
                                 pathTemplate: "$\"/prompt-labels/{promptLabelId}\"",
                                 httpMethod: "PATCH",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: null,
                                 exception: null,
                                 clientOptions: Options,
@@ -179,7 +179,7 @@ namespace G
                                 pathTemplate: "$\"/prompt-labels/{promptLabelId}\"",
                                 httpMethod: "PATCH",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: null,
                                 exception: __exception,
                                 clientOptions: Options,
@@ -220,7 +220,7 @@ namespace G
                                 pathTemplate: "$\"/prompt-labels/{promptLabelId}\"",
                                 httpMethod: "PATCH",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: __response,
                                 exception: null,
                                 clientOptions: Options,
@@ -268,7 +268,7 @@ namespace G
                                 pathTemplate: "$\"/prompt-labels/{promptLabelId}\"",
                                 httpMethod: "PATCH",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: __response,
                                 exception: null,
                                 clientOptions: Options,
@@ -290,7 +290,7 @@ namespace G
                                 pathTemplate: "$\"/prompt-labels/{promptLabelId}\"",
                                 httpMethod: "PATCH",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: __response,
                                 exception: null,
                                 clientOptions: Options,

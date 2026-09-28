@@ -1,4 +1,4 @@
-﻿//HintName: G.ModerationClient.UpdateAutomodSettings.g.cs
+//HintName: G.ModerationClient.UpdateAutomodSettings.g.cs
 
 #nullable enable
 
@@ -197,8 +197,8 @@ namespace G
                 PrepareUpdateAutomodSettingsRequest(
                     httpClient: HttpClient,
                     httpRequestMessage: __httpRequest,
-                    broadcasterId: broadcasterId!,
-                    moderatorId: moderatorId!,
+                    broadcasterId: broadcasterId,
+                    moderatorId: moderatorId,
                     request: request);
 
                 global::G.AutoSDKHttpRequestOptions.StampAuthorizationOverride(__httpRequest);
@@ -223,7 +223,7 @@ namespace G
                                 pathTemplate: "\"/moderation/automod/settings\"",
                                 httpMethod: "PUT",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: null,
                                 exception: null,
                                 clientOptions: Options,
@@ -260,7 +260,7 @@ namespace G
                                 pathTemplate: "\"/moderation/automod/settings\"",
                                 httpMethod: "PUT",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: null,
                                 exception: __exception,
                                 clientOptions: Options,
@@ -301,7 +301,7 @@ namespace G
                                 pathTemplate: "\"/moderation/automod/settings\"",
                                 httpMethod: "PUT",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: __response,
                                 exception: null,
                                 clientOptions: Options,
@@ -349,7 +349,7 @@ namespace G
                                 pathTemplate: "\"/moderation/automod/settings\"",
                                 httpMethod: "PUT",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: __response,
                                 exception: null,
                                 clientOptions: Options,
@@ -371,7 +371,7 @@ namespace G
                                 pathTemplate: "\"/moderation/automod/settings\"",
                                 httpMethod: "PUT",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: __response,
                                 exception: null,
                                 clientOptions: Options,

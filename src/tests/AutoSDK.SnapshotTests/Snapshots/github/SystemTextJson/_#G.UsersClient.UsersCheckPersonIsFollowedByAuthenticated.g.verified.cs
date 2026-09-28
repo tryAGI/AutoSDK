@@ -1,4 +1,4 @@
-﻿//HintName: G.UsersClient.UsersCheckPersonIsFollowedByAuthenticated.g.cs
+//HintName: G.UsersClient.UsersCheckPersonIsFollowedByAuthenticated.g.cs
 
 #nullable enable
 
@@ -96,7 +96,7 @@ namespace G
                 PrepareUsersCheckPersonIsFollowedByAuthenticatedRequest(
                     httpClient: HttpClient,
                     httpRequestMessage: __httpRequest,
-                    username: username!);
+                    username: username);
 
                 return __httpRequest;
             }
@@ -118,7 +118,7 @@ namespace G
                                 pathTemplate: "$\"/user/following/{username}\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: null,
                                 exception: null,
                                 clientOptions: Options,
@@ -152,7 +152,7 @@ namespace G
                                 pathTemplate: "$\"/user/following/{username}\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: null,
                                 exception: __exception,
                                 clientOptions: Options,
@@ -193,7 +193,7 @@ namespace G
                                 pathTemplate: "$\"/user/following/{username}\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: __response,
                                 exception: null,
                                 clientOptions: Options,
@@ -241,7 +241,7 @@ namespace G
                                 pathTemplate: "$\"/user/following/{username}\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: __response,
                                 exception: null,
                                 clientOptions: Options,
@@ -263,7 +263,7 @@ namespace G
                                 pathTemplate: "$\"/user/following/{username}\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: __response,
                                 exception: null,
                                 clientOptions: Options,

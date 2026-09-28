@@ -1,4 +1,4 @@
-﻿//HintName: G.Models.KeyedSearchCorpus.g.cs
+//HintName: G.Models.KeyedSearchCorpus.g.cs
 #pragma warning disable CS0618 // Type or member is obsolete
 
 #nullable enable
@@ -43,8 +43,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.SearchCorpus PickSearchCorpus() => IsSearchCorpus
-            ? SearchCorpus!
+        public global::G.SearchCorpus PickSearchCorpus() => SearchCorpus is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'SearchCorpus' but the value was {ToString()}.");
 
         /// <summary>
@@ -80,8 +80,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.KeyedSearchCorpusVariant2 PickKeyedSearchCorpusVariant2() => IsKeyedSearchCorpusVariant2
-            ? KeyedSearchCorpusVariant2!
+        public global::G.KeyedSearchCorpusVariant2 PickKeyedSearchCorpusVariant2() => KeyedSearchCorpusVariant2 is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'KeyedSearchCorpusVariant2' but the value was {ToString()}.");
         /// <summary>
         /// 
@@ -178,13 +178,13 @@ namespace G
                 Validate();
             }
 
-            if (IsSearchCorpus && searchCorpus != null)
+            if (SearchCorpus is { } __value0 && searchCorpus != null)
             {
-                return searchCorpus(SearchCorpus!);
+                return searchCorpus(__value0);
             }
-            else if (IsKeyedSearchCorpusVariant2 && keyedSearchCorpusVariant2 != null)
+            else if (KeyedSearchCorpusVariant2 is { } __value1 && keyedSearchCorpusVariant2 != null)
             {
-                return keyedSearchCorpusVariant2(KeyedSearchCorpusVariant2!);
+                return keyedSearchCorpusVariant2(__value1);
             }
 
             return default(TResult);
@@ -204,13 +204,13 @@ namespace G
                 Validate();
             }
 
-            if (IsSearchCorpus)
+            if (SearchCorpus is { } __value0)
             {
-                searchCorpus?.Invoke(SearchCorpus!);
+                searchCorpus?.Invoke(__value0);
             }
-            else if (IsKeyedSearchCorpusVariant2)
+            else if (KeyedSearchCorpusVariant2 is { } __value1)
             {
-                keyedSearchCorpusVariant2?.Invoke(KeyedSearchCorpusVariant2!);
+                keyedSearchCorpusVariant2?.Invoke(__value1);
             }
         }
 
@@ -227,13 +227,13 @@ namespace G
                 Validate();
             }
 
-            if (IsSearchCorpus)
+            if (SearchCorpus is { } __value0)
             {
-                searchCorpus?.Invoke(SearchCorpus!);
+                searchCorpus?.Invoke(__value0);
             }
-            else if (IsKeyedSearchCorpusVariant2)
+            else if (KeyedSearchCorpusVariant2 is { } __value1)
             {
-                keyedSearchCorpusVariant2?.Invoke(KeyedSearchCorpusVariant2!);
+                keyedSearchCorpusVariant2?.Invoke(__value1);
             }
         }
 

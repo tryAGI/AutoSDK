@@ -1,4 +1,4 @@
-﻿//HintName: G.Models.QuantizationConfigDiff.g.cs
+//HintName: G.Models.QuantizationConfigDiff.g.cs
 #pragma warning disable CS0618 // Type or member is obsolete
 
 #nullable enable
@@ -43,8 +43,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.ScalarQuantization PickScalar() => IsScalar
-            ? Scalar!
+        public global::G.ScalarQuantization PickScalar() => Scalar is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Scalar' but the value was {ToString()}.");
 
         /// <summary>
@@ -80,8 +80,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.ProductQuantization PickProduct() => IsProduct
-            ? Product!
+        public global::G.ProductQuantization PickProduct() => Product is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Product' but the value was {ToString()}.");
 
         /// <summary>
@@ -117,8 +117,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.BinaryQuantization PickBinary() => IsBinary
-            ? Binary!
+        public global::G.BinaryQuantization PickBinary() => Binary is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Binary' but the value was {ToString()}.");
 
         /// <summary>
@@ -154,8 +154,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.DisabledType PickDisabledType() => IsDisabledType
-            ? DisabledType!.Value
+        public global::G.DisabledType PickDisabledType() => DisabledType is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'DisabledType' but the value was {ToString()}.");
         /// <summary>
         /// 
@@ -308,21 +308,21 @@ namespace G
                 Validate();
             }
 
-            if (IsScalar && scalar != null)
+            if (Scalar is { } __value0 && scalar != null)
             {
-                return scalar(Scalar!);
+                return scalar(__value0);
             }
-            else if (IsProduct && product != null)
+            else if (Product is { } __value1 && product != null)
             {
-                return product(Product!);
+                return product(__value1);
             }
-            else if (IsBinary && binary != null)
+            else if (Binary is { } __value2 && binary != null)
             {
-                return binary(Binary!);
+                return binary(__value2);
             }
-            else if (IsDisabledType && disabledType != null)
+            else if (DisabledType is { } __value3 && disabledType != null)
             {
-                return disabledType(DisabledType!);
+                return disabledType(__value3);
             }
 
             return default(TResult);
@@ -346,21 +346,21 @@ namespace G
                 Validate();
             }
 
-            if (IsScalar)
+            if (Scalar is { } __value0)
             {
-                scalar?.Invoke(Scalar!);
+                scalar?.Invoke(__value0);
             }
-            else if (IsProduct)
+            else if (Product is { } __value1)
             {
-                product?.Invoke(Product!);
+                product?.Invoke(__value1);
             }
-            else if (IsBinary)
+            else if (Binary is { } __value2)
             {
-                binary?.Invoke(Binary!);
+                binary?.Invoke(__value2);
             }
-            else if (IsDisabledType)
+            else if (DisabledType is { } __value3)
             {
-                disabledType?.Invoke(DisabledType!);
+                disabledType?.Invoke(__value3);
             }
         }
 
@@ -379,21 +379,21 @@ namespace G
                 Validate();
             }
 
-            if (IsScalar)
+            if (Scalar is { } __value0)
             {
-                scalar?.Invoke(Scalar!);
+                scalar?.Invoke(__value0);
             }
-            else if (IsProduct)
+            else if (Product is { } __value1)
             {
-                product?.Invoke(Product!);
+                product?.Invoke(__value1);
             }
-            else if (IsBinary)
+            else if (Binary is { } __value2)
             {
-                binary?.Invoke(Binary!);
+                binary?.Invoke(__value2);
             }
-            else if (IsDisabledType)
+            else if (DisabledType is { } __value3)
             {
-                disabledType?.Invoke(DisabledType!);
+                disabledType?.Invoke(__value3);
             }
         }
 

@@ -1,4 +1,4 @@
-﻿//HintName: G.Models.ResearchEventDtoClassVariant3.g.cs
+//HintName: G.Models.ResearchEventDtoClassVariant3.g.cs
 #pragma warning disable CS0618 // Type or member is obsolete
 
 #nullable enable
@@ -48,8 +48,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.ResearchEventDtoClassVariant3Variant1 PickTaskDefinition() => IsTaskDefinition
-            ? TaskDefinition!
+        public global::G.ResearchEventDtoClassVariant3Variant1 PickTaskDefinition() => TaskDefinition is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'TaskDefinition' but the value was {ToString()}.");
 
         /// <summary>
@@ -85,8 +85,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.ResearchEventDtoClassVariant3Variant2 PickTaskOperation() => IsTaskOperation
-            ? TaskOperation!
+        public global::G.ResearchEventDtoClassVariant3Variant2 PickTaskOperation() => TaskOperation is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'TaskOperation' but the value was {ToString()}.");
 
         /// <summary>
@@ -122,8 +122,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.ResearchEventDtoClassVariant3Variant3 PickTaskOutput() => IsTaskOutput
-            ? TaskOutput!
+        public global::G.ResearchEventDtoClassVariant3Variant3 PickTaskOutput() => TaskOutput is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'TaskOutput' but the value was {ToString()}.");
         /// <summary>
         /// 
@@ -251,17 +251,17 @@ namespace G
                 Validate();
             }
 
-            if (IsTaskDefinition && taskDefinition != null)
+            if (TaskDefinition is { } __value0 && taskDefinition != null)
             {
-                return taskDefinition(TaskDefinition!);
+                return taskDefinition(__value0);
             }
-            else if (IsTaskOperation && taskOperation != null)
+            else if (TaskOperation is { } __value1 && taskOperation != null)
             {
-                return taskOperation(TaskOperation!);
+                return taskOperation(__value1);
             }
-            else if (IsTaskOutput && taskOutput != null)
+            else if (TaskOutput is { } __value2 && taskOutput != null)
             {
-                return taskOutput(TaskOutput!);
+                return taskOutput(__value2);
             }
 
             return default(TResult);
@@ -283,17 +283,17 @@ namespace G
                 Validate();
             }
 
-            if (IsTaskDefinition)
+            if (TaskDefinition is { } __value0)
             {
-                taskDefinition?.Invoke(TaskDefinition!);
+                taskDefinition?.Invoke(__value0);
             }
-            else if (IsTaskOperation)
+            else if (TaskOperation is { } __value1)
             {
-                taskOperation?.Invoke(TaskOperation!);
+                taskOperation?.Invoke(__value1);
             }
-            else if (IsTaskOutput)
+            else if (TaskOutput is { } __value2)
             {
-                taskOutput?.Invoke(TaskOutput!);
+                taskOutput?.Invoke(__value2);
             }
         }
 
@@ -311,17 +311,17 @@ namespace G
                 Validate();
             }
 
-            if (IsTaskDefinition)
+            if (TaskDefinition is { } __value0)
             {
-                taskDefinition?.Invoke(TaskDefinition!);
+                taskDefinition?.Invoke(__value0);
             }
-            else if (IsTaskOperation)
+            else if (TaskOperation is { } __value1)
             {
-                taskOperation?.Invoke(TaskOperation!);
+                taskOperation?.Invoke(__value1);
             }
-            else if (IsTaskOutput)
+            else if (TaskOutput is { } __value2)
             {
-                taskOutput?.Invoke(TaskOutput!);
+                taskOutput?.Invoke(__value2);
             }
         }
 

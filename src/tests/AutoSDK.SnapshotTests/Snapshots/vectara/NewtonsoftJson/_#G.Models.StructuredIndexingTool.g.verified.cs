@@ -1,4 +1,4 @@
-﻿//HintName: G.Models.StructuredIndexingTool.g.cs
+//HintName: G.Models.StructuredIndexingTool.g.cs
 #pragma warning disable CS0618 // Type or member is obsolete
 
 #nullable enable
@@ -43,8 +43,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.ToolBase PickBase() => IsBase
-            ? Base!
+        public global::G.ToolBase PickBase() => Base is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Base' but the value was {ToString()}.");
 
         /// <summary>
@@ -80,8 +80,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.StructuredIndexingToolVariant2 PickStructuredIndexingToolVariant2() => IsStructuredIndexingToolVariant2
-            ? StructuredIndexingToolVariant2!
+        public global::G.StructuredIndexingToolVariant2 PickStructuredIndexingToolVariant2() => StructuredIndexingToolVariant2 is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'StructuredIndexingToolVariant2' but the value was {ToString()}.");
         /// <summary>
         /// 
@@ -178,13 +178,13 @@ namespace G
                 Validate();
             }
 
-            if (IsBase && @base != null)
+            if (Base is { } __value0 && @base != null)
             {
-                return @base(Base!);
+                return @base(__value0);
             }
-            else if (IsStructuredIndexingToolVariant2 && structuredIndexingToolVariant2 != null)
+            else if (StructuredIndexingToolVariant2 is { } __value1 && structuredIndexingToolVariant2 != null)
             {
-                return structuredIndexingToolVariant2(StructuredIndexingToolVariant2!);
+                return structuredIndexingToolVariant2(__value1);
             }
 
             return default(TResult);
@@ -204,13 +204,13 @@ namespace G
                 Validate();
             }
 
-            if (IsBase)
+            if (Base is { } __value0)
             {
-                @base?.Invoke(Base!);
+                @base?.Invoke(__value0);
             }
-            else if (IsStructuredIndexingToolVariant2)
+            else if (StructuredIndexingToolVariant2 is { } __value1)
             {
-                structuredIndexingToolVariant2?.Invoke(StructuredIndexingToolVariant2!);
+                structuredIndexingToolVariant2?.Invoke(__value1);
             }
         }
 
@@ -227,13 +227,13 @@ namespace G
                 Validate();
             }
 
-            if (IsBase)
+            if (Base is { } __value0)
             {
-                @base?.Invoke(Base!);
+                @base?.Invoke(__value0);
             }
-            else if (IsStructuredIndexingToolVariant2)
+            else if (StructuredIndexingToolVariant2 is { } __value1)
             {
-                structuredIndexingToolVariant2?.Invoke(StructuredIndexingToolVariant2!);
+                structuredIndexingToolVariant2?.Invoke(__value1);
             }
         }
 

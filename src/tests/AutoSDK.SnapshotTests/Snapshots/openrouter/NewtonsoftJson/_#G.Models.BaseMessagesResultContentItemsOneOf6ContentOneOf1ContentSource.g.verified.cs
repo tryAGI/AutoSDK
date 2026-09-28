@@ -1,4 +1,4 @@
-﻿//HintName: G.Models.BaseMessagesResultContentItemsOneOf6ContentOneOf1ContentSource.g.cs
+//HintName: G.Models.BaseMessagesResultContentItemsOneOf6ContentOneOf1ContentSource.g.cs
 #pragma warning disable CS0618 // Type or member is obsolete
 
 #nullable enable
@@ -43,8 +43,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.BaseMessagesResultContentItemsOneOf6ContentOneOf1ContentSource0 PickBaseMessagesResultContentItemsOneOf6ContentOneOf1ContentSource0() => IsBaseMessagesResultContentItemsOneOf6ContentOneOf1ContentSource0
-            ? BaseMessagesResultContentItemsOneOf6ContentOneOf1ContentSource0!
+        public global::G.BaseMessagesResultContentItemsOneOf6ContentOneOf1ContentSource0 PickBaseMessagesResultContentItemsOneOf6ContentOneOf1ContentSource0() => BaseMessagesResultContentItemsOneOf6ContentOneOf1ContentSource0 is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'BaseMessagesResultContentItemsOneOf6ContentOneOf1ContentSource0' but the value was {ToString()}.");
 
         /// <summary>
@@ -80,8 +80,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.BaseMessagesResultContentItemsOneOf6ContentOneOf1ContentSource1 PickBaseMessagesResultContentItemsOneOf6ContentOneOf1ContentSource1() => IsBaseMessagesResultContentItemsOneOf6ContentOneOf1ContentSource1
-            ? BaseMessagesResultContentItemsOneOf6ContentOneOf1ContentSource1!
+        public global::G.BaseMessagesResultContentItemsOneOf6ContentOneOf1ContentSource1 PickBaseMessagesResultContentItemsOneOf6ContentOneOf1ContentSource1() => BaseMessagesResultContentItemsOneOf6ContentOneOf1ContentSource1 is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'BaseMessagesResultContentItemsOneOf6ContentOneOf1ContentSource1' but the value was {ToString()}.");
         /// <summary>
         /// 
@@ -178,13 +178,13 @@ namespace G
                 Validate();
             }
 
-            if (IsBaseMessagesResultContentItemsOneOf6ContentOneOf1ContentSource0 && baseMessagesResultContentItemsOneOf6ContentOneOf1ContentSource0 != null)
+            if (BaseMessagesResultContentItemsOneOf6ContentOneOf1ContentSource0 is { } __value0 && baseMessagesResultContentItemsOneOf6ContentOneOf1ContentSource0 != null)
             {
-                return baseMessagesResultContentItemsOneOf6ContentOneOf1ContentSource0(BaseMessagesResultContentItemsOneOf6ContentOneOf1ContentSource0!);
+                return baseMessagesResultContentItemsOneOf6ContentOneOf1ContentSource0(__value0);
             }
-            else if (IsBaseMessagesResultContentItemsOneOf6ContentOneOf1ContentSource1 && baseMessagesResultContentItemsOneOf6ContentOneOf1ContentSource1 != null)
+            else if (BaseMessagesResultContentItemsOneOf6ContentOneOf1ContentSource1 is { } __value1 && baseMessagesResultContentItemsOneOf6ContentOneOf1ContentSource1 != null)
             {
-                return baseMessagesResultContentItemsOneOf6ContentOneOf1ContentSource1(BaseMessagesResultContentItemsOneOf6ContentOneOf1ContentSource1!);
+                return baseMessagesResultContentItemsOneOf6ContentOneOf1ContentSource1(__value1);
             }
 
             return default(TResult);
@@ -204,13 +204,13 @@ namespace G
                 Validate();
             }
 
-            if (IsBaseMessagesResultContentItemsOneOf6ContentOneOf1ContentSource0)
+            if (BaseMessagesResultContentItemsOneOf6ContentOneOf1ContentSource0 is { } __value0)
             {
-                baseMessagesResultContentItemsOneOf6ContentOneOf1ContentSource0?.Invoke(BaseMessagesResultContentItemsOneOf6ContentOneOf1ContentSource0!);
+                baseMessagesResultContentItemsOneOf6ContentOneOf1ContentSource0?.Invoke(__value0);
             }
-            else if (IsBaseMessagesResultContentItemsOneOf6ContentOneOf1ContentSource1)
+            else if (BaseMessagesResultContentItemsOneOf6ContentOneOf1ContentSource1 is { } __value1)
             {
-                baseMessagesResultContentItemsOneOf6ContentOneOf1ContentSource1?.Invoke(BaseMessagesResultContentItemsOneOf6ContentOneOf1ContentSource1!);
+                baseMessagesResultContentItemsOneOf6ContentOneOf1ContentSource1?.Invoke(__value1);
             }
         }
 
@@ -227,13 +227,13 @@ namespace G
                 Validate();
             }
 
-            if (IsBaseMessagesResultContentItemsOneOf6ContentOneOf1ContentSource0)
+            if (BaseMessagesResultContentItemsOneOf6ContentOneOf1ContentSource0 is { } __value0)
             {
-                baseMessagesResultContentItemsOneOf6ContentOneOf1ContentSource0?.Invoke(BaseMessagesResultContentItemsOneOf6ContentOneOf1ContentSource0!);
+                baseMessagesResultContentItemsOneOf6ContentOneOf1ContentSource0?.Invoke(__value0);
             }
-            else if (IsBaseMessagesResultContentItemsOneOf6ContentOneOf1ContentSource1)
+            else if (BaseMessagesResultContentItemsOneOf6ContentOneOf1ContentSource1 is { } __value1)
             {
-                baseMessagesResultContentItemsOneOf6ContentOneOf1ContentSource1?.Invoke(BaseMessagesResultContentItemsOneOf6ContentOneOf1ContentSource1!);
+                baseMessagesResultContentItemsOneOf6ContentOneOf1ContentSource1?.Invoke(__value1);
             }
         }
 

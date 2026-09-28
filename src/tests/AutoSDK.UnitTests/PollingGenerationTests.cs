@@ -219,7 +219,7 @@ public class PollingGenerationTests
         createSource.Should().Contain("CreateTaskWaitAsync(");
         createSource.Should().Contain("AutoSDKPollingSupport.ExtractIdFromLocationHeader(");
         createSource.Should().Contain("return await GetTaskWaitAsync(");
-        createSource.Should().Contain("id: __resourceId!");
+        createSource.Should().Contain("id: __resourceId,");
 
         var supportSource = Sources.OptionsSupport(settings, includePollingSupport: true).Text;
         supportSource.Should().Contain("internal static string? ExtractIdFromLocationHeader(");

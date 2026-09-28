@@ -1,4 +1,4 @@
-﻿//HintName: G.Models.CollectionWithDetails.g.cs
+//HintName: G.Models.CollectionWithDetails.g.cs
 #pragma warning disable CS0618 // Type or member is obsolete
 
 #nullable enable
@@ -43,8 +43,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.Collection PickCollection() => IsCollection
-            ? Collection!
+        public global::G.Collection PickCollection() => Collection is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Collection' but the value was {ToString()}.");
 
         /// <summary>
@@ -80,8 +80,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.CollectionWithDetailsVariant2 PickCollectionWithDetailsVariant2() => IsCollectionWithDetailsVariant2
-            ? CollectionWithDetailsVariant2!
+        public global::G.CollectionWithDetailsVariant2 PickCollectionWithDetailsVariant2() => CollectionWithDetailsVariant2 is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'CollectionWithDetailsVariant2' but the value was {ToString()}.");
         /// <summary>
         /// 
@@ -178,13 +178,13 @@ namespace G
                 Validate();
             }
 
-            if (IsCollection && collection != null)
+            if (Collection is { } __value0 && collection != null)
             {
-                return collection(Collection!);
+                return collection(__value0);
             }
-            else if (IsCollectionWithDetailsVariant2 && collectionWithDetailsVariant2 != null)
+            else if (CollectionWithDetailsVariant2 is { } __value1 && collectionWithDetailsVariant2 != null)
             {
-                return collectionWithDetailsVariant2(CollectionWithDetailsVariant2!);
+                return collectionWithDetailsVariant2(__value1);
             }
 
             return default(TResult);
@@ -204,13 +204,13 @@ namespace G
                 Validate();
             }
 
-            if (IsCollection)
+            if (Collection is { } __value0)
             {
-                collection?.Invoke(Collection!);
+                collection?.Invoke(__value0);
             }
-            else if (IsCollectionWithDetailsVariant2)
+            else if (CollectionWithDetailsVariant2 is { } __value1)
             {
-                collectionWithDetailsVariant2?.Invoke(CollectionWithDetailsVariant2!);
+                collectionWithDetailsVariant2?.Invoke(__value1);
             }
         }
 
@@ -227,13 +227,13 @@ namespace G
                 Validate();
             }
 
-            if (IsCollection)
+            if (Collection is { } __value0)
             {
-                collection?.Invoke(Collection!);
+                collection?.Invoke(__value0);
             }
-            else if (IsCollectionWithDetailsVariant2)
+            else if (CollectionWithDetailsVariant2 is { } __value1)
             {
-                collectionWithDetailsVariant2?.Invoke(CollectionWithDetailsVariant2!);
+                collectionWithDetailsVariant2?.Invoke(__value1);
             }
         }
 

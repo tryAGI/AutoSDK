@@ -1,4 +1,4 @@
-﻿//HintName: G.Models.AudioEnhancement.g.cs
+//HintName: G.Models.AudioEnhancement.g.cs
 #pragma warning disable CS0618 // Type or member is obsolete
 
 #nullable enable
@@ -46,8 +46,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.DolbyEnhancement PickDolby() => IsDolby
-            ? Dolby!
+        public global::G.DolbyEnhancement PickDolby() => Dolby is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Dolby' but the value was {ToString()}.");
         /// <summary>
         /// 
@@ -106,9 +106,9 @@ namespace G
                 Validate();
             }
 
-            if (IsDolby && dolby != null)
+            if (Dolby is { } __value0 && dolby != null)
             {
-                return dolby(Dolby!);
+                return dolby(__value0);
             }
 
             return default(TResult);
@@ -126,9 +126,9 @@ namespace G
                 Validate();
             }
 
-            if (IsDolby)
+            if (Dolby is { } __value0)
             {
-                dolby?.Invoke(Dolby!);
+                dolby?.Invoke(__value0);
             }
         }
 
@@ -144,9 +144,9 @@ namespace G
                 Validate();
             }
 
-            if (IsDolby)
+            if (Dolby is { } __value0)
             {
-                dolby?.Invoke(Dolby!);
+                dolby?.Invoke(__value0);
             }
         }
 

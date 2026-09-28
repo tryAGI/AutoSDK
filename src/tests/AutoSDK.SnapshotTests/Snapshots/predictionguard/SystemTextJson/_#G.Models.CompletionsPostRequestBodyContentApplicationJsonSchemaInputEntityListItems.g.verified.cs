@@ -1,4 +1,4 @@
-﻿//HintName: G.Models.CompletionsPostRequestBodyContentApplicationJsonSchemaInputEntityListItems.g.cs
+//HintName: G.Models.CompletionsPostRequestBodyContentApplicationJsonSchemaInputEntityListItems.g.cs
 #pragma warning disable CS0618 // Type or member is obsolete
 
 #nullable enable
@@ -43,8 +43,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public string PickCompletionsPostRequestBodyContentApplicationJsonSchemaInputEntityListItemsVariant1() => IsCompletionsPostRequestBodyContentApplicationJsonSchemaInputEntityListItemsVariant1
-            ? CompletionsPostRequestBodyContentApplicationJsonSchemaInputEntityListItemsVariant1!
+        public string PickCompletionsPostRequestBodyContentApplicationJsonSchemaInputEntityListItemsVariant1() => CompletionsPostRequestBodyContentApplicationJsonSchemaInputEntityListItemsVariant1 is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'CompletionsPostRequestBodyContentApplicationJsonSchemaInputEntityListItemsVariant1' but the value was {ToString()}.");
         /// <summary>
         /// 
@@ -103,9 +103,9 @@ namespace G
                 Validate();
             }
 
-            if (IsCompletionsPostRequestBodyContentApplicationJsonSchemaInputEntityListItemsVariant1 && completionsPostRequestBodyContentApplicationJsonSchemaInputEntityListItemsVariant1 != null)
+            if (CompletionsPostRequestBodyContentApplicationJsonSchemaInputEntityListItemsVariant1 is { } __value0 && completionsPostRequestBodyContentApplicationJsonSchemaInputEntityListItemsVariant1 != null)
             {
-                return completionsPostRequestBodyContentApplicationJsonSchemaInputEntityListItemsVariant1(CompletionsPostRequestBodyContentApplicationJsonSchemaInputEntityListItemsVariant1!);
+                return completionsPostRequestBodyContentApplicationJsonSchemaInputEntityListItemsVariant1(__value0);
             }
 
             return default(TResult);
@@ -123,9 +123,9 @@ namespace G
                 Validate();
             }
 
-            if (IsCompletionsPostRequestBodyContentApplicationJsonSchemaInputEntityListItemsVariant1)
+            if (CompletionsPostRequestBodyContentApplicationJsonSchemaInputEntityListItemsVariant1 is { } __value0)
             {
-                completionsPostRequestBodyContentApplicationJsonSchemaInputEntityListItemsVariant1?.Invoke(CompletionsPostRequestBodyContentApplicationJsonSchemaInputEntityListItemsVariant1!);
+                completionsPostRequestBodyContentApplicationJsonSchemaInputEntityListItemsVariant1?.Invoke(__value0);
             }
         }
 
@@ -141,9 +141,9 @@ namespace G
                 Validate();
             }
 
-            if (IsCompletionsPostRequestBodyContentApplicationJsonSchemaInputEntityListItemsVariant1)
+            if (CompletionsPostRequestBodyContentApplicationJsonSchemaInputEntityListItemsVariant1 is { } __value0)
             {
-                completionsPostRequestBodyContentApplicationJsonSchemaInputEntityListItemsVariant1?.Invoke(CompletionsPostRequestBodyContentApplicationJsonSchemaInputEntityListItemsVariant1!);
+                completionsPostRequestBodyContentApplicationJsonSchemaInputEntityListItemsVariant1?.Invoke(__value0);
             }
         }
 

@@ -1,4 +1,4 @@
-﻿//HintName: G.Models.Ids.g.cs
+//HintName: G.Models.Ids.g.cs
 #pragma warning disable CS0618 // Type or member is obsolete
 
 #nullable enable
@@ -43,8 +43,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Guid PickGuid() => IsGuid
-            ? Guid!.Value
+        public global::System.Guid PickGuid() => Guid is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Guid' but the value was {ToString()}.");
 
         /// <summary>
@@ -80,8 +80,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::System.Guid> PickIdsVariant2() => IsIdsVariant2
-            ? IdsVariant2!
+        public global::System.Collections.Generic.IList<global::System.Guid> PickIdsVariant2() => IdsVariant2 is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'IdsVariant2' but the value was {ToString()}.");
         /// <summary>
         /// 
@@ -155,13 +155,13 @@ namespace G
                 Validate();
             }
 
-            if (IsGuid && guid != null)
+            if (Guid is { } __value0 && guid != null)
             {
-                return guid(Guid!);
+                return guid(__value0);
             }
-            else if (IsIdsVariant2 && idsVariant2 != null)
+            else if (IdsVariant2 is { } __value1 && idsVariant2 != null)
             {
-                return idsVariant2(IdsVariant2!);
+                return idsVariant2(__value1);
             }
 
             return default(TResult);
@@ -181,13 +181,13 @@ namespace G
                 Validate();
             }
 
-            if (IsGuid)
+            if (Guid is { } __value0)
             {
-                guid?.Invoke(Guid!);
+                guid?.Invoke(__value0);
             }
-            else if (IsIdsVariant2)
+            else if (IdsVariant2 is { } __value1)
             {
-                idsVariant2?.Invoke(IdsVariant2!);
+                idsVariant2?.Invoke(__value1);
             }
         }
 
@@ -204,13 +204,13 @@ namespace G
                 Validate();
             }
 
-            if (IsGuid)
+            if (Guid is { } __value0)
             {
-                guid?.Invoke(Guid!);
+                guid?.Invoke(__value0);
             }
-            else if (IsIdsVariant2)
+            else if (IdsVariant2 is { } __value1)
             {
-                idsVariant2?.Invoke(IdsVariant2!);
+                idsVariant2?.Invoke(__value1);
             }
         }
 

@@ -1,4 +1,4 @@
-﻿//HintName: G.Models.ElseEdge.g.cs
+//HintName: G.Models.ElseEdge.g.cs
 #pragma warning disable CS0618 // Type or member is obsolete
 
 #nullable enable
@@ -43,8 +43,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.NodeEdge PickNode() => IsNode
-            ? Node!
+        public global::G.NodeEdge PickNode() => Node is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Node' but the value was {ToString()}.");
 
         /// <summary>
@@ -80,8 +80,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.ElseEdgeVariant2 PickElseEdgeVariant2() => IsElseEdgeVariant2
-            ? ElseEdgeVariant2!
+        public global::G.ElseEdgeVariant2 PickElseEdgeVariant2() => ElseEdgeVariant2 is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'ElseEdgeVariant2' but the value was {ToString()}.");
         /// <summary>
         /// 
@@ -178,13 +178,13 @@ namespace G
                 Validate();
             }
 
-            if (IsNode && node != null)
+            if (Node is { } __value0 && node != null)
             {
-                return node(Node!);
+                return node(__value0);
             }
-            else if (IsElseEdgeVariant2 && elseEdgeVariant2 != null)
+            else if (ElseEdgeVariant2 is { } __value1 && elseEdgeVariant2 != null)
             {
-                return elseEdgeVariant2(ElseEdgeVariant2!);
+                return elseEdgeVariant2(__value1);
             }
 
             return default(TResult);
@@ -204,13 +204,13 @@ namespace G
                 Validate();
             }
 
-            if (IsNode)
+            if (Node is { } __value0)
             {
-                node?.Invoke(Node!);
+                node?.Invoke(__value0);
             }
-            else if (IsElseEdgeVariant2)
+            else if (ElseEdgeVariant2 is { } __value1)
             {
-                elseEdgeVariant2?.Invoke(ElseEdgeVariant2!);
+                elseEdgeVariant2?.Invoke(__value1);
             }
         }
 
@@ -227,13 +227,13 @@ namespace G
                 Validate();
             }
 
-            if (IsNode)
+            if (Node is { } __value0)
             {
-                node?.Invoke(Node!);
+                node?.Invoke(__value0);
             }
-            else if (IsElseEdgeVariant2)
+            else if (ElseEdgeVariant2 is { } __value1)
             {
-                elseEdgeVariant2?.Invoke(ElseEdgeVariant2!);
+                elseEdgeVariant2?.Invoke(__value1);
             }
         }
 

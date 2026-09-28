@@ -1,4 +1,4 @@
-﻿//HintName: G.Models.StreamingResponse.g.cs
+//HintName: G.Models.StreamingResponse.g.cs
 #pragma warning disable CS0618 // Type or member is obsolete
 
 #nullable enable
@@ -43,8 +43,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.StreamingResponseVariant1 PickStreamingResponseVariant1() => IsStreamingResponseVariant1
-            ? StreamingResponseVariant1!
+        public global::G.StreamingResponseVariant1 PickStreamingResponseVariant1() => StreamingResponseVariant1 is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'StreamingResponseVariant1' but the value was {ToString()}.");
 
         /// <summary>
@@ -80,8 +80,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.StreamingResponseVariant2 PickStreamingResponseVariant2() => IsStreamingResponseVariant2
-            ? StreamingResponseVariant2!
+        public global::G.StreamingResponseVariant2 PickStreamingResponseVariant2() => StreamingResponseVariant2 is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'StreamingResponseVariant2' but the value was {ToString()}.");
 
         /// <summary>
@@ -117,8 +117,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.StreamingResponseVariant3 PickStreamingResponseVariant3() => IsStreamingResponseVariant3
-            ? StreamingResponseVariant3!
+        public global::G.StreamingResponseVariant3 PickStreamingResponseVariant3() => StreamingResponseVariant3 is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'StreamingResponseVariant3' but the value was {ToString()}.");
         /// <summary>
         /// 
@@ -243,17 +243,17 @@ namespace G
                 Validate();
             }
 
-            if (IsStreamingResponseVariant1 && streamingResponseVariant1 != null)
+            if (StreamingResponseVariant1 is { } __value0 && streamingResponseVariant1 != null)
             {
-                return streamingResponseVariant1(StreamingResponseVariant1!);
+                return streamingResponseVariant1(__value0);
             }
-            else if (IsStreamingResponseVariant2 && streamingResponseVariant2 != null)
+            else if (StreamingResponseVariant2 is { } __value1 && streamingResponseVariant2 != null)
             {
-                return streamingResponseVariant2(StreamingResponseVariant2!);
+                return streamingResponseVariant2(__value1);
             }
-            else if (IsStreamingResponseVariant3 && streamingResponseVariant3 != null)
+            else if (StreamingResponseVariant3 is { } __value2 && streamingResponseVariant3 != null)
             {
-                return streamingResponseVariant3(StreamingResponseVariant3!);
+                return streamingResponseVariant3(__value2);
             }
 
             return default(TResult);
@@ -275,17 +275,17 @@ namespace G
                 Validate();
             }
 
-            if (IsStreamingResponseVariant1)
+            if (StreamingResponseVariant1 is { } __value0)
             {
-                streamingResponseVariant1?.Invoke(StreamingResponseVariant1!);
+                streamingResponseVariant1?.Invoke(__value0);
             }
-            else if (IsStreamingResponseVariant2)
+            else if (StreamingResponseVariant2 is { } __value1)
             {
-                streamingResponseVariant2?.Invoke(StreamingResponseVariant2!);
+                streamingResponseVariant2?.Invoke(__value1);
             }
-            else if (IsStreamingResponseVariant3)
+            else if (StreamingResponseVariant3 is { } __value2)
             {
-                streamingResponseVariant3?.Invoke(StreamingResponseVariant3!);
+                streamingResponseVariant3?.Invoke(__value2);
             }
         }
 
@@ -303,17 +303,17 @@ namespace G
                 Validate();
             }
 
-            if (IsStreamingResponseVariant1)
+            if (StreamingResponseVariant1 is { } __value0)
             {
-                streamingResponseVariant1?.Invoke(StreamingResponseVariant1!);
+                streamingResponseVariant1?.Invoke(__value0);
             }
-            else if (IsStreamingResponseVariant2)
+            else if (StreamingResponseVariant2 is { } __value1)
             {
-                streamingResponseVariant2?.Invoke(StreamingResponseVariant2!);
+                streamingResponseVariant2?.Invoke(__value1);
             }
-            else if (IsStreamingResponseVariant3)
+            else if (StreamingResponseVariant3 is { } __value2)
             {
-                streamingResponseVariant3?.Invoke(StreamingResponseVariant3!);
+                streamingResponseVariant3?.Invoke(__value2);
             }
         }
 

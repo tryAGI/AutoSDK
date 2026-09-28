@@ -1,4 +1,4 @@
-﻿//HintName: G.Models.ToolChoice.g.cs
+//HintName: G.Models.ToolChoice.g.cs
 #pragma warning disable CS0618 // Type or member is obsolete
 
 #nullable enable
@@ -47,8 +47,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.StringToolChoice PickString() => IsString
-            ? String!
+        public global::G.StringToolChoice PickString() => String is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'String' but the value was {ToString()}.");
 
         /// <summary>
@@ -84,8 +84,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.JsonObjectToolChoice PickJsonObject() => IsJsonObject
-            ? JsonObject!
+        public global::G.JsonObjectToolChoice PickJsonObject() => JsonObject is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'JsonObject' but the value was {ToString()}.");
         /// <summary>
         /// 
@@ -182,13 +182,13 @@ namespace G
                 Validate();
             }
 
-            if (IsString && @string != null)
+            if (String is { } __value0 && @string != null)
             {
-                return @string(String!);
+                return @string(__value0);
             }
-            else if (IsJsonObject && jsonObject != null)
+            else if (JsonObject is { } __value1 && jsonObject != null)
             {
-                return jsonObject(JsonObject!);
+                return jsonObject(__value1);
             }
 
             return default(TResult);
@@ -208,13 +208,13 @@ namespace G
                 Validate();
             }
 
-            if (IsString)
+            if (String is { } __value0)
             {
-                @string?.Invoke(String!);
+                @string?.Invoke(__value0);
             }
-            else if (IsJsonObject)
+            else if (JsonObject is { } __value1)
             {
-                jsonObject?.Invoke(JsonObject!);
+                jsonObject?.Invoke(__value1);
             }
         }
 
@@ -231,13 +231,13 @@ namespace G
                 Validate();
             }
 
-            if (IsString)
+            if (String is { } __value0)
             {
-                @string?.Invoke(String!);
+                @string?.Invoke(__value0);
             }
-            else if (IsJsonObject)
+            else if (JsonObject is { } __value1)
             {
-                jsonObject?.Invoke(JsonObject!);
+                jsonObject?.Invoke(__value1);
             }
         }
 

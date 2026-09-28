@@ -1,4 +1,4 @@
-﻿//HintName: G.JsonConverters.PostDialDigitsVariant13.g.cs
+//HintName: G.JsonConverters.PostDialDigitsVariant13.g.cs
 #nullable enable
 #pragma warning disable CS0618 // Type or member is obsolete
 
@@ -60,13 +60,13 @@ namespace G.JsonConverters
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.PostDialDigitsStatic), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.PostDialDigitsStatic?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.PostDialDigitsStatic).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Static!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickStatic(), typeInfo);
             }
             else if (value.IsDynamic)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.PostDialDigitsDynamicVariable), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.PostDialDigitsDynamicVariable?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.PostDialDigitsDynamicVariable).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Dynamic!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickDynamic(), typeInfo);
             }
         }
     }

@@ -1,4 +1,4 @@
-﻿//HintName: G.EvalsClient.GetEvalRunOutputItems.g.cs
+//HintName: G.EvalsClient.GetEvalRunOutputItems.g.cs
 
 #nullable enable
 
@@ -200,8 +200,8 @@ namespace G
                 PrepareGetEvalRunOutputItemsRequest(
                     httpClient: HttpClient,
                     httpRequestMessage: __httpRequest,
-                    evalId: evalId!,
-                    runId: runId!,
+                    evalId: evalId,
+                    runId: runId,
                     after: after,
                     limit: limit,
                     status: status,
@@ -227,7 +227,7 @@ namespace G
                                 pathTemplate: "$\"/evals/{evalId}/runs/{runId}/output_items\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: null,
                                 exception: null,
                                 clientOptions: Options,
@@ -261,7 +261,7 @@ namespace G
                                 pathTemplate: "$\"/evals/{evalId}/runs/{runId}/output_items\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: null,
                                 exception: __exception,
                                 clientOptions: Options,
@@ -302,7 +302,7 @@ namespace G
                                 pathTemplate: "$\"/evals/{evalId}/runs/{runId}/output_items\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: __response,
                                 exception: null,
                                 clientOptions: Options,
@@ -350,7 +350,7 @@ namespace G
                                 pathTemplate: "$\"/evals/{evalId}/runs/{runId}/output_items\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: __response,
                                 exception: null,
                                 clientOptions: Options,
@@ -372,7 +372,7 @@ namespace G
                                 pathTemplate: "$\"/evals/{evalId}/runs/{runId}/output_items\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: __response,
                                 exception: null,
                                 clientOptions: Options,

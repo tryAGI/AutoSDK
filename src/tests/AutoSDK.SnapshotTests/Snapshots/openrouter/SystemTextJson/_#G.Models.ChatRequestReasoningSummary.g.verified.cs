@@ -1,4 +1,4 @@
-﻿//HintName: G.Models.ChatRequestReasoningSummary.g.cs
+//HintName: G.Models.ChatRequestReasoningSummary.g.cs
 #pragma warning disable CS0618 // Type or member is obsolete
 
 #nullable enable
@@ -43,8 +43,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.ChatReasoningSummaryVerbosityEnum PickChatReasoningSummaryVerbosityEnum() => IsChatReasoningSummaryVerbosityEnum
-            ? ChatReasoningSummaryVerbosityEnum!.Value
+        public global::G.ChatReasoningSummaryVerbosityEnum PickChatReasoningSummaryVerbosityEnum() => ChatReasoningSummaryVerbosityEnum is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'ChatReasoningSummaryVerbosityEnum' but the value was {ToString()}.");
 
         /// <summary>
@@ -80,8 +80,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public object PickChatRequestReasoningSummaryVariant2() => IsChatRequestReasoningSummaryVariant2
-            ? ChatRequestReasoningSummaryVariant2!
+        public object PickChatRequestReasoningSummaryVariant2() => ChatRequestReasoningSummaryVariant2 is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'ChatRequestReasoningSummaryVariant2' but the value was {ToString()}.");
 
         /// <summary>
@@ -117,8 +117,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public object PickChatRequestReasoningSummaryVariant3() => IsChatRequestReasoningSummaryVariant3
-            ? ChatRequestReasoningSummaryVariant3!
+        public object PickChatRequestReasoningSummaryVariant3() => ChatRequestReasoningSummaryVariant3 is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'ChatRequestReasoningSummaryVariant3' but the value was {ToString()}.");
         /// <summary>
         /// 
@@ -197,17 +197,17 @@ namespace G
                 Validate();
             }
 
-            if (IsChatReasoningSummaryVerbosityEnum && chatReasoningSummaryVerbosityEnum != null)
+            if (ChatReasoningSummaryVerbosityEnum is { } __value0 && chatReasoningSummaryVerbosityEnum != null)
             {
-                return chatReasoningSummaryVerbosityEnum(ChatReasoningSummaryVerbosityEnum!);
+                return chatReasoningSummaryVerbosityEnum(__value0);
             }
-            else if (IsChatRequestReasoningSummaryVariant2 && chatRequestReasoningSummaryVariant2 != null)
+            else if (ChatRequestReasoningSummaryVariant2 is { } __value1 && chatRequestReasoningSummaryVariant2 != null)
             {
-                return chatRequestReasoningSummaryVariant2(ChatRequestReasoningSummaryVariant2!);
+                return chatRequestReasoningSummaryVariant2(__value1);
             }
-            else if (IsChatRequestReasoningSummaryVariant3 && chatRequestReasoningSummaryVariant3 != null)
+            else if (ChatRequestReasoningSummaryVariant3 is { } __value2 && chatRequestReasoningSummaryVariant3 != null)
             {
-                return chatRequestReasoningSummaryVariant3(ChatRequestReasoningSummaryVariant3!);
+                return chatRequestReasoningSummaryVariant3(__value2);
             }
 
             return default(TResult);
@@ -229,17 +229,17 @@ namespace G
                 Validate();
             }
 
-            if (IsChatReasoningSummaryVerbosityEnum)
+            if (ChatReasoningSummaryVerbosityEnum is { } __value0)
             {
-                chatReasoningSummaryVerbosityEnum?.Invoke(ChatReasoningSummaryVerbosityEnum!);
+                chatReasoningSummaryVerbosityEnum?.Invoke(__value0);
             }
-            else if (IsChatRequestReasoningSummaryVariant2)
+            else if (ChatRequestReasoningSummaryVariant2 is { } __value1)
             {
-                chatRequestReasoningSummaryVariant2?.Invoke(ChatRequestReasoningSummaryVariant2!);
+                chatRequestReasoningSummaryVariant2?.Invoke(__value1);
             }
-            else if (IsChatRequestReasoningSummaryVariant3)
+            else if (ChatRequestReasoningSummaryVariant3 is { } __value2)
             {
-                chatRequestReasoningSummaryVariant3?.Invoke(ChatRequestReasoningSummaryVariant3!);
+                chatRequestReasoningSummaryVariant3?.Invoke(__value2);
             }
         }
 
@@ -257,17 +257,17 @@ namespace G
                 Validate();
             }
 
-            if (IsChatReasoningSummaryVerbosityEnum)
+            if (ChatReasoningSummaryVerbosityEnum is { } __value0)
             {
-                chatReasoningSummaryVerbosityEnum?.Invoke(ChatReasoningSummaryVerbosityEnum!);
+                chatReasoningSummaryVerbosityEnum?.Invoke(__value0);
             }
-            else if (IsChatRequestReasoningSummaryVariant2)
+            else if (ChatRequestReasoningSummaryVariant2 is { } __value1)
             {
-                chatRequestReasoningSummaryVariant2?.Invoke(ChatRequestReasoningSummaryVariant2!);
+                chatRequestReasoningSummaryVariant2?.Invoke(__value1);
             }
-            else if (IsChatRequestReasoningSummaryVariant3)
+            else if (ChatRequestReasoningSummaryVariant3 is { } __value2)
             {
-                chatRequestReasoningSummaryVariant3?.Invoke(ChatRequestReasoningSummaryVariant3!);
+                chatRequestReasoningSummaryVariant3?.Invoke(__value2);
             }
         }
 

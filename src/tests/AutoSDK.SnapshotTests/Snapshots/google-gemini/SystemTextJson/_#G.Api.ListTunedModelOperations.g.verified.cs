@@ -1,4 +1,4 @@
-﻿//HintName: G.Api.ListTunedModelOperations.g.cs
+//HintName: G.Api.ListTunedModelOperations.g.cs
 
 #nullable enable
 
@@ -166,7 +166,7 @@ namespace G
                 PrepareListTunedModelOperationsRequest(
                     httpClient: HttpClient,
                     httpRequestMessage: __httpRequest,
-                    tunedModelId: tunedModelId!,
+                    tunedModelId: tunedModelId,
                     pageSize: pageSize,
                     filter: filter,
                     pageToken: pageToken);
@@ -191,7 +191,7 @@ namespace G
                                 pathTemplate: "$\"/tunedModels/{tunedModelId}/operations\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: null,
                                 exception: null,
                                 clientOptions: Options,
@@ -225,7 +225,7 @@ namespace G
                                 pathTemplate: "$\"/tunedModels/{tunedModelId}/operations\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: null,
                                 exception: __exception,
                                 clientOptions: Options,
@@ -266,7 +266,7 @@ namespace G
                                 pathTemplate: "$\"/tunedModels/{tunedModelId}/operations\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: __response,
                                 exception: null,
                                 clientOptions: Options,
@@ -314,7 +314,7 @@ namespace G
                                 pathTemplate: "$\"/tunedModels/{tunedModelId}/operations\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: __response,
                                 exception: null,
                                 clientOptions: Options,
@@ -336,7 +336,7 @@ namespace G
                                 pathTemplate: "$\"/tunedModels/{tunedModelId}/operations\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: __response,
                                 exception: null,
                                 clientOptions: Options,

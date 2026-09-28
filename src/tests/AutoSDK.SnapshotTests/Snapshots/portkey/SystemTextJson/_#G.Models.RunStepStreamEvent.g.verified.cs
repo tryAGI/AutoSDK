@@ -1,4 +1,4 @@
-﻿//HintName: G.Models.RunStepStreamEvent.g.cs
+//HintName: G.Models.RunStepStreamEvent.g.cs
 #pragma warning disable CS0618 // Type or member is obsolete
 
 #nullable enable
@@ -43,8 +43,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.RunStepStreamEventVariant1 PickRunStepStreamEventVariant1() => IsRunStepStreamEventVariant1
-            ? RunStepStreamEventVariant1!
+        public global::G.RunStepStreamEventVariant1 PickRunStepStreamEventVariant1() => RunStepStreamEventVariant1 is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'RunStepStreamEventVariant1' but the value was {ToString()}.");
 
         /// <summary>
@@ -80,8 +80,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.RunStepStreamEventVariant2 PickRunStepStreamEventVariant2() => IsRunStepStreamEventVariant2
-            ? RunStepStreamEventVariant2!
+        public global::G.RunStepStreamEventVariant2 PickRunStepStreamEventVariant2() => RunStepStreamEventVariant2 is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'RunStepStreamEventVariant2' but the value was {ToString()}.");
 
         /// <summary>
@@ -117,8 +117,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.RunStepStreamEventVariant3 PickRunStepStreamEventVariant3() => IsRunStepStreamEventVariant3
-            ? RunStepStreamEventVariant3!
+        public global::G.RunStepStreamEventVariant3 PickRunStepStreamEventVariant3() => RunStepStreamEventVariant3 is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'RunStepStreamEventVariant3' but the value was {ToString()}.");
 
         /// <summary>
@@ -154,8 +154,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.RunStepStreamEventVariant4 PickRunStepStreamEventVariant4() => IsRunStepStreamEventVariant4
-            ? RunStepStreamEventVariant4!
+        public global::G.RunStepStreamEventVariant4 PickRunStepStreamEventVariant4() => RunStepStreamEventVariant4 is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'RunStepStreamEventVariant4' but the value was {ToString()}.");
 
         /// <summary>
@@ -191,8 +191,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.RunStepStreamEventVariant5 PickRunStepStreamEventVariant5() => IsRunStepStreamEventVariant5
-            ? RunStepStreamEventVariant5!
+        public global::G.RunStepStreamEventVariant5 PickRunStepStreamEventVariant5() => RunStepStreamEventVariant5 is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'RunStepStreamEventVariant5' but the value was {ToString()}.");
 
         /// <summary>
@@ -228,8 +228,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.RunStepStreamEventVariant6 PickRunStepStreamEventVariant6() => IsRunStepStreamEventVariant6
-            ? RunStepStreamEventVariant6!
+        public global::G.RunStepStreamEventVariant6 PickRunStepStreamEventVariant6() => RunStepStreamEventVariant6 is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'RunStepStreamEventVariant6' but the value was {ToString()}.");
 
         /// <summary>
@@ -265,8 +265,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.RunStepStreamEventVariant7 PickRunStepStreamEventVariant7() => IsRunStepStreamEventVariant7
-            ? RunStepStreamEventVariant7!
+        public global::G.RunStepStreamEventVariant7 PickRunStepStreamEventVariant7() => RunStepStreamEventVariant7 is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'RunStepStreamEventVariant7' but the value was {ToString()}.");
         /// <summary>
         /// 
@@ -503,33 +503,33 @@ namespace G
                 Validate();
             }
 
-            if (IsRunStepStreamEventVariant1 && runStepStreamEventVariant1 != null)
+            if (RunStepStreamEventVariant1 is { } __value0 && runStepStreamEventVariant1 != null)
             {
-                return runStepStreamEventVariant1(RunStepStreamEventVariant1!);
+                return runStepStreamEventVariant1(__value0);
             }
-            else if (IsRunStepStreamEventVariant2 && runStepStreamEventVariant2 != null)
+            else if (RunStepStreamEventVariant2 is { } __value1 && runStepStreamEventVariant2 != null)
             {
-                return runStepStreamEventVariant2(RunStepStreamEventVariant2!);
+                return runStepStreamEventVariant2(__value1);
             }
-            else if (IsRunStepStreamEventVariant3 && runStepStreamEventVariant3 != null)
+            else if (RunStepStreamEventVariant3 is { } __value2 && runStepStreamEventVariant3 != null)
             {
-                return runStepStreamEventVariant3(RunStepStreamEventVariant3!);
+                return runStepStreamEventVariant3(__value2);
             }
-            else if (IsRunStepStreamEventVariant4 && runStepStreamEventVariant4 != null)
+            else if (RunStepStreamEventVariant4 is { } __value3 && runStepStreamEventVariant4 != null)
             {
-                return runStepStreamEventVariant4(RunStepStreamEventVariant4!);
+                return runStepStreamEventVariant4(__value3);
             }
-            else if (IsRunStepStreamEventVariant5 && runStepStreamEventVariant5 != null)
+            else if (RunStepStreamEventVariant5 is { } __value4 && runStepStreamEventVariant5 != null)
             {
-                return runStepStreamEventVariant5(RunStepStreamEventVariant5!);
+                return runStepStreamEventVariant5(__value4);
             }
-            else if (IsRunStepStreamEventVariant6 && runStepStreamEventVariant6 != null)
+            else if (RunStepStreamEventVariant6 is { } __value5 && runStepStreamEventVariant6 != null)
             {
-                return runStepStreamEventVariant6(RunStepStreamEventVariant6!);
+                return runStepStreamEventVariant6(__value5);
             }
-            else if (IsRunStepStreamEventVariant7 && runStepStreamEventVariant7 != null)
+            else if (RunStepStreamEventVariant7 is { } __value6 && runStepStreamEventVariant7 != null)
             {
-                return runStepStreamEventVariant7(RunStepStreamEventVariant7!);
+                return runStepStreamEventVariant7(__value6);
             }
 
             return default(TResult);
@@ -559,33 +559,33 @@ namespace G
                 Validate();
             }
 
-            if (IsRunStepStreamEventVariant1)
+            if (RunStepStreamEventVariant1 is { } __value0)
             {
-                runStepStreamEventVariant1?.Invoke(RunStepStreamEventVariant1!);
+                runStepStreamEventVariant1?.Invoke(__value0);
             }
-            else if (IsRunStepStreamEventVariant2)
+            else if (RunStepStreamEventVariant2 is { } __value1)
             {
-                runStepStreamEventVariant2?.Invoke(RunStepStreamEventVariant2!);
+                runStepStreamEventVariant2?.Invoke(__value1);
             }
-            else if (IsRunStepStreamEventVariant3)
+            else if (RunStepStreamEventVariant3 is { } __value2)
             {
-                runStepStreamEventVariant3?.Invoke(RunStepStreamEventVariant3!);
+                runStepStreamEventVariant3?.Invoke(__value2);
             }
-            else if (IsRunStepStreamEventVariant4)
+            else if (RunStepStreamEventVariant4 is { } __value3)
             {
-                runStepStreamEventVariant4?.Invoke(RunStepStreamEventVariant4!);
+                runStepStreamEventVariant4?.Invoke(__value3);
             }
-            else if (IsRunStepStreamEventVariant5)
+            else if (RunStepStreamEventVariant5 is { } __value4)
             {
-                runStepStreamEventVariant5?.Invoke(RunStepStreamEventVariant5!);
+                runStepStreamEventVariant5?.Invoke(__value4);
             }
-            else if (IsRunStepStreamEventVariant6)
+            else if (RunStepStreamEventVariant6 is { } __value5)
             {
-                runStepStreamEventVariant6?.Invoke(RunStepStreamEventVariant6!);
+                runStepStreamEventVariant6?.Invoke(__value5);
             }
-            else if (IsRunStepStreamEventVariant7)
+            else if (RunStepStreamEventVariant7 is { } __value6)
             {
-                runStepStreamEventVariant7?.Invoke(RunStepStreamEventVariant7!);
+                runStepStreamEventVariant7?.Invoke(__value6);
             }
         }
 
@@ -607,33 +607,33 @@ namespace G
                 Validate();
             }
 
-            if (IsRunStepStreamEventVariant1)
+            if (RunStepStreamEventVariant1 is { } __value0)
             {
-                runStepStreamEventVariant1?.Invoke(RunStepStreamEventVariant1!);
+                runStepStreamEventVariant1?.Invoke(__value0);
             }
-            else if (IsRunStepStreamEventVariant2)
+            else if (RunStepStreamEventVariant2 is { } __value1)
             {
-                runStepStreamEventVariant2?.Invoke(RunStepStreamEventVariant2!);
+                runStepStreamEventVariant2?.Invoke(__value1);
             }
-            else if (IsRunStepStreamEventVariant3)
+            else if (RunStepStreamEventVariant3 is { } __value2)
             {
-                runStepStreamEventVariant3?.Invoke(RunStepStreamEventVariant3!);
+                runStepStreamEventVariant3?.Invoke(__value2);
             }
-            else if (IsRunStepStreamEventVariant4)
+            else if (RunStepStreamEventVariant4 is { } __value3)
             {
-                runStepStreamEventVariant4?.Invoke(RunStepStreamEventVariant4!);
+                runStepStreamEventVariant4?.Invoke(__value3);
             }
-            else if (IsRunStepStreamEventVariant5)
+            else if (RunStepStreamEventVariant5 is { } __value4)
             {
-                runStepStreamEventVariant5?.Invoke(RunStepStreamEventVariant5!);
+                runStepStreamEventVariant5?.Invoke(__value4);
             }
-            else if (IsRunStepStreamEventVariant6)
+            else if (RunStepStreamEventVariant6 is { } __value5)
             {
-                runStepStreamEventVariant6?.Invoke(RunStepStreamEventVariant6!);
+                runStepStreamEventVariant6?.Invoke(__value5);
             }
-            else if (IsRunStepStreamEventVariant7)
+            else if (RunStepStreamEventVariant7 is { } __value6)
             {
-                runStepStreamEventVariant7?.Invoke(RunStepStreamEventVariant7!);
+                runStepStreamEventVariant7?.Invoke(__value6);
             }
         }
 

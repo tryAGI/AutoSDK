@@ -1,4 +1,4 @@
-﻿//HintName: G.Models.ResearchEventDtoClass.g.cs
+//HintName: G.Models.ResearchEventDtoClass.g.cs
 #pragma warning disable CS0618 // Type or member is obsolete
 
 #nullable enable
@@ -43,8 +43,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.ResearchEventDtoClassVariant1 PickResearchEventDtoClassVariant1() => IsResearchEventDtoClassVariant1
-            ? ResearchEventDtoClassVariant1!.Value
+        public global::G.ResearchEventDtoClassVariant1 PickResearchEventDtoClassVariant1() => ResearchEventDtoClassVariant1 is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'ResearchEventDtoClassVariant1' but the value was {ToString()}.");
 
         /// <summary>
@@ -80,8 +80,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.ResearchEventDtoClassVariant2 PickResearchEventDtoClassVariant2() => IsResearchEventDtoClassVariant2
-            ? ResearchEventDtoClassVariant2!.Value
+        public global::G.ResearchEventDtoClassVariant2 PickResearchEventDtoClassVariant2() => ResearchEventDtoClassVariant2 is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'ResearchEventDtoClassVariant2' but the value was {ToString()}.");
 
         /// <summary>
@@ -117,8 +117,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.ResearchEventDtoClassVariant3 PickResearchEventDtoClassVariant3() => IsResearchEventDtoClassVariant3
-            ? ResearchEventDtoClassVariant3!.Value
+        public global::G.ResearchEventDtoClassVariant3 PickResearchEventDtoClassVariant3() => ResearchEventDtoClassVariant3 is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'ResearchEventDtoClassVariant3' but the value was {ToString()}.");
         /// <summary>
         /// 
@@ -243,17 +243,17 @@ namespace G
                 Validate();
             }
 
-            if (IsResearchEventDtoClassVariant1 && researchEventDtoClassVariant1 != null)
+            if (ResearchEventDtoClassVariant1 is { } __value0 && researchEventDtoClassVariant1 != null)
             {
-                return researchEventDtoClassVariant1(ResearchEventDtoClassVariant1!);
+                return researchEventDtoClassVariant1(__value0);
             }
-            else if (IsResearchEventDtoClassVariant2 && researchEventDtoClassVariant2 != null)
+            else if (ResearchEventDtoClassVariant2 is { } __value1 && researchEventDtoClassVariant2 != null)
             {
-                return researchEventDtoClassVariant2(ResearchEventDtoClassVariant2!);
+                return researchEventDtoClassVariant2(__value1);
             }
-            else if (IsResearchEventDtoClassVariant3 && researchEventDtoClassVariant3 != null)
+            else if (ResearchEventDtoClassVariant3 is { } __value2 && researchEventDtoClassVariant3 != null)
             {
-                return researchEventDtoClassVariant3(ResearchEventDtoClassVariant3!);
+                return researchEventDtoClassVariant3(__value2);
             }
 
             return default(TResult);
@@ -275,17 +275,17 @@ namespace G
                 Validate();
             }
 
-            if (IsResearchEventDtoClassVariant1)
+            if (ResearchEventDtoClassVariant1 is { } __value0)
             {
-                researchEventDtoClassVariant1?.Invoke(ResearchEventDtoClassVariant1!);
+                researchEventDtoClassVariant1?.Invoke(__value0);
             }
-            else if (IsResearchEventDtoClassVariant2)
+            else if (ResearchEventDtoClassVariant2 is { } __value1)
             {
-                researchEventDtoClassVariant2?.Invoke(ResearchEventDtoClassVariant2!);
+                researchEventDtoClassVariant2?.Invoke(__value1);
             }
-            else if (IsResearchEventDtoClassVariant3)
+            else if (ResearchEventDtoClassVariant3 is { } __value2)
             {
-                researchEventDtoClassVariant3?.Invoke(ResearchEventDtoClassVariant3!);
+                researchEventDtoClassVariant3?.Invoke(__value2);
             }
         }
 
@@ -303,17 +303,17 @@ namespace G
                 Validate();
             }
 
-            if (IsResearchEventDtoClassVariant1)
+            if (ResearchEventDtoClassVariant1 is { } __value0)
             {
-                researchEventDtoClassVariant1?.Invoke(ResearchEventDtoClassVariant1!);
+                researchEventDtoClassVariant1?.Invoke(__value0);
             }
-            else if (IsResearchEventDtoClassVariant2)
+            else if (ResearchEventDtoClassVariant2 is { } __value1)
             {
-                researchEventDtoClassVariant2?.Invoke(ResearchEventDtoClassVariant2!);
+                researchEventDtoClassVariant2?.Invoke(__value1);
             }
-            else if (IsResearchEventDtoClassVariant3)
+            else if (ResearchEventDtoClassVariant3 is { } __value2)
             {
-                researchEventDtoClassVariant3?.Invoke(ResearchEventDtoClassVariant3!);
+                researchEventDtoClassVariant3?.Invoke(__value2);
             }
         }
 

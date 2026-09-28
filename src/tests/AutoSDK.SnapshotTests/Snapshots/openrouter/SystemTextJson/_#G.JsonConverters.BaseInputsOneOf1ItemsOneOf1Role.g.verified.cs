@@ -1,4 +1,4 @@
-﻿//HintName: G.JsonConverters.BaseInputsOneOf1ItemsOneOf1Role.g.cs
+//HintName: G.JsonConverters.BaseInputsOneOf1ItemsOneOf1Role.g.cs
 #nullable enable
 #pragma warning disable CS0618 // Type or member is obsolete
 
@@ -199,19 +199,19 @@ namespace G.JsonConverters
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.BaseInputsOneOf1ItemsOneOf1Role0), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.BaseInputsOneOf1ItemsOneOf1Role0> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.BaseInputsOneOf1ItemsOneOf1Role0).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.BaseInputsOneOf1ItemsOneOf1Role0!.Value, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickBaseInputsOneOf1ItemsOneOf1Role0(), typeInfo);
             }
             else if (value.IsBaseInputsOneOf1ItemsOneOf1Role1)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.BaseInputsOneOf1ItemsOneOf1Role1), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.BaseInputsOneOf1ItemsOneOf1Role1> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.BaseInputsOneOf1ItemsOneOf1Role1).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.BaseInputsOneOf1ItemsOneOf1Role1!.Value, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickBaseInputsOneOf1ItemsOneOf1Role1(), typeInfo);
             }
             else if (value.IsBaseInputsOneOf1ItemsOneOf1Role2)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.BaseInputsOneOf1ItemsOneOf1Role2), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.BaseInputsOneOf1ItemsOneOf1Role2> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.BaseInputsOneOf1ItemsOneOf1Role2).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.BaseInputsOneOf1ItemsOneOf1Role2!.Value, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickBaseInputsOneOf1ItemsOneOf1Role2(), typeInfo);
             }
         }
     }

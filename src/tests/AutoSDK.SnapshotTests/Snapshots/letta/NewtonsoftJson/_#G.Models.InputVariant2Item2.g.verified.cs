@@ -1,4 +1,4 @@
-﻿//HintName: G.Models.InputVariant2Item2.g.cs
+//HintName: G.Models.InputVariant2Item2.g.cs
 #pragma warning disable CS0618 // Type or member is obsolete
 
 #nullable enable
@@ -48,8 +48,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.TextContent PickText() => IsText
-            ? Text!
+        public global::G.TextContent PickText() => Text is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Text' but the value was {ToString()}.");
 
         /// <summary>
@@ -85,8 +85,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.ImageContent PickImage() => IsImage
-            ? Image!
+        public global::G.ImageContent PickImage() => Image is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Image' but the value was {ToString()}.");
 
         /// <summary>
@@ -122,8 +122,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.ToolCallContent PickToolCall() => IsToolCall
-            ? ToolCall!
+        public global::G.ToolCallContent PickToolCall() => ToolCall is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'ToolCall' but the value was {ToString()}.");
 
         /// <summary>
@@ -159,8 +159,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.ToolReturnContent PickToolReturn() => IsToolReturn
-            ? ToolReturn!
+        public global::G.ToolReturnContent PickToolReturn() => ToolReturn is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'ToolReturn' but the value was {ToString()}.");
 
         /// <summary>
@@ -196,8 +196,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.ReasoningContent PickOmittedReasoning1() => IsOmittedReasoning1
-            ? OmittedReasoning1!
+        public global::G.ReasoningContent PickOmittedReasoning1() => OmittedReasoning1 is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'OmittedReasoning1' but the value was {ToString()}.");
 
         /// <summary>
@@ -233,8 +233,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.RedactedReasoningContent PickRedactedReasoning() => IsRedactedReasoning
-            ? RedactedReasoning!
+        public global::G.RedactedReasoningContent PickRedactedReasoning() => RedactedReasoning is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'RedactedReasoning' but the value was {ToString()}.");
 
         /// <summary>
@@ -270,8 +270,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.OmittedReasoningContent PickOmittedReasoning2() => IsOmittedReasoning2
-            ? OmittedReasoning2!
+        public global::G.OmittedReasoningContent PickOmittedReasoning2() => OmittedReasoning2 is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'OmittedReasoning2' but the value was {ToString()}.");
 
         /// <summary>
@@ -307,8 +307,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.SummarizedReasoningContent PickSummarizedReasoning() => IsSummarizedReasoning
-            ? SummarizedReasoning!
+        public global::G.SummarizedReasoningContent PickSummarizedReasoning() => SummarizedReasoning is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'SummarizedReasoning' but the value was {ToString()}.");
         /// <summary>
         /// 
@@ -576,37 +576,37 @@ namespace G
                 Validate();
             }
 
-            if (IsText && text != null)
+            if (Text is { } __value0 && text != null)
             {
-                return text(Text!);
+                return text(__value0);
             }
-            else if (IsImage && image != null)
+            else if (Image is { } __value1 && image != null)
             {
-                return image(Image!);
+                return image(__value1);
             }
-            else if (IsToolCall && toolCall != null)
+            else if (ToolCall is { } __value2 && toolCall != null)
             {
-                return toolCall(ToolCall!);
+                return toolCall(__value2);
             }
-            else if (IsToolReturn && toolReturn != null)
+            else if (ToolReturn is { } __value3 && toolReturn != null)
             {
-                return toolReturn(ToolReturn!);
+                return toolReturn(__value3);
             }
-            else if (IsOmittedReasoning1 && omittedReasoning1 != null)
+            else if (OmittedReasoning1 is { } __value4 && omittedReasoning1 != null)
             {
-                return omittedReasoning1(OmittedReasoning1!);
+                return omittedReasoning1(__value4);
             }
-            else if (IsRedactedReasoning && redactedReasoning != null)
+            else if (RedactedReasoning is { } __value5 && redactedReasoning != null)
             {
-                return redactedReasoning(RedactedReasoning!);
+                return redactedReasoning(__value5);
             }
-            else if (IsOmittedReasoning2 && omittedReasoning2 != null)
+            else if (OmittedReasoning2 is { } __value6 && omittedReasoning2 != null)
             {
-                return omittedReasoning2(OmittedReasoning2!);
+                return omittedReasoning2(__value6);
             }
-            else if (IsSummarizedReasoning && summarizedReasoning != null)
+            else if (SummarizedReasoning is { } __value7 && summarizedReasoning != null)
             {
-                return summarizedReasoning(SummarizedReasoning!);
+                return summarizedReasoning(__value7);
             }
 
             return default(TResult);
@@ -638,37 +638,37 @@ namespace G
                 Validate();
             }
 
-            if (IsText)
+            if (Text is { } __value0)
             {
-                text?.Invoke(Text!);
+                text?.Invoke(__value0);
             }
-            else if (IsImage)
+            else if (Image is { } __value1)
             {
-                image?.Invoke(Image!);
+                image?.Invoke(__value1);
             }
-            else if (IsToolCall)
+            else if (ToolCall is { } __value2)
             {
-                toolCall?.Invoke(ToolCall!);
+                toolCall?.Invoke(__value2);
             }
-            else if (IsToolReturn)
+            else if (ToolReturn is { } __value3)
             {
-                toolReturn?.Invoke(ToolReturn!);
+                toolReturn?.Invoke(__value3);
             }
-            else if (IsOmittedReasoning1)
+            else if (OmittedReasoning1 is { } __value4)
             {
-                omittedReasoning1?.Invoke(OmittedReasoning1!);
+                omittedReasoning1?.Invoke(__value4);
             }
-            else if (IsRedactedReasoning)
+            else if (RedactedReasoning is { } __value5)
             {
-                redactedReasoning?.Invoke(RedactedReasoning!);
+                redactedReasoning?.Invoke(__value5);
             }
-            else if (IsOmittedReasoning2)
+            else if (OmittedReasoning2 is { } __value6)
             {
-                omittedReasoning2?.Invoke(OmittedReasoning2!);
+                omittedReasoning2?.Invoke(__value6);
             }
-            else if (IsSummarizedReasoning)
+            else if (SummarizedReasoning is { } __value7)
             {
-                summarizedReasoning?.Invoke(SummarizedReasoning!);
+                summarizedReasoning?.Invoke(__value7);
             }
         }
 
@@ -691,37 +691,37 @@ namespace G
                 Validate();
             }
 
-            if (IsText)
+            if (Text is { } __value0)
             {
-                text?.Invoke(Text!);
+                text?.Invoke(__value0);
             }
-            else if (IsImage)
+            else if (Image is { } __value1)
             {
-                image?.Invoke(Image!);
+                image?.Invoke(__value1);
             }
-            else if (IsToolCall)
+            else if (ToolCall is { } __value2)
             {
-                toolCall?.Invoke(ToolCall!);
+                toolCall?.Invoke(__value2);
             }
-            else if (IsToolReturn)
+            else if (ToolReturn is { } __value3)
             {
-                toolReturn?.Invoke(ToolReturn!);
+                toolReturn?.Invoke(__value3);
             }
-            else if (IsOmittedReasoning1)
+            else if (OmittedReasoning1 is { } __value4)
             {
-                omittedReasoning1?.Invoke(OmittedReasoning1!);
+                omittedReasoning1?.Invoke(__value4);
             }
-            else if (IsRedactedReasoning)
+            else if (RedactedReasoning is { } __value5)
             {
-                redactedReasoning?.Invoke(RedactedReasoning!);
+                redactedReasoning?.Invoke(__value5);
             }
-            else if (IsOmittedReasoning2)
+            else if (OmittedReasoning2 is { } __value6)
             {
-                omittedReasoning2?.Invoke(OmittedReasoning2!);
+                omittedReasoning2?.Invoke(__value6);
             }
-            else if (IsSummarizedReasoning)
+            else if (SummarizedReasoning is { } __value7)
             {
-                summarizedReasoning?.Invoke(SummarizedReasoning!);
+                summarizedReasoning?.Invoke(__value7);
             }
         }
 

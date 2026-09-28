@@ -1,4 +1,4 @@
-﻿//HintName: G.Models.Tokenizer.g.cs
+//HintName: G.Models.Tokenizer.g.cs
 #pragma warning disable CS0618 // Type or member is obsolete
 
 #nullable enable
@@ -43,8 +43,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public string PickTokenizerVariant1() => IsTokenizerVariant1
-            ? TokenizerVariant1!
+        public string PickTokenizerVariant1() => TokenizerVariant1 is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'TokenizerVariant1' but the value was {ToString()}.");
 
         /// <summary>
@@ -80,8 +80,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public string PickTokenizerVariant2() => IsTokenizerVariant2
-            ? TokenizerVariant2!
+        public string PickTokenizerVariant2() => TokenizerVariant2 is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'TokenizerVariant2' but the value was {ToString()}.");
 
         /// <summary>
@@ -117,8 +117,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public string PickTokenizerVariant3() => IsTokenizerVariant3
-            ? TokenizerVariant3!
+        public string PickTokenizerVariant3() => TokenizerVariant3 is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'TokenizerVariant3' but the value was {ToString()}.");
 
         /// <summary>
@@ -154,8 +154,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public string PickTokenizerVariant4() => IsTokenizerVariant4
-            ? TokenizerVariant4!
+        public string PickTokenizerVariant4() => TokenizerVariant4 is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'TokenizerVariant4' but the value was {ToString()}.");
 
         /// <summary>
@@ -191,8 +191,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public string PickTokenizerVariant5() => IsTokenizerVariant5
-            ? TokenizerVariant5!
+        public string PickTokenizerVariant5() => TokenizerVariant5 is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'TokenizerVariant5' but the value was {ToString()}.");
         /// <summary>
         /// 
@@ -281,25 +281,25 @@ namespace G
                 Validate();
             }
 
-            if (IsTokenizerVariant1 && tokenizerVariant1 != null)
+            if (TokenizerVariant1 is { } __value0 && tokenizerVariant1 != null)
             {
-                return tokenizerVariant1(TokenizerVariant1!);
+                return tokenizerVariant1(__value0);
             }
-            else if (IsTokenizerVariant2 && tokenizerVariant2 != null)
+            else if (TokenizerVariant2 is { } __value1 && tokenizerVariant2 != null)
             {
-                return tokenizerVariant2(TokenizerVariant2!);
+                return tokenizerVariant2(__value1);
             }
-            else if (IsTokenizerVariant3 && tokenizerVariant3 != null)
+            else if (TokenizerVariant3 is { } __value2 && tokenizerVariant3 != null)
             {
-                return tokenizerVariant3(TokenizerVariant3!);
+                return tokenizerVariant3(__value2);
             }
-            else if (IsTokenizerVariant4 && tokenizerVariant4 != null)
+            else if (TokenizerVariant4 is { } __value3 && tokenizerVariant4 != null)
             {
-                return tokenizerVariant4(TokenizerVariant4!);
+                return tokenizerVariant4(__value3);
             }
-            else if (IsTokenizerVariant5 && tokenizerVariant5 != null)
+            else if (TokenizerVariant5 is { } __value4 && tokenizerVariant5 != null)
             {
-                return tokenizerVariant5(TokenizerVariant5!);
+                return tokenizerVariant5(__value4);
             }
 
             return default(TResult);
@@ -325,25 +325,25 @@ namespace G
                 Validate();
             }
 
-            if (IsTokenizerVariant1)
+            if (TokenizerVariant1 is { } __value0)
             {
-                tokenizerVariant1?.Invoke(TokenizerVariant1!);
+                tokenizerVariant1?.Invoke(__value0);
             }
-            else if (IsTokenizerVariant2)
+            else if (TokenizerVariant2 is { } __value1)
             {
-                tokenizerVariant2?.Invoke(TokenizerVariant2!);
+                tokenizerVariant2?.Invoke(__value1);
             }
-            else if (IsTokenizerVariant3)
+            else if (TokenizerVariant3 is { } __value2)
             {
-                tokenizerVariant3?.Invoke(TokenizerVariant3!);
+                tokenizerVariant3?.Invoke(__value2);
             }
-            else if (IsTokenizerVariant4)
+            else if (TokenizerVariant4 is { } __value3)
             {
-                tokenizerVariant4?.Invoke(TokenizerVariant4!);
+                tokenizerVariant4?.Invoke(__value3);
             }
-            else if (IsTokenizerVariant5)
+            else if (TokenizerVariant5 is { } __value4)
             {
-                tokenizerVariant5?.Invoke(TokenizerVariant5!);
+                tokenizerVariant5?.Invoke(__value4);
             }
         }
 
@@ -363,25 +363,25 @@ namespace G
                 Validate();
             }
 
-            if (IsTokenizerVariant1)
+            if (TokenizerVariant1 is { } __value0)
             {
-                tokenizerVariant1?.Invoke(TokenizerVariant1!);
+                tokenizerVariant1?.Invoke(__value0);
             }
-            else if (IsTokenizerVariant2)
+            else if (TokenizerVariant2 is { } __value1)
             {
-                tokenizerVariant2?.Invoke(TokenizerVariant2!);
+                tokenizerVariant2?.Invoke(__value1);
             }
-            else if (IsTokenizerVariant3)
+            else if (TokenizerVariant3 is { } __value2)
             {
-                tokenizerVariant3?.Invoke(TokenizerVariant3!);
+                tokenizerVariant3?.Invoke(__value2);
             }
-            else if (IsTokenizerVariant4)
+            else if (TokenizerVariant4 is { } __value3)
             {
-                tokenizerVariant4?.Invoke(TokenizerVariant4!);
+                tokenizerVariant4?.Invoke(__value3);
             }
-            else if (IsTokenizerVariant5)
+            else if (TokenizerVariant5 is { } __value4)
             {
-                tokenizerVariant5?.Invoke(TokenizerVariant5!);
+                tokenizerVariant5?.Invoke(__value4);
             }
         }
 

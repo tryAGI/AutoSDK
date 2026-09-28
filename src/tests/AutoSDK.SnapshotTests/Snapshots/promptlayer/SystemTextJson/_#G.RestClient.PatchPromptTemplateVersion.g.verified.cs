@@ -1,4 +1,4 @@
-﻿//HintName: G.RestClient.PatchPromptTemplateVersion.g.cs
+//HintName: G.RestClient.PatchPromptTemplateVersion.g.cs
 
 #nullable enable
 
@@ -128,7 +128,7 @@ namespace G
                 PreparePatchPromptTemplateVersionRequest(
                     httpClient: HttpClient,
                     httpRequestMessage: __httpRequest,
-                    identifier: identifier!,
+                    identifier: identifier,
                     request: request);
 
                 return __httpRequest;
@@ -151,7 +151,7 @@ namespace G
                                 pathTemplate: "$\"/rest/prompt-templates/{identifier}\"",
                                 httpMethod: "PATCH",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: null,
                                 exception: null,
                                 clientOptions: Options,
@@ -185,7 +185,7 @@ namespace G
                                 pathTemplate: "$\"/rest/prompt-templates/{identifier}\"",
                                 httpMethod: "PATCH",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: null,
                                 exception: __exception,
                                 clientOptions: Options,
@@ -226,7 +226,7 @@ namespace G
                                 pathTemplate: "$\"/rest/prompt-templates/{identifier}\"",
                                 httpMethod: "PATCH",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: __response,
                                 exception: null,
                                 clientOptions: Options,
@@ -274,7 +274,7 @@ namespace G
                                 pathTemplate: "$\"/rest/prompt-templates/{identifier}\"",
                                 httpMethod: "PATCH",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: __response,
                                 exception: null,
                                 clientOptions: Options,
@@ -296,7 +296,7 @@ namespace G
                                 pathTemplate: "$\"/rest/prompt-templates/{identifier}\"",
                                 httpMethod: "PATCH",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: __response,
                                 exception: null,
                                 clientOptions: Options,

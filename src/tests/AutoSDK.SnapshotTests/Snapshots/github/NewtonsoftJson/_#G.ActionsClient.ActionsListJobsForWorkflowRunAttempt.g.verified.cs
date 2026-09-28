@@ -1,4 +1,4 @@
-﻿//HintName: G.ActionsClient.ActionsListJobsForWorkflowRunAttempt.g.cs
+//HintName: G.ActionsClient.ActionsListJobsForWorkflowRunAttempt.g.cs
 
 #nullable enable
 
@@ -163,10 +163,10 @@ namespace G
                 PrepareActionsListJobsForWorkflowRunAttemptRequest(
                     httpClient: HttpClient,
                     httpRequestMessage: __httpRequest,
-                    owner: owner!,
-                    repo: repo!,
-                    runId: runId!,
-                    attemptNumber: attemptNumber!,
+                    owner: owner,
+                    repo: repo,
+                    runId: runId,
+                    attemptNumber: attemptNumber,
                     perPage: perPage,
                     page: page);
 
@@ -190,7 +190,7 @@ namespace G
                                 pathTemplate: "$\"/repos/{owner}/{repo}/actions/runs/{runId}/attempts/{attemptNumber}/jobs\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: null,
                                 exception: null,
                                 clientOptions: Options,
@@ -224,7 +224,7 @@ namespace G
                                 pathTemplate: "$\"/repos/{owner}/{repo}/actions/runs/{runId}/attempts/{attemptNumber}/jobs\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: null,
                                 exception: __exception,
                                 clientOptions: Options,
@@ -265,7 +265,7 @@ namespace G
                                 pathTemplate: "$\"/repos/{owner}/{repo}/actions/runs/{runId}/attempts/{attemptNumber}/jobs\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: __response,
                                 exception: null,
                                 clientOptions: Options,
@@ -313,7 +313,7 @@ namespace G
                                 pathTemplate: "$\"/repos/{owner}/{repo}/actions/runs/{runId}/attempts/{attemptNumber}/jobs\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: __response,
                                 exception: null,
                                 clientOptions: Options,
@@ -335,7 +335,7 @@ namespace G
                                 pathTemplate: "$\"/repos/{owner}/{repo}/actions/runs/{runId}/attempts/{attemptNumber}/jobs\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: __response,
                                 exception: null,
                                 clientOptions: Options,

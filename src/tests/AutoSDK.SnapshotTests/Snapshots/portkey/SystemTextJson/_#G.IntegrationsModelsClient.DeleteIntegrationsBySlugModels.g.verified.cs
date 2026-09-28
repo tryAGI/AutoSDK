@@ -1,4 +1,4 @@
-﻿//HintName: G.IntegrationsModelsClient.DeleteIntegrationsBySlugModels.g.cs
+//HintName: G.IntegrationsModelsClient.DeleteIntegrationsBySlugModels.g.cs
 
 #nullable enable
 
@@ -163,8 +163,8 @@ namespace G
                 PrepareDeleteIntegrationsBySlugModelsRequest(
                     httpClient: HttpClient,
                     httpRequestMessage: __httpRequest,
-                    slug: slug!,
-                    slugs: slugs!);
+                    slug: slug,
+                    slugs: slugs);
 
                 return __httpRequest;
             }
@@ -186,7 +186,7 @@ namespace G
                                 pathTemplate: "$\"/integrations/{slug}/models\"",
                                 httpMethod: "DELETE",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: null,
                                 exception: null,
                                 clientOptions: Options,
@@ -220,7 +220,7 @@ namespace G
                                 pathTemplate: "$\"/integrations/{slug}/models\"",
                                 httpMethod: "DELETE",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: null,
                                 exception: __exception,
                                 clientOptions: Options,
@@ -261,7 +261,7 @@ namespace G
                                 pathTemplate: "$\"/integrations/{slug}/models\"",
                                 httpMethod: "DELETE",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: __response,
                                 exception: null,
                                 clientOptions: Options,
@@ -309,7 +309,7 @@ namespace G
                                 pathTemplate: "$\"/integrations/{slug}/models\"",
                                 httpMethod: "DELETE",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: __response,
                                 exception: null,
                                 clientOptions: Options,
@@ -331,7 +331,7 @@ namespace G
                                 pathTemplate: "$\"/integrations/{slug}/models\"",
                                 httpMethod: "DELETE",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: __response,
                                 exception: null,
                                 clientOptions: Options,

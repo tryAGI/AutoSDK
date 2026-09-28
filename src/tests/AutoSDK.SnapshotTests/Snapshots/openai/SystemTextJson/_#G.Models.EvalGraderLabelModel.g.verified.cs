@@ -1,4 +1,4 @@
-﻿//HintName: G.Models.EvalGraderLabelModel.g.cs
+//HintName: G.Models.EvalGraderLabelModel.g.cs
 #pragma warning disable CS0618 // Type or member is obsolete
 
 #nullable enable
@@ -44,8 +44,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.GraderLabelModel PickLabelModelGrader() => IsLabelModelGrader
-            ? LabelModelGrader!
+        public global::G.GraderLabelModel PickLabelModelGrader() => LabelModelGrader is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'LabelModelGrader' but the value was {ToString()}.");
         /// <summary>
         /// 
@@ -104,9 +104,9 @@ namespace G
                 Validate();
             }
 
-            if (IsLabelModelGrader && labelModelGrader != null)
+            if (LabelModelGrader is { } __value0 && labelModelGrader != null)
             {
-                return labelModelGrader(LabelModelGrader!);
+                return labelModelGrader(__value0);
             }
 
             return default(TResult);
@@ -124,9 +124,9 @@ namespace G
                 Validate();
             }
 
-            if (IsLabelModelGrader)
+            if (LabelModelGrader is { } __value0)
             {
-                labelModelGrader?.Invoke(LabelModelGrader!);
+                labelModelGrader?.Invoke(__value0);
             }
         }
 
@@ -142,9 +142,9 @@ namespace G
                 Validate();
             }
 
-            if (IsLabelModelGrader)
+            if (LabelModelGrader is { } __value0)
             {
-                labelModelGrader?.Invoke(LabelModelGrader!);
+                labelModelGrader?.Invoke(__value0);
             }
         }
 

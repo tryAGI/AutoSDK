@@ -1,4 +1,4 @@
-﻿//HintName: G.JsonConverters.HeyGenGeneratedAssetOptions.g.cs
+//HintName: G.JsonConverters.HeyGenGeneratedAssetOptions.g.cs
 #nullable enable
 #pragma warning disable CS0618 // Type or member is obsolete
 
@@ -51,7 +51,7 @@ namespace G.JsonConverters
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.HeyGenTextToAvatarOptions), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.HeyGenTextToAvatarOptions?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.HeyGenTextToAvatarOptions).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.TextToAvatar!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickTextToAvatar(), typeInfo);
             }
         }
     }

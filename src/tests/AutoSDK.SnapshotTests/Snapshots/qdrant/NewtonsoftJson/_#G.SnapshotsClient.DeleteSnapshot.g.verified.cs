@@ -1,4 +1,4 @@
-﻿//HintName: G.SnapshotsClient.DeleteSnapshot.g.cs
+//HintName: G.SnapshotsClient.DeleteSnapshot.g.cs
 
 #nullable enable
 
@@ -192,8 +192,8 @@ namespace G
                 PrepareDeleteSnapshotRequest(
                     httpClient: HttpClient,
                     httpRequestMessage: __httpRequest,
-                    collectionName: collectionName!,
-                    snapshotName: snapshotName!,
+                    collectionName: collectionName,
+                    snapshotName: snapshotName,
                     wait: wait);
 
                 return __httpRequest;
@@ -216,7 +216,7 @@ namespace G
                                 pathTemplate: "$\"/collections/{collectionName}/snapshots/{snapshotName}\"",
                                 httpMethod: "DELETE",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: null,
                                 exception: null,
                                 clientOptions: Options,
@@ -250,7 +250,7 @@ namespace G
                                 pathTemplate: "$\"/collections/{collectionName}/snapshots/{snapshotName}\"",
                                 httpMethod: "DELETE",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: null,
                                 exception: __exception,
                                 clientOptions: Options,
@@ -291,7 +291,7 @@ namespace G
                                 pathTemplate: "$\"/collections/{collectionName}/snapshots/{snapshotName}\"",
                                 httpMethod: "DELETE",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: __response,
                                 exception: null,
                                 clientOptions: Options,
@@ -339,7 +339,7 @@ namespace G
                                 pathTemplate: "$\"/collections/{collectionName}/snapshots/{snapshotName}\"",
                                 httpMethod: "DELETE",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: __response,
                                 exception: null,
                                 clientOptions: Options,
@@ -361,7 +361,7 @@ namespace G
                                 pathTemplate: "$\"/collections/{collectionName}/snapshots/{snapshotName}\"",
                                 httpMethod: "DELETE",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: __response,
                                 exception: null,
                                 clientOptions: Options,

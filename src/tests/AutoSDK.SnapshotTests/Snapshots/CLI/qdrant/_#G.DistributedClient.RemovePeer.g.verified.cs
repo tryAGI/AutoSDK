@@ -1,4 +1,4 @@
-﻿//HintName: G.DistributedClient.RemovePeer.g.cs
+//HintName: G.DistributedClient.RemovePeer.g.cs
 
 #nullable enable
 
@@ -197,7 +197,7 @@ namespace G
                 PrepareRemovePeerRequest(
                     httpClient: HttpClient,
                     httpRequestMessage: __httpRequest,
-                    peerId: peerId!,
+                    peerId: peerId,
                     timeout: timeout,
                     force: force);
 
@@ -221,7 +221,7 @@ namespace G
                                 pathTemplate: "$\"/cluster/peer/{peerId}\"",
                                 httpMethod: "DELETE",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: null,
                                 exception: null,
                                 clientOptions: Options,
@@ -255,7 +255,7 @@ namespace G
                                 pathTemplate: "$\"/cluster/peer/{peerId}\"",
                                 httpMethod: "DELETE",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: null,
                                 exception: __exception,
                                 clientOptions: Options,
@@ -296,7 +296,7 @@ namespace G
                                 pathTemplate: "$\"/cluster/peer/{peerId}\"",
                                 httpMethod: "DELETE",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: __response,
                                 exception: null,
                                 clientOptions: Options,
@@ -344,7 +344,7 @@ namespace G
                                 pathTemplate: "$\"/cluster/peer/{peerId}\"",
                                 httpMethod: "DELETE",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: __response,
                                 exception: null,
                                 clientOptions: Options,
@@ -366,7 +366,7 @@ namespace G
                                 pathTemplate: "$\"/cluster/peer/{peerId}\"",
                                 httpMethod: "DELETE",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: __response,
                                 exception: null,
                                 clientOptions: Options,

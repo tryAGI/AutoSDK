@@ -1,4 +1,4 @@
-﻿//HintName: G.Models.StemmingAlgorithm.g.cs
+//HintName: G.Models.StemmingAlgorithm.g.cs
 #pragma warning disable CS0618 // Type or member is obsolete
 
 #nullable enable
@@ -43,8 +43,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.SnowballParams PickSnowballParams() => IsSnowballParams
-            ? SnowballParams!
+        public global::G.SnowballParams PickSnowballParams() => SnowballParams is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'SnowballParams' but the value was {ToString()}.");
         /// <summary>
         /// 
@@ -103,9 +103,9 @@ namespace G
                 Validate();
             }
 
-            if (IsSnowballParams && snowballParams != null)
+            if (SnowballParams is { } __value0 && snowballParams != null)
             {
-                return snowballParams(SnowballParams!);
+                return snowballParams(__value0);
             }
 
             return default(TResult);
@@ -123,9 +123,9 @@ namespace G
                 Validate();
             }
 
-            if (IsSnowballParams)
+            if (SnowballParams is { } __value0)
             {
-                snowballParams?.Invoke(SnowballParams!);
+                snowballParams?.Invoke(__value0);
             }
         }
 
@@ -141,9 +141,9 @@ namespace G
                 Validate();
             }
 
-            if (IsSnowballParams)
+            if (SnowballParams is { } __value0)
             {
-                snowballParams?.Invoke(SnowballParams!);
+                snowballParams?.Invoke(__value0);
             }
         }
 

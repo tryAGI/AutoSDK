@@ -1,4 +1,4 @@
-﻿//HintName: G.Api.DeleteVersionsModels.g.cs
+//HintName: G.Api.DeleteVersionsModels.g.cs
 
 #nullable enable
 
@@ -185,9 +185,9 @@ namespace G
                 PrepareDeleteVersionsModelsRequest(
                     httpClient: HttpClient,
                     httpRequestMessage: __httpRequest,
-                    modelOwner: modelOwner!,
-                    modelName: modelName!,
-                    versionId: versionId!);
+                    modelOwner: modelOwner,
+                    modelName: modelName,
+                    versionId: versionId);
 
                 return __httpRequest;
             }
@@ -209,7 +209,7 @@ namespace G
                                 pathTemplate: "$\"/models/{modelOwner}/{modelName}/versions/{versionId}\"",
                                 httpMethod: "DELETE",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: null,
                                 exception: null,
                                 clientOptions: Options,
@@ -243,7 +243,7 @@ namespace G
                                 pathTemplate: "$\"/models/{modelOwner}/{modelName}/versions/{versionId}\"",
                                 httpMethod: "DELETE",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: null,
                                 exception: __exception,
                                 clientOptions: Options,
@@ -284,7 +284,7 @@ namespace G
                                 pathTemplate: "$\"/models/{modelOwner}/{modelName}/versions/{versionId}\"",
                                 httpMethod: "DELETE",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: __response,
                                 exception: null,
                                 clientOptions: Options,
@@ -332,7 +332,7 @@ namespace G
                                 pathTemplate: "$\"/models/{modelOwner}/{modelName}/versions/{versionId}\"",
                                 httpMethod: "DELETE",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: __response,
                                 exception: null,
                                 clientOptions: Options,
@@ -354,7 +354,7 @@ namespace G
                                 pathTemplate: "$\"/models/{modelOwner}/{modelName}/versions/{versionId}\"",
                                 httpMethod: "DELETE",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: __response,
                                 exception: null,
                                 clientOptions: Options,

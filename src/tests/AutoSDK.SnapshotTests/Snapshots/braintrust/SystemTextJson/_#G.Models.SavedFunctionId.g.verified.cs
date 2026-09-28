@@ -1,4 +1,4 @@
-﻿//HintName: G.Models.SavedFunctionId.g.cs
+//HintName: G.Models.SavedFunctionId.g.cs
 #pragma warning disable CS0618 // Type or member is obsolete
 
 #nullable enable
@@ -43,8 +43,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.SavedFunctionIdFunction PickFunction() => IsFunction
-            ? Function!
+        public global::G.SavedFunctionIdFunction PickFunction() => Function is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Function' but the value was {ToString()}.");
 
         /// <summary>
@@ -80,8 +80,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.SavedFunctionIdGlobal PickGlobal() => IsGlobal
-            ? Global!
+        public global::G.SavedFunctionIdGlobal PickGlobal() => Global is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Global' but the value was {ToString()}.");
 
         /// <summary>
@@ -117,8 +117,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public object PickSavedFunctionIdVariant3() => IsSavedFunctionIdVariant3
-            ? SavedFunctionIdVariant3!
+        public object PickSavedFunctionIdVariant3() => SavedFunctionIdVariant3 is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'SavedFunctionIdVariant3' but the value was {ToString()}.");
         /// <summary>
         /// 
@@ -220,17 +220,17 @@ namespace G
                 Validate();
             }
 
-            if (IsFunction && function != null)
+            if (Function is { } __value0 && function != null)
             {
-                return function(Function!);
+                return function(__value0);
             }
-            else if (IsGlobal && global != null)
+            else if (Global is { } __value1 && global != null)
             {
-                return global(Global!);
+                return global(__value1);
             }
-            else if (IsSavedFunctionIdVariant3 && savedFunctionIdVariant3 != null)
+            else if (SavedFunctionIdVariant3 is { } __value2 && savedFunctionIdVariant3 != null)
             {
-                return savedFunctionIdVariant3(SavedFunctionIdVariant3!);
+                return savedFunctionIdVariant3(__value2);
             }
 
             return default(TResult);
@@ -252,17 +252,17 @@ namespace G
                 Validate();
             }
 
-            if (IsFunction)
+            if (Function is { } __value0)
             {
-                function?.Invoke(Function!);
+                function?.Invoke(__value0);
             }
-            else if (IsGlobal)
+            else if (Global is { } __value1)
             {
-                global?.Invoke(Global!);
+                global?.Invoke(__value1);
             }
-            else if (IsSavedFunctionIdVariant3)
+            else if (SavedFunctionIdVariant3 is { } __value2)
             {
-                savedFunctionIdVariant3?.Invoke(SavedFunctionIdVariant3!);
+                savedFunctionIdVariant3?.Invoke(__value2);
             }
         }
 
@@ -280,17 +280,17 @@ namespace G
                 Validate();
             }
 
-            if (IsFunction)
+            if (Function is { } __value0)
             {
-                function?.Invoke(Function!);
+                function?.Invoke(__value0);
             }
-            else if (IsGlobal)
+            else if (Global is { } __value1)
             {
-                global?.Invoke(Global!);
+                global?.Invoke(__value1);
             }
-            else if (IsSavedFunctionIdVariant3)
+            else if (SavedFunctionIdVariant3 is { } __value2)
             {
-                savedFunctionIdVariant3?.Invoke(SavedFunctionIdVariant3!);
+                savedFunctionIdVariant3?.Invoke(__value2);
             }
         }
 

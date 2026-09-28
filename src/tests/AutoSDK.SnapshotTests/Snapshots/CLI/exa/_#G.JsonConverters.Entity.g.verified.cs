@@ -1,4 +1,4 @@
-﻿//HintName: G.JsonConverters.Entity.g.cs
+//HintName: G.JsonConverters.Entity.g.cs
 #nullable enable
 #pragma warning disable CS0618 // Type or member is obsolete
 
@@ -60,13 +60,13 @@ namespace G.JsonConverters
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.CompanyEntity), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.CompanyEntity?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.CompanyEntity).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Company!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickCompany(), typeInfo);
             }
             else if (value.IsPerson)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.PersonEntity), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.PersonEntity?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.PersonEntity).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Person!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickPerson(), typeInfo);
             }
         }
     }

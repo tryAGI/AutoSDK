@@ -1,4 +1,4 @@
-﻿//HintName: G.Models.WebhookPullRequestReviewRequested.g.cs
+//HintName: G.Models.WebhookPullRequestReviewRequested.g.cs
 #pragma warning disable CS0618 // Type or member is obsolete
 
 #nullable enable
@@ -43,8 +43,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.WebhookPullRequestReviewRequestedVariant1 PickWebhookPullRequestReviewRequestedVariant1() => IsWebhookPullRequestReviewRequestedVariant1
-            ? WebhookPullRequestReviewRequestedVariant1!
+        public global::G.WebhookPullRequestReviewRequestedVariant1 PickWebhookPullRequestReviewRequestedVariant1() => WebhookPullRequestReviewRequestedVariant1 is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'WebhookPullRequestReviewRequestedVariant1' but the value was {ToString()}.");
 
         /// <summary>
@@ -80,8 +80,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.WebhookPullRequestReviewRequestedVariant2 PickWebhookPullRequestReviewRequestedVariant2() => IsWebhookPullRequestReviewRequestedVariant2
-            ? WebhookPullRequestReviewRequestedVariant2!
+        public global::G.WebhookPullRequestReviewRequestedVariant2 PickWebhookPullRequestReviewRequestedVariant2() => WebhookPullRequestReviewRequestedVariant2 is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'WebhookPullRequestReviewRequestedVariant2' but the value was {ToString()}.");
         /// <summary>
         /// 
@@ -178,13 +178,13 @@ namespace G
                 Validate();
             }
 
-            if (IsWebhookPullRequestReviewRequestedVariant1 && webhookPullRequestReviewRequestedVariant1 != null)
+            if (WebhookPullRequestReviewRequestedVariant1 is { } __value0 && webhookPullRequestReviewRequestedVariant1 != null)
             {
-                return webhookPullRequestReviewRequestedVariant1(WebhookPullRequestReviewRequestedVariant1!);
+                return webhookPullRequestReviewRequestedVariant1(__value0);
             }
-            else if (IsWebhookPullRequestReviewRequestedVariant2 && webhookPullRequestReviewRequestedVariant2 != null)
+            else if (WebhookPullRequestReviewRequestedVariant2 is { } __value1 && webhookPullRequestReviewRequestedVariant2 != null)
             {
-                return webhookPullRequestReviewRequestedVariant2(WebhookPullRequestReviewRequestedVariant2!);
+                return webhookPullRequestReviewRequestedVariant2(__value1);
             }
 
             return default(TResult);
@@ -204,13 +204,13 @@ namespace G
                 Validate();
             }
 
-            if (IsWebhookPullRequestReviewRequestedVariant1)
+            if (WebhookPullRequestReviewRequestedVariant1 is { } __value0)
             {
-                webhookPullRequestReviewRequestedVariant1?.Invoke(WebhookPullRequestReviewRequestedVariant1!);
+                webhookPullRequestReviewRequestedVariant1?.Invoke(__value0);
             }
-            else if (IsWebhookPullRequestReviewRequestedVariant2)
+            else if (WebhookPullRequestReviewRequestedVariant2 is { } __value1)
             {
-                webhookPullRequestReviewRequestedVariant2?.Invoke(WebhookPullRequestReviewRequestedVariant2!);
+                webhookPullRequestReviewRequestedVariant2?.Invoke(__value1);
             }
         }
 
@@ -227,13 +227,13 @@ namespace G
                 Validate();
             }
 
-            if (IsWebhookPullRequestReviewRequestedVariant1)
+            if (WebhookPullRequestReviewRequestedVariant1 is { } __value0)
             {
-                webhookPullRequestReviewRequestedVariant1?.Invoke(WebhookPullRequestReviewRequestedVariant1!);
+                webhookPullRequestReviewRequestedVariant1?.Invoke(__value0);
             }
-            else if (IsWebhookPullRequestReviewRequestedVariant2)
+            else if (WebhookPullRequestReviewRequestedVariant2 is { } __value1)
             {
-                webhookPullRequestReviewRequestedVariant2?.Invoke(WebhookPullRequestReviewRequestedVariant2!);
+                webhookPullRequestReviewRequestedVariant2?.Invoke(__value1);
             }
         }
 

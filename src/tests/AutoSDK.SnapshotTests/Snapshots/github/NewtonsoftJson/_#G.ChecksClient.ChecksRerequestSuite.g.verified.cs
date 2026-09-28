@@ -1,4 +1,4 @@
-﻿//HintName: G.ChecksClient.ChecksRerequestSuite.g.cs
+//HintName: G.ChecksClient.ChecksRerequestSuite.g.cs
 
 #nullable enable
 
@@ -123,9 +123,9 @@ namespace G
                 PrepareChecksRerequestSuiteRequest(
                     httpClient: HttpClient,
                     httpRequestMessage: __httpRequest,
-                    owner: owner!,
-                    repo: repo!,
-                    checkSuiteId: checkSuiteId!);
+                    owner: owner,
+                    repo: repo,
+                    checkSuiteId: checkSuiteId);
 
                 return __httpRequest;
             }
@@ -147,7 +147,7 @@ namespace G
                                 pathTemplate: "$\"/repos/{owner}/{repo}/check-suites/{checkSuiteId}/rerequest\"",
                                 httpMethod: "POST",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: null,
                                 exception: null,
                                 clientOptions: Options,
@@ -181,7 +181,7 @@ namespace G
                                 pathTemplate: "$\"/repos/{owner}/{repo}/check-suites/{checkSuiteId}/rerequest\"",
                                 httpMethod: "POST",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: null,
                                 exception: __exception,
                                 clientOptions: Options,
@@ -222,7 +222,7 @@ namespace G
                                 pathTemplate: "$\"/repos/{owner}/{repo}/check-suites/{checkSuiteId}/rerequest\"",
                                 httpMethod: "POST",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: __response,
                                 exception: null,
                                 clientOptions: Options,
@@ -270,7 +270,7 @@ namespace G
                                 pathTemplate: "$\"/repos/{owner}/{repo}/check-suites/{checkSuiteId}/rerequest\"",
                                 httpMethod: "POST",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: __response,
                                 exception: null,
                                 clientOptions: Options,
@@ -292,7 +292,7 @@ namespace G
                                 pathTemplate: "$\"/repos/{owner}/{repo}/check-suites/{checkSuiteId}/rerequest\"",
                                 httpMethod: "POST",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: __response,
                                 exception: null,
                                 clientOptions: Options,

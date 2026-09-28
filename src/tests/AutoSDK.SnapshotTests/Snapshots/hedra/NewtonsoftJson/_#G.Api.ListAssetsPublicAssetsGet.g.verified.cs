@@ -1,4 +1,4 @@
-﻿//HintName: G.Api.ListAssetsPublicAssetsGet.g.cs
+//HintName: G.Api.ListAssetsPublicAssetsGet.g.cs
 
 #nullable enable
 
@@ -167,7 +167,7 @@ namespace G
                 PrepareListAssetsPublicAssetsGetRequest(
                     httpClient: HttpClient,
                     httpRequestMessage: __httpRequest,
-                    type: type!,
+                    type: type,
                     ids: ids);
 
                 global::G.AutoSDKHttpRequestOptions.StampAuthorizationOverride(__httpRequest);
@@ -192,7 +192,7 @@ namespace G
                                 pathTemplate: "\"/public/assets\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: null,
                                 exception: null,
                                 clientOptions: Options,
@@ -226,7 +226,7 @@ namespace G
                                 pathTemplate: "\"/public/assets\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: null,
                                 exception: __exception,
                                 clientOptions: Options,
@@ -267,7 +267,7 @@ namespace G
                                 pathTemplate: "\"/public/assets\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: __response,
                                 exception: null,
                                 clientOptions: Options,
@@ -315,7 +315,7 @@ namespace G
                                 pathTemplate: "\"/public/assets\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: __response,
                                 exception: null,
                                 clientOptions: Options,
@@ -337,7 +337,7 @@ namespace G
                                 pathTemplate: "\"/public/assets\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: __response,
                                 exception: null,
                                 clientOptions: Options,

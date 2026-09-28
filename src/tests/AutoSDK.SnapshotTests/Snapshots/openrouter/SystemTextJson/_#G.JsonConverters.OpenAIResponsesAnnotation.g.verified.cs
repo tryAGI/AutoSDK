@@ -1,4 +1,4 @@
-﻿//HintName: G.JsonConverters.OpenAIResponsesAnnotation.g.cs
+//HintName: G.JsonConverters.OpenAIResponsesAnnotation.g.cs
 #nullable enable
 #pragma warning disable CS0618 // Type or member is obsolete
 
@@ -176,19 +176,19 @@ namespace G.JsonConverters
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.FileCitation), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.FileCitation?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.FileCitation).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.FileCitation!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickFileCitation(), typeInfo);
             }
             else if (value.IsURLCitation)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.URLCitation), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.URLCitation?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.URLCitation).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.URLCitation!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickURLCitation(), typeInfo);
             }
             else if (value.IsFilePath)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.FilePath), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.FilePath?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.FilePath).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.FilePath!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickFilePath(), typeInfo);
             }
         }
     }

@@ -1,4 +1,4 @@
-﻿//HintName: G.JsonConverters.CustomAuthConfig.g.cs
+//HintName: G.JsonConverters.CustomAuthConfig.g.cs
 #nullable enable
 #pragma warning disable CS0618 // Type or member is obsolete
 
@@ -144,13 +144,13 @@ namespace G.JsonConverters
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.CustomAuthConfigBasic), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.CustomAuthConfigBasic?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.CustomAuthConfigBasic).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Basic!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickBasic(), typeInfo);
             }
             else if (value.IsOAuth2)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.CustomAuthConfigOAuth2), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.CustomAuthConfigOAuth2?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.CustomAuthConfigOAuth2).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.OAuth2!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickOAuth2(), typeInfo);
             }
         }
     }

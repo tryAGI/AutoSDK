@@ -1,4 +1,4 @@
-﻿//HintName: G.Models.ExpressiveVideoBackground.g.cs
+//HintName: G.Models.ExpressiveVideoBackground.g.cs
 #pragma warning disable CS0618 // Type or member is obsolete
 
 #nullable enable
@@ -43,8 +43,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.ExpressiveVideoBackgroundVariant1 PickExpressiveVideoBackgroundVariant1() => IsExpressiveVideoBackgroundVariant1
-            ? ExpressiveVideoBackgroundVariant1!
+        public global::G.ExpressiveVideoBackgroundVariant1 PickExpressiveVideoBackgroundVariant1() => ExpressiveVideoBackgroundVariant1 is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'ExpressiveVideoBackgroundVariant1' but the value was {ToString()}.");
 
         /// <summary>
@@ -80,8 +80,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.ExpressiveVideoBackgroundVariant2 PickExpressiveVideoBackgroundVariant2() => IsExpressiveVideoBackgroundVariant2
-            ? ExpressiveVideoBackgroundVariant2!
+        public global::G.ExpressiveVideoBackgroundVariant2 PickExpressiveVideoBackgroundVariant2() => ExpressiveVideoBackgroundVariant2 is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'ExpressiveVideoBackgroundVariant2' but the value was {ToString()}.");
         /// <summary>
         /// 
@@ -178,13 +178,13 @@ namespace G
                 Validate();
             }
 
-            if (IsExpressiveVideoBackgroundVariant1 && expressiveVideoBackgroundVariant1 != null)
+            if (ExpressiveVideoBackgroundVariant1 is { } __value0 && expressiveVideoBackgroundVariant1 != null)
             {
-                return expressiveVideoBackgroundVariant1(ExpressiveVideoBackgroundVariant1!);
+                return expressiveVideoBackgroundVariant1(__value0);
             }
-            else if (IsExpressiveVideoBackgroundVariant2 && expressiveVideoBackgroundVariant2 != null)
+            else if (ExpressiveVideoBackgroundVariant2 is { } __value1 && expressiveVideoBackgroundVariant2 != null)
             {
-                return expressiveVideoBackgroundVariant2(ExpressiveVideoBackgroundVariant2!);
+                return expressiveVideoBackgroundVariant2(__value1);
             }
 
             return default(TResult);
@@ -204,13 +204,13 @@ namespace G
                 Validate();
             }
 
-            if (IsExpressiveVideoBackgroundVariant1)
+            if (ExpressiveVideoBackgroundVariant1 is { } __value0)
             {
-                expressiveVideoBackgroundVariant1?.Invoke(ExpressiveVideoBackgroundVariant1!);
+                expressiveVideoBackgroundVariant1?.Invoke(__value0);
             }
-            else if (IsExpressiveVideoBackgroundVariant2)
+            else if (ExpressiveVideoBackgroundVariant2 is { } __value1)
             {
-                expressiveVideoBackgroundVariant2?.Invoke(ExpressiveVideoBackgroundVariant2!);
+                expressiveVideoBackgroundVariant2?.Invoke(__value1);
             }
         }
 
@@ -227,13 +227,13 @@ namespace G
                 Validate();
             }
 
-            if (IsExpressiveVideoBackgroundVariant1)
+            if (ExpressiveVideoBackgroundVariant1 is { } __value0)
             {
-                expressiveVideoBackgroundVariant1?.Invoke(ExpressiveVideoBackgroundVariant1!);
+                expressiveVideoBackgroundVariant1?.Invoke(__value0);
             }
-            else if (IsExpressiveVideoBackgroundVariant2)
+            else if (ExpressiveVideoBackgroundVariant2 is { } __value1)
             {
-                expressiveVideoBackgroundVariant2?.Invoke(ExpressiveVideoBackgroundVariant2!);
+                expressiveVideoBackgroundVariant2?.Invoke(__value1);
             }
         }
 

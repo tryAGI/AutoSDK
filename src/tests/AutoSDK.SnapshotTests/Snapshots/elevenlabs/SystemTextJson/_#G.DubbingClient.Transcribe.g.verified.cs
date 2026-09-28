@@ -1,4 +1,4 @@
-﻿//HintName: G.DubbingClient.Transcribe.g.cs
+//HintName: G.DubbingClient.Transcribe.g.cs
 
 #nullable enable
 
@@ -146,7 +146,7 @@ namespace G
                 PrepareTranscribeRequest(
                     httpClient: HttpClient,
                     httpRequestMessage: __httpRequest,
-                    dubbingId: dubbingId!,
+                    dubbingId: dubbingId,
                     xiApiKey: xiApiKey,
                     request: request);
 
@@ -170,7 +170,7 @@ namespace G
                                 pathTemplate: "$\"/v1/dubbing/resource/{dubbingId}/transcribe\"",
                                 httpMethod: "POST",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: null,
                                 exception: null,
                                 clientOptions: Options,
@@ -204,7 +204,7 @@ namespace G
                                 pathTemplate: "$\"/v1/dubbing/resource/{dubbingId}/transcribe\"",
                                 httpMethod: "POST",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: null,
                                 exception: __exception,
                                 clientOptions: Options,
@@ -245,7 +245,7 @@ namespace G
                                 pathTemplate: "$\"/v1/dubbing/resource/{dubbingId}/transcribe\"",
                                 httpMethod: "POST",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: __response,
                                 exception: null,
                                 clientOptions: Options,
@@ -293,7 +293,7 @@ namespace G
                                 pathTemplate: "$\"/v1/dubbing/resource/{dubbingId}/transcribe\"",
                                 httpMethod: "POST",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: __response,
                                 exception: null,
                                 clientOptions: Options,
@@ -315,7 +315,7 @@ namespace G
                                 pathTemplate: "$\"/v1/dubbing/resource/{dubbingId}/transcribe\"",
                                 httpMethod: "POST",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: __response,
                                 exception: null,
                                 clientOptions: Options,

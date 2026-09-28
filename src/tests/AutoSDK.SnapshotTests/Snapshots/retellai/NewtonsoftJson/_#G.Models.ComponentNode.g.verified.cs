@@ -1,4 +1,4 @@
-﻿//HintName: G.Models.ComponentNode.g.cs
+//HintName: G.Models.ComponentNode.g.cs
 #pragma warning disable CS0618 // Type or member is obsolete
 
 #nullable enable
@@ -43,8 +43,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.NodeBaseCommon PickBaseCommon() => IsBaseCommon
-            ? BaseCommon!
+        public global::G.NodeBaseCommon PickBaseCommon() => BaseCommon is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'BaseCommon' but the value was {ToString()}.");
 
         /// <summary>
@@ -80,8 +80,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.ComponentNodeVariant2 PickComponentNodeVariant2() => IsComponentNodeVariant2
-            ? ComponentNodeVariant2!
+        public global::G.ComponentNodeVariant2 PickComponentNodeVariant2() => ComponentNodeVariant2 is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'ComponentNodeVariant2' but the value was {ToString()}.");
         /// <summary>
         /// 
@@ -178,13 +178,13 @@ namespace G
                 Validate();
             }
 
-            if (IsBaseCommon && baseCommon != null)
+            if (BaseCommon is { } __value0 && baseCommon != null)
             {
-                return baseCommon(BaseCommon!);
+                return baseCommon(__value0);
             }
-            else if (IsComponentNodeVariant2 && componentNodeVariant2 != null)
+            else if (ComponentNodeVariant2 is { } __value1 && componentNodeVariant2 != null)
             {
-                return componentNodeVariant2(ComponentNodeVariant2!);
+                return componentNodeVariant2(__value1);
             }
 
             return default(TResult);
@@ -204,13 +204,13 @@ namespace G
                 Validate();
             }
 
-            if (IsBaseCommon)
+            if (BaseCommon is { } __value0)
             {
-                baseCommon?.Invoke(BaseCommon!);
+                baseCommon?.Invoke(__value0);
             }
-            else if (IsComponentNodeVariant2)
+            else if (ComponentNodeVariant2 is { } __value1)
             {
-                componentNodeVariant2?.Invoke(ComponentNodeVariant2!);
+                componentNodeVariant2?.Invoke(__value1);
             }
         }
 
@@ -227,13 +227,13 @@ namespace G
                 Validate();
             }
 
-            if (IsBaseCommon)
+            if (BaseCommon is { } __value0)
             {
-                baseCommon?.Invoke(BaseCommon!);
+                baseCommon?.Invoke(__value0);
             }
-            else if (IsComponentNodeVariant2)
+            else if (ComponentNodeVariant2 is { } __value1)
             {
-                componentNodeVariant2?.Invoke(ComponentNodeVariant2!);
+                componentNodeVariant2?.Invoke(__value1);
             }
         }
 

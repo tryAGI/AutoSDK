@@ -1,4 +1,4 @@
-﻿//HintName: G.JsonConverters.ChatCompletionRequestUserMessageContentPart.g.cs
+//HintName: G.JsonConverters.ChatCompletionRequestUserMessageContentPart.g.cs
 #nullable enable
 #pragma warning disable CS0618 // Type or member is obsolete
 
@@ -223,25 +223,25 @@ namespace G.JsonConverters
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.ChatCompletionRequestMessageContentPartText), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.ChatCompletionRequestMessageContentPartText?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.ChatCompletionRequestMessageContentPartText).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.TextContentPart!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickTextContentPart(), typeInfo);
             }
             else if (value.IsImageContentPart)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.ChatCompletionRequestMessageContentPartImage), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.ChatCompletionRequestMessageContentPartImage?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.ChatCompletionRequestMessageContentPartImage).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.ImageContentPart!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickImageContentPart(), typeInfo);
             }
             else if (value.IsAudioContentPart)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.ChatCompletionRequestMessageContentPartAudio), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.ChatCompletionRequestMessageContentPartAudio?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.ChatCompletionRequestMessageContentPartAudio).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.AudioContentPart!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickAudioContentPart(), typeInfo);
             }
             else if (value.IsFileContentPart)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.ChatCompletionRequestMessageContentPartFile), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.ChatCompletionRequestMessageContentPartFile?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.ChatCompletionRequestMessageContentPartFile).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.FileContentPart!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickFileContentPart(), typeInfo);
             }
         }
     }

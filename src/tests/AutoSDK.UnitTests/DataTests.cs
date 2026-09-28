@@ -1177,9 +1177,9 @@ public partial class DataTests
         generatedAnyOf.Should().Contain("public static StreamEvent FromMessage(global::G.MessageEvent? value) => new StreamEvent(value);");
         generatedAnyOf.Should().Contain("public static StreamEvent FromToolCall(global::G.ToolCallEvent? value) => new StreamEvent(value);");
         generatedAnyOf.Should().Contain("public static StreamEvent FromError(global::G.ErrorEvent? value) => new StreamEvent(value);");
-        generatedAnyOf.Should().Contain("public global::G.MessageEvent PickMessage() => IsMessage");
-        generatedAnyOf.Should().Contain("public global::G.ToolCallEvent PickToolCall() => IsToolCall");
-        generatedAnyOf.Should().Contain("public global::G.ErrorEvent PickError() => IsError");
+        generatedAnyOf.Should().Contain("public global::G.MessageEvent PickMessage() => Message is { } value");
+        generatedAnyOf.Should().Contain("public global::G.ToolCallEvent PickToolCall() => ToolCall is { } value");
+        generatedAnyOf.Should().Contain("public global::G.ErrorEvent PickError() => Error is { } value");
         generatedAnyOf.Should().Contain("throw new global::System.InvalidOperationException");
     }
 

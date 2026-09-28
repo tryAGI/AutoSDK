@@ -1,4 +1,4 @@
-﻿//HintName: G.JsonConverters.AssetDto.g.cs
+//HintName: G.JsonConverters.AssetDto.g.cs
 #nullable enable
 #pragma warning disable CS0618 // Type or member is obsolete
 
@@ -140,13 +140,13 @@ namespace G.JsonConverters
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.AssetDtoVariant1), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.AssetDtoVariant1?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.AssetDtoVariant1).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.AssetDtoVariant1!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickAssetDtoVariant1(), typeInfo);
             }
             else if (value.IsAssetDtoVariant2)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.AssetDtoVariant2), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.AssetDtoVariant2?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.AssetDtoVariant2).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.AssetDtoVariant2!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickAssetDtoVariant2(), typeInfo);
             }
         }
     }

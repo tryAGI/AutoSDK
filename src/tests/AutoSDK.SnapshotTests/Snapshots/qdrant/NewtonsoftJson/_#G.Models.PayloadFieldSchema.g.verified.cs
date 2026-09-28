@@ -1,4 +1,4 @@
-﻿//HintName: G.Models.PayloadFieldSchema.g.cs
+//HintName: G.Models.PayloadFieldSchema.g.cs
 #pragma warning disable CS0618 // Type or member is obsolete
 
 #nullable enable
@@ -43,8 +43,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.PayloadSchemaType PickType() => IsType
-            ? Type!.Value
+        public global::G.PayloadSchemaType PickType() => Type is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Type' but the value was {ToString()}.");
 
         /// <summary>
@@ -80,8 +80,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.PayloadSchemaParams PickParams() => IsParams
-            ? Params!.Value
+        public global::G.PayloadSchemaParams PickParams() => Params is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Params' but the value was {ToString()}.");
         /// <summary>
         /// 
@@ -178,13 +178,13 @@ namespace G
                 Validate();
             }
 
-            if (IsType && type != null)
+            if (Type is { } __value0 && type != null)
             {
-                return type(Type!);
+                return type(__value0);
             }
-            else if (IsParams && @params != null)
+            else if (Params is { } __value1 && @params != null)
             {
-                return @params(Params!);
+                return @params(__value1);
             }
 
             return default(TResult);
@@ -204,13 +204,13 @@ namespace G
                 Validate();
             }
 
-            if (IsType)
+            if (Type is { } __value0)
             {
-                type?.Invoke(Type!);
+                type?.Invoke(__value0);
             }
-            else if (IsParams)
+            else if (Params is { } __value1)
             {
-                @params?.Invoke(Params!);
+                @params?.Invoke(__value1);
             }
         }
 
@@ -227,13 +227,13 @@ namespace G
                 Validate();
             }
 
-            if (IsType)
+            if (Type is { } __value0)
             {
-                type?.Invoke(Type!);
+                type?.Invoke(__value0);
             }
-            else if (IsParams)
+            else if (Params is { } __value1)
             {
-                @params?.Invoke(Params!);
+                @params?.Invoke(__value1);
             }
         }
 

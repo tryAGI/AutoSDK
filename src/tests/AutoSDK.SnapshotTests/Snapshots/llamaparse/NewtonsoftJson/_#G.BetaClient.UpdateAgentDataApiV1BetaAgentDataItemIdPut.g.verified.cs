@@ -1,4 +1,4 @@
-﻿//HintName: G.BetaClient.UpdateAgentDataApiV1BetaAgentDataItemIdPut.g.cs
+//HintName: G.BetaClient.UpdateAgentDataApiV1BetaAgentDataItemIdPut.g.cs
 
 #nullable enable
 
@@ -207,7 +207,7 @@ namespace G
                 PrepareUpdateAgentDataApiV1BetaAgentDataItemIdPutRequest(
                     httpClient: HttpClient,
                     httpRequestMessage: __httpRequest,
-                    itemId: itemId!,
+                    itemId: itemId,
                     projectId: projectId,
                     organizationId: organizationId,
                     session: session,
@@ -235,7 +235,7 @@ namespace G
                                 pathTemplate: "$\"/api/v1/beta/agent-data/{itemId}\"",
                                 httpMethod: "PUT",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: null,
                                 exception: null,
                                 clientOptions: Options,
@@ -269,7 +269,7 @@ namespace G
                                 pathTemplate: "$\"/api/v1/beta/agent-data/{itemId}\"",
                                 httpMethod: "PUT",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: null,
                                 exception: __exception,
                                 clientOptions: Options,
@@ -310,7 +310,7 @@ namespace G
                                 pathTemplate: "$\"/api/v1/beta/agent-data/{itemId}\"",
                                 httpMethod: "PUT",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: __response,
                                 exception: null,
                                 clientOptions: Options,
@@ -358,7 +358,7 @@ namespace G
                                 pathTemplate: "$\"/api/v1/beta/agent-data/{itemId}\"",
                                 httpMethod: "PUT",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: __response,
                                 exception: null,
                                 clientOptions: Options,
@@ -380,7 +380,7 @@ namespace G
                                 pathTemplate: "$\"/api/v1/beta/agent-data/{itemId}\"",
                                 httpMethod: "PUT",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: __response,
                                 exception: null,
                                 clientOptions: Options,

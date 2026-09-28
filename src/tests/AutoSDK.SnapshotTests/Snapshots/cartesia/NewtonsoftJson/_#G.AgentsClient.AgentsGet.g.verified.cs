@@ -1,4 +1,4 @@
-﻿//HintName: G.AgentsClient.AgentsGet.g.cs
+//HintName: G.AgentsClient.AgentsGet.g.cs
 
 #nullable enable
 
@@ -171,8 +171,8 @@ namespace G
                 PrepareAgentsGetRequest(
                     httpClient: HttpClient,
                     httpRequestMessage: __httpRequest,
-                    cartesiaVersion: cartesiaVersion!,
-                    agentId: agentId!);
+                    cartesiaVersion: cartesiaVersion,
+                    agentId: agentId);
 
                 global::G.AutoSDKHttpRequestOptions.StampAuthorizationOverride(__httpRequest);
 
@@ -196,7 +196,7 @@ namespace G
                                 pathTemplate: "$\"/agents/{agentId}\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: null,
                                 exception: null,
                                 clientOptions: Options,
@@ -230,7 +230,7 @@ namespace G
                                 pathTemplate: "$\"/agents/{agentId}\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: null,
                                 exception: __exception,
                                 clientOptions: Options,
@@ -271,7 +271,7 @@ namespace G
                                 pathTemplate: "$\"/agents/{agentId}\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: __response,
                                 exception: null,
                                 clientOptions: Options,
@@ -319,7 +319,7 @@ namespace G
                                 pathTemplate: "$\"/agents/{agentId}\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: __response,
                                 exception: null,
                                 clientOptions: Options,
@@ -341,7 +341,7 @@ namespace G
                                 pathTemplate: "$\"/agents/{agentId}\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: __response,
                                 exception: null,
                                 clientOptions: Options,

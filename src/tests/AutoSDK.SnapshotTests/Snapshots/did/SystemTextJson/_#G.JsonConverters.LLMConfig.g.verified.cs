@@ -1,4 +1,4 @@
-﻿//HintName: G.JsonConverters.LLMConfig.g.cs
+//HintName: G.JsonConverters.LLMConfig.g.cs
 #nullable enable
 #pragma warning disable CS0618 // Type or member is obsolete
 
@@ -303,31 +303,31 @@ namespace G.JsonConverters
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.LLMConfigOpenAI), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.LLMConfigOpenAI?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.LLMConfigOpenAI).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.OpenAI!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickOpenAI(), typeInfo);
             }
             else if (value.IsLLMConfigVariant2)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.LLMConfigVariant2), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.LLMConfigVariant2?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.LLMConfigVariant2).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.LLMConfigVariant2!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickLLMConfigVariant2(), typeInfo);
             }
             else if (value.IsLLMConfigVariant3)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.LLMConfigVariant3), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.LLMConfigVariant3?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.LLMConfigVariant3).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.LLMConfigVariant3!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickLLMConfigVariant3(), typeInfo);
             }
             else if (value.IsDId)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.LLMConfigDId), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.LLMConfigDId?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.LLMConfigDId).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.DId!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickDId(), typeInfo);
             }
             else if (value.IsGoogle)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.LLMConfigGoogle), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.LLMConfigGoogle?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.LLMConfigGoogle).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Google!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickGoogle(), typeInfo);
             }
         }
     }

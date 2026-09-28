@@ -1,4 +1,4 @@
-﻿//HintName: G.JsonConverters.BulkDeleteDocumentsResponse.g.cs
+//HintName: G.JsonConverters.BulkDeleteDocumentsResponse.g.cs
 #nullable enable
 #pragma warning disable CS0618 // Type or member is obsolete
 
@@ -60,13 +60,13 @@ namespace G.JsonConverters
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.BulkDeleteAsyncResponse), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.BulkDeleteAsyncResponse?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.BulkDeleteAsyncResponse).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Async!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickAsync(), typeInfo);
             }
             else if (value.IsSuccess)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.BulkDeleteSyncSuccessResponse), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.BulkDeleteSyncSuccessResponse?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.BulkDeleteSyncSuccessResponse).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Success!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickSuccess(), typeInfo);
             }
         }
     }

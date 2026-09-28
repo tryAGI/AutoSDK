@@ -1,4 +1,4 @@
-﻿//HintName: G.PausesClient.ApiProjectsMembersPausesUpdate.g.cs
+//HintName: G.PausesClient.ApiProjectsMembersPausesUpdate.g.cs
 
 #nullable enable
 
@@ -195,9 +195,9 @@ namespace G
                 PrepareApiProjectsMembersPausesUpdateRequest(
                     httpClient: HttpClient,
                     httpRequestMessage: __httpRequest,
-                    id: id!,
-                    projectPk: projectPk!,
-                    userPk: userPk!,
+                    id: id,
+                    projectPk: projectPk,
+                    userPk: userPk,
                     request: request);
 
                 return __httpRequest;
@@ -220,7 +220,7 @@ namespace G
                                 pathTemplate: "$\"/api/projects/{projectPk}/members/{userPk}/pauses/{id}/\"",
                                 httpMethod: "PUT",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: null,
                                 exception: null,
                                 clientOptions: Options,
@@ -254,7 +254,7 @@ namespace G
                                 pathTemplate: "$\"/api/projects/{projectPk}/members/{userPk}/pauses/{id}/\"",
                                 httpMethod: "PUT",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: null,
                                 exception: __exception,
                                 clientOptions: Options,
@@ -295,7 +295,7 @@ namespace G
                                 pathTemplate: "$\"/api/projects/{projectPk}/members/{userPk}/pauses/{id}/\"",
                                 httpMethod: "PUT",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: __response,
                                 exception: null,
                                 clientOptions: Options,
@@ -343,7 +343,7 @@ namespace G
                                 pathTemplate: "$\"/api/projects/{projectPk}/members/{userPk}/pauses/{id}/\"",
                                 httpMethod: "PUT",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: __response,
                                 exception: null,
                                 clientOptions: Options,
@@ -365,7 +365,7 @@ namespace G
                                 pathTemplate: "$\"/api/projects/{projectPk}/members/{userPk}/pauses/{id}/\"",
                                 httpMethod: "PUT",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: __response,
                                 exception: null,
                                 clientOptions: Options,

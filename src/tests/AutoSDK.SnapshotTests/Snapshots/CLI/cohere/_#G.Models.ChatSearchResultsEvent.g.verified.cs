@@ -1,4 +1,4 @@
-﻿//HintName: G.Models.ChatSearchResultsEvent.g.cs
+//HintName: G.Models.ChatSearchResultsEvent.g.cs
 #pragma warning disable CS0618 // Type or member is obsolete
 
 #nullable enable
@@ -43,8 +43,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.ChatStreamEvent PickStream() => IsStream
-            ? Stream!
+        public global::G.ChatStreamEvent PickStream() => Stream is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Stream' but the value was {ToString()}.");
 
         /// <summary>
@@ -80,8 +80,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.ChatSearchResultsEvent44axt5 PickEvent44axt5() => IsEvent44axt5
-            ? Event44axt5!
+        public global::G.ChatSearchResultsEvent44axt5 PickEvent44axt5() => Event44axt5 is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Event44axt5' but the value was {ToString()}.");
         /// <summary>
         /// 
@@ -178,13 +178,13 @@ namespace G
                 Validate();
             }
 
-            if (IsStream && stream != null)
+            if (Stream is { } __value0 && stream != null)
             {
-                return stream(Stream!);
+                return stream(__value0);
             }
-            else if (IsEvent44axt5 && event44axt5 != null)
+            else if (Event44axt5 is { } __value1 && event44axt5 != null)
             {
-                return event44axt5(Event44axt5!);
+                return event44axt5(__value1);
             }
 
             return default(TResult);
@@ -204,13 +204,13 @@ namespace G
                 Validate();
             }
 
-            if (IsStream)
+            if (Stream is { } __value0)
             {
-                stream?.Invoke(Stream!);
+                stream?.Invoke(__value0);
             }
-            else if (IsEvent44axt5)
+            else if (Event44axt5 is { } __value1)
             {
-                event44axt5?.Invoke(Event44axt5!);
+                event44axt5?.Invoke(__value1);
             }
         }
 
@@ -227,13 +227,13 @@ namespace G
                 Validate();
             }
 
-            if (IsStream)
+            if (Stream is { } __value0)
             {
-                stream?.Invoke(Stream!);
+                stream?.Invoke(__value0);
             }
-            else if (IsEvent44axt5)
+            else if (Event44axt5 is { } __value1)
             {
-                event44axt5?.Invoke(Event44axt5!);
+                event44axt5?.Invoke(__value1);
             }
         }
 

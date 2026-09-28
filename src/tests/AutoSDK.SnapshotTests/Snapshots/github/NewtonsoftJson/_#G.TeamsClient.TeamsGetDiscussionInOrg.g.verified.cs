@@ -1,4 +1,4 @@
-﻿//HintName: G.TeamsClient.TeamsGetDiscussionInOrg.g.cs
+//HintName: G.TeamsClient.TeamsGetDiscussionInOrg.g.cs
 
 #nullable enable
 
@@ -127,9 +127,9 @@ namespace G
                 PrepareTeamsGetDiscussionInOrgRequest(
                     httpClient: HttpClient,
                     httpRequestMessage: __httpRequest,
-                    org: org!,
-                    teamSlug: teamSlug!,
-                    discussionNumber: discussionNumber!);
+                    org: org,
+                    teamSlug: teamSlug,
+                    discussionNumber: discussionNumber);
 
                 return __httpRequest;
             }
@@ -151,7 +151,7 @@ namespace G
                                 pathTemplate: "$\"/orgs/{org}/teams/{teamSlug}/discussions/{discussionNumber}\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: null,
                                 exception: null,
                                 clientOptions: Options,
@@ -185,7 +185,7 @@ namespace G
                                 pathTemplate: "$\"/orgs/{org}/teams/{teamSlug}/discussions/{discussionNumber}\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: null,
                                 exception: __exception,
                                 clientOptions: Options,
@@ -226,7 +226,7 @@ namespace G
                                 pathTemplate: "$\"/orgs/{org}/teams/{teamSlug}/discussions/{discussionNumber}\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: __response,
                                 exception: null,
                                 clientOptions: Options,
@@ -274,7 +274,7 @@ namespace G
                                 pathTemplate: "$\"/orgs/{org}/teams/{teamSlug}/discussions/{discussionNumber}\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: __response,
                                 exception: null,
                                 clientOptions: Options,
@@ -296,7 +296,7 @@ namespace G
                                 pathTemplate: "$\"/orgs/{org}/teams/{teamSlug}/discussions/{discussionNumber}\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: __response,
                                 exception: null,
                                 clientOptions: Options,

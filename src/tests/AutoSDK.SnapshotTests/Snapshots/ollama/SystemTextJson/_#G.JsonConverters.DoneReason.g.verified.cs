@@ -1,4 +1,4 @@
-﻿//HintName: G.JsonConverters.DoneReason.g.cs
+//HintName: G.JsonConverters.DoneReason.g.cs
 #nullable enable
 #pragma warning disable CS0618 // Type or member is obsolete
 
@@ -150,13 +150,13 @@ namespace G.JsonConverters
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(string), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<string?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(string).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.DoneReasonVariant1!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickDoneReasonVariant1(), typeInfo);
             }
             else if (value.IsEnum)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.DoneReasonEnum), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.DoneReasonEnum> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.DoneReasonEnum).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Enum!.Value, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickEnum(), typeInfo);
             }
         }
     }

@@ -1,4 +1,4 @@
-﻿//HintName: G.Models.UsingVector.g.cs
+//HintName: G.Models.UsingVector.g.cs
 #pragma warning disable CS0618 // Type or member is obsolete
 
 #nullable enable
@@ -43,8 +43,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public string PickUsingVectorVariant1() => IsUsingVectorVariant1
-            ? UsingVectorVariant1!
+        public string PickUsingVectorVariant1() => UsingVectorVariant1 is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'UsingVectorVariant1' but the value was {ToString()}.");
         /// <summary>
         /// 
@@ -103,9 +103,9 @@ namespace G
                 Validate();
             }
 
-            if (IsUsingVectorVariant1 && usingVectorVariant1 != null)
+            if (UsingVectorVariant1 is { } __value0 && usingVectorVariant1 != null)
             {
-                return usingVectorVariant1(UsingVectorVariant1!);
+                return usingVectorVariant1(__value0);
             }
 
             return default(TResult);
@@ -123,9 +123,9 @@ namespace G
                 Validate();
             }
 
-            if (IsUsingVectorVariant1)
+            if (UsingVectorVariant1 is { } __value0)
             {
-                usingVectorVariant1?.Invoke(UsingVectorVariant1!);
+                usingVectorVariant1?.Invoke(__value0);
             }
         }
 
@@ -141,9 +141,9 @@ namespace G
                 Validate();
             }
 
-            if (IsUsingVectorVariant1)
+            if (UsingVectorVariant1 is { } __value0)
             {
-                usingVectorVariant1?.Invoke(UsingVectorVariant1!);
+                usingVectorVariant1?.Invoke(__value0);
             }
         }
 

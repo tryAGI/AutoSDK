@@ -1,4 +1,4 @@
-﻿//HintName: G.Models.CreateCompactRequest.g.cs
+//HintName: G.Models.CreateCompactRequest.g.cs
 #pragma warning disable CS0618 // Type or member is obsolete
 
 #nullable enable
@@ -44,8 +44,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.CreateInputRequestBase PickInputBase() => IsInputBase
-            ? InputBase!
+        public global::G.CreateInputRequestBase PickInputBase() => InputBase is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'InputBase' but the value was {ToString()}.");
 
         /// <summary>
@@ -81,8 +81,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.CreateCompactRequestVariant2 PickCreateCompactRequestVariant2() => IsCreateCompactRequestVariant2
-            ? CreateCompactRequestVariant2!
+        public global::G.CreateCompactRequestVariant2 PickCreateCompactRequestVariant2() => CreateCompactRequestVariant2 is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'CreateCompactRequestVariant2' but the value was {ToString()}.");
         /// <summary>
         /// 
@@ -179,13 +179,13 @@ namespace G
                 Validate();
             }
 
-            if (IsInputBase && inputBase != null)
+            if (InputBase is { } __value0 && inputBase != null)
             {
-                return inputBase(InputBase!);
+                return inputBase(__value0);
             }
-            else if (IsCreateCompactRequestVariant2 && createCompactRequestVariant2 != null)
+            else if (CreateCompactRequestVariant2 is { } __value1 && createCompactRequestVariant2 != null)
             {
-                return createCompactRequestVariant2(CreateCompactRequestVariant2!);
+                return createCompactRequestVariant2(__value1);
             }
 
             return default(TResult);
@@ -205,13 +205,13 @@ namespace G
                 Validate();
             }
 
-            if (IsInputBase)
+            if (InputBase is { } __value0)
             {
-                inputBase?.Invoke(InputBase!);
+                inputBase?.Invoke(__value0);
             }
-            else if (IsCreateCompactRequestVariant2)
+            else if (CreateCompactRequestVariant2 is { } __value1)
             {
-                createCompactRequestVariant2?.Invoke(CreateCompactRequestVariant2!);
+                createCompactRequestVariant2?.Invoke(__value1);
             }
         }
 
@@ -228,13 +228,13 @@ namespace G
                 Validate();
             }
 
-            if (IsInputBase)
+            if (InputBase is { } __value0)
             {
-                inputBase?.Invoke(InputBase!);
+                inputBase?.Invoke(__value0);
             }
-            else if (IsCreateCompactRequestVariant2)
+            else if (CreateCompactRequestVariant2 is { } __value1)
             {
-                createCompactRequestVariant2?.Invoke(CreateCompactRequestVariant2!);
+                createCompactRequestVariant2?.Invoke(__value1);
             }
         }
 

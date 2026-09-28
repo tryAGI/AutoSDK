@@ -1,4 +1,4 @@
-﻿//HintName: G.Models.AuthParamsVariant12.g.cs
+//HintName: G.Models.AuthParamsVariant12.g.cs
 #pragma warning disable CS0618 // Type or member is obsolete
 
 #nullable enable
@@ -48,8 +48,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.OAuth2CreateOrUpdateParams PickOauth2() => IsOauth2
-            ? Oauth2!
+        public global::G.OAuth2CreateOrUpdateParams PickOauth2() => Oauth2 is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Oauth2' but the value was {ToString()}.");
         /// <summary>
         /// 
@@ -121,9 +121,9 @@ namespace G
                 Validate();
             }
 
-            if (IsOauth2 && oauth2 != null)
+            if (Oauth2 is { } __value0 && oauth2 != null)
             {
-                return oauth2(Oauth2!);
+                return oauth2(__value0);
             }
 
             return default(TResult);
@@ -141,9 +141,9 @@ namespace G
                 Validate();
             }
 
-            if (IsOauth2)
+            if (Oauth2 is { } __value0)
             {
-                oauth2?.Invoke(Oauth2!);
+                oauth2?.Invoke(__value0);
             }
         }
 
@@ -159,9 +159,9 @@ namespace G
                 Validate();
             }
 
-            if (IsOauth2)
+            if (Oauth2 is { } __value0)
             {
-                oauth2?.Invoke(Oauth2!);
+                oauth2?.Invoke(__value0);
             }
         }
 

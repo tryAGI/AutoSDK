@@ -1,4 +1,4 @@
-﻿//HintName: G.ScorersClient.ScorerReadV2EntityProjectScorersObjectIdVersionsDigestGet.g.cs
+//HintName: G.ScorersClient.ScorerReadV2EntityProjectScorersObjectIdVersionsDigestGet.g.cs
 
 #nullable enable
 
@@ -172,10 +172,10 @@ namespace G
                 PrepareScorerReadV2EntityProjectScorersObjectIdVersionsDigestGetRequest(
                     httpClient: HttpClient,
                     httpRequestMessage: __httpRequest,
-                    entity: entity!,
-                    project: project!,
-                    objectId: objectId!,
-                    digest: digest!);
+                    entity: entity,
+                    project: project,
+                    objectId: objectId,
+                    digest: digest);
 
                 return __httpRequest;
             }
@@ -197,7 +197,7 @@ namespace G
                                 pathTemplate: "$\"/v2/{entity}/{project}/scorers/{objectId}/versions/{digest}\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: null,
                                 exception: null,
                                 clientOptions: Options,
@@ -231,7 +231,7 @@ namespace G
                                 pathTemplate: "$\"/v2/{entity}/{project}/scorers/{objectId}/versions/{digest}\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: null,
                                 exception: __exception,
                                 clientOptions: Options,
@@ -272,7 +272,7 @@ namespace G
                                 pathTemplate: "$\"/v2/{entity}/{project}/scorers/{objectId}/versions/{digest}\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: __response,
                                 exception: null,
                                 clientOptions: Options,
@@ -320,7 +320,7 @@ namespace G
                                 pathTemplate: "$\"/v2/{entity}/{project}/scorers/{objectId}/versions/{digest}\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: __response,
                                 exception: null,
                                 clientOptions: Options,
@@ -342,7 +342,7 @@ namespace G
                                 pathTemplate: "$\"/v2/{entity}/{project}/scorers/{objectId}/versions/{digest}\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: __response,
                                 exception: null,
                                 clientOptions: Options,

@@ -1,4 +1,4 @@
-﻿//HintName: G.Models.ReposGetContentResponse.g.cs
+//HintName: G.Models.ReposGetContentResponse.g.cs
 #pragma warning disable CS0618 // Type or member is obsolete
 
 #nullable enable
@@ -43,8 +43,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::G.ContentDirectoryItem> PickContentDirectory() => IsContentDirectory
-            ? ContentDirectory!
+        public global::System.Collections.Generic.IList<global::G.ContentDirectoryItem> PickContentDirectory() => ContentDirectory is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'ContentDirectory' but the value was {ToString()}.");
 
         /// <summary>
@@ -80,8 +80,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.ContentFile PickFile() => IsFile
-            ? File!
+        public global::G.ContentFile PickFile() => File is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'File' but the value was {ToString()}.");
 
         /// <summary>
@@ -117,8 +117,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.ContentSymlink PickSymlink() => IsSymlink
-            ? Symlink!
+        public global::G.ContentSymlink PickSymlink() => Symlink is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Symlink' but the value was {ToString()}.");
 
         /// <summary>
@@ -154,8 +154,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.ContentSubmodule PickSubmodule() => IsSubmodule
-            ? Submodule!
+        public global::G.ContentSubmodule PickSubmodule() => Submodule is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Submodule' but the value was {ToString()}.");
         /// <summary>
         /// 
@@ -285,21 +285,21 @@ namespace G
                 Validate();
             }
 
-            if (IsContentDirectory && contentDirectory != null)
+            if (ContentDirectory is { } __value0 && contentDirectory != null)
             {
-                return contentDirectory(ContentDirectory!);
+                return contentDirectory(__value0);
             }
-            else if (IsFile && file != null)
+            else if (File is { } __value1 && file != null)
             {
-                return file(File!);
+                return file(__value1);
             }
-            else if (IsSymlink && symlink != null)
+            else if (Symlink is { } __value2 && symlink != null)
             {
-                return symlink(Symlink!);
+                return symlink(__value2);
             }
-            else if (IsSubmodule && submodule != null)
+            else if (Submodule is { } __value3 && submodule != null)
             {
-                return submodule(Submodule!);
+                return submodule(__value3);
             }
 
             return default(TResult);
@@ -323,21 +323,21 @@ namespace G
                 Validate();
             }
 
-            if (IsContentDirectory)
+            if (ContentDirectory is { } __value0)
             {
-                contentDirectory?.Invoke(ContentDirectory!);
+                contentDirectory?.Invoke(__value0);
             }
-            else if (IsFile)
+            else if (File is { } __value1)
             {
-                file?.Invoke(File!);
+                file?.Invoke(__value1);
             }
-            else if (IsSymlink)
+            else if (Symlink is { } __value2)
             {
-                symlink?.Invoke(Symlink!);
+                symlink?.Invoke(__value2);
             }
-            else if (IsSubmodule)
+            else if (Submodule is { } __value3)
             {
-                submodule?.Invoke(Submodule!);
+                submodule?.Invoke(__value3);
             }
         }
 
@@ -356,21 +356,21 @@ namespace G
                 Validate();
             }
 
-            if (IsContentDirectory)
+            if (ContentDirectory is { } __value0)
             {
-                contentDirectory?.Invoke(ContentDirectory!);
+                contentDirectory?.Invoke(__value0);
             }
-            else if (IsFile)
+            else if (File is { } __value1)
             {
-                file?.Invoke(File!);
+                file?.Invoke(__value1);
             }
-            else if (IsSymlink)
+            else if (Symlink is { } __value2)
             {
-                symlink?.Invoke(Symlink!);
+                symlink?.Invoke(__value2);
             }
-            else if (IsSubmodule)
+            else if (Submodule is { } __value3)
             {
-                submodule?.Invoke(Submodule!);
+                submodule?.Invoke(__value3);
             }
         }
 

@@ -1,4 +1,4 @@
-﻿//HintName: G.JsonConverters.ResearchEventDtoClassVariant3.g.cs
+//HintName: G.JsonConverters.ResearchEventDtoClassVariant3.g.cs
 #nullable enable
 #pragma warning disable CS0618 // Type or member is obsolete
 
@@ -69,19 +69,19 @@ namespace G.JsonConverters
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.ResearchEventDtoClassVariant3Variant1), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.ResearchEventDtoClassVariant3Variant1?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.ResearchEventDtoClassVariant3Variant1).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.TaskDefinition!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickTaskDefinition(), typeInfo);
             }
             else if (value.IsTaskOperation)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.ResearchEventDtoClassVariant3Variant2), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.ResearchEventDtoClassVariant3Variant2?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.ResearchEventDtoClassVariant3Variant2).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.TaskOperation!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickTaskOperation(), typeInfo);
             }
             else if (value.IsTaskOutput)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.ResearchEventDtoClassVariant3Variant3), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.ResearchEventDtoClassVariant3Variant3?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.ResearchEventDtoClassVariant3Variant3).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.TaskOutput!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickTaskOutput(), typeInfo);
             }
         }
     }

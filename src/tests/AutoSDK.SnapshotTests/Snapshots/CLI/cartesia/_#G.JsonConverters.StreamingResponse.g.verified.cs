@@ -1,4 +1,4 @@
-﻿//HintName: G.JsonConverters.StreamingResponse.g.cs
+//HintName: G.JsonConverters.StreamingResponse.g.cs
 #nullable enable
 #pragma warning disable CS0618 // Type or member is obsolete
 
@@ -180,19 +180,19 @@ namespace G.JsonConverters
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.StreamingResponseVariant1), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.StreamingResponseVariant1?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.StreamingResponseVariant1).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.StreamingResponseVariant1!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickStreamingResponseVariant1(), typeInfo);
             }
             else if (value.IsStreamingResponseVariant2)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.StreamingResponseVariant2), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.StreamingResponseVariant2?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.StreamingResponseVariant2).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.StreamingResponseVariant2!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickStreamingResponseVariant2(), typeInfo);
             }
             else if (value.IsStreamingResponseVariant3)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.StreamingResponseVariant3), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.StreamingResponseVariant3?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.StreamingResponseVariant3).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.StreamingResponseVariant3!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickStreamingResponseVariant3(), typeInfo);
             }
         }
     }

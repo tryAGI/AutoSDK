@@ -1,4 +1,4 @@
-﻿//HintName: G.Models.ChatToolPlanDeltaEvent.g.cs
+//HintName: G.Models.ChatToolPlanDeltaEvent.g.cs
 #pragma warning disable CS0618 // Type or member is obsolete
 
 #nullable enable
@@ -43,8 +43,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.ChatStreamEventType PickStreamType() => IsStreamType
-            ? StreamType!
+        public global::G.ChatStreamEventType PickStreamType() => StreamType is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'StreamType' but the value was {ToString()}.");
 
         /// <summary>
@@ -80,8 +80,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.ChatToolPlanDeltaEvent2obfex PickEvent2obfex() => IsEvent2obfex
-            ? Event2obfex!
+        public global::G.ChatToolPlanDeltaEvent2obfex PickEvent2obfex() => Event2obfex is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Event2obfex' but the value was {ToString()}.");
         /// <summary>
         /// 
@@ -178,13 +178,13 @@ namespace G
                 Validate();
             }
 
-            if (IsStreamType && streamType != null)
+            if (StreamType is { } __value0 && streamType != null)
             {
-                return streamType(StreamType!);
+                return streamType(__value0);
             }
-            else if (IsEvent2obfex && event2obfex != null)
+            else if (Event2obfex is { } __value1 && event2obfex != null)
             {
-                return event2obfex(Event2obfex!);
+                return event2obfex(__value1);
             }
 
             return default(TResult);
@@ -204,13 +204,13 @@ namespace G
                 Validate();
             }
 
-            if (IsStreamType)
+            if (StreamType is { } __value0)
             {
-                streamType?.Invoke(StreamType!);
+                streamType?.Invoke(__value0);
             }
-            else if (IsEvent2obfex)
+            else if (Event2obfex is { } __value1)
             {
-                event2obfex?.Invoke(Event2obfex!);
+                event2obfex?.Invoke(__value1);
             }
         }
 
@@ -227,13 +227,13 @@ namespace G
                 Validate();
             }
 
-            if (IsStreamType)
+            if (StreamType is { } __value0)
             {
-                streamType?.Invoke(StreamType!);
+                streamType?.Invoke(__value0);
             }
-            else if (IsEvent2obfex)
+            else if (Event2obfex is { } __value1)
             {
-                event2obfex?.Invoke(Event2obfex!);
+                event2obfex?.Invoke(__value1);
             }
         }
 

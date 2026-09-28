@@ -1,4 +1,4 @@
-﻿//HintName: G.Models.ResultWithContent.g.cs
+//HintName: G.Models.ResultWithContent.g.cs
 #pragma warning disable CS0618 // Type or member is obsolete
 
 #nullable enable
@@ -43,8 +43,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.Result PickResult() => IsResult
-            ? Result!
+        public global::G.Result PickResult() => Result is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Result' but the value was {ToString()}.");
 
         /// <summary>
@@ -80,8 +80,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.ResultWithContentVariant2 PickResultWithContentVariant2() => IsResultWithContentVariant2
-            ? ResultWithContentVariant2!
+        public global::G.ResultWithContentVariant2 PickResultWithContentVariant2() => ResultWithContentVariant2 is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'ResultWithContentVariant2' but the value was {ToString()}.");
         /// <summary>
         /// 
@@ -178,13 +178,13 @@ namespace G
                 Validate();
             }
 
-            if (IsResult && result != null)
+            if (Result is { } __value0 && result != null)
             {
-                return result(Result!);
+                return result(__value0);
             }
-            else if (IsResultWithContentVariant2 && resultWithContentVariant2 != null)
+            else if (ResultWithContentVariant2 is { } __value1 && resultWithContentVariant2 != null)
             {
-                return resultWithContentVariant2(ResultWithContentVariant2!);
+                return resultWithContentVariant2(__value1);
             }
 
             return default(TResult);
@@ -204,13 +204,13 @@ namespace G
                 Validate();
             }
 
-            if (IsResult)
+            if (Result is { } __value0)
             {
-                result?.Invoke(Result!);
+                result?.Invoke(__value0);
             }
-            else if (IsResultWithContentVariant2)
+            else if (ResultWithContentVariant2 is { } __value1)
             {
-                resultWithContentVariant2?.Invoke(ResultWithContentVariant2!);
+                resultWithContentVariant2?.Invoke(__value1);
             }
         }
 
@@ -227,13 +227,13 @@ namespace G
                 Validate();
             }
 
-            if (IsResult)
+            if (Result is { } __value0)
             {
-                result?.Invoke(Result!);
+                result?.Invoke(__value0);
             }
-            else if (IsResultWithContentVariant2)
+            else if (ResultWithContentVariant2 is { } __value1)
             {
-                resultWithContentVariant2?.Invoke(ResultWithContentVariant2!);
+                resultWithContentVariant2?.Invoke(__value1);
             }
         }
 

@@ -1,4 +1,4 @@
-﻿//HintName: G.JsonConverters.ChatCompletionDocumentSource.g.cs
+//HintName: G.JsonConverters.ChatCompletionDocumentSource.g.cs
 #nullable enable
 #pragma warning disable CS0618 // Type or member is obsolete
 
@@ -60,13 +60,13 @@ namespace G.JsonConverters
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.ChatCompletionDocumentSourceText), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.ChatCompletionDocumentSourceText?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.ChatCompletionDocumentSourceText).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Text!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickText(), typeInfo);
             }
             else if (value.IsJson)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.ChatCompletionDocumentSourceJSON), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.ChatCompletionDocumentSourceJSON?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.ChatCompletionDocumentSourceJSON).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Json!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickJson(), typeInfo);
             }
         }
     }

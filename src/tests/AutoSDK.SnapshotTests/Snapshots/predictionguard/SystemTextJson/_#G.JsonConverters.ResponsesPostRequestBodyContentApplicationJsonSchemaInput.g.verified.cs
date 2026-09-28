@@ -1,4 +1,4 @@
-﻿//HintName: G.JsonConverters.ResponsesPostRequestBodyContentApplicationJsonSchemaInput.g.cs
+//HintName: G.JsonConverters.ResponsesPostRequestBodyContentApplicationJsonSchemaInput.g.cs
 #nullable enable
 #pragma warning disable CS0618 // Type or member is obsolete
 
@@ -150,13 +150,13 @@ namespace G.JsonConverters
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(string), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<string?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(string).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.ResponsesPostRequestBodyContentApplicationJsonSchemaInputVariant1!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickResponsesPostRequestBodyContentApplicationJsonSchemaInputVariant1(), typeInfo);
             }
             else if (value.IsResponsesPostRequestBodyContentApplicationJsonSchemaInput1)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::System.Collections.Generic.IList<global::G.ResponsesPostRequestBodyContentApplicationJsonSchemaInputOneOf1Items>), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::System.Collections.Generic.IList<global::G.ResponsesPostRequestBodyContentApplicationJsonSchemaInputOneOf1Items>?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::System.Collections.Generic.IList<global::G.ResponsesPostRequestBodyContentApplicationJsonSchemaInputOneOf1Items>).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.ResponsesPostRequestBodyContentApplicationJsonSchemaInput1!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickResponsesPostRequestBodyContentApplicationJsonSchemaInput1(), typeInfo);
             }
         }
     }

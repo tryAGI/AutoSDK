@@ -1,4 +1,4 @@
-﻿//HintName: G.JsonConverters.ChatRequestPluginsItems.g.cs
+//HintName: G.JsonConverters.ChatRequestPluginsItems.g.cs
 #nullable enable
 #pragma warning disable CS0618 // Type or member is obsolete
 
@@ -302,37 +302,37 @@ namespace G.JsonConverters
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.ChatRequestPluginsItems0), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.ChatRequestPluginsItems0?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.ChatRequestPluginsItems0).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.ChatRequestPluginsItems0!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickChatRequestPluginsItems0(), typeInfo);
             }
             else if (value.IsChatRequestPluginsItems1)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.ChatRequestPluginsItems1), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.ChatRequestPluginsItems1?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.ChatRequestPluginsItems1).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.ChatRequestPluginsItems1!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickChatRequestPluginsItems1(), typeInfo);
             }
             else if (value.IsChatRequestPluginsItems2)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.ChatRequestPluginsItems2), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.ChatRequestPluginsItems2?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.ChatRequestPluginsItems2).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.ChatRequestPluginsItems2!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickChatRequestPluginsItems2(), typeInfo);
             }
             else if (value.IsChatRequestPluginsItems3)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.ChatRequestPluginsItems3), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.ChatRequestPluginsItems3?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.ChatRequestPluginsItems3).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.ChatRequestPluginsItems3!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickChatRequestPluginsItems3(), typeInfo);
             }
             else if (value.IsChatRequestPluginsItems4)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.ChatRequestPluginsItems4), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.ChatRequestPluginsItems4?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.ChatRequestPluginsItems4).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.ChatRequestPluginsItems4!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickChatRequestPluginsItems4(), typeInfo);
             }
             else if (value.IsChatRequestPluginsItems5)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.ChatRequestPluginsItems5), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.ChatRequestPluginsItems5?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.ChatRequestPluginsItems5).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.ChatRequestPluginsItems5!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickChatRequestPluginsItems5(), typeInfo);
             }
         }
     }

@@ -1,4 +1,4 @@
-﻿//HintName: G.JsonConverters.UpdateAuthSecretRequestDto.g.cs
+//HintName: G.JsonConverters.UpdateAuthSecretRequestDto.g.cs
 #nullable enable
 #pragma warning disable CS0618 // Type or member is obsolete
 
@@ -177,19 +177,19 @@ namespace G.JsonConverters
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.UpdateAuthSecretRequestDtoBasicAuthentication), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.UpdateAuthSecretRequestDtoBasicAuthentication?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.UpdateAuthSecretRequestDtoBasicAuthentication).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.BasicAuthentication!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickBasicAuthentication(), typeInfo);
             }
             else if (value.IsBearerToken)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.UpdateAuthSecretRequestDtoBearerToken), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.UpdateAuthSecretRequestDtoBearerToken?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.UpdateAuthSecretRequestDtoBearerToken).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.BearerToken!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickBearerToken(), typeInfo);
             }
             else if (value.IsApiKey)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.UpdateAuthSecretRequestDtoApiKey), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.UpdateAuthSecretRequestDtoApiKey?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.UpdateAuthSecretRequestDtoApiKey).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.ApiKey!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickApiKey(), typeInfo);
             }
         }
     }

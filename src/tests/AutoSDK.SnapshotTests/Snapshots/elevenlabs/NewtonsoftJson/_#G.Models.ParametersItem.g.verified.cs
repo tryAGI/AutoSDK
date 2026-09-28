@@ -1,4 +1,4 @@
-﻿//HintName: G.Models.ParametersItem.g.cs
+//HintName: G.Models.ParametersItem.g.cs
 #pragma warning disable CS0618 // Type or member is obsolete
 
 #nullable enable
@@ -48,8 +48,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.WhatsAppTemplateTextParam PickText() => IsText
-            ? Text!
+        public global::G.WhatsAppTemplateTextParam PickText() => Text is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Text' but the value was {ToString()}.");
 
         /// <summary>
@@ -85,8 +85,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.WhatsAppTemplateImageParam PickImage() => IsImage
-            ? Image!
+        public global::G.WhatsAppTemplateImageParam PickImage() => Image is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Image' but the value was {ToString()}.");
 
         /// <summary>
@@ -122,8 +122,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.WhatsAppTemplateDocumentParam PickDocument() => IsDocument
-            ? Document!
+        public global::G.WhatsAppTemplateDocumentParam PickDocument() => Document is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Document' but the value was {ToString()}.");
 
         /// <summary>
@@ -159,8 +159,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.WhatsAppTemplateLocationParam PickLocation() => IsLocation
-            ? Location!
+        public global::G.WhatsAppTemplateLocationParam PickLocation() => Location is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Location' but the value was {ToString()}.");
         /// <summary>
         /// 
@@ -316,21 +316,21 @@ namespace G
                 Validate();
             }
 
-            if (IsText && text != null)
+            if (Text is { } __value0 && text != null)
             {
-                return text(Text!);
+                return text(__value0);
             }
-            else if (IsImage && image != null)
+            else if (Image is { } __value1 && image != null)
             {
-                return image(Image!);
+                return image(__value1);
             }
-            else if (IsDocument && document != null)
+            else if (Document is { } __value2 && document != null)
             {
-                return document(Document!);
+                return document(__value2);
             }
-            else if (IsLocation && location != null)
+            else if (Location is { } __value3 && location != null)
             {
-                return location(Location!);
+                return location(__value3);
             }
 
             return default(TResult);
@@ -354,21 +354,21 @@ namespace G
                 Validate();
             }
 
-            if (IsText)
+            if (Text is { } __value0)
             {
-                text?.Invoke(Text!);
+                text?.Invoke(__value0);
             }
-            else if (IsImage)
+            else if (Image is { } __value1)
             {
-                image?.Invoke(Image!);
+                image?.Invoke(__value1);
             }
-            else if (IsDocument)
+            else if (Document is { } __value2)
             {
-                document?.Invoke(Document!);
+                document?.Invoke(__value2);
             }
-            else if (IsLocation)
+            else if (Location is { } __value3)
             {
-                location?.Invoke(Location!);
+                location?.Invoke(__value3);
             }
         }
 
@@ -387,21 +387,21 @@ namespace G
                 Validate();
             }
 
-            if (IsText)
+            if (Text is { } __value0)
             {
-                text?.Invoke(Text!);
+                text?.Invoke(__value0);
             }
-            else if (IsImage)
+            else if (Image is { } __value1)
             {
-                image?.Invoke(Image!);
+                image?.Invoke(__value1);
             }
-            else if (IsDocument)
+            else if (Document is { } __value2)
             {
-                document?.Invoke(Document!);
+                document?.Invoke(__value2);
             }
-            else if (IsLocation)
+            else if (Location is { } __value3)
             {
-                location?.Invoke(Location!);
+                location?.Invoke(__value3);
             }
         }
 

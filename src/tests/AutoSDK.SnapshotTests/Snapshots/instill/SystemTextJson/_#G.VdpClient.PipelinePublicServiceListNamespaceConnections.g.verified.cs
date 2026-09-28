@@ -1,4 +1,4 @@
-﻿//HintName: G.VdpClient.PipelinePublicServiceListNamespaceConnections.g.cs
+//HintName: G.VdpClient.PipelinePublicServiceListNamespaceConnections.g.cs
 
 #nullable enable
 
@@ -192,7 +192,7 @@ namespace G
                 PreparePipelinePublicServiceListNamespaceConnectionsRequest(
                     httpClient: HttpClient,
                     httpRequestMessage: __httpRequest,
-                    namespaceId: namespaceId!,
+                    namespaceId: namespaceId,
                     pageSize: pageSize,
                     pageToken: pageToken,
                     filter: filter);
@@ -217,7 +217,7 @@ namespace G
                                 pathTemplate: "$\"/v1beta/namespaces/{namespaceId}/connections\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: null,
                                 exception: null,
                                 clientOptions: Options,
@@ -251,7 +251,7 @@ namespace G
                                 pathTemplate: "$\"/v1beta/namespaces/{namespaceId}/connections\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: null,
                                 exception: __exception,
                                 clientOptions: Options,
@@ -292,7 +292,7 @@ namespace G
                                 pathTemplate: "$\"/v1beta/namespaces/{namespaceId}/connections\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: __response,
                                 exception: null,
                                 clientOptions: Options,
@@ -340,7 +340,7 @@ namespace G
                                 pathTemplate: "$\"/v1beta/namespaces/{namespaceId}/connections\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: __response,
                                 exception: null,
                                 clientOptions: Options,
@@ -362,7 +362,7 @@ namespace G
                                 pathTemplate: "$\"/v1beta/namespaces/{namespaceId}/connections\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: __response,
                                 exception: null,
                                 clientOptions: Options,

@@ -1,4 +1,4 @@
-﻿//HintName: G.Api.InferFromPredefinedWorkflowInferWorkflowsWorkspaceNameWorkflowIdPost.g.cs
+//HintName: G.Api.InferFromPredefinedWorkflowInferWorkflowsWorkspaceNameWorkflowIdPost.g.cs
 
 #nullable enable
 
@@ -134,8 +134,8 @@ namespace G
                 PrepareInferFromPredefinedWorkflowInferWorkflowsWorkspaceNameWorkflowIdPostRequest(
                     httpClient: HttpClient,
                     httpRequestMessage: __httpRequest,
-                    workspaceName: workspaceName!,
-                    workflowId: workflowId!,
+                    workspaceName: workspaceName,
+                    workflowId: workflowId,
                     request: request);
 
                 return __httpRequest;
@@ -158,7 +158,7 @@ namespace G
                                 pathTemplate: "$\"/infer/workflows/{workspaceName}/{workflowId}\"",
                                 httpMethod: "POST",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: null,
                                 exception: null,
                                 clientOptions: Options,
@@ -192,7 +192,7 @@ namespace G
                                 pathTemplate: "$\"/infer/workflows/{workspaceName}/{workflowId}\"",
                                 httpMethod: "POST",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: null,
                                 exception: __exception,
                                 clientOptions: Options,
@@ -233,7 +233,7 @@ namespace G
                                 pathTemplate: "$\"/infer/workflows/{workspaceName}/{workflowId}\"",
                                 httpMethod: "POST",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: __response,
                                 exception: null,
                                 clientOptions: Options,
@@ -281,7 +281,7 @@ namespace G
                                 pathTemplate: "$\"/infer/workflows/{workspaceName}/{workflowId}\"",
                                 httpMethod: "POST",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: __response,
                                 exception: null,
                                 clientOptions: Options,
@@ -303,7 +303,7 @@ namespace G
                                 pathTemplate: "$\"/infer/workflows/{workspaceName}/{workflowId}\"",
                                 httpMethod: "POST",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: __response,
                                 exception: null,
                                 clientOptions: Options,

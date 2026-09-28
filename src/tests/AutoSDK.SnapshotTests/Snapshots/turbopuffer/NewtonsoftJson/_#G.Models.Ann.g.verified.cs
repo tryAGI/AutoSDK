@@ -1,4 +1,4 @@
-﻿//HintName: G.Models.Ann.g.cs
+//HintName: G.Models.Ann.g.cs
 #pragma warning disable CS0618 // Type or member is obsolete
 
 #nullable enable
@@ -43,8 +43,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public bool PickAnnVariant1() => IsAnnVariant1
-            ? AnnVariant1!.Value
+        public bool PickAnnVariant1() => AnnVariant1 is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'AnnVariant1' but the value was {ToString()}.");
 
         /// <summary>
@@ -80,8 +80,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.AnnConfig PickConfig() => IsConfig
-            ? Config!
+        public global::G.AnnConfig PickConfig() => Config is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Config' but the value was {ToString()}.");
         /// <summary>
         /// 
@@ -178,13 +178,13 @@ namespace G
                 Validate();
             }
 
-            if (IsAnnVariant1 && annVariant1 != null)
+            if (AnnVariant1 is { } __value0 && annVariant1 != null)
             {
-                return annVariant1(AnnVariant1!);
+                return annVariant1(__value0);
             }
-            else if (IsConfig && config != null)
+            else if (Config is { } __value1 && config != null)
             {
-                return config(Config!);
+                return config(__value1);
             }
 
             return default(TResult);
@@ -204,13 +204,13 @@ namespace G
                 Validate();
             }
 
-            if (IsAnnVariant1)
+            if (AnnVariant1 is { } __value0)
             {
-                annVariant1?.Invoke(AnnVariant1!);
+                annVariant1?.Invoke(__value0);
             }
-            else if (IsConfig)
+            else if (Config is { } __value1)
             {
-                config?.Invoke(Config!);
+                config?.Invoke(__value1);
             }
         }
 
@@ -227,13 +227,13 @@ namespace G
                 Validate();
             }
 
-            if (IsAnnVariant1)
+            if (AnnVariant1 is { } __value0)
             {
-                annVariant1?.Invoke(AnnVariant1!);
+                annVariant1?.Invoke(__value0);
             }
-            else if (IsConfig)
+            else if (Config is { } __value1)
             {
-                config?.Invoke(Config!);
+                config?.Invoke(__value1);
             }
         }
 

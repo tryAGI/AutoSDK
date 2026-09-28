@@ -1,4 +1,4 @@
-﻿//HintName: G.PipelinesClient.RetrieveScalingInfo.g.cs
+//HintName: G.PipelinesClient.RetrieveScalingInfo.g.cs
 
 #nullable enable
 
@@ -196,7 +196,7 @@ namespace G
                 PrepareRetrieveScalingInfoRequest(
                     httpClient: HttpClient,
                     httpRequestMessage: __httpRequest,
-                    pipelineId: pipelineId!,
+                    pipelineId: pipelineId,
                     pointer: pointer,
                     pipelineIdOrPointer: pipelineIdOrPointer);
 
@@ -222,7 +222,7 @@ namespace G
                                 pathTemplate: "$\"/v4/pipelines/{pipelineId}/scaling\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: null,
                                 exception: null,
                                 clientOptions: Options,
@@ -256,7 +256,7 @@ namespace G
                                 pathTemplate: "$\"/v4/pipelines/{pipelineId}/scaling\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: null,
                                 exception: __exception,
                                 clientOptions: Options,
@@ -297,7 +297,7 @@ namespace G
                                 pathTemplate: "$\"/v4/pipelines/{pipelineId}/scaling\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: __response,
                                 exception: null,
                                 clientOptions: Options,
@@ -345,7 +345,7 @@ namespace G
                                 pathTemplate: "$\"/v4/pipelines/{pipelineId}/scaling\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: __response,
                                 exception: null,
                                 clientOptions: Options,
@@ -367,7 +367,7 @@ namespace G
                                 pathTemplate: "$\"/v4/pipelines/{pipelineId}/scaling\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: __response,
                                 exception: null,
                                 clientOptions: Options,

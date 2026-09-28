@@ -1,4 +1,4 @@
-﻿//HintName: G.Models.Tool.g.cs
+//HintName: G.Models.Tool.g.cs
 #pragma warning disable CS0618 // Type or member is obsolete
 
 #nullable enable
@@ -48,8 +48,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.FunctionTool PickFunction() => IsFunction
-            ? Function!
+        public global::G.FunctionTool PickFunction() => Function is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Function' but the value was {ToString()}.");
 
         /// <summary>
@@ -85,8 +85,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.GraphTool PickGraph() => IsGraph
-            ? Graph!
+        public global::G.GraphTool PickGraph() => Graph is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Graph' but the value was {ToString()}.");
 
         /// <summary>
@@ -122,8 +122,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.LlmTool PickLlm() => IsLlm
-            ? Llm!
+        public global::G.LlmTool PickLlm() => Llm is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Llm' but the value was {ToString()}.");
 
         /// <summary>
@@ -159,8 +159,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.TranslationTool PickTranslation() => IsTranslation
-            ? Translation!
+        public global::G.TranslationTool PickTranslation() => Translation is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Translation' but the value was {ToString()}.");
 
         /// <summary>
@@ -196,8 +196,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.VisionTool PickVision() => IsVision
-            ? Vision!
+        public global::G.VisionTool PickVision() => Vision is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Vision' but the value was {ToString()}.");
 
         /// <summary>
@@ -233,8 +233,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.WebSearchTool PickWebSearch() => IsWebSearch
-            ? WebSearch!
+        public global::G.WebSearchTool PickWebSearch() => WebSearch is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'WebSearch' but the value was {ToString()}.");
         /// <summary>
         /// 
@@ -446,29 +446,29 @@ namespace G
                 Validate();
             }
 
-            if (IsFunction && function != null)
+            if (Function is { } __value0 && function != null)
             {
-                return function(Function!);
+                return function(__value0);
             }
-            else if (IsGraph && graph != null)
+            else if (Graph is { } __value1 && graph != null)
             {
-                return graph(Graph!);
+                return graph(__value1);
             }
-            else if (IsLlm && llm != null)
+            else if (Llm is { } __value2 && llm != null)
             {
-                return llm(Llm!);
+                return llm(__value2);
             }
-            else if (IsTranslation && translation != null)
+            else if (Translation is { } __value3 && translation != null)
             {
-                return translation(Translation!);
+                return translation(__value3);
             }
-            else if (IsVision && vision != null)
+            else if (Vision is { } __value4 && vision != null)
             {
-                return vision(Vision!);
+                return vision(__value4);
             }
-            else if (IsWebSearch && webSearch != null)
+            else if (WebSearch is { } __value5 && webSearch != null)
             {
-                return webSearch(WebSearch!);
+                return webSearch(__value5);
             }
 
             return default(TResult);
@@ -496,29 +496,29 @@ namespace G
                 Validate();
             }
 
-            if (IsFunction)
+            if (Function is { } __value0)
             {
-                function?.Invoke(Function!);
+                function?.Invoke(__value0);
             }
-            else if (IsGraph)
+            else if (Graph is { } __value1)
             {
-                graph?.Invoke(Graph!);
+                graph?.Invoke(__value1);
             }
-            else if (IsLlm)
+            else if (Llm is { } __value2)
             {
-                llm?.Invoke(Llm!);
+                llm?.Invoke(__value2);
             }
-            else if (IsTranslation)
+            else if (Translation is { } __value3)
             {
-                translation?.Invoke(Translation!);
+                translation?.Invoke(__value3);
             }
-            else if (IsVision)
+            else if (Vision is { } __value4)
             {
-                vision?.Invoke(Vision!);
+                vision?.Invoke(__value4);
             }
-            else if (IsWebSearch)
+            else if (WebSearch is { } __value5)
             {
-                webSearch?.Invoke(WebSearch!);
+                webSearch?.Invoke(__value5);
             }
         }
 
@@ -539,29 +539,29 @@ namespace G
                 Validate();
             }
 
-            if (IsFunction)
+            if (Function is { } __value0)
             {
-                function?.Invoke(Function!);
+                function?.Invoke(__value0);
             }
-            else if (IsGraph)
+            else if (Graph is { } __value1)
             {
-                graph?.Invoke(Graph!);
+                graph?.Invoke(__value1);
             }
-            else if (IsLlm)
+            else if (Llm is { } __value2)
             {
-                llm?.Invoke(Llm!);
+                llm?.Invoke(__value2);
             }
-            else if (IsTranslation)
+            else if (Translation is { } __value3)
             {
-                translation?.Invoke(Translation!);
+                translation?.Invoke(__value3);
             }
-            else if (IsVision)
+            else if (Vision is { } __value4)
             {
-                vision?.Invoke(Vision!);
+                vision?.Invoke(__value4);
             }
-            else if (IsWebSearch)
+            else if (WebSearch is { } __value5)
             {
-                webSearch?.Invoke(WebSearch!);
+                webSearch?.Invoke(__value5);
             }
         }
 

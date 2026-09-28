@@ -1,4 +1,4 @@
-﻿//HintName: G.PromptTemplatesClient.GetPromptTemplateRaw.g.cs
+//HintName: G.PromptTemplatesClient.GetPromptTemplateRaw.g.cs
 
 #nullable enable
 
@@ -167,7 +167,7 @@ namespace G
                 PrepareGetPromptTemplateRawRequest(
                     httpClient: HttpClient,
                     httpRequestMessage: __httpRequest,
-                    identifier: identifier!,
+                    identifier: identifier,
                     version: version,
                     label: label,
                     resolveSnippets: resolveSnippets,
@@ -193,7 +193,7 @@ namespace G
                                 pathTemplate: "$\"/prompt-templates/{identifier}\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: null,
                                 exception: null,
                                 clientOptions: Options,
@@ -227,7 +227,7 @@ namespace G
                                 pathTemplate: "$\"/prompt-templates/{identifier}\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: null,
                                 exception: __exception,
                                 clientOptions: Options,
@@ -268,7 +268,7 @@ namespace G
                                 pathTemplate: "$\"/prompt-templates/{identifier}\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: __response,
                                 exception: null,
                                 clientOptions: Options,
@@ -316,7 +316,7 @@ namespace G
                                 pathTemplate: "$\"/prompt-templates/{identifier}\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: __response,
                                 exception: null,
                                 clientOptions: Options,
@@ -338,7 +338,7 @@ namespace G
                                 pathTemplate: "$\"/prompt-templates/{identifier}\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: __response,
                                 exception: null,
                                 clientOptions: Options,

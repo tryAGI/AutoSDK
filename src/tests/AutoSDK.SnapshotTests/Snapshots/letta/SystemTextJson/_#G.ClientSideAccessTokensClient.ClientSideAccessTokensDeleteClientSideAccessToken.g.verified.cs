@@ -1,4 +1,4 @@
-﻿//HintName: G.ClientSideAccessTokensClient.ClientSideAccessTokensDeleteClientSideAccessToken.g.cs
+//HintName: G.ClientSideAccessTokensClient.ClientSideAccessTokensDeleteClientSideAccessToken.g.cs
 
 #nullable enable
 
@@ -182,7 +182,7 @@ namespace G
                 PrepareClientSideAccessTokensDeleteClientSideAccessTokenRequest(
                     httpClient: HttpClient,
                     httpRequestMessage: __httpRequest,
-                    token: token!,
+                    token: token,
                     request: request);
 
                 return __httpRequest;
@@ -205,7 +205,7 @@ namespace G
                                 pathTemplate: "$\"/v1/client-side-access-tokens/{token}\"",
                                 httpMethod: "DELETE",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: null,
                                 exception: null,
                                 clientOptions: Options,
@@ -239,7 +239,7 @@ namespace G
                                 pathTemplate: "$\"/v1/client-side-access-tokens/{token}\"",
                                 httpMethod: "DELETE",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: null,
                                 exception: __exception,
                                 clientOptions: Options,
@@ -280,7 +280,7 @@ namespace G
                                 pathTemplate: "$\"/v1/client-side-access-tokens/{token}\"",
                                 httpMethod: "DELETE",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: __response,
                                 exception: null,
                                 clientOptions: Options,
@@ -328,7 +328,7 @@ namespace G
                                 pathTemplate: "$\"/v1/client-side-access-tokens/{token}\"",
                                 httpMethod: "DELETE",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: __response,
                                 exception: null,
                                 clientOptions: Options,
@@ -350,7 +350,7 @@ namespace G
                                 pathTemplate: "$\"/v1/client-side-access-tokens/{token}\"",
                                 httpMethod: "DELETE",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: __response,
                                 exception: null,
                                 clientOptions: Options,

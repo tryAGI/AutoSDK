@@ -1,4 +1,4 @@
-﻿//HintName: G.ArtifactClient.GetFileCatalog.g.cs
+//HintName: G.ArtifactClient.GetFileCatalog.g.cs
 
 #nullable enable
 
@@ -191,8 +191,8 @@ namespace G
                 PrepareGetFileCatalogRequest(
                     httpClient: HttpClient,
                     httpRequestMessage: __httpRequest,
-                    namespaceId: namespaceId!,
-                    catalogId: catalogId!,
+                    namespaceId: namespaceId,
+                    catalogId: catalogId,
                     fileId: fileId,
                     fileUid: fileUid);
 
@@ -216,7 +216,7 @@ namespace G
                                 pathTemplate: "$\"/v1alpha/namespaces/{namespaceId}/catalogs/{catalogId}\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: null,
                                 exception: null,
                                 clientOptions: Options,
@@ -250,7 +250,7 @@ namespace G
                                 pathTemplate: "$\"/v1alpha/namespaces/{namespaceId}/catalogs/{catalogId}\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: null,
                                 exception: __exception,
                                 clientOptions: Options,
@@ -291,7 +291,7 @@ namespace G
                                 pathTemplate: "$\"/v1alpha/namespaces/{namespaceId}/catalogs/{catalogId}\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: __response,
                                 exception: null,
                                 clientOptions: Options,
@@ -339,7 +339,7 @@ namespace G
                                 pathTemplate: "$\"/v1alpha/namespaces/{namespaceId}/catalogs/{catalogId}\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: __response,
                                 exception: null,
                                 clientOptions: Options,
@@ -361,7 +361,7 @@ namespace G
                                 pathTemplate: "$\"/v1alpha/namespaces/{namespaceId}/catalogs/{catalogId}\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: __response,
                                 exception: null,
                                 clientOptions: Options,

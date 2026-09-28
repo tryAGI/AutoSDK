@@ -1,4 +1,4 @@
-﻿//HintName: G.JsonConverters.ProjectScoreCategories.g.cs
+//HintName: G.JsonConverters.ProjectScoreCategories.g.cs
 #nullable enable
 #pragma warning disable CS0618 // Type or member is obsolete
 
@@ -248,25 +248,25 @@ namespace G.JsonConverters
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::System.Collections.Generic.IList<global::G.ProjectScoreCategory>), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::System.Collections.Generic.IList<global::G.ProjectScoreCategory>?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::System.Collections.Generic.IList<global::G.ProjectScoreCategory>).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Categorical!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickCategorical(), typeInfo);
             }
             else if (value.IsWeighted)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::System.Collections.Generic.Dictionary<string, double>), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::System.Collections.Generic.Dictionary<string, double>?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::System.Collections.Generic.Dictionary<string, double>).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Weighted!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickWeighted(), typeInfo);
             }
             else if (value.IsMinimum)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::System.Collections.Generic.IList<string>), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::System.Collections.Generic.IList<string>?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::System.Collections.Generic.IList<string>).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Minimum!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickMinimum(), typeInfo);
             }
             else if (value.IsProjectScoreCategoriesVariant4)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(object), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<object?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(object).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.ProjectScoreCategoriesVariant4!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickProjectScoreCategoriesVariant4(), typeInfo);
             }
         }
     }

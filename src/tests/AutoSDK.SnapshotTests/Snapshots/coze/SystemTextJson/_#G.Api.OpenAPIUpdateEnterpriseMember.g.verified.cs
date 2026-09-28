@@ -1,4 +1,4 @@
-﻿//HintName: G.Api.OpenAPIUpdateEnterpriseMember.g.cs
+//HintName: G.Api.OpenAPIUpdateEnterpriseMember.g.cs
 
 #nullable enable
 
@@ -190,8 +190,8 @@ namespace G
                 PrepareOpenAPIUpdateEnterpriseMemberRequest(
                     httpClient: HttpClient,
                     httpRequestMessage: __httpRequest,
-                    enterpriseId: enterpriseId!,
-                    userId: userId!,
+                    enterpriseId: enterpriseId,
+                    userId: userId,
                     request: request);
 
                 return __httpRequest;
@@ -214,7 +214,7 @@ namespace G
                                 pathTemplate: "$\"/v1/enterprises/{enterpriseId}/members/{userId}\"",
                                 httpMethod: "PUT",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: null,
                                 exception: null,
                                 clientOptions: Options,
@@ -248,7 +248,7 @@ namespace G
                                 pathTemplate: "$\"/v1/enterprises/{enterpriseId}/members/{userId}\"",
                                 httpMethod: "PUT",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: null,
                                 exception: __exception,
                                 clientOptions: Options,
@@ -289,7 +289,7 @@ namespace G
                                 pathTemplate: "$\"/v1/enterprises/{enterpriseId}/members/{userId}\"",
                                 httpMethod: "PUT",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: __response,
                                 exception: null,
                                 clientOptions: Options,
@@ -337,7 +337,7 @@ namespace G
                                 pathTemplate: "$\"/v1/enterprises/{enterpriseId}/members/{userId}\"",
                                 httpMethod: "PUT",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: __response,
                                 exception: null,
                                 clientOptions: Options,
@@ -359,7 +359,7 @@ namespace G
                                 pathTemplate: "$\"/v1/enterprises/{enterpriseId}/members/{userId}\"",
                                 httpMethod: "PUT",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: __response,
                                 exception: null,
                                 clientOptions: Options,

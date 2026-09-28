@@ -1,4 +1,4 @@
-﻿//HintName: G.Models.ChatMessages.g.cs
+//HintName: G.Models.ChatMessages.g.cs
 #pragma warning disable CS0618 // Type or member is obsolete
 
 #nullable enable
@@ -43,8 +43,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.ChatSystemMessage PickChatSystemMessage() => IsChatSystemMessage
-            ? ChatSystemMessage!
+        public global::G.ChatSystemMessage PickChatSystemMessage() => ChatSystemMessage is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'ChatSystemMessage' but the value was {ToString()}.");
 
         /// <summary>
@@ -80,8 +80,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.ChatUserMessage PickChatUserMessage() => IsChatUserMessage
-            ? ChatUserMessage!
+        public global::G.ChatUserMessage PickChatUserMessage() => ChatUserMessage is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'ChatUserMessage' but the value was {ToString()}.");
 
         /// <summary>
@@ -117,8 +117,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.ChatDeveloperMessage PickChatDeveloperMessage() => IsChatDeveloperMessage
-            ? ChatDeveloperMessage!
+        public global::G.ChatDeveloperMessage PickChatDeveloperMessage() => ChatDeveloperMessage is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'ChatDeveloperMessage' but the value was {ToString()}.");
 
         /// <summary>
@@ -154,8 +154,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.ChatAssistantMessage PickChatAssistantMessage() => IsChatAssistantMessage
-            ? ChatAssistantMessage!
+        public global::G.ChatAssistantMessage PickChatAssistantMessage() => ChatAssistantMessage is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'ChatAssistantMessage' but the value was {ToString()}.");
 
         /// <summary>
@@ -191,8 +191,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.ChatToolMessage PickChatToolMessage() => IsChatToolMessage
-            ? ChatToolMessage!
+        public global::G.ChatToolMessage PickChatToolMessage() => ChatToolMessage is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'ChatToolMessage' but the value was {ToString()}.");
         /// <summary>
         /// 
@@ -373,25 +373,25 @@ namespace G
                 Validate();
             }
 
-            if (IsChatSystemMessage && chatSystemMessage != null)
+            if (ChatSystemMessage is { } __value0 && chatSystemMessage != null)
             {
-                return chatSystemMessage(ChatSystemMessage!);
+                return chatSystemMessage(__value0);
             }
-            else if (IsChatUserMessage && chatUserMessage != null)
+            else if (ChatUserMessage is { } __value1 && chatUserMessage != null)
             {
-                return chatUserMessage(ChatUserMessage!);
+                return chatUserMessage(__value1);
             }
-            else if (IsChatDeveloperMessage && chatDeveloperMessage != null)
+            else if (ChatDeveloperMessage is { } __value2 && chatDeveloperMessage != null)
             {
-                return chatDeveloperMessage(ChatDeveloperMessage!);
+                return chatDeveloperMessage(__value2);
             }
-            else if (IsChatAssistantMessage && chatAssistantMessage != null)
+            else if (ChatAssistantMessage is { } __value3 && chatAssistantMessage != null)
             {
-                return chatAssistantMessage(ChatAssistantMessage!);
+                return chatAssistantMessage(__value3);
             }
-            else if (IsChatToolMessage && chatToolMessage != null)
+            else if (ChatToolMessage is { } __value4 && chatToolMessage != null)
             {
-                return chatToolMessage(ChatToolMessage!);
+                return chatToolMessage(__value4);
             }
 
             return default(TResult);
@@ -417,25 +417,25 @@ namespace G
                 Validate();
             }
 
-            if (IsChatSystemMessage)
+            if (ChatSystemMessage is { } __value0)
             {
-                chatSystemMessage?.Invoke(ChatSystemMessage!);
+                chatSystemMessage?.Invoke(__value0);
             }
-            else if (IsChatUserMessage)
+            else if (ChatUserMessage is { } __value1)
             {
-                chatUserMessage?.Invoke(ChatUserMessage!);
+                chatUserMessage?.Invoke(__value1);
             }
-            else if (IsChatDeveloperMessage)
+            else if (ChatDeveloperMessage is { } __value2)
             {
-                chatDeveloperMessage?.Invoke(ChatDeveloperMessage!);
+                chatDeveloperMessage?.Invoke(__value2);
             }
-            else if (IsChatAssistantMessage)
+            else if (ChatAssistantMessage is { } __value3)
             {
-                chatAssistantMessage?.Invoke(ChatAssistantMessage!);
+                chatAssistantMessage?.Invoke(__value3);
             }
-            else if (IsChatToolMessage)
+            else if (ChatToolMessage is { } __value4)
             {
-                chatToolMessage?.Invoke(ChatToolMessage!);
+                chatToolMessage?.Invoke(__value4);
             }
         }
 
@@ -455,25 +455,25 @@ namespace G
                 Validate();
             }
 
-            if (IsChatSystemMessage)
+            if (ChatSystemMessage is { } __value0)
             {
-                chatSystemMessage?.Invoke(ChatSystemMessage!);
+                chatSystemMessage?.Invoke(__value0);
             }
-            else if (IsChatUserMessage)
+            else if (ChatUserMessage is { } __value1)
             {
-                chatUserMessage?.Invoke(ChatUserMessage!);
+                chatUserMessage?.Invoke(__value1);
             }
-            else if (IsChatDeveloperMessage)
+            else if (ChatDeveloperMessage is { } __value2)
             {
-                chatDeveloperMessage?.Invoke(ChatDeveloperMessage!);
+                chatDeveloperMessage?.Invoke(__value2);
             }
-            else if (IsChatAssistantMessage)
+            else if (ChatAssistantMessage is { } __value3)
             {
-                chatAssistantMessage?.Invoke(ChatAssistantMessage!);
+                chatAssistantMessage?.Invoke(__value3);
             }
-            else if (IsChatToolMessage)
+            else if (ChatToolMessage is { } __value4)
             {
-                chatToolMessage?.Invoke(ChatToolMessage!);
+                chatToolMessage?.Invoke(__value4);
             }
         }
 

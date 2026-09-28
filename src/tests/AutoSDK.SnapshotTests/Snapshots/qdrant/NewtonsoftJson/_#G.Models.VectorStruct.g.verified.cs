@@ -43,8 +43,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<float> PickVectorStructVariant1() => IsVectorStructVariant1
-            ? VectorStructVariant1!
+        public global::System.Collections.Generic.IList<float> PickVectorStructVariant1() => VectorStructVariant1 is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'VectorStructVariant1' but the value was {ToString()}.");
 
         /// <summary>
@@ -80,8 +80,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::System.Collections.Generic.IList<float>> PickVectorStructVariant2() => IsVectorStructVariant2
-            ? VectorStructVariant2!
+        public global::System.Collections.Generic.IList<global::System.Collections.Generic.IList<float>> PickVectorStructVariant2() => VectorStructVariant2 is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'VectorStructVariant2' but the value was {ToString()}.");
 
         /// <summary>
@@ -117,8 +117,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.Dictionary<string, global::G.Vector> PickVectorStructVariant3() => IsVectorStructVariant3
-            ? VectorStructVariant3!
+        public global::System.Collections.Generic.Dictionary<string, global::G.Vector> PickVectorStructVariant3() => VectorStructVariant3 is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'VectorStructVariant3' but the value was {ToString()}.");
 
         /// <summary>
@@ -155,8 +155,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.Document PickDocument() => IsDocument
-            ? Document!
+        public global::G.Document PickDocument() => Document is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Document' but the value was {ToString()}.");
 
         /// <summary>
@@ -193,8 +193,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.Image PickImage() => IsImage
-            ? Image!
+        public global::G.Image PickImage() => Image is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Image' but the value was {ToString()}.");
 
         /// <summary>
@@ -231,8 +231,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.InferenceObject PickInferenceObject() => IsInferenceObject
-            ? InferenceObject!
+        public global::G.InferenceObject PickInferenceObject() => InferenceObject is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'InferenceObject' but the value was {ToString()}.");
         /// <summary>
         /// 
@@ -395,29 +395,29 @@ namespace G
                 Validate();
             }
 
-            if (IsVectorStructVariant1 && vectorStructVariant1 != null)
+            if (VectorStructVariant1 is { } __value0 && vectorStructVariant1 != null)
             {
-                return vectorStructVariant1(VectorStructVariant1!);
+                return vectorStructVariant1(__value0);
             }
-            else if (IsVectorStructVariant2 && vectorStructVariant2 != null)
+            else if (VectorStructVariant2 is { } __value1 && vectorStructVariant2 != null)
             {
-                return vectorStructVariant2(VectorStructVariant2!);
+                return vectorStructVariant2(__value1);
             }
-            else if (IsVectorStructVariant3 && vectorStructVariant3 != null)
+            else if (VectorStructVariant3 is { } __value2 && vectorStructVariant3 != null)
             {
-                return vectorStructVariant3(VectorStructVariant3!);
+                return vectorStructVariant3(__value2);
             }
-            else if (IsDocument && document != null)
+            else if (Document is { } __value3 && document != null)
             {
-                return document(Document!);
+                return document(__value3);
             }
-            else if (IsImage && image != null)
+            else if (Image is { } __value4 && image != null)
             {
-                return image(Image!);
+                return image(__value4);
             }
-            else if (IsInferenceObject && inferenceObject != null)
+            else if (InferenceObject is { } __value5 && inferenceObject != null)
             {
-                return inferenceObject(InferenceObject!);
+                return inferenceObject(__value5);
             }
 
             return default(TResult);
@@ -445,29 +445,29 @@ namespace G
                 Validate();
             }
 
-            if (IsVectorStructVariant1)
+            if (VectorStructVariant1 is { } __value0)
             {
-                vectorStructVariant1?.Invoke(VectorStructVariant1!);
+                vectorStructVariant1?.Invoke(__value0);
             }
-            else if (IsVectorStructVariant2)
+            else if (VectorStructVariant2 is { } __value1)
             {
-                vectorStructVariant2?.Invoke(VectorStructVariant2!);
+                vectorStructVariant2?.Invoke(__value1);
             }
-            else if (IsVectorStructVariant3)
+            else if (VectorStructVariant3 is { } __value2)
             {
-                vectorStructVariant3?.Invoke(VectorStructVariant3!);
+                vectorStructVariant3?.Invoke(__value2);
             }
-            else if (IsDocument)
+            else if (Document is { } __value3)
             {
-                document?.Invoke(Document!);
+                document?.Invoke(__value3);
             }
-            else if (IsImage)
+            else if (Image is { } __value4)
             {
-                image?.Invoke(Image!);
+                image?.Invoke(__value4);
             }
-            else if (IsInferenceObject)
+            else if (InferenceObject is { } __value5)
             {
-                inferenceObject?.Invoke(InferenceObject!);
+                inferenceObject?.Invoke(__value5);
             }
         }
 
@@ -488,29 +488,29 @@ namespace G
                 Validate();
             }
 
-            if (IsVectorStructVariant1)
+            if (VectorStructVariant1 is { } __value0)
             {
-                vectorStructVariant1?.Invoke(VectorStructVariant1!);
+                vectorStructVariant1?.Invoke(__value0);
             }
-            else if (IsVectorStructVariant2)
+            else if (VectorStructVariant2 is { } __value1)
             {
-                vectorStructVariant2?.Invoke(VectorStructVariant2!);
+                vectorStructVariant2?.Invoke(__value1);
             }
-            else if (IsVectorStructVariant3)
+            else if (VectorStructVariant3 is { } __value2)
             {
-                vectorStructVariant3?.Invoke(VectorStructVariant3!);
+                vectorStructVariant3?.Invoke(__value2);
             }
-            else if (IsDocument)
+            else if (Document is { } __value3)
             {
-                document?.Invoke(Document!);
+                document?.Invoke(__value3);
             }
-            else if (IsImage)
+            else if (Image is { } __value4)
             {
-                image?.Invoke(Image!);
+                image?.Invoke(__value4);
             }
-            else if (IsInferenceObject)
+            else if (InferenceObject is { } __value5)
             {
-                inferenceObject?.Invoke(InferenceObject!);
+                inferenceObject?.Invoke(__value5);
             }
         }
 

@@ -1,4 +1,4 @@
-﻿//HintName: G.JsonConverters.LocalizeDialect.g.cs
+//HintName: G.JsonConverters.LocalizeDialect.g.cs
 #nullable enable
 #pragma warning disable CS0618 // Type or member is obsolete
 
@@ -248,25 +248,25 @@ namespace G.JsonConverters
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.LocalizeEnglishDialect), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.LocalizeEnglishDialect> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.LocalizeEnglishDialect).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.LocalizeEnglishDialect!.Value, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickLocalizeEnglishDialect(), typeInfo);
             }
             else if (value.IsLocalizeSpanishDialect)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.LocalizeSpanishDialect), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.LocalizeSpanishDialect> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.LocalizeSpanishDialect).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.LocalizeSpanishDialect!.Value, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickLocalizeSpanishDialect(), typeInfo);
             }
             else if (value.IsLocalizePortugueseDialect)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.LocalizePortugueseDialect), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.LocalizePortugueseDialect> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.LocalizePortugueseDialect).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.LocalizePortugueseDialect!.Value, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickLocalizePortugueseDialect(), typeInfo);
             }
             else if (value.IsLocalizeFrenchDialect)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.LocalizeFrenchDialect), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.LocalizeFrenchDialect> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.LocalizeFrenchDialect).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.LocalizeFrenchDialect!.Value, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickLocalizeFrenchDialect(), typeInfo);
             }
         }
     }

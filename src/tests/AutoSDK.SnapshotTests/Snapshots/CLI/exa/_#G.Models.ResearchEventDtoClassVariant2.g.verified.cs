@@ -1,4 +1,4 @@
-﻿//HintName: G.Models.ResearchEventDtoClassVariant2.g.cs
+//HintName: G.Models.ResearchEventDtoClassVariant2.g.cs
 #pragma warning disable CS0618 // Type or member is obsolete
 
 #nullable enable
@@ -48,8 +48,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.ResearchEventDtoClassVariant2Variant1 PickPlanDefinition() => IsPlanDefinition
-            ? PlanDefinition!
+        public global::G.ResearchEventDtoClassVariant2Variant1 PickPlanDefinition() => PlanDefinition is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'PlanDefinition' but the value was {ToString()}.");
 
         /// <summary>
@@ -85,8 +85,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.ResearchEventDtoClassVariant2Variant2 PickPlanOperation() => IsPlanOperation
-            ? PlanOperation!
+        public global::G.ResearchEventDtoClassVariant2Variant2 PickPlanOperation() => PlanOperation is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'PlanOperation' but the value was {ToString()}.");
 
         /// <summary>
@@ -122,8 +122,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.ResearchEventDtoClassVariant2Variant3 PickPlanOutput() => IsPlanOutput
-            ? PlanOutput!
+        public global::G.ResearchEventDtoClassVariant2Variant3 PickPlanOutput() => PlanOutput is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'PlanOutput' but the value was {ToString()}.");
         /// <summary>
         /// 
@@ -251,17 +251,17 @@ namespace G
                 Validate();
             }
 
-            if (IsPlanDefinition && planDefinition != null)
+            if (PlanDefinition is { } __value0 && planDefinition != null)
             {
-                return planDefinition(PlanDefinition!);
+                return planDefinition(__value0);
             }
-            else if (IsPlanOperation && planOperation != null)
+            else if (PlanOperation is { } __value1 && planOperation != null)
             {
-                return planOperation(PlanOperation!);
+                return planOperation(__value1);
             }
-            else if (IsPlanOutput && planOutput != null)
+            else if (PlanOutput is { } __value2 && planOutput != null)
             {
-                return planOutput(PlanOutput!);
+                return planOutput(__value2);
             }
 
             return default(TResult);
@@ -283,17 +283,17 @@ namespace G
                 Validate();
             }
 
-            if (IsPlanDefinition)
+            if (PlanDefinition is { } __value0)
             {
-                planDefinition?.Invoke(PlanDefinition!);
+                planDefinition?.Invoke(__value0);
             }
-            else if (IsPlanOperation)
+            else if (PlanOperation is { } __value1)
             {
-                planOperation?.Invoke(PlanOperation!);
+                planOperation?.Invoke(__value1);
             }
-            else if (IsPlanOutput)
+            else if (PlanOutput is { } __value2)
             {
-                planOutput?.Invoke(PlanOutput!);
+                planOutput?.Invoke(__value2);
             }
         }
 
@@ -311,17 +311,17 @@ namespace G
                 Validate();
             }
 
-            if (IsPlanDefinition)
+            if (PlanDefinition is { } __value0)
             {
-                planDefinition?.Invoke(PlanDefinition!);
+                planDefinition?.Invoke(__value0);
             }
-            else if (IsPlanOperation)
+            else if (PlanOperation is { } __value1)
             {
-                planOperation?.Invoke(PlanOperation!);
+                planOperation?.Invoke(__value1);
             }
-            else if (IsPlanOutput)
+            else if (PlanOutput is { } __value2)
             {
-                planOutput?.Invoke(PlanOutput!);
+                planOutput?.Invoke(__value2);
             }
         }
 

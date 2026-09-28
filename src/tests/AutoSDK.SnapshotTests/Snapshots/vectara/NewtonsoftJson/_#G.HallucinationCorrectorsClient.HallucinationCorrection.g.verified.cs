@@ -1,4 +1,4 @@
-﻿//HintName: G.HallucinationCorrectorsClient.HallucinationCorrection.g.cs
+//HintName: G.HallucinationCorrectorsClient.HallucinationCorrection.g.cs
 
 #nullable enable
 
@@ -235,7 +235,7 @@ namespace G
                                 pathTemplate: "\"/v2/hallucination_correctors/correct_hallucinations\"",
                                 httpMethod: "POST",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: null,
                                 exception: null,
                                 clientOptions: Options,
@@ -272,7 +272,7 @@ namespace G
                                 pathTemplate: "\"/v2/hallucination_correctors/correct_hallucinations\"",
                                 httpMethod: "POST",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: null,
                                 exception: __exception,
                                 clientOptions: Options,
@@ -313,7 +313,7 @@ namespace G
                                 pathTemplate: "\"/v2/hallucination_correctors/correct_hallucinations\"",
                                 httpMethod: "POST",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: __response,
                                 exception: null,
                                 clientOptions: Options,
@@ -361,7 +361,7 @@ namespace G
                                 pathTemplate: "\"/v2/hallucination_correctors/correct_hallucinations\"",
                                 httpMethod: "POST",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: __response,
                                 exception: null,
                                 clientOptions: Options,
@@ -383,7 +383,7 @@ namespace G
                                 pathTemplate: "\"/v2/hallucination_correctors/correct_hallucinations\"",
                                 httpMethod: "POST",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: __response,
                                 exception: null,
                                 clientOptions: Options,

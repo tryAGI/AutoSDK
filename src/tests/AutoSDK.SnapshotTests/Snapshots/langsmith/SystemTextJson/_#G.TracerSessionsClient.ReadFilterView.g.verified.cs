@@ -1,4 +1,4 @@
-﻿//HintName: G.TracerSessionsClient.ReadFilterView.g.cs
+//HintName: G.TracerSessionsClient.ReadFilterView.g.cs
 
 #nullable enable
 
@@ -188,8 +188,8 @@ namespace G
                 PrepareReadFilterViewRequest(
                     httpClient: HttpClient,
                     httpRequestMessage: __httpRequest,
-                    sessionId: sessionId!,
-                    viewId: viewId!);
+                    sessionId: sessionId,
+                    viewId: viewId);
 
                 global::G.AutoSDKHttpRequestOptions.StampAuthorizationOverride(__httpRequest);
 
@@ -213,7 +213,7 @@ namespace G
                                 pathTemplate: "$\"/api/v1/sessions/{sessionId}/views/{viewId}\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: null,
                                 exception: null,
                                 clientOptions: Options,
@@ -247,7 +247,7 @@ namespace G
                                 pathTemplate: "$\"/api/v1/sessions/{sessionId}/views/{viewId}\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: null,
                                 exception: __exception,
                                 clientOptions: Options,
@@ -288,7 +288,7 @@ namespace G
                                 pathTemplate: "$\"/api/v1/sessions/{sessionId}/views/{viewId}\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: __response,
                                 exception: null,
                                 clientOptions: Options,
@@ -336,7 +336,7 @@ namespace G
                                 pathTemplate: "$\"/api/v1/sessions/{sessionId}/views/{viewId}\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: __response,
                                 exception: null,
                                 clientOptions: Options,
@@ -358,7 +358,7 @@ namespace G
                                 pathTemplate: "$\"/api/v1/sessions/{sessionId}/views/{viewId}\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: __response,
                                 exception: null,
                                 clientOptions: Options,

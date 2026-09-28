@@ -1,4 +1,4 @@
-﻿//HintName: G.JsonConverters.ResultProviderMetricsString.g.cs
+//HintName: G.JsonConverters.ResultProviderMetricsString.g.cs
 #nullable enable
 #pragma warning disable CS0618 // Type or member is obsolete
 
@@ -140,13 +140,13 @@ namespace G.JsonConverters
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.ResultSuccessProviderMetrics), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.ResultSuccessProviderMetrics?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.ResultSuccessProviderMetrics).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Success!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickSuccess(), typeInfo);
             }
             else if (value.IsError)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.ResultErrorString), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.ResultErrorString?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.ResultErrorString).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Error!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickError(), typeInfo);
             }
         }
     }

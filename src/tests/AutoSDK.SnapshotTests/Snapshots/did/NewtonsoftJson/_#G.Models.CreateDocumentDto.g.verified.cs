@@ -1,4 +1,4 @@
-﻿//HintName: G.Models.CreateDocumentDto.g.cs
+//HintName: G.Models.CreateDocumentDto.g.cs
 #pragma warning disable CS0618 // Type or member is obsolete
 
 #nullable enable
@@ -43,8 +43,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.CreateDocumentDtoVariant1 PickCreateDocumentDtoVariant1() => IsCreateDocumentDtoVariant1
-            ? CreateDocumentDtoVariant1!
+        public global::G.CreateDocumentDtoVariant1 PickCreateDocumentDtoVariant1() => CreateDocumentDtoVariant1 is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'CreateDocumentDtoVariant1' but the value was {ToString()}.");
 
         /// <summary>
@@ -80,8 +80,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.CreateDocumentDtoVariant2 PickCreateDocumentDtoVariant2() => IsCreateDocumentDtoVariant2
-            ? CreateDocumentDtoVariant2!
+        public global::G.CreateDocumentDtoVariant2 PickCreateDocumentDtoVariant2() => CreateDocumentDtoVariant2 is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'CreateDocumentDtoVariant2' but the value was {ToString()}.");
         /// <summary>
         /// 
@@ -178,13 +178,13 @@ namespace G
                 Validate();
             }
 
-            if (IsCreateDocumentDtoVariant1 && createDocumentDtoVariant1 != null)
+            if (CreateDocumentDtoVariant1 is { } __value0 && createDocumentDtoVariant1 != null)
             {
-                return createDocumentDtoVariant1(CreateDocumentDtoVariant1!);
+                return createDocumentDtoVariant1(__value0);
             }
-            else if (IsCreateDocumentDtoVariant2 && createDocumentDtoVariant2 != null)
+            else if (CreateDocumentDtoVariant2 is { } __value1 && createDocumentDtoVariant2 != null)
             {
-                return createDocumentDtoVariant2(CreateDocumentDtoVariant2!);
+                return createDocumentDtoVariant2(__value1);
             }
 
             return default(TResult);
@@ -204,13 +204,13 @@ namespace G
                 Validate();
             }
 
-            if (IsCreateDocumentDtoVariant1)
+            if (CreateDocumentDtoVariant1 is { } __value0)
             {
-                createDocumentDtoVariant1?.Invoke(CreateDocumentDtoVariant1!);
+                createDocumentDtoVariant1?.Invoke(__value0);
             }
-            else if (IsCreateDocumentDtoVariant2)
+            else if (CreateDocumentDtoVariant2 is { } __value1)
             {
-                createDocumentDtoVariant2?.Invoke(CreateDocumentDtoVariant2!);
+                createDocumentDtoVariant2?.Invoke(__value1);
             }
         }
 
@@ -227,13 +227,13 @@ namespace G
                 Validate();
             }
 
-            if (IsCreateDocumentDtoVariant1)
+            if (CreateDocumentDtoVariant1 is { } __value0)
             {
-                createDocumentDtoVariant1?.Invoke(CreateDocumentDtoVariant1!);
+                createDocumentDtoVariant1?.Invoke(__value0);
             }
-            else if (IsCreateDocumentDtoVariant2)
+            else if (CreateDocumentDtoVariant2 is { } __value1)
             {
-                createDocumentDtoVariant2?.Invoke(CreateDocumentDtoVariant2!);
+                createDocumentDtoVariant2?.Invoke(__value1);
             }
         }
 

@@ -1,4 +1,4 @@
-﻿//HintName: G.Models.ChatToolCallsChunkEvent.g.cs
+//HintName: G.Models.ChatToolCallsChunkEvent.g.cs
 #pragma warning disable CS0618 // Type or member is obsolete
 
 #nullable enable
@@ -43,8 +43,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.ChatStreamEvent PickStream() => IsStream
-            ? Stream!
+        public global::G.ChatStreamEvent PickStream() => Stream is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Stream' but the value was {ToString()}.");
 
         /// <summary>
@@ -80,8 +80,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.ChatToolCallsChunkEventT7lliu PickT7lliu() => IsT7lliu
-            ? T7lliu!
+        public global::G.ChatToolCallsChunkEventT7lliu PickT7lliu() => T7lliu is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'T7lliu' but the value was {ToString()}.");
         /// <summary>
         /// 
@@ -178,13 +178,13 @@ namespace G
                 Validate();
             }
 
-            if (IsStream && stream != null)
+            if (Stream is { } __value0 && stream != null)
             {
-                return stream(Stream!);
+                return stream(__value0);
             }
-            else if (IsT7lliu && t7lliu != null)
+            else if (T7lliu is { } __value1 && t7lliu != null)
             {
-                return t7lliu(T7lliu!);
+                return t7lliu(__value1);
             }
 
             return default(TResult);
@@ -204,13 +204,13 @@ namespace G
                 Validate();
             }
 
-            if (IsStream)
+            if (Stream is { } __value0)
             {
-                stream?.Invoke(Stream!);
+                stream?.Invoke(__value0);
             }
-            else if (IsT7lliu)
+            else if (T7lliu is { } __value1)
             {
-                t7lliu?.Invoke(T7lliu!);
+                t7lliu?.Invoke(__value1);
             }
         }
 
@@ -227,13 +227,13 @@ namespace G
                 Validate();
             }
 
-            if (IsStream)
+            if (Stream is { } __value0)
             {
-                stream?.Invoke(Stream!);
+                stream?.Invoke(__value0);
             }
-            else if (IsT7lliu)
+            else if (T7lliu is { } __value1)
             {
-                t7lliu?.Invoke(T7lliu!);
+                t7lliu?.Invoke(__value1);
             }
         }
 

@@ -1,4 +1,4 @@
-﻿//HintName: G.JsonConverters.ChatMessageWithPlaceholders.g.cs
+//HintName: G.JsonConverters.ChatMessageWithPlaceholders.g.cs
 #nullable enable
 #pragma warning disable CS0618 // Type or member is obsolete
 
@@ -132,13 +132,13 @@ namespace G.JsonConverters
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.ChatMessage), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.ChatMessage?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.ChatMessage).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.ChatMessage!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickChatMessage(), typeInfo);
             }
             else if (value.IsPlaceholderMessage)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.PlaceholderMessage), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.PlaceholderMessage?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.PlaceholderMessage).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PlaceholderMessage!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickPlaceholderMessage(), typeInfo);
             }
         }
     }

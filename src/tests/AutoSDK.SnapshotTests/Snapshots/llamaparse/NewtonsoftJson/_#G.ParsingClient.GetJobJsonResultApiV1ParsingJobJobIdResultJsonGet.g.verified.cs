@@ -1,4 +1,4 @@
-﻿//HintName: G.ParsingClient.GetJobJsonResultApiV1ParsingJobJobIdResultJsonGet.g.cs
+//HintName: G.ParsingClient.GetJobJsonResultApiV1ParsingJobJobIdResultJsonGet.g.cs
 
 #nullable enable
 
@@ -192,7 +192,7 @@ namespace G
                 PrepareGetJobJsonResultApiV1ParsingJobJobIdResultJsonGetRequest(
                     httpClient: HttpClient,
                     httpRequestMessage: __httpRequest,
-                    jobId: jobId!,
+                    jobId: jobId,
                     organizationId: organizationId,
                     projectId: projectId,
                     session: session);
@@ -219,7 +219,7 @@ namespace G
                                 pathTemplate: "$\"/api/v1/parsing/job/{jobId}/result/json\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: null,
                                 exception: null,
                                 clientOptions: Options,
@@ -253,7 +253,7 @@ namespace G
                                 pathTemplate: "$\"/api/v1/parsing/job/{jobId}/result/json\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: null,
                                 exception: __exception,
                                 clientOptions: Options,
@@ -294,7 +294,7 @@ namespace G
                                 pathTemplate: "$\"/api/v1/parsing/job/{jobId}/result/json\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: __response,
                                 exception: null,
                                 clientOptions: Options,
@@ -342,7 +342,7 @@ namespace G
                                 pathTemplate: "$\"/api/v1/parsing/job/{jobId}/result/json\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: __response,
                                 exception: null,
                                 clientOptions: Options,
@@ -364,7 +364,7 @@ namespace G
                                 pathTemplate: "$\"/api/v1/parsing/job/{jobId}/result/json\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: __response,
                                 exception: null,
                                 clientOptions: Options,

@@ -1,4 +1,4 @@
-﻿//HintName: G.GistsClient.GistsGetRevision.g.cs
+//HintName: G.GistsClient.GistsGetRevision.g.cs
 
 #nullable enable
 
@@ -119,8 +119,8 @@ namespace G
                 PrepareGistsGetRevisionRequest(
                     httpClient: HttpClient,
                     httpRequestMessage: __httpRequest,
-                    gistId: gistId!,
-                    sha: sha!);
+                    gistId: gistId,
+                    sha: sha);
 
                 return __httpRequest;
             }
@@ -142,7 +142,7 @@ namespace G
                                 pathTemplate: "$\"/gists/{gistId}/{sha}\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: null,
                                 exception: null,
                                 clientOptions: Options,
@@ -176,7 +176,7 @@ namespace G
                                 pathTemplate: "$\"/gists/{gistId}/{sha}\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: null,
                                 exception: __exception,
                                 clientOptions: Options,
@@ -217,7 +217,7 @@ namespace G
                                 pathTemplate: "$\"/gists/{gistId}/{sha}\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: __response,
                                 exception: null,
                                 clientOptions: Options,
@@ -265,7 +265,7 @@ namespace G
                                 pathTemplate: "$\"/gists/{gistId}/{sha}\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: __response,
                                 exception: null,
                                 clientOptions: Options,
@@ -287,7 +287,7 @@ namespace G
                                 pathTemplate: "$\"/gists/{gistId}/{sha}\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: __response,
                                 exception: null,
                                 clientOptions: Options,

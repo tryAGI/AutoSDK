@@ -1,4 +1,4 @@
-﻿//HintName: G.Models.JsonListStringWrite.g.cs
+//HintName: G.Models.JsonListStringWrite.g.cs
 #pragma warning disable CS0618 // Type or member is obsolete
 
 #nullable enable
@@ -43,8 +43,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public object PickJsonListStringWriteVariant1() => IsJsonListStringWriteVariant1
-            ? JsonListStringWriteVariant1!
+        public object PickJsonListStringWriteVariant1() => JsonListStringWriteVariant1 is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'JsonListStringWriteVariant1' but the value was {ToString()}.");
 
         /// <summary>
@@ -80,8 +80,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<object> PickJsonListStringWriteVariant2() => IsJsonListStringWriteVariant2
-            ? JsonListStringWriteVariant2!
+        public global::System.Collections.Generic.IList<object> PickJsonListStringWriteVariant2() => JsonListStringWriteVariant2 is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'JsonListStringWriteVariant2' but the value was {ToString()}.");
 
         /// <summary>
@@ -117,8 +117,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public string PickJsonListStringWriteVariant3() => IsJsonListStringWriteVariant3
-            ? JsonListStringWriteVariant3!
+        public string PickJsonListStringWriteVariant3() => JsonListStringWriteVariant3 is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'JsonListStringWriteVariant3' but the value was {ToString()}.");
         /// <summary>
         /// 
@@ -197,17 +197,17 @@ namespace G
                 Validate();
             }
 
-            if (IsJsonListStringWriteVariant1 && jsonListStringWriteVariant1 != null)
+            if (JsonListStringWriteVariant1 is { } __value0 && jsonListStringWriteVariant1 != null)
             {
-                return jsonListStringWriteVariant1(JsonListStringWriteVariant1!);
+                return jsonListStringWriteVariant1(__value0);
             }
-            else if (IsJsonListStringWriteVariant2 && jsonListStringWriteVariant2 != null)
+            else if (JsonListStringWriteVariant2 is { } __value1 && jsonListStringWriteVariant2 != null)
             {
-                return jsonListStringWriteVariant2(JsonListStringWriteVariant2!);
+                return jsonListStringWriteVariant2(__value1);
             }
-            else if (IsJsonListStringWriteVariant3 && jsonListStringWriteVariant3 != null)
+            else if (JsonListStringWriteVariant3 is { } __value2 && jsonListStringWriteVariant3 != null)
             {
-                return jsonListStringWriteVariant3(JsonListStringWriteVariant3!);
+                return jsonListStringWriteVariant3(__value2);
             }
 
             return default(TResult);
@@ -229,17 +229,17 @@ namespace G
                 Validate();
             }
 
-            if (IsJsonListStringWriteVariant1)
+            if (JsonListStringWriteVariant1 is { } __value0)
             {
-                jsonListStringWriteVariant1?.Invoke(JsonListStringWriteVariant1!);
+                jsonListStringWriteVariant1?.Invoke(__value0);
             }
-            else if (IsJsonListStringWriteVariant2)
+            else if (JsonListStringWriteVariant2 is { } __value1)
             {
-                jsonListStringWriteVariant2?.Invoke(JsonListStringWriteVariant2!);
+                jsonListStringWriteVariant2?.Invoke(__value1);
             }
-            else if (IsJsonListStringWriteVariant3)
+            else if (JsonListStringWriteVariant3 is { } __value2)
             {
-                jsonListStringWriteVariant3?.Invoke(JsonListStringWriteVariant3!);
+                jsonListStringWriteVariant3?.Invoke(__value2);
             }
         }
 
@@ -257,17 +257,17 @@ namespace G
                 Validate();
             }
 
-            if (IsJsonListStringWriteVariant1)
+            if (JsonListStringWriteVariant1 is { } __value0)
             {
-                jsonListStringWriteVariant1?.Invoke(JsonListStringWriteVariant1!);
+                jsonListStringWriteVariant1?.Invoke(__value0);
             }
-            else if (IsJsonListStringWriteVariant2)
+            else if (JsonListStringWriteVariant2 is { } __value1)
             {
-                jsonListStringWriteVariant2?.Invoke(JsonListStringWriteVariant2!);
+                jsonListStringWriteVariant2?.Invoke(__value1);
             }
-            else if (IsJsonListStringWriteVariant3)
+            else if (JsonListStringWriteVariant3 is { } __value2)
             {
-                jsonListStringWriteVariant3?.Invoke(JsonListStringWriteVariant3!);
+                jsonListStringWriteVariant3?.Invoke(__value2);
             }
         }
 

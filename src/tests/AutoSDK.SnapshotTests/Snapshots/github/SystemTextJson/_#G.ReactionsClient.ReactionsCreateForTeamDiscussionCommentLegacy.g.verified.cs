@@ -1,4 +1,4 @@
-﻿//HintName: G.ReactionsClient.ReactionsCreateForTeamDiscussionCommentLegacy.g.cs
+//HintName: G.ReactionsClient.ReactionsCreateForTeamDiscussionCommentLegacy.g.cs
 
 #nullable enable
 
@@ -150,9 +150,9 @@ namespace G
                 PrepareReactionsCreateForTeamDiscussionCommentLegacyRequest(
                     httpClient: HttpClient,
                     httpRequestMessage: __httpRequest,
-                    teamId: teamId!,
-                    discussionNumber: discussionNumber!,
-                    commentNumber: commentNumber!,
+                    teamId: teamId,
+                    discussionNumber: discussionNumber,
+                    commentNumber: commentNumber,
                     request: request);
 
                 return __httpRequest;
@@ -175,7 +175,7 @@ namespace G
                                 pathTemplate: "$\"/teams/{teamId}/discussions/{discussionNumber}/comments/{commentNumber}/reactions\"",
                                 httpMethod: "POST",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: null,
                                 exception: null,
                                 clientOptions: Options,
@@ -209,7 +209,7 @@ namespace G
                                 pathTemplate: "$\"/teams/{teamId}/discussions/{discussionNumber}/comments/{commentNumber}/reactions\"",
                                 httpMethod: "POST",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: null,
                                 exception: __exception,
                                 clientOptions: Options,
@@ -250,7 +250,7 @@ namespace G
                                 pathTemplate: "$\"/teams/{teamId}/discussions/{discussionNumber}/comments/{commentNumber}/reactions\"",
                                 httpMethod: "POST",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: __response,
                                 exception: null,
                                 clientOptions: Options,
@@ -298,7 +298,7 @@ namespace G
                                 pathTemplate: "$\"/teams/{teamId}/discussions/{discussionNumber}/comments/{commentNumber}/reactions\"",
                                 httpMethod: "POST",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: __response,
                                 exception: null,
                                 clientOptions: Options,
@@ -320,7 +320,7 @@ namespace G
                                 pathTemplate: "$\"/teams/{teamId}/discussions/{discussionNumber}/comments/{commentNumber}/reactions\"",
                                 httpMethod: "POST",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: __response,
                                 exception: null,
                                 clientOptions: Options,

@@ -1,4 +1,4 @@
-﻿//HintName: G.Models.TextToSpeechProviders.g.cs
+//HintName: G.Models.TextToSpeechProviders.g.cs
 #pragma warning disable CS0618 // Type or member is obsolete
 
 #nullable enable
@@ -43,8 +43,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.TextToSpeechProvidersMicrosoft PickMicrosoft() => IsMicrosoft
-            ? Microsoft!
+        public global::G.TextToSpeechProvidersMicrosoft PickMicrosoft() => Microsoft is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Microsoft' but the value was {ToString()}.");
 
         /// <summary>
@@ -80,8 +80,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.TextToSpeechProvidersElevenLabs PickElevenLabs() => IsElevenLabs
-            ? ElevenLabs!
+        public global::G.TextToSpeechProvidersElevenLabs PickElevenLabs() => ElevenLabs is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'ElevenLabs' but the value was {ToString()}.");
 
         /// <summary>
@@ -117,8 +117,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.TextToSpeechProvidersAmazon PickAmazon() => IsAmazon
-            ? Amazon!
+        public global::G.TextToSpeechProvidersAmazon PickAmazon() => Amazon is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Amazon' but the value was {ToString()}.");
 
         /// <summary>
@@ -154,8 +154,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.TextToSpeechProvidersGoogle PickGoogle() => IsGoogle
-            ? Google!
+        public global::G.TextToSpeechProvidersGoogle PickGoogle() => Google is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Google' but the value was {ToString()}.");
 
         /// <summary>
@@ -191,8 +191,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.TextToSpeechProvidersOpenAI PickOpenAI() => IsOpenAI
-            ? OpenAI!
+        public global::G.TextToSpeechProvidersOpenAI PickOpenAI() => OpenAI is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'OpenAI' but the value was {ToString()}.");
         /// <summary>
         /// 
@@ -373,25 +373,25 @@ namespace G
                 Validate();
             }
 
-            if (IsMicrosoft && microsoft != null)
+            if (Microsoft is { } __value0 && microsoft != null)
             {
-                return microsoft(Microsoft!);
+                return microsoft(__value0);
             }
-            else if (IsElevenLabs && elevenLabs != null)
+            else if (ElevenLabs is { } __value1 && elevenLabs != null)
             {
-                return elevenLabs(ElevenLabs!);
+                return elevenLabs(__value1);
             }
-            else if (IsAmazon && amazon != null)
+            else if (Amazon is { } __value2 && amazon != null)
             {
-                return amazon(Amazon!);
+                return amazon(__value2);
             }
-            else if (IsGoogle && google != null)
+            else if (Google is { } __value3 && google != null)
             {
-                return google(Google!);
+                return google(__value3);
             }
-            else if (IsOpenAI && openAI != null)
+            else if (OpenAI is { } __value4 && openAI != null)
             {
-                return openAI(OpenAI!);
+                return openAI(__value4);
             }
 
             return default(TResult);
@@ -417,25 +417,25 @@ namespace G
                 Validate();
             }
 
-            if (IsMicrosoft)
+            if (Microsoft is { } __value0)
             {
-                microsoft?.Invoke(Microsoft!);
+                microsoft?.Invoke(__value0);
             }
-            else if (IsElevenLabs)
+            else if (ElevenLabs is { } __value1)
             {
-                elevenLabs?.Invoke(ElevenLabs!);
+                elevenLabs?.Invoke(__value1);
             }
-            else if (IsAmazon)
+            else if (Amazon is { } __value2)
             {
-                amazon?.Invoke(Amazon!);
+                amazon?.Invoke(__value2);
             }
-            else if (IsGoogle)
+            else if (Google is { } __value3)
             {
-                google?.Invoke(Google!);
+                google?.Invoke(__value3);
             }
-            else if (IsOpenAI)
+            else if (OpenAI is { } __value4)
             {
-                openAI?.Invoke(OpenAI!);
+                openAI?.Invoke(__value4);
             }
         }
 
@@ -455,25 +455,25 @@ namespace G
                 Validate();
             }
 
-            if (IsMicrosoft)
+            if (Microsoft is { } __value0)
             {
-                microsoft?.Invoke(Microsoft!);
+                microsoft?.Invoke(__value0);
             }
-            else if (IsElevenLabs)
+            else if (ElevenLabs is { } __value1)
             {
-                elevenLabs?.Invoke(ElevenLabs!);
+                elevenLabs?.Invoke(__value1);
             }
-            else if (IsAmazon)
+            else if (Amazon is { } __value2)
             {
-                amazon?.Invoke(Amazon!);
+                amazon?.Invoke(__value2);
             }
-            else if (IsGoogle)
+            else if (Google is { } __value3)
             {
-                google?.Invoke(Google!);
+                google?.Invoke(__value3);
             }
-            else if (IsOpenAI)
+            else if (OpenAI is { } __value4)
             {
-                openAI?.Invoke(OpenAI!);
+                openAI?.Invoke(__value4);
             }
         }
 

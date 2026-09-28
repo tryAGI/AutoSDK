@@ -1,4 +1,4 @@
-﻿//HintName: G.DocumentsClient.Update.g.cs
+//HintName: G.DocumentsClient.Update.g.cs
 
 #nullable enable
 
@@ -225,8 +225,8 @@ namespace G
                     httpRequestMessage: __httpRequest,
                     requestTimeout: requestTimeout,
                     requestTimeoutMillis: requestTimeoutMillis,
-                    corpusKey: corpusKey!,
-                    documentId: documentId!,
+                    corpusKey: corpusKey,
+                    documentId: documentId,
                     request: request);
 
                 return __httpRequest;
@@ -249,7 +249,7 @@ namespace G
                                 pathTemplate: "$\"/v2/corpora/{corpusKey}/documents/{documentId}\"",
                                 httpMethod: "PATCH",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: null,
                                 exception: null,
                                 clientOptions: Options,
@@ -286,7 +286,7 @@ namespace G
                                 pathTemplate: "$\"/v2/corpora/{corpusKey}/documents/{documentId}\"",
                                 httpMethod: "PATCH",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: null,
                                 exception: __exception,
                                 clientOptions: Options,
@@ -327,7 +327,7 @@ namespace G
                                 pathTemplate: "$\"/v2/corpora/{corpusKey}/documents/{documentId}\"",
                                 httpMethod: "PATCH",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: __response,
                                 exception: null,
                                 clientOptions: Options,
@@ -375,7 +375,7 @@ namespace G
                                 pathTemplate: "$\"/v2/corpora/{corpusKey}/documents/{documentId}\"",
                                 httpMethod: "PATCH",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: __response,
                                 exception: null,
                                 clientOptions: Options,
@@ -397,7 +397,7 @@ namespace G
                                 pathTemplate: "$\"/v2/corpora/{corpusKey}/documents/{documentId}\"",
                                 httpMethod: "PATCH",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: __response,
                                 exception: null,
                                 clientOptions: Options,

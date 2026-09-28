@@ -1,4 +1,4 @@
-﻿//HintName: G.PackagesClient.PackagesDeletePackageVersionForOrg.g.cs
+//HintName: G.PackagesClient.PackagesDeletePackageVersionForOrg.g.cs
 
 #nullable enable
 
@@ -136,10 +136,10 @@ namespace G
                 PreparePackagesDeletePackageVersionForOrgRequest(
                     httpClient: HttpClient,
                     httpRequestMessage: __httpRequest,
-                    packageType: packageType!,
-                    packageName: packageName!,
-                    org: org!,
-                    packageVersionId: packageVersionId!);
+                    packageType: packageType,
+                    packageName: packageName,
+                    org: org,
+                    packageVersionId: packageVersionId);
 
                 return __httpRequest;
             }
@@ -161,7 +161,7 @@ namespace G
                                 pathTemplate: "$\"/orgs/{org}/packages/{(global::System.Uri.EscapeDataString(packageType.ToValueString()))}/{packageName}/versions/{packageVersionId}\"",
                                 httpMethod: "DELETE",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: null,
                                 exception: null,
                                 clientOptions: Options,
@@ -195,7 +195,7 @@ namespace G
                                 pathTemplate: "$\"/orgs/{org}/packages/{(global::System.Uri.EscapeDataString(packageType.ToValueString()))}/{packageName}/versions/{packageVersionId}\"",
                                 httpMethod: "DELETE",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: null,
                                 exception: __exception,
                                 clientOptions: Options,
@@ -236,7 +236,7 @@ namespace G
                                 pathTemplate: "$\"/orgs/{org}/packages/{(global::System.Uri.EscapeDataString(packageType.ToValueString()))}/{packageName}/versions/{packageVersionId}\"",
                                 httpMethod: "DELETE",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: __response,
                                 exception: null,
                                 clientOptions: Options,
@@ -284,7 +284,7 @@ namespace G
                                 pathTemplate: "$\"/orgs/{org}/packages/{(global::System.Uri.EscapeDataString(packageType.ToValueString()))}/{packageName}/versions/{packageVersionId}\"",
                                 httpMethod: "DELETE",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: __response,
                                 exception: null,
                                 clientOptions: Options,
@@ -306,7 +306,7 @@ namespace G
                                 pathTemplate: "$\"/orgs/{org}/packages/{(global::System.Uri.EscapeDataString(packageType.ToValueString()))}/{packageName}/versions/{packageVersionId}\"",
                                 httpMethod: "DELETE",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: __response,
                                 exception: null,
                                 clientOptions: Options,

@@ -1,4 +1,4 @@
-﻿//HintName: G.CollectionClient.ListCollections.g.cs
+//HintName: G.CollectionClient.ListCollections.g.cs
 
 #nullable enable
 
@@ -182,8 +182,8 @@ namespace G
                 PrepareListCollectionsRequest(
                     httpClient: HttpClient,
                     httpRequestMessage: __httpRequest,
-                    tenant: tenant!,
-                    database: database!,
+                    tenant: tenant,
+                    database: database,
                     limit: limit,
                     offset: offset);
 
@@ -209,7 +209,7 @@ namespace G
                                 pathTemplate: "$\"/api/v2/tenants/{tenant}/databases/{database}/collections\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: null,
                                 exception: null,
                                 clientOptions: Options,
@@ -243,7 +243,7 @@ namespace G
                                 pathTemplate: "$\"/api/v2/tenants/{tenant}/databases/{database}/collections\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: null,
                                 exception: __exception,
                                 clientOptions: Options,
@@ -284,7 +284,7 @@ namespace G
                                 pathTemplate: "$\"/api/v2/tenants/{tenant}/databases/{database}/collections\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: __response,
                                 exception: null,
                                 clientOptions: Options,
@@ -332,7 +332,7 @@ namespace G
                                 pathTemplate: "$\"/api/v2/tenants/{tenant}/databases/{database}/collections\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: __response,
                                 exception: null,
                                 clientOptions: Options,
@@ -354,7 +354,7 @@ namespace G
                                 pathTemplate: "$\"/api/v2/tenants/{tenant}/databases/{database}/collections\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: __response,
                                 exception: null,
                                 clientOptions: Options,

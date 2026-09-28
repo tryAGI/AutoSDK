@@ -1,4 +1,4 @@
-﻿//HintName: G.Models.ScholarSearchRequest.g.cs
+//HintName: G.Models.ScholarSearchRequest.g.cs
 #pragma warning disable CS0618 // Type or member is obsolete
 
 #nullable enable
@@ -43,8 +43,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.BaseSearchRequest PickBase() => IsBase
-            ? Base!
+        public global::G.BaseSearchRequest PickBase() => Base is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Base' but the value was {ToString()}.");
 
         /// <summary>
@@ -80,8 +80,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.ScholarSearchRequestVariant2 PickScholarSearchRequestVariant2() => IsScholarSearchRequestVariant2
-            ? ScholarSearchRequestVariant2!
+        public global::G.ScholarSearchRequestVariant2 PickScholarSearchRequestVariant2() => ScholarSearchRequestVariant2 is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'ScholarSearchRequestVariant2' but the value was {ToString()}.");
         /// <summary>
         /// 
@@ -178,13 +178,13 @@ namespace G
                 Validate();
             }
 
-            if (IsBase && @base != null)
+            if (Base is { } __value0 && @base != null)
             {
-                return @base(Base!);
+                return @base(__value0);
             }
-            else if (IsScholarSearchRequestVariant2 && scholarSearchRequestVariant2 != null)
+            else if (ScholarSearchRequestVariant2 is { } __value1 && scholarSearchRequestVariant2 != null)
             {
-                return scholarSearchRequestVariant2(ScholarSearchRequestVariant2!);
+                return scholarSearchRequestVariant2(__value1);
             }
 
             return default(TResult);
@@ -204,13 +204,13 @@ namespace G
                 Validate();
             }
 
-            if (IsBase)
+            if (Base is { } __value0)
             {
-                @base?.Invoke(Base!);
+                @base?.Invoke(__value0);
             }
-            else if (IsScholarSearchRequestVariant2)
+            else if (ScholarSearchRequestVariant2 is { } __value1)
             {
-                scholarSearchRequestVariant2?.Invoke(ScholarSearchRequestVariant2!);
+                scholarSearchRequestVariant2?.Invoke(__value1);
             }
         }
 
@@ -227,13 +227,13 @@ namespace G
                 Validate();
             }
 
-            if (IsBase)
+            if (Base is { } __value0)
             {
-                @base?.Invoke(Base!);
+                @base?.Invoke(__value0);
             }
-            else if (IsScholarSearchRequestVariant2)
+            else if (ScholarSearchRequestVariant2 is { } __value1)
             {
-                scholarSearchRequestVariant2?.Invoke(ScholarSearchRequestVariant2!);
+                scholarSearchRequestVariant2?.Invoke(__value1);
             }
         }
 

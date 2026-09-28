@@ -1,4 +1,4 @@
-﻿//HintName: G.Models.VectorStorageType.g.cs
+//HintName: G.Models.VectorStorageType.g.cs
 #pragma warning disable CS0618 // Type or member is obsolete
 
 #nullable enable
@@ -44,8 +44,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.VectorStorageTypeVariant1 PickVectorStorageTypeVariant1() => IsVectorStorageTypeVariant1
-            ? VectorStorageTypeVariant1!.Value
+        public global::G.VectorStorageTypeVariant1 PickVectorStorageTypeVariant1() => VectorStorageTypeVariant1 is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'VectorStorageTypeVariant1' but the value was {ToString()}.");
 
         /// <summary>
@@ -82,8 +82,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.VectorStorageTypeVariant2 PickVectorStorageTypeVariant2() => IsVectorStorageTypeVariant2
-            ? VectorStorageTypeVariant2!.Value
+        public global::G.VectorStorageTypeVariant2 PickVectorStorageTypeVariant2() => VectorStorageTypeVariant2 is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'VectorStorageTypeVariant2' but the value was {ToString()}.");
 
         /// <summary>
@@ -120,8 +120,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.VectorStorageTypeVariant3 PickVectorStorageTypeVariant3() => IsVectorStorageTypeVariant3
-            ? VectorStorageTypeVariant3!.Value
+        public global::G.VectorStorageTypeVariant3 PickVectorStorageTypeVariant3() => VectorStorageTypeVariant3 is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'VectorStorageTypeVariant3' but the value was {ToString()}.");
 
         /// <summary>
@@ -158,8 +158,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.VectorStorageTypeVariant4 PickVectorStorageTypeVariant4() => IsVectorStorageTypeVariant4
-            ? VectorStorageTypeVariant4!.Value
+        public global::G.VectorStorageTypeVariant4 PickVectorStorageTypeVariant4() => VectorStorageTypeVariant4 is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'VectorStorageTypeVariant4' but the value was {ToString()}.");
 
         /// <summary>
@@ -195,8 +195,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.VectorStorageTypeVariant5 PickVectorStorageTypeVariant5() => IsVectorStorageTypeVariant5
-            ? VectorStorageTypeVariant5!.Value
+        public global::G.VectorStorageTypeVariant5 PickVectorStorageTypeVariant5() => VectorStorageTypeVariant5 is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'VectorStorageTypeVariant5' but the value was {ToString()}.");
         /// <summary>
         /// 
@@ -377,25 +377,25 @@ namespace G
                 Validate();
             }
 
-            if (IsVectorStorageTypeVariant1 && vectorStorageTypeVariant1 != null)
+            if (VectorStorageTypeVariant1 is { } __value0 && vectorStorageTypeVariant1 != null)
             {
-                return vectorStorageTypeVariant1(VectorStorageTypeVariant1!);
+                return vectorStorageTypeVariant1(__value0);
             }
-            else if (IsVectorStorageTypeVariant2 && vectorStorageTypeVariant2 != null)
+            else if (VectorStorageTypeVariant2 is { } __value1 && vectorStorageTypeVariant2 != null)
             {
-                return vectorStorageTypeVariant2(VectorStorageTypeVariant2!);
+                return vectorStorageTypeVariant2(__value1);
             }
-            else if (IsVectorStorageTypeVariant3 && vectorStorageTypeVariant3 != null)
+            else if (VectorStorageTypeVariant3 is { } __value2 && vectorStorageTypeVariant3 != null)
             {
-                return vectorStorageTypeVariant3(VectorStorageTypeVariant3!);
+                return vectorStorageTypeVariant3(__value2);
             }
-            else if (IsVectorStorageTypeVariant4 && vectorStorageTypeVariant4 != null)
+            else if (VectorStorageTypeVariant4 is { } __value3 && vectorStorageTypeVariant4 != null)
             {
-                return vectorStorageTypeVariant4(VectorStorageTypeVariant4!);
+                return vectorStorageTypeVariant4(__value3);
             }
-            else if (IsVectorStorageTypeVariant5 && vectorStorageTypeVariant5 != null)
+            else if (VectorStorageTypeVariant5 is { } __value4 && vectorStorageTypeVariant5 != null)
             {
-                return vectorStorageTypeVariant5(VectorStorageTypeVariant5!);
+                return vectorStorageTypeVariant5(__value4);
             }
 
             return default(TResult);
@@ -421,25 +421,25 @@ namespace G
                 Validate();
             }
 
-            if (IsVectorStorageTypeVariant1)
+            if (VectorStorageTypeVariant1 is { } __value0)
             {
-                vectorStorageTypeVariant1?.Invoke(VectorStorageTypeVariant1!);
+                vectorStorageTypeVariant1?.Invoke(__value0);
             }
-            else if (IsVectorStorageTypeVariant2)
+            else if (VectorStorageTypeVariant2 is { } __value1)
             {
-                vectorStorageTypeVariant2?.Invoke(VectorStorageTypeVariant2!);
+                vectorStorageTypeVariant2?.Invoke(__value1);
             }
-            else if (IsVectorStorageTypeVariant3)
+            else if (VectorStorageTypeVariant3 is { } __value2)
             {
-                vectorStorageTypeVariant3?.Invoke(VectorStorageTypeVariant3!);
+                vectorStorageTypeVariant3?.Invoke(__value2);
             }
-            else if (IsVectorStorageTypeVariant4)
+            else if (VectorStorageTypeVariant4 is { } __value3)
             {
-                vectorStorageTypeVariant4?.Invoke(VectorStorageTypeVariant4!);
+                vectorStorageTypeVariant4?.Invoke(__value3);
             }
-            else if (IsVectorStorageTypeVariant5)
+            else if (VectorStorageTypeVariant5 is { } __value4)
             {
-                vectorStorageTypeVariant5?.Invoke(VectorStorageTypeVariant5!);
+                vectorStorageTypeVariant5?.Invoke(__value4);
             }
         }
 
@@ -459,25 +459,25 @@ namespace G
                 Validate();
             }
 
-            if (IsVectorStorageTypeVariant1)
+            if (VectorStorageTypeVariant1 is { } __value0)
             {
-                vectorStorageTypeVariant1?.Invoke(VectorStorageTypeVariant1!);
+                vectorStorageTypeVariant1?.Invoke(__value0);
             }
-            else if (IsVectorStorageTypeVariant2)
+            else if (VectorStorageTypeVariant2 is { } __value1)
             {
-                vectorStorageTypeVariant2?.Invoke(VectorStorageTypeVariant2!);
+                vectorStorageTypeVariant2?.Invoke(__value1);
             }
-            else if (IsVectorStorageTypeVariant3)
+            else if (VectorStorageTypeVariant3 is { } __value2)
             {
-                vectorStorageTypeVariant3?.Invoke(VectorStorageTypeVariant3!);
+                vectorStorageTypeVariant3?.Invoke(__value2);
             }
-            else if (IsVectorStorageTypeVariant4)
+            else if (VectorStorageTypeVariant4 is { } __value3)
             {
-                vectorStorageTypeVariant4?.Invoke(VectorStorageTypeVariant4!);
+                vectorStorageTypeVariant4?.Invoke(__value3);
             }
-            else if (IsVectorStorageTypeVariant5)
+            else if (VectorStorageTypeVariant5 is { } __value4)
             {
-                vectorStorageTypeVariant5?.Invoke(VectorStorageTypeVariant5!);
+                vectorStorageTypeVariant5?.Invoke(__value4);
             }
         }
 

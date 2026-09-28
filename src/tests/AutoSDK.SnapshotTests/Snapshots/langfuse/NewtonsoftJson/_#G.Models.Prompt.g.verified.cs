@@ -1,4 +1,4 @@
-﻿//HintName: G.Models.Prompt.g.cs
+//HintName: G.Models.Prompt.g.cs
 #pragma warning disable CS0618 // Type or member is obsolete
 
 #nullable enable
@@ -43,8 +43,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.AllOf<global::G.PromptVariant12, global::G.ChatPrompt> PickPromptVariant1() => IsPromptVariant1
-            ? PromptVariant1!.Value
+        public global::G.AllOf<global::G.PromptVariant12, global::G.ChatPrompt> PickPromptVariant1() => PromptVariant1 is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'PromptVariant1' but the value was {ToString()}.");
 
         /// <summary>
@@ -80,8 +80,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.AllOf<global::G.PromptVariant22, global::G.TextPrompt> PickPromptVariant2() => IsPromptVariant2
-            ? PromptVariant2!.Value
+        public global::G.AllOf<global::G.PromptVariant22, global::G.TextPrompt> PickPromptVariant2() => PromptVariant2 is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'PromptVariant2' but the value was {ToString()}.");
         /// <summary>
         /// 
@@ -178,13 +178,13 @@ namespace G
                 Validate();
             }
 
-            if (IsPromptVariant1 && promptVariant1 != null)
+            if (PromptVariant1 is { } __value0 && promptVariant1 != null)
             {
-                return promptVariant1(PromptVariant1!);
+                return promptVariant1(__value0);
             }
-            else if (IsPromptVariant2 && promptVariant2 != null)
+            else if (PromptVariant2 is { } __value1 && promptVariant2 != null)
             {
-                return promptVariant2(PromptVariant2!);
+                return promptVariant2(__value1);
             }
 
             return default(TResult);
@@ -204,13 +204,13 @@ namespace G
                 Validate();
             }
 
-            if (IsPromptVariant1)
+            if (PromptVariant1 is { } __value0)
             {
-                promptVariant1?.Invoke(PromptVariant1!);
+                promptVariant1?.Invoke(__value0);
             }
-            else if (IsPromptVariant2)
+            else if (PromptVariant2 is { } __value1)
             {
-                promptVariant2?.Invoke(PromptVariant2!);
+                promptVariant2?.Invoke(__value1);
             }
         }
 
@@ -227,13 +227,13 @@ namespace G
                 Validate();
             }
 
-            if (IsPromptVariant1)
+            if (PromptVariant1 is { } __value0)
             {
-                promptVariant1?.Invoke(PromptVariant1!);
+                promptVariant1?.Invoke(__value0);
             }
-            else if (IsPromptVariant2)
+            else if (PromptVariant2 is { } __value1)
             {
-                promptVariant2?.Invoke(PromptVariant2!);
+                promptVariant2?.Invoke(__value1);
             }
         }
 

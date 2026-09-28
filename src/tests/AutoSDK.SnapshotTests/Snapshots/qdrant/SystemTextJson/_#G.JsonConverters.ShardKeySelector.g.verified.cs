@@ -1,4 +1,4 @@
-﻿//HintName: G.JsonConverters.ShardKeySelector.g.cs
+//HintName: G.JsonConverters.ShardKeySelector.g.cs
 #nullable enable
 #pragma warning disable CS0618 // Type or member is obsolete
 
@@ -166,19 +166,19 @@ namespace G.JsonConverters
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.ShardKey), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.ShardKey> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.ShardKey).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.ShardKey!.Value, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickShardKey(), typeInfo);
             }
             else if (value.IsShardKeySelectorVariant2)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::System.Collections.Generic.IList<global::G.ShardKey>), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::System.Collections.Generic.IList<global::G.ShardKey>?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::System.Collections.Generic.IList<global::G.ShardKey>).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.ShardKeySelectorVariant2!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickShardKeySelectorVariant2(), typeInfo);
             }
             else if (value.IsWithFallback)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.ShardKeyWithFallback), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.ShardKeyWithFallback?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.ShardKeyWithFallback).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.WithFallback!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickWithFallback(), typeInfo);
             }
         }
     }

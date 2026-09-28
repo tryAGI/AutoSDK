@@ -1,4 +1,4 @@
-﻿//HintName: G.JsonConverters.InputItem.g.cs
+//HintName: G.JsonConverters.InputItem.g.cs
 #nullable enable
 #pragma warning disable CS0618 // Type or member is obsolete
 
@@ -169,19 +169,19 @@ namespace G.JsonConverters
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.EasyInputMessage), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.EasyInputMessage?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.EasyInputMessage).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Message!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickMessage(), typeInfo);
             }
             else if (value.IsItem)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.Item), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.Item> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.Item).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Item!.Value, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickItem(), typeInfo);
             }
             else if (value.IsItemReference)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.ItemReferenceParam), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.ItemReferenceParam?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.ItemReferenceParam).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.ItemReference!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickItemReference(), typeInfo);
             }
         }
     }

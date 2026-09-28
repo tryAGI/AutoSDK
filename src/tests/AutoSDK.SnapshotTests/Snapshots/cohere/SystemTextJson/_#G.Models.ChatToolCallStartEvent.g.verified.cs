@@ -1,4 +1,4 @@
-﻿//HintName: G.Models.ChatToolCallStartEvent.g.cs
+//HintName: G.Models.ChatToolCallStartEvent.g.cs
 #pragma warning disable CS0618 // Type or member is obsolete
 
 #nullable enable
@@ -43,8 +43,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.ChatStreamEventType PickStreamType() => IsStreamType
-            ? StreamType!
+        public global::G.ChatStreamEventType PickStreamType() => StreamType is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'StreamType' but the value was {ToString()}.");
 
         /// <summary>
@@ -80,8 +80,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.ChatToolCallStartEventLv559x PickLv559x() => IsLv559x
-            ? Lv559x!
+        public global::G.ChatToolCallStartEventLv559x PickLv559x() => Lv559x is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Lv559x' but the value was {ToString()}.");
         /// <summary>
         /// 
@@ -178,13 +178,13 @@ namespace G
                 Validate();
             }
 
-            if (IsStreamType && streamType != null)
+            if (StreamType is { } __value0 && streamType != null)
             {
-                return streamType(StreamType!);
+                return streamType(__value0);
             }
-            else if (IsLv559x && lv559x != null)
+            else if (Lv559x is { } __value1 && lv559x != null)
             {
-                return lv559x(Lv559x!);
+                return lv559x(__value1);
             }
 
             return default(TResult);
@@ -204,13 +204,13 @@ namespace G
                 Validate();
             }
 
-            if (IsStreamType)
+            if (StreamType is { } __value0)
             {
-                streamType?.Invoke(StreamType!);
+                streamType?.Invoke(__value0);
             }
-            else if (IsLv559x)
+            else if (Lv559x is { } __value1)
             {
-                lv559x?.Invoke(Lv559x!);
+                lv559x?.Invoke(__value1);
             }
         }
 
@@ -227,13 +227,13 @@ namespace G
                 Validate();
             }
 
-            if (IsStreamType)
+            if (StreamType is { } __value0)
             {
-                streamType?.Invoke(StreamType!);
+                streamType?.Invoke(__value0);
             }
-            else if (IsLv559x)
+            else if (Lv559x is { } __value1)
             {
-                lv559x?.Invoke(Lv559x!);
+                lv559x?.Invoke(__value1);
             }
         }
 

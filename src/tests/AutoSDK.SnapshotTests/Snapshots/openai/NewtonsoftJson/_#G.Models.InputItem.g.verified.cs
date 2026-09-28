@@ -1,4 +1,4 @@
-﻿//HintName: G.Models.InputItem.g.cs
+//HintName: G.Models.InputItem.g.cs
 #pragma warning disable CS0618 // Type or member is obsolete
 
 #nullable enable
@@ -47,8 +47,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.EasyInputMessage PickMessage() => IsMessage
-            ? Message!
+        public global::G.EasyInputMessage PickMessage() => Message is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Message' but the value was {ToString()}.");
 
         /// <summary>
@@ -84,8 +84,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.Item PickItem() => IsItem
-            ? Item!.Value
+        public global::G.Item PickItem() => Item is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Item' but the value was {ToString()}.");
 
         /// <summary>
@@ -121,8 +121,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.ItemReferenceParam PickItemReference() => IsItemReference
-            ? ItemReference!
+        public global::G.ItemReferenceParam PickItemReference() => ItemReference is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'ItemReference' but the value was {ToString()}.");
         /// <summary>
         /// 
@@ -247,17 +247,17 @@ namespace G
                 Validate();
             }
 
-            if (IsMessage && message != null)
+            if (Message is { } __value0 && message != null)
             {
-                return message(Message!);
+                return message(__value0);
             }
-            else if (IsItem && item != null)
+            else if (Item is { } __value1 && item != null)
             {
-                return item(Item!);
+                return item(__value1);
             }
-            else if (IsItemReference && itemReference != null)
+            else if (ItemReference is { } __value2 && itemReference != null)
             {
-                return itemReference(ItemReference!);
+                return itemReference(__value2);
             }
 
             return default(TResult);
@@ -279,17 +279,17 @@ namespace G
                 Validate();
             }
 
-            if (IsMessage)
+            if (Message is { } __value0)
             {
-                message?.Invoke(Message!);
+                message?.Invoke(__value0);
             }
-            else if (IsItem)
+            else if (Item is { } __value1)
             {
-                item?.Invoke(Item!);
+                item?.Invoke(__value1);
             }
-            else if (IsItemReference)
+            else if (ItemReference is { } __value2)
             {
-                itemReference?.Invoke(ItemReference!);
+                itemReference?.Invoke(__value2);
             }
         }
 
@@ -307,17 +307,17 @@ namespace G
                 Validate();
             }
 
-            if (IsMessage)
+            if (Message is { } __value0)
             {
-                message?.Invoke(Message!);
+                message?.Invoke(__value0);
             }
-            else if (IsItem)
+            else if (Item is { } __value1)
             {
-                item?.Invoke(Item!);
+                item?.Invoke(__value1);
             }
-            else if (IsItemReference)
+            else if (ItemReference is { } __value2)
             {
-                itemReference?.Invoke(ItemReference!);
+                itemReference?.Invoke(__value2);
             }
         }
 

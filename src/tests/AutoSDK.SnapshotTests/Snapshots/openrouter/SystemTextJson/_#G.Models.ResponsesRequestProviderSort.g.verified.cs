@@ -1,4 +1,4 @@
-﻿//HintName: G.Models.ResponsesRequestProviderSort.g.cs
+//HintName: G.Models.ResponsesRequestProviderSort.g.cs
 #pragma warning disable CS0618 // Type or member is obsolete
 
 #nullable enable
@@ -43,8 +43,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.ProviderSort PickProviderSort() => IsProviderSort
-            ? ProviderSort!.Value
+        public global::G.ProviderSort PickProviderSort() => ProviderSort is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'ProviderSort' but the value was {ToString()}.");
 
         /// <summary>
@@ -80,8 +80,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.ProviderSortConfig PickProviderSortConfig() => IsProviderSortConfig
-            ? ProviderSortConfig!
+        public global::G.ProviderSortConfig PickProviderSortConfig() => ProviderSortConfig is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'ProviderSortConfig' but the value was {ToString()}.");
 
         /// <summary>
@@ -117,8 +117,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public object PickResponsesRequestProviderSortVariant3() => IsResponsesRequestProviderSortVariant3
-            ? ResponsesRequestProviderSortVariant3!
+        public object PickResponsesRequestProviderSortVariant3() => ResponsesRequestProviderSortVariant3 is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'ResponsesRequestProviderSortVariant3' but the value was {ToString()}.");
         /// <summary>
         /// 
@@ -220,17 +220,17 @@ namespace G
                 Validate();
             }
 
-            if (IsProviderSort && providerSort != null)
+            if (ProviderSort is { } __value0 && providerSort != null)
             {
-                return providerSort(ProviderSort!);
+                return providerSort(__value0);
             }
-            else if (IsProviderSortConfig && providerSortConfig != null)
+            else if (ProviderSortConfig is { } __value1 && providerSortConfig != null)
             {
-                return providerSortConfig(ProviderSortConfig!);
+                return providerSortConfig(__value1);
             }
-            else if (IsResponsesRequestProviderSortVariant3 && responsesRequestProviderSortVariant3 != null)
+            else if (ResponsesRequestProviderSortVariant3 is { } __value2 && responsesRequestProviderSortVariant3 != null)
             {
-                return responsesRequestProviderSortVariant3(ResponsesRequestProviderSortVariant3!);
+                return responsesRequestProviderSortVariant3(__value2);
             }
 
             return default(TResult);
@@ -252,17 +252,17 @@ namespace G
                 Validate();
             }
 
-            if (IsProviderSort)
+            if (ProviderSort is { } __value0)
             {
-                providerSort?.Invoke(ProviderSort!);
+                providerSort?.Invoke(__value0);
             }
-            else if (IsProviderSortConfig)
+            else if (ProviderSortConfig is { } __value1)
             {
-                providerSortConfig?.Invoke(ProviderSortConfig!);
+                providerSortConfig?.Invoke(__value1);
             }
-            else if (IsResponsesRequestProviderSortVariant3)
+            else if (ResponsesRequestProviderSortVariant3 is { } __value2)
             {
-                responsesRequestProviderSortVariant3?.Invoke(ResponsesRequestProviderSortVariant3!);
+                responsesRequestProviderSortVariant3?.Invoke(__value2);
             }
         }
 
@@ -280,17 +280,17 @@ namespace G
                 Validate();
             }
 
-            if (IsProviderSort)
+            if (ProviderSort is { } __value0)
             {
-                providerSort?.Invoke(ProviderSort!);
+                providerSort?.Invoke(__value0);
             }
-            else if (IsProviderSortConfig)
+            else if (ProviderSortConfig is { } __value1)
             {
-                providerSortConfig?.Invoke(ProviderSortConfig!);
+                providerSortConfig?.Invoke(__value1);
             }
-            else if (IsResponsesRequestProviderSortVariant3)
+            else if (ResponsesRequestProviderSortVariant3 is { } __value2)
             {
-                responsesRequestProviderSortVariant3?.Invoke(ResponsesRequestProviderSortVariant3!);
+                responsesRequestProviderSortVariant3?.Invoke(__value2);
             }
         }
 

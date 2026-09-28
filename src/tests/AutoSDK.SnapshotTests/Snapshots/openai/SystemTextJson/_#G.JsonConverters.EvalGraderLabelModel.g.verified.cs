@@ -55,7 +55,7 @@ namespace G.JsonConverters
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.GraderLabelModel), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.GraderLabelModel?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.GraderLabelModel).Name}");
-                var __element0 = global::System.Text.Json.JsonSerializer.SerializeToElement(value.LabelModelGrader!, typeInfo);
+                var __element0 = global::System.Text.Json.JsonSerializer.SerializeToElement(value.PickLabelModelGrader(), typeInfo);
                 if (__element0.ValueKind != global::System.Text.Json.JsonValueKind.Object)
                 {
                     throw new global::System.Text.Json.JsonException("AllOf values must serialize as JSON objects.");

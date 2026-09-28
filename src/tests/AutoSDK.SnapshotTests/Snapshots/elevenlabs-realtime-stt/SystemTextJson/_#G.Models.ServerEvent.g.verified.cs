@@ -1,4 +1,4 @@
-﻿//HintName: G.Models.ServerEvent.g.cs
+//HintName: G.Models.ServerEvent.g.cs
 #pragma warning disable CS0618 // Type or member is obsolete
 
 #nullable enable
@@ -48,8 +48,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.SessionStartedPayload PickSessionStarted() => IsSessionStarted
-            ? SessionStarted!
+        public global::G.SessionStartedPayload PickSessionStarted() => SessionStarted is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'SessionStarted' but the value was {ToString()}.");
 
         /// <summary>
@@ -85,8 +85,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.PartialTranscriptPayload PickPartialTranscript() => IsPartialTranscript
-            ? PartialTranscript!
+        public global::G.PartialTranscriptPayload PickPartialTranscript() => PartialTranscript is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'PartialTranscript' but the value was {ToString()}.");
 
         /// <summary>
@@ -122,8 +122,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.CommittedTranscriptPayload PickCommittedTranscript() => IsCommittedTranscript
-            ? CommittedTranscript!
+        public global::G.CommittedTranscriptPayload PickCommittedTranscript() => CommittedTranscript is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'CommittedTranscript' but the value was {ToString()}.");
 
         /// <summary>
@@ -159,8 +159,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.ErrorPayload PickError() => IsError
-            ? Error!
+        public global::G.ErrorPayload PickError() => Error is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Error' but the value was {ToString()}.");
         /// <summary>
         /// 
@@ -316,21 +316,21 @@ namespace G
                 Validate();
             }
 
-            if (IsSessionStarted && sessionStarted != null)
+            if (SessionStarted is { } __value0 && sessionStarted != null)
             {
-                return sessionStarted(SessionStarted!);
+                return sessionStarted(__value0);
             }
-            else if (IsPartialTranscript && partialTranscript != null)
+            else if (PartialTranscript is { } __value1 && partialTranscript != null)
             {
-                return partialTranscript(PartialTranscript!);
+                return partialTranscript(__value1);
             }
-            else if (IsCommittedTranscript && committedTranscript != null)
+            else if (CommittedTranscript is { } __value2 && committedTranscript != null)
             {
-                return committedTranscript(CommittedTranscript!);
+                return committedTranscript(__value2);
             }
-            else if (IsError && error != null)
+            else if (Error is { } __value3 && error != null)
             {
-                return error(Error!);
+                return error(__value3);
             }
 
             return default(TResult);
@@ -354,21 +354,21 @@ namespace G
                 Validate();
             }
 
-            if (IsSessionStarted)
+            if (SessionStarted is { } __value0)
             {
-                sessionStarted?.Invoke(SessionStarted!);
+                sessionStarted?.Invoke(__value0);
             }
-            else if (IsPartialTranscript)
+            else if (PartialTranscript is { } __value1)
             {
-                partialTranscript?.Invoke(PartialTranscript!);
+                partialTranscript?.Invoke(__value1);
             }
-            else if (IsCommittedTranscript)
+            else if (CommittedTranscript is { } __value2)
             {
-                committedTranscript?.Invoke(CommittedTranscript!);
+                committedTranscript?.Invoke(__value2);
             }
-            else if (IsError)
+            else if (Error is { } __value3)
             {
-                error?.Invoke(Error!);
+                error?.Invoke(__value3);
             }
         }
 
@@ -387,21 +387,21 @@ namespace G
                 Validate();
             }
 
-            if (IsSessionStarted)
+            if (SessionStarted is { } __value0)
             {
-                sessionStarted?.Invoke(SessionStarted!);
+                sessionStarted?.Invoke(__value0);
             }
-            else if (IsPartialTranscript)
+            else if (PartialTranscript is { } __value1)
             {
-                partialTranscript?.Invoke(PartialTranscript!);
+                partialTranscript?.Invoke(__value1);
             }
-            else if (IsCommittedTranscript)
+            else if (CommittedTranscript is { } __value2)
             {
-                committedTranscript?.Invoke(CommittedTranscript!);
+                committedTranscript?.Invoke(__value2);
             }
-            else if (IsError)
+            else if (Error is { } __value3)
             {
-                error?.Invoke(Error!);
+                error?.Invoke(__value3);
             }
         }
 

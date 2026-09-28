@@ -1,4 +1,4 @@
-﻿//HintName: G.JsonConverters.AnimationError.g.cs
+//HintName: G.JsonConverters.AnimationError.g.cs
 #nullable enable
 #pragma warning disable CS0618 // Type or member is obsolete
 
@@ -287,37 +287,37 @@ namespace G.JsonConverters
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.AnimationErrorVariant1), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.AnimationErrorVariant1?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.AnimationErrorVariant1).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.AnimationErrorVariant1!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickAnimationErrorVariant1(), typeInfo);
             }
             else if (value.IsAnimationErrorVariant2)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.AnimationErrorVariant2), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.AnimationErrorVariant2?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.AnimationErrorVariant2).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.AnimationErrorVariant2!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickAnimationErrorVariant2(), typeInfo);
             }
             else if (value.IsAnimationErrorVariant3)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.AnimationErrorVariant3), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.AnimationErrorVariant3?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.AnimationErrorVariant3).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.AnimationErrorVariant3!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickAnimationErrorVariant3(), typeInfo);
             }
             else if (value.IsAnimationErrorVariant4)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.AnimationErrorVariant4), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.AnimationErrorVariant4?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.AnimationErrorVariant4).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.AnimationErrorVariant4!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickAnimationErrorVariant4(), typeInfo);
             }
             else if (value.IsAnimationErrorVariant5)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.AnimationErrorVariant5), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.AnimationErrorVariant5?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.AnimationErrorVariant5).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.AnimationErrorVariant5!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickAnimationErrorVariant5(), typeInfo);
             }
             else if (value.IsAnimationErrorVariant6)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.AnimationErrorVariant6), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.AnimationErrorVariant6?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.AnimationErrorVariant6).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.AnimationErrorVariant6!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickAnimationErrorVariant6(), typeInfo);
             }
         }
     }

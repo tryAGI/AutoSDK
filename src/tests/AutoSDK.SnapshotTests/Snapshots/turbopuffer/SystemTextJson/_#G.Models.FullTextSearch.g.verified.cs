@@ -1,4 +1,4 @@
-﻿//HintName: G.Models.FullTextSearch.g.cs
+//HintName: G.Models.FullTextSearch.g.cs
 #pragma warning disable CS0618 // Type or member is obsolete
 
 #nullable enable
@@ -43,8 +43,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public bool PickFullTextSearchVariant1() => IsFullTextSearchVariant1
-            ? FullTextSearchVariant1!.Value
+        public bool PickFullTextSearchVariant1() => FullTextSearchVariant1 is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'FullTextSearchVariant1' but the value was {ToString()}.");
 
         /// <summary>
@@ -80,8 +80,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.FullTextSearchConfig PickConfig() => IsConfig
-            ? Config!
+        public global::G.FullTextSearchConfig PickConfig() => Config is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Config' but the value was {ToString()}.");
         /// <summary>
         /// 
@@ -178,13 +178,13 @@ namespace G
                 Validate();
             }
 
-            if (IsFullTextSearchVariant1 && fullTextSearchVariant1 != null)
+            if (FullTextSearchVariant1 is { } __value0 && fullTextSearchVariant1 != null)
             {
-                return fullTextSearchVariant1(FullTextSearchVariant1!);
+                return fullTextSearchVariant1(__value0);
             }
-            else if (IsConfig && config != null)
+            else if (Config is { } __value1 && config != null)
             {
-                return config(Config!);
+                return config(__value1);
             }
 
             return default(TResult);
@@ -204,13 +204,13 @@ namespace G
                 Validate();
             }
 
-            if (IsFullTextSearchVariant1)
+            if (FullTextSearchVariant1 is { } __value0)
             {
-                fullTextSearchVariant1?.Invoke(FullTextSearchVariant1!);
+                fullTextSearchVariant1?.Invoke(__value0);
             }
-            else if (IsConfig)
+            else if (Config is { } __value1)
             {
-                config?.Invoke(Config!);
+                config?.Invoke(__value1);
             }
         }
 
@@ -227,13 +227,13 @@ namespace G
                 Validate();
             }
 
-            if (IsFullTextSearchVariant1)
+            if (FullTextSearchVariant1 is { } __value0)
             {
-                fullTextSearchVariant1?.Invoke(FullTextSearchVariant1!);
+                fullTextSearchVariant1?.Invoke(__value0);
             }
-            else if (IsConfig)
+            else if (Config is { } __value1)
             {
-                config?.Invoke(Config!);
+                config?.Invoke(__value1);
             }
         }
 

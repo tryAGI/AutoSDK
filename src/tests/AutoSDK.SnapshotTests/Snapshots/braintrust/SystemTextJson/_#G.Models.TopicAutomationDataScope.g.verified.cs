@@ -1,4 +1,4 @@
-﻿//HintName: G.Models.TopicAutomationDataScope.g.cs
+//HintName: G.Models.TopicAutomationDataScope.g.cs
 #pragma warning disable CS0618 // Type or member is obsolete
 
 #nullable enable
@@ -43,8 +43,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.TopicAutomationDataScopeVariant1 PickTopicAutomationDataScopeVariant1() => IsTopicAutomationDataScopeVariant1
-            ? TopicAutomationDataScopeVariant1!
+        public global::G.TopicAutomationDataScopeVariant1 PickTopicAutomationDataScopeVariant1() => TopicAutomationDataScopeVariant1 is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'TopicAutomationDataScopeVariant1' but the value was {ToString()}.");
 
         /// <summary>
@@ -80,8 +80,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.TopicAutomationDataScopeVariant2 PickTopicAutomationDataScopeVariant2() => IsTopicAutomationDataScopeVariant2
-            ? TopicAutomationDataScopeVariant2!
+        public global::G.TopicAutomationDataScopeVariant2 PickTopicAutomationDataScopeVariant2() => TopicAutomationDataScopeVariant2 is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'TopicAutomationDataScopeVariant2' but the value was {ToString()}.");
 
         /// <summary>
@@ -117,8 +117,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.TopicAutomationDataScopeVariant3 PickTopicAutomationDataScopeVariant3() => IsTopicAutomationDataScopeVariant3
-            ? TopicAutomationDataScopeVariant3!
+        public global::G.TopicAutomationDataScopeVariant3 PickTopicAutomationDataScopeVariant3() => TopicAutomationDataScopeVariant3 is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'TopicAutomationDataScopeVariant3' but the value was {ToString()}.");
 
         /// <summary>
@@ -154,8 +154,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public object PickTopicAutomationDataScopeVariant4() => IsTopicAutomationDataScopeVariant4
-            ? TopicAutomationDataScopeVariant4!
+        public object PickTopicAutomationDataScopeVariant4() => TopicAutomationDataScopeVariant4 is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'TopicAutomationDataScopeVariant4' but the value was {ToString()}.");
         /// <summary>
         /// 
@@ -285,21 +285,21 @@ namespace G
                 Validate();
             }
 
-            if (IsTopicAutomationDataScopeVariant1 && topicAutomationDataScopeVariant1 != null)
+            if (TopicAutomationDataScopeVariant1 is { } __value0 && topicAutomationDataScopeVariant1 != null)
             {
-                return topicAutomationDataScopeVariant1(TopicAutomationDataScopeVariant1!);
+                return topicAutomationDataScopeVariant1(__value0);
             }
-            else if (IsTopicAutomationDataScopeVariant2 && topicAutomationDataScopeVariant2 != null)
+            else if (TopicAutomationDataScopeVariant2 is { } __value1 && topicAutomationDataScopeVariant2 != null)
             {
-                return topicAutomationDataScopeVariant2(TopicAutomationDataScopeVariant2!);
+                return topicAutomationDataScopeVariant2(__value1);
             }
-            else if (IsTopicAutomationDataScopeVariant3 && topicAutomationDataScopeVariant3 != null)
+            else if (TopicAutomationDataScopeVariant3 is { } __value2 && topicAutomationDataScopeVariant3 != null)
             {
-                return topicAutomationDataScopeVariant3(TopicAutomationDataScopeVariant3!);
+                return topicAutomationDataScopeVariant3(__value2);
             }
-            else if (IsTopicAutomationDataScopeVariant4 && topicAutomationDataScopeVariant4 != null)
+            else if (TopicAutomationDataScopeVariant4 is { } __value3 && topicAutomationDataScopeVariant4 != null)
             {
-                return topicAutomationDataScopeVariant4(TopicAutomationDataScopeVariant4!);
+                return topicAutomationDataScopeVariant4(__value3);
             }
 
             return default(TResult);
@@ -323,21 +323,21 @@ namespace G
                 Validate();
             }
 
-            if (IsTopicAutomationDataScopeVariant1)
+            if (TopicAutomationDataScopeVariant1 is { } __value0)
             {
-                topicAutomationDataScopeVariant1?.Invoke(TopicAutomationDataScopeVariant1!);
+                topicAutomationDataScopeVariant1?.Invoke(__value0);
             }
-            else if (IsTopicAutomationDataScopeVariant2)
+            else if (TopicAutomationDataScopeVariant2 is { } __value1)
             {
-                topicAutomationDataScopeVariant2?.Invoke(TopicAutomationDataScopeVariant2!);
+                topicAutomationDataScopeVariant2?.Invoke(__value1);
             }
-            else if (IsTopicAutomationDataScopeVariant3)
+            else if (TopicAutomationDataScopeVariant3 is { } __value2)
             {
-                topicAutomationDataScopeVariant3?.Invoke(TopicAutomationDataScopeVariant3!);
+                topicAutomationDataScopeVariant3?.Invoke(__value2);
             }
-            else if (IsTopicAutomationDataScopeVariant4)
+            else if (TopicAutomationDataScopeVariant4 is { } __value3)
             {
-                topicAutomationDataScopeVariant4?.Invoke(TopicAutomationDataScopeVariant4!);
+                topicAutomationDataScopeVariant4?.Invoke(__value3);
             }
         }
 
@@ -356,21 +356,21 @@ namespace G
                 Validate();
             }
 
-            if (IsTopicAutomationDataScopeVariant1)
+            if (TopicAutomationDataScopeVariant1 is { } __value0)
             {
-                topicAutomationDataScopeVariant1?.Invoke(TopicAutomationDataScopeVariant1!);
+                topicAutomationDataScopeVariant1?.Invoke(__value0);
             }
-            else if (IsTopicAutomationDataScopeVariant2)
+            else if (TopicAutomationDataScopeVariant2 is { } __value1)
             {
-                topicAutomationDataScopeVariant2?.Invoke(TopicAutomationDataScopeVariant2!);
+                topicAutomationDataScopeVariant2?.Invoke(__value1);
             }
-            else if (IsTopicAutomationDataScopeVariant3)
+            else if (TopicAutomationDataScopeVariant3 is { } __value2)
             {
-                topicAutomationDataScopeVariant3?.Invoke(TopicAutomationDataScopeVariant3!);
+                topicAutomationDataScopeVariant3?.Invoke(__value2);
             }
-            else if (IsTopicAutomationDataScopeVariant4)
+            else if (TopicAutomationDataScopeVariant4 is { } __value3)
             {
-                topicAutomationDataScopeVariant4?.Invoke(TopicAutomationDataScopeVariant4!);
+                topicAutomationDataScopeVariant4?.Invoke(__value3);
             }
         }
 

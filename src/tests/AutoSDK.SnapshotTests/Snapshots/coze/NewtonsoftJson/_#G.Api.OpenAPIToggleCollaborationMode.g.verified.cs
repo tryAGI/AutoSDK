@@ -1,4 +1,4 @@
-﻿//HintName: G.Api.OpenAPIToggleCollaborationMode.g.cs
+//HintName: G.Api.OpenAPIToggleCollaborationMode.g.cs
 
 #nullable enable
 
@@ -182,7 +182,7 @@ namespace G
                 PrepareOpenAPIToggleCollaborationModeRequest(
                     httpClient: HttpClient,
                     httpRequestMessage: __httpRequest,
-                    workflowId: workflowId!,
+                    workflowId: workflowId,
                     request: request);
 
                 return __httpRequest;
@@ -205,7 +205,7 @@ namespace G
                                 pathTemplate: "$\"/v1/workflows/{workflowId}/collaboration_mode\"",
                                 httpMethod: "POST",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: null,
                                 exception: null,
                                 clientOptions: Options,
@@ -239,7 +239,7 @@ namespace G
                                 pathTemplate: "$\"/v1/workflows/{workflowId}/collaboration_mode\"",
                                 httpMethod: "POST",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: null,
                                 exception: __exception,
                                 clientOptions: Options,
@@ -280,7 +280,7 @@ namespace G
                                 pathTemplate: "$\"/v1/workflows/{workflowId}/collaboration_mode\"",
                                 httpMethod: "POST",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: __response,
                                 exception: null,
                                 clientOptions: Options,
@@ -328,7 +328,7 @@ namespace G
                                 pathTemplate: "$\"/v1/workflows/{workflowId}/collaboration_mode\"",
                                 httpMethod: "POST",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: __response,
                                 exception: null,
                                 clientOptions: Options,
@@ -350,7 +350,7 @@ namespace G
                                 pathTemplate: "$\"/v1/workflows/{workflowId}/collaboration_mode\"",
                                 httpMethod: "POST",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: __response,
                                 exception: null,
                                 clientOptions: Options,

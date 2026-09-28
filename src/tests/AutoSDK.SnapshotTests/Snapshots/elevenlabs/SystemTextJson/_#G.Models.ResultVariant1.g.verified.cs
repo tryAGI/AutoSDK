@@ -1,4 +1,4 @@
-﻿//HintName: G.Models.ResultVariant1.g.cs
+//HintName: G.Models.ResultVariant1.g.cs
 #pragma warning disable CS0618 // Type or member is obsolete
 
 #nullable enable
@@ -48,8 +48,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.EndCallToolResultModel PickEndCallSuccess() => IsEndCallSuccess
-            ? EndCallSuccess!
+        public global::G.EndCallToolResultModel PickEndCallSuccess() => EndCallSuccess is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'EndCallSuccess' but the value was {ToString()}.");
 
         /// <summary>
@@ -85,8 +85,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.LanguageDetectionToolResultModel PickLanguageDetectionSuccess() => IsLanguageDetectionSuccess
-            ? LanguageDetectionSuccess!
+        public global::G.LanguageDetectionToolResultModel PickLanguageDetectionSuccess() => LanguageDetectionSuccess is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'LanguageDetectionSuccess' but the value was {ToString()}.");
 
         /// <summary>
@@ -122,8 +122,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.TransferToAgentToolResultSuccessModel PickTransferToAgentSuccess() => IsTransferToAgentSuccess
-            ? TransferToAgentSuccess!
+        public global::G.TransferToAgentToolResultSuccessModel PickTransferToAgentSuccess() => TransferToAgentSuccess is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'TransferToAgentSuccess' but the value was {ToString()}.");
 
         /// <summary>
@@ -159,8 +159,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.TransferToAgentToolResultErrorModel PickTransferToAgentError() => IsTransferToAgentError
-            ? TransferToAgentError!
+        public global::G.TransferToAgentToolResultErrorModel PickTransferToAgentError() => TransferToAgentError is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'TransferToAgentError' but the value was {ToString()}.");
 
         /// <summary>
@@ -196,8 +196,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.TransferToNumberResultTwilioSuccessModel PickTransferToNumberTwilioSuccess() => IsTransferToNumberTwilioSuccess
-            ? TransferToNumberTwilioSuccess!
+        public global::G.TransferToNumberResultTwilioSuccessModel PickTransferToNumberTwilioSuccess() => TransferToNumberTwilioSuccess is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'TransferToNumberTwilioSuccess' but the value was {ToString()}.");
 
         /// <summary>
@@ -233,8 +233,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.TransferToNumberResultSipSuccessModel PickTransferToNumberSipSuccess() => IsTransferToNumberSipSuccess
-            ? TransferToNumberSipSuccess!
+        public global::G.TransferToNumberResultSipSuccessModel PickTransferToNumberSipSuccess() => TransferToNumberSipSuccess is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'TransferToNumberSipSuccess' but the value was {ToString()}.");
 
         /// <summary>
@@ -270,8 +270,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.TransferToNumberResultErrorModel PickTransferToNumberError() => IsTransferToNumberError
-            ? TransferToNumberError!
+        public global::G.TransferToNumberResultErrorModel PickTransferToNumberError() => TransferToNumberError is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'TransferToNumberError' but the value was {ToString()}.");
 
         /// <summary>
@@ -307,8 +307,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.SkipTurnToolResponseModel PickSkipTurnSuccess() => IsSkipTurnSuccess
-            ? SkipTurnSuccess!
+        public global::G.SkipTurnToolResponseModel PickSkipTurnSuccess() => SkipTurnSuccess is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'SkipTurnSuccess' but the value was {ToString()}.");
 
         /// <summary>
@@ -344,8 +344,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.PlayDTMFResultSuccessModel PickPlayDtmfSuccess() => IsPlayDtmfSuccess
-            ? PlayDtmfSuccess!
+        public global::G.PlayDTMFResultSuccessModel PickPlayDtmfSuccess() => PlayDtmfSuccess is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'PlayDtmfSuccess' but the value was {ToString()}.");
 
         /// <summary>
@@ -381,8 +381,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.PlayDTMFResultErrorModel PickPlayDtmfError() => IsPlayDtmfError
-            ? PlayDtmfError!
+        public global::G.PlayDTMFResultErrorModel PickPlayDtmfError() => PlayDtmfError is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'PlayDtmfError' but the value was {ToString()}.");
 
         /// <summary>
@@ -418,8 +418,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.VoiceMailDetectionResultSuccessModel PickVoicemailDetectionSuccess() => IsVoicemailDetectionSuccess
-            ? VoicemailDetectionSuccess!
+        public global::G.VoiceMailDetectionResultSuccessModel PickVoicemailDetectionSuccess() => VoicemailDetectionSuccess is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'VoicemailDetectionSuccess' but the value was {ToString()}.");
 
         /// <summary>
@@ -455,8 +455,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.TestToolResultModel PickTestingToolResult() => IsTestingToolResult
-            ? TestingToolResult!
+        public global::G.TestToolResultModel PickTestingToolResult() => TestingToolResult is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'TestingToolResult' but the value was {ToString()}.");
         /// <summary>
         /// 
@@ -836,53 +836,53 @@ namespace G
                 Validate();
             }
 
-            if (IsEndCallSuccess && endCallSuccess != null)
+            if (EndCallSuccess is { } __value0 && endCallSuccess != null)
             {
-                return endCallSuccess(EndCallSuccess!);
+                return endCallSuccess(__value0);
             }
-            else if (IsLanguageDetectionSuccess && languageDetectionSuccess != null)
+            else if (LanguageDetectionSuccess is { } __value1 && languageDetectionSuccess != null)
             {
-                return languageDetectionSuccess(LanguageDetectionSuccess!);
+                return languageDetectionSuccess(__value1);
             }
-            else if (IsTransferToAgentSuccess && transferToAgentSuccess != null)
+            else if (TransferToAgentSuccess is { } __value2 && transferToAgentSuccess != null)
             {
-                return transferToAgentSuccess(TransferToAgentSuccess!);
+                return transferToAgentSuccess(__value2);
             }
-            else if (IsTransferToAgentError && transferToAgentError != null)
+            else if (TransferToAgentError is { } __value3 && transferToAgentError != null)
             {
-                return transferToAgentError(TransferToAgentError!);
+                return transferToAgentError(__value3);
             }
-            else if (IsTransferToNumberTwilioSuccess && transferToNumberTwilioSuccess != null)
+            else if (TransferToNumberTwilioSuccess is { } __value4 && transferToNumberTwilioSuccess != null)
             {
-                return transferToNumberTwilioSuccess(TransferToNumberTwilioSuccess!);
+                return transferToNumberTwilioSuccess(__value4);
             }
-            else if (IsTransferToNumberSipSuccess && transferToNumberSipSuccess != null)
+            else if (TransferToNumberSipSuccess is { } __value5 && transferToNumberSipSuccess != null)
             {
-                return transferToNumberSipSuccess(TransferToNumberSipSuccess!);
+                return transferToNumberSipSuccess(__value5);
             }
-            else if (IsTransferToNumberError && transferToNumberError != null)
+            else if (TransferToNumberError is { } __value6 && transferToNumberError != null)
             {
-                return transferToNumberError(TransferToNumberError!);
+                return transferToNumberError(__value6);
             }
-            else if (IsSkipTurnSuccess && skipTurnSuccess != null)
+            else if (SkipTurnSuccess is { } __value7 && skipTurnSuccess != null)
             {
-                return skipTurnSuccess(SkipTurnSuccess!);
+                return skipTurnSuccess(__value7);
             }
-            else if (IsPlayDtmfSuccess && playDtmfSuccess != null)
+            else if (PlayDtmfSuccess is { } __value8 && playDtmfSuccess != null)
             {
-                return playDtmfSuccess(PlayDtmfSuccess!);
+                return playDtmfSuccess(__value8);
             }
-            else if (IsPlayDtmfError && playDtmfError != null)
+            else if (PlayDtmfError is { } __value9 && playDtmfError != null)
             {
-                return playDtmfError(PlayDtmfError!);
+                return playDtmfError(__value9);
             }
-            else if (IsVoicemailDetectionSuccess && voicemailDetectionSuccess != null)
+            else if (VoicemailDetectionSuccess is { } __value10 && voicemailDetectionSuccess != null)
             {
-                return voicemailDetectionSuccess(VoicemailDetectionSuccess!);
+                return voicemailDetectionSuccess(__value10);
             }
-            else if (IsTestingToolResult && testingToolResult != null)
+            else if (TestingToolResult is { } __value11 && testingToolResult != null)
             {
-                return testingToolResult(TestingToolResult!);
+                return testingToolResult(__value11);
             }
 
             return default(TResult);
@@ -922,53 +922,53 @@ namespace G
                 Validate();
             }
 
-            if (IsEndCallSuccess)
+            if (EndCallSuccess is { } __value0)
             {
-                endCallSuccess?.Invoke(EndCallSuccess!);
+                endCallSuccess?.Invoke(__value0);
             }
-            else if (IsLanguageDetectionSuccess)
+            else if (LanguageDetectionSuccess is { } __value1)
             {
-                languageDetectionSuccess?.Invoke(LanguageDetectionSuccess!);
+                languageDetectionSuccess?.Invoke(__value1);
             }
-            else if (IsTransferToAgentSuccess)
+            else if (TransferToAgentSuccess is { } __value2)
             {
-                transferToAgentSuccess?.Invoke(TransferToAgentSuccess!);
+                transferToAgentSuccess?.Invoke(__value2);
             }
-            else if (IsTransferToAgentError)
+            else if (TransferToAgentError is { } __value3)
             {
-                transferToAgentError?.Invoke(TransferToAgentError!);
+                transferToAgentError?.Invoke(__value3);
             }
-            else if (IsTransferToNumberTwilioSuccess)
+            else if (TransferToNumberTwilioSuccess is { } __value4)
             {
-                transferToNumberTwilioSuccess?.Invoke(TransferToNumberTwilioSuccess!);
+                transferToNumberTwilioSuccess?.Invoke(__value4);
             }
-            else if (IsTransferToNumberSipSuccess)
+            else if (TransferToNumberSipSuccess is { } __value5)
             {
-                transferToNumberSipSuccess?.Invoke(TransferToNumberSipSuccess!);
+                transferToNumberSipSuccess?.Invoke(__value5);
             }
-            else if (IsTransferToNumberError)
+            else if (TransferToNumberError is { } __value6)
             {
-                transferToNumberError?.Invoke(TransferToNumberError!);
+                transferToNumberError?.Invoke(__value6);
             }
-            else if (IsSkipTurnSuccess)
+            else if (SkipTurnSuccess is { } __value7)
             {
-                skipTurnSuccess?.Invoke(SkipTurnSuccess!);
+                skipTurnSuccess?.Invoke(__value7);
             }
-            else if (IsPlayDtmfSuccess)
+            else if (PlayDtmfSuccess is { } __value8)
             {
-                playDtmfSuccess?.Invoke(PlayDtmfSuccess!);
+                playDtmfSuccess?.Invoke(__value8);
             }
-            else if (IsPlayDtmfError)
+            else if (PlayDtmfError is { } __value9)
             {
-                playDtmfError?.Invoke(PlayDtmfError!);
+                playDtmfError?.Invoke(__value9);
             }
-            else if (IsVoicemailDetectionSuccess)
+            else if (VoicemailDetectionSuccess is { } __value10)
             {
-                voicemailDetectionSuccess?.Invoke(VoicemailDetectionSuccess!);
+                voicemailDetectionSuccess?.Invoke(__value10);
             }
-            else if (IsTestingToolResult)
+            else if (TestingToolResult is { } __value11)
             {
-                testingToolResult?.Invoke(TestingToolResult!);
+                testingToolResult?.Invoke(__value11);
             }
         }
 
@@ -995,53 +995,53 @@ namespace G
                 Validate();
             }
 
-            if (IsEndCallSuccess)
+            if (EndCallSuccess is { } __value0)
             {
-                endCallSuccess?.Invoke(EndCallSuccess!);
+                endCallSuccess?.Invoke(__value0);
             }
-            else if (IsLanguageDetectionSuccess)
+            else if (LanguageDetectionSuccess is { } __value1)
             {
-                languageDetectionSuccess?.Invoke(LanguageDetectionSuccess!);
+                languageDetectionSuccess?.Invoke(__value1);
             }
-            else if (IsTransferToAgentSuccess)
+            else if (TransferToAgentSuccess is { } __value2)
             {
-                transferToAgentSuccess?.Invoke(TransferToAgentSuccess!);
+                transferToAgentSuccess?.Invoke(__value2);
             }
-            else if (IsTransferToAgentError)
+            else if (TransferToAgentError is { } __value3)
             {
-                transferToAgentError?.Invoke(TransferToAgentError!);
+                transferToAgentError?.Invoke(__value3);
             }
-            else if (IsTransferToNumberTwilioSuccess)
+            else if (TransferToNumberTwilioSuccess is { } __value4)
             {
-                transferToNumberTwilioSuccess?.Invoke(TransferToNumberTwilioSuccess!);
+                transferToNumberTwilioSuccess?.Invoke(__value4);
             }
-            else if (IsTransferToNumberSipSuccess)
+            else if (TransferToNumberSipSuccess is { } __value5)
             {
-                transferToNumberSipSuccess?.Invoke(TransferToNumberSipSuccess!);
+                transferToNumberSipSuccess?.Invoke(__value5);
             }
-            else if (IsTransferToNumberError)
+            else if (TransferToNumberError is { } __value6)
             {
-                transferToNumberError?.Invoke(TransferToNumberError!);
+                transferToNumberError?.Invoke(__value6);
             }
-            else if (IsSkipTurnSuccess)
+            else if (SkipTurnSuccess is { } __value7)
             {
-                skipTurnSuccess?.Invoke(SkipTurnSuccess!);
+                skipTurnSuccess?.Invoke(__value7);
             }
-            else if (IsPlayDtmfSuccess)
+            else if (PlayDtmfSuccess is { } __value8)
             {
-                playDtmfSuccess?.Invoke(PlayDtmfSuccess!);
+                playDtmfSuccess?.Invoke(__value8);
             }
-            else if (IsPlayDtmfError)
+            else if (PlayDtmfError is { } __value9)
             {
-                playDtmfError?.Invoke(PlayDtmfError!);
+                playDtmfError?.Invoke(__value9);
             }
-            else if (IsVoicemailDetectionSuccess)
+            else if (VoicemailDetectionSuccess is { } __value10)
             {
-                voicemailDetectionSuccess?.Invoke(VoicemailDetectionSuccess!);
+                voicemailDetectionSuccess?.Invoke(__value10);
             }
-            else if (IsTestingToolResult)
+            else if (TestingToolResult is { } __value11)
             {
-                testingToolResult?.Invoke(TestingToolResult!);
+                testingToolResult?.Invoke(__value11);
             }
         }
 

@@ -1,4 +1,4 @@
-﻿//HintName: G.JsonConverters.GroupId.g.cs
+//HintName: G.JsonConverters.GroupId.g.cs
 #nullable enable
 #pragma warning disable CS0618 // Type or member is obsolete
 
@@ -199,19 +199,19 @@ namespace G.JsonConverters
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(string), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<string?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(string).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.GroupIdVariant1!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickGroupIdVariant1(), typeInfo);
             }
             else if (value.IsGroupIdVariant2)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(int), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<int> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(int).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.GroupIdVariant2!.Value, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickGroupIdVariant2(), typeInfo);
             }
             else if (value.IsGroupIdVariant3)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(long), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<long> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(long).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.GroupIdVariant3!.Value, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickGroupIdVariant3(), typeInfo);
             }
         }
     }

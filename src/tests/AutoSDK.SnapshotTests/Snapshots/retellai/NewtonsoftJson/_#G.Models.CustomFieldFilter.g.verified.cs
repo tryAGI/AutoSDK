@@ -1,4 +1,4 @@
-﻿//HintName: G.Models.CustomFieldFilter.g.cs
+//HintName: G.Models.CustomFieldFilter.g.cs
 #pragma warning disable CS0618 // Type or member is obsolete
 
 #nullable enable
@@ -43,8 +43,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.ValueFilter PickValue() => IsValue
-            ? Value!.Value
+        public global::G.ValueFilter PickValue() => Value is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Value' but the value was {ToString()}.");
 
         /// <summary>
@@ -80,8 +80,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.CustomFieldFilterVariant2 PickCustomFieldFilterVariant2() => IsCustomFieldFilterVariant2
-            ? CustomFieldFilterVariant2!
+        public global::G.CustomFieldFilterVariant2 PickCustomFieldFilterVariant2() => CustomFieldFilterVariant2 is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'CustomFieldFilterVariant2' but the value was {ToString()}.");
         /// <summary>
         /// 
@@ -178,13 +178,13 @@ namespace G
                 Validate();
             }
 
-            if (IsValue && value != null)
+            if (Value is { } __value0 && value != null)
             {
-                return value(Value!);
+                return value(__value0);
             }
-            else if (IsCustomFieldFilterVariant2 && customFieldFilterVariant2 != null)
+            else if (CustomFieldFilterVariant2 is { } __value1 && customFieldFilterVariant2 != null)
             {
-                return customFieldFilterVariant2(CustomFieldFilterVariant2!);
+                return customFieldFilterVariant2(__value1);
             }
 
             return default(TResult);
@@ -204,13 +204,13 @@ namespace G
                 Validate();
             }
 
-            if (IsValue)
+            if (Value is { } __value0)
             {
-                value?.Invoke(Value!);
+                value?.Invoke(__value0);
             }
-            else if (IsCustomFieldFilterVariant2)
+            else if (CustomFieldFilterVariant2 is { } __value1)
             {
-                customFieldFilterVariant2?.Invoke(CustomFieldFilterVariant2!);
+                customFieldFilterVariant2?.Invoke(__value1);
             }
         }
 
@@ -227,13 +227,13 @@ namespace G
                 Validate();
             }
 
-            if (IsValue)
+            if (Value is { } __value0)
             {
-                value?.Invoke(Value!);
+                value?.Invoke(__value0);
             }
-            else if (IsCustomFieldFilterVariant2)
+            else if (CustomFieldFilterVariant2 is { } __value1)
             {
-                customFieldFilterVariant2?.Invoke(CustomFieldFilterVariant2!);
+                customFieldFilterVariant2?.Invoke(__value1);
             }
         }
 

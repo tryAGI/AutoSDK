@@ -1,4 +1,4 @@
-﻿//HintName: G.Models.ClusterOperations.g.cs
+//HintName: G.Models.ClusterOperations.g.cs
 #pragma warning disable CS0618 // Type or member is obsolete
 
 #nullable enable
@@ -43,8 +43,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.MoveShardOperation PickMoveShardOperation() => IsMoveShardOperation
-            ? MoveShardOperation!
+        public global::G.MoveShardOperation PickMoveShardOperation() => MoveShardOperation is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'MoveShardOperation' but the value was {ToString()}.");
 
         /// <summary>
@@ -80,8 +80,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.ReplicateShardOperation PickReplicateShardOperation() => IsReplicateShardOperation
-            ? ReplicateShardOperation!
+        public global::G.ReplicateShardOperation PickReplicateShardOperation() => ReplicateShardOperation is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'ReplicateShardOperation' but the value was {ToString()}.");
 
         /// <summary>
@@ -117,8 +117,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.AbortTransferOperation PickAbortTransferOperation() => IsAbortTransferOperation
-            ? AbortTransferOperation!
+        public global::G.AbortTransferOperation PickAbortTransferOperation() => AbortTransferOperation is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'AbortTransferOperation' but the value was {ToString()}.");
 
         /// <summary>
@@ -154,8 +154,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.DropReplicaOperation PickDropReplicaOperation() => IsDropReplicaOperation
-            ? DropReplicaOperation!
+        public global::G.DropReplicaOperation PickDropReplicaOperation() => DropReplicaOperation is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'DropReplicaOperation' but the value was {ToString()}.");
 
         /// <summary>
@@ -191,8 +191,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.CreateShardingKeyOperation PickCreateShardingKeyOperation() => IsCreateShardingKeyOperation
-            ? CreateShardingKeyOperation!
+        public global::G.CreateShardingKeyOperation PickCreateShardingKeyOperation() => CreateShardingKeyOperation is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'CreateShardingKeyOperation' but the value was {ToString()}.");
 
         /// <summary>
@@ -228,8 +228,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.DropShardingKeyOperation PickDropShardingKeyOperation() => IsDropShardingKeyOperation
-            ? DropShardingKeyOperation!
+        public global::G.DropShardingKeyOperation PickDropShardingKeyOperation() => DropShardingKeyOperation is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'DropShardingKeyOperation' but the value was {ToString()}.");
 
         /// <summary>
@@ -265,8 +265,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.RestartTransferOperation PickRestartTransferOperation() => IsRestartTransferOperation
-            ? RestartTransferOperation!
+        public global::G.RestartTransferOperation PickRestartTransferOperation() => RestartTransferOperation is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'RestartTransferOperation' but the value was {ToString()}.");
 
         /// <summary>
@@ -302,8 +302,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.StartReshardingOperation PickStartReshardingOperation() => IsStartReshardingOperation
-            ? StartReshardingOperation!
+        public global::G.StartReshardingOperation PickStartReshardingOperation() => StartReshardingOperation is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'StartReshardingOperation' but the value was {ToString()}.");
 
         /// <summary>
@@ -339,8 +339,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.AbortReshardingOperation PickAbortReshardingOperation() => IsAbortReshardingOperation
-            ? AbortReshardingOperation!
+        public global::G.AbortReshardingOperation PickAbortReshardingOperation() => AbortReshardingOperation is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'AbortReshardingOperation' but the value was {ToString()}.");
 
         /// <summary>
@@ -376,8 +376,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.ReplicatePointsOperation PickReplicatePointsOperation() => IsReplicatePointsOperation
-            ? ReplicatePointsOperation!
+        public global::G.ReplicatePointsOperation PickReplicatePointsOperation() => ReplicatePointsOperation is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'ReplicatePointsOperation' but the value was {ToString()}.");
         /// <summary>
         /// 
@@ -698,45 +698,45 @@ namespace G
                 Validate();
             }
 
-            if (IsMoveShardOperation && moveShardOperation != null)
+            if (MoveShardOperation is { } __value0 && moveShardOperation != null)
             {
-                return moveShardOperation(MoveShardOperation!);
+                return moveShardOperation(__value0);
             }
-            else if (IsReplicateShardOperation && replicateShardOperation != null)
+            else if (ReplicateShardOperation is { } __value1 && replicateShardOperation != null)
             {
-                return replicateShardOperation(ReplicateShardOperation!);
+                return replicateShardOperation(__value1);
             }
-            else if (IsAbortTransferOperation && abortTransferOperation != null)
+            else if (AbortTransferOperation is { } __value2 && abortTransferOperation != null)
             {
-                return abortTransferOperation(AbortTransferOperation!);
+                return abortTransferOperation(__value2);
             }
-            else if (IsDropReplicaOperation && dropReplicaOperation != null)
+            else if (DropReplicaOperation is { } __value3 && dropReplicaOperation != null)
             {
-                return dropReplicaOperation(DropReplicaOperation!);
+                return dropReplicaOperation(__value3);
             }
-            else if (IsCreateShardingKeyOperation && createShardingKeyOperation != null)
+            else if (CreateShardingKeyOperation is { } __value4 && createShardingKeyOperation != null)
             {
-                return createShardingKeyOperation(CreateShardingKeyOperation!);
+                return createShardingKeyOperation(__value4);
             }
-            else if (IsDropShardingKeyOperation && dropShardingKeyOperation != null)
+            else if (DropShardingKeyOperation is { } __value5 && dropShardingKeyOperation != null)
             {
-                return dropShardingKeyOperation(DropShardingKeyOperation!);
+                return dropShardingKeyOperation(__value5);
             }
-            else if (IsRestartTransferOperation && restartTransferOperation != null)
+            else if (RestartTransferOperation is { } __value6 && restartTransferOperation != null)
             {
-                return restartTransferOperation(RestartTransferOperation!);
+                return restartTransferOperation(__value6);
             }
-            else if (IsStartReshardingOperation && startReshardingOperation != null)
+            else if (StartReshardingOperation is { } __value7 && startReshardingOperation != null)
             {
-                return startReshardingOperation(StartReshardingOperation!);
+                return startReshardingOperation(__value7);
             }
-            else if (IsAbortReshardingOperation && abortReshardingOperation != null)
+            else if (AbortReshardingOperation is { } __value8 && abortReshardingOperation != null)
             {
-                return abortReshardingOperation(AbortReshardingOperation!);
+                return abortReshardingOperation(__value8);
             }
-            else if (IsReplicatePointsOperation && replicatePointsOperation != null)
+            else if (ReplicatePointsOperation is { } __value9 && replicatePointsOperation != null)
             {
-                return replicatePointsOperation(ReplicatePointsOperation!);
+                return replicatePointsOperation(__value9);
             }
 
             return default(TResult);
@@ -772,45 +772,45 @@ namespace G
                 Validate();
             }
 
-            if (IsMoveShardOperation)
+            if (MoveShardOperation is { } __value0)
             {
-                moveShardOperation?.Invoke(MoveShardOperation!);
+                moveShardOperation?.Invoke(__value0);
             }
-            else if (IsReplicateShardOperation)
+            else if (ReplicateShardOperation is { } __value1)
             {
-                replicateShardOperation?.Invoke(ReplicateShardOperation!);
+                replicateShardOperation?.Invoke(__value1);
             }
-            else if (IsAbortTransferOperation)
+            else if (AbortTransferOperation is { } __value2)
             {
-                abortTransferOperation?.Invoke(AbortTransferOperation!);
+                abortTransferOperation?.Invoke(__value2);
             }
-            else if (IsDropReplicaOperation)
+            else if (DropReplicaOperation is { } __value3)
             {
-                dropReplicaOperation?.Invoke(DropReplicaOperation!);
+                dropReplicaOperation?.Invoke(__value3);
             }
-            else if (IsCreateShardingKeyOperation)
+            else if (CreateShardingKeyOperation is { } __value4)
             {
-                createShardingKeyOperation?.Invoke(CreateShardingKeyOperation!);
+                createShardingKeyOperation?.Invoke(__value4);
             }
-            else if (IsDropShardingKeyOperation)
+            else if (DropShardingKeyOperation is { } __value5)
             {
-                dropShardingKeyOperation?.Invoke(DropShardingKeyOperation!);
+                dropShardingKeyOperation?.Invoke(__value5);
             }
-            else if (IsRestartTransferOperation)
+            else if (RestartTransferOperation is { } __value6)
             {
-                restartTransferOperation?.Invoke(RestartTransferOperation!);
+                restartTransferOperation?.Invoke(__value6);
             }
-            else if (IsStartReshardingOperation)
+            else if (StartReshardingOperation is { } __value7)
             {
-                startReshardingOperation?.Invoke(StartReshardingOperation!);
+                startReshardingOperation?.Invoke(__value7);
             }
-            else if (IsAbortReshardingOperation)
+            else if (AbortReshardingOperation is { } __value8)
             {
-                abortReshardingOperation?.Invoke(AbortReshardingOperation!);
+                abortReshardingOperation?.Invoke(__value8);
             }
-            else if (IsReplicatePointsOperation)
+            else if (ReplicatePointsOperation is { } __value9)
             {
-                replicatePointsOperation?.Invoke(ReplicatePointsOperation!);
+                replicatePointsOperation?.Invoke(__value9);
             }
         }
 
@@ -835,45 +835,45 @@ namespace G
                 Validate();
             }
 
-            if (IsMoveShardOperation)
+            if (MoveShardOperation is { } __value0)
             {
-                moveShardOperation?.Invoke(MoveShardOperation!);
+                moveShardOperation?.Invoke(__value0);
             }
-            else if (IsReplicateShardOperation)
+            else if (ReplicateShardOperation is { } __value1)
             {
-                replicateShardOperation?.Invoke(ReplicateShardOperation!);
+                replicateShardOperation?.Invoke(__value1);
             }
-            else if (IsAbortTransferOperation)
+            else if (AbortTransferOperation is { } __value2)
             {
-                abortTransferOperation?.Invoke(AbortTransferOperation!);
+                abortTransferOperation?.Invoke(__value2);
             }
-            else if (IsDropReplicaOperation)
+            else if (DropReplicaOperation is { } __value3)
             {
-                dropReplicaOperation?.Invoke(DropReplicaOperation!);
+                dropReplicaOperation?.Invoke(__value3);
             }
-            else if (IsCreateShardingKeyOperation)
+            else if (CreateShardingKeyOperation is { } __value4)
             {
-                createShardingKeyOperation?.Invoke(CreateShardingKeyOperation!);
+                createShardingKeyOperation?.Invoke(__value4);
             }
-            else if (IsDropShardingKeyOperation)
+            else if (DropShardingKeyOperation is { } __value5)
             {
-                dropShardingKeyOperation?.Invoke(DropShardingKeyOperation!);
+                dropShardingKeyOperation?.Invoke(__value5);
             }
-            else if (IsRestartTransferOperation)
+            else if (RestartTransferOperation is { } __value6)
             {
-                restartTransferOperation?.Invoke(RestartTransferOperation!);
+                restartTransferOperation?.Invoke(__value6);
             }
-            else if (IsStartReshardingOperation)
+            else if (StartReshardingOperation is { } __value7)
             {
-                startReshardingOperation?.Invoke(StartReshardingOperation!);
+                startReshardingOperation?.Invoke(__value7);
             }
-            else if (IsAbortReshardingOperation)
+            else if (AbortReshardingOperation is { } __value8)
             {
-                abortReshardingOperation?.Invoke(AbortReshardingOperation!);
+                abortReshardingOperation?.Invoke(__value8);
             }
-            else if (IsReplicatePointsOperation)
+            else if (ReplicatePointsOperation is { } __value9)
             {
-                replicatePointsOperation?.Invoke(ReplicatePointsOperation!);
+                replicatePointsOperation?.Invoke(__value9);
             }
         }
 

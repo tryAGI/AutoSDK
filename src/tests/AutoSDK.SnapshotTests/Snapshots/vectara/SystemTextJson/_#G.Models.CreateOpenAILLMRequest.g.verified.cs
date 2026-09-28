@@ -1,4 +1,4 @@
-﻿//HintName: G.Models.CreateOpenAILLMRequest.g.cs
+//HintName: G.Models.CreateOpenAILLMRequest.g.cs
 #pragma warning disable CS0618 // Type or member is obsolete
 
 #nullable enable
@@ -43,8 +43,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.OpenAILLMRequestBase PickBase() => IsBase
-            ? Base!
+        public global::G.OpenAILLMRequestBase PickBase() => Base is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Base' but the value was {ToString()}.");
 
         /// <summary>
@@ -80,8 +80,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.CreateOpenAILLMRequestVariant2 PickCreateOpenAILLMRequestVariant2() => IsCreateOpenAILLMRequestVariant2
-            ? CreateOpenAILLMRequestVariant2!
+        public global::G.CreateOpenAILLMRequestVariant2 PickCreateOpenAILLMRequestVariant2() => CreateOpenAILLMRequestVariant2 is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'CreateOpenAILLMRequestVariant2' but the value was {ToString()}.");
         /// <summary>
         /// 
@@ -178,13 +178,13 @@ namespace G
                 Validate();
             }
 
-            if (IsBase && @base != null)
+            if (Base is { } __value0 && @base != null)
             {
-                return @base(Base!);
+                return @base(__value0);
             }
-            else if (IsCreateOpenAILLMRequestVariant2 && createOpenAILLMRequestVariant2 != null)
+            else if (CreateOpenAILLMRequestVariant2 is { } __value1 && createOpenAILLMRequestVariant2 != null)
             {
-                return createOpenAILLMRequestVariant2(CreateOpenAILLMRequestVariant2!);
+                return createOpenAILLMRequestVariant2(__value1);
             }
 
             return default(TResult);
@@ -204,13 +204,13 @@ namespace G
                 Validate();
             }
 
-            if (IsBase)
+            if (Base is { } __value0)
             {
-                @base?.Invoke(Base!);
+                @base?.Invoke(__value0);
             }
-            else if (IsCreateOpenAILLMRequestVariant2)
+            else if (CreateOpenAILLMRequestVariant2 is { } __value1)
             {
-                createOpenAILLMRequestVariant2?.Invoke(CreateOpenAILLMRequestVariant2!);
+                createOpenAILLMRequestVariant2?.Invoke(__value1);
             }
         }
 
@@ -227,13 +227,13 @@ namespace G
                 Validate();
             }
 
-            if (IsBase)
+            if (Base is { } __value0)
             {
-                @base?.Invoke(Base!);
+                @base?.Invoke(__value0);
             }
-            else if (IsCreateOpenAILLMRequestVariant2)
+            else if (CreateOpenAILLMRequestVariant2 is { } __value1)
             {
-                createOpenAILLMRequestVariant2?.Invoke(CreateOpenAILLMRequestVariant2!);
+                createOpenAILLMRequestVariant2?.Invoke(__value1);
             }
         }
 

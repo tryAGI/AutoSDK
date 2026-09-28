@@ -1,4 +1,4 @@
-﻿//HintName: G.Models.BetaInputContentBlock.g.cs
+//HintName: G.Models.BetaInputContentBlock.g.cs
 #pragma warning disable CS0618 // Type or member is obsolete
 
 #nullable enable
@@ -48,8 +48,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.BetaRequestTextBlock PickText() => IsText
-            ? Text!
+        public global::G.BetaRequestTextBlock PickText() => Text is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Text' but the value was {ToString()}.");
 
         /// <summary>
@@ -85,8 +85,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.BetaRequestImageBlock PickImage() => IsImage
-            ? Image!
+        public global::G.BetaRequestImageBlock PickImage() => Image is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Image' but the value was {ToString()}.");
 
         /// <summary>
@@ -122,8 +122,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.BetaRequestToolUseBlock PickToolUse() => IsToolUse
-            ? ToolUse!
+        public global::G.BetaRequestToolUseBlock PickToolUse() => ToolUse is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'ToolUse' but the value was {ToString()}.");
 
         /// <summary>
@@ -159,8 +159,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.BetaRequestToolResultBlock PickToolResult() => IsToolResult
-            ? ToolResult!
+        public global::G.BetaRequestToolResultBlock PickToolResult() => ToolResult is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'ToolResult' but the value was {ToString()}.");
 
         /// <summary>
@@ -196,8 +196,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.BetaRequestDocumentBlock PickDocument() => IsDocument
-            ? Document!
+        public global::G.BetaRequestDocumentBlock PickDocument() => Document is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Document' but the value was {ToString()}.");
 
         /// <summary>
@@ -233,8 +233,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.BetaRequestThinkingBlock PickThinking() => IsThinking
-            ? Thinking!
+        public global::G.BetaRequestThinkingBlock PickThinking() => Thinking is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Thinking' but the value was {ToString()}.");
 
         /// <summary>
@@ -270,8 +270,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.BetaRequestRedactedThinkingBlock PickRedactedThinking() => IsRedactedThinking
-            ? RedactedThinking!
+        public global::G.BetaRequestRedactedThinkingBlock PickRedactedThinking() => RedactedThinking is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'RedactedThinking' but the value was {ToString()}.");
         /// <summary>
         /// 
@@ -511,33 +511,33 @@ namespace G
                 Validate();
             }
 
-            if (IsText && text != null)
+            if (Text is { } __value0 && text != null)
             {
-                return text(Text!);
+                return text(__value0);
             }
-            else if (IsImage && image != null)
+            else if (Image is { } __value1 && image != null)
             {
-                return image(Image!);
+                return image(__value1);
             }
-            else if (IsToolUse && toolUse != null)
+            else if (ToolUse is { } __value2 && toolUse != null)
             {
-                return toolUse(ToolUse!);
+                return toolUse(__value2);
             }
-            else if (IsToolResult && toolResult != null)
+            else if (ToolResult is { } __value3 && toolResult != null)
             {
-                return toolResult(ToolResult!);
+                return toolResult(__value3);
             }
-            else if (IsDocument && document != null)
+            else if (Document is { } __value4 && document != null)
             {
-                return document(Document!);
+                return document(__value4);
             }
-            else if (IsThinking && thinking != null)
+            else if (Thinking is { } __value5 && thinking != null)
             {
-                return thinking(Thinking!);
+                return thinking(__value5);
             }
-            else if (IsRedactedThinking && redactedThinking != null)
+            else if (RedactedThinking is { } __value6 && redactedThinking != null)
             {
-                return redactedThinking(RedactedThinking!);
+                return redactedThinking(__value6);
             }
 
             return default(TResult);
@@ -567,33 +567,33 @@ namespace G
                 Validate();
             }
 
-            if (IsText)
+            if (Text is { } __value0)
             {
-                text?.Invoke(Text!);
+                text?.Invoke(__value0);
             }
-            else if (IsImage)
+            else if (Image is { } __value1)
             {
-                image?.Invoke(Image!);
+                image?.Invoke(__value1);
             }
-            else if (IsToolUse)
+            else if (ToolUse is { } __value2)
             {
-                toolUse?.Invoke(ToolUse!);
+                toolUse?.Invoke(__value2);
             }
-            else if (IsToolResult)
+            else if (ToolResult is { } __value3)
             {
-                toolResult?.Invoke(ToolResult!);
+                toolResult?.Invoke(__value3);
             }
-            else if (IsDocument)
+            else if (Document is { } __value4)
             {
-                document?.Invoke(Document!);
+                document?.Invoke(__value4);
             }
-            else if (IsThinking)
+            else if (Thinking is { } __value5)
             {
-                thinking?.Invoke(Thinking!);
+                thinking?.Invoke(__value5);
             }
-            else if (IsRedactedThinking)
+            else if (RedactedThinking is { } __value6)
             {
-                redactedThinking?.Invoke(RedactedThinking!);
+                redactedThinking?.Invoke(__value6);
             }
         }
 
@@ -615,33 +615,33 @@ namespace G
                 Validate();
             }
 
-            if (IsText)
+            if (Text is { } __value0)
             {
-                text?.Invoke(Text!);
+                text?.Invoke(__value0);
             }
-            else if (IsImage)
+            else if (Image is { } __value1)
             {
-                image?.Invoke(Image!);
+                image?.Invoke(__value1);
             }
-            else if (IsToolUse)
+            else if (ToolUse is { } __value2)
             {
-                toolUse?.Invoke(ToolUse!);
+                toolUse?.Invoke(__value2);
             }
-            else if (IsToolResult)
+            else if (ToolResult is { } __value3)
             {
-                toolResult?.Invoke(ToolResult!);
+                toolResult?.Invoke(__value3);
             }
-            else if (IsDocument)
+            else if (Document is { } __value4)
             {
-                document?.Invoke(Document!);
+                document?.Invoke(__value4);
             }
-            else if (IsThinking)
+            else if (Thinking is { } __value5)
             {
-                thinking?.Invoke(Thinking!);
+                thinking?.Invoke(__value5);
             }
-            else if (IsRedactedThinking)
+            else if (RedactedThinking is { } __value6)
             {
-                redactedThinking?.Invoke(RedactedThinking!);
+                redactedThinking?.Invoke(__value6);
             }
         }
 

@@ -1,4 +1,4 @@
-﻿//HintName: G.Models.WebhookConfigInsecureSsl.g.cs
+//HintName: G.Models.WebhookConfigInsecureSsl.g.cs
 #pragma warning disable CS0618 // Type or member is obsolete
 
 #nullable enable
@@ -44,8 +44,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public string PickWebhookConfigInsecureSslVariant1() => IsWebhookConfigInsecureSslVariant1
-            ? WebhookConfigInsecureSslVariant1!
+        public string PickWebhookConfigInsecureSslVariant1() => WebhookConfigInsecureSslVariant1 is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'WebhookConfigInsecureSslVariant1' but the value was {ToString()}.");
 
         /// <summary>
@@ -81,8 +81,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public double PickWebhookConfigInsecureSslVariant2() => IsWebhookConfigInsecureSslVariant2
-            ? WebhookConfigInsecureSslVariant2!.Value
+        public double PickWebhookConfigInsecureSslVariant2() => WebhookConfigInsecureSslVariant2 is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'WebhookConfigInsecureSslVariant2' but the value was {ToString()}.");
         /// <summary>
         /// 
@@ -179,13 +179,13 @@ namespace G
                 Validate();
             }
 
-            if (IsWebhookConfigInsecureSslVariant1 && webhookConfigInsecureSslVariant1 != null)
+            if (WebhookConfigInsecureSslVariant1 is { } __value0 && webhookConfigInsecureSslVariant1 != null)
             {
-                return webhookConfigInsecureSslVariant1(WebhookConfigInsecureSslVariant1!);
+                return webhookConfigInsecureSslVariant1(__value0);
             }
-            else if (IsWebhookConfigInsecureSslVariant2 && webhookConfigInsecureSslVariant2 != null)
+            else if (WebhookConfigInsecureSslVariant2 is { } __value1 && webhookConfigInsecureSslVariant2 != null)
             {
-                return webhookConfigInsecureSslVariant2(WebhookConfigInsecureSslVariant2!);
+                return webhookConfigInsecureSslVariant2(__value1);
             }
 
             return default(TResult);
@@ -205,13 +205,13 @@ namespace G
                 Validate();
             }
 
-            if (IsWebhookConfigInsecureSslVariant1)
+            if (WebhookConfigInsecureSslVariant1 is { } __value0)
             {
-                webhookConfigInsecureSslVariant1?.Invoke(WebhookConfigInsecureSslVariant1!);
+                webhookConfigInsecureSslVariant1?.Invoke(__value0);
             }
-            else if (IsWebhookConfigInsecureSslVariant2)
+            else if (WebhookConfigInsecureSslVariant2 is { } __value1)
             {
-                webhookConfigInsecureSslVariant2?.Invoke(WebhookConfigInsecureSslVariant2!);
+                webhookConfigInsecureSslVariant2?.Invoke(__value1);
             }
         }
 
@@ -228,13 +228,13 @@ namespace G
                 Validate();
             }
 
-            if (IsWebhookConfigInsecureSslVariant1)
+            if (WebhookConfigInsecureSslVariant1 is { } __value0)
             {
-                webhookConfigInsecureSslVariant1?.Invoke(WebhookConfigInsecureSslVariant1!);
+                webhookConfigInsecureSslVariant1?.Invoke(__value0);
             }
-            else if (IsWebhookConfigInsecureSslVariant2)
+            else if (WebhookConfigInsecureSslVariant2 is { } __value1)
             {
-                webhookConfigInsecureSslVariant2?.Invoke(WebhookConfigInsecureSslVariant2!);
+                webhookConfigInsecureSslVariant2?.Invoke(__value1);
             }
         }
 

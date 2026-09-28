@@ -1,4 +1,4 @@
-﻿//HintName: G.DatasetRunItemsClient.DatasetRunItemsList.g.cs
+//HintName: G.DatasetRunItemsClient.DatasetRunItemsList.g.cs
 
 #nullable enable
 
@@ -176,8 +176,8 @@ namespace G
                 PrepareDatasetRunItemsListRequest(
                     httpClient: HttpClient,
                     httpRequestMessage: __httpRequest,
-                    datasetId: datasetId!,
-                    runName: runName!,
+                    datasetId: datasetId,
+                    runName: runName,
                     page: page,
                     limit: limit);
 
@@ -203,7 +203,7 @@ namespace G
                                 pathTemplate: "\"/api/public/dataset-run-items\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: null,
                                 exception: null,
                                 clientOptions: Options,
@@ -237,7 +237,7 @@ namespace G
                                 pathTemplate: "\"/api/public/dataset-run-items\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: null,
                                 exception: __exception,
                                 clientOptions: Options,
@@ -278,7 +278,7 @@ namespace G
                                 pathTemplate: "\"/api/public/dataset-run-items\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: __response,
                                 exception: null,
                                 clientOptions: Options,
@@ -326,7 +326,7 @@ namespace G
                                 pathTemplate: "\"/api/public/dataset-run-items\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: __response,
                                 exception: null,
                                 clientOptions: Options,
@@ -348,7 +348,7 @@ namespace G
                                 pathTemplate: "\"/api/public/dataset-run-items\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: __response,
                                 exception: null,
                                 clientOptions: Options,

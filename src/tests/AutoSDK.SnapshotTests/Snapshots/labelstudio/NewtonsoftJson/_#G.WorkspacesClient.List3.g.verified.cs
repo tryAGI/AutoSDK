@@ -1,4 +1,4 @@
-﻿//HintName: G.WorkspacesClient.List3.g.cs
+//HintName: G.WorkspacesClient.List3.g.cs
 
 #nullable enable
 
@@ -198,7 +198,7 @@ namespace G
                 PrepareList3Request(
                     httpClient: HttpClient,
                     httpRequestMessage: __httpRequest,
-                    id: id!,
+                    id: id,
                     ids: ids,
                     page: page,
                     pageSize: pageSize,
@@ -224,7 +224,7 @@ namespace G
                                 pathTemplate: "$\"/api/workspaces/{id}/memberships/paginated/\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: null,
                                 exception: null,
                                 clientOptions: Options,
@@ -258,7 +258,7 @@ namespace G
                                 pathTemplate: "$\"/api/workspaces/{id}/memberships/paginated/\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: null,
                                 exception: __exception,
                                 clientOptions: Options,
@@ -299,7 +299,7 @@ namespace G
                                 pathTemplate: "$\"/api/workspaces/{id}/memberships/paginated/\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: __response,
                                 exception: null,
                                 clientOptions: Options,
@@ -347,7 +347,7 @@ namespace G
                                 pathTemplate: "$\"/api/workspaces/{id}/memberships/paginated/\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: __response,
                                 exception: null,
                                 clientOptions: Options,
@@ -369,7 +369,7 @@ namespace G
                                 pathTemplate: "$\"/api/workspaces/{id}/memberships/paginated/\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: __response,
                                 exception: null,
                                 clientOptions: Options,

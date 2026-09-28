@@ -1,4 +1,4 @@
-﻿//HintName: G.NodesClient.NodesGetClass.g.cs
+//HintName: G.NodesClient.NodesGetClass.g.cs
 
 #nullable enable
 
@@ -172,7 +172,7 @@ namespace G
                 PrepareNodesGetClassRequest(
                     httpClient: HttpClient,
                     httpRequestMessage: __httpRequest,
-                    className: className!,
+                    className: className,
                     output: output);
 
                 return __httpRequest;
@@ -195,7 +195,7 @@ namespace G
                                 pathTemplate: "$\"/nodes/{className}\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: null,
                                 exception: null,
                                 clientOptions: Options,
@@ -232,7 +232,7 @@ namespace G
                                 pathTemplate: "$\"/nodes/{className}\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: null,
                                 exception: __exception,
                                 clientOptions: Options,
@@ -273,7 +273,7 @@ namespace G
                                 pathTemplate: "$\"/nodes/{className}\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: __response,
                                 exception: null,
                                 clientOptions: Options,
@@ -321,7 +321,7 @@ namespace G
                                 pathTemplate: "$\"/nodes/{className}\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: __response,
                                 exception: null,
                                 clientOptions: Options,
@@ -343,7 +343,7 @@ namespace G
                                 pathTemplate: "$\"/nodes/{className}\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: __response,
                                 exception: null,
                                 clientOptions: Options,

@@ -1,4 +1,4 @@
-﻿//HintName: G.Models.ToolConfig.g.cs
+//HintName: G.Models.ToolConfig.g.cs
 #pragma warning disable CS0618 // Type or member is obsolete
 
 #nullable enable
@@ -49,8 +49,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.WebhookToolConfigInput PickWebhook() => IsWebhook
-            ? Webhook!
+        public global::G.WebhookToolConfigInput PickWebhook() => Webhook is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Webhook' but the value was {ToString()}.");
 
         /// <summary>
@@ -87,8 +87,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.ClientToolConfigInput PickClient() => IsClient
-            ? Client!
+        public global::G.ClientToolConfigInput PickClient() => Client is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Client' but the value was {ToString()}.");
 
         /// <summary>
@@ -124,8 +124,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.SystemToolConfigInput PickSystem() => IsSystem
-            ? System!
+        public global::G.SystemToolConfigInput PickSystem() => System is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'System' but the value was {ToString()}.");
 
         /// <summary>
@@ -161,8 +161,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.MCPToolConfigInput PickMcp() => IsMcp
-            ? Mcp!
+        public global::G.MCPToolConfigInput PickMcp() => Mcp is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Mcp' but the value was {ToString()}.");
         /// <summary>
         /// 
@@ -318,21 +318,21 @@ namespace G
                 Validate();
             }
 
-            if (IsWebhook && webhook != null)
+            if (Webhook is { } __value0 && webhook != null)
             {
-                return webhook(Webhook!);
+                return webhook(__value0);
             }
-            else if (IsClient && client != null)
+            else if (Client is { } __value1 && client != null)
             {
-                return client(Client!);
+                return client(__value1);
             }
-            else if (IsSystem && system != null)
+            else if (System is { } __value2 && system != null)
             {
-                return system(System!);
+                return system(__value2);
             }
-            else if (IsMcp && mcp != null)
+            else if (Mcp is { } __value3 && mcp != null)
             {
-                return mcp(Mcp!);
+                return mcp(__value3);
             }
 
             return default(TResult);
@@ -356,21 +356,21 @@ namespace G
                 Validate();
             }
 
-            if (IsWebhook)
+            if (Webhook is { } __value0)
             {
-                webhook?.Invoke(Webhook!);
+                webhook?.Invoke(__value0);
             }
-            else if (IsClient)
+            else if (Client is { } __value1)
             {
-                client?.Invoke(Client!);
+                client?.Invoke(__value1);
             }
-            else if (IsSystem)
+            else if (System is { } __value2)
             {
-                system?.Invoke(System!);
+                system?.Invoke(__value2);
             }
-            else if (IsMcp)
+            else if (Mcp is { } __value3)
             {
-                mcp?.Invoke(Mcp!);
+                mcp?.Invoke(__value3);
             }
         }
 
@@ -389,21 +389,21 @@ namespace G
                 Validate();
             }
 
-            if (IsWebhook)
+            if (Webhook is { } __value0)
             {
-                webhook?.Invoke(Webhook!);
+                webhook?.Invoke(__value0);
             }
-            else if (IsClient)
+            else if (Client is { } __value1)
             {
-                client?.Invoke(Client!);
+                client?.Invoke(__value1);
             }
-            else if (IsSystem)
+            else if (System is { } __value2)
             {
-                system?.Invoke(System!);
+                system?.Invoke(__value2);
             }
-            else if (IsMcp)
+            else if (Mcp is { } __value3)
             {
-                mcp?.Invoke(Mcp!);
+                mcp?.Invoke(__value3);
             }
         }
 

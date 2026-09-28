@@ -1,4 +1,4 @@
-﻿//HintName: G.Models.ServerEvent.g.cs
+//HintName: G.Models.ServerEvent.g.cs
 #pragma warning disable CS0618 // Type or member is obsolete
 
 #nullable enable
@@ -48,8 +48,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.TranscriptionStreamLanguage PickTranscriptionLanguage() => IsTranscriptionLanguage
-            ? TranscriptionLanguage!
+        public global::G.TranscriptionStreamLanguage PickTranscriptionLanguage() => TranscriptionLanguage is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'TranscriptionLanguage' but the value was {ToString()}.");
 
         /// <summary>
@@ -85,8 +85,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.TranscriptionStreamTextDelta PickTranscriptionTextDelta() => IsTranscriptionTextDelta
-            ? TranscriptionTextDelta!
+        public global::G.TranscriptionStreamTextDelta PickTranscriptionTextDelta() => TranscriptionTextDelta is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'TranscriptionTextDelta' but the value was {ToString()}.");
 
         /// <summary>
@@ -122,8 +122,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.RealtimeTranscriptionSessionCreated PickSessionCreated() => IsSessionCreated
-            ? SessionCreated!
+        public global::G.RealtimeTranscriptionSessionCreated PickSessionCreated() => SessionCreated is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'SessionCreated' but the value was {ToString()}.");
 
         /// <summary>
@@ -159,8 +159,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.RealtimeTranscriptionError PickError() => IsError
-            ? Error!
+        public global::G.RealtimeTranscriptionError PickError() => Error is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Error' but the value was {ToString()}.");
         /// <summary>
         /// 
@@ -316,21 +316,21 @@ namespace G
                 Validate();
             }
 
-            if (IsTranscriptionLanguage && transcriptionLanguage != null)
+            if (TranscriptionLanguage is { } __value0 && transcriptionLanguage != null)
             {
-                return transcriptionLanguage(TranscriptionLanguage!);
+                return transcriptionLanguage(__value0);
             }
-            else if (IsTranscriptionTextDelta && transcriptionTextDelta != null)
+            else if (TranscriptionTextDelta is { } __value1 && transcriptionTextDelta != null)
             {
-                return transcriptionTextDelta(TranscriptionTextDelta!);
+                return transcriptionTextDelta(__value1);
             }
-            else if (IsSessionCreated && sessionCreated != null)
+            else if (SessionCreated is { } __value2 && sessionCreated != null)
             {
-                return sessionCreated(SessionCreated!);
+                return sessionCreated(__value2);
             }
-            else if (IsError && error != null)
+            else if (Error is { } __value3 && error != null)
             {
-                return error(Error!);
+                return error(__value3);
             }
 
             return default(TResult);
@@ -354,21 +354,21 @@ namespace G
                 Validate();
             }
 
-            if (IsTranscriptionLanguage)
+            if (TranscriptionLanguage is { } __value0)
             {
-                transcriptionLanguage?.Invoke(TranscriptionLanguage!);
+                transcriptionLanguage?.Invoke(__value0);
             }
-            else if (IsTranscriptionTextDelta)
+            else if (TranscriptionTextDelta is { } __value1)
             {
-                transcriptionTextDelta?.Invoke(TranscriptionTextDelta!);
+                transcriptionTextDelta?.Invoke(__value1);
             }
-            else if (IsSessionCreated)
+            else if (SessionCreated is { } __value2)
             {
-                sessionCreated?.Invoke(SessionCreated!);
+                sessionCreated?.Invoke(__value2);
             }
-            else if (IsError)
+            else if (Error is { } __value3)
             {
-                error?.Invoke(Error!);
+                error?.Invoke(__value3);
             }
         }
 
@@ -387,21 +387,21 @@ namespace G
                 Validate();
             }
 
-            if (IsTranscriptionLanguage)
+            if (TranscriptionLanguage is { } __value0)
             {
-                transcriptionLanguage?.Invoke(TranscriptionLanguage!);
+                transcriptionLanguage?.Invoke(__value0);
             }
-            else if (IsTranscriptionTextDelta)
+            else if (TranscriptionTextDelta is { } __value1)
             {
-                transcriptionTextDelta?.Invoke(TranscriptionTextDelta!);
+                transcriptionTextDelta?.Invoke(__value1);
             }
-            else if (IsSessionCreated)
+            else if (SessionCreated is { } __value2)
             {
-                sessionCreated?.Invoke(SessionCreated!);
+                sessionCreated?.Invoke(__value2);
             }
-            else if (IsError)
+            else if (Error is { } __value3)
             {
-                error?.Invoke(Error!);
+                error?.Invoke(__value3);
             }
         }
 

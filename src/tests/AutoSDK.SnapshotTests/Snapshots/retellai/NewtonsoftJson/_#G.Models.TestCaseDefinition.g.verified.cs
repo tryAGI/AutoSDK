@@ -1,4 +1,4 @@
-﻿//HintName: G.Models.TestCaseDefinition.g.cs
+//HintName: G.Models.TestCaseDefinition.g.cs
 #pragma warning disable CS0618 // Type or member is obsolete
 
 #nullable enable
@@ -43,8 +43,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.TestCaseDefinitionInput PickInput() => IsInput
-            ? Input!
+        public global::G.TestCaseDefinitionInput PickInput() => Input is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Input' but the value was {ToString()}.");
 
         /// <summary>
@@ -80,8 +80,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.TestCaseDefinitionVariant2 PickTestCaseDefinitionVariant2() => IsTestCaseDefinitionVariant2
-            ? TestCaseDefinitionVariant2!
+        public global::G.TestCaseDefinitionVariant2 PickTestCaseDefinitionVariant2() => TestCaseDefinitionVariant2 is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'TestCaseDefinitionVariant2' but the value was {ToString()}.");
         /// <summary>
         /// 
@@ -178,13 +178,13 @@ namespace G
                 Validate();
             }
 
-            if (IsInput && input != null)
+            if (Input is { } __value0 && input != null)
             {
-                return input(Input!);
+                return input(__value0);
             }
-            else if (IsTestCaseDefinitionVariant2 && testCaseDefinitionVariant2 != null)
+            else if (TestCaseDefinitionVariant2 is { } __value1 && testCaseDefinitionVariant2 != null)
             {
-                return testCaseDefinitionVariant2(TestCaseDefinitionVariant2!);
+                return testCaseDefinitionVariant2(__value1);
             }
 
             return default(TResult);
@@ -204,13 +204,13 @@ namespace G
                 Validate();
             }
 
-            if (IsInput)
+            if (Input is { } __value0)
             {
-                input?.Invoke(Input!);
+                input?.Invoke(__value0);
             }
-            else if (IsTestCaseDefinitionVariant2)
+            else if (TestCaseDefinitionVariant2 is { } __value1)
             {
-                testCaseDefinitionVariant2?.Invoke(TestCaseDefinitionVariant2!);
+                testCaseDefinitionVariant2?.Invoke(__value1);
             }
         }
 
@@ -227,13 +227,13 @@ namespace G
                 Validate();
             }
 
-            if (IsInput)
+            if (Input is { } __value0)
             {
-                input?.Invoke(Input!);
+                input?.Invoke(__value0);
             }
-            else if (IsTestCaseDefinitionVariant2)
+            else if (TestCaseDefinitionVariant2 is { } __value1)
             {
-                testCaseDefinitionVariant2?.Invoke(TestCaseDefinitionVariant2!);
+                testCaseDefinitionVariant2?.Invoke(__value1);
             }
         }
 

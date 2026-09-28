@@ -1,4 +1,4 @@
-﻿//HintName: G.Models.CreateInitialInstructionRequest.g.cs
+//HintName: G.Models.CreateInitialInstructionRequest.g.cs
 #pragma warning disable CS0618 // Type or member is obsolete
 
 #nullable enable
@@ -43,8 +43,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.InstructionRequestBase PickBase() => IsBase
-            ? Base!
+        public global::G.InstructionRequestBase PickBase() => Base is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Base' but the value was {ToString()}.");
 
         /// <summary>
@@ -80,8 +80,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.CreateInitialInstructionRequestVariant2 PickCreateInitialInstructionRequestVariant2() => IsCreateInitialInstructionRequestVariant2
-            ? CreateInitialInstructionRequestVariant2!
+        public global::G.CreateInitialInstructionRequestVariant2 PickCreateInitialInstructionRequestVariant2() => CreateInitialInstructionRequestVariant2 is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'CreateInitialInstructionRequestVariant2' but the value was {ToString()}.");
         /// <summary>
         /// 
@@ -178,13 +178,13 @@ namespace G
                 Validate();
             }
 
-            if (IsBase && @base != null)
+            if (Base is { } __value0 && @base != null)
             {
-                return @base(Base!);
+                return @base(__value0);
             }
-            else if (IsCreateInitialInstructionRequestVariant2 && createInitialInstructionRequestVariant2 != null)
+            else if (CreateInitialInstructionRequestVariant2 is { } __value1 && createInitialInstructionRequestVariant2 != null)
             {
-                return createInitialInstructionRequestVariant2(CreateInitialInstructionRequestVariant2!);
+                return createInitialInstructionRequestVariant2(__value1);
             }
 
             return default(TResult);
@@ -204,13 +204,13 @@ namespace G
                 Validate();
             }
 
-            if (IsBase)
+            if (Base is { } __value0)
             {
-                @base?.Invoke(Base!);
+                @base?.Invoke(__value0);
             }
-            else if (IsCreateInitialInstructionRequestVariant2)
+            else if (CreateInitialInstructionRequestVariant2 is { } __value1)
             {
-                createInitialInstructionRequestVariant2?.Invoke(CreateInitialInstructionRequestVariant2!);
+                createInitialInstructionRequestVariant2?.Invoke(__value1);
             }
         }
 
@@ -227,13 +227,13 @@ namespace G
                 Validate();
             }
 
-            if (IsBase)
+            if (Base is { } __value0)
             {
-                @base?.Invoke(Base!);
+                @base?.Invoke(__value0);
             }
-            else if (IsCreateInitialInstructionRequestVariant2)
+            else if (CreateInitialInstructionRequestVariant2 is { } __value1)
             {
-                createInitialInstructionRequestVariant2?.Invoke(CreateInitialInstructionRequestVariant2!);
+                createInitialInstructionRequestVariant2?.Invoke(__value1);
             }
         }
 

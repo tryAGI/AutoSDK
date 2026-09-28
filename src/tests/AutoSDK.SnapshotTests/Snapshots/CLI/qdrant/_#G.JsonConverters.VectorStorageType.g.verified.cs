@@ -1,4 +1,4 @@
-﻿//HintName: G.JsonConverters.VectorStorageType.g.cs
+//HintName: G.JsonConverters.VectorStorageType.g.cs
 #nullable enable
 #pragma warning disable CS0618 // Type or member is obsolete
 
@@ -297,31 +297,31 @@ namespace G.JsonConverters
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.VectorStorageTypeVariant1), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.VectorStorageTypeVariant1> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.VectorStorageTypeVariant1).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.VectorStorageTypeVariant1!.Value, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickVectorStorageTypeVariant1(), typeInfo);
             }
             else if (value.IsVectorStorageTypeVariant2)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.VectorStorageTypeVariant2), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.VectorStorageTypeVariant2> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.VectorStorageTypeVariant2).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.VectorStorageTypeVariant2!.Value, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickVectorStorageTypeVariant2(), typeInfo);
             }
             else if (value.IsVectorStorageTypeVariant3)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.VectorStorageTypeVariant3), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.VectorStorageTypeVariant3> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.VectorStorageTypeVariant3).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.VectorStorageTypeVariant3!.Value, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickVectorStorageTypeVariant3(), typeInfo);
             }
             else if (value.IsVectorStorageTypeVariant4)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.VectorStorageTypeVariant4), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.VectorStorageTypeVariant4> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.VectorStorageTypeVariant4).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.VectorStorageTypeVariant4!.Value, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickVectorStorageTypeVariant4(), typeInfo);
             }
             else if (value.IsVectorStorageTypeVariant5)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.VectorStorageTypeVariant5), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.VectorStorageTypeVariant5> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.VectorStorageTypeVariant5).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.VectorStorageTypeVariant5!.Value, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickVectorStorageTypeVariant5(), typeInfo);
             }
         }
     }

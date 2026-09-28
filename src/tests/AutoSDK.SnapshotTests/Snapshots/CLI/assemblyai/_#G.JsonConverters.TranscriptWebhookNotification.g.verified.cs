@@ -1,4 +1,4 @@
-﻿//HintName: G.JsonConverters.TranscriptWebhookNotification.g.cs
+//HintName: G.JsonConverters.TranscriptWebhookNotification.g.cs
 #nullable enable
 #pragma warning disable CS0618 // Type or member is obsolete
 
@@ -129,13 +129,13 @@ namespace G.JsonConverters
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.TranscriptReadyNotification), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.TranscriptReadyNotification?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.TranscriptReadyNotification).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Ready!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickReady(), typeInfo);
             }
             else if (value.IsRedactedAudio)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.RedactedAudioNotification), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.RedactedAudioNotification> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.RedactedAudioNotification).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.RedactedAudio!.Value, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickRedactedAudio(), typeInfo);
             }
         }
     }

@@ -1,4 +1,4 @@
-﻿//HintName: G.Models.CreateSecretRequestDto.g.cs
+//HintName: G.Models.CreateSecretRequestDto.g.cs
 #pragma warning disable CS0618 // Type or member is obsolete
 
 #nullable enable
@@ -43,8 +43,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.CreateSecretRequestDtoBasicAuthentication PickBasicAuthentication() => IsBasicAuthentication
-            ? BasicAuthentication!
+        public global::G.CreateSecretRequestDtoBasicAuthentication PickBasicAuthentication() => BasicAuthentication is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'BasicAuthentication' but the value was {ToString()}.");
 
         /// <summary>
@@ -80,8 +80,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.CreateSecretRequestDtoBearerToken PickBearerToken() => IsBearerToken
-            ? BearerToken!
+        public global::G.CreateSecretRequestDtoBearerToken PickBearerToken() => BearerToken is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'BearerToken' but the value was {ToString()}.");
 
         /// <summary>
@@ -117,8 +117,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.CreateSecretRequestDtoApiKey PickApiKey() => IsApiKey
-            ? ApiKey!
+        public global::G.CreateSecretRequestDtoApiKey PickApiKey() => ApiKey is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'ApiKey' but the value was {ToString()}.");
         /// <summary>
         /// 
@@ -243,17 +243,17 @@ namespace G
                 Validate();
             }
 
-            if (IsBasicAuthentication && basicAuthentication != null)
+            if (BasicAuthentication is { } __value0 && basicAuthentication != null)
             {
-                return basicAuthentication(BasicAuthentication!);
+                return basicAuthentication(__value0);
             }
-            else if (IsBearerToken && bearerToken != null)
+            else if (BearerToken is { } __value1 && bearerToken != null)
             {
-                return bearerToken(BearerToken!);
+                return bearerToken(__value1);
             }
-            else if (IsApiKey && apiKey != null)
+            else if (ApiKey is { } __value2 && apiKey != null)
             {
-                return apiKey(ApiKey!);
+                return apiKey(__value2);
             }
 
             return default(TResult);
@@ -275,17 +275,17 @@ namespace G
                 Validate();
             }
 
-            if (IsBasicAuthentication)
+            if (BasicAuthentication is { } __value0)
             {
-                basicAuthentication?.Invoke(BasicAuthentication!);
+                basicAuthentication?.Invoke(__value0);
             }
-            else if (IsBearerToken)
+            else if (BearerToken is { } __value1)
             {
-                bearerToken?.Invoke(BearerToken!);
+                bearerToken?.Invoke(__value1);
             }
-            else if (IsApiKey)
+            else if (ApiKey is { } __value2)
             {
-                apiKey?.Invoke(ApiKey!);
+                apiKey?.Invoke(__value2);
             }
         }
 
@@ -303,17 +303,17 @@ namespace G
                 Validate();
             }
 
-            if (IsBasicAuthentication)
+            if (BasicAuthentication is { } __value0)
             {
-                basicAuthentication?.Invoke(BasicAuthentication!);
+                basicAuthentication?.Invoke(__value0);
             }
-            else if (IsBearerToken)
+            else if (BearerToken is { } __value1)
             {
-                bearerToken?.Invoke(BearerToken!);
+                bearerToken?.Invoke(__value1);
             }
-            else if (IsApiKey)
+            else if (ApiKey is { } __value2)
             {
-                apiKey?.Invoke(ApiKey!);
+                apiKey?.Invoke(__value2);
             }
         }
 

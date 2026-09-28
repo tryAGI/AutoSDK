@@ -1,4 +1,4 @@
-﻿//HintName: G.WorkspacesClient.UpdateTagValue.g.cs
+//HintName: G.WorkspacesClient.UpdateTagValue.g.cs
 
 #nullable enable
 
@@ -205,8 +205,8 @@ namespace G
                 PrepareUpdateTagValueRequest(
                     httpClient: HttpClient,
                     httpRequestMessage: __httpRequest,
-                    tagKeyId: tagKeyId!,
-                    tagValueId: tagValueId!,
+                    tagKeyId: tagKeyId,
+                    tagValueId: tagValueId,
                     request: request);
 
                 global::G.AutoSDKHttpRequestOptions.StampAuthorizationOverride(__httpRequest);
@@ -231,7 +231,7 @@ namespace G
                                 pathTemplate: "$\"/api/v1/workspaces/current/tag-keys/{tagKeyId}/tag-values/{tagValueId}\"",
                                 httpMethod: "PATCH",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: null,
                                 exception: null,
                                 clientOptions: Options,
@@ -265,7 +265,7 @@ namespace G
                                 pathTemplate: "$\"/api/v1/workspaces/current/tag-keys/{tagKeyId}/tag-values/{tagValueId}\"",
                                 httpMethod: "PATCH",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: null,
                                 exception: __exception,
                                 clientOptions: Options,
@@ -306,7 +306,7 @@ namespace G
                                 pathTemplate: "$\"/api/v1/workspaces/current/tag-keys/{tagKeyId}/tag-values/{tagValueId}\"",
                                 httpMethod: "PATCH",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: __response,
                                 exception: null,
                                 clientOptions: Options,
@@ -354,7 +354,7 @@ namespace G
                                 pathTemplate: "$\"/api/v1/workspaces/current/tag-keys/{tagKeyId}/tag-values/{tagValueId}\"",
                                 httpMethod: "PATCH",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: __response,
                                 exception: null,
                                 clientOptions: Options,
@@ -376,7 +376,7 @@ namespace G
                                 pathTemplate: "$\"/api/v1/workspaces/current/tag-keys/{tagKeyId}/tag-values/{tagValueId}\"",
                                 httpMethod: "PATCH",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: __response,
                                 exception: null,
                                 clientOptions: Options,

@@ -1,4 +1,4 @@
-﻿//HintName: G.AuthClient.GetTeamsByTeamIDMetricsMax.g.cs
+//HintName: G.AuthClient.GetTeamsByTeamIDMetricsMax.g.cs
 
 #nullable enable
 
@@ -209,10 +209,10 @@ namespace G
                 PrepareGetTeamsByTeamIDMetricsMaxRequest(
                     httpClient: HttpClient,
                     httpRequestMessage: __httpRequest,
-                    teamID: teamID!,
+                    teamID: teamID,
                     start: start,
                     end: end,
-                    metric: metric!);
+                    metric: metric);
 
                 global::G.AutoSDKHttpRequestOptions.StampAuthorizationOverride(__httpRequest);
 
@@ -236,7 +236,7 @@ namespace G
                                 pathTemplate: "$\"/teams/{teamID}/metrics/max\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: null,
                                 exception: null,
                                 clientOptions: Options,
@@ -270,7 +270,7 @@ namespace G
                                 pathTemplate: "$\"/teams/{teamID}/metrics/max\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: null,
                                 exception: __exception,
                                 clientOptions: Options,
@@ -311,7 +311,7 @@ namespace G
                                 pathTemplate: "$\"/teams/{teamID}/metrics/max\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: __response,
                                 exception: null,
                                 clientOptions: Options,
@@ -359,7 +359,7 @@ namespace G
                                 pathTemplate: "$\"/teams/{teamID}/metrics/max\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: __response,
                                 exception: null,
                                 clientOptions: Options,
@@ -381,7 +381,7 @@ namespace G
                                 pathTemplate: "$\"/teams/{teamID}/metrics/max\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: __response,
                                 exception: null,
                                 clientOptions: Options,

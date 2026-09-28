@@ -1,4 +1,4 @@
-﻿//HintName: G.Models.TransferOption.g.cs
+//HintName: G.Models.TransferOption.g.cs
 #pragma warning disable CS0618 // Type or member is obsolete
 
 #nullable enable
@@ -43,8 +43,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.TransferOptionColdTransfer PickColdTransfer() => IsColdTransfer
-            ? ColdTransfer!
+        public global::G.TransferOptionColdTransfer PickColdTransfer() => ColdTransfer is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'ColdTransfer' but the value was {ToString()}.");
 
         /// <summary>
@@ -80,8 +80,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.TransferOptionWarmTransfer PickWarmTransfer() => IsWarmTransfer
-            ? WarmTransfer!
+        public global::G.TransferOptionWarmTransfer PickWarmTransfer() => WarmTransfer is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'WarmTransfer' but the value was {ToString()}.");
 
         /// <summary>
@@ -117,8 +117,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.TransferOptionAgenticWarmTransfer PickAgenticWarmTransfer() => IsAgenticWarmTransfer
-            ? AgenticWarmTransfer!
+        public global::G.TransferOptionAgenticWarmTransfer PickAgenticWarmTransfer() => AgenticWarmTransfer is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'AgenticWarmTransfer' but the value was {ToString()}.");
         /// <summary>
         /// 
@@ -243,17 +243,17 @@ namespace G
                 Validate();
             }
 
-            if (IsColdTransfer && coldTransfer != null)
+            if (ColdTransfer is { } __value0 && coldTransfer != null)
             {
-                return coldTransfer(ColdTransfer!);
+                return coldTransfer(__value0);
             }
-            else if (IsWarmTransfer && warmTransfer != null)
+            else if (WarmTransfer is { } __value1 && warmTransfer != null)
             {
-                return warmTransfer(WarmTransfer!);
+                return warmTransfer(__value1);
             }
-            else if (IsAgenticWarmTransfer && agenticWarmTransfer != null)
+            else if (AgenticWarmTransfer is { } __value2 && agenticWarmTransfer != null)
             {
-                return agenticWarmTransfer(AgenticWarmTransfer!);
+                return agenticWarmTransfer(__value2);
             }
 
             return default(TResult);
@@ -275,17 +275,17 @@ namespace G
                 Validate();
             }
 
-            if (IsColdTransfer)
+            if (ColdTransfer is { } __value0)
             {
-                coldTransfer?.Invoke(ColdTransfer!);
+                coldTransfer?.Invoke(__value0);
             }
-            else if (IsWarmTransfer)
+            else if (WarmTransfer is { } __value1)
             {
-                warmTransfer?.Invoke(WarmTransfer!);
+                warmTransfer?.Invoke(__value1);
             }
-            else if (IsAgenticWarmTransfer)
+            else if (AgenticWarmTransfer is { } __value2)
             {
-                agenticWarmTransfer?.Invoke(AgenticWarmTransfer!);
+                agenticWarmTransfer?.Invoke(__value2);
             }
         }
 
@@ -303,17 +303,17 @@ namespace G
                 Validate();
             }
 
-            if (IsColdTransfer)
+            if (ColdTransfer is { } __value0)
             {
-                coldTransfer?.Invoke(ColdTransfer!);
+                coldTransfer?.Invoke(__value0);
             }
-            else if (IsWarmTransfer)
+            else if (WarmTransfer is { } __value1)
             {
-                warmTransfer?.Invoke(WarmTransfer!);
+                warmTransfer?.Invoke(__value1);
             }
-            else if (IsAgenticWarmTransfer)
+            else if (AgenticWarmTransfer is { } __value2)
             {
-                agenticWarmTransfer?.Invoke(AgenticWarmTransfer!);
+                agenticWarmTransfer?.Invoke(__value2);
             }
         }
 

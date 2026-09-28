@@ -1,4 +1,4 @@
-﻿//HintName: G.JsonConverters.AgentStepInstruction.g.cs
+//HintName: G.JsonConverters.AgentStepInstruction.g.cs
 #nullable enable
 #pragma warning disable CS0618 // Type or member is obsolete
 
@@ -60,13 +60,13 @@ namespace G.JsonConverters
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.ReferenceInstruction), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.ReferenceInstruction> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.ReferenceInstruction).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Reference!.Value, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickReference(), typeInfo);
             }
             else if (value.IsInline)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.InlineInstruction), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.InlineInstruction> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.InlineInstruction).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Inline!.Value, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickInline(), typeInfo);
             }
         }
     }

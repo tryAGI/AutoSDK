@@ -1,4 +1,4 @@
-﻿//HintName: G.ReposClient.ReposCreateUsingTemplate.g.cs
+//HintName: G.ReposClient.ReposCreateUsingTemplate.g.cs
 
 #nullable enable
 
@@ -144,8 +144,8 @@ namespace G
                 PrepareReposCreateUsingTemplateRequest(
                     httpClient: HttpClient,
                     httpRequestMessage: __httpRequest,
-                    templateOwner: templateOwner!,
-                    templateRepo: templateRepo!,
+                    templateOwner: templateOwner,
+                    templateRepo: templateRepo,
                     request: request);
 
                 return __httpRequest;
@@ -168,7 +168,7 @@ namespace G
                                 pathTemplate: "$\"/repos/{templateOwner}/{templateRepo}/generate\"",
                                 httpMethod: "POST",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: null,
                                 exception: null,
                                 clientOptions: Options,
@@ -202,7 +202,7 @@ namespace G
                                 pathTemplate: "$\"/repos/{templateOwner}/{templateRepo}/generate\"",
                                 httpMethod: "POST",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: null,
                                 exception: __exception,
                                 clientOptions: Options,
@@ -243,7 +243,7 @@ namespace G
                                 pathTemplate: "$\"/repos/{templateOwner}/{templateRepo}/generate\"",
                                 httpMethod: "POST",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: __response,
                                 exception: null,
                                 clientOptions: Options,
@@ -291,7 +291,7 @@ namespace G
                                 pathTemplate: "$\"/repos/{templateOwner}/{templateRepo}/generate\"",
                                 httpMethod: "POST",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: __response,
                                 exception: null,
                                 clientOptions: Options,
@@ -313,7 +313,7 @@ namespace G
                                 pathTemplate: "$\"/repos/{templateOwner}/{templateRepo}/generate\"",
                                 httpMethod: "POST",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: __response,
                                 exception: null,
                                 clientOptions: Options,

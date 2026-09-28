@@ -1,4 +1,4 @@
-﻿//HintName: G.Models.ConversationFlowComponentResponse.g.cs
+//HintName: G.Models.ConversationFlowComponentResponse.g.cs
 #pragma warning disable CS0618 // Type or member is obsolete
 
 #nullable enable
@@ -43,8 +43,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.CreateConversationFlowComponentRequest PickCreateRequest() => IsCreateRequest
-            ? CreateRequest!.Value
+        public global::G.CreateConversationFlowComponentRequest PickCreateRequest() => CreateRequest is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'CreateRequest' but the value was {ToString()}.");
 
         /// <summary>
@@ -80,8 +80,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.ConversationFlowComponentResponseVariant2 PickConversationFlowComponentResponseVariant2() => IsConversationFlowComponentResponseVariant2
-            ? ConversationFlowComponentResponseVariant2!
+        public global::G.ConversationFlowComponentResponseVariant2 PickConversationFlowComponentResponseVariant2() => ConversationFlowComponentResponseVariant2 is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'ConversationFlowComponentResponseVariant2' but the value was {ToString()}.");
         /// <summary>
         /// 
@@ -178,13 +178,13 @@ namespace G
                 Validate();
             }
 
-            if (IsCreateRequest && createRequest != null)
+            if (CreateRequest is { } __value0 && createRequest != null)
             {
-                return createRequest(CreateRequest!);
+                return createRequest(__value0);
             }
-            else if (IsConversationFlowComponentResponseVariant2 && conversationFlowComponentResponseVariant2 != null)
+            else if (ConversationFlowComponentResponseVariant2 is { } __value1 && conversationFlowComponentResponseVariant2 != null)
             {
-                return conversationFlowComponentResponseVariant2(ConversationFlowComponentResponseVariant2!);
+                return conversationFlowComponentResponseVariant2(__value1);
             }
 
             return default(TResult);
@@ -204,13 +204,13 @@ namespace G
                 Validate();
             }
 
-            if (IsCreateRequest)
+            if (CreateRequest is { } __value0)
             {
-                createRequest?.Invoke(CreateRequest!);
+                createRequest?.Invoke(__value0);
             }
-            else if (IsConversationFlowComponentResponseVariant2)
+            else if (ConversationFlowComponentResponseVariant2 is { } __value1)
             {
-                conversationFlowComponentResponseVariant2?.Invoke(ConversationFlowComponentResponseVariant2!);
+                conversationFlowComponentResponseVariant2?.Invoke(__value1);
             }
         }
 
@@ -227,13 +227,13 @@ namespace G
                 Validate();
             }
 
-            if (IsCreateRequest)
+            if (CreateRequest is { } __value0)
             {
-                createRequest?.Invoke(CreateRequest!);
+                createRequest?.Invoke(__value0);
             }
-            else if (IsConversationFlowComponentResponseVariant2)
+            else if (ConversationFlowComponentResponseVariant2 is { } __value1)
             {
-                conversationFlowComponentResponseVariant2?.Invoke(ConversationFlowComponentResponseVariant2!);
+                conversationFlowComponentResponseVariant2?.Invoke(__value1);
             }
         }
 

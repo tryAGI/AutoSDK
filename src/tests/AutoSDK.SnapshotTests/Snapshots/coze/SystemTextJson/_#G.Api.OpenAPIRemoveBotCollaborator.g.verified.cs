@@ -1,4 +1,4 @@
-﻿//HintName: G.Api.OpenAPIRemoveBotCollaborator.g.cs
+//HintName: G.Api.OpenAPIRemoveBotCollaborator.g.cs
 
 #nullable enable
 
@@ -190,8 +190,8 @@ namespace G
                 PrepareOpenAPIRemoveBotCollaboratorRequest(
                     httpClient: HttpClient,
                     httpRequestMessage: __httpRequest,
-                    botId: botId!,
-                    userId: userId!,
+                    botId: botId,
+                    userId: userId,
                     request: request);
 
                 return __httpRequest;
@@ -214,7 +214,7 @@ namespace G
                                 pathTemplate: "$\"/v1/bots/{botId}/collaborators/{userId}\"",
                                 httpMethod: "DELETE",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: null,
                                 exception: null,
                                 clientOptions: Options,
@@ -248,7 +248,7 @@ namespace G
                                 pathTemplate: "$\"/v1/bots/{botId}/collaborators/{userId}\"",
                                 httpMethod: "DELETE",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: null,
                                 exception: __exception,
                                 clientOptions: Options,
@@ -289,7 +289,7 @@ namespace G
                                 pathTemplate: "$\"/v1/bots/{botId}/collaborators/{userId}\"",
                                 httpMethod: "DELETE",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: __response,
                                 exception: null,
                                 clientOptions: Options,
@@ -337,7 +337,7 @@ namespace G
                                 pathTemplate: "$\"/v1/bots/{botId}/collaborators/{userId}\"",
                                 httpMethod: "DELETE",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: __response,
                                 exception: null,
                                 clientOptions: Options,
@@ -359,7 +359,7 @@ namespace G
                                 pathTemplate: "$\"/v1/bots/{botId}/collaborators/{userId}\"",
                                 httpMethod: "DELETE",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: __response,
                                 exception: null,
                                 clientOptions: Options,

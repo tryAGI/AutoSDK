@@ -1,4 +1,4 @@
-﻿//HintName: G.ToolRouterClient.PostToolRouterSessionBySessionIdSearch.g.cs
+//HintName: G.ToolRouterClient.PostToolRouterSessionBySessionIdSearch.g.cs
 
 #nullable enable
 
@@ -217,7 +217,7 @@ namespace G
                 PreparePostToolRouterSessionBySessionIdSearchRequest(
                     httpClient: HttpClient,
                     httpRequestMessage: __httpRequest,
-                    sessionId: sessionId!,
+                    sessionId: sessionId,
                     request: request);
 
                 global::G.AutoSDKHttpRequestOptions.StampAuthorizationOverride(__httpRequest);
@@ -242,7 +242,7 @@ namespace G
                                 pathTemplate: "$\"/api/v3/tool_router/session/{sessionId}/search\"",
                                 httpMethod: "POST",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: null,
                                 exception: null,
                                 clientOptions: Options,
@@ -276,7 +276,7 @@ namespace G
                                 pathTemplate: "$\"/api/v3/tool_router/session/{sessionId}/search\"",
                                 httpMethod: "POST",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: null,
                                 exception: __exception,
                                 clientOptions: Options,
@@ -317,7 +317,7 @@ namespace G
                                 pathTemplate: "$\"/api/v3/tool_router/session/{sessionId}/search\"",
                                 httpMethod: "POST",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: __response,
                                 exception: null,
                                 clientOptions: Options,
@@ -365,7 +365,7 @@ namespace G
                                 pathTemplate: "$\"/api/v3/tool_router/session/{sessionId}/search\"",
                                 httpMethod: "POST",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: __response,
                                 exception: null,
                                 clientOptions: Options,
@@ -387,7 +387,7 @@ namespace G
                                 pathTemplate: "$\"/api/v3/tool_router/session/{sessionId}/search\"",
                                 httpMethod: "POST",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: __response,
                                 exception: null,
                                 clientOptions: Options,

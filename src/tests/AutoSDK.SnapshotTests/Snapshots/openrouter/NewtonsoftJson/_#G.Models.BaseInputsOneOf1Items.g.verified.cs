@@ -1,4 +1,4 @@
-﻿//HintName: G.Models.BaseInputsOneOf1Items.g.cs
+//HintName: G.Models.BaseInputsOneOf1Items.g.cs
 #pragma warning disable CS0618 // Type or member is obsolete
 
 #nullable enable
@@ -43,8 +43,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.BaseInputsOneOf1Items0 PickBaseInputsOneOf1Items0() => IsBaseInputsOneOf1Items0
-            ? BaseInputsOneOf1Items0!
+        public global::G.BaseInputsOneOf1Items0 PickBaseInputsOneOf1Items0() => BaseInputsOneOf1Items0 is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'BaseInputsOneOf1Items0' but the value was {ToString()}.");
 
         /// <summary>
@@ -80,8 +80,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.BaseInputsOneOf1Items1 PickBaseInputsOneOf1Items1() => IsBaseInputsOneOf1Items1
-            ? BaseInputsOneOf1Items1!
+        public global::G.BaseInputsOneOf1Items1 PickBaseInputsOneOf1Items1() => BaseInputsOneOf1Items1 is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'BaseInputsOneOf1Items1' but the value was {ToString()}.");
 
         /// <summary>
@@ -117,8 +117,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.BaseInputsOneOf1Items2 PickBaseInputsOneOf1Items2() => IsBaseInputsOneOf1Items2
-            ? BaseInputsOneOf1Items2!
+        public global::G.BaseInputsOneOf1Items2 PickBaseInputsOneOf1Items2() => BaseInputsOneOf1Items2 is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'BaseInputsOneOf1Items2' but the value was {ToString()}.");
 
         /// <summary>
@@ -154,8 +154,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.BaseInputsOneOf1Items3 PickBaseInputsOneOf1Items3() => IsBaseInputsOneOf1Items3
-            ? BaseInputsOneOf1Items3!
+        public global::G.BaseInputsOneOf1Items3 PickBaseInputsOneOf1Items3() => BaseInputsOneOf1Items3 is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'BaseInputsOneOf1Items3' but the value was {ToString()}.");
 
         /// <summary>
@@ -191,8 +191,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.OutputItemImageGenerationCall PickOutputItemImageGenerationCall() => IsOutputItemImageGenerationCall
-            ? OutputItemImageGenerationCall!
+        public global::G.OutputItemImageGenerationCall PickOutputItemImageGenerationCall() => OutputItemImageGenerationCall is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'OutputItemImageGenerationCall' but the value was {ToString()}.");
 
         /// <summary>
@@ -228,8 +228,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.OutputMessage PickOutputMessage() => IsOutputMessage
-            ? OutputMessage!
+        public global::G.OutputMessage PickOutputMessage() => OutputMessage is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'OutputMessage' but the value was {ToString()}.");
         /// <summary>
         /// 
@@ -438,29 +438,29 @@ namespace G
                 Validate();
             }
 
-            if (IsBaseInputsOneOf1Items0 && baseInputsOneOf1Items0 != null)
+            if (BaseInputsOneOf1Items0 is { } __value0 && baseInputsOneOf1Items0 != null)
             {
-                return baseInputsOneOf1Items0(BaseInputsOneOf1Items0!);
+                return baseInputsOneOf1Items0(__value0);
             }
-            else if (IsBaseInputsOneOf1Items1 && baseInputsOneOf1Items1 != null)
+            else if (BaseInputsOneOf1Items1 is { } __value1 && baseInputsOneOf1Items1 != null)
             {
-                return baseInputsOneOf1Items1(BaseInputsOneOf1Items1!);
+                return baseInputsOneOf1Items1(__value1);
             }
-            else if (IsBaseInputsOneOf1Items2 && baseInputsOneOf1Items2 != null)
+            else if (BaseInputsOneOf1Items2 is { } __value2 && baseInputsOneOf1Items2 != null)
             {
-                return baseInputsOneOf1Items2(BaseInputsOneOf1Items2!);
+                return baseInputsOneOf1Items2(__value2);
             }
-            else if (IsBaseInputsOneOf1Items3 && baseInputsOneOf1Items3 != null)
+            else if (BaseInputsOneOf1Items3 is { } __value3 && baseInputsOneOf1Items3 != null)
             {
-                return baseInputsOneOf1Items3(BaseInputsOneOf1Items3!);
+                return baseInputsOneOf1Items3(__value3);
             }
-            else if (IsOutputItemImageGenerationCall && outputItemImageGenerationCall != null)
+            else if (OutputItemImageGenerationCall is { } __value4 && outputItemImageGenerationCall != null)
             {
-                return outputItemImageGenerationCall(OutputItemImageGenerationCall!);
+                return outputItemImageGenerationCall(__value4);
             }
-            else if (IsOutputMessage && outputMessage != null)
+            else if (OutputMessage is { } __value5 && outputMessage != null)
             {
-                return outputMessage(OutputMessage!);
+                return outputMessage(__value5);
             }
 
             return default(TResult);
@@ -488,29 +488,29 @@ namespace G
                 Validate();
             }
 
-            if (IsBaseInputsOneOf1Items0)
+            if (BaseInputsOneOf1Items0 is { } __value0)
             {
-                baseInputsOneOf1Items0?.Invoke(BaseInputsOneOf1Items0!);
+                baseInputsOneOf1Items0?.Invoke(__value0);
             }
-            else if (IsBaseInputsOneOf1Items1)
+            else if (BaseInputsOneOf1Items1 is { } __value1)
             {
-                baseInputsOneOf1Items1?.Invoke(BaseInputsOneOf1Items1!);
+                baseInputsOneOf1Items1?.Invoke(__value1);
             }
-            else if (IsBaseInputsOneOf1Items2)
+            else if (BaseInputsOneOf1Items2 is { } __value2)
             {
-                baseInputsOneOf1Items2?.Invoke(BaseInputsOneOf1Items2!);
+                baseInputsOneOf1Items2?.Invoke(__value2);
             }
-            else if (IsBaseInputsOneOf1Items3)
+            else if (BaseInputsOneOf1Items3 is { } __value3)
             {
-                baseInputsOneOf1Items3?.Invoke(BaseInputsOneOf1Items3!);
+                baseInputsOneOf1Items3?.Invoke(__value3);
             }
-            else if (IsOutputItemImageGenerationCall)
+            else if (OutputItemImageGenerationCall is { } __value4)
             {
-                outputItemImageGenerationCall?.Invoke(OutputItemImageGenerationCall!);
+                outputItemImageGenerationCall?.Invoke(__value4);
             }
-            else if (IsOutputMessage)
+            else if (OutputMessage is { } __value5)
             {
-                outputMessage?.Invoke(OutputMessage!);
+                outputMessage?.Invoke(__value5);
             }
         }
 
@@ -531,29 +531,29 @@ namespace G
                 Validate();
             }
 
-            if (IsBaseInputsOneOf1Items0)
+            if (BaseInputsOneOf1Items0 is { } __value0)
             {
-                baseInputsOneOf1Items0?.Invoke(BaseInputsOneOf1Items0!);
+                baseInputsOneOf1Items0?.Invoke(__value0);
             }
-            else if (IsBaseInputsOneOf1Items1)
+            else if (BaseInputsOneOf1Items1 is { } __value1)
             {
-                baseInputsOneOf1Items1?.Invoke(BaseInputsOneOf1Items1!);
+                baseInputsOneOf1Items1?.Invoke(__value1);
             }
-            else if (IsBaseInputsOneOf1Items2)
+            else if (BaseInputsOneOf1Items2 is { } __value2)
             {
-                baseInputsOneOf1Items2?.Invoke(BaseInputsOneOf1Items2!);
+                baseInputsOneOf1Items2?.Invoke(__value2);
             }
-            else if (IsBaseInputsOneOf1Items3)
+            else if (BaseInputsOneOf1Items3 is { } __value3)
             {
-                baseInputsOneOf1Items3?.Invoke(BaseInputsOneOf1Items3!);
+                baseInputsOneOf1Items3?.Invoke(__value3);
             }
-            else if (IsOutputItemImageGenerationCall)
+            else if (OutputItemImageGenerationCall is { } __value4)
             {
-                outputItemImageGenerationCall?.Invoke(OutputItemImageGenerationCall!);
+                outputItemImageGenerationCall?.Invoke(__value4);
             }
-            else if (IsOutputMessage)
+            else if (OutputMessage is { } __value5)
             {
-                outputMessage?.Invoke(OutputMessage!);
+                outputMessage?.Invoke(__value5);
             }
         }
 

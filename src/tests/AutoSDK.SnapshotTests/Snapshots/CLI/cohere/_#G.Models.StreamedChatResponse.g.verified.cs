@@ -1,4 +1,4 @@
-﻿//HintName: G.Models.StreamedChatResponse.g.cs
+//HintName: G.Models.StreamedChatResponse.g.cs
 #pragma warning disable CS0618 // Type or member is obsolete
 
 #nullable enable
@@ -48,8 +48,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.ChatStreamStartEvent PickStreamStart() => IsStreamStart
-            ? StreamStart!.Value
+        public global::G.ChatStreamStartEvent PickStreamStart() => StreamStart is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'StreamStart' but the value was {ToString()}.");
 
         /// <summary>
@@ -85,8 +85,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.ChatSearchQueriesGenerationEvent PickSearchQueriesGeneration() => IsSearchQueriesGeneration
-            ? SearchQueriesGeneration!.Value
+        public global::G.ChatSearchQueriesGenerationEvent PickSearchQueriesGeneration() => SearchQueriesGeneration is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'SearchQueriesGeneration' but the value was {ToString()}.");
 
         /// <summary>
@@ -122,8 +122,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.ChatSearchResultsEvent PickSearchResults() => IsSearchResults
-            ? SearchResults!.Value
+        public global::G.ChatSearchResultsEvent PickSearchResults() => SearchResults is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'SearchResults' but the value was {ToString()}.");
 
         /// <summary>
@@ -159,8 +159,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.ChatTextGenerationEvent PickTextGeneration() => IsTextGeneration
-            ? TextGeneration!.Value
+        public global::G.ChatTextGenerationEvent PickTextGeneration() => TextGeneration is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'TextGeneration' but the value was {ToString()}.");
 
         /// <summary>
@@ -196,8 +196,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.ChatCitationGenerationEvent PickCitationGeneration() => IsCitationGeneration
-            ? CitationGeneration!.Value
+        public global::G.ChatCitationGenerationEvent PickCitationGeneration() => CitationGeneration is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'CitationGeneration' but the value was {ToString()}.");
 
         /// <summary>
@@ -233,8 +233,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.ChatToolCallsGenerationEvent PickToolCallsGeneration() => IsToolCallsGeneration
-            ? ToolCallsGeneration!.Value
+        public global::G.ChatToolCallsGenerationEvent PickToolCallsGeneration() => ToolCallsGeneration is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'ToolCallsGeneration' but the value was {ToString()}.");
 
         /// <summary>
@@ -270,8 +270,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.ChatStreamEndEvent PickStreamEnd() => IsStreamEnd
-            ? StreamEnd!.Value
+        public global::G.ChatStreamEndEvent PickStreamEnd() => StreamEnd is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'StreamEnd' but the value was {ToString()}.");
 
         /// <summary>
@@ -307,8 +307,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.ChatToolCallsChunkEvent PickToolCallsChunk() => IsToolCallsChunk
-            ? ToolCallsChunk!.Value
+        public global::G.ChatToolCallsChunkEvent PickToolCallsChunk() => ToolCallsChunk is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'ToolCallsChunk' but the value was {ToString()}.");
 
         /// <summary>
@@ -344,8 +344,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.ChatDebugEvent PickDebug() => IsDebug
-            ? Debug!.Value
+        public global::G.ChatDebugEvent PickDebug() => Debug is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Debug' but the value was {ToString()}.");
         /// <summary>
         /// 
@@ -641,41 +641,41 @@ namespace G
                 Validate();
             }
 
-            if (IsStreamStart && streamStart != null)
+            if (StreamStart is { } __value0 && streamStart != null)
             {
-                return streamStart(StreamStart!);
+                return streamStart(__value0);
             }
-            else if (IsSearchQueriesGeneration && searchQueriesGeneration != null)
+            else if (SearchQueriesGeneration is { } __value1 && searchQueriesGeneration != null)
             {
-                return searchQueriesGeneration(SearchQueriesGeneration!);
+                return searchQueriesGeneration(__value1);
             }
-            else if (IsSearchResults && searchResults != null)
+            else if (SearchResults is { } __value2 && searchResults != null)
             {
-                return searchResults(SearchResults!);
+                return searchResults(__value2);
             }
-            else if (IsTextGeneration && textGeneration != null)
+            else if (TextGeneration is { } __value3 && textGeneration != null)
             {
-                return textGeneration(TextGeneration!);
+                return textGeneration(__value3);
             }
-            else if (IsCitationGeneration && citationGeneration != null)
+            else if (CitationGeneration is { } __value4 && citationGeneration != null)
             {
-                return citationGeneration(CitationGeneration!);
+                return citationGeneration(__value4);
             }
-            else if (IsToolCallsGeneration && toolCallsGeneration != null)
+            else if (ToolCallsGeneration is { } __value5 && toolCallsGeneration != null)
             {
-                return toolCallsGeneration(ToolCallsGeneration!);
+                return toolCallsGeneration(__value5);
             }
-            else if (IsStreamEnd && streamEnd != null)
+            else if (StreamEnd is { } __value6 && streamEnd != null)
             {
-                return streamEnd(StreamEnd!);
+                return streamEnd(__value6);
             }
-            else if (IsToolCallsChunk && toolCallsChunk != null)
+            else if (ToolCallsChunk is { } __value7 && toolCallsChunk != null)
             {
-                return toolCallsChunk(ToolCallsChunk!);
+                return toolCallsChunk(__value7);
             }
-            else if (IsDebug && debug != null)
+            else if (Debug is { } __value8 && debug != null)
             {
-                return debug(Debug!);
+                return debug(__value8);
             }
 
             return default(TResult);
@@ -709,41 +709,41 @@ namespace G
                 Validate();
             }
 
-            if (IsStreamStart)
+            if (StreamStart is { } __value0)
             {
-                streamStart?.Invoke(StreamStart!);
+                streamStart?.Invoke(__value0);
             }
-            else if (IsSearchQueriesGeneration)
+            else if (SearchQueriesGeneration is { } __value1)
             {
-                searchQueriesGeneration?.Invoke(SearchQueriesGeneration!);
+                searchQueriesGeneration?.Invoke(__value1);
             }
-            else if (IsSearchResults)
+            else if (SearchResults is { } __value2)
             {
-                searchResults?.Invoke(SearchResults!);
+                searchResults?.Invoke(__value2);
             }
-            else if (IsTextGeneration)
+            else if (TextGeneration is { } __value3)
             {
-                textGeneration?.Invoke(TextGeneration!);
+                textGeneration?.Invoke(__value3);
             }
-            else if (IsCitationGeneration)
+            else if (CitationGeneration is { } __value4)
             {
-                citationGeneration?.Invoke(CitationGeneration!);
+                citationGeneration?.Invoke(__value4);
             }
-            else if (IsToolCallsGeneration)
+            else if (ToolCallsGeneration is { } __value5)
             {
-                toolCallsGeneration?.Invoke(ToolCallsGeneration!);
+                toolCallsGeneration?.Invoke(__value5);
             }
-            else if (IsStreamEnd)
+            else if (StreamEnd is { } __value6)
             {
-                streamEnd?.Invoke(StreamEnd!);
+                streamEnd?.Invoke(__value6);
             }
-            else if (IsToolCallsChunk)
+            else if (ToolCallsChunk is { } __value7)
             {
-                toolCallsChunk?.Invoke(ToolCallsChunk!);
+                toolCallsChunk?.Invoke(__value7);
             }
-            else if (IsDebug)
+            else if (Debug is { } __value8)
             {
-                debug?.Invoke(Debug!);
+                debug?.Invoke(__value8);
             }
         }
 
@@ -767,41 +767,41 @@ namespace G
                 Validate();
             }
 
-            if (IsStreamStart)
+            if (StreamStart is { } __value0)
             {
-                streamStart?.Invoke(StreamStart!);
+                streamStart?.Invoke(__value0);
             }
-            else if (IsSearchQueriesGeneration)
+            else if (SearchQueriesGeneration is { } __value1)
             {
-                searchQueriesGeneration?.Invoke(SearchQueriesGeneration!);
+                searchQueriesGeneration?.Invoke(__value1);
             }
-            else if (IsSearchResults)
+            else if (SearchResults is { } __value2)
             {
-                searchResults?.Invoke(SearchResults!);
+                searchResults?.Invoke(__value2);
             }
-            else if (IsTextGeneration)
+            else if (TextGeneration is { } __value3)
             {
-                textGeneration?.Invoke(TextGeneration!);
+                textGeneration?.Invoke(__value3);
             }
-            else if (IsCitationGeneration)
+            else if (CitationGeneration is { } __value4)
             {
-                citationGeneration?.Invoke(CitationGeneration!);
+                citationGeneration?.Invoke(__value4);
             }
-            else if (IsToolCallsGeneration)
+            else if (ToolCallsGeneration is { } __value5)
             {
-                toolCallsGeneration?.Invoke(ToolCallsGeneration!);
+                toolCallsGeneration?.Invoke(__value5);
             }
-            else if (IsStreamEnd)
+            else if (StreamEnd is { } __value6)
             {
-                streamEnd?.Invoke(StreamEnd!);
+                streamEnd?.Invoke(__value6);
             }
-            else if (IsToolCallsChunk)
+            else if (ToolCallsChunk is { } __value7)
             {
-                toolCallsChunk?.Invoke(ToolCallsChunk!);
+                toolCallsChunk?.Invoke(__value7);
             }
-            else if (IsDebug)
+            else if (Debug is { } __value8)
             {
-                debug?.Invoke(Debug!);
+                debug?.Invoke(__value8);
             }
         }
 

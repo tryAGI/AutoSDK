@@ -1,4 +1,4 @@
-﻿//HintName: G.Models.ListenV1ServerEvent.g.cs
+//HintName: G.Models.ListenV1ServerEvent.g.cs
 #pragma warning disable CS0618 // Type or member is obsolete
 
 #nullable enable
@@ -48,8 +48,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.ListenV1Results PickResults() => IsResults
-            ? Results!
+        public global::G.ListenV1Results PickResults() => Results is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Results' but the value was {ToString()}.");
 
         /// <summary>
@@ -85,8 +85,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.ListenV1Metadata PickMetadata() => IsMetadata
-            ? Metadata!
+        public global::G.ListenV1Metadata PickMetadata() => Metadata is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Metadata' but the value was {ToString()}.");
         /// <summary>
         /// 
@@ -186,13 +186,13 @@ namespace G
                 Validate();
             }
 
-            if (IsResults && results != null)
+            if (Results is { } __value0 && results != null)
             {
-                return results(Results!);
+                return results(__value0);
             }
-            else if (IsMetadata && metadata != null)
+            else if (Metadata is { } __value1 && metadata != null)
             {
-                return metadata(Metadata!);
+                return metadata(__value1);
             }
 
             return default(TResult);
@@ -212,13 +212,13 @@ namespace G
                 Validate();
             }
 
-            if (IsResults)
+            if (Results is { } __value0)
             {
-                results?.Invoke(Results!);
+                results?.Invoke(__value0);
             }
-            else if (IsMetadata)
+            else if (Metadata is { } __value1)
             {
-                metadata?.Invoke(Metadata!);
+                metadata?.Invoke(__value1);
             }
         }
 
@@ -235,13 +235,13 @@ namespace G
                 Validate();
             }
 
-            if (IsResults)
+            if (Results is { } __value0)
             {
-                results?.Invoke(Results!);
+                results?.Invoke(__value0);
             }
-            else if (IsMetadata)
+            else if (Metadata is { } __value1)
             {
-                metadata?.Invoke(Metadata!);
+                metadata?.Invoke(__value1);
             }
         }
 

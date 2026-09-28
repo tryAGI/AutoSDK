@@ -1,4 +1,4 @@
-﻿//HintName: G.ReposClient.ReposGetOrgRuleSuites.g.cs
+//HintName: G.ReposClient.ReposGetOrgRuleSuites.g.cs
 
 #nullable enable
 
@@ -198,7 +198,7 @@ namespace G
                 PrepareReposGetOrgRuleSuitesRequest(
                     httpClient: HttpClient,
                     httpRequestMessage: __httpRequest,
-                    org: org!,
+                    org: org,
                     @ref: @ref,
                     repositoryName: repositoryName,
                     timePeriod: timePeriod,
@@ -227,7 +227,7 @@ namespace G
                                 pathTemplate: "$\"/orgs/{org}/rulesets/rule-suites\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: null,
                                 exception: null,
                                 clientOptions: Options,
@@ -261,7 +261,7 @@ namespace G
                                 pathTemplate: "$\"/orgs/{org}/rulesets/rule-suites\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: null,
                                 exception: __exception,
                                 clientOptions: Options,
@@ -302,7 +302,7 @@ namespace G
                                 pathTemplate: "$\"/orgs/{org}/rulesets/rule-suites\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: __response,
                                 exception: null,
                                 clientOptions: Options,
@@ -350,7 +350,7 @@ namespace G
                                 pathTemplate: "$\"/orgs/{org}/rulesets/rule-suites\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: __response,
                                 exception: null,
                                 clientOptions: Options,
@@ -372,7 +372,7 @@ namespace G
                                 pathTemplate: "$\"/orgs/{org}/rulesets/rule-suites\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: __response,
                                 exception: null,
                                 clientOptions: Options,

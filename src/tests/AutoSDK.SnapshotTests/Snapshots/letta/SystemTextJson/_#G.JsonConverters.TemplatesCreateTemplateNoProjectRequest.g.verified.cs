@@ -1,4 +1,4 @@
-﻿//HintName: G.JsonConverters.TemplatesCreateTemplateNoProjectRequest.g.cs
+//HintName: G.JsonConverters.TemplatesCreateTemplateNoProjectRequest.g.cs
 #nullable enable
 #pragma warning disable CS0618 // Type or member is obsolete
 
@@ -60,13 +60,13 @@ namespace G.JsonConverters
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.TemplatesCreateTemplateNoProjectRequestVariant1), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.TemplatesCreateTemplateNoProjectRequestVariant1?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.TemplatesCreateTemplateNoProjectRequestVariant1).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Agent!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickAgent(), typeInfo);
             }
             else if (value.IsAgentFile)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.TemplatesCreateTemplateNoProjectRequestVariant2), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.TemplatesCreateTemplateNoProjectRequestVariant2?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.TemplatesCreateTemplateNoProjectRequestVariant2).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.AgentFile!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickAgentFile(), typeInfo);
             }
         }
     }

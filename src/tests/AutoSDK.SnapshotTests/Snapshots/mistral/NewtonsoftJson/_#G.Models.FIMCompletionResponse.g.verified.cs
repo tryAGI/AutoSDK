@@ -1,4 +1,4 @@
-﻿//HintName: G.Models.FIMCompletionResponse.g.cs
+//HintName: G.Models.FIMCompletionResponse.g.cs
 #pragma warning disable CS0618 // Type or member is obsolete
 
 #nullable enable
@@ -43,8 +43,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.ChatCompletionResponse PickChat() => IsChat
-            ? Chat!.Value
+        public global::G.ChatCompletionResponse PickChat() => Chat is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Chat' but the value was {ToString()}.");
 
         /// <summary>
@@ -80,8 +80,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.FIMCompletionResponseVariant2 PickFIMCompletionResponseVariant2() => IsFIMCompletionResponseVariant2
-            ? FIMCompletionResponseVariant2!
+        public global::G.FIMCompletionResponseVariant2 PickFIMCompletionResponseVariant2() => FIMCompletionResponseVariant2 is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'FIMCompletionResponseVariant2' but the value was {ToString()}.");
         /// <summary>
         /// 
@@ -178,13 +178,13 @@ namespace G
                 Validate();
             }
 
-            if (IsChat && chat != null)
+            if (Chat is { } __value0 && chat != null)
             {
-                return chat(Chat!);
+                return chat(__value0);
             }
-            else if (IsFIMCompletionResponseVariant2 && fIMCompletionResponseVariant2 != null)
+            else if (FIMCompletionResponseVariant2 is { } __value1 && fIMCompletionResponseVariant2 != null)
             {
-                return fIMCompletionResponseVariant2(FIMCompletionResponseVariant2!);
+                return fIMCompletionResponseVariant2(__value1);
             }
 
             return default(TResult);
@@ -204,13 +204,13 @@ namespace G
                 Validate();
             }
 
-            if (IsChat)
+            if (Chat is { } __value0)
             {
-                chat?.Invoke(Chat!);
+                chat?.Invoke(__value0);
             }
-            else if (IsFIMCompletionResponseVariant2)
+            else if (FIMCompletionResponseVariant2 is { } __value1)
             {
-                fIMCompletionResponseVariant2?.Invoke(FIMCompletionResponseVariant2!);
+                fIMCompletionResponseVariant2?.Invoke(__value1);
             }
         }
 
@@ -227,13 +227,13 @@ namespace G
                 Validate();
             }
 
-            if (IsChat)
+            if (Chat is { } __value0)
             {
-                chat?.Invoke(Chat!);
+                chat?.Invoke(__value0);
             }
-            else if (IsFIMCompletionResponseVariant2)
+            else if (FIMCompletionResponseVariant2 is { } __value1)
             {
-                fIMCompletionResponseVariant2?.Invoke(FIMCompletionResponseVariant2!);
+                fIMCompletionResponseVariant2?.Invoke(__value1);
             }
         }
 

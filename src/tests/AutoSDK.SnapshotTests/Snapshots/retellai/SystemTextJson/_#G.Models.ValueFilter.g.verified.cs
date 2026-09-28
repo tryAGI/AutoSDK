@@ -1,4 +1,4 @@
-﻿//HintName: G.Models.ValueFilter.g.cs
+//HintName: G.Models.ValueFilter.g.cs
 #pragma warning disable CS0618 // Type or member is obsolete
 
 #nullable enable
@@ -43,8 +43,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.StringFilter PickString() => IsString
-            ? String!
+        public global::G.StringFilter PickString() => String is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'String' but the value was {ToString()}.");
 
         /// <summary>
@@ -80,8 +80,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.NumberFilter PickNumber() => IsNumber
-            ? Number!
+        public global::G.NumberFilter PickNumber() => Number is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Number' but the value was {ToString()}.");
 
         /// <summary>
@@ -117,8 +117,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.BooleanFilter PickBoolean() => IsBoolean
-            ? Boolean!
+        public global::G.BooleanFilter PickBoolean() => Boolean is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Boolean' but the value was {ToString()}.");
 
         /// <summary>
@@ -154,8 +154,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.RangeFilter PickRange() => IsRange
-            ? Range!
+        public global::G.RangeFilter PickRange() => Range is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Range' but the value was {ToString()}.");
 
         /// <summary>
@@ -191,8 +191,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.EnumFilter PickEnum() => IsEnum
-            ? Enum!
+        public global::G.EnumFilter PickEnum() => Enum is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Enum' but the value was {ToString()}.");
 
         /// <summary>
@@ -228,8 +228,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.PresentFilter PickPresent() => IsPresent
-            ? Present!
+        public global::G.PresentFilter PickPresent() => Present is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Present' but the value was {ToString()}.");
         /// <summary>
         /// 
@@ -438,29 +438,29 @@ namespace G
                 Validate();
             }
 
-            if (IsString && @string != null)
+            if (String is { } __value0 && @string != null)
             {
-                return @string(String!);
+                return @string(__value0);
             }
-            else if (IsNumber && number != null)
+            else if (Number is { } __value1 && number != null)
             {
-                return number(Number!);
+                return number(__value1);
             }
-            else if (IsBoolean && boolean != null)
+            else if (Boolean is { } __value2 && boolean != null)
             {
-                return boolean(Boolean!);
+                return boolean(__value2);
             }
-            else if (IsRange && range != null)
+            else if (Range is { } __value3 && range != null)
             {
-                return range(Range!);
+                return range(__value3);
             }
-            else if (IsEnum && @enum != null)
+            else if (Enum is { } __value4 && @enum != null)
             {
-                return @enum(Enum!);
+                return @enum(__value4);
             }
-            else if (IsPresent && present != null)
+            else if (Present is { } __value5 && present != null)
             {
-                return present(Present!);
+                return present(__value5);
             }
 
             return default(TResult);
@@ -488,29 +488,29 @@ namespace G
                 Validate();
             }
 
-            if (IsString)
+            if (String is { } __value0)
             {
-                @string?.Invoke(String!);
+                @string?.Invoke(__value0);
             }
-            else if (IsNumber)
+            else if (Number is { } __value1)
             {
-                number?.Invoke(Number!);
+                number?.Invoke(__value1);
             }
-            else if (IsBoolean)
+            else if (Boolean is { } __value2)
             {
-                boolean?.Invoke(Boolean!);
+                boolean?.Invoke(__value2);
             }
-            else if (IsRange)
+            else if (Range is { } __value3)
             {
-                range?.Invoke(Range!);
+                range?.Invoke(__value3);
             }
-            else if (IsEnum)
+            else if (Enum is { } __value4)
             {
-                @enum?.Invoke(Enum!);
+                @enum?.Invoke(__value4);
             }
-            else if (IsPresent)
+            else if (Present is { } __value5)
             {
-                present?.Invoke(Present!);
+                present?.Invoke(__value5);
             }
         }
 
@@ -531,29 +531,29 @@ namespace G
                 Validate();
             }
 
-            if (IsString)
+            if (String is { } __value0)
             {
-                @string?.Invoke(String!);
+                @string?.Invoke(__value0);
             }
-            else if (IsNumber)
+            else if (Number is { } __value1)
             {
-                number?.Invoke(Number!);
+                number?.Invoke(__value1);
             }
-            else if (IsBoolean)
+            else if (Boolean is { } __value2)
             {
-                boolean?.Invoke(Boolean!);
+                boolean?.Invoke(__value2);
             }
-            else if (IsRange)
+            else if (Range is { } __value3)
             {
-                range?.Invoke(Range!);
+                range?.Invoke(__value3);
             }
-            else if (IsEnum)
+            else if (Enum is { } __value4)
             {
-                @enum?.Invoke(Enum!);
+                @enum?.Invoke(__value4);
             }
-            else if (IsPresent)
+            else if (Present is { } __value5)
             {
-                present?.Invoke(Present!);
+                present?.Invoke(__value5);
             }
         }
 

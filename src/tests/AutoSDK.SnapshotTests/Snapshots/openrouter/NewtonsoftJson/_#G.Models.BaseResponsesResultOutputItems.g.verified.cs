@@ -1,4 +1,4 @@
-﻿//HintName: G.Models.BaseResponsesResultOutputItems.g.cs
+//HintName: G.Models.BaseResponsesResultOutputItems.g.cs
 #pragma warning disable CS0618 // Type or member is obsolete
 
 #nullable enable
@@ -43,8 +43,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.OutputMessage PickOutputMessage() => IsOutputMessage
-            ? OutputMessage!
+        public global::G.OutputMessage PickOutputMessage() => OutputMessage is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'OutputMessage' but the value was {ToString()}.");
 
         /// <summary>
@@ -80,8 +80,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.OutputItemReasoning PickOutputItemReasoning() => IsOutputItemReasoning
-            ? OutputItemReasoning!
+        public global::G.OutputItemReasoning PickOutputItemReasoning() => OutputItemReasoning is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'OutputItemReasoning' but the value was {ToString()}.");
 
         /// <summary>
@@ -117,8 +117,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.OutputItemFunctionCall PickOutputItemFunctionCall() => IsOutputItemFunctionCall
-            ? OutputItemFunctionCall!
+        public global::G.OutputItemFunctionCall PickOutputItemFunctionCall() => OutputItemFunctionCall is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'OutputItemFunctionCall' but the value was {ToString()}.");
 
         /// <summary>
@@ -154,8 +154,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.OutputItemWebSearchCall PickOutputItemWebSearchCall() => IsOutputItemWebSearchCall
-            ? OutputItemWebSearchCall!
+        public global::G.OutputItemWebSearchCall PickOutputItemWebSearchCall() => OutputItemWebSearchCall is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'OutputItemWebSearchCall' but the value was {ToString()}.");
 
         /// <summary>
@@ -191,8 +191,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.OutputItemFileSearchCall PickOutputItemFileSearchCall() => IsOutputItemFileSearchCall
-            ? OutputItemFileSearchCall!
+        public global::G.OutputItemFileSearchCall PickOutputItemFileSearchCall() => OutputItemFileSearchCall is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'OutputItemFileSearchCall' but the value was {ToString()}.");
 
         /// <summary>
@@ -228,8 +228,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.OutputItemImageGenerationCall PickOutputItemImageGenerationCall() => IsOutputItemImageGenerationCall
-            ? OutputItemImageGenerationCall!
+        public global::G.OutputItemImageGenerationCall PickOutputItemImageGenerationCall() => OutputItemImageGenerationCall is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'OutputItemImageGenerationCall' but the value was {ToString()}.");
         /// <summary>
         /// 
@@ -438,29 +438,29 @@ namespace G
                 Validate();
             }
 
-            if (IsOutputMessage && outputMessage != null)
+            if (OutputMessage is { } __value0 && outputMessage != null)
             {
-                return outputMessage(OutputMessage!);
+                return outputMessage(__value0);
             }
-            else if (IsOutputItemReasoning && outputItemReasoning != null)
+            else if (OutputItemReasoning is { } __value1 && outputItemReasoning != null)
             {
-                return outputItemReasoning(OutputItemReasoning!);
+                return outputItemReasoning(__value1);
             }
-            else if (IsOutputItemFunctionCall && outputItemFunctionCall != null)
+            else if (OutputItemFunctionCall is { } __value2 && outputItemFunctionCall != null)
             {
-                return outputItemFunctionCall(OutputItemFunctionCall!);
+                return outputItemFunctionCall(__value2);
             }
-            else if (IsOutputItemWebSearchCall && outputItemWebSearchCall != null)
+            else if (OutputItemWebSearchCall is { } __value3 && outputItemWebSearchCall != null)
             {
-                return outputItemWebSearchCall(OutputItemWebSearchCall!);
+                return outputItemWebSearchCall(__value3);
             }
-            else if (IsOutputItemFileSearchCall && outputItemFileSearchCall != null)
+            else if (OutputItemFileSearchCall is { } __value4 && outputItemFileSearchCall != null)
             {
-                return outputItemFileSearchCall(OutputItemFileSearchCall!);
+                return outputItemFileSearchCall(__value4);
             }
-            else if (IsOutputItemImageGenerationCall && outputItemImageGenerationCall != null)
+            else if (OutputItemImageGenerationCall is { } __value5 && outputItemImageGenerationCall != null)
             {
-                return outputItemImageGenerationCall(OutputItemImageGenerationCall!);
+                return outputItemImageGenerationCall(__value5);
             }
 
             return default(TResult);
@@ -488,29 +488,29 @@ namespace G
                 Validate();
             }
 
-            if (IsOutputMessage)
+            if (OutputMessage is { } __value0)
             {
-                outputMessage?.Invoke(OutputMessage!);
+                outputMessage?.Invoke(__value0);
             }
-            else if (IsOutputItemReasoning)
+            else if (OutputItemReasoning is { } __value1)
             {
-                outputItemReasoning?.Invoke(OutputItemReasoning!);
+                outputItemReasoning?.Invoke(__value1);
             }
-            else if (IsOutputItemFunctionCall)
+            else if (OutputItemFunctionCall is { } __value2)
             {
-                outputItemFunctionCall?.Invoke(OutputItemFunctionCall!);
+                outputItemFunctionCall?.Invoke(__value2);
             }
-            else if (IsOutputItemWebSearchCall)
+            else if (OutputItemWebSearchCall is { } __value3)
             {
-                outputItemWebSearchCall?.Invoke(OutputItemWebSearchCall!);
+                outputItemWebSearchCall?.Invoke(__value3);
             }
-            else if (IsOutputItemFileSearchCall)
+            else if (OutputItemFileSearchCall is { } __value4)
             {
-                outputItemFileSearchCall?.Invoke(OutputItemFileSearchCall!);
+                outputItemFileSearchCall?.Invoke(__value4);
             }
-            else if (IsOutputItemImageGenerationCall)
+            else if (OutputItemImageGenerationCall is { } __value5)
             {
-                outputItemImageGenerationCall?.Invoke(OutputItemImageGenerationCall!);
+                outputItemImageGenerationCall?.Invoke(__value5);
             }
         }
 
@@ -531,29 +531,29 @@ namespace G
                 Validate();
             }
 
-            if (IsOutputMessage)
+            if (OutputMessage is { } __value0)
             {
-                outputMessage?.Invoke(OutputMessage!);
+                outputMessage?.Invoke(__value0);
             }
-            else if (IsOutputItemReasoning)
+            else if (OutputItemReasoning is { } __value1)
             {
-                outputItemReasoning?.Invoke(OutputItemReasoning!);
+                outputItemReasoning?.Invoke(__value1);
             }
-            else if (IsOutputItemFunctionCall)
+            else if (OutputItemFunctionCall is { } __value2)
             {
-                outputItemFunctionCall?.Invoke(OutputItemFunctionCall!);
+                outputItemFunctionCall?.Invoke(__value2);
             }
-            else if (IsOutputItemWebSearchCall)
+            else if (OutputItemWebSearchCall is { } __value3)
             {
-                outputItemWebSearchCall?.Invoke(OutputItemWebSearchCall!);
+                outputItemWebSearchCall?.Invoke(__value3);
             }
-            else if (IsOutputItemFileSearchCall)
+            else if (OutputItemFileSearchCall is { } __value4)
             {
-                outputItemFileSearchCall?.Invoke(OutputItemFileSearchCall!);
+                outputItemFileSearchCall?.Invoke(__value4);
             }
-            else if (IsOutputItemImageGenerationCall)
+            else if (OutputItemImageGenerationCall is { } __value5)
             {
-                outputItemImageGenerationCall?.Invoke(OutputItemImageGenerationCall!);
+                outputItemImageGenerationCall?.Invoke(__value5);
             }
         }
 

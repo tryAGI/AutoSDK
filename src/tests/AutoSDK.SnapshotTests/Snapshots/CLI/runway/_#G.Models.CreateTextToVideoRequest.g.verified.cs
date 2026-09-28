@@ -1,4 +1,4 @@
-﻿//HintName: G.Models.CreateTextToVideoRequest.g.cs
+//HintName: G.Models.CreateTextToVideoRequest.g.cs
 #pragma warning disable CS0618 // Type or member is obsolete
 
 #nullable enable
@@ -48,8 +48,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.CreateTextToVideoRequestVeo31 PickVeo31() => IsVeo31
-            ? Veo31!
+        public global::G.CreateTextToVideoRequestVeo31 PickVeo31() => Veo31 is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Veo31' but the value was {ToString()}.");
 
         /// <summary>
@@ -85,8 +85,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.CreateTextToVideoRequestVeo31Fast PickVeo31Fast() => IsVeo31Fast
-            ? Veo31Fast!
+        public global::G.CreateTextToVideoRequestVeo31Fast PickVeo31Fast() => Veo31Fast is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Veo31Fast' but the value was {ToString()}.");
 
         /// <summary>
@@ -122,8 +122,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.CreateTextToVideoRequestVeo3 PickVeo3() => IsVeo3
-            ? Veo3!
+        public global::G.CreateTextToVideoRequestVeo3 PickVeo3() => Veo3 is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Veo3' but the value was {ToString()}.");
         /// <summary>
         /// 
@@ -251,17 +251,17 @@ namespace G
                 Validate();
             }
 
-            if (IsVeo31 && veo31 != null)
+            if (Veo31 is { } __value0 && veo31 != null)
             {
-                return veo31(Veo31!);
+                return veo31(__value0);
             }
-            else if (IsVeo31Fast && veo31Fast != null)
+            else if (Veo31Fast is { } __value1 && veo31Fast != null)
             {
-                return veo31Fast(Veo31Fast!);
+                return veo31Fast(__value1);
             }
-            else if (IsVeo3 && veo3 != null)
+            else if (Veo3 is { } __value2 && veo3 != null)
             {
-                return veo3(Veo3!);
+                return veo3(__value2);
             }
 
             return default(TResult);
@@ -283,17 +283,17 @@ namespace G
                 Validate();
             }
 
-            if (IsVeo31)
+            if (Veo31 is { } __value0)
             {
-                veo31?.Invoke(Veo31!);
+                veo31?.Invoke(__value0);
             }
-            else if (IsVeo31Fast)
+            else if (Veo31Fast is { } __value1)
             {
-                veo31Fast?.Invoke(Veo31Fast!);
+                veo31Fast?.Invoke(__value1);
             }
-            else if (IsVeo3)
+            else if (Veo3 is { } __value2)
             {
-                veo3?.Invoke(Veo3!);
+                veo3?.Invoke(__value2);
             }
         }
 
@@ -311,17 +311,17 @@ namespace G
                 Validate();
             }
 
-            if (IsVeo31)
+            if (Veo31 is { } __value0)
             {
-                veo31?.Invoke(Veo31!);
+                veo31?.Invoke(__value0);
             }
-            else if (IsVeo31Fast)
+            else if (Veo31Fast is { } __value1)
             {
-                veo31Fast?.Invoke(Veo31Fast!);
+                veo31Fast?.Invoke(__value1);
             }
-            else if (IsVeo3)
+            else if (Veo3 is { } __value2)
             {
-                veo3?.Invoke(Veo3!);
+                veo3?.Invoke(__value2);
             }
         }
 

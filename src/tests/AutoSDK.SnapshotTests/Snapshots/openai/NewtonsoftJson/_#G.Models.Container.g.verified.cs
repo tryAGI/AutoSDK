@@ -1,4 +1,4 @@
-﻿//HintName: G.Models.Container.g.cs
+//HintName: G.Models.Container.g.cs
 #pragma warning disable CS0618 // Type or member is obsolete
 
 #nullable enable
@@ -44,8 +44,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public string PickContainerVariant1() => IsContainerVariant1
-            ? ContainerVariant1!
+        public string PickContainerVariant1() => ContainerVariant1 is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'ContainerVariant1' but the value was {ToString()}.");
 
         /// <summary>
@@ -82,8 +82,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.CodeInterpreterToolAuto PickAuto() => IsAuto
-            ? Auto!
+        public global::G.CodeInterpreterToolAuto PickAuto() => Auto is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Auto' but the value was {ToString()}.");
         /// <summary>
         /// 
@@ -180,13 +180,13 @@ namespace G
                 Validate();
             }
 
-            if (IsContainerVariant1 && containerVariant1 != null)
+            if (ContainerVariant1 is { } __value0 && containerVariant1 != null)
             {
-                return containerVariant1(ContainerVariant1!);
+                return containerVariant1(__value0);
             }
-            else if (IsAuto && auto != null)
+            else if (Auto is { } __value1 && auto != null)
             {
-                return auto(Auto!);
+                return auto(__value1);
             }
 
             return default(TResult);
@@ -206,13 +206,13 @@ namespace G
                 Validate();
             }
 
-            if (IsContainerVariant1)
+            if (ContainerVariant1 is { } __value0)
             {
-                containerVariant1?.Invoke(ContainerVariant1!);
+                containerVariant1?.Invoke(__value0);
             }
-            else if (IsAuto)
+            else if (Auto is { } __value1)
             {
-                auto?.Invoke(Auto!);
+                auto?.Invoke(__value1);
             }
         }
 
@@ -229,13 +229,13 @@ namespace G
                 Validate();
             }
 
-            if (IsContainerVariant1)
+            if (ContainerVariant1 is { } __value0)
             {
-                containerVariant1?.Invoke(ContainerVariant1!);
+                containerVariant1?.Invoke(__value0);
             }
-            else if (IsAuto)
+            else if (Auto is { } __value1)
             {
-                auto?.Invoke(Auto!);
+                auto?.Invoke(__value1);
             }
         }
 

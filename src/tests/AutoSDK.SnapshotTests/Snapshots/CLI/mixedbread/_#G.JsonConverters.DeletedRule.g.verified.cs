@@ -1,4 +1,4 @@
-﻿//HintName: G.JsonConverters.DeletedRule.g.cs
+//HintName: G.JsonConverters.DeletedRule.g.cs
 #nullable enable
 #pragma warning disable CS0618 // Type or member is obsolete
 
@@ -78,25 +78,25 @@ namespace G.JsonConverters
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.QueryStringSubstitutionRule), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.QueryStringSubstitutionRule?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.QueryStringSubstitutionRule).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.QueryString!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickQueryString(), typeInfo);
             }
             else if (value.IsQueryRegex)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.QueryRegexSubstitutionRule), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.QueryRegexSubstitutionRule?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.QueryRegexSubstitutionRule).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.QueryRegex!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickQueryRegex(), typeInfo);
             }
             else if (value.IsChunkSearchResult)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.ChunkSearchResultRule), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.ChunkSearchResultRule?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.ChunkSearchResultRule).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.ChunkSearchResult!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickChunkSearchResult(), typeInfo);
             }
             else if (value.IsFileSearchResult)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.FileSearchResultRule), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.FileSearchResultRule?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.FileSearchResultRule).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.FileSearchResult!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickFileSearchResult(), typeInfo);
             }
         }
     }

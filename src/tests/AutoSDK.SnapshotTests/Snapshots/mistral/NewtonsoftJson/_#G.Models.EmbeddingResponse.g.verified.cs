@@ -1,4 +1,4 @@
-﻿//HintName: G.Models.EmbeddingResponse.g.cs
+//HintName: G.Models.EmbeddingResponse.g.cs
 #pragma warning disable CS0618 // Type or member is obsolete
 
 #nullable enable
@@ -43,8 +43,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.ResponseBase PickResponseBase() => IsResponseBase
-            ? ResponseBase!
+        public global::G.ResponseBase PickResponseBase() => ResponseBase is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'ResponseBase' but the value was {ToString()}.");
 
         /// <summary>
@@ -80,8 +80,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.EmbeddingResponseVariant2 PickEmbeddingResponseVariant2() => IsEmbeddingResponseVariant2
-            ? EmbeddingResponseVariant2!
+        public global::G.EmbeddingResponseVariant2 PickEmbeddingResponseVariant2() => EmbeddingResponseVariant2 is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'EmbeddingResponseVariant2' but the value was {ToString()}.");
         /// <summary>
         /// 
@@ -178,13 +178,13 @@ namespace G
                 Validate();
             }
 
-            if (IsResponseBase && responseBase != null)
+            if (ResponseBase is { } __value0 && responseBase != null)
             {
-                return responseBase(ResponseBase!);
+                return responseBase(__value0);
             }
-            else if (IsEmbeddingResponseVariant2 && embeddingResponseVariant2 != null)
+            else if (EmbeddingResponseVariant2 is { } __value1 && embeddingResponseVariant2 != null)
             {
-                return embeddingResponseVariant2(EmbeddingResponseVariant2!);
+                return embeddingResponseVariant2(__value1);
             }
 
             return default(TResult);
@@ -204,13 +204,13 @@ namespace G
                 Validate();
             }
 
-            if (IsResponseBase)
+            if (ResponseBase is { } __value0)
             {
-                responseBase?.Invoke(ResponseBase!);
+                responseBase?.Invoke(__value0);
             }
-            else if (IsEmbeddingResponseVariant2)
+            else if (EmbeddingResponseVariant2 is { } __value1)
             {
-                embeddingResponseVariant2?.Invoke(EmbeddingResponseVariant2!);
+                embeddingResponseVariant2?.Invoke(__value1);
             }
         }
 
@@ -227,13 +227,13 @@ namespace G
                 Validate();
             }
 
-            if (IsResponseBase)
+            if (ResponseBase is { } __value0)
             {
-                responseBase?.Invoke(ResponseBase!);
+                responseBase?.Invoke(__value0);
             }
-            else if (IsEmbeddingResponseVariant2)
+            else if (EmbeddingResponseVariant2 is { } __value1)
             {
-                embeddingResponseVariant2?.Invoke(EmbeddingResponseVariant2!);
+                embeddingResponseVariant2?.Invoke(__value1);
             }
         }
 

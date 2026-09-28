@@ -1,4 +1,4 @@
-﻿//HintName: G.Models.SvgShape.g.cs
+//HintName: G.Models.SvgShape.g.cs
 #pragma warning disable CS0618 // Type or member is obsolete
 
 #nullable enable
@@ -50,8 +50,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.SvgRectangleShape PickRectangle() => IsRectangle
-            ? Rectangle!
+        public global::G.SvgRectangleShape PickRectangle() => Rectangle is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Rectangle' but the value was {ToString()}.");
 
         /// <summary>
@@ -88,8 +88,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.SvgCircleShape PickCircle() => IsCircle
-            ? Circle!
+        public global::G.SvgCircleShape PickCircle() => Circle is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Circle' but the value was {ToString()}.");
 
         /// <summary>
@@ -126,8 +126,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.SvgEllipseShape PickEllipse() => IsEllipse
-            ? Ellipse!
+        public global::G.SvgEllipseShape PickEllipse() => Ellipse is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Ellipse' but the value was {ToString()}.");
 
         /// <summary>
@@ -164,8 +164,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.SvgLineShape PickLine() => IsLine
-            ? Line!
+        public global::G.SvgLineShape PickLine() => Line is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Line' but the value was {ToString()}.");
 
         /// <summary>
@@ -203,8 +203,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.SvgPolygonShape PickPolygon() => IsPolygon
-            ? Polygon!
+        public global::G.SvgPolygonShape PickPolygon() => Polygon is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Polygon' but the value was {ToString()}.");
 
         /// <summary>
@@ -242,8 +242,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.SvgStarShape PickStar() => IsStar
-            ? Star!
+        public global::G.SvgStarShape PickStar() => Star is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Star' but the value was {ToString()}.");
 
         /// <summary>
@@ -280,8 +280,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.SvgArrowShape PickArrow() => IsArrow
-            ? Arrow!
+        public global::G.SvgArrowShape PickArrow() => Arrow is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Arrow' but the value was {ToString()}.");
 
         /// <summary>
@@ -318,8 +318,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.SvgHeartShape PickHeart() => IsHeart
-            ? Heart!
+        public global::G.SvgHeartShape PickHeart() => Heart is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Heart' but the value was {ToString()}.");
 
         /// <summary>
@@ -356,8 +356,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.SvgCrossShape PickCross() => IsCross
-            ? Cross!
+        public global::G.SvgCrossShape PickCross() => Cross is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Cross' but the value was {ToString()}.");
 
         /// <summary>
@@ -394,8 +394,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.SvgRingShape PickRing() => IsRing
-            ? Ring!
+        public global::G.SvgRingShape PickRing() => Ring is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Ring' but the value was {ToString()}.");
 
         /// <summary>
@@ -443,8 +443,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.SvgPathShape PickPath() => IsPath
-            ? Path!
+        public global::G.SvgPathShape PickPath() => Path is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Path' but the value was {ToString()}.");
         /// <summary>
         /// 
@@ -796,49 +796,49 @@ namespace G
                 Validate();
             }
 
-            if (IsRectangle && rectangle != null)
+            if (Rectangle is { } __value0 && rectangle != null)
             {
-                return rectangle(Rectangle!);
+                return rectangle(__value0);
             }
-            else if (IsCircle && circle != null)
+            else if (Circle is { } __value1 && circle != null)
             {
-                return circle(Circle!);
+                return circle(__value1);
             }
-            else if (IsEllipse && ellipse != null)
+            else if (Ellipse is { } __value2 && ellipse != null)
             {
-                return ellipse(Ellipse!);
+                return ellipse(__value2);
             }
-            else if (IsLine && line != null)
+            else if (Line is { } __value3 && line != null)
             {
-                return line(Line!);
+                return line(__value3);
             }
-            else if (IsPolygon && polygon != null)
+            else if (Polygon is { } __value4 && polygon != null)
             {
-                return polygon(Polygon!);
+                return polygon(__value4);
             }
-            else if (IsStar && star != null)
+            else if (Star is { } __value5 && star != null)
             {
-                return star(Star!);
+                return star(__value5);
             }
-            else if (IsArrow && arrow != null)
+            else if (Arrow is { } __value6 && arrow != null)
             {
-                return arrow(Arrow!);
+                return arrow(__value6);
             }
-            else if (IsHeart && heart != null)
+            else if (Heart is { } __value7 && heart != null)
             {
-                return heart(Heart!);
+                return heart(__value7);
             }
-            else if (IsCross && cross != null)
+            else if (Cross is { } __value8 && cross != null)
             {
-                return cross(Cross!);
+                return cross(__value8);
             }
-            else if (IsRing && ring != null)
+            else if (Ring is { } __value9 && ring != null)
             {
-                return ring(Ring!);
+                return ring(__value9);
             }
-            else if (IsPath && path != null)
+            else if (Path is { } __value10 && path != null)
             {
-                return path(Path!);
+                return path(__value10);
             }
 
             return default(TResult);
@@ -876,49 +876,49 @@ namespace G
                 Validate();
             }
 
-            if (IsRectangle)
+            if (Rectangle is { } __value0)
             {
-                rectangle?.Invoke(Rectangle!);
+                rectangle?.Invoke(__value0);
             }
-            else if (IsCircle)
+            else if (Circle is { } __value1)
             {
-                circle?.Invoke(Circle!);
+                circle?.Invoke(__value1);
             }
-            else if (IsEllipse)
+            else if (Ellipse is { } __value2)
             {
-                ellipse?.Invoke(Ellipse!);
+                ellipse?.Invoke(__value2);
             }
-            else if (IsLine)
+            else if (Line is { } __value3)
             {
-                line?.Invoke(Line!);
+                line?.Invoke(__value3);
             }
-            else if (IsPolygon)
+            else if (Polygon is { } __value4)
             {
-                polygon?.Invoke(Polygon!);
+                polygon?.Invoke(__value4);
             }
-            else if (IsStar)
+            else if (Star is { } __value5)
             {
-                star?.Invoke(Star!);
+                star?.Invoke(__value5);
             }
-            else if (IsArrow)
+            else if (Arrow is { } __value6)
             {
-                arrow?.Invoke(Arrow!);
+                arrow?.Invoke(__value6);
             }
-            else if (IsHeart)
+            else if (Heart is { } __value7)
             {
-                heart?.Invoke(Heart!);
+                heart?.Invoke(__value7);
             }
-            else if (IsCross)
+            else if (Cross is { } __value8)
             {
-                cross?.Invoke(Cross!);
+                cross?.Invoke(__value8);
             }
-            else if (IsRing)
+            else if (Ring is { } __value9)
             {
-                ring?.Invoke(Ring!);
+                ring?.Invoke(__value9);
             }
-            else if (IsPath)
+            else if (Path is { } __value10)
             {
-                path?.Invoke(Path!);
+                path?.Invoke(__value10);
             }
         }
 
@@ -944,49 +944,49 @@ namespace G
                 Validate();
             }
 
-            if (IsRectangle)
+            if (Rectangle is { } __value0)
             {
-                rectangle?.Invoke(Rectangle!);
+                rectangle?.Invoke(__value0);
             }
-            else if (IsCircle)
+            else if (Circle is { } __value1)
             {
-                circle?.Invoke(Circle!);
+                circle?.Invoke(__value1);
             }
-            else if (IsEllipse)
+            else if (Ellipse is { } __value2)
             {
-                ellipse?.Invoke(Ellipse!);
+                ellipse?.Invoke(__value2);
             }
-            else if (IsLine)
+            else if (Line is { } __value3)
             {
-                line?.Invoke(Line!);
+                line?.Invoke(__value3);
             }
-            else if (IsPolygon)
+            else if (Polygon is { } __value4)
             {
-                polygon?.Invoke(Polygon!);
+                polygon?.Invoke(__value4);
             }
-            else if (IsStar)
+            else if (Star is { } __value5)
             {
-                star?.Invoke(Star!);
+                star?.Invoke(__value5);
             }
-            else if (IsArrow)
+            else if (Arrow is { } __value6)
             {
-                arrow?.Invoke(Arrow!);
+                arrow?.Invoke(__value6);
             }
-            else if (IsHeart)
+            else if (Heart is { } __value7)
             {
-                heart?.Invoke(Heart!);
+                heart?.Invoke(__value7);
             }
-            else if (IsCross)
+            else if (Cross is { } __value8)
             {
-                cross?.Invoke(Cross!);
+                cross?.Invoke(__value8);
             }
-            else if (IsRing)
+            else if (Ring is { } __value9)
             {
-                ring?.Invoke(Ring!);
+                ring?.Invoke(__value9);
             }
-            else if (IsPath)
+            else if (Path is { } __value10)
             {
-                path?.Invoke(Path!);
+                path?.Invoke(__value10);
             }
         }
 

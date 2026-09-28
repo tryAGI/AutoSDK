@@ -1,4 +1,4 @@
-﻿//HintName: G.Models.LemurTaskResponse.g.cs
+//HintName: G.Models.LemurTaskResponse.g.cs
 #pragma warning disable CS0618 // Type or member is obsolete
 
 #nullable enable
@@ -45,8 +45,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.LemurStringResponse PickString() => IsString
-            ? String!.Value
+        public global::G.LemurStringResponse PickString() => String is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'String' but the value was {ToString()}.");
         /// <summary>
         /// 
@@ -105,9 +105,9 @@ namespace G
                 Validate();
             }
 
-            if (IsString && @string != null)
+            if (String is { } __value0 && @string != null)
             {
-                return @string(String!);
+                return @string(__value0);
             }
 
             return default(TResult);
@@ -125,9 +125,9 @@ namespace G
                 Validate();
             }
 
-            if (IsString)
+            if (String is { } __value0)
             {
-                @string?.Invoke(String!);
+                @string?.Invoke(__value0);
             }
         }
 
@@ -143,9 +143,9 @@ namespace G
                 Validate();
             }
 
-            if (IsString)
+            if (String is { } __value0)
             {
-                @string?.Invoke(String!);
+                @string?.Invoke(__value0);
             }
         }
 

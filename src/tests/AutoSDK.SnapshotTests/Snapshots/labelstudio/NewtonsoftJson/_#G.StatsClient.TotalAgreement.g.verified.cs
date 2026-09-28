@@ -1,4 +1,4 @@
-﻿//HintName: G.StatsClient.TotalAgreement.g.cs
+//HintName: G.StatsClient.TotalAgreement.g.cs
 
 #nullable enable
 
@@ -173,7 +173,7 @@ namespace G
                 PrepareTotalAgreementRequest(
                     httpClient: HttpClient,
                     httpRequestMessage: __httpRequest,
-                    id: id!,
+                    id: id,
                     perLabel: perLabel);
 
                 return __httpRequest;
@@ -196,7 +196,7 @@ namespace G
                                 pathTemplate: "$\"/api/projects/{id}/stats/total_agreement\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: null,
                                 exception: null,
                                 clientOptions: Options,
@@ -230,7 +230,7 @@ namespace G
                                 pathTemplate: "$\"/api/projects/{id}/stats/total_agreement\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: null,
                                 exception: __exception,
                                 clientOptions: Options,
@@ -271,7 +271,7 @@ namespace G
                                 pathTemplate: "$\"/api/projects/{id}/stats/total_agreement\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: __response,
                                 exception: null,
                                 clientOptions: Options,
@@ -319,7 +319,7 @@ namespace G
                                 pathTemplate: "$\"/api/projects/{id}/stats/total_agreement\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: __response,
                                 exception: null,
                                 clientOptions: Options,
@@ -341,7 +341,7 @@ namespace G
                                 pathTemplate: "$\"/api/projects/{id}/stats/total_agreement\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: __response,
                                 exception: null,
                                 clientOptions: Options,

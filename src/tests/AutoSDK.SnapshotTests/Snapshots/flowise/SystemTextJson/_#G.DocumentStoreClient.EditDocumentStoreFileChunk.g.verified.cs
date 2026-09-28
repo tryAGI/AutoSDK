@@ -1,4 +1,4 @@
-﻿//HintName: G.DocumentStoreClient.EditDocumentStoreFileChunk.g.cs
+//HintName: G.DocumentStoreClient.EditDocumentStoreFileChunk.g.cs
 
 #nullable enable
 
@@ -183,9 +183,9 @@ namespace G
                 PrepareEditDocumentStoreFileChunkRequest(
                     httpClient: HttpClient,
                     httpRequestMessage: __httpRequest,
-                    storeId: storeId!,
-                    loaderId: loaderId!,
-                    chunkId: chunkId!,
+                    storeId: storeId,
+                    loaderId: loaderId,
+                    chunkId: chunkId,
                     request: request);
 
                 global::G.AutoSDKHttpRequestOptions.StampAuthorizationOverride(__httpRequest);
@@ -210,7 +210,7 @@ namespace G
                                 pathTemplate: "$\"/document-store/chunks/{storeId}/{loaderId}/{chunkId}\"",
                                 httpMethod: "PUT",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: null,
                                 exception: null,
                                 clientOptions: Options,
@@ -244,7 +244,7 @@ namespace G
                                 pathTemplate: "$\"/document-store/chunks/{storeId}/{loaderId}/{chunkId}\"",
                                 httpMethod: "PUT",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: null,
                                 exception: __exception,
                                 clientOptions: Options,
@@ -285,7 +285,7 @@ namespace G
                                 pathTemplate: "$\"/document-store/chunks/{storeId}/{loaderId}/{chunkId}\"",
                                 httpMethod: "PUT",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: __response,
                                 exception: null,
                                 clientOptions: Options,
@@ -333,7 +333,7 @@ namespace G
                                 pathTemplate: "$\"/document-store/chunks/{storeId}/{loaderId}/{chunkId}\"",
                                 httpMethod: "PUT",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: __response,
                                 exception: null,
                                 clientOptions: Options,
@@ -355,7 +355,7 @@ namespace G
                                 pathTemplate: "$\"/document-store/chunks/{storeId}/{loaderId}/{chunkId}\"",
                                 httpMethod: "PUT",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: __response,
                                 exception: null,
                                 clientOptions: Options,

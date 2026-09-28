@@ -1,4 +1,4 @@
-﻿//HintName: G.Models.BaseInputsOneOf1ItemsOneOf0ContentOneOf0Items.g.cs
+//HintName: G.Models.BaseInputsOneOf1ItemsOneOf0ContentOneOf0Items.g.cs
 #pragma warning disable CS0618 // Type or member is obsolete
 
 #nullable enable
@@ -43,8 +43,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.InputText PickInputText() => IsInputText
-            ? InputText!
+        public global::G.InputText PickInputText() => InputText is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'InputText' but the value was {ToString()}.");
 
         /// <summary>
@@ -80,8 +80,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.InputImage PickInputImage() => IsInputImage
-            ? InputImage!
+        public global::G.InputImage PickInputImage() => InputImage is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'InputImage' but the value was {ToString()}.");
 
         /// <summary>
@@ -117,8 +117,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.InputFile PickInputFile() => IsInputFile
-            ? InputFile!
+        public global::G.InputFile PickInputFile() => InputFile is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'InputFile' but the value was {ToString()}.");
 
         /// <summary>
@@ -154,8 +154,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.InputAudio PickInputAudio() => IsInputAudio
-            ? InputAudio!
+        public global::G.InputAudio PickInputAudio() => InputAudio is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'InputAudio' but the value was {ToString()}.");
         /// <summary>
         /// 
@@ -308,21 +308,21 @@ namespace G
                 Validate();
             }
 
-            if (IsInputText && inputText != null)
+            if (InputText is { } __value0 && inputText != null)
             {
-                return inputText(InputText!);
+                return inputText(__value0);
             }
-            else if (IsInputImage && inputImage != null)
+            else if (InputImage is { } __value1 && inputImage != null)
             {
-                return inputImage(InputImage!);
+                return inputImage(__value1);
             }
-            else if (IsInputFile && inputFile != null)
+            else if (InputFile is { } __value2 && inputFile != null)
             {
-                return inputFile(InputFile!);
+                return inputFile(__value2);
             }
-            else if (IsInputAudio && inputAudio != null)
+            else if (InputAudio is { } __value3 && inputAudio != null)
             {
-                return inputAudio(InputAudio!);
+                return inputAudio(__value3);
             }
 
             return default(TResult);
@@ -346,21 +346,21 @@ namespace G
                 Validate();
             }
 
-            if (IsInputText)
+            if (InputText is { } __value0)
             {
-                inputText?.Invoke(InputText!);
+                inputText?.Invoke(__value0);
             }
-            else if (IsInputImage)
+            else if (InputImage is { } __value1)
             {
-                inputImage?.Invoke(InputImage!);
+                inputImage?.Invoke(__value1);
             }
-            else if (IsInputFile)
+            else if (InputFile is { } __value2)
             {
-                inputFile?.Invoke(InputFile!);
+                inputFile?.Invoke(__value2);
             }
-            else if (IsInputAudio)
+            else if (InputAudio is { } __value3)
             {
-                inputAudio?.Invoke(InputAudio!);
+                inputAudio?.Invoke(__value3);
             }
         }
 
@@ -379,21 +379,21 @@ namespace G
                 Validate();
             }
 
-            if (IsInputText)
+            if (InputText is { } __value0)
             {
-                inputText?.Invoke(InputText!);
+                inputText?.Invoke(__value0);
             }
-            else if (IsInputImage)
+            else if (InputImage is { } __value1)
             {
-                inputImage?.Invoke(InputImage!);
+                inputImage?.Invoke(__value1);
             }
-            else if (IsInputFile)
+            else if (InputFile is { } __value2)
             {
-                inputFile?.Invoke(InputFile!);
+                inputFile?.Invoke(__value2);
             }
-            else if (IsInputAudio)
+            else if (InputAudio is { } __value3)
             {
-                inputAudio?.Invoke(InputAudio!);
+                inputAudio?.Invoke(__value3);
             }
         }
 

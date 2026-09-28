@@ -1,4 +1,4 @@
-﻿//HintName: G.Models.ToolMockInputMatchRule.g.cs
+//HintName: G.Models.ToolMockInputMatchRule.g.cs
 #pragma warning disable CS0618 // Type or member is obsolete
 
 #nullable enable
@@ -43,8 +43,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.ToolMockInputMatchRuleVariant1 PickToolMockInputMatchRuleVariant1() => IsToolMockInputMatchRuleVariant1
-            ? ToolMockInputMatchRuleVariant1!
+        public global::G.ToolMockInputMatchRuleVariant1 PickToolMockInputMatchRuleVariant1() => ToolMockInputMatchRuleVariant1 is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'ToolMockInputMatchRuleVariant1' but the value was {ToString()}.");
 
         /// <summary>
@@ -80,8 +80,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.ToolMockInputMatchRuleVariant2 PickToolMockInputMatchRuleVariant2() => IsToolMockInputMatchRuleVariant2
-            ? ToolMockInputMatchRuleVariant2!
+        public global::G.ToolMockInputMatchRuleVariant2 PickToolMockInputMatchRuleVariant2() => ToolMockInputMatchRuleVariant2 is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'ToolMockInputMatchRuleVariant2' but the value was {ToString()}.");
         /// <summary>
         /// 
@@ -178,13 +178,13 @@ namespace G
                 Validate();
             }
 
-            if (IsToolMockInputMatchRuleVariant1 && toolMockInputMatchRuleVariant1 != null)
+            if (ToolMockInputMatchRuleVariant1 is { } __value0 && toolMockInputMatchRuleVariant1 != null)
             {
-                return toolMockInputMatchRuleVariant1(ToolMockInputMatchRuleVariant1!);
+                return toolMockInputMatchRuleVariant1(__value0);
             }
-            else if (IsToolMockInputMatchRuleVariant2 && toolMockInputMatchRuleVariant2 != null)
+            else if (ToolMockInputMatchRuleVariant2 is { } __value1 && toolMockInputMatchRuleVariant2 != null)
             {
-                return toolMockInputMatchRuleVariant2(ToolMockInputMatchRuleVariant2!);
+                return toolMockInputMatchRuleVariant2(__value1);
             }
 
             return default(TResult);
@@ -204,13 +204,13 @@ namespace G
                 Validate();
             }
 
-            if (IsToolMockInputMatchRuleVariant1)
+            if (ToolMockInputMatchRuleVariant1 is { } __value0)
             {
-                toolMockInputMatchRuleVariant1?.Invoke(ToolMockInputMatchRuleVariant1!);
+                toolMockInputMatchRuleVariant1?.Invoke(__value0);
             }
-            else if (IsToolMockInputMatchRuleVariant2)
+            else if (ToolMockInputMatchRuleVariant2 is { } __value1)
             {
-                toolMockInputMatchRuleVariant2?.Invoke(ToolMockInputMatchRuleVariant2!);
+                toolMockInputMatchRuleVariant2?.Invoke(__value1);
             }
         }
 
@@ -227,13 +227,13 @@ namespace G
                 Validate();
             }
 
-            if (IsToolMockInputMatchRuleVariant1)
+            if (ToolMockInputMatchRuleVariant1 is { } __value0)
             {
-                toolMockInputMatchRuleVariant1?.Invoke(ToolMockInputMatchRuleVariant1!);
+                toolMockInputMatchRuleVariant1?.Invoke(__value0);
             }
-            else if (IsToolMockInputMatchRuleVariant2)
+            else if (ToolMockInputMatchRuleVariant2 is { } __value1)
             {
-                toolMockInputMatchRuleVariant2?.Invoke(ToolMockInputMatchRuleVariant2!);
+                toolMockInputMatchRuleVariant2?.Invoke(__value1);
             }
         }
 

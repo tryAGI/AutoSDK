@@ -6,14 +6,6 @@ namespace AutoSDK.Generation;
 
 public static partial class Sources
 {
-    private static bool HasNullableValueVariant(TypeData type) =>
-        type.IsValueType &&
-        (type.IsAnyOfLike || type.IsEnum ||
-         (type.SubTypes.Length == 1 && type.SubTypes[0].Unbox<TypeData>().IsAnyOfLike) ||
-         type.CSharpTypeWithoutNullability is "bool" or "byte" or "sbyte" or "short" or "ushort" or
-             "int" or "uint" or "long" or "ulong" or "float" or "double" or "decimal" or "char" ||
-         type.CSharpTypeWithoutNullability.StartsWith("global::System.", StringComparison.Ordinal));
-
     public static string GenerateAnyOf(
         AnyOfData anyOfData,
         CancellationToken cancellationToken = default)
@@ -149,8 +141,8 @@ namespace {anyOfData.Namespace}
         }}
 
         {string.Empty.ToXmlDocumentationSummary(level: 8)}
-        public {x.Type.CSharpTypeWithoutNullability} Pick{x.Name}() => Is{x.Name}
-            ? {x.Name}{(HasNullableValueVariant(x.Type) ? "!.Value" : "!")}
+        public {x.Type.CSharpTypeWithoutNullability} Pick{x.Name}() => {x.Name} is {{ }} value
+            ? value
             : throw new global::System.InvalidOperationException($""Expected union variant '{x.Name}' but the value was {{ToString()}}."");
 ").Inject()}
 {anyOfData.Properties
@@ -210,9 +202,9 @@ namespace {anyOfData.Namespace}
             }}
 
 {anyOfData.Properties.Select((x, i) => $@"
-            {(i > 0 ? "else " : "")}if (Is{x.Name} && {x.ParameterName} != null)
+            {(i > 0 ? "else " : "")}if ({x.Name} is {{ }} __value{i} && {x.ParameterName} != null)
             {{
-                return {x.ParameterName}({x.Name}!);
+                return {x.ParameterName}(__value{i});
             }}").Inject()}
 
             return default(TResult);
@@ -231,9 +223,9 @@ namespace {anyOfData.Namespace}
             }}
 
 {anyOfData.Properties.Select((x, i) => $@"
-            {(i > 0 ? "else " : "")}if (Is{x.Name})
+            {(i > 0 ? "else " : "")}if ({x.Name} is {{ }} __value{i})
             {{
-                {x.ParameterName}?.Invoke({x.Name}!);
+                {x.ParameterName}?.Invoke(__value{i});
             }}").Inject()}
         }}
 
@@ -250,9 +242,9 @@ namespace {anyOfData.Namespace}
             }}
 
 {anyOfData.Properties.Select((x, i) => $@"
-            {(i > 0 ? "else " : "")}if (Is{x.Name})
+            {(i > 0 ? "else " : "")}if ({x.Name} is {{ }} __value{i})
             {{
-                {x.ParameterName}?.Invoke({x.Name}!);
+                {x.ParameterName}?.Invoke(__value{i});
             }}").Inject()}
         }}
 

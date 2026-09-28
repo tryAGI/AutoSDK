@@ -1,4 +1,4 @@
-﻿//HintName: G.Models.CreateOrganizationRequest.g.cs
+//HintName: G.Models.CreateOrganizationRequest.g.cs
 #pragma warning disable CS0618 // Type or member is obsolete
 
 #nullable enable
@@ -43,8 +43,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.CreateOrganizationRequestNew PickNew() => IsNew
-            ? New!
+        public global::G.CreateOrganizationRequestNew PickNew() => New is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'New' but the value was {ToString()}.");
 
         /// <summary>
@@ -80,8 +80,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.CreateOrganizationRequestOld PickOld() => IsOld
-            ? Old!
+        public global::G.CreateOrganizationRequestOld PickOld() => Old is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Old' but the value was {ToString()}.");
         /// <summary>
         /// 
@@ -178,13 +178,13 @@ namespace G
                 Validate();
             }
 
-            if (IsNew && @new != null)
+            if (New is { } __value0 && @new != null)
             {
-                return @new(New!);
+                return @new(__value0);
             }
-            else if (IsOld && old != null)
+            else if (Old is { } __value1 && old != null)
             {
-                return old(Old!);
+                return old(__value1);
             }
 
             return default(TResult);
@@ -204,13 +204,13 @@ namespace G
                 Validate();
             }
 
-            if (IsNew)
+            if (New is { } __value0)
             {
-                @new?.Invoke(New!);
+                @new?.Invoke(__value0);
             }
-            else if (IsOld)
+            else if (Old is { } __value1)
             {
-                old?.Invoke(Old!);
+                old?.Invoke(__value1);
             }
         }
 
@@ -227,13 +227,13 @@ namespace G
                 Validate();
             }
 
-            if (IsNew)
+            if (New is { } __value0)
             {
-                @new?.Invoke(New!);
+                @new?.Invoke(__value0);
             }
-            else if (IsOld)
+            else if (Old is { } __value1)
             {
-                old?.Invoke(Old!);
+                old?.Invoke(__value1);
             }
         }
 

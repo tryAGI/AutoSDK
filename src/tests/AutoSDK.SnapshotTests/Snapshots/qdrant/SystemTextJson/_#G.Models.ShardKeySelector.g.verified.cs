@@ -1,4 +1,4 @@
-﻿//HintName: G.Models.ShardKeySelector.g.cs
+//HintName: G.Models.ShardKeySelector.g.cs
 #pragma warning disable CS0618 // Type or member is obsolete
 
 #nullable enable
@@ -43,8 +43,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.ShardKey PickShardKey() => IsShardKey
-            ? ShardKey!.Value
+        public global::G.ShardKey PickShardKey() => ShardKey is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'ShardKey' but the value was {ToString()}.");
 
         /// <summary>
@@ -80,8 +80,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::G.ShardKey> PickShardKeySelectorVariant2() => IsShardKeySelectorVariant2
-            ? ShardKeySelectorVariant2!
+        public global::System.Collections.Generic.IList<global::G.ShardKey> PickShardKeySelectorVariant2() => ShardKeySelectorVariant2 is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'ShardKeySelectorVariant2' but the value was {ToString()}.");
 
         /// <summary>
@@ -117,8 +117,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.ShardKeyWithFallback PickWithFallback() => IsWithFallback
-            ? WithFallback!
+        public global::G.ShardKeyWithFallback PickWithFallback() => WithFallback is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'WithFallback' but the value was {ToString()}.");
         /// <summary>
         /// 
@@ -220,17 +220,17 @@ namespace G
                 Validate();
             }
 
-            if (IsShardKey && shardKey != null)
+            if (ShardKey is { } __value0 && shardKey != null)
             {
-                return shardKey(ShardKey!);
+                return shardKey(__value0);
             }
-            else if (IsShardKeySelectorVariant2 && shardKeySelectorVariant2 != null)
+            else if (ShardKeySelectorVariant2 is { } __value1 && shardKeySelectorVariant2 != null)
             {
-                return shardKeySelectorVariant2(ShardKeySelectorVariant2!);
+                return shardKeySelectorVariant2(__value1);
             }
-            else if (IsWithFallback && withFallback != null)
+            else if (WithFallback is { } __value2 && withFallback != null)
             {
-                return withFallback(WithFallback!);
+                return withFallback(__value2);
             }
 
             return default(TResult);
@@ -252,17 +252,17 @@ namespace G
                 Validate();
             }
 
-            if (IsShardKey)
+            if (ShardKey is { } __value0)
             {
-                shardKey?.Invoke(ShardKey!);
+                shardKey?.Invoke(__value0);
             }
-            else if (IsShardKeySelectorVariant2)
+            else if (ShardKeySelectorVariant2 is { } __value1)
             {
-                shardKeySelectorVariant2?.Invoke(ShardKeySelectorVariant2!);
+                shardKeySelectorVariant2?.Invoke(__value1);
             }
-            else if (IsWithFallback)
+            else if (WithFallback is { } __value2)
             {
-                withFallback?.Invoke(WithFallback!);
+                withFallback?.Invoke(__value2);
             }
         }
 
@@ -280,17 +280,17 @@ namespace G
                 Validate();
             }
 
-            if (IsShardKey)
+            if (ShardKey is { } __value0)
             {
-                shardKey?.Invoke(ShardKey!);
+                shardKey?.Invoke(__value0);
             }
-            else if (IsShardKeySelectorVariant2)
+            else if (ShardKeySelectorVariant2 is { } __value1)
             {
-                shardKeySelectorVariant2?.Invoke(ShardKeySelectorVariant2!);
+                shardKeySelectorVariant2?.Invoke(__value1);
             }
-            else if (IsWithFallback)
+            else if (WithFallback is { } __value2)
             {
-                withFallback?.Invoke(WithFallback!);
+                withFallback?.Invoke(__value2);
             }
         }
 

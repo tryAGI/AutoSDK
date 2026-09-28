@@ -1,4 +1,4 @@
-﻿//HintName: G.UsersClient.UsersGetContextForUser.g.cs
+//HintName: G.UsersClient.UsersGetContextForUser.g.cs
 
 #nullable enable
 
@@ -129,7 +129,7 @@ namespace G
                 PrepareUsersGetContextForUserRequest(
                     httpClient: HttpClient,
                     httpRequestMessage: __httpRequest,
-                    username: username!,
+                    username: username,
                     subjectType: subjectType,
                     subjectId: subjectId);
 
@@ -153,7 +153,7 @@ namespace G
                                 pathTemplate: "$\"/users/{username}/hovercard\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: null,
                                 exception: null,
                                 clientOptions: Options,
@@ -187,7 +187,7 @@ namespace G
                                 pathTemplate: "$\"/users/{username}/hovercard\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: null,
                                 exception: __exception,
                                 clientOptions: Options,
@@ -228,7 +228,7 @@ namespace G
                                 pathTemplate: "$\"/users/{username}/hovercard\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: __response,
                                 exception: null,
                                 clientOptions: Options,
@@ -276,7 +276,7 @@ namespace G
                                 pathTemplate: "$\"/users/{username}/hovercard\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: __response,
                                 exception: null,
                                 clientOptions: Options,
@@ -298,7 +298,7 @@ namespace G
                                 pathTemplate: "$\"/users/{username}/hovercard\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: __response,
                                 exception: null,
                                 clientOptions: Options,

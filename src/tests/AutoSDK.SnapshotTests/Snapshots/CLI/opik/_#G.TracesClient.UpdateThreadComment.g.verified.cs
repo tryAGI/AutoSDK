@@ -1,4 +1,4 @@
-﻿//HintName: G.TracesClient.UpdateThreadComment.g.cs
+//HintName: G.TracesClient.UpdateThreadComment.g.cs
 
 #nullable enable
 
@@ -132,7 +132,7 @@ namespace G
                 PrepareUpdateThreadCommentRequest(
                     httpClient: HttpClient,
                     httpRequestMessage: __httpRequest,
-                    commentId: commentId!,
+                    commentId: commentId,
                     request: request);
 
                 return __httpRequest;
@@ -155,7 +155,7 @@ namespace G
                                 pathTemplate: "$\"/v1/private/traces/threads/comments/{commentId}\"",
                                 httpMethod: "PATCH",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: null,
                                 exception: null,
                                 clientOptions: Options,
@@ -189,7 +189,7 @@ namespace G
                                 pathTemplate: "$\"/v1/private/traces/threads/comments/{commentId}\"",
                                 httpMethod: "PATCH",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: null,
                                 exception: __exception,
                                 clientOptions: Options,
@@ -230,7 +230,7 @@ namespace G
                                 pathTemplate: "$\"/v1/private/traces/threads/comments/{commentId}\"",
                                 httpMethod: "PATCH",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: __response,
                                 exception: null,
                                 clientOptions: Options,
@@ -278,7 +278,7 @@ namespace G
                                 pathTemplate: "$\"/v1/private/traces/threads/comments/{commentId}\"",
                                 httpMethod: "PATCH",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: __response,
                                 exception: null,
                                 clientOptions: Options,
@@ -300,7 +300,7 @@ namespace G
                                 pathTemplate: "$\"/v1/private/traces/threads/comments/{commentId}\"",
                                 httpMethod: "PATCH",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: __response,
                                 exception: null,
                                 clientOptions: Options,

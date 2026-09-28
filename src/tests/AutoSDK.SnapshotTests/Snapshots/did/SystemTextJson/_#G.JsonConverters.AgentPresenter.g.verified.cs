@@ -1,4 +1,4 @@
-﻿//HintName: G.JsonConverters.AgentPresenter.g.cs
+//HintName: G.JsonConverters.AgentPresenter.g.cs
 #nullable enable
 #pragma warning disable CS0618 // Type or member is obsolete
 
@@ -188,19 +188,19 @@ namespace G.JsonConverters
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.AgentPresenterPhotoAvatar), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.AgentPresenterPhotoAvatar?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.AgentPresenterPhotoAvatar).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PhotoAvatar!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickPhotoAvatar(), typeInfo);
             }
             else if (value.IsVideoAvatar)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.AgentPresenterVideoAvatar), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.AgentPresenterVideoAvatar?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.AgentPresenterVideoAvatar).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.VideoAvatar!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickVideoAvatar(), typeInfo);
             }
             else if (value.IsExpressiveAvatar)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.AgentPresenterExpressiveAvatar), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.AgentPresenterExpressiveAvatar?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.AgentPresenterExpressiveAvatar).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.ExpressiveAvatar!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickExpressiveAvatar(), typeInfo);
             }
         }
     }

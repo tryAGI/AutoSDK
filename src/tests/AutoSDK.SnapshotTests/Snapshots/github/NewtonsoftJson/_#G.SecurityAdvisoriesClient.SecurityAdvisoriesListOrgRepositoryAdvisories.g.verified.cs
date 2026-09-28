@@ -1,4 +1,4 @@
-﻿//HintName: G.SecurityAdvisoriesClient.SecurityAdvisoriesListOrgRepositoryAdvisories.g.cs
+//HintName: G.SecurityAdvisoriesClient.SecurityAdvisoriesListOrgRepositoryAdvisories.g.cs
 
 #nullable enable
 
@@ -198,7 +198,7 @@ namespace G
                 PrepareSecurityAdvisoriesListOrgRepositoryAdvisoriesRequest(
                     httpClient: HttpClient,
                     httpRequestMessage: __httpRequest,
-                    org: org!,
+                    org: org,
                     direction: direction,
                     sort: sort,
                     before: before,
@@ -226,7 +226,7 @@ namespace G
                                 pathTemplate: "$\"/orgs/{org}/security-advisories\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: null,
                                 exception: null,
                                 clientOptions: Options,
@@ -260,7 +260,7 @@ namespace G
                                 pathTemplate: "$\"/orgs/{org}/security-advisories\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: null,
                                 exception: __exception,
                                 clientOptions: Options,
@@ -301,7 +301,7 @@ namespace G
                                 pathTemplate: "$\"/orgs/{org}/security-advisories\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: __response,
                                 exception: null,
                                 clientOptions: Options,
@@ -349,7 +349,7 @@ namespace G
                                 pathTemplate: "$\"/orgs/{org}/security-advisories\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: __response,
                                 exception: null,
                                 clientOptions: Options,
@@ -371,7 +371,7 @@ namespace G
                                 pathTemplate: "$\"/orgs/{org}/security-advisories\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: __response,
                                 exception: null,
                                 clientOptions: Options,

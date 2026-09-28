@@ -1,4 +1,4 @@
-﻿//HintName: G.Models.UpdateOpenAIResponsesLLMRequest.g.cs
+//HintName: G.Models.UpdateOpenAIResponsesLLMRequest.g.cs
 #pragma warning disable CS0618 // Type or member is obsolete
 
 #nullable enable
@@ -43,8 +43,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.OpenAILLMUpdateBase PickBase() => IsBase
-            ? Base!
+        public global::G.OpenAILLMUpdateBase PickBase() => Base is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Base' but the value was {ToString()}.");
 
         /// <summary>
@@ -80,8 +80,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.UpdateOpenAIResponsesLLMRequestVariant2 PickUpdateOpenAIResponsesLLMRequestVariant2() => IsUpdateOpenAIResponsesLLMRequestVariant2
-            ? UpdateOpenAIResponsesLLMRequestVariant2!
+        public global::G.UpdateOpenAIResponsesLLMRequestVariant2 PickUpdateOpenAIResponsesLLMRequestVariant2() => UpdateOpenAIResponsesLLMRequestVariant2 is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'UpdateOpenAIResponsesLLMRequestVariant2' but the value was {ToString()}.");
         /// <summary>
         /// 
@@ -178,13 +178,13 @@ namespace G
                 Validate();
             }
 
-            if (IsBase && @base != null)
+            if (Base is { } __value0 && @base != null)
             {
-                return @base(Base!);
+                return @base(__value0);
             }
-            else if (IsUpdateOpenAIResponsesLLMRequestVariant2 && updateOpenAIResponsesLLMRequestVariant2 != null)
+            else if (UpdateOpenAIResponsesLLMRequestVariant2 is { } __value1 && updateOpenAIResponsesLLMRequestVariant2 != null)
             {
-                return updateOpenAIResponsesLLMRequestVariant2(UpdateOpenAIResponsesLLMRequestVariant2!);
+                return updateOpenAIResponsesLLMRequestVariant2(__value1);
             }
 
             return default(TResult);
@@ -204,13 +204,13 @@ namespace G
                 Validate();
             }
 
-            if (IsBase)
+            if (Base is { } __value0)
             {
-                @base?.Invoke(Base!);
+                @base?.Invoke(__value0);
             }
-            else if (IsUpdateOpenAIResponsesLLMRequestVariant2)
+            else if (UpdateOpenAIResponsesLLMRequestVariant2 is { } __value1)
             {
-                updateOpenAIResponsesLLMRequestVariant2?.Invoke(UpdateOpenAIResponsesLLMRequestVariant2!);
+                updateOpenAIResponsesLLMRequestVariant2?.Invoke(__value1);
             }
         }
 
@@ -227,13 +227,13 @@ namespace G
                 Validate();
             }
 
-            if (IsBase)
+            if (Base is { } __value0)
             {
-                @base?.Invoke(Base!);
+                @base?.Invoke(__value0);
             }
-            else if (IsUpdateOpenAIResponsesLLMRequestVariant2)
+            else if (UpdateOpenAIResponsesLLMRequestVariant2 is { } __value1)
             {
-                updateOpenAIResponsesLLMRequestVariant2?.Invoke(UpdateOpenAIResponsesLLMRequestVariant2!);
+                updateOpenAIResponsesLLMRequestVariant2?.Invoke(__value1);
             }
         }
 

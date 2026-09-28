@@ -1,4 +1,4 @@
-﻿//HintName: G.Models.FeedbackStrategy.g.cs
+//HintName: G.Models.FeedbackStrategy.g.cs
 #pragma warning disable CS0618 // Type or member is obsolete
 
 #nullable enable
@@ -43,8 +43,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.NaiveFeedbackStrategy PickNaive() => IsNaive
-            ? Naive!
+        public global::G.NaiveFeedbackStrategy PickNaive() => Naive is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Naive' but the value was {ToString()}.");
         /// <summary>
         /// 
@@ -103,9 +103,9 @@ namespace G
                 Validate();
             }
 
-            if (IsNaive && naive != null)
+            if (Naive is { } __value0 && naive != null)
             {
-                return naive(Naive!);
+                return naive(__value0);
             }
 
             return default(TResult);
@@ -123,9 +123,9 @@ namespace G
                 Validate();
             }
 
-            if (IsNaive)
+            if (Naive is { } __value0)
             {
-                naive?.Invoke(Naive!);
+                naive?.Invoke(__value0);
             }
         }
 
@@ -141,9 +141,9 @@ namespace G
                 Validate();
             }
 
-            if (IsNaive)
+            if (Naive is { } __value0)
             {
-                naive?.Invoke(Naive!);
+                naive?.Invoke(__value0);
             }
         }
 

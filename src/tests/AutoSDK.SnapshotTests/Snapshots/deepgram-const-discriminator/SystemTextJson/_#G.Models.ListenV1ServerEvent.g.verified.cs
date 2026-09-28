@@ -1,4 +1,4 @@
-﻿//HintName: G.Models.ListenV1ServerEvent.g.cs
+//HintName: G.Models.ListenV1ServerEvent.g.cs
 #pragma warning disable CS0618 // Type or member is obsolete
 
 #nullable enable
@@ -48,8 +48,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.TranscriptResultPayload PickTranscriptResult() => IsTranscriptResult
-            ? TranscriptResult!
+        public global::G.TranscriptResultPayload PickTranscriptResult() => TranscriptResult is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'TranscriptResult' but the value was {ToString()}.");
 
         /// <summary>
@@ -85,8 +85,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.ListenMetadataPayload PickListenMetadata() => IsListenMetadata
-            ? ListenMetadata!
+        public global::G.ListenMetadataPayload PickListenMetadata() => ListenMetadata is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'ListenMetadata' but the value was {ToString()}.");
         /// <summary>
         /// 
@@ -186,13 +186,13 @@ namespace G
                 Validate();
             }
 
-            if (IsTranscriptResult && transcriptResult != null)
+            if (TranscriptResult is { } __value0 && transcriptResult != null)
             {
-                return transcriptResult(TranscriptResult!);
+                return transcriptResult(__value0);
             }
-            else if (IsListenMetadata && listenMetadata != null)
+            else if (ListenMetadata is { } __value1 && listenMetadata != null)
             {
-                return listenMetadata(ListenMetadata!);
+                return listenMetadata(__value1);
             }
 
             return default(TResult);
@@ -212,13 +212,13 @@ namespace G
                 Validate();
             }
 
-            if (IsTranscriptResult)
+            if (TranscriptResult is { } __value0)
             {
-                transcriptResult?.Invoke(TranscriptResult!);
+                transcriptResult?.Invoke(__value0);
             }
-            else if (IsListenMetadata)
+            else if (ListenMetadata is { } __value1)
             {
-                listenMetadata?.Invoke(ListenMetadata!);
+                listenMetadata?.Invoke(__value1);
             }
         }
 
@@ -235,13 +235,13 @@ namespace G
                 Validate();
             }
 
-            if (IsTranscriptResult)
+            if (TranscriptResult is { } __value0)
             {
-                transcriptResult?.Invoke(TranscriptResult!);
+                transcriptResult?.Invoke(__value0);
             }
-            else if (IsListenMetadata)
+            else if (ListenMetadata is { } __value1)
             {
-                listenMetadata?.Invoke(ListenMetadata!);
+                listenMetadata?.Invoke(__value1);
             }
         }
 

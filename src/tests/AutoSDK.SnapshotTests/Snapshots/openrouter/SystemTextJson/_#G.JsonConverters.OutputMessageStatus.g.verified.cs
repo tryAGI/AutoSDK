@@ -1,4 +1,4 @@
-﻿//HintName: G.JsonConverters.OutputMessageStatus.g.cs
+//HintName: G.JsonConverters.OutputMessageStatus.g.cs
 #nullable enable
 #pragma warning disable CS0618 // Type or member is obsolete
 
@@ -199,19 +199,19 @@ namespace G.JsonConverters
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.OutputMessageStatus0), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.OutputMessageStatus0> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.OutputMessageStatus0).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.OutputMessageStatus0!.Value, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickOutputMessageStatus0(), typeInfo);
             }
             else if (value.IsOutputMessageStatus1)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.OutputMessageStatus1), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.OutputMessageStatus1> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.OutputMessageStatus1).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.OutputMessageStatus1!.Value, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickOutputMessageStatus1(), typeInfo);
             }
             else if (value.IsOutputMessageStatus2)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.OutputMessageStatus2), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.OutputMessageStatus2> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.OutputMessageStatus2).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.OutputMessageStatus2!.Value, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickOutputMessageStatus2(), typeInfo);
             }
         }
     }

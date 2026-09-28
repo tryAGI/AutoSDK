@@ -1,4 +1,4 @@
-﻿//HintName: G.ChatClient.GetChatMessages.g.cs
+//HintName: G.ChatClient.GetChatMessages.g.cs
 
 #nullable enable
 
@@ -193,7 +193,7 @@ namespace G
                 PrepareGetChatMessagesRequest(
                     httpClient: HttpClient,
                     httpRequestMessage: __httpRequest,
-                    completionId: completionId!,
+                    completionId: completionId,
                     after: after,
                     limit: limit,
                     order: order);
@@ -218,7 +218,7 @@ namespace G
                                 pathTemplate: "$\"/chat/completions/{completionId}/messages\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: null,
                                 exception: null,
                                 clientOptions: Options,
@@ -252,7 +252,7 @@ namespace G
                                 pathTemplate: "$\"/chat/completions/{completionId}/messages\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: null,
                                 exception: __exception,
                                 clientOptions: Options,
@@ -293,7 +293,7 @@ namespace G
                                 pathTemplate: "$\"/chat/completions/{completionId}/messages\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: __response,
                                 exception: null,
                                 clientOptions: Options,
@@ -341,7 +341,7 @@ namespace G
                                 pathTemplate: "$\"/chat/completions/{completionId}/messages\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: __response,
                                 exception: null,
                                 clientOptions: Options,
@@ -363,7 +363,7 @@ namespace G
                                 pathTemplate: "$\"/chat/completions/{completionId}/messages\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: __response,
                                 exception: null,
                                 clientOptions: Options,

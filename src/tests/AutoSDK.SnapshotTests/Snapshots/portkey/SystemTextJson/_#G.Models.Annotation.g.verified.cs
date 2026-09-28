@@ -1,4 +1,4 @@
-﻿//HintName: G.Models.Annotation.g.cs
+//HintName: G.Models.Annotation.g.cs
 #pragma warning disable CS0618 // Type or member is obsolete
 
 #nullable enable
@@ -43,8 +43,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.FileCitation PickFileCitation() => IsFileCitation
-            ? FileCitation!
+        public global::G.FileCitation PickFileCitation() => FileCitation is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'FileCitation' but the value was {ToString()}.");
 
         /// <summary>
@@ -80,8 +80,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.UrlCitation PickUrlCitation() => IsUrlCitation
-            ? UrlCitation!
+        public global::G.UrlCitation PickUrlCitation() => UrlCitation is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'UrlCitation' but the value was {ToString()}.");
 
         /// <summary>
@@ -117,8 +117,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.FilePath PickFilePath() => IsFilePath
-            ? FilePath!
+        public global::G.FilePath PickFilePath() => FilePath is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'FilePath' but the value was {ToString()}.");
         /// <summary>
         /// 
@@ -243,17 +243,17 @@ namespace G
                 Validate();
             }
 
-            if (IsFileCitation && fileCitation != null)
+            if (FileCitation is { } __value0 && fileCitation != null)
             {
-                return fileCitation(FileCitation!);
+                return fileCitation(__value0);
             }
-            else if (IsUrlCitation && urlCitation != null)
+            else if (UrlCitation is { } __value1 && urlCitation != null)
             {
-                return urlCitation(UrlCitation!);
+                return urlCitation(__value1);
             }
-            else if (IsFilePath && filePath != null)
+            else if (FilePath is { } __value2 && filePath != null)
             {
-                return filePath(FilePath!);
+                return filePath(__value2);
             }
 
             return default(TResult);
@@ -275,17 +275,17 @@ namespace G
                 Validate();
             }
 
-            if (IsFileCitation)
+            if (FileCitation is { } __value0)
             {
-                fileCitation?.Invoke(FileCitation!);
+                fileCitation?.Invoke(__value0);
             }
-            else if (IsUrlCitation)
+            else if (UrlCitation is { } __value1)
             {
-                urlCitation?.Invoke(UrlCitation!);
+                urlCitation?.Invoke(__value1);
             }
-            else if (IsFilePath)
+            else if (FilePath is { } __value2)
             {
-                filePath?.Invoke(FilePath!);
+                filePath?.Invoke(__value2);
             }
         }
 
@@ -303,17 +303,17 @@ namespace G
                 Validate();
             }
 
-            if (IsFileCitation)
+            if (FileCitation is { } __value0)
             {
-                fileCitation?.Invoke(FileCitation!);
+                fileCitation?.Invoke(__value0);
             }
-            else if (IsUrlCitation)
+            else if (UrlCitation is { } __value1)
             {
-                urlCitation?.Invoke(UrlCitation!);
+                urlCitation?.Invoke(__value1);
             }
-            else if (IsFilePath)
+            else if (FilePath is { } __value2)
             {
-                filePath?.Invoke(FilePath!);
+                filePath?.Invoke(__value2);
             }
         }
 

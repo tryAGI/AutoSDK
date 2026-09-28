@@ -1,4 +1,4 @@
-﻿//HintName: G.OptimizationJobsClient.CreateLog.g.cs
+//HintName: G.OptimizationJobsClient.CreateLog.g.cs
 
 #nullable enable
 
@@ -215,9 +215,9 @@ namespace G
                 PrepareCreateLogRequest(
                     httpClient: HttpClient,
                     httpRequestMessage: __httpRequest,
-                    jobId: jobId!,
-                    owner: owner!,
-                    repo: repo!,
+                    jobId: jobId,
+                    owner: owner,
+                    repo: repo,
                     request: request);
 
                 global::G.AutoSDKHttpRequestOptions.StampAuthorizationOverride(__httpRequest);
@@ -242,7 +242,7 @@ namespace G
                                 pathTemplate: "$\"/api/v1/repos/{owner}/{repo}/optimization-jobs/{jobId}/logs\"",
                                 httpMethod: "POST",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: null,
                                 exception: null,
                                 clientOptions: Options,
@@ -276,7 +276,7 @@ namespace G
                                 pathTemplate: "$\"/api/v1/repos/{owner}/{repo}/optimization-jobs/{jobId}/logs\"",
                                 httpMethod: "POST",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: null,
                                 exception: __exception,
                                 clientOptions: Options,
@@ -317,7 +317,7 @@ namespace G
                                 pathTemplate: "$\"/api/v1/repos/{owner}/{repo}/optimization-jobs/{jobId}/logs\"",
                                 httpMethod: "POST",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: __response,
                                 exception: null,
                                 clientOptions: Options,
@@ -365,7 +365,7 @@ namespace G
                                 pathTemplate: "$\"/api/v1/repos/{owner}/{repo}/optimization-jobs/{jobId}/logs\"",
                                 httpMethod: "POST",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: __response,
                                 exception: null,
                                 clientOptions: Options,
@@ -387,7 +387,7 @@ namespace G
                                 pathTemplate: "$\"/api/v1/repos/{owner}/{repo}/optimization-jobs/{jobId}/logs\"",
                                 httpMethod: "POST",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: __response,
                                 exception: null,
                                 clientOptions: Options,

@@ -1,4 +1,4 @@
-﻿//HintName: G.FineTuningClient.GetFinetuneDownload.g.cs
+//HintName: G.FineTuningClient.GetFinetuneDownload.g.cs
 
 #nullable enable
 
@@ -169,7 +169,7 @@ namespace G
                 PrepareGetFinetuneDownloadRequest(
                     httpClient: HttpClient,
                     httpRequestMessage: __httpRequest,
-                    ftId: ftId!,
+                    ftId: ftId,
                     checkpointStep: checkpointStep,
                     output: output);
 
@@ -193,7 +193,7 @@ namespace G
                                 pathTemplate: "\"/finetune/download\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: null,
                                 exception: null,
                                 clientOptions: Options,
@@ -227,7 +227,7 @@ namespace G
                                 pathTemplate: "\"/finetune/download\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: null,
                                 exception: __exception,
                                 clientOptions: Options,
@@ -268,7 +268,7 @@ namespace G
                                 pathTemplate: "\"/finetune/download\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: __response,
                                 exception: null,
                                 clientOptions: Options,
@@ -316,7 +316,7 @@ namespace G
                                 pathTemplate: "\"/finetune/download\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: __response,
                                 exception: null,
                                 clientOptions: Options,
@@ -338,7 +338,7 @@ namespace G
                                 pathTemplate: "\"/finetune/download\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: __response,
                                 exception: null,
                                 clientOptions: Options,

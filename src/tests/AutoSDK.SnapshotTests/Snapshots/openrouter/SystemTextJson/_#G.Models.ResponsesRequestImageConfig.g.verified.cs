@@ -1,4 +1,4 @@
-﻿//HintName: G.Models.ResponsesRequestImageConfig.g.cs
+//HintName: G.Models.ResponsesRequestImageConfig.g.cs
 #pragma warning disable CS0618 // Type or member is obsolete
 
 #nullable enable
@@ -43,8 +43,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public string PickResponsesRequestImageConfigVariant1() => IsResponsesRequestImageConfigVariant1
-            ? ResponsesRequestImageConfigVariant1!
+        public string PickResponsesRequestImageConfigVariant1() => ResponsesRequestImageConfigVariant1 is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'ResponsesRequestImageConfigVariant1' but the value was {ToString()}.");
 
         /// <summary>
@@ -80,8 +80,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public double PickResponsesRequestImageConfigVariant2() => IsResponsesRequestImageConfigVariant2
-            ? ResponsesRequestImageConfigVariant2!.Value
+        public double PickResponsesRequestImageConfigVariant2() => ResponsesRequestImageConfigVariant2 is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'ResponsesRequestImageConfigVariant2' but the value was {ToString()}.");
         /// <summary>
         /// 
@@ -178,13 +178,13 @@ namespace G
                 Validate();
             }
 
-            if (IsResponsesRequestImageConfigVariant1 && responsesRequestImageConfigVariant1 != null)
+            if (ResponsesRequestImageConfigVariant1 is { } __value0 && responsesRequestImageConfigVariant1 != null)
             {
-                return responsesRequestImageConfigVariant1(ResponsesRequestImageConfigVariant1!);
+                return responsesRequestImageConfigVariant1(__value0);
             }
-            else if (IsResponsesRequestImageConfigVariant2 && responsesRequestImageConfigVariant2 != null)
+            else if (ResponsesRequestImageConfigVariant2 is { } __value1 && responsesRequestImageConfigVariant2 != null)
             {
-                return responsesRequestImageConfigVariant2(ResponsesRequestImageConfigVariant2!);
+                return responsesRequestImageConfigVariant2(__value1);
             }
 
             return default(TResult);
@@ -204,13 +204,13 @@ namespace G
                 Validate();
             }
 
-            if (IsResponsesRequestImageConfigVariant1)
+            if (ResponsesRequestImageConfigVariant1 is { } __value0)
             {
-                responsesRequestImageConfigVariant1?.Invoke(ResponsesRequestImageConfigVariant1!);
+                responsesRequestImageConfigVariant1?.Invoke(__value0);
             }
-            else if (IsResponsesRequestImageConfigVariant2)
+            else if (ResponsesRequestImageConfigVariant2 is { } __value1)
             {
-                responsesRequestImageConfigVariant2?.Invoke(ResponsesRequestImageConfigVariant2!);
+                responsesRequestImageConfigVariant2?.Invoke(__value1);
             }
         }
 
@@ -227,13 +227,13 @@ namespace G
                 Validate();
             }
 
-            if (IsResponsesRequestImageConfigVariant1)
+            if (ResponsesRequestImageConfigVariant1 is { } __value0)
             {
-                responsesRequestImageConfigVariant1?.Invoke(ResponsesRequestImageConfigVariant1!);
+                responsesRequestImageConfigVariant1?.Invoke(__value0);
             }
-            else if (IsResponsesRequestImageConfigVariant2)
+            else if (ResponsesRequestImageConfigVariant2 is { } __value1)
             {
-                responsesRequestImageConfigVariant2?.Invoke(ResponsesRequestImageConfigVariant2!);
+                responsesRequestImageConfigVariant2?.Invoke(__value1);
             }
         }
 

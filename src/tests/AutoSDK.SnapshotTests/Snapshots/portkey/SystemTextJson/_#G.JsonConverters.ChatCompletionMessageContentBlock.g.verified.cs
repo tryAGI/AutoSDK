@@ -1,4 +1,4 @@
-﻿//HintName: G.JsonConverters.ChatCompletionMessageContentBlock.g.cs
+//HintName: G.JsonConverters.ChatCompletionMessageContentBlock.g.cs
 #nullable enable
 #pragma warning disable CS0618 // Type or member is obsolete
 
@@ -170,19 +170,19 @@ namespace G.JsonConverters
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.ChatCompletionRequestMessageContentPartText), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.ChatCompletionRequestMessageContentPartText?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.ChatCompletionRequestMessageContentPartText).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.TextContentPart!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickTextContentPart(), typeInfo);
             }
             else if (value.IsThinkingContentPart)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.ChatCompletionMessageContentPartThinking), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.ChatCompletionMessageContentPartThinking?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.ChatCompletionMessageContentPartThinking).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.ThinkingContentPart!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickThinkingContentPart(), typeInfo);
             }
             else if (value.IsRedactedThinkingContentPart)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.ChatCompletionMessageContentPartRedactedThinking), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.ChatCompletionMessageContentPartRedactedThinking?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.ChatCompletionMessageContentPartRedactedThinking).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.RedactedThinkingContentPart!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickRedactedThinkingContentPart(), typeInfo);
             }
         }
     }

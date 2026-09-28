@@ -71,7 +71,7 @@ namespace G.JsonConverters
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.UsageLimitsPolicy), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.UsageLimitsPolicy?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.UsageLimitsPolicy).Name}");
-                var __element0 = global::System.Text.Json.JsonSerializer.SerializeToElement(value.UsageLimitsPolicy!, typeInfo);
+                var __element0 = global::System.Text.Json.JsonSerializer.SerializeToElement(value.PickUsageLimitsPolicy(), typeInfo);
                 if (__element0.ValueKind != global::System.Text.Json.JsonValueKind.Object)
                 {
                     throw new global::System.Text.Json.JsonException("AllOf values must serialize as JSON objects.");
@@ -89,7 +89,7 @@ namespace G.JsonConverters
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.UsageLimitsPolicyResponseVariant2), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.UsageLimitsPolicyResponseVariant2?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.UsageLimitsPolicyResponseVariant2).Name}");
-                var __element1 = global::System.Text.Json.JsonSerializer.SerializeToElement(value.UsageLimitsPolicyResponseVariant2!, typeInfo);
+                var __element1 = global::System.Text.Json.JsonSerializer.SerializeToElement(value.PickUsageLimitsPolicyResponseVariant2(), typeInfo);
                 if (__element1.ValueKind != global::System.Text.Json.JsonValueKind.Object)
                 {
                     throw new global::System.Text.Json.JsonException("AllOf values must serialize as JSON objects.");

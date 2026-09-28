@@ -1,4 +1,4 @@
-﻿//HintName: G.Models.OrganizationResponse.g.cs
+//HintName: G.Models.OrganizationResponse.g.cs
 #pragma warning disable CS0618 // Type or member is obsolete
 
 #nullable enable
@@ -43,8 +43,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.Organization PickOrganization() => IsOrganization
-            ? Organization!
+        public global::G.Organization PickOrganization() => Organization is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Organization' but the value was {ToString()}.");
 
         /// <summary>
@@ -80,8 +80,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.OrganizationResponseVariant2 PickOrganizationResponseVariant2() => IsOrganizationResponseVariant2
-            ? OrganizationResponseVariant2!
+        public global::G.OrganizationResponseVariant2 PickOrganizationResponseVariant2() => OrganizationResponseVariant2 is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'OrganizationResponseVariant2' but the value was {ToString()}.");
         /// <summary>
         /// 
@@ -178,13 +178,13 @@ namespace G
                 Validate();
             }
 
-            if (IsOrganization && organization != null)
+            if (Organization is { } __value0 && organization != null)
             {
-                return organization(Organization!);
+                return organization(__value0);
             }
-            else if (IsOrganizationResponseVariant2 && organizationResponseVariant2 != null)
+            else if (OrganizationResponseVariant2 is { } __value1 && organizationResponseVariant2 != null)
             {
-                return organizationResponseVariant2(OrganizationResponseVariant2!);
+                return organizationResponseVariant2(__value1);
             }
 
             return default(TResult);
@@ -204,13 +204,13 @@ namespace G
                 Validate();
             }
 
-            if (IsOrganization)
+            if (Organization is { } __value0)
             {
-                organization?.Invoke(Organization!);
+                organization?.Invoke(__value0);
             }
-            else if (IsOrganizationResponseVariant2)
+            else if (OrganizationResponseVariant2 is { } __value1)
             {
-                organizationResponseVariant2?.Invoke(OrganizationResponseVariant2!);
+                organizationResponseVariant2?.Invoke(__value1);
             }
         }
 
@@ -227,13 +227,13 @@ namespace G
                 Validate();
             }
 
-            if (IsOrganization)
+            if (Organization is { } __value0)
             {
-                organization?.Invoke(Organization!);
+                organization?.Invoke(__value0);
             }
-            else if (IsOrganizationResponseVariant2)
+            else if (OrganizationResponseVariant2 is { } __value1)
             {
-                organizationResponseVariant2?.Invoke(OrganizationResponseVariant2!);
+                organizationResponseVariant2?.Invoke(__value1);
             }
         }
 

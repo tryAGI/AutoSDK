@@ -1,4 +1,4 @@
-﻿//HintName: G.JsonConverters.ChatCompletionsPostRequestBodyContentApplicationJsonSchemaMessages.g.cs
+//HintName: G.JsonConverters.ChatCompletionsPostRequestBodyContentApplicationJsonSchemaMessages.g.cs
 #nullable enable
 #pragma warning disable CS0618 // Type or member is obsolete
 
@@ -150,13 +150,13 @@ namespace G.JsonConverters
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(string), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<string?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(string).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.ChatCompletionsPostRequestBodyContentApplicationJsonSchemaMessagesVariant1!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickChatCompletionsPostRequestBodyContentApplicationJsonSchemaMessagesVariant1(), typeInfo);
             }
             else if (value.IsChatCompletionsPostRequestBodyContentApplicationJsonSchemaMessages1)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::System.Collections.Generic.IList<global::G.ChatCompletionsPostRequestBodyContentApplicationJsonSchemaMessagesOneOf1Items>), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::System.Collections.Generic.IList<global::G.ChatCompletionsPostRequestBodyContentApplicationJsonSchemaMessagesOneOf1Items>?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::System.Collections.Generic.IList<global::G.ChatCompletionsPostRequestBodyContentApplicationJsonSchemaMessagesOneOf1Items>).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.ChatCompletionsPostRequestBodyContentApplicationJsonSchemaMessages1!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickChatCompletionsPostRequestBodyContentApplicationJsonSchemaMessages1(), typeInfo);
             }
         }
     }

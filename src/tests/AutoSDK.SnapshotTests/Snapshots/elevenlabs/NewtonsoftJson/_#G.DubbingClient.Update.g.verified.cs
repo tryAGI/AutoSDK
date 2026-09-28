@@ -1,4 +1,4 @@
-﻿//HintName: G.DubbingClient.Update.g.cs
+//HintName: G.DubbingClient.Update.g.cs
 
 #nullable enable
 
@@ -170,9 +170,9 @@ namespace G
                 PrepareUpdateRequest(
                     httpClient: HttpClient,
                     httpRequestMessage: __httpRequest,
-                    dubbingId: dubbingId!,
-                    segmentId: segmentId!,
-                    language: language!,
+                    dubbingId: dubbingId,
+                    segmentId: segmentId,
+                    language: language,
                     xiApiKey: xiApiKey,
                     request: request);
 
@@ -196,7 +196,7 @@ namespace G
                                 pathTemplate: "$\"/v1/dubbing/resource/{dubbingId}/segment/{segmentId}/{language}\"",
                                 httpMethod: "PATCH",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: null,
                                 exception: null,
                                 clientOptions: Options,
@@ -230,7 +230,7 @@ namespace G
                                 pathTemplate: "$\"/v1/dubbing/resource/{dubbingId}/segment/{segmentId}/{language}\"",
                                 httpMethod: "PATCH",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: null,
                                 exception: __exception,
                                 clientOptions: Options,
@@ -271,7 +271,7 @@ namespace G
                                 pathTemplate: "$\"/v1/dubbing/resource/{dubbingId}/segment/{segmentId}/{language}\"",
                                 httpMethod: "PATCH",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: __response,
                                 exception: null,
                                 clientOptions: Options,
@@ -319,7 +319,7 @@ namespace G
                                 pathTemplate: "$\"/v1/dubbing/resource/{dubbingId}/segment/{segmentId}/{language}\"",
                                 httpMethod: "PATCH",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: __response,
                                 exception: null,
                                 clientOptions: Options,
@@ -341,7 +341,7 @@ namespace G
                                 pathTemplate: "$\"/v1/dubbing/resource/{dubbingId}/segment/{segmentId}/{language}\"",
                                 httpMethod: "PATCH",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: __response,
                                 exception: null,
                                 clientOptions: Options,

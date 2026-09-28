@@ -1,4 +1,4 @@
-﻿//HintName: G.Models.ToolContent.g.cs
+//HintName: G.Models.ToolContent.g.cs
 #pragma warning disable CS0618 // Type or member is obsolete
 
 #nullable enable
@@ -48,8 +48,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.TextContent PickText() => IsText
-            ? Text!
+        public global::G.TextContent PickText() => Text is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Text' but the value was {ToString()}.");
 
         /// <summary>
@@ -85,8 +85,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.DocumentContent PickDocument() => IsDocument
-            ? Document!
+        public global::G.DocumentContent PickDocument() => Document is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Document' but the value was {ToString()}.");
         /// <summary>
         /// 
@@ -186,13 +186,13 @@ namespace G
                 Validate();
             }
 
-            if (IsText && text != null)
+            if (Text is { } __value0 && text != null)
             {
-                return text(Text!);
+                return text(__value0);
             }
-            else if (IsDocument && document != null)
+            else if (Document is { } __value1 && document != null)
             {
-                return document(Document!);
+                return document(__value1);
             }
 
             return default(TResult);
@@ -212,13 +212,13 @@ namespace G
                 Validate();
             }
 
-            if (IsText)
+            if (Text is { } __value0)
             {
-                text?.Invoke(Text!);
+                text?.Invoke(__value0);
             }
-            else if (IsDocument)
+            else if (Document is { } __value1)
             {
-                document?.Invoke(Document!);
+                document?.Invoke(__value1);
             }
         }
 
@@ -235,13 +235,13 @@ namespace G
                 Validate();
             }
 
-            if (IsText)
+            if (Text is { } __value0)
             {
-                text?.Invoke(Text!);
+                text?.Invoke(__value0);
             }
-            else if (IsDocument)
+            else if (Document is { } __value1)
             {
-                document?.Invoke(Document!);
+                document?.Invoke(__value1);
             }
         }
 

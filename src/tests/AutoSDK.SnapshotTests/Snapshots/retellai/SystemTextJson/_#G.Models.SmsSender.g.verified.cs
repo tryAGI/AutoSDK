@@ -1,4 +1,4 @@
-﻿//HintName: G.Models.SmsSender.g.cs
+//HintName: G.Models.SmsSender.g.cs
 #pragma warning disable CS0618 // Type or member is obsolete
 
 #nullable enable
@@ -43,8 +43,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.SmsSenderVariant1 PickSmsSenderVariant1() => IsSmsSenderVariant1
-            ? SmsSenderVariant1!
+        public global::G.SmsSenderVariant1 PickSmsSenderVariant1() => SmsSenderVariant1 is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'SmsSenderVariant1' but the value was {ToString()}.");
 
         /// <summary>
@@ -80,8 +80,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.SmsSenderVariant2 PickSmsSenderVariant2() => IsSmsSenderVariant2
-            ? SmsSenderVariant2!
+        public global::G.SmsSenderVariant2 PickSmsSenderVariant2() => SmsSenderVariant2 is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'SmsSenderVariant2' but the value was {ToString()}.");
         /// <summary>
         /// 
@@ -178,13 +178,13 @@ namespace G
                 Validate();
             }
 
-            if (IsSmsSenderVariant1 && smsSenderVariant1 != null)
+            if (SmsSenderVariant1 is { } __value0 && smsSenderVariant1 != null)
             {
-                return smsSenderVariant1(SmsSenderVariant1!);
+                return smsSenderVariant1(__value0);
             }
-            else if (IsSmsSenderVariant2 && smsSenderVariant2 != null)
+            else if (SmsSenderVariant2 is { } __value1 && smsSenderVariant2 != null)
             {
-                return smsSenderVariant2(SmsSenderVariant2!);
+                return smsSenderVariant2(__value1);
             }
 
             return default(TResult);
@@ -204,13 +204,13 @@ namespace G
                 Validate();
             }
 
-            if (IsSmsSenderVariant1)
+            if (SmsSenderVariant1 is { } __value0)
             {
-                smsSenderVariant1?.Invoke(SmsSenderVariant1!);
+                smsSenderVariant1?.Invoke(__value0);
             }
-            else if (IsSmsSenderVariant2)
+            else if (SmsSenderVariant2 is { } __value1)
             {
-                smsSenderVariant2?.Invoke(SmsSenderVariant2!);
+                smsSenderVariant2?.Invoke(__value1);
             }
         }
 
@@ -227,13 +227,13 @@ namespace G
                 Validate();
             }
 
-            if (IsSmsSenderVariant1)
+            if (SmsSenderVariant1 is { } __value0)
             {
-                smsSenderVariant1?.Invoke(SmsSenderVariant1!);
+                smsSenderVariant1?.Invoke(__value0);
             }
-            else if (IsSmsSenderVariant2)
+            else if (SmsSenderVariant2 is { } __value1)
             {
-                smsSenderVariant2?.Invoke(SmsSenderVariant2!);
+                smsSenderVariant2?.Invoke(__value1);
             }
         }
 

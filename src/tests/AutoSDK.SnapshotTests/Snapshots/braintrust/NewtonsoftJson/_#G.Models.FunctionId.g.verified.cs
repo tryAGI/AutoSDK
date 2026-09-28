@@ -1,4 +1,4 @@
-﻿//HintName: G.Models.FunctionId.g.cs
+//HintName: G.Models.FunctionId.g.cs
 #pragma warning disable CS0618 // Type or member is obsolete
 
 #nullable enable
@@ -43,8 +43,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.FunctionIdFunctionId1 PickId1() => IsId1
-            ? Id1!
+        public global::G.FunctionIdFunctionId1 PickId1() => Id1 is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Id1' but the value was {ToString()}.");
 
         /// <summary>
@@ -80,8 +80,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.FunctionIdProjectSlug PickProjectSlug() => IsProjectSlug
-            ? ProjectSlug!
+        public global::G.FunctionIdProjectSlug PickProjectSlug() => ProjectSlug is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'ProjectSlug' but the value was {ToString()}.");
 
         /// <summary>
@@ -117,8 +117,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.FunctionIdGlobalFunction PickGlobalFunction() => IsGlobalFunction
-            ? GlobalFunction!
+        public global::G.FunctionIdGlobalFunction PickGlobalFunction() => GlobalFunction is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'GlobalFunction' but the value was {ToString()}.");
 
         /// <summary>
@@ -154,8 +154,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.FunctionIdPromptSessionId PickPromptSessionId() => IsPromptSessionId
-            ? PromptSessionId!
+        public global::G.FunctionIdPromptSessionId PickPromptSessionId() => PromptSessionId is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'PromptSessionId' but the value was {ToString()}.");
 
         /// <summary>
@@ -191,8 +191,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.FunctionIdInlineCode PickInlineCode() => IsInlineCode
-            ? InlineCode!
+        public global::G.FunctionIdInlineCode PickInlineCode() => InlineCode is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'InlineCode' but the value was {ToString()}.");
 
         /// <summary>
@@ -228,8 +228,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.FunctionIdInlineFunction PickInlineFunction() => IsInlineFunction
-            ? InlineFunction!
+        public global::G.FunctionIdInlineFunction PickInlineFunction() => InlineFunction is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'InlineFunction' but the value was {ToString()}.");
 
         /// <summary>
@@ -265,8 +265,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.FunctionIdInlinePrompt PickInlinePrompt() => IsInlinePrompt
-            ? InlinePrompt!
+        public global::G.FunctionIdInlinePrompt PickInlinePrompt() => InlinePrompt is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'InlinePrompt' but the value was {ToString()}.");
         /// <summary>
         /// 
@@ -503,33 +503,33 @@ namespace G
                 Validate();
             }
 
-            if (IsId1 && id1 != null)
+            if (Id1 is { } __value0 && id1 != null)
             {
-                return id1(Id1!);
+                return id1(__value0);
             }
-            else if (IsProjectSlug && projectSlug != null)
+            else if (ProjectSlug is { } __value1 && projectSlug != null)
             {
-                return projectSlug(ProjectSlug!);
+                return projectSlug(__value1);
             }
-            else if (IsGlobalFunction && globalFunction != null)
+            else if (GlobalFunction is { } __value2 && globalFunction != null)
             {
-                return globalFunction(GlobalFunction!);
+                return globalFunction(__value2);
             }
-            else if (IsPromptSessionId && promptSessionId != null)
+            else if (PromptSessionId is { } __value3 && promptSessionId != null)
             {
-                return promptSessionId(PromptSessionId!);
+                return promptSessionId(__value3);
             }
-            else if (IsInlineCode && inlineCode != null)
+            else if (InlineCode is { } __value4 && inlineCode != null)
             {
-                return inlineCode(InlineCode!);
+                return inlineCode(__value4);
             }
-            else if (IsInlineFunction && inlineFunction != null)
+            else if (InlineFunction is { } __value5 && inlineFunction != null)
             {
-                return inlineFunction(InlineFunction!);
+                return inlineFunction(__value5);
             }
-            else if (IsInlinePrompt && inlinePrompt != null)
+            else if (InlinePrompt is { } __value6 && inlinePrompt != null)
             {
-                return inlinePrompt(InlinePrompt!);
+                return inlinePrompt(__value6);
             }
 
             return default(TResult);
@@ -559,33 +559,33 @@ namespace G
                 Validate();
             }
 
-            if (IsId1)
+            if (Id1 is { } __value0)
             {
-                id1?.Invoke(Id1!);
+                id1?.Invoke(__value0);
             }
-            else if (IsProjectSlug)
+            else if (ProjectSlug is { } __value1)
             {
-                projectSlug?.Invoke(ProjectSlug!);
+                projectSlug?.Invoke(__value1);
             }
-            else if (IsGlobalFunction)
+            else if (GlobalFunction is { } __value2)
             {
-                globalFunction?.Invoke(GlobalFunction!);
+                globalFunction?.Invoke(__value2);
             }
-            else if (IsPromptSessionId)
+            else if (PromptSessionId is { } __value3)
             {
-                promptSessionId?.Invoke(PromptSessionId!);
+                promptSessionId?.Invoke(__value3);
             }
-            else if (IsInlineCode)
+            else if (InlineCode is { } __value4)
             {
-                inlineCode?.Invoke(InlineCode!);
+                inlineCode?.Invoke(__value4);
             }
-            else if (IsInlineFunction)
+            else if (InlineFunction is { } __value5)
             {
-                inlineFunction?.Invoke(InlineFunction!);
+                inlineFunction?.Invoke(__value5);
             }
-            else if (IsInlinePrompt)
+            else if (InlinePrompt is { } __value6)
             {
-                inlinePrompt?.Invoke(InlinePrompt!);
+                inlinePrompt?.Invoke(__value6);
             }
         }
 
@@ -607,33 +607,33 @@ namespace G
                 Validate();
             }
 
-            if (IsId1)
+            if (Id1 is { } __value0)
             {
-                id1?.Invoke(Id1!);
+                id1?.Invoke(__value0);
             }
-            else if (IsProjectSlug)
+            else if (ProjectSlug is { } __value1)
             {
-                projectSlug?.Invoke(ProjectSlug!);
+                projectSlug?.Invoke(__value1);
             }
-            else if (IsGlobalFunction)
+            else if (GlobalFunction is { } __value2)
             {
-                globalFunction?.Invoke(GlobalFunction!);
+                globalFunction?.Invoke(__value2);
             }
-            else if (IsPromptSessionId)
+            else if (PromptSessionId is { } __value3)
             {
-                promptSessionId?.Invoke(PromptSessionId!);
+                promptSessionId?.Invoke(__value3);
             }
-            else if (IsInlineCode)
+            else if (InlineCode is { } __value4)
             {
-                inlineCode?.Invoke(InlineCode!);
+                inlineCode?.Invoke(__value4);
             }
-            else if (IsInlineFunction)
+            else if (InlineFunction is { } __value5)
             {
-                inlineFunction?.Invoke(InlineFunction!);
+                inlineFunction?.Invoke(__value5);
             }
-            else if (IsInlinePrompt)
+            else if (InlinePrompt is { } __value6)
             {
-                inlinePrompt?.Invoke(InlinePrompt!);
+                inlinePrompt?.Invoke(__value6);
             }
         }
 

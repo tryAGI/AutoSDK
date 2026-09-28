@@ -1,4 +1,4 @@
-﻿//HintName: G.Models.CreateTranscriptionResponseStreamEvent.g.cs
+//HintName: G.Models.CreateTranscriptionResponseStreamEvent.g.cs
 #pragma warning disable CS0618 // Type or member is obsolete
 
 #nullable enable
@@ -48,8 +48,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.TranscriptTextDeltaEvent PickTranscriptTextDelta() => IsTranscriptTextDelta
-            ? TranscriptTextDelta!
+        public global::G.TranscriptTextDeltaEvent PickTranscriptTextDelta() => TranscriptTextDelta is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'TranscriptTextDelta' but the value was {ToString()}.");
 
         /// <summary>
@@ -85,8 +85,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.TranscriptTextDoneEvent PickTranscriptTextDone() => IsTranscriptTextDone
-            ? TranscriptTextDone!
+        public global::G.TranscriptTextDoneEvent PickTranscriptTextDone() => TranscriptTextDone is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'TranscriptTextDone' but the value was {ToString()}.");
         /// <summary>
         /// 
@@ -186,13 +186,13 @@ namespace G
                 Validate();
             }
 
-            if (IsTranscriptTextDelta && transcriptTextDelta != null)
+            if (TranscriptTextDelta is { } __value0 && transcriptTextDelta != null)
             {
-                return transcriptTextDelta(TranscriptTextDelta!);
+                return transcriptTextDelta(__value0);
             }
-            else if (IsTranscriptTextDone && transcriptTextDone != null)
+            else if (TranscriptTextDone is { } __value1 && transcriptTextDone != null)
             {
-                return transcriptTextDone(TranscriptTextDone!);
+                return transcriptTextDone(__value1);
             }
 
             return default(TResult);
@@ -212,13 +212,13 @@ namespace G
                 Validate();
             }
 
-            if (IsTranscriptTextDelta)
+            if (TranscriptTextDelta is { } __value0)
             {
-                transcriptTextDelta?.Invoke(TranscriptTextDelta!);
+                transcriptTextDelta?.Invoke(__value0);
             }
-            else if (IsTranscriptTextDone)
+            else if (TranscriptTextDone is { } __value1)
             {
-                transcriptTextDone?.Invoke(TranscriptTextDone!);
+                transcriptTextDone?.Invoke(__value1);
             }
         }
 
@@ -235,13 +235,13 @@ namespace G
                 Validate();
             }
 
-            if (IsTranscriptTextDelta)
+            if (TranscriptTextDelta is { } __value0)
             {
-                transcriptTextDelta?.Invoke(TranscriptTextDelta!);
+                transcriptTextDelta?.Invoke(__value0);
             }
-            else if (IsTranscriptTextDone)
+            else if (TranscriptTextDone is { } __value1)
             {
-                transcriptTextDone?.Invoke(TranscriptTextDone!);
+                transcriptTextDone?.Invoke(__value1);
             }
         }
 

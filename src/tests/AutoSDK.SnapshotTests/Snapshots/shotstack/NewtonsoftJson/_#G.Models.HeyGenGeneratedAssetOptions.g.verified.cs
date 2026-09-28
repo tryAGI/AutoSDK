@@ -1,4 +1,4 @@
-﻿//HintName: G.Models.HeyGenGeneratedAssetOptions.g.cs
+//HintName: G.Models.HeyGenGeneratedAssetOptions.g.cs
 #pragma warning disable CS0618 // Type or member is obsolete
 
 #nullable enable
@@ -51,8 +51,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.HeyGenTextToAvatarOptions PickTextToAvatar() => IsTextToAvatar
-            ? TextToAvatar!
+        public global::G.HeyGenTextToAvatarOptions PickTextToAvatar() => TextToAvatar is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'TextToAvatar' but the value was {ToString()}.");
         /// <summary>
         /// 
@@ -124,9 +124,9 @@ namespace G
                 Validate();
             }
 
-            if (IsTextToAvatar && textToAvatar != null)
+            if (TextToAvatar is { } __value0 && textToAvatar != null)
             {
-                return textToAvatar(TextToAvatar!);
+                return textToAvatar(__value0);
             }
 
             return default(TResult);
@@ -144,9 +144,9 @@ namespace G
                 Validate();
             }
 
-            if (IsTextToAvatar)
+            if (TextToAvatar is { } __value0)
             {
-                textToAvatar?.Invoke(TextToAvatar!);
+                textToAvatar?.Invoke(__value0);
             }
         }
 
@@ -162,9 +162,9 @@ namespace G
                 Validate();
             }
 
-            if (IsTextToAvatar)
+            if (TextToAvatar is { } __value0)
             {
-                textToAvatar?.Invoke(TextToAvatar!);
+                textToAvatar?.Invoke(__value0);
             }
         }
 

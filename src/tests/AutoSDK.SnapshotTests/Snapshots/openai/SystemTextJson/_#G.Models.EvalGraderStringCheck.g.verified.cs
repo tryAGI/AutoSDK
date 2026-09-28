@@ -1,4 +1,4 @@
-﻿//HintName: G.Models.EvalGraderStringCheck.g.cs
+//HintName: G.Models.EvalGraderStringCheck.g.cs
 #pragma warning disable CS0618 // Type or member is obsolete
 
 #nullable enable
@@ -43,8 +43,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.GraderStringCheck PickStringCheckGrader() => IsStringCheckGrader
-            ? StringCheckGrader!
+        public global::G.GraderStringCheck PickStringCheckGrader() => StringCheckGrader is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'StringCheckGrader' but the value was {ToString()}.");
         /// <summary>
         /// 
@@ -103,9 +103,9 @@ namespace G
                 Validate();
             }
 
-            if (IsStringCheckGrader && stringCheckGrader != null)
+            if (StringCheckGrader is { } __value0 && stringCheckGrader != null)
             {
-                return stringCheckGrader(StringCheckGrader!);
+                return stringCheckGrader(__value0);
             }
 
             return default(TResult);
@@ -123,9 +123,9 @@ namespace G
                 Validate();
             }
 
-            if (IsStringCheckGrader)
+            if (StringCheckGrader is { } __value0)
             {
-                stringCheckGrader?.Invoke(StringCheckGrader!);
+                stringCheckGrader?.Invoke(__value0);
             }
         }
 
@@ -141,9 +141,9 @@ namespace G
                 Validate();
             }
 
-            if (IsStringCheckGrader)
+            if (StringCheckGrader is { } __value0)
             {
-                stringCheckGrader?.Invoke(StringCheckGrader!);
+                stringCheckGrader?.Invoke(__value0);
             }
         }
 

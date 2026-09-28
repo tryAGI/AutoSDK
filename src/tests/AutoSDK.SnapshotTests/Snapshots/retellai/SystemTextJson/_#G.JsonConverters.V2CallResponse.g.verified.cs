@@ -1,4 +1,4 @@
-﻿//HintName: G.JsonConverters.V2CallResponse.g.cs
+//HintName: G.JsonConverters.V2CallResponse.g.cs
 #nullable enable
 #pragma warning disable CS0618 // Type or member is obsolete
 
@@ -150,13 +150,13 @@ namespace G.JsonConverters
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.V2WebCallResponse), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.V2WebCallResponse> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.V2WebCallResponse).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Web!.Value, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickWeb(), typeInfo);
             }
             else if (value.IsPhone)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.V2PhoneCallResponse), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.V2PhoneCallResponse> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.V2PhoneCallResponse).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Phone!.Value, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickPhone(), typeInfo);
             }
         }
     }

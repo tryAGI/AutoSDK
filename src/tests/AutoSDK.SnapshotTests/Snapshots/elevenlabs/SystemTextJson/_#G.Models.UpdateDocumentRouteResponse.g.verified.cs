@@ -1,4 +1,4 @@
-﻿//HintName: G.Models.UpdateDocumentRouteResponse.g.cs
+//HintName: G.Models.UpdateDocumentRouteResponse.g.cs
 #pragma warning disable CS0618 // Type or member is obsolete
 
 #nullable enable
@@ -48,8 +48,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.GetKnowledgeBaseURLResponseModel PickUrl() => IsUrl
-            ? Url!
+        public global::G.GetKnowledgeBaseURLResponseModel PickUrl() => Url is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Url' but the value was {ToString()}.");
 
         /// <summary>
@@ -85,8 +85,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.GetKnowledgeBaseFileResponseModel PickFile() => IsFile
-            ? File!
+        public global::G.GetKnowledgeBaseFileResponseModel PickFile() => File is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'File' but the value was {ToString()}.");
 
         /// <summary>
@@ -122,8 +122,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.GetKnowledgeBaseTextResponseModel PickText() => IsText
-            ? Text!
+        public global::G.GetKnowledgeBaseTextResponseModel PickText() => Text is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Text' but the value was {ToString()}.");
 
         /// <summary>
@@ -159,8 +159,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.GetKnowledgeBaseFolderResponseModel PickFolder() => IsFolder
-            ? Folder!
+        public global::G.GetKnowledgeBaseFolderResponseModel PickFolder() => Folder is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Folder' but the value was {ToString()}.");
         /// <summary>
         /// 
@@ -316,21 +316,21 @@ namespace G
                 Validate();
             }
 
-            if (IsUrl && url != null)
+            if (Url is { } __value0 && url != null)
             {
-                return url(Url!);
+                return url(__value0);
             }
-            else if (IsFile && file != null)
+            else if (File is { } __value1 && file != null)
             {
-                return file(File!);
+                return file(__value1);
             }
-            else if (IsText && text != null)
+            else if (Text is { } __value2 && text != null)
             {
-                return text(Text!);
+                return text(__value2);
             }
-            else if (IsFolder && folder != null)
+            else if (Folder is { } __value3 && folder != null)
             {
-                return folder(Folder!);
+                return folder(__value3);
             }
 
             return default(TResult);
@@ -354,21 +354,21 @@ namespace G
                 Validate();
             }
 
-            if (IsUrl)
+            if (Url is { } __value0)
             {
-                url?.Invoke(Url!);
+                url?.Invoke(__value0);
             }
-            else if (IsFile)
+            else if (File is { } __value1)
             {
-                file?.Invoke(File!);
+                file?.Invoke(__value1);
             }
-            else if (IsText)
+            else if (Text is { } __value2)
             {
-                text?.Invoke(Text!);
+                text?.Invoke(__value2);
             }
-            else if (IsFolder)
+            else if (Folder is { } __value3)
             {
-                folder?.Invoke(Folder!);
+                folder?.Invoke(__value3);
             }
         }
 
@@ -387,21 +387,21 @@ namespace G
                 Validate();
             }
 
-            if (IsUrl)
+            if (Url is { } __value0)
             {
-                url?.Invoke(Url!);
+                url?.Invoke(__value0);
             }
-            else if (IsFile)
+            else if (File is { } __value1)
             {
-                file?.Invoke(File!);
+                file?.Invoke(__value1);
             }
-            else if (IsText)
+            else if (Text is { } __value2)
             {
-                text?.Invoke(Text!);
+                text?.Invoke(__value2);
             }
-            else if (IsFolder)
+            else if (Folder is { } __value3)
             {
-                folder?.Invoke(Folder!);
+                folder?.Invoke(__value3);
             }
         }
 

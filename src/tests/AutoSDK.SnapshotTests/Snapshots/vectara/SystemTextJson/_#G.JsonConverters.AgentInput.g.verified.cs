@@ -1,4 +1,4 @@
-﻿//HintName: G.JsonConverters.AgentInput.g.cs
+//HintName: G.JsonConverters.AgentInput.g.cs
 #nullable enable
 #pragma warning disable CS0618 // Type or member is obsolete
 
@@ -60,13 +60,13 @@ namespace G.JsonConverters
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.AgentTextInput), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.AgentTextInput?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.AgentTextInput).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Text!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickText(), typeInfo);
             }
             else if (value.IsSkill)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.AgentSkillInput), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.AgentSkillInput?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.AgentSkillInput).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Skill!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickSkill(), typeInfo);
             }
         }
     }

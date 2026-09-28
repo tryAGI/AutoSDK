@@ -1,4 +1,4 @@
-﻿//HintName: G.ReactionsClient.ReactionsCreateForTeamDiscussionCommentInOrg.g.cs
+//HintName: G.ReactionsClient.ReactionsCreateForTeamDiscussionCommentInOrg.g.cs
 
 #nullable enable
 
@@ -156,10 +156,10 @@ namespace G
                 PrepareReactionsCreateForTeamDiscussionCommentInOrgRequest(
                     httpClient: HttpClient,
                     httpRequestMessage: __httpRequest,
-                    org: org!,
-                    teamSlug: teamSlug!,
-                    discussionNumber: discussionNumber!,
-                    commentNumber: commentNumber!,
+                    org: org,
+                    teamSlug: teamSlug,
+                    discussionNumber: discussionNumber,
+                    commentNumber: commentNumber,
                     request: request);
 
                 return __httpRequest;
@@ -182,7 +182,7 @@ namespace G
                                 pathTemplate: "$\"/orgs/{org}/teams/{teamSlug}/discussions/{discussionNumber}/comments/{commentNumber}/reactions\"",
                                 httpMethod: "POST",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: null,
                                 exception: null,
                                 clientOptions: Options,
@@ -216,7 +216,7 @@ namespace G
                                 pathTemplate: "$\"/orgs/{org}/teams/{teamSlug}/discussions/{discussionNumber}/comments/{commentNumber}/reactions\"",
                                 httpMethod: "POST",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: null,
                                 exception: __exception,
                                 clientOptions: Options,
@@ -257,7 +257,7 @@ namespace G
                                 pathTemplate: "$\"/orgs/{org}/teams/{teamSlug}/discussions/{discussionNumber}/comments/{commentNumber}/reactions\"",
                                 httpMethod: "POST",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: __response,
                                 exception: null,
                                 clientOptions: Options,
@@ -305,7 +305,7 @@ namespace G
                                 pathTemplate: "$\"/orgs/{org}/teams/{teamSlug}/discussions/{discussionNumber}/comments/{commentNumber}/reactions\"",
                                 httpMethod: "POST",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: __response,
                                 exception: null,
                                 clientOptions: Options,
@@ -327,7 +327,7 @@ namespace G
                                 pathTemplate: "$\"/orgs/{org}/teams/{teamSlug}/discussions/{discussionNumber}/comments/{commentNumber}/reactions\"",
                                 httpMethod: "POST",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: __response,
                                 exception: null,
                                 clientOptions: Options,

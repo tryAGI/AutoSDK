@@ -1,4 +1,4 @@
-﻿//HintName: G.ModerationClient.GetBlockedTerms.g.cs
+//HintName: G.ModerationClient.GetBlockedTerms.g.cs
 
 #nullable enable
 
@@ -182,8 +182,8 @@ namespace G
                 PrepareGetBlockedTermsRequest(
                     httpClient: HttpClient,
                     httpRequestMessage: __httpRequest,
-                    broadcasterId: broadcasterId!,
-                    moderatorId: moderatorId!,
+                    broadcasterId: broadcasterId,
+                    moderatorId: moderatorId,
                     first: first,
                     after: after);
 
@@ -209,7 +209,7 @@ namespace G
                                 pathTemplate: "\"/moderation/blocked_terms\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: null,
                                 exception: null,
                                 clientOptions: Options,
@@ -246,7 +246,7 @@ namespace G
                                 pathTemplate: "\"/moderation/blocked_terms\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: null,
                                 exception: __exception,
                                 clientOptions: Options,
@@ -287,7 +287,7 @@ namespace G
                                 pathTemplate: "\"/moderation/blocked_terms\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: __response,
                                 exception: null,
                                 clientOptions: Options,
@@ -335,7 +335,7 @@ namespace G
                                 pathTemplate: "\"/moderation/blocked_terms\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: __response,
                                 exception: null,
                                 clientOptions: Options,
@@ -357,7 +357,7 @@ namespace G
                                 pathTemplate: "\"/moderation/blocked_terms\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: __response,
                                 exception: null,
                                 clientOptions: Options,

@@ -1,4 +1,4 @@
-﻿//HintName: G.ObjectsClient.ObjectsClassPut.g.cs
+//HintName: G.ObjectsClient.ObjectsClassPut.g.cs
 
 #nullable enable
 
@@ -206,8 +206,8 @@ namespace G
                 PrepareObjectsClassPutRequest(
                     httpClient: HttpClient,
                     httpRequestMessage: __httpRequest,
-                    className: className!,
-                    id: id!,
+                    className: className,
+                    id: id,
                     consistencyLevel: consistencyLevel,
                     request: request);
 
@@ -231,7 +231,7 @@ namespace G
                                 pathTemplate: "$\"/objects/{className}/{id}\"",
                                 httpMethod: "PUT",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: null,
                                 exception: null,
                                 clientOptions: Options,
@@ -268,7 +268,7 @@ namespace G
                                 pathTemplate: "$\"/objects/{className}/{id}\"",
                                 httpMethod: "PUT",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: null,
                                 exception: __exception,
                                 clientOptions: Options,
@@ -309,7 +309,7 @@ namespace G
                                 pathTemplate: "$\"/objects/{className}/{id}\"",
                                 httpMethod: "PUT",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: __response,
                                 exception: null,
                                 clientOptions: Options,
@@ -357,7 +357,7 @@ namespace G
                                 pathTemplate: "$\"/objects/{className}/{id}\"",
                                 httpMethod: "PUT",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: __response,
                                 exception: null,
                                 clientOptions: Options,
@@ -379,7 +379,7 @@ namespace G
                                 pathTemplate: "$\"/objects/{className}/{id}\"",
                                 httpMethod: "PUT",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: __response,
                                 exception: null,
                                 clientOptions: Options,

@@ -1,4 +1,4 @@
-﻿//HintName: G.JsonConverters.ChunkingStrategyRequestParam.g.cs
+//HintName: G.JsonConverters.ChunkingStrategyRequestParam.g.cs
 #nullable enable
 #pragma warning disable CS0618 // Type or member is obsolete
 
@@ -139,13 +139,13 @@ namespace G.JsonConverters
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.AutoChunkingStrategyRequestParam), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.AutoChunkingStrategyRequestParam?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.AutoChunkingStrategyRequestParam).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.AutoChunkingStrategy!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickAutoChunkingStrategy(), typeInfo);
             }
             else if (value.IsStaticChunkingStrategy)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.StaticChunkingStrategyRequestParam), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.StaticChunkingStrategyRequestParam?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.StaticChunkingStrategyRequestParam).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.StaticChunkingStrategy!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickStaticChunkingStrategy(), typeInfo);
             }
         }
     }

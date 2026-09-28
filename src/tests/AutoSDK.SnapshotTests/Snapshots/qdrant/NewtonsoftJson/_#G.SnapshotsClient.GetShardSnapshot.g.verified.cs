@@ -1,4 +1,4 @@
-﻿//HintName: G.SnapshotsClient.GetShardSnapshot.g.cs
+//HintName: G.SnapshotsClient.GetShardSnapshot.g.cs
 
 #nullable enable
 
@@ -189,9 +189,9 @@ namespace G
                 PrepareGetShardSnapshotRequest(
                     httpClient: HttpClient,
                     httpRequestMessage: __httpRequest,
-                    collectionName: collectionName!,
-                    shardId: shardId!,
-                    snapshotName: snapshotName!);
+                    collectionName: collectionName,
+                    shardId: shardId,
+                    snapshotName: snapshotName);
 
                 return __httpRequest;
             }
@@ -213,7 +213,7 @@ namespace G
                                 pathTemplate: "$\"/collections/{collectionName}/shards/{shardId}/snapshots/{snapshotName}\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: null,
                                 exception: null,
                                 clientOptions: Options,
@@ -247,7 +247,7 @@ namespace G
                                 pathTemplate: "$\"/collections/{collectionName}/shards/{shardId}/snapshots/{snapshotName}\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: null,
                                 exception: __exception,
                                 clientOptions: Options,
@@ -288,7 +288,7 @@ namespace G
                                 pathTemplate: "$\"/collections/{collectionName}/shards/{shardId}/snapshots/{snapshotName}\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: __response,
                                 exception: null,
                                 clientOptions: Options,
@@ -336,7 +336,7 @@ namespace G
                                 pathTemplate: "$\"/collections/{collectionName}/shards/{shardId}/snapshots/{snapshotName}\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: __response,
                                 exception: null,
                                 clientOptions: Options,
@@ -358,7 +358,7 @@ namespace G
                                 pathTemplate: "$\"/collections/{collectionName}/shards/{shardId}/snapshots/{snapshotName}\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: __response,
                                 exception: null,
                                 clientOptions: Options,
@@ -586,9 +586,9 @@ namespace G
                 PrepareGetShardSnapshotRequest(
                     httpClient: HttpClient,
                     httpRequestMessage: __httpRequest,
-                    collectionName: collectionName!,
-                    shardId: shardId!,
-                    snapshotName: snapshotName!);
+                    collectionName: collectionName,
+                    shardId: shardId,
+                    snapshotName: snapshotName);
 
                 return __httpRequest;
             }
@@ -610,7 +610,7 @@ namespace G
                                 pathTemplate: "$\"/collections/{collectionName}/shards/{shardId}/snapshots/{snapshotName}\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: null,
                                 exception: null,
                                 clientOptions: Options,
@@ -644,7 +644,7 @@ namespace G
                                 pathTemplate: "$\"/collections/{collectionName}/shards/{shardId}/snapshots/{snapshotName}\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: null,
                                 exception: __exception,
                                 clientOptions: Options,
@@ -685,7 +685,7 @@ namespace G
                                 pathTemplate: "$\"/collections/{collectionName}/shards/{shardId}/snapshots/{snapshotName}\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: __response,
                                 exception: null,
                                 clientOptions: Options,
@@ -733,7 +733,7 @@ namespace G
                                 pathTemplate: "$\"/collections/{collectionName}/shards/{shardId}/snapshots/{snapshotName}\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: __response,
                                 exception: null,
                                 clientOptions: Options,
@@ -755,7 +755,7 @@ namespace G
                                 pathTemplate: "$\"/collections/{collectionName}/shards/{shardId}/snapshots/{snapshotName}\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: __response,
                                 exception: null,
                                 clientOptions: Options,

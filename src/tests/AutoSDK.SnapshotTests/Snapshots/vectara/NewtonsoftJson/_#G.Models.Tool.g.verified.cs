@@ -1,4 +1,4 @@
-﻿//HintName: G.Models.Tool.g.cs
+//HintName: G.Models.Tool.g.cs
 #pragma warning disable CS0618 // Type or member is obsolete
 
 #nullable enable
@@ -48,8 +48,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.DynamicVectaraTool PickDynamicVectara() => IsDynamicVectara
-            ? DynamicVectara!.Value
+        public global::G.DynamicVectaraTool PickDynamicVectara() => DynamicVectara is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'DynamicVectara' but the value was {ToString()}.");
 
         /// <summary>
@@ -85,8 +85,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.McpTool PickMcp() => IsMcp
-            ? Mcp!.Value
+        public global::G.McpTool PickMcp() => Mcp is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Mcp' but the value was {ToString()}.");
 
         /// <summary>
@@ -122,8 +122,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.CorporaSearchTool PickCorporaSearch() => IsCorporaSearch
-            ? CorporaSearch!.Value
+        public global::G.CorporaSearchTool PickCorporaSearch() => CorporaSearch is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'CorporaSearch' but the value was {ToString()}.");
 
         /// <summary>
@@ -159,8 +159,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.WebSearchTool PickWebSearch() => IsWebSearch
-            ? WebSearch!.Value
+        public global::G.WebSearchTool PickWebSearch() => WebSearch is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'WebSearch' but the value was {ToString()}.");
 
         /// <summary>
@@ -196,8 +196,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.WebGetTool PickWebGet() => IsWebGet
-            ? WebGet!.Value
+        public global::G.WebGetTool PickWebGet() => WebGet is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'WebGet' but the value was {ToString()}.");
 
         /// <summary>
@@ -235,8 +235,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.LambdaTool PickLambda() => IsLambda
-            ? Lambda!.Value
+        public global::G.LambdaTool PickLambda() => Lambda is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Lambda' but the value was {ToString()}.");
 
         /// <summary>
@@ -272,8 +272,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.StructuredIndexingTool PickStructuredIndexing() => IsStructuredIndexing
-            ? StructuredIndexing!.Value
+        public global::G.StructuredIndexingTool PickStructuredIndexing() => StructuredIndexing is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'StructuredIndexing' but the value was {ToString()}.");
 
         /// <summary>
@@ -310,8 +310,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.SubAgentTool PickSubAgent() => IsSubAgent
-            ? SubAgent!.Value
+        public global::G.SubAgentTool PickSubAgent() => SubAgent is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'SubAgent' but the value was {ToString()}.");
 
         /// <summary>
@@ -347,8 +347,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.ArtifactCreateTool PickArtifactCreate() => IsArtifactCreate
-            ? ArtifactCreate!.Value
+        public global::G.ArtifactCreateTool PickArtifactCreate() => ArtifactCreate is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'ArtifactCreate' but the value was {ToString()}.");
 
         /// <summary>
@@ -384,8 +384,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.ArtifactReadTool PickArtifactRead() => IsArtifactRead
-            ? ArtifactRead!.Value
+        public global::G.ArtifactReadTool PickArtifactRead() => ArtifactRead is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'ArtifactRead' but the value was {ToString()}.");
 
         /// <summary>
@@ -421,8 +421,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.ArtifactGrepTool PickArtifactGrep() => IsArtifactGrep
-            ? ArtifactGrep!.Value
+        public global::G.ArtifactGrepTool PickArtifactGrep() => ArtifactGrep is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'ArtifactGrep' but the value was {ToString()}.");
 
         /// <summary>
@@ -458,8 +458,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.ImageReadTool PickImageRead() => IsImageRead
-            ? ImageRead!.Value
+        public global::G.ImageReadTool PickImageRead() => ImageRead is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'ImageRead' but the value was {ToString()}.");
 
         /// <summary>
@@ -495,8 +495,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.DocumentConversionTool PickDocumentConversion() => IsDocumentConversion
-            ? DocumentConversion!.Value
+        public global::G.DocumentConversionTool PickDocumentConversion() => DocumentConversion is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'DocumentConversion' but the value was {ToString()}.");
 
         /// <summary>
@@ -532,8 +532,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.GetDocumentTextTool PickGetDocumentText() => IsGetDocumentText
-            ? GetDocumentText!.Value
+        public global::G.GetDocumentTextTool PickGetDocumentText() => GetDocumentText is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'GetDocumentText' but the value was {ToString()}.");
         /// <summary>
         /// 
@@ -969,61 +969,61 @@ namespace G
                 Validate();
             }
 
-            if (IsDynamicVectara && dynamicVectara != null)
+            if (DynamicVectara is { } __value0 && dynamicVectara != null)
             {
-                return dynamicVectara(DynamicVectara!);
+                return dynamicVectara(__value0);
             }
-            else if (IsMcp && mcp != null)
+            else if (Mcp is { } __value1 && mcp != null)
             {
-                return mcp(Mcp!);
+                return mcp(__value1);
             }
-            else if (IsCorporaSearch && corporaSearch != null)
+            else if (CorporaSearch is { } __value2 && corporaSearch != null)
             {
-                return corporaSearch(CorporaSearch!);
+                return corporaSearch(__value2);
             }
-            else if (IsWebSearch && webSearch != null)
+            else if (WebSearch is { } __value3 && webSearch != null)
             {
-                return webSearch(WebSearch!);
+                return webSearch(__value3);
             }
-            else if (IsWebGet && webGet != null)
+            else if (WebGet is { } __value4 && webGet != null)
             {
-                return webGet(WebGet!);
+                return webGet(__value4);
             }
-            else if (IsLambda && lambda != null)
+            else if (Lambda is { } __value5 && lambda != null)
             {
-                return lambda(Lambda!);
+                return lambda(__value5);
             }
-            else if (IsStructuredIndexing && structuredIndexing != null)
+            else if (StructuredIndexing is { } __value6 && structuredIndexing != null)
             {
-                return structuredIndexing(StructuredIndexing!);
+                return structuredIndexing(__value6);
             }
-            else if (IsSubAgent && subAgent != null)
+            else if (SubAgent is { } __value7 && subAgent != null)
             {
-                return subAgent(SubAgent!);
+                return subAgent(__value7);
             }
-            else if (IsArtifactCreate && artifactCreate != null)
+            else if (ArtifactCreate is { } __value8 && artifactCreate != null)
             {
-                return artifactCreate(ArtifactCreate!);
+                return artifactCreate(__value8);
             }
-            else if (IsArtifactRead && artifactRead != null)
+            else if (ArtifactRead is { } __value9 && artifactRead != null)
             {
-                return artifactRead(ArtifactRead!);
+                return artifactRead(__value9);
             }
-            else if (IsArtifactGrep && artifactGrep != null)
+            else if (ArtifactGrep is { } __value10 && artifactGrep != null)
             {
-                return artifactGrep(ArtifactGrep!);
+                return artifactGrep(__value10);
             }
-            else if (IsImageRead && imageRead != null)
+            else if (ImageRead is { } __value11 && imageRead != null)
             {
-                return imageRead(ImageRead!);
+                return imageRead(__value11);
             }
-            else if (IsDocumentConversion && documentConversion != null)
+            else if (DocumentConversion is { } __value12 && documentConversion != null)
             {
-                return documentConversion(DocumentConversion!);
+                return documentConversion(__value12);
             }
-            else if (IsGetDocumentText && getDocumentText != null)
+            else if (GetDocumentText is { } __value13 && getDocumentText != null)
             {
-                return getDocumentText(GetDocumentText!);
+                return getDocumentText(__value13);
             }
 
             return default(TResult);
@@ -1067,61 +1067,61 @@ namespace G
                 Validate();
             }
 
-            if (IsDynamicVectara)
+            if (DynamicVectara is { } __value0)
             {
-                dynamicVectara?.Invoke(DynamicVectara!);
+                dynamicVectara?.Invoke(__value0);
             }
-            else if (IsMcp)
+            else if (Mcp is { } __value1)
             {
-                mcp?.Invoke(Mcp!);
+                mcp?.Invoke(__value1);
             }
-            else if (IsCorporaSearch)
+            else if (CorporaSearch is { } __value2)
             {
-                corporaSearch?.Invoke(CorporaSearch!);
+                corporaSearch?.Invoke(__value2);
             }
-            else if (IsWebSearch)
+            else if (WebSearch is { } __value3)
             {
-                webSearch?.Invoke(WebSearch!);
+                webSearch?.Invoke(__value3);
             }
-            else if (IsWebGet)
+            else if (WebGet is { } __value4)
             {
-                webGet?.Invoke(WebGet!);
+                webGet?.Invoke(__value4);
             }
-            else if (IsLambda)
+            else if (Lambda is { } __value5)
             {
-                lambda?.Invoke(Lambda!);
+                lambda?.Invoke(__value5);
             }
-            else if (IsStructuredIndexing)
+            else if (StructuredIndexing is { } __value6)
             {
-                structuredIndexing?.Invoke(StructuredIndexing!);
+                structuredIndexing?.Invoke(__value6);
             }
-            else if (IsSubAgent)
+            else if (SubAgent is { } __value7)
             {
-                subAgent?.Invoke(SubAgent!);
+                subAgent?.Invoke(__value7);
             }
-            else if (IsArtifactCreate)
+            else if (ArtifactCreate is { } __value8)
             {
-                artifactCreate?.Invoke(ArtifactCreate!);
+                artifactCreate?.Invoke(__value8);
             }
-            else if (IsArtifactRead)
+            else if (ArtifactRead is { } __value9)
             {
-                artifactRead?.Invoke(ArtifactRead!);
+                artifactRead?.Invoke(__value9);
             }
-            else if (IsArtifactGrep)
+            else if (ArtifactGrep is { } __value10)
             {
-                artifactGrep?.Invoke(ArtifactGrep!);
+                artifactGrep?.Invoke(__value10);
             }
-            else if (IsImageRead)
+            else if (ImageRead is { } __value11)
             {
-                imageRead?.Invoke(ImageRead!);
+                imageRead?.Invoke(__value11);
             }
-            else if (IsDocumentConversion)
+            else if (DocumentConversion is { } __value12)
             {
-                documentConversion?.Invoke(DocumentConversion!);
+                documentConversion?.Invoke(__value12);
             }
-            else if (IsGetDocumentText)
+            else if (GetDocumentText is { } __value13)
             {
-                getDocumentText?.Invoke(GetDocumentText!);
+                getDocumentText?.Invoke(__value13);
             }
         }
 
@@ -1150,61 +1150,61 @@ namespace G
                 Validate();
             }
 
-            if (IsDynamicVectara)
+            if (DynamicVectara is { } __value0)
             {
-                dynamicVectara?.Invoke(DynamicVectara!);
+                dynamicVectara?.Invoke(__value0);
             }
-            else if (IsMcp)
+            else if (Mcp is { } __value1)
             {
-                mcp?.Invoke(Mcp!);
+                mcp?.Invoke(__value1);
             }
-            else if (IsCorporaSearch)
+            else if (CorporaSearch is { } __value2)
             {
-                corporaSearch?.Invoke(CorporaSearch!);
+                corporaSearch?.Invoke(__value2);
             }
-            else if (IsWebSearch)
+            else if (WebSearch is { } __value3)
             {
-                webSearch?.Invoke(WebSearch!);
+                webSearch?.Invoke(__value3);
             }
-            else if (IsWebGet)
+            else if (WebGet is { } __value4)
             {
-                webGet?.Invoke(WebGet!);
+                webGet?.Invoke(__value4);
             }
-            else if (IsLambda)
+            else if (Lambda is { } __value5)
             {
-                lambda?.Invoke(Lambda!);
+                lambda?.Invoke(__value5);
             }
-            else if (IsStructuredIndexing)
+            else if (StructuredIndexing is { } __value6)
             {
-                structuredIndexing?.Invoke(StructuredIndexing!);
+                structuredIndexing?.Invoke(__value6);
             }
-            else if (IsSubAgent)
+            else if (SubAgent is { } __value7)
             {
-                subAgent?.Invoke(SubAgent!);
+                subAgent?.Invoke(__value7);
             }
-            else if (IsArtifactCreate)
+            else if (ArtifactCreate is { } __value8)
             {
-                artifactCreate?.Invoke(ArtifactCreate!);
+                artifactCreate?.Invoke(__value8);
             }
-            else if (IsArtifactRead)
+            else if (ArtifactRead is { } __value9)
             {
-                artifactRead?.Invoke(ArtifactRead!);
+                artifactRead?.Invoke(__value9);
             }
-            else if (IsArtifactGrep)
+            else if (ArtifactGrep is { } __value10)
             {
-                artifactGrep?.Invoke(ArtifactGrep!);
+                artifactGrep?.Invoke(__value10);
             }
-            else if (IsImageRead)
+            else if (ImageRead is { } __value11)
             {
-                imageRead?.Invoke(ImageRead!);
+                imageRead?.Invoke(__value11);
             }
-            else if (IsDocumentConversion)
+            else if (DocumentConversion is { } __value12)
             {
-                documentConversion?.Invoke(DocumentConversion!);
+                documentConversion?.Invoke(__value12);
             }
-            else if (IsGetDocumentText)
+            else if (GetDocumentText is { } __value13)
             {
-                getDocumentText?.Invoke(GetDocumentText!);
+                getDocumentText?.Invoke(__value13);
             }
         }
 

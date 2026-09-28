@@ -1,4 +1,4 @@
-﻿//HintName: G.Models.InputsOneOf1ItemsOneOf5Content.g.cs
+//HintName: G.Models.InputsOneOf1ItemsOneOf5Content.g.cs
 #pragma warning disable CS0618 // Type or member is obsolete
 
 #nullable enable
@@ -43,8 +43,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::G.InputsOneOf1ItemsOneOf5ContentOneOf0Items> PickInputsOneOf1ItemsOneOf5Content0() => IsInputsOneOf1ItemsOneOf5Content0
-            ? InputsOneOf1ItemsOneOf5Content0!
+        public global::System.Collections.Generic.IList<global::G.InputsOneOf1ItemsOneOf5ContentOneOf0Items> PickInputsOneOf1ItemsOneOf5Content0() => InputsOneOf1ItemsOneOf5Content0 is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'InputsOneOf1ItemsOneOf5Content0' but the value was {ToString()}.");
 
         /// <summary>
@@ -80,8 +80,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public string PickInputsOneOf1ItemsOneOf5ContentVariant2() => IsInputsOneOf1ItemsOneOf5ContentVariant2
-            ? InputsOneOf1ItemsOneOf5ContentVariant2!
+        public string PickInputsOneOf1ItemsOneOf5ContentVariant2() => InputsOneOf1ItemsOneOf5ContentVariant2 is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'InputsOneOf1ItemsOneOf5ContentVariant2' but the value was {ToString()}.");
 
         /// <summary>
@@ -117,8 +117,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public object PickInputsOneOf1ItemsOneOf5ContentVariant3() => IsInputsOneOf1ItemsOneOf5ContentVariant3
-            ? InputsOneOf1ItemsOneOf5ContentVariant3!
+        public object PickInputsOneOf1ItemsOneOf5ContentVariant3() => InputsOneOf1ItemsOneOf5ContentVariant3 is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'InputsOneOf1ItemsOneOf5ContentVariant3' but the value was {ToString()}.");
         /// <summary>
         /// 
@@ -197,17 +197,17 @@ namespace G
                 Validate();
             }
 
-            if (IsInputsOneOf1ItemsOneOf5Content0 && inputsOneOf1ItemsOneOf5Content0 != null)
+            if (InputsOneOf1ItemsOneOf5Content0 is { } __value0 && inputsOneOf1ItemsOneOf5Content0 != null)
             {
-                return inputsOneOf1ItemsOneOf5Content0(InputsOneOf1ItemsOneOf5Content0!);
+                return inputsOneOf1ItemsOneOf5Content0(__value0);
             }
-            else if (IsInputsOneOf1ItemsOneOf5ContentVariant2 && inputsOneOf1ItemsOneOf5ContentVariant2 != null)
+            else if (InputsOneOf1ItemsOneOf5ContentVariant2 is { } __value1 && inputsOneOf1ItemsOneOf5ContentVariant2 != null)
             {
-                return inputsOneOf1ItemsOneOf5ContentVariant2(InputsOneOf1ItemsOneOf5ContentVariant2!);
+                return inputsOneOf1ItemsOneOf5ContentVariant2(__value1);
             }
-            else if (IsInputsOneOf1ItemsOneOf5ContentVariant3 && inputsOneOf1ItemsOneOf5ContentVariant3 != null)
+            else if (InputsOneOf1ItemsOneOf5ContentVariant3 is { } __value2 && inputsOneOf1ItemsOneOf5ContentVariant3 != null)
             {
-                return inputsOneOf1ItemsOneOf5ContentVariant3(InputsOneOf1ItemsOneOf5ContentVariant3!);
+                return inputsOneOf1ItemsOneOf5ContentVariant3(__value2);
             }
 
             return default(TResult);
@@ -229,17 +229,17 @@ namespace G
                 Validate();
             }
 
-            if (IsInputsOneOf1ItemsOneOf5Content0)
+            if (InputsOneOf1ItemsOneOf5Content0 is { } __value0)
             {
-                inputsOneOf1ItemsOneOf5Content0?.Invoke(InputsOneOf1ItemsOneOf5Content0!);
+                inputsOneOf1ItemsOneOf5Content0?.Invoke(__value0);
             }
-            else if (IsInputsOneOf1ItemsOneOf5ContentVariant2)
+            else if (InputsOneOf1ItemsOneOf5ContentVariant2 is { } __value1)
             {
-                inputsOneOf1ItemsOneOf5ContentVariant2?.Invoke(InputsOneOf1ItemsOneOf5ContentVariant2!);
+                inputsOneOf1ItemsOneOf5ContentVariant2?.Invoke(__value1);
             }
-            else if (IsInputsOneOf1ItemsOneOf5ContentVariant3)
+            else if (InputsOneOf1ItemsOneOf5ContentVariant3 is { } __value2)
             {
-                inputsOneOf1ItemsOneOf5ContentVariant3?.Invoke(InputsOneOf1ItemsOneOf5ContentVariant3!);
+                inputsOneOf1ItemsOneOf5ContentVariant3?.Invoke(__value2);
             }
         }
 
@@ -257,17 +257,17 @@ namespace G
                 Validate();
             }
 
-            if (IsInputsOneOf1ItemsOneOf5Content0)
+            if (InputsOneOf1ItemsOneOf5Content0 is { } __value0)
             {
-                inputsOneOf1ItemsOneOf5Content0?.Invoke(InputsOneOf1ItemsOneOf5Content0!);
+                inputsOneOf1ItemsOneOf5Content0?.Invoke(__value0);
             }
-            else if (IsInputsOneOf1ItemsOneOf5ContentVariant2)
+            else if (InputsOneOf1ItemsOneOf5ContentVariant2 is { } __value1)
             {
-                inputsOneOf1ItemsOneOf5ContentVariant2?.Invoke(InputsOneOf1ItemsOneOf5ContentVariant2!);
+                inputsOneOf1ItemsOneOf5ContentVariant2?.Invoke(__value1);
             }
-            else if (IsInputsOneOf1ItemsOneOf5ContentVariant3)
+            else if (InputsOneOf1ItemsOneOf5ContentVariant3 is { } __value2)
             {
-                inputsOneOf1ItemsOneOf5ContentVariant3?.Invoke(InputsOneOf1ItemsOneOf5ContentVariant3!);
+                inputsOneOf1ItemsOneOf5ContentVariant3?.Invoke(__value2);
             }
         }
 

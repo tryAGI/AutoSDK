@@ -1,4 +1,4 @@
-﻿//HintName: G.JsonConverters.FileSearchServerToolFiltersOneOf0ValueOneOf3Items.g.cs
+//HintName: G.JsonConverters.FileSearchServerToolFiltersOneOf0ValueOneOf3Items.g.cs
 #nullable enable
 #pragma warning disable CS0618 // Type or member is obsolete
 
@@ -150,13 +150,13 @@ namespace G.JsonConverters
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(string), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<string?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(string).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.FileSearchServerToolFiltersOneOf0ValueOneOf3ItemsVariant1!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickFileSearchServerToolFiltersOneOf0ValueOneOf3ItemsVariant1(), typeInfo);
             }
             else if (value.IsFileSearchServerToolFiltersOneOf0ValueOneOf3ItemsVariant2)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(double), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<double> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(double).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.FileSearchServerToolFiltersOneOf0ValueOneOf3ItemsVariant2!.Value, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickFileSearchServerToolFiltersOneOf0ValueOneOf3ItemsVariant2(), typeInfo);
             }
         }
     }

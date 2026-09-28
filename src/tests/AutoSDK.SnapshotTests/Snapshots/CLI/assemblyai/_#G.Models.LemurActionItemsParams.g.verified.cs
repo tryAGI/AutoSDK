@@ -1,4 +1,4 @@
-﻿//HintName: G.Models.LemurActionItemsParams.g.cs
+//HintName: G.Models.LemurActionItemsParams.g.cs
 #pragma warning disable CS0618 // Type or member is obsolete
 
 #nullable enable
@@ -45,8 +45,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.LemurBaseParams PickBase() => IsBase
-            ? Base!
+        public global::G.LemurBaseParams PickBase() => Base is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Base' but the value was {ToString()}.");
 
         /// <summary>
@@ -82,8 +82,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.LemurActionItemsParamsVariant2 PickLemurActionItemsParamsVariant2() => IsLemurActionItemsParamsVariant2
-            ? LemurActionItemsParamsVariant2!
+        public global::G.LemurActionItemsParamsVariant2 PickLemurActionItemsParamsVariant2() => LemurActionItemsParamsVariant2 is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'LemurActionItemsParamsVariant2' but the value was {ToString()}.");
         /// <summary>
         /// 
@@ -180,13 +180,13 @@ namespace G
                 Validate();
             }
 
-            if (IsBase && @base != null)
+            if (Base is { } __value0 && @base != null)
             {
-                return @base(Base!);
+                return @base(__value0);
             }
-            else if (IsLemurActionItemsParamsVariant2 && lemurActionItemsParamsVariant2 != null)
+            else if (LemurActionItemsParamsVariant2 is { } __value1 && lemurActionItemsParamsVariant2 != null)
             {
-                return lemurActionItemsParamsVariant2(LemurActionItemsParamsVariant2!);
+                return lemurActionItemsParamsVariant2(__value1);
             }
 
             return default(TResult);
@@ -206,13 +206,13 @@ namespace G
                 Validate();
             }
 
-            if (IsBase)
+            if (Base is { } __value0)
             {
-                @base?.Invoke(Base!);
+                @base?.Invoke(__value0);
             }
-            else if (IsLemurActionItemsParamsVariant2)
+            else if (LemurActionItemsParamsVariant2 is { } __value1)
             {
-                lemurActionItemsParamsVariant2?.Invoke(LemurActionItemsParamsVariant2!);
+                lemurActionItemsParamsVariant2?.Invoke(__value1);
             }
         }
 
@@ -229,13 +229,13 @@ namespace G
                 Validate();
             }
 
-            if (IsBase)
+            if (Base is { } __value0)
             {
-                @base?.Invoke(Base!);
+                @base?.Invoke(__value0);
             }
-            else if (IsLemurActionItemsParamsVariant2)
+            else if (LemurActionItemsParamsVariant2 is { } __value1)
             {
-                lemurActionItemsParamsVariant2?.Invoke(LemurActionItemsParamsVariant2!);
+                lemurActionItemsParamsVariant2?.Invoke(__value1);
             }
         }
 

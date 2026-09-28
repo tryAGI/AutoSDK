@@ -1,4 +1,4 @@
-﻿//HintName: G.Models.CreateStreamScript.g.cs
+//HintName: G.Models.CreateStreamScript.g.cs
 #pragma warning disable CS0618 // Type or member is obsolete
 
 #nullable enable
@@ -43,8 +43,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.CreateStreamScriptText PickText() => IsText
-            ? Text!
+        public global::G.CreateStreamScriptText PickText() => Text is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Text' but the value was {ToString()}.");
 
         /// <summary>
@@ -80,8 +80,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.CreateStreamScriptAudio PickAudio() => IsAudio
-            ? Audio!
+        public global::G.CreateStreamScriptAudio PickAudio() => Audio is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Audio' but the value was {ToString()}.");
         /// <summary>
         /// 
@@ -178,13 +178,13 @@ namespace G
                 Validate();
             }
 
-            if (IsText && text != null)
+            if (Text is { } __value0 && text != null)
             {
-                return text(Text!);
+                return text(__value0);
             }
-            else if (IsAudio && audio != null)
+            else if (Audio is { } __value1 && audio != null)
             {
-                return audio(Audio!);
+                return audio(__value1);
             }
 
             return default(TResult);
@@ -204,13 +204,13 @@ namespace G
                 Validate();
             }
 
-            if (IsText)
+            if (Text is { } __value0)
             {
-                text?.Invoke(Text!);
+                text?.Invoke(__value0);
             }
-            else if (IsAudio)
+            else if (Audio is { } __value1)
             {
-                audio?.Invoke(Audio!);
+                audio?.Invoke(__value1);
             }
         }
 
@@ -227,13 +227,13 @@ namespace G
                 Validate();
             }
 
-            if (IsText)
+            if (Text is { } __value0)
             {
-                text?.Invoke(Text!);
+                text?.Invoke(__value0);
             }
-            else if (IsAudio)
+            else if (Audio is { } __value1)
             {
-                audio?.Invoke(Audio!);
+                audio?.Invoke(__value1);
             }
         }
 

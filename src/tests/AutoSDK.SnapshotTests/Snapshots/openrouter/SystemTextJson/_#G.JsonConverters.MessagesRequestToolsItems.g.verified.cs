@@ -1,4 +1,4 @@
-﻿//HintName: G.JsonConverters.MessagesRequestToolsItems.g.cs
+//HintName: G.JsonConverters.MessagesRequestToolsItems.g.cs
 #nullable enable
 #pragma warning disable CS0618 // Type or member is obsolete
 
@@ -370,43 +370,43 @@ namespace G.JsonConverters
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.MessagesRequestToolsItems0), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.MessagesRequestToolsItems0?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.MessagesRequestToolsItems0).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.MessagesRequestToolsItems0!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickMessagesRequestToolsItems0(), typeInfo);
             }
             else if (value.IsMessagesRequestToolsItems1)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.MessagesRequestToolsItems1), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.MessagesRequestToolsItems1?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.MessagesRequestToolsItems1).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.MessagesRequestToolsItems1!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickMessagesRequestToolsItems1(), typeInfo);
             }
             else if (value.IsMessagesRequestToolsItems2)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.MessagesRequestToolsItems2), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.MessagesRequestToolsItems2?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.MessagesRequestToolsItems2).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.MessagesRequestToolsItems2!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickMessagesRequestToolsItems2(), typeInfo);
             }
             else if (value.IsMessagesRequestToolsItems3)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.MessagesRequestToolsItems3), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.MessagesRequestToolsItems3?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.MessagesRequestToolsItems3).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.MessagesRequestToolsItems3!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickMessagesRequestToolsItems3(), typeInfo);
             }
             else if (value.IsMessagesRequestToolsItems4)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.MessagesRequestToolsItems4), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.MessagesRequestToolsItems4?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.MessagesRequestToolsItems4).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.MessagesRequestToolsItems4!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickMessagesRequestToolsItems4(), typeInfo);
             }
             else if (value.IsDatetimeServerTool)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.DatetimeServerTool), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.DatetimeServerTool?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.DatetimeServerTool).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.DatetimeServerTool!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickDatetimeServerTool(), typeInfo);
             }
             else if (value.IsMessagesWebSearchServerTool)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.MessagesWebSearchServerTool), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.MessagesWebSearchServerTool?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.MessagesWebSearchServerTool).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.MessagesWebSearchServerTool!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickMessagesWebSearchServerTool(), typeInfo);
             }
         }
     }

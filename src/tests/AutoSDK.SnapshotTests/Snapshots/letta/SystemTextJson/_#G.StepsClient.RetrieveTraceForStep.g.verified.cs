@@ -1,4 +1,4 @@
-﻿//HintName: G.StepsClient.RetrieveTraceForStep.g.cs
+//HintName: G.StepsClient.RetrieveTraceForStep.g.cs
 
 #nullable enable
 
@@ -165,7 +165,7 @@ namespace G
                 PrepareRetrieveTraceForStepRequest(
                     httpClient: HttpClient,
                     httpRequestMessage: __httpRequest,
-                    stepId: stepId!);
+                    stepId: stepId);
 
                 return __httpRequest;
             }
@@ -187,7 +187,7 @@ namespace G
                                 pathTemplate: "$\"/v1/steps/{stepId}/trace\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: null,
                                 exception: null,
                                 clientOptions: Options,
@@ -221,7 +221,7 @@ namespace G
                                 pathTemplate: "$\"/v1/steps/{stepId}/trace\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: null,
                                 exception: __exception,
                                 clientOptions: Options,
@@ -262,7 +262,7 @@ namespace G
                                 pathTemplate: "$\"/v1/steps/{stepId}/trace\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: __response,
                                 exception: null,
                                 clientOptions: Options,
@@ -310,7 +310,7 @@ namespace G
                                 pathTemplate: "$\"/v1/steps/{stepId}/trace\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: __response,
                                 exception: null,
                                 clientOptions: Options,
@@ -332,7 +332,7 @@ namespace G
                                 pathTemplate: "$\"/v1/steps/{stepId}/trace\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: __response,
                                 exception: null,
                                 clientOptions: Options,

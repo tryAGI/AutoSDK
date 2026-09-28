@@ -1,4 +1,4 @@
-﻿//HintName: G.Models.PartialAgentPresenter.g.cs
+//HintName: G.Models.PartialAgentPresenter.g.cs
 #pragma warning disable CS0618 // Type or member is obsolete
 
 #nullable enable
@@ -43,8 +43,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.PartialAgentPresenterPhotoAvatar PickPhotoAvatar() => IsPhotoAvatar
-            ? PhotoAvatar!
+        public global::G.PartialAgentPresenterPhotoAvatar PickPhotoAvatar() => PhotoAvatar is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'PhotoAvatar' but the value was {ToString()}.");
 
         /// <summary>
@@ -80,8 +80,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.PartialAgentPresenterVideoAvatar PickVideoAvatar() => IsVideoAvatar
-            ? VideoAvatar!
+        public global::G.PartialAgentPresenterVideoAvatar PickVideoAvatar() => VideoAvatar is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'VideoAvatar' but the value was {ToString()}.");
         /// <summary>
         /// 
@@ -178,13 +178,13 @@ namespace G
                 Validate();
             }
 
-            if (IsPhotoAvatar && photoAvatar != null)
+            if (PhotoAvatar is { } __value0 && photoAvatar != null)
             {
-                return photoAvatar(PhotoAvatar!);
+                return photoAvatar(__value0);
             }
-            else if (IsVideoAvatar && videoAvatar != null)
+            else if (VideoAvatar is { } __value1 && videoAvatar != null)
             {
-                return videoAvatar(VideoAvatar!);
+                return videoAvatar(__value1);
             }
 
             return default(TResult);
@@ -204,13 +204,13 @@ namespace G
                 Validate();
             }
 
-            if (IsPhotoAvatar)
+            if (PhotoAvatar is { } __value0)
             {
-                photoAvatar?.Invoke(PhotoAvatar!);
+                photoAvatar?.Invoke(__value0);
             }
-            else if (IsVideoAvatar)
+            else if (VideoAvatar is { } __value1)
             {
-                videoAvatar?.Invoke(VideoAvatar!);
+                videoAvatar?.Invoke(__value1);
             }
         }
 
@@ -227,13 +227,13 @@ namespace G
                 Validate();
             }
 
-            if (IsPhotoAvatar)
+            if (PhotoAvatar is { } __value0)
             {
-                photoAvatar?.Invoke(PhotoAvatar!);
+                photoAvatar?.Invoke(__value0);
             }
-            else if (IsVideoAvatar)
+            else if (VideoAvatar is { } __value1)
             {
-                videoAvatar?.Invoke(VideoAvatar!);
+                videoAvatar?.Invoke(__value1);
             }
         }
 

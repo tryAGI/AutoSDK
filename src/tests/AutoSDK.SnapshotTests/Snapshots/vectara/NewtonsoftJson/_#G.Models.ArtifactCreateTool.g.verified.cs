@@ -1,4 +1,4 @@
-﻿//HintName: G.Models.ArtifactCreateTool.g.cs
+//HintName: G.Models.ArtifactCreateTool.g.cs
 #pragma warning disable CS0618 // Type or member is obsolete
 
 #nullable enable
@@ -43,8 +43,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.ToolBase PickBase() => IsBase
-            ? Base!
+        public global::G.ToolBase PickBase() => Base is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Base' but the value was {ToString()}.");
 
         /// <summary>
@@ -80,8 +80,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.ArtifactCreateToolVariant2 PickArtifactCreateToolVariant2() => IsArtifactCreateToolVariant2
-            ? ArtifactCreateToolVariant2!
+        public global::G.ArtifactCreateToolVariant2 PickArtifactCreateToolVariant2() => ArtifactCreateToolVariant2 is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'ArtifactCreateToolVariant2' but the value was {ToString()}.");
         /// <summary>
         /// 
@@ -178,13 +178,13 @@ namespace G
                 Validate();
             }
 
-            if (IsBase && @base != null)
+            if (Base is { } __value0 && @base != null)
             {
-                return @base(Base!);
+                return @base(__value0);
             }
-            else if (IsArtifactCreateToolVariant2 && artifactCreateToolVariant2 != null)
+            else if (ArtifactCreateToolVariant2 is { } __value1 && artifactCreateToolVariant2 != null)
             {
-                return artifactCreateToolVariant2(ArtifactCreateToolVariant2!);
+                return artifactCreateToolVariant2(__value1);
             }
 
             return default(TResult);
@@ -204,13 +204,13 @@ namespace G
                 Validate();
             }
 
-            if (IsBase)
+            if (Base is { } __value0)
             {
-                @base?.Invoke(Base!);
+                @base?.Invoke(__value0);
             }
-            else if (IsArtifactCreateToolVariant2)
+            else if (ArtifactCreateToolVariant2 is { } __value1)
             {
-                artifactCreateToolVariant2?.Invoke(ArtifactCreateToolVariant2!);
+                artifactCreateToolVariant2?.Invoke(__value1);
             }
         }
 
@@ -227,13 +227,13 @@ namespace G
                 Validate();
             }
 
-            if (IsBase)
+            if (Base is { } __value0)
             {
-                @base?.Invoke(Base!);
+                @base?.Invoke(__value0);
             }
-            else if (IsArtifactCreateToolVariant2)
+            else if (ArtifactCreateToolVariant2 is { } __value1)
             {
-                artifactCreateToolVariant2?.Invoke(ArtifactCreateToolVariant2!);
+                artifactCreateToolVariant2?.Invoke(__value1);
             }
         }
 

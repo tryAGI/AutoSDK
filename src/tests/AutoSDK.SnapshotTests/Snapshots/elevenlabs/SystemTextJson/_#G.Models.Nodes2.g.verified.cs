@@ -1,4 +1,4 @@
-﻿//HintName: G.Models.Nodes2.g.cs
+//HintName: G.Models.Nodes2.g.cs
 #pragma warning disable CS0618 // Type or member is obsolete
 
 #nullable enable
@@ -48,8 +48,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.WorkflowStartNodeModelOutput PickStart() => IsStart
-            ? Start!
+        public global::G.WorkflowStartNodeModelOutput PickStart() => Start is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Start' but the value was {ToString()}.");
 
         /// <summary>
@@ -85,8 +85,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.WorkflowEndNodeModelOutput PickEnd() => IsEnd
-            ? End!
+        public global::G.WorkflowEndNodeModelOutput PickEnd() => End is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'End' but the value was {ToString()}.");
 
         /// <summary>
@@ -122,8 +122,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.WorkflowPhoneNumberNodeModelOutput PickPhoneNumber() => IsPhoneNumber
-            ? PhoneNumber!
+        public global::G.WorkflowPhoneNumberNodeModelOutput PickPhoneNumber() => PhoneNumber is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'PhoneNumber' but the value was {ToString()}.");
 
         /// <summary>
@@ -159,8 +159,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.WorkflowOverrideAgentNodeModelOutput PickOverrideAgent() => IsOverrideAgent
-            ? OverrideAgent!
+        public global::G.WorkflowOverrideAgentNodeModelOutput PickOverrideAgent() => OverrideAgent is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'OverrideAgent' but the value was {ToString()}.");
 
         /// <summary>
@@ -196,8 +196,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.WorkflowStandaloneAgentNodeModelOutput PickStandaloneAgent() => IsStandaloneAgent
-            ? StandaloneAgent!
+        public global::G.WorkflowStandaloneAgentNodeModelOutput PickStandaloneAgent() => StandaloneAgent is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'StandaloneAgent' but the value was {ToString()}.");
 
         /// <summary>
@@ -233,8 +233,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.WorkflowToolNodeModelOutput PickTool() => IsTool
-            ? Tool!
+        public global::G.WorkflowToolNodeModelOutput PickTool() => Tool is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Tool' but the value was {ToString()}.");
         /// <summary>
         /// 
@@ -446,29 +446,29 @@ namespace G
                 Validate();
             }
 
-            if (IsStart && start != null)
+            if (Start is { } __value0 && start != null)
             {
-                return start(Start!);
+                return start(__value0);
             }
-            else if (IsEnd && end != null)
+            else if (End is { } __value1 && end != null)
             {
-                return end(End!);
+                return end(__value1);
             }
-            else if (IsPhoneNumber && phoneNumber != null)
+            else if (PhoneNumber is { } __value2 && phoneNumber != null)
             {
-                return phoneNumber(PhoneNumber!);
+                return phoneNumber(__value2);
             }
-            else if (IsOverrideAgent && overrideAgent != null)
+            else if (OverrideAgent is { } __value3 && overrideAgent != null)
             {
-                return overrideAgent(OverrideAgent!);
+                return overrideAgent(__value3);
             }
-            else if (IsStandaloneAgent && standaloneAgent != null)
+            else if (StandaloneAgent is { } __value4 && standaloneAgent != null)
             {
-                return standaloneAgent(StandaloneAgent!);
+                return standaloneAgent(__value4);
             }
-            else if (IsTool && tool != null)
+            else if (Tool is { } __value5 && tool != null)
             {
-                return tool(Tool!);
+                return tool(__value5);
             }
 
             return default(TResult);
@@ -496,29 +496,29 @@ namespace G
                 Validate();
             }
 
-            if (IsStart)
+            if (Start is { } __value0)
             {
-                start?.Invoke(Start!);
+                start?.Invoke(__value0);
             }
-            else if (IsEnd)
+            else if (End is { } __value1)
             {
-                end?.Invoke(End!);
+                end?.Invoke(__value1);
             }
-            else if (IsPhoneNumber)
+            else if (PhoneNumber is { } __value2)
             {
-                phoneNumber?.Invoke(PhoneNumber!);
+                phoneNumber?.Invoke(__value2);
             }
-            else if (IsOverrideAgent)
+            else if (OverrideAgent is { } __value3)
             {
-                overrideAgent?.Invoke(OverrideAgent!);
+                overrideAgent?.Invoke(__value3);
             }
-            else if (IsStandaloneAgent)
+            else if (StandaloneAgent is { } __value4)
             {
-                standaloneAgent?.Invoke(StandaloneAgent!);
+                standaloneAgent?.Invoke(__value4);
             }
-            else if (IsTool)
+            else if (Tool is { } __value5)
             {
-                tool?.Invoke(Tool!);
+                tool?.Invoke(__value5);
             }
         }
 
@@ -539,29 +539,29 @@ namespace G
                 Validate();
             }
 
-            if (IsStart)
+            if (Start is { } __value0)
             {
-                start?.Invoke(Start!);
+                start?.Invoke(__value0);
             }
-            else if (IsEnd)
+            else if (End is { } __value1)
             {
-                end?.Invoke(End!);
+                end?.Invoke(__value1);
             }
-            else if (IsPhoneNumber)
+            else if (PhoneNumber is { } __value2)
             {
-                phoneNumber?.Invoke(PhoneNumber!);
+                phoneNumber?.Invoke(__value2);
             }
-            else if (IsOverrideAgent)
+            else if (OverrideAgent is { } __value3)
             {
-                overrideAgent?.Invoke(OverrideAgent!);
+                overrideAgent?.Invoke(__value3);
             }
-            else if (IsStandaloneAgent)
+            else if (StandaloneAgent is { } __value4)
             {
-                standaloneAgent?.Invoke(StandaloneAgent!);
+                standaloneAgent?.Invoke(__value4);
             }
-            else if (IsTool)
+            else if (Tool is { } __value5)
             {
-                tool?.Invoke(Tool!);
+                tool?.Invoke(__value5);
             }
         }
 

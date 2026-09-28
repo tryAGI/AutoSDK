@@ -1,4 +1,4 @@
-﻿//HintName: G.Models.ShardKey.g.cs
+//HintName: G.Models.ShardKey.g.cs
 #pragma warning disable CS0618 // Type or member is obsolete
 
 #nullable enable
@@ -43,8 +43,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public string PickShardKeyVariant1() => IsShardKeyVariant1
-            ? ShardKeyVariant1!
+        public string PickShardKeyVariant1() => ShardKeyVariant1 is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'ShardKeyVariant1' but the value was {ToString()}.");
 
         /// <summary>
@@ -80,8 +80,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public int PickShardKeyVariant2() => IsShardKeyVariant2
-            ? ShardKeyVariant2!.Value
+        public int PickShardKeyVariant2() => ShardKeyVariant2 is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'ShardKeyVariant2' but the value was {ToString()}.");
         /// <summary>
         /// 
@@ -178,13 +178,13 @@ namespace G
                 Validate();
             }
 
-            if (IsShardKeyVariant1 && shardKeyVariant1 != null)
+            if (ShardKeyVariant1 is { } __value0 && shardKeyVariant1 != null)
             {
-                return shardKeyVariant1(ShardKeyVariant1!);
+                return shardKeyVariant1(__value0);
             }
-            else if (IsShardKeyVariant2 && shardKeyVariant2 != null)
+            else if (ShardKeyVariant2 is { } __value1 && shardKeyVariant2 != null)
             {
-                return shardKeyVariant2(ShardKeyVariant2!);
+                return shardKeyVariant2(__value1);
             }
 
             return default(TResult);
@@ -204,13 +204,13 @@ namespace G
                 Validate();
             }
 
-            if (IsShardKeyVariant1)
+            if (ShardKeyVariant1 is { } __value0)
             {
-                shardKeyVariant1?.Invoke(ShardKeyVariant1!);
+                shardKeyVariant1?.Invoke(__value0);
             }
-            else if (IsShardKeyVariant2)
+            else if (ShardKeyVariant2 is { } __value1)
             {
-                shardKeyVariant2?.Invoke(ShardKeyVariant2!);
+                shardKeyVariant2?.Invoke(__value1);
             }
         }
 
@@ -227,13 +227,13 @@ namespace G
                 Validate();
             }
 
-            if (IsShardKeyVariant1)
+            if (ShardKeyVariant1 is { } __value0)
             {
-                shardKeyVariant1?.Invoke(ShardKeyVariant1!);
+                shardKeyVariant1?.Invoke(__value0);
             }
-            else if (IsShardKeyVariant2)
+            else if (ShardKeyVariant2 is { } __value1)
             {
-                shardKeyVariant2?.Invoke(ShardKeyVariant2!);
+                shardKeyVariant2?.Invoke(__value1);
             }
         }
 

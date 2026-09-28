@@ -1,4 +1,4 @@
-﻿//HintName: G.PointsClient.ClearPayload.g.cs
+//HintName: G.PointsClient.ClearPayload.g.cs
 
 #nullable enable
 
@@ -229,7 +229,7 @@ namespace G
                 PrepareClearPayloadRequest(
                     httpClient: HttpClient,
                     httpRequestMessage: __httpRequest,
-                    collectionName: collectionName!,
+                    collectionName: collectionName,
                     wait: wait,
                     ordering: ordering,
                     timeout: timeout,
@@ -255,7 +255,7 @@ namespace G
                                 pathTemplate: "$\"/collections/{collectionName}/points/payload/clear\"",
                                 httpMethod: "POST",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: null,
                                 exception: null,
                                 clientOptions: Options,
@@ -289,7 +289,7 @@ namespace G
                                 pathTemplate: "$\"/collections/{collectionName}/points/payload/clear\"",
                                 httpMethod: "POST",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: null,
                                 exception: __exception,
                                 clientOptions: Options,
@@ -330,7 +330,7 @@ namespace G
                                 pathTemplate: "$\"/collections/{collectionName}/points/payload/clear\"",
                                 httpMethod: "POST",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: __response,
                                 exception: null,
                                 clientOptions: Options,
@@ -378,7 +378,7 @@ namespace G
                                 pathTemplate: "$\"/collections/{collectionName}/points/payload/clear\"",
                                 httpMethod: "POST",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: __response,
                                 exception: null,
                                 clientOptions: Options,
@@ -400,7 +400,7 @@ namespace G
                                 pathTemplate: "$\"/collections/{collectionName}/points/payload/clear\"",
                                 httpMethod: "POST",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: __response,
                                 exception: null,
                                 clientOptions: Options,

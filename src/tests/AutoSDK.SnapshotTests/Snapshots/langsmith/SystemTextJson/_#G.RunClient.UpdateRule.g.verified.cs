@@ -1,4 +1,4 @@
-﻿//HintName: G.RunClient.UpdateRule.g.cs
+//HintName: G.RunClient.UpdateRule.g.cs
 
 #nullable enable
 
@@ -199,7 +199,7 @@ namespace G
                 PrepareUpdateRuleRequest(
                     httpClient: HttpClient,
                     httpRequestMessage: __httpRequest,
-                    ruleId: ruleId!,
+                    ruleId: ruleId,
                     request: request);
 
                 global::G.AutoSDKHttpRequestOptions.StampAuthorizationOverride(__httpRequest);
@@ -224,7 +224,7 @@ namespace G
                                 pathTemplate: "$\"/api/v1/runs/rules/{ruleId}\"",
                                 httpMethod: "PATCH",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: null,
                                 exception: null,
                                 clientOptions: Options,
@@ -258,7 +258,7 @@ namespace G
                                 pathTemplate: "$\"/api/v1/runs/rules/{ruleId}\"",
                                 httpMethod: "PATCH",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: null,
                                 exception: __exception,
                                 clientOptions: Options,
@@ -299,7 +299,7 @@ namespace G
                                 pathTemplate: "$\"/api/v1/runs/rules/{ruleId}\"",
                                 httpMethod: "PATCH",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: __response,
                                 exception: null,
                                 clientOptions: Options,
@@ -347,7 +347,7 @@ namespace G
                                 pathTemplate: "$\"/api/v1/runs/rules/{ruleId}\"",
                                 httpMethod: "PATCH",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: __response,
                                 exception: null,
                                 clientOptions: Options,
@@ -369,7 +369,7 @@ namespace G
                                 pathTemplate: "$\"/api/v1/runs/rules/{ruleId}\"",
                                 httpMethod: "PATCH",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: __response,
                                 exception: null,
                                 clientOptions: Options,

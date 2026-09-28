@@ -1,4 +1,4 @@
-﻿//HintName: G.Models.AgentPresenter.g.cs
+//HintName: G.Models.AgentPresenter.g.cs
 #pragma warning disable CS0618 // Type or member is obsolete
 
 #nullable enable
@@ -43,8 +43,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.AgentPresenterPhotoAvatar PickPhotoAvatar() => IsPhotoAvatar
-            ? PhotoAvatar!
+        public global::G.AgentPresenterPhotoAvatar PickPhotoAvatar() => PhotoAvatar is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'PhotoAvatar' but the value was {ToString()}.");
 
         /// <summary>
@@ -80,8 +80,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.AgentPresenterVideoAvatar PickVideoAvatar() => IsVideoAvatar
-            ? VideoAvatar!
+        public global::G.AgentPresenterVideoAvatar PickVideoAvatar() => VideoAvatar is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'VideoAvatar' but the value was {ToString()}.");
 
         /// <summary>
@@ -117,8 +117,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.AgentPresenterExpressiveAvatar PickExpressiveAvatar() => IsExpressiveAvatar
-            ? ExpressiveAvatar!
+        public global::G.AgentPresenterExpressiveAvatar PickExpressiveAvatar() => ExpressiveAvatar is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'ExpressiveAvatar' but the value was {ToString()}.");
         /// <summary>
         /// 
@@ -243,17 +243,17 @@ namespace G
                 Validate();
             }
 
-            if (IsPhotoAvatar && photoAvatar != null)
+            if (PhotoAvatar is { } __value0 && photoAvatar != null)
             {
-                return photoAvatar(PhotoAvatar!);
+                return photoAvatar(__value0);
             }
-            else if (IsVideoAvatar && videoAvatar != null)
+            else if (VideoAvatar is { } __value1 && videoAvatar != null)
             {
-                return videoAvatar(VideoAvatar!);
+                return videoAvatar(__value1);
             }
-            else if (IsExpressiveAvatar && expressiveAvatar != null)
+            else if (ExpressiveAvatar is { } __value2 && expressiveAvatar != null)
             {
-                return expressiveAvatar(ExpressiveAvatar!);
+                return expressiveAvatar(__value2);
             }
 
             return default(TResult);
@@ -275,17 +275,17 @@ namespace G
                 Validate();
             }
 
-            if (IsPhotoAvatar)
+            if (PhotoAvatar is { } __value0)
             {
-                photoAvatar?.Invoke(PhotoAvatar!);
+                photoAvatar?.Invoke(__value0);
             }
-            else if (IsVideoAvatar)
+            else if (VideoAvatar is { } __value1)
             {
-                videoAvatar?.Invoke(VideoAvatar!);
+                videoAvatar?.Invoke(__value1);
             }
-            else if (IsExpressiveAvatar)
+            else if (ExpressiveAvatar is { } __value2)
             {
-                expressiveAvatar?.Invoke(ExpressiveAvatar!);
+                expressiveAvatar?.Invoke(__value2);
             }
         }
 
@@ -303,17 +303,17 @@ namespace G
                 Validate();
             }
 
-            if (IsPhotoAvatar)
+            if (PhotoAvatar is { } __value0)
             {
-                photoAvatar?.Invoke(PhotoAvatar!);
+                photoAvatar?.Invoke(__value0);
             }
-            else if (IsVideoAvatar)
+            else if (VideoAvatar is { } __value1)
             {
-                videoAvatar?.Invoke(VideoAvatar!);
+                videoAvatar?.Invoke(__value1);
             }
-            else if (IsExpressiveAvatar)
+            else if (ExpressiveAvatar is { } __value2)
             {
-                expressiveAvatar?.Invoke(ExpressiveAvatar!);
+                expressiveAvatar?.Invoke(__value2);
             }
         }
 

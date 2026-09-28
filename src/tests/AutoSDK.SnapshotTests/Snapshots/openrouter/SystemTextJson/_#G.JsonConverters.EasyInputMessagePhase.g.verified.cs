@@ -1,4 +1,4 @@
-﻿//HintName: G.JsonConverters.EasyInputMessagePhase.g.cs
+//HintName: G.JsonConverters.EasyInputMessagePhase.g.cs
 #nullable enable
 #pragma warning disable CS0618 // Type or member is obsolete
 
@@ -199,19 +199,19 @@ namespace G.JsonConverters
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.EasyInputMessagePhase0), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.EasyInputMessagePhase0> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.EasyInputMessagePhase0).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.EasyInputMessagePhase0!.Value, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickEasyInputMessagePhase0(), typeInfo);
             }
             else if (value.IsEasyInputMessagePhase1)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.EasyInputMessagePhase1), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.EasyInputMessagePhase1> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.EasyInputMessagePhase1).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.EasyInputMessagePhase1!.Value, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickEasyInputMessagePhase1(), typeInfo);
             }
             else if (value.IsEasyInputMessagePhaseVariant3)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(object), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<object?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(object).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.EasyInputMessagePhaseVariant3!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickEasyInputMessagePhaseVariant3(), typeInfo);
             }
         }
     }

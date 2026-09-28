@@ -1,4 +1,4 @@
-﻿//HintName: G.Models.InputContent.g.cs
+//HintName: G.Models.InputContent.g.cs
 #pragma warning disable CS0618 // Type or member is obsolete
 
 #nullable enable
@@ -43,8 +43,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.InputText PickTextInput() => IsTextInput
-            ? TextInput!
+        public global::G.InputText PickTextInput() => TextInput is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'TextInput' but the value was {ToString()}.");
 
         /// <summary>
@@ -80,8 +80,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.InputImage PickImageInput() => IsImageInput
-            ? ImageInput!
+        public global::G.InputImage PickImageInput() => ImageInput is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'ImageInput' but the value was {ToString()}.");
 
         /// <summary>
@@ -117,8 +117,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.InputFile PickFileInput() => IsFileInput
-            ? FileInput!
+        public global::G.InputFile PickFileInput() => FileInput is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'FileInput' but the value was {ToString()}.");
         /// <summary>
         /// 
@@ -243,17 +243,17 @@ namespace G
                 Validate();
             }
 
-            if (IsTextInput && textInput != null)
+            if (TextInput is { } __value0 && textInput != null)
             {
-                return textInput(TextInput!);
+                return textInput(__value0);
             }
-            else if (IsImageInput && imageInput != null)
+            else if (ImageInput is { } __value1 && imageInput != null)
             {
-                return imageInput(ImageInput!);
+                return imageInput(__value1);
             }
-            else if (IsFileInput && fileInput != null)
+            else if (FileInput is { } __value2 && fileInput != null)
             {
-                return fileInput(FileInput!);
+                return fileInput(__value2);
             }
 
             return default(TResult);
@@ -275,17 +275,17 @@ namespace G
                 Validate();
             }
 
-            if (IsTextInput)
+            if (TextInput is { } __value0)
             {
-                textInput?.Invoke(TextInput!);
+                textInput?.Invoke(__value0);
             }
-            else if (IsImageInput)
+            else if (ImageInput is { } __value1)
             {
-                imageInput?.Invoke(ImageInput!);
+                imageInput?.Invoke(__value1);
             }
-            else if (IsFileInput)
+            else if (FileInput is { } __value2)
             {
-                fileInput?.Invoke(FileInput!);
+                fileInput?.Invoke(__value2);
             }
         }
 
@@ -303,17 +303,17 @@ namespace G
                 Validate();
             }
 
-            if (IsTextInput)
+            if (TextInput is { } __value0)
             {
-                textInput?.Invoke(TextInput!);
+                textInput?.Invoke(__value0);
             }
-            else if (IsImageInput)
+            else if (ImageInput is { } __value1)
             {
-                imageInput?.Invoke(ImageInput!);
+                imageInput?.Invoke(__value1);
             }
-            else if (IsFileInput)
+            else if (FileInput is { } __value2)
             {
-                fileInput?.Invoke(FileInput!);
+                fileInput?.Invoke(__value2);
             }
         }
 

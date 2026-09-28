@@ -1,4 +1,4 @@
-﻿//HintName: G.Models.OpenAiGeneratedAssetOptions.g.cs
+//HintName: G.Models.OpenAiGeneratedAssetOptions.g.cs
 #pragma warning disable CS0618 // Type or member is obsolete
 
 #nullable enable
@@ -51,8 +51,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.OpenAiTextGeneratorOptions PickTextGenerator() => IsTextGenerator
-            ? TextGenerator!
+        public global::G.OpenAiTextGeneratorOptions PickTextGenerator() => TextGenerator is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'TextGenerator' but the value was {ToString()}.");
         /// <summary>
         /// 
@@ -124,9 +124,9 @@ namespace G
                 Validate();
             }
 
-            if (IsTextGenerator && textGenerator != null)
+            if (TextGenerator is { } __value0 && textGenerator != null)
             {
-                return textGenerator(TextGenerator!);
+                return textGenerator(__value0);
             }
 
             return default(TResult);
@@ -144,9 +144,9 @@ namespace G
                 Validate();
             }
 
-            if (IsTextGenerator)
+            if (TextGenerator is { } __value0)
             {
-                textGenerator?.Invoke(TextGenerator!);
+                textGenerator?.Invoke(__value0);
             }
         }
 
@@ -162,9 +162,9 @@ namespace G
                 Validate();
             }
 
-            if (IsTextGenerator)
+            if (TextGenerator is { } __value0)
             {
-                textGenerator?.Invoke(TextGenerator!);
+                textGenerator?.Invoke(__value0);
             }
         }
 

@@ -1,4 +1,4 @@
-﻿//HintName: G.Models.TrackerStatus.g.cs
+//HintName: G.Models.TrackerStatus.g.cs
 #pragma warning disable CS0618 // Type or member is obsolete
 
 #nullable enable
@@ -43,8 +43,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.TrackerStatusEnum PickEnum() => IsEnum
-            ? Enum!.Value
+        public global::G.TrackerStatusEnum PickEnum() => Enum is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Enum' but the value was {ToString()}.");
 
         /// <summary>
@@ -80,8 +80,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.TrackerStatusEnum2 PickEnum2() => IsEnum2
-            ? Enum2!
+        public global::G.TrackerStatusEnum2 PickEnum2() => Enum2 is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Enum2' but the value was {ToString()}.");
 
         /// <summary>
@@ -117,8 +117,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.TrackerStatusEnum3 PickEnum3() => IsEnum3
-            ? Enum3!
+        public global::G.TrackerStatusEnum3 PickEnum3() => Enum3 is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Enum3' but the value was {ToString()}.");
         /// <summary>
         /// 
@@ -243,17 +243,17 @@ namespace G
                 Validate();
             }
 
-            if (IsEnum && @enum != null)
+            if (Enum is { } __value0 && @enum != null)
             {
-                return @enum(Enum!);
+                return @enum(__value0);
             }
-            else if (IsEnum2 && enum2 != null)
+            else if (Enum2 is { } __value1 && enum2 != null)
             {
-                return enum2(Enum2!);
+                return enum2(__value1);
             }
-            else if (IsEnum3 && enum3 != null)
+            else if (Enum3 is { } __value2 && enum3 != null)
             {
-                return enum3(Enum3!);
+                return enum3(__value2);
             }
 
             return default(TResult);
@@ -275,17 +275,17 @@ namespace G
                 Validate();
             }
 
-            if (IsEnum)
+            if (Enum is { } __value0)
             {
-                @enum?.Invoke(Enum!);
+                @enum?.Invoke(__value0);
             }
-            else if (IsEnum2)
+            else if (Enum2 is { } __value1)
             {
-                enum2?.Invoke(Enum2!);
+                enum2?.Invoke(__value1);
             }
-            else if (IsEnum3)
+            else if (Enum3 is { } __value2)
             {
-                enum3?.Invoke(Enum3!);
+                enum3?.Invoke(__value2);
             }
         }
 
@@ -303,17 +303,17 @@ namespace G
                 Validate();
             }
 
-            if (IsEnum)
+            if (Enum is { } __value0)
             {
-                @enum?.Invoke(Enum!);
+                @enum?.Invoke(__value0);
             }
-            else if (IsEnum2)
+            else if (Enum2 is { } __value1)
             {
-                enum2?.Invoke(Enum2!);
+                enum2?.Invoke(__value1);
             }
-            else if (IsEnum3)
+            else if (Enum3 is { } __value2)
             {
-                enum3?.Invoke(Enum3!);
+                enum3?.Invoke(__value2);
             }
         }
 

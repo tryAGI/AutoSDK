@@ -1,4 +1,4 @@
-﻿//HintName: G.Models.PointsSelector.g.cs
+//HintName: G.Models.PointsSelector.g.cs
 #pragma warning disable CS0618 // Type or member is obsolete
 
 #nullable enable
@@ -43,8 +43,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.PointIdsList PickPointIdsList() => IsPointIdsList
-            ? PointIdsList!
+        public global::G.PointIdsList PickPointIdsList() => PointIdsList is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'PointIdsList' but the value was {ToString()}.");
 
         /// <summary>
@@ -80,8 +80,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.FilterSelector PickFilter() => IsFilter
-            ? Filter!
+        public global::G.FilterSelector PickFilter() => Filter is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Filter' but the value was {ToString()}.");
         /// <summary>
         /// 
@@ -178,13 +178,13 @@ namespace G
                 Validate();
             }
 
-            if (IsPointIdsList && pointIdsList != null)
+            if (PointIdsList is { } __value0 && pointIdsList != null)
             {
-                return pointIdsList(PointIdsList!);
+                return pointIdsList(__value0);
             }
-            else if (IsFilter && filter != null)
+            else if (Filter is { } __value1 && filter != null)
             {
-                return filter(Filter!);
+                return filter(__value1);
             }
 
             return default(TResult);
@@ -204,13 +204,13 @@ namespace G
                 Validate();
             }
 
-            if (IsPointIdsList)
+            if (PointIdsList is { } __value0)
             {
-                pointIdsList?.Invoke(PointIdsList!);
+                pointIdsList?.Invoke(__value0);
             }
-            else if (IsFilter)
+            else if (Filter is { } __value1)
             {
-                filter?.Invoke(Filter!);
+                filter?.Invoke(__value1);
             }
         }
 
@@ -227,13 +227,13 @@ namespace G
                 Validate();
             }
 
-            if (IsPointIdsList)
+            if (PointIdsList is { } __value0)
             {
-                pointIdsList?.Invoke(PointIdsList!);
+                pointIdsList?.Invoke(__value0);
             }
-            else if (IsFilter)
+            else if (Filter is { } __value1)
             {
-                filter?.Invoke(Filter!);
+                filter?.Invoke(__value1);
             }
         }
 

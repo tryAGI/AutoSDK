@@ -1,4 +1,4 @@
-﻿//HintName: G.AclsClient.DeleteAclId.g.cs
+//HintName: G.AclsClient.DeleteAclId.g.cs
 
 #nullable enable
 
@@ -161,7 +161,7 @@ namespace G
                 PrepareDeleteAclIdRequest(
                     httpClient: HttpClient,
                     httpRequestMessage: __httpRequest,
-                    aclId: aclId!);
+                    aclId: aclId);
 
                 return __httpRequest;
             }
@@ -183,7 +183,7 @@ namespace G
                                 pathTemplate: "$\"/v1/acl/{aclId}\"",
                                 httpMethod: "DELETE",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: null,
                                 exception: null,
                                 clientOptions: Options,
@@ -217,7 +217,7 @@ namespace G
                                 pathTemplate: "$\"/v1/acl/{aclId}\"",
                                 httpMethod: "DELETE",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: null,
                                 exception: __exception,
                                 clientOptions: Options,
@@ -258,7 +258,7 @@ namespace G
                                 pathTemplate: "$\"/v1/acl/{aclId}\"",
                                 httpMethod: "DELETE",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: __response,
                                 exception: null,
                                 clientOptions: Options,
@@ -306,7 +306,7 @@ namespace G
                                 pathTemplate: "$\"/v1/acl/{aclId}\"",
                                 httpMethod: "DELETE",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: __response,
                                 exception: null,
                                 clientOptions: Options,
@@ -328,7 +328,7 @@ namespace G
                                 pathTemplate: "$\"/v1/acl/{aclId}\"",
                                 httpMethod: "DELETE",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: __response,
                                 exception: null,
                                 clientOptions: Options,

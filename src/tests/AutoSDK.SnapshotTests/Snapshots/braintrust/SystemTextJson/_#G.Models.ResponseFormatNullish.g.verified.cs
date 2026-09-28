@@ -1,4 +1,4 @@
-﻿//HintName: G.Models.ResponseFormatNullish.g.cs
+//HintName: G.Models.ResponseFormatNullish.g.cs
 #pragma warning disable CS0618 // Type or member is obsolete
 
 #nullable enable
@@ -43,8 +43,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.ResponseFormatNullishJsonObject PickJsonObject() => IsJsonObject
-            ? JsonObject!
+        public global::G.ResponseFormatNullishJsonObject PickJsonObject() => JsonObject is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'JsonObject' but the value was {ToString()}.");
 
         /// <summary>
@@ -80,8 +80,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.ResponseFormatNullishJsonSchema PickJsonSchema() => IsJsonSchema
-            ? JsonSchema!
+        public global::G.ResponseFormatNullishJsonSchema PickJsonSchema() => JsonSchema is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'JsonSchema' but the value was {ToString()}.");
 
         /// <summary>
@@ -117,8 +117,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.ResponseFormatNullishText PickText() => IsText
-            ? Text!
+        public global::G.ResponseFormatNullishText PickText() => Text is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Text' but the value was {ToString()}.");
 
         /// <summary>
@@ -154,8 +154,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public object PickResponseFormatNullishVariant4() => IsResponseFormatNullishVariant4
-            ? ResponseFormatNullishVariant4!
+        public object PickResponseFormatNullishVariant4() => ResponseFormatNullishVariant4 is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'ResponseFormatNullishVariant4' but the value was {ToString()}.");
         /// <summary>
         /// 
@@ -285,21 +285,21 @@ namespace G
                 Validate();
             }
 
-            if (IsJsonObject && jsonObject != null)
+            if (JsonObject is { } __value0 && jsonObject != null)
             {
-                return jsonObject(JsonObject!);
+                return jsonObject(__value0);
             }
-            else if (IsJsonSchema && jsonSchema != null)
+            else if (JsonSchema is { } __value1 && jsonSchema != null)
             {
-                return jsonSchema(JsonSchema!);
+                return jsonSchema(__value1);
             }
-            else if (IsText && text != null)
+            else if (Text is { } __value2 && text != null)
             {
-                return text(Text!);
+                return text(__value2);
             }
-            else if (IsResponseFormatNullishVariant4 && responseFormatNullishVariant4 != null)
+            else if (ResponseFormatNullishVariant4 is { } __value3 && responseFormatNullishVariant4 != null)
             {
-                return responseFormatNullishVariant4(ResponseFormatNullishVariant4!);
+                return responseFormatNullishVariant4(__value3);
             }
 
             return default(TResult);
@@ -323,21 +323,21 @@ namespace G
                 Validate();
             }
 
-            if (IsJsonObject)
+            if (JsonObject is { } __value0)
             {
-                jsonObject?.Invoke(JsonObject!);
+                jsonObject?.Invoke(__value0);
             }
-            else if (IsJsonSchema)
+            else if (JsonSchema is { } __value1)
             {
-                jsonSchema?.Invoke(JsonSchema!);
+                jsonSchema?.Invoke(__value1);
             }
-            else if (IsText)
+            else if (Text is { } __value2)
             {
-                text?.Invoke(Text!);
+                text?.Invoke(__value2);
             }
-            else if (IsResponseFormatNullishVariant4)
+            else if (ResponseFormatNullishVariant4 is { } __value3)
             {
-                responseFormatNullishVariant4?.Invoke(ResponseFormatNullishVariant4!);
+                responseFormatNullishVariant4?.Invoke(__value3);
             }
         }
 
@@ -356,21 +356,21 @@ namespace G
                 Validate();
             }
 
-            if (IsJsonObject)
+            if (JsonObject is { } __value0)
             {
-                jsonObject?.Invoke(JsonObject!);
+                jsonObject?.Invoke(__value0);
             }
-            else if (IsJsonSchema)
+            else if (JsonSchema is { } __value1)
             {
-                jsonSchema?.Invoke(JsonSchema!);
+                jsonSchema?.Invoke(__value1);
             }
-            else if (IsText)
+            else if (Text is { } __value2)
             {
-                text?.Invoke(Text!);
+                text?.Invoke(__value2);
             }
-            else if (IsResponseFormatNullishVariant4)
+            else if (ResponseFormatNullishVariant4 is { } __value3)
             {
-                responseFormatNullishVariant4?.Invoke(ResponseFormatNullishVariant4!);
+                responseFormatNullishVariant4?.Invoke(__value3);
             }
         }
 

@@ -1,4 +1,4 @@
-﻿//HintName: G.Models.LemurResponse.g.cs
+//HintName: G.Models.LemurResponse.g.cs
 #pragma warning disable CS0618 // Type or member is obsolete
 
 #nullable enable
@@ -44,8 +44,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.LemurStringResponse PickString() => IsString
-            ? String!.Value
+        public global::G.LemurStringResponse PickString() => String is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'String' but the value was {ToString()}.");
 
         /// <summary>
@@ -82,8 +82,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.LemurQuestionAnswerResponse PickQuestionAnswer() => IsQuestionAnswer
-            ? QuestionAnswer!.Value
+        public global::G.LemurQuestionAnswerResponse PickQuestionAnswer() => QuestionAnswer is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'QuestionAnswer' but the value was {ToString()}.");
         /// <summary>
         /// 
@@ -180,13 +180,13 @@ namespace G
                 Validate();
             }
 
-            if (IsString && @string != null)
+            if (String is { } __value0 && @string != null)
             {
-                return @string(String!);
+                return @string(__value0);
             }
-            else if (IsQuestionAnswer && questionAnswer != null)
+            else if (QuestionAnswer is { } __value1 && questionAnswer != null)
             {
-                return questionAnswer(QuestionAnswer!);
+                return questionAnswer(__value1);
             }
 
             return default(TResult);
@@ -206,13 +206,13 @@ namespace G
                 Validate();
             }
 
-            if (IsString)
+            if (String is { } __value0)
             {
-                @string?.Invoke(String!);
+                @string?.Invoke(__value0);
             }
-            else if (IsQuestionAnswer)
+            else if (QuestionAnswer is { } __value1)
             {
-                questionAnswer?.Invoke(QuestionAnswer!);
+                questionAnswer?.Invoke(__value1);
             }
         }
 
@@ -229,13 +229,13 @@ namespace G
                 Validate();
             }
 
-            if (IsString)
+            if (String is { } __value0)
             {
-                @string?.Invoke(String!);
+                @string?.Invoke(__value0);
             }
-            else if (IsQuestionAnswer)
+            else if (QuestionAnswer is { } __value1)
             {
-                questionAnswer?.Invoke(QuestionAnswer!);
+                questionAnswer?.Invoke(__value1);
             }
         }
 

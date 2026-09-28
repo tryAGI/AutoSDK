@@ -1,4 +1,4 @@
-﻿//HintName: G.Models.CreateIceCandidateStreamRequest.g.cs
+//HintName: G.Models.CreateIceCandidateStreamRequest.g.cs
 #pragma warning disable CS0618 // Type or member is obsolete
 
 #nullable enable
@@ -43,8 +43,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.AnyOf<global::G.CreateIceCandidateStreamRequestVariant1Variant1, object> PickCreateIceCandidateStreamRequestVariant1() => IsCreateIceCandidateStreamRequestVariant1
-            ? CreateIceCandidateStreamRequestVariant1!.Value
+        public global::G.AnyOf<global::G.CreateIceCandidateStreamRequestVariant1Variant1, object> PickCreateIceCandidateStreamRequestVariant1() => CreateIceCandidateStreamRequestVariant1 is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'CreateIceCandidateStreamRequestVariant1' but the value was {ToString()}.");
 
         /// <summary>
@@ -80,8 +80,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.CreateIceCandidateStreamRequestVariant2 PickCreateIceCandidateStreamRequestVariant2() => IsCreateIceCandidateStreamRequestVariant2
-            ? CreateIceCandidateStreamRequestVariant2!
+        public global::G.CreateIceCandidateStreamRequestVariant2 PickCreateIceCandidateStreamRequestVariant2() => CreateIceCandidateStreamRequestVariant2 is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'CreateIceCandidateStreamRequestVariant2' but the value was {ToString()}.");
         /// <summary>
         /// 
@@ -178,13 +178,13 @@ namespace G
                 Validate();
             }
 
-            if (IsCreateIceCandidateStreamRequestVariant1 && createIceCandidateStreamRequestVariant1 != null)
+            if (CreateIceCandidateStreamRequestVariant1 is { } __value0 && createIceCandidateStreamRequestVariant1 != null)
             {
-                return createIceCandidateStreamRequestVariant1(CreateIceCandidateStreamRequestVariant1!);
+                return createIceCandidateStreamRequestVariant1(__value0);
             }
-            else if (IsCreateIceCandidateStreamRequestVariant2 && createIceCandidateStreamRequestVariant2 != null)
+            else if (CreateIceCandidateStreamRequestVariant2 is { } __value1 && createIceCandidateStreamRequestVariant2 != null)
             {
-                return createIceCandidateStreamRequestVariant2(CreateIceCandidateStreamRequestVariant2!);
+                return createIceCandidateStreamRequestVariant2(__value1);
             }
 
             return default(TResult);
@@ -204,13 +204,13 @@ namespace G
                 Validate();
             }
 
-            if (IsCreateIceCandidateStreamRequestVariant1)
+            if (CreateIceCandidateStreamRequestVariant1 is { } __value0)
             {
-                createIceCandidateStreamRequestVariant1?.Invoke(CreateIceCandidateStreamRequestVariant1!);
+                createIceCandidateStreamRequestVariant1?.Invoke(__value0);
             }
-            else if (IsCreateIceCandidateStreamRequestVariant2)
+            else if (CreateIceCandidateStreamRequestVariant2 is { } __value1)
             {
-                createIceCandidateStreamRequestVariant2?.Invoke(CreateIceCandidateStreamRequestVariant2!);
+                createIceCandidateStreamRequestVariant2?.Invoke(__value1);
             }
         }
 
@@ -227,13 +227,13 @@ namespace G
                 Validate();
             }
 
-            if (IsCreateIceCandidateStreamRequestVariant1)
+            if (CreateIceCandidateStreamRequestVariant1 is { } __value0)
             {
-                createIceCandidateStreamRequestVariant1?.Invoke(CreateIceCandidateStreamRequestVariant1!);
+                createIceCandidateStreamRequestVariant1?.Invoke(__value0);
             }
-            else if (IsCreateIceCandidateStreamRequestVariant2)
+            else if (CreateIceCandidateStreamRequestVariant2 is { } __value1)
             {
-                createIceCandidateStreamRequestVariant2?.Invoke(CreateIceCandidateStreamRequestVariant2!);
+                createIceCandidateStreamRequestVariant2?.Invoke(__value1);
             }
         }
 

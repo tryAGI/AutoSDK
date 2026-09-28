@@ -1,4 +1,4 @@
-﻿//HintName: G.Models.AgentV1ServerEvent.g.cs
+//HintName: G.Models.AgentV1ServerEvent.g.cs
 #pragma warning disable CS0618 // Type or member is obsolete
 
 #nullable enable
@@ -48,8 +48,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.AgentStarted PickAgentStarted() => IsAgentStarted
-            ? AgentStarted!
+        public global::G.AgentStarted PickAgentStarted() => AgentStarted is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'AgentStarted' but the value was {ToString()}.");
 
         /// <summary>
@@ -85,8 +85,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.AgentThinking PickAgentThinking() => IsAgentThinking
-            ? AgentThinking!
+        public global::G.AgentThinking PickAgentThinking() => AgentThinking is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'AgentThinking' but the value was {ToString()}.");
         /// <summary>
         /// 
@@ -186,13 +186,13 @@ namespace G
                 Validate();
             }
 
-            if (IsAgentStarted && agentStarted != null)
+            if (AgentStarted is { } __value0 && agentStarted != null)
             {
-                return agentStarted(AgentStarted!);
+                return agentStarted(__value0);
             }
-            else if (IsAgentThinking && agentThinking != null)
+            else if (AgentThinking is { } __value1 && agentThinking != null)
             {
-                return agentThinking(AgentThinking!);
+                return agentThinking(__value1);
             }
 
             return default(TResult);
@@ -212,13 +212,13 @@ namespace G
                 Validate();
             }
 
-            if (IsAgentStarted)
+            if (AgentStarted is { } __value0)
             {
-                agentStarted?.Invoke(AgentStarted!);
+                agentStarted?.Invoke(__value0);
             }
-            else if (IsAgentThinking)
+            else if (AgentThinking is { } __value1)
             {
-                agentThinking?.Invoke(AgentThinking!);
+                agentThinking?.Invoke(__value1);
             }
         }
 
@@ -235,13 +235,13 @@ namespace G
                 Validate();
             }
 
-            if (IsAgentStarted)
+            if (AgentStarted is { } __value0)
             {
-                agentStarted?.Invoke(AgentStarted!);
+                agentStarted?.Invoke(__value0);
             }
-            else if (IsAgentThinking)
+            else if (AgentThinking is { } __value1)
             {
-                agentThinking?.Invoke(AgentThinking!);
+                agentThinking?.Invoke(__value1);
             }
         }
 

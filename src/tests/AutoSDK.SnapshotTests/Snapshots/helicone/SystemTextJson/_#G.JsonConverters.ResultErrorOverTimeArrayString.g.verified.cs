@@ -1,4 +1,4 @@
-﻿//HintName: G.JsonConverters.ResultErrorOverTimeArrayString.g.cs
+//HintName: G.JsonConverters.ResultErrorOverTimeArrayString.g.cs
 #nullable enable
 #pragma warning disable CS0618 // Type or member is obsolete
 
@@ -131,13 +131,13 @@ namespace G.JsonConverters
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.ResultSuccessErrorOverTimeArray), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.ResultSuccessErrorOverTimeArray?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.ResultSuccessErrorOverTimeArray).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Success!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickSuccess(), typeInfo);
             }
             else if (value.IsResultErrorString)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.ResultErrorString), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.ResultErrorString?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.ResultErrorString).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.ResultErrorString!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickResultErrorString(), typeInfo);
             }
         }
     }

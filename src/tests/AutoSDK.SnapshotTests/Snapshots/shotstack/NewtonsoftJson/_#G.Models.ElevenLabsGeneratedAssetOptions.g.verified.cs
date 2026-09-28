@@ -1,4 +1,4 @@
-﻿//HintName: G.Models.ElevenLabsGeneratedAssetOptions.g.cs
+//HintName: G.Models.ElevenLabsGeneratedAssetOptions.g.cs
 #pragma warning disable CS0618 // Type or member is obsolete
 
 #nullable enable
@@ -51,8 +51,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.ElevenLabsTextToSpeechOptions PickTextToSpeech() => IsTextToSpeech
-            ? TextToSpeech!
+        public global::G.ElevenLabsTextToSpeechOptions PickTextToSpeech() => TextToSpeech is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'TextToSpeech' but the value was {ToString()}.");
         /// <summary>
         /// 
@@ -124,9 +124,9 @@ namespace G
                 Validate();
             }
 
-            if (IsTextToSpeech && textToSpeech != null)
+            if (TextToSpeech is { } __value0 && textToSpeech != null)
             {
-                return textToSpeech(TextToSpeech!);
+                return textToSpeech(__value0);
             }
 
             return default(TResult);
@@ -144,9 +144,9 @@ namespace G
                 Validate();
             }
 
-            if (IsTextToSpeech)
+            if (TextToSpeech is { } __value0)
             {
-                textToSpeech?.Invoke(TextToSpeech!);
+                textToSpeech?.Invoke(__value0);
             }
         }
 
@@ -162,9 +162,9 @@ namespace G
                 Validate();
             }
 
-            if (IsTextToSpeech)
+            if (TextToSpeech is { } __value0)
             {
-                textToSpeech?.Invoke(TextToSpeech!);
+                textToSpeech?.Invoke(__value0);
             }
         }
 

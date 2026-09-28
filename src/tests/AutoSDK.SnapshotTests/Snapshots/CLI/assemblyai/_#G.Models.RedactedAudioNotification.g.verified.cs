@@ -1,4 +1,4 @@
-﻿//HintName: G.Models.RedactedAudioNotification.g.cs
+//HintName: G.Models.RedactedAudioNotification.g.cs
 #pragma warning disable CS0618 // Type or member is obsolete
 
 #nullable enable
@@ -44,8 +44,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.RedactedAudioResponse PickResponse() => IsResponse
-            ? Response!
+        public global::G.RedactedAudioResponse PickResponse() => Response is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Response' but the value was {ToString()}.");
         /// <summary>
         /// 
@@ -104,9 +104,9 @@ namespace G
                 Validate();
             }
 
-            if (IsResponse && response != null)
+            if (Response is { } __value0 && response != null)
             {
-                return response(Response!);
+                return response(__value0);
             }
 
             return default(TResult);
@@ -124,9 +124,9 @@ namespace G
                 Validate();
             }
 
-            if (IsResponse)
+            if (Response is { } __value0)
             {
-                response?.Invoke(Response!);
+                response?.Invoke(__value0);
             }
         }
 
@@ -142,9 +142,9 @@ namespace G
                 Validate();
             }
 
-            if (IsResponse)
+            if (Response is { } __value0)
             {
-                response?.Invoke(Response!);
+                response?.Invoke(__value0);
             }
         }
 

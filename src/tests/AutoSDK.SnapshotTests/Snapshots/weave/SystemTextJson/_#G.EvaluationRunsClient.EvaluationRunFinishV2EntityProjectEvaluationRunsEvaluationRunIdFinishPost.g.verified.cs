@@ -1,4 +1,4 @@
-﻿//HintName: G.EvaluationRunsClient.EvaluationRunFinishV2EntityProjectEvaluationRunsEvaluationRunIdFinishPost.g.cs
+//HintName: G.EvaluationRunsClient.EvaluationRunFinishV2EntityProjectEvaluationRunsEvaluationRunIdFinishPost.g.cs
 
 #nullable enable
 
@@ -183,9 +183,9 @@ namespace G
                 PrepareEvaluationRunFinishV2EntityProjectEvaluationRunsEvaluationRunIdFinishPostRequest(
                     httpClient: HttpClient,
                     httpRequestMessage: __httpRequest,
-                    entity: entity!,
-                    project: project!,
-                    evaluationRunId: evaluationRunId!,
+                    entity: entity,
+                    project: project,
+                    evaluationRunId: evaluationRunId,
                     request: request);
 
                 return __httpRequest;
@@ -208,7 +208,7 @@ namespace G
                                 pathTemplate: "$\"/v2/{entity}/{project}/evaluation_runs/{evaluationRunId}/finish\"",
                                 httpMethod: "POST",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: null,
                                 exception: null,
                                 clientOptions: Options,
@@ -242,7 +242,7 @@ namespace G
                                 pathTemplate: "$\"/v2/{entity}/{project}/evaluation_runs/{evaluationRunId}/finish\"",
                                 httpMethod: "POST",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: null,
                                 exception: __exception,
                                 clientOptions: Options,
@@ -283,7 +283,7 @@ namespace G
                                 pathTemplate: "$\"/v2/{entity}/{project}/evaluation_runs/{evaluationRunId}/finish\"",
                                 httpMethod: "POST",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: __response,
                                 exception: null,
                                 clientOptions: Options,
@@ -331,7 +331,7 @@ namespace G
                                 pathTemplate: "$\"/v2/{entity}/{project}/evaluation_runs/{evaluationRunId}/finish\"",
                                 httpMethod: "POST",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: __response,
                                 exception: null,
                                 clientOptions: Options,
@@ -353,7 +353,7 @@ namespace G
                                 pathTemplate: "$\"/v2/{entity}/{project}/evaluation_runs/{evaluationRunId}/finish\"",
                                 httpMethod: "POST",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: __response,
                                 exception: null,
                                 clientOptions: Options,

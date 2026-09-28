@@ -1,4 +1,4 @@
-﻿//HintName: G.Models.ChatToolCallsGenerationEvent.g.cs
+//HintName: G.Models.ChatToolCallsGenerationEvent.g.cs
 #pragma warning disable CS0618 // Type or member is obsolete
 
 #nullable enable
@@ -43,8 +43,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.ChatStreamEvent PickStream() => IsStream
-            ? Stream!
+        public global::G.ChatStreamEvent PickStream() => Stream is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Stream' but the value was {ToString()}.");
 
         /// <summary>
@@ -80,8 +80,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.ChatToolCallsGenerationEventNykiww PickNykiww() => IsNykiww
-            ? Nykiww!
+        public global::G.ChatToolCallsGenerationEventNykiww PickNykiww() => Nykiww is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Nykiww' but the value was {ToString()}.");
         /// <summary>
         /// 
@@ -178,13 +178,13 @@ namespace G
                 Validate();
             }
 
-            if (IsStream && stream != null)
+            if (Stream is { } __value0 && stream != null)
             {
-                return stream(Stream!);
+                return stream(__value0);
             }
-            else if (IsNykiww && nykiww != null)
+            else if (Nykiww is { } __value1 && nykiww != null)
             {
-                return nykiww(Nykiww!);
+                return nykiww(__value1);
             }
 
             return default(TResult);
@@ -204,13 +204,13 @@ namespace G
                 Validate();
             }
 
-            if (IsStream)
+            if (Stream is { } __value0)
             {
-                stream?.Invoke(Stream!);
+                stream?.Invoke(__value0);
             }
-            else if (IsNykiww)
+            else if (Nykiww is { } __value1)
             {
-                nykiww?.Invoke(Nykiww!);
+                nykiww?.Invoke(__value1);
             }
         }
 
@@ -227,13 +227,13 @@ namespace G
                 Validate();
             }
 
-            if (IsStream)
+            if (Stream is { } __value0)
             {
-                stream?.Invoke(Stream!);
+                stream?.Invoke(__value0);
             }
-            else if (IsNykiww)
+            else if (Nykiww is { } __value1)
             {
-                nykiww?.Invoke(Nykiww!);
+                nykiww?.Invoke(__value1);
             }
         }
 

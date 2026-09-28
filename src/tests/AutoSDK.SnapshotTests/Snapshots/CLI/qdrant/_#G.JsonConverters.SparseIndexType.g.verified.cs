@@ -1,4 +1,4 @@
-﻿//HintName: G.JsonConverters.SparseIndexType.g.cs
+//HintName: G.JsonConverters.SparseIndexType.g.cs
 #nullable enable
 #pragma warning disable CS0618 // Type or member is obsolete
 
@@ -199,19 +199,19 @@ namespace G.JsonConverters
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.SparseIndexTypeVariant1), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.SparseIndexTypeVariant1> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.SparseIndexTypeVariant1).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.SparseIndexTypeVariant1!.Value, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickSparseIndexTypeVariant1(), typeInfo);
             }
             else if (value.IsSparseIndexTypeVariant2)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.SparseIndexTypeVariant2), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.SparseIndexTypeVariant2> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.SparseIndexTypeVariant2).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.SparseIndexTypeVariant2!.Value, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickSparseIndexTypeVariant2(), typeInfo);
             }
             else if (value.IsSparseIndexTypeVariant3)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.SparseIndexTypeVariant3), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.SparseIndexTypeVariant3> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.SparseIndexTypeVariant3).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.SparseIndexTypeVariant3!.Value, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickSparseIndexTypeVariant3(), typeInfo);
             }
         }
     }

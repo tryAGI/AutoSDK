@@ -1,4 +1,4 @@
-﻿//HintName: G.AppClient.AppPublicServiceChat.g.cs
+//HintName: G.AppClient.AppPublicServiceChat.g.cs
 
 #nullable enable
 
@@ -194,8 +194,8 @@ namespace G
                 PrepareAppPublicServiceChatRequest(
                     httpClient: HttpClient,
                     httpRequestMessage: __httpRequest,
-                    namespaceId: namespaceId!,
-                    appId: appId!,
+                    namespaceId: namespaceId,
+                    appId: appId,
                     request: request);
 
                 return __httpRequest;
@@ -218,7 +218,7 @@ namespace G
                                 pathTemplate: "$\"/v1alpha/namespaces/{namespaceId}/apps/{appId}/chat\"",
                                 httpMethod: "POST",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: null,
                                 exception: null,
                                 clientOptions: Options,
@@ -252,7 +252,7 @@ namespace G
                                 pathTemplate: "$\"/v1alpha/namespaces/{namespaceId}/apps/{appId}/chat\"",
                                 httpMethod: "POST",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: null,
                                 exception: __exception,
                                 clientOptions: Options,
@@ -293,7 +293,7 @@ namespace G
                                 pathTemplate: "$\"/v1alpha/namespaces/{namespaceId}/apps/{appId}/chat\"",
                                 httpMethod: "POST",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: __response,
                                 exception: null,
                                 clientOptions: Options,
@@ -341,7 +341,7 @@ namespace G
                                 pathTemplate: "$\"/v1alpha/namespaces/{namespaceId}/apps/{appId}/chat\"",
                                 httpMethod: "POST",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: __response,
                                 exception: null,
                                 clientOptions: Options,
@@ -363,7 +363,7 @@ namespace G
                                 pathTemplate: "$\"/v1alpha/namespaces/{namespaceId}/apps/{appId}/chat\"",
                                 httpMethod: "POST",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: __response,
                                 exception: null,
                                 clientOptions: Options,

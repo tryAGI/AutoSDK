@@ -1,4 +1,4 @@
-﻿//HintName: G.Models.ViewOptions.g.cs
+//HintName: G.Models.ViewOptions.g.cs
 #pragma warning disable CS0618 // Type or member is obsolete
 
 #nullable enable
@@ -43,8 +43,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.ViewOptionsMonitorViewOptions PickMonitorViewOptions() => IsMonitorViewOptions
-            ? MonitorViewOptions!
+        public global::G.ViewOptionsMonitorViewOptions PickMonitorViewOptions() => MonitorViewOptions is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'MonitorViewOptions' but the value was {ToString()}.");
 
         /// <summary>
@@ -80,8 +80,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.ViewOptionsTableViewOptions PickTableViewOptions() => IsTableViewOptions
-            ? TableViewOptions!
+        public global::G.ViewOptionsTableViewOptions PickTableViewOptions() => TableViewOptions is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'TableViewOptions' but the value was {ToString()}.");
 
         /// <summary>
@@ -117,8 +117,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public object PickViewOptionsVariant3() => IsViewOptionsVariant3
-            ? ViewOptionsVariant3!
+        public object PickViewOptionsVariant3() => ViewOptionsVariant3 is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'ViewOptionsVariant3' but the value was {ToString()}.");
         /// <summary>
         /// 
@@ -220,17 +220,17 @@ namespace G
                 Validate();
             }
 
-            if (IsMonitorViewOptions && monitorViewOptions != null)
+            if (MonitorViewOptions is { } __value0 && monitorViewOptions != null)
             {
-                return monitorViewOptions(MonitorViewOptions!);
+                return monitorViewOptions(__value0);
             }
-            else if (IsTableViewOptions && tableViewOptions != null)
+            else if (TableViewOptions is { } __value1 && tableViewOptions != null)
             {
-                return tableViewOptions(TableViewOptions!);
+                return tableViewOptions(__value1);
             }
-            else if (IsViewOptionsVariant3 && viewOptionsVariant3 != null)
+            else if (ViewOptionsVariant3 is { } __value2 && viewOptionsVariant3 != null)
             {
-                return viewOptionsVariant3(ViewOptionsVariant3!);
+                return viewOptionsVariant3(__value2);
             }
 
             return default(TResult);
@@ -252,17 +252,17 @@ namespace G
                 Validate();
             }
 
-            if (IsMonitorViewOptions)
+            if (MonitorViewOptions is { } __value0)
             {
-                monitorViewOptions?.Invoke(MonitorViewOptions!);
+                monitorViewOptions?.Invoke(__value0);
             }
-            else if (IsTableViewOptions)
+            else if (TableViewOptions is { } __value1)
             {
-                tableViewOptions?.Invoke(TableViewOptions!);
+                tableViewOptions?.Invoke(__value1);
             }
-            else if (IsViewOptionsVariant3)
+            else if (ViewOptionsVariant3 is { } __value2)
             {
-                viewOptionsVariant3?.Invoke(ViewOptionsVariant3!);
+                viewOptionsVariant3?.Invoke(__value2);
             }
         }
 
@@ -280,17 +280,17 @@ namespace G
                 Validate();
             }
 
-            if (IsMonitorViewOptions)
+            if (MonitorViewOptions is { } __value0)
             {
-                monitorViewOptions?.Invoke(MonitorViewOptions!);
+                monitorViewOptions?.Invoke(__value0);
             }
-            else if (IsTableViewOptions)
+            else if (TableViewOptions is { } __value1)
             {
-                tableViewOptions?.Invoke(TableViewOptions!);
+                tableViewOptions?.Invoke(__value1);
             }
-            else if (IsViewOptionsVariant3)
+            else if (ViewOptionsVariant3 is { } __value2)
             {
-                viewOptionsVariant3?.Invoke(ViewOptionsVariant3!);
+                viewOptionsVariant3?.Invoke(__value2);
             }
         }
 

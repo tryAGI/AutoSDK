@@ -1,4 +1,4 @@
-﻿//HintName: G.ActionsClient.ActionsGetPendingDeploymentsForRun.g.cs
+//HintName: G.ActionsClient.ActionsGetPendingDeploymentsForRun.g.cs
 
 #nullable enable
 
@@ -125,9 +125,9 @@ namespace G
                 PrepareActionsGetPendingDeploymentsForRunRequest(
                     httpClient: HttpClient,
                     httpRequestMessage: __httpRequest,
-                    owner: owner!,
-                    repo: repo!,
-                    runId: runId!);
+                    owner: owner,
+                    repo: repo,
+                    runId: runId);
 
                 return __httpRequest;
             }
@@ -149,7 +149,7 @@ namespace G
                                 pathTemplate: "$\"/repos/{owner}/{repo}/actions/runs/{runId}/pending_deployments\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: null,
                                 exception: null,
                                 clientOptions: Options,
@@ -183,7 +183,7 @@ namespace G
                                 pathTemplate: "$\"/repos/{owner}/{repo}/actions/runs/{runId}/pending_deployments\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: null,
                                 exception: __exception,
                                 clientOptions: Options,
@@ -224,7 +224,7 @@ namespace G
                                 pathTemplate: "$\"/repos/{owner}/{repo}/actions/runs/{runId}/pending_deployments\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: __response,
                                 exception: null,
                                 clientOptions: Options,
@@ -272,7 +272,7 @@ namespace G
                                 pathTemplate: "$\"/repos/{owner}/{repo}/actions/runs/{runId}/pending_deployments\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: __response,
                                 exception: null,
                                 clientOptions: Options,
@@ -294,7 +294,7 @@ namespace G
                                 pathTemplate: "$\"/repos/{owner}/{repo}/actions/runs/{runId}/pending_deployments\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: __response,
                                 exception: null,
                                 clientOptions: Options,

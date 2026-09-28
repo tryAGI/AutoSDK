@@ -1,4 +1,4 @@
-﻿//HintName: G.JsonConverters.DataEntry.g.cs
+//HintName: G.JsonConverters.DataEntry.g.cs
 #nullable enable
 #pragma warning disable CS0618 // Type or member is obsolete
 
@@ -208,25 +208,25 @@ namespace G.JsonConverters
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.DataEntryVariant1), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.DataEntryVariant1?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.DataEntryVariant1).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.DataEntryVariant1!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickDataEntryVariant1(), typeInfo);
             }
             else if (value.IsDataEntryVariant2)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.DataEntryVariant2), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.DataEntryVariant2?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.DataEntryVariant2).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.DataEntryVariant2!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickDataEntryVariant2(), typeInfo);
             }
             else if (value.IsDataEntryVariant3)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.DataEntryVariant3), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.DataEntryVariant3?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.DataEntryVariant3).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.DataEntryVariant3!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickDataEntryVariant3(), typeInfo);
             }
             else if (value.IsDataEntryVariant4)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.DataEntryVariant4), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.DataEntryVariant4?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.DataEntryVariant4).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.DataEntryVariant4!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickDataEntryVariant4(), typeInfo);
             }
         }
     }

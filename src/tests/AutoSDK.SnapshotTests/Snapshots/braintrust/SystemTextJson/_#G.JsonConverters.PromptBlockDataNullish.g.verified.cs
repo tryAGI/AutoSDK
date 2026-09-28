@@ -1,4 +1,4 @@
-﻿//HintName: G.JsonConverters.PromptBlockDataNullish.g.cs
+//HintName: G.JsonConverters.PromptBlockDataNullish.g.cs
 #nullable enable
 #pragma warning disable CS0618 // Type or member is obsolete
 
@@ -169,19 +169,19 @@ namespace G.JsonConverters
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.PromptBlockDataNullishChat), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.PromptBlockDataNullishChat?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.PromptBlockDataNullishChat).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Chat!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickChat(), typeInfo);
             }
             else if (value.IsCompletion)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.PromptBlockDataNullishCompletion), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.PromptBlockDataNullishCompletion?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.PromptBlockDataNullishCompletion).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Completion!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickCompletion(), typeInfo);
             }
             else if (value.IsPromptBlockDataNullishVariant3)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(object), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<object?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(object).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PromptBlockDataNullishVariant3!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickPromptBlockDataNullishVariant3(), typeInfo);
             }
         }
     }

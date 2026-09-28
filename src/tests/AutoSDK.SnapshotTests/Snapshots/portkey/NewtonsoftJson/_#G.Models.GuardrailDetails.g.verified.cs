@@ -1,4 +1,4 @@
-﻿//HintName: G.Models.GuardrailDetails.g.cs
+//HintName: G.Models.GuardrailDetails.g.cs
 #pragma warning disable CS0618 // Type or member is obsolete
 
 #nullable enable
@@ -43,8 +43,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.GuardrailSummary PickSummary() => IsSummary
-            ? Summary!
+        public global::G.GuardrailSummary PickSummary() => Summary is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Summary' but the value was {ToString()}.");
 
         /// <summary>
@@ -80,8 +80,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.GuardrailDetailsVariant2 PickGuardrailDetailsVariant2() => IsGuardrailDetailsVariant2
-            ? GuardrailDetailsVariant2!
+        public global::G.GuardrailDetailsVariant2 PickGuardrailDetailsVariant2() => GuardrailDetailsVariant2 is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'GuardrailDetailsVariant2' but the value was {ToString()}.");
         /// <summary>
         /// 
@@ -178,13 +178,13 @@ namespace G
                 Validate();
             }
 
-            if (IsSummary && summary != null)
+            if (Summary is { } __value0 && summary != null)
             {
-                return summary(Summary!);
+                return summary(__value0);
             }
-            else if (IsGuardrailDetailsVariant2 && guardrailDetailsVariant2 != null)
+            else if (GuardrailDetailsVariant2 is { } __value1 && guardrailDetailsVariant2 != null)
             {
-                return guardrailDetailsVariant2(GuardrailDetailsVariant2!);
+                return guardrailDetailsVariant2(__value1);
             }
 
             return default(TResult);
@@ -204,13 +204,13 @@ namespace G
                 Validate();
             }
 
-            if (IsSummary)
+            if (Summary is { } __value0)
             {
-                summary?.Invoke(Summary!);
+                summary?.Invoke(__value0);
             }
-            else if (IsGuardrailDetailsVariant2)
+            else if (GuardrailDetailsVariant2 is { } __value1)
             {
-                guardrailDetailsVariant2?.Invoke(GuardrailDetailsVariant2!);
+                guardrailDetailsVariant2?.Invoke(__value1);
             }
         }
 
@@ -227,13 +227,13 @@ namespace G
                 Validate();
             }
 
-            if (IsSummary)
+            if (Summary is { } __value0)
             {
-                summary?.Invoke(Summary!);
+                summary?.Invoke(__value0);
             }
-            else if (IsGuardrailDetailsVariant2)
+            else if (GuardrailDetailsVariant2 is { } __value1)
             {
-                guardrailDetailsVariant2?.Invoke(GuardrailDetailsVariant2!);
+                guardrailDetailsVariant2?.Invoke(__value1);
             }
         }
 

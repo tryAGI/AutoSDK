@@ -1,4 +1,4 @@
-﻿//HintName: G.JsonConverters.InputMessageItemRole.g.cs
+//HintName: G.JsonConverters.InputMessageItemRole.g.cs
 #nullable enable
 #pragma warning disable CS0618 // Type or member is obsolete
 
@@ -199,19 +199,19 @@ namespace G.JsonConverters
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.InputMessageItemRole0), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.InputMessageItemRole0> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.InputMessageItemRole0).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.InputMessageItemRole0!.Value, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickInputMessageItemRole0(), typeInfo);
             }
             else if (value.IsInputMessageItemRole1)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.InputMessageItemRole1), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.InputMessageItemRole1> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.InputMessageItemRole1).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.InputMessageItemRole1!.Value, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickInputMessageItemRole1(), typeInfo);
             }
             else if (value.IsInputMessageItemRole2)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.InputMessageItemRole2), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.InputMessageItemRole2> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.InputMessageItemRole2).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.InputMessageItemRole2!.Value, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickInputMessageItemRole2(), typeInfo);
             }
         }
     }

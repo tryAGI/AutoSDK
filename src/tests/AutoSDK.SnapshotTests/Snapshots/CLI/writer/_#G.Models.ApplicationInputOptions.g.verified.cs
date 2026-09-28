@@ -1,4 +1,4 @@
-﻿//HintName: G.Models.ApplicationInputOptions.g.cs
+//HintName: G.Models.ApplicationInputOptions.g.cs
 #pragma warning disable CS0618 // Type or member is obsolete
 
 #nullable enable
@@ -43,8 +43,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.ApplicationInputDropdownOptions PickDropdown() => IsDropdown
-            ? Dropdown!
+        public global::G.ApplicationInputDropdownOptions PickDropdown() => Dropdown is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Dropdown' but the value was {ToString()}.");
 
         /// <summary>
@@ -80,8 +80,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.ApplicationInputFileOptions PickFile() => IsFile
-            ? File!
+        public global::G.ApplicationInputFileOptions PickFile() => File is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'File' but the value was {ToString()}.");
 
         /// <summary>
@@ -117,8 +117,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.ApplicationInputMediaOptions PickMedia() => IsMedia
-            ? Media!
+        public global::G.ApplicationInputMediaOptions PickMedia() => Media is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Media' but the value was {ToString()}.");
 
         /// <summary>
@@ -154,8 +154,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.ApplicationInputTextOptions PickText() => IsText
-            ? Text!
+        public global::G.ApplicationInputTextOptions PickText() => Text is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Text' but the value was {ToString()}.");
         /// <summary>
         /// 
@@ -308,21 +308,21 @@ namespace G
                 Validate();
             }
 
-            if (IsDropdown && dropdown != null)
+            if (Dropdown is { } __value0 && dropdown != null)
             {
-                return dropdown(Dropdown!);
+                return dropdown(__value0);
             }
-            else if (IsFile && file != null)
+            else if (File is { } __value1 && file != null)
             {
-                return file(File!);
+                return file(__value1);
             }
-            else if (IsMedia && media != null)
+            else if (Media is { } __value2 && media != null)
             {
-                return media(Media!);
+                return media(__value2);
             }
-            else if (IsText && text != null)
+            else if (Text is { } __value3 && text != null)
             {
-                return text(Text!);
+                return text(__value3);
             }
 
             return default(TResult);
@@ -346,21 +346,21 @@ namespace G
                 Validate();
             }
 
-            if (IsDropdown)
+            if (Dropdown is { } __value0)
             {
-                dropdown?.Invoke(Dropdown!);
+                dropdown?.Invoke(__value0);
             }
-            else if (IsFile)
+            else if (File is { } __value1)
             {
-                file?.Invoke(File!);
+                file?.Invoke(__value1);
             }
-            else if (IsMedia)
+            else if (Media is { } __value2)
             {
-                media?.Invoke(Media!);
+                media?.Invoke(__value2);
             }
-            else if (IsText)
+            else if (Text is { } __value3)
             {
-                text?.Invoke(Text!);
+                text?.Invoke(__value3);
             }
         }
 
@@ -379,21 +379,21 @@ namespace G
                 Validate();
             }
 
-            if (IsDropdown)
+            if (Dropdown is { } __value0)
             {
-                dropdown?.Invoke(Dropdown!);
+                dropdown?.Invoke(__value0);
             }
-            else if (IsFile)
+            else if (File is { } __value1)
             {
-                file?.Invoke(File!);
+                file?.Invoke(__value1);
             }
-            else if (IsMedia)
+            else if (Media is { } __value2)
             {
-                media?.Invoke(Media!);
+                media?.Invoke(__value2);
             }
-            else if (IsText)
+            else if (Text is { } __value3)
             {
-                text?.Invoke(Text!);
+                text?.Invoke(__value3);
             }
         }
 

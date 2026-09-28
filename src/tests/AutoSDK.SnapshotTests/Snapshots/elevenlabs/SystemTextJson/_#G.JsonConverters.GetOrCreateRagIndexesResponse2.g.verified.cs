@@ -1,4 +1,4 @@
-﻿//HintName: G.JsonConverters.GetOrCreateRagIndexesResponse2.g.cs
+//HintName: G.JsonConverters.GetOrCreateRagIndexesResponse2.g.cs
 #nullable enable
 #pragma warning disable CS0618 // Type or member is obsolete
 
@@ -60,13 +60,13 @@ namespace G.JsonConverters
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.RAGIndexBatchSuccessfulResponseModel), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.RAGIndexBatchSuccessfulResponseModel?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.RAGIndexBatchSuccessfulResponseModel).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Success!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickSuccess(), typeInfo);
             }
             else if (value.IsFailure)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.BatchFailureResponseModel), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.BatchFailureResponseModel?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.BatchFailureResponseModel).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Failure!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickFailure(), typeInfo);
             }
         }
     }

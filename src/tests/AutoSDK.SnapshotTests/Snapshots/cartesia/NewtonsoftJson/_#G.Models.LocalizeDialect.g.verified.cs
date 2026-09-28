@@ -1,4 +1,4 @@
-﻿//HintName: G.Models.LocalizeDialect.g.cs
+//HintName: G.Models.LocalizeDialect.g.cs
 #pragma warning disable CS0618 // Type or member is obsolete
 
 #nullable enable
@@ -43,8 +43,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.LocalizeEnglishDialect PickLocalizeEnglishDialect() => IsLocalizeEnglishDialect
-            ? LocalizeEnglishDialect!.Value
+        public global::G.LocalizeEnglishDialect PickLocalizeEnglishDialect() => LocalizeEnglishDialect is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'LocalizeEnglishDialect' but the value was {ToString()}.");
 
         /// <summary>
@@ -80,8 +80,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.LocalizeSpanishDialect PickLocalizeSpanishDialect() => IsLocalizeSpanishDialect
-            ? LocalizeSpanishDialect!.Value
+        public global::G.LocalizeSpanishDialect PickLocalizeSpanishDialect() => LocalizeSpanishDialect is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'LocalizeSpanishDialect' but the value was {ToString()}.");
 
         /// <summary>
@@ -117,8 +117,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.LocalizePortugueseDialect PickLocalizePortugueseDialect() => IsLocalizePortugueseDialect
-            ? LocalizePortugueseDialect!.Value
+        public global::G.LocalizePortugueseDialect PickLocalizePortugueseDialect() => LocalizePortugueseDialect is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'LocalizePortugueseDialect' but the value was {ToString()}.");
 
         /// <summary>
@@ -154,8 +154,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.LocalizeFrenchDialect PickLocalizeFrenchDialect() => IsLocalizeFrenchDialect
-            ? LocalizeFrenchDialect!.Value
+        public global::G.LocalizeFrenchDialect PickLocalizeFrenchDialect() => LocalizeFrenchDialect is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'LocalizeFrenchDialect' but the value was {ToString()}.");
         /// <summary>
         /// 
@@ -308,21 +308,21 @@ namespace G
                 Validate();
             }
 
-            if (IsLocalizeEnglishDialect && localizeEnglishDialect != null)
+            if (LocalizeEnglishDialect is { } __value0 && localizeEnglishDialect != null)
             {
-                return localizeEnglishDialect(LocalizeEnglishDialect!);
+                return localizeEnglishDialect(__value0);
             }
-            else if (IsLocalizeSpanishDialect && localizeSpanishDialect != null)
+            else if (LocalizeSpanishDialect is { } __value1 && localizeSpanishDialect != null)
             {
-                return localizeSpanishDialect(LocalizeSpanishDialect!);
+                return localizeSpanishDialect(__value1);
             }
-            else if (IsLocalizePortugueseDialect && localizePortugueseDialect != null)
+            else if (LocalizePortugueseDialect is { } __value2 && localizePortugueseDialect != null)
             {
-                return localizePortugueseDialect(LocalizePortugueseDialect!);
+                return localizePortugueseDialect(__value2);
             }
-            else if (IsLocalizeFrenchDialect && localizeFrenchDialect != null)
+            else if (LocalizeFrenchDialect is { } __value3 && localizeFrenchDialect != null)
             {
-                return localizeFrenchDialect(LocalizeFrenchDialect!);
+                return localizeFrenchDialect(__value3);
             }
 
             return default(TResult);
@@ -346,21 +346,21 @@ namespace G
                 Validate();
             }
 
-            if (IsLocalizeEnglishDialect)
+            if (LocalizeEnglishDialect is { } __value0)
             {
-                localizeEnglishDialect?.Invoke(LocalizeEnglishDialect!);
+                localizeEnglishDialect?.Invoke(__value0);
             }
-            else if (IsLocalizeSpanishDialect)
+            else if (LocalizeSpanishDialect is { } __value1)
             {
-                localizeSpanishDialect?.Invoke(LocalizeSpanishDialect!);
+                localizeSpanishDialect?.Invoke(__value1);
             }
-            else if (IsLocalizePortugueseDialect)
+            else if (LocalizePortugueseDialect is { } __value2)
             {
-                localizePortugueseDialect?.Invoke(LocalizePortugueseDialect!);
+                localizePortugueseDialect?.Invoke(__value2);
             }
-            else if (IsLocalizeFrenchDialect)
+            else if (LocalizeFrenchDialect is { } __value3)
             {
-                localizeFrenchDialect?.Invoke(LocalizeFrenchDialect!);
+                localizeFrenchDialect?.Invoke(__value3);
             }
         }
 
@@ -379,21 +379,21 @@ namespace G
                 Validate();
             }
 
-            if (IsLocalizeEnglishDialect)
+            if (LocalizeEnglishDialect is { } __value0)
             {
-                localizeEnglishDialect?.Invoke(LocalizeEnglishDialect!);
+                localizeEnglishDialect?.Invoke(__value0);
             }
-            else if (IsLocalizeSpanishDialect)
+            else if (LocalizeSpanishDialect is { } __value1)
             {
-                localizeSpanishDialect?.Invoke(LocalizeSpanishDialect!);
+                localizeSpanishDialect?.Invoke(__value1);
             }
-            else if (IsLocalizePortugueseDialect)
+            else if (LocalizePortugueseDialect is { } __value2)
             {
-                localizePortugueseDialect?.Invoke(LocalizePortugueseDialect!);
+                localizePortugueseDialect?.Invoke(__value2);
             }
-            else if (IsLocalizeFrenchDialect)
+            else if (LocalizeFrenchDialect is { } __value3)
             {
-                localizeFrenchDialect?.Invoke(LocalizeFrenchDialect!);
+                localizeFrenchDialect?.Invoke(__value3);
             }
         }
 

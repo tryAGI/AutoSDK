@@ -1,4 +1,4 @@
-﻿//HintName: G.Models.BatchVectorStruct.g.cs
+//HintName: G.Models.BatchVectorStruct.g.cs
 #pragma warning disable CS0618 // Type or member is obsolete
 
 #nullable enable
@@ -43,8 +43,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::System.Collections.Generic.IList<float>> PickBatchVectorStructVariant1() => IsBatchVectorStructVariant1
-            ? BatchVectorStructVariant1!
+        public global::System.Collections.Generic.IList<global::System.Collections.Generic.IList<float>> PickBatchVectorStructVariant1() => BatchVectorStructVariant1 is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'BatchVectorStructVariant1' but the value was {ToString()}.");
 
         /// <summary>
@@ -80,8 +80,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::System.Collections.Generic.IList<global::System.Collections.Generic.IList<float>>> PickBatchVectorStructVariant2() => IsBatchVectorStructVariant2
-            ? BatchVectorStructVariant2!
+        public global::System.Collections.Generic.IList<global::System.Collections.Generic.IList<global::System.Collections.Generic.IList<float>>> PickBatchVectorStructVariant2() => BatchVectorStructVariant2 is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'BatchVectorStructVariant2' but the value was {ToString()}.");
 
         /// <summary>
@@ -117,8 +117,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.Dictionary<string, global::System.Collections.Generic.IList<global::G.Vector>> PickBatchVectorStructVariant3() => IsBatchVectorStructVariant3
-            ? BatchVectorStructVariant3!
+        public global::System.Collections.Generic.Dictionary<string, global::System.Collections.Generic.IList<global::G.Vector>> PickBatchVectorStructVariant3() => BatchVectorStructVariant3 is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'BatchVectorStructVariant3' but the value was {ToString()}.");
 
         /// <summary>
@@ -154,8 +154,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::G.Document> PickBatchVectorStructVariant4() => IsBatchVectorStructVariant4
-            ? BatchVectorStructVariant4!
+        public global::System.Collections.Generic.IList<global::G.Document> PickBatchVectorStructVariant4() => BatchVectorStructVariant4 is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'BatchVectorStructVariant4' but the value was {ToString()}.");
 
         /// <summary>
@@ -191,8 +191,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::G.Image> PickBatchVectorStructVariant5() => IsBatchVectorStructVariant5
-            ? BatchVectorStructVariant5!
+        public global::System.Collections.Generic.IList<global::G.Image> PickBatchVectorStructVariant5() => BatchVectorStructVariant5 is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'BatchVectorStructVariant5' but the value was {ToString()}.");
 
         /// <summary>
@@ -228,8 +228,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::G.InferenceObject> PickBatchVectorStructVariant6() => IsBatchVectorStructVariant6
-            ? BatchVectorStructVariant6!
+        public global::System.Collections.Generic.IList<global::G.InferenceObject> PickBatchVectorStructVariant6() => BatchVectorStructVariant6 is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'BatchVectorStructVariant6' but the value was {ToString()}.");
         /// <summary>
         /// 
@@ -323,29 +323,29 @@ namespace G
                 Validate();
             }
 
-            if (IsBatchVectorStructVariant1 && batchVectorStructVariant1 != null)
+            if (BatchVectorStructVariant1 is { } __value0 && batchVectorStructVariant1 != null)
             {
-                return batchVectorStructVariant1(BatchVectorStructVariant1!);
+                return batchVectorStructVariant1(__value0);
             }
-            else if (IsBatchVectorStructVariant2 && batchVectorStructVariant2 != null)
+            else if (BatchVectorStructVariant2 is { } __value1 && batchVectorStructVariant2 != null)
             {
-                return batchVectorStructVariant2(BatchVectorStructVariant2!);
+                return batchVectorStructVariant2(__value1);
             }
-            else if (IsBatchVectorStructVariant3 && batchVectorStructVariant3 != null)
+            else if (BatchVectorStructVariant3 is { } __value2 && batchVectorStructVariant3 != null)
             {
-                return batchVectorStructVariant3(BatchVectorStructVariant3!);
+                return batchVectorStructVariant3(__value2);
             }
-            else if (IsBatchVectorStructVariant4 && batchVectorStructVariant4 != null)
+            else if (BatchVectorStructVariant4 is { } __value3 && batchVectorStructVariant4 != null)
             {
-                return batchVectorStructVariant4(BatchVectorStructVariant4!);
+                return batchVectorStructVariant4(__value3);
             }
-            else if (IsBatchVectorStructVariant5 && batchVectorStructVariant5 != null)
+            else if (BatchVectorStructVariant5 is { } __value4 && batchVectorStructVariant5 != null)
             {
-                return batchVectorStructVariant5(BatchVectorStructVariant5!);
+                return batchVectorStructVariant5(__value4);
             }
-            else if (IsBatchVectorStructVariant6 && batchVectorStructVariant6 != null)
+            else if (BatchVectorStructVariant6 is { } __value5 && batchVectorStructVariant6 != null)
             {
-                return batchVectorStructVariant6(BatchVectorStructVariant6!);
+                return batchVectorStructVariant6(__value5);
             }
 
             return default(TResult);
@@ -373,29 +373,29 @@ namespace G
                 Validate();
             }
 
-            if (IsBatchVectorStructVariant1)
+            if (BatchVectorStructVariant1 is { } __value0)
             {
-                batchVectorStructVariant1?.Invoke(BatchVectorStructVariant1!);
+                batchVectorStructVariant1?.Invoke(__value0);
             }
-            else if (IsBatchVectorStructVariant2)
+            else if (BatchVectorStructVariant2 is { } __value1)
             {
-                batchVectorStructVariant2?.Invoke(BatchVectorStructVariant2!);
+                batchVectorStructVariant2?.Invoke(__value1);
             }
-            else if (IsBatchVectorStructVariant3)
+            else if (BatchVectorStructVariant3 is { } __value2)
             {
-                batchVectorStructVariant3?.Invoke(BatchVectorStructVariant3!);
+                batchVectorStructVariant3?.Invoke(__value2);
             }
-            else if (IsBatchVectorStructVariant4)
+            else if (BatchVectorStructVariant4 is { } __value3)
             {
-                batchVectorStructVariant4?.Invoke(BatchVectorStructVariant4!);
+                batchVectorStructVariant4?.Invoke(__value3);
             }
-            else if (IsBatchVectorStructVariant5)
+            else if (BatchVectorStructVariant5 is { } __value4)
             {
-                batchVectorStructVariant5?.Invoke(BatchVectorStructVariant5!);
+                batchVectorStructVariant5?.Invoke(__value4);
             }
-            else if (IsBatchVectorStructVariant6)
+            else if (BatchVectorStructVariant6 is { } __value5)
             {
-                batchVectorStructVariant6?.Invoke(BatchVectorStructVariant6!);
+                batchVectorStructVariant6?.Invoke(__value5);
             }
         }
 
@@ -416,29 +416,29 @@ namespace G
                 Validate();
             }
 
-            if (IsBatchVectorStructVariant1)
+            if (BatchVectorStructVariant1 is { } __value0)
             {
-                batchVectorStructVariant1?.Invoke(BatchVectorStructVariant1!);
+                batchVectorStructVariant1?.Invoke(__value0);
             }
-            else if (IsBatchVectorStructVariant2)
+            else if (BatchVectorStructVariant2 is { } __value1)
             {
-                batchVectorStructVariant2?.Invoke(BatchVectorStructVariant2!);
+                batchVectorStructVariant2?.Invoke(__value1);
             }
-            else if (IsBatchVectorStructVariant3)
+            else if (BatchVectorStructVariant3 is { } __value2)
             {
-                batchVectorStructVariant3?.Invoke(BatchVectorStructVariant3!);
+                batchVectorStructVariant3?.Invoke(__value2);
             }
-            else if (IsBatchVectorStructVariant4)
+            else if (BatchVectorStructVariant4 is { } __value3)
             {
-                batchVectorStructVariant4?.Invoke(BatchVectorStructVariant4!);
+                batchVectorStructVariant4?.Invoke(__value3);
             }
-            else if (IsBatchVectorStructVariant5)
+            else if (BatchVectorStructVariant5 is { } __value4)
             {
-                batchVectorStructVariant5?.Invoke(BatchVectorStructVariant5!);
+                batchVectorStructVariant5?.Invoke(__value4);
             }
-            else if (IsBatchVectorStructVariant6)
+            else if (BatchVectorStructVariant6 is { } __value5)
             {
-                batchVectorStructVariant6?.Invoke(BatchVectorStructVariant6!);
+                batchVectorStructVariant6?.Invoke(__value5);
             }
         }
 

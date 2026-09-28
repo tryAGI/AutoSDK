@@ -1,4 +1,4 @@
-﻿//HintName: G.FileStorageClient.UploadToFileStorage.g.cs
+//HintName: G.FileStorageClient.UploadToFileStorage.g.cs
 
 #nullable enable
 
@@ -186,9 +186,9 @@ namespace G
                 PrepareUploadToFileStorageRequest(
                     httpClient: HttpClient,
                     httpRequestMessage: __httpRequest,
-                    name: name!,
-                    projectId: projectId!,
-                    uploadType: uploadType!,
+                    name: name,
+                    projectId: projectId,
+                    uploadType: uploadType,
                     request: request);
 
                 return __httpRequest;
@@ -211,7 +211,7 @@ namespace G
                                 pathTemplate: "\"/api/v1/login/api/v1/filestorage/upload\"",
                                 httpMethod: "POST",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: null,
                                 exception: null,
                                 clientOptions: Options,
@@ -245,7 +245,7 @@ namespace G
                                 pathTemplate: "\"/api/v1/login/api/v1/filestorage/upload\"",
                                 httpMethod: "POST",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: null,
                                 exception: __exception,
                                 clientOptions: Options,
@@ -286,7 +286,7 @@ namespace G
                                 pathTemplate: "\"/api/v1/login/api/v1/filestorage/upload\"",
                                 httpMethod: "POST",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: __response,
                                 exception: null,
                                 clientOptions: Options,
@@ -334,7 +334,7 @@ namespace G
                                 pathTemplate: "\"/api/v1/login/api/v1/filestorage/upload\"",
                                 httpMethod: "POST",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: __response,
                                 exception: null,
                                 clientOptions: Options,
@@ -356,7 +356,7 @@ namespace G
                                 pathTemplate: "\"/api/v1/login/api/v1/filestorage/upload\"",
                                 httpMethod: "POST",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: __response,
                                 exception: null,
                                 clientOptions: Options,

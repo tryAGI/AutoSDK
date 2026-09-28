@@ -1,4 +1,4 @@
-﻿//HintName: G.JsonConverters.RealtimeServerEvent.g.cs
+//HintName: G.JsonConverters.RealtimeServerEvent.g.cs
 #nullable enable
 #pragma warning disable CS0618 // Type or member is obsolete
 
@@ -348,205 +348,205 @@ namespace G.JsonConverters
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.RealtimeServerEventConversationCreated), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.RealtimeServerEventConversationCreated?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.RealtimeServerEventConversationCreated).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.ConversationCreated!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickConversationCreated(), typeInfo);
             }
             else if (value.IsConversationItemCreated)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.RealtimeServerEventConversationItemCreated), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.RealtimeServerEventConversationItemCreated?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.RealtimeServerEventConversationItemCreated).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.ConversationItemCreated!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickConversationItemCreated(), typeInfo);
             }
             else if (value.IsConversationItemDeleted)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.RealtimeServerEventConversationItemDeleted), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.RealtimeServerEventConversationItemDeleted?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.RealtimeServerEventConversationItemDeleted).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.ConversationItemDeleted!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickConversationItemDeleted(), typeInfo);
             }
             else if (value.IsConversationItemInputAudioTranscriptionCompleted)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.RealtimeServerEventConversationItemInputAudioTranscriptionCompleted), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.RealtimeServerEventConversationItemInputAudioTranscriptionCompleted?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.RealtimeServerEventConversationItemInputAudioTranscriptionCompleted).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.ConversationItemInputAudioTranscriptionCompleted!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickConversationItemInputAudioTranscriptionCompleted(), typeInfo);
             }
             else if (value.IsConversationItemInputAudioTranscriptionDelta)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.RealtimeServerEventConversationItemInputAudioTranscriptionDelta), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.RealtimeServerEventConversationItemInputAudioTranscriptionDelta?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.RealtimeServerEventConversationItemInputAudioTranscriptionDelta).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.ConversationItemInputAudioTranscriptionDelta!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickConversationItemInputAudioTranscriptionDelta(), typeInfo);
             }
             else if (value.IsConversationItemInputAudioTranscriptionFailed)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.RealtimeServerEventConversationItemInputAudioTranscriptionFailed), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.RealtimeServerEventConversationItemInputAudioTranscriptionFailed?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.RealtimeServerEventConversationItemInputAudioTranscriptionFailed).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.ConversationItemInputAudioTranscriptionFailed!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickConversationItemInputAudioTranscriptionFailed(), typeInfo);
             }
             else if (value.IsConversationItemRetrieved)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.RealtimeServerEventConversationItemRetrieved), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.RealtimeServerEventConversationItemRetrieved?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.RealtimeServerEventConversationItemRetrieved).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.ConversationItemRetrieved!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickConversationItemRetrieved(), typeInfo);
             }
             else if (value.IsConversationItemTruncated)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.RealtimeServerEventConversationItemTruncated), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.RealtimeServerEventConversationItemTruncated?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.RealtimeServerEventConversationItemTruncated).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.ConversationItemTruncated!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickConversationItemTruncated(), typeInfo);
             }
             else if (value.IsError)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.RealtimeServerEventError), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.RealtimeServerEventError?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.RealtimeServerEventError).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Error!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickError(), typeInfo);
             }
             else if (value.IsInputAudioBufferCleared)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.RealtimeServerEventInputAudioBufferCleared), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.RealtimeServerEventInputAudioBufferCleared?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.RealtimeServerEventInputAudioBufferCleared).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.InputAudioBufferCleared!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickInputAudioBufferCleared(), typeInfo);
             }
             else if (value.IsInputAudioBufferCommitted)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.RealtimeServerEventInputAudioBufferCommitted), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.RealtimeServerEventInputAudioBufferCommitted?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.RealtimeServerEventInputAudioBufferCommitted).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.InputAudioBufferCommitted!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickInputAudioBufferCommitted(), typeInfo);
             }
             else if (value.IsInputAudioBufferSpeechStarted)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.RealtimeServerEventInputAudioBufferSpeechStarted), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.RealtimeServerEventInputAudioBufferSpeechStarted?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.RealtimeServerEventInputAudioBufferSpeechStarted).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.InputAudioBufferSpeechStarted!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickInputAudioBufferSpeechStarted(), typeInfo);
             }
             else if (value.IsInputAudioBufferSpeechStopped)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.RealtimeServerEventInputAudioBufferSpeechStopped), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.RealtimeServerEventInputAudioBufferSpeechStopped?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.RealtimeServerEventInputAudioBufferSpeechStopped).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.InputAudioBufferSpeechStopped!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickInputAudioBufferSpeechStopped(), typeInfo);
             }
             else if (value.IsRateLimitsUpdated)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.RealtimeServerEventRateLimitsUpdated), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.RealtimeServerEventRateLimitsUpdated?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.RealtimeServerEventRateLimitsUpdated).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.RateLimitsUpdated!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickRateLimitsUpdated(), typeInfo);
             }
             else if (value.IsResponseAudioDelta)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.RealtimeServerEventResponseAudioDelta), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.RealtimeServerEventResponseAudioDelta?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.RealtimeServerEventResponseAudioDelta).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.ResponseAudioDelta!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickResponseAudioDelta(), typeInfo);
             }
             else if (value.IsResponseAudioDone)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.RealtimeServerEventResponseAudioDone), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.RealtimeServerEventResponseAudioDone?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.RealtimeServerEventResponseAudioDone).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.ResponseAudioDone!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickResponseAudioDone(), typeInfo);
             }
             else if (value.IsResponseAudioTranscriptDelta)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.RealtimeServerEventResponseAudioTranscriptDelta), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.RealtimeServerEventResponseAudioTranscriptDelta?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.RealtimeServerEventResponseAudioTranscriptDelta).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.ResponseAudioTranscriptDelta!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickResponseAudioTranscriptDelta(), typeInfo);
             }
             else if (value.IsResponseAudioTranscriptDone)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.RealtimeServerEventResponseAudioTranscriptDone), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.RealtimeServerEventResponseAudioTranscriptDone?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.RealtimeServerEventResponseAudioTranscriptDone).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.ResponseAudioTranscriptDone!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickResponseAudioTranscriptDone(), typeInfo);
             }
             else if (value.IsResponseContentPartAdded)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.RealtimeServerEventResponseContentPartAdded), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.RealtimeServerEventResponseContentPartAdded?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.RealtimeServerEventResponseContentPartAdded).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.ResponseContentPartAdded!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickResponseContentPartAdded(), typeInfo);
             }
             else if (value.IsResponseContentPartDone)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.RealtimeServerEventResponseContentPartDone), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.RealtimeServerEventResponseContentPartDone?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.RealtimeServerEventResponseContentPartDone).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.ResponseContentPartDone!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickResponseContentPartDone(), typeInfo);
             }
             else if (value.IsResponseCreated)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.RealtimeServerEventResponseCreated), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.RealtimeServerEventResponseCreated?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.RealtimeServerEventResponseCreated).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.ResponseCreated!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickResponseCreated(), typeInfo);
             }
             else if (value.IsResponseDone)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.RealtimeServerEventResponseDone), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.RealtimeServerEventResponseDone?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.RealtimeServerEventResponseDone).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.ResponseDone!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickResponseDone(), typeInfo);
             }
             else if (value.IsResponseFunctionCallArgumentsDelta)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.RealtimeServerEventResponseFunctionCallArgumentsDelta), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.RealtimeServerEventResponseFunctionCallArgumentsDelta?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.RealtimeServerEventResponseFunctionCallArgumentsDelta).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.ResponseFunctionCallArgumentsDelta!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickResponseFunctionCallArgumentsDelta(), typeInfo);
             }
             else if (value.IsResponseFunctionCallArgumentsDone)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.RealtimeServerEventResponseFunctionCallArgumentsDone), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.RealtimeServerEventResponseFunctionCallArgumentsDone?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.RealtimeServerEventResponseFunctionCallArgumentsDone).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.ResponseFunctionCallArgumentsDone!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickResponseFunctionCallArgumentsDone(), typeInfo);
             }
             else if (value.IsResponseOutputItemAdded)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.RealtimeServerEventResponseOutputItemAdded), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.RealtimeServerEventResponseOutputItemAdded?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.RealtimeServerEventResponseOutputItemAdded).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.ResponseOutputItemAdded!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickResponseOutputItemAdded(), typeInfo);
             }
             else if (value.IsResponseOutputItemDone)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.RealtimeServerEventResponseOutputItemDone), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.RealtimeServerEventResponseOutputItemDone?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.RealtimeServerEventResponseOutputItemDone).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.ResponseOutputItemDone!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickResponseOutputItemDone(), typeInfo);
             }
             else if (value.IsResponseTextDelta)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.RealtimeServerEventResponseTextDelta), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.RealtimeServerEventResponseTextDelta?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.RealtimeServerEventResponseTextDelta).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.ResponseTextDelta!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickResponseTextDelta(), typeInfo);
             }
             else if (value.IsResponseTextDone)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.RealtimeServerEventResponseTextDone), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.RealtimeServerEventResponseTextDone?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.RealtimeServerEventResponseTextDone).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.ResponseTextDone!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickResponseTextDone(), typeInfo);
             }
             else if (value.IsSessionCreated)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.RealtimeServerEventSessionCreated), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.RealtimeServerEventSessionCreated?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.RealtimeServerEventSessionCreated).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.SessionCreated!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickSessionCreated(), typeInfo);
             }
             else if (value.IsSessionUpdated)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.RealtimeServerEventSessionUpdated), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.RealtimeServerEventSessionUpdated?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.RealtimeServerEventSessionUpdated).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.SessionUpdated!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickSessionUpdated(), typeInfo);
             }
             else if (value.IsTranscriptionSessionUpdated)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.RealtimeServerEventTranscriptionSessionUpdated), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.RealtimeServerEventTranscriptionSessionUpdated?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.RealtimeServerEventTranscriptionSessionUpdated).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.TranscriptionSessionUpdated!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickTranscriptionSessionUpdated(), typeInfo);
             }
             else if (value.IsOutputAudioBufferStarted)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.RealtimeServerEventOutputAudioBufferStarted), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.RealtimeServerEventOutputAudioBufferStarted?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.RealtimeServerEventOutputAudioBufferStarted).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.OutputAudioBufferStarted!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickOutputAudioBufferStarted(), typeInfo);
             }
             else if (value.IsOutputAudioBufferStopped)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.RealtimeServerEventOutputAudioBufferStopped), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.RealtimeServerEventOutputAudioBufferStopped?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.RealtimeServerEventOutputAudioBufferStopped).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.OutputAudioBufferStopped!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickOutputAudioBufferStopped(), typeInfo);
             }
             else if (value.IsOutputAudioBufferCleared)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.RealtimeServerEventOutputAudioBufferCleared), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.RealtimeServerEventOutputAudioBufferCleared?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.RealtimeServerEventOutputAudioBufferCleared).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.OutputAudioBufferCleared!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickOutputAudioBufferCleared(), typeInfo);
             }
         }
     }

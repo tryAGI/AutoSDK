@@ -1,4 +1,4 @@
-﻿//HintName: G.Models.InvokeParent.g.cs
+//HintName: G.Models.InvokeParent.g.cs
 #pragma warning disable CS0618 // Type or member is obsolete
 
 #nullable enable
@@ -43,8 +43,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.InvokeParentSpanParentStruct PickSpanParentStruct() => IsSpanParentStruct
-            ? SpanParentStruct!
+        public global::G.InvokeParentSpanParentStruct PickSpanParentStruct() => SpanParentStruct is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'SpanParentStruct' but the value was {ToString()}.");
 
         /// <summary>
@@ -80,8 +80,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public string PickInvokeParentVariant2() => IsInvokeParentVariant2
-            ? InvokeParentVariant2!
+        public string PickInvokeParentVariant2() => InvokeParentVariant2 is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'InvokeParentVariant2' but the value was {ToString()}.");
         /// <summary>
         /// 
@@ -178,13 +178,13 @@ namespace G
                 Validate();
             }
 
-            if (IsSpanParentStruct && spanParentStruct != null)
+            if (SpanParentStruct is { } __value0 && spanParentStruct != null)
             {
-                return spanParentStruct(SpanParentStruct!);
+                return spanParentStruct(__value0);
             }
-            else if (IsInvokeParentVariant2 && invokeParentVariant2 != null)
+            else if (InvokeParentVariant2 is { } __value1 && invokeParentVariant2 != null)
             {
-                return invokeParentVariant2(InvokeParentVariant2!);
+                return invokeParentVariant2(__value1);
             }
 
             return default(TResult);
@@ -204,13 +204,13 @@ namespace G
                 Validate();
             }
 
-            if (IsSpanParentStruct)
+            if (SpanParentStruct is { } __value0)
             {
-                spanParentStruct?.Invoke(SpanParentStruct!);
+                spanParentStruct?.Invoke(__value0);
             }
-            else if (IsInvokeParentVariant2)
+            else if (InvokeParentVariant2 is { } __value1)
             {
-                invokeParentVariant2?.Invoke(InvokeParentVariant2!);
+                invokeParentVariant2?.Invoke(__value1);
             }
         }
 
@@ -227,13 +227,13 @@ namespace G
                 Validate();
             }
 
-            if (IsSpanParentStruct)
+            if (SpanParentStruct is { } __value0)
             {
-                spanParentStruct?.Invoke(SpanParentStruct!);
+                spanParentStruct?.Invoke(__value0);
             }
-            else if (IsInvokeParentVariant2)
+            else if (InvokeParentVariant2 is { } __value1)
             {
-                invokeParentVariant2?.Invoke(InvokeParentVariant2!);
+                invokeParentVariant2?.Invoke(__value1);
             }
         }
 

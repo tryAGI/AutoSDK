@@ -1,4 +1,4 @@
-﻿//HintName: G.Models.RequestClickhouseFilterNode.g.cs
+//HintName: G.Models.RequestClickhouseFilterNode.g.cs
 #pragma warning disable CS0618 // Type or member is obsolete
 
 #nullable enable
@@ -43,8 +43,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.PickFilterLeafRequestResponseRmt PickPickLeafResponseRmt() => IsPickLeafResponseRmt
-            ? PickLeafResponseRmt!
+        public global::G.PickFilterLeafRequestResponseRmt PickPickLeafResponseRmt() => PickLeafResponseRmt is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'PickLeafResponseRmt' but the value was {ToString()}.");
 
         /// <summary>
@@ -80,8 +80,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.RequestClickhouseFilterBranch PickBranch() => IsBranch
-            ? Branch!
+        public global::G.RequestClickhouseFilterBranch PickBranch() => Branch is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Branch' but the value was {ToString()}.");
 
         /// <summary>
@@ -117,8 +117,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.RequestClickhouseFilterNodeEnum PickEnum() => IsEnum
-            ? Enum!.Value
+        public global::G.RequestClickhouseFilterNodeEnum PickEnum() => Enum is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Enum' but the value was {ToString()}.");
         /// <summary>
         /// 
@@ -243,17 +243,17 @@ namespace G
                 Validate();
             }
 
-            if (IsPickLeafResponseRmt && pickLeafResponseRmt != null)
+            if (PickLeafResponseRmt is { } __value0 && pickLeafResponseRmt != null)
             {
-                return pickLeafResponseRmt(PickLeafResponseRmt!);
+                return pickLeafResponseRmt(__value0);
             }
-            else if (IsBranch && branch != null)
+            else if (Branch is { } __value1 && branch != null)
             {
-                return branch(Branch!);
+                return branch(__value1);
             }
-            else if (IsEnum && @enum != null)
+            else if (Enum is { } __value2 && @enum != null)
             {
-                return @enum(Enum!);
+                return @enum(__value2);
             }
 
             return default(TResult);
@@ -275,17 +275,17 @@ namespace G
                 Validate();
             }
 
-            if (IsPickLeafResponseRmt)
+            if (PickLeafResponseRmt is { } __value0)
             {
-                pickLeafResponseRmt?.Invoke(PickLeafResponseRmt!);
+                pickLeafResponseRmt?.Invoke(__value0);
             }
-            else if (IsBranch)
+            else if (Branch is { } __value1)
             {
-                branch?.Invoke(Branch!);
+                branch?.Invoke(__value1);
             }
-            else if (IsEnum)
+            else if (Enum is { } __value2)
             {
-                @enum?.Invoke(Enum!);
+                @enum?.Invoke(__value2);
             }
         }
 
@@ -303,17 +303,17 @@ namespace G
                 Validate();
             }
 
-            if (IsPickLeafResponseRmt)
+            if (PickLeafResponseRmt is { } __value0)
             {
-                pickLeafResponseRmt?.Invoke(PickLeafResponseRmt!);
+                pickLeafResponseRmt?.Invoke(__value0);
             }
-            else if (IsBranch)
+            else if (Branch is { } __value1)
             {
-                branch?.Invoke(Branch!);
+                branch?.Invoke(__value1);
             }
-            else if (IsEnum)
+            else if (Enum is { } __value2)
             {
-                @enum?.Invoke(Enum!);
+                @enum?.Invoke(__value2);
             }
         }
 

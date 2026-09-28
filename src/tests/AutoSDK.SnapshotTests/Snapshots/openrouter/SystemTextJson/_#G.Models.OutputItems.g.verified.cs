@@ -1,4 +1,4 @@
-﻿//HintName: G.Models.OutputItems.g.cs
+//HintName: G.Models.OutputItems.g.cs
 #pragma warning disable CS0618 // Type or member is obsolete
 
 #nullable enable
@@ -43,8 +43,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.OutputMessageItem PickOutputMessageItem() => IsOutputMessageItem
-            ? OutputMessageItem!
+        public global::G.OutputMessageItem PickOutputMessageItem() => OutputMessageItem is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'OutputMessageItem' but the value was {ToString()}.");
 
         /// <summary>
@@ -80,8 +80,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.OutputReasoningItem PickOutputReasoningItem() => IsOutputReasoningItem
-            ? OutputReasoningItem!
+        public global::G.OutputReasoningItem PickOutputReasoningItem() => OutputReasoningItem is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'OutputReasoningItem' but the value was {ToString()}.");
 
         /// <summary>
@@ -117,8 +117,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.OutputFunctionCallItem PickOutputFunctionCallItem() => IsOutputFunctionCallItem
-            ? OutputFunctionCallItem!
+        public global::G.OutputFunctionCallItem PickOutputFunctionCallItem() => OutputFunctionCallItem is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'OutputFunctionCallItem' but the value was {ToString()}.");
 
         /// <summary>
@@ -154,8 +154,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.OutputWebSearchCallItem PickOutputWebSearchCallItem() => IsOutputWebSearchCallItem
-            ? OutputWebSearchCallItem!
+        public global::G.OutputWebSearchCallItem PickOutputWebSearchCallItem() => OutputWebSearchCallItem is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'OutputWebSearchCallItem' but the value was {ToString()}.");
 
         /// <summary>
@@ -191,8 +191,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.OutputFileSearchCallItem PickOutputFileSearchCallItem() => IsOutputFileSearchCallItem
-            ? OutputFileSearchCallItem!
+        public global::G.OutputFileSearchCallItem PickOutputFileSearchCallItem() => OutputFileSearchCallItem is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'OutputFileSearchCallItem' but the value was {ToString()}.");
 
         /// <summary>
@@ -228,8 +228,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.OutputImageGenerationCallItem PickOutputImageGenerationCallItem() => IsOutputImageGenerationCallItem
-            ? OutputImageGenerationCallItem!
+        public global::G.OutputImageGenerationCallItem PickOutputImageGenerationCallItem() => OutputImageGenerationCallItem is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'OutputImageGenerationCallItem' but the value was {ToString()}.");
 
         /// <summary>
@@ -265,8 +265,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.OutputServerToolItem PickOutputServerToolItem() => IsOutputServerToolItem
-            ? OutputServerToolItem!
+        public global::G.OutputServerToolItem PickOutputServerToolItem() => OutputServerToolItem is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'OutputServerToolItem' but the value was {ToString()}.");
         /// <summary>
         /// 
@@ -503,33 +503,33 @@ namespace G
                 Validate();
             }
 
-            if (IsOutputMessageItem && outputMessageItem != null)
+            if (OutputMessageItem is { } __value0 && outputMessageItem != null)
             {
-                return outputMessageItem(OutputMessageItem!);
+                return outputMessageItem(__value0);
             }
-            else if (IsOutputReasoningItem && outputReasoningItem != null)
+            else if (OutputReasoningItem is { } __value1 && outputReasoningItem != null)
             {
-                return outputReasoningItem(OutputReasoningItem!);
+                return outputReasoningItem(__value1);
             }
-            else if (IsOutputFunctionCallItem && outputFunctionCallItem != null)
+            else if (OutputFunctionCallItem is { } __value2 && outputFunctionCallItem != null)
             {
-                return outputFunctionCallItem(OutputFunctionCallItem!);
+                return outputFunctionCallItem(__value2);
             }
-            else if (IsOutputWebSearchCallItem && outputWebSearchCallItem != null)
+            else if (OutputWebSearchCallItem is { } __value3 && outputWebSearchCallItem != null)
             {
-                return outputWebSearchCallItem(OutputWebSearchCallItem!);
+                return outputWebSearchCallItem(__value3);
             }
-            else if (IsOutputFileSearchCallItem && outputFileSearchCallItem != null)
+            else if (OutputFileSearchCallItem is { } __value4 && outputFileSearchCallItem != null)
             {
-                return outputFileSearchCallItem(OutputFileSearchCallItem!);
+                return outputFileSearchCallItem(__value4);
             }
-            else if (IsOutputImageGenerationCallItem && outputImageGenerationCallItem != null)
+            else if (OutputImageGenerationCallItem is { } __value5 && outputImageGenerationCallItem != null)
             {
-                return outputImageGenerationCallItem(OutputImageGenerationCallItem!);
+                return outputImageGenerationCallItem(__value5);
             }
-            else if (IsOutputServerToolItem && outputServerToolItem != null)
+            else if (OutputServerToolItem is { } __value6 && outputServerToolItem != null)
             {
-                return outputServerToolItem(OutputServerToolItem!);
+                return outputServerToolItem(__value6);
             }
 
             return default(TResult);
@@ -559,33 +559,33 @@ namespace G
                 Validate();
             }
 
-            if (IsOutputMessageItem)
+            if (OutputMessageItem is { } __value0)
             {
-                outputMessageItem?.Invoke(OutputMessageItem!);
+                outputMessageItem?.Invoke(__value0);
             }
-            else if (IsOutputReasoningItem)
+            else if (OutputReasoningItem is { } __value1)
             {
-                outputReasoningItem?.Invoke(OutputReasoningItem!);
+                outputReasoningItem?.Invoke(__value1);
             }
-            else if (IsOutputFunctionCallItem)
+            else if (OutputFunctionCallItem is { } __value2)
             {
-                outputFunctionCallItem?.Invoke(OutputFunctionCallItem!);
+                outputFunctionCallItem?.Invoke(__value2);
             }
-            else if (IsOutputWebSearchCallItem)
+            else if (OutputWebSearchCallItem is { } __value3)
             {
-                outputWebSearchCallItem?.Invoke(OutputWebSearchCallItem!);
+                outputWebSearchCallItem?.Invoke(__value3);
             }
-            else if (IsOutputFileSearchCallItem)
+            else if (OutputFileSearchCallItem is { } __value4)
             {
-                outputFileSearchCallItem?.Invoke(OutputFileSearchCallItem!);
+                outputFileSearchCallItem?.Invoke(__value4);
             }
-            else if (IsOutputImageGenerationCallItem)
+            else if (OutputImageGenerationCallItem is { } __value5)
             {
-                outputImageGenerationCallItem?.Invoke(OutputImageGenerationCallItem!);
+                outputImageGenerationCallItem?.Invoke(__value5);
             }
-            else if (IsOutputServerToolItem)
+            else if (OutputServerToolItem is { } __value6)
             {
-                outputServerToolItem?.Invoke(OutputServerToolItem!);
+                outputServerToolItem?.Invoke(__value6);
             }
         }
 
@@ -607,33 +607,33 @@ namespace G
                 Validate();
             }
 
-            if (IsOutputMessageItem)
+            if (OutputMessageItem is { } __value0)
             {
-                outputMessageItem?.Invoke(OutputMessageItem!);
+                outputMessageItem?.Invoke(__value0);
             }
-            else if (IsOutputReasoningItem)
+            else if (OutputReasoningItem is { } __value1)
             {
-                outputReasoningItem?.Invoke(OutputReasoningItem!);
+                outputReasoningItem?.Invoke(__value1);
             }
-            else if (IsOutputFunctionCallItem)
+            else if (OutputFunctionCallItem is { } __value2)
             {
-                outputFunctionCallItem?.Invoke(OutputFunctionCallItem!);
+                outputFunctionCallItem?.Invoke(__value2);
             }
-            else if (IsOutputWebSearchCallItem)
+            else if (OutputWebSearchCallItem is { } __value3)
             {
-                outputWebSearchCallItem?.Invoke(OutputWebSearchCallItem!);
+                outputWebSearchCallItem?.Invoke(__value3);
             }
-            else if (IsOutputFileSearchCallItem)
+            else if (OutputFileSearchCallItem is { } __value4)
             {
-                outputFileSearchCallItem?.Invoke(OutputFileSearchCallItem!);
+                outputFileSearchCallItem?.Invoke(__value4);
             }
-            else if (IsOutputImageGenerationCallItem)
+            else if (OutputImageGenerationCallItem is { } __value5)
             {
-                outputImageGenerationCallItem?.Invoke(OutputImageGenerationCallItem!);
+                outputImageGenerationCallItem?.Invoke(__value5);
             }
-            else if (IsOutputServerToolItem)
+            else if (OutputServerToolItem is { } __value6)
             {
-                outputServerToolItem?.Invoke(OutputServerToolItem!);
+                outputServerToolItem?.Invoke(__value6);
             }
         }
 

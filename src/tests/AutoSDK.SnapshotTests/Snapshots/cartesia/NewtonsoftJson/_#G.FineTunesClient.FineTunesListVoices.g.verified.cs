@@ -1,4 +1,4 @@
-﻿//HintName: G.FineTunesClient.FineTunesListVoices.g.cs
+//HintName: G.FineTunesClient.FineTunesListVoices.g.cs
 
 #nullable enable
 
@@ -198,8 +198,8 @@ namespace G
                 PrepareFineTunesListVoicesRequest(
                     httpClient: HttpClient,
                     httpRequestMessage: __httpRequest,
-                    cartesiaVersion: cartesiaVersion!,
-                    id: id!,
+                    cartesiaVersion: cartesiaVersion,
+                    id: id,
                     limit: limit,
                     startingAfter: startingAfter,
                     endingBefore: endingBefore);
@@ -226,7 +226,7 @@ namespace G
                                 pathTemplate: "$\"/fine-tunes/{id}/voices\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: null,
                                 exception: null,
                                 clientOptions: Options,
@@ -260,7 +260,7 @@ namespace G
                                 pathTemplate: "$\"/fine-tunes/{id}/voices\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: null,
                                 exception: __exception,
                                 clientOptions: Options,
@@ -301,7 +301,7 @@ namespace G
                                 pathTemplate: "$\"/fine-tunes/{id}/voices\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: __response,
                                 exception: null,
                                 clientOptions: Options,
@@ -349,7 +349,7 @@ namespace G
                                 pathTemplate: "$\"/fine-tunes/{id}/voices\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: __response,
                                 exception: null,
                                 clientOptions: Options,
@@ -371,7 +371,7 @@ namespace G
                                 pathTemplate: "$\"/fine-tunes/{id}/voices\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: __response,
                                 exception: null,
                                 clientOptions: Options,

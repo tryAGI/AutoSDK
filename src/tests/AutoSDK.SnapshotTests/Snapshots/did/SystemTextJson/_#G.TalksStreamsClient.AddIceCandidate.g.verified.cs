@@ -1,4 +1,4 @@
-﻿//HintName: G.TalksStreamsClient.AddIceCandidate.g.cs
+//HintName: G.TalksStreamsClient.AddIceCandidate.g.cs
 
 #nullable enable
 
@@ -197,7 +197,7 @@ namespace G
                 PrepareAddIceCandidateRequest(
                     httpClient: HttpClient,
                     httpRequestMessage: __httpRequest,
-                    id: id!,
+                    id: id,
                     cookie: cookie,
                     request: request);
 
@@ -223,7 +223,7 @@ namespace G
                                 pathTemplate: "$\"/talks/streams/{id}/ice\"",
                                 httpMethod: "POST",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: null,
                                 exception: null,
                                 clientOptions: Options,
@@ -257,7 +257,7 @@ namespace G
                                 pathTemplate: "$\"/talks/streams/{id}/ice\"",
                                 httpMethod: "POST",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: null,
                                 exception: __exception,
                                 clientOptions: Options,
@@ -298,7 +298,7 @@ namespace G
                                 pathTemplate: "$\"/talks/streams/{id}/ice\"",
                                 httpMethod: "POST",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: __response,
                                 exception: null,
                                 clientOptions: Options,
@@ -346,7 +346,7 @@ namespace G
                                 pathTemplate: "$\"/talks/streams/{id}/ice\"",
                                 httpMethod: "POST",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: __response,
                                 exception: null,
                                 clientOptions: Options,
@@ -368,7 +368,7 @@ namespace G
                                 pathTemplate: "$\"/talks/streams/{id}/ice\"",
                                 httpMethod: "POST",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: __response,
                                 exception: null,
                                 clientOptions: Options,

@@ -1,4 +1,4 @@
-﻿//HintName: G.ExperimentsClient.ListExperimentRuns.g.cs
+//HintName: G.ExperimentsClient.ListExperimentRuns.g.cs
 
 #nullable enable
 
@@ -133,7 +133,7 @@ namespace G
                 PrepareListExperimentRunsRequest(
                     httpClient: HttpClient,
                     httpRequestMessage: __httpRequest,
-                    experimentId: experimentId!,
+                    experimentId: experimentId,
                     cursor: cursor,
                     limit: limit);
 
@@ -157,7 +157,7 @@ namespace G
                                 pathTemplate: "$\"/v1/experiments/{experimentId}/runs\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: null,
                                 exception: null,
                                 clientOptions: Options,
@@ -191,7 +191,7 @@ namespace G
                                 pathTemplate: "$\"/v1/experiments/{experimentId}/runs\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: null,
                                 exception: __exception,
                                 clientOptions: Options,
@@ -232,7 +232,7 @@ namespace G
                                 pathTemplate: "$\"/v1/experiments/{experimentId}/runs\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: __response,
                                 exception: null,
                                 clientOptions: Options,
@@ -280,7 +280,7 @@ namespace G
                                 pathTemplate: "$\"/v1/experiments/{experimentId}/runs\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: __response,
                                 exception: null,
                                 clientOptions: Options,
@@ -302,7 +302,7 @@ namespace G
                                 pathTemplate: "$\"/v1/experiments/{experimentId}/runs\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: __response,
                                 exception: null,
                                 clientOptions: Options,

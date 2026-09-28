@@ -1,4 +1,4 @@
-﻿//HintName: G.Api.InferLmmWithModelIdInferLmmModelIdPost.g.cs
+//HintName: G.Api.InferLmmWithModelIdInferLmmModelIdPost.g.cs
 
 #nullable enable
 
@@ -144,7 +144,7 @@ namespace G
                 PrepareInferLmmWithModelIdInferLmmModelIdPostRequest(
                     httpClient: HttpClient,
                     httpRequestMessage: __httpRequest,
-                    modelId: modelId!,
+                    modelId: modelId,
                     countinference: countinference,
                     serviceSecret: serviceSecret,
                     request: request);
@@ -169,7 +169,7 @@ namespace G
                                 pathTemplate: "$\"/infer/lmm/{modelId}\"",
                                 httpMethod: "POST",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: null,
                                 exception: null,
                                 clientOptions: Options,
@@ -203,7 +203,7 @@ namespace G
                                 pathTemplate: "$\"/infer/lmm/{modelId}\"",
                                 httpMethod: "POST",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: null,
                                 exception: __exception,
                                 clientOptions: Options,
@@ -244,7 +244,7 @@ namespace G
                                 pathTemplate: "$\"/infer/lmm/{modelId}\"",
                                 httpMethod: "POST",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: __response,
                                 exception: null,
                                 clientOptions: Options,
@@ -292,7 +292,7 @@ namespace G
                                 pathTemplate: "$\"/infer/lmm/{modelId}\"",
                                 httpMethod: "POST",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: __response,
                                 exception: null,
                                 clientOptions: Options,
@@ -314,7 +314,7 @@ namespace G
                                 pathTemplate: "$\"/infer/lmm/{modelId}\"",
                                 httpMethod: "POST",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: __response,
                                 exception: null,
                                 clientOptions: Options,

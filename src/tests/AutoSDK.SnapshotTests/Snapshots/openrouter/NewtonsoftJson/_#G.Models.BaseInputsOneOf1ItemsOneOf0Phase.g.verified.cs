@@ -1,4 +1,4 @@
-﻿//HintName: G.Models.BaseInputsOneOf1ItemsOneOf0Phase.g.cs
+//HintName: G.Models.BaseInputsOneOf1ItemsOneOf0Phase.g.cs
 #pragma warning disable CS0618 // Type or member is obsolete
 
 #nullable enable
@@ -43,8 +43,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.BaseInputsOneOf1ItemsOneOf0Phase0 PickBaseInputsOneOf1ItemsOneOf0Phase0() => IsBaseInputsOneOf1ItemsOneOf0Phase0
-            ? BaseInputsOneOf1ItemsOneOf0Phase0!.Value
+        public global::G.BaseInputsOneOf1ItemsOneOf0Phase0 PickBaseInputsOneOf1ItemsOneOf0Phase0() => BaseInputsOneOf1ItemsOneOf0Phase0 is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'BaseInputsOneOf1ItemsOneOf0Phase0' but the value was {ToString()}.");
 
         /// <summary>
@@ -80,8 +80,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.BaseInputsOneOf1ItemsOneOf0Phase1 PickBaseInputsOneOf1ItemsOneOf0Phase1() => IsBaseInputsOneOf1ItemsOneOf0Phase1
-            ? BaseInputsOneOf1ItemsOneOf0Phase1!.Value
+        public global::G.BaseInputsOneOf1ItemsOneOf0Phase1 PickBaseInputsOneOf1ItemsOneOf0Phase1() => BaseInputsOneOf1ItemsOneOf0Phase1 is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'BaseInputsOneOf1ItemsOneOf0Phase1' but the value was {ToString()}.");
 
         /// <summary>
@@ -117,8 +117,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public object PickBaseInputsOneOf1ItemsOneOf0PhaseVariant3() => IsBaseInputsOneOf1ItemsOneOf0PhaseVariant3
-            ? BaseInputsOneOf1ItemsOneOf0PhaseVariant3!
+        public object PickBaseInputsOneOf1ItemsOneOf0PhaseVariant3() => BaseInputsOneOf1ItemsOneOf0PhaseVariant3 is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'BaseInputsOneOf1ItemsOneOf0PhaseVariant3' but the value was {ToString()}.");
         /// <summary>
         /// 
@@ -220,17 +220,17 @@ namespace G
                 Validate();
             }
 
-            if (IsBaseInputsOneOf1ItemsOneOf0Phase0 && baseInputsOneOf1ItemsOneOf0Phase0 != null)
+            if (BaseInputsOneOf1ItemsOneOf0Phase0 is { } __value0 && baseInputsOneOf1ItemsOneOf0Phase0 != null)
             {
-                return baseInputsOneOf1ItemsOneOf0Phase0(BaseInputsOneOf1ItemsOneOf0Phase0!);
+                return baseInputsOneOf1ItemsOneOf0Phase0(__value0);
             }
-            else if (IsBaseInputsOneOf1ItemsOneOf0Phase1 && baseInputsOneOf1ItemsOneOf0Phase1 != null)
+            else if (BaseInputsOneOf1ItemsOneOf0Phase1 is { } __value1 && baseInputsOneOf1ItemsOneOf0Phase1 != null)
             {
-                return baseInputsOneOf1ItemsOneOf0Phase1(BaseInputsOneOf1ItemsOneOf0Phase1!);
+                return baseInputsOneOf1ItemsOneOf0Phase1(__value1);
             }
-            else if (IsBaseInputsOneOf1ItemsOneOf0PhaseVariant3 && baseInputsOneOf1ItemsOneOf0PhaseVariant3 != null)
+            else if (BaseInputsOneOf1ItemsOneOf0PhaseVariant3 is { } __value2 && baseInputsOneOf1ItemsOneOf0PhaseVariant3 != null)
             {
-                return baseInputsOneOf1ItemsOneOf0PhaseVariant3(BaseInputsOneOf1ItemsOneOf0PhaseVariant3!);
+                return baseInputsOneOf1ItemsOneOf0PhaseVariant3(__value2);
             }
 
             return default(TResult);
@@ -252,17 +252,17 @@ namespace G
                 Validate();
             }
 
-            if (IsBaseInputsOneOf1ItemsOneOf0Phase0)
+            if (BaseInputsOneOf1ItemsOneOf0Phase0 is { } __value0)
             {
-                baseInputsOneOf1ItemsOneOf0Phase0?.Invoke(BaseInputsOneOf1ItemsOneOf0Phase0!);
+                baseInputsOneOf1ItemsOneOf0Phase0?.Invoke(__value0);
             }
-            else if (IsBaseInputsOneOf1ItemsOneOf0Phase1)
+            else if (BaseInputsOneOf1ItemsOneOf0Phase1 is { } __value1)
             {
-                baseInputsOneOf1ItemsOneOf0Phase1?.Invoke(BaseInputsOneOf1ItemsOneOf0Phase1!);
+                baseInputsOneOf1ItemsOneOf0Phase1?.Invoke(__value1);
             }
-            else if (IsBaseInputsOneOf1ItemsOneOf0PhaseVariant3)
+            else if (BaseInputsOneOf1ItemsOneOf0PhaseVariant3 is { } __value2)
             {
-                baseInputsOneOf1ItemsOneOf0PhaseVariant3?.Invoke(BaseInputsOneOf1ItemsOneOf0PhaseVariant3!);
+                baseInputsOneOf1ItemsOneOf0PhaseVariant3?.Invoke(__value2);
             }
         }
 
@@ -280,17 +280,17 @@ namespace G
                 Validate();
             }
 
-            if (IsBaseInputsOneOf1ItemsOneOf0Phase0)
+            if (BaseInputsOneOf1ItemsOneOf0Phase0 is { } __value0)
             {
-                baseInputsOneOf1ItemsOneOf0Phase0?.Invoke(BaseInputsOneOf1ItemsOneOf0Phase0!);
+                baseInputsOneOf1ItemsOneOf0Phase0?.Invoke(__value0);
             }
-            else if (IsBaseInputsOneOf1ItemsOneOf0Phase1)
+            else if (BaseInputsOneOf1ItemsOneOf0Phase1 is { } __value1)
             {
-                baseInputsOneOf1ItemsOneOf0Phase1?.Invoke(BaseInputsOneOf1ItemsOneOf0Phase1!);
+                baseInputsOneOf1ItemsOneOf0Phase1?.Invoke(__value1);
             }
-            else if (IsBaseInputsOneOf1ItemsOneOf0PhaseVariant3)
+            else if (BaseInputsOneOf1ItemsOneOf0PhaseVariant3 is { } __value2)
             {
-                baseInputsOneOf1ItemsOneOf0PhaseVariant3?.Invoke(BaseInputsOneOf1ItemsOneOf0PhaseVariant3!);
+                baseInputsOneOf1ItemsOneOf0PhaseVariant3?.Invoke(__value2);
             }
         }
 

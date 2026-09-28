@@ -1,4 +1,4 @@
-﻿//HintName: G.JsonConverters.ChatRequestReasoningSummary.g.cs
+//HintName: G.JsonConverters.ChatRequestReasoningSummary.g.cs
 #nullable enable
 #pragma warning disable CS0618 // Type or member is obsolete
 
@@ -199,19 +199,19 @@ namespace G.JsonConverters
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.ChatReasoningSummaryVerbosityEnum), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.ChatReasoningSummaryVerbosityEnum> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.ChatReasoningSummaryVerbosityEnum).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.ChatReasoningSummaryVerbosityEnum!.Value, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickChatReasoningSummaryVerbosityEnum(), typeInfo);
             }
             else if (value.IsChatRequestReasoningSummaryVariant2)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(object), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<object?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(object).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.ChatRequestReasoningSummaryVariant2!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickChatRequestReasoningSummaryVariant2(), typeInfo);
             }
             else if (value.IsChatRequestReasoningSummaryVariant3)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(object), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<object?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(object).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.ChatRequestReasoningSummaryVariant3!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickChatRequestReasoningSummaryVariant3(), typeInfo);
             }
         }
     }

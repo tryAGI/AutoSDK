@@ -1,4 +1,4 @@
-﻿//HintName: G.Models.TransferDestination2.g.cs
+//HintName: G.Models.TransferDestination2.g.cs
 #pragma warning disable CS0618 // Type or member is obsolete
 
 #nullable enable
@@ -48,8 +48,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.PhoneNumberTransferDestination PickPhone() => IsPhone
-            ? Phone!
+        public global::G.PhoneNumberTransferDestination PickPhone() => Phone is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Phone' but the value was {ToString()}.");
 
         /// <summary>
@@ -85,8 +85,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.SIPUriTransferDestination PickSipUri() => IsSipUri
-            ? SipUri!
+        public global::G.SIPUriTransferDestination PickSipUri() => SipUri is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'SipUri' but the value was {ToString()}.");
 
         /// <summary>
@@ -122,8 +122,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.PhoneNumberDynamicVariableTransferDestination PickPhoneDynamicVariable() => IsPhoneDynamicVariable
-            ? PhoneDynamicVariable!
+        public global::G.PhoneNumberDynamicVariableTransferDestination PickPhoneDynamicVariable() => PhoneDynamicVariable is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'PhoneDynamicVariable' but the value was {ToString()}.");
 
         /// <summary>
@@ -159,8 +159,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.SIPUriDynamicVariableTransferDestination PickSipUriDynamicVariable() => IsSipUriDynamicVariable
-            ? SipUriDynamicVariable!
+        public global::G.SIPUriDynamicVariableTransferDestination PickSipUriDynamicVariable() => SipUriDynamicVariable is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'SipUriDynamicVariable' but the value was {ToString()}.");
         /// <summary>
         /// 
@@ -316,21 +316,21 @@ namespace G
                 Validate();
             }
 
-            if (IsPhone && phone != null)
+            if (Phone is { } __value0 && phone != null)
             {
-                return phone(Phone!);
+                return phone(__value0);
             }
-            else if (IsSipUri && sipUri != null)
+            else if (SipUri is { } __value1 && sipUri != null)
             {
-                return sipUri(SipUri!);
+                return sipUri(__value1);
             }
-            else if (IsPhoneDynamicVariable && phoneDynamicVariable != null)
+            else if (PhoneDynamicVariable is { } __value2 && phoneDynamicVariable != null)
             {
-                return phoneDynamicVariable(PhoneDynamicVariable!);
+                return phoneDynamicVariable(__value2);
             }
-            else if (IsSipUriDynamicVariable && sipUriDynamicVariable != null)
+            else if (SipUriDynamicVariable is { } __value3 && sipUriDynamicVariable != null)
             {
-                return sipUriDynamicVariable(SipUriDynamicVariable!);
+                return sipUriDynamicVariable(__value3);
             }
 
             return default(TResult);
@@ -354,21 +354,21 @@ namespace G
                 Validate();
             }
 
-            if (IsPhone)
+            if (Phone is { } __value0)
             {
-                phone?.Invoke(Phone!);
+                phone?.Invoke(__value0);
             }
-            else if (IsSipUri)
+            else if (SipUri is { } __value1)
             {
-                sipUri?.Invoke(SipUri!);
+                sipUri?.Invoke(__value1);
             }
-            else if (IsPhoneDynamicVariable)
+            else if (PhoneDynamicVariable is { } __value2)
             {
-                phoneDynamicVariable?.Invoke(PhoneDynamicVariable!);
+                phoneDynamicVariable?.Invoke(__value2);
             }
-            else if (IsSipUriDynamicVariable)
+            else if (SipUriDynamicVariable is { } __value3)
             {
-                sipUriDynamicVariable?.Invoke(SipUriDynamicVariable!);
+                sipUriDynamicVariable?.Invoke(__value3);
             }
         }
 
@@ -387,21 +387,21 @@ namespace G
                 Validate();
             }
 
-            if (IsPhone)
+            if (Phone is { } __value0)
             {
-                phone?.Invoke(Phone!);
+                phone?.Invoke(__value0);
             }
-            else if (IsSipUri)
+            else if (SipUri is { } __value1)
             {
-                sipUri?.Invoke(SipUri!);
+                sipUri?.Invoke(__value1);
             }
-            else if (IsPhoneDynamicVariable)
+            else if (PhoneDynamicVariable is { } __value2)
             {
-                phoneDynamicVariable?.Invoke(PhoneDynamicVariable!);
+                phoneDynamicVariable?.Invoke(__value2);
             }
-            else if (IsSipUriDynamicVariable)
+            else if (SipUriDynamicVariable is { } __value3)
             {
-                sipUriDynamicVariable?.Invoke(SipUriDynamicVariable!);
+                sipUriDynamicVariable?.Invoke(__value3);
             }
         }
 

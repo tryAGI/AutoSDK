@@ -1,4 +1,4 @@
-﻿//HintName: G.EmbeddingModelConfigsClient.DeleteEmbeddingModelConfigApiV1EmbeddingModelConfigsEmbeddingModelConfigIdDelete.g.cs
+//HintName: G.EmbeddingModelConfigsClient.DeleteEmbeddingModelConfigApiV1EmbeddingModelConfigsEmbeddingModelConfigIdDelete.g.cs
 
 #nullable enable
 
@@ -181,7 +181,7 @@ namespace G
                 PrepareDeleteEmbeddingModelConfigApiV1EmbeddingModelConfigsEmbeddingModelConfigIdDeleteRequest(
                     httpClient: HttpClient,
                     httpRequestMessage: __httpRequest,
-                    embeddingModelConfigId: embeddingModelConfigId!,
+                    embeddingModelConfigId: embeddingModelConfigId,
                     projectId: projectId,
                     organizationId: organizationId,
                     session: session);
@@ -208,7 +208,7 @@ namespace G
                                 pathTemplate: "$\"/api/v1/embedding-model-configs/{embeddingModelConfigId}\"",
                                 httpMethod: "DELETE",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: null,
                                 exception: null,
                                 clientOptions: Options,
@@ -242,7 +242,7 @@ namespace G
                                 pathTemplate: "$\"/api/v1/embedding-model-configs/{embeddingModelConfigId}\"",
                                 httpMethod: "DELETE",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: null,
                                 exception: __exception,
                                 clientOptions: Options,
@@ -283,7 +283,7 @@ namespace G
                                 pathTemplate: "$\"/api/v1/embedding-model-configs/{embeddingModelConfigId}\"",
                                 httpMethod: "DELETE",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: __response,
                                 exception: null,
                                 clientOptions: Options,
@@ -331,7 +331,7 @@ namespace G
                                 pathTemplate: "$\"/api/v1/embedding-model-configs/{embeddingModelConfigId}\"",
                                 httpMethod: "DELETE",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: __response,
                                 exception: null,
                                 clientOptions: Options,
@@ -353,7 +353,7 @@ namespace G
                                 pathTemplate: "$\"/api/v1/embedding-model-configs/{embeddingModelConfigId}\"",
                                 httpMethod: "DELETE",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: __response,
                                 exception: null,
                                 clientOptions: Options,

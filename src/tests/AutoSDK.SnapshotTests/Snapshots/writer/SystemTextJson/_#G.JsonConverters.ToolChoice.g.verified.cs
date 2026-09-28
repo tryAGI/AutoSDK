@@ -1,4 +1,4 @@
-﻿//HintName: G.JsonConverters.ToolChoice.g.cs
+//HintName: G.JsonConverters.ToolChoice.g.cs
 #nullable enable
 #pragma warning disable CS0618 // Type or member is obsolete
 
@@ -129,13 +129,13 @@ namespace G.JsonConverters
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.StringToolChoice), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.StringToolChoice?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.StringToolChoice).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.String!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickString(), typeInfo);
             }
             else if (value.IsJsonObject)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.JsonObjectToolChoice), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.JsonObjectToolChoice?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.JsonObjectToolChoice).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.JsonObject!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickJsonObject(), typeInfo);
             }
         }
     }

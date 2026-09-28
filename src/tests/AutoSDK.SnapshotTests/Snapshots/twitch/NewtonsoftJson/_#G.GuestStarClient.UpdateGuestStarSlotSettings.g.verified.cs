@@ -1,4 +1,4 @@
-﻿//HintName: G.GuestStarClient.UpdateGuestStarSlotSettings.g.cs
+//HintName: G.GuestStarClient.UpdateGuestStarSlotSettings.g.cs
 
 #nullable enable
 
@@ -170,10 +170,10 @@ namespace G
                 PrepareUpdateGuestStarSlotSettingsRequest(
                     httpClient: HttpClient,
                     httpRequestMessage: __httpRequest,
-                    broadcasterId: broadcasterId!,
-                    moderatorId: moderatorId!,
-                    sessionId: sessionId!,
-                    slotId: slotId!,
+                    broadcasterId: broadcasterId,
+                    moderatorId: moderatorId,
+                    sessionId: sessionId,
+                    slotId: slotId,
                     isAudioEnabled: isAudioEnabled,
                     isVideoEnabled: isVideoEnabled,
                     isLive: isLive,
@@ -199,7 +199,7 @@ namespace G
                                 pathTemplate: "\"/guest_star/slot_settings\"",
                                 httpMethod: "PATCH",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: null,
                                 exception: null,
                                 clientOptions: Options,
@@ -233,7 +233,7 @@ namespace G
                                 pathTemplate: "\"/guest_star/slot_settings\"",
                                 httpMethod: "PATCH",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: null,
                                 exception: __exception,
                                 clientOptions: Options,
@@ -274,7 +274,7 @@ namespace G
                                 pathTemplate: "\"/guest_star/slot_settings\"",
                                 httpMethod: "PATCH",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: __response,
                                 exception: null,
                                 clientOptions: Options,
@@ -322,7 +322,7 @@ namespace G
                                 pathTemplate: "\"/guest_star/slot_settings\"",
                                 httpMethod: "PATCH",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: __response,
                                 exception: null,
                                 clientOptions: Options,
@@ -344,7 +344,7 @@ namespace G
                                 pathTemplate: "\"/guest_star/slot_settings\"",
                                 httpMethod: "PATCH",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: __response,
                                 exception: null,
                                 clientOptions: Options,

@@ -1,4 +1,4 @@
-﻿//HintName: G.Models.ContextInput.g.cs
+//HintName: G.Models.ContextInput.g.cs
 #pragma warning disable CS0618 // Type or member is obsolete
 
 #nullable enable
@@ -43,8 +43,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.ContextPair PickPair() => IsPair
-            ? Pair!
+        public global::G.ContextPair PickPair() => Pair is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Pair' but the value was {ToString()}.");
 
         /// <summary>
@@ -80,8 +80,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::G.ContextPair> PickContextInputVariant2() => IsContextInputVariant2
-            ? ContextInputVariant2!
+        public global::System.Collections.Generic.IList<global::G.ContextPair> PickContextInputVariant2() => ContextInputVariant2 is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'ContextInputVariant2' but the value was {ToString()}.");
 
         /// <summary>
@@ -117,8 +117,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public object PickContextInputVariant3() => IsContextInputVariant3
-            ? ContextInputVariant3!
+        public object PickContextInputVariant3() => ContextInputVariant3 is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'ContextInputVariant3' but the value was {ToString()}.");
         /// <summary>
         /// 
@@ -197,17 +197,17 @@ namespace G
                 Validate();
             }
 
-            if (IsPair && pair != null)
+            if (Pair is { } __value0 && pair != null)
             {
-                return pair(Pair!);
+                return pair(__value0);
             }
-            else if (IsContextInputVariant2 && contextInputVariant2 != null)
+            else if (ContextInputVariant2 is { } __value1 && contextInputVariant2 != null)
             {
-                return contextInputVariant2(ContextInputVariant2!);
+                return contextInputVariant2(__value1);
             }
-            else if (IsContextInputVariant3 && contextInputVariant3 != null)
+            else if (ContextInputVariant3 is { } __value2 && contextInputVariant3 != null)
             {
-                return contextInputVariant3(ContextInputVariant3!);
+                return contextInputVariant3(__value2);
             }
 
             return default(TResult);
@@ -229,17 +229,17 @@ namespace G
                 Validate();
             }
 
-            if (IsPair)
+            if (Pair is { } __value0)
             {
-                pair?.Invoke(Pair!);
+                pair?.Invoke(__value0);
             }
-            else if (IsContextInputVariant2)
+            else if (ContextInputVariant2 is { } __value1)
             {
-                contextInputVariant2?.Invoke(ContextInputVariant2!);
+                contextInputVariant2?.Invoke(__value1);
             }
-            else if (IsContextInputVariant3)
+            else if (ContextInputVariant3 is { } __value2)
             {
-                contextInputVariant3?.Invoke(ContextInputVariant3!);
+                contextInputVariant3?.Invoke(__value2);
             }
         }
 
@@ -257,17 +257,17 @@ namespace G
                 Validate();
             }
 
-            if (IsPair)
+            if (Pair is { } __value0)
             {
-                pair?.Invoke(Pair!);
+                pair?.Invoke(__value0);
             }
-            else if (IsContextInputVariant2)
+            else if (ContextInputVariant2 is { } __value1)
             {
-                contextInputVariant2?.Invoke(ContextInputVariant2!);
+                contextInputVariant2?.Invoke(__value1);
             }
-            else if (IsContextInputVariant3)
+            else if (ContextInputVariant3 is { } __value2)
             {
-                contextInputVariant3?.Invoke(ContextInputVariant3!);
+                contextInputVariant3?.Invoke(__value2);
             }
         }
 

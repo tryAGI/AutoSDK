@@ -1,4 +1,4 @@
-﻿//HintName: G.JsonConverters.InputsOneOf1ItemsOneOf5Content.g.cs
+//HintName: G.JsonConverters.InputsOneOf1ItemsOneOf5Content.g.cs
 #nullable enable
 #pragma warning disable CS0618 // Type or member is obsolete
 
@@ -199,19 +199,19 @@ namespace G.JsonConverters
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::System.Collections.Generic.IList<global::G.InputsOneOf1ItemsOneOf5ContentOneOf0Items>), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::System.Collections.Generic.IList<global::G.InputsOneOf1ItemsOneOf5ContentOneOf0Items>?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::System.Collections.Generic.IList<global::G.InputsOneOf1ItemsOneOf5ContentOneOf0Items>).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.InputsOneOf1ItemsOneOf5Content0!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickInputsOneOf1ItemsOneOf5Content0(), typeInfo);
             }
             else if (value.IsInputsOneOf1ItemsOneOf5ContentVariant2)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(string), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<string?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(string).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.InputsOneOf1ItemsOneOf5ContentVariant2!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickInputsOneOf1ItemsOneOf5ContentVariant2(), typeInfo);
             }
             else if (value.IsInputsOneOf1ItemsOneOf5ContentVariant3)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(object), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<object?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(object).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.InputsOneOf1ItemsOneOf5ContentVariant3!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickInputsOneOf1ItemsOneOf5ContentVariant3(), typeInfo);
             }
         }
     }

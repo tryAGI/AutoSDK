@@ -1,4 +1,4 @@
-﻿//HintName: G.JsonConverters.EmbeddingFunctionConfiguration.g.cs
+//HintName: G.JsonConverters.EmbeddingFunctionConfiguration.g.cs
 #nullable enable
 #pragma warning disable CS0618 // Type or member is obsolete
 
@@ -166,19 +166,19 @@ namespace G.JsonConverters
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.EmbeddingFunctionConfigurationVariant1), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.EmbeddingFunctionConfigurationVariant1?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.EmbeddingFunctionConfigurationVariant1).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.EmbeddingFunctionConfigurationVariant1!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickEmbeddingFunctionConfigurationVariant1(), typeInfo);
             }
             else if (value.IsEmbeddingFunctionConfigurationVariant2)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.AllOf<global::G.EmbeddingFunctionNewConfiguration, global::G.EmbeddingFunctionConfigurationVariant22>), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.AllOf<global::G.EmbeddingFunctionNewConfiguration, global::G.EmbeddingFunctionConfigurationVariant22>> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.AllOf<global::G.EmbeddingFunctionNewConfiguration, global::G.EmbeddingFunctionConfigurationVariant22>).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.EmbeddingFunctionConfigurationVariant2!.Value, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickEmbeddingFunctionConfigurationVariant2(), typeInfo);
             }
             else if (value.IsEmbeddingFunctionConfigurationVariant3)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.EmbeddingFunctionConfigurationVariant3), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.EmbeddingFunctionConfigurationVariant3?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.EmbeddingFunctionConfigurationVariant3).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.EmbeddingFunctionConfigurationVariant3!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickEmbeddingFunctionConfigurationVariant3(), typeInfo);
             }
         }
     }

@@ -1,4 +1,4 @@
-﻿//HintName: G.JsonConverters.BaseInputs.g.cs
+//HintName: G.JsonConverters.BaseInputs.g.cs
 #nullable enable
 #pragma warning disable CS0618 // Type or member is obsolete
 
@@ -199,19 +199,19 @@ namespace G.JsonConverters
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(string), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<string?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(string).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.BaseInputsVariant1!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickBaseInputsVariant1(), typeInfo);
             }
             else if (value.IsBaseInputs1)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::System.Collections.Generic.IList<global::G.BaseInputsOneOf1Items>), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::System.Collections.Generic.IList<global::G.BaseInputsOneOf1Items>?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::System.Collections.Generic.IList<global::G.BaseInputsOneOf1Items>).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.BaseInputs1!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickBaseInputs1(), typeInfo);
             }
             else if (value.IsBaseInputsVariant3)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(object), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<object?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(object).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.BaseInputsVariant3!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickBaseInputsVariant3(), typeInfo);
             }
         }
     }

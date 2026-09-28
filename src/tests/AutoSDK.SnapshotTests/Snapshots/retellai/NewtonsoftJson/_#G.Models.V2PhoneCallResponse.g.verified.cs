@@ -1,4 +1,4 @@
-﻿//HintName: G.Models.V2PhoneCallResponse.g.cs
+//HintName: G.Models.V2PhoneCallResponse.g.cs
 #pragma warning disable CS0618 // Type or member is obsolete
 
 #nullable enable
@@ -43,8 +43,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.V2PhoneCallResponseVariant1 PickV2PhoneCallResponseVariant1() => IsV2PhoneCallResponseVariant1
-            ? V2PhoneCallResponseVariant1!
+        public global::G.V2PhoneCallResponseVariant1 PickV2PhoneCallResponseVariant1() => V2PhoneCallResponseVariant1 is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'V2PhoneCallResponseVariant1' but the value was {ToString()}.");
 
         /// <summary>
@@ -80,8 +80,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.V2CallBase PickBase() => IsBase
-            ? Base!
+        public global::G.V2CallBase PickBase() => Base is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Base' but the value was {ToString()}.");
         /// <summary>
         /// 
@@ -178,13 +178,13 @@ namespace G
                 Validate();
             }
 
-            if (IsV2PhoneCallResponseVariant1 && v2PhoneCallResponseVariant1 != null)
+            if (V2PhoneCallResponseVariant1 is { } __value0 && v2PhoneCallResponseVariant1 != null)
             {
-                return v2PhoneCallResponseVariant1(V2PhoneCallResponseVariant1!);
+                return v2PhoneCallResponseVariant1(__value0);
             }
-            else if (IsBase && @base != null)
+            else if (Base is { } __value1 && @base != null)
             {
-                return @base(Base!);
+                return @base(__value1);
             }
 
             return default(TResult);
@@ -204,13 +204,13 @@ namespace G
                 Validate();
             }
 
-            if (IsV2PhoneCallResponseVariant1)
+            if (V2PhoneCallResponseVariant1 is { } __value0)
             {
-                v2PhoneCallResponseVariant1?.Invoke(V2PhoneCallResponseVariant1!);
+                v2PhoneCallResponseVariant1?.Invoke(__value0);
             }
-            else if (IsBase)
+            else if (Base is { } __value1)
             {
-                @base?.Invoke(Base!);
+                @base?.Invoke(__value1);
             }
         }
 
@@ -227,13 +227,13 @@ namespace G
                 Validate();
             }
 
-            if (IsV2PhoneCallResponseVariant1)
+            if (V2PhoneCallResponseVariant1 is { } __value0)
             {
-                v2PhoneCallResponseVariant1?.Invoke(V2PhoneCallResponseVariant1!);
+                v2PhoneCallResponseVariant1?.Invoke(__value0);
             }
-            else if (IsBase)
+            else if (Base is { } __value1)
             {
-                @base?.Invoke(Base!);
+                @base?.Invoke(__value1);
             }
         }
 

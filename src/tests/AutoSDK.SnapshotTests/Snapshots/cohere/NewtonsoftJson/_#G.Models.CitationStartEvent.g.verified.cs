@@ -1,4 +1,4 @@
-﻿//HintName: G.Models.CitationStartEvent.g.cs
+//HintName: G.Models.CitationStartEvent.g.cs
 #pragma warning disable CS0618 // Type or member is obsolete
 
 #nullable enable
@@ -43,8 +43,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.ChatStreamEventType PickChatStreamType() => IsChatStreamType
-            ? ChatStreamType!
+        public global::G.ChatStreamEventType PickChatStreamType() => ChatStreamType is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'ChatStreamType' but the value was {ToString()}.");
 
         /// <summary>
@@ -80,8 +80,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.CitationStartEventT3df62 PickT3df62() => IsT3df62
-            ? T3df62!
+        public global::G.CitationStartEventT3df62 PickT3df62() => T3df62 is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'T3df62' but the value was {ToString()}.");
         /// <summary>
         /// 
@@ -178,13 +178,13 @@ namespace G
                 Validate();
             }
 
-            if (IsChatStreamType && chatStreamType != null)
+            if (ChatStreamType is { } __value0 && chatStreamType != null)
             {
-                return chatStreamType(ChatStreamType!);
+                return chatStreamType(__value0);
             }
-            else if (IsT3df62 && t3df62 != null)
+            else if (T3df62 is { } __value1 && t3df62 != null)
             {
-                return t3df62(T3df62!);
+                return t3df62(__value1);
             }
 
             return default(TResult);
@@ -204,13 +204,13 @@ namespace G
                 Validate();
             }
 
-            if (IsChatStreamType)
+            if (ChatStreamType is { } __value0)
             {
-                chatStreamType?.Invoke(ChatStreamType!);
+                chatStreamType?.Invoke(__value0);
             }
-            else if (IsT3df62)
+            else if (T3df62 is { } __value1)
             {
-                t3df62?.Invoke(T3df62!);
+                t3df62?.Invoke(__value1);
             }
         }
 
@@ -227,13 +227,13 @@ namespace G
                 Validate();
             }
 
-            if (IsChatStreamType)
+            if (ChatStreamType is { } __value0)
             {
-                chatStreamType?.Invoke(ChatStreamType!);
+                chatStreamType?.Invoke(__value0);
             }
-            else if (IsT3df62)
+            else if (T3df62 is { } __value1)
             {
-                t3df62?.Invoke(T3df62!);
+                t3df62?.Invoke(__value1);
             }
         }
 

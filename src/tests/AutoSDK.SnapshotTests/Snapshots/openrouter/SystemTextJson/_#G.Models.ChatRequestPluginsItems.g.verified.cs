@@ -1,4 +1,4 @@
-﻿//HintName: G.Models.ChatRequestPluginsItems.g.cs
+//HintName: G.Models.ChatRequestPluginsItems.g.cs
 #pragma warning disable CS0618 // Type or member is obsolete
 
 #nullable enable
@@ -43,8 +43,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.ChatRequestPluginsItems0 PickChatRequestPluginsItems0() => IsChatRequestPluginsItems0
-            ? ChatRequestPluginsItems0!
+        public global::G.ChatRequestPluginsItems0 PickChatRequestPluginsItems0() => ChatRequestPluginsItems0 is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'ChatRequestPluginsItems0' but the value was {ToString()}.");
 
         /// <summary>
@@ -80,8 +80,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.ChatRequestPluginsItems1 PickChatRequestPluginsItems1() => IsChatRequestPluginsItems1
-            ? ChatRequestPluginsItems1!
+        public global::G.ChatRequestPluginsItems1 PickChatRequestPluginsItems1() => ChatRequestPluginsItems1 is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'ChatRequestPluginsItems1' but the value was {ToString()}.");
 
         /// <summary>
@@ -117,8 +117,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.ChatRequestPluginsItems2 PickChatRequestPluginsItems2() => IsChatRequestPluginsItems2
-            ? ChatRequestPluginsItems2!
+        public global::G.ChatRequestPluginsItems2 PickChatRequestPluginsItems2() => ChatRequestPluginsItems2 is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'ChatRequestPluginsItems2' but the value was {ToString()}.");
 
         /// <summary>
@@ -154,8 +154,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.ChatRequestPluginsItems3 PickChatRequestPluginsItems3() => IsChatRequestPluginsItems3
-            ? ChatRequestPluginsItems3!
+        public global::G.ChatRequestPluginsItems3 PickChatRequestPluginsItems3() => ChatRequestPluginsItems3 is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'ChatRequestPluginsItems3' but the value was {ToString()}.");
 
         /// <summary>
@@ -191,8 +191,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.ChatRequestPluginsItems4 PickChatRequestPluginsItems4() => IsChatRequestPluginsItems4
-            ? ChatRequestPluginsItems4!
+        public global::G.ChatRequestPluginsItems4 PickChatRequestPluginsItems4() => ChatRequestPluginsItems4 is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'ChatRequestPluginsItems4' but the value was {ToString()}.");
 
         /// <summary>
@@ -228,8 +228,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.ChatRequestPluginsItems5 PickChatRequestPluginsItems5() => IsChatRequestPluginsItems5
-            ? ChatRequestPluginsItems5!
+        public global::G.ChatRequestPluginsItems5 PickChatRequestPluginsItems5() => ChatRequestPluginsItems5 is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'ChatRequestPluginsItems5' but the value was {ToString()}.");
         /// <summary>
         /// 
@@ -438,29 +438,29 @@ namespace G
                 Validate();
             }
 
-            if (IsChatRequestPluginsItems0 && chatRequestPluginsItems0 != null)
+            if (ChatRequestPluginsItems0 is { } __value0 && chatRequestPluginsItems0 != null)
             {
-                return chatRequestPluginsItems0(ChatRequestPluginsItems0!);
+                return chatRequestPluginsItems0(__value0);
             }
-            else if (IsChatRequestPluginsItems1 && chatRequestPluginsItems1 != null)
+            else if (ChatRequestPluginsItems1 is { } __value1 && chatRequestPluginsItems1 != null)
             {
-                return chatRequestPluginsItems1(ChatRequestPluginsItems1!);
+                return chatRequestPluginsItems1(__value1);
             }
-            else if (IsChatRequestPluginsItems2 && chatRequestPluginsItems2 != null)
+            else if (ChatRequestPluginsItems2 is { } __value2 && chatRequestPluginsItems2 != null)
             {
-                return chatRequestPluginsItems2(ChatRequestPluginsItems2!);
+                return chatRequestPluginsItems2(__value2);
             }
-            else if (IsChatRequestPluginsItems3 && chatRequestPluginsItems3 != null)
+            else if (ChatRequestPluginsItems3 is { } __value3 && chatRequestPluginsItems3 != null)
             {
-                return chatRequestPluginsItems3(ChatRequestPluginsItems3!);
+                return chatRequestPluginsItems3(__value3);
             }
-            else if (IsChatRequestPluginsItems4 && chatRequestPluginsItems4 != null)
+            else if (ChatRequestPluginsItems4 is { } __value4 && chatRequestPluginsItems4 != null)
             {
-                return chatRequestPluginsItems4(ChatRequestPluginsItems4!);
+                return chatRequestPluginsItems4(__value4);
             }
-            else if (IsChatRequestPluginsItems5 && chatRequestPluginsItems5 != null)
+            else if (ChatRequestPluginsItems5 is { } __value5 && chatRequestPluginsItems5 != null)
             {
-                return chatRequestPluginsItems5(ChatRequestPluginsItems5!);
+                return chatRequestPluginsItems5(__value5);
             }
 
             return default(TResult);
@@ -488,29 +488,29 @@ namespace G
                 Validate();
             }
 
-            if (IsChatRequestPluginsItems0)
+            if (ChatRequestPluginsItems0 is { } __value0)
             {
-                chatRequestPluginsItems0?.Invoke(ChatRequestPluginsItems0!);
+                chatRequestPluginsItems0?.Invoke(__value0);
             }
-            else if (IsChatRequestPluginsItems1)
+            else if (ChatRequestPluginsItems1 is { } __value1)
             {
-                chatRequestPluginsItems1?.Invoke(ChatRequestPluginsItems1!);
+                chatRequestPluginsItems1?.Invoke(__value1);
             }
-            else if (IsChatRequestPluginsItems2)
+            else if (ChatRequestPluginsItems2 is { } __value2)
             {
-                chatRequestPluginsItems2?.Invoke(ChatRequestPluginsItems2!);
+                chatRequestPluginsItems2?.Invoke(__value2);
             }
-            else if (IsChatRequestPluginsItems3)
+            else if (ChatRequestPluginsItems3 is { } __value3)
             {
-                chatRequestPluginsItems3?.Invoke(ChatRequestPluginsItems3!);
+                chatRequestPluginsItems3?.Invoke(__value3);
             }
-            else if (IsChatRequestPluginsItems4)
+            else if (ChatRequestPluginsItems4 is { } __value4)
             {
-                chatRequestPluginsItems4?.Invoke(ChatRequestPluginsItems4!);
+                chatRequestPluginsItems4?.Invoke(__value4);
             }
-            else if (IsChatRequestPluginsItems5)
+            else if (ChatRequestPluginsItems5 is { } __value5)
             {
-                chatRequestPluginsItems5?.Invoke(ChatRequestPluginsItems5!);
+                chatRequestPluginsItems5?.Invoke(__value5);
             }
         }
 
@@ -531,29 +531,29 @@ namespace G
                 Validate();
             }
 
-            if (IsChatRequestPluginsItems0)
+            if (ChatRequestPluginsItems0 is { } __value0)
             {
-                chatRequestPluginsItems0?.Invoke(ChatRequestPluginsItems0!);
+                chatRequestPluginsItems0?.Invoke(__value0);
             }
-            else if (IsChatRequestPluginsItems1)
+            else if (ChatRequestPluginsItems1 is { } __value1)
             {
-                chatRequestPluginsItems1?.Invoke(ChatRequestPluginsItems1!);
+                chatRequestPluginsItems1?.Invoke(__value1);
             }
-            else if (IsChatRequestPluginsItems2)
+            else if (ChatRequestPluginsItems2 is { } __value2)
             {
-                chatRequestPluginsItems2?.Invoke(ChatRequestPluginsItems2!);
+                chatRequestPluginsItems2?.Invoke(__value2);
             }
-            else if (IsChatRequestPluginsItems3)
+            else if (ChatRequestPluginsItems3 is { } __value3)
             {
-                chatRequestPluginsItems3?.Invoke(ChatRequestPluginsItems3!);
+                chatRequestPluginsItems3?.Invoke(__value3);
             }
-            else if (IsChatRequestPluginsItems4)
+            else if (ChatRequestPluginsItems4 is { } __value4)
             {
-                chatRequestPluginsItems4?.Invoke(ChatRequestPluginsItems4!);
+                chatRequestPluginsItems4?.Invoke(__value4);
             }
-            else if (IsChatRequestPluginsItems5)
+            else if (ChatRequestPluginsItems5 is { } __value5)
             {
-                chatRequestPluginsItems5?.Invoke(ChatRequestPluginsItems5!);
+                chatRequestPluginsItems5?.Invoke(__value5);
             }
         }
 

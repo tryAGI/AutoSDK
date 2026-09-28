@@ -1,4 +1,4 @@
-﻿//HintName: G.DatasetsClient.ApiDatasetsMembersList.g.cs
+//HintName: G.DatasetsClient.ApiDatasetsMembersList.g.cs
 
 #nullable enable
 
@@ -159,7 +159,7 @@ namespace G
                 PrepareApiDatasetsMembersListRequest(
                     httpClient: HttpClient,
                     httpRequestMessage: __httpRequest,
-                    id: id!,
+                    id: id,
                     ordering: ordering);
 
                 return __httpRequest;
@@ -182,7 +182,7 @@ namespace G
                                 pathTemplate: "$\"/api/datasets/{id}/members\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: null,
                                 exception: null,
                                 clientOptions: Options,
@@ -216,7 +216,7 @@ namespace G
                                 pathTemplate: "$\"/api/datasets/{id}/members\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: null,
                                 exception: __exception,
                                 clientOptions: Options,
@@ -257,7 +257,7 @@ namespace G
                                 pathTemplate: "$\"/api/datasets/{id}/members\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: __response,
                                 exception: null,
                                 clientOptions: Options,
@@ -305,7 +305,7 @@ namespace G
                                 pathTemplate: "$\"/api/datasets/{id}/members\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: __response,
                                 exception: null,
                                 clientOptions: Options,
@@ -327,7 +327,7 @@ namespace G
                                 pathTemplate: "$\"/api/datasets/{id}/members\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: __response,
                                 exception: null,
                                 clientOptions: Options,

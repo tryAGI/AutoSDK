@@ -1,4 +1,4 @@
-﻿//HintName: G.Models.UpdatePresenterAttributes.g.cs
+//HintName: G.Models.UpdatePresenterAttributes.g.cs
 #pragma warning disable CS0618 // Type or member is obsolete
 
 #nullable enable
@@ -43,8 +43,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.UpdatePresenterAttributesVariant1 PickUpdatePresenterAttributesVariant1() => IsUpdatePresenterAttributesVariant1
-            ? UpdatePresenterAttributesVariant1!
+        public global::G.UpdatePresenterAttributesVariant1 PickUpdatePresenterAttributesVariant1() => UpdatePresenterAttributesVariant1 is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'UpdatePresenterAttributesVariant1' but the value was {ToString()}.");
 
         /// <summary>
@@ -80,8 +80,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.UpdatePresenterAttributesVariant2 PickUpdatePresenterAttributesVariant2() => IsUpdatePresenterAttributesVariant2
-            ? UpdatePresenterAttributesVariant2!
+        public global::G.UpdatePresenterAttributesVariant2 PickUpdatePresenterAttributesVariant2() => UpdatePresenterAttributesVariant2 is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'UpdatePresenterAttributesVariant2' but the value was {ToString()}.");
 
         /// <summary>
@@ -117,8 +117,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.UpdatePresenterAttributesVariant3 PickUpdatePresenterAttributesVariant3() => IsUpdatePresenterAttributesVariant3
-            ? UpdatePresenterAttributesVariant3!
+        public global::G.UpdatePresenterAttributesVariant3 PickUpdatePresenterAttributesVariant3() => UpdatePresenterAttributesVariant3 is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'UpdatePresenterAttributesVariant3' but the value was {ToString()}.");
         /// <summary>
         /// 
@@ -243,17 +243,17 @@ namespace G
                 Validate();
             }
 
-            if (IsUpdatePresenterAttributesVariant1 && updatePresenterAttributesVariant1 != null)
+            if (UpdatePresenterAttributesVariant1 is { } __value0 && updatePresenterAttributesVariant1 != null)
             {
-                return updatePresenterAttributesVariant1(UpdatePresenterAttributesVariant1!);
+                return updatePresenterAttributesVariant1(__value0);
             }
-            else if (IsUpdatePresenterAttributesVariant2 && updatePresenterAttributesVariant2 != null)
+            else if (UpdatePresenterAttributesVariant2 is { } __value1 && updatePresenterAttributesVariant2 != null)
             {
-                return updatePresenterAttributesVariant2(UpdatePresenterAttributesVariant2!);
+                return updatePresenterAttributesVariant2(__value1);
             }
-            else if (IsUpdatePresenterAttributesVariant3 && updatePresenterAttributesVariant3 != null)
+            else if (UpdatePresenterAttributesVariant3 is { } __value2 && updatePresenterAttributesVariant3 != null)
             {
-                return updatePresenterAttributesVariant3(UpdatePresenterAttributesVariant3!);
+                return updatePresenterAttributesVariant3(__value2);
             }
 
             return default(TResult);
@@ -275,17 +275,17 @@ namespace G
                 Validate();
             }
 
-            if (IsUpdatePresenterAttributesVariant1)
+            if (UpdatePresenterAttributesVariant1 is { } __value0)
             {
-                updatePresenterAttributesVariant1?.Invoke(UpdatePresenterAttributesVariant1!);
+                updatePresenterAttributesVariant1?.Invoke(__value0);
             }
-            else if (IsUpdatePresenterAttributesVariant2)
+            else if (UpdatePresenterAttributesVariant2 is { } __value1)
             {
-                updatePresenterAttributesVariant2?.Invoke(UpdatePresenterAttributesVariant2!);
+                updatePresenterAttributesVariant2?.Invoke(__value1);
             }
-            else if (IsUpdatePresenterAttributesVariant3)
+            else if (UpdatePresenterAttributesVariant3 is { } __value2)
             {
-                updatePresenterAttributesVariant3?.Invoke(UpdatePresenterAttributesVariant3!);
+                updatePresenterAttributesVariant3?.Invoke(__value2);
             }
         }
 
@@ -303,17 +303,17 @@ namespace G
                 Validate();
             }
 
-            if (IsUpdatePresenterAttributesVariant1)
+            if (UpdatePresenterAttributesVariant1 is { } __value0)
             {
-                updatePresenterAttributesVariant1?.Invoke(UpdatePresenterAttributesVariant1!);
+                updatePresenterAttributesVariant1?.Invoke(__value0);
             }
-            else if (IsUpdatePresenterAttributesVariant2)
+            else if (UpdatePresenterAttributesVariant2 is { } __value1)
             {
-                updatePresenterAttributesVariant2?.Invoke(UpdatePresenterAttributesVariant2!);
+                updatePresenterAttributesVariant2?.Invoke(__value1);
             }
-            else if (IsUpdatePresenterAttributesVariant3)
+            else if (UpdatePresenterAttributesVariant3 is { } __value2)
             {
-                updatePresenterAttributesVariant3?.Invoke(UpdatePresenterAttributesVariant3!);
+                updatePresenterAttributesVariant3?.Invoke(__value2);
             }
         }
 

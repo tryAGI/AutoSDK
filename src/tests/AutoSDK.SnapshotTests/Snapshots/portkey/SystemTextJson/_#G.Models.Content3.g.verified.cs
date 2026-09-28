@@ -1,4 +1,4 @@
-﻿//HintName: G.Models.Content3.g.cs
+//HintName: G.Models.Content3.g.cs
 #pragma warning disable CS0618 // Type or member is obsolete
 
 #nullable enable
@@ -43,8 +43,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.InputContent PickInputContent() => IsInputContent
-            ? InputContent!.Value
+        public global::G.InputContent PickInputContent() => InputContent is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'InputContent' but the value was {ToString()}.");
 
         /// <summary>
@@ -80,8 +80,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.OutputContent PickOutputContent() => IsOutputContent
-            ? OutputContent!.Value
+        public global::G.OutputContent PickOutputContent() => OutputContent is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'OutputContent' but the value was {ToString()}.");
         /// <summary>
         /// 
@@ -178,13 +178,13 @@ namespace G
                 Validate();
             }
 
-            if (IsInputContent && inputContent != null)
+            if (InputContent is { } __value0 && inputContent != null)
             {
-                return inputContent(InputContent!);
+                return inputContent(__value0);
             }
-            else if (IsOutputContent && outputContent != null)
+            else if (OutputContent is { } __value1 && outputContent != null)
             {
-                return outputContent(OutputContent!);
+                return outputContent(__value1);
             }
 
             return default(TResult);
@@ -204,13 +204,13 @@ namespace G
                 Validate();
             }
 
-            if (IsInputContent)
+            if (InputContent is { } __value0)
             {
-                inputContent?.Invoke(InputContent!);
+                inputContent?.Invoke(__value0);
             }
-            else if (IsOutputContent)
+            else if (OutputContent is { } __value1)
             {
-                outputContent?.Invoke(OutputContent!);
+                outputContent?.Invoke(__value1);
             }
         }
 
@@ -227,13 +227,13 @@ namespace G
                 Validate();
             }
 
-            if (IsInputContent)
+            if (InputContent is { } __value0)
             {
-                inputContent?.Invoke(InputContent!);
+                inputContent?.Invoke(__value0);
             }
-            else if (IsOutputContent)
+            else if (OutputContent is { } __value1)
             {
-                outputContent?.Invoke(OutputContent!);
+                outputContent?.Invoke(__value1);
             }
         }
 

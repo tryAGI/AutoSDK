@@ -1,4 +1,4 @@
-﻿//HintName: G.Models.MessagesRequestContextManagementEditsItemsOneOf0ClearToolInputs.g.cs
+//HintName: G.Models.MessagesRequestContextManagementEditsItemsOneOf0ClearToolInputs.g.cs
 #pragma warning disable CS0618 // Type or member is obsolete
 
 #nullable enable
@@ -43,8 +43,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public bool PickMessagesRequestContextManagementEditsItemsOneOf0ClearToolInputsVariant1() => IsMessagesRequestContextManagementEditsItemsOneOf0ClearToolInputsVariant1
-            ? MessagesRequestContextManagementEditsItemsOneOf0ClearToolInputsVariant1!.Value
+        public bool PickMessagesRequestContextManagementEditsItemsOneOf0ClearToolInputsVariant1() => MessagesRequestContextManagementEditsItemsOneOf0ClearToolInputsVariant1 is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'MessagesRequestContextManagementEditsItemsOneOf0ClearToolInputsVariant1' but the value was {ToString()}.");
 
         /// <summary>
@@ -80,8 +80,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<string> PickMessagesRequestContextManagementEditsItemsOneOf0ClearToolInputsVariant2() => IsMessagesRequestContextManagementEditsItemsOneOf0ClearToolInputsVariant2
-            ? MessagesRequestContextManagementEditsItemsOneOf0ClearToolInputsVariant2!
+        public global::System.Collections.Generic.IList<string> PickMessagesRequestContextManagementEditsItemsOneOf0ClearToolInputsVariant2() => MessagesRequestContextManagementEditsItemsOneOf0ClearToolInputsVariant2 is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'MessagesRequestContextManagementEditsItemsOneOf0ClearToolInputsVariant2' but the value was {ToString()}.");
 
         /// <summary>
@@ -117,8 +117,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public object PickMessagesRequestContextManagementEditsItemsOneOf0ClearToolInputsVariant3() => IsMessagesRequestContextManagementEditsItemsOneOf0ClearToolInputsVariant3
-            ? MessagesRequestContextManagementEditsItemsOneOf0ClearToolInputsVariant3!
+        public object PickMessagesRequestContextManagementEditsItemsOneOf0ClearToolInputsVariant3() => MessagesRequestContextManagementEditsItemsOneOf0ClearToolInputsVariant3 is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'MessagesRequestContextManagementEditsItemsOneOf0ClearToolInputsVariant3' but the value was {ToString()}.");
         /// <summary>
         /// 
@@ -197,17 +197,17 @@ namespace G
                 Validate();
             }
 
-            if (IsMessagesRequestContextManagementEditsItemsOneOf0ClearToolInputsVariant1 && messagesRequestContextManagementEditsItemsOneOf0ClearToolInputsVariant1 != null)
+            if (MessagesRequestContextManagementEditsItemsOneOf0ClearToolInputsVariant1 is { } __value0 && messagesRequestContextManagementEditsItemsOneOf0ClearToolInputsVariant1 != null)
             {
-                return messagesRequestContextManagementEditsItemsOneOf0ClearToolInputsVariant1(MessagesRequestContextManagementEditsItemsOneOf0ClearToolInputsVariant1!);
+                return messagesRequestContextManagementEditsItemsOneOf0ClearToolInputsVariant1(__value0);
             }
-            else if (IsMessagesRequestContextManagementEditsItemsOneOf0ClearToolInputsVariant2 && messagesRequestContextManagementEditsItemsOneOf0ClearToolInputsVariant2 != null)
+            else if (MessagesRequestContextManagementEditsItemsOneOf0ClearToolInputsVariant2 is { } __value1 && messagesRequestContextManagementEditsItemsOneOf0ClearToolInputsVariant2 != null)
             {
-                return messagesRequestContextManagementEditsItemsOneOf0ClearToolInputsVariant2(MessagesRequestContextManagementEditsItemsOneOf0ClearToolInputsVariant2!);
+                return messagesRequestContextManagementEditsItemsOneOf0ClearToolInputsVariant2(__value1);
             }
-            else if (IsMessagesRequestContextManagementEditsItemsOneOf0ClearToolInputsVariant3 && messagesRequestContextManagementEditsItemsOneOf0ClearToolInputsVariant3 != null)
+            else if (MessagesRequestContextManagementEditsItemsOneOf0ClearToolInputsVariant3 is { } __value2 && messagesRequestContextManagementEditsItemsOneOf0ClearToolInputsVariant3 != null)
             {
-                return messagesRequestContextManagementEditsItemsOneOf0ClearToolInputsVariant3(MessagesRequestContextManagementEditsItemsOneOf0ClearToolInputsVariant3!);
+                return messagesRequestContextManagementEditsItemsOneOf0ClearToolInputsVariant3(__value2);
             }
 
             return default(TResult);
@@ -229,17 +229,17 @@ namespace G
                 Validate();
             }
 
-            if (IsMessagesRequestContextManagementEditsItemsOneOf0ClearToolInputsVariant1)
+            if (MessagesRequestContextManagementEditsItemsOneOf0ClearToolInputsVariant1 is { } __value0)
             {
-                messagesRequestContextManagementEditsItemsOneOf0ClearToolInputsVariant1?.Invoke(MessagesRequestContextManagementEditsItemsOneOf0ClearToolInputsVariant1!);
+                messagesRequestContextManagementEditsItemsOneOf0ClearToolInputsVariant1?.Invoke(__value0);
             }
-            else if (IsMessagesRequestContextManagementEditsItemsOneOf0ClearToolInputsVariant2)
+            else if (MessagesRequestContextManagementEditsItemsOneOf0ClearToolInputsVariant2 is { } __value1)
             {
-                messagesRequestContextManagementEditsItemsOneOf0ClearToolInputsVariant2?.Invoke(MessagesRequestContextManagementEditsItemsOneOf0ClearToolInputsVariant2!);
+                messagesRequestContextManagementEditsItemsOneOf0ClearToolInputsVariant2?.Invoke(__value1);
             }
-            else if (IsMessagesRequestContextManagementEditsItemsOneOf0ClearToolInputsVariant3)
+            else if (MessagesRequestContextManagementEditsItemsOneOf0ClearToolInputsVariant3 is { } __value2)
             {
-                messagesRequestContextManagementEditsItemsOneOf0ClearToolInputsVariant3?.Invoke(MessagesRequestContextManagementEditsItemsOneOf0ClearToolInputsVariant3!);
+                messagesRequestContextManagementEditsItemsOneOf0ClearToolInputsVariant3?.Invoke(__value2);
             }
         }
 
@@ -257,17 +257,17 @@ namespace G
                 Validate();
             }
 
-            if (IsMessagesRequestContextManagementEditsItemsOneOf0ClearToolInputsVariant1)
+            if (MessagesRequestContextManagementEditsItemsOneOf0ClearToolInputsVariant1 is { } __value0)
             {
-                messagesRequestContextManagementEditsItemsOneOf0ClearToolInputsVariant1?.Invoke(MessagesRequestContextManagementEditsItemsOneOf0ClearToolInputsVariant1!);
+                messagesRequestContextManagementEditsItemsOneOf0ClearToolInputsVariant1?.Invoke(__value0);
             }
-            else if (IsMessagesRequestContextManagementEditsItemsOneOf0ClearToolInputsVariant2)
+            else if (MessagesRequestContextManagementEditsItemsOneOf0ClearToolInputsVariant2 is { } __value1)
             {
-                messagesRequestContextManagementEditsItemsOneOf0ClearToolInputsVariant2?.Invoke(MessagesRequestContextManagementEditsItemsOneOf0ClearToolInputsVariant2!);
+                messagesRequestContextManagementEditsItemsOneOf0ClearToolInputsVariant2?.Invoke(__value1);
             }
-            else if (IsMessagesRequestContextManagementEditsItemsOneOf0ClearToolInputsVariant3)
+            else if (MessagesRequestContextManagementEditsItemsOneOf0ClearToolInputsVariant3 is { } __value2)
             {
-                messagesRequestContextManagementEditsItemsOneOf0ClearToolInputsVariant3?.Invoke(MessagesRequestContextManagementEditsItemsOneOf0ClearToolInputsVariant3!);
+                messagesRequestContextManagementEditsItemsOneOf0ClearToolInputsVariant3?.Invoke(__value2);
             }
         }
 

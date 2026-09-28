@@ -1,4 +1,4 @@
-﻿//HintName: G.PvcVoicesClient.Get4.g.cs
+//HintName: G.PvcVoicesClient.Get4.g.cs
 
 #nullable enable
 
@@ -151,9 +151,9 @@ namespace G
                 PrepareGet4Request(
                     httpClient: HttpClient,
                     httpRequestMessage: __httpRequest,
-                    voiceId: voiceId!,
-                    sampleId: sampleId!,
-                    speakerId: speakerId!,
+                    voiceId: voiceId,
+                    sampleId: sampleId,
+                    speakerId: speakerId,
                     xiApiKey: xiApiKey);
 
                 return __httpRequest;
@@ -176,7 +176,7 @@ namespace G
                                 pathTemplate: "$\"/v1/voices/pvc/{voiceId}/samples/{sampleId}/speakers/{speakerId}/audio\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: null,
                                 exception: null,
                                 clientOptions: Options,
@@ -210,7 +210,7 @@ namespace G
                                 pathTemplate: "$\"/v1/voices/pvc/{voiceId}/samples/{sampleId}/speakers/{speakerId}/audio\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: null,
                                 exception: __exception,
                                 clientOptions: Options,
@@ -251,7 +251,7 @@ namespace G
                                 pathTemplate: "$\"/v1/voices/pvc/{voiceId}/samples/{sampleId}/speakers/{speakerId}/audio\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: __response,
                                 exception: null,
                                 clientOptions: Options,
@@ -299,7 +299,7 @@ namespace G
                                 pathTemplate: "$\"/v1/voices/pvc/{voiceId}/samples/{sampleId}/speakers/{speakerId}/audio\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: __response,
                                 exception: null,
                                 clientOptions: Options,
@@ -321,7 +321,7 @@ namespace G
                                 pathTemplate: "$\"/v1/voices/pvc/{voiceId}/samples/{sampleId}/speakers/{speakerId}/audio\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: __response,
                                 exception: null,
                                 clientOptions: Options,

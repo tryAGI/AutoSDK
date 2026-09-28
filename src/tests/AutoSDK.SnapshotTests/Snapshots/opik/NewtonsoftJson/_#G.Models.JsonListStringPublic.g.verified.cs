@@ -1,4 +1,4 @@
-﻿//HintName: G.Models.JsonListStringPublic.g.cs
+//HintName: G.Models.JsonListStringPublic.g.cs
 #pragma warning disable CS0618 // Type or member is obsolete
 
 #nullable enable
@@ -43,8 +43,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public object PickJsonListStringPublicVariant1() => IsJsonListStringPublicVariant1
-            ? JsonListStringPublicVariant1!
+        public object PickJsonListStringPublicVariant1() => JsonListStringPublicVariant1 is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'JsonListStringPublicVariant1' but the value was {ToString()}.");
 
         /// <summary>
@@ -80,8 +80,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<object> PickJsonListStringPublicVariant2() => IsJsonListStringPublicVariant2
-            ? JsonListStringPublicVariant2!
+        public global::System.Collections.Generic.IList<object> PickJsonListStringPublicVariant2() => JsonListStringPublicVariant2 is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'JsonListStringPublicVariant2' but the value was {ToString()}.");
 
         /// <summary>
@@ -117,8 +117,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public string PickJsonListStringPublicVariant3() => IsJsonListStringPublicVariant3
-            ? JsonListStringPublicVariant3!
+        public string PickJsonListStringPublicVariant3() => JsonListStringPublicVariant3 is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'JsonListStringPublicVariant3' but the value was {ToString()}.");
         /// <summary>
         /// 
@@ -197,17 +197,17 @@ namespace G
                 Validate();
             }
 
-            if (IsJsonListStringPublicVariant1 && jsonListStringPublicVariant1 != null)
+            if (JsonListStringPublicVariant1 is { } __value0 && jsonListStringPublicVariant1 != null)
             {
-                return jsonListStringPublicVariant1(JsonListStringPublicVariant1!);
+                return jsonListStringPublicVariant1(__value0);
             }
-            else if (IsJsonListStringPublicVariant2 && jsonListStringPublicVariant2 != null)
+            else if (JsonListStringPublicVariant2 is { } __value1 && jsonListStringPublicVariant2 != null)
             {
-                return jsonListStringPublicVariant2(JsonListStringPublicVariant2!);
+                return jsonListStringPublicVariant2(__value1);
             }
-            else if (IsJsonListStringPublicVariant3 && jsonListStringPublicVariant3 != null)
+            else if (JsonListStringPublicVariant3 is { } __value2 && jsonListStringPublicVariant3 != null)
             {
-                return jsonListStringPublicVariant3(JsonListStringPublicVariant3!);
+                return jsonListStringPublicVariant3(__value2);
             }
 
             return default(TResult);
@@ -229,17 +229,17 @@ namespace G
                 Validate();
             }
 
-            if (IsJsonListStringPublicVariant1)
+            if (JsonListStringPublicVariant1 is { } __value0)
             {
-                jsonListStringPublicVariant1?.Invoke(JsonListStringPublicVariant1!);
+                jsonListStringPublicVariant1?.Invoke(__value0);
             }
-            else if (IsJsonListStringPublicVariant2)
+            else if (JsonListStringPublicVariant2 is { } __value1)
             {
-                jsonListStringPublicVariant2?.Invoke(JsonListStringPublicVariant2!);
+                jsonListStringPublicVariant2?.Invoke(__value1);
             }
-            else if (IsJsonListStringPublicVariant3)
+            else if (JsonListStringPublicVariant3 is { } __value2)
             {
-                jsonListStringPublicVariant3?.Invoke(JsonListStringPublicVariant3!);
+                jsonListStringPublicVariant3?.Invoke(__value2);
             }
         }
 
@@ -257,17 +257,17 @@ namespace G
                 Validate();
             }
 
-            if (IsJsonListStringPublicVariant1)
+            if (JsonListStringPublicVariant1 is { } __value0)
             {
-                jsonListStringPublicVariant1?.Invoke(JsonListStringPublicVariant1!);
+                jsonListStringPublicVariant1?.Invoke(__value0);
             }
-            else if (IsJsonListStringPublicVariant2)
+            else if (JsonListStringPublicVariant2 is { } __value1)
             {
-                jsonListStringPublicVariant2?.Invoke(JsonListStringPublicVariant2!);
+                jsonListStringPublicVariant2?.Invoke(__value1);
             }
-            else if (IsJsonListStringPublicVariant3)
+            else if (JsonListStringPublicVariant3 is { } __value2)
             {
-                jsonListStringPublicVariant3?.Invoke(JsonListStringPublicVariant3!);
+                jsonListStringPublicVariant3?.Invoke(__value2);
             }
         }
 

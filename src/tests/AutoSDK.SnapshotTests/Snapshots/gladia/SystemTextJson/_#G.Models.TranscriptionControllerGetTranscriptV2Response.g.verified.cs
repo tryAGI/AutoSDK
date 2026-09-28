@@ -1,4 +1,4 @@
-﻿//HintName: G.Models.TranscriptionControllerGetTranscriptV2Response.g.cs
+//HintName: G.Models.TranscriptionControllerGetTranscriptV2Response.g.cs
 #pragma warning disable CS0618 // Type or member is obsolete
 
 #nullable enable
@@ -48,8 +48,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.PreRecordedResponse PickPreRecorded() => IsPreRecorded
-            ? PreRecorded!
+        public global::G.PreRecordedResponse PickPreRecorded() => PreRecorded is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'PreRecorded' but the value was {ToString()}.");
 
         /// <summary>
@@ -85,8 +85,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.StreamingResponse PickLive() => IsLive
-            ? Live!
+        public global::G.StreamingResponse PickLive() => Live is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Live' but the value was {ToString()}.");
         /// <summary>
         /// 
@@ -186,13 +186,13 @@ namespace G
                 Validate();
             }
 
-            if (IsPreRecorded && preRecorded != null)
+            if (PreRecorded is { } __value0 && preRecorded != null)
             {
-                return preRecorded(PreRecorded!);
+                return preRecorded(__value0);
             }
-            else if (IsLive && live != null)
+            else if (Live is { } __value1 && live != null)
             {
-                return live(Live!);
+                return live(__value1);
             }
 
             return default(TResult);
@@ -212,13 +212,13 @@ namespace G
                 Validate();
             }
 
-            if (IsPreRecorded)
+            if (PreRecorded is { } __value0)
             {
-                preRecorded?.Invoke(PreRecorded!);
+                preRecorded?.Invoke(__value0);
             }
-            else if (IsLive)
+            else if (Live is { } __value1)
             {
-                live?.Invoke(Live!);
+                live?.Invoke(__value1);
             }
         }
 
@@ -235,13 +235,13 @@ namespace G
                 Validate();
             }
 
-            if (IsPreRecorded)
+            if (PreRecorded is { } __value0)
             {
-                preRecorded?.Invoke(PreRecorded!);
+                preRecorded?.Invoke(__value0);
             }
-            else if (IsLive)
+            else if (Live is { } __value1)
             {
-                live?.Invoke(Live!);
+                live?.Invoke(__value1);
             }
         }
 

@@ -1,4 +1,4 @@
-﻿//HintName: G.Models.Score.g.cs
+//HintName: G.Models.Score.g.cs
 #pragma warning disable CS0618 // Type or member is obsolete
 
 #nullable enable
@@ -43,8 +43,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.AllOf<global::G.ScoreVariant12, global::G.NumericScore> PickScoreVariant1() => IsScoreVariant1
-            ? ScoreVariant1!.Value
+        public global::G.AllOf<global::G.ScoreVariant12, global::G.NumericScore> PickScoreVariant1() => ScoreVariant1 is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'ScoreVariant1' but the value was {ToString()}.");
 
         /// <summary>
@@ -80,8 +80,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.AllOf<global::G.ScoreVariant22, global::G.CategoricalScore> PickScoreVariant2() => IsScoreVariant2
-            ? ScoreVariant2!.Value
+        public global::G.AllOf<global::G.ScoreVariant22, global::G.CategoricalScore> PickScoreVariant2() => ScoreVariant2 is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'ScoreVariant2' but the value was {ToString()}.");
 
         /// <summary>
@@ -117,8 +117,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.AllOf<global::G.ScoreVariant32, global::G.BooleanScore> PickScoreVariant3() => IsScoreVariant3
-            ? ScoreVariant3!.Value
+        public global::G.AllOf<global::G.ScoreVariant32, global::G.BooleanScore> PickScoreVariant3() => ScoreVariant3 is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'ScoreVariant3' but the value was {ToString()}.");
 
         /// <summary>
@@ -154,8 +154,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.AllOf<global::G.ScoreVariant42, global::G.CorrectionScore> PickScoreVariant4() => IsScoreVariant4
-            ? ScoreVariant4!.Value
+        public global::G.AllOf<global::G.ScoreVariant42, global::G.CorrectionScore> PickScoreVariant4() => ScoreVariant4 is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'ScoreVariant4' but the value was {ToString()}.");
         /// <summary>
         /// 
@@ -308,21 +308,21 @@ namespace G
                 Validate();
             }
 
-            if (IsScoreVariant1 && scoreVariant1 != null)
+            if (ScoreVariant1 is { } __value0 && scoreVariant1 != null)
             {
-                return scoreVariant1(ScoreVariant1!);
+                return scoreVariant1(__value0);
             }
-            else if (IsScoreVariant2 && scoreVariant2 != null)
+            else if (ScoreVariant2 is { } __value1 && scoreVariant2 != null)
             {
-                return scoreVariant2(ScoreVariant2!);
+                return scoreVariant2(__value1);
             }
-            else if (IsScoreVariant3 && scoreVariant3 != null)
+            else if (ScoreVariant3 is { } __value2 && scoreVariant3 != null)
             {
-                return scoreVariant3(ScoreVariant3!);
+                return scoreVariant3(__value2);
             }
-            else if (IsScoreVariant4 && scoreVariant4 != null)
+            else if (ScoreVariant4 is { } __value3 && scoreVariant4 != null)
             {
-                return scoreVariant4(ScoreVariant4!);
+                return scoreVariant4(__value3);
             }
 
             return default(TResult);
@@ -346,21 +346,21 @@ namespace G
                 Validate();
             }
 
-            if (IsScoreVariant1)
+            if (ScoreVariant1 is { } __value0)
             {
-                scoreVariant1?.Invoke(ScoreVariant1!);
+                scoreVariant1?.Invoke(__value0);
             }
-            else if (IsScoreVariant2)
+            else if (ScoreVariant2 is { } __value1)
             {
-                scoreVariant2?.Invoke(ScoreVariant2!);
+                scoreVariant2?.Invoke(__value1);
             }
-            else if (IsScoreVariant3)
+            else if (ScoreVariant3 is { } __value2)
             {
-                scoreVariant3?.Invoke(ScoreVariant3!);
+                scoreVariant3?.Invoke(__value2);
             }
-            else if (IsScoreVariant4)
+            else if (ScoreVariant4 is { } __value3)
             {
-                scoreVariant4?.Invoke(ScoreVariant4!);
+                scoreVariant4?.Invoke(__value3);
             }
         }
 
@@ -379,21 +379,21 @@ namespace G
                 Validate();
             }
 
-            if (IsScoreVariant1)
+            if (ScoreVariant1 is { } __value0)
             {
-                scoreVariant1?.Invoke(ScoreVariant1!);
+                scoreVariant1?.Invoke(__value0);
             }
-            else if (IsScoreVariant2)
+            else if (ScoreVariant2 is { } __value1)
             {
-                scoreVariant2?.Invoke(ScoreVariant2!);
+                scoreVariant2?.Invoke(__value1);
             }
-            else if (IsScoreVariant3)
+            else if (ScoreVariant3 is { } __value2)
             {
-                scoreVariant3?.Invoke(ScoreVariant3!);
+                scoreVariant3?.Invoke(__value2);
             }
-            else if (IsScoreVariant4)
+            else if (ScoreVariant4 is { } __value3)
             {
-                scoreVariant4?.Invoke(ScoreVariant4!);
+                scoreVariant4?.Invoke(__value3);
             }
         }
 

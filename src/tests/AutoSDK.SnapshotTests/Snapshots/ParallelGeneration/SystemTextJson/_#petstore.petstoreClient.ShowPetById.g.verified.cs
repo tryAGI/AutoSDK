@@ -1,4 +1,4 @@
-﻿//HintName: petstore.petstoreClient.ShowPetById.g.cs
+//HintName: petstore.petstoreClient.ShowPetById.g.cs
 
 #nullable enable
 
@@ -103,7 +103,7 @@ namespace petstore
                 PrepareShowPetByIdRequest(
                     httpClient: HttpClient,
                     httpRequestMessage: __httpRequest,
-                    petId: petId!);
+                    petId: petId);
 
                 return __httpRequest;
             }
@@ -125,7 +125,7 @@ namespace petstore
                                 pathTemplate: "$\"/pets/{petId}\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: null,
                                 exception: null,
                                 clientOptions: Options,
@@ -159,7 +159,7 @@ namespace petstore
                                 pathTemplate: "$\"/pets/{petId}\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: null,
                                 exception: __exception,
                                 clientOptions: Options,
@@ -200,7 +200,7 @@ namespace petstore
                                 pathTemplate: "$\"/pets/{petId}\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: __response,
                                 exception: null,
                                 clientOptions: Options,
@@ -248,7 +248,7 @@ namespace petstore
                                 pathTemplate: "$\"/pets/{petId}\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: __response,
                                 exception: null,
                                 clientOptions: Options,
@@ -270,7 +270,7 @@ namespace petstore
                                 pathTemplate: "$\"/pets/{petId}\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: __response,
                                 exception: null,
                                 clientOptions: Options,

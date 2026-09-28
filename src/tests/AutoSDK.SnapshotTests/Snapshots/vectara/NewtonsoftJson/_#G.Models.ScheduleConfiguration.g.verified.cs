@@ -1,4 +1,4 @@
-﻿//HintName: G.Models.ScheduleConfiguration.g.cs
+//HintName: G.Models.ScheduleConfiguration.g.cs
 #pragma warning disable CS0618 // Type or member is obsolete
 
 #nullable enable
@@ -43,8 +43,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.IntervalScheduleConfiguration PickInterval() => IsInterval
-            ? Interval!
+        public global::G.IntervalScheduleConfiguration PickInterval() => Interval is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Interval' but the value was {ToString()}.");
 
         /// <summary>
@@ -80,8 +80,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.CronScheduleConfiguration PickCron() => IsCron
-            ? Cron!
+        public global::G.CronScheduleConfiguration PickCron() => Cron is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Cron' but the value was {ToString()}.");
         /// <summary>
         /// 
@@ -178,13 +178,13 @@ namespace G
                 Validate();
             }
 
-            if (IsInterval && interval != null)
+            if (Interval is { } __value0 && interval != null)
             {
-                return interval(Interval!);
+                return interval(__value0);
             }
-            else if (IsCron && cron != null)
+            else if (Cron is { } __value1 && cron != null)
             {
-                return cron(Cron!);
+                return cron(__value1);
             }
 
             return default(TResult);
@@ -204,13 +204,13 @@ namespace G
                 Validate();
             }
 
-            if (IsInterval)
+            if (Interval is { } __value0)
             {
-                interval?.Invoke(Interval!);
+                interval?.Invoke(__value0);
             }
-            else if (IsCron)
+            else if (Cron is { } __value1)
             {
-                cron?.Invoke(Cron!);
+                cron?.Invoke(__value1);
             }
         }
 
@@ -227,13 +227,13 @@ namespace G
                 Validate();
             }
 
-            if (IsInterval)
+            if (Interval is { } __value0)
             {
-                interval?.Invoke(Interval!);
+                interval?.Invoke(__value0);
             }
-            else if (IsCron)
+            else if (Cron is { } __value1)
             {
-                cron?.Invoke(Cron!);
+                cron?.Invoke(__value1);
             }
         }
 

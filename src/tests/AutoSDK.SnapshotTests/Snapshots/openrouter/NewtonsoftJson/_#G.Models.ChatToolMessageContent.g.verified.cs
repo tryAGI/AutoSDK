@@ -1,4 +1,4 @@
-﻿//HintName: G.Models.ChatToolMessageContent.g.cs
+//HintName: G.Models.ChatToolMessageContent.g.cs
 #pragma warning disable CS0618 // Type or member is obsolete
 
 #nullable enable
@@ -43,8 +43,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public string PickChatToolMessageContentVariant1() => IsChatToolMessageContentVariant1
-            ? ChatToolMessageContentVariant1!
+        public string PickChatToolMessageContentVariant1() => ChatToolMessageContentVariant1 is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'ChatToolMessageContentVariant1' but the value was {ToString()}.");
 
         /// <summary>
@@ -80,8 +80,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::G.ChatContentItems> PickChatToolMessageContent1() => IsChatToolMessageContent1
-            ? ChatToolMessageContent1!
+        public global::System.Collections.Generic.IList<global::G.ChatContentItems> PickChatToolMessageContent1() => ChatToolMessageContent1 is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'ChatToolMessageContent1' but the value was {ToString()}.");
         /// <summary>
         /// 
@@ -155,13 +155,13 @@ namespace G
                 Validate();
             }
 
-            if (IsChatToolMessageContentVariant1 && chatToolMessageContentVariant1 != null)
+            if (ChatToolMessageContentVariant1 is { } __value0 && chatToolMessageContentVariant1 != null)
             {
-                return chatToolMessageContentVariant1(ChatToolMessageContentVariant1!);
+                return chatToolMessageContentVariant1(__value0);
             }
-            else if (IsChatToolMessageContent1 && chatToolMessageContent1 != null)
+            else if (ChatToolMessageContent1 is { } __value1 && chatToolMessageContent1 != null)
             {
-                return chatToolMessageContent1(ChatToolMessageContent1!);
+                return chatToolMessageContent1(__value1);
             }
 
             return default(TResult);
@@ -181,13 +181,13 @@ namespace G
                 Validate();
             }
 
-            if (IsChatToolMessageContentVariant1)
+            if (ChatToolMessageContentVariant1 is { } __value0)
             {
-                chatToolMessageContentVariant1?.Invoke(ChatToolMessageContentVariant1!);
+                chatToolMessageContentVariant1?.Invoke(__value0);
             }
-            else if (IsChatToolMessageContent1)
+            else if (ChatToolMessageContent1 is { } __value1)
             {
-                chatToolMessageContent1?.Invoke(ChatToolMessageContent1!);
+                chatToolMessageContent1?.Invoke(__value1);
             }
         }
 
@@ -204,13 +204,13 @@ namespace G
                 Validate();
             }
 
-            if (IsChatToolMessageContentVariant1)
+            if (ChatToolMessageContentVariant1 is { } __value0)
             {
-                chatToolMessageContentVariant1?.Invoke(ChatToolMessageContentVariant1!);
+                chatToolMessageContentVariant1?.Invoke(__value0);
             }
-            else if (IsChatToolMessageContent1)
+            else if (ChatToolMessageContent1 is { } __value1)
             {
-                chatToolMessageContent1?.Invoke(ChatToolMessageContent1!);
+                chatToolMessageContent1?.Invoke(__value1);
             }
         }
 

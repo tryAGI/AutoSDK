@@ -1,4 +1,4 @@
-﻿//HintName: G.Models.EmbeddingTaskMediaMetadata.g.cs
+//HintName: G.Models.EmbeddingTaskMediaMetadata.g.cs
 #pragma warning disable CS0618 // Type or member is obsolete
 
 #nullable enable
@@ -43,8 +43,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.EmbeddingAudioMetadata PickEmbeddingAudioMetadata() => IsEmbeddingAudioMetadata
-            ? EmbeddingAudioMetadata!
+        public global::G.EmbeddingAudioMetadata PickEmbeddingAudioMetadata() => EmbeddingAudioMetadata is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'EmbeddingAudioMetadata' but the value was {ToString()}.");
 
         /// <summary>
@@ -80,8 +80,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.EmbeddingVideoMetadata PickEmbeddingVideoMetadata() => IsEmbeddingVideoMetadata
-            ? EmbeddingVideoMetadata!
+        public global::G.EmbeddingVideoMetadata PickEmbeddingVideoMetadata() => EmbeddingVideoMetadata is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'EmbeddingVideoMetadata' but the value was {ToString()}.");
         /// <summary>
         /// 
@@ -178,13 +178,13 @@ namespace G
                 Validate();
             }
 
-            if (IsEmbeddingAudioMetadata && embeddingAudioMetadata != null)
+            if (EmbeddingAudioMetadata is { } __value0 && embeddingAudioMetadata != null)
             {
-                return embeddingAudioMetadata(EmbeddingAudioMetadata!);
+                return embeddingAudioMetadata(__value0);
             }
-            else if (IsEmbeddingVideoMetadata && embeddingVideoMetadata != null)
+            else if (EmbeddingVideoMetadata is { } __value1 && embeddingVideoMetadata != null)
             {
-                return embeddingVideoMetadata(EmbeddingVideoMetadata!);
+                return embeddingVideoMetadata(__value1);
             }
 
             return default(TResult);
@@ -204,13 +204,13 @@ namespace G
                 Validate();
             }
 
-            if (IsEmbeddingAudioMetadata)
+            if (EmbeddingAudioMetadata is { } __value0)
             {
-                embeddingAudioMetadata?.Invoke(EmbeddingAudioMetadata!);
+                embeddingAudioMetadata?.Invoke(__value0);
             }
-            else if (IsEmbeddingVideoMetadata)
+            else if (EmbeddingVideoMetadata is { } __value1)
             {
-                embeddingVideoMetadata?.Invoke(EmbeddingVideoMetadata!);
+                embeddingVideoMetadata?.Invoke(__value1);
             }
         }
 
@@ -227,13 +227,13 @@ namespace G
                 Validate();
             }
 
-            if (IsEmbeddingAudioMetadata)
+            if (EmbeddingAudioMetadata is { } __value0)
             {
-                embeddingAudioMetadata?.Invoke(EmbeddingAudioMetadata!);
+                embeddingAudioMetadata?.Invoke(__value0);
             }
-            else if (IsEmbeddingVideoMetadata)
+            else if (EmbeddingVideoMetadata is { } __value1)
             {
-                embeddingVideoMetadata?.Invoke(EmbeddingVideoMetadata!);
+                embeddingVideoMetadata?.Invoke(__value1);
             }
         }
 

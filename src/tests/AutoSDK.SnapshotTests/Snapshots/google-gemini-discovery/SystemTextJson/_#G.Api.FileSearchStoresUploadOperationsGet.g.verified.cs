@@ -1,4 +1,4 @@
-﻿//HintName: G.Api.FileSearchStoresUploadOperationsGet.g.cs
+//HintName: G.Api.FileSearchStoresUploadOperationsGet.g.cs
 
 #nullable enable
 
@@ -111,8 +111,8 @@ namespace G
                 PrepareFileSearchStoresUploadOperationsGetRequest(
                     httpClient: HttpClient,
                     httpRequestMessage: __httpRequest,
-                    operationsId: operationsId!,
-                    fileSearchStoresId: fileSearchStoresId!);
+                    operationsId: operationsId,
+                    fileSearchStoresId: fileSearchStoresId);
 
                 return __httpRequest;
             }
@@ -134,7 +134,7 @@ namespace G
                                 pathTemplate: "$\"/fileSearchStores/{fileSearchStoresId}/upload/operations/{operationsId}\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: null,
                                 exception: null,
                                 clientOptions: Options,
@@ -168,7 +168,7 @@ namespace G
                                 pathTemplate: "$\"/fileSearchStores/{fileSearchStoresId}/upload/operations/{operationsId}\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: null,
                                 exception: __exception,
                                 clientOptions: Options,
@@ -209,7 +209,7 @@ namespace G
                                 pathTemplate: "$\"/fileSearchStores/{fileSearchStoresId}/upload/operations/{operationsId}\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: __response,
                                 exception: null,
                                 clientOptions: Options,
@@ -257,7 +257,7 @@ namespace G
                                 pathTemplate: "$\"/fileSearchStores/{fileSearchStoresId}/upload/operations/{operationsId}\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: __response,
                                 exception: null,
                                 clientOptions: Options,
@@ -279,7 +279,7 @@ namespace G
                                 pathTemplate: "$\"/fileSearchStores/{fileSearchStoresId}/upload/operations/{operationsId}\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: __response,
                                 exception: null,
                                 clientOptions: Options,

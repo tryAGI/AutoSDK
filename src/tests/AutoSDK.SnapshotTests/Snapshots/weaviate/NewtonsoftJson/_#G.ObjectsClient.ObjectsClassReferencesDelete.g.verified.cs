@@ -1,4 +1,4 @@
-﻿//HintName: G.ObjectsClient.ObjectsClassReferencesDelete.g.cs
+//HintName: G.ObjectsClient.ObjectsClassReferencesDelete.g.cs
 
 #nullable enable
 
@@ -216,9 +216,9 @@ namespace G
                 PrepareObjectsClassReferencesDeleteRequest(
                     httpClient: HttpClient,
                     httpRequestMessage: __httpRequest,
-                    className: className!,
-                    id: id!,
-                    propertyName: propertyName!,
+                    className: className,
+                    id: id,
+                    propertyName: propertyName,
                     consistencyLevel: consistencyLevel,
                     tenant: tenant,
                     request: request);
@@ -243,7 +243,7 @@ namespace G
                                 pathTemplate: "$\"/objects/{className}/{id}/references/{propertyName}\"",
                                 httpMethod: "DELETE",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: null,
                                 exception: null,
                                 clientOptions: Options,
@@ -280,7 +280,7 @@ namespace G
                                 pathTemplate: "$\"/objects/{className}/{id}/references/{propertyName}\"",
                                 httpMethod: "DELETE",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: null,
                                 exception: __exception,
                                 clientOptions: Options,
@@ -321,7 +321,7 @@ namespace G
                                 pathTemplate: "$\"/objects/{className}/{id}/references/{propertyName}\"",
                                 httpMethod: "DELETE",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: __response,
                                 exception: null,
                                 clientOptions: Options,
@@ -369,7 +369,7 @@ namespace G
                                 pathTemplate: "$\"/objects/{className}/{id}/references/{propertyName}\"",
                                 httpMethod: "DELETE",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: __response,
                                 exception: null,
                                 clientOptions: Options,
@@ -391,7 +391,7 @@ namespace G
                                 pathTemplate: "$\"/objects/{className}/{id}/references/{propertyName}\"",
                                 httpMethod: "DELETE",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: __response,
                                 exception: null,
                                 clientOptions: Options,

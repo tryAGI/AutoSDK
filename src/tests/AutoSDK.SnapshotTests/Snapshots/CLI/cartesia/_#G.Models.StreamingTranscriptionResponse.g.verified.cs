@@ -1,4 +1,4 @@
-﻿//HintName: G.Models.StreamingTranscriptionResponse.g.cs
+//HintName: G.Models.StreamingTranscriptionResponse.g.cs
 #pragma warning disable CS0618 // Type or member is obsolete
 
 #nullable enable
@@ -43,8 +43,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.AllOf<global::G.StreamingTranscriptionResponseVariant12, global::G.TranscriptMessage> PickStreamingTranscriptionResponseVariant1() => IsStreamingTranscriptionResponseVariant1
-            ? StreamingTranscriptionResponseVariant1!.Value
+        public global::G.AllOf<global::G.StreamingTranscriptionResponseVariant12, global::G.TranscriptMessage> PickStreamingTranscriptionResponseVariant1() => StreamingTranscriptionResponseVariant1 is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'StreamingTranscriptionResponseVariant1' but the value was {ToString()}.");
 
         /// <summary>
@@ -80,8 +80,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.AllOf<global::G.StreamingTranscriptionResponseVariant22, global::G.FlushDoneMessage> PickStreamingTranscriptionResponseVariant2() => IsStreamingTranscriptionResponseVariant2
-            ? StreamingTranscriptionResponseVariant2!.Value
+        public global::G.AllOf<global::G.StreamingTranscriptionResponseVariant22, global::G.FlushDoneMessage> PickStreamingTranscriptionResponseVariant2() => StreamingTranscriptionResponseVariant2 is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'StreamingTranscriptionResponseVariant2' but the value was {ToString()}.");
 
         /// <summary>
@@ -117,8 +117,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.AllOf<global::G.StreamingTranscriptionResponseVariant32, global::G.DoneMessage> PickStreamingTranscriptionResponseVariant3() => IsStreamingTranscriptionResponseVariant3
-            ? StreamingTranscriptionResponseVariant3!.Value
+        public global::G.AllOf<global::G.StreamingTranscriptionResponseVariant32, global::G.DoneMessage> PickStreamingTranscriptionResponseVariant3() => StreamingTranscriptionResponseVariant3 is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'StreamingTranscriptionResponseVariant3' but the value was {ToString()}.");
 
         /// <summary>
@@ -154,8 +154,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.AllOf<global::G.StreamingTranscriptionResponseVariant42, global::G.ErrorMessage> PickStreamingTranscriptionResponseVariant4() => IsStreamingTranscriptionResponseVariant4
-            ? StreamingTranscriptionResponseVariant4!.Value
+        public global::G.AllOf<global::G.StreamingTranscriptionResponseVariant42, global::G.ErrorMessage> PickStreamingTranscriptionResponseVariant4() => StreamingTranscriptionResponseVariant4 is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'StreamingTranscriptionResponseVariant4' but the value was {ToString()}.");
         /// <summary>
         /// 
@@ -308,21 +308,21 @@ namespace G
                 Validate();
             }
 
-            if (IsStreamingTranscriptionResponseVariant1 && streamingTranscriptionResponseVariant1 != null)
+            if (StreamingTranscriptionResponseVariant1 is { } __value0 && streamingTranscriptionResponseVariant1 != null)
             {
-                return streamingTranscriptionResponseVariant1(StreamingTranscriptionResponseVariant1!);
+                return streamingTranscriptionResponseVariant1(__value0);
             }
-            else if (IsStreamingTranscriptionResponseVariant2 && streamingTranscriptionResponseVariant2 != null)
+            else if (StreamingTranscriptionResponseVariant2 is { } __value1 && streamingTranscriptionResponseVariant2 != null)
             {
-                return streamingTranscriptionResponseVariant2(StreamingTranscriptionResponseVariant2!);
+                return streamingTranscriptionResponseVariant2(__value1);
             }
-            else if (IsStreamingTranscriptionResponseVariant3 && streamingTranscriptionResponseVariant3 != null)
+            else if (StreamingTranscriptionResponseVariant3 is { } __value2 && streamingTranscriptionResponseVariant3 != null)
             {
-                return streamingTranscriptionResponseVariant3(StreamingTranscriptionResponseVariant3!);
+                return streamingTranscriptionResponseVariant3(__value2);
             }
-            else if (IsStreamingTranscriptionResponseVariant4 && streamingTranscriptionResponseVariant4 != null)
+            else if (StreamingTranscriptionResponseVariant4 is { } __value3 && streamingTranscriptionResponseVariant4 != null)
             {
-                return streamingTranscriptionResponseVariant4(StreamingTranscriptionResponseVariant4!);
+                return streamingTranscriptionResponseVariant4(__value3);
             }
 
             return default(TResult);
@@ -346,21 +346,21 @@ namespace G
                 Validate();
             }
 
-            if (IsStreamingTranscriptionResponseVariant1)
+            if (StreamingTranscriptionResponseVariant1 is { } __value0)
             {
-                streamingTranscriptionResponseVariant1?.Invoke(StreamingTranscriptionResponseVariant1!);
+                streamingTranscriptionResponseVariant1?.Invoke(__value0);
             }
-            else if (IsStreamingTranscriptionResponseVariant2)
+            else if (StreamingTranscriptionResponseVariant2 is { } __value1)
             {
-                streamingTranscriptionResponseVariant2?.Invoke(StreamingTranscriptionResponseVariant2!);
+                streamingTranscriptionResponseVariant2?.Invoke(__value1);
             }
-            else if (IsStreamingTranscriptionResponseVariant3)
+            else if (StreamingTranscriptionResponseVariant3 is { } __value2)
             {
-                streamingTranscriptionResponseVariant3?.Invoke(StreamingTranscriptionResponseVariant3!);
+                streamingTranscriptionResponseVariant3?.Invoke(__value2);
             }
-            else if (IsStreamingTranscriptionResponseVariant4)
+            else if (StreamingTranscriptionResponseVariant4 is { } __value3)
             {
-                streamingTranscriptionResponseVariant4?.Invoke(StreamingTranscriptionResponseVariant4!);
+                streamingTranscriptionResponseVariant4?.Invoke(__value3);
             }
         }
 
@@ -379,21 +379,21 @@ namespace G
                 Validate();
             }
 
-            if (IsStreamingTranscriptionResponseVariant1)
+            if (StreamingTranscriptionResponseVariant1 is { } __value0)
             {
-                streamingTranscriptionResponseVariant1?.Invoke(StreamingTranscriptionResponseVariant1!);
+                streamingTranscriptionResponseVariant1?.Invoke(__value0);
             }
-            else if (IsStreamingTranscriptionResponseVariant2)
+            else if (StreamingTranscriptionResponseVariant2 is { } __value1)
             {
-                streamingTranscriptionResponseVariant2?.Invoke(StreamingTranscriptionResponseVariant2!);
+                streamingTranscriptionResponseVariant2?.Invoke(__value1);
             }
-            else if (IsStreamingTranscriptionResponseVariant3)
+            else if (StreamingTranscriptionResponseVariant3 is { } __value2)
             {
-                streamingTranscriptionResponseVariant3?.Invoke(StreamingTranscriptionResponseVariant3!);
+                streamingTranscriptionResponseVariant3?.Invoke(__value2);
             }
-            else if (IsStreamingTranscriptionResponseVariant4)
+            else if (StreamingTranscriptionResponseVariant4 is { } __value3)
             {
-                streamingTranscriptionResponseVariant4?.Invoke(StreamingTranscriptionResponseVariant4!);
+                streamingTranscriptionResponseVariant4?.Invoke(__value3);
             }
         }
 

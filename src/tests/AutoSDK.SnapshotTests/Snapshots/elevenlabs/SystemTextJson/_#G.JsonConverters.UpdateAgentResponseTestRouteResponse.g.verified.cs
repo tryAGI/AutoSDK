@@ -1,4 +1,4 @@
-﻿//HintName: G.JsonConverters.UpdateAgentResponseTestRouteResponse.g.cs
+//HintName: G.JsonConverters.UpdateAgentResponseTestRouteResponse.g.cs
 #nullable enable
 #pragma warning disable CS0618 // Type or member is obsolete
 
@@ -69,19 +69,19 @@ namespace G.JsonConverters
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.GetResponseUnitTestResponseModel), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.GetResponseUnitTestResponseModel?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.GetResponseUnitTestResponseModel).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Llm!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickLlm(), typeInfo);
             }
             else if (value.IsTool)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.GetToolCallUnitTestResponseModel), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.GetToolCallUnitTestResponseModel?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.GetToolCallUnitTestResponseModel).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Tool!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickTool(), typeInfo);
             }
             else if (value.IsSimulation)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.GetSimulationTestResponseModel), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.GetSimulationTestResponseModel?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.GetSimulationTestResponseModel).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Simulation!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickSimulation(), typeInfo);
             }
         }
     }

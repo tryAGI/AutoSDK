@@ -1,4 +1,4 @@
-﻿//HintName: G.Models.WithLookupInterface.g.cs
+//HintName: G.Models.WithLookupInterface.g.cs
 #pragma warning disable CS0618 // Type or member is obsolete
 
 #nullable enable
@@ -43,8 +43,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public string PickWithLookupInterfaceVariant1() => IsWithLookupInterfaceVariant1
-            ? WithLookupInterfaceVariant1!
+        public string PickWithLookupInterfaceVariant1() => WithLookupInterfaceVariant1 is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'WithLookupInterfaceVariant1' but the value was {ToString()}.");
 
         /// <summary>
@@ -80,8 +80,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.WithLookup PickWithLookup() => IsWithLookup
-            ? WithLookup!
+        public global::G.WithLookup PickWithLookup() => WithLookup is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'WithLookup' but the value was {ToString()}.");
         /// <summary>
         /// 
@@ -178,13 +178,13 @@ namespace G
                 Validate();
             }
 
-            if (IsWithLookupInterfaceVariant1 && withLookupInterfaceVariant1 != null)
+            if (WithLookupInterfaceVariant1 is { } __value0 && withLookupInterfaceVariant1 != null)
             {
-                return withLookupInterfaceVariant1(WithLookupInterfaceVariant1!);
+                return withLookupInterfaceVariant1(__value0);
             }
-            else if (IsWithLookup && withLookup != null)
+            else if (WithLookup is { } __value1 && withLookup != null)
             {
-                return withLookup(WithLookup!);
+                return withLookup(__value1);
             }
 
             return default(TResult);
@@ -204,13 +204,13 @@ namespace G
                 Validate();
             }
 
-            if (IsWithLookupInterfaceVariant1)
+            if (WithLookupInterfaceVariant1 is { } __value0)
             {
-                withLookupInterfaceVariant1?.Invoke(WithLookupInterfaceVariant1!);
+                withLookupInterfaceVariant1?.Invoke(__value0);
             }
-            else if (IsWithLookup)
+            else if (WithLookup is { } __value1)
             {
-                withLookup?.Invoke(WithLookup!);
+                withLookup?.Invoke(__value1);
             }
         }
 
@@ -227,13 +227,13 @@ namespace G
                 Validate();
             }
 
-            if (IsWithLookupInterfaceVariant1)
+            if (WithLookupInterfaceVariant1 is { } __value0)
             {
-                withLookupInterfaceVariant1?.Invoke(WithLookupInterfaceVariant1!);
+                withLookupInterfaceVariant1?.Invoke(__value0);
             }
-            else if (IsWithLookup)
+            else if (WithLookup is { } __value1)
             {
-                withLookup?.Invoke(WithLookup!);
+                withLookup?.Invoke(__value1);
             }
         }
 

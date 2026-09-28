@@ -1,4 +1,4 @@
-﻿//HintName: G.Models.PostDialDigitsVariant13.g.cs
+//HintName: G.Models.PostDialDigitsVariant13.g.cs
 #pragma warning disable CS0618 // Type or member is obsolete
 
 #nullable enable
@@ -48,8 +48,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.PostDialDigitsStatic PickStatic() => IsStatic
-            ? Static!
+        public global::G.PostDialDigitsStatic PickStatic() => Static is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Static' but the value was {ToString()}.");
 
         /// <summary>
@@ -85,8 +85,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.PostDialDigitsDynamicVariable PickDynamic() => IsDynamic
-            ? Dynamic!
+        public global::G.PostDialDigitsDynamicVariable PickDynamic() => Dynamic is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Dynamic' but the value was {ToString()}.");
         /// <summary>
         /// 
@@ -186,13 +186,13 @@ namespace G
                 Validate();
             }
 
-            if (IsStatic && @static != null)
+            if (Static is { } __value0 && @static != null)
             {
-                return @static(Static!);
+                return @static(__value0);
             }
-            else if (IsDynamic && dynamic != null)
+            else if (Dynamic is { } __value1 && dynamic != null)
             {
-                return dynamic(Dynamic!);
+                return dynamic(__value1);
             }
 
             return default(TResult);
@@ -212,13 +212,13 @@ namespace G
                 Validate();
             }
 
-            if (IsStatic)
+            if (Static is { } __value0)
             {
-                @static?.Invoke(Static!);
+                @static?.Invoke(__value0);
             }
-            else if (IsDynamic)
+            else if (Dynamic is { } __value1)
             {
-                dynamic?.Invoke(Dynamic!);
+                dynamic?.Invoke(__value1);
             }
         }
 
@@ -235,13 +235,13 @@ namespace G
                 Validate();
             }
 
-            if (IsStatic)
+            if (Static is { } __value0)
             {
-                @static?.Invoke(Static!);
+                @static?.Invoke(__value0);
             }
-            else if (IsDynamic)
+            else if (Dynamic is { } __value1)
             {
-                dynamic?.Invoke(Dynamic!);
+                dynamic?.Invoke(__value1);
             }
         }
 

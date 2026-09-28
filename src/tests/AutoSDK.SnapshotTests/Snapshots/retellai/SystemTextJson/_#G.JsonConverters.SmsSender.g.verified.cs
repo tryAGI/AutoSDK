@@ -1,4 +1,4 @@
-﻿//HintName: G.JsonConverters.SmsSender.g.cs
+//HintName: G.JsonConverters.SmsSender.g.cs
 #nullable enable
 #pragma warning disable CS0618 // Type or member is obsolete
 
@@ -129,13 +129,13 @@ namespace G.JsonConverters
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.SmsSenderVariant1), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.SmsSenderVariant1?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.SmsSenderVariant1).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.SmsSenderVariant1!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickSmsSenderVariant1(), typeInfo);
             }
             else if (value.IsSmsSenderVariant2)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.SmsSenderVariant2), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.SmsSenderVariant2?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.SmsSenderVariant2).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.SmsSenderVariant2!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickSmsSenderVariant2(), typeInfo);
             }
         }
     }

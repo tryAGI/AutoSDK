@@ -1,4 +1,4 @@
-﻿//HintName: G.McpClient.GetMcpAppByAppKey.g.cs
+//HintName: G.McpClient.GetMcpAppByAppKey.g.cs
 
 #nullable enable
 
@@ -313,7 +313,7 @@ namespace G
                 PrepareGetMcpAppByAppKeyRequest(
                     httpClient: HttpClient,
                     httpRequestMessage: __httpRequest,
-                    appKey: appKey!,
+                    appKey: appKey,
                     name: name,
                     toolkits: toolkits,
                     authConfigIds: authConfigIds,
@@ -344,7 +344,7 @@ namespace G
                                 pathTemplate: "$\"/api/v3/mcp/app/{appKey}\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: null,
                                 exception: null,
                                 clientOptions: Options,
@@ -378,7 +378,7 @@ namespace G
                                 pathTemplate: "$\"/api/v3/mcp/app/{appKey}\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: null,
                                 exception: __exception,
                                 clientOptions: Options,
@@ -419,7 +419,7 @@ namespace G
                                 pathTemplate: "$\"/api/v3/mcp/app/{appKey}\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: __response,
                                 exception: null,
                                 clientOptions: Options,
@@ -467,7 +467,7 @@ namespace G
                                 pathTemplate: "$\"/api/v3/mcp/app/{appKey}\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: __response,
                                 exception: null,
                                 clientOptions: Options,
@@ -489,7 +489,7 @@ namespace G
                                 pathTemplate: "$\"/api/v3/mcp/app/{appKey}\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: __response,
                                 exception: null,
                                 clientOptions: Options,

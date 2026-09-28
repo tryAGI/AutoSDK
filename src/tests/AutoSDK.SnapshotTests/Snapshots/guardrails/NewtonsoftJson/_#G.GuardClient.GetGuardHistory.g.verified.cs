@@ -1,4 +1,4 @@
-﻿//HintName: G.GuardClient.GetGuardHistory.g.cs
+//HintName: G.GuardClient.GetGuardHistory.g.cs
 
 #nullable enable
 
@@ -154,8 +154,8 @@ namespace G
                 PrepareGetGuardHistoryRequest(
                     httpClient: HttpClient,
                     httpRequestMessage: __httpRequest,
-                    guardName: guardName!,
-                    callId: callId!);
+                    guardName: guardName,
+                    callId: callId);
 
                 return __httpRequest;
             }
@@ -177,7 +177,7 @@ namespace G
                                 pathTemplate: "$\"/guards/{guardName}/history/{callId}\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: null,
                                 exception: null,
                                 clientOptions: Options,
@@ -211,7 +211,7 @@ namespace G
                                 pathTemplate: "$\"/guards/{guardName}/history/{callId}\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: null,
                                 exception: __exception,
                                 clientOptions: Options,
@@ -252,7 +252,7 @@ namespace G
                                 pathTemplate: "$\"/guards/{guardName}/history/{callId}\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: __response,
                                 exception: null,
                                 clientOptions: Options,
@@ -300,7 +300,7 @@ namespace G
                                 pathTemplate: "$\"/guards/{guardName}/history/{callId}\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: __response,
                                 exception: null,
                                 clientOptions: Options,
@@ -322,7 +322,7 @@ namespace G
                                 pathTemplate: "$\"/guards/{guardName}/history/{callId}\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: __response,
                                 exception: null,
                                 clientOptions: Options,

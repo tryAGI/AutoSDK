@@ -1,4 +1,4 @@
-﻿//HintName: G.Models.Config.g.cs
+//HintName: G.Models.Config.g.cs
 #pragma warning disable CS0618 // Type or member is obsolete
 
 #nullable enable
@@ -48,8 +48,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.CreateStdioMCPServer PickStdio() => IsStdio
-            ? Stdio!
+        public global::G.CreateStdioMCPServer PickStdio() => Stdio is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Stdio' but the value was {ToString()}.");
 
         /// <summary>
@@ -85,8 +85,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.CreateSSEMCPServer PickSse() => IsSse
-            ? Sse!
+        public global::G.CreateSSEMCPServer PickSse() => Sse is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Sse' but the value was {ToString()}.");
 
         /// <summary>
@@ -122,8 +122,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.CreateStreamableHTTPMCPServer PickStreamableHttp() => IsStreamableHttp
-            ? StreamableHttp!
+        public global::G.CreateStreamableHTTPMCPServer PickStreamableHttp() => StreamableHttp is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'StreamableHttp' but the value was {ToString()}.");
         /// <summary>
         /// 
@@ -251,17 +251,17 @@ namespace G
                 Validate();
             }
 
-            if (IsStdio && stdio != null)
+            if (Stdio is { } __value0 && stdio != null)
             {
-                return stdio(Stdio!);
+                return stdio(__value0);
             }
-            else if (IsSse && sse != null)
+            else if (Sse is { } __value1 && sse != null)
             {
-                return sse(Sse!);
+                return sse(__value1);
             }
-            else if (IsStreamableHttp && streamableHttp != null)
+            else if (StreamableHttp is { } __value2 && streamableHttp != null)
             {
-                return streamableHttp(StreamableHttp!);
+                return streamableHttp(__value2);
             }
 
             return default(TResult);
@@ -283,17 +283,17 @@ namespace G
                 Validate();
             }
 
-            if (IsStdio)
+            if (Stdio is { } __value0)
             {
-                stdio?.Invoke(Stdio!);
+                stdio?.Invoke(__value0);
             }
-            else if (IsSse)
+            else if (Sse is { } __value1)
             {
-                sse?.Invoke(Sse!);
+                sse?.Invoke(__value1);
             }
-            else if (IsStreamableHttp)
+            else if (StreamableHttp is { } __value2)
             {
-                streamableHttp?.Invoke(StreamableHttp!);
+                streamableHttp?.Invoke(__value2);
             }
         }
 
@@ -311,17 +311,17 @@ namespace G
                 Validate();
             }
 
-            if (IsStdio)
+            if (Stdio is { } __value0)
             {
-                stdio?.Invoke(Stdio!);
+                stdio?.Invoke(__value0);
             }
-            else if (IsSse)
+            else if (Sse is { } __value1)
             {
-                sse?.Invoke(Sse!);
+                sse?.Invoke(__value1);
             }
-            else if (IsStreamableHttp)
+            else if (StreamableHttp is { } __value2)
             {
-                streamableHttp?.Invoke(StreamableHttp!);
+                streamableHttp?.Invoke(__value2);
             }
         }
 

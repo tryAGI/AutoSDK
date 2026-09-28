@@ -1,4 +1,4 @@
-﻿//HintName: G.Models.RankBy.g.cs
+//HintName: G.Models.RankBy.g.cs
 #pragma warning disable CS0618 // Type or member is obsolete
 
 #nullable enable
@@ -43,8 +43,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public byte[] PickVector() => IsVector
-            ? Vector!
+        public byte[] PickVector() => Vector is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Vector' but the value was {ToString()}.");
 
         /// <summary>
@@ -80,8 +80,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public byte[] PickKnn() => IsKnn
-            ? Knn!
+        public byte[] PickKnn() => Knn is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Knn' but the value was {ToString()}.");
 
         /// <summary>
@@ -117,8 +117,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.RankByText PickText() => IsText
-            ? Text!.Value
+        public global::G.RankByText PickText() => Text is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Text' but the value was {ToString()}.");
 
         /// <summary>
@@ -154,8 +154,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public byte[] PickAttribute() => IsAttribute
-            ? Attribute!
+        public byte[] PickAttribute() => Attribute is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Attribute' but the value was {ToString()}.");
 
         /// <summary>
@@ -191,8 +191,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<byte[]> PickAttributes() => IsAttributes
-            ? Attributes!
+        public global::System.Collections.Generic.IList<byte[]> PickAttributes() => Attributes is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Attributes' but the value was {ToString()}.");
         /// <summary>
         /// 
@@ -304,25 +304,25 @@ namespace G
                 Validate();
             }
 
-            if (IsVector && vector != null)
+            if (Vector is { } __value0 && vector != null)
             {
-                return vector(Vector!);
+                return vector(__value0);
             }
-            else if (IsKnn && knn != null)
+            else if (Knn is { } __value1 && knn != null)
             {
-                return knn(Knn!);
+                return knn(__value1);
             }
-            else if (IsText && text != null)
+            else if (Text is { } __value2 && text != null)
             {
-                return text(Text!);
+                return text(__value2);
             }
-            else if (IsAttribute && attribute != null)
+            else if (Attribute is { } __value3 && attribute != null)
             {
-                return attribute(Attribute!);
+                return attribute(__value3);
             }
-            else if (IsAttributes && attributes != null)
+            else if (Attributes is { } __value4 && attributes != null)
             {
-                return attributes(Attributes!);
+                return attributes(__value4);
             }
 
             return default(TResult);
@@ -348,25 +348,25 @@ namespace G
                 Validate();
             }
 
-            if (IsVector)
+            if (Vector is { } __value0)
             {
-                vector?.Invoke(Vector!);
+                vector?.Invoke(__value0);
             }
-            else if (IsKnn)
+            else if (Knn is { } __value1)
             {
-                knn?.Invoke(Knn!);
+                knn?.Invoke(__value1);
             }
-            else if (IsText)
+            else if (Text is { } __value2)
             {
-                text?.Invoke(Text!);
+                text?.Invoke(__value2);
             }
-            else if (IsAttribute)
+            else if (Attribute is { } __value3)
             {
-                attribute?.Invoke(Attribute!);
+                attribute?.Invoke(__value3);
             }
-            else if (IsAttributes)
+            else if (Attributes is { } __value4)
             {
-                attributes?.Invoke(Attributes!);
+                attributes?.Invoke(__value4);
             }
         }
 
@@ -386,25 +386,25 @@ namespace G
                 Validate();
             }
 
-            if (IsVector)
+            if (Vector is { } __value0)
             {
-                vector?.Invoke(Vector!);
+                vector?.Invoke(__value0);
             }
-            else if (IsKnn)
+            else if (Knn is { } __value1)
             {
-                knn?.Invoke(Knn!);
+                knn?.Invoke(__value1);
             }
-            else if (IsText)
+            else if (Text is { } __value2)
             {
-                text?.Invoke(Text!);
+                text?.Invoke(__value2);
             }
-            else if (IsAttribute)
+            else if (Attribute is { } __value3)
             {
-                attribute?.Invoke(Attribute!);
+                attribute?.Invoke(__value3);
             }
-            else if (IsAttributes)
+            else if (Attributes is { } __value4)
             {
-                attributes?.Invoke(Attributes!);
+                attributes?.Invoke(__value4);
             }
         }
 

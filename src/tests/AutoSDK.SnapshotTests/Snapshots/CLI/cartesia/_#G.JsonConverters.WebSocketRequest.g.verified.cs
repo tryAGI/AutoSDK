@@ -1,4 +1,4 @@
-﻿//HintName: G.JsonConverters.WebSocketRequest.g.cs
+//HintName: G.JsonConverters.WebSocketRequest.g.cs
 #nullable enable
 #pragma warning disable CS0618 // Type or member is obsolete
 
@@ -159,13 +159,13 @@ namespace G.JsonConverters
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.GenerationRequest), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.GenerationRequest?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.GenerationRequest).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.GenerationRequest!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickGenerationRequest(), typeInfo);
             }
             else if (value.IsCancelContextRequest)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.CancelContextRequest), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.CancelContextRequest?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.CancelContextRequest).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.CancelContextRequest!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickCancelContextRequest(), typeInfo);
             }
         }
     }

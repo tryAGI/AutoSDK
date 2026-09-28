@@ -1,4 +1,4 @@
-﻿//HintName: G.JsonConverters.MessagesRequestContextManagementEditsItemsOneOf0ClearToolInputs.g.cs
+//HintName: G.JsonConverters.MessagesRequestContextManagementEditsItemsOneOf0ClearToolInputs.g.cs
 #nullable enable
 #pragma warning disable CS0618 // Type or member is obsolete
 
@@ -199,19 +199,19 @@ namespace G.JsonConverters
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(bool), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<bool> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(bool).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.MessagesRequestContextManagementEditsItemsOneOf0ClearToolInputsVariant1!.Value, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickMessagesRequestContextManagementEditsItemsOneOf0ClearToolInputsVariant1(), typeInfo);
             }
             else if (value.IsMessagesRequestContextManagementEditsItemsOneOf0ClearToolInputsVariant2)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::System.Collections.Generic.IList<string>), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::System.Collections.Generic.IList<string>?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::System.Collections.Generic.IList<string>).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.MessagesRequestContextManagementEditsItemsOneOf0ClearToolInputsVariant2!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickMessagesRequestContextManagementEditsItemsOneOf0ClearToolInputsVariant2(), typeInfo);
             }
             else if (value.IsMessagesRequestContextManagementEditsItemsOneOf0ClearToolInputsVariant3)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(object), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<object?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(object).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.MessagesRequestContextManagementEditsItemsOneOf0ClearToolInputsVariant3!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickMessagesRequestContextManagementEditsItemsOneOf0ClearToolInputsVariant3(), typeInfo);
             }
         }
     }

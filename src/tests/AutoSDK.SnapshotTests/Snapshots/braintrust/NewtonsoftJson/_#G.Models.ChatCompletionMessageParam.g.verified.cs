@@ -1,4 +1,4 @@
-﻿//HintName: G.Models.ChatCompletionMessageParam.g.cs
+//HintName: G.Models.ChatCompletionMessageParam.g.cs
 #pragma warning disable CS0618 // Type or member is obsolete
 
 #nullable enable
@@ -43,8 +43,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.ChatCompletionMessageParamSystem PickSystem() => IsSystem
-            ? System!
+        public global::G.ChatCompletionMessageParamSystem PickSystem() => System is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'System' but the value was {ToString()}.");
 
         /// <summary>
@@ -80,8 +80,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.ChatCompletionMessageParamUser PickUser() => IsUser
-            ? User!
+        public global::G.ChatCompletionMessageParamUser PickUser() => User is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'User' but the value was {ToString()}.");
 
         /// <summary>
@@ -117,8 +117,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.ChatCompletionMessageParamAssistant PickAssistant() => IsAssistant
-            ? Assistant!
+        public global::G.ChatCompletionMessageParamAssistant PickAssistant() => Assistant is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Assistant' but the value was {ToString()}.");
 
         /// <summary>
@@ -154,8 +154,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.ChatCompletionMessageParamTool PickTool() => IsTool
-            ? Tool!
+        public global::G.ChatCompletionMessageParamTool PickTool() => Tool is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Tool' but the value was {ToString()}.");
 
         /// <summary>
@@ -191,8 +191,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.ChatCompletionMessageParamFunction PickFunction() => IsFunction
-            ? Function!
+        public global::G.ChatCompletionMessageParamFunction PickFunction() => Function is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Function' but the value was {ToString()}.");
 
         /// <summary>
@@ -228,8 +228,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.ChatCompletionMessageParamDeveloper PickDeveloper() => IsDeveloper
-            ? Developer!
+        public global::G.ChatCompletionMessageParamDeveloper PickDeveloper() => Developer is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Developer' but the value was {ToString()}.");
 
         /// <summary>
@@ -265,8 +265,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.ChatCompletionMessageParamFallback PickFallback() => IsFallback
-            ? Fallback!
+        public global::G.ChatCompletionMessageParamFallback PickFallback() => Fallback is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Fallback' but the value was {ToString()}.");
         /// <summary>
         /// 
@@ -503,33 +503,33 @@ namespace G
                 Validate();
             }
 
-            if (IsSystem && system != null)
+            if (System is { } __value0 && system != null)
             {
-                return system(System!);
+                return system(__value0);
             }
-            else if (IsUser && user != null)
+            else if (User is { } __value1 && user != null)
             {
-                return user(User!);
+                return user(__value1);
             }
-            else if (IsAssistant && assistant != null)
+            else if (Assistant is { } __value2 && assistant != null)
             {
-                return assistant(Assistant!);
+                return assistant(__value2);
             }
-            else if (IsTool && tool != null)
+            else if (Tool is { } __value3 && tool != null)
             {
-                return tool(Tool!);
+                return tool(__value3);
             }
-            else if (IsFunction && function != null)
+            else if (Function is { } __value4 && function != null)
             {
-                return function(Function!);
+                return function(__value4);
             }
-            else if (IsDeveloper && developer != null)
+            else if (Developer is { } __value5 && developer != null)
             {
-                return developer(Developer!);
+                return developer(__value5);
             }
-            else if (IsFallback && fallback != null)
+            else if (Fallback is { } __value6 && fallback != null)
             {
-                return fallback(Fallback!);
+                return fallback(__value6);
             }
 
             return default(TResult);
@@ -559,33 +559,33 @@ namespace G
                 Validate();
             }
 
-            if (IsSystem)
+            if (System is { } __value0)
             {
-                system?.Invoke(System!);
+                system?.Invoke(__value0);
             }
-            else if (IsUser)
+            else if (User is { } __value1)
             {
-                user?.Invoke(User!);
+                user?.Invoke(__value1);
             }
-            else if (IsAssistant)
+            else if (Assistant is { } __value2)
             {
-                assistant?.Invoke(Assistant!);
+                assistant?.Invoke(__value2);
             }
-            else if (IsTool)
+            else if (Tool is { } __value3)
             {
-                tool?.Invoke(Tool!);
+                tool?.Invoke(__value3);
             }
-            else if (IsFunction)
+            else if (Function is { } __value4)
             {
-                function?.Invoke(Function!);
+                function?.Invoke(__value4);
             }
-            else if (IsDeveloper)
+            else if (Developer is { } __value5)
             {
-                developer?.Invoke(Developer!);
+                developer?.Invoke(__value5);
             }
-            else if (IsFallback)
+            else if (Fallback is { } __value6)
             {
-                fallback?.Invoke(Fallback!);
+                fallback?.Invoke(__value6);
             }
         }
 
@@ -607,33 +607,33 @@ namespace G
                 Validate();
             }
 
-            if (IsSystem)
+            if (System is { } __value0)
             {
-                system?.Invoke(System!);
+                system?.Invoke(__value0);
             }
-            else if (IsUser)
+            else if (User is { } __value1)
             {
-                user?.Invoke(User!);
+                user?.Invoke(__value1);
             }
-            else if (IsAssistant)
+            else if (Assistant is { } __value2)
             {
-                assistant?.Invoke(Assistant!);
+                assistant?.Invoke(__value2);
             }
-            else if (IsTool)
+            else if (Tool is { } __value3)
             {
-                tool?.Invoke(Tool!);
+                tool?.Invoke(__value3);
             }
-            else if (IsFunction)
+            else if (Function is { } __value4)
             {
-                function?.Invoke(Function!);
+                function?.Invoke(__value4);
             }
-            else if (IsDeveloper)
+            else if (Developer is { } __value5)
             {
-                developer?.Invoke(Developer!);
+                developer?.Invoke(__value5);
             }
-            else if (IsFallback)
+            else if (Fallback is { } __value6)
             {
-                fallback?.Invoke(Fallback!);
+                fallback?.Invoke(__value6);
             }
         }
 

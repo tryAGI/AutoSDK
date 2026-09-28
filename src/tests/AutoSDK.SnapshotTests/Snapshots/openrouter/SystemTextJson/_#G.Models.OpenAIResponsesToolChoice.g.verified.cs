@@ -1,4 +1,4 @@
-﻿//HintName: G.Models.OpenAIResponsesToolChoice.g.cs
+//HintName: G.Models.OpenAIResponsesToolChoice.g.cs
 #pragma warning disable CS0618 // Type or member is obsolete
 
 #nullable enable
@@ -43,8 +43,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.OpenAiResponsesToolChoice0 PickOpenAiResponsesToolChoice0() => IsOpenAiResponsesToolChoice0
-            ? OpenAiResponsesToolChoice0!.Value
+        public global::G.OpenAiResponsesToolChoice0 PickOpenAiResponsesToolChoice0() => OpenAiResponsesToolChoice0 is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'OpenAiResponsesToolChoice0' but the value was {ToString()}.");
 
         /// <summary>
@@ -80,8 +80,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.OpenAiResponsesToolChoice1 PickOpenAiResponsesToolChoice1() => IsOpenAiResponsesToolChoice1
-            ? OpenAiResponsesToolChoice1!.Value
+        public global::G.OpenAiResponsesToolChoice1 PickOpenAiResponsesToolChoice1() => OpenAiResponsesToolChoice1 is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'OpenAiResponsesToolChoice1' but the value was {ToString()}.");
 
         /// <summary>
@@ -117,8 +117,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.OpenAiResponsesToolChoice2 PickOpenAiResponsesToolChoice2() => IsOpenAiResponsesToolChoice2
-            ? OpenAiResponsesToolChoice2!.Value
+        public global::G.OpenAiResponsesToolChoice2 PickOpenAiResponsesToolChoice2() => OpenAiResponsesToolChoice2 is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'OpenAiResponsesToolChoice2' but the value was {ToString()}.");
 
         /// <summary>
@@ -154,8 +154,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.OpenAiResponsesToolChoice3 PickOpenAiResponsesToolChoice3() => IsOpenAiResponsesToolChoice3
-            ? OpenAiResponsesToolChoice3!
+        public global::G.OpenAiResponsesToolChoice3 PickOpenAiResponsesToolChoice3() => OpenAiResponsesToolChoice3 is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'OpenAiResponsesToolChoice3' but the value was {ToString()}.");
 
         /// <summary>
@@ -191,8 +191,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.OpenAiResponsesToolChoice4 PickOpenAiResponsesToolChoice4() => IsOpenAiResponsesToolChoice4
-            ? OpenAiResponsesToolChoice4!
+        public global::G.OpenAiResponsesToolChoice4 PickOpenAiResponsesToolChoice4() => OpenAiResponsesToolChoice4 is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'OpenAiResponsesToolChoice4' but the value was {ToString()}.");
         /// <summary>
         /// 
@@ -373,25 +373,25 @@ namespace G
                 Validate();
             }
 
-            if (IsOpenAiResponsesToolChoice0 && openAiResponsesToolChoice0 != null)
+            if (OpenAiResponsesToolChoice0 is { } __value0 && openAiResponsesToolChoice0 != null)
             {
-                return openAiResponsesToolChoice0(OpenAiResponsesToolChoice0!);
+                return openAiResponsesToolChoice0(__value0);
             }
-            else if (IsOpenAiResponsesToolChoice1 && openAiResponsesToolChoice1 != null)
+            else if (OpenAiResponsesToolChoice1 is { } __value1 && openAiResponsesToolChoice1 != null)
             {
-                return openAiResponsesToolChoice1(OpenAiResponsesToolChoice1!);
+                return openAiResponsesToolChoice1(__value1);
             }
-            else if (IsOpenAiResponsesToolChoice2 && openAiResponsesToolChoice2 != null)
+            else if (OpenAiResponsesToolChoice2 is { } __value2 && openAiResponsesToolChoice2 != null)
             {
-                return openAiResponsesToolChoice2(OpenAiResponsesToolChoice2!);
+                return openAiResponsesToolChoice2(__value2);
             }
-            else if (IsOpenAiResponsesToolChoice3 && openAiResponsesToolChoice3 != null)
+            else if (OpenAiResponsesToolChoice3 is { } __value3 && openAiResponsesToolChoice3 != null)
             {
-                return openAiResponsesToolChoice3(OpenAiResponsesToolChoice3!);
+                return openAiResponsesToolChoice3(__value3);
             }
-            else if (IsOpenAiResponsesToolChoice4 && openAiResponsesToolChoice4 != null)
+            else if (OpenAiResponsesToolChoice4 is { } __value4 && openAiResponsesToolChoice4 != null)
             {
-                return openAiResponsesToolChoice4(OpenAiResponsesToolChoice4!);
+                return openAiResponsesToolChoice4(__value4);
             }
 
             return default(TResult);
@@ -417,25 +417,25 @@ namespace G
                 Validate();
             }
 
-            if (IsOpenAiResponsesToolChoice0)
+            if (OpenAiResponsesToolChoice0 is { } __value0)
             {
-                openAiResponsesToolChoice0?.Invoke(OpenAiResponsesToolChoice0!);
+                openAiResponsesToolChoice0?.Invoke(__value0);
             }
-            else if (IsOpenAiResponsesToolChoice1)
+            else if (OpenAiResponsesToolChoice1 is { } __value1)
             {
-                openAiResponsesToolChoice1?.Invoke(OpenAiResponsesToolChoice1!);
+                openAiResponsesToolChoice1?.Invoke(__value1);
             }
-            else if (IsOpenAiResponsesToolChoice2)
+            else if (OpenAiResponsesToolChoice2 is { } __value2)
             {
-                openAiResponsesToolChoice2?.Invoke(OpenAiResponsesToolChoice2!);
+                openAiResponsesToolChoice2?.Invoke(__value2);
             }
-            else if (IsOpenAiResponsesToolChoice3)
+            else if (OpenAiResponsesToolChoice3 is { } __value3)
             {
-                openAiResponsesToolChoice3?.Invoke(OpenAiResponsesToolChoice3!);
+                openAiResponsesToolChoice3?.Invoke(__value3);
             }
-            else if (IsOpenAiResponsesToolChoice4)
+            else if (OpenAiResponsesToolChoice4 is { } __value4)
             {
-                openAiResponsesToolChoice4?.Invoke(OpenAiResponsesToolChoice4!);
+                openAiResponsesToolChoice4?.Invoke(__value4);
             }
         }
 
@@ -455,25 +455,25 @@ namespace G
                 Validate();
             }
 
-            if (IsOpenAiResponsesToolChoice0)
+            if (OpenAiResponsesToolChoice0 is { } __value0)
             {
-                openAiResponsesToolChoice0?.Invoke(OpenAiResponsesToolChoice0!);
+                openAiResponsesToolChoice0?.Invoke(__value0);
             }
-            else if (IsOpenAiResponsesToolChoice1)
+            else if (OpenAiResponsesToolChoice1 is { } __value1)
             {
-                openAiResponsesToolChoice1?.Invoke(OpenAiResponsesToolChoice1!);
+                openAiResponsesToolChoice1?.Invoke(__value1);
             }
-            else if (IsOpenAiResponsesToolChoice2)
+            else if (OpenAiResponsesToolChoice2 is { } __value2)
             {
-                openAiResponsesToolChoice2?.Invoke(OpenAiResponsesToolChoice2!);
+                openAiResponsesToolChoice2?.Invoke(__value2);
             }
-            else if (IsOpenAiResponsesToolChoice3)
+            else if (OpenAiResponsesToolChoice3 is { } __value3)
             {
-                openAiResponsesToolChoice3?.Invoke(OpenAiResponsesToolChoice3!);
+                openAiResponsesToolChoice3?.Invoke(__value3);
             }
-            else if (IsOpenAiResponsesToolChoice4)
+            else if (OpenAiResponsesToolChoice4 is { } __value4)
             {
-                openAiResponsesToolChoice4?.Invoke(OpenAiResponsesToolChoice4!);
+                openAiResponsesToolChoice4?.Invoke(__value4);
             }
         }
 

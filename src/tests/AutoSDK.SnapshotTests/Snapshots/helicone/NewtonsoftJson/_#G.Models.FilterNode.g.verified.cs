@@ -1,4 +1,4 @@
-﻿//HintName: G.Models.FilterNode.g.cs
+//HintName: G.Models.FilterNode.g.cs
 #pragma warning disable CS0618 // Type or member is obsolete
 
 #nullable enable
@@ -43,8 +43,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.PartialTablesAndViews PickPartialTablesAndViews() => IsPartialTablesAndViews
-            ? PartialTablesAndViews!
+        public global::G.PartialTablesAndViews PickPartialTablesAndViews() => PartialTablesAndViews is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'PartialTablesAndViews' but the value was {ToString()}.");
 
         /// <summary>
@@ -80,8 +80,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.FilterBranch PickBranch() => IsBranch
-            ? Branch!
+        public global::G.FilterBranch PickBranch() => Branch is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Branch' but the value was {ToString()}.");
 
         /// <summary>
@@ -117,8 +117,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public object PickEnum() => IsEnum
-            ? Enum!
+        public object PickEnum() => Enum is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Enum' but the value was {ToString()}.");
 
         /// <summary>
@@ -154,8 +154,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.FilterNodeEnum2 PickEnum2() => IsEnum2
-            ? Enum2!.Value
+        public global::G.FilterNodeEnum2 PickEnum2() => Enum2 is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Enum2' but the value was {ToString()}.");
         /// <summary>
         /// 
@@ -285,21 +285,21 @@ namespace G
                 Validate();
             }
 
-            if (IsPartialTablesAndViews && partialTablesAndViews != null)
+            if (PartialTablesAndViews is { } __value0 && partialTablesAndViews != null)
             {
-                return partialTablesAndViews(PartialTablesAndViews!);
+                return partialTablesAndViews(__value0);
             }
-            else if (IsBranch && branch != null)
+            else if (Branch is { } __value1 && branch != null)
             {
-                return branch(Branch!);
+                return branch(__value1);
             }
-            else if (IsEnum && @enum != null)
+            else if (Enum is { } __value2 && @enum != null)
             {
-                return @enum(Enum!);
+                return @enum(__value2);
             }
-            else if (IsEnum2 && enum2 != null)
+            else if (Enum2 is { } __value3 && enum2 != null)
             {
-                return enum2(Enum2!);
+                return enum2(__value3);
             }
 
             return default(TResult);
@@ -323,21 +323,21 @@ namespace G
                 Validate();
             }
 
-            if (IsPartialTablesAndViews)
+            if (PartialTablesAndViews is { } __value0)
             {
-                partialTablesAndViews?.Invoke(PartialTablesAndViews!);
+                partialTablesAndViews?.Invoke(__value0);
             }
-            else if (IsBranch)
+            else if (Branch is { } __value1)
             {
-                branch?.Invoke(Branch!);
+                branch?.Invoke(__value1);
             }
-            else if (IsEnum)
+            else if (Enum is { } __value2)
             {
-                @enum?.Invoke(Enum!);
+                @enum?.Invoke(__value2);
             }
-            else if (IsEnum2)
+            else if (Enum2 is { } __value3)
             {
-                enum2?.Invoke(Enum2!);
+                enum2?.Invoke(__value3);
             }
         }
 
@@ -356,21 +356,21 @@ namespace G
                 Validate();
             }
 
-            if (IsPartialTablesAndViews)
+            if (PartialTablesAndViews is { } __value0)
             {
-                partialTablesAndViews?.Invoke(PartialTablesAndViews!);
+                partialTablesAndViews?.Invoke(__value0);
             }
-            else if (IsBranch)
+            else if (Branch is { } __value1)
             {
-                branch?.Invoke(Branch!);
+                branch?.Invoke(__value1);
             }
-            else if (IsEnum)
+            else if (Enum is { } __value2)
             {
-                @enum?.Invoke(Enum!);
+                @enum?.Invoke(__value2);
             }
-            else if (IsEnum2)
+            else if (Enum2 is { } __value3)
             {
-                enum2?.Invoke(Enum2!);
+                enum2?.Invoke(__value3);
             }
         }
 

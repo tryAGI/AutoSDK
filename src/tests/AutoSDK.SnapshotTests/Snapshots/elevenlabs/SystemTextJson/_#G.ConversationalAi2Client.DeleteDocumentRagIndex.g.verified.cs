@@ -1,4 +1,4 @@
-﻿//HintName: G.ConversationalAi2Client.DeleteDocumentRagIndex.g.cs
+//HintName: G.ConversationalAi2Client.DeleteDocumentRagIndex.g.cs
 
 #nullable enable
 
@@ -139,8 +139,8 @@ namespace G
                 PrepareDeleteDocumentRagIndexRequest(
                     httpClient: HttpClient,
                     httpRequestMessage: __httpRequest,
-                    documentationId: documentationId!,
-                    ragIndexId: ragIndexId!,
+                    documentationId: documentationId,
+                    ragIndexId: ragIndexId,
                     xiApiKey: xiApiKey);
 
                 return __httpRequest;
@@ -163,7 +163,7 @@ namespace G
                                 pathTemplate: "$\"/v1/convai/knowledge-base/{documentationId}/rag-index/{ragIndexId}\"",
                                 httpMethod: "DELETE",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: null,
                                 exception: null,
                                 clientOptions: Options,
@@ -197,7 +197,7 @@ namespace G
                                 pathTemplate: "$\"/v1/convai/knowledge-base/{documentationId}/rag-index/{ragIndexId}\"",
                                 httpMethod: "DELETE",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: null,
                                 exception: __exception,
                                 clientOptions: Options,
@@ -238,7 +238,7 @@ namespace G
                                 pathTemplate: "$\"/v1/convai/knowledge-base/{documentationId}/rag-index/{ragIndexId}\"",
                                 httpMethod: "DELETE",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: __response,
                                 exception: null,
                                 clientOptions: Options,
@@ -286,7 +286,7 @@ namespace G
                                 pathTemplate: "$\"/v1/convai/knowledge-base/{documentationId}/rag-index/{ragIndexId}\"",
                                 httpMethod: "DELETE",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: __response,
                                 exception: null,
                                 clientOptions: Options,
@@ -308,7 +308,7 @@ namespace G
                                 pathTemplate: "$\"/v1/convai/knowledge-base/{documentationId}/rag-index/{ragIndexId}\"",
                                 httpMethod: "DELETE",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: __response,
                                 exception: null,
                                 clientOptions: Options,

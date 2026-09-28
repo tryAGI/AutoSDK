@@ -1,4 +1,4 @@
-﻿//HintName: G.JsonConverters.ResponseToolChoiceOption.g.cs
+//HintName: G.JsonConverters.ResponseToolChoiceOption.g.cs
 #nullable enable
 #pragma warning disable CS0618 // Type or member is obsolete
 
@@ -137,13 +137,13 @@ namespace G.JsonConverters
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.ResponseToolChoiceOptionEnum), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.ResponseToolChoiceOptionEnum> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.ResponseToolChoiceOptionEnum).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Enum!.Value, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickEnum(), typeInfo);
             }
             else if (value.IsNamed)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.ResponseNamedToolChoice), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.ResponseNamedToolChoice?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.ResponseNamedToolChoice).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Named!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickNamed(), typeInfo);
             }
         }
     }

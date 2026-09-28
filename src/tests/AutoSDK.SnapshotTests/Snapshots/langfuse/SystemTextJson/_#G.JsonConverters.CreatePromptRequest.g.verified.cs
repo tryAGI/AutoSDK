@@ -1,4 +1,4 @@
-﻿//HintName: G.JsonConverters.CreatePromptRequest.g.cs
+//HintName: G.JsonConverters.CreatePromptRequest.g.cs
 #nullable enable
 #pragma warning disable CS0618 // Type or member is obsolete
 
@@ -141,13 +141,13 @@ namespace G.JsonConverters
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.CreateChatPromptRequest), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.CreateChatPromptRequest?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.CreateChatPromptRequest).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.CreateChatPromptRequest!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickCreateChatPromptRequest(), typeInfo);
             }
             else if (value.IsCreateTextPromptRequest)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.CreateTextPromptRequest), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.CreateTextPromptRequest?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.CreateTextPromptRequest).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.CreateTextPromptRequest!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickCreateTextPromptRequest(), typeInfo);
             }
         }
     }

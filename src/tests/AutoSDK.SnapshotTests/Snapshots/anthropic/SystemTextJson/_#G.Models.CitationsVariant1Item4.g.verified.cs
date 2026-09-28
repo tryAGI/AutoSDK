@@ -1,4 +1,4 @@
-﻿//HintName: G.Models.CitationsVariant1Item4.g.cs
+//HintName: G.Models.CitationsVariant1Item4.g.cs
 #pragma warning disable CS0618 // Type or member is obsolete
 
 #nullable enable
@@ -48,8 +48,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.ResponseCharLocationCitation PickCharLocation() => IsCharLocation
-            ? CharLocation!
+        public global::G.ResponseCharLocationCitation PickCharLocation() => CharLocation is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'CharLocation' but the value was {ToString()}.");
 
         /// <summary>
@@ -85,8 +85,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.ResponsePageLocationCitation PickPageLocation() => IsPageLocation
-            ? PageLocation!
+        public global::G.ResponsePageLocationCitation PickPageLocation() => PageLocation is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'PageLocation' but the value was {ToString()}.");
 
         /// <summary>
@@ -122,8 +122,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.ResponseContentBlockLocationCitation PickContentBlockLocation() => IsContentBlockLocation
-            ? ContentBlockLocation!
+        public global::G.ResponseContentBlockLocationCitation PickContentBlockLocation() => ContentBlockLocation is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'ContentBlockLocation' but the value was {ToString()}.");
         /// <summary>
         /// 
@@ -251,17 +251,17 @@ namespace G
                 Validate();
             }
 
-            if (IsCharLocation && charLocation != null)
+            if (CharLocation is { } __value0 && charLocation != null)
             {
-                return charLocation(CharLocation!);
+                return charLocation(__value0);
             }
-            else if (IsPageLocation && pageLocation != null)
+            else if (PageLocation is { } __value1 && pageLocation != null)
             {
-                return pageLocation(PageLocation!);
+                return pageLocation(__value1);
             }
-            else if (IsContentBlockLocation && contentBlockLocation != null)
+            else if (ContentBlockLocation is { } __value2 && contentBlockLocation != null)
             {
-                return contentBlockLocation(ContentBlockLocation!);
+                return contentBlockLocation(__value2);
             }
 
             return default(TResult);
@@ -283,17 +283,17 @@ namespace G
                 Validate();
             }
 
-            if (IsCharLocation)
+            if (CharLocation is { } __value0)
             {
-                charLocation?.Invoke(CharLocation!);
+                charLocation?.Invoke(__value0);
             }
-            else if (IsPageLocation)
+            else if (PageLocation is { } __value1)
             {
-                pageLocation?.Invoke(PageLocation!);
+                pageLocation?.Invoke(__value1);
             }
-            else if (IsContentBlockLocation)
+            else if (ContentBlockLocation is { } __value2)
             {
-                contentBlockLocation?.Invoke(ContentBlockLocation!);
+                contentBlockLocation?.Invoke(__value2);
             }
         }
 
@@ -311,17 +311,17 @@ namespace G
                 Validate();
             }
 
-            if (IsCharLocation)
+            if (CharLocation is { } __value0)
             {
-                charLocation?.Invoke(CharLocation!);
+                charLocation?.Invoke(__value0);
             }
-            else if (IsPageLocation)
+            else if (PageLocation is { } __value1)
             {
-                pageLocation?.Invoke(PageLocation!);
+                pageLocation?.Invoke(__value1);
             }
-            else if (IsContentBlockLocation)
+            else if (ContentBlockLocation is { } __value2)
             {
-                contentBlockLocation?.Invoke(ContentBlockLocation!);
+                contentBlockLocation?.Invoke(__value2);
             }
         }
 

@@ -1,4 +1,4 @@
-﻿//HintName: G.PackagesClient.PackagesListPackagesForAuthenticatedUser.g.cs
+//HintName: G.PackagesClient.PackagesListPackagesForAuthenticatedUser.g.cs
 
 #nullable enable
 
@@ -162,7 +162,7 @@ namespace G
                 PreparePackagesListPackagesForAuthenticatedUserRequest(
                     httpClient: HttpClient,
                     httpRequestMessage: __httpRequest,
-                    packageType: packageType!,
+                    packageType: packageType,
                     visibility: visibility,
                     page: page,
                     perPage: perPage);
@@ -187,7 +187,7 @@ namespace G
                                 pathTemplate: "\"/user/packages\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: null,
                                 exception: null,
                                 clientOptions: Options,
@@ -221,7 +221,7 @@ namespace G
                                 pathTemplate: "\"/user/packages\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: null,
                                 exception: __exception,
                                 clientOptions: Options,
@@ -262,7 +262,7 @@ namespace G
                                 pathTemplate: "\"/user/packages\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: __response,
                                 exception: null,
                                 clientOptions: Options,
@@ -310,7 +310,7 @@ namespace G
                                 pathTemplate: "\"/user/packages\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: __response,
                                 exception: null,
                                 clientOptions: Options,
@@ -332,7 +332,7 @@ namespace G
                                 pathTemplate: "\"/user/packages\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: __response,
                                 exception: null,
                                 clientOptions: Options,

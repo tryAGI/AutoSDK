@@ -1,4 +1,4 @@
-﻿//HintName: G.Models.ChatCompletionMessageContentBlock.g.cs
+//HintName: G.Models.ChatCompletionMessageContentBlock.g.cs
 #pragma warning disable CS0618 // Type or member is obsolete
 
 #nullable enable
@@ -43,8 +43,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.ChatCompletionRequestMessageContentPartText PickTextContentPart() => IsTextContentPart
-            ? TextContentPart!
+        public global::G.ChatCompletionRequestMessageContentPartText PickTextContentPart() => TextContentPart is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'TextContentPart' but the value was {ToString()}.");
 
         /// <summary>
@@ -80,8 +80,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.ChatCompletionMessageContentPartThinking PickThinkingContentPart() => IsThinkingContentPart
-            ? ThinkingContentPart!
+        public global::G.ChatCompletionMessageContentPartThinking PickThinkingContentPart() => ThinkingContentPart is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'ThinkingContentPart' but the value was {ToString()}.");
 
         /// <summary>
@@ -117,8 +117,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.ChatCompletionMessageContentPartRedactedThinking PickRedactedThinkingContentPart() => IsRedactedThinkingContentPart
-            ? RedactedThinkingContentPart!
+        public global::G.ChatCompletionMessageContentPartRedactedThinking PickRedactedThinkingContentPart() => RedactedThinkingContentPart is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'RedactedThinkingContentPart' but the value was {ToString()}.");
         /// <summary>
         /// 
@@ -243,17 +243,17 @@ namespace G
                 Validate();
             }
 
-            if (IsTextContentPart && textContentPart != null)
+            if (TextContentPart is { } __value0 && textContentPart != null)
             {
-                return textContentPart(TextContentPart!);
+                return textContentPart(__value0);
             }
-            else if (IsThinkingContentPart && thinkingContentPart != null)
+            else if (ThinkingContentPart is { } __value1 && thinkingContentPart != null)
             {
-                return thinkingContentPart(ThinkingContentPart!);
+                return thinkingContentPart(__value1);
             }
-            else if (IsRedactedThinkingContentPart && redactedThinkingContentPart != null)
+            else if (RedactedThinkingContentPart is { } __value2 && redactedThinkingContentPart != null)
             {
-                return redactedThinkingContentPart(RedactedThinkingContentPart!);
+                return redactedThinkingContentPart(__value2);
             }
 
             return default(TResult);
@@ -275,17 +275,17 @@ namespace G
                 Validate();
             }
 
-            if (IsTextContentPart)
+            if (TextContentPart is { } __value0)
             {
-                textContentPart?.Invoke(TextContentPart!);
+                textContentPart?.Invoke(__value0);
             }
-            else if (IsThinkingContentPart)
+            else if (ThinkingContentPart is { } __value1)
             {
-                thinkingContentPart?.Invoke(ThinkingContentPart!);
+                thinkingContentPart?.Invoke(__value1);
             }
-            else if (IsRedactedThinkingContentPart)
+            else if (RedactedThinkingContentPart is { } __value2)
             {
-                redactedThinkingContentPart?.Invoke(RedactedThinkingContentPart!);
+                redactedThinkingContentPart?.Invoke(__value2);
             }
         }
 
@@ -303,17 +303,17 @@ namespace G
                 Validate();
             }
 
-            if (IsTextContentPart)
+            if (TextContentPart is { } __value0)
             {
-                textContentPart?.Invoke(TextContentPart!);
+                textContentPart?.Invoke(__value0);
             }
-            else if (IsThinkingContentPart)
+            else if (ThinkingContentPart is { } __value1)
             {
-                thinkingContentPart?.Invoke(ThinkingContentPart!);
+                thinkingContentPart?.Invoke(__value1);
             }
-            else if (IsRedactedThinkingContentPart)
+            else if (RedactedThinkingContentPart is { } __value2)
             {
-                redactedThinkingContentPart?.Invoke(RedactedThinkingContentPart!);
+                redactedThinkingContentPart?.Invoke(__value2);
             }
         }
 

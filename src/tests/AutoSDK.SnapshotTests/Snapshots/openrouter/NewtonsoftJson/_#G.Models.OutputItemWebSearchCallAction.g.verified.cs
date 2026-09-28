@@ -1,4 +1,4 @@
-﻿//HintName: G.Models.OutputItemWebSearchCallAction.g.cs
+//HintName: G.Models.OutputItemWebSearchCallAction.g.cs
 #pragma warning disable CS0618 // Type or member is obsolete
 
 #nullable enable
@@ -43,8 +43,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.OutputItemWebSearchCallAction0 PickOutputItemWebSearchCallAction0() => IsOutputItemWebSearchCallAction0
-            ? OutputItemWebSearchCallAction0!
+        public global::G.OutputItemWebSearchCallAction0 PickOutputItemWebSearchCallAction0() => OutputItemWebSearchCallAction0 is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'OutputItemWebSearchCallAction0' but the value was {ToString()}.");
 
         /// <summary>
@@ -80,8 +80,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.OutputItemWebSearchCallAction1 PickOutputItemWebSearchCallAction1() => IsOutputItemWebSearchCallAction1
-            ? OutputItemWebSearchCallAction1!
+        public global::G.OutputItemWebSearchCallAction1 PickOutputItemWebSearchCallAction1() => OutputItemWebSearchCallAction1 is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'OutputItemWebSearchCallAction1' but the value was {ToString()}.");
 
         /// <summary>
@@ -117,8 +117,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.OutputItemWebSearchCallAction2 PickOutputItemWebSearchCallAction2() => IsOutputItemWebSearchCallAction2
-            ? OutputItemWebSearchCallAction2!
+        public global::G.OutputItemWebSearchCallAction2 PickOutputItemWebSearchCallAction2() => OutputItemWebSearchCallAction2 is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'OutputItemWebSearchCallAction2' but the value was {ToString()}.");
         /// <summary>
         /// 
@@ -243,17 +243,17 @@ namespace G
                 Validate();
             }
 
-            if (IsOutputItemWebSearchCallAction0 && outputItemWebSearchCallAction0 != null)
+            if (OutputItemWebSearchCallAction0 is { } __value0 && outputItemWebSearchCallAction0 != null)
             {
-                return outputItemWebSearchCallAction0(OutputItemWebSearchCallAction0!);
+                return outputItemWebSearchCallAction0(__value0);
             }
-            else if (IsOutputItemWebSearchCallAction1 && outputItemWebSearchCallAction1 != null)
+            else if (OutputItemWebSearchCallAction1 is { } __value1 && outputItemWebSearchCallAction1 != null)
             {
-                return outputItemWebSearchCallAction1(OutputItemWebSearchCallAction1!);
+                return outputItemWebSearchCallAction1(__value1);
             }
-            else if (IsOutputItemWebSearchCallAction2 && outputItemWebSearchCallAction2 != null)
+            else if (OutputItemWebSearchCallAction2 is { } __value2 && outputItemWebSearchCallAction2 != null)
             {
-                return outputItemWebSearchCallAction2(OutputItemWebSearchCallAction2!);
+                return outputItemWebSearchCallAction2(__value2);
             }
 
             return default(TResult);
@@ -275,17 +275,17 @@ namespace G
                 Validate();
             }
 
-            if (IsOutputItemWebSearchCallAction0)
+            if (OutputItemWebSearchCallAction0 is { } __value0)
             {
-                outputItemWebSearchCallAction0?.Invoke(OutputItemWebSearchCallAction0!);
+                outputItemWebSearchCallAction0?.Invoke(__value0);
             }
-            else if (IsOutputItemWebSearchCallAction1)
+            else if (OutputItemWebSearchCallAction1 is { } __value1)
             {
-                outputItemWebSearchCallAction1?.Invoke(OutputItemWebSearchCallAction1!);
+                outputItemWebSearchCallAction1?.Invoke(__value1);
             }
-            else if (IsOutputItemWebSearchCallAction2)
+            else if (OutputItemWebSearchCallAction2 is { } __value2)
             {
-                outputItemWebSearchCallAction2?.Invoke(OutputItemWebSearchCallAction2!);
+                outputItemWebSearchCallAction2?.Invoke(__value2);
             }
         }
 
@@ -303,17 +303,17 @@ namespace G
                 Validate();
             }
 
-            if (IsOutputItemWebSearchCallAction0)
+            if (OutputItemWebSearchCallAction0 is { } __value0)
             {
-                outputItemWebSearchCallAction0?.Invoke(OutputItemWebSearchCallAction0!);
+                outputItemWebSearchCallAction0?.Invoke(__value0);
             }
-            else if (IsOutputItemWebSearchCallAction1)
+            else if (OutputItemWebSearchCallAction1 is { } __value1)
             {
-                outputItemWebSearchCallAction1?.Invoke(OutputItemWebSearchCallAction1!);
+                outputItemWebSearchCallAction1?.Invoke(__value1);
             }
-            else if (IsOutputItemWebSearchCallAction2)
+            else if (OutputItemWebSearchCallAction2 is { } __value2)
             {
-                outputItemWebSearchCallAction2?.Invoke(OutputItemWebSearchCallAction2!);
+                outputItemWebSearchCallAction2?.Invoke(__value2);
             }
         }
 

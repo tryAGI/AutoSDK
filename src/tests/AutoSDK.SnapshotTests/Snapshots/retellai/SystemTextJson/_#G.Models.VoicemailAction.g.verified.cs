@@ -1,4 +1,4 @@
-﻿//HintName: G.Models.VoicemailAction.g.cs
+//HintName: G.Models.VoicemailAction.g.cs
 #pragma warning disable CS0618 // Type or member is obsolete
 
 #nullable enable
@@ -43,8 +43,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.VoicemailActionPrompt PickPrompt() => IsPrompt
-            ? Prompt!
+        public global::G.VoicemailActionPrompt PickPrompt() => Prompt is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Prompt' but the value was {ToString()}.");
 
         /// <summary>
@@ -80,8 +80,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.VoicemailActionStaticText PickStaticText() => IsStaticText
-            ? StaticText!
+        public global::G.VoicemailActionStaticText PickStaticText() => StaticText is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'StaticText' but the value was {ToString()}.");
 
         /// <summary>
@@ -117,8 +117,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.VoicemailActionHangup PickHangup() => IsHangup
-            ? Hangup!
+        public global::G.VoicemailActionHangup PickHangup() => Hangup is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Hangup' but the value was {ToString()}.");
 
         /// <summary>
@@ -154,8 +154,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.VoicemailActionBridgeTransfer PickBridgeTransfer() => IsBridgeTransfer
-            ? BridgeTransfer!
+        public global::G.VoicemailActionBridgeTransfer PickBridgeTransfer() => BridgeTransfer is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'BridgeTransfer' but the value was {ToString()}.");
         /// <summary>
         /// 
@@ -308,21 +308,21 @@ namespace G
                 Validate();
             }
 
-            if (IsPrompt && prompt != null)
+            if (Prompt is { } __value0 && prompt != null)
             {
-                return prompt(Prompt!);
+                return prompt(__value0);
             }
-            else if (IsStaticText && staticText != null)
+            else if (StaticText is { } __value1 && staticText != null)
             {
-                return staticText(StaticText!);
+                return staticText(__value1);
             }
-            else if (IsHangup && hangup != null)
+            else if (Hangup is { } __value2 && hangup != null)
             {
-                return hangup(Hangup!);
+                return hangup(__value2);
             }
-            else if (IsBridgeTransfer && bridgeTransfer != null)
+            else if (BridgeTransfer is { } __value3 && bridgeTransfer != null)
             {
-                return bridgeTransfer(BridgeTransfer!);
+                return bridgeTransfer(__value3);
             }
 
             return default(TResult);
@@ -346,21 +346,21 @@ namespace G
                 Validate();
             }
 
-            if (IsPrompt)
+            if (Prompt is { } __value0)
             {
-                prompt?.Invoke(Prompt!);
+                prompt?.Invoke(__value0);
             }
-            else if (IsStaticText)
+            else if (StaticText is { } __value1)
             {
-                staticText?.Invoke(StaticText!);
+                staticText?.Invoke(__value1);
             }
-            else if (IsHangup)
+            else if (Hangup is { } __value2)
             {
-                hangup?.Invoke(Hangup!);
+                hangup?.Invoke(__value2);
             }
-            else if (IsBridgeTransfer)
+            else if (BridgeTransfer is { } __value3)
             {
-                bridgeTransfer?.Invoke(BridgeTransfer!);
+                bridgeTransfer?.Invoke(__value3);
             }
         }
 
@@ -379,21 +379,21 @@ namespace G
                 Validate();
             }
 
-            if (IsPrompt)
+            if (Prompt is { } __value0)
             {
-                prompt?.Invoke(Prompt!);
+                prompt?.Invoke(__value0);
             }
-            else if (IsStaticText)
+            else if (StaticText is { } __value1)
             {
-                staticText?.Invoke(StaticText!);
+                staticText?.Invoke(__value1);
             }
-            else if (IsHangup)
+            else if (Hangup is { } __value2)
             {
-                hangup?.Invoke(Hangup!);
+                hangup?.Invoke(__value2);
             }
-            else if (IsBridgeTransfer)
+            else if (BridgeTransfer is { } __value3)
             {
-                bridgeTransfer?.Invoke(BridgeTransfer!);
+                bridgeTransfer?.Invoke(__value3);
             }
         }
 

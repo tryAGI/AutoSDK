@@ -1,4 +1,4 @@
-﻿//HintName: G.Models.OutputFormat.g.cs
+//HintName: G.Models.OutputFormat.g.cs
 #pragma warning disable CS0618 // Type or member is obsolete
 
 #nullable enable
@@ -43,8 +43,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.AllOf<global::G.OutputFormatRAWOutputFormat2, global::G.RawOutputFormat> PickRAWOutputFormat() => IsRAWOutputFormat
-            ? RAWOutputFormat!.Value
+        public global::G.AllOf<global::G.OutputFormatRAWOutputFormat2, global::G.RawOutputFormat> PickRAWOutputFormat() => RAWOutputFormat is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'RAWOutputFormat' but the value was {ToString()}.");
 
         /// <summary>
@@ -80,8 +80,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.AllOf<global::G.OutputFormatWAVOutputFormat2, global::G.WAVOutputFormat?> PickWAVOutputFormat() => IsWAVOutputFormat
-            ? WAVOutputFormat!.Value
+        public global::G.AllOf<global::G.OutputFormatWAVOutputFormat2, global::G.WAVOutputFormat?> PickWAVOutputFormat() => WAVOutputFormat is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'WAVOutputFormat' but the value was {ToString()}.");
 
         /// <summary>
@@ -117,8 +117,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.AllOf<global::G.OutputFormatMP3OutputFormat2, global::G.MP3OutputFormat> PickMP3OutputFormat() => IsMP3OutputFormat
-            ? MP3OutputFormat!.Value
+        public global::G.AllOf<global::G.OutputFormatMP3OutputFormat2, global::G.MP3OutputFormat> PickMP3OutputFormat() => MP3OutputFormat is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'MP3OutputFormat' but the value was {ToString()}.");
         /// <summary>
         /// 
@@ -243,17 +243,17 @@ namespace G
                 Validate();
             }
 
-            if (IsRAWOutputFormat && rAWOutputFormat != null)
+            if (RAWOutputFormat is { } __value0 && rAWOutputFormat != null)
             {
-                return rAWOutputFormat(RAWOutputFormat!);
+                return rAWOutputFormat(__value0);
             }
-            else if (IsWAVOutputFormat && wAVOutputFormat != null)
+            else if (WAVOutputFormat is { } __value1 && wAVOutputFormat != null)
             {
-                return wAVOutputFormat(WAVOutputFormat!);
+                return wAVOutputFormat(__value1);
             }
-            else if (IsMP3OutputFormat && mP3OutputFormat != null)
+            else if (MP3OutputFormat is { } __value2 && mP3OutputFormat != null)
             {
-                return mP3OutputFormat(MP3OutputFormat!);
+                return mP3OutputFormat(__value2);
             }
 
             return default(TResult);
@@ -275,17 +275,17 @@ namespace G
                 Validate();
             }
 
-            if (IsRAWOutputFormat)
+            if (RAWOutputFormat is { } __value0)
             {
-                rAWOutputFormat?.Invoke(RAWOutputFormat!);
+                rAWOutputFormat?.Invoke(__value0);
             }
-            else if (IsWAVOutputFormat)
+            else if (WAVOutputFormat is { } __value1)
             {
-                wAVOutputFormat?.Invoke(WAVOutputFormat!);
+                wAVOutputFormat?.Invoke(__value1);
             }
-            else if (IsMP3OutputFormat)
+            else if (MP3OutputFormat is { } __value2)
             {
-                mP3OutputFormat?.Invoke(MP3OutputFormat!);
+                mP3OutputFormat?.Invoke(__value2);
             }
         }
 
@@ -303,17 +303,17 @@ namespace G
                 Validate();
             }
 
-            if (IsRAWOutputFormat)
+            if (RAWOutputFormat is { } __value0)
             {
-                rAWOutputFormat?.Invoke(RAWOutputFormat!);
+                rAWOutputFormat?.Invoke(__value0);
             }
-            else if (IsWAVOutputFormat)
+            else if (WAVOutputFormat is { } __value1)
             {
-                wAVOutputFormat?.Invoke(WAVOutputFormat!);
+                wAVOutputFormat?.Invoke(__value1);
             }
-            else if (IsMP3OutputFormat)
+            else if (MP3OutputFormat is { } __value2)
             {
-                mP3OutputFormat?.Invoke(MP3OutputFormat!);
+                mP3OutputFormat?.Invoke(__value2);
             }
         }
 

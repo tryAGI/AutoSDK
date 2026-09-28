@@ -1,4 +1,4 @@
-﻿//HintName: G.Models.McpServerToolRequireApproval.g.cs
+//HintName: G.Models.McpServerToolRequireApproval.g.cs
 #pragma warning disable CS0618 // Type or member is obsolete
 
 #nullable enable
@@ -43,8 +43,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.McpServerToolRequireApproval0 PickMcpServerToolRequireApproval0() => IsMcpServerToolRequireApproval0
-            ? McpServerToolRequireApproval0!
+        public global::G.McpServerToolRequireApproval0 PickMcpServerToolRequireApproval0() => McpServerToolRequireApproval0 is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'McpServerToolRequireApproval0' but the value was {ToString()}.");
 
         /// <summary>
@@ -80,8 +80,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.McpServerToolRequireApproval1 PickMcpServerToolRequireApproval1() => IsMcpServerToolRequireApproval1
-            ? McpServerToolRequireApproval1!.Value
+        public global::G.McpServerToolRequireApproval1 PickMcpServerToolRequireApproval1() => McpServerToolRequireApproval1 is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'McpServerToolRequireApproval1' but the value was {ToString()}.");
 
         /// <summary>
@@ -117,8 +117,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.McpServerToolRequireApproval2 PickMcpServerToolRequireApproval2() => IsMcpServerToolRequireApproval2
-            ? McpServerToolRequireApproval2!.Value
+        public global::G.McpServerToolRequireApproval2 PickMcpServerToolRequireApproval2() => McpServerToolRequireApproval2 is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'McpServerToolRequireApproval2' but the value was {ToString()}.");
 
         /// <summary>
@@ -154,8 +154,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public object PickMcpServerToolRequireApprovalVariant4() => IsMcpServerToolRequireApprovalVariant4
-            ? McpServerToolRequireApprovalVariant4!
+        public object PickMcpServerToolRequireApprovalVariant4() => McpServerToolRequireApprovalVariant4 is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'McpServerToolRequireApprovalVariant4' but the value was {ToString()}.");
 
         /// <summary>
@@ -191,8 +191,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public object PickMcpServerToolRequireApprovalVariant5() => IsMcpServerToolRequireApprovalVariant5
-            ? McpServerToolRequireApprovalVariant5!
+        public object PickMcpServerToolRequireApprovalVariant5() => McpServerToolRequireApprovalVariant5 is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'McpServerToolRequireApprovalVariant5' but the value was {ToString()}.");
         /// <summary>
         /// 
@@ -327,25 +327,25 @@ namespace G
                 Validate();
             }
 
-            if (IsMcpServerToolRequireApproval0 && mcpServerToolRequireApproval0 != null)
+            if (McpServerToolRequireApproval0 is { } __value0 && mcpServerToolRequireApproval0 != null)
             {
-                return mcpServerToolRequireApproval0(McpServerToolRequireApproval0!);
+                return mcpServerToolRequireApproval0(__value0);
             }
-            else if (IsMcpServerToolRequireApproval1 && mcpServerToolRequireApproval1 != null)
+            else if (McpServerToolRequireApproval1 is { } __value1 && mcpServerToolRequireApproval1 != null)
             {
-                return mcpServerToolRequireApproval1(McpServerToolRequireApproval1!);
+                return mcpServerToolRequireApproval1(__value1);
             }
-            else if (IsMcpServerToolRequireApproval2 && mcpServerToolRequireApproval2 != null)
+            else if (McpServerToolRequireApproval2 is { } __value2 && mcpServerToolRequireApproval2 != null)
             {
-                return mcpServerToolRequireApproval2(McpServerToolRequireApproval2!);
+                return mcpServerToolRequireApproval2(__value2);
             }
-            else if (IsMcpServerToolRequireApprovalVariant4 && mcpServerToolRequireApprovalVariant4 != null)
+            else if (McpServerToolRequireApprovalVariant4 is { } __value3 && mcpServerToolRequireApprovalVariant4 != null)
             {
-                return mcpServerToolRequireApprovalVariant4(McpServerToolRequireApprovalVariant4!);
+                return mcpServerToolRequireApprovalVariant4(__value3);
             }
-            else if (IsMcpServerToolRequireApprovalVariant5 && mcpServerToolRequireApprovalVariant5 != null)
+            else if (McpServerToolRequireApprovalVariant5 is { } __value4 && mcpServerToolRequireApprovalVariant5 != null)
             {
-                return mcpServerToolRequireApprovalVariant5(McpServerToolRequireApprovalVariant5!);
+                return mcpServerToolRequireApprovalVariant5(__value4);
             }
 
             return default(TResult);
@@ -371,25 +371,25 @@ namespace G
                 Validate();
             }
 
-            if (IsMcpServerToolRequireApproval0)
+            if (McpServerToolRequireApproval0 is { } __value0)
             {
-                mcpServerToolRequireApproval0?.Invoke(McpServerToolRequireApproval0!);
+                mcpServerToolRequireApproval0?.Invoke(__value0);
             }
-            else if (IsMcpServerToolRequireApproval1)
+            else if (McpServerToolRequireApproval1 is { } __value1)
             {
-                mcpServerToolRequireApproval1?.Invoke(McpServerToolRequireApproval1!);
+                mcpServerToolRequireApproval1?.Invoke(__value1);
             }
-            else if (IsMcpServerToolRequireApproval2)
+            else if (McpServerToolRequireApproval2 is { } __value2)
             {
-                mcpServerToolRequireApproval2?.Invoke(McpServerToolRequireApproval2!);
+                mcpServerToolRequireApproval2?.Invoke(__value2);
             }
-            else if (IsMcpServerToolRequireApprovalVariant4)
+            else if (McpServerToolRequireApprovalVariant4 is { } __value3)
             {
-                mcpServerToolRequireApprovalVariant4?.Invoke(McpServerToolRequireApprovalVariant4!);
+                mcpServerToolRequireApprovalVariant4?.Invoke(__value3);
             }
-            else if (IsMcpServerToolRequireApprovalVariant5)
+            else if (McpServerToolRequireApprovalVariant5 is { } __value4)
             {
-                mcpServerToolRequireApprovalVariant5?.Invoke(McpServerToolRequireApprovalVariant5!);
+                mcpServerToolRequireApprovalVariant5?.Invoke(__value4);
             }
         }
 
@@ -409,25 +409,25 @@ namespace G
                 Validate();
             }
 
-            if (IsMcpServerToolRequireApproval0)
+            if (McpServerToolRequireApproval0 is { } __value0)
             {
-                mcpServerToolRequireApproval0?.Invoke(McpServerToolRequireApproval0!);
+                mcpServerToolRequireApproval0?.Invoke(__value0);
             }
-            else if (IsMcpServerToolRequireApproval1)
+            else if (McpServerToolRequireApproval1 is { } __value1)
             {
-                mcpServerToolRequireApproval1?.Invoke(McpServerToolRequireApproval1!);
+                mcpServerToolRequireApproval1?.Invoke(__value1);
             }
-            else if (IsMcpServerToolRequireApproval2)
+            else if (McpServerToolRequireApproval2 is { } __value2)
             {
-                mcpServerToolRequireApproval2?.Invoke(McpServerToolRequireApproval2!);
+                mcpServerToolRequireApproval2?.Invoke(__value2);
             }
-            else if (IsMcpServerToolRequireApprovalVariant4)
+            else if (McpServerToolRequireApprovalVariant4 is { } __value3)
             {
-                mcpServerToolRequireApprovalVariant4?.Invoke(McpServerToolRequireApprovalVariant4!);
+                mcpServerToolRequireApprovalVariant4?.Invoke(__value3);
             }
-            else if (IsMcpServerToolRequireApprovalVariant5)
+            else if (McpServerToolRequireApprovalVariant5 is { } __value4)
             {
-                mcpServerToolRequireApprovalVariant5?.Invoke(McpServerToolRequireApprovalVariant5!);
+                mcpServerToolRequireApprovalVariant5?.Invoke(__value4);
             }
         }
 

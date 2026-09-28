@@ -312,7 +312,7 @@ public static partial class Sources
 {(anyOfData.IsTrimming ? TrimmedLine + $@"
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof({x.Type.CSharpTypeWithoutNullability}), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<{x.Type.CSharpTypeWithNullabilityForNonValueTypes}> ??
                                throw new global::System.InvalidOperationException($""Cannot get type info for {{typeof({x.Type.CSharpTypeWithoutNullability}).Name}}"");
-                var __element{i} = global::System.Text.Json.JsonSerializer.SerializeToElement(value.{x.Name}!{(HasNullableValueVariant(x.Type) ? ".Value" : string.Empty)}, typeInfo);
+                var __element{i} = global::System.Text.Json.JsonSerializer.SerializeToElement(value.Pick{x.Name}(), typeInfo);
  " : TrimmedLine + $@"
                 var __element{i} = global::System.Text.Json.JsonSerializer.SerializeToElement(value.{x.Name}, typeof({x.Type.CSharpTypeWithoutNullability}), options);
  ")}
@@ -337,7 +337,7 @@ public static partial class Sources
 {(anyOfData.IsTrimming ? TrimmedLine + $@"
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof({x.Type.CSharpTypeWithoutNullability}), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<{x.Type.CSharpTypeWithNullabilityForNonValueTypes}> ??
                                throw new global::System.InvalidOperationException($""Cannot get type info for {{typeof({x.Type.CSharpTypeWithoutNullability}).Name}}"");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.{x.Name}!{(HasNullableValueVariant(x.Type) ? ".Value" : string.Empty)}, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Pick{x.Name}(), typeInfo);
  " : TrimmedLine + $@"
                 global::System.Text.Json.JsonSerializer.Serialize(writer, value.{x.Name}, typeof({x.Type.CSharpTypeWithoutNullability}), options);
  ")}
@@ -420,7 +420,8 @@ namespace {anyOfData.Namespace}.JsonConverters
             typeToConvert = typeToConvert ?? throw new global::System.ArgumentNullException(nameof(typeToConvert));
 
             return (global::System.Text.Json.Serialization.JsonConverter)global::System.Activator.CreateInstance(
-                typeof({anyOfData.SubType}JsonConverter{types}).MakeGenericType(typeToConvert.GenericTypeArguments))!;
+                typeof({anyOfData.SubType}JsonConverter{types}).MakeGenericType(typeToConvert.GenericTypeArguments)) ??
+                throw new global::System.InvalidOperationException(""Could not create the union JSON converter."");
         }}
     }}
 }}

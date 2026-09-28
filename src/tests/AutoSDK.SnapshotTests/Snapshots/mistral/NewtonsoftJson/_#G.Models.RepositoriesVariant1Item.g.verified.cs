@@ -1,4 +1,4 @@
-﻿//HintName: G.Models.RepositoriesVariant1Item.g.cs
+//HintName: G.Models.RepositoriesVariant1Item.g.cs
 #pragma warning disable CS0618 // Type or member is obsolete
 
 #nullable enable
@@ -48,8 +48,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.GithubRepositoryIn PickGithub() => IsGithub
-            ? Github!
+        public global::G.GithubRepositoryIn PickGithub() => Github is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Github' but the value was {ToString()}.");
         /// <summary>
         /// 
@@ -121,9 +121,9 @@ namespace G
                 Validate();
             }
 
-            if (IsGithub && github != null)
+            if (Github is { } __value0 && github != null)
             {
-                return github(Github!);
+                return github(__value0);
             }
 
             return default(TResult);
@@ -141,9 +141,9 @@ namespace G
                 Validate();
             }
 
-            if (IsGithub)
+            if (Github is { } __value0)
             {
-                github?.Invoke(Github!);
+                github?.Invoke(__value0);
             }
         }
 
@@ -159,9 +159,9 @@ namespace G
                 Validate();
             }
 
-            if (IsGithub)
+            if (Github is { } __value0)
             {
-                github?.Invoke(Github!);
+                github?.Invoke(__value0);
             }
         }
 

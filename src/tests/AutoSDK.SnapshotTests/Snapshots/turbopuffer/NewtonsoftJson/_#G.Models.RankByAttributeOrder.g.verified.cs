@@ -1,4 +1,4 @@
-﻿//HintName: G.Models.RankByAttributeOrder.g.cs
+//HintName: G.Models.RankByAttributeOrder.g.cs
 #pragma warning disable CS0618 // Type or member is obsolete
 
 #nullable enable
@@ -43,8 +43,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public string PickRankByAttributeOrderVariant1() => IsRankByAttributeOrderVariant1
-            ? RankByAttributeOrderVariant1!
+        public string PickRankByAttributeOrderVariant1() => RankByAttributeOrderVariant1 is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'RankByAttributeOrderVariant1' but the value was {ToString()}.");
 
         /// <summary>
@@ -80,8 +80,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public string PickRankByAttributeOrderVariant2() => IsRankByAttributeOrderVariant2
-            ? RankByAttributeOrderVariant2!
+        public string PickRankByAttributeOrderVariant2() => RankByAttributeOrderVariant2 is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'RankByAttributeOrderVariant2' but the value was {ToString()}.");
         /// <summary>
         /// 
@@ -155,13 +155,13 @@ namespace G
                 Validate();
             }
 
-            if (IsRankByAttributeOrderVariant1 && rankByAttributeOrderVariant1 != null)
+            if (RankByAttributeOrderVariant1 is { } __value0 && rankByAttributeOrderVariant1 != null)
             {
-                return rankByAttributeOrderVariant1(RankByAttributeOrderVariant1!);
+                return rankByAttributeOrderVariant1(__value0);
             }
-            else if (IsRankByAttributeOrderVariant2 && rankByAttributeOrderVariant2 != null)
+            else if (RankByAttributeOrderVariant2 is { } __value1 && rankByAttributeOrderVariant2 != null)
             {
-                return rankByAttributeOrderVariant2(RankByAttributeOrderVariant2!);
+                return rankByAttributeOrderVariant2(__value1);
             }
 
             return default(TResult);
@@ -181,13 +181,13 @@ namespace G
                 Validate();
             }
 
-            if (IsRankByAttributeOrderVariant1)
+            if (RankByAttributeOrderVariant1 is { } __value0)
             {
-                rankByAttributeOrderVariant1?.Invoke(RankByAttributeOrderVariant1!);
+                rankByAttributeOrderVariant1?.Invoke(__value0);
             }
-            else if (IsRankByAttributeOrderVariant2)
+            else if (RankByAttributeOrderVariant2 is { } __value1)
             {
-                rankByAttributeOrderVariant2?.Invoke(RankByAttributeOrderVariant2!);
+                rankByAttributeOrderVariant2?.Invoke(__value1);
             }
         }
 
@@ -204,13 +204,13 @@ namespace G
                 Validate();
             }
 
-            if (IsRankByAttributeOrderVariant1)
+            if (RankByAttributeOrderVariant1 is { } __value0)
             {
-                rankByAttributeOrderVariant1?.Invoke(RankByAttributeOrderVariant1!);
+                rankByAttributeOrderVariant1?.Invoke(__value0);
             }
-            else if (IsRankByAttributeOrderVariant2)
+            else if (RankByAttributeOrderVariant2 is { } __value1)
             {
-                rankByAttributeOrderVariant2?.Invoke(RankByAttributeOrderVariant2!);
+                rankByAttributeOrderVariant2?.Invoke(__value1);
             }
         }
 

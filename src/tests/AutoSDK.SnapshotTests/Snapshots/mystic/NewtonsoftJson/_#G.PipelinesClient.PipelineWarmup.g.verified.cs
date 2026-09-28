@@ -1,4 +1,4 @@
-﻿//HintName: G.PipelinesClient.PipelineWarmup.g.cs
+//HintName: G.PipelinesClient.PipelineWarmup.g.cs
 
 #nullable enable
 
@@ -206,7 +206,7 @@ namespace G
                 PreparePipelineWarmupRequest(
                     httpClient: HttpClient,
                     httpRequestMessage: __httpRequest,
-                    pipelineIdOrPointer: pipelineIdOrPointer!,
+                    pipelineIdOrPointer: pipelineIdOrPointer,
                     pipelineId: pipelineId,
                     pointer: pointer,
                     request: request);
@@ -233,7 +233,7 @@ namespace G
                                 pathTemplate: "$\"/v4/pipelines/{pipelineIdOrPointer}/warmup\"",
                                 httpMethod: "POST",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: null,
                                 exception: null,
                                 clientOptions: Options,
@@ -267,7 +267,7 @@ namespace G
                                 pathTemplate: "$\"/v4/pipelines/{pipelineIdOrPointer}/warmup\"",
                                 httpMethod: "POST",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: null,
                                 exception: __exception,
                                 clientOptions: Options,
@@ -308,7 +308,7 @@ namespace G
                                 pathTemplate: "$\"/v4/pipelines/{pipelineIdOrPointer}/warmup\"",
                                 httpMethod: "POST",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: __response,
                                 exception: null,
                                 clientOptions: Options,
@@ -356,7 +356,7 @@ namespace G
                                 pathTemplate: "$\"/v4/pipelines/{pipelineIdOrPointer}/warmup\"",
                                 httpMethod: "POST",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: __response,
                                 exception: null,
                                 clientOptions: Options,
@@ -378,7 +378,7 @@ namespace G
                                 pathTemplate: "$\"/v4/pipelines/{pipelineIdOrPointer}/warmup\"",
                                 httpMethod: "POST",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: __response,
                                 exception: null,
                                 clientOptions: Options,

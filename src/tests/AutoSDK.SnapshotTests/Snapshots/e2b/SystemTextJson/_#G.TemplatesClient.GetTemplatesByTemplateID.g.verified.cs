@@ -1,4 +1,4 @@
-﻿//HintName: G.TemplatesClient.GetTemplatesByTemplateID.g.cs
+//HintName: G.TemplatesClient.GetTemplatesByTemplateID.g.cs
 
 #nullable enable
 
@@ -194,7 +194,7 @@ namespace G
                 PrepareGetTemplatesByTemplateIDRequest(
                     httpClient: HttpClient,
                     httpRequestMessage: __httpRequest,
-                    templateID: templateID!,
+                    templateID: templateID,
                     nextToken: nextToken,
                     limit: limit);
 
@@ -220,7 +220,7 @@ namespace G
                                 pathTemplate: "$\"/templates/{templateID}\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: null,
                                 exception: null,
                                 clientOptions: Options,
@@ -254,7 +254,7 @@ namespace G
                                 pathTemplate: "$\"/templates/{templateID}\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: null,
                                 exception: __exception,
                                 clientOptions: Options,
@@ -295,7 +295,7 @@ namespace G
                                 pathTemplate: "$\"/templates/{templateID}\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: __response,
                                 exception: null,
                                 clientOptions: Options,
@@ -343,7 +343,7 @@ namespace G
                                 pathTemplate: "$\"/templates/{templateID}\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: __response,
                                 exception: null,
                                 clientOptions: Options,
@@ -365,7 +365,7 @@ namespace G
                                 pathTemplate: "$\"/templates/{templateID}\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: __response,
                                 exception: null,
                                 clientOptions: Options,

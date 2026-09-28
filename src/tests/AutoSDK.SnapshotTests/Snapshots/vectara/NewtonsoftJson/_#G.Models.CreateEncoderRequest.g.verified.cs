@@ -1,4 +1,4 @@
-﻿//HintName: G.Models.CreateEncoderRequest.g.cs
+//HintName: G.Models.CreateEncoderRequest.g.cs
 #pragma warning disable CS0618 // Type or member is obsolete
 
 #nullable enable
@@ -48,8 +48,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.CreateOpenAIEncoderRequest PickOpenaiCompatible() => IsOpenaiCompatible
-            ? OpenaiCompatible!
+        public global::G.CreateOpenAIEncoderRequest PickOpenaiCompatible() => OpenaiCompatible is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'OpenaiCompatible' but the value was {ToString()}.");
         /// <summary>
         /// 
@@ -121,9 +121,9 @@ namespace G
                 Validate();
             }
 
-            if (IsOpenaiCompatible && openaiCompatible != null)
+            if (OpenaiCompatible is { } __value0 && openaiCompatible != null)
             {
-                return openaiCompatible(OpenaiCompatible!);
+                return openaiCompatible(__value0);
             }
 
             return default(TResult);
@@ -141,9 +141,9 @@ namespace G
                 Validate();
             }
 
-            if (IsOpenaiCompatible)
+            if (OpenaiCompatible is { } __value0)
             {
-                openaiCompatible?.Invoke(OpenaiCompatible!);
+                openaiCompatible?.Invoke(__value0);
             }
         }
 
@@ -159,9 +159,9 @@ namespace G
                 Validate();
             }
 
-            if (IsOpenaiCompatible)
+            if (OpenaiCompatible is { } __value0)
             {
-                openaiCompatible?.Invoke(OpenaiCompatible!);
+                openaiCompatible?.Invoke(__value0);
             }
         }
 

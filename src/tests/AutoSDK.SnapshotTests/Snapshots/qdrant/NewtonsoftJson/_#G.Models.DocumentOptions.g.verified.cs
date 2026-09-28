@@ -43,8 +43,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public object PickDocumentOptionsVariant1() => IsDocumentOptionsVariant1
-            ? DocumentOptionsVariant1!
+        public object PickDocumentOptionsVariant1() => DocumentOptionsVariant1 is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'DocumentOptionsVariant1' but the value was {ToString()}.");
 
         /// <summary>
@@ -80,8 +80,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.Bm25Config PickBm25Config() => IsBm25Config
-            ? Bm25Config!
+        public global::G.Bm25Config PickBm25Config() => Bm25Config is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Bm25Config' but the value was {ToString()}.");
         /// <summary>
         /// 
@@ -155,13 +155,13 @@ namespace G
                 Validate();
             }
 
-            if (IsDocumentOptionsVariant1 && documentOptionsVariant1 != null)
+            if (DocumentOptionsVariant1 is { } __value0 && documentOptionsVariant1 != null)
             {
-                return documentOptionsVariant1(DocumentOptionsVariant1!);
+                return documentOptionsVariant1(__value0);
             }
-            else if (IsBm25Config && bm25Config != null)
+            else if (Bm25Config is { } __value1 && bm25Config != null)
             {
-                return bm25Config(Bm25Config!);
+                return bm25Config(__value1);
             }
 
             return default(TResult);
@@ -181,13 +181,13 @@ namespace G
                 Validate();
             }
 
-            if (IsDocumentOptionsVariant1)
+            if (DocumentOptionsVariant1 is { } __value0)
             {
-                documentOptionsVariant1?.Invoke(DocumentOptionsVariant1!);
+                documentOptionsVariant1?.Invoke(__value0);
             }
-            else if (IsBm25Config)
+            else if (Bm25Config is { } __value1)
             {
-                bm25Config?.Invoke(Bm25Config!);
+                bm25Config?.Invoke(__value1);
             }
         }
 
@@ -204,13 +204,13 @@ namespace G
                 Validate();
             }
 
-            if (IsDocumentOptionsVariant1)
+            if (DocumentOptionsVariant1 is { } __value0)
             {
-                documentOptionsVariant1?.Invoke(DocumentOptionsVariant1!);
+                documentOptionsVariant1?.Invoke(__value0);
             }
-            else if (IsBm25Config)
+            else if (Bm25Config is { } __value1)
             {
-                bm25Config?.Invoke(Bm25Config!);
+                bm25Config?.Invoke(__value1);
             }
         }
 

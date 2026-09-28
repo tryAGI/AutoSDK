@@ -1,4 +1,4 @@
-﻿//HintName: G.ReposClient.ReposAcceptInvitationForAuthenticatedUser.g.cs
+//HintName: G.ReposClient.ReposAcceptInvitationForAuthenticatedUser.g.cs
 
 #nullable enable
 
@@ -106,7 +106,7 @@ namespace G
                 PrepareReposAcceptInvitationForAuthenticatedUserRequest(
                     httpClient: HttpClient,
                     httpRequestMessage: __httpRequest,
-                    invitationId: invitationId!);
+                    invitationId: invitationId);
 
                 return __httpRequest;
             }
@@ -128,7 +128,7 @@ namespace G
                                 pathTemplate: "$\"/user/repository_invitations/{invitationId}\"",
                                 httpMethod: "PATCH",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: null,
                                 exception: null,
                                 clientOptions: Options,
@@ -162,7 +162,7 @@ namespace G
                                 pathTemplate: "$\"/user/repository_invitations/{invitationId}\"",
                                 httpMethod: "PATCH",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: null,
                                 exception: __exception,
                                 clientOptions: Options,
@@ -203,7 +203,7 @@ namespace G
                                 pathTemplate: "$\"/user/repository_invitations/{invitationId}\"",
                                 httpMethod: "PATCH",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: __response,
                                 exception: null,
                                 clientOptions: Options,
@@ -251,7 +251,7 @@ namespace G
                                 pathTemplate: "$\"/user/repository_invitations/{invitationId}\"",
                                 httpMethod: "PATCH",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: __response,
                                 exception: null,
                                 clientOptions: Options,
@@ -273,7 +273,7 @@ namespace G
                                 pathTemplate: "$\"/user/repository_invitations/{invitationId}\"",
                                 httpMethod: "PATCH",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: __response,
                                 exception: null,
                                 clientOptions: Options,

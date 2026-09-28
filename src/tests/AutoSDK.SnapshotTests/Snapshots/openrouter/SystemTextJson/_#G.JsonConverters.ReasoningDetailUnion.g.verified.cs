@@ -1,4 +1,4 @@
-﻿//HintName: G.JsonConverters.ReasoningDetailUnion.g.cs
+//HintName: G.JsonConverters.ReasoningDetailUnion.g.cs
 #nullable enable
 #pragma warning disable CS0618 // Type or member is obsolete
 
@@ -180,19 +180,19 @@ namespace G.JsonConverters
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.ReasoningDetailSummary), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.ReasoningDetailSummary?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.ReasoningDetailSummary).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.ReasoningDetailSummary!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickReasoningDetailSummary(), typeInfo);
             }
             else if (value.IsReasoningDetailEncrypted)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.ReasoningDetailEncrypted), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.ReasoningDetailEncrypted?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.ReasoningDetailEncrypted).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.ReasoningDetailEncrypted!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickReasoningDetailEncrypted(), typeInfo);
             }
             else if (value.IsReasoningDetailText)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.ReasoningDetailText), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.ReasoningDetailText?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.ReasoningDetailText).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.ReasoningDetailText!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickReasoningDetailText(), typeInfo);
             }
         }
     }

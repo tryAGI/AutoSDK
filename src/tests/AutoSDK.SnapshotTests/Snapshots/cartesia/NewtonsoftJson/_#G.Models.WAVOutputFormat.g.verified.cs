@@ -1,4 +1,4 @@
-﻿//HintName: G.Models.WAVOutputFormat.g.cs
+//HintName: G.Models.WAVOutputFormat.g.cs
 #pragma warning disable CS0618 // Type or member is obsolete
 
 #nullable enable
@@ -43,8 +43,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.RawOutputFormat PickRawOutputFormat() => IsRawOutputFormat
-            ? RawOutputFormat!
+        public global::G.RawOutputFormat PickRawOutputFormat() => RawOutputFormat is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'RawOutputFormat' but the value was {ToString()}.");
         /// <summary>
         /// 
@@ -103,9 +103,9 @@ namespace G
                 Validate();
             }
 
-            if (IsRawOutputFormat && rawOutputFormat != null)
+            if (RawOutputFormat is { } __value0 && rawOutputFormat != null)
             {
-                return rawOutputFormat(RawOutputFormat!);
+                return rawOutputFormat(__value0);
             }
 
             return default(TResult);
@@ -123,9 +123,9 @@ namespace G
                 Validate();
             }
 
-            if (IsRawOutputFormat)
+            if (RawOutputFormat is { } __value0)
             {
-                rawOutputFormat?.Invoke(RawOutputFormat!);
+                rawOutputFormat?.Invoke(__value0);
             }
         }
 
@@ -141,9 +141,9 @@ namespace G
                 Validate();
             }
 
-            if (IsRawOutputFormat)
+            if (RawOutputFormat is { } __value0)
             {
-                rawOutputFormat?.Invoke(RawOutputFormat!);
+                rawOutputFormat?.Invoke(__value0);
             }
         }
 

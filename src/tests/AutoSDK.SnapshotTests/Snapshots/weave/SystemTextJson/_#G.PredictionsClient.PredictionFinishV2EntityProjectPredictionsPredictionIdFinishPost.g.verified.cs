@@ -1,4 +1,4 @@
-﻿//HintName: G.PredictionsClient.PredictionFinishV2EntityProjectPredictionsPredictionIdFinishPost.g.cs
+//HintName: G.PredictionsClient.PredictionFinishV2EntityProjectPredictionsPredictionIdFinishPost.g.cs
 
 #nullable enable
 
@@ -164,9 +164,9 @@ namespace G
                 PreparePredictionFinishV2EntityProjectPredictionsPredictionIdFinishPostRequest(
                     httpClient: HttpClient,
                     httpRequestMessage: __httpRequest,
-                    entity: entity!,
-                    project: project!,
-                    predictionId: predictionId!);
+                    entity: entity,
+                    project: project,
+                    predictionId: predictionId);
 
                 return __httpRequest;
             }
@@ -188,7 +188,7 @@ namespace G
                                 pathTemplate: "$\"/v2/{entity}/{project}/predictions/{predictionId}/finish\"",
                                 httpMethod: "POST",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: null,
                                 exception: null,
                                 clientOptions: Options,
@@ -222,7 +222,7 @@ namespace G
                                 pathTemplate: "$\"/v2/{entity}/{project}/predictions/{predictionId}/finish\"",
                                 httpMethod: "POST",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: null,
                                 exception: __exception,
                                 clientOptions: Options,
@@ -263,7 +263,7 @@ namespace G
                                 pathTemplate: "$\"/v2/{entity}/{project}/predictions/{predictionId}/finish\"",
                                 httpMethod: "POST",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: __response,
                                 exception: null,
                                 clientOptions: Options,
@@ -311,7 +311,7 @@ namespace G
                                 pathTemplate: "$\"/v2/{entity}/{project}/predictions/{predictionId}/finish\"",
                                 httpMethod: "POST",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: __response,
                                 exception: null,
                                 clientOptions: Options,
@@ -333,7 +333,7 @@ namespace G
                                 pathTemplate: "$\"/v2/{entity}/{project}/predictions/{predictionId}/finish\"",
                                 httpMethod: "POST",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: __response,
                                 exception: null,
                                 clientOptions: Options,

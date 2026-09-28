@@ -1,4 +1,4 @@
-﻿//HintName: G.Models.ResearchDtoClass.g.cs
+//HintName: G.Models.ResearchDtoClass.g.cs
 #pragma warning disable CS0618 // Type or member is obsolete
 
 #nullable enable
@@ -48,8 +48,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.ResearchDtoClassVariant1 PickPending() => IsPending
-            ? Pending!
+        public global::G.ResearchDtoClassVariant1 PickPending() => Pending is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Pending' but the value was {ToString()}.");
 
         /// <summary>
@@ -85,8 +85,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.ResearchDtoClassVariant2 PickRunning() => IsRunning
-            ? Running!
+        public global::G.ResearchDtoClassVariant2 PickRunning() => Running is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Running' but the value was {ToString()}.");
 
         /// <summary>
@@ -122,8 +122,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.ResearchDtoClassVariant3 PickCompleted() => IsCompleted
-            ? Completed!
+        public global::G.ResearchDtoClassVariant3 PickCompleted() => Completed is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Completed' but the value was {ToString()}.");
 
         /// <summary>
@@ -159,8 +159,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.ResearchDtoClassVariant4 PickCanceled() => IsCanceled
-            ? Canceled!
+        public global::G.ResearchDtoClassVariant4 PickCanceled() => Canceled is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Canceled' but the value was {ToString()}.");
 
         /// <summary>
@@ -196,8 +196,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.ResearchDtoClassVariant5 PickFailed() => IsFailed
-            ? Failed!
+        public global::G.ResearchDtoClassVariant5 PickFailed() => Failed is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Failed' but the value was {ToString()}.");
         /// <summary>
         /// 
@@ -381,25 +381,25 @@ namespace G
                 Validate();
             }
 
-            if (IsPending && pending != null)
+            if (Pending is { } __value0 && pending != null)
             {
-                return pending(Pending!);
+                return pending(__value0);
             }
-            else if (IsRunning && running != null)
+            else if (Running is { } __value1 && running != null)
             {
-                return running(Running!);
+                return running(__value1);
             }
-            else if (IsCompleted && completed != null)
+            else if (Completed is { } __value2 && completed != null)
             {
-                return completed(Completed!);
+                return completed(__value2);
             }
-            else if (IsCanceled && canceled != null)
+            else if (Canceled is { } __value3 && canceled != null)
             {
-                return canceled(Canceled!);
+                return canceled(__value3);
             }
-            else if (IsFailed && failed != null)
+            else if (Failed is { } __value4 && failed != null)
             {
-                return failed(Failed!);
+                return failed(__value4);
             }
 
             return default(TResult);
@@ -425,25 +425,25 @@ namespace G
                 Validate();
             }
 
-            if (IsPending)
+            if (Pending is { } __value0)
             {
-                pending?.Invoke(Pending!);
+                pending?.Invoke(__value0);
             }
-            else if (IsRunning)
+            else if (Running is { } __value1)
             {
-                running?.Invoke(Running!);
+                running?.Invoke(__value1);
             }
-            else if (IsCompleted)
+            else if (Completed is { } __value2)
             {
-                completed?.Invoke(Completed!);
+                completed?.Invoke(__value2);
             }
-            else if (IsCanceled)
+            else if (Canceled is { } __value3)
             {
-                canceled?.Invoke(Canceled!);
+                canceled?.Invoke(__value3);
             }
-            else if (IsFailed)
+            else if (Failed is { } __value4)
             {
-                failed?.Invoke(Failed!);
+                failed?.Invoke(__value4);
             }
         }
 
@@ -463,25 +463,25 @@ namespace G
                 Validate();
             }
 
-            if (IsPending)
+            if (Pending is { } __value0)
             {
-                pending?.Invoke(Pending!);
+                pending?.Invoke(__value0);
             }
-            else if (IsRunning)
+            else if (Running is { } __value1)
             {
-                running?.Invoke(Running!);
+                running?.Invoke(__value1);
             }
-            else if (IsCompleted)
+            else if (Completed is { } __value2)
             {
-                completed?.Invoke(Completed!);
+                completed?.Invoke(__value2);
             }
-            else if (IsCanceled)
+            else if (Canceled is { } __value3)
             {
-                canceled?.Invoke(Canceled!);
+                canceled?.Invoke(__value3);
             }
-            else if (IsFailed)
+            else if (Failed is { } __value4)
             {
-                failed?.Invoke(Failed!);
+                failed?.Invoke(__value4);
             }
         }
 

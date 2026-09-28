@@ -1,4 +1,4 @@
-﻿//HintName: G.DatabaseClient.GetDatabase.g.cs
+//HintName: G.DatabaseClient.GetDatabase.g.cs
 
 #nullable enable
 
@@ -156,8 +156,8 @@ namespace G
                 PrepareGetDatabaseRequest(
                     httpClient: HttpClient,
                     httpRequestMessage: __httpRequest,
-                    tenant: tenant!,
-                    database: database!);
+                    tenant: tenant,
+                    database: database);
 
                 global::G.AutoSDKHttpRequestOptions.StampAuthorizationOverride(__httpRequest);
 
@@ -181,7 +181,7 @@ namespace G
                                 pathTemplate: "$\"/api/v2/tenants/{tenant}/databases/{database}\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: null,
                                 exception: null,
                                 clientOptions: Options,
@@ -215,7 +215,7 @@ namespace G
                                 pathTemplate: "$\"/api/v2/tenants/{tenant}/databases/{database}\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: null,
                                 exception: __exception,
                                 clientOptions: Options,
@@ -256,7 +256,7 @@ namespace G
                                 pathTemplate: "$\"/api/v2/tenants/{tenant}/databases/{database}\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: __response,
                                 exception: null,
                                 clientOptions: Options,
@@ -304,7 +304,7 @@ namespace G
                                 pathTemplate: "$\"/api/v2/tenants/{tenant}/databases/{database}\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: __response,
                                 exception: null,
                                 clientOptions: Options,
@@ -326,7 +326,7 @@ namespace G
                                 pathTemplate: "$\"/api/v2/tenants/{tenant}/databases/{database}\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: __response,
                                 exception: null,
                                 clientOptions: Options,

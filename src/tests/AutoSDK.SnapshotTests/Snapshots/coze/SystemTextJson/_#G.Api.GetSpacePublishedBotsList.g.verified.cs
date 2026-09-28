@@ -1,4 +1,4 @@
-﻿//HintName: G.Api.GetSpacePublishedBotsList.g.cs
+//HintName: G.Api.GetSpacePublishedBotsList.g.cs
 
 #nullable enable
 
@@ -184,7 +184,7 @@ namespace G
                 PrepareGetSpacePublishedBotsListRequest(
                     httpClient: HttpClient,
                     httpRequestMessage: __httpRequest,
-                    spaceId: spaceId!,
+                    spaceId: spaceId,
                     pageIndex: pageIndex,
                     pageSize: pageSize);
 
@@ -208,7 +208,7 @@ namespace G
                                 pathTemplate: "\"/v1/space/published_bots_list\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: null,
                                 exception: null,
                                 clientOptions: Options,
@@ -242,7 +242,7 @@ namespace G
                                 pathTemplate: "\"/v1/space/published_bots_list\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: null,
                                 exception: __exception,
                                 clientOptions: Options,
@@ -283,7 +283,7 @@ namespace G
                                 pathTemplate: "\"/v1/space/published_bots_list\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: __response,
                                 exception: null,
                                 clientOptions: Options,
@@ -331,7 +331,7 @@ namespace G
                                 pathTemplate: "\"/v1/space/published_bots_list\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: __response,
                                 exception: null,
                                 clientOptions: Options,
@@ -353,7 +353,7 @@ namespace G
                                 pathTemplate: "\"/v1/space/published_bots_list\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: __response,
                                 exception: null,
                                 clientOptions: Options,

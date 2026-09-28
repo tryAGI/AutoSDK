@@ -1,4 +1,4 @@
-﻿//HintName: G.Api.UpdateConversationFlowComponent.g.cs
+//HintName: G.Api.UpdateConversationFlowComponent.g.cs
 
 #nullable enable
 
@@ -165,7 +165,7 @@ namespace G
                 PrepareUpdateConversationFlowComponentRequest(
                     httpClient: HttpClient,
                     httpRequestMessage: __httpRequest,
-                    conversationFlowComponentId: conversationFlowComponentId!,
+                    conversationFlowComponentId: conversationFlowComponentId,
                     request: request);
 
                 return __httpRequest;
@@ -188,7 +188,7 @@ namespace G
                                 pathTemplate: "$\"/update-conversation-flow-component/{conversationFlowComponentId}\"",
                                 httpMethod: "PATCH",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: null,
                                 exception: null,
                                 clientOptions: Options,
@@ -222,7 +222,7 @@ namespace G
                                 pathTemplate: "$\"/update-conversation-flow-component/{conversationFlowComponentId}\"",
                                 httpMethod: "PATCH",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: null,
                                 exception: __exception,
                                 clientOptions: Options,
@@ -263,7 +263,7 @@ namespace G
                                 pathTemplate: "$\"/update-conversation-flow-component/{conversationFlowComponentId}\"",
                                 httpMethod: "PATCH",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: __response,
                                 exception: null,
                                 clientOptions: Options,
@@ -311,7 +311,7 @@ namespace G
                                 pathTemplate: "$\"/update-conversation-flow-component/{conversationFlowComponentId}\"",
                                 httpMethod: "PATCH",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: __response,
                                 exception: null,
                                 clientOptions: Options,
@@ -333,7 +333,7 @@ namespace G
                                 pathTemplate: "$\"/update-conversation-flow-component/{conversationFlowComponentId}\"",
                                 httpMethod: "PATCH",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: __response,
                                 exception: null,
                                 clientOptions: Options,

@@ -1,4 +1,4 @@
-﻿//HintName: G.Models.ImageToImageUsingStepScheduleRequestBody.g.cs
+//HintName: G.Models.ImageToImageUsingStepScheduleRequestBody.g.cs
 #pragma warning disable CS0618 // Type or member is obsolete
 
 #nullable enable
@@ -43,8 +43,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.ImageToImageUsingStepScheduleRequestBodyVariant1 PickImageToImageUsingStepScheduleRequestBodyVariant1() => IsImageToImageUsingStepScheduleRequestBodyVariant1
-            ? ImageToImageUsingStepScheduleRequestBodyVariant1!
+        public global::G.ImageToImageUsingStepScheduleRequestBodyVariant1 PickImageToImageUsingStepScheduleRequestBodyVariant1() => ImageToImageUsingStepScheduleRequestBodyVariant1 is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'ImageToImageUsingStepScheduleRequestBodyVariant1' but the value was {ToString()}.");
 
         /// <summary>
@@ -80,8 +80,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.GenerationRequestOptionalParams PickGenerationOptionalParams() => IsGenerationOptionalParams
-            ? GenerationOptionalParams!
+        public global::G.GenerationRequestOptionalParams PickGenerationOptionalParams() => GenerationOptionalParams is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'GenerationOptionalParams' but the value was {ToString()}.");
         /// <summary>
         /// 
@@ -178,13 +178,13 @@ namespace G
                 Validate();
             }
 
-            if (IsImageToImageUsingStepScheduleRequestBodyVariant1 && imageToImageUsingStepScheduleRequestBodyVariant1 != null)
+            if (ImageToImageUsingStepScheduleRequestBodyVariant1 is { } __value0 && imageToImageUsingStepScheduleRequestBodyVariant1 != null)
             {
-                return imageToImageUsingStepScheduleRequestBodyVariant1(ImageToImageUsingStepScheduleRequestBodyVariant1!);
+                return imageToImageUsingStepScheduleRequestBodyVariant1(__value0);
             }
-            else if (IsGenerationOptionalParams && generationOptionalParams != null)
+            else if (GenerationOptionalParams is { } __value1 && generationOptionalParams != null)
             {
-                return generationOptionalParams(GenerationOptionalParams!);
+                return generationOptionalParams(__value1);
             }
 
             return default(TResult);
@@ -204,13 +204,13 @@ namespace G
                 Validate();
             }
 
-            if (IsImageToImageUsingStepScheduleRequestBodyVariant1)
+            if (ImageToImageUsingStepScheduleRequestBodyVariant1 is { } __value0)
             {
-                imageToImageUsingStepScheduleRequestBodyVariant1?.Invoke(ImageToImageUsingStepScheduleRequestBodyVariant1!);
+                imageToImageUsingStepScheduleRequestBodyVariant1?.Invoke(__value0);
             }
-            else if (IsGenerationOptionalParams)
+            else if (GenerationOptionalParams is { } __value1)
             {
-                generationOptionalParams?.Invoke(GenerationOptionalParams!);
+                generationOptionalParams?.Invoke(__value1);
             }
         }
 
@@ -227,13 +227,13 @@ namespace G
                 Validate();
             }
 
-            if (IsImageToImageUsingStepScheduleRequestBodyVariant1)
+            if (ImageToImageUsingStepScheduleRequestBodyVariant1 is { } __value0)
             {
-                imageToImageUsingStepScheduleRequestBodyVariant1?.Invoke(ImageToImageUsingStepScheduleRequestBodyVariant1!);
+                imageToImageUsingStepScheduleRequestBodyVariant1?.Invoke(__value0);
             }
-            else if (IsGenerationOptionalParams)
+            else if (GenerationOptionalParams is { } __value1)
             {
-                generationOptionalParams?.Invoke(GenerationOptionalParams!);
+                generationOptionalParams?.Invoke(__value1);
             }
         }
 

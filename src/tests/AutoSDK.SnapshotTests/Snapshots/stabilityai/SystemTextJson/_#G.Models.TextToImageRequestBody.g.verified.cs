@@ -1,4 +1,4 @@
-﻿//HintName: G.Models.TextToImageRequestBody.g.cs
+//HintName: G.Models.TextToImageRequestBody.g.cs
 #pragma warning disable CS0618 // Type or member is obsolete
 
 #nullable enable
@@ -43,8 +43,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.TextToImageRequestBodyVariant1 PickTextToImageRequestBodyVariant1() => IsTextToImageRequestBodyVariant1
-            ? TextToImageRequestBodyVariant1!
+        public global::G.TextToImageRequestBodyVariant1 PickTextToImageRequestBodyVariant1() => TextToImageRequestBodyVariant1 is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'TextToImageRequestBodyVariant1' but the value was {ToString()}.");
 
         /// <summary>
@@ -80,8 +80,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.GenerationRequestOptionalParams PickGenerationOptionalParams() => IsGenerationOptionalParams
-            ? GenerationOptionalParams!
+        public global::G.GenerationRequestOptionalParams PickGenerationOptionalParams() => GenerationOptionalParams is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'GenerationOptionalParams' but the value was {ToString()}.");
         /// <summary>
         /// 
@@ -178,13 +178,13 @@ namespace G
                 Validate();
             }
 
-            if (IsTextToImageRequestBodyVariant1 && textToImageRequestBodyVariant1 != null)
+            if (TextToImageRequestBodyVariant1 is { } __value0 && textToImageRequestBodyVariant1 != null)
             {
-                return textToImageRequestBodyVariant1(TextToImageRequestBodyVariant1!);
+                return textToImageRequestBodyVariant1(__value0);
             }
-            else if (IsGenerationOptionalParams && generationOptionalParams != null)
+            else if (GenerationOptionalParams is { } __value1 && generationOptionalParams != null)
             {
-                return generationOptionalParams(GenerationOptionalParams!);
+                return generationOptionalParams(__value1);
             }
 
             return default(TResult);
@@ -204,13 +204,13 @@ namespace G
                 Validate();
             }
 
-            if (IsTextToImageRequestBodyVariant1)
+            if (TextToImageRequestBodyVariant1 is { } __value0)
             {
-                textToImageRequestBodyVariant1?.Invoke(TextToImageRequestBodyVariant1!);
+                textToImageRequestBodyVariant1?.Invoke(__value0);
             }
-            else if (IsGenerationOptionalParams)
+            else if (GenerationOptionalParams is { } __value1)
             {
-                generationOptionalParams?.Invoke(GenerationOptionalParams!);
+                generationOptionalParams?.Invoke(__value1);
             }
         }
 
@@ -227,13 +227,13 @@ namespace G
                 Validate();
             }
 
-            if (IsTextToImageRequestBodyVariant1)
+            if (TextToImageRequestBodyVariant1 is { } __value0)
             {
-                textToImageRequestBodyVariant1?.Invoke(TextToImageRequestBodyVariant1!);
+                textToImageRequestBodyVariant1?.Invoke(__value0);
             }
-            else if (IsGenerationOptionalParams)
+            else if (GenerationOptionalParams is { } __value1)
             {
-                generationOptionalParams?.Invoke(GenerationOptionalParams!);
+                generationOptionalParams?.Invoke(__value1);
             }
         }
 

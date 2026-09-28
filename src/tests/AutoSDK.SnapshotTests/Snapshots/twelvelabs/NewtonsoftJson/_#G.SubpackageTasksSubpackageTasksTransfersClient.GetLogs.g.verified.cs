@@ -1,4 +1,4 @@
-﻿//HintName: G.SubpackageTasksSubpackageTasksTransfersClient.GetLogs.g.cs
+//HintName: G.SubpackageTasksSubpackageTasksTransfersClient.GetLogs.g.cs
 
 #nullable enable
 
@@ -107,8 +107,8 @@ namespace G
                 PrepareGetLogsRequest(
                     httpClient: HttpClient,
                     httpRequestMessage: __httpRequest,
-                    integrationId: integrationId!,
-                    xApiKey: xApiKey!);
+                    integrationId: integrationId,
+                    xApiKey: xApiKey);
 
                 return __httpRequest;
             }
@@ -130,7 +130,7 @@ namespace G
                                 pathTemplate: "$\"/tasks/transfers/import/{integrationId}/logs\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: null,
                                 exception: null,
                                 clientOptions: Options,
@@ -164,7 +164,7 @@ namespace G
                                 pathTemplate: "$\"/tasks/transfers/import/{integrationId}/logs\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: null,
                                 exception: __exception,
                                 clientOptions: Options,
@@ -205,7 +205,7 @@ namespace G
                                 pathTemplate: "$\"/tasks/transfers/import/{integrationId}/logs\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: __response,
                                 exception: null,
                                 clientOptions: Options,
@@ -253,7 +253,7 @@ namespace G
                                 pathTemplate: "$\"/tasks/transfers/import/{integrationId}/logs\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: __response,
                                 exception: null,
                                 clientOptions: Options,
@@ -275,7 +275,7 @@ namespace G
                                 pathTemplate: "$\"/tasks/transfers/import/{integrationId}/logs\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: __response,
                                 exception: null,
                                 clientOptions: Options,

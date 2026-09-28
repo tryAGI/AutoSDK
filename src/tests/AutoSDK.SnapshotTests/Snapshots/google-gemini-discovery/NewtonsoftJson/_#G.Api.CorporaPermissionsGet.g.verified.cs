@@ -1,4 +1,4 @@
-﻿//HintName: G.Api.CorporaPermissionsGet.g.cs
+//HintName: G.Api.CorporaPermissionsGet.g.cs
 
 #nullable enable
 
@@ -111,8 +111,8 @@ namespace G
                 PrepareCorporaPermissionsGetRequest(
                     httpClient: HttpClient,
                     httpRequestMessage: __httpRequest,
-                    permissionsId: permissionsId!,
-                    corporaId: corporaId!);
+                    permissionsId: permissionsId,
+                    corporaId: corporaId);
 
                 return __httpRequest;
             }
@@ -134,7 +134,7 @@ namespace G
                                 pathTemplate: "$\"/corpora/{corporaId}/permissions/{permissionsId}\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: null,
                                 exception: null,
                                 clientOptions: Options,
@@ -168,7 +168,7 @@ namespace G
                                 pathTemplate: "$\"/corpora/{corporaId}/permissions/{permissionsId}\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: null,
                                 exception: __exception,
                                 clientOptions: Options,
@@ -209,7 +209,7 @@ namespace G
                                 pathTemplate: "$\"/corpora/{corporaId}/permissions/{permissionsId}\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: __response,
                                 exception: null,
                                 clientOptions: Options,
@@ -257,7 +257,7 @@ namespace G
                                 pathTemplate: "$\"/corpora/{corporaId}/permissions/{permissionsId}\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: __response,
                                 exception: null,
                                 clientOptions: Options,
@@ -279,7 +279,7 @@ namespace G
                                 pathTemplate: "$\"/corpora/{corporaId}/permissions/{permissionsId}\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: __response,
                                 exception: null,
                                 clientOptions: Options,

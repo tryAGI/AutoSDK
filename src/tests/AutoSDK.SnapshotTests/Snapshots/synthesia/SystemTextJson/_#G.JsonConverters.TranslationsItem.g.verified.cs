@@ -1,4 +1,4 @@
-﻿//HintName: G.JsonConverters.TranslationsItem.g.cs
+//HintName: G.JsonConverters.TranslationsItem.g.cs
 #nullable enable
 #pragma warning disable CS0618 // Type or member is obsolete
 
@@ -60,13 +60,13 @@ namespace G.JsonConverters
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.TranslationStatusApiItemSuccess), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.TranslationStatusApiItemSuccess?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.TranslationStatusApiItemSuccess).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Complete!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickComplete(), typeInfo);
             }
             else if (value.IsError)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.TranslationStatusApiItemError), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.TranslationStatusApiItemError?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.TranslationStatusApiItemError).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Error!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickError(), typeInfo);
             }
         }
     }

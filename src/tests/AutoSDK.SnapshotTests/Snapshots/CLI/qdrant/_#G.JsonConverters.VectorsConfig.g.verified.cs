@@ -1,4 +1,4 @@
-﻿//HintName: G.JsonConverters.VectorsConfig.g.cs
+//HintName: G.JsonConverters.VectorsConfig.g.cs
 #nullable enable
 #pragma warning disable CS0618 // Type or member is obsolete
 
@@ -134,13 +134,13 @@ namespace G.JsonConverters
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.VectorParams), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.VectorParams?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.VectorParams).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.VectorParams!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickVectorParams(), typeInfo);
             }
             else if (value.IsVectorsConfigVariant2)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::System.Collections.Generic.Dictionary<string, global::G.VectorParams>), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::System.Collections.Generic.Dictionary<string, global::G.VectorParams>?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::System.Collections.Generic.Dictionary<string, global::G.VectorParams>).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.VectorsConfigVariant2!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickVectorsConfigVariant2(), typeInfo);
             }
         }
     }

@@ -1,4 +1,4 @@
-﻿//HintName: G.Models.CreateInputRequest.g.cs
+//HintName: G.Models.CreateInputRequest.g.cs
 #pragma warning disable CS0618 // Type or member is obsolete
 
 #nullable enable
@@ -48,8 +48,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.CreateInputMessageRequest PickInputMessage() => IsInputMessage
-            ? InputMessage!.Value
+        public global::G.CreateInputMessageRequest PickInputMessage() => InputMessage is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'InputMessage' but the value was {ToString()}.");
 
         /// <summary>
@@ -85,8 +85,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.CreateInterruptRequest PickInterrupt() => IsInterrupt
-            ? Interrupt!.Value
+        public global::G.CreateInterruptRequest PickInterrupt() => Interrupt is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Interrupt' but the value was {ToString()}.");
 
         /// <summary>
@@ -123,8 +123,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.CreateCompactRequest PickCompact() => IsCompact
-            ? Compact!.Value
+        public global::G.CreateCompactRequest PickCompact() => Compact is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Compact' but the value was {ToString()}.");
         /// <summary>
         /// 
@@ -252,17 +252,17 @@ namespace G
                 Validate();
             }
 
-            if (IsInputMessage && inputMessage != null)
+            if (InputMessage is { } __value0 && inputMessage != null)
             {
-                return inputMessage(InputMessage!);
+                return inputMessage(__value0);
             }
-            else if (IsInterrupt && interrupt != null)
+            else if (Interrupt is { } __value1 && interrupt != null)
             {
-                return interrupt(Interrupt!);
+                return interrupt(__value1);
             }
-            else if (IsCompact && compact != null)
+            else if (Compact is { } __value2 && compact != null)
             {
-                return compact(Compact!);
+                return compact(__value2);
             }
 
             return default(TResult);
@@ -284,17 +284,17 @@ namespace G
                 Validate();
             }
 
-            if (IsInputMessage)
+            if (InputMessage is { } __value0)
             {
-                inputMessage?.Invoke(InputMessage!);
+                inputMessage?.Invoke(__value0);
             }
-            else if (IsInterrupt)
+            else if (Interrupt is { } __value1)
             {
-                interrupt?.Invoke(Interrupt!);
+                interrupt?.Invoke(__value1);
             }
-            else if (IsCompact)
+            else if (Compact is { } __value2)
             {
-                compact?.Invoke(Compact!);
+                compact?.Invoke(__value2);
             }
         }
 
@@ -312,17 +312,17 @@ namespace G
                 Validate();
             }
 
-            if (IsInputMessage)
+            if (InputMessage is { } __value0)
             {
-                inputMessage?.Invoke(InputMessage!);
+                inputMessage?.Invoke(__value0);
             }
-            else if (IsInterrupt)
+            else if (Interrupt is { } __value1)
             {
-                interrupt?.Invoke(Interrupt!);
+                interrupt?.Invoke(__value1);
             }
-            else if (IsCompact)
+            else if (Compact is { } __value2)
             {
-                compact?.Invoke(Compact!);
+                compact?.Invoke(__value2);
             }
         }
 

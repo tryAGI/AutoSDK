@@ -1,4 +1,4 @@
-﻿//HintName: G.Models.Keyframe.g.cs
+//HintName: G.Models.Keyframe.g.cs
 #pragma warning disable CS0618 // Type or member is obsolete
 
 #nullable enable
@@ -49,8 +49,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.GenerationReference PickGeneration() => IsGeneration
-            ? Generation!
+        public global::G.GenerationReference PickGeneration() => Generation is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Generation' but the value was {ToString()}.");
 
         /// <summary>
@@ -87,8 +87,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.ImageReference PickImage() => IsImage
-            ? Image!
+        public global::G.ImageReference PickImage() => Image is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Image' but the value was {ToString()}.");
         /// <summary>
         /// 
@@ -188,13 +188,13 @@ namespace G
                 Validate();
             }
 
-            if (IsGeneration && generation != null)
+            if (Generation is { } __value0 && generation != null)
             {
-                return generation(Generation!);
+                return generation(__value0);
             }
-            else if (IsImage && image != null)
+            else if (Image is { } __value1 && image != null)
             {
-                return image(Image!);
+                return image(__value1);
             }
 
             return default(TResult);
@@ -214,13 +214,13 @@ namespace G
                 Validate();
             }
 
-            if (IsGeneration)
+            if (Generation is { } __value0)
             {
-                generation?.Invoke(Generation!);
+                generation?.Invoke(__value0);
             }
-            else if (IsImage)
+            else if (Image is { } __value1)
             {
-                image?.Invoke(Image!);
+                image?.Invoke(__value1);
             }
         }
 
@@ -237,13 +237,13 @@ namespace G
                 Validate();
             }
 
-            if (IsGeneration)
+            if (Generation is { } __value0)
             {
-                generation?.Invoke(Generation!);
+                generation?.Invoke(__value0);
             }
-            else if (IsImage)
+            else if (Image is { } __value1)
             {
-                image?.Invoke(Image!);
+                image?.Invoke(__value1);
             }
         }
 

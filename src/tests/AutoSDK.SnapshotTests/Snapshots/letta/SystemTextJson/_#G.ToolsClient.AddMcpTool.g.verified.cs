@@ -1,4 +1,4 @@
-﻿//HintName: G.ToolsClient.AddMcpTool.g.cs
+//HintName: G.ToolsClient.AddMcpTool.g.cs
 
 #nullable enable
 
@@ -171,8 +171,8 @@ namespace G
                 PrepareAddMcpToolRequest(
                     httpClient: HttpClient,
                     httpRequestMessage: __httpRequest,
-                    mcpServerName: mcpServerName!,
-                    mcpToolName: mcpToolName!);
+                    mcpServerName: mcpServerName,
+                    mcpToolName: mcpToolName);
 
                 return __httpRequest;
             }
@@ -194,7 +194,7 @@ namespace G
                                 pathTemplate: "$\"/v1/tools/mcp/servers/{mcpServerName}/{mcpToolName}\"",
                                 httpMethod: "POST",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: null,
                                 exception: null,
                                 clientOptions: Options,
@@ -228,7 +228,7 @@ namespace G
                                 pathTemplate: "$\"/v1/tools/mcp/servers/{mcpServerName}/{mcpToolName}\"",
                                 httpMethod: "POST",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: null,
                                 exception: __exception,
                                 clientOptions: Options,
@@ -269,7 +269,7 @@ namespace G
                                 pathTemplate: "$\"/v1/tools/mcp/servers/{mcpServerName}/{mcpToolName}\"",
                                 httpMethod: "POST",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: __response,
                                 exception: null,
                                 clientOptions: Options,
@@ -317,7 +317,7 @@ namespace G
                                 pathTemplate: "$\"/v1/tools/mcp/servers/{mcpServerName}/{mcpToolName}\"",
                                 httpMethod: "POST",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: __response,
                                 exception: null,
                                 clientOptions: Options,
@@ -339,7 +339,7 @@ namespace G
                                 pathTemplate: "$\"/v1/tools/mcp/servers/{mcpServerName}/{mcpToolName}\"",
                                 httpMethod: "POST",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: __response,
                                 exception: null,
                                 clientOptions: Options,

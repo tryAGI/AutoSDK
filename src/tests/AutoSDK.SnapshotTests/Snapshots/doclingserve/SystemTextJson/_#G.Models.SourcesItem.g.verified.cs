@@ -1,4 +1,4 @@
-﻿//HintName: G.Models.SourcesItem.g.cs
+//HintName: G.Models.SourcesItem.g.cs
 #pragma warning disable CS0618 // Type or member is obsolete
 
 #nullable enable
@@ -48,8 +48,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.FileSourceRequest PickFile() => IsFile
-            ? File!
+        public global::G.FileSourceRequest PickFile() => File is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'File' but the value was {ToString()}.");
 
         /// <summary>
@@ -85,8 +85,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.HttpSourceRequest PickHttp() => IsHttp
-            ? Http!
+        public global::G.HttpSourceRequest PickHttp() => Http is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Http' but the value was {ToString()}.");
 
         /// <summary>
@@ -122,8 +122,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.S3SourceRequest PickS3() => IsS3
-            ? S3!
+        public global::G.S3SourceRequest PickS3() => S3 is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'S3' but the value was {ToString()}.");
         /// <summary>
         /// 
@@ -251,17 +251,17 @@ namespace G
                 Validate();
             }
 
-            if (IsFile && file != null)
+            if (File is { } __value0 && file != null)
             {
-                return file(File!);
+                return file(__value0);
             }
-            else if (IsHttp && http != null)
+            else if (Http is { } __value1 && http != null)
             {
-                return http(Http!);
+                return http(__value1);
             }
-            else if (IsS3 && s3 != null)
+            else if (S3 is { } __value2 && s3 != null)
             {
-                return s3(S3!);
+                return s3(__value2);
             }
 
             return default(TResult);
@@ -283,17 +283,17 @@ namespace G
                 Validate();
             }
 
-            if (IsFile)
+            if (File is { } __value0)
             {
-                file?.Invoke(File!);
+                file?.Invoke(__value0);
             }
-            else if (IsHttp)
+            else if (Http is { } __value1)
             {
-                http?.Invoke(Http!);
+                http?.Invoke(__value1);
             }
-            else if (IsS3)
+            else if (S3 is { } __value2)
             {
-                s3?.Invoke(S3!);
+                s3?.Invoke(__value2);
             }
         }
 
@@ -311,17 +311,17 @@ namespace G
                 Validate();
             }
 
-            if (IsFile)
+            if (File is { } __value0)
             {
-                file?.Invoke(File!);
+                file?.Invoke(__value0);
             }
-            else if (IsHttp)
+            else if (Http is { } __value1)
             {
-                http?.Invoke(Http!);
+                http?.Invoke(__value1);
             }
-            else if (IsS3)
+            else if (S3 is { } __value2)
             {
-                s3?.Invoke(S3!);
+                s3?.Invoke(__value2);
             }
         }
 

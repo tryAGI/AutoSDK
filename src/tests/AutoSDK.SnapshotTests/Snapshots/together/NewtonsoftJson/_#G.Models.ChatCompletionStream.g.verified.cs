@@ -1,4 +1,4 @@
-﻿//HintName: G.Models.ChatCompletionStream.g.cs
+//HintName: G.Models.ChatCompletionStream.g.cs
 #pragma warning disable CS0618 // Type or member is obsolete
 
 #nullable enable
@@ -43,8 +43,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.ChatCompletionEvent PickEvent() => IsEvent
-            ? Event!
+        public global::G.ChatCompletionEvent PickEvent() => Event is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Event' but the value was {ToString()}.");
 
         /// <summary>
@@ -80,8 +80,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.StreamSentinel PickSentinel() => IsSentinel
-            ? Sentinel!
+        public global::G.StreamSentinel PickSentinel() => Sentinel is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Sentinel' but the value was {ToString()}.");
         /// <summary>
         /// 
@@ -178,13 +178,13 @@ namespace G
                 Validate();
             }
 
-            if (IsEvent && @event != null)
+            if (Event is { } __value0 && @event != null)
             {
-                return @event(Event!);
+                return @event(__value0);
             }
-            else if (IsSentinel && sentinel != null)
+            else if (Sentinel is { } __value1 && sentinel != null)
             {
-                return sentinel(Sentinel!);
+                return sentinel(__value1);
             }
 
             return default(TResult);
@@ -204,13 +204,13 @@ namespace G
                 Validate();
             }
 
-            if (IsEvent)
+            if (Event is { } __value0)
             {
-                @event?.Invoke(Event!);
+                @event?.Invoke(__value0);
             }
-            else if (IsSentinel)
+            else if (Sentinel is { } __value1)
             {
-                sentinel?.Invoke(Sentinel!);
+                sentinel?.Invoke(__value1);
             }
         }
 
@@ -227,13 +227,13 @@ namespace G
                 Validate();
             }
 
-            if (IsEvent)
+            if (Event is { } __value0)
             {
-                @event?.Invoke(Event!);
+                @event?.Invoke(__value0);
             }
-            else if (IsSentinel)
+            else if (Sentinel is { } __value1)
             {
-                sentinel?.Invoke(Sentinel!);
+                sentinel?.Invoke(__value1);
             }
         }
 

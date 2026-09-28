@@ -1,4 +1,4 @@
-﻿//HintName: G.TeamsClient.TeamsCheckPermissionsForRepoLegacy.g.cs
+//HintName: G.TeamsClient.TeamsCheckPermissionsForRepoLegacy.g.cs
 
 #nullable enable
 
@@ -131,9 +131,9 @@ namespace G
                 PrepareTeamsCheckPermissionsForRepoLegacyRequest(
                     httpClient: HttpClient,
                     httpRequestMessage: __httpRequest,
-                    teamId: teamId!,
-                    owner: owner!,
-                    repo: repo!);
+                    teamId: teamId,
+                    owner: owner,
+                    repo: repo);
 
                 return __httpRequest;
             }
@@ -155,7 +155,7 @@ namespace G
                                 pathTemplate: "$\"/teams/{teamId}/repos/{owner}/{repo}\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: null,
                                 exception: null,
                                 clientOptions: Options,
@@ -189,7 +189,7 @@ namespace G
                                 pathTemplate: "$\"/teams/{teamId}/repos/{owner}/{repo}\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: null,
                                 exception: __exception,
                                 clientOptions: Options,
@@ -230,7 +230,7 @@ namespace G
                                 pathTemplate: "$\"/teams/{teamId}/repos/{owner}/{repo}\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: __response,
                                 exception: null,
                                 clientOptions: Options,
@@ -278,7 +278,7 @@ namespace G
                                 pathTemplate: "$\"/teams/{teamId}/repos/{owner}/{repo}\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: __response,
                                 exception: null,
                                 clientOptions: Options,
@@ -300,7 +300,7 @@ namespace G
                                 pathTemplate: "$\"/teams/{teamId}/repos/{owner}/{repo}\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: __response,
                                 exception: null,
                                 clientOptions: Options,

@@ -1,4 +1,4 @@
-﻿//HintName: G.Models.AuthenticationPlan8.g.cs
+//HintName: G.Models.AuthenticationPlan8.g.cs
 #pragma warning disable CS0618 // Type or member is obsolete
 
 #nullable enable
@@ -48,8 +48,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.OAuth2AuthenticationPlan PickOauth2() => IsOauth2
-            ? Oauth2!
+        public global::G.OAuth2AuthenticationPlan PickOauth2() => Oauth2 is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Oauth2' but the value was {ToString()}.");
 
         /// <summary>
@@ -85,8 +85,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.HMACAuthenticationPlan PickHmac() => IsHmac
-            ? Hmac!
+        public global::G.HMACAuthenticationPlan PickHmac() => Hmac is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Hmac' but the value was {ToString()}.");
 
         /// <summary>
@@ -122,8 +122,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.BearerAuthenticationPlan PickBearer() => IsBearer
-            ? Bearer!
+        public global::G.BearerAuthenticationPlan PickBearer() => Bearer is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Bearer' but the value was {ToString()}.");
         /// <summary>
         /// 
@@ -251,17 +251,17 @@ namespace G
                 Validate();
             }
 
-            if (IsOauth2 && oauth2 != null)
+            if (Oauth2 is { } __value0 && oauth2 != null)
             {
-                return oauth2(Oauth2!);
+                return oauth2(__value0);
             }
-            else if (IsHmac && hmac != null)
+            else if (Hmac is { } __value1 && hmac != null)
             {
-                return hmac(Hmac!);
+                return hmac(__value1);
             }
-            else if (IsBearer && bearer != null)
+            else if (Bearer is { } __value2 && bearer != null)
             {
-                return bearer(Bearer!);
+                return bearer(__value2);
             }
 
             return default(TResult);
@@ -283,17 +283,17 @@ namespace G
                 Validate();
             }
 
-            if (IsOauth2)
+            if (Oauth2 is { } __value0)
             {
-                oauth2?.Invoke(Oauth2!);
+                oauth2?.Invoke(__value0);
             }
-            else if (IsHmac)
+            else if (Hmac is { } __value1)
             {
-                hmac?.Invoke(Hmac!);
+                hmac?.Invoke(__value1);
             }
-            else if (IsBearer)
+            else if (Bearer is { } __value2)
             {
-                bearer?.Invoke(Bearer!);
+                bearer?.Invoke(__value2);
             }
         }
 
@@ -311,17 +311,17 @@ namespace G
                 Validate();
             }
 
-            if (IsOauth2)
+            if (Oauth2 is { } __value0)
             {
-                oauth2?.Invoke(Oauth2!);
+                oauth2?.Invoke(__value0);
             }
-            else if (IsHmac)
+            else if (Hmac is { } __value1)
             {
-                hmac?.Invoke(Hmac!);
+                hmac?.Invoke(__value1);
             }
-            else if (IsBearer)
+            else if (Bearer is { } __value2)
             {
-                bearer?.Invoke(Bearer!);
+                bearer?.Invoke(__value2);
             }
         }
 

@@ -1,4 +1,4 @@
-﻿//HintName: G.Models.ResponsesRequestPluginsItems.g.cs
+//HintName: G.Models.ResponsesRequestPluginsItems.g.cs
 #pragma warning disable CS0618 // Type or member is obsolete
 
 #nullable enable
@@ -43,8 +43,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.ResponsesRequestPluginsItems0 PickResponsesRequestPluginsItems0() => IsResponsesRequestPluginsItems0
-            ? ResponsesRequestPluginsItems0!
+        public global::G.ResponsesRequestPluginsItems0 PickResponsesRequestPluginsItems0() => ResponsesRequestPluginsItems0 is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'ResponsesRequestPluginsItems0' but the value was {ToString()}.");
 
         /// <summary>
@@ -80,8 +80,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.ResponsesRequestPluginsItems1 PickResponsesRequestPluginsItems1() => IsResponsesRequestPluginsItems1
-            ? ResponsesRequestPluginsItems1!
+        public global::G.ResponsesRequestPluginsItems1 PickResponsesRequestPluginsItems1() => ResponsesRequestPluginsItems1 is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'ResponsesRequestPluginsItems1' but the value was {ToString()}.");
 
         /// <summary>
@@ -117,8 +117,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.ResponsesRequestPluginsItems2 PickResponsesRequestPluginsItems2() => IsResponsesRequestPluginsItems2
-            ? ResponsesRequestPluginsItems2!
+        public global::G.ResponsesRequestPluginsItems2 PickResponsesRequestPluginsItems2() => ResponsesRequestPluginsItems2 is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'ResponsesRequestPluginsItems2' but the value was {ToString()}.");
 
         /// <summary>
@@ -154,8 +154,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.ResponsesRequestPluginsItems3 PickResponsesRequestPluginsItems3() => IsResponsesRequestPluginsItems3
-            ? ResponsesRequestPluginsItems3!
+        public global::G.ResponsesRequestPluginsItems3 PickResponsesRequestPluginsItems3() => ResponsesRequestPluginsItems3 is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'ResponsesRequestPluginsItems3' but the value was {ToString()}.");
 
         /// <summary>
@@ -191,8 +191,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.ResponsesRequestPluginsItems4 PickResponsesRequestPluginsItems4() => IsResponsesRequestPluginsItems4
-            ? ResponsesRequestPluginsItems4!
+        public global::G.ResponsesRequestPluginsItems4 PickResponsesRequestPluginsItems4() => ResponsesRequestPluginsItems4 is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'ResponsesRequestPluginsItems4' but the value was {ToString()}.");
 
         /// <summary>
@@ -228,8 +228,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.ResponsesRequestPluginsItems5 PickResponsesRequestPluginsItems5() => IsResponsesRequestPluginsItems5
-            ? ResponsesRequestPluginsItems5!
+        public global::G.ResponsesRequestPluginsItems5 PickResponsesRequestPluginsItems5() => ResponsesRequestPluginsItems5 is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'ResponsesRequestPluginsItems5' but the value was {ToString()}.");
         /// <summary>
         /// 
@@ -438,29 +438,29 @@ namespace G
                 Validate();
             }
 
-            if (IsResponsesRequestPluginsItems0 && responsesRequestPluginsItems0 != null)
+            if (ResponsesRequestPluginsItems0 is { } __value0 && responsesRequestPluginsItems0 != null)
             {
-                return responsesRequestPluginsItems0(ResponsesRequestPluginsItems0!);
+                return responsesRequestPluginsItems0(__value0);
             }
-            else if (IsResponsesRequestPluginsItems1 && responsesRequestPluginsItems1 != null)
+            else if (ResponsesRequestPluginsItems1 is { } __value1 && responsesRequestPluginsItems1 != null)
             {
-                return responsesRequestPluginsItems1(ResponsesRequestPluginsItems1!);
+                return responsesRequestPluginsItems1(__value1);
             }
-            else if (IsResponsesRequestPluginsItems2 && responsesRequestPluginsItems2 != null)
+            else if (ResponsesRequestPluginsItems2 is { } __value2 && responsesRequestPluginsItems2 != null)
             {
-                return responsesRequestPluginsItems2(ResponsesRequestPluginsItems2!);
+                return responsesRequestPluginsItems2(__value2);
             }
-            else if (IsResponsesRequestPluginsItems3 && responsesRequestPluginsItems3 != null)
+            else if (ResponsesRequestPluginsItems3 is { } __value3 && responsesRequestPluginsItems3 != null)
             {
-                return responsesRequestPluginsItems3(ResponsesRequestPluginsItems3!);
+                return responsesRequestPluginsItems3(__value3);
             }
-            else if (IsResponsesRequestPluginsItems4 && responsesRequestPluginsItems4 != null)
+            else if (ResponsesRequestPluginsItems4 is { } __value4 && responsesRequestPluginsItems4 != null)
             {
-                return responsesRequestPluginsItems4(ResponsesRequestPluginsItems4!);
+                return responsesRequestPluginsItems4(__value4);
             }
-            else if (IsResponsesRequestPluginsItems5 && responsesRequestPluginsItems5 != null)
+            else if (ResponsesRequestPluginsItems5 is { } __value5 && responsesRequestPluginsItems5 != null)
             {
-                return responsesRequestPluginsItems5(ResponsesRequestPluginsItems5!);
+                return responsesRequestPluginsItems5(__value5);
             }
 
             return default(TResult);
@@ -488,29 +488,29 @@ namespace G
                 Validate();
             }
 
-            if (IsResponsesRequestPluginsItems0)
+            if (ResponsesRequestPluginsItems0 is { } __value0)
             {
-                responsesRequestPluginsItems0?.Invoke(ResponsesRequestPluginsItems0!);
+                responsesRequestPluginsItems0?.Invoke(__value0);
             }
-            else if (IsResponsesRequestPluginsItems1)
+            else if (ResponsesRequestPluginsItems1 is { } __value1)
             {
-                responsesRequestPluginsItems1?.Invoke(ResponsesRequestPluginsItems1!);
+                responsesRequestPluginsItems1?.Invoke(__value1);
             }
-            else if (IsResponsesRequestPluginsItems2)
+            else if (ResponsesRequestPluginsItems2 is { } __value2)
             {
-                responsesRequestPluginsItems2?.Invoke(ResponsesRequestPluginsItems2!);
+                responsesRequestPluginsItems2?.Invoke(__value2);
             }
-            else if (IsResponsesRequestPluginsItems3)
+            else if (ResponsesRequestPluginsItems3 is { } __value3)
             {
-                responsesRequestPluginsItems3?.Invoke(ResponsesRequestPluginsItems3!);
+                responsesRequestPluginsItems3?.Invoke(__value3);
             }
-            else if (IsResponsesRequestPluginsItems4)
+            else if (ResponsesRequestPluginsItems4 is { } __value4)
             {
-                responsesRequestPluginsItems4?.Invoke(ResponsesRequestPluginsItems4!);
+                responsesRequestPluginsItems4?.Invoke(__value4);
             }
-            else if (IsResponsesRequestPluginsItems5)
+            else if (ResponsesRequestPluginsItems5 is { } __value5)
             {
-                responsesRequestPluginsItems5?.Invoke(ResponsesRequestPluginsItems5!);
+                responsesRequestPluginsItems5?.Invoke(__value5);
             }
         }
 
@@ -531,29 +531,29 @@ namespace G
                 Validate();
             }
 
-            if (IsResponsesRequestPluginsItems0)
+            if (ResponsesRequestPluginsItems0 is { } __value0)
             {
-                responsesRequestPluginsItems0?.Invoke(ResponsesRequestPluginsItems0!);
+                responsesRequestPluginsItems0?.Invoke(__value0);
             }
-            else if (IsResponsesRequestPluginsItems1)
+            else if (ResponsesRequestPluginsItems1 is { } __value1)
             {
-                responsesRequestPluginsItems1?.Invoke(ResponsesRequestPluginsItems1!);
+                responsesRequestPluginsItems1?.Invoke(__value1);
             }
-            else if (IsResponsesRequestPluginsItems2)
+            else if (ResponsesRequestPluginsItems2 is { } __value2)
             {
-                responsesRequestPluginsItems2?.Invoke(ResponsesRequestPluginsItems2!);
+                responsesRequestPluginsItems2?.Invoke(__value2);
             }
-            else if (IsResponsesRequestPluginsItems3)
+            else if (ResponsesRequestPluginsItems3 is { } __value3)
             {
-                responsesRequestPluginsItems3?.Invoke(ResponsesRequestPluginsItems3!);
+                responsesRequestPluginsItems3?.Invoke(__value3);
             }
-            else if (IsResponsesRequestPluginsItems4)
+            else if (ResponsesRequestPluginsItems4 is { } __value4)
             {
-                responsesRequestPluginsItems4?.Invoke(ResponsesRequestPluginsItems4!);
+                responsesRequestPluginsItems4?.Invoke(__value4);
             }
-            else if (IsResponsesRequestPluginsItems5)
+            else if (ResponsesRequestPluginsItems5 is { } __value5)
             {
-                responsesRequestPluginsItems5?.Invoke(ResponsesRequestPluginsItems5!);
+                responsesRequestPluginsItems5?.Invoke(__value5);
             }
         }
 

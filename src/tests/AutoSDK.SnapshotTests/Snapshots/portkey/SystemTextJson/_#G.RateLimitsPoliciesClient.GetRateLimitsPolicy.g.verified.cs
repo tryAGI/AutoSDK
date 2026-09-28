@@ -1,4 +1,4 @@
-﻿//HintName: G.RateLimitsPoliciesClient.GetRateLimitsPolicy.g.cs
+//HintName: G.RateLimitsPoliciesClient.GetRateLimitsPolicy.g.cs
 
 #nullable enable
 
@@ -163,7 +163,7 @@ namespace G
                 PrepareGetRateLimitsPolicyRequest(
                     httpClient: HttpClient,
                     httpRequestMessage: __httpRequest,
-                    rateLimitsPolicyId: rateLimitsPolicyId!,
+                    rateLimitsPolicyId: rateLimitsPolicyId,
                     status: status);
 
                 return __httpRequest;
@@ -186,7 +186,7 @@ namespace G
                                 pathTemplate: "$\"/policies/rate-limits/{rateLimitsPolicyId}\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: null,
                                 exception: null,
                                 clientOptions: Options,
@@ -220,7 +220,7 @@ namespace G
                                 pathTemplate: "$\"/policies/rate-limits/{rateLimitsPolicyId}\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: null,
                                 exception: __exception,
                                 clientOptions: Options,
@@ -261,7 +261,7 @@ namespace G
                                 pathTemplate: "$\"/policies/rate-limits/{rateLimitsPolicyId}\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: __response,
                                 exception: null,
                                 clientOptions: Options,
@@ -309,7 +309,7 @@ namespace G
                                 pathTemplate: "$\"/policies/rate-limits/{rateLimitsPolicyId}\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: __response,
                                 exception: null,
                                 clientOptions: Options,
@@ -331,7 +331,7 @@ namespace G
                                 pathTemplate: "$\"/policies/rate-limits/{rateLimitsPolicyId}\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: __response,
                                 exception: null,
                                 clientOptions: Options,

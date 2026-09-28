@@ -1,4 +1,4 @@
-﻿//HintName: G.Models.AttributeSchema.g.cs
+//HintName: G.Models.AttributeSchema.g.cs
 #pragma warning disable CS0618 // Type or member is obsolete
 
 #nullable enable
@@ -43,8 +43,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public string PickAttributeTypeName() => IsAttributeTypeName
-            ? AttributeTypeName!
+        public string PickAttributeTypeName() => AttributeTypeName is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'AttributeTypeName' but the value was {ToString()}.");
 
         /// <summary>
@@ -80,8 +80,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.AttributeSchemaConfig PickConfig() => IsConfig
-            ? Config!
+        public global::G.AttributeSchemaConfig PickConfig() => Config is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Config' but the value was {ToString()}.");
         /// <summary>
         /// 
@@ -178,13 +178,13 @@ namespace G
                 Validate();
             }
 
-            if (IsAttributeTypeName && attributeTypeName != null)
+            if (AttributeTypeName is { } __value0 && attributeTypeName != null)
             {
-                return attributeTypeName(AttributeTypeName!);
+                return attributeTypeName(__value0);
             }
-            else if (IsConfig && config != null)
+            else if (Config is { } __value1 && config != null)
             {
-                return config(Config!);
+                return config(__value1);
             }
 
             return default(TResult);
@@ -204,13 +204,13 @@ namespace G
                 Validate();
             }
 
-            if (IsAttributeTypeName)
+            if (AttributeTypeName is { } __value0)
             {
-                attributeTypeName?.Invoke(AttributeTypeName!);
+                attributeTypeName?.Invoke(__value0);
             }
-            else if (IsConfig)
+            else if (Config is { } __value1)
             {
-                config?.Invoke(Config!);
+                config?.Invoke(__value1);
             }
         }
 
@@ -227,13 +227,13 @@ namespace G
                 Validate();
             }
 
-            if (IsAttributeTypeName)
+            if (AttributeTypeName is { } __value0)
             {
-                attributeTypeName?.Invoke(AttributeTypeName!);
+                attributeTypeName?.Invoke(__value0);
             }
-            else if (IsConfig)
+            else if (Config is { } __value1)
             {
-                config?.Invoke(Config!);
+                config?.Invoke(__value1);
             }
         }
 

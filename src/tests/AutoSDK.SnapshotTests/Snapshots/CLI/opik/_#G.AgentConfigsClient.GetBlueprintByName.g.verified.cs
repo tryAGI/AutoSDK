@@ -1,4 +1,4 @@
-﻿//HintName: G.AgentConfigsClient.GetBlueprintByName.g.cs
+//HintName: G.AgentConfigsClient.GetBlueprintByName.g.cs
 
 #nullable enable
 
@@ -139,8 +139,8 @@ namespace G
                 PrepareGetBlueprintByNameRequest(
                     httpClient: HttpClient,
                     httpRequestMessage: __httpRequest,
-                    name: name!,
-                    projectId: projectId!,
+                    name: name,
+                    projectId: projectId,
                     maskId: maskId);
 
                 return __httpRequest;
@@ -163,7 +163,7 @@ namespace G
                                 pathTemplate: "$\"/v1/private/agent-configs/blueprints/projects/{projectId}/names/{name}\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: null,
                                 exception: null,
                                 clientOptions: Options,
@@ -197,7 +197,7 @@ namespace G
                                 pathTemplate: "$\"/v1/private/agent-configs/blueprints/projects/{projectId}/names/{name}\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: null,
                                 exception: __exception,
                                 clientOptions: Options,
@@ -238,7 +238,7 @@ namespace G
                                 pathTemplate: "$\"/v1/private/agent-configs/blueprints/projects/{projectId}/names/{name}\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: __response,
                                 exception: null,
                                 clientOptions: Options,
@@ -286,7 +286,7 @@ namespace G
                                 pathTemplate: "$\"/v1/private/agent-configs/blueprints/projects/{projectId}/names/{name}\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: __response,
                                 exception: null,
                                 clientOptions: Options,
@@ -308,7 +308,7 @@ namespace G
                                 pathTemplate: "$\"/v1/private/agent-configs/blueprints/projects/{projectId}/names/{name}\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: __response,
                                 exception: null,
                                 clientOptions: Options,

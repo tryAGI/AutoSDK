@@ -1,4 +1,4 @@
-﻿//HintName: G.Models.StopConfiguration.g.cs
+//HintName: G.Models.StopConfiguration.g.cs
 #pragma warning disable CS0618 // Type or member is obsolete
 
 #nullable enable
@@ -46,8 +46,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public string PickStopConfigurationVariant1() => IsStopConfigurationVariant1
-            ? StopConfigurationVariant1!
+        public string PickStopConfigurationVariant1() => StopConfigurationVariant1 is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'StopConfigurationVariant1' but the value was {ToString()}.");
 
         /// <summary>
@@ -83,8 +83,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<string> PickStopConfigurationVariant2() => IsStopConfigurationVariant2
-            ? StopConfigurationVariant2!
+        public global::System.Collections.Generic.IList<string> PickStopConfigurationVariant2() => StopConfigurationVariant2 is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'StopConfigurationVariant2' but the value was {ToString()}.");
         /// <summary>
         /// 
@@ -158,13 +158,13 @@ namespace G
                 Validate();
             }
 
-            if (IsStopConfigurationVariant1 && stopConfigurationVariant1 != null)
+            if (StopConfigurationVariant1 is { } __value0 && stopConfigurationVariant1 != null)
             {
-                return stopConfigurationVariant1(StopConfigurationVariant1!);
+                return stopConfigurationVariant1(__value0);
             }
-            else if (IsStopConfigurationVariant2 && stopConfigurationVariant2 != null)
+            else if (StopConfigurationVariant2 is { } __value1 && stopConfigurationVariant2 != null)
             {
-                return stopConfigurationVariant2(StopConfigurationVariant2!);
+                return stopConfigurationVariant2(__value1);
             }
 
             return default(TResult);
@@ -184,13 +184,13 @@ namespace G
                 Validate();
             }
 
-            if (IsStopConfigurationVariant1)
+            if (StopConfigurationVariant1 is { } __value0)
             {
-                stopConfigurationVariant1?.Invoke(StopConfigurationVariant1!);
+                stopConfigurationVariant1?.Invoke(__value0);
             }
-            else if (IsStopConfigurationVariant2)
+            else if (StopConfigurationVariant2 is { } __value1)
             {
-                stopConfigurationVariant2?.Invoke(StopConfigurationVariant2!);
+                stopConfigurationVariant2?.Invoke(__value1);
             }
         }
 
@@ -207,13 +207,13 @@ namespace G
                 Validate();
             }
 
-            if (IsStopConfigurationVariant1)
+            if (StopConfigurationVariant1 is { } __value0)
             {
-                stopConfigurationVariant1?.Invoke(StopConfigurationVariant1!);
+                stopConfigurationVariant1?.Invoke(__value0);
             }
-            else if (IsStopConfigurationVariant2)
+            else if (StopConfigurationVariant2 is { } __value1)
             {
-                stopConfigurationVariant2?.Invoke(StopConfigurationVariant2!);
+                stopConfigurationVariant2?.Invoke(__value1);
             }
         }
 

@@ -1,4 +1,4 @@
-﻿//HintName: G.JsonConverters.CollectionTelemetryEnum.g.cs
+//HintName: G.JsonConverters.CollectionTelemetryEnum.g.cs
 #nullable enable
 #pragma warning disable CS0618 // Type or member is obsolete
 
@@ -153,13 +153,13 @@ namespace G.JsonConverters
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.CollectionTelemetry), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.CollectionTelemetry?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.CollectionTelemetry).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.CollectionTelemetry!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickCollectionTelemetry(), typeInfo);
             }
             else if (value.IsCollectionsAggregated)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.CollectionsAggregatedTelemetry), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.CollectionsAggregatedTelemetry?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.CollectionsAggregatedTelemetry).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.CollectionsAggregated!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickCollectionsAggregated(), typeInfo);
             }
         }
     }

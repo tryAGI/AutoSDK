@@ -1,4 +1,4 @@
-﻿//HintName: G.Models.EasyInputMessageContent.g.cs
+//HintName: G.Models.EasyInputMessageContent.g.cs
 #pragma warning disable CS0618 // Type or member is obsolete
 
 #nullable enable
@@ -43,8 +43,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::G.EasyInputMessageContentOneOf0Items> PickEasyInputMessageContent0() => IsEasyInputMessageContent0
-            ? EasyInputMessageContent0!
+        public global::System.Collections.Generic.IList<global::G.EasyInputMessageContentOneOf0Items> PickEasyInputMessageContent0() => EasyInputMessageContent0 is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'EasyInputMessageContent0' but the value was {ToString()}.");
 
         /// <summary>
@@ -80,8 +80,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public string PickEasyInputMessageContentVariant2() => IsEasyInputMessageContentVariant2
-            ? EasyInputMessageContentVariant2!
+        public string PickEasyInputMessageContentVariant2() => EasyInputMessageContentVariant2 is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'EasyInputMessageContentVariant2' but the value was {ToString()}.");
 
         /// <summary>
@@ -117,8 +117,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public object PickEasyInputMessageContentVariant3() => IsEasyInputMessageContentVariant3
-            ? EasyInputMessageContentVariant3!
+        public object PickEasyInputMessageContentVariant3() => EasyInputMessageContentVariant3 is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'EasyInputMessageContentVariant3' but the value was {ToString()}.");
         /// <summary>
         /// 
@@ -197,17 +197,17 @@ namespace G
                 Validate();
             }
 
-            if (IsEasyInputMessageContent0 && easyInputMessageContent0 != null)
+            if (EasyInputMessageContent0 is { } __value0 && easyInputMessageContent0 != null)
             {
-                return easyInputMessageContent0(EasyInputMessageContent0!);
+                return easyInputMessageContent0(__value0);
             }
-            else if (IsEasyInputMessageContentVariant2 && easyInputMessageContentVariant2 != null)
+            else if (EasyInputMessageContentVariant2 is { } __value1 && easyInputMessageContentVariant2 != null)
             {
-                return easyInputMessageContentVariant2(EasyInputMessageContentVariant2!);
+                return easyInputMessageContentVariant2(__value1);
             }
-            else if (IsEasyInputMessageContentVariant3 && easyInputMessageContentVariant3 != null)
+            else if (EasyInputMessageContentVariant3 is { } __value2 && easyInputMessageContentVariant3 != null)
             {
-                return easyInputMessageContentVariant3(EasyInputMessageContentVariant3!);
+                return easyInputMessageContentVariant3(__value2);
             }
 
             return default(TResult);
@@ -229,17 +229,17 @@ namespace G
                 Validate();
             }
 
-            if (IsEasyInputMessageContent0)
+            if (EasyInputMessageContent0 is { } __value0)
             {
-                easyInputMessageContent0?.Invoke(EasyInputMessageContent0!);
+                easyInputMessageContent0?.Invoke(__value0);
             }
-            else if (IsEasyInputMessageContentVariant2)
+            else if (EasyInputMessageContentVariant2 is { } __value1)
             {
-                easyInputMessageContentVariant2?.Invoke(EasyInputMessageContentVariant2!);
+                easyInputMessageContentVariant2?.Invoke(__value1);
             }
-            else if (IsEasyInputMessageContentVariant3)
+            else if (EasyInputMessageContentVariant3 is { } __value2)
             {
-                easyInputMessageContentVariant3?.Invoke(EasyInputMessageContentVariant3!);
+                easyInputMessageContentVariant3?.Invoke(__value2);
             }
         }
 
@@ -257,17 +257,17 @@ namespace G
                 Validate();
             }
 
-            if (IsEasyInputMessageContent0)
+            if (EasyInputMessageContent0 is { } __value0)
             {
-                easyInputMessageContent0?.Invoke(EasyInputMessageContent0!);
+                easyInputMessageContent0?.Invoke(__value0);
             }
-            else if (IsEasyInputMessageContentVariant2)
+            else if (EasyInputMessageContentVariant2 is { } __value1)
             {
-                easyInputMessageContentVariant2?.Invoke(EasyInputMessageContentVariant2!);
+                easyInputMessageContentVariant2?.Invoke(__value1);
             }
-            else if (IsEasyInputMessageContentVariant3)
+            else if (EasyInputMessageContentVariant3 is { } __value2)
             {
-                easyInputMessageContentVariant3?.Invoke(EasyInputMessageContentVariant3!);
+                easyInputMessageContentVariant3?.Invoke(__value2);
             }
         }
 

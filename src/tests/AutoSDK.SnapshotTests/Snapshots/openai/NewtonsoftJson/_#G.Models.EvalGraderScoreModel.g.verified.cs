@@ -1,4 +1,4 @@
-﻿//HintName: G.Models.EvalGraderScoreModel.g.cs
+//HintName: G.Models.EvalGraderScoreModel.g.cs
 #pragma warning disable CS0618 // Type or member is obsolete
 
 #nullable enable
@@ -43,8 +43,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.GraderScoreModel PickScoreModelGrader() => IsScoreModelGrader
-            ? ScoreModelGrader!
+        public global::G.GraderScoreModel PickScoreModelGrader() => ScoreModelGrader is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'ScoreModelGrader' but the value was {ToString()}.");
 
         /// <summary>
@@ -80,8 +80,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.EvalGraderScoreModelVariant2 PickEvalGraderScoreModelVariant2() => IsEvalGraderScoreModelVariant2
-            ? EvalGraderScoreModelVariant2!
+        public global::G.EvalGraderScoreModelVariant2 PickEvalGraderScoreModelVariant2() => EvalGraderScoreModelVariant2 is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'EvalGraderScoreModelVariant2' but the value was {ToString()}.");
         /// <summary>
         /// 
@@ -178,13 +178,13 @@ namespace G
                 Validate();
             }
 
-            if (IsScoreModelGrader && scoreModelGrader != null)
+            if (ScoreModelGrader is { } __value0 && scoreModelGrader != null)
             {
-                return scoreModelGrader(ScoreModelGrader!);
+                return scoreModelGrader(__value0);
             }
-            else if (IsEvalGraderScoreModelVariant2 && evalGraderScoreModelVariant2 != null)
+            else if (EvalGraderScoreModelVariant2 is { } __value1 && evalGraderScoreModelVariant2 != null)
             {
-                return evalGraderScoreModelVariant2(EvalGraderScoreModelVariant2!);
+                return evalGraderScoreModelVariant2(__value1);
             }
 
             return default(TResult);
@@ -204,13 +204,13 @@ namespace G
                 Validate();
             }
 
-            if (IsScoreModelGrader)
+            if (ScoreModelGrader is { } __value0)
             {
-                scoreModelGrader?.Invoke(ScoreModelGrader!);
+                scoreModelGrader?.Invoke(__value0);
             }
-            else if (IsEvalGraderScoreModelVariant2)
+            else if (EvalGraderScoreModelVariant2 is { } __value1)
             {
-                evalGraderScoreModelVariant2?.Invoke(EvalGraderScoreModelVariant2!);
+                evalGraderScoreModelVariant2?.Invoke(__value1);
             }
         }
 
@@ -227,13 +227,13 @@ namespace G
                 Validate();
             }
 
-            if (IsScoreModelGrader)
+            if (ScoreModelGrader is { } __value0)
             {
-                scoreModelGrader?.Invoke(ScoreModelGrader!);
+                scoreModelGrader?.Invoke(__value0);
             }
-            else if (IsEvalGraderScoreModelVariant2)
+            else if (EvalGraderScoreModelVariant2 is { } __value1)
             {
-                evalGraderScoreModelVariant2?.Invoke(EvalGraderScoreModelVariant2!);
+                evalGraderScoreModelVariant2?.Invoke(__value1);
             }
         }
 

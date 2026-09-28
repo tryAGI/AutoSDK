@@ -1,4 +1,4 @@
-﻿//HintName: G.AssistantsClient.ModifyRun.g.cs
+//HintName: G.AssistantsClient.ModifyRun.g.cs
 
 #nullable enable
 
@@ -292,8 +292,8 @@ namespace G
                 PrepareModifyRunRequest(
                     httpClient: HttpClient,
                     httpRequestMessage: __httpRequest,
-                    threadId: threadId!,
-                    runId: runId!,
+                    threadId: threadId,
+                    runId: runId,
                     request: request);
 
                 global::G.AutoSDKHttpRequestOptions.StampAuthorizationOverride(__httpRequest);
@@ -318,7 +318,7 @@ namespace G
                                 pathTemplate: "$\"/threads/{threadId}/runs/{runId}\"",
                                 httpMethod: "POST",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: null,
                                 exception: null,
                                 clientOptions: Options,
@@ -352,7 +352,7 @@ namespace G
                                 pathTemplate: "$\"/threads/{threadId}/runs/{runId}\"",
                                 httpMethod: "POST",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: null,
                                 exception: __exception,
                                 clientOptions: Options,
@@ -393,7 +393,7 @@ namespace G
                                 pathTemplate: "$\"/threads/{threadId}/runs/{runId}\"",
                                 httpMethod: "POST",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: __response,
                                 exception: null,
                                 clientOptions: Options,
@@ -441,7 +441,7 @@ namespace G
                                 pathTemplate: "$\"/threads/{threadId}/runs/{runId}\"",
                                 httpMethod: "POST",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: __response,
                                 exception: null,
                                 clientOptions: Options,
@@ -463,7 +463,7 @@ namespace G
                                 pathTemplate: "$\"/threads/{threadId}/runs/{runId}\"",
                                 httpMethod: "POST",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: __response,
                                 exception: null,
                                 clientOptions: Options,

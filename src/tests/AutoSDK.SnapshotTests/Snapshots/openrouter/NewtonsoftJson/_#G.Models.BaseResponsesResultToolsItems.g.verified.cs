@@ -1,4 +1,4 @@
-﻿//HintName: G.Models.BaseResponsesResultToolsItems.g.cs
+//HintName: G.Models.BaseResponsesResultToolsItems.g.cs
 #pragma warning disable CS0618 // Type or member is obsolete
 
 #nullable enable
@@ -43,8 +43,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.BaseResponsesResultToolsItems0 PickBaseResponsesResultToolsItems0() => IsBaseResponsesResultToolsItems0
-            ? BaseResponsesResultToolsItems0!
+        public global::G.BaseResponsesResultToolsItems0 PickBaseResponsesResultToolsItems0() => BaseResponsesResultToolsItems0 is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'BaseResponsesResultToolsItems0' but the value was {ToString()}.");
 
         /// <summary>
@@ -80,8 +80,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.PreviewWebSearchServerTool PickPreviewWebSearchServerTool() => IsPreviewWebSearchServerTool
-            ? PreviewWebSearchServerTool!
+        public global::G.PreviewWebSearchServerTool PickPreviewWebSearchServerTool() => PreviewWebSearchServerTool is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'PreviewWebSearchServerTool' but the value was {ToString()}.");
 
         /// <summary>
@@ -117,8 +117,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.Preview20250311WebSearchServerTool PickPreview20250311WebSearchServerTool() => IsPreview20250311WebSearchServerTool
-            ? Preview20250311WebSearchServerTool!
+        public global::G.Preview20250311WebSearchServerTool PickPreview20250311WebSearchServerTool() => Preview20250311WebSearchServerTool is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Preview20250311WebSearchServerTool' but the value was {ToString()}.");
 
         /// <summary>
@@ -154,8 +154,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.LegacyWebSearchServerTool PickLegacyWebSearchServerTool() => IsLegacyWebSearchServerTool
-            ? LegacyWebSearchServerTool!
+        public global::G.LegacyWebSearchServerTool PickLegacyWebSearchServerTool() => LegacyWebSearchServerTool is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'LegacyWebSearchServerTool' but the value was {ToString()}.");
 
         /// <summary>
@@ -191,8 +191,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.WebSearchServerTool PickWebSearchServerTool() => IsWebSearchServerTool
-            ? WebSearchServerTool!
+        public global::G.WebSearchServerTool PickWebSearchServerTool() => WebSearchServerTool is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'WebSearchServerTool' but the value was {ToString()}.");
 
         /// <summary>
@@ -228,8 +228,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.FileSearchServerTool PickFileSearchServerTool() => IsFileSearchServerTool
-            ? FileSearchServerTool!
+        public global::G.FileSearchServerTool PickFileSearchServerTool() => FileSearchServerTool is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'FileSearchServerTool' but the value was {ToString()}.");
 
         /// <summary>
@@ -265,8 +265,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.ComputerUseServerTool PickComputerUseServerTool() => IsComputerUseServerTool
-            ? ComputerUseServerTool!
+        public global::G.ComputerUseServerTool PickComputerUseServerTool() => ComputerUseServerTool is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'ComputerUseServerTool' but the value was {ToString()}.");
 
         /// <summary>
@@ -302,8 +302,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.CodeInterpreterServerTool PickCodeInterpreterServerTool() => IsCodeInterpreterServerTool
-            ? CodeInterpreterServerTool!
+        public global::G.CodeInterpreterServerTool PickCodeInterpreterServerTool() => CodeInterpreterServerTool is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'CodeInterpreterServerTool' but the value was {ToString()}.");
 
         /// <summary>
@@ -339,8 +339,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.McpServerTool PickMcpServerTool() => IsMcpServerTool
-            ? McpServerTool!
+        public global::G.McpServerTool PickMcpServerTool() => McpServerTool is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'McpServerTool' but the value was {ToString()}.");
 
         /// <summary>
@@ -376,8 +376,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.ImageGenerationServerTool PickImageGenerationServerTool() => IsImageGenerationServerTool
-            ? ImageGenerationServerTool!
+        public global::G.ImageGenerationServerTool PickImageGenerationServerTool() => ImageGenerationServerTool is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'ImageGenerationServerTool' but the value was {ToString()}.");
 
         /// <summary>
@@ -413,8 +413,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.CodexLocalShellTool PickCodexLocalShellTool() => IsCodexLocalShellTool
-            ? CodexLocalShellTool!
+        public global::G.CodexLocalShellTool PickCodexLocalShellTool() => CodexLocalShellTool is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'CodexLocalShellTool' but the value was {ToString()}.");
 
         /// <summary>
@@ -450,8 +450,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.ShellServerTool PickShellServerTool() => IsShellServerTool
-            ? ShellServerTool!
+        public global::G.ShellServerTool PickShellServerTool() => ShellServerTool is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'ShellServerTool' but the value was {ToString()}.");
 
         /// <summary>
@@ -487,8 +487,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.ApplyPatchServerTool PickApplyPatchServerTool() => IsApplyPatchServerTool
-            ? ApplyPatchServerTool!
+        public global::G.ApplyPatchServerTool PickApplyPatchServerTool() => ApplyPatchServerTool is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'ApplyPatchServerTool' but the value was {ToString()}.");
 
         /// <summary>
@@ -524,8 +524,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.CustomTool PickCustomTool() => IsCustomTool
-            ? CustomTool!
+        public global::G.CustomTool PickCustomTool() => CustomTool is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'CustomTool' but the value was {ToString()}.");
         /// <summary>
         /// 
@@ -958,61 +958,61 @@ namespace G
                 Validate();
             }
 
-            if (IsBaseResponsesResultToolsItems0 && baseResponsesResultToolsItems0 != null)
+            if (BaseResponsesResultToolsItems0 is { } __value0 && baseResponsesResultToolsItems0 != null)
             {
-                return baseResponsesResultToolsItems0(BaseResponsesResultToolsItems0!);
+                return baseResponsesResultToolsItems0(__value0);
             }
-            else if (IsPreviewWebSearchServerTool && previewWebSearchServerTool != null)
+            else if (PreviewWebSearchServerTool is { } __value1 && previewWebSearchServerTool != null)
             {
-                return previewWebSearchServerTool(PreviewWebSearchServerTool!);
+                return previewWebSearchServerTool(__value1);
             }
-            else if (IsPreview20250311WebSearchServerTool && preview20250311WebSearchServerTool != null)
+            else if (Preview20250311WebSearchServerTool is { } __value2 && preview20250311WebSearchServerTool != null)
             {
-                return preview20250311WebSearchServerTool(Preview20250311WebSearchServerTool!);
+                return preview20250311WebSearchServerTool(__value2);
             }
-            else if (IsLegacyWebSearchServerTool && legacyWebSearchServerTool != null)
+            else if (LegacyWebSearchServerTool is { } __value3 && legacyWebSearchServerTool != null)
             {
-                return legacyWebSearchServerTool(LegacyWebSearchServerTool!);
+                return legacyWebSearchServerTool(__value3);
             }
-            else if (IsWebSearchServerTool && webSearchServerTool != null)
+            else if (WebSearchServerTool is { } __value4 && webSearchServerTool != null)
             {
-                return webSearchServerTool(WebSearchServerTool!);
+                return webSearchServerTool(__value4);
             }
-            else if (IsFileSearchServerTool && fileSearchServerTool != null)
+            else if (FileSearchServerTool is { } __value5 && fileSearchServerTool != null)
             {
-                return fileSearchServerTool(FileSearchServerTool!);
+                return fileSearchServerTool(__value5);
             }
-            else if (IsComputerUseServerTool && computerUseServerTool != null)
+            else if (ComputerUseServerTool is { } __value6 && computerUseServerTool != null)
             {
-                return computerUseServerTool(ComputerUseServerTool!);
+                return computerUseServerTool(__value6);
             }
-            else if (IsCodeInterpreterServerTool && codeInterpreterServerTool != null)
+            else if (CodeInterpreterServerTool is { } __value7 && codeInterpreterServerTool != null)
             {
-                return codeInterpreterServerTool(CodeInterpreterServerTool!);
+                return codeInterpreterServerTool(__value7);
             }
-            else if (IsMcpServerTool && mcpServerTool != null)
+            else if (McpServerTool is { } __value8 && mcpServerTool != null)
             {
-                return mcpServerTool(McpServerTool!);
+                return mcpServerTool(__value8);
             }
-            else if (IsImageGenerationServerTool && imageGenerationServerTool != null)
+            else if (ImageGenerationServerTool is { } __value9 && imageGenerationServerTool != null)
             {
-                return imageGenerationServerTool(ImageGenerationServerTool!);
+                return imageGenerationServerTool(__value9);
             }
-            else if (IsCodexLocalShellTool && codexLocalShellTool != null)
+            else if (CodexLocalShellTool is { } __value10 && codexLocalShellTool != null)
             {
-                return codexLocalShellTool(CodexLocalShellTool!);
+                return codexLocalShellTool(__value10);
             }
-            else if (IsShellServerTool && shellServerTool != null)
+            else if (ShellServerTool is { } __value11 && shellServerTool != null)
             {
-                return shellServerTool(ShellServerTool!);
+                return shellServerTool(__value11);
             }
-            else if (IsApplyPatchServerTool && applyPatchServerTool != null)
+            else if (ApplyPatchServerTool is { } __value12 && applyPatchServerTool != null)
             {
-                return applyPatchServerTool(ApplyPatchServerTool!);
+                return applyPatchServerTool(__value12);
             }
-            else if (IsCustomTool && customTool != null)
+            else if (CustomTool is { } __value13 && customTool != null)
             {
-                return customTool(CustomTool!);
+                return customTool(__value13);
             }
 
             return default(TResult);
@@ -1056,61 +1056,61 @@ namespace G
                 Validate();
             }
 
-            if (IsBaseResponsesResultToolsItems0)
+            if (BaseResponsesResultToolsItems0 is { } __value0)
             {
-                baseResponsesResultToolsItems0?.Invoke(BaseResponsesResultToolsItems0!);
+                baseResponsesResultToolsItems0?.Invoke(__value0);
             }
-            else if (IsPreviewWebSearchServerTool)
+            else if (PreviewWebSearchServerTool is { } __value1)
             {
-                previewWebSearchServerTool?.Invoke(PreviewWebSearchServerTool!);
+                previewWebSearchServerTool?.Invoke(__value1);
             }
-            else if (IsPreview20250311WebSearchServerTool)
+            else if (Preview20250311WebSearchServerTool is { } __value2)
             {
-                preview20250311WebSearchServerTool?.Invoke(Preview20250311WebSearchServerTool!);
+                preview20250311WebSearchServerTool?.Invoke(__value2);
             }
-            else if (IsLegacyWebSearchServerTool)
+            else if (LegacyWebSearchServerTool is { } __value3)
             {
-                legacyWebSearchServerTool?.Invoke(LegacyWebSearchServerTool!);
+                legacyWebSearchServerTool?.Invoke(__value3);
             }
-            else if (IsWebSearchServerTool)
+            else if (WebSearchServerTool is { } __value4)
             {
-                webSearchServerTool?.Invoke(WebSearchServerTool!);
+                webSearchServerTool?.Invoke(__value4);
             }
-            else if (IsFileSearchServerTool)
+            else if (FileSearchServerTool is { } __value5)
             {
-                fileSearchServerTool?.Invoke(FileSearchServerTool!);
+                fileSearchServerTool?.Invoke(__value5);
             }
-            else if (IsComputerUseServerTool)
+            else if (ComputerUseServerTool is { } __value6)
             {
-                computerUseServerTool?.Invoke(ComputerUseServerTool!);
+                computerUseServerTool?.Invoke(__value6);
             }
-            else if (IsCodeInterpreterServerTool)
+            else if (CodeInterpreterServerTool is { } __value7)
             {
-                codeInterpreterServerTool?.Invoke(CodeInterpreterServerTool!);
+                codeInterpreterServerTool?.Invoke(__value7);
             }
-            else if (IsMcpServerTool)
+            else if (McpServerTool is { } __value8)
             {
-                mcpServerTool?.Invoke(McpServerTool!);
+                mcpServerTool?.Invoke(__value8);
             }
-            else if (IsImageGenerationServerTool)
+            else if (ImageGenerationServerTool is { } __value9)
             {
-                imageGenerationServerTool?.Invoke(ImageGenerationServerTool!);
+                imageGenerationServerTool?.Invoke(__value9);
             }
-            else if (IsCodexLocalShellTool)
+            else if (CodexLocalShellTool is { } __value10)
             {
-                codexLocalShellTool?.Invoke(CodexLocalShellTool!);
+                codexLocalShellTool?.Invoke(__value10);
             }
-            else if (IsShellServerTool)
+            else if (ShellServerTool is { } __value11)
             {
-                shellServerTool?.Invoke(ShellServerTool!);
+                shellServerTool?.Invoke(__value11);
             }
-            else if (IsApplyPatchServerTool)
+            else if (ApplyPatchServerTool is { } __value12)
             {
-                applyPatchServerTool?.Invoke(ApplyPatchServerTool!);
+                applyPatchServerTool?.Invoke(__value12);
             }
-            else if (IsCustomTool)
+            else if (CustomTool is { } __value13)
             {
-                customTool?.Invoke(CustomTool!);
+                customTool?.Invoke(__value13);
             }
         }
 
@@ -1139,61 +1139,61 @@ namespace G
                 Validate();
             }
 
-            if (IsBaseResponsesResultToolsItems0)
+            if (BaseResponsesResultToolsItems0 is { } __value0)
             {
-                baseResponsesResultToolsItems0?.Invoke(BaseResponsesResultToolsItems0!);
+                baseResponsesResultToolsItems0?.Invoke(__value0);
             }
-            else if (IsPreviewWebSearchServerTool)
+            else if (PreviewWebSearchServerTool is { } __value1)
             {
-                previewWebSearchServerTool?.Invoke(PreviewWebSearchServerTool!);
+                previewWebSearchServerTool?.Invoke(__value1);
             }
-            else if (IsPreview20250311WebSearchServerTool)
+            else if (Preview20250311WebSearchServerTool is { } __value2)
             {
-                preview20250311WebSearchServerTool?.Invoke(Preview20250311WebSearchServerTool!);
+                preview20250311WebSearchServerTool?.Invoke(__value2);
             }
-            else if (IsLegacyWebSearchServerTool)
+            else if (LegacyWebSearchServerTool is { } __value3)
             {
-                legacyWebSearchServerTool?.Invoke(LegacyWebSearchServerTool!);
+                legacyWebSearchServerTool?.Invoke(__value3);
             }
-            else if (IsWebSearchServerTool)
+            else if (WebSearchServerTool is { } __value4)
             {
-                webSearchServerTool?.Invoke(WebSearchServerTool!);
+                webSearchServerTool?.Invoke(__value4);
             }
-            else if (IsFileSearchServerTool)
+            else if (FileSearchServerTool is { } __value5)
             {
-                fileSearchServerTool?.Invoke(FileSearchServerTool!);
+                fileSearchServerTool?.Invoke(__value5);
             }
-            else if (IsComputerUseServerTool)
+            else if (ComputerUseServerTool is { } __value6)
             {
-                computerUseServerTool?.Invoke(ComputerUseServerTool!);
+                computerUseServerTool?.Invoke(__value6);
             }
-            else if (IsCodeInterpreterServerTool)
+            else if (CodeInterpreterServerTool is { } __value7)
             {
-                codeInterpreterServerTool?.Invoke(CodeInterpreterServerTool!);
+                codeInterpreterServerTool?.Invoke(__value7);
             }
-            else if (IsMcpServerTool)
+            else if (McpServerTool is { } __value8)
             {
-                mcpServerTool?.Invoke(McpServerTool!);
+                mcpServerTool?.Invoke(__value8);
             }
-            else if (IsImageGenerationServerTool)
+            else if (ImageGenerationServerTool is { } __value9)
             {
-                imageGenerationServerTool?.Invoke(ImageGenerationServerTool!);
+                imageGenerationServerTool?.Invoke(__value9);
             }
-            else if (IsCodexLocalShellTool)
+            else if (CodexLocalShellTool is { } __value10)
             {
-                codexLocalShellTool?.Invoke(CodexLocalShellTool!);
+                codexLocalShellTool?.Invoke(__value10);
             }
-            else if (IsShellServerTool)
+            else if (ShellServerTool is { } __value11)
             {
-                shellServerTool?.Invoke(ShellServerTool!);
+                shellServerTool?.Invoke(__value11);
             }
-            else if (IsApplyPatchServerTool)
+            else if (ApplyPatchServerTool is { } __value12)
             {
-                applyPatchServerTool?.Invoke(ApplyPatchServerTool!);
+                applyPatchServerTool?.Invoke(__value12);
             }
-            else if (IsCustomTool)
+            else if (CustomTool is { } __value13)
             {
-                customTool?.Invoke(CustomTool!);
+                customTool?.Invoke(__value13);
             }
         }
 

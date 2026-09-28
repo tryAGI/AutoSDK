@@ -1,4 +1,4 @@
-﻿//HintName: G.SourcesClient.GetSourceIdByName.g.cs
+//HintName: G.SourcesClient.GetSourceIdByName.g.cs
 
 #nullable enable
 
@@ -165,7 +165,7 @@ namespace G
                 PrepareGetSourceIdByNameRequest(
                     httpClient: HttpClient,
                     httpRequestMessage: __httpRequest,
-                    sourceName: sourceName!);
+                    sourceName: sourceName);
 
                 return __httpRequest;
             }
@@ -187,7 +187,7 @@ namespace G
                                 pathTemplate: "$\"/v1/sources/name/{sourceName}\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: null,
                                 exception: null,
                                 clientOptions: Options,
@@ -221,7 +221,7 @@ namespace G
                                 pathTemplate: "$\"/v1/sources/name/{sourceName}\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: null,
                                 exception: __exception,
                                 clientOptions: Options,
@@ -262,7 +262,7 @@ namespace G
                                 pathTemplate: "$\"/v1/sources/name/{sourceName}\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: __response,
                                 exception: null,
                                 clientOptions: Options,
@@ -310,7 +310,7 @@ namespace G
                                 pathTemplate: "$\"/v1/sources/name/{sourceName}\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: __response,
                                 exception: null,
                                 clientOptions: Options,
@@ -332,7 +332,7 @@ namespace G
                                 pathTemplate: "$\"/v1/sources/name/{sourceName}\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: __response,
                                 exception: null,
                                 clientOptions: Options,

@@ -1,4 +1,4 @@
-﻿//HintName: G.FineTuningClient.DeleteCheckpointPermission.g.cs
+//HintName: G.FineTuningClient.DeleteCheckpointPermission.g.cs
 
 #nullable enable
 
@@ -164,8 +164,8 @@ namespace G
                 PrepareDeleteCheckpointPermissionRequest(
                     httpClient: HttpClient,
                     httpRequestMessage: __httpRequest,
-                    fineTunedModelCheckpoint: fineTunedModelCheckpoint!,
-                    permissionId: permissionId!);
+                    fineTunedModelCheckpoint: fineTunedModelCheckpoint,
+                    permissionId: permissionId);
 
                 return __httpRequest;
             }
@@ -187,7 +187,7 @@ namespace G
                                 pathTemplate: "$\"/fine_tuning/checkpoints/{fineTunedModelCheckpoint}/permissions/{permissionId}\"",
                                 httpMethod: "DELETE",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: null,
                                 exception: null,
                                 clientOptions: Options,
@@ -221,7 +221,7 @@ namespace G
                                 pathTemplate: "$\"/fine_tuning/checkpoints/{fineTunedModelCheckpoint}/permissions/{permissionId}\"",
                                 httpMethod: "DELETE",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: null,
                                 exception: __exception,
                                 clientOptions: Options,
@@ -262,7 +262,7 @@ namespace G
                                 pathTemplate: "$\"/fine_tuning/checkpoints/{fineTunedModelCheckpoint}/permissions/{permissionId}\"",
                                 httpMethod: "DELETE",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: __response,
                                 exception: null,
                                 clientOptions: Options,
@@ -310,7 +310,7 @@ namespace G
                                 pathTemplate: "$\"/fine_tuning/checkpoints/{fineTunedModelCheckpoint}/permissions/{permissionId}\"",
                                 httpMethod: "DELETE",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: __response,
                                 exception: null,
                                 clientOptions: Options,
@@ -332,7 +332,7 @@ namespace G
                                 pathTemplate: "$\"/fine_tuning/checkpoints/{fineTunedModelCheckpoint}/permissions/{permissionId}\"",
                                 httpMethod: "DELETE",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: __response,
                                 exception: null,
                                 clientOptions: Options,

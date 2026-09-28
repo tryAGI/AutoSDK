@@ -1,4 +1,4 @@
-﻿//HintName: G.DimensionsClient.Get2.g.cs
+//HintName: G.DimensionsClient.Get2.g.cs
 
 #nullable enable
 
@@ -188,9 +188,9 @@ namespace G
                     httpClient: HttpClient,
                     httpRequestMessage: __httpRequest,
                     dimension: dimension,
-                    projectPk: projectPk!,
-                    selection: selection!,
-                    taskPk: taskPk!);
+                    projectPk: projectPk,
+                    selection: selection,
+                    taskPk: taskPk);
 
                 return __httpRequest;
             }
@@ -212,7 +212,7 @@ namespace G
                                 pathTemplate: "$\"/api/projects/{projectPk}/tasks/{taskPk}/agreement-matrix\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: null,
                                 exception: null,
                                 clientOptions: Options,
@@ -246,7 +246,7 @@ namespace G
                                 pathTemplate: "$\"/api/projects/{projectPk}/tasks/{taskPk}/agreement-matrix\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: null,
                                 exception: __exception,
                                 clientOptions: Options,
@@ -287,7 +287,7 @@ namespace G
                                 pathTemplate: "$\"/api/projects/{projectPk}/tasks/{taskPk}/agreement-matrix\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: __response,
                                 exception: null,
                                 clientOptions: Options,
@@ -335,7 +335,7 @@ namespace G
                                 pathTemplate: "$\"/api/projects/{projectPk}/tasks/{taskPk}/agreement-matrix\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: __response,
                                 exception: null,
                                 clientOptions: Options,
@@ -357,7 +357,7 @@ namespace G
                                 pathTemplate: "$\"/api/projects/{projectPk}/tasks/{taskPk}/agreement-matrix\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: __response,
                                 exception: null,
                                 clientOptions: Options,

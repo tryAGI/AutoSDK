@@ -1,4 +1,4 @@
-﻿//HintName: G.Models.CodeInterpreterToolOutput.g.cs
+//HintName: G.Models.CodeInterpreterToolOutput.g.cs
 #pragma warning disable CS0618 // Type or member is obsolete
 
 #nullable enable
@@ -43,8 +43,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.CodeInterpreterTextOutput PickCodeInterpreterTextOutput() => IsCodeInterpreterTextOutput
-            ? CodeInterpreterTextOutput!
+        public global::G.CodeInterpreterTextOutput PickCodeInterpreterTextOutput() => CodeInterpreterTextOutput is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'CodeInterpreterTextOutput' but the value was {ToString()}.");
 
         /// <summary>
@@ -80,8 +80,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.CodeInterpreterFileOutput PickCodeInterpreterFileOutput() => IsCodeInterpreterFileOutput
-            ? CodeInterpreterFileOutput!
+        public global::G.CodeInterpreterFileOutput PickCodeInterpreterFileOutput() => CodeInterpreterFileOutput is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'CodeInterpreterFileOutput' but the value was {ToString()}.");
         /// <summary>
         /// 
@@ -178,13 +178,13 @@ namespace G
                 Validate();
             }
 
-            if (IsCodeInterpreterTextOutput && codeInterpreterTextOutput != null)
+            if (CodeInterpreterTextOutput is { } __value0 && codeInterpreterTextOutput != null)
             {
-                return codeInterpreterTextOutput(CodeInterpreterTextOutput!);
+                return codeInterpreterTextOutput(__value0);
             }
-            else if (IsCodeInterpreterFileOutput && codeInterpreterFileOutput != null)
+            else if (CodeInterpreterFileOutput is { } __value1 && codeInterpreterFileOutput != null)
             {
-                return codeInterpreterFileOutput(CodeInterpreterFileOutput!);
+                return codeInterpreterFileOutput(__value1);
             }
 
             return default(TResult);
@@ -204,13 +204,13 @@ namespace G
                 Validate();
             }
 
-            if (IsCodeInterpreterTextOutput)
+            if (CodeInterpreterTextOutput is { } __value0)
             {
-                codeInterpreterTextOutput?.Invoke(CodeInterpreterTextOutput!);
+                codeInterpreterTextOutput?.Invoke(__value0);
             }
-            else if (IsCodeInterpreterFileOutput)
+            else if (CodeInterpreterFileOutput is { } __value1)
             {
-                codeInterpreterFileOutput?.Invoke(CodeInterpreterFileOutput!);
+                codeInterpreterFileOutput?.Invoke(__value1);
             }
         }
 
@@ -227,13 +227,13 @@ namespace G
                 Validate();
             }
 
-            if (IsCodeInterpreterTextOutput)
+            if (CodeInterpreterTextOutput is { } __value0)
             {
-                codeInterpreterTextOutput?.Invoke(CodeInterpreterTextOutput!);
+                codeInterpreterTextOutput?.Invoke(__value0);
             }
-            else if (IsCodeInterpreterFileOutput)
+            else if (CodeInterpreterFileOutput is { } __value1)
             {
-                codeInterpreterFileOutput?.Invoke(CodeInterpreterFileOutput!);
+                codeInterpreterFileOutput?.Invoke(__value1);
             }
         }
 

@@ -1,4 +1,4 @@
-﻿//HintName: G.Models.PhoneNumbersItem.g.cs
+//HintName: G.Models.PhoneNumbersItem.g.cs
 #pragma warning disable CS0618 // Type or member is obsolete
 
 #nullable enable
@@ -48,8 +48,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.GetPhoneNumberTwilioResponseModel PickTwilio() => IsTwilio
-            ? Twilio!
+        public global::G.GetPhoneNumberTwilioResponseModel PickTwilio() => Twilio is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Twilio' but the value was {ToString()}.");
 
         /// <summary>
@@ -85,8 +85,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.GetPhoneNumberSIPTrunkResponseModel PickSipTrunk() => IsSipTrunk
-            ? SipTrunk!
+        public global::G.GetPhoneNumberSIPTrunkResponseModel PickSipTrunk() => SipTrunk is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'SipTrunk' but the value was {ToString()}.");
         /// <summary>
         /// 
@@ -186,13 +186,13 @@ namespace G
                 Validate();
             }
 
-            if (IsTwilio && twilio != null)
+            if (Twilio is { } __value0 && twilio != null)
             {
-                return twilio(Twilio!);
+                return twilio(__value0);
             }
-            else if (IsSipTrunk && sipTrunk != null)
+            else if (SipTrunk is { } __value1 && sipTrunk != null)
             {
-                return sipTrunk(SipTrunk!);
+                return sipTrunk(__value1);
             }
 
             return default(TResult);
@@ -212,13 +212,13 @@ namespace G
                 Validate();
             }
 
-            if (IsTwilio)
+            if (Twilio is { } __value0)
             {
-                twilio?.Invoke(Twilio!);
+                twilio?.Invoke(__value0);
             }
-            else if (IsSipTrunk)
+            else if (SipTrunk is { } __value1)
             {
-                sipTrunk?.Invoke(SipTrunk!);
+                sipTrunk?.Invoke(__value1);
             }
         }
 
@@ -235,13 +235,13 @@ namespace G
                 Validate();
             }
 
-            if (IsTwilio)
+            if (Twilio is { } __value0)
             {
-                twilio?.Invoke(Twilio!);
+                twilio?.Invoke(__value0);
             }
-            else if (IsSipTrunk)
+            else if (SipTrunk is { } __value1)
             {
-                sipTrunk?.Invoke(SipTrunk!);
+                sipTrunk?.Invoke(__value1);
             }
         }
 

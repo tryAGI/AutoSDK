@@ -1,4 +1,4 @@
-﻿//HintName: G.JsonConverters.FullTextSearch.g.cs
+//HintName: G.JsonConverters.FullTextSearch.g.cs
 #nullable enable
 #pragma warning disable CS0618 // Type or member is obsolete
 
@@ -136,13 +136,13 @@ namespace G.JsonConverters
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(bool), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<bool> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(bool).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.FullTextSearchVariant1!.Value, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickFullTextSearchVariant1(), typeInfo);
             }
             else if (value.IsConfig)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.FullTextSearchConfig), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.FullTextSearchConfig?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.FullTextSearchConfig).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Config!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickConfig(), typeInfo);
             }
         }
     }

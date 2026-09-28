@@ -1,4 +1,4 @@
-﻿//HintName: G.Models.AgentEvent.g.cs
+//HintName: G.Models.AgentEvent.g.cs
 #pragma warning disable CS0618 // Type or member is obsolete
 
 #nullable enable
@@ -48,8 +48,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.InputMessageEvent PickInputMessage() => IsInputMessage
-            ? InputMessage!.Value
+        public global::G.InputMessageEvent PickInputMessage() => InputMessage is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'InputMessage' but the value was {ToString()}.");
 
         /// <summary>
@@ -85,8 +85,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.SkillLoadEvent PickSkillLoad() => IsSkillLoad
-            ? SkillLoad!.Value
+        public global::G.SkillLoadEvent PickSkillLoad() => SkillLoad is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'SkillLoad' but the value was {ToString()}.");
 
         /// <summary>
@@ -125,8 +125,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.ArtifactUploadEvent PickArtifactUpload() => IsArtifactUpload
-            ? ArtifactUpload!.Value
+        public global::G.ArtifactUploadEvent PickArtifactUpload() => ArtifactUpload is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'ArtifactUpload' but the value was {ToString()}.");
 
         /// <summary>
@@ -162,8 +162,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.ToolInputEvent PickToolInput() => IsToolInput
-            ? ToolInput!.Value
+        public global::G.ToolInputEvent PickToolInput() => ToolInput is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'ToolInput' but the value was {ToString()}.");
 
         /// <summary>
@@ -199,8 +199,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.ToolOutputEvent PickToolOutput() => IsToolOutput
-            ? ToolOutput!.Value
+        public global::G.ToolOutputEvent PickToolOutput() => ToolOutput is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'ToolOutput' but the value was {ToString()}.");
 
         /// <summary>
@@ -236,8 +236,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.ThinkingEvent PickThinking() => IsThinking
-            ? Thinking!.Value
+        public global::G.ThinkingEvent PickThinking() => Thinking is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Thinking' but the value was {ToString()}.");
 
         /// <summary>
@@ -273,8 +273,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.AgentOutputEvent PickAgentOutput() => IsAgentOutput
-            ? AgentOutput!.Value
+        public global::G.AgentOutputEvent PickAgentOutput() => AgentOutput is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'AgentOutput' but the value was {ToString()}.");
 
         /// <summary>
@@ -316,8 +316,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.StructuredOutputEvent PickStructuredOutput() => IsStructuredOutput
-            ? StructuredOutput!.Value
+        public global::G.StructuredOutputEvent PickStructuredOutput() => StructuredOutput is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'StructuredOutput' but the value was {ToString()}.");
 
         /// <summary>
@@ -354,8 +354,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.ContextLimitExceededEvent PickContextLimitExceeded() => IsContextLimitExceeded
-            ? ContextLimitExceeded!.Value
+        public global::G.ContextLimitExceededEvent PickContextLimitExceeded() => ContextLimitExceeded is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'ContextLimitExceeded' but the value was {ToString()}.");
 
         /// <summary>
@@ -393,8 +393,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.StepTransitionLimitExceededEvent PickStepTransitionLimitExceeded() => IsStepTransitionLimitExceeded
-            ? StepTransitionLimitExceeded!.Value
+        public global::G.StepTransitionLimitExceededEvent PickStepTransitionLimitExceeded() => StepTransitionLimitExceeded is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'StepTransitionLimitExceeded' but the value was {ToString()}.");
 
         /// <summary>
@@ -431,8 +431,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.SessionInterruptedEvent PickSessionInterrupted() => IsSessionInterrupted
-            ? SessionInterrupted!.Value
+        public global::G.SessionInterruptedEvent PickSessionInterrupted() => SessionInterrupted is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'SessionInterrupted' but the value was {ToString()}.");
 
         /// <summary>
@@ -468,8 +468,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.ImageReadEvent PickImageRead() => IsImageRead
-            ? ImageRead!.Value
+        public global::G.ImageReadEvent PickImageRead() => ImageRead is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'ImageRead' but the value was {ToString()}.");
 
         /// <summary>
@@ -505,8 +505,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.StepTransitionEvent PickStepTransition() => IsStepTransition
-            ? StepTransition!.Value
+        public global::G.StepTransitionEvent PickStepTransition() => StepTransition is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'StepTransition' but the value was {ToString()}.");
 
         /// <summary>
@@ -542,8 +542,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.CompactionEvent PickCompaction() => IsCompaction
-            ? Compaction!.Value
+        public global::G.CompactionEvent PickCompaction() => Compaction is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Compaction' but the value was {ToString()}.");
         /// <summary>
         /// 
@@ -979,61 +979,61 @@ namespace G
                 Validate();
             }
 
-            if (IsInputMessage && inputMessage != null)
+            if (InputMessage is { } __value0 && inputMessage != null)
             {
-                return inputMessage(InputMessage!);
+                return inputMessage(__value0);
             }
-            else if (IsSkillLoad && skillLoad != null)
+            else if (SkillLoad is { } __value1 && skillLoad != null)
             {
-                return skillLoad(SkillLoad!);
+                return skillLoad(__value1);
             }
-            else if (IsArtifactUpload && artifactUpload != null)
+            else if (ArtifactUpload is { } __value2 && artifactUpload != null)
             {
-                return artifactUpload(ArtifactUpload!);
+                return artifactUpload(__value2);
             }
-            else if (IsToolInput && toolInput != null)
+            else if (ToolInput is { } __value3 && toolInput != null)
             {
-                return toolInput(ToolInput!);
+                return toolInput(__value3);
             }
-            else if (IsToolOutput && toolOutput != null)
+            else if (ToolOutput is { } __value4 && toolOutput != null)
             {
-                return toolOutput(ToolOutput!);
+                return toolOutput(__value4);
             }
-            else if (IsThinking && thinking != null)
+            else if (Thinking is { } __value5 && thinking != null)
             {
-                return thinking(Thinking!);
+                return thinking(__value5);
             }
-            else if (IsAgentOutput && agentOutput != null)
+            else if (AgentOutput is { } __value6 && agentOutput != null)
             {
-                return agentOutput(AgentOutput!);
+                return agentOutput(__value6);
             }
-            else if (IsStructuredOutput && structuredOutput != null)
+            else if (StructuredOutput is { } __value7 && structuredOutput != null)
             {
-                return structuredOutput(StructuredOutput!);
+                return structuredOutput(__value7);
             }
-            else if (IsContextLimitExceeded && contextLimitExceeded != null)
+            else if (ContextLimitExceeded is { } __value8 && contextLimitExceeded != null)
             {
-                return contextLimitExceeded(ContextLimitExceeded!);
+                return contextLimitExceeded(__value8);
             }
-            else if (IsStepTransitionLimitExceeded && stepTransitionLimitExceeded != null)
+            else if (StepTransitionLimitExceeded is { } __value9 && stepTransitionLimitExceeded != null)
             {
-                return stepTransitionLimitExceeded(StepTransitionLimitExceeded!);
+                return stepTransitionLimitExceeded(__value9);
             }
-            else if (IsSessionInterrupted && sessionInterrupted != null)
+            else if (SessionInterrupted is { } __value10 && sessionInterrupted != null)
             {
-                return sessionInterrupted(SessionInterrupted!);
+                return sessionInterrupted(__value10);
             }
-            else if (IsImageRead && imageRead != null)
+            else if (ImageRead is { } __value11 && imageRead != null)
             {
-                return imageRead(ImageRead!);
+                return imageRead(__value11);
             }
-            else if (IsStepTransition && stepTransition != null)
+            else if (StepTransition is { } __value12 && stepTransition != null)
             {
-                return stepTransition(StepTransition!);
+                return stepTransition(__value12);
             }
-            else if (IsCompaction && compaction != null)
+            else if (Compaction is { } __value13 && compaction != null)
             {
-                return compaction(Compaction!);
+                return compaction(__value13);
             }
 
             return default(TResult);
@@ -1077,61 +1077,61 @@ namespace G
                 Validate();
             }
 
-            if (IsInputMessage)
+            if (InputMessage is { } __value0)
             {
-                inputMessage?.Invoke(InputMessage!);
+                inputMessage?.Invoke(__value0);
             }
-            else if (IsSkillLoad)
+            else if (SkillLoad is { } __value1)
             {
-                skillLoad?.Invoke(SkillLoad!);
+                skillLoad?.Invoke(__value1);
             }
-            else if (IsArtifactUpload)
+            else if (ArtifactUpload is { } __value2)
             {
-                artifactUpload?.Invoke(ArtifactUpload!);
+                artifactUpload?.Invoke(__value2);
             }
-            else if (IsToolInput)
+            else if (ToolInput is { } __value3)
             {
-                toolInput?.Invoke(ToolInput!);
+                toolInput?.Invoke(__value3);
             }
-            else if (IsToolOutput)
+            else if (ToolOutput is { } __value4)
             {
-                toolOutput?.Invoke(ToolOutput!);
+                toolOutput?.Invoke(__value4);
             }
-            else if (IsThinking)
+            else if (Thinking is { } __value5)
             {
-                thinking?.Invoke(Thinking!);
+                thinking?.Invoke(__value5);
             }
-            else if (IsAgentOutput)
+            else if (AgentOutput is { } __value6)
             {
-                agentOutput?.Invoke(AgentOutput!);
+                agentOutput?.Invoke(__value6);
             }
-            else if (IsStructuredOutput)
+            else if (StructuredOutput is { } __value7)
             {
-                structuredOutput?.Invoke(StructuredOutput!);
+                structuredOutput?.Invoke(__value7);
             }
-            else if (IsContextLimitExceeded)
+            else if (ContextLimitExceeded is { } __value8)
             {
-                contextLimitExceeded?.Invoke(ContextLimitExceeded!);
+                contextLimitExceeded?.Invoke(__value8);
             }
-            else if (IsStepTransitionLimitExceeded)
+            else if (StepTransitionLimitExceeded is { } __value9)
             {
-                stepTransitionLimitExceeded?.Invoke(StepTransitionLimitExceeded!);
+                stepTransitionLimitExceeded?.Invoke(__value9);
             }
-            else if (IsSessionInterrupted)
+            else if (SessionInterrupted is { } __value10)
             {
-                sessionInterrupted?.Invoke(SessionInterrupted!);
+                sessionInterrupted?.Invoke(__value10);
             }
-            else if (IsImageRead)
+            else if (ImageRead is { } __value11)
             {
-                imageRead?.Invoke(ImageRead!);
+                imageRead?.Invoke(__value11);
             }
-            else if (IsStepTransition)
+            else if (StepTransition is { } __value12)
             {
-                stepTransition?.Invoke(StepTransition!);
+                stepTransition?.Invoke(__value12);
             }
-            else if (IsCompaction)
+            else if (Compaction is { } __value13)
             {
-                compaction?.Invoke(Compaction!);
+                compaction?.Invoke(__value13);
             }
         }
 
@@ -1160,61 +1160,61 @@ namespace G
                 Validate();
             }
 
-            if (IsInputMessage)
+            if (InputMessage is { } __value0)
             {
-                inputMessage?.Invoke(InputMessage!);
+                inputMessage?.Invoke(__value0);
             }
-            else if (IsSkillLoad)
+            else if (SkillLoad is { } __value1)
             {
-                skillLoad?.Invoke(SkillLoad!);
+                skillLoad?.Invoke(__value1);
             }
-            else if (IsArtifactUpload)
+            else if (ArtifactUpload is { } __value2)
             {
-                artifactUpload?.Invoke(ArtifactUpload!);
+                artifactUpload?.Invoke(__value2);
             }
-            else if (IsToolInput)
+            else if (ToolInput is { } __value3)
             {
-                toolInput?.Invoke(ToolInput!);
+                toolInput?.Invoke(__value3);
             }
-            else if (IsToolOutput)
+            else if (ToolOutput is { } __value4)
             {
-                toolOutput?.Invoke(ToolOutput!);
+                toolOutput?.Invoke(__value4);
             }
-            else if (IsThinking)
+            else if (Thinking is { } __value5)
             {
-                thinking?.Invoke(Thinking!);
+                thinking?.Invoke(__value5);
             }
-            else if (IsAgentOutput)
+            else if (AgentOutput is { } __value6)
             {
-                agentOutput?.Invoke(AgentOutput!);
+                agentOutput?.Invoke(__value6);
             }
-            else if (IsStructuredOutput)
+            else if (StructuredOutput is { } __value7)
             {
-                structuredOutput?.Invoke(StructuredOutput!);
+                structuredOutput?.Invoke(__value7);
             }
-            else if (IsContextLimitExceeded)
+            else if (ContextLimitExceeded is { } __value8)
             {
-                contextLimitExceeded?.Invoke(ContextLimitExceeded!);
+                contextLimitExceeded?.Invoke(__value8);
             }
-            else if (IsStepTransitionLimitExceeded)
+            else if (StepTransitionLimitExceeded is { } __value9)
             {
-                stepTransitionLimitExceeded?.Invoke(StepTransitionLimitExceeded!);
+                stepTransitionLimitExceeded?.Invoke(__value9);
             }
-            else if (IsSessionInterrupted)
+            else if (SessionInterrupted is { } __value10)
             {
-                sessionInterrupted?.Invoke(SessionInterrupted!);
+                sessionInterrupted?.Invoke(__value10);
             }
-            else if (IsImageRead)
+            else if (ImageRead is { } __value11)
             {
-                imageRead?.Invoke(ImageRead!);
+                imageRead?.Invoke(__value11);
             }
-            else if (IsStepTransition)
+            else if (StepTransition is { } __value12)
             {
-                stepTransition?.Invoke(StepTransition!);
+                stepTransition?.Invoke(__value12);
             }
-            else if (IsCompaction)
+            else if (Compaction is { } __value13)
             {
-                compaction?.Invoke(Compaction!);
+                compaction?.Invoke(__value13);
             }
         }
 

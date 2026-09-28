@@ -1,4 +1,4 @@
-﻿//HintName: G.Models.ChatFunctionTool.g.cs
+//HintName: G.Models.ChatFunctionTool.g.cs
 #pragma warning disable CS0618 // Type or member is obsolete
 
 #nullable enable
@@ -43,8 +43,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.ChatFunctionTool0 PickChatFunctionTool0() => IsChatFunctionTool0
-            ? ChatFunctionTool0!
+        public global::G.ChatFunctionTool0 PickChatFunctionTool0() => ChatFunctionTool0 is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'ChatFunctionTool0' but the value was {ToString()}.");
 
         /// <summary>
@@ -80,8 +80,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.DatetimeServerTool PickDatetimeServerTool() => IsDatetimeServerTool
-            ? DatetimeServerTool!
+        public global::G.DatetimeServerTool PickDatetimeServerTool() => DatetimeServerTool is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'DatetimeServerTool' but the value was {ToString()}.");
 
         /// <summary>
@@ -117,8 +117,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.ChatWebSearchServerTool PickChatWebSearchServerTool() => IsChatWebSearchServerTool
-            ? ChatWebSearchServerTool!
+        public global::G.ChatWebSearchServerTool PickChatWebSearchServerTool() => ChatWebSearchServerTool is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'ChatWebSearchServerTool' but the value was {ToString()}.");
 
         /// <summary>
@@ -154,8 +154,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.ChatWebSearchShorthand PickChatWebSearchShorthand() => IsChatWebSearchShorthand
-            ? ChatWebSearchShorthand!
+        public global::G.ChatWebSearchShorthand PickChatWebSearchShorthand() => ChatWebSearchShorthand is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'ChatWebSearchShorthand' but the value was {ToString()}.");
         /// <summary>
         /// 
@@ -308,21 +308,21 @@ namespace G
                 Validate();
             }
 
-            if (IsChatFunctionTool0 && chatFunctionTool0 != null)
+            if (ChatFunctionTool0 is { } __value0 && chatFunctionTool0 != null)
             {
-                return chatFunctionTool0(ChatFunctionTool0!);
+                return chatFunctionTool0(__value0);
             }
-            else if (IsDatetimeServerTool && datetimeServerTool != null)
+            else if (DatetimeServerTool is { } __value1 && datetimeServerTool != null)
             {
-                return datetimeServerTool(DatetimeServerTool!);
+                return datetimeServerTool(__value1);
             }
-            else if (IsChatWebSearchServerTool && chatWebSearchServerTool != null)
+            else if (ChatWebSearchServerTool is { } __value2 && chatWebSearchServerTool != null)
             {
-                return chatWebSearchServerTool(ChatWebSearchServerTool!);
+                return chatWebSearchServerTool(__value2);
             }
-            else if (IsChatWebSearchShorthand && chatWebSearchShorthand != null)
+            else if (ChatWebSearchShorthand is { } __value3 && chatWebSearchShorthand != null)
             {
-                return chatWebSearchShorthand(ChatWebSearchShorthand!);
+                return chatWebSearchShorthand(__value3);
             }
 
             return default(TResult);
@@ -346,21 +346,21 @@ namespace G
                 Validate();
             }
 
-            if (IsChatFunctionTool0)
+            if (ChatFunctionTool0 is { } __value0)
             {
-                chatFunctionTool0?.Invoke(ChatFunctionTool0!);
+                chatFunctionTool0?.Invoke(__value0);
             }
-            else if (IsDatetimeServerTool)
+            else if (DatetimeServerTool is { } __value1)
             {
-                datetimeServerTool?.Invoke(DatetimeServerTool!);
+                datetimeServerTool?.Invoke(__value1);
             }
-            else if (IsChatWebSearchServerTool)
+            else if (ChatWebSearchServerTool is { } __value2)
             {
-                chatWebSearchServerTool?.Invoke(ChatWebSearchServerTool!);
+                chatWebSearchServerTool?.Invoke(__value2);
             }
-            else if (IsChatWebSearchShorthand)
+            else if (ChatWebSearchShorthand is { } __value3)
             {
-                chatWebSearchShorthand?.Invoke(ChatWebSearchShorthand!);
+                chatWebSearchShorthand?.Invoke(__value3);
             }
         }
 
@@ -379,21 +379,21 @@ namespace G
                 Validate();
             }
 
-            if (IsChatFunctionTool0)
+            if (ChatFunctionTool0 is { } __value0)
             {
-                chatFunctionTool0?.Invoke(ChatFunctionTool0!);
+                chatFunctionTool0?.Invoke(__value0);
             }
-            else if (IsDatetimeServerTool)
+            else if (DatetimeServerTool is { } __value1)
             {
-                datetimeServerTool?.Invoke(DatetimeServerTool!);
+                datetimeServerTool?.Invoke(__value1);
             }
-            else if (IsChatWebSearchServerTool)
+            else if (ChatWebSearchServerTool is { } __value2)
             {
-                chatWebSearchServerTool?.Invoke(ChatWebSearchServerTool!);
+                chatWebSearchServerTool?.Invoke(__value2);
             }
-            else if (IsChatWebSearchShorthand)
+            else if (ChatWebSearchShorthand is { } __value3)
             {
-                chatWebSearchShorthand?.Invoke(ChatWebSearchShorthand!);
+                chatWebSearchShorthand?.Invoke(__value3);
             }
         }
 

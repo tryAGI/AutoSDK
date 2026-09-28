@@ -1,4 +1,4 @@
-﻿//HintName: G.OrgsClient.OrgsUpdatePatAccess.g.cs
+//HintName: G.OrgsClient.OrgsUpdatePatAccess.g.cs
 
 #nullable enable
 
@@ -127,8 +127,8 @@ namespace G
                 PrepareOrgsUpdatePatAccessRequest(
                     httpClient: HttpClient,
                     httpRequestMessage: __httpRequest,
-                    org: org!,
-                    patId: patId!,
+                    org: org,
+                    patId: patId,
                     request: request);
 
                 return __httpRequest;
@@ -151,7 +151,7 @@ namespace G
                                 pathTemplate: "$\"/orgs/{org}/personal-access-tokens/{patId}\"",
                                 httpMethod: "POST",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: null,
                                 exception: null,
                                 clientOptions: Options,
@@ -185,7 +185,7 @@ namespace G
                                 pathTemplate: "$\"/orgs/{org}/personal-access-tokens/{patId}\"",
                                 httpMethod: "POST",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: null,
                                 exception: __exception,
                                 clientOptions: Options,
@@ -226,7 +226,7 @@ namespace G
                                 pathTemplate: "$\"/orgs/{org}/personal-access-tokens/{patId}\"",
                                 httpMethod: "POST",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: __response,
                                 exception: null,
                                 clientOptions: Options,
@@ -274,7 +274,7 @@ namespace G
                                 pathTemplate: "$\"/orgs/{org}/personal-access-tokens/{patId}\"",
                                 httpMethod: "POST",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: __response,
                                 exception: null,
                                 clientOptions: Options,
@@ -296,7 +296,7 @@ namespace G
                                 pathTemplate: "$\"/orgs/{org}/personal-access-tokens/{patId}\"",
                                 httpMethod: "POST",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: __response,
                                 exception: null,
                                 clientOptions: Options,

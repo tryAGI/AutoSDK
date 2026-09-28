@@ -1,4 +1,4 @@
-﻿//HintName: G.BetaClient.DeleteParseConfigurationApiV1BetaParseConfigurationsConfigIdDelete.g.cs
+//HintName: G.BetaClient.DeleteParseConfigurationApiV1BetaParseConfigurationsConfigIdDelete.g.cs
 
 #nullable enable
 
@@ -191,7 +191,7 @@ namespace G
                 PrepareDeleteParseConfigurationApiV1BetaParseConfigurationsConfigIdDeleteRequest(
                     httpClient: HttpClient,
                     httpRequestMessage: __httpRequest,
-                    configId: configId!,
+                    configId: configId,
                     projectId: projectId,
                     organizationId: organizationId,
                     session: session);
@@ -218,7 +218,7 @@ namespace G
                                 pathTemplate: "$\"/api/v1/beta/parse-configurations/{configId}\"",
                                 httpMethod: "DELETE",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: null,
                                 exception: null,
                                 clientOptions: Options,
@@ -252,7 +252,7 @@ namespace G
                                 pathTemplate: "$\"/api/v1/beta/parse-configurations/{configId}\"",
                                 httpMethod: "DELETE",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: null,
                                 exception: __exception,
                                 clientOptions: Options,
@@ -293,7 +293,7 @@ namespace G
                                 pathTemplate: "$\"/api/v1/beta/parse-configurations/{configId}\"",
                                 httpMethod: "DELETE",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: __response,
                                 exception: null,
                                 clientOptions: Options,
@@ -341,7 +341,7 @@ namespace G
                                 pathTemplate: "$\"/api/v1/beta/parse-configurations/{configId}\"",
                                 httpMethod: "DELETE",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: __response,
                                 exception: null,
                                 clientOptions: Options,
@@ -363,7 +363,7 @@ namespace G
                                 pathTemplate: "$\"/api/v1/beta/parse-configurations/{configId}\"",
                                 httpMethod: "DELETE",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: __response,
                                 exception: null,
                                 clientOptions: Options,

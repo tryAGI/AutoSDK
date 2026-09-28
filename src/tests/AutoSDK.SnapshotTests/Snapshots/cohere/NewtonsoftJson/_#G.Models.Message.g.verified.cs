@@ -1,4 +1,4 @@
-﻿//HintName: G.Models.Message.g.cs
+//HintName: G.Models.Message.g.cs
 #pragma warning disable CS0618 // Type or member is obsolete
 
 #nullable enable
@@ -49,8 +49,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.ChatMessage PickChatbot() => IsChatbot
-            ? Chatbot!
+        public global::G.ChatMessage PickChatbot() => Chatbot is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Chatbot' but the value was {ToString()}.");
 
         /// <summary>
@@ -86,8 +86,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.ToolMessage PickTool() => IsTool
-            ? Tool!
+        public global::G.ToolMessage PickTool() => Tool is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Tool' but the value was {ToString()}.");
         /// <summary>
         /// 
@@ -187,13 +187,13 @@ namespace G
                 Validate();
             }
 
-            if (IsChatbot && chatbot != null)
+            if (Chatbot is { } __value0 && chatbot != null)
             {
-                return chatbot(Chatbot!);
+                return chatbot(__value0);
             }
-            else if (IsTool && tool != null)
+            else if (Tool is { } __value1 && tool != null)
             {
-                return tool(Tool!);
+                return tool(__value1);
             }
 
             return default(TResult);
@@ -213,13 +213,13 @@ namespace G
                 Validate();
             }
 
-            if (IsChatbot)
+            if (Chatbot is { } __value0)
             {
-                chatbot?.Invoke(Chatbot!);
+                chatbot?.Invoke(__value0);
             }
-            else if (IsTool)
+            else if (Tool is { } __value1)
             {
-                tool?.Invoke(Tool!);
+                tool?.Invoke(__value1);
             }
         }
 
@@ -236,13 +236,13 @@ namespace G
                 Validate();
             }
 
-            if (IsChatbot)
+            if (Chatbot is { } __value0)
             {
-                chatbot?.Invoke(Chatbot!);
+                chatbot?.Invoke(__value0);
             }
-            else if (IsTool)
+            else if (Tool is { } __value1)
             {
-                tool?.Invoke(Tool!);
+                tool?.Invoke(__value1);
             }
         }
 

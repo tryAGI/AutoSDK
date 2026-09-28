@@ -1,4 +1,4 @@
-﻿//HintName: G.Models.Asset.g.cs
+//HintName: G.Models.Asset.g.cs
 #pragma warning disable CS0618 // Type or member is obsolete
 
 #nullable enable
@@ -48,8 +48,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.VideoAsset PickVideo() => IsVideo
-            ? Video!
+        public global::G.VideoAsset PickVideo() => Video is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Video' but the value was {ToString()}.");
 
         /// <summary>
@@ -85,8 +85,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.ImageAsset PickImage() => IsImage
-            ? Image!
+        public global::G.ImageAsset PickImage() => Image is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Image' but the value was {ToString()}.");
 
         /// <summary>
@@ -123,8 +123,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.TextAsset PickText() => IsText
-            ? Text!
+        public global::G.TextAsset PickText() => Text is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Text' but the value was {ToString()}.");
 
         /// <summary>
@@ -161,8 +161,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.RichTextAsset PickRichText() => IsRichText
-            ? RichText!
+        public global::G.RichTextAsset PickRichText() => RichText is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'RichText' but the value was {ToString()}.");
 
         /// <summary>
@@ -198,8 +198,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.AudioAsset PickAudio() => IsAudio
-            ? Audio!
+        public global::G.AudioAsset PickAudio() => Audio is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Audio' but the value was {ToString()}.");
 
         /// <summary>
@@ -235,8 +235,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.LumaAsset PickLuma() => IsLuma
-            ? Luma!
+        public global::G.LumaAsset PickLuma() => Luma is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Luma' but the value was {ToString()}.");
 
         /// <summary>
@@ -278,8 +278,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.CaptionAsset PickCaption() => IsCaption
-            ? Caption!
+        public global::G.CaptionAsset PickCaption() => Caption is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Caption' but the value was {ToString()}.");
 
         /// <summary>
@@ -317,8 +317,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.RichCaptionAsset PickRichCaption() => IsRichCaption
-            ? RichCaption!
+        public global::G.RichCaptionAsset PickRichCaption() => RichCaption is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'RichCaption' but the value was {ToString()}.");
 
         /// <summary>
@@ -357,8 +357,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.HtmlAsset PickHtml() => IsHtml
-            ? Html!
+        public global::G.HtmlAsset PickHtml() => Html is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Html' but the value was {ToString()}.");
 
         /// <summary>
@@ -395,8 +395,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.TitleAsset PickTitle() => IsTitle
-            ? Title!
+        public global::G.TitleAsset PickTitle() => Title is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Title' but the value was {ToString()}.");
 
         /// <summary>
@@ -433,8 +433,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.ShapeAsset PickShape() => IsShape
-            ? Shape!
+        public global::G.ShapeAsset PickShape() => Shape is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Shape' but the value was {ToString()}.");
 
         /// <summary>
@@ -506,8 +506,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.SvgAsset PickSvg() => IsSvg
-            ? Svg!
+        public global::G.SvgAsset PickSvg() => Svg is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Svg' but the value was {ToString()}.");
 
         /// <summary>
@@ -543,8 +543,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.TextToImageAsset PickTextToImage() => IsTextToImage
-            ? TextToImage!
+        public global::G.TextToImageAsset PickTextToImage() => TextToImage is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'TextToImage' but the value was {ToString()}.");
 
         /// <summary>
@@ -580,8 +580,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.ImageToVideoAsset PickImageToVideo() => IsImageToVideo
-            ? ImageToVideo!
+        public global::G.ImageToVideoAsset PickImageToVideo() => ImageToVideo is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'ImageToVideo' but the value was {ToString()}.");
 
         /// <summary>
@@ -617,8 +617,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.TextToSpeechAsset PickTextToSpeech() => IsTextToSpeech
-            ? TextToSpeech!
+        public global::G.TextToSpeechAsset PickTextToSpeech() => TextToSpeech is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'TextToSpeech' but the value was {ToString()}.");
         /// <summary>
         /// 
@@ -1082,65 +1082,65 @@ namespace G
                 Validate();
             }
 
-            if (IsVideo && video != null)
+            if (Video is { } __value0 && video != null)
             {
-                return video(Video!);
+                return video(__value0);
             }
-            else if (IsImage && image != null)
+            else if (Image is { } __value1 && image != null)
             {
-                return image(Image!);
+                return image(__value1);
             }
-            else if (IsText && text != null)
+            else if (Text is { } __value2 && text != null)
             {
-                return text(Text!);
+                return text(__value2);
             }
-            else if (IsRichText && richText != null)
+            else if (RichText is { } __value3 && richText != null)
             {
-                return richText(RichText!);
+                return richText(__value3);
             }
-            else if (IsAudio && audio != null)
+            else if (Audio is { } __value4 && audio != null)
             {
-                return audio(Audio!);
+                return audio(__value4);
             }
-            else if (IsLuma && luma != null)
+            else if (Luma is { } __value5 && luma != null)
             {
-                return luma(Luma!);
+                return luma(__value5);
             }
-            else if (IsCaption && caption != null)
+            else if (Caption is { } __value6 && caption != null)
             {
-                return caption(Caption!);
+                return caption(__value6);
             }
-            else if (IsRichCaption && richCaption != null)
+            else if (RichCaption is { } __value7 && richCaption != null)
             {
-                return richCaption(RichCaption!);
+                return richCaption(__value7);
             }
-            else if (IsHtml && html != null)
+            else if (Html is { } __value8 && html != null)
             {
-                return html(Html!);
+                return html(__value8);
             }
-            else if (IsTitle && title != null)
+            else if (Title is { } __value9 && title != null)
             {
-                return title(Title!);
+                return title(__value9);
             }
-            else if (IsShape && shape != null)
+            else if (Shape is { } __value10 && shape != null)
             {
-                return shape(Shape!);
+                return shape(__value10);
             }
-            else if (IsSvg && svg != null)
+            else if (Svg is { } __value11 && svg != null)
             {
-                return svg(Svg!);
+                return svg(__value11);
             }
-            else if (IsTextToImage && textToImage != null)
+            else if (TextToImage is { } __value12 && textToImage != null)
             {
-                return textToImage(TextToImage!);
+                return textToImage(__value12);
             }
-            else if (IsImageToVideo && imageToVideo != null)
+            else if (ImageToVideo is { } __value13 && imageToVideo != null)
             {
-                return imageToVideo(ImageToVideo!);
+                return imageToVideo(__value13);
             }
-            else if (IsTextToSpeech && textToSpeech != null)
+            else if (TextToSpeech is { } __value14 && textToSpeech != null)
             {
-                return textToSpeech(TextToSpeech!);
+                return textToSpeech(__value14);
             }
 
             return default(TResult);
@@ -1186,65 +1186,65 @@ namespace G
                 Validate();
             }
 
-            if (IsVideo)
+            if (Video is { } __value0)
             {
-                video?.Invoke(Video!);
+                video?.Invoke(__value0);
             }
-            else if (IsImage)
+            else if (Image is { } __value1)
             {
-                image?.Invoke(Image!);
+                image?.Invoke(__value1);
             }
-            else if (IsText)
+            else if (Text is { } __value2)
             {
-                text?.Invoke(Text!);
+                text?.Invoke(__value2);
             }
-            else if (IsRichText)
+            else if (RichText is { } __value3)
             {
-                richText?.Invoke(RichText!);
+                richText?.Invoke(__value3);
             }
-            else if (IsAudio)
+            else if (Audio is { } __value4)
             {
-                audio?.Invoke(Audio!);
+                audio?.Invoke(__value4);
             }
-            else if (IsLuma)
+            else if (Luma is { } __value5)
             {
-                luma?.Invoke(Luma!);
+                luma?.Invoke(__value5);
             }
-            else if (IsCaption)
+            else if (Caption is { } __value6)
             {
-                caption?.Invoke(Caption!);
+                caption?.Invoke(__value6);
             }
-            else if (IsRichCaption)
+            else if (RichCaption is { } __value7)
             {
-                richCaption?.Invoke(RichCaption!);
+                richCaption?.Invoke(__value7);
             }
-            else if (IsHtml)
+            else if (Html is { } __value8)
             {
-                html?.Invoke(Html!);
+                html?.Invoke(__value8);
             }
-            else if (IsTitle)
+            else if (Title is { } __value9)
             {
-                title?.Invoke(Title!);
+                title?.Invoke(__value9);
             }
-            else if (IsShape)
+            else if (Shape is { } __value10)
             {
-                shape?.Invoke(Shape!);
+                shape?.Invoke(__value10);
             }
-            else if (IsSvg)
+            else if (Svg is { } __value11)
             {
-                svg?.Invoke(Svg!);
+                svg?.Invoke(__value11);
             }
-            else if (IsTextToImage)
+            else if (TextToImage is { } __value12)
             {
-                textToImage?.Invoke(TextToImage!);
+                textToImage?.Invoke(__value12);
             }
-            else if (IsImageToVideo)
+            else if (ImageToVideo is { } __value13)
             {
-                imageToVideo?.Invoke(ImageToVideo!);
+                imageToVideo?.Invoke(__value13);
             }
-            else if (IsTextToSpeech)
+            else if (TextToSpeech is { } __value14)
             {
-                textToSpeech?.Invoke(TextToSpeech!);
+                textToSpeech?.Invoke(__value14);
             }
         }
 
@@ -1274,65 +1274,65 @@ namespace G
                 Validate();
             }
 
-            if (IsVideo)
+            if (Video is { } __value0)
             {
-                video?.Invoke(Video!);
+                video?.Invoke(__value0);
             }
-            else if (IsImage)
+            else if (Image is { } __value1)
             {
-                image?.Invoke(Image!);
+                image?.Invoke(__value1);
             }
-            else if (IsText)
+            else if (Text is { } __value2)
             {
-                text?.Invoke(Text!);
+                text?.Invoke(__value2);
             }
-            else if (IsRichText)
+            else if (RichText is { } __value3)
             {
-                richText?.Invoke(RichText!);
+                richText?.Invoke(__value3);
             }
-            else if (IsAudio)
+            else if (Audio is { } __value4)
             {
-                audio?.Invoke(Audio!);
+                audio?.Invoke(__value4);
             }
-            else if (IsLuma)
+            else if (Luma is { } __value5)
             {
-                luma?.Invoke(Luma!);
+                luma?.Invoke(__value5);
             }
-            else if (IsCaption)
+            else if (Caption is { } __value6)
             {
-                caption?.Invoke(Caption!);
+                caption?.Invoke(__value6);
             }
-            else if (IsRichCaption)
+            else if (RichCaption is { } __value7)
             {
-                richCaption?.Invoke(RichCaption!);
+                richCaption?.Invoke(__value7);
             }
-            else if (IsHtml)
+            else if (Html is { } __value8)
             {
-                html?.Invoke(Html!);
+                html?.Invoke(__value8);
             }
-            else if (IsTitle)
+            else if (Title is { } __value9)
             {
-                title?.Invoke(Title!);
+                title?.Invoke(__value9);
             }
-            else if (IsShape)
+            else if (Shape is { } __value10)
             {
-                shape?.Invoke(Shape!);
+                shape?.Invoke(__value10);
             }
-            else if (IsSvg)
+            else if (Svg is { } __value11)
             {
-                svg?.Invoke(Svg!);
+                svg?.Invoke(__value11);
             }
-            else if (IsTextToImage)
+            else if (TextToImage is { } __value12)
             {
-                textToImage?.Invoke(TextToImage!);
+                textToImage?.Invoke(__value12);
             }
-            else if (IsImageToVideo)
+            else if (ImageToVideo is { } __value13)
             {
-                imageToVideo?.Invoke(ImageToVideo!);
+                imageToVideo?.Invoke(__value13);
             }
-            else if (IsTextToSpeech)
+            else if (TextToSpeech is { } __value14)
             {
-                textToSpeech?.Invoke(TextToSpeech!);
+                textToSpeech?.Invoke(__value14);
             }
         }
 

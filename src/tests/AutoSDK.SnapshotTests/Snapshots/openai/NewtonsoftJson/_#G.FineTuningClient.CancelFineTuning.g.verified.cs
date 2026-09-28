@@ -1,4 +1,4 @@
-﻿//HintName: G.FineTuningClient.CancelFineTuning.g.cs
+//HintName: G.FineTuningClient.CancelFineTuning.g.cs
 
 #nullable enable
 
@@ -150,7 +150,7 @@ namespace G
                 PrepareCancelFineTuningRequest(
                     httpClient: HttpClient,
                     httpRequestMessage: __httpRequest,
-                    fineTuningJobId: fineTuningJobId!);
+                    fineTuningJobId: fineTuningJobId);
 
                 return __httpRequest;
             }
@@ -172,7 +172,7 @@ namespace G
                                 pathTemplate: "$\"/fine_tuning/jobs/{fineTuningJobId}/cancel\"",
                                 httpMethod: "POST",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: null,
                                 exception: null,
                                 clientOptions: Options,
@@ -206,7 +206,7 @@ namespace G
                                 pathTemplate: "$\"/fine_tuning/jobs/{fineTuningJobId}/cancel\"",
                                 httpMethod: "POST",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: null,
                                 exception: __exception,
                                 clientOptions: Options,
@@ -247,7 +247,7 @@ namespace G
                                 pathTemplate: "$\"/fine_tuning/jobs/{fineTuningJobId}/cancel\"",
                                 httpMethod: "POST",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: __response,
                                 exception: null,
                                 clientOptions: Options,
@@ -295,7 +295,7 @@ namespace G
                                 pathTemplate: "$\"/fine_tuning/jobs/{fineTuningJobId}/cancel\"",
                                 httpMethod: "POST",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: __response,
                                 exception: null,
                                 clientOptions: Options,
@@ -317,7 +317,7 @@ namespace G
                                 pathTemplate: "$\"/fine_tuning/jobs/{fineTuningJobId}/cancel\"",
                                 httpMethod: "POST",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: __response,
                                 exception: null,
                                 clientOptions: Options,

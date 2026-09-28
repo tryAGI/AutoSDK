@@ -1,4 +1,4 @@
-﻿//HintName: G.JsonConverters.ChatAssistantMessageContent.g.cs
+//HintName: G.JsonConverters.ChatAssistantMessageContent.g.cs
 #nullable enable
 #pragma warning disable CS0618 // Type or member is obsolete
 
@@ -199,19 +199,19 @@ namespace G.JsonConverters
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(string), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<string?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(string).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.ChatAssistantMessageContentVariant1!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickChatAssistantMessageContentVariant1(), typeInfo);
             }
             else if (value.IsChatAssistantMessageContent1)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::System.Collections.Generic.IList<global::G.ChatContentItems>), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::System.Collections.Generic.IList<global::G.ChatContentItems>?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::System.Collections.Generic.IList<global::G.ChatContentItems>).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.ChatAssistantMessageContent1!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickChatAssistantMessageContent1(), typeInfo);
             }
             else if (value.IsChatAssistantMessageContentVariant3)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(object), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<object?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(object).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.ChatAssistantMessageContentVariant3!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickChatAssistantMessageContentVariant3(), typeInfo);
             }
         }
     }

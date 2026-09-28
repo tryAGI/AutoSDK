@@ -1,4 +1,4 @@
-﻿//HintName: G.CodeScanningClient.CodeScanningUpdateAlert.g.cs
+//HintName: G.CodeScanningClient.CodeScanningUpdateAlert.g.cs
 
 #nullable enable
 
@@ -148,9 +148,9 @@ namespace G
                 PrepareCodeScanningUpdateAlertRequest(
                     httpClient: HttpClient,
                     httpRequestMessage: __httpRequest,
-                    owner: owner!,
-                    repo: repo!,
-                    alertNumber: alertNumber!,
+                    owner: owner,
+                    repo: repo,
+                    alertNumber: alertNumber,
                     request: request);
 
                 return __httpRequest;
@@ -173,7 +173,7 @@ namespace G
                                 pathTemplate: "$\"/repos/{owner}/{repo}/code-scanning/alerts/{alertNumber}\"",
                                 httpMethod: "PATCH",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: null,
                                 exception: null,
                                 clientOptions: Options,
@@ -207,7 +207,7 @@ namespace G
                                 pathTemplate: "$\"/repos/{owner}/{repo}/code-scanning/alerts/{alertNumber}\"",
                                 httpMethod: "PATCH",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: null,
                                 exception: __exception,
                                 clientOptions: Options,
@@ -248,7 +248,7 @@ namespace G
                                 pathTemplate: "$\"/repos/{owner}/{repo}/code-scanning/alerts/{alertNumber}\"",
                                 httpMethod: "PATCH",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: __response,
                                 exception: null,
                                 clientOptions: Options,
@@ -296,7 +296,7 @@ namespace G
                                 pathTemplate: "$\"/repos/{owner}/{repo}/code-scanning/alerts/{alertNumber}\"",
                                 httpMethod: "PATCH",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: __response,
                                 exception: null,
                                 clientOptions: Options,
@@ -318,7 +318,7 @@ namespace G
                                 pathTemplate: "$\"/repos/{owner}/{repo}/code-scanning/alerts/{alertNumber}\"",
                                 httpMethod: "PATCH",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: __response,
                                 exception: null,
                                 clientOptions: Options,

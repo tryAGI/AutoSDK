@@ -1,4 +1,4 @@
-﻿//HintName: G.Models.SpeakV1ServerEvent.g.cs
+//HintName: G.Models.SpeakV1ServerEvent.g.cs
 #pragma warning disable CS0618 // Type or member is obsolete
 
 #nullable enable
@@ -48,8 +48,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.AudioResponsePayload PickAudioResponse() => IsAudioResponse
-            ? AudioResponse!
+        public global::G.AudioResponsePayload PickAudioResponse() => AudioResponse is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'AudioResponse' but the value was {ToString()}.");
 
         /// <summary>
@@ -85,8 +85,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.SpeakMetadataPayload PickSpeakMetadata() => IsSpeakMetadata
-            ? SpeakMetadata!
+        public global::G.SpeakMetadataPayload PickSpeakMetadata() => SpeakMetadata is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'SpeakMetadata' but the value was {ToString()}.");
         /// <summary>
         /// 
@@ -186,13 +186,13 @@ namespace G
                 Validate();
             }
 
-            if (IsAudioResponse && audioResponse != null)
+            if (AudioResponse is { } __value0 && audioResponse != null)
             {
-                return audioResponse(AudioResponse!);
+                return audioResponse(__value0);
             }
-            else if (IsSpeakMetadata && speakMetadata != null)
+            else if (SpeakMetadata is { } __value1 && speakMetadata != null)
             {
-                return speakMetadata(SpeakMetadata!);
+                return speakMetadata(__value1);
             }
 
             return default(TResult);
@@ -212,13 +212,13 @@ namespace G
                 Validate();
             }
 
-            if (IsAudioResponse)
+            if (AudioResponse is { } __value0)
             {
-                audioResponse?.Invoke(AudioResponse!);
+                audioResponse?.Invoke(__value0);
             }
-            else if (IsSpeakMetadata)
+            else if (SpeakMetadata is { } __value1)
             {
-                speakMetadata?.Invoke(SpeakMetadata!);
+                speakMetadata?.Invoke(__value1);
             }
         }
 
@@ -235,13 +235,13 @@ namespace G
                 Validate();
             }
 
-            if (IsAudioResponse)
+            if (AudioResponse is { } __value0)
             {
-                audioResponse?.Invoke(AudioResponse!);
+                audioResponse?.Invoke(__value0);
             }
-            else if (IsSpeakMetadata)
+            else if (SpeakMetadata is { } __value1)
             {
-                speakMetadata?.Invoke(SpeakMetadata!);
+                speakMetadata?.Invoke(__value1);
             }
         }
 

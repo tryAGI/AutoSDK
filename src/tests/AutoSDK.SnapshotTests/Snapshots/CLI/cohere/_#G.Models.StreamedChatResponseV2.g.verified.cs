@@ -1,4 +1,4 @@
-﻿//HintName: G.Models.StreamedChatResponseV2.g.cs
+//HintName: G.Models.StreamedChatResponseV2.g.cs
 #pragma warning disable CS0618 // Type or member is obsolete
 
 #nullable enable
@@ -48,8 +48,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.ChatMessageStartEvent PickMessageStart() => IsMessageStart
-            ? MessageStart!.Value
+        public global::G.ChatMessageStartEvent PickMessageStart() => MessageStart is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'MessageStart' but the value was {ToString()}.");
 
         /// <summary>
@@ -85,8 +85,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.ChatContentStartEvent PickContentStart() => IsContentStart
-            ? ContentStart!.Value
+        public global::G.ChatContentStartEvent PickContentStart() => ContentStart is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'ContentStart' but the value was {ToString()}.");
 
         /// <summary>
@@ -122,8 +122,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.ChatContentDeltaEvent PickContentDelta() => IsContentDelta
-            ? ContentDelta!.Value
+        public global::G.ChatContentDeltaEvent PickContentDelta() => ContentDelta is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'ContentDelta' but the value was {ToString()}.");
 
         /// <summary>
@@ -159,8 +159,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.ChatContentEndEvent PickContentEnd() => IsContentEnd
-            ? ContentEnd!.Value
+        public global::G.ChatContentEndEvent PickContentEnd() => ContentEnd is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'ContentEnd' but the value was {ToString()}.");
 
         /// <summary>
@@ -196,8 +196,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.ChatToolPlanDeltaEvent PickToolPlanDelta() => IsToolPlanDelta
-            ? ToolPlanDelta!.Value
+        public global::G.ChatToolPlanDeltaEvent PickToolPlanDelta() => ToolPlanDelta is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'ToolPlanDelta' but the value was {ToString()}.");
 
         /// <summary>
@@ -233,8 +233,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.ChatToolCallStartEvent PickToolCallStart() => IsToolCallStart
-            ? ToolCallStart!.Value
+        public global::G.ChatToolCallStartEvent PickToolCallStart() => ToolCallStart is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'ToolCallStart' but the value was {ToString()}.");
 
         /// <summary>
@@ -270,8 +270,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.ChatToolCallDeltaEvent PickToolCallDelta() => IsToolCallDelta
-            ? ToolCallDelta!.Value
+        public global::G.ChatToolCallDeltaEvent PickToolCallDelta() => ToolCallDelta is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'ToolCallDelta' but the value was {ToString()}.");
 
         /// <summary>
@@ -307,8 +307,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.ChatToolCallEndEvent PickToolCallEnd() => IsToolCallEnd
-            ? ToolCallEnd!.Value
+        public global::G.ChatToolCallEndEvent PickToolCallEnd() => ToolCallEnd is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'ToolCallEnd' but the value was {ToString()}.");
 
         /// <summary>
@@ -344,8 +344,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.ChatMessageEndEvent PickMessageEnd() => IsMessageEnd
-            ? MessageEnd!.Value
+        public global::G.ChatMessageEndEvent PickMessageEnd() => MessageEnd is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'MessageEnd' but the value was {ToString()}.");
 
         /// <summary>
@@ -381,8 +381,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.ChatDebugEvent PickDebug() => IsDebug
-            ? Debug!.Value
+        public global::G.ChatDebugEvent PickDebug() => Debug is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Debug' but the value was {ToString()}.");
         /// <summary>
         /// 
@@ -706,45 +706,45 @@ namespace G
                 Validate();
             }
 
-            if (IsMessageStart && messageStart != null)
+            if (MessageStart is { } __value0 && messageStart != null)
             {
-                return messageStart(MessageStart!);
+                return messageStart(__value0);
             }
-            else if (IsContentStart && contentStart != null)
+            else if (ContentStart is { } __value1 && contentStart != null)
             {
-                return contentStart(ContentStart!);
+                return contentStart(__value1);
             }
-            else if (IsContentDelta && contentDelta != null)
+            else if (ContentDelta is { } __value2 && contentDelta != null)
             {
-                return contentDelta(ContentDelta!);
+                return contentDelta(__value2);
             }
-            else if (IsContentEnd && contentEnd != null)
+            else if (ContentEnd is { } __value3 && contentEnd != null)
             {
-                return contentEnd(ContentEnd!);
+                return contentEnd(__value3);
             }
-            else if (IsToolPlanDelta && toolPlanDelta != null)
+            else if (ToolPlanDelta is { } __value4 && toolPlanDelta != null)
             {
-                return toolPlanDelta(ToolPlanDelta!);
+                return toolPlanDelta(__value4);
             }
-            else if (IsToolCallStart && toolCallStart != null)
+            else if (ToolCallStart is { } __value5 && toolCallStart != null)
             {
-                return toolCallStart(ToolCallStart!);
+                return toolCallStart(__value5);
             }
-            else if (IsToolCallDelta && toolCallDelta != null)
+            else if (ToolCallDelta is { } __value6 && toolCallDelta != null)
             {
-                return toolCallDelta(ToolCallDelta!);
+                return toolCallDelta(__value6);
             }
-            else if (IsToolCallEnd && toolCallEnd != null)
+            else if (ToolCallEnd is { } __value7 && toolCallEnd != null)
             {
-                return toolCallEnd(ToolCallEnd!);
+                return toolCallEnd(__value7);
             }
-            else if (IsMessageEnd && messageEnd != null)
+            else if (MessageEnd is { } __value8 && messageEnd != null)
             {
-                return messageEnd(MessageEnd!);
+                return messageEnd(__value8);
             }
-            else if (IsDebug && debug != null)
+            else if (Debug is { } __value9 && debug != null)
             {
-                return debug(Debug!);
+                return debug(__value9);
             }
 
             return default(TResult);
@@ -780,45 +780,45 @@ namespace G
                 Validate();
             }
 
-            if (IsMessageStart)
+            if (MessageStart is { } __value0)
             {
-                messageStart?.Invoke(MessageStart!);
+                messageStart?.Invoke(__value0);
             }
-            else if (IsContentStart)
+            else if (ContentStart is { } __value1)
             {
-                contentStart?.Invoke(ContentStart!);
+                contentStart?.Invoke(__value1);
             }
-            else if (IsContentDelta)
+            else if (ContentDelta is { } __value2)
             {
-                contentDelta?.Invoke(ContentDelta!);
+                contentDelta?.Invoke(__value2);
             }
-            else if (IsContentEnd)
+            else if (ContentEnd is { } __value3)
             {
-                contentEnd?.Invoke(ContentEnd!);
+                contentEnd?.Invoke(__value3);
             }
-            else if (IsToolPlanDelta)
+            else if (ToolPlanDelta is { } __value4)
             {
-                toolPlanDelta?.Invoke(ToolPlanDelta!);
+                toolPlanDelta?.Invoke(__value4);
             }
-            else if (IsToolCallStart)
+            else if (ToolCallStart is { } __value5)
             {
-                toolCallStart?.Invoke(ToolCallStart!);
+                toolCallStart?.Invoke(__value5);
             }
-            else if (IsToolCallDelta)
+            else if (ToolCallDelta is { } __value6)
             {
-                toolCallDelta?.Invoke(ToolCallDelta!);
+                toolCallDelta?.Invoke(__value6);
             }
-            else if (IsToolCallEnd)
+            else if (ToolCallEnd is { } __value7)
             {
-                toolCallEnd?.Invoke(ToolCallEnd!);
+                toolCallEnd?.Invoke(__value7);
             }
-            else if (IsMessageEnd)
+            else if (MessageEnd is { } __value8)
             {
-                messageEnd?.Invoke(MessageEnd!);
+                messageEnd?.Invoke(__value8);
             }
-            else if (IsDebug)
+            else if (Debug is { } __value9)
             {
-                debug?.Invoke(Debug!);
+                debug?.Invoke(__value9);
             }
         }
 
@@ -843,45 +843,45 @@ namespace G
                 Validate();
             }
 
-            if (IsMessageStart)
+            if (MessageStart is { } __value0)
             {
-                messageStart?.Invoke(MessageStart!);
+                messageStart?.Invoke(__value0);
             }
-            else if (IsContentStart)
+            else if (ContentStart is { } __value1)
             {
-                contentStart?.Invoke(ContentStart!);
+                contentStart?.Invoke(__value1);
             }
-            else if (IsContentDelta)
+            else if (ContentDelta is { } __value2)
             {
-                contentDelta?.Invoke(ContentDelta!);
+                contentDelta?.Invoke(__value2);
             }
-            else if (IsContentEnd)
+            else if (ContentEnd is { } __value3)
             {
-                contentEnd?.Invoke(ContentEnd!);
+                contentEnd?.Invoke(__value3);
             }
-            else if (IsToolPlanDelta)
+            else if (ToolPlanDelta is { } __value4)
             {
-                toolPlanDelta?.Invoke(ToolPlanDelta!);
+                toolPlanDelta?.Invoke(__value4);
             }
-            else if (IsToolCallStart)
+            else if (ToolCallStart is { } __value5)
             {
-                toolCallStart?.Invoke(ToolCallStart!);
+                toolCallStart?.Invoke(__value5);
             }
-            else if (IsToolCallDelta)
+            else if (ToolCallDelta is { } __value6)
             {
-                toolCallDelta?.Invoke(ToolCallDelta!);
+                toolCallDelta?.Invoke(__value6);
             }
-            else if (IsToolCallEnd)
+            else if (ToolCallEnd is { } __value7)
             {
-                toolCallEnd?.Invoke(ToolCallEnd!);
+                toolCallEnd?.Invoke(__value7);
             }
-            else if (IsMessageEnd)
+            else if (MessageEnd is { } __value8)
             {
-                messageEnd?.Invoke(MessageEnd!);
+                messageEnd?.Invoke(__value8);
             }
-            else if (IsDebug)
+            else if (Debug is { } __value9)
             {
-                debug?.Invoke(Debug!);
+                debug?.Invoke(__value9);
             }
         }
 

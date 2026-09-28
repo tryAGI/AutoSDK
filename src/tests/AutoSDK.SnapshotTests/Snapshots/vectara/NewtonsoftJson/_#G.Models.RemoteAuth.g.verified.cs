@@ -1,4 +1,4 @@
-﻿//HintName: G.Models.RemoteAuth.g.cs
+//HintName: G.Models.RemoteAuth.g.cs
 #pragma warning disable CS0618 // Type or member is obsolete
 
 #nullable enable
@@ -48,8 +48,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.BearerAuth PickBearer() => IsBearer
-            ? Bearer!
+        public global::G.BearerAuth PickBearer() => Bearer is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Bearer' but the value was {ToString()}.");
 
         /// <summary>
@@ -85,8 +85,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.HeaderAuth PickHeader() => IsHeader
-            ? Header!
+        public global::G.HeaderAuth PickHeader() => Header is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Header' but the value was {ToString()}.");
         /// <summary>
         /// 
@@ -186,13 +186,13 @@ namespace G
                 Validate();
             }
 
-            if (IsBearer && bearer != null)
+            if (Bearer is { } __value0 && bearer != null)
             {
-                return bearer(Bearer!);
+                return bearer(__value0);
             }
-            else if (IsHeader && header != null)
+            else if (Header is { } __value1 && header != null)
             {
-                return header(Header!);
+                return header(__value1);
             }
 
             return default(TResult);
@@ -212,13 +212,13 @@ namespace G
                 Validate();
             }
 
-            if (IsBearer)
+            if (Bearer is { } __value0)
             {
-                bearer?.Invoke(Bearer!);
+                bearer?.Invoke(__value0);
             }
-            else if (IsHeader)
+            else if (Header is { } __value1)
             {
-                header?.Invoke(Header!);
+                header?.Invoke(__value1);
             }
         }
 
@@ -235,13 +235,13 @@ namespace G
                 Validate();
             }
 
-            if (IsBearer)
+            if (Bearer is { } __value0)
             {
-                bearer?.Invoke(Bearer!);
+                bearer?.Invoke(__value0);
             }
-            else if (IsHeader)
+            else if (Header is { } __value1)
             {
-                header?.Invoke(Header!);
+                header?.Invoke(__value1);
             }
         }
 

@@ -1,4 +1,4 @@
-﻿//HintName: G.Models.EasyInputMessageRole.g.cs
+//HintName: G.Models.EasyInputMessageRole.g.cs
 #pragma warning disable CS0618 // Type or member is obsolete
 
 #nullable enable
@@ -43,8 +43,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.EasyInputMessageRole0 PickEasyInputMessageRole0() => IsEasyInputMessageRole0
-            ? EasyInputMessageRole0!.Value
+        public global::G.EasyInputMessageRole0 PickEasyInputMessageRole0() => EasyInputMessageRole0 is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'EasyInputMessageRole0' but the value was {ToString()}.");
 
         /// <summary>
@@ -80,8 +80,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.EasyInputMessageRole1 PickEasyInputMessageRole1() => IsEasyInputMessageRole1
-            ? EasyInputMessageRole1!.Value
+        public global::G.EasyInputMessageRole1 PickEasyInputMessageRole1() => EasyInputMessageRole1 is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'EasyInputMessageRole1' but the value was {ToString()}.");
 
         /// <summary>
@@ -117,8 +117,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.EasyInputMessageRole2 PickEasyInputMessageRole2() => IsEasyInputMessageRole2
-            ? EasyInputMessageRole2!.Value
+        public global::G.EasyInputMessageRole2 PickEasyInputMessageRole2() => EasyInputMessageRole2 is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'EasyInputMessageRole2' but the value was {ToString()}.");
 
         /// <summary>
@@ -154,8 +154,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.EasyInputMessageRole3 PickEasyInputMessageRole3() => IsEasyInputMessageRole3
-            ? EasyInputMessageRole3!.Value
+        public global::G.EasyInputMessageRole3 PickEasyInputMessageRole3() => EasyInputMessageRole3 is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'EasyInputMessageRole3' but the value was {ToString()}.");
         /// <summary>
         /// 
@@ -308,21 +308,21 @@ namespace G
                 Validate();
             }
 
-            if (IsEasyInputMessageRole0 && easyInputMessageRole0 != null)
+            if (EasyInputMessageRole0 is { } __value0 && easyInputMessageRole0 != null)
             {
-                return easyInputMessageRole0(EasyInputMessageRole0!);
+                return easyInputMessageRole0(__value0);
             }
-            else if (IsEasyInputMessageRole1 && easyInputMessageRole1 != null)
+            else if (EasyInputMessageRole1 is { } __value1 && easyInputMessageRole1 != null)
             {
-                return easyInputMessageRole1(EasyInputMessageRole1!);
+                return easyInputMessageRole1(__value1);
             }
-            else if (IsEasyInputMessageRole2 && easyInputMessageRole2 != null)
+            else if (EasyInputMessageRole2 is { } __value2 && easyInputMessageRole2 != null)
             {
-                return easyInputMessageRole2(EasyInputMessageRole2!);
+                return easyInputMessageRole2(__value2);
             }
-            else if (IsEasyInputMessageRole3 && easyInputMessageRole3 != null)
+            else if (EasyInputMessageRole3 is { } __value3 && easyInputMessageRole3 != null)
             {
-                return easyInputMessageRole3(EasyInputMessageRole3!);
+                return easyInputMessageRole3(__value3);
             }
 
             return default(TResult);
@@ -346,21 +346,21 @@ namespace G
                 Validate();
             }
 
-            if (IsEasyInputMessageRole0)
+            if (EasyInputMessageRole0 is { } __value0)
             {
-                easyInputMessageRole0?.Invoke(EasyInputMessageRole0!);
+                easyInputMessageRole0?.Invoke(__value0);
             }
-            else if (IsEasyInputMessageRole1)
+            else if (EasyInputMessageRole1 is { } __value1)
             {
-                easyInputMessageRole1?.Invoke(EasyInputMessageRole1!);
+                easyInputMessageRole1?.Invoke(__value1);
             }
-            else if (IsEasyInputMessageRole2)
+            else if (EasyInputMessageRole2 is { } __value2)
             {
-                easyInputMessageRole2?.Invoke(EasyInputMessageRole2!);
+                easyInputMessageRole2?.Invoke(__value2);
             }
-            else if (IsEasyInputMessageRole3)
+            else if (EasyInputMessageRole3 is { } __value3)
             {
-                easyInputMessageRole3?.Invoke(EasyInputMessageRole3!);
+                easyInputMessageRole3?.Invoke(__value3);
             }
         }
 
@@ -379,21 +379,21 @@ namespace G
                 Validate();
             }
 
-            if (IsEasyInputMessageRole0)
+            if (EasyInputMessageRole0 is { } __value0)
             {
-                easyInputMessageRole0?.Invoke(EasyInputMessageRole0!);
+                easyInputMessageRole0?.Invoke(__value0);
             }
-            else if (IsEasyInputMessageRole1)
+            else if (EasyInputMessageRole1 is { } __value1)
             {
-                easyInputMessageRole1?.Invoke(EasyInputMessageRole1!);
+                easyInputMessageRole1?.Invoke(__value1);
             }
-            else if (IsEasyInputMessageRole2)
+            else if (EasyInputMessageRole2 is { } __value2)
             {
-                easyInputMessageRole2?.Invoke(EasyInputMessageRole2!);
+                easyInputMessageRole2?.Invoke(__value2);
             }
-            else if (IsEasyInputMessageRole3)
+            else if (EasyInputMessageRole3 is { } __value3)
             {
-                easyInputMessageRole3?.Invoke(EasyInputMessageRole3!);
+                easyInputMessageRole3?.Invoke(__value3);
             }
         }
 

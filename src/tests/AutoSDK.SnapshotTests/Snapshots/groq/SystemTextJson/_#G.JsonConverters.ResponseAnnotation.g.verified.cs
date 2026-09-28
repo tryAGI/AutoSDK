@@ -1,4 +1,4 @@
-﻿//HintName: G.JsonConverters.ResponseAnnotation.g.cs
+//HintName: G.JsonConverters.ResponseAnnotation.g.cs
 #nullable enable
 #pragma warning disable CS0618 // Type or member is obsolete
 
@@ -60,13 +60,13 @@ namespace G.JsonConverters
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.ResponseFileCitation), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.ResponseFileCitation?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.ResponseFileCitation).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.FileCitation!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickFileCitation(), typeInfo);
             }
             else if (value.IsUrlCitation)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.ResponseUrlCitation), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.ResponseUrlCitation?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.ResponseUrlCitation).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.UrlCitation!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickUrlCitation(), typeInfo);
             }
         }
     }

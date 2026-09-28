@@ -1,4 +1,4 @@
-﻿//HintName: G.Models.GeneratedAsset.g.cs
+//HintName: G.Models.GeneratedAsset.g.cs
 #pragma warning disable CS0618 // Type or member is obsolete
 
 #nullable enable
@@ -48,8 +48,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.ShotstackGeneratedAsset PickShotstack() => IsShotstack
-            ? Shotstack!
+        public global::G.ShotstackGeneratedAsset PickShotstack() => Shotstack is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Shotstack' but the value was {ToString()}.");
 
         /// <summary>
@@ -85,8 +85,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.DIDGeneratedAsset PickDId() => IsDId
-            ? DId!
+        public global::G.DIDGeneratedAsset PickDId() => DId is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'DId' but the value was {ToString()}.");
 
         /// <summary>
@@ -122,8 +122,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.ElevenLabsGeneratedAsset PickElevenlabs() => IsElevenlabs
-            ? Elevenlabs!
+        public global::G.ElevenLabsGeneratedAsset PickElevenlabs() => Elevenlabs is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Elevenlabs' but the value was {ToString()}.");
 
         /// <summary>
@@ -159,8 +159,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.HeyGenGeneratedAsset PickHeygen() => IsHeygen
-            ? Heygen!
+        public global::G.HeyGenGeneratedAsset PickHeygen() => Heygen is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Heygen' but the value was {ToString()}.");
 
         /// <summary>
@@ -196,8 +196,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.OpenAiGeneratedAsset PickOpenai() => IsOpenai
-            ? Openai!
+        public global::G.OpenAiGeneratedAsset PickOpenai() => Openai is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Openai' but the value was {ToString()}.");
 
         /// <summary>
@@ -233,8 +233,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.StabilityAiGeneratedAsset PickStabilityAi() => IsStabilityAi
-            ? StabilityAi!
+        public global::G.StabilityAiGeneratedAsset PickStabilityAi() => StabilityAi is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'StabilityAi' but the value was {ToString()}.");
         /// <summary>
         /// 
@@ -446,29 +446,29 @@ namespace G
                 Validate();
             }
 
-            if (IsShotstack && shotstack != null)
+            if (Shotstack is { } __value0 && shotstack != null)
             {
-                return shotstack(Shotstack!);
+                return shotstack(__value0);
             }
-            else if (IsDId && dId != null)
+            else if (DId is { } __value1 && dId != null)
             {
-                return dId(DId!);
+                return dId(__value1);
             }
-            else if (IsElevenlabs && elevenlabs != null)
+            else if (Elevenlabs is { } __value2 && elevenlabs != null)
             {
-                return elevenlabs(Elevenlabs!);
+                return elevenlabs(__value2);
             }
-            else if (IsHeygen && heygen != null)
+            else if (Heygen is { } __value3 && heygen != null)
             {
-                return heygen(Heygen!);
+                return heygen(__value3);
             }
-            else if (IsOpenai && openai != null)
+            else if (Openai is { } __value4 && openai != null)
             {
-                return openai(Openai!);
+                return openai(__value4);
             }
-            else if (IsStabilityAi && stabilityAi != null)
+            else if (StabilityAi is { } __value5 && stabilityAi != null)
             {
-                return stabilityAi(StabilityAi!);
+                return stabilityAi(__value5);
             }
 
             return default(TResult);
@@ -496,29 +496,29 @@ namespace G
                 Validate();
             }
 
-            if (IsShotstack)
+            if (Shotstack is { } __value0)
             {
-                shotstack?.Invoke(Shotstack!);
+                shotstack?.Invoke(__value0);
             }
-            else if (IsDId)
+            else if (DId is { } __value1)
             {
-                dId?.Invoke(DId!);
+                dId?.Invoke(__value1);
             }
-            else if (IsElevenlabs)
+            else if (Elevenlabs is { } __value2)
             {
-                elevenlabs?.Invoke(Elevenlabs!);
+                elevenlabs?.Invoke(__value2);
             }
-            else if (IsHeygen)
+            else if (Heygen is { } __value3)
             {
-                heygen?.Invoke(Heygen!);
+                heygen?.Invoke(__value3);
             }
-            else if (IsOpenai)
+            else if (Openai is { } __value4)
             {
-                openai?.Invoke(Openai!);
+                openai?.Invoke(__value4);
             }
-            else if (IsStabilityAi)
+            else if (StabilityAi is { } __value5)
             {
-                stabilityAi?.Invoke(StabilityAi!);
+                stabilityAi?.Invoke(__value5);
             }
         }
 
@@ -539,29 +539,29 @@ namespace G
                 Validate();
             }
 
-            if (IsShotstack)
+            if (Shotstack is { } __value0)
             {
-                shotstack?.Invoke(Shotstack!);
+                shotstack?.Invoke(__value0);
             }
-            else if (IsDId)
+            else if (DId is { } __value1)
             {
-                dId?.Invoke(DId!);
+                dId?.Invoke(__value1);
             }
-            else if (IsElevenlabs)
+            else if (Elevenlabs is { } __value2)
             {
-                elevenlabs?.Invoke(Elevenlabs!);
+                elevenlabs?.Invoke(__value2);
             }
-            else if (IsHeygen)
+            else if (Heygen is { } __value3)
             {
-                heygen?.Invoke(Heygen!);
+                heygen?.Invoke(__value3);
             }
-            else if (IsOpenai)
+            else if (Openai is { } __value4)
             {
-                openai?.Invoke(Openai!);
+                openai?.Invoke(__value4);
             }
-            else if (IsStabilityAi)
+            else if (StabilityAi is { } __value5)
             {
-                stabilityAi?.Invoke(StabilityAi!);
+                stabilityAi?.Invoke(__value5);
             }
         }
 

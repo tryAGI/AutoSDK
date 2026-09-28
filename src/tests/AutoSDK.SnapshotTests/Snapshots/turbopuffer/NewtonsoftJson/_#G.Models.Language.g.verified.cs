@@ -1,4 +1,4 @@
-﻿//HintName: G.Models.Language.g.cs
+//HintName: G.Models.Language.g.cs
 #pragma warning disable CS0618 // Type or member is obsolete
 
 #nullable enable
@@ -43,8 +43,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public string PickLanguageVariant1() => IsLanguageVariant1
-            ? LanguageVariant1!
+        public string PickLanguageVariant1() => LanguageVariant1 is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'LanguageVariant1' but the value was {ToString()}.");
 
         /// <summary>
@@ -80,8 +80,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public string PickLanguageVariant2() => IsLanguageVariant2
-            ? LanguageVariant2!
+        public string PickLanguageVariant2() => LanguageVariant2 is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'LanguageVariant2' but the value was {ToString()}.");
 
         /// <summary>
@@ -117,8 +117,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public string PickLanguageVariant3() => IsLanguageVariant3
-            ? LanguageVariant3!
+        public string PickLanguageVariant3() => LanguageVariant3 is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'LanguageVariant3' but the value was {ToString()}.");
 
         /// <summary>
@@ -154,8 +154,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public string PickLanguageVariant4() => IsLanguageVariant4
-            ? LanguageVariant4!
+        public string PickLanguageVariant4() => LanguageVariant4 is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'LanguageVariant4' but the value was {ToString()}.");
 
         /// <summary>
@@ -191,8 +191,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public string PickLanguageVariant5() => IsLanguageVariant5
-            ? LanguageVariant5!
+        public string PickLanguageVariant5() => LanguageVariant5 is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'LanguageVariant5' but the value was {ToString()}.");
 
         /// <summary>
@@ -228,8 +228,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public string PickLanguageVariant6() => IsLanguageVariant6
-            ? LanguageVariant6!
+        public string PickLanguageVariant6() => LanguageVariant6 is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'LanguageVariant6' but the value was {ToString()}.");
 
         /// <summary>
@@ -265,8 +265,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public string PickLanguageVariant7() => IsLanguageVariant7
-            ? LanguageVariant7!
+        public string PickLanguageVariant7() => LanguageVariant7 is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'LanguageVariant7' but the value was {ToString()}.");
 
         /// <summary>
@@ -302,8 +302,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public string PickLanguageVariant8() => IsLanguageVariant8
-            ? LanguageVariant8!
+        public string PickLanguageVariant8() => LanguageVariant8 is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'LanguageVariant8' but the value was {ToString()}.");
 
         /// <summary>
@@ -339,8 +339,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public string PickLanguageVariant9() => IsLanguageVariant9
-            ? LanguageVariant9!
+        public string PickLanguageVariant9() => LanguageVariant9 is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'LanguageVariant9' but the value was {ToString()}.");
 
         /// <summary>
@@ -376,8 +376,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public string PickLanguageVariant10() => IsLanguageVariant10
-            ? LanguageVariant10!
+        public string PickLanguageVariant10() => LanguageVariant10 is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'LanguageVariant10' but the value was {ToString()}.");
 
         /// <summary>
@@ -413,8 +413,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public string PickLanguageVariant11() => IsLanguageVariant11
-            ? LanguageVariant11!
+        public string PickLanguageVariant11() => LanguageVariant11 is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'LanguageVariant11' but the value was {ToString()}.");
 
         /// <summary>
@@ -450,8 +450,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public string PickLanguageVariant12() => IsLanguageVariant12
-            ? LanguageVariant12!
+        public string PickLanguageVariant12() => LanguageVariant12 is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'LanguageVariant12' but the value was {ToString()}.");
 
         /// <summary>
@@ -487,8 +487,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public string PickLanguageVariant13() => IsLanguageVariant13
-            ? LanguageVariant13!
+        public string PickLanguageVariant13() => LanguageVariant13 is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'LanguageVariant13' but the value was {ToString()}.");
 
         /// <summary>
@@ -524,8 +524,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public string PickLanguageVariant14() => IsLanguageVariant14
-            ? LanguageVariant14!
+        public string PickLanguageVariant14() => LanguageVariant14 is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'LanguageVariant14' but the value was {ToString()}.");
 
         /// <summary>
@@ -561,8 +561,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public string PickLanguageVariant15() => IsLanguageVariant15
-            ? LanguageVariant15!
+        public string PickLanguageVariant15() => LanguageVariant15 is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'LanguageVariant15' but the value was {ToString()}.");
 
         /// <summary>
@@ -598,8 +598,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public string PickLanguageVariant16() => IsLanguageVariant16
-            ? LanguageVariant16!
+        public string PickLanguageVariant16() => LanguageVariant16 is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'LanguageVariant16' but the value was {ToString()}.");
 
         /// <summary>
@@ -635,8 +635,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public string PickLanguageVariant17() => IsLanguageVariant17
-            ? LanguageVariant17!
+        public string PickLanguageVariant17() => LanguageVariant17 is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'LanguageVariant17' but the value was {ToString()}.");
 
         /// <summary>
@@ -672,8 +672,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public string PickLanguageVariant18() => IsLanguageVariant18
-            ? LanguageVariant18!
+        public string PickLanguageVariant18() => LanguageVariant18 is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'LanguageVariant18' but the value was {ToString()}.");
         /// <summary>
         /// 
@@ -827,77 +827,77 @@ namespace G
                 Validate();
             }
 
-            if (IsLanguageVariant1 && languageVariant1 != null)
+            if (LanguageVariant1 is { } __value0 && languageVariant1 != null)
             {
-                return languageVariant1(LanguageVariant1!);
+                return languageVariant1(__value0);
             }
-            else if (IsLanguageVariant2 && languageVariant2 != null)
+            else if (LanguageVariant2 is { } __value1 && languageVariant2 != null)
             {
-                return languageVariant2(LanguageVariant2!);
+                return languageVariant2(__value1);
             }
-            else if (IsLanguageVariant3 && languageVariant3 != null)
+            else if (LanguageVariant3 is { } __value2 && languageVariant3 != null)
             {
-                return languageVariant3(LanguageVariant3!);
+                return languageVariant3(__value2);
             }
-            else if (IsLanguageVariant4 && languageVariant4 != null)
+            else if (LanguageVariant4 is { } __value3 && languageVariant4 != null)
             {
-                return languageVariant4(LanguageVariant4!);
+                return languageVariant4(__value3);
             }
-            else if (IsLanguageVariant5 && languageVariant5 != null)
+            else if (LanguageVariant5 is { } __value4 && languageVariant5 != null)
             {
-                return languageVariant5(LanguageVariant5!);
+                return languageVariant5(__value4);
             }
-            else if (IsLanguageVariant6 && languageVariant6 != null)
+            else if (LanguageVariant6 is { } __value5 && languageVariant6 != null)
             {
-                return languageVariant6(LanguageVariant6!);
+                return languageVariant6(__value5);
             }
-            else if (IsLanguageVariant7 && languageVariant7 != null)
+            else if (LanguageVariant7 is { } __value6 && languageVariant7 != null)
             {
-                return languageVariant7(LanguageVariant7!);
+                return languageVariant7(__value6);
             }
-            else if (IsLanguageVariant8 && languageVariant8 != null)
+            else if (LanguageVariant8 is { } __value7 && languageVariant8 != null)
             {
-                return languageVariant8(LanguageVariant8!);
+                return languageVariant8(__value7);
             }
-            else if (IsLanguageVariant9 && languageVariant9 != null)
+            else if (LanguageVariant9 is { } __value8 && languageVariant9 != null)
             {
-                return languageVariant9(LanguageVariant9!);
+                return languageVariant9(__value8);
             }
-            else if (IsLanguageVariant10 && languageVariant10 != null)
+            else if (LanguageVariant10 is { } __value9 && languageVariant10 != null)
             {
-                return languageVariant10(LanguageVariant10!);
+                return languageVariant10(__value9);
             }
-            else if (IsLanguageVariant11 && languageVariant11 != null)
+            else if (LanguageVariant11 is { } __value10 && languageVariant11 != null)
             {
-                return languageVariant11(LanguageVariant11!);
+                return languageVariant11(__value10);
             }
-            else if (IsLanguageVariant12 && languageVariant12 != null)
+            else if (LanguageVariant12 is { } __value11 && languageVariant12 != null)
             {
-                return languageVariant12(LanguageVariant12!);
+                return languageVariant12(__value11);
             }
-            else if (IsLanguageVariant13 && languageVariant13 != null)
+            else if (LanguageVariant13 is { } __value12 && languageVariant13 != null)
             {
-                return languageVariant13(LanguageVariant13!);
+                return languageVariant13(__value12);
             }
-            else if (IsLanguageVariant14 && languageVariant14 != null)
+            else if (LanguageVariant14 is { } __value13 && languageVariant14 != null)
             {
-                return languageVariant14(LanguageVariant14!);
+                return languageVariant14(__value13);
             }
-            else if (IsLanguageVariant15 && languageVariant15 != null)
+            else if (LanguageVariant15 is { } __value14 && languageVariant15 != null)
             {
-                return languageVariant15(LanguageVariant15!);
+                return languageVariant15(__value14);
             }
-            else if (IsLanguageVariant16 && languageVariant16 != null)
+            else if (LanguageVariant16 is { } __value15 && languageVariant16 != null)
             {
-                return languageVariant16(LanguageVariant16!);
+                return languageVariant16(__value15);
             }
-            else if (IsLanguageVariant17 && languageVariant17 != null)
+            else if (LanguageVariant17 is { } __value16 && languageVariant17 != null)
             {
-                return languageVariant17(LanguageVariant17!);
+                return languageVariant17(__value16);
             }
-            else if (IsLanguageVariant18 && languageVariant18 != null)
+            else if (LanguageVariant18 is { } __value17 && languageVariant18 != null)
             {
-                return languageVariant18(LanguageVariant18!);
+                return languageVariant18(__value17);
             }
 
             return default(TResult);
@@ -949,77 +949,77 @@ namespace G
                 Validate();
             }
 
-            if (IsLanguageVariant1)
+            if (LanguageVariant1 is { } __value0)
             {
-                languageVariant1?.Invoke(LanguageVariant1!);
+                languageVariant1?.Invoke(__value0);
             }
-            else if (IsLanguageVariant2)
+            else if (LanguageVariant2 is { } __value1)
             {
-                languageVariant2?.Invoke(LanguageVariant2!);
+                languageVariant2?.Invoke(__value1);
             }
-            else if (IsLanguageVariant3)
+            else if (LanguageVariant3 is { } __value2)
             {
-                languageVariant3?.Invoke(LanguageVariant3!);
+                languageVariant3?.Invoke(__value2);
             }
-            else if (IsLanguageVariant4)
+            else if (LanguageVariant4 is { } __value3)
             {
-                languageVariant4?.Invoke(LanguageVariant4!);
+                languageVariant4?.Invoke(__value3);
             }
-            else if (IsLanguageVariant5)
+            else if (LanguageVariant5 is { } __value4)
             {
-                languageVariant5?.Invoke(LanguageVariant5!);
+                languageVariant5?.Invoke(__value4);
             }
-            else if (IsLanguageVariant6)
+            else if (LanguageVariant6 is { } __value5)
             {
-                languageVariant6?.Invoke(LanguageVariant6!);
+                languageVariant6?.Invoke(__value5);
             }
-            else if (IsLanguageVariant7)
+            else if (LanguageVariant7 is { } __value6)
             {
-                languageVariant7?.Invoke(LanguageVariant7!);
+                languageVariant7?.Invoke(__value6);
             }
-            else if (IsLanguageVariant8)
+            else if (LanguageVariant8 is { } __value7)
             {
-                languageVariant8?.Invoke(LanguageVariant8!);
+                languageVariant8?.Invoke(__value7);
             }
-            else if (IsLanguageVariant9)
+            else if (LanguageVariant9 is { } __value8)
             {
-                languageVariant9?.Invoke(LanguageVariant9!);
+                languageVariant9?.Invoke(__value8);
             }
-            else if (IsLanguageVariant10)
+            else if (LanguageVariant10 is { } __value9)
             {
-                languageVariant10?.Invoke(LanguageVariant10!);
+                languageVariant10?.Invoke(__value9);
             }
-            else if (IsLanguageVariant11)
+            else if (LanguageVariant11 is { } __value10)
             {
-                languageVariant11?.Invoke(LanguageVariant11!);
+                languageVariant11?.Invoke(__value10);
             }
-            else if (IsLanguageVariant12)
+            else if (LanguageVariant12 is { } __value11)
             {
-                languageVariant12?.Invoke(LanguageVariant12!);
+                languageVariant12?.Invoke(__value11);
             }
-            else if (IsLanguageVariant13)
+            else if (LanguageVariant13 is { } __value12)
             {
-                languageVariant13?.Invoke(LanguageVariant13!);
+                languageVariant13?.Invoke(__value12);
             }
-            else if (IsLanguageVariant14)
+            else if (LanguageVariant14 is { } __value13)
             {
-                languageVariant14?.Invoke(LanguageVariant14!);
+                languageVariant14?.Invoke(__value13);
             }
-            else if (IsLanguageVariant15)
+            else if (LanguageVariant15 is { } __value14)
             {
-                languageVariant15?.Invoke(LanguageVariant15!);
+                languageVariant15?.Invoke(__value14);
             }
-            else if (IsLanguageVariant16)
+            else if (LanguageVariant16 is { } __value15)
             {
-                languageVariant16?.Invoke(LanguageVariant16!);
+                languageVariant16?.Invoke(__value15);
             }
-            else if (IsLanguageVariant17)
+            else if (LanguageVariant17 is { } __value16)
             {
-                languageVariant17?.Invoke(LanguageVariant17!);
+                languageVariant17?.Invoke(__value16);
             }
-            else if (IsLanguageVariant18)
+            else if (LanguageVariant18 is { } __value17)
             {
-                languageVariant18?.Invoke(LanguageVariant18!);
+                languageVariant18?.Invoke(__value17);
             }
         }
 
@@ -1052,77 +1052,77 @@ namespace G
                 Validate();
             }
 
-            if (IsLanguageVariant1)
+            if (LanguageVariant1 is { } __value0)
             {
-                languageVariant1?.Invoke(LanguageVariant1!);
+                languageVariant1?.Invoke(__value0);
             }
-            else if (IsLanguageVariant2)
+            else if (LanguageVariant2 is { } __value1)
             {
-                languageVariant2?.Invoke(LanguageVariant2!);
+                languageVariant2?.Invoke(__value1);
             }
-            else if (IsLanguageVariant3)
+            else if (LanguageVariant3 is { } __value2)
             {
-                languageVariant3?.Invoke(LanguageVariant3!);
+                languageVariant3?.Invoke(__value2);
             }
-            else if (IsLanguageVariant4)
+            else if (LanguageVariant4 is { } __value3)
             {
-                languageVariant4?.Invoke(LanguageVariant4!);
+                languageVariant4?.Invoke(__value3);
             }
-            else if (IsLanguageVariant5)
+            else if (LanguageVariant5 is { } __value4)
             {
-                languageVariant5?.Invoke(LanguageVariant5!);
+                languageVariant5?.Invoke(__value4);
             }
-            else if (IsLanguageVariant6)
+            else if (LanguageVariant6 is { } __value5)
             {
-                languageVariant6?.Invoke(LanguageVariant6!);
+                languageVariant6?.Invoke(__value5);
             }
-            else if (IsLanguageVariant7)
+            else if (LanguageVariant7 is { } __value6)
             {
-                languageVariant7?.Invoke(LanguageVariant7!);
+                languageVariant7?.Invoke(__value6);
             }
-            else if (IsLanguageVariant8)
+            else if (LanguageVariant8 is { } __value7)
             {
-                languageVariant8?.Invoke(LanguageVariant8!);
+                languageVariant8?.Invoke(__value7);
             }
-            else if (IsLanguageVariant9)
+            else if (LanguageVariant9 is { } __value8)
             {
-                languageVariant9?.Invoke(LanguageVariant9!);
+                languageVariant9?.Invoke(__value8);
             }
-            else if (IsLanguageVariant10)
+            else if (LanguageVariant10 is { } __value9)
             {
-                languageVariant10?.Invoke(LanguageVariant10!);
+                languageVariant10?.Invoke(__value9);
             }
-            else if (IsLanguageVariant11)
+            else if (LanguageVariant11 is { } __value10)
             {
-                languageVariant11?.Invoke(LanguageVariant11!);
+                languageVariant11?.Invoke(__value10);
             }
-            else if (IsLanguageVariant12)
+            else if (LanguageVariant12 is { } __value11)
             {
-                languageVariant12?.Invoke(LanguageVariant12!);
+                languageVariant12?.Invoke(__value11);
             }
-            else if (IsLanguageVariant13)
+            else if (LanguageVariant13 is { } __value12)
             {
-                languageVariant13?.Invoke(LanguageVariant13!);
+                languageVariant13?.Invoke(__value12);
             }
-            else if (IsLanguageVariant14)
+            else if (LanguageVariant14 is { } __value13)
             {
-                languageVariant14?.Invoke(LanguageVariant14!);
+                languageVariant14?.Invoke(__value13);
             }
-            else if (IsLanguageVariant15)
+            else if (LanguageVariant15 is { } __value14)
             {
-                languageVariant15?.Invoke(LanguageVariant15!);
+                languageVariant15?.Invoke(__value14);
             }
-            else if (IsLanguageVariant16)
+            else if (LanguageVariant16 is { } __value15)
             {
-                languageVariant16?.Invoke(LanguageVariant16!);
+                languageVariant16?.Invoke(__value15);
             }
-            else if (IsLanguageVariant17)
+            else if (LanguageVariant17 is { } __value16)
             {
-                languageVariant17?.Invoke(LanguageVariant17!);
+                languageVariant17?.Invoke(__value16);
             }
-            else if (IsLanguageVariant18)
+            else if (LanguageVariant18 is { } __value17)
             {
-                languageVariant18?.Invoke(LanguageVariant18!);
+                languageVariant18?.Invoke(__value17);
             }
         }
 

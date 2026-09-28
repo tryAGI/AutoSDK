@@ -1,4 +1,4 @@
-﻿//HintName: G.Api.WebSearch.g.cs
+//HintName: G.Api.WebSearch.g.cs
 
 #nullable enable
 
@@ -289,7 +289,7 @@ namespace G
                 PrepareWebSearchRequest(
                     httpClient: HttpClient,
                     httpRequestMessage: __httpRequest,
-                    q: q!,
+                    q: q,
                     country: country,
                     searchLang: searchLang,
                     uiLang: uiLang,
@@ -325,7 +325,7 @@ namespace G
                                 pathTemplate: "\"/web/search\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: null,
                                 exception: null,
                                 clientOptions: Options,
@@ -359,7 +359,7 @@ namespace G
                                 pathTemplate: "\"/web/search\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: null,
                                 exception: __exception,
                                 clientOptions: Options,
@@ -400,7 +400,7 @@ namespace G
                                 pathTemplate: "\"/web/search\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: __response,
                                 exception: null,
                                 clientOptions: Options,
@@ -448,7 +448,7 @@ namespace G
                                 pathTemplate: "\"/web/search\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: __response,
                                 exception: null,
                                 clientOptions: Options,
@@ -470,7 +470,7 @@ namespace G
                                 pathTemplate: "\"/web/search\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: __response,
                                 exception: null,
                                 clientOptions: Options,

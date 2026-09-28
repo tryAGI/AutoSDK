@@ -1,4 +1,4 @@
-﻿//HintName: G.UsageLimitsPoliciesClient.ListUsageLimitsPolicyEntities.g.cs
+//HintName: G.UsageLimitsPoliciesClient.ListUsageLimitsPolicyEntities.g.cs
 
 #nullable enable
 
@@ -186,7 +186,7 @@ namespace G
                 PrepareListUsageLimitsPolicyEntitiesRequest(
                     httpClient: HttpClient,
                     httpRequestMessage: __httpRequest,
-                    policyUsageLimitsId: policyUsageLimitsId!,
+                    policyUsageLimitsId: policyUsageLimitsId,
                     status: status,
                     search: search,
                     pageSize: pageSize,
@@ -212,7 +212,7 @@ namespace G
                                 pathTemplate: "$\"/policies/usage-limits/{policyUsageLimitsId}/entities\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: null,
                                 exception: null,
                                 clientOptions: Options,
@@ -246,7 +246,7 @@ namespace G
                                 pathTemplate: "$\"/policies/usage-limits/{policyUsageLimitsId}/entities\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: null,
                                 exception: __exception,
                                 clientOptions: Options,
@@ -287,7 +287,7 @@ namespace G
                                 pathTemplate: "$\"/policies/usage-limits/{policyUsageLimitsId}/entities\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: __response,
                                 exception: null,
                                 clientOptions: Options,
@@ -335,7 +335,7 @@ namespace G
                                 pathTemplate: "$\"/policies/usage-limits/{policyUsageLimitsId}/entities\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: __response,
                                 exception: null,
                                 clientOptions: Options,
@@ -357,7 +357,7 @@ namespace G
                                 pathTemplate: "$\"/policies/usage-limits/{policyUsageLimitsId}/entities\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: __response,
                                 exception: null,
                                 clientOptions: Options,

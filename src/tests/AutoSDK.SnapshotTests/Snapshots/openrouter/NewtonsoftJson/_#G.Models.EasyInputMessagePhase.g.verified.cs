@@ -1,4 +1,4 @@
-﻿//HintName: G.Models.EasyInputMessagePhase.g.cs
+//HintName: G.Models.EasyInputMessagePhase.g.cs
 #pragma warning disable CS0618 // Type or member is obsolete
 
 #nullable enable
@@ -43,8 +43,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.EasyInputMessagePhase0 PickEasyInputMessagePhase0() => IsEasyInputMessagePhase0
-            ? EasyInputMessagePhase0!.Value
+        public global::G.EasyInputMessagePhase0 PickEasyInputMessagePhase0() => EasyInputMessagePhase0 is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'EasyInputMessagePhase0' but the value was {ToString()}.");
 
         /// <summary>
@@ -80,8 +80,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.EasyInputMessagePhase1 PickEasyInputMessagePhase1() => IsEasyInputMessagePhase1
-            ? EasyInputMessagePhase1!.Value
+        public global::G.EasyInputMessagePhase1 PickEasyInputMessagePhase1() => EasyInputMessagePhase1 is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'EasyInputMessagePhase1' but the value was {ToString()}.");
 
         /// <summary>
@@ -117,8 +117,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public object PickEasyInputMessagePhaseVariant3() => IsEasyInputMessagePhaseVariant3
-            ? EasyInputMessagePhaseVariant3!
+        public object PickEasyInputMessagePhaseVariant3() => EasyInputMessagePhaseVariant3 is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'EasyInputMessagePhaseVariant3' but the value was {ToString()}.");
         /// <summary>
         /// 
@@ -220,17 +220,17 @@ namespace G
                 Validate();
             }
 
-            if (IsEasyInputMessagePhase0 && easyInputMessagePhase0 != null)
+            if (EasyInputMessagePhase0 is { } __value0 && easyInputMessagePhase0 != null)
             {
-                return easyInputMessagePhase0(EasyInputMessagePhase0!);
+                return easyInputMessagePhase0(__value0);
             }
-            else if (IsEasyInputMessagePhase1 && easyInputMessagePhase1 != null)
+            else if (EasyInputMessagePhase1 is { } __value1 && easyInputMessagePhase1 != null)
             {
-                return easyInputMessagePhase1(EasyInputMessagePhase1!);
+                return easyInputMessagePhase1(__value1);
             }
-            else if (IsEasyInputMessagePhaseVariant3 && easyInputMessagePhaseVariant3 != null)
+            else if (EasyInputMessagePhaseVariant3 is { } __value2 && easyInputMessagePhaseVariant3 != null)
             {
-                return easyInputMessagePhaseVariant3(EasyInputMessagePhaseVariant3!);
+                return easyInputMessagePhaseVariant3(__value2);
             }
 
             return default(TResult);
@@ -252,17 +252,17 @@ namespace G
                 Validate();
             }
 
-            if (IsEasyInputMessagePhase0)
+            if (EasyInputMessagePhase0 is { } __value0)
             {
-                easyInputMessagePhase0?.Invoke(EasyInputMessagePhase0!);
+                easyInputMessagePhase0?.Invoke(__value0);
             }
-            else if (IsEasyInputMessagePhase1)
+            else if (EasyInputMessagePhase1 is { } __value1)
             {
-                easyInputMessagePhase1?.Invoke(EasyInputMessagePhase1!);
+                easyInputMessagePhase1?.Invoke(__value1);
             }
-            else if (IsEasyInputMessagePhaseVariant3)
+            else if (EasyInputMessagePhaseVariant3 is { } __value2)
             {
-                easyInputMessagePhaseVariant3?.Invoke(EasyInputMessagePhaseVariant3!);
+                easyInputMessagePhaseVariant3?.Invoke(__value2);
             }
         }
 
@@ -280,17 +280,17 @@ namespace G
                 Validate();
             }
 
-            if (IsEasyInputMessagePhase0)
+            if (EasyInputMessagePhase0 is { } __value0)
             {
-                easyInputMessagePhase0?.Invoke(EasyInputMessagePhase0!);
+                easyInputMessagePhase0?.Invoke(__value0);
             }
-            else if (IsEasyInputMessagePhase1)
+            else if (EasyInputMessagePhase1 is { } __value1)
             {
-                easyInputMessagePhase1?.Invoke(EasyInputMessagePhase1!);
+                easyInputMessagePhase1?.Invoke(__value1);
             }
-            else if (IsEasyInputMessagePhaseVariant3)
+            else if (EasyInputMessagePhaseVariant3 is { } __value2)
             {
-                easyInputMessagePhaseVariant3?.Invoke(EasyInputMessagePhaseVariant3!);
+                easyInputMessagePhaseVariant3?.Invoke(__value2);
             }
         }
 

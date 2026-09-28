@@ -1,4 +1,4 @@
-﻿//HintName: G.Models.CreateSoundEffectRequest.g.cs
+//HintName: G.Models.CreateSoundEffectRequest.g.cs
 #pragma warning disable CS0618 // Type or member is obsolete
 
 #nullable enable
@@ -48,8 +48,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.CreateSoundEffectRequestElevenTextToSoundV2 PickElevenTextToSoundV2() => IsElevenTextToSoundV2
-            ? ElevenTextToSoundV2!
+        public global::G.CreateSoundEffectRequestElevenTextToSoundV2 PickElevenTextToSoundV2() => ElevenTextToSoundV2 is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'ElevenTextToSoundV2' but the value was {ToString()}.");
         /// <summary>
         /// 
@@ -121,9 +121,9 @@ namespace G
                 Validate();
             }
 
-            if (IsElevenTextToSoundV2 && elevenTextToSoundV2 != null)
+            if (ElevenTextToSoundV2 is { } __value0 && elevenTextToSoundV2 != null)
             {
-                return elevenTextToSoundV2(ElevenTextToSoundV2!);
+                return elevenTextToSoundV2(__value0);
             }
 
             return default(TResult);
@@ -141,9 +141,9 @@ namespace G
                 Validate();
             }
 
-            if (IsElevenTextToSoundV2)
+            if (ElevenTextToSoundV2 is { } __value0)
             {
-                elevenTextToSoundV2?.Invoke(ElevenTextToSoundV2!);
+                elevenTextToSoundV2?.Invoke(__value0);
             }
         }
 
@@ -159,9 +159,9 @@ namespace G
                 Validate();
             }
 
-            if (IsElevenTextToSoundV2)
+            if (ElevenTextToSoundV2 is { } __value0)
             {
-                elevenTextToSoundV2?.Invoke(ElevenTextToSoundV2!);
+                elevenTextToSoundV2?.Invoke(__value0);
             }
         }
 

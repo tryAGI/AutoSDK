@@ -1,4 +1,4 @@
-﻿//HintName: G.Models.BranchInfoVariant1.g.cs
+//HintName: G.Models.BranchInfoVariant1.g.cs
 #pragma warning disable CS0618 // Type or member is obsolete
 
 #nullable enable
@@ -48,8 +48,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.TransferBranchInfoTrafficSplit PickTrafficSplit() => IsTrafficSplit
-            ? TrafficSplit!
+        public global::G.TransferBranchInfoTrafficSplit PickTrafficSplit() => TrafficSplit is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'TrafficSplit' but the value was {ToString()}.");
 
         /// <summary>
@@ -85,8 +85,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.TransferBranchInfoDefaultingToMain PickDefaultingToMain() => IsDefaultingToMain
-            ? DefaultingToMain!
+        public global::G.TransferBranchInfoDefaultingToMain PickDefaultingToMain() => DefaultingToMain is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'DefaultingToMain' but the value was {ToString()}.");
         /// <summary>
         /// 
@@ -186,13 +186,13 @@ namespace G
                 Validate();
             }
 
-            if (IsTrafficSplit && trafficSplit != null)
+            if (TrafficSplit is { } __value0 && trafficSplit != null)
             {
-                return trafficSplit(TrafficSplit!);
+                return trafficSplit(__value0);
             }
-            else if (IsDefaultingToMain && defaultingToMain != null)
+            else if (DefaultingToMain is { } __value1 && defaultingToMain != null)
             {
-                return defaultingToMain(DefaultingToMain!);
+                return defaultingToMain(__value1);
             }
 
             return default(TResult);
@@ -212,13 +212,13 @@ namespace G
                 Validate();
             }
 
-            if (IsTrafficSplit)
+            if (TrafficSplit is { } __value0)
             {
-                trafficSplit?.Invoke(TrafficSplit!);
+                trafficSplit?.Invoke(__value0);
             }
-            else if (IsDefaultingToMain)
+            else if (DefaultingToMain is { } __value1)
             {
-                defaultingToMain?.Invoke(DefaultingToMain!);
+                defaultingToMain?.Invoke(__value1);
             }
         }
 
@@ -235,13 +235,13 @@ namespace G
                 Validate();
             }
 
-            if (IsTrafficSplit)
+            if (TrafficSplit is { } __value0)
             {
-                trafficSplit?.Invoke(TrafficSplit!);
+                trafficSplit?.Invoke(__value0);
             }
-            else if (IsDefaultingToMain)
+            else if (DefaultingToMain is { } __value1)
             {
-                defaultingToMain?.Invoke(DefaultingToMain!);
+                defaultingToMain?.Invoke(__value1);
             }
         }
 

@@ -1,4 +1,4 @@
-﻿//HintName: G.Models.SageMakerConfiguration.g.cs
+//HintName: G.Models.SageMakerConfiguration.g.cs
 #pragma warning disable CS0618 // Type or member is obsolete
 
 #nullable enable
@@ -43,8 +43,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.BedrockConfiguration PickBedrock() => IsBedrock
-            ? Bedrock!
+        public global::G.BedrockConfiguration PickBedrock() => Bedrock is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Bedrock' but the value was {ToString()}.");
 
         /// <summary>
@@ -80,8 +80,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.SageMakerConfigurationVariant2 PickSageMakerConfigurationVariant2() => IsSageMakerConfigurationVariant2
-            ? SageMakerConfigurationVariant2!
+        public global::G.SageMakerConfigurationVariant2 PickSageMakerConfigurationVariant2() => SageMakerConfigurationVariant2 is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'SageMakerConfigurationVariant2' but the value was {ToString()}.");
         /// <summary>
         /// 
@@ -178,13 +178,13 @@ namespace G
                 Validate();
             }
 
-            if (IsBedrock && bedrock != null)
+            if (Bedrock is { } __value0 && bedrock != null)
             {
-                return bedrock(Bedrock!);
+                return bedrock(__value0);
             }
-            else if (IsSageMakerConfigurationVariant2 && sageMakerConfigurationVariant2 != null)
+            else if (SageMakerConfigurationVariant2 is { } __value1 && sageMakerConfigurationVariant2 != null)
             {
-                return sageMakerConfigurationVariant2(SageMakerConfigurationVariant2!);
+                return sageMakerConfigurationVariant2(__value1);
             }
 
             return default(TResult);
@@ -204,13 +204,13 @@ namespace G
                 Validate();
             }
 
-            if (IsBedrock)
+            if (Bedrock is { } __value0)
             {
-                bedrock?.Invoke(Bedrock!);
+                bedrock?.Invoke(__value0);
             }
-            else if (IsSageMakerConfigurationVariant2)
+            else if (SageMakerConfigurationVariant2 is { } __value1)
             {
-                sageMakerConfigurationVariant2?.Invoke(SageMakerConfigurationVariant2!);
+                sageMakerConfigurationVariant2?.Invoke(__value1);
             }
         }
 
@@ -227,13 +227,13 @@ namespace G
                 Validate();
             }
 
-            if (IsBedrock)
+            if (Bedrock is { } __value0)
             {
-                bedrock?.Invoke(Bedrock!);
+                bedrock?.Invoke(__value0);
             }
-            else if (IsSageMakerConfigurationVariant2)
+            else if (SageMakerConfigurationVariant2 is { } __value1)
             {
-                sageMakerConfigurationVariant2?.Invoke(SageMakerConfigurationVariant2!);
+                sageMakerConfigurationVariant2?.Invoke(__value1);
             }
         }
 

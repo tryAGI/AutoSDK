@@ -1,4 +1,4 @@
-﻿//HintName: G.Models.MessagesItem.g.cs
+//HintName: G.Models.MessagesItem.g.cs
 #pragma warning disable CS0618 // Type or member is obsolete
 
 #nullable enable
@@ -48,8 +48,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.SystemMessage PickSystem() => IsSystem
-            ? System!
+        public global::G.SystemMessage PickSystem() => System is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'System' but the value was {ToString()}.");
 
         /// <summary>
@@ -85,8 +85,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.UserMessage PickUser() => IsUser
-            ? User!
+        public global::G.UserMessage PickUser() => User is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'User' but the value was {ToString()}.");
 
         /// <summary>
@@ -122,8 +122,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.AssistantMessage PickAssistant() => IsAssistant
-            ? Assistant!
+        public global::G.AssistantMessage PickAssistant() => Assistant is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Assistant' but the value was {ToString()}.");
 
         /// <summary>
@@ -159,8 +159,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.FunctionMessage PickFunction() => IsFunction
-            ? Function!
+        public global::G.FunctionMessage PickFunction() => Function is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Function' but the value was {ToString()}.");
 
         /// <summary>
@@ -196,8 +196,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.ToolMessage PickTool() => IsTool
-            ? Tool!
+        public global::G.ToolMessage PickTool() => Tool is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Tool' but the value was {ToString()}.");
 
         /// <summary>
@@ -233,8 +233,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.PlaceholderMessage PickPlaceholder() => IsPlaceholder
-            ? Placeholder!
+        public global::G.PlaceholderMessage PickPlaceholder() => Placeholder is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Placeholder' but the value was {ToString()}.");
 
         /// <summary>
@@ -270,8 +270,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.DeveloperMessage PickDeveloper() => IsDeveloper
-            ? Developer!
+        public global::G.DeveloperMessage PickDeveloper() => Developer is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Developer' but the value was {ToString()}.");
         /// <summary>
         /// 
@@ -511,33 +511,33 @@ namespace G
                 Validate();
             }
 
-            if (IsSystem && system != null)
+            if (System is { } __value0 && system != null)
             {
-                return system(System!);
+                return system(__value0);
             }
-            else if (IsUser && user != null)
+            else if (User is { } __value1 && user != null)
             {
-                return user(User!);
+                return user(__value1);
             }
-            else if (IsAssistant && assistant != null)
+            else if (Assistant is { } __value2 && assistant != null)
             {
-                return assistant(Assistant!);
+                return assistant(__value2);
             }
-            else if (IsFunction && function != null)
+            else if (Function is { } __value3 && function != null)
             {
-                return function(Function!);
+                return function(__value3);
             }
-            else if (IsTool && tool != null)
+            else if (Tool is { } __value4 && tool != null)
             {
-                return tool(Tool!);
+                return tool(__value4);
             }
-            else if (IsPlaceholder && placeholder != null)
+            else if (Placeholder is { } __value5 && placeholder != null)
             {
-                return placeholder(Placeholder!);
+                return placeholder(__value5);
             }
-            else if (IsDeveloper && developer != null)
+            else if (Developer is { } __value6 && developer != null)
             {
-                return developer(Developer!);
+                return developer(__value6);
             }
 
             return default(TResult);
@@ -567,33 +567,33 @@ namespace G
                 Validate();
             }
 
-            if (IsSystem)
+            if (System is { } __value0)
             {
-                system?.Invoke(System!);
+                system?.Invoke(__value0);
             }
-            else if (IsUser)
+            else if (User is { } __value1)
             {
-                user?.Invoke(User!);
+                user?.Invoke(__value1);
             }
-            else if (IsAssistant)
+            else if (Assistant is { } __value2)
             {
-                assistant?.Invoke(Assistant!);
+                assistant?.Invoke(__value2);
             }
-            else if (IsFunction)
+            else if (Function is { } __value3)
             {
-                function?.Invoke(Function!);
+                function?.Invoke(__value3);
             }
-            else if (IsTool)
+            else if (Tool is { } __value4)
             {
-                tool?.Invoke(Tool!);
+                tool?.Invoke(__value4);
             }
-            else if (IsPlaceholder)
+            else if (Placeholder is { } __value5)
             {
-                placeholder?.Invoke(Placeholder!);
+                placeholder?.Invoke(__value5);
             }
-            else if (IsDeveloper)
+            else if (Developer is { } __value6)
             {
-                developer?.Invoke(Developer!);
+                developer?.Invoke(__value6);
             }
         }
 
@@ -615,33 +615,33 @@ namespace G
                 Validate();
             }
 
-            if (IsSystem)
+            if (System is { } __value0)
             {
-                system?.Invoke(System!);
+                system?.Invoke(__value0);
             }
-            else if (IsUser)
+            else if (User is { } __value1)
             {
-                user?.Invoke(User!);
+                user?.Invoke(__value1);
             }
-            else if (IsAssistant)
+            else if (Assistant is { } __value2)
             {
-                assistant?.Invoke(Assistant!);
+                assistant?.Invoke(__value2);
             }
-            else if (IsFunction)
+            else if (Function is { } __value3)
             {
-                function?.Invoke(Function!);
+                function?.Invoke(__value3);
             }
-            else if (IsTool)
+            else if (Tool is { } __value4)
             {
-                tool?.Invoke(Tool!);
+                tool?.Invoke(__value4);
             }
-            else if (IsPlaceholder)
+            else if (Placeholder is { } __value5)
             {
-                placeholder?.Invoke(Placeholder!);
+                placeholder?.Invoke(__value5);
             }
-            else if (IsDeveloper)
+            else if (Developer is { } __value6)
             {
-                developer?.Invoke(Developer!);
+                developer?.Invoke(__value6);
             }
         }
 

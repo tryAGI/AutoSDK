@@ -1,4 +1,4 @@
-﻿//HintName: G.Models.VectorInput.g.cs
+//HintName: G.Models.VectorInput.g.cs
 #pragma warning disable CS0618 // Type or member is obsolete
 
 #nullable enable
@@ -43,8 +43,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<float> PickVectorInputVariant1() => IsVectorInputVariant1
-            ? VectorInputVariant1!
+        public global::System.Collections.Generic.IList<float> PickVectorInputVariant1() => VectorInputVariant1 is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'VectorInputVariant1' but the value was {ToString()}.");
 
         /// <summary>
@@ -80,8 +80,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.SparseVector PickSparse() => IsSparse
-            ? Sparse!
+        public global::G.SparseVector PickSparse() => Sparse is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Sparse' but the value was {ToString()}.");
 
         /// <summary>
@@ -117,8 +117,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::System.Collections.Generic.IList<float>> PickVectorInputVariant3() => IsVectorInputVariant3
-            ? VectorInputVariant3!
+        public global::System.Collections.Generic.IList<global::System.Collections.Generic.IList<float>> PickVectorInputVariant3() => VectorInputVariant3 is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'VectorInputVariant3' but the value was {ToString()}.");
 
         /// <summary>
@@ -154,8 +154,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.ExtendedPointId PickExtendedPointId() => IsExtendedPointId
-            ? ExtendedPointId!.Value
+        public global::G.ExtendedPointId PickExtendedPointId() => ExtendedPointId is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'ExtendedPointId' but the value was {ToString()}.");
 
         /// <summary>
@@ -192,8 +192,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.Document PickDocument() => IsDocument
-            ? Document!
+        public global::G.Document PickDocument() => Document is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Document' but the value was {ToString()}.");
 
         /// <summary>
@@ -230,8 +230,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.Image PickImage() => IsImage
-            ? Image!
+        public global::G.Image PickImage() => Image is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Image' but the value was {ToString()}.");
 
         /// <summary>
@@ -268,8 +268,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.InferenceObject PickInferenceObject() => IsInferenceObject
-            ? InferenceObject!
+        public global::G.InferenceObject PickInferenceObject() => InferenceObject is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'InferenceObject' but the value was {ToString()}.");
         /// <summary>
         /// 
@@ -460,33 +460,33 @@ namespace G
                 Validate();
             }
 
-            if (IsVectorInputVariant1 && vectorInputVariant1 != null)
+            if (VectorInputVariant1 is { } __value0 && vectorInputVariant1 != null)
             {
-                return vectorInputVariant1(VectorInputVariant1!);
+                return vectorInputVariant1(__value0);
             }
-            else if (IsSparse && sparse != null)
+            else if (Sparse is { } __value1 && sparse != null)
             {
-                return sparse(Sparse!);
+                return sparse(__value1);
             }
-            else if (IsVectorInputVariant3 && vectorInputVariant3 != null)
+            else if (VectorInputVariant3 is { } __value2 && vectorInputVariant3 != null)
             {
-                return vectorInputVariant3(VectorInputVariant3!);
+                return vectorInputVariant3(__value2);
             }
-            else if (IsExtendedPointId && extendedPointId != null)
+            else if (ExtendedPointId is { } __value3 && extendedPointId != null)
             {
-                return extendedPointId(ExtendedPointId!);
+                return extendedPointId(__value3);
             }
-            else if (IsDocument && document != null)
+            else if (Document is { } __value4 && document != null)
             {
-                return document(Document!);
+                return document(__value4);
             }
-            else if (IsImage && image != null)
+            else if (Image is { } __value5 && image != null)
             {
-                return image(Image!);
+                return image(__value5);
             }
-            else if (IsInferenceObject && inferenceObject != null)
+            else if (InferenceObject is { } __value6 && inferenceObject != null)
             {
-                return inferenceObject(InferenceObject!);
+                return inferenceObject(__value6);
             }
 
             return default(TResult);
@@ -516,33 +516,33 @@ namespace G
                 Validate();
             }
 
-            if (IsVectorInputVariant1)
+            if (VectorInputVariant1 is { } __value0)
             {
-                vectorInputVariant1?.Invoke(VectorInputVariant1!);
+                vectorInputVariant1?.Invoke(__value0);
             }
-            else if (IsSparse)
+            else if (Sparse is { } __value1)
             {
-                sparse?.Invoke(Sparse!);
+                sparse?.Invoke(__value1);
             }
-            else if (IsVectorInputVariant3)
+            else if (VectorInputVariant3 is { } __value2)
             {
-                vectorInputVariant3?.Invoke(VectorInputVariant3!);
+                vectorInputVariant3?.Invoke(__value2);
             }
-            else if (IsExtendedPointId)
+            else if (ExtendedPointId is { } __value3)
             {
-                extendedPointId?.Invoke(ExtendedPointId!);
+                extendedPointId?.Invoke(__value3);
             }
-            else if (IsDocument)
+            else if (Document is { } __value4)
             {
-                document?.Invoke(Document!);
+                document?.Invoke(__value4);
             }
-            else if (IsImage)
+            else if (Image is { } __value5)
             {
-                image?.Invoke(Image!);
+                image?.Invoke(__value5);
             }
-            else if (IsInferenceObject)
+            else if (InferenceObject is { } __value6)
             {
-                inferenceObject?.Invoke(InferenceObject!);
+                inferenceObject?.Invoke(__value6);
             }
         }
 
@@ -564,33 +564,33 @@ namespace G
                 Validate();
             }
 
-            if (IsVectorInputVariant1)
+            if (VectorInputVariant1 is { } __value0)
             {
-                vectorInputVariant1?.Invoke(VectorInputVariant1!);
+                vectorInputVariant1?.Invoke(__value0);
             }
-            else if (IsSparse)
+            else if (Sparse is { } __value1)
             {
-                sparse?.Invoke(Sparse!);
+                sparse?.Invoke(__value1);
             }
-            else if (IsVectorInputVariant3)
+            else if (VectorInputVariant3 is { } __value2)
             {
-                vectorInputVariant3?.Invoke(VectorInputVariant3!);
+                vectorInputVariant3?.Invoke(__value2);
             }
-            else if (IsExtendedPointId)
+            else if (ExtendedPointId is { } __value3)
             {
-                extendedPointId?.Invoke(ExtendedPointId!);
+                extendedPointId?.Invoke(__value3);
             }
-            else if (IsDocument)
+            else if (Document is { } __value4)
             {
-                document?.Invoke(Document!);
+                document?.Invoke(__value4);
             }
-            else if (IsImage)
+            else if (Image is { } __value5)
             {
-                image?.Invoke(Image!);
+                image?.Invoke(__value5);
             }
-            else if (IsInferenceObject)
+            else if (InferenceObject is { } __value6)
             {
-                inferenceObject?.Invoke(InferenceObject!);
+                inferenceObject?.Invoke(__value6);
             }
         }
 

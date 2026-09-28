@@ -1,4 +1,4 @@
-﻿//HintName: G.Models.CreateResponse.g.cs
+//HintName: G.Models.CreateResponse.g.cs
 #pragma warning disable CS0618 // Type or member is obsolete
 
 #nullable enable
@@ -43,8 +43,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.CreateModelResponseProperties PickModelProperties() => IsModelProperties
-            ? ModelProperties!.Value
+        public global::G.CreateModelResponseProperties PickModelProperties() => ModelProperties is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'ModelProperties' but the value was {ToString()}.");
 
         /// <summary>
@@ -80,8 +80,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.ResponseProperties PickProperties() => IsProperties
-            ? Properties!
+        public global::G.ResponseProperties PickProperties() => Properties is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Properties' but the value was {ToString()}.");
 
         /// <summary>
@@ -117,8 +117,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.CreateResponseVariant3 PickCreateResponseVariant3() => IsCreateResponseVariant3
-            ? CreateResponseVariant3!
+        public global::G.CreateResponseVariant3 PickCreateResponseVariant3() => CreateResponseVariant3 is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'CreateResponseVariant3' but the value was {ToString()}.");
         /// <summary>
         /// 
@@ -243,17 +243,17 @@ namespace G
                 Validate();
             }
 
-            if (IsModelProperties && modelProperties != null)
+            if (ModelProperties is { } __value0 && modelProperties != null)
             {
-                return modelProperties(ModelProperties!);
+                return modelProperties(__value0);
             }
-            else if (IsProperties && properties != null)
+            else if (Properties is { } __value1 && properties != null)
             {
-                return properties(Properties!);
+                return properties(__value1);
             }
-            else if (IsCreateResponseVariant3 && createResponseVariant3 != null)
+            else if (CreateResponseVariant3 is { } __value2 && createResponseVariant3 != null)
             {
-                return createResponseVariant3(CreateResponseVariant3!);
+                return createResponseVariant3(__value2);
             }
 
             return default(TResult);
@@ -275,17 +275,17 @@ namespace G
                 Validate();
             }
 
-            if (IsModelProperties)
+            if (ModelProperties is { } __value0)
             {
-                modelProperties?.Invoke(ModelProperties!);
+                modelProperties?.Invoke(__value0);
             }
-            else if (IsProperties)
+            else if (Properties is { } __value1)
             {
-                properties?.Invoke(Properties!);
+                properties?.Invoke(__value1);
             }
-            else if (IsCreateResponseVariant3)
+            else if (CreateResponseVariant3 is { } __value2)
             {
-                createResponseVariant3?.Invoke(CreateResponseVariant3!);
+                createResponseVariant3?.Invoke(__value2);
             }
         }
 
@@ -303,17 +303,17 @@ namespace G
                 Validate();
             }
 
-            if (IsModelProperties)
+            if (ModelProperties is { } __value0)
             {
-                modelProperties?.Invoke(ModelProperties!);
+                modelProperties?.Invoke(__value0);
             }
-            else if (IsProperties)
+            else if (Properties is { } __value1)
             {
-                properties?.Invoke(Properties!);
+                properties?.Invoke(__value1);
             }
-            else if (IsCreateResponseVariant3)
+            else if (CreateResponseVariant3 is { } __value2)
             {
-                createResponseVariant3?.Invoke(CreateResponseVariant3!);
+                createResponseVariant3?.Invoke(__value2);
             }
         }
 

@@ -1,4 +1,4 @@
-﻿//HintName: G.Models.ChatCompletionDocumentSource.g.cs
+//HintName: G.Models.ChatCompletionDocumentSource.g.cs
 #pragma warning disable CS0618 // Type or member is obsolete
 
 #nullable enable
@@ -48,8 +48,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.ChatCompletionDocumentSourceText PickText() => IsText
-            ? Text!
+        public global::G.ChatCompletionDocumentSourceText PickText() => Text is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Text' but the value was {ToString()}.");
 
         /// <summary>
@@ -85,8 +85,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.ChatCompletionDocumentSourceJSON PickJson() => IsJson
-            ? Json!
+        public global::G.ChatCompletionDocumentSourceJSON PickJson() => Json is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Json' but the value was {ToString()}.");
         /// <summary>
         /// 
@@ -186,13 +186,13 @@ namespace G
                 Validate();
             }
 
-            if (IsText && text != null)
+            if (Text is { } __value0 && text != null)
             {
-                return text(Text!);
+                return text(__value0);
             }
-            else if (IsJson && json != null)
+            else if (Json is { } __value1 && json != null)
             {
-                return json(Json!);
+                return json(__value1);
             }
 
             return default(TResult);
@@ -212,13 +212,13 @@ namespace G
                 Validate();
             }
 
-            if (IsText)
+            if (Text is { } __value0)
             {
-                text?.Invoke(Text!);
+                text?.Invoke(__value0);
             }
-            else if (IsJson)
+            else if (Json is { } __value1)
             {
-                json?.Invoke(Json!);
+                json?.Invoke(__value1);
             }
         }
 
@@ -235,13 +235,13 @@ namespace G
                 Validate();
             }
 
-            if (IsText)
+            if (Text is { } __value0)
             {
-                text?.Invoke(Text!);
+                text?.Invoke(__value0);
             }
-            else if (IsJson)
+            else if (Json is { } __value1)
             {
-                json?.Invoke(Json!);
+                json?.Invoke(__value1);
             }
         }
 

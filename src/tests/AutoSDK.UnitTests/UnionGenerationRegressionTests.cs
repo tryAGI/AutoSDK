@@ -3,6 +3,9 @@ using AutoSDK.Generation;
 using AutoSDK.Helpers;
 using AutoSDK.Models;
 using AutoSDK.TypeMapping;
+using Microsoft.CodeAnalysis;
+using Microsoft.CodeAnalysis.CSharp;
+using Microsoft.CodeAnalysis.CSharp.Syntax;
 
 namespace AutoSDK.UnitTests;
 
@@ -49,13 +52,13 @@ public class UnionGenerationRegressionTests
         var model = Sources.GenerateAnyOf(union);
         var converter = Sources.GenerateAnyOfJsonConverter(union);
 
-        model.Should().Contain("PickCustom() => IsCustom");
-        model.Should().Contain("? Custom!");
-        model.Should().NotContain("Custom!.Value");
-        model.Should().Contain("Count!.Value");
-        converter.Should().Contain("value.Custom!, typeInfo");
-        converter.Should().NotContain("value.Custom!.Value");
-        converter.Should().Contain("value.Count!.Value, typeInfo");
+        model.Should().Contain("PickCustom() => Custom is { } value");
+        model.Should().Contain("Custom is { } value");
+        model.Should().Contain("Count is { } value");
+        converter.Should().Contain("value.PickCustom(), typeInfo");
+        converter.Should().Contain("value.PickCount(), typeInfo");
+        AssertNoNullForgiving(model);
+        AssertNoNullForgiving(converter);
     }
 
     [TestMethod]
@@ -104,8 +107,10 @@ public class UnionGenerationRegressionTests
         var model = Sources.GenerateAnyOf(union);
         var converter = Sources.GenerateAnyOfJsonConverter(union);
 
-        model.Should().Contain("Inner!.Value");
-        converter.Should().Contain("value.Inner!.Value, typeInfo");
+        model.Should().Contain("Inner is { } value");
+        converter.Should().Contain("value.PickInner(), typeInfo");
+        AssertNoNullForgiving(model);
+        AssertNoNullForgiving(converter);
     }
 
     [TestMethod]
@@ -218,5 +223,13 @@ public class UnionGenerationRegressionTests
                 emittedEnums.Should().Contain(property.Type.CSharpTypeWithoutNullability);
             }
         }
+    }
+
+    private static void AssertNoNullForgiving(string source)
+    {
+        CSharpSyntaxTree.ParseText(source).GetRoot().DescendantNodes()
+            .OfType<PostfixUnaryExpressionSyntax>()
+            .Where(node => node.IsKind(SyntaxKind.SuppressNullableWarningExpression))
+            .Should().BeEmpty();
     }
 }

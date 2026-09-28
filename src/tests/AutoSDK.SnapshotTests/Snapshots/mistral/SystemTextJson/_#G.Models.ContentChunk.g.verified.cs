@@ -1,4 +1,4 @@
-﻿//HintName: G.Models.ContentChunk.g.cs
+//HintName: G.Models.ContentChunk.g.cs
 #pragma warning disable CS0618 // Type or member is obsolete
 
 #nullable enable
@@ -48,8 +48,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.TextChunk PickText() => IsText
-            ? Text!
+        public global::G.TextChunk PickText() => Text is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Text' but the value was {ToString()}.");
 
         /// <summary>
@@ -85,8 +85,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.ImageURLChunk PickImageUrl() => IsImageUrl
-            ? ImageUrl!
+        public global::G.ImageURLChunk PickImageUrl() => ImageUrl is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'ImageUrl' but the value was {ToString()}.");
 
         /// <summary>
@@ -122,8 +122,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.DocumentURLChunk PickDocumentUrl() => IsDocumentUrl
-            ? DocumentUrl!
+        public global::G.DocumentURLChunk PickDocumentUrl() => DocumentUrl is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'DocumentUrl' but the value was {ToString()}.");
 
         /// <summary>
@@ -159,8 +159,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.ReferenceChunk PickReference() => IsReference
-            ? Reference!
+        public global::G.ReferenceChunk PickReference() => Reference is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Reference' but the value was {ToString()}.");
         /// <summary>
         /// 
@@ -316,21 +316,21 @@ namespace G
                 Validate();
             }
 
-            if (IsText && text != null)
+            if (Text is { } __value0 && text != null)
             {
-                return text(Text!);
+                return text(__value0);
             }
-            else if (IsImageUrl && imageUrl != null)
+            else if (ImageUrl is { } __value1 && imageUrl != null)
             {
-                return imageUrl(ImageUrl!);
+                return imageUrl(__value1);
             }
-            else if (IsDocumentUrl && documentUrl != null)
+            else if (DocumentUrl is { } __value2 && documentUrl != null)
             {
-                return documentUrl(DocumentUrl!);
+                return documentUrl(__value2);
             }
-            else if (IsReference && reference != null)
+            else if (Reference is { } __value3 && reference != null)
             {
-                return reference(Reference!);
+                return reference(__value3);
             }
 
             return default(TResult);
@@ -354,21 +354,21 @@ namespace G
                 Validate();
             }
 
-            if (IsText)
+            if (Text is { } __value0)
             {
-                text?.Invoke(Text!);
+                text?.Invoke(__value0);
             }
-            else if (IsImageUrl)
+            else if (ImageUrl is { } __value1)
             {
-                imageUrl?.Invoke(ImageUrl!);
+                imageUrl?.Invoke(__value1);
             }
-            else if (IsDocumentUrl)
+            else if (DocumentUrl is { } __value2)
             {
-                documentUrl?.Invoke(DocumentUrl!);
+                documentUrl?.Invoke(__value2);
             }
-            else if (IsReference)
+            else if (Reference is { } __value3)
             {
-                reference?.Invoke(Reference!);
+                reference?.Invoke(__value3);
             }
         }
 
@@ -387,21 +387,21 @@ namespace G
                 Validate();
             }
 
-            if (IsText)
+            if (Text is { } __value0)
             {
-                text?.Invoke(Text!);
+                text?.Invoke(__value0);
             }
-            else if (IsImageUrl)
+            else if (ImageUrl is { } __value1)
             {
-                imageUrl?.Invoke(ImageUrl!);
+                imageUrl?.Invoke(__value1);
             }
-            else if (IsDocumentUrl)
+            else if (DocumentUrl is { } __value2)
             {
-                documentUrl?.Invoke(DocumentUrl!);
+                documentUrl?.Invoke(__value2);
             }
-            else if (IsReference)
+            else if (Reference is { } __value3)
             {
-                reference?.Invoke(Reference!);
+                reference?.Invoke(__value3);
             }
         }
 

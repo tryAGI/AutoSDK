@@ -1,4 +1,4 @@
-﻿//HintName: G.PipelinesClient.DeletePipelineDocumentApiV1PipelinesPipelineIdDocumentsDocumentIdDelete.g.cs
+//HintName: G.PipelinesClient.DeletePipelineDocumentApiV1PipelinesPipelineIdDocumentsDocumentIdDelete.g.cs
 
 #nullable enable
 
@@ -175,8 +175,8 @@ namespace G
                 PrepareDeletePipelineDocumentApiV1PipelinesPipelineIdDocumentsDocumentIdDeleteRequest(
                     httpClient: HttpClient,
                     httpRequestMessage: __httpRequest,
-                    documentId: documentId!,
-                    pipelineId: pipelineId!,
+                    documentId: documentId,
+                    pipelineId: pipelineId,
                     session: session);
 
                 global::G.AutoSDKHttpRequestOptions.StampAuthorizationOverride(__httpRequest);
@@ -201,7 +201,7 @@ namespace G
                                 pathTemplate: "$\"/api/v1/pipelines/{pipelineId}/documents/{documentId}\"",
                                 httpMethod: "DELETE",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: null,
                                 exception: null,
                                 clientOptions: Options,
@@ -235,7 +235,7 @@ namespace G
                                 pathTemplate: "$\"/api/v1/pipelines/{pipelineId}/documents/{documentId}\"",
                                 httpMethod: "DELETE",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: null,
                                 exception: __exception,
                                 clientOptions: Options,
@@ -276,7 +276,7 @@ namespace G
                                 pathTemplate: "$\"/api/v1/pipelines/{pipelineId}/documents/{documentId}\"",
                                 httpMethod: "DELETE",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: __response,
                                 exception: null,
                                 clientOptions: Options,
@@ -324,7 +324,7 @@ namespace G
                                 pathTemplate: "$\"/api/v1/pipelines/{pipelineId}/documents/{documentId}\"",
                                 httpMethod: "DELETE",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: __response,
                                 exception: null,
                                 clientOptions: Options,
@@ -346,7 +346,7 @@ namespace G
                                 pathTemplate: "$\"/api/v1/pipelines/{pipelineId}/documents/{documentId}\"",
                                 httpMethod: "DELETE",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: __response,
                                 exception: null,
                                 clientOptions: Options,

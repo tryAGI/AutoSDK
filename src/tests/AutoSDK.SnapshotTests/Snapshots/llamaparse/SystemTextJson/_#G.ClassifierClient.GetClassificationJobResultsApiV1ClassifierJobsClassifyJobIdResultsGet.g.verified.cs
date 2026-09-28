@@ -1,4 +1,4 @@
-﻿//HintName: G.ClassifierClient.GetClassificationJobResultsApiV1ClassifierJobsClassifyJobIdResultsGet.g.cs
+//HintName: G.ClassifierClient.GetClassificationJobResultsApiV1ClassifierJobsClassifyJobIdResultsGet.g.cs
 
 #nullable enable
 
@@ -190,7 +190,7 @@ namespace G
                 PrepareGetClassificationJobResultsApiV1ClassifierJobsClassifyJobIdResultsGetRequest(
                     httpClient: HttpClient,
                     httpRequestMessage: __httpRequest,
-                    classifyJobId: classifyJobId!,
+                    classifyJobId: classifyJobId,
                     projectId: projectId,
                     organizationId: organizationId,
                     session: session);
@@ -217,7 +217,7 @@ namespace G
                                 pathTemplate: "$\"/api/v1/classifier/jobs/{classifyJobId}/results\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: null,
                                 exception: null,
                                 clientOptions: Options,
@@ -251,7 +251,7 @@ namespace G
                                 pathTemplate: "$\"/api/v1/classifier/jobs/{classifyJobId}/results\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: null,
                                 exception: __exception,
                                 clientOptions: Options,
@@ -292,7 +292,7 @@ namespace G
                                 pathTemplate: "$\"/api/v1/classifier/jobs/{classifyJobId}/results\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: __response,
                                 exception: null,
                                 clientOptions: Options,
@@ -340,7 +340,7 @@ namespace G
                                 pathTemplate: "$\"/api/v1/classifier/jobs/{classifyJobId}/results\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: __response,
                                 exception: null,
                                 clientOptions: Options,
@@ -362,7 +362,7 @@ namespace G
                                 pathTemplate: "$\"/api/v1/classifier/jobs/{classifyJobId}/results\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: __response,
                                 exception: null,
                                 clientOptions: Options,

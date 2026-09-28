@@ -1,4 +1,4 @@
-﻿//HintName: G.ReactionsClient.ReactionsListForIssueComment.g.cs
+//HintName: G.ReactionsClient.ReactionsListForIssueComment.g.cs
 
 #nullable enable
 
@@ -158,9 +158,9 @@ namespace G
                 PrepareReactionsListForIssueCommentRequest(
                     httpClient: HttpClient,
                     httpRequestMessage: __httpRequest,
-                    owner: owner!,
-                    repo: repo!,
-                    commentId: commentId!,
+                    owner: owner,
+                    repo: repo,
+                    commentId: commentId,
                     content: content,
                     perPage: perPage,
                     page: page);
@@ -185,7 +185,7 @@ namespace G
                                 pathTemplate: "$\"/repos/{owner}/{repo}/issues/comments/{commentId}/reactions\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: null,
                                 exception: null,
                                 clientOptions: Options,
@@ -219,7 +219,7 @@ namespace G
                                 pathTemplate: "$\"/repos/{owner}/{repo}/issues/comments/{commentId}/reactions\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: null,
                                 exception: __exception,
                                 clientOptions: Options,
@@ -260,7 +260,7 @@ namespace G
                                 pathTemplate: "$\"/repos/{owner}/{repo}/issues/comments/{commentId}/reactions\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: __response,
                                 exception: null,
                                 clientOptions: Options,
@@ -308,7 +308,7 @@ namespace G
                                 pathTemplate: "$\"/repos/{owner}/{repo}/issues/comments/{commentId}/reactions\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: __response,
                                 exception: null,
                                 clientOptions: Options,
@@ -330,7 +330,7 @@ namespace G
                                 pathTemplate: "$\"/repos/{owner}/{repo}/issues/comments/{commentId}/reactions\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: __response,
                                 exception: null,
                                 clientOptions: Options,

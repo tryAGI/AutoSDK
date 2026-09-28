@@ -1,4 +1,4 @@
-﻿//HintName: G.JsonConverters.Provider.g.cs
+//HintName: G.JsonConverters.Provider.g.cs
 #nullable enable
 #pragma warning disable CS0618 // Type or member is obsolete
 
@@ -199,19 +199,19 @@ namespace G.JsonConverters
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.ProviderName), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.ProviderName> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.ProviderName).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Name!.Value, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickName(), typeInfo);
             }
             else if (value.IsModelName)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.ModelProviderName), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.ModelProviderName> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.ModelProviderName).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.ModelName!.Value, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickModelName(), typeInfo);
             }
             else if (value.IsEnum)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.ProviderEnum), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.ProviderEnum> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.ProviderEnum).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Enum!.Value, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickEnum(), typeInfo);
             }
         }
     }

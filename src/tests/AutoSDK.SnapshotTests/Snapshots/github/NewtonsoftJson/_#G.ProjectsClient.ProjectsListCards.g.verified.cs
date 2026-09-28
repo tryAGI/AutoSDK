@@ -1,4 +1,4 @@
-﻿//HintName: G.ProjectsClient.ProjectsListCards.g.cs
+//HintName: G.ProjectsClient.ProjectsListCards.g.cs
 
 #nullable enable
 
@@ -153,7 +153,7 @@ namespace G
                 PrepareProjectsListCardsRequest(
                     httpClient: HttpClient,
                     httpRequestMessage: __httpRequest,
-                    columnId: columnId!,
+                    columnId: columnId,
                     archivedState: archivedState,
                     perPage: perPage,
                     page: page);
@@ -178,7 +178,7 @@ namespace G
                                 pathTemplate: "$\"/projects/columns/{columnId}/cards\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: null,
                                 exception: null,
                                 clientOptions: Options,
@@ -212,7 +212,7 @@ namespace G
                                 pathTemplate: "$\"/projects/columns/{columnId}/cards\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: null,
                                 exception: __exception,
                                 clientOptions: Options,
@@ -253,7 +253,7 @@ namespace G
                                 pathTemplate: "$\"/projects/columns/{columnId}/cards\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: __response,
                                 exception: null,
                                 clientOptions: Options,
@@ -301,7 +301,7 @@ namespace G
                                 pathTemplate: "$\"/projects/columns/{columnId}/cards\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: __response,
                                 exception: null,
                                 clientOptions: Options,
@@ -323,7 +323,7 @@ namespace G
                                 pathTemplate: "$\"/projects/columns/{columnId}/cards\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: __response,
                                 exception: null,
                                 clientOptions: Options,

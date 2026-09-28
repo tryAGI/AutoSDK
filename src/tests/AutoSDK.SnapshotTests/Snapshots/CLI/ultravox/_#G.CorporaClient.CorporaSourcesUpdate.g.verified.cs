@@ -1,4 +1,4 @@
-﻿//HintName: G.CorporaClient.CorporaSourcesUpdate.g.cs
+//HintName: G.CorporaClient.CorporaSourcesUpdate.g.cs
 
 #nullable enable
 
@@ -173,8 +173,8 @@ namespace G
                 PrepareCorporaSourcesUpdateRequest(
                     httpClient: HttpClient,
                     httpRequestMessage: __httpRequest,
-                    corpusId: corpusId!,
-                    sourceId: sourceId!,
+                    corpusId: corpusId,
+                    sourceId: sourceId,
                     request: request);
 
                 global::G.AutoSDKHttpRequestOptions.StampAuthorizationOverride(__httpRequest);
@@ -199,7 +199,7 @@ namespace G
                                 pathTemplate: "$\"/api/corpora/{corpusId}/sources/{sourceId}\"",
                                 httpMethod: "PUT",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: null,
                                 exception: null,
                                 clientOptions: Options,
@@ -233,7 +233,7 @@ namespace G
                                 pathTemplate: "$\"/api/corpora/{corpusId}/sources/{sourceId}\"",
                                 httpMethod: "PUT",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: null,
                                 exception: __exception,
                                 clientOptions: Options,
@@ -274,7 +274,7 @@ namespace G
                                 pathTemplate: "$\"/api/corpora/{corpusId}/sources/{sourceId}\"",
                                 httpMethod: "PUT",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: __response,
                                 exception: null,
                                 clientOptions: Options,
@@ -322,7 +322,7 @@ namespace G
                                 pathTemplate: "$\"/api/corpora/{corpusId}/sources/{sourceId}\"",
                                 httpMethod: "PUT",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: __response,
                                 exception: null,
                                 clientOptions: Options,
@@ -344,7 +344,7 @@ namespace G
                                 pathTemplate: "$\"/api/corpora/{corpusId}/sources/{sourceId}\"",
                                 httpMethod: "PUT",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: __response,
                                 exception: null,
                                 clientOptions: Options,

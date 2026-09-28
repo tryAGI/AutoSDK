@@ -1,4 +1,4 @@
-﻿//HintName: G.Api.DeploymentLogsQueryV1DeploymentLogsQueryGet.g.cs
+//HintName: G.Api.DeploymentLogsQueryV1DeploymentLogsQueryGet.g.cs
 
 #nullable enable
 
@@ -233,7 +233,7 @@ namespace G
                 PrepareDeploymentLogsQueryV1DeploymentLogsQueryGetRequest(
                     httpClient: HttpClient,
                     httpRequestMessage: __httpRequest,
-                    deployId: deployId!,
+                    deployId: deployId,
                     podName: podName,
                     from: from,
                     to: to,
@@ -262,7 +262,7 @@ namespace G
                                 pathTemplate: "\"/v1/deployment_logs/query\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: null,
                                 exception: null,
                                 clientOptions: Options,
@@ -296,7 +296,7 @@ namespace G
                                 pathTemplate: "\"/v1/deployment_logs/query\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: null,
                                 exception: __exception,
                                 clientOptions: Options,
@@ -337,7 +337,7 @@ namespace G
                                 pathTemplate: "\"/v1/deployment_logs/query\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: __response,
                                 exception: null,
                                 clientOptions: Options,
@@ -385,7 +385,7 @@ namespace G
                                 pathTemplate: "\"/v1/deployment_logs/query\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: __response,
                                 exception: null,
                                 clientOptions: Options,
@@ -407,7 +407,7 @@ namespace G
                                 pathTemplate: "\"/v1/deployment_logs/query\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: __response,
                                 exception: null,
                                 clientOptions: Options,

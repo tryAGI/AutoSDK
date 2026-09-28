@@ -1,4 +1,4 @@
-﻿//HintName: G.Models.JsonListStringExperimentItemBulkWriteView.g.cs
+//HintName: G.Models.JsonListStringExperimentItemBulkWriteView.g.cs
 #pragma warning disable CS0618 // Type or member is obsolete
 
 #nullable enable
@@ -43,8 +43,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public object PickJsonListStringExperimentItemBulkWriteViewVariant1() => IsJsonListStringExperimentItemBulkWriteViewVariant1
-            ? JsonListStringExperimentItemBulkWriteViewVariant1!
+        public object PickJsonListStringExperimentItemBulkWriteViewVariant1() => JsonListStringExperimentItemBulkWriteViewVariant1 is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'JsonListStringExperimentItemBulkWriteViewVariant1' but the value was {ToString()}.");
 
         /// <summary>
@@ -80,8 +80,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<object> PickJsonListStringExperimentItemBulkWriteViewVariant2() => IsJsonListStringExperimentItemBulkWriteViewVariant2
-            ? JsonListStringExperimentItemBulkWriteViewVariant2!
+        public global::System.Collections.Generic.IList<object> PickJsonListStringExperimentItemBulkWriteViewVariant2() => JsonListStringExperimentItemBulkWriteViewVariant2 is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'JsonListStringExperimentItemBulkWriteViewVariant2' but the value was {ToString()}.");
 
         /// <summary>
@@ -117,8 +117,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public string PickJsonListStringExperimentItemBulkWriteViewVariant3() => IsJsonListStringExperimentItemBulkWriteViewVariant3
-            ? JsonListStringExperimentItemBulkWriteViewVariant3!
+        public string PickJsonListStringExperimentItemBulkWriteViewVariant3() => JsonListStringExperimentItemBulkWriteViewVariant3 is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'JsonListStringExperimentItemBulkWriteViewVariant3' but the value was {ToString()}.");
         /// <summary>
         /// 
@@ -197,17 +197,17 @@ namespace G
                 Validate();
             }
 
-            if (IsJsonListStringExperimentItemBulkWriteViewVariant1 && jsonListStringExperimentItemBulkWriteViewVariant1 != null)
+            if (JsonListStringExperimentItemBulkWriteViewVariant1 is { } __value0 && jsonListStringExperimentItemBulkWriteViewVariant1 != null)
             {
-                return jsonListStringExperimentItemBulkWriteViewVariant1(JsonListStringExperimentItemBulkWriteViewVariant1!);
+                return jsonListStringExperimentItemBulkWriteViewVariant1(__value0);
             }
-            else if (IsJsonListStringExperimentItemBulkWriteViewVariant2 && jsonListStringExperimentItemBulkWriteViewVariant2 != null)
+            else if (JsonListStringExperimentItemBulkWriteViewVariant2 is { } __value1 && jsonListStringExperimentItemBulkWriteViewVariant2 != null)
             {
-                return jsonListStringExperimentItemBulkWriteViewVariant2(JsonListStringExperimentItemBulkWriteViewVariant2!);
+                return jsonListStringExperimentItemBulkWriteViewVariant2(__value1);
             }
-            else if (IsJsonListStringExperimentItemBulkWriteViewVariant3 && jsonListStringExperimentItemBulkWriteViewVariant3 != null)
+            else if (JsonListStringExperimentItemBulkWriteViewVariant3 is { } __value2 && jsonListStringExperimentItemBulkWriteViewVariant3 != null)
             {
-                return jsonListStringExperimentItemBulkWriteViewVariant3(JsonListStringExperimentItemBulkWriteViewVariant3!);
+                return jsonListStringExperimentItemBulkWriteViewVariant3(__value2);
             }
 
             return default(TResult);
@@ -229,17 +229,17 @@ namespace G
                 Validate();
             }
 
-            if (IsJsonListStringExperimentItemBulkWriteViewVariant1)
+            if (JsonListStringExperimentItemBulkWriteViewVariant1 is { } __value0)
             {
-                jsonListStringExperimentItemBulkWriteViewVariant1?.Invoke(JsonListStringExperimentItemBulkWriteViewVariant1!);
+                jsonListStringExperimentItemBulkWriteViewVariant1?.Invoke(__value0);
             }
-            else if (IsJsonListStringExperimentItemBulkWriteViewVariant2)
+            else if (JsonListStringExperimentItemBulkWriteViewVariant2 is { } __value1)
             {
-                jsonListStringExperimentItemBulkWriteViewVariant2?.Invoke(JsonListStringExperimentItemBulkWriteViewVariant2!);
+                jsonListStringExperimentItemBulkWriteViewVariant2?.Invoke(__value1);
             }
-            else if (IsJsonListStringExperimentItemBulkWriteViewVariant3)
+            else if (JsonListStringExperimentItemBulkWriteViewVariant3 is { } __value2)
             {
-                jsonListStringExperimentItemBulkWriteViewVariant3?.Invoke(JsonListStringExperimentItemBulkWriteViewVariant3!);
+                jsonListStringExperimentItemBulkWriteViewVariant3?.Invoke(__value2);
             }
         }
 
@@ -257,17 +257,17 @@ namespace G
                 Validate();
             }
 
-            if (IsJsonListStringExperimentItemBulkWriteViewVariant1)
+            if (JsonListStringExperimentItemBulkWriteViewVariant1 is { } __value0)
             {
-                jsonListStringExperimentItemBulkWriteViewVariant1?.Invoke(JsonListStringExperimentItemBulkWriteViewVariant1!);
+                jsonListStringExperimentItemBulkWriteViewVariant1?.Invoke(__value0);
             }
-            else if (IsJsonListStringExperimentItemBulkWriteViewVariant2)
+            else if (JsonListStringExperimentItemBulkWriteViewVariant2 is { } __value1)
             {
-                jsonListStringExperimentItemBulkWriteViewVariant2?.Invoke(JsonListStringExperimentItemBulkWriteViewVariant2!);
+                jsonListStringExperimentItemBulkWriteViewVariant2?.Invoke(__value1);
             }
-            else if (IsJsonListStringExperimentItemBulkWriteViewVariant3)
+            else if (JsonListStringExperimentItemBulkWriteViewVariant3 is { } __value2)
             {
-                jsonListStringExperimentItemBulkWriteViewVariant3?.Invoke(JsonListStringExperimentItemBulkWriteViewVariant3!);
+                jsonListStringExperimentItemBulkWriteViewVariant3?.Invoke(__value2);
             }
         }
 

@@ -1,4 +1,4 @@
-﻿//HintName: G.Models.ReasoningDetailUnion.g.cs
+//HintName: G.Models.ReasoningDetailUnion.g.cs
 #pragma warning disable CS0618 // Type or member is obsolete
 
 #nullable enable
@@ -43,8 +43,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.ReasoningDetailSummary PickReasoningDetailSummary() => IsReasoningDetailSummary
-            ? ReasoningDetailSummary!
+        public global::G.ReasoningDetailSummary PickReasoningDetailSummary() => ReasoningDetailSummary is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'ReasoningDetailSummary' but the value was {ToString()}.");
 
         /// <summary>
@@ -80,8 +80,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.ReasoningDetailEncrypted PickReasoningDetailEncrypted() => IsReasoningDetailEncrypted
-            ? ReasoningDetailEncrypted!
+        public global::G.ReasoningDetailEncrypted PickReasoningDetailEncrypted() => ReasoningDetailEncrypted is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'ReasoningDetailEncrypted' but the value was {ToString()}.");
 
         /// <summary>
@@ -117,8 +117,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.ReasoningDetailText PickReasoningDetailText() => IsReasoningDetailText
-            ? ReasoningDetailText!
+        public global::G.ReasoningDetailText PickReasoningDetailText() => ReasoningDetailText is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'ReasoningDetailText' but the value was {ToString()}.");
         /// <summary>
         /// 
@@ -243,17 +243,17 @@ namespace G
                 Validate();
             }
 
-            if (IsReasoningDetailSummary && reasoningDetailSummary != null)
+            if (ReasoningDetailSummary is { } __value0 && reasoningDetailSummary != null)
             {
-                return reasoningDetailSummary(ReasoningDetailSummary!);
+                return reasoningDetailSummary(__value0);
             }
-            else if (IsReasoningDetailEncrypted && reasoningDetailEncrypted != null)
+            else if (ReasoningDetailEncrypted is { } __value1 && reasoningDetailEncrypted != null)
             {
-                return reasoningDetailEncrypted(ReasoningDetailEncrypted!);
+                return reasoningDetailEncrypted(__value1);
             }
-            else if (IsReasoningDetailText && reasoningDetailText != null)
+            else if (ReasoningDetailText is { } __value2 && reasoningDetailText != null)
             {
-                return reasoningDetailText(ReasoningDetailText!);
+                return reasoningDetailText(__value2);
             }
 
             return default(TResult);
@@ -275,17 +275,17 @@ namespace G
                 Validate();
             }
 
-            if (IsReasoningDetailSummary)
+            if (ReasoningDetailSummary is { } __value0)
             {
-                reasoningDetailSummary?.Invoke(ReasoningDetailSummary!);
+                reasoningDetailSummary?.Invoke(__value0);
             }
-            else if (IsReasoningDetailEncrypted)
+            else if (ReasoningDetailEncrypted is { } __value1)
             {
-                reasoningDetailEncrypted?.Invoke(ReasoningDetailEncrypted!);
+                reasoningDetailEncrypted?.Invoke(__value1);
             }
-            else if (IsReasoningDetailText)
+            else if (ReasoningDetailText is { } __value2)
             {
-                reasoningDetailText?.Invoke(ReasoningDetailText!);
+                reasoningDetailText?.Invoke(__value2);
             }
         }
 
@@ -303,17 +303,17 @@ namespace G
                 Validate();
             }
 
-            if (IsReasoningDetailSummary)
+            if (ReasoningDetailSummary is { } __value0)
             {
-                reasoningDetailSummary?.Invoke(ReasoningDetailSummary!);
+                reasoningDetailSummary?.Invoke(__value0);
             }
-            else if (IsReasoningDetailEncrypted)
+            else if (ReasoningDetailEncrypted is { } __value1)
             {
-                reasoningDetailEncrypted?.Invoke(ReasoningDetailEncrypted!);
+                reasoningDetailEncrypted?.Invoke(__value1);
             }
-            else if (IsReasoningDetailText)
+            else if (ReasoningDetailText is { } __value2)
             {
-                reasoningDetailText?.Invoke(ReasoningDetailText!);
+                reasoningDetailText?.Invoke(__value2);
             }
         }
 

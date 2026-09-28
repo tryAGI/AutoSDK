@@ -1,4 +1,4 @@
-﻿//HintName: G.FinetuningClient.UpdateFinetunedModel.g.cs
+//HintName: G.FinetuningClient.UpdateFinetunedModel.g.cs
 
 #nullable enable
 
@@ -179,7 +179,7 @@ namespace G
                 PrepareUpdateFinetunedModelRequest(
                     httpClient: HttpClient,
                     httpRequestMessage: __httpRequest,
-                    id: id!,
+                    id: id,
                     xClientName: xClientName,
                     request: request);
 
@@ -203,7 +203,7 @@ namespace G
                                 pathTemplate: "$\"/v1/finetuning/finetuned-models/{id}\"",
                                 httpMethod: "PATCH",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: null,
                                 exception: null,
                                 clientOptions: Options,
@@ -237,7 +237,7 @@ namespace G
                                 pathTemplate: "$\"/v1/finetuning/finetuned-models/{id}\"",
                                 httpMethod: "PATCH",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: null,
                                 exception: __exception,
                                 clientOptions: Options,
@@ -278,7 +278,7 @@ namespace G
                                 pathTemplate: "$\"/v1/finetuning/finetuned-models/{id}\"",
                                 httpMethod: "PATCH",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: __response,
                                 exception: null,
                                 clientOptions: Options,
@@ -326,7 +326,7 @@ namespace G
                                 pathTemplate: "$\"/v1/finetuning/finetuned-models/{id}\"",
                                 httpMethod: "PATCH",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: __response,
                                 exception: null,
                                 clientOptions: Options,
@@ -348,7 +348,7 @@ namespace G
                                 pathTemplate: "$\"/v1/finetuning/finetuned-models/{id}\"",
                                 httpMethod: "PATCH",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: __response,
                                 exception: null,
                                 clientOptions: Options,

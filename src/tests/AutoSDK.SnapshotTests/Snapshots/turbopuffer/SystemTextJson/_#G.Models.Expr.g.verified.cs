@@ -1,4 +1,4 @@
-﻿//HintName: G.Models.Expr.g.cs
+//HintName: G.Models.Expr.g.cs
 #pragma warning disable CS0618 // Type or member is obsolete
 
 #nullable enable
@@ -43,8 +43,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.ExprRefNew PickRefNew() => IsRefNew
-            ? RefNew!
+        public global::G.ExprRefNew PickRefNew() => RefNew is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'RefNew' but the value was {ToString()}.");
         /// <summary>
         /// 
@@ -103,9 +103,9 @@ namespace G
                 Validate();
             }
 
-            if (IsRefNew && refNew != null)
+            if (RefNew is { } __value0 && refNew != null)
             {
-                return refNew(RefNew!);
+                return refNew(__value0);
             }
 
             return default(TResult);
@@ -123,9 +123,9 @@ namespace G
                 Validate();
             }
 
-            if (IsRefNew)
+            if (RefNew is { } __value0)
             {
-                refNew?.Invoke(RefNew!);
+                refNew?.Invoke(__value0);
             }
         }
 
@@ -141,9 +141,9 @@ namespace G
                 Validate();
             }
 
-            if (IsRefNew)
+            if (RefNew is { } __value0)
             {
-                refNew?.Invoke(RefNew!);
+                refNew?.Invoke(__value0);
             }
         }
 

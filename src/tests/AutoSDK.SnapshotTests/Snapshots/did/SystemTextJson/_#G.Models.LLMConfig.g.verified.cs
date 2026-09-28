@@ -1,4 +1,4 @@
-﻿//HintName: G.Models.LLMConfig.g.cs
+//HintName: G.Models.LLMConfig.g.cs
 #pragma warning disable CS0618 // Type or member is obsolete
 
 #nullable enable
@@ -43,8 +43,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.LLMConfigOpenAI PickOpenAI() => IsOpenAI
-            ? OpenAI!
+        public global::G.LLMConfigOpenAI PickOpenAI() => OpenAI is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'OpenAI' but the value was {ToString()}.");
 
         /// <summary>
@@ -80,8 +80,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.LLMConfigVariant2 PickLLMConfigVariant2() => IsLLMConfigVariant2
-            ? LLMConfigVariant2!
+        public global::G.LLMConfigVariant2 PickLLMConfigVariant2() => LLMConfigVariant2 is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'LLMConfigVariant2' but the value was {ToString()}.");
 
         /// <summary>
@@ -117,8 +117,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.LLMConfigVariant3 PickLLMConfigVariant3() => IsLLMConfigVariant3
-            ? LLMConfigVariant3!
+        public global::G.LLMConfigVariant3 PickLLMConfigVariant3() => LLMConfigVariant3 is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'LLMConfigVariant3' but the value was {ToString()}.");
 
         /// <summary>
@@ -154,8 +154,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.LLMConfigDId PickDId() => IsDId
-            ? DId!
+        public global::G.LLMConfigDId PickDId() => DId is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'DId' but the value was {ToString()}.");
 
         /// <summary>
@@ -191,8 +191,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.LLMConfigGoogle PickGoogle() => IsGoogle
-            ? Google!
+        public global::G.LLMConfigGoogle PickGoogle() => Google is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Google' but the value was {ToString()}.");
         /// <summary>
         /// 
@@ -373,25 +373,25 @@ namespace G
                 Validate();
             }
 
-            if (IsOpenAI && openAI != null)
+            if (OpenAI is { } __value0 && openAI != null)
             {
-                return openAI(OpenAI!);
+                return openAI(__value0);
             }
-            else if (IsLLMConfigVariant2 && lLMConfigVariant2 != null)
+            else if (LLMConfigVariant2 is { } __value1 && lLMConfigVariant2 != null)
             {
-                return lLMConfigVariant2(LLMConfigVariant2!);
+                return lLMConfigVariant2(__value1);
             }
-            else if (IsLLMConfigVariant3 && lLMConfigVariant3 != null)
+            else if (LLMConfigVariant3 is { } __value2 && lLMConfigVariant3 != null)
             {
-                return lLMConfigVariant3(LLMConfigVariant3!);
+                return lLMConfigVariant3(__value2);
             }
-            else if (IsDId && dId != null)
+            else if (DId is { } __value3 && dId != null)
             {
-                return dId(DId!);
+                return dId(__value3);
             }
-            else if (IsGoogle && google != null)
+            else if (Google is { } __value4 && google != null)
             {
-                return google(Google!);
+                return google(__value4);
             }
 
             return default(TResult);
@@ -417,25 +417,25 @@ namespace G
                 Validate();
             }
 
-            if (IsOpenAI)
+            if (OpenAI is { } __value0)
             {
-                openAI?.Invoke(OpenAI!);
+                openAI?.Invoke(__value0);
             }
-            else if (IsLLMConfigVariant2)
+            else if (LLMConfigVariant2 is { } __value1)
             {
-                lLMConfigVariant2?.Invoke(LLMConfigVariant2!);
+                lLMConfigVariant2?.Invoke(__value1);
             }
-            else if (IsLLMConfigVariant3)
+            else if (LLMConfigVariant3 is { } __value2)
             {
-                lLMConfigVariant3?.Invoke(LLMConfigVariant3!);
+                lLMConfigVariant3?.Invoke(__value2);
             }
-            else if (IsDId)
+            else if (DId is { } __value3)
             {
-                dId?.Invoke(DId!);
+                dId?.Invoke(__value3);
             }
-            else if (IsGoogle)
+            else if (Google is { } __value4)
             {
-                google?.Invoke(Google!);
+                google?.Invoke(__value4);
             }
         }
 
@@ -455,25 +455,25 @@ namespace G
                 Validate();
             }
 
-            if (IsOpenAI)
+            if (OpenAI is { } __value0)
             {
-                openAI?.Invoke(OpenAI!);
+                openAI?.Invoke(__value0);
             }
-            else if (IsLLMConfigVariant2)
+            else if (LLMConfigVariant2 is { } __value1)
             {
-                lLMConfigVariant2?.Invoke(LLMConfigVariant2!);
+                lLMConfigVariant2?.Invoke(__value1);
             }
-            else if (IsLLMConfigVariant3)
+            else if (LLMConfigVariant3 is { } __value2)
             {
-                lLMConfigVariant3?.Invoke(LLMConfigVariant3!);
+                lLMConfigVariant3?.Invoke(__value2);
             }
-            else if (IsDId)
+            else if (DId is { } __value3)
             {
-                dId?.Invoke(DId!);
+                dId?.Invoke(__value3);
             }
-            else if (IsGoogle)
+            else if (Google is { } __value4)
             {
-                google?.Invoke(Google!);
+                google?.Invoke(__value4);
             }
         }
 

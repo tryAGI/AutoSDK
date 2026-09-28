@@ -1,4 +1,4 @@
-﻿//HintName: G.Models.ShotstackGeneratedAssetOptions.g.cs
+//HintName: G.Models.ShotstackGeneratedAssetOptions.g.cs
 #pragma warning disable CS0618 // Type or member is obsolete
 
 #nullable enable
@@ -48,8 +48,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.ShotstackTextToSpeechOptions PickTextToSpeech() => IsTextToSpeech
-            ? TextToSpeech!
+        public global::G.ShotstackTextToSpeechOptions PickTextToSpeech() => TextToSpeech is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'TextToSpeech' but the value was {ToString()}.");
 
         /// <summary>
@@ -85,8 +85,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.ShotstackTextToImageOptions PickTextToImage() => IsTextToImage
-            ? TextToImage!
+        public global::G.ShotstackTextToImageOptions PickTextToImage() => TextToImage is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'TextToImage' but the value was {ToString()}.");
 
         /// <summary>
@@ -122,8 +122,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.ShotstackTextGeneratorOptions PickTextGenerator() => IsTextGenerator
-            ? TextGenerator!
+        public global::G.ShotstackTextGeneratorOptions PickTextGenerator() => TextGenerator is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'TextGenerator' but the value was {ToString()}.");
 
         /// <summary>
@@ -159,8 +159,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.ShotstackImageToVideoOptions PickImageToVideo() => IsImageToVideo
-            ? ImageToVideo!
+        public global::G.ShotstackImageToVideoOptions PickImageToVideo() => ImageToVideo is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'ImageToVideo' but the value was {ToString()}.");
         /// <summary>
         /// 
@@ -316,21 +316,21 @@ namespace G
                 Validate();
             }
 
-            if (IsTextToSpeech && textToSpeech != null)
+            if (TextToSpeech is { } __value0 && textToSpeech != null)
             {
-                return textToSpeech(TextToSpeech!);
+                return textToSpeech(__value0);
             }
-            else if (IsTextToImage && textToImage != null)
+            else if (TextToImage is { } __value1 && textToImage != null)
             {
-                return textToImage(TextToImage!);
+                return textToImage(__value1);
             }
-            else if (IsTextGenerator && textGenerator != null)
+            else if (TextGenerator is { } __value2 && textGenerator != null)
             {
-                return textGenerator(TextGenerator!);
+                return textGenerator(__value2);
             }
-            else if (IsImageToVideo && imageToVideo != null)
+            else if (ImageToVideo is { } __value3 && imageToVideo != null)
             {
-                return imageToVideo(ImageToVideo!);
+                return imageToVideo(__value3);
             }
 
             return default(TResult);
@@ -354,21 +354,21 @@ namespace G
                 Validate();
             }
 
-            if (IsTextToSpeech)
+            if (TextToSpeech is { } __value0)
             {
-                textToSpeech?.Invoke(TextToSpeech!);
+                textToSpeech?.Invoke(__value0);
             }
-            else if (IsTextToImage)
+            else if (TextToImage is { } __value1)
             {
-                textToImage?.Invoke(TextToImage!);
+                textToImage?.Invoke(__value1);
             }
-            else if (IsTextGenerator)
+            else if (TextGenerator is { } __value2)
             {
-                textGenerator?.Invoke(TextGenerator!);
+                textGenerator?.Invoke(__value2);
             }
-            else if (IsImageToVideo)
+            else if (ImageToVideo is { } __value3)
             {
-                imageToVideo?.Invoke(ImageToVideo!);
+                imageToVideo?.Invoke(__value3);
             }
         }
 
@@ -387,21 +387,21 @@ namespace G
                 Validate();
             }
 
-            if (IsTextToSpeech)
+            if (TextToSpeech is { } __value0)
             {
-                textToSpeech?.Invoke(TextToSpeech!);
+                textToSpeech?.Invoke(__value0);
             }
-            else if (IsTextToImage)
+            else if (TextToImage is { } __value1)
             {
-                textToImage?.Invoke(TextToImage!);
+                textToImage?.Invoke(__value1);
             }
-            else if (IsTextGenerator)
+            else if (TextGenerator is { } __value2)
             {
-                textGenerator?.Invoke(TextGenerator!);
+                textGenerator?.Invoke(__value2);
             }
-            else if (IsImageToVideo)
+            else if (ImageToVideo is { } __value3)
             {
-                imageToVideo?.Invoke(ImageToVideo!);
+                imageToVideo?.Invoke(__value3);
             }
         }
 

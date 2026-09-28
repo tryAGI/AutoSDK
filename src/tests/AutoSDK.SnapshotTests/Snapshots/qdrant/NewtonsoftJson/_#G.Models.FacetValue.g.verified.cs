@@ -1,4 +1,4 @@
-﻿//HintName: G.Models.FacetValue.g.cs
+//HintName: G.Models.FacetValue.g.cs
 #pragma warning disable CS0618 // Type or member is obsolete
 
 #nullable enable
@@ -43,8 +43,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public string PickFacetValueVariant1() => IsFacetValueVariant1
-            ? FacetValueVariant1!
+        public string PickFacetValueVariant1() => FacetValueVariant1 is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'FacetValueVariant1' but the value was {ToString()}.");
 
         /// <summary>
@@ -80,8 +80,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public long PickFacetValueVariant2() => IsFacetValueVariant2
-            ? FacetValueVariant2!.Value
+        public long PickFacetValueVariant2() => FacetValueVariant2 is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'FacetValueVariant2' but the value was {ToString()}.");
 
         /// <summary>
@@ -117,8 +117,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public bool PickFacetValueVariant3() => IsFacetValueVariant3
-            ? FacetValueVariant3!.Value
+        public bool PickFacetValueVariant3() => FacetValueVariant3 is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'FacetValueVariant3' but the value was {ToString()}.");
         /// <summary>
         /// 
@@ -243,17 +243,17 @@ namespace G
                 Validate();
             }
 
-            if (IsFacetValueVariant1 && facetValueVariant1 != null)
+            if (FacetValueVariant1 is { } __value0 && facetValueVariant1 != null)
             {
-                return facetValueVariant1(FacetValueVariant1!);
+                return facetValueVariant1(__value0);
             }
-            else if (IsFacetValueVariant2 && facetValueVariant2 != null)
+            else if (FacetValueVariant2 is { } __value1 && facetValueVariant2 != null)
             {
-                return facetValueVariant2(FacetValueVariant2!);
+                return facetValueVariant2(__value1);
             }
-            else if (IsFacetValueVariant3 && facetValueVariant3 != null)
+            else if (FacetValueVariant3 is { } __value2 && facetValueVariant3 != null)
             {
-                return facetValueVariant3(FacetValueVariant3!);
+                return facetValueVariant3(__value2);
             }
 
             return default(TResult);
@@ -275,17 +275,17 @@ namespace G
                 Validate();
             }
 
-            if (IsFacetValueVariant1)
+            if (FacetValueVariant1 is { } __value0)
             {
-                facetValueVariant1?.Invoke(FacetValueVariant1!);
+                facetValueVariant1?.Invoke(__value0);
             }
-            else if (IsFacetValueVariant2)
+            else if (FacetValueVariant2 is { } __value1)
             {
-                facetValueVariant2?.Invoke(FacetValueVariant2!);
+                facetValueVariant2?.Invoke(__value1);
             }
-            else if (IsFacetValueVariant3)
+            else if (FacetValueVariant3 is { } __value2)
             {
-                facetValueVariant3?.Invoke(FacetValueVariant3!);
+                facetValueVariant3?.Invoke(__value2);
             }
         }
 
@@ -303,17 +303,17 @@ namespace G
                 Validate();
             }
 
-            if (IsFacetValueVariant1)
+            if (FacetValueVariant1 is { } __value0)
             {
-                facetValueVariant1?.Invoke(FacetValueVariant1!);
+                facetValueVariant1?.Invoke(__value0);
             }
-            else if (IsFacetValueVariant2)
+            else if (FacetValueVariant2 is { } __value1)
             {
-                facetValueVariant2?.Invoke(FacetValueVariant2!);
+                facetValueVariant2?.Invoke(__value1);
             }
-            else if (IsFacetValueVariant3)
+            else if (FacetValueVariant3 is { } __value2)
             {
-                facetValueVariant3?.Invoke(FacetValueVariant3!);
+                facetValueVariant3?.Invoke(__value2);
             }
         }
 

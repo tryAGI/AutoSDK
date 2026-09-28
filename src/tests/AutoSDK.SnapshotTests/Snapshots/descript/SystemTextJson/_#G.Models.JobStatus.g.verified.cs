@@ -1,4 +1,4 @@
-﻿//HintName: G.Models.JobStatus.g.cs
+//HintName: G.Models.JobStatus.g.cs
 #pragma warning disable CS0618 // Type or member is obsolete
 
 #nullable enable
@@ -49,8 +49,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.ImportJobStatus PickImportProjectMedia() => IsImportProjectMedia
-            ? ImportProjectMedia!
+        public global::G.ImportJobStatus PickImportProjectMedia() => ImportProjectMedia is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'ImportProjectMedia' but the value was {ToString()}.");
 
         /// <summary>
@@ -86,8 +86,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.AgentJobStatus PickAgent() => IsAgent
-            ? Agent!
+        public global::G.AgentJobStatus PickAgent() => Agent is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Agent' but the value was {ToString()}.");
         /// <summary>
         /// 
@@ -187,13 +187,13 @@ namespace G
                 Validate();
             }
 
-            if (IsImportProjectMedia && importProjectMedia != null)
+            if (ImportProjectMedia is { } __value0 && importProjectMedia != null)
             {
-                return importProjectMedia(ImportProjectMedia!);
+                return importProjectMedia(__value0);
             }
-            else if (IsAgent && agent != null)
+            else if (Agent is { } __value1 && agent != null)
             {
-                return agent(Agent!);
+                return agent(__value1);
             }
 
             return default(TResult);
@@ -213,13 +213,13 @@ namespace G
                 Validate();
             }
 
-            if (IsImportProjectMedia)
+            if (ImportProjectMedia is { } __value0)
             {
-                importProjectMedia?.Invoke(ImportProjectMedia!);
+                importProjectMedia?.Invoke(__value0);
             }
-            else if (IsAgent)
+            else if (Agent is { } __value1)
             {
-                agent?.Invoke(Agent!);
+                agent?.Invoke(__value1);
             }
         }
 
@@ -236,13 +236,13 @@ namespace G
                 Validate();
             }
 
-            if (IsImportProjectMedia)
+            if (ImportProjectMedia is { } __value0)
             {
-                importProjectMedia?.Invoke(ImportProjectMedia!);
+                importProjectMedia?.Invoke(__value0);
             }
-            else if (IsAgent)
+            else if (Agent is { } __value1)
             {
-                agent?.Invoke(Agent!);
+                agent?.Invoke(__value1);
             }
         }
 

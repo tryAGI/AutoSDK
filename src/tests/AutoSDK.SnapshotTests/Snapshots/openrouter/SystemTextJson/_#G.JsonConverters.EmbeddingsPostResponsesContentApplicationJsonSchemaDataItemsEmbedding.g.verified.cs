@@ -1,4 +1,4 @@
-﻿//HintName: G.JsonConverters.EmbeddingsPostResponsesContentApplicationJsonSchemaDataItemsEmbedding.g.cs
+//HintName: G.JsonConverters.EmbeddingsPostResponsesContentApplicationJsonSchemaDataItemsEmbedding.g.cs
 #nullable enable
 #pragma warning disable CS0618 // Type or member is obsolete
 
@@ -150,13 +150,13 @@ namespace G.JsonConverters
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::System.Collections.Generic.IList<double>), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::System.Collections.Generic.IList<double>?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::System.Collections.Generic.IList<double>).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.EmbeddingsPostResponsesContentApplicationJsonSchemaDataItemsEmbeddingVariant1!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickEmbeddingsPostResponsesContentApplicationJsonSchemaDataItemsEmbeddingVariant1(), typeInfo);
             }
             else if (value.IsEmbeddingsPostResponsesContentApplicationJsonSchemaDataItemsEmbeddingVariant2)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(string), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<string?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(string).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.EmbeddingsPostResponsesContentApplicationJsonSchemaDataItemsEmbeddingVariant2!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickEmbeddingsPostResponsesContentApplicationJsonSchemaDataItemsEmbeddingVariant2(), typeInfo);
             }
         }
     }

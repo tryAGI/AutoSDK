@@ -1,4 +1,4 @@
-﻿//HintName: G.Models.SearchCorporaParameters.g.cs
+//HintName: G.Models.SearchCorporaParameters.g.cs
 #pragma warning disable CS0618 // Type or member is obsolete
 
 #nullable enable
@@ -43,8 +43,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.SearchCorporaParametersVariant1 PickSearchCorporaParametersVariant1() => IsSearchCorporaParametersVariant1
-            ? SearchCorporaParametersVariant1!
+        public global::G.SearchCorporaParametersVariant1 PickSearchCorporaParametersVariant1() => SearchCorporaParametersVariant1 is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'SearchCorporaParametersVariant1' but the value was {ToString()}.");
 
         /// <summary>
@@ -81,8 +81,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.SearchParameters PickSearchParameters() => IsSearchParameters
-            ? SearchParameters!
+        public global::G.SearchParameters PickSearchParameters() => SearchParameters is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'SearchParameters' but the value was {ToString()}.");
         /// <summary>
         /// 
@@ -179,13 +179,13 @@ namespace G
                 Validate();
             }
 
-            if (IsSearchCorporaParametersVariant1 && searchCorporaParametersVariant1 != null)
+            if (SearchCorporaParametersVariant1 is { } __value0 && searchCorporaParametersVariant1 != null)
             {
-                return searchCorporaParametersVariant1(SearchCorporaParametersVariant1!);
+                return searchCorporaParametersVariant1(__value0);
             }
-            else if (IsSearchParameters && searchParameters != null)
+            else if (SearchParameters is { } __value1 && searchParameters != null)
             {
-                return searchParameters(SearchParameters!);
+                return searchParameters(__value1);
             }
 
             return default(TResult);
@@ -205,13 +205,13 @@ namespace G
                 Validate();
             }
 
-            if (IsSearchCorporaParametersVariant1)
+            if (SearchCorporaParametersVariant1 is { } __value0)
             {
-                searchCorporaParametersVariant1?.Invoke(SearchCorporaParametersVariant1!);
+                searchCorporaParametersVariant1?.Invoke(__value0);
             }
-            else if (IsSearchParameters)
+            else if (SearchParameters is { } __value1)
             {
-                searchParameters?.Invoke(SearchParameters!);
+                searchParameters?.Invoke(__value1);
             }
         }
 
@@ -228,13 +228,13 @@ namespace G
                 Validate();
             }
 
-            if (IsSearchCorporaParametersVariant1)
+            if (SearchCorporaParametersVariant1 is { } __value0)
             {
-                searchCorporaParametersVariant1?.Invoke(SearchCorporaParametersVariant1!);
+                searchCorporaParametersVariant1?.Invoke(__value0);
             }
-            else if (IsSearchParameters)
+            else if (SearchParameters is { } __value1)
             {
-                searchParameters?.Invoke(SearchParameters!);
+                searchParameters?.Invoke(__value1);
             }
         }
 

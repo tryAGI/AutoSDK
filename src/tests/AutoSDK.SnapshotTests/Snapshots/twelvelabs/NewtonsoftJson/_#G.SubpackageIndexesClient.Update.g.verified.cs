@@ -1,4 +1,4 @@
-﻿//HintName: G.SubpackageIndexesClient.Update.g.cs
+//HintName: G.SubpackageIndexesClient.Update.g.cs
 
 #nullable enable
 
@@ -135,8 +135,8 @@ namespace G
                 PrepareUpdateRequest(
                     httpClient: HttpClient,
                     httpRequestMessage: __httpRequest,
-                    indexId: indexId!,
-                    xApiKey: xApiKey!,
+                    indexId: indexId,
+                    xApiKey: xApiKey,
                     request: request);
 
                 return __httpRequest;
@@ -159,7 +159,7 @@ namespace G
                                 pathTemplate: "$\"/indexes/{indexId}\"",
                                 httpMethod: "PUT",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: null,
                                 exception: null,
                                 clientOptions: Options,
@@ -193,7 +193,7 @@ namespace G
                                 pathTemplate: "$\"/indexes/{indexId}\"",
                                 httpMethod: "PUT",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: null,
                                 exception: __exception,
                                 clientOptions: Options,
@@ -234,7 +234,7 @@ namespace G
                                 pathTemplate: "$\"/indexes/{indexId}\"",
                                 httpMethod: "PUT",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: __response,
                                 exception: null,
                                 clientOptions: Options,
@@ -282,7 +282,7 @@ namespace G
                                 pathTemplate: "$\"/indexes/{indexId}\"",
                                 httpMethod: "PUT",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: __response,
                                 exception: null,
                                 clientOptions: Options,
@@ -304,7 +304,7 @@ namespace G
                                 pathTemplate: "$\"/indexes/{indexId}\"",
                                 httpMethod: "PUT",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: __response,
                                 exception: null,
                                 clientOptions: Options,

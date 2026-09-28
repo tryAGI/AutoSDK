@@ -1,4 +1,4 @@
-﻿//HintName: G.Models.StreamAnalyzeResponse.g.cs
+//HintName: G.Models.StreamAnalyzeResponse.g.cs
 #pragma warning disable CS0618 // Type or member is obsolete
 
 #nullable enable
@@ -52,8 +52,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.StreamStartResponse PickStreamStartResponse() => IsStreamStartResponse
-            ? StreamStartResponse!
+        public global::G.StreamStartResponse PickStreamStartResponse() => StreamStartResponse is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'StreamStartResponse' but the value was {ToString()}.");
 
         /// <summary>
@@ -89,8 +89,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.StreamTextResponse PickStreamTextResponse() => IsStreamTextResponse
-            ? StreamTextResponse!
+        public global::G.StreamTextResponse PickStreamTextResponse() => StreamTextResponse is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'StreamTextResponse' but the value was {ToString()}.");
 
         /// <summary>
@@ -126,8 +126,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.StreamEndResponse PickStreamEndResponse() => IsStreamEndResponse
-            ? StreamEndResponse!
+        public global::G.StreamEndResponse PickStreamEndResponse() => StreamEndResponse is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'StreamEndResponse' but the value was {ToString()}.");
         /// <summary>
         /// 
@@ -252,17 +252,17 @@ namespace G
                 Validate();
             }
 
-            if (IsStreamStartResponse && streamStartResponse != null)
+            if (StreamStartResponse is { } __value0 && streamStartResponse != null)
             {
-                return streamStartResponse(StreamStartResponse!);
+                return streamStartResponse(__value0);
             }
-            else if (IsStreamTextResponse && streamTextResponse != null)
+            else if (StreamTextResponse is { } __value1 && streamTextResponse != null)
             {
-                return streamTextResponse(StreamTextResponse!);
+                return streamTextResponse(__value1);
             }
-            else if (IsStreamEndResponse && streamEndResponse != null)
+            else if (StreamEndResponse is { } __value2 && streamEndResponse != null)
             {
-                return streamEndResponse(StreamEndResponse!);
+                return streamEndResponse(__value2);
             }
 
             return default(TResult);
@@ -284,17 +284,17 @@ namespace G
                 Validate();
             }
 
-            if (IsStreamStartResponse)
+            if (StreamStartResponse is { } __value0)
             {
-                streamStartResponse?.Invoke(StreamStartResponse!);
+                streamStartResponse?.Invoke(__value0);
             }
-            else if (IsStreamTextResponse)
+            else if (StreamTextResponse is { } __value1)
             {
-                streamTextResponse?.Invoke(StreamTextResponse!);
+                streamTextResponse?.Invoke(__value1);
             }
-            else if (IsStreamEndResponse)
+            else if (StreamEndResponse is { } __value2)
             {
-                streamEndResponse?.Invoke(StreamEndResponse!);
+                streamEndResponse?.Invoke(__value2);
             }
         }
 
@@ -312,17 +312,17 @@ namespace G
                 Validate();
             }
 
-            if (IsStreamStartResponse)
+            if (StreamStartResponse is { } __value0)
             {
-                streamStartResponse?.Invoke(StreamStartResponse!);
+                streamStartResponse?.Invoke(__value0);
             }
-            else if (IsStreamTextResponse)
+            else if (StreamTextResponse is { } __value1)
             {
-                streamTextResponse?.Invoke(StreamTextResponse!);
+                streamTextResponse?.Invoke(__value1);
             }
-            else if (IsStreamEndResponse)
+            else if (StreamEndResponse is { } __value2)
             {
-                streamEndResponse?.Invoke(StreamEndResponse!);
+                streamEndResponse?.Invoke(__value2);
             }
         }
 

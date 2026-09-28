@@ -1,4 +1,4 @@
-﻿//HintName: G.Models.OutputItemReasoningStatus.g.cs
+//HintName: G.Models.OutputItemReasoningStatus.g.cs
 #pragma warning disable CS0618 // Type or member is obsolete
 
 #nullable enable
@@ -43,8 +43,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.OutputItemReasoningStatus0 PickOutputItemReasoningStatus0() => IsOutputItemReasoningStatus0
-            ? OutputItemReasoningStatus0!.Value
+        public global::G.OutputItemReasoningStatus0 PickOutputItemReasoningStatus0() => OutputItemReasoningStatus0 is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'OutputItemReasoningStatus0' but the value was {ToString()}.");
 
         /// <summary>
@@ -80,8 +80,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.OutputItemReasoningStatus1 PickOutputItemReasoningStatus1() => IsOutputItemReasoningStatus1
-            ? OutputItemReasoningStatus1!.Value
+        public global::G.OutputItemReasoningStatus1 PickOutputItemReasoningStatus1() => OutputItemReasoningStatus1 is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'OutputItemReasoningStatus1' but the value was {ToString()}.");
 
         /// <summary>
@@ -117,8 +117,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.OutputItemReasoningStatus2 PickOutputItemReasoningStatus2() => IsOutputItemReasoningStatus2
-            ? OutputItemReasoningStatus2!.Value
+        public global::G.OutputItemReasoningStatus2 PickOutputItemReasoningStatus2() => OutputItemReasoningStatus2 is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'OutputItemReasoningStatus2' but the value was {ToString()}.");
         /// <summary>
         /// 
@@ -243,17 +243,17 @@ namespace G
                 Validate();
             }
 
-            if (IsOutputItemReasoningStatus0 && outputItemReasoningStatus0 != null)
+            if (OutputItemReasoningStatus0 is { } __value0 && outputItemReasoningStatus0 != null)
             {
-                return outputItemReasoningStatus0(OutputItemReasoningStatus0!);
+                return outputItemReasoningStatus0(__value0);
             }
-            else if (IsOutputItemReasoningStatus1 && outputItemReasoningStatus1 != null)
+            else if (OutputItemReasoningStatus1 is { } __value1 && outputItemReasoningStatus1 != null)
             {
-                return outputItemReasoningStatus1(OutputItemReasoningStatus1!);
+                return outputItemReasoningStatus1(__value1);
             }
-            else if (IsOutputItemReasoningStatus2 && outputItemReasoningStatus2 != null)
+            else if (OutputItemReasoningStatus2 is { } __value2 && outputItemReasoningStatus2 != null)
             {
-                return outputItemReasoningStatus2(OutputItemReasoningStatus2!);
+                return outputItemReasoningStatus2(__value2);
             }
 
             return default(TResult);
@@ -275,17 +275,17 @@ namespace G
                 Validate();
             }
 
-            if (IsOutputItemReasoningStatus0)
+            if (OutputItemReasoningStatus0 is { } __value0)
             {
-                outputItemReasoningStatus0?.Invoke(OutputItemReasoningStatus0!);
+                outputItemReasoningStatus0?.Invoke(__value0);
             }
-            else if (IsOutputItemReasoningStatus1)
+            else if (OutputItemReasoningStatus1 is { } __value1)
             {
-                outputItemReasoningStatus1?.Invoke(OutputItemReasoningStatus1!);
+                outputItemReasoningStatus1?.Invoke(__value1);
             }
-            else if (IsOutputItemReasoningStatus2)
+            else if (OutputItemReasoningStatus2 is { } __value2)
             {
-                outputItemReasoningStatus2?.Invoke(OutputItemReasoningStatus2!);
+                outputItemReasoningStatus2?.Invoke(__value2);
             }
         }
 
@@ -303,17 +303,17 @@ namespace G
                 Validate();
             }
 
-            if (IsOutputItemReasoningStatus0)
+            if (OutputItemReasoningStatus0 is { } __value0)
             {
-                outputItemReasoningStatus0?.Invoke(OutputItemReasoningStatus0!);
+                outputItemReasoningStatus0?.Invoke(__value0);
             }
-            else if (IsOutputItemReasoningStatus1)
+            else if (OutputItemReasoningStatus1 is { } __value1)
             {
-                outputItemReasoningStatus1?.Invoke(OutputItemReasoningStatus1!);
+                outputItemReasoningStatus1?.Invoke(__value1);
             }
-            else if (IsOutputItemReasoningStatus2)
+            else if (OutputItemReasoningStatus2 is { } __value2)
             {
-                outputItemReasoningStatus2?.Invoke(OutputItemReasoningStatus2!);
+                outputItemReasoningStatus2?.Invoke(__value2);
             }
         }
 

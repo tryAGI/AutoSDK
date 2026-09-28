@@ -1,4 +1,4 @@
-﻿//HintName: G.Projects2Client.ImportTasks.g.cs
+//HintName: G.Projects2Client.ImportTasks.g.cs
 
 #nullable enable
 
@@ -303,7 +303,7 @@ namespace G
                     httpClient: HttpClient,
                     httpRequestMessage: __httpRequest,
                     commitToProject: commitToProject,
-                    id: id!,
+                    id: id,
                     preannotatedFromFields: preannotatedFromFields,
                     returnTaskIds: returnTaskIds,
                     request: request);
@@ -328,7 +328,7 @@ namespace G
                                 pathTemplate: "$\"/api/projects/{id}/import\"",
                                 httpMethod: "POST",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: null,
                                 exception: null,
                                 clientOptions: Options,
@@ -362,7 +362,7 @@ namespace G
                                 pathTemplate: "$\"/api/projects/{id}/import\"",
                                 httpMethod: "POST",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: null,
                                 exception: __exception,
                                 clientOptions: Options,
@@ -403,7 +403,7 @@ namespace G
                                 pathTemplate: "$\"/api/projects/{id}/import\"",
                                 httpMethod: "POST",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: __response,
                                 exception: null,
                                 clientOptions: Options,
@@ -451,7 +451,7 @@ namespace G
                                 pathTemplate: "$\"/api/projects/{id}/import\"",
                                 httpMethod: "POST",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: __response,
                                 exception: null,
                                 clientOptions: Options,
@@ -473,7 +473,7 @@ namespace G
                                 pathTemplate: "$\"/api/projects/{id}/import\"",
                                 httpMethod: "POST",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: __response,
                                 exception: null,
                                 clientOptions: Options,

@@ -1,4 +1,4 @@
-﻿//HintName: G.Models.EntitiesItem.g.cs
+//HintName: G.Models.EntitiesItem.g.cs
 #pragma warning disable CS0618 // Type or member is obsolete
 
 #nullable enable
@@ -48,8 +48,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.TenantShareRunToken PickRun() => IsRun
-            ? Run!
+        public global::G.TenantShareRunToken PickRun() => Run is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Run' but the value was {ToString()}.");
 
         /// <summary>
@@ -85,8 +85,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.TenantShareDatasetToken PickDataset() => IsDataset
-            ? Dataset!
+        public global::G.TenantShareDatasetToken PickDataset() => Dataset is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Dataset' but the value was {ToString()}.");
         /// <summary>
         /// 
@@ -186,13 +186,13 @@ namespace G
                 Validate();
             }
 
-            if (IsRun && run != null)
+            if (Run is { } __value0 && run != null)
             {
-                return run(Run!);
+                return run(__value0);
             }
-            else if (IsDataset && dataset != null)
+            else if (Dataset is { } __value1 && dataset != null)
             {
-                return dataset(Dataset!);
+                return dataset(__value1);
             }
 
             return default(TResult);
@@ -212,13 +212,13 @@ namespace G
                 Validate();
             }
 
-            if (IsRun)
+            if (Run is { } __value0)
             {
-                run?.Invoke(Run!);
+                run?.Invoke(__value0);
             }
-            else if (IsDataset)
+            else if (Dataset is { } __value1)
             {
-                dataset?.Invoke(Dataset!);
+                dataset?.Invoke(__value1);
             }
         }
 
@@ -235,13 +235,13 @@ namespace G
                 Validate();
             }
 
-            if (IsRun)
+            if (Run is { } __value0)
             {
-                run?.Invoke(Run!);
+                run?.Invoke(__value0);
             }
-            else if (IsDataset)
+            else if (Dataset is { } __value1)
             {
-                dataset?.Invoke(Dataset!);
+                dataset?.Invoke(__value1);
             }
         }
 

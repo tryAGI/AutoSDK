@@ -1,4 +1,4 @@
-﻿//HintName: G.JsonConverters.ExpressiveVideoBackground.g.cs
+//HintName: G.JsonConverters.ExpressiveVideoBackground.g.cs
 #nullable enable
 #pragma warning disable CS0618 // Type or member is obsolete
 
@@ -131,13 +131,13 @@ namespace G.JsonConverters
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.ExpressiveVideoBackgroundVariant1), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.ExpressiveVideoBackgroundVariant1?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.ExpressiveVideoBackgroundVariant1).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.ExpressiveVideoBackgroundVariant1!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickExpressiveVideoBackgroundVariant1(), typeInfo);
             }
             else if (value.IsExpressiveVideoBackgroundVariant2)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.ExpressiveVideoBackgroundVariant2), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.ExpressiveVideoBackgroundVariant2?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.ExpressiveVideoBackgroundVariant2).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.ExpressiveVideoBackgroundVariant2!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickExpressiveVideoBackgroundVariant2(), typeInfo);
             }
         }
     }

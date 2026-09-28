@@ -1,4 +1,4 @@
-﻿//HintName: G.JsonConverters.CompletionStream.g.cs
+//HintName: G.JsonConverters.CompletionStream.g.cs
 #nullable enable
 #pragma warning disable CS0618 // Type or member is obsolete
 
@@ -142,13 +142,13 @@ namespace G.JsonConverters
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.CompletionEvent), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.CompletionEvent?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.CompletionEvent).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Event!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickEvent(), typeInfo);
             }
             else if (value.IsSentinel)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.StreamSentinel), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.StreamSentinel?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.StreamSentinel).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Sentinel!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickSentinel(), typeInfo);
             }
         }
     }

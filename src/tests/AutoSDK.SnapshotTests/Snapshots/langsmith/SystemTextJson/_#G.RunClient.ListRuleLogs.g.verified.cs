@@ -1,4 +1,4 @@
-﻿//HintName: G.RunClient.ListRuleLogs.g.cs
+//HintName: G.RunClient.ListRuleLogs.g.cs
 
 #nullable enable
 
@@ -226,7 +226,7 @@ namespace G
                 PrepareListRuleLogsRequest(
                     httpClient: HttpClient,
                     httpRequestMessage: __httpRequest,
-                    ruleId: ruleId!,
+                    ruleId: ruleId,
                     limit: limit,
                     offset: offset,
                     startTime: startTime,
@@ -254,7 +254,7 @@ namespace G
                                 pathTemplate: "$\"/api/v1/runs/rules/{ruleId}/logs\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: null,
                                 exception: null,
                                 clientOptions: Options,
@@ -288,7 +288,7 @@ namespace G
                                 pathTemplate: "$\"/api/v1/runs/rules/{ruleId}/logs\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: null,
                                 exception: __exception,
                                 clientOptions: Options,
@@ -329,7 +329,7 @@ namespace G
                                 pathTemplate: "$\"/api/v1/runs/rules/{ruleId}/logs\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: __response,
                                 exception: null,
                                 clientOptions: Options,
@@ -377,7 +377,7 @@ namespace G
                                 pathTemplate: "$\"/api/v1/runs/rules/{ruleId}/logs\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: __response,
                                 exception: null,
                                 clientOptions: Options,
@@ -399,7 +399,7 @@ namespace G
                                 pathTemplate: "$\"/api/v1/runs/rules/{ruleId}/logs\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: __response,
                                 exception: null,
                                 clientOptions: Options,

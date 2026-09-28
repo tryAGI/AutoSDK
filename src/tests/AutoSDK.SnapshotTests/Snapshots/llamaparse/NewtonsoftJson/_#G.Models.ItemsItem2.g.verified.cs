@@ -1,4 +1,4 @@
-﻿//HintName: G.Models.ItemsItem2.g.cs
+//HintName: G.Models.ItemsItem2.g.cs
 #pragma warning disable CS0618 // Type or member is obsolete
 
 #nullable enable
@@ -48,8 +48,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.TextItem PickText() => IsText
-            ? Text!
+        public global::G.TextItem PickText() => Text is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Text' but the value was {ToString()}.");
 
         /// <summary>
@@ -85,8 +85,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.HeadingItem PickHeading() => IsHeading
-            ? Heading!
+        public global::G.HeadingItem PickHeading() => Heading is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Heading' but the value was {ToString()}.");
 
         /// <summary>
@@ -122,8 +122,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.ListItem PickList() => IsList
-            ? List!
+        public global::G.ListItem PickList() => List is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'List' but the value was {ToString()}.");
 
         /// <summary>
@@ -159,8 +159,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.CodeItem PickCode() => IsCode
-            ? Code!
+        public global::G.CodeItem PickCode() => Code is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Code' but the value was {ToString()}.");
 
         /// <summary>
@@ -196,8 +196,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.TableItem PickTable() => IsTable
-            ? Table!
+        public global::G.TableItem PickTable() => Table is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Table' but the value was {ToString()}.");
 
         /// <summary>
@@ -233,8 +233,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.ImageItem PickImage() => IsImage
-            ? Image!
+        public global::G.ImageItem PickImage() => Image is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Image' but the value was {ToString()}.");
 
         /// <summary>
@@ -270,8 +270,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.LinkItem PickLink() => IsLink
-            ? Link!
+        public global::G.LinkItem PickLink() => Link is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Link' but the value was {ToString()}.");
         /// <summary>
         /// 
@@ -511,33 +511,33 @@ namespace G
                 Validate();
             }
 
-            if (IsText && text != null)
+            if (Text is { } __value0 && text != null)
             {
-                return text(Text!);
+                return text(__value0);
             }
-            else if (IsHeading && heading != null)
+            else if (Heading is { } __value1 && heading != null)
             {
-                return heading(Heading!);
+                return heading(__value1);
             }
-            else if (IsList && list != null)
+            else if (List is { } __value2 && list != null)
             {
-                return list(List!);
+                return list(__value2);
             }
-            else if (IsCode && code != null)
+            else if (Code is { } __value3 && code != null)
             {
-                return code(Code!);
+                return code(__value3);
             }
-            else if (IsTable && table != null)
+            else if (Table is { } __value4 && table != null)
             {
-                return table(Table!);
+                return table(__value4);
             }
-            else if (IsImage && image != null)
+            else if (Image is { } __value5 && image != null)
             {
-                return image(Image!);
+                return image(__value5);
             }
-            else if (IsLink && link != null)
+            else if (Link is { } __value6 && link != null)
             {
-                return link(Link!);
+                return link(__value6);
             }
 
             return default(TResult);
@@ -567,33 +567,33 @@ namespace G
                 Validate();
             }
 
-            if (IsText)
+            if (Text is { } __value0)
             {
-                text?.Invoke(Text!);
+                text?.Invoke(__value0);
             }
-            else if (IsHeading)
+            else if (Heading is { } __value1)
             {
-                heading?.Invoke(Heading!);
+                heading?.Invoke(__value1);
             }
-            else if (IsList)
+            else if (List is { } __value2)
             {
-                list?.Invoke(List!);
+                list?.Invoke(__value2);
             }
-            else if (IsCode)
+            else if (Code is { } __value3)
             {
-                code?.Invoke(Code!);
+                code?.Invoke(__value3);
             }
-            else if (IsTable)
+            else if (Table is { } __value4)
             {
-                table?.Invoke(Table!);
+                table?.Invoke(__value4);
             }
-            else if (IsImage)
+            else if (Image is { } __value5)
             {
-                image?.Invoke(Image!);
+                image?.Invoke(__value5);
             }
-            else if (IsLink)
+            else if (Link is { } __value6)
             {
-                link?.Invoke(Link!);
+                link?.Invoke(__value6);
             }
         }
 
@@ -615,33 +615,33 @@ namespace G
                 Validate();
             }
 
-            if (IsText)
+            if (Text is { } __value0)
             {
-                text?.Invoke(Text!);
+                text?.Invoke(__value0);
             }
-            else if (IsHeading)
+            else if (Heading is { } __value1)
             {
-                heading?.Invoke(Heading!);
+                heading?.Invoke(__value1);
             }
-            else if (IsList)
+            else if (List is { } __value2)
             {
-                list?.Invoke(List!);
+                list?.Invoke(__value2);
             }
-            else if (IsCode)
+            else if (Code is { } __value3)
             {
-                code?.Invoke(Code!);
+                code?.Invoke(__value3);
             }
-            else if (IsTable)
+            else if (Table is { } __value4)
             {
-                table?.Invoke(Table!);
+                table?.Invoke(__value4);
             }
-            else if (IsImage)
+            else if (Image is { } __value5)
             {
-                image?.Invoke(Image!);
+                image?.Invoke(__value5);
             }
-            else if (IsLink)
+            else if (Link is { } __value6)
             {
-                link?.Invoke(Link!);
+                link?.Invoke(__value6);
             }
         }
 

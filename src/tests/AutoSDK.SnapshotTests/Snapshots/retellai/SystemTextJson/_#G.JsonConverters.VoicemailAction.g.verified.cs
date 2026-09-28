@@ -1,4 +1,4 @@
-﻿//HintName: G.JsonConverters.VoicemailAction.g.cs
+//HintName: G.JsonConverters.VoicemailAction.g.cs
 #nullable enable
 #pragma warning disable CS0618 // Type or member is obsolete
 
@@ -207,25 +207,25 @@ namespace G.JsonConverters
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.VoicemailActionPrompt), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.VoicemailActionPrompt?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.VoicemailActionPrompt).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Prompt!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickPrompt(), typeInfo);
             }
             else if (value.IsStaticText)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.VoicemailActionStaticText), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.VoicemailActionStaticText?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.VoicemailActionStaticText).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.StaticText!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickStaticText(), typeInfo);
             }
             else if (value.IsHangup)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.VoicemailActionHangup), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.VoicemailActionHangup?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.VoicemailActionHangup).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Hangup!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickHangup(), typeInfo);
             }
             else if (value.IsBridgeTransfer)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.VoicemailActionBridgeTransfer), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.VoicemailActionBridgeTransfer?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.VoicemailActionBridgeTransfer).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.BridgeTransfer!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickBridgeTransfer(), typeInfo);
             }
         }
     }

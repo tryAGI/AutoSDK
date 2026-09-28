@@ -1,4 +1,4 @@
-﻿//HintName: G.Api.ModelSchemaModelsModelNameSchemaVariantKeyGet.g.cs
+//HintName: G.Api.ModelSchemaModelsModelNameSchemaVariantKeyGet.g.cs
 
 #nullable enable
 
@@ -179,8 +179,8 @@ namespace G
                 PrepareModelSchemaModelsModelNameSchemaVariantKeyGetRequest(
                     httpClient: HttpClient,
                     httpRequestMessage: __httpRequest,
-                    modelName: modelName!,
-                    variantKey: variantKey!,
+                    modelName: modelName,
+                    variantKey: variantKey,
                     version: version,
                     xiApiKey: xiApiKey);
 
@@ -206,7 +206,7 @@ namespace G
                                 pathTemplate: "$\"/models/{modelName}/schema/{(global::System.Uri.EscapeDataString(variantKey.ToValueString()))}\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: null,
                                 exception: null,
                                 clientOptions: Options,
@@ -240,7 +240,7 @@ namespace G
                                 pathTemplate: "$\"/models/{modelName}/schema/{(global::System.Uri.EscapeDataString(variantKey.ToValueString()))}\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: null,
                                 exception: __exception,
                                 clientOptions: Options,
@@ -281,7 +281,7 @@ namespace G
                                 pathTemplate: "$\"/models/{modelName}/schema/{(global::System.Uri.EscapeDataString(variantKey.ToValueString()))}\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: __response,
                                 exception: null,
                                 clientOptions: Options,
@@ -329,7 +329,7 @@ namespace G
                                 pathTemplate: "$\"/models/{modelName}/schema/{(global::System.Uri.EscapeDataString(variantKey.ToValueString()))}\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: __response,
                                 exception: null,
                                 clientOptions: Options,
@@ -351,7 +351,7 @@ namespace G
                                 pathTemplate: "$\"/models/{modelName}/schema/{(global::System.Uri.EscapeDataString(variantKey.ToValueString()))}\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: __response,
                                 exception: null,
                                 clientOptions: Options,

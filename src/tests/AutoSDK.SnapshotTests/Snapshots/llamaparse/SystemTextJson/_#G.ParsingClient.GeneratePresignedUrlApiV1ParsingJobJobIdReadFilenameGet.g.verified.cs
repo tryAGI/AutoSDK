@@ -1,4 +1,4 @@
-﻿//HintName: G.ParsingClient.GeneratePresignedUrlApiV1ParsingJobJobIdReadFilenameGet.g.cs
+//HintName: G.ParsingClient.GeneratePresignedUrlApiV1ParsingJobJobIdReadFilenameGet.g.cs
 
 #nullable enable
 
@@ -176,8 +176,8 @@ namespace G
                 PrepareGeneratePresignedUrlApiV1ParsingJobJobIdReadFilenameGetRequest(
                     httpClient: HttpClient,
                     httpRequestMessage: __httpRequest,
-                    jobId: jobId!,
-                    filename: filename!,
+                    jobId: jobId,
+                    filename: filename,
                     session: session);
 
                 global::G.AutoSDKHttpRequestOptions.StampAuthorizationOverride(__httpRequest);
@@ -202,7 +202,7 @@ namespace G
                                 pathTemplate: "$\"/api/v1/parsing/job/{jobId}/read/{filename}\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: null,
                                 exception: null,
                                 clientOptions: Options,
@@ -236,7 +236,7 @@ namespace G
                                 pathTemplate: "$\"/api/v1/parsing/job/{jobId}/read/{filename}\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: null,
                                 exception: __exception,
                                 clientOptions: Options,
@@ -277,7 +277,7 @@ namespace G
                                 pathTemplate: "$\"/api/v1/parsing/job/{jobId}/read/{filename}\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: __response,
                                 exception: null,
                                 clientOptions: Options,
@@ -325,7 +325,7 @@ namespace G
                                 pathTemplate: "$\"/api/v1/parsing/job/{jobId}/read/{filename}\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: __response,
                                 exception: null,
                                 clientOptions: Options,
@@ -347,7 +347,7 @@ namespace G
                                 pathTemplate: "$\"/api/v1/parsing/job/{jobId}/read/{filename}\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: __response,
                                 exception: null,
                                 clientOptions: Options,

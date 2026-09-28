@@ -1,4 +1,4 @@
-﻿//HintName: G.Models.OutputMessagePhase.g.cs
+//HintName: G.Models.OutputMessagePhase.g.cs
 #pragma warning disable CS0618 // Type or member is obsolete
 
 #nullable enable
@@ -43,8 +43,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.OutputMessagePhase0 PickOutputMessagePhase0() => IsOutputMessagePhase0
-            ? OutputMessagePhase0!.Value
+        public global::G.OutputMessagePhase0 PickOutputMessagePhase0() => OutputMessagePhase0 is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'OutputMessagePhase0' but the value was {ToString()}.");
 
         /// <summary>
@@ -80,8 +80,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.OutputMessagePhase1 PickOutputMessagePhase1() => IsOutputMessagePhase1
-            ? OutputMessagePhase1!.Value
+        public global::G.OutputMessagePhase1 PickOutputMessagePhase1() => OutputMessagePhase1 is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'OutputMessagePhase1' but the value was {ToString()}.");
 
         /// <summary>
@@ -117,8 +117,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public object PickOutputMessagePhaseVariant3() => IsOutputMessagePhaseVariant3
-            ? OutputMessagePhaseVariant3!
+        public object PickOutputMessagePhaseVariant3() => OutputMessagePhaseVariant3 is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'OutputMessagePhaseVariant3' but the value was {ToString()}.");
         /// <summary>
         /// 
@@ -220,17 +220,17 @@ namespace G
                 Validate();
             }
 
-            if (IsOutputMessagePhase0 && outputMessagePhase0 != null)
+            if (OutputMessagePhase0 is { } __value0 && outputMessagePhase0 != null)
             {
-                return outputMessagePhase0(OutputMessagePhase0!);
+                return outputMessagePhase0(__value0);
             }
-            else if (IsOutputMessagePhase1 && outputMessagePhase1 != null)
+            else if (OutputMessagePhase1 is { } __value1 && outputMessagePhase1 != null)
             {
-                return outputMessagePhase1(OutputMessagePhase1!);
+                return outputMessagePhase1(__value1);
             }
-            else if (IsOutputMessagePhaseVariant3 && outputMessagePhaseVariant3 != null)
+            else if (OutputMessagePhaseVariant3 is { } __value2 && outputMessagePhaseVariant3 != null)
             {
-                return outputMessagePhaseVariant3(OutputMessagePhaseVariant3!);
+                return outputMessagePhaseVariant3(__value2);
             }
 
             return default(TResult);
@@ -252,17 +252,17 @@ namespace G
                 Validate();
             }
 
-            if (IsOutputMessagePhase0)
+            if (OutputMessagePhase0 is { } __value0)
             {
-                outputMessagePhase0?.Invoke(OutputMessagePhase0!);
+                outputMessagePhase0?.Invoke(__value0);
             }
-            else if (IsOutputMessagePhase1)
+            else if (OutputMessagePhase1 is { } __value1)
             {
-                outputMessagePhase1?.Invoke(OutputMessagePhase1!);
+                outputMessagePhase1?.Invoke(__value1);
             }
-            else if (IsOutputMessagePhaseVariant3)
+            else if (OutputMessagePhaseVariant3 is { } __value2)
             {
-                outputMessagePhaseVariant3?.Invoke(OutputMessagePhaseVariant3!);
+                outputMessagePhaseVariant3?.Invoke(__value2);
             }
         }
 
@@ -280,17 +280,17 @@ namespace G
                 Validate();
             }
 
-            if (IsOutputMessagePhase0)
+            if (OutputMessagePhase0 is { } __value0)
             {
-                outputMessagePhase0?.Invoke(OutputMessagePhase0!);
+                outputMessagePhase0?.Invoke(__value0);
             }
-            else if (IsOutputMessagePhase1)
+            else if (OutputMessagePhase1 is { } __value1)
             {
-                outputMessagePhase1?.Invoke(OutputMessagePhase1!);
+                outputMessagePhase1?.Invoke(__value1);
             }
-            else if (IsOutputMessagePhaseVariant3)
+            else if (OutputMessagePhaseVariant3 is { } __value2)
             {
-                outputMessagePhaseVariant3?.Invoke(OutputMessagePhaseVariant3!);
+                outputMessagePhaseVariant3?.Invoke(__value2);
             }
         }
 

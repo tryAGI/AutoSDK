@@ -1,4 +1,4 @@
-﻿//HintName: G.EvaluationRunsClient.EvaluationRunReadV2EntityProjectEvaluationRunsEvaluationRunIdGet.g.cs
+//HintName: G.EvaluationRunsClient.EvaluationRunReadV2EntityProjectEvaluationRunsEvaluationRunIdGet.g.cs
 
 #nullable enable
 
@@ -164,9 +164,9 @@ namespace G
                 PrepareEvaluationRunReadV2EntityProjectEvaluationRunsEvaluationRunIdGetRequest(
                     httpClient: HttpClient,
                     httpRequestMessage: __httpRequest,
-                    entity: entity!,
-                    project: project!,
-                    evaluationRunId: evaluationRunId!);
+                    entity: entity,
+                    project: project,
+                    evaluationRunId: evaluationRunId);
 
                 return __httpRequest;
             }
@@ -188,7 +188,7 @@ namespace G
                                 pathTemplate: "$\"/v2/{entity}/{project}/evaluation_runs/{evaluationRunId}\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: null,
                                 exception: null,
                                 clientOptions: Options,
@@ -222,7 +222,7 @@ namespace G
                                 pathTemplate: "$\"/v2/{entity}/{project}/evaluation_runs/{evaluationRunId}\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: null,
                                 exception: __exception,
                                 clientOptions: Options,
@@ -263,7 +263,7 @@ namespace G
                                 pathTemplate: "$\"/v2/{entity}/{project}/evaluation_runs/{evaluationRunId}\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: __response,
                                 exception: null,
                                 clientOptions: Options,
@@ -311,7 +311,7 @@ namespace G
                                 pathTemplate: "$\"/v2/{entity}/{project}/evaluation_runs/{evaluationRunId}\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: __response,
                                 exception: null,
                                 clientOptions: Options,
@@ -333,7 +333,7 @@ namespace G
                                 pathTemplate: "$\"/v2/{entity}/{project}/evaluation_runs/{evaluationRunId}\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: __response,
                                 exception: null,
                                 clientOptions: Options,

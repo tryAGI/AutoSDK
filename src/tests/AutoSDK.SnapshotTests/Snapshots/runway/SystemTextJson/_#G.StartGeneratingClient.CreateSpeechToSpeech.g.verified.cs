@@ -1,4 +1,4 @@
-﻿//HintName: G.StartGeneratingClient.CreateSpeechToSpeech.g.cs
+//HintName: G.StartGeneratingClient.CreateSpeechToSpeech.g.cs
 
 #nullable enable
 
@@ -240,7 +240,7 @@ namespace G
                 PrepareCreateSpeechToSpeechRequest(
                     httpClient: HttpClient,
                     httpRequestMessage: __httpRequest,
-                    xRunwayVersion: xRunwayVersion!,
+                    xRunwayVersion: xRunwayVersion,
                     request: request);
 
                 return __httpRequest;
@@ -263,7 +263,7 @@ namespace G
                                 pathTemplate: "\"/v1/speech_to_speech\"",
                                 httpMethod: "POST",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: null,
                                 exception: null,
                                 clientOptions: Options,
@@ -297,7 +297,7 @@ namespace G
                                 pathTemplate: "\"/v1/speech_to_speech\"",
                                 httpMethod: "POST",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: null,
                                 exception: __exception,
                                 clientOptions: Options,
@@ -338,7 +338,7 @@ namespace G
                                 pathTemplate: "\"/v1/speech_to_speech\"",
                                 httpMethod: "POST",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: __response,
                                 exception: null,
                                 clientOptions: Options,
@@ -386,7 +386,7 @@ namespace G
                                 pathTemplate: "\"/v1/speech_to_speech\"",
                                 httpMethod: "POST",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: __response,
                                 exception: null,
                                 clientOptions: Options,
@@ -408,7 +408,7 @@ namespace G
                                 pathTemplate: "\"/v1/speech_to_speech\"",
                                 httpMethod: "POST",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: __response,
                                 exception: null,
                                 clientOptions: Options,

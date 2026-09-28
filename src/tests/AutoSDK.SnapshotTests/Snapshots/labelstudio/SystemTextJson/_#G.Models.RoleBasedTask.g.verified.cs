@@ -1,4 +1,4 @@
-﻿//HintName: G.Models.RoleBasedTask.g.cs
+//HintName: G.Models.RoleBasedTask.g.cs
 #pragma warning disable CS0618 // Type or member is obsolete
 
 #nullable enable
@@ -43,8 +43,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.LseTask PickLse() => IsLse
-            ? Lse!
+        public global::G.LseTask PickLse() => Lse is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Lse' but the value was {ToString()}.");
 
         /// <summary>
@@ -80,8 +80,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.LseTaskSerializerForReviewers PickLseSerializerForReviewers() => IsLseSerializerForReviewers
-            ? LseSerializerForReviewers!
+        public global::G.LseTaskSerializerForReviewers PickLseSerializerForReviewers() => LseSerializerForReviewers is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'LseSerializerForReviewers' but the value was {ToString()}.");
 
         /// <summary>
@@ -117,8 +117,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.LseTaskSerializerForAnnotators PickLseSerializerForAnnotators() => IsLseSerializerForAnnotators
-            ? LseSerializerForAnnotators!
+        public global::G.LseTaskSerializerForAnnotators PickLseSerializerForAnnotators() => LseSerializerForAnnotators is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'LseSerializerForAnnotators' but the value was {ToString()}.");
         /// <summary>
         /// 
@@ -243,17 +243,17 @@ namespace G
                 Validate();
             }
 
-            if (IsLse && lse != null)
+            if (Lse is { } __value0 && lse != null)
             {
-                return lse(Lse!);
+                return lse(__value0);
             }
-            else if (IsLseSerializerForReviewers && lseSerializerForReviewers != null)
+            else if (LseSerializerForReviewers is { } __value1 && lseSerializerForReviewers != null)
             {
-                return lseSerializerForReviewers(LseSerializerForReviewers!);
+                return lseSerializerForReviewers(__value1);
             }
-            else if (IsLseSerializerForAnnotators && lseSerializerForAnnotators != null)
+            else if (LseSerializerForAnnotators is { } __value2 && lseSerializerForAnnotators != null)
             {
-                return lseSerializerForAnnotators(LseSerializerForAnnotators!);
+                return lseSerializerForAnnotators(__value2);
             }
 
             return default(TResult);
@@ -275,17 +275,17 @@ namespace G
                 Validate();
             }
 
-            if (IsLse)
+            if (Lse is { } __value0)
             {
-                lse?.Invoke(Lse!);
+                lse?.Invoke(__value0);
             }
-            else if (IsLseSerializerForReviewers)
+            else if (LseSerializerForReviewers is { } __value1)
             {
-                lseSerializerForReviewers?.Invoke(LseSerializerForReviewers!);
+                lseSerializerForReviewers?.Invoke(__value1);
             }
-            else if (IsLseSerializerForAnnotators)
+            else if (LseSerializerForAnnotators is { } __value2)
             {
-                lseSerializerForAnnotators?.Invoke(LseSerializerForAnnotators!);
+                lseSerializerForAnnotators?.Invoke(__value2);
             }
         }
 
@@ -303,17 +303,17 @@ namespace G
                 Validate();
             }
 
-            if (IsLse)
+            if (Lse is { } __value0)
             {
-                lse?.Invoke(Lse!);
+                lse?.Invoke(__value0);
             }
-            else if (IsLseSerializerForReviewers)
+            else if (LseSerializerForReviewers is { } __value1)
             {
-                lseSerializerForReviewers?.Invoke(LseSerializerForReviewers!);
+                lseSerializerForReviewers?.Invoke(__value1);
             }
-            else if (IsLseSerializerForAnnotators)
+            else if (LseSerializerForAnnotators is { } __value2)
             {
-                lseSerializerForAnnotators?.Invoke(LseSerializerForAnnotators!);
+                lseSerializerForAnnotators?.Invoke(__value2);
             }
         }
 

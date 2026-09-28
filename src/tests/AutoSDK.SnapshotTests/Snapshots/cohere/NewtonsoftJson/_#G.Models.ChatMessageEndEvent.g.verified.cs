@@ -1,4 +1,4 @@
-﻿//HintName: G.Models.ChatMessageEndEvent.g.cs
+//HintName: G.Models.ChatMessageEndEvent.g.cs
 #pragma warning disable CS0618 // Type or member is obsolete
 
 #nullable enable
@@ -43,8 +43,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.ChatStreamEventType PickStreamType() => IsStreamType
-            ? StreamType!
+        public global::G.ChatStreamEventType PickStreamType() => StreamType is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'StreamType' but the value was {ToString()}.");
 
         /// <summary>
@@ -80,8 +80,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.ChatMessageEndEventU3fzny PickU3fzny() => IsU3fzny
-            ? U3fzny!
+        public global::G.ChatMessageEndEventU3fzny PickU3fzny() => U3fzny is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'U3fzny' but the value was {ToString()}.");
         /// <summary>
         /// 
@@ -178,13 +178,13 @@ namespace G
                 Validate();
             }
 
-            if (IsStreamType && streamType != null)
+            if (StreamType is { } __value0 && streamType != null)
             {
-                return streamType(StreamType!);
+                return streamType(__value0);
             }
-            else if (IsU3fzny && u3fzny != null)
+            else if (U3fzny is { } __value1 && u3fzny != null)
             {
-                return u3fzny(U3fzny!);
+                return u3fzny(__value1);
             }
 
             return default(TResult);
@@ -204,13 +204,13 @@ namespace G
                 Validate();
             }
 
-            if (IsStreamType)
+            if (StreamType is { } __value0)
             {
-                streamType?.Invoke(StreamType!);
+                streamType?.Invoke(__value0);
             }
-            else if (IsU3fzny)
+            else if (U3fzny is { } __value1)
             {
-                u3fzny?.Invoke(U3fzny!);
+                u3fzny?.Invoke(__value1);
             }
         }
 
@@ -227,13 +227,13 @@ namespace G
                 Validate();
             }
 
-            if (IsStreamType)
+            if (StreamType is { } __value0)
             {
-                streamType?.Invoke(StreamType!);
+                streamType?.Invoke(__value0);
             }
-            else if (IsU3fzny)
+            else if (U3fzny is { } __value1)
             {
-                u3fzny?.Invoke(U3fzny!);
+                u3fzny?.Invoke(__value1);
             }
         }
 

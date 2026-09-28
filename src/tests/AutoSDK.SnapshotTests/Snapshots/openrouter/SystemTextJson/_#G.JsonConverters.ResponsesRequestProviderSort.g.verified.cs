@@ -1,4 +1,4 @@
-﻿//HintName: G.JsonConverters.ResponsesRequestProviderSort.g.cs
+//HintName: G.JsonConverters.ResponsesRequestProviderSort.g.cs
 #nullable enable
 #pragma warning disable CS0618 // Type or member is obsolete
 
@@ -166,19 +166,19 @@ namespace G.JsonConverters
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.ProviderSort), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.ProviderSort> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.ProviderSort).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.ProviderSort!.Value, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickProviderSort(), typeInfo);
             }
             else if (value.IsProviderSortConfig)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.ProviderSortConfig), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.ProviderSortConfig?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.ProviderSortConfig).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.ProviderSortConfig!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickProviderSortConfig(), typeInfo);
             }
             else if (value.IsResponsesRequestProviderSortVariant3)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(object), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<object?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(object).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.ResponsesRequestProviderSortVariant3!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickResponsesRequestProviderSortVariant3(), typeInfo);
             }
         }
     }

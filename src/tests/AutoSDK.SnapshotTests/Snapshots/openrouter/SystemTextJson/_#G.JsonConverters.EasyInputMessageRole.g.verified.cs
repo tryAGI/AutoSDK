@@ -1,4 +1,4 @@
-﻿//HintName: G.JsonConverters.EasyInputMessageRole.g.cs
+//HintName: G.JsonConverters.EasyInputMessageRole.g.cs
 #nullable enable
 #pragma warning disable CS0618 // Type or member is obsolete
 
@@ -248,25 +248,25 @@ namespace G.JsonConverters
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.EasyInputMessageRole0), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.EasyInputMessageRole0> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.EasyInputMessageRole0).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.EasyInputMessageRole0!.Value, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickEasyInputMessageRole0(), typeInfo);
             }
             else if (value.IsEasyInputMessageRole1)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.EasyInputMessageRole1), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.EasyInputMessageRole1> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.EasyInputMessageRole1).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.EasyInputMessageRole1!.Value, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickEasyInputMessageRole1(), typeInfo);
             }
             else if (value.IsEasyInputMessageRole2)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.EasyInputMessageRole2), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.EasyInputMessageRole2> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.EasyInputMessageRole2).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.EasyInputMessageRole2!.Value, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickEasyInputMessageRole2(), typeInfo);
             }
             else if (value.IsEasyInputMessageRole3)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.EasyInputMessageRole3), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.EasyInputMessageRole3> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.EasyInputMessageRole3).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.EasyInputMessageRole3!.Value, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickEasyInputMessageRole3(), typeInfo);
             }
         }
     }

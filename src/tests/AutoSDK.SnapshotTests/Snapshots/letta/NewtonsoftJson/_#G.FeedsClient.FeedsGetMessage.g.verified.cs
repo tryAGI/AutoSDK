@@ -1,4 +1,4 @@
-﻿//HintName: G.FeedsClient.FeedsGetMessage.g.cs
+//HintName: G.FeedsClient.FeedsGetMessage.g.cs
 
 #nullable enable
 
@@ -171,8 +171,8 @@ namespace G
                 PrepareFeedsGetMessageRequest(
                     httpClient: HttpClient,
                     httpRequestMessage: __httpRequest,
-                    feedId: feedId!,
-                    messageId: messageId!);
+                    feedId: feedId,
+                    messageId: messageId);
 
                 return __httpRequest;
             }
@@ -194,7 +194,7 @@ namespace G
                                 pathTemplate: "$\"/v1/feeds/{feedId}/messages/{messageId}\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: null,
                                 exception: null,
                                 clientOptions: Options,
@@ -228,7 +228,7 @@ namespace G
                                 pathTemplate: "$\"/v1/feeds/{feedId}/messages/{messageId}\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: null,
                                 exception: __exception,
                                 clientOptions: Options,
@@ -269,7 +269,7 @@ namespace G
                                 pathTemplate: "$\"/v1/feeds/{feedId}/messages/{messageId}\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: __response,
                                 exception: null,
                                 clientOptions: Options,
@@ -317,7 +317,7 @@ namespace G
                                 pathTemplate: "$\"/v1/feeds/{feedId}/messages/{messageId}\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: __response,
                                 exception: null,
                                 clientOptions: Options,
@@ -339,7 +339,7 @@ namespace G
                                 pathTemplate: "$\"/v1/feeds/{feedId}/messages/{messageId}\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: __response,
                                 exception: null,
                                 clientOptions: Options,

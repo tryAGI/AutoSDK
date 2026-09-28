@@ -1,4 +1,4 @@
-﻿//HintName: G.Models.AssistantsApiResponseFormatOption.g.cs
+//HintName: G.Models.AssistantsApiResponseFormatOption.g.cs
 #pragma warning disable CS0618 // Type or member is obsolete
 
 #nullable enable
@@ -46,8 +46,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.AssistantsApiResponseFormatOptionEnum PickEnum() => IsEnum
-            ? Enum!.Value
+        public global::G.AssistantsApiResponseFormatOptionEnum PickEnum() => Enum is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Enum' but the value was {ToString()}.");
 
         /// <summary>
@@ -83,8 +83,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.ResponseFormatText PickText() => IsText
-            ? Text!
+        public global::G.ResponseFormatText PickText() => Text is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Text' but the value was {ToString()}.");
 
         /// <summary>
@@ -123,8 +123,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.ResponseFormatJsonObject PickJsonObject() => IsJsonObject
-            ? JsonObject!
+        public global::G.ResponseFormatJsonObject PickJsonObject() => JsonObject is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'JsonObject' but the value was {ToString()}.");
 
         /// <summary>
@@ -161,8 +161,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.ResponseFormatJsonSchema PickJsonSchema() => IsJsonSchema
-            ? JsonSchema!
+        public global::G.ResponseFormatJsonSchema PickJsonSchema() => JsonSchema is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'JsonSchema' but the value was {ToString()}.");
         /// <summary>
         /// 
@@ -315,21 +315,21 @@ namespace G
                 Validate();
             }
 
-            if (IsEnum && @enum != null)
+            if (Enum is { } __value0 && @enum != null)
             {
-                return @enum(Enum!);
+                return @enum(__value0);
             }
-            else if (IsText && text != null)
+            else if (Text is { } __value1 && text != null)
             {
-                return text(Text!);
+                return text(__value1);
             }
-            else if (IsJsonObject && jsonObject != null)
+            else if (JsonObject is { } __value2 && jsonObject != null)
             {
-                return jsonObject(JsonObject!);
+                return jsonObject(__value2);
             }
-            else if (IsJsonSchema && jsonSchema != null)
+            else if (JsonSchema is { } __value3 && jsonSchema != null)
             {
-                return jsonSchema(JsonSchema!);
+                return jsonSchema(__value3);
             }
 
             return default(TResult);
@@ -353,21 +353,21 @@ namespace G
                 Validate();
             }
 
-            if (IsEnum)
+            if (Enum is { } __value0)
             {
-                @enum?.Invoke(Enum!);
+                @enum?.Invoke(__value0);
             }
-            else if (IsText)
+            else if (Text is { } __value1)
             {
-                text?.Invoke(Text!);
+                text?.Invoke(__value1);
             }
-            else if (IsJsonObject)
+            else if (JsonObject is { } __value2)
             {
-                jsonObject?.Invoke(JsonObject!);
+                jsonObject?.Invoke(__value2);
             }
-            else if (IsJsonSchema)
+            else if (JsonSchema is { } __value3)
             {
-                jsonSchema?.Invoke(JsonSchema!);
+                jsonSchema?.Invoke(__value3);
             }
         }
 
@@ -386,21 +386,21 @@ namespace G
                 Validate();
             }
 
-            if (IsEnum)
+            if (Enum is { } __value0)
             {
-                @enum?.Invoke(Enum!);
+                @enum?.Invoke(__value0);
             }
-            else if (IsText)
+            else if (Text is { } __value1)
             {
-                text?.Invoke(Text!);
+                text?.Invoke(__value1);
             }
-            else if (IsJsonObject)
+            else if (JsonObject is { } __value2)
             {
-                jsonObject?.Invoke(JsonObject!);
+                jsonObject?.Invoke(__value2);
             }
-            else if (IsJsonSchema)
+            else if (JsonSchema is { } __value3)
             {
-                jsonSchema?.Invoke(JsonSchema!);
+                jsonSchema?.Invoke(__value3);
             }
         }
 

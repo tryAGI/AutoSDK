@@ -1,4 +1,4 @@
-﻿//HintName: G.Models.ChatMessageWithPlaceholders.g.cs
+//HintName: G.Models.ChatMessageWithPlaceholders.g.cs
 #pragma warning disable CS0618 // Type or member is obsolete
 
 #nullable enable
@@ -43,8 +43,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.ChatMessage PickChatMessage() => IsChatMessage
-            ? ChatMessage!
+        public global::G.ChatMessage PickChatMessage() => ChatMessage is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'ChatMessage' but the value was {ToString()}.");
 
         /// <summary>
@@ -80,8 +80,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.PlaceholderMessage PickPlaceholderMessage() => IsPlaceholderMessage
-            ? PlaceholderMessage!
+        public global::G.PlaceholderMessage PickPlaceholderMessage() => PlaceholderMessage is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'PlaceholderMessage' but the value was {ToString()}.");
         /// <summary>
         /// 
@@ -178,13 +178,13 @@ namespace G
                 Validate();
             }
 
-            if (IsChatMessage && chatMessage != null)
+            if (ChatMessage is { } __value0 && chatMessage != null)
             {
-                return chatMessage(ChatMessage!);
+                return chatMessage(__value0);
             }
-            else if (IsPlaceholderMessage && placeholderMessage != null)
+            else if (PlaceholderMessage is { } __value1 && placeholderMessage != null)
             {
-                return placeholderMessage(PlaceholderMessage!);
+                return placeholderMessage(__value1);
             }
 
             return default(TResult);
@@ -204,13 +204,13 @@ namespace G
                 Validate();
             }
 
-            if (IsChatMessage)
+            if (ChatMessage is { } __value0)
             {
-                chatMessage?.Invoke(ChatMessage!);
+                chatMessage?.Invoke(__value0);
             }
-            else if (IsPlaceholderMessage)
+            else if (PlaceholderMessage is { } __value1)
             {
-                placeholderMessage?.Invoke(PlaceholderMessage!);
+                placeholderMessage?.Invoke(__value1);
             }
         }
 
@@ -227,13 +227,13 @@ namespace G
                 Validate();
             }
 
-            if (IsChatMessage)
+            if (ChatMessage is { } __value0)
             {
-                chatMessage?.Invoke(ChatMessage!);
+                chatMessage?.Invoke(__value0);
             }
-            else if (IsPlaceholderMessage)
+            else if (PlaceholderMessage is { } __value1)
             {
-                placeholderMessage?.Invoke(PlaceholderMessage!);
+                placeholderMessage?.Invoke(__value1);
             }
         }
 

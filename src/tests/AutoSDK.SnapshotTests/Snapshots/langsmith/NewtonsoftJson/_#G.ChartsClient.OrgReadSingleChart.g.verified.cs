@@ -1,4 +1,4 @@
-﻿//HintName: G.ChartsClient.OrgReadSingleChart.g.cs
+//HintName: G.ChartsClient.OrgReadSingleChart.g.cs
 
 #nullable enable
 
@@ -199,7 +199,7 @@ namespace G
                 PrepareOrgReadSingleChartRequest(
                     httpClient: HttpClient,
                     httpRequestMessage: __httpRequest,
-                    chartId: chartId!,
+                    chartId: chartId,
                     request: request);
 
                 global::G.AutoSDKHttpRequestOptions.StampAuthorizationOverride(__httpRequest);
@@ -224,7 +224,7 @@ namespace G
                                 pathTemplate: "$\"/api/v1/org-charts/{chartId}\"",
                                 httpMethod: "POST",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: null,
                                 exception: null,
                                 clientOptions: Options,
@@ -258,7 +258,7 @@ namespace G
                                 pathTemplate: "$\"/api/v1/org-charts/{chartId}\"",
                                 httpMethod: "POST",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: null,
                                 exception: __exception,
                                 clientOptions: Options,
@@ -299,7 +299,7 @@ namespace G
                                 pathTemplate: "$\"/api/v1/org-charts/{chartId}\"",
                                 httpMethod: "POST",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: __response,
                                 exception: null,
                                 clientOptions: Options,
@@ -347,7 +347,7 @@ namespace G
                                 pathTemplate: "$\"/api/v1/org-charts/{chartId}\"",
                                 httpMethod: "POST",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: __response,
                                 exception: null,
                                 clientOptions: Options,
@@ -369,7 +369,7 @@ namespace G
                                 pathTemplate: "$\"/api/v1/org-charts/{chartId}\"",
                                 httpMethod: "POST",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: __response,
                                 exception: null,
                                 clientOptions: Options,

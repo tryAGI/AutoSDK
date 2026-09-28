@@ -1,4 +1,4 @@
-﻿//HintName: G.JsonConverters.BaseMessagesResultContentItemsOneOf8Content.g.cs
+//HintName: G.JsonConverters.BaseMessagesResultContentItemsOneOf8Content.g.cs
 #nullable enable
 #pragma warning disable CS0618 // Type or member is obsolete
 
@@ -134,13 +134,13 @@ namespace G.JsonConverters
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.BaseMessagesResultContentItemsOneOf8Content0), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.BaseMessagesResultContentItemsOneOf8Content0?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.BaseMessagesResultContentItemsOneOf8Content0).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.BaseMessagesResultContentItemsOneOf8Content0!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickBaseMessagesResultContentItemsOneOf8Content0(), typeInfo);
             }
             else if (value.IsBaseMessagesResultContentItemsOneOf8Content1)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.BaseMessagesResultContentItemsOneOf8Content1), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.BaseMessagesResultContentItemsOneOf8Content1?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.BaseMessagesResultContentItemsOneOf8Content1).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.BaseMessagesResultContentItemsOneOf8Content1!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickBaseMessagesResultContentItemsOneOf8Content1(), typeInfo);
             }
         }
     }

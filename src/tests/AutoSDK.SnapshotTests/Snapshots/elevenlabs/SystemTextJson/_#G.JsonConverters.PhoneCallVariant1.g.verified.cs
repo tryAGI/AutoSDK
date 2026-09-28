@@ -1,4 +1,4 @@
-﻿//HintName: G.JsonConverters.PhoneCallVariant1.g.cs
+//HintName: G.JsonConverters.PhoneCallVariant1.g.cs
 #nullable enable
 #pragma warning disable CS0618 // Type or member is obsolete
 
@@ -60,13 +60,13 @@ namespace G.JsonConverters
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.ConversationHistoryTwilioPhoneCallModel), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.ConversationHistoryTwilioPhoneCallModel?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.ConversationHistoryTwilioPhoneCallModel).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Twilio!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickTwilio(), typeInfo);
             }
             else if (value.IsSipTrunking)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.ConversationHistorySIPTrunkingPhoneCallModel), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.ConversationHistorySIPTrunkingPhoneCallModel?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.ConversationHistorySIPTrunkingPhoneCallModel).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.SipTrunking!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickSipTrunking(), typeInfo);
             }
         }
     }

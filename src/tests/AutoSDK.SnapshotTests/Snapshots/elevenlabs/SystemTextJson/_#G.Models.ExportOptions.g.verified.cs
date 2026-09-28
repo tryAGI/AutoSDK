@@ -1,4 +1,4 @@
-﻿//HintName: G.Models.ExportOptions.g.cs
+//HintName: G.Models.ExportOptions.g.cs
 #pragma warning disable CS0618 // Type or member is obsolete
 
 #nullable enable
@@ -48,8 +48,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.SegmentedJsonExportOptions PickSegmentedJson() => IsSegmentedJson
-            ? SegmentedJson!
+        public global::G.SegmentedJsonExportOptions PickSegmentedJson() => SegmentedJson is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'SegmentedJson' but the value was {ToString()}.");
 
         /// <summary>
@@ -85,8 +85,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.DocxExportOptions PickDocx() => IsDocx
-            ? Docx!
+        public global::G.DocxExportOptions PickDocx() => Docx is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Docx' but the value was {ToString()}.");
 
         /// <summary>
@@ -122,8 +122,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.PdfExportOptions PickPdf() => IsPdf
-            ? Pdf!
+        public global::G.PdfExportOptions PickPdf() => Pdf is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Pdf' but the value was {ToString()}.");
 
         /// <summary>
@@ -159,8 +159,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.TxtExportOptions PickTxt() => IsTxt
-            ? Txt!
+        public global::G.TxtExportOptions PickTxt() => Txt is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Txt' but the value was {ToString()}.");
 
         /// <summary>
@@ -196,8 +196,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.HtmlExportOptions PickHtml() => IsHtml
-            ? Html!
+        public global::G.HtmlExportOptions PickHtml() => Html is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Html' but the value was {ToString()}.");
 
         /// <summary>
@@ -233,8 +233,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.SrtExportOptions PickSrt() => IsSrt
-            ? Srt!
+        public global::G.SrtExportOptions PickSrt() => Srt is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Srt' but the value was {ToString()}.");
         /// <summary>
         /// 
@@ -446,29 +446,29 @@ namespace G
                 Validate();
             }
 
-            if (IsSegmentedJson && segmentedJson != null)
+            if (SegmentedJson is { } __value0 && segmentedJson != null)
             {
-                return segmentedJson(SegmentedJson!);
+                return segmentedJson(__value0);
             }
-            else if (IsDocx && docx != null)
+            else if (Docx is { } __value1 && docx != null)
             {
-                return docx(Docx!);
+                return docx(__value1);
             }
-            else if (IsPdf && pdf != null)
+            else if (Pdf is { } __value2 && pdf != null)
             {
-                return pdf(Pdf!);
+                return pdf(__value2);
             }
-            else if (IsTxt && txt != null)
+            else if (Txt is { } __value3 && txt != null)
             {
-                return txt(Txt!);
+                return txt(__value3);
             }
-            else if (IsHtml && html != null)
+            else if (Html is { } __value4 && html != null)
             {
-                return html(Html!);
+                return html(__value4);
             }
-            else if (IsSrt && srt != null)
+            else if (Srt is { } __value5 && srt != null)
             {
-                return srt(Srt!);
+                return srt(__value5);
             }
 
             return default(TResult);
@@ -496,29 +496,29 @@ namespace G
                 Validate();
             }
 
-            if (IsSegmentedJson)
+            if (SegmentedJson is { } __value0)
             {
-                segmentedJson?.Invoke(SegmentedJson!);
+                segmentedJson?.Invoke(__value0);
             }
-            else if (IsDocx)
+            else if (Docx is { } __value1)
             {
-                docx?.Invoke(Docx!);
+                docx?.Invoke(__value1);
             }
-            else if (IsPdf)
+            else if (Pdf is { } __value2)
             {
-                pdf?.Invoke(Pdf!);
+                pdf?.Invoke(__value2);
             }
-            else if (IsTxt)
+            else if (Txt is { } __value3)
             {
-                txt?.Invoke(Txt!);
+                txt?.Invoke(__value3);
             }
-            else if (IsHtml)
+            else if (Html is { } __value4)
             {
-                html?.Invoke(Html!);
+                html?.Invoke(__value4);
             }
-            else if (IsSrt)
+            else if (Srt is { } __value5)
             {
-                srt?.Invoke(Srt!);
+                srt?.Invoke(__value5);
             }
         }
 
@@ -539,29 +539,29 @@ namespace G
                 Validate();
             }
 
-            if (IsSegmentedJson)
+            if (SegmentedJson is { } __value0)
             {
-                segmentedJson?.Invoke(SegmentedJson!);
+                segmentedJson?.Invoke(__value0);
             }
-            else if (IsDocx)
+            else if (Docx is { } __value1)
             {
-                docx?.Invoke(Docx!);
+                docx?.Invoke(__value1);
             }
-            else if (IsPdf)
+            else if (Pdf is { } __value2)
             {
-                pdf?.Invoke(Pdf!);
+                pdf?.Invoke(__value2);
             }
-            else if (IsTxt)
+            else if (Txt is { } __value3)
             {
-                txt?.Invoke(Txt!);
+                txt?.Invoke(__value3);
             }
-            else if (IsHtml)
+            else if (Html is { } __value4)
             {
-                html?.Invoke(Html!);
+                html?.Invoke(__value4);
             }
-            else if (IsSrt)
+            else if (Srt is { } __value5)
             {
-                srt?.Invoke(Srt!);
+                srt?.Invoke(__value5);
             }
         }
 

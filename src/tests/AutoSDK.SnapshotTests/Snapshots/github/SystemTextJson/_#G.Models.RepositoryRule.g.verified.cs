@@ -1,4 +1,4 @@
-﻿//HintName: G.Models.RepositoryRule.g.cs
+//HintName: G.Models.RepositoryRule.g.cs
 #pragma warning disable CS0618 // Type or member is obsolete
 
 #nullable enable
@@ -48,8 +48,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.RepositoryRuleCreation PickCreation() => IsCreation
-            ? Creation!
+        public global::G.RepositoryRuleCreation PickCreation() => Creation is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Creation' but the value was {ToString()}.");
 
         /// <summary>
@@ -85,8 +85,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.RepositoryRuleUpdate PickUpdate() => IsUpdate
-            ? Update!
+        public global::G.RepositoryRuleUpdate PickUpdate() => Update is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Update' but the value was {ToString()}.");
 
         /// <summary>
@@ -122,8 +122,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.RepositoryRuleDeletion PickDeletion() => IsDeletion
-            ? Deletion!
+        public global::G.RepositoryRuleDeletion PickDeletion() => Deletion is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Deletion' but the value was {ToString()}.");
 
         /// <summary>
@@ -159,8 +159,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.RepositoryRuleRequiredLinearHistory PickRequiredLinearHistory() => IsRequiredLinearHistory
-            ? RequiredLinearHistory!
+        public global::G.RepositoryRuleRequiredLinearHistory PickRequiredLinearHistory() => RequiredLinearHistory is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'RequiredLinearHistory' but the value was {ToString()}.");
 
         /// <summary>
@@ -196,8 +196,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.RepositoryRuleMergeQueue PickMergeQueue() => IsMergeQueue
-            ? MergeQueue!
+        public global::G.RepositoryRuleMergeQueue PickMergeQueue() => MergeQueue is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'MergeQueue' but the value was {ToString()}.");
 
         /// <summary>
@@ -233,8 +233,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.RepositoryRuleRequiredDeployments PickRequiredDeployments() => IsRequiredDeployments
-            ? RequiredDeployments!
+        public global::G.RepositoryRuleRequiredDeployments PickRequiredDeployments() => RequiredDeployments is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'RequiredDeployments' but the value was {ToString()}.");
 
         /// <summary>
@@ -270,8 +270,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.RepositoryRuleRequiredSignatures PickRequiredSignatures() => IsRequiredSignatures
-            ? RequiredSignatures!
+        public global::G.RepositoryRuleRequiredSignatures PickRequiredSignatures() => RequiredSignatures is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'RequiredSignatures' but the value was {ToString()}.");
 
         /// <summary>
@@ -307,8 +307,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.RepositoryRulePullRequest PickPullRequest() => IsPullRequest
-            ? PullRequest!
+        public global::G.RepositoryRulePullRequest PickPullRequest() => PullRequest is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'PullRequest' but the value was {ToString()}.");
 
         /// <summary>
@@ -344,8 +344,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.RepositoryRuleRequiredStatusChecks PickRequiredStatusChecks() => IsRequiredStatusChecks
-            ? RequiredStatusChecks!
+        public global::G.RepositoryRuleRequiredStatusChecks PickRequiredStatusChecks() => RequiredStatusChecks is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'RequiredStatusChecks' but the value was {ToString()}.");
 
         /// <summary>
@@ -381,8 +381,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.RepositoryRuleNonFastForward PickNonFastForward() => IsNonFastForward
-            ? NonFastForward!
+        public global::G.RepositoryRuleNonFastForward PickNonFastForward() => NonFastForward is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'NonFastForward' but the value was {ToString()}.");
 
         /// <summary>
@@ -418,8 +418,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.RepositoryRuleCommitMessagePattern PickCommitMessagePattern() => IsCommitMessagePattern
-            ? CommitMessagePattern!
+        public global::G.RepositoryRuleCommitMessagePattern PickCommitMessagePattern() => CommitMessagePattern is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'CommitMessagePattern' but the value was {ToString()}.");
 
         /// <summary>
@@ -455,8 +455,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.RepositoryRuleCommitAuthorEmailPattern PickCommitAuthorEmailPattern() => IsCommitAuthorEmailPattern
-            ? CommitAuthorEmailPattern!
+        public global::G.RepositoryRuleCommitAuthorEmailPattern PickCommitAuthorEmailPattern() => CommitAuthorEmailPattern is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'CommitAuthorEmailPattern' but the value was {ToString()}.");
 
         /// <summary>
@@ -492,8 +492,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.RepositoryRuleCommitterEmailPattern PickCommitterEmailPattern() => IsCommitterEmailPattern
-            ? CommitterEmailPattern!
+        public global::G.RepositoryRuleCommitterEmailPattern PickCommitterEmailPattern() => CommitterEmailPattern is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'CommitterEmailPattern' but the value was {ToString()}.");
 
         /// <summary>
@@ -529,8 +529,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.RepositoryRuleBranchNamePattern PickBranchNamePattern() => IsBranchNamePattern
-            ? BranchNamePattern!
+        public global::G.RepositoryRuleBranchNamePattern PickBranchNamePattern() => BranchNamePattern is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'BranchNamePattern' but the value was {ToString()}.");
 
         /// <summary>
@@ -566,8 +566,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.RepositoryRuleTagNamePattern PickTagNamePattern() => IsTagNamePattern
-            ? TagNamePattern!
+        public global::G.RepositoryRuleTagNamePattern PickTagNamePattern() => TagNamePattern is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'TagNamePattern' but the value was {ToString()}.");
 
         /// <summary>
@@ -603,8 +603,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.RepositoryRuleFilePathRestriction PickFilePathRestriction() => IsFilePathRestriction
-            ? FilePathRestriction!
+        public global::G.RepositoryRuleFilePathRestriction PickFilePathRestriction() => FilePathRestriction is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'FilePathRestriction' but the value was {ToString()}.");
 
         /// <summary>
@@ -640,8 +640,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.RepositoryRuleMaxFilePathLength PickMaxFilePathLength() => IsMaxFilePathLength
-            ? MaxFilePathLength!
+        public global::G.RepositoryRuleMaxFilePathLength PickMaxFilePathLength() => MaxFilePathLength is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'MaxFilePathLength' but the value was {ToString()}.");
 
         /// <summary>
@@ -677,8 +677,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.RepositoryRuleFileExtensionRestriction PickFileExtensionRestriction() => IsFileExtensionRestriction
-            ? FileExtensionRestriction!
+        public global::G.RepositoryRuleFileExtensionRestriction PickFileExtensionRestriction() => FileExtensionRestriction is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'FileExtensionRestriction' but the value was {ToString()}.");
 
         /// <summary>
@@ -714,8 +714,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.RepositoryRuleMaxFileSize PickMaxFileSize() => IsMaxFileSize
-            ? MaxFileSize!
+        public global::G.RepositoryRuleMaxFileSize PickMaxFileSize() => MaxFileSize is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'MaxFileSize' but the value was {ToString()}.");
 
         /// <summary>
@@ -751,8 +751,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.RepositoryRuleWorkflows PickWorkflows() => IsWorkflows
-            ? Workflows!
+        public global::G.RepositoryRuleWorkflows PickWorkflows() => Workflows is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Workflows' but the value was {ToString()}.");
 
         /// <summary>
@@ -788,8 +788,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.RepositoryRuleCodeScanning PickCodeScanning() => IsCodeScanning
-            ? CodeScanning!
+        public global::G.RepositoryRuleCodeScanning PickCodeScanning() => CodeScanning is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'CodeScanning' but the value was {ToString()}.");
         /// <summary>
         /// 
@@ -1421,89 +1421,89 @@ namespace G
                 Validate();
             }
 
-            if (IsCreation && creation != null)
+            if (Creation is { } __value0 && creation != null)
             {
-                return creation(Creation!);
+                return creation(__value0);
             }
-            else if (IsUpdate && update != null)
+            else if (Update is { } __value1 && update != null)
             {
-                return update(Update!);
+                return update(__value1);
             }
-            else if (IsDeletion && deletion != null)
+            else if (Deletion is { } __value2 && deletion != null)
             {
-                return deletion(Deletion!);
+                return deletion(__value2);
             }
-            else if (IsRequiredLinearHistory && requiredLinearHistory != null)
+            else if (RequiredLinearHistory is { } __value3 && requiredLinearHistory != null)
             {
-                return requiredLinearHistory(RequiredLinearHistory!);
+                return requiredLinearHistory(__value3);
             }
-            else if (IsMergeQueue && mergeQueue != null)
+            else if (MergeQueue is { } __value4 && mergeQueue != null)
             {
-                return mergeQueue(MergeQueue!);
+                return mergeQueue(__value4);
             }
-            else if (IsRequiredDeployments && requiredDeployments != null)
+            else if (RequiredDeployments is { } __value5 && requiredDeployments != null)
             {
-                return requiredDeployments(RequiredDeployments!);
+                return requiredDeployments(__value5);
             }
-            else if (IsRequiredSignatures && requiredSignatures != null)
+            else if (RequiredSignatures is { } __value6 && requiredSignatures != null)
             {
-                return requiredSignatures(RequiredSignatures!);
+                return requiredSignatures(__value6);
             }
-            else if (IsPullRequest && pullRequest != null)
+            else if (PullRequest is { } __value7 && pullRequest != null)
             {
-                return pullRequest(PullRequest!);
+                return pullRequest(__value7);
             }
-            else if (IsRequiredStatusChecks && requiredStatusChecks != null)
+            else if (RequiredStatusChecks is { } __value8 && requiredStatusChecks != null)
             {
-                return requiredStatusChecks(RequiredStatusChecks!);
+                return requiredStatusChecks(__value8);
             }
-            else if (IsNonFastForward && nonFastForward != null)
+            else if (NonFastForward is { } __value9 && nonFastForward != null)
             {
-                return nonFastForward(NonFastForward!);
+                return nonFastForward(__value9);
             }
-            else if (IsCommitMessagePattern && commitMessagePattern != null)
+            else if (CommitMessagePattern is { } __value10 && commitMessagePattern != null)
             {
-                return commitMessagePattern(CommitMessagePattern!);
+                return commitMessagePattern(__value10);
             }
-            else if (IsCommitAuthorEmailPattern && commitAuthorEmailPattern != null)
+            else if (CommitAuthorEmailPattern is { } __value11 && commitAuthorEmailPattern != null)
             {
-                return commitAuthorEmailPattern(CommitAuthorEmailPattern!);
+                return commitAuthorEmailPattern(__value11);
             }
-            else if (IsCommitterEmailPattern && committerEmailPattern != null)
+            else if (CommitterEmailPattern is { } __value12 && committerEmailPattern != null)
             {
-                return committerEmailPattern(CommitterEmailPattern!);
+                return committerEmailPattern(__value12);
             }
-            else if (IsBranchNamePattern && branchNamePattern != null)
+            else if (BranchNamePattern is { } __value13 && branchNamePattern != null)
             {
-                return branchNamePattern(BranchNamePattern!);
+                return branchNamePattern(__value13);
             }
-            else if (IsTagNamePattern && tagNamePattern != null)
+            else if (TagNamePattern is { } __value14 && tagNamePattern != null)
             {
-                return tagNamePattern(TagNamePattern!);
+                return tagNamePattern(__value14);
             }
-            else if (IsFilePathRestriction && filePathRestriction != null)
+            else if (FilePathRestriction is { } __value15 && filePathRestriction != null)
             {
-                return filePathRestriction(FilePathRestriction!);
+                return filePathRestriction(__value15);
             }
-            else if (IsMaxFilePathLength && maxFilePathLength != null)
+            else if (MaxFilePathLength is { } __value16 && maxFilePathLength != null)
             {
-                return maxFilePathLength(MaxFilePathLength!);
+                return maxFilePathLength(__value16);
             }
-            else if (IsFileExtensionRestriction && fileExtensionRestriction != null)
+            else if (FileExtensionRestriction is { } __value17 && fileExtensionRestriction != null)
             {
-                return fileExtensionRestriction(FileExtensionRestriction!);
+                return fileExtensionRestriction(__value17);
             }
-            else if (IsMaxFileSize && maxFileSize != null)
+            else if (MaxFileSize is { } __value18 && maxFileSize != null)
             {
-                return maxFileSize(MaxFileSize!);
+                return maxFileSize(__value18);
             }
-            else if (IsWorkflows && workflows != null)
+            else if (Workflows is { } __value19 && workflows != null)
             {
-                return workflows(Workflows!);
+                return workflows(__value19);
             }
-            else if (IsCodeScanning && codeScanning != null)
+            else if (CodeScanning is { } __value20 && codeScanning != null)
             {
-                return codeScanning(CodeScanning!);
+                return codeScanning(__value20);
             }
 
             return default(TResult);
@@ -1561,89 +1561,89 @@ namespace G
                 Validate();
             }
 
-            if (IsCreation)
+            if (Creation is { } __value0)
             {
-                creation?.Invoke(Creation!);
+                creation?.Invoke(__value0);
             }
-            else if (IsUpdate)
+            else if (Update is { } __value1)
             {
-                update?.Invoke(Update!);
+                update?.Invoke(__value1);
             }
-            else if (IsDeletion)
+            else if (Deletion is { } __value2)
             {
-                deletion?.Invoke(Deletion!);
+                deletion?.Invoke(__value2);
             }
-            else if (IsRequiredLinearHistory)
+            else if (RequiredLinearHistory is { } __value3)
             {
-                requiredLinearHistory?.Invoke(RequiredLinearHistory!);
+                requiredLinearHistory?.Invoke(__value3);
             }
-            else if (IsMergeQueue)
+            else if (MergeQueue is { } __value4)
             {
-                mergeQueue?.Invoke(MergeQueue!);
+                mergeQueue?.Invoke(__value4);
             }
-            else if (IsRequiredDeployments)
+            else if (RequiredDeployments is { } __value5)
             {
-                requiredDeployments?.Invoke(RequiredDeployments!);
+                requiredDeployments?.Invoke(__value5);
             }
-            else if (IsRequiredSignatures)
+            else if (RequiredSignatures is { } __value6)
             {
-                requiredSignatures?.Invoke(RequiredSignatures!);
+                requiredSignatures?.Invoke(__value6);
             }
-            else if (IsPullRequest)
+            else if (PullRequest is { } __value7)
             {
-                pullRequest?.Invoke(PullRequest!);
+                pullRequest?.Invoke(__value7);
             }
-            else if (IsRequiredStatusChecks)
+            else if (RequiredStatusChecks is { } __value8)
             {
-                requiredStatusChecks?.Invoke(RequiredStatusChecks!);
+                requiredStatusChecks?.Invoke(__value8);
             }
-            else if (IsNonFastForward)
+            else if (NonFastForward is { } __value9)
             {
-                nonFastForward?.Invoke(NonFastForward!);
+                nonFastForward?.Invoke(__value9);
             }
-            else if (IsCommitMessagePattern)
+            else if (CommitMessagePattern is { } __value10)
             {
-                commitMessagePattern?.Invoke(CommitMessagePattern!);
+                commitMessagePattern?.Invoke(__value10);
             }
-            else if (IsCommitAuthorEmailPattern)
+            else if (CommitAuthorEmailPattern is { } __value11)
             {
-                commitAuthorEmailPattern?.Invoke(CommitAuthorEmailPattern!);
+                commitAuthorEmailPattern?.Invoke(__value11);
             }
-            else if (IsCommitterEmailPattern)
+            else if (CommitterEmailPattern is { } __value12)
             {
-                committerEmailPattern?.Invoke(CommitterEmailPattern!);
+                committerEmailPattern?.Invoke(__value12);
             }
-            else if (IsBranchNamePattern)
+            else if (BranchNamePattern is { } __value13)
             {
-                branchNamePattern?.Invoke(BranchNamePattern!);
+                branchNamePattern?.Invoke(__value13);
             }
-            else if (IsTagNamePattern)
+            else if (TagNamePattern is { } __value14)
             {
-                tagNamePattern?.Invoke(TagNamePattern!);
+                tagNamePattern?.Invoke(__value14);
             }
-            else if (IsFilePathRestriction)
+            else if (FilePathRestriction is { } __value15)
             {
-                filePathRestriction?.Invoke(FilePathRestriction!);
+                filePathRestriction?.Invoke(__value15);
             }
-            else if (IsMaxFilePathLength)
+            else if (MaxFilePathLength is { } __value16)
             {
-                maxFilePathLength?.Invoke(MaxFilePathLength!);
+                maxFilePathLength?.Invoke(__value16);
             }
-            else if (IsFileExtensionRestriction)
+            else if (FileExtensionRestriction is { } __value17)
             {
-                fileExtensionRestriction?.Invoke(FileExtensionRestriction!);
+                fileExtensionRestriction?.Invoke(__value17);
             }
-            else if (IsMaxFileSize)
+            else if (MaxFileSize is { } __value18)
             {
-                maxFileSize?.Invoke(MaxFileSize!);
+                maxFileSize?.Invoke(__value18);
             }
-            else if (IsWorkflows)
+            else if (Workflows is { } __value19)
             {
-                workflows?.Invoke(Workflows!);
+                workflows?.Invoke(__value19);
             }
-            else if (IsCodeScanning)
+            else if (CodeScanning is { } __value20)
             {
-                codeScanning?.Invoke(CodeScanning!);
+                codeScanning?.Invoke(__value20);
             }
         }
 
@@ -1679,89 +1679,89 @@ namespace G
                 Validate();
             }
 
-            if (IsCreation)
+            if (Creation is { } __value0)
             {
-                creation?.Invoke(Creation!);
+                creation?.Invoke(__value0);
             }
-            else if (IsUpdate)
+            else if (Update is { } __value1)
             {
-                update?.Invoke(Update!);
+                update?.Invoke(__value1);
             }
-            else if (IsDeletion)
+            else if (Deletion is { } __value2)
             {
-                deletion?.Invoke(Deletion!);
+                deletion?.Invoke(__value2);
             }
-            else if (IsRequiredLinearHistory)
+            else if (RequiredLinearHistory is { } __value3)
             {
-                requiredLinearHistory?.Invoke(RequiredLinearHistory!);
+                requiredLinearHistory?.Invoke(__value3);
             }
-            else if (IsMergeQueue)
+            else if (MergeQueue is { } __value4)
             {
-                mergeQueue?.Invoke(MergeQueue!);
+                mergeQueue?.Invoke(__value4);
             }
-            else if (IsRequiredDeployments)
+            else if (RequiredDeployments is { } __value5)
             {
-                requiredDeployments?.Invoke(RequiredDeployments!);
+                requiredDeployments?.Invoke(__value5);
             }
-            else if (IsRequiredSignatures)
+            else if (RequiredSignatures is { } __value6)
             {
-                requiredSignatures?.Invoke(RequiredSignatures!);
+                requiredSignatures?.Invoke(__value6);
             }
-            else if (IsPullRequest)
+            else if (PullRequest is { } __value7)
             {
-                pullRequest?.Invoke(PullRequest!);
+                pullRequest?.Invoke(__value7);
             }
-            else if (IsRequiredStatusChecks)
+            else if (RequiredStatusChecks is { } __value8)
             {
-                requiredStatusChecks?.Invoke(RequiredStatusChecks!);
+                requiredStatusChecks?.Invoke(__value8);
             }
-            else if (IsNonFastForward)
+            else if (NonFastForward is { } __value9)
             {
-                nonFastForward?.Invoke(NonFastForward!);
+                nonFastForward?.Invoke(__value9);
             }
-            else if (IsCommitMessagePattern)
+            else if (CommitMessagePattern is { } __value10)
             {
-                commitMessagePattern?.Invoke(CommitMessagePattern!);
+                commitMessagePattern?.Invoke(__value10);
             }
-            else if (IsCommitAuthorEmailPattern)
+            else if (CommitAuthorEmailPattern is { } __value11)
             {
-                commitAuthorEmailPattern?.Invoke(CommitAuthorEmailPattern!);
+                commitAuthorEmailPattern?.Invoke(__value11);
             }
-            else if (IsCommitterEmailPattern)
+            else if (CommitterEmailPattern is { } __value12)
             {
-                committerEmailPattern?.Invoke(CommitterEmailPattern!);
+                committerEmailPattern?.Invoke(__value12);
             }
-            else if (IsBranchNamePattern)
+            else if (BranchNamePattern is { } __value13)
             {
-                branchNamePattern?.Invoke(BranchNamePattern!);
+                branchNamePattern?.Invoke(__value13);
             }
-            else if (IsTagNamePattern)
+            else if (TagNamePattern is { } __value14)
             {
-                tagNamePattern?.Invoke(TagNamePattern!);
+                tagNamePattern?.Invoke(__value14);
             }
-            else if (IsFilePathRestriction)
+            else if (FilePathRestriction is { } __value15)
             {
-                filePathRestriction?.Invoke(FilePathRestriction!);
+                filePathRestriction?.Invoke(__value15);
             }
-            else if (IsMaxFilePathLength)
+            else if (MaxFilePathLength is { } __value16)
             {
-                maxFilePathLength?.Invoke(MaxFilePathLength!);
+                maxFilePathLength?.Invoke(__value16);
             }
-            else if (IsFileExtensionRestriction)
+            else if (FileExtensionRestriction is { } __value17)
             {
-                fileExtensionRestriction?.Invoke(FileExtensionRestriction!);
+                fileExtensionRestriction?.Invoke(__value17);
             }
-            else if (IsMaxFileSize)
+            else if (MaxFileSize is { } __value18)
             {
-                maxFileSize?.Invoke(MaxFileSize!);
+                maxFileSize?.Invoke(__value18);
             }
-            else if (IsWorkflows)
+            else if (Workflows is { } __value19)
             {
-                workflows?.Invoke(Workflows!);
+                workflows?.Invoke(__value19);
             }
-            else if (IsCodeScanning)
+            else if (CodeScanning is { } __value20)
             {
-                codeScanning?.Invoke(CodeScanning!);
+                codeScanning?.Invoke(__value20);
             }
         }
 

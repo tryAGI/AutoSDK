@@ -1,4 +1,4 @@
-﻿//HintName: G.Models.ForwardConditionVariant1.g.cs
+//HintName: G.Models.ForwardConditionVariant1.g.cs
 #pragma warning disable CS0618 // Type or member is obsolete
 
 #nullable enable
@@ -48,8 +48,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.WorkflowUnconditionalModelInput PickUnconditional() => IsUnconditional
-            ? Unconditional!
+        public global::G.WorkflowUnconditionalModelInput PickUnconditional() => Unconditional is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Unconditional' but the value was {ToString()}.");
 
         /// <summary>
@@ -85,8 +85,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.WorkflowLLMConditionModelInput PickLlm() => IsLlm
-            ? Llm!
+        public global::G.WorkflowLLMConditionModelInput PickLlm() => Llm is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Llm' but the value was {ToString()}.");
 
         /// <summary>
@@ -122,8 +122,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.WorkflowResultConditionModelInput PickResult() => IsResult
-            ? Result!
+        public global::G.WorkflowResultConditionModelInput PickResult() => Result is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Result' but the value was {ToString()}.");
 
         /// <summary>
@@ -159,8 +159,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.WorkflowExpressionConditionModelInput PickExpression() => IsExpression
-            ? Expression!
+        public global::G.WorkflowExpressionConditionModelInput PickExpression() => Expression is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Expression' but the value was {ToString()}.");
         /// <summary>
         /// 
@@ -316,21 +316,21 @@ namespace G
                 Validate();
             }
 
-            if (IsUnconditional && unconditional != null)
+            if (Unconditional is { } __value0 && unconditional != null)
             {
-                return unconditional(Unconditional!);
+                return unconditional(__value0);
             }
-            else if (IsLlm && llm != null)
+            else if (Llm is { } __value1 && llm != null)
             {
-                return llm(Llm!);
+                return llm(__value1);
             }
-            else if (IsResult && result != null)
+            else if (Result is { } __value2 && result != null)
             {
-                return result(Result!);
+                return result(__value2);
             }
-            else if (IsExpression && expression != null)
+            else if (Expression is { } __value3 && expression != null)
             {
-                return expression(Expression!);
+                return expression(__value3);
             }
 
             return default(TResult);
@@ -354,21 +354,21 @@ namespace G
                 Validate();
             }
 
-            if (IsUnconditional)
+            if (Unconditional is { } __value0)
             {
-                unconditional?.Invoke(Unconditional!);
+                unconditional?.Invoke(__value0);
             }
-            else if (IsLlm)
+            else if (Llm is { } __value1)
             {
-                llm?.Invoke(Llm!);
+                llm?.Invoke(__value1);
             }
-            else if (IsResult)
+            else if (Result is { } __value2)
             {
-                result?.Invoke(Result!);
+                result?.Invoke(__value2);
             }
-            else if (IsExpression)
+            else if (Expression is { } __value3)
             {
-                expression?.Invoke(Expression!);
+                expression?.Invoke(__value3);
             }
         }
 
@@ -387,21 +387,21 @@ namespace G
                 Validate();
             }
 
-            if (IsUnconditional)
+            if (Unconditional is { } __value0)
             {
-                unconditional?.Invoke(Unconditional!);
+                unconditional?.Invoke(__value0);
             }
-            else if (IsLlm)
+            else if (Llm is { } __value1)
             {
-                llm?.Invoke(Llm!);
+                llm?.Invoke(__value1);
             }
-            else if (IsResult)
+            else if (Result is { } __value2)
             {
-                result?.Invoke(Result!);
+                result?.Invoke(__value2);
             }
-            else if (IsExpression)
+            else if (Expression is { } __value3)
             {
-                expression?.Invoke(Expression!);
+                expression?.Invoke(__value3);
             }
         }
 

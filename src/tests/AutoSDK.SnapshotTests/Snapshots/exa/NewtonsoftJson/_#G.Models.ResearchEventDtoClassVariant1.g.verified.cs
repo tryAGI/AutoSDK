@@ -1,4 +1,4 @@
-﻿//HintName: G.Models.ResearchEventDtoClassVariant1.g.cs
+//HintName: G.Models.ResearchEventDtoClassVariant1.g.cs
 #pragma warning disable CS0618 // Type or member is obsolete
 
 #nullable enable
@@ -48,8 +48,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.ResearchEventDtoClassVariant1Variant1 PickResearchDefinition() => IsResearchDefinition
-            ? ResearchDefinition!
+        public global::G.ResearchEventDtoClassVariant1Variant1 PickResearchDefinition() => ResearchDefinition is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'ResearchDefinition' but the value was {ToString()}.");
 
         /// <summary>
@@ -85,8 +85,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.ResearchEventDtoClassVariant1Variant2 PickResearchOutput() => IsResearchOutput
-            ? ResearchOutput!
+        public global::G.ResearchEventDtoClassVariant1Variant2 PickResearchOutput() => ResearchOutput is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'ResearchOutput' but the value was {ToString()}.");
         /// <summary>
         /// 
@@ -186,13 +186,13 @@ namespace G
                 Validate();
             }
 
-            if (IsResearchDefinition && researchDefinition != null)
+            if (ResearchDefinition is { } __value0 && researchDefinition != null)
             {
-                return researchDefinition(ResearchDefinition!);
+                return researchDefinition(__value0);
             }
-            else if (IsResearchOutput && researchOutput != null)
+            else if (ResearchOutput is { } __value1 && researchOutput != null)
             {
-                return researchOutput(ResearchOutput!);
+                return researchOutput(__value1);
             }
 
             return default(TResult);
@@ -212,13 +212,13 @@ namespace G
                 Validate();
             }
 
-            if (IsResearchDefinition)
+            if (ResearchDefinition is { } __value0)
             {
-                researchDefinition?.Invoke(ResearchDefinition!);
+                researchDefinition?.Invoke(__value0);
             }
-            else if (IsResearchOutput)
+            else if (ResearchOutput is { } __value1)
             {
-                researchOutput?.Invoke(ResearchOutput!);
+                researchOutput?.Invoke(__value1);
             }
         }
 
@@ -235,13 +235,13 @@ namespace G
                 Validate();
             }
 
-            if (IsResearchDefinition)
+            if (ResearchDefinition is { } __value0)
             {
-                researchDefinition?.Invoke(ResearchDefinition!);
+                researchDefinition?.Invoke(__value0);
             }
-            else if (IsResearchOutput)
+            else if (ResearchOutput is { } __value1)
             {
-                researchOutput?.Invoke(ResearchOutput!);
+                researchOutput?.Invoke(__value1);
             }
         }
 

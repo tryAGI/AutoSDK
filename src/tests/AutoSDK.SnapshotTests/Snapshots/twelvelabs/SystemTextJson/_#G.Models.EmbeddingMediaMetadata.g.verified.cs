@@ -1,4 +1,4 @@
-﻿//HintName: G.Models.EmbeddingMediaMetadata.g.cs
+//HintName: G.Models.EmbeddingMediaMetadata.g.cs
 #pragma warning disable CS0618 // Type or member is obsolete
 
 #nullable enable
@@ -43,8 +43,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.EmbeddingImageMetadata PickEmbeddingImageMetadata() => IsEmbeddingImageMetadata
-            ? EmbeddingImageMetadata!
+        public global::G.EmbeddingImageMetadata PickEmbeddingImageMetadata() => EmbeddingImageMetadata is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'EmbeddingImageMetadata' but the value was {ToString()}.");
 
         /// <summary>
@@ -80,8 +80,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.EmbeddingTextImageMetadata PickEmbeddingTextImageMetadata() => IsEmbeddingTextImageMetadata
-            ? EmbeddingTextImageMetadata!
+        public global::G.EmbeddingTextImageMetadata PickEmbeddingTextImageMetadata() => EmbeddingTextImageMetadata is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'EmbeddingTextImageMetadata' but the value was {ToString()}.");
 
         /// <summary>
@@ -117,8 +117,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.EmbeddingAudioMetadata PickEmbeddingAudioMetadata() => IsEmbeddingAudioMetadata
-            ? EmbeddingAudioMetadata!
+        public global::G.EmbeddingAudioMetadata PickEmbeddingAudioMetadata() => EmbeddingAudioMetadata is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'EmbeddingAudioMetadata' but the value was {ToString()}.");
 
         /// <summary>
@@ -154,8 +154,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.EmbeddingVideoMetadata PickEmbeddingVideoMetadata() => IsEmbeddingVideoMetadata
-            ? EmbeddingVideoMetadata!
+        public global::G.EmbeddingVideoMetadata PickEmbeddingVideoMetadata() => EmbeddingVideoMetadata is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'EmbeddingVideoMetadata' but the value was {ToString()}.");
 
         /// <summary>
@@ -191,8 +191,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.EmbeddingMultiInputMetadata PickEmbeddingMultiInputMetadata() => IsEmbeddingMultiInputMetadata
-            ? EmbeddingMultiInputMetadata!
+        public global::G.EmbeddingMultiInputMetadata PickEmbeddingMultiInputMetadata() => EmbeddingMultiInputMetadata is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'EmbeddingMultiInputMetadata' but the value was {ToString()}.");
         /// <summary>
         /// 
@@ -373,25 +373,25 @@ namespace G
                 Validate();
             }
 
-            if (IsEmbeddingImageMetadata && embeddingImageMetadata != null)
+            if (EmbeddingImageMetadata is { } __value0 && embeddingImageMetadata != null)
             {
-                return embeddingImageMetadata(EmbeddingImageMetadata!);
+                return embeddingImageMetadata(__value0);
             }
-            else if (IsEmbeddingTextImageMetadata && embeddingTextImageMetadata != null)
+            else if (EmbeddingTextImageMetadata is { } __value1 && embeddingTextImageMetadata != null)
             {
-                return embeddingTextImageMetadata(EmbeddingTextImageMetadata!);
+                return embeddingTextImageMetadata(__value1);
             }
-            else if (IsEmbeddingAudioMetadata && embeddingAudioMetadata != null)
+            else if (EmbeddingAudioMetadata is { } __value2 && embeddingAudioMetadata != null)
             {
-                return embeddingAudioMetadata(EmbeddingAudioMetadata!);
+                return embeddingAudioMetadata(__value2);
             }
-            else if (IsEmbeddingVideoMetadata && embeddingVideoMetadata != null)
+            else if (EmbeddingVideoMetadata is { } __value3 && embeddingVideoMetadata != null)
             {
-                return embeddingVideoMetadata(EmbeddingVideoMetadata!);
+                return embeddingVideoMetadata(__value3);
             }
-            else if (IsEmbeddingMultiInputMetadata && embeddingMultiInputMetadata != null)
+            else if (EmbeddingMultiInputMetadata is { } __value4 && embeddingMultiInputMetadata != null)
             {
-                return embeddingMultiInputMetadata(EmbeddingMultiInputMetadata!);
+                return embeddingMultiInputMetadata(__value4);
             }
 
             return default(TResult);
@@ -417,25 +417,25 @@ namespace G
                 Validate();
             }
 
-            if (IsEmbeddingImageMetadata)
+            if (EmbeddingImageMetadata is { } __value0)
             {
-                embeddingImageMetadata?.Invoke(EmbeddingImageMetadata!);
+                embeddingImageMetadata?.Invoke(__value0);
             }
-            else if (IsEmbeddingTextImageMetadata)
+            else if (EmbeddingTextImageMetadata is { } __value1)
             {
-                embeddingTextImageMetadata?.Invoke(EmbeddingTextImageMetadata!);
+                embeddingTextImageMetadata?.Invoke(__value1);
             }
-            else if (IsEmbeddingAudioMetadata)
+            else if (EmbeddingAudioMetadata is { } __value2)
             {
-                embeddingAudioMetadata?.Invoke(EmbeddingAudioMetadata!);
+                embeddingAudioMetadata?.Invoke(__value2);
             }
-            else if (IsEmbeddingVideoMetadata)
+            else if (EmbeddingVideoMetadata is { } __value3)
             {
-                embeddingVideoMetadata?.Invoke(EmbeddingVideoMetadata!);
+                embeddingVideoMetadata?.Invoke(__value3);
             }
-            else if (IsEmbeddingMultiInputMetadata)
+            else if (EmbeddingMultiInputMetadata is { } __value4)
             {
-                embeddingMultiInputMetadata?.Invoke(EmbeddingMultiInputMetadata!);
+                embeddingMultiInputMetadata?.Invoke(__value4);
             }
         }
 
@@ -455,25 +455,25 @@ namespace G
                 Validate();
             }
 
-            if (IsEmbeddingImageMetadata)
+            if (EmbeddingImageMetadata is { } __value0)
             {
-                embeddingImageMetadata?.Invoke(EmbeddingImageMetadata!);
+                embeddingImageMetadata?.Invoke(__value0);
             }
-            else if (IsEmbeddingTextImageMetadata)
+            else if (EmbeddingTextImageMetadata is { } __value1)
             {
-                embeddingTextImageMetadata?.Invoke(EmbeddingTextImageMetadata!);
+                embeddingTextImageMetadata?.Invoke(__value1);
             }
-            else if (IsEmbeddingAudioMetadata)
+            else if (EmbeddingAudioMetadata is { } __value2)
             {
-                embeddingAudioMetadata?.Invoke(EmbeddingAudioMetadata!);
+                embeddingAudioMetadata?.Invoke(__value2);
             }
-            else if (IsEmbeddingVideoMetadata)
+            else if (EmbeddingVideoMetadata is { } __value3)
             {
-                embeddingVideoMetadata?.Invoke(EmbeddingVideoMetadata!);
+                embeddingVideoMetadata?.Invoke(__value3);
             }
-            else if (IsEmbeddingMultiInputMetadata)
+            else if (EmbeddingMultiInputMetadata is { } __value4)
             {
-                embeddingMultiInputMetadata?.Invoke(EmbeddingMultiInputMetadata!);
+                embeddingMultiInputMetadata?.Invoke(__value4);
             }
         }
 

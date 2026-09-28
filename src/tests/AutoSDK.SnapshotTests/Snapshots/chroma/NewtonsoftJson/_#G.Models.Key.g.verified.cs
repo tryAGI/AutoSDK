@@ -1,4 +1,4 @@
-﻿//HintName: G.Models.Key.g.cs
+//HintName: G.Models.Key.g.cs
 #pragma warning disable CS0618 // Type or member is obsolete
 
 #nullable enable
@@ -88,8 +88,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.KeyVariant1 PickKeyVariant1() => IsKeyVariant1
-            ? KeyVariant1!.Value
+        public global::G.KeyVariant1 PickKeyVariant1() => KeyVariant1 is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'KeyVariant1' but the value was {ToString()}.");
 
         /// <summary>
@@ -125,8 +125,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.KeyVariant2 PickKeyVariant2() => IsKeyVariant2
-            ? KeyVariant2!.Value
+        public global::G.KeyVariant2 PickKeyVariant2() => KeyVariant2 is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'KeyVariant2' but the value was {ToString()}.");
 
         /// <summary>
@@ -162,8 +162,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.KeyVariant3 PickKeyVariant3() => IsKeyVariant3
-            ? KeyVariant3!.Value
+        public global::G.KeyVariant3 PickKeyVariant3() => KeyVariant3 is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'KeyVariant3' but the value was {ToString()}.");
 
         /// <summary>
@@ -199,8 +199,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.KeyVariant4 PickKeyVariant4() => IsKeyVariant4
-            ? KeyVariant4!.Value
+        public global::G.KeyVariant4 PickKeyVariant4() => KeyVariant4 is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'KeyVariant4' but the value was {ToString()}.");
 
         /// <summary>
@@ -236,8 +236,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.KeyVariant5 PickKeyVariant5() => IsKeyVariant5
-            ? KeyVariant5!
+        public global::G.KeyVariant5 PickKeyVariant5() => KeyVariant5 is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'KeyVariant5' but the value was {ToString()}.");
         /// <summary>
         /// 
@@ -418,25 +418,25 @@ namespace G
                 Validate();
             }
 
-            if (IsKeyVariant1 && keyVariant1 != null)
+            if (KeyVariant1 is { } __value0 && keyVariant1 != null)
             {
-                return keyVariant1(KeyVariant1!);
+                return keyVariant1(__value0);
             }
-            else if (IsKeyVariant2 && keyVariant2 != null)
+            else if (KeyVariant2 is { } __value1 && keyVariant2 != null)
             {
-                return keyVariant2(KeyVariant2!);
+                return keyVariant2(__value1);
             }
-            else if (IsKeyVariant3 && keyVariant3 != null)
+            else if (KeyVariant3 is { } __value2 && keyVariant3 != null)
             {
-                return keyVariant3(KeyVariant3!);
+                return keyVariant3(__value2);
             }
-            else if (IsKeyVariant4 && keyVariant4 != null)
+            else if (KeyVariant4 is { } __value3 && keyVariant4 != null)
             {
-                return keyVariant4(KeyVariant4!);
+                return keyVariant4(__value3);
             }
-            else if (IsKeyVariant5 && keyVariant5 != null)
+            else if (KeyVariant5 is { } __value4 && keyVariant5 != null)
             {
-                return keyVariant5(KeyVariant5!);
+                return keyVariant5(__value4);
             }
 
             return default(TResult);
@@ -462,25 +462,25 @@ namespace G
                 Validate();
             }
 
-            if (IsKeyVariant1)
+            if (KeyVariant1 is { } __value0)
             {
-                keyVariant1?.Invoke(KeyVariant1!);
+                keyVariant1?.Invoke(__value0);
             }
-            else if (IsKeyVariant2)
+            else if (KeyVariant2 is { } __value1)
             {
-                keyVariant2?.Invoke(KeyVariant2!);
+                keyVariant2?.Invoke(__value1);
             }
-            else if (IsKeyVariant3)
+            else if (KeyVariant3 is { } __value2)
             {
-                keyVariant3?.Invoke(KeyVariant3!);
+                keyVariant3?.Invoke(__value2);
             }
-            else if (IsKeyVariant4)
+            else if (KeyVariant4 is { } __value3)
             {
-                keyVariant4?.Invoke(KeyVariant4!);
+                keyVariant4?.Invoke(__value3);
             }
-            else if (IsKeyVariant5)
+            else if (KeyVariant5 is { } __value4)
             {
-                keyVariant5?.Invoke(KeyVariant5!);
+                keyVariant5?.Invoke(__value4);
             }
         }
 
@@ -500,25 +500,25 @@ namespace G
                 Validate();
             }
 
-            if (IsKeyVariant1)
+            if (KeyVariant1 is { } __value0)
             {
-                keyVariant1?.Invoke(KeyVariant1!);
+                keyVariant1?.Invoke(__value0);
             }
-            else if (IsKeyVariant2)
+            else if (KeyVariant2 is { } __value1)
             {
-                keyVariant2?.Invoke(KeyVariant2!);
+                keyVariant2?.Invoke(__value1);
             }
-            else if (IsKeyVariant3)
+            else if (KeyVariant3 is { } __value2)
             {
-                keyVariant3?.Invoke(KeyVariant3!);
+                keyVariant3?.Invoke(__value2);
             }
-            else if (IsKeyVariant4)
+            else if (KeyVariant4 is { } __value3)
             {
-                keyVariant4?.Invoke(KeyVariant4!);
+                keyVariant4?.Invoke(__value3);
             }
-            else if (IsKeyVariant5)
+            else if (KeyVariant5 is { } __value4)
             {
-                keyVariant5?.Invoke(KeyVariant5!);
+                keyVariant5?.Invoke(__value4);
             }
         }
 

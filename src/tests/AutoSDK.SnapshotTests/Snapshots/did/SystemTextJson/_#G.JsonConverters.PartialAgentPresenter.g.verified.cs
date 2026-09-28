@@ -1,4 +1,4 @@
-﻿//HintName: G.JsonConverters.PartialAgentPresenter.g.cs
+//HintName: G.JsonConverters.PartialAgentPresenter.g.cs
 #nullable enable
 #pragma warning disable CS0618 // Type or member is obsolete
 
@@ -145,13 +145,13 @@ namespace G.JsonConverters
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.PartialAgentPresenterPhotoAvatar), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.PartialAgentPresenterPhotoAvatar?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.PartialAgentPresenterPhotoAvatar).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PhotoAvatar!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickPhotoAvatar(), typeInfo);
             }
             else if (value.IsVideoAvatar)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.PartialAgentPresenterVideoAvatar), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.PartialAgentPresenterVideoAvatar?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.PartialAgentPresenterVideoAvatar).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.VideoAvatar!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickVideoAvatar(), typeInfo);
             }
         }
     }

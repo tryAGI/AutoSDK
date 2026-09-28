@@ -1,4 +1,4 @@
-﻿//HintName: G.Models.AnthropicAuth.g.cs
+//HintName: G.Models.AnthropicAuth.g.cs
 #pragma warning disable CS0618 // Type or member is obsolete
 
 #nullable enable
@@ -48,8 +48,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.BearerAuth PickBearer() => IsBearer
-            ? Bearer!
+        public global::G.BearerAuth PickBearer() => Bearer is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Bearer' but the value was {ToString()}.");
 
         /// <summary>
@@ -85,8 +85,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.HeaderAuth PickHeader() => IsHeader
-            ? Header!
+        public global::G.HeaderAuth PickHeader() => Header is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Header' but the value was {ToString()}.");
 
         /// <summary>
@@ -122,8 +122,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.BedrockStaticIAMAuth PickBedrockStaticIam() => IsBedrockStaticIam
-            ? BedrockStaticIam!
+        public global::G.BedrockStaticIAMAuth PickBedrockStaticIam() => BedrockStaticIam is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'BedrockStaticIam' but the value was {ToString()}.");
 
         /// <summary>
@@ -159,8 +159,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.BedrockApiKeyAuth PickBedrockApiKey() => IsBedrockApiKey
-            ? BedrockApiKey!
+        public global::G.BedrockApiKeyAuth PickBedrockApiKey() => BedrockApiKey is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'BedrockApiKey' but the value was {ToString()}.");
 
         /// <summary>
@@ -196,8 +196,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.VertexServiceAccountAuth PickVertexServiceAccount() => IsVertexServiceAccount
-            ? VertexServiceAccount!
+        public global::G.VertexServiceAccountAuth PickVertexServiceAccount() => VertexServiceAccount is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'VertexServiceAccount' but the value was {ToString()}.");
 
         /// <summary>
@@ -233,8 +233,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.VertexAccessTokenAuth PickVertexAccessToken() => IsVertexAccessToken
-            ? VertexAccessToken!
+        public global::G.VertexAccessTokenAuth PickVertexAccessToken() => VertexAccessToken is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'VertexAccessToken' but the value was {ToString()}.");
         /// <summary>
         /// 
@@ -446,29 +446,29 @@ namespace G
                 Validate();
             }
 
-            if (IsBearer && bearer != null)
+            if (Bearer is { } __value0 && bearer != null)
             {
-                return bearer(Bearer!);
+                return bearer(__value0);
             }
-            else if (IsHeader && header != null)
+            else if (Header is { } __value1 && header != null)
             {
-                return header(Header!);
+                return header(__value1);
             }
-            else if (IsBedrockStaticIam && bedrockStaticIam != null)
+            else if (BedrockStaticIam is { } __value2 && bedrockStaticIam != null)
             {
-                return bedrockStaticIam(BedrockStaticIam!);
+                return bedrockStaticIam(__value2);
             }
-            else if (IsBedrockApiKey && bedrockApiKey != null)
+            else if (BedrockApiKey is { } __value3 && bedrockApiKey != null)
             {
-                return bedrockApiKey(BedrockApiKey!);
+                return bedrockApiKey(__value3);
             }
-            else if (IsVertexServiceAccount && vertexServiceAccount != null)
+            else if (VertexServiceAccount is { } __value4 && vertexServiceAccount != null)
             {
-                return vertexServiceAccount(VertexServiceAccount!);
+                return vertexServiceAccount(__value4);
             }
-            else if (IsVertexAccessToken && vertexAccessToken != null)
+            else if (VertexAccessToken is { } __value5 && vertexAccessToken != null)
             {
-                return vertexAccessToken(VertexAccessToken!);
+                return vertexAccessToken(__value5);
             }
 
             return default(TResult);
@@ -496,29 +496,29 @@ namespace G
                 Validate();
             }
 
-            if (IsBearer)
+            if (Bearer is { } __value0)
             {
-                bearer?.Invoke(Bearer!);
+                bearer?.Invoke(__value0);
             }
-            else if (IsHeader)
+            else if (Header is { } __value1)
             {
-                header?.Invoke(Header!);
+                header?.Invoke(__value1);
             }
-            else if (IsBedrockStaticIam)
+            else if (BedrockStaticIam is { } __value2)
             {
-                bedrockStaticIam?.Invoke(BedrockStaticIam!);
+                bedrockStaticIam?.Invoke(__value2);
             }
-            else if (IsBedrockApiKey)
+            else if (BedrockApiKey is { } __value3)
             {
-                bedrockApiKey?.Invoke(BedrockApiKey!);
+                bedrockApiKey?.Invoke(__value3);
             }
-            else if (IsVertexServiceAccount)
+            else if (VertexServiceAccount is { } __value4)
             {
-                vertexServiceAccount?.Invoke(VertexServiceAccount!);
+                vertexServiceAccount?.Invoke(__value4);
             }
-            else if (IsVertexAccessToken)
+            else if (VertexAccessToken is { } __value5)
             {
-                vertexAccessToken?.Invoke(VertexAccessToken!);
+                vertexAccessToken?.Invoke(__value5);
             }
         }
 
@@ -539,29 +539,29 @@ namespace G
                 Validate();
             }
 
-            if (IsBearer)
+            if (Bearer is { } __value0)
             {
-                bearer?.Invoke(Bearer!);
+                bearer?.Invoke(__value0);
             }
-            else if (IsHeader)
+            else if (Header is { } __value1)
             {
-                header?.Invoke(Header!);
+                header?.Invoke(__value1);
             }
-            else if (IsBedrockStaticIam)
+            else if (BedrockStaticIam is { } __value2)
             {
-                bedrockStaticIam?.Invoke(BedrockStaticIam!);
+                bedrockStaticIam?.Invoke(__value2);
             }
-            else if (IsBedrockApiKey)
+            else if (BedrockApiKey is { } __value3)
             {
-                bedrockApiKey?.Invoke(BedrockApiKey!);
+                bedrockApiKey?.Invoke(__value3);
             }
-            else if (IsVertexServiceAccount)
+            else if (VertexServiceAccount is { } __value4)
             {
-                vertexServiceAccount?.Invoke(VertexServiceAccount!);
+                vertexServiceAccount?.Invoke(__value4);
             }
-            else if (IsVertexAccessToken)
+            else if (VertexAccessToken is { } __value5)
             {
-                vertexAccessToken?.Invoke(VertexAccessToken!);
+                vertexAccessToken?.Invoke(__value5);
             }
         }
 

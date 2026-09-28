@@ -1,4 +1,4 @@
-﻿//HintName: G.Models.ThreadStreamEvent.g.cs
+//HintName: G.Models.ThreadStreamEvent.g.cs
 #pragma warning disable CS0618 // Type or member is obsolete
 
 #nullable enable
@@ -43,8 +43,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.ThreadStreamEventVariant1 PickThreadStreamEventVariant1() => IsThreadStreamEventVariant1
-            ? ThreadStreamEventVariant1!
+        public global::G.ThreadStreamEventVariant1 PickThreadStreamEventVariant1() => ThreadStreamEventVariant1 is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'ThreadStreamEventVariant1' but the value was {ToString()}.");
         /// <summary>
         /// 
@@ -103,9 +103,9 @@ namespace G
                 Validate();
             }
 
-            if (IsThreadStreamEventVariant1 && threadStreamEventVariant1 != null)
+            if (ThreadStreamEventVariant1 is { } __value0 && threadStreamEventVariant1 != null)
             {
-                return threadStreamEventVariant1(ThreadStreamEventVariant1!);
+                return threadStreamEventVariant1(__value0);
             }
 
             return default(TResult);
@@ -123,9 +123,9 @@ namespace G
                 Validate();
             }
 
-            if (IsThreadStreamEventVariant1)
+            if (ThreadStreamEventVariant1 is { } __value0)
             {
-                threadStreamEventVariant1?.Invoke(ThreadStreamEventVariant1!);
+                threadStreamEventVariant1?.Invoke(__value0);
             }
         }
 
@@ -141,9 +141,9 @@ namespace G
                 Validate();
             }
 
-            if (IsThreadStreamEventVariant1)
+            if (ThreadStreamEventVariant1 is { } __value0)
             {
-                threadStreamEventVariant1?.Invoke(ThreadStreamEventVariant1!);
+                threadStreamEventVariant1?.Invoke(__value0);
             }
         }
 

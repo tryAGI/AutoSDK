@@ -1,4 +1,4 @@
-﻿//HintName: G.Models.MessagesRequestToolsItems.g.cs
+//HintName: G.Models.MessagesRequestToolsItems.g.cs
 #pragma warning disable CS0618 // Type or member is obsolete
 
 #nullable enable
@@ -43,8 +43,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.MessagesRequestToolsItems0 PickMessagesRequestToolsItems0() => IsMessagesRequestToolsItems0
-            ? MessagesRequestToolsItems0!
+        public global::G.MessagesRequestToolsItems0 PickMessagesRequestToolsItems0() => MessagesRequestToolsItems0 is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'MessagesRequestToolsItems0' but the value was {ToString()}.");
 
         /// <summary>
@@ -80,8 +80,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.MessagesRequestToolsItems1 PickMessagesRequestToolsItems1() => IsMessagesRequestToolsItems1
-            ? MessagesRequestToolsItems1!
+        public global::G.MessagesRequestToolsItems1 PickMessagesRequestToolsItems1() => MessagesRequestToolsItems1 is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'MessagesRequestToolsItems1' but the value was {ToString()}.");
 
         /// <summary>
@@ -117,8 +117,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.MessagesRequestToolsItems2 PickMessagesRequestToolsItems2() => IsMessagesRequestToolsItems2
-            ? MessagesRequestToolsItems2!
+        public global::G.MessagesRequestToolsItems2 PickMessagesRequestToolsItems2() => MessagesRequestToolsItems2 is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'MessagesRequestToolsItems2' but the value was {ToString()}.");
 
         /// <summary>
@@ -154,8 +154,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.MessagesRequestToolsItems3 PickMessagesRequestToolsItems3() => IsMessagesRequestToolsItems3
-            ? MessagesRequestToolsItems3!
+        public global::G.MessagesRequestToolsItems3 PickMessagesRequestToolsItems3() => MessagesRequestToolsItems3 is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'MessagesRequestToolsItems3' but the value was {ToString()}.");
 
         /// <summary>
@@ -191,8 +191,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.MessagesRequestToolsItems4 PickMessagesRequestToolsItems4() => IsMessagesRequestToolsItems4
-            ? MessagesRequestToolsItems4!
+        public global::G.MessagesRequestToolsItems4 PickMessagesRequestToolsItems4() => MessagesRequestToolsItems4 is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'MessagesRequestToolsItems4' but the value was {ToString()}.");
 
         /// <summary>
@@ -228,8 +228,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.DatetimeServerTool PickDatetimeServerTool() => IsDatetimeServerTool
-            ? DatetimeServerTool!
+        public global::G.DatetimeServerTool PickDatetimeServerTool() => DatetimeServerTool is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'DatetimeServerTool' but the value was {ToString()}.");
 
         /// <summary>
@@ -265,8 +265,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.MessagesWebSearchServerTool PickMessagesWebSearchServerTool() => IsMessagesWebSearchServerTool
-            ? MessagesWebSearchServerTool!
+        public global::G.MessagesWebSearchServerTool PickMessagesWebSearchServerTool() => MessagesWebSearchServerTool is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'MessagesWebSearchServerTool' but the value was {ToString()}.");
         /// <summary>
         /// 
@@ -503,33 +503,33 @@ namespace G
                 Validate();
             }
 
-            if (IsMessagesRequestToolsItems0 && messagesRequestToolsItems0 != null)
+            if (MessagesRequestToolsItems0 is { } __value0 && messagesRequestToolsItems0 != null)
             {
-                return messagesRequestToolsItems0(MessagesRequestToolsItems0!);
+                return messagesRequestToolsItems0(__value0);
             }
-            else if (IsMessagesRequestToolsItems1 && messagesRequestToolsItems1 != null)
+            else if (MessagesRequestToolsItems1 is { } __value1 && messagesRequestToolsItems1 != null)
             {
-                return messagesRequestToolsItems1(MessagesRequestToolsItems1!);
+                return messagesRequestToolsItems1(__value1);
             }
-            else if (IsMessagesRequestToolsItems2 && messagesRequestToolsItems2 != null)
+            else if (MessagesRequestToolsItems2 is { } __value2 && messagesRequestToolsItems2 != null)
             {
-                return messagesRequestToolsItems2(MessagesRequestToolsItems2!);
+                return messagesRequestToolsItems2(__value2);
             }
-            else if (IsMessagesRequestToolsItems3 && messagesRequestToolsItems3 != null)
+            else if (MessagesRequestToolsItems3 is { } __value3 && messagesRequestToolsItems3 != null)
             {
-                return messagesRequestToolsItems3(MessagesRequestToolsItems3!);
+                return messagesRequestToolsItems3(__value3);
             }
-            else if (IsMessagesRequestToolsItems4 && messagesRequestToolsItems4 != null)
+            else if (MessagesRequestToolsItems4 is { } __value4 && messagesRequestToolsItems4 != null)
             {
-                return messagesRequestToolsItems4(MessagesRequestToolsItems4!);
+                return messagesRequestToolsItems4(__value4);
             }
-            else if (IsDatetimeServerTool && datetimeServerTool != null)
+            else if (DatetimeServerTool is { } __value5 && datetimeServerTool != null)
             {
-                return datetimeServerTool(DatetimeServerTool!);
+                return datetimeServerTool(__value5);
             }
-            else if (IsMessagesWebSearchServerTool && messagesWebSearchServerTool != null)
+            else if (MessagesWebSearchServerTool is { } __value6 && messagesWebSearchServerTool != null)
             {
-                return messagesWebSearchServerTool(MessagesWebSearchServerTool!);
+                return messagesWebSearchServerTool(__value6);
             }
 
             return default(TResult);
@@ -559,33 +559,33 @@ namespace G
                 Validate();
             }
 
-            if (IsMessagesRequestToolsItems0)
+            if (MessagesRequestToolsItems0 is { } __value0)
             {
-                messagesRequestToolsItems0?.Invoke(MessagesRequestToolsItems0!);
+                messagesRequestToolsItems0?.Invoke(__value0);
             }
-            else if (IsMessagesRequestToolsItems1)
+            else if (MessagesRequestToolsItems1 is { } __value1)
             {
-                messagesRequestToolsItems1?.Invoke(MessagesRequestToolsItems1!);
+                messagesRequestToolsItems1?.Invoke(__value1);
             }
-            else if (IsMessagesRequestToolsItems2)
+            else if (MessagesRequestToolsItems2 is { } __value2)
             {
-                messagesRequestToolsItems2?.Invoke(MessagesRequestToolsItems2!);
+                messagesRequestToolsItems2?.Invoke(__value2);
             }
-            else if (IsMessagesRequestToolsItems3)
+            else if (MessagesRequestToolsItems3 is { } __value3)
             {
-                messagesRequestToolsItems3?.Invoke(MessagesRequestToolsItems3!);
+                messagesRequestToolsItems3?.Invoke(__value3);
             }
-            else if (IsMessagesRequestToolsItems4)
+            else if (MessagesRequestToolsItems4 is { } __value4)
             {
-                messagesRequestToolsItems4?.Invoke(MessagesRequestToolsItems4!);
+                messagesRequestToolsItems4?.Invoke(__value4);
             }
-            else if (IsDatetimeServerTool)
+            else if (DatetimeServerTool is { } __value5)
             {
-                datetimeServerTool?.Invoke(DatetimeServerTool!);
+                datetimeServerTool?.Invoke(__value5);
             }
-            else if (IsMessagesWebSearchServerTool)
+            else if (MessagesWebSearchServerTool is { } __value6)
             {
-                messagesWebSearchServerTool?.Invoke(MessagesWebSearchServerTool!);
+                messagesWebSearchServerTool?.Invoke(__value6);
             }
         }
 
@@ -607,33 +607,33 @@ namespace G
                 Validate();
             }
 
-            if (IsMessagesRequestToolsItems0)
+            if (MessagesRequestToolsItems0 is { } __value0)
             {
-                messagesRequestToolsItems0?.Invoke(MessagesRequestToolsItems0!);
+                messagesRequestToolsItems0?.Invoke(__value0);
             }
-            else if (IsMessagesRequestToolsItems1)
+            else if (MessagesRequestToolsItems1 is { } __value1)
             {
-                messagesRequestToolsItems1?.Invoke(MessagesRequestToolsItems1!);
+                messagesRequestToolsItems1?.Invoke(__value1);
             }
-            else if (IsMessagesRequestToolsItems2)
+            else if (MessagesRequestToolsItems2 is { } __value2)
             {
-                messagesRequestToolsItems2?.Invoke(MessagesRequestToolsItems2!);
+                messagesRequestToolsItems2?.Invoke(__value2);
             }
-            else if (IsMessagesRequestToolsItems3)
+            else if (MessagesRequestToolsItems3 is { } __value3)
             {
-                messagesRequestToolsItems3?.Invoke(MessagesRequestToolsItems3!);
+                messagesRequestToolsItems3?.Invoke(__value3);
             }
-            else if (IsMessagesRequestToolsItems4)
+            else if (MessagesRequestToolsItems4 is { } __value4)
             {
-                messagesRequestToolsItems4?.Invoke(MessagesRequestToolsItems4!);
+                messagesRequestToolsItems4?.Invoke(__value4);
             }
-            else if (IsDatetimeServerTool)
+            else if (DatetimeServerTool is { } __value5)
             {
-                datetimeServerTool?.Invoke(DatetimeServerTool!);
+                datetimeServerTool?.Invoke(__value5);
             }
-            else if (IsMessagesWebSearchServerTool)
+            else if (MessagesWebSearchServerTool is { } __value6)
             {
-                messagesWebSearchServerTool?.Invoke(MessagesWebSearchServerTool!);
+                messagesWebSearchServerTool?.Invoke(__value6);
             }
         }
 

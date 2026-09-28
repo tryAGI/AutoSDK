@@ -1,4 +1,4 @@
-﻿//HintName: G.JsonConverters.NullableSavedFunctionId.g.cs
+//HintName: G.JsonConverters.NullableSavedFunctionId.g.cs
 #nullable enable
 #pragma warning disable CS0618 // Type or member is obsolete
 
@@ -170,19 +170,19 @@ namespace G.JsonConverters
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.NullableSavedFunctionIdFunction), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.NullableSavedFunctionIdFunction?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.NullableSavedFunctionIdFunction).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Function!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickFunction(), typeInfo);
             }
             else if (value.IsGlobal)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.NullableSavedFunctionIdGlobal), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.NullableSavedFunctionIdGlobal?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.NullableSavedFunctionIdGlobal).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Global!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickGlobal(), typeInfo);
             }
             else if (value.IsNullableSavedFunctionIdVariant3)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(object), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<object?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(object).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.NullableSavedFunctionIdVariant3!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickNullableSavedFunctionIdVariant3(), typeInfo);
             }
         }
     }

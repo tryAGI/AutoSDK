@@ -1,4 +1,4 @@
-﻿//HintName: G.Models.ChatCompletionResponseBase.g.cs
+//HintName: G.Models.ChatCompletionResponseBase.g.cs
 #pragma warning disable CS0618 // Type or member is obsolete
 
 #nullable enable
@@ -43,8 +43,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.ResponseBase PickResponseBase() => IsResponseBase
-            ? ResponseBase!
+        public global::G.ResponseBase PickResponseBase() => ResponseBase is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'ResponseBase' but the value was {ToString()}.");
 
         /// <summary>
@@ -80,8 +80,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.ChatCompletionResponseBaseChatCompletionResponseBase1 PickBase1() => IsBase1
-            ? Base1!
+        public global::G.ChatCompletionResponseBaseChatCompletionResponseBase1 PickBase1() => Base1 is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Base1' but the value was {ToString()}.");
         /// <summary>
         /// 
@@ -178,13 +178,13 @@ namespace G
                 Validate();
             }
 
-            if (IsResponseBase && responseBase != null)
+            if (ResponseBase is { } __value0 && responseBase != null)
             {
-                return responseBase(ResponseBase!);
+                return responseBase(__value0);
             }
-            else if (IsBase1 && base1 != null)
+            else if (Base1 is { } __value1 && base1 != null)
             {
-                return base1(Base1!);
+                return base1(__value1);
             }
 
             return default(TResult);
@@ -204,13 +204,13 @@ namespace G
                 Validate();
             }
 
-            if (IsResponseBase)
+            if (ResponseBase is { } __value0)
             {
-                responseBase?.Invoke(ResponseBase!);
+                responseBase?.Invoke(__value0);
             }
-            else if (IsBase1)
+            else if (Base1 is { } __value1)
             {
-                base1?.Invoke(Base1!);
+                base1?.Invoke(__value1);
             }
         }
 
@@ -227,13 +227,13 @@ namespace G
                 Validate();
             }
 
-            if (IsResponseBase)
+            if (ResponseBase is { } __value0)
             {
-                responseBase?.Invoke(ResponseBase!);
+                responseBase?.Invoke(__value0);
             }
-            else if (IsBase1)
+            else if (Base1 is { } __value1)
             {
-                base1?.Invoke(Base1!);
+                base1?.Invoke(__value1);
             }
         }
 

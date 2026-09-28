@@ -1,4 +1,4 @@
-﻿//HintName: G.Api.CancelTrainings.g.cs
+//HintName: G.Api.CancelTrainings.g.cs
 
 #nullable enable
 
@@ -139,7 +139,7 @@ namespace G
                 PrepareCancelTrainingsRequest(
                     httpClient: HttpClient,
                     httpRequestMessage: __httpRequest,
-                    trainingId: trainingId!);
+                    trainingId: trainingId);
 
                 return __httpRequest;
             }
@@ -161,7 +161,7 @@ namespace G
                                 pathTemplate: "$\"/trainings/{trainingId}/cancel\"",
                                 httpMethod: "POST",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: null,
                                 exception: null,
                                 clientOptions: Options,
@@ -195,7 +195,7 @@ namespace G
                                 pathTemplate: "$\"/trainings/{trainingId}/cancel\"",
                                 httpMethod: "POST",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: null,
                                 exception: __exception,
                                 clientOptions: Options,
@@ -236,7 +236,7 @@ namespace G
                                 pathTemplate: "$\"/trainings/{trainingId}/cancel\"",
                                 httpMethod: "POST",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: __response,
                                 exception: null,
                                 clientOptions: Options,
@@ -284,7 +284,7 @@ namespace G
                                 pathTemplate: "$\"/trainings/{trainingId}/cancel\"",
                                 httpMethod: "POST",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: __response,
                                 exception: null,
                                 clientOptions: Options,
@@ -306,7 +306,7 @@ namespace G
                                 pathTemplate: "$\"/trainings/{trainingId}/cancel\"",
                                 httpMethod: "POST",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: __response,
                                 exception: null,
                                 clientOptions: Options,

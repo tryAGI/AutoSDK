@@ -1,4 +1,4 @@
-﻿//HintName: G.JsonConverters.EmbedContent.g.cs
+//HintName: G.JsonConverters.EmbedContent.g.cs
 #nullable enable
 #pragma warning disable CS0618 // Type or member is obsolete
 
@@ -60,13 +60,13 @@ namespace G.JsonConverters
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.EmbedImage), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.EmbedImage?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.EmbedImage).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.ImageUrl!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickImageUrl(), typeInfo);
             }
             else if (value.IsText)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.EmbedText), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.EmbedText?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.EmbedText).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Text!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickText(), typeInfo);
             }
         }
     }

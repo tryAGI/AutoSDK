@@ -1,4 +1,4 @@
-﻿//HintName: G.JsonConverters.LemurResponse.g.cs
+//HintName: G.JsonConverters.LemurResponse.g.cs
 #nullable enable
 #pragma warning disable CS0618 // Type or member is obsolete
 
@@ -150,13 +150,13 @@ namespace G.JsonConverters
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.LemurStringResponse), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.LemurStringResponse> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.LemurStringResponse).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.String!.Value, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickString(), typeInfo);
             }
             else if (value.IsQuestionAnswer)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.LemurQuestionAnswerResponse), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.LemurQuestionAnswerResponse> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.LemurQuestionAnswerResponse).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.QuestionAnswer!.Value, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickQuestionAnswer(), typeInfo);
             }
         }
     }

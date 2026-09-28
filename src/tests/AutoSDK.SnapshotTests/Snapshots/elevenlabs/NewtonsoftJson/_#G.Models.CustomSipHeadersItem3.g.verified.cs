@@ -1,4 +1,4 @@
-﻿//HintName: G.Models.CustomSipHeadersItem3.g.cs
+//HintName: G.Models.CustomSipHeadersItem3.g.cs
 #pragma warning disable CS0618 // Type or member is obsolete
 
 #nullable enable
@@ -48,8 +48,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.CustomSIPHeader PickDynamic1() => IsDynamic1
-            ? Dynamic1!
+        public global::G.CustomSIPHeader PickDynamic1() => Dynamic1 is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Dynamic1' but the value was {ToString()}.");
 
         /// <summary>
@@ -87,8 +87,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.CustomSIPHeaderWithDynamicVariable PickDynamic2() => IsDynamic2
-            ? Dynamic2!
+        public global::G.CustomSIPHeaderWithDynamicVariable PickDynamic2() => Dynamic2 is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Dynamic2' but the value was {ToString()}.");
         /// <summary>
         /// 
@@ -188,13 +188,13 @@ namespace G
                 Validate();
             }
 
-            if (IsDynamic1 && dynamic1 != null)
+            if (Dynamic1 is { } __value0 && dynamic1 != null)
             {
-                return dynamic1(Dynamic1!);
+                return dynamic1(__value0);
             }
-            else if (IsDynamic2 && dynamic2 != null)
+            else if (Dynamic2 is { } __value1 && dynamic2 != null)
             {
-                return dynamic2(Dynamic2!);
+                return dynamic2(__value1);
             }
 
             return default(TResult);
@@ -214,13 +214,13 @@ namespace G
                 Validate();
             }
 
-            if (IsDynamic1)
+            if (Dynamic1 is { } __value0)
             {
-                dynamic1?.Invoke(Dynamic1!);
+                dynamic1?.Invoke(__value0);
             }
-            else if (IsDynamic2)
+            else if (Dynamic2 is { } __value1)
             {
-                dynamic2?.Invoke(Dynamic2!);
+                dynamic2?.Invoke(__value1);
             }
         }
 
@@ -237,13 +237,13 @@ namespace G
                 Validate();
             }
 
-            if (IsDynamic1)
+            if (Dynamic1 is { } __value0)
             {
-                dynamic1?.Invoke(Dynamic1!);
+                dynamic1?.Invoke(__value0);
             }
-            else if (IsDynamic2)
+            else if (Dynamic2 is { } __value1)
             {
-                dynamic2?.Invoke(Dynamic2!);
+                dynamic2?.Invoke(__value1);
             }
         }
 

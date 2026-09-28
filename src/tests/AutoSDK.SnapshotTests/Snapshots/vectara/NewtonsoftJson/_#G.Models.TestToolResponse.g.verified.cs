@@ -1,4 +1,4 @@
-﻿//HintName: G.Models.TestToolResponse.g.cs
+//HintName: G.Models.TestToolResponse.g.cs
 #pragma warning disable CS0618 // Type or member is obsolete
 
 #nullable enable
@@ -48,8 +48,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.TestToolSuccessResponse PickSuccess() => IsSuccess
-            ? Success!
+        public global::G.TestToolSuccessResponse PickSuccess() => Success is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Success' but the value was {ToString()}.");
 
         /// <summary>
@@ -85,8 +85,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.TestToolErrorResponse PickError() => IsError
-            ? Error!
+        public global::G.TestToolErrorResponse PickError() => Error is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Error' but the value was {ToString()}.");
         /// <summary>
         /// 
@@ -186,13 +186,13 @@ namespace G
                 Validate();
             }
 
-            if (IsSuccess && success != null)
+            if (Success is { } __value0 && success != null)
             {
-                return success(Success!);
+                return success(__value0);
             }
-            else if (IsError && error != null)
+            else if (Error is { } __value1 && error != null)
             {
-                return error(Error!);
+                return error(__value1);
             }
 
             return default(TResult);
@@ -212,13 +212,13 @@ namespace G
                 Validate();
             }
 
-            if (IsSuccess)
+            if (Success is { } __value0)
             {
-                success?.Invoke(Success!);
+                success?.Invoke(__value0);
             }
-            else if (IsError)
+            else if (Error is { } __value1)
             {
-                error?.Invoke(Error!);
+                error?.Invoke(__value1);
             }
         }
 
@@ -235,13 +235,13 @@ namespace G
                 Validate();
             }
 
-            if (IsSuccess)
+            if (Success is { } __value0)
             {
-                success?.Invoke(Success!);
+                success?.Invoke(__value0);
             }
-            else if (IsError)
+            else if (Error is { } __value1)
             {
-                error?.Invoke(Error!);
+                error?.Invoke(__value1);
             }
         }
 

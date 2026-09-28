@@ -1,4 +1,4 @@
-﻿//HintName: G.Models.CreateSecretExternalLLMRequestDto.g.cs
+//HintName: G.Models.CreateSecretExternalLLMRequestDto.g.cs
 #pragma warning disable CS0618 // Type or member is obsolete
 
 #nullable enable
@@ -43,8 +43,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.CreateSecretExternalLLMRequestDtoOpenAIConfiguration PickOpenAIConfiguration() => IsOpenAIConfiguration
-            ? OpenAIConfiguration!
+        public global::G.CreateSecretExternalLLMRequestDtoOpenAIConfiguration PickOpenAIConfiguration() => OpenAIConfiguration is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'OpenAIConfiguration' but the value was {ToString()}.");
 
         /// <summary>
@@ -80,8 +80,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.CreateSecretExternalLLMRequestDtoVariant2 PickCreateSecretExternalLLMRequestDtoVariant2() => IsCreateSecretExternalLLMRequestDtoVariant2
-            ? CreateSecretExternalLLMRequestDtoVariant2!
+        public global::G.CreateSecretExternalLLMRequestDtoVariant2 PickCreateSecretExternalLLMRequestDtoVariant2() => CreateSecretExternalLLMRequestDtoVariant2 is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'CreateSecretExternalLLMRequestDtoVariant2' but the value was {ToString()}.");
         /// <summary>
         /// 
@@ -178,13 +178,13 @@ namespace G
                 Validate();
             }
 
-            if (IsOpenAIConfiguration && openAIConfiguration != null)
+            if (OpenAIConfiguration is { } __value0 && openAIConfiguration != null)
             {
-                return openAIConfiguration(OpenAIConfiguration!);
+                return openAIConfiguration(__value0);
             }
-            else if (IsCreateSecretExternalLLMRequestDtoVariant2 && createSecretExternalLLMRequestDtoVariant2 != null)
+            else if (CreateSecretExternalLLMRequestDtoVariant2 is { } __value1 && createSecretExternalLLMRequestDtoVariant2 != null)
             {
-                return createSecretExternalLLMRequestDtoVariant2(CreateSecretExternalLLMRequestDtoVariant2!);
+                return createSecretExternalLLMRequestDtoVariant2(__value1);
             }
 
             return default(TResult);
@@ -204,13 +204,13 @@ namespace G
                 Validate();
             }
 
-            if (IsOpenAIConfiguration)
+            if (OpenAIConfiguration is { } __value0)
             {
-                openAIConfiguration?.Invoke(OpenAIConfiguration!);
+                openAIConfiguration?.Invoke(__value0);
             }
-            else if (IsCreateSecretExternalLLMRequestDtoVariant2)
+            else if (CreateSecretExternalLLMRequestDtoVariant2 is { } __value1)
             {
-                createSecretExternalLLMRequestDtoVariant2?.Invoke(CreateSecretExternalLLMRequestDtoVariant2!);
+                createSecretExternalLLMRequestDtoVariant2?.Invoke(__value1);
             }
         }
 
@@ -227,13 +227,13 @@ namespace G
                 Validate();
             }
 
-            if (IsOpenAIConfiguration)
+            if (OpenAIConfiguration is { } __value0)
             {
-                openAIConfiguration?.Invoke(OpenAIConfiguration!);
+                openAIConfiguration?.Invoke(__value0);
             }
-            else if (IsCreateSecretExternalLLMRequestDtoVariant2)
+            else if (CreateSecretExternalLLMRequestDtoVariant2 is { } __value1)
             {
-                createSecretExternalLLMRequestDtoVariant2?.Invoke(CreateSecretExternalLLMRequestDtoVariant2!);
+                createSecretExternalLLMRequestDtoVariant2?.Invoke(__value1);
             }
         }
 

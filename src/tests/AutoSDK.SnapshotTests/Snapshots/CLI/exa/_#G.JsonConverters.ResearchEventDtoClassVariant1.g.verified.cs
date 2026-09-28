@@ -1,4 +1,4 @@
-﻿//HintName: G.JsonConverters.ResearchEventDtoClassVariant1.g.cs
+//HintName: G.JsonConverters.ResearchEventDtoClassVariant1.g.cs
 #nullable enable
 #pragma warning disable CS0618 // Type or member is obsolete
 
@@ -60,13 +60,13 @@ namespace G.JsonConverters
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.ResearchEventDtoClassVariant1Variant1), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.ResearchEventDtoClassVariant1Variant1?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.ResearchEventDtoClassVariant1Variant1).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.ResearchDefinition!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickResearchDefinition(), typeInfo);
             }
             else if (value.IsResearchOutput)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.ResearchEventDtoClassVariant1Variant2), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.ResearchEventDtoClassVariant1Variant2?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.ResearchEventDtoClassVariant1Variant2).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.ResearchOutput!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickResearchOutput(), typeInfo);
             }
         }
     }

@@ -1,4 +1,4 @@
-﻿//HintName: G.Models.RealtimeServerEvent.g.cs
+//HintName: G.Models.RealtimeServerEvent.g.cs
 #pragma warning disable CS0618 // Type or member is obsolete
 
 #nullable enable
@@ -48,8 +48,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.RealtimeServerEventConversationCreated PickConversationCreated() => IsConversationCreated
-            ? ConversationCreated!
+        public global::G.RealtimeServerEventConversationCreated PickConversationCreated() => ConversationCreated is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'ConversationCreated' but the value was {ToString()}.");
 
         /// <summary>
@@ -93,8 +93,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.RealtimeServerEventConversationItemCreated PickConversationItemCreated() => IsConversationItemCreated
-            ? ConversationItemCreated!
+        public global::G.RealtimeServerEventConversationItemCreated PickConversationItemCreated() => ConversationItemCreated is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'ConversationItemCreated' but the value was {ToString()}.");
 
         /// <summary>
@@ -132,8 +132,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.RealtimeServerEventConversationItemDeleted PickConversationItemDeleted() => IsConversationItemDeleted
-            ? ConversationItemDeleted!
+        public global::G.RealtimeServerEventConversationItemDeleted PickConversationItemDeleted() => ConversationItemDeleted is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'ConversationItemDeleted' but the value was {ToString()}.");
 
         /// <summary>
@@ -177,8 +177,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.RealtimeServerEventConversationItemInputAudioTranscriptionCompleted PickConversationItemInputAudioTranscriptionCompleted() => IsConversationItemInputAudioTranscriptionCompleted
-            ? ConversationItemInputAudioTranscriptionCompleted!
+        public global::G.RealtimeServerEventConversationItemInputAudioTranscriptionCompleted PickConversationItemInputAudioTranscriptionCompleted() => ConversationItemInputAudioTranscriptionCompleted is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'ConversationItemInputAudioTranscriptionCompleted' but the value was {ToString()}.");
 
         /// <summary>
@@ -214,8 +214,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.RealtimeServerEventConversationItemInputAudioTranscriptionDelta PickConversationItemInputAudioTranscriptionDelta() => IsConversationItemInputAudioTranscriptionDelta
-            ? ConversationItemInputAudioTranscriptionDelta!
+        public global::G.RealtimeServerEventConversationItemInputAudioTranscriptionDelta PickConversationItemInputAudioTranscriptionDelta() => ConversationItemInputAudioTranscriptionDelta is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'ConversationItemInputAudioTranscriptionDelta' but the value was {ToString()}.");
 
         /// <summary>
@@ -253,8 +253,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.RealtimeServerEventConversationItemInputAudioTranscriptionFailed PickConversationItemInputAudioTranscriptionFailed() => IsConversationItemInputAudioTranscriptionFailed
-            ? ConversationItemInputAudioTranscriptionFailed!
+        public global::G.RealtimeServerEventConversationItemInputAudioTranscriptionFailed PickConversationItemInputAudioTranscriptionFailed() => ConversationItemInputAudioTranscriptionFailed is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'ConversationItemInputAudioTranscriptionFailed' but the value was {ToString()}.");
 
         /// <summary>
@@ -290,8 +290,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.RealtimeServerEventConversationItemRetrieved PickConversationItemRetrieved() => IsConversationItemRetrieved
-            ? ConversationItemRetrieved!
+        public global::G.RealtimeServerEventConversationItemRetrieved PickConversationItemRetrieved() => ConversationItemRetrieved is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'ConversationItemRetrieved' but the value was {ToString()}.");
 
         /// <summary>
@@ -331,8 +331,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.RealtimeServerEventConversationItemTruncated PickConversationItemTruncated() => IsConversationItemTruncated
-            ? ConversationItemTruncated!
+        public global::G.RealtimeServerEventConversationItemTruncated PickConversationItemTruncated() => ConversationItemTruncated is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'ConversationItemTruncated' but the value was {ToString()}.");
 
         /// <summary>
@@ -370,8 +370,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.RealtimeServerEventError PickError() => IsError
-            ? Error!
+        public global::G.RealtimeServerEventError PickError() => Error is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Error' but the value was {ToString()}.");
 
         /// <summary>
@@ -408,8 +408,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.RealtimeServerEventInputAudioBufferCleared PickInputAudioBufferCleared() => IsInputAudioBufferCleared
-            ? InputAudioBufferCleared!
+        public global::G.RealtimeServerEventInputAudioBufferCleared PickInputAudioBufferCleared() => InputAudioBufferCleared is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'InputAudioBufferCleared' but the value was {ToString()}.");
 
         /// <summary>
@@ -448,8 +448,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.RealtimeServerEventInputAudioBufferCommitted PickInputAudioBufferCommitted() => IsInputAudioBufferCommitted
-            ? InputAudioBufferCommitted!
+        public global::G.RealtimeServerEventInputAudioBufferCommitted PickInputAudioBufferCommitted() => InputAudioBufferCommitted is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'InputAudioBufferCommitted' but the value was {ToString()}.");
 
         /// <summary>
@@ -493,8 +493,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.RealtimeServerEventInputAudioBufferSpeechStarted PickInputAudioBufferSpeechStarted() => IsInputAudioBufferSpeechStarted
-            ? InputAudioBufferSpeechStarted!
+        public global::G.RealtimeServerEventInputAudioBufferSpeechStarted PickInputAudioBufferSpeechStarted() => InputAudioBufferSpeechStarted is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'InputAudioBufferSpeechStarted' but the value was {ToString()}.");
 
         /// <summary>
@@ -532,8 +532,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.RealtimeServerEventInputAudioBufferSpeechStopped PickInputAudioBufferSpeechStopped() => IsInputAudioBufferSpeechStopped
-            ? InputAudioBufferSpeechStopped!
+        public global::G.RealtimeServerEventInputAudioBufferSpeechStopped PickInputAudioBufferSpeechStopped() => InputAudioBufferSpeechStopped is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'InputAudioBufferSpeechStopped' but the value was {ToString()}.");
 
         /// <summary>
@@ -572,8 +572,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.RealtimeServerEventRateLimitsUpdated PickRateLimitsUpdated() => IsRateLimitsUpdated
-            ? RateLimitsUpdated!
+        public global::G.RealtimeServerEventRateLimitsUpdated PickRateLimitsUpdated() => RateLimitsUpdated is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'RateLimitsUpdated' but the value was {ToString()}.");
 
         /// <summary>
@@ -609,8 +609,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.RealtimeServerEventResponseAudioDelta PickResponseAudioDelta() => IsResponseAudioDelta
-            ? ResponseAudioDelta!
+        public global::G.RealtimeServerEventResponseAudioDelta PickResponseAudioDelta() => ResponseAudioDelta is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'ResponseAudioDelta' but the value was {ToString()}.");
 
         /// <summary>
@@ -647,8 +647,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.RealtimeServerEventResponseAudioDone PickResponseAudioDone() => IsResponseAudioDone
-            ? ResponseAudioDone!
+        public global::G.RealtimeServerEventResponseAudioDone PickResponseAudioDone() => ResponseAudioDone is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'ResponseAudioDone' but the value was {ToString()}.");
 
         /// <summary>
@@ -684,8 +684,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.RealtimeServerEventResponseAudioTranscriptDelta PickResponseAudioTranscriptDelta() => IsResponseAudioTranscriptDelta
-            ? ResponseAudioTranscriptDelta!
+        public global::G.RealtimeServerEventResponseAudioTranscriptDelta PickResponseAudioTranscriptDelta() => ResponseAudioTranscriptDelta is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'ResponseAudioTranscriptDelta' but the value was {ToString()}.");
 
         /// <summary>
@@ -723,8 +723,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.RealtimeServerEventResponseAudioTranscriptDone PickResponseAudioTranscriptDone() => IsResponseAudioTranscriptDone
-            ? ResponseAudioTranscriptDone!
+        public global::G.RealtimeServerEventResponseAudioTranscriptDone PickResponseAudioTranscriptDone() => ResponseAudioTranscriptDone is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'ResponseAudioTranscriptDone' but the value was {ToString()}.");
 
         /// <summary>
@@ -761,8 +761,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.RealtimeServerEventResponseContentPartAdded PickResponseContentPartAdded() => IsResponseContentPartAdded
-            ? ResponseContentPartAdded!
+        public global::G.RealtimeServerEventResponseContentPartAdded PickResponseContentPartAdded() => ResponseContentPartAdded is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'ResponseContentPartAdded' but the value was {ToString()}.");
 
         /// <summary>
@@ -799,8 +799,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.RealtimeServerEventResponseContentPartDone PickResponseContentPartDone() => IsResponseContentPartDone
-            ? ResponseContentPartDone!
+        public global::G.RealtimeServerEventResponseContentPartDone PickResponseContentPartDone() => ResponseContentPartDone is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'ResponseContentPartDone' but the value was {ToString()}.");
 
         /// <summary>
@@ -837,8 +837,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.RealtimeServerEventResponseCreated PickResponseCreated() => IsResponseCreated
-            ? ResponseCreated!
+        public global::G.RealtimeServerEventResponseCreated PickResponseCreated() => ResponseCreated is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'ResponseCreated' but the value was {ToString()}.");
 
         /// <summary>
@@ -876,8 +876,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.RealtimeServerEventResponseDone PickResponseDone() => IsResponseDone
-            ? ResponseDone!
+        public global::G.RealtimeServerEventResponseDone PickResponseDone() => ResponseDone is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'ResponseDone' but the value was {ToString()}.");
 
         /// <summary>
@@ -913,8 +913,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.RealtimeServerEventResponseFunctionCallArgumentsDelta PickResponseFunctionCallArgumentsDelta() => IsResponseFunctionCallArgumentsDelta
-            ? ResponseFunctionCallArgumentsDelta!
+        public global::G.RealtimeServerEventResponseFunctionCallArgumentsDelta PickResponseFunctionCallArgumentsDelta() => ResponseFunctionCallArgumentsDelta is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'ResponseFunctionCallArgumentsDelta' but the value was {ToString()}.");
 
         /// <summary>
@@ -951,8 +951,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.RealtimeServerEventResponseFunctionCallArgumentsDone PickResponseFunctionCallArgumentsDone() => IsResponseFunctionCallArgumentsDone
-            ? ResponseFunctionCallArgumentsDone!
+        public global::G.RealtimeServerEventResponseFunctionCallArgumentsDone PickResponseFunctionCallArgumentsDone() => ResponseFunctionCallArgumentsDone is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'ResponseFunctionCallArgumentsDone' but the value was {ToString()}.");
 
         /// <summary>
@@ -988,8 +988,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.RealtimeServerEventResponseOutputItemAdded PickResponseOutputItemAdded() => IsResponseOutputItemAdded
-            ? ResponseOutputItemAdded!
+        public global::G.RealtimeServerEventResponseOutputItemAdded PickResponseOutputItemAdded() => ResponseOutputItemAdded is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'ResponseOutputItemAdded' but the value was {ToString()}.");
 
         /// <summary>
@@ -1026,8 +1026,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.RealtimeServerEventResponseOutputItemDone PickResponseOutputItemDone() => IsResponseOutputItemDone
-            ? ResponseOutputItemDone!
+        public global::G.RealtimeServerEventResponseOutputItemDone PickResponseOutputItemDone() => ResponseOutputItemDone is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'ResponseOutputItemDone' but the value was {ToString()}.");
 
         /// <summary>
@@ -1063,8 +1063,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.RealtimeServerEventResponseTextDelta PickResponseTextDelta() => IsResponseTextDelta
-            ? ResponseTextDelta!
+        public global::G.RealtimeServerEventResponseTextDelta PickResponseTextDelta() => ResponseTextDelta is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'ResponseTextDelta' but the value was {ToString()}.");
 
         /// <summary>
@@ -1101,8 +1101,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.RealtimeServerEventResponseTextDone PickResponseTextDone() => IsResponseTextDone
-            ? ResponseTextDone!
+        public global::G.RealtimeServerEventResponseTextDone PickResponseTextDone() => ResponseTextDone is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'ResponseTextDone' but the value was {ToString()}.");
 
         /// <summary>
@@ -1140,8 +1140,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.RealtimeServerEventSessionCreated PickSessionCreated() => IsSessionCreated
-            ? SessionCreated!
+        public global::G.RealtimeServerEventSessionCreated PickSessionCreated() => SessionCreated is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'SessionCreated' but the value was {ToString()}.");
 
         /// <summary>
@@ -1178,8 +1178,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.RealtimeServerEventSessionUpdated PickSessionUpdated() => IsSessionUpdated
-            ? SessionUpdated!
+        public global::G.RealtimeServerEventSessionUpdated PickSessionUpdated() => SessionUpdated is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'SessionUpdated' but the value was {ToString()}.");
 
         /// <summary>
@@ -1216,8 +1216,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.RealtimeServerEventTranscriptionSessionUpdated PickTranscriptionSessionUpdated() => IsTranscriptionSessionUpdated
-            ? TranscriptionSessionUpdated!
+        public global::G.RealtimeServerEventTranscriptionSessionUpdated PickTranscriptionSessionUpdated() => TranscriptionSessionUpdated is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'TranscriptionSessionUpdated' but the value was {ToString()}.");
 
         /// <summary>
@@ -1256,8 +1256,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.RealtimeServerEventOutputAudioBufferStarted PickOutputAudioBufferStarted() => IsOutputAudioBufferStarted
-            ? OutputAudioBufferStarted!
+        public global::G.RealtimeServerEventOutputAudioBufferStarted PickOutputAudioBufferStarted() => OutputAudioBufferStarted is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'OutputAudioBufferStarted' but the value was {ToString()}.");
 
         /// <summary>
@@ -1296,8 +1296,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.RealtimeServerEventOutputAudioBufferStopped PickOutputAudioBufferStopped() => IsOutputAudioBufferStopped
-            ? OutputAudioBufferStopped!
+        public global::G.RealtimeServerEventOutputAudioBufferStopped PickOutputAudioBufferStopped() => OutputAudioBufferStopped is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'OutputAudioBufferStopped' but the value was {ToString()}.");
 
         /// <summary>
@@ -1337,8 +1337,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.RealtimeServerEventOutputAudioBufferCleared PickOutputAudioBufferCleared() => IsOutputAudioBufferCleared
-            ? OutputAudioBufferCleared!
+        public global::G.RealtimeServerEventOutputAudioBufferCleared PickOutputAudioBufferCleared() => OutputAudioBufferCleared is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'OutputAudioBufferCleared' but the value was {ToString()}.");
         /// <summary>
         /// 
@@ -2334,141 +2334,141 @@ namespace G
                 Validate();
             }
 
-            if (IsConversationCreated && conversationCreated != null)
+            if (ConversationCreated is { } __value0 && conversationCreated != null)
             {
-                return conversationCreated(ConversationCreated!);
+                return conversationCreated(__value0);
             }
-            else if (IsConversationItemCreated && conversationItemCreated != null)
+            else if (ConversationItemCreated is { } __value1 && conversationItemCreated != null)
             {
-                return conversationItemCreated(ConversationItemCreated!);
+                return conversationItemCreated(__value1);
             }
-            else if (IsConversationItemDeleted && conversationItemDeleted != null)
+            else if (ConversationItemDeleted is { } __value2 && conversationItemDeleted != null)
             {
-                return conversationItemDeleted(ConversationItemDeleted!);
+                return conversationItemDeleted(__value2);
             }
-            else if (IsConversationItemInputAudioTranscriptionCompleted && conversationItemInputAudioTranscriptionCompleted != null)
+            else if (ConversationItemInputAudioTranscriptionCompleted is { } __value3 && conversationItemInputAudioTranscriptionCompleted != null)
             {
-                return conversationItemInputAudioTranscriptionCompleted(ConversationItemInputAudioTranscriptionCompleted!);
+                return conversationItemInputAudioTranscriptionCompleted(__value3);
             }
-            else if (IsConversationItemInputAudioTranscriptionDelta && conversationItemInputAudioTranscriptionDelta != null)
+            else if (ConversationItemInputAudioTranscriptionDelta is { } __value4 && conversationItemInputAudioTranscriptionDelta != null)
             {
-                return conversationItemInputAudioTranscriptionDelta(ConversationItemInputAudioTranscriptionDelta!);
+                return conversationItemInputAudioTranscriptionDelta(__value4);
             }
-            else if (IsConversationItemInputAudioTranscriptionFailed && conversationItemInputAudioTranscriptionFailed != null)
+            else if (ConversationItemInputAudioTranscriptionFailed is { } __value5 && conversationItemInputAudioTranscriptionFailed != null)
             {
-                return conversationItemInputAudioTranscriptionFailed(ConversationItemInputAudioTranscriptionFailed!);
+                return conversationItemInputAudioTranscriptionFailed(__value5);
             }
-            else if (IsConversationItemRetrieved && conversationItemRetrieved != null)
+            else if (ConversationItemRetrieved is { } __value6 && conversationItemRetrieved != null)
             {
-                return conversationItemRetrieved(ConversationItemRetrieved!);
+                return conversationItemRetrieved(__value6);
             }
-            else if (IsConversationItemTruncated && conversationItemTruncated != null)
+            else if (ConversationItemTruncated is { } __value7 && conversationItemTruncated != null)
             {
-                return conversationItemTruncated(ConversationItemTruncated!);
+                return conversationItemTruncated(__value7);
             }
-            else if (IsError && error != null)
+            else if (Error is { } __value8 && error != null)
             {
-                return error(Error!);
+                return error(__value8);
             }
-            else if (IsInputAudioBufferCleared && inputAudioBufferCleared != null)
+            else if (InputAudioBufferCleared is { } __value9 && inputAudioBufferCleared != null)
             {
-                return inputAudioBufferCleared(InputAudioBufferCleared!);
+                return inputAudioBufferCleared(__value9);
             }
-            else if (IsInputAudioBufferCommitted && inputAudioBufferCommitted != null)
+            else if (InputAudioBufferCommitted is { } __value10 && inputAudioBufferCommitted != null)
             {
-                return inputAudioBufferCommitted(InputAudioBufferCommitted!);
+                return inputAudioBufferCommitted(__value10);
             }
-            else if (IsInputAudioBufferSpeechStarted && inputAudioBufferSpeechStarted != null)
+            else if (InputAudioBufferSpeechStarted is { } __value11 && inputAudioBufferSpeechStarted != null)
             {
-                return inputAudioBufferSpeechStarted(InputAudioBufferSpeechStarted!);
+                return inputAudioBufferSpeechStarted(__value11);
             }
-            else if (IsInputAudioBufferSpeechStopped && inputAudioBufferSpeechStopped != null)
+            else if (InputAudioBufferSpeechStopped is { } __value12 && inputAudioBufferSpeechStopped != null)
             {
-                return inputAudioBufferSpeechStopped(InputAudioBufferSpeechStopped!);
+                return inputAudioBufferSpeechStopped(__value12);
             }
-            else if (IsRateLimitsUpdated && rateLimitsUpdated != null)
+            else if (RateLimitsUpdated is { } __value13 && rateLimitsUpdated != null)
             {
-                return rateLimitsUpdated(RateLimitsUpdated!);
+                return rateLimitsUpdated(__value13);
             }
-            else if (IsResponseAudioDelta && responseAudioDelta != null)
+            else if (ResponseAudioDelta is { } __value14 && responseAudioDelta != null)
             {
-                return responseAudioDelta(ResponseAudioDelta!);
+                return responseAudioDelta(__value14);
             }
-            else if (IsResponseAudioDone && responseAudioDone != null)
+            else if (ResponseAudioDone is { } __value15 && responseAudioDone != null)
             {
-                return responseAudioDone(ResponseAudioDone!);
+                return responseAudioDone(__value15);
             }
-            else if (IsResponseAudioTranscriptDelta && responseAudioTranscriptDelta != null)
+            else if (ResponseAudioTranscriptDelta is { } __value16 && responseAudioTranscriptDelta != null)
             {
-                return responseAudioTranscriptDelta(ResponseAudioTranscriptDelta!);
+                return responseAudioTranscriptDelta(__value16);
             }
-            else if (IsResponseAudioTranscriptDone && responseAudioTranscriptDone != null)
+            else if (ResponseAudioTranscriptDone is { } __value17 && responseAudioTranscriptDone != null)
             {
-                return responseAudioTranscriptDone(ResponseAudioTranscriptDone!);
+                return responseAudioTranscriptDone(__value17);
             }
-            else if (IsResponseContentPartAdded && responseContentPartAdded != null)
+            else if (ResponseContentPartAdded is { } __value18 && responseContentPartAdded != null)
             {
-                return responseContentPartAdded(ResponseContentPartAdded!);
+                return responseContentPartAdded(__value18);
             }
-            else if (IsResponseContentPartDone && responseContentPartDone != null)
+            else if (ResponseContentPartDone is { } __value19 && responseContentPartDone != null)
             {
-                return responseContentPartDone(ResponseContentPartDone!);
+                return responseContentPartDone(__value19);
             }
-            else if (IsResponseCreated && responseCreated != null)
+            else if (ResponseCreated is { } __value20 && responseCreated != null)
             {
-                return responseCreated(ResponseCreated!);
+                return responseCreated(__value20);
             }
-            else if (IsResponseDone && responseDone != null)
+            else if (ResponseDone is { } __value21 && responseDone != null)
             {
-                return responseDone(ResponseDone!);
+                return responseDone(__value21);
             }
-            else if (IsResponseFunctionCallArgumentsDelta && responseFunctionCallArgumentsDelta != null)
+            else if (ResponseFunctionCallArgumentsDelta is { } __value22 && responseFunctionCallArgumentsDelta != null)
             {
-                return responseFunctionCallArgumentsDelta(ResponseFunctionCallArgumentsDelta!);
+                return responseFunctionCallArgumentsDelta(__value22);
             }
-            else if (IsResponseFunctionCallArgumentsDone && responseFunctionCallArgumentsDone != null)
+            else if (ResponseFunctionCallArgumentsDone is { } __value23 && responseFunctionCallArgumentsDone != null)
             {
-                return responseFunctionCallArgumentsDone(ResponseFunctionCallArgumentsDone!);
+                return responseFunctionCallArgumentsDone(__value23);
             }
-            else if (IsResponseOutputItemAdded && responseOutputItemAdded != null)
+            else if (ResponseOutputItemAdded is { } __value24 && responseOutputItemAdded != null)
             {
-                return responseOutputItemAdded(ResponseOutputItemAdded!);
+                return responseOutputItemAdded(__value24);
             }
-            else if (IsResponseOutputItemDone && responseOutputItemDone != null)
+            else if (ResponseOutputItemDone is { } __value25 && responseOutputItemDone != null)
             {
-                return responseOutputItemDone(ResponseOutputItemDone!);
+                return responseOutputItemDone(__value25);
             }
-            else if (IsResponseTextDelta && responseTextDelta != null)
+            else if (ResponseTextDelta is { } __value26 && responseTextDelta != null)
             {
-                return responseTextDelta(ResponseTextDelta!);
+                return responseTextDelta(__value26);
             }
-            else if (IsResponseTextDone && responseTextDone != null)
+            else if (ResponseTextDone is { } __value27 && responseTextDone != null)
             {
-                return responseTextDone(ResponseTextDone!);
+                return responseTextDone(__value27);
             }
-            else if (IsSessionCreated && sessionCreated != null)
+            else if (SessionCreated is { } __value28 && sessionCreated != null)
             {
-                return sessionCreated(SessionCreated!);
+                return sessionCreated(__value28);
             }
-            else if (IsSessionUpdated && sessionUpdated != null)
+            else if (SessionUpdated is { } __value29 && sessionUpdated != null)
             {
-                return sessionUpdated(SessionUpdated!);
+                return sessionUpdated(__value29);
             }
-            else if (IsTranscriptionSessionUpdated && transcriptionSessionUpdated != null)
+            else if (TranscriptionSessionUpdated is { } __value30 && transcriptionSessionUpdated != null)
             {
-                return transcriptionSessionUpdated(TranscriptionSessionUpdated!);
+                return transcriptionSessionUpdated(__value30);
             }
-            else if (IsOutputAudioBufferStarted && outputAudioBufferStarted != null)
+            else if (OutputAudioBufferStarted is { } __value31 && outputAudioBufferStarted != null)
             {
-                return outputAudioBufferStarted(OutputAudioBufferStarted!);
+                return outputAudioBufferStarted(__value31);
             }
-            else if (IsOutputAudioBufferStopped && outputAudioBufferStopped != null)
+            else if (OutputAudioBufferStopped is { } __value32 && outputAudioBufferStopped != null)
             {
-                return outputAudioBufferStopped(OutputAudioBufferStopped!);
+                return outputAudioBufferStopped(__value32);
             }
-            else if (IsOutputAudioBufferCleared && outputAudioBufferCleared != null)
+            else if (OutputAudioBufferCleared is { } __value33 && outputAudioBufferCleared != null)
             {
-                return outputAudioBufferCleared(OutputAudioBufferCleared!);
+                return outputAudioBufferCleared(__value33);
             }
 
             return default(TResult);
@@ -2552,141 +2552,141 @@ namespace G
                 Validate();
             }
 
-            if (IsConversationCreated)
+            if (ConversationCreated is { } __value0)
             {
-                conversationCreated?.Invoke(ConversationCreated!);
+                conversationCreated?.Invoke(__value0);
             }
-            else if (IsConversationItemCreated)
+            else if (ConversationItemCreated is { } __value1)
             {
-                conversationItemCreated?.Invoke(ConversationItemCreated!);
+                conversationItemCreated?.Invoke(__value1);
             }
-            else if (IsConversationItemDeleted)
+            else if (ConversationItemDeleted is { } __value2)
             {
-                conversationItemDeleted?.Invoke(ConversationItemDeleted!);
+                conversationItemDeleted?.Invoke(__value2);
             }
-            else if (IsConversationItemInputAudioTranscriptionCompleted)
+            else if (ConversationItemInputAudioTranscriptionCompleted is { } __value3)
             {
-                conversationItemInputAudioTranscriptionCompleted?.Invoke(ConversationItemInputAudioTranscriptionCompleted!);
+                conversationItemInputAudioTranscriptionCompleted?.Invoke(__value3);
             }
-            else if (IsConversationItemInputAudioTranscriptionDelta)
+            else if (ConversationItemInputAudioTranscriptionDelta is { } __value4)
             {
-                conversationItemInputAudioTranscriptionDelta?.Invoke(ConversationItemInputAudioTranscriptionDelta!);
+                conversationItemInputAudioTranscriptionDelta?.Invoke(__value4);
             }
-            else if (IsConversationItemInputAudioTranscriptionFailed)
+            else if (ConversationItemInputAudioTranscriptionFailed is { } __value5)
             {
-                conversationItemInputAudioTranscriptionFailed?.Invoke(ConversationItemInputAudioTranscriptionFailed!);
+                conversationItemInputAudioTranscriptionFailed?.Invoke(__value5);
             }
-            else if (IsConversationItemRetrieved)
+            else if (ConversationItemRetrieved is { } __value6)
             {
-                conversationItemRetrieved?.Invoke(ConversationItemRetrieved!);
+                conversationItemRetrieved?.Invoke(__value6);
             }
-            else if (IsConversationItemTruncated)
+            else if (ConversationItemTruncated is { } __value7)
             {
-                conversationItemTruncated?.Invoke(ConversationItemTruncated!);
+                conversationItemTruncated?.Invoke(__value7);
             }
-            else if (IsError)
+            else if (Error is { } __value8)
             {
-                error?.Invoke(Error!);
+                error?.Invoke(__value8);
             }
-            else if (IsInputAudioBufferCleared)
+            else if (InputAudioBufferCleared is { } __value9)
             {
-                inputAudioBufferCleared?.Invoke(InputAudioBufferCleared!);
+                inputAudioBufferCleared?.Invoke(__value9);
             }
-            else if (IsInputAudioBufferCommitted)
+            else if (InputAudioBufferCommitted is { } __value10)
             {
-                inputAudioBufferCommitted?.Invoke(InputAudioBufferCommitted!);
+                inputAudioBufferCommitted?.Invoke(__value10);
             }
-            else if (IsInputAudioBufferSpeechStarted)
+            else if (InputAudioBufferSpeechStarted is { } __value11)
             {
-                inputAudioBufferSpeechStarted?.Invoke(InputAudioBufferSpeechStarted!);
+                inputAudioBufferSpeechStarted?.Invoke(__value11);
             }
-            else if (IsInputAudioBufferSpeechStopped)
+            else if (InputAudioBufferSpeechStopped is { } __value12)
             {
-                inputAudioBufferSpeechStopped?.Invoke(InputAudioBufferSpeechStopped!);
+                inputAudioBufferSpeechStopped?.Invoke(__value12);
             }
-            else if (IsRateLimitsUpdated)
+            else if (RateLimitsUpdated is { } __value13)
             {
-                rateLimitsUpdated?.Invoke(RateLimitsUpdated!);
+                rateLimitsUpdated?.Invoke(__value13);
             }
-            else if (IsResponseAudioDelta)
+            else if (ResponseAudioDelta is { } __value14)
             {
-                responseAudioDelta?.Invoke(ResponseAudioDelta!);
+                responseAudioDelta?.Invoke(__value14);
             }
-            else if (IsResponseAudioDone)
+            else if (ResponseAudioDone is { } __value15)
             {
-                responseAudioDone?.Invoke(ResponseAudioDone!);
+                responseAudioDone?.Invoke(__value15);
             }
-            else if (IsResponseAudioTranscriptDelta)
+            else if (ResponseAudioTranscriptDelta is { } __value16)
             {
-                responseAudioTranscriptDelta?.Invoke(ResponseAudioTranscriptDelta!);
+                responseAudioTranscriptDelta?.Invoke(__value16);
             }
-            else if (IsResponseAudioTranscriptDone)
+            else if (ResponseAudioTranscriptDone is { } __value17)
             {
-                responseAudioTranscriptDone?.Invoke(ResponseAudioTranscriptDone!);
+                responseAudioTranscriptDone?.Invoke(__value17);
             }
-            else if (IsResponseContentPartAdded)
+            else if (ResponseContentPartAdded is { } __value18)
             {
-                responseContentPartAdded?.Invoke(ResponseContentPartAdded!);
+                responseContentPartAdded?.Invoke(__value18);
             }
-            else if (IsResponseContentPartDone)
+            else if (ResponseContentPartDone is { } __value19)
             {
-                responseContentPartDone?.Invoke(ResponseContentPartDone!);
+                responseContentPartDone?.Invoke(__value19);
             }
-            else if (IsResponseCreated)
+            else if (ResponseCreated is { } __value20)
             {
-                responseCreated?.Invoke(ResponseCreated!);
+                responseCreated?.Invoke(__value20);
             }
-            else if (IsResponseDone)
+            else if (ResponseDone is { } __value21)
             {
-                responseDone?.Invoke(ResponseDone!);
+                responseDone?.Invoke(__value21);
             }
-            else if (IsResponseFunctionCallArgumentsDelta)
+            else if (ResponseFunctionCallArgumentsDelta is { } __value22)
             {
-                responseFunctionCallArgumentsDelta?.Invoke(ResponseFunctionCallArgumentsDelta!);
+                responseFunctionCallArgumentsDelta?.Invoke(__value22);
             }
-            else if (IsResponseFunctionCallArgumentsDone)
+            else if (ResponseFunctionCallArgumentsDone is { } __value23)
             {
-                responseFunctionCallArgumentsDone?.Invoke(ResponseFunctionCallArgumentsDone!);
+                responseFunctionCallArgumentsDone?.Invoke(__value23);
             }
-            else if (IsResponseOutputItemAdded)
+            else if (ResponseOutputItemAdded is { } __value24)
             {
-                responseOutputItemAdded?.Invoke(ResponseOutputItemAdded!);
+                responseOutputItemAdded?.Invoke(__value24);
             }
-            else if (IsResponseOutputItemDone)
+            else if (ResponseOutputItemDone is { } __value25)
             {
-                responseOutputItemDone?.Invoke(ResponseOutputItemDone!);
+                responseOutputItemDone?.Invoke(__value25);
             }
-            else if (IsResponseTextDelta)
+            else if (ResponseTextDelta is { } __value26)
             {
-                responseTextDelta?.Invoke(ResponseTextDelta!);
+                responseTextDelta?.Invoke(__value26);
             }
-            else if (IsResponseTextDone)
+            else if (ResponseTextDone is { } __value27)
             {
-                responseTextDone?.Invoke(ResponseTextDone!);
+                responseTextDone?.Invoke(__value27);
             }
-            else if (IsSessionCreated)
+            else if (SessionCreated is { } __value28)
             {
-                sessionCreated?.Invoke(SessionCreated!);
+                sessionCreated?.Invoke(__value28);
             }
-            else if (IsSessionUpdated)
+            else if (SessionUpdated is { } __value29)
             {
-                sessionUpdated?.Invoke(SessionUpdated!);
+                sessionUpdated?.Invoke(__value29);
             }
-            else if (IsTranscriptionSessionUpdated)
+            else if (TranscriptionSessionUpdated is { } __value30)
             {
-                transcriptionSessionUpdated?.Invoke(TranscriptionSessionUpdated!);
+                transcriptionSessionUpdated?.Invoke(__value30);
             }
-            else if (IsOutputAudioBufferStarted)
+            else if (OutputAudioBufferStarted is { } __value31)
             {
-                outputAudioBufferStarted?.Invoke(OutputAudioBufferStarted!);
+                outputAudioBufferStarted?.Invoke(__value31);
             }
-            else if (IsOutputAudioBufferStopped)
+            else if (OutputAudioBufferStopped is { } __value32)
             {
-                outputAudioBufferStopped?.Invoke(OutputAudioBufferStopped!);
+                outputAudioBufferStopped?.Invoke(__value32);
             }
-            else if (IsOutputAudioBufferCleared)
+            else if (OutputAudioBufferCleared is { } __value33)
             {
-                outputAudioBufferCleared?.Invoke(OutputAudioBufferCleared!);
+                outputAudioBufferCleared?.Invoke(__value33);
             }
         }
 
@@ -2735,141 +2735,141 @@ namespace G
                 Validate();
             }
 
-            if (IsConversationCreated)
+            if (ConversationCreated is { } __value0)
             {
-                conversationCreated?.Invoke(ConversationCreated!);
+                conversationCreated?.Invoke(__value0);
             }
-            else if (IsConversationItemCreated)
+            else if (ConversationItemCreated is { } __value1)
             {
-                conversationItemCreated?.Invoke(ConversationItemCreated!);
+                conversationItemCreated?.Invoke(__value1);
             }
-            else if (IsConversationItemDeleted)
+            else if (ConversationItemDeleted is { } __value2)
             {
-                conversationItemDeleted?.Invoke(ConversationItemDeleted!);
+                conversationItemDeleted?.Invoke(__value2);
             }
-            else if (IsConversationItemInputAudioTranscriptionCompleted)
+            else if (ConversationItemInputAudioTranscriptionCompleted is { } __value3)
             {
-                conversationItemInputAudioTranscriptionCompleted?.Invoke(ConversationItemInputAudioTranscriptionCompleted!);
+                conversationItemInputAudioTranscriptionCompleted?.Invoke(__value3);
             }
-            else if (IsConversationItemInputAudioTranscriptionDelta)
+            else if (ConversationItemInputAudioTranscriptionDelta is { } __value4)
             {
-                conversationItemInputAudioTranscriptionDelta?.Invoke(ConversationItemInputAudioTranscriptionDelta!);
+                conversationItemInputAudioTranscriptionDelta?.Invoke(__value4);
             }
-            else if (IsConversationItemInputAudioTranscriptionFailed)
+            else if (ConversationItemInputAudioTranscriptionFailed is { } __value5)
             {
-                conversationItemInputAudioTranscriptionFailed?.Invoke(ConversationItemInputAudioTranscriptionFailed!);
+                conversationItemInputAudioTranscriptionFailed?.Invoke(__value5);
             }
-            else if (IsConversationItemRetrieved)
+            else if (ConversationItemRetrieved is { } __value6)
             {
-                conversationItemRetrieved?.Invoke(ConversationItemRetrieved!);
+                conversationItemRetrieved?.Invoke(__value6);
             }
-            else if (IsConversationItemTruncated)
+            else if (ConversationItemTruncated is { } __value7)
             {
-                conversationItemTruncated?.Invoke(ConversationItemTruncated!);
+                conversationItemTruncated?.Invoke(__value7);
             }
-            else if (IsError)
+            else if (Error is { } __value8)
             {
-                error?.Invoke(Error!);
+                error?.Invoke(__value8);
             }
-            else if (IsInputAudioBufferCleared)
+            else if (InputAudioBufferCleared is { } __value9)
             {
-                inputAudioBufferCleared?.Invoke(InputAudioBufferCleared!);
+                inputAudioBufferCleared?.Invoke(__value9);
             }
-            else if (IsInputAudioBufferCommitted)
+            else if (InputAudioBufferCommitted is { } __value10)
             {
-                inputAudioBufferCommitted?.Invoke(InputAudioBufferCommitted!);
+                inputAudioBufferCommitted?.Invoke(__value10);
             }
-            else if (IsInputAudioBufferSpeechStarted)
+            else if (InputAudioBufferSpeechStarted is { } __value11)
             {
-                inputAudioBufferSpeechStarted?.Invoke(InputAudioBufferSpeechStarted!);
+                inputAudioBufferSpeechStarted?.Invoke(__value11);
             }
-            else if (IsInputAudioBufferSpeechStopped)
+            else if (InputAudioBufferSpeechStopped is { } __value12)
             {
-                inputAudioBufferSpeechStopped?.Invoke(InputAudioBufferSpeechStopped!);
+                inputAudioBufferSpeechStopped?.Invoke(__value12);
             }
-            else if (IsRateLimitsUpdated)
+            else if (RateLimitsUpdated is { } __value13)
             {
-                rateLimitsUpdated?.Invoke(RateLimitsUpdated!);
+                rateLimitsUpdated?.Invoke(__value13);
             }
-            else if (IsResponseAudioDelta)
+            else if (ResponseAudioDelta is { } __value14)
             {
-                responseAudioDelta?.Invoke(ResponseAudioDelta!);
+                responseAudioDelta?.Invoke(__value14);
             }
-            else if (IsResponseAudioDone)
+            else if (ResponseAudioDone is { } __value15)
             {
-                responseAudioDone?.Invoke(ResponseAudioDone!);
+                responseAudioDone?.Invoke(__value15);
             }
-            else if (IsResponseAudioTranscriptDelta)
+            else if (ResponseAudioTranscriptDelta is { } __value16)
             {
-                responseAudioTranscriptDelta?.Invoke(ResponseAudioTranscriptDelta!);
+                responseAudioTranscriptDelta?.Invoke(__value16);
             }
-            else if (IsResponseAudioTranscriptDone)
+            else if (ResponseAudioTranscriptDone is { } __value17)
             {
-                responseAudioTranscriptDone?.Invoke(ResponseAudioTranscriptDone!);
+                responseAudioTranscriptDone?.Invoke(__value17);
             }
-            else if (IsResponseContentPartAdded)
+            else if (ResponseContentPartAdded is { } __value18)
             {
-                responseContentPartAdded?.Invoke(ResponseContentPartAdded!);
+                responseContentPartAdded?.Invoke(__value18);
             }
-            else if (IsResponseContentPartDone)
+            else if (ResponseContentPartDone is { } __value19)
             {
-                responseContentPartDone?.Invoke(ResponseContentPartDone!);
+                responseContentPartDone?.Invoke(__value19);
             }
-            else if (IsResponseCreated)
+            else if (ResponseCreated is { } __value20)
             {
-                responseCreated?.Invoke(ResponseCreated!);
+                responseCreated?.Invoke(__value20);
             }
-            else if (IsResponseDone)
+            else if (ResponseDone is { } __value21)
             {
-                responseDone?.Invoke(ResponseDone!);
+                responseDone?.Invoke(__value21);
             }
-            else if (IsResponseFunctionCallArgumentsDelta)
+            else if (ResponseFunctionCallArgumentsDelta is { } __value22)
             {
-                responseFunctionCallArgumentsDelta?.Invoke(ResponseFunctionCallArgumentsDelta!);
+                responseFunctionCallArgumentsDelta?.Invoke(__value22);
             }
-            else if (IsResponseFunctionCallArgumentsDone)
+            else if (ResponseFunctionCallArgumentsDone is { } __value23)
             {
-                responseFunctionCallArgumentsDone?.Invoke(ResponseFunctionCallArgumentsDone!);
+                responseFunctionCallArgumentsDone?.Invoke(__value23);
             }
-            else if (IsResponseOutputItemAdded)
+            else if (ResponseOutputItemAdded is { } __value24)
             {
-                responseOutputItemAdded?.Invoke(ResponseOutputItemAdded!);
+                responseOutputItemAdded?.Invoke(__value24);
             }
-            else if (IsResponseOutputItemDone)
+            else if (ResponseOutputItemDone is { } __value25)
             {
-                responseOutputItemDone?.Invoke(ResponseOutputItemDone!);
+                responseOutputItemDone?.Invoke(__value25);
             }
-            else if (IsResponseTextDelta)
+            else if (ResponseTextDelta is { } __value26)
             {
-                responseTextDelta?.Invoke(ResponseTextDelta!);
+                responseTextDelta?.Invoke(__value26);
             }
-            else if (IsResponseTextDone)
+            else if (ResponseTextDone is { } __value27)
             {
-                responseTextDone?.Invoke(ResponseTextDone!);
+                responseTextDone?.Invoke(__value27);
             }
-            else if (IsSessionCreated)
+            else if (SessionCreated is { } __value28)
             {
-                sessionCreated?.Invoke(SessionCreated!);
+                sessionCreated?.Invoke(__value28);
             }
-            else if (IsSessionUpdated)
+            else if (SessionUpdated is { } __value29)
             {
-                sessionUpdated?.Invoke(SessionUpdated!);
+                sessionUpdated?.Invoke(__value29);
             }
-            else if (IsTranscriptionSessionUpdated)
+            else if (TranscriptionSessionUpdated is { } __value30)
             {
-                transcriptionSessionUpdated?.Invoke(TranscriptionSessionUpdated!);
+                transcriptionSessionUpdated?.Invoke(__value30);
             }
-            else if (IsOutputAudioBufferStarted)
+            else if (OutputAudioBufferStarted is { } __value31)
             {
-                outputAudioBufferStarted?.Invoke(OutputAudioBufferStarted!);
+                outputAudioBufferStarted?.Invoke(__value31);
             }
-            else if (IsOutputAudioBufferStopped)
+            else if (OutputAudioBufferStopped is { } __value32)
             {
-                outputAudioBufferStopped?.Invoke(OutputAudioBufferStopped!);
+                outputAudioBufferStopped?.Invoke(__value32);
             }
-            else if (IsOutputAudioBufferCleared)
+            else if (OutputAudioBufferCleared is { } __value33)
             {
-                outputAudioBufferCleared?.Invoke(OutputAudioBufferCleared!);
+                outputAudioBufferCleared?.Invoke(__value33);
             }
         }
 

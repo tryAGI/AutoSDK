@@ -1,4 +1,4 @@
-﻿//HintName: G.Models.FinetuneResponseTrainingType.g.cs
+//HintName: G.Models.FinetuneResponseTrainingType.g.cs
 #pragma warning disable CS0618 // Type or member is obsolete
 
 #nullable enable
@@ -48,8 +48,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.FullTrainingType PickFull() => IsFull
-            ? Full!
+        public global::G.FullTrainingType PickFull() => Full is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Full' but the value was {ToString()}.");
 
         /// <summary>
@@ -85,8 +85,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.LoRATrainingType PickLora() => IsLora
-            ? Lora!
+        public global::G.LoRATrainingType PickLora() => Lora is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Lora' but the value was {ToString()}.");
         /// <summary>
         /// 
@@ -186,13 +186,13 @@ namespace G
                 Validate();
             }
 
-            if (IsFull && full != null)
+            if (Full is { } __value0 && full != null)
             {
-                return full(Full!);
+                return full(__value0);
             }
-            else if (IsLora && lora != null)
+            else if (Lora is { } __value1 && lora != null)
             {
-                return lora(Lora!);
+                return lora(__value1);
             }
 
             return default(TResult);
@@ -212,13 +212,13 @@ namespace G
                 Validate();
             }
 
-            if (IsFull)
+            if (Full is { } __value0)
             {
-                full?.Invoke(Full!);
+                full?.Invoke(__value0);
             }
-            else if (IsLora)
+            else if (Lora is { } __value1)
             {
-                lora?.Invoke(Lora!);
+                lora?.Invoke(__value1);
             }
         }
 
@@ -235,13 +235,13 @@ namespace G
                 Validate();
             }
 
-            if (IsFull)
+            if (Full is { } __value0)
             {
-                full?.Invoke(Full!);
+                full?.Invoke(__value0);
             }
-            else if (IsLora)
+            else if (Lora is { } __value1)
             {
-                lora?.Invoke(Lora!);
+                lora?.Invoke(__value1);
             }
         }
 

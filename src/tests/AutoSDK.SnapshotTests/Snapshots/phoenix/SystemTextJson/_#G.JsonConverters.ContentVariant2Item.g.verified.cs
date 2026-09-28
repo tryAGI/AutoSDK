@@ -1,4 +1,4 @@
-﻿//HintName: G.JsonConverters.ContentVariant2Item.g.cs
+//HintName: G.JsonConverters.ContentVariant2Item.g.cs
 #nullable enable
 #pragma warning disable CS0618 // Type or member is obsolete
 
@@ -69,19 +69,19 @@ namespace G.JsonConverters
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.TextContentPart), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.TextContentPart?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.TextContentPart).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Text!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickText(), typeInfo);
             }
             else if (value.IsToolCall)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.ToolCallContentPart), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.ToolCallContentPart?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.ToolCallContentPart).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.ToolCall!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickToolCall(), typeInfo);
             }
             else if (value.IsToolResult)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.ToolResultContentPart), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.ToolResultContentPart?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.ToolResultContentPart).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.ToolResult!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickToolResult(), typeInfo);
             }
         }
     }

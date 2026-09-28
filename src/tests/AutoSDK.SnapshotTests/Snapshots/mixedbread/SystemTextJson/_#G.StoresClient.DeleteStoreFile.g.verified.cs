@@ -1,4 +1,4 @@
-﻿//HintName: G.StoresClient.DeleteStoreFile.g.cs
+//HintName: G.StoresClient.DeleteStoreFile.g.cs
 
 #nullable enable
 
@@ -199,8 +199,8 @@ namespace G
                 PrepareDeleteStoreFileRequest(
                     httpClient: HttpClient,
                     httpRequestMessage: __httpRequest,
-                    storeIdentifier: storeIdentifier!,
-                    fileIdentifier: fileIdentifier!);
+                    storeIdentifier: storeIdentifier,
+                    fileIdentifier: fileIdentifier);
 
                 global::G.AutoSDKHttpRequestOptions.StampAuthorizationOverride(__httpRequest);
 
@@ -224,7 +224,7 @@ namespace G
                                 pathTemplate: "$\"/v1/stores/{storeIdentifier}/files/{fileIdentifier}\"",
                                 httpMethod: "DELETE",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: null,
                                 exception: null,
                                 clientOptions: Options,
@@ -258,7 +258,7 @@ namespace G
                                 pathTemplate: "$\"/v1/stores/{storeIdentifier}/files/{fileIdentifier}\"",
                                 httpMethod: "DELETE",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: null,
                                 exception: __exception,
                                 clientOptions: Options,
@@ -299,7 +299,7 @@ namespace G
                                 pathTemplate: "$\"/v1/stores/{storeIdentifier}/files/{fileIdentifier}\"",
                                 httpMethod: "DELETE",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: __response,
                                 exception: null,
                                 clientOptions: Options,
@@ -347,7 +347,7 @@ namespace G
                                 pathTemplate: "$\"/v1/stores/{storeIdentifier}/files/{fileIdentifier}\"",
                                 httpMethod: "DELETE",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: __response,
                                 exception: null,
                                 clientOptions: Options,
@@ -369,7 +369,7 @@ namespace G
                                 pathTemplate: "$\"/v1/stores/{storeIdentifier}/files/{fileIdentifier}\"",
                                 httpMethod: "DELETE",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: __response,
                                 exception: null,
                                 clientOptions: Options,

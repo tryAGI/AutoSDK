@@ -1,4 +1,4 @@
-﻿//HintName: G.Models.CreateInputMessageRequest.g.cs
+//HintName: G.Models.CreateInputMessageRequest.g.cs
 #pragma warning disable CS0618 // Type or member is obsolete
 
 #nullable enable
@@ -43,8 +43,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.CreateInputRequestBase PickBase() => IsBase
-            ? Base!
+        public global::G.CreateInputRequestBase PickBase() => Base is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Base' but the value was {ToString()}.");
 
         /// <summary>
@@ -80,8 +80,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.CreateInputMessageRequestVariant2 PickCreateInputMessageRequestVariant2() => IsCreateInputMessageRequestVariant2
-            ? CreateInputMessageRequestVariant2!
+        public global::G.CreateInputMessageRequestVariant2 PickCreateInputMessageRequestVariant2() => CreateInputMessageRequestVariant2 is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'CreateInputMessageRequestVariant2' but the value was {ToString()}.");
         /// <summary>
         /// 
@@ -178,13 +178,13 @@ namespace G
                 Validate();
             }
 
-            if (IsBase && @base != null)
+            if (Base is { } __value0 && @base != null)
             {
-                return @base(Base!);
+                return @base(__value0);
             }
-            else if (IsCreateInputMessageRequestVariant2 && createInputMessageRequestVariant2 != null)
+            else if (CreateInputMessageRequestVariant2 is { } __value1 && createInputMessageRequestVariant2 != null)
             {
-                return createInputMessageRequestVariant2(CreateInputMessageRequestVariant2!);
+                return createInputMessageRequestVariant2(__value1);
             }
 
             return default(TResult);
@@ -204,13 +204,13 @@ namespace G
                 Validate();
             }
 
-            if (IsBase)
+            if (Base is { } __value0)
             {
-                @base?.Invoke(Base!);
+                @base?.Invoke(__value0);
             }
-            else if (IsCreateInputMessageRequestVariant2)
+            else if (CreateInputMessageRequestVariant2 is { } __value1)
             {
-                createInputMessageRequestVariant2?.Invoke(CreateInputMessageRequestVariant2!);
+                createInputMessageRequestVariant2?.Invoke(__value1);
             }
         }
 
@@ -227,13 +227,13 @@ namespace G
                 Validate();
             }
 
-            if (IsBase)
+            if (Base is { } __value0)
             {
-                @base?.Invoke(Base!);
+                @base?.Invoke(__value0);
             }
-            else if (IsCreateInputMessageRequestVariant2)
+            else if (CreateInputMessageRequestVariant2 is { } __value1)
             {
-                createInputMessageRequestVariant2?.Invoke(CreateInputMessageRequestVariant2!);
+                createInputMessageRequestVariant2?.Invoke(__value1);
             }
         }
 

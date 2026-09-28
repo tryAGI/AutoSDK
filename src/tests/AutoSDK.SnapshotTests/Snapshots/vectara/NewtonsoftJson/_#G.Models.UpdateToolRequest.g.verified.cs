@@ -1,4 +1,4 @@
-﻿//HintName: G.Models.UpdateToolRequest.g.cs
+//HintName: G.Models.UpdateToolRequest.g.cs
 #pragma warning disable CS0618 // Type or member is obsolete
 
 #nullable enable
@@ -48,8 +48,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.UpdateMcpToolRequest PickMcp() => IsMcp
-            ? Mcp!
+        public global::G.UpdateMcpToolRequest PickMcp() => Mcp is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Mcp' but the value was {ToString()}.");
 
         /// <summary>
@@ -86,8 +86,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.UpdateLambdaToolRequest PickLambda() => IsLambda
-            ? Lambda!
+        public global::G.UpdateLambdaToolRequest PickLambda() => Lambda is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Lambda' but the value was {ToString()}.");
         /// <summary>
         /// 
@@ -187,13 +187,13 @@ namespace G
                 Validate();
             }
 
-            if (IsMcp && mcp != null)
+            if (Mcp is { } __value0 && mcp != null)
             {
-                return mcp(Mcp!);
+                return mcp(__value0);
             }
-            else if (IsLambda && lambda != null)
+            else if (Lambda is { } __value1 && lambda != null)
             {
-                return lambda(Lambda!);
+                return lambda(__value1);
             }
 
             return default(TResult);
@@ -213,13 +213,13 @@ namespace G
                 Validate();
             }
 
-            if (IsMcp)
+            if (Mcp is { } __value0)
             {
-                mcp?.Invoke(Mcp!);
+                mcp?.Invoke(__value0);
             }
-            else if (IsLambda)
+            else if (Lambda is { } __value1)
             {
-                lambda?.Invoke(Lambda!);
+                lambda?.Invoke(__value1);
             }
         }
 
@@ -236,13 +236,13 @@ namespace G
                 Validate();
             }
 
-            if (IsMcp)
+            if (Mcp is { } __value0)
             {
-                mcp?.Invoke(Mcp!);
+                mcp?.Invoke(__value0);
             }
-            else if (IsLambda)
+            else if (Lambda is { } __value1)
             {
-                lambda?.Invoke(Lambda!);
+                lambda?.Invoke(__value1);
             }
         }
 

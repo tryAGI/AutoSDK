@@ -1,4 +1,4 @@
-﻿//HintName: G.CompletionClient.V1J2LightCustomModelComplete.g.cs
+//HintName: G.CompletionClient.V1J2LightCustomModelComplete.g.cs
 
 #nullable enable
 
@@ -150,7 +150,7 @@ namespace G
                 PrepareV1J2LightCustomModelCompleteRequest(
                     httpClient: HttpClient,
                     httpRequestMessage: __httpRequest,
-                    customModelName: customModelName!,
+                    customModelName: customModelName,
                     customModelType: customModelType,
                     requestStartTime: requestStartTime,
                     request: request);
@@ -175,7 +175,7 @@ namespace G
                                 pathTemplate: "$\"/studio/v1/j2-light/{customModelName}/complete\"",
                                 httpMethod: "POST",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: null,
                                 exception: null,
                                 clientOptions: Options,
@@ -209,7 +209,7 @@ namespace G
                                 pathTemplate: "$\"/studio/v1/j2-light/{customModelName}/complete\"",
                                 httpMethod: "POST",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: null,
                                 exception: __exception,
                                 clientOptions: Options,
@@ -250,7 +250,7 @@ namespace G
                                 pathTemplate: "$\"/studio/v1/j2-light/{customModelName}/complete\"",
                                 httpMethod: "POST",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: __response,
                                 exception: null,
                                 clientOptions: Options,
@@ -298,7 +298,7 @@ namespace G
                                 pathTemplate: "$\"/studio/v1/j2-light/{customModelName}/complete\"",
                                 httpMethod: "POST",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: __response,
                                 exception: null,
                                 clientOptions: Options,
@@ -320,7 +320,7 @@ namespace G
                                 pathTemplate: "$\"/studio/v1/j2-light/{customModelName}/complete\"",
                                 httpMethod: "POST",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: __response,
                                 exception: null,
                                 clientOptions: Options,

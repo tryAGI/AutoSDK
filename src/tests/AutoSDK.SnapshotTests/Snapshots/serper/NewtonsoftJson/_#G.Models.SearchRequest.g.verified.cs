@@ -1,4 +1,4 @@
-﻿//HintName: G.Models.SearchRequest.g.cs
+//HintName: G.Models.SearchRequest.g.cs
 #pragma warning disable CS0618 // Type or member is obsolete
 
 #nullable enable
@@ -43,8 +43,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.BaseSearchRequest PickBase() => IsBase
-            ? Base!
+        public global::G.BaseSearchRequest PickBase() => Base is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Base' but the value was {ToString()}.");
 
         /// <summary>
@@ -80,8 +80,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.SearchRequestVariant2 PickSearchRequestVariant2() => IsSearchRequestVariant2
-            ? SearchRequestVariant2!
+        public global::G.SearchRequestVariant2 PickSearchRequestVariant2() => SearchRequestVariant2 is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'SearchRequestVariant2' but the value was {ToString()}.");
         /// <summary>
         /// 
@@ -178,13 +178,13 @@ namespace G
                 Validate();
             }
 
-            if (IsBase && @base != null)
+            if (Base is { } __value0 && @base != null)
             {
-                return @base(Base!);
+                return @base(__value0);
             }
-            else if (IsSearchRequestVariant2 && searchRequestVariant2 != null)
+            else if (SearchRequestVariant2 is { } __value1 && searchRequestVariant2 != null)
             {
-                return searchRequestVariant2(SearchRequestVariant2!);
+                return searchRequestVariant2(__value1);
             }
 
             return default(TResult);
@@ -204,13 +204,13 @@ namespace G
                 Validate();
             }
 
-            if (IsBase)
+            if (Base is { } __value0)
             {
-                @base?.Invoke(Base!);
+                @base?.Invoke(__value0);
             }
-            else if (IsSearchRequestVariant2)
+            else if (SearchRequestVariant2 is { } __value1)
             {
-                searchRequestVariant2?.Invoke(SearchRequestVariant2!);
+                searchRequestVariant2?.Invoke(__value1);
             }
         }
 
@@ -227,13 +227,13 @@ namespace G
                 Validate();
             }
 
-            if (IsBase)
+            if (Base is { } __value0)
             {
-                @base?.Invoke(Base!);
+                @base?.Invoke(__value0);
             }
-            else if (IsSearchRequestVariant2)
+            else if (SearchRequestVariant2 is { } __value1)
             {
-                searchRequestVariant2?.Invoke(SearchRequestVariant2!);
+                searchRequestVariant2?.Invoke(__value1);
             }
         }
 

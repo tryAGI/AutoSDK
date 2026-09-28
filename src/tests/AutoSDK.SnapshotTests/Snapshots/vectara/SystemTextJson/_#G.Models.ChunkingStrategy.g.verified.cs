@@ -1,4 +1,4 @@
-﻿//HintName: G.Models.ChunkingStrategy.g.cs
+//HintName: G.Models.ChunkingStrategy.g.cs
 #pragma warning disable CS0618 // Type or member is obsolete
 
 #nullable enable
@@ -48,8 +48,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.MaxCharsChunkingStrategy PickMaxCharsChunkingStrategy() => IsMaxCharsChunkingStrategy
-            ? MaxCharsChunkingStrategy!
+        public global::G.MaxCharsChunkingStrategy PickMaxCharsChunkingStrategy() => MaxCharsChunkingStrategy is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'MaxCharsChunkingStrategy' but the value was {ToString()}.");
 
         /// <summary>
@@ -85,8 +85,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.SentenceChunkingStrategy PickSentenceChunkingStrategy() => IsSentenceChunkingStrategy
-            ? SentenceChunkingStrategy!
+        public global::G.SentenceChunkingStrategy PickSentenceChunkingStrategy() => SentenceChunkingStrategy is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'SentenceChunkingStrategy' but the value was {ToString()}.");
         /// <summary>
         /// 
@@ -186,13 +186,13 @@ namespace G
                 Validate();
             }
 
-            if (IsMaxCharsChunkingStrategy && maxCharsChunkingStrategy != null)
+            if (MaxCharsChunkingStrategy is { } __value0 && maxCharsChunkingStrategy != null)
             {
-                return maxCharsChunkingStrategy(MaxCharsChunkingStrategy!);
+                return maxCharsChunkingStrategy(__value0);
             }
-            else if (IsSentenceChunkingStrategy && sentenceChunkingStrategy != null)
+            else if (SentenceChunkingStrategy is { } __value1 && sentenceChunkingStrategy != null)
             {
-                return sentenceChunkingStrategy(SentenceChunkingStrategy!);
+                return sentenceChunkingStrategy(__value1);
             }
 
             return default(TResult);
@@ -212,13 +212,13 @@ namespace G
                 Validate();
             }
 
-            if (IsMaxCharsChunkingStrategy)
+            if (MaxCharsChunkingStrategy is { } __value0)
             {
-                maxCharsChunkingStrategy?.Invoke(MaxCharsChunkingStrategy!);
+                maxCharsChunkingStrategy?.Invoke(__value0);
             }
-            else if (IsSentenceChunkingStrategy)
+            else if (SentenceChunkingStrategy is { } __value1)
             {
-                sentenceChunkingStrategy?.Invoke(SentenceChunkingStrategy!);
+                sentenceChunkingStrategy?.Invoke(__value1);
             }
         }
 
@@ -235,13 +235,13 @@ namespace G
                 Validate();
             }
 
-            if (IsMaxCharsChunkingStrategy)
+            if (MaxCharsChunkingStrategy is { } __value0)
             {
-                maxCharsChunkingStrategy?.Invoke(MaxCharsChunkingStrategy!);
+                maxCharsChunkingStrategy?.Invoke(__value0);
             }
-            else if (IsSentenceChunkingStrategy)
+            else if (SentenceChunkingStrategy is { } __value1)
             {
-                sentenceChunkingStrategy?.Invoke(SentenceChunkingStrategy!);
+                sentenceChunkingStrategy?.Invoke(__value1);
             }
         }
 

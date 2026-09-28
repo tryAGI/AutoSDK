@@ -1,4 +1,4 @@
-﻿//HintName: G.Models.Media.g.cs
+//HintName: G.Models.Media.g.cs
 #pragma warning disable CS0618 // Type or member is obsolete
 
 #nullable enable
@@ -48,8 +48,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.CreateSpeechToSpeechRequestElevenMultilingualStsV2MediaSpeechToSpeechAudio PickAudio() => IsAudio
-            ? Audio!
+        public global::G.CreateSpeechToSpeechRequestElevenMultilingualStsV2MediaSpeechToSpeechAudio PickAudio() => Audio is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Audio' but the value was {ToString()}.");
 
         /// <summary>
@@ -85,8 +85,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.CreateSpeechToSpeechRequestElevenMultilingualStsV2MediaSpeechToSpeechVideo PickVideo() => IsVideo
-            ? Video!
+        public global::G.CreateSpeechToSpeechRequestElevenMultilingualStsV2MediaSpeechToSpeechVideo PickVideo() => Video is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Video' but the value was {ToString()}.");
         /// <summary>
         /// 
@@ -186,13 +186,13 @@ namespace G
                 Validate();
             }
 
-            if (IsAudio && audio != null)
+            if (Audio is { } __value0 && audio != null)
             {
-                return audio(Audio!);
+                return audio(__value0);
             }
-            else if (IsVideo && video != null)
+            else if (Video is { } __value1 && video != null)
             {
-                return video(Video!);
+                return video(__value1);
             }
 
             return default(TResult);
@@ -212,13 +212,13 @@ namespace G
                 Validate();
             }
 
-            if (IsAudio)
+            if (Audio is { } __value0)
             {
-                audio?.Invoke(Audio!);
+                audio?.Invoke(__value0);
             }
-            else if (IsVideo)
+            else if (Video is { } __value1)
             {
-                video?.Invoke(Video!);
+                video?.Invoke(__value1);
             }
         }
 
@@ -235,13 +235,13 @@ namespace G
                 Validate();
             }
 
-            if (IsAudio)
+            if (Audio is { } __value0)
             {
-                audio?.Invoke(Audio!);
+                audio?.Invoke(__value0);
             }
-            else if (IsVideo)
+            else if (Video is { } __value1)
             {
-                video?.Invoke(Video!);
+                video?.Invoke(__value1);
             }
         }
 

@@ -1,4 +1,4 @@
-﻿//HintName: G.Models.OutputMessageStatus.g.cs
+//HintName: G.Models.OutputMessageStatus.g.cs
 #pragma warning disable CS0618 // Type or member is obsolete
 
 #nullable enable
@@ -43,8 +43,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.OutputMessageStatus0 PickOutputMessageStatus0() => IsOutputMessageStatus0
-            ? OutputMessageStatus0!.Value
+        public global::G.OutputMessageStatus0 PickOutputMessageStatus0() => OutputMessageStatus0 is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'OutputMessageStatus0' but the value was {ToString()}.");
 
         /// <summary>
@@ -80,8 +80,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.OutputMessageStatus1 PickOutputMessageStatus1() => IsOutputMessageStatus1
-            ? OutputMessageStatus1!.Value
+        public global::G.OutputMessageStatus1 PickOutputMessageStatus1() => OutputMessageStatus1 is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'OutputMessageStatus1' but the value was {ToString()}.");
 
         /// <summary>
@@ -117,8 +117,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.OutputMessageStatus2 PickOutputMessageStatus2() => IsOutputMessageStatus2
-            ? OutputMessageStatus2!.Value
+        public global::G.OutputMessageStatus2 PickOutputMessageStatus2() => OutputMessageStatus2 is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'OutputMessageStatus2' but the value was {ToString()}.");
         /// <summary>
         /// 
@@ -243,17 +243,17 @@ namespace G
                 Validate();
             }
 
-            if (IsOutputMessageStatus0 && outputMessageStatus0 != null)
+            if (OutputMessageStatus0 is { } __value0 && outputMessageStatus0 != null)
             {
-                return outputMessageStatus0(OutputMessageStatus0!);
+                return outputMessageStatus0(__value0);
             }
-            else if (IsOutputMessageStatus1 && outputMessageStatus1 != null)
+            else if (OutputMessageStatus1 is { } __value1 && outputMessageStatus1 != null)
             {
-                return outputMessageStatus1(OutputMessageStatus1!);
+                return outputMessageStatus1(__value1);
             }
-            else if (IsOutputMessageStatus2 && outputMessageStatus2 != null)
+            else if (OutputMessageStatus2 is { } __value2 && outputMessageStatus2 != null)
             {
-                return outputMessageStatus2(OutputMessageStatus2!);
+                return outputMessageStatus2(__value2);
             }
 
             return default(TResult);
@@ -275,17 +275,17 @@ namespace G
                 Validate();
             }
 
-            if (IsOutputMessageStatus0)
+            if (OutputMessageStatus0 is { } __value0)
             {
-                outputMessageStatus0?.Invoke(OutputMessageStatus0!);
+                outputMessageStatus0?.Invoke(__value0);
             }
-            else if (IsOutputMessageStatus1)
+            else if (OutputMessageStatus1 is { } __value1)
             {
-                outputMessageStatus1?.Invoke(OutputMessageStatus1!);
+                outputMessageStatus1?.Invoke(__value1);
             }
-            else if (IsOutputMessageStatus2)
+            else if (OutputMessageStatus2 is { } __value2)
             {
-                outputMessageStatus2?.Invoke(OutputMessageStatus2!);
+                outputMessageStatus2?.Invoke(__value2);
             }
         }
 
@@ -303,17 +303,17 @@ namespace G
                 Validate();
             }
 
-            if (IsOutputMessageStatus0)
+            if (OutputMessageStatus0 is { } __value0)
             {
-                outputMessageStatus0?.Invoke(OutputMessageStatus0!);
+                outputMessageStatus0?.Invoke(__value0);
             }
-            else if (IsOutputMessageStatus1)
+            else if (OutputMessageStatus1 is { } __value1)
             {
-                outputMessageStatus1?.Invoke(OutputMessageStatus1!);
+                outputMessageStatus1?.Invoke(__value1);
             }
-            else if (IsOutputMessageStatus2)
+            else if (OutputMessageStatus2 is { } __value2)
             {
-                outputMessageStatus2?.Invoke(OutputMessageStatus2!);
+                outputMessageStatus2?.Invoke(__value2);
             }
         }
 

@@ -1,4 +1,4 @@
-﻿//HintName: G.Models.OrgRulesetConditions.g.cs
+//HintName: G.Models.OrgRulesetConditions.g.cs
 #pragma warning disable CS0618 // Type or member is obsolete
 
 #nullable enable
@@ -45,8 +45,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.AllOf<global::G.RepositoryRulesetConditions, global::G.RepositoryRulesetConditionsRepositoryNameTarget> PickRepositoryNameAndRefName() => IsRepositoryNameAndRefName
-            ? RepositoryNameAndRefName!.Value
+        public global::G.AllOf<global::G.RepositoryRulesetConditions, global::G.RepositoryRulesetConditionsRepositoryNameTarget> PickRepositoryNameAndRefName() => RepositoryNameAndRefName is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'RepositoryNameAndRefName' but the value was {ToString()}.");
 
         /// <summary>
@@ -82,8 +82,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.AllOf<global::G.RepositoryRulesetConditions, global::G.RepositoryRulesetConditionsRepositoryIdTarget> PickRepositoryIdAndRefName() => IsRepositoryIdAndRefName
-            ? RepositoryIdAndRefName!.Value
+        public global::G.AllOf<global::G.RepositoryRulesetConditions, global::G.RepositoryRulesetConditionsRepositoryIdTarget> PickRepositoryIdAndRefName() => RepositoryIdAndRefName is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'RepositoryIdAndRefName' but the value was {ToString()}.");
 
         /// <summary>
@@ -119,8 +119,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.AllOf<global::G.RepositoryRulesetConditions, global::G.RepositoryRulesetConditionsRepositoryPropertyTarget> PickRepositoryPropertyAndRefName() => IsRepositoryPropertyAndRefName
-            ? RepositoryPropertyAndRefName!.Value
+        public global::G.AllOf<global::G.RepositoryRulesetConditions, global::G.RepositoryRulesetConditionsRepositoryPropertyTarget> PickRepositoryPropertyAndRefName() => RepositoryPropertyAndRefName is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'RepositoryPropertyAndRefName' but the value was {ToString()}.");
         /// <summary>
         /// 
@@ -245,17 +245,17 @@ namespace G
                 Validate();
             }
 
-            if (IsRepositoryNameAndRefName && repositoryNameAndRefName != null)
+            if (RepositoryNameAndRefName is { } __value0 && repositoryNameAndRefName != null)
             {
-                return repositoryNameAndRefName(RepositoryNameAndRefName!);
+                return repositoryNameAndRefName(__value0);
             }
-            else if (IsRepositoryIdAndRefName && repositoryIdAndRefName != null)
+            else if (RepositoryIdAndRefName is { } __value1 && repositoryIdAndRefName != null)
             {
-                return repositoryIdAndRefName(RepositoryIdAndRefName!);
+                return repositoryIdAndRefName(__value1);
             }
-            else if (IsRepositoryPropertyAndRefName && repositoryPropertyAndRefName != null)
+            else if (RepositoryPropertyAndRefName is { } __value2 && repositoryPropertyAndRefName != null)
             {
-                return repositoryPropertyAndRefName(RepositoryPropertyAndRefName!);
+                return repositoryPropertyAndRefName(__value2);
             }
 
             return default(TResult);
@@ -277,17 +277,17 @@ namespace G
                 Validate();
             }
 
-            if (IsRepositoryNameAndRefName)
+            if (RepositoryNameAndRefName is { } __value0)
             {
-                repositoryNameAndRefName?.Invoke(RepositoryNameAndRefName!);
+                repositoryNameAndRefName?.Invoke(__value0);
             }
-            else if (IsRepositoryIdAndRefName)
+            else if (RepositoryIdAndRefName is { } __value1)
             {
-                repositoryIdAndRefName?.Invoke(RepositoryIdAndRefName!);
+                repositoryIdAndRefName?.Invoke(__value1);
             }
-            else if (IsRepositoryPropertyAndRefName)
+            else if (RepositoryPropertyAndRefName is { } __value2)
             {
-                repositoryPropertyAndRefName?.Invoke(RepositoryPropertyAndRefName!);
+                repositoryPropertyAndRefName?.Invoke(__value2);
             }
         }
 
@@ -305,17 +305,17 @@ namespace G
                 Validate();
             }
 
-            if (IsRepositoryNameAndRefName)
+            if (RepositoryNameAndRefName is { } __value0)
             {
-                repositoryNameAndRefName?.Invoke(RepositoryNameAndRefName!);
+                repositoryNameAndRefName?.Invoke(__value0);
             }
-            else if (IsRepositoryIdAndRefName)
+            else if (RepositoryIdAndRefName is { } __value1)
             {
-                repositoryIdAndRefName?.Invoke(RepositoryIdAndRefName!);
+                repositoryIdAndRefName?.Invoke(__value1);
             }
-            else if (IsRepositoryPropertyAndRefName)
+            else if (RepositoryPropertyAndRefName is { } __value2)
             {
-                repositoryPropertyAndRefName?.Invoke(RepositoryPropertyAndRefName!);
+                repositoryPropertyAndRefName?.Invoke(__value2);
             }
         }
 

@@ -1,4 +1,4 @@
-﻿//HintName: G.Models.CreateModelResponseProperties.g.cs
+//HintName: G.Models.CreateModelResponseProperties.g.cs
 #pragma warning disable CS0618 // Type or member is obsolete
 
 #nullable enable
@@ -43,8 +43,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.ModelResponseProperties PickModelResponseProperties() => IsModelResponseProperties
-            ? ModelResponseProperties!
+        public global::G.ModelResponseProperties PickModelResponseProperties() => ModelResponseProperties is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'ModelResponseProperties' but the value was {ToString()}.");
         /// <summary>
         /// 
@@ -103,9 +103,9 @@ namespace G
                 Validate();
             }
 
-            if (IsModelResponseProperties && modelResponseProperties != null)
+            if (ModelResponseProperties is { } __value0 && modelResponseProperties != null)
             {
-                return modelResponseProperties(ModelResponseProperties!);
+                return modelResponseProperties(__value0);
             }
 
             return default(TResult);
@@ -123,9 +123,9 @@ namespace G
                 Validate();
             }
 
-            if (IsModelResponseProperties)
+            if (ModelResponseProperties is { } __value0)
             {
-                modelResponseProperties?.Invoke(ModelResponseProperties!);
+                modelResponseProperties?.Invoke(__value0);
             }
         }
 
@@ -141,9 +141,9 @@ namespace G
                 Validate();
             }
 
-            if (IsModelResponseProperties)
+            if (ModelResponseProperties is { } __value0)
             {
-                modelResponseProperties?.Invoke(ModelResponseProperties!);
+                modelResponseProperties?.Invoke(__value0);
             }
         }
 

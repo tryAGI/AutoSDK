@@ -1,4 +1,4 @@
-﻿//HintName: G.Models.CreateImageToVideoRequest.g.cs
+//HintName: G.Models.CreateImageToVideoRequest.g.cs
 #pragma warning disable CS0618 // Type or member is obsolete
 
 #nullable enable
@@ -48,8 +48,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.CreateImageToVideoRequestGen4Turbo PickGen4Turbo() => IsGen4Turbo
-            ? Gen4Turbo!
+        public global::G.CreateImageToVideoRequestGen4Turbo PickGen4Turbo() => Gen4Turbo is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Gen4Turbo' but the value was {ToString()}.");
 
         /// <summary>
@@ -85,8 +85,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.CreateImageToVideoRequestVeo31 PickVeo31() => IsVeo31
-            ? Veo31!
+        public global::G.CreateImageToVideoRequestVeo31 PickVeo31() => Veo31 is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Veo31' but the value was {ToString()}.");
 
         /// <summary>
@@ -122,8 +122,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.CreateImageToVideoRequestGen3aTurbo PickGen3aTurbo() => IsGen3aTurbo
-            ? Gen3aTurbo!
+        public global::G.CreateImageToVideoRequestGen3aTurbo PickGen3aTurbo() => Gen3aTurbo is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Gen3aTurbo' but the value was {ToString()}.");
 
         /// <summary>
@@ -159,8 +159,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.CreateImageToVideoRequestVeo31Fast PickVeo31Fast() => IsVeo31Fast
-            ? Veo31Fast!
+        public global::G.CreateImageToVideoRequestVeo31Fast PickVeo31Fast() => Veo31Fast is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Veo31Fast' but the value was {ToString()}.");
 
         /// <summary>
@@ -196,8 +196,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.CreateImageToVideoRequestVeo3 PickVeo3() => IsVeo3
-            ? Veo3!
+        public global::G.CreateImageToVideoRequestVeo3 PickVeo3() => Veo3 is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Veo3' but the value was {ToString()}.");
         /// <summary>
         /// 
@@ -381,25 +381,25 @@ namespace G
                 Validate();
             }
 
-            if (IsGen4Turbo && gen4Turbo != null)
+            if (Gen4Turbo is { } __value0 && gen4Turbo != null)
             {
-                return gen4Turbo(Gen4Turbo!);
+                return gen4Turbo(__value0);
             }
-            else if (IsVeo31 && veo31 != null)
+            else if (Veo31 is { } __value1 && veo31 != null)
             {
-                return veo31(Veo31!);
+                return veo31(__value1);
             }
-            else if (IsGen3aTurbo && gen3aTurbo != null)
+            else if (Gen3aTurbo is { } __value2 && gen3aTurbo != null)
             {
-                return gen3aTurbo(Gen3aTurbo!);
+                return gen3aTurbo(__value2);
             }
-            else if (IsVeo31Fast && veo31Fast != null)
+            else if (Veo31Fast is { } __value3 && veo31Fast != null)
             {
-                return veo31Fast(Veo31Fast!);
+                return veo31Fast(__value3);
             }
-            else if (IsVeo3 && veo3 != null)
+            else if (Veo3 is { } __value4 && veo3 != null)
             {
-                return veo3(Veo3!);
+                return veo3(__value4);
             }
 
             return default(TResult);
@@ -425,25 +425,25 @@ namespace G
                 Validate();
             }
 
-            if (IsGen4Turbo)
+            if (Gen4Turbo is { } __value0)
             {
-                gen4Turbo?.Invoke(Gen4Turbo!);
+                gen4Turbo?.Invoke(__value0);
             }
-            else if (IsVeo31)
+            else if (Veo31 is { } __value1)
             {
-                veo31?.Invoke(Veo31!);
+                veo31?.Invoke(__value1);
             }
-            else if (IsGen3aTurbo)
+            else if (Gen3aTurbo is { } __value2)
             {
-                gen3aTurbo?.Invoke(Gen3aTurbo!);
+                gen3aTurbo?.Invoke(__value2);
             }
-            else if (IsVeo31Fast)
+            else if (Veo31Fast is { } __value3)
             {
-                veo31Fast?.Invoke(Veo31Fast!);
+                veo31Fast?.Invoke(__value3);
             }
-            else if (IsVeo3)
+            else if (Veo3 is { } __value4)
             {
-                veo3?.Invoke(Veo3!);
+                veo3?.Invoke(__value4);
             }
         }
 
@@ -463,25 +463,25 @@ namespace G
                 Validate();
             }
 
-            if (IsGen4Turbo)
+            if (Gen4Turbo is { } __value0)
             {
-                gen4Turbo?.Invoke(Gen4Turbo!);
+                gen4Turbo?.Invoke(__value0);
             }
-            else if (IsVeo31)
+            else if (Veo31 is { } __value1)
             {
-                veo31?.Invoke(Veo31!);
+                veo31?.Invoke(__value1);
             }
-            else if (IsGen3aTurbo)
+            else if (Gen3aTurbo is { } __value2)
             {
-                gen3aTurbo?.Invoke(Gen3aTurbo!);
+                gen3aTurbo?.Invoke(__value2);
             }
-            else if (IsVeo31Fast)
+            else if (Veo31Fast is { } __value3)
             {
-                veo31Fast?.Invoke(Veo31Fast!);
+                veo31Fast?.Invoke(__value3);
             }
-            else if (IsVeo3)
+            else if (Veo3 is { } __value4)
             {
-                veo3?.Invoke(Veo3!);
+                veo3?.Invoke(__value4);
             }
         }
 

@@ -1,4 +1,4 @@
-﻿//HintName: G.ToolsClient.PostToolsExecuteByToolSlug.g.cs
+//HintName: G.ToolsClient.PostToolsExecuteByToolSlug.g.cs
 
 #nullable enable
 
@@ -233,7 +233,7 @@ namespace G
                 PreparePostToolsExecuteByToolSlugRequest(
                     httpClient: HttpClient,
                     httpRequestMessage: __httpRequest,
-                    toolSlug: toolSlug!,
+                    toolSlug: toolSlug,
                     xLlmGatewayHeaders: xLlmGatewayHeaders,
                     request: request);
 
@@ -259,7 +259,7 @@ namespace G
                                 pathTemplate: "$\"/api/v3/tools/execute/{toolSlug}\"",
                                 httpMethod: "POST",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: null,
                                 exception: null,
                                 clientOptions: Options,
@@ -293,7 +293,7 @@ namespace G
                                 pathTemplate: "$\"/api/v3/tools/execute/{toolSlug}\"",
                                 httpMethod: "POST",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: null,
                                 exception: __exception,
                                 clientOptions: Options,
@@ -334,7 +334,7 @@ namespace G
                                 pathTemplate: "$\"/api/v3/tools/execute/{toolSlug}\"",
                                 httpMethod: "POST",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: __response,
                                 exception: null,
                                 clientOptions: Options,
@@ -382,7 +382,7 @@ namespace G
                                 pathTemplate: "$\"/api/v3/tools/execute/{toolSlug}\"",
                                 httpMethod: "POST",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: __response,
                                 exception: null,
                                 clientOptions: Options,
@@ -404,7 +404,7 @@ namespace G
                                 pathTemplate: "$\"/api/v3/tools/execute/{toolSlug}\"",
                                 httpMethod: "POST",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: __response,
                                 exception: null,
                                 clientOptions: Options,

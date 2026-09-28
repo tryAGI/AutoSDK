@@ -1,4 +1,4 @@
-﻿//HintName: G.Models.Filter.g.cs
+//HintName: G.Models.Filter.g.cs
 #pragma warning disable CS0618 // Type or member is obsolete
 
 #nullable enable
@@ -43,8 +43,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public byte[] PickFilterVariant1() => IsFilterVariant1
-            ? FilterVariant1!
+        public byte[] PickFilterVariant1() => FilterVariant1 is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'FilterVariant1' but the value was {ToString()}.");
 
         /// <summary>
@@ -80,8 +80,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public byte[] PickFilterVariant2() => IsFilterVariant2
-            ? FilterVariant2!
+        public byte[] PickFilterVariant2() => FilterVariant2 is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'FilterVariant2' but the value was {ToString()}.");
 
         /// <summary>
@@ -117,8 +117,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public byte[] PickFilterVariant3() => IsFilterVariant3
-            ? FilterVariant3!
+        public byte[] PickFilterVariant3() => FilterVariant3 is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'FilterVariant3' but the value was {ToString()}.");
 
         /// <summary>
@@ -154,8 +154,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public byte[] PickFilterVariant4() => IsFilterVariant4
-            ? FilterVariant4!
+        public byte[] PickFilterVariant4() => FilterVariant4 is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'FilterVariant4' but the value was {ToString()}.");
 
         /// <summary>
@@ -191,8 +191,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public byte[] PickFilterVariant5() => IsFilterVariant5
-            ? FilterVariant5!
+        public byte[] PickFilterVariant5() => FilterVariant5 is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'FilterVariant5' but the value was {ToString()}.");
 
         /// <summary>
@@ -228,8 +228,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public byte[] PickFilterVariant6() => IsFilterVariant6
-            ? FilterVariant6!
+        public byte[] PickFilterVariant6() => FilterVariant6 is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'FilterVariant6' but the value was {ToString()}.");
 
         /// <summary>
@@ -265,8 +265,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public byte[] PickFilterVariant7() => IsFilterVariant7
-            ? FilterVariant7!
+        public byte[] PickFilterVariant7() => FilterVariant7 is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'FilterVariant7' but the value was {ToString()}.");
 
         /// <summary>
@@ -302,8 +302,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public byte[] PickFilterVariant8() => IsFilterVariant8
-            ? FilterVariant8!
+        public byte[] PickFilterVariant8() => FilterVariant8 is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'FilterVariant8' but the value was {ToString()}.");
 
         /// <summary>
@@ -339,8 +339,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public byte[] PickFilterVariant9() => IsFilterVariant9
-            ? FilterVariant9!
+        public byte[] PickFilterVariant9() => FilterVariant9 is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'FilterVariant9' but the value was {ToString()}.");
 
         /// <summary>
@@ -376,8 +376,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public byte[] PickFilterVariant10() => IsFilterVariant10
-            ? FilterVariant10!
+        public byte[] PickFilterVariant10() => FilterVariant10 is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'FilterVariant10' but the value was {ToString()}.");
 
         /// <summary>
@@ -413,8 +413,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public byte[] PickFilterVariant11() => IsFilterVariant11
-            ? FilterVariant11!
+        public byte[] PickFilterVariant11() => FilterVariant11 is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'FilterVariant11' but the value was {ToString()}.");
 
         /// <summary>
@@ -450,8 +450,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public byte[] PickFilterVariant12() => IsFilterVariant12
-            ? FilterVariant12!
+        public byte[] PickFilterVariant12() => FilterVariant12 is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'FilterVariant12' but the value was {ToString()}.");
 
         /// <summary>
@@ -487,8 +487,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public byte[] PickFilterVariant13() => IsFilterVariant13
-            ? FilterVariant13!
+        public byte[] PickFilterVariant13() => FilterVariant13 is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'FilterVariant13' but the value was {ToString()}.");
 
         /// <summary>
@@ -524,8 +524,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public byte[] PickFilterVariant14() => IsFilterVariant14
-            ? FilterVariant14!
+        public byte[] PickFilterVariant14() => FilterVariant14 is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'FilterVariant14' but the value was {ToString()}.");
 
         /// <summary>
@@ -561,8 +561,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public byte[] PickFilterVariant15() => IsFilterVariant15
-            ? FilterVariant15!
+        public byte[] PickFilterVariant15() => FilterVariant15 is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'FilterVariant15' but the value was {ToString()}.");
 
         /// <summary>
@@ -598,8 +598,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public byte[] PickFilterVariant16() => IsFilterVariant16
-            ? FilterVariant16!
+        public byte[] PickFilterVariant16() => FilterVariant16 is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'FilterVariant16' but the value was {ToString()}.");
 
         /// <summary>
@@ -635,8 +635,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public byte[] PickFilterVariant17() => IsFilterVariant17
-            ? FilterVariant17!
+        public byte[] PickFilterVariant17() => FilterVariant17 is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'FilterVariant17' but the value was {ToString()}.");
 
         /// <summary>
@@ -672,8 +672,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public byte[] PickFilterVariant18() => IsFilterVariant18
-            ? FilterVariant18!
+        public byte[] PickFilterVariant18() => FilterVariant18 is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'FilterVariant18' but the value was {ToString()}.");
 
         /// <summary>
@@ -709,8 +709,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public byte[] PickFilterVariant19() => IsFilterVariant19
-            ? FilterVariant19!
+        public byte[] PickFilterVariant19() => FilterVariant19 is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'FilterVariant19' but the value was {ToString()}.");
 
         /// <summary>
@@ -746,8 +746,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public byte[] PickFilterVariant20() => IsFilterVariant20
-            ? FilterVariant20!
+        public byte[] PickFilterVariant20() => FilterVariant20 is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'FilterVariant20' but the value was {ToString()}.");
 
         /// <summary>
@@ -783,8 +783,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public byte[] PickFilterVariant21() => IsFilterVariant21
-            ? FilterVariant21!
+        public byte[] PickFilterVariant21() => FilterVariant21 is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'FilterVariant21' but the value was {ToString()}.");
 
         /// <summary>
@@ -820,8 +820,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public byte[] PickFilterVariant22() => IsFilterVariant22
-            ? FilterVariant22!
+        public byte[] PickFilterVariant22() => FilterVariant22 is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'FilterVariant22' but the value was {ToString()}.");
 
         /// <summary>
@@ -857,8 +857,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public byte[] PickFilterVariant23() => IsFilterVariant23
-            ? FilterVariant23!
+        public byte[] PickFilterVariant23() => FilterVariant23 is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'FilterVariant23' but the value was {ToString()}.");
 
         /// <summary>
@@ -894,8 +894,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public byte[] PickFilterVariant24() => IsFilterVariant24
-            ? FilterVariant24!
+        public byte[] PickFilterVariant24() => FilterVariant24 is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'FilterVariant24' but the value was {ToString()}.");
 
         /// <summary>
@@ -931,8 +931,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public byte[] PickFilterVariant25() => IsFilterVariant25
-            ? FilterVariant25!
+        public byte[] PickFilterVariant25() => FilterVariant25 is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'FilterVariant25' but the value was {ToString()}.");
 
         /// <summary>
@@ -968,8 +968,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public byte[] PickFilterVariant26() => IsFilterVariant26
-            ? FilterVariant26!
+        public byte[] PickFilterVariant26() => FilterVariant26 is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'FilterVariant26' but the value was {ToString()}.");
 
         /// <summary>
@@ -1005,8 +1005,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public byte[] PickFilterVariant27() => IsFilterVariant27
-            ? FilterVariant27!
+        public byte[] PickFilterVariant27() => FilterVariant27 is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'FilterVariant27' but the value was {ToString()}.");
 
         /// <summary>
@@ -1042,8 +1042,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public byte[] PickFilterVariant28() => IsFilterVariant28
-            ? FilterVariant28!
+        public byte[] PickFilterVariant28() => FilterVariant28 is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'FilterVariant28' but the value was {ToString()}.");
 
         /// <summary>
@@ -1079,8 +1079,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public byte[] PickFilterVariant29() => IsFilterVariant29
-            ? FilterVariant29!
+        public byte[] PickFilterVariant29() => FilterVariant29 is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'FilterVariant29' but the value was {ToString()}.");
 
         /// <summary>
@@ -1116,8 +1116,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public byte[] PickFilterVariant30() => IsFilterVariant30
-            ? FilterVariant30!
+        public byte[] PickFilterVariant30() => FilterVariant30 is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'FilterVariant30' but the value was {ToString()}.");
 
         /// <summary>
@@ -1153,8 +1153,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public byte[] PickFilterVariant31() => IsFilterVariant31
-            ? FilterVariant31!
+        public byte[] PickFilterVariant31() => FilterVariant31 is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'FilterVariant31' but the value was {ToString()}.");
 
         /// <summary>
@@ -1190,8 +1190,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public byte[] PickFilterVariant32() => IsFilterVariant32
-            ? FilterVariant32!
+        public byte[] PickFilterVariant32() => FilterVariant32 is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'FilterVariant32' but the value was {ToString()}.");
 
         /// <summary>
@@ -1227,8 +1227,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public byte[] PickFilterVariant33() => IsFilterVariant33
-            ? FilterVariant33!
+        public byte[] PickFilterVariant33() => FilterVariant33 is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'FilterVariant33' but the value was {ToString()}.");
 
         /// <summary>
@@ -1264,8 +1264,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public byte[] PickFilterVariant34() => IsFilterVariant34
-            ? FilterVariant34!
+        public byte[] PickFilterVariant34() => FilterVariant34 is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'FilterVariant34' but the value was {ToString()}.");
         /// <summary>
         /// 
@@ -1499,141 +1499,141 @@ namespace G
                 Validate();
             }
 
-            if (IsFilterVariant1 && filterVariant1 != null)
+            if (FilterVariant1 is { } __value0 && filterVariant1 != null)
             {
-                return filterVariant1(FilterVariant1!);
+                return filterVariant1(__value0);
             }
-            else if (IsFilterVariant2 && filterVariant2 != null)
+            else if (FilterVariant2 is { } __value1 && filterVariant2 != null)
             {
-                return filterVariant2(FilterVariant2!);
+                return filterVariant2(__value1);
             }
-            else if (IsFilterVariant3 && filterVariant3 != null)
+            else if (FilterVariant3 is { } __value2 && filterVariant3 != null)
             {
-                return filterVariant3(FilterVariant3!);
+                return filterVariant3(__value2);
             }
-            else if (IsFilterVariant4 && filterVariant4 != null)
+            else if (FilterVariant4 is { } __value3 && filterVariant4 != null)
             {
-                return filterVariant4(FilterVariant4!);
+                return filterVariant4(__value3);
             }
-            else if (IsFilterVariant5 && filterVariant5 != null)
+            else if (FilterVariant5 is { } __value4 && filterVariant5 != null)
             {
-                return filterVariant5(FilterVariant5!);
+                return filterVariant5(__value4);
             }
-            else if (IsFilterVariant6 && filterVariant6 != null)
+            else if (FilterVariant6 is { } __value5 && filterVariant6 != null)
             {
-                return filterVariant6(FilterVariant6!);
+                return filterVariant6(__value5);
             }
-            else if (IsFilterVariant7 && filterVariant7 != null)
+            else if (FilterVariant7 is { } __value6 && filterVariant7 != null)
             {
-                return filterVariant7(FilterVariant7!);
+                return filterVariant7(__value6);
             }
-            else if (IsFilterVariant8 && filterVariant8 != null)
+            else if (FilterVariant8 is { } __value7 && filterVariant8 != null)
             {
-                return filterVariant8(FilterVariant8!);
+                return filterVariant8(__value7);
             }
-            else if (IsFilterVariant9 && filterVariant9 != null)
+            else if (FilterVariant9 is { } __value8 && filterVariant9 != null)
             {
-                return filterVariant9(FilterVariant9!);
+                return filterVariant9(__value8);
             }
-            else if (IsFilterVariant10 && filterVariant10 != null)
+            else if (FilterVariant10 is { } __value9 && filterVariant10 != null)
             {
-                return filterVariant10(FilterVariant10!);
+                return filterVariant10(__value9);
             }
-            else if (IsFilterVariant11 && filterVariant11 != null)
+            else if (FilterVariant11 is { } __value10 && filterVariant11 != null)
             {
-                return filterVariant11(FilterVariant11!);
+                return filterVariant11(__value10);
             }
-            else if (IsFilterVariant12 && filterVariant12 != null)
+            else if (FilterVariant12 is { } __value11 && filterVariant12 != null)
             {
-                return filterVariant12(FilterVariant12!);
+                return filterVariant12(__value11);
             }
-            else if (IsFilterVariant13 && filterVariant13 != null)
+            else if (FilterVariant13 is { } __value12 && filterVariant13 != null)
             {
-                return filterVariant13(FilterVariant13!);
+                return filterVariant13(__value12);
             }
-            else if (IsFilterVariant14 && filterVariant14 != null)
+            else if (FilterVariant14 is { } __value13 && filterVariant14 != null)
             {
-                return filterVariant14(FilterVariant14!);
+                return filterVariant14(__value13);
             }
-            else if (IsFilterVariant15 && filterVariant15 != null)
+            else if (FilterVariant15 is { } __value14 && filterVariant15 != null)
             {
-                return filterVariant15(FilterVariant15!);
+                return filterVariant15(__value14);
             }
-            else if (IsFilterVariant16 && filterVariant16 != null)
+            else if (FilterVariant16 is { } __value15 && filterVariant16 != null)
             {
-                return filterVariant16(FilterVariant16!);
+                return filterVariant16(__value15);
             }
-            else if (IsFilterVariant17 && filterVariant17 != null)
+            else if (FilterVariant17 is { } __value16 && filterVariant17 != null)
             {
-                return filterVariant17(FilterVariant17!);
+                return filterVariant17(__value16);
             }
-            else if (IsFilterVariant18 && filterVariant18 != null)
+            else if (FilterVariant18 is { } __value17 && filterVariant18 != null)
             {
-                return filterVariant18(FilterVariant18!);
+                return filterVariant18(__value17);
             }
-            else if (IsFilterVariant19 && filterVariant19 != null)
+            else if (FilterVariant19 is { } __value18 && filterVariant19 != null)
             {
-                return filterVariant19(FilterVariant19!);
+                return filterVariant19(__value18);
             }
-            else if (IsFilterVariant20 && filterVariant20 != null)
+            else if (FilterVariant20 is { } __value19 && filterVariant20 != null)
             {
-                return filterVariant20(FilterVariant20!);
+                return filterVariant20(__value19);
             }
-            else if (IsFilterVariant21 && filterVariant21 != null)
+            else if (FilterVariant21 is { } __value20 && filterVariant21 != null)
             {
-                return filterVariant21(FilterVariant21!);
+                return filterVariant21(__value20);
             }
-            else if (IsFilterVariant22 && filterVariant22 != null)
+            else if (FilterVariant22 is { } __value21 && filterVariant22 != null)
             {
-                return filterVariant22(FilterVariant22!);
+                return filterVariant22(__value21);
             }
-            else if (IsFilterVariant23 && filterVariant23 != null)
+            else if (FilterVariant23 is { } __value22 && filterVariant23 != null)
             {
-                return filterVariant23(FilterVariant23!);
+                return filterVariant23(__value22);
             }
-            else if (IsFilterVariant24 && filterVariant24 != null)
+            else if (FilterVariant24 is { } __value23 && filterVariant24 != null)
             {
-                return filterVariant24(FilterVariant24!);
+                return filterVariant24(__value23);
             }
-            else if (IsFilterVariant25 && filterVariant25 != null)
+            else if (FilterVariant25 is { } __value24 && filterVariant25 != null)
             {
-                return filterVariant25(FilterVariant25!);
+                return filterVariant25(__value24);
             }
-            else if (IsFilterVariant26 && filterVariant26 != null)
+            else if (FilterVariant26 is { } __value25 && filterVariant26 != null)
             {
-                return filterVariant26(FilterVariant26!);
+                return filterVariant26(__value25);
             }
-            else if (IsFilterVariant27 && filterVariant27 != null)
+            else if (FilterVariant27 is { } __value26 && filterVariant27 != null)
             {
-                return filterVariant27(FilterVariant27!);
+                return filterVariant27(__value26);
             }
-            else if (IsFilterVariant28 && filterVariant28 != null)
+            else if (FilterVariant28 is { } __value27 && filterVariant28 != null)
             {
-                return filterVariant28(FilterVariant28!);
+                return filterVariant28(__value27);
             }
-            else if (IsFilterVariant29 && filterVariant29 != null)
+            else if (FilterVariant29 is { } __value28 && filterVariant29 != null)
             {
-                return filterVariant29(FilterVariant29!);
+                return filterVariant29(__value28);
             }
-            else if (IsFilterVariant30 && filterVariant30 != null)
+            else if (FilterVariant30 is { } __value29 && filterVariant30 != null)
             {
-                return filterVariant30(FilterVariant30!);
+                return filterVariant30(__value29);
             }
-            else if (IsFilterVariant31 && filterVariant31 != null)
+            else if (FilterVariant31 is { } __value30 && filterVariant31 != null)
             {
-                return filterVariant31(FilterVariant31!);
+                return filterVariant31(__value30);
             }
-            else if (IsFilterVariant32 && filterVariant32 != null)
+            else if (FilterVariant32 is { } __value31 && filterVariant32 != null)
             {
-                return filterVariant32(FilterVariant32!);
+                return filterVariant32(__value31);
             }
-            else if (IsFilterVariant33 && filterVariant33 != null)
+            else if (FilterVariant33 is { } __value32 && filterVariant33 != null)
             {
-                return filterVariant33(FilterVariant33!);
+                return filterVariant33(__value32);
             }
-            else if (IsFilterVariant34 && filterVariant34 != null)
+            else if (FilterVariant34 is { } __value33 && filterVariant34 != null)
             {
-                return filterVariant34(FilterVariant34!);
+                return filterVariant34(__value33);
             }
 
             return default(TResult);
@@ -1717,141 +1717,141 @@ namespace G
                 Validate();
             }
 
-            if (IsFilterVariant1)
+            if (FilterVariant1 is { } __value0)
             {
-                filterVariant1?.Invoke(FilterVariant1!);
+                filterVariant1?.Invoke(__value0);
             }
-            else if (IsFilterVariant2)
+            else if (FilterVariant2 is { } __value1)
             {
-                filterVariant2?.Invoke(FilterVariant2!);
+                filterVariant2?.Invoke(__value1);
             }
-            else if (IsFilterVariant3)
+            else if (FilterVariant3 is { } __value2)
             {
-                filterVariant3?.Invoke(FilterVariant3!);
+                filterVariant3?.Invoke(__value2);
             }
-            else if (IsFilterVariant4)
+            else if (FilterVariant4 is { } __value3)
             {
-                filterVariant4?.Invoke(FilterVariant4!);
+                filterVariant4?.Invoke(__value3);
             }
-            else if (IsFilterVariant5)
+            else if (FilterVariant5 is { } __value4)
             {
-                filterVariant5?.Invoke(FilterVariant5!);
+                filterVariant5?.Invoke(__value4);
             }
-            else if (IsFilterVariant6)
+            else if (FilterVariant6 is { } __value5)
             {
-                filterVariant6?.Invoke(FilterVariant6!);
+                filterVariant6?.Invoke(__value5);
             }
-            else if (IsFilterVariant7)
+            else if (FilterVariant7 is { } __value6)
             {
-                filterVariant7?.Invoke(FilterVariant7!);
+                filterVariant7?.Invoke(__value6);
             }
-            else if (IsFilterVariant8)
+            else if (FilterVariant8 is { } __value7)
             {
-                filterVariant8?.Invoke(FilterVariant8!);
+                filterVariant8?.Invoke(__value7);
             }
-            else if (IsFilterVariant9)
+            else if (FilterVariant9 is { } __value8)
             {
-                filterVariant9?.Invoke(FilterVariant9!);
+                filterVariant9?.Invoke(__value8);
             }
-            else if (IsFilterVariant10)
+            else if (FilterVariant10 is { } __value9)
             {
-                filterVariant10?.Invoke(FilterVariant10!);
+                filterVariant10?.Invoke(__value9);
             }
-            else if (IsFilterVariant11)
+            else if (FilterVariant11 is { } __value10)
             {
-                filterVariant11?.Invoke(FilterVariant11!);
+                filterVariant11?.Invoke(__value10);
             }
-            else if (IsFilterVariant12)
+            else if (FilterVariant12 is { } __value11)
             {
-                filterVariant12?.Invoke(FilterVariant12!);
+                filterVariant12?.Invoke(__value11);
             }
-            else if (IsFilterVariant13)
+            else if (FilterVariant13 is { } __value12)
             {
-                filterVariant13?.Invoke(FilterVariant13!);
+                filterVariant13?.Invoke(__value12);
             }
-            else if (IsFilterVariant14)
+            else if (FilterVariant14 is { } __value13)
             {
-                filterVariant14?.Invoke(FilterVariant14!);
+                filterVariant14?.Invoke(__value13);
             }
-            else if (IsFilterVariant15)
+            else if (FilterVariant15 is { } __value14)
             {
-                filterVariant15?.Invoke(FilterVariant15!);
+                filterVariant15?.Invoke(__value14);
             }
-            else if (IsFilterVariant16)
+            else if (FilterVariant16 is { } __value15)
             {
-                filterVariant16?.Invoke(FilterVariant16!);
+                filterVariant16?.Invoke(__value15);
             }
-            else if (IsFilterVariant17)
+            else if (FilterVariant17 is { } __value16)
             {
-                filterVariant17?.Invoke(FilterVariant17!);
+                filterVariant17?.Invoke(__value16);
             }
-            else if (IsFilterVariant18)
+            else if (FilterVariant18 is { } __value17)
             {
-                filterVariant18?.Invoke(FilterVariant18!);
+                filterVariant18?.Invoke(__value17);
             }
-            else if (IsFilterVariant19)
+            else if (FilterVariant19 is { } __value18)
             {
-                filterVariant19?.Invoke(FilterVariant19!);
+                filterVariant19?.Invoke(__value18);
             }
-            else if (IsFilterVariant20)
+            else if (FilterVariant20 is { } __value19)
             {
-                filterVariant20?.Invoke(FilterVariant20!);
+                filterVariant20?.Invoke(__value19);
             }
-            else if (IsFilterVariant21)
+            else if (FilterVariant21 is { } __value20)
             {
-                filterVariant21?.Invoke(FilterVariant21!);
+                filterVariant21?.Invoke(__value20);
             }
-            else if (IsFilterVariant22)
+            else if (FilterVariant22 is { } __value21)
             {
-                filterVariant22?.Invoke(FilterVariant22!);
+                filterVariant22?.Invoke(__value21);
             }
-            else if (IsFilterVariant23)
+            else if (FilterVariant23 is { } __value22)
             {
-                filterVariant23?.Invoke(FilterVariant23!);
+                filterVariant23?.Invoke(__value22);
             }
-            else if (IsFilterVariant24)
+            else if (FilterVariant24 is { } __value23)
             {
-                filterVariant24?.Invoke(FilterVariant24!);
+                filterVariant24?.Invoke(__value23);
             }
-            else if (IsFilterVariant25)
+            else if (FilterVariant25 is { } __value24)
             {
-                filterVariant25?.Invoke(FilterVariant25!);
+                filterVariant25?.Invoke(__value24);
             }
-            else if (IsFilterVariant26)
+            else if (FilterVariant26 is { } __value25)
             {
-                filterVariant26?.Invoke(FilterVariant26!);
+                filterVariant26?.Invoke(__value25);
             }
-            else if (IsFilterVariant27)
+            else if (FilterVariant27 is { } __value26)
             {
-                filterVariant27?.Invoke(FilterVariant27!);
+                filterVariant27?.Invoke(__value26);
             }
-            else if (IsFilterVariant28)
+            else if (FilterVariant28 is { } __value27)
             {
-                filterVariant28?.Invoke(FilterVariant28!);
+                filterVariant28?.Invoke(__value27);
             }
-            else if (IsFilterVariant29)
+            else if (FilterVariant29 is { } __value28)
             {
-                filterVariant29?.Invoke(FilterVariant29!);
+                filterVariant29?.Invoke(__value28);
             }
-            else if (IsFilterVariant30)
+            else if (FilterVariant30 is { } __value29)
             {
-                filterVariant30?.Invoke(FilterVariant30!);
+                filterVariant30?.Invoke(__value29);
             }
-            else if (IsFilterVariant31)
+            else if (FilterVariant31 is { } __value30)
             {
-                filterVariant31?.Invoke(FilterVariant31!);
+                filterVariant31?.Invoke(__value30);
             }
-            else if (IsFilterVariant32)
+            else if (FilterVariant32 is { } __value31)
             {
-                filterVariant32?.Invoke(FilterVariant32!);
+                filterVariant32?.Invoke(__value31);
             }
-            else if (IsFilterVariant33)
+            else if (FilterVariant33 is { } __value32)
             {
-                filterVariant33?.Invoke(FilterVariant33!);
+                filterVariant33?.Invoke(__value32);
             }
-            else if (IsFilterVariant34)
+            else if (FilterVariant34 is { } __value33)
             {
-                filterVariant34?.Invoke(FilterVariant34!);
+                filterVariant34?.Invoke(__value33);
             }
         }
 
@@ -1900,141 +1900,141 @@ namespace G
                 Validate();
             }
 
-            if (IsFilterVariant1)
+            if (FilterVariant1 is { } __value0)
             {
-                filterVariant1?.Invoke(FilterVariant1!);
+                filterVariant1?.Invoke(__value0);
             }
-            else if (IsFilterVariant2)
+            else if (FilterVariant2 is { } __value1)
             {
-                filterVariant2?.Invoke(FilterVariant2!);
+                filterVariant2?.Invoke(__value1);
             }
-            else if (IsFilterVariant3)
+            else if (FilterVariant3 is { } __value2)
             {
-                filterVariant3?.Invoke(FilterVariant3!);
+                filterVariant3?.Invoke(__value2);
             }
-            else if (IsFilterVariant4)
+            else if (FilterVariant4 is { } __value3)
             {
-                filterVariant4?.Invoke(FilterVariant4!);
+                filterVariant4?.Invoke(__value3);
             }
-            else if (IsFilterVariant5)
+            else if (FilterVariant5 is { } __value4)
             {
-                filterVariant5?.Invoke(FilterVariant5!);
+                filterVariant5?.Invoke(__value4);
             }
-            else if (IsFilterVariant6)
+            else if (FilterVariant6 is { } __value5)
             {
-                filterVariant6?.Invoke(FilterVariant6!);
+                filterVariant6?.Invoke(__value5);
             }
-            else if (IsFilterVariant7)
+            else if (FilterVariant7 is { } __value6)
             {
-                filterVariant7?.Invoke(FilterVariant7!);
+                filterVariant7?.Invoke(__value6);
             }
-            else if (IsFilterVariant8)
+            else if (FilterVariant8 is { } __value7)
             {
-                filterVariant8?.Invoke(FilterVariant8!);
+                filterVariant8?.Invoke(__value7);
             }
-            else if (IsFilterVariant9)
+            else if (FilterVariant9 is { } __value8)
             {
-                filterVariant9?.Invoke(FilterVariant9!);
+                filterVariant9?.Invoke(__value8);
             }
-            else if (IsFilterVariant10)
+            else if (FilterVariant10 is { } __value9)
             {
-                filterVariant10?.Invoke(FilterVariant10!);
+                filterVariant10?.Invoke(__value9);
             }
-            else if (IsFilterVariant11)
+            else if (FilterVariant11 is { } __value10)
             {
-                filterVariant11?.Invoke(FilterVariant11!);
+                filterVariant11?.Invoke(__value10);
             }
-            else if (IsFilterVariant12)
+            else if (FilterVariant12 is { } __value11)
             {
-                filterVariant12?.Invoke(FilterVariant12!);
+                filterVariant12?.Invoke(__value11);
             }
-            else if (IsFilterVariant13)
+            else if (FilterVariant13 is { } __value12)
             {
-                filterVariant13?.Invoke(FilterVariant13!);
+                filterVariant13?.Invoke(__value12);
             }
-            else if (IsFilterVariant14)
+            else if (FilterVariant14 is { } __value13)
             {
-                filterVariant14?.Invoke(FilterVariant14!);
+                filterVariant14?.Invoke(__value13);
             }
-            else if (IsFilterVariant15)
+            else if (FilterVariant15 is { } __value14)
             {
-                filterVariant15?.Invoke(FilterVariant15!);
+                filterVariant15?.Invoke(__value14);
             }
-            else if (IsFilterVariant16)
+            else if (FilterVariant16 is { } __value15)
             {
-                filterVariant16?.Invoke(FilterVariant16!);
+                filterVariant16?.Invoke(__value15);
             }
-            else if (IsFilterVariant17)
+            else if (FilterVariant17 is { } __value16)
             {
-                filterVariant17?.Invoke(FilterVariant17!);
+                filterVariant17?.Invoke(__value16);
             }
-            else if (IsFilterVariant18)
+            else if (FilterVariant18 is { } __value17)
             {
-                filterVariant18?.Invoke(FilterVariant18!);
+                filterVariant18?.Invoke(__value17);
             }
-            else if (IsFilterVariant19)
+            else if (FilterVariant19 is { } __value18)
             {
-                filterVariant19?.Invoke(FilterVariant19!);
+                filterVariant19?.Invoke(__value18);
             }
-            else if (IsFilterVariant20)
+            else if (FilterVariant20 is { } __value19)
             {
-                filterVariant20?.Invoke(FilterVariant20!);
+                filterVariant20?.Invoke(__value19);
             }
-            else if (IsFilterVariant21)
+            else if (FilterVariant21 is { } __value20)
             {
-                filterVariant21?.Invoke(FilterVariant21!);
+                filterVariant21?.Invoke(__value20);
             }
-            else if (IsFilterVariant22)
+            else if (FilterVariant22 is { } __value21)
             {
-                filterVariant22?.Invoke(FilterVariant22!);
+                filterVariant22?.Invoke(__value21);
             }
-            else if (IsFilterVariant23)
+            else if (FilterVariant23 is { } __value22)
             {
-                filterVariant23?.Invoke(FilterVariant23!);
+                filterVariant23?.Invoke(__value22);
             }
-            else if (IsFilterVariant24)
+            else if (FilterVariant24 is { } __value23)
             {
-                filterVariant24?.Invoke(FilterVariant24!);
+                filterVariant24?.Invoke(__value23);
             }
-            else if (IsFilterVariant25)
+            else if (FilterVariant25 is { } __value24)
             {
-                filterVariant25?.Invoke(FilterVariant25!);
+                filterVariant25?.Invoke(__value24);
             }
-            else if (IsFilterVariant26)
+            else if (FilterVariant26 is { } __value25)
             {
-                filterVariant26?.Invoke(FilterVariant26!);
+                filterVariant26?.Invoke(__value25);
             }
-            else if (IsFilterVariant27)
+            else if (FilterVariant27 is { } __value26)
             {
-                filterVariant27?.Invoke(FilterVariant27!);
+                filterVariant27?.Invoke(__value26);
             }
-            else if (IsFilterVariant28)
+            else if (FilterVariant28 is { } __value27)
             {
-                filterVariant28?.Invoke(FilterVariant28!);
+                filterVariant28?.Invoke(__value27);
             }
-            else if (IsFilterVariant29)
+            else if (FilterVariant29 is { } __value28)
             {
-                filterVariant29?.Invoke(FilterVariant29!);
+                filterVariant29?.Invoke(__value28);
             }
-            else if (IsFilterVariant30)
+            else if (FilterVariant30 is { } __value29)
             {
-                filterVariant30?.Invoke(FilterVariant30!);
+                filterVariant30?.Invoke(__value29);
             }
-            else if (IsFilterVariant31)
+            else if (FilterVariant31 is { } __value30)
             {
-                filterVariant31?.Invoke(FilterVariant31!);
+                filterVariant31?.Invoke(__value30);
             }
-            else if (IsFilterVariant32)
+            else if (FilterVariant32 is { } __value31)
             {
-                filterVariant32?.Invoke(FilterVariant32!);
+                filterVariant32?.Invoke(__value31);
             }
-            else if (IsFilterVariant33)
+            else if (FilterVariant33 is { } __value32)
             {
-                filterVariant33?.Invoke(FilterVariant33!);
+                filterVariant33?.Invoke(__value32);
             }
-            else if (IsFilterVariant34)
+            else if (FilterVariant34 is { } __value33)
             {
-                filterVariant34?.Invoke(FilterVariant34!);
+                filterVariant34?.Invoke(__value33);
             }
         }
 

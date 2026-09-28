@@ -1,4 +1,4 @@
-﻿//HintName: G.JsonConverters.ChunkingStrategy.g.cs
+//HintName: G.JsonConverters.ChunkingStrategy.g.cs
 #nullable enable
 #pragma warning disable CS0618 // Type or member is obsolete
 
@@ -60,13 +60,13 @@ namespace G.JsonConverters
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.MaxCharsChunkingStrategy), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.MaxCharsChunkingStrategy?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.MaxCharsChunkingStrategy).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.MaxCharsChunkingStrategy!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickMaxCharsChunkingStrategy(), typeInfo);
             }
             else if (value.IsSentenceChunkingStrategy)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.SentenceChunkingStrategy), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.SentenceChunkingStrategy?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.SentenceChunkingStrategy).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.SentenceChunkingStrategy!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickSentenceChunkingStrategy(), typeInfo);
             }
         }
     }

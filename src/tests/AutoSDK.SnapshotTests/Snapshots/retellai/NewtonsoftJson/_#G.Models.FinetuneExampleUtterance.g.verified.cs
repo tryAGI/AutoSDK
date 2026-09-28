@@ -1,4 +1,4 @@
-﻿//HintName: G.Models.FinetuneExampleUtterance.g.cs
+//HintName: G.Models.FinetuneExampleUtterance.g.cs
 #pragma warning disable CS0618 // Type or member is obsolete
 
 #nullable enable
@@ -43,8 +43,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.FinetuneExampleUtteranceVariant1 PickFinetuneExampleUtteranceVariant1() => IsFinetuneExampleUtteranceVariant1
-            ? FinetuneExampleUtteranceVariant1!
+        public global::G.FinetuneExampleUtteranceVariant1 PickFinetuneExampleUtteranceVariant1() => FinetuneExampleUtteranceVariant1 is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'FinetuneExampleUtteranceVariant1' but the value was {ToString()}.");
 
         /// <summary>
@@ -80,8 +80,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.FinetuneExampleUtteranceVariant2 PickFinetuneExampleUtteranceVariant2() => IsFinetuneExampleUtteranceVariant2
-            ? FinetuneExampleUtteranceVariant2!
+        public global::G.FinetuneExampleUtteranceVariant2 PickFinetuneExampleUtteranceVariant2() => FinetuneExampleUtteranceVariant2 is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'FinetuneExampleUtteranceVariant2' but the value was {ToString()}.");
 
         /// <summary>
@@ -117,8 +117,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.FinetuneExampleUtteranceVariant3 PickFinetuneExampleUtteranceVariant3() => IsFinetuneExampleUtteranceVariant3
-            ? FinetuneExampleUtteranceVariant3!
+        public global::G.FinetuneExampleUtteranceVariant3 PickFinetuneExampleUtteranceVariant3() => FinetuneExampleUtteranceVariant3 is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'FinetuneExampleUtteranceVariant3' but the value was {ToString()}.");
         /// <summary>
         /// 
@@ -243,17 +243,17 @@ namespace G
                 Validate();
             }
 
-            if (IsFinetuneExampleUtteranceVariant1 && finetuneExampleUtteranceVariant1 != null)
+            if (FinetuneExampleUtteranceVariant1 is { } __value0 && finetuneExampleUtteranceVariant1 != null)
             {
-                return finetuneExampleUtteranceVariant1(FinetuneExampleUtteranceVariant1!);
+                return finetuneExampleUtteranceVariant1(__value0);
             }
-            else if (IsFinetuneExampleUtteranceVariant2 && finetuneExampleUtteranceVariant2 != null)
+            else if (FinetuneExampleUtteranceVariant2 is { } __value1 && finetuneExampleUtteranceVariant2 != null)
             {
-                return finetuneExampleUtteranceVariant2(FinetuneExampleUtteranceVariant2!);
+                return finetuneExampleUtteranceVariant2(__value1);
             }
-            else if (IsFinetuneExampleUtteranceVariant3 && finetuneExampleUtteranceVariant3 != null)
+            else if (FinetuneExampleUtteranceVariant3 is { } __value2 && finetuneExampleUtteranceVariant3 != null)
             {
-                return finetuneExampleUtteranceVariant3(FinetuneExampleUtteranceVariant3!);
+                return finetuneExampleUtteranceVariant3(__value2);
             }
 
             return default(TResult);
@@ -275,17 +275,17 @@ namespace G
                 Validate();
             }
 
-            if (IsFinetuneExampleUtteranceVariant1)
+            if (FinetuneExampleUtteranceVariant1 is { } __value0)
             {
-                finetuneExampleUtteranceVariant1?.Invoke(FinetuneExampleUtteranceVariant1!);
+                finetuneExampleUtteranceVariant1?.Invoke(__value0);
             }
-            else if (IsFinetuneExampleUtteranceVariant2)
+            else if (FinetuneExampleUtteranceVariant2 is { } __value1)
             {
-                finetuneExampleUtteranceVariant2?.Invoke(FinetuneExampleUtteranceVariant2!);
+                finetuneExampleUtteranceVariant2?.Invoke(__value1);
             }
-            else if (IsFinetuneExampleUtteranceVariant3)
+            else if (FinetuneExampleUtteranceVariant3 is { } __value2)
             {
-                finetuneExampleUtteranceVariant3?.Invoke(FinetuneExampleUtteranceVariant3!);
+                finetuneExampleUtteranceVariant3?.Invoke(__value2);
             }
         }
 
@@ -303,17 +303,17 @@ namespace G
                 Validate();
             }
 
-            if (IsFinetuneExampleUtteranceVariant1)
+            if (FinetuneExampleUtteranceVariant1 is { } __value0)
             {
-                finetuneExampleUtteranceVariant1?.Invoke(FinetuneExampleUtteranceVariant1!);
+                finetuneExampleUtteranceVariant1?.Invoke(__value0);
             }
-            else if (IsFinetuneExampleUtteranceVariant2)
+            else if (FinetuneExampleUtteranceVariant2 is { } __value1)
             {
-                finetuneExampleUtteranceVariant2?.Invoke(FinetuneExampleUtteranceVariant2!);
+                finetuneExampleUtteranceVariant2?.Invoke(__value1);
             }
-            else if (IsFinetuneExampleUtteranceVariant3)
+            else if (FinetuneExampleUtteranceVariant3 is { } __value2)
             {
-                finetuneExampleUtteranceVariant3?.Invoke(FinetuneExampleUtteranceVariant3!);
+                finetuneExampleUtteranceVariant3?.Invoke(__value2);
             }
         }
 

@@ -1,4 +1,4 @@
-﻿//HintName: G.JsonConverters.CreateVoiceIsolationRequest.g.cs
+//HintName: G.JsonConverters.CreateVoiceIsolationRequest.g.cs
 #nullable enable
 #pragma warning disable CS0618 // Type or member is obsolete
 
@@ -51,7 +51,7 @@ namespace G.JsonConverters
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.CreateVoiceIsolationRequestElevenVoiceIsolation), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.CreateVoiceIsolationRequestElevenVoiceIsolation?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.CreateVoiceIsolationRequestElevenVoiceIsolation).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.ElevenVoiceIsolation!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickElevenVoiceIsolation(), typeInfo);
             }
         }
     }

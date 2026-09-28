@@ -1,4 +1,4 @@
-﻿//HintName: G.Models.EmbedResponse.g.cs
+//HintName: G.Models.EmbedResponse.g.cs
 #pragma warning disable CS0618 // Type or member is obsolete
 
 #nullable enable
@@ -48,8 +48,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.EmbedFloatsResponse PickEmbeddingsFloats() => IsEmbeddingsFloats
-            ? EmbeddingsFloats!
+        public global::G.EmbedFloatsResponse PickEmbeddingsFloats() => EmbeddingsFloats is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'EmbeddingsFloats' but the value was {ToString()}.");
 
         /// <summary>
@@ -85,8 +85,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.EmbedByTypeResponse PickEmbeddingsByType() => IsEmbeddingsByType
-            ? EmbeddingsByType!
+        public global::G.EmbedByTypeResponse PickEmbeddingsByType() => EmbeddingsByType is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'EmbeddingsByType' but the value was {ToString()}.");
         /// <summary>
         /// 
@@ -186,13 +186,13 @@ namespace G
                 Validate();
             }
 
-            if (IsEmbeddingsFloats && embeddingsFloats != null)
+            if (EmbeddingsFloats is { } __value0 && embeddingsFloats != null)
             {
-                return embeddingsFloats(EmbeddingsFloats!);
+                return embeddingsFloats(__value0);
             }
-            else if (IsEmbeddingsByType && embeddingsByType != null)
+            else if (EmbeddingsByType is { } __value1 && embeddingsByType != null)
             {
-                return embeddingsByType(EmbeddingsByType!);
+                return embeddingsByType(__value1);
             }
 
             return default(TResult);
@@ -212,13 +212,13 @@ namespace G
                 Validate();
             }
 
-            if (IsEmbeddingsFloats)
+            if (EmbeddingsFloats is { } __value0)
             {
-                embeddingsFloats?.Invoke(EmbeddingsFloats!);
+                embeddingsFloats?.Invoke(__value0);
             }
-            else if (IsEmbeddingsByType)
+            else if (EmbeddingsByType is { } __value1)
             {
-                embeddingsByType?.Invoke(EmbeddingsByType!);
+                embeddingsByType?.Invoke(__value1);
             }
         }
 
@@ -235,13 +235,13 @@ namespace G
                 Validate();
             }
 
-            if (IsEmbeddingsFloats)
+            if (EmbeddingsFloats is { } __value0)
             {
-                embeddingsFloats?.Invoke(EmbeddingsFloats!);
+                embeddingsFloats?.Invoke(__value0);
             }
-            else if (IsEmbeddingsByType)
+            else if (EmbeddingsByType is { } __value1)
             {
-                embeddingsByType?.Invoke(EmbeddingsByType!);
+                embeddingsByType?.Invoke(__value1);
             }
         }
 

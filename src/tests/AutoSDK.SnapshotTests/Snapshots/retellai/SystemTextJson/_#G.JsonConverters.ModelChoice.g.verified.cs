@@ -1,4 +1,4 @@
-﻿//HintName: G.JsonConverters.ModelChoice.g.cs
+//HintName: G.JsonConverters.ModelChoice.g.cs
 #nullable enable
 #pragma warning disable CS0618 // Type or member is obsolete
 
@@ -93,7 +93,7 @@ namespace G.JsonConverters
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.ModelChoiceCascading), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.ModelChoiceCascading?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.ModelChoiceCascading).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Cascading!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickCascading(), typeInfo);
             }
         }
     }

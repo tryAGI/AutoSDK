@@ -1,4 +1,4 @@
-﻿//HintName: G.Models.TranscriptWebhookNotification.g.cs
+//HintName: G.Models.TranscriptWebhookNotification.g.cs
 #pragma warning disable CS0618 // Type or member is obsolete
 
 #nullable enable
@@ -44,8 +44,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.TranscriptReadyNotification PickReady() => IsReady
-            ? Ready!
+        public global::G.TranscriptReadyNotification PickReady() => Ready is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Ready' but the value was {ToString()}.");
 
         /// <summary>
@@ -81,8 +81,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.RedactedAudioNotification PickRedactedAudio() => IsRedactedAudio
-            ? RedactedAudio!.Value
+        public global::G.RedactedAudioNotification PickRedactedAudio() => RedactedAudio is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'RedactedAudio' but the value was {ToString()}.");
         /// <summary>
         /// 
@@ -179,13 +179,13 @@ namespace G
                 Validate();
             }
 
-            if (IsReady && ready != null)
+            if (Ready is { } __value0 && ready != null)
             {
-                return ready(Ready!);
+                return ready(__value0);
             }
-            else if (IsRedactedAudio && redactedAudio != null)
+            else if (RedactedAudio is { } __value1 && redactedAudio != null)
             {
-                return redactedAudio(RedactedAudio!);
+                return redactedAudio(__value1);
             }
 
             return default(TResult);
@@ -205,13 +205,13 @@ namespace G
                 Validate();
             }
 
-            if (IsReady)
+            if (Ready is { } __value0)
             {
-                ready?.Invoke(Ready!);
+                ready?.Invoke(__value0);
             }
-            else if (IsRedactedAudio)
+            else if (RedactedAudio is { } __value1)
             {
-                redactedAudio?.Invoke(RedactedAudio!);
+                redactedAudio?.Invoke(__value1);
             }
         }
 
@@ -228,13 +228,13 @@ namespace G
                 Validate();
             }
 
-            if (IsReady)
+            if (Ready is { } __value0)
             {
-                ready?.Invoke(Ready!);
+                ready?.Invoke(__value0);
             }
-            else if (IsRedactedAudio)
+            else if (RedactedAudio is { } __value1)
             {
-                redactedAudio?.Invoke(RedactedAudio!);
+                redactedAudio?.Invoke(__value1);
             }
         }
 

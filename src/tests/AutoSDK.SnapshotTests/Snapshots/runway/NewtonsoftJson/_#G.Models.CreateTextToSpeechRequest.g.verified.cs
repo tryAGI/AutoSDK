@@ -1,4 +1,4 @@
-﻿//HintName: G.Models.CreateTextToSpeechRequest.g.cs
+//HintName: G.Models.CreateTextToSpeechRequest.g.cs
 #pragma warning disable CS0618 // Type or member is obsolete
 
 #nullable enable
@@ -48,8 +48,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.CreateTextToSpeechRequestElevenMultilingualV2 PickElevenMultilingualV2() => IsElevenMultilingualV2
-            ? ElevenMultilingualV2!
+        public global::G.CreateTextToSpeechRequestElevenMultilingualV2 PickElevenMultilingualV2() => ElevenMultilingualV2 is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'ElevenMultilingualV2' but the value was {ToString()}.");
         /// <summary>
         /// 
@@ -121,9 +121,9 @@ namespace G
                 Validate();
             }
 
-            if (IsElevenMultilingualV2 && elevenMultilingualV2 != null)
+            if (ElevenMultilingualV2 is { } __value0 && elevenMultilingualV2 != null)
             {
-                return elevenMultilingualV2(ElevenMultilingualV2!);
+                return elevenMultilingualV2(__value0);
             }
 
             return default(TResult);
@@ -141,9 +141,9 @@ namespace G
                 Validate();
             }
 
-            if (IsElevenMultilingualV2)
+            if (ElevenMultilingualV2 is { } __value0)
             {
-                elevenMultilingualV2?.Invoke(ElevenMultilingualV2!);
+                elevenMultilingualV2?.Invoke(__value0);
             }
         }
 
@@ -159,9 +159,9 @@ namespace G
                 Validate();
             }
 
-            if (IsElevenMultilingualV2)
+            if (ElevenMultilingualV2 is { } __value0)
             {
-                elevenMultilingualV2?.Invoke(ElevenMultilingualV2!);
+                elevenMultilingualV2?.Invoke(__value0);
             }
         }
 

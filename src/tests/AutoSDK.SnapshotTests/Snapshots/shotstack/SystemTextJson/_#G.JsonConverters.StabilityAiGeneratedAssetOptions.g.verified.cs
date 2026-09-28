@@ -1,4 +1,4 @@
-﻿//HintName: G.JsonConverters.StabilityAiGeneratedAssetOptions.g.cs
+//HintName: G.JsonConverters.StabilityAiGeneratedAssetOptions.g.cs
 #nullable enable
 #pragma warning disable CS0618 // Type or member is obsolete
 
@@ -51,7 +51,7 @@ namespace G.JsonConverters
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.StabilityAiTextToImageOptions), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.StabilityAiTextToImageOptions?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.StabilityAiTextToImageOptions).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.TextToImage!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickTextToImage(), typeInfo);
             }
         }
     }

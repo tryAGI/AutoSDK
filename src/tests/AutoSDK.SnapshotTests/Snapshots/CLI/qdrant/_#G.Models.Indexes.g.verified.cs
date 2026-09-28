@@ -1,4 +1,4 @@
-﻿//HintName: G.Models.Indexes.g.cs
+//HintName: G.Models.Indexes.g.cs
 #pragma warning disable CS0618 // Type or member is obsolete
 
 #nullable enable
@@ -43,8 +43,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.IndexesVariant1 PickIndexesVariant1() => IsIndexesVariant1
-            ? IndexesVariant1!
+        public global::G.IndexesVariant1 PickIndexesVariant1() => IndexesVariant1 is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'IndexesVariant1' but the value was {ToString()}.");
 
         /// <summary>
@@ -80,8 +80,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.IndexesVariant2 PickIndexesVariant2() => IsIndexesVariant2
-            ? IndexesVariant2!
+        public global::G.IndexesVariant2 PickIndexesVariant2() => IndexesVariant2 is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'IndexesVariant2' but the value was {ToString()}.");
         /// <summary>
         /// 
@@ -178,13 +178,13 @@ namespace G
                 Validate();
             }
 
-            if (IsIndexesVariant1 && indexesVariant1 != null)
+            if (IndexesVariant1 is { } __value0 && indexesVariant1 != null)
             {
-                return indexesVariant1(IndexesVariant1!);
+                return indexesVariant1(__value0);
             }
-            else if (IsIndexesVariant2 && indexesVariant2 != null)
+            else if (IndexesVariant2 is { } __value1 && indexesVariant2 != null)
             {
-                return indexesVariant2(IndexesVariant2!);
+                return indexesVariant2(__value1);
             }
 
             return default(TResult);
@@ -204,13 +204,13 @@ namespace G
                 Validate();
             }
 
-            if (IsIndexesVariant1)
+            if (IndexesVariant1 is { } __value0)
             {
-                indexesVariant1?.Invoke(IndexesVariant1!);
+                indexesVariant1?.Invoke(__value0);
             }
-            else if (IsIndexesVariant2)
+            else if (IndexesVariant2 is { } __value1)
             {
-                indexesVariant2?.Invoke(IndexesVariant2!);
+                indexesVariant2?.Invoke(__value1);
             }
         }
 
@@ -227,13 +227,13 @@ namespace G
                 Validate();
             }
 
-            if (IsIndexesVariant1)
+            if (IndexesVariant1 is { } __value0)
             {
-                indexesVariant1?.Invoke(IndexesVariant1!);
+                indexesVariant1?.Invoke(__value0);
             }
-            else if (IsIndexesVariant2)
+            else if (IndexesVariant2 is { } __value1)
             {
-                indexesVariant2?.Invoke(IndexesVariant2!);
+                indexesVariant2?.Invoke(__value1);
             }
         }
 

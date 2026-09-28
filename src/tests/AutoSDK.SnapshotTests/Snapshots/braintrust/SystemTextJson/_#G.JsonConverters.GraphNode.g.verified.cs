@@ -1,4 +1,4 @@
-﻿//HintName: G.JsonConverters.GraphNode.g.cs
+//HintName: G.JsonConverters.GraphNode.g.cs
 #nullable enable
 #pragma warning disable CS0618 // Type or member is obsolete
 
@@ -401,49 +401,49 @@ namespace G.JsonConverters
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.GraphNodeVariant1), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.GraphNodeVariant1?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.GraphNodeVariant1).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.GraphNodeVariant1!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickGraphNodeVariant1(), typeInfo);
             }
             else if (value.IsGraphNodeVariant2)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.GraphNodeVariant2), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.GraphNodeVariant2?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.GraphNodeVariant2).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.GraphNodeVariant2!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickGraphNodeVariant2(), typeInfo);
             }
             else if (value.IsGraphNodeVariant3)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.GraphNodeVariant3), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.GraphNodeVariant3?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.GraphNodeVariant3).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.GraphNodeVariant3!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickGraphNodeVariant3(), typeInfo);
             }
             else if (value.IsGraphNodeVariant4)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.GraphNodeVariant4), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.GraphNodeVariant4?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.GraphNodeVariant4).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.GraphNodeVariant4!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickGraphNodeVariant4(), typeInfo);
             }
             else if (value.IsGraphNodeVariant5)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.GraphNodeVariant5), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.GraphNodeVariant5?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.GraphNodeVariant5).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.GraphNodeVariant5!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickGraphNodeVariant5(), typeInfo);
             }
             else if (value.IsGraphNodeVariant6)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.GraphNodeVariant6), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.GraphNodeVariant6?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.GraphNodeVariant6).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.GraphNodeVariant6!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickGraphNodeVariant6(), typeInfo);
             }
             else if (value.IsGraphNodeVariant7)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.GraphNodeVariant7), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.GraphNodeVariant7?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.GraphNodeVariant7).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.GraphNodeVariant7!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickGraphNodeVariant7(), typeInfo);
             }
             else if (value.IsGraphNodeVariant8)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.GraphNodeVariant8), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.GraphNodeVariant8?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.GraphNodeVariant8).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.GraphNodeVariant8!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickGraphNodeVariant8(), typeInfo);
             }
         }
     }

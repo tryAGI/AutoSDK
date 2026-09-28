@@ -1,4 +1,4 @@
-﻿//HintName: G.Models.UtteranceOrToolCall.g.cs
+//HintName: G.Models.UtteranceOrToolCall.g.cs
 #pragma warning disable CS0618 // Type or member is obsolete
 
 #nullable enable
@@ -43,8 +43,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.Utterance PickUtterance() => IsUtterance
-            ? Utterance!
+        public global::G.Utterance PickUtterance() => Utterance is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Utterance' but the value was {ToString()}.");
 
         /// <summary>
@@ -80,8 +80,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.ToolCallInvocationUtterance PickInvocation() => IsInvocation
-            ? Invocation!
+        public global::G.ToolCallInvocationUtterance PickInvocation() => Invocation is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Invocation' but the value was {ToString()}.");
 
         /// <summary>
@@ -117,8 +117,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.ToolCallResultUtterance PickResult() => IsResult
-            ? Result!
+        public global::G.ToolCallResultUtterance PickResult() => Result is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Result' but the value was {ToString()}.");
 
         /// <summary>
@@ -154,8 +154,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.NodeTransitionUtterance PickNodeTransition() => IsNodeTransition
-            ? NodeTransition!
+        public global::G.NodeTransitionUtterance PickNodeTransition() => NodeTransition is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'NodeTransition' but the value was {ToString()}.");
 
         /// <summary>
@@ -191,8 +191,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.DTMFUtterance PickDtmf() => IsDtmf
-            ? Dtmf!
+        public global::G.DTMFUtterance PickDtmf() => Dtmf is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Dtmf' but the value was {ToString()}.");
         /// <summary>
         /// 
@@ -373,25 +373,25 @@ namespace G
                 Validate();
             }
 
-            if (IsUtterance && utterance != null)
+            if (Utterance is { } __value0 && utterance != null)
             {
-                return utterance(Utterance!);
+                return utterance(__value0);
             }
-            else if (IsInvocation && invocation != null)
+            else if (Invocation is { } __value1 && invocation != null)
             {
-                return invocation(Invocation!);
+                return invocation(__value1);
             }
-            else if (IsResult && result != null)
+            else if (Result is { } __value2 && result != null)
             {
-                return result(Result!);
+                return result(__value2);
             }
-            else if (IsNodeTransition && nodeTransition != null)
+            else if (NodeTransition is { } __value3 && nodeTransition != null)
             {
-                return nodeTransition(NodeTransition!);
+                return nodeTransition(__value3);
             }
-            else if (IsDtmf && dtmf != null)
+            else if (Dtmf is { } __value4 && dtmf != null)
             {
-                return dtmf(Dtmf!);
+                return dtmf(__value4);
             }
 
             return default(TResult);
@@ -417,25 +417,25 @@ namespace G
                 Validate();
             }
 
-            if (IsUtterance)
+            if (Utterance is { } __value0)
             {
-                utterance?.Invoke(Utterance!);
+                utterance?.Invoke(__value0);
             }
-            else if (IsInvocation)
+            else if (Invocation is { } __value1)
             {
-                invocation?.Invoke(Invocation!);
+                invocation?.Invoke(__value1);
             }
-            else if (IsResult)
+            else if (Result is { } __value2)
             {
-                result?.Invoke(Result!);
+                result?.Invoke(__value2);
             }
-            else if (IsNodeTransition)
+            else if (NodeTransition is { } __value3)
             {
-                nodeTransition?.Invoke(NodeTransition!);
+                nodeTransition?.Invoke(__value3);
             }
-            else if (IsDtmf)
+            else if (Dtmf is { } __value4)
             {
-                dtmf?.Invoke(Dtmf!);
+                dtmf?.Invoke(__value4);
             }
         }
 
@@ -455,25 +455,25 @@ namespace G
                 Validate();
             }
 
-            if (IsUtterance)
+            if (Utterance is { } __value0)
             {
-                utterance?.Invoke(Utterance!);
+                utterance?.Invoke(__value0);
             }
-            else if (IsInvocation)
+            else if (Invocation is { } __value1)
             {
-                invocation?.Invoke(Invocation!);
+                invocation?.Invoke(__value1);
             }
-            else if (IsResult)
+            else if (Result is { } __value2)
             {
-                result?.Invoke(Result!);
+                result?.Invoke(__value2);
             }
-            else if (IsNodeTransition)
+            else if (NodeTransition is { } __value3)
             {
-                nodeTransition?.Invoke(NodeTransition!);
+                nodeTransition?.Invoke(__value3);
             }
-            else if (IsDtmf)
+            else if (Dtmf is { } __value4)
             {
-                dtmf?.Invoke(Dtmf!);
+                dtmf?.Invoke(__value4);
             }
         }
 

@@ -1,4 +1,4 @@
-﻿//HintName: G.AnalyticsClient.ApiAnalyticsKpisRetrieve2.g.cs
+//HintName: G.AnalyticsClient.ApiAnalyticsKpisRetrieve2.g.cs
 
 #nullable enable
 
@@ -223,14 +223,14 @@ namespace G
                     httpClient: HttpClient,
                     httpRequestMessage: __httpRequest,
                     end: end,
-                    kpiKey: kpiKey!,
+                    kpiKey: kpiKey,
                     members: members,
                     projects: projects,
                     segmentByProject: segmentByProject,
                     segmentByTime: segmentByTime,
                     segmentByUser: segmentByUser,
                     start: start,
-                    tz: tz!);
+                    tz: tz);
 
                 return __httpRequest;
             }
@@ -252,7 +252,7 @@ namespace G
                                 pathTemplate: "$\"/api/analytics/kpis/{kpiKey}\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: null,
                                 exception: null,
                                 clientOptions: Options,
@@ -286,7 +286,7 @@ namespace G
                                 pathTemplate: "$\"/api/analytics/kpis/{kpiKey}\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: null,
                                 exception: __exception,
                                 clientOptions: Options,
@@ -327,7 +327,7 @@ namespace G
                                 pathTemplate: "$\"/api/analytics/kpis/{kpiKey}\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: __response,
                                 exception: null,
                                 clientOptions: Options,
@@ -375,7 +375,7 @@ namespace G
                                 pathTemplate: "$\"/api/analytics/kpis/{kpiKey}\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: __response,
                                 exception: null,
                                 clientOptions: Options,
@@ -397,7 +397,7 @@ namespace G
                                 pathTemplate: "$\"/api/analytics/kpis/{kpiKey}\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: __response,
                                 exception: null,
                                 clientOptions: Options,

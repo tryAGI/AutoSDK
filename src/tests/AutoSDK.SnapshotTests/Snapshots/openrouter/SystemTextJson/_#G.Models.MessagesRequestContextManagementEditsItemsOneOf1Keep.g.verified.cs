@@ -1,4 +1,4 @@
-﻿//HintName: G.Models.MessagesRequestContextManagementEditsItemsOneOf1Keep.g.cs
+//HintName: G.Models.MessagesRequestContextManagementEditsItemsOneOf1Keep.g.cs
 #pragma warning disable CS0618 // Type or member is obsolete
 
 #nullable enable
@@ -43,8 +43,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.MessagesRequestContextManagementEditsItemsOneOf1Keep0 PickMessagesRequestContextManagementEditsItemsOneOf1Keep0() => IsMessagesRequestContextManagementEditsItemsOneOf1Keep0
-            ? MessagesRequestContextManagementEditsItemsOneOf1Keep0!
+        public global::G.MessagesRequestContextManagementEditsItemsOneOf1Keep0 PickMessagesRequestContextManagementEditsItemsOneOf1Keep0() => MessagesRequestContextManagementEditsItemsOneOf1Keep0 is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'MessagesRequestContextManagementEditsItemsOneOf1Keep0' but the value was {ToString()}.");
 
         /// <summary>
@@ -80,8 +80,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.MessagesRequestContextManagementEditsItemsOneOf1Keep1 PickMessagesRequestContextManagementEditsItemsOneOf1Keep1() => IsMessagesRequestContextManagementEditsItemsOneOf1Keep1
-            ? MessagesRequestContextManagementEditsItemsOneOf1Keep1!
+        public global::G.MessagesRequestContextManagementEditsItemsOneOf1Keep1 PickMessagesRequestContextManagementEditsItemsOneOf1Keep1() => MessagesRequestContextManagementEditsItemsOneOf1Keep1 is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'MessagesRequestContextManagementEditsItemsOneOf1Keep1' but the value was {ToString()}.");
 
         /// <summary>
@@ -117,8 +117,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.MessagesRequestContextManagementEditsItemsOneOf1Keep2 PickMessagesRequestContextManagementEditsItemsOneOf1Keep2() => IsMessagesRequestContextManagementEditsItemsOneOf1Keep2
-            ? MessagesRequestContextManagementEditsItemsOneOf1Keep2!.Value
+        public global::G.MessagesRequestContextManagementEditsItemsOneOf1Keep2 PickMessagesRequestContextManagementEditsItemsOneOf1Keep2() => MessagesRequestContextManagementEditsItemsOneOf1Keep2 is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'MessagesRequestContextManagementEditsItemsOneOf1Keep2' but the value was {ToString()}.");
         /// <summary>
         /// 
@@ -243,17 +243,17 @@ namespace G
                 Validate();
             }
 
-            if (IsMessagesRequestContextManagementEditsItemsOneOf1Keep0 && messagesRequestContextManagementEditsItemsOneOf1Keep0 != null)
+            if (MessagesRequestContextManagementEditsItemsOneOf1Keep0 is { } __value0 && messagesRequestContextManagementEditsItemsOneOf1Keep0 != null)
             {
-                return messagesRequestContextManagementEditsItemsOneOf1Keep0(MessagesRequestContextManagementEditsItemsOneOf1Keep0!);
+                return messagesRequestContextManagementEditsItemsOneOf1Keep0(__value0);
             }
-            else if (IsMessagesRequestContextManagementEditsItemsOneOf1Keep1 && messagesRequestContextManagementEditsItemsOneOf1Keep1 != null)
+            else if (MessagesRequestContextManagementEditsItemsOneOf1Keep1 is { } __value1 && messagesRequestContextManagementEditsItemsOneOf1Keep1 != null)
             {
-                return messagesRequestContextManagementEditsItemsOneOf1Keep1(MessagesRequestContextManagementEditsItemsOneOf1Keep1!);
+                return messagesRequestContextManagementEditsItemsOneOf1Keep1(__value1);
             }
-            else if (IsMessagesRequestContextManagementEditsItemsOneOf1Keep2 && messagesRequestContextManagementEditsItemsOneOf1Keep2 != null)
+            else if (MessagesRequestContextManagementEditsItemsOneOf1Keep2 is { } __value2 && messagesRequestContextManagementEditsItemsOneOf1Keep2 != null)
             {
-                return messagesRequestContextManagementEditsItemsOneOf1Keep2(MessagesRequestContextManagementEditsItemsOneOf1Keep2!);
+                return messagesRequestContextManagementEditsItemsOneOf1Keep2(__value2);
             }
 
             return default(TResult);
@@ -275,17 +275,17 @@ namespace G
                 Validate();
             }
 
-            if (IsMessagesRequestContextManagementEditsItemsOneOf1Keep0)
+            if (MessagesRequestContextManagementEditsItemsOneOf1Keep0 is { } __value0)
             {
-                messagesRequestContextManagementEditsItemsOneOf1Keep0?.Invoke(MessagesRequestContextManagementEditsItemsOneOf1Keep0!);
+                messagesRequestContextManagementEditsItemsOneOf1Keep0?.Invoke(__value0);
             }
-            else if (IsMessagesRequestContextManagementEditsItemsOneOf1Keep1)
+            else if (MessagesRequestContextManagementEditsItemsOneOf1Keep1 is { } __value1)
             {
-                messagesRequestContextManagementEditsItemsOneOf1Keep1?.Invoke(MessagesRequestContextManagementEditsItemsOneOf1Keep1!);
+                messagesRequestContextManagementEditsItemsOneOf1Keep1?.Invoke(__value1);
             }
-            else if (IsMessagesRequestContextManagementEditsItemsOneOf1Keep2)
+            else if (MessagesRequestContextManagementEditsItemsOneOf1Keep2 is { } __value2)
             {
-                messagesRequestContextManagementEditsItemsOneOf1Keep2?.Invoke(MessagesRequestContextManagementEditsItemsOneOf1Keep2!);
+                messagesRequestContextManagementEditsItemsOneOf1Keep2?.Invoke(__value2);
             }
         }
 
@@ -303,17 +303,17 @@ namespace G
                 Validate();
             }
 
-            if (IsMessagesRequestContextManagementEditsItemsOneOf1Keep0)
+            if (MessagesRequestContextManagementEditsItemsOneOf1Keep0 is { } __value0)
             {
-                messagesRequestContextManagementEditsItemsOneOf1Keep0?.Invoke(MessagesRequestContextManagementEditsItemsOneOf1Keep0!);
+                messagesRequestContextManagementEditsItemsOneOf1Keep0?.Invoke(__value0);
             }
-            else if (IsMessagesRequestContextManagementEditsItemsOneOf1Keep1)
+            else if (MessagesRequestContextManagementEditsItemsOneOf1Keep1 is { } __value1)
             {
-                messagesRequestContextManagementEditsItemsOneOf1Keep1?.Invoke(MessagesRequestContextManagementEditsItemsOneOf1Keep1!);
+                messagesRequestContextManagementEditsItemsOneOf1Keep1?.Invoke(__value1);
             }
-            else if (IsMessagesRequestContextManagementEditsItemsOneOf1Keep2)
+            else if (MessagesRequestContextManagementEditsItemsOneOf1Keep2 is { } __value2)
             {
-                messagesRequestContextManagementEditsItemsOneOf1Keep2?.Invoke(MessagesRequestContextManagementEditsItemsOneOf1Keep2!);
+                messagesRequestContextManagementEditsItemsOneOf1Keep2?.Invoke(__value2);
             }
         }
 

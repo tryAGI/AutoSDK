@@ -1,4 +1,4 @@
-﻿//HintName: G.Models.TimelineIssueEvents.g.cs
+//HintName: G.Models.TimelineIssueEvents.g.cs
 #pragma warning disable CS0618 // Type or member is obsolete
 
 #nullable enable
@@ -43,8 +43,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.LabeledIssueEvent PickLabeledIssueEvent() => IsLabeledIssueEvent
-            ? LabeledIssueEvent!
+        public global::G.LabeledIssueEvent PickLabeledIssueEvent() => LabeledIssueEvent is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'LabeledIssueEvent' but the value was {ToString()}.");
 
         /// <summary>
@@ -80,8 +80,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.UnlabeledIssueEvent PickUnlabeledIssueEvent() => IsUnlabeledIssueEvent
-            ? UnlabeledIssueEvent!
+        public global::G.UnlabeledIssueEvent PickUnlabeledIssueEvent() => UnlabeledIssueEvent is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'UnlabeledIssueEvent' but the value was {ToString()}.");
 
         /// <summary>
@@ -117,8 +117,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.MilestonedIssueEvent PickMilestonedIssueEvent() => IsMilestonedIssueEvent
-            ? MilestonedIssueEvent!
+        public global::G.MilestonedIssueEvent PickMilestonedIssueEvent() => MilestonedIssueEvent is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'MilestonedIssueEvent' but the value was {ToString()}.");
 
         /// <summary>
@@ -154,8 +154,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.DemilestonedIssueEvent PickDemilestonedIssueEvent() => IsDemilestonedIssueEvent
-            ? DemilestonedIssueEvent!
+        public global::G.DemilestonedIssueEvent PickDemilestonedIssueEvent() => DemilestonedIssueEvent is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'DemilestonedIssueEvent' but the value was {ToString()}.");
 
         /// <summary>
@@ -191,8 +191,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.RenamedIssueEvent PickRenamedIssueEvent() => IsRenamedIssueEvent
-            ? RenamedIssueEvent!
+        public global::G.RenamedIssueEvent PickRenamedIssueEvent() => RenamedIssueEvent is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'RenamedIssueEvent' but the value was {ToString()}.");
 
         /// <summary>
@@ -228,8 +228,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.ReviewRequestedIssueEvent PickReviewRequestedIssueEvent() => IsReviewRequestedIssueEvent
-            ? ReviewRequestedIssueEvent!
+        public global::G.ReviewRequestedIssueEvent PickReviewRequestedIssueEvent() => ReviewRequestedIssueEvent is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'ReviewRequestedIssueEvent' but the value was {ToString()}.");
 
         /// <summary>
@@ -265,8 +265,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.ReviewRequestRemovedIssueEvent PickReviewRequestRemovedIssueEvent() => IsReviewRequestRemovedIssueEvent
-            ? ReviewRequestRemovedIssueEvent!
+        public global::G.ReviewRequestRemovedIssueEvent PickReviewRequestRemovedIssueEvent() => ReviewRequestRemovedIssueEvent is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'ReviewRequestRemovedIssueEvent' but the value was {ToString()}.");
 
         /// <summary>
@@ -302,8 +302,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.ReviewDismissedIssueEvent PickReviewDismissedIssueEvent() => IsReviewDismissedIssueEvent
-            ? ReviewDismissedIssueEvent!
+        public global::G.ReviewDismissedIssueEvent PickReviewDismissedIssueEvent() => ReviewDismissedIssueEvent is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'ReviewDismissedIssueEvent' but the value was {ToString()}.");
 
         /// <summary>
@@ -339,8 +339,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.LockedIssueEvent PickLockedIssueEvent() => IsLockedIssueEvent
-            ? LockedIssueEvent!
+        public global::G.LockedIssueEvent PickLockedIssueEvent() => LockedIssueEvent is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'LockedIssueEvent' but the value was {ToString()}.");
 
         /// <summary>
@@ -376,8 +376,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.AddedToProjectIssueEvent PickAddedToProjectIssueEvent() => IsAddedToProjectIssueEvent
-            ? AddedToProjectIssueEvent!
+        public global::G.AddedToProjectIssueEvent PickAddedToProjectIssueEvent() => AddedToProjectIssueEvent is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'AddedToProjectIssueEvent' but the value was {ToString()}.");
 
         /// <summary>
@@ -413,8 +413,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.MovedColumnInProjectIssueEvent PickMovedColumnInProjectIssueEvent() => IsMovedColumnInProjectIssueEvent
-            ? MovedColumnInProjectIssueEvent!
+        public global::G.MovedColumnInProjectIssueEvent PickMovedColumnInProjectIssueEvent() => MovedColumnInProjectIssueEvent is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'MovedColumnInProjectIssueEvent' but the value was {ToString()}.");
 
         /// <summary>
@@ -450,8 +450,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.RemovedFromProjectIssueEvent PickRemovedFromProjectIssueEvent() => IsRemovedFromProjectIssueEvent
-            ? RemovedFromProjectIssueEvent!
+        public global::G.RemovedFromProjectIssueEvent PickRemovedFromProjectIssueEvent() => RemovedFromProjectIssueEvent is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'RemovedFromProjectIssueEvent' but the value was {ToString()}.");
 
         /// <summary>
@@ -487,8 +487,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.ConvertedNoteToIssueIssueEvent PickConvertedNoteToIssueIssueEvent() => IsConvertedNoteToIssueIssueEvent
-            ? ConvertedNoteToIssueIssueEvent!
+        public global::G.ConvertedNoteToIssueIssueEvent PickConvertedNoteToIssueIssueEvent() => ConvertedNoteToIssueIssueEvent is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'ConvertedNoteToIssueIssueEvent' but the value was {ToString()}.");
 
         /// <summary>
@@ -524,8 +524,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.TimelineCommentEvent PickTimelineCommentEvent() => IsTimelineCommentEvent
-            ? TimelineCommentEvent!
+        public global::G.TimelineCommentEvent PickTimelineCommentEvent() => TimelineCommentEvent is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'TimelineCommentEvent' but the value was {ToString()}.");
 
         /// <summary>
@@ -561,8 +561,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.TimelineCrossReferencedEvent PickTimelineCrossReferencedEvent() => IsTimelineCrossReferencedEvent
-            ? TimelineCrossReferencedEvent!
+        public global::G.TimelineCrossReferencedEvent PickTimelineCrossReferencedEvent() => TimelineCrossReferencedEvent is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'TimelineCrossReferencedEvent' but the value was {ToString()}.");
 
         /// <summary>
@@ -598,8 +598,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.TimelineCommittedEvent PickTimelineCommittedEvent() => IsTimelineCommittedEvent
-            ? TimelineCommittedEvent!
+        public global::G.TimelineCommittedEvent PickTimelineCommittedEvent() => TimelineCommittedEvent is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'TimelineCommittedEvent' but the value was {ToString()}.");
 
         /// <summary>
@@ -635,8 +635,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.TimelineReviewedEvent PickTimelineReviewedEvent() => IsTimelineReviewedEvent
-            ? TimelineReviewedEvent!
+        public global::G.TimelineReviewedEvent PickTimelineReviewedEvent() => TimelineReviewedEvent is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'TimelineReviewedEvent' but the value was {ToString()}.");
 
         /// <summary>
@@ -672,8 +672,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.TimelineLineCommentedEvent PickTimelineLineCommentedEvent() => IsTimelineLineCommentedEvent
-            ? TimelineLineCommentedEvent!
+        public global::G.TimelineLineCommentedEvent PickTimelineLineCommentedEvent() => TimelineLineCommentedEvent is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'TimelineLineCommentedEvent' but the value was {ToString()}.");
 
         /// <summary>
@@ -709,8 +709,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.TimelineCommitCommentedEvent PickTimelineCommitCommentedEvent() => IsTimelineCommitCommentedEvent
-            ? TimelineCommitCommentedEvent!
+        public global::G.TimelineCommitCommentedEvent PickTimelineCommitCommentedEvent() => TimelineCommitCommentedEvent is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'TimelineCommitCommentedEvent' but the value was {ToString()}.");
 
         /// <summary>
@@ -746,8 +746,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.TimelineAssignedIssueEvent PickTimelineAssignedIssueEvent() => IsTimelineAssignedIssueEvent
-            ? TimelineAssignedIssueEvent!
+        public global::G.TimelineAssignedIssueEvent PickTimelineAssignedIssueEvent() => TimelineAssignedIssueEvent is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'TimelineAssignedIssueEvent' but the value was {ToString()}.");
 
         /// <summary>
@@ -783,8 +783,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.TimelineUnassignedIssueEvent PickTimelineUnassignedIssueEvent() => IsTimelineUnassignedIssueEvent
-            ? TimelineUnassignedIssueEvent!
+        public global::G.TimelineUnassignedIssueEvent PickTimelineUnassignedIssueEvent() => TimelineUnassignedIssueEvent is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'TimelineUnassignedIssueEvent' but the value was {ToString()}.");
 
         /// <summary>
@@ -820,8 +820,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.StateChangeIssueEvent PickStateChangeIssueEvent() => IsStateChangeIssueEvent
-            ? StateChangeIssueEvent!
+        public global::G.StateChangeIssueEvent PickStateChangeIssueEvent() => StateChangeIssueEvent is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'StateChangeIssueEvent' but the value was {ToString()}.");
         /// <summary>
         /// 
@@ -1478,93 +1478,93 @@ namespace G
                 Validate();
             }
 
-            if (IsLabeledIssueEvent && labeledIssueEvent != null)
+            if (LabeledIssueEvent is { } __value0 && labeledIssueEvent != null)
             {
-                return labeledIssueEvent(LabeledIssueEvent!);
+                return labeledIssueEvent(__value0);
             }
-            else if (IsUnlabeledIssueEvent && unlabeledIssueEvent != null)
+            else if (UnlabeledIssueEvent is { } __value1 && unlabeledIssueEvent != null)
             {
-                return unlabeledIssueEvent(UnlabeledIssueEvent!);
+                return unlabeledIssueEvent(__value1);
             }
-            else if (IsMilestonedIssueEvent && milestonedIssueEvent != null)
+            else if (MilestonedIssueEvent is { } __value2 && milestonedIssueEvent != null)
             {
-                return milestonedIssueEvent(MilestonedIssueEvent!);
+                return milestonedIssueEvent(__value2);
             }
-            else if (IsDemilestonedIssueEvent && demilestonedIssueEvent != null)
+            else if (DemilestonedIssueEvent is { } __value3 && demilestonedIssueEvent != null)
             {
-                return demilestonedIssueEvent(DemilestonedIssueEvent!);
+                return demilestonedIssueEvent(__value3);
             }
-            else if (IsRenamedIssueEvent && renamedIssueEvent != null)
+            else if (RenamedIssueEvent is { } __value4 && renamedIssueEvent != null)
             {
-                return renamedIssueEvent(RenamedIssueEvent!);
+                return renamedIssueEvent(__value4);
             }
-            else if (IsReviewRequestedIssueEvent && reviewRequestedIssueEvent != null)
+            else if (ReviewRequestedIssueEvent is { } __value5 && reviewRequestedIssueEvent != null)
             {
-                return reviewRequestedIssueEvent(ReviewRequestedIssueEvent!);
+                return reviewRequestedIssueEvent(__value5);
             }
-            else if (IsReviewRequestRemovedIssueEvent && reviewRequestRemovedIssueEvent != null)
+            else if (ReviewRequestRemovedIssueEvent is { } __value6 && reviewRequestRemovedIssueEvent != null)
             {
-                return reviewRequestRemovedIssueEvent(ReviewRequestRemovedIssueEvent!);
+                return reviewRequestRemovedIssueEvent(__value6);
             }
-            else if (IsReviewDismissedIssueEvent && reviewDismissedIssueEvent != null)
+            else if (ReviewDismissedIssueEvent is { } __value7 && reviewDismissedIssueEvent != null)
             {
-                return reviewDismissedIssueEvent(ReviewDismissedIssueEvent!);
+                return reviewDismissedIssueEvent(__value7);
             }
-            else if (IsLockedIssueEvent && lockedIssueEvent != null)
+            else if (LockedIssueEvent is { } __value8 && lockedIssueEvent != null)
             {
-                return lockedIssueEvent(LockedIssueEvent!);
+                return lockedIssueEvent(__value8);
             }
-            else if (IsAddedToProjectIssueEvent && addedToProjectIssueEvent != null)
+            else if (AddedToProjectIssueEvent is { } __value9 && addedToProjectIssueEvent != null)
             {
-                return addedToProjectIssueEvent(AddedToProjectIssueEvent!);
+                return addedToProjectIssueEvent(__value9);
             }
-            else if (IsMovedColumnInProjectIssueEvent && movedColumnInProjectIssueEvent != null)
+            else if (MovedColumnInProjectIssueEvent is { } __value10 && movedColumnInProjectIssueEvent != null)
             {
-                return movedColumnInProjectIssueEvent(MovedColumnInProjectIssueEvent!);
+                return movedColumnInProjectIssueEvent(__value10);
             }
-            else if (IsRemovedFromProjectIssueEvent && removedFromProjectIssueEvent != null)
+            else if (RemovedFromProjectIssueEvent is { } __value11 && removedFromProjectIssueEvent != null)
             {
-                return removedFromProjectIssueEvent(RemovedFromProjectIssueEvent!);
+                return removedFromProjectIssueEvent(__value11);
             }
-            else if (IsConvertedNoteToIssueIssueEvent && convertedNoteToIssueIssueEvent != null)
+            else if (ConvertedNoteToIssueIssueEvent is { } __value12 && convertedNoteToIssueIssueEvent != null)
             {
-                return convertedNoteToIssueIssueEvent(ConvertedNoteToIssueIssueEvent!);
+                return convertedNoteToIssueIssueEvent(__value12);
             }
-            else if (IsTimelineCommentEvent && timelineCommentEvent != null)
+            else if (TimelineCommentEvent is { } __value13 && timelineCommentEvent != null)
             {
-                return timelineCommentEvent(TimelineCommentEvent!);
+                return timelineCommentEvent(__value13);
             }
-            else if (IsTimelineCrossReferencedEvent && timelineCrossReferencedEvent != null)
+            else if (TimelineCrossReferencedEvent is { } __value14 && timelineCrossReferencedEvent != null)
             {
-                return timelineCrossReferencedEvent(TimelineCrossReferencedEvent!);
+                return timelineCrossReferencedEvent(__value14);
             }
-            else if (IsTimelineCommittedEvent && timelineCommittedEvent != null)
+            else if (TimelineCommittedEvent is { } __value15 && timelineCommittedEvent != null)
             {
-                return timelineCommittedEvent(TimelineCommittedEvent!);
+                return timelineCommittedEvent(__value15);
             }
-            else if (IsTimelineReviewedEvent && timelineReviewedEvent != null)
+            else if (TimelineReviewedEvent is { } __value16 && timelineReviewedEvent != null)
             {
-                return timelineReviewedEvent(TimelineReviewedEvent!);
+                return timelineReviewedEvent(__value16);
             }
-            else if (IsTimelineLineCommentedEvent && timelineLineCommentedEvent != null)
+            else if (TimelineLineCommentedEvent is { } __value17 && timelineLineCommentedEvent != null)
             {
-                return timelineLineCommentedEvent(TimelineLineCommentedEvent!);
+                return timelineLineCommentedEvent(__value17);
             }
-            else if (IsTimelineCommitCommentedEvent && timelineCommitCommentedEvent != null)
+            else if (TimelineCommitCommentedEvent is { } __value18 && timelineCommitCommentedEvent != null)
             {
-                return timelineCommitCommentedEvent(TimelineCommitCommentedEvent!);
+                return timelineCommitCommentedEvent(__value18);
             }
-            else if (IsTimelineAssignedIssueEvent && timelineAssignedIssueEvent != null)
+            else if (TimelineAssignedIssueEvent is { } __value19 && timelineAssignedIssueEvent != null)
             {
-                return timelineAssignedIssueEvent(TimelineAssignedIssueEvent!);
+                return timelineAssignedIssueEvent(__value19);
             }
-            else if (IsTimelineUnassignedIssueEvent && timelineUnassignedIssueEvent != null)
+            else if (TimelineUnassignedIssueEvent is { } __value20 && timelineUnassignedIssueEvent != null)
             {
-                return timelineUnassignedIssueEvent(TimelineUnassignedIssueEvent!);
+                return timelineUnassignedIssueEvent(__value20);
             }
-            else if (IsStateChangeIssueEvent && stateChangeIssueEvent != null)
+            else if (StateChangeIssueEvent is { } __value21 && stateChangeIssueEvent != null)
             {
-                return stateChangeIssueEvent(StateChangeIssueEvent!);
+                return stateChangeIssueEvent(__value21);
             }
 
             return default(TResult);
@@ -1624,93 +1624,93 @@ namespace G
                 Validate();
             }
 
-            if (IsLabeledIssueEvent)
+            if (LabeledIssueEvent is { } __value0)
             {
-                labeledIssueEvent?.Invoke(LabeledIssueEvent!);
+                labeledIssueEvent?.Invoke(__value0);
             }
-            else if (IsUnlabeledIssueEvent)
+            else if (UnlabeledIssueEvent is { } __value1)
             {
-                unlabeledIssueEvent?.Invoke(UnlabeledIssueEvent!);
+                unlabeledIssueEvent?.Invoke(__value1);
             }
-            else if (IsMilestonedIssueEvent)
+            else if (MilestonedIssueEvent is { } __value2)
             {
-                milestonedIssueEvent?.Invoke(MilestonedIssueEvent!);
+                milestonedIssueEvent?.Invoke(__value2);
             }
-            else if (IsDemilestonedIssueEvent)
+            else if (DemilestonedIssueEvent is { } __value3)
             {
-                demilestonedIssueEvent?.Invoke(DemilestonedIssueEvent!);
+                demilestonedIssueEvent?.Invoke(__value3);
             }
-            else if (IsRenamedIssueEvent)
+            else if (RenamedIssueEvent is { } __value4)
             {
-                renamedIssueEvent?.Invoke(RenamedIssueEvent!);
+                renamedIssueEvent?.Invoke(__value4);
             }
-            else if (IsReviewRequestedIssueEvent)
+            else if (ReviewRequestedIssueEvent is { } __value5)
             {
-                reviewRequestedIssueEvent?.Invoke(ReviewRequestedIssueEvent!);
+                reviewRequestedIssueEvent?.Invoke(__value5);
             }
-            else if (IsReviewRequestRemovedIssueEvent)
+            else if (ReviewRequestRemovedIssueEvent is { } __value6)
             {
-                reviewRequestRemovedIssueEvent?.Invoke(ReviewRequestRemovedIssueEvent!);
+                reviewRequestRemovedIssueEvent?.Invoke(__value6);
             }
-            else if (IsReviewDismissedIssueEvent)
+            else if (ReviewDismissedIssueEvent is { } __value7)
             {
-                reviewDismissedIssueEvent?.Invoke(ReviewDismissedIssueEvent!);
+                reviewDismissedIssueEvent?.Invoke(__value7);
             }
-            else if (IsLockedIssueEvent)
+            else if (LockedIssueEvent is { } __value8)
             {
-                lockedIssueEvent?.Invoke(LockedIssueEvent!);
+                lockedIssueEvent?.Invoke(__value8);
             }
-            else if (IsAddedToProjectIssueEvent)
+            else if (AddedToProjectIssueEvent is { } __value9)
             {
-                addedToProjectIssueEvent?.Invoke(AddedToProjectIssueEvent!);
+                addedToProjectIssueEvent?.Invoke(__value9);
             }
-            else if (IsMovedColumnInProjectIssueEvent)
+            else if (MovedColumnInProjectIssueEvent is { } __value10)
             {
-                movedColumnInProjectIssueEvent?.Invoke(MovedColumnInProjectIssueEvent!);
+                movedColumnInProjectIssueEvent?.Invoke(__value10);
             }
-            else if (IsRemovedFromProjectIssueEvent)
+            else if (RemovedFromProjectIssueEvent is { } __value11)
             {
-                removedFromProjectIssueEvent?.Invoke(RemovedFromProjectIssueEvent!);
+                removedFromProjectIssueEvent?.Invoke(__value11);
             }
-            else if (IsConvertedNoteToIssueIssueEvent)
+            else if (ConvertedNoteToIssueIssueEvent is { } __value12)
             {
-                convertedNoteToIssueIssueEvent?.Invoke(ConvertedNoteToIssueIssueEvent!);
+                convertedNoteToIssueIssueEvent?.Invoke(__value12);
             }
-            else if (IsTimelineCommentEvent)
+            else if (TimelineCommentEvent is { } __value13)
             {
-                timelineCommentEvent?.Invoke(TimelineCommentEvent!);
+                timelineCommentEvent?.Invoke(__value13);
             }
-            else if (IsTimelineCrossReferencedEvent)
+            else if (TimelineCrossReferencedEvent is { } __value14)
             {
-                timelineCrossReferencedEvent?.Invoke(TimelineCrossReferencedEvent!);
+                timelineCrossReferencedEvent?.Invoke(__value14);
             }
-            else if (IsTimelineCommittedEvent)
+            else if (TimelineCommittedEvent is { } __value15)
             {
-                timelineCommittedEvent?.Invoke(TimelineCommittedEvent!);
+                timelineCommittedEvent?.Invoke(__value15);
             }
-            else if (IsTimelineReviewedEvent)
+            else if (TimelineReviewedEvent is { } __value16)
             {
-                timelineReviewedEvent?.Invoke(TimelineReviewedEvent!);
+                timelineReviewedEvent?.Invoke(__value16);
             }
-            else if (IsTimelineLineCommentedEvent)
+            else if (TimelineLineCommentedEvent is { } __value17)
             {
-                timelineLineCommentedEvent?.Invoke(TimelineLineCommentedEvent!);
+                timelineLineCommentedEvent?.Invoke(__value17);
             }
-            else if (IsTimelineCommitCommentedEvent)
+            else if (TimelineCommitCommentedEvent is { } __value18)
             {
-                timelineCommitCommentedEvent?.Invoke(TimelineCommitCommentedEvent!);
+                timelineCommitCommentedEvent?.Invoke(__value18);
             }
-            else if (IsTimelineAssignedIssueEvent)
+            else if (TimelineAssignedIssueEvent is { } __value19)
             {
-                timelineAssignedIssueEvent?.Invoke(TimelineAssignedIssueEvent!);
+                timelineAssignedIssueEvent?.Invoke(__value19);
             }
-            else if (IsTimelineUnassignedIssueEvent)
+            else if (TimelineUnassignedIssueEvent is { } __value20)
             {
-                timelineUnassignedIssueEvent?.Invoke(TimelineUnassignedIssueEvent!);
+                timelineUnassignedIssueEvent?.Invoke(__value20);
             }
-            else if (IsStateChangeIssueEvent)
+            else if (StateChangeIssueEvent is { } __value21)
             {
-                stateChangeIssueEvent?.Invoke(StateChangeIssueEvent!);
+                stateChangeIssueEvent?.Invoke(__value21);
             }
         }
 
@@ -1747,93 +1747,93 @@ namespace G
                 Validate();
             }
 
-            if (IsLabeledIssueEvent)
+            if (LabeledIssueEvent is { } __value0)
             {
-                labeledIssueEvent?.Invoke(LabeledIssueEvent!);
+                labeledIssueEvent?.Invoke(__value0);
             }
-            else if (IsUnlabeledIssueEvent)
+            else if (UnlabeledIssueEvent is { } __value1)
             {
-                unlabeledIssueEvent?.Invoke(UnlabeledIssueEvent!);
+                unlabeledIssueEvent?.Invoke(__value1);
             }
-            else if (IsMilestonedIssueEvent)
+            else if (MilestonedIssueEvent is { } __value2)
             {
-                milestonedIssueEvent?.Invoke(MilestonedIssueEvent!);
+                milestonedIssueEvent?.Invoke(__value2);
             }
-            else if (IsDemilestonedIssueEvent)
+            else if (DemilestonedIssueEvent is { } __value3)
             {
-                demilestonedIssueEvent?.Invoke(DemilestonedIssueEvent!);
+                demilestonedIssueEvent?.Invoke(__value3);
             }
-            else if (IsRenamedIssueEvent)
+            else if (RenamedIssueEvent is { } __value4)
             {
-                renamedIssueEvent?.Invoke(RenamedIssueEvent!);
+                renamedIssueEvent?.Invoke(__value4);
             }
-            else if (IsReviewRequestedIssueEvent)
+            else if (ReviewRequestedIssueEvent is { } __value5)
             {
-                reviewRequestedIssueEvent?.Invoke(ReviewRequestedIssueEvent!);
+                reviewRequestedIssueEvent?.Invoke(__value5);
             }
-            else if (IsReviewRequestRemovedIssueEvent)
+            else if (ReviewRequestRemovedIssueEvent is { } __value6)
             {
-                reviewRequestRemovedIssueEvent?.Invoke(ReviewRequestRemovedIssueEvent!);
+                reviewRequestRemovedIssueEvent?.Invoke(__value6);
             }
-            else if (IsReviewDismissedIssueEvent)
+            else if (ReviewDismissedIssueEvent is { } __value7)
             {
-                reviewDismissedIssueEvent?.Invoke(ReviewDismissedIssueEvent!);
+                reviewDismissedIssueEvent?.Invoke(__value7);
             }
-            else if (IsLockedIssueEvent)
+            else if (LockedIssueEvent is { } __value8)
             {
-                lockedIssueEvent?.Invoke(LockedIssueEvent!);
+                lockedIssueEvent?.Invoke(__value8);
             }
-            else if (IsAddedToProjectIssueEvent)
+            else if (AddedToProjectIssueEvent is { } __value9)
             {
-                addedToProjectIssueEvent?.Invoke(AddedToProjectIssueEvent!);
+                addedToProjectIssueEvent?.Invoke(__value9);
             }
-            else if (IsMovedColumnInProjectIssueEvent)
+            else if (MovedColumnInProjectIssueEvent is { } __value10)
             {
-                movedColumnInProjectIssueEvent?.Invoke(MovedColumnInProjectIssueEvent!);
+                movedColumnInProjectIssueEvent?.Invoke(__value10);
             }
-            else if (IsRemovedFromProjectIssueEvent)
+            else if (RemovedFromProjectIssueEvent is { } __value11)
             {
-                removedFromProjectIssueEvent?.Invoke(RemovedFromProjectIssueEvent!);
+                removedFromProjectIssueEvent?.Invoke(__value11);
             }
-            else if (IsConvertedNoteToIssueIssueEvent)
+            else if (ConvertedNoteToIssueIssueEvent is { } __value12)
             {
-                convertedNoteToIssueIssueEvent?.Invoke(ConvertedNoteToIssueIssueEvent!);
+                convertedNoteToIssueIssueEvent?.Invoke(__value12);
             }
-            else if (IsTimelineCommentEvent)
+            else if (TimelineCommentEvent is { } __value13)
             {
-                timelineCommentEvent?.Invoke(TimelineCommentEvent!);
+                timelineCommentEvent?.Invoke(__value13);
             }
-            else if (IsTimelineCrossReferencedEvent)
+            else if (TimelineCrossReferencedEvent is { } __value14)
             {
-                timelineCrossReferencedEvent?.Invoke(TimelineCrossReferencedEvent!);
+                timelineCrossReferencedEvent?.Invoke(__value14);
             }
-            else if (IsTimelineCommittedEvent)
+            else if (TimelineCommittedEvent is { } __value15)
             {
-                timelineCommittedEvent?.Invoke(TimelineCommittedEvent!);
+                timelineCommittedEvent?.Invoke(__value15);
             }
-            else if (IsTimelineReviewedEvent)
+            else if (TimelineReviewedEvent is { } __value16)
             {
-                timelineReviewedEvent?.Invoke(TimelineReviewedEvent!);
+                timelineReviewedEvent?.Invoke(__value16);
             }
-            else if (IsTimelineLineCommentedEvent)
+            else if (TimelineLineCommentedEvent is { } __value17)
             {
-                timelineLineCommentedEvent?.Invoke(TimelineLineCommentedEvent!);
+                timelineLineCommentedEvent?.Invoke(__value17);
             }
-            else if (IsTimelineCommitCommentedEvent)
+            else if (TimelineCommitCommentedEvent is { } __value18)
             {
-                timelineCommitCommentedEvent?.Invoke(TimelineCommitCommentedEvent!);
+                timelineCommitCommentedEvent?.Invoke(__value18);
             }
-            else if (IsTimelineAssignedIssueEvent)
+            else if (TimelineAssignedIssueEvent is { } __value19)
             {
-                timelineAssignedIssueEvent?.Invoke(TimelineAssignedIssueEvent!);
+                timelineAssignedIssueEvent?.Invoke(__value19);
             }
-            else if (IsTimelineUnassignedIssueEvent)
+            else if (TimelineUnassignedIssueEvent is { } __value20)
             {
-                timelineUnassignedIssueEvent?.Invoke(TimelineUnassignedIssueEvent!);
+                timelineUnassignedIssueEvent?.Invoke(__value20);
             }
-            else if (IsStateChangeIssueEvent)
+            else if (StateChangeIssueEvent is { } __value21)
             {
-                stateChangeIssueEvent?.Invoke(StateChangeIssueEvent!);
+                stateChangeIssueEvent?.Invoke(__value21);
             }
         }
 

@@ -1,4 +1,4 @@
-﻿//HintName: G.Api.DeleteKnowledgeBase.g.cs
+//HintName: G.Api.DeleteKnowledgeBase.g.cs
 
 #nullable enable
 
@@ -143,7 +143,7 @@ namespace G
                 PrepareDeleteKnowledgeBaseRequest(
                     httpClient: HttpClient,
                     httpRequestMessage: __httpRequest,
-                    knowledgeBaseId: knowledgeBaseId!);
+                    knowledgeBaseId: knowledgeBaseId);
 
                 return __httpRequest;
             }
@@ -165,7 +165,7 @@ namespace G
                                 pathTemplate: "$\"/delete-knowledge-base/{knowledgeBaseId}\"",
                                 httpMethod: "DELETE",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: null,
                                 exception: null,
                                 clientOptions: Options,
@@ -199,7 +199,7 @@ namespace G
                                 pathTemplate: "$\"/delete-knowledge-base/{knowledgeBaseId}\"",
                                 httpMethod: "DELETE",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: null,
                                 exception: __exception,
                                 clientOptions: Options,
@@ -240,7 +240,7 @@ namespace G
                                 pathTemplate: "$\"/delete-knowledge-base/{knowledgeBaseId}\"",
                                 httpMethod: "DELETE",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: __response,
                                 exception: null,
                                 clientOptions: Options,
@@ -288,7 +288,7 @@ namespace G
                                 pathTemplate: "$\"/delete-knowledge-base/{knowledgeBaseId}\"",
                                 httpMethod: "DELETE",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: __response,
                                 exception: null,
                                 clientOptions: Options,
@@ -310,7 +310,7 @@ namespace G
                                 pathTemplate: "$\"/delete-knowledge-base/{knowledgeBaseId}\"",
                                 httpMethod: "DELETE",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: __response,
                                 exception: null,
                                 clientOptions: Options,

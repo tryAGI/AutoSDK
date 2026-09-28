@@ -43,8 +43,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public string PickJSONValueVariant1() => IsJSONValueVariant1
-            ? JSONValueVariant1!
+        public string PickJSONValueVariant1() => JSONValueVariant1 is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'JSONValueVariant1' but the value was {ToString()}.");
 
         /// <summary>
@@ -80,8 +80,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public double PickJSONValueVariant2() => IsJSONValueVariant2
-            ? JSONValueVariant2!.Value
+        public double PickJSONValueVariant2() => JSONValueVariant2 is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'JSONValueVariant2' but the value was {ToString()}.");
 
         /// <summary>
@@ -117,8 +117,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public bool PickJSONValueVariant3() => IsJSONValueVariant3
-            ? JSONValueVariant3!.Value
+        public bool PickJSONValueVariant3() => JSONValueVariant3 is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'JSONValueVariant3' but the value was {ToString()}.");
 
         /// <summary>
@@ -154,8 +154,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::G.JSONValue?> PickJSONValueVariant4() => IsJSONValueVariant4
-            ? JSONValueVariant4!
+        public global::System.Collections.Generic.IList<global::G.JSONValue?> PickJSONValueVariant4() => JSONValueVariant4 is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'JSONValueVariant4' but the value was {ToString()}.");
 
         /// <summary>
@@ -191,8 +191,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.Dictionary<string, global::G.JSONValue?> PickJSONValueVariant5() => IsJSONValueVariant5
-            ? JSONValueVariant5!
+        public global::System.Collections.Generic.Dictionary<string, global::G.JSONValue?> PickJSONValueVariant5() => JSONValueVariant5 is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'JSONValueVariant5' but the value was {ToString()}.");
         /// <summary>
         /// 
@@ -350,25 +350,25 @@ namespace G
                 Validate();
             }
 
-            if (IsJSONValueVariant1 && jSONValueVariant1 != null)
+            if (JSONValueVariant1 is { } __value0 && jSONValueVariant1 != null)
             {
-                return jSONValueVariant1(JSONValueVariant1!);
+                return jSONValueVariant1(__value0);
             }
-            else if (IsJSONValueVariant2 && jSONValueVariant2 != null)
+            else if (JSONValueVariant2 is { } __value1 && jSONValueVariant2 != null)
             {
-                return jSONValueVariant2(JSONValueVariant2!);
+                return jSONValueVariant2(__value1);
             }
-            else if (IsJSONValueVariant3 && jSONValueVariant3 != null)
+            else if (JSONValueVariant3 is { } __value2 && jSONValueVariant3 != null)
             {
-                return jSONValueVariant3(JSONValueVariant3!);
+                return jSONValueVariant3(__value2);
             }
-            else if (IsJSONValueVariant4 && jSONValueVariant4 != null)
+            else if (JSONValueVariant4 is { } __value3 && jSONValueVariant4 != null)
             {
-                return jSONValueVariant4(JSONValueVariant4!);
+                return jSONValueVariant4(__value3);
             }
-            else if (IsJSONValueVariant5 && jSONValueVariant5 != null)
+            else if (JSONValueVariant5 is { } __value4 && jSONValueVariant5 != null)
             {
-                return jSONValueVariant5(JSONValueVariant5!);
+                return jSONValueVariant5(__value4);
             }
 
             return default(TResult);
@@ -394,25 +394,25 @@ namespace G
                 Validate();
             }
 
-            if (IsJSONValueVariant1)
+            if (JSONValueVariant1 is { } __value0)
             {
-                jSONValueVariant1?.Invoke(JSONValueVariant1!);
+                jSONValueVariant1?.Invoke(__value0);
             }
-            else if (IsJSONValueVariant2)
+            else if (JSONValueVariant2 is { } __value1)
             {
-                jSONValueVariant2?.Invoke(JSONValueVariant2!);
+                jSONValueVariant2?.Invoke(__value1);
             }
-            else if (IsJSONValueVariant3)
+            else if (JSONValueVariant3 is { } __value2)
             {
-                jSONValueVariant3?.Invoke(JSONValueVariant3!);
+                jSONValueVariant3?.Invoke(__value2);
             }
-            else if (IsJSONValueVariant4)
+            else if (JSONValueVariant4 is { } __value3)
             {
-                jSONValueVariant4?.Invoke(JSONValueVariant4!);
+                jSONValueVariant4?.Invoke(__value3);
             }
-            else if (IsJSONValueVariant5)
+            else if (JSONValueVariant5 is { } __value4)
             {
-                jSONValueVariant5?.Invoke(JSONValueVariant5!);
+                jSONValueVariant5?.Invoke(__value4);
             }
         }
 
@@ -432,25 +432,25 @@ namespace G
                 Validate();
             }
 
-            if (IsJSONValueVariant1)
+            if (JSONValueVariant1 is { } __value0)
             {
-                jSONValueVariant1?.Invoke(JSONValueVariant1!);
+                jSONValueVariant1?.Invoke(__value0);
             }
-            else if (IsJSONValueVariant2)
+            else if (JSONValueVariant2 is { } __value1)
             {
-                jSONValueVariant2?.Invoke(JSONValueVariant2!);
+                jSONValueVariant2?.Invoke(__value1);
             }
-            else if (IsJSONValueVariant3)
+            else if (JSONValueVariant3 is { } __value2)
             {
-                jSONValueVariant3?.Invoke(JSONValueVariant3!);
+                jSONValueVariant3?.Invoke(__value2);
             }
-            else if (IsJSONValueVariant4)
+            else if (JSONValueVariant4 is { } __value3)
             {
-                jSONValueVariant4?.Invoke(JSONValueVariant4!);
+                jSONValueVariant4?.Invoke(__value3);
             }
-            else if (IsJSONValueVariant5)
+            else if (JSONValueVariant5 is { } __value4)
             {
-                jSONValueVariant5?.Invoke(JSONValueVariant5!);
+                jSONValueVariant5?.Invoke(__value4);
             }
         }
 

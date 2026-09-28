@@ -1,4 +1,4 @@
-﻿//HintName: G.AdminClient.CreateAdminTeamsByTeamIDSandboxesKill.g.cs
+//HintName: G.AdminClient.CreateAdminTeamsByTeamIDSandboxesKill.g.cs
 
 #nullable enable
 
@@ -148,7 +148,7 @@ namespace G
                 PrepareCreateAdminTeamsByTeamIDSandboxesKillRequest(
                     httpClient: HttpClient,
                     httpRequestMessage: __httpRequest,
-                    teamID: teamID!);
+                    teamID: teamID);
 
                 global::G.AutoSDKHttpRequestOptions.StampAuthorizationOverride(__httpRequest);
 
@@ -172,7 +172,7 @@ namespace G
                                 pathTemplate: "$\"/admin/teams/{teamID}/sandboxes/kill\"",
                                 httpMethod: "POST",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: null,
                                 exception: null,
                                 clientOptions: Options,
@@ -206,7 +206,7 @@ namespace G
                                 pathTemplate: "$\"/admin/teams/{teamID}/sandboxes/kill\"",
                                 httpMethod: "POST",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: null,
                                 exception: __exception,
                                 clientOptions: Options,
@@ -247,7 +247,7 @@ namespace G
                                 pathTemplate: "$\"/admin/teams/{teamID}/sandboxes/kill\"",
                                 httpMethod: "POST",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: __response,
                                 exception: null,
                                 clientOptions: Options,
@@ -295,7 +295,7 @@ namespace G
                                 pathTemplate: "$\"/admin/teams/{teamID}/sandboxes/kill\"",
                                 httpMethod: "POST",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: __response,
                                 exception: null,
                                 clientOptions: Options,
@@ -317,7 +317,7 @@ namespace G
                                 pathTemplate: "$\"/admin/teams/{teamID}/sandboxes/kill\"",
                                 httpMethod: "POST",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: __response,
                                 exception: null,
                                 clientOptions: Options,

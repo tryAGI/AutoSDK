@@ -1,4 +1,4 @@
-﻿//HintName: G.Models.MaskingUsingInitImageAlphaRequestBody.g.cs
+//HintName: G.Models.MaskingUsingInitImageAlphaRequestBody.g.cs
 #pragma warning disable CS0618 // Type or member is obsolete
 
 #nullable enable
@@ -43,8 +43,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.MaskingUsingInitImageAlphaRequestBodyVariant1 PickMaskingUsingInitImageAlphaRequestBodyVariant1() => IsMaskingUsingInitImageAlphaRequestBodyVariant1
-            ? MaskingUsingInitImageAlphaRequestBodyVariant1!
+        public global::G.MaskingUsingInitImageAlphaRequestBodyVariant1 PickMaskingUsingInitImageAlphaRequestBodyVariant1() => MaskingUsingInitImageAlphaRequestBodyVariant1 is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'MaskingUsingInitImageAlphaRequestBodyVariant1' but the value was {ToString()}.");
 
         /// <summary>
@@ -80,8 +80,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.GenerationRequestOptionalParams PickGenerationOptionalParams() => IsGenerationOptionalParams
-            ? GenerationOptionalParams!
+        public global::G.GenerationRequestOptionalParams PickGenerationOptionalParams() => GenerationOptionalParams is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'GenerationOptionalParams' but the value was {ToString()}.");
         /// <summary>
         /// 
@@ -178,13 +178,13 @@ namespace G
                 Validate();
             }
 
-            if (IsMaskingUsingInitImageAlphaRequestBodyVariant1 && maskingUsingInitImageAlphaRequestBodyVariant1 != null)
+            if (MaskingUsingInitImageAlphaRequestBodyVariant1 is { } __value0 && maskingUsingInitImageAlphaRequestBodyVariant1 != null)
             {
-                return maskingUsingInitImageAlphaRequestBodyVariant1(MaskingUsingInitImageAlphaRequestBodyVariant1!);
+                return maskingUsingInitImageAlphaRequestBodyVariant1(__value0);
             }
-            else if (IsGenerationOptionalParams && generationOptionalParams != null)
+            else if (GenerationOptionalParams is { } __value1 && generationOptionalParams != null)
             {
-                return generationOptionalParams(GenerationOptionalParams!);
+                return generationOptionalParams(__value1);
             }
 
             return default(TResult);
@@ -204,13 +204,13 @@ namespace G
                 Validate();
             }
 
-            if (IsMaskingUsingInitImageAlphaRequestBodyVariant1)
+            if (MaskingUsingInitImageAlphaRequestBodyVariant1 is { } __value0)
             {
-                maskingUsingInitImageAlphaRequestBodyVariant1?.Invoke(MaskingUsingInitImageAlphaRequestBodyVariant1!);
+                maskingUsingInitImageAlphaRequestBodyVariant1?.Invoke(__value0);
             }
-            else if (IsGenerationOptionalParams)
+            else if (GenerationOptionalParams is { } __value1)
             {
-                generationOptionalParams?.Invoke(GenerationOptionalParams!);
+                generationOptionalParams?.Invoke(__value1);
             }
         }
 
@@ -227,13 +227,13 @@ namespace G
                 Validate();
             }
 
-            if (IsMaskingUsingInitImageAlphaRequestBodyVariant1)
+            if (MaskingUsingInitImageAlphaRequestBodyVariant1 is { } __value0)
             {
-                maskingUsingInitImageAlphaRequestBodyVariant1?.Invoke(MaskingUsingInitImageAlphaRequestBodyVariant1!);
+                maskingUsingInitImageAlphaRequestBodyVariant1?.Invoke(__value0);
             }
-            else if (IsGenerationOptionalParams)
+            else if (GenerationOptionalParams is { } __value1)
             {
-                generationOptionalParams?.Invoke(GenerationOptionalParams!);
+                generationOptionalParams?.Invoke(__value1);
             }
         }
 

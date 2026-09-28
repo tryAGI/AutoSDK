@@ -1,4 +1,4 @@
-﻿//HintName: G.JsonConverters.Ann.g.cs
+//HintName: G.JsonConverters.Ann.g.cs
 #nullable enable
 #pragma warning disable CS0618 // Type or member is obsolete
 
@@ -128,13 +128,13 @@ namespace G.JsonConverters
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(bool), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<bool> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(bool).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.AnnVariant1!.Value, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickAnnVariant1(), typeInfo);
             }
             else if (value.IsConfig)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.AnnConfig), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.AnnConfig?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.AnnConfig).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Config!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickConfig(), typeInfo);
             }
         }
     }

@@ -1,4 +1,4 @@
-﻿//HintName: G.JsonConverters.IndexesIndexIdVideosGetParametersUserMetadataSchema.g.cs
+//HintName: G.JsonConverters.IndexesIndexIdVideosGetParametersUserMetadataSchema.g.cs
 #nullable enable
 #pragma warning disable CS0618 // Type or member is obsolete
 
@@ -199,19 +199,19 @@ namespace G.JsonConverters
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(string), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<string?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(string).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.IndexesIndexIdVideosGetParametersUserMetadataSchemaVariant1!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickIndexesIndexIdVideosGetParametersUserMetadataSchemaVariant1(), typeInfo);
             }
             else if (value.IsIndexesIndexIdVideosGetParametersUserMetadataSchemaVariant2)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(double), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<double> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(double).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.IndexesIndexIdVideosGetParametersUserMetadataSchemaVariant2!.Value, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickIndexesIndexIdVideosGetParametersUserMetadataSchemaVariant2(), typeInfo);
             }
             else if (value.IsIndexesIndexIdVideosGetParametersUserMetadataSchemaVariant3)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(bool), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<bool> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(bool).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.IndexesIndexIdVideosGetParametersUserMetadataSchemaVariant3!.Value, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickIndexesIndexIdVideosGetParametersUserMetadataSchemaVariant3(), typeInfo);
             }
         }
     }

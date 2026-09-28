@@ -1,4 +1,4 @@
-﻿//HintName: G.Models.ResponseFormatVariant12.g.cs
+//HintName: G.Models.ResponseFormatVariant12.g.cs
 #pragma warning disable CS0618 // Type or member is obsolete
 
 #nullable enable
@@ -48,8 +48,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.PromptResponseFormatJSONSchema PickJsonSchema() => IsJsonSchema
-            ? JsonSchema!
+        public global::G.PromptResponseFormatJSONSchema PickJsonSchema() => JsonSchema is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'JsonSchema' but the value was {ToString()}.");
         /// <summary>
         /// 
@@ -121,9 +121,9 @@ namespace G
                 Validate();
             }
 
-            if (IsJsonSchema && jsonSchema != null)
+            if (JsonSchema is { } __value0 && jsonSchema != null)
             {
-                return jsonSchema(JsonSchema!);
+                return jsonSchema(__value0);
             }
 
             return default(TResult);
@@ -141,9 +141,9 @@ namespace G
                 Validate();
             }
 
-            if (IsJsonSchema)
+            if (JsonSchema is { } __value0)
             {
-                jsonSchema?.Invoke(JsonSchema!);
+                jsonSchema?.Invoke(__value0);
             }
         }
 
@@ -159,9 +159,9 @@ namespace G
                 Validate();
             }
 
-            if (IsJsonSchema)
+            if (JsonSchema is { } __value0)
             {
-                jsonSchema?.Invoke(JsonSchema!);
+                jsonSchema?.Invoke(__value0);
             }
         }
 

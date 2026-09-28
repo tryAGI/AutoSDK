@@ -1,4 +1,4 @@
-﻿//HintName: G.Models.ThinkingConfigParam.g.cs
+//HintName: G.Models.ThinkingConfigParam.g.cs
 #pragma warning disable CS0618 // Type or member is obsolete
 
 #nullable enable
@@ -50,8 +50,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.ThinkingConfigEnabled PickEnabled() => IsEnabled
-            ? Enabled!
+        public global::G.ThinkingConfigEnabled PickEnabled() => Enabled is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Enabled' but the value was {ToString()}.");
 
         /// <summary>
@@ -87,8 +87,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.ThinkingConfigDisabled PickDisabled() => IsDisabled
-            ? Disabled!
+        public global::G.ThinkingConfigDisabled PickDisabled() => Disabled is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Disabled' but the value was {ToString()}.");
         /// <summary>
         /// 
@@ -188,13 +188,13 @@ namespace G
                 Validate();
             }
 
-            if (IsEnabled && enabled != null)
+            if (Enabled is { } __value0 && enabled != null)
             {
-                return enabled(Enabled!);
+                return enabled(__value0);
             }
-            else if (IsDisabled && disabled != null)
+            else if (Disabled is { } __value1 && disabled != null)
             {
-                return disabled(Disabled!);
+                return disabled(__value1);
             }
 
             return default(TResult);
@@ -214,13 +214,13 @@ namespace G
                 Validate();
             }
 
-            if (IsEnabled)
+            if (Enabled is { } __value0)
             {
-                enabled?.Invoke(Enabled!);
+                enabled?.Invoke(__value0);
             }
-            else if (IsDisabled)
+            else if (Disabled is { } __value1)
             {
-                disabled?.Invoke(Disabled!);
+                disabled?.Invoke(__value1);
             }
         }
 
@@ -237,13 +237,13 @@ namespace G
                 Validate();
             }
 
-            if (IsEnabled)
+            if (Enabled is { } __value0)
             {
-                enabled?.Invoke(Enabled!);
+                enabled?.Invoke(__value0);
             }
-            else if (IsDisabled)
+            else if (Disabled is { } __value1)
             {
-                disabled?.Invoke(Disabled!);
+                disabled?.Invoke(__value1);
             }
         }
 

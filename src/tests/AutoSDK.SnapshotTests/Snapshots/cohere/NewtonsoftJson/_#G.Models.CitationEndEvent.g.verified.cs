@@ -1,4 +1,4 @@
-﻿//HintName: G.Models.CitationEndEvent.g.cs
+//HintName: G.Models.CitationEndEvent.g.cs
 #pragma warning disable CS0618 // Type or member is obsolete
 
 #nullable enable
@@ -43,8 +43,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.ChatStreamEventType PickChatStreamType() => IsChatStreamType
-            ? ChatStreamType!
+        public global::G.ChatStreamEventType PickChatStreamType() => ChatStreamType is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'ChatStreamType' but the value was {ToString()}.");
 
         /// <summary>
@@ -80,8 +80,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.CitationEndEventFs3igt PickFs3igt() => IsFs3igt
-            ? Fs3igt!
+        public global::G.CitationEndEventFs3igt PickFs3igt() => Fs3igt is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Fs3igt' but the value was {ToString()}.");
         /// <summary>
         /// 
@@ -178,13 +178,13 @@ namespace G
                 Validate();
             }
 
-            if (IsChatStreamType && chatStreamType != null)
+            if (ChatStreamType is { } __value0 && chatStreamType != null)
             {
-                return chatStreamType(ChatStreamType!);
+                return chatStreamType(__value0);
             }
-            else if (IsFs3igt && fs3igt != null)
+            else if (Fs3igt is { } __value1 && fs3igt != null)
             {
-                return fs3igt(Fs3igt!);
+                return fs3igt(__value1);
             }
 
             return default(TResult);
@@ -204,13 +204,13 @@ namespace G
                 Validate();
             }
 
-            if (IsChatStreamType)
+            if (ChatStreamType is { } __value0)
             {
-                chatStreamType?.Invoke(ChatStreamType!);
+                chatStreamType?.Invoke(__value0);
             }
-            else if (IsFs3igt)
+            else if (Fs3igt is { } __value1)
             {
-                fs3igt?.Invoke(Fs3igt!);
+                fs3igt?.Invoke(__value1);
             }
         }
 
@@ -227,13 +227,13 @@ namespace G
                 Validate();
             }
 
-            if (IsChatStreamType)
+            if (ChatStreamType is { } __value0)
             {
-                chatStreamType?.Invoke(ChatStreamType!);
+                chatStreamType?.Invoke(__value0);
             }
-            else if (IsFs3igt)
+            else if (Fs3igt is { } __value1)
             {
-                fs3igt?.Invoke(Fs3igt!);
+                fs3igt?.Invoke(__value1);
             }
         }
 

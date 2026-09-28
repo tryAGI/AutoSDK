@@ -1,4 +1,4 @@
-﻿//HintName: G.OneOf.8.g.cs
+//HintName: G.OneOf.8.g.cs
 
 #nullable enable
 
@@ -42,8 +42,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public T1 PickValue1() => IsValue1
-            ? Value1!
+        public T1 PickValue1() => Value1 is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Value1' but the value was {ToString()}.");
 
         /// <summary>
@@ -79,8 +79,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public T2 PickValue2() => IsValue2
-            ? Value2!
+        public T2 PickValue2() => Value2 is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Value2' but the value was {ToString()}.");
 
         /// <summary>
@@ -116,8 +116,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public T3 PickValue3() => IsValue3
-            ? Value3!
+        public T3 PickValue3() => Value3 is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Value3' but the value was {ToString()}.");
 
         /// <summary>
@@ -153,8 +153,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public T4 PickValue4() => IsValue4
-            ? Value4!
+        public T4 PickValue4() => Value4 is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Value4' but the value was {ToString()}.");
 
         /// <summary>
@@ -190,8 +190,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public T5 PickValue5() => IsValue5
-            ? Value5!
+        public T5 PickValue5() => Value5 is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Value5' but the value was {ToString()}.");
 
         /// <summary>
@@ -227,8 +227,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public T6 PickValue6() => IsValue6
-            ? Value6!
+        public T6 PickValue6() => Value6 is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Value6' but the value was {ToString()}.");
 
         /// <summary>
@@ -264,8 +264,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public T7 PickValue7() => IsValue7
-            ? Value7!
+        public T7 PickValue7() => Value7 is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Value7' but the value was {ToString()}.");
 
         /// <summary>
@@ -301,8 +301,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public T8 PickValue8() => IsValue8
-            ? Value8!
+        public T8 PickValue8() => Value8 is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Value8' but the value was {ToString()}.");
         /// <summary>
         /// 
@@ -567,37 +567,37 @@ namespace G
                 Validate();
             }
 
-            if (IsValue1 && value1 != null)
+            if (Value1 is { } __value0 && value1 != null)
             {
-                return value1(Value1!);
+                return value1(__value0);
             }
-            else if (IsValue2 && value2 != null)
+            else if (Value2 is { } __value1 && value2 != null)
             {
-                return value2(Value2!);
+                return value2(__value1);
             }
-            else if (IsValue3 && value3 != null)
+            else if (Value3 is { } __value2 && value3 != null)
             {
-                return value3(Value3!);
+                return value3(__value2);
             }
-            else if (IsValue4 && value4 != null)
+            else if (Value4 is { } __value3 && value4 != null)
             {
-                return value4(Value4!);
+                return value4(__value3);
             }
-            else if (IsValue5 && value5 != null)
+            else if (Value5 is { } __value4 && value5 != null)
             {
-                return value5(Value5!);
+                return value5(__value4);
             }
-            else if (IsValue6 && value6 != null)
+            else if (Value6 is { } __value5 && value6 != null)
             {
-                return value6(Value6!);
+                return value6(__value5);
             }
-            else if (IsValue7 && value7 != null)
+            else if (Value7 is { } __value6 && value7 != null)
             {
-                return value7(Value7!);
+                return value7(__value6);
             }
-            else if (IsValue8 && value8 != null)
+            else if (Value8 is { } __value7 && value8 != null)
             {
-                return value8(Value8!);
+                return value8(__value7);
             }
 
             return default(TResult);
@@ -629,37 +629,37 @@ namespace G
                 Validate();
             }
 
-            if (IsValue1)
+            if (Value1 is { } __value0)
             {
-                value1?.Invoke(Value1!);
+                value1?.Invoke(__value0);
             }
-            else if (IsValue2)
+            else if (Value2 is { } __value1)
             {
-                value2?.Invoke(Value2!);
+                value2?.Invoke(__value1);
             }
-            else if (IsValue3)
+            else if (Value3 is { } __value2)
             {
-                value3?.Invoke(Value3!);
+                value3?.Invoke(__value2);
             }
-            else if (IsValue4)
+            else if (Value4 is { } __value3)
             {
-                value4?.Invoke(Value4!);
+                value4?.Invoke(__value3);
             }
-            else if (IsValue5)
+            else if (Value5 is { } __value4)
             {
-                value5?.Invoke(Value5!);
+                value5?.Invoke(__value4);
             }
-            else if (IsValue6)
+            else if (Value6 is { } __value5)
             {
-                value6?.Invoke(Value6!);
+                value6?.Invoke(__value5);
             }
-            else if (IsValue7)
+            else if (Value7 is { } __value6)
             {
-                value7?.Invoke(Value7!);
+                value7?.Invoke(__value6);
             }
-            else if (IsValue8)
+            else if (Value8 is { } __value7)
             {
-                value8?.Invoke(Value8!);
+                value8?.Invoke(__value7);
             }
         }
 
@@ -682,37 +682,37 @@ namespace G
                 Validate();
             }
 
-            if (IsValue1)
+            if (Value1 is { } __value0)
             {
-                value1?.Invoke(Value1!);
+                value1?.Invoke(__value0);
             }
-            else if (IsValue2)
+            else if (Value2 is { } __value1)
             {
-                value2?.Invoke(Value2!);
+                value2?.Invoke(__value1);
             }
-            else if (IsValue3)
+            else if (Value3 is { } __value2)
             {
-                value3?.Invoke(Value3!);
+                value3?.Invoke(__value2);
             }
-            else if (IsValue4)
+            else if (Value4 is { } __value3)
             {
-                value4?.Invoke(Value4!);
+                value4?.Invoke(__value3);
             }
-            else if (IsValue5)
+            else if (Value5 is { } __value4)
             {
-                value5?.Invoke(Value5!);
+                value5?.Invoke(__value4);
             }
-            else if (IsValue6)
+            else if (Value6 is { } __value5)
             {
-                value6?.Invoke(Value6!);
+                value6?.Invoke(__value5);
             }
-            else if (IsValue7)
+            else if (Value7 is { } __value6)
             {
-                value7?.Invoke(Value7!);
+                value7?.Invoke(__value6);
             }
-            else if (IsValue8)
+            else if (Value8 is { } __value7)
             {
-                value8?.Invoke(Value8!);
+                value8?.Invoke(__value7);
             }
         }
 

@@ -1,4 +1,4 @@
-﻿//HintName: G.Models.FileSearchServerToolFiltersOneOf0Value.g.cs
+//HintName: G.Models.FileSearchServerToolFiltersOneOf0Value.g.cs
 #pragma warning disable CS0618 // Type or member is obsolete
 
 #nullable enable
@@ -43,8 +43,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public string PickFileSearchServerToolFiltersOneOf0ValueVariant1() => IsFileSearchServerToolFiltersOneOf0ValueVariant1
-            ? FileSearchServerToolFiltersOneOf0ValueVariant1!
+        public string PickFileSearchServerToolFiltersOneOf0ValueVariant1() => FileSearchServerToolFiltersOneOf0ValueVariant1 is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'FileSearchServerToolFiltersOneOf0ValueVariant1' but the value was {ToString()}.");
 
         /// <summary>
@@ -80,8 +80,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public double PickFileSearchServerToolFiltersOneOf0ValueVariant2() => IsFileSearchServerToolFiltersOneOf0ValueVariant2
-            ? FileSearchServerToolFiltersOneOf0ValueVariant2!.Value
+        public double PickFileSearchServerToolFiltersOneOf0ValueVariant2() => FileSearchServerToolFiltersOneOf0ValueVariant2 is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'FileSearchServerToolFiltersOneOf0ValueVariant2' but the value was {ToString()}.");
 
         /// <summary>
@@ -117,8 +117,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public bool PickFileSearchServerToolFiltersOneOf0ValueVariant3() => IsFileSearchServerToolFiltersOneOf0ValueVariant3
-            ? FileSearchServerToolFiltersOneOf0ValueVariant3!.Value
+        public bool PickFileSearchServerToolFiltersOneOf0ValueVariant3() => FileSearchServerToolFiltersOneOf0ValueVariant3 is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'FileSearchServerToolFiltersOneOf0ValueVariant3' but the value was {ToString()}.");
 
         /// <summary>
@@ -154,8 +154,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::G.FileSearchServerToolFiltersOneOf0ValueOneOf3Items> PickFileSearchServerToolFiltersOneOf0Value3() => IsFileSearchServerToolFiltersOneOf0Value3
-            ? FileSearchServerToolFiltersOneOf0Value3!
+        public global::System.Collections.Generic.IList<global::G.FileSearchServerToolFiltersOneOf0ValueOneOf3Items> PickFileSearchServerToolFiltersOneOf0Value3() => FileSearchServerToolFiltersOneOf0Value3 is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'FileSearchServerToolFiltersOneOf0Value3' but the value was {ToString()}.");
         /// <summary>
         /// 
@@ -285,21 +285,21 @@ namespace G
                 Validate();
             }
 
-            if (IsFileSearchServerToolFiltersOneOf0ValueVariant1 && fileSearchServerToolFiltersOneOf0ValueVariant1 != null)
+            if (FileSearchServerToolFiltersOneOf0ValueVariant1 is { } __value0 && fileSearchServerToolFiltersOneOf0ValueVariant1 != null)
             {
-                return fileSearchServerToolFiltersOneOf0ValueVariant1(FileSearchServerToolFiltersOneOf0ValueVariant1!);
+                return fileSearchServerToolFiltersOneOf0ValueVariant1(__value0);
             }
-            else if (IsFileSearchServerToolFiltersOneOf0ValueVariant2 && fileSearchServerToolFiltersOneOf0ValueVariant2 != null)
+            else if (FileSearchServerToolFiltersOneOf0ValueVariant2 is { } __value1 && fileSearchServerToolFiltersOneOf0ValueVariant2 != null)
             {
-                return fileSearchServerToolFiltersOneOf0ValueVariant2(FileSearchServerToolFiltersOneOf0ValueVariant2!);
+                return fileSearchServerToolFiltersOneOf0ValueVariant2(__value1);
             }
-            else if (IsFileSearchServerToolFiltersOneOf0ValueVariant3 && fileSearchServerToolFiltersOneOf0ValueVariant3 != null)
+            else if (FileSearchServerToolFiltersOneOf0ValueVariant3 is { } __value2 && fileSearchServerToolFiltersOneOf0ValueVariant3 != null)
             {
-                return fileSearchServerToolFiltersOneOf0ValueVariant3(FileSearchServerToolFiltersOneOf0ValueVariant3!);
+                return fileSearchServerToolFiltersOneOf0ValueVariant3(__value2);
             }
-            else if (IsFileSearchServerToolFiltersOneOf0Value3 && fileSearchServerToolFiltersOneOf0Value3 != null)
+            else if (FileSearchServerToolFiltersOneOf0Value3 is { } __value3 && fileSearchServerToolFiltersOneOf0Value3 != null)
             {
-                return fileSearchServerToolFiltersOneOf0Value3(FileSearchServerToolFiltersOneOf0Value3!);
+                return fileSearchServerToolFiltersOneOf0Value3(__value3);
             }
 
             return default(TResult);
@@ -323,21 +323,21 @@ namespace G
                 Validate();
             }
 
-            if (IsFileSearchServerToolFiltersOneOf0ValueVariant1)
+            if (FileSearchServerToolFiltersOneOf0ValueVariant1 is { } __value0)
             {
-                fileSearchServerToolFiltersOneOf0ValueVariant1?.Invoke(FileSearchServerToolFiltersOneOf0ValueVariant1!);
+                fileSearchServerToolFiltersOneOf0ValueVariant1?.Invoke(__value0);
             }
-            else if (IsFileSearchServerToolFiltersOneOf0ValueVariant2)
+            else if (FileSearchServerToolFiltersOneOf0ValueVariant2 is { } __value1)
             {
-                fileSearchServerToolFiltersOneOf0ValueVariant2?.Invoke(FileSearchServerToolFiltersOneOf0ValueVariant2!);
+                fileSearchServerToolFiltersOneOf0ValueVariant2?.Invoke(__value1);
             }
-            else if (IsFileSearchServerToolFiltersOneOf0ValueVariant3)
+            else if (FileSearchServerToolFiltersOneOf0ValueVariant3 is { } __value2)
             {
-                fileSearchServerToolFiltersOneOf0ValueVariant3?.Invoke(FileSearchServerToolFiltersOneOf0ValueVariant3!);
+                fileSearchServerToolFiltersOneOf0ValueVariant3?.Invoke(__value2);
             }
-            else if (IsFileSearchServerToolFiltersOneOf0Value3)
+            else if (FileSearchServerToolFiltersOneOf0Value3 is { } __value3)
             {
-                fileSearchServerToolFiltersOneOf0Value3?.Invoke(FileSearchServerToolFiltersOneOf0Value3!);
+                fileSearchServerToolFiltersOneOf0Value3?.Invoke(__value3);
             }
         }
 
@@ -356,21 +356,21 @@ namespace G
                 Validate();
             }
 
-            if (IsFileSearchServerToolFiltersOneOf0ValueVariant1)
+            if (FileSearchServerToolFiltersOneOf0ValueVariant1 is { } __value0)
             {
-                fileSearchServerToolFiltersOneOf0ValueVariant1?.Invoke(FileSearchServerToolFiltersOneOf0ValueVariant1!);
+                fileSearchServerToolFiltersOneOf0ValueVariant1?.Invoke(__value0);
             }
-            else if (IsFileSearchServerToolFiltersOneOf0ValueVariant2)
+            else if (FileSearchServerToolFiltersOneOf0ValueVariant2 is { } __value1)
             {
-                fileSearchServerToolFiltersOneOf0ValueVariant2?.Invoke(FileSearchServerToolFiltersOneOf0ValueVariant2!);
+                fileSearchServerToolFiltersOneOf0ValueVariant2?.Invoke(__value1);
             }
-            else if (IsFileSearchServerToolFiltersOneOf0ValueVariant3)
+            else if (FileSearchServerToolFiltersOneOf0ValueVariant3 is { } __value2)
             {
-                fileSearchServerToolFiltersOneOf0ValueVariant3?.Invoke(FileSearchServerToolFiltersOneOf0ValueVariant3!);
+                fileSearchServerToolFiltersOneOf0ValueVariant3?.Invoke(__value2);
             }
-            else if (IsFileSearchServerToolFiltersOneOf0Value3)
+            else if (FileSearchServerToolFiltersOneOf0Value3 is { } __value3)
             {
-                fileSearchServerToolFiltersOneOf0Value3?.Invoke(FileSearchServerToolFiltersOneOf0Value3!);
+                fileSearchServerToolFiltersOneOf0Value3?.Invoke(__value3);
             }
         }
 

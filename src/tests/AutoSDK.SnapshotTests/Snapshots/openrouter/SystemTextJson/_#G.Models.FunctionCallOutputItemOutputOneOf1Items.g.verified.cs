@@ -1,4 +1,4 @@
-﻿//HintName: G.Models.FunctionCallOutputItemOutputOneOf1Items.g.cs
+//HintName: G.Models.FunctionCallOutputItemOutputOneOf1Items.g.cs
 #pragma warning disable CS0618 // Type or member is obsolete
 
 #nullable enable
@@ -43,8 +43,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.InputText PickInputText() => IsInputText
-            ? InputText!
+        public global::G.InputText PickInputText() => InputText is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'InputText' but the value was {ToString()}.");
 
         /// <summary>
@@ -80,8 +80,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.FunctionCallOutputItemOutputOneOf1Items1 PickFunctionCallOutputItemOutputOneOf1Items1() => IsFunctionCallOutputItemOutputOneOf1Items1
-            ? FunctionCallOutputItemOutputOneOf1Items1!
+        public global::G.FunctionCallOutputItemOutputOneOf1Items1 PickFunctionCallOutputItemOutputOneOf1Items1() => FunctionCallOutputItemOutputOneOf1Items1 is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'FunctionCallOutputItemOutputOneOf1Items1' but the value was {ToString()}.");
 
         /// <summary>
@@ -117,8 +117,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.InputFile PickInputFile() => IsInputFile
-            ? InputFile!
+        public global::G.InputFile PickInputFile() => InputFile is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'InputFile' but the value was {ToString()}.");
         /// <summary>
         /// 
@@ -243,17 +243,17 @@ namespace G
                 Validate();
             }
 
-            if (IsInputText && inputText != null)
+            if (InputText is { } __value0 && inputText != null)
             {
-                return inputText(InputText!);
+                return inputText(__value0);
             }
-            else if (IsFunctionCallOutputItemOutputOneOf1Items1 && functionCallOutputItemOutputOneOf1Items1 != null)
+            else if (FunctionCallOutputItemOutputOneOf1Items1 is { } __value1 && functionCallOutputItemOutputOneOf1Items1 != null)
             {
-                return functionCallOutputItemOutputOneOf1Items1(FunctionCallOutputItemOutputOneOf1Items1!);
+                return functionCallOutputItemOutputOneOf1Items1(__value1);
             }
-            else if (IsInputFile && inputFile != null)
+            else if (InputFile is { } __value2 && inputFile != null)
             {
-                return inputFile(InputFile!);
+                return inputFile(__value2);
             }
 
             return default(TResult);
@@ -275,17 +275,17 @@ namespace G
                 Validate();
             }
 
-            if (IsInputText)
+            if (InputText is { } __value0)
             {
-                inputText?.Invoke(InputText!);
+                inputText?.Invoke(__value0);
             }
-            else if (IsFunctionCallOutputItemOutputOneOf1Items1)
+            else if (FunctionCallOutputItemOutputOneOf1Items1 is { } __value1)
             {
-                functionCallOutputItemOutputOneOf1Items1?.Invoke(FunctionCallOutputItemOutputOneOf1Items1!);
+                functionCallOutputItemOutputOneOf1Items1?.Invoke(__value1);
             }
-            else if (IsInputFile)
+            else if (InputFile is { } __value2)
             {
-                inputFile?.Invoke(InputFile!);
+                inputFile?.Invoke(__value2);
             }
         }
 
@@ -303,17 +303,17 @@ namespace G
                 Validate();
             }
 
-            if (IsInputText)
+            if (InputText is { } __value0)
             {
-                inputText?.Invoke(InputText!);
+                inputText?.Invoke(__value0);
             }
-            else if (IsFunctionCallOutputItemOutputOneOf1Items1)
+            else if (FunctionCallOutputItemOutputOneOf1Items1 is { } __value1)
             {
-                functionCallOutputItemOutputOneOf1Items1?.Invoke(FunctionCallOutputItemOutputOneOf1Items1!);
+                functionCallOutputItemOutputOneOf1Items1?.Invoke(__value1);
             }
-            else if (IsInputFile)
+            else if (InputFile is { } __value2)
             {
-                inputFile?.Invoke(InputFile!);
+                inputFile?.Invoke(__value2);
             }
         }
 

@@ -1,4 +1,4 @@
-﻿//HintName: G.Models.ExtendedPointId.g.cs
+//HintName: G.Models.ExtendedPointId.g.cs
 #pragma warning disable CS0618 // Type or member is obsolete
 
 #nullable enable
@@ -43,8 +43,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public int PickExtendedPointIdVariant1() => IsExtendedPointIdVariant1
-            ? ExtendedPointIdVariant1!.Value
+        public int PickExtendedPointIdVariant1() => ExtendedPointIdVariant1 is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'ExtendedPointIdVariant1' but the value was {ToString()}.");
 
         /// <summary>
@@ -80,8 +80,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Guid PickGuid() => IsGuid
-            ? Guid!.Value
+        public global::System.Guid PickGuid() => Guid is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Guid' but the value was {ToString()}.");
         /// <summary>
         /// 
@@ -178,13 +178,13 @@ namespace G
                 Validate();
             }
 
-            if (IsExtendedPointIdVariant1 && extendedPointIdVariant1 != null)
+            if (ExtendedPointIdVariant1 is { } __value0 && extendedPointIdVariant1 != null)
             {
-                return extendedPointIdVariant1(ExtendedPointIdVariant1!);
+                return extendedPointIdVariant1(__value0);
             }
-            else if (IsGuid && guid != null)
+            else if (Guid is { } __value1 && guid != null)
             {
-                return guid(Guid!);
+                return guid(__value1);
             }
 
             return default(TResult);
@@ -204,13 +204,13 @@ namespace G
                 Validate();
             }
 
-            if (IsExtendedPointIdVariant1)
+            if (ExtendedPointIdVariant1 is { } __value0)
             {
-                extendedPointIdVariant1?.Invoke(ExtendedPointIdVariant1!);
+                extendedPointIdVariant1?.Invoke(__value0);
             }
-            else if (IsGuid)
+            else if (Guid is { } __value1)
             {
-                guid?.Invoke(Guid!);
+                guid?.Invoke(__value1);
             }
         }
 
@@ -227,13 +227,13 @@ namespace G
                 Validate();
             }
 
-            if (IsExtendedPointIdVariant1)
+            if (ExtendedPointIdVariant1 is { } __value0)
             {
-                extendedPointIdVariant1?.Invoke(ExtendedPointIdVariant1!);
+                extendedPointIdVariant1?.Invoke(__value0);
             }
-            else if (IsGuid)
+            else if (Guid is { } __value1)
             {
-                guid?.Invoke(Guid!);
+                guid?.Invoke(__value1);
             }
         }
 

@@ -1,4 +1,4 @@
-﻿//HintName: G.Models.FunctionDataNullish.g.cs
+//HintName: G.Models.FunctionDataNullish.g.cs
 #pragma warning disable CS0618 // Type or member is obsolete
 
 #nullable enable
@@ -43,8 +43,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.FunctionDataNullishPrompt PickPrompt() => IsPrompt
-            ? Prompt!
+        public global::G.FunctionDataNullishPrompt PickPrompt() => Prompt is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Prompt' but the value was {ToString()}.");
 
         /// <summary>
@@ -80,8 +80,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.FunctionDataNullishCode PickCode() => IsCode
-            ? Code!
+        public global::G.FunctionDataNullishCode PickCode() => Code is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Code' but the value was {ToString()}.");
 
         /// <summary>
@@ -117,8 +117,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.GraphData PickGraph() => IsGraph
-            ? Graph!
+        public global::G.GraphData PickGraph() => Graph is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Graph' but the value was {ToString()}.");
 
         /// <summary>
@@ -154,8 +154,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.FunctionDataNullishRemoteEval PickRemoteEval() => IsRemoteEval
-            ? RemoteEval!
+        public global::G.FunctionDataNullishRemoteEval PickRemoteEval() => RemoteEval is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'RemoteEval' but the value was {ToString()}.");
 
         /// <summary>
@@ -191,8 +191,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.FunctionDataNullishGlobal PickGlobal() => IsGlobal
-            ? Global!
+        public global::G.FunctionDataNullishGlobal PickGlobal() => Global is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Global' but the value was {ToString()}.");
 
         /// <summary>
@@ -228,8 +228,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.FacetData PickFacet() => IsFacet
-            ? Facet!
+        public global::G.FacetData PickFacet() => Facet is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Facet' but the value was {ToString()}.");
 
         /// <summary>
@@ -265,8 +265,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.BatchedFacetData PickBatchedFacet() => IsBatchedFacet
-            ? BatchedFacet!
+        public global::G.BatchedFacetData PickBatchedFacet() => BatchedFacet is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'BatchedFacet' but the value was {ToString()}.");
 
         /// <summary>
@@ -302,8 +302,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.FunctionDataNullishParameters PickParameters() => IsParameters
-            ? Parameters!
+        public global::G.FunctionDataNullishParameters PickParameters() => Parameters is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Parameters' but the value was {ToString()}.");
 
         /// <summary>
@@ -339,8 +339,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.AllOf<global::G.TopicMapData, object> PickFunctionDataNullishVariant9() => IsFunctionDataNullishVariant9
-            ? FunctionDataNullishVariant9!.Value
+        public global::G.AllOf<global::G.TopicMapData, object> PickFunctionDataNullishVariant9() => FunctionDataNullishVariant9 is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'FunctionDataNullishVariant9' but the value was {ToString()}.");
 
         /// <summary>
@@ -376,8 +376,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public object PickFunctionDataNullishVariant10() => IsFunctionDataNullishVariant10
-            ? FunctionDataNullishVariant10!
+        public object PickFunctionDataNullishVariant10() => FunctionDataNullishVariant10 is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'FunctionDataNullishVariant10' but the value was {ToString()}.");
         /// <summary>
         /// 
@@ -675,45 +675,45 @@ namespace G
                 Validate();
             }
 
-            if (IsPrompt && prompt != null)
+            if (Prompt is { } __value0 && prompt != null)
             {
-                return prompt(Prompt!);
+                return prompt(__value0);
             }
-            else if (IsCode && code != null)
+            else if (Code is { } __value1 && code != null)
             {
-                return code(Code!);
+                return code(__value1);
             }
-            else if (IsGraph && graph != null)
+            else if (Graph is { } __value2 && graph != null)
             {
-                return graph(Graph!);
+                return graph(__value2);
             }
-            else if (IsRemoteEval && remoteEval != null)
+            else if (RemoteEval is { } __value3 && remoteEval != null)
             {
-                return remoteEval(RemoteEval!);
+                return remoteEval(__value3);
             }
-            else if (IsGlobal && global != null)
+            else if (Global is { } __value4 && global != null)
             {
-                return global(Global!);
+                return global(__value4);
             }
-            else if (IsFacet && facet != null)
+            else if (Facet is { } __value5 && facet != null)
             {
-                return facet(Facet!);
+                return facet(__value5);
             }
-            else if (IsBatchedFacet && batchedFacet != null)
+            else if (BatchedFacet is { } __value6 && batchedFacet != null)
             {
-                return batchedFacet(BatchedFacet!);
+                return batchedFacet(__value6);
             }
-            else if (IsParameters && parameters != null)
+            else if (Parameters is { } __value7 && parameters != null)
             {
-                return parameters(Parameters!);
+                return parameters(__value7);
             }
-            else if (IsFunctionDataNullishVariant9 && functionDataNullishVariant9 != null)
+            else if (FunctionDataNullishVariant9 is { } __value8 && functionDataNullishVariant9 != null)
             {
-                return functionDataNullishVariant9(FunctionDataNullishVariant9!);
+                return functionDataNullishVariant9(__value8);
             }
-            else if (IsFunctionDataNullishVariant10 && functionDataNullishVariant10 != null)
+            else if (FunctionDataNullishVariant10 is { } __value9 && functionDataNullishVariant10 != null)
             {
-                return functionDataNullishVariant10(FunctionDataNullishVariant10!);
+                return functionDataNullishVariant10(__value9);
             }
 
             return default(TResult);
@@ -749,45 +749,45 @@ namespace G
                 Validate();
             }
 
-            if (IsPrompt)
+            if (Prompt is { } __value0)
             {
-                prompt?.Invoke(Prompt!);
+                prompt?.Invoke(__value0);
             }
-            else if (IsCode)
+            else if (Code is { } __value1)
             {
-                code?.Invoke(Code!);
+                code?.Invoke(__value1);
             }
-            else if (IsGraph)
+            else if (Graph is { } __value2)
             {
-                graph?.Invoke(Graph!);
+                graph?.Invoke(__value2);
             }
-            else if (IsRemoteEval)
+            else if (RemoteEval is { } __value3)
             {
-                remoteEval?.Invoke(RemoteEval!);
+                remoteEval?.Invoke(__value3);
             }
-            else if (IsGlobal)
+            else if (Global is { } __value4)
             {
-                global?.Invoke(Global!);
+                global?.Invoke(__value4);
             }
-            else if (IsFacet)
+            else if (Facet is { } __value5)
             {
-                facet?.Invoke(Facet!);
+                facet?.Invoke(__value5);
             }
-            else if (IsBatchedFacet)
+            else if (BatchedFacet is { } __value6)
             {
-                batchedFacet?.Invoke(BatchedFacet!);
+                batchedFacet?.Invoke(__value6);
             }
-            else if (IsParameters)
+            else if (Parameters is { } __value7)
             {
-                parameters?.Invoke(Parameters!);
+                parameters?.Invoke(__value7);
             }
-            else if (IsFunctionDataNullishVariant9)
+            else if (FunctionDataNullishVariant9 is { } __value8)
             {
-                functionDataNullishVariant9?.Invoke(FunctionDataNullishVariant9!);
+                functionDataNullishVariant9?.Invoke(__value8);
             }
-            else if (IsFunctionDataNullishVariant10)
+            else if (FunctionDataNullishVariant10 is { } __value9)
             {
-                functionDataNullishVariant10?.Invoke(FunctionDataNullishVariant10!);
+                functionDataNullishVariant10?.Invoke(__value9);
             }
         }
 
@@ -812,45 +812,45 @@ namespace G
                 Validate();
             }
 
-            if (IsPrompt)
+            if (Prompt is { } __value0)
             {
-                prompt?.Invoke(Prompt!);
+                prompt?.Invoke(__value0);
             }
-            else if (IsCode)
+            else if (Code is { } __value1)
             {
-                code?.Invoke(Code!);
+                code?.Invoke(__value1);
             }
-            else if (IsGraph)
+            else if (Graph is { } __value2)
             {
-                graph?.Invoke(Graph!);
+                graph?.Invoke(__value2);
             }
-            else if (IsRemoteEval)
+            else if (RemoteEval is { } __value3)
             {
-                remoteEval?.Invoke(RemoteEval!);
+                remoteEval?.Invoke(__value3);
             }
-            else if (IsGlobal)
+            else if (Global is { } __value4)
             {
-                global?.Invoke(Global!);
+                global?.Invoke(__value4);
             }
-            else if (IsFacet)
+            else if (Facet is { } __value5)
             {
-                facet?.Invoke(Facet!);
+                facet?.Invoke(__value5);
             }
-            else if (IsBatchedFacet)
+            else if (BatchedFacet is { } __value6)
             {
-                batchedFacet?.Invoke(BatchedFacet!);
+                batchedFacet?.Invoke(__value6);
             }
-            else if (IsParameters)
+            else if (Parameters is { } __value7)
             {
-                parameters?.Invoke(Parameters!);
+                parameters?.Invoke(__value7);
             }
-            else if (IsFunctionDataNullishVariant9)
+            else if (FunctionDataNullishVariant9 is { } __value8)
             {
-                functionDataNullishVariant9?.Invoke(FunctionDataNullishVariant9!);
+                functionDataNullishVariant9?.Invoke(__value8);
             }
-            else if (IsFunctionDataNullishVariant10)
+            else if (FunctionDataNullishVariant10 is { } __value9)
             {
-                functionDataNullishVariant10?.Invoke(FunctionDataNullishVariant10!);
+                functionDataNullishVariant10?.Invoke(__value9);
             }
         }
 

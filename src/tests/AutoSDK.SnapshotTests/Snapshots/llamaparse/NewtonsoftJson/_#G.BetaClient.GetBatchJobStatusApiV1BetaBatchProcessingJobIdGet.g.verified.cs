@@ -1,4 +1,4 @@
-﻿//HintName: G.BetaClient.GetBatchJobStatusApiV1BetaBatchProcessingJobIdGet.g.cs
+//HintName: G.BetaClient.GetBatchJobStatusApiV1BetaBatchProcessingJobIdGet.g.cs
 
 #nullable enable
 
@@ -192,7 +192,7 @@ namespace G
                 PrepareGetBatchJobStatusApiV1BetaBatchProcessingJobIdGetRequest(
                     httpClient: HttpClient,
                     httpRequestMessage: __httpRequest,
-                    jobId: jobId!,
+                    jobId: jobId,
                     projectId: projectId,
                     organizationId: organizationId,
                     session: session);
@@ -219,7 +219,7 @@ namespace G
                                 pathTemplate: "$\"/api/v1/beta/batch-processing/{jobId}\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: null,
                                 exception: null,
                                 clientOptions: Options,
@@ -253,7 +253,7 @@ namespace G
                                 pathTemplate: "$\"/api/v1/beta/batch-processing/{jobId}\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: null,
                                 exception: __exception,
                                 clientOptions: Options,
@@ -294,7 +294,7 @@ namespace G
                                 pathTemplate: "$\"/api/v1/beta/batch-processing/{jobId}\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: __response,
                                 exception: null,
                                 clientOptions: Options,
@@ -342,7 +342,7 @@ namespace G
                                 pathTemplate: "$\"/api/v1/beta/batch-processing/{jobId}\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: __response,
                                 exception: null,
                                 clientOptions: Options,
@@ -364,7 +364,7 @@ namespace G
                                 pathTemplate: "$\"/api/v1/beta/batch-processing/{jobId}\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: __response,
                                 exception: null,
                                 clientOptions: Options,

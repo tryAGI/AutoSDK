@@ -1,4 +1,4 @@
-﻿//HintName: G.Models.ChatCompletionRequestMessage.g.cs
+//HintName: G.Models.ChatCompletionRequestMessage.g.cs
 #pragma warning disable CS0618 // Type or member is obsolete
 
 #nullable enable
@@ -43,8 +43,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.ChatCompletionRequestSystemMessage PickSystemMessage() => IsSystemMessage
-            ? SystemMessage!
+        public global::G.ChatCompletionRequestSystemMessage PickSystemMessage() => SystemMessage is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'SystemMessage' but the value was {ToString()}.");
 
         /// <summary>
@@ -80,8 +80,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.ChatCompletionRequestDeveloperMessage PickDeveloperMessage() => IsDeveloperMessage
-            ? DeveloperMessage!
+        public global::G.ChatCompletionRequestDeveloperMessage PickDeveloperMessage() => DeveloperMessage is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'DeveloperMessage' but the value was {ToString()}.");
 
         /// <summary>
@@ -117,8 +117,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.ChatCompletionRequestUserMessage PickUserMessage() => IsUserMessage
-            ? UserMessage!
+        public global::G.ChatCompletionRequestUserMessage PickUserMessage() => UserMessage is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'UserMessage' but the value was {ToString()}.");
 
         /// <summary>
@@ -154,8 +154,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.ChatCompletionRequestAssistantMessage PickAssistantMessage() => IsAssistantMessage
-            ? AssistantMessage!
+        public global::G.ChatCompletionRequestAssistantMessage PickAssistantMessage() => AssistantMessage is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'AssistantMessage' but the value was {ToString()}.");
 
         /// <summary>
@@ -191,8 +191,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.ChatCompletionRequestToolMessage PickToolMessage() => IsToolMessage
-            ? ToolMessage!
+        public global::G.ChatCompletionRequestToolMessage PickToolMessage() => ToolMessage is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'ToolMessage' but the value was {ToString()}.");
 
         /// <summary>
@@ -228,8 +228,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.ChatCompletionRequestFunctionMessage PickFunctionMessage() => IsFunctionMessage
-            ? FunctionMessage!
+        public global::G.ChatCompletionRequestFunctionMessage PickFunctionMessage() => FunctionMessage is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'FunctionMessage' but the value was {ToString()}.");
         /// <summary>
         /// 
@@ -438,29 +438,29 @@ namespace G
                 Validate();
             }
 
-            if (IsSystemMessage && systemMessage != null)
+            if (SystemMessage is { } __value0 && systemMessage != null)
             {
-                return systemMessage(SystemMessage!);
+                return systemMessage(__value0);
             }
-            else if (IsDeveloperMessage && developerMessage != null)
+            else if (DeveloperMessage is { } __value1 && developerMessage != null)
             {
-                return developerMessage(DeveloperMessage!);
+                return developerMessage(__value1);
             }
-            else if (IsUserMessage && userMessage != null)
+            else if (UserMessage is { } __value2 && userMessage != null)
             {
-                return userMessage(UserMessage!);
+                return userMessage(__value2);
             }
-            else if (IsAssistantMessage && assistantMessage != null)
+            else if (AssistantMessage is { } __value3 && assistantMessage != null)
             {
-                return assistantMessage(AssistantMessage!);
+                return assistantMessage(__value3);
             }
-            else if (IsToolMessage && toolMessage != null)
+            else if (ToolMessage is { } __value4 && toolMessage != null)
             {
-                return toolMessage(ToolMessage!);
+                return toolMessage(__value4);
             }
-            else if (IsFunctionMessage && functionMessage != null)
+            else if (FunctionMessage is { } __value5 && functionMessage != null)
             {
-                return functionMessage(FunctionMessage!);
+                return functionMessage(__value5);
             }
 
             return default(TResult);
@@ -488,29 +488,29 @@ namespace G
                 Validate();
             }
 
-            if (IsSystemMessage)
+            if (SystemMessage is { } __value0)
             {
-                systemMessage?.Invoke(SystemMessage!);
+                systemMessage?.Invoke(__value0);
             }
-            else if (IsDeveloperMessage)
+            else if (DeveloperMessage is { } __value1)
             {
-                developerMessage?.Invoke(DeveloperMessage!);
+                developerMessage?.Invoke(__value1);
             }
-            else if (IsUserMessage)
+            else if (UserMessage is { } __value2)
             {
-                userMessage?.Invoke(UserMessage!);
+                userMessage?.Invoke(__value2);
             }
-            else if (IsAssistantMessage)
+            else if (AssistantMessage is { } __value3)
             {
-                assistantMessage?.Invoke(AssistantMessage!);
+                assistantMessage?.Invoke(__value3);
             }
-            else if (IsToolMessage)
+            else if (ToolMessage is { } __value4)
             {
-                toolMessage?.Invoke(ToolMessage!);
+                toolMessage?.Invoke(__value4);
             }
-            else if (IsFunctionMessage)
+            else if (FunctionMessage is { } __value5)
             {
-                functionMessage?.Invoke(FunctionMessage!);
+                functionMessage?.Invoke(__value5);
             }
         }
 
@@ -531,29 +531,29 @@ namespace G
                 Validate();
             }
 
-            if (IsSystemMessage)
+            if (SystemMessage is { } __value0)
             {
-                systemMessage?.Invoke(SystemMessage!);
+                systemMessage?.Invoke(__value0);
             }
-            else if (IsDeveloperMessage)
+            else if (DeveloperMessage is { } __value1)
             {
-                developerMessage?.Invoke(DeveloperMessage!);
+                developerMessage?.Invoke(__value1);
             }
-            else if (IsUserMessage)
+            else if (UserMessage is { } __value2)
             {
-                userMessage?.Invoke(UserMessage!);
+                userMessage?.Invoke(__value2);
             }
-            else if (IsAssistantMessage)
+            else if (AssistantMessage is { } __value3)
             {
-                assistantMessage?.Invoke(AssistantMessage!);
+                assistantMessage?.Invoke(__value3);
             }
-            else if (IsToolMessage)
+            else if (ToolMessage is { } __value4)
             {
-                toolMessage?.Invoke(ToolMessage!);
+                toolMessage?.Invoke(__value4);
             }
-            else if (IsFunctionMessage)
+            else if (FunctionMessage is { } __value5)
             {
-                functionMessage?.Invoke(FunctionMessage!);
+                functionMessage?.Invoke(__value5);
             }
         }
 

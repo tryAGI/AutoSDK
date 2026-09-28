@@ -1,4 +1,4 @@
-﻿//HintName: G.Models.Params.g.cs
+//HintName: G.Models.Params.g.cs
 #pragma warning disable CS0618 // Type or member is obsolete
 
 #nullable enable
@@ -48,8 +48,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.SearchClientsParams PickSearchClients() => IsSearchClients
-            ? SearchClients!
+        public global::G.SearchClientsParams PickSearchClients() => SearchClients is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'SearchClients' but the value was {ToString()}.");
 
         /// <summary>
@@ -85,8 +85,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.ListClientsParams PickListClients() => IsListClients
-            ? ListClients!
+        public global::G.ListClientsParams PickListClients() => ListClients is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'ListClients' but the value was {ToString()}.");
 
         /// <summary>
@@ -122,8 +122,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.GetClientByPhoneParams PickGetClientByPhone() => IsGetClientByPhone
-            ? GetClientByPhone!
+        public global::G.GetClientByPhoneParams PickGetClientByPhone() => GetClientByPhone is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'GetClientByPhone' but the value was {ToString()}.");
 
         /// <summary>
@@ -159,8 +159,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.CreateClientParams PickCreateClient() => IsCreateClient
-            ? CreateClient!
+        public global::G.CreateClientParams PickCreateClient() => CreateClient is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'CreateClient' but the value was {ToString()}.");
 
         /// <summary>
@@ -196,8 +196,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.UpdateClientParams PickUpdateClient() => IsUpdateClient
-            ? UpdateClient!
+        public global::G.UpdateClientParams PickUpdateClient() => UpdateClient is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'UpdateClient' but the value was {ToString()}.");
 
         /// <summary>
@@ -233,8 +233,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.DeleteClientParams PickDeleteClient() => IsDeleteClient
-            ? DeleteClient!
+        public global::G.DeleteClientParams PickDeleteClient() => DeleteClient is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'DeleteClient' but the value was {ToString()}.");
 
         /// <summary>
@@ -270,8 +270,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.ListStaffParams PickListStaff() => IsListStaff
-            ? ListStaff!
+        public global::G.ListStaffParams PickListStaff() => ListStaff is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'ListStaff' but the value was {ToString()}.");
 
         /// <summary>
@@ -307,8 +307,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.CreateStaffParams PickCreateStaff() => IsCreateStaff
-            ? CreateStaff!
+        public global::G.CreateStaffParams PickCreateStaff() => CreateStaff is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'CreateStaff' but the value was {ToString()}.");
 
         /// <summary>
@@ -344,8 +344,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.UpdateStaffParams PickUpdateStaff() => IsUpdateStaff
-            ? UpdateStaff!
+        public global::G.UpdateStaffParams PickUpdateStaff() => UpdateStaff is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'UpdateStaff' but the value was {ToString()}.");
 
         /// <summary>
@@ -381,8 +381,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.DeleteStaffParams PickDeleteStaff() => IsDeleteStaff
-            ? DeleteStaff!
+        public global::G.DeleteStaffParams PickDeleteStaff() => DeleteStaff is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'DeleteStaff' but the value was {ToString()}.");
 
         /// <summary>
@@ -418,8 +418,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.ListAssetsParams PickListAssets() => IsListAssets
-            ? ListAssets!
+        public global::G.ListAssetsParams PickListAssets() => ListAssets is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'ListAssets' but the value was {ToString()}.");
 
         /// <summary>
@@ -455,8 +455,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.CreateAssetParams PickCreateAsset() => IsCreateAsset
-            ? CreateAsset!
+        public global::G.CreateAssetParams PickCreateAsset() => CreateAsset is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'CreateAsset' but the value was {ToString()}.");
 
         /// <summary>
@@ -492,8 +492,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.UpdateAssetParams PickUpdateAsset() => IsUpdateAsset
-            ? UpdateAsset!
+        public global::G.UpdateAssetParams PickUpdateAsset() => UpdateAsset is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'UpdateAsset' but the value was {ToString()}.");
 
         /// <summary>
@@ -529,8 +529,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.DeleteAssetParams PickDeleteAsset() => IsDeleteAsset
-            ? DeleteAsset!
+        public global::G.DeleteAssetParams PickDeleteAsset() => DeleteAsset is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'DeleteAsset' but the value was {ToString()}.");
 
         /// <summary>
@@ -566,8 +566,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.ListServicesParams PickListServices() => IsListServices
-            ? ListServices!
+        public global::G.ListServicesParams PickListServices() => ListServices is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'ListServices' but the value was {ToString()}.");
 
         /// <summary>
@@ -603,8 +603,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.CreateServiceParams PickCreateService() => IsCreateService
-            ? CreateService!
+        public global::G.CreateServiceParams PickCreateService() => CreateService is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'CreateService' but the value was {ToString()}.");
 
         /// <summary>
@@ -640,8 +640,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.UpdateServiceParams PickUpdateService() => IsUpdateService
-            ? UpdateService!
+        public global::G.UpdateServiceParams PickUpdateService() => UpdateService is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'UpdateService' but the value was {ToString()}.");
 
         /// <summary>
@@ -677,8 +677,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.DeleteServiceParams PickDeleteService() => IsDeleteService
-            ? DeleteService!
+        public global::G.DeleteServiceParams PickDeleteService() => DeleteService is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'DeleteService' but the value was {ToString()}.");
 
         /// <summary>
@@ -714,8 +714,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.ListProductsParams PickListProducts() => IsListProducts
-            ? ListProducts!
+        public global::G.ListProductsParams PickListProducts() => ListProducts is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'ListProducts' but the value was {ToString()}.");
 
         /// <summary>
@@ -751,8 +751,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.CreateProductParams PickCreateProduct() => IsCreateProduct
-            ? CreateProduct!
+        public global::G.CreateProductParams PickCreateProduct() => CreateProduct is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'CreateProduct' but the value was {ToString()}.");
 
         /// <summary>
@@ -788,8 +788,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.UpdateProductParams PickUpdateProduct() => IsUpdateProduct
-            ? UpdateProduct!
+        public global::G.UpdateProductParams PickUpdateProduct() => UpdateProduct is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'UpdateProduct' but the value was {ToString()}.");
 
         /// <summary>
@@ -825,8 +825,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.DeleteProductParams PickDeleteProduct() => IsDeleteProduct
-            ? DeleteProduct!
+        public global::G.DeleteProductParams PickDeleteProduct() => DeleteProduct is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'DeleteProduct' but the value was {ToString()}.");
 
         /// <summary>
@@ -862,8 +862,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.CheckServiceAvailabilityParams PickCheckServiceAvailability() => IsCheckServiceAvailability
-            ? CheckServiceAvailability!
+        public global::G.CheckServiceAvailabilityParams PickCheckServiceAvailability() => CheckServiceAvailability is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'CheckServiceAvailability' but the value was {ToString()}.");
 
         /// <summary>
@@ -899,8 +899,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.CreateClientAppointmentParams PickCreateClientAppointment() => IsCreateClientAppointment
-            ? CreateClientAppointment!
+        public global::G.CreateClientAppointmentParams PickCreateClientAppointment() => CreateClientAppointment is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'CreateClientAppointment' but the value was {ToString()}.");
 
         /// <summary>
@@ -936,8 +936,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.GetClientAppointmentsParams PickGetClientAppointments() => IsGetClientAppointments
-            ? GetClientAppointments!
+        public global::G.GetClientAppointmentsParams PickGetClientAppointments() => GetClientAppointments is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'GetClientAppointments' but the value was {ToString()}.");
 
         /// <summary>
@@ -973,8 +973,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.ListCalendarEventsParams PickListCalendarEvents() => IsListCalendarEvents
-            ? ListCalendarEvents!
+        public global::G.ListCalendarEventsParams PickListCalendarEvents() => ListCalendarEvents is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'ListCalendarEvents' but the value was {ToString()}.");
 
         /// <summary>
@@ -1010,8 +1010,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.UpdateCalendarEventParams PickUpdateCalendarEvent() => IsUpdateCalendarEvent
-            ? UpdateCalendarEvent!
+        public global::G.UpdateCalendarEventParams PickUpdateCalendarEvent() => UpdateCalendarEvent is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'UpdateCalendarEvent' but the value was {ToString()}.");
 
         /// <summary>
@@ -1047,8 +1047,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.DeleteCalendarEventParams PickDeleteCalendarEvent() => IsDeleteCalendarEvent
-            ? DeleteCalendarEvent!
+        public global::G.DeleteCalendarEventParams PickDeleteCalendarEvent() => DeleteCalendarEvent is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'DeleteCalendarEvent' but the value was {ToString()}.");
 
         /// <summary>
@@ -1084,8 +1084,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.ListRentalServicesParams PickListRentalServices() => IsListRentalServices
-            ? ListRentalServices!
+        public global::G.ListRentalServicesParams PickListRentalServices() => ListRentalServices is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'ListRentalServices' but the value was {ToString()}.");
 
         /// <summary>
@@ -1121,8 +1121,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.CheckRentalAvailabilityParams PickCheckRentalAvailability() => IsCheckRentalAvailability
-            ? CheckRentalAvailability!
+        public global::G.CheckRentalAvailabilityParams PickCheckRentalAvailability() => CheckRentalAvailability is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'CheckRentalAvailability' but the value was {ToString()}.");
 
         /// <summary>
@@ -1158,8 +1158,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.CreateRentalBookingParams PickCreateRentalBooking() => IsCreateRentalBooking
-            ? CreateRentalBooking!
+        public global::G.CreateRentalBookingParams PickCreateRentalBooking() => CreateRentalBooking is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'CreateRentalBooking' but the value was {ToString()}.");
         /// <summary>
         /// 
@@ -2071,129 +2071,129 @@ namespace G
                 Validate();
             }
 
-            if (IsSearchClients && searchClients != null)
+            if (SearchClients is { } __value0 && searchClients != null)
             {
-                return searchClients(SearchClients!);
+                return searchClients(__value0);
             }
-            else if (IsListClients && listClients != null)
+            else if (ListClients is { } __value1 && listClients != null)
             {
-                return listClients(ListClients!);
+                return listClients(__value1);
             }
-            else if (IsGetClientByPhone && getClientByPhone != null)
+            else if (GetClientByPhone is { } __value2 && getClientByPhone != null)
             {
-                return getClientByPhone(GetClientByPhone!);
+                return getClientByPhone(__value2);
             }
-            else if (IsCreateClient && createClient != null)
+            else if (CreateClient is { } __value3 && createClient != null)
             {
-                return createClient(CreateClient!);
+                return createClient(__value3);
             }
-            else if (IsUpdateClient && updateClient != null)
+            else if (UpdateClient is { } __value4 && updateClient != null)
             {
-                return updateClient(UpdateClient!);
+                return updateClient(__value4);
             }
-            else if (IsDeleteClient && deleteClient != null)
+            else if (DeleteClient is { } __value5 && deleteClient != null)
             {
-                return deleteClient(DeleteClient!);
+                return deleteClient(__value5);
             }
-            else if (IsListStaff && listStaff != null)
+            else if (ListStaff is { } __value6 && listStaff != null)
             {
-                return listStaff(ListStaff!);
+                return listStaff(__value6);
             }
-            else if (IsCreateStaff && createStaff != null)
+            else if (CreateStaff is { } __value7 && createStaff != null)
             {
-                return createStaff(CreateStaff!);
+                return createStaff(__value7);
             }
-            else if (IsUpdateStaff && updateStaff != null)
+            else if (UpdateStaff is { } __value8 && updateStaff != null)
             {
-                return updateStaff(UpdateStaff!);
+                return updateStaff(__value8);
             }
-            else if (IsDeleteStaff && deleteStaff != null)
+            else if (DeleteStaff is { } __value9 && deleteStaff != null)
             {
-                return deleteStaff(DeleteStaff!);
+                return deleteStaff(__value9);
             }
-            else if (IsListAssets && listAssets != null)
+            else if (ListAssets is { } __value10 && listAssets != null)
             {
-                return listAssets(ListAssets!);
+                return listAssets(__value10);
             }
-            else if (IsCreateAsset && createAsset != null)
+            else if (CreateAsset is { } __value11 && createAsset != null)
             {
-                return createAsset(CreateAsset!);
+                return createAsset(__value11);
             }
-            else if (IsUpdateAsset && updateAsset != null)
+            else if (UpdateAsset is { } __value12 && updateAsset != null)
             {
-                return updateAsset(UpdateAsset!);
+                return updateAsset(__value12);
             }
-            else if (IsDeleteAsset && deleteAsset != null)
+            else if (DeleteAsset is { } __value13 && deleteAsset != null)
             {
-                return deleteAsset(DeleteAsset!);
+                return deleteAsset(__value13);
             }
-            else if (IsListServices && listServices != null)
+            else if (ListServices is { } __value14 && listServices != null)
             {
-                return listServices(ListServices!);
+                return listServices(__value14);
             }
-            else if (IsCreateService && createService != null)
+            else if (CreateService is { } __value15 && createService != null)
             {
-                return createService(CreateService!);
+                return createService(__value15);
             }
-            else if (IsUpdateService && updateService != null)
+            else if (UpdateService is { } __value16 && updateService != null)
             {
-                return updateService(UpdateService!);
+                return updateService(__value16);
             }
-            else if (IsDeleteService && deleteService != null)
+            else if (DeleteService is { } __value17 && deleteService != null)
             {
-                return deleteService(DeleteService!);
+                return deleteService(__value17);
             }
-            else if (IsListProducts && listProducts != null)
+            else if (ListProducts is { } __value18 && listProducts != null)
             {
-                return listProducts(ListProducts!);
+                return listProducts(__value18);
             }
-            else if (IsCreateProduct && createProduct != null)
+            else if (CreateProduct is { } __value19 && createProduct != null)
             {
-                return createProduct(CreateProduct!);
+                return createProduct(__value19);
             }
-            else if (IsUpdateProduct && updateProduct != null)
+            else if (UpdateProduct is { } __value20 && updateProduct != null)
             {
-                return updateProduct(UpdateProduct!);
+                return updateProduct(__value20);
             }
-            else if (IsDeleteProduct && deleteProduct != null)
+            else if (DeleteProduct is { } __value21 && deleteProduct != null)
             {
-                return deleteProduct(DeleteProduct!);
+                return deleteProduct(__value21);
             }
-            else if (IsCheckServiceAvailability && checkServiceAvailability != null)
+            else if (CheckServiceAvailability is { } __value22 && checkServiceAvailability != null)
             {
-                return checkServiceAvailability(CheckServiceAvailability!);
+                return checkServiceAvailability(__value22);
             }
-            else if (IsCreateClientAppointment && createClientAppointment != null)
+            else if (CreateClientAppointment is { } __value23 && createClientAppointment != null)
             {
-                return createClientAppointment(CreateClientAppointment!);
+                return createClientAppointment(__value23);
             }
-            else if (IsGetClientAppointments && getClientAppointments != null)
+            else if (GetClientAppointments is { } __value24 && getClientAppointments != null)
             {
-                return getClientAppointments(GetClientAppointments!);
+                return getClientAppointments(__value24);
             }
-            else if (IsListCalendarEvents && listCalendarEvents != null)
+            else if (ListCalendarEvents is { } __value25 && listCalendarEvents != null)
             {
-                return listCalendarEvents(ListCalendarEvents!);
+                return listCalendarEvents(__value25);
             }
-            else if (IsUpdateCalendarEvent && updateCalendarEvent != null)
+            else if (UpdateCalendarEvent is { } __value26 && updateCalendarEvent != null)
             {
-                return updateCalendarEvent(UpdateCalendarEvent!);
+                return updateCalendarEvent(__value26);
             }
-            else if (IsDeleteCalendarEvent && deleteCalendarEvent != null)
+            else if (DeleteCalendarEvent is { } __value27 && deleteCalendarEvent != null)
             {
-                return deleteCalendarEvent(DeleteCalendarEvent!);
+                return deleteCalendarEvent(__value27);
             }
-            else if (IsListRentalServices && listRentalServices != null)
+            else if (ListRentalServices is { } __value28 && listRentalServices != null)
             {
-                return listRentalServices(ListRentalServices!);
+                return listRentalServices(__value28);
             }
-            else if (IsCheckRentalAvailability && checkRentalAvailability != null)
+            else if (CheckRentalAvailability is { } __value29 && checkRentalAvailability != null)
             {
-                return checkRentalAvailability(CheckRentalAvailability!);
+                return checkRentalAvailability(__value29);
             }
-            else if (IsCreateRentalBooking && createRentalBooking != null)
+            else if (CreateRentalBooking is { } __value30 && createRentalBooking != null)
             {
-                return createRentalBooking(CreateRentalBooking!);
+                return createRentalBooking(__value30);
             }
 
             return default(TResult);
@@ -2271,129 +2271,129 @@ namespace G
                 Validate();
             }
 
-            if (IsSearchClients)
+            if (SearchClients is { } __value0)
             {
-                searchClients?.Invoke(SearchClients!);
+                searchClients?.Invoke(__value0);
             }
-            else if (IsListClients)
+            else if (ListClients is { } __value1)
             {
-                listClients?.Invoke(ListClients!);
+                listClients?.Invoke(__value1);
             }
-            else if (IsGetClientByPhone)
+            else if (GetClientByPhone is { } __value2)
             {
-                getClientByPhone?.Invoke(GetClientByPhone!);
+                getClientByPhone?.Invoke(__value2);
             }
-            else if (IsCreateClient)
+            else if (CreateClient is { } __value3)
             {
-                createClient?.Invoke(CreateClient!);
+                createClient?.Invoke(__value3);
             }
-            else if (IsUpdateClient)
+            else if (UpdateClient is { } __value4)
             {
-                updateClient?.Invoke(UpdateClient!);
+                updateClient?.Invoke(__value4);
             }
-            else if (IsDeleteClient)
+            else if (DeleteClient is { } __value5)
             {
-                deleteClient?.Invoke(DeleteClient!);
+                deleteClient?.Invoke(__value5);
             }
-            else if (IsListStaff)
+            else if (ListStaff is { } __value6)
             {
-                listStaff?.Invoke(ListStaff!);
+                listStaff?.Invoke(__value6);
             }
-            else if (IsCreateStaff)
+            else if (CreateStaff is { } __value7)
             {
-                createStaff?.Invoke(CreateStaff!);
+                createStaff?.Invoke(__value7);
             }
-            else if (IsUpdateStaff)
+            else if (UpdateStaff is { } __value8)
             {
-                updateStaff?.Invoke(UpdateStaff!);
+                updateStaff?.Invoke(__value8);
             }
-            else if (IsDeleteStaff)
+            else if (DeleteStaff is { } __value9)
             {
-                deleteStaff?.Invoke(DeleteStaff!);
+                deleteStaff?.Invoke(__value9);
             }
-            else if (IsListAssets)
+            else if (ListAssets is { } __value10)
             {
-                listAssets?.Invoke(ListAssets!);
+                listAssets?.Invoke(__value10);
             }
-            else if (IsCreateAsset)
+            else if (CreateAsset is { } __value11)
             {
-                createAsset?.Invoke(CreateAsset!);
+                createAsset?.Invoke(__value11);
             }
-            else if (IsUpdateAsset)
+            else if (UpdateAsset is { } __value12)
             {
-                updateAsset?.Invoke(UpdateAsset!);
+                updateAsset?.Invoke(__value12);
             }
-            else if (IsDeleteAsset)
+            else if (DeleteAsset is { } __value13)
             {
-                deleteAsset?.Invoke(DeleteAsset!);
+                deleteAsset?.Invoke(__value13);
             }
-            else if (IsListServices)
+            else if (ListServices is { } __value14)
             {
-                listServices?.Invoke(ListServices!);
+                listServices?.Invoke(__value14);
             }
-            else if (IsCreateService)
+            else if (CreateService is { } __value15)
             {
-                createService?.Invoke(CreateService!);
+                createService?.Invoke(__value15);
             }
-            else if (IsUpdateService)
+            else if (UpdateService is { } __value16)
             {
-                updateService?.Invoke(UpdateService!);
+                updateService?.Invoke(__value16);
             }
-            else if (IsDeleteService)
+            else if (DeleteService is { } __value17)
             {
-                deleteService?.Invoke(DeleteService!);
+                deleteService?.Invoke(__value17);
             }
-            else if (IsListProducts)
+            else if (ListProducts is { } __value18)
             {
-                listProducts?.Invoke(ListProducts!);
+                listProducts?.Invoke(__value18);
             }
-            else if (IsCreateProduct)
+            else if (CreateProduct is { } __value19)
             {
-                createProduct?.Invoke(CreateProduct!);
+                createProduct?.Invoke(__value19);
             }
-            else if (IsUpdateProduct)
+            else if (UpdateProduct is { } __value20)
             {
-                updateProduct?.Invoke(UpdateProduct!);
+                updateProduct?.Invoke(__value20);
             }
-            else if (IsDeleteProduct)
+            else if (DeleteProduct is { } __value21)
             {
-                deleteProduct?.Invoke(DeleteProduct!);
+                deleteProduct?.Invoke(__value21);
             }
-            else if (IsCheckServiceAvailability)
+            else if (CheckServiceAvailability is { } __value22)
             {
-                checkServiceAvailability?.Invoke(CheckServiceAvailability!);
+                checkServiceAvailability?.Invoke(__value22);
             }
-            else if (IsCreateClientAppointment)
+            else if (CreateClientAppointment is { } __value23)
             {
-                createClientAppointment?.Invoke(CreateClientAppointment!);
+                createClientAppointment?.Invoke(__value23);
             }
-            else if (IsGetClientAppointments)
+            else if (GetClientAppointments is { } __value24)
             {
-                getClientAppointments?.Invoke(GetClientAppointments!);
+                getClientAppointments?.Invoke(__value24);
             }
-            else if (IsListCalendarEvents)
+            else if (ListCalendarEvents is { } __value25)
             {
-                listCalendarEvents?.Invoke(ListCalendarEvents!);
+                listCalendarEvents?.Invoke(__value25);
             }
-            else if (IsUpdateCalendarEvent)
+            else if (UpdateCalendarEvent is { } __value26)
             {
-                updateCalendarEvent?.Invoke(UpdateCalendarEvent!);
+                updateCalendarEvent?.Invoke(__value26);
             }
-            else if (IsDeleteCalendarEvent)
+            else if (DeleteCalendarEvent is { } __value27)
             {
-                deleteCalendarEvent?.Invoke(DeleteCalendarEvent!);
+                deleteCalendarEvent?.Invoke(__value27);
             }
-            else if (IsListRentalServices)
+            else if (ListRentalServices is { } __value28)
             {
-                listRentalServices?.Invoke(ListRentalServices!);
+                listRentalServices?.Invoke(__value28);
             }
-            else if (IsCheckRentalAvailability)
+            else if (CheckRentalAvailability is { } __value29)
             {
-                checkRentalAvailability?.Invoke(CheckRentalAvailability!);
+                checkRentalAvailability?.Invoke(__value29);
             }
-            else if (IsCreateRentalBooking)
+            else if (CreateRentalBooking is { } __value30)
             {
-                createRentalBooking?.Invoke(CreateRentalBooking!);
+                createRentalBooking?.Invoke(__value30);
             }
         }
 
@@ -2439,129 +2439,129 @@ namespace G
                 Validate();
             }
 
-            if (IsSearchClients)
+            if (SearchClients is { } __value0)
             {
-                searchClients?.Invoke(SearchClients!);
+                searchClients?.Invoke(__value0);
             }
-            else if (IsListClients)
+            else if (ListClients is { } __value1)
             {
-                listClients?.Invoke(ListClients!);
+                listClients?.Invoke(__value1);
             }
-            else if (IsGetClientByPhone)
+            else if (GetClientByPhone is { } __value2)
             {
-                getClientByPhone?.Invoke(GetClientByPhone!);
+                getClientByPhone?.Invoke(__value2);
             }
-            else if (IsCreateClient)
+            else if (CreateClient is { } __value3)
             {
-                createClient?.Invoke(CreateClient!);
+                createClient?.Invoke(__value3);
             }
-            else if (IsUpdateClient)
+            else if (UpdateClient is { } __value4)
             {
-                updateClient?.Invoke(UpdateClient!);
+                updateClient?.Invoke(__value4);
             }
-            else if (IsDeleteClient)
+            else if (DeleteClient is { } __value5)
             {
-                deleteClient?.Invoke(DeleteClient!);
+                deleteClient?.Invoke(__value5);
             }
-            else if (IsListStaff)
+            else if (ListStaff is { } __value6)
             {
-                listStaff?.Invoke(ListStaff!);
+                listStaff?.Invoke(__value6);
             }
-            else if (IsCreateStaff)
+            else if (CreateStaff is { } __value7)
             {
-                createStaff?.Invoke(CreateStaff!);
+                createStaff?.Invoke(__value7);
             }
-            else if (IsUpdateStaff)
+            else if (UpdateStaff is { } __value8)
             {
-                updateStaff?.Invoke(UpdateStaff!);
+                updateStaff?.Invoke(__value8);
             }
-            else if (IsDeleteStaff)
+            else if (DeleteStaff is { } __value9)
             {
-                deleteStaff?.Invoke(DeleteStaff!);
+                deleteStaff?.Invoke(__value9);
             }
-            else if (IsListAssets)
+            else if (ListAssets is { } __value10)
             {
-                listAssets?.Invoke(ListAssets!);
+                listAssets?.Invoke(__value10);
             }
-            else if (IsCreateAsset)
+            else if (CreateAsset is { } __value11)
             {
-                createAsset?.Invoke(CreateAsset!);
+                createAsset?.Invoke(__value11);
             }
-            else if (IsUpdateAsset)
+            else if (UpdateAsset is { } __value12)
             {
-                updateAsset?.Invoke(UpdateAsset!);
+                updateAsset?.Invoke(__value12);
             }
-            else if (IsDeleteAsset)
+            else if (DeleteAsset is { } __value13)
             {
-                deleteAsset?.Invoke(DeleteAsset!);
+                deleteAsset?.Invoke(__value13);
             }
-            else if (IsListServices)
+            else if (ListServices is { } __value14)
             {
-                listServices?.Invoke(ListServices!);
+                listServices?.Invoke(__value14);
             }
-            else if (IsCreateService)
+            else if (CreateService is { } __value15)
             {
-                createService?.Invoke(CreateService!);
+                createService?.Invoke(__value15);
             }
-            else if (IsUpdateService)
+            else if (UpdateService is { } __value16)
             {
-                updateService?.Invoke(UpdateService!);
+                updateService?.Invoke(__value16);
             }
-            else if (IsDeleteService)
+            else if (DeleteService is { } __value17)
             {
-                deleteService?.Invoke(DeleteService!);
+                deleteService?.Invoke(__value17);
             }
-            else if (IsListProducts)
+            else if (ListProducts is { } __value18)
             {
-                listProducts?.Invoke(ListProducts!);
+                listProducts?.Invoke(__value18);
             }
-            else if (IsCreateProduct)
+            else if (CreateProduct is { } __value19)
             {
-                createProduct?.Invoke(CreateProduct!);
+                createProduct?.Invoke(__value19);
             }
-            else if (IsUpdateProduct)
+            else if (UpdateProduct is { } __value20)
             {
-                updateProduct?.Invoke(UpdateProduct!);
+                updateProduct?.Invoke(__value20);
             }
-            else if (IsDeleteProduct)
+            else if (DeleteProduct is { } __value21)
             {
-                deleteProduct?.Invoke(DeleteProduct!);
+                deleteProduct?.Invoke(__value21);
             }
-            else if (IsCheckServiceAvailability)
+            else if (CheckServiceAvailability is { } __value22)
             {
-                checkServiceAvailability?.Invoke(CheckServiceAvailability!);
+                checkServiceAvailability?.Invoke(__value22);
             }
-            else if (IsCreateClientAppointment)
+            else if (CreateClientAppointment is { } __value23)
             {
-                createClientAppointment?.Invoke(CreateClientAppointment!);
+                createClientAppointment?.Invoke(__value23);
             }
-            else if (IsGetClientAppointments)
+            else if (GetClientAppointments is { } __value24)
             {
-                getClientAppointments?.Invoke(GetClientAppointments!);
+                getClientAppointments?.Invoke(__value24);
             }
-            else if (IsListCalendarEvents)
+            else if (ListCalendarEvents is { } __value25)
             {
-                listCalendarEvents?.Invoke(ListCalendarEvents!);
+                listCalendarEvents?.Invoke(__value25);
             }
-            else if (IsUpdateCalendarEvent)
+            else if (UpdateCalendarEvent is { } __value26)
             {
-                updateCalendarEvent?.Invoke(UpdateCalendarEvent!);
+                updateCalendarEvent?.Invoke(__value26);
             }
-            else if (IsDeleteCalendarEvent)
+            else if (DeleteCalendarEvent is { } __value27)
             {
-                deleteCalendarEvent?.Invoke(DeleteCalendarEvent!);
+                deleteCalendarEvent?.Invoke(__value27);
             }
-            else if (IsListRentalServices)
+            else if (ListRentalServices is { } __value28)
             {
-                listRentalServices?.Invoke(ListRentalServices!);
+                listRentalServices?.Invoke(__value28);
             }
-            else if (IsCheckRentalAvailability)
+            else if (CheckRentalAvailability is { } __value29)
             {
-                checkRentalAvailability?.Invoke(CheckRentalAvailability!);
+                checkRentalAvailability?.Invoke(__value29);
             }
-            else if (IsCreateRentalBooking)
+            else if (CreateRentalBooking is { } __value30)
             {
-                createRentalBooking?.Invoke(CreateRentalBooking!);
+                createRentalBooking?.Invoke(__value30);
             }
         }
 

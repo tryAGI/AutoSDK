@@ -1,4 +1,4 @@
-﻿//HintName: G.Models.IngestionUsage.g.cs
+//HintName: G.Models.IngestionUsage.g.cs
 #pragma warning disable CS0618 // Type or member is obsolete
 
 #nullable enable
@@ -43,8 +43,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.Usage PickUsage() => IsUsage
-            ? Usage!
+        public global::G.Usage PickUsage() => Usage is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Usage' but the value was {ToString()}.");
 
         /// <summary>
@@ -80,8 +80,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.OpenAIUsage PickOpenAIUsage() => IsOpenAIUsage
-            ? OpenAIUsage!
+        public global::G.OpenAIUsage PickOpenAIUsage() => OpenAIUsage is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'OpenAIUsage' but the value was {ToString()}.");
         /// <summary>
         /// 
@@ -178,13 +178,13 @@ namespace G
                 Validate();
             }
 
-            if (IsUsage && usage != null)
+            if (Usage is { } __value0 && usage != null)
             {
-                return usage(Usage!);
+                return usage(__value0);
             }
-            else if (IsOpenAIUsage && openAIUsage != null)
+            else if (OpenAIUsage is { } __value1 && openAIUsage != null)
             {
-                return openAIUsage(OpenAIUsage!);
+                return openAIUsage(__value1);
             }
 
             return default(TResult);
@@ -204,13 +204,13 @@ namespace G
                 Validate();
             }
 
-            if (IsUsage)
+            if (Usage is { } __value0)
             {
-                usage?.Invoke(Usage!);
+                usage?.Invoke(__value0);
             }
-            else if (IsOpenAIUsage)
+            else if (OpenAIUsage is { } __value1)
             {
-                openAIUsage?.Invoke(OpenAIUsage!);
+                openAIUsage?.Invoke(__value1);
             }
         }
 
@@ -227,13 +227,13 @@ namespace G
                 Validate();
             }
 
-            if (IsUsage)
+            if (Usage is { } __value0)
             {
-                usage?.Invoke(Usage!);
+                usage?.Invoke(__value0);
             }
-            else if (IsOpenAIUsage)
+            else if (OpenAIUsage is { } __value1)
             {
-                openAIUsage?.Invoke(OpenAIUsage!);
+                openAIUsage?.Invoke(__value1);
             }
         }
 

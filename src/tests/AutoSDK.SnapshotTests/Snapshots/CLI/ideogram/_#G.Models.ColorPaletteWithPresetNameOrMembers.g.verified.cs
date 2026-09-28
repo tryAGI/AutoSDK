@@ -1,4 +1,4 @@
-﻿//HintName: G.Models.ColorPaletteWithPresetNameOrMembers.g.cs
+//HintName: G.Models.ColorPaletteWithPresetNameOrMembers.g.cs
 #pragma warning disable CS0618 // Type or member is obsolete
 
 #nullable enable
@@ -43,8 +43,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.ColorPaletteWithPresetName PickColorPaletteWithPresetName() => IsColorPaletteWithPresetName
-            ? ColorPaletteWithPresetName!
+        public global::G.ColorPaletteWithPresetName PickColorPaletteWithPresetName() => ColorPaletteWithPresetName is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'ColorPaletteWithPresetName' but the value was {ToString()}.");
 
         /// <summary>
@@ -80,8 +80,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.ColorPaletteWithMembers PickColorPaletteWithMembers() => IsColorPaletteWithMembers
-            ? ColorPaletteWithMembers!
+        public global::G.ColorPaletteWithMembers PickColorPaletteWithMembers() => ColorPaletteWithMembers is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'ColorPaletteWithMembers' but the value was {ToString()}.");
         /// <summary>
         /// 
@@ -178,13 +178,13 @@ namespace G
                 Validate();
             }
 
-            if (IsColorPaletteWithPresetName && colorPaletteWithPresetName != null)
+            if (ColorPaletteWithPresetName is { } __value0 && colorPaletteWithPresetName != null)
             {
-                return colorPaletteWithPresetName(ColorPaletteWithPresetName!);
+                return colorPaletteWithPresetName(__value0);
             }
-            else if (IsColorPaletteWithMembers && colorPaletteWithMembers != null)
+            else if (ColorPaletteWithMembers is { } __value1 && colorPaletteWithMembers != null)
             {
-                return colorPaletteWithMembers(ColorPaletteWithMembers!);
+                return colorPaletteWithMembers(__value1);
             }
 
             return default(TResult);
@@ -204,13 +204,13 @@ namespace G
                 Validate();
             }
 
-            if (IsColorPaletteWithPresetName)
+            if (ColorPaletteWithPresetName is { } __value0)
             {
-                colorPaletteWithPresetName?.Invoke(ColorPaletteWithPresetName!);
+                colorPaletteWithPresetName?.Invoke(__value0);
             }
-            else if (IsColorPaletteWithMembers)
+            else if (ColorPaletteWithMembers is { } __value1)
             {
-                colorPaletteWithMembers?.Invoke(ColorPaletteWithMembers!);
+                colorPaletteWithMembers?.Invoke(__value1);
             }
         }
 
@@ -227,13 +227,13 @@ namespace G
                 Validate();
             }
 
-            if (IsColorPaletteWithPresetName)
+            if (ColorPaletteWithPresetName is { } __value0)
             {
-                colorPaletteWithPresetName?.Invoke(ColorPaletteWithPresetName!);
+                colorPaletteWithPresetName?.Invoke(__value0);
             }
-            else if (IsColorPaletteWithMembers)
+            else if (ColorPaletteWithMembers is { } __value1)
             {
-                colorPaletteWithMembers?.Invoke(ColorPaletteWithMembers!);
+                colorPaletteWithMembers?.Invoke(__value1);
             }
         }
 

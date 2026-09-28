@@ -800,7 +800,7 @@ namespace {endPoint.Settings.Namespace}
             }}
 
             return await {companion.SiblingPollingMethodName}(
-                {companion.SiblingIdParameterName}: __resourceId!,
+                {companion.SiblingIdParameterName}: __resourceId,
                 pollingOptions: pollingOptions,
                 requestOptions: requestOptions,
                 cancellationToken: cancellationToken).ConfigureAwait(false);
@@ -1120,7 +1120,7 @@ namespace {endPoint.Settings.Namespace}
                                 pathTemplate: {Context.PathTemplateExpression},
                                 httpMethod: {Context.HttpMethodExpression},
                                 baseUri: BaseUri,
-                                request: {RequestVariableName}!,
+                                request: {RequestVariableName} ?? throw new global::System.InvalidOperationException(""The HTTP request was not created before invoking a request hook.""),
                                 response: {ResponseExpression},
                                 exception: {ExceptionExpression},
                                 clientOptions: Options,
@@ -1183,9 +1183,8 @@ namespace {endPoint.Settings.Namespace}
 
     private static string GeneratePrepareRequestParameterArgument(MethodParameter parameter)
     {
-        return !parameter.Type.CSharpType.TrimEnd().EndsWith("?", StringComparison.Ordinal)
-            ? $"{parameter.ParameterName}!"
-            : parameter.ParameterName;
+        // The generated method signature already carries the parameter's nullable contract.
+        return parameter.ParameterName;
     }
 
     private static void AppendMethodInvocationArguments(

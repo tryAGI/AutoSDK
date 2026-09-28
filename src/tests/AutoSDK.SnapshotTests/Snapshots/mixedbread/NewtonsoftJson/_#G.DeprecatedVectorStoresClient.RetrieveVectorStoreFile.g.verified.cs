@@ -1,4 +1,4 @@
-﻿//HintName: G.DeprecatedVectorStoresClient.RetrieveVectorStoreFile.g.cs
+//HintName: G.DeprecatedVectorStoresClient.RetrieveVectorStoreFile.g.cs
 
 #nullable enable
 
@@ -208,8 +208,8 @@ namespace G
                 PrepareRetrieveVectorStoreFileRequest(
                     httpClient: HttpClient,
                     httpRequestMessage: __httpRequest,
-                    vectorStoreIdentifier: vectorStoreIdentifier!,
-                    fileId: fileId!,
+                    vectorStoreIdentifier: vectorStoreIdentifier,
+                    fileId: fileId,
                     returnChunks: returnChunks);
 
                 global::G.AutoSDKHttpRequestOptions.StampAuthorizationOverride(__httpRequest);
@@ -234,7 +234,7 @@ namespace G
                                 pathTemplate: "$\"/v1/vector_stores/{vectorStoreIdentifier}/files/{fileId}\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: null,
                                 exception: null,
                                 clientOptions: Options,
@@ -268,7 +268,7 @@ namespace G
                                 pathTemplate: "$\"/v1/vector_stores/{vectorStoreIdentifier}/files/{fileId}\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: null,
                                 exception: __exception,
                                 clientOptions: Options,
@@ -309,7 +309,7 @@ namespace G
                                 pathTemplate: "$\"/v1/vector_stores/{vectorStoreIdentifier}/files/{fileId}\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: __response,
                                 exception: null,
                                 clientOptions: Options,
@@ -357,7 +357,7 @@ namespace G
                                 pathTemplate: "$\"/v1/vector_stores/{vectorStoreIdentifier}/files/{fileId}\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: __response,
                                 exception: null,
                                 clientOptions: Options,
@@ -379,7 +379,7 @@ namespace G
                                 pathTemplate: "$\"/v1/vector_stores/{vectorStoreIdentifier}/files/{fileId}\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: __response,
                                 exception: null,
                                 clientOptions: Options,

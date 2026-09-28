@@ -1,4 +1,4 @@
-﻿//HintName: G.JsonConverters.AudioEnhancement.g.cs
+//HintName: G.JsonConverters.AudioEnhancement.g.cs
 #nullable enable
 #pragma warning disable CS0618 // Type or member is obsolete
 
@@ -100,7 +100,7 @@ namespace G.JsonConverters
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.DolbyEnhancement), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.DolbyEnhancement?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.DolbyEnhancement).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Dolby!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickDolby(), typeInfo);
             }
         }
     }

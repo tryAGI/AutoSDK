@@ -1,4 +1,4 @@
-﻿//HintName: G.Models.MaxOptimizationThreads.g.cs
+//HintName: G.Models.MaxOptimizationThreads.g.cs
 #pragma warning disable CS0618 // Type or member is obsolete
 
 #nullable enable
@@ -43,8 +43,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.MaxOptimizationThreadsSetting PickSetting() => IsSetting
-            ? Setting!.Value
+        public global::G.MaxOptimizationThreadsSetting PickSetting() => Setting is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Setting' but the value was {ToString()}.");
 
         /// <summary>
@@ -80,8 +80,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public int PickMaxOptimizationThreadsVariant2() => IsMaxOptimizationThreadsVariant2
-            ? MaxOptimizationThreadsVariant2!.Value
+        public int PickMaxOptimizationThreadsVariant2() => MaxOptimizationThreadsVariant2 is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'MaxOptimizationThreadsVariant2' but the value was {ToString()}.");
         /// <summary>
         /// 
@@ -178,13 +178,13 @@ namespace G
                 Validate();
             }
 
-            if (IsSetting && setting != null)
+            if (Setting is { } __value0 && setting != null)
             {
-                return setting(Setting!);
+                return setting(__value0);
             }
-            else if (IsMaxOptimizationThreadsVariant2 && maxOptimizationThreadsVariant2 != null)
+            else if (MaxOptimizationThreadsVariant2 is { } __value1 && maxOptimizationThreadsVariant2 != null)
             {
-                return maxOptimizationThreadsVariant2(MaxOptimizationThreadsVariant2!);
+                return maxOptimizationThreadsVariant2(__value1);
             }
 
             return default(TResult);
@@ -204,13 +204,13 @@ namespace G
                 Validate();
             }
 
-            if (IsSetting)
+            if (Setting is { } __value0)
             {
-                setting?.Invoke(Setting!);
+                setting?.Invoke(__value0);
             }
-            else if (IsMaxOptimizationThreadsVariant2)
+            else if (MaxOptimizationThreadsVariant2 is { } __value1)
             {
-                maxOptimizationThreadsVariant2?.Invoke(MaxOptimizationThreadsVariant2!);
+                maxOptimizationThreadsVariant2?.Invoke(__value1);
             }
         }
 
@@ -227,13 +227,13 @@ namespace G
                 Validate();
             }
 
-            if (IsSetting)
+            if (Setting is { } __value0)
             {
-                setting?.Invoke(Setting!);
+                setting?.Invoke(__value0);
             }
-            else if (IsMaxOptimizationThreadsVariant2)
+            else if (MaxOptimizationThreadsVariant2 is { } __value1)
             {
-                maxOptimizationThreadsVariant2?.Invoke(MaxOptimizationThreadsVariant2!);
+                maxOptimizationThreadsVariant2?.Invoke(__value1);
             }
         }
 

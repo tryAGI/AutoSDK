@@ -1,4 +1,4 @@
-﻿//HintName: G.FeedbackClient.CreateFeedbackWithTokenGet.g.cs
+//HintName: G.FeedbackClient.CreateFeedbackWithTokenGet.g.cs
 
 #nullable enable
 
@@ -143,7 +143,7 @@ namespace G
                 PrepareCreateFeedbackWithTokenGetRequest(
                     httpClient: HttpClient,
                     httpRequestMessage: __httpRequest,
-                    token: token!,
+                    token: token,
                     score: score,
                     value: value,
                     comment: comment,
@@ -169,7 +169,7 @@ namespace G
                                 pathTemplate: "$\"/api/v1/feedback/tokens/{token}\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: null,
                                 exception: null,
                                 clientOptions: Options,
@@ -203,7 +203,7 @@ namespace G
                                 pathTemplate: "$\"/api/v1/feedback/tokens/{token}\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: null,
                                 exception: __exception,
                                 clientOptions: Options,
@@ -244,7 +244,7 @@ namespace G
                                 pathTemplate: "$\"/api/v1/feedback/tokens/{token}\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: __response,
                                 exception: null,
                                 clientOptions: Options,
@@ -292,7 +292,7 @@ namespace G
                                 pathTemplate: "$\"/api/v1/feedback/tokens/{token}\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: __response,
                                 exception: null,
                                 clientOptions: Options,
@@ -314,7 +314,7 @@ namespace G
                                 pathTemplate: "$\"/api/v1/feedback/tokens/{token}\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: __response,
                                 exception: null,
                                 clientOptions: Options,

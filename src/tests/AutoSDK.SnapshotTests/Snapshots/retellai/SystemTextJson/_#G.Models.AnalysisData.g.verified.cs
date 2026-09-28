@@ -1,4 +1,4 @@
-﻿//HintName: G.Models.AnalysisData.g.cs
+//HintName: G.Models.AnalysisData.g.cs
 #pragma warning disable CS0618 // Type or member is obsolete
 
 #nullable enable
@@ -43,8 +43,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.StringAnalysisData PickString() => IsString
-            ? String!
+        public global::G.StringAnalysisData PickString() => String is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'String' but the value was {ToString()}.");
 
         /// <summary>
@@ -80,8 +80,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.EnumAnalysisData PickEnum() => IsEnum
-            ? Enum!
+        public global::G.EnumAnalysisData PickEnum() => Enum is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Enum' but the value was {ToString()}.");
 
         /// <summary>
@@ -117,8 +117,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.BooleanAnalysisData PickBoolean() => IsBoolean
-            ? Boolean!
+        public global::G.BooleanAnalysisData PickBoolean() => Boolean is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Boolean' but the value was {ToString()}.");
 
         /// <summary>
@@ -154,8 +154,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.NumberAnalysisData PickNumber() => IsNumber
-            ? Number!
+        public global::G.NumberAnalysisData PickNumber() => Number is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Number' but the value was {ToString()}.");
         /// <summary>
         /// 
@@ -308,21 +308,21 @@ namespace G
                 Validate();
             }
 
-            if (IsString && @string != null)
+            if (String is { } __value0 && @string != null)
             {
-                return @string(String!);
+                return @string(__value0);
             }
-            else if (IsEnum && @enum != null)
+            else if (Enum is { } __value1 && @enum != null)
             {
-                return @enum(Enum!);
+                return @enum(__value1);
             }
-            else if (IsBoolean && boolean != null)
+            else if (Boolean is { } __value2 && boolean != null)
             {
-                return boolean(Boolean!);
+                return boolean(__value2);
             }
-            else if (IsNumber && number != null)
+            else if (Number is { } __value3 && number != null)
             {
-                return number(Number!);
+                return number(__value3);
             }
 
             return default(TResult);
@@ -346,21 +346,21 @@ namespace G
                 Validate();
             }
 
-            if (IsString)
+            if (String is { } __value0)
             {
-                @string?.Invoke(String!);
+                @string?.Invoke(__value0);
             }
-            else if (IsEnum)
+            else if (Enum is { } __value1)
             {
-                @enum?.Invoke(Enum!);
+                @enum?.Invoke(__value1);
             }
-            else if (IsBoolean)
+            else if (Boolean is { } __value2)
             {
-                boolean?.Invoke(Boolean!);
+                boolean?.Invoke(__value2);
             }
-            else if (IsNumber)
+            else if (Number is { } __value3)
             {
-                number?.Invoke(Number!);
+                number?.Invoke(__value3);
             }
         }
 
@@ -379,21 +379,21 @@ namespace G
                 Validate();
             }
 
-            if (IsString)
+            if (String is { } __value0)
             {
-                @string?.Invoke(String!);
+                @string?.Invoke(__value0);
             }
-            else if (IsEnum)
+            else if (Enum is { } __value1)
             {
-                @enum?.Invoke(Enum!);
+                @enum?.Invoke(__value1);
             }
-            else if (IsBoolean)
+            else if (Boolean is { } __value2)
             {
-                boolean?.Invoke(Boolean!);
+                boolean?.Invoke(__value2);
             }
-            else if (IsNumber)
+            else if (Number is { } __value3)
             {
-                number?.Invoke(Number!);
+                number?.Invoke(__value3);
             }
         }
 

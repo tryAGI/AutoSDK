@@ -253,7 +253,7 @@ namespace G
                 PrepareListRequest(
                     httpClient: HttpClient,
                     httpRequestMessage: __httpRequest,
-                    indexId: indexId!,
+                    indexId: indexId,
                     page: page,
                     pageLimit: pageLimit,
                     sortBy: sortBy,
@@ -267,7 +267,7 @@ namespace G
                     createdAt: createdAt,
                     updatedAt: updatedAt,
                     userMetadata: userMetadata,
-                    xApiKey: xApiKey!);
+                    xApiKey: xApiKey);
 
                 return __httpRequest;
             }
@@ -289,7 +289,7 @@ namespace G
                                 pathTemplate: "$\"/indexes/{indexId}/videos\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: null,
                                 exception: null,
                                 clientOptions: Options,
@@ -323,7 +323,7 @@ namespace G
                                 pathTemplate: "$\"/indexes/{indexId}/videos\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: null,
                                 exception: __exception,
                                 clientOptions: Options,
@@ -364,7 +364,7 @@ namespace G
                                 pathTemplate: "$\"/indexes/{indexId}/videos\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: __response,
                                 exception: null,
                                 clientOptions: Options,
@@ -412,7 +412,7 @@ namespace G
                                 pathTemplate: "$\"/indexes/{indexId}/videos\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: __response,
                                 exception: null,
                                 clientOptions: Options,
@@ -434,7 +434,7 @@ namespace G
                                 pathTemplate: "$\"/indexes/{indexId}/videos\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: __response,
                                 exception: null,
                                 clientOptions: Options,

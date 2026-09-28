@@ -1,4 +1,4 @@
-﻿//HintName: G.Models.EmbeddingsPostRequestBodyContentApplicationJsonSchemaInput.g.cs
+//HintName: G.Models.EmbeddingsPostRequestBodyContentApplicationJsonSchemaInput.g.cs
 #pragma warning disable CS0618 // Type or member is obsolete
 
 #nullable enable
@@ -43,8 +43,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public string PickEmbeddingsPostRequestBodyContentApplicationJsonSchemaInputVariant1() => IsEmbeddingsPostRequestBodyContentApplicationJsonSchemaInputVariant1
-            ? EmbeddingsPostRequestBodyContentApplicationJsonSchemaInputVariant1!
+        public string PickEmbeddingsPostRequestBodyContentApplicationJsonSchemaInputVariant1() => EmbeddingsPostRequestBodyContentApplicationJsonSchemaInputVariant1 is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'EmbeddingsPostRequestBodyContentApplicationJsonSchemaInputVariant1' but the value was {ToString()}.");
 
         /// <summary>
@@ -80,8 +80,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<string> PickEmbeddingsPostRequestBodyContentApplicationJsonSchemaInputVariant2() => IsEmbeddingsPostRequestBodyContentApplicationJsonSchemaInputVariant2
-            ? EmbeddingsPostRequestBodyContentApplicationJsonSchemaInputVariant2!
+        public global::System.Collections.Generic.IList<string> PickEmbeddingsPostRequestBodyContentApplicationJsonSchemaInputVariant2() => EmbeddingsPostRequestBodyContentApplicationJsonSchemaInputVariant2 is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'EmbeddingsPostRequestBodyContentApplicationJsonSchemaInputVariant2' but the value was {ToString()}.");
 
         /// <summary>
@@ -117,8 +117,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<double> PickEmbeddingsPostRequestBodyContentApplicationJsonSchemaInputVariant3() => IsEmbeddingsPostRequestBodyContentApplicationJsonSchemaInputVariant3
-            ? EmbeddingsPostRequestBodyContentApplicationJsonSchemaInputVariant3!
+        public global::System.Collections.Generic.IList<double> PickEmbeddingsPostRequestBodyContentApplicationJsonSchemaInputVariant3() => EmbeddingsPostRequestBodyContentApplicationJsonSchemaInputVariant3 is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'EmbeddingsPostRequestBodyContentApplicationJsonSchemaInputVariant3' but the value was {ToString()}.");
 
         /// <summary>
@@ -154,8 +154,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::System.Collections.Generic.IList<double>> PickEmbeddingsPostRequestBodyContentApplicationJsonSchemaInputVariant4() => IsEmbeddingsPostRequestBodyContentApplicationJsonSchemaInputVariant4
-            ? EmbeddingsPostRequestBodyContentApplicationJsonSchemaInputVariant4!
+        public global::System.Collections.Generic.IList<global::System.Collections.Generic.IList<double>> PickEmbeddingsPostRequestBodyContentApplicationJsonSchemaInputVariant4() => EmbeddingsPostRequestBodyContentApplicationJsonSchemaInputVariant4 is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'EmbeddingsPostRequestBodyContentApplicationJsonSchemaInputVariant4' but the value was {ToString()}.");
 
         /// <summary>
@@ -191,8 +191,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::G.EmbeddingsPostRequestBodyContentApplicationJsonSchemaInputOneOf4Items> PickEmbeddingsPostRequestBodyContentApplicationJsonSchemaInput4() => IsEmbeddingsPostRequestBodyContentApplicationJsonSchemaInput4
-            ? EmbeddingsPostRequestBodyContentApplicationJsonSchemaInput4!
+        public global::System.Collections.Generic.IList<global::G.EmbeddingsPostRequestBodyContentApplicationJsonSchemaInputOneOf4Items> PickEmbeddingsPostRequestBodyContentApplicationJsonSchemaInput4() => EmbeddingsPostRequestBodyContentApplicationJsonSchemaInput4 is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'EmbeddingsPostRequestBodyContentApplicationJsonSchemaInput4' but the value was {ToString()}.");
         /// <summary>
         /// 
@@ -281,25 +281,25 @@ namespace G
                 Validate();
             }
 
-            if (IsEmbeddingsPostRequestBodyContentApplicationJsonSchemaInputVariant1 && embeddingsPostRequestBodyContentApplicationJsonSchemaInputVariant1 != null)
+            if (EmbeddingsPostRequestBodyContentApplicationJsonSchemaInputVariant1 is { } __value0 && embeddingsPostRequestBodyContentApplicationJsonSchemaInputVariant1 != null)
             {
-                return embeddingsPostRequestBodyContentApplicationJsonSchemaInputVariant1(EmbeddingsPostRequestBodyContentApplicationJsonSchemaInputVariant1!);
+                return embeddingsPostRequestBodyContentApplicationJsonSchemaInputVariant1(__value0);
             }
-            else if (IsEmbeddingsPostRequestBodyContentApplicationJsonSchemaInputVariant2 && embeddingsPostRequestBodyContentApplicationJsonSchemaInputVariant2 != null)
+            else if (EmbeddingsPostRequestBodyContentApplicationJsonSchemaInputVariant2 is { } __value1 && embeddingsPostRequestBodyContentApplicationJsonSchemaInputVariant2 != null)
             {
-                return embeddingsPostRequestBodyContentApplicationJsonSchemaInputVariant2(EmbeddingsPostRequestBodyContentApplicationJsonSchemaInputVariant2!);
+                return embeddingsPostRequestBodyContentApplicationJsonSchemaInputVariant2(__value1);
             }
-            else if (IsEmbeddingsPostRequestBodyContentApplicationJsonSchemaInputVariant3 && embeddingsPostRequestBodyContentApplicationJsonSchemaInputVariant3 != null)
+            else if (EmbeddingsPostRequestBodyContentApplicationJsonSchemaInputVariant3 is { } __value2 && embeddingsPostRequestBodyContentApplicationJsonSchemaInputVariant3 != null)
             {
-                return embeddingsPostRequestBodyContentApplicationJsonSchemaInputVariant3(EmbeddingsPostRequestBodyContentApplicationJsonSchemaInputVariant3!);
+                return embeddingsPostRequestBodyContentApplicationJsonSchemaInputVariant3(__value2);
             }
-            else if (IsEmbeddingsPostRequestBodyContentApplicationJsonSchemaInputVariant4 && embeddingsPostRequestBodyContentApplicationJsonSchemaInputVariant4 != null)
+            else if (EmbeddingsPostRequestBodyContentApplicationJsonSchemaInputVariant4 is { } __value3 && embeddingsPostRequestBodyContentApplicationJsonSchemaInputVariant4 != null)
             {
-                return embeddingsPostRequestBodyContentApplicationJsonSchemaInputVariant4(EmbeddingsPostRequestBodyContentApplicationJsonSchemaInputVariant4!);
+                return embeddingsPostRequestBodyContentApplicationJsonSchemaInputVariant4(__value3);
             }
-            else if (IsEmbeddingsPostRequestBodyContentApplicationJsonSchemaInput4 && embeddingsPostRequestBodyContentApplicationJsonSchemaInput4 != null)
+            else if (EmbeddingsPostRequestBodyContentApplicationJsonSchemaInput4 is { } __value4 && embeddingsPostRequestBodyContentApplicationJsonSchemaInput4 != null)
             {
-                return embeddingsPostRequestBodyContentApplicationJsonSchemaInput4(EmbeddingsPostRequestBodyContentApplicationJsonSchemaInput4!);
+                return embeddingsPostRequestBodyContentApplicationJsonSchemaInput4(__value4);
             }
 
             return default(TResult);
@@ -325,25 +325,25 @@ namespace G
                 Validate();
             }
 
-            if (IsEmbeddingsPostRequestBodyContentApplicationJsonSchemaInputVariant1)
+            if (EmbeddingsPostRequestBodyContentApplicationJsonSchemaInputVariant1 is { } __value0)
             {
-                embeddingsPostRequestBodyContentApplicationJsonSchemaInputVariant1?.Invoke(EmbeddingsPostRequestBodyContentApplicationJsonSchemaInputVariant1!);
+                embeddingsPostRequestBodyContentApplicationJsonSchemaInputVariant1?.Invoke(__value0);
             }
-            else if (IsEmbeddingsPostRequestBodyContentApplicationJsonSchemaInputVariant2)
+            else if (EmbeddingsPostRequestBodyContentApplicationJsonSchemaInputVariant2 is { } __value1)
             {
-                embeddingsPostRequestBodyContentApplicationJsonSchemaInputVariant2?.Invoke(EmbeddingsPostRequestBodyContentApplicationJsonSchemaInputVariant2!);
+                embeddingsPostRequestBodyContentApplicationJsonSchemaInputVariant2?.Invoke(__value1);
             }
-            else if (IsEmbeddingsPostRequestBodyContentApplicationJsonSchemaInputVariant3)
+            else if (EmbeddingsPostRequestBodyContentApplicationJsonSchemaInputVariant3 is { } __value2)
             {
-                embeddingsPostRequestBodyContentApplicationJsonSchemaInputVariant3?.Invoke(EmbeddingsPostRequestBodyContentApplicationJsonSchemaInputVariant3!);
+                embeddingsPostRequestBodyContentApplicationJsonSchemaInputVariant3?.Invoke(__value2);
             }
-            else if (IsEmbeddingsPostRequestBodyContentApplicationJsonSchemaInputVariant4)
+            else if (EmbeddingsPostRequestBodyContentApplicationJsonSchemaInputVariant4 is { } __value3)
             {
-                embeddingsPostRequestBodyContentApplicationJsonSchemaInputVariant4?.Invoke(EmbeddingsPostRequestBodyContentApplicationJsonSchemaInputVariant4!);
+                embeddingsPostRequestBodyContentApplicationJsonSchemaInputVariant4?.Invoke(__value3);
             }
-            else if (IsEmbeddingsPostRequestBodyContentApplicationJsonSchemaInput4)
+            else if (EmbeddingsPostRequestBodyContentApplicationJsonSchemaInput4 is { } __value4)
             {
-                embeddingsPostRequestBodyContentApplicationJsonSchemaInput4?.Invoke(EmbeddingsPostRequestBodyContentApplicationJsonSchemaInput4!);
+                embeddingsPostRequestBodyContentApplicationJsonSchemaInput4?.Invoke(__value4);
             }
         }
 
@@ -363,25 +363,25 @@ namespace G
                 Validate();
             }
 
-            if (IsEmbeddingsPostRequestBodyContentApplicationJsonSchemaInputVariant1)
+            if (EmbeddingsPostRequestBodyContentApplicationJsonSchemaInputVariant1 is { } __value0)
             {
-                embeddingsPostRequestBodyContentApplicationJsonSchemaInputVariant1?.Invoke(EmbeddingsPostRequestBodyContentApplicationJsonSchemaInputVariant1!);
+                embeddingsPostRequestBodyContentApplicationJsonSchemaInputVariant1?.Invoke(__value0);
             }
-            else if (IsEmbeddingsPostRequestBodyContentApplicationJsonSchemaInputVariant2)
+            else if (EmbeddingsPostRequestBodyContentApplicationJsonSchemaInputVariant2 is { } __value1)
             {
-                embeddingsPostRequestBodyContentApplicationJsonSchemaInputVariant2?.Invoke(EmbeddingsPostRequestBodyContentApplicationJsonSchemaInputVariant2!);
+                embeddingsPostRequestBodyContentApplicationJsonSchemaInputVariant2?.Invoke(__value1);
             }
-            else if (IsEmbeddingsPostRequestBodyContentApplicationJsonSchemaInputVariant3)
+            else if (EmbeddingsPostRequestBodyContentApplicationJsonSchemaInputVariant3 is { } __value2)
             {
-                embeddingsPostRequestBodyContentApplicationJsonSchemaInputVariant3?.Invoke(EmbeddingsPostRequestBodyContentApplicationJsonSchemaInputVariant3!);
+                embeddingsPostRequestBodyContentApplicationJsonSchemaInputVariant3?.Invoke(__value2);
             }
-            else if (IsEmbeddingsPostRequestBodyContentApplicationJsonSchemaInputVariant4)
+            else if (EmbeddingsPostRequestBodyContentApplicationJsonSchemaInputVariant4 is { } __value3)
             {
-                embeddingsPostRequestBodyContentApplicationJsonSchemaInputVariant4?.Invoke(EmbeddingsPostRequestBodyContentApplicationJsonSchemaInputVariant4!);
+                embeddingsPostRequestBodyContentApplicationJsonSchemaInputVariant4?.Invoke(__value3);
             }
-            else if (IsEmbeddingsPostRequestBodyContentApplicationJsonSchemaInput4)
+            else if (EmbeddingsPostRequestBodyContentApplicationJsonSchemaInput4 is { } __value4)
             {
-                embeddingsPostRequestBodyContentApplicationJsonSchemaInput4?.Invoke(EmbeddingsPostRequestBodyContentApplicationJsonSchemaInput4!);
+                embeddingsPostRequestBodyContentApplicationJsonSchemaInput4?.Invoke(__value4);
             }
         }
 

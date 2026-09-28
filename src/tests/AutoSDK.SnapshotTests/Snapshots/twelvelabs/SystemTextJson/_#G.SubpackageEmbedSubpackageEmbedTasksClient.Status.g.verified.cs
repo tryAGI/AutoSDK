@@ -1,4 +1,4 @@
-﻿//HintName: G.SubpackageEmbedSubpackageEmbedTasksClient.Status.g.cs
+//HintName: G.SubpackageEmbedSubpackageEmbedTasksClient.Status.g.cs
 
 #nullable enable
 
@@ -130,8 +130,8 @@ namespace G
                 PrepareStatusRequest(
                     httpClient: HttpClient,
                     httpRequestMessage: __httpRequest,
-                    taskId: taskId!,
-                    xApiKey: xApiKey!);
+                    taskId: taskId,
+                    xApiKey: xApiKey);
 
                 return __httpRequest;
             }
@@ -153,7 +153,7 @@ namespace G
                                 pathTemplate: "$\"/embed/tasks/{taskId}/status\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: null,
                                 exception: null,
                                 clientOptions: Options,
@@ -187,7 +187,7 @@ namespace G
                                 pathTemplate: "$\"/embed/tasks/{taskId}/status\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: null,
                                 exception: __exception,
                                 clientOptions: Options,
@@ -228,7 +228,7 @@ namespace G
                                 pathTemplate: "$\"/embed/tasks/{taskId}/status\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: __response,
                                 exception: null,
                                 clientOptions: Options,
@@ -276,7 +276,7 @@ namespace G
                                 pathTemplate: "$\"/embed/tasks/{taskId}/status\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: __response,
                                 exception: null,
                                 clientOptions: Options,
@@ -298,7 +298,7 @@ namespace G
                                 pathTemplate: "$\"/embed/tasks/{taskId}/status\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: __response,
                                 exception: null,
                                 clientOptions: Options,

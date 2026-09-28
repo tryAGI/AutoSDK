@@ -1,4 +1,4 @@
-﻿//HintName: G.SubpackageEntityCollectionsSubpackageEntityCollectionsEntitiesClient.CreateBulk.g.cs
+//HintName: G.SubpackageEntityCollectionsSubpackageEntityCollectionsEntitiesClient.CreateBulk.g.cs
 
 #nullable enable
 
@@ -135,8 +135,8 @@ namespace G
                 PrepareCreateBulkRequest(
                     httpClient: HttpClient,
                     httpRequestMessage: __httpRequest,
-                    entityCollectionId: entityCollectionId!,
-                    xApiKey: xApiKey!,
+                    entityCollectionId: entityCollectionId,
+                    xApiKey: xApiKey,
                     request: request);
 
                 return __httpRequest;
@@ -159,7 +159,7 @@ namespace G
                                 pathTemplate: "$\"/entity-collections/{entityCollectionId}/entities/bulk\"",
                                 httpMethod: "POST",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: null,
                                 exception: null,
                                 clientOptions: Options,
@@ -193,7 +193,7 @@ namespace G
                                 pathTemplate: "$\"/entity-collections/{entityCollectionId}/entities/bulk\"",
                                 httpMethod: "POST",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: null,
                                 exception: __exception,
                                 clientOptions: Options,
@@ -234,7 +234,7 @@ namespace G
                                 pathTemplate: "$\"/entity-collections/{entityCollectionId}/entities/bulk\"",
                                 httpMethod: "POST",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: __response,
                                 exception: null,
                                 clientOptions: Options,
@@ -282,7 +282,7 @@ namespace G
                                 pathTemplate: "$\"/entity-collections/{entityCollectionId}/entities/bulk\"",
                                 httpMethod: "POST",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: __response,
                                 exception: null,
                                 clientOptions: Options,
@@ -304,7 +304,7 @@ namespace G
                                 pathTemplate: "$\"/entity-collections/{entityCollectionId}/entities/bulk\"",
                                 httpMethod: "POST",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: __response,
                                 exception: null,
                                 clientOptions: Options,

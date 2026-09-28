@@ -1,4 +1,4 @@
-﻿//HintName: G.McpClient.GetMcpServersByServerIdInstances.g.cs
+//HintName: G.McpClient.GetMcpServersByServerIdInstances.g.cs
 
 #nullable enable
 
@@ -283,7 +283,7 @@ namespace G
                 PrepareGetMcpServersByServerIdInstancesRequest(
                     httpClient: HttpClient,
                     httpRequestMessage: __httpRequest,
-                    serverId: serverId!,
+                    serverId: serverId,
                     pageNo: pageNo,
                     limit: limit,
                     search: search,
@@ -312,7 +312,7 @@ namespace G
                                 pathTemplate: "$\"/api/v3/mcp/servers/{serverId}/instances\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: null,
                                 exception: null,
                                 clientOptions: Options,
@@ -346,7 +346,7 @@ namespace G
                                 pathTemplate: "$\"/api/v3/mcp/servers/{serverId}/instances\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: null,
                                 exception: __exception,
                                 clientOptions: Options,
@@ -387,7 +387,7 @@ namespace G
                                 pathTemplate: "$\"/api/v3/mcp/servers/{serverId}/instances\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: __response,
                                 exception: null,
                                 clientOptions: Options,
@@ -435,7 +435,7 @@ namespace G
                                 pathTemplate: "$\"/api/v3/mcp/servers/{serverId}/instances\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: __response,
                                 exception: null,
                                 clientOptions: Options,
@@ -457,7 +457,7 @@ namespace G
                                 pathTemplate: "$\"/api/v3/mcp/servers/{serverId}/instances\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: __response,
                                 exception: null,
                                 clientOptions: Options,

@@ -1,4 +1,4 @@
-﻿//HintName: G.ClusterClient.ListNodePools.g.cs
+//HintName: G.ClusterClient.ListNodePools.g.cs
 
 #nullable enable
 
@@ -176,7 +176,7 @@ namespace G
                 PrepareListNodePoolsRequest(
                     httpClient: HttpClient,
                     httpRequestMessage: __httpRequest,
-                    clusterId: clusterId!);
+                    clusterId: clusterId);
 
                 global::G.AutoSDKHttpRequestOptions.StampAuthorizationOverride(__httpRequest);
 
@@ -200,7 +200,7 @@ namespace G
                                 pathTemplate: "$\"/v4/clusters/{clusterId}/node-pools\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: null,
                                 exception: null,
                                 clientOptions: Options,
@@ -234,7 +234,7 @@ namespace G
                                 pathTemplate: "$\"/v4/clusters/{clusterId}/node-pools\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: null,
                                 exception: __exception,
                                 clientOptions: Options,
@@ -275,7 +275,7 @@ namespace G
                                 pathTemplate: "$\"/v4/clusters/{clusterId}/node-pools\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: __response,
                                 exception: null,
                                 clientOptions: Options,
@@ -323,7 +323,7 @@ namespace G
                                 pathTemplate: "$\"/v4/clusters/{clusterId}/node-pools\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: __response,
                                 exception: null,
                                 clientOptions: Options,
@@ -345,7 +345,7 @@ namespace G
                                 pathTemplate: "$\"/v4/clusters/{clusterId}/node-pools\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: __response,
                                 exception: null,
                                 clientOptions: Options,

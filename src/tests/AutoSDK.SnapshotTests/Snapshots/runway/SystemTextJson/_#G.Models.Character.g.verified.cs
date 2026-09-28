@@ -1,4 +1,4 @@
-﻿//HintName: G.Models.Character.g.cs
+//HintName: G.Models.Character.g.cs
 #pragma warning disable CS0618 // Type or member is obsolete
 
 #nullable enable
@@ -48,8 +48,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.CreateCharacterPerformanceRequestActTwoCharacterCharacterImage PickImage() => IsImage
-            ? Image!
+        public global::G.CreateCharacterPerformanceRequestActTwoCharacterCharacterImage PickImage() => Image is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Image' but the value was {ToString()}.");
 
         /// <summary>
@@ -85,8 +85,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.CreateCharacterPerformanceRequestActTwoCharacterCharacterVideo PickVideo() => IsVideo
-            ? Video!
+        public global::G.CreateCharacterPerformanceRequestActTwoCharacterCharacterVideo PickVideo() => Video is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Video' but the value was {ToString()}.");
         /// <summary>
         /// 
@@ -186,13 +186,13 @@ namespace G
                 Validate();
             }
 
-            if (IsImage && image != null)
+            if (Image is { } __value0 && image != null)
             {
-                return image(Image!);
+                return image(__value0);
             }
-            else if (IsVideo && video != null)
+            else if (Video is { } __value1 && video != null)
             {
-                return video(Video!);
+                return video(__value1);
             }
 
             return default(TResult);
@@ -212,13 +212,13 @@ namespace G
                 Validate();
             }
 
-            if (IsImage)
+            if (Image is { } __value0)
             {
-                image?.Invoke(Image!);
+                image?.Invoke(__value0);
             }
-            else if (IsVideo)
+            else if (Video is { } __value1)
             {
-                video?.Invoke(Video!);
+                video?.Invoke(__value1);
             }
         }
 
@@ -235,13 +235,13 @@ namespace G
                 Validate();
             }
 
-            if (IsImage)
+            if (Image is { } __value0)
             {
-                image?.Invoke(Image!);
+                image?.Invoke(__value0);
             }
-            else if (IsVideo)
+            else if (Video is { } __value1)
             {
-                video?.Invoke(Video!);
+                video?.Invoke(__value1);
             }
         }
 

@@ -1,4 +1,4 @@
-﻿//HintName: G.Models.DataEntry.g.cs
+//HintName: G.Models.DataEntry.g.cs
 #pragma warning disable CS0618 // Type or member is obsolete
 
 #nullable enable
@@ -43,8 +43,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.DataEntryVariant1 PickDataEntryVariant1() => IsDataEntryVariant1
-            ? DataEntryVariant1!
+        public global::G.DataEntryVariant1 PickDataEntryVariant1() => DataEntryVariant1 is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'DataEntryVariant1' but the value was {ToString()}.");
 
         /// <summary>
@@ -80,8 +80,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.DataEntryVariant2 PickDataEntryVariant2() => IsDataEntryVariant2
-            ? DataEntryVariant2!
+        public global::G.DataEntryVariant2 PickDataEntryVariant2() => DataEntryVariant2 is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'DataEntryVariant2' but the value was {ToString()}.");
 
         /// <summary>
@@ -117,8 +117,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.DataEntryVariant3 PickDataEntryVariant3() => IsDataEntryVariant3
-            ? DataEntryVariant3!
+        public global::G.DataEntryVariant3 PickDataEntryVariant3() => DataEntryVariant3 is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'DataEntryVariant3' but the value was {ToString()}.");
 
         /// <summary>
@@ -154,8 +154,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.DataEntryVariant4 PickDataEntryVariant4() => IsDataEntryVariant4
-            ? DataEntryVariant4!
+        public global::G.DataEntryVariant4 PickDataEntryVariant4() => DataEntryVariant4 is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'DataEntryVariant4' but the value was {ToString()}.");
         /// <summary>
         /// 
@@ -308,21 +308,21 @@ namespace G
                 Validate();
             }
 
-            if (IsDataEntryVariant1 && dataEntryVariant1 != null)
+            if (DataEntryVariant1 is { } __value0 && dataEntryVariant1 != null)
             {
-                return dataEntryVariant1(DataEntryVariant1!);
+                return dataEntryVariant1(__value0);
             }
-            else if (IsDataEntryVariant2 && dataEntryVariant2 != null)
+            else if (DataEntryVariant2 is { } __value1 && dataEntryVariant2 != null)
             {
-                return dataEntryVariant2(DataEntryVariant2!);
+                return dataEntryVariant2(__value1);
             }
-            else if (IsDataEntryVariant3 && dataEntryVariant3 != null)
+            else if (DataEntryVariant3 is { } __value2 && dataEntryVariant3 != null)
             {
-                return dataEntryVariant3(DataEntryVariant3!);
+                return dataEntryVariant3(__value2);
             }
-            else if (IsDataEntryVariant4 && dataEntryVariant4 != null)
+            else if (DataEntryVariant4 is { } __value3 && dataEntryVariant4 != null)
             {
-                return dataEntryVariant4(DataEntryVariant4!);
+                return dataEntryVariant4(__value3);
             }
 
             return default(TResult);
@@ -346,21 +346,21 @@ namespace G
                 Validate();
             }
 
-            if (IsDataEntryVariant1)
+            if (DataEntryVariant1 is { } __value0)
             {
-                dataEntryVariant1?.Invoke(DataEntryVariant1!);
+                dataEntryVariant1?.Invoke(__value0);
             }
-            else if (IsDataEntryVariant2)
+            else if (DataEntryVariant2 is { } __value1)
             {
-                dataEntryVariant2?.Invoke(DataEntryVariant2!);
+                dataEntryVariant2?.Invoke(__value1);
             }
-            else if (IsDataEntryVariant3)
+            else if (DataEntryVariant3 is { } __value2)
             {
-                dataEntryVariant3?.Invoke(DataEntryVariant3!);
+                dataEntryVariant3?.Invoke(__value2);
             }
-            else if (IsDataEntryVariant4)
+            else if (DataEntryVariant4 is { } __value3)
             {
-                dataEntryVariant4?.Invoke(DataEntryVariant4!);
+                dataEntryVariant4?.Invoke(__value3);
             }
         }
 
@@ -379,21 +379,21 @@ namespace G
                 Validate();
             }
 
-            if (IsDataEntryVariant1)
+            if (DataEntryVariant1 is { } __value0)
             {
-                dataEntryVariant1?.Invoke(DataEntryVariant1!);
+                dataEntryVariant1?.Invoke(__value0);
             }
-            else if (IsDataEntryVariant2)
+            else if (DataEntryVariant2 is { } __value1)
             {
-                dataEntryVariant2?.Invoke(DataEntryVariant2!);
+                dataEntryVariant2?.Invoke(__value1);
             }
-            else if (IsDataEntryVariant3)
+            else if (DataEntryVariant3 is { } __value2)
             {
-                dataEntryVariant3?.Invoke(DataEntryVariant3!);
+                dataEntryVariant3?.Invoke(__value2);
             }
-            else if (IsDataEntryVariant4)
+            else if (DataEntryVariant4 is { } __value3)
             {
-                dataEntryVariant4?.Invoke(DataEntryVariant4!);
+                dataEntryVariant4?.Invoke(__value3);
             }
         }
 

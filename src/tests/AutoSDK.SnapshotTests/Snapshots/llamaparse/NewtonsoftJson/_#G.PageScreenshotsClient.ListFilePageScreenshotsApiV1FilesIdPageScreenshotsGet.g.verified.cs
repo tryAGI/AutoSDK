@@ -1,4 +1,4 @@
-﻿//HintName: G.PageScreenshotsClient.ListFilePageScreenshotsApiV1FilesIdPageScreenshotsGet.g.cs
+//HintName: G.PageScreenshotsClient.ListFilePageScreenshotsApiV1FilesIdPageScreenshotsGet.g.cs
 
 #nullable enable
 
@@ -188,7 +188,7 @@ namespace G
                 PrepareListFilePageScreenshotsApiV1FilesIdPageScreenshotsGetRequest(
                     httpClient: HttpClient,
                     httpRequestMessage: __httpRequest,
-                    id: id!,
+                    id: id,
                     projectId: projectId,
                     organizationId: organizationId,
                     session: session);
@@ -215,7 +215,7 @@ namespace G
                                 pathTemplate: "$\"/api/v1/files/{id}/page_screenshots\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: null,
                                 exception: null,
                                 clientOptions: Options,
@@ -249,7 +249,7 @@ namespace G
                                 pathTemplate: "$\"/api/v1/files/{id}/page_screenshots\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: null,
                                 exception: __exception,
                                 clientOptions: Options,
@@ -290,7 +290,7 @@ namespace G
                                 pathTemplate: "$\"/api/v1/files/{id}/page_screenshots\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: __response,
                                 exception: null,
                                 clientOptions: Options,
@@ -338,7 +338,7 @@ namespace G
                                 pathTemplate: "$\"/api/v1/files/{id}/page_screenshots\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: __response,
                                 exception: null,
                                 clientOptions: Options,
@@ -360,7 +360,7 @@ namespace G
                                 pathTemplate: "$\"/api/v1/files/{id}/page_screenshots\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: __response,
                                 exception: null,
                                 clientOptions: Options,

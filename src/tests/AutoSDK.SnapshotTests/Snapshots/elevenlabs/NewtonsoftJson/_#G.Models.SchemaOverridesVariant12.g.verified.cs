@@ -1,4 +1,4 @@
-﻿//HintName: G.Models.SchemaOverridesVariant12.g.cs
+//HintName: G.Models.SchemaOverridesVariant12.g.cs
 #pragma warning disable CS0618 // Type or member is obsolete
 
 #nullable enable
@@ -48,8 +48,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.ConstantSchemaOverride PickConstant() => IsConstant
-            ? Constant!
+        public global::G.ConstantSchemaOverride PickConstant() => Constant is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Constant' but the value was {ToString()}.");
 
         /// <summary>
@@ -85,8 +85,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.DynamicVariableSchemaOverride PickDynamicVariable() => IsDynamicVariable
-            ? DynamicVariable!
+        public global::G.DynamicVariableSchemaOverride PickDynamicVariable() => DynamicVariable is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'DynamicVariable' but the value was {ToString()}.");
 
         /// <summary>
@@ -122,8 +122,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.LLMSchemaOverride PickLlm() => IsLlm
-            ? Llm!
+        public global::G.LLMSchemaOverride PickLlm() => Llm is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Llm' but the value was {ToString()}.");
         /// <summary>
         /// 
@@ -251,17 +251,17 @@ namespace G
                 Validate();
             }
 
-            if (IsConstant && constant != null)
+            if (Constant is { } __value0 && constant != null)
             {
-                return constant(Constant!);
+                return constant(__value0);
             }
-            else if (IsDynamicVariable && dynamicVariable != null)
+            else if (DynamicVariable is { } __value1 && dynamicVariable != null)
             {
-                return dynamicVariable(DynamicVariable!);
+                return dynamicVariable(__value1);
             }
-            else if (IsLlm && llm != null)
+            else if (Llm is { } __value2 && llm != null)
             {
-                return llm(Llm!);
+                return llm(__value2);
             }
 
             return default(TResult);
@@ -283,17 +283,17 @@ namespace G
                 Validate();
             }
 
-            if (IsConstant)
+            if (Constant is { } __value0)
             {
-                constant?.Invoke(Constant!);
+                constant?.Invoke(__value0);
             }
-            else if (IsDynamicVariable)
+            else if (DynamicVariable is { } __value1)
             {
-                dynamicVariable?.Invoke(DynamicVariable!);
+                dynamicVariable?.Invoke(__value1);
             }
-            else if (IsLlm)
+            else if (Llm is { } __value2)
             {
-                llm?.Invoke(Llm!);
+                llm?.Invoke(__value2);
             }
         }
 
@@ -311,17 +311,17 @@ namespace G
                 Validate();
             }
 
-            if (IsConstant)
+            if (Constant is { } __value0)
             {
-                constant?.Invoke(Constant!);
+                constant?.Invoke(__value0);
             }
-            else if (IsDynamicVariable)
+            else if (DynamicVariable is { } __value1)
             {
-                dynamicVariable?.Invoke(DynamicVariable!);
+                dynamicVariable?.Invoke(__value1);
             }
-            else if (IsLlm)
+            else if (Llm is { } __value2)
             {
-                llm?.Invoke(Llm!);
+                llm?.Invoke(__value2);
             }
         }
 

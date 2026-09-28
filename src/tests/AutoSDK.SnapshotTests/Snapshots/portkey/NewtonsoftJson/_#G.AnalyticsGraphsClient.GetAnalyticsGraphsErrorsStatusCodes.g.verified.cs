@@ -1,4 +1,4 @@
-﻿//HintName: G.AnalyticsGraphsClient.GetAnalyticsGraphsErrorsStatusCodes.g.cs
+//HintName: G.AnalyticsGraphsClient.GetAnalyticsGraphsErrorsStatusCodes.g.cs
 
 #nullable enable
 
@@ -361,8 +361,8 @@ namespace G
                 PrepareGetAnalyticsGraphsErrorsStatusCodesRequest(
                     httpClient: HttpClient,
                     httpRequestMessage: __httpRequest,
-                    timeOfGenerationMin: timeOfGenerationMin!,
-                    timeOfGenerationMax: timeOfGenerationMax!,
+                    timeOfGenerationMin: timeOfGenerationMin,
+                    timeOfGenerationMax: timeOfGenerationMax,
                     totalUnitsMin: totalUnitsMin,
                     totalUnitsMax: totalUnitsMax,
                     costMin: costMin,
@@ -376,7 +376,7 @@ namespace G
                     weightedFeedbackMax: weightedFeedbackMax,
                     virtualKeys: virtualKeys,
                     configs: configs,
-                    workspaceSlug: workspaceSlug!,
+                    workspaceSlug: workspaceSlug,
                     apiKeyIds: apiKeyIds,
                     metadata: metadata,
                     aiOrgModel: aiOrgModel,
@@ -404,7 +404,7 @@ namespace G
                                 pathTemplate: "\"/analytics/graphs/errors/status-codes\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: null,
                                 exception: null,
                                 clientOptions: Options,
@@ -438,7 +438,7 @@ namespace G
                                 pathTemplate: "\"/analytics/graphs/errors/status-codes\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: null,
                                 exception: __exception,
                                 clientOptions: Options,
@@ -479,7 +479,7 @@ namespace G
                                 pathTemplate: "\"/analytics/graphs/errors/status-codes\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: __response,
                                 exception: null,
                                 clientOptions: Options,
@@ -527,7 +527,7 @@ namespace G
                                 pathTemplate: "\"/analytics/graphs/errors/status-codes\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: __response,
                                 exception: null,
                                 clientOptions: Options,
@@ -549,7 +549,7 @@ namespace G
                                 pathTemplate: "\"/analytics/graphs/errors/status-codes\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: __response,
                                 exception: null,
                                 clientOptions: Options,

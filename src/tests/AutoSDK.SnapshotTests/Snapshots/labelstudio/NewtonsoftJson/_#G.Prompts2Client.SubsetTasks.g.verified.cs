@@ -1,4 +1,4 @@
-﻿//HintName: G.Prompts2Client.SubsetTasks.g.cs
+//HintName: G.Prompts2Client.SubsetTasks.g.cs
 
 #nullable enable
 
@@ -233,7 +233,7 @@ namespace G
                     page: page,
                     pageSize: pageSize,
                     parentModel: parentModel,
-                    projectPk: projectPk!,
+                    projectPk: projectPk,
                     projectSubset: projectSubset);
 
                 return __httpRequest;
@@ -256,7 +256,7 @@ namespace G
                                 pathTemplate: "$\"/api/projects/{projectPk}/subset-tasks\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: null,
                                 exception: null,
                                 clientOptions: Options,
@@ -290,7 +290,7 @@ namespace G
                                 pathTemplate: "$\"/api/projects/{projectPk}/subset-tasks\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: null,
                                 exception: __exception,
                                 clientOptions: Options,
@@ -331,7 +331,7 @@ namespace G
                                 pathTemplate: "$\"/api/projects/{projectPk}/subset-tasks\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: __response,
                                 exception: null,
                                 clientOptions: Options,
@@ -379,7 +379,7 @@ namespace G
                                 pathTemplate: "$\"/api/projects/{projectPk}/subset-tasks\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: __response,
                                 exception: null,
                                 clientOptions: Options,
@@ -401,7 +401,7 @@ namespace G
                                 pathTemplate: "$\"/api/projects/{projectPk}/subset-tasks\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: __response,
                                 exception: null,
                                 clientOptions: Options,

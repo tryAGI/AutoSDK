@@ -1,4 +1,4 @@
-﻿//HintName: G.Models.BaseInputsOneOf1ItemsOneOf2Output.g.cs
+//HintName: G.Models.BaseInputsOneOf1ItemsOneOf2Output.g.cs
 #pragma warning disable CS0618 // Type or member is obsolete
 
 #nullable enable
@@ -43,8 +43,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public string PickBaseInputsOneOf1ItemsOneOf2OutputVariant1() => IsBaseInputsOneOf1ItemsOneOf2OutputVariant1
-            ? BaseInputsOneOf1ItemsOneOf2OutputVariant1!
+        public string PickBaseInputsOneOf1ItemsOneOf2OutputVariant1() => BaseInputsOneOf1ItemsOneOf2OutputVariant1 is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'BaseInputsOneOf1ItemsOneOf2OutputVariant1' but the value was {ToString()}.");
 
         /// <summary>
@@ -80,8 +80,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::G.BaseInputsOneOf1ItemsOneOf2OutputOneOf1Items> PickBaseInputsOneOf1ItemsOneOf2Output1() => IsBaseInputsOneOf1ItemsOneOf2Output1
-            ? BaseInputsOneOf1ItemsOneOf2Output1!
+        public global::System.Collections.Generic.IList<global::G.BaseInputsOneOf1ItemsOneOf2OutputOneOf1Items> PickBaseInputsOneOf1ItemsOneOf2Output1() => BaseInputsOneOf1ItemsOneOf2Output1 is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'BaseInputsOneOf1ItemsOneOf2Output1' but the value was {ToString()}.");
         /// <summary>
         /// 
@@ -155,13 +155,13 @@ namespace G
                 Validate();
             }
 
-            if (IsBaseInputsOneOf1ItemsOneOf2OutputVariant1 && baseInputsOneOf1ItemsOneOf2OutputVariant1 != null)
+            if (BaseInputsOneOf1ItemsOneOf2OutputVariant1 is { } __value0 && baseInputsOneOf1ItemsOneOf2OutputVariant1 != null)
             {
-                return baseInputsOneOf1ItemsOneOf2OutputVariant1(BaseInputsOneOf1ItemsOneOf2OutputVariant1!);
+                return baseInputsOneOf1ItemsOneOf2OutputVariant1(__value0);
             }
-            else if (IsBaseInputsOneOf1ItemsOneOf2Output1 && baseInputsOneOf1ItemsOneOf2Output1 != null)
+            else if (BaseInputsOneOf1ItemsOneOf2Output1 is { } __value1 && baseInputsOneOf1ItemsOneOf2Output1 != null)
             {
-                return baseInputsOneOf1ItemsOneOf2Output1(BaseInputsOneOf1ItemsOneOf2Output1!);
+                return baseInputsOneOf1ItemsOneOf2Output1(__value1);
             }
 
             return default(TResult);
@@ -181,13 +181,13 @@ namespace G
                 Validate();
             }
 
-            if (IsBaseInputsOneOf1ItemsOneOf2OutputVariant1)
+            if (BaseInputsOneOf1ItemsOneOf2OutputVariant1 is { } __value0)
             {
-                baseInputsOneOf1ItemsOneOf2OutputVariant1?.Invoke(BaseInputsOneOf1ItemsOneOf2OutputVariant1!);
+                baseInputsOneOf1ItemsOneOf2OutputVariant1?.Invoke(__value0);
             }
-            else if (IsBaseInputsOneOf1ItemsOneOf2Output1)
+            else if (BaseInputsOneOf1ItemsOneOf2Output1 is { } __value1)
             {
-                baseInputsOneOf1ItemsOneOf2Output1?.Invoke(BaseInputsOneOf1ItemsOneOf2Output1!);
+                baseInputsOneOf1ItemsOneOf2Output1?.Invoke(__value1);
             }
         }
 
@@ -204,13 +204,13 @@ namespace G
                 Validate();
             }
 
-            if (IsBaseInputsOneOf1ItemsOneOf2OutputVariant1)
+            if (BaseInputsOneOf1ItemsOneOf2OutputVariant1 is { } __value0)
             {
-                baseInputsOneOf1ItemsOneOf2OutputVariant1?.Invoke(BaseInputsOneOf1ItemsOneOf2OutputVariant1!);
+                baseInputsOneOf1ItemsOneOf2OutputVariant1?.Invoke(__value0);
             }
-            else if (IsBaseInputsOneOf1ItemsOneOf2Output1)
+            else if (BaseInputsOneOf1ItemsOneOf2Output1 is { } __value1)
             {
-                baseInputsOneOf1ItemsOneOf2Output1?.Invoke(BaseInputsOneOf1ItemsOneOf2Output1!);
+                baseInputsOneOf1ItemsOneOf2Output1?.Invoke(__value1);
             }
         }
 

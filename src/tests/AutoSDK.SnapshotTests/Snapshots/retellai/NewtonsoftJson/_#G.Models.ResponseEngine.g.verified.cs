@@ -1,4 +1,4 @@
-﻿//HintName: G.Models.ResponseEngine.g.cs
+//HintName: G.Models.ResponseEngine.g.cs
 #pragma warning disable CS0618 // Type or member is obsolete
 
 #nullable enable
@@ -43,8 +43,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.ResponseEngineRetellLm PickRetellLm() => IsRetellLm
-            ? RetellLm!
+        public global::G.ResponseEngineRetellLm PickRetellLm() => RetellLm is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'RetellLm' but the value was {ToString()}.");
 
         /// <summary>
@@ -80,8 +80,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.ResponseEngineCustomLm PickCustomLm() => IsCustomLm
-            ? CustomLm!
+        public global::G.ResponseEngineCustomLm PickCustomLm() => CustomLm is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'CustomLm' but the value was {ToString()}.");
 
         /// <summary>
@@ -117,8 +117,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.ResponseEngineConversationFlow PickConversationFlow() => IsConversationFlow
-            ? ConversationFlow!
+        public global::G.ResponseEngineConversationFlow PickConversationFlow() => ConversationFlow is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'ConversationFlow' but the value was {ToString()}.");
         /// <summary>
         /// 
@@ -243,17 +243,17 @@ namespace G
                 Validate();
             }
 
-            if (IsRetellLm && retellLm != null)
+            if (RetellLm is { } __value0 && retellLm != null)
             {
-                return retellLm(RetellLm!);
+                return retellLm(__value0);
             }
-            else if (IsCustomLm && customLm != null)
+            else if (CustomLm is { } __value1 && customLm != null)
             {
-                return customLm(CustomLm!);
+                return customLm(__value1);
             }
-            else if (IsConversationFlow && conversationFlow != null)
+            else if (ConversationFlow is { } __value2 && conversationFlow != null)
             {
-                return conversationFlow(ConversationFlow!);
+                return conversationFlow(__value2);
             }
 
             return default(TResult);
@@ -275,17 +275,17 @@ namespace G
                 Validate();
             }
 
-            if (IsRetellLm)
+            if (RetellLm is { } __value0)
             {
-                retellLm?.Invoke(RetellLm!);
+                retellLm?.Invoke(__value0);
             }
-            else if (IsCustomLm)
+            else if (CustomLm is { } __value1)
             {
-                customLm?.Invoke(CustomLm!);
+                customLm?.Invoke(__value1);
             }
-            else if (IsConversationFlow)
+            else if (ConversationFlow is { } __value2)
             {
-                conversationFlow?.Invoke(ConversationFlow!);
+                conversationFlow?.Invoke(__value2);
             }
         }
 
@@ -303,17 +303,17 @@ namespace G
                 Validate();
             }
 
-            if (IsRetellLm)
+            if (RetellLm is { } __value0)
             {
-                retellLm?.Invoke(RetellLm!);
+                retellLm?.Invoke(__value0);
             }
-            else if (IsCustomLm)
+            else if (CustomLm is { } __value1)
             {
-                customLm?.Invoke(CustomLm!);
+                customLm?.Invoke(__value1);
             }
-            else if (IsConversationFlow)
+            else if (ConversationFlow is { } __value2)
             {
-                conversationFlow?.Invoke(ConversationFlow!);
+                conversationFlow?.Invoke(__value2);
             }
         }
 

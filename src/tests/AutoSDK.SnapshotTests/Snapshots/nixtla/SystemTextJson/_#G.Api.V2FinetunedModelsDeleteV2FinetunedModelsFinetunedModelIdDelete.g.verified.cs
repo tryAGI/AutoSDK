@@ -1,4 +1,4 @@
-﻿//HintName: G.Api.V2FinetunedModelsDeleteV2FinetunedModelsFinetunedModelIdDelete.g.cs
+//HintName: G.Api.V2FinetunedModelsDeleteV2FinetunedModelsFinetunedModelIdDelete.g.cs
 
 #nullable enable
 
@@ -141,7 +141,7 @@ namespace G
                 PrepareV2FinetunedModelsDeleteV2FinetunedModelsFinetunedModelIdDeleteRequest(
                     httpClient: HttpClient,
                     httpRequestMessage: __httpRequest,
-                    finetunedModelId: finetunedModelId!);
+                    finetunedModelId: finetunedModelId);
 
                 return __httpRequest;
             }
@@ -163,7 +163,7 @@ namespace G
                                 pathTemplate: "$\"/v2/finetuned_models/{finetunedModelId}\"",
                                 httpMethod: "DELETE",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: null,
                                 exception: null,
                                 clientOptions: Options,
@@ -197,7 +197,7 @@ namespace G
                                 pathTemplate: "$\"/v2/finetuned_models/{finetunedModelId}\"",
                                 httpMethod: "DELETE",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: null,
                                 exception: __exception,
                                 clientOptions: Options,
@@ -238,7 +238,7 @@ namespace G
                                 pathTemplate: "$\"/v2/finetuned_models/{finetunedModelId}\"",
                                 httpMethod: "DELETE",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: __response,
                                 exception: null,
                                 clientOptions: Options,
@@ -286,7 +286,7 @@ namespace G
                                 pathTemplate: "$\"/v2/finetuned_models/{finetunedModelId}\"",
                                 httpMethod: "DELETE",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: __response,
                                 exception: null,
                                 clientOptions: Options,
@@ -308,7 +308,7 @@ namespace G
                                 pathTemplate: "$\"/v2/finetuned_models/{finetunedModelId}\"",
                                 httpMethod: "DELETE",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: __response,
                                 exception: null,
                                 clientOptions: Options,

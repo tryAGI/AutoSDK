@@ -1,4 +1,4 @@
-﻿//HintName: G.Models.ProjectScoreCategories.g.cs
+//HintName: G.Models.ProjectScoreCategories.g.cs
 #pragma warning disable CS0618 // Type or member is obsolete
 
 #nullable enable
@@ -43,8 +43,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::G.ProjectScoreCategory> PickCategorical() => IsCategorical
-            ? Categorical!
+        public global::System.Collections.Generic.IList<global::G.ProjectScoreCategory> PickCategorical() => Categorical is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Categorical' but the value was {ToString()}.");
 
         /// <summary>
@@ -80,8 +80,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.Dictionary<string, double> PickWeighted() => IsWeighted
-            ? Weighted!
+        public global::System.Collections.Generic.Dictionary<string, double> PickWeighted() => Weighted is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Weighted' but the value was {ToString()}.");
 
         /// <summary>
@@ -117,8 +117,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<string> PickMinimum() => IsMinimum
-            ? Minimum!
+        public global::System.Collections.Generic.IList<string> PickMinimum() => Minimum is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Minimum' but the value was {ToString()}.");
 
         /// <summary>
@@ -154,8 +154,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public object PickProjectScoreCategoriesVariant4() => IsProjectScoreCategoriesVariant4
-            ? ProjectScoreCategoriesVariant4!
+        public object PickProjectScoreCategoriesVariant4() => ProjectScoreCategoriesVariant4 is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'ProjectScoreCategoriesVariant4' but the value was {ToString()}.");
         /// <summary>
         /// 
@@ -239,21 +239,21 @@ namespace G
                 Validate();
             }
 
-            if (IsCategorical && categorical != null)
+            if (Categorical is { } __value0 && categorical != null)
             {
-                return categorical(Categorical!);
+                return categorical(__value0);
             }
-            else if (IsWeighted && weighted != null)
+            else if (Weighted is { } __value1 && weighted != null)
             {
-                return weighted(Weighted!);
+                return weighted(__value1);
             }
-            else if (IsMinimum && minimum != null)
+            else if (Minimum is { } __value2 && minimum != null)
             {
-                return minimum(Minimum!);
+                return minimum(__value2);
             }
-            else if (IsProjectScoreCategoriesVariant4 && projectScoreCategoriesVariant4 != null)
+            else if (ProjectScoreCategoriesVariant4 is { } __value3 && projectScoreCategoriesVariant4 != null)
             {
-                return projectScoreCategoriesVariant4(ProjectScoreCategoriesVariant4!);
+                return projectScoreCategoriesVariant4(__value3);
             }
 
             return default(TResult);
@@ -277,21 +277,21 @@ namespace G
                 Validate();
             }
 
-            if (IsCategorical)
+            if (Categorical is { } __value0)
             {
-                categorical?.Invoke(Categorical!);
+                categorical?.Invoke(__value0);
             }
-            else if (IsWeighted)
+            else if (Weighted is { } __value1)
             {
-                weighted?.Invoke(Weighted!);
+                weighted?.Invoke(__value1);
             }
-            else if (IsMinimum)
+            else if (Minimum is { } __value2)
             {
-                minimum?.Invoke(Minimum!);
+                minimum?.Invoke(__value2);
             }
-            else if (IsProjectScoreCategoriesVariant4)
+            else if (ProjectScoreCategoriesVariant4 is { } __value3)
             {
-                projectScoreCategoriesVariant4?.Invoke(ProjectScoreCategoriesVariant4!);
+                projectScoreCategoriesVariant4?.Invoke(__value3);
             }
         }
 
@@ -310,21 +310,21 @@ namespace G
                 Validate();
             }
 
-            if (IsCategorical)
+            if (Categorical is { } __value0)
             {
-                categorical?.Invoke(Categorical!);
+                categorical?.Invoke(__value0);
             }
-            else if (IsWeighted)
+            else if (Weighted is { } __value1)
             {
-                weighted?.Invoke(Weighted!);
+                weighted?.Invoke(__value1);
             }
-            else if (IsMinimum)
+            else if (Minimum is { } __value2)
             {
-                minimum?.Invoke(Minimum!);
+                minimum?.Invoke(__value2);
             }
-            else if (IsProjectScoreCategoriesVariant4)
+            else if (ProjectScoreCategoriesVariant4 is { } __value3)
             {
-                projectScoreCategoriesVariant4?.Invoke(ProjectScoreCategoriesVariant4!);
+                projectScoreCategoriesVariant4?.Invoke(__value3);
             }
         }
 

@@ -1,4 +1,4 @@
-﻿//HintName: G.AgentsClient.PreviewModelRequest.g.cs
+//HintName: G.AgentsClient.PreviewModelRequest.g.cs
 
 #nullable enable
 
@@ -190,7 +190,7 @@ namespace G
                 PreparePreviewModelRequestRequest(
                     httpClient: HttpClient,
                     httpRequestMessage: __httpRequest,
-                    agentId: agentId!,
+                    agentId: agentId,
                     request: request);
 
                 return __httpRequest;
@@ -213,7 +213,7 @@ namespace G
                                 pathTemplate: "$\"/v1/agents/{agentId}/messages/preview-raw-payload\"",
                                 httpMethod: "POST",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: null,
                                 exception: null,
                                 clientOptions: Options,
@@ -247,7 +247,7 @@ namespace G
                                 pathTemplate: "$\"/v1/agents/{agentId}/messages/preview-raw-payload\"",
                                 httpMethod: "POST",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: null,
                                 exception: __exception,
                                 clientOptions: Options,
@@ -288,7 +288,7 @@ namespace G
                                 pathTemplate: "$\"/v1/agents/{agentId}/messages/preview-raw-payload\"",
                                 httpMethod: "POST",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: __response,
                                 exception: null,
                                 clientOptions: Options,
@@ -336,7 +336,7 @@ namespace G
                                 pathTemplate: "$\"/v1/agents/{agentId}/messages/preview-raw-payload\"",
                                 httpMethod: "POST",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: __response,
                                 exception: null,
                                 clientOptions: Options,
@@ -358,7 +358,7 @@ namespace G
                                 pathTemplate: "$\"/v1/agents/{agentId}/messages/preview-raw-payload\"",
                                 httpMethod: "POST",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: __response,
                                 exception: null,
                                 clientOptions: Options,

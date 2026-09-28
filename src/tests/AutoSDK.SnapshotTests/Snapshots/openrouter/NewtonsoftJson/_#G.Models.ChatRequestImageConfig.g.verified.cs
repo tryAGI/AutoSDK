@@ -1,4 +1,4 @@
-﻿//HintName: G.Models.ChatRequestImageConfig.g.cs
+//HintName: G.Models.ChatRequestImageConfig.g.cs
 #pragma warning disable CS0618 // Type or member is obsolete
 
 #nullable enable
@@ -43,8 +43,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public string PickChatRequestImageConfigVariant1() => IsChatRequestImageConfigVariant1
-            ? ChatRequestImageConfigVariant1!
+        public string PickChatRequestImageConfigVariant1() => ChatRequestImageConfigVariant1 is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'ChatRequestImageConfigVariant1' but the value was {ToString()}.");
 
         /// <summary>
@@ -80,8 +80,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public double PickChatRequestImageConfigVariant2() => IsChatRequestImageConfigVariant2
-            ? ChatRequestImageConfigVariant2!.Value
+        public double PickChatRequestImageConfigVariant2() => ChatRequestImageConfigVariant2 is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'ChatRequestImageConfigVariant2' but the value was {ToString()}.");
 
         /// <summary>
@@ -117,8 +117,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<object> PickChatRequestImageConfigVariant3() => IsChatRequestImageConfigVariant3
-            ? ChatRequestImageConfigVariant3!
+        public global::System.Collections.Generic.IList<object> PickChatRequestImageConfigVariant3() => ChatRequestImageConfigVariant3 is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'ChatRequestImageConfigVariant3' but the value was {ToString()}.");
         /// <summary>
         /// 
@@ -220,17 +220,17 @@ namespace G
                 Validate();
             }
 
-            if (IsChatRequestImageConfigVariant1 && chatRequestImageConfigVariant1 != null)
+            if (ChatRequestImageConfigVariant1 is { } __value0 && chatRequestImageConfigVariant1 != null)
             {
-                return chatRequestImageConfigVariant1(ChatRequestImageConfigVariant1!);
+                return chatRequestImageConfigVariant1(__value0);
             }
-            else if (IsChatRequestImageConfigVariant2 && chatRequestImageConfigVariant2 != null)
+            else if (ChatRequestImageConfigVariant2 is { } __value1 && chatRequestImageConfigVariant2 != null)
             {
-                return chatRequestImageConfigVariant2(ChatRequestImageConfigVariant2!);
+                return chatRequestImageConfigVariant2(__value1);
             }
-            else if (IsChatRequestImageConfigVariant3 && chatRequestImageConfigVariant3 != null)
+            else if (ChatRequestImageConfigVariant3 is { } __value2 && chatRequestImageConfigVariant3 != null)
             {
-                return chatRequestImageConfigVariant3(ChatRequestImageConfigVariant3!);
+                return chatRequestImageConfigVariant3(__value2);
             }
 
             return default(TResult);
@@ -252,17 +252,17 @@ namespace G
                 Validate();
             }
 
-            if (IsChatRequestImageConfigVariant1)
+            if (ChatRequestImageConfigVariant1 is { } __value0)
             {
-                chatRequestImageConfigVariant1?.Invoke(ChatRequestImageConfigVariant1!);
+                chatRequestImageConfigVariant1?.Invoke(__value0);
             }
-            else if (IsChatRequestImageConfigVariant2)
+            else if (ChatRequestImageConfigVariant2 is { } __value1)
             {
-                chatRequestImageConfigVariant2?.Invoke(ChatRequestImageConfigVariant2!);
+                chatRequestImageConfigVariant2?.Invoke(__value1);
             }
-            else if (IsChatRequestImageConfigVariant3)
+            else if (ChatRequestImageConfigVariant3 is { } __value2)
             {
-                chatRequestImageConfigVariant3?.Invoke(ChatRequestImageConfigVariant3!);
+                chatRequestImageConfigVariant3?.Invoke(__value2);
             }
         }
 
@@ -280,17 +280,17 @@ namespace G
                 Validate();
             }
 
-            if (IsChatRequestImageConfigVariant1)
+            if (ChatRequestImageConfigVariant1 is { } __value0)
             {
-                chatRequestImageConfigVariant1?.Invoke(ChatRequestImageConfigVariant1!);
+                chatRequestImageConfigVariant1?.Invoke(__value0);
             }
-            else if (IsChatRequestImageConfigVariant2)
+            else if (ChatRequestImageConfigVariant2 is { } __value1)
             {
-                chatRequestImageConfigVariant2?.Invoke(ChatRequestImageConfigVariant2!);
+                chatRequestImageConfigVariant2?.Invoke(__value1);
             }
-            else if (IsChatRequestImageConfigVariant3)
+            else if (ChatRequestImageConfigVariant3 is { } __value2)
             {
-                chatRequestImageConfigVariant3?.Invoke(ChatRequestImageConfigVariant3!);
+                chatRequestImageConfigVariant3?.Invoke(__value2);
             }
         }
 

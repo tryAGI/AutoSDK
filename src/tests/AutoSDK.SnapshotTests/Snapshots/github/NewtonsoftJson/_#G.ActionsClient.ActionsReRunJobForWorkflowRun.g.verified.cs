@@ -1,4 +1,4 @@
-﻿//HintName: G.ActionsClient.ActionsReRunJobForWorkflowRun.g.cs
+//HintName: G.ActionsClient.ActionsReRunJobForWorkflowRun.g.cs
 
 #nullable enable
 
@@ -142,9 +142,9 @@ namespace G
                 PrepareActionsReRunJobForWorkflowRunRequest(
                     httpClient: HttpClient,
                     httpRequestMessage: __httpRequest,
-                    owner: owner!,
-                    repo: repo!,
-                    jobId: jobId!,
+                    owner: owner,
+                    repo: repo,
+                    jobId: jobId,
                     request: request);
 
                 return __httpRequest;
@@ -167,7 +167,7 @@ namespace G
                                 pathTemplate: "$\"/repos/{owner}/{repo}/actions/jobs/{jobId}/rerun\"",
                                 httpMethod: "POST",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: null,
                                 exception: null,
                                 clientOptions: Options,
@@ -201,7 +201,7 @@ namespace G
                                 pathTemplate: "$\"/repos/{owner}/{repo}/actions/jobs/{jobId}/rerun\"",
                                 httpMethod: "POST",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: null,
                                 exception: __exception,
                                 clientOptions: Options,
@@ -242,7 +242,7 @@ namespace G
                                 pathTemplate: "$\"/repos/{owner}/{repo}/actions/jobs/{jobId}/rerun\"",
                                 httpMethod: "POST",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: __response,
                                 exception: null,
                                 clientOptions: Options,
@@ -290,7 +290,7 @@ namespace G
                                 pathTemplate: "$\"/repos/{owner}/{repo}/actions/jobs/{jobId}/rerun\"",
                                 httpMethod: "POST",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: __response,
                                 exception: null,
                                 clientOptions: Options,
@@ -312,7 +312,7 @@ namespace G
                                 pathTemplate: "$\"/repos/{owner}/{repo}/actions/jobs/{jobId}/rerun\"",
                                 httpMethod: "POST",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: __response,
                                 exception: null,
                                 clientOptions: Options,

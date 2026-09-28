@@ -1,4 +1,4 @@
-﻿//HintName: G.Models.ResponseFormatV2.g.cs
+//HintName: G.Models.ResponseFormatV2.g.cs
 #pragma warning disable CS0618 // Type or member is obsolete
 
 #nullable enable
@@ -53,8 +53,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.TextResponseFormatV2 PickText() => IsText
-            ? Text!
+        public global::G.TextResponseFormatV2 PickText() => Text is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Text' but the value was {ToString()}.");
 
         /// <summary>
@@ -90,8 +90,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.JsonResponseFormatV2 PickJsonObject() => IsJsonObject
-            ? JsonObject!
+        public global::G.JsonResponseFormatV2 PickJsonObject() => JsonObject is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'JsonObject' but the value was {ToString()}.");
         /// <summary>
         /// 
@@ -191,13 +191,13 @@ namespace G
                 Validate();
             }
 
-            if (IsText && text != null)
+            if (Text is { } __value0 && text != null)
             {
-                return text(Text!);
+                return text(__value0);
             }
-            else if (IsJsonObject && jsonObject != null)
+            else if (JsonObject is { } __value1 && jsonObject != null)
             {
-                return jsonObject(JsonObject!);
+                return jsonObject(__value1);
             }
 
             return default(TResult);
@@ -217,13 +217,13 @@ namespace G
                 Validate();
             }
 
-            if (IsText)
+            if (Text is { } __value0)
             {
-                text?.Invoke(Text!);
+                text?.Invoke(__value0);
             }
-            else if (IsJsonObject)
+            else if (JsonObject is { } __value1)
             {
-                jsonObject?.Invoke(JsonObject!);
+                jsonObject?.Invoke(__value1);
             }
         }
 
@@ -240,13 +240,13 @@ namespace G
                 Validate();
             }
 
-            if (IsText)
+            if (Text is { } __value0)
             {
-                text?.Invoke(Text!);
+                text?.Invoke(__value0);
             }
-            else if (IsJsonObject)
+            else if (JsonObject is { } __value1)
             {
-                jsonObject?.Invoke(JsonObject!);
+                jsonObject?.Invoke(__value1);
             }
         }
 

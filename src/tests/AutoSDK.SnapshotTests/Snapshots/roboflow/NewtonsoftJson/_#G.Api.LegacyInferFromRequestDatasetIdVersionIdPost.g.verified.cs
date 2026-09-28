@@ -1,4 +1,4 @@
-﻿//HintName: G.Api.LegacyInferFromRequestDatasetIdVersionIdPost.g.cs
+//HintName: G.Api.LegacyInferFromRequestDatasetIdVersionIdPost.g.cs
 
 #nullable enable
 
@@ -433,8 +433,8 @@ namespace G
                 PrepareLegacyInferFromRequestDatasetIdVersionIdPostRequest(
                     httpClient: HttpClient,
                     httpRequestMessage: __httpRequest,
-                    datasetId: datasetId!,
-                    versionId: versionId!,
+                    datasetId: datasetId,
+                    versionId: versionId,
                     apiKey: apiKey,
                     confidence: confidence,
                     keypointConfidence: keypointConfidence,
@@ -476,7 +476,7 @@ namespace G
                                 pathTemplate: "$\"/{datasetId}/{versionId}\"",
                                 httpMethod: "POST",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: null,
                                 exception: null,
                                 clientOptions: Options,
@@ -510,7 +510,7 @@ namespace G
                                 pathTemplate: "$\"/{datasetId}/{versionId}\"",
                                 httpMethod: "POST",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: null,
                                 exception: __exception,
                                 clientOptions: Options,
@@ -551,7 +551,7 @@ namespace G
                                 pathTemplate: "$\"/{datasetId}/{versionId}\"",
                                 httpMethod: "POST",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: __response,
                                 exception: null,
                                 clientOptions: Options,
@@ -599,7 +599,7 @@ namespace G
                                 pathTemplate: "$\"/{datasetId}/{versionId}\"",
                                 httpMethod: "POST",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: __response,
                                 exception: null,
                                 clientOptions: Options,
@@ -621,7 +621,7 @@ namespace G
                                 pathTemplate: "$\"/{datasetId}/{versionId}\"",
                                 httpMethod: "POST",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: __response,
                                 exception: null,
                                 clientOptions: Options,

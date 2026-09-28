@@ -1,4 +1,4 @@
-﻿//HintName: G.Models.ClusterStatus.g.cs
+//HintName: G.Models.ClusterStatus.g.cs
 #pragma warning disable CS0618 // Type or member is obsolete
 
 #nullable enable
@@ -43,8 +43,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.ClusterStatusVariant1 PickClusterStatusVariant1() => IsClusterStatusVariant1
-            ? ClusterStatusVariant1!
+        public global::G.ClusterStatusVariant1 PickClusterStatusVariant1() => ClusterStatusVariant1 is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'ClusterStatusVariant1' but the value was {ToString()}.");
 
         /// <summary>
@@ -80,8 +80,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.ClusterStatusVariant2 PickClusterStatusVariant2() => IsClusterStatusVariant2
-            ? ClusterStatusVariant2!
+        public global::G.ClusterStatusVariant2 PickClusterStatusVariant2() => ClusterStatusVariant2 is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'ClusterStatusVariant2' but the value was {ToString()}.");
         /// <summary>
         /// 
@@ -178,13 +178,13 @@ namespace G
                 Validate();
             }
 
-            if (IsClusterStatusVariant1 && clusterStatusVariant1 != null)
+            if (ClusterStatusVariant1 is { } __value0 && clusterStatusVariant1 != null)
             {
-                return clusterStatusVariant1(ClusterStatusVariant1!);
+                return clusterStatusVariant1(__value0);
             }
-            else if (IsClusterStatusVariant2 && clusterStatusVariant2 != null)
+            else if (ClusterStatusVariant2 is { } __value1 && clusterStatusVariant2 != null)
             {
-                return clusterStatusVariant2(ClusterStatusVariant2!);
+                return clusterStatusVariant2(__value1);
             }
 
             return default(TResult);
@@ -204,13 +204,13 @@ namespace G
                 Validate();
             }
 
-            if (IsClusterStatusVariant1)
+            if (ClusterStatusVariant1 is { } __value0)
             {
-                clusterStatusVariant1?.Invoke(ClusterStatusVariant1!);
+                clusterStatusVariant1?.Invoke(__value0);
             }
-            else if (IsClusterStatusVariant2)
+            else if (ClusterStatusVariant2 is { } __value1)
             {
-                clusterStatusVariant2?.Invoke(ClusterStatusVariant2!);
+                clusterStatusVariant2?.Invoke(__value1);
             }
         }
 
@@ -227,13 +227,13 @@ namespace G
                 Validate();
             }
 
-            if (IsClusterStatusVariant1)
+            if (ClusterStatusVariant1 is { } __value0)
             {
-                clusterStatusVariant1?.Invoke(ClusterStatusVariant1!);
+                clusterStatusVariant1?.Invoke(__value0);
             }
-            else if (IsClusterStatusVariant2)
+            else if (ClusterStatusVariant2 is { } __value1)
             {
-                clusterStatusVariant2?.Invoke(ClusterStatusVariant2!);
+                clusterStatusVariant2?.Invoke(__value1);
             }
         }
 

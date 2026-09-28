@@ -1,4 +1,4 @@
-﻿//HintName: G.Models.ToolInputEvent.g.cs
+//HintName: G.Models.ToolInputEvent.g.cs
 #pragma warning disable CS0618 // Type or member is obsolete
 
 #nullable enable
@@ -43,8 +43,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.AgentEventBase PickAgentBase() => IsAgentBase
-            ? AgentBase!
+        public global::G.AgentEventBase PickAgentBase() => AgentBase is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'AgentBase' but the value was {ToString()}.");
 
         /// <summary>
@@ -80,8 +80,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.ToolInputEventVariant2 PickToolInputEventVariant2() => IsToolInputEventVariant2
-            ? ToolInputEventVariant2!
+        public global::G.ToolInputEventVariant2 PickToolInputEventVariant2() => ToolInputEventVariant2 is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'ToolInputEventVariant2' but the value was {ToString()}.");
         /// <summary>
         /// 
@@ -178,13 +178,13 @@ namespace G
                 Validate();
             }
 
-            if (IsAgentBase && agentBase != null)
+            if (AgentBase is { } __value0 && agentBase != null)
             {
-                return agentBase(AgentBase!);
+                return agentBase(__value0);
             }
-            else if (IsToolInputEventVariant2 && toolInputEventVariant2 != null)
+            else if (ToolInputEventVariant2 is { } __value1 && toolInputEventVariant2 != null)
             {
-                return toolInputEventVariant2(ToolInputEventVariant2!);
+                return toolInputEventVariant2(__value1);
             }
 
             return default(TResult);
@@ -204,13 +204,13 @@ namespace G
                 Validate();
             }
 
-            if (IsAgentBase)
+            if (AgentBase is { } __value0)
             {
-                agentBase?.Invoke(AgentBase!);
+                agentBase?.Invoke(__value0);
             }
-            else if (IsToolInputEventVariant2)
+            else if (ToolInputEventVariant2 is { } __value1)
             {
-                toolInputEventVariant2?.Invoke(ToolInputEventVariant2!);
+                toolInputEventVariant2?.Invoke(__value1);
             }
         }
 
@@ -227,13 +227,13 @@ namespace G
                 Validate();
             }
 
-            if (IsAgentBase)
+            if (AgentBase is { } __value0)
             {
-                agentBase?.Invoke(AgentBase!);
+                agentBase?.Invoke(__value0);
             }
-            else if (IsToolInputEventVariant2)
+            else if (ToolInputEventVariant2 is { } __value1)
             {
-                toolInputEventVariant2?.Invoke(ToolInputEventVariant2!);
+                toolInputEventVariant2?.Invoke(__value1);
             }
         }
 

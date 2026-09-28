@@ -1,4 +1,4 @@
-﻿//HintName: G.IdentitiesClient.ListBlocksForIdentity.g.cs
+//HintName: G.IdentitiesClient.ListBlocksForIdentity.g.cs
 
 #nullable enable
 
@@ -248,7 +248,7 @@ namespace G
                 PrepareListBlocksForIdentityRequest(
                     httpClient: HttpClient,
                     httpRequestMessage: __httpRequest,
-                    identityId: identityId!,
+                    identityId: identityId,
                     before: before,
                     after: after,
                     limit: limit,
@@ -275,7 +275,7 @@ namespace G
                                 pathTemplate: "$\"/v1/identities/{identityId}/blocks\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: null,
                                 exception: null,
                                 clientOptions: Options,
@@ -309,7 +309,7 @@ namespace G
                                 pathTemplate: "$\"/v1/identities/{identityId}/blocks\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: null,
                                 exception: __exception,
                                 clientOptions: Options,
@@ -350,7 +350,7 @@ namespace G
                                 pathTemplate: "$\"/v1/identities/{identityId}/blocks\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: __response,
                                 exception: null,
                                 clientOptions: Options,
@@ -398,7 +398,7 @@ namespace G
                                 pathTemplate: "$\"/v1/identities/{identityId}/blocks\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: __response,
                                 exception: null,
                                 clientOptions: Options,
@@ -420,7 +420,7 @@ namespace G
                                 pathTemplate: "$\"/v1/identities/{identityId}/blocks\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: __response,
                                 exception: null,
                                 clientOptions: Options,

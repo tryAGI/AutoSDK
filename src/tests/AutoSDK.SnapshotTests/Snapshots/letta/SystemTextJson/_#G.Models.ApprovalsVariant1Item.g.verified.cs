@@ -1,4 +1,4 @@
-﻿//HintName: G.Models.ApprovalsVariant1Item.g.cs
+//HintName: G.Models.ApprovalsVariant1Item.g.cs
 #pragma warning disable CS0618 // Type or member is obsolete
 
 #nullable enable
@@ -48,8 +48,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.ApprovalReturn PickApproval() => IsApproval
-            ? Approval!
+        public global::G.ApprovalReturn PickApproval() => Approval is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Approval' but the value was {ToString()}.");
 
         /// <summary>
@@ -85,8 +85,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.LettaSchemasLettaMessageToolReturn PickTool() => IsTool
-            ? Tool!
+        public global::G.LettaSchemasLettaMessageToolReturn PickTool() => Tool is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Tool' but the value was {ToString()}.");
         /// <summary>
         /// 
@@ -186,13 +186,13 @@ namespace G
                 Validate();
             }
 
-            if (IsApproval && approval != null)
+            if (Approval is { } __value0 && approval != null)
             {
-                return approval(Approval!);
+                return approval(__value0);
             }
-            else if (IsTool && tool != null)
+            else if (Tool is { } __value1 && tool != null)
             {
-                return tool(Tool!);
+                return tool(__value1);
             }
 
             return default(TResult);
@@ -212,13 +212,13 @@ namespace G
                 Validate();
             }
 
-            if (IsApproval)
+            if (Approval is { } __value0)
             {
-                approval?.Invoke(Approval!);
+                approval?.Invoke(__value0);
             }
-            else if (IsTool)
+            else if (Tool is { } __value1)
             {
-                tool?.Invoke(Tool!);
+                tool?.Invoke(__value1);
             }
         }
 
@@ -235,13 +235,13 @@ namespace G
                 Validate();
             }
 
-            if (IsApproval)
+            if (Approval is { } __value0)
             {
-                approval?.Invoke(Approval!);
+                approval?.Invoke(__value0);
             }
-            else if (IsTool)
+            else if (Tool is { } __value1)
             {
-                tool?.Invoke(Tool!);
+                tool?.Invoke(__value1);
             }
         }
 

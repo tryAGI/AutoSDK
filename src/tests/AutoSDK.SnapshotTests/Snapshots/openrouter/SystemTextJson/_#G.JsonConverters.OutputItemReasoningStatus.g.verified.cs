@@ -1,4 +1,4 @@
-﻿//HintName: G.JsonConverters.OutputItemReasoningStatus.g.cs
+//HintName: G.JsonConverters.OutputItemReasoningStatus.g.cs
 #nullable enable
 #pragma warning disable CS0618 // Type or member is obsolete
 
@@ -199,19 +199,19 @@ namespace G.JsonConverters
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.OutputItemReasoningStatus0), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.OutputItemReasoningStatus0> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.OutputItemReasoningStatus0).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.OutputItemReasoningStatus0!.Value, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickOutputItemReasoningStatus0(), typeInfo);
             }
             else if (value.IsOutputItemReasoningStatus1)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.OutputItemReasoningStatus1), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.OutputItemReasoningStatus1> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.OutputItemReasoningStatus1).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.OutputItemReasoningStatus1!.Value, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickOutputItemReasoningStatus1(), typeInfo);
             }
             else if (value.IsOutputItemReasoningStatus2)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.OutputItemReasoningStatus2), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.OutputItemReasoningStatus2> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.OutputItemReasoningStatus2).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.OutputItemReasoningStatus2!.Value, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickOutputItemReasoningStatus2(), typeInfo);
             }
         }
     }

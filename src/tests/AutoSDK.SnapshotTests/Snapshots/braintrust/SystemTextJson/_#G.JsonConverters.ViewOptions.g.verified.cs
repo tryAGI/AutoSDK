@@ -1,4 +1,4 @@
-﻿//HintName: G.JsonConverters.ViewOptions.g.cs
+//HintName: G.JsonConverters.ViewOptions.g.cs
 #nullable enable
 #pragma warning disable CS0618 // Type or member is obsolete
 
@@ -206,19 +206,19 @@ namespace G.JsonConverters
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.ViewOptionsMonitorViewOptions), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.ViewOptionsMonitorViewOptions?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.ViewOptionsMonitorViewOptions).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.MonitorViewOptions!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickMonitorViewOptions(), typeInfo);
             }
             else if (value.IsTableViewOptions)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.ViewOptionsTableViewOptions), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.ViewOptionsTableViewOptions?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.ViewOptionsTableViewOptions).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.TableViewOptions!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickTableViewOptions(), typeInfo);
             }
             else if (value.IsViewOptionsVariant3)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(object), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<object?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(object).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.ViewOptionsVariant3!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickViewOptionsVariant3(), typeInfo);
             }
         }
     }

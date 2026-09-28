@@ -1,4 +1,4 @@
-﻿//HintName: G.Models.CreateVoiceIsolationRequest.g.cs
+//HintName: G.Models.CreateVoiceIsolationRequest.g.cs
 #pragma warning disable CS0618 // Type or member is obsolete
 
 #nullable enable
@@ -48,8 +48,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.CreateVoiceIsolationRequestElevenVoiceIsolation PickElevenVoiceIsolation() => IsElevenVoiceIsolation
-            ? ElevenVoiceIsolation!
+        public global::G.CreateVoiceIsolationRequestElevenVoiceIsolation PickElevenVoiceIsolation() => ElevenVoiceIsolation is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'ElevenVoiceIsolation' but the value was {ToString()}.");
         /// <summary>
         /// 
@@ -121,9 +121,9 @@ namespace G
                 Validate();
             }
 
-            if (IsElevenVoiceIsolation && elevenVoiceIsolation != null)
+            if (ElevenVoiceIsolation is { } __value0 && elevenVoiceIsolation != null)
             {
-                return elevenVoiceIsolation(ElevenVoiceIsolation!);
+                return elevenVoiceIsolation(__value0);
             }
 
             return default(TResult);
@@ -141,9 +141,9 @@ namespace G
                 Validate();
             }
 
-            if (IsElevenVoiceIsolation)
+            if (ElevenVoiceIsolation is { } __value0)
             {
-                elevenVoiceIsolation?.Invoke(ElevenVoiceIsolation!);
+                elevenVoiceIsolation?.Invoke(__value0);
             }
         }
 
@@ -159,9 +159,9 @@ namespace G
                 Validate();
             }
 
-            if (IsElevenVoiceIsolation)
+            if (ElevenVoiceIsolation is { } __value0)
             {
-                elevenVoiceIsolation?.Invoke(ElevenVoiceIsolation!);
+                elevenVoiceIsolation?.Invoke(__value0);
             }
         }
 

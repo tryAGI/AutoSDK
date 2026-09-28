@@ -1,4 +1,4 @@
-﻿//HintName: G.Models.ModelSettingsVariant110.g.cs
+//HintName: G.Models.ModelSettingsVariant110.g.cs
 #pragma warning disable CS0618 // Type or member is obsolete
 
 #nullable enable
@@ -48,8 +48,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.OpenAIModelSettings PickOpenai() => IsOpenai
-            ? Openai!
+        public global::G.OpenAIModelSettings PickOpenai() => Openai is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Openai' but the value was {ToString()}.");
 
         /// <summary>
@@ -85,8 +85,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.AnthropicModelSettings PickAnthropic() => IsAnthropic
-            ? Anthropic!
+        public global::G.AnthropicModelSettings PickAnthropic() => Anthropic is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Anthropic' but the value was {ToString()}.");
 
         /// <summary>
@@ -122,8 +122,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.GoogleAIModelSettings PickGoogleAi() => IsGoogleAi
-            ? GoogleAi!
+        public global::G.GoogleAIModelSettings PickGoogleAi() => GoogleAi is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'GoogleAi' but the value was {ToString()}.");
 
         /// <summary>
@@ -159,8 +159,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.GoogleVertexModelSettings PickGoogleVertex() => IsGoogleVertex
-            ? GoogleVertex!
+        public global::G.GoogleVertexModelSettings PickGoogleVertex() => GoogleVertex is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'GoogleVertex' but the value was {ToString()}.");
 
         /// <summary>
@@ -196,8 +196,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.AzureModelSettings PickAzure() => IsAzure
-            ? Azure!
+        public global::G.AzureModelSettings PickAzure() => Azure is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Azure' but the value was {ToString()}.");
 
         /// <summary>
@@ -233,8 +233,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.XAIModelSettings PickXai() => IsXai
-            ? Xai!
+        public global::G.XAIModelSettings PickXai() => Xai is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Xai' but the value was {ToString()}.");
 
         /// <summary>
@@ -270,8 +270,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.ZAIModelSettings PickZai() => IsZai
-            ? Zai!
+        public global::G.ZAIModelSettings PickZai() => Zai is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Zai' but the value was {ToString()}.");
 
         /// <summary>
@@ -307,8 +307,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.GroqModelSettings PickGroq() => IsGroq
-            ? Groq!
+        public global::G.GroqModelSettings PickGroq() => Groq is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Groq' but the value was {ToString()}.");
 
         /// <summary>
@@ -344,8 +344,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.DeepseekModelSettings PickDeepseek() => IsDeepseek
-            ? Deepseek!
+        public global::G.DeepseekModelSettings PickDeepseek() => Deepseek is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Deepseek' but the value was {ToString()}.");
 
         /// <summary>
@@ -381,8 +381,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.TogetherModelSettings PickTogether() => IsTogether
-            ? Together!
+        public global::G.TogetherModelSettings PickTogether() => Together is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Together' but the value was {ToString()}.");
 
         /// <summary>
@@ -418,8 +418,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.BedrockModelSettings PickBedrock() => IsBedrock
-            ? Bedrock!
+        public global::G.BedrockModelSettings PickBedrock() => Bedrock is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Bedrock' but the value was {ToString()}.");
 
         /// <summary>
@@ -455,8 +455,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.OpenRouterModelSettings PickOpenrouter() => IsOpenrouter
-            ? Openrouter!
+        public global::G.OpenRouterModelSettings PickOpenrouter() => Openrouter is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Openrouter' but the value was {ToString()}.");
 
         /// <summary>
@@ -492,8 +492,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.ChatGPTOAuthModelSettings PickChatgptOauth() => IsChatgptOauth
-            ? ChatgptOauth!
+        public global::G.ChatGPTOAuthModelSettings PickChatgptOauth() => ChatgptOauth is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'ChatgptOauth' but the value was {ToString()}.");
         /// <summary>
         /// 
@@ -901,57 +901,57 @@ namespace G
                 Validate();
             }
 
-            if (IsOpenai && openai != null)
+            if (Openai is { } __value0 && openai != null)
             {
-                return openai(Openai!);
+                return openai(__value0);
             }
-            else if (IsAnthropic && anthropic != null)
+            else if (Anthropic is { } __value1 && anthropic != null)
             {
-                return anthropic(Anthropic!);
+                return anthropic(__value1);
             }
-            else if (IsGoogleAi && googleAi != null)
+            else if (GoogleAi is { } __value2 && googleAi != null)
             {
-                return googleAi(GoogleAi!);
+                return googleAi(__value2);
             }
-            else if (IsGoogleVertex && googleVertex != null)
+            else if (GoogleVertex is { } __value3 && googleVertex != null)
             {
-                return googleVertex(GoogleVertex!);
+                return googleVertex(__value3);
             }
-            else if (IsAzure && azure != null)
+            else if (Azure is { } __value4 && azure != null)
             {
-                return azure(Azure!);
+                return azure(__value4);
             }
-            else if (IsXai && xai != null)
+            else if (Xai is { } __value5 && xai != null)
             {
-                return xai(Xai!);
+                return xai(__value5);
             }
-            else if (IsZai && zai != null)
+            else if (Zai is { } __value6 && zai != null)
             {
-                return zai(Zai!);
+                return zai(__value6);
             }
-            else if (IsGroq && groq != null)
+            else if (Groq is { } __value7 && groq != null)
             {
-                return groq(Groq!);
+                return groq(__value7);
             }
-            else if (IsDeepseek && deepseek != null)
+            else if (Deepseek is { } __value8 && deepseek != null)
             {
-                return deepseek(Deepseek!);
+                return deepseek(__value8);
             }
-            else if (IsTogether && together != null)
+            else if (Together is { } __value9 && together != null)
             {
-                return together(Together!);
+                return together(__value9);
             }
-            else if (IsBedrock && bedrock != null)
+            else if (Bedrock is { } __value10 && bedrock != null)
             {
-                return bedrock(Bedrock!);
+                return bedrock(__value10);
             }
-            else if (IsOpenrouter && openrouter != null)
+            else if (Openrouter is { } __value11 && openrouter != null)
             {
-                return openrouter(Openrouter!);
+                return openrouter(__value11);
             }
-            else if (IsChatgptOauth && chatgptOauth != null)
+            else if (ChatgptOauth is { } __value12 && chatgptOauth != null)
             {
-                return chatgptOauth(ChatgptOauth!);
+                return chatgptOauth(__value12);
             }
 
             return default(TResult);
@@ -993,57 +993,57 @@ namespace G
                 Validate();
             }
 
-            if (IsOpenai)
+            if (Openai is { } __value0)
             {
-                openai?.Invoke(Openai!);
+                openai?.Invoke(__value0);
             }
-            else if (IsAnthropic)
+            else if (Anthropic is { } __value1)
             {
-                anthropic?.Invoke(Anthropic!);
+                anthropic?.Invoke(__value1);
             }
-            else if (IsGoogleAi)
+            else if (GoogleAi is { } __value2)
             {
-                googleAi?.Invoke(GoogleAi!);
+                googleAi?.Invoke(__value2);
             }
-            else if (IsGoogleVertex)
+            else if (GoogleVertex is { } __value3)
             {
-                googleVertex?.Invoke(GoogleVertex!);
+                googleVertex?.Invoke(__value3);
             }
-            else if (IsAzure)
+            else if (Azure is { } __value4)
             {
-                azure?.Invoke(Azure!);
+                azure?.Invoke(__value4);
             }
-            else if (IsXai)
+            else if (Xai is { } __value5)
             {
-                xai?.Invoke(Xai!);
+                xai?.Invoke(__value5);
             }
-            else if (IsZai)
+            else if (Zai is { } __value6)
             {
-                zai?.Invoke(Zai!);
+                zai?.Invoke(__value6);
             }
-            else if (IsGroq)
+            else if (Groq is { } __value7)
             {
-                groq?.Invoke(Groq!);
+                groq?.Invoke(__value7);
             }
-            else if (IsDeepseek)
+            else if (Deepseek is { } __value8)
             {
-                deepseek?.Invoke(Deepseek!);
+                deepseek?.Invoke(__value8);
             }
-            else if (IsTogether)
+            else if (Together is { } __value9)
             {
-                together?.Invoke(Together!);
+                together?.Invoke(__value9);
             }
-            else if (IsBedrock)
+            else if (Bedrock is { } __value10)
             {
-                bedrock?.Invoke(Bedrock!);
+                bedrock?.Invoke(__value10);
             }
-            else if (IsOpenrouter)
+            else if (Openrouter is { } __value11)
             {
-                openrouter?.Invoke(Openrouter!);
+                openrouter?.Invoke(__value11);
             }
-            else if (IsChatgptOauth)
+            else if (ChatgptOauth is { } __value12)
             {
-                chatgptOauth?.Invoke(ChatgptOauth!);
+                chatgptOauth?.Invoke(__value12);
             }
         }
 
@@ -1071,57 +1071,57 @@ namespace G
                 Validate();
             }
 
-            if (IsOpenai)
+            if (Openai is { } __value0)
             {
-                openai?.Invoke(Openai!);
+                openai?.Invoke(__value0);
             }
-            else if (IsAnthropic)
+            else if (Anthropic is { } __value1)
             {
-                anthropic?.Invoke(Anthropic!);
+                anthropic?.Invoke(__value1);
             }
-            else if (IsGoogleAi)
+            else if (GoogleAi is { } __value2)
             {
-                googleAi?.Invoke(GoogleAi!);
+                googleAi?.Invoke(__value2);
             }
-            else if (IsGoogleVertex)
+            else if (GoogleVertex is { } __value3)
             {
-                googleVertex?.Invoke(GoogleVertex!);
+                googleVertex?.Invoke(__value3);
             }
-            else if (IsAzure)
+            else if (Azure is { } __value4)
             {
-                azure?.Invoke(Azure!);
+                azure?.Invoke(__value4);
             }
-            else if (IsXai)
+            else if (Xai is { } __value5)
             {
-                xai?.Invoke(Xai!);
+                xai?.Invoke(__value5);
             }
-            else if (IsZai)
+            else if (Zai is { } __value6)
             {
-                zai?.Invoke(Zai!);
+                zai?.Invoke(__value6);
             }
-            else if (IsGroq)
+            else if (Groq is { } __value7)
             {
-                groq?.Invoke(Groq!);
+                groq?.Invoke(__value7);
             }
-            else if (IsDeepseek)
+            else if (Deepseek is { } __value8)
             {
-                deepseek?.Invoke(Deepseek!);
+                deepseek?.Invoke(__value8);
             }
-            else if (IsTogether)
+            else if (Together is { } __value9)
             {
-                together?.Invoke(Together!);
+                together?.Invoke(__value9);
             }
-            else if (IsBedrock)
+            else if (Bedrock is { } __value10)
             {
-                bedrock?.Invoke(Bedrock!);
+                bedrock?.Invoke(__value10);
             }
-            else if (IsOpenrouter)
+            else if (Openrouter is { } __value11)
             {
-                openrouter?.Invoke(Openrouter!);
+                openrouter?.Invoke(__value11);
             }
-            else if (IsChatgptOauth)
+            else if (ChatgptOauth is { } __value12)
             {
-                chatgptOauth?.Invoke(ChatgptOauth!);
+                chatgptOauth?.Invoke(__value12);
             }
         }
 

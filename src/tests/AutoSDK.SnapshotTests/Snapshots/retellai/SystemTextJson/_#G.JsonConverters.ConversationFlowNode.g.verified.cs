@@ -1,4 +1,4 @@
-﻿//HintName: G.JsonConverters.ConversationFlowNode.g.cs
+//HintName: G.JsonConverters.ConversationFlowNode.g.cs
 #nullable enable
 #pragma warning disable CS0618 // Type or member is obsolete
 
@@ -738,85 +738,85 @@ namespace G.JsonConverters
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.ConversationNode), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.ConversationNode> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.ConversationNode).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.ConversationNode!.Value, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickConversationNode(), typeInfo);
             }
             else if (value.IsEnd)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.EndNode), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.EndNode> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.EndNode).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.End!.Value, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickEnd(), typeInfo);
             }
             else if (value.IsFunction)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.FunctionNode), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.FunctionNode> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.FunctionNode).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Function!.Value, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickFunction(), typeInfo);
             }
             else if (value.IsCode)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.CodeNode), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.CodeNode> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.CodeNode).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Code!.Value, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickCode(), typeInfo);
             }
             else if (value.IsTransferCall)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.TransferCallNode), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.TransferCallNode> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.TransferCallNode).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.TransferCall!.Value, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickTransferCall(), typeInfo);
             }
             else if (value.IsPressDigit)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.PressDigitNode), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.PressDigitNode> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.PressDigitNode).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PressDigit!.Value, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickPressDigit(), typeInfo);
             }
             else if (value.IsBranch)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.BranchNode), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.BranchNode> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.BranchNode).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Branch!.Value, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickBranch(), typeInfo);
             }
             else if (value.IsSms)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.SmsNode), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.SmsNode> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.SmsNode).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Sms!.Value, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickSms(), typeInfo);
             }
             else if (value.IsExtractDynamicVariables)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.ExtractDynamicVariablesNode), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.ExtractDynamicVariablesNode> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.ExtractDynamicVariablesNode).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.ExtractDynamicVariables!.Value, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickExtractDynamicVariables(), typeInfo);
             }
             else if (value.IsAgentSwap)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.AgentSwapNode), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.AgentSwapNode> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.AgentSwapNode).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.AgentSwap!.Value, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickAgentSwap(), typeInfo);
             }
             else if (value.IsMcp)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.MCPNode), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.MCPNode> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.MCPNode).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Mcp!.Value, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickMcp(), typeInfo);
             }
             else if (value.IsComponent)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.ComponentNode), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.ComponentNode> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.ComponentNode).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Component!.Value, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickComponent(), typeInfo);
             }
             else if (value.IsBridgeTransfer)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.BridgeTransferNode), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.BridgeTransferNode> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.BridgeTransferNode).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.BridgeTransfer!.Value, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickBridgeTransfer(), typeInfo);
             }
             else if (value.IsCancelTransfer)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.CancelTransferNode), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.CancelTransferNode> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.CancelTransferNode).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.CancelTransfer!.Value, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickCancelTransfer(), typeInfo);
             }
         }
     }

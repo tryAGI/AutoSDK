@@ -1,4 +1,4 @@
-﻿//HintName: G.ReposClient.ReposDeleteOrgRuleset.g.cs
+//HintName: G.ReposClient.ReposDeleteOrgRuleset.g.cs
 
 #nullable enable
 
@@ -116,8 +116,8 @@ namespace G
                 PrepareReposDeleteOrgRulesetRequest(
                     httpClient: HttpClient,
                     httpRequestMessage: __httpRequest,
-                    org: org!,
-                    rulesetId: rulesetId!);
+                    org: org,
+                    rulesetId: rulesetId);
 
                 return __httpRequest;
             }
@@ -139,7 +139,7 @@ namespace G
                                 pathTemplate: "$\"/orgs/{org}/rulesets/{rulesetId}\"",
                                 httpMethod: "DELETE",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: null,
                                 exception: null,
                                 clientOptions: Options,
@@ -173,7 +173,7 @@ namespace G
                                 pathTemplate: "$\"/orgs/{org}/rulesets/{rulesetId}\"",
                                 httpMethod: "DELETE",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: null,
                                 exception: __exception,
                                 clientOptions: Options,
@@ -214,7 +214,7 @@ namespace G
                                 pathTemplate: "$\"/orgs/{org}/rulesets/{rulesetId}\"",
                                 httpMethod: "DELETE",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: __response,
                                 exception: null,
                                 clientOptions: Options,
@@ -262,7 +262,7 @@ namespace G
                                 pathTemplate: "$\"/orgs/{org}/rulesets/{rulesetId}\"",
                                 httpMethod: "DELETE",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: __response,
                                 exception: null,
                                 clientOptions: Options,
@@ -284,7 +284,7 @@ namespace G
                                 pathTemplate: "$\"/orgs/{org}/rulesets/{rulesetId}\"",
                                 httpMethod: "DELETE",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: __response,
                                 exception: null,
                                 clientOptions: Options,

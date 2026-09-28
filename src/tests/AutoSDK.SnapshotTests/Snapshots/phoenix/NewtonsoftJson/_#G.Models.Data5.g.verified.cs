@@ -1,4 +1,4 @@
-﻿//HintName: G.Models.Data5.g.cs
+//HintName: G.Models.Data5.g.cs
 #pragma warning disable CS0618 // Type or member is obsolete
 
 #nullable enable
@@ -48,8 +48,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.LocalUser PickLocal() => IsLocal
-            ? Local!
+        public global::G.LocalUser PickLocal() => Local is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Local' but the value was {ToString()}.");
 
         /// <summary>
@@ -85,8 +85,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.OAuth2User PickOauth2() => IsOauth2
-            ? Oauth2!
+        public global::G.OAuth2User PickOauth2() => Oauth2 is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Oauth2' but the value was {ToString()}.");
 
         /// <summary>
@@ -122,8 +122,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.LDAPUser PickLdap() => IsLdap
-            ? Ldap!
+        public global::G.LDAPUser PickLdap() => Ldap is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Ldap' but the value was {ToString()}.");
 
         /// <summary>
@@ -159,8 +159,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.AnonymousUser PickAnonymous() => IsAnonymous
-            ? Anonymous!
+        public global::G.AnonymousUser PickAnonymous() => Anonymous is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Anonymous' but the value was {ToString()}.");
         /// <summary>
         /// 
@@ -316,21 +316,21 @@ namespace G
                 Validate();
             }
 
-            if (IsLocal && local != null)
+            if (Local is { } __value0 && local != null)
             {
-                return local(Local!);
+                return local(__value0);
             }
-            else if (IsOauth2 && oauth2 != null)
+            else if (Oauth2 is { } __value1 && oauth2 != null)
             {
-                return oauth2(Oauth2!);
+                return oauth2(__value1);
             }
-            else if (IsLdap && ldap != null)
+            else if (Ldap is { } __value2 && ldap != null)
             {
-                return ldap(Ldap!);
+                return ldap(__value2);
             }
-            else if (IsAnonymous && anonymous != null)
+            else if (Anonymous is { } __value3 && anonymous != null)
             {
-                return anonymous(Anonymous!);
+                return anonymous(__value3);
             }
 
             return default(TResult);
@@ -354,21 +354,21 @@ namespace G
                 Validate();
             }
 
-            if (IsLocal)
+            if (Local is { } __value0)
             {
-                local?.Invoke(Local!);
+                local?.Invoke(__value0);
             }
-            else if (IsOauth2)
+            else if (Oauth2 is { } __value1)
             {
-                oauth2?.Invoke(Oauth2!);
+                oauth2?.Invoke(__value1);
             }
-            else if (IsLdap)
+            else if (Ldap is { } __value2)
             {
-                ldap?.Invoke(Ldap!);
+                ldap?.Invoke(__value2);
             }
-            else if (IsAnonymous)
+            else if (Anonymous is { } __value3)
             {
-                anonymous?.Invoke(Anonymous!);
+                anonymous?.Invoke(__value3);
             }
         }
 
@@ -387,21 +387,21 @@ namespace G
                 Validate();
             }
 
-            if (IsLocal)
+            if (Local is { } __value0)
             {
-                local?.Invoke(Local!);
+                local?.Invoke(__value0);
             }
-            else if (IsOauth2)
+            else if (Oauth2 is { } __value1)
             {
-                oauth2?.Invoke(Oauth2!);
+                oauth2?.Invoke(__value1);
             }
-            else if (IsLdap)
+            else if (Ldap is { } __value2)
             {
-                ldap?.Invoke(Ldap!);
+                ldap?.Invoke(__value2);
             }
-            else if (IsAnonymous)
+            else if (Anonymous is { } __value3)
             {
-                anonymous?.Invoke(Anonymous!);
+                anonymous?.Invoke(__value3);
             }
         }
 

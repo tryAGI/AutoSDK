@@ -1,4 +1,4 @@
-﻿//HintName: G.Models.RankByText.g.cs
+//HintName: G.Models.RankByText.g.cs
 #pragma warning disable CS0618 // Type or member is obsolete
 
 #nullable enable
@@ -43,8 +43,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public byte[] PickRankByTextVariant1() => IsRankByTextVariant1
-            ? RankByTextVariant1!
+        public byte[] PickRankByTextVariant1() => RankByTextVariant1 is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'RankByTextVariant1' but the value was {ToString()}.");
 
         /// <summary>
@@ -80,8 +80,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public byte[] PickRankByTextVariant2() => IsRankByTextVariant2
-            ? RankByTextVariant2!
+        public byte[] PickRankByTextVariant2() => RankByTextVariant2 is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'RankByTextVariant2' but the value was {ToString()}.");
 
         /// <summary>
@@ -117,8 +117,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public byte[] PickRankByTextVariant3() => IsRankByTextVariant3
-            ? RankByTextVariant3!
+        public byte[] PickRankByTextVariant3() => RankByTextVariant3 is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'RankByTextVariant3' but the value was {ToString()}.");
 
         /// <summary>
@@ -154,8 +154,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public byte[] PickRankByTextVariant4() => IsRankByTextVariant4
-            ? RankByTextVariant4!
+        public byte[] PickRankByTextVariant4() => RankByTextVariant4 is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'RankByTextVariant4' but the value was {ToString()}.");
 
         /// <summary>
@@ -191,8 +191,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public byte[] PickRankByTextVariant5() => IsRankByTextVariant5
-            ? RankByTextVariant5!
+        public byte[] PickRankByTextVariant5() => RankByTextVariant5 is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'RankByTextVariant5' but the value was {ToString()}.");
 
         /// <summary>
@@ -228,8 +228,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public byte[] PickRankByTextVariant6() => IsRankByTextVariant6
-            ? RankByTextVariant6!
+        public byte[] PickRankByTextVariant6() => RankByTextVariant6 is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'RankByTextVariant6' but the value was {ToString()}.");
 
         /// <summary>
@@ -265,8 +265,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public byte[] PickRankByTextVariant7() => IsRankByTextVariant7
-            ? RankByTextVariant7!
+        public byte[] PickRankByTextVariant7() => RankByTextVariant7 is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'RankByTextVariant7' but the value was {ToString()}.");
 
         /// <summary>
@@ -302,8 +302,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public byte[] PickRankByTextVariant8() => IsRankByTextVariant8
-            ? RankByTextVariant8!
+        public byte[] PickRankByTextVariant8() => RankByTextVariant8 is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'RankByTextVariant8' but the value was {ToString()}.");
 
         /// <summary>
@@ -339,8 +339,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.Filter PickFilter() => IsFilter
-            ? Filter!.Value
+        public global::G.Filter PickFilter() => Filter is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Filter' but the value was {ToString()}.");
 
         /// <summary>
@@ -376,8 +376,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public byte[] PickRankByTextVariant10() => IsRankByTextVariant10
-            ? RankByTextVariant10!
+        public byte[] PickRankByTextVariant10() => RankByTextVariant10 is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'RankByTextVariant10' but the value was {ToString()}.");
 
         /// <summary>
@@ -413,8 +413,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public byte[] PickRankByTextVariant11() => IsRankByTextVariant11
-            ? RankByTextVariant11!
+        public byte[] PickRankByTextVariant11() => RankByTextVariant11 is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'RankByTextVariant11' but the value was {ToString()}.");
 
         /// <summary>
@@ -450,8 +450,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public byte[] PickRankByTextVariant12() => IsRankByTextVariant12
-            ? RankByTextVariant12!
+        public byte[] PickRankByTextVariant12() => RankByTextVariant12 is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'RankByTextVariant12' but the value was {ToString()}.");
 
         /// <summary>
@@ -487,8 +487,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public byte[] PickRankByTextVariant13() => IsRankByTextVariant13
-            ? RankByTextVariant13!
+        public byte[] PickRankByTextVariant13() => RankByTextVariant13 is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'RankByTextVariant13' but the value was {ToString()}.");
         /// <summary>
         /// 
@@ -640,57 +640,57 @@ namespace G
                 Validate();
             }
 
-            if (IsRankByTextVariant1 && rankByTextVariant1 != null)
+            if (RankByTextVariant1 is { } __value0 && rankByTextVariant1 != null)
             {
-                return rankByTextVariant1(RankByTextVariant1!);
+                return rankByTextVariant1(__value0);
             }
-            else if (IsRankByTextVariant2 && rankByTextVariant2 != null)
+            else if (RankByTextVariant2 is { } __value1 && rankByTextVariant2 != null)
             {
-                return rankByTextVariant2(RankByTextVariant2!);
+                return rankByTextVariant2(__value1);
             }
-            else if (IsRankByTextVariant3 && rankByTextVariant3 != null)
+            else if (RankByTextVariant3 is { } __value2 && rankByTextVariant3 != null)
             {
-                return rankByTextVariant3(RankByTextVariant3!);
+                return rankByTextVariant3(__value2);
             }
-            else if (IsRankByTextVariant4 && rankByTextVariant4 != null)
+            else if (RankByTextVariant4 is { } __value3 && rankByTextVariant4 != null)
             {
-                return rankByTextVariant4(RankByTextVariant4!);
+                return rankByTextVariant4(__value3);
             }
-            else if (IsRankByTextVariant5 && rankByTextVariant5 != null)
+            else if (RankByTextVariant5 is { } __value4 && rankByTextVariant5 != null)
             {
-                return rankByTextVariant5(RankByTextVariant5!);
+                return rankByTextVariant5(__value4);
             }
-            else if (IsRankByTextVariant6 && rankByTextVariant6 != null)
+            else if (RankByTextVariant6 is { } __value5 && rankByTextVariant6 != null)
             {
-                return rankByTextVariant6(RankByTextVariant6!);
+                return rankByTextVariant6(__value5);
             }
-            else if (IsRankByTextVariant7 && rankByTextVariant7 != null)
+            else if (RankByTextVariant7 is { } __value6 && rankByTextVariant7 != null)
             {
-                return rankByTextVariant7(RankByTextVariant7!);
+                return rankByTextVariant7(__value6);
             }
-            else if (IsRankByTextVariant8 && rankByTextVariant8 != null)
+            else if (RankByTextVariant8 is { } __value7 && rankByTextVariant8 != null)
             {
-                return rankByTextVariant8(RankByTextVariant8!);
+                return rankByTextVariant8(__value7);
             }
-            else if (IsFilter && filter != null)
+            else if (Filter is { } __value8 && filter != null)
             {
-                return filter(Filter!);
+                return filter(__value8);
             }
-            else if (IsRankByTextVariant10 && rankByTextVariant10 != null)
+            else if (RankByTextVariant10 is { } __value9 && rankByTextVariant10 != null)
             {
-                return rankByTextVariant10(RankByTextVariant10!);
+                return rankByTextVariant10(__value9);
             }
-            else if (IsRankByTextVariant11 && rankByTextVariant11 != null)
+            else if (RankByTextVariant11 is { } __value10 && rankByTextVariant11 != null)
             {
-                return rankByTextVariant11(RankByTextVariant11!);
+                return rankByTextVariant11(__value10);
             }
-            else if (IsRankByTextVariant12 && rankByTextVariant12 != null)
+            else if (RankByTextVariant12 is { } __value11 && rankByTextVariant12 != null)
             {
-                return rankByTextVariant12(RankByTextVariant12!);
+                return rankByTextVariant12(__value11);
             }
-            else if (IsRankByTextVariant13 && rankByTextVariant13 != null)
+            else if (RankByTextVariant13 is { } __value12 && rankByTextVariant13 != null)
             {
-                return rankByTextVariant13(RankByTextVariant13!);
+                return rankByTextVariant13(__value12);
             }
 
             return default(TResult);
@@ -732,57 +732,57 @@ namespace G
                 Validate();
             }
 
-            if (IsRankByTextVariant1)
+            if (RankByTextVariant1 is { } __value0)
             {
-                rankByTextVariant1?.Invoke(RankByTextVariant1!);
+                rankByTextVariant1?.Invoke(__value0);
             }
-            else if (IsRankByTextVariant2)
+            else if (RankByTextVariant2 is { } __value1)
             {
-                rankByTextVariant2?.Invoke(RankByTextVariant2!);
+                rankByTextVariant2?.Invoke(__value1);
             }
-            else if (IsRankByTextVariant3)
+            else if (RankByTextVariant3 is { } __value2)
             {
-                rankByTextVariant3?.Invoke(RankByTextVariant3!);
+                rankByTextVariant3?.Invoke(__value2);
             }
-            else if (IsRankByTextVariant4)
+            else if (RankByTextVariant4 is { } __value3)
             {
-                rankByTextVariant4?.Invoke(RankByTextVariant4!);
+                rankByTextVariant4?.Invoke(__value3);
             }
-            else if (IsRankByTextVariant5)
+            else if (RankByTextVariant5 is { } __value4)
             {
-                rankByTextVariant5?.Invoke(RankByTextVariant5!);
+                rankByTextVariant5?.Invoke(__value4);
             }
-            else if (IsRankByTextVariant6)
+            else if (RankByTextVariant6 is { } __value5)
             {
-                rankByTextVariant6?.Invoke(RankByTextVariant6!);
+                rankByTextVariant6?.Invoke(__value5);
             }
-            else if (IsRankByTextVariant7)
+            else if (RankByTextVariant7 is { } __value6)
             {
-                rankByTextVariant7?.Invoke(RankByTextVariant7!);
+                rankByTextVariant7?.Invoke(__value6);
             }
-            else if (IsRankByTextVariant8)
+            else if (RankByTextVariant8 is { } __value7)
             {
-                rankByTextVariant8?.Invoke(RankByTextVariant8!);
+                rankByTextVariant8?.Invoke(__value7);
             }
-            else if (IsFilter)
+            else if (Filter is { } __value8)
             {
-                filter?.Invoke(Filter!);
+                filter?.Invoke(__value8);
             }
-            else if (IsRankByTextVariant10)
+            else if (RankByTextVariant10 is { } __value9)
             {
-                rankByTextVariant10?.Invoke(RankByTextVariant10!);
+                rankByTextVariant10?.Invoke(__value9);
             }
-            else if (IsRankByTextVariant11)
+            else if (RankByTextVariant11 is { } __value10)
             {
-                rankByTextVariant11?.Invoke(RankByTextVariant11!);
+                rankByTextVariant11?.Invoke(__value10);
             }
-            else if (IsRankByTextVariant12)
+            else if (RankByTextVariant12 is { } __value11)
             {
-                rankByTextVariant12?.Invoke(RankByTextVariant12!);
+                rankByTextVariant12?.Invoke(__value11);
             }
-            else if (IsRankByTextVariant13)
+            else if (RankByTextVariant13 is { } __value12)
             {
-                rankByTextVariant13?.Invoke(RankByTextVariant13!);
+                rankByTextVariant13?.Invoke(__value12);
             }
         }
 
@@ -810,57 +810,57 @@ namespace G
                 Validate();
             }
 
-            if (IsRankByTextVariant1)
+            if (RankByTextVariant1 is { } __value0)
             {
-                rankByTextVariant1?.Invoke(RankByTextVariant1!);
+                rankByTextVariant1?.Invoke(__value0);
             }
-            else if (IsRankByTextVariant2)
+            else if (RankByTextVariant2 is { } __value1)
             {
-                rankByTextVariant2?.Invoke(RankByTextVariant2!);
+                rankByTextVariant2?.Invoke(__value1);
             }
-            else if (IsRankByTextVariant3)
+            else if (RankByTextVariant3 is { } __value2)
             {
-                rankByTextVariant3?.Invoke(RankByTextVariant3!);
+                rankByTextVariant3?.Invoke(__value2);
             }
-            else if (IsRankByTextVariant4)
+            else if (RankByTextVariant4 is { } __value3)
             {
-                rankByTextVariant4?.Invoke(RankByTextVariant4!);
+                rankByTextVariant4?.Invoke(__value3);
             }
-            else if (IsRankByTextVariant5)
+            else if (RankByTextVariant5 is { } __value4)
             {
-                rankByTextVariant5?.Invoke(RankByTextVariant5!);
+                rankByTextVariant5?.Invoke(__value4);
             }
-            else if (IsRankByTextVariant6)
+            else if (RankByTextVariant6 is { } __value5)
             {
-                rankByTextVariant6?.Invoke(RankByTextVariant6!);
+                rankByTextVariant6?.Invoke(__value5);
             }
-            else if (IsRankByTextVariant7)
+            else if (RankByTextVariant7 is { } __value6)
             {
-                rankByTextVariant7?.Invoke(RankByTextVariant7!);
+                rankByTextVariant7?.Invoke(__value6);
             }
-            else if (IsRankByTextVariant8)
+            else if (RankByTextVariant8 is { } __value7)
             {
-                rankByTextVariant8?.Invoke(RankByTextVariant8!);
+                rankByTextVariant8?.Invoke(__value7);
             }
-            else if (IsFilter)
+            else if (Filter is { } __value8)
             {
-                filter?.Invoke(Filter!);
+                filter?.Invoke(__value8);
             }
-            else if (IsRankByTextVariant10)
+            else if (RankByTextVariant10 is { } __value9)
             {
-                rankByTextVariant10?.Invoke(RankByTextVariant10!);
+                rankByTextVariant10?.Invoke(__value9);
             }
-            else if (IsRankByTextVariant11)
+            else if (RankByTextVariant11 is { } __value10)
             {
-                rankByTextVariant11?.Invoke(RankByTextVariant11!);
+                rankByTextVariant11?.Invoke(__value10);
             }
-            else if (IsRankByTextVariant12)
+            else if (RankByTextVariant12 is { } __value11)
             {
-                rankByTextVariant12?.Invoke(RankByTextVariant12!);
+                rankByTextVariant12?.Invoke(__value11);
             }
-            else if (IsRankByTextVariant13)
+            else if (RankByTextVariant13 is { } __value12)
             {
-                rankByTextVariant13?.Invoke(RankByTextVariant13!);
+                rankByTextVariant13?.Invoke(__value12);
             }
         }
 

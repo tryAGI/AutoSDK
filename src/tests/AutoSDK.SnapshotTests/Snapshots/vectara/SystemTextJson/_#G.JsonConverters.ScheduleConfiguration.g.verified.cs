@@ -1,4 +1,4 @@
-﻿//HintName: G.JsonConverters.ScheduleConfiguration.g.cs
+//HintName: G.JsonConverters.ScheduleConfiguration.g.cs
 #nullable enable
 #pragma warning disable CS0618 // Type or member is obsolete
 
@@ -131,13 +131,13 @@ namespace G.JsonConverters
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.IntervalScheduleConfiguration), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.IntervalScheduleConfiguration?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.IntervalScheduleConfiguration).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Interval!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickInterval(), typeInfo);
             }
             else if (value.IsCron)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.CronScheduleConfiguration), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.CronScheduleConfiguration?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.CronScheduleConfiguration).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Cron!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickCron(), typeInfo);
             }
         }
     }

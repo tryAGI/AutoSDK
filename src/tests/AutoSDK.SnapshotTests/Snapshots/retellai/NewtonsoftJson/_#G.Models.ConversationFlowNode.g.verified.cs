@@ -1,4 +1,4 @@
-﻿//HintName: G.Models.ConversationFlowNode.g.cs
+//HintName: G.Models.ConversationFlowNode.g.cs
 #pragma warning disable CS0618 // Type or member is obsolete
 
 #nullable enable
@@ -43,8 +43,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.ConversationNode PickConversationNode() => IsConversationNode
-            ? ConversationNode!.Value
+        public global::G.ConversationNode PickConversationNode() => ConversationNode is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'ConversationNode' but the value was {ToString()}.");
 
         /// <summary>
@@ -80,8 +80,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.EndNode PickEnd() => IsEnd
-            ? End!.Value
+        public global::G.EndNode PickEnd() => End is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'End' but the value was {ToString()}.");
 
         /// <summary>
@@ -117,8 +117,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.FunctionNode PickFunction() => IsFunction
-            ? Function!.Value
+        public global::G.FunctionNode PickFunction() => Function is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Function' but the value was {ToString()}.");
 
         /// <summary>
@@ -154,8 +154,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.CodeNode PickCode() => IsCode
-            ? Code!.Value
+        public global::G.CodeNode PickCode() => Code is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Code' but the value was {ToString()}.");
 
         /// <summary>
@@ -191,8 +191,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.TransferCallNode PickTransferCall() => IsTransferCall
-            ? TransferCall!.Value
+        public global::G.TransferCallNode PickTransferCall() => TransferCall is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'TransferCall' but the value was {ToString()}.");
 
         /// <summary>
@@ -228,8 +228,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.PressDigitNode PickPressDigit() => IsPressDigit
-            ? PressDigit!.Value
+        public global::G.PressDigitNode PickPressDigit() => PressDigit is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'PressDigit' but the value was {ToString()}.");
 
         /// <summary>
@@ -265,8 +265,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.BranchNode PickBranch() => IsBranch
-            ? Branch!.Value
+        public global::G.BranchNode PickBranch() => Branch is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Branch' but the value was {ToString()}.");
 
         /// <summary>
@@ -302,8 +302,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.SmsNode PickSms() => IsSms
-            ? Sms!.Value
+        public global::G.SmsNode PickSms() => Sms is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Sms' but the value was {ToString()}.");
 
         /// <summary>
@@ -339,8 +339,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.ExtractDynamicVariablesNode PickExtractDynamicVariables() => IsExtractDynamicVariables
-            ? ExtractDynamicVariables!.Value
+        public global::G.ExtractDynamicVariablesNode PickExtractDynamicVariables() => ExtractDynamicVariables is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'ExtractDynamicVariables' but the value was {ToString()}.");
 
         /// <summary>
@@ -376,8 +376,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.AgentSwapNode PickAgentSwap() => IsAgentSwap
-            ? AgentSwap!.Value
+        public global::G.AgentSwapNode PickAgentSwap() => AgentSwap is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'AgentSwap' but the value was {ToString()}.");
 
         /// <summary>
@@ -413,8 +413,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.MCPNode PickMcp() => IsMcp
-            ? Mcp!.Value
+        public global::G.MCPNode PickMcp() => Mcp is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Mcp' but the value was {ToString()}.");
 
         /// <summary>
@@ -450,8 +450,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.ComponentNode PickComponent() => IsComponent
-            ? Component!.Value
+        public global::G.ComponentNode PickComponent() => Component is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Component' but the value was {ToString()}.");
 
         /// <summary>
@@ -487,8 +487,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.BridgeTransferNode PickBridgeTransfer() => IsBridgeTransfer
-            ? BridgeTransfer!.Value
+        public global::G.BridgeTransferNode PickBridgeTransfer() => BridgeTransfer is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'BridgeTransfer' but the value was {ToString()}.");
 
         /// <summary>
@@ -524,8 +524,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.CancelTransferNode PickCancelTransfer() => IsCancelTransfer
-            ? CancelTransfer!.Value
+        public global::G.CancelTransferNode PickCancelTransfer() => CancelTransfer is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'CancelTransfer' but the value was {ToString()}.");
         /// <summary>
         /// 
@@ -958,61 +958,61 @@ namespace G
                 Validate();
             }
 
-            if (IsConversationNode && conversationNode != null)
+            if (ConversationNode is { } __value0 && conversationNode != null)
             {
-                return conversationNode(ConversationNode!);
+                return conversationNode(__value0);
             }
-            else if (IsEnd && end != null)
+            else if (End is { } __value1 && end != null)
             {
-                return end(End!);
+                return end(__value1);
             }
-            else if (IsFunction && function != null)
+            else if (Function is { } __value2 && function != null)
             {
-                return function(Function!);
+                return function(__value2);
             }
-            else if (IsCode && code != null)
+            else if (Code is { } __value3 && code != null)
             {
-                return code(Code!);
+                return code(__value3);
             }
-            else if (IsTransferCall && transferCall != null)
+            else if (TransferCall is { } __value4 && transferCall != null)
             {
-                return transferCall(TransferCall!);
+                return transferCall(__value4);
             }
-            else if (IsPressDigit && pressDigit != null)
+            else if (PressDigit is { } __value5 && pressDigit != null)
             {
-                return pressDigit(PressDigit!);
+                return pressDigit(__value5);
             }
-            else if (IsBranch && branch != null)
+            else if (Branch is { } __value6 && branch != null)
             {
-                return branch(Branch!);
+                return branch(__value6);
             }
-            else if (IsSms && sms != null)
+            else if (Sms is { } __value7 && sms != null)
             {
-                return sms(Sms!);
+                return sms(__value7);
             }
-            else if (IsExtractDynamicVariables && extractDynamicVariables != null)
+            else if (ExtractDynamicVariables is { } __value8 && extractDynamicVariables != null)
             {
-                return extractDynamicVariables(ExtractDynamicVariables!);
+                return extractDynamicVariables(__value8);
             }
-            else if (IsAgentSwap && agentSwap != null)
+            else if (AgentSwap is { } __value9 && agentSwap != null)
             {
-                return agentSwap(AgentSwap!);
+                return agentSwap(__value9);
             }
-            else if (IsMcp && mcp != null)
+            else if (Mcp is { } __value10 && mcp != null)
             {
-                return mcp(Mcp!);
+                return mcp(__value10);
             }
-            else if (IsComponent && component != null)
+            else if (Component is { } __value11 && component != null)
             {
-                return component(Component!);
+                return component(__value11);
             }
-            else if (IsBridgeTransfer && bridgeTransfer != null)
+            else if (BridgeTransfer is { } __value12 && bridgeTransfer != null)
             {
-                return bridgeTransfer(BridgeTransfer!);
+                return bridgeTransfer(__value12);
             }
-            else if (IsCancelTransfer && cancelTransfer != null)
+            else if (CancelTransfer is { } __value13 && cancelTransfer != null)
             {
-                return cancelTransfer(CancelTransfer!);
+                return cancelTransfer(__value13);
             }
 
             return default(TResult);
@@ -1056,61 +1056,61 @@ namespace G
                 Validate();
             }
 
-            if (IsConversationNode)
+            if (ConversationNode is { } __value0)
             {
-                conversationNode?.Invoke(ConversationNode!);
+                conversationNode?.Invoke(__value0);
             }
-            else if (IsEnd)
+            else if (End is { } __value1)
             {
-                end?.Invoke(End!);
+                end?.Invoke(__value1);
             }
-            else if (IsFunction)
+            else if (Function is { } __value2)
             {
-                function?.Invoke(Function!);
+                function?.Invoke(__value2);
             }
-            else if (IsCode)
+            else if (Code is { } __value3)
             {
-                code?.Invoke(Code!);
+                code?.Invoke(__value3);
             }
-            else if (IsTransferCall)
+            else if (TransferCall is { } __value4)
             {
-                transferCall?.Invoke(TransferCall!);
+                transferCall?.Invoke(__value4);
             }
-            else if (IsPressDigit)
+            else if (PressDigit is { } __value5)
             {
-                pressDigit?.Invoke(PressDigit!);
+                pressDigit?.Invoke(__value5);
             }
-            else if (IsBranch)
+            else if (Branch is { } __value6)
             {
-                branch?.Invoke(Branch!);
+                branch?.Invoke(__value6);
             }
-            else if (IsSms)
+            else if (Sms is { } __value7)
             {
-                sms?.Invoke(Sms!);
+                sms?.Invoke(__value7);
             }
-            else if (IsExtractDynamicVariables)
+            else if (ExtractDynamicVariables is { } __value8)
             {
-                extractDynamicVariables?.Invoke(ExtractDynamicVariables!);
+                extractDynamicVariables?.Invoke(__value8);
             }
-            else if (IsAgentSwap)
+            else if (AgentSwap is { } __value9)
             {
-                agentSwap?.Invoke(AgentSwap!);
+                agentSwap?.Invoke(__value9);
             }
-            else if (IsMcp)
+            else if (Mcp is { } __value10)
             {
-                mcp?.Invoke(Mcp!);
+                mcp?.Invoke(__value10);
             }
-            else if (IsComponent)
+            else if (Component is { } __value11)
             {
-                component?.Invoke(Component!);
+                component?.Invoke(__value11);
             }
-            else if (IsBridgeTransfer)
+            else if (BridgeTransfer is { } __value12)
             {
-                bridgeTransfer?.Invoke(BridgeTransfer!);
+                bridgeTransfer?.Invoke(__value12);
             }
-            else if (IsCancelTransfer)
+            else if (CancelTransfer is { } __value13)
             {
-                cancelTransfer?.Invoke(CancelTransfer!);
+                cancelTransfer?.Invoke(__value13);
             }
         }
 
@@ -1139,61 +1139,61 @@ namespace G
                 Validate();
             }
 
-            if (IsConversationNode)
+            if (ConversationNode is { } __value0)
             {
-                conversationNode?.Invoke(ConversationNode!);
+                conversationNode?.Invoke(__value0);
             }
-            else if (IsEnd)
+            else if (End is { } __value1)
             {
-                end?.Invoke(End!);
+                end?.Invoke(__value1);
             }
-            else if (IsFunction)
+            else if (Function is { } __value2)
             {
-                function?.Invoke(Function!);
+                function?.Invoke(__value2);
             }
-            else if (IsCode)
+            else if (Code is { } __value3)
             {
-                code?.Invoke(Code!);
+                code?.Invoke(__value3);
             }
-            else if (IsTransferCall)
+            else if (TransferCall is { } __value4)
             {
-                transferCall?.Invoke(TransferCall!);
+                transferCall?.Invoke(__value4);
             }
-            else if (IsPressDigit)
+            else if (PressDigit is { } __value5)
             {
-                pressDigit?.Invoke(PressDigit!);
+                pressDigit?.Invoke(__value5);
             }
-            else if (IsBranch)
+            else if (Branch is { } __value6)
             {
-                branch?.Invoke(Branch!);
+                branch?.Invoke(__value6);
             }
-            else if (IsSms)
+            else if (Sms is { } __value7)
             {
-                sms?.Invoke(Sms!);
+                sms?.Invoke(__value7);
             }
-            else if (IsExtractDynamicVariables)
+            else if (ExtractDynamicVariables is { } __value8)
             {
-                extractDynamicVariables?.Invoke(ExtractDynamicVariables!);
+                extractDynamicVariables?.Invoke(__value8);
             }
-            else if (IsAgentSwap)
+            else if (AgentSwap is { } __value9)
             {
-                agentSwap?.Invoke(AgentSwap!);
+                agentSwap?.Invoke(__value9);
             }
-            else if (IsMcp)
+            else if (Mcp is { } __value10)
             {
-                mcp?.Invoke(Mcp!);
+                mcp?.Invoke(__value10);
             }
-            else if (IsComponent)
+            else if (Component is { } __value11)
             {
-                component?.Invoke(Component!);
+                component?.Invoke(__value11);
             }
-            else if (IsBridgeTransfer)
+            else if (BridgeTransfer is { } __value12)
             {
-                bridgeTransfer?.Invoke(BridgeTransfer!);
+                bridgeTransfer?.Invoke(__value12);
             }
-            else if (IsCancelTransfer)
+            else if (CancelTransfer is { } __value13)
             {
-                cancelTransfer?.Invoke(CancelTransfer!);
+                cancelTransfer?.Invoke(__value13);
             }
         }
 

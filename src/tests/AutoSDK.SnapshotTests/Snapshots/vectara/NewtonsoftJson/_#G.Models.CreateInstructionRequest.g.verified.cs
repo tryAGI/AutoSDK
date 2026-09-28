@@ -1,4 +1,4 @@
-﻿//HintName: G.Models.CreateInstructionRequest.g.cs
+//HintName: G.Models.CreateInstructionRequest.g.cs
 #pragma warning disable CS0618 // Type or member is obsolete
 
 #nullable enable
@@ -48,8 +48,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.CreateInitialInstructionRequest PickInitial() => IsInitial
-            ? Initial!.Value
+        public global::G.CreateInitialInstructionRequest PickInitial() => Initial is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Initial' but the value was {ToString()}.");
         /// <summary>
         /// 
@@ -121,9 +121,9 @@ namespace G
                 Validate();
             }
 
-            if (IsInitial && initial != null)
+            if (Initial is { } __value0 && initial != null)
             {
-                return initial(Initial!);
+                return initial(__value0);
             }
 
             return default(TResult);
@@ -141,9 +141,9 @@ namespace G
                 Validate();
             }
 
-            if (IsInitial)
+            if (Initial is { } __value0)
             {
-                initial?.Invoke(Initial!);
+                initial?.Invoke(__value0);
             }
         }
 
@@ -159,9 +159,9 @@ namespace G
                 Validate();
             }
 
-            if (IsInitial)
+            if (Initial is { } __value0)
             {
-                initial?.Invoke(Initial!);
+                initial?.Invoke(__value0);
             }
         }
 

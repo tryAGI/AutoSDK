@@ -1,4 +1,4 @@
-﻿//HintName: G.Models.Template2.g.cs
+//HintName: G.Models.Template2.g.cs
 #pragma warning disable CS0618 // Type or member is obsolete
 
 #nullable enable
@@ -48,8 +48,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.PromptChatTemplate PickChat() => IsChat
-            ? Chat!
+        public global::G.PromptChatTemplate PickChat() => Chat is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Chat' but the value was {ToString()}.");
 
         /// <summary>
@@ -85,8 +85,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.PromptStringTemplate PickString() => IsString
-            ? String!
+        public global::G.PromptStringTemplate PickString() => String is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'String' but the value was {ToString()}.");
         /// <summary>
         /// 
@@ -186,13 +186,13 @@ namespace G
                 Validate();
             }
 
-            if (IsChat && chat != null)
+            if (Chat is { } __value0 && chat != null)
             {
-                return chat(Chat!);
+                return chat(__value0);
             }
-            else if (IsString && @string != null)
+            else if (String is { } __value1 && @string != null)
             {
-                return @string(String!);
+                return @string(__value1);
             }
 
             return default(TResult);
@@ -212,13 +212,13 @@ namespace G
                 Validate();
             }
 
-            if (IsChat)
+            if (Chat is { } __value0)
             {
-                chat?.Invoke(Chat!);
+                chat?.Invoke(__value0);
             }
-            else if (IsString)
+            else if (String is { } __value1)
             {
-                @string?.Invoke(String!);
+                @string?.Invoke(__value1);
             }
         }
 
@@ -235,13 +235,13 @@ namespace G
                 Validate();
             }
 
-            if (IsChat)
+            if (Chat is { } __value0)
             {
-                chat?.Invoke(Chat!);
+                chat?.Invoke(__value0);
             }
-            else if (IsString)
+            else if (String is { } __value1)
             {
-                @string?.Invoke(String!);
+                @string?.Invoke(__value1);
             }
         }
 

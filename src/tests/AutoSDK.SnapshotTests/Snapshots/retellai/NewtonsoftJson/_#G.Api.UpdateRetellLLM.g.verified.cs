@@ -1,4 +1,4 @@
-﻿//HintName: G.Api.UpdateRetellLLM.g.cs
+//HintName: G.Api.UpdateRetellLLM.g.cs
 
 #nullable enable
 
@@ -182,7 +182,7 @@ namespace G
                 PrepareUpdateRetellLLMRequest(
                     httpClient: HttpClient,
                     httpRequestMessage: __httpRequest,
-                    llmId: llmId!,
+                    llmId: llmId,
                     version: version,
                     request: request);
 
@@ -206,7 +206,7 @@ namespace G
                                 pathTemplate: "$\"/update-retell-llm/{llmId}\"",
                                 httpMethod: "PATCH",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: null,
                                 exception: null,
                                 clientOptions: Options,
@@ -240,7 +240,7 @@ namespace G
                                 pathTemplate: "$\"/update-retell-llm/{llmId}\"",
                                 httpMethod: "PATCH",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: null,
                                 exception: __exception,
                                 clientOptions: Options,
@@ -281,7 +281,7 @@ namespace G
                                 pathTemplate: "$\"/update-retell-llm/{llmId}\"",
                                 httpMethod: "PATCH",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: __response,
                                 exception: null,
                                 clientOptions: Options,
@@ -329,7 +329,7 @@ namespace G
                                 pathTemplate: "$\"/update-retell-llm/{llmId}\"",
                                 httpMethod: "PATCH",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: __response,
                                 exception: null,
                                 clientOptions: Options,
@@ -351,7 +351,7 @@ namespace G
                                 pathTemplate: "$\"/update-retell-llm/{llmId}\"",
                                 httpMethod: "PATCH",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: __response,
                                 exception: null,
                                 clientOptions: Options,

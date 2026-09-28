@@ -1,4 +1,4 @@
-﻿//HintName: G.JsonConverters.CreateInputRequest.g.cs
+//HintName: G.JsonConverters.CreateInputRequest.g.cs
 #nullable enable
 #pragma warning disable CS0618 // Type or member is obsolete
 
@@ -69,19 +69,19 @@ namespace G.JsonConverters
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.CreateInputMessageRequest), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.CreateInputMessageRequest> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.CreateInputMessageRequest).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.InputMessage!.Value, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickInputMessage(), typeInfo);
             }
             else if (value.IsInterrupt)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.CreateInterruptRequest), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.CreateInterruptRequest> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.CreateInterruptRequest).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Interrupt!.Value, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickInterrupt(), typeInfo);
             }
             else if (value.IsCompact)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.CreateCompactRequest), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.CreateCompactRequest> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.CreateCompactRequest).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Compact!.Value, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickCompact(), typeInfo);
             }
         }
     }

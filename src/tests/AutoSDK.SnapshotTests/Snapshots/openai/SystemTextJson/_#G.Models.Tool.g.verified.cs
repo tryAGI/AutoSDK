@@ -1,4 +1,4 @@
-﻿//HintName: G.Models.Tool.g.cs
+//HintName: G.Models.Tool.g.cs
 #pragma warning disable CS0618 // Type or member is obsolete
 
 #nullable enable
@@ -43,8 +43,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.FunctionTool PickFunction() => IsFunction
-            ? Function!
+        public global::G.FunctionTool PickFunction() => Function is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Function' but the value was {ToString()}.");
 
         /// <summary>
@@ -80,8 +80,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.FileSearchTool PickFileSearch() => IsFileSearch
-            ? FileSearch!
+        public global::G.FileSearchTool PickFileSearch() => FileSearch is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'FileSearch' but the value was {ToString()}.");
 
         /// <summary>
@@ -117,8 +117,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.WebSearchPreviewTool PickWebSearchPreview() => IsWebSearchPreview
-            ? WebSearchPreview!
+        public global::G.WebSearchPreviewTool PickWebSearchPreview() => WebSearchPreview is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'WebSearchPreview' but the value was {ToString()}.");
 
         /// <summary>
@@ -154,8 +154,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.ComputerUsePreviewTool PickComputerUsePreview() => IsComputerUsePreview
-            ? ComputerUsePreview!
+        public global::G.ComputerUsePreviewTool PickComputerUsePreview() => ComputerUsePreview is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'ComputerUsePreview' but the value was {ToString()}.");
 
         /// <summary>
@@ -192,8 +192,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.MCPTool PickMcp() => IsMcp
-            ? Mcp!
+        public global::G.MCPTool PickMcp() => Mcp is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Mcp' but the value was {ToString()}.");
 
         /// <summary>
@@ -229,8 +229,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.CodeInterpreterTool PickCodeInterpreter() => IsCodeInterpreter
-            ? CodeInterpreter!
+        public global::G.CodeInterpreterTool PickCodeInterpreter() => CodeInterpreter is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'CodeInterpreter' but the value was {ToString()}.");
 
         /// <summary>
@@ -266,8 +266,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.ImageGenTool PickImageGeneration() => IsImageGeneration
-            ? ImageGeneration!
+        public global::G.ImageGenTool PickImageGeneration() => ImageGeneration is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'ImageGeneration' but the value was {ToString()}.");
 
         /// <summary>
@@ -303,8 +303,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.LocalShellTool PickLocalShell() => IsLocalShell
-            ? LocalShell!
+        public global::G.LocalShellTool PickLocalShell() => LocalShell is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'LocalShell' but the value was {ToString()}.");
         /// <summary>
         /// 
@@ -569,37 +569,37 @@ namespace G
                 Validate();
             }
 
-            if (IsFunction && function != null)
+            if (Function is { } __value0 && function != null)
             {
-                return function(Function!);
+                return function(__value0);
             }
-            else if (IsFileSearch && fileSearch != null)
+            else if (FileSearch is { } __value1 && fileSearch != null)
             {
-                return fileSearch(FileSearch!);
+                return fileSearch(__value1);
             }
-            else if (IsWebSearchPreview && webSearchPreview != null)
+            else if (WebSearchPreview is { } __value2 && webSearchPreview != null)
             {
-                return webSearchPreview(WebSearchPreview!);
+                return webSearchPreview(__value2);
             }
-            else if (IsComputerUsePreview && computerUsePreview != null)
+            else if (ComputerUsePreview is { } __value3 && computerUsePreview != null)
             {
-                return computerUsePreview(ComputerUsePreview!);
+                return computerUsePreview(__value3);
             }
-            else if (IsMcp && mcp != null)
+            else if (Mcp is { } __value4 && mcp != null)
             {
-                return mcp(Mcp!);
+                return mcp(__value4);
             }
-            else if (IsCodeInterpreter && codeInterpreter != null)
+            else if (CodeInterpreter is { } __value5 && codeInterpreter != null)
             {
-                return codeInterpreter(CodeInterpreter!);
+                return codeInterpreter(__value5);
             }
-            else if (IsImageGeneration && imageGeneration != null)
+            else if (ImageGeneration is { } __value6 && imageGeneration != null)
             {
-                return imageGeneration(ImageGeneration!);
+                return imageGeneration(__value6);
             }
-            else if (IsLocalShell && localShell != null)
+            else if (LocalShell is { } __value7 && localShell != null)
             {
-                return localShell(LocalShell!);
+                return localShell(__value7);
             }
 
             return default(TResult);
@@ -631,37 +631,37 @@ namespace G
                 Validate();
             }
 
-            if (IsFunction)
+            if (Function is { } __value0)
             {
-                function?.Invoke(Function!);
+                function?.Invoke(__value0);
             }
-            else if (IsFileSearch)
+            else if (FileSearch is { } __value1)
             {
-                fileSearch?.Invoke(FileSearch!);
+                fileSearch?.Invoke(__value1);
             }
-            else if (IsWebSearchPreview)
+            else if (WebSearchPreview is { } __value2)
             {
-                webSearchPreview?.Invoke(WebSearchPreview!);
+                webSearchPreview?.Invoke(__value2);
             }
-            else if (IsComputerUsePreview)
+            else if (ComputerUsePreview is { } __value3)
             {
-                computerUsePreview?.Invoke(ComputerUsePreview!);
+                computerUsePreview?.Invoke(__value3);
             }
-            else if (IsMcp)
+            else if (Mcp is { } __value4)
             {
-                mcp?.Invoke(Mcp!);
+                mcp?.Invoke(__value4);
             }
-            else if (IsCodeInterpreter)
+            else if (CodeInterpreter is { } __value5)
             {
-                codeInterpreter?.Invoke(CodeInterpreter!);
+                codeInterpreter?.Invoke(__value5);
             }
-            else if (IsImageGeneration)
+            else if (ImageGeneration is { } __value6)
             {
-                imageGeneration?.Invoke(ImageGeneration!);
+                imageGeneration?.Invoke(__value6);
             }
-            else if (IsLocalShell)
+            else if (LocalShell is { } __value7)
             {
-                localShell?.Invoke(LocalShell!);
+                localShell?.Invoke(__value7);
             }
         }
 
@@ -684,37 +684,37 @@ namespace G
                 Validate();
             }
 
-            if (IsFunction)
+            if (Function is { } __value0)
             {
-                function?.Invoke(Function!);
+                function?.Invoke(__value0);
             }
-            else if (IsFileSearch)
+            else if (FileSearch is { } __value1)
             {
-                fileSearch?.Invoke(FileSearch!);
+                fileSearch?.Invoke(__value1);
             }
-            else if (IsWebSearchPreview)
+            else if (WebSearchPreview is { } __value2)
             {
-                webSearchPreview?.Invoke(WebSearchPreview!);
+                webSearchPreview?.Invoke(__value2);
             }
-            else if (IsComputerUsePreview)
+            else if (ComputerUsePreview is { } __value3)
             {
-                computerUsePreview?.Invoke(ComputerUsePreview!);
+                computerUsePreview?.Invoke(__value3);
             }
-            else if (IsMcp)
+            else if (Mcp is { } __value4)
             {
-                mcp?.Invoke(Mcp!);
+                mcp?.Invoke(__value4);
             }
-            else if (IsCodeInterpreter)
+            else if (CodeInterpreter is { } __value5)
             {
-                codeInterpreter?.Invoke(CodeInterpreter!);
+                codeInterpreter?.Invoke(__value5);
             }
-            else if (IsImageGeneration)
+            else if (ImageGeneration is { } __value6)
             {
-                imageGeneration?.Invoke(ImageGeneration!);
+                imageGeneration?.Invoke(__value6);
             }
-            else if (IsLocalShell)
+            else if (LocalShell is { } __value7)
             {
-                localShell?.Invoke(LocalShell!);
+                localShell?.Invoke(__value7);
             }
         }
 

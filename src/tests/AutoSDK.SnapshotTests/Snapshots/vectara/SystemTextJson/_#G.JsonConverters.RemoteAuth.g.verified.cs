@@ -1,4 +1,4 @@
-﻿//HintName: G.JsonConverters.RemoteAuth.g.cs
+//HintName: G.JsonConverters.RemoteAuth.g.cs
 #nullable enable
 #pragma warning disable CS0618 // Type or member is obsolete
 
@@ -60,13 +60,13 @@ namespace G.JsonConverters
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.BearerAuth), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.BearerAuth?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.BearerAuth).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Bearer!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickBearer(), typeInfo);
             }
             else if (value.IsHeader)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.HeaderAuth), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.HeaderAuth?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.HeaderAuth).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Header!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickHeader(), typeInfo);
             }
         }
     }

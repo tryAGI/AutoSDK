@@ -1,4 +1,4 @@
-﻿//HintName: G.JsonConverters.GeneratedMetadataVariant112.g.cs
+//HintName: G.JsonConverters.GeneratedMetadataVariant112.g.cs
 #nullable enable
 #pragma warning disable CS0618 // Type or member is obsolete
 
@@ -105,43 +105,43 @@ namespace G.JsonConverters
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.MarkdownChunkGeneratedMetadata), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.MarkdownChunkGeneratedMetadata?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.MarkdownChunkGeneratedMetadata).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Markdown!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickMarkdown(), typeInfo);
             }
             else if (value.IsText)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.TextChunkGeneratedMetadata), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.TextChunkGeneratedMetadata?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.TextChunkGeneratedMetadata).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Text!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickText(), typeInfo);
             }
             else if (value.IsPdf)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.PDFChunkGeneratedMetadata), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.PDFChunkGeneratedMetadata?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.PDFChunkGeneratedMetadata).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Pdf!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickPdf(), typeInfo);
             }
             else if (value.IsCode)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.CodeChunkGeneratedMetadata), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.CodeChunkGeneratedMetadata?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.CodeChunkGeneratedMetadata).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Code!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickCode(), typeInfo);
             }
             else if (value.IsAudio)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.AudioChunkGeneratedMetadata), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.AudioChunkGeneratedMetadata?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.AudioChunkGeneratedMetadata).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Audio!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickAudio(), typeInfo);
             }
             else if (value.IsVideo)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.VideoChunkGeneratedMetadata), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.VideoChunkGeneratedMetadata?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.VideoChunkGeneratedMetadata).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Video!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickVideo(), typeInfo);
             }
             else if (value.IsImage)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.ImageChunkGeneratedMetadata), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.ImageChunkGeneratedMetadata?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.ImageChunkGeneratedMetadata).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Image!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickImage(), typeInfo);
             }
         }
     }

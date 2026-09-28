@@ -1,4 +1,4 @@
-﻿//HintName: G.Models.Source4.g.cs
+//HintName: G.Models.Source4.g.cs
 #pragma warning disable CS0618 // Type or member is obsolete
 
 #nullable enable
@@ -48,8 +48,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.Base64ImageSource PickBase64() => IsBase64
-            ? Base64!
+        public global::G.Base64ImageSource PickBase64() => Base64 is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Base64' but the value was {ToString()}.");
 
         /// <summary>
@@ -85,8 +85,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.URLImageSource PickUrl() => IsUrl
-            ? Url!
+        public global::G.URLImageSource PickUrl() => Url is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Url' but the value was {ToString()}.");
         /// <summary>
         /// 
@@ -186,13 +186,13 @@ namespace G
                 Validate();
             }
 
-            if (IsBase64 && base64 != null)
+            if (Base64 is { } __value0 && base64 != null)
             {
-                return base64(Base64!);
+                return base64(__value0);
             }
-            else if (IsUrl && url != null)
+            else if (Url is { } __value1 && url != null)
             {
-                return url(Url!);
+                return url(__value1);
             }
 
             return default(TResult);
@@ -212,13 +212,13 @@ namespace G
                 Validate();
             }
 
-            if (IsBase64)
+            if (Base64 is { } __value0)
             {
-                base64?.Invoke(Base64!);
+                base64?.Invoke(__value0);
             }
-            else if (IsUrl)
+            else if (Url is { } __value1)
             {
-                url?.Invoke(Url!);
+                url?.Invoke(__value1);
             }
         }
 
@@ -235,13 +235,13 @@ namespace G
                 Validate();
             }
 
-            if (IsBase64)
+            if (Base64 is { } __value0)
             {
-                base64?.Invoke(Base64!);
+                base64?.Invoke(__value0);
             }
-            else if (IsUrl)
+            else if (Url is { } __value1)
             {
-                url?.Invoke(Url!);
+                url?.Invoke(__value1);
             }
         }
 

@@ -1,4 +1,4 @@
-﻿//HintName: G.Models.VertexFinetuneJob.g.cs
+//HintName: G.Models.VertexFinetuneJob.g.cs
 #pragma warning disable CS0618 // Type or member is obsolete
 
 #nullable enable
@@ -43,8 +43,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.OpenAIFinetuneJob PickOpenAIParams() => IsOpenAIParams
-            ? OpenAIParams!
+        public global::G.OpenAIFinetuneJob PickOpenAIParams() => OpenAIParams is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'OpenAIParams' but the value was {ToString()}.");
         /// <summary>
         /// 
@@ -103,9 +103,9 @@ namespace G
                 Validate();
             }
 
-            if (IsOpenAIParams && openAIParams != null)
+            if (OpenAIParams is { } __value0 && openAIParams != null)
             {
-                return openAIParams(OpenAIParams!);
+                return openAIParams(__value0);
             }
 
             return default(TResult);
@@ -123,9 +123,9 @@ namespace G
                 Validate();
             }
 
-            if (IsOpenAIParams)
+            if (OpenAIParams is { } __value0)
             {
-                openAIParams?.Invoke(OpenAIParams!);
+                openAIParams?.Invoke(__value0);
             }
         }
 
@@ -141,9 +141,9 @@ namespace G
                 Validate();
             }
 
-            if (IsOpenAIParams)
+            if (OpenAIParams is { } __value0)
             {
-                openAIParams?.Invoke(OpenAIParams!);
+                openAIParams?.Invoke(__value0);
             }
         }
 

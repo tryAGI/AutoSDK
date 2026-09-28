@@ -1,4 +1,4 @@
-﻿//HintName: G.Models.MessagesRequestSystemOneOf1ItemsCitationsItems.g.cs
+//HintName: G.Models.MessagesRequestSystemOneOf1ItemsCitationsItems.g.cs
 #pragma warning disable CS0618 // Type or member is obsolete
 
 #nullable enable
@@ -43,8 +43,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.MessagesRequestSystemOneOf1ItemsCitationsItems0 PickMessagesRequestSystemOneOf1ItemsCitationsItems0() => IsMessagesRequestSystemOneOf1ItemsCitationsItems0
-            ? MessagesRequestSystemOneOf1ItemsCitationsItems0!
+        public global::G.MessagesRequestSystemOneOf1ItemsCitationsItems0 PickMessagesRequestSystemOneOf1ItemsCitationsItems0() => MessagesRequestSystemOneOf1ItemsCitationsItems0 is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'MessagesRequestSystemOneOf1ItemsCitationsItems0' but the value was {ToString()}.");
 
         /// <summary>
@@ -80,8 +80,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.MessagesRequestSystemOneOf1ItemsCitationsItems1 PickMessagesRequestSystemOneOf1ItemsCitationsItems1() => IsMessagesRequestSystemOneOf1ItemsCitationsItems1
-            ? MessagesRequestSystemOneOf1ItemsCitationsItems1!
+        public global::G.MessagesRequestSystemOneOf1ItemsCitationsItems1 PickMessagesRequestSystemOneOf1ItemsCitationsItems1() => MessagesRequestSystemOneOf1ItemsCitationsItems1 is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'MessagesRequestSystemOneOf1ItemsCitationsItems1' but the value was {ToString()}.");
 
         /// <summary>
@@ -117,8 +117,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.MessagesRequestSystemOneOf1ItemsCitationsItems2 PickMessagesRequestSystemOneOf1ItemsCitationsItems2() => IsMessagesRequestSystemOneOf1ItemsCitationsItems2
-            ? MessagesRequestSystemOneOf1ItemsCitationsItems2!
+        public global::G.MessagesRequestSystemOneOf1ItemsCitationsItems2 PickMessagesRequestSystemOneOf1ItemsCitationsItems2() => MessagesRequestSystemOneOf1ItemsCitationsItems2 is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'MessagesRequestSystemOneOf1ItemsCitationsItems2' but the value was {ToString()}.");
 
         /// <summary>
@@ -154,8 +154,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.MessagesRequestSystemOneOf1ItemsCitationsItems3 PickMessagesRequestSystemOneOf1ItemsCitationsItems3() => IsMessagesRequestSystemOneOf1ItemsCitationsItems3
-            ? MessagesRequestSystemOneOf1ItemsCitationsItems3!
+        public global::G.MessagesRequestSystemOneOf1ItemsCitationsItems3 PickMessagesRequestSystemOneOf1ItemsCitationsItems3() => MessagesRequestSystemOneOf1ItemsCitationsItems3 is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'MessagesRequestSystemOneOf1ItemsCitationsItems3' but the value was {ToString()}.");
 
         /// <summary>
@@ -191,8 +191,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.MessagesRequestSystemOneOf1ItemsCitationsItems4 PickMessagesRequestSystemOneOf1ItemsCitationsItems4() => IsMessagesRequestSystemOneOf1ItemsCitationsItems4
-            ? MessagesRequestSystemOneOf1ItemsCitationsItems4!
+        public global::G.MessagesRequestSystemOneOf1ItemsCitationsItems4 PickMessagesRequestSystemOneOf1ItemsCitationsItems4() => MessagesRequestSystemOneOf1ItemsCitationsItems4 is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'MessagesRequestSystemOneOf1ItemsCitationsItems4' but the value was {ToString()}.");
         /// <summary>
         /// 
@@ -373,25 +373,25 @@ namespace G
                 Validate();
             }
 
-            if (IsMessagesRequestSystemOneOf1ItemsCitationsItems0 && messagesRequestSystemOneOf1ItemsCitationsItems0 != null)
+            if (MessagesRequestSystemOneOf1ItemsCitationsItems0 is { } __value0 && messagesRequestSystemOneOf1ItemsCitationsItems0 != null)
             {
-                return messagesRequestSystemOneOf1ItemsCitationsItems0(MessagesRequestSystemOneOf1ItemsCitationsItems0!);
+                return messagesRequestSystemOneOf1ItemsCitationsItems0(__value0);
             }
-            else if (IsMessagesRequestSystemOneOf1ItemsCitationsItems1 && messagesRequestSystemOneOf1ItemsCitationsItems1 != null)
+            else if (MessagesRequestSystemOneOf1ItemsCitationsItems1 is { } __value1 && messagesRequestSystemOneOf1ItemsCitationsItems1 != null)
             {
-                return messagesRequestSystemOneOf1ItemsCitationsItems1(MessagesRequestSystemOneOf1ItemsCitationsItems1!);
+                return messagesRequestSystemOneOf1ItemsCitationsItems1(__value1);
             }
-            else if (IsMessagesRequestSystemOneOf1ItemsCitationsItems2 && messagesRequestSystemOneOf1ItemsCitationsItems2 != null)
+            else if (MessagesRequestSystemOneOf1ItemsCitationsItems2 is { } __value2 && messagesRequestSystemOneOf1ItemsCitationsItems2 != null)
             {
-                return messagesRequestSystemOneOf1ItemsCitationsItems2(MessagesRequestSystemOneOf1ItemsCitationsItems2!);
+                return messagesRequestSystemOneOf1ItemsCitationsItems2(__value2);
             }
-            else if (IsMessagesRequestSystemOneOf1ItemsCitationsItems3 && messagesRequestSystemOneOf1ItemsCitationsItems3 != null)
+            else if (MessagesRequestSystemOneOf1ItemsCitationsItems3 is { } __value3 && messagesRequestSystemOneOf1ItemsCitationsItems3 != null)
             {
-                return messagesRequestSystemOneOf1ItemsCitationsItems3(MessagesRequestSystemOneOf1ItemsCitationsItems3!);
+                return messagesRequestSystemOneOf1ItemsCitationsItems3(__value3);
             }
-            else if (IsMessagesRequestSystemOneOf1ItemsCitationsItems4 && messagesRequestSystemOneOf1ItemsCitationsItems4 != null)
+            else if (MessagesRequestSystemOneOf1ItemsCitationsItems4 is { } __value4 && messagesRequestSystemOneOf1ItemsCitationsItems4 != null)
             {
-                return messagesRequestSystemOneOf1ItemsCitationsItems4(MessagesRequestSystemOneOf1ItemsCitationsItems4!);
+                return messagesRequestSystemOneOf1ItemsCitationsItems4(__value4);
             }
 
             return default(TResult);
@@ -417,25 +417,25 @@ namespace G
                 Validate();
             }
 
-            if (IsMessagesRequestSystemOneOf1ItemsCitationsItems0)
+            if (MessagesRequestSystemOneOf1ItemsCitationsItems0 is { } __value0)
             {
-                messagesRequestSystemOneOf1ItemsCitationsItems0?.Invoke(MessagesRequestSystemOneOf1ItemsCitationsItems0!);
+                messagesRequestSystemOneOf1ItemsCitationsItems0?.Invoke(__value0);
             }
-            else if (IsMessagesRequestSystemOneOf1ItemsCitationsItems1)
+            else if (MessagesRequestSystemOneOf1ItemsCitationsItems1 is { } __value1)
             {
-                messagesRequestSystemOneOf1ItemsCitationsItems1?.Invoke(MessagesRequestSystemOneOf1ItemsCitationsItems1!);
+                messagesRequestSystemOneOf1ItemsCitationsItems1?.Invoke(__value1);
             }
-            else if (IsMessagesRequestSystemOneOf1ItemsCitationsItems2)
+            else if (MessagesRequestSystemOneOf1ItemsCitationsItems2 is { } __value2)
             {
-                messagesRequestSystemOneOf1ItemsCitationsItems2?.Invoke(MessagesRequestSystemOneOf1ItemsCitationsItems2!);
+                messagesRequestSystemOneOf1ItemsCitationsItems2?.Invoke(__value2);
             }
-            else if (IsMessagesRequestSystemOneOf1ItemsCitationsItems3)
+            else if (MessagesRequestSystemOneOf1ItemsCitationsItems3 is { } __value3)
             {
-                messagesRequestSystemOneOf1ItemsCitationsItems3?.Invoke(MessagesRequestSystemOneOf1ItemsCitationsItems3!);
+                messagesRequestSystemOneOf1ItemsCitationsItems3?.Invoke(__value3);
             }
-            else if (IsMessagesRequestSystemOneOf1ItemsCitationsItems4)
+            else if (MessagesRequestSystemOneOf1ItemsCitationsItems4 is { } __value4)
             {
-                messagesRequestSystemOneOf1ItemsCitationsItems4?.Invoke(MessagesRequestSystemOneOf1ItemsCitationsItems4!);
+                messagesRequestSystemOneOf1ItemsCitationsItems4?.Invoke(__value4);
             }
         }
 
@@ -455,25 +455,25 @@ namespace G
                 Validate();
             }
 
-            if (IsMessagesRequestSystemOneOf1ItemsCitationsItems0)
+            if (MessagesRequestSystemOneOf1ItemsCitationsItems0 is { } __value0)
             {
-                messagesRequestSystemOneOf1ItemsCitationsItems0?.Invoke(MessagesRequestSystemOneOf1ItemsCitationsItems0!);
+                messagesRequestSystemOneOf1ItemsCitationsItems0?.Invoke(__value0);
             }
-            else if (IsMessagesRequestSystemOneOf1ItemsCitationsItems1)
+            else if (MessagesRequestSystemOneOf1ItemsCitationsItems1 is { } __value1)
             {
-                messagesRequestSystemOneOf1ItemsCitationsItems1?.Invoke(MessagesRequestSystemOneOf1ItemsCitationsItems1!);
+                messagesRequestSystemOneOf1ItemsCitationsItems1?.Invoke(__value1);
             }
-            else if (IsMessagesRequestSystemOneOf1ItemsCitationsItems2)
+            else if (MessagesRequestSystemOneOf1ItemsCitationsItems2 is { } __value2)
             {
-                messagesRequestSystemOneOf1ItemsCitationsItems2?.Invoke(MessagesRequestSystemOneOf1ItemsCitationsItems2!);
+                messagesRequestSystemOneOf1ItemsCitationsItems2?.Invoke(__value2);
             }
-            else if (IsMessagesRequestSystemOneOf1ItemsCitationsItems3)
+            else if (MessagesRequestSystemOneOf1ItemsCitationsItems3 is { } __value3)
             {
-                messagesRequestSystemOneOf1ItemsCitationsItems3?.Invoke(MessagesRequestSystemOneOf1ItemsCitationsItems3!);
+                messagesRequestSystemOneOf1ItemsCitationsItems3?.Invoke(__value3);
             }
-            else if (IsMessagesRequestSystemOneOf1ItemsCitationsItems4)
+            else if (MessagesRequestSystemOneOf1ItemsCitationsItems4 is { } __value4)
             {
-                messagesRequestSystemOneOf1ItemsCitationsItems4?.Invoke(MessagesRequestSystemOneOf1ItemsCitationsItems4!);
+                messagesRequestSystemOneOf1ItemsCitationsItems4?.Invoke(__value4);
             }
         }
 

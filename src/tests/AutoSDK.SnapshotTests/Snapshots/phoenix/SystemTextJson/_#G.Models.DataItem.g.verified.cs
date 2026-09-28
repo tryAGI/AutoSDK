@@ -1,4 +1,4 @@
-﻿//HintName: G.Models.DataItem.g.cs
+//HintName: G.Models.DataItem.g.cs
 #pragma warning disable CS0618 // Type or member is obsolete
 
 #nullable enable
@@ -48,8 +48,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.CategoricalAnnotationConfig PickCategorical() => IsCategorical
-            ? Categorical!
+        public global::G.CategoricalAnnotationConfig PickCategorical() => Categorical is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Categorical' but the value was {ToString()}.");
 
         /// <summary>
@@ -85,8 +85,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.ContinuousAnnotationConfig PickContinuous() => IsContinuous
-            ? Continuous!
+        public global::G.ContinuousAnnotationConfig PickContinuous() => Continuous is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Continuous' but the value was {ToString()}.");
 
         /// <summary>
@@ -122,8 +122,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.FreeformAnnotationConfig PickFreeform() => IsFreeform
-            ? Freeform!
+        public global::G.FreeformAnnotationConfig PickFreeform() => Freeform is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Freeform' but the value was {ToString()}.");
         /// <summary>
         /// 
@@ -251,17 +251,17 @@ namespace G
                 Validate();
             }
 
-            if (IsCategorical && categorical != null)
+            if (Categorical is { } __value0 && categorical != null)
             {
-                return categorical(Categorical!);
+                return categorical(__value0);
             }
-            else if (IsContinuous && continuous != null)
+            else if (Continuous is { } __value1 && continuous != null)
             {
-                return continuous(Continuous!);
+                return continuous(__value1);
             }
-            else if (IsFreeform && freeform != null)
+            else if (Freeform is { } __value2 && freeform != null)
             {
-                return freeform(Freeform!);
+                return freeform(__value2);
             }
 
             return default(TResult);
@@ -283,17 +283,17 @@ namespace G
                 Validate();
             }
 
-            if (IsCategorical)
+            if (Categorical is { } __value0)
             {
-                categorical?.Invoke(Categorical!);
+                categorical?.Invoke(__value0);
             }
-            else if (IsContinuous)
+            else if (Continuous is { } __value1)
             {
-                continuous?.Invoke(Continuous!);
+                continuous?.Invoke(__value1);
             }
-            else if (IsFreeform)
+            else if (Freeform is { } __value2)
             {
-                freeform?.Invoke(Freeform!);
+                freeform?.Invoke(__value2);
             }
         }
 
@@ -311,17 +311,17 @@ namespace G
                 Validate();
             }
 
-            if (IsCategorical)
+            if (Categorical is { } __value0)
             {
-                categorical?.Invoke(Categorical!);
+                categorical?.Invoke(__value0);
             }
-            else if (IsContinuous)
+            else if (Continuous is { } __value1)
             {
-                continuous?.Invoke(Continuous!);
+                continuous?.Invoke(__value1);
             }
-            else if (IsFreeform)
+            else if (Freeform is { } __value2)
             {
-                freeform?.Invoke(Freeform!);
+                freeform?.Invoke(__value2);
             }
         }
 

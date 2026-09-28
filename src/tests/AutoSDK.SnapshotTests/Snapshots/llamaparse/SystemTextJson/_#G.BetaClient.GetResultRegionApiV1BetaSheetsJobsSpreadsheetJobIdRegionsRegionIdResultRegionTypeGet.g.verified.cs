@@ -1,4 +1,4 @@
-﻿//HintName: G.BetaClient.GetResultRegionApiV1BetaSheetsJobsSpreadsheetJobIdRegionsRegionIdResultRegionTypeGet.g.cs
+//HintName: G.BetaClient.GetResultRegionApiV1BetaSheetsJobsSpreadsheetJobIdRegionsRegionIdResultRegionTypeGet.g.cs
 
 #nullable enable
 
@@ -215,9 +215,9 @@ namespace G
                 PrepareGetResultRegionApiV1BetaSheetsJobsSpreadsheetJobIdRegionsRegionIdResultRegionTypeGetRequest(
                     httpClient: HttpClient,
                     httpRequestMessage: __httpRequest,
-                    spreadsheetJobId: spreadsheetJobId!,
-                    regionId: regionId!,
-                    regionType: regionType!,
+                    spreadsheetJobId: spreadsheetJobId,
+                    regionId: regionId,
+                    regionType: regionType,
                     expiresAtSeconds: expiresAtSeconds,
                     projectId: projectId,
                     organizationId: organizationId,
@@ -245,7 +245,7 @@ namespace G
                                 pathTemplate: "$\"/api/v1/beta/sheets/jobs/{spreadsheetJobId}/regions/{regionId}/result/{(global::System.Uri.EscapeDataString(regionType.ToValueString()))}\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: null,
                                 exception: null,
                                 clientOptions: Options,
@@ -279,7 +279,7 @@ namespace G
                                 pathTemplate: "$\"/api/v1/beta/sheets/jobs/{spreadsheetJobId}/regions/{regionId}/result/{(global::System.Uri.EscapeDataString(regionType.ToValueString()))}\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: null,
                                 exception: __exception,
                                 clientOptions: Options,
@@ -320,7 +320,7 @@ namespace G
                                 pathTemplate: "$\"/api/v1/beta/sheets/jobs/{spreadsheetJobId}/regions/{regionId}/result/{(global::System.Uri.EscapeDataString(regionType.ToValueString()))}\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: __response,
                                 exception: null,
                                 clientOptions: Options,
@@ -368,7 +368,7 @@ namespace G
                                 pathTemplate: "$\"/api/v1/beta/sheets/jobs/{spreadsheetJobId}/regions/{regionId}/result/{(global::System.Uri.EscapeDataString(regionType.ToValueString()))}\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: __response,
                                 exception: null,
                                 clientOptions: Options,
@@ -390,7 +390,7 @@ namespace G
                                 pathTemplate: "$\"/api/v1/beta/sheets/jobs/{spreadsheetJobId}/regions/{regionId}/result/{(global::System.Uri.EscapeDataString(regionType.ToValueString()))}\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: __response,
                                 exception: null,
                                 clientOptions: Options,

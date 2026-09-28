@@ -1,4 +1,4 @@
-﻿//HintName: G.ModerationClient.GetBannedUsers.g.cs
+//HintName: G.ModerationClient.GetBannedUsers.g.cs
 
 #nullable enable
 
@@ -191,7 +191,7 @@ namespace G
                 PrepareGetBannedUsersRequest(
                     httpClient: HttpClient,
                     httpRequestMessage: __httpRequest,
-                    broadcasterId: broadcasterId!,
+                    broadcasterId: broadcasterId,
                     userId: userId,
                     first: first,
                     after: after,
@@ -219,7 +219,7 @@ namespace G
                                 pathTemplate: "\"/moderation/banned\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: null,
                                 exception: null,
                                 clientOptions: Options,
@@ -256,7 +256,7 @@ namespace G
                                 pathTemplate: "\"/moderation/banned\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: null,
                                 exception: __exception,
                                 clientOptions: Options,
@@ -297,7 +297,7 @@ namespace G
                                 pathTemplate: "\"/moderation/banned\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: __response,
                                 exception: null,
                                 clientOptions: Options,
@@ -345,7 +345,7 @@ namespace G
                                 pathTemplate: "\"/moderation/banned\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: __response,
                                 exception: null,
                                 clientOptions: Options,
@@ -367,7 +367,7 @@ namespace G
                                 pathTemplate: "\"/moderation/banned\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: __response,
                                 exception: null,
                                 clientOptions: Options,

@@ -1,4 +1,4 @@
-﻿//HintName: G.Models.Source.g.cs
+//HintName: G.Models.Source.g.cs
 #pragma warning disable CS0618 // Type or member is obsolete
 
 #nullable enable
@@ -43,8 +43,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.ToolSource PickToolOutput() => IsToolOutput
-            ? ToolOutput!
+        public global::G.ToolSource PickToolOutput() => ToolOutput is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'ToolOutput' but the value was {ToString()}.");
 
         /// <summary>
@@ -80,8 +80,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.DocumentSource PickDocument() => IsDocument
-            ? Document!
+        public global::G.DocumentSource PickDocument() => Document is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Document' but the value was {ToString()}.");
         /// <summary>
         /// 
@@ -178,13 +178,13 @@ namespace G
                 Validate();
             }
 
-            if (IsToolOutput && toolOutput != null)
+            if (ToolOutput is { } __value0 && toolOutput != null)
             {
-                return toolOutput(ToolOutput!);
+                return toolOutput(__value0);
             }
-            else if (IsDocument && document != null)
+            else if (Document is { } __value1 && document != null)
             {
-                return document(Document!);
+                return document(__value1);
             }
 
             return default(TResult);
@@ -204,13 +204,13 @@ namespace G
                 Validate();
             }
 
-            if (IsToolOutput)
+            if (ToolOutput is { } __value0)
             {
-                toolOutput?.Invoke(ToolOutput!);
+                toolOutput?.Invoke(__value0);
             }
-            else if (IsDocument)
+            else if (Document is { } __value1)
             {
-                document?.Invoke(Document!);
+                document?.Invoke(__value1);
             }
         }
 
@@ -227,13 +227,13 @@ namespace G
                 Validate();
             }
 
-            if (IsToolOutput)
+            if (ToolOutput is { } __value0)
             {
-                toolOutput?.Invoke(ToolOutput!);
+                toolOutput?.Invoke(__value0);
             }
-            else if (IsDocument)
+            else if (Document is { } __value1)
             {
-                document?.Invoke(Document!);
+                document?.Invoke(__value1);
             }
         }
 

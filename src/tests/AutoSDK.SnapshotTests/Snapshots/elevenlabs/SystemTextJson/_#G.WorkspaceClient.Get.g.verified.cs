@@ -1,4 +1,4 @@
-﻿//HintName: G.WorkspaceClient.Get.g.cs
+//HintName: G.WorkspaceClient.Get.g.cs
 
 #nullable enable
 
@@ -142,8 +142,8 @@ namespace G
                 PrepareGetRequest(
                     httpClient: HttpClient,
                     httpRequestMessage: __httpRequest,
-                    resourceId: resourceId!,
-                    resourceType: resourceType!,
+                    resourceId: resourceId,
+                    resourceType: resourceType,
                     xiApiKey: xiApiKey);
 
                 return __httpRequest;
@@ -166,7 +166,7 @@ namespace G
                                 pathTemplate: "$\"/v1/workspace/resources/{resourceId}\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: null,
                                 exception: null,
                                 clientOptions: Options,
@@ -200,7 +200,7 @@ namespace G
                                 pathTemplate: "$\"/v1/workspace/resources/{resourceId}\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: null,
                                 exception: __exception,
                                 clientOptions: Options,
@@ -241,7 +241,7 @@ namespace G
                                 pathTemplate: "$\"/v1/workspace/resources/{resourceId}\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: __response,
                                 exception: null,
                                 clientOptions: Options,
@@ -289,7 +289,7 @@ namespace G
                                 pathTemplate: "$\"/v1/workspace/resources/{resourceId}\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: __response,
                                 exception: null,
                                 clientOptions: Options,
@@ -311,7 +311,7 @@ namespace G
                                 pathTemplate: "$\"/v1/workspace/resources/{resourceId}\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: __response,
                                 exception: null,
                                 clientOptions: Options,

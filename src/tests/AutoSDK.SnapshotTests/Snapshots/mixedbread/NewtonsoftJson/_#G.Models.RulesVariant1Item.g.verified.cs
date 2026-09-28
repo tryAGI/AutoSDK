@@ -1,4 +1,4 @@
-﻿//HintName: G.Models.RulesVariant1Item.g.cs
+//HintName: G.Models.RulesVariant1Item.g.cs
 #pragma warning disable CS0618 // Type or member is obsolete
 
 #nullable enable
@@ -48,8 +48,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.QueryStringSubstitutionRule PickQueryString() => IsQueryString
-            ? QueryString!
+        public global::G.QueryStringSubstitutionRule PickQueryString() => QueryString is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'QueryString' but the value was {ToString()}.");
 
         /// <summary>
@@ -85,8 +85,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.QueryRegexSubstitutionRule PickQueryRegex() => IsQueryRegex
-            ? QueryRegex!
+        public global::G.QueryRegexSubstitutionRule PickQueryRegex() => QueryRegex is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'QueryRegex' but the value was {ToString()}.");
 
         /// <summary>
@@ -122,8 +122,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.ChunkSearchResultRule PickChunkSearchResult() => IsChunkSearchResult
-            ? ChunkSearchResult!
+        public global::G.ChunkSearchResultRule PickChunkSearchResult() => ChunkSearchResult is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'ChunkSearchResult' but the value was {ToString()}.");
 
         /// <summary>
@@ -159,8 +159,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.FileSearchResultRule PickFileSearchResult() => IsFileSearchResult
-            ? FileSearchResult!
+        public global::G.FileSearchResultRule PickFileSearchResult() => FileSearchResult is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'FileSearchResult' but the value was {ToString()}.");
         /// <summary>
         /// 
@@ -316,21 +316,21 @@ namespace G
                 Validate();
             }
 
-            if (IsQueryString && queryString != null)
+            if (QueryString is { } __value0 && queryString != null)
             {
-                return queryString(QueryString!);
+                return queryString(__value0);
             }
-            else if (IsQueryRegex && queryRegex != null)
+            else if (QueryRegex is { } __value1 && queryRegex != null)
             {
-                return queryRegex(QueryRegex!);
+                return queryRegex(__value1);
             }
-            else if (IsChunkSearchResult && chunkSearchResult != null)
+            else if (ChunkSearchResult is { } __value2 && chunkSearchResult != null)
             {
-                return chunkSearchResult(ChunkSearchResult!);
+                return chunkSearchResult(__value2);
             }
-            else if (IsFileSearchResult && fileSearchResult != null)
+            else if (FileSearchResult is { } __value3 && fileSearchResult != null)
             {
-                return fileSearchResult(FileSearchResult!);
+                return fileSearchResult(__value3);
             }
 
             return default(TResult);
@@ -354,21 +354,21 @@ namespace G
                 Validate();
             }
 
-            if (IsQueryString)
+            if (QueryString is { } __value0)
             {
-                queryString?.Invoke(QueryString!);
+                queryString?.Invoke(__value0);
             }
-            else if (IsQueryRegex)
+            else if (QueryRegex is { } __value1)
             {
-                queryRegex?.Invoke(QueryRegex!);
+                queryRegex?.Invoke(__value1);
             }
-            else if (IsChunkSearchResult)
+            else if (ChunkSearchResult is { } __value2)
             {
-                chunkSearchResult?.Invoke(ChunkSearchResult!);
+                chunkSearchResult?.Invoke(__value2);
             }
-            else if (IsFileSearchResult)
+            else if (FileSearchResult is { } __value3)
             {
-                fileSearchResult?.Invoke(FileSearchResult!);
+                fileSearchResult?.Invoke(__value3);
             }
         }
 
@@ -387,21 +387,21 @@ namespace G
                 Validate();
             }
 
-            if (IsQueryString)
+            if (QueryString is { } __value0)
             {
-                queryString?.Invoke(QueryString!);
+                queryString?.Invoke(__value0);
             }
-            else if (IsQueryRegex)
+            else if (QueryRegex is { } __value1)
             {
-                queryRegex?.Invoke(QueryRegex!);
+                queryRegex?.Invoke(__value1);
             }
-            else if (IsChunkSearchResult)
+            else if (ChunkSearchResult is { } __value2)
             {
-                chunkSearchResult?.Invoke(ChunkSearchResult!);
+                chunkSearchResult?.Invoke(__value2);
             }
-            else if (IsFileSearchResult)
+            else if (FileSearchResult is { } __value3)
             {
-                fileSearchResult?.Invoke(FileSearchResult!);
+                fileSearchResult?.Invoke(__value3);
             }
         }
 

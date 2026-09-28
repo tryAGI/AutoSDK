@@ -1,4 +1,4 @@
-﻿//HintName: G.Models.PreferredMinThroughput.g.cs
+//HintName: G.Models.PreferredMinThroughput.g.cs
 #pragma warning disable CS0618 // Type or member is obsolete
 
 #nullable enable
@@ -43,8 +43,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public double PickPreferredMinThroughputVariant1() => IsPreferredMinThroughputVariant1
-            ? PreferredMinThroughputVariant1!.Value
+        public double PickPreferredMinThroughputVariant1() => PreferredMinThroughputVariant1 is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'PreferredMinThroughputVariant1' but the value was {ToString()}.");
 
         /// <summary>
@@ -80,8 +80,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.PercentileThroughputCutoffs PickPercentileThroughputCutoffs() => IsPercentileThroughputCutoffs
-            ? PercentileThroughputCutoffs!
+        public global::G.PercentileThroughputCutoffs PickPercentileThroughputCutoffs() => PercentileThroughputCutoffs is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'PercentileThroughputCutoffs' but the value was {ToString()}.");
 
         /// <summary>
@@ -117,8 +117,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public object PickPreferredMinThroughputVariant3() => IsPreferredMinThroughputVariant3
-            ? PreferredMinThroughputVariant3!
+        public object PickPreferredMinThroughputVariant3() => PreferredMinThroughputVariant3 is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'PreferredMinThroughputVariant3' but the value was {ToString()}.");
         /// <summary>
         /// 
@@ -220,17 +220,17 @@ namespace G
                 Validate();
             }
 
-            if (IsPreferredMinThroughputVariant1 && preferredMinThroughputVariant1 != null)
+            if (PreferredMinThroughputVariant1 is { } __value0 && preferredMinThroughputVariant1 != null)
             {
-                return preferredMinThroughputVariant1(PreferredMinThroughputVariant1!);
+                return preferredMinThroughputVariant1(__value0);
             }
-            else if (IsPercentileThroughputCutoffs && percentileThroughputCutoffs != null)
+            else if (PercentileThroughputCutoffs is { } __value1 && percentileThroughputCutoffs != null)
             {
-                return percentileThroughputCutoffs(PercentileThroughputCutoffs!);
+                return percentileThroughputCutoffs(__value1);
             }
-            else if (IsPreferredMinThroughputVariant3 && preferredMinThroughputVariant3 != null)
+            else if (PreferredMinThroughputVariant3 is { } __value2 && preferredMinThroughputVariant3 != null)
             {
-                return preferredMinThroughputVariant3(PreferredMinThroughputVariant3!);
+                return preferredMinThroughputVariant3(__value2);
             }
 
             return default(TResult);
@@ -252,17 +252,17 @@ namespace G
                 Validate();
             }
 
-            if (IsPreferredMinThroughputVariant1)
+            if (PreferredMinThroughputVariant1 is { } __value0)
             {
-                preferredMinThroughputVariant1?.Invoke(PreferredMinThroughputVariant1!);
+                preferredMinThroughputVariant1?.Invoke(__value0);
             }
-            else if (IsPercentileThroughputCutoffs)
+            else if (PercentileThroughputCutoffs is { } __value1)
             {
-                percentileThroughputCutoffs?.Invoke(PercentileThroughputCutoffs!);
+                percentileThroughputCutoffs?.Invoke(__value1);
             }
-            else if (IsPreferredMinThroughputVariant3)
+            else if (PreferredMinThroughputVariant3 is { } __value2)
             {
-                preferredMinThroughputVariant3?.Invoke(PreferredMinThroughputVariant3!);
+                preferredMinThroughputVariant3?.Invoke(__value2);
             }
         }
 
@@ -280,17 +280,17 @@ namespace G
                 Validate();
             }
 
-            if (IsPreferredMinThroughputVariant1)
+            if (PreferredMinThroughputVariant1 is { } __value0)
             {
-                preferredMinThroughputVariant1?.Invoke(PreferredMinThroughputVariant1!);
+                preferredMinThroughputVariant1?.Invoke(__value0);
             }
-            else if (IsPercentileThroughputCutoffs)
+            else if (PercentileThroughputCutoffs is { } __value1)
             {
-                percentileThroughputCutoffs?.Invoke(PercentileThroughputCutoffs!);
+                percentileThroughputCutoffs?.Invoke(__value1);
             }
-            else if (IsPreferredMinThroughputVariant3)
+            else if (PreferredMinThroughputVariant3 is { } __value2)
             {
-                preferredMinThroughputVariant3?.Invoke(PreferredMinThroughputVariant3!);
+                preferredMinThroughputVariant3?.Invoke(__value2);
             }
         }
 

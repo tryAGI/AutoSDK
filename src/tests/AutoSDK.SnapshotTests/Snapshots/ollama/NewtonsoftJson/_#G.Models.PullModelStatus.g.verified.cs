@@ -1,4 +1,4 @@
-﻿//HintName: G.Models.PullModelStatus.g.cs
+//HintName: G.Models.PullModelStatus.g.cs
 #pragma warning disable CS0618 // Type or member is obsolete
 
 #nullable enable
@@ -44,8 +44,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public string PickPullModelStatusVariant1() => IsPullModelStatusVariant1
-            ? PullModelStatusVariant1!
+        public string PickPullModelStatusVariant1() => PullModelStatusVariant1 is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'PullModelStatusVariant1' but the value was {ToString()}.");
 
         /// <summary>
@@ -81,8 +81,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.PullModelStatusEnum PickEnum() => IsEnum
-            ? Enum!.Value
+        public global::G.PullModelStatusEnum PickEnum() => Enum is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Enum' but the value was {ToString()}.");
         /// <summary>
         /// 
@@ -179,13 +179,13 @@ namespace G
                 Validate();
             }
 
-            if (IsPullModelStatusVariant1 && pullModelStatusVariant1 != null)
+            if (PullModelStatusVariant1 is { } __value0 && pullModelStatusVariant1 != null)
             {
-                return pullModelStatusVariant1(PullModelStatusVariant1!);
+                return pullModelStatusVariant1(__value0);
             }
-            else if (IsEnum && @enum != null)
+            else if (Enum is { } __value1 && @enum != null)
             {
-                return @enum(Enum!);
+                return @enum(__value1);
             }
 
             return default(TResult);
@@ -205,13 +205,13 @@ namespace G
                 Validate();
             }
 
-            if (IsPullModelStatusVariant1)
+            if (PullModelStatusVariant1 is { } __value0)
             {
-                pullModelStatusVariant1?.Invoke(PullModelStatusVariant1!);
+                pullModelStatusVariant1?.Invoke(__value0);
             }
-            else if (IsEnum)
+            else if (Enum is { } __value1)
             {
-                @enum?.Invoke(Enum!);
+                @enum?.Invoke(__value1);
             }
         }
 
@@ -228,13 +228,13 @@ namespace G
                 Validate();
             }
 
-            if (IsPullModelStatusVariant1)
+            if (PullModelStatusVariant1 is { } __value0)
             {
-                pullModelStatusVariant1?.Invoke(PullModelStatusVariant1!);
+                pullModelStatusVariant1?.Invoke(__value0);
             }
-            else if (IsEnum)
+            else if (Enum is { } __value1)
             {
-                @enum?.Invoke(Enum!);
+                @enum?.Invoke(__value1);
             }
         }
 

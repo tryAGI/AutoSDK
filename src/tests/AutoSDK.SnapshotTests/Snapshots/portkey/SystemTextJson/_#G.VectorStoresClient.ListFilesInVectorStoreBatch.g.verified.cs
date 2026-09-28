@@ -1,4 +1,4 @@
-﻿//HintName: G.VectorStoresClient.ListFilesInVectorStoreBatch.g.cs
+//HintName: G.VectorStoresClient.ListFilesInVectorStoreBatch.g.cs
 
 #nullable enable
 
@@ -313,8 +313,8 @@ namespace G
                 PrepareListFilesInVectorStoreBatchRequest(
                     httpClient: HttpClient,
                     httpRequestMessage: __httpRequest,
-                    vectorStoreId: vectorStoreId!,
-                    batchId: batchId!,
+                    vectorStoreId: vectorStoreId,
+                    batchId: batchId,
                     limit: limit,
                     order: order,
                     after: after,
@@ -343,7 +343,7 @@ namespace G
                                 pathTemplate: "$\"/vector_stores/{vectorStoreId}/file_batches/{batchId}/files\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: null,
                                 exception: null,
                                 clientOptions: Options,
@@ -377,7 +377,7 @@ namespace G
                                 pathTemplate: "$\"/vector_stores/{vectorStoreId}/file_batches/{batchId}/files\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: null,
                                 exception: __exception,
                                 clientOptions: Options,
@@ -418,7 +418,7 @@ namespace G
                                 pathTemplate: "$\"/vector_stores/{vectorStoreId}/file_batches/{batchId}/files\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: __response,
                                 exception: null,
                                 clientOptions: Options,
@@ -466,7 +466,7 @@ namespace G
                                 pathTemplate: "$\"/vector_stores/{vectorStoreId}/file_batches/{batchId}/files\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: __response,
                                 exception: null,
                                 clientOptions: Options,
@@ -488,7 +488,7 @@ namespace G
                                 pathTemplate: "$\"/vector_stores/{vectorStoreId}/file_batches/{batchId}/files\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: __response,
                                 exception: null,
                                 clientOptions: Options,

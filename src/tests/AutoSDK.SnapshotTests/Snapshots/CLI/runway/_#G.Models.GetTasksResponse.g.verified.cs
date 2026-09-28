@@ -1,4 +1,4 @@
-﻿//HintName: G.Models.GetTasksResponse.g.cs
+//HintName: G.Models.GetTasksResponse.g.cs
 #pragma warning disable CS0618 // Type or member is obsolete
 
 #nullable enable
@@ -48,8 +48,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.GetTasksResponseVariant1 PickPending() => IsPending
-            ? Pending!
+        public global::G.GetTasksResponseVariant1 PickPending() => Pending is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Pending' but the value was {ToString()}.");
 
         /// <summary>
@@ -85,8 +85,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.GetTasksResponseVariant2 PickThrottled() => IsThrottled
-            ? Throttled!
+        public global::G.GetTasksResponseVariant2 PickThrottled() => Throttled is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Throttled' but the value was {ToString()}.");
 
         /// <summary>
@@ -122,8 +122,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.GetTasksResponseVariant3 PickCancelled() => IsCancelled
-            ? Cancelled!
+        public global::G.GetTasksResponseVariant3 PickCancelled() => Cancelled is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Cancelled' but the value was {ToString()}.");
 
         /// <summary>
@@ -159,8 +159,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.GetTasksResponseVariant4 PickRunning() => IsRunning
-            ? Running!
+        public global::G.GetTasksResponseVariant4 PickRunning() => Running is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Running' but the value was {ToString()}.");
 
         /// <summary>
@@ -196,8 +196,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.GetTasksResponseVariant5 PickFailed() => IsFailed
-            ? Failed!
+        public global::G.GetTasksResponseVariant5 PickFailed() => Failed is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Failed' but the value was {ToString()}.");
 
         /// <summary>
@@ -233,8 +233,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.GetTasksResponseVariant6 PickSucceeded() => IsSucceeded
-            ? Succeeded!
+        public global::G.GetTasksResponseVariant6 PickSucceeded() => Succeeded is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Succeeded' but the value was {ToString()}.");
         /// <summary>
         /// 
@@ -446,29 +446,29 @@ namespace G
                 Validate();
             }
 
-            if (IsPending && pending != null)
+            if (Pending is { } __value0 && pending != null)
             {
-                return pending(Pending!);
+                return pending(__value0);
             }
-            else if (IsThrottled && throttled != null)
+            else if (Throttled is { } __value1 && throttled != null)
             {
-                return throttled(Throttled!);
+                return throttled(__value1);
             }
-            else if (IsCancelled && cancelled != null)
+            else if (Cancelled is { } __value2 && cancelled != null)
             {
-                return cancelled(Cancelled!);
+                return cancelled(__value2);
             }
-            else if (IsRunning && running != null)
+            else if (Running is { } __value3 && running != null)
             {
-                return running(Running!);
+                return running(__value3);
             }
-            else if (IsFailed && failed != null)
+            else if (Failed is { } __value4 && failed != null)
             {
-                return failed(Failed!);
+                return failed(__value4);
             }
-            else if (IsSucceeded && succeeded != null)
+            else if (Succeeded is { } __value5 && succeeded != null)
             {
-                return succeeded(Succeeded!);
+                return succeeded(__value5);
             }
 
             return default(TResult);
@@ -496,29 +496,29 @@ namespace G
                 Validate();
             }
 
-            if (IsPending)
+            if (Pending is { } __value0)
             {
-                pending?.Invoke(Pending!);
+                pending?.Invoke(__value0);
             }
-            else if (IsThrottled)
+            else if (Throttled is { } __value1)
             {
-                throttled?.Invoke(Throttled!);
+                throttled?.Invoke(__value1);
             }
-            else if (IsCancelled)
+            else if (Cancelled is { } __value2)
             {
-                cancelled?.Invoke(Cancelled!);
+                cancelled?.Invoke(__value2);
             }
-            else if (IsRunning)
+            else if (Running is { } __value3)
             {
-                running?.Invoke(Running!);
+                running?.Invoke(__value3);
             }
-            else if (IsFailed)
+            else if (Failed is { } __value4)
             {
-                failed?.Invoke(Failed!);
+                failed?.Invoke(__value4);
             }
-            else if (IsSucceeded)
+            else if (Succeeded is { } __value5)
             {
-                succeeded?.Invoke(Succeeded!);
+                succeeded?.Invoke(__value5);
             }
         }
 
@@ -539,29 +539,29 @@ namespace G
                 Validate();
             }
 
-            if (IsPending)
+            if (Pending is { } __value0)
             {
-                pending?.Invoke(Pending!);
+                pending?.Invoke(__value0);
             }
-            else if (IsThrottled)
+            else if (Throttled is { } __value1)
             {
-                throttled?.Invoke(Throttled!);
+                throttled?.Invoke(__value1);
             }
-            else if (IsCancelled)
+            else if (Cancelled is { } __value2)
             {
-                cancelled?.Invoke(Cancelled!);
+                cancelled?.Invoke(__value2);
             }
-            else if (IsRunning)
+            else if (Running is { } __value3)
             {
-                running?.Invoke(Running!);
+                running?.Invoke(__value3);
             }
-            else if (IsFailed)
+            else if (Failed is { } __value4)
             {
-                failed?.Invoke(Failed!);
+                failed?.Invoke(__value4);
             }
-            else if (IsSucceeded)
+            else if (Succeeded is { } __value5)
             {
-                succeeded?.Invoke(Succeeded!);
+                succeeded?.Invoke(__value5);
             }
         }
 

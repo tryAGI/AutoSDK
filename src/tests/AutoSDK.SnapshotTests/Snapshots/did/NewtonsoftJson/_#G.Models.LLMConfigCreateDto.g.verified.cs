@@ -1,4 +1,4 @@
-﻿//HintName: G.Models.LLMConfigCreateDto.g.cs
+//HintName: G.Models.LLMConfigCreateDto.g.cs
 #pragma warning disable CS0618 // Type or member is obsolete
 
 #nullable enable
@@ -43,8 +43,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.LLMConfigCreateDtoVariant1 PickLLMConfigCreateDtoVariant1() => IsLLMConfigCreateDtoVariant1
-            ? LLMConfigCreateDtoVariant1!
+        public global::G.LLMConfigCreateDtoVariant1 PickLLMConfigCreateDtoVariant1() => LLMConfigCreateDtoVariant1 is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'LLMConfigCreateDtoVariant1' but the value was {ToString()}.");
 
         /// <summary>
@@ -80,8 +80,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.LLMConfigCreateDtoVariant2 PickLLMConfigCreateDtoVariant2() => IsLLMConfigCreateDtoVariant2
-            ? LLMConfigCreateDtoVariant2!
+        public global::G.LLMConfigCreateDtoVariant2 PickLLMConfigCreateDtoVariant2() => LLMConfigCreateDtoVariant2 is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'LLMConfigCreateDtoVariant2' but the value was {ToString()}.");
 
         /// <summary>
@@ -117,8 +117,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.LLMConfigCreateDtoVariant3 PickLLMConfigCreateDtoVariant3() => IsLLMConfigCreateDtoVariant3
-            ? LLMConfigCreateDtoVariant3!
+        public global::G.LLMConfigCreateDtoVariant3 PickLLMConfigCreateDtoVariant3() => LLMConfigCreateDtoVariant3 is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'LLMConfigCreateDtoVariant3' but the value was {ToString()}.");
 
         /// <summary>
@@ -154,8 +154,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.LLMConfigCreateDtoVariant4 PickLLMConfigCreateDtoVariant4() => IsLLMConfigCreateDtoVariant4
-            ? LLMConfigCreateDtoVariant4!
+        public global::G.LLMConfigCreateDtoVariant4 PickLLMConfigCreateDtoVariant4() => LLMConfigCreateDtoVariant4 is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'LLMConfigCreateDtoVariant4' but the value was {ToString()}.");
 
         /// <summary>
@@ -191,8 +191,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.LLMConfigCreateDtoVariant5 PickLLMConfigCreateDtoVariant5() => IsLLMConfigCreateDtoVariant5
-            ? LLMConfigCreateDtoVariant5!
+        public global::G.LLMConfigCreateDtoVariant5 PickLLMConfigCreateDtoVariant5() => LLMConfigCreateDtoVariant5 is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'LLMConfigCreateDtoVariant5' but the value was {ToString()}.");
 
         /// <summary>
@@ -228,8 +228,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.LLMConfigCreateDtoVariant6 PickLLMConfigCreateDtoVariant6() => IsLLMConfigCreateDtoVariant6
-            ? LLMConfigCreateDtoVariant6!
+        public global::G.LLMConfigCreateDtoVariant6 PickLLMConfigCreateDtoVariant6() => LLMConfigCreateDtoVariant6 is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'LLMConfigCreateDtoVariant6' but the value was {ToString()}.");
         /// <summary>
         /// 
@@ -438,29 +438,29 @@ namespace G
                 Validate();
             }
 
-            if (IsLLMConfigCreateDtoVariant1 && lLMConfigCreateDtoVariant1 != null)
+            if (LLMConfigCreateDtoVariant1 is { } __value0 && lLMConfigCreateDtoVariant1 != null)
             {
-                return lLMConfigCreateDtoVariant1(LLMConfigCreateDtoVariant1!);
+                return lLMConfigCreateDtoVariant1(__value0);
             }
-            else if (IsLLMConfigCreateDtoVariant2 && lLMConfigCreateDtoVariant2 != null)
+            else if (LLMConfigCreateDtoVariant2 is { } __value1 && lLMConfigCreateDtoVariant2 != null)
             {
-                return lLMConfigCreateDtoVariant2(LLMConfigCreateDtoVariant2!);
+                return lLMConfigCreateDtoVariant2(__value1);
             }
-            else if (IsLLMConfigCreateDtoVariant3 && lLMConfigCreateDtoVariant3 != null)
+            else if (LLMConfigCreateDtoVariant3 is { } __value2 && lLMConfigCreateDtoVariant3 != null)
             {
-                return lLMConfigCreateDtoVariant3(LLMConfigCreateDtoVariant3!);
+                return lLMConfigCreateDtoVariant3(__value2);
             }
-            else if (IsLLMConfigCreateDtoVariant4 && lLMConfigCreateDtoVariant4 != null)
+            else if (LLMConfigCreateDtoVariant4 is { } __value3 && lLMConfigCreateDtoVariant4 != null)
             {
-                return lLMConfigCreateDtoVariant4(LLMConfigCreateDtoVariant4!);
+                return lLMConfigCreateDtoVariant4(__value3);
             }
-            else if (IsLLMConfigCreateDtoVariant5 && lLMConfigCreateDtoVariant5 != null)
+            else if (LLMConfigCreateDtoVariant5 is { } __value4 && lLMConfigCreateDtoVariant5 != null)
             {
-                return lLMConfigCreateDtoVariant5(LLMConfigCreateDtoVariant5!);
+                return lLMConfigCreateDtoVariant5(__value4);
             }
-            else if (IsLLMConfigCreateDtoVariant6 && lLMConfigCreateDtoVariant6 != null)
+            else if (LLMConfigCreateDtoVariant6 is { } __value5 && lLMConfigCreateDtoVariant6 != null)
             {
-                return lLMConfigCreateDtoVariant6(LLMConfigCreateDtoVariant6!);
+                return lLMConfigCreateDtoVariant6(__value5);
             }
 
             return default(TResult);
@@ -488,29 +488,29 @@ namespace G
                 Validate();
             }
 
-            if (IsLLMConfigCreateDtoVariant1)
+            if (LLMConfigCreateDtoVariant1 is { } __value0)
             {
-                lLMConfigCreateDtoVariant1?.Invoke(LLMConfigCreateDtoVariant1!);
+                lLMConfigCreateDtoVariant1?.Invoke(__value0);
             }
-            else if (IsLLMConfigCreateDtoVariant2)
+            else if (LLMConfigCreateDtoVariant2 is { } __value1)
             {
-                lLMConfigCreateDtoVariant2?.Invoke(LLMConfigCreateDtoVariant2!);
+                lLMConfigCreateDtoVariant2?.Invoke(__value1);
             }
-            else if (IsLLMConfigCreateDtoVariant3)
+            else if (LLMConfigCreateDtoVariant3 is { } __value2)
             {
-                lLMConfigCreateDtoVariant3?.Invoke(LLMConfigCreateDtoVariant3!);
+                lLMConfigCreateDtoVariant3?.Invoke(__value2);
             }
-            else if (IsLLMConfigCreateDtoVariant4)
+            else if (LLMConfigCreateDtoVariant4 is { } __value3)
             {
-                lLMConfigCreateDtoVariant4?.Invoke(LLMConfigCreateDtoVariant4!);
+                lLMConfigCreateDtoVariant4?.Invoke(__value3);
             }
-            else if (IsLLMConfigCreateDtoVariant5)
+            else if (LLMConfigCreateDtoVariant5 is { } __value4)
             {
-                lLMConfigCreateDtoVariant5?.Invoke(LLMConfigCreateDtoVariant5!);
+                lLMConfigCreateDtoVariant5?.Invoke(__value4);
             }
-            else if (IsLLMConfigCreateDtoVariant6)
+            else if (LLMConfigCreateDtoVariant6 is { } __value5)
             {
-                lLMConfigCreateDtoVariant6?.Invoke(LLMConfigCreateDtoVariant6!);
+                lLMConfigCreateDtoVariant6?.Invoke(__value5);
             }
         }
 
@@ -531,29 +531,29 @@ namespace G
                 Validate();
             }
 
-            if (IsLLMConfigCreateDtoVariant1)
+            if (LLMConfigCreateDtoVariant1 is { } __value0)
             {
-                lLMConfigCreateDtoVariant1?.Invoke(LLMConfigCreateDtoVariant1!);
+                lLMConfigCreateDtoVariant1?.Invoke(__value0);
             }
-            else if (IsLLMConfigCreateDtoVariant2)
+            else if (LLMConfigCreateDtoVariant2 is { } __value1)
             {
-                lLMConfigCreateDtoVariant2?.Invoke(LLMConfigCreateDtoVariant2!);
+                lLMConfigCreateDtoVariant2?.Invoke(__value1);
             }
-            else if (IsLLMConfigCreateDtoVariant3)
+            else if (LLMConfigCreateDtoVariant3 is { } __value2)
             {
-                lLMConfigCreateDtoVariant3?.Invoke(LLMConfigCreateDtoVariant3!);
+                lLMConfigCreateDtoVariant3?.Invoke(__value2);
             }
-            else if (IsLLMConfigCreateDtoVariant4)
+            else if (LLMConfigCreateDtoVariant4 is { } __value3)
             {
-                lLMConfigCreateDtoVariant4?.Invoke(LLMConfigCreateDtoVariant4!);
+                lLMConfigCreateDtoVariant4?.Invoke(__value3);
             }
-            else if (IsLLMConfigCreateDtoVariant5)
+            else if (LLMConfigCreateDtoVariant5 is { } __value4)
             {
-                lLMConfigCreateDtoVariant5?.Invoke(LLMConfigCreateDtoVariant5!);
+                lLMConfigCreateDtoVariant5?.Invoke(__value4);
             }
-            else if (IsLLMConfigCreateDtoVariant6)
+            else if (LLMConfigCreateDtoVariant6 is { } __value5)
             {
-                lLMConfigCreateDtoVariant6?.Invoke(LLMConfigCreateDtoVariant6!);
+                lLMConfigCreateDtoVariant6?.Invoke(__value5);
             }
         }
 

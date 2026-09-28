@@ -1,4 +1,4 @@
-﻿//HintName: G.JsonConverters.WebhookPullRequestReviewRequestRemoved.g.cs
+//HintName: G.JsonConverters.WebhookPullRequestReviewRequestRemoved.g.cs
 #nullable enable
 #pragma warning disable CS0618 // Type or member is obsolete
 
@@ -572,13 +572,13 @@ namespace G.JsonConverters
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.WebhookPullRequestReviewRequestRemovedVariant1), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.WebhookPullRequestReviewRequestRemovedVariant1?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.WebhookPullRequestReviewRequestRemovedVariant1).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.WebhookPullRequestReviewRequestRemovedVariant1!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickWebhookPullRequestReviewRequestRemovedVariant1(), typeInfo);
             }
             else if (value.IsWebhookPullRequestReviewRequestRemovedVariant2)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.WebhookPullRequestReviewRequestRemovedVariant2), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.WebhookPullRequestReviewRequestRemovedVariant2?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.WebhookPullRequestReviewRequestRemovedVariant2).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.WebhookPullRequestReviewRequestRemovedVariant2!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickWebhookPullRequestReviewRequestRemovedVariant2(), typeInfo);
             }
         }
     }

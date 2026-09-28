@@ -1,4 +1,4 @@
-﻿//HintName: G.PipelinesClient.ListPipelinesByFamily.g.cs
+//HintName: G.PipelinesClient.ListPipelinesByFamily.g.cs
 
 #nullable enable
 
@@ -280,7 +280,7 @@ namespace G
                 PrepareListPipelinesByFamilyRequest(
                     httpClient: HttpClient,
                     httpRequestMessage: __httpRequest,
-                    pipelineFamilyName: pipelineFamilyName!,
+                    pipelineFamilyName: pipelineFamilyName,
                     skip: skip,
                     limit: limit,
                     orderBy: orderBy,
@@ -312,7 +312,7 @@ namespace G
                                 pathTemplate: "$\"/v4/pipelines/by-family/{pipelineFamilyName}\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: null,
                                 exception: null,
                                 clientOptions: Options,
@@ -346,7 +346,7 @@ namespace G
                                 pathTemplate: "$\"/v4/pipelines/by-family/{pipelineFamilyName}\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: null,
                                 exception: __exception,
                                 clientOptions: Options,
@@ -387,7 +387,7 @@ namespace G
                                 pathTemplate: "$\"/v4/pipelines/by-family/{pipelineFamilyName}\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: __response,
                                 exception: null,
                                 clientOptions: Options,
@@ -435,7 +435,7 @@ namespace G
                                 pathTemplate: "$\"/v4/pipelines/by-family/{pipelineFamilyName}\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: __response,
                                 exception: null,
                                 clientOptions: Options,
@@ -457,7 +457,7 @@ namespace G
                                 pathTemplate: "$\"/v4/pipelines/by-family/{pipelineFamilyName}\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: __response,
                                 exception: null,
                                 clientOptions: Options,

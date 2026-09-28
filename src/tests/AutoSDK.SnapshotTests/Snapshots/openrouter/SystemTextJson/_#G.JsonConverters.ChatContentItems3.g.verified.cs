@@ -1,4 +1,4 @@
-﻿//HintName: G.JsonConverters.ChatContentItems3.g.cs
+//HintName: G.JsonConverters.ChatContentItems3.g.cs
 #nullable enable
 #pragma warning disable CS0618 // Type or member is obsolete
 
@@ -140,13 +140,13 @@ namespace G.JsonConverters
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.LegacyChatContentVideo), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.LegacyChatContentVideo?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.LegacyChatContentVideo).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.LegacyChatContentVideo!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickLegacyChatContentVideo(), typeInfo);
             }
             else if (value.IsChatContentVideo)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.ChatContentVideo), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.ChatContentVideo?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.ChatContentVideo).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.ChatContentVideo!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickChatContentVideo(), typeInfo);
             }
         }
     }

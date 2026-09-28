@@ -1,4 +1,4 @@
-﻿//HintName: G.Models.GenerateAssetPublicGenerationsPostResponse.g.cs
+//HintName: G.Models.GenerateAssetPublicGenerationsPostResponse.g.cs
 #pragma warning disable CS0618 // Type or member is obsolete
 
 #nullable enable
@@ -48,8 +48,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.GenerateVideoResponse PickVideo() => IsVideo
-            ? Video!
+        public global::G.GenerateVideoResponse PickVideo() => Video is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Video' but the value was {ToString()}.");
 
         /// <summary>
@@ -85,8 +85,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.GenerateTextToSpeechResponse PickTextToSpeech() => IsTextToSpeech
-            ? TextToSpeech!
+        public global::G.GenerateTextToSpeechResponse PickTextToSpeech() => TextToSpeech is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'TextToSpeech' but the value was {ToString()}.");
 
         /// <summary>
@@ -122,8 +122,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.GenerateTextToSoundResponse PickTextToSound() => IsTextToSound
-            ? TextToSound!
+        public global::G.GenerateTextToSoundResponse PickTextToSound() => TextToSound is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'TextToSound' but the value was {ToString()}.");
 
         /// <summary>
@@ -159,8 +159,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.GenerateImageResponse PickImage() => IsImage
-            ? Image!
+        public global::G.GenerateImageResponse PickImage() => Image is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Image' but the value was {ToString()}.");
 
         /// <summary>
@@ -196,8 +196,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.GenerateImageUpscaleResponse PickImageUpscale() => IsImageUpscale
-            ? ImageUpscale!
+        public global::G.GenerateImageUpscaleResponse PickImageUpscale() => ImageUpscale is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'ImageUpscale' but the value was {ToString()}.");
 
         /// <summary>
@@ -233,8 +233,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.GenerateVideoUpscaleResponse PickVideoUpscale() => IsVideoUpscale
-            ? VideoUpscale!
+        public global::G.GenerateVideoUpscaleResponse PickVideoUpscale() => VideoUpscale is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'VideoUpscale' but the value was {ToString()}.");
 
         /// <summary>
@@ -270,8 +270,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.GenerateIsolatedAudioResponse PickAudioIsolation() => IsAudioIsolation
-            ? AudioIsolation!
+        public global::G.GenerateIsolatedAudioResponse PickAudioIsolation() => AudioIsolation is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'AudioIsolation' but the value was {ToString()}.");
 
         /// <summary>
@@ -307,8 +307,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.GenerateSpeechToSpeechResponse PickSpeechToSpeech() => IsSpeechToSpeech
-            ? SpeechToSpeech!
+        public global::G.GenerateSpeechToSpeechResponse PickSpeechToSpeech() => SpeechToSpeech is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'SpeechToSpeech' but the value was {ToString()}.");
 
         /// <summary>
@@ -344,8 +344,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.GenerateVoiceCloneResponse PickVoiceClone() => IsVoiceClone
-            ? VoiceClone!
+        public global::G.GenerateVoiceCloneResponse PickVoiceClone() => VoiceClone is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'VoiceClone' but the value was {ToString()}.");
 
         /// <summary>
@@ -381,8 +381,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.GenerateAudioFromVideoResponse PickAudioFromVideo() => IsAudioFromVideo
-            ? AudioFromVideo!
+        public global::G.GenerateAudioFromVideoResponse PickAudioFromVideo() => AudioFromVideo is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'AudioFromVideo' but the value was {ToString()}.");
 
         /// <summary>
@@ -418,8 +418,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.GenerateVideoWithAudioResponse PickVideoWithAudio() => IsVideoWithAudio
-            ? VideoWithAudio!
+        public global::G.GenerateVideoWithAudioResponse PickVideoWithAudio() => VideoWithAudio is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'VideoWithAudio' but the value was {ToString()}.");
 
         /// <summary>
@@ -455,8 +455,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.GenerateVideoToVideoResponse PickVideoToVideo() => IsVideoToVideo
-            ? VideoToVideo!
+        public global::G.GenerateVideoToVideoResponse PickVideoToVideo() => VideoToVideo is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'VideoToVideo' but the value was {ToString()}.");
 
         /// <summary>
@@ -492,8 +492,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.GenerateMotionControlResponse PickMotionControl() => IsMotionControl
-            ? MotionControl!
+        public global::G.GenerateMotionControlResponse PickMotionControl() => MotionControl is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'MotionControl' but the value was {ToString()}.");
         /// <summary>
         /// 
@@ -901,57 +901,57 @@ namespace G
                 Validate();
             }
 
-            if (IsVideo && video != null)
+            if (Video is { } __value0 && video != null)
             {
-                return video(Video!);
+                return video(__value0);
             }
-            else if (IsTextToSpeech && textToSpeech != null)
+            else if (TextToSpeech is { } __value1 && textToSpeech != null)
             {
-                return textToSpeech(TextToSpeech!);
+                return textToSpeech(__value1);
             }
-            else if (IsTextToSound && textToSound != null)
+            else if (TextToSound is { } __value2 && textToSound != null)
             {
-                return textToSound(TextToSound!);
+                return textToSound(__value2);
             }
-            else if (IsImage && image != null)
+            else if (Image is { } __value3 && image != null)
             {
-                return image(Image!);
+                return image(__value3);
             }
-            else if (IsImageUpscale && imageUpscale != null)
+            else if (ImageUpscale is { } __value4 && imageUpscale != null)
             {
-                return imageUpscale(ImageUpscale!);
+                return imageUpscale(__value4);
             }
-            else if (IsVideoUpscale && videoUpscale != null)
+            else if (VideoUpscale is { } __value5 && videoUpscale != null)
             {
-                return videoUpscale(VideoUpscale!);
+                return videoUpscale(__value5);
             }
-            else if (IsAudioIsolation && audioIsolation != null)
+            else if (AudioIsolation is { } __value6 && audioIsolation != null)
             {
-                return audioIsolation(AudioIsolation!);
+                return audioIsolation(__value6);
             }
-            else if (IsSpeechToSpeech && speechToSpeech != null)
+            else if (SpeechToSpeech is { } __value7 && speechToSpeech != null)
             {
-                return speechToSpeech(SpeechToSpeech!);
+                return speechToSpeech(__value7);
             }
-            else if (IsVoiceClone && voiceClone != null)
+            else if (VoiceClone is { } __value8 && voiceClone != null)
             {
-                return voiceClone(VoiceClone!);
+                return voiceClone(__value8);
             }
-            else if (IsAudioFromVideo && audioFromVideo != null)
+            else if (AudioFromVideo is { } __value9 && audioFromVideo != null)
             {
-                return audioFromVideo(AudioFromVideo!);
+                return audioFromVideo(__value9);
             }
-            else if (IsVideoWithAudio && videoWithAudio != null)
+            else if (VideoWithAudio is { } __value10 && videoWithAudio != null)
             {
-                return videoWithAudio(VideoWithAudio!);
+                return videoWithAudio(__value10);
             }
-            else if (IsVideoToVideo && videoToVideo != null)
+            else if (VideoToVideo is { } __value11 && videoToVideo != null)
             {
-                return videoToVideo(VideoToVideo!);
+                return videoToVideo(__value11);
             }
-            else if (IsMotionControl && motionControl != null)
+            else if (MotionControl is { } __value12 && motionControl != null)
             {
-                return motionControl(MotionControl!);
+                return motionControl(__value12);
             }
 
             return default(TResult);
@@ -993,57 +993,57 @@ namespace G
                 Validate();
             }
 
-            if (IsVideo)
+            if (Video is { } __value0)
             {
-                video?.Invoke(Video!);
+                video?.Invoke(__value0);
             }
-            else if (IsTextToSpeech)
+            else if (TextToSpeech is { } __value1)
             {
-                textToSpeech?.Invoke(TextToSpeech!);
+                textToSpeech?.Invoke(__value1);
             }
-            else if (IsTextToSound)
+            else if (TextToSound is { } __value2)
             {
-                textToSound?.Invoke(TextToSound!);
+                textToSound?.Invoke(__value2);
             }
-            else if (IsImage)
+            else if (Image is { } __value3)
             {
-                image?.Invoke(Image!);
+                image?.Invoke(__value3);
             }
-            else if (IsImageUpscale)
+            else if (ImageUpscale is { } __value4)
             {
-                imageUpscale?.Invoke(ImageUpscale!);
+                imageUpscale?.Invoke(__value4);
             }
-            else if (IsVideoUpscale)
+            else if (VideoUpscale is { } __value5)
             {
-                videoUpscale?.Invoke(VideoUpscale!);
+                videoUpscale?.Invoke(__value5);
             }
-            else if (IsAudioIsolation)
+            else if (AudioIsolation is { } __value6)
             {
-                audioIsolation?.Invoke(AudioIsolation!);
+                audioIsolation?.Invoke(__value6);
             }
-            else if (IsSpeechToSpeech)
+            else if (SpeechToSpeech is { } __value7)
             {
-                speechToSpeech?.Invoke(SpeechToSpeech!);
+                speechToSpeech?.Invoke(__value7);
             }
-            else if (IsVoiceClone)
+            else if (VoiceClone is { } __value8)
             {
-                voiceClone?.Invoke(VoiceClone!);
+                voiceClone?.Invoke(__value8);
             }
-            else if (IsAudioFromVideo)
+            else if (AudioFromVideo is { } __value9)
             {
-                audioFromVideo?.Invoke(AudioFromVideo!);
+                audioFromVideo?.Invoke(__value9);
             }
-            else if (IsVideoWithAudio)
+            else if (VideoWithAudio is { } __value10)
             {
-                videoWithAudio?.Invoke(VideoWithAudio!);
+                videoWithAudio?.Invoke(__value10);
             }
-            else if (IsVideoToVideo)
+            else if (VideoToVideo is { } __value11)
             {
-                videoToVideo?.Invoke(VideoToVideo!);
+                videoToVideo?.Invoke(__value11);
             }
-            else if (IsMotionControl)
+            else if (MotionControl is { } __value12)
             {
-                motionControl?.Invoke(MotionControl!);
+                motionControl?.Invoke(__value12);
             }
         }
 
@@ -1071,57 +1071,57 @@ namespace G
                 Validate();
             }
 
-            if (IsVideo)
+            if (Video is { } __value0)
             {
-                video?.Invoke(Video!);
+                video?.Invoke(__value0);
             }
-            else if (IsTextToSpeech)
+            else if (TextToSpeech is { } __value1)
             {
-                textToSpeech?.Invoke(TextToSpeech!);
+                textToSpeech?.Invoke(__value1);
             }
-            else if (IsTextToSound)
+            else if (TextToSound is { } __value2)
             {
-                textToSound?.Invoke(TextToSound!);
+                textToSound?.Invoke(__value2);
             }
-            else if (IsImage)
+            else if (Image is { } __value3)
             {
-                image?.Invoke(Image!);
+                image?.Invoke(__value3);
             }
-            else if (IsImageUpscale)
+            else if (ImageUpscale is { } __value4)
             {
-                imageUpscale?.Invoke(ImageUpscale!);
+                imageUpscale?.Invoke(__value4);
             }
-            else if (IsVideoUpscale)
+            else if (VideoUpscale is { } __value5)
             {
-                videoUpscale?.Invoke(VideoUpscale!);
+                videoUpscale?.Invoke(__value5);
             }
-            else if (IsAudioIsolation)
+            else if (AudioIsolation is { } __value6)
             {
-                audioIsolation?.Invoke(AudioIsolation!);
+                audioIsolation?.Invoke(__value6);
             }
-            else if (IsSpeechToSpeech)
+            else if (SpeechToSpeech is { } __value7)
             {
-                speechToSpeech?.Invoke(SpeechToSpeech!);
+                speechToSpeech?.Invoke(__value7);
             }
-            else if (IsVoiceClone)
+            else if (VoiceClone is { } __value8)
             {
-                voiceClone?.Invoke(VoiceClone!);
+                voiceClone?.Invoke(__value8);
             }
-            else if (IsAudioFromVideo)
+            else if (AudioFromVideo is { } __value9)
             {
-                audioFromVideo?.Invoke(AudioFromVideo!);
+                audioFromVideo?.Invoke(__value9);
             }
-            else if (IsVideoWithAudio)
+            else if (VideoWithAudio is { } __value10)
             {
-                videoWithAudio?.Invoke(VideoWithAudio!);
+                videoWithAudio?.Invoke(__value10);
             }
-            else if (IsVideoToVideo)
+            else if (VideoToVideo is { } __value11)
             {
-                videoToVideo?.Invoke(VideoToVideo!);
+                videoToVideo?.Invoke(__value11);
             }
-            else if (IsMotionControl)
+            else if (MotionControl is { } __value12)
             {
-                motionControl?.Invoke(MotionControl!);
+                motionControl?.Invoke(__value12);
             }
         }
 

@@ -1,4 +1,4 @@
-﻿//HintName: G.Models.RepositoryRuleDetailed.g.cs
+//HintName: G.Models.RepositoryRuleDetailed.g.cs
 #pragma warning disable CS0618 // Type or member is obsolete
 
 #nullable enable
@@ -43,8 +43,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.AllOf<global::G.RepositoryRuleCreation, global::G.RepositoryRuleRulesetInfo> PickRepositoryRuleDetailedVariant1() => IsRepositoryRuleDetailedVariant1
-            ? RepositoryRuleDetailedVariant1!.Value
+        public global::G.AllOf<global::G.RepositoryRuleCreation, global::G.RepositoryRuleRulesetInfo> PickRepositoryRuleDetailedVariant1() => RepositoryRuleDetailedVariant1 is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'RepositoryRuleDetailedVariant1' but the value was {ToString()}.");
 
         /// <summary>
@@ -80,8 +80,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.AllOf<global::G.RepositoryRuleUpdate, global::G.RepositoryRuleRulesetInfo> PickRepositoryRuleDetailedVariant2() => IsRepositoryRuleDetailedVariant2
-            ? RepositoryRuleDetailedVariant2!.Value
+        public global::G.AllOf<global::G.RepositoryRuleUpdate, global::G.RepositoryRuleRulesetInfo> PickRepositoryRuleDetailedVariant2() => RepositoryRuleDetailedVariant2 is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'RepositoryRuleDetailedVariant2' but the value was {ToString()}.");
 
         /// <summary>
@@ -117,8 +117,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.AllOf<global::G.RepositoryRuleDeletion, global::G.RepositoryRuleRulesetInfo> PickRepositoryRuleDetailedVariant3() => IsRepositoryRuleDetailedVariant3
-            ? RepositoryRuleDetailedVariant3!.Value
+        public global::G.AllOf<global::G.RepositoryRuleDeletion, global::G.RepositoryRuleRulesetInfo> PickRepositoryRuleDetailedVariant3() => RepositoryRuleDetailedVariant3 is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'RepositoryRuleDetailedVariant3' but the value was {ToString()}.");
 
         /// <summary>
@@ -154,8 +154,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.AllOf<global::G.RepositoryRuleRequiredLinearHistory, global::G.RepositoryRuleRulesetInfo> PickRepositoryRuleDetailedVariant4() => IsRepositoryRuleDetailedVariant4
-            ? RepositoryRuleDetailedVariant4!.Value
+        public global::G.AllOf<global::G.RepositoryRuleRequiredLinearHistory, global::G.RepositoryRuleRulesetInfo> PickRepositoryRuleDetailedVariant4() => RepositoryRuleDetailedVariant4 is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'RepositoryRuleDetailedVariant4' but the value was {ToString()}.");
 
         /// <summary>
@@ -191,8 +191,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.AllOf<global::G.RepositoryRuleMergeQueue, global::G.RepositoryRuleRulesetInfo> PickRepositoryRuleDetailedVariant5() => IsRepositoryRuleDetailedVariant5
-            ? RepositoryRuleDetailedVariant5!.Value
+        public global::G.AllOf<global::G.RepositoryRuleMergeQueue, global::G.RepositoryRuleRulesetInfo> PickRepositoryRuleDetailedVariant5() => RepositoryRuleDetailedVariant5 is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'RepositoryRuleDetailedVariant5' but the value was {ToString()}.");
 
         /// <summary>
@@ -228,8 +228,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.AllOf<global::G.RepositoryRuleRequiredDeployments, global::G.RepositoryRuleRulesetInfo> PickRepositoryRuleDetailedVariant6() => IsRepositoryRuleDetailedVariant6
-            ? RepositoryRuleDetailedVariant6!.Value
+        public global::G.AllOf<global::G.RepositoryRuleRequiredDeployments, global::G.RepositoryRuleRulesetInfo> PickRepositoryRuleDetailedVariant6() => RepositoryRuleDetailedVariant6 is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'RepositoryRuleDetailedVariant6' but the value was {ToString()}.");
 
         /// <summary>
@@ -265,8 +265,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.AllOf<global::G.RepositoryRuleRequiredSignatures, global::G.RepositoryRuleRulesetInfo> PickRepositoryRuleDetailedVariant7() => IsRepositoryRuleDetailedVariant7
-            ? RepositoryRuleDetailedVariant7!.Value
+        public global::G.AllOf<global::G.RepositoryRuleRequiredSignatures, global::G.RepositoryRuleRulesetInfo> PickRepositoryRuleDetailedVariant7() => RepositoryRuleDetailedVariant7 is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'RepositoryRuleDetailedVariant7' but the value was {ToString()}.");
 
         /// <summary>
@@ -302,8 +302,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.AllOf<global::G.RepositoryRulePullRequest, global::G.RepositoryRuleRulesetInfo> PickRepositoryRuleDetailedVariant8() => IsRepositoryRuleDetailedVariant8
-            ? RepositoryRuleDetailedVariant8!.Value
+        public global::G.AllOf<global::G.RepositoryRulePullRequest, global::G.RepositoryRuleRulesetInfo> PickRepositoryRuleDetailedVariant8() => RepositoryRuleDetailedVariant8 is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'RepositoryRuleDetailedVariant8' but the value was {ToString()}.");
 
         /// <summary>
@@ -339,8 +339,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.AllOf<global::G.RepositoryRuleRequiredStatusChecks, global::G.RepositoryRuleRulesetInfo> PickRepositoryRuleDetailedVariant9() => IsRepositoryRuleDetailedVariant9
-            ? RepositoryRuleDetailedVariant9!.Value
+        public global::G.AllOf<global::G.RepositoryRuleRequiredStatusChecks, global::G.RepositoryRuleRulesetInfo> PickRepositoryRuleDetailedVariant9() => RepositoryRuleDetailedVariant9 is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'RepositoryRuleDetailedVariant9' but the value was {ToString()}.");
 
         /// <summary>
@@ -376,8 +376,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.AllOf<global::G.RepositoryRuleNonFastForward, global::G.RepositoryRuleRulesetInfo> PickRepositoryRuleDetailedVariant10() => IsRepositoryRuleDetailedVariant10
-            ? RepositoryRuleDetailedVariant10!.Value
+        public global::G.AllOf<global::G.RepositoryRuleNonFastForward, global::G.RepositoryRuleRulesetInfo> PickRepositoryRuleDetailedVariant10() => RepositoryRuleDetailedVariant10 is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'RepositoryRuleDetailedVariant10' but the value was {ToString()}.");
 
         /// <summary>
@@ -413,8 +413,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.AllOf<global::G.RepositoryRuleCommitMessagePattern, global::G.RepositoryRuleRulesetInfo> PickRepositoryRuleDetailedVariant11() => IsRepositoryRuleDetailedVariant11
-            ? RepositoryRuleDetailedVariant11!.Value
+        public global::G.AllOf<global::G.RepositoryRuleCommitMessagePattern, global::G.RepositoryRuleRulesetInfo> PickRepositoryRuleDetailedVariant11() => RepositoryRuleDetailedVariant11 is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'RepositoryRuleDetailedVariant11' but the value was {ToString()}.");
 
         /// <summary>
@@ -450,8 +450,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.AllOf<global::G.RepositoryRuleCommitAuthorEmailPattern, global::G.RepositoryRuleRulesetInfo> PickRepositoryRuleDetailedVariant12() => IsRepositoryRuleDetailedVariant12
-            ? RepositoryRuleDetailedVariant12!.Value
+        public global::G.AllOf<global::G.RepositoryRuleCommitAuthorEmailPattern, global::G.RepositoryRuleRulesetInfo> PickRepositoryRuleDetailedVariant12() => RepositoryRuleDetailedVariant12 is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'RepositoryRuleDetailedVariant12' but the value was {ToString()}.");
 
         /// <summary>
@@ -487,8 +487,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.AllOf<global::G.RepositoryRuleCommitterEmailPattern, global::G.RepositoryRuleRulesetInfo> PickRepositoryRuleDetailedVariant13() => IsRepositoryRuleDetailedVariant13
-            ? RepositoryRuleDetailedVariant13!.Value
+        public global::G.AllOf<global::G.RepositoryRuleCommitterEmailPattern, global::G.RepositoryRuleRulesetInfo> PickRepositoryRuleDetailedVariant13() => RepositoryRuleDetailedVariant13 is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'RepositoryRuleDetailedVariant13' but the value was {ToString()}.");
 
         /// <summary>
@@ -524,8 +524,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.AllOf<global::G.RepositoryRuleBranchNamePattern, global::G.RepositoryRuleRulesetInfo> PickRepositoryRuleDetailedVariant14() => IsRepositoryRuleDetailedVariant14
-            ? RepositoryRuleDetailedVariant14!.Value
+        public global::G.AllOf<global::G.RepositoryRuleBranchNamePattern, global::G.RepositoryRuleRulesetInfo> PickRepositoryRuleDetailedVariant14() => RepositoryRuleDetailedVariant14 is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'RepositoryRuleDetailedVariant14' but the value was {ToString()}.");
 
         /// <summary>
@@ -561,8 +561,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.AllOf<global::G.RepositoryRuleTagNamePattern, global::G.RepositoryRuleRulesetInfo> PickRepositoryRuleDetailedVariant15() => IsRepositoryRuleDetailedVariant15
-            ? RepositoryRuleDetailedVariant15!.Value
+        public global::G.AllOf<global::G.RepositoryRuleTagNamePattern, global::G.RepositoryRuleRulesetInfo> PickRepositoryRuleDetailedVariant15() => RepositoryRuleDetailedVariant15 is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'RepositoryRuleDetailedVariant15' but the value was {ToString()}.");
 
         /// <summary>
@@ -598,8 +598,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.AllOf<global::G.RepositoryRuleWorkflows, global::G.RepositoryRuleRulesetInfo> PickRepositoryRuleDetailedVariant16() => IsRepositoryRuleDetailedVariant16
-            ? RepositoryRuleDetailedVariant16!.Value
+        public global::G.AllOf<global::G.RepositoryRuleWorkflows, global::G.RepositoryRuleRulesetInfo> PickRepositoryRuleDetailedVariant16() => RepositoryRuleDetailedVariant16 is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'RepositoryRuleDetailedVariant16' but the value was {ToString()}.");
 
         /// <summary>
@@ -635,8 +635,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.AllOf<global::G.RepositoryRuleCodeScanning, global::G.RepositoryRuleRulesetInfo> PickRepositoryRuleDetailedVariant17() => IsRepositoryRuleDetailedVariant17
-            ? RepositoryRuleDetailedVariant17!.Value
+        public global::G.AllOf<global::G.RepositoryRuleCodeScanning, global::G.RepositoryRuleRulesetInfo> PickRepositoryRuleDetailedVariant17() => RepositoryRuleDetailedVariant17 is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'RepositoryRuleDetailedVariant17' but the value was {ToString()}.");
         /// <summary>
         /// 
@@ -1153,73 +1153,73 @@ namespace G
                 Validate();
             }
 
-            if (IsRepositoryRuleDetailedVariant1 && repositoryRuleDetailedVariant1 != null)
+            if (RepositoryRuleDetailedVariant1 is { } __value0 && repositoryRuleDetailedVariant1 != null)
             {
-                return repositoryRuleDetailedVariant1(RepositoryRuleDetailedVariant1!);
+                return repositoryRuleDetailedVariant1(__value0);
             }
-            else if (IsRepositoryRuleDetailedVariant2 && repositoryRuleDetailedVariant2 != null)
+            else if (RepositoryRuleDetailedVariant2 is { } __value1 && repositoryRuleDetailedVariant2 != null)
             {
-                return repositoryRuleDetailedVariant2(RepositoryRuleDetailedVariant2!);
+                return repositoryRuleDetailedVariant2(__value1);
             }
-            else if (IsRepositoryRuleDetailedVariant3 && repositoryRuleDetailedVariant3 != null)
+            else if (RepositoryRuleDetailedVariant3 is { } __value2 && repositoryRuleDetailedVariant3 != null)
             {
-                return repositoryRuleDetailedVariant3(RepositoryRuleDetailedVariant3!);
+                return repositoryRuleDetailedVariant3(__value2);
             }
-            else if (IsRepositoryRuleDetailedVariant4 && repositoryRuleDetailedVariant4 != null)
+            else if (RepositoryRuleDetailedVariant4 is { } __value3 && repositoryRuleDetailedVariant4 != null)
             {
-                return repositoryRuleDetailedVariant4(RepositoryRuleDetailedVariant4!);
+                return repositoryRuleDetailedVariant4(__value3);
             }
-            else if (IsRepositoryRuleDetailedVariant5 && repositoryRuleDetailedVariant5 != null)
+            else if (RepositoryRuleDetailedVariant5 is { } __value4 && repositoryRuleDetailedVariant5 != null)
             {
-                return repositoryRuleDetailedVariant5(RepositoryRuleDetailedVariant5!);
+                return repositoryRuleDetailedVariant5(__value4);
             }
-            else if (IsRepositoryRuleDetailedVariant6 && repositoryRuleDetailedVariant6 != null)
+            else if (RepositoryRuleDetailedVariant6 is { } __value5 && repositoryRuleDetailedVariant6 != null)
             {
-                return repositoryRuleDetailedVariant6(RepositoryRuleDetailedVariant6!);
+                return repositoryRuleDetailedVariant6(__value5);
             }
-            else if (IsRepositoryRuleDetailedVariant7 && repositoryRuleDetailedVariant7 != null)
+            else if (RepositoryRuleDetailedVariant7 is { } __value6 && repositoryRuleDetailedVariant7 != null)
             {
-                return repositoryRuleDetailedVariant7(RepositoryRuleDetailedVariant7!);
+                return repositoryRuleDetailedVariant7(__value6);
             }
-            else if (IsRepositoryRuleDetailedVariant8 && repositoryRuleDetailedVariant8 != null)
+            else if (RepositoryRuleDetailedVariant8 is { } __value7 && repositoryRuleDetailedVariant8 != null)
             {
-                return repositoryRuleDetailedVariant8(RepositoryRuleDetailedVariant8!);
+                return repositoryRuleDetailedVariant8(__value7);
             }
-            else if (IsRepositoryRuleDetailedVariant9 && repositoryRuleDetailedVariant9 != null)
+            else if (RepositoryRuleDetailedVariant9 is { } __value8 && repositoryRuleDetailedVariant9 != null)
             {
-                return repositoryRuleDetailedVariant9(RepositoryRuleDetailedVariant9!);
+                return repositoryRuleDetailedVariant9(__value8);
             }
-            else if (IsRepositoryRuleDetailedVariant10 && repositoryRuleDetailedVariant10 != null)
+            else if (RepositoryRuleDetailedVariant10 is { } __value9 && repositoryRuleDetailedVariant10 != null)
             {
-                return repositoryRuleDetailedVariant10(RepositoryRuleDetailedVariant10!);
+                return repositoryRuleDetailedVariant10(__value9);
             }
-            else if (IsRepositoryRuleDetailedVariant11 && repositoryRuleDetailedVariant11 != null)
+            else if (RepositoryRuleDetailedVariant11 is { } __value10 && repositoryRuleDetailedVariant11 != null)
             {
-                return repositoryRuleDetailedVariant11(RepositoryRuleDetailedVariant11!);
+                return repositoryRuleDetailedVariant11(__value10);
             }
-            else if (IsRepositoryRuleDetailedVariant12 && repositoryRuleDetailedVariant12 != null)
+            else if (RepositoryRuleDetailedVariant12 is { } __value11 && repositoryRuleDetailedVariant12 != null)
             {
-                return repositoryRuleDetailedVariant12(RepositoryRuleDetailedVariant12!);
+                return repositoryRuleDetailedVariant12(__value11);
             }
-            else if (IsRepositoryRuleDetailedVariant13 && repositoryRuleDetailedVariant13 != null)
+            else if (RepositoryRuleDetailedVariant13 is { } __value12 && repositoryRuleDetailedVariant13 != null)
             {
-                return repositoryRuleDetailedVariant13(RepositoryRuleDetailedVariant13!);
+                return repositoryRuleDetailedVariant13(__value12);
             }
-            else if (IsRepositoryRuleDetailedVariant14 && repositoryRuleDetailedVariant14 != null)
+            else if (RepositoryRuleDetailedVariant14 is { } __value13 && repositoryRuleDetailedVariant14 != null)
             {
-                return repositoryRuleDetailedVariant14(RepositoryRuleDetailedVariant14!);
+                return repositoryRuleDetailedVariant14(__value13);
             }
-            else if (IsRepositoryRuleDetailedVariant15 && repositoryRuleDetailedVariant15 != null)
+            else if (RepositoryRuleDetailedVariant15 is { } __value14 && repositoryRuleDetailedVariant15 != null)
             {
-                return repositoryRuleDetailedVariant15(RepositoryRuleDetailedVariant15!);
+                return repositoryRuleDetailedVariant15(__value14);
             }
-            else if (IsRepositoryRuleDetailedVariant16 && repositoryRuleDetailedVariant16 != null)
+            else if (RepositoryRuleDetailedVariant16 is { } __value15 && repositoryRuleDetailedVariant16 != null)
             {
-                return repositoryRuleDetailedVariant16(RepositoryRuleDetailedVariant16!);
+                return repositoryRuleDetailedVariant16(__value15);
             }
-            else if (IsRepositoryRuleDetailedVariant17 && repositoryRuleDetailedVariant17 != null)
+            else if (RepositoryRuleDetailedVariant17 is { } __value16 && repositoryRuleDetailedVariant17 != null)
             {
-                return repositoryRuleDetailedVariant17(RepositoryRuleDetailedVariant17!);
+                return repositoryRuleDetailedVariant17(__value16);
             }
 
             return default(TResult);
@@ -1269,73 +1269,73 @@ namespace G
                 Validate();
             }
 
-            if (IsRepositoryRuleDetailedVariant1)
+            if (RepositoryRuleDetailedVariant1 is { } __value0)
             {
-                repositoryRuleDetailedVariant1?.Invoke(RepositoryRuleDetailedVariant1!);
+                repositoryRuleDetailedVariant1?.Invoke(__value0);
             }
-            else if (IsRepositoryRuleDetailedVariant2)
+            else if (RepositoryRuleDetailedVariant2 is { } __value1)
             {
-                repositoryRuleDetailedVariant2?.Invoke(RepositoryRuleDetailedVariant2!);
+                repositoryRuleDetailedVariant2?.Invoke(__value1);
             }
-            else if (IsRepositoryRuleDetailedVariant3)
+            else if (RepositoryRuleDetailedVariant3 is { } __value2)
             {
-                repositoryRuleDetailedVariant3?.Invoke(RepositoryRuleDetailedVariant3!);
+                repositoryRuleDetailedVariant3?.Invoke(__value2);
             }
-            else if (IsRepositoryRuleDetailedVariant4)
+            else if (RepositoryRuleDetailedVariant4 is { } __value3)
             {
-                repositoryRuleDetailedVariant4?.Invoke(RepositoryRuleDetailedVariant4!);
+                repositoryRuleDetailedVariant4?.Invoke(__value3);
             }
-            else if (IsRepositoryRuleDetailedVariant5)
+            else if (RepositoryRuleDetailedVariant5 is { } __value4)
             {
-                repositoryRuleDetailedVariant5?.Invoke(RepositoryRuleDetailedVariant5!);
+                repositoryRuleDetailedVariant5?.Invoke(__value4);
             }
-            else if (IsRepositoryRuleDetailedVariant6)
+            else if (RepositoryRuleDetailedVariant6 is { } __value5)
             {
-                repositoryRuleDetailedVariant6?.Invoke(RepositoryRuleDetailedVariant6!);
+                repositoryRuleDetailedVariant6?.Invoke(__value5);
             }
-            else if (IsRepositoryRuleDetailedVariant7)
+            else if (RepositoryRuleDetailedVariant7 is { } __value6)
             {
-                repositoryRuleDetailedVariant7?.Invoke(RepositoryRuleDetailedVariant7!);
+                repositoryRuleDetailedVariant7?.Invoke(__value6);
             }
-            else if (IsRepositoryRuleDetailedVariant8)
+            else if (RepositoryRuleDetailedVariant8 is { } __value7)
             {
-                repositoryRuleDetailedVariant8?.Invoke(RepositoryRuleDetailedVariant8!);
+                repositoryRuleDetailedVariant8?.Invoke(__value7);
             }
-            else if (IsRepositoryRuleDetailedVariant9)
+            else if (RepositoryRuleDetailedVariant9 is { } __value8)
             {
-                repositoryRuleDetailedVariant9?.Invoke(RepositoryRuleDetailedVariant9!);
+                repositoryRuleDetailedVariant9?.Invoke(__value8);
             }
-            else if (IsRepositoryRuleDetailedVariant10)
+            else if (RepositoryRuleDetailedVariant10 is { } __value9)
             {
-                repositoryRuleDetailedVariant10?.Invoke(RepositoryRuleDetailedVariant10!);
+                repositoryRuleDetailedVariant10?.Invoke(__value9);
             }
-            else if (IsRepositoryRuleDetailedVariant11)
+            else if (RepositoryRuleDetailedVariant11 is { } __value10)
             {
-                repositoryRuleDetailedVariant11?.Invoke(RepositoryRuleDetailedVariant11!);
+                repositoryRuleDetailedVariant11?.Invoke(__value10);
             }
-            else if (IsRepositoryRuleDetailedVariant12)
+            else if (RepositoryRuleDetailedVariant12 is { } __value11)
             {
-                repositoryRuleDetailedVariant12?.Invoke(RepositoryRuleDetailedVariant12!);
+                repositoryRuleDetailedVariant12?.Invoke(__value11);
             }
-            else if (IsRepositoryRuleDetailedVariant13)
+            else if (RepositoryRuleDetailedVariant13 is { } __value12)
             {
-                repositoryRuleDetailedVariant13?.Invoke(RepositoryRuleDetailedVariant13!);
+                repositoryRuleDetailedVariant13?.Invoke(__value12);
             }
-            else if (IsRepositoryRuleDetailedVariant14)
+            else if (RepositoryRuleDetailedVariant14 is { } __value13)
             {
-                repositoryRuleDetailedVariant14?.Invoke(RepositoryRuleDetailedVariant14!);
+                repositoryRuleDetailedVariant14?.Invoke(__value13);
             }
-            else if (IsRepositoryRuleDetailedVariant15)
+            else if (RepositoryRuleDetailedVariant15 is { } __value14)
             {
-                repositoryRuleDetailedVariant15?.Invoke(RepositoryRuleDetailedVariant15!);
+                repositoryRuleDetailedVariant15?.Invoke(__value14);
             }
-            else if (IsRepositoryRuleDetailedVariant16)
+            else if (RepositoryRuleDetailedVariant16 is { } __value15)
             {
-                repositoryRuleDetailedVariant16?.Invoke(RepositoryRuleDetailedVariant16!);
+                repositoryRuleDetailedVariant16?.Invoke(__value15);
             }
-            else if (IsRepositoryRuleDetailedVariant17)
+            else if (RepositoryRuleDetailedVariant17 is { } __value16)
             {
-                repositoryRuleDetailedVariant17?.Invoke(RepositoryRuleDetailedVariant17!);
+                repositoryRuleDetailedVariant17?.Invoke(__value16);
             }
         }
 
@@ -1367,73 +1367,73 @@ namespace G
                 Validate();
             }
 
-            if (IsRepositoryRuleDetailedVariant1)
+            if (RepositoryRuleDetailedVariant1 is { } __value0)
             {
-                repositoryRuleDetailedVariant1?.Invoke(RepositoryRuleDetailedVariant1!);
+                repositoryRuleDetailedVariant1?.Invoke(__value0);
             }
-            else if (IsRepositoryRuleDetailedVariant2)
+            else if (RepositoryRuleDetailedVariant2 is { } __value1)
             {
-                repositoryRuleDetailedVariant2?.Invoke(RepositoryRuleDetailedVariant2!);
+                repositoryRuleDetailedVariant2?.Invoke(__value1);
             }
-            else if (IsRepositoryRuleDetailedVariant3)
+            else if (RepositoryRuleDetailedVariant3 is { } __value2)
             {
-                repositoryRuleDetailedVariant3?.Invoke(RepositoryRuleDetailedVariant3!);
+                repositoryRuleDetailedVariant3?.Invoke(__value2);
             }
-            else if (IsRepositoryRuleDetailedVariant4)
+            else if (RepositoryRuleDetailedVariant4 is { } __value3)
             {
-                repositoryRuleDetailedVariant4?.Invoke(RepositoryRuleDetailedVariant4!);
+                repositoryRuleDetailedVariant4?.Invoke(__value3);
             }
-            else if (IsRepositoryRuleDetailedVariant5)
+            else if (RepositoryRuleDetailedVariant5 is { } __value4)
             {
-                repositoryRuleDetailedVariant5?.Invoke(RepositoryRuleDetailedVariant5!);
+                repositoryRuleDetailedVariant5?.Invoke(__value4);
             }
-            else if (IsRepositoryRuleDetailedVariant6)
+            else if (RepositoryRuleDetailedVariant6 is { } __value5)
             {
-                repositoryRuleDetailedVariant6?.Invoke(RepositoryRuleDetailedVariant6!);
+                repositoryRuleDetailedVariant6?.Invoke(__value5);
             }
-            else if (IsRepositoryRuleDetailedVariant7)
+            else if (RepositoryRuleDetailedVariant7 is { } __value6)
             {
-                repositoryRuleDetailedVariant7?.Invoke(RepositoryRuleDetailedVariant7!);
+                repositoryRuleDetailedVariant7?.Invoke(__value6);
             }
-            else if (IsRepositoryRuleDetailedVariant8)
+            else if (RepositoryRuleDetailedVariant8 is { } __value7)
             {
-                repositoryRuleDetailedVariant8?.Invoke(RepositoryRuleDetailedVariant8!);
+                repositoryRuleDetailedVariant8?.Invoke(__value7);
             }
-            else if (IsRepositoryRuleDetailedVariant9)
+            else if (RepositoryRuleDetailedVariant9 is { } __value8)
             {
-                repositoryRuleDetailedVariant9?.Invoke(RepositoryRuleDetailedVariant9!);
+                repositoryRuleDetailedVariant9?.Invoke(__value8);
             }
-            else if (IsRepositoryRuleDetailedVariant10)
+            else if (RepositoryRuleDetailedVariant10 is { } __value9)
             {
-                repositoryRuleDetailedVariant10?.Invoke(RepositoryRuleDetailedVariant10!);
+                repositoryRuleDetailedVariant10?.Invoke(__value9);
             }
-            else if (IsRepositoryRuleDetailedVariant11)
+            else if (RepositoryRuleDetailedVariant11 is { } __value10)
             {
-                repositoryRuleDetailedVariant11?.Invoke(RepositoryRuleDetailedVariant11!);
+                repositoryRuleDetailedVariant11?.Invoke(__value10);
             }
-            else if (IsRepositoryRuleDetailedVariant12)
+            else if (RepositoryRuleDetailedVariant12 is { } __value11)
             {
-                repositoryRuleDetailedVariant12?.Invoke(RepositoryRuleDetailedVariant12!);
+                repositoryRuleDetailedVariant12?.Invoke(__value11);
             }
-            else if (IsRepositoryRuleDetailedVariant13)
+            else if (RepositoryRuleDetailedVariant13 is { } __value12)
             {
-                repositoryRuleDetailedVariant13?.Invoke(RepositoryRuleDetailedVariant13!);
+                repositoryRuleDetailedVariant13?.Invoke(__value12);
             }
-            else if (IsRepositoryRuleDetailedVariant14)
+            else if (RepositoryRuleDetailedVariant14 is { } __value13)
             {
-                repositoryRuleDetailedVariant14?.Invoke(RepositoryRuleDetailedVariant14!);
+                repositoryRuleDetailedVariant14?.Invoke(__value13);
             }
-            else if (IsRepositoryRuleDetailedVariant15)
+            else if (RepositoryRuleDetailedVariant15 is { } __value14)
             {
-                repositoryRuleDetailedVariant15?.Invoke(RepositoryRuleDetailedVariant15!);
+                repositoryRuleDetailedVariant15?.Invoke(__value14);
             }
-            else if (IsRepositoryRuleDetailedVariant16)
+            else if (RepositoryRuleDetailedVariant16 is { } __value15)
             {
-                repositoryRuleDetailedVariant16?.Invoke(RepositoryRuleDetailedVariant16!);
+                repositoryRuleDetailedVariant16?.Invoke(__value15);
             }
-            else if (IsRepositoryRuleDetailedVariant17)
+            else if (RepositoryRuleDetailedVariant17 is { } __value16)
             {
-                repositoryRuleDetailedVariant17?.Invoke(RepositoryRuleDetailedVariant17!);
+                repositoryRuleDetailedVariant17?.Invoke(__value16);
             }
         }
 

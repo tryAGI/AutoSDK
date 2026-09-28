@@ -1,4 +1,4 @@
-﻿//HintName: G.AnnotationQueuesClient.GetAnnotationQueuesForRun.g.cs
+//HintName: G.AnnotationQueuesClient.GetAnnotationQueuesForRun.g.cs
 
 #nullable enable
 
@@ -178,7 +178,7 @@ namespace G
                 PrepareGetAnnotationQueuesForRunRequest(
                     httpClient: HttpClient,
                     httpRequestMessage: __httpRequest,
-                    runId: runId!);
+                    runId: runId);
 
                 global::G.AutoSDKHttpRequestOptions.StampAuthorizationOverride(__httpRequest);
 
@@ -202,7 +202,7 @@ namespace G
                                 pathTemplate: "$\"/api/v1/annotation-queues/{runId}/queues\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: null,
                                 exception: null,
                                 clientOptions: Options,
@@ -236,7 +236,7 @@ namespace G
                                 pathTemplate: "$\"/api/v1/annotation-queues/{runId}/queues\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: null,
                                 exception: __exception,
                                 clientOptions: Options,
@@ -277,7 +277,7 @@ namespace G
                                 pathTemplate: "$\"/api/v1/annotation-queues/{runId}/queues\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: __response,
                                 exception: null,
                                 clientOptions: Options,
@@ -325,7 +325,7 @@ namespace G
                                 pathTemplate: "$\"/api/v1/annotation-queues/{runId}/queues\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: __response,
                                 exception: null,
                                 clientOptions: Options,
@@ -347,7 +347,7 @@ namespace G
                                 pathTemplate: "$\"/api/v1/annotation-queues/{runId}/queues\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: __response,
                                 exception: null,
                                 clientOptions: Options,

@@ -1,4 +1,4 @@
-﻿//HintName: G.Models.CodeInterpreterServerToolContainer.g.cs
+//HintName: G.Models.CodeInterpreterServerToolContainer.g.cs
 #pragma warning disable CS0618 // Type or member is obsolete
 
 #nullable enable
@@ -43,8 +43,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public string PickCodeInterpreterServerToolContainerVariant1() => IsCodeInterpreterServerToolContainerVariant1
-            ? CodeInterpreterServerToolContainerVariant1!
+        public string PickCodeInterpreterServerToolContainerVariant1() => CodeInterpreterServerToolContainerVariant1 is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'CodeInterpreterServerToolContainerVariant1' but the value was {ToString()}.");
 
         /// <summary>
@@ -80,8 +80,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.CodeInterpreterServerToolContainer1 PickCodeInterpreterServerToolContainer1() => IsCodeInterpreterServerToolContainer1
-            ? CodeInterpreterServerToolContainer1!
+        public global::G.CodeInterpreterServerToolContainer1 PickCodeInterpreterServerToolContainer1() => CodeInterpreterServerToolContainer1 is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'CodeInterpreterServerToolContainer1' but the value was {ToString()}.");
         /// <summary>
         /// 
@@ -178,13 +178,13 @@ namespace G
                 Validate();
             }
 
-            if (IsCodeInterpreterServerToolContainerVariant1 && codeInterpreterServerToolContainerVariant1 != null)
+            if (CodeInterpreterServerToolContainerVariant1 is { } __value0 && codeInterpreterServerToolContainerVariant1 != null)
             {
-                return codeInterpreterServerToolContainerVariant1(CodeInterpreterServerToolContainerVariant1!);
+                return codeInterpreterServerToolContainerVariant1(__value0);
             }
-            else if (IsCodeInterpreterServerToolContainer1 && codeInterpreterServerToolContainer1 != null)
+            else if (CodeInterpreterServerToolContainer1 is { } __value1 && codeInterpreterServerToolContainer1 != null)
             {
-                return codeInterpreterServerToolContainer1(CodeInterpreterServerToolContainer1!);
+                return codeInterpreterServerToolContainer1(__value1);
             }
 
             return default(TResult);
@@ -204,13 +204,13 @@ namespace G
                 Validate();
             }
 
-            if (IsCodeInterpreterServerToolContainerVariant1)
+            if (CodeInterpreterServerToolContainerVariant1 is { } __value0)
             {
-                codeInterpreterServerToolContainerVariant1?.Invoke(CodeInterpreterServerToolContainerVariant1!);
+                codeInterpreterServerToolContainerVariant1?.Invoke(__value0);
             }
-            else if (IsCodeInterpreterServerToolContainer1)
+            else if (CodeInterpreterServerToolContainer1 is { } __value1)
             {
-                codeInterpreterServerToolContainer1?.Invoke(CodeInterpreterServerToolContainer1!);
+                codeInterpreterServerToolContainer1?.Invoke(__value1);
             }
         }
 
@@ -227,13 +227,13 @@ namespace G
                 Validate();
             }
 
-            if (IsCodeInterpreterServerToolContainerVariant1)
+            if (CodeInterpreterServerToolContainerVariant1 is { } __value0)
             {
-                codeInterpreterServerToolContainerVariant1?.Invoke(CodeInterpreterServerToolContainerVariant1!);
+                codeInterpreterServerToolContainerVariant1?.Invoke(__value0);
             }
-            else if (IsCodeInterpreterServerToolContainer1)
+            else if (CodeInterpreterServerToolContainer1 is { } __value1)
             {
-                codeInterpreterServerToolContainer1?.Invoke(CodeInterpreterServerToolContainer1!);
+                codeInterpreterServerToolContainer1?.Invoke(__value1);
             }
         }
 

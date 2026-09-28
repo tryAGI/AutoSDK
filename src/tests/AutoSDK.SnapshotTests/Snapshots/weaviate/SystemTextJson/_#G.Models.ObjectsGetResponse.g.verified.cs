@@ -1,4 +1,4 @@
-﻿//HintName: G.Models.ObjectsGetResponse.g.cs
+//HintName: G.Models.ObjectsGetResponse.g.cs
 #pragma warning disable CS0618 // Type or member is obsolete
 
 #nullable enable
@@ -43,8 +43,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.Object PickObjectValue() => IsObjectValue
-            ? ObjectValue!
+        public global::G.Object PickObjectValue() => ObjectValue is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'ObjectValue' but the value was {ToString()}.");
 
         /// <summary>
@@ -80,8 +80,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.ObjectsGetResponseVariant2 PickObjectsGetResponseVariant2() => IsObjectsGetResponseVariant2
-            ? ObjectsGetResponseVariant2!
+        public global::G.ObjectsGetResponseVariant2 PickObjectsGetResponseVariant2() => ObjectsGetResponseVariant2 is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'ObjectsGetResponseVariant2' but the value was {ToString()}.");
 
         /// <summary>
@@ -117,8 +117,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.ObjectsGetResponseVariant3 PickObjectsGetResponseVariant3() => IsObjectsGetResponseVariant3
-            ? ObjectsGetResponseVariant3!
+        public global::G.ObjectsGetResponseVariant3 PickObjectsGetResponseVariant3() => ObjectsGetResponseVariant3 is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'ObjectsGetResponseVariant3' but the value was {ToString()}.");
         /// <summary>
         /// 
@@ -243,17 +243,17 @@ namespace G
                 Validate();
             }
 
-            if (IsObjectValue && objectValue != null)
+            if (ObjectValue is { } __value0 && objectValue != null)
             {
-                return objectValue(ObjectValue!);
+                return objectValue(__value0);
             }
-            else if (IsObjectsGetResponseVariant2 && objectsGetResponseVariant2 != null)
+            else if (ObjectsGetResponseVariant2 is { } __value1 && objectsGetResponseVariant2 != null)
             {
-                return objectsGetResponseVariant2(ObjectsGetResponseVariant2!);
+                return objectsGetResponseVariant2(__value1);
             }
-            else if (IsObjectsGetResponseVariant3 && objectsGetResponseVariant3 != null)
+            else if (ObjectsGetResponseVariant3 is { } __value2 && objectsGetResponseVariant3 != null)
             {
-                return objectsGetResponseVariant3(ObjectsGetResponseVariant3!);
+                return objectsGetResponseVariant3(__value2);
             }
 
             return default(TResult);
@@ -275,17 +275,17 @@ namespace G
                 Validate();
             }
 
-            if (IsObjectValue)
+            if (ObjectValue is { } __value0)
             {
-                objectValue?.Invoke(ObjectValue!);
+                objectValue?.Invoke(__value0);
             }
-            else if (IsObjectsGetResponseVariant2)
+            else if (ObjectsGetResponseVariant2 is { } __value1)
             {
-                objectsGetResponseVariant2?.Invoke(ObjectsGetResponseVariant2!);
+                objectsGetResponseVariant2?.Invoke(__value1);
             }
-            else if (IsObjectsGetResponseVariant3)
+            else if (ObjectsGetResponseVariant3 is { } __value2)
             {
-                objectsGetResponseVariant3?.Invoke(ObjectsGetResponseVariant3!);
+                objectsGetResponseVariant3?.Invoke(__value2);
             }
         }
 
@@ -303,17 +303,17 @@ namespace G
                 Validate();
             }
 
-            if (IsObjectValue)
+            if (ObjectValue is { } __value0)
             {
-                objectValue?.Invoke(ObjectValue!);
+                objectValue?.Invoke(__value0);
             }
-            else if (IsObjectsGetResponseVariant2)
+            else if (ObjectsGetResponseVariant2 is { } __value1)
             {
-                objectsGetResponseVariant2?.Invoke(ObjectsGetResponseVariant2!);
+                objectsGetResponseVariant2?.Invoke(__value1);
             }
-            else if (IsObjectsGetResponseVariant3)
+            else if (ObjectsGetResponseVariant3 is { } __value2)
             {
-                objectsGetResponseVariant3?.Invoke(ObjectsGetResponseVariant3!);
+                objectsGetResponseVariant3?.Invoke(__value2);
             }
         }
 

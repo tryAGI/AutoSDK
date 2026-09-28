@@ -1,4 +1,4 @@
-﻿//HintName: G.Models.ChatRequestProviderIgnoreItems.g.cs
+//HintName: G.Models.ChatRequestProviderIgnoreItems.g.cs
 #pragma warning disable CS0618 // Type or member is obsolete
 
 #nullable enable
@@ -43,8 +43,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.ProviderName PickProviderName() => IsProviderName
-            ? ProviderName!.Value
+        public global::G.ProviderName PickProviderName() => ProviderName is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'ProviderName' but the value was {ToString()}.");
 
         /// <summary>
@@ -80,8 +80,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public string PickChatRequestProviderIgnoreItemsVariant2() => IsChatRequestProviderIgnoreItemsVariant2
-            ? ChatRequestProviderIgnoreItemsVariant2!
+        public string PickChatRequestProviderIgnoreItemsVariant2() => ChatRequestProviderIgnoreItemsVariant2 is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'ChatRequestProviderIgnoreItemsVariant2' but the value was {ToString()}.");
         /// <summary>
         /// 
@@ -178,13 +178,13 @@ namespace G
                 Validate();
             }
 
-            if (IsProviderName && providerName != null)
+            if (ProviderName is { } __value0 && providerName != null)
             {
-                return providerName(ProviderName!);
+                return providerName(__value0);
             }
-            else if (IsChatRequestProviderIgnoreItemsVariant2 && chatRequestProviderIgnoreItemsVariant2 != null)
+            else if (ChatRequestProviderIgnoreItemsVariant2 is { } __value1 && chatRequestProviderIgnoreItemsVariant2 != null)
             {
-                return chatRequestProviderIgnoreItemsVariant2(ChatRequestProviderIgnoreItemsVariant2!);
+                return chatRequestProviderIgnoreItemsVariant2(__value1);
             }
 
             return default(TResult);
@@ -204,13 +204,13 @@ namespace G
                 Validate();
             }
 
-            if (IsProviderName)
+            if (ProviderName is { } __value0)
             {
-                providerName?.Invoke(ProviderName!);
+                providerName?.Invoke(__value0);
             }
-            else if (IsChatRequestProviderIgnoreItemsVariant2)
+            else if (ChatRequestProviderIgnoreItemsVariant2 is { } __value1)
             {
-                chatRequestProviderIgnoreItemsVariant2?.Invoke(ChatRequestProviderIgnoreItemsVariant2!);
+                chatRequestProviderIgnoreItemsVariant2?.Invoke(__value1);
             }
         }
 
@@ -227,13 +227,13 @@ namespace G
                 Validate();
             }
 
-            if (IsProviderName)
+            if (ProviderName is { } __value0)
             {
-                providerName?.Invoke(ProviderName!);
+                providerName?.Invoke(__value0);
             }
-            else if (IsChatRequestProviderIgnoreItemsVariant2)
+            else if (ChatRequestProviderIgnoreItemsVariant2 is { } __value1)
             {
-                chatRequestProviderIgnoreItemsVariant2?.Invoke(ChatRequestProviderIgnoreItemsVariant2!);
+                chatRequestProviderIgnoreItemsVariant2?.Invoke(__value1);
             }
         }
 

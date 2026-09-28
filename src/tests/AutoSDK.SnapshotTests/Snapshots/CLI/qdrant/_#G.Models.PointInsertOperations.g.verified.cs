@@ -1,4 +1,4 @@
-﻿//HintName: G.Models.PointInsertOperations.g.cs
+//HintName: G.Models.PointInsertOperations.g.cs
 #pragma warning disable CS0618 // Type or member is obsolete
 
 #nullable enable
@@ -43,8 +43,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.PointsBatch PickPointsBatch() => IsPointsBatch
-            ? PointsBatch!
+        public global::G.PointsBatch PickPointsBatch() => PointsBatch is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'PointsBatch' but the value was {ToString()}.");
 
         /// <summary>
@@ -80,8 +80,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.PointsList PickPointsList() => IsPointsList
-            ? PointsList!
+        public global::G.PointsList PickPointsList() => PointsList is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'PointsList' but the value was {ToString()}.");
         /// <summary>
         /// 
@@ -178,13 +178,13 @@ namespace G
                 Validate();
             }
 
-            if (IsPointsBatch && pointsBatch != null)
+            if (PointsBatch is { } __value0 && pointsBatch != null)
             {
-                return pointsBatch(PointsBatch!);
+                return pointsBatch(__value0);
             }
-            else if (IsPointsList && pointsList != null)
+            else if (PointsList is { } __value1 && pointsList != null)
             {
-                return pointsList(PointsList!);
+                return pointsList(__value1);
             }
 
             return default(TResult);
@@ -204,13 +204,13 @@ namespace G
                 Validate();
             }
 
-            if (IsPointsBatch)
+            if (PointsBatch is { } __value0)
             {
-                pointsBatch?.Invoke(PointsBatch!);
+                pointsBatch?.Invoke(__value0);
             }
-            else if (IsPointsList)
+            else if (PointsList is { } __value1)
             {
-                pointsList?.Invoke(PointsList!);
+                pointsList?.Invoke(__value1);
             }
         }
 
@@ -227,13 +227,13 @@ namespace G
                 Validate();
             }
 
-            if (IsPointsBatch)
+            if (PointsBatch is { } __value0)
             {
-                pointsBatch?.Invoke(PointsBatch!);
+                pointsBatch?.Invoke(__value0);
             }
-            else if (IsPointsList)
+            else if (PointsList is { } __value1)
             {
-                pointsList?.Invoke(PointsList!);
+                pointsList?.Invoke(__value1);
             }
         }
 

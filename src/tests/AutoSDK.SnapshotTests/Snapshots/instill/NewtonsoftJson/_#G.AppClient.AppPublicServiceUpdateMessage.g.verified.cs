@@ -1,4 +1,4 @@
-﻿//HintName: G.AppClient.AppPublicServiceUpdateMessage.g.cs
+//HintName: G.AppClient.AppPublicServiceUpdateMessage.g.cs
 
 #nullable enable
 
@@ -206,10 +206,10 @@ namespace G
                 PrepareAppPublicServiceUpdateMessageRequest(
                     httpClient: HttpClient,
                     httpRequestMessage: __httpRequest,
-                    namespaceId: namespaceId!,
-                    appId: appId!,
-                    conversationId: conversationId!,
-                    messageUid: messageUid!,
+                    namespaceId: namespaceId,
+                    appId: appId,
+                    conversationId: conversationId,
+                    messageUid: messageUid,
                     request: request);
 
                 return __httpRequest;
@@ -232,7 +232,7 @@ namespace G
                                 pathTemplate: "$\"/v1alpha/namespaces/{namespaceId}/apps/{appId}/conversations/{conversationId}/messages/{messageUid}\"",
                                 httpMethod: "PUT",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: null,
                                 exception: null,
                                 clientOptions: Options,
@@ -266,7 +266,7 @@ namespace G
                                 pathTemplate: "$\"/v1alpha/namespaces/{namespaceId}/apps/{appId}/conversations/{conversationId}/messages/{messageUid}\"",
                                 httpMethod: "PUT",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: null,
                                 exception: __exception,
                                 clientOptions: Options,
@@ -307,7 +307,7 @@ namespace G
                                 pathTemplate: "$\"/v1alpha/namespaces/{namespaceId}/apps/{appId}/conversations/{conversationId}/messages/{messageUid}\"",
                                 httpMethod: "PUT",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: __response,
                                 exception: null,
                                 clientOptions: Options,
@@ -355,7 +355,7 @@ namespace G
                                 pathTemplate: "$\"/v1alpha/namespaces/{namespaceId}/apps/{appId}/conversations/{conversationId}/messages/{messageUid}\"",
                                 httpMethod: "PUT",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: __response,
                                 exception: null,
                                 clientOptions: Options,
@@ -377,7 +377,7 @@ namespace G
                                 pathTemplate: "$\"/v1alpha/namespaces/{namespaceId}/apps/{appId}/conversations/{conversationId}/messages/{messageUid}\"",
                                 httpMethod: "PUT",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: __response,
                                 exception: null,
                                 clientOptions: Options,

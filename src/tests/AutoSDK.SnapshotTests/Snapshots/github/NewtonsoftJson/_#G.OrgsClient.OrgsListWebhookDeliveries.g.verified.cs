@@ -1,4 +1,4 @@
-﻿//HintName: G.OrgsClient.OrgsListWebhookDeliveries.g.cs
+//HintName: G.OrgsClient.OrgsListWebhookDeliveries.g.cs
 
 #nullable enable
 
@@ -152,8 +152,8 @@ namespace G
                 PrepareOrgsListWebhookDeliveriesRequest(
                     httpClient: HttpClient,
                     httpRequestMessage: __httpRequest,
-                    org: org!,
-                    hookId: hookId!,
+                    org: org,
+                    hookId: hookId,
                     perPage: perPage,
                     cursor: cursor,
                     redelivery: redelivery);
@@ -178,7 +178,7 @@ namespace G
                                 pathTemplate: "$\"/orgs/{org}/hooks/{hookId}/deliveries\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: null,
                                 exception: null,
                                 clientOptions: Options,
@@ -212,7 +212,7 @@ namespace G
                                 pathTemplate: "$\"/orgs/{org}/hooks/{hookId}/deliveries\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: null,
                                 exception: __exception,
                                 clientOptions: Options,
@@ -253,7 +253,7 @@ namespace G
                                 pathTemplate: "$\"/orgs/{org}/hooks/{hookId}/deliveries\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: __response,
                                 exception: null,
                                 clientOptions: Options,
@@ -301,7 +301,7 @@ namespace G
                                 pathTemplate: "$\"/orgs/{org}/hooks/{hookId}/deliveries\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: __response,
                                 exception: null,
                                 clientOptions: Options,
@@ -323,7 +323,7 @@ namespace G
                                 pathTemplate: "$\"/orgs/{org}/hooks/{hookId}/deliveries\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: __response,
                                 exception: null,
                                 clientOptions: Options,

@@ -1,4 +1,4 @@
-﻿//HintName: G.JsonConverters.ComputerAction.g.cs
+//HintName: G.JsonConverters.ComputerAction.g.cs
 #nullable enable
 #pragma warning disable CS0618 // Type or member is obsolete
 
@@ -409,55 +409,55 @@ namespace G.JsonConverters
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.Click), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.Click?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.Click).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Click!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickClick(), typeInfo);
             }
             else if (value.IsDoubleClick)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.DoubleClick), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.DoubleClick?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.DoubleClick).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.DoubleClick!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickDoubleClick(), typeInfo);
             }
             else if (value.IsDrag)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.Drag), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.Drag?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.Drag).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Drag!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickDrag(), typeInfo);
             }
             else if (value.IsKeyPress)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.KeyPress), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.KeyPress?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.KeyPress).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.KeyPress!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickKeyPress(), typeInfo);
             }
             else if (value.IsMove)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.Move), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.Move?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.Move).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Move!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickMove(), typeInfo);
             }
             else if (value.IsScreenshot)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.Screenshot), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.Screenshot?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.Screenshot).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Screenshot!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickScreenshot(), typeInfo);
             }
             else if (value.IsScroll)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.Scroll), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.Scroll?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.Scroll).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Scroll!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickScroll(), typeInfo);
             }
             else if (value.IsType)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.Type), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.Type?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.Type).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Type!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickType(), typeInfo);
             }
             else if (value.IsWait)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.Wait), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.Wait?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.Wait).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Wait!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickWait(), typeInfo);
             }
         }
     }

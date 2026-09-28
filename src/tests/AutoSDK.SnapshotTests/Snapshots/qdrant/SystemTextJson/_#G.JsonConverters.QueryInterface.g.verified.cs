@@ -1,4 +1,4 @@
-﻿//HintName: G.JsonConverters.QueryInterface.g.cs
+//HintName: G.JsonConverters.QueryInterface.g.cs
 #nullable enable
 #pragma warning disable CS0618 // Type or member is obsolete
 
@@ -150,13 +150,13 @@ namespace G.JsonConverters
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.VectorInput), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.VectorInput> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.VectorInput).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.VectorInput!.Value, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickVectorInput(), typeInfo);
             }
             else if (value.IsQuery)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.Query), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.Query> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.Query).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Query!.Value, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickQuery(), typeInfo);
             }
         }
     }

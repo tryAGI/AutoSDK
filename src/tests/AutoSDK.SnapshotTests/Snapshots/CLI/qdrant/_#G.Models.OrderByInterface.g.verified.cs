@@ -1,4 +1,4 @@
-﻿//HintName: G.Models.OrderByInterface.g.cs
+//HintName: G.Models.OrderByInterface.g.cs
 #pragma warning disable CS0618 // Type or member is obsolete
 
 #nullable enable
@@ -43,8 +43,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public string PickOrderByInterfaceVariant1() => IsOrderByInterfaceVariant1
-            ? OrderByInterfaceVariant1!
+        public string PickOrderByInterfaceVariant1() => OrderByInterfaceVariant1 is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'OrderByInterfaceVariant1' but the value was {ToString()}.");
 
         /// <summary>
@@ -80,8 +80,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.OrderBy PickOrderBy() => IsOrderBy
-            ? OrderBy!
+        public global::G.OrderBy PickOrderBy() => OrderBy is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'OrderBy' but the value was {ToString()}.");
         /// <summary>
         /// 
@@ -178,13 +178,13 @@ namespace G
                 Validate();
             }
 
-            if (IsOrderByInterfaceVariant1 && orderByInterfaceVariant1 != null)
+            if (OrderByInterfaceVariant1 is { } __value0 && orderByInterfaceVariant1 != null)
             {
-                return orderByInterfaceVariant1(OrderByInterfaceVariant1!);
+                return orderByInterfaceVariant1(__value0);
             }
-            else if (IsOrderBy && orderBy != null)
+            else if (OrderBy is { } __value1 && orderBy != null)
             {
-                return orderBy(OrderBy!);
+                return orderBy(__value1);
             }
 
             return default(TResult);
@@ -204,13 +204,13 @@ namespace G
                 Validate();
             }
 
-            if (IsOrderByInterfaceVariant1)
+            if (OrderByInterfaceVariant1 is { } __value0)
             {
-                orderByInterfaceVariant1?.Invoke(OrderByInterfaceVariant1!);
+                orderByInterfaceVariant1?.Invoke(__value0);
             }
-            else if (IsOrderBy)
+            else if (OrderBy is { } __value1)
             {
-                orderBy?.Invoke(OrderBy!);
+                orderBy?.Invoke(__value1);
             }
         }
 
@@ -227,13 +227,13 @@ namespace G
                 Validate();
             }
 
-            if (IsOrderByInterfaceVariant1)
+            if (OrderByInterfaceVariant1 is { } __value0)
             {
-                orderByInterfaceVariant1?.Invoke(OrderByInterfaceVariant1!);
+                orderByInterfaceVariant1?.Invoke(__value0);
             }
-            else if (IsOrderBy)
+            else if (OrderBy is { } __value1)
             {
-                orderBy?.Invoke(OrderBy!);
+                orderBy?.Invoke(__value1);
             }
         }
 

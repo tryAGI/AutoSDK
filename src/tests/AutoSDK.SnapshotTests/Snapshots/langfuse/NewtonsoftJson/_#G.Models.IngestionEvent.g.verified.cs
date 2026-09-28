@@ -1,4 +1,4 @@
-﻿//HintName: G.Models.IngestionEvent.g.cs
+//HintName: G.Models.IngestionEvent.g.cs
 #pragma warning disable CS0618 // Type or member is obsolete
 
 #nullable enable
@@ -43,8 +43,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.AllOf<global::G.IngestionEventVariant12, global::G.TraceEvent> PickIngestionEventVariant1() => IsIngestionEventVariant1
-            ? IngestionEventVariant1!.Value
+        public global::G.AllOf<global::G.IngestionEventVariant12, global::G.TraceEvent> PickIngestionEventVariant1() => IngestionEventVariant1 is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'IngestionEventVariant1' but the value was {ToString()}.");
 
         /// <summary>
@@ -80,8 +80,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.AllOf<global::G.IngestionEventVariant22, global::G.ScoreEvent> PickIngestionEventVariant2() => IsIngestionEventVariant2
-            ? IngestionEventVariant2!.Value
+        public global::G.AllOf<global::G.IngestionEventVariant22, global::G.ScoreEvent> PickIngestionEventVariant2() => IngestionEventVariant2 is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'IngestionEventVariant2' but the value was {ToString()}.");
 
         /// <summary>
@@ -117,8 +117,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.AllOf<global::G.IngestionEventVariant32, global::G.CreateSpanEvent> PickIngestionEventVariant3() => IsIngestionEventVariant3
-            ? IngestionEventVariant3!.Value
+        public global::G.AllOf<global::G.IngestionEventVariant32, global::G.CreateSpanEvent> PickIngestionEventVariant3() => IngestionEventVariant3 is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'IngestionEventVariant3' but the value was {ToString()}.");
 
         /// <summary>
@@ -154,8 +154,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.AllOf<global::G.IngestionEventVariant42, global::G.UpdateSpanEvent> PickIngestionEventVariant4() => IsIngestionEventVariant4
-            ? IngestionEventVariant4!.Value
+        public global::G.AllOf<global::G.IngestionEventVariant42, global::G.UpdateSpanEvent> PickIngestionEventVariant4() => IngestionEventVariant4 is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'IngestionEventVariant4' but the value was {ToString()}.");
 
         /// <summary>
@@ -191,8 +191,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.AllOf<global::G.IngestionEventVariant52, global::G.CreateGenerationEvent> PickIngestionEventVariant5() => IsIngestionEventVariant5
-            ? IngestionEventVariant5!.Value
+        public global::G.AllOf<global::G.IngestionEventVariant52, global::G.CreateGenerationEvent> PickIngestionEventVariant5() => IngestionEventVariant5 is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'IngestionEventVariant5' but the value was {ToString()}.");
 
         /// <summary>
@@ -228,8 +228,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.AllOf<global::G.IngestionEventVariant62, global::G.UpdateGenerationEvent> PickIngestionEventVariant6() => IsIngestionEventVariant6
-            ? IngestionEventVariant6!.Value
+        public global::G.AllOf<global::G.IngestionEventVariant62, global::G.UpdateGenerationEvent> PickIngestionEventVariant6() => IngestionEventVariant6 is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'IngestionEventVariant6' but the value was {ToString()}.");
 
         /// <summary>
@@ -265,8 +265,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.AllOf<global::G.IngestionEventVariant72, global::G.CreateEventEvent> PickIngestionEventVariant7() => IsIngestionEventVariant7
-            ? IngestionEventVariant7!.Value
+        public global::G.AllOf<global::G.IngestionEventVariant72, global::G.CreateEventEvent> PickIngestionEventVariant7() => IngestionEventVariant7 is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'IngestionEventVariant7' but the value was {ToString()}.");
 
         /// <summary>
@@ -302,8 +302,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.AllOf<global::G.IngestionEventVariant82, global::G.SDKLogEvent> PickIngestionEventVariant8() => IsIngestionEventVariant8
-            ? IngestionEventVariant8!.Value
+        public global::G.AllOf<global::G.IngestionEventVariant82, global::G.SDKLogEvent> PickIngestionEventVariant8() => IngestionEventVariant8 is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'IngestionEventVariant8' but the value was {ToString()}.");
 
         /// <summary>
@@ -339,8 +339,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.AllOf<global::G.IngestionEventVariant92, global::G.CreateObservationEvent> PickIngestionEventVariant9() => IsIngestionEventVariant9
-            ? IngestionEventVariant9!.Value
+        public global::G.AllOf<global::G.IngestionEventVariant92, global::G.CreateObservationEvent> PickIngestionEventVariant9() => IngestionEventVariant9 is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'IngestionEventVariant9' but the value was {ToString()}.");
 
         /// <summary>
@@ -376,8 +376,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.AllOf<global::G.IngestionEventVariant102, global::G.UpdateObservationEvent> PickIngestionEventVariant10() => IsIngestionEventVariant10
-            ? IngestionEventVariant10!.Value
+        public global::G.AllOf<global::G.IngestionEventVariant102, global::G.UpdateObservationEvent> PickIngestionEventVariant10() => IngestionEventVariant10 is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'IngestionEventVariant10' but the value was {ToString()}.");
         /// <summary>
         /// 
@@ -698,45 +698,45 @@ namespace G
                 Validate();
             }
 
-            if (IsIngestionEventVariant1 && ingestionEventVariant1 != null)
+            if (IngestionEventVariant1 is { } __value0 && ingestionEventVariant1 != null)
             {
-                return ingestionEventVariant1(IngestionEventVariant1!);
+                return ingestionEventVariant1(__value0);
             }
-            else if (IsIngestionEventVariant2 && ingestionEventVariant2 != null)
+            else if (IngestionEventVariant2 is { } __value1 && ingestionEventVariant2 != null)
             {
-                return ingestionEventVariant2(IngestionEventVariant2!);
+                return ingestionEventVariant2(__value1);
             }
-            else if (IsIngestionEventVariant3 && ingestionEventVariant3 != null)
+            else if (IngestionEventVariant3 is { } __value2 && ingestionEventVariant3 != null)
             {
-                return ingestionEventVariant3(IngestionEventVariant3!);
+                return ingestionEventVariant3(__value2);
             }
-            else if (IsIngestionEventVariant4 && ingestionEventVariant4 != null)
+            else if (IngestionEventVariant4 is { } __value3 && ingestionEventVariant4 != null)
             {
-                return ingestionEventVariant4(IngestionEventVariant4!);
+                return ingestionEventVariant4(__value3);
             }
-            else if (IsIngestionEventVariant5 && ingestionEventVariant5 != null)
+            else if (IngestionEventVariant5 is { } __value4 && ingestionEventVariant5 != null)
             {
-                return ingestionEventVariant5(IngestionEventVariant5!);
+                return ingestionEventVariant5(__value4);
             }
-            else if (IsIngestionEventVariant6 && ingestionEventVariant6 != null)
+            else if (IngestionEventVariant6 is { } __value5 && ingestionEventVariant6 != null)
             {
-                return ingestionEventVariant6(IngestionEventVariant6!);
+                return ingestionEventVariant6(__value5);
             }
-            else if (IsIngestionEventVariant7 && ingestionEventVariant7 != null)
+            else if (IngestionEventVariant7 is { } __value6 && ingestionEventVariant7 != null)
             {
-                return ingestionEventVariant7(IngestionEventVariant7!);
+                return ingestionEventVariant7(__value6);
             }
-            else if (IsIngestionEventVariant8 && ingestionEventVariant8 != null)
+            else if (IngestionEventVariant8 is { } __value7 && ingestionEventVariant8 != null)
             {
-                return ingestionEventVariant8(IngestionEventVariant8!);
+                return ingestionEventVariant8(__value7);
             }
-            else if (IsIngestionEventVariant9 && ingestionEventVariant9 != null)
+            else if (IngestionEventVariant9 is { } __value8 && ingestionEventVariant9 != null)
             {
-                return ingestionEventVariant9(IngestionEventVariant9!);
+                return ingestionEventVariant9(__value8);
             }
-            else if (IsIngestionEventVariant10 && ingestionEventVariant10 != null)
+            else if (IngestionEventVariant10 is { } __value9 && ingestionEventVariant10 != null)
             {
-                return ingestionEventVariant10(IngestionEventVariant10!);
+                return ingestionEventVariant10(__value9);
             }
 
             return default(TResult);
@@ -772,45 +772,45 @@ namespace G
                 Validate();
             }
 
-            if (IsIngestionEventVariant1)
+            if (IngestionEventVariant1 is { } __value0)
             {
-                ingestionEventVariant1?.Invoke(IngestionEventVariant1!);
+                ingestionEventVariant1?.Invoke(__value0);
             }
-            else if (IsIngestionEventVariant2)
+            else if (IngestionEventVariant2 is { } __value1)
             {
-                ingestionEventVariant2?.Invoke(IngestionEventVariant2!);
+                ingestionEventVariant2?.Invoke(__value1);
             }
-            else if (IsIngestionEventVariant3)
+            else if (IngestionEventVariant3 is { } __value2)
             {
-                ingestionEventVariant3?.Invoke(IngestionEventVariant3!);
+                ingestionEventVariant3?.Invoke(__value2);
             }
-            else if (IsIngestionEventVariant4)
+            else if (IngestionEventVariant4 is { } __value3)
             {
-                ingestionEventVariant4?.Invoke(IngestionEventVariant4!);
+                ingestionEventVariant4?.Invoke(__value3);
             }
-            else if (IsIngestionEventVariant5)
+            else if (IngestionEventVariant5 is { } __value4)
             {
-                ingestionEventVariant5?.Invoke(IngestionEventVariant5!);
+                ingestionEventVariant5?.Invoke(__value4);
             }
-            else if (IsIngestionEventVariant6)
+            else if (IngestionEventVariant6 is { } __value5)
             {
-                ingestionEventVariant6?.Invoke(IngestionEventVariant6!);
+                ingestionEventVariant6?.Invoke(__value5);
             }
-            else if (IsIngestionEventVariant7)
+            else if (IngestionEventVariant7 is { } __value6)
             {
-                ingestionEventVariant7?.Invoke(IngestionEventVariant7!);
+                ingestionEventVariant7?.Invoke(__value6);
             }
-            else if (IsIngestionEventVariant8)
+            else if (IngestionEventVariant8 is { } __value7)
             {
-                ingestionEventVariant8?.Invoke(IngestionEventVariant8!);
+                ingestionEventVariant8?.Invoke(__value7);
             }
-            else if (IsIngestionEventVariant9)
+            else if (IngestionEventVariant9 is { } __value8)
             {
-                ingestionEventVariant9?.Invoke(IngestionEventVariant9!);
+                ingestionEventVariant9?.Invoke(__value8);
             }
-            else if (IsIngestionEventVariant10)
+            else if (IngestionEventVariant10 is { } __value9)
             {
-                ingestionEventVariant10?.Invoke(IngestionEventVariant10!);
+                ingestionEventVariant10?.Invoke(__value9);
             }
         }
 
@@ -835,45 +835,45 @@ namespace G
                 Validate();
             }
 
-            if (IsIngestionEventVariant1)
+            if (IngestionEventVariant1 is { } __value0)
             {
-                ingestionEventVariant1?.Invoke(IngestionEventVariant1!);
+                ingestionEventVariant1?.Invoke(__value0);
             }
-            else if (IsIngestionEventVariant2)
+            else if (IngestionEventVariant2 is { } __value1)
             {
-                ingestionEventVariant2?.Invoke(IngestionEventVariant2!);
+                ingestionEventVariant2?.Invoke(__value1);
             }
-            else if (IsIngestionEventVariant3)
+            else if (IngestionEventVariant3 is { } __value2)
             {
-                ingestionEventVariant3?.Invoke(IngestionEventVariant3!);
+                ingestionEventVariant3?.Invoke(__value2);
             }
-            else if (IsIngestionEventVariant4)
+            else if (IngestionEventVariant4 is { } __value3)
             {
-                ingestionEventVariant4?.Invoke(IngestionEventVariant4!);
+                ingestionEventVariant4?.Invoke(__value3);
             }
-            else if (IsIngestionEventVariant5)
+            else if (IngestionEventVariant5 is { } __value4)
             {
-                ingestionEventVariant5?.Invoke(IngestionEventVariant5!);
+                ingestionEventVariant5?.Invoke(__value4);
             }
-            else if (IsIngestionEventVariant6)
+            else if (IngestionEventVariant6 is { } __value5)
             {
-                ingestionEventVariant6?.Invoke(IngestionEventVariant6!);
+                ingestionEventVariant6?.Invoke(__value5);
             }
-            else if (IsIngestionEventVariant7)
+            else if (IngestionEventVariant7 is { } __value6)
             {
-                ingestionEventVariant7?.Invoke(IngestionEventVariant7!);
+                ingestionEventVariant7?.Invoke(__value6);
             }
-            else if (IsIngestionEventVariant8)
+            else if (IngestionEventVariant8 is { } __value7)
             {
-                ingestionEventVariant8?.Invoke(IngestionEventVariant8!);
+                ingestionEventVariant8?.Invoke(__value7);
             }
-            else if (IsIngestionEventVariant9)
+            else if (IngestionEventVariant9 is { } __value8)
             {
-                ingestionEventVariant9?.Invoke(IngestionEventVariant9!);
+                ingestionEventVariant9?.Invoke(__value8);
             }
-            else if (IsIngestionEventVariant10)
+            else if (IngestionEventVariant10 is { } __value9)
             {
-                ingestionEventVariant10?.Invoke(IngestionEventVariant10!);
+                ingestionEventVariant10?.Invoke(__value9);
             }
         }
 

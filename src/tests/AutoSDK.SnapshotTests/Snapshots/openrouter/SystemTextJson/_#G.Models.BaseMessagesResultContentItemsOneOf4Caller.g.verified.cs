@@ -1,4 +1,4 @@
-﻿//HintName: G.Models.BaseMessagesResultContentItemsOneOf4Caller.g.cs
+//HintName: G.Models.BaseMessagesResultContentItemsOneOf4Caller.g.cs
 #pragma warning disable CS0618 // Type or member is obsolete
 
 #nullable enable
@@ -43,8 +43,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.BaseMessagesResultContentItemsOneOf4Caller0 PickBaseMessagesResultContentItemsOneOf4Caller0() => IsBaseMessagesResultContentItemsOneOf4Caller0
-            ? BaseMessagesResultContentItemsOneOf4Caller0!
+        public global::G.BaseMessagesResultContentItemsOneOf4Caller0 PickBaseMessagesResultContentItemsOneOf4Caller0() => BaseMessagesResultContentItemsOneOf4Caller0 is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'BaseMessagesResultContentItemsOneOf4Caller0' but the value was {ToString()}.");
 
         /// <summary>
@@ -80,8 +80,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.BaseMessagesResultContentItemsOneOf4Caller1 PickBaseMessagesResultContentItemsOneOf4Caller1() => IsBaseMessagesResultContentItemsOneOf4Caller1
-            ? BaseMessagesResultContentItemsOneOf4Caller1!
+        public global::G.BaseMessagesResultContentItemsOneOf4Caller1 PickBaseMessagesResultContentItemsOneOf4Caller1() => BaseMessagesResultContentItemsOneOf4Caller1 is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'BaseMessagesResultContentItemsOneOf4Caller1' but the value was {ToString()}.");
 
         /// <summary>
@@ -117,8 +117,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.BaseMessagesResultContentItemsOneOf4Caller2 PickBaseMessagesResultContentItemsOneOf4Caller2() => IsBaseMessagesResultContentItemsOneOf4Caller2
-            ? BaseMessagesResultContentItemsOneOf4Caller2!
+        public global::G.BaseMessagesResultContentItemsOneOf4Caller2 PickBaseMessagesResultContentItemsOneOf4Caller2() => BaseMessagesResultContentItemsOneOf4Caller2 is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'BaseMessagesResultContentItemsOneOf4Caller2' but the value was {ToString()}.");
         /// <summary>
         /// 
@@ -243,17 +243,17 @@ namespace G
                 Validate();
             }
 
-            if (IsBaseMessagesResultContentItemsOneOf4Caller0 && baseMessagesResultContentItemsOneOf4Caller0 != null)
+            if (BaseMessagesResultContentItemsOneOf4Caller0 is { } __value0 && baseMessagesResultContentItemsOneOf4Caller0 != null)
             {
-                return baseMessagesResultContentItemsOneOf4Caller0(BaseMessagesResultContentItemsOneOf4Caller0!);
+                return baseMessagesResultContentItemsOneOf4Caller0(__value0);
             }
-            else if (IsBaseMessagesResultContentItemsOneOf4Caller1 && baseMessagesResultContentItemsOneOf4Caller1 != null)
+            else if (BaseMessagesResultContentItemsOneOf4Caller1 is { } __value1 && baseMessagesResultContentItemsOneOf4Caller1 != null)
             {
-                return baseMessagesResultContentItemsOneOf4Caller1(BaseMessagesResultContentItemsOneOf4Caller1!);
+                return baseMessagesResultContentItemsOneOf4Caller1(__value1);
             }
-            else if (IsBaseMessagesResultContentItemsOneOf4Caller2 && baseMessagesResultContentItemsOneOf4Caller2 != null)
+            else if (BaseMessagesResultContentItemsOneOf4Caller2 is { } __value2 && baseMessagesResultContentItemsOneOf4Caller2 != null)
             {
-                return baseMessagesResultContentItemsOneOf4Caller2(BaseMessagesResultContentItemsOneOf4Caller2!);
+                return baseMessagesResultContentItemsOneOf4Caller2(__value2);
             }
 
             return default(TResult);
@@ -275,17 +275,17 @@ namespace G
                 Validate();
             }
 
-            if (IsBaseMessagesResultContentItemsOneOf4Caller0)
+            if (BaseMessagesResultContentItemsOneOf4Caller0 is { } __value0)
             {
-                baseMessagesResultContentItemsOneOf4Caller0?.Invoke(BaseMessagesResultContentItemsOneOf4Caller0!);
+                baseMessagesResultContentItemsOneOf4Caller0?.Invoke(__value0);
             }
-            else if (IsBaseMessagesResultContentItemsOneOf4Caller1)
+            else if (BaseMessagesResultContentItemsOneOf4Caller1 is { } __value1)
             {
-                baseMessagesResultContentItemsOneOf4Caller1?.Invoke(BaseMessagesResultContentItemsOneOf4Caller1!);
+                baseMessagesResultContentItemsOneOf4Caller1?.Invoke(__value1);
             }
-            else if (IsBaseMessagesResultContentItemsOneOf4Caller2)
+            else if (BaseMessagesResultContentItemsOneOf4Caller2 is { } __value2)
             {
-                baseMessagesResultContentItemsOneOf4Caller2?.Invoke(BaseMessagesResultContentItemsOneOf4Caller2!);
+                baseMessagesResultContentItemsOneOf4Caller2?.Invoke(__value2);
             }
         }
 
@@ -303,17 +303,17 @@ namespace G
                 Validate();
             }
 
-            if (IsBaseMessagesResultContentItemsOneOf4Caller0)
+            if (BaseMessagesResultContentItemsOneOf4Caller0 is { } __value0)
             {
-                baseMessagesResultContentItemsOneOf4Caller0?.Invoke(BaseMessagesResultContentItemsOneOf4Caller0!);
+                baseMessagesResultContentItemsOneOf4Caller0?.Invoke(__value0);
             }
-            else if (IsBaseMessagesResultContentItemsOneOf4Caller1)
+            else if (BaseMessagesResultContentItemsOneOf4Caller1 is { } __value1)
             {
-                baseMessagesResultContentItemsOneOf4Caller1?.Invoke(BaseMessagesResultContentItemsOneOf4Caller1!);
+                baseMessagesResultContentItemsOneOf4Caller1?.Invoke(__value1);
             }
-            else if (IsBaseMessagesResultContentItemsOneOf4Caller2)
+            else if (BaseMessagesResultContentItemsOneOf4Caller2 is { } __value2)
             {
-                baseMessagesResultContentItemsOneOf4Caller2?.Invoke(BaseMessagesResultContentItemsOneOf4Caller2!);
+                baseMessagesResultContentItemsOneOf4Caller2?.Invoke(__value2);
             }
         }
 

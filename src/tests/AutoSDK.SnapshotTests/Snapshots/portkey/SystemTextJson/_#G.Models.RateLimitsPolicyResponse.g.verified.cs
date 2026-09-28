@@ -1,4 +1,4 @@
-﻿//HintName: G.Models.RateLimitsPolicyResponse.g.cs
+//HintName: G.Models.RateLimitsPolicyResponse.g.cs
 #pragma warning disable CS0618 // Type or member is obsolete
 
 #nullable enable
@@ -43,8 +43,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.RateLimitsPolicy PickRateLimitsPolicy() => IsRateLimitsPolicy
-            ? RateLimitsPolicy!
+        public global::G.RateLimitsPolicy PickRateLimitsPolicy() => RateLimitsPolicy is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'RateLimitsPolicy' but the value was {ToString()}.");
 
         /// <summary>
@@ -80,8 +80,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.RateLimitsPolicyResponseVariant2 PickRateLimitsPolicyResponseVariant2() => IsRateLimitsPolicyResponseVariant2
-            ? RateLimitsPolicyResponseVariant2!
+        public global::G.RateLimitsPolicyResponseVariant2 PickRateLimitsPolicyResponseVariant2() => RateLimitsPolicyResponseVariant2 is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'RateLimitsPolicyResponseVariant2' but the value was {ToString()}.");
         /// <summary>
         /// 
@@ -178,13 +178,13 @@ namespace G
                 Validate();
             }
 
-            if (IsRateLimitsPolicy && rateLimitsPolicy != null)
+            if (RateLimitsPolicy is { } __value0 && rateLimitsPolicy != null)
             {
-                return rateLimitsPolicy(RateLimitsPolicy!);
+                return rateLimitsPolicy(__value0);
             }
-            else if (IsRateLimitsPolicyResponseVariant2 && rateLimitsPolicyResponseVariant2 != null)
+            else if (RateLimitsPolicyResponseVariant2 is { } __value1 && rateLimitsPolicyResponseVariant2 != null)
             {
-                return rateLimitsPolicyResponseVariant2(RateLimitsPolicyResponseVariant2!);
+                return rateLimitsPolicyResponseVariant2(__value1);
             }
 
             return default(TResult);
@@ -204,13 +204,13 @@ namespace G
                 Validate();
             }
 
-            if (IsRateLimitsPolicy)
+            if (RateLimitsPolicy is { } __value0)
             {
-                rateLimitsPolicy?.Invoke(RateLimitsPolicy!);
+                rateLimitsPolicy?.Invoke(__value0);
             }
-            else if (IsRateLimitsPolicyResponseVariant2)
+            else if (RateLimitsPolicyResponseVariant2 is { } __value1)
             {
-                rateLimitsPolicyResponseVariant2?.Invoke(RateLimitsPolicyResponseVariant2!);
+                rateLimitsPolicyResponseVariant2?.Invoke(__value1);
             }
         }
 
@@ -227,13 +227,13 @@ namespace G
                 Validate();
             }
 
-            if (IsRateLimitsPolicy)
+            if (RateLimitsPolicy is { } __value0)
             {
-                rateLimitsPolicy?.Invoke(RateLimitsPolicy!);
+                rateLimitsPolicy?.Invoke(__value0);
             }
-            else if (IsRateLimitsPolicyResponseVariant2)
+            else if (RateLimitsPolicyResponseVariant2 is { } __value1)
             {
-                rateLimitsPolicyResponseVariant2?.Invoke(RateLimitsPolicyResponseVariant2!);
+                rateLimitsPolicyResponseVariant2?.Invoke(__value1);
             }
         }
 

@@ -1,4 +1,4 @@
-﻿//HintName: G.JsonConverters.Nodes.g.cs
+//HintName: G.JsonConverters.Nodes.g.cs
 #nullable enable
 #pragma warning disable CS0618 // Type or member is obsolete
 
@@ -96,37 +96,37 @@ namespace G.JsonConverters
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.WorkflowStartNodeModelInput), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.WorkflowStartNodeModelInput?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.WorkflowStartNodeModelInput).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Start!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickStart(), typeInfo);
             }
             else if (value.IsEnd)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.WorkflowEndNodeModelInput), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.WorkflowEndNodeModelInput?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.WorkflowEndNodeModelInput).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.End!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickEnd(), typeInfo);
             }
             else if (value.IsPhoneNumber)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.WorkflowPhoneNumberNodeModelInput), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.WorkflowPhoneNumberNodeModelInput?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.WorkflowPhoneNumberNodeModelInput).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PhoneNumber!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickPhoneNumber(), typeInfo);
             }
             else if (value.IsOverrideAgent)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.WorkflowOverrideAgentNodeModelInput), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.WorkflowOverrideAgentNodeModelInput?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.WorkflowOverrideAgentNodeModelInput).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.OverrideAgent!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickOverrideAgent(), typeInfo);
             }
             else if (value.IsStandaloneAgent)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.WorkflowStandaloneAgentNodeModelInput), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.WorkflowStandaloneAgentNodeModelInput?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.WorkflowStandaloneAgentNodeModelInput).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.StandaloneAgent!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickStandaloneAgent(), typeInfo);
             }
             else if (value.IsTool)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.WorkflowToolNodeModelInput), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.WorkflowToolNodeModelInput?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.WorkflowToolNodeModelInput).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Tool!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickTool(), typeInfo);
             }
         }
     }

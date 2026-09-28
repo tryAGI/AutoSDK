@@ -1,4 +1,4 @@
-﻿//HintName: G.Models.TemplatesCreateTemplateNoProjectRequest.g.cs
+//HintName: G.Models.TemplatesCreateTemplateNoProjectRequest.g.cs
 #pragma warning disable CS0618 // Type or member is obsolete
 
 #nullable enable
@@ -48,8 +48,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.TemplatesCreateTemplateNoProjectRequestVariant1 PickAgent() => IsAgent
-            ? Agent!
+        public global::G.TemplatesCreateTemplateNoProjectRequestVariant1 PickAgent() => Agent is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Agent' but the value was {ToString()}.");
 
         /// <summary>
@@ -85,8 +85,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.TemplatesCreateTemplateNoProjectRequestVariant2 PickAgentFile() => IsAgentFile
-            ? AgentFile!
+        public global::G.TemplatesCreateTemplateNoProjectRequestVariant2 PickAgentFile() => AgentFile is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'AgentFile' but the value was {ToString()}.");
         /// <summary>
         /// 
@@ -186,13 +186,13 @@ namespace G
                 Validate();
             }
 
-            if (IsAgent && agent != null)
+            if (Agent is { } __value0 && agent != null)
             {
-                return agent(Agent!);
+                return agent(__value0);
             }
-            else if (IsAgentFile && agentFile != null)
+            else if (AgentFile is { } __value1 && agentFile != null)
             {
-                return agentFile(AgentFile!);
+                return agentFile(__value1);
             }
 
             return default(TResult);
@@ -212,13 +212,13 @@ namespace G
                 Validate();
             }
 
-            if (IsAgent)
+            if (Agent is { } __value0)
             {
-                agent?.Invoke(Agent!);
+                agent?.Invoke(__value0);
             }
-            else if (IsAgentFile)
+            else if (AgentFile is { } __value1)
             {
-                agentFile?.Invoke(AgentFile!);
+                agentFile?.Invoke(__value1);
             }
         }
 
@@ -235,13 +235,13 @@ namespace G
                 Validate();
             }
 
-            if (IsAgent)
+            if (Agent is { } __value0)
             {
-                agent?.Invoke(Agent!);
+                agent?.Invoke(__value0);
             }
-            else if (IsAgentFile)
+            else if (AgentFile is { } __value1)
             {
-                agentFile?.Invoke(AgentFile!);
+                agentFile?.Invoke(__value1);
             }
         }
 

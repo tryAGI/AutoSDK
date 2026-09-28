@@ -1,4 +1,4 @@
-﻿//HintName: G.UsersClient.BlockUser.g.cs
+//HintName: G.UsersClient.BlockUser.g.cs
 
 #nullable enable
 
@@ -181,7 +181,7 @@ namespace G
                 PrepareBlockUserRequest(
                     httpClient: HttpClient,
                     httpRequestMessage: __httpRequest,
-                    targetUserId: targetUserId!,
+                    targetUserId: targetUserId,
                     sourceContext: sourceContext,
                     reason: reason);
 
@@ -207,7 +207,7 @@ namespace G
                                 pathTemplate: "\"/users/blocks\"",
                                 httpMethod: "PUT",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: null,
                                 exception: null,
                                 clientOptions: Options,
@@ -244,7 +244,7 @@ namespace G
                                 pathTemplate: "\"/users/blocks\"",
                                 httpMethod: "PUT",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: null,
                                 exception: __exception,
                                 clientOptions: Options,
@@ -285,7 +285,7 @@ namespace G
                                 pathTemplate: "\"/users/blocks\"",
                                 httpMethod: "PUT",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: __response,
                                 exception: null,
                                 clientOptions: Options,
@@ -333,7 +333,7 @@ namespace G
                                 pathTemplate: "\"/users/blocks\"",
                                 httpMethod: "PUT",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: __response,
                                 exception: null,
                                 clientOptions: Options,
@@ -355,7 +355,7 @@ namespace G
                                 pathTemplate: "\"/users/blocks\"",
                                 httpMethod: "PUT",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: __response,
                                 exception: null,
                                 clientOptions: Options,

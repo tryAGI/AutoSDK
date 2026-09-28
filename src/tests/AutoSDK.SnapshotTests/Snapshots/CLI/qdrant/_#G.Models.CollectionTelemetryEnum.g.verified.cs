@@ -1,4 +1,4 @@
-﻿//HintName: G.Models.CollectionTelemetryEnum.g.cs
+//HintName: G.Models.CollectionTelemetryEnum.g.cs
 #pragma warning disable CS0618 // Type or member is obsolete
 
 #nullable enable
@@ -43,8 +43,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.CollectionTelemetry PickCollectionTelemetry() => IsCollectionTelemetry
-            ? CollectionTelemetry!
+        public global::G.CollectionTelemetry PickCollectionTelemetry() => CollectionTelemetry is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'CollectionTelemetry' but the value was {ToString()}.");
 
         /// <summary>
@@ -80,8 +80,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.CollectionsAggregatedTelemetry PickCollectionsAggregated() => IsCollectionsAggregated
-            ? CollectionsAggregated!
+        public global::G.CollectionsAggregatedTelemetry PickCollectionsAggregated() => CollectionsAggregated is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'CollectionsAggregated' but the value was {ToString()}.");
         /// <summary>
         /// 
@@ -178,13 +178,13 @@ namespace G
                 Validate();
             }
 
-            if (IsCollectionTelemetry && collectionTelemetry != null)
+            if (CollectionTelemetry is { } __value0 && collectionTelemetry != null)
             {
-                return collectionTelemetry(CollectionTelemetry!);
+                return collectionTelemetry(__value0);
             }
-            else if (IsCollectionsAggregated && collectionsAggregated != null)
+            else if (CollectionsAggregated is { } __value1 && collectionsAggregated != null)
             {
-                return collectionsAggregated(CollectionsAggregated!);
+                return collectionsAggregated(__value1);
             }
 
             return default(TResult);
@@ -204,13 +204,13 @@ namespace G
                 Validate();
             }
 
-            if (IsCollectionTelemetry)
+            if (CollectionTelemetry is { } __value0)
             {
-                collectionTelemetry?.Invoke(CollectionTelemetry!);
+                collectionTelemetry?.Invoke(__value0);
             }
-            else if (IsCollectionsAggregated)
+            else if (CollectionsAggregated is { } __value1)
             {
-                collectionsAggregated?.Invoke(CollectionsAggregated!);
+                collectionsAggregated?.Invoke(__value1);
             }
         }
 
@@ -227,13 +227,13 @@ namespace G
                 Validate();
             }
 
-            if (IsCollectionTelemetry)
+            if (CollectionTelemetry is { } __value0)
             {
-                collectionTelemetry?.Invoke(CollectionTelemetry!);
+                collectionTelemetry?.Invoke(__value0);
             }
-            else if (IsCollectionsAggregated)
+            else if (CollectionsAggregated is { } __value1)
             {
-                collectionsAggregated?.Invoke(CollectionsAggregated!);
+                collectionsAggregated?.Invoke(__value1);
             }
         }
 

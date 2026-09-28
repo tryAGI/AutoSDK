@@ -1,4 +1,4 @@
-﻿//HintName: G.SpansClient.DeleteSpan.g.cs
+//HintName: G.SpansClient.DeleteSpan.g.cs
 
 #nullable enable
 
@@ -120,7 +120,7 @@ namespace G
                 PrepareDeleteSpanRequest(
                     httpClient: HttpClient,
                     httpRequestMessage: __httpRequest,
-                    spanIdentifier: spanIdentifier!);
+                    spanIdentifier: spanIdentifier);
 
                 return __httpRequest;
             }
@@ -142,7 +142,7 @@ namespace G
                                 pathTemplate: "$\"/v1/spans/{spanIdentifier}\"",
                                 httpMethod: "DELETE",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: null,
                                 exception: null,
                                 clientOptions: Options,
@@ -176,7 +176,7 @@ namespace G
                                 pathTemplate: "$\"/v1/spans/{spanIdentifier}\"",
                                 httpMethod: "DELETE",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: null,
                                 exception: __exception,
                                 clientOptions: Options,
@@ -217,7 +217,7 @@ namespace G
                                 pathTemplate: "$\"/v1/spans/{spanIdentifier}\"",
                                 httpMethod: "DELETE",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: __response,
                                 exception: null,
                                 clientOptions: Options,
@@ -265,7 +265,7 @@ namespace G
                                 pathTemplate: "$\"/v1/spans/{spanIdentifier}\"",
                                 httpMethod: "DELETE",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: __response,
                                 exception: null,
                                 clientOptions: Options,
@@ -287,7 +287,7 @@ namespace G
                                 pathTemplate: "$\"/v1/spans/{spanIdentifier}\"",
                                 httpMethod: "DELETE",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: __response,
                                 exception: null,
                                 clientOptions: Options,

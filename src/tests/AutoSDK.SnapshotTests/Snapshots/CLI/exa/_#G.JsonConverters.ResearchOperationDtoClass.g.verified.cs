@@ -1,4 +1,4 @@
-﻿//HintName: G.JsonConverters.ResearchOperationDtoClass.g.cs
+//HintName: G.JsonConverters.ResearchOperationDtoClass.g.cs
 #nullable enable
 #pragma warning disable CS0618 // Type or member is obsolete
 
@@ -69,19 +69,19 @@ namespace G.JsonConverters
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.ResearchOperationDtoClassVariant1), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.ResearchOperationDtoClassVariant1?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.ResearchOperationDtoClassVariant1).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Think!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickThink(), typeInfo);
             }
             else if (value.IsSearch)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.ResearchOperationDtoClassVariant2), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.ResearchOperationDtoClassVariant2?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.ResearchOperationDtoClassVariant2).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Search!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickSearch(), typeInfo);
             }
             else if (value.IsCrawl)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.ResearchOperationDtoClassVariant3), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.ResearchOperationDtoClassVariant3?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.ResearchOperationDtoClassVariant3).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Crawl!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickCrawl(), typeInfo);
             }
         }
     }

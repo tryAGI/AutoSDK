@@ -1,4 +1,4 @@
-﻿//HintName: G.JsonConverters.PreferredMinThroughput.g.cs
+//HintName: G.JsonConverters.PreferredMinThroughput.g.cs
 #nullable enable
 #pragma warning disable CS0618 // Type or member is obsolete
 
@@ -168,19 +168,19 @@ namespace G.JsonConverters
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(double), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<double> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(double).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PreferredMinThroughputVariant1!.Value, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickPreferredMinThroughputVariant1(), typeInfo);
             }
             else if (value.IsPercentileThroughputCutoffs)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.PercentileThroughputCutoffs), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.PercentileThroughputCutoffs?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.PercentileThroughputCutoffs).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PercentileThroughputCutoffs!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickPercentileThroughputCutoffs(), typeInfo);
             }
             else if (value.IsPreferredMinThroughputVariant3)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(object), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<object?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(object).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PreferredMinThroughputVariant3!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickPreferredMinThroughputVariant3(), typeInfo);
             }
         }
     }

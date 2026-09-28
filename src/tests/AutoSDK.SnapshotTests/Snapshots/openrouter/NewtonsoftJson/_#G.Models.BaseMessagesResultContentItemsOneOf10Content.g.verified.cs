@@ -1,4 +1,4 @@
-﻿//HintName: G.Models.BaseMessagesResultContentItemsOneOf10Content.g.cs
+//HintName: G.Models.BaseMessagesResultContentItemsOneOf10Content.g.cs
 #pragma warning disable CS0618 // Type or member is obsolete
 
 #nullable enable
@@ -43,8 +43,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.BaseMessagesResultContentItemsOneOf10Content0 PickBaseMessagesResultContentItemsOneOf10Content0() => IsBaseMessagesResultContentItemsOneOf10Content0
-            ? BaseMessagesResultContentItemsOneOf10Content0!
+        public global::G.BaseMessagesResultContentItemsOneOf10Content0 PickBaseMessagesResultContentItemsOneOf10Content0() => BaseMessagesResultContentItemsOneOf10Content0 is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'BaseMessagesResultContentItemsOneOf10Content0' but the value was {ToString()}.");
 
         /// <summary>
@@ -80,8 +80,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.BaseMessagesResultContentItemsOneOf10Content1 PickBaseMessagesResultContentItemsOneOf10Content1() => IsBaseMessagesResultContentItemsOneOf10Content1
-            ? BaseMessagesResultContentItemsOneOf10Content1!
+        public global::G.BaseMessagesResultContentItemsOneOf10Content1 PickBaseMessagesResultContentItemsOneOf10Content1() => BaseMessagesResultContentItemsOneOf10Content1 is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'BaseMessagesResultContentItemsOneOf10Content1' but the value was {ToString()}.");
         /// <summary>
         /// 
@@ -178,13 +178,13 @@ namespace G
                 Validate();
             }
 
-            if (IsBaseMessagesResultContentItemsOneOf10Content0 && baseMessagesResultContentItemsOneOf10Content0 != null)
+            if (BaseMessagesResultContentItemsOneOf10Content0 is { } __value0 && baseMessagesResultContentItemsOneOf10Content0 != null)
             {
-                return baseMessagesResultContentItemsOneOf10Content0(BaseMessagesResultContentItemsOneOf10Content0!);
+                return baseMessagesResultContentItemsOneOf10Content0(__value0);
             }
-            else if (IsBaseMessagesResultContentItemsOneOf10Content1 && baseMessagesResultContentItemsOneOf10Content1 != null)
+            else if (BaseMessagesResultContentItemsOneOf10Content1 is { } __value1 && baseMessagesResultContentItemsOneOf10Content1 != null)
             {
-                return baseMessagesResultContentItemsOneOf10Content1(BaseMessagesResultContentItemsOneOf10Content1!);
+                return baseMessagesResultContentItemsOneOf10Content1(__value1);
             }
 
             return default(TResult);
@@ -204,13 +204,13 @@ namespace G
                 Validate();
             }
 
-            if (IsBaseMessagesResultContentItemsOneOf10Content0)
+            if (BaseMessagesResultContentItemsOneOf10Content0 is { } __value0)
             {
-                baseMessagesResultContentItemsOneOf10Content0?.Invoke(BaseMessagesResultContentItemsOneOf10Content0!);
+                baseMessagesResultContentItemsOneOf10Content0?.Invoke(__value0);
             }
-            else if (IsBaseMessagesResultContentItemsOneOf10Content1)
+            else if (BaseMessagesResultContentItemsOneOf10Content1 is { } __value1)
             {
-                baseMessagesResultContentItemsOneOf10Content1?.Invoke(BaseMessagesResultContentItemsOneOf10Content1!);
+                baseMessagesResultContentItemsOneOf10Content1?.Invoke(__value1);
             }
         }
 
@@ -227,13 +227,13 @@ namespace G
                 Validate();
             }
 
-            if (IsBaseMessagesResultContentItemsOneOf10Content0)
+            if (BaseMessagesResultContentItemsOneOf10Content0 is { } __value0)
             {
-                baseMessagesResultContentItemsOneOf10Content0?.Invoke(BaseMessagesResultContentItemsOneOf10Content0!);
+                baseMessagesResultContentItemsOneOf10Content0?.Invoke(__value0);
             }
-            else if (IsBaseMessagesResultContentItemsOneOf10Content1)
+            else if (BaseMessagesResultContentItemsOneOf10Content1 is { } __value1)
             {
-                baseMessagesResultContentItemsOneOf10Content1?.Invoke(BaseMessagesResultContentItemsOneOf10Content1!);
+                baseMessagesResultContentItemsOneOf10Content1?.Invoke(__value1);
             }
         }
 

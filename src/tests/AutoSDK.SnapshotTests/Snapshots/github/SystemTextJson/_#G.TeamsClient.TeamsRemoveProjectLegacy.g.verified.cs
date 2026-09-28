@@ -1,4 +1,4 @@
-﻿//HintName: G.TeamsClient.TeamsRemoveProjectLegacy.g.cs
+//HintName: G.TeamsClient.TeamsRemoveProjectLegacy.g.cs
 
 #nullable enable
 
@@ -112,8 +112,8 @@ namespace G
                 PrepareTeamsRemoveProjectLegacyRequest(
                     httpClient: HttpClient,
                     httpRequestMessage: __httpRequest,
-                    teamId: teamId!,
-                    projectId: projectId!);
+                    teamId: teamId,
+                    projectId: projectId);
 
                 return __httpRequest;
             }
@@ -135,7 +135,7 @@ namespace G
                                 pathTemplate: "$\"/teams/{teamId}/projects/{projectId}\"",
                                 httpMethod: "DELETE",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: null,
                                 exception: null,
                                 clientOptions: Options,
@@ -169,7 +169,7 @@ namespace G
                                 pathTemplate: "$\"/teams/{teamId}/projects/{projectId}\"",
                                 httpMethod: "DELETE",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: null,
                                 exception: __exception,
                                 clientOptions: Options,
@@ -210,7 +210,7 @@ namespace G
                                 pathTemplate: "$\"/teams/{teamId}/projects/{projectId}\"",
                                 httpMethod: "DELETE",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: __response,
                                 exception: null,
                                 clientOptions: Options,
@@ -258,7 +258,7 @@ namespace G
                                 pathTemplate: "$\"/teams/{teamId}/projects/{projectId}\"",
                                 httpMethod: "DELETE",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: __response,
                                 exception: null,
                                 clientOptions: Options,
@@ -280,7 +280,7 @@ namespace G
                                 pathTemplate: "$\"/teams/{teamId}/projects/{projectId}\"",
                                 httpMethod: "DELETE",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: __response,
                                 exception: null,
                                 clientOptions: Options,

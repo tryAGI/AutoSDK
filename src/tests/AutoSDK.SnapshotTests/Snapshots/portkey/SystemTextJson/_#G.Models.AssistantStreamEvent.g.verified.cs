@@ -1,4 +1,4 @@
-﻿//HintName: G.Models.AssistantStreamEvent.g.cs
+//HintName: G.Models.AssistantStreamEvent.g.cs
 #pragma warning disable CS0618 // Type or member is obsolete
 
 #nullable enable
@@ -57,8 +57,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.ThreadStreamEvent PickThread() => IsThread
-            ? Thread!.Value
+        public global::G.ThreadStreamEvent PickThread() => Thread is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Thread' but the value was {ToString()}.");
 
         /// <summary>
@@ -94,8 +94,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.RunStreamEvent PickRun() => IsRun
-            ? Run!.Value
+        public global::G.RunStreamEvent PickRun() => Run is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Run' but the value was {ToString()}.");
 
         /// <summary>
@@ -131,8 +131,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.RunStepStreamEvent PickRunStep() => IsRunStep
-            ? RunStep!.Value
+        public global::G.RunStepStreamEvent PickRunStep() => RunStep is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'RunStep' but the value was {ToString()}.");
 
         /// <summary>
@@ -168,8 +168,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.MessageStreamEvent PickMessage() => IsMessage
-            ? Message!.Value
+        public global::G.MessageStreamEvent PickMessage() => Message is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Message' but the value was {ToString()}.");
 
         /// <summary>
@@ -205,8 +205,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.ErrorEvent PickError() => IsError
-            ? Error!
+        public global::G.ErrorEvent PickError() => Error is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Error' but the value was {ToString()}.");
 
         /// <summary>
@@ -242,8 +242,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.DoneEvent PickDone() => IsDone
-            ? Done!
+        public global::G.DoneEvent PickDone() => Done is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Done' but the value was {ToString()}.");
         /// <summary>
         /// 
@@ -452,29 +452,29 @@ namespace G
                 Validate();
             }
 
-            if (IsThread && thread != null)
+            if (Thread is { } __value0 && thread != null)
             {
-                return thread(Thread!);
+                return thread(__value0);
             }
-            else if (IsRun && run != null)
+            else if (Run is { } __value1 && run != null)
             {
-                return run(Run!);
+                return run(__value1);
             }
-            else if (IsRunStep && runStep != null)
+            else if (RunStep is { } __value2 && runStep != null)
             {
-                return runStep(RunStep!);
+                return runStep(__value2);
             }
-            else if (IsMessage && message != null)
+            else if (Message is { } __value3 && message != null)
             {
-                return message(Message!);
+                return message(__value3);
             }
-            else if (IsError && error != null)
+            else if (Error is { } __value4 && error != null)
             {
-                return error(Error!);
+                return error(__value4);
             }
-            else if (IsDone && done != null)
+            else if (Done is { } __value5 && done != null)
             {
-                return done(Done!);
+                return done(__value5);
             }
 
             return default(TResult);
@@ -502,29 +502,29 @@ namespace G
                 Validate();
             }
 
-            if (IsThread)
+            if (Thread is { } __value0)
             {
-                thread?.Invoke(Thread!);
+                thread?.Invoke(__value0);
             }
-            else if (IsRun)
+            else if (Run is { } __value1)
             {
-                run?.Invoke(Run!);
+                run?.Invoke(__value1);
             }
-            else if (IsRunStep)
+            else if (RunStep is { } __value2)
             {
-                runStep?.Invoke(RunStep!);
+                runStep?.Invoke(__value2);
             }
-            else if (IsMessage)
+            else if (Message is { } __value3)
             {
-                message?.Invoke(Message!);
+                message?.Invoke(__value3);
             }
-            else if (IsError)
+            else if (Error is { } __value4)
             {
-                error?.Invoke(Error!);
+                error?.Invoke(__value4);
             }
-            else if (IsDone)
+            else if (Done is { } __value5)
             {
-                done?.Invoke(Done!);
+                done?.Invoke(__value5);
             }
         }
 
@@ -545,29 +545,29 @@ namespace G
                 Validate();
             }
 
-            if (IsThread)
+            if (Thread is { } __value0)
             {
-                thread?.Invoke(Thread!);
+                thread?.Invoke(__value0);
             }
-            else if (IsRun)
+            else if (Run is { } __value1)
             {
-                run?.Invoke(Run!);
+                run?.Invoke(__value1);
             }
-            else if (IsRunStep)
+            else if (RunStep is { } __value2)
             {
-                runStep?.Invoke(RunStep!);
+                runStep?.Invoke(__value2);
             }
-            else if (IsMessage)
+            else if (Message is { } __value3)
             {
-                message?.Invoke(Message!);
+                message?.Invoke(__value3);
             }
-            else if (IsError)
+            else if (Error is { } __value4)
             {
-                error?.Invoke(Error!);
+                error?.Invoke(__value4);
             }
-            else if (IsDone)
+            else if (Done is { } __value5)
             {
-                done?.Invoke(Done!);
+                done?.Invoke(__value5);
             }
         }
 

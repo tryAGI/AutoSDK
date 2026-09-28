@@ -1,4 +1,4 @@
-﻿//HintName: G.Models.StabilityAiGeneratedAssetOptions.g.cs
+//HintName: G.Models.StabilityAiGeneratedAssetOptions.g.cs
 #pragma warning disable CS0618 // Type or member is obsolete
 
 #nullable enable
@@ -51,8 +51,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.StabilityAiTextToImageOptions PickTextToImage() => IsTextToImage
-            ? TextToImage!
+        public global::G.StabilityAiTextToImageOptions PickTextToImage() => TextToImage is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'TextToImage' but the value was {ToString()}.");
         /// <summary>
         /// 
@@ -124,9 +124,9 @@ namespace G
                 Validate();
             }
 
-            if (IsTextToImage && textToImage != null)
+            if (TextToImage is { } __value0 && textToImage != null)
             {
-                return textToImage(TextToImage!);
+                return textToImage(__value0);
             }
 
             return default(TResult);
@@ -144,9 +144,9 @@ namespace G
                 Validate();
             }
 
-            if (IsTextToImage)
+            if (TextToImage is { } __value0)
             {
-                textToImage?.Invoke(TextToImage!);
+                textToImage?.Invoke(__value0);
             }
         }
 
@@ -162,9 +162,9 @@ namespace G
                 Validate();
             }
 
-            if (IsTextToImage)
+            if (TextToImage is { } __value0)
             {
-                textToImage?.Invoke(TextToImage!);
+                textToImage?.Invoke(__value0);
             }
         }
 

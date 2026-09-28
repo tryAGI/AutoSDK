@@ -1,4 +1,4 @@
-﻿//HintName: G.Models.MessagesRequestContextManagementEditsItemsOneOf0Trigger.g.cs
+//HintName: G.Models.MessagesRequestContextManagementEditsItemsOneOf0Trigger.g.cs
 #pragma warning disable CS0618 // Type or member is obsolete
 
 #nullable enable
@@ -43,8 +43,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.MessagesRequestContextManagementEditsItemsOneOf0Trigger0 PickMessagesRequestContextManagementEditsItemsOneOf0Trigger0() => IsMessagesRequestContextManagementEditsItemsOneOf0Trigger0
-            ? MessagesRequestContextManagementEditsItemsOneOf0Trigger0!
+        public global::G.MessagesRequestContextManagementEditsItemsOneOf0Trigger0 PickMessagesRequestContextManagementEditsItemsOneOf0Trigger0() => MessagesRequestContextManagementEditsItemsOneOf0Trigger0 is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'MessagesRequestContextManagementEditsItemsOneOf0Trigger0' but the value was {ToString()}.");
 
         /// <summary>
@@ -80,8 +80,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.MessagesRequestContextManagementEditsItemsOneOf0Trigger1 PickMessagesRequestContextManagementEditsItemsOneOf0Trigger1() => IsMessagesRequestContextManagementEditsItemsOneOf0Trigger1
-            ? MessagesRequestContextManagementEditsItemsOneOf0Trigger1!
+        public global::G.MessagesRequestContextManagementEditsItemsOneOf0Trigger1 PickMessagesRequestContextManagementEditsItemsOneOf0Trigger1() => MessagesRequestContextManagementEditsItemsOneOf0Trigger1 is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'MessagesRequestContextManagementEditsItemsOneOf0Trigger1' but the value was {ToString()}.");
         /// <summary>
         /// 
@@ -178,13 +178,13 @@ namespace G
                 Validate();
             }
 
-            if (IsMessagesRequestContextManagementEditsItemsOneOf0Trigger0 && messagesRequestContextManagementEditsItemsOneOf0Trigger0 != null)
+            if (MessagesRequestContextManagementEditsItemsOneOf0Trigger0 is { } __value0 && messagesRequestContextManagementEditsItemsOneOf0Trigger0 != null)
             {
-                return messagesRequestContextManagementEditsItemsOneOf0Trigger0(MessagesRequestContextManagementEditsItemsOneOf0Trigger0!);
+                return messagesRequestContextManagementEditsItemsOneOf0Trigger0(__value0);
             }
-            else if (IsMessagesRequestContextManagementEditsItemsOneOf0Trigger1 && messagesRequestContextManagementEditsItemsOneOf0Trigger1 != null)
+            else if (MessagesRequestContextManagementEditsItemsOneOf0Trigger1 is { } __value1 && messagesRequestContextManagementEditsItemsOneOf0Trigger1 != null)
             {
-                return messagesRequestContextManagementEditsItemsOneOf0Trigger1(MessagesRequestContextManagementEditsItemsOneOf0Trigger1!);
+                return messagesRequestContextManagementEditsItemsOneOf0Trigger1(__value1);
             }
 
             return default(TResult);
@@ -204,13 +204,13 @@ namespace G
                 Validate();
             }
 
-            if (IsMessagesRequestContextManagementEditsItemsOneOf0Trigger0)
+            if (MessagesRequestContextManagementEditsItemsOneOf0Trigger0 is { } __value0)
             {
-                messagesRequestContextManagementEditsItemsOneOf0Trigger0?.Invoke(MessagesRequestContextManagementEditsItemsOneOf0Trigger0!);
+                messagesRequestContextManagementEditsItemsOneOf0Trigger0?.Invoke(__value0);
             }
-            else if (IsMessagesRequestContextManagementEditsItemsOneOf0Trigger1)
+            else if (MessagesRequestContextManagementEditsItemsOneOf0Trigger1 is { } __value1)
             {
-                messagesRequestContextManagementEditsItemsOneOf0Trigger1?.Invoke(MessagesRequestContextManagementEditsItemsOneOf0Trigger1!);
+                messagesRequestContextManagementEditsItemsOneOf0Trigger1?.Invoke(__value1);
             }
         }
 
@@ -227,13 +227,13 @@ namespace G
                 Validate();
             }
 
-            if (IsMessagesRequestContextManagementEditsItemsOneOf0Trigger0)
+            if (MessagesRequestContextManagementEditsItemsOneOf0Trigger0 is { } __value0)
             {
-                messagesRequestContextManagementEditsItemsOneOf0Trigger0?.Invoke(MessagesRequestContextManagementEditsItemsOneOf0Trigger0!);
+                messagesRequestContextManagementEditsItemsOneOf0Trigger0?.Invoke(__value0);
             }
-            else if (IsMessagesRequestContextManagementEditsItemsOneOf0Trigger1)
+            else if (MessagesRequestContextManagementEditsItemsOneOf0Trigger1 is { } __value1)
             {
-                messagesRequestContextManagementEditsItemsOneOf0Trigger1?.Invoke(MessagesRequestContextManagementEditsItemsOneOf0Trigger1!);
+                messagesRequestContextManagementEditsItemsOneOf0Trigger1?.Invoke(__value1);
             }
         }
 

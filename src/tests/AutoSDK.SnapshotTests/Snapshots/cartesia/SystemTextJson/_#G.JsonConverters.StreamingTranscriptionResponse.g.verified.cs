@@ -1,4 +1,4 @@
-﻿//HintName: G.JsonConverters.StreamingTranscriptionResponse.g.cs
+//HintName: G.JsonConverters.StreamingTranscriptionResponse.g.cs
 #nullable enable
 #pragma warning disable CS0618 // Type or member is obsolete
 
@@ -248,25 +248,25 @@ namespace G.JsonConverters
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.AllOf<global::G.StreamingTranscriptionResponseVariant12, global::G.TranscriptMessage>), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.AllOf<global::G.StreamingTranscriptionResponseVariant12, global::G.TranscriptMessage>> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.AllOf<global::G.StreamingTranscriptionResponseVariant12, global::G.TranscriptMessage>).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.StreamingTranscriptionResponseVariant1!.Value, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickStreamingTranscriptionResponseVariant1(), typeInfo);
             }
             else if (value.IsStreamingTranscriptionResponseVariant2)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.AllOf<global::G.StreamingTranscriptionResponseVariant22, global::G.FlushDoneMessage>), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.AllOf<global::G.StreamingTranscriptionResponseVariant22, global::G.FlushDoneMessage>> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.AllOf<global::G.StreamingTranscriptionResponseVariant22, global::G.FlushDoneMessage>).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.StreamingTranscriptionResponseVariant2!.Value, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickStreamingTranscriptionResponseVariant2(), typeInfo);
             }
             else if (value.IsStreamingTranscriptionResponseVariant3)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.AllOf<global::G.StreamingTranscriptionResponseVariant32, global::G.DoneMessage>), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.AllOf<global::G.StreamingTranscriptionResponseVariant32, global::G.DoneMessage>> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.AllOf<global::G.StreamingTranscriptionResponseVariant32, global::G.DoneMessage>).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.StreamingTranscriptionResponseVariant3!.Value, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickStreamingTranscriptionResponseVariant3(), typeInfo);
             }
             else if (value.IsStreamingTranscriptionResponseVariant4)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.AllOf<global::G.StreamingTranscriptionResponseVariant42, global::G.ErrorMessage>), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.AllOf<global::G.StreamingTranscriptionResponseVariant42, global::G.ErrorMessage>> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.AllOf<global::G.StreamingTranscriptionResponseVariant42, global::G.ErrorMessage>).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.StreamingTranscriptionResponseVariant4!.Value, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickStreamingTranscriptionResponseVariant4(), typeInfo);
             }
         }
     }

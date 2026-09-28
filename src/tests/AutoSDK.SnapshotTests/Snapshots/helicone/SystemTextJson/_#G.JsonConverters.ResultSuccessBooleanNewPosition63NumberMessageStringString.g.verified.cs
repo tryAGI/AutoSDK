@@ -1,4 +1,4 @@
-﻿//HintName: G.JsonConverters.ResultSuccessBooleanNewPosition63NumberMessageStringString.g.cs
+//HintName: G.JsonConverters.ResultSuccessBooleanNewPosition63NumberMessageStringString.g.cs
 #nullable enable
 #pragma warning disable CS0618 // Type or member is obsolete
 
@@ -141,13 +141,13 @@ namespace G.JsonConverters
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.ResultSuccessSuccessBooleanNewPosition63NumberMessageString), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.ResultSuccessSuccessBooleanNewPosition63NumberMessageString?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.ResultSuccessSuccessBooleanNewPosition63NumberMessageString).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.ResultSuccessSuccessBooleanNewPosition63NumberMessageString!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickResultSuccessSuccessBooleanNewPosition63NumberMessageString(), typeInfo);
             }
             else if (value.IsError)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.ResultErrorString), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.ResultErrorString?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.ResultErrorString).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Error!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickError(), typeInfo);
             }
         }
     }

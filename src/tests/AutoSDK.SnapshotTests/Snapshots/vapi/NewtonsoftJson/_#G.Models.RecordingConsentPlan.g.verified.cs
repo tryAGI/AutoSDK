@@ -1,4 +1,4 @@
-﻿//HintName: G.Models.RecordingConsentPlan.g.cs
+//HintName: G.Models.RecordingConsentPlan.g.cs
 #pragma warning disable CS0618 // Type or member is obsolete
 
 #nullable enable
@@ -48,8 +48,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.RecordingConsentPlanStayOnLine PickStayOnLine() => IsStayOnLine
-            ? StayOnLine!
+        public global::G.RecordingConsentPlanStayOnLine PickStayOnLine() => StayOnLine is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'StayOnLine' but the value was {ToString()}.");
 
         /// <summary>
@@ -85,8 +85,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.RecordingConsentPlanVerbal PickVerbal() => IsVerbal
-            ? Verbal!
+        public global::G.RecordingConsentPlanVerbal PickVerbal() => Verbal is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Verbal' but the value was {ToString()}.");
         /// <summary>
         /// 
@@ -186,13 +186,13 @@ namespace G
                 Validate();
             }
 
-            if (IsStayOnLine && stayOnLine != null)
+            if (StayOnLine is { } __value0 && stayOnLine != null)
             {
-                return stayOnLine(StayOnLine!);
+                return stayOnLine(__value0);
             }
-            else if (IsVerbal && verbal != null)
+            else if (Verbal is { } __value1 && verbal != null)
             {
-                return verbal(Verbal!);
+                return verbal(__value1);
             }
 
             return default(TResult);
@@ -212,13 +212,13 @@ namespace G
                 Validate();
             }
 
-            if (IsStayOnLine)
+            if (StayOnLine is { } __value0)
             {
-                stayOnLine?.Invoke(StayOnLine!);
+                stayOnLine?.Invoke(__value0);
             }
-            else if (IsVerbal)
+            else if (Verbal is { } __value1)
             {
-                verbal?.Invoke(Verbal!);
+                verbal?.Invoke(__value1);
             }
         }
 
@@ -235,13 +235,13 @@ namespace G
                 Validate();
             }
 
-            if (IsStayOnLine)
+            if (StayOnLine is { } __value0)
             {
-                stayOnLine?.Invoke(StayOnLine!);
+                stayOnLine?.Invoke(__value0);
             }
-            else if (IsVerbal)
+            else if (Verbal is { } __value1)
             {
-                verbal?.Invoke(Verbal!);
+                verbal?.Invoke(__value1);
             }
         }
 

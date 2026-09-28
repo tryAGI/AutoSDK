@@ -1,4 +1,4 @@
-﻿//HintName: G.AppsClient.AppsListAccountsForPlanStubbed.g.cs
+//HintName: G.AppsClient.AppsListAccountsForPlanStubbed.g.cs
 
 #nullable enable
 
@@ -169,7 +169,7 @@ namespace G
                 PrepareAppsListAccountsForPlanStubbedRequest(
                     httpClient: HttpClient,
                     httpRequestMessage: __httpRequest,
-                    planId: planId!,
+                    planId: planId,
                     sort: sort,
                     direction: direction,
                     perPage: perPage,
@@ -195,7 +195,7 @@ namespace G
                                 pathTemplate: "$\"/marketplace_listing/stubbed/plans/{planId}/accounts\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: null,
                                 exception: null,
                                 clientOptions: Options,
@@ -229,7 +229,7 @@ namespace G
                                 pathTemplate: "$\"/marketplace_listing/stubbed/plans/{planId}/accounts\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: null,
                                 exception: __exception,
                                 clientOptions: Options,
@@ -270,7 +270,7 @@ namespace G
                                 pathTemplate: "$\"/marketplace_listing/stubbed/plans/{planId}/accounts\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: __response,
                                 exception: null,
                                 clientOptions: Options,
@@ -318,7 +318,7 @@ namespace G
                                 pathTemplate: "$\"/marketplace_listing/stubbed/plans/{planId}/accounts\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: __response,
                                 exception: null,
                                 clientOptions: Options,
@@ -340,7 +340,7 @@ namespace G
                                 pathTemplate: "$\"/marketplace_listing/stubbed/plans/{planId}/accounts\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: __response,
                                 exception: null,
                                 clientOptions: Options,

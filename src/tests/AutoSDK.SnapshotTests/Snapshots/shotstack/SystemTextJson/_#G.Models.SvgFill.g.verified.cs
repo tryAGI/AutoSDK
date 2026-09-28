@@ -1,4 +1,4 @@
-﻿//HintName: G.Models.SvgFill.g.cs
+//HintName: G.Models.SvgFill.g.cs
 #pragma warning disable CS0618 // Type or member is obsolete
 
 #nullable enable
@@ -49,8 +49,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.SvgSolidFill PickSolid() => IsSolid
-            ? Solid!
+        public global::G.SvgSolidFill PickSolid() => Solid is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Solid' but the value was {ToString()}.");
 
         /// <summary>
@@ -87,8 +87,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.SvgLinearGradientFill PickLinear() => IsLinear
-            ? Linear!
+        public global::G.SvgLinearGradientFill PickLinear() => Linear is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Linear' but the value was {ToString()}.");
 
         /// <summary>
@@ -125,8 +125,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.SvgRadialGradientFill PickRadial() => IsRadial
-            ? Radial!
+        public global::G.SvgRadialGradientFill PickRadial() => Radial is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Radial' but the value was {ToString()}.");
         /// <summary>
         /// 
@@ -254,17 +254,17 @@ namespace G
                 Validate();
             }
 
-            if (IsSolid && solid != null)
+            if (Solid is { } __value0 && solid != null)
             {
-                return solid(Solid!);
+                return solid(__value0);
             }
-            else if (IsLinear && linear != null)
+            else if (Linear is { } __value1 && linear != null)
             {
-                return linear(Linear!);
+                return linear(__value1);
             }
-            else if (IsRadial && radial != null)
+            else if (Radial is { } __value2 && radial != null)
             {
-                return radial(Radial!);
+                return radial(__value2);
             }
 
             return default(TResult);
@@ -286,17 +286,17 @@ namespace G
                 Validate();
             }
 
-            if (IsSolid)
+            if (Solid is { } __value0)
             {
-                solid?.Invoke(Solid!);
+                solid?.Invoke(__value0);
             }
-            else if (IsLinear)
+            else if (Linear is { } __value1)
             {
-                linear?.Invoke(Linear!);
+                linear?.Invoke(__value1);
             }
-            else if (IsRadial)
+            else if (Radial is { } __value2)
             {
-                radial?.Invoke(Radial!);
+                radial?.Invoke(__value2);
             }
         }
 
@@ -314,17 +314,17 @@ namespace G
                 Validate();
             }
 
-            if (IsSolid)
+            if (Solid is { } __value0)
             {
-                solid?.Invoke(Solid!);
+                solid?.Invoke(__value0);
             }
-            else if (IsLinear)
+            else if (Linear is { } __value1)
             {
-                linear?.Invoke(Linear!);
+                linear?.Invoke(__value1);
             }
-            else if (IsRadial)
+            else if (Radial is { } __value2)
             {
-                radial?.Invoke(Radial!);
+                radial?.Invoke(__value2);
             }
         }
 

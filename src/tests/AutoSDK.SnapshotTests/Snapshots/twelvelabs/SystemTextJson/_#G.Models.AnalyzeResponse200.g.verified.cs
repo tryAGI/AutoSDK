@@ -1,4 +1,4 @@
-﻿//HintName: G.Models.AnalyzeResponse200.g.cs
+//HintName: G.Models.AnalyzeResponse200.g.cs
 #pragma warning disable CS0618 // Type or member is obsolete
 
 #nullable enable
@@ -52,8 +52,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.StreamAnalyzeResponse PickStreamAnalyzeResponse() => IsStreamAnalyzeResponse
-            ? StreamAnalyzeResponse!.Value
+        public global::G.StreamAnalyzeResponse PickStreamAnalyzeResponse() => StreamAnalyzeResponse is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'StreamAnalyzeResponse' but the value was {ToString()}.");
 
         /// <summary>
@@ -89,8 +89,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.NonStreamAnalyzeResponse PickNonStreamAnalyzeResponse() => IsNonStreamAnalyzeResponse
-            ? NonStreamAnalyzeResponse!
+        public global::G.NonStreamAnalyzeResponse PickNonStreamAnalyzeResponse() => NonStreamAnalyzeResponse is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'NonStreamAnalyzeResponse' but the value was {ToString()}.");
         /// <summary>
         /// 
@@ -187,13 +187,13 @@ namespace G
                 Validate();
             }
 
-            if (IsStreamAnalyzeResponse && streamAnalyzeResponse != null)
+            if (StreamAnalyzeResponse is { } __value0 && streamAnalyzeResponse != null)
             {
-                return streamAnalyzeResponse(StreamAnalyzeResponse!);
+                return streamAnalyzeResponse(__value0);
             }
-            else if (IsNonStreamAnalyzeResponse && nonStreamAnalyzeResponse != null)
+            else if (NonStreamAnalyzeResponse is { } __value1 && nonStreamAnalyzeResponse != null)
             {
-                return nonStreamAnalyzeResponse(NonStreamAnalyzeResponse!);
+                return nonStreamAnalyzeResponse(__value1);
             }
 
             return default(TResult);
@@ -213,13 +213,13 @@ namespace G
                 Validate();
             }
 
-            if (IsStreamAnalyzeResponse)
+            if (StreamAnalyzeResponse is { } __value0)
             {
-                streamAnalyzeResponse?.Invoke(StreamAnalyzeResponse!);
+                streamAnalyzeResponse?.Invoke(__value0);
             }
-            else if (IsNonStreamAnalyzeResponse)
+            else if (NonStreamAnalyzeResponse is { } __value1)
             {
-                nonStreamAnalyzeResponse?.Invoke(NonStreamAnalyzeResponse!);
+                nonStreamAnalyzeResponse?.Invoke(__value1);
             }
         }
 
@@ -236,13 +236,13 @@ namespace G
                 Validate();
             }
 
-            if (IsStreamAnalyzeResponse)
+            if (StreamAnalyzeResponse is { } __value0)
             {
-                streamAnalyzeResponse?.Invoke(StreamAnalyzeResponse!);
+                streamAnalyzeResponse?.Invoke(__value0);
             }
-            else if (IsNonStreamAnalyzeResponse)
+            else if (NonStreamAnalyzeResponse is { } __value1)
             {
-                nonStreamAnalyzeResponse?.Invoke(NonStreamAnalyzeResponse!);
+                nonStreamAnalyzeResponse?.Invoke(__value1);
             }
         }
 

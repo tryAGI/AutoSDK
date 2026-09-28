@@ -1,4 +1,4 @@
-﻿//HintName: G.JsonConverters.McpServerToolAllowedTools.g.cs
+//HintName: G.JsonConverters.McpServerToolAllowedTools.g.cs
 #nullable enable
 #pragma warning disable CS0618 // Type or member is obsolete
 
@@ -203,25 +203,25 @@ namespace G.JsonConverters
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::System.Collections.Generic.IList<string>), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::System.Collections.Generic.IList<string>?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::System.Collections.Generic.IList<string>).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.McpServerToolAllowedToolsVariant1!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickMcpServerToolAllowedToolsVariant1(), typeInfo);
             }
             else if (value.IsMcpServerToolAllowedTools1)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.McpServerToolAllowedTools1), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.McpServerToolAllowedTools1?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.McpServerToolAllowedTools1).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.McpServerToolAllowedTools1!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickMcpServerToolAllowedTools1(), typeInfo);
             }
             else if (value.IsMcpServerToolAllowedToolsVariant3)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(object), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<object?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(object).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.McpServerToolAllowedToolsVariant3!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickMcpServerToolAllowedToolsVariant3(), typeInfo);
             }
             else if (value.IsMcpServerToolAllowedToolsVariant4)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(object), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<object?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(object).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.McpServerToolAllowedToolsVariant4!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickMcpServerToolAllowedToolsVariant4(), typeInfo);
             }
         }
     }

@@ -1,4 +1,4 @@
-﻿//HintName: G.Models.ExtractDynamicVariablesNode.g.cs
+//HintName: G.Models.ExtractDynamicVariablesNode.g.cs
 #pragma warning disable CS0618 // Type or member is obsolete
 
 #nullable enable
@@ -43,8 +43,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.NodeBase PickBase() => IsBase
-            ? Base!.Value
+        public global::G.NodeBase PickBase() => Base is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Base' but the value was {ToString()}.");
 
         /// <summary>
@@ -80,8 +80,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.ExtractDynamicVariablesNodeVariant2 PickExtractDynamicVariablesNodeVariant2() => IsExtractDynamicVariablesNodeVariant2
-            ? ExtractDynamicVariablesNodeVariant2!
+        public global::G.ExtractDynamicVariablesNodeVariant2 PickExtractDynamicVariablesNodeVariant2() => ExtractDynamicVariablesNodeVariant2 is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'ExtractDynamicVariablesNodeVariant2' but the value was {ToString()}.");
         /// <summary>
         /// 
@@ -178,13 +178,13 @@ namespace G
                 Validate();
             }
 
-            if (IsBase && @base != null)
+            if (Base is { } __value0 && @base != null)
             {
-                return @base(Base!);
+                return @base(__value0);
             }
-            else if (IsExtractDynamicVariablesNodeVariant2 && extractDynamicVariablesNodeVariant2 != null)
+            else if (ExtractDynamicVariablesNodeVariant2 is { } __value1 && extractDynamicVariablesNodeVariant2 != null)
             {
-                return extractDynamicVariablesNodeVariant2(ExtractDynamicVariablesNodeVariant2!);
+                return extractDynamicVariablesNodeVariant2(__value1);
             }
 
             return default(TResult);
@@ -204,13 +204,13 @@ namespace G
                 Validate();
             }
 
-            if (IsBase)
+            if (Base is { } __value0)
             {
-                @base?.Invoke(Base!);
+                @base?.Invoke(__value0);
             }
-            else if (IsExtractDynamicVariablesNodeVariant2)
+            else if (ExtractDynamicVariablesNodeVariant2 is { } __value1)
             {
-                extractDynamicVariablesNodeVariant2?.Invoke(ExtractDynamicVariablesNodeVariant2!);
+                extractDynamicVariablesNodeVariant2?.Invoke(__value1);
             }
         }
 
@@ -227,13 +227,13 @@ namespace G
                 Validate();
             }
 
-            if (IsBase)
+            if (Base is { } __value0)
             {
-                @base?.Invoke(Base!);
+                @base?.Invoke(__value0);
             }
-            else if (IsExtractDynamicVariablesNodeVariant2)
+            else if (ExtractDynamicVariablesNodeVariant2 is { } __value1)
             {
-                extractDynamicVariablesNodeVariant2?.Invoke(ExtractDynamicVariablesNodeVariant2!);
+                extractDynamicVariablesNodeVariant2?.Invoke(__value1);
             }
         }
 

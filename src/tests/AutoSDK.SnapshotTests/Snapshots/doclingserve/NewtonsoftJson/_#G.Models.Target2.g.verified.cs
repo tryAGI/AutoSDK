@@ -1,4 +1,4 @@
-﻿//HintName: G.Models.Target2.g.cs
+//HintName: G.Models.Target2.g.cs
 #pragma warning disable CS0618 // Type or member is obsolete
 
 #nullable enable
@@ -49,8 +49,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.InBodyTarget PickInbody() => IsInbody
-            ? Inbody!
+        public global::G.InBodyTarget PickInbody() => Inbody is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Inbody' but the value was {ToString()}.");
 
         /// <summary>
@@ -86,8 +86,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.ZipTarget PickZip() => IsZip
-            ? Zip!
+        public global::G.ZipTarget PickZip() => Zip is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Zip' but the value was {ToString()}.");
 
         /// <summary>
@@ -123,8 +123,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.S3Target PickS3() => IsS3
-            ? S3!
+        public global::G.S3Target PickS3() => S3 is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'S3' but the value was {ToString()}.");
 
         /// <summary>
@@ -160,8 +160,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.PutTarget PickPut() => IsPut
-            ? Put!
+        public global::G.PutTarget PickPut() => Put is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Put' but the value was {ToString()}.");
         /// <summary>
         /// 
@@ -317,21 +317,21 @@ namespace G
                 Validate();
             }
 
-            if (IsInbody && inbody != null)
+            if (Inbody is { } __value0 && inbody != null)
             {
-                return inbody(Inbody!);
+                return inbody(__value0);
             }
-            else if (IsZip && zip != null)
+            else if (Zip is { } __value1 && zip != null)
             {
-                return zip(Zip!);
+                return zip(__value1);
             }
-            else if (IsS3 && s3 != null)
+            else if (S3 is { } __value2 && s3 != null)
             {
-                return s3(S3!);
+                return s3(__value2);
             }
-            else if (IsPut && put != null)
+            else if (Put is { } __value3 && put != null)
             {
-                return put(Put!);
+                return put(__value3);
             }
 
             return default(TResult);
@@ -355,21 +355,21 @@ namespace G
                 Validate();
             }
 
-            if (IsInbody)
+            if (Inbody is { } __value0)
             {
-                inbody?.Invoke(Inbody!);
+                inbody?.Invoke(__value0);
             }
-            else if (IsZip)
+            else if (Zip is { } __value1)
             {
-                zip?.Invoke(Zip!);
+                zip?.Invoke(__value1);
             }
-            else if (IsS3)
+            else if (S3 is { } __value2)
             {
-                s3?.Invoke(S3!);
+                s3?.Invoke(__value2);
             }
-            else if (IsPut)
+            else if (Put is { } __value3)
             {
-                put?.Invoke(Put!);
+                put?.Invoke(__value3);
             }
         }
 
@@ -388,21 +388,21 @@ namespace G
                 Validate();
             }
 
-            if (IsInbody)
+            if (Inbody is { } __value0)
             {
-                inbody?.Invoke(Inbody!);
+                inbody?.Invoke(__value0);
             }
-            else if (IsZip)
+            else if (Zip is { } __value1)
             {
-                zip?.Invoke(Zip!);
+                zip?.Invoke(__value1);
             }
-            else if (IsS3)
+            else if (S3 is { } __value2)
             {
-                s3?.Invoke(S3!);
+                s3?.Invoke(__value2);
             }
-            else if (IsPut)
+            else if (Put is { } __value3)
             {
-                put?.Invoke(Put!);
+                put?.Invoke(__value3);
             }
         }
 

@@ -1,4 +1,4 @@
-﻿//HintName: G.Models.ChartsItem2.g.cs
+//HintName: G.Models.ChartsItem2.g.cs
 #pragma warning disable CS0618 // Type or member is obsolete
 
 #nullable enable
@@ -48,8 +48,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.DashboardCallSuccessChartModel PickCallSuccess() => IsCallSuccess
-            ? CallSuccess!
+        public global::G.DashboardCallSuccessChartModel PickCallSuccess() => CallSuccess is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'CallSuccess' but the value was {ToString()}.");
 
         /// <summary>
@@ -85,8 +85,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.DashboardCriteriaChartModel PickCriteria() => IsCriteria
-            ? Criteria!
+        public global::G.DashboardCriteriaChartModel PickCriteria() => Criteria is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Criteria' but the value was {ToString()}.");
 
         /// <summary>
@@ -122,8 +122,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.DashboardDataCollectionChartModel PickDataCollection() => IsDataCollection
-            ? DataCollection!
+        public global::G.DashboardDataCollectionChartModel PickDataCollection() => DataCollection is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'DataCollection' but the value was {ToString()}.");
         /// <summary>
         /// 
@@ -251,17 +251,17 @@ namespace G
                 Validate();
             }
 
-            if (IsCallSuccess && callSuccess != null)
+            if (CallSuccess is { } __value0 && callSuccess != null)
             {
-                return callSuccess(CallSuccess!);
+                return callSuccess(__value0);
             }
-            else if (IsCriteria && criteria != null)
+            else if (Criteria is { } __value1 && criteria != null)
             {
-                return criteria(Criteria!);
+                return criteria(__value1);
             }
-            else if (IsDataCollection && dataCollection != null)
+            else if (DataCollection is { } __value2 && dataCollection != null)
             {
-                return dataCollection(DataCollection!);
+                return dataCollection(__value2);
             }
 
             return default(TResult);
@@ -283,17 +283,17 @@ namespace G
                 Validate();
             }
 
-            if (IsCallSuccess)
+            if (CallSuccess is { } __value0)
             {
-                callSuccess?.Invoke(CallSuccess!);
+                callSuccess?.Invoke(__value0);
             }
-            else if (IsCriteria)
+            else if (Criteria is { } __value1)
             {
-                criteria?.Invoke(Criteria!);
+                criteria?.Invoke(__value1);
             }
-            else if (IsDataCollection)
+            else if (DataCollection is { } __value2)
             {
-                dataCollection?.Invoke(DataCollection!);
+                dataCollection?.Invoke(__value2);
             }
         }
 
@@ -311,17 +311,17 @@ namespace G
                 Validate();
             }
 
-            if (IsCallSuccess)
+            if (CallSuccess is { } __value0)
             {
-                callSuccess?.Invoke(CallSuccess!);
+                callSuccess?.Invoke(__value0);
             }
-            else if (IsCriteria)
+            else if (Criteria is { } __value1)
             {
-                criteria?.Invoke(Criteria!);
+                criteria?.Invoke(__value1);
             }
-            else if (IsDataCollection)
+            else if (DataCollection is { } __value2)
             {
-                dataCollection?.Invoke(DataCollection!);
+                dataCollection?.Invoke(__value2);
             }
         }
 

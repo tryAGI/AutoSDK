@@ -1,4 +1,4 @@
-﻿//HintName: G.JsonConverters.AgentsTextToSpeechProviders.g.cs
+//HintName: G.JsonConverters.AgentsTextToSpeechProviders.g.cs
 #nullable enable
 #pragma warning disable CS0618 // Type or member is obsolete
 
@@ -197,19 +197,19 @@ namespace G.JsonConverters
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.AgentsTextToSpeechProvidersMicrosoft), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.AgentsTextToSpeechProvidersMicrosoft?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.AgentsTextToSpeechProvidersMicrosoft).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Microsoft!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickMicrosoft(), typeInfo);
             }
             else if (value.IsElevenLabs)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.AgentsTextToSpeechProvidersElevenLabs), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.AgentsTextToSpeechProvidersElevenLabs?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.AgentsTextToSpeechProvidersElevenLabs).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.ElevenLabs!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickElevenLabs(), typeInfo);
             }
             else if (value.IsOpenAI)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.AgentsTextToSpeechProvidersOpenAI), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.AgentsTextToSpeechProvidersOpenAI?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.AgentsTextToSpeechProvidersOpenAI).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.OpenAI!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickOpenAI(), typeInfo);
             }
         }
     }

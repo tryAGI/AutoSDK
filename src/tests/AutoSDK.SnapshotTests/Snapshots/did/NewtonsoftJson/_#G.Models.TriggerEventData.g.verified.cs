@@ -1,4 +1,4 @@
-﻿//HintName: G.Models.TriggerEventData.g.cs
+//HintName: G.Models.TriggerEventData.g.cs
 #pragma warning disable CS0618 // Type or member is obsolete
 
 #nullable enable
@@ -43,8 +43,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.ChatEndEventData PickChatEnd() => IsChatEnd
-            ? ChatEnd!
+        public global::G.ChatEndEventData PickChatEnd() => ChatEnd is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'ChatEnd' but the value was {ToString()}.");
 
         /// <summary>
@@ -80,8 +80,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.TriggerEventDataVariant2 PickTriggerEventDataVariant2() => IsTriggerEventDataVariant2
-            ? TriggerEventDataVariant2!
+        public global::G.TriggerEventDataVariant2 PickTriggerEventDataVariant2() => TriggerEventDataVariant2 is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'TriggerEventDataVariant2' but the value was {ToString()}.");
         /// <summary>
         /// 
@@ -178,13 +178,13 @@ namespace G
                 Validate();
             }
 
-            if (IsChatEnd && chatEnd != null)
+            if (ChatEnd is { } __value0 && chatEnd != null)
             {
-                return chatEnd(ChatEnd!);
+                return chatEnd(__value0);
             }
-            else if (IsTriggerEventDataVariant2 && triggerEventDataVariant2 != null)
+            else if (TriggerEventDataVariant2 is { } __value1 && triggerEventDataVariant2 != null)
             {
-                return triggerEventDataVariant2(TriggerEventDataVariant2!);
+                return triggerEventDataVariant2(__value1);
             }
 
             return default(TResult);
@@ -204,13 +204,13 @@ namespace G
                 Validate();
             }
 
-            if (IsChatEnd)
+            if (ChatEnd is { } __value0)
             {
-                chatEnd?.Invoke(ChatEnd!);
+                chatEnd?.Invoke(__value0);
             }
-            else if (IsTriggerEventDataVariant2)
+            else if (TriggerEventDataVariant2 is { } __value1)
             {
-                triggerEventDataVariant2?.Invoke(TriggerEventDataVariant2!);
+                triggerEventDataVariant2?.Invoke(__value1);
             }
         }
 
@@ -227,13 +227,13 @@ namespace G
                 Validate();
             }
 
-            if (IsChatEnd)
+            if (ChatEnd is { } __value0)
             {
-                chatEnd?.Invoke(ChatEnd!);
+                chatEnd?.Invoke(__value0);
             }
-            else if (IsTriggerEventDataVariant2)
+            else if (TriggerEventDataVariant2 is { } __value1)
             {
-                triggerEventDataVariant2?.Invoke(TriggerEventDataVariant2!);
+                triggerEventDataVariant2?.Invoke(__value1);
             }
         }
 

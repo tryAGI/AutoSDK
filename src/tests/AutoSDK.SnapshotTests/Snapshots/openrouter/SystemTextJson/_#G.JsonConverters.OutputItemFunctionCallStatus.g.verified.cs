@@ -1,4 +1,4 @@
-﻿//HintName: G.JsonConverters.OutputItemFunctionCallStatus.g.cs
+//HintName: G.JsonConverters.OutputItemFunctionCallStatus.g.cs
 #nullable enable
 #pragma warning disable CS0618 // Type or member is obsolete
 
@@ -199,19 +199,19 @@ namespace G.JsonConverters
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.OutputItemFunctionCallStatus0), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.OutputItemFunctionCallStatus0> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.OutputItemFunctionCallStatus0).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.OutputItemFunctionCallStatus0!.Value, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickOutputItemFunctionCallStatus0(), typeInfo);
             }
             else if (value.IsOutputItemFunctionCallStatus1)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.OutputItemFunctionCallStatus1), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.OutputItemFunctionCallStatus1> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.OutputItemFunctionCallStatus1).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.OutputItemFunctionCallStatus1!.Value, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickOutputItemFunctionCallStatus1(), typeInfo);
             }
             else if (value.IsOutputItemFunctionCallStatus2)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.OutputItemFunctionCallStatus2), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.OutputItemFunctionCallStatus2> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.OutputItemFunctionCallStatus2).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.OutputItemFunctionCallStatus2!.Value, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickOutputItemFunctionCallStatus2(), typeInfo);
             }
         }
     }

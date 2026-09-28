@@ -1,4 +1,4 @@
-﻿//HintName: G.Models.ArtifactGrepTool.g.cs
+//HintName: G.Models.ArtifactGrepTool.g.cs
 #pragma warning disable CS0618 // Type or member is obsolete
 
 #nullable enable
@@ -43,8 +43,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.ToolBase PickBase() => IsBase
-            ? Base!
+        public global::G.ToolBase PickBase() => Base is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Base' but the value was {ToString()}.");
 
         /// <summary>
@@ -80,8 +80,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.ArtifactGrepToolVariant2 PickArtifactGrepToolVariant2() => IsArtifactGrepToolVariant2
-            ? ArtifactGrepToolVariant2!
+        public global::G.ArtifactGrepToolVariant2 PickArtifactGrepToolVariant2() => ArtifactGrepToolVariant2 is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'ArtifactGrepToolVariant2' but the value was {ToString()}.");
         /// <summary>
         /// 
@@ -178,13 +178,13 @@ namespace G
                 Validate();
             }
 
-            if (IsBase && @base != null)
+            if (Base is { } __value0 && @base != null)
             {
-                return @base(Base!);
+                return @base(__value0);
             }
-            else if (IsArtifactGrepToolVariant2 && artifactGrepToolVariant2 != null)
+            else if (ArtifactGrepToolVariant2 is { } __value1 && artifactGrepToolVariant2 != null)
             {
-                return artifactGrepToolVariant2(ArtifactGrepToolVariant2!);
+                return artifactGrepToolVariant2(__value1);
             }
 
             return default(TResult);
@@ -204,13 +204,13 @@ namespace G
                 Validate();
             }
 
-            if (IsBase)
+            if (Base is { } __value0)
             {
-                @base?.Invoke(Base!);
+                @base?.Invoke(__value0);
             }
-            else if (IsArtifactGrepToolVariant2)
+            else if (ArtifactGrepToolVariant2 is { } __value1)
             {
-                artifactGrepToolVariant2?.Invoke(ArtifactGrepToolVariant2!);
+                artifactGrepToolVariant2?.Invoke(__value1);
             }
         }
 
@@ -227,13 +227,13 @@ namespace G
                 Validate();
             }
 
-            if (IsBase)
+            if (Base is { } __value0)
             {
-                @base?.Invoke(Base!);
+                @base?.Invoke(__value0);
             }
-            else if (IsArtifactGrepToolVariant2)
+            else if (ArtifactGrepToolVariant2 is { } __value1)
             {
-                artifactGrepToolVariant2?.Invoke(ArtifactGrepToolVariant2!);
+                artifactGrepToolVariant2?.Invoke(__value1);
             }
         }
 

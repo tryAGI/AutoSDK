@@ -1,4 +1,4 @@
-﻿//HintName: G.JsonConverters.OutputFormat.g.cs
+//HintName: G.JsonConverters.OutputFormat.g.cs
 #nullable enable
 #pragma warning disable CS0618 // Type or member is obsolete
 
@@ -199,19 +199,19 @@ namespace G.JsonConverters
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.AllOf<global::G.OutputFormatRAWOutputFormat2, global::G.RawOutputFormat>), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.AllOf<global::G.OutputFormatRAWOutputFormat2, global::G.RawOutputFormat>> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.AllOf<global::G.OutputFormatRAWOutputFormat2, global::G.RawOutputFormat>).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.RAWOutputFormat!.Value, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickRAWOutputFormat(), typeInfo);
             }
             else if (value.IsWAVOutputFormat)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.AllOf<global::G.OutputFormatWAVOutputFormat2, global::G.WAVOutputFormat?>), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.AllOf<global::G.OutputFormatWAVOutputFormat2, global::G.WAVOutputFormat?>> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.AllOf<global::G.OutputFormatWAVOutputFormat2, global::G.WAVOutputFormat?>).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.WAVOutputFormat!.Value, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickWAVOutputFormat(), typeInfo);
             }
             else if (value.IsMP3OutputFormat)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.AllOf<global::G.OutputFormatMP3OutputFormat2, global::G.MP3OutputFormat>), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.AllOf<global::G.OutputFormatMP3OutputFormat2, global::G.MP3OutputFormat>> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.AllOf<global::G.OutputFormatMP3OutputFormat2, global::G.MP3OutputFormat>).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.MP3OutputFormat!.Value, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickMP3OutputFormat(), typeInfo);
             }
         }
     }

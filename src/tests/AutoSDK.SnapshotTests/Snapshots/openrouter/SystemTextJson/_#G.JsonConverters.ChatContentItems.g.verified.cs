@@ -1,4 +1,4 @@
-﻿//HintName: G.JsonConverters.ChatContentItems.g.cs
+//HintName: G.JsonConverters.ChatContentItems.g.cs
 #nullable enable
 #pragma warning disable CS0618 // Type or member is obsolete
 
@@ -263,31 +263,31 @@ namespace G.JsonConverters
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.ChatContentText), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.ChatContentText?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.ChatContentText).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.ChatContentText!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickChatContentText(), typeInfo);
             }
             else if (value.IsChatContentImage)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.ChatContentImage), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.ChatContentImage?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.ChatContentImage).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.ChatContentImage!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickChatContentImage(), typeInfo);
             }
             else if (value.IsChatContentAudio)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.ChatContentAudio), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.ChatContentAudio?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.ChatContentAudio).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.ChatContentAudio!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickChatContentAudio(), typeInfo);
             }
             else if (value.IsChatContentItems3)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.ChatContentItems3), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.ChatContentItems3> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.ChatContentItems3).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.ChatContentItems3!.Value, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickChatContentItems3(), typeInfo);
             }
             else if (value.IsChatContentFile)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.ChatContentFile), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.ChatContentFile?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.ChatContentFile).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.ChatContentFile!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickChatContentFile(), typeInfo);
             }
         }
     }

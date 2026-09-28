@@ -1,4 +1,4 @@
-﻿//HintName: G.Models.GenerateStreamError.g.cs
+//HintName: G.Models.GenerateStreamError.g.cs
 #pragma warning disable CS0618 // Type or member is obsolete
 
 #nullable enable
@@ -43,8 +43,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.GenerateStreamEvent PickEvent() => IsEvent
-            ? Event!
+        public global::G.GenerateStreamEvent PickEvent() => Event is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Event' but the value was {ToString()}.");
 
         /// <summary>
@@ -80,8 +80,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.GenerateStreamError49d5xw PickError49d5xw() => IsError49d5xw
-            ? Error49d5xw!
+        public global::G.GenerateStreamError49d5xw PickError49d5xw() => Error49d5xw is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Error49d5xw' but the value was {ToString()}.");
         /// <summary>
         /// 
@@ -178,13 +178,13 @@ namespace G
                 Validate();
             }
 
-            if (IsEvent && @event != null)
+            if (Event is { } __value0 && @event != null)
             {
-                return @event(Event!);
+                return @event(__value0);
             }
-            else if (IsError49d5xw && error49d5xw != null)
+            else if (Error49d5xw is { } __value1 && error49d5xw != null)
             {
-                return error49d5xw(Error49d5xw!);
+                return error49d5xw(__value1);
             }
 
             return default(TResult);
@@ -204,13 +204,13 @@ namespace G
                 Validate();
             }
 
-            if (IsEvent)
+            if (Event is { } __value0)
             {
-                @event?.Invoke(Event!);
+                @event?.Invoke(__value0);
             }
-            else if (IsError49d5xw)
+            else if (Error49d5xw is { } __value1)
             {
-                error49d5xw?.Invoke(Error49d5xw!);
+                error49d5xw?.Invoke(__value1);
             }
         }
 
@@ -227,13 +227,13 @@ namespace G
                 Validate();
             }
 
-            if (IsEvent)
+            if (Event is { } __value0)
             {
-                @event?.Invoke(Event!);
+                @event?.Invoke(__value0);
             }
-            else if (IsError49d5xw)
+            else if (Error49d5xw is { } __value1)
             {
-                error49d5xw?.Invoke(Error49d5xw!);
+                error49d5xw?.Invoke(__value1);
             }
         }
 

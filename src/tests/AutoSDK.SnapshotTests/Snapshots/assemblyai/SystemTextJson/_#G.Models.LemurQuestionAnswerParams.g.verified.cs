@@ -1,4 +1,4 @@
-﻿//HintName: G.Models.LemurQuestionAnswerParams.g.cs
+//HintName: G.Models.LemurQuestionAnswerParams.g.cs
 #pragma warning disable CS0618 // Type or member is obsolete
 
 #nullable enable
@@ -45,8 +45,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.LemurBaseParams PickBase() => IsBase
-            ? Base!
+        public global::G.LemurBaseParams PickBase() => Base is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Base' but the value was {ToString()}.");
 
         /// <summary>
@@ -82,8 +82,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.LemurQuestionAnswerParamsVariant2 PickLemurQuestionAnswerParamsVariant2() => IsLemurQuestionAnswerParamsVariant2
-            ? LemurQuestionAnswerParamsVariant2!
+        public global::G.LemurQuestionAnswerParamsVariant2 PickLemurQuestionAnswerParamsVariant2() => LemurQuestionAnswerParamsVariant2 is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'LemurQuestionAnswerParamsVariant2' but the value was {ToString()}.");
         /// <summary>
         /// 
@@ -180,13 +180,13 @@ namespace G
                 Validate();
             }
 
-            if (IsBase && @base != null)
+            if (Base is { } __value0 && @base != null)
             {
-                return @base(Base!);
+                return @base(__value0);
             }
-            else if (IsLemurQuestionAnswerParamsVariant2 && lemurQuestionAnswerParamsVariant2 != null)
+            else if (LemurQuestionAnswerParamsVariant2 is { } __value1 && lemurQuestionAnswerParamsVariant2 != null)
             {
-                return lemurQuestionAnswerParamsVariant2(LemurQuestionAnswerParamsVariant2!);
+                return lemurQuestionAnswerParamsVariant2(__value1);
             }
 
             return default(TResult);
@@ -206,13 +206,13 @@ namespace G
                 Validate();
             }
 
-            if (IsBase)
+            if (Base is { } __value0)
             {
-                @base?.Invoke(Base!);
+                @base?.Invoke(__value0);
             }
-            else if (IsLemurQuestionAnswerParamsVariant2)
+            else if (LemurQuestionAnswerParamsVariant2 is { } __value1)
             {
-                lemurQuestionAnswerParamsVariant2?.Invoke(LemurQuestionAnswerParamsVariant2!);
+                lemurQuestionAnswerParamsVariant2?.Invoke(__value1);
             }
         }
 
@@ -229,13 +229,13 @@ namespace G
                 Validate();
             }
 
-            if (IsBase)
+            if (Base is { } __value0)
             {
-                @base?.Invoke(Base!);
+                @base?.Invoke(__value0);
             }
-            else if (IsLemurQuestionAnswerParamsVariant2)
+            else if (LemurQuestionAnswerParamsVariant2 is { } __value1)
             {
-                lemurQuestionAnswerParamsVariant2?.Invoke(LemurQuestionAnswerParamsVariant2!);
+                lemurQuestionAnswerParamsVariant2?.Invoke(__value1);
             }
         }
 

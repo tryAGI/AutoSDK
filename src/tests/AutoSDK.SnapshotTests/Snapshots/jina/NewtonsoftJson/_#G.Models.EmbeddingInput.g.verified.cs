@@ -1,4 +1,4 @@
-﻿//HintName: G.Models.EmbeddingInput.g.cs
+//HintName: G.Models.EmbeddingInput.g.cs
 #pragma warning disable CS0618 // Type or member is obsolete
 
 #nullable enable
@@ -44,8 +44,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.TextEmbeddingInput PickTextEmbeddingInput() => IsTextEmbeddingInput
-            ? TextEmbeddingInput!
+        public global::G.TextEmbeddingInput PickTextEmbeddingInput() => TextEmbeddingInput is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'TextEmbeddingInput' but the value was {ToString()}.");
 
         /// <summary>
@@ -82,8 +82,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.ImageEmbeddingInput PickImageEmbeddingInput() => IsImageEmbeddingInput
-            ? ImageEmbeddingInput!
+        public global::G.ImageEmbeddingInput PickImageEmbeddingInput() => ImageEmbeddingInput is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'ImageEmbeddingInput' but the value was {ToString()}.");
 
         /// <summary>
@@ -120,8 +120,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.MixedEmbeddingInput PickMixedEmbeddingInput() => IsMixedEmbeddingInput
-            ? MixedEmbeddingInput!
+        public global::G.MixedEmbeddingInput PickMixedEmbeddingInput() => MixedEmbeddingInput is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'MixedEmbeddingInput' but the value was {ToString()}.");
         /// <summary>
         /// 
@@ -246,17 +246,17 @@ namespace G
                 Validate();
             }
 
-            if (IsTextEmbeddingInput && textEmbeddingInput != null)
+            if (TextEmbeddingInput is { } __value0 && textEmbeddingInput != null)
             {
-                return textEmbeddingInput(TextEmbeddingInput!);
+                return textEmbeddingInput(__value0);
             }
-            else if (IsImageEmbeddingInput && imageEmbeddingInput != null)
+            else if (ImageEmbeddingInput is { } __value1 && imageEmbeddingInput != null)
             {
-                return imageEmbeddingInput(ImageEmbeddingInput!);
+                return imageEmbeddingInput(__value1);
             }
-            else if (IsMixedEmbeddingInput && mixedEmbeddingInput != null)
+            else if (MixedEmbeddingInput is { } __value2 && mixedEmbeddingInput != null)
             {
-                return mixedEmbeddingInput(MixedEmbeddingInput!);
+                return mixedEmbeddingInput(__value2);
             }
 
             return default(TResult);
@@ -278,17 +278,17 @@ namespace G
                 Validate();
             }
 
-            if (IsTextEmbeddingInput)
+            if (TextEmbeddingInput is { } __value0)
             {
-                textEmbeddingInput?.Invoke(TextEmbeddingInput!);
+                textEmbeddingInput?.Invoke(__value0);
             }
-            else if (IsImageEmbeddingInput)
+            else if (ImageEmbeddingInput is { } __value1)
             {
-                imageEmbeddingInput?.Invoke(ImageEmbeddingInput!);
+                imageEmbeddingInput?.Invoke(__value1);
             }
-            else if (IsMixedEmbeddingInput)
+            else if (MixedEmbeddingInput is { } __value2)
             {
-                mixedEmbeddingInput?.Invoke(MixedEmbeddingInput!);
+                mixedEmbeddingInput?.Invoke(__value2);
             }
         }
 
@@ -306,17 +306,17 @@ namespace G
                 Validate();
             }
 
-            if (IsTextEmbeddingInput)
+            if (TextEmbeddingInput is { } __value0)
             {
-                textEmbeddingInput?.Invoke(TextEmbeddingInput!);
+                textEmbeddingInput?.Invoke(__value0);
             }
-            else if (IsImageEmbeddingInput)
+            else if (ImageEmbeddingInput is { } __value1)
             {
-                imageEmbeddingInput?.Invoke(ImageEmbeddingInput!);
+                imageEmbeddingInput?.Invoke(__value1);
             }
-            else if (IsMixedEmbeddingInput)
+            else if (MixedEmbeddingInput is { } __value2)
             {
-                mixedEmbeddingInput?.Invoke(MixedEmbeddingInput!);
+                mixedEmbeddingInput?.Invoke(__value2);
             }
         }
 

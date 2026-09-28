@@ -1,4 +1,4 @@
-﻿//HintName: G.JsonConverters.IngestionEvent.g.cs
+//HintName: G.JsonConverters.IngestionEvent.g.cs
 #nullable enable
 #pragma warning disable CS0618 // Type or member is obsolete
 
@@ -542,61 +542,61 @@ namespace G.JsonConverters
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.AllOf<global::G.IngestionEventVariant12, global::G.TraceEvent>), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.AllOf<global::G.IngestionEventVariant12, global::G.TraceEvent>> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.AllOf<global::G.IngestionEventVariant12, global::G.TraceEvent>).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.IngestionEventVariant1!.Value, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickIngestionEventVariant1(), typeInfo);
             }
             else if (value.IsIngestionEventVariant2)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.AllOf<global::G.IngestionEventVariant22, global::G.ScoreEvent>), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.AllOf<global::G.IngestionEventVariant22, global::G.ScoreEvent>> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.AllOf<global::G.IngestionEventVariant22, global::G.ScoreEvent>).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.IngestionEventVariant2!.Value, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickIngestionEventVariant2(), typeInfo);
             }
             else if (value.IsIngestionEventVariant3)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.AllOf<global::G.IngestionEventVariant32, global::G.CreateSpanEvent>), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.AllOf<global::G.IngestionEventVariant32, global::G.CreateSpanEvent>> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.AllOf<global::G.IngestionEventVariant32, global::G.CreateSpanEvent>).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.IngestionEventVariant3!.Value, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickIngestionEventVariant3(), typeInfo);
             }
             else if (value.IsIngestionEventVariant4)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.AllOf<global::G.IngestionEventVariant42, global::G.UpdateSpanEvent>), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.AllOf<global::G.IngestionEventVariant42, global::G.UpdateSpanEvent>> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.AllOf<global::G.IngestionEventVariant42, global::G.UpdateSpanEvent>).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.IngestionEventVariant4!.Value, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickIngestionEventVariant4(), typeInfo);
             }
             else if (value.IsIngestionEventVariant5)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.AllOf<global::G.IngestionEventVariant52, global::G.CreateGenerationEvent>), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.AllOf<global::G.IngestionEventVariant52, global::G.CreateGenerationEvent>> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.AllOf<global::G.IngestionEventVariant52, global::G.CreateGenerationEvent>).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.IngestionEventVariant5!.Value, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickIngestionEventVariant5(), typeInfo);
             }
             else if (value.IsIngestionEventVariant6)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.AllOf<global::G.IngestionEventVariant62, global::G.UpdateGenerationEvent>), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.AllOf<global::G.IngestionEventVariant62, global::G.UpdateGenerationEvent>> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.AllOf<global::G.IngestionEventVariant62, global::G.UpdateGenerationEvent>).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.IngestionEventVariant6!.Value, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickIngestionEventVariant6(), typeInfo);
             }
             else if (value.IsIngestionEventVariant7)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.AllOf<global::G.IngestionEventVariant72, global::G.CreateEventEvent>), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.AllOf<global::G.IngestionEventVariant72, global::G.CreateEventEvent>> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.AllOf<global::G.IngestionEventVariant72, global::G.CreateEventEvent>).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.IngestionEventVariant7!.Value, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickIngestionEventVariant7(), typeInfo);
             }
             else if (value.IsIngestionEventVariant8)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.AllOf<global::G.IngestionEventVariant82, global::G.SDKLogEvent>), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.AllOf<global::G.IngestionEventVariant82, global::G.SDKLogEvent>> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.AllOf<global::G.IngestionEventVariant82, global::G.SDKLogEvent>).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.IngestionEventVariant8!.Value, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickIngestionEventVariant8(), typeInfo);
             }
             else if (value.IsIngestionEventVariant9)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.AllOf<global::G.IngestionEventVariant92, global::G.CreateObservationEvent>), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.AllOf<global::G.IngestionEventVariant92, global::G.CreateObservationEvent>> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.AllOf<global::G.IngestionEventVariant92, global::G.CreateObservationEvent>).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.IngestionEventVariant9!.Value, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickIngestionEventVariant9(), typeInfo);
             }
             else if (value.IsIngestionEventVariant10)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.AllOf<global::G.IngestionEventVariant102, global::G.UpdateObservationEvent>), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.AllOf<global::G.IngestionEventVariant102, global::G.UpdateObservationEvent>> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.AllOf<global::G.IngestionEventVariant102, global::G.UpdateObservationEvent>).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.IngestionEventVariant10!.Value, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickIngestionEventVariant10(), typeInfo);
             }
         }
     }

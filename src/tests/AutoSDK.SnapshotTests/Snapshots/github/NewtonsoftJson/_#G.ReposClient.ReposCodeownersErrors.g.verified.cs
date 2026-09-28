@@ -1,4 +1,4 @@
-﻿//HintName: G.ReposClient.ReposCodeownersErrors.g.cs
+//HintName: G.ReposClient.ReposCodeownersErrors.g.cs
 
 #nullable enable
 
@@ -140,8 +140,8 @@ namespace G
                 PrepareReposCodeownersErrorsRequest(
                     httpClient: HttpClient,
                     httpRequestMessage: __httpRequest,
-                    owner: owner!,
-                    repo: repo!,
+                    owner: owner,
+                    repo: repo,
                     @ref: @ref);
 
                 return __httpRequest;
@@ -164,7 +164,7 @@ namespace G
                                 pathTemplate: "$\"/repos/{owner}/{repo}/codeowners/errors\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: null,
                                 exception: null,
                                 clientOptions: Options,
@@ -198,7 +198,7 @@ namespace G
                                 pathTemplate: "$\"/repos/{owner}/{repo}/codeowners/errors\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: null,
                                 exception: __exception,
                                 clientOptions: Options,
@@ -239,7 +239,7 @@ namespace G
                                 pathTemplate: "$\"/repos/{owner}/{repo}/codeowners/errors\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: __response,
                                 exception: null,
                                 clientOptions: Options,
@@ -287,7 +287,7 @@ namespace G
                                 pathTemplate: "$\"/repos/{owner}/{repo}/codeowners/errors\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: __response,
                                 exception: null,
                                 clientOptions: Options,
@@ -309,7 +309,7 @@ namespace G
                                 pathTemplate: "$\"/repos/{owner}/{repo}/codeowners/errors\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: __response,
                                 exception: null,
                                 clientOptions: Options,

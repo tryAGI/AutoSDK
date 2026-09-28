@@ -1,4 +1,4 @@
-﻿//HintName: G.Models.AgentOutputEvent.g.cs
+//HintName: G.Models.AgentOutputEvent.g.cs
 #pragma warning disable CS0618 // Type or member is obsolete
 
 #nullable enable
@@ -43,8 +43,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.AgentEventBase PickBase() => IsBase
-            ? Base!
+        public global::G.AgentEventBase PickBase() => Base is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Base' but the value was {ToString()}.");
 
         /// <summary>
@@ -80,8 +80,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.AgentOutputEventVariant2 PickAgentOutputEventVariant2() => IsAgentOutputEventVariant2
-            ? AgentOutputEventVariant2!
+        public global::G.AgentOutputEventVariant2 PickAgentOutputEventVariant2() => AgentOutputEventVariant2 is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'AgentOutputEventVariant2' but the value was {ToString()}.");
         /// <summary>
         /// 
@@ -178,13 +178,13 @@ namespace G
                 Validate();
             }
 
-            if (IsBase && @base != null)
+            if (Base is { } __value0 && @base != null)
             {
-                return @base(Base!);
+                return @base(__value0);
             }
-            else if (IsAgentOutputEventVariant2 && agentOutputEventVariant2 != null)
+            else if (AgentOutputEventVariant2 is { } __value1 && agentOutputEventVariant2 != null)
             {
-                return agentOutputEventVariant2(AgentOutputEventVariant2!);
+                return agentOutputEventVariant2(__value1);
             }
 
             return default(TResult);
@@ -204,13 +204,13 @@ namespace G
                 Validate();
             }
 
-            if (IsBase)
+            if (Base is { } __value0)
             {
-                @base?.Invoke(Base!);
+                @base?.Invoke(__value0);
             }
-            else if (IsAgentOutputEventVariant2)
+            else if (AgentOutputEventVariant2 is { } __value1)
             {
-                agentOutputEventVariant2?.Invoke(AgentOutputEventVariant2!);
+                agentOutputEventVariant2?.Invoke(__value1);
             }
         }
 
@@ -227,13 +227,13 @@ namespace G
                 Validate();
             }
 
-            if (IsBase)
+            if (Base is { } __value0)
             {
-                @base?.Invoke(Base!);
+                @base?.Invoke(__value0);
             }
-            else if (IsAgentOutputEventVariant2)
+            else if (AgentOutputEventVariant2 is { } __value1)
             {
-                agentOutputEventVariant2?.Invoke(AgentOutputEventVariant2!);
+                agentOutputEventVariant2?.Invoke(__value1);
             }
         }
 

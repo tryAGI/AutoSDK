@@ -1,4 +1,4 @@
-﻿//HintName: G.Models.ResultErrorOverTimeArrayString.g.cs
+//HintName: G.Models.ResultErrorOverTimeArrayString.g.cs
 #pragma warning disable CS0618 // Type or member is obsolete
 
 #nullable enable
@@ -43,8 +43,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.ResultSuccessErrorOverTimeArray PickSuccess() => IsSuccess
-            ? Success!
+        public global::G.ResultSuccessErrorOverTimeArray PickSuccess() => Success is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Success' but the value was {ToString()}.");
 
         /// <summary>
@@ -80,8 +80,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.ResultErrorString PickResultErrorString() => IsResultErrorString
-            ? ResultErrorString!
+        public global::G.ResultErrorString PickResultErrorString() => ResultErrorString is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'ResultErrorString' but the value was {ToString()}.");
         /// <summary>
         /// 
@@ -178,13 +178,13 @@ namespace G
                 Validate();
             }
 
-            if (IsSuccess && success != null)
+            if (Success is { } __value0 && success != null)
             {
-                return success(Success!);
+                return success(__value0);
             }
-            else if (IsResultErrorString && resultErrorString != null)
+            else if (ResultErrorString is { } __value1 && resultErrorString != null)
             {
-                return resultErrorString(ResultErrorString!);
+                return resultErrorString(__value1);
             }
 
             return default(TResult);
@@ -204,13 +204,13 @@ namespace G
                 Validate();
             }
 
-            if (IsSuccess)
+            if (Success is { } __value0)
             {
-                success?.Invoke(Success!);
+                success?.Invoke(__value0);
             }
-            else if (IsResultErrorString)
+            else if (ResultErrorString is { } __value1)
             {
-                resultErrorString?.Invoke(ResultErrorString!);
+                resultErrorString?.Invoke(__value1);
             }
         }
 
@@ -227,13 +227,13 @@ namespace G
                 Validate();
             }
 
-            if (IsSuccess)
+            if (Success is { } __value0)
             {
-                success?.Invoke(Success!);
+                success?.Invoke(__value0);
             }
-            else if (IsResultErrorString)
+            else if (ResultErrorString is { } __value1)
             {
-                resultErrorString?.Invoke(ResultErrorString!);
+                resultErrorString?.Invoke(__value1);
             }
         }
 

@@ -1,4 +1,4 @@
-﻿//HintName: G.Models.ResponseAnnotation.g.cs
+//HintName: G.Models.ResponseAnnotation.g.cs
 #pragma warning disable CS0618 // Type or member is obsolete
 
 #nullable enable
@@ -48,8 +48,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.ResponseFileCitation PickFileCitation() => IsFileCitation
-            ? FileCitation!
+        public global::G.ResponseFileCitation PickFileCitation() => FileCitation is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'FileCitation' but the value was {ToString()}.");
 
         /// <summary>
@@ -85,8 +85,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.ResponseUrlCitation PickUrlCitation() => IsUrlCitation
-            ? UrlCitation!
+        public global::G.ResponseUrlCitation PickUrlCitation() => UrlCitation is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'UrlCitation' but the value was {ToString()}.");
         /// <summary>
         /// 
@@ -186,13 +186,13 @@ namespace G
                 Validate();
             }
 
-            if (IsFileCitation && fileCitation != null)
+            if (FileCitation is { } __value0 && fileCitation != null)
             {
-                return fileCitation(FileCitation!);
+                return fileCitation(__value0);
             }
-            else if (IsUrlCitation && urlCitation != null)
+            else if (UrlCitation is { } __value1 && urlCitation != null)
             {
-                return urlCitation(UrlCitation!);
+                return urlCitation(__value1);
             }
 
             return default(TResult);
@@ -212,13 +212,13 @@ namespace G
                 Validate();
             }
 
-            if (IsFileCitation)
+            if (FileCitation is { } __value0)
             {
-                fileCitation?.Invoke(FileCitation!);
+                fileCitation?.Invoke(__value0);
             }
-            else if (IsUrlCitation)
+            else if (UrlCitation is { } __value1)
             {
-                urlCitation?.Invoke(UrlCitation!);
+                urlCitation?.Invoke(__value1);
             }
         }
 
@@ -235,13 +235,13 @@ namespace G
                 Validate();
             }
 
-            if (IsFileCitation)
+            if (FileCitation is { } __value0)
             {
-                fileCitation?.Invoke(FileCitation!);
+                fileCitation?.Invoke(__value0);
             }
-            else if (IsUrlCitation)
+            else if (UrlCitation is { } __value1)
             {
-                urlCitation?.Invoke(UrlCitation!);
+                urlCitation?.Invoke(__value1);
             }
         }
 

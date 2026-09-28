@@ -1,4 +1,4 @@
-﻿//HintName: G.Models.WithVector.g.cs
+//HintName: G.Models.WithVector.g.cs
 #pragma warning disable CS0618 // Type or member is obsolete
 
 #nullable enable
@@ -43,8 +43,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public bool PickWithVectorVariant1() => IsWithVectorVariant1
-            ? WithVectorVariant1!.Value
+        public bool PickWithVectorVariant1() => WithVectorVariant1 is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'WithVectorVariant1' but the value was {ToString()}.");
 
         /// <summary>
@@ -80,8 +80,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<string> PickWithVectorVariant2() => IsWithVectorVariant2
-            ? WithVectorVariant2!
+        public global::System.Collections.Generic.IList<string> PickWithVectorVariant2() => WithVectorVariant2 is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'WithVectorVariant2' but the value was {ToString()}.");
         /// <summary>
         /// 
@@ -155,13 +155,13 @@ namespace G
                 Validate();
             }
 
-            if (IsWithVectorVariant1 && withVectorVariant1 != null)
+            if (WithVectorVariant1 is { } __value0 && withVectorVariant1 != null)
             {
-                return withVectorVariant1(WithVectorVariant1!);
+                return withVectorVariant1(__value0);
             }
-            else if (IsWithVectorVariant2 && withVectorVariant2 != null)
+            else if (WithVectorVariant2 is { } __value1 && withVectorVariant2 != null)
             {
-                return withVectorVariant2(WithVectorVariant2!);
+                return withVectorVariant2(__value1);
             }
 
             return default(TResult);
@@ -181,13 +181,13 @@ namespace G
                 Validate();
             }
 
-            if (IsWithVectorVariant1)
+            if (WithVectorVariant1 is { } __value0)
             {
-                withVectorVariant1?.Invoke(WithVectorVariant1!);
+                withVectorVariant1?.Invoke(__value0);
             }
-            else if (IsWithVectorVariant2)
+            else if (WithVectorVariant2 is { } __value1)
             {
-                withVectorVariant2?.Invoke(WithVectorVariant2!);
+                withVectorVariant2?.Invoke(__value1);
             }
         }
 
@@ -204,13 +204,13 @@ namespace G
                 Validate();
             }
 
-            if (IsWithVectorVariant1)
+            if (WithVectorVariant1 is { } __value0)
             {
-                withVectorVariant1?.Invoke(WithVectorVariant1!);
+                withVectorVariant1?.Invoke(__value0);
             }
-            else if (IsWithVectorVariant2)
+            else if (WithVectorVariant2 is { } __value1)
             {
-                withVectorVariant2?.Invoke(WithVectorVariant2!);
+                withVectorVariant2?.Invoke(__value1);
             }
         }
 

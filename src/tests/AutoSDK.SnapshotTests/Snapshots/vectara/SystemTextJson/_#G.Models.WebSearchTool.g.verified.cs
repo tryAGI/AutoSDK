@@ -1,4 +1,4 @@
-﻿//HintName: G.Models.WebSearchTool.g.cs
+//HintName: G.Models.WebSearchTool.g.cs
 #pragma warning disable CS0618 // Type or member is obsolete
 
 #nullable enable
@@ -43,8 +43,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.ToolBase PickBase() => IsBase
-            ? Base!
+        public global::G.ToolBase PickBase() => Base is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Base' but the value was {ToString()}.");
 
         /// <summary>
@@ -80,8 +80,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.WebSearchToolVariant2 PickWebSearchToolVariant2() => IsWebSearchToolVariant2
-            ? WebSearchToolVariant2!
+        public global::G.WebSearchToolVariant2 PickWebSearchToolVariant2() => WebSearchToolVariant2 is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'WebSearchToolVariant2' but the value was {ToString()}.");
         /// <summary>
         /// 
@@ -178,13 +178,13 @@ namespace G
                 Validate();
             }
 
-            if (IsBase && @base != null)
+            if (Base is { } __value0 && @base != null)
             {
-                return @base(Base!);
+                return @base(__value0);
             }
-            else if (IsWebSearchToolVariant2 && webSearchToolVariant2 != null)
+            else if (WebSearchToolVariant2 is { } __value1 && webSearchToolVariant2 != null)
             {
-                return webSearchToolVariant2(WebSearchToolVariant2!);
+                return webSearchToolVariant2(__value1);
             }
 
             return default(TResult);
@@ -204,13 +204,13 @@ namespace G
                 Validate();
             }
 
-            if (IsBase)
+            if (Base is { } __value0)
             {
-                @base?.Invoke(Base!);
+                @base?.Invoke(__value0);
             }
-            else if (IsWebSearchToolVariant2)
+            else if (WebSearchToolVariant2 is { } __value1)
             {
-                webSearchToolVariant2?.Invoke(WebSearchToolVariant2!);
+                webSearchToolVariant2?.Invoke(__value1);
             }
         }
 
@@ -227,13 +227,13 @@ namespace G
                 Validate();
             }
 
-            if (IsBase)
+            if (Base is { } __value0)
             {
-                @base?.Invoke(Base!);
+                @base?.Invoke(__value0);
             }
-            else if (IsWebSearchToolVariant2)
+            else if (WebSearchToolVariant2 is { } __value1)
             {
-                webSearchToolVariant2?.Invoke(WebSearchToolVariant2!);
+                webSearchToolVariant2?.Invoke(__value1);
             }
         }
 

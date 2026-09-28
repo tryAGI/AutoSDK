@@ -1,4 +1,4 @@
-﻿//HintName: G.JsonConverters.ChatFunctionTool.g.cs
+//HintName: G.JsonConverters.ChatFunctionTool.g.cs
 #nullable enable
 #pragma warning disable CS0618 // Type or member is obsolete
 
@@ -250,25 +250,25 @@ namespace G.JsonConverters
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.ChatFunctionTool0), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.ChatFunctionTool0?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.ChatFunctionTool0).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.ChatFunctionTool0!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickChatFunctionTool0(), typeInfo);
             }
             else if (value.IsDatetimeServerTool)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.DatetimeServerTool), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.DatetimeServerTool?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.DatetimeServerTool).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.DatetimeServerTool!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickDatetimeServerTool(), typeInfo);
             }
             else if (value.IsChatWebSearchServerTool)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.ChatWebSearchServerTool), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.ChatWebSearchServerTool?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.ChatWebSearchServerTool).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.ChatWebSearchServerTool!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickChatWebSearchServerTool(), typeInfo);
             }
             else if (value.IsChatWebSearchShorthand)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.ChatWebSearchShorthand), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.ChatWebSearchShorthand?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.ChatWebSearchShorthand).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.ChatWebSearchShorthand!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickChatWebSearchShorthand(), typeInfo);
             }
         }
     }

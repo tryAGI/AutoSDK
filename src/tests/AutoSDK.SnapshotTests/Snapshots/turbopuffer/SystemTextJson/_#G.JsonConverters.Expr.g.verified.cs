@@ -1,4 +1,4 @@
-﻿//HintName: G.JsonConverters.Expr.g.cs
+//HintName: G.JsonConverters.Expr.g.cs
 #nullable enable
 #pragma warning disable CS0618 // Type or member is obsolete
 
@@ -91,7 +91,7 @@ namespace G.JsonConverters
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.ExprRefNew), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.ExprRefNew?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.ExprRefNew).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.RefNew!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickRefNew(), typeInfo);
             }
         }
     }

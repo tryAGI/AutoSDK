@@ -71,7 +71,7 @@ namespace G.JsonConverters
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.ValueFilter), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.ValueFilter> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.ValueFilter).Name}");
-                var __element0 = global::System.Text.Json.JsonSerializer.SerializeToElement(value.Value!.Value, typeInfo);
+                var __element0 = global::System.Text.Json.JsonSerializer.SerializeToElement(value.PickValue(), typeInfo);
                 if (__element0.ValueKind != global::System.Text.Json.JsonValueKind.Object)
                 {
                     throw new global::System.Text.Json.JsonException("AllOf values must serialize as JSON objects.");
@@ -89,7 +89,7 @@ namespace G.JsonConverters
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.CustomFieldFilterVariant2), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.CustomFieldFilterVariant2?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.CustomFieldFilterVariant2).Name}");
-                var __element1 = global::System.Text.Json.JsonSerializer.SerializeToElement(value.CustomFieldFilterVariant2!, typeInfo);
+                var __element1 = global::System.Text.Json.JsonSerializer.SerializeToElement(value.PickCustomFieldFilterVariant2(), typeInfo);
                 if (__element1.ValueKind != global::System.Text.Json.JsonValueKind.Object)
                 {
                     throw new global::System.Text.Json.JsonException("AllOf values must serialize as JSON objects.");

@@ -1,4 +1,4 @@
-﻿//HintName: G.Models.PromptBlockDataNullish.g.cs
+//HintName: G.Models.PromptBlockDataNullish.g.cs
 #pragma warning disable CS0618 // Type or member is obsolete
 
 #nullable enable
@@ -43,8 +43,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.PromptBlockDataNullishChat PickChat() => IsChat
-            ? Chat!
+        public global::G.PromptBlockDataNullishChat PickChat() => Chat is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Chat' but the value was {ToString()}.");
 
         /// <summary>
@@ -80,8 +80,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.PromptBlockDataNullishCompletion PickCompletion() => IsCompletion
-            ? Completion!
+        public global::G.PromptBlockDataNullishCompletion PickCompletion() => Completion is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Completion' but the value was {ToString()}.");
 
         /// <summary>
@@ -117,8 +117,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public object PickPromptBlockDataNullishVariant3() => IsPromptBlockDataNullishVariant3
-            ? PromptBlockDataNullishVariant3!
+        public object PickPromptBlockDataNullishVariant3() => PromptBlockDataNullishVariant3 is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'PromptBlockDataNullishVariant3' but the value was {ToString()}.");
         /// <summary>
         /// 
@@ -220,17 +220,17 @@ namespace G
                 Validate();
             }
 
-            if (IsChat && chat != null)
+            if (Chat is { } __value0 && chat != null)
             {
-                return chat(Chat!);
+                return chat(__value0);
             }
-            else if (IsCompletion && completion != null)
+            else if (Completion is { } __value1 && completion != null)
             {
-                return completion(Completion!);
+                return completion(__value1);
             }
-            else if (IsPromptBlockDataNullishVariant3 && promptBlockDataNullishVariant3 != null)
+            else if (PromptBlockDataNullishVariant3 is { } __value2 && promptBlockDataNullishVariant3 != null)
             {
-                return promptBlockDataNullishVariant3(PromptBlockDataNullishVariant3!);
+                return promptBlockDataNullishVariant3(__value2);
             }
 
             return default(TResult);
@@ -252,17 +252,17 @@ namespace G
                 Validate();
             }
 
-            if (IsChat)
+            if (Chat is { } __value0)
             {
-                chat?.Invoke(Chat!);
+                chat?.Invoke(__value0);
             }
-            else if (IsCompletion)
+            else if (Completion is { } __value1)
             {
-                completion?.Invoke(Completion!);
+                completion?.Invoke(__value1);
             }
-            else if (IsPromptBlockDataNullishVariant3)
+            else if (PromptBlockDataNullishVariant3 is { } __value2)
             {
-                promptBlockDataNullishVariant3?.Invoke(PromptBlockDataNullishVariant3!);
+                promptBlockDataNullishVariant3?.Invoke(__value2);
             }
         }
 
@@ -280,17 +280,17 @@ namespace G
                 Validate();
             }
 
-            if (IsChat)
+            if (Chat is { } __value0)
             {
-                chat?.Invoke(Chat!);
+                chat?.Invoke(__value0);
             }
-            else if (IsCompletion)
+            else if (Completion is { } __value1)
             {
-                completion?.Invoke(Completion!);
+                completion?.Invoke(__value1);
             }
-            else if (IsPromptBlockDataNullishVariant3)
+            else if (PromptBlockDataNullishVariant3 is { } __value2)
             {
-                promptBlockDataNullishVariant3?.Invoke(PromptBlockDataNullishVariant3!);
+                promptBlockDataNullishVariant3?.Invoke(__value2);
             }
         }
 

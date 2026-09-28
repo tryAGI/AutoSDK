@@ -1,4 +1,4 @@
-﻿//HintName: G.JsonConverters.RetrieveModelV1ModelsModelIdGetResponse.g.cs
+//HintName: G.JsonConverters.RetrieveModelV1ModelsModelIdGetResponse.g.cs
 #nullable enable
 #pragma warning disable CS0618 // Type or member is obsolete
 
@@ -60,13 +60,13 @@ namespace G.JsonConverters
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.BaseModelCard), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.BaseModelCard?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.BaseModelCard).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Base!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickBase(), typeInfo);
             }
             else if (value.IsFineTuned)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.FTModelCard), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.FTModelCard?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.FTModelCard).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.FineTuned!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickFineTuned(), typeInfo);
             }
         }
     }

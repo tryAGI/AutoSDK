@@ -1,4 +1,4 @@
-﻿//HintName: G.Models.WebSocketResponse.g.cs
+//HintName: G.Models.WebSocketResponse.g.cs
 #pragma warning disable CS0618 // Type or member is obsolete
 
 #nullable enable
@@ -48,8 +48,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.WebSocketResponseVariant1 PickChunk() => IsChunk
-            ? Chunk!
+        public global::G.WebSocketResponseVariant1 PickChunk() => Chunk is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Chunk' but the value was {ToString()}.");
 
         /// <summary>
@@ -85,8 +85,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.WebSocketResponseVariant2 PickFlushDone() => IsFlushDone
-            ? FlushDone!
+        public global::G.WebSocketResponseVariant2 PickFlushDone() => FlushDone is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'FlushDone' but the value was {ToString()}.");
 
         /// <summary>
@@ -122,8 +122,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.WebSocketResponseVariant3 PickDone() => IsDone
-            ? Done!
+        public global::G.WebSocketResponseVariant3 PickDone() => Done is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Done' but the value was {ToString()}.");
 
         /// <summary>
@@ -159,8 +159,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.WebSocketResponseVariant4 PickTimestamps() => IsTimestamps
-            ? Timestamps!
+        public global::G.WebSocketResponseVariant4 PickTimestamps() => Timestamps is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Timestamps' but the value was {ToString()}.");
 
         /// <summary>
@@ -196,8 +196,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.WebSocketResponseVariant5 PickError() => IsError
-            ? Error!
+        public global::G.WebSocketResponseVariant5 PickError() => Error is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Error' but the value was {ToString()}.");
 
         /// <summary>
@@ -233,8 +233,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.WebSocketResponseVariant6 PickPhonemeTimestamps() => IsPhonemeTimestamps
-            ? PhonemeTimestamps!
+        public global::G.WebSocketResponseVariant6 PickPhonemeTimestamps() => PhonemeTimestamps is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'PhonemeTimestamps' but the value was {ToString()}.");
         /// <summary>
         /// 
@@ -446,29 +446,29 @@ namespace G
                 Validate();
             }
 
-            if (IsChunk && chunk != null)
+            if (Chunk is { } __value0 && chunk != null)
             {
-                return chunk(Chunk!);
+                return chunk(__value0);
             }
-            else if (IsFlushDone && flushDone != null)
+            else if (FlushDone is { } __value1 && flushDone != null)
             {
-                return flushDone(FlushDone!);
+                return flushDone(__value1);
             }
-            else if (IsDone && done != null)
+            else if (Done is { } __value2 && done != null)
             {
-                return done(Done!);
+                return done(__value2);
             }
-            else if (IsTimestamps && timestamps != null)
+            else if (Timestamps is { } __value3 && timestamps != null)
             {
-                return timestamps(Timestamps!);
+                return timestamps(__value3);
             }
-            else if (IsError && error != null)
+            else if (Error is { } __value4 && error != null)
             {
-                return error(Error!);
+                return error(__value4);
             }
-            else if (IsPhonemeTimestamps && phonemeTimestamps != null)
+            else if (PhonemeTimestamps is { } __value5 && phonemeTimestamps != null)
             {
-                return phonemeTimestamps(PhonemeTimestamps!);
+                return phonemeTimestamps(__value5);
             }
 
             return default(TResult);
@@ -496,29 +496,29 @@ namespace G
                 Validate();
             }
 
-            if (IsChunk)
+            if (Chunk is { } __value0)
             {
-                chunk?.Invoke(Chunk!);
+                chunk?.Invoke(__value0);
             }
-            else if (IsFlushDone)
+            else if (FlushDone is { } __value1)
             {
-                flushDone?.Invoke(FlushDone!);
+                flushDone?.Invoke(__value1);
             }
-            else if (IsDone)
+            else if (Done is { } __value2)
             {
-                done?.Invoke(Done!);
+                done?.Invoke(__value2);
             }
-            else if (IsTimestamps)
+            else if (Timestamps is { } __value3)
             {
-                timestamps?.Invoke(Timestamps!);
+                timestamps?.Invoke(__value3);
             }
-            else if (IsError)
+            else if (Error is { } __value4)
             {
-                error?.Invoke(Error!);
+                error?.Invoke(__value4);
             }
-            else if (IsPhonemeTimestamps)
+            else if (PhonemeTimestamps is { } __value5)
             {
-                phonemeTimestamps?.Invoke(PhonemeTimestamps!);
+                phonemeTimestamps?.Invoke(__value5);
             }
         }
 
@@ -539,29 +539,29 @@ namespace G
                 Validate();
             }
 
-            if (IsChunk)
+            if (Chunk is { } __value0)
             {
-                chunk?.Invoke(Chunk!);
+                chunk?.Invoke(__value0);
             }
-            else if (IsFlushDone)
+            else if (FlushDone is { } __value1)
             {
-                flushDone?.Invoke(FlushDone!);
+                flushDone?.Invoke(__value1);
             }
-            else if (IsDone)
+            else if (Done is { } __value2)
             {
-                done?.Invoke(Done!);
+                done?.Invoke(__value2);
             }
-            else if (IsTimestamps)
+            else if (Timestamps is { } __value3)
             {
-                timestamps?.Invoke(Timestamps!);
+                timestamps?.Invoke(__value3);
             }
-            else if (IsError)
+            else if (Error is { } __value4)
             {
-                error?.Invoke(Error!);
+                error?.Invoke(__value4);
             }
-            else if (IsPhonemeTimestamps)
+            else if (PhonemeTimestamps is { } __value5)
             {
-                phonemeTimestamps?.Invoke(PhonemeTimestamps!);
+                phonemeTimestamps?.Invoke(__value5);
             }
         }
 

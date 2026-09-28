@@ -1,4 +1,4 @@
-﻿//HintName: G.Models.CreateVideoToVideoRequest.g.cs
+//HintName: G.Models.CreateVideoToVideoRequest.g.cs
 #pragma warning disable CS0618 // Type or member is obsolete
 
 #nullable enable
@@ -48,8 +48,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.CreateVideoToVideoRequestGen4Aleph PickGen4Aleph() => IsGen4Aleph
-            ? Gen4Aleph!
+        public global::G.CreateVideoToVideoRequestGen4Aleph PickGen4Aleph() => Gen4Aleph is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Gen4Aleph' but the value was {ToString()}.");
         /// <summary>
         /// 
@@ -121,9 +121,9 @@ namespace G
                 Validate();
             }
 
-            if (IsGen4Aleph && gen4Aleph != null)
+            if (Gen4Aleph is { } __value0 && gen4Aleph != null)
             {
-                return gen4Aleph(Gen4Aleph!);
+                return gen4Aleph(__value0);
             }
 
             return default(TResult);
@@ -141,9 +141,9 @@ namespace G
                 Validate();
             }
 
-            if (IsGen4Aleph)
+            if (Gen4Aleph is { } __value0)
             {
-                gen4Aleph?.Invoke(Gen4Aleph!);
+                gen4Aleph?.Invoke(__value0);
             }
         }
 
@@ -159,9 +159,9 @@ namespace G
                 Validate();
             }
 
-            if (IsGen4Aleph)
+            if (Gen4Aleph is { } __value0)
             {
-                gen4Aleph?.Invoke(Gen4Aleph!);
+                gen4Aleph?.Invoke(__value0);
             }
         }
 

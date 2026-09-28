@@ -1,4 +1,4 @@
-﻿//HintName: G.Api.GenerateOrgTokenStudioV1ConnectorsConnectedUsersOrganizationIdTokensPost.g.cs
+//HintName: G.Api.GenerateOrgTokenStudioV1ConnectorsConnectedUsersOrganizationIdTokensPost.g.cs
 
 #nullable enable
 
@@ -118,7 +118,7 @@ namespace G
                 PrepareGenerateOrgTokenStudioV1ConnectorsConnectedUsersOrganizationIdTokensPostRequest(
                     httpClient: HttpClient,
                     httpRequestMessage: __httpRequest,
-                    organizationId: organizationId!,
+                    organizationId: organizationId,
                     requestStartTime: requestStartTime);
 
                 return __httpRequest;
@@ -141,7 +141,7 @@ namespace G
                                 pathTemplate: "$\"/studio/v1/connectors/connected-users/{organizationId}/tokens\"",
                                 httpMethod: "POST",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: null,
                                 exception: null,
                                 clientOptions: Options,
@@ -175,7 +175,7 @@ namespace G
                                 pathTemplate: "$\"/studio/v1/connectors/connected-users/{organizationId}/tokens\"",
                                 httpMethod: "POST",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: null,
                                 exception: __exception,
                                 clientOptions: Options,
@@ -216,7 +216,7 @@ namespace G
                                 pathTemplate: "$\"/studio/v1/connectors/connected-users/{organizationId}/tokens\"",
                                 httpMethod: "POST",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: __response,
                                 exception: null,
                                 clientOptions: Options,
@@ -264,7 +264,7 @@ namespace G
                                 pathTemplate: "$\"/studio/v1/connectors/connected-users/{organizationId}/tokens\"",
                                 httpMethod: "POST",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: __response,
                                 exception: null,
                                 clientOptions: Options,
@@ -286,7 +286,7 @@ namespace G
                                 pathTemplate: "$\"/studio/v1/connectors/connected-users/{organizationId}/tokens\"",
                                 httpMethod: "POST",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: __response,
                                 exception: null,
                                 clientOptions: Options,

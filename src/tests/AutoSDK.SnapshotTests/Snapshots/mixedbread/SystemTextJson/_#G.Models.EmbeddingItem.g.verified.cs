@@ -1,4 +1,4 @@
-﻿//HintName: G.Models.EmbeddingItem.g.cs
+//HintName: G.Models.EmbeddingItem.g.cs
 #pragma warning disable CS0618 // Type or member is obsolete
 
 #nullable enable
@@ -43,8 +43,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<double> PickEmbeddingItemVariant1() => IsEmbeddingItemVariant1
-            ? EmbeddingItemVariant1!
+        public global::System.Collections.Generic.IList<double> PickEmbeddingItemVariant1() => EmbeddingItemVariant1 is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'EmbeddingItemVariant1' but the value was {ToString()}.");
 
         /// <summary>
@@ -80,8 +80,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<int> PickEmbeddingItemVariant2() => IsEmbeddingItemVariant2
-            ? EmbeddingItemVariant2!
+        public global::System.Collections.Generic.IList<int> PickEmbeddingItemVariant2() => EmbeddingItemVariant2 is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'EmbeddingItemVariant2' but the value was {ToString()}.");
 
         /// <summary>
@@ -117,8 +117,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public string PickEmbeddingItemVariant3() => IsEmbeddingItemVariant3
-            ? EmbeddingItemVariant3!
+        public string PickEmbeddingItemVariant3() => EmbeddingItemVariant3 is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'EmbeddingItemVariant3' but the value was {ToString()}.");
         /// <summary>
         /// 
@@ -197,17 +197,17 @@ namespace G
                 Validate();
             }
 
-            if (IsEmbeddingItemVariant1 && embeddingItemVariant1 != null)
+            if (EmbeddingItemVariant1 is { } __value0 && embeddingItemVariant1 != null)
             {
-                return embeddingItemVariant1(EmbeddingItemVariant1!);
+                return embeddingItemVariant1(__value0);
             }
-            else if (IsEmbeddingItemVariant2 && embeddingItemVariant2 != null)
+            else if (EmbeddingItemVariant2 is { } __value1 && embeddingItemVariant2 != null)
             {
-                return embeddingItemVariant2(EmbeddingItemVariant2!);
+                return embeddingItemVariant2(__value1);
             }
-            else if (IsEmbeddingItemVariant3 && embeddingItemVariant3 != null)
+            else if (EmbeddingItemVariant3 is { } __value2 && embeddingItemVariant3 != null)
             {
-                return embeddingItemVariant3(EmbeddingItemVariant3!);
+                return embeddingItemVariant3(__value2);
             }
 
             return default(TResult);
@@ -229,17 +229,17 @@ namespace G
                 Validate();
             }
 
-            if (IsEmbeddingItemVariant1)
+            if (EmbeddingItemVariant1 is { } __value0)
             {
-                embeddingItemVariant1?.Invoke(EmbeddingItemVariant1!);
+                embeddingItemVariant1?.Invoke(__value0);
             }
-            else if (IsEmbeddingItemVariant2)
+            else if (EmbeddingItemVariant2 is { } __value1)
             {
-                embeddingItemVariant2?.Invoke(EmbeddingItemVariant2!);
+                embeddingItemVariant2?.Invoke(__value1);
             }
-            else if (IsEmbeddingItemVariant3)
+            else if (EmbeddingItemVariant3 is { } __value2)
             {
-                embeddingItemVariant3?.Invoke(EmbeddingItemVariant3!);
+                embeddingItemVariant3?.Invoke(__value2);
             }
         }
 
@@ -257,17 +257,17 @@ namespace G
                 Validate();
             }
 
-            if (IsEmbeddingItemVariant1)
+            if (EmbeddingItemVariant1 is { } __value0)
             {
-                embeddingItemVariant1?.Invoke(EmbeddingItemVariant1!);
+                embeddingItemVariant1?.Invoke(__value0);
             }
-            else if (IsEmbeddingItemVariant2)
+            else if (EmbeddingItemVariant2 is { } __value1)
             {
-                embeddingItemVariant2?.Invoke(EmbeddingItemVariant2!);
+                embeddingItemVariant2?.Invoke(__value1);
             }
-            else if (IsEmbeddingItemVariant3)
+            else if (EmbeddingItemVariant3 is { } __value2)
             {
-                embeddingItemVariant3?.Invoke(EmbeddingItemVariant3!);
+                embeddingItemVariant3?.Invoke(__value2);
             }
         }
 

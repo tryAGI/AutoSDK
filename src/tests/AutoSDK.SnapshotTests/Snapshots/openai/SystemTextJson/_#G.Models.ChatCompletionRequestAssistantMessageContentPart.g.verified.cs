@@ -1,4 +1,4 @@
-﻿//HintName: G.Models.ChatCompletionRequestAssistantMessageContentPart.g.cs
+//HintName: G.Models.ChatCompletionRequestAssistantMessageContentPart.g.cs
 #pragma warning disable CS0618 // Type or member is obsolete
 
 #nullable enable
@@ -43,8 +43,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.ChatCompletionRequestMessageContentPartText PickTextContentPart() => IsTextContentPart
-            ? TextContentPart!
+        public global::G.ChatCompletionRequestMessageContentPartText PickTextContentPart() => TextContentPart is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'TextContentPart' but the value was {ToString()}.");
 
         /// <summary>
@@ -80,8 +80,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.ChatCompletionRequestMessageContentPartRefusal PickRefusalContentPart() => IsRefusalContentPart
-            ? RefusalContentPart!
+        public global::G.ChatCompletionRequestMessageContentPartRefusal PickRefusalContentPart() => RefusalContentPart is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'RefusalContentPart' but the value was {ToString()}.");
         /// <summary>
         /// 
@@ -178,13 +178,13 @@ namespace G
                 Validate();
             }
 
-            if (IsTextContentPart && textContentPart != null)
+            if (TextContentPart is { } __value0 && textContentPart != null)
             {
-                return textContentPart(TextContentPart!);
+                return textContentPart(__value0);
             }
-            else if (IsRefusalContentPart && refusalContentPart != null)
+            else if (RefusalContentPart is { } __value1 && refusalContentPart != null)
             {
-                return refusalContentPart(RefusalContentPart!);
+                return refusalContentPart(__value1);
             }
 
             return default(TResult);
@@ -204,13 +204,13 @@ namespace G
                 Validate();
             }
 
-            if (IsTextContentPart)
+            if (TextContentPart is { } __value0)
             {
-                textContentPart?.Invoke(TextContentPart!);
+                textContentPart?.Invoke(__value0);
             }
-            else if (IsRefusalContentPart)
+            else if (RefusalContentPart is { } __value1)
             {
-                refusalContentPart?.Invoke(RefusalContentPart!);
+                refusalContentPart?.Invoke(__value1);
             }
         }
 
@@ -227,13 +227,13 @@ namespace G
                 Validate();
             }
 
-            if (IsTextContentPart)
+            if (TextContentPart is { } __value0)
             {
-                textContentPart?.Invoke(TextContentPart!);
+                textContentPart?.Invoke(__value0);
             }
-            else if (IsRefusalContentPart)
+            else if (RefusalContentPart is { } __value1)
             {
-                refusalContentPart?.Invoke(RefusalContentPart!);
+                refusalContentPart?.Invoke(__value1);
             }
         }
 

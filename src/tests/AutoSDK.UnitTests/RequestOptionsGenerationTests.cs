@@ -2,6 +2,7 @@ using AutoSDK.Generation;
 using AutoSDK.Models;
 using Microsoft.CodeAnalysis;
 using Microsoft.CodeAnalysis.CSharp;
+using Microsoft.CodeAnalysis.CSharp.Syntax;
 using System.Reflection;
 
 namespace AutoSDK.UnitTests;
@@ -124,7 +125,52 @@ public class RequestOptionsGenerationTests
         methodSource.Should().Contain("AutoSDKRequestOptionsSupport.OnAfterSuccessAsync(");
         methodSource.Should().Contain("AutoSDKRequestOptionsSupport.OnAfterErrorAsync(");
         methodSource.Should().Contain("AutoSDKRequestOptionsSupport.CreateHookContext(");
+        methodSource.Should().Contain("request: __httpRequest ?? throw new global::System.InvalidOperationException(");
+        methodSource.Should().NotContain("request: __httpRequest!");
         methodSource.Should().Contain("if (__effectiveReadResponseAsString)");
+    }
+
+    [TestMethod]
+    public void GenerateMethod_WithRequiredAndNullablePathParameters_DoesNotSuppressNullability()
+    {
+        const string yaml = """
+                            openapi: 3.0.3
+                            info:
+                              title: Paths
+                              version: 1.0.0
+                            paths:
+                              /items/{id}/{optionalId}:
+                                get:
+                                  operationId: getItem
+                                  parameters:
+                                    - in: path
+                                      name: id
+                                      required: true
+                                      schema:
+                                        type: string
+                                    - in: path
+                                      name: optionalId
+                                      required: true
+                                      schema:
+                                        type: string
+                                        nullable: true
+                                  responses:
+                                    '204':
+                                      description: No content
+                            """;
+
+        var settings = DefaultSettings;
+        var data = AutoSDK.Generation.Data.Prepare(((yaml, settings), settings));
+        var methodSource = Sources.Method(data.Methods.Single()).Text;
+
+        methodSource.Should().Contain("id: id,");
+        methodSource.Should().Contain("optionalId: optionalId");
+        methodSource.Should().NotContain("id: id!");
+        methodSource.Should().NotContain("optionalId: optionalId!");
+        CSharpSyntaxTree.ParseText(methodSource).GetRoot().DescendantNodes()
+            .OfType<PostfixUnaryExpressionSyntax>()
+            .Where(node => node.IsKind(SyntaxKind.SuppressNullableWarningExpression))
+            .Should().BeEmpty();
     }
 
     [TestMethod]
@@ -184,7 +230,7 @@ public class RequestOptionsGenerationTests
 
         source.Should().Contain("public static class AutoSDKConditionalRequests");
         source.Should().Contain("requestOptions = CloneRequestOptions(requestOptions);");
-        source.Should().Contain("requestOptions.Headers[\"If-None-Match\"] = entityTag!");
+        source.Should().Contain("requestOptions.Headers[\"If-None-Match\"] = nonEmptyEntityTag;");
         source.Should().Contain("exception.StatusCode == global::System.Net.HttpStatusCode.NotModified");
         source.Should().Contain("GetEntityTag(exception.ResponseHeaders) ?? entityTag");
     }

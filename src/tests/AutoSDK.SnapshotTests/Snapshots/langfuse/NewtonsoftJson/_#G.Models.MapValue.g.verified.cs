@@ -1,4 +1,4 @@
-﻿//HintName: G.Models.MapValue.g.cs
+//HintName: G.Models.MapValue.g.cs
 #pragma warning disable CS0618 // Type or member is obsolete
 
 #nullable enable
@@ -43,8 +43,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public string PickMapValueVariant1() => IsMapValueVariant1
-            ? MapValueVariant1!
+        public string PickMapValueVariant1() => MapValueVariant1 is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'MapValueVariant1' but the value was {ToString()}.");
 
         /// <summary>
@@ -80,8 +80,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public int PickMapValueVariant2() => IsMapValueVariant2
-            ? MapValueVariant2!.Value
+        public int PickMapValueVariant2() => MapValueVariant2 is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'MapValueVariant2' but the value was {ToString()}.");
 
         /// <summary>
@@ -117,8 +117,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public int PickMapValueVariant3() => IsMapValueVariant3
-            ? MapValueVariant3!.Value
+        public int PickMapValueVariant3() => MapValueVariant3 is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'MapValueVariant3' but the value was {ToString()}.");
 
         /// <summary>
@@ -154,8 +154,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public bool PickMapValueVariant4() => IsMapValueVariant4
-            ? MapValueVariant4!.Value
+        public bool PickMapValueVariant4() => MapValueVariant4 is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'MapValueVariant4' but the value was {ToString()}.");
 
         /// <summary>
@@ -191,8 +191,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<string> PickMapValueVariant5() => IsMapValueVariant5
-            ? MapValueVariant5!
+        public global::System.Collections.Generic.IList<string> PickMapValueVariant5() => MapValueVariant5 is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'MapValueVariant5' but the value was {ToString()}.");
         /// <summary>
         /// 
@@ -327,25 +327,25 @@ namespace G
                 Validate();
             }
 
-            if (IsMapValueVariant1 && mapValueVariant1 != null)
+            if (MapValueVariant1 is { } __value0 && mapValueVariant1 != null)
             {
-                return mapValueVariant1(MapValueVariant1!);
+                return mapValueVariant1(__value0);
             }
-            else if (IsMapValueVariant2 && mapValueVariant2 != null)
+            else if (MapValueVariant2 is { } __value1 && mapValueVariant2 != null)
             {
-                return mapValueVariant2(MapValueVariant2!);
+                return mapValueVariant2(__value1);
             }
-            else if (IsMapValueVariant3 && mapValueVariant3 != null)
+            else if (MapValueVariant3 is { } __value2 && mapValueVariant3 != null)
             {
-                return mapValueVariant3(MapValueVariant3!);
+                return mapValueVariant3(__value2);
             }
-            else if (IsMapValueVariant4 && mapValueVariant4 != null)
+            else if (MapValueVariant4 is { } __value3 && mapValueVariant4 != null)
             {
-                return mapValueVariant4(MapValueVariant4!);
+                return mapValueVariant4(__value3);
             }
-            else if (IsMapValueVariant5 && mapValueVariant5 != null)
+            else if (MapValueVariant5 is { } __value4 && mapValueVariant5 != null)
             {
-                return mapValueVariant5(MapValueVariant5!);
+                return mapValueVariant5(__value4);
             }
 
             return default(TResult);
@@ -371,25 +371,25 @@ namespace G
                 Validate();
             }
 
-            if (IsMapValueVariant1)
+            if (MapValueVariant1 is { } __value0)
             {
-                mapValueVariant1?.Invoke(MapValueVariant1!);
+                mapValueVariant1?.Invoke(__value0);
             }
-            else if (IsMapValueVariant2)
+            else if (MapValueVariant2 is { } __value1)
             {
-                mapValueVariant2?.Invoke(MapValueVariant2!);
+                mapValueVariant2?.Invoke(__value1);
             }
-            else if (IsMapValueVariant3)
+            else if (MapValueVariant3 is { } __value2)
             {
-                mapValueVariant3?.Invoke(MapValueVariant3!);
+                mapValueVariant3?.Invoke(__value2);
             }
-            else if (IsMapValueVariant4)
+            else if (MapValueVariant4 is { } __value3)
             {
-                mapValueVariant4?.Invoke(MapValueVariant4!);
+                mapValueVariant4?.Invoke(__value3);
             }
-            else if (IsMapValueVariant5)
+            else if (MapValueVariant5 is { } __value4)
             {
-                mapValueVariant5?.Invoke(MapValueVariant5!);
+                mapValueVariant5?.Invoke(__value4);
             }
         }
 
@@ -409,25 +409,25 @@ namespace G
                 Validate();
             }
 
-            if (IsMapValueVariant1)
+            if (MapValueVariant1 is { } __value0)
             {
-                mapValueVariant1?.Invoke(MapValueVariant1!);
+                mapValueVariant1?.Invoke(__value0);
             }
-            else if (IsMapValueVariant2)
+            else if (MapValueVariant2 is { } __value1)
             {
-                mapValueVariant2?.Invoke(MapValueVariant2!);
+                mapValueVariant2?.Invoke(__value1);
             }
-            else if (IsMapValueVariant3)
+            else if (MapValueVariant3 is { } __value2)
             {
-                mapValueVariant3?.Invoke(MapValueVariant3!);
+                mapValueVariant3?.Invoke(__value2);
             }
-            else if (IsMapValueVariant4)
+            else if (MapValueVariant4 is { } __value3)
             {
-                mapValueVariant4?.Invoke(MapValueVariant4!);
+                mapValueVariant4?.Invoke(__value3);
             }
-            else if (IsMapValueVariant5)
+            else if (MapValueVariant5 is { } __value4)
             {
-                mapValueVariant5?.Invoke(MapValueVariant5!);
+                mapValueVariant5?.Invoke(__value4);
             }
         }
 

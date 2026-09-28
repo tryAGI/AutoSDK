@@ -1,4 +1,4 @@
-﻿//HintName: G.JsonConverters.TranscriptionControllerGetTranscriptV2Response.g.cs
+//HintName: G.JsonConverters.TranscriptionControllerGetTranscriptV2Response.g.cs
 #nullable enable
 #pragma warning disable CS0618 // Type or member is obsolete
 
@@ -60,13 +60,13 @@ namespace G.JsonConverters
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.PreRecordedResponse), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.PreRecordedResponse?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.PreRecordedResponse).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PreRecorded!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickPreRecorded(), typeInfo);
             }
             else if (value.IsLive)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.StreamingResponse), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.StreamingResponse?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.StreamingResponse).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Live!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickLive(), typeInfo);
             }
         }
     }

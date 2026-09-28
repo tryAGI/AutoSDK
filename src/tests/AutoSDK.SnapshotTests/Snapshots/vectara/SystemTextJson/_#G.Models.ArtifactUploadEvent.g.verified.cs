@@ -1,4 +1,4 @@
-﻿//HintName: G.Models.ArtifactUploadEvent.g.cs
+//HintName: G.Models.ArtifactUploadEvent.g.cs
 #pragma warning disable CS0618 // Type or member is obsolete
 
 #nullable enable
@@ -46,8 +46,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.AgentEventBase PickAgentBase() => IsAgentBase
-            ? AgentBase!
+        public global::G.AgentEventBase PickAgentBase() => AgentBase is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'AgentBase' but the value was {ToString()}.");
 
         /// <summary>
@@ -83,8 +83,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.ArtifactUploadEventVariant2 PickArtifactUploadEventVariant2() => IsArtifactUploadEventVariant2
-            ? ArtifactUploadEventVariant2!
+        public global::G.ArtifactUploadEventVariant2 PickArtifactUploadEventVariant2() => ArtifactUploadEventVariant2 is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'ArtifactUploadEventVariant2' but the value was {ToString()}.");
         /// <summary>
         /// 
@@ -181,13 +181,13 @@ namespace G
                 Validate();
             }
 
-            if (IsAgentBase && agentBase != null)
+            if (AgentBase is { } __value0 && agentBase != null)
             {
-                return agentBase(AgentBase!);
+                return agentBase(__value0);
             }
-            else if (IsArtifactUploadEventVariant2 && artifactUploadEventVariant2 != null)
+            else if (ArtifactUploadEventVariant2 is { } __value1 && artifactUploadEventVariant2 != null)
             {
-                return artifactUploadEventVariant2(ArtifactUploadEventVariant2!);
+                return artifactUploadEventVariant2(__value1);
             }
 
             return default(TResult);
@@ -207,13 +207,13 @@ namespace G
                 Validate();
             }
 
-            if (IsAgentBase)
+            if (AgentBase is { } __value0)
             {
-                agentBase?.Invoke(AgentBase!);
+                agentBase?.Invoke(__value0);
             }
-            else if (IsArtifactUploadEventVariant2)
+            else if (ArtifactUploadEventVariant2 is { } __value1)
             {
-                artifactUploadEventVariant2?.Invoke(ArtifactUploadEventVariant2!);
+                artifactUploadEventVariant2?.Invoke(__value1);
             }
         }
 
@@ -230,13 +230,13 @@ namespace G
                 Validate();
             }
 
-            if (IsAgentBase)
+            if (AgentBase is { } __value0)
             {
-                agentBase?.Invoke(AgentBase!);
+                agentBase?.Invoke(__value0);
             }
-            else if (IsArtifactUploadEventVariant2)
+            else if (ArtifactUploadEventVariant2 is { } __value1)
             {
-                artifactUploadEventVariant2?.Invoke(ArtifactUploadEventVariant2!);
+                artifactUploadEventVariant2?.Invoke(__value1);
             }
         }
 

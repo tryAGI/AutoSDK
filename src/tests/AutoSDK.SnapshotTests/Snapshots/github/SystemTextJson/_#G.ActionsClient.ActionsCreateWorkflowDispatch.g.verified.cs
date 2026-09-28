@@ -1,4 +1,4 @@
-﻿//HintName: G.ActionsClient.ActionsCreateWorkflowDispatch.g.cs
+//HintName: G.ActionsClient.ActionsCreateWorkflowDispatch.g.cs
 
 #nullable enable
 
@@ -137,9 +137,9 @@ namespace G
                 PrepareActionsCreateWorkflowDispatchRequest(
                     httpClient: HttpClient,
                     httpRequestMessage: __httpRequest,
-                    owner: owner!,
-                    repo: repo!,
-                    workflowId: workflowId!,
+                    owner: owner,
+                    repo: repo,
+                    workflowId: workflowId,
                     request: request);
 
                 return __httpRequest;
@@ -162,7 +162,7 @@ namespace G
                                 pathTemplate: "$\"/repos/{owner}/{repo}/actions/workflows/{workflowId}/dispatches\"",
                                 httpMethod: "POST",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: null,
                                 exception: null,
                                 clientOptions: Options,
@@ -196,7 +196,7 @@ namespace G
                                 pathTemplate: "$\"/repos/{owner}/{repo}/actions/workflows/{workflowId}/dispatches\"",
                                 httpMethod: "POST",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: null,
                                 exception: __exception,
                                 clientOptions: Options,
@@ -237,7 +237,7 @@ namespace G
                                 pathTemplate: "$\"/repos/{owner}/{repo}/actions/workflows/{workflowId}/dispatches\"",
                                 httpMethod: "POST",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: __response,
                                 exception: null,
                                 clientOptions: Options,
@@ -285,7 +285,7 @@ namespace G
                                 pathTemplate: "$\"/repos/{owner}/{repo}/actions/workflows/{workflowId}/dispatches\"",
                                 httpMethod: "POST",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: __response,
                                 exception: null,
                                 clientOptions: Options,
@@ -307,7 +307,7 @@ namespace G
                                 pathTemplate: "$\"/repos/{owner}/{repo}/actions/workflows/{workflowId}/dispatches\"",
                                 httpMethod: "POST",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: __response,
                                 exception: null,
                                 clientOptions: Options,

@@ -1,4 +1,4 @@
-﻿//HintName: G.Models.ChatContentItems3.g.cs
+//HintName: G.Models.ChatContentItems3.g.cs
 #pragma warning disable CS0618 // Type or member is obsolete
 
 #nullable enable
@@ -43,8 +43,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.LegacyChatContentVideo PickLegacyChatContentVideo() => IsLegacyChatContentVideo
-            ? LegacyChatContentVideo!
+        public global::G.LegacyChatContentVideo PickLegacyChatContentVideo() => LegacyChatContentVideo is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'LegacyChatContentVideo' but the value was {ToString()}.");
 
         /// <summary>
@@ -80,8 +80,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.ChatContentVideo PickChatContentVideo() => IsChatContentVideo
-            ? ChatContentVideo!
+        public global::G.ChatContentVideo PickChatContentVideo() => ChatContentVideo is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'ChatContentVideo' but the value was {ToString()}.");
         /// <summary>
         /// 
@@ -178,13 +178,13 @@ namespace G
                 Validate();
             }
 
-            if (IsLegacyChatContentVideo && legacyChatContentVideo != null)
+            if (LegacyChatContentVideo is { } __value0 && legacyChatContentVideo != null)
             {
-                return legacyChatContentVideo(LegacyChatContentVideo!);
+                return legacyChatContentVideo(__value0);
             }
-            else if (IsChatContentVideo && chatContentVideo != null)
+            else if (ChatContentVideo is { } __value1 && chatContentVideo != null)
             {
-                return chatContentVideo(ChatContentVideo!);
+                return chatContentVideo(__value1);
             }
 
             return default(TResult);
@@ -204,13 +204,13 @@ namespace G
                 Validate();
             }
 
-            if (IsLegacyChatContentVideo)
+            if (LegacyChatContentVideo is { } __value0)
             {
-                legacyChatContentVideo?.Invoke(LegacyChatContentVideo!);
+                legacyChatContentVideo?.Invoke(__value0);
             }
-            else if (IsChatContentVideo)
+            else if (ChatContentVideo is { } __value1)
             {
-                chatContentVideo?.Invoke(ChatContentVideo!);
+                chatContentVideo?.Invoke(__value1);
             }
         }
 
@@ -227,13 +227,13 @@ namespace G
                 Validate();
             }
 
-            if (IsLegacyChatContentVideo)
+            if (LegacyChatContentVideo is { } __value0)
             {
-                legacyChatContentVideo?.Invoke(LegacyChatContentVideo!);
+                legacyChatContentVideo?.Invoke(__value0);
             }
-            else if (IsChatContentVideo)
+            else if (ChatContentVideo is { } __value1)
             {
-                chatContentVideo?.Invoke(ChatContentVideo!);
+                chatContentVideo?.Invoke(__value1);
             }
         }
 

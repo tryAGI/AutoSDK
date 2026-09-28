@@ -1,4 +1,4 @@
-﻿//HintName: G.JsonConverters.TestToolResponse.g.cs
+//HintName: G.JsonConverters.TestToolResponse.g.cs
 #nullable enable
 #pragma warning disable CS0618 // Type or member is obsolete
 
@@ -60,13 +60,13 @@ namespace G.JsonConverters
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.TestToolSuccessResponse), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.TestToolSuccessResponse?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.TestToolSuccessResponse).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Success!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickSuccess(), typeInfo);
             }
             else if (value.IsError)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.TestToolErrorResponse), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.TestToolErrorResponse?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.TestToolErrorResponse).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Error!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickError(), typeInfo);
             }
         }
     }

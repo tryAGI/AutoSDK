@@ -1,4 +1,4 @@
-﻿//HintName: G.JsonConverters.RangeInterface.g.cs
+//HintName: G.JsonConverters.RangeInterface.g.cs
 #nullable enable
 #pragma warning disable CS0618 // Type or member is obsolete
 
@@ -135,13 +135,13 @@ namespace G.JsonConverters
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.Range), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.Range?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.Range).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Range!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickRange(), typeInfo);
             }
             else if (value.IsDatetime)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.DatetimeRange), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.DatetimeRange?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.DatetimeRange).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Datetime!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickDatetime(), typeInfo);
             }
         }
     }

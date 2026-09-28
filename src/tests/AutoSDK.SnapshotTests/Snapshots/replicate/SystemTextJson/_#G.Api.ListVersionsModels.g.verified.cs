@@ -1,4 +1,4 @@
-﻿//HintName: G.Api.ListVersionsModels.g.cs
+//HintName: G.Api.ListVersionsModels.g.cs
 
 #nullable enable
 
@@ -189,8 +189,8 @@ namespace G
                 PrepareListVersionsModelsRequest(
                     httpClient: HttpClient,
                     httpRequestMessage: __httpRequest,
-                    modelOwner: modelOwner!,
-                    modelName: modelName!);
+                    modelOwner: modelOwner,
+                    modelName: modelName);
 
                 return __httpRequest;
             }
@@ -212,7 +212,7 @@ namespace G
                                 pathTemplate: "$\"/models/{modelOwner}/{modelName}/versions\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: null,
                                 exception: null,
                                 clientOptions: Options,
@@ -246,7 +246,7 @@ namespace G
                                 pathTemplate: "$\"/models/{modelOwner}/{modelName}/versions\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: null,
                                 exception: __exception,
                                 clientOptions: Options,
@@ -287,7 +287,7 @@ namespace G
                                 pathTemplate: "$\"/models/{modelOwner}/{modelName}/versions\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: __response,
                                 exception: null,
                                 clientOptions: Options,
@@ -335,7 +335,7 @@ namespace G
                                 pathTemplate: "$\"/models/{modelOwner}/{modelName}/versions\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: __response,
                                 exception: null,
                                 clientOptions: Options,
@@ -357,7 +357,7 @@ namespace G
                                 pathTemplate: "$\"/models/{modelOwner}/{modelName}/versions\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: __response,
                                 exception: null,
                                 clientOptions: Options,

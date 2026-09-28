@@ -1,4 +1,4 @@
-﻿//HintName: G.CustomModelsClient.V1GetCustomModel.g.cs
+//HintName: G.CustomModelsClient.V1GetCustomModel.g.cs
 
 #nullable enable
 
@@ -118,7 +118,7 @@ namespace G
                 PrepareV1GetCustomModelRequest(
                     httpClient: HttpClient,
                     httpRequestMessage: __httpRequest,
-                    customModelPid: customModelPid!,
+                    customModelPid: customModelPid,
                     requestStartTime: requestStartTime);
 
                 return __httpRequest;
@@ -141,7 +141,7 @@ namespace G
                                 pathTemplate: "$\"/studio/v1/custom-model/{customModelPid}\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: null,
                                 exception: null,
                                 clientOptions: Options,
@@ -175,7 +175,7 @@ namespace G
                                 pathTemplate: "$\"/studio/v1/custom-model/{customModelPid}\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: null,
                                 exception: __exception,
                                 clientOptions: Options,
@@ -216,7 +216,7 @@ namespace G
                                 pathTemplate: "$\"/studio/v1/custom-model/{customModelPid}\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: __response,
                                 exception: null,
                                 clientOptions: Options,
@@ -264,7 +264,7 @@ namespace G
                                 pathTemplate: "$\"/studio/v1/custom-model/{customModelPid}\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: __response,
                                 exception: null,
                                 clientOptions: Options,
@@ -286,7 +286,7 @@ namespace G
                                 pathTemplate: "$\"/studio/v1/custom-model/{customModelPid}\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: __response,
                                 exception: null,
                                 clientOptions: Options,

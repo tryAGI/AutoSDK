@@ -1,4 +1,4 @@
-﻿//HintName: G.FilesClient.ReadFileContentApiV1FilesIdContentGet.g.cs
+//HintName: G.FilesClient.ReadFileContentApiV1FilesIdContentGet.g.cs
 
 #nullable enable
 
@@ -197,7 +197,7 @@ namespace G
                 PrepareReadFileContentApiV1FilesIdContentGetRequest(
                     httpClient: HttpClient,
                     httpRequestMessage: __httpRequest,
-                    id: id!,
+                    id: id,
                     expiresAtSeconds: expiresAtSeconds,
                     projectId: projectId,
                     organizationId: organizationId,
@@ -225,7 +225,7 @@ namespace G
                                 pathTemplate: "$\"/api/v1/files/{id}/content\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: null,
                                 exception: null,
                                 clientOptions: Options,
@@ -259,7 +259,7 @@ namespace G
                                 pathTemplate: "$\"/api/v1/files/{id}/content\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: null,
                                 exception: __exception,
                                 clientOptions: Options,
@@ -300,7 +300,7 @@ namespace G
                                 pathTemplate: "$\"/api/v1/files/{id}/content\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: __response,
                                 exception: null,
                                 clientOptions: Options,
@@ -348,7 +348,7 @@ namespace G
                                 pathTemplate: "$\"/api/v1/files/{id}/content\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: __response,
                                 exception: null,
                                 clientOptions: Options,
@@ -370,7 +370,7 @@ namespace G
                                 pathTemplate: "$\"/api/v1/files/{id}/content\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: __response,
                                 exception: null,
                                 clientOptions: Options,

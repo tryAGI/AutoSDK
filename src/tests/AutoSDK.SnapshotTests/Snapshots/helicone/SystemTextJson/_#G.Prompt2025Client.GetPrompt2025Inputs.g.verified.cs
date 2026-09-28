@@ -1,4 +1,4 @@
-﻿//HintName: G.Prompt2025Client.GetPrompt2025Inputs.g.cs
+//HintName: G.Prompt2025Client.GetPrompt2025Inputs.g.cs
 
 #nullable enable
 
@@ -180,9 +180,9 @@ namespace G
                 PrepareGetPrompt2025InputsRequest(
                     httpClient: HttpClient,
                     httpRequestMessage: __httpRequest,
-                    promptId: promptId!,
-                    versionId: versionId!,
-                    requestId: requestId!);
+                    promptId: promptId,
+                    versionId: versionId,
+                    requestId: requestId);
 
                 global::G.AutoSDKHttpRequestOptions.StampAuthorizationOverride(__httpRequest);
 
@@ -206,7 +206,7 @@ namespace G
                                 pathTemplate: "$\"/v1/prompt-2025/id/{promptId}/{versionId}/inputs\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: null,
                                 exception: null,
                                 clientOptions: Options,
@@ -240,7 +240,7 @@ namespace G
                                 pathTemplate: "$\"/v1/prompt-2025/id/{promptId}/{versionId}/inputs\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: null,
                                 exception: __exception,
                                 clientOptions: Options,
@@ -281,7 +281,7 @@ namespace G
                                 pathTemplate: "$\"/v1/prompt-2025/id/{promptId}/{versionId}/inputs\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: __response,
                                 exception: null,
                                 clientOptions: Options,
@@ -329,7 +329,7 @@ namespace G
                                 pathTemplate: "$\"/v1/prompt-2025/id/{promptId}/{versionId}/inputs\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: __response,
                                 exception: null,
                                 clientOptions: Options,
@@ -351,7 +351,7 @@ namespace G
                                 pathTemplate: "$\"/v1/prompt-2025/id/{promptId}/{versionId}/inputs\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: __response,
                                 exception: null,
                                 clientOptions: Options,

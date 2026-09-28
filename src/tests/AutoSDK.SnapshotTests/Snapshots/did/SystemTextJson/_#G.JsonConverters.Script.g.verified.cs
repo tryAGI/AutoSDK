@@ -1,4 +1,4 @@
-﻿//HintName: G.JsonConverters.Script.g.cs
+//HintName: G.JsonConverters.Script.g.cs
 #nullable enable
 #pragma warning disable CS0618 // Type or member is obsolete
 
@@ -135,13 +135,13 @@ namespace G.JsonConverters
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.ScriptVariant1), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.ScriptVariant1?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.ScriptVariant1).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.ScriptVariant1!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickScriptVariant1(), typeInfo);
             }
             else if (value.IsScriptVariant2)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.ScriptVariant2), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.ScriptVariant2?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.ScriptVariant2).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.ScriptVariant2!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickScriptVariant2(), typeInfo);
             }
         }
     }

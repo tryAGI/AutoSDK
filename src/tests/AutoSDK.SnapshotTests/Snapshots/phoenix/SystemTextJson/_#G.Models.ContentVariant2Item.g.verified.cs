@@ -1,4 +1,4 @@
-﻿//HintName: G.Models.ContentVariant2Item.g.cs
+//HintName: G.Models.ContentVariant2Item.g.cs
 #pragma warning disable CS0618 // Type or member is obsolete
 
 #nullable enable
@@ -48,8 +48,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.TextContentPart PickText() => IsText
-            ? Text!
+        public global::G.TextContentPart PickText() => Text is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Text' but the value was {ToString()}.");
 
         /// <summary>
@@ -85,8 +85,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.ToolCallContentPart PickToolCall() => IsToolCall
-            ? ToolCall!
+        public global::G.ToolCallContentPart PickToolCall() => ToolCall is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'ToolCall' but the value was {ToString()}.");
 
         /// <summary>
@@ -122,8 +122,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.ToolResultContentPart PickToolResult() => IsToolResult
-            ? ToolResult!
+        public global::G.ToolResultContentPart PickToolResult() => ToolResult is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'ToolResult' but the value was {ToString()}.");
         /// <summary>
         /// 
@@ -251,17 +251,17 @@ namespace G
                 Validate();
             }
 
-            if (IsText && text != null)
+            if (Text is { } __value0 && text != null)
             {
-                return text(Text!);
+                return text(__value0);
             }
-            else if (IsToolCall && toolCall != null)
+            else if (ToolCall is { } __value1 && toolCall != null)
             {
-                return toolCall(ToolCall!);
+                return toolCall(__value1);
             }
-            else if (IsToolResult && toolResult != null)
+            else if (ToolResult is { } __value2 && toolResult != null)
             {
-                return toolResult(ToolResult!);
+                return toolResult(__value2);
             }
 
             return default(TResult);
@@ -283,17 +283,17 @@ namespace G
                 Validate();
             }
 
-            if (IsText)
+            if (Text is { } __value0)
             {
-                text?.Invoke(Text!);
+                text?.Invoke(__value0);
             }
-            else if (IsToolCall)
+            else if (ToolCall is { } __value1)
             {
-                toolCall?.Invoke(ToolCall!);
+                toolCall?.Invoke(__value1);
             }
-            else if (IsToolResult)
+            else if (ToolResult is { } __value2)
             {
-                toolResult?.Invoke(ToolResult!);
+                toolResult?.Invoke(__value2);
             }
         }
 
@@ -311,17 +311,17 @@ namespace G
                 Validate();
             }
 
-            if (IsText)
+            if (Text is { } __value0)
             {
-                text?.Invoke(Text!);
+                text?.Invoke(__value0);
             }
-            else if (IsToolCall)
+            else if (ToolCall is { } __value1)
             {
-                toolCall?.Invoke(ToolCall!);
+                toolCall?.Invoke(__value1);
             }
-            else if (IsToolResult)
+            else if (ToolResult is { } __value2)
             {
-                toolResult?.Invoke(ToolResult!);
+                toolResult?.Invoke(__value2);
             }
         }
 

@@ -1,4 +1,4 @@
-﻿//HintName: G.VoicesClient.Share.g.cs
+//HintName: G.VoicesClient.Share.g.cs
 
 #nullable enable
 
@@ -158,8 +158,8 @@ namespace G
                 PrepareShareRequest(
                     httpClient: HttpClient,
                     httpRequestMessage: __httpRequest,
-                    publicUserId: publicUserId!,
-                    voiceId: voiceId!,
+                    publicUserId: publicUserId,
+                    voiceId: voiceId,
                     xiApiKey: xiApiKey,
                     request: request);
 
@@ -183,7 +183,7 @@ namespace G
                                 pathTemplate: "$\"/v1/voices/add/{publicUserId}/{voiceId}\"",
                                 httpMethod: "POST",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: null,
                                 exception: null,
                                 clientOptions: Options,
@@ -217,7 +217,7 @@ namespace G
                                 pathTemplate: "$\"/v1/voices/add/{publicUserId}/{voiceId}\"",
                                 httpMethod: "POST",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: null,
                                 exception: __exception,
                                 clientOptions: Options,
@@ -258,7 +258,7 @@ namespace G
                                 pathTemplate: "$\"/v1/voices/add/{publicUserId}/{voiceId}\"",
                                 httpMethod: "POST",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: __response,
                                 exception: null,
                                 clientOptions: Options,
@@ -306,7 +306,7 @@ namespace G
                                 pathTemplate: "$\"/v1/voices/add/{publicUserId}/{voiceId}\"",
                                 httpMethod: "POST",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: __response,
                                 exception: null,
                                 clientOptions: Options,
@@ -328,7 +328,7 @@ namespace G
                                 pathTemplate: "$\"/v1/voices/add/{publicUserId}/{voiceId}\"",
                                 httpMethod: "POST",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: __response,
                                 exception: null,
                                 clientOptions: Options,

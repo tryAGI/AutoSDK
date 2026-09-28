@@ -1,4 +1,4 @@
-﻿//HintName: G.ExportClient.DownloadSync.g.cs
+//HintName: G.ExportClient.DownloadSync.g.cs
 
 #nullable enable
 
@@ -229,7 +229,7 @@ namespace G
                     downloadAllTasks: downloadAllTasks,
                     downloadResources: downloadResources,
                     exportType: exportType,
-                    id: id!,
+                    id: id,
                     ids: ids);
 
                 return __httpRequest;
@@ -252,7 +252,7 @@ namespace G
                                 pathTemplate: "$\"/api/projects/{id}/export\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: null,
                                 exception: null,
                                 clientOptions: Options,
@@ -286,7 +286,7 @@ namespace G
                                 pathTemplate: "$\"/api/projects/{id}/export\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: null,
                                 exception: __exception,
                                 clientOptions: Options,
@@ -327,7 +327,7 @@ namespace G
                                 pathTemplate: "$\"/api/projects/{id}/export\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: __response,
                                 exception: null,
                                 clientOptions: Options,
@@ -375,7 +375,7 @@ namespace G
                                 pathTemplate: "$\"/api/projects/{id}/export\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: __response,
                                 exception: null,
                                 clientOptions: Options,
@@ -397,7 +397,7 @@ namespace G
                                 pathTemplate: "$\"/api/projects/{id}/export\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: __response,
                                 exception: null,
                                 clientOptions: Options,
@@ -586,7 +586,7 @@ namespace G
                     downloadAllTasks: downloadAllTasks,
                     downloadResources: downloadResources,
                     exportType: exportType,
-                    id: id!,
+                    id: id,
                     ids: ids);
 
                 return __httpRequest;
@@ -609,7 +609,7 @@ namespace G
                                 pathTemplate: "$\"/api/projects/{id}/export\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: null,
                                 exception: null,
                                 clientOptions: Options,
@@ -643,7 +643,7 @@ namespace G
                                 pathTemplate: "$\"/api/projects/{id}/export\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: null,
                                 exception: __exception,
                                 clientOptions: Options,
@@ -684,7 +684,7 @@ namespace G
                                 pathTemplate: "$\"/api/projects/{id}/export\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: __response,
                                 exception: null,
                                 clientOptions: Options,
@@ -732,7 +732,7 @@ namespace G
                                 pathTemplate: "$\"/api/projects/{id}/export\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: __response,
                                 exception: null,
                                 clientOptions: Options,
@@ -754,7 +754,7 @@ namespace G
                                 pathTemplate: "$\"/api/projects/{id}/export\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: __response,
                                 exception: null,
                                 clientOptions: Options,

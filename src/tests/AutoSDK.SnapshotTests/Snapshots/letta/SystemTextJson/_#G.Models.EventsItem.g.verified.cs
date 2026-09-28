@@ -1,4 +1,4 @@
-﻿//HintName: G.Models.EventsItem.g.cs
+//HintName: G.Models.EventsItem.g.cs
 #pragma warning disable CS0618 // Type or member is obsolete
 
 #nullable enable
@@ -48,8 +48,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.MetadataSendTelemetryRequestEventVariant1 PickSessionStart() => IsSessionStart
-            ? SessionStart!
+        public global::G.MetadataSendTelemetryRequestEventVariant1 PickSessionStart() => SessionStart is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'SessionStart' but the value was {ToString()}.");
 
         /// <summary>
@@ -85,8 +85,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.MetadataSendTelemetryRequestEventVariant2 PickSessionEnd() => IsSessionEnd
-            ? SessionEnd!
+        public global::G.MetadataSendTelemetryRequestEventVariant2 PickSessionEnd() => SessionEnd is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'SessionEnd' but the value was {ToString()}.");
 
         /// <summary>
@@ -122,8 +122,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.MetadataSendTelemetryRequestEventVariant3 PickToolUsage() => IsToolUsage
-            ? ToolUsage!
+        public global::G.MetadataSendTelemetryRequestEventVariant3 PickToolUsage() => ToolUsage is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'ToolUsage' but the value was {ToString()}.");
 
         /// <summary>
@@ -159,8 +159,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.MetadataSendTelemetryRequestEventVariant4 PickError() => IsError
-            ? Error!
+        public global::G.MetadataSendTelemetryRequestEventVariant4 PickError() => Error is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Error' but the value was {ToString()}.");
 
         /// <summary>
@@ -196,8 +196,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.MetadataSendTelemetryRequestEventVariant5 PickUserInput() => IsUserInput
-            ? UserInput!
+        public global::G.MetadataSendTelemetryRequestEventVariant5 PickUserInput() => UserInput is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'UserInput' but the value was {ToString()}.");
         /// <summary>
         /// 
@@ -381,25 +381,25 @@ namespace G
                 Validate();
             }
 
-            if (IsSessionStart && sessionStart != null)
+            if (SessionStart is { } __value0 && sessionStart != null)
             {
-                return sessionStart(SessionStart!);
+                return sessionStart(__value0);
             }
-            else if (IsSessionEnd && sessionEnd != null)
+            else if (SessionEnd is { } __value1 && sessionEnd != null)
             {
-                return sessionEnd(SessionEnd!);
+                return sessionEnd(__value1);
             }
-            else if (IsToolUsage && toolUsage != null)
+            else if (ToolUsage is { } __value2 && toolUsage != null)
             {
-                return toolUsage(ToolUsage!);
+                return toolUsage(__value2);
             }
-            else if (IsError && error != null)
+            else if (Error is { } __value3 && error != null)
             {
-                return error(Error!);
+                return error(__value3);
             }
-            else if (IsUserInput && userInput != null)
+            else if (UserInput is { } __value4 && userInput != null)
             {
-                return userInput(UserInput!);
+                return userInput(__value4);
             }
 
             return default(TResult);
@@ -425,25 +425,25 @@ namespace G
                 Validate();
             }
 
-            if (IsSessionStart)
+            if (SessionStart is { } __value0)
             {
-                sessionStart?.Invoke(SessionStart!);
+                sessionStart?.Invoke(__value0);
             }
-            else if (IsSessionEnd)
+            else if (SessionEnd is { } __value1)
             {
-                sessionEnd?.Invoke(SessionEnd!);
+                sessionEnd?.Invoke(__value1);
             }
-            else if (IsToolUsage)
+            else if (ToolUsage is { } __value2)
             {
-                toolUsage?.Invoke(ToolUsage!);
+                toolUsage?.Invoke(__value2);
             }
-            else if (IsError)
+            else if (Error is { } __value3)
             {
-                error?.Invoke(Error!);
+                error?.Invoke(__value3);
             }
-            else if (IsUserInput)
+            else if (UserInput is { } __value4)
             {
-                userInput?.Invoke(UserInput!);
+                userInput?.Invoke(__value4);
             }
         }
 
@@ -463,25 +463,25 @@ namespace G
                 Validate();
             }
 
-            if (IsSessionStart)
+            if (SessionStart is { } __value0)
             {
-                sessionStart?.Invoke(SessionStart!);
+                sessionStart?.Invoke(__value0);
             }
-            else if (IsSessionEnd)
+            else if (SessionEnd is { } __value1)
             {
-                sessionEnd?.Invoke(SessionEnd!);
+                sessionEnd?.Invoke(__value1);
             }
-            else if (IsToolUsage)
+            else if (ToolUsage is { } __value2)
             {
-                toolUsage?.Invoke(ToolUsage!);
+                toolUsage?.Invoke(__value2);
             }
-            else if (IsError)
+            else if (Error is { } __value3)
             {
-                error?.Invoke(Error!);
+                error?.Invoke(__value3);
             }
-            else if (IsUserInput)
+            else if (UserInput is { } __value4)
             {
-                userInput?.Invoke(UserInput!);
+                userInput?.Invoke(__value4);
             }
         }
 

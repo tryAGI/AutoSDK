@@ -1,4 +1,4 @@
-﻿//HintName: G.Models.ChatChoiceFinishReason.g.cs
+//HintName: G.Models.ChatChoiceFinishReason.g.cs
 #pragma warning disable CS0618 // Type or member is obsolete
 
 #nullable enable
@@ -43,8 +43,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.ChatFinishReasonEnum PickChatFinishReasonEnum() => IsChatFinishReasonEnum
-            ? ChatFinishReasonEnum!.Value
+        public global::G.ChatFinishReasonEnum PickChatFinishReasonEnum() => ChatFinishReasonEnum is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'ChatFinishReasonEnum' but the value was {ToString()}.");
 
         /// <summary>
@@ -80,8 +80,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public object PickChatChoiceFinishReasonVariant2() => IsChatChoiceFinishReasonVariant2
-            ? ChatChoiceFinishReasonVariant2!
+        public object PickChatChoiceFinishReasonVariant2() => ChatChoiceFinishReasonVariant2 is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'ChatChoiceFinishReasonVariant2' but the value was {ToString()}.");
 
         /// <summary>
@@ -117,8 +117,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public object PickChatChoiceFinishReasonVariant3() => IsChatChoiceFinishReasonVariant3
-            ? ChatChoiceFinishReasonVariant3!
+        public object PickChatChoiceFinishReasonVariant3() => ChatChoiceFinishReasonVariant3 is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'ChatChoiceFinishReasonVariant3' but the value was {ToString()}.");
         /// <summary>
         /// 
@@ -197,17 +197,17 @@ namespace G
                 Validate();
             }
 
-            if (IsChatFinishReasonEnum && chatFinishReasonEnum != null)
+            if (ChatFinishReasonEnum is { } __value0 && chatFinishReasonEnum != null)
             {
-                return chatFinishReasonEnum(ChatFinishReasonEnum!);
+                return chatFinishReasonEnum(__value0);
             }
-            else if (IsChatChoiceFinishReasonVariant2 && chatChoiceFinishReasonVariant2 != null)
+            else if (ChatChoiceFinishReasonVariant2 is { } __value1 && chatChoiceFinishReasonVariant2 != null)
             {
-                return chatChoiceFinishReasonVariant2(ChatChoiceFinishReasonVariant2!);
+                return chatChoiceFinishReasonVariant2(__value1);
             }
-            else if (IsChatChoiceFinishReasonVariant3 && chatChoiceFinishReasonVariant3 != null)
+            else if (ChatChoiceFinishReasonVariant3 is { } __value2 && chatChoiceFinishReasonVariant3 != null)
             {
-                return chatChoiceFinishReasonVariant3(ChatChoiceFinishReasonVariant3!);
+                return chatChoiceFinishReasonVariant3(__value2);
             }
 
             return default(TResult);
@@ -229,17 +229,17 @@ namespace G
                 Validate();
             }
 
-            if (IsChatFinishReasonEnum)
+            if (ChatFinishReasonEnum is { } __value0)
             {
-                chatFinishReasonEnum?.Invoke(ChatFinishReasonEnum!);
+                chatFinishReasonEnum?.Invoke(__value0);
             }
-            else if (IsChatChoiceFinishReasonVariant2)
+            else if (ChatChoiceFinishReasonVariant2 is { } __value1)
             {
-                chatChoiceFinishReasonVariant2?.Invoke(ChatChoiceFinishReasonVariant2!);
+                chatChoiceFinishReasonVariant2?.Invoke(__value1);
             }
-            else if (IsChatChoiceFinishReasonVariant3)
+            else if (ChatChoiceFinishReasonVariant3 is { } __value2)
             {
-                chatChoiceFinishReasonVariant3?.Invoke(ChatChoiceFinishReasonVariant3!);
+                chatChoiceFinishReasonVariant3?.Invoke(__value2);
             }
         }
 
@@ -257,17 +257,17 @@ namespace G
                 Validate();
             }
 
-            if (IsChatFinishReasonEnum)
+            if (ChatFinishReasonEnum is { } __value0)
             {
-                chatFinishReasonEnum?.Invoke(ChatFinishReasonEnum!);
+                chatFinishReasonEnum?.Invoke(__value0);
             }
-            else if (IsChatChoiceFinishReasonVariant2)
+            else if (ChatChoiceFinishReasonVariant2 is { } __value1)
             {
-                chatChoiceFinishReasonVariant2?.Invoke(ChatChoiceFinishReasonVariant2!);
+                chatChoiceFinishReasonVariant2?.Invoke(__value1);
             }
-            else if (IsChatChoiceFinishReasonVariant3)
+            else if (ChatChoiceFinishReasonVariant3 is { } __value2)
             {
-                chatChoiceFinishReasonVariant3?.Invoke(ChatChoiceFinishReasonVariant3!);
+                chatChoiceFinishReasonVariant3?.Invoke(__value2);
             }
         }
 

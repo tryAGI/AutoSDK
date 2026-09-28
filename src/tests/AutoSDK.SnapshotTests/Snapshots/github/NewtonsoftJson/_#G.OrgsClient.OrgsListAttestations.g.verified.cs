@@ -1,4 +1,4 @@
-﻿//HintName: G.OrgsClient.OrgsListAttestations.g.cs
+//HintName: G.OrgsClient.OrgsListAttestations.g.cs
 
 #nullable enable
 
@@ -153,8 +153,8 @@ namespace G
                     perPage: perPage,
                     before: before,
                     after: after,
-                    org: org!,
-                    subjectDigest: subjectDigest!);
+                    org: org,
+                    subjectDigest: subjectDigest);
 
                 return __httpRequest;
             }
@@ -176,7 +176,7 @@ namespace G
                                 pathTemplate: "$\"/orgs/{org}/attestations/{subjectDigest}\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: null,
                                 exception: null,
                                 clientOptions: Options,
@@ -210,7 +210,7 @@ namespace G
                                 pathTemplate: "$\"/orgs/{org}/attestations/{subjectDigest}\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: null,
                                 exception: __exception,
                                 clientOptions: Options,
@@ -251,7 +251,7 @@ namespace G
                                 pathTemplate: "$\"/orgs/{org}/attestations/{subjectDigest}\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: __response,
                                 exception: null,
                                 clientOptions: Options,
@@ -299,7 +299,7 @@ namespace G
                                 pathTemplate: "$\"/orgs/{org}/attestations/{subjectDigest}\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: __response,
                                 exception: null,
                                 clientOptions: Options,
@@ -321,7 +321,7 @@ namespace G
                                 pathTemplate: "$\"/orgs/{org}/attestations/{subjectDigest}\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: __response,
                                 exception: null,
                                 clientOptions: Options,

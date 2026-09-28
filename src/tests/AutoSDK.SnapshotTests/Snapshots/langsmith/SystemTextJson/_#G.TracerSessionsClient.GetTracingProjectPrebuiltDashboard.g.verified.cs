@@ -1,4 +1,4 @@
-﻿//HintName: G.TracerSessionsClient.GetTracingProjectPrebuiltDashboard.g.cs
+//HintName: G.TracerSessionsClient.GetTracingProjectPrebuiltDashboard.g.cs
 
 #nullable enable
 
@@ -213,7 +213,7 @@ namespace G
                 PrepareGetTracingProjectPrebuiltDashboardRequest(
                     httpClient: HttpClient,
                     httpRequestMessage: __httpRequest,
-                    sessionId: sessionId!,
+                    sessionId: sessionId,
                     accept: accept,
                     request: request);
 
@@ -239,7 +239,7 @@ namespace G
                                 pathTemplate: "$\"/api/v1/sessions/{sessionId}/dashboard\"",
                                 httpMethod: "POST",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: null,
                                 exception: null,
                                 clientOptions: Options,
@@ -273,7 +273,7 @@ namespace G
                                 pathTemplate: "$\"/api/v1/sessions/{sessionId}/dashboard\"",
                                 httpMethod: "POST",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: null,
                                 exception: __exception,
                                 clientOptions: Options,
@@ -314,7 +314,7 @@ namespace G
                                 pathTemplate: "$\"/api/v1/sessions/{sessionId}/dashboard\"",
                                 httpMethod: "POST",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: __response,
                                 exception: null,
                                 clientOptions: Options,
@@ -362,7 +362,7 @@ namespace G
                                 pathTemplate: "$\"/api/v1/sessions/{sessionId}/dashboard\"",
                                 httpMethod: "POST",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: __response,
                                 exception: null,
                                 clientOptions: Options,
@@ -384,7 +384,7 @@ namespace G
                                 pathTemplate: "$\"/api/v1/sessions/{sessionId}/dashboard\"",
                                 httpMethod: "POST",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: __response,
                                 exception: null,
                                 clientOptions: Options,

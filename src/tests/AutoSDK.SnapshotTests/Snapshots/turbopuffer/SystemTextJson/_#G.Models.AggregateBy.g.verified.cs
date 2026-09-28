@@ -1,4 +1,4 @@
-﻿//HintName: G.Models.AggregateBy.g.cs
+//HintName: G.Models.AggregateBy.g.cs
 #pragma warning disable CS0618 // Type or member is obsolete
 
 #nullable enable
@@ -43,8 +43,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public byte[] PickAggregateByVariant1() => IsAggregateByVariant1
-            ? AggregateByVariant1!
+        public byte[] PickAggregateByVariant1() => AggregateByVariant1 is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'AggregateByVariant1' but the value was {ToString()}.");
 
         /// <summary>
@@ -80,8 +80,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public byte[] PickAggregateByVariant2() => IsAggregateByVariant2
-            ? AggregateByVariant2!
+        public byte[] PickAggregateByVariant2() => AggregateByVariant2 is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'AggregateByVariant2' but the value was {ToString()}.");
 
         /// <summary>
@@ -117,8 +117,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public byte[] PickAggregateByVariant3() => IsAggregateByVariant3
-            ? AggregateByVariant3!
+        public byte[] PickAggregateByVariant3() => AggregateByVariant3 is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'AggregateByVariant3' but the value was {ToString()}.");
         /// <summary>
         /// 
@@ -197,17 +197,17 @@ namespace G
                 Validate();
             }
 
-            if (IsAggregateByVariant1 && aggregateByVariant1 != null)
+            if (AggregateByVariant1 is { } __value0 && aggregateByVariant1 != null)
             {
-                return aggregateByVariant1(AggregateByVariant1!);
+                return aggregateByVariant1(__value0);
             }
-            else if (IsAggregateByVariant2 && aggregateByVariant2 != null)
+            else if (AggregateByVariant2 is { } __value1 && aggregateByVariant2 != null)
             {
-                return aggregateByVariant2(AggregateByVariant2!);
+                return aggregateByVariant2(__value1);
             }
-            else if (IsAggregateByVariant3 && aggregateByVariant3 != null)
+            else if (AggregateByVariant3 is { } __value2 && aggregateByVariant3 != null)
             {
-                return aggregateByVariant3(AggregateByVariant3!);
+                return aggregateByVariant3(__value2);
             }
 
             return default(TResult);
@@ -229,17 +229,17 @@ namespace G
                 Validate();
             }
 
-            if (IsAggregateByVariant1)
+            if (AggregateByVariant1 is { } __value0)
             {
-                aggregateByVariant1?.Invoke(AggregateByVariant1!);
+                aggregateByVariant1?.Invoke(__value0);
             }
-            else if (IsAggregateByVariant2)
+            else if (AggregateByVariant2 is { } __value1)
             {
-                aggregateByVariant2?.Invoke(AggregateByVariant2!);
+                aggregateByVariant2?.Invoke(__value1);
             }
-            else if (IsAggregateByVariant3)
+            else if (AggregateByVariant3 is { } __value2)
             {
-                aggregateByVariant3?.Invoke(AggregateByVariant3!);
+                aggregateByVariant3?.Invoke(__value2);
             }
         }
 
@@ -257,17 +257,17 @@ namespace G
                 Validate();
             }
 
-            if (IsAggregateByVariant1)
+            if (AggregateByVariant1 is { } __value0)
             {
-                aggregateByVariant1?.Invoke(AggregateByVariant1!);
+                aggregateByVariant1?.Invoke(__value0);
             }
-            else if (IsAggregateByVariant2)
+            else if (AggregateByVariant2 is { } __value1)
             {
-                aggregateByVariant2?.Invoke(AggregateByVariant2!);
+                aggregateByVariant2?.Invoke(__value1);
             }
-            else if (IsAggregateByVariant3)
+            else if (AggregateByVariant3 is { } __value2)
             {
-                aggregateByVariant3?.Invoke(AggregateByVariant3!);
+                aggregateByVariant3?.Invoke(__value2);
             }
         }
 

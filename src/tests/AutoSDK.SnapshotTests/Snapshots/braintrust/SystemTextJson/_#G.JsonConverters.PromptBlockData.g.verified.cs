@@ -1,4 +1,4 @@
-﻿//HintName: G.JsonConverters.PromptBlockData.g.cs
+//HintName: G.JsonConverters.PromptBlockData.g.cs
 #nullable enable
 #pragma warning disable CS0618 // Type or member is obsolete
 
@@ -132,13 +132,13 @@ namespace G.JsonConverters
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.PromptBlockDataChat), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.PromptBlockDataChat?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.PromptBlockDataChat).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Chat!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickChat(), typeInfo);
             }
             else if (value.IsCompletion)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.PromptBlockDataCompletion), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.PromptBlockDataCompletion?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.PromptBlockDataCompletion).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Completion!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickCompletion(), typeInfo);
             }
         }
     }

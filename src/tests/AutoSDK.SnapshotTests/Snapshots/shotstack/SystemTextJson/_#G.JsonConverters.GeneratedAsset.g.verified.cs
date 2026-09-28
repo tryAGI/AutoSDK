@@ -1,4 +1,4 @@
-﻿//HintName: G.JsonConverters.GeneratedAsset.g.cs
+//HintName: G.JsonConverters.GeneratedAsset.g.cs
 #nullable enable
 #pragma warning disable CS0618 // Type or member is obsolete
 
@@ -96,37 +96,37 @@ namespace G.JsonConverters
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.ShotstackGeneratedAsset), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.ShotstackGeneratedAsset?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.ShotstackGeneratedAsset).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Shotstack!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickShotstack(), typeInfo);
             }
             else if (value.IsDId)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.DIDGeneratedAsset), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.DIDGeneratedAsset?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.DIDGeneratedAsset).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.DId!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickDId(), typeInfo);
             }
             else if (value.IsElevenlabs)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.ElevenLabsGeneratedAsset), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.ElevenLabsGeneratedAsset?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.ElevenLabsGeneratedAsset).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Elevenlabs!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickElevenlabs(), typeInfo);
             }
             else if (value.IsHeygen)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.HeyGenGeneratedAsset), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.HeyGenGeneratedAsset?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.HeyGenGeneratedAsset).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Heygen!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickHeygen(), typeInfo);
             }
             else if (value.IsOpenai)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.OpenAiGeneratedAsset), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.OpenAiGeneratedAsset?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.OpenAiGeneratedAsset).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Openai!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickOpenai(), typeInfo);
             }
             else if (value.IsStabilityAi)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.StabilityAiGeneratedAsset), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.StabilityAiGeneratedAsset?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.StabilityAiGeneratedAsset).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.StabilityAi!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickStabilityAi(), typeInfo);
             }
         }
     }

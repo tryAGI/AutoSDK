@@ -1,4 +1,4 @@
-﻿//HintName: G.Models.DoneReason.g.cs
+//HintName: G.Models.DoneReason.g.cs
 #pragma warning disable CS0618 // Type or member is obsolete
 
 #nullable enable
@@ -43,8 +43,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public string PickDoneReasonVariant1() => IsDoneReasonVariant1
-            ? DoneReasonVariant1!
+        public string PickDoneReasonVariant1() => DoneReasonVariant1 is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'DoneReasonVariant1' but the value was {ToString()}.");
 
         /// <summary>
@@ -80,8 +80,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.DoneReasonEnum PickEnum() => IsEnum
-            ? Enum!.Value
+        public global::G.DoneReasonEnum PickEnum() => Enum is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Enum' but the value was {ToString()}.");
         /// <summary>
         /// 
@@ -178,13 +178,13 @@ namespace G
                 Validate();
             }
 
-            if (IsDoneReasonVariant1 && doneReasonVariant1 != null)
+            if (DoneReasonVariant1 is { } __value0 && doneReasonVariant1 != null)
             {
-                return doneReasonVariant1(DoneReasonVariant1!);
+                return doneReasonVariant1(__value0);
             }
-            else if (IsEnum && @enum != null)
+            else if (Enum is { } __value1 && @enum != null)
             {
-                return @enum(Enum!);
+                return @enum(__value1);
             }
 
             return default(TResult);
@@ -204,13 +204,13 @@ namespace G
                 Validate();
             }
 
-            if (IsDoneReasonVariant1)
+            if (DoneReasonVariant1 is { } __value0)
             {
-                doneReasonVariant1?.Invoke(DoneReasonVariant1!);
+                doneReasonVariant1?.Invoke(__value0);
             }
-            else if (IsEnum)
+            else if (Enum is { } __value1)
             {
-                @enum?.Invoke(Enum!);
+                @enum?.Invoke(__value1);
             }
         }
 
@@ -227,13 +227,13 @@ namespace G
                 Validate();
             }
 
-            if (IsDoneReasonVariant1)
+            if (DoneReasonVariant1 is { } __value0)
             {
-                doneReasonVariant1?.Invoke(DoneReasonVariant1!);
+                doneReasonVariant1?.Invoke(__value0);
             }
-            else if (IsEnum)
+            else if (Enum is { } __value1)
             {
-                @enum?.Invoke(Enum!);
+                @enum?.Invoke(__value1);
             }
         }
 

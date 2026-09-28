@@ -1,4 +1,4 @@
-﻿//HintName: G.Models.InjectionPostRequestBodyContentApplicationJsonSchemaPrompt.g.cs
+//HintName: G.Models.InjectionPostRequestBodyContentApplicationJsonSchemaPrompt.g.cs
 #pragma warning disable CS0618 // Type or member is obsolete
 
 #nullable enable
@@ -43,8 +43,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public string PickInjectionPostRequestBodyContentApplicationJsonSchemaPromptVariant1() => IsInjectionPostRequestBodyContentApplicationJsonSchemaPromptVariant1
-            ? InjectionPostRequestBodyContentApplicationJsonSchemaPromptVariant1!
+        public string PickInjectionPostRequestBodyContentApplicationJsonSchemaPromptVariant1() => InjectionPostRequestBodyContentApplicationJsonSchemaPromptVariant1 is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'InjectionPostRequestBodyContentApplicationJsonSchemaPromptVariant1' but the value was {ToString()}.");
 
         /// <summary>
@@ -80,8 +80,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<string> PickInjectionPostRequestBodyContentApplicationJsonSchemaPromptVariant2() => IsInjectionPostRequestBodyContentApplicationJsonSchemaPromptVariant2
-            ? InjectionPostRequestBodyContentApplicationJsonSchemaPromptVariant2!
+        public global::System.Collections.Generic.IList<string> PickInjectionPostRequestBodyContentApplicationJsonSchemaPromptVariant2() => InjectionPostRequestBodyContentApplicationJsonSchemaPromptVariant2 is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'InjectionPostRequestBodyContentApplicationJsonSchemaPromptVariant2' but the value was {ToString()}.");
         /// <summary>
         /// 
@@ -155,13 +155,13 @@ namespace G
                 Validate();
             }
 
-            if (IsInjectionPostRequestBodyContentApplicationJsonSchemaPromptVariant1 && injectionPostRequestBodyContentApplicationJsonSchemaPromptVariant1 != null)
+            if (InjectionPostRequestBodyContentApplicationJsonSchemaPromptVariant1 is { } __value0 && injectionPostRequestBodyContentApplicationJsonSchemaPromptVariant1 != null)
             {
-                return injectionPostRequestBodyContentApplicationJsonSchemaPromptVariant1(InjectionPostRequestBodyContentApplicationJsonSchemaPromptVariant1!);
+                return injectionPostRequestBodyContentApplicationJsonSchemaPromptVariant1(__value0);
             }
-            else if (IsInjectionPostRequestBodyContentApplicationJsonSchemaPromptVariant2 && injectionPostRequestBodyContentApplicationJsonSchemaPromptVariant2 != null)
+            else if (InjectionPostRequestBodyContentApplicationJsonSchemaPromptVariant2 is { } __value1 && injectionPostRequestBodyContentApplicationJsonSchemaPromptVariant2 != null)
             {
-                return injectionPostRequestBodyContentApplicationJsonSchemaPromptVariant2(InjectionPostRequestBodyContentApplicationJsonSchemaPromptVariant2!);
+                return injectionPostRequestBodyContentApplicationJsonSchemaPromptVariant2(__value1);
             }
 
             return default(TResult);
@@ -181,13 +181,13 @@ namespace G
                 Validate();
             }
 
-            if (IsInjectionPostRequestBodyContentApplicationJsonSchemaPromptVariant1)
+            if (InjectionPostRequestBodyContentApplicationJsonSchemaPromptVariant1 is { } __value0)
             {
-                injectionPostRequestBodyContentApplicationJsonSchemaPromptVariant1?.Invoke(InjectionPostRequestBodyContentApplicationJsonSchemaPromptVariant1!);
+                injectionPostRequestBodyContentApplicationJsonSchemaPromptVariant1?.Invoke(__value0);
             }
-            else if (IsInjectionPostRequestBodyContentApplicationJsonSchemaPromptVariant2)
+            else if (InjectionPostRequestBodyContentApplicationJsonSchemaPromptVariant2 is { } __value1)
             {
-                injectionPostRequestBodyContentApplicationJsonSchemaPromptVariant2?.Invoke(InjectionPostRequestBodyContentApplicationJsonSchemaPromptVariant2!);
+                injectionPostRequestBodyContentApplicationJsonSchemaPromptVariant2?.Invoke(__value1);
             }
         }
 
@@ -204,13 +204,13 @@ namespace G
                 Validate();
             }
 
-            if (IsInjectionPostRequestBodyContentApplicationJsonSchemaPromptVariant1)
+            if (InjectionPostRequestBodyContentApplicationJsonSchemaPromptVariant1 is { } __value0)
             {
-                injectionPostRequestBodyContentApplicationJsonSchemaPromptVariant1?.Invoke(InjectionPostRequestBodyContentApplicationJsonSchemaPromptVariant1!);
+                injectionPostRequestBodyContentApplicationJsonSchemaPromptVariant1?.Invoke(__value0);
             }
-            else if (IsInjectionPostRequestBodyContentApplicationJsonSchemaPromptVariant2)
+            else if (InjectionPostRequestBodyContentApplicationJsonSchemaPromptVariant2 is { } __value1)
             {
-                injectionPostRequestBodyContentApplicationJsonSchemaPromptVariant2?.Invoke(InjectionPostRequestBodyContentApplicationJsonSchemaPromptVariant2!);
+                injectionPostRequestBodyContentApplicationJsonSchemaPromptVariant2?.Invoke(__value1);
             }
         }
 

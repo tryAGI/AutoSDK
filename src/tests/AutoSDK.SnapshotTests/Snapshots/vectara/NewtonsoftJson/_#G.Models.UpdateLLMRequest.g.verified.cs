@@ -1,4 +1,4 @@
-﻿//HintName: G.Models.UpdateLLMRequest.g.cs
+//HintName: G.Models.UpdateLLMRequest.g.cs
 #pragma warning disable CS0618 // Type or member is obsolete
 
 #nullable enable
@@ -48,8 +48,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.UpdateOpenAILLMRequest PickOpenaiCompatible() => IsOpenaiCompatible
-            ? OpenaiCompatible!.Value
+        public global::G.UpdateOpenAILLMRequest PickOpenaiCompatible() => OpenaiCompatible is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'OpenaiCompatible' but the value was {ToString()}.");
 
         /// <summary>
@@ -85,8 +85,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.UpdateOpenAIResponsesLLMRequest PickOpenaiResponses() => IsOpenaiResponses
-            ? OpenaiResponses!.Value
+        public global::G.UpdateOpenAIResponsesLLMRequest PickOpenaiResponses() => OpenaiResponses is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'OpenaiResponses' but the value was {ToString()}.");
 
         /// <summary>
@@ -122,8 +122,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.UpdateVertexAILLMRequest PickVertexAi() => IsVertexAi
-            ? VertexAi!
+        public global::G.UpdateVertexAILLMRequest PickVertexAi() => VertexAi is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'VertexAi' but the value was {ToString()}.");
 
         /// <summary>
@@ -159,8 +159,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.UpdateAnthropicLLMRequest PickAnthropic() => IsAnthropic
-            ? Anthropic!
+        public global::G.UpdateAnthropicLLMRequest PickAnthropic() => Anthropic is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Anthropic' but the value was {ToString()}.");
         /// <summary>
         /// 
@@ -316,21 +316,21 @@ namespace G
                 Validate();
             }
 
-            if (IsOpenaiCompatible && openaiCompatible != null)
+            if (OpenaiCompatible is { } __value0 && openaiCompatible != null)
             {
-                return openaiCompatible(OpenaiCompatible!);
+                return openaiCompatible(__value0);
             }
-            else if (IsOpenaiResponses && openaiResponses != null)
+            else if (OpenaiResponses is { } __value1 && openaiResponses != null)
             {
-                return openaiResponses(OpenaiResponses!);
+                return openaiResponses(__value1);
             }
-            else if (IsVertexAi && vertexAi != null)
+            else if (VertexAi is { } __value2 && vertexAi != null)
             {
-                return vertexAi(VertexAi!);
+                return vertexAi(__value2);
             }
-            else if (IsAnthropic && anthropic != null)
+            else if (Anthropic is { } __value3 && anthropic != null)
             {
-                return anthropic(Anthropic!);
+                return anthropic(__value3);
             }
 
             return default(TResult);
@@ -354,21 +354,21 @@ namespace G
                 Validate();
             }
 
-            if (IsOpenaiCompatible)
+            if (OpenaiCompatible is { } __value0)
             {
-                openaiCompatible?.Invoke(OpenaiCompatible!);
+                openaiCompatible?.Invoke(__value0);
             }
-            else if (IsOpenaiResponses)
+            else if (OpenaiResponses is { } __value1)
             {
-                openaiResponses?.Invoke(OpenaiResponses!);
+                openaiResponses?.Invoke(__value1);
             }
-            else if (IsVertexAi)
+            else if (VertexAi is { } __value2)
             {
-                vertexAi?.Invoke(VertexAi!);
+                vertexAi?.Invoke(__value2);
             }
-            else if (IsAnthropic)
+            else if (Anthropic is { } __value3)
             {
-                anthropic?.Invoke(Anthropic!);
+                anthropic?.Invoke(__value3);
             }
         }
 
@@ -387,21 +387,21 @@ namespace G
                 Validate();
             }
 
-            if (IsOpenaiCompatible)
+            if (OpenaiCompatible is { } __value0)
             {
-                openaiCompatible?.Invoke(OpenaiCompatible!);
+                openaiCompatible?.Invoke(__value0);
             }
-            else if (IsOpenaiResponses)
+            else if (OpenaiResponses is { } __value1)
             {
-                openaiResponses?.Invoke(OpenaiResponses!);
+                openaiResponses?.Invoke(__value1);
             }
-            else if (IsVertexAi)
+            else if (VertexAi is { } __value2)
             {
-                vertexAi?.Invoke(VertexAi!);
+                vertexAi?.Invoke(__value2);
             }
-            else if (IsAnthropic)
+            else if (Anthropic is { } __value3)
             {
-                anthropic?.Invoke(Anthropic!);
+                anthropic?.Invoke(__value3);
             }
         }
 

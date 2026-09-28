@@ -1,4 +1,4 @@
-﻿//HintName: G.Models.QueryInterface.g.cs
+//HintName: G.Models.QueryInterface.g.cs
 #pragma warning disable CS0618 // Type or member is obsolete
 
 #nullable enable
@@ -43,8 +43,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.VectorInput PickVectorInput() => IsVectorInput
-            ? VectorInput!.Value
+        public global::G.VectorInput PickVectorInput() => VectorInput is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'VectorInput' but the value was {ToString()}.");
 
         /// <summary>
@@ -80,8 +80,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.Query PickQuery() => IsQuery
-            ? Query!.Value
+        public global::G.Query PickQuery() => Query is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Query' but the value was {ToString()}.");
         /// <summary>
         /// 
@@ -178,13 +178,13 @@ namespace G
                 Validate();
             }
 
-            if (IsVectorInput && vectorInput != null)
+            if (VectorInput is { } __value0 && vectorInput != null)
             {
-                return vectorInput(VectorInput!);
+                return vectorInput(__value0);
             }
-            else if (IsQuery && query != null)
+            else if (Query is { } __value1 && query != null)
             {
-                return query(Query!);
+                return query(__value1);
             }
 
             return default(TResult);
@@ -204,13 +204,13 @@ namespace G
                 Validate();
             }
 
-            if (IsVectorInput)
+            if (VectorInput is { } __value0)
             {
-                vectorInput?.Invoke(VectorInput!);
+                vectorInput?.Invoke(__value0);
             }
-            else if (IsQuery)
+            else if (Query is { } __value1)
             {
-                query?.Invoke(Query!);
+                query?.Invoke(__value1);
             }
         }
 
@@ -227,13 +227,13 @@ namespace G
                 Validate();
             }
 
-            if (IsVectorInput)
+            if (VectorInput is { } __value0)
             {
-                vectorInput?.Invoke(VectorInput!);
+                vectorInput?.Invoke(__value0);
             }
-            else if (IsQuery)
+            else if (Query is { } __value1)
             {
-                query?.Invoke(Query!);
+                query?.Invoke(__value1);
             }
         }
 

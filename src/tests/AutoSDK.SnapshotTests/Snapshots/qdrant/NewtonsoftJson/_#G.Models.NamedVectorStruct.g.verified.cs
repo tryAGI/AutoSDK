@@ -1,4 +1,4 @@
-﻿//HintName: G.Models.NamedVectorStruct.g.cs
+//HintName: G.Models.NamedVectorStruct.g.cs
 #pragma warning disable CS0618 // Type or member is obsolete
 
 #nullable enable
@@ -46,8 +46,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<float> PickNamedVectorStructVariant1() => IsNamedVectorStructVariant1
-            ? NamedVectorStructVariant1!
+        public global::System.Collections.Generic.IList<float> PickNamedVectorStructVariant1() => NamedVectorStructVariant1 is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'NamedVectorStructVariant1' but the value was {ToString()}.");
 
         /// <summary>
@@ -83,8 +83,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.NamedVector PickNamedVector() => IsNamedVector
-            ? NamedVector!
+        public global::G.NamedVector PickNamedVector() => NamedVector is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'NamedVector' but the value was {ToString()}.");
 
         /// <summary>
@@ -120,8 +120,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.NamedSparseVector PickSparse() => IsSparse
-            ? Sparse!
+        public global::G.NamedSparseVector PickSparse() => Sparse is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Sparse' but the value was {ToString()}.");
         /// <summary>
         /// 
@@ -223,17 +223,17 @@ namespace G
                 Validate();
             }
 
-            if (IsNamedVectorStructVariant1 && namedVectorStructVariant1 != null)
+            if (NamedVectorStructVariant1 is { } __value0 && namedVectorStructVariant1 != null)
             {
-                return namedVectorStructVariant1(NamedVectorStructVariant1!);
+                return namedVectorStructVariant1(__value0);
             }
-            else if (IsNamedVector && namedVector != null)
+            else if (NamedVector is { } __value1 && namedVector != null)
             {
-                return namedVector(NamedVector!);
+                return namedVector(__value1);
             }
-            else if (IsSparse && sparse != null)
+            else if (Sparse is { } __value2 && sparse != null)
             {
-                return sparse(Sparse!);
+                return sparse(__value2);
             }
 
             return default(TResult);
@@ -255,17 +255,17 @@ namespace G
                 Validate();
             }
 
-            if (IsNamedVectorStructVariant1)
+            if (NamedVectorStructVariant1 is { } __value0)
             {
-                namedVectorStructVariant1?.Invoke(NamedVectorStructVariant1!);
+                namedVectorStructVariant1?.Invoke(__value0);
             }
-            else if (IsNamedVector)
+            else if (NamedVector is { } __value1)
             {
-                namedVector?.Invoke(NamedVector!);
+                namedVector?.Invoke(__value1);
             }
-            else if (IsSparse)
+            else if (Sparse is { } __value2)
             {
-                sparse?.Invoke(Sparse!);
+                sparse?.Invoke(__value2);
             }
         }
 
@@ -283,17 +283,17 @@ namespace G
                 Validate();
             }
 
-            if (IsNamedVectorStructVariant1)
+            if (NamedVectorStructVariant1 is { } __value0)
             {
-                namedVectorStructVariant1?.Invoke(NamedVectorStructVariant1!);
+                namedVectorStructVariant1?.Invoke(__value0);
             }
-            else if (IsNamedVector)
+            else if (NamedVector is { } __value1)
             {
-                namedVector?.Invoke(NamedVector!);
+                namedVector?.Invoke(__value1);
             }
-            else if (IsSparse)
+            else if (Sparse is { } __value2)
             {
-                sparse?.Invoke(Sparse!);
+                sparse?.Invoke(__value2);
             }
         }
 

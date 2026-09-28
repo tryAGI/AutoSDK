@@ -1,4 +1,4 @@
-﻿//HintName: G.Models.Output.g.cs
+//HintName: G.Models.Output.g.cs
 #pragma warning disable CS0618 // Type or member is obsolete
 
 #nullable enable
@@ -48,8 +48,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.ResearchEventDtoClassVariant1Variant2OutputVariant1 PickCompleted() => IsCompleted
-            ? Completed!
+        public global::G.ResearchEventDtoClassVariant1Variant2OutputVariant1 PickCompleted() => Completed is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Completed' but the value was {ToString()}.");
 
         /// <summary>
@@ -85,8 +85,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.ResearchEventDtoClassVariant1Variant2OutputVariant2 PickFailed() => IsFailed
-            ? Failed!
+        public global::G.ResearchEventDtoClassVariant1Variant2OutputVariant2 PickFailed() => Failed is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Failed' but the value was {ToString()}.");
         /// <summary>
         /// 
@@ -186,13 +186,13 @@ namespace G
                 Validate();
             }
 
-            if (IsCompleted && completed != null)
+            if (Completed is { } __value0 && completed != null)
             {
-                return completed(Completed!);
+                return completed(__value0);
             }
-            else if (IsFailed && failed != null)
+            else if (Failed is { } __value1 && failed != null)
             {
-                return failed(Failed!);
+                return failed(__value1);
             }
 
             return default(TResult);
@@ -212,13 +212,13 @@ namespace G
                 Validate();
             }
 
-            if (IsCompleted)
+            if (Completed is { } __value0)
             {
-                completed?.Invoke(Completed!);
+                completed?.Invoke(__value0);
             }
-            else if (IsFailed)
+            else if (Failed is { } __value1)
             {
-                failed?.Invoke(Failed!);
+                failed?.Invoke(__value1);
             }
         }
 
@@ -235,13 +235,13 @@ namespace G
                 Validate();
             }
 
-            if (IsCompleted)
+            if (Completed is { } __value0)
             {
-                completed?.Invoke(Completed!);
+                completed?.Invoke(__value0);
             }
-            else if (IsFailed)
+            else if (Failed is { } __value1)
             {
-                failed?.Invoke(Failed!);
+                failed?.Invoke(__value1);
             }
         }
 

@@ -1,4 +1,4 @@
-﻿//HintName: G.CodespacesClient.CodespacesDeleteFromOrganization.g.cs
+//HintName: G.CodespacesClient.CodespacesDeleteFromOrganization.g.cs
 
 #nullable enable
 
@@ -123,9 +123,9 @@ namespace G
                 PrepareCodespacesDeleteFromOrganizationRequest(
                     httpClient: HttpClient,
                     httpRequestMessage: __httpRequest,
-                    org: org!,
-                    username: username!,
-                    codespaceName: codespaceName!);
+                    org: org,
+                    username: username,
+                    codespaceName: codespaceName);
 
                 return __httpRequest;
             }
@@ -147,7 +147,7 @@ namespace G
                                 pathTemplate: "$\"/orgs/{org}/members/{username}/codespaces/{codespaceName}\"",
                                 httpMethod: "DELETE",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: null,
                                 exception: null,
                                 clientOptions: Options,
@@ -181,7 +181,7 @@ namespace G
                                 pathTemplate: "$\"/orgs/{org}/members/{username}/codespaces/{codespaceName}\"",
                                 httpMethod: "DELETE",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: null,
                                 exception: __exception,
                                 clientOptions: Options,
@@ -222,7 +222,7 @@ namespace G
                                 pathTemplate: "$\"/orgs/{org}/members/{username}/codespaces/{codespaceName}\"",
                                 httpMethod: "DELETE",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: __response,
                                 exception: null,
                                 clientOptions: Options,
@@ -270,7 +270,7 @@ namespace G
                                 pathTemplate: "$\"/orgs/{org}/members/{username}/codespaces/{codespaceName}\"",
                                 httpMethod: "DELETE",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: __response,
                                 exception: null,
                                 clientOptions: Options,
@@ -292,7 +292,7 @@ namespace G
                                 pathTemplate: "$\"/orgs/{org}/members/{username}/codespaces/{codespaceName}\"",
                                 httpMethod: "DELETE",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: __response,
                                 exception: null,
                                 clientOptions: Options,

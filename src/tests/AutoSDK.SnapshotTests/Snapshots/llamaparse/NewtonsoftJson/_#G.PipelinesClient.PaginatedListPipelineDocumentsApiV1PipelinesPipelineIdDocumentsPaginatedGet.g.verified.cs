@@ -1,4 +1,4 @@
-﻿//HintName: G.PipelinesClient.PaginatedListPipelineDocumentsApiV1PipelinesPipelineIdDocumentsPaginatedGet.g.cs
+//HintName: G.PipelinesClient.PaginatedListPipelineDocumentsApiV1PipelinesPipelineIdDocumentsPaginatedGet.g.cs
 
 #nullable enable
 
@@ -250,7 +250,7 @@ namespace G
                 PreparePaginatedListPipelineDocumentsApiV1PipelinesPipelineIdDocumentsPaginatedGetRequest(
                     httpClient: HttpClient,
                     httpRequestMessage: __httpRequest,
-                    pipelineId: pipelineId!,
+                    pipelineId: pipelineId,
                     skip: skip,
                     limit: limit,
                     fileId: fileId,
@@ -281,7 +281,7 @@ namespace G
                                 pathTemplate: "$\"/api/v1/pipelines/{pipelineId}/documents/paginated\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: null,
                                 exception: null,
                                 clientOptions: Options,
@@ -315,7 +315,7 @@ namespace G
                                 pathTemplate: "$\"/api/v1/pipelines/{pipelineId}/documents/paginated\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: null,
                                 exception: __exception,
                                 clientOptions: Options,
@@ -356,7 +356,7 @@ namespace G
                                 pathTemplate: "$\"/api/v1/pipelines/{pipelineId}/documents/paginated\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: __response,
                                 exception: null,
                                 clientOptions: Options,
@@ -404,7 +404,7 @@ namespace G
                                 pathTemplate: "$\"/api/v1/pipelines/{pipelineId}/documents/paginated\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: __response,
                                 exception: null,
                                 clientOptions: Options,
@@ -426,7 +426,7 @@ namespace G
                                 pathTemplate: "$\"/api/v1/pipelines/{pipelineId}/documents/paginated\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: __response,
                                 exception: null,
                                 clientOptions: Options,

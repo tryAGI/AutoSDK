@@ -1,4 +1,4 @@
-﻿//HintName: G.IssuesClient.IssuesGetEvent.g.cs
+//HintName: G.IssuesClient.IssuesGetEvent.g.cs
 
 #nullable enable
 
@@ -121,9 +121,9 @@ namespace G
                 PrepareIssuesGetEventRequest(
                     httpClient: HttpClient,
                     httpRequestMessage: __httpRequest,
-                    owner: owner!,
-                    repo: repo!,
-                    eventId: eventId!);
+                    owner: owner,
+                    repo: repo,
+                    eventId: eventId);
 
                 return __httpRequest;
             }
@@ -145,7 +145,7 @@ namespace G
                                 pathTemplate: "$\"/repos/{owner}/{repo}/issues/events/{eventId}\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: null,
                                 exception: null,
                                 clientOptions: Options,
@@ -179,7 +179,7 @@ namespace G
                                 pathTemplate: "$\"/repos/{owner}/{repo}/issues/events/{eventId}\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: null,
                                 exception: __exception,
                                 clientOptions: Options,
@@ -220,7 +220,7 @@ namespace G
                                 pathTemplate: "$\"/repos/{owner}/{repo}/issues/events/{eventId}\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: __response,
                                 exception: null,
                                 clientOptions: Options,
@@ -268,7 +268,7 @@ namespace G
                                 pathTemplate: "$\"/repos/{owner}/{repo}/issues/events/{eventId}\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: __response,
                                 exception: null,
                                 clientOptions: Options,
@@ -290,7 +290,7 @@ namespace G
                                 pathTemplate: "$\"/repos/{owner}/{repo}/issues/events/{eventId}\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: __response,
                                 exception: null,
                                 clientOptions: Options,

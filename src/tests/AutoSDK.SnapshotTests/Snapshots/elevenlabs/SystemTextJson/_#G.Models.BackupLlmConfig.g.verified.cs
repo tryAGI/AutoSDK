@@ -1,4 +1,4 @@
-﻿//HintName: G.Models.BackupLlmConfig.g.cs
+//HintName: G.Models.BackupLlmConfig.g.cs
 #pragma warning disable CS0618 // Type or member is obsolete
 
 #nullable enable
@@ -48,8 +48,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.BackupLLMDefault PickDefault() => IsDefault
-            ? Default!
+        public global::G.BackupLLMDefault PickDefault() => Default is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Default' but the value was {ToString()}.");
 
         /// <summary>
@@ -85,8 +85,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.BackupLLMDisabled PickDisabled() => IsDisabled
-            ? Disabled!
+        public global::G.BackupLLMDisabled PickDisabled() => Disabled is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Disabled' but the value was {ToString()}.");
 
         /// <summary>
@@ -122,8 +122,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.BackupLLMOverride PickOverride() => IsOverride
-            ? Override!
+        public global::G.BackupLLMOverride PickOverride() => Override is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Override' but the value was {ToString()}.");
         /// <summary>
         /// 
@@ -251,17 +251,17 @@ namespace G
                 Validate();
             }
 
-            if (IsDefault && @default != null)
+            if (Default is { } __value0 && @default != null)
             {
-                return @default(Default!);
+                return @default(__value0);
             }
-            else if (IsDisabled && disabled != null)
+            else if (Disabled is { } __value1 && disabled != null)
             {
-                return disabled(Disabled!);
+                return disabled(__value1);
             }
-            else if (IsOverride && @override != null)
+            else if (Override is { } __value2 && @override != null)
             {
-                return @override(Override!);
+                return @override(__value2);
             }
 
             return default(TResult);
@@ -283,17 +283,17 @@ namespace G
                 Validate();
             }
 
-            if (IsDefault)
+            if (Default is { } __value0)
             {
-                @default?.Invoke(Default!);
+                @default?.Invoke(__value0);
             }
-            else if (IsDisabled)
+            else if (Disabled is { } __value1)
             {
-                disabled?.Invoke(Disabled!);
+                disabled?.Invoke(__value1);
             }
-            else if (IsOverride)
+            else if (Override is { } __value2)
             {
-                @override?.Invoke(Override!);
+                @override?.Invoke(__value2);
             }
         }
 
@@ -311,17 +311,17 @@ namespace G
                 Validate();
             }
 
-            if (IsDefault)
+            if (Default is { } __value0)
             {
-                @default?.Invoke(Default!);
+                @default?.Invoke(__value0);
             }
-            else if (IsDisabled)
+            else if (Disabled is { } __value1)
             {
-                disabled?.Invoke(Disabled!);
+                disabled?.Invoke(__value1);
             }
-            else if (IsOverride)
+            else if (Override is { } __value2)
             {
-                @override?.Invoke(Override!);
+                @override?.Invoke(__value2);
             }
         }
 

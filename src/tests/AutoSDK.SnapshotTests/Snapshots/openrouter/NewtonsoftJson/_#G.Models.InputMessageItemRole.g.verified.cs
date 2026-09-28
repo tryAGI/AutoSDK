@@ -1,4 +1,4 @@
-﻿//HintName: G.Models.InputMessageItemRole.g.cs
+//HintName: G.Models.InputMessageItemRole.g.cs
 #pragma warning disable CS0618 // Type or member is obsolete
 
 #nullable enable
@@ -43,8 +43,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.InputMessageItemRole0 PickInputMessageItemRole0() => IsInputMessageItemRole0
-            ? InputMessageItemRole0!.Value
+        public global::G.InputMessageItemRole0 PickInputMessageItemRole0() => InputMessageItemRole0 is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'InputMessageItemRole0' but the value was {ToString()}.");
 
         /// <summary>
@@ -80,8 +80,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.InputMessageItemRole1 PickInputMessageItemRole1() => IsInputMessageItemRole1
-            ? InputMessageItemRole1!.Value
+        public global::G.InputMessageItemRole1 PickInputMessageItemRole1() => InputMessageItemRole1 is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'InputMessageItemRole1' but the value was {ToString()}.");
 
         /// <summary>
@@ -117,8 +117,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.InputMessageItemRole2 PickInputMessageItemRole2() => IsInputMessageItemRole2
-            ? InputMessageItemRole2!.Value
+        public global::G.InputMessageItemRole2 PickInputMessageItemRole2() => InputMessageItemRole2 is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'InputMessageItemRole2' but the value was {ToString()}.");
         /// <summary>
         /// 
@@ -243,17 +243,17 @@ namespace G
                 Validate();
             }
 
-            if (IsInputMessageItemRole0 && inputMessageItemRole0 != null)
+            if (InputMessageItemRole0 is { } __value0 && inputMessageItemRole0 != null)
             {
-                return inputMessageItemRole0(InputMessageItemRole0!);
+                return inputMessageItemRole0(__value0);
             }
-            else if (IsInputMessageItemRole1 && inputMessageItemRole1 != null)
+            else if (InputMessageItemRole1 is { } __value1 && inputMessageItemRole1 != null)
             {
-                return inputMessageItemRole1(InputMessageItemRole1!);
+                return inputMessageItemRole1(__value1);
             }
-            else if (IsInputMessageItemRole2 && inputMessageItemRole2 != null)
+            else if (InputMessageItemRole2 is { } __value2 && inputMessageItemRole2 != null)
             {
-                return inputMessageItemRole2(InputMessageItemRole2!);
+                return inputMessageItemRole2(__value2);
             }
 
             return default(TResult);
@@ -275,17 +275,17 @@ namespace G
                 Validate();
             }
 
-            if (IsInputMessageItemRole0)
+            if (InputMessageItemRole0 is { } __value0)
             {
-                inputMessageItemRole0?.Invoke(InputMessageItemRole0!);
+                inputMessageItemRole0?.Invoke(__value0);
             }
-            else if (IsInputMessageItemRole1)
+            else if (InputMessageItemRole1 is { } __value1)
             {
-                inputMessageItemRole1?.Invoke(InputMessageItemRole1!);
+                inputMessageItemRole1?.Invoke(__value1);
             }
-            else if (IsInputMessageItemRole2)
+            else if (InputMessageItemRole2 is { } __value2)
             {
-                inputMessageItemRole2?.Invoke(InputMessageItemRole2!);
+                inputMessageItemRole2?.Invoke(__value2);
             }
         }
 
@@ -303,17 +303,17 @@ namespace G
                 Validate();
             }
 
-            if (IsInputMessageItemRole0)
+            if (InputMessageItemRole0 is { } __value0)
             {
-                inputMessageItemRole0?.Invoke(InputMessageItemRole0!);
+                inputMessageItemRole0?.Invoke(__value0);
             }
-            else if (IsInputMessageItemRole1)
+            else if (InputMessageItemRole1 is { } __value1)
             {
-                inputMessageItemRole1?.Invoke(InputMessageItemRole1!);
+                inputMessageItemRole1?.Invoke(__value1);
             }
-            else if (IsInputMessageItemRole2)
+            else if (InputMessageItemRole2 is { } __value2)
             {
-                inputMessageItemRole2?.Invoke(InputMessageItemRole2!);
+                inputMessageItemRole2?.Invoke(__value2);
             }
         }
 

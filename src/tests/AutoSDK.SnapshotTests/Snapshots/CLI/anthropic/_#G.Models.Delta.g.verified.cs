@@ -1,4 +1,4 @@
-﻿//HintName: G.Models.Delta.g.cs
+//HintName: G.Models.Delta.g.cs
 #pragma warning disable CS0618 // Type or member is obsolete
 
 #nullable enable
@@ -48,8 +48,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.BetaTextContentBlockDelta PickTextDelta() => IsTextDelta
-            ? TextDelta!
+        public global::G.BetaTextContentBlockDelta PickTextDelta() => TextDelta is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'TextDelta' but the value was {ToString()}.");
 
         /// <summary>
@@ -85,8 +85,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.BetaInputJsonContentBlockDelta PickInputJsonDelta() => IsInputJsonDelta
-            ? InputJsonDelta!
+        public global::G.BetaInputJsonContentBlockDelta PickInputJsonDelta() => InputJsonDelta is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'InputJsonDelta' but the value was {ToString()}.");
 
         /// <summary>
@@ -122,8 +122,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.BetaCitationsDelta PickCitationsDelta() => IsCitationsDelta
-            ? CitationsDelta!
+        public global::G.BetaCitationsDelta PickCitationsDelta() => CitationsDelta is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'CitationsDelta' but the value was {ToString()}.");
 
         /// <summary>
@@ -159,8 +159,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.BetaThinkingContentBlockDelta PickThinkingDelta() => IsThinkingDelta
-            ? ThinkingDelta!
+        public global::G.BetaThinkingContentBlockDelta PickThinkingDelta() => ThinkingDelta is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'ThinkingDelta' but the value was {ToString()}.");
 
         /// <summary>
@@ -196,8 +196,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.BetaSignatureContentBlockDelta PickSignatureDelta() => IsSignatureDelta
-            ? SignatureDelta!
+        public global::G.BetaSignatureContentBlockDelta PickSignatureDelta() => SignatureDelta is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'SignatureDelta' but the value was {ToString()}.");
         /// <summary>
         /// 
@@ -381,25 +381,25 @@ namespace G
                 Validate();
             }
 
-            if (IsTextDelta && textDelta != null)
+            if (TextDelta is { } __value0 && textDelta != null)
             {
-                return textDelta(TextDelta!);
+                return textDelta(__value0);
             }
-            else if (IsInputJsonDelta && inputJsonDelta != null)
+            else if (InputJsonDelta is { } __value1 && inputJsonDelta != null)
             {
-                return inputJsonDelta(InputJsonDelta!);
+                return inputJsonDelta(__value1);
             }
-            else if (IsCitationsDelta && citationsDelta != null)
+            else if (CitationsDelta is { } __value2 && citationsDelta != null)
             {
-                return citationsDelta(CitationsDelta!);
+                return citationsDelta(__value2);
             }
-            else if (IsThinkingDelta && thinkingDelta != null)
+            else if (ThinkingDelta is { } __value3 && thinkingDelta != null)
             {
-                return thinkingDelta(ThinkingDelta!);
+                return thinkingDelta(__value3);
             }
-            else if (IsSignatureDelta && signatureDelta != null)
+            else if (SignatureDelta is { } __value4 && signatureDelta != null)
             {
-                return signatureDelta(SignatureDelta!);
+                return signatureDelta(__value4);
             }
 
             return default(TResult);
@@ -425,25 +425,25 @@ namespace G
                 Validate();
             }
 
-            if (IsTextDelta)
+            if (TextDelta is { } __value0)
             {
-                textDelta?.Invoke(TextDelta!);
+                textDelta?.Invoke(__value0);
             }
-            else if (IsInputJsonDelta)
+            else if (InputJsonDelta is { } __value1)
             {
-                inputJsonDelta?.Invoke(InputJsonDelta!);
+                inputJsonDelta?.Invoke(__value1);
             }
-            else if (IsCitationsDelta)
+            else if (CitationsDelta is { } __value2)
             {
-                citationsDelta?.Invoke(CitationsDelta!);
+                citationsDelta?.Invoke(__value2);
             }
-            else if (IsThinkingDelta)
+            else if (ThinkingDelta is { } __value3)
             {
-                thinkingDelta?.Invoke(ThinkingDelta!);
+                thinkingDelta?.Invoke(__value3);
             }
-            else if (IsSignatureDelta)
+            else if (SignatureDelta is { } __value4)
             {
-                signatureDelta?.Invoke(SignatureDelta!);
+                signatureDelta?.Invoke(__value4);
             }
         }
 
@@ -463,25 +463,25 @@ namespace G
                 Validate();
             }
 
-            if (IsTextDelta)
+            if (TextDelta is { } __value0)
             {
-                textDelta?.Invoke(TextDelta!);
+                textDelta?.Invoke(__value0);
             }
-            else if (IsInputJsonDelta)
+            else if (InputJsonDelta is { } __value1)
             {
-                inputJsonDelta?.Invoke(InputJsonDelta!);
+                inputJsonDelta?.Invoke(__value1);
             }
-            else if (IsCitationsDelta)
+            else if (CitationsDelta is { } __value2)
             {
-                citationsDelta?.Invoke(CitationsDelta!);
+                citationsDelta?.Invoke(__value2);
             }
-            else if (IsThinkingDelta)
+            else if (ThinkingDelta is { } __value3)
             {
-                thinkingDelta?.Invoke(ThinkingDelta!);
+                thinkingDelta?.Invoke(__value3);
             }
-            else if (IsSignatureDelta)
+            else if (SignatureDelta is { } __value4)
             {
-                signatureDelta?.Invoke(SignatureDelta!);
+                signatureDelta?.Invoke(__value4);
             }
         }
 

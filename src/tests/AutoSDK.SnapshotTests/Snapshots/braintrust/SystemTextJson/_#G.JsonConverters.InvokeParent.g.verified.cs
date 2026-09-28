@@ -1,4 +1,4 @@
-﻿//HintName: G.JsonConverters.InvokeParent.g.cs
+//HintName: G.JsonConverters.InvokeParent.g.cs
 #nullable enable
 #pragma warning disable CS0618 // Type or member is obsolete
 
@@ -141,13 +141,13 @@ namespace G.JsonConverters
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.InvokeParentSpanParentStruct), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.InvokeParentSpanParentStruct?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.InvokeParentSpanParentStruct).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.SpanParentStruct!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickSpanParentStruct(), typeInfo);
             }
             else if (value.IsInvokeParentVariant2)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(string), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<string?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(string).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.InvokeParentVariant2!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickInvokeParentVariant2(), typeInfo);
             }
         }
     }

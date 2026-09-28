@@ -1,4 +1,4 @@
-﻿//HintName: G.Models.ChunkingStrategyRequestParam.g.cs
+//HintName: G.Models.ChunkingStrategyRequestParam.g.cs
 #pragma warning disable CS0618 // Type or member is obsolete
 
 #nullable enable
@@ -43,8 +43,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.AutoChunkingStrategyRequestParam PickAutoChunkingStrategy() => IsAutoChunkingStrategy
-            ? AutoChunkingStrategy!
+        public global::G.AutoChunkingStrategyRequestParam PickAutoChunkingStrategy() => AutoChunkingStrategy is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'AutoChunkingStrategy' but the value was {ToString()}.");
 
         /// <summary>
@@ -80,8 +80,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.StaticChunkingStrategyRequestParam PickStaticChunkingStrategy() => IsStaticChunkingStrategy
-            ? StaticChunkingStrategy!
+        public global::G.StaticChunkingStrategyRequestParam PickStaticChunkingStrategy() => StaticChunkingStrategy is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'StaticChunkingStrategy' but the value was {ToString()}.");
         /// <summary>
         /// 
@@ -178,13 +178,13 @@ namespace G
                 Validate();
             }
 
-            if (IsAutoChunkingStrategy && autoChunkingStrategy != null)
+            if (AutoChunkingStrategy is { } __value0 && autoChunkingStrategy != null)
             {
-                return autoChunkingStrategy(AutoChunkingStrategy!);
+                return autoChunkingStrategy(__value0);
             }
-            else if (IsStaticChunkingStrategy && staticChunkingStrategy != null)
+            else if (StaticChunkingStrategy is { } __value1 && staticChunkingStrategy != null)
             {
-                return staticChunkingStrategy(StaticChunkingStrategy!);
+                return staticChunkingStrategy(__value1);
             }
 
             return default(TResult);
@@ -204,13 +204,13 @@ namespace G
                 Validate();
             }
 
-            if (IsAutoChunkingStrategy)
+            if (AutoChunkingStrategy is { } __value0)
             {
-                autoChunkingStrategy?.Invoke(AutoChunkingStrategy!);
+                autoChunkingStrategy?.Invoke(__value0);
             }
-            else if (IsStaticChunkingStrategy)
+            else if (StaticChunkingStrategy is { } __value1)
             {
-                staticChunkingStrategy?.Invoke(StaticChunkingStrategy!);
+                staticChunkingStrategy?.Invoke(__value1);
             }
         }
 
@@ -227,13 +227,13 @@ namespace G
                 Validate();
             }
 
-            if (IsAutoChunkingStrategy)
+            if (AutoChunkingStrategy is { } __value0)
             {
-                autoChunkingStrategy?.Invoke(AutoChunkingStrategy!);
+                autoChunkingStrategy?.Invoke(__value0);
             }
-            else if (IsStaticChunkingStrategy)
+            else if (StaticChunkingStrategy is { } __value1)
             {
-                staticChunkingStrategy?.Invoke(StaticChunkingStrategy!);
+                staticChunkingStrategy?.Invoke(__value1);
             }
         }
 

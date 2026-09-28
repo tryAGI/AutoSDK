@@ -1,4 +1,4 @@
-﻿//HintName: G.Api.GetDataSourceStatusStudioV1ConnectorsConnectedUsersOrganizationIdDataSourcesDataSourceStatusGet.g.cs
+//HintName: G.Api.GetDataSourceStatusStudioV1ConnectorsConnectedUsersOrganizationIdDataSourcesDataSourceStatusGet.g.cs
 
 #nullable enable
 
@@ -126,8 +126,8 @@ namespace G
                 PrepareGetDataSourceStatusStudioV1ConnectorsConnectedUsersOrganizationIdDataSourcesDataSourceStatusGetRequest(
                     httpClient: HttpClient,
                     httpRequestMessage: __httpRequest,
-                    organizationId: organizationId!,
-                    dataSource: dataSource!,
+                    organizationId: organizationId,
+                    dataSource: dataSource,
                     requestStartTime: requestStartTime);
 
                 return __httpRequest;
@@ -150,7 +150,7 @@ namespace G
                                 pathTemplate: "$\"/studio/v1/connectors/connected-users/{organizationId}/data-sources/{dataSource}/status\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: null,
                                 exception: null,
                                 clientOptions: Options,
@@ -184,7 +184,7 @@ namespace G
                                 pathTemplate: "$\"/studio/v1/connectors/connected-users/{organizationId}/data-sources/{dataSource}/status\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: null,
                                 exception: __exception,
                                 clientOptions: Options,
@@ -225,7 +225,7 @@ namespace G
                                 pathTemplate: "$\"/studio/v1/connectors/connected-users/{organizationId}/data-sources/{dataSource}/status\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: __response,
                                 exception: null,
                                 clientOptions: Options,
@@ -273,7 +273,7 @@ namespace G
                                 pathTemplate: "$\"/studio/v1/connectors/connected-users/{organizationId}/data-sources/{dataSource}/status\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: __response,
                                 exception: null,
                                 clientOptions: Options,
@@ -295,7 +295,7 @@ namespace G
                                 pathTemplate: "$\"/studio/v1/connectors/connected-users/{organizationId}/data-sources/{dataSource}/status\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: __response,
                                 exception: null,
                                 clientOptions: Options,

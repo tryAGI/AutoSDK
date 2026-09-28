@@ -1,4 +1,4 @@
-﻿//HintName: G.Models.ChatCompletionRequestMessageContentPart.g.cs
+//HintName: G.Models.ChatCompletionRequestMessageContentPart.g.cs
 #pragma warning disable CS0618 // Type or member is obsolete
 
 #nullable enable
@@ -43,8 +43,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.ChatCompletionRequestMessageContentPartText PickTextContentPart() => IsTextContentPart
-            ? TextContentPart!
+        public global::G.ChatCompletionRequestMessageContentPartText PickTextContentPart() => TextContentPart is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'TextContentPart' but the value was {ToString()}.");
 
         /// <summary>
@@ -80,8 +80,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.ChatCompletionRequestMessageContentPartImage PickImageContentPart() => IsImageContentPart
-            ? ImageContentPart!
+        public global::G.ChatCompletionRequestMessageContentPartImage PickImageContentPart() => ImageContentPart is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'ImageContentPart' but the value was {ToString()}.");
 
         /// <summary>
@@ -117,8 +117,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.ChatCompletionRequestMessageContentPartDocument PickDocumentContentPart() => IsDocumentContentPart
-            ? DocumentContentPart!
+        public global::G.ChatCompletionRequestMessageContentPartDocument PickDocumentContentPart() => DocumentContentPart is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'DocumentContentPart' but the value was {ToString()}.");
         /// <summary>
         /// 
@@ -243,17 +243,17 @@ namespace G
                 Validate();
             }
 
-            if (IsTextContentPart && textContentPart != null)
+            if (TextContentPart is { } __value0 && textContentPart != null)
             {
-                return textContentPart(TextContentPart!);
+                return textContentPart(__value0);
             }
-            else if (IsImageContentPart && imageContentPart != null)
+            else if (ImageContentPart is { } __value1 && imageContentPart != null)
             {
-                return imageContentPart(ImageContentPart!);
+                return imageContentPart(__value1);
             }
-            else if (IsDocumentContentPart && documentContentPart != null)
+            else if (DocumentContentPart is { } __value2 && documentContentPart != null)
             {
-                return documentContentPart(DocumentContentPart!);
+                return documentContentPart(__value2);
             }
 
             return default(TResult);
@@ -275,17 +275,17 @@ namespace G
                 Validate();
             }
 
-            if (IsTextContentPart)
+            if (TextContentPart is { } __value0)
             {
-                textContentPart?.Invoke(TextContentPart!);
+                textContentPart?.Invoke(__value0);
             }
-            else if (IsImageContentPart)
+            else if (ImageContentPart is { } __value1)
             {
-                imageContentPart?.Invoke(ImageContentPart!);
+                imageContentPart?.Invoke(__value1);
             }
-            else if (IsDocumentContentPart)
+            else if (DocumentContentPart is { } __value2)
             {
-                documentContentPart?.Invoke(DocumentContentPart!);
+                documentContentPart?.Invoke(__value2);
             }
         }
 
@@ -303,17 +303,17 @@ namespace G
                 Validate();
             }
 
-            if (IsTextContentPart)
+            if (TextContentPart is { } __value0)
             {
-                textContentPart?.Invoke(TextContentPart!);
+                textContentPart?.Invoke(__value0);
             }
-            else if (IsImageContentPart)
+            else if (ImageContentPart is { } __value1)
             {
-                imageContentPart?.Invoke(ImageContentPart!);
+                imageContentPart?.Invoke(__value1);
             }
-            else if (IsDocumentContentPart)
+            else if (DocumentContentPart is { } __value2)
             {
-                documentContentPart?.Invoke(DocumentContentPart!);
+                documentContentPart?.Invoke(__value2);
             }
         }
 

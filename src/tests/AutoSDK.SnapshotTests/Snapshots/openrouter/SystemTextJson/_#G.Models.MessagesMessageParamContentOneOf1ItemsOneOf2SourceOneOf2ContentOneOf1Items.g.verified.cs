@@ -1,4 +1,4 @@
-﻿//HintName: G.Models.MessagesMessageParamContentOneOf1ItemsOneOf2SourceOneOf2ContentOneOf1Items.g.cs
+//HintName: G.Models.MessagesMessageParamContentOneOf1ItemsOneOf2SourceOneOf2ContentOneOf1Items.g.cs
 #pragma warning disable CS0618 // Type or member is obsolete
 
 #nullable enable
@@ -43,8 +43,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.MessagesMessageParamContentOneOf1ItemsOneOf2SourceOneOf2ContentOneOf1Items0 PickMessagesMessageParamContentOneOf1ItemsOneOf2SourceOneOf2ContentOneOf1Items0() => IsMessagesMessageParamContentOneOf1ItemsOneOf2SourceOneOf2ContentOneOf1Items0
-            ? MessagesMessageParamContentOneOf1ItemsOneOf2SourceOneOf2ContentOneOf1Items0!
+        public global::G.MessagesMessageParamContentOneOf1ItemsOneOf2SourceOneOf2ContentOneOf1Items0 PickMessagesMessageParamContentOneOf1ItemsOneOf2SourceOneOf2ContentOneOf1Items0() => MessagesMessageParamContentOneOf1ItemsOneOf2SourceOneOf2ContentOneOf1Items0 is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'MessagesMessageParamContentOneOf1ItemsOneOf2SourceOneOf2ContentOneOf1Items0' but the value was {ToString()}.");
 
         /// <summary>
@@ -80,8 +80,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.MessagesMessageParamContentOneOf1ItemsOneOf2SourceOneOf2ContentOneOf1Items1 PickMessagesMessageParamContentOneOf1ItemsOneOf2SourceOneOf2ContentOneOf1Items1() => IsMessagesMessageParamContentOneOf1ItemsOneOf2SourceOneOf2ContentOneOf1Items1
-            ? MessagesMessageParamContentOneOf1ItemsOneOf2SourceOneOf2ContentOneOf1Items1!
+        public global::G.MessagesMessageParamContentOneOf1ItemsOneOf2SourceOneOf2ContentOneOf1Items1 PickMessagesMessageParamContentOneOf1ItemsOneOf2SourceOneOf2ContentOneOf1Items1() => MessagesMessageParamContentOneOf1ItemsOneOf2SourceOneOf2ContentOneOf1Items1 is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'MessagesMessageParamContentOneOf1ItemsOneOf2SourceOneOf2ContentOneOf1Items1' but the value was {ToString()}.");
         /// <summary>
         /// 
@@ -178,13 +178,13 @@ namespace G
                 Validate();
             }
 
-            if (IsMessagesMessageParamContentOneOf1ItemsOneOf2SourceOneOf2ContentOneOf1Items0 && messagesMessageParamContentOneOf1ItemsOneOf2SourceOneOf2ContentOneOf1Items0 != null)
+            if (MessagesMessageParamContentOneOf1ItemsOneOf2SourceOneOf2ContentOneOf1Items0 is { } __value0 && messagesMessageParamContentOneOf1ItemsOneOf2SourceOneOf2ContentOneOf1Items0 != null)
             {
-                return messagesMessageParamContentOneOf1ItemsOneOf2SourceOneOf2ContentOneOf1Items0(MessagesMessageParamContentOneOf1ItemsOneOf2SourceOneOf2ContentOneOf1Items0!);
+                return messagesMessageParamContentOneOf1ItemsOneOf2SourceOneOf2ContentOneOf1Items0(__value0);
             }
-            else if (IsMessagesMessageParamContentOneOf1ItemsOneOf2SourceOneOf2ContentOneOf1Items1 && messagesMessageParamContentOneOf1ItemsOneOf2SourceOneOf2ContentOneOf1Items1 != null)
+            else if (MessagesMessageParamContentOneOf1ItemsOneOf2SourceOneOf2ContentOneOf1Items1 is { } __value1 && messagesMessageParamContentOneOf1ItemsOneOf2SourceOneOf2ContentOneOf1Items1 != null)
             {
-                return messagesMessageParamContentOneOf1ItemsOneOf2SourceOneOf2ContentOneOf1Items1(MessagesMessageParamContentOneOf1ItemsOneOf2SourceOneOf2ContentOneOf1Items1!);
+                return messagesMessageParamContentOneOf1ItemsOneOf2SourceOneOf2ContentOneOf1Items1(__value1);
             }
 
             return default(TResult);
@@ -204,13 +204,13 @@ namespace G
                 Validate();
             }
 
-            if (IsMessagesMessageParamContentOneOf1ItemsOneOf2SourceOneOf2ContentOneOf1Items0)
+            if (MessagesMessageParamContentOneOf1ItemsOneOf2SourceOneOf2ContentOneOf1Items0 is { } __value0)
             {
-                messagesMessageParamContentOneOf1ItemsOneOf2SourceOneOf2ContentOneOf1Items0?.Invoke(MessagesMessageParamContentOneOf1ItemsOneOf2SourceOneOf2ContentOneOf1Items0!);
+                messagesMessageParamContentOneOf1ItemsOneOf2SourceOneOf2ContentOneOf1Items0?.Invoke(__value0);
             }
-            else if (IsMessagesMessageParamContentOneOf1ItemsOneOf2SourceOneOf2ContentOneOf1Items1)
+            else if (MessagesMessageParamContentOneOf1ItemsOneOf2SourceOneOf2ContentOneOf1Items1 is { } __value1)
             {
-                messagesMessageParamContentOneOf1ItemsOneOf2SourceOneOf2ContentOneOf1Items1?.Invoke(MessagesMessageParamContentOneOf1ItemsOneOf2SourceOneOf2ContentOneOf1Items1!);
+                messagesMessageParamContentOneOf1ItemsOneOf2SourceOneOf2ContentOneOf1Items1?.Invoke(__value1);
             }
         }
 
@@ -227,13 +227,13 @@ namespace G
                 Validate();
             }
 
-            if (IsMessagesMessageParamContentOneOf1ItemsOneOf2SourceOneOf2ContentOneOf1Items0)
+            if (MessagesMessageParamContentOneOf1ItemsOneOf2SourceOneOf2ContentOneOf1Items0 is { } __value0)
             {
-                messagesMessageParamContentOneOf1ItemsOneOf2SourceOneOf2ContentOneOf1Items0?.Invoke(MessagesMessageParamContentOneOf1ItemsOneOf2SourceOneOf2ContentOneOf1Items0!);
+                messagesMessageParamContentOneOf1ItemsOneOf2SourceOneOf2ContentOneOf1Items0?.Invoke(__value0);
             }
-            else if (IsMessagesMessageParamContentOneOf1ItemsOneOf2SourceOneOf2ContentOneOf1Items1)
+            else if (MessagesMessageParamContentOneOf1ItemsOneOf2SourceOneOf2ContentOneOf1Items1 is { } __value1)
             {
-                messagesMessageParamContentOneOf1ItemsOneOf2SourceOneOf2ContentOneOf1Items1?.Invoke(MessagesMessageParamContentOneOf1ItemsOneOf2SourceOneOf2ContentOneOf1Items1!);
+                messagesMessageParamContentOneOf1ItemsOneOf2SourceOneOf2ContentOneOf1Items1?.Invoke(__value1);
             }
         }
 

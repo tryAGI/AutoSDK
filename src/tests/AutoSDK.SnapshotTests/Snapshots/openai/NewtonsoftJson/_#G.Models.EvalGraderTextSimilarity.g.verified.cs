@@ -1,4 +1,4 @@
-﻿//HintName: G.Models.EvalGraderTextSimilarity.g.cs
+//HintName: G.Models.EvalGraderTextSimilarity.g.cs
 #pragma warning disable CS0618 // Type or member is obsolete
 
 #nullable enable
@@ -43,8 +43,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.GraderTextSimilarity PickTextSimilarityGrader() => IsTextSimilarityGrader
-            ? TextSimilarityGrader!
+        public global::G.GraderTextSimilarity PickTextSimilarityGrader() => TextSimilarityGrader is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'TextSimilarityGrader' but the value was {ToString()}.");
 
         /// <summary>
@@ -80,8 +80,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.EvalGraderTextSimilarityVariant2 PickEvalGraderTextSimilarityVariant2() => IsEvalGraderTextSimilarityVariant2
-            ? EvalGraderTextSimilarityVariant2!
+        public global::G.EvalGraderTextSimilarityVariant2 PickEvalGraderTextSimilarityVariant2() => EvalGraderTextSimilarityVariant2 is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'EvalGraderTextSimilarityVariant2' but the value was {ToString()}.");
         /// <summary>
         /// 
@@ -178,13 +178,13 @@ namespace G
                 Validate();
             }
 
-            if (IsTextSimilarityGrader && textSimilarityGrader != null)
+            if (TextSimilarityGrader is { } __value0 && textSimilarityGrader != null)
             {
-                return textSimilarityGrader(TextSimilarityGrader!);
+                return textSimilarityGrader(__value0);
             }
-            else if (IsEvalGraderTextSimilarityVariant2 && evalGraderTextSimilarityVariant2 != null)
+            else if (EvalGraderTextSimilarityVariant2 is { } __value1 && evalGraderTextSimilarityVariant2 != null)
             {
-                return evalGraderTextSimilarityVariant2(EvalGraderTextSimilarityVariant2!);
+                return evalGraderTextSimilarityVariant2(__value1);
             }
 
             return default(TResult);
@@ -204,13 +204,13 @@ namespace G
                 Validate();
             }
 
-            if (IsTextSimilarityGrader)
+            if (TextSimilarityGrader is { } __value0)
             {
-                textSimilarityGrader?.Invoke(TextSimilarityGrader!);
+                textSimilarityGrader?.Invoke(__value0);
             }
-            else if (IsEvalGraderTextSimilarityVariant2)
+            else if (EvalGraderTextSimilarityVariant2 is { } __value1)
             {
-                evalGraderTextSimilarityVariant2?.Invoke(EvalGraderTextSimilarityVariant2!);
+                evalGraderTextSimilarityVariant2?.Invoke(__value1);
             }
         }
 
@@ -227,13 +227,13 @@ namespace G
                 Validate();
             }
 
-            if (IsTextSimilarityGrader)
+            if (TextSimilarityGrader is { } __value0)
             {
-                textSimilarityGrader?.Invoke(TextSimilarityGrader!);
+                textSimilarityGrader?.Invoke(__value0);
             }
-            else if (IsEvalGraderTextSimilarityVariant2)
+            else if (EvalGraderTextSimilarityVariant2 is { } __value1)
             {
-                evalGraderTextSimilarityVariant2?.Invoke(EvalGraderTextSimilarityVariant2!);
+                evalGraderTextSimilarityVariant2?.Invoke(__value1);
             }
         }
 

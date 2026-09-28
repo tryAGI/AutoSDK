@@ -1,4 +1,4 @@
-﻿//HintName: G.JsonConverters.PointInsertOperations.g.cs
+//HintName: G.JsonConverters.PointInsertOperations.g.cs
 #nullable enable
 #pragma warning disable CS0618 // Type or member is obsolete
 
@@ -145,13 +145,13 @@ namespace G.JsonConverters
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.PointsBatch), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.PointsBatch?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.PointsBatch).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PointsBatch!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickPointsBatch(), typeInfo);
             }
             else if (value.IsPointsList)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.PointsList), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.PointsList?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.PointsList).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PointsList!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickPointsList(), typeInfo);
             }
         }
     }

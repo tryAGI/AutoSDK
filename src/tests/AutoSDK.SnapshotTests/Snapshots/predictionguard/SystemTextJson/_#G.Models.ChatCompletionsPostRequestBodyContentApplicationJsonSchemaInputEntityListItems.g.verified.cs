@@ -1,4 +1,4 @@
-﻿//HintName: G.Models.ChatCompletionsPostRequestBodyContentApplicationJsonSchemaInputEntityListItems.g.cs
+//HintName: G.Models.ChatCompletionsPostRequestBodyContentApplicationJsonSchemaInputEntityListItems.g.cs
 #pragma warning disable CS0618 // Type or member is obsolete
 
 #nullable enable
@@ -43,8 +43,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public string PickChatCompletionsPostRequestBodyContentApplicationJsonSchemaInputEntityListItemsVariant1() => IsChatCompletionsPostRequestBodyContentApplicationJsonSchemaInputEntityListItemsVariant1
-            ? ChatCompletionsPostRequestBodyContentApplicationJsonSchemaInputEntityListItemsVariant1!
+        public string PickChatCompletionsPostRequestBodyContentApplicationJsonSchemaInputEntityListItemsVariant1() => ChatCompletionsPostRequestBodyContentApplicationJsonSchemaInputEntityListItemsVariant1 is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'ChatCompletionsPostRequestBodyContentApplicationJsonSchemaInputEntityListItemsVariant1' but the value was {ToString()}.");
         /// <summary>
         /// 
@@ -103,9 +103,9 @@ namespace G
                 Validate();
             }
 
-            if (IsChatCompletionsPostRequestBodyContentApplicationJsonSchemaInputEntityListItemsVariant1 && chatCompletionsPostRequestBodyContentApplicationJsonSchemaInputEntityListItemsVariant1 != null)
+            if (ChatCompletionsPostRequestBodyContentApplicationJsonSchemaInputEntityListItemsVariant1 is { } __value0 && chatCompletionsPostRequestBodyContentApplicationJsonSchemaInputEntityListItemsVariant1 != null)
             {
-                return chatCompletionsPostRequestBodyContentApplicationJsonSchemaInputEntityListItemsVariant1(ChatCompletionsPostRequestBodyContentApplicationJsonSchemaInputEntityListItemsVariant1!);
+                return chatCompletionsPostRequestBodyContentApplicationJsonSchemaInputEntityListItemsVariant1(__value0);
             }
 
             return default(TResult);
@@ -123,9 +123,9 @@ namespace G
                 Validate();
             }
 
-            if (IsChatCompletionsPostRequestBodyContentApplicationJsonSchemaInputEntityListItemsVariant1)
+            if (ChatCompletionsPostRequestBodyContentApplicationJsonSchemaInputEntityListItemsVariant1 is { } __value0)
             {
-                chatCompletionsPostRequestBodyContentApplicationJsonSchemaInputEntityListItemsVariant1?.Invoke(ChatCompletionsPostRequestBodyContentApplicationJsonSchemaInputEntityListItemsVariant1!);
+                chatCompletionsPostRequestBodyContentApplicationJsonSchemaInputEntityListItemsVariant1?.Invoke(__value0);
             }
         }
 
@@ -141,9 +141,9 @@ namespace G
                 Validate();
             }
 
-            if (IsChatCompletionsPostRequestBodyContentApplicationJsonSchemaInputEntityListItemsVariant1)
+            if (ChatCompletionsPostRequestBodyContentApplicationJsonSchemaInputEntityListItemsVariant1 is { } __value0)
             {
-                chatCompletionsPostRequestBodyContentApplicationJsonSchemaInputEntityListItemsVariant1?.Invoke(ChatCompletionsPostRequestBodyContentApplicationJsonSchemaInputEntityListItemsVariant1!);
+                chatCompletionsPostRequestBodyContentApplicationJsonSchemaInputEntityListItemsVariant1?.Invoke(__value0);
             }
         }
 

@@ -1,4 +1,4 @@
-﻿//HintName: G.Models.GeneratedMetadataVariant17.g.cs
+//HintName: G.Models.GeneratedMetadataVariant17.g.cs
 #pragma warning disable CS0618 // Type or member is obsolete
 
 #nullable enable
@@ -48,8 +48,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.MarkdownChunkGeneratedMetadata PickMarkdown() => IsMarkdown
-            ? Markdown!
+        public global::G.MarkdownChunkGeneratedMetadata PickMarkdown() => Markdown is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Markdown' but the value was {ToString()}.");
 
         /// <summary>
@@ -85,8 +85,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.TextChunkGeneratedMetadata PickText() => IsText
-            ? Text!
+        public global::G.TextChunkGeneratedMetadata PickText() => Text is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Text' but the value was {ToString()}.");
 
         /// <summary>
@@ -122,8 +122,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.PDFChunkGeneratedMetadata PickPdf() => IsPdf
-            ? Pdf!
+        public global::G.PDFChunkGeneratedMetadata PickPdf() => Pdf is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Pdf' but the value was {ToString()}.");
 
         /// <summary>
@@ -159,8 +159,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.CodeChunkGeneratedMetadata PickCode() => IsCode
-            ? Code!
+        public global::G.CodeChunkGeneratedMetadata PickCode() => Code is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Code' but the value was {ToString()}.");
 
         /// <summary>
@@ -196,8 +196,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.AudioChunkGeneratedMetadata PickAudio() => IsAudio
-            ? Audio!
+        public global::G.AudioChunkGeneratedMetadata PickAudio() => Audio is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Audio' but the value was {ToString()}.");
 
         /// <summary>
@@ -233,8 +233,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.VideoChunkGeneratedMetadata PickVideo() => IsVideo
-            ? Video!
+        public global::G.VideoChunkGeneratedMetadata PickVideo() => Video is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Video' but the value was {ToString()}.");
 
         /// <summary>
@@ -270,8 +270,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.ImageChunkGeneratedMetadata PickImage() => IsImage
-            ? Image!
+        public global::G.ImageChunkGeneratedMetadata PickImage() => Image is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Image' but the value was {ToString()}.");
         /// <summary>
         /// 
@@ -511,33 +511,33 @@ namespace G
                 Validate();
             }
 
-            if (IsMarkdown && markdown != null)
+            if (Markdown is { } __value0 && markdown != null)
             {
-                return markdown(Markdown!);
+                return markdown(__value0);
             }
-            else if (IsText && text != null)
+            else if (Text is { } __value1 && text != null)
             {
-                return text(Text!);
+                return text(__value1);
             }
-            else if (IsPdf && pdf != null)
+            else if (Pdf is { } __value2 && pdf != null)
             {
-                return pdf(Pdf!);
+                return pdf(__value2);
             }
-            else if (IsCode && code != null)
+            else if (Code is { } __value3 && code != null)
             {
-                return code(Code!);
+                return code(__value3);
             }
-            else if (IsAudio && audio != null)
+            else if (Audio is { } __value4 && audio != null)
             {
-                return audio(Audio!);
+                return audio(__value4);
             }
-            else if (IsVideo && video != null)
+            else if (Video is { } __value5 && video != null)
             {
-                return video(Video!);
+                return video(__value5);
             }
-            else if (IsImage && image != null)
+            else if (Image is { } __value6 && image != null)
             {
-                return image(Image!);
+                return image(__value6);
             }
 
             return default(TResult);
@@ -567,33 +567,33 @@ namespace G
                 Validate();
             }
 
-            if (IsMarkdown)
+            if (Markdown is { } __value0)
             {
-                markdown?.Invoke(Markdown!);
+                markdown?.Invoke(__value0);
             }
-            else if (IsText)
+            else if (Text is { } __value1)
             {
-                text?.Invoke(Text!);
+                text?.Invoke(__value1);
             }
-            else if (IsPdf)
+            else if (Pdf is { } __value2)
             {
-                pdf?.Invoke(Pdf!);
+                pdf?.Invoke(__value2);
             }
-            else if (IsCode)
+            else if (Code is { } __value3)
             {
-                code?.Invoke(Code!);
+                code?.Invoke(__value3);
             }
-            else if (IsAudio)
+            else if (Audio is { } __value4)
             {
-                audio?.Invoke(Audio!);
+                audio?.Invoke(__value4);
             }
-            else if (IsVideo)
+            else if (Video is { } __value5)
             {
-                video?.Invoke(Video!);
+                video?.Invoke(__value5);
             }
-            else if (IsImage)
+            else if (Image is { } __value6)
             {
-                image?.Invoke(Image!);
+                image?.Invoke(__value6);
             }
         }
 
@@ -615,33 +615,33 @@ namespace G
                 Validate();
             }
 
-            if (IsMarkdown)
+            if (Markdown is { } __value0)
             {
-                markdown?.Invoke(Markdown!);
+                markdown?.Invoke(__value0);
             }
-            else if (IsText)
+            else if (Text is { } __value1)
             {
-                text?.Invoke(Text!);
+                text?.Invoke(__value1);
             }
-            else if (IsPdf)
+            else if (Pdf is { } __value2)
             {
-                pdf?.Invoke(Pdf!);
+                pdf?.Invoke(__value2);
             }
-            else if (IsCode)
+            else if (Code is { } __value3)
             {
-                code?.Invoke(Code!);
+                code?.Invoke(__value3);
             }
-            else if (IsAudio)
+            else if (Audio is { } __value4)
             {
-                audio?.Invoke(Audio!);
+                audio?.Invoke(__value4);
             }
-            else if (IsVideo)
+            else if (Video is { } __value5)
             {
-                video?.Invoke(Video!);
+                video?.Invoke(__value5);
             }
-            else if (IsImage)
+            else if (Image is { } __value6)
             {
-                image?.Invoke(Image!);
+                image?.Invoke(__value6);
             }
         }
 

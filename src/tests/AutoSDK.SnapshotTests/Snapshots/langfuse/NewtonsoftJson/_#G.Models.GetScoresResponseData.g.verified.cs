@@ -1,4 +1,4 @@
-﻿//HintName: G.Models.GetScoresResponseData.g.cs
+//HintName: G.Models.GetScoresResponseData.g.cs
 #pragma warning disable CS0618 // Type or member is obsolete
 
 #nullable enable
@@ -43,8 +43,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.AllOf<global::G.GetScoresResponseDataVariant12, global::G.GetScoresResponseDataNumeric> PickGetScoresResponseDataVariant1() => IsGetScoresResponseDataVariant1
-            ? GetScoresResponseDataVariant1!.Value
+        public global::G.AllOf<global::G.GetScoresResponseDataVariant12, global::G.GetScoresResponseDataNumeric> PickGetScoresResponseDataVariant1() => GetScoresResponseDataVariant1 is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'GetScoresResponseDataVariant1' but the value was {ToString()}.");
 
         /// <summary>
@@ -80,8 +80,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.AllOf<global::G.GetScoresResponseDataVariant22, global::G.GetScoresResponseDataCategorical> PickGetScoresResponseDataVariant2() => IsGetScoresResponseDataVariant2
-            ? GetScoresResponseDataVariant2!.Value
+        public global::G.AllOf<global::G.GetScoresResponseDataVariant22, global::G.GetScoresResponseDataCategorical> PickGetScoresResponseDataVariant2() => GetScoresResponseDataVariant2 is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'GetScoresResponseDataVariant2' but the value was {ToString()}.");
 
         /// <summary>
@@ -117,8 +117,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.AllOf<global::G.GetScoresResponseDataVariant32, global::G.GetScoresResponseDataBoolean> PickGetScoresResponseDataVariant3() => IsGetScoresResponseDataVariant3
-            ? GetScoresResponseDataVariant3!.Value
+        public global::G.AllOf<global::G.GetScoresResponseDataVariant32, global::G.GetScoresResponseDataBoolean> PickGetScoresResponseDataVariant3() => GetScoresResponseDataVariant3 is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'GetScoresResponseDataVariant3' but the value was {ToString()}.");
 
         /// <summary>
@@ -154,8 +154,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.AllOf<global::G.GetScoresResponseDataVariant42, global::G.GetScoresResponseDataCorrection> PickGetScoresResponseDataVariant4() => IsGetScoresResponseDataVariant4
-            ? GetScoresResponseDataVariant4!.Value
+        public global::G.AllOf<global::G.GetScoresResponseDataVariant42, global::G.GetScoresResponseDataCorrection> PickGetScoresResponseDataVariant4() => GetScoresResponseDataVariant4 is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'GetScoresResponseDataVariant4' but the value was {ToString()}.");
         /// <summary>
         /// 
@@ -308,21 +308,21 @@ namespace G
                 Validate();
             }
 
-            if (IsGetScoresResponseDataVariant1 && getScoresResponseDataVariant1 != null)
+            if (GetScoresResponseDataVariant1 is { } __value0 && getScoresResponseDataVariant1 != null)
             {
-                return getScoresResponseDataVariant1(GetScoresResponseDataVariant1!);
+                return getScoresResponseDataVariant1(__value0);
             }
-            else if (IsGetScoresResponseDataVariant2 && getScoresResponseDataVariant2 != null)
+            else if (GetScoresResponseDataVariant2 is { } __value1 && getScoresResponseDataVariant2 != null)
             {
-                return getScoresResponseDataVariant2(GetScoresResponseDataVariant2!);
+                return getScoresResponseDataVariant2(__value1);
             }
-            else if (IsGetScoresResponseDataVariant3 && getScoresResponseDataVariant3 != null)
+            else if (GetScoresResponseDataVariant3 is { } __value2 && getScoresResponseDataVariant3 != null)
             {
-                return getScoresResponseDataVariant3(GetScoresResponseDataVariant3!);
+                return getScoresResponseDataVariant3(__value2);
             }
-            else if (IsGetScoresResponseDataVariant4 && getScoresResponseDataVariant4 != null)
+            else if (GetScoresResponseDataVariant4 is { } __value3 && getScoresResponseDataVariant4 != null)
             {
-                return getScoresResponseDataVariant4(GetScoresResponseDataVariant4!);
+                return getScoresResponseDataVariant4(__value3);
             }
 
             return default(TResult);
@@ -346,21 +346,21 @@ namespace G
                 Validate();
             }
 
-            if (IsGetScoresResponseDataVariant1)
+            if (GetScoresResponseDataVariant1 is { } __value0)
             {
-                getScoresResponseDataVariant1?.Invoke(GetScoresResponseDataVariant1!);
+                getScoresResponseDataVariant1?.Invoke(__value0);
             }
-            else if (IsGetScoresResponseDataVariant2)
+            else if (GetScoresResponseDataVariant2 is { } __value1)
             {
-                getScoresResponseDataVariant2?.Invoke(GetScoresResponseDataVariant2!);
+                getScoresResponseDataVariant2?.Invoke(__value1);
             }
-            else if (IsGetScoresResponseDataVariant3)
+            else if (GetScoresResponseDataVariant3 is { } __value2)
             {
-                getScoresResponseDataVariant3?.Invoke(GetScoresResponseDataVariant3!);
+                getScoresResponseDataVariant3?.Invoke(__value2);
             }
-            else if (IsGetScoresResponseDataVariant4)
+            else if (GetScoresResponseDataVariant4 is { } __value3)
             {
-                getScoresResponseDataVariant4?.Invoke(GetScoresResponseDataVariant4!);
+                getScoresResponseDataVariant4?.Invoke(__value3);
             }
         }
 
@@ -379,21 +379,21 @@ namespace G
                 Validate();
             }
 
-            if (IsGetScoresResponseDataVariant1)
+            if (GetScoresResponseDataVariant1 is { } __value0)
             {
-                getScoresResponseDataVariant1?.Invoke(GetScoresResponseDataVariant1!);
+                getScoresResponseDataVariant1?.Invoke(__value0);
             }
-            else if (IsGetScoresResponseDataVariant2)
+            else if (GetScoresResponseDataVariant2 is { } __value1)
             {
-                getScoresResponseDataVariant2?.Invoke(GetScoresResponseDataVariant2!);
+                getScoresResponseDataVariant2?.Invoke(__value1);
             }
-            else if (IsGetScoresResponseDataVariant3)
+            else if (GetScoresResponseDataVariant3 is { } __value2)
             {
-                getScoresResponseDataVariant3?.Invoke(GetScoresResponseDataVariant3!);
+                getScoresResponseDataVariant3?.Invoke(__value2);
             }
-            else if (IsGetScoresResponseDataVariant4)
+            else if (GetScoresResponseDataVariant4 is { } __value3)
             {
-                getScoresResponseDataVariant4?.Invoke(GetScoresResponseDataVariant4!);
+                getScoresResponseDataVariant4?.Invoke(__value3);
             }
         }
 

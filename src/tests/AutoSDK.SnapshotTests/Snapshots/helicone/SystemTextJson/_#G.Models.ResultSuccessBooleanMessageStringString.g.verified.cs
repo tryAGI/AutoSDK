@@ -1,4 +1,4 @@
-﻿//HintName: G.Models.ResultSuccessBooleanMessageStringString.g.cs
+//HintName: G.Models.ResultSuccessBooleanMessageStringString.g.cs
 #pragma warning disable CS0618 // Type or member is obsolete
 
 #nullable enable
@@ -43,8 +43,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.ResultSuccessSuccessBooleanMessageString PickResultSuccessSuccessBooleanMessageString() => IsResultSuccessSuccessBooleanMessageString
-            ? ResultSuccessSuccessBooleanMessageString!
+        public global::G.ResultSuccessSuccessBooleanMessageString PickResultSuccessSuccessBooleanMessageString() => ResultSuccessSuccessBooleanMessageString is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'ResultSuccessSuccessBooleanMessageString' but the value was {ToString()}.");
 
         /// <summary>
@@ -80,8 +80,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.ResultErrorString PickError() => IsError
-            ? Error!
+        public global::G.ResultErrorString PickError() => Error is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Error' but the value was {ToString()}.");
         /// <summary>
         /// 
@@ -178,13 +178,13 @@ namespace G
                 Validate();
             }
 
-            if (IsResultSuccessSuccessBooleanMessageString && resultSuccessSuccessBooleanMessageString != null)
+            if (ResultSuccessSuccessBooleanMessageString is { } __value0 && resultSuccessSuccessBooleanMessageString != null)
             {
-                return resultSuccessSuccessBooleanMessageString(ResultSuccessSuccessBooleanMessageString!);
+                return resultSuccessSuccessBooleanMessageString(__value0);
             }
-            else if (IsError && error != null)
+            else if (Error is { } __value1 && error != null)
             {
-                return error(Error!);
+                return error(__value1);
             }
 
             return default(TResult);
@@ -204,13 +204,13 @@ namespace G
                 Validate();
             }
 
-            if (IsResultSuccessSuccessBooleanMessageString)
+            if (ResultSuccessSuccessBooleanMessageString is { } __value0)
             {
-                resultSuccessSuccessBooleanMessageString?.Invoke(ResultSuccessSuccessBooleanMessageString!);
+                resultSuccessSuccessBooleanMessageString?.Invoke(__value0);
             }
-            else if (IsError)
+            else if (Error is { } __value1)
             {
-                error?.Invoke(Error!);
+                error?.Invoke(__value1);
             }
         }
 
@@ -227,13 +227,13 @@ namespace G
                 Validate();
             }
 
-            if (IsResultSuccessSuccessBooleanMessageString)
+            if (ResultSuccessSuccessBooleanMessageString is { } __value0)
             {
-                resultSuccessSuccessBooleanMessageString?.Invoke(ResultSuccessSuccessBooleanMessageString!);
+                resultSuccessSuccessBooleanMessageString?.Invoke(__value0);
             }
-            else if (IsError)
+            else if (Error is { } __value1)
             {
-                error?.Invoke(Error!);
+                error?.Invoke(__value1);
             }
         }
 

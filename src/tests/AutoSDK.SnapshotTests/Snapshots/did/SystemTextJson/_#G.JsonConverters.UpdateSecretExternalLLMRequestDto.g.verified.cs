@@ -1,4 +1,4 @@
-﻿//HintName: G.JsonConverters.UpdateSecretExternalLLMRequestDto.g.cs
+//HintName: G.JsonConverters.UpdateSecretExternalLLMRequestDto.g.cs
 #nullable enable
 #pragma warning disable CS0618 // Type or member is obsolete
 
@@ -140,13 +140,13 @@ namespace G.JsonConverters
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.UpdateSecretExternalLLMRequestDtoOpenAIConfiguration), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.UpdateSecretExternalLLMRequestDtoOpenAIConfiguration?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.UpdateSecretExternalLLMRequestDtoOpenAIConfiguration).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.OpenAIConfiguration!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickOpenAIConfiguration(), typeInfo);
             }
             else if (value.IsUpdateSecretExternalLLMRequestDtoVariant2)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.UpdateSecretExternalLLMRequestDtoVariant2), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.UpdateSecretExternalLLMRequestDtoVariant2?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.UpdateSecretExternalLLMRequestDtoVariant2).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.UpdateSecretExternalLLMRequestDtoVariant2!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickUpdateSecretExternalLLMRequestDtoVariant2(), typeInfo);
             }
         }
     }

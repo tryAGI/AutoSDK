@@ -1,4 +1,4 @@
-﻿//HintName: G.Models.UpdateOrganizationRequest.g.cs
+//HintName: G.Models.UpdateOrganizationRequest.g.cs
 #pragma warning disable CS0618 // Type or member is obsolete
 
 #nullable enable
@@ -43,8 +43,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.CreateOrganizationRequest PickCreate() => IsCreate
-            ? Create!.Value
+        public global::G.CreateOrganizationRequest PickCreate() => Create is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Create' but the value was {ToString()}.");
 
         /// <summary>
@@ -80,8 +80,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.UpdateOrganizationRequestVariant2 PickUpdateOrganizationRequestVariant2() => IsUpdateOrganizationRequestVariant2
-            ? UpdateOrganizationRequestVariant2!
+        public global::G.UpdateOrganizationRequestVariant2 PickUpdateOrganizationRequestVariant2() => UpdateOrganizationRequestVariant2 is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'UpdateOrganizationRequestVariant2' but the value was {ToString()}.");
         /// <summary>
         /// 
@@ -178,13 +178,13 @@ namespace G
                 Validate();
             }
 
-            if (IsCreate && create != null)
+            if (Create is { } __value0 && create != null)
             {
-                return create(Create!);
+                return create(__value0);
             }
-            else if (IsUpdateOrganizationRequestVariant2 && updateOrganizationRequestVariant2 != null)
+            else if (UpdateOrganizationRequestVariant2 is { } __value1 && updateOrganizationRequestVariant2 != null)
             {
-                return updateOrganizationRequestVariant2(UpdateOrganizationRequestVariant2!);
+                return updateOrganizationRequestVariant2(__value1);
             }
 
             return default(TResult);
@@ -204,13 +204,13 @@ namespace G
                 Validate();
             }
 
-            if (IsCreate)
+            if (Create is { } __value0)
             {
-                create?.Invoke(Create!);
+                create?.Invoke(__value0);
             }
-            else if (IsUpdateOrganizationRequestVariant2)
+            else if (UpdateOrganizationRequestVariant2 is { } __value1)
             {
-                updateOrganizationRequestVariant2?.Invoke(UpdateOrganizationRequestVariant2!);
+                updateOrganizationRequestVariant2?.Invoke(__value1);
             }
         }
 
@@ -227,13 +227,13 @@ namespace G
                 Validate();
             }
 
-            if (IsCreate)
+            if (Create is { } __value0)
             {
-                create?.Invoke(Create!);
+                create?.Invoke(__value0);
             }
-            else if (IsUpdateOrganizationRequestVariant2)
+            else if (UpdateOrganizationRequestVariant2 is { } __value1)
             {
-                updateOrganizationRequestVariant2?.Invoke(UpdateOrganizationRequestVariant2!);
+                updateOrganizationRequestVariant2?.Invoke(__value1);
             }
         }
 

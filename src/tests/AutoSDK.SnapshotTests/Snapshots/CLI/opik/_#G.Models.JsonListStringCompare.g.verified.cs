@@ -1,4 +1,4 @@
-﻿//HintName: G.Models.JsonListStringCompare.g.cs
+//HintName: G.Models.JsonListStringCompare.g.cs
 #pragma warning disable CS0618 // Type or member is obsolete
 
 #nullable enable
@@ -43,8 +43,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public object PickJsonListStringCompareVariant1() => IsJsonListStringCompareVariant1
-            ? JsonListStringCompareVariant1!
+        public object PickJsonListStringCompareVariant1() => JsonListStringCompareVariant1 is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'JsonListStringCompareVariant1' but the value was {ToString()}.");
 
         /// <summary>
@@ -80,8 +80,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<object> PickJsonListStringCompareVariant2() => IsJsonListStringCompareVariant2
-            ? JsonListStringCompareVariant2!
+        public global::System.Collections.Generic.IList<object> PickJsonListStringCompareVariant2() => JsonListStringCompareVariant2 is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'JsonListStringCompareVariant2' but the value was {ToString()}.");
 
         /// <summary>
@@ -117,8 +117,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public string PickJsonListStringCompareVariant3() => IsJsonListStringCompareVariant3
-            ? JsonListStringCompareVariant3!
+        public string PickJsonListStringCompareVariant3() => JsonListStringCompareVariant3 is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'JsonListStringCompareVariant3' but the value was {ToString()}.");
         /// <summary>
         /// 
@@ -197,17 +197,17 @@ namespace G
                 Validate();
             }
 
-            if (IsJsonListStringCompareVariant1 && jsonListStringCompareVariant1 != null)
+            if (JsonListStringCompareVariant1 is { } __value0 && jsonListStringCompareVariant1 != null)
             {
-                return jsonListStringCompareVariant1(JsonListStringCompareVariant1!);
+                return jsonListStringCompareVariant1(__value0);
             }
-            else if (IsJsonListStringCompareVariant2 && jsonListStringCompareVariant2 != null)
+            else if (JsonListStringCompareVariant2 is { } __value1 && jsonListStringCompareVariant2 != null)
             {
-                return jsonListStringCompareVariant2(JsonListStringCompareVariant2!);
+                return jsonListStringCompareVariant2(__value1);
             }
-            else if (IsJsonListStringCompareVariant3 && jsonListStringCompareVariant3 != null)
+            else if (JsonListStringCompareVariant3 is { } __value2 && jsonListStringCompareVariant3 != null)
             {
-                return jsonListStringCompareVariant3(JsonListStringCompareVariant3!);
+                return jsonListStringCompareVariant3(__value2);
             }
 
             return default(TResult);
@@ -229,17 +229,17 @@ namespace G
                 Validate();
             }
 
-            if (IsJsonListStringCompareVariant1)
+            if (JsonListStringCompareVariant1 is { } __value0)
             {
-                jsonListStringCompareVariant1?.Invoke(JsonListStringCompareVariant1!);
+                jsonListStringCompareVariant1?.Invoke(__value0);
             }
-            else if (IsJsonListStringCompareVariant2)
+            else if (JsonListStringCompareVariant2 is { } __value1)
             {
-                jsonListStringCompareVariant2?.Invoke(JsonListStringCompareVariant2!);
+                jsonListStringCompareVariant2?.Invoke(__value1);
             }
-            else if (IsJsonListStringCompareVariant3)
+            else if (JsonListStringCompareVariant3 is { } __value2)
             {
-                jsonListStringCompareVariant3?.Invoke(JsonListStringCompareVariant3!);
+                jsonListStringCompareVariant3?.Invoke(__value2);
             }
         }
 
@@ -257,17 +257,17 @@ namespace G
                 Validate();
             }
 
-            if (IsJsonListStringCompareVariant1)
+            if (JsonListStringCompareVariant1 is { } __value0)
             {
-                jsonListStringCompareVariant1?.Invoke(JsonListStringCompareVariant1!);
+                jsonListStringCompareVariant1?.Invoke(__value0);
             }
-            else if (IsJsonListStringCompareVariant2)
+            else if (JsonListStringCompareVariant2 is { } __value1)
             {
-                jsonListStringCompareVariant2?.Invoke(JsonListStringCompareVariant2!);
+                jsonListStringCompareVariant2?.Invoke(__value1);
             }
-            else if (IsJsonListStringCompareVariant3)
+            else if (JsonListStringCompareVariant3 is { } __value2)
             {
-                jsonListStringCompareVariant3?.Invoke(JsonListStringCompareVariant3!);
+                jsonListStringCompareVariant3?.Invoke(__value2);
             }
         }
 

@@ -1,4 +1,4 @@
-﻿//HintName: G.CommitsClient.GetCommit.g.cs
+//HintName: G.CommitsClient.GetCommit.g.cs
 
 #nullable enable
 
@@ -237,9 +237,9 @@ namespace G
                 PrepareGetCommitRequest(
                     httpClient: HttpClient,
                     httpRequestMessage: __httpRequest,
-                    owner: owner!,
-                    repo: repo!,
-                    commit: commit!,
+                    owner: owner,
+                    repo: repo,
+                    commit: commit,
                     getExamples: getExamples,
                     isView: isView,
                     includeModel: includeModel);
@@ -266,7 +266,7 @@ namespace G
                                 pathTemplate: "$\"/api/v1/commits/{owner}/{repo}/{commit}\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: null,
                                 exception: null,
                                 clientOptions: Options,
@@ -300,7 +300,7 @@ namespace G
                                 pathTemplate: "$\"/api/v1/commits/{owner}/{repo}/{commit}\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: null,
                                 exception: __exception,
                                 clientOptions: Options,
@@ -341,7 +341,7 @@ namespace G
                                 pathTemplate: "$\"/api/v1/commits/{owner}/{repo}/{commit}\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: __response,
                                 exception: null,
                                 clientOptions: Options,
@@ -389,7 +389,7 @@ namespace G
                                 pathTemplate: "$\"/api/v1/commits/{owner}/{repo}/{commit}\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: __response,
                                 exception: null,
                                 clientOptions: Options,
@@ -411,7 +411,7 @@ namespace G
                                 pathTemplate: "$\"/api/v1/commits/{owner}/{repo}/{commit}\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: __response,
                                 exception: null,
                                 clientOptions: Options,

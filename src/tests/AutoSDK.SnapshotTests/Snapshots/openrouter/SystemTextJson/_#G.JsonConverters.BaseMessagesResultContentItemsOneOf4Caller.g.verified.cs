@@ -1,4 +1,4 @@
-﻿//HintName: G.JsonConverters.BaseMessagesResultContentItemsOneOf4Caller.g.cs
+//HintName: G.JsonConverters.BaseMessagesResultContentItemsOneOf4Caller.g.cs
 #nullable enable
 #pragma warning disable CS0618 // Type or member is obsolete
 
@@ -169,19 +169,19 @@ namespace G.JsonConverters
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.BaseMessagesResultContentItemsOneOf4Caller0), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.BaseMessagesResultContentItemsOneOf4Caller0?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.BaseMessagesResultContentItemsOneOf4Caller0).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.BaseMessagesResultContentItemsOneOf4Caller0!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickBaseMessagesResultContentItemsOneOf4Caller0(), typeInfo);
             }
             else if (value.IsBaseMessagesResultContentItemsOneOf4Caller1)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.BaseMessagesResultContentItemsOneOf4Caller1), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.BaseMessagesResultContentItemsOneOf4Caller1?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.BaseMessagesResultContentItemsOneOf4Caller1).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.BaseMessagesResultContentItemsOneOf4Caller1!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickBaseMessagesResultContentItemsOneOf4Caller1(), typeInfo);
             }
             else if (value.IsBaseMessagesResultContentItemsOneOf4Caller2)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.BaseMessagesResultContentItemsOneOf4Caller2), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.BaseMessagesResultContentItemsOneOf4Caller2?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.BaseMessagesResultContentItemsOneOf4Caller2).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.BaseMessagesResultContentItemsOneOf4Caller2!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickBaseMessagesResultContentItemsOneOf4Caller2(), typeInfo);
             }
         }
     }

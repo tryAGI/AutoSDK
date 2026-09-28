@@ -1,4 +1,4 @@
-﻿//HintName: G.Models.Parameters.g.cs
+//HintName: G.Models.Parameters.g.cs
 #pragma warning disable CS0618 // Type or member is obsolete
 
 #nullable enable
@@ -48,8 +48,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.SplitV1Parameters PickSplitV1() => IsSplitV1
-            ? SplitV1!
+        public global::G.SplitV1Parameters PickSplitV1() => SplitV1 is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'SplitV1' but the value was {ToString()}.");
 
         /// <summary>
@@ -85,8 +85,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.ExtractV2Parameters PickExtractV2() => IsExtractV2
-            ? ExtractV2!
+        public global::G.ExtractV2Parameters PickExtractV2() => ExtractV2 is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'ExtractV2' but the value was {ToString()}.");
 
         /// <summary>
@@ -122,8 +122,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.ClassifyV2Parameters PickClassifyV2() => IsClassifyV2
-            ? ClassifyV2!
+        public global::G.ClassifyV2Parameters PickClassifyV2() => ClassifyV2 is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'ClassifyV2' but the value was {ToString()}.");
 
         /// <summary>
@@ -162,8 +162,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.ParseV2Parameters PickParseV2() => IsParseV2
-            ? ParseV2!
+        public global::G.ParseV2Parameters PickParseV2() => ParseV2 is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'ParseV2' but the value was {ToString()}.");
 
         /// <summary>
@@ -200,8 +200,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.UntypedParameters PickUnknown() => IsUnknown
-            ? Unknown!
+        public global::G.UntypedParameters PickUnknown() => Unknown is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Unknown' but the value was {ToString()}.");
         /// <summary>
         /// 
@@ -385,25 +385,25 @@ namespace G
                 Validate();
             }
 
-            if (IsSplitV1 && splitV1 != null)
+            if (SplitV1 is { } __value0 && splitV1 != null)
             {
-                return splitV1(SplitV1!);
+                return splitV1(__value0);
             }
-            else if (IsExtractV2 && extractV2 != null)
+            else if (ExtractV2 is { } __value1 && extractV2 != null)
             {
-                return extractV2(ExtractV2!);
+                return extractV2(__value1);
             }
-            else if (IsClassifyV2 && classifyV2 != null)
+            else if (ClassifyV2 is { } __value2 && classifyV2 != null)
             {
-                return classifyV2(ClassifyV2!);
+                return classifyV2(__value2);
             }
-            else if (IsParseV2 && parseV2 != null)
+            else if (ParseV2 is { } __value3 && parseV2 != null)
             {
-                return parseV2(ParseV2!);
+                return parseV2(__value3);
             }
-            else if (IsUnknown && unknown != null)
+            else if (Unknown is { } __value4 && unknown != null)
             {
-                return unknown(Unknown!);
+                return unknown(__value4);
             }
 
             return default(TResult);
@@ -429,25 +429,25 @@ namespace G
                 Validate();
             }
 
-            if (IsSplitV1)
+            if (SplitV1 is { } __value0)
             {
-                splitV1?.Invoke(SplitV1!);
+                splitV1?.Invoke(__value0);
             }
-            else if (IsExtractV2)
+            else if (ExtractV2 is { } __value1)
             {
-                extractV2?.Invoke(ExtractV2!);
+                extractV2?.Invoke(__value1);
             }
-            else if (IsClassifyV2)
+            else if (ClassifyV2 is { } __value2)
             {
-                classifyV2?.Invoke(ClassifyV2!);
+                classifyV2?.Invoke(__value2);
             }
-            else if (IsParseV2)
+            else if (ParseV2 is { } __value3)
             {
-                parseV2?.Invoke(ParseV2!);
+                parseV2?.Invoke(__value3);
             }
-            else if (IsUnknown)
+            else if (Unknown is { } __value4)
             {
-                unknown?.Invoke(Unknown!);
+                unknown?.Invoke(__value4);
             }
         }
 
@@ -467,25 +467,25 @@ namespace G
                 Validate();
             }
 
-            if (IsSplitV1)
+            if (SplitV1 is { } __value0)
             {
-                splitV1?.Invoke(SplitV1!);
+                splitV1?.Invoke(__value0);
             }
-            else if (IsExtractV2)
+            else if (ExtractV2 is { } __value1)
             {
-                extractV2?.Invoke(ExtractV2!);
+                extractV2?.Invoke(__value1);
             }
-            else if (IsClassifyV2)
+            else if (ClassifyV2 is { } __value2)
             {
-                classifyV2?.Invoke(ClassifyV2!);
+                classifyV2?.Invoke(__value2);
             }
-            else if (IsParseV2)
+            else if (ParseV2 is { } __value3)
             {
-                parseV2?.Invoke(ParseV2!);
+                parseV2?.Invoke(__value3);
             }
-            else if (IsUnknown)
+            else if (Unknown is { } __value4)
             {
-                unknown?.Invoke(Unknown!);
+                unknown?.Invoke(__value4);
             }
         }
 

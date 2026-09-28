@@ -1,4 +1,4 @@
-﻿//HintName: G.Models.McpServerToolAllowedTools.g.cs
+//HintName: G.Models.McpServerToolAllowedTools.g.cs
 #pragma warning disable CS0618 // Type or member is obsolete
 
 #nullable enable
@@ -43,8 +43,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<string> PickMcpServerToolAllowedToolsVariant1() => IsMcpServerToolAllowedToolsVariant1
-            ? McpServerToolAllowedToolsVariant1!
+        public global::System.Collections.Generic.IList<string> PickMcpServerToolAllowedToolsVariant1() => McpServerToolAllowedToolsVariant1 is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'McpServerToolAllowedToolsVariant1' but the value was {ToString()}.");
 
         /// <summary>
@@ -80,8 +80,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.McpServerToolAllowedTools1 PickMcpServerToolAllowedTools1() => IsMcpServerToolAllowedTools1
-            ? McpServerToolAllowedTools1!
+        public global::G.McpServerToolAllowedTools1 PickMcpServerToolAllowedTools1() => McpServerToolAllowedTools1 is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'McpServerToolAllowedTools1' but the value was {ToString()}.");
 
         /// <summary>
@@ -117,8 +117,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public object PickMcpServerToolAllowedToolsVariant3() => IsMcpServerToolAllowedToolsVariant3
-            ? McpServerToolAllowedToolsVariant3!
+        public object PickMcpServerToolAllowedToolsVariant3() => McpServerToolAllowedToolsVariant3 is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'McpServerToolAllowedToolsVariant3' but the value was {ToString()}.");
 
         /// <summary>
@@ -154,8 +154,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public object PickMcpServerToolAllowedToolsVariant4() => IsMcpServerToolAllowedToolsVariant4
-            ? McpServerToolAllowedToolsVariant4!
+        public object PickMcpServerToolAllowedToolsVariant4() => McpServerToolAllowedToolsVariant4 is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'McpServerToolAllowedToolsVariant4' but the value was {ToString()}.");
         /// <summary>
         /// 
@@ -239,21 +239,21 @@ namespace G
                 Validate();
             }
 
-            if (IsMcpServerToolAllowedToolsVariant1 && mcpServerToolAllowedToolsVariant1 != null)
+            if (McpServerToolAllowedToolsVariant1 is { } __value0 && mcpServerToolAllowedToolsVariant1 != null)
             {
-                return mcpServerToolAllowedToolsVariant1(McpServerToolAllowedToolsVariant1!);
+                return mcpServerToolAllowedToolsVariant1(__value0);
             }
-            else if (IsMcpServerToolAllowedTools1 && mcpServerToolAllowedTools1 != null)
+            else if (McpServerToolAllowedTools1 is { } __value1 && mcpServerToolAllowedTools1 != null)
             {
-                return mcpServerToolAllowedTools1(McpServerToolAllowedTools1!);
+                return mcpServerToolAllowedTools1(__value1);
             }
-            else if (IsMcpServerToolAllowedToolsVariant3 && mcpServerToolAllowedToolsVariant3 != null)
+            else if (McpServerToolAllowedToolsVariant3 is { } __value2 && mcpServerToolAllowedToolsVariant3 != null)
             {
-                return mcpServerToolAllowedToolsVariant3(McpServerToolAllowedToolsVariant3!);
+                return mcpServerToolAllowedToolsVariant3(__value2);
             }
-            else if (IsMcpServerToolAllowedToolsVariant4 && mcpServerToolAllowedToolsVariant4 != null)
+            else if (McpServerToolAllowedToolsVariant4 is { } __value3 && mcpServerToolAllowedToolsVariant4 != null)
             {
-                return mcpServerToolAllowedToolsVariant4(McpServerToolAllowedToolsVariant4!);
+                return mcpServerToolAllowedToolsVariant4(__value3);
             }
 
             return default(TResult);
@@ -277,21 +277,21 @@ namespace G
                 Validate();
             }
 
-            if (IsMcpServerToolAllowedToolsVariant1)
+            if (McpServerToolAllowedToolsVariant1 is { } __value0)
             {
-                mcpServerToolAllowedToolsVariant1?.Invoke(McpServerToolAllowedToolsVariant1!);
+                mcpServerToolAllowedToolsVariant1?.Invoke(__value0);
             }
-            else if (IsMcpServerToolAllowedTools1)
+            else if (McpServerToolAllowedTools1 is { } __value1)
             {
-                mcpServerToolAllowedTools1?.Invoke(McpServerToolAllowedTools1!);
+                mcpServerToolAllowedTools1?.Invoke(__value1);
             }
-            else if (IsMcpServerToolAllowedToolsVariant3)
+            else if (McpServerToolAllowedToolsVariant3 is { } __value2)
             {
-                mcpServerToolAllowedToolsVariant3?.Invoke(McpServerToolAllowedToolsVariant3!);
+                mcpServerToolAllowedToolsVariant3?.Invoke(__value2);
             }
-            else if (IsMcpServerToolAllowedToolsVariant4)
+            else if (McpServerToolAllowedToolsVariant4 is { } __value3)
             {
-                mcpServerToolAllowedToolsVariant4?.Invoke(McpServerToolAllowedToolsVariant4!);
+                mcpServerToolAllowedToolsVariant4?.Invoke(__value3);
             }
         }
 
@@ -310,21 +310,21 @@ namespace G
                 Validate();
             }
 
-            if (IsMcpServerToolAllowedToolsVariant1)
+            if (McpServerToolAllowedToolsVariant1 is { } __value0)
             {
-                mcpServerToolAllowedToolsVariant1?.Invoke(McpServerToolAllowedToolsVariant1!);
+                mcpServerToolAllowedToolsVariant1?.Invoke(__value0);
             }
-            else if (IsMcpServerToolAllowedTools1)
+            else if (McpServerToolAllowedTools1 is { } __value1)
             {
-                mcpServerToolAllowedTools1?.Invoke(McpServerToolAllowedTools1!);
+                mcpServerToolAllowedTools1?.Invoke(__value1);
             }
-            else if (IsMcpServerToolAllowedToolsVariant3)
+            else if (McpServerToolAllowedToolsVariant3 is { } __value2)
             {
-                mcpServerToolAllowedToolsVariant3?.Invoke(McpServerToolAllowedToolsVariant3!);
+                mcpServerToolAllowedToolsVariant3?.Invoke(__value2);
             }
-            else if (IsMcpServerToolAllowedToolsVariant4)
+            else if (McpServerToolAllowedToolsVariant4 is { } __value3)
             {
-                mcpServerToolAllowedToolsVariant4?.Invoke(McpServerToolAllowedToolsVariant4!);
+                mcpServerToolAllowedToolsVariant4?.Invoke(__value3);
             }
         }
 

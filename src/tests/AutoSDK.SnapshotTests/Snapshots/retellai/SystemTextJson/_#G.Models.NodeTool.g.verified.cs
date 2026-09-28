@@ -1,4 +1,4 @@
-﻿//HintName: G.Models.NodeTool.g.cs
+//HintName: G.Models.NodeTool.g.cs
 #pragma warning disable CS0618 // Type or member is obsolete
 
 #nullable enable
@@ -43,8 +43,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.OneOf<global::G.CustomTool, global::G.CheckAvailabilityCalTool, global::G.BookAppointmentCalTool> PickNodeToolVariant1() => IsNodeToolVariant1
-            ? NodeToolVariant1!.Value
+        public global::G.OneOf<global::G.CustomTool, global::G.CheckAvailabilityCalTool, global::G.BookAppointmentCalTool> PickNodeToolVariant1() => NodeToolVariant1 is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'NodeToolVariant1' but the value was {ToString()}.");
 
         /// <summary>
@@ -80,8 +80,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.NodeToolVariant2 PickNodeToolVariant2() => IsNodeToolVariant2
-            ? NodeToolVariant2!
+        public global::G.NodeToolVariant2 PickNodeToolVariant2() => NodeToolVariant2 is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'NodeToolVariant2' but the value was {ToString()}.");
         /// <summary>
         /// 
@@ -178,13 +178,13 @@ namespace G
                 Validate();
             }
 
-            if (IsNodeToolVariant1 && nodeToolVariant1 != null)
+            if (NodeToolVariant1 is { } __value0 && nodeToolVariant1 != null)
             {
-                return nodeToolVariant1(NodeToolVariant1!);
+                return nodeToolVariant1(__value0);
             }
-            else if (IsNodeToolVariant2 && nodeToolVariant2 != null)
+            else if (NodeToolVariant2 is { } __value1 && nodeToolVariant2 != null)
             {
-                return nodeToolVariant2(NodeToolVariant2!);
+                return nodeToolVariant2(__value1);
             }
 
             return default(TResult);
@@ -204,13 +204,13 @@ namespace G
                 Validate();
             }
 
-            if (IsNodeToolVariant1)
+            if (NodeToolVariant1 is { } __value0)
             {
-                nodeToolVariant1?.Invoke(NodeToolVariant1!);
+                nodeToolVariant1?.Invoke(__value0);
             }
-            else if (IsNodeToolVariant2)
+            else if (NodeToolVariant2 is { } __value1)
             {
-                nodeToolVariant2?.Invoke(NodeToolVariant2!);
+                nodeToolVariant2?.Invoke(__value1);
             }
         }
 
@@ -227,13 +227,13 @@ namespace G
                 Validate();
             }
 
-            if (IsNodeToolVariant1)
+            if (NodeToolVariant1 is { } __value0)
             {
-                nodeToolVariant1?.Invoke(NodeToolVariant1!);
+                nodeToolVariant1?.Invoke(__value0);
             }
-            else if (IsNodeToolVariant2)
+            else if (NodeToolVariant2 is { } __value1)
             {
-                nodeToolVariant2?.Invoke(NodeToolVariant2!);
+                nodeToolVariant2?.Invoke(__value1);
             }
         }
 

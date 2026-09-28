@@ -1,4 +1,4 @@
-﻿//HintName: G.Models.ModelIdsResponses.g.cs
+//HintName: G.Models.ModelIdsResponses.g.cs
 #pragma warning disable CS0618 // Type or member is obsolete
 
 #nullable enable
@@ -43,8 +43,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.ModelIdsShared PickShared() => IsShared
-            ? Shared!.Value
+        public global::G.ModelIdsShared PickShared() => Shared is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Shared' but the value was {ToString()}.");
 
         /// <summary>
@@ -80,8 +80,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.ModelIdsResponsesEnum PickResponsesOnlyModel() => IsResponsesOnlyModel
-            ? ResponsesOnlyModel!.Value
+        public global::G.ModelIdsResponsesEnum PickResponsesOnlyModel() => ResponsesOnlyModel is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'ResponsesOnlyModel' but the value was {ToString()}.");
         /// <summary>
         /// 
@@ -178,13 +178,13 @@ namespace G
                 Validate();
             }
 
-            if (IsShared && shared != null)
+            if (Shared is { } __value0 && shared != null)
             {
-                return shared(Shared!);
+                return shared(__value0);
             }
-            else if (IsResponsesOnlyModel && responsesOnlyModel != null)
+            else if (ResponsesOnlyModel is { } __value1 && responsesOnlyModel != null)
             {
-                return responsesOnlyModel(ResponsesOnlyModel!);
+                return responsesOnlyModel(__value1);
             }
 
             return default(TResult);
@@ -204,13 +204,13 @@ namespace G
                 Validate();
             }
 
-            if (IsShared)
+            if (Shared is { } __value0)
             {
-                shared?.Invoke(Shared!);
+                shared?.Invoke(__value0);
             }
-            else if (IsResponsesOnlyModel)
+            else if (ResponsesOnlyModel is { } __value1)
             {
-                responsesOnlyModel?.Invoke(ResponsesOnlyModel!);
+                responsesOnlyModel?.Invoke(__value1);
             }
         }
 
@@ -227,13 +227,13 @@ namespace G
                 Validate();
             }
 
-            if (IsShared)
+            if (Shared is { } __value0)
             {
-                shared?.Invoke(Shared!);
+                shared?.Invoke(__value0);
             }
-            else if (IsResponsesOnlyModel)
+            else if (ResponsesOnlyModel is { } __value1)
             {
-                responsesOnlyModel?.Invoke(ResponsesOnlyModel!);
+                responsesOnlyModel?.Invoke(__value1);
             }
         }
 

@@ -1,4 +1,4 @@
-﻿//HintName: G.Models.ConversationFlow.g.cs
+//HintName: G.Models.ConversationFlow.g.cs
 #pragma warning disable CS0618 // Type or member is obsolete
 
 #nullable enable
@@ -43,8 +43,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.ConversationFlowOverride PickOverride() => IsOverride
-            ? Override!
+        public global::G.ConversationFlowOverride PickOverride() => Override is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Override' but the value was {ToString()}.");
 
         /// <summary>
@@ -80,8 +80,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.ConversationFlowVariant2 PickConversationFlowVariant2() => IsConversationFlowVariant2
-            ? ConversationFlowVariant2!
+        public global::G.ConversationFlowVariant2 PickConversationFlowVariant2() => ConversationFlowVariant2 is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'ConversationFlowVariant2' but the value was {ToString()}.");
         /// <summary>
         /// 
@@ -178,13 +178,13 @@ namespace G
                 Validate();
             }
 
-            if (IsOverride && @override != null)
+            if (Override is { } __value0 && @override != null)
             {
-                return @override(Override!);
+                return @override(__value0);
             }
-            else if (IsConversationFlowVariant2 && conversationFlowVariant2 != null)
+            else if (ConversationFlowVariant2 is { } __value1 && conversationFlowVariant2 != null)
             {
-                return conversationFlowVariant2(ConversationFlowVariant2!);
+                return conversationFlowVariant2(__value1);
             }
 
             return default(TResult);
@@ -204,13 +204,13 @@ namespace G
                 Validate();
             }
 
-            if (IsOverride)
+            if (Override is { } __value0)
             {
-                @override?.Invoke(Override!);
+                @override?.Invoke(__value0);
             }
-            else if (IsConversationFlowVariant2)
+            else if (ConversationFlowVariant2 is { } __value1)
             {
-                conversationFlowVariant2?.Invoke(ConversationFlowVariant2!);
+                conversationFlowVariant2?.Invoke(__value1);
             }
         }
 
@@ -227,13 +227,13 @@ namespace G
                 Validate();
             }
 
-            if (IsOverride)
+            if (Override is { } __value0)
             {
-                @override?.Invoke(Override!);
+                @override?.Invoke(__value0);
             }
-            else if (IsConversationFlowVariant2)
+            else if (ConversationFlowVariant2 is { } __value1)
             {
-                conversationFlowVariant2?.Invoke(ConversationFlowVariant2!);
+                conversationFlowVariant2?.Invoke(__value1);
             }
         }
 

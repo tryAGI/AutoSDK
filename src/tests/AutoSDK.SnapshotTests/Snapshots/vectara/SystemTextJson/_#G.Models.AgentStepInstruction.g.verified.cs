@@ -1,4 +1,4 @@
-﻿//HintName: G.Models.AgentStepInstruction.g.cs
+//HintName: G.Models.AgentStepInstruction.g.cs
 #pragma warning disable CS0618 // Type or member is obsolete
 
 #nullable enable
@@ -49,8 +49,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.ReferenceInstruction PickReference() => IsReference
-            ? Reference!.Value
+        public global::G.ReferenceInstruction PickReference() => Reference is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Reference' but the value was {ToString()}.");
 
         /// <summary>
@@ -86,8 +86,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.InlineInstruction PickInline() => IsInline
-            ? Inline!.Value
+        public global::G.InlineInstruction PickInline() => Inline is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Inline' but the value was {ToString()}.");
         /// <summary>
         /// 
@@ -187,13 +187,13 @@ namespace G
                 Validate();
             }
 
-            if (IsReference && reference != null)
+            if (Reference is { } __value0 && reference != null)
             {
-                return reference(Reference!);
+                return reference(__value0);
             }
-            else if (IsInline && inline != null)
+            else if (Inline is { } __value1 && inline != null)
             {
-                return inline(Inline!);
+                return inline(__value1);
             }
 
             return default(TResult);
@@ -213,13 +213,13 @@ namespace G
                 Validate();
             }
 
-            if (IsReference)
+            if (Reference is { } __value0)
             {
-                reference?.Invoke(Reference!);
+                reference?.Invoke(__value0);
             }
-            else if (IsInline)
+            else if (Inline is { } __value1)
             {
-                inline?.Invoke(Inline!);
+                inline?.Invoke(__value1);
             }
         }
 
@@ -236,13 +236,13 @@ namespace G
                 Validate();
             }
 
-            if (IsReference)
+            if (Reference is { } __value0)
             {
-                reference?.Invoke(Reference!);
+                reference?.Invoke(__value0);
             }
-            else if (IsInline)
+            else if (Inline is { } __value1)
             {
-                inline?.Invoke(Inline!);
+                inline?.Invoke(__value1);
             }
         }
 

@@ -1,4 +1,4 @@
-﻿//HintName: G.Models.SearchPostRequestBodyContentMultipartFormDataSchemaQueryMediaUrl.g.cs
+//HintName: G.Models.SearchPostRequestBodyContentMultipartFormDataSchemaQueryMediaUrl.g.cs
 #pragma warning disable CS0618 // Type or member is obsolete
 
 #nullable enable
@@ -48,8 +48,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public string PickSearchPostRequestBodyContentMultipartFormDataSchemaQueryMediaUrlVariant1() => IsSearchPostRequestBodyContentMultipartFormDataSchemaQueryMediaUrlVariant1
-            ? SearchPostRequestBodyContentMultipartFormDataSchemaQueryMediaUrlVariant1!
+        public string PickSearchPostRequestBodyContentMultipartFormDataSchemaQueryMediaUrlVariant1() => SearchPostRequestBodyContentMultipartFormDataSchemaQueryMediaUrlVariant1 is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'SearchPostRequestBodyContentMultipartFormDataSchemaQueryMediaUrlVariant1' but the value was {ToString()}.");
 
         /// <summary>
@@ -85,8 +85,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<string> PickSearchPostRequestBodyContentMultipartFormDataSchemaQueryMediaUrlVariant2() => IsSearchPostRequestBodyContentMultipartFormDataSchemaQueryMediaUrlVariant2
-            ? SearchPostRequestBodyContentMultipartFormDataSchemaQueryMediaUrlVariant2!
+        public global::System.Collections.Generic.IList<string> PickSearchPostRequestBodyContentMultipartFormDataSchemaQueryMediaUrlVariant2() => SearchPostRequestBodyContentMultipartFormDataSchemaQueryMediaUrlVariant2 is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'SearchPostRequestBodyContentMultipartFormDataSchemaQueryMediaUrlVariant2' but the value was {ToString()}.");
         /// <summary>
         /// 
@@ -160,13 +160,13 @@ namespace G
                 Validate();
             }
 
-            if (IsSearchPostRequestBodyContentMultipartFormDataSchemaQueryMediaUrlVariant1 && searchPostRequestBodyContentMultipartFormDataSchemaQueryMediaUrlVariant1 != null)
+            if (SearchPostRequestBodyContentMultipartFormDataSchemaQueryMediaUrlVariant1 is { } __value0 && searchPostRequestBodyContentMultipartFormDataSchemaQueryMediaUrlVariant1 != null)
             {
-                return searchPostRequestBodyContentMultipartFormDataSchemaQueryMediaUrlVariant1(SearchPostRequestBodyContentMultipartFormDataSchemaQueryMediaUrlVariant1!);
+                return searchPostRequestBodyContentMultipartFormDataSchemaQueryMediaUrlVariant1(__value0);
             }
-            else if (IsSearchPostRequestBodyContentMultipartFormDataSchemaQueryMediaUrlVariant2 && searchPostRequestBodyContentMultipartFormDataSchemaQueryMediaUrlVariant2 != null)
+            else if (SearchPostRequestBodyContentMultipartFormDataSchemaQueryMediaUrlVariant2 is { } __value1 && searchPostRequestBodyContentMultipartFormDataSchemaQueryMediaUrlVariant2 != null)
             {
-                return searchPostRequestBodyContentMultipartFormDataSchemaQueryMediaUrlVariant2(SearchPostRequestBodyContentMultipartFormDataSchemaQueryMediaUrlVariant2!);
+                return searchPostRequestBodyContentMultipartFormDataSchemaQueryMediaUrlVariant2(__value1);
             }
 
             return default(TResult);
@@ -186,13 +186,13 @@ namespace G
                 Validate();
             }
 
-            if (IsSearchPostRequestBodyContentMultipartFormDataSchemaQueryMediaUrlVariant1)
+            if (SearchPostRequestBodyContentMultipartFormDataSchemaQueryMediaUrlVariant1 is { } __value0)
             {
-                searchPostRequestBodyContentMultipartFormDataSchemaQueryMediaUrlVariant1?.Invoke(SearchPostRequestBodyContentMultipartFormDataSchemaQueryMediaUrlVariant1!);
+                searchPostRequestBodyContentMultipartFormDataSchemaQueryMediaUrlVariant1?.Invoke(__value0);
             }
-            else if (IsSearchPostRequestBodyContentMultipartFormDataSchemaQueryMediaUrlVariant2)
+            else if (SearchPostRequestBodyContentMultipartFormDataSchemaQueryMediaUrlVariant2 is { } __value1)
             {
-                searchPostRequestBodyContentMultipartFormDataSchemaQueryMediaUrlVariant2?.Invoke(SearchPostRequestBodyContentMultipartFormDataSchemaQueryMediaUrlVariant2!);
+                searchPostRequestBodyContentMultipartFormDataSchemaQueryMediaUrlVariant2?.Invoke(__value1);
             }
         }
 
@@ -209,13 +209,13 @@ namespace G
                 Validate();
             }
 
-            if (IsSearchPostRequestBodyContentMultipartFormDataSchemaQueryMediaUrlVariant1)
+            if (SearchPostRequestBodyContentMultipartFormDataSchemaQueryMediaUrlVariant1 is { } __value0)
             {
-                searchPostRequestBodyContentMultipartFormDataSchemaQueryMediaUrlVariant1?.Invoke(SearchPostRequestBodyContentMultipartFormDataSchemaQueryMediaUrlVariant1!);
+                searchPostRequestBodyContentMultipartFormDataSchemaQueryMediaUrlVariant1?.Invoke(__value0);
             }
-            else if (IsSearchPostRequestBodyContentMultipartFormDataSchemaQueryMediaUrlVariant2)
+            else if (SearchPostRequestBodyContentMultipartFormDataSchemaQueryMediaUrlVariant2 is { } __value1)
             {
-                searchPostRequestBodyContentMultipartFormDataSchemaQueryMediaUrlVariant2?.Invoke(SearchPostRequestBodyContentMultipartFormDataSchemaQueryMediaUrlVariant2!);
+                searchPostRequestBodyContentMultipartFormDataSchemaQueryMediaUrlVariant2?.Invoke(__value1);
             }
         }
 

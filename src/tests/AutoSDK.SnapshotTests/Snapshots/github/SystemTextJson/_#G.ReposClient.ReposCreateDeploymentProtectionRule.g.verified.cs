@@ -1,4 +1,4 @@
-﻿//HintName: G.ReposClient.ReposCreateDeploymentProtectionRule.g.cs
+//HintName: G.ReposClient.ReposCreateDeploymentProtectionRule.g.cs
 
 #nullable enable
 
@@ -156,9 +156,9 @@ namespace G
                 PrepareReposCreateDeploymentProtectionRuleRequest(
                     httpClient: HttpClient,
                     httpRequestMessage: __httpRequest,
-                    environmentName: environmentName!,
-                    repo: repo!,
-                    owner: owner!,
+                    environmentName: environmentName,
+                    repo: repo,
+                    owner: owner,
                     request: request);
 
                 return __httpRequest;
@@ -181,7 +181,7 @@ namespace G
                                 pathTemplate: "$\"/repos/{owner}/{repo}/environments/{environmentName}/deployment_protection_rules\"",
                                 httpMethod: "POST",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: null,
                                 exception: null,
                                 clientOptions: Options,
@@ -215,7 +215,7 @@ namespace G
                                 pathTemplate: "$\"/repos/{owner}/{repo}/environments/{environmentName}/deployment_protection_rules\"",
                                 httpMethod: "POST",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: null,
                                 exception: __exception,
                                 clientOptions: Options,
@@ -256,7 +256,7 @@ namespace G
                                 pathTemplate: "$\"/repos/{owner}/{repo}/environments/{environmentName}/deployment_protection_rules\"",
                                 httpMethod: "POST",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: __response,
                                 exception: null,
                                 clientOptions: Options,
@@ -304,7 +304,7 @@ namespace G
                                 pathTemplate: "$\"/repos/{owner}/{repo}/environments/{environmentName}/deployment_protection_rules\"",
                                 httpMethod: "POST",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: __response,
                                 exception: null,
                                 clientOptions: Options,
@@ -326,7 +326,7 @@ namespace G
                                 pathTemplate: "$\"/repos/{owner}/{repo}/environments/{environmentName}/deployment_protection_rules\"",
                                 httpMethod: "POST",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: __response,
                                 exception: null,
                                 clientOptions: Options,

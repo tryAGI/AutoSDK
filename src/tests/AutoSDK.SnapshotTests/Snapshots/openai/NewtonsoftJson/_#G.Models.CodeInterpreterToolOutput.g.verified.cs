@@ -1,4 +1,4 @@
-﻿//HintName: G.Models.CodeInterpreterToolOutput.g.cs
+//HintName: G.Models.CodeInterpreterToolOutput.g.cs
 #pragma warning disable CS0618 // Type or member is obsolete
 
 #nullable enable
@@ -48,8 +48,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.CodeInterpreterTextOutput PickLogs() => IsLogs
-            ? Logs!
+        public global::G.CodeInterpreterTextOutput PickLogs() => Logs is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Logs' but the value was {ToString()}.");
 
         /// <summary>
@@ -85,8 +85,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.CodeInterpreterFileOutput PickFiles() => IsFiles
-            ? Files!
+        public global::G.CodeInterpreterFileOutput PickFiles() => Files is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Files' but the value was {ToString()}.");
         /// <summary>
         /// 
@@ -186,13 +186,13 @@ namespace G
                 Validate();
             }
 
-            if (IsLogs && logs != null)
+            if (Logs is { } __value0 && logs != null)
             {
-                return logs(Logs!);
+                return logs(__value0);
             }
-            else if (IsFiles && files != null)
+            else if (Files is { } __value1 && files != null)
             {
-                return files(Files!);
+                return files(__value1);
             }
 
             return default(TResult);
@@ -212,13 +212,13 @@ namespace G
                 Validate();
             }
 
-            if (IsLogs)
+            if (Logs is { } __value0)
             {
-                logs?.Invoke(Logs!);
+                logs?.Invoke(__value0);
             }
-            else if (IsFiles)
+            else if (Files is { } __value1)
             {
-                files?.Invoke(Files!);
+                files?.Invoke(__value1);
             }
         }
 
@@ -235,13 +235,13 @@ namespace G
                 Validate();
             }
 
-            if (IsLogs)
+            if (Logs is { } __value0)
             {
-                logs?.Invoke(Logs!);
+                logs?.Invoke(__value0);
             }
-            else if (IsFiles)
+            else if (Files is { } __value1)
             {
-                files?.Invoke(Files!);
+                files?.Invoke(__value1);
             }
         }
 

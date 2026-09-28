@@ -1,4 +1,4 @@
-﻿//HintName: G.ExperimentClient.DeleteExperimentTableRow.g.cs
+//HintName: G.ExperimentClient.DeleteExperimentTableRow.g.cs
 
 #nullable enable
 
@@ -169,8 +169,8 @@ namespace G
                 PrepareDeleteExperimentTableRowRequest(
                     httpClient: HttpClient,
                     httpRequestMessage: __httpRequest,
-                    experimentTableId: experimentTableId!,
-                    rowIndex: rowIndex!);
+                    experimentTableId: experimentTableId,
+                    rowIndex: rowIndex);
 
                 global::G.AutoSDKHttpRequestOptions.StampAuthorizationOverride(__httpRequest);
 
@@ -194,7 +194,7 @@ namespace G
                                 pathTemplate: "$\"/v1/experiment/table/{experimentTableId}/row/{rowIndex}\"",
                                 httpMethod: "DELETE",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: null,
                                 exception: null,
                                 clientOptions: Options,
@@ -228,7 +228,7 @@ namespace G
                                 pathTemplate: "$\"/v1/experiment/table/{experimentTableId}/row/{rowIndex}\"",
                                 httpMethod: "DELETE",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: null,
                                 exception: __exception,
                                 clientOptions: Options,
@@ -269,7 +269,7 @@ namespace G
                                 pathTemplate: "$\"/v1/experiment/table/{experimentTableId}/row/{rowIndex}\"",
                                 httpMethod: "DELETE",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: __response,
                                 exception: null,
                                 clientOptions: Options,
@@ -317,7 +317,7 @@ namespace G
                                 pathTemplate: "$\"/v1/experiment/table/{experimentTableId}/row/{rowIndex}\"",
                                 httpMethod: "DELETE",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: __response,
                                 exception: null,
                                 clientOptions: Options,
@@ -339,7 +339,7 @@ namespace G
                                 pathTemplate: "$\"/v1/experiment/table/{experimentTableId}/row/{rowIndex}\"",
                                 httpMethod: "DELETE",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: __response,
                                 exception: null,
                                 clientOptions: Options,

@@ -1,4 +1,4 @@
-﻿//HintName: G.JsonConverters.RankBy.g.cs
+//HintName: G.JsonConverters.RankBy.g.cs
 #nullable enable
 #pragma warning disable CS0618 // Type or member is obsolete
 
@@ -297,31 +297,31 @@ namespace G.JsonConverters
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(byte[]), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<byte[]?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(byte[]).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Vector!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickVector(), typeInfo);
             }
             else if (value.IsKnn)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(byte[]), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<byte[]?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(byte[]).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Knn!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickKnn(), typeInfo);
             }
             else if (value.IsText)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.RankByText), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.RankByText> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.RankByText).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Text!.Value, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickText(), typeInfo);
             }
             else if (value.IsAttribute)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(byte[]), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<byte[]?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(byte[]).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Attribute!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickAttribute(), typeInfo);
             }
             else if (value.IsAttributes)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::System.Collections.Generic.IList<byte[]>), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::System.Collections.Generic.IList<byte[]>?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::System.Collections.Generic.IList<byte[]>).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Attributes!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickAttributes(), typeInfo);
             }
         }
     }

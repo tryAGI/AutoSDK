@@ -1,4 +1,4 @@
-﻿//HintName: G.Models.TokenMetricStats.g.cs
+//HintName: G.Models.TokenMetricStats.g.cs
 #pragma warning disable CS0618 // Type or member is obsolete
 
 #nullable enable
@@ -43,8 +43,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.MetricStats PickMetricStats() => IsMetricStats
-            ? MetricStats!
+        public global::G.MetricStats PickMetricStats() => MetricStats is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'MetricStats' but the value was {ToString()}.");
 
         /// <summary>
@@ -80,8 +80,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.TokenMetricStatsVariant2 PickTokenMetricStatsVariant2() => IsTokenMetricStatsVariant2
-            ? TokenMetricStatsVariant2!
+        public global::G.TokenMetricStatsVariant2 PickTokenMetricStatsVariant2() => TokenMetricStatsVariant2 is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'TokenMetricStatsVariant2' but the value was {ToString()}.");
         /// <summary>
         /// 
@@ -178,13 +178,13 @@ namespace G
                 Validate();
             }
 
-            if (IsMetricStats && metricStats != null)
+            if (MetricStats is { } __value0 && metricStats != null)
             {
-                return metricStats(MetricStats!);
+                return metricStats(__value0);
             }
-            else if (IsTokenMetricStatsVariant2 && tokenMetricStatsVariant2 != null)
+            else if (TokenMetricStatsVariant2 is { } __value1 && tokenMetricStatsVariant2 != null)
             {
-                return tokenMetricStatsVariant2(TokenMetricStatsVariant2!);
+                return tokenMetricStatsVariant2(__value1);
             }
 
             return default(TResult);
@@ -204,13 +204,13 @@ namespace G
                 Validate();
             }
 
-            if (IsMetricStats)
+            if (MetricStats is { } __value0)
             {
-                metricStats?.Invoke(MetricStats!);
+                metricStats?.Invoke(__value0);
             }
-            else if (IsTokenMetricStatsVariant2)
+            else if (TokenMetricStatsVariant2 is { } __value1)
             {
-                tokenMetricStatsVariant2?.Invoke(TokenMetricStatsVariant2!);
+                tokenMetricStatsVariant2?.Invoke(__value1);
             }
         }
 
@@ -227,13 +227,13 @@ namespace G
                 Validate();
             }
 
-            if (IsMetricStats)
+            if (MetricStats is { } __value0)
             {
-                metricStats?.Invoke(MetricStats!);
+                metricStats?.Invoke(__value0);
             }
-            else if (IsTokenMetricStatsVariant2)
+            else if (TokenMetricStatsVariant2 is { } __value1)
             {
-                tokenMetricStatsVariant2?.Invoke(TokenMetricStatsVariant2!);
+                tokenMetricStatsVariant2?.Invoke(__value1);
             }
         }
 

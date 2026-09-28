@@ -1,4 +1,4 @@
-﻿//HintName: G.Models.StopwordsInterface.g.cs
+//HintName: G.Models.StopwordsInterface.g.cs
 #pragma warning disable CS0618 // Type or member is obsolete
 
 #nullable enable
@@ -43,8 +43,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.Language PickLanguage() => IsLanguage
-            ? Language!.Value
+        public global::G.Language PickLanguage() => Language is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Language' but the value was {ToString()}.");
 
         /// <summary>
@@ -80,8 +80,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.StopwordsSet PickSet() => IsSet
-            ? Set!
+        public global::G.StopwordsSet PickSet() => Set is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Set' but the value was {ToString()}.");
         /// <summary>
         /// 
@@ -178,13 +178,13 @@ namespace G
                 Validate();
             }
 
-            if (IsLanguage && language != null)
+            if (Language is { } __value0 && language != null)
             {
-                return language(Language!);
+                return language(__value0);
             }
-            else if (IsSet && set != null)
+            else if (Set is { } __value1 && set != null)
             {
-                return set(Set!);
+                return set(__value1);
             }
 
             return default(TResult);
@@ -204,13 +204,13 @@ namespace G
                 Validate();
             }
 
-            if (IsLanguage)
+            if (Language is { } __value0)
             {
-                language?.Invoke(Language!);
+                language?.Invoke(__value0);
             }
-            else if (IsSet)
+            else if (Set is { } __value1)
             {
-                set?.Invoke(Set!);
+                set?.Invoke(__value1);
             }
         }
 
@@ -227,13 +227,13 @@ namespace G
                 Validate();
             }
 
-            if (IsLanguage)
+            if (Language is { } __value0)
             {
-                language?.Invoke(Language!);
+                language?.Invoke(__value0);
             }
-            else if (IsSet)
+            else if (Set is { } __value1)
             {
-                set?.Invoke(Set!);
+                set?.Invoke(__value1);
             }
         }
 

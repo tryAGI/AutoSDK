@@ -1,4 +1,4 @@
-﻿//HintName: G.ReposClient.ReposUploadReleaseAsset.g.cs
+//HintName: G.ReposClient.ReposUploadReleaseAsset.g.cs
 
 #nullable enable
 
@@ -192,10 +192,10 @@ namespace G
                 PrepareReposUploadReleaseAssetRequest(
                     httpClient: HttpClient,
                     httpRequestMessage: __httpRequest,
-                    owner: owner!,
-                    repo: repo!,
-                    releaseId: releaseId!,
-                    name: name!,
+                    owner: owner,
+                    repo: repo,
+                    releaseId: releaseId,
+                    name: name,
                     label: label,
                     request: request);
 
@@ -219,7 +219,7 @@ namespace G
                                 pathTemplate: "$\"/repos/{owner}/{repo}/releases/{releaseId}/assets\"",
                                 httpMethod: "POST",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: null,
                                 exception: null,
                                 clientOptions: Options,
@@ -253,7 +253,7 @@ namespace G
                                 pathTemplate: "$\"/repos/{owner}/{repo}/releases/{releaseId}/assets\"",
                                 httpMethod: "POST",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: null,
                                 exception: __exception,
                                 clientOptions: Options,
@@ -294,7 +294,7 @@ namespace G
                                 pathTemplate: "$\"/repos/{owner}/{repo}/releases/{releaseId}/assets\"",
                                 httpMethod: "POST",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: __response,
                                 exception: null,
                                 clientOptions: Options,
@@ -342,7 +342,7 @@ namespace G
                                 pathTemplate: "$\"/repos/{owner}/{repo}/releases/{releaseId}/assets\"",
                                 httpMethod: "POST",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: __response,
                                 exception: null,
                                 clientOptions: Options,
@@ -364,7 +364,7 @@ namespace G
                                 pathTemplate: "$\"/repos/{owner}/{repo}/releases/{releaseId}/assets\"",
                                 httpMethod: "POST",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: __response,
                                 exception: null,
                                 clientOptions: Options,

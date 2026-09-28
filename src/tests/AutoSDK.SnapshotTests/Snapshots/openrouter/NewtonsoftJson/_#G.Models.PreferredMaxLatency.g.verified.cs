@@ -1,4 +1,4 @@
-﻿//HintName: G.Models.PreferredMaxLatency.g.cs
+//HintName: G.Models.PreferredMaxLatency.g.cs
 #pragma warning disable CS0618 // Type or member is obsolete
 
 #nullable enable
@@ -43,8 +43,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public double PickPreferredMaxLatencyVariant1() => IsPreferredMaxLatencyVariant1
-            ? PreferredMaxLatencyVariant1!.Value
+        public double PickPreferredMaxLatencyVariant1() => PreferredMaxLatencyVariant1 is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'PreferredMaxLatencyVariant1' but the value was {ToString()}.");
 
         /// <summary>
@@ -80,8 +80,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.PercentileLatencyCutoffs PickPercentileLatencyCutoffs() => IsPercentileLatencyCutoffs
-            ? PercentileLatencyCutoffs!
+        public global::G.PercentileLatencyCutoffs PickPercentileLatencyCutoffs() => PercentileLatencyCutoffs is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'PercentileLatencyCutoffs' but the value was {ToString()}.");
 
         /// <summary>
@@ -117,8 +117,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public object PickPreferredMaxLatencyVariant3() => IsPreferredMaxLatencyVariant3
-            ? PreferredMaxLatencyVariant3!
+        public object PickPreferredMaxLatencyVariant3() => PreferredMaxLatencyVariant3 is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'PreferredMaxLatencyVariant3' but the value was {ToString()}.");
         /// <summary>
         /// 
@@ -220,17 +220,17 @@ namespace G
                 Validate();
             }
 
-            if (IsPreferredMaxLatencyVariant1 && preferredMaxLatencyVariant1 != null)
+            if (PreferredMaxLatencyVariant1 is { } __value0 && preferredMaxLatencyVariant1 != null)
             {
-                return preferredMaxLatencyVariant1(PreferredMaxLatencyVariant1!);
+                return preferredMaxLatencyVariant1(__value0);
             }
-            else if (IsPercentileLatencyCutoffs && percentileLatencyCutoffs != null)
+            else if (PercentileLatencyCutoffs is { } __value1 && percentileLatencyCutoffs != null)
             {
-                return percentileLatencyCutoffs(PercentileLatencyCutoffs!);
+                return percentileLatencyCutoffs(__value1);
             }
-            else if (IsPreferredMaxLatencyVariant3 && preferredMaxLatencyVariant3 != null)
+            else if (PreferredMaxLatencyVariant3 is { } __value2 && preferredMaxLatencyVariant3 != null)
             {
-                return preferredMaxLatencyVariant3(PreferredMaxLatencyVariant3!);
+                return preferredMaxLatencyVariant3(__value2);
             }
 
             return default(TResult);
@@ -252,17 +252,17 @@ namespace G
                 Validate();
             }
 
-            if (IsPreferredMaxLatencyVariant1)
+            if (PreferredMaxLatencyVariant1 is { } __value0)
             {
-                preferredMaxLatencyVariant1?.Invoke(PreferredMaxLatencyVariant1!);
+                preferredMaxLatencyVariant1?.Invoke(__value0);
             }
-            else if (IsPercentileLatencyCutoffs)
+            else if (PercentileLatencyCutoffs is { } __value1)
             {
-                percentileLatencyCutoffs?.Invoke(PercentileLatencyCutoffs!);
+                percentileLatencyCutoffs?.Invoke(__value1);
             }
-            else if (IsPreferredMaxLatencyVariant3)
+            else if (PreferredMaxLatencyVariant3 is { } __value2)
             {
-                preferredMaxLatencyVariant3?.Invoke(PreferredMaxLatencyVariant3!);
+                preferredMaxLatencyVariant3?.Invoke(__value2);
             }
         }
 
@@ -280,17 +280,17 @@ namespace G
                 Validate();
             }
 
-            if (IsPreferredMaxLatencyVariant1)
+            if (PreferredMaxLatencyVariant1 is { } __value0)
             {
-                preferredMaxLatencyVariant1?.Invoke(PreferredMaxLatencyVariant1!);
+                preferredMaxLatencyVariant1?.Invoke(__value0);
             }
-            else if (IsPercentileLatencyCutoffs)
+            else if (PercentileLatencyCutoffs is { } __value1)
             {
-                percentileLatencyCutoffs?.Invoke(PercentileLatencyCutoffs!);
+                percentileLatencyCutoffs?.Invoke(__value1);
             }
-            else if (IsPreferredMaxLatencyVariant3)
+            else if (PreferredMaxLatencyVariant3 is { } __value2)
             {
-                preferredMaxLatencyVariant3?.Invoke(PreferredMaxLatencyVariant3!);
+                preferredMaxLatencyVariant3?.Invoke(__value2);
             }
         }
 

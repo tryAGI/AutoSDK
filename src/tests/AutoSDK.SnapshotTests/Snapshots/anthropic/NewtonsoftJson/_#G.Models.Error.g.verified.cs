@@ -1,4 +1,4 @@
-﻿//HintName: G.Models.Error.g.cs
+//HintName: G.Models.Error.g.cs
 #pragma warning disable CS0618 // Type or member is obsolete
 
 #nullable enable
@@ -48,8 +48,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.BetaInvalidRequestError PickInvalidRequestError() => IsInvalidRequestError
-            ? InvalidRequestError!
+        public global::G.BetaInvalidRequestError PickInvalidRequestError() => InvalidRequestError is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'InvalidRequestError' but the value was {ToString()}.");
 
         /// <summary>
@@ -85,8 +85,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.BetaAuthenticationError PickAuthenticationError() => IsAuthenticationError
-            ? AuthenticationError!
+        public global::G.BetaAuthenticationError PickAuthenticationError() => AuthenticationError is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'AuthenticationError' but the value was {ToString()}.");
 
         /// <summary>
@@ -122,8 +122,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.BetaBillingError PickBillingError() => IsBillingError
-            ? BillingError!
+        public global::G.BetaBillingError PickBillingError() => BillingError is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'BillingError' but the value was {ToString()}.");
 
         /// <summary>
@@ -159,8 +159,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.BetaPermissionError PickPermissionError() => IsPermissionError
-            ? PermissionError!
+        public global::G.BetaPermissionError PickPermissionError() => PermissionError is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'PermissionError' but the value was {ToString()}.");
 
         /// <summary>
@@ -196,8 +196,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.BetaNotFoundError PickNotFoundError() => IsNotFoundError
-            ? NotFoundError!
+        public global::G.BetaNotFoundError PickNotFoundError() => NotFoundError is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'NotFoundError' but the value was {ToString()}.");
 
         /// <summary>
@@ -233,8 +233,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.BetaRateLimitError PickRateLimitError() => IsRateLimitError
-            ? RateLimitError!
+        public global::G.BetaRateLimitError PickRateLimitError() => RateLimitError is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'RateLimitError' but the value was {ToString()}.");
 
         /// <summary>
@@ -270,8 +270,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.BetaGatewayTimeoutError PickTimeoutError() => IsTimeoutError
-            ? TimeoutError!
+        public global::G.BetaGatewayTimeoutError PickTimeoutError() => TimeoutError is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'TimeoutError' but the value was {ToString()}.");
 
         /// <summary>
@@ -307,8 +307,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.BetaAPIError PickApiError() => IsApiError
-            ? ApiError!
+        public global::G.BetaAPIError PickApiError() => ApiError is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'ApiError' but the value was {ToString()}.");
 
         /// <summary>
@@ -344,8 +344,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.BetaOverloadedError PickOverloadedError() => IsOverloadedError
-            ? OverloadedError!
+        public global::G.BetaOverloadedError PickOverloadedError() => OverloadedError is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'OverloadedError' but the value was {ToString()}.");
         /// <summary>
         /// 
@@ -641,41 +641,41 @@ namespace G
                 Validate();
             }
 
-            if (IsInvalidRequestError && invalidRequestError != null)
+            if (InvalidRequestError is { } __value0 && invalidRequestError != null)
             {
-                return invalidRequestError(InvalidRequestError!);
+                return invalidRequestError(__value0);
             }
-            else if (IsAuthenticationError && authenticationError != null)
+            else if (AuthenticationError is { } __value1 && authenticationError != null)
             {
-                return authenticationError(AuthenticationError!);
+                return authenticationError(__value1);
             }
-            else if (IsBillingError && billingError != null)
+            else if (BillingError is { } __value2 && billingError != null)
             {
-                return billingError(BillingError!);
+                return billingError(__value2);
             }
-            else if (IsPermissionError && permissionError != null)
+            else if (PermissionError is { } __value3 && permissionError != null)
             {
-                return permissionError(PermissionError!);
+                return permissionError(__value3);
             }
-            else if (IsNotFoundError && notFoundError != null)
+            else if (NotFoundError is { } __value4 && notFoundError != null)
             {
-                return notFoundError(NotFoundError!);
+                return notFoundError(__value4);
             }
-            else if (IsRateLimitError && rateLimitError != null)
+            else if (RateLimitError is { } __value5 && rateLimitError != null)
             {
-                return rateLimitError(RateLimitError!);
+                return rateLimitError(__value5);
             }
-            else if (IsTimeoutError && timeoutError != null)
+            else if (TimeoutError is { } __value6 && timeoutError != null)
             {
-                return timeoutError(TimeoutError!);
+                return timeoutError(__value6);
             }
-            else if (IsApiError && apiError != null)
+            else if (ApiError is { } __value7 && apiError != null)
             {
-                return apiError(ApiError!);
+                return apiError(__value7);
             }
-            else if (IsOverloadedError && overloadedError != null)
+            else if (OverloadedError is { } __value8 && overloadedError != null)
             {
-                return overloadedError(OverloadedError!);
+                return overloadedError(__value8);
             }
 
             return default(TResult);
@@ -709,41 +709,41 @@ namespace G
                 Validate();
             }
 
-            if (IsInvalidRequestError)
+            if (InvalidRequestError is { } __value0)
             {
-                invalidRequestError?.Invoke(InvalidRequestError!);
+                invalidRequestError?.Invoke(__value0);
             }
-            else if (IsAuthenticationError)
+            else if (AuthenticationError is { } __value1)
             {
-                authenticationError?.Invoke(AuthenticationError!);
+                authenticationError?.Invoke(__value1);
             }
-            else if (IsBillingError)
+            else if (BillingError is { } __value2)
             {
-                billingError?.Invoke(BillingError!);
+                billingError?.Invoke(__value2);
             }
-            else if (IsPermissionError)
+            else if (PermissionError is { } __value3)
             {
-                permissionError?.Invoke(PermissionError!);
+                permissionError?.Invoke(__value3);
             }
-            else if (IsNotFoundError)
+            else if (NotFoundError is { } __value4)
             {
-                notFoundError?.Invoke(NotFoundError!);
+                notFoundError?.Invoke(__value4);
             }
-            else if (IsRateLimitError)
+            else if (RateLimitError is { } __value5)
             {
-                rateLimitError?.Invoke(RateLimitError!);
+                rateLimitError?.Invoke(__value5);
             }
-            else if (IsTimeoutError)
+            else if (TimeoutError is { } __value6)
             {
-                timeoutError?.Invoke(TimeoutError!);
+                timeoutError?.Invoke(__value6);
             }
-            else if (IsApiError)
+            else if (ApiError is { } __value7)
             {
-                apiError?.Invoke(ApiError!);
+                apiError?.Invoke(__value7);
             }
-            else if (IsOverloadedError)
+            else if (OverloadedError is { } __value8)
             {
-                overloadedError?.Invoke(OverloadedError!);
+                overloadedError?.Invoke(__value8);
             }
         }
 
@@ -767,41 +767,41 @@ namespace G
                 Validate();
             }
 
-            if (IsInvalidRequestError)
+            if (InvalidRequestError is { } __value0)
             {
-                invalidRequestError?.Invoke(InvalidRequestError!);
+                invalidRequestError?.Invoke(__value0);
             }
-            else if (IsAuthenticationError)
+            else if (AuthenticationError is { } __value1)
             {
-                authenticationError?.Invoke(AuthenticationError!);
+                authenticationError?.Invoke(__value1);
             }
-            else if (IsBillingError)
+            else if (BillingError is { } __value2)
             {
-                billingError?.Invoke(BillingError!);
+                billingError?.Invoke(__value2);
             }
-            else if (IsPermissionError)
+            else if (PermissionError is { } __value3)
             {
-                permissionError?.Invoke(PermissionError!);
+                permissionError?.Invoke(__value3);
             }
-            else if (IsNotFoundError)
+            else if (NotFoundError is { } __value4)
             {
-                notFoundError?.Invoke(NotFoundError!);
+                notFoundError?.Invoke(__value4);
             }
-            else if (IsRateLimitError)
+            else if (RateLimitError is { } __value5)
             {
-                rateLimitError?.Invoke(RateLimitError!);
+                rateLimitError?.Invoke(__value5);
             }
-            else if (IsTimeoutError)
+            else if (TimeoutError is { } __value6)
             {
-                timeoutError?.Invoke(TimeoutError!);
+                timeoutError?.Invoke(__value6);
             }
-            else if (IsApiError)
+            else if (ApiError is { } __value7)
             {
-                apiError?.Invoke(ApiError!);
+                apiError?.Invoke(__value7);
             }
-            else if (IsOverloadedError)
+            else if (OverloadedError is { } __value8)
             {
-                overloadedError?.Invoke(OverloadedError!);
+                overloadedError?.Invoke(__value8);
             }
         }
 
