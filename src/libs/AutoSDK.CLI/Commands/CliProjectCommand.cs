@@ -545,12 +545,14 @@ internal enum CliProjectFormatHint
 internal sealed record CliProjectOperationMetadata(
     CliProjectWaitMode WaitMode,
     ImmutableDictionary<string, CliProjectFormatHint> ResponseFormatHints,
-    ImmutableHashSet<string> JsonOnlyWebhookParameterNames)
+    ImmutableHashSet<string> JsonOnlyWebhookParameterNames,
+    bool DisableWebhookBuilders)
 {
     public static CliProjectOperationMetadata Default { get; } = new(
         CliProjectWaitMode.Auto,
         ImmutableDictionary<string, CliProjectFormatHint>.Empty.WithComparers(StringComparer.OrdinalIgnoreCase),
-        ImmutableHashSet<string>.Empty.WithComparer(StringComparer.OrdinalIgnoreCase));
+        ImmutableHashSet<string>.Empty.WithComparer(StringComparer.OrdinalIgnoreCase),
+        false);
 }
 
 internal sealed record CliProjectMetadata(
@@ -571,7 +573,8 @@ internal sealed record CliProjectMetadata(
                         openApiDocument.Components?.Schemas ?? new Dictionary<string, IOpenApiSchema>()),
                     GetJsonOnlyWebhookParameterNames(
                         operation.Value,
-                        openApiDocument.Components?.Schemas ?? new Dictionary<string, IOpenApiSchema>()));
+                        openApiDocument.Components?.Schemas ?? new Dictionary<string, IOpenApiSchema>()),
+                    IsWebhookBuilderDisabled(operation.Value.Extensions));
 
                 foreach (var key in CreateOperationKeys(operation.Value.OperationId, path.Key, operation.Key))
                 {
@@ -702,6 +705,13 @@ internal sealed record CliProjectMetadata(
                 !enabled)
             .Select(static property => property.Key)
             .ToImmutableHashSet(StringComparer.OrdinalIgnoreCase);
+    }
+
+    private static bool IsWebhookBuilderDisabled(IDictionary<string, IOpenApiExtension>? extensions)
+    {
+        return (extensions?.TryGetValue("x-cli-webhook", out var extension) ?? false) &&
+               TryReadExtensionBoolean(extension, out var enabled) &&
+               !enabled;
     }
 
     private static ImmutableDictionary<string, CliProjectFormatHint> GetResponseFormatHints(
@@ -1162,6 +1172,20 @@ internal sealed record CliProjectOperation(
         var nestedOptionSets = CreateNestedOptionSetUsages(allOptionParameters, optionSetsByModelType);
         var operationMetadata = metadata.GetOperation(endPoint);
         var jsonOnlyWebhookParameterNames = operationMetadata.JsonOnlyWebhookParameterNames;
+        if (operationMetadata.DisableWebhookBuilders)
+        {
+            var webhookParameters = CreateWebhookUsages(
+                    allOptionParameters,
+                    classesByName,
+                    ImmutableHashSet<string>.Empty.WithComparer(StringComparer.OrdinalIgnoreCase))
+                .Select(static usage => usage.ParameterName)
+                .ToHashSet(StringComparer.Ordinal);
+            jsonOnlyWebhookParameterNames = jsonOnlyWebhookParameterNames.Union(
+                allOptionParameters
+                    .Where(parameter => webhookParameters.Contains(parameter.ParameterName))
+                    .Select(static parameter => parameter.Id));
+        }
+
         var webhookUsages = CreateWebhookUsages(allOptionParameters, classesByName, jsonOnlyWebhookParameterNames);
         var consumedDirectParameterNames = directOptionSets
             .SelectMany(static usage => usage.Parameters)
@@ -3641,7 +3665,8 @@ internal static class CliProjectScaffolder
         return $@"
                         var {parameter.ParameterName} = (CliRuntime.WasSpecified(parseResult, {optionName})
                             ? CliRuntime.DeserializeJsonValue<{modelType}>(
-                                parseResult.GetRequiredValue({optionName}),
+                                parseResult.GetRequiredValue({optionName}) ??
+                                    throw new CliException({Literal($"--{ToKebabCase(parameter.Id)}-json requires a JSON value.")}),
                                 global::{model.JsonSerializerContextFullName}.Default)
                             : {baseValue}){requiredValue};";
     }

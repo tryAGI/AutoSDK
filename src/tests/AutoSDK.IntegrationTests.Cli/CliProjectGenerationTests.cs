@@ -160,6 +160,7 @@ paths:
   /crawl/manual:
     post:
       operationId: crawlManual
+      x-cli-webhook: false
       tags:
         - Crawling
       requestBody:
@@ -328,7 +329,6 @@ components:
         url:
           type: string
         webhook:
-          x-cli-webhook: false
           $ref: '#/components/schemas/WebhookConfig'
     WebhookConfig:
       type: object
@@ -1019,6 +1019,18 @@ paths:
 
     private static string GetRepositoryDirectory()
     {
+        var configuredDirectory = Environment.GetEnvironmentVariable("AUTOSDK_REPOSITORY_DIRECTORY");
+        if (!string.IsNullOrWhiteSpace(configuredDirectory))
+        {
+            var repositoryDirectory = Path.GetFullPath(configuredDirectory);
+            if (!File.Exists(Path.Combine(repositoryDirectory, "src", "libs", "AutoSDK.CLI", "AutoSDK.CLI.csproj")))
+            {
+                throw new DirectoryNotFoundException($"AUTOSDK_REPOSITORY_DIRECTORY does not point to an AutoSDK checkout: {repositoryDirectory}");
+            }
+
+            return repositoryDirectory;
+        }
+
         var currentDirectory = Directory.GetCurrentDirectory();
         return Path.GetFullPath(Path.Combine(currentDirectory, "../../../../../.."));
     }
