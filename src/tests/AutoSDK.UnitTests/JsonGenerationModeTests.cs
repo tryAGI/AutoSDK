@@ -326,7 +326,7 @@ public class JsonGenerationModeTests
 
         file.Text.Should().Contain("internal sealed partial class SourceGenerationContextChunk0");
         file.Text.Should().Contain("internal sealed partial class SourceGenerationContextChunk1");
-        file.Text.Split("GenerationMode = global::System.Text.Json.Serialization.JsonSourceGenerationMode.Metadata,").Length
+        file.Text.Split("GenerationMode = global::System.Text.Json.Serialization.JsonSourceGenerationMode.Metadata").Length
             .Should().Be(3, "each of the two chunks should declare Metadata once");
         file.Text.Should().Contain("JsonSerializable(typeof(global::G.Model0))");
         file.Text.Should().NotContain("JsonSerializable(typeof(global::G.Model0), GenerationMode");
