@@ -18,7 +18,7 @@ public static partial class Sources
             types,
             new JsonSerializerContextGenerationState(),
             fallbackContextNames: null,
-            cancellationToken);
+            cancellationToken: cancellationToken);
     }
 
     /// <param name="fallbackContextNames">
@@ -33,6 +33,7 @@ public static partial class Sources
         EquatableArray<TypeData> types,
         JsonSerializerContextGenerationState generationState,
         IReadOnlyList<string>? fallbackContextNames = null,
+        IReadOnlyCollection<ModelData>? models = null,
         CancellationToken cancellationToken = default)
     {
         // Any non-null list -- empty included -- selects the chained shape. In a split family even
@@ -52,6 +53,14 @@ public static partial class Sources
         var typeInfoNames = generationState.TypeInfoNames;
         var nullableValueTypes = generationState.GetNullableValueTypes(types);
         var typeComponents = generationState.GetJsonSerializableTypeComponents(types);
+        var deprecatedTypeNames = types
+            .Where(static type => type.IsDeprecated)
+            .Select(static type => type.CSharpTypeWithoutNullability)
+            .Concat(models?.Where(static model => model.IsDeprecated)
+                .Select(static model => model.GlobalClassName) ?? [])
+            .Where(static name => !string.IsNullOrWhiteSpace(name))
+            .Distinct(StringComparer.Ordinal)
+            .ToArray();
 
         var serializableTypeSet = types.IsEmpty
             ? default
@@ -79,13 +88,15 @@ public static partial class Sources
                 types,
                 serializableTypeSet,
                 typeInfoNames,
-                nullableValueTypes);
+                nullableValueTypes,
+                deprecatedTypeNames);
 
         if (jsonSerializableAttributes.Length == 0 && !hasFallbacks)
         {
             return GenerateEmptyJsonSerializerContext(
                 client,
-                contextClassName);
+                contextClassName,
+                deprecatedTypeNames);
         }
 
         if (useChunkedContext)
@@ -98,7 +109,8 @@ public static partial class Sources
                 client,
                 contextClassName,
                 jsonSerializableAttributes,
-                fallbackContextNames);
+                fallbackContextNames,
+                deprecatedTypeNames);
         }
 
         using var builder = new PooledStringBuilder(
@@ -110,7 +122,7 @@ namespace {client.Settings.Namespace}
 {{
     {string.Empty.ToXmlDocumentationSummary(level: 4)}
 ");
-        AppendJsonSourceGenerationOptionsAttribute(builder, client);
+        AppendJsonSourceGenerationOptionsAttribute(builder, client, deprecatedTypeNames: deprecatedTypeNames);
         builder.Append('\n');
         AppendJsonSerializableAttributes(builder, jsonSerializableAttributes);
         builder.Append($@"
@@ -176,7 +188,8 @@ namespace {client.Settings.Namespace}
 
     private static string GenerateEmptyJsonSerializerContext(
         Client client,
-        string contextClassName)
+        string contextClassName,
+        IReadOnlyCollection<string> deprecatedTypeNames)
     {
         using var builder = new PooledStringBuilder(
             1024 + client.Converters.Sum(static converter => converter.Length + 64));
@@ -187,7 +200,7 @@ namespace {client.Settings.Namespace}
 {{
     {string.Empty.ToXmlDocumentationSummary(level: 4)}
 ");
-        AppendJsonSourceGenerationOptionsAttribute(builder, client);
+        AppendJsonSourceGenerationOptionsAttribute(builder, client, deprecatedTypeNames: deprecatedTypeNames);
         builder.Append($@"
     public sealed partial class {contextClassName} : global::System.Text.Json.Serialization.JsonSerializerContext
     {{
@@ -225,8 +238,16 @@ namespace {client.Settings.Namespace}
             }};");
         foreach (var converter in client.Converters)
         {
+            if (ReferencesDeprecatedType(converter, deprecatedTypeNames))
+            {
+                builder.Append("\n            #pragma warning disable CS0618 // Converter references a deprecated API model.");
+            }
             builder.Append($@"
             options.Converters.Add(new {converter}());");
+            if (ReferencesDeprecatedType(converter, deprecatedTypeNames))
+            {
+                builder.Append("\n            #pragma warning restore CS0618");
+            }
         }
 
         builder.Append($@"
@@ -241,7 +262,8 @@ namespace {client.Settings.Namespace}
         Client client,
         string contextClassName,
         JsonSerializableAttributeRegistration[] jsonSerializableAttributes,
-        IReadOnlyList<string>? fallbackContextNames = null)
+        IReadOnlyList<string>? fallbackContextNames = null,
+        IReadOnlyCollection<string>? deprecatedTypeNames = null)
     {
         var chunks = SplitJsonSerializableAttributes(jsonSerializableAttributes)
             .ToArray();
@@ -371,8 +393,16 @@ namespace {client.Settings.Namespace}
         }
         foreach (var converter in eagerConverters)
         {
+            if (ReferencesDeprecatedType(converter, deprecatedTypeNames))
+            {
+                builder.Append("\n            #pragma warning disable CS0618 // Converter references a deprecated API model.");
+            }
             builder.Append($@"
             options.Converters.Add(new {converter}());");
+            if (ReferencesDeprecatedType(converter, deprecatedTypeNames))
+            {
+                builder.Append("\n            #pragma warning restore CS0618");
+            }
         }
         if (lazyConverterRegistrations.Length > 0)
         {
@@ -547,16 +577,23 @@ namespace {client.Settings.Namespace}
     private static void AppendJsonSourceGenerationOptionsAttribute(
         PooledStringBuilder builder,
         Client client,
-        bool includeConverters = true)
+        bool includeConverters = true,
+        IReadOnlyCollection<string>? deprecatedTypeNames = null)
     {
         IEnumerable<string> converters = includeConverters
             ? client.Converters
             : Array.Empty<string>();
         var converterTypes = converters.ToArray();
+        var hasDeprecatedConverter = converterTypes.Any(converter =>
+            ReferencesDeprecatedType(converter, deprecatedTypeNames));
 
         if (converterTypes.Length > 0)
         {
             builder.Append("    #pragma warning disable CS3016 // Converter type array in this attribute is not CLS-compliant.\n");
+        }
+        if (hasDeprecatedConverter)
+        {
+            builder.Append("    #pragma warning disable CS0618 // Converter references a deprecated API model.\n");
         }
 
         builder.Append(@"    [global::System.Text.Json.Serialization.JsonSourceGenerationOptions(
@@ -594,8 +631,17 @@ namespace {client.Settings.Namespace}
         }
         builder.Append(@"
         })]");
+        if (hasDeprecatedConverter)
+        {
+            builder.Append("\n    #pragma warning restore CS0618");
+        }
         builder.Append("\n    #pragma warning restore CS3016");
     }
+
+    private static bool ReferencesDeprecatedType(
+        string emittedType,
+        IReadOnlyCollection<string>? deprecatedTypeNames) =>
+        deprecatedTypeNames?.Any(name => emittedType.Contains(name, StringComparison.Ordinal)) ?? false;
 
     private readonly struct JsonSerializableAttributeRegistration
     {
@@ -777,7 +823,8 @@ namespace {client.Settings.Namespace}
         EquatableArray<TypeData> types,
         (string[] SerializableTypes, string[] ExplicitNullableValueTypes, string[] ContextTypes) typeSet,
         JsonTypeInfoNameCache typeInfoNames,
-        string[] nullableValueTypes)
+        string[] nullableValueTypes,
+        IReadOnlyCollection<string> deprecatedTypeNames)
     {
         var serializableTypes = typeSet.SerializableTypes;
         var explicitNullableValueTypes = typeSet.ExplicitNullableValueTypes;
@@ -832,13 +879,6 @@ namespace {client.Settings.Namespace}
             alwaysDefaultTypes: contextTypes);
 
         var registrations = new JsonSerializableAttributeRegistration[serializableTypes.Length];
-        var deprecatedTypeNames = types
-            .Where(static type => type.IsDeprecated)
-            .Select(static type => type.CSharpTypeWithoutNullability)
-            .Where(static name => !string.IsNullOrWhiteSpace(name))
-            .Distinct(StringComparer.Ordinal)
-            .ToArray();
-
         for (var index = 0; index < serializableTypes.Length; index++)
         {
             var type = serializableTypes[index];
@@ -850,7 +890,7 @@ namespace {client.Settings.Namespace}
                 typeInfoPropertyName,
                 generationMode,
                 guardTypes.Contains(type),
-                deprecatedTypeNames.Any(deprecatedName => type.Contains(deprecatedName, StringComparison.Ordinal)));
+                ReferencesDeprecatedType(type, deprecatedTypeNames));
         }
 
         return registrations;

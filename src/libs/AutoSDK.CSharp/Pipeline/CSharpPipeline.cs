@@ -326,7 +326,8 @@ public static class CSharpPipeline
                             data.Types,
                             serializerContextGenerationState,
                             fallbackContextNames: null,
-                            cancellationToken),
+                            models: data.Classes.Where(static model => model.IsDeprecated).ToArray(),
+                            cancellationToken: cancellationToken),
                         .. CreateTreeShakeableTagJsonSerializerContexts(
                             data,
                             tagReachability,
@@ -638,7 +639,8 @@ public static class CSharpPipeline
                 // An empty chain keeps small tag contexts independent; the large-SDK chain
                 // delegates to the aggregate resolver without duplicating its registrations.
                 fallbackContextNames: reuseAggregateContext ? [aggregateContextName] : [],
-                cancellationToken));
+                models: data.Classes.Where(static model => model.IsDeprecated).ToArray(),
+                cancellationToken: cancellationToken));
         }
 
         return files.ToArray();
@@ -762,7 +764,8 @@ public static class CSharpPipeline
                 // Empty rather than null: Core chains onto nothing, but still needs the shape that
                 // publishes a resolver for the tag packages above it.
                 fallbackContextNames: [],
-                cancellationToken),
+                models: data.Classes.Where(static model => model.IsDeprecated).ToArray(),
+                cancellationToken: cancellationToken),
         };
 
         // Types whose type-info name collides family-wide are added to every context that is not
@@ -811,7 +814,8 @@ public static class CSharpPipeline
                 new Sources.JsonSerializerContextGenerationState(),
                 // Core last: a tag's own registrations must win over the ones it left behind.
                 fallbackContextNames: [coreContext],
-                cancellationToken));
+                models: data.Classes.Where(static model => model.IsDeprecated).ToArray(),
+                cancellationToken: cancellationToken));
             chain.Add($"global::{contextName}");
         }
 
@@ -829,7 +833,8 @@ public static class CSharpPipeline
                 sharedCollidingTypes.AsEquatableArray(),
                 new Sources.JsonSerializerContextGenerationState(),
                 fallbackContextNames: chain,
-                cancellationToken));
+                models: data.Classes.Where(static model => model.IsDeprecated).ToArray(),
+                cancellationToken: cancellationToken));
         }
 
         return files.ToArray();

@@ -301,7 +301,7 @@ public static partial class Sources
             types,
             new JsonSerializerContextGenerationState(),
             fallbackContextNames: null,
-            cancellationToken);
+            cancellationToken: cancellationToken);
     }
 
     internal static FileWithName JsonSerializerContext(
@@ -309,6 +309,7 @@ public static partial class Sources
         EquatableArray<TypeData> types,
         JsonSerializerContextGenerationState generationState,
         IReadOnlyList<string>? fallbackContextNames = null,
+        IReadOnlyCollection<ModelData>? models = null,
         CancellationToken cancellationToken = default)
     {
         if (!client.Settings.FromCli ||
@@ -330,6 +331,7 @@ public static partial class Sources
                 types,
                 generationState,
                 fallbackContextNames,
+                models,
                 cancellationToken));
     }
     

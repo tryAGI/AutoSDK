@@ -774,10 +774,75 @@ public partial class JsonTests
         chunked.Should().Contain("#pragma warning disable CS0618");
         chunked.Should().NotContain("#pragma warning disable CS3016");
 
+        var chunkedWithDeprecatedConverter = Sources.GenerateJsonSerializerContext(
+            client with
+            {
+                Converters = ["global::G.JsonConverters.OneOfJsonConverter<global::G.LegacyModel, string>"],
+            },
+            types,
+            new Sources.JsonSerializerContextGenerationState(),
+            fallbackContextNames: []);
+        chunkedWithDeprecatedConverter.Should().Contain(
+            "#pragma warning disable CS0618 // Converter references a deprecated API model.");
+        chunkedWithDeprecatedConverter.Should().Contain("options.Converters.Add(new global::G.JsonConverters.OneOfJsonConverter<global::G.LegacyModel, string>());");
+        chunkedWithDeprecatedConverter.Should().Contain("#pragma warning restore CS0618");
+
         var empty = Sources.JsonSerializerContext(
             client,
             ImmutableArray<TypeData>.Empty.AsEquatableArray()).Text;
         empty.Should().NotContain("#pragma warning disable CS0618");
         empty.Should().NotContain("#pragma warning disable CS3016");
+    }
+
+    [TestMethod]
+    public void JsonSerializerContext_DeprecatedOpenApiModel_HasLocalSuppression()
+    {
+        const string spec = """
+openapi: 3.0.3
+info:
+  title: Deprecated context model
+  version: 1.0.0
+paths:
+  /legacy:
+    get:
+      operationId: getLegacy
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/LegacyModel'
+components:
+  schemas:
+    LegacyModel:
+      type: object
+      deprecated: true
+      properties:
+        value:
+          type: string
+""";
+        var settings = Settings.Default with
+        {
+            Namespace = "G",
+            ClassName = "GClient",
+            GenerateModels = true,
+            GenerateMethods = true,
+            GenerateConstructors = true,
+            GenerateSdk = true,
+            GenerateJsonSerializerContextTypes = true,
+            JsonSerializerContext = "G.SourceGenerationContext",
+            FromCli = true,
+        };
+
+        var data = CSharpPipeline.PrepareAndEnrich(((spec, settings), settings));
+        var context = CSharpPipeline.GenerateFiles(data)
+            .Single(static file => file.Name == "G.JsonSerializerContext.g.cs").Text;
+
+        context.Should().Contain("#pragma warning disable CS0618");
+        context.Should().Contain("JsonSerializable(typeof(global::G.LegacyModel)");
+        context.Should().Contain("#pragma warning restore CS0618");
+        context.Should().Contain("#pragma warning disable CS3016");
+        context.Should().Contain("#pragma warning restore CS3016");
     }
 }
