@@ -71,7 +71,10 @@ public class RequestOptionsGenerationTests
         supportSource.Should().Contain("public sealed class AutoSDKHookContext");
         supportSource.Should().Contain("public global::System.Net.Http.HttpRequestMessage? Request { get; set; }");
         supportSource.Should().Contain("public global::G.AutoSDKClientOptions? ClientOptions { get; set; }");
-        supportSource.Should().NotContain("null!");
+        CSharpSyntaxTree.ParseText(supportSource).GetRoot().DescendantNodes()
+            .OfType<PostfixUnaryExpressionSyntax>()
+            .Where(node => node.IsKind(SyntaxKind.SuppressNullableWarningExpression))
+            .Should().BeEmpty();
         supportSource.Should().Contain("public global::System.TimeSpan? RetryDelay { get; set; }");
         supportSource.Should().Contain("public string RetryReason { get; set; } = string.Empty;");
         supportSource.Should().Contain("public global::System.Collections.Generic.List<global::G.IAutoSDKHook> Hooks { get; }");
@@ -1023,13 +1026,13 @@ namespace G
         supportSource.Should().Contain("if (perRequest != null && perRequest.Count > 0)");
         var perRequestBlock = supportSource.Substring(
             supportSource.IndexOf("if (perRequest != null && perRequest.Count > 0)", System.StringComparison.Ordinal));
-        perRequestBlock.Should().Contain("AutoSDKHttpRequestOptions.StampAuthorizationOverride(context.Request);");
+        perRequestBlock.Should().Contain("AutoSDKHttpRequestOptions.StampAuthorizationOverride(request);");
 
         // Provider path also stamps after applying.
         var providerBlock = supportSource.Substring(
             supportSource.IndexOf("var provider = context.ClientOptions?.AuthorizationProvider;", System.StringComparison.Ordinal));
-        providerBlock.Should().Contain("ApplyAuthorization(context.Request, resolved[index]);");
-        providerBlock.Should().Contain("AutoSDKHttpRequestOptions.StampAuthorizationOverride(context.Request);");
+        providerBlock.Should().Contain("ApplyAuthorization(request, resolved[index]);");
+        providerBlock.Should().Contain("AutoSDKHttpRequestOptions.StampAuthorizationOverride(request);");
 
         // Stamping happens exactly twice: once per precedence path. The constructor-time
         // Authorizations fallback (handled by the per-method __authorizations resolver, not
