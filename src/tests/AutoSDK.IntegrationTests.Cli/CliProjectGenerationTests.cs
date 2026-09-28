@@ -123,6 +123,67 @@ paths:
                         type: string
                 discriminator:
                   propertyName: status
+  /jobs:
+    post:
+      operationId: startJob
+      tags:
+        - Jobs
+      responses:
+        '200':
+          description: Started
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/JobStart'
+  /jobs/{id}:
+    get:
+      operationId: getJobStatus
+      tags:
+        - Jobs
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/JobStatus'
+  /v1/image-to-video:
+    post:
+      operationId: createImageToVideo
+      tags:
+        - Generating
+      responses:
+        '200':
+          description: Started
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/TaskStart'
+  /v1/tasks/{id}:
+    get:
+      operationId: getTaskById
+      tags:
+        - Task Management
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: string
+            format: uuid
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/TaskStatus'
   /scrape:
     post:
       operationId: scrape
@@ -261,6 +322,46 @@ components:
       type: http
       scheme: bearer
   schemas:
+    JobStart:
+      type: object
+      required:
+        - id
+      properties:
+        id:
+          type: string
+    JobStatus:
+      type: object
+      properties:
+        status:
+          type: string
+          enum:
+            - pending
+            - completed
+    TaskStart:
+      type: object
+      required:
+        - id
+      properties:
+        id:
+          description: The ID of the task that was created.
+          type: string
+          format: uuid
+    TaskStatus:
+      oneOf:
+        - type: object
+          properties:
+            status:
+              type: string
+              enum:
+                - PENDING
+        - type: object
+          properties:
+            status:
+              type: string
+              enum:
+                - SUCCEEDED
+      discriminator:
+        propertyName: status
     CreateWidgetRequest:
       type: object
       required:
@@ -564,6 +665,27 @@ components:
             createTaskCommand.Should().Contain("new(\"--wait-timeout\")");
             createTaskCommand.Should().Contain("CliRuntime.CreatePollingOptions");
             createTaskCommand.Should().Contain("client.Tasks.CreateTaskWaitAsync(");
+
+            // #341: a JSON id plus a sibling status GET supports waiting even when the SDK has
+            // no Location-based WaitAsync companion.
+            var startJobCommandPath = Directory
+                .EnumerateFiles(Path.Combine(cliDirectory, "Commands"), "*StartJob*ApiCommand.g.cs")
+                .Single();
+            var startJobCommand = await File.ReadAllTextAsync(startJobCommandPath).ConfigureAwait(false);
+            startJobCommand.Should().Contain("new(\"--wait\")");
+            startJobCommand.Should().Contain("new(\"--poll-interval\")");
+            startJobCommand.Should().Contain("new(\"--wait-timeout\")");
+            startJobCommand.Should().Contain("CliRuntime.PollUntilTerminalAsync(");
+            startJobCommand.Should().Contain("client.Jobs.GetJobStatusAsync(");
+
+            // Runway-style task APIs keep the status endpoint in a different tag and use Guid ids.
+            var createImageToVideoCommandPath = Directory
+                .EnumerateFiles(Path.Combine(cliDirectory, "Commands"), "*CreateImageToVideo*ApiCommand.g.cs")
+                .Single();
+            var createImageToVideoCommand = await File.ReadAllTextAsync(createImageToVideoCommandPath).ConfigureAwait(false);
+            createImageToVideoCommand.Should().Contain("new(\"--wait\")");
+            createImageToVideoCommand.Should().Contain("client.TaskManagement.GetTaskByIdAsync(");
+            createImageToVideoCommand.Should().Contain("global::System.Guid.Parse(resourceId)");
 
             // #346: a reused request schema emits a shared option-set that can be used bare or
             // with a prefix in nested request objects.

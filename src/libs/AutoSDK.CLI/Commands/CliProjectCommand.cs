@@ -440,13 +440,21 @@ internal sealed record CliProjectModel(
         var classesByName = data.Classes
             .Where(static x => !string.IsNullOrWhiteSpace(x.GlobalClassName))
             .ToDictionary(static x => x.GlobalClassName, static x => x, StringComparer.Ordinal);
+        var statusUnionTypes = data.AnyOfs
+            .Where(static union =>
+                string.Equals(union.DiscriminatorPropertyName, "status", StringComparison.OrdinalIgnoreCase) &&
+                !string.IsNullOrWhiteSpace(union.Name))
+            .Select(static union => $"global::{union.Namespace}.{union.Name}")
+            .ToHashSet(StringComparer.Ordinal);
         var usedTagCommandNames = new HashSet<string>(StringComparer.Ordinal);
         var usedTagClassNames = new HashSet<string>(StringComparer.Ordinal);
-        var tags = data.Methods
+        var allMethods = data.Methods
             .Where(static x => !string.IsNullOrWhiteSpace(x.Path))
+            .ToArray();
+        var tags = allMethods
             .GroupBy(static x => string.IsNullOrWhiteSpace(x.Tag.Name) ? "default" : x.Tag.Name)
             .OrderBy(static x => x.Key, StringComparer.OrdinalIgnoreCase)
-            .Select(group => CliProjectTag.Create(group, usedTagCommandNames, usedTagClassNames, classesByName, optionSetsByModelType, metadata))
+            .Select(group => CliProjectTag.Create(group, allMethods, usedTagCommandNames, usedTagClassNames, classesByName, statusUnionTypes, optionSetsByModelType, metadata))
             .ToImmutableArray();
 
         return new CliProjectModel(
@@ -635,7 +643,7 @@ internal sealed record CliProjectMetadata(
         return keys.ToImmutable();
     }
 
-    private static string NormalizeOperationPath(string? path)
+    internal static string NormalizeOperationPath(string? path)
     {
         if (string.IsNullOrWhiteSpace(path))
         {
@@ -1048,6 +1056,12 @@ internal sealed record CliProjectWebhookUsage(
     string? EventsTypeName,
     ImmutableArray<string> EventValues);
 
+internal sealed record CliProjectResponseIdWaitPair(
+    EndPoint StatusEndPoint,
+    string CreateResponseIdPropertyName,
+    string StatusIdParameterName,
+    string StatusIdParameterType);
+
 internal sealed record CliProjectTag(
     string Name,
     string CommandName,
@@ -1056,9 +1070,11 @@ internal sealed record CliProjectTag(
 {
     public static CliProjectTag Create(
         IGrouping<string, EndPoint> group,
+        IReadOnlyList<EndPoint> allMethods,
         HashSet<string> usedCommandNames,
         HashSet<string> usedClassNames,
         IReadOnlyDictionary<string, ModelData> classesByName,
+        IReadOnlySet<string> statusUnionTypes,
         IReadOnlyDictionary<string, CliProjectOptionSet> optionSetsByModelType,
         CliProjectMetadata metadata)
     {
@@ -1074,7 +1090,7 @@ internal sealed record CliProjectTag(
         var operations = group
             .OrderBy(static x => x.Id, StringComparer.Ordinal)
             .ThenBy(static x => x.NotAsyncMethodName, StringComparer.Ordinal)
-            .Select(endPoint => CliProjectOperation.Create(endPoint, usedNames, classesByName, optionSetsByModelType, metadata))
+            .Select(endPoint => CliProjectOperation.Create(endPoint, allMethods, usedNames, classesByName, statusUnionTypes, optionSetsByModelType, metadata))
             .ToImmutableArray();
 
         return new CliProjectTag(
@@ -1101,6 +1117,7 @@ internal sealed record CliProjectOperation(
     bool SupportsBaseBody,
     string BaseBodyPropertyPathPrefix,
     bool SupportsWait,
+    CliProjectResponseIdWaitPair? ResponseIdWaitPair,
     ImmutableDictionary<string, CliProjectFormatHint> ResponseFormatHints,
     bool HasResponse,
     string ResponseType,
@@ -1112,8 +1129,10 @@ internal sealed record CliProjectOperation(
 {
     public static CliProjectOperation Create(
         EndPoint endPoint,
+        IReadOnlyList<EndPoint> allMethods,
         HashSet<string> usedNames,
         IReadOnlyDictionary<string, ModelData> classesByName,
+        IReadOnlySet<string> statusUnionTypes,
         IReadOnlyDictionary<string, CliProjectOptionSet> optionSetsByModelType,
         CliProjectMetadata metadata)
     {
@@ -1214,6 +1233,9 @@ internal sealed record CliProjectOperation(
             (allOptionParameters.Any(IsMergeableBaseBodyField) ||
              allOptionParameters.Any(parameter => jsonOnlyWebhookParameterNames.Contains(parameter.Id)));
         var (supportsOutputDirectory, outputDirectoryItemsPropertyName) = DetectOutputDirectorySupport(endPoint, classesByName);
+        var responseIdWaitPair = FindResponseIdWaitPair(endPoint, allMethods, classesByName, statusUnionTypes);
+        var supportsWait = operationMetadata.WaitMode != CliProjectWaitMode.Disabled &&
+            (endPoint.HasLocationWaitCompanion || responseIdWaitPair is not null);
 
         return new CliProjectOperation(
             endPoint,
@@ -1228,7 +1250,8 @@ internal sealed record CliProjectOperation(
             hasDirectRequestBody,
             supportsBaseBody,
             baseBodyPropertyPathPrefix ?? string.Empty,
-            ResolveWaitSupport(endPoint, operationMetadata.WaitMode),
+            supportsWait,
+            responseIdWaitPair,
             operationMetadata.ResponseFormatHints,
             !string.IsNullOrWhiteSpace(responseType),
             responseType,
@@ -1516,14 +1539,95 @@ internal sealed record CliProjectOperation(
             .ToImmutableArray();
     }
 
-    private static bool ResolveWaitSupport(EndPoint endPoint, CliProjectWaitMode waitMode)
+    private static CliProjectResponseIdWaitPair? FindResponseIdWaitPair(
+        EndPoint createEndPoint,
+        IReadOnlyList<EndPoint> allMethods,
+        IReadOnlyDictionary<string, ModelData> classesByName,
+        IReadOnlySet<string> statusUnionTypes)
     {
-        return waitMode switch
+        if (createEndPoint.HasLocationWaitCompanion ||
+            createEndPoint.HttpMethod == System.Net.Http.HttpMethod.Get ||
+            createEndPoint.RawStream || createEndPoint.EnumerableStream ||
+            !TryGetClassByTypeName(classesByName, createEndPoint.SuccessResponse.Type.CSharpTypeWithoutNullability, out var createResponseModel))
         {
-            CliProjectWaitMode.Enabled => endPoint.HasLocationWaitCompanion,
-            CliProjectWaitMode.Disabled => false,
-            _ => endPoint.HasLocationWaitCompanion,
-        };
+            return null;
+        }
+
+        var idProperty = createResponseModel.Properties.FirstOrDefault(static property =>
+            string.Equals(property.Id, "id", StringComparison.OrdinalIgnoreCase) &&
+            (property.Type.CSharpTypeWithoutNullability == "string" ||
+             property.Type.CSharpTypeWithoutNullability.Contains("Guid", StringComparison.Ordinal)));
+        if (string.IsNullOrWhiteSpace(idProperty.Name))
+        {
+            return null;
+        }
+
+        var createPath = CliProjectMetadata.NormalizeOperationPath(createEndPoint.Path).TrimEnd('/');
+        var statusMethods = allMethods.Where(method =>
+            method.HttpMethod == System.Net.Http.HttpMethod.Get &&
+            string.Equals(method.Tag.Name, createEndPoint.Tag.Name, StringComparison.Ordinal));
+        var taskStatusMethods = idProperty.Description.Contains("task", StringComparison.OrdinalIgnoreCase)
+            ? allMethods.Where(method =>
+                method.HttpMethod == System.Net.Http.HttpMethod.Get &&
+                CliProjectMetadata.NormalizeOperationPath(method.Path).EndsWith("/tasks/{id}", StringComparison.OrdinalIgnoreCase))
+            : [];
+        foreach (var statusEndPoint in statusMethods.Concat(taskStatusMethods).Distinct())
+        {
+            var statusPath = CliProjectMetadata.NormalizeOperationPath(statusEndPoint.Path);
+            var isSiblingStatus = statusPath.StartsWith($"{createPath}/{{", StringComparison.Ordinal) &&
+                statusPath.EndsWith('}') &&
+                !statusPath[(createPath.Length + 2)..^1].Contains('/', StringComparison.Ordinal);
+            var taskPathPrefix = statusPath.EndsWith("/tasks/{id}", StringComparison.OrdinalIgnoreCase)
+                ? statusPath[..^"/tasks/{id}".Length]
+                : string.Empty;
+            var isTaskStatus = taskPathPrefix.Length > 0 &&
+                idProperty.Description.Contains("task", StringComparison.OrdinalIgnoreCase) &&
+                createPath.StartsWith($"{taskPathPrefix}/", StringComparison.Ordinal);
+            if (!isSiblingStatus && !isTaskStatus)
+            {
+                continue;
+            }
+
+            var idParameter = statusEndPoint.Parameters.FirstOrDefault(static parameter =>
+                parameter.Location == ParameterLocation.Path &&
+                (parameter.Type.CSharpTypeWithoutNullability == "string" ||
+                 parameter.Type.CSharpTypeWithoutNullability.Contains("Guid", StringComparison.Ordinal)));
+            if (string.IsNullOrWhiteSpace(idParameter.ParameterName) ||
+                statusEndPoint.Parameters.Any(parameter =>
+                    parameter.IsRequired &&
+                    parameter.Location != ParameterLocation.Path &&
+                    !parameter.HasSchemaDefault) ||
+                !(statusUnionTypes.Contains(statusEndPoint.SuccessResponse.Type.CSharpTypeWithoutNullability) ||
+                  TryGetClassByTypeName(classesByName, statusEndPoint.SuccessResponse.Type.CSharpTypeWithoutNullability, out var statusResponseModel) &&
+                  HasStatusProperty(statusResponseModel, classesByName)))
+            {
+                continue;
+            }
+
+            return new CliProjectResponseIdWaitPair(
+                statusEndPoint,
+                idProperty.Name,
+                idParameter.ParameterName,
+                idParameter.Type.CSharpTypeWithoutNullability);
+        }
+
+        return null;
+    }
+
+    private static bool HasStatusProperty(
+        ModelData model,
+        IReadOnlyDictionary<string, ModelData> classesByName)
+    {
+        if (model.Properties.Any(static property => string.Equals(property.Id, "status", StringComparison.OrdinalIgnoreCase)))
+        {
+            return true;
+        }
+
+        return model.Properties.Any(property =>
+            string.Equals(property.Id, "data", StringComparison.OrdinalIgnoreCase) &&
+            TryGetClassByTypeName(classesByName, property.Type.CSharpTypeWithoutNullability, out var nestedModel) &&
+            nestedModel.Properties.Any(static nestedProperty =>
+                string.Equals(nestedProperty.Id, "status", StringComparison.OrdinalIgnoreCase)));
     }
 
     private static (bool SupportsOutputDirectory, string ItemsPropertyName) DetectOutputDirectorySupport(
@@ -1966,7 +2070,7 @@ internal static class CliProjectScaffolder
             """).Inject();
         var createPollingOptionsMethod = model.Tags
             .SelectMany(static tag => tag.Operations)
-            .Any(static operation => operation.SupportsWait)
+            .Any(static operation => operation.SupportsWait && operation.EndPoint.HasLocationWaitCompanion)
             ? $$"""
 
                      public static global::{{model.SdkNamespace}}.AutoSDKPollingOptions CreatePollingOptions(TimeSpan pollInterval, TimeSpan waitTimeout)
@@ -1987,6 +2091,95 @@ internal static class CliProjectScaffolder
                              Interval = pollInterval,
                              MaxAttempts = Math.Max(maxAttempts, 1),
                          };
+                     }
+            """
+            : string.Empty;
+        var responseIdPollingMethod = model.Tags
+            .SelectMany(static tag => tag.Operations)
+            .Any(static operation => operation.SupportsWait && operation.ResponseIdWaitPair is not null)
+            ? """
+
+                     public static async Task<T> PollUntilTerminalAsync<T>(
+                         Func<CancellationToken, Task<T>> fetchAsync,
+                         TimeSpan pollInterval,
+                         TimeSpan waitTimeout,
+                         JsonSerializerContext context,
+                         CancellationToken cancellationToken)
+                     {
+                         if (pollInterval <= TimeSpan.Zero || waitTimeout <= TimeSpan.Zero)
+                         {
+                             throw new CliException("--poll-interval and --wait-timeout must be greater than zero.");
+                         }
+
+                         using var timeout = CancellationTokenSource.CreateLinkedTokenSource(cancellationToken);
+                         timeout.CancelAfter(waitTimeout);
+                         try
+                         {
+                             while (true)
+                             {
+                                 var response = await fetchAsync(timeout.Token).ConfigureAwait(false);
+                                 var status = FindJobStatus(ToJsonElement(response, context), depth: 0);
+                                 if (string.IsNullOrWhiteSpace(status))
+                                 {
+                                     throw new CliException("The status response did not contain a status value.");
+                                 }
+
+                                 switch (status.Trim().ToUpperInvariant())
+                                 {
+                                     case "COMPLETED":
+                                     case "SUCCEEDED":
+                                     case "SUCCESS":
+                                     case "DONE":
+                                     case "FINISHED":
+                                         return response;
+                                     case "FAILED":
+                                     case "ERRORED":
+                                     case "ERROR":
+                                     case "CANCELLED":
+                                     case "CANCELED":
+                                     case "ABORTED":
+                                         throw new CliException($"The job ended with status '{status}'.");
+                                 }
+
+                                 await Task.Delay(pollInterval, timeout.Token).ConfigureAwait(false);
+                             }
+                         }
+                         catch (OperationCanceledException) when (timeout.IsCancellationRequested && !cancellationToken.IsCancellationRequested)
+                         {
+                             throw new CliException($"The job did not finish within {waitTimeout}.");
+                         }
+                     }
+
+                     private static string? FindJobStatus(JsonElement element, int depth)
+                     {
+                         if (element.ValueKind != JsonValueKind.Object || depth > 3)
+                         {
+                             return null;
+                         }
+
+                         foreach (var property in element.EnumerateObject())
+                         {
+                             if (string.Equals(property.Name, "status", StringComparison.OrdinalIgnoreCase))
+                             {
+                                 return property.Value.ValueKind == JsonValueKind.String
+                                     ? property.Value.GetString()
+                                     : property.Value.ToString();
+                             }
+                         }
+
+                         foreach (var property in element.EnumerateObject())
+                         {
+                             if (property.Name is "data" or "result" or "job" or "task")
+                             {
+                                 var status = FindJobStatus(property.Value, depth + 1);
+                                 if (status is not null)
+                                 {
+                                     return status;
+                                 }
+                             }
+                         }
+
+                         return null;
                      }
             """
             : string.Empty;
@@ -2250,7 +2443,7 @@ internal static class CliProjectScaffolder
                          throw new CliException($"Unable to parse duration '{value}' for option '{optionName}'.");
                      }
 
-                 {{createPollingOptionsMethod}}
+                 {{createPollingOptionsMethod}}{{responseIdPollingMethod}}
 
                      public static async global::System.Threading.Tasks.Task<string?> ReadInputAsync(
                          ParseResult parseResult,
@@ -4044,6 +4237,43 @@ internal static class CliProjectScaffolder
             return string.Empty;
         }
 
+        if (operation.ResponseIdWaitPair is { } responseIdWaitPair)
+        {
+            var statusEndPoint = responseIdWaitPair.StatusEndPoint;
+            var statusTarget = statusEndPoint.Settings.GroupByTags && !string.IsNullOrWhiteSpace(statusEndPoint.Tag.SafeName)
+                ? $"client.{statusEndPoint.Tag.SafeName}.{statusEndPoint.MethodName}"
+                : $"client.{statusEndPoint.MethodName}";
+            var statusIdExpression = responseIdWaitPair.StatusIdParameterType.Contains("Guid", StringComparison.Ordinal)
+                ? "global::System.Guid.Parse(resourceId)"
+                : "resourceId";
+            return $@"
+                                if (wait)
+                                {{{GenerateInvocation(operation, "createResponse")}
+                                    var resourceId = global::System.Convert.ToString(
+                                        createResponse.{responseIdWaitPair.CreateResponseIdPropertyName},
+                                        global::System.Globalization.CultureInfo.InvariantCulture);
+                                    if (string.IsNullOrWhiteSpace(resourceId))
+                                    {{
+                                        throw new CliException(""The create response did not contain a job id."");
+                                    }}
+
+                                    var waitResponse = await CliRuntime.PollUntilTerminalAsync(
+                                        fetchAsync: token => {statusTarget}(
+                                            {responseIdWaitPair.StatusIdParameterName}: {statusIdExpression},
+                                            cancellationToken: token),
+                                        pollInterval: pollInterval,
+                                        waitTimeout: waitTimeout,
+                                        context: global::{model.JsonSerializerContextFullName}.Default,
+                                        cancellationToken: cancellationToken).ConfigureAwait(false);
+                                    await CliRuntime.WriteResponseAsync(
+                                        parseResult,
+                                        waitResponse,
+                                        global::{model.JsonSerializerContextFullName}.Default,
+                                        cancellationToken: cancellationToken).ConfigureAwait(false);
+                                    return;
+                                }}";
+        }
+
         var endPoint = operation.EndPoint;
         var target = endPoint.Settings.GroupByTags && !string.IsNullOrWhiteSpace(endPoint.Tag.SafeName)
             ? $"client.{endPoint.Tag.SafeName}.{endPoint.NotAsyncMethodName}WaitAsync"
@@ -4095,7 +4325,7 @@ internal static class CliProjectScaffolder
                                 }}";
     }
 
-    private static string GenerateInvocation(CliProjectOperation operation)
+    private static string GenerateInvocation(CliProjectOperation operation, string responseVariableName = "response")
     {
         var endPoint = operation.EndPoint;
         var target = endPoint.Settings.GroupByTags && !string.IsNullOrWhiteSpace(endPoint.Tag.SafeName)
@@ -4119,7 +4349,7 @@ internal static class CliProjectScaffolder
         if (operation.ResponseIsEnumerableStream)
         {
             return $@"
-                                var response = {target}(
+                                var {responseVariableName} = {target}(
 {arguments}{requestArgument}
                                     cancellationToken: cancellationToken);";
         }
@@ -4127,7 +4357,7 @@ internal static class CliProjectScaffolder
         if (operation.HasResponse)
         {
             return $@"
-                                var response = await {target}(
+                                var {responseVariableName} = await {target}(
 {arguments}{requestArgument}
                                     cancellationToken: cancellationToken).ConfigureAwait(false);";
         }
