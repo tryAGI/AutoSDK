@@ -3580,14 +3580,14 @@ internal static class CliProjectScaffolder
     {
         if (jsonOnlyWebhook)
         {
-            var requiredProperty = parameter.IsRequired && !parameter.HasSchemaDefault && !allowBaseBody
+            var jsonRequiredProperty = parameter.IsRequired && !parameter.HasSchemaDefault && !allowBaseBody
                 ? "\n        Required = true,"
                 : string.Empty;
             return $@"
     private static Option<string?> {ParameterSymbolName(parameter)} {{ get; }} = new(
         name: {Literal($"--{ToKebabCase(parameter.Id)}-json")})
     {{
-        Description = ""Request {parameter.Id} object as JSON."",{requiredProperty}
+        Description = ""Request {parameter.Id} object as JSON."",{jsonRequiredProperty}
     }};
 ";
         }
