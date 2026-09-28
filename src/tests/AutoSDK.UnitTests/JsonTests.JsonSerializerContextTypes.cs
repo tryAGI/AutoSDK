@@ -711,4 +711,73 @@ public partial class JsonTests
         file.Text.Should().Contain("private sealed class LazyChunkResolver");
         file.Text.Should().NotContain("global::System.Text.Json.Serialization.Metadata.JsonTypeInfoResolver.Combine(");
     }
+
+    [TestMethod]
+    public void JsonSerializerContext_SuppressesOnlyWarningsRequiredByRegistrations()
+    {
+        var settings = Settings.Default with
+        {
+            Namespace = "G",
+            JsonSerializerType = JsonSerializerType.SystemTextJson,
+            JsonSerializerContext = "G.SourceGenerationContext",
+            GenerateJsonSerializerContextTypes = true,
+            FromCli = true,
+        };
+        var client = new Client(
+            Id: "Warnings",
+            ClassName: "WarningsClient",
+            FileNameWithoutExtension: "G",
+            InterfaceFileNameWithoutExtension: "IG",
+            BaseUrl: string.Empty,
+            Clients: ImmutableArray<PropertyData>.Empty,
+            Summary: string.Empty,
+            BaseUrlSummary: string.Empty,
+            Settings: settings,
+            GlobalSettings: settings,
+            Converters: ImmutableArray<string>.Empty);
+        var types = new[]
+        {
+            T(TypeData.Default with
+            {
+                Namespace = "G",
+                GeneratedNamespace = "G",
+                CSharpTypeRaw = "global::G.LegacyModel",
+                IsDeprecated = true,
+            }),
+            T(TypeData.Default with
+            {
+                Namespace = "G",
+                GeneratedNamespace = "G",
+                CSharpTypeRaw = "global::G.CurrentModel",
+            }),
+        }.ToImmutableArray().AsEquatableArray();
+
+        var regular = Sources.JsonSerializerContext(client, types).Text;
+        regular.Should().Contain("#pragma warning disable CS0618");
+        regular.Should().Contain("#pragma warning restore CS0618");
+        regular.Should().NotContain("#pragma warning disable CS3016");
+        regular.Should().NotContain("Converters = new global::System.Type[]");
+        Regex.Matches(regular, "#pragma warning disable CS0618").Count.Should().Be(1);
+
+        var withConverter = Sources.JsonSerializerContext(
+            client with { Converters = ["global::G.CustomConverter"] }, types).Text;
+        withConverter.Should().Contain("#pragma warning disable CS3016");
+        withConverter.Should().Contain("#pragma warning restore CS3016");
+        withConverter.Should().Contain("Converters = new global::System.Type[]");
+
+        var chunked = Sources.GenerateJsonSerializerContext(
+            client,
+            types,
+            new Sources.JsonSerializerContextGenerationState(),
+            fallbackContextNames: []);
+        chunked.Should().Contain("SourceGenerationContextChunk0");
+        chunked.Should().Contain("#pragma warning disable CS0618");
+        chunked.Should().NotContain("#pragma warning disable CS3016");
+
+        var empty = Sources.JsonSerializerContext(
+            client,
+            ImmutableArray<TypeData>.Empty.AsEquatableArray()).Text;
+        empty.Should().NotContain("#pragma warning disable CS0618");
+        empty.Should().NotContain("#pragma warning disable CS3016");
+    }
 }

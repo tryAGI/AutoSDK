@@ -106,9 +106,6 @@ public static partial class Sources
         builder.Append($@"
 #nullable enable
 
-#pragma warning disable CS0618 // Type or member is obsolete
-#pragma warning disable CS3016 // Arrays as attribute arguments is not CLS-compliant
-
 namespace {client.Settings.Namespace}
 {{
     {string.Empty.ToXmlDocumentationSummary(level: 4)}
@@ -185,9 +182,6 @@ namespace {client.Settings.Namespace}
             1024 + client.Converters.Sum(static converter => converter.Length + 64));
         builder.Append($@"
 #nullable enable
-
-#pragma warning disable CS0618 // Type or member is obsolete
-#pragma warning disable CS3016 // Arrays as attribute arguments is not CLS-compliant
 
 namespace {client.Settings.Namespace}
 {{
@@ -301,9 +295,6 @@ namespace {client.Settings.Namespace}
         using var builder = new PooledStringBuilder(initialCapacity);
         builder.Append($@"
 #nullable enable
-
-#pragma warning disable CS0618 // Type or member is obsolete
-#pragma warning disable CS3016 // Arrays as attribute arguments is not CLS-compliant
 
 namespace {client.Settings.Namespace}
 {{");
@@ -561,22 +552,35 @@ namespace {client.Settings.Namespace}
         IEnumerable<string> converters = includeConverters
             ? client.Converters
             : Array.Empty<string>();
+        var converterTypes = converters.ToArray();
+
+        if (converterTypes.Length > 0)
+        {
+            builder.Append("    #pragma warning disable CS3016 // Converter type array in this attribute is not CLS-compliant.\n");
+        }
 
         builder.Append(@"    [global::System.Text.Json.Serialization.JsonSourceGenerationOptions(
-        DefaultIgnoreCondition = global::System.Text.Json.Serialization.JsonIgnoreCondition.WhenWritingNull,");
+        DefaultIgnoreCondition = global::System.Text.Json.Serialization.JsonIgnoreCondition.WhenWritingNull");
         // Custom converters disable the STJ fast path for the entire context. Set the mode once
         // instead of repeating Metadata on every request/response registration. This also drops
         // unreachable fast-path writers for bidirectional and unclassified types.
         if (client.Settings.DirectionAwareJsonGenerationMode && client.Converters.Length > 0)
         {
-            builder.Append(@"
-        GenerationMode = global::System.Text.Json.Serialization.JsonSourceGenerationMode.Metadata,");
+            builder.Append(@",
+        GenerationMode = global::System.Text.Json.Serialization.JsonSourceGenerationMode.Metadata");
         }
-        builder.Append(@"
+        if (converterTypes.Length == 0)
+        {
+            builder.Append(@"
+    )]");
+            return;
+        }
+
+        builder.Append(@",
         Converters = new global::System.Type[]
         {");
         var firstConverter = true;
-        foreach (var converter in converters)
+        foreach (var converter in converterTypes)
         {
             builder.Append('\n');
             if (!firstConverter)
@@ -590,6 +594,7 @@ namespace {client.Settings.Namespace}
         }
         builder.Append(@"
         })]");
+        builder.Append("\n    #pragma warning restore CS3016");
     }
 
     private readonly struct JsonSerializableAttributeRegistration
@@ -598,12 +603,14 @@ namespace {client.Settings.Namespace}
             string type,
             string? typeInfoPropertyName,
             string? generationMode,
-            bool isGuard)
+            bool isGuard,
+            bool isDeprecated)
         {
             Type = type;
             TypeInfoPropertyName = typeInfoPropertyName;
             GenerationMode = generationMode;
             IsGuard = isGuard;
+            IsDeprecated = isDeprecated;
         }
 
         public string Type { get; }
@@ -613,6 +620,8 @@ namespace {client.Settings.Namespace}
         public string? GenerationMode { get; }
 
         public bool IsGuard { get; }
+
+        public bool IsDeprecated { get; }
     }
 
     private static int EstimateJsonSerializableAttributeLength(
@@ -636,6 +645,10 @@ namespace {client.Settings.Namespace}
             }
 
             var registration = registrations[index];
+            if (registration.IsDeprecated)
+            {
+                builder.Append("    #pragma warning disable CS0618 // This registration names a deprecated API model.\n");
+            }
             builder.Append("    [global::System.Text.Json.Serialization.JsonSerializable(typeof(");
             builder.Append(registration.Type);
             builder.Append(')');
@@ -653,6 +666,10 @@ namespace {client.Settings.Namespace}
             }
 
             builder.Append(")]");
+            if (registration.IsDeprecated)
+            {
+                builder.Append("\n    #pragma warning restore CS0618");
+            }
         }
     }
 
@@ -815,6 +832,12 @@ namespace {client.Settings.Namespace}
             alwaysDefaultTypes: contextTypes);
 
         var registrations = new JsonSerializableAttributeRegistration[serializableTypes.Length];
+        var deprecatedTypeNames = types
+            .Where(static type => type.IsDeprecated)
+            .Select(static type => type.CSharpTypeWithoutNullability)
+            .Where(static name => !string.IsNullOrWhiteSpace(name))
+            .Distinct(StringComparer.Ordinal)
+            .ToArray();
 
         for (var index = 0; index < serializableTypes.Length; index++)
         {
@@ -826,7 +849,8 @@ namespace {client.Settings.Namespace}
                 type,
                 typeInfoPropertyName,
                 generationMode,
-                guardTypes.Contains(type));
+                guardTypes.Contains(type),
+                deprecatedTypeNames.Any(deprecatedName => type.Contains(deprecatedName, StringComparison.Ordinal)));
         }
 
         return registrations;
