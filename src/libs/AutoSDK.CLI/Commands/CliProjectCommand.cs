@@ -3587,7 +3587,7 @@ internal static class CliProjectScaffolder
     private static Option<string?> {ParameterSymbolName(parameter)} {{ get; }} = new(
         name: {Literal($"--{ToKebabCase(parameter.Id)}-json")})
     {{
-        Description = "Request {parameter.Id} object as JSON.",{requiredProperty}
+        Description = ""Request {parameter.Id} object as JSON."",{requiredProperty}
     }};
 ";
         }
