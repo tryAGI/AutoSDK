@@ -1934,6 +1934,10 @@ internal static class CliProjectScaffolder
 
     private static string GenerateReadme(CliProjectModel model)
     {
+        var exampleCommand = model.KeepApiGroup
+            ? "api"
+            : model.Tags.Length > 0 ? model.Tags[0].CommandName : "auth";
+
         return $"""
                 # {model.PackageId}
 
@@ -1949,8 +1953,15 @@ internal static class CliProjectScaffolder
 
                 ```bash
                 {model.ToolCommandName} --help
-                {model.ToolCommandName} api --help
+                {model.ToolCommandName} {exampleCommand} --help
                 ```
+
+                ## Customization
+
+                Generated operation, tag, and API group command classes are partial. Implement
+                `static partial void CustomizeCommand(ref Command command)` in a separate source
+                file to add aliases or validators, change the action, or replace a command. The
+                hook runs after the generated command has been configured.
                 """;
     }
 
@@ -3370,14 +3381,17 @@ internal static class CliProjectScaffolder
 
                  namespace {{model.RootNamespace}}.Commands;
 
-                 internal static class ApiCommand
+                 internal static partial class ApiCommand
                  {
+                     static partial void CustomizeCommand(ref Command command);
+
                      public static Command Create()
                      {
                          var command = new Command("api", "Generated endpoint commands.");
                  {{addApiOnlyOptions}}
                  {{model.Tags.Select(tag => $@"
                          command.Subcommands.Add({tag.ClassName}.Create());").Inject()}}
+                         CustomizeCommand(ref command);
                          return command;
                      }
                  }
@@ -3393,13 +3407,16 @@ internal static class CliProjectScaffolder
 
                  namespace {{model.RootNamespace}}.Commands;
 
-                 internal static class {{tag.ClassName}}
+                 internal static partial class {{tag.ClassName}}
                  {
+                     static partial void CustomizeCommand(ref Command command);
+
                      public static Command Create()
                      {
                          var command = new Command({{Literal(tag.CommandName)}}, {{Literal($"{tag.Name} endpoint commands.")}});
                  {{tag.Operations.Select(operation => $@"
                          command.Subcommands.Add({operation.ClassName}.Create());").Inject()}}
+                         CustomizeCommand(ref command);
                          return command;
                      }
                  }
@@ -3768,6 +3785,8 @@ internal static class CliProjectScaffolder
                  {
                  {{fields}}{{requestFields}}{{waitFields}}{{responseFormatterMembers}}
 
+                     static partial void CustomizeCommand(ref Command command);
+
                      public static Command Create()
                      {
                          var command = new Command({{Literal(operation.CommandName)}}, {{Literal(description)}});
@@ -3783,6 +3802,7 @@ internal static class CliProjectScaffolder
                  {{invocation}}
                  {{responseWrite}}
                              }, cancellationToken).ConfigureAwait(false));
+                         CustomizeCommand(ref command);
                          return command;
                      }
                  }

@@ -548,7 +548,8 @@ components:
             cliProject.Should().Contain("<PackageReference Include=\"MinVer\" Version=\"7.0.0\">");
             var readme = await File.ReadAllTextAsync(Path.Combine(cliDirectory, "README.md")).ConfigureAwait(false);
             readme.Should().Contain("dotnet tool install --global Oag.CLI --prerelease");
-            readme.Should().Contain("tryagi-oag api --help");
+            readme.Should().NotContain("tryagi-oag api --help");
+            readme.Should().Contain("CustomizeCommand(ref Command command)");
 
             // The ApiCommand aggregate is still generated (api-only consumers wire it), but ...
             var apiCommand = await File.ReadAllTextAsync(Path.Combine(cliDirectory, "Commands", "ApiCommand.g.cs")).ConfigureAwait(false);
@@ -805,6 +806,25 @@ components:
             cliOptions.Should().Contain("new(\"--json\")");
             cliOptions.Should().Contain("new(\"--output-dir\")");
 
+            await File.WriteAllTextAsync(
+                    Path.Combine(cliDirectory, "CommandAliases.cs"),
+                    """
+                    using System.CommandLine;
+
+                    namespace Oag.CLI.Commands;
+
+                    internal static partial class WidgetsApiGroupCommand
+                    {
+                        static partial void CustomizeCommand(ref Command command) => command.Aliases.Add("catalog");
+                    }
+
+                    internal static partial class WidgetsListCommandApiCommand
+                    {
+                        static partial void CustomizeCommand(ref Command command) => command.Aliases.Add("show");
+                    }
+                    """)
+                .ConfigureAwait(false);
+
             var buildResult = await RunDotnetAsync(
                     cliDirectory,
                     "build",
@@ -817,6 +837,16 @@ components:
             buildResult.ExitCode.Should().Be(0);
             buildResult.StandardOutput.Should().NotContain("CS8604");
             buildResult.StandardError.Should().NotContain("CS8604");
+
+            var customizedCommandResult = await RunDotnetAsync(
+                    cliDirectory,
+                    "run",
+                    "--no-build",
+                    "--project", Path.Combine(cliDirectory, "Oag.CLI.csproj"),
+                    "--", "catalog", "show", "--help")
+                .ConfigureAwait(false);
+            customizedCommandResult.ExitCode.Should().Be(0, customizedCommandResult.StandardError);
+            customizedCommandResult.StandardOutput.Should().Contain("List widgets");
 
             var publishResult = await RunDotnetAsync(
                     cliDirectory,
@@ -900,6 +930,20 @@ components:
                     """)
                 .ConfigureAwait(false);
 
+            await File.WriteAllTextAsync(
+                    Path.Combine(generatedApiDirectory, "ApiCommandAliases.cs"),
+                    """
+                    using System.CommandLine;
+
+                    namespace Manual.Cli.GeneratedApi.Commands;
+
+                    internal static partial class ApiCommand
+                    {
+                        static partial void CustomizeCommand(ref Command command) => command.Aliases.Add("endpoints");
+                    }
+                    """)
+                .ConfigureAwait(false);
+
             var manualBuildResult = await RunDotnetAsync(
                     manualDirectory,
                     "build",
@@ -910,6 +954,16 @@ components:
             Console.WriteLine(manualBuildResult.StandardOutput);
             Console.WriteLine(manualBuildResult.StandardError);
             manualBuildResult.ExitCode.Should().Be(0);
+
+            var apiOnlyAliasResult = await RunDotnetAsync(
+                    manualDirectory,
+                    "run",
+                    "--no-build",
+                    "--project", Path.Combine(manualDirectory, "Manual.Cli.csproj"),
+                    "--", "endpoints", "--help")
+                .ConfigureAwait(false);
+            apiOnlyAliasResult.ExitCode.Should().Be(0, apiOnlyAliasResult.StandardError);
+            apiOnlyAliasResult.StandardOutput.Should().Contain("Generated endpoint commands");
         }
         finally
         {
