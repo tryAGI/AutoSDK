@@ -99,7 +99,7 @@ namespace G
                                 path: "/api/public/v2/folders/resolve-id",
                                 baseUri: HttpClient.BaseAddress);
                             __pathBuilder
-                                .AddRequiredParameter("workspace_id", workspaceId.ToString()!)
+                                .AddRequiredParameter("workspace_id", workspaceId.ToString() ?? throw new global::System.InvalidOperationException("A required query parameter returned null from ToString()."))
                                 .AddRequiredParameter("path", path)
                                 ;
                             var __path = __pathBuilder.ToString();

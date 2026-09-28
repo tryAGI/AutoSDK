@@ -130,7 +130,7 @@ namespace G
                                 baseUri: HttpClient.BaseAddress);
                             __pathBuilder
                                 .AddOptionalParameter("ordering", ordering)
-                                .AddRequiredParameter("project", project.ToString()!)
+                                .AddRequiredParameter("project", project.ToString() ?? throw new global::System.InvalidOperationException("A required query parameter returned null from ToString()."))
                                 ;
                             var __path = __pathBuilder.ToString();
                 __path = global::G.AutoSDKRequestOptionsSupport.AppendQueryParameters(

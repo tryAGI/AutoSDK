@@ -107,7 +107,7 @@ namespace G
                                 servers: s_DatasetsRedirectServers,
                                 defaultBaseUrl: "http://localhost:5173/api"));
                             __pathBuilder
-                                .AddRequiredParameter("dataset_id", datasetId.ToString()!)
+                                .AddRequiredParameter("dataset_id", datasetId.ToString() ?? throw new global::System.InvalidOperationException("A required query parameter returned null from ToString()."))
                                 .AddOptionalParameter("workspace_name", workspaceName)
                                 .AddRequiredParameter("path", path)
                                 ;

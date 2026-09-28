@@ -273,7 +273,7 @@ public static class ParameterSerializer
 
         serialized.Add(parameter with
         {
-            Value = $"{parameter.ArgumentName}{(parameter.Type.CSharpTypeNullability ? "?" : "")}.ToString(){(parameter.IsRequired ? "!" : "")}",
+            Value = $"{parameter.ArgumentName}{(parameter.Type.CSharpTypeNullability ? "?" : "")}.ToString(){(parameter.IsRequired && !parameter.Type.IsNullable ? " ?? throw new global::System.InvalidOperationException(\"A required query parameter returned null from ToString().\")" : "")}",
         });
     }
 

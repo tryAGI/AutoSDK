@@ -191,7 +191,7 @@ namespace G
                                 path: $"/api/v1/public/{shareToken}/datasets/sessions",
                                 baseUri: HttpClient.BaseAddress);
                             __pathBuilder
-                                .AddOptionalParameter("id", id, selector: static x => x.ToString()!, delimiter: ",", explode: true)
+                                .AddOptionalParameter("id", id, selector: static x => x.ToString() ?? throw new global::System.InvalidOperationException("A required query parameter returned null from ToString()."), delimiter: ",", explode: true)
                                 .AddOptionalParameter("name", name)
                                 .AddOptionalParameter("name_contains", nameContains)
                                 .AddOptionalParameter("dataset_version", datasetVersion)

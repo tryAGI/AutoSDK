@@ -123,7 +123,7 @@ namespace G
                                 baseUri: HttpClient.BaseAddress);
                             __pathBuilder
                                 .AddRequiredParameter("category", category.ToValueString())
-                                .AddRequiredParameter("reactable_id", reactableId.ToString()!)
+                                .AddRequiredParameter("reactable_id", reactableId.ToString() ?? throw new global::System.InvalidOperationException("A required query parameter returned null from ToString()."))
                                 .AddRequiredParameter("reactable_type", reactableType.ToValueString())
                                 ;
                             var __path = __pathBuilder.ToString();

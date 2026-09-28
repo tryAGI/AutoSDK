@@ -146,7 +146,7 @@ namespace G
                                 baseUri: HttpClient.BaseAddress);
                             __pathBuilder
                                 .AddRequiredParameter("id", id.ToValueString())
-                                .AddRequiredParameter("project", project.ToString()!)
+                                .AddRequiredParameter("project", project.ToString() ?? throw new global::System.InvalidOperationException("A required query parameter returned null from ToString()."))
                                 .AddOptionalParameter("view", view?.ToString())
                                 ;
                             var __path = __pathBuilder.ToString();

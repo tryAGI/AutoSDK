@@ -199,7 +199,7 @@ namespace G
                                 path: "/organization/usage/images",
                                 baseUri: HttpClient.BaseAddress);
                             __pathBuilder
-                                .AddRequiredParameter("start_time", startTime.ToString()!)
+                                .AddRequiredParameter("start_time", startTime.ToString() ?? throw new global::System.InvalidOperationException("A required query parameter returned null from ToString()."))
                                 .AddOptionalParameter("end_time", endTime?.ToString())
                                 .AddOptionalParameter("bucket_width", bucketWidth?.ToValueString())
                                 .AddOptionalParameter("sources", sources, selector: static x => x.ToValueString(), delimiter: ",", explode: true)

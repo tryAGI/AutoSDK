@@ -115,7 +115,7 @@ namespace G
                                 path: "/model_params",
                                 baseUri: HttpClient.BaseAddress);
                             __pathBuilder
-                                .AddRequiredParameter("model", model.ToString()!)
+                                .AddRequiredParameter("model", model.ToString() ?? throw new global::System.InvalidOperationException("A required query parameter returned null from ToString()."))
                                 .AddRequiredParameter("freq", freq)
                                 ;
                             var __path = __pathBuilder.ToString();

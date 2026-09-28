@@ -144,7 +144,7 @@ namespace G
                                 .AddOptionalParameter("project_name", projectName)
                                 .AddOptionalParameter("mime_type", mimeType)
                                 .AddRequiredParameter("entity_type", entityType.ToValueString())
-                                .AddRequiredParameter("entity_id", entityId.ToString()!)
+                                .AddRequiredParameter("entity_id", entityId.ToString() ?? throw new global::System.InvalidOperationException("A required query parameter returned null from ToString()."))
                                 ;
                             var __path = __pathBuilder.ToString();
                 __path = global::G.AutoSDKRequestOptionsSupport.AppendQueryParameters(

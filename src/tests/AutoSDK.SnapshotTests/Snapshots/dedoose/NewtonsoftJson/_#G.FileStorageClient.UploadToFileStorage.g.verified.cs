@@ -139,8 +139,8 @@ namespace G
                                 baseUri: HttpClient.BaseAddress);
                             __pathBuilder
                                 .AddRequiredParameter("name", name)
-                                .AddRequiredParameter("projectId", projectId.ToString()!)
-                                .AddRequiredParameter("uploadType", uploadType.ToString()!)
+                                .AddRequiredParameter("projectId", projectId.ToString() ?? throw new global::System.InvalidOperationException("A required query parameter returned null from ToString()."))
+                                .AddRequiredParameter("uploadType", uploadType.ToString() ?? throw new global::System.InvalidOperationException("A required query parameter returned null from ToString()."))
                                 ;
                             var __path = __pathBuilder.ToString();
                 __path = global::G.AutoSDKRequestOptionsSupport.AppendQueryParameters(

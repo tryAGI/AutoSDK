@@ -217,7 +217,7 @@ namespace G
                             __pathBuilder
                                 .AddOptionalParameter("name", name)
                                 .AddOptionalParameter("name_contains", nameContains)
-                                .AddOptionalParameter("id", id, selector: static x => x.ToString()!, delimiter: ",", explode: true)
+                                .AddOptionalParameter("id", id, selector: static x => x.ToString() ?? throw new global::System.InvalidOperationException("A required query parameter returned null from ToString()."), delimiter: ",", explode: true)
                                 .AddOptionalParameter("offset", offset?.ToString())
                                 .AddOptionalParameter("limit", limit?.ToString())
                                 .AddOptionalParameter("sort_by", sortBy?.ToValueString())

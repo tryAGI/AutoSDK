@@ -159,7 +159,7 @@ namespace G
                                 baseUri: HttpClient.BaseAddress);
                             __pathBuilder
                                 .AddRequiredParameter("resource_type", resourceType.ToValueString())
-                                .AddRequiredParameter("resource_id", resourceId.ToString()!)
+                                .AddRequiredParameter("resource_id", resourceId.ToString() ?? throw new global::System.InvalidOperationException("A required query parameter returned null from ToString()."))
                                 ;
                             var __path = __pathBuilder.ToString();
                 __path = global::G.AutoSDKRequestOptionsSupport.AppendQueryParameters(

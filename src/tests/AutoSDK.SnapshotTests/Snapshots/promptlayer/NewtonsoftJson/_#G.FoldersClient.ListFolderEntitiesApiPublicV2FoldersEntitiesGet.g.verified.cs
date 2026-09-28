@@ -151,7 +151,7 @@ namespace G
                                 path: "/api/public/v2/folders/entities",
                                 baseUri: HttpClient.BaseAddress);
                             __pathBuilder
-                                .AddRequiredParameter("workspace_id", workspaceId.ToString()!)
+                                .AddRequiredParameter("workspace_id", workspaceId.ToString() ?? throw new global::System.InvalidOperationException("A required query parameter returned null from ToString()."))
                                 .AddOptionalParameter("folder_id", folderId?.ToString())
                                 .AddOptionalParameter("filter_type", filterType?.Match(
                 static x => (global::System.Collections.Generic.IEnumerable<string?>)new string?[] { x?.ToValueString() },

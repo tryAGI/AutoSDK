@@ -109,7 +109,7 @@ namespace G
                                 path: "/api/v1/account/getprojectaccessdetailsforuser2",
                                 baseUri: HttpClient.BaseAddress);
                             __pathBuilder
-                                .AddRequiredParameter("userId", userId.ToString()!)
+                                .AddRequiredParameter("userId", userId.ToString() ?? throw new global::System.InvalidOperationException("A required query parameter returned null from ToString()."))
                                 ;
                             var __path = __pathBuilder.ToString();
                 __path = global::G.AutoSDKRequestOptionsSupport.AppendQueryParameters(

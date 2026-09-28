@@ -111,7 +111,7 @@ namespace G
                                 path: "/v1/ingest/documents",
                                 baseUri: HttpClient.BaseAddress);
                             __pathBuilder
-                                .AddRequiredParameter("documentIds", documentIds, selector: static x => x.ToString()!, delimiter: ",", explode: false)
+                                .AddRequiredParameter("documentIds", documentIds, selector: static x => x.ToString() ?? throw new global::System.InvalidOperationException("A required query parameter returned null from ToString()."), delimiter: ",", explode: false)
                                 ;
                             var __path = __pathBuilder.ToString();
                 __path = global::G.AutoSDKRequestOptionsSupport.AppendQueryParameters(

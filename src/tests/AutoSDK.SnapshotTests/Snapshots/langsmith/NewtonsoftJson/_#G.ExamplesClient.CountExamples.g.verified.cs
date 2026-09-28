@@ -195,7 +195,7 @@ namespace G
                                 path: "/api/v1/examples/count",
                                 baseUri: HttpClient.BaseAddress);
                             __pathBuilder
-                                .AddOptionalParameter("id", id, selector: static x => x.ToString()!, delimiter: ",", explode: true)
+                                .AddOptionalParameter("id", id, selector: static x => x.ToString() ?? throw new global::System.InvalidOperationException("A required query parameter returned null from ToString()."), delimiter: ",", explode: true)
                                 .AddOptionalParameter("as_of", asOf?.ToString())
                                 .AddOptionalParameter("metadata", metadata)
                                 .AddOptionalParameter("full_text_contains", fullTextContains, delimiter: ",", explode: true)

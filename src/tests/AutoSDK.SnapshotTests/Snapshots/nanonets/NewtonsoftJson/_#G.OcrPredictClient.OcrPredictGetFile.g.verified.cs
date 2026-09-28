@@ -137,8 +137,8 @@ namespace G
                                 path: $"/Inferences/Model/{modelId}/ImageLevelInferences",
                                 baseUri: HttpClient.BaseAddress);
                             __pathBuilder
-                                .AddRequiredParameter("start_day_interval", startDayInterval.ToString()!)
-                                .AddRequiredParameter("current_batch_day", currentBatchDay.ToString()!)
+                                .AddRequiredParameter("start_day_interval", startDayInterval.ToString() ?? throw new global::System.InvalidOperationException("A required query parameter returned null from ToString()."))
+                                .AddRequiredParameter("current_batch_day", currentBatchDay.ToString() ?? throw new global::System.InvalidOperationException("A required query parameter returned null from ToString()."))
                                 ;
                             var __path = __pathBuilder.ToString();
                 __path = global::G.AutoSDKRequestOptionsSupport.AppendQueryParameters(

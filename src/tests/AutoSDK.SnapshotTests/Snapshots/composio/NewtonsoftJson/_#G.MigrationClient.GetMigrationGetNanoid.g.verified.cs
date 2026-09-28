@@ -162,7 +162,7 @@ namespace G
                                 path: "/api/v3/migration/get-nanoid",
                                 baseUri: HttpClient.BaseAddress);
                             __pathBuilder
-                                .AddRequiredParameter("uuid", uuid.ToString()!)
+                                .AddRequiredParameter("uuid", uuid.ToString() ?? throw new global::System.InvalidOperationException("A required query parameter returned null from ToString()."))
                                 .AddRequiredParameter("type", type.ToValueString())
                                 ;
                             var __path = __pathBuilder.ToString();

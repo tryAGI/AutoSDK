@@ -179,7 +179,7 @@ namespace G
                                 defaultBaseUrl: "https://api.coze.com/"));
                             __pathBuilder
                                 .AddRequiredParameter("workspace_id", workspaceId)
-                                .AddRequiredParameter("page_num", pageNum.ToString()!)
+                                .AddRequiredParameter("page_num", pageNum.ToString() ?? throw new global::System.InvalidOperationException("A required query parameter returned null from ToString()."))
                                 .AddOptionalParameter("page_size", pageSize?.ToString())
                                 .AddOptionalParameter("workflow_mode", workflowMode?.ToValueString())
                                 .AddOptionalParameter("app_id", appId)

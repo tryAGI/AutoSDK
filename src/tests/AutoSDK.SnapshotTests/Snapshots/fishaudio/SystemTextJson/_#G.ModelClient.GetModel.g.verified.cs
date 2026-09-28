@@ -213,19 +213,19 @@ namespace G
                                 .AddOptionalParameter("tag", tag?.Match(
                 static x => (global::System.Collections.Generic.IEnumerable<string?>)global::System.Linq.Enumerable.Select(x, static item => item),
                 static x => (global::System.Collections.Generic.IEnumerable<string?>)new string?[] { x },
-                static x => (global::System.Collections.Generic.IEnumerable<string?>)new string?[] { x?.ToString()! },
+                static x => (global::System.Collections.Generic.IEnumerable<string?>)new string?[] { x?.ToString() },
                 validate: false), delimiter: ",", explode: true)
                                 .AddOptionalParameter("self", self?.ToString().ToLowerInvariant())
                                 .AddOptionalParameter("author_id", authorId)
                                 .AddOptionalParameter("language", language?.Match(
                 static x => (global::System.Collections.Generic.IEnumerable<string?>)global::System.Linq.Enumerable.Select(x, static item => item),
                 static x => (global::System.Collections.Generic.IEnumerable<string?>)new string?[] { x },
-                static x => (global::System.Collections.Generic.IEnumerable<string?>)new string?[] { x?.ToString()! },
+                static x => (global::System.Collections.Generic.IEnumerable<string?>)new string?[] { x?.ToString() },
                 validate: false), delimiter: ",", explode: true)
                                 .AddOptionalParameter("title_language", titleLanguage?.Match(
                 static x => (global::System.Collections.Generic.IEnumerable<string?>)global::System.Linq.Enumerable.Select(x, static item => item),
                 static x => (global::System.Collections.Generic.IEnumerable<string?>)new string?[] { x },
-                static x => (global::System.Collections.Generic.IEnumerable<string?>)new string?[] { x?.ToString()! },
+                static x => (global::System.Collections.Generic.IEnumerable<string?>)new string?[] { x?.ToString() },
                 validate: false), delimiter: ",", explode: true)
                                 .AddOptionalParameter("sort_by", sortBy?.ToValueString())
                                 ;

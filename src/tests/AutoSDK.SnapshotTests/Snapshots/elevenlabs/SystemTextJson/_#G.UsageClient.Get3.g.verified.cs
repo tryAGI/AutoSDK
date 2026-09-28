@@ -179,8 +179,8 @@ namespace G
                                 path: "/v1/usage/character-stats",
                                 baseUri: HttpClient.BaseAddress);
                             __pathBuilder
-                                .AddRequiredParameter("start_unix", startUnix.ToString()!)
-                                .AddRequiredParameter("end_unix", endUnix.ToString()!)
+                                .AddRequiredParameter("start_unix", startUnix.ToString() ?? throw new global::System.InvalidOperationException("A required query parameter returned null from ToString()."))
+                                .AddRequiredParameter("end_unix", endUnix.ToString() ?? throw new global::System.InvalidOperationException("A required query parameter returned null from ToString()."))
                                 .AddOptionalParameter("include_workspace_metrics", includeWorkspaceMetrics?.ToString().ToLowerInvariant())
                                 .AddOptionalParameter("breakdown_type", breakdownType?.ToValueString())
                                 .AddOptionalParameter("aggregation_interval", aggregationInterval?.ToValueString())

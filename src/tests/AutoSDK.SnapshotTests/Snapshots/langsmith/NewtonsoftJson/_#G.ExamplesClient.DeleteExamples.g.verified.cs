@@ -141,7 +141,7 @@ namespace G
                                 path: "/api/v1/examples",
                                 baseUri: HttpClient.BaseAddress);
                             __pathBuilder
-                                .AddRequiredParameter("example_ids", exampleIds, selector: static x => x.ToString()!, delimiter: ",", explode: true)
+                                .AddRequiredParameter("example_ids", exampleIds, selector: static x => x.ToString() ?? throw new global::System.InvalidOperationException("A required query parameter returned null from ToString()."), delimiter: ",", explode: true)
                                 ;
                             var __path = __pathBuilder.ToString();
                 __path = global::G.AutoSDKRequestOptionsSupport.AppendQueryParameters(

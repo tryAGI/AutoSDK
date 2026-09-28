@@ -248,7 +248,7 @@ namespace G
                                 .AddOptionalParameter("is_public", isPublic?.ToValueString())
                                 .AddOptionalParameter("upstream_repo_owner", upstreamRepoOwner)
                                 .AddOptionalParameter("upstream_repo_handle", upstreamRepoHandle)
-                                .AddOptionalParameter("tag_value_id", tagValueId, selector: static x => x.ToString()!, delimiter: ",", explode: true)
+                                .AddOptionalParameter("tag_value_id", tagValueId, selector: static x => x.ToString() ?? throw new global::System.InvalidOperationException("A required query parameter returned null from ToString()."), delimiter: ",", explode: true)
                                 ;
                             var __path = __pathBuilder.ToString();
                 __path = global::G.AutoSDKRequestOptionsSupport.AppendQueryParameters(

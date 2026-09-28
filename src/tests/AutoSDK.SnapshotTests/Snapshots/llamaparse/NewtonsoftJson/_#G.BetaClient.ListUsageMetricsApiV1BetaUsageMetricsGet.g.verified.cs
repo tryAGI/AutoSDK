@@ -262,7 +262,7 @@ namespace G
                                 .AddOptionalParameter("day_on_or_after", dayOnOrAfter)
                                 .AddOptionalParameter("event_aggregation_type", eventAggregationType)
                                 .AddOptionalParameter("event_aggregation_key", eventAggregationKey)
-                                .AddRequiredParameter("organization_id", organizationId.ToString()!)
+                                .AddRequiredParameter("organization_id", organizationId.ToString() ?? throw new global::System.InvalidOperationException("A required query parameter returned null from ToString()."))
                                 ;
                             var __path = __pathBuilder.ToString();
                 __path = global::G.AutoSDKRequestOptionsSupport.AppendQueryParameters(

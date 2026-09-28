@@ -370,7 +370,7 @@ namespace G
                                 .AddOptionalParameter("value_search", valueSearch)
                                 .AddOptionalParameter("connected_to_agents_count_gt", connectedToAgentsCountGt?.ToString())
                                 .AddOptionalParameter("connected_to_agents_count_lt", connectedToAgentsCountLt?.ToString())
-                                .AddOptionalParameter("connected_to_agents_count_eq", connectedToAgentsCountEq, selector: static x => x.ToString()!, delimiter: ",", explode: true)
+                                .AddOptionalParameter("connected_to_agents_count_eq", connectedToAgentsCountEq, selector: static x => x.ToString() ?? throw new global::System.InvalidOperationException("A required query parameter returned null from ToString()."), delimiter: ",", explode: true)
                                 ;
                             var __path = __pathBuilder.ToString();
                 __path = global::G.AutoSDKRequestOptionsSupport.AppendQueryParameters(

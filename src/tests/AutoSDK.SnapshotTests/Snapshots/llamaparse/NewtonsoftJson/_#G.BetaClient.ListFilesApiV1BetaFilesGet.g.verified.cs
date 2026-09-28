@@ -203,7 +203,7 @@ namespace G
                             __pathBuilder
                                 .AddOptionalParameter("page_size", pageSize?.ToString())
                                 .AddOptionalParameter("page_token", pageToken)
-                                .AddOptionalParameter("file_ids", fileIds, selector: static x => x.ToString()!, delimiter: ",", explode: true)
+                                .AddOptionalParameter("file_ids", fileIds, selector: static x => x.ToString() ?? throw new global::System.InvalidOperationException("A required query parameter returned null from ToString()."), delimiter: ",", explode: true)
                                 .AddOptionalParameter("file_name", fileName)
                                 .AddOptionalParameter("external_file_id", externalFileId)
                                 .AddOptionalParameter("order_by", orderBy)

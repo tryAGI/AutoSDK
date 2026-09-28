@@ -1,4 +1,4 @@
-﻿//HintName: G.DeepgramInlinePayloadsListenV1RealtimeClient.g.cs
+//HintName: G.DeepgramInlinePayloadsListenV1RealtimeClient.g.cs
 
 #nullable enable
 
@@ -624,7 +624,7 @@ namespace G
                     path: __baseUrl);
                 __pathBuilder
                 .AddRequiredParameter("model", model.ToValueString())
-                .AddOptionalParameter("channels", channels, selector: static x => x.ToString()!, delimiter: ",", explode: true)
+                .AddOptionalParameter("channels", channels, selector: static x => x.ToString() ?? throw new global::System.InvalidOperationException("A required query parameter returned null from ToString()."), delimiter: ",", explode: true)
                 .AddOptionalParameter("encoding", encoding?.ToValueString())
                 .AddOptionalParameter("extra[priority]", extra?.Priority?.ToString())
                 .AddOptionalParameter("extra[tag]", extra?.Tag)

@@ -107,7 +107,7 @@ namespace G
                                 servers: s_ProjectsRedirectServers,
                                 defaultBaseUrl: "http://localhost:5173/api"));
                             __pathBuilder
-                                .AddRequiredParameter("trace_id", traceId.ToString()!)
+                                .AddRequiredParameter("trace_id", traceId.ToString() ?? throw new global::System.InvalidOperationException("A required query parameter returned null from ToString()."))
                                 .AddOptionalParameter("workspace_name", workspaceName)
                                 .AddRequiredParameter("path", path)
                                 ;

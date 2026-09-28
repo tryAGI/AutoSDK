@@ -125,8 +125,8 @@ namespace G
                                 path: "/account/costs",
                                 baseUri: HttpClient.BaseAddress);
                             __pathBuilder
-                                .AddRequiredParameter("start_time", startTime.ToString()!)
-                                .AddRequiredParameter("end_time", endTime.ToString()!)
+                                .AddRequiredParameter("start_time", startTime.ToString() ?? throw new global::System.InvalidOperationException("A required query parameter returned null from ToString()."))
+                                .AddRequiredParameter("end_time", endTime.ToString() ?? throw new global::System.InvalidOperationException("A required query parameter returned null from ToString()."))
                                 .AddOptionalParameter("resource_pack_name", resourcePackName)
                                 ;
                             var __path = __pathBuilder.ToString();

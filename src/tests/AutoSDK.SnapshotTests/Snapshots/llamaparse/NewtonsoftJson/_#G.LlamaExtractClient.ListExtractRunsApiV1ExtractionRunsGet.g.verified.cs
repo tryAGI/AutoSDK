@@ -139,7 +139,7 @@ namespace G
                                 path: "/api/v1/extraction/runs",
                                 baseUri: HttpClient.BaseAddress);
                             __pathBuilder
-                                .AddRequiredParameter("extraction_agent_id", extractionAgentId.ToString()!)
+                                .AddRequiredParameter("extraction_agent_id", extractionAgentId.ToString() ?? throw new global::System.InvalidOperationException("A required query parameter returned null from ToString()."))
                                 .AddOptionalParameter("skip", skip?.ToString())
                                 .AddOptionalParameter("limit", limit?.ToString())
                                 ;

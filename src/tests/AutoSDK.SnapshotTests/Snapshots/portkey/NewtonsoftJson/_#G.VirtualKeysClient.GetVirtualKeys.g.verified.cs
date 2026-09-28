@@ -130,8 +130,8 @@ namespace G
                                 servers: s_GetVirtualKeysServers,
                                 defaultBaseUrl: "https://api.portkey.ai/v1"));
                             __pathBuilder
-                                .AddRequiredParameter("current_page", currentPage.ToString()!)
-                                .AddRequiredParameter("page_size", pageSize.ToString()!)
+                                .AddRequiredParameter("current_page", currentPage.ToString() ?? throw new global::System.InvalidOperationException("A required query parameter returned null from ToString()."))
+                                .AddRequiredParameter("page_size", pageSize.ToString() ?? throw new global::System.InvalidOperationException("A required query parameter returned null from ToString()."))
                                 ;
                             var __path = __pathBuilder.ToString();
                 __path = global::G.AutoSDKRequestOptionsSupport.AppendQueryParameters(

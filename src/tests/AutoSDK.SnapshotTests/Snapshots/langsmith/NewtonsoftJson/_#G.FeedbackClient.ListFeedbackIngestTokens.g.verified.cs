@@ -141,7 +141,7 @@ namespace G
                                 path: "/api/v1/feedback/tokens",
                                 baseUri: HttpClient.BaseAddress);
                             __pathBuilder
-                                .AddRequiredParameter("run_id", runId.ToString()!)
+                                .AddRequiredParameter("run_id", runId.ToString() ?? throw new global::System.InvalidOperationException("A required query parameter returned null from ToString()."))
                                 ;
                             var __path = __pathBuilder.ToString();
                 __path = global::G.AutoSDKRequestOptionsSupport.AppendQueryParameters(

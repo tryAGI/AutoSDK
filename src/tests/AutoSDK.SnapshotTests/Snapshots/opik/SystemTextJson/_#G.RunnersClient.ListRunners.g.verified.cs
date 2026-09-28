@@ -122,7 +122,7 @@ namespace G
                                 servers: s_ListRunnersServers,
                                 defaultBaseUrl: "http://localhost:5173/api"));
                             __pathBuilder
-                                .AddRequiredParameter("project_id", projectId.ToString()!)
+                                .AddRequiredParameter("project_id", projectId.ToString() ?? throw new global::System.InvalidOperationException("A required query parameter returned null from ToString()."))
                                 .AddOptionalParameter("page", page?.ToString())
                                 .AddOptionalParameter("size", size?.ToString())
                                 ;

@@ -169,13 +169,13 @@ namespace G
                                 path: $"/api/v1/public/{shareToken}/feedbacks",
                                 baseUri: HttpClient.BaseAddress);
                             __pathBuilder
-                                .AddOptionalParameter("run", run, selector: static x => x.ToString()!, delimiter: ",", explode: true)
+                                .AddOptionalParameter("run", run, selector: static x => x.ToString() ?? throw new global::System.InvalidOperationException("A required query parameter returned null from ToString()."), delimiter: ",", explode: true)
                                 .AddOptionalParameter("key", key, delimiter: ",", explode: true)
-                                .AddOptionalParameter("session", session, selector: static x => x.ToString()!, delimiter: ",", explode: true)
+                                .AddOptionalParameter("session", session, selector: static x => x.ToString() ?? throw new global::System.InvalidOperationException("A required query parameter returned null from ToString()."), delimiter: ",", explode: true)
                                 .AddOptionalParameter("source", source, selector: static x => x.ToValueString(), delimiter: ",", explode: true)
                                 .AddOptionalParameter("limit", limit?.ToString())
                                 .AddOptionalParameter("offset", offset?.ToString())
-                                .AddOptionalParameter("user", user, selector: static x => x.ToString()!, delimiter: ",", explode: true)
+                                .AddOptionalParameter("user", user, selector: static x => x.ToString() ?? throw new global::System.InvalidOperationException("A required query parameter returned null from ToString()."), delimiter: ",", explode: true)
                                 .AddOptionalParameter("has_comment", hasComment?.ToString().ToLowerInvariant())
                                 .AddOptionalParameter("has_score", hasScore?.ToString().ToLowerInvariant())
                                 .AddOptionalParameter("level", level?.ToValueString())
