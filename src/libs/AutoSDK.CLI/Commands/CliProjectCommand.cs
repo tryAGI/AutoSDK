@@ -1106,7 +1106,10 @@ internal sealed record CliProjectTag(
 internal sealed record CliProjectCompositeField(
     int ComponentIndex,
     string PropertyName,
-    MethodParameter Parameter);
+    string PropertyId,
+    MethodParameter Parameter,
+    string? NestedPropertyName = null,
+    string? NestedTypeName = null);
 
 internal sealed record CliProjectCompositeComponent(
     int Index,
@@ -1158,6 +1161,40 @@ internal sealed record CliProjectCompositeBody(
                     {
                         return null;
                     }
+                    // One level of simple object fields can be exposed as prefixed flags. Leave
+                    // complex children in --input, and keep required child models on the JSON path.
+                    if (!property.IsRequired && !property.IsWriteOnly &&
+                        CliProjectOperation.TryGetClassByTypeName(
+                            classesByName, property.Type.CSharpTypeWithoutNullability, out var nestedModel) &&
+                        nestedModel.Style == ModelStyle.Class && !nestedModel.IsDerivedClass &&
+                        nestedModel.Properties.All(static nested =>
+                            nested.IsReadOnly || (!nested.IsRequired && !nested.IsWriteOnly)))
+                    {
+                        foreach (var nestedProperty in nestedModel.Properties.Where(static nested =>
+                                     !nested.IsReadOnly && !nested.IsDeprecated &&
+                                     CliProjectOptionSet.IsOptionSetEligibleProperty(nested)))
+                        {
+                            var nestedParameter = (CliProjectOptionSet.CreateParameter(nestedProperty) with
+                            {
+                                Id = $"{property.Id}-{nestedProperty.Id}",
+                                Name = $"{property.Name}{nestedProperty.Name}",
+                            }).WithCSharpParameterNames().WithCSharpComputedValues();
+                            if (!usedNames.Add(CliProjectScaffolder.ToKebabCase(nestedParameter.Id)) ||
+                                !usedParameterNames.Add(nestedParameter.ParameterName))
+                            {
+                                return null;
+                            }
+
+                            var nestedField = new CliProjectCompositeField(
+                                index + 1, property.Name, property.Id, nestedParameter,
+                                nestedProperty.Name, nestedModel.GlobalClassName);
+                            componentFields.Add(nestedField);
+                            fields.Add(nestedField);
+                        }
+
+                        continue;
+                    }
+
 
                     continue;
                 }
@@ -1175,7 +1212,7 @@ internal sealed record CliProjectCompositeBody(
                     return null;
                 }
 
-                var field = new CliProjectCompositeField(index + 1, property.Name, parameter);
+                var field = new CliProjectCompositeField(index + 1, property.Name, property.Id, parameter);
                 componentFields.Add(field);
                 fields.Add(field);
             }
@@ -1427,7 +1464,15 @@ internal sealed record CliProjectOperation(
     internal bool IsCompositeBodyParameter(MethodParameter parameter) =>
         CompositeBody?.Fields.Any(field => field.Parameter.ParameterName == parameter.ParameterName) == true;
 
-    internal string BaseBodyPropertyPath(MethodParameter parameter) => BaseBodyPropertyPath(BaseBodyPropertyName(parameter));
+    internal string BaseBodyPropertyPath(MethodParameter parameter)
+    {
+        var compositeField = CompositeBody?.Fields.FirstOrDefault(field =>
+            field.Parameter.ParameterName == parameter.ParameterName);
+        return compositeField is null
+            ? BaseBodyPropertyPath(BaseBodyPropertyName(parameter))
+            : $"Value{compositeField.ComponentIndex}?.{compositeField.PropertyName}" +
+              (compositeField.NestedPropertyName is null ? string.Empty : $"?.{compositeField.NestedPropertyName}");
+    }
 
     internal string BaseBodyPropertyPath(string propertyName)
     {
@@ -3932,7 +3977,7 @@ internal static class CliProjectScaffolder
         var components = compositeBody.Components.Select(component =>
         {
             var requiredAssignments = component.Fields
-                .Where(static field => field.Parameter.IsRequired)
+                .Where(static field => field.NestedPropertyName is null && field.Parameter.IsRequired)
                 .Select(field => $"{field.PropertyName} = {field.Parameter.ParameterName}!")
                 .ToArray();
             var initializer = requiredAssignments.Length > 0
@@ -3944,7 +3989,8 @@ internal static class CliProjectScaffolder
                 .Inject();
             return $@"
                         var __component{component.Index} = __requestBase.Value{component.Index} ?? {initializer};
-{assignments}";
+{assignments}
+{nestedAssignments}";
         }).Inject();
         // The allOf JSON converter deserializes the same object into every component. Unknown
         // fields therefore land in another component's extension-data dictionary. Remove a shadow
@@ -3953,10 +3999,11 @@ internal static class CliProjectScaffolder
         var shadowCleanup = compositeBody.Components
             .SelectMany(component => compositeBody.Fields
                 .Where(field => field.ComponentIndex != component.Index)
-                .Select(field => $@"
-                        if (CliRuntime.WasSpecified(parseResult, {ParameterSymbolName(field.Parameter)}))
+                .GroupBy(static field => field.PropertyId, StringComparer.Ordinal)
+                .Select(group => $@"
+                        if ({string.Join(" || ", group.Select(field => $"CliRuntime.WasSpecified(parseResult, {ParameterSymbolName(field.Parameter)})"))})
                         {{
-                            __component{component.Index}.AdditionalProperties?.Remove({Literal(field.Parameter.Id)});
+                            __component{component.Index}.AdditionalProperties?.Remove({Literal(group.Key)});
                         }}"))
             .Inject();
 
@@ -3973,9 +4020,24 @@ internal static class CliProjectScaffolder
         MethodParameter parameter)
     {
         var symbol = ParameterSymbolName(parameter);
+                .Where(static field => field.NestedPropertyName is null)
         var basePath = operation.BaseBodyPropertyPath(parameter);
         return $@"
                         var {parameter.ParameterName} = (CliRuntime.WasSpecified(parseResult, {symbol})
+            var nestedAssignments = component.Fields
+                .Where(static field => field.NestedPropertyName is not null)
+                .GroupBy(static field => field.PropertyName, StringComparer.Ordinal)
+                .Select(group => $@"
+                        if ({string.Join(" || ", group.Select(field => $"CliRuntime.WasSpecified(parseResult, {ParameterSymbolName(field.Parameter)})"))})
+                        {{
+                            __component{component.Index}.{group.Key} ??= new {group.First().NestedTypeName}();
+{group.Select(field => $@"
+                            if (CliRuntime.WasSpecified(parseResult, {ParameterSymbolName(field.Parameter)}))
+                            {{
+                                __component{component.Index}.{group.Key}.{field.NestedPropertyName} = {field.Parameter.ParameterName};
+                            }}").Inject()}
+                        }}")
+                .Inject();
                             ? parseResult.GetValue({symbol})
                             : __requestBase.{basePath})
                             ?? throw new CliException({Literal($"Specify {parameter.Id} or include it in the base request body.")});";

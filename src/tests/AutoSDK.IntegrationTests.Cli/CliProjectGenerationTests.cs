@@ -298,6 +298,8 @@ paths:
                   properties:
                     advanced:
                       type: boolean
+                    location:
+                      $ref: '#/components/schemas/WidgetLocation'
       responses:
         '200':
           description: OK
@@ -450,6 +452,15 @@ components:
           items:
             type: string
             enum:
+    WidgetLocation:
+      type: object
+      properties:
+        country:
+          type: string
+        languages:
+          type: array
+          items:
+            type: string
               - completed
               - errored
     Widget:
@@ -817,10 +828,14 @@ components:
             await File.WriteAllTextAsync(
                     Path.Combine(cliDirectory, "CommandAliases.cs"),
                     $$"""
+            compositeBodyCommand.Should().Contain("--location-country");
+            compositeBodyCommand.Should().Contain("--location-languages");
                     using System.CommandLine;
 
                     namespace Oag.CLI.Commands;
 
+            compositeBodyCommand.Should().Contain("__component2.Location ??= new global::Oag.WidgetLocation();");
+            compositeBodyCommand.Should().Contain("__component2.Location.Country = locationCountry;");
                     internal static partial class WidgetsApiGroupCommand
                     {
                         static partial void CustomizeCommand(ref Command command) => command.Aliases.Add("catalog");
