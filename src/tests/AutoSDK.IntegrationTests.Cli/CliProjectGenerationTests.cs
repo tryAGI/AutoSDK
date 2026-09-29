@@ -303,6 +303,47 @@ paths:
       responses:
         '200':
           description: OK
+  /vector-stores/{vector_store_id}/files:
+    post:
+      operationId: createVectorStoreFile
+      tags:
+        - VectorStores
+      parameters:
+        - name: vector_store_id
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Created
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/NestedFileStatus'
+  /vector-stores/{vector_store_id}/files/{file_id}:
+    get:
+      operationId: getVectorStoreFile
+      tags:
+        - VectorStores
+      parameters:
+        - name: vector_store_id
+          in: path
+          required: true
+          schema:
+            type: string
+        - name: file_id
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/NestedFileStatus'
   /uploads:
     post:
       operationId: createUpload
@@ -411,6 +452,22 @@ components:
           type: boolean
         limit:
           type: integer
+    WidgetLocation:
+      type: object
+      properties:
+        country:
+          type: string
+        languages:
+          type: array
+          items:
+            type: string
+    NestedFileStatus:
+      type: object
+      properties:
+        id:
+          type: string
+        status:
+          type: string
     CrawlRequest:
       type: object
       required:
@@ -452,15 +509,6 @@ components:
           items:
             type: string
             enum:
-    WidgetLocation:
-      type: object
-      properties:
-        country:
-          type: string
-        languages:
-          type: array
-          items:
-            type: string
               - completed
               - errored
     Widget:
@@ -780,13 +828,28 @@ components:
             var compositeBodyCommand = await File.ReadAllTextAsync(compositeBodyCommandPath).ConfigureAwait(false);
             compositeBodyCommand.Should().Contain("Argument<string> Name");
             compositeBodyCommand.Should().Contain("--advanced");
+            compositeBodyCommand.Should().Contain("--location-country");
+            compositeBodyCommand.Should().Contain("--location-languages");
             compositeBodyCommand.Should().Contain("--request-json");
             compositeBodyCommand.Should().Contain("ReadRequestOrDefaultAsync<global::Oag.AllOf<");
             compositeBodyCommand.Should().Contain("__component1.Name = name;");
             compositeBodyCommand.Should().Contain("__component2.Advanced = advanced;");
+            compositeBodyCommand.Should().Contain("__component2.Location ??= new global::Oag.WidgetLocation();");
+            compositeBodyCommand.Should().Contain("__component2.Location.Country = locationCountry;");
             compositeBodyCommand.Should().Contain("new global::Oag.AllOf<");
             compositeBodyCommand.Should().Contain("request: request,");
             compositeBodyCommand.Should().NotContain("ReadRequestAsync<global::Oag.AllOf<");
+
+            // #408: a nested fetch uses the create operation's parent path ID and sends the
+            // response ID only to the trailing resource path parameter.
+            var nestedCreateCommandPath = Directory
+                .EnumerateFiles(Path.Combine(cliDirectory, "Commands"), "*CreateVectorStoreFile*ApiCommand.g.cs")
+                .Single();
+            var nestedCreateCommand = await File.ReadAllTextAsync(nestedCreateCommandPath).ConfigureAwait(false);
+            nestedCreateCommand.Should().Contain("--wait");
+            nestedCreateCommand.Should().Contain("vectorStoreId: vectorStoreId,");
+            nestedCreateCommand.Should().Contain("fileId: resourceId,");
+            nestedCreateCommand.Should().NotContain("vectorStoreId: resourceId,");
 
             var runtime = await File.ReadAllTextAsync(Path.Combine(cliDirectory, "CliRuntime.cs")).ConfigureAwait(false);
             runtime.Should().Contain("\"OAG_API_KEY\"");
@@ -828,14 +891,10 @@ components:
             await File.WriteAllTextAsync(
                     Path.Combine(cliDirectory, "CommandAliases.cs"),
                     $$"""
-            compositeBodyCommand.Should().Contain("--location-country");
-            compositeBodyCommand.Should().Contain("--location-languages");
                     using System.CommandLine;
 
                     namespace Oag.CLI.Commands;
 
-            compositeBodyCommand.Should().Contain("__component2.Location ??= new global::Oag.WidgetLocation();");
-            compositeBodyCommand.Should().Contain("__component2.Location.Country = locationCountry;");
                     internal static partial class WidgetsApiGroupCommand
                     {
                         static partial void CustomizeCommand(ref Command command) => command.Aliases.Add("catalog");

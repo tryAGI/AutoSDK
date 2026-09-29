@@ -1060,7 +1060,12 @@ internal sealed record CliProjectResponseIdWaitPair(
     EndPoint StatusEndPoint,
     string CreateResponseIdPropertyName,
     string StatusIdParameterName,
-    string StatusIdParameterType);
+    string StatusIdParameterType,
+    ImmutableArray<CliProjectWaitParentPathParameter> ParentPathParameters);
+
+internal sealed record CliProjectWaitParentPathParameter(
+    string StatusParameterName,
+    string CreateParameterName);
 
 internal sealed record CliProjectTag(
     string Name,
@@ -1156,11 +1161,6 @@ internal sealed record CliProjectCompositeBody(
             {
                 if (!CliProjectOptionSet.IsOptionSetEligibleProperty(property))
                 {
-                    // A required property that cannot be bound must retain the JSON-only path.
-                    if (property.IsRequired || property.IsWriteOnly)
-                    {
-                        return null;
-                    }
                     // One level of simple object fields can be exposed as prefixed flags. Leave
                     // complex children in --input, and keep required child models on the JSON path.
                     if (!property.IsRequired && !property.IsWriteOnly &&
@@ -1195,6 +1195,11 @@ internal sealed record CliProjectCompositeBody(
                         continue;
                     }
 
+                    // A required property that cannot be bound must retain the JSON-only path.
+                    if (property.IsRequired || property.IsWriteOnly)
+                    {
+                        return null;
+                    }
 
                     continue;
                 }
@@ -1740,11 +1745,36 @@ internal sealed record CliProjectOperation(
                 continue;
             }
 
-            var idParameter = statusEndPoint.Parameters.FirstOrDefault(static parameter =>
-                parameter.Location == ParameterLocation.Path &&
-                (parameter.Type.CSharpTypeWithoutNullability == "string" ||
-                 parameter.Type.CSharpTypeWithoutNullability.Contains("Guid", StringComparison.Ordinal)));
+            // The resource ID belongs to the trailing status-path placeholder. Nested paths also
+            // need their parent IDs from the create operation, never the new resource ID.
+            var resourcePathId = statusPath[(statusPath.LastIndexOf('{') + 1)..^1];
+            var statusPathParameters = statusEndPoint.Parameters
+                .Where(static parameter => parameter.Location == ParameterLocation.Path)
+                .ToArray();
+            var idParameter = statusPathParameters.FirstOrDefault(parameter =>
+                string.Equals(NormalizePathParameterName(parameter.Id),
+                    NormalizePathParameterName(resourcePathId), StringComparison.Ordinal));
+            var parentPathParameters = statusPathParameters
+                .Where(parameter => !string.Equals(NormalizePathParameterName(parameter.Id),
+                    NormalizePathParameterName(resourcePathId), StringComparison.Ordinal))
+                .Select(parameter =>
+                {
+                    var createParameter = createEndPoint.Parameters.FirstOrDefault(candidate =>
+                        candidate.Location == ParameterLocation.Path &&
+                        string.Equals(NormalizePathParameterName(candidate.Id),
+                            NormalizePathParameterName(parameter.Id), StringComparison.Ordinal) &&
+                        string.Equals(candidate.Type.CSharpTypeWithoutNullability,
+                            parameter.Type.CSharpTypeWithoutNullability, StringComparison.Ordinal));
+                    return string.IsNullOrWhiteSpace(createParameter.ParameterName)
+                        ? null
+                        : new CliProjectWaitParentPathParameter(
+                            parameter.ParameterName, createParameter.ParameterName);
+                })
+                .ToArray();
             if (string.IsNullOrWhiteSpace(idParameter.ParameterName) ||
+                (idParameter.Type.CSharpTypeWithoutNullability != "string" &&
+                 !idParameter.Type.CSharpTypeWithoutNullability.Contains("Guid", StringComparison.Ordinal)) ||
+                parentPathParameters.Any(static parameter => parameter is null) ||
                 statusEndPoint.Parameters.Any(parameter =>
                     parameter.IsRequired &&
                     parameter.Location != ParameterLocation.Path &&
@@ -1760,11 +1790,15 @@ internal sealed record CliProjectOperation(
                 statusEndPoint,
                 idProperty.Name,
                 idParameter.ParameterName,
-                idParameter.Type.CSharpTypeWithoutNullability);
+                idParameter.Type.CSharpTypeWithoutNullability,
+                parentPathParameters.Select(static parameter => parameter!).ToImmutableArray());
         }
 
         return null;
     }
+
+    private static string NormalizePathParameterName(string value) =>
+        new(value.Where(char.IsLetterOrDigit).Select(char.ToLowerInvariant).ToArray());
 
     private static bool HasStatusProperty(
         ModelData model,
@@ -3984,8 +4018,23 @@ internal static class CliProjectScaffolder
                 ? $"new {component.TypeName} {{ {string.Join(", ", requiredAssignments)} }}"
                 : $"new {component.TypeName}()";
             var assignments = component.Fields
+                .Where(static field => field.NestedPropertyName is null)
                 .Select(field => $@"
                         __component{component.Index}.{field.PropertyName} = {field.Parameter.ParameterName};")
+                .Inject();
+            var nestedAssignments = component.Fields
+                .Where(static field => field.NestedPropertyName is not null)
+                .GroupBy(static field => field.PropertyName, StringComparer.Ordinal)
+                .Select(group => $@"
+                        if ({string.Join(" || ", group.Select(field => $"CliRuntime.WasSpecified(parseResult, {ParameterSymbolName(field.Parameter)})"))})
+                        {{
+                            __component{component.Index}.{group.Key} ??= new {group.First().NestedTypeName}();
+{group.Select(field => $@"
+                            if (CliRuntime.WasSpecified(parseResult, {ParameterSymbolName(field.Parameter)}))
+                            {{
+                                __component{component.Index}.{group.Key}.{field.NestedPropertyName} = {field.Parameter.ParameterName};
+                            }}").Inject()}
+                        }}")
                 .Inject();
             return $@"
                         var __component{component.Index} = __requestBase.Value{component.Index} ?? {initializer};
@@ -4020,24 +4069,9 @@ internal static class CliProjectScaffolder
         MethodParameter parameter)
     {
         var symbol = ParameterSymbolName(parameter);
-                .Where(static field => field.NestedPropertyName is null)
         var basePath = operation.BaseBodyPropertyPath(parameter);
         return $@"
                         var {parameter.ParameterName} = (CliRuntime.WasSpecified(parseResult, {symbol})
-            var nestedAssignments = component.Fields
-                .Where(static field => field.NestedPropertyName is not null)
-                .GroupBy(static field => field.PropertyName, StringComparer.Ordinal)
-                .Select(group => $@"
-                        if ({string.Join(" || ", group.Select(field => $"CliRuntime.WasSpecified(parseResult, {ParameterSymbolName(field.Parameter)})"))})
-                        {{
-                            __component{component.Index}.{group.Key} ??= new {group.First().NestedTypeName}();
-{group.Select(field => $@"
-                            if (CliRuntime.WasSpecified(parseResult, {ParameterSymbolName(field.Parameter)}))
-                            {{
-                                __component{component.Index}.{group.Key}.{field.NestedPropertyName} = {field.Parameter.ParameterName};
-                            }}").Inject()}
-                        }}")
-                .Inject();
                             ? parseResult.GetValue({symbol})
                             : __requestBase.{basePath})
                             ?? throw new CliException({Literal($"Specify {parameter.Id} or include it in the base request body.")});";
@@ -4504,6 +4538,9 @@ internal static class CliProjectScaffolder
             var statusIdExpression = responseIdWaitPair.StatusIdParameterType.Contains("Guid", StringComparison.Ordinal)
                 ? "global::System.Guid.Parse(resourceId)"
                 : "resourceId";
+            var parentPathArguments = string.Concat(responseIdWaitPair.ParentPathParameters
+                .Select(static parameter =>
+                    $"                                            {parameter.StatusParameterName}: {parameter.CreateParameterName},\n"));
             return $@"
                                 if (wait)
                                 {{{GenerateInvocation(operation, "createResponse")}
@@ -4517,7 +4554,7 @@ internal static class CliProjectScaffolder
 
                                     var waitResponse = await CliRuntime.PollUntilTerminalAsync(
                                         fetchAsync: token => {statusTarget}(
-                                            {responseIdWaitPair.StatusIdParameterName}: {statusIdExpression},
+{parentPathArguments}                                            {responseIdWaitPair.StatusIdParameterName}: {statusIdExpression},
                                             cancellationToken: token),
                                         pollInterval: pollInterval,
                                         waitTimeout: waitTimeout,
