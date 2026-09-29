@@ -1131,7 +1131,11 @@ internal sealed record CliProjectCompositeBody(
         IReadOnlyDictionary<string, ModelData> classesByName)
     {
         var requestType = endPoint.RequestType;
-        if (requestType.AllOfCount != 2 || requestType.SubTypes.Length != 2)
+        // Named allOf schemas generate their own union type rather than AllOf<T1, T2>.
+        // Only the generic wrapper has the Value1/Value2 members used below.
+        if (requestType.AllOfCount != 2 || requestType.SubTypes.Length != 2 ||
+            !requestType.CSharpTypeWithoutNullability.StartsWith(
+                $"global::{requestType.GeneratedNamespace}.AllOf<", StringComparison.Ordinal))
         {
             return null;
         }

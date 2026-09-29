@@ -303,6 +303,20 @@ paths:
       responses:
         '200':
           description: OK
+  /widgets/named-advanced:
+    post:
+      operationId: configureNamedAdvancedWidget
+      tags:
+        - Widgets
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/NamedAdvancedWidgetRequest'
+      responses:
+        '200':
+          description: OK
   /vector-stores/{vector_store_id}/files:
     post:
       operationId: createVectorStoreFile
@@ -461,6 +475,13 @@ components:
           type: array
           items:
             type: string
+    NamedAdvancedWidgetRequest:
+      allOf:
+        - $ref: '#/components/schemas/CreateWidgetRequest'
+        - type: object
+          properties:
+            advanced:
+              type: boolean
     NestedFileStatus:
       type: object
       properties:
@@ -839,6 +860,16 @@ components:
             compositeBodyCommand.Should().Contain("new global::Oag.AllOf<");
             compositeBodyCommand.Should().Contain("request: request,");
             compositeBodyCommand.Should().NotContain("ReadRequestAsync<global::Oag.AllOf<");
+
+            // A named allOf schema has a generated union model, not Value1/Value2.
+            // Keep it on the whole-request JSON path until its own fields can be bound.
+            var namedCompositeCommandPath = Directory
+                .EnumerateFiles(Path.Combine(cliDirectory, "Commands"), "*ConfigureNamedAdvancedWidget*ApiCommand.g.cs")
+                .Single();
+            var namedCompositeCommand = await File.ReadAllTextAsync(namedCompositeCommandPath).ConfigureAwait(false);
+            namedCompositeCommand.Should().Contain("ReadRequestAsync<global::Oag.NamedAdvancedWidgetRequest>");
+            namedCompositeCommand.Should().NotContain("__requestBase.Value1");
+            namedCompositeCommand.Should().NotContain("__requestBase.Value2");
 
             // #408: a nested fetch uses the create operation's parent path ID and sends the
             // response ID only to the trailing resource path parameter.
