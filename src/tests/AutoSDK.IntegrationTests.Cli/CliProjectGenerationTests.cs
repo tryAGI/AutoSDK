@@ -567,7 +567,7 @@ components:
                 .EnumerateFiles(Path.Combine(cliDirectory, "Commands"), "*CreateWidgetCommand*ApiCommand.g.cs")
                 .Single();
             var operationCommand = await File.ReadAllTextAsync(operationCommandPath).ConfigureAwait(false);
-            operationCommand.Should().Contain("new Command(@\"create-widget\"");
+            operationCommand.Should().Contain("new Command(commandName ?? @\"create-widget\"");
             // Object body is flattened into per-field flags that bind straight to the convenience
             // overload — no opaque non-nullable ReadRequestAsync<T> deserialization of the whole body.
             operationCommand.Should().NotContain("ReadRequestAsync<");
@@ -641,8 +641,9 @@ components:
                 .EnumerateFiles(Path.Combine(cliDirectory, "Commands"), "*WidgetsList*ApiCommand.g.cs")
                 .Single();
             var listCommand = await File.ReadAllTextAsync(listCommandPath).ConfigureAwait(false);
-            listCommand.Should().Contain("new Command(@\"list\"");
-            listCommand.Should().NotContain("new Command(@\"widgets-list\"");
+            listCommand.Should().Contain("new Command(commandName ?? @\"list\"");
+            listCommand.Should().Contain("Create(string? commandName = null)");
+            listCommand.Should().NotContain("new Command(commandName ?? @\"widgets-list\"");
             listCommand.Should().Contain("TryWriteOutputDirectoryAsync");
             listCommand.Should().Contain("@\"$self\"");
 
@@ -652,8 +653,8 @@ components:
                 .EnumerateFiles(Path.Combine(cliDirectory, "Commands"), "*SearchAndScrape*ApiCommand.g.cs")
                 .Single(path => string.Equals(Path.GetFileName(path), "SearchSearchAndScrapeCommandApiCommand.g.cs", StringComparison.Ordinal));
             var searchCommand = await File.ReadAllTextAsync(searchCommandPath).ConfigureAwait(false);
-            searchCommand.Should().Contain("new Command(@\"search-and-scrape\"");
-            searchCommand.Should().NotContain("new Command(@\"and-scrape\"");
+            searchCommand.Should().Contain("new Command(commandName ?? @\"search-and-scrape\"");
+            searchCommand.Should().NotContain("new Command(commandName ?? @\"and-scrape\"");
 
             // #341: a create operation with a generated SDK wait companion emits --wait,
             // --poll-interval, and --wait-timeout and dispatches to <Method>WaitAsync.
@@ -737,7 +738,7 @@ components:
                 .EnumerateFiles(Path.Combine(cliDirectory, "Commands"), "*WidgetsCancel*ApiCommand.g.cs")
                 .Single();
             var pathCommand = await File.ReadAllTextAsync(pathCommandPath).ConfigureAwait(false);
-            pathCommand.Should().Contain("new Command(@\"cancel\"");
+            pathCommand.Should().Contain("new Command(commandName ?? @\"cancel\"");
             pathCommand.Should().Contain("Argument<string> Id");
             pathCommand.Should().Contain("command.Arguments.Add(Id);");
             pathCommand.Should().NotContain("Option<string> Id");
@@ -749,8 +750,8 @@ components:
                 .Single();
             var configureCommand = await File.ReadAllTextAsync(configureCommandPath).ConfigureAwait(false);
             // #345: x-cli-command-name overrides the derived command name verbatim.
-            configureCommand.Should().Contain("new Command(@\"configure\"");
-            configureCommand.Should().NotContain("new Command(@\"configure-widget\"");
+            configureCommand.Should().Contain("new Command(commandName ?? @\"configure\"");
+            configureCommand.Should().NotContain("new Command(commandName ?? @\"configure-widget\"");
             configureCommand.Should().Contain("Option<string> Label");
             configureCommand.Should().Contain("Option<int> Count");
             configureCommand.Should().Contain("Required = true");
@@ -760,16 +761,21 @@ components:
             configureCommand.Should().Contain("var label = parseResult.GetRequiredValue(Label);");
             configureCommand.Should().NotContain("parseResult.GetValue(Label)");
 
-            // #339 regression: a composite (allOf/oneOf) request body does NOT flatten into per-field
-            // parameters, so it must keep the --request-json/--request-file blob and bind via request:
-            // rather than silently sending an empty body (the Firecrawl scrape AllOf<...> case).
+            // Two object components of an allOf body expose their scalar fields while preserving
+            // --input as a base for fields that cannot become simple CLI options.
             var compositeBodyCommandPath = Directory
                 .EnumerateFiles(Path.Combine(cliDirectory, "Commands"), "*ConfigureAdvancedWidget*ApiCommand.g.cs")
                 .Single();
             var compositeBodyCommand = await File.ReadAllTextAsync(compositeBodyCommandPath).ConfigureAwait(false);
+            compositeBodyCommand.Should().Contain("Argument<string> Name");
+            compositeBodyCommand.Should().Contain("--advanced");
             compositeBodyCommand.Should().Contain("--request-json");
-            compositeBodyCommand.Should().Contain("ReadRequestAsync<global::Oag.AllOf<");
+            compositeBodyCommand.Should().Contain("ReadRequestOrDefaultAsync<global::Oag.AllOf<");
+            compositeBodyCommand.Should().Contain("__component1.Name = name;");
+            compositeBodyCommand.Should().Contain("__component2.Advanced = advanced;");
+            compositeBodyCommand.Should().Contain("new global::Oag.AllOf<");
             compositeBodyCommand.Should().Contain("request: request,");
+            compositeBodyCommand.Should().NotContain("ReadRequestAsync<global::Oag.AllOf<");
 
             var runtime = await File.ReadAllTextAsync(Path.Combine(cliDirectory, "CliRuntime.cs")).ConfigureAwait(false);
             runtime.Should().Contain("\"OAG_API_KEY\"");

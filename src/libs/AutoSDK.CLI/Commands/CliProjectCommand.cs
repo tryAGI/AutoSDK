@@ -942,7 +942,7 @@ internal sealed record CliProjectOptionSet(
             : null;
     }
 
-    private static bool IsOptionSetEligibleProperty(PropertyData property)
+    internal static bool IsOptionSetEligibleProperty(PropertyData property)
     {
         if (property.IsReadOnly)
         {
@@ -971,7 +971,7 @@ internal sealed record CliProjectOptionSet(
                type.CSharpTypeWithoutNullability.StartsWith("global::System.Guid", StringComparison.Ordinal);
     }
 
-    private static MethodParameter CreateParameter(PropertyData property)
+    internal static MethodParameter CreateParameter(PropertyData property)
     {
         return (MethodParameter.Default with
         {
@@ -1103,6 +1103,95 @@ internal sealed record CliProjectTag(
     }
 }
 
+internal sealed record CliProjectCompositeField(
+    int ComponentIndex,
+    string PropertyName,
+    MethodParameter Parameter);
+
+internal sealed record CliProjectCompositeComponent(
+    int Index,
+    string TypeName,
+    ImmutableArray<CliProjectCompositeField> Fields);
+
+internal sealed record CliProjectCompositeBody(
+    ImmutableArray<CliProjectCompositeComponent> Components,
+    ImmutableArray<CliProjectCompositeField> Fields)
+{
+    public static CliProjectCompositeBody? TryCreate(
+        EndPoint endPoint,
+        IReadOnlyList<MethodParameter> methodParameters,
+        IReadOnlyDictionary<string, ModelData> classesByName)
+    {
+        var requestType = endPoint.RequestType;
+        if (requestType.AllOfCount != 2 || requestType.SubTypes.Length != 2)
+        {
+            return null;
+        }
+
+        var usedNames = methodParameters
+            .Select(static parameter => CliProjectScaffolder.ToKebabCase(parameter.Id))
+            .ToHashSet(StringComparer.Ordinal);
+        var usedParameterNames = methodParameters
+            .Select(static parameter => parameter.ParameterName)
+            .ToHashSet(StringComparer.Ordinal);
+        usedParameterNames.Add("request");
+        var components = ImmutableArray.CreateBuilder<CliProjectCompositeComponent>(2);
+        var fields = ImmutableArray.CreateBuilder<CliProjectCompositeField>();
+        for (var index = 0; index < 2; index++)
+        {
+            var componentType = requestType.SubTypes[index].Unbox<TypeData>();
+            if (!CliProjectOperation.TryGetClassByTypeName(
+                    classesByName, componentType.CSharpTypeWithoutNullability, out var model) ||
+                model.Style != ModelStyle.Class ||
+                model.IsDerivedClass)
+            {
+                return null;
+            }
+
+            var componentFields = ImmutableArray.CreateBuilder<CliProjectCompositeField>();
+            foreach (var property in model.Properties.Where(static property => !property.IsReadOnly))
+            {
+                if (!CliProjectOptionSet.IsOptionSetEligibleProperty(property))
+                {
+                    // A required property that cannot be bound must retain the JSON-only path.
+                    if (property.IsRequired || property.IsWriteOnly)
+                    {
+                        return null;
+                    }
+
+                    continue;
+                }
+
+                if (property.IsDeprecated && !property.IsRequired)
+                {
+                    continue;
+                }
+
+                var parameter = CliProjectOptionSet.CreateParameter(property);
+                if (!usedNames.Add(CliProjectScaffolder.ToKebabCase(parameter.Id)) ||
+                    !usedParameterNames.Add(parameter.ParameterName))
+                {
+                    // An ambiguous allOf property cannot safely become an unprefixed flag.
+                    return null;
+                }
+
+                var field = new CliProjectCompositeField(index + 1, property.Name, parameter);
+                componentFields.Add(field);
+                fields.Add(field);
+            }
+
+            components.Add(new CliProjectCompositeComponent(
+                index + 1,
+                model.GlobalClassName,
+                componentFields.ToImmutable()));
+        }
+
+        return fields.Count > 0
+            ? new CliProjectCompositeBody(components.MoveToImmutable(), fields.ToImmutable())
+            : null;
+    }
+}
+
 internal sealed record CliProjectOperation(
     EndPoint EndPoint,
     string CommandName,
@@ -1113,6 +1202,7 @@ internal sealed record CliProjectOperation(
     ImmutableArray<CliProjectNestedOptionSetUsage> NestedOptionSets,
     ImmutableArray<CliProjectWebhookUsage> WebhookUsages,
     ImmutableHashSet<string> JsonOnlyWebhookParameterNames,
+    CliProjectCompositeBody? CompositeBody,
     bool HasDirectRequestBody,
     bool SupportsBaseBody,
     string BaseBodyPropertyPathPrefix,
@@ -1162,20 +1252,24 @@ internal sealed record CliProjectOperation(
         // parameter (Location == null). Including them turns every scalar/enum/array body field
         // into a per-field --flag instead of a single --request-json blob, and the command binds
         // straight to that overload (AutoSDK #339).
-        var cliParameters = endPoint.Parameters
+        var methodParameters = endPoint.Parameters
             .Where(static x => x is { IsDeprecated: false } or { IsRequired: true } or { IsDeprecated: true, Location: not null })
             .Where(x => !(endPoint.ForcedRequestStreamValue is not null && IsRequestStreamParameter(x)))
             .ToArray();
         var responseType = GetResponseType(endPoint);
 
-        // A request body that did NOT flatten into individual parameters — a raw scalar/array/enum
-        // body, or a composite (allOf/oneOf) request type AutoSDK keeps as a single object — has no
-        // per-field flags, so it still needs the opaque --request-json/--request-file escape hatch
-        // and binds via `request:`. (Was: only the scalar/array/enum/binary case, which silently
-        // dropped composite object bodies like Firecrawl's scrape AllOf<...> request — AutoSDK #339.)
+        // Flatten supported allOf object components into CLI fields while keeping the SDK's
+        // request parameter. Other composite shapes and scalar/array/enum bodies retain the
+        // whole-request JSON escape hatch.
         var hasRequestBody = !string.IsNullOrWhiteSpace(endPoint.RequestType.CSharpType);
-        var hasFlattenedBodyParameters = cliParameters.Any(static x => x.Location is null);
-        var hasDirectRequestBody = hasRequestBody && !hasFlattenedBodyParameters;
+        var hasFlattenedBodyParameters = methodParameters.Any(static x => x.Location is null);
+        var compositeBody = hasRequestBody && !hasFlattenedBodyParameters
+            ? CliProjectCompositeBody.TryCreate(endPoint, methodParameters, classesByName)
+            : null;
+        var cliParameters = methodParameters
+            .Concat(compositeBody?.Fields.Select(static field => field.Parameter) ?? [])
+            .ToArray();
+        var hasDirectRequestBody = hasRequestBody && !hasFlattenedBodyParameters && compositeBody is null;
 
         // Choose which parameters read as positional arguments vs. flags (AutoSDK #340). Path
         // template parameters are the natural positionals; failing that, a single required string
@@ -1225,13 +1319,16 @@ internal sealed record CliProjectOperation(
 
         // When an object body has at least one plain-optional field, offer --request-json /
         // --request-file as a base body whose values fill those fields unless a per-field flag
-        // overrides them (AutoSDK #343). Required and positional fields still come from CLI args,
-        // so this composes with the #340 positional hoisting rather than fighting it.
-        var baseBodyPropertyPathPrefix = ResolveBaseBodyPropertyPathPrefix(endPoint, allOptionParameters, classesByName);
-        var supportsBaseBody = !hasDirectRequestBody &&
-            baseBodyPropertyPathPrefix is not null &&
-            (allOptionParameters.Any(IsMergeableBaseBodyField) ||
-             allOptionParameters.Any(parameter => jsonOnlyWebhookParameterNames.Contains(parameter.Id)));
+        // overrides them (AutoSDK #343). Composite required fields also accept base-body values,
+        // preserving existing JSON-only commands while allowing positional hoisting.
+        var baseBodyPropertyPathPrefix = compositeBody is null
+            ? ResolveBaseBodyPropertyPathPrefix(endPoint, allOptionParameters, classesByName)
+            : string.Empty;
+        var supportsBaseBody = compositeBody is not null ||
+            (!hasDirectRequestBody &&
+             baseBodyPropertyPathPrefix is not null &&
+             (allOptionParameters.Any(IsMergeableBaseBodyField) ||
+              allOptionParameters.Any(parameter => jsonOnlyWebhookParameterNames.Contains(parameter.Id))));
         var (supportsOutputDirectory, outputDirectoryItemsPropertyName) = DetectOutputDirectorySupport(endPoint, classesByName);
         var responseIdWaitPair = FindResponseIdWaitPair(endPoint, allMethods, classesByName, statusUnionTypes);
         var supportsWait = operationMetadata.WaitMode != CliProjectWaitMode.Disabled &&
@@ -1247,6 +1344,7 @@ internal sealed record CliProjectOperation(
             nestedOptionSets,
             webhookUsages,
             jsonOnlyWebhookParameterNames,
+            compositeBody,
             hasDirectRequestBody,
             supportsBaseBody,
             baseBodyPropertyPathPrefix ?? string.Empty,
@@ -1326,9 +1424,18 @@ internal sealed record CliProjectOperation(
             : parameter.Name;
     }
 
+    internal bool IsCompositeBodyParameter(MethodParameter parameter) =>
+        CompositeBody?.Fields.Any(field => field.Parameter.ParameterName == parameter.ParameterName) == true;
+
     internal string BaseBodyPropertyPath(MethodParameter parameter) => BaseBodyPropertyPath(BaseBodyPropertyName(parameter));
 
-    internal string BaseBodyPropertyPath(string propertyName) => $"{BaseBodyPropertyPathPrefix}{propertyName}";
+    internal string BaseBodyPropertyPath(string propertyName)
+    {
+        var compositeField = CompositeBody?.Fields.FirstOrDefault(field => field.PropertyName == propertyName);
+        return compositeField is not null
+            ? $"Value{compositeField.ComponentIndex}?.{propertyName}"
+            : $"{BaseBodyPropertyPathPrefix}{propertyName}";
+    }
 
     private static string? ResolveBaseBodyPropertyPathPrefix(
         EndPoint endPoint,
@@ -1382,7 +1489,7 @@ internal sealed record CliProjectOperation(
         return null;
     }
 
-    private static bool TryGetClassByTypeName(
+    internal static bool TryGetClassByTypeName(
         IReadOnlyDictionary<string, ModelData> classesByName,
         string typeName,
         out ModelData model)
@@ -3620,12 +3727,16 @@ internal static class CliProjectScaffolder
         // line. Injecting required and optional fields separately concatenated the two blocks with
         // no newline (`};    private static ...`).
         var fields = operation.PositionalParameters
-            .Select(parameter => GenerateParameterField(parameter, required: true))
+            .Select(parameter => GenerateParameterField(
+                parameter,
+                required: true,
+                requiredFromBaseBody: operation.IsCompositeBodyParameter(parameter)))
             .Concat(operation.OptionParameters.Select(parameter => GenerateParameterField(
                 parameter,
                 required: false,
                 jsonOnlyWebhook: operation.JsonOnlyWebhookParameterNames.Contains(parameter.Id),
-                allowBaseBody: operation.SupportsBaseBody)))
+                allowBaseBody: operation.SupportsBaseBody,
+                requiredFromBaseBody: operation.IsCompositeBodyParameter(parameter))))
             .Concat(string.IsNullOrWhiteSpace(reusableFields) ? [] : [reusableFields])
             .Inject();
         var addSymbols = operation.PositionalParameters
@@ -3738,10 +3849,14 @@ internal static class CliProjectScaffolder
             : Array.Empty<string>();
         var parseParameters = baseBodyRead
             .Concat(operation.PositionalParameters
-                .Select(parameter => $@"
+                .Select(parameter => operation.IsCompositeBodyParameter(parameter)
+                    ? GenerateCompositeRequiredFieldParseLine(operation, parameter)
+                    : $@"
                         var {parameter.ParameterName} = parseResult.GetRequiredValue({ParameterSymbolName(parameter)});"))
             .Concat(operation.OptionParameters.Select(parameter =>
-                operation.JsonOnlyWebhookParameterNames.Contains(parameter.Id)
+                operation.IsCompositeBodyParameter(parameter) && parameter.IsRequired
+                    ? GenerateCompositeRequiredFieldParseLine(operation, parameter)
+                    : operation.JsonOnlyWebhookParameterNames.Contains(parameter.Id)
                     ? GenerateJsonOnlyWebhookParseLine(model, operation, parameter)
                     : operation.SupportsBaseBody && CliProjectOperation.IsMergeableBaseBodyField(parameter)
                     ? $@"
@@ -3752,7 +3867,9 @@ internal static class CliProjectScaffolder
             .Concat(operation.NestedOptionSets.Select(usage => GenerateNestedOptionSetParseLines(operation, usage)))
             .Concat(operation.WebhookUsages.Select(usage => GenerateWebhookParseLines(model, operation, usage)))
             .Inject();
-        var requestRead = operation.HasDirectRequestBody
+        var requestRead = operation.CompositeBody is not null
+            ? GenerateCompositeBodyRequest(operation)
+            : operation.HasDirectRequestBody
             ? $@"
                         var request = await CliRuntime.ReadRequestAsync<{endPoint.RequestType.CSharpTypeWithoutNullability}>(
                             parseResult,
@@ -3787,9 +3904,9 @@ internal static class CliProjectScaffolder
 
                      static partial void CustomizeCommand(ref Command command);
 
-                     public static Command Create()
+                     public static Command Create(string? commandName = null)
                      {
-                         var command = new Command({{Literal(operation.CommandName)}}, {{Literal(description)}});
+                         var command = new Command(commandName ?? {{Literal(operation.CommandName)}}, {{Literal(description)}});
                  {{addSymbols}}
                  {{addRequestOptions}}
                  {{addWaitOptions}}
@@ -3809,11 +3926,67 @@ internal static class CliProjectScaffolder
                  """;
     }
 
+    private static string GenerateCompositeBodyRequest(CliProjectOperation operation)
+    {
+        var compositeBody = operation.CompositeBody!;
+        var components = compositeBody.Components.Select(component =>
+        {
+            var requiredAssignments = component.Fields
+                .Where(static field => field.Parameter.IsRequired)
+                .Select(field => $"{field.PropertyName} = {field.Parameter.ParameterName}!")
+                .ToArray();
+            var initializer = requiredAssignments.Length > 0
+                ? $"new {component.TypeName} {{ {string.Join(", ", requiredAssignments)} }}"
+                : $"new {component.TypeName}()";
+            var assignments = component.Fields
+                .Select(field => $@"
+                        __component{component.Index}.{field.PropertyName} = {field.Parameter.ParameterName};")
+                .Inject();
+            return $@"
+                        var __component{component.Index} = __requestBase.Value{component.Index} ?? {initializer};
+{assignments}";
+        }).Inject();
+        // The allOf JSON converter deserializes the same object into every component. Unknown
+        // fields therefore land in another component's extension-data dictionary. Remove a shadow
+        // only when a flag overrides it; an untouched base field must survive even if another
+        // required property prevented that component from deserializing.
+        var shadowCleanup = compositeBody.Components
+            .SelectMany(component => compositeBody.Fields
+                .Where(field => field.ComponentIndex != component.Index)
+                .Select(field => $@"
+                        if (CliRuntime.WasSpecified(parseResult, {ParameterSymbolName(field.Parameter)}))
+                        {{
+                            __component{component.Index}.AdditionalProperties?.Remove({Literal(field.Parameter.Id)});
+                        }}"))
+            .Inject();
+
+        return $@"
+{components}
+{shadowCleanup}
+                        var request = new {operation.EndPoint.RequestType.CSharpTypeWithoutNullability}(
+                            {string.Join(", ", compositeBody.Components.Select(static component => $"__component{component.Index}"))});
+";
+    }
+
+    private static string GenerateCompositeRequiredFieldParseLine(
+        CliProjectOperation operation,
+        MethodParameter parameter)
+    {
+        var symbol = ParameterSymbolName(parameter);
+        var basePath = operation.BaseBodyPropertyPath(parameter);
+        return $@"
+                        var {parameter.ParameterName} = (CliRuntime.WasSpecified(parseResult, {symbol})
+                            ? parseResult.GetValue({symbol})
+                            : __requestBase.{basePath})
+                            ?? throw new CliException({Literal($"Specify {parameter.Id} or include it in the base request body.")});";
+    }
+
     private static string GenerateParameterField(
         MethodParameter parameter,
         bool required,
         bool jsonOnlyWebhook = false,
-        bool allowBaseBody = false)
+        bool allowBaseBody = false,
+        bool requiredFromBaseBody = false)
     {
         if (jsonOnlyWebhook)
         {
@@ -3846,8 +4019,11 @@ internal static class CliProjectScaffolder
 
         var symbolType = required ? "Argument" : "Option";
         var nameExpression = required ? Literal(ToKebabCase(parameter.Id)) : Literal($"--{ToKebabCase(parameter.Id)}");
-        var requiredProperty = !required && parameter.IsRequired && !parameter.HasSchemaDefault
+        var requiredProperty = !required && parameter.IsRequired && !parameter.HasSchemaDefault && !requiredFromBaseBody
             ? "\n        Required = true,"
+            : string.Empty;
+        var optionalArgument = required && requiredFromBaseBody
+            ? "\n        Arity = ArgumentArity.ZeroOrOne,"
             : string.Empty;
         var defaultProperty = !required && parameter.HasSchemaDefault
             ? $"\n        DefaultValueFactory = _ => {parameter.ParameterDefaultValue},"
@@ -3857,7 +4033,7 @@ internal static class CliProjectScaffolder
     private static {symbolType}<{parameter.Type.CSharpType}> {ParameterSymbolName(parameter)} {{ get; }} = new(
         name: {nameExpression})
     {{
-        Description = {Literal(parameter.Description)},{requiredProperty}{defaultProperty}
+        Description = {Literal(parameter.Description)},{requiredProperty}{optionalArgument}{defaultProperty}
     }};
 ";
     }
@@ -4300,6 +4476,7 @@ internal static class CliProjectScaffolder
             : $"client.{endPoint.NotAsyncMethodName}WaitAsync";
         var arguments = operation.PositionalParameters
             .Concat(operation.OptionParameters)
+            .Where(parameter => !operation.IsCompositeBodyParameter(parameter))
             .Concat(operation.DirectOptionSets.SelectMany(static usage => usage.Parameters.Select(static parameter => parameter.MethodParameter)))
             .Select(static parameter => $@"
                                         {parameter.ParameterName}: {parameter.ParameterName},")
@@ -4308,7 +4485,7 @@ internal static class CliProjectScaffolder
             .Concat(operation.WebhookUsages.Select(static usage => $@"
                                         {usage.ParameterName}: {usage.ParameterName}{(usage.IsRequired ? "!" : string.Empty)},"))
             .Inject();
-        var requestArgument = operation.HasDirectRequestBody
+        var requestArgument = operation.HasDirectRequestBody || operation.CompositeBody is not null
             ? @"
                                         request: request,"
             : string.Empty;
@@ -4353,6 +4530,7 @@ internal static class CliProjectScaffolder
             : $"client.{endPoint.MethodName}";
         var arguments = operation.PositionalParameters
             .Concat(operation.OptionParameters)
+            .Where(parameter => !operation.IsCompositeBodyParameter(parameter))
             .Concat(operation.DirectOptionSets.SelectMany(static usage => usage.Parameters.Select(static parameter => parameter.MethodParameter)))
             .Select(static parameter => $@"
                                     {parameter.ParameterName}: {parameter.ParameterName},")
@@ -4361,7 +4539,7 @@ internal static class CliProjectScaffolder
             .Concat(operation.WebhookUsages.Select(static usage => $@"
                                     {usage.ParameterName}: {usage.ParameterName}{(usage.IsRequired ? "!" : string.Empty)},"))
             .Inject();
-        var requestArgument = operation.HasDirectRequestBody
+        var requestArgument = operation.HasDirectRequestBody || operation.CompositeBody is not null
             ? @"
                                     request: request,"
             : string.Empty;
