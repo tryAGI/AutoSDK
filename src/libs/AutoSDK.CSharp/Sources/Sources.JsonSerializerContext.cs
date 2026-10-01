@@ -107,9 +107,8 @@ public static partial class Sources
                 client,
                 contextClassName,
                 jsonSerializableAttributes,
-                metadataOnly: jsonSerializableAttributes.Length >= MetadataOnlyJsonSerializableAttributeThreshold,
-                fallbackContextNames: fallbackContextNames,
-                deprecatedTypeNames: deprecatedTypeNames);
+                fallbackContextNames,
+                deprecatedTypeNames);
         }
 
         using var builder = new PooledStringBuilder(
@@ -184,8 +183,6 @@ namespace {client.Settings.Namespace}
     }
 
     private const int MaxJsonSerializableAttributesPerContext = 500;
-    // Very large graphs exhaust hosted CI runners when STJ emits fast-path writers for every type.
-    private const int MetadataOnlyJsonSerializableAttributeThreshold = 5000;
 
     private static string GenerateEmptyJsonSerializerContext(
         Client client,
@@ -263,7 +260,6 @@ namespace {client.Settings.Namespace}
         Client client,
         string contextClassName,
         JsonSerializableAttributeRegistration[] jsonSerializableAttributes,
-        bool metadataOnly,
         IReadOnlyList<string>? fallbackContextNames = null,
         IReadOnlyCollection<string>? deprecatedTypeNames = null)
     {
@@ -327,7 +323,7 @@ namespace {client.Settings.Namespace}
             builder.Append($@"
     {string.Empty.ToXmlDocumentationSummary(level: 4)}
 ");
-            AppendJsonSourceGenerationOptionsAttribute(builder, client, includeConverters: false, metadataOnly: metadataOnly);
+            AppendJsonSourceGenerationOptionsAttribute(builder, client, includeConverters: false);
             builder.Append('\n');
             AppendJsonSerializableAttributes(builder, chunks[index]);
             builder.Append($@"
@@ -580,7 +576,6 @@ namespace {client.Settings.Namespace}
         PooledStringBuilder builder,
         Client client,
         bool includeConverters = true,
-        bool metadataOnly = false,
         IReadOnlyCollection<string>? deprecatedTypeNames = null)
     {
         IEnumerable<string> converters = includeConverters
@@ -601,9 +596,10 @@ namespace {client.Settings.Namespace}
 
         builder.Append(@"    [global::System.Text.Json.Serialization.JsonSourceGenerationOptions(
         DefaultIgnoreCondition = global::System.Text.Json.Serialization.JsonIgnoreCondition.WhenWritingNull");
-        // Custom converters disable the STJ fast path. Very large contexts also use metadata-only
-        // generation to keep the compiler graph within hosted runner memory limits.
-        if (metadataOnly || client.Settings.DirectionAwareJsonGenerationMode && client.Converters.Length > 0)
+        // Custom converters disable the STJ fast path for the entire context. Set the mode once
+        // instead of repeating Metadata on every request/response registration. This also drops
+        // unreachable fast-path writers for bidirectional and unclassified types.
+        if (client.Settings.DirectionAwareJsonGenerationMode && client.Converters.Length > 0)
         {
             builder.Append(@",
         GenerationMode = global::System.Text.Json.Serialization.JsonSourceGenerationMode.Metadata");
