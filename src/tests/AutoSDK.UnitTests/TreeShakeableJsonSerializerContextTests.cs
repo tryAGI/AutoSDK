@@ -2,6 +2,7 @@ using System.Collections.Immutable;
 using AutoSDK.Generation;
 using AutoSDK.Helpers;
 using AutoSDK.Models;
+using AutoSDK.Packaging;
 using AutoSDK.Serialization.Json;
 
 namespace AutoSDK.UnitTests;
@@ -239,6 +240,47 @@ components:
         artistsContext.Should().Contain("global::Catalogue.SharedResult");
         artistsContext.Should().NotContain("global::Catalogue.Album");
         artistsContext.Should().NotContain("global::Catalogue.JsonSerializerContextTypes");
+    }
+
+    [TestMethod]
+    public void MonolithicPartition_KeepsThePublicContextAndRegistersOwnedModelsOnce()
+    {
+        var settings = Settings.Default with
+        {
+            Namespace = "Catalogue",
+            ClassName = "CatalogueClient",
+            GenerateModels = true,
+            GenerateMethods = true,
+            GenerateConstructors = true,
+            GenerateSdk = true,
+            GenerateJsonSerializerContextTypes = true,
+            JsonSerializerContext = "Catalogue.SourceGenerationContext",
+            GroupByTags = true,
+            FromCli = true,
+        };
+        var data = CSharpPipeline.PrepareAndEnrich(((Spec, settings), settings));
+        var owners = ModelOwnershipResolver.Resolve(data);
+        owners.Should().NotBeEmpty();
+
+        var contexts = CSharpPipeline.CreateMonolithicPartitionJsonSerializerContexts(
+                data,
+                owners,
+                CancellationToken.None)
+            .ToDictionary(static file => file.Name, StringComparer.Ordinal);
+
+        var root = contexts["Catalogue.JsonSerializerContext.g.cs"].Text;
+        root.Should().Contain("public sealed partial class SourceGenerationContext")
+            .And.Contain("global::Catalogue.PartitionCoreSourceGenerationContext.TypeInfoResolver")
+            .And.Contain("global::Catalogue.AlbumsSourceGenerationContext.TypeInfoResolver")
+            .And.Contain("global::Catalogue.ArtistsSourceGenerationContext.TypeInfoResolver")
+            .And.NotContain("[global::System.Text.Json.Serialization.JsonSerializable(");
+
+        var albums = contexts["Catalogue.Albums.JsonSerializerContext.g.cs"].Text;
+        albums.Should().Contain("global::Catalogue.Album")
+            .And.NotContain("global::Catalogue.Artist");
+        var artists = contexts["Catalogue.Artists.JsonSerializerContext.g.cs"].Text;
+        artists.Should().Contain("global::Catalogue.Artist")
+            .And.NotContain("global::Catalogue.Album");
     }
 
     [TestMethod]

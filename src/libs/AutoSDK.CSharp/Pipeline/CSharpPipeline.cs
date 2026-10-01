@@ -117,18 +117,17 @@ public static class CSharpPipeline
     {
         var settings = data.Converters.Settings;
 
-        // In split-by-tags mode the models no longer all live in one assembly, so neither can the
-        // [JsonSerializable] registrations: each package registers what it owns and chains onto the
-        // package it references. Everything a model emits then has to name that same context --
-        // including its own ToJson()/FromJson() defaults, which would otherwise point at Core's and
-        // throw for a model that moved out of it. Everywhere else this stays one context.
+        // Split packages retarget model defaults to the package that owns their metadata. Very
+        // large monolithic SDKs can reuse the same ownership graph to divide source-generation
+        // work, but retain one public facade context and all original model/client defaults.
         var modelOwners = settings.SplitByTags
             ? ModelOwnershipResolver.Resolve(data)
-            : EmptyOwners;
-        var tagReachability = ShouldGenerateTreeShakeableTagContexts(data)
+            : ResolveLargeMonolithicContextOwners(data);
+        var partitionedMonolithicContext = !settings.SplitByTags && modelOwners.Count != 0;
+        var tagReachability = !partitionedMonolithicContext && ShouldGenerateTreeShakeableTagContexts(data)
             ? TagOwnershipAnalyzer.Analyze(data.FilteredSchemas)
             : EmptyTagReachability;
-        if (modelOwners.Count != 0)
+        if (settings.SplitByTags && modelOwners.Count != 0)
         {
             var contextNamesByTag = BuildContextNamesByTag(data);
             data = data with
@@ -280,7 +279,7 @@ public static class CSharpPipeline
                 AddIfNotEmpty(methodImplementationFiles[index]);
                 AddIfNotEmpty(methodInterfaceFiles[index]);
             }
-            var clients = modelOwners.Count != 0
+            var clients = settings.SplitByTags && modelOwners.Count != 0
                 ? ApplyPackageSerializerContexts(data, modelOwners)
                 : tagReachability.Count != 0
                     ? ApplyTagSerializerContexts(data, tagReachability)
@@ -318,8 +317,10 @@ public static class CSharpPipeline
             var serializerContextGenerationState = new Sources.JsonSerializerContextGenerationState();
             var serializerContextFiles = MeasurePhase(
                 "serializer_context",
-                () => modelOwners.Count != 0
+                () => settings.SplitByTags && modelOwners.Count != 0
                     ? CreatePackageJsonSerializerContexts(data, modelOwners, cancellationToken)
+                    : partitionedMonolithicContext
+                        ? CreateMonolithicPartitionJsonSerializerContexts(data, modelOwners, cancellationToken)
                     : [
                         Sources.JsonSerializerContext(
                             data.Converters,
@@ -337,7 +338,9 @@ public static class CSharpPipeline
                 "serializer_context_types",
                 () => [Sources.JsonSerializerContextTypes(
                     data.Converters,
-                    modelOwners.Count == 0 ? data.Types : GetCoreTypes(data, modelOwners),
+                    settings.SplitByTags && modelOwners.Count != 0
+                        ? GetCoreTypes(data, modelOwners)
+                        : data.Types,
                     serializerContextGenerationState,
                     cancellationToken)]);
             foreach (var file in serializerContextFiles)
@@ -577,6 +580,26 @@ public static class CSharpPipeline
     private const int MaximumTagContextReachabilityPercentage = 35;
     private const int AggregateContextFallbackTagThreshold = 32;
     private const int AggregateContextFallbackTypeThreshold = 1000;
+    private const int MonolithicContextPartitionTypeThreshold = 2000;
+    private const int MonolithicContextPartitionTagThreshold = 16;
+
+    private static IReadOnlyDictionary<string, string> ResolveLargeMonolithicContextOwners(Models.Data data)
+    {
+        var settings = data.Converters.Settings;
+        if (!settings.FromCli ||
+            !settings.GroupByTags ||
+            !settings.ShouldGenerateJsonSerializerContextTypes() ||
+            data.Types.Length < MonolithicContextPartitionTypeThreshold ||
+            data.Tags.Length < MonolithicContextPartitionTagThreshold)
+        {
+            return EmptyOwners;
+        }
+
+        var owners = ModelOwnershipResolver.Resolve(data);
+        return owners.Count != 0 && GetCoreTypes(data, owners).Length * 2 < data.Types.Length
+            ? owners
+            : EmptyOwners;
+    }
 
     private static bool ShouldGenerateTreeShakeableTagContexts(Models.Data data)
     {
@@ -728,6 +751,93 @@ public static class CSharpPipeline
             .Where(x => ModelOwnershipResolver.ResolveTypeOwner(x.CSharpTypeWithoutNullability, modelOwners) is null)
             .ToImmutableArray()
             .AsEquatableArray();
+    }
+
+    /// <summary>
+    /// Uses the package ownership graph to partition a large single-assembly context without
+    /// changing the public context or the model/client defaults. The public context delegates to
+    /// the partitions, so every generated type remains available through the original API.
+    /// </summary>
+    internal static FileWithName[] CreateMonolithicPartitionJsonSerializerContexts(
+        Models.Data data,
+        IReadOnlyDictionary<string, string> modelOwners,
+        CancellationToken cancellationToken)
+    {
+        var settings = data.Converters.Settings;
+        var deprecatedModels = data.Classes.Where(static model => model.IsDeprecated).ToArray();
+        var coreSafeName = "PartitionCore";
+        while (data.Tags.Any(tag => string.Equals(tag.SafeName, coreSafeName, StringComparison.Ordinal)))
+        {
+            coreSafeName += "_";
+        }
+        var coreContextName = GetPackageContextName(settings.Namespace, coreSafeName);
+        var coreClient = CreatePackageContextClient(
+            data.Converters,
+            coreSafeName,
+            coreContextName,
+            ImmutableArray<string>.Empty);
+        var files = new List<FileWithName>(data.Tags.Length + 2)
+        {
+            Sources.JsonSerializerContext(
+                coreClient,
+                GetCoreTypes(data, modelOwners),
+                new Sources.JsonSerializerContextGenerationState(),
+                fallbackContextNames: [],
+                models: deprecatedModels,
+                cancellationToken: cancellationToken),
+        };
+
+        var collidingTypes = new HashSet<string>(
+            Sources.GetCollidingTypeInfoNameTypes(data.Converters, data.Types),
+            StringComparer.Ordinal);
+        var sharedCollidingTypes = data.Types
+            .Where(type => collidingTypes.Contains(type.CSharpTypeWithoutNullability) &&
+                           ModelOwnershipResolver.ResolveTypeOwner(
+                               type.CSharpTypeWithoutNullability,
+                               modelOwners) is null)
+            .ToImmutableArray();
+        var contextNames = new List<string>(data.Tags.Length + 1) { $"global::{coreContextName}" };
+        foreach (var tag in data.Tags.OrderBy(static tag => tag.SafeName, StringComparer.Ordinal))
+        {
+            if (tag.Name is null)
+            {
+                continue;
+            }
+
+            var tagTypes = data.Types
+                .Where(type => string.Equals(
+                    ModelOwnershipResolver.ResolveTypeOwner(type.CSharpTypeWithoutNullability, modelOwners),
+                    tag.Name,
+                    StringComparison.Ordinal))
+                .ToImmutableArray();
+            if (tagTypes.Length == 0)
+            {
+                continue;
+            }
+
+            var contextName = GetPackageContextName(settings.Namespace, tag.SafeName);
+            files.Add(Sources.JsonSerializerContext(
+                CreatePackageContextClient(
+                    data.Converters,
+                    tag.SafeName,
+                    contextName,
+                    ImmutableArray<string>.Empty),
+                tagTypes.AddRange(sharedCollidingTypes).AsEquatableArray(),
+                new Sources.JsonSerializerContextGenerationState(),
+                fallbackContextNames: [],
+                models: deprecatedModels,
+                cancellationToken: cancellationToken));
+            contextNames.Add($"global::{contextName}");
+        }
+
+        files.Add(Sources.JsonSerializerContext(
+            data.Converters,
+            ImmutableArray<TypeData>.Empty.AsEquatableArray(),
+            new Sources.JsonSerializerContextGenerationState(),
+            fallbackContextNames: contextNames,
+            models: deprecatedModels,
+            cancellationToken: cancellationToken));
+        return files.ToArray();
     }
 
     /// <summary>
