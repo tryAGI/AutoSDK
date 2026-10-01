@@ -13,6 +13,7 @@ public static partial class Sources
             @namespace,
             types,
             new JsonSerializerContextGenerationState(),
+            "JsonSerializerContextTypes",
             cancellationToken);
     }
 
@@ -20,6 +21,7 @@ public static partial class Sources
         string @namespace,
         EquatableArray<TypeData> types,
         JsonSerializerContextGenerationState generationState,
+        string contextTypesClassName,
         CancellationToken cancellationToken = default)
     {
         if (types.IsEmpty)
@@ -69,7 +71,7 @@ public static partial class Sources
 namespace {@namespace}
 {{
     {string.Empty.ToXmlDocumentationSummary(level: 4)}
-    public sealed partial class JsonSerializerContextTypes
+    public sealed partial class {contextTypesClassName}
     {{
         {string.Empty.ToXmlDocumentationSummary(level: 8)}
         public global::System.Collections.Generic.Dictionary<string, string>? StringStringDictionary {{ get; set; }}

@@ -47,9 +47,7 @@ public static partial class Sources
         }
 
         // Extract class name from fully-qualified JsonSerializerContext setting
-        var contextClassName = client.Settings.JsonSerializerContext.Contains(".")
-            ? client.Settings.JsonSerializerContext.Substring(client.Settings.JsonSerializerContext.LastIndexOf('.') + 1)
-            : "SourceGenerationContext";
+        var contextClassName = GetJsonSerializerContextClassName(client);
         var typeInfoNames = generationState.TypeInfoNames;
         var nullableValueTypes = generationState.GetNullableValueTypes(types);
         var typeComponents = generationState.GetJsonSerializableTypeComponents(types);
@@ -805,7 +803,7 @@ namespace {client.Settings.Namespace}
             }
             : new[]
             {
-                $"global::{client.Settings.Namespace}.JsonSerializerContextTypes",
+                $"global::{client.Settings.Namespace}.{GetJsonSerializerContextTypesClassName(client)}",
                 "global::System.Collections.Generic.List<object>",
             };
         var serializableTypes = contextTypes

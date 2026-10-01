@@ -243,6 +243,50 @@ public partial class JsonTests
     }
 
     [TestMethod]
+    public void JsonSerializerContexts_WithDifferentNames_CoexistInOneNamespace()
+    {
+        var settings = Settings.Default with
+        {
+            Namespace = "G",
+            JsonSerializerType = JsonSerializerType.SystemTextJson,
+            JsonSerializerContext = "G.FirstSourceGenerationContext",
+            GenerateJsonSerializerContextTypes = true,
+            FromCli = true,
+        };
+        var client = new Client(
+            Id: "Converters",
+            ClassName: string.Empty,
+            FileNameWithoutExtension: "G",
+            InterfaceFileNameWithoutExtension: "G.I",
+            BaseUrl: string.Empty,
+            Clients: ImmutableArray<PropertyData>.Empty,
+            Summary: string.Empty,
+            BaseUrlSummary: string.Empty,
+            Settings: settings,
+            GlobalSettings: settings,
+            Converters: ImmutableArray<string>.Empty);
+        var types = ImmutableArray.Create(T(TypeData.Default with
+        {
+            Namespace = "System",
+            CSharpTypeRaw = "string",
+        })).AsEquatableArray();
+        var secondSettings = settings with { JsonSerializerContext = "G.SecondSourceGenerationContext" };
+        var secondClient = client with { Settings = secondSettings, GlobalSettings = secondSettings };
+
+        var firstContext = Sources.JsonSerializerContext(client, types);
+        var firstTypes = Sources.JsonSerializerContextTypes(client, types);
+        var secondContext = Sources.JsonSerializerContext(secondClient, types);
+        var secondTypes = Sources.JsonSerializerContextTypes(secondClient, types);
+
+        new[] { firstContext.Name, firstTypes.Name, secondContext.Name, secondTypes.Name }
+            .Distinct(StringComparer.Ordinal).Should().HaveCount(4);
+        firstContext.Text.Should().Contain("global::G.FirstSourceGenerationContextTypes");
+        secondContext.Text.Should().Contain("global::G.SecondSourceGenerationContextTypes");
+        firstTypes.Text.Should().Contain("class FirstSourceGenerationContextTypes");
+        secondTypes.Text.Should().Contain("class SecondSourceGenerationContextTypes");
+    }
+
+    [TestMethod]
     public void JsonSerializerContextWrapper_ComposesUserContextWithGeneratedConverters()
     {
         var settings = Settings.Default with

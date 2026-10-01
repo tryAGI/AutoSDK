@@ -282,12 +282,14 @@ public static partial class Sources
             return FileWithName.Empty;
         }
         
+        var contextTypesClassName = GetJsonSerializerContextTypesClassName(client);
         return new FileWithName(
-            Name: $"{client.Settings.Namespace}.JsonSerializerContextTypes.g.cs",
+            Name: $"{client.Settings.Namespace}.{contextTypesClassName}.g.cs",
             Text: GenerateJsonSerializerContextTypes(
                 client.Settings.Namespace,
                 types,
                 generationState,
+                contextTypesClassName,
                 cancellationToken));
     }
     
@@ -324,8 +326,12 @@ public static partial class Sources
             fileNameWithoutExtension = client.Settings.Namespace;
         }
         
+        var contextClassName = GetJsonSerializerContextClassName(client);
+        var contextFileSuffix = contextClassName == "SourceGenerationContext" || fallbackContextNames is not null
+            ? "JsonSerializerContext"
+            : $"{contextClassName}.JsonSerializerContext";
         return new FileWithName(
-            Name: $"{fileNameWithoutExtension}.JsonSerializerContext.g.cs",
+            Name: $"{fileNameWithoutExtension}.{contextFileSuffix}.g.cs",
             Text: GenerateJsonSerializerContext(
                 client,
                 types,
@@ -333,6 +339,22 @@ public static partial class Sources
                 fallbackContextNames,
                 models,
                 cancellationToken));
+    }
+
+    private static string GetJsonSerializerContextClassName(Client client)
+    {
+        var contextName = client.Settings.JsonSerializerContext;
+        return contextName.Contains('.')
+            ? contextName[(contextName.LastIndexOf('.') + 1)..]
+            : "SourceGenerationContext";
+    }
+
+    private static string GetJsonSerializerContextTypesClassName(Client client)
+    {
+        var contextClassName = GetJsonSerializerContextClassName(client);
+        return contextClassName == "SourceGenerationContext"
+            ? "JsonSerializerContextTypes"
+            : $"{contextClassName}Types";
     }
     
     public static FileWithName JsonSerializerContextConverters(
