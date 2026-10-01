@@ -345,7 +345,7 @@ public static partial class Sources
     {
         var contextName = client.Settings.JsonSerializerContext;
         return contextName.Contains('.')
-            ? contextName[(contextName.LastIndexOf('.') + 1)..]
+            ? contextName.Substring(contextName.LastIndexOf('.') + 1)
             : "SourceGenerationContext";
     }
 
