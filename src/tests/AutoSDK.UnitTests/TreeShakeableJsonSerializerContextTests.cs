@@ -273,10 +273,13 @@ components:
             .And.Contain("global::Catalogue.PartitionCoreSourceGenerationContext.TypeInfoResolver")
             .And.Contain("global::Catalogue.AlbumsSourceGenerationContext.TypeInfoResolver")
             .And.Contain("global::Catalogue.ArtistsSourceGenerationContext.TypeInfoResolver")
+            .And.Contain("options.Converters.Add(")
+            .And.NotContain("PartitionCoreSourceGenerationContext.AddConverters(options)")
             .And.NotContain("[global::System.Text.Json.Serialization.JsonSerializable(");
 
         var albums = contexts["Catalogue.Albums.JsonSerializerContext.g.cs"].Text;
         albums.Should().Contain("global::Catalogue.Album")
+            .And.Contain("global::Catalogue.PartitionCoreSourceGenerationContext.TypeInfoResolver")
             .And.NotContain("global::Catalogue.Artist");
         var artists = contexts["Catalogue.Artists.JsonSerializerContext.g.cs"].Text;
         artists.Should().Contain("global::Catalogue.Artist")

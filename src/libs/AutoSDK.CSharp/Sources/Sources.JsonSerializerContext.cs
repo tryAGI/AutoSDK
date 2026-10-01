@@ -28,12 +28,17 @@ public static partial class Sources
     /// no types of its own at all. Each also contributes its converters, so a context registers only
     /// the ones its own package owns.
     /// </param>
+    /// <param name="includeFallbackConverters">
+    /// False for a facade that registers the complete converter set itself, avoiding duplicate
+    /// converter instances when its fallback contexts share a common ancestor.
+    /// </param>
     internal static string GenerateJsonSerializerContext(
         Client client,
         EquatableArray<TypeData> types,
         JsonSerializerContextGenerationState generationState,
         IReadOnlyList<string>? fallbackContextNames = null,
         IReadOnlyCollection<ModelData>? models = null,
+        bool includeFallbackConverters = true,
         CancellationToken cancellationToken = default)
     {
         // Any non-null list -- empty included -- selects the chained shape. In a split family even
@@ -108,7 +113,8 @@ public static partial class Sources
                 contextClassName,
                 jsonSerializableAttributes,
                 fallbackContextNames,
-                deprecatedTypeNames);
+                deprecatedTypeNames,
+                includeFallbackConverters);
         }
 
         using var builder = new PooledStringBuilder(
@@ -261,7 +267,8 @@ namespace {client.Settings.Namespace}
         string contextClassName,
         JsonSerializableAttributeRegistration[] jsonSerializableAttributes,
         IReadOnlyList<string>? fallbackContextNames = null,
-        IReadOnlyCollection<string>? deprecatedTypeNames = null)
+        IReadOnlyCollection<string>? deprecatedTypeNames = null,
+        bool includeFallbackConverters = true)
     {
         var chunks = SplitJsonSerializableAttributes(jsonSerializableAttributes)
             .ToArray();
@@ -384,7 +391,9 @@ namespace {client.Settings.Namespace}
         [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Never)]
 ")}        {(fallbackContextNames is null ? "internal" : "public")} static void AddConverters(global::System.Text.Json.JsonSerializerOptions options)
         {{");
-        foreach (var name in fallbackContextNames ?? (IReadOnlyList<string>)Array.Empty<string>())
+        foreach (var name in includeFallbackConverters
+                     ? fallbackContextNames ?? (IReadOnlyList<string>)Array.Empty<string>()
+                     : Array.Empty<string>())
         {
             builder.Append($@"
             {name}.AddConverters(options);");

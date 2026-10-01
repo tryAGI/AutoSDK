@@ -312,6 +312,7 @@ public static partial class Sources
         JsonSerializerContextGenerationState generationState,
         IReadOnlyList<string>? fallbackContextNames = null,
         IReadOnlyCollection<ModelData>? models = null,
+        bool includeFallbackConverters = true,
         CancellationToken cancellationToken = default)
     {
         if (!client.Settings.FromCli ||
@@ -338,6 +339,7 @@ public static partial class Sources
                 generationState,
                 fallbackContextNames,
                 models,
+                includeFallbackConverters,
                 cancellationToken));
     }
 

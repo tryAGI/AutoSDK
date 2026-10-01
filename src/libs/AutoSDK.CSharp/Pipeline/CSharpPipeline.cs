@@ -281,6 +281,8 @@ public static class CSharpPipeline
             }
             var clients = settings.SplitByTags && modelOwners.Count != 0
                 ? ApplyPackageSerializerContexts(data, modelOwners)
+                : partitionedMonolithicContext
+                    ? ApplyMonolithicPartitionSerializerContexts(data, modelOwners)
                 : tagReachability.Count != 0
                     ? ApplyTagSerializerContexts(data, tagReachability)
                     : data.Clients;
@@ -765,6 +767,13 @@ public static class CSharpPipeline
     {
         var settings = data.Converters.Settings;
         var deprecatedModels = data.Classes.Where(static model => model.IsDeprecated).ToArray();
+        var convertersByTag = ModelOwnershipResolver.ResolveConverters(data, modelOwners);
+        var ownedConverters = new HashSet<string>(
+            convertersByTag.Values.SelectMany(static converters => converters),
+            StringComparer.Ordinal);
+        var coreConverters = data.Converters.Converters
+            .Where(converter => !ownedConverters.Contains(converter))
+            .ToImmutableArray();
         var coreSafeName = "PartitionCore";
         while (data.Tags.Any(tag => string.Equals(tag.SafeName, coreSafeName, StringComparison.Ordinal)))
         {
@@ -775,7 +784,7 @@ public static class CSharpPipeline
             data.Converters,
             coreSafeName,
             coreContextName,
-            ImmutableArray<string>.Empty);
+            coreConverters);
         var files = new List<FileWithName>(data.Tags.Length + 2)
         {
             Sources.JsonSerializerContext(
@@ -821,10 +830,12 @@ public static class CSharpPipeline
                     data.Converters,
                     tag.SafeName,
                     contextName,
-                    ImmutableArray<string>.Empty),
+                    convertersByTag.TryGetValue(tag.Name, out var converters)
+                        ? converters
+                        : ImmutableArray<string>.Empty),
                 tagTypes.AddRange(sharedCollidingTypes).AsEquatableArray(),
                 new Sources.JsonSerializerContextGenerationState(),
-                fallbackContextNames: [],
+                fallbackContextNames: [$"global::{coreContextName}"],
                 models: deprecatedModels,
                 cancellationToken: cancellationToken));
             contextNames.Add($"global::{contextName}");
@@ -836,8 +847,23 @@ public static class CSharpPipeline
             new Sources.JsonSerializerContextGenerationState(),
             fallbackContextNames: contextNames,
             models: deprecatedModels,
+            includeFallbackConverters: false,
             cancellationToken: cancellationToken));
         return files.ToArray();
+    }
+
+    private static EquatableArray<Client> ApplyMonolithicPartitionSerializerContexts(
+        Models.Data data,
+        IReadOnlyDictionary<string, string> modelOwners)
+    {
+        var settings = data.Converters.Settings;
+        var rootClassName = settings.ClassName.Replace(".", string.Empty);
+        return ApplyPackageSerializerContexts(data, modelOwners)
+            .Select(client => client.ClassName == rootClassName
+                ? client with { Settings = client.Settings with { JsonSerializerContext = settings.JsonSerializerContext } }
+                : client)
+            .ToImmutableArray()
+            .AsEquatableArray();
     }
 
     /// <summary>
