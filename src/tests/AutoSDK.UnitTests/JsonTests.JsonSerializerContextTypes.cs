@@ -596,6 +596,47 @@ public partial class JsonTests
     }
 
     [TestMethod]
+    public void JsonSerializerContext_UsesMetadataOnlyForVeryLargeContexts()
+    {
+        var settings = Settings.Default with
+        {
+            Namespace = "G",
+            JsonSerializerType = JsonSerializerType.SystemTextJson,
+            JsonSerializerContext = "G.SourceGenerationContext",
+            GenerateJsonSerializerContextTypes = true,
+            FromCli = true,
+        };
+        var client = new Client(
+            Id: "VeryLargeContext",
+            ClassName: "VeryLargeContextClient",
+            FileNameWithoutExtension: "G",
+            InterfaceFileNameWithoutExtension: "IG",
+            BaseUrl: string.Empty,
+            Clients: ImmutableArray<PropertyData>.Empty,
+            Summary: string.Empty,
+            BaseUrlSummary: string.Empty,
+            Settings: settings,
+            GlobalSettings: settings,
+            Converters: ImmutableArray<string>.Empty);
+        var types = Enumerable.Range(0, 5000)
+            .Select(index => T(TypeData.Default with
+            {
+                Namespace = "G",
+                GeneratedNamespace = "G",
+                CSharpTypeRaw = $"global::G.Model{index}",
+            }))
+            .ToImmutableArray()
+            .AsEquatableArray();
+
+        var file = Sources.JsonSerializerContext(client, types);
+
+        file.Text.Should().Contain(
+            "GenerationMode = global::System.Text.Json.Serialization.JsonSourceGenerationMode.Metadata");
+        Regex.Matches(file.Text, "GenerationMode = global::System.Text.Json.Serialization.JsonSourceGenerationMode.Metadata").Count
+            .Should().BeGreaterThan(1);
+    }
+
+    [TestMethod]
     public void JsonSerializerContext_SplitsAdvantageSizedContextsWithoutAggregateRegistration()
     {
         var settings = Settings.Default with
