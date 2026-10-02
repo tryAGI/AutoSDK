@@ -281,7 +281,7 @@ public class SchemaContext(
         ? GetCachedSchemaBoolean(IsDerivedClassFlag)
         : CacheSchemaBoolean(
             IsDerivedClassFlag,
-            HasAllOf &&
+            HasAllOf && !IsAllOfForMetadata &&
             Schema.AllOf is { Count: 2 } allOf &&
             (allOf[0].IsSchemaReference() &&
              allOf[0].ResolveIfRequired().Discriminator?.Mapping != null ||

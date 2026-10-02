@@ -3432,10 +3432,40 @@ info:
         schema = schema ?? throw new ArgumentNullException(nameof(schema));
         
         return propertyName is not null &&
+               (schema.Properties?.Count ?? 0) == 0 &&
                (schema.AnyOf?.Count == 1 ||
-               schema.AllOf?.Count == 1 ||
-               schema.OneOf?.Count == 1) &&
-               (schema.Properties?.Count ?? 0) == 0;
+                schema.OneOf?.Count == 1 ||
+                schema.AllOf?.Count == 1 ||
+                schema.AllOf is { Count: 2 } allOf &&
+                allOf[0].IsSchemaReference() &&
+                IsAnnotationOnlySchema(allOf[1]));
+    }
+
+    private static bool IsAnnotationOnlySchema(IOpenApiSchema schema)
+    {
+        return schema.Type is null &&
+               !schema.IsSchemaReference() &&
+               (schema.Properties?.Count ?? 0) == 0 &&
+               (schema.Required?.Count ?? 0) == 0 &&
+               (schema.AllOf?.Count ?? 0) == 0 &&
+               (schema.AnyOf?.Count ?? 0) == 0 &&
+               (schema.OneOf?.Count ?? 0) == 0 &&
+               (schema.Enum?.Count ?? 0) == 0 &&
+               schema.Const is null &&
+               schema.Items is null &&
+               schema.AdditionalProperties is null &&
+               schema.Not is null &&
+               schema.Pattern is null &&
+               schema.Minimum is null &&
+               schema.Maximum is null &&
+               schema.ExclusiveMinimum is null &&
+               schema.ExclusiveMaximum is null &&
+               schema.MinLength is null &&
+               schema.MaxLength is null &&
+               schema.MinItems is null &&
+               schema.MaxItems is null &&
+               schema.MinProperties is null &&
+               schema.MaxProperties is null;
     }
     
     public static string GetSummary(this IOpenApiSchema schema)

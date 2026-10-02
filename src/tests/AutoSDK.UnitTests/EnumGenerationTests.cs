@@ -158,6 +158,39 @@ public class EnumGenerationTests
     }
 
     [TestMethod]
+    public void OpenEnumGeneration_AvoidsGeneratedStructMemberNames()
+    {
+        const string yaml = """
+                            openapi: 3.0.1
+                            info:
+                              title: Operator Enum
+                              version: 1.0.0
+                            paths: {}
+                            components:
+                              schemas:
+                                Operator:
+                                  type: string
+                                  x-speakeasy-unknown-values: allow
+                                  enum: [equals, equals_value, value, from_value, is_known, operator]
+                            """;
+
+        var data = AutoSDK.Generation.Data.Prepare(((yaml, DefaultSettings), GlobalSettings: DefaultSettings));
+        var model = data.Enums.Single(x => x.ClassName == "Operator");
+        var names = model.EnumValues.ToDictionary(static value => value.Id, static value => value.Name);
+        var generated = Sources.GenerateEnumerationModel(model);
+
+        model.IsOpenEnum.Should().BeTrue();
+        names["equals"].Should().Be("EqualsValue");
+        names["equals_value"].Should().Be("EqualsValue2");
+        names["value"].Should().Be("ValueValue");
+        names["from_value"].Should().Be("FromValueValue");
+        names["is_known"].Should().Be("IsKnownValue");
+        names["operator"].Should().Be("OperatorValue");
+        generated.Should().Contain("new(\"equals\")");
+        generated.Should().NotContain("public static Operator Equals { get; }");
+    }
+
+    [TestMethod]
     [DataRow(JsonSerializerType.SystemTextJson)]
     [DataRow(JsonSerializerType.NewtonsoftJson)]
     public void DiscriminatorEnumGeneration_RejectsUnknownValues(JsonSerializerType jsonSerializerType)

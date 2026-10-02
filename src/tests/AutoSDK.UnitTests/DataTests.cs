@@ -11,6 +11,57 @@ namespace AutoSDK.UnitTests;
 public partial class DataTests
 {
     [TestMethod]
+    public void AnnotatedAllOfReferenceToUnion_UsesUnionInsteadOfDerivedClass()
+    {
+        const string yaml = """
+                            openapi: 3.0.1
+                            info:
+                              title: Annotated Union
+                              version: 1.0.0
+                            paths: {}
+                            components:
+                              schemas:
+                                Destination:
+                                  discriminator:
+                                    propertyName: type
+                                    mapping:
+                                      first: '#/components/schemas/FirstDestination'
+                                      second: '#/components/schemas/SecondDestination'
+                                  oneOf:
+                                    - $ref: '#/components/schemas/FirstDestination'
+                                    - $ref: '#/components/schemas/SecondDestination'
+                                FirstDestination:
+                                  type: object
+                                  properties:
+                                    type:
+                                      type: string
+                                      enum: [first]
+                                SecondDestination:
+                                  type: object
+                                  properties:
+                                    type:
+                                      type: string
+                                      enum: [second]
+                                CreateResponse:
+                                  type: object
+                                  properties:
+                                    data:
+                                      allOf:
+                                        - $ref: '#/components/schemas/Destination'
+                                        - description: The newly created destination.
+                            """;
+
+        var settings = DefaultSettings with { GenerateModels = true, GenerateSdk = true };
+        var data = Data.Prepare(((yaml, settings), GlobalSettings: settings));
+        var response = data.Classes.Single(x => x.ClassName == "CreateResponse");
+        var dataProperty = response.Properties.Single(x => x.Id == "data");
+
+        dataProperty.Type.CSharpTypeWithoutNullability.Should().Be("global::G.Destination");
+        data.Classes.Should().NotContain(x => x.IsDerivedClass && x.BaseClass.Contains("Destination"));
+        Sources.GenerateModel(response).Should().Contain("Destination? Data");
+    }
+
+    [TestMethod]
     [DataRow(JsonSerializerType.NewtonsoftJson)]
     [DataRow(JsonSerializerType.SystemTextJson)]
     public void PrimitiveConstValues_AreEmittedAsTypedLiterals(JsonSerializerType jsonSerializerType)

@@ -247,6 +247,25 @@ public static class OpenApiEnumExtensions
             ApplySpeakeasyEnumDescriptions(speakeasyEnumDescriptionsNode, @enum);
         }
 
+        if (context.Schema.IsOpenEnum())
+        {
+            foreach (var key in @enum.Keys.ToArray())
+            {
+                var property = @enum[key];
+                var name = CSharpPropertyNameGenerator.AvoidObjectMemberNameCollision(property.Name);
+                if (name is "Value" or "FromValue" or "IsKnown" ||
+                    string.Equals(name, context.Id, StringComparison.Ordinal))
+                {
+                    name += "Value";
+                }
+
+                if (name != property.Name)
+                {
+                    @enum[key] = property with { Name = name };
+                }
+            }
+        }
+
         var result = EnsureUniqueEnumMemberNamesCaseInsensitive(@enum);
         context.CachedCSharpEnumData = result;
         return result;
