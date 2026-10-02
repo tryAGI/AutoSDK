@@ -3438,6 +3438,8 @@ info:
                 schema.AllOf?.Count == 1 ||
                 schema.AllOf is { Count: 2 } allOf &&
                 allOf[0].IsSchemaReference() &&
+                (allOf[0].ResolveIfRequired().OneOf?.Count > 1 ||
+                 allOf[0].ResolveIfRequired().AnyOf?.Count > 1) &&
                 IsAnnotationOnlySchema(allOf[1]));
     }
 
