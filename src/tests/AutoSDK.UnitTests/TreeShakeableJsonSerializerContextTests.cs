@@ -287,6 +287,40 @@ components:
     }
 
     [TestMethod]
+    public void MonolithicPartition_RegistersModelsOwnedByRenamedOperationTags()
+    {
+        var settings = Settings.Default with
+        {
+            Namespace = "Catalogue",
+            ClassName = "CatalogueClient",
+            GenerateModels = true,
+            GenerateMethods = true,
+            GenerateConstructors = true,
+            GenerateSdk = true,
+            GenerateJsonSerializerContextTypes = true,
+            JsonSerializerContext = "Catalogue.SourceGenerationContext",
+            GroupByTags = true,
+            FromCli = true,
+        };
+        var data = CSharpPipeline.PrepareAndEnrich(((Spec, settings), settings));
+        var owners = new Dictionary<string, string>(ModelOwnershipResolver.Resolve(data), StringComparer.Ordinal)
+        {
+            ["global::Catalogue.Album"] = "albums-before-sdk-group-rename",
+        };
+
+        var contexts = CSharpPipeline.CreateMonolithicPartitionJsonSerializerContexts(
+                data,
+                owners,
+                CancellationToken.None)
+            .ToDictionary(static file => file.Name, StringComparer.Ordinal);
+
+        contexts["Catalogue.PartitionOrphan0.JsonSerializerContext.g.cs"].Text
+            .Should().Contain("[global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Catalogue.Album))]");
+        contexts["Catalogue.JsonSerializerContext.g.cs"].Text
+            .Should().Contain("global::Catalogue.PartitionOrphan0SourceGenerationContext.TypeInfoResolver");
+    }
+
+    [TestMethod]
     public void GenerateFiles_GroupedCli_KeepsDenseLeafGraphsOnAggregateContext()
     {
         const string denseSpec = """

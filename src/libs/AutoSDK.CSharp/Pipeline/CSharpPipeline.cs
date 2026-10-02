@@ -806,13 +806,36 @@ public static class CSharpPipeline
                                modelOwners) is null)
             .ToImmutableArray();
         var contextNames = new List<string>(data.Tags.Length + 1) { $"global::{coreContextName}" };
-        foreach (var tag in data.Tags.OrderBy(static tag => tag.SafeName, StringComparer.Ordinal))
+        var partitionTags = data.Tags
+            .Where(static tag => tag.Name is not null)
+            .Select(static tag => (Name: tag.Name!, tag.SafeName))
+            .ToList();
+        var activeTagNames = new HashSet<string>(partitionTags.Select(static tag => tag.Name), StringComparer.Ordinal);
+        var reservedSafeNames = new HashSet<string>(partitionTags.Select(static tag => tag.SafeName), StringComparer.Ordinal)
         {
-            if (tag.Name is null)
+            coreSafeName,
+        };
+        var orphanIndex = 0;
+        foreach (var ownerTag in modelOwners.Values.Distinct(StringComparer.Ordinal).OrderBy(static name => name, StringComparer.Ordinal))
+        {
+            if (activeTagNames.Contains(ownerTag))
             {
                 continue;
             }
 
+            // SDK group names can rename an operation's public tag. The ownership graph still
+            // uses the original tag, so retain a private partition for its models.
+            string safeName;
+            do
+            {
+                safeName = $"PartitionOrphan{orphanIndex++}";
+            }
+            while (!reservedSafeNames.Add(safeName));
+            partitionTags.Add((ownerTag, safeName));
+        }
+
+        foreach (var tag in partitionTags.OrderBy(static tag => tag.SafeName, StringComparer.Ordinal))
+        {
             var tagTypes = data.Types
                 .Where(type => string.Equals(
                     ModelOwnershipResolver.ResolveTypeOwner(type.CSharpTypeWithoutNullability, modelOwners),
