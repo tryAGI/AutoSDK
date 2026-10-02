@@ -383,7 +383,7 @@ public static class CorePipeline
         var hasMetadataWrappers = false;
         for (var i = 0; i < filteredSchemas.Count; i++)
         {
-            if (filteredSchemas[i].IsAllOfForMetadata)
+            if (filteredSchemas[i].IsAllOfForMetadata || filteredSchemas[i].IsAllOfMetadataAnnotation)
             {
                 hasMetadataWrappers = true;
                 break;
@@ -395,7 +395,7 @@ public static class CorePipeline
             var filtered = new List<SchemaContext>(filteredSchemas.Count);
             for (var i = 0; i < filteredSchemas.Count; i++)
             {
-                if (!filteredSchemas[i].IsAllOfForMetadata)
+                if (!filteredSchemas[i].IsAllOfForMetadata && !filteredSchemas[i].IsAllOfMetadataAnnotation)
                 {
                     filtered.Add(filteredSchemas[i]);
                 }
@@ -646,7 +646,7 @@ public static class CorePipeline
         var filteringTime = Stopwatch.StartNew();
 
         var filteredSchemas = schemas
-            .Where(x => !x.IsAllOfForMetadata)
+            .Where(x => !x.IsAllOfForMetadata && !x.IsAllOfMetadataAnnotation)
             .ToArray();
 
         filteringTime.Stop();

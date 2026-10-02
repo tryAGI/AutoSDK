@@ -170,6 +170,14 @@ public class SchemaContext(
         : CacheSchemaBoolean(
             IsAllOfForMetadataFlag,
             EffectiveSchema.HasAllOfTypeForMetadata(PropertyName));
+    /// <summary>
+    /// The annotation-only second member of a metadata wrapper around a discriminated union.
+    /// It has no standalone model to emit.
+    /// </summary>
+    public bool IsAllOfMetadataAnnotation =>
+        Hint == Models.Hint.AllOf && Index == 1 &&
+        Parent?.IsAllOfForMetadata == true &&
+        Parent.EffectiveSchema.AllOf?.Count == 2;
     
     public bool IsClass =>
         Type == "class" ||

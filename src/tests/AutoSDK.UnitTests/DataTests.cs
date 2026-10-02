@@ -57,6 +57,7 @@ public partial class DataTests
         var dataProperty = response.Properties.Single(x => x.Id == "data");
 
         dataProperty.Type.CSharpTypeWithoutNullability.Should().Be("global::G.Destination");
+        data.Classes.Should().NotContain(x => x.ClassName == "CreateResponseData");
         data.Classes.Should().NotContain(x => x.IsDerivedClass && x.BaseClass.Contains("Destination"));
         Sources.GenerateModel(response).Should().Contain("Destination? Data");
     }
