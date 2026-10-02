@@ -160,9 +160,13 @@ internal sealed class TrimCommand : Command
                 return 1;
             }
 
-            var stdout = await process.StandardOutput.ReadToEndAsync().ConfigureAwait(false);
-            var stderr = await process.StandardError.ReadToEndAsync().ConfigureAwait(false);
+            // Both redirected pipes must be drained concurrently. A publish that writes
+            // enough stderr can otherwise block while we wait for stdout to close.
+            var stdoutTask = process.StandardOutput.ReadToEndAsync();
+            var stderrTask = process.StandardError.ReadToEndAsync();
             await process.WaitForExitAsync().ConfigureAwait(false);
+            var stdout = await stdoutTask.ConfigureAwait(false);
+            var stderr = await stderrTask.ConfigureAwait(false);
 
             if (verbose)
             {
