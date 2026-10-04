@@ -6238,9 +6238,14 @@ components:
     }
 
     [TestMethod]
-    [DataRow("oneOf")]
-    [DataRow("anyOf")]
-    public async Task Generate_WithMultiValueNullableUnion_RunsSourceGeneratedRoundTrips(string keyword)
+    public Task Generate_WithMultiValueNullableUnion_OneOf_RunsSourceGeneratedRoundTrips() =>
+        GenerateMultiValueNullableUnionAsync("oneOf");
+
+    [TestMethod]
+    public Task Generate_WithMultiValueNullableUnion_AnyOf_RunsSourceGeneratedRoundTrips() =>
+        GenerateMultiValueNullableUnionAsync("anyOf");
+
+    private async Task GenerateMultiValueNullableUnionAsync(string keyword)
     {
         var spec = """
 openapi: 3.1.0
