@@ -7,7 +7,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="Google.Apis.Core" Version="1.76.0" />
+    <PackageReference Include="Google.Apis.Core" Version="1.77.0" />
     <PackageReference Include="Microsoft.Extensions.Http" Version="10.0.12" />
   </ItemGroup>
 
