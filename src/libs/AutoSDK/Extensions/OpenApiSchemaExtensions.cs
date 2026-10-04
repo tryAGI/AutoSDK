@@ -91,6 +91,15 @@ public static class OpenApiSchemaExtensions
             return true;
         }
 
+        // A null-only union branch is nullability metadata, not an object-valued CLR alternative.
+        // An explicit non-null outer type still constrains the union to that type.
+        if (schema.Type == null &&
+            (schema.AnyOf?.Any(x => x.IsNullType()) == true ||
+             schema.OneOf?.Count(x => x.IsNullType()) == 1))
+        {
+            return true;
+        }
+
         // Swagger 2.x-style x-nullable extension fallback
         if (OpenApiExtensions.GetExtensionBooleanValue(schema.Extensions, "x-nullable"))
         {

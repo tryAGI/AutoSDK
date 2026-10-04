@@ -737,6 +737,14 @@ public class SchemaContext(
         {
             foreach (var item in schema.AnyOf)
             {
+                // Keep true multi-value unions, but never turn their null-only branch into object.
+                // Nullable single-value wrappers retain their existing child/name mapping.
+                if (context.IsAnyOf && item.IsNullType() &&
+                    schema.AnyOf.Any(x => !x.IsNullType()))
+                {
+                    continue;
+                }
+
                 FromSchemaCore(
                     result, item, settings, referenceIdFactory, schemaIdFactory, context, componentId: null,
                     propertyName: null, operationPath: null, operationType: null,
@@ -751,6 +759,14 @@ public class SchemaContext(
         {
             foreach (var item in schema.OneOf)
             {
+                // Keep true multi-value unions, but never turn their null-only branch into object.
+                // Nullable single-value wrappers retain their existing child/name mapping.
+                if (context.IsOneOf && item.IsNullType() &&
+                    schema.OneOf.Any(x => !x.IsNullType()))
+                {
+                    continue;
+                }
+
                 FromSchemaCore(
                     result, item, settings, referenceIdFactory, schemaIdFactory, context, componentId: null,
                     propertyName: null, operationPath: null, operationType: null,

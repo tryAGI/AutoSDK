@@ -261,11 +261,10 @@ public static class CSharpSchemaDataFactory
             discriminatorPropertyIsEnum = HasAnyDiscriminatorEnumValue(context);
         }
 
-        var count = context.IsAnyOf
-            ? context.Schema.AnyOf?.Count ?? 0
-            : context.IsOneOf
-                ? context.Schema.OneOf?.Count ?? 0
-                : context.Schema.AllOf?.Count ?? 0;
+        // Use the emitted alternatives: null-only branches are absent from CLR union children.
+        var count = context.IsAnyOf || context.IsOneOf
+            ? children.Count
+            : context.Schema.AllOf?.Count ?? 0;
         var discriminatorPropName = context.Schema.Discriminator?.PropertyName ?? string.Empty;
         EquatableArray<PropertyData> properties;
         if (context.IsNamedAnyOfLike)

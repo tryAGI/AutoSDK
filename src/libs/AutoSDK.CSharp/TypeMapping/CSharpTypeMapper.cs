@@ -216,10 +216,10 @@ public static class CSharpTypeMapper
             IsBinary: isBinary,
             IsUnixTimestamp: schema.IsUnixTimestamp(),
             AnyOfCount: isAnyOf && !collapsed
-                ? schema.AnyOf?.Count ?? 0
+                ? boxedSubTypes.Length
                 : 0,
             OneOfCount: isOneOf && !collapsed
-                ? schema.OneOf?.Count ?? 0
+                ? boxedSubTypes.Length
                 : 0,
             AllOfCount: isAllOf && !collapsed
                 ? schema.AllOf?.Count ?? 0

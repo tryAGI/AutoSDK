@@ -1,0 +1,90 @@
+﻿
+#nullable enable
+
+namespace G
+{
+    /// <summary>
+    /// 
+    /// </summary>
+    public sealed partial class Config
+    {
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("workflow_name")]
+        public string? WorkflowName { get; set; }
+
+        /// <summary>
+        /// Additional properties that are not explicitly defined in the schema
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonExtensionData]
+        public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="Config" /> class.
+        /// </summary>
+        /// <param name="workflowName"></param>
+#if NET7_0_OR_GREATER
+        [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
+        public Config(
+            string? workflowName)
+        {
+            this.WorkflowName = workflowName;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="Config" /> class.
+        /// </summary>
+        public Config()
+        {
+        }
+
+    }
+}
+
+
+#nullable enable
+
+namespace G
+{
+    /// <summary>
+    /// 
+    /// </summary>
+    public sealed partial class Request
+    {
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("choice")]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.OneOfJsonConverter<global::G.RequestChoice?, global::G.Config>))]
+        public global::G.OneOf<global::G.RequestChoice?, global::G.Config>? Choice { get; set; }
+
+        /// <summary>
+        /// Additional properties that are not explicitly defined in the schema
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonExtensionData]
+        public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="Request" /> class.
+        /// </summary>
+        /// <param name="choice"></param>
+#if NET7_0_OR_GREATER
+        [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
+        public Request(
+            global::G.OneOf<global::G.RequestChoice?, global::G.Config>? choice)
+        {
+            this.Choice = choice;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="Request" /> class.
+        /// </summary>
+        public Request()
+        {
+        }
+
+    }
+}

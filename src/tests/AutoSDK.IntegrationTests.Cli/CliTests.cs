@@ -6237,6 +6237,117 @@ components:
         return await File.ReadAllTextAsync(path);
     }
 
+    [TestMethod]
+    [DataRow("oneOf")]
+    [DataRow("anyOf")]
+    public async Task Generate_WithMultiValueNullableUnion_RunsSourceGeneratedRoundTrips(string keyword)
+    {
+        var spec = """
+openapi: 3.1.0
+info: {title: Nullable multi-value union, version: 1.0.0}
+paths: {}
+components:
+  schemas:
+    Config:
+      type: object
+      properties:
+        workflow_name: {type: string}
+    Choice:
+      $UNION:
+        - type: 'null'
+        - type: string
+          enum: [auto]
+        - $ref: '#/components/schemas/Config'
+    Request:
+      type: object
+      required: [direct, named]
+      properties:
+        direct:
+          $UNION:
+            - type: string
+              enum: [auto]
+            - type: 'null'
+            - $ref: '#/components/schemas/Config'
+        named:
+          $ref: '#/components/schemas/Choice'
+        items:
+          type: array
+          items:
+            $UNION:
+              - type: string
+                enum: [auto]
+              - $ref: '#/components/schemas/Config'
+              - type: 'null'
+""".Replace("$UNION", keyword, StringComparison.Ordinal);
+        await GenerateFromContentAsync(
+            fileName: "nullable-multi-value-union.yaml",
+            specContent: spec,
+            targetFramework: "net10.0",
+            namespaceValue: "NullableUnions",
+            assertGeneratedOutput: async outputDirectory =>
+            {
+                var files = await Task.WhenAll(Directory.EnumerateFiles(outputDirectory, "*.g.cs")
+                    .Select(path => File.ReadAllTextAsync(path)));
+                Regex.Matches(string.Join("\n", files), @"(?:OneOf|AnyOf)<[^>\r\n]*,\s*object>")
+                    .Should().BeEmpty();
+                await File.WriteAllTextAsync(Path.Combine(outputDirectory, "Directory.Build.props"), """
+                    <Project><PropertyGroup>
+                      <OutputType>Exe</OutputType>
+                      <JsonSerializerIsReflectionEnabledByDefault>false</JsonSerializerIsReflectionEnabledByDefault>
+                    </PropertyGroup></Project>
+                    """);
+                await File.WriteAllTextAsync(Path.Combine(outputDirectory, "Program.cs"), """
+                    using System.Text.Json;
+                    using NullableUnions;
+
+                    foreach (var variant in new[] { "null", "\"auto\"", "{\"workflow_name\":\"test\"}" })
+                    {
+                        var json = "{\"direct\":" + variant + ",\"named\":" + variant + ",\"items\":[null,\"auto\",{\"workflow_name\":\"test\"}]}";
+                        var value = JsonSerializer.Deserialize(json, SourceGenerationContext.Default.Request)!;
+                        if (variant == "null" && (value.Direct != null || value.Named != null))
+                            throw new InvalidOperationException("Union null became an object alternative.");
+                        if (variant == "\"auto\"" && value.Direct?.IsValue1 != true)
+                            throw new InvalidOperationException("Enum branch was lost.");
+                        if (variant.StartsWith('{') && value.Direct?.Value2?.WorkflowName != "test")
+                            throw new InvalidOperationException("Configuration branch was lost.");
+                        var serialized = JsonSerializer.Serialize(value, SourceGenerationContext.Default.Request);
+                        using var document = JsonDocument.Parse(serialized);
+                        var items = document.RootElement.GetProperty("items");
+                        if (items.GetArrayLength() != 3 || items[0].ValueKind != JsonValueKind.Null ||
+                            items[1].GetString() != "auto" || items[2].GetProperty("workflow_name").GetString() != "test")
+                            throw new InvalidOperationException("Nullable union items did not round trip.");
+                        if (variant != "null" && document.RootElement.GetProperty("named").GetRawText() != variant)
+                            throw new InvalidOperationException("Named union branch did not round trip.");
+                        var again = JsonSerializer.Deserialize(serialized, SourceGenerationContext.Default.Request)!;
+                        if (again.Direct?.IsValue1 != value.Direct?.IsValue1 || again.Direct?.IsValue2 != value.Direct?.IsValue2)
+                            throw new InvalidOperationException("Union changed branch during round trip.");
+                    }
+                    foreach (var property in new[] { "direct", "items" })
+                    foreach (var invalid in new[] { "\"unexpected\"", "true" })
+                    {
+                        var json = "{\"" + property + "\":" + (property == "items" ? "[" + invalid + "]" : invalid) + "}";
+                        Request? value = null;
+                        try { value = JsonSerializer.Deserialize(json, SourceGenerationContext.Default.Request); }
+                        catch (Exception error) when (error is JsonException or ArgumentOutOfRangeException or InvalidOperationException)
+                        { continue; }
+                        // With validation disabled, existing converters may return an empty union.
+                        // A null-only branch must never admit the primitive as a concrete value.
+                        if (value?.Direct?.IsValue1 == true || value?.Direct?.IsValue2 == true ||
+                            value?.Named?.IsEnum == true || value?.Named?.IsConfig == true ||
+                            value?.Items?.Any(item => item?.IsValue1 == true || item?.IsValue2 == true) == true)
+                            throw new InvalidOperationException("An invalid primitive selected a concrete branch in " + property);
+                    }
+                    """);
+            },
+            assertBuiltOutput: async outputDirectory =>
+            {
+                var result = await RunDotnetAsync(outputDirectory, "run", "--no-build", "--project", "Oag.csproj");
+                Console.WriteLine(result.StandardOutput);
+                Console.WriteLine(result.StandardError);
+                result.ExitCode.Should().Be(0);
+            });
+    }
+
     private static async Task GenerateFromContentAsync(
         string fileName,
         string specContent,
