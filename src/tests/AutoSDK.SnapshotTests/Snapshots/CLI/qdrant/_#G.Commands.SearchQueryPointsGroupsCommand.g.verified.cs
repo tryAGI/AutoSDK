@@ -16,7 +16,7 @@ namespace G
             global::G.ReadConsistency? consistency,
             int? timeout,
             global::G.ShardKeySelector? shardKey,
-            global::G.AnyOf<global::G.Prefetch2, global::System.Collections.Generic.IList<global::G.Prefetch2>, object>? prefetch,
+            global::G.AnyOf<global::G.Prefetch2, global::System.Collections.Generic.IList<global::G.Prefetch2>>? prefetch,
             global::G.QueryInterface? query,
             string? @using,
             global::G.Filter? filter,
@@ -66,7 +66,7 @@ namespace G
             Description = @"",
         };
 
-        private global::System.CommandLine.Option<global::G.AnyOf<global::G.Prefetch2, global::System.Collections.Generic.IList<global::G.Prefetch2>, object>?> Prefetch { get; } = new(
+        private global::System.CommandLine.Option<global::G.AnyOf<global::G.Prefetch2, global::System.Collections.Generic.IList<global::G.Prefetch2>>?> Prefetch { get; } = new(
             name: "prefetch")
         {
             Description = @"Sub-requests to perform first. If present, the query will be performed on the results of the prefetch(es).",

@@ -42,7 +42,7 @@ namespace G
         /// Valid range: 15 seconds to 30 days
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("polling_interval")]
-        public global::G.AnyOf<int?, string, object>? PollingInterval { get; set; }
+        public global::G.AnyOf<int?, string>? PollingInterval { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -78,7 +78,7 @@ namespace G
             string? name,
             bool? triggerSync,
             object? metadata,
-            global::G.AnyOf<int?, string, object>? pollingInterval)
+            global::G.AnyOf<int?, string>? pollingInterval)
         {
             this.StoreId = storeId ?? throw new global::System.ArgumentNullException(nameof(storeId));
             this.Name = name;

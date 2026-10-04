@@ -13,49 +13,49 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("eq")]
-        public global::G.AnyOf<double?, int?, string, global::System.DateTime?, object>? Eq { get; set; }
+        public global::G.AnyOf<double?, int?, string, global::System.DateTime?>? Eq { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("ne")]
-        public global::G.AnyOf<double?, int?, string, global::System.DateTime?, object>? Ne { get; set; }
+        public global::G.AnyOf<double?, int?, string, global::System.DateTime?>? Ne { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("gt")]
-        public global::G.AnyOf<double?, int?, string, global::System.DateTime?, object>? Gt { get; set; }
+        public global::G.AnyOf<double?, int?, string, global::System.DateTime?>? Gt { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("gte")]
-        public global::G.AnyOf<double?, int?, string, global::System.DateTime?, object>? Gte { get; set; }
+        public global::G.AnyOf<double?, int?, string, global::System.DateTime?>? Gte { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("lt")]
-        public global::G.AnyOf<double?, int?, string, global::System.DateTime?, object>? Lt { get; set; }
+        public global::G.AnyOf<double?, int?, string, global::System.DateTime?>? Lt { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("lte")]
-        public global::G.AnyOf<double?, int?, string, global::System.DateTime?, object>? Lte { get; set; }
+        public global::G.AnyOf<double?, int?, string, global::System.DateTime?>? Lte { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("includes")]
-        public global::System.Collections.Generic.IList<global::G.AnyOf<double?, int?, string, global::System.DateTime?, object>>? Includes { get; set; }
+        public global::System.Collections.Generic.IList<global::G.AnyOf<double?, int?, string, global::System.DateTime?>?>? Includes { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("excludes")]
-        public global::System.Collections.Generic.IList<global::G.AnyOf<double?, int?, string, global::System.DateTime?, object>>? Excludes { get; set; }
+        public global::System.Collections.Generic.IList<global::G.AnyOf<double?, int?, string, global::System.DateTime?>?>? Excludes { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -75,14 +75,14 @@ namespace G
         /// <param name="includes"></param>
         /// <param name="excludes"></param>
         public FilterOperation(
-            global::G.AnyOf<double?, int?, string, global::System.DateTime?, object>? eq,
-            global::G.AnyOf<double?, int?, string, global::System.DateTime?, object>? ne,
-            global::G.AnyOf<double?, int?, string, global::System.DateTime?, object>? gt,
-            global::G.AnyOf<double?, int?, string, global::System.DateTime?, object>? gte,
-            global::G.AnyOf<double?, int?, string, global::System.DateTime?, object>? lt,
-            global::G.AnyOf<double?, int?, string, global::System.DateTime?, object>? lte,
-            global::System.Collections.Generic.IList<global::G.AnyOf<double?, int?, string, global::System.DateTime?, object>>? includes,
-            global::System.Collections.Generic.IList<global::G.AnyOf<double?, int?, string, global::System.DateTime?, object>>? excludes)
+            global::G.AnyOf<double?, int?, string, global::System.DateTime?>? eq,
+            global::G.AnyOf<double?, int?, string, global::System.DateTime?>? ne,
+            global::G.AnyOf<double?, int?, string, global::System.DateTime?>? gt,
+            global::G.AnyOf<double?, int?, string, global::System.DateTime?>? gte,
+            global::G.AnyOf<double?, int?, string, global::System.DateTime?>? lt,
+            global::G.AnyOf<double?, int?, string, global::System.DateTime?>? lte,
+            global::System.Collections.Generic.IList<global::G.AnyOf<double?, int?, string, global::System.DateTime?>?>? includes,
+            global::System.Collections.Generic.IList<global::G.AnyOf<double?, int?, string, global::System.DateTime?>?>? excludes)
         {
             this.Eq = eq;
             this.Ne = ne;

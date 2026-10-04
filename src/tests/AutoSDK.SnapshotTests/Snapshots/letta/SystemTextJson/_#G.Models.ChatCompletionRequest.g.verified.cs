@@ -53,8 +53,8 @@ namespace G
         /// Sequences where the API will stop generating
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("stop")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.AnyOfJsonConverter<string, global::System.Collections.Generic.IList<string>, object>))]
-        public global::G.AnyOf<string, global::System.Collections.Generic.IList<string>, object>? Stop { get; set; }
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.AnyOfJsonConverter<string, global::System.Collections.Generic.IList<string>>))]
+        public global::G.AnyOf<string, global::System.Collections.Generic.IList<string>>? Stop { get; set; }
 
         /// <summary>
         /// Maximum number of tokens to generate
@@ -134,7 +134,7 @@ namespace G
             double? topP,
             int? n,
             bool? stream,
-            global::G.AnyOf<string, global::System.Collections.Generic.IList<string>, object>? stop,
+            global::G.AnyOf<string, global::System.Collections.Generic.IList<string>>? stop,
             int? maxTokens,
             double? presencePenalty,
             double? frequencyPenalty,

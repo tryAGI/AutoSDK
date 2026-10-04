@@ -13,8 +13,8 @@ namespace G
         /// Agent type controlling prompt rendering.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("agent_type")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.AnyOfJsonConverter<global::G.AgentType?, string, object>))]
-        public global::G.AnyOf<global::G.AgentType?, string, object>? AgentType { get; set; }
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.AnyOfJsonConverter<global::G.AgentType?, string>))]
+        public global::G.AnyOf<global::G.AgentType?, string>? AgentType { get; set; }
 
         /// <summary>
         /// Whether this agent uses git-backed memory with structured labels.<br/>
@@ -72,7 +72,7 @@ namespace G
 #endif
         public Memory(
             global::System.Collections.Generic.IList<global::G.Block> blocks,
-            global::G.AnyOf<global::G.AgentType?, string, object>? agentType,
+            global::G.AnyOf<global::G.AgentType?, string>? agentType,
             bool? gitEnabled,
             global::System.Collections.Generic.IList<global::G.FileBlock>? fileBlocks,
             string? promptTemplate)

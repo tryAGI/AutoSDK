@@ -21,9 +21,8 @@ namespace G
         /// Search space will be constrained by these pairs of vectors
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("context")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.AnyOfJsonConverter<global::G.ContextPair, global::System.Collections.Generic.IList<global::G.ContextPair>, object>))]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::G.AnyOf<global::G.ContextPair, global::System.Collections.Generic.IList<global::G.ContextPair>, object> Context { get; set; }
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.AnyOfJsonConverter<global::G.ContextPair, global::System.Collections.Generic.IList<global::G.ContextPair>>))]
+        public global::G.AnyOf<global::G.ContextPair, global::System.Collections.Generic.IList<global::G.ContextPair>>? Context { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -43,7 +42,7 @@ namespace G
 #endif
         public DiscoverInput(
             global::G.VectorInput target,
-            global::G.AnyOf<global::G.ContextPair, global::System.Collections.Generic.IList<global::G.ContextPair>, object> context)
+            global::G.AnyOf<global::G.ContextPair, global::System.Collections.Generic.IList<global::G.ContextPair>>? context)
         {
             this.Target = target;
             this.Context = context;

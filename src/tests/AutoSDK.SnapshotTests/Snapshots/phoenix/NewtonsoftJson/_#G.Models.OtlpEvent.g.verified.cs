@@ -31,7 +31,7 @@ namespace G
         /// time_unix_nano is the time the event occurred. Value is UNIX Epoch time in nanoseconds since 00:00:00 UTC on 1 January 1970.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("time_unix_nano")]
-        public global::G.AnyOf<long?, string, object>? TimeUnixNano { get; set; }
+        public global::G.AnyOf<long?, string>? TimeUnixNano { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -58,7 +58,7 @@ namespace G
             global::System.Collections.Generic.IList<global::G.OtlpKeyValue>? attributes,
             int? droppedAttributesCount,
             string? name,
-            global::G.AnyOf<long?, string, object>? timeUnixNano)
+            global::G.AnyOf<long?, string>? timeUnixNano)
         {
             this.Attributes = attributes;
             this.DroppedAttributesCount = droppedAttributesCount;

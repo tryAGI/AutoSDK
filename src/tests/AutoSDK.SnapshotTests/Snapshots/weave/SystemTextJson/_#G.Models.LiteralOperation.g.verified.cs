@@ -18,9 +18,8 @@ namespace G
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("$literal")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.AnyOfJsonConverter<string, int?, double?, bool?, global::System.Collections.Generic.Dictionary<string, global::G.LiteralOperation>, global::System.Collections.Generic.IList<global::G.LiteralOperation>, object>))]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::G.AnyOf<string, int?, double?, bool?, global::System.Collections.Generic.Dictionary<string, global::G.LiteralOperation>, global::System.Collections.Generic.IList<global::G.LiteralOperation>, object> x_literal { get; set; }
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.AnyOfJsonConverter<string, int?, double?, bool?, global::System.Collections.Generic.Dictionary<string, global::G.LiteralOperation>, global::System.Collections.Generic.IList<global::G.LiteralOperation>>))]
+        public global::G.AnyOf<string, int?, double?, bool?, global::System.Collections.Generic.Dictionary<string, global::G.LiteralOperation>, global::System.Collections.Generic.IList<global::G.LiteralOperation>>? x_literal { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -36,7 +35,7 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public LiteralOperation(
-            global::G.AnyOf<string, int?, double?, bool?, global::System.Collections.Generic.Dictionary<string, global::G.LiteralOperation>, global::System.Collections.Generic.IList<global::G.LiteralOperation>, object> x_literal)
+            global::G.AnyOf<string, int?, double?, bool?, global::System.Collections.Generic.Dictionary<string, global::G.LiteralOperation>, global::System.Collections.Generic.IList<global::G.LiteralOperation>>? x_literal)
         {
             this.x_literal = x_literal;
         }

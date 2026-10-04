@@ -324,14 +324,6 @@ namespace G
                                             name: "\"entity_detection\"");
                                     }
                                 }
-                                else if ((request.EntityDetection).GetValueOrDefault().TryPickValue3(out var __valueEntityDetection3))
-                                {
-
-                                    var __contentEntityDetection3 = new global::System.Net.Http.StringContent((__valueEntityDetection3!).ToString() ?? string.Empty);
-                                    __httpRequestContent.Add(
-                                        content: __contentEntityDetection3,
-                                        name: "\"entity_detection\"");
-                                }
                             }
 
                             if (request.NoVerbatim != default)
@@ -783,8 +775,8 @@ namespace G
             double? temperature = default,
             int? seed = default,
             bool? useMultiChannel = default,
-            global::G.AnyOf<string, object, object>? webhookMetadata = default,
-            global::G.AnyOf<string, global::System.Collections.Generic.IList<string>, object>? entityDetection = default,
+            global::G.AnyOf<string, object>? webhookMetadata = default,
+            global::G.AnyOf<string, global::System.Collections.Generic.IList<string>>? entityDetection = default,
             bool? noVerbatim = default,
             global::System.Collections.Generic.IList<string>? keyterms = default,
             global::G.AutoSDKRequestOptions? requestOptions = default,

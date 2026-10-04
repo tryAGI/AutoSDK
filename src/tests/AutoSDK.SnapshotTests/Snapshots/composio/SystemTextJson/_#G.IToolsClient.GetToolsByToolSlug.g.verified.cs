@@ -18,7 +18,7 @@ namespace G
         global::System.Threading.Tasks.Task<global::G.Tool> GetToolsByToolSlugAsync(
             string toolSlug,
             string? version = default,
-            global::G.OneOf<object, string, global::System.Collections.Generic.Dictionary<string, string>>? toolkitVersions = default,
+            global::G.OneOf<string, global::System.Collections.Generic.Dictionary<string, string>>? toolkitVersions = default,
             global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
@@ -34,7 +34,7 @@ namespace G
         global::System.Threading.Tasks.Task<global::G.AutoSDKHttpResponse<global::G.Tool>> GetToolsByToolSlugAsResponseAsync(
             string toolSlug,
             string? version = default,
-            global::G.OneOf<object, string, global::System.Collections.Generic.Dictionary<string, string>>? toolkitVersions = default,
+            global::G.OneOf<string, global::System.Collections.Generic.Dictionary<string, string>>? toolkitVersions = default,
             global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }

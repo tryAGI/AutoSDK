@@ -18,7 +18,7 @@ namespace G
             string? before,
             bool? includeTotal,
             global::System.Collections.Generic.IList<global::G.StoreFileStatus>? statuses,
-            global::G.AnyOf<global::G.SearchFilter, global::G.SearchFilterCondition, global::System.Collections.Generic.IList<global::G.AnyOf<global::G.SearchFilter, global::G.SearchFilterCondition>>, object>? metadataFilter,
+            global::G.AnyOf<global::G.SearchFilter, global::G.SearchFilterCondition, global::System.Collections.Generic.IList<global::G.AnyOf<global::G.SearchFilter, global::G.SearchFilterCondition>>>? metadataFilter,
             global::System.Threading.CancellationToken cancellationToken);
         partial void Complete(
             global::System.CommandLine.ParseResult parseResult,
@@ -62,7 +62,7 @@ namespace G
             Description = @"Status to filter by",
         };
 
-        private global::System.CommandLine.Option<global::G.AnyOf<global::G.SearchFilter, global::G.SearchFilterCondition, global::System.Collections.Generic.IList<global::G.AnyOf<global::G.SearchFilter, global::G.SearchFilterCondition>>, object>?> MetadataFilter { get; } = new(
+        private global::System.CommandLine.Option<global::G.AnyOf<global::G.SearchFilter, global::G.SearchFilterCondition, global::System.Collections.Generic.IList<global::G.AnyOf<global::G.SearchFilter, global::G.SearchFilterCondition>>>?> MetadataFilter { get; } = new(
             name: "metadataFilter")
         {
             Description = @"Metadata filter to apply to the query",

@@ -13,25 +13,25 @@ namespace G
         /// Default Value: {"__missing__":"__missing__"}
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("name")]
-        public global::G.AnyOf<string, global::G.Missing, object>? Name { get; set; }
+        public global::G.AnyOf<string, global::G.Missing>? Name { get; set; }
 
         /// <summary>
         /// Default Value: {"__missing__":"__missing__"}
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("description")]
-        public global::G.AnyOf<string, global::G.Missing, object>? Description { get; set; }
+        public global::G.AnyOf<string, global::G.Missing>? Description { get; set; }
 
         /// <summary>
         /// Default Value: {"__missing__":"__missing__"}
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("inputs_schema_definition")]
-        public global::G.AnyOf<object, global::G.Missing, object>? InputsSchemaDefinition { get; set; }
+        public global::G.AnyOf<object, global::G.Missing>? InputsSchemaDefinition { get; set; }
 
         /// <summary>
         /// Default Value: {"__missing__":"__missing__"}
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("outputs_schema_definition")]
-        public global::G.AnyOf<object, global::G.Missing, object>? OutputsSchemaDefinition { get; set; }
+        public global::G.AnyOf<object, global::G.Missing>? OutputsSchemaDefinition { get; set; }
 
         /// <summary>
         /// 
@@ -43,7 +43,7 @@ namespace G
         /// Default Value: {"__missing__":"__missing__"}
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("transformations")]
-        public global::G.AnyOf<global::System.Collections.Generic.IList<global::G.DatasetTransformation>, global::G.Missing, object>? Transformations { get; set; }
+        public global::G.AnyOf<global::System.Collections.Generic.IList<global::G.DatasetTransformation>, global::G.Missing>? Transformations { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -71,12 +71,12 @@ namespace G
         /// Default Value: {"__missing__":"__missing__"}
         /// </param>
         public DatasetUpdate(
-            global::G.AnyOf<string, global::G.Missing, object>? name,
-            global::G.AnyOf<string, global::G.Missing, object>? description,
-            global::G.AnyOf<object, global::G.Missing, object>? inputsSchemaDefinition,
-            global::G.AnyOf<object, global::G.Missing, object>? outputsSchemaDefinition,
+            global::G.AnyOf<string, global::G.Missing>? name,
+            global::G.AnyOf<string, global::G.Missing>? description,
+            global::G.AnyOf<object, global::G.Missing>? inputsSchemaDefinition,
+            global::G.AnyOf<object, global::G.Missing>? outputsSchemaDefinition,
             global::System.Collections.Generic.Dictionary<string, global::G.ExampleUpdate>? patchExamples,
-            global::G.AnyOf<global::System.Collections.Generic.IList<global::G.DatasetTransformation>, global::G.Missing, object>? transformations)
+            global::G.AnyOf<global::System.Collections.Generic.IList<global::G.DatasetTransformation>, global::G.Missing>? transformations)
         {
             this.Name = name;
             this.Description = description;

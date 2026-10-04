@@ -48,7 +48,7 @@ namespace G
             string? upstreamRepoHandle = default,
             global::System.Collections.Generic.IList<global::System.Guid>? tagValueId = default,
             string? sortField = default,
-            global::G.AnyOf<string, string, object>? sortDirection = default,
+            string? sortDirection = default,
             global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
@@ -94,7 +94,7 @@ namespace G
             string? upstreamRepoHandle = default,
             global::System.Collections.Generic.IList<global::System.Guid>? tagValueId = default,
             string? sortField = default,
-            global::G.AnyOf<string, string, object>? sortDirection = default,
+            string? sortDirection = default,
             global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }

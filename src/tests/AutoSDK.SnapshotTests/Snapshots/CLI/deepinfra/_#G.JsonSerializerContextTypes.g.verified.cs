@@ -562,7 +562,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.AnyOf<string, global::System.Collections.Generic.IList<string>, object>? Type132 { get; set; }
+        public global::G.AnyOf<string, global::System.Collections.Generic.IList<string>>? Type132 { get; set; }
         /// <summary>
         /// 
         /// </summary>
@@ -755,7 +755,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.AnyOf<string, global::System.Collections.Generic.List<string>, object>? ListType20 { get; set; }
+        public global::G.AnyOf<string, global::System.Collections.Generic.List<string>>? ListType20 { get; set; }
         /// <summary>
         /// 
         /// </summary>

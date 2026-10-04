@@ -17,8 +17,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("$literal", Required = global::Newtonsoft.Json.Required.Always)]
-        public global::G.AnyOf<string, int?, double?, bool?, global::System.Collections.Generic.Dictionary<string, global::G.LiteralOperation>, global::System.Collections.Generic.IList<global::G.LiteralOperation>, object> x_literal { get; set; } = default!;
+        [global::Newtonsoft.Json.JsonProperty("$literal")]
+        public global::G.AnyOf<string, int?, double?, bool?, global::System.Collections.Generic.Dictionary<string, global::G.LiteralOperation>, global::System.Collections.Generic.IList<global::G.LiteralOperation>>? x_literal { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -31,7 +31,7 @@ namespace G
         /// </summary>
         /// <param name="x_literal"></param>
         public LiteralOperation(
-            global::G.AnyOf<string, int?, double?, bool?, global::System.Collections.Generic.Dictionary<string, global::G.LiteralOperation>, global::System.Collections.Generic.IList<global::G.LiteralOperation>, object> x_literal)
+            global::G.AnyOf<string, int?, double?, bool?, global::System.Collections.Generic.Dictionary<string, global::G.LiteralOperation>, global::System.Collections.Generic.IList<global::G.LiteralOperation>>? x_literal)
         {
             this.x_literal = x_literal;
         }

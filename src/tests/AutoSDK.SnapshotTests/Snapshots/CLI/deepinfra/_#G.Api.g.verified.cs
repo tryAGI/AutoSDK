@@ -85,8 +85,8 @@ namespace G
                     new global::G.JsonConverters.AnyOfJsonConverter<global::G.ModelPricingTime, global::G.ModelPricingUptime, global::G.ModelPricingTokens, global::G.ModelPricingInputLength, global::G.ModelPricingInputTokens, global::G.ModelPricingInputCharacterLength, global::G.ModelPricingImageUnits>(),
                     new global::G.JsonConverters.AnyOfJsonConverter<global::G.ModelPricingTime, global::G.ModelPricingTokens, global::G.ModelPricingInputLength, global::G.ModelPricingInputTokens, global::G.ModelPricingUptime, global::G.ModelPricingInputCharacterLength, global::G.ModelPricingImageUnits>(),
                     new global::G.JsonConverters.AnyOfJsonConverter<global::G.ChatCompletionToolMessage, global::G.ChatCompletionAssistantMessage, global::G.ChatCompletionUserMessage, global::G.ChatCompletionSystemMessage>(),
-                    new global::G.JsonConverters.AnyOfJsonConverter<string, global::System.Collections.Generic.IList<string>, object>(),
-                    new global::G.JsonConverters.AnyOfJsonConverter<string, global::System.Collections.Generic.IList<string>, object>(),
+                    new global::G.JsonConverters.AnyOfJsonConverter<string, global::System.Collections.Generic.IList<string>>(),
+                    new global::G.JsonConverters.AnyOfJsonConverter<string, global::System.Collections.Generic.IList<string>>(),
                     new global::G.JsonConverters.AnyOfJsonConverter<global::System.Collections.Generic.IList<string>, string>(),
                     new global::G.JsonConverters.UnixTimestampJsonConverter(),
                 }

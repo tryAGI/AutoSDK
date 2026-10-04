@@ -43,8 +43,8 @@ namespace G
         /// The extract model to use for data extraction. If not provided, uses the default for the extraction mode.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("extract_model")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.AnyOfJsonConverter<global::G.ExtractModels?, string, object>))]
-        public global::G.AnyOf<global::G.ExtractModels?, string, object>? ExtractModel { get; set; }
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.AnyOfJsonConverter<global::G.ExtractModels?, string>))]
+        public global::G.AnyOf<global::G.ExtractModels?, string>? ExtractModel { get; set; }
 
         /// <summary>
         /// DEPRECATED: Whether to use fast mode for multimodal extraction.<br/>
@@ -193,7 +193,7 @@ namespace G
             global::G.ExtractTarget? extractionTarget,
             global::G.ExtractMode? extractionMode,
             global::G.PublicModelName? parseModel,
-            global::G.AnyOf<global::G.ExtractModels?, string, object>? extractModel,
+            global::G.AnyOf<global::G.ExtractModels?, string>? extractModel,
             bool? multimodalFastMode,
             string? systemPrompt,
             bool? useReasoning,

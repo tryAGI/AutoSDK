@@ -60,7 +60,7 @@ namespace G
         /// Extracted data conforming to the data_schema. Returns a single object for per_doc, or an array for per_page / per_table_row.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("extract_result")]
-        public global::G.AnyOf<object, global::System.Collections.Generic.IList<object>, object>? ExtractResult { get; set; }
+        public global::G.AnyOf<object, global::System.Collections.Generic.IList<object>>? ExtractResult { get; set; }
 
         /// <summary>
         /// Extraction metadata including per-field info
@@ -146,7 +146,7 @@ namespace G
             string? configurationId,
             global::G.ExtractConfiguration? configuration,
             string? errorMessage,
-            global::G.AnyOf<object, global::System.Collections.Generic.IList<object>, object>? extractResult,
+            global::G.AnyOf<object, global::System.Collections.Generic.IList<object>>? extractResult,
             global::G.ExtractJobMetadata? extractMetadata,
             global::G.ExtractV2JobMetadata? metadata)
         {

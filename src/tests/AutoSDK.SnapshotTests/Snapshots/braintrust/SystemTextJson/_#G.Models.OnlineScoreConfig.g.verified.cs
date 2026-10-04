@@ -51,8 +51,8 @@ namespace G
         /// The scope at which to run the functions. Defaults to span-level execution. Trace/group scope requires all functions to be facets.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("scope")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.AnyOfJsonConverter<global::G.SpanScope, global::G.TraceScope, global::G.GroupScope, object>))]
-        public global::G.AnyOf<global::G.SpanScope, global::G.TraceScope, global::G.GroupScope, object>? Scope { get; set; }
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.AnyOfJsonConverter<global::G.SpanScope, global::G.TraceScope, global::G.GroupScope>))]
+        public global::G.AnyOf<global::G.SpanScope, global::G.TraceScope, global::G.GroupScope>? Scope { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -94,7 +94,7 @@ namespace G
             bool? applyToRootSpan,
             global::System.Collections.Generic.IList<string>? applyToSpanNames,
             bool? skipLogging,
-            global::G.AnyOf<global::G.SpanScope, global::G.TraceScope, global::G.GroupScope, object>? scope)
+            global::G.AnyOf<global::G.SpanScope, global::G.TraceScope, global::G.GroupScope>? scope)
         {
             this.SamplingRate = samplingRate;
             this.Scorers = scorers ?? throw new global::System.ArgumentNullException(nameof(scorers));

@@ -103,7 +103,7 @@ namespace G
         /// Configuration for backup LLM cascading. Can be disabled, use system defaults, or specify custom order.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("backup_llm_config")]
-        public global::G.AnyOf<global::G.BackupLLMDefault, global::G.BackupLLMDisabled, global::G.BackupLLMOverride, object>? BackupLlmConfig { get; set; }
+        public global::G.AnyOf<global::G.BackupLLMDefault, global::G.BackupLLMDisabled, global::G.BackupLLMOverride>? BackupLlmConfig { get; set; }
 
         /// <summary>
         /// Time in seconds before cascading to backup LLM. Must be between 2 and 15 seconds.
@@ -196,7 +196,7 @@ namespace G
             bool? ignoreDefaultPersonality,
             global::G.RagConfigWorkflowOverride? rag,
             string? timezone,
-            global::G.AnyOf<global::G.BackupLLMDefault, global::G.BackupLLMDisabled, global::G.BackupLLMOverride, object>? backupLlmConfig,
+            global::G.AnyOf<global::G.BackupLLMDefault, global::G.BackupLLMDisabled, global::G.BackupLLMOverride>? backupLlmConfig,
             double? cascadeTimeoutSeconds,
             global::System.Collections.Generic.IList<global::G.ToolsVariant1Item>? tools)
         {

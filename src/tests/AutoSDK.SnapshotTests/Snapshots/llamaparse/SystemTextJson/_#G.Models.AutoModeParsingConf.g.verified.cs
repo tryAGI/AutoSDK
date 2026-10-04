@@ -22,8 +22,8 @@ namespace G
         /// Tier version when overriding tier. Required when tier is specified
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("version")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.AnyOfJsonConverter<global::G.AutoModeParsingConfVersion?, string, object>))]
-        public global::G.AnyOf<global::G.AutoModeParsingConfVersion?, string, object>? Version { get; set; }
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.AnyOfJsonConverter<global::G.AutoModeParsingConfVersion?, string>))]
+        public global::G.AnyOf<global::G.AutoModeParsingConfVersion?, string>? Version { get; set; }
 
         /// <summary>
         /// Custom AI instructions for matched pages. Overrides the base custom_prompt
@@ -153,7 +153,7 @@ namespace G
 #endif
         public AutoModeParsingConf(
             global::G.AutoModeParsingConfTier? tier,
-            global::G.AnyOf<global::G.AutoModeParsingConfVersion?, string, object>? version,
+            global::G.AnyOf<global::G.AutoModeParsingConfVersion?, string>? version,
             string? customPrompt,
             global::G.AutoModeIgnoreOptions? ignore,
             bool? aggressiveTableExtraction,

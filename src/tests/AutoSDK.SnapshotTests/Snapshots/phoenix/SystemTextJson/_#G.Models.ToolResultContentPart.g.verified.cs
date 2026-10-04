@@ -27,9 +27,8 @@ namespace G
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("tool_result")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.AnyOfJsonConverter<bool?, int?, double?, string, object, global::System.Collections.Generic.IList<object>, object>))]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::G.AnyOf<bool?, int?, double?, string, object, global::System.Collections.Generic.IList<object>, object> ToolResult { get; set; }
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.AnyOfJsonConverter<bool?, int?, double?, string, object, global::System.Collections.Generic.IList<object>>))]
+        public global::G.AnyOf<bool?, int?, double?, string, object, global::System.Collections.Generic.IList<object>>? ToolResult { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -48,7 +47,7 @@ namespace G
 #endif
         public ToolResultContentPart(
             string toolCallId,
-            global::G.AnyOf<bool?, int?, double?, string, object, global::System.Collections.Generic.IList<object>, object> toolResult,
+            global::G.AnyOf<bool?, int?, double?, string, object, global::System.Collections.Generic.IList<object>>? toolResult,
             string type = "tool_result")
         {
             this.Type = type;
@@ -61,6 +60,18 @@ namespace G
         /// </summary>
         public ToolResultContentPart()
         {
+        }
+
+        /// <summary>
+        /// Creates a new <see cref="ToolResultContentPart"/> from its single non-const required field,
+        /// hardcoding any const discriminator fields.
+        /// </summary>
+        public static ToolResultContentPart FromToolCallId(string toolCallId)
+        {
+            return new ToolResultContentPart
+            {
+                ToolCallId = toolCallId,
+            };
         }
 
     }

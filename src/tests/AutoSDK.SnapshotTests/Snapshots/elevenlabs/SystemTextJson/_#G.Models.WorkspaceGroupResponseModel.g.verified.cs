@@ -40,8 +40,8 @@ namespace G
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("group_usage_limit")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.AnyOfJsonConverter<int?, string, object>))]
-        public global::G.AnyOf<int?, string, object>? GroupUsageLimit { get; set; }
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.AnyOfJsonConverter<int?, string>))]
+        public global::G.AnyOf<int?, string>? GroupUsageLimit { get; set; }
 
         /// <summary>
         /// 
@@ -79,7 +79,7 @@ namespace G
             string id,
             global::System.Collections.Generic.IList<string> members,
             global::System.Collections.Generic.IList<global::G.WorkspaceGroupPermission>? permissions,
-            global::G.AnyOf<int?, string, object>? groupUsageLimit,
+            global::G.AnyOf<int?, string>? groupUsageLimit,
             int? characterCount,
             string? scimExternalId)
         {

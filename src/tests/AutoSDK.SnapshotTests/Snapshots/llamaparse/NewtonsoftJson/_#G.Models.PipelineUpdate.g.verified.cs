@@ -21,7 +21,7 @@ namespace G
         /// Configuration for the transformation.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("transform_config")]
-        public global::G.AnyOf<global::G.AutoTransformConfig, global::G.AdvancedModeTransformConfig, object>? TransformConfig { get; set; }
+        public global::G.AnyOf<global::G.AutoTransformConfig, global::G.AdvancedModeTransformConfig>? TransformConfig { get; set; }
 
         /// <summary>
         /// Configuration for the sparse model used in hybrid search.
@@ -124,7 +124,7 @@ namespace G
         /// </param>
         public PipelineUpdate(
             global::G.EmbeddingConfigVariant13? embeddingConfig,
-            global::G.AnyOf<global::G.AutoTransformConfig, global::G.AdvancedModeTransformConfig, object>? transformConfig,
+            global::G.AnyOf<global::G.AutoTransformConfig, global::G.AdvancedModeTransformConfig>? transformConfig,
             global::G.SparseModelConfig? sparseModelConfig,
             global::System.Guid? dataSinkId,
             global::System.Guid? embeddingModelConfigId,

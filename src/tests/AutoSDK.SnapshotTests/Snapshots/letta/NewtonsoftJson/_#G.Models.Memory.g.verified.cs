@@ -13,7 +13,7 @@ namespace G
         /// Agent type controlling prompt rendering.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("agent_type")]
-        public global::G.AnyOf<global::G.AgentType?, string, object>? AgentType { get; set; }
+        public global::G.AnyOf<global::G.AgentType?, string>? AgentType { get; set; }
 
         /// <summary>
         /// Whether this agent uses git-backed memory with structured labels.<br/>
@@ -67,7 +67,7 @@ namespace G
         /// </param>
         public Memory(
             global::System.Collections.Generic.IList<global::G.Block> blocks,
-            global::G.AnyOf<global::G.AgentType?, string, object>? agentType,
+            global::G.AnyOf<global::G.AgentType?, string>? agentType,
             bool? gitEnabled,
             global::System.Collections.Generic.IList<global::G.FileBlock>? fileBlocks,
             string? promptTemplate)

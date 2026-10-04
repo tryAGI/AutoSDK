@@ -358,7 +358,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.AnyOf<global::G.VlmConvertOptions, object, object>? Type81 { get; set; }
+        public global::G.AnyOf<global::G.VlmConvertOptions, object>? Type81 { get; set; }
         /// <summary>
         /// 
         /// </summary>
@@ -366,7 +366,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.AnyOf<global::G.PictureDescriptionVlmEngineOptions, object, object>? Type83 { get; set; }
+        public global::G.AnyOf<global::G.PictureDescriptionVlmEngineOptions, object>? Type83 { get; set; }
         /// <summary>
         /// 
         /// </summary>
@@ -374,7 +374,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.AnyOf<global::G.CodeFormulaVlmOptions, object, object>? Type85 { get; set; }
+        public global::G.AnyOf<global::G.CodeFormulaVlmOptions, object>? Type85 { get; set; }
         /// <summary>
         /// 
         /// </summary>

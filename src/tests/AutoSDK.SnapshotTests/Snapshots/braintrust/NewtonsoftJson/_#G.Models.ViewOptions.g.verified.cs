@@ -83,43 +83,6 @@ namespace G
         public global::G.ViewOptionsTableViewOptions PickTableViewOptions() => TableViewOptions is { } value
             ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'TableViewOptions' but the value was {ToString()}.");
-
-        /// <summary>
-        /// 
-        /// </summary>
-#if NET6_0_OR_GREATER
-        public object? ViewOptionsVariant3 { get; init; }
-#else
-        public object? ViewOptionsVariant3 { get; }
-#endif
-
-        /// <summary>
-        /// 
-        /// </summary>
-#if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(ViewOptionsVariant3))]
-#endif
-        public bool IsViewOptionsVariant3 => ViewOptionsVariant3 != null;
-
-        /// <summary>
-        /// 
-        /// </summary>
-        public bool TryPickViewOptionsVariant3(
-#if NET6_0_OR_GREATER
-            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
-#endif
-            out object? value)
-        {
-            value = ViewOptionsVariant3;
-            return IsViewOptionsVariant3;
-        }
-
-        /// <summary>
-        /// 
-        /// </summary>
-        public object PickViewOptionsVariant3() => ViewOptionsVariant3 is { } value
-            ? value
-            : throw new global::System.InvalidOperationException($"Expected union variant 'ViewOptionsVariant3' but the value was {ToString()}.");
         /// <summary>
         /// 
         /// </summary>
@@ -171,20 +134,17 @@ namespace G
         /// </summary>
         public ViewOptions(
             global::G.ViewOptionsMonitorViewOptions? monitorViewOptions,
-            global::G.ViewOptionsTableViewOptions? tableViewOptions,
-            object? viewOptionsVariant3
+            global::G.ViewOptionsTableViewOptions? tableViewOptions
             )
         {
             MonitorViewOptions = monitorViewOptions;
             TableViewOptions = tableViewOptions;
-            ViewOptionsVariant3 = viewOptionsVariant3;
         }
 
         /// <summary>
         /// 
         /// </summary>
         public object? Object =>
-            ViewOptionsVariant3 as object ??
             TableViewOptions as object ??
             MonitorViewOptions as object 
             ;
@@ -194,8 +154,7 @@ namespace G
         /// </summary>
         public override string? ToString() =>
             MonitorViewOptions?.ToString() ??
-            TableViewOptions?.ToString() ??
-            ViewOptionsVariant3?.ToString() 
+            TableViewOptions?.ToString() 
             ;
 
         /// <summary>
@@ -203,7 +162,7 @@ namespace G
         /// </summary>
         public bool Validate()
         {
-            return IsMonitorViewOptions || IsTableViewOptions || IsViewOptionsVariant3;
+            return IsMonitorViewOptions || IsTableViewOptions;
         }
 
         /// <summary>
@@ -212,7 +171,6 @@ namespace G
         public TResult? Match<TResult>(
             global::System.Func<global::G.ViewOptionsMonitorViewOptions, TResult>? monitorViewOptions = null,
             global::System.Func<global::G.ViewOptionsTableViewOptions, TResult>? tableViewOptions = null,
-            global::System.Func<object, TResult>? viewOptionsVariant3 = null,
             bool validate = true)
         {
             if (validate)
@@ -228,10 +186,6 @@ namespace G
             {
                 return tableViewOptions(__value1);
             }
-            else if (ViewOptionsVariant3 is { } __value2 && viewOptionsVariant3 != null)
-            {
-                return viewOptionsVariant3(__value2);
-            }
 
             return default(TResult);
         }
@@ -243,8 +197,6 @@ namespace G
             global::System.Action<global::G.ViewOptionsMonitorViewOptions>? monitorViewOptions = null,
 
             global::System.Action<global::G.ViewOptionsTableViewOptions>? tableViewOptions = null,
-
-            global::System.Action<object>? viewOptionsVariant3 = null,
             bool validate = true)
         {
             if (validate)
@@ -259,10 +211,6 @@ namespace G
             else if (TableViewOptions is { } __value1)
             {
                 tableViewOptions?.Invoke(__value1);
-            }
-            else if (ViewOptionsVariant3 is { } __value2)
-            {
-                viewOptionsVariant3?.Invoke(__value2);
             }
         }
 
@@ -272,7 +220,6 @@ namespace G
         public void Switch(
             global::System.Action<global::G.ViewOptionsMonitorViewOptions>? monitorViewOptions = null,
             global::System.Action<global::G.ViewOptionsTableViewOptions>? tableViewOptions = null,
-            global::System.Action<object>? viewOptionsVariant3 = null,
             bool validate = true)
         {
             if (validate)
@@ -287,10 +234,6 @@ namespace G
             else if (TableViewOptions is { } __value1)
             {
                 tableViewOptions?.Invoke(__value1);
-            }
-            else if (ViewOptionsVariant3 is { } __value2)
-            {
-                viewOptionsVariant3?.Invoke(__value2);
             }
         }
 
@@ -305,8 +248,6 @@ namespace G
                 typeof(global::G.ViewOptionsMonitorViewOptions),
                 TableViewOptions,
                 typeof(global::G.ViewOptionsTableViewOptions),
-                ViewOptionsVariant3,
-                typeof(object),
             };
             const int offset = unchecked((int)2166136261);
             const int prime = 16777619;
@@ -324,8 +265,7 @@ namespace G
         {
             return
                 global::System.Collections.Generic.EqualityComparer<global::G.ViewOptionsMonitorViewOptions?>.Default.Equals(MonitorViewOptions, other.MonitorViewOptions) &&
-                global::System.Collections.Generic.EqualityComparer<global::G.ViewOptionsTableViewOptions?>.Default.Equals(TableViewOptions, other.TableViewOptions) &&
-                global::System.Collections.Generic.EqualityComparer<object?>.Default.Equals(ViewOptionsVariant3, other.ViewOptionsVariant3) 
+                global::System.Collections.Generic.EqualityComparer<global::G.ViewOptionsTableViewOptions?>.Default.Equals(TableViewOptions, other.TableViewOptions) 
                 ;
         }
 

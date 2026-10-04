@@ -19,7 +19,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("node_type")]
-        public global::G.AnyOf<global::G.ObjectType?, string, object>? NodeType { get; set; }
+        public global::G.AnyOf<global::G.ObjectType?, string>? NodeType { get; set; }
 
         /// <summary>
         /// 
@@ -57,7 +57,7 @@ namespace G
         /// </param>
         public RelatedNodeInfo(
             string nodeId,
-            global::G.AnyOf<global::G.ObjectType?, string, object>? nodeType,
+            global::G.AnyOf<global::G.ObjectType?, string>? nodeType,
             object? metadata,
             string? hash,
             string? className)

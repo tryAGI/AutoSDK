@@ -25,7 +25,7 @@ namespace G
         /// The configuration for the automation rule
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("config")]
-        public global::G.AnyOf<global::G.PatchProjectAutomationConfigVariant1, global::G.PatchProjectAutomationConfigVariant2, global::G.PatchProjectAutomationConfigVariant3, global::G.PatchProjectAutomationConfigVariant4, global::G.TopicAutomationConfig, object>? Config { get; set; }
+        public global::G.AnyOf<global::G.PatchProjectAutomationConfigVariant1, global::G.PatchProjectAutomationConfigVariant2, global::G.PatchProjectAutomationConfigVariant3, global::G.PatchProjectAutomationConfigVariant4, global::G.TopicAutomationConfig>? Config { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -48,7 +48,7 @@ namespace G
         public PatchProjectAutomation(
             string? name,
             string? description,
-            global::G.AnyOf<global::G.PatchProjectAutomationConfigVariant1, global::G.PatchProjectAutomationConfigVariant2, global::G.PatchProjectAutomationConfigVariant3, global::G.PatchProjectAutomationConfigVariant4, global::G.TopicAutomationConfig, object>? config)
+            global::G.AnyOf<global::G.PatchProjectAutomationConfigVariant1, global::G.PatchProjectAutomationConfigVariant2, global::G.PatchProjectAutomationConfigVariant3, global::G.PatchProjectAutomationConfigVariant4, global::G.TopicAutomationConfig>? config)
         {
             this.Name = name;
             this.Description = description;

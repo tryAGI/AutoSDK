@@ -32,15 +32,15 @@ namespace G
         /// Default Value: openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("function_call")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.AnyOfJsonConverter<string, global::G.MessageFunctionCall, object>))]
-        public global::G.AnyOf<string, global::G.MessageFunctionCall, object>? FunctionCall { get; set; }
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.AnyOfJsonConverter<string, global::G.MessageFunctionCall>))]
+        public global::G.AnyOf<string, global::G.MessageFunctionCall>? FunctionCall { get; set; }
 
         /// <summary>
         /// Default Value: openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("tool_choice")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.AnyOfJsonConverter<string, global::G.ChatToolChoice, object>))]
-        public global::G.AnyOf<string, global::G.ChatToolChoice, object>? ToolChoice { get; set; }
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.AnyOfJsonConverter<string, global::G.ChatToolChoice>))]
+        public global::G.AnyOf<string, global::G.ChatToolChoice>? ToolChoice { get; set; }
 
         /// <summary>
         /// Default Value: chat
@@ -90,8 +90,8 @@ namespace G
             global::System.Collections.Generic.IList<global::G.MessagesItem> messages,
             global::System.Collections.Generic.IList<global::G.Function>? functions,
             global::System.Collections.Generic.IList<global::G.Tool>? tools,
-            global::G.AnyOf<string, global::G.MessageFunctionCall, object>? functionCall,
-            global::G.AnyOf<string, global::G.ChatToolChoice, object>? toolChoice,
+            global::G.AnyOf<string, global::G.MessageFunctionCall>? functionCall,
+            global::G.AnyOf<string, global::G.ChatToolChoice>? toolChoice,
             global::G.ChatPromptType? type,
             global::System.Collections.Generic.IList<string>? inputVariables)
         {

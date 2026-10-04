@@ -20,7 +20,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("content")]
-        public global::G.AnyOf<string, global::System.Collections.Generic.IList<global::G.ChatCompletionContentPartText>, object>? Content { get; set; }
+        public global::G.AnyOf<string, global::System.Collections.Generic.IList<global::G.ChatCompletionContentPartText>>? Content { get; set; }
 
         /// <summary>
         /// 
@@ -63,7 +63,7 @@ namespace G
         /// <param name="reasoning"></param>
         public ChatCompletionMessageParamAssistant(
             global::G.ChatCompletionMessageParamAssistantRole role,
-            global::G.AnyOf<string, global::System.Collections.Generic.IList<global::G.ChatCompletionContentPartText>, object>? content,
+            global::G.AnyOf<string, global::System.Collections.Generic.IList<global::G.ChatCompletionContentPartText>>? content,
             global::G.ChatCompletionMessageParamAssistantFunctionCall? functionCall,
             string? name,
             global::System.Collections.Generic.IList<global::G.ChatCompletionMessageToolCall>? toolCalls,

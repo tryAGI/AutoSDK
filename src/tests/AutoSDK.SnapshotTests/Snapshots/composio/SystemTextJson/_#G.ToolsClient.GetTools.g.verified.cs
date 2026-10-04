@@ -69,7 +69,7 @@ namespace G
             ref string? query,
             ref string? search,
             ref bool? includeDeprecated,
-            ref global::G.OneOf<object, string, global::System.Collections.Generic.Dictionary<string, string>>? toolkitVersions,
+            ref global::G.OneOf<string, global::System.Collections.Generic.Dictionary<string, string>>? toolkitVersions,
             ref double? limit,
             ref string? cursor);
         partial void PrepareGetToolsRequest(
@@ -84,7 +84,7 @@ namespace G
             string? query,
             string? search,
             bool? includeDeprecated,
-            global::G.OneOf<object, string, global::System.Collections.Generic.Dictionary<string, string>>? toolkitVersions,
+            global::G.OneOf<string, global::System.Collections.Generic.Dictionary<string, string>>? toolkitVersions,
             double? limit,
             string? cursor);
         partial void ProcessGetToolsResponse(
@@ -129,7 +129,7 @@ namespace G
             string? query = default,
             string? search = default,
             bool? includeDeprecated = default,
-            global::G.OneOf<object, string, global::System.Collections.Generic.Dictionary<string, string>>? toolkitVersions = default,
+            global::G.OneOf<string, global::System.Collections.Generic.Dictionary<string, string>>? toolkitVersions = default,
             double? limit = default,
             string? cursor = default,
             global::G.AutoSDKRequestOptions? requestOptions = default,
@@ -187,7 +187,7 @@ namespace G
             string? query = default,
             string? search = default,
             bool? includeDeprecated = default,
-            global::G.OneOf<object, string, global::System.Collections.Generic.Dictionary<string, string>>? toolkitVersions = default,
+            global::G.OneOf<string, global::System.Collections.Generic.Dictionary<string, string>>? toolkitVersions = default,
             double? limit = default,
             string? cursor = default,
             global::G.AutoSDKRequestOptions? requestOptions = default,

@@ -72,7 +72,7 @@ namespace G
             bool? fromUi = default,
             string? session = default,
             global::System.Collections.Generic.IList<global::G.WebhookConfiguration>? webhookConfigurations = default,
-            global::G.AnyOf<object, string, object>? dataSchemaOverride = default,
+            global::G.AnyOf<object, string>? dataSchemaOverride = default,
             global::G.ExtractConfig? configOverride = default,
             global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);

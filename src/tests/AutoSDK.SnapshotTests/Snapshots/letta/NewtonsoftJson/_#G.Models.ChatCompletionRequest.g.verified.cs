@@ -51,7 +51,7 @@ namespace G
         /// Sequences where the API will stop generating
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("stop")]
-        public global::G.AnyOf<string, global::System.Collections.Generic.IList<string>, object>? Stop { get; set; }
+        public global::G.AnyOf<string, global::System.Collections.Generic.IList<string>>? Stop { get; set; }
 
         /// <summary>
         /// Maximum number of tokens to generate
@@ -128,7 +128,7 @@ namespace G
             double? topP,
             int? n,
             bool? stream,
-            global::G.AnyOf<string, global::System.Collections.Generic.IList<string>, object>? stop,
+            global::G.AnyOf<string, global::System.Collections.Generic.IList<string>>? stop,
             int? maxTokens,
             double? presencePenalty,
             double? frequencyPenalty,

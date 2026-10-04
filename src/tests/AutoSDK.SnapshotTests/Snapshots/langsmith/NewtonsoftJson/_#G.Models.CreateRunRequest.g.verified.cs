@@ -32,13 +32,13 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("start_time")]
-        public global::G.OneOf<string, double?, object>? StartTime { get; set; }
+        public global::G.OneOf<string, double?>? StartTime { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("end_time")]
-        public global::G.OneOf<string, double?, object>? EndTime { get; set; }
+        public global::G.OneOf<string, double?>? EndTime { get; set; }
 
         /// <summary>
         /// 
@@ -163,8 +163,8 @@ namespace G
             string name,
             global::G.CreateRunRequestRunType runType,
             object? inputs,
-            global::G.OneOf<string, double?, object>? startTime,
-            global::G.OneOf<string, double?, object>? endTime,
+            global::G.OneOf<string, double?>? startTime,
+            global::G.OneOf<string, double?>? endTime,
             object? extra,
             string? error,
             object? serialized,

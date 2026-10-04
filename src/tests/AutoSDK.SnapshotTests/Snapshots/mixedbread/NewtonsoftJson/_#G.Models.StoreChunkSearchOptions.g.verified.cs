@@ -27,13 +27,13 @@ namespace G
         /// Whether to rerank results and optional reranking configuration. Ignored when agentic is enabled (the agent handles ranking).
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("rerank")]
-        public global::G.AnyOf<bool?, global::G.RerankConfig, object>? Rerank { get; set; }
+        public global::G.AnyOf<bool?, global::G.RerankConfig>? Rerank { get; set; }
 
         /// <summary>
         /// Whether to use agentic multi-query search with automatic query decomposition and ranking. When enabled, rewrite_query and rerank options are ignored.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("agentic")]
-        public global::G.AnyOf<bool?, global::G.AgenticSearchConfig, object>? Agentic { get; set; }
+        public global::G.AnyOf<bool?, global::G.AgenticSearchConfig>? Agentic { get; set; }
 
         /// <summary>
         /// Whether to return file metadata<br/>
@@ -83,8 +83,8 @@ namespace G
         public StoreChunkSearchOptions(
             double? scoreThreshold,
             bool? rewriteQuery,
-            global::G.AnyOf<bool?, global::G.RerankConfig, object>? rerank,
-            global::G.AnyOf<bool?, global::G.AgenticSearchConfig, object>? agentic,
+            global::G.AnyOf<bool?, global::G.RerankConfig>? rerank,
+            global::G.AnyOf<bool?, global::G.AgenticSearchConfig>? agentic,
             bool? returnMetadata,
             bool? applySearchRules)
         {

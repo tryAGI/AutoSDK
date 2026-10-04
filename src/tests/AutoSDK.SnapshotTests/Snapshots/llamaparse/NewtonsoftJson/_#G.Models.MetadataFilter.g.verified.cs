@@ -21,8 +21,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("value", Required = global::Newtonsoft.Json.Required.Always)]
-        public global::G.AnyOf<int?, double?, string, global::System.Collections.Generic.IList<string>, global::System.Collections.Generic.IList<double>, global::System.Collections.Generic.IList<int>, object> Value { get; set; } = default!;
+        [global::Newtonsoft.Json.JsonProperty("value")]
+        public global::G.AnyOf<int?, double?, string, global::System.Collections.Generic.IList<string>, global::System.Collections.Generic.IList<double>, global::System.Collections.Generic.IList<int>>? Value { get; set; }
 
         /// <summary>
         /// Vector store filter operator.<br/>
@@ -49,7 +49,7 @@ namespace G
         /// </param>
         public MetadataFilter(
             string key,
-            global::G.AnyOf<int?, double?, string, global::System.Collections.Generic.IList<string>, global::System.Collections.Generic.IList<double>, global::System.Collections.Generic.IList<int>, object> value,
+            global::G.AnyOf<int?, double?, string, global::System.Collections.Generic.IList<string>, global::System.Collections.Generic.IList<double>, global::System.Collections.Generic.IList<int>>? value,
             global::G.FilterOperator? @operator)
         {
             this.Key = key ?? throw new global::System.ArgumentNullException(nameof(key));

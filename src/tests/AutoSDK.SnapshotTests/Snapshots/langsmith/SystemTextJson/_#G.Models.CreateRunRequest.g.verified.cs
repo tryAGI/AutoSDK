@@ -34,15 +34,15 @@ namespace G
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("start_time")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.OneOfJsonConverter<string, double?, object>))]
-        public global::G.OneOf<string, double?, object>? StartTime { get; set; }
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.OneOfJsonConverter<string, double?>))]
+        public global::G.OneOf<string, double?>? StartTime { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("end_time")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.OneOfJsonConverter<string, double?, object>))]
-        public global::G.OneOf<string, double?, object>? EndTime { get; set; }
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.OneOfJsonConverter<string, double?>))]
+        public global::G.OneOf<string, double?>? EndTime { get; set; }
 
         /// <summary>
         /// 
@@ -170,8 +170,8 @@ namespace G
             string name,
             global::G.CreateRunRequestRunType runType,
             object? inputs,
-            global::G.OneOf<string, double?, object>? startTime,
-            global::G.OneOf<string, double?, object>? endTime,
+            global::G.OneOf<string, double?>? startTime,
+            global::G.OneOf<string, double?>? endTime,
             object? extra,
             string? error,
             object? serialized,

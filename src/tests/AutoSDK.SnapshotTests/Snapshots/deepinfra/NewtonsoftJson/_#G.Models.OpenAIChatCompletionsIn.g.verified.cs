@@ -67,7 +67,7 @@ namespace G
         /// up to 16 sequences where the API will stop generating further tokens
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("stop")]
-        public global::G.AnyOf<string, global::System.Collections.Generic.IList<string>, object>? Stop { get; set; }
+        public global::G.AnyOf<string, global::System.Collections.Generic.IList<string>>? Stop { get; set; }
 
         /// <summary>
         /// number of sequences to return<br/>
@@ -236,7 +236,7 @@ namespace G
             double? minP,
             int? topK,
             int? maxTokens,
-            global::G.AnyOf<string, global::System.Collections.Generic.IList<string>, object>? stop,
+            global::G.AnyOf<string, global::System.Collections.Generic.IList<string>>? stop,
             int? n,
             double? presencePenalty,
             double? frequencyPenalty,

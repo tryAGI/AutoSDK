@@ -73,7 +73,7 @@ namespace G
         /// The id of the Audio asset to use, or a list of ids for multi-speaker generation.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("audio_id")]
-        public global::G.AnyOf<global::System.Guid?, global::System.Collections.Generic.IList<global::System.Guid>, object>? AudioId { get; set; }
+        public global::G.AnyOf<global::System.Guid?, global::System.Collections.Generic.IList<global::System.Guid>>? AudioId { get; set; }
 
         /// <summary>
         /// Optional TTS parameters for server-side audio generation. If provided (and audio_id is not), audio will be generated from these params before video generation.
@@ -201,7 +201,7 @@ namespace G
             string? startKeyframeUrl,
             global::System.Guid? endKeyframeId,
             string? endKeyframeUrl,
-            global::G.AnyOf<global::System.Guid?, global::System.Collections.Generic.IList<global::System.Guid>, object>? audioId,
+            global::G.AnyOf<global::System.Guid?, global::System.Collections.Generic.IList<global::System.Guid>>? audioId,
             global::G.GenerateTextToSpeechRequest? audioGeneration,
             int? audioStartMs,
             global::System.Collections.Generic.IList<global::System.Guid>? referenceAudioIds,

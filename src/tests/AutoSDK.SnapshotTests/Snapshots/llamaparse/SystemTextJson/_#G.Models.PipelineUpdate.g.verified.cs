@@ -21,8 +21,8 @@ namespace G
         /// Configuration for the transformation.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("transform_config")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.AnyOfJsonConverter<global::G.AutoTransformConfig, global::G.AdvancedModeTransformConfig, object>))]
-        public global::G.AnyOf<global::G.AutoTransformConfig, global::G.AdvancedModeTransformConfig, object>? TransformConfig { get; set; }
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.AnyOfJsonConverter<global::G.AutoTransformConfig, global::G.AdvancedModeTransformConfig>))]
+        public global::G.AnyOf<global::G.AutoTransformConfig, global::G.AdvancedModeTransformConfig>? TransformConfig { get; set; }
 
         /// <summary>
         /// Configuration for the sparse model used in hybrid search.
@@ -128,7 +128,7 @@ namespace G
 #endif
         public PipelineUpdate(
             global::G.EmbeddingConfigVariant13? embeddingConfig,
-            global::G.AnyOf<global::G.AutoTransformConfig, global::G.AdvancedModeTransformConfig, object>? transformConfig,
+            global::G.AnyOf<global::G.AutoTransformConfig, global::G.AdvancedModeTransformConfig>? transformConfig,
             global::G.SparseModelConfig? sparseModelConfig,
             global::System.Guid? dataSinkId,
             global::System.Guid? embeddingModelConfigId,

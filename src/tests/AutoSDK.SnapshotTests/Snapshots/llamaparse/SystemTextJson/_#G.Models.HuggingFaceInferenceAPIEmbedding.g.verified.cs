@@ -51,8 +51,8 @@ namespace G
         /// Hugging Face token. Will default to the locally saved token. Pass token=False if you don’t want to send your token to the server.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("token")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.AnyOfJsonConverter<string, bool?, object>))]
-        public global::G.AnyOf<string, bool?, object>? Token { get; set; }
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.AnyOfJsonConverter<string, bool?>))]
+        public global::G.AnyOf<string, bool?>? Token { get; set; }
 
         /// <summary>
         /// The maximum number of seconds to wait for a response from the server. Loading a new model in Inference API can take up to several minutes. Defaults to None, meaning it will loop until the server is available.
@@ -141,7 +141,7 @@ namespace G
             global::G.Pooling? pooling,
             string? queryInstruction,
             string? textInstruction,
-            global::G.AnyOf<string, bool?, object>? token,
+            global::G.AnyOf<string, bool?>? token,
             double? timeout,
             global::System.Collections.Generic.Dictionary<string, string>? headers,
             global::System.Collections.Generic.Dictionary<string, string>? cookies,

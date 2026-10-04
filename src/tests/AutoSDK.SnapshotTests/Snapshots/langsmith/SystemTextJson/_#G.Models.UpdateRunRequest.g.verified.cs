@@ -31,8 +31,8 @@ namespace G
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("end_time")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.OneOfJsonConverter<string, double?, object>))]
-        public global::G.OneOf<string, double?, object>? EndTime { get; set; }
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.OneOfJsonConverter<string, double?>))]
+        public global::G.OneOf<string, double?>? EndTime { get; set; }
 
         /// <summary>
         /// 
@@ -124,7 +124,7 @@ namespace G
             global::System.Guid? traceId,
             string? dottedOrder,
             global::System.Guid? parentRunId,
-            global::G.OneOf<string, double?, object>? endTime,
+            global::G.OneOf<string, double?>? endTime,
             string? error,
             object? inputs,
             object? outputs,

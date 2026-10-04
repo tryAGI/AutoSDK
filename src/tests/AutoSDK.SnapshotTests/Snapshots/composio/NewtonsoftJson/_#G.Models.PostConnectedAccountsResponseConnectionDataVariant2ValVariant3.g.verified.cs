@@ -188,13 +188,13 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("expires_in")]
-        public global::G.AnyOf<double?, string, object>? ExpiresIn { get; set; }
+        public global::G.AnyOf<double?, string>? ExpiresIn { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("scope")]
-        public global::G.AnyOf<string, global::System.Collections.Generic.IList<string>, object>? Scope { get; set; }
+        public global::G.AnyOf<string, global::System.Collections.Generic.IList<string>>? Scope { get; set; }
 
         /// <summary>
         /// 
@@ -286,8 +286,8 @@ namespace G
             string? idToken,
             string? tokenType,
             string? refreshToken,
-            global::G.AnyOf<double?, string, object>? expiresIn,
-            global::G.AnyOf<string, global::System.Collections.Generic.IList<string>, object>? scope,
+            global::G.AnyOf<double?, string>? expiresIn,
+            global::G.AnyOf<string, global::System.Collections.Generic.IList<string>>? scope,
             string? webhookSignature,
             global::G.PostConnectedAccountsResponseConnectionDataVariant2ValVariant3AuthedUser? authedUser)
         {

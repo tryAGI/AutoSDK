@@ -18,8 +18,8 @@ namespace G
         /// <summary>
         /// Search space will be constrained by these pairs of vectors
         /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("context", Required = global::Newtonsoft.Json.Required.Always)]
-        public global::G.AnyOf<global::G.ContextPair, global::System.Collections.Generic.IList<global::G.ContextPair>, object> Context { get; set; } = default!;
+        [global::Newtonsoft.Json.JsonProperty("context")]
+        public global::G.AnyOf<global::G.ContextPair, global::System.Collections.Generic.IList<global::G.ContextPair>>? Context { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -36,7 +36,7 @@ namespace G
         /// </param>
         public DiscoverInput(
             global::G.VectorInput target,
-            global::G.AnyOf<global::G.ContextPair, global::System.Collections.Generic.IList<global::G.ContextPair>, object> context)
+            global::G.AnyOf<global::G.ContextPair, global::System.Collections.Generic.IList<global::G.ContextPair>>? context)
         {
             this.Target = target;
             this.Context = context;

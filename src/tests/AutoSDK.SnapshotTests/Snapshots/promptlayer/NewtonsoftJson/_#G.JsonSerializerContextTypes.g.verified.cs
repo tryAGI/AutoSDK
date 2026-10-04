@@ -430,7 +430,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.AnyOf<string, object, object>? Type99 { get; set; }
+        public global::G.AnyOf<string, object>? Type99 { get; set; }
         /// <summary>
         /// 
         /// </summary>
@@ -650,11 +650,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.AnyOf<string, global::G.MessageFunctionCall, object>? Type154 { get; set; }
+        public global::G.AnyOf<string, global::G.MessageFunctionCall>? Type154 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.AnyOf<string, global::G.ChatToolChoice, object>? Type155 { get; set; }
+        public global::G.AnyOf<string, global::G.ChatToolChoice>? Type155 { get; set; }
         /// <summary>
         /// 
         /// </summary>
@@ -742,7 +742,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.AnyOf<object, global::System.Collections.Generic.IList<object>, object>? Type177 { get; set; }
+        public global::G.AnyOf<object, global::System.Collections.Generic.IList<object>>? Type177 { get; set; }
         /// <summary>
         /// 
         /// </summary>
@@ -1142,7 +1142,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.OneOf<string, double?, bool?, byte[], object>? Type277 { get; set; }
+        public global::G.OneOf<string, double?, bool?, byte[]>? Type277 { get; set; }
         /// <summary>
         /// 
         /// </summary>
@@ -1739,7 +1739,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.AnyOf<object, global::System.Collections.Generic.List<object>, object>? ListType26 { get; set; }
+        public global::G.AnyOf<object, global::System.Collections.Generic.List<object>>? ListType26 { get; set; }
         /// <summary>
         /// 
         /// </summary>

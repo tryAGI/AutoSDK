@@ -99,7 +99,7 @@ namespace G
             string? name = default,
             object? metadata = default,
             bool? triggerSync = default,
-            global::G.AnyOf<int?, string, object>? pollingInterval = default,
+            global::G.AnyOf<int?, string>? pollingInterval = default,
             global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }

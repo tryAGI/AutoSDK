@@ -20,8 +20,8 @@ namespace G
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("content")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.AnyOfJsonConverter<string, global::System.Collections.Generic.IList<global::G.ChatCompletionContentPartText>, object>))]
-        public global::G.AnyOf<string, global::System.Collections.Generic.IList<global::G.ChatCompletionContentPartText>, object>? Content { get; set; }
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.AnyOfJsonConverter<string, global::System.Collections.Generic.IList<global::G.ChatCompletionContentPartText>>))]
+        public global::G.AnyOf<string, global::System.Collections.Generic.IList<global::G.ChatCompletionContentPartText>>? Content { get; set; }
 
         /// <summary>
         /// 
@@ -67,7 +67,7 @@ namespace G
 #endif
         public ChatCompletionMessageParamAssistant(
             global::G.ChatCompletionMessageParamAssistantRole role,
-            global::G.AnyOf<string, global::System.Collections.Generic.IList<global::G.ChatCompletionContentPartText>, object>? content,
+            global::G.AnyOf<string, global::System.Collections.Generic.IList<global::G.ChatCompletionContentPartText>>? content,
             global::G.ChatCompletionMessageParamAssistantFunctionCall? functionCall,
             string? name,
             global::System.Collections.Generic.IList<global::G.ChatCompletionMessageToolCall>? toolCalls,

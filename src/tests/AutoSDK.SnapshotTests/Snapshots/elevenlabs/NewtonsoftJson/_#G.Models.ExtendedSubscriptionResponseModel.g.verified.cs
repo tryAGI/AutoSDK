@@ -152,7 +152,7 @@ namespace G
         /// The pending change for the user.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("pending_change")]
-        public global::G.AnyOf<global::G.PendingSubscriptionSwitchResponseModel, global::G.PendingCancellationResponseModel, object>? PendingChange { get; set; }
+        public global::G.AnyOf<global::G.PendingSubscriptionSwitchResponseModel, global::G.PendingCancellationResponseModel>? PendingChange { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -259,7 +259,7 @@ namespace G
             global::G.BillingPeriod? billingPeriod,
             global::G.CharacterRefreshPeriod? characterRefreshPeriod,
             global::G.InvoiceResponseModel? nextInvoice,
-            global::G.AnyOf<global::G.PendingSubscriptionSwitchResponseModel, global::G.PendingCancellationResponseModel, object>? pendingChange)
+            global::G.AnyOf<global::G.PendingSubscriptionSwitchResponseModel, global::G.PendingCancellationResponseModel>? pendingChange)
         {
             this.Tier = tier ?? throw new global::System.ArgumentNullException(nameof(tier));
             this.CharacterCount = characterCount;

@@ -83,7 +83,7 @@ namespace G
             global::System.Collections.Generic.IList<byte[]>? files = default,
             bool? removeBackgroundNoise = default,
             string? description = default,
-            global::G.AnyOf<global::System.Collections.Generic.Dictionary<string, string>, string, object>? labels = default,
+            global::G.AnyOf<global::System.Collections.Generic.Dictionary<string, string>, string>? labels = default,
             global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }

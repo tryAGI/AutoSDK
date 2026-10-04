@@ -31,15 +31,15 @@ namespace G
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("double_value")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.AnyOfJsonConverter<double?, global::G.OtlpDoubleValue?, string, object>))]
-        public global::G.AnyOf<double?, global::G.OtlpDoubleValue?, string, object>? DoubleValue { get; set; }
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.AnyOfJsonConverter<double?, global::G.OtlpDoubleValue?, string>))]
+        public global::G.AnyOf<double?, global::G.OtlpDoubleValue?, string>? DoubleValue { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("int_value")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.AnyOfJsonConverter<int?, string, object>))]
-        public global::G.AnyOf<int?, string, object>? IntValue { get; set; }
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.AnyOfJsonConverter<int?, string>))]
+        public global::G.AnyOf<int?, string>? IntValue { get; set; }
 
         /// <summary>
         /// 
@@ -76,8 +76,8 @@ namespace G
             global::G.OtlpArrayValue? arrayValue,
             bool? boolValue,
             string? bytesValue,
-            global::G.AnyOf<double?, global::G.OtlpDoubleValue?, string, object>? doubleValue,
-            global::G.AnyOf<int?, string, object>? intValue,
+            global::G.AnyOf<double?, global::G.OtlpDoubleValue?, string>? doubleValue,
+            global::G.AnyOf<int?, string>? intValue,
             object? kvlistValue,
             string? stringValue)
         {

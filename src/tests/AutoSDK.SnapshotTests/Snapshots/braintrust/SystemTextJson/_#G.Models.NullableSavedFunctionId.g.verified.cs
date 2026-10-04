@@ -83,43 +83,6 @@ namespace G
         public global::G.NullableSavedFunctionIdGlobal PickGlobal() => Global is { } value
             ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Global' but the value was {ToString()}.");
-
-        /// <summary>
-        /// 
-        /// </summary>
-#if NET6_0_OR_GREATER
-        public object? NullableSavedFunctionIdVariant3 { get; init; }
-#else
-        public object? NullableSavedFunctionIdVariant3 { get; }
-#endif
-
-        /// <summary>
-        /// 
-        /// </summary>
-#if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(NullableSavedFunctionIdVariant3))]
-#endif
-        public bool IsNullableSavedFunctionIdVariant3 => NullableSavedFunctionIdVariant3 != null;
-
-        /// <summary>
-        /// 
-        /// </summary>
-        public bool TryPickNullableSavedFunctionIdVariant3(
-#if NET6_0_OR_GREATER
-            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
-#endif
-            out object? value)
-        {
-            value = NullableSavedFunctionIdVariant3;
-            return IsNullableSavedFunctionIdVariant3;
-        }
-
-        /// <summary>
-        /// 
-        /// </summary>
-        public object PickNullableSavedFunctionIdVariant3() => NullableSavedFunctionIdVariant3 is { } value
-            ? value
-            : throw new global::System.InvalidOperationException($"Expected union variant 'NullableSavedFunctionIdVariant3' but the value was {ToString()}.");
         /// <summary>
         /// 
         /// </summary>
@@ -171,20 +134,17 @@ namespace G
         /// </summary>
         public NullableSavedFunctionId(
             global::G.NullableSavedFunctionIdFunction? function,
-            global::G.NullableSavedFunctionIdGlobal? global,
-            object? nullableSavedFunctionIdVariant3
+            global::G.NullableSavedFunctionIdGlobal? global
             )
         {
             Function = function;
             Global = global;
-            NullableSavedFunctionIdVariant3 = nullableSavedFunctionIdVariant3;
         }
 
         /// <summary>
         /// 
         /// </summary>
         public object? Object =>
-            NullableSavedFunctionIdVariant3 as object ??
             Global as object ??
             Function as object 
             ;
@@ -194,8 +154,7 @@ namespace G
         /// </summary>
         public override string? ToString() =>
             Function?.ToString() ??
-            Global?.ToString() ??
-            NullableSavedFunctionIdVariant3?.ToString() 
+            Global?.ToString() 
             ;
 
         /// <summary>
@@ -203,7 +162,7 @@ namespace G
         /// </summary>
         public bool Validate()
         {
-            return IsFunction || IsGlobal || IsNullableSavedFunctionIdVariant3;
+            return IsFunction || IsGlobal;
         }
 
         /// <summary>
@@ -212,7 +171,6 @@ namespace G
         public TResult? Match<TResult>(
             global::System.Func<global::G.NullableSavedFunctionIdFunction, TResult>? function = null,
             global::System.Func<global::G.NullableSavedFunctionIdGlobal, TResult>? global = null,
-            global::System.Func<object, TResult>? nullableSavedFunctionIdVariant3 = null,
             bool validate = true)
         {
             if (validate)
@@ -228,10 +186,6 @@ namespace G
             {
                 return global(__value1);
             }
-            else if (NullableSavedFunctionIdVariant3 is { } __value2 && nullableSavedFunctionIdVariant3 != null)
-            {
-                return nullableSavedFunctionIdVariant3(__value2);
-            }
 
             return default(TResult);
         }
@@ -243,8 +197,6 @@ namespace G
             global::System.Action<global::G.NullableSavedFunctionIdFunction>? function = null,
 
             global::System.Action<global::G.NullableSavedFunctionIdGlobal>? global = null,
-
-            global::System.Action<object>? nullableSavedFunctionIdVariant3 = null,
             bool validate = true)
         {
             if (validate)
@@ -259,10 +211,6 @@ namespace G
             else if (Global is { } __value1)
             {
                 global?.Invoke(__value1);
-            }
-            else if (NullableSavedFunctionIdVariant3 is { } __value2)
-            {
-                nullableSavedFunctionIdVariant3?.Invoke(__value2);
             }
         }
 
@@ -272,7 +220,6 @@ namespace G
         public void Switch(
             global::System.Action<global::G.NullableSavedFunctionIdFunction>? function = null,
             global::System.Action<global::G.NullableSavedFunctionIdGlobal>? global = null,
-            global::System.Action<object>? nullableSavedFunctionIdVariant3 = null,
             bool validate = true)
         {
             if (validate)
@@ -287,10 +234,6 @@ namespace G
             else if (Global is { } __value1)
             {
                 global?.Invoke(__value1);
-            }
-            else if (NullableSavedFunctionIdVariant3 is { } __value2)
-            {
-                nullableSavedFunctionIdVariant3?.Invoke(__value2);
             }
         }
 
@@ -305,8 +248,6 @@ namespace G
                 typeof(global::G.NullableSavedFunctionIdFunction),
                 Global,
                 typeof(global::G.NullableSavedFunctionIdGlobal),
-                NullableSavedFunctionIdVariant3,
-                typeof(object),
             };
             const int offset = unchecked((int)2166136261);
             const int prime = 16777619;
@@ -324,8 +265,7 @@ namespace G
         {
             return
                 global::System.Collections.Generic.EqualityComparer<global::G.NullableSavedFunctionIdFunction?>.Default.Equals(Function, other.Function) &&
-                global::System.Collections.Generic.EqualityComparer<global::G.NullableSavedFunctionIdGlobal?>.Default.Equals(Global, other.Global) &&
-                global::System.Collections.Generic.EqualityComparer<object?>.Default.Equals(NullableSavedFunctionIdVariant3, other.NullableSavedFunctionIdVariant3) 
+                global::System.Collections.Generic.EqualityComparer<global::G.NullableSavedFunctionIdGlobal?>.Default.Equals(Global, other.Global) 
                 ;
         }
 

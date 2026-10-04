@@ -13,8 +13,8 @@ namespace G
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("content")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.AnyOfJsonConverter<string, object, global::System.Collections.Generic.IList<global::G.ContentChunk>>))]
-        public global::G.AnyOf<string, object, global::System.Collections.Generic.IList<global::G.ContentChunk>>? Content { get; set; }
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.AnyOfJsonConverter<string, global::System.Collections.Generic.IList<global::G.ContentChunk>>))]
+        public global::G.AnyOf<string, global::System.Collections.Generic.IList<global::G.ContentChunk>>? Content { get; set; }
 
         /// <summary>
         /// 
@@ -58,7 +58,7 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public AssistantMessage(
-            global::G.AnyOf<string, object, global::System.Collections.Generic.IList<global::G.ContentChunk>>? content,
+            global::G.AnyOf<string, global::System.Collections.Generic.IList<global::G.ContentChunk>>? content,
             global::System.Collections.Generic.IList<global::G.ToolCall>? toolCalls,
             bool? prefix,
             global::G.AssistantMessageRole? role)

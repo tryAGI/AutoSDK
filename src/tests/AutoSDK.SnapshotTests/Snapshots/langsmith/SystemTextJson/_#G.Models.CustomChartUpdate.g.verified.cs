@@ -20,8 +20,8 @@ namespace G
         /// Default Value: {"__missing__":"__missing__"}
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("description")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.AnyOfJsonConverter<string, global::G.Missing, object>))]
-        public global::G.AnyOf<string, global::G.Missing, object>? Description { get; set; }
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.AnyOfJsonConverter<string, global::G.Missing>))]
+        public global::G.AnyOf<string, global::G.Missing>? Description { get; set; }
 
         /// <summary>
         /// Default Value: {"__missing__":"__missing__"}
@@ -55,15 +55,15 @@ namespace G
         /// Default Value: {"__missing__":"__missing__"}
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("metadata")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.AnyOfJsonConverter<object, global::G.Missing, object>))]
-        public global::G.AnyOf<object, global::G.Missing, object>? Metadata { get; set; }
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.AnyOfJsonConverter<object, global::G.Missing>))]
+        public global::G.AnyOf<object, global::G.Missing>? Metadata { get; set; }
 
         /// <summary>
         /// Default Value: {"__missing__":"__missing__"}
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("common_filters")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.AnyOfJsonConverter<global::G.CustomChartSeriesFilters, global::G.Missing, object>))]
-        public global::G.AnyOf<global::G.CustomChartSeriesFilters, global::G.Missing, object>? CommonFilters { get; set; }
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.AnyOfJsonConverter<global::G.CustomChartSeriesFilters, global::G.Missing>))]
+        public global::G.AnyOf<global::G.CustomChartSeriesFilters, global::G.Missing>? CommonFilters { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -103,13 +103,13 @@ namespace G
 #endif
         public CustomChartUpdate(
             global::G.AnyOf<string, global::G.Missing>? title,
-            global::G.AnyOf<string, global::G.Missing, object>? description,
+            global::G.AnyOf<string, global::G.Missing>? description,
             global::G.AnyOf<int?, global::G.Missing>? index,
             global::G.AnyOf<global::G.CustomChartType?, global::G.Missing>? chartType,
             global::G.AnyOf<global::System.Collections.Generic.IList<global::G.CustomChartSeriesUpdate>, global::G.Missing>? series,
             global::G.AnyOf<global::System.Guid?, global::G.Missing>? sectionId,
-            global::G.AnyOf<object, global::G.Missing, object>? metadata,
-            global::G.AnyOf<global::G.CustomChartSeriesFilters, global::G.Missing, object>? commonFilters)
+            global::G.AnyOf<object, global::G.Missing>? metadata,
+            global::G.AnyOf<global::G.CustomChartSeriesFilters, global::G.Missing>? commonFilters)
         {
             this.Title = title;
             this.Description = description;

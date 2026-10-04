@@ -358,7 +358,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.AnyOf<int?, string, object>? Type81 { get; set; }
+        public global::G.AnyOf<int?, string>? Type81 { get; set; }
         /// <summary>
         /// 
         /// </summary>
@@ -642,7 +642,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.AnyOf<global::G.SearchFilter, global::G.SearchFilterCondition, global::System.Collections.Generic.IList<global::G.AnyOf<global::G.SearchFilter, global::G.SearchFilterCondition>>, object>? Type152 { get; set; }
+        public global::G.AnyOf<global::G.SearchFilter, global::G.SearchFilterCondition, global::System.Collections.Generic.IList<global::G.AnyOf<global::G.SearchFilter, global::G.SearchFilterCondition>>>? Type152 { get; set; }
         /// <summary>
         /// 
         /// </summary>
@@ -682,7 +682,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.AnyOf<global::System.Collections.Generic.IList<global::G.AnyOf<global::G.ConditionOperator?, global::System.Collections.Generic.IList<global::System.Guid>>>, global::System.Collections.Generic.IList<global::System.Guid>, object>? Type162 { get; set; }
+        public global::G.AnyOf<global::System.Collections.Generic.IList<global::G.AnyOf<global::G.ConditionOperator?, global::System.Collections.Generic.IList<global::System.Guid>>>, global::System.Collections.Generic.IList<global::System.Guid>>? Type162 { get; set; }
         /// <summary>
         /// 
         /// </summary>
@@ -838,763 +838,759 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.AnyOf<string, global::System.Guid?, object>? Type201 { get; set; }
+        public global::G.ScoredStoreFile? Type201 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.ScoredStoreFile? Type202 { get; set; }
+        public global::System.Collections.Generic.IList<global::G.ChunksVariant1Item>? Type202 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::G.ChunksVariant1Item>? Type203 { get; set; }
+        public global::G.ChunksVariant1Item? Type203 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.ChunksVariant1Item? Type204 { get; set; }
+        public global::G.MxbaiOmniCoreStoreModelsChunkTypesScoredTextInputChunk? Type204 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.MxbaiOmniCoreStoreModelsChunkTypesScoredTextInputChunk? Type205 { get; set; }
+        public global::G.MxbaiOmniCoreStoreModelsChunkTypesScoredImageUrlInputChunk? Type205 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.MxbaiOmniCoreStoreModelsChunkTypesScoredImageUrlInputChunk? Type206 { get; set; }
+        public global::G.MxbaiOmniCoreStoreModelsChunkTypesScoredAudioUrlInputChunk? Type206 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.MxbaiOmniCoreStoreModelsChunkTypesScoredAudioUrlInputChunk? Type207 { get; set; }
+        public global::G.MxbaiOmniCoreStoreModelsChunkTypesScoredVideoUrlInputChunk? Type207 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.MxbaiOmniCoreStoreModelsChunkTypesScoredVideoUrlInputChunk? Type208 { get; set; }
+        public global::G.ScoredStoreFileChunksVariant1ItemDiscriminator? Type208 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.ScoredStoreFileChunksVariant1ItemDiscriminator? Type209 { get; set; }
+        public global::G.ScoredStoreFileChunksVariant1ItemDiscriminatorType? Type209 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.ScoredStoreFileChunksVariant1ItemDiscriminatorType? Type210 { get; set; }
+        public global::G.ScoredVectorStoreFile? Type210 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.ScoredVectorStoreFile? Type211 { get; set; }
+        public global::System.Collections.Generic.IList<global::G.ChunksVariant1Item2>? Type211 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::G.ChunksVariant1Item2>? Type212 { get; set; }
+        public global::G.ChunksVariant1Item2? Type212 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.ChunksVariant1Item2? Type213 { get; set; }
+        public global::G.MxbaiOmniApiRoutesV1DeprecatedVectorStoresModelsScoredTextInputChunk? Type213 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.MxbaiOmniApiRoutesV1DeprecatedVectorStoresModelsScoredTextInputChunk? Type214 { get; set; }
+        public global::G.MxbaiOmniApiRoutesV1DeprecatedVectorStoresModelsScoredImageUrlInputChunk? Type214 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.MxbaiOmniApiRoutesV1DeprecatedVectorStoresModelsScoredImageUrlInputChunk? Type215 { get; set; }
+        public global::G.MxbaiOmniApiRoutesV1DeprecatedVectorStoresModelsScoredAudioUrlInputChunk? Type215 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.MxbaiOmniApiRoutesV1DeprecatedVectorStoresModelsScoredAudioUrlInputChunk? Type216 { get; set; }
+        public global::G.MxbaiOmniApiRoutesV1DeprecatedVectorStoresModelsScoredVideoUrlInputChunk? Type216 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.MxbaiOmniApiRoutesV1DeprecatedVectorStoresModelsScoredVideoUrlInputChunk? Type217 { get; set; }
+        public global::G.ScoredVectorStoreFileChunksVariant1ItemDiscriminator? Type217 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.ScoredVectorStoreFileChunksVariant1ItemDiscriminator? Type218 { get; set; }
+        public global::G.ScoredVectorStoreFileChunksVariant1ItemDiscriminatorType? Type218 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.ScoredVectorStoreFileChunksVariant1ItemDiscriminatorType? Type219 { get; set; }
+        public global::G.SearchCursorPagination? Type219 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.SearchCursorPagination? Type220 { get; set; }
+        public global::G.Store? Type220 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.Store? Type221 { get; set; }
+        public global::G.StoreConfig? Type221 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.StoreConfig? Type222 { get; set; }
+        public global::G.StoreStatus? Type222 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.StoreStatus? Type223 { get; set; }
+        public global::G.AnyOf<bool?, global::G.RerankConfig>? Type223 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.AnyOf<bool?, global::G.RerankConfig, object>? Type224 { get; set; }
+        public global::G.AnyOf<bool?, global::G.AgenticSearchConfig>? Type224 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.AnyOf<bool?, global::G.AgenticSearchConfig, object>? Type225 { get; set; }
+        public global::G.StoreChunkSearchParams? Type225 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.StoreChunkSearchParams? Type226 { get; set; }
+        public global::G.AnyOf<bool?, global::G.ContextualizationConfig>? Type226 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.AnyOf<bool?, global::G.ContextualizationConfig>? Type227 { get; set; }
+        public global::G.StoreCostInfo? Type227 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.StoreCostInfo? Type228 { get; set; }
+        public global::G.StoreCostListResponse? Type228 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.StoreCostListResponse? Type229 { get; set; }
+        public global::System.Collections.Generic.IList<global::G.StoreCostInfo>? Type229 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::G.StoreCostInfo>? Type230 { get; set; }
+        public global::G.StoreCreateParams? Type230 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.StoreCreateParams? Type231 { get; set; }
+        public global::G.StoreDeleted? Type231 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.StoreDeleted? Type232 { get; set; }
+        public global::G.StoreEventHistogramBucket? Type232 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.StoreEventHistogramBucket? Type233 { get; set; }
+        public global::G.StoreEventHistogramBucketType? Type233 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.StoreEventHistogramBucketType? Type234 { get; set; }
+        public global::G.StoreEventHistogramParams? Type234 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.StoreEventHistogramParams? Type235 { get; set; }
+        public global::G.StoreEventHistogramResponse? Type235 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.StoreEventHistogramResponse? Type236 { get; set; }
+        public global::System.Collections.Generic.IList<global::G.StoreEventHistogramBucket>? Type236 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::G.StoreEventHistogramBucket>? Type237 { get; set; }
+        public global::G.StoreEventListResponse? Type237 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.StoreEventListResponse? Type238 { get; set; }
+        public global::System.Collections.Generic.IList<global::G.DataItem>? Type238 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::G.DataItem>? Type239 { get; set; }
+        public global::G.DataItem? Type239 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.DataItem? Type240 { get; set; }
+        public global::G.StoreIngestionEvent? Type240 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.StoreIngestionEvent? Type241 { get; set; }
+        public global::G.StoreSearchEvent? Type241 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.StoreSearchEvent? Type242 { get; set; }
+        public global::G.StoreEventListResponseDataItemDiscriminator? Type242 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.StoreEventListResponseDataItemDiscriminator? Type243 { get; set; }
+        public global::G.StoreEventListResponseDataItemDiscriminatorType? Type243 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.StoreEventListResponseDataItemDiscriminatorType? Type244 { get; set; }
+        public global::G.StoreFile? Type244 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.StoreFile? Type245 { get; set; }
+        public global::System.Collections.Generic.IList<global::G.ChunksVariant1Item3>? Type245 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::G.ChunksVariant1Item3>? Type246 { get; set; }
+        public global::G.ChunksVariant1Item3? Type246 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.ChunksVariant1Item3? Type247 { get; set; }
+        public global::G.TextInputChunk? Type247 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.TextInputChunk? Type248 { get; set; }
+        public global::G.VideoUrlInputChunk? Type248 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.VideoUrlInputChunk? Type249 { get; set; }
+        public global::G.StoreFileChunksVariant1ItemDiscriminator? Type249 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.StoreFileChunksVariant1ItemDiscriminator? Type250 { get; set; }
+        public global::G.StoreFileChunksVariant1ItemDiscriminatorType? Type250 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.StoreFileChunksVariant1ItemDiscriminatorType? Type251 { get; set; }
+        public global::G.StoreFileParsingStrategy? Type251 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.StoreFileParsingStrategy? Type252 { get; set; }
+        public global::G.StoreFileDeleted? Type252 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.StoreFileDeleted? Type253 { get; set; }
+        public global::G.StoreFileListResponse? Type253 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.StoreFileListResponse? Type254 { get; set; }
+        public global::System.Collections.Generic.IList<global::G.StoreFile>? Type254 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::G.StoreFile>? Type255 { get; set; }
+        public global::G.StoreFileMetadataUpdateParams? Type255 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.StoreFileMetadataUpdateParams? Type256 { get; set; }
+        public global::G.StoreFileSearchOptions? Type256 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.StoreFileSearchOptions? Type257 { get; set; }
+        public global::G.StoreFileSearchParams? Type257 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.StoreFileSearchParams? Type258 { get; set; }
+        public global::G.StoreFileSearchResponse? Type258 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.StoreFileSearchResponse? Type259 { get; set; }
+        public global::System.Collections.Generic.IList<global::G.ScoredStoreFile>? Type259 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::G.ScoredStoreFile>? Type260 { get; set; }
+        public global::G.StoreListResponse? Type260 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.StoreListResponse? Type261 { get; set; }
+        public global::System.Collections.Generic.IList<global::G.Store>? Type261 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::G.Store>? Type262 { get; set; }
+        public global::G.StoreQAParams? Type262 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.StoreQAParams? Type263 { get; set; }
+        public global::G.StoreQAResults? Type263 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.StoreQAResults? Type264 { get; set; }
+        public global::System.Collections.Generic.IList<global::G.SourcesItem>? Type264 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::G.SourcesItem>? Type265 { get; set; }
+        public global::G.SourcesItem? Type265 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.SourcesItem? Type266 { get; set; }
+        public global::G.StoreQAResultsSourceDiscriminator? Type266 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.StoreQAResultsSourceDiscriminator? Type267 { get; set; }
+        public global::G.StoreQAResultsSourceDiscriminatorType? Type267 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.StoreQAResultsSourceDiscriminatorType? Type268 { get; set; }
+        public global::G.StoreSearchResponse? Type268 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.StoreSearchResponse? Type269 { get; set; }
+        public global::System.Collections.Generic.IList<global::G.DataItem2>? Type269 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::G.DataItem2>? Type270 { get; set; }
+        public global::G.DataItem2? Type270 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.DataItem2? Type271 { get; set; }
+        public global::G.StoreSearchResponseDataItemDiscriminator? Type271 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.StoreSearchResponseDataItemDiscriminator? Type272 { get; set; }
+        public global::G.StoreSearchResponseDataItemDiscriminatorType? Type272 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.StoreSearchResponseDataItemDiscriminatorType? Type273 { get; set; }
+        public global::G.StoreUpdateParams? Type273 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.StoreUpdateParams? Type274 { get; set; }
+        public global::G.GeneratedMetadataVariant13? Type274 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.GeneratedMetadataVariant13? Type275 { get; set; }
+        public global::G.TextInputChunkGeneratedMetadataVariant1Discriminator? Type275 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.TextInputChunkGeneratedMetadataVariant1Discriminator? Type276 { get; set; }
+        public global::G.TextInputChunkGeneratedMetadataVariant1DiscriminatorType? Type276 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.TextInputChunkGeneratedMetadataVariant1DiscriminatorType? Type277 { get; set; }
+        public global::G.ValidatedJsonSchema? Type277 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.ValidatedJsonSchema? Type278 { get; set; }
+        public global::System.Collections.Generic.IList<global::G.AnyOf<string, int?>>? Type278 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::G.AnyOf<string, int?>>? Type279 { get; set; }
+        public global::G.AnyOf<string, int?>? Type279 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.AnyOf<string, int?>? Type280 { get; set; }
+        public global::G.VectorStore? Type280 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.VectorStore? Type281 { get; set; }
+        public global::G.VectorStoreChunkSearchOptions? Type281 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.VectorStoreChunkSearchOptions? Type282 { get; set; }
+        public global::G.VectorStoreChunkSearchParams? Type282 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.VectorStoreChunkSearchParams? Type283 { get; set; }
+        public global::G.VectorStoreCreateParams? Type283 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.VectorStoreCreateParams? Type284 { get; set; }
+        public global::G.VectorStoreDeleted? Type284 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.VectorStoreDeleted? Type285 { get; set; }
+        public global::G.VectorStoreFile? Type285 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.VectorStoreFile? Type286 { get; set; }
+        public global::System.Collections.Generic.IList<global::G.ChunksVariant1Item4>? Type286 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::G.ChunksVariant1Item4>? Type287 { get; set; }
+        public global::G.ChunksVariant1Item4? Type287 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.ChunksVariant1Item4? Type288 { get; set; }
+        public global::G.VectorStoreFileChunksVariant1ItemDiscriminator? Type288 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.VectorStoreFileChunksVariant1ItemDiscriminator? Type289 { get; set; }
+        public global::G.VectorStoreFileChunksVariant1ItemDiscriminatorType? Type289 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.VectorStoreFileChunksVariant1ItemDiscriminatorType? Type290 { get; set; }
+        public global::G.VectorStoreFileDeleted? Type290 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.VectorStoreFileDeleted? Type291 { get; set; }
+        public global::G.VectorStoreFileListResponse? Type291 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.VectorStoreFileListResponse? Type292 { get; set; }
+        public global::System.Collections.Generic.IList<global::G.VectorStoreFile>? Type292 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::G.VectorStoreFile>? Type293 { get; set; }
+        public global::G.VectorStoreFileSearchOptions? Type293 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.VectorStoreFileSearchOptions? Type294 { get; set; }
+        public global::G.VectorStoreFileSearchParams? Type294 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.VectorStoreFileSearchParams? Type295 { get; set; }
+        public global::G.VectorStoreFileSearchResponse? Type295 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.VectorStoreFileSearchResponse? Type296 { get; set; }
+        public global::System.Collections.Generic.IList<global::G.ScoredVectorStoreFile>? Type296 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::G.ScoredVectorStoreFile>? Type297 { get; set; }
+        public global::G.VectorStoreFileStatus? Type297 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.VectorStoreFileStatus? Type298 { get; set; }
+        public global::G.VectorStoreListResponse? Type298 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.VectorStoreListResponse? Type299 { get; set; }
+        public global::System.Collections.Generic.IList<global::G.VectorStore>? Type299 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::G.VectorStore>? Type300 { get; set; }
+        public global::G.VectorStoreQAParams? Type300 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.VectorStoreQAParams? Type301 { get; set; }
+        public global::G.VectorStoreQAResults? Type301 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.VectorStoreQAResults? Type302 { get; set; }
+        public global::System.Collections.Generic.IList<global::G.SourcesItem2>? Type302 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::G.SourcesItem2>? Type303 { get; set; }
+        public global::G.SourcesItem2? Type303 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.SourcesItem2? Type304 { get; set; }
+        public global::G.VectorStoreQAResultsSourceDiscriminator? Type304 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.VectorStoreQAResultsSourceDiscriminator? Type305 { get; set; }
+        public global::G.VectorStoreQAResultsSourceDiscriminatorType? Type305 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.VectorStoreQAResultsSourceDiscriminatorType? Type306 { get; set; }
+        public global::G.VectorStoreSearchResponse? Type306 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.VectorStoreSearchResponse? Type307 { get; set; }
+        public global::System.Collections.Generic.IList<global::G.DataItem3>? Type307 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::G.DataItem3>? Type308 { get; set; }
+        public global::G.DataItem3? Type308 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.DataItem3? Type309 { get; set; }
+        public global::G.VectorStoreSearchResponseDataItemDiscriminator? Type309 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.VectorStoreSearchResponseDataItemDiscriminator? Type310 { get; set; }
+        public global::G.VectorStoreSearchResponseDataItemDiscriminatorType? Type310 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.VectorStoreSearchResponseDataItemDiscriminatorType? Type311 { get; set; }
+        public global::G.VectorStoreUpdateParams? Type311 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.VectorStoreUpdateParams? Type312 { get; set; }
+        public global::G.VideoUrl? Type312 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.VideoUrl? Type313 { get; set; }
+        public global::G.GeneratedMetadataVariant14? Type313 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.GeneratedMetadataVariant14? Type314 { get; set; }
+        public global::G.VideoUrlInputChunkGeneratedMetadataVariant1Discriminator? Type314 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.VideoUrlInputChunkGeneratedMetadataVariant1Discriminator? Type315 { get; set; }
+        public global::G.VideoUrlInputChunkGeneratedMetadataVariant1DiscriminatorType? Type315 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.VideoUrlInputChunkGeneratedMetadataVariant1DiscriminatorType? Type316 { get; set; }
+        public global::G.GeneratedMetadataVariant15? Type316 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.GeneratedMetadataVariant15? Type317 { get; set; }
+        public global::G.MxbaiOmniApiRoutesV1DeprecatedVectorStoresModelsScoredAudioUrlInputChunkGeneratedMetadataVariant1Discriminator? Type317 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.MxbaiOmniApiRoutesV1DeprecatedVectorStoresModelsScoredAudioUrlInputChunkGeneratedMetadataVariant1Discriminator? Type318 { get; set; }
+        public global::G.GeneratedMetadataVariant16? Type318 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.GeneratedMetadataVariant16? Type319 { get; set; }
+        public global::G.MxbaiOmniApiRoutesV1DeprecatedVectorStoresModelsScoredImageUrlInputChunkGeneratedMetadataVariant1Discriminator? Type319 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.MxbaiOmniApiRoutesV1DeprecatedVectorStoresModelsScoredImageUrlInputChunkGeneratedMetadataVariant1Discriminator? Type320 { get; set; }
+        public global::G.GeneratedMetadataVariant17? Type320 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.GeneratedMetadataVariant17? Type321 { get; set; }
+        public global::G.MxbaiOmniApiRoutesV1DeprecatedVectorStoresModelsScoredTextInputChunkGeneratedMetadataVariant1Discriminator? Type321 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.MxbaiOmniApiRoutesV1DeprecatedVectorStoresModelsScoredTextInputChunkGeneratedMetadataVariant1Discriminator? Type322 { get; set; }
+        public global::G.MxbaiOmniApiRoutesV1DeprecatedVectorStoresModelsScoredTextInputChunkGeneratedMetadataVariant1DiscriminatorType? Type322 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.MxbaiOmniApiRoutesV1DeprecatedVectorStoresModelsScoredTextInputChunkGeneratedMetadataVariant1DiscriminatorType? Type323 { get; set; }
+        public global::G.GeneratedMetadataVariant18? Type323 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.GeneratedMetadataVariant18? Type324 { get; set; }
+        public global::G.MxbaiOmniApiRoutesV1DeprecatedVectorStoresModelsScoredVideoUrlInputChunkGeneratedMetadataVariant1Discriminator? Type324 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.MxbaiOmniApiRoutesV1DeprecatedVectorStoresModelsScoredVideoUrlInputChunkGeneratedMetadataVariant1Discriminator? Type325 { get; set; }
+        public global::G.MxbaiOmniApiRoutesV1DeprecatedVectorStoresModelsSearchRuleCreateParams? Type325 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.MxbaiOmniApiRoutesV1DeprecatedVectorStoresModelsSearchRuleCreateParams? Type326 { get; set; }
+        public global::System.Collections.Generic.IList<global::G.RulesItem>? Type326 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::G.RulesItem>? Type327 { get; set; }
+        public global::G.RulesItem? Type327 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.RulesItem? Type328 { get; set; }
+        public global::G.MxbaiOmniApiRoutesV1DeprecatedVectorStoresModelsSearchRuleCreateParamsRuleDiscriminator? Type328 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.MxbaiOmniApiRoutesV1DeprecatedVectorStoresModelsSearchRuleCreateParamsRuleDiscriminator? Type329 { get; set; }
+        public global::G.MxbaiOmniApiRoutesV1DeprecatedVectorStoresModelsSearchRuleCreateParamsRuleDiscriminatorType? Type329 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.MxbaiOmniApiRoutesV1DeprecatedVectorStoresModelsSearchRuleCreateParamsRuleDiscriminatorType? Type330 { get; set; }
+        public global::G.MxbaiOmniApiRoutesV1DeprecatedVectorStoresModelsSearchRuleDeleted? Type330 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.MxbaiOmniApiRoutesV1DeprecatedVectorStoresModelsSearchRuleDeleted? Type331 { get; set; }
+        public global::G.MxbaiOmniApiRoutesV1DeprecatedVectorStoresModelsSearchRuleResponse? Type331 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.MxbaiOmniApiRoutesV1DeprecatedVectorStoresModelsSearchRuleResponse? Type332 { get; set; }
+        public global::System.Collections.Generic.IList<global::G.RulesItem2>? Type332 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::G.RulesItem2>? Type333 { get; set; }
+        public global::G.RulesItem2? Type333 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.RulesItem2? Type334 { get; set; }
+        public global::G.MxbaiOmniApiRoutesV1DeprecatedVectorStoresModelsSearchRuleResponseRuleDiscriminator? Type334 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.MxbaiOmniApiRoutesV1DeprecatedVectorStoresModelsSearchRuleResponseRuleDiscriminator? Type335 { get; set; }
+        public global::G.MxbaiOmniApiRoutesV1DeprecatedVectorStoresModelsSearchRuleResponseRuleDiscriminatorType? Type335 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.MxbaiOmniApiRoutesV1DeprecatedVectorStoresModelsSearchRuleResponseRuleDiscriminatorType? Type336 { get; set; }
+        public global::G.MxbaiOmniApiRoutesV1DeprecatedVectorStoresModelsSearchRuleSpecificDeleteParams? Type336 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.MxbaiOmniApiRoutesV1DeprecatedVectorStoresModelsSearchRuleSpecificDeleteParams? Type337 { get; set; }
+        public global::G.Rule? Type337 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.Rule? Type338 { get; set; }
+        public global::G.MxbaiOmniApiRoutesV1DeprecatedVectorStoresModelsSearchRuleSpecificDeleteParamsRuleDiscriminator? Type338 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.MxbaiOmniApiRoutesV1DeprecatedVectorStoresModelsSearchRuleSpecificDeleteParamsRuleDiscriminator? Type339 { get; set; }
+        public global::G.MxbaiOmniApiRoutesV1DeprecatedVectorStoresModelsSearchRuleSpecificDeleteParamsRuleDiscriminatorType? Type339 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.MxbaiOmniApiRoutesV1DeprecatedVectorStoresModelsSearchRuleSpecificDeleteParamsRuleDiscriminatorType? Type340 { get; set; }
+        public global::G.MxbaiOmniApiRoutesV1DeprecatedVectorStoresModelsSearchRuleSpecificDeleted? Type340 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.MxbaiOmniApiRoutesV1DeprecatedVectorStoresModelsSearchRuleSpecificDeleted? Type341 { get; set; }
+        public global::G.DeletedRule? Type341 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.DeletedRule? Type342 { get; set; }
+        public global::G.MxbaiOmniApiRoutesV1DeprecatedVectorStoresModelsSearchRuleSpecificDeletedDeletedRuleDiscriminator? Type342 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.MxbaiOmniApiRoutesV1DeprecatedVectorStoresModelsSearchRuleSpecificDeletedDeletedRuleDiscriminator? Type343 { get; set; }
+        public global::G.MxbaiOmniApiRoutesV1DeprecatedVectorStoresModelsSearchRuleSpecificDeletedDeletedRuleDiscriminatorType? Type343 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.MxbaiOmniApiRoutesV1DeprecatedVectorStoresModelsSearchRuleSpecificDeletedDeletedRuleDiscriminatorType? Type344 { get; set; }
+        public global::G.MxbaiOmniApiRoutesV1DeprecatedVectorStoresModelsSearchRuleUpdateParams? Type344 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.MxbaiOmniApiRoutesV1DeprecatedVectorStoresModelsSearchRuleUpdateParams? Type345 { get; set; }
+        public global::System.Collections.Generic.IList<global::G.RulesVariant1Item>? Type345 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::G.RulesVariant1Item>? Type346 { get; set; }
+        public global::G.RulesVariant1Item? Type346 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.RulesVariant1Item? Type347 { get; set; }
+        public global::G.MxbaiOmniApiRoutesV1DeprecatedVectorStoresModelsSearchRuleUpdateParamsRulesVariant1ItemDiscriminator? Type347 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.MxbaiOmniApiRoutesV1DeprecatedVectorStoresModelsSearchRuleUpdateParamsRulesVariant1ItemDiscriminator? Type348 { get; set; }
+        public global::G.MxbaiOmniApiRoutesV1DeprecatedVectorStoresModelsSearchRuleUpdateParamsRulesVariant1ItemDiscriminatorType? Type348 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.MxbaiOmniApiRoutesV1DeprecatedVectorStoresModelsSearchRuleUpdateParamsRulesVariant1ItemDiscriminatorType? Type349 { get; set; }
+        public global::G.MxbaiOmniApiRoutesV1StoresRulesModelsSearchRuleCreateParams? Type349 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.MxbaiOmniApiRoutesV1StoresRulesModelsSearchRuleCreateParams? Type350 { get; set; }
+        public global::System.Collections.Generic.IList<global::G.RulesItem3>? Type350 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::G.RulesItem3>? Type351 { get; set; }
+        public global::G.RulesItem3? Type351 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.RulesItem3? Type352 { get; set; }
+        public global::G.MxbaiOmniApiRoutesV1StoresRulesModelsSearchRuleCreateParamsRuleDiscriminator? Type352 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.MxbaiOmniApiRoutesV1StoresRulesModelsSearchRuleCreateParamsRuleDiscriminator? Type353 { get; set; }
+        public global::G.MxbaiOmniApiRoutesV1StoresRulesModelsSearchRuleCreateParamsRuleDiscriminatorType? Type353 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.MxbaiOmniApiRoutesV1StoresRulesModelsSearchRuleCreateParamsRuleDiscriminatorType? Type354 { get; set; }
+        public global::G.MxbaiOmniApiRoutesV1StoresRulesModelsSearchRuleDeleted? Type354 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.MxbaiOmniApiRoutesV1StoresRulesModelsSearchRuleDeleted? Type355 { get; set; }
+        public global::G.MxbaiOmniApiRoutesV1StoresRulesModelsSearchRuleResponse? Type355 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.MxbaiOmniApiRoutesV1StoresRulesModelsSearchRuleResponse? Type356 { get; set; }
+        public global::System.Collections.Generic.IList<global::G.RulesItem4>? Type356 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::G.RulesItem4>? Type357 { get; set; }
+        public global::G.RulesItem4? Type357 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.RulesItem4? Type358 { get; set; }
+        public global::G.MxbaiOmniApiRoutesV1StoresRulesModelsSearchRuleResponseRuleDiscriminator? Type358 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.MxbaiOmniApiRoutesV1StoresRulesModelsSearchRuleResponseRuleDiscriminator? Type359 { get; set; }
+        public global::G.MxbaiOmniApiRoutesV1StoresRulesModelsSearchRuleResponseRuleDiscriminatorType? Type359 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.MxbaiOmniApiRoutesV1StoresRulesModelsSearchRuleResponseRuleDiscriminatorType? Type360 { get; set; }
+        public global::G.MxbaiOmniApiRoutesV1StoresRulesModelsSearchRuleSpecificDeleteParams? Type360 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.MxbaiOmniApiRoutesV1StoresRulesModelsSearchRuleSpecificDeleteParams? Type361 { get; set; }
+        public global::G.Rule2? Type361 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.Rule2? Type362 { get; set; }
+        public global::G.MxbaiOmniApiRoutesV1StoresRulesModelsSearchRuleSpecificDeleteParamsRuleDiscriminator? Type362 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.MxbaiOmniApiRoutesV1StoresRulesModelsSearchRuleSpecificDeleteParamsRuleDiscriminator? Type363 { get; set; }
+        public global::G.MxbaiOmniApiRoutesV1StoresRulesModelsSearchRuleSpecificDeleteParamsRuleDiscriminatorType? Type363 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.MxbaiOmniApiRoutesV1StoresRulesModelsSearchRuleSpecificDeleteParamsRuleDiscriminatorType? Type364 { get; set; }
+        public global::G.MxbaiOmniApiRoutesV1StoresRulesModelsSearchRuleSpecificDeleted? Type364 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.MxbaiOmniApiRoutesV1StoresRulesModelsSearchRuleSpecificDeleted? Type365 { get; set; }
+        public global::G.DeletedRule2? Type365 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.DeletedRule2? Type366 { get; set; }
+        public global::G.MxbaiOmniApiRoutesV1StoresRulesModelsSearchRuleSpecificDeletedDeletedRuleDiscriminator? Type366 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.MxbaiOmniApiRoutesV1StoresRulesModelsSearchRuleSpecificDeletedDeletedRuleDiscriminator? Type367 { get; set; }
+        public global::G.MxbaiOmniApiRoutesV1StoresRulesModelsSearchRuleSpecificDeletedDeletedRuleDiscriminatorType? Type367 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.MxbaiOmniApiRoutesV1StoresRulesModelsSearchRuleSpecificDeletedDeletedRuleDiscriminatorType? Type368 { get; set; }
+        public global::G.MxbaiOmniApiRoutesV1StoresRulesModelsSearchRuleUpdateParams? Type368 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.MxbaiOmniApiRoutesV1StoresRulesModelsSearchRuleUpdateParams? Type369 { get; set; }
+        public global::System.Collections.Generic.IList<global::G.RulesVariant1Item2>? Type369 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::G.RulesVariant1Item2>? Type370 { get; set; }
+        public global::G.RulesVariant1Item2? Type370 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.RulesVariant1Item2? Type371 { get; set; }
+        public global::G.MxbaiOmniApiRoutesV1StoresRulesModelsSearchRuleUpdateParamsRulesVariant1ItemDiscriminator? Type371 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.MxbaiOmniApiRoutesV1StoresRulesModelsSearchRuleUpdateParamsRulesVariant1ItemDiscriminator? Type372 { get; set; }
+        public global::G.MxbaiOmniApiRoutesV1StoresRulesModelsSearchRuleUpdateParamsRulesVariant1ItemDiscriminatorType? Type372 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.MxbaiOmniApiRoutesV1StoresRulesModelsSearchRuleUpdateParamsRulesVariant1ItemDiscriminatorType? Type373 { get; set; }
+        public global::G.GeneratedMetadataVariant19? Type373 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.GeneratedMetadataVariant19? Type374 { get; set; }
+        public global::G.MxbaiOmniCoreStoreModelsChunkTypesScoredAudioUrlInputChunkGeneratedMetadataVariant1Discriminator? Type374 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.MxbaiOmniCoreStoreModelsChunkTypesScoredAudioUrlInputChunkGeneratedMetadataVariant1Discriminator? Type375 { get; set; }
+        public global::G.MxbaiOmniCoreStoreModelsChunkTypesScoredAudioUrlInputChunkGeneratedMetadataVariant1DiscriminatorType? Type375 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.MxbaiOmniCoreStoreModelsChunkTypesScoredAudioUrlInputChunkGeneratedMetadataVariant1DiscriminatorType? Type376 { get; set; }
+        public global::G.GeneratedMetadataVariant110? Type376 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.GeneratedMetadataVariant110? Type377 { get; set; }
+        public global::G.MxbaiOmniCoreStoreModelsChunkTypesScoredImageUrlInputChunkGeneratedMetadataVariant1Discriminator? Type377 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.MxbaiOmniCoreStoreModelsChunkTypesScoredImageUrlInputChunkGeneratedMetadataVariant1Discriminator? Type378 { get; set; }
+        public global::G.MxbaiOmniCoreStoreModelsChunkTypesScoredImageUrlInputChunkGeneratedMetadataVariant1DiscriminatorType? Type378 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.MxbaiOmniCoreStoreModelsChunkTypesScoredImageUrlInputChunkGeneratedMetadataVariant1DiscriminatorType? Type379 { get; set; }
+        public global::G.GeneratedMetadataVariant111? Type379 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.GeneratedMetadataVariant111? Type380 { get; set; }
+        public global::G.MxbaiOmniCoreStoreModelsChunkTypesScoredTextInputChunkGeneratedMetadataVariant1Discriminator? Type380 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.MxbaiOmniCoreStoreModelsChunkTypesScoredTextInputChunkGeneratedMetadataVariant1Discriminator? Type381 { get; set; }
+        public global::G.MxbaiOmniCoreStoreModelsChunkTypesScoredTextInputChunkGeneratedMetadataVariant1DiscriminatorType? Type381 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.MxbaiOmniCoreStoreModelsChunkTypesScoredTextInputChunkGeneratedMetadataVariant1DiscriminatorType? Type382 { get; set; }
+        public global::G.GeneratedMetadataVariant112? Type382 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.GeneratedMetadataVariant112? Type383 { get; set; }
+        public global::G.MxbaiOmniCoreStoreModelsChunkTypesScoredVideoUrlInputChunkGeneratedMetadataVariant1Discriminator? Type383 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.MxbaiOmniCoreStoreModelsChunkTypesScoredVideoUrlInputChunkGeneratedMetadataVariant1Discriminator? Type384 { get; set; }
+        public global::G.MxbaiOmniCoreStoreModelsChunkTypesScoredVideoUrlInputChunkGeneratedMetadataVariant1DiscriminatorType? Type384 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.MxbaiOmniCoreStoreModelsChunkTypesScoredVideoUrlInputChunkGeneratedMetadataVariant1DiscriminatorType? Type385 { get; set; }
+        public global::G.AnyOf<global::G.NotionDataSourceCreateOrUpdateParams, global::G.LinearDataSourceCreateOrUpdateParams>? Type385 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.AnyOf<global::G.NotionDataSourceCreateOrUpdateParams, global::G.LinearDataSourceCreateOrUpdateParams>? Type386 { get; set; }
+        public global::System.Collections.Generic.IList<global::G.VectorStoreFileStatus>? Type386 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::G.VectorStoreFileStatus>? Type387 { get; set; }
+        public global::G.ListStoreEventsEventType? Type387 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.ListStoreEventsEventType? Type388 { get; set; }
+        public global::G.AnyOf<bool?, global::System.Collections.Generic.IList<int>>? Type388 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.AnyOf<bool?, global::System.Collections.Generic.IList<int>>? Type389 { get; set; }
-        /// <summary>
-        /// 
-        /// </summary>
-        public global::System.Collections.Generic.IList<global::G.ParsingJobStatus>? Type390 { get; set; }
+        public global::System.Collections.Generic.IList<global::G.ParsingJobStatus>? Type389 { get; set; }
 
         /// <summary>
         /// 
@@ -1715,7 +1711,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.AnyOf<global::G.SearchFilter, global::G.SearchFilterCondition, global::System.Collections.Generic.List<global::G.AnyOf<global::G.SearchFilter, global::G.SearchFilterCondition>>, object>? ListType29 { get; set; }
+        public global::G.AnyOf<global::G.SearchFilter, global::G.SearchFilterCondition, global::System.Collections.Generic.List<global::G.AnyOf<global::G.SearchFilter, global::G.SearchFilterCondition>>>? ListType29 { get; set; }
         /// <summary>
         /// 
         /// </summary>
@@ -1727,7 +1723,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.AnyOf<global::System.Collections.Generic.List<global::G.AnyOf<global::G.ConditionOperator?, global::System.Collections.Generic.List<global::System.Guid>>>, global::System.Collections.Generic.List<global::System.Guid>, object>? ListType32 { get; set; }
+        public global::G.AnyOf<global::System.Collections.Generic.List<global::G.AnyOf<global::G.ConditionOperator?, global::System.Collections.Generic.List<global::System.Guid>>>, global::System.Collections.Generic.List<global::System.Guid>>? ListType32 { get; set; }
         /// <summary>
         /// 
         /// </summary>

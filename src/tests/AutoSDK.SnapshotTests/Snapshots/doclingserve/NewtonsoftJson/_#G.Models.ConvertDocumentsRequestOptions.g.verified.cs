@@ -239,19 +239,19 @@ namespace G
         /// Custom VLM configuration including model spec and engine options. Only available if admin allows it. Must include 'model_spec' and 'engine_options'.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("vlm_pipeline_custom_config")]
-        public global::G.AnyOf<global::G.VlmConvertOptions, object, object>? VlmPipelineCustomConfig { get; set; }
+        public global::G.AnyOf<global::G.VlmConvertOptions, object>? VlmPipelineCustomConfig { get; set; }
 
         /// <summary>
         /// Custom picture description configuration including model spec and engine options.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("picture_description_custom_config")]
-        public global::G.AnyOf<global::G.PictureDescriptionVlmEngineOptions, object, object>? PictureDescriptionCustomConfig { get; set; }
+        public global::G.AnyOf<global::G.PictureDescriptionVlmEngineOptions, object>? PictureDescriptionCustomConfig { get; set; }
 
         /// <summary>
         /// Custom code/formula extraction configuration including model spec and engine options.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("code_formula_custom_config")]
-        public global::G.AnyOf<global::G.CodeFormulaVlmOptions, object, object>? CodeFormulaCustomConfig { get; set; }
+        public global::G.AnyOf<global::G.CodeFormulaVlmOptions, object>? CodeFormulaCustomConfig { get; set; }
 
         /// <summary>
         /// Custom configuration for table structure model. Use this to specify a non-default kind with its options. The 'kind' field in the config dict determines which table structure implementation to use. If not specified, uses the default kind with preset configuration.
@@ -420,9 +420,9 @@ namespace G
             string? vlmPipelinePreset,
             string? pictureDescriptionPreset,
             string? codeFormulaPreset,
-            global::G.AnyOf<global::G.VlmConvertOptions, object, object>? vlmPipelineCustomConfig,
-            global::G.AnyOf<global::G.PictureDescriptionVlmEngineOptions, object, object>? pictureDescriptionCustomConfig,
-            global::G.AnyOf<global::G.CodeFormulaVlmOptions, object, object>? codeFormulaCustomConfig,
+            global::G.AnyOf<global::G.VlmConvertOptions, object>? vlmPipelineCustomConfig,
+            global::G.AnyOf<global::G.PictureDescriptionVlmEngineOptions, object>? pictureDescriptionCustomConfig,
+            global::G.AnyOf<global::G.CodeFormulaVlmOptions, object>? codeFormulaCustomConfig,
             object? tableStructureCustomConfig,
             object? layoutCustomConfig)
         {

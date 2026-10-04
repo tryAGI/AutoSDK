@@ -83,43 +83,6 @@ namespace G
         public global::System.Collections.Generic.IList<global::G.ContextPair> PickContextInputVariant2() => ContextInputVariant2 is { } value
             ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'ContextInputVariant2' but the value was {ToString()}.");
-
-        /// <summary>
-        /// 
-        /// </summary>
-#if NET6_0_OR_GREATER
-        public object? ContextInputVariant3 { get; init; }
-#else
-        public object? ContextInputVariant3 { get; }
-#endif
-
-        /// <summary>
-        /// 
-        /// </summary>
-#if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(ContextInputVariant3))]
-#endif
-        public bool IsContextInputVariant3 => ContextInputVariant3 != null;
-
-        /// <summary>
-        /// 
-        /// </summary>
-        public bool TryPickContextInputVariant3(
-#if NET6_0_OR_GREATER
-            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
-#endif
-            out object? value)
-        {
-            value = ContextInputVariant3;
-            return IsContextInputVariant3;
-        }
-
-        /// <summary>
-        /// 
-        /// </summary>
-        public object PickContextInputVariant3() => ContextInputVariant3 is { } value
-            ? value
-            : throw new global::System.InvalidOperationException($"Expected union variant 'ContextInputVariant3' but the value was {ToString()}.");
         /// <summary>
         /// 
         /// </summary>
@@ -148,20 +111,17 @@ namespace G
         /// </summary>
         public ContextInput(
             global::G.ContextPair? pair,
-            global::System.Collections.Generic.IList<global::G.ContextPair>? contextInputVariant2,
-            object? contextInputVariant3
+            global::System.Collections.Generic.IList<global::G.ContextPair>? contextInputVariant2
             )
         {
             Pair = pair;
             ContextInputVariant2 = contextInputVariant2;
-            ContextInputVariant3 = contextInputVariant3;
         }
 
         /// <summary>
         /// 
         /// </summary>
         public object? Object =>
-            ContextInputVariant3 as object ??
             ContextInputVariant2 as object ??
             Pair as object 
             ;
@@ -171,8 +131,7 @@ namespace G
         /// </summary>
         public override string? ToString() =>
             Pair?.ToString() ??
-            ContextInputVariant2?.ToString() ??
-            ContextInputVariant3?.ToString() 
+            ContextInputVariant2?.ToString() 
             ;
 
         /// <summary>
@@ -180,7 +139,7 @@ namespace G
         /// </summary>
         public bool Validate()
         {
-            return IsPair || IsContextInputVariant2 || IsContextInputVariant3;
+            return IsPair || IsContextInputVariant2;
         }
 
         /// <summary>
@@ -189,7 +148,6 @@ namespace G
         public TResult? Match<TResult>(
             global::System.Func<global::G.ContextPair, TResult>? pair = null,
             global::System.Func<global::System.Collections.Generic.IList<global::G.ContextPair>, TResult>? contextInputVariant2 = null,
-            global::System.Func<object, TResult>? contextInputVariant3 = null,
             bool validate = true)
         {
             if (validate)
@@ -205,10 +163,6 @@ namespace G
             {
                 return contextInputVariant2(__value1);
             }
-            else if (ContextInputVariant3 is { } __value2 && contextInputVariant3 != null)
-            {
-                return contextInputVariant3(__value2);
-            }
 
             return default(TResult);
         }
@@ -220,8 +174,6 @@ namespace G
             global::System.Action<global::G.ContextPair>? pair = null,
 
             global::System.Action<global::System.Collections.Generic.IList<global::G.ContextPair>>? contextInputVariant2 = null,
-
-            global::System.Action<object>? contextInputVariant3 = null,
             bool validate = true)
         {
             if (validate)
@@ -236,10 +188,6 @@ namespace G
             else if (ContextInputVariant2 is { } __value1)
             {
                 contextInputVariant2?.Invoke(__value1);
-            }
-            else if (ContextInputVariant3 is { } __value2)
-            {
-                contextInputVariant3?.Invoke(__value2);
             }
         }
 
@@ -249,7 +197,6 @@ namespace G
         public void Switch(
             global::System.Action<global::G.ContextPair>? pair = null,
             global::System.Action<global::System.Collections.Generic.IList<global::G.ContextPair>>? contextInputVariant2 = null,
-            global::System.Action<object>? contextInputVariant3 = null,
             bool validate = true)
         {
             if (validate)
@@ -264,10 +211,6 @@ namespace G
             else if (ContextInputVariant2 is { } __value1)
             {
                 contextInputVariant2?.Invoke(__value1);
-            }
-            else if (ContextInputVariant3 is { } __value2)
-            {
-                contextInputVariant3?.Invoke(__value2);
             }
         }
 
@@ -282,8 +225,6 @@ namespace G
                 typeof(global::G.ContextPair),
                 ContextInputVariant2,
                 typeof(global::System.Collections.Generic.IList<global::G.ContextPair>),
-                ContextInputVariant3,
-                typeof(object),
             };
             const int offset = unchecked((int)2166136261);
             const int prime = 16777619;
@@ -301,8 +242,7 @@ namespace G
         {
             return
                 global::System.Collections.Generic.EqualityComparer<global::G.ContextPair?>.Default.Equals(Pair, other.Pair) &&
-                global::System.Collections.Generic.EqualityComparer<global::System.Collections.Generic.IList<global::G.ContextPair>?>.Default.Equals(ContextInputVariant2, other.ContextInputVariant2) &&
-                global::System.Collections.Generic.EqualityComparer<object?>.Default.Equals(ContextInputVariant3, other.ContextInputVariant3) 
+                global::System.Collections.Generic.EqualityComparer<global::System.Collections.Generic.IList<global::G.ContextPair>?>.Default.Equals(ContextInputVariant2, other.ContextInputVariant2) 
                 ;
         }
 

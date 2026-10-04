@@ -50,16 +50,16 @@ namespace G
         /// Inline voice references for zero-shot cloning. Requires MessagePack (not JSON). For single speaker, provide an array of ReferenceAudio objects. For multiple speakers, provide an array of arrays where each inner array contains references for one speaker. **Multi-speaker is only available with the S2-Pro model.** The speaker index corresponds to the index in reference_id array. Example for multi-speaker: [[{audio, text}], [{audio, text}, {audio, text}]] for 2 speakers where speaker 1 has 2 reference samples.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("references")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.AnyOfJsonConverter<global::System.Collections.Generic.IList<global::G.ReferenceAudio>, global::System.Collections.Generic.IList<global::System.Collections.Generic.IList<global::G.ReferenceAudio>>, object>))]
-        public global::G.AnyOf<global::System.Collections.Generic.IList<global::G.ReferenceAudio>, global::System.Collections.Generic.IList<global::System.Collections.Generic.IList<global::G.ReferenceAudio>>, object>? References { get; set; }
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.AnyOfJsonConverter<global::System.Collections.Generic.IList<global::G.ReferenceAudio>, global::System.Collections.Generic.IList<global::System.Collections.Generic.IList<global::G.ReferenceAudio>>>))]
+        public global::G.AnyOf<global::System.Collections.Generic.IList<global::G.ReferenceAudio>, global::System.Collections.Generic.IList<global::System.Collections.Generic.IList<global::G.ReferenceAudio>>>? References { get; set; }
 
         /// <summary>
         /// Voice model ID(s) from Fish Audio library or your custom models. For single-speaker synthesis, provide a string. For multi-speaker synthesis (dialogue), provide an array of model IDs. **Multi-speaker is only available with the S2-Pro model.** When using multiple speakers, use speaker tags in your text like `&lt;|speaker:0|&gt;` and `&lt;|speaker:1|&gt;` to indicate speaker changes. Example: `&lt;|speaker:0|&gt;Hello!&lt;|speaker:1|&gt;Hi there!&lt;|speaker:0|&gt;How are you?` with `reference_id: ["speaker-a-id", "speaker-b-id"]`.<br/>
         /// Default Value: openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("reference_id")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.AnyOfJsonConverter<string, global::System.Collections.Generic.IList<string>, object>))]
-        public global::G.AnyOf<string, global::System.Collections.Generic.IList<string>, object>? ReferenceId { get; set; }
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.AnyOfJsonConverter<string, global::System.Collections.Generic.IList<string>>))]
+        public global::G.AnyOf<string, global::System.Collections.Generic.IList<string>>? ReferenceId { get; set; }
 
         /// <summary>
         /// Speed and volume adjustments for the output.<br/>
@@ -240,8 +240,8 @@ namespace G
             string text,
             double? temperature,
             double? topP,
-            global::G.AnyOf<global::System.Collections.Generic.IList<global::G.ReferenceAudio>, global::System.Collections.Generic.IList<global::System.Collections.Generic.IList<global::G.ReferenceAudio>>, object>? references,
-            global::G.AnyOf<string, global::System.Collections.Generic.IList<string>, object>? referenceId,
+            global::G.AnyOf<global::System.Collections.Generic.IList<global::G.ReferenceAudio>, global::System.Collections.Generic.IList<global::System.Collections.Generic.IList<global::G.ReferenceAudio>>>? references,
+            global::G.AnyOf<string, global::System.Collections.Generic.IList<string>>? referenceId,
             global::G.ProsodyControl? prosody,
             int? chunkLength,
             bool? normalize,

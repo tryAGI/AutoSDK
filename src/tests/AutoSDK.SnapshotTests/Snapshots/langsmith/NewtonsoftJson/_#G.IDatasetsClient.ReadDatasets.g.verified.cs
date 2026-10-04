@@ -33,7 +33,7 @@ namespace G
         /// <exception cref="global::G.ApiException"></exception>
         global::System.Threading.Tasks.Task<global::System.Collections.Generic.IList<global::G.Dataset>> ReadDatasetsAsync(
             global::System.Collections.Generic.IList<global::System.Guid>? id = default,
-            global::G.AnyOf<global::System.Collections.Generic.IList<global::G.DataType>, global::G.DataType?, object>? dataType = default,
+            global::G.AnyOf<global::System.Collections.Generic.IList<global::G.DataType>, global::G.DataType?>? dataType = default,
             string? name = default,
             string? nameContains = default,
             string? metadata = default,
@@ -72,7 +72,7 @@ namespace G
         /// <exception cref="global::G.ApiException"></exception>
         global::System.Threading.Tasks.Task<global::G.AutoSDKHttpResponse<global::System.Collections.Generic.IList<global::G.Dataset>>> ReadDatasetsAsResponseAsync(
             global::System.Collections.Generic.IList<global::System.Guid>? id = default,
-            global::G.AnyOf<global::System.Collections.Generic.IList<global::G.DataType>, global::G.DataType?, object>? dataType = default,
+            global::G.AnyOf<global::System.Collections.Generic.IList<global::G.DataType>, global::G.DataType?>? dataType = default,
             string? name = default,
             string? nameContains = default,
             string? metadata = default,

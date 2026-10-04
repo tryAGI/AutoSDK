@@ -597,7 +597,7 @@ namespace G
         public async global::System.Threading.Tasks.Task<global::G.LettaResponse> SendMessageAsync(
             string agentId,
             global::System.Collections.Generic.IList<global::G.AnyOf<global::G.MessageCreate, global::G.ApprovalCreate, global::G.ToolReturnCreate>>? messages = default,
-            global::G.AnyOf<string, global::System.Collections.Generic.IList<global::G.InputVariant2Item5>, object>? input = default,
+            global::G.AnyOf<string, global::System.Collections.Generic.IList<global::G.InputVariant2Item5>>? input = default,
             int? maxSteps = default,
             global::System.Collections.Generic.IList<global::G.MessageType>? includeReturnMessageTypes = default,
             global::System.Collections.Generic.IList<global::G.ClientToolSchema>? clientTools = default,

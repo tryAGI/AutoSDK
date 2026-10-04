@@ -430,7 +430,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.AnyOf<global::System.Collections.Generic.IList<global::G.ToolCall2>, global::G.ToolCallDelta, object>? Type99 { get; set; }
+        public global::G.AnyOf<global::System.Collections.Generic.IList<global::G.ToolCall2>, global::G.ToolCallDelta>? Type99 { get; set; }
         /// <summary>
         /// 
         /// </summary>
@@ -634,7 +634,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.AnyOf<string, global::System.Collections.Generic.IList<global::G.AnyOf<global::G.ChatCompletionContentPartTextParam, global::G.ChatCompletionContentPartRefusalParam>>, object>? Type150 { get; set; }
+        public global::G.AnyOf<string, global::System.Collections.Generic.IList<global::G.AnyOf<global::G.ChatCompletionContentPartTextParam, global::G.ChatCompletionContentPartRefusalParam>>>? Type150 { get; set; }
         /// <summary>
         /// 
         /// </summary>
@@ -778,7 +778,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.AnyOf<string, global::System.Collections.Generic.IList<string>, object>? Type186 { get; set; }
+        public global::G.AnyOf<string, global::System.Collections.Generic.IList<string>>? Type186 { get; set; }
         /// <summary>
         /// 
         /// </summary>
@@ -938,7 +938,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.AnyOf<string, global::System.Collections.Generic.IList<global::G.InputVariant2Item>, object>? Type226 { get; set; }
+        public global::G.AnyOf<string, global::System.Collections.Generic.IList<global::G.InputVariant2Item>>? Type226 { get; set; }
         /// <summary>
         /// 
         /// </summary>
@@ -1570,7 +1570,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.AnyOf<string, global::System.Collections.Generic.IList<global::G.InputVariant2Item2>, object>? Type384 { get; set; }
+        public global::G.AnyOf<string, global::System.Collections.Generic.IList<global::G.InputVariant2Item2>>? Type384 { get; set; }
         /// <summary>
         /// 
         /// </summary>
@@ -1594,7 +1594,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.AnyOf<string, global::System.Collections.Generic.IList<global::G.InputVariant2Item3>, object>? Type390 { get; set; }
+        public global::G.AnyOf<string, global::System.Collections.Generic.IList<global::G.InputVariant2Item3>>? Type390 { get; set; }
         /// <summary>
         /// 
         /// </summary>
@@ -1626,7 +1626,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.AnyOf<string, global::System.Collections.Generic.IList<global::G.InputVariant2Item4>, object>? Type398 { get; set; }
+        public global::G.AnyOf<string, global::System.Collections.Generic.IList<global::G.InputVariant2Item4>>? Type398 { get; set; }
         /// <summary>
         /// 
         /// </summary>
@@ -1682,7 +1682,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.AnyOf<string, global::System.Collections.Generic.IList<global::G.InputVariant2Item5>, object>? Type412 { get; set; }
+        public global::G.AnyOf<string, global::System.Collections.Generic.IList<global::G.InputVariant2Item5>>? Type412 { get; set; }
         /// <summary>
         /// 
         /// </summary>
@@ -1774,7 +1774,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.AnyOf<global::G.AgentType?, string, object>? Type435 { get; set; }
+        public global::G.AnyOf<global::G.AgentType?, string>? Type435 { get; set; }
         /// <summary>
         /// 
         /// </summary>
@@ -2554,7 +2554,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.AnyOf<string, global::System.Collections.Generic.IList<global::G.FuncResponseVariant2Item>, object>? Type630 { get; set; }
+        public global::G.AnyOf<string, global::System.Collections.Generic.IList<global::G.FuncResponseVariant2Item>>? Type630 { get; set; }
         /// <summary>
         /// 
         /// </summary>
@@ -2578,7 +2578,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.AnyOf<string, global::System.Collections.Generic.IList<global::G.FuncResponseVariant2Item2>, object>? Type636 { get; set; }
+        public global::G.AnyOf<string, global::System.Collections.Generic.IList<global::G.FuncResponseVariant2Item2>>? Type636 { get; set; }
         /// <summary>
         /// 
         /// </summary>
@@ -5335,7 +5335,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.AnyOf<global::System.Collections.Generic.List<global::G.ToolCall2>, global::G.ToolCallDelta, object>? ListType16 { get; set; }
+        public global::G.AnyOf<global::System.Collections.Generic.List<global::G.ToolCall2>, global::G.ToolCallDelta>? ListType16 { get; set; }
         /// <summary>
         /// 
         /// </summary>
@@ -5363,7 +5363,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.AnyOf<string, global::System.Collections.Generic.List<global::G.AnyOf<global::G.ChatCompletionContentPartTextParam, global::G.ChatCompletionContentPartRefusalParam>>, object>? ListType23 { get; set; }
+        public global::G.AnyOf<string, global::System.Collections.Generic.List<global::G.AnyOf<global::G.ChatCompletionContentPartTextParam, global::G.ChatCompletionContentPartRefusalParam>>>? ListType23 { get; set; }
         /// <summary>
         /// 
         /// </summary>
@@ -5391,7 +5391,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.AnyOf<string, global::System.Collections.Generic.List<string>, object>? ListType30 { get; set; }
+        public global::G.AnyOf<string, global::System.Collections.Generic.List<string>>? ListType30 { get; set; }
         /// <summary>
         /// 
         /// </summary>
@@ -5411,7 +5411,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.AnyOf<string, global::System.Collections.Generic.List<global::G.InputVariant2Item>, object>? ListType35 { get; set; }
+        public global::G.AnyOf<string, global::System.Collections.Generic.List<global::G.InputVariant2Item>>? ListType35 { get; set; }
         /// <summary>
         /// 
         /// </summary>
@@ -5455,7 +5455,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.AnyOf<string, global::System.Collections.Generic.List<global::G.InputVariant2Item2>, object>? ListType46 { get; set; }
+        public global::G.AnyOf<string, global::System.Collections.Generic.List<global::G.InputVariant2Item2>>? ListType46 { get; set; }
         /// <summary>
         /// 
         /// </summary>
@@ -5463,7 +5463,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.AnyOf<string, global::System.Collections.Generic.List<global::G.InputVariant2Item3>, object>? ListType48 { get; set; }
+        public global::G.AnyOf<string, global::System.Collections.Generic.List<global::G.InputVariant2Item3>>? ListType48 { get; set; }
         /// <summary>
         /// 
         /// </summary>
@@ -5471,7 +5471,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.AnyOf<string, global::System.Collections.Generic.List<global::G.InputVariant2Item4>, object>? ListType50 { get; set; }
+        public global::G.AnyOf<string, global::System.Collections.Generic.List<global::G.InputVariant2Item4>>? ListType50 { get; set; }
         /// <summary>
         /// 
         /// </summary>
@@ -5487,7 +5487,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.AnyOf<string, global::System.Collections.Generic.List<global::G.InputVariant2Item5>, object>? ListType54 { get; set; }
+        public global::G.AnyOf<string, global::System.Collections.Generic.List<global::G.InputVariant2Item5>>? ListType54 { get; set; }
         /// <summary>
         /// 
         /// </summary>
@@ -5627,7 +5627,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.AnyOf<string, global::System.Collections.Generic.List<global::G.FuncResponseVariant2Item>, object>? ListType89 { get; set; }
+        public global::G.AnyOf<string, global::System.Collections.Generic.List<global::G.FuncResponseVariant2Item>>? ListType89 { get; set; }
         /// <summary>
         /// 
         /// </summary>
@@ -5635,7 +5635,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.AnyOf<string, global::System.Collections.Generic.List<global::G.FuncResponseVariant2Item2>, object>? ListType91 { get; set; }
+        public global::G.AnyOf<string, global::System.Collections.Generic.List<global::G.FuncResponseVariant2Item2>>? ListType91 { get; set; }
         /// <summary>
         /// 
         /// </summary>

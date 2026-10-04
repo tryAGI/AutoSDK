@@ -97,7 +97,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("timeRangeFilter")]
-        public global::G.AnyOf<string, global::G.ViewOptionsTableViewOptionsTimeRangeFilter, object>? TimeRangeFilter { get; set; }
+        public global::G.AnyOf<string, global::G.ViewOptionsTableViewOptionsTimeRangeFilter>? TimeRangeFilter { get; set; }
 
         /// <summary>
         /// 
@@ -155,7 +155,7 @@ namespace G
             global::G.ViewOptionsTableViewOptionsSymbolGrouping? symbolGrouping,
             string? xAxisAggregation,
             global::System.Collections.Generic.IList<global::G.ViewOptionsTableViewOptionsChartAnnotation>? chartAnnotations,
-            global::G.AnyOf<string, global::G.ViewOptionsTableViewOptionsTimeRangeFilter, object>? timeRangeFilter,
+            global::G.AnyOf<string, global::G.ViewOptionsTableViewOptionsTimeRangeFilter>? timeRangeFilter,
             global::G.ViewOptionsTableViewOptionsQueryShape? queryShape,
             bool? freezeColumns)
         {

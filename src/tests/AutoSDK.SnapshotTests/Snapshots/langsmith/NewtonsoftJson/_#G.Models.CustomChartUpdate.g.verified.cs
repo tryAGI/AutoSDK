@@ -19,7 +19,7 @@ namespace G
         /// Default Value: {"__missing__":"__missing__"}
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("description")]
-        public global::G.AnyOf<string, global::G.Missing, object>? Description { get; set; }
+        public global::G.AnyOf<string, global::G.Missing>? Description { get; set; }
 
         /// <summary>
         /// Default Value: {"__missing__":"__missing__"}
@@ -49,13 +49,13 @@ namespace G
         /// Default Value: {"__missing__":"__missing__"}
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("metadata")]
-        public global::G.AnyOf<object, global::G.Missing, object>? Metadata { get; set; }
+        public global::G.AnyOf<object, global::G.Missing>? Metadata { get; set; }
 
         /// <summary>
         /// Default Value: {"__missing__":"__missing__"}
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("common_filters")]
-        public global::G.AnyOf<global::G.CustomChartSeriesFilters, global::G.Missing, object>? CommonFilters { get; set; }
+        public global::G.AnyOf<global::G.CustomChartSeriesFilters, global::G.Missing>? CommonFilters { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -92,13 +92,13 @@ namespace G
         /// </param>
         public CustomChartUpdate(
             global::G.AnyOf<string, global::G.Missing>? title,
-            global::G.AnyOf<string, global::G.Missing, object>? description,
+            global::G.AnyOf<string, global::G.Missing>? description,
             global::G.AnyOf<int?, global::G.Missing>? index,
             global::G.AnyOf<global::G.CustomChartType?, global::G.Missing>? chartType,
             global::G.AnyOf<global::System.Collections.Generic.IList<global::G.CustomChartSeriesUpdate>, global::G.Missing>? series,
             global::G.AnyOf<global::System.Guid?, global::G.Missing>? sectionId,
-            global::G.AnyOf<object, global::G.Missing, object>? metadata,
-            global::G.AnyOf<global::G.CustomChartSeriesFilters, global::G.Missing, object>? commonFilters)
+            global::G.AnyOf<object, global::G.Missing>? metadata,
+            global::G.AnyOf<global::G.CustomChartSeriesFilters, global::G.Missing>? commonFilters)
         {
             this.Title = title;
             this.Description = description;

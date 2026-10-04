@@ -19,8 +19,8 @@ namespace G
         /// <exception cref="global::G.ApiException"></exception>
         global::System.Threading.Tasks.Task<string> CreateFeedbackWithTokenGetAsync(
             global::System.Guid token,
-            global::G.AnyOf<double?, int?, bool?, object>? score = default,
-            global::G.AnyOf<double?, int?, bool?, string, object>? value = default,
+            global::G.AnyOf<double?, int?, bool?>? score = default,
+            global::G.AnyOf<double?, int?, bool?, string>? value = default,
             string? comment = default,
             string? correction = default,
             global::G.AutoSDKRequestOptions? requestOptions = default,
@@ -39,8 +39,8 @@ namespace G
         /// <exception cref="global::G.ApiException"></exception>
         global::System.Threading.Tasks.Task<global::G.AutoSDKHttpResponse<string>> CreateFeedbackWithTokenGetAsResponseAsync(
             global::System.Guid token,
-            global::G.AnyOf<double?, int?, bool?, object>? score = default,
-            global::G.AnyOf<double?, int?, bool?, string, object>? value = default,
+            global::G.AnyOf<double?, int?, bool?>? score = default,
+            global::G.AnyOf<double?, int?, bool?, string>? value = default,
             string? comment = default,
             string? correction = default,
             global::G.AutoSDKRequestOptions? requestOptions = default,

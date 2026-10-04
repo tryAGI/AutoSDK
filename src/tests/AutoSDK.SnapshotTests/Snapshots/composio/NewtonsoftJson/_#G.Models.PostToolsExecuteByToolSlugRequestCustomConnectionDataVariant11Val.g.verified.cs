@@ -169,7 +169,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("expires_in")]
-        public global::G.AnyOf<double?, string, object>? ExpiresIn { get; set; }
+        public global::G.AnyOf<double?, string>? ExpiresIn { get; set; }
 
         /// <summary>
         /// 
@@ -181,7 +181,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("scope")]
-        public global::G.AnyOf<string, global::System.Collections.Generic.IList<string>, object>? Scope { get; set; }
+        public global::G.AnyOf<string, global::System.Collections.Generic.IList<string>>? Scope { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -248,9 +248,9 @@ namespace G
             string? serverLocation,
             string? baseUrl,
             string? tokenType,
-            global::G.AnyOf<double?, string, object>? expiresIn,
+            global::G.AnyOf<double?, string>? expiresIn,
             string? expiresAt,
-            global::G.AnyOf<string, global::System.Collections.Generic.IList<string>, object>? scope)
+            global::G.AnyOf<string, global::System.Collections.Generic.IList<string>>? scope)
         {
             this.Subdomain = subdomain;
             this.YourDomain = yourDomain;

@@ -40,8 +40,8 @@ namespace G
         /// Labels for the voice. Keys can be language, accent, gender, or age.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("labels")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.AnyOfJsonConverter<global::System.Collections.Generic.Dictionary<string, string>, string, object>))]
-        public global::G.AnyOf<global::System.Collections.Generic.Dictionary<string, string>, string, object>? Labels { get; set; }
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.AnyOfJsonConverter<global::System.Collections.Generic.Dictionary<string, string>, string>))]
+        public global::G.AnyOf<global::System.Collections.Generic.Dictionary<string, string>, string>? Labels { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -76,7 +76,7 @@ namespace G
             global::System.Collections.Generic.IList<byte[]> files,
             bool? removeBackgroundNoise,
             string? description,
-            global::G.AnyOf<global::System.Collections.Generic.Dictionary<string, string>, string, object>? labels)
+            global::G.AnyOf<global::System.Collections.Generic.Dictionary<string, string>, string>? labels)
         {
             this.Name = name ?? throw new global::System.ArgumentNullException(nameof(name));
             this.Files = files ?? throw new global::System.ArgumentNullException(nameof(files));

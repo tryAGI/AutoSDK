@@ -132,7 +132,7 @@ namespace G
             bool? stream = default,
             int? logprobs = default,
             bool? echo = default,
-            global::G.AnyOf<string, global::System.Collections.Generic.IList<string>, object>? stop = default,
+            global::G.AnyOf<string, global::System.Collections.Generic.IList<string>>? stop = default,
             double? presencePenalty = default,
             double? frequencyPenalty = default,
             global::G.ResponseFormat? responseFormat = default,

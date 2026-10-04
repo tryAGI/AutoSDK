@@ -12,8 +12,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("content", Required = global::Newtonsoft.Json.Required.Always)]
-        public global::G.AnyOf<string, object, global::System.Collections.Generic.IList<global::G.ContentChunk>> Content { get; set; } = default!;
+        [global::Newtonsoft.Json.JsonProperty("content")]
+        public global::G.AnyOf<string, global::System.Collections.Generic.IList<global::G.ContentChunk>>? Content { get; set; }
 
         /// <summary>
         /// Default Value: user
@@ -36,7 +36,7 @@ namespace G
         /// Default Value: user
         /// </param>
         public UserMessage(
-            global::G.AnyOf<string, object, global::System.Collections.Generic.IList<global::G.ContentChunk>> content,
+            global::G.AnyOf<string, global::System.Collections.Generic.IList<global::G.ContentChunk>>? content,
             global::G.UserMessageRole? role)
         {
             this.Content = content;

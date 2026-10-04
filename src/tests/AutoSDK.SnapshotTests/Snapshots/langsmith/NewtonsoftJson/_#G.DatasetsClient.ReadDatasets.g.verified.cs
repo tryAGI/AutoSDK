@@ -61,7 +61,7 @@ namespace G
         partial void PrepareReadDatasetsArguments(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Collections.Generic.IList<global::System.Guid>? id,
-            ref global::G.AnyOf<global::System.Collections.Generic.IList<global::G.DataType>, global::G.DataType?, object>? dataType,
+            ref global::G.AnyOf<global::System.Collections.Generic.IList<global::G.DataType>, global::G.DataType?>? dataType,
             ref string? name,
             ref string? nameContains,
             ref string? metadata,
@@ -74,7 +74,7 @@ namespace G
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
             global::System.Collections.Generic.IList<global::System.Guid>? id,
-            global::G.AnyOf<global::System.Collections.Generic.IList<global::G.DataType>, global::G.DataType?, object>? dataType,
+            global::G.AnyOf<global::System.Collections.Generic.IList<global::G.DataType>, global::G.DataType?>? dataType,
             string? name,
             string? nameContains,
             string? metadata,
@@ -120,7 +120,7 @@ namespace G
         /// <exception cref="global::G.ApiException"></exception>
         public async global::System.Threading.Tasks.Task<global::System.Collections.Generic.IList<global::G.Dataset>> ReadDatasetsAsync(
             global::System.Collections.Generic.IList<global::System.Guid>? id = default,
-            global::G.AnyOf<global::System.Collections.Generic.IList<global::G.DataType>, global::G.DataType?, object>? dataType = default,
+            global::G.AnyOf<global::System.Collections.Generic.IList<global::G.DataType>, global::G.DataType?>? dataType = default,
             string? name = default,
             string? nameContains = default,
             string? metadata = default,
@@ -177,7 +177,7 @@ namespace G
         /// <exception cref="global::G.ApiException"></exception>
         public async global::System.Threading.Tasks.Task<global::G.AutoSDKHttpResponse<global::System.Collections.Generic.IList<global::G.Dataset>>> ReadDatasetsAsResponseAsync(
             global::System.Collections.Generic.IList<global::System.Guid>? id = default,
-            global::G.AnyOf<global::System.Collections.Generic.IList<global::G.DataType>, global::G.DataType?, object>? dataType = default,
+            global::G.AnyOf<global::System.Collections.Generic.IList<global::G.DataType>, global::G.DataType?>? dataType = default,
             string? name = default,
             string? nameContains = default,
             string? metadata = default,
@@ -244,7 +244,6 @@ namespace G
                                 .AddOptionalParameter("data_type", dataType?.Match(
                 static x => (global::System.Collections.Generic.IEnumerable<string?>)global::System.Linq.Enumerable.Select(x, static item => item.ToValueString()),
                 static x => (global::System.Collections.Generic.IEnumerable<string?>)new string?[] { x?.ToValueString() },
-                static x => (global::System.Collections.Generic.IEnumerable<string?>)new string?[] { x?.ToString() },
                 validate: false), delimiter: ",", explode: true)
                                 .AddOptionalParameter("name", name)
                                 .AddOptionalParameter("name_contains", nameContains)

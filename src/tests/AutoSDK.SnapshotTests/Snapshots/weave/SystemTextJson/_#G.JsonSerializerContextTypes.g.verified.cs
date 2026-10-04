@@ -770,7 +770,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.AnyOf<string, int?, double?, bool?, global::System.Collections.Generic.Dictionary<string, global::G.LiteralOperation>, global::System.Collections.Generic.IList<global::G.LiteralOperation>, object>? Type184 { get; set; }
+        public global::G.AnyOf<string, int?, double?, bool?, global::System.Collections.Generic.Dictionary<string, global::G.LiteralOperation>, global::System.Collections.Generic.IList<global::G.LiteralOperation>>? Type184 { get; set; }
         /// <summary>
         /// 
         /// </summary>
@@ -1283,7 +1283,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.AnyOf<string, int?, double?, bool?, global::System.Collections.Generic.Dictionary<string, global::G.LiteralOperation>, global::System.Collections.Generic.List<global::G.LiteralOperation>, object>? ListType24 { get; set; }
+        public global::G.AnyOf<string, int?, double?, bool?, global::System.Collections.Generic.Dictionary<string, global::G.LiteralOperation>, global::System.Collections.Generic.List<global::G.LiteralOperation>>? ListType24 { get; set; }
         /// <summary>
         /// 
         /// </summary>

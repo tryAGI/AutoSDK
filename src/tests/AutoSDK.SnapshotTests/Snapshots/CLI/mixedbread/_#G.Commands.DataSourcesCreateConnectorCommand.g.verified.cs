@@ -17,7 +17,7 @@ namespace G
             string? name,
             bool? triggerSync,
             object? metadata,
-            global::G.AnyOf<int?, string, object>? pollingInterval,
+            global::G.AnyOf<int?, string>? pollingInterval,
             global::System.Threading.CancellationToken cancellationToken);
         partial void Complete(
             global::System.CommandLine.ParseResult parseResult,
@@ -55,7 +55,7 @@ namespace G
             Description = @"The metadata of the connector",
         };
 
-        private global::System.CommandLine.Option<global::G.AnyOf<int?, string, object>?> PollingInterval { get; } = new(
+        private global::System.CommandLine.Option<global::G.AnyOf<int?, string>?> PollingInterval { get; } = new(
             name: "pollingInterval")
         {
             Description = @"Polling interval for the connector. Defaults to 30 minutes if not specified. Can be provided as:

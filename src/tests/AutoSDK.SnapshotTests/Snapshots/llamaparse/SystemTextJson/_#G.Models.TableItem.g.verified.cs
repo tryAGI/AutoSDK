@@ -34,7 +34,7 @@ namespace G
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("rows")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::System.Collections.Generic.IList<global::System.Collections.Generic.IList<global::G.AnyOf<string, int?, double?, object>>> Rows { get; set; }
+        public required global::System.Collections.Generic.IList<global::System.Collections.Generic.IList<global::G.AnyOf<string, int?, double?>?>> Rows { get; set; }
 
         /// <summary>
         /// HTML representation of the table
@@ -110,7 +110,7 @@ namespace G
 #endif
         public TableItem(
             string md,
-            global::System.Collections.Generic.IList<global::System.Collections.Generic.IList<global::G.AnyOf<string, int?, double?, object>>> rows,
+            global::System.Collections.Generic.IList<global::System.Collections.Generic.IList<global::G.AnyOf<string, int?, double?>?>> rows,
             string html,
             string csv,
             string? type,

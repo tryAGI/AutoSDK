@@ -41,7 +41,7 @@ namespace G
         /// The secret token (Authorization header) stored as a workspace secret or in-place secret
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("secret_token")]
-        public global::G.AnyOf<global::G.ConvAISecretLocator, global::G.ConvAIUserSecretDBModel, object>? SecretToken { get; set; }
+        public global::G.AnyOf<global::G.ConvAISecretLocator, global::G.ConvAIUserSecretDBModel>? SecretToken { get; set; }
 
         /// <summary>
         /// The headers included in the request
@@ -182,7 +182,7 @@ namespace G
             global::G.MCPApprovalPolicy? approvalPolicy,
             global::System.Collections.Generic.IList<global::G.MCPToolApprovalHash>? toolApprovalHashes,
             global::G.MCPServerTransport? transport,
-            global::G.AnyOf<global::G.ConvAISecretLocator, global::G.ConvAIUserSecretDBModel, object>? secretToken,
+            global::G.AnyOf<global::G.ConvAISecretLocator, global::G.ConvAIUserSecretDBModel>? secretToken,
             object? requestHeaders,
             global::G.AuthConnectionLocator? authConnection,
             string? description,

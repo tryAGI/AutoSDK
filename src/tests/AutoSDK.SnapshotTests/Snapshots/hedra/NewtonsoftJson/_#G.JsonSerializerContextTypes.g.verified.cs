@@ -278,7 +278,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.AnyOf<global::System.Guid?, global::System.Collections.Generic.IList<global::System.Guid>, object>? Type61 { get; set; }
+        public global::G.AnyOf<global::System.Guid?, global::System.Collections.Generic.IList<global::System.Guid>>? Type61 { get; set; }
         /// <summary>
         /// 
         /// </summary>
@@ -346,7 +346,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.AnyOf<global::System.Collections.Generic.IList<double>, global::System.Collections.Generic.IList<global::System.Collections.Generic.IList<double>>, object>? Type78 { get; set; }
+        public global::G.AnyOf<global::System.Collections.Generic.IList<double>, global::System.Collections.Generic.IList<global::System.Collections.Generic.IList<double>>>? Type78 { get; set; }
         /// <summary>
         /// 
         /// </summary>
@@ -474,7 +474,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.AnyOf<global::G.AssetType?, global::G.GenerationType?, object>? Type110 { get; set; }
+        public global::G.AnyOf<global::G.AssetType?, global::G.GenerationType?>? Type110 { get; set; }
         /// <summary>
         /// 
         /// </summary>
@@ -519,7 +519,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.AnyOf<global::System.Guid?, global::System.Collections.Generic.List<global::System.Guid>, object>? ListType4 { get; set; }
+        public global::G.AnyOf<global::System.Guid?, global::System.Collections.Generic.List<global::System.Guid>>? ListType4 { get; set; }
         /// <summary>
         /// 
         /// </summary>
@@ -535,7 +535,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.AnyOf<global::System.Collections.Generic.List<double>, global::System.Collections.Generic.List<global::System.Collections.Generic.List<double>>, object>? ListType8 { get; set; }
+        public global::G.AnyOf<global::System.Collections.Generic.List<double>, global::System.Collections.Generic.List<global::System.Collections.Generic.List<double>>>? ListType8 { get; set; }
         /// <summary>
         /// 
         /// </summary>

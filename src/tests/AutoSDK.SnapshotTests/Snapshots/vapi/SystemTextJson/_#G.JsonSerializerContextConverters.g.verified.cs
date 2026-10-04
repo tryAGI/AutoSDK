@@ -2245,7 +2245,7 @@ namespace G
             typeof(global::G.JsonConverters.OneOfJsonConverter<global::G.SimulationRunTargetAssistant, global::G.SimulationRunTargetSquad>),
             typeof(global::G.JsonConverters.OneOfJsonConverter<global::G.SimulationRunSimulationEntry, global::G.SimulationRunSuiteEntry>),
             typeof(global::G.JsonConverters.OneOfJsonConverter<global::G.SimulationRunTargetAssistant, global::G.SimulationRunTargetSquad>),
-            typeof(global::G.JsonConverters.OneOfJsonConverter<double?, string, bool?, object>),
+            typeof(global::G.JsonConverters.OneOfJsonConverter<double?, string, bool?>),
             typeof(global::G.JsonConverters.OneOfJsonConverter<double?, string, bool?>),
             typeof(global::G.JsonConverters.OneOfJsonConverter<global::G.SimulationHookCallStarted, global::G.SimulationHookCallEnded>),
             typeof(global::G.JsonConverters.OneOfJsonConverter<global::G.JSONQueryOnCallTableWithStringTypeColumn, global::G.JSONQueryOnCallTableWithNumberTypeColumn, global::G.JSONQueryOnCallTableWithStructuredOutputColumn, global::G.JSONQueryOnEventsTable>),

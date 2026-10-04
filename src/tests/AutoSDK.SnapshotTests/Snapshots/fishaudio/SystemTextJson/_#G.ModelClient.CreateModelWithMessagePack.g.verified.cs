@@ -562,8 +562,8 @@ namespace G
             byte[]? coverImage = default,
             string? coverImagename = default,
             global::G.CreateModelRequestTrainMode2 trainMode = default,
-            global::G.AnyOf<global::System.Collections.Generic.IList<string>, string, object>? texts = default,
-            global::G.AnyOf<global::System.Collections.Generic.IList<string>, string, object>? tags = default,
+            global::G.AnyOf<global::System.Collections.Generic.IList<string>, string>? texts = default,
+            global::G.AnyOf<global::System.Collections.Generic.IList<string>, string>? tags = default,
             bool? enhanceAudioQuality = default,
             global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default)

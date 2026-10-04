@@ -59,7 +59,7 @@ namespace G
             object? outputs = default,
             global::G.AttachmentsOperations? attachmentsOperations = default,
             object? metadata = default,
-            global::G.AnyOf<global::System.Collections.Generic.IList<string>, string, object>? split = default,
+            global::G.AnyOf<global::System.Collections.Generic.IList<string>, string>? split = default,
             bool? overwrite = default,
             global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);

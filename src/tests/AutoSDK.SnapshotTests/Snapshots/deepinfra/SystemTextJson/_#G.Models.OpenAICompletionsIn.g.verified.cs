@@ -88,8 +88,8 @@ namespace G
         /// up to 16 sequences where the API will stop generating further tokens
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("stop")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.AnyOfJsonConverter<string, global::System.Collections.Generic.IList<string>, object>))]
-        public global::G.AnyOf<string, global::System.Collections.Generic.IList<string>, object>? Stop { get; set; }
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.AnyOfJsonConverter<string, global::System.Collections.Generic.IList<string>>))]
+        public global::G.AnyOf<string, global::System.Collections.Generic.IList<string>>? Stop { get; set; }
 
         /// <summary>
         /// Positive values penalize new tokens based on whether they appear in the text so far, increasing the model's likelihood to talk about new topics.<br/>
@@ -227,7 +227,7 @@ namespace G
             bool? stream,
             int? logprobs,
             bool? echo,
-            global::G.AnyOf<string, global::System.Collections.Generic.IList<string>, object>? stop,
+            global::G.AnyOf<string, global::System.Collections.Generic.IList<string>>? stop,
             double? presencePenalty,
             double? frequencyPenalty,
             global::G.ResponseFormat? responseFormat,

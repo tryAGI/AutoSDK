@@ -20,8 +20,8 @@ namespace G
         /// Default Value: {"__missing__":"__missing__"}
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("description")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.AnyOfJsonConverter<string, global::G.Missing, object>))]
-        public global::G.AnyOf<string, global::G.Missing, object>? Description { get; set; }
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.AnyOfJsonConverter<string, global::G.Missing>))]
+        public global::G.AnyOf<string, global::G.Missing>? Description { get; set; }
 
         /// <summary>
         /// Default Value: {"__missing__":"__missing__"}
@@ -53,7 +53,7 @@ namespace G
 #endif
         public CustomChartsSectionUpdate(
             global::G.AnyOf<string, global::G.Missing>? title,
-            global::G.AnyOf<string, global::G.Missing, object>? description,
+            global::G.AnyOf<string, global::G.Missing>? description,
             global::G.AnyOf<int?, global::G.Missing>? index)
         {
             this.Title = title;

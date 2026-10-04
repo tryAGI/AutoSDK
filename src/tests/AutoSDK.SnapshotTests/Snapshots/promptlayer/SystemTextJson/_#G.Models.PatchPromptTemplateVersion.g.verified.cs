@@ -25,43 +25,43 @@ namespace G
         /// Patch for chat template messages. Pass an object with index keys for index-based patching, or an array for full replacement. Chat templates only.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("messages")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.AnyOfJsonConverter<object, global::System.Collections.Generic.IList<object>, object>))]
-        public global::G.AnyOf<object, global::System.Collections.Generic.IList<object>, object>? Messages { get; set; }
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.AnyOfJsonConverter<object, global::System.Collections.Generic.IList<object>>))]
+        public global::G.AnyOf<object, global::System.Collections.Generic.IList<object>>? Messages { get; set; }
 
         /// <summary>
         /// Patch for tools. Object for index-based patching, array for full replacement, null to remove. Chat templates only.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("tools")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.AnyOfJsonConverter<object, global::System.Collections.Generic.IList<object>, object>))]
-        public global::G.AnyOf<object, global::System.Collections.Generic.IList<object>, object>? Tools { get; set; }
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.AnyOfJsonConverter<object, global::System.Collections.Generic.IList<object>>))]
+        public global::G.AnyOf<object, global::System.Collections.Generic.IList<object>>? Tools { get; set; }
 
         /// <summary>
         /// Patch for functions. Object for index-based patching, array for full replacement, null to remove. Chat templates only.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("functions")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.AnyOfJsonConverter<object, global::System.Collections.Generic.IList<object>, object>))]
-        public global::G.AnyOf<object, global::System.Collections.Generic.IList<object>, object>? Functions { get; set; }
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.AnyOfJsonConverter<object, global::System.Collections.Generic.IList<object>>))]
+        public global::G.AnyOf<object, global::System.Collections.Generic.IList<object>>? Functions { get; set; }
 
         /// <summary>
         /// Replace the function_call setting. Set to null to remove. Chat templates only.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("function_call")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.AnyOfJsonConverter<string, object, object>))]
-        public global::G.AnyOf<string, object, object>? FunctionCall { get; set; }
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.AnyOfJsonConverter<string, object>))]
+        public global::G.AnyOf<string, object>? FunctionCall { get; set; }
 
         /// <summary>
         /// Replace the tool_choice setting. Set to null to remove. Chat templates only.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("tool_choice")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.AnyOfJsonConverter<string, object, object>))]
-        public global::G.AnyOf<string, object, object>? ToolChoice { get; set; }
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.AnyOfJsonConverter<string, object>))]
+        public global::G.AnyOf<string, object>? ToolChoice { get; set; }
 
         /// <summary>
         /// Patch for completion template content. Object for index-based patching, array for full replacement. Completion templates only.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("content")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.AnyOfJsonConverter<object, global::System.Collections.Generic.IList<object>, object>))]
-        public global::G.AnyOf<object, global::System.Collections.Generic.IList<object>, object>? Content { get; set; }
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.AnyOfJsonConverter<object, global::System.Collections.Generic.IList<object>>))]
+        public global::G.AnyOf<object, global::System.Collections.Generic.IList<object>>? Content { get; set; }
 
         /// <summary>
         /// Parameters to shallow-merge into the existing model parameters (e.g. temperature, max_tokens). Existing keys not specified here are preserved.
@@ -138,12 +138,12 @@ namespace G
         public PatchPromptTemplateVersion(
             int? version,
             string? label,
-            global::G.AnyOf<object, global::System.Collections.Generic.IList<object>, object>? messages,
-            global::G.AnyOf<object, global::System.Collections.Generic.IList<object>, object>? tools,
-            global::G.AnyOf<object, global::System.Collections.Generic.IList<object>, object>? functions,
-            global::G.AnyOf<string, object, object>? functionCall,
-            global::G.AnyOf<string, object, object>? toolChoice,
-            global::G.AnyOf<object, global::System.Collections.Generic.IList<object>, object>? content,
+            global::G.AnyOf<object, global::System.Collections.Generic.IList<object>>? messages,
+            global::G.AnyOf<object, global::System.Collections.Generic.IList<object>>? tools,
+            global::G.AnyOf<object, global::System.Collections.Generic.IList<object>>? functions,
+            global::G.AnyOf<string, object>? functionCall,
+            global::G.AnyOf<string, object>? toolChoice,
+            global::G.AnyOf<object, global::System.Collections.Generic.IList<object>>? content,
             object? modelParameters,
             object? responseFormat,
             string? commitMessage,

@@ -95,8 +95,8 @@ namespace G
         /// The data extracted from the file
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("data")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.AnyOfJsonConverter<object, global::System.Collections.Generic.IList<object>, object>))]
-        public global::G.AnyOf<object, global::System.Collections.Generic.IList<object>, object>? Data { get; set; }
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.AnyOfJsonConverter<object, global::System.Collections.Generic.IList<object>>))]
+        public global::G.AnyOf<object, global::System.Collections.Generic.IList<object>>? Data { get; set; }
 
         /// <summary>
         /// The metadata extracted from the file
@@ -178,7 +178,7 @@ namespace G
             global::System.Guid? fileId,
             string? error,
             global::System.Guid? jobId,
-            global::G.AnyOf<object, global::System.Collections.Generic.IList<object>, object>? data,
+            global::G.AnyOf<object, global::System.Collections.Generic.IList<object>>? data,
             object? extractionMetadata)
         {
             this.Id = id;

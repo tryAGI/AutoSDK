@@ -25,8 +25,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("tool_result", Required = global::Newtonsoft.Json.Required.Always)]
-        public global::G.AnyOf<bool?, int?, double?, string, object, global::System.Collections.Generic.IList<object>, object> ToolResult { get; set; } = default!;
+        [global::Newtonsoft.Json.JsonProperty("tool_result")]
+        public global::G.AnyOf<bool?, int?, double?, string, object, global::System.Collections.Generic.IList<object>>? ToolResult { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -42,7 +42,7 @@ namespace G
         /// <param name="type"></param>
         public ToolResultContentPart(
             string toolCallId,
-            global::G.AnyOf<bool?, int?, double?, string, object, global::System.Collections.Generic.IList<object>, object> toolResult,
+            global::G.AnyOf<bool?, int?, double?, string, object, global::System.Collections.Generic.IList<object>>? toolResult,
             string type = "tool_result")
         {
             this.Type = type;
@@ -55,6 +55,18 @@ namespace G
         /// </summary>
         public ToolResultContentPart()
         {
+        }
+
+        /// <summary>
+        /// Creates a new <see cref="ToolResultContentPart"/> from its single non-const required field,
+        /// hardcoding any const discriminator fields.
+        /// </summary>
+        public static ToolResultContentPart FromToolCallId(string toolCallId)
+        {
+            return new ToolResultContentPart
+            {
+                ToolCallId = toolCallId,
+            };
         }
 
     }

@@ -31,8 +31,8 @@ namespace G
         /// time_unix_nano is the time the event occurred. Value is UNIX Epoch time in nanoseconds since 00:00:00 UTC on 1 January 1970.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("time_unix_nano")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.AnyOfJsonConverter<long?, string, object>))]
-        public global::G.AnyOf<long?, string, object>? TimeUnixNano { get; set; }
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.AnyOfJsonConverter<long?, string>))]
+        public global::G.AnyOf<long?, string>? TimeUnixNano { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -62,7 +62,7 @@ namespace G
             global::System.Collections.Generic.IList<global::G.OtlpKeyValue>? attributes,
             int? droppedAttributesCount,
             string? name,
-            global::G.AnyOf<long?, string, object>? timeUnixNano)
+            global::G.AnyOf<long?, string>? timeUnixNano)
         {
             this.Attributes = attributes;
             this.DroppedAttributesCount = droppedAttributesCount;

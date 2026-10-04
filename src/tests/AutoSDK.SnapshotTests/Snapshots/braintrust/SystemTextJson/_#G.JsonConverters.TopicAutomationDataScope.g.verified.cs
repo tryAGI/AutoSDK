@@ -35,18 +35,15 @@ namespace G.JsonConverters
             var __score2 = 0;
             if (__jsonProps.Contains("experiment_id")) __score2++;
             if (__jsonProps.Contains("type")) __score2++;
-            var __score3 = 0;
             var __bestScore = 0;
             var __bestIndex = -1;
             if (__score0 > __bestScore) { __bestScore = __score0; __bestIndex = 0; }
             if (__score1 > __bestScore) { __bestScore = __score1; __bestIndex = 1; }
             if (__score2 > __bestScore) { __bestScore = __score2; __bestIndex = 2; }
-            if (__score3 > __bestScore) { __bestScore = __score3; __bestIndex = 3; }
 
             global::G.TopicAutomationDataScopeVariant1? topicAutomationDataScopeVariant1 = default;
             global::G.TopicAutomationDataScopeVariant2? topicAutomationDataScopeVariant2 = default;
             global::G.TopicAutomationDataScopeVariant3? topicAutomationDataScopeVariant3 = default;
-            object? topicAutomationDataScopeVariant4 = default;
             if (__bestIndex >= 0)
             {
                 if (__bestIndex == 0)
@@ -94,24 +91,9 @@ namespace G.JsonConverters
                     {
                     }
                 }
-                else if (__bestIndex == 3)
-                {
-                    try
-                    {
-                        var typeInfo = typeInfoResolver.GetTypeInfo(typeof(object), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<object> ??
-                                       throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(object).Name}");
-                        topicAutomationDataScopeVariant4 = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
-                    }
-                    catch (global::System.Text.Json.JsonException)
-                    {
-                    }
-                    catch (global::System.InvalidOperationException)
-                    {
-                    }
-                }
             }
 
-            if (topicAutomationDataScopeVariant1 == null && topicAutomationDataScopeVariant2 == null && topicAutomationDataScopeVariant3 == null && topicAutomationDataScopeVariant4 == null)
+            if (topicAutomationDataScopeVariant1 == null && topicAutomationDataScopeVariant2 == null && topicAutomationDataScopeVariant3 == null)
             {
                 try
                 {
@@ -128,7 +110,7 @@ namespace G.JsonConverters
                 }
             }
 
-            if (topicAutomationDataScopeVariant1 == null && topicAutomationDataScopeVariant2 == null && topicAutomationDataScopeVariant3 == null && topicAutomationDataScopeVariant4 == null)
+            if (topicAutomationDataScopeVariant1 == null && topicAutomationDataScopeVariant2 == null && topicAutomationDataScopeVariant3 == null)
             {
                 try
                 {
@@ -145,7 +127,7 @@ namespace G.JsonConverters
                 }
             }
 
-            if (topicAutomationDataScopeVariant1 == null && topicAutomationDataScopeVariant2 == null && topicAutomationDataScopeVariant3 == null && topicAutomationDataScopeVariant4 == null)
+            if (topicAutomationDataScopeVariant1 == null && topicAutomationDataScopeVariant2 == null && topicAutomationDataScopeVariant3 == null)
             {
                 try
                 {
@@ -162,31 +144,12 @@ namespace G.JsonConverters
                 }
             }
 
-            if (topicAutomationDataScopeVariant1 == null && topicAutomationDataScopeVariant2 == null && topicAutomationDataScopeVariant3 == null && topicAutomationDataScopeVariant4 == null)
-            {
-                try
-                {
-
-                    var typeInfo = typeInfoResolver.GetTypeInfo(typeof(object), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<object> ??
-                                   throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(object).Name}");
-                    topicAutomationDataScopeVariant4 = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
-                }
-                catch (global::System.Text.Json.JsonException)
-                {
-                }
-                catch (global::System.InvalidOperationException)
-                {
-                }
-            }
-
             var __value = new global::G.TopicAutomationDataScope(
                 topicAutomationDataScopeVariant1,
 
                 topicAutomationDataScopeVariant2,
 
-                topicAutomationDataScopeVariant3,
-
-                topicAutomationDataScopeVariant4
+                topicAutomationDataScopeVariant3
                 );
 
             return __value;
@@ -218,12 +181,6 @@ namespace G.JsonConverters
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.TopicAutomationDataScopeVariant3), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.TopicAutomationDataScopeVariant3?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.TopicAutomationDataScopeVariant3).Name}");
                 global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickTopicAutomationDataScopeVariant3(), typeInfo);
-            }
-            else if (value.IsTopicAutomationDataScopeVariant4)
-            {
-                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(object), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<object?> ??
-                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(object).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickTopicAutomationDataScopeVariant4(), typeInfo);
             }
         }
     }

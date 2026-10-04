@@ -38,7 +38,7 @@ namespace G
         /// The function response - either a string or list of content parts (text/image)
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("func_response")]
-        public global::G.AnyOf<string, global::System.Collections.Generic.IList<global::G.FuncResponseVariant2Item2>, object>? FuncResponse { get; set; }
+        public global::G.AnyOf<string, global::System.Collections.Generic.IList<global::G.FuncResponseVariant2Item2>>? FuncResponse { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -69,7 +69,7 @@ namespace G
             object? toolCallId,
             global::System.Collections.Generic.IList<string>? stdout,
             global::System.Collections.Generic.IList<string>? stderr,
-            global::G.AnyOf<string, global::System.Collections.Generic.IList<global::G.FuncResponseVariant2Item2>, object>? funcResponse)
+            global::G.AnyOf<string, global::System.Collections.Generic.IList<global::G.FuncResponseVariant2Item2>>? funcResponse)
         {
             this.ToolCallId = toolCallId;
             this.Status = status;

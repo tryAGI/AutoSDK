@@ -87,7 +87,7 @@ namespace G
         /// The tool calls that have been requested by the llm to run, which are pending approval
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("tool_calls")]
-        public global::G.AnyOf<global::System.Collections.Generic.IList<global::G.ToolCall2>, global::G.ToolCallDelta, object>? ToolCalls { get; set; }
+        public global::G.AnyOf<global::System.Collections.Generic.IList<global::G.ToolCall2>, global::G.ToolCallDelta>? ToolCalls { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -129,7 +129,7 @@ namespace G
             bool? isErr,
             int? seqId,
             string? runId,
-            global::G.AnyOf<global::System.Collections.Generic.IList<global::G.ToolCall2>, global::G.ToolCallDelta, object>? toolCalls)
+            global::G.AnyOf<global::System.Collections.Generic.IList<global::G.ToolCall2>, global::G.ToolCallDelta>? toolCalls)
         {
             this.Id = id ?? throw new global::System.ArgumentNullException(nameof(id));
             this.Date = date;

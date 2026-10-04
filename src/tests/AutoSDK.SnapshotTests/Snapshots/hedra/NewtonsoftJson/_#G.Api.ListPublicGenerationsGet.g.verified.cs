@@ -28,7 +28,7 @@ namespace G
             };
         partial void PrepareListPublicGenerationsGetArguments(
             global::System.Net.Http.HttpClient httpClient,
-            ref global::G.AnyOf<global::G.AssetType?, global::G.GenerationType?, object>? type,
+            ref global::G.AnyOf<global::G.AssetType?, global::G.GenerationType?>? type,
             global::System.DateTime? createdBefore,
             global::System.DateTime? createdAfter,
             ref string? promptQuery,
@@ -38,7 +38,7 @@ namespace G
         partial void PrepareListPublicGenerationsGetRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
-            global::G.AnyOf<global::G.AssetType?, global::G.GenerationType?, object>? type,
+            global::G.AnyOf<global::G.AssetType?, global::G.GenerationType?>? type,
             global::System.DateTime? createdBefore,
             global::System.DateTime? createdAfter,
             string? promptQuery,
@@ -70,7 +70,7 @@ namespace G
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::G.ApiException"></exception>
         public async global::System.Threading.Tasks.Task<global::G.PagedResponseGeneration> ListPublicGenerationsGetAsync(
-            global::G.AnyOf<global::G.AssetType?, global::G.GenerationType?, object>? type = default,
+            global::G.AnyOf<global::G.AssetType?, global::G.GenerationType?>? type = default,
             global::System.DateTime? createdBefore = default,
             global::System.DateTime? createdAfter = default,
             string? promptQuery = default,
@@ -110,7 +110,7 @@ namespace G
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::G.ApiException"></exception>
         public async global::System.Threading.Tasks.Task<global::G.AutoSDKHttpResponse<global::G.PagedResponseGeneration>> ListPublicGenerationsGetAsResponseAsync(
-            global::G.AnyOf<global::G.AssetType?, global::G.GenerationType?, object>? type = default,
+            global::G.AnyOf<global::G.AssetType?, global::G.GenerationType?>? type = default,
             global::System.DateTime? createdBefore = default,
             global::System.DateTime? createdAfter = default,
             string? promptQuery = default,

@@ -71,7 +71,7 @@ namespace G
             string? session = default,
             string? prompt = default,
             global::System.Guid? fileId = default,
-            global::G.AnyOf<object, string, object>? dataSchema = default,
+            global::G.AnyOf<object, string>? dataSchema = default,
             global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }

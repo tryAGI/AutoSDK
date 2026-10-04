@@ -31,11 +31,11 @@ namespace G
             ref int? pageSize,
             ref int? pageNumber,
             ref string? title,
-            ref global::G.AnyOf<global::System.Collections.Generic.IList<string>, string, object>? tag,
+            ref global::G.AnyOf<global::System.Collections.Generic.IList<string>, string>? tag,
             ref bool? self,
             ref string? authorId,
-            ref global::G.AnyOf<global::System.Collections.Generic.IList<string>, string, object>? language,
-            ref global::G.AnyOf<global::System.Collections.Generic.IList<string>, string, object>? titleLanguage,
+            ref global::G.AnyOf<global::System.Collections.Generic.IList<string>, string>? language,
+            ref global::G.AnyOf<global::System.Collections.Generic.IList<string>, string>? titleLanguage,
             ref global::G.GetModelSortBy? sortBy);
         partial void PrepareGetModelRequest(
             global::System.Net.Http.HttpClient httpClient,
@@ -43,11 +43,11 @@ namespace G
             int? pageSize,
             int? pageNumber,
             string? title,
-            global::G.AnyOf<global::System.Collections.Generic.IList<string>, string, object>? tag,
+            global::G.AnyOf<global::System.Collections.Generic.IList<string>, string>? tag,
             bool? self,
             string? authorId,
-            global::G.AnyOf<global::System.Collections.Generic.IList<string>, string, object>? language,
-            global::G.AnyOf<global::System.Collections.Generic.IList<string>, string, object>? titleLanguage,
+            global::G.AnyOf<global::System.Collections.Generic.IList<string>, string>? language,
+            global::G.AnyOf<global::System.Collections.Generic.IList<string>, string>? titleLanguage,
             global::G.GetModelSortBy? sortBy);
         partial void ProcessGetModelResponse(
             global::System.Net.Http.HttpClient httpClient,
@@ -95,11 +95,11 @@ namespace G
             int? pageSize = default,
             int? pageNumber = default,
             string? title = default,
-            global::G.AnyOf<global::System.Collections.Generic.IList<string>, string, object>? tag = default,
+            global::G.AnyOf<global::System.Collections.Generic.IList<string>, string>? tag = default,
             bool? self = default,
             string? authorId = default,
-            global::G.AnyOf<global::System.Collections.Generic.IList<string>, string, object>? language = default,
-            global::G.AnyOf<global::System.Collections.Generic.IList<string>, string, object>? titleLanguage = default,
+            global::G.AnyOf<global::System.Collections.Generic.IList<string>, string>? language = default,
+            global::G.AnyOf<global::System.Collections.Generic.IList<string>, string>? titleLanguage = default,
             global::G.GetModelSortBy? sortBy = default,
             global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default)
@@ -157,11 +157,11 @@ namespace G
             int? pageSize = default,
             int? pageNumber = default,
             string? title = default,
-            global::G.AnyOf<global::System.Collections.Generic.IList<string>, string, object>? tag = default,
+            global::G.AnyOf<global::System.Collections.Generic.IList<string>, string>? tag = default,
             bool? self = default,
             string? authorId = default,
-            global::G.AnyOf<global::System.Collections.Generic.IList<string>, string, object>? language = default,
-            global::G.AnyOf<global::System.Collections.Generic.IList<string>, string, object>? titleLanguage = default,
+            global::G.AnyOf<global::System.Collections.Generic.IList<string>, string>? language = default,
+            global::G.AnyOf<global::System.Collections.Generic.IList<string>, string>? titleLanguage = default,
             global::G.GetModelSortBy? sortBy = default,
             global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default)
@@ -213,19 +213,16 @@ namespace G
                                 .AddOptionalParameter("tag", tag?.Match(
                 static x => (global::System.Collections.Generic.IEnumerable<string?>)global::System.Linq.Enumerable.Select(x, static item => item),
                 static x => (global::System.Collections.Generic.IEnumerable<string?>)new string?[] { x },
-                static x => (global::System.Collections.Generic.IEnumerable<string?>)new string?[] { x?.ToString() },
                 validate: false), delimiter: ",", explode: true)
                                 .AddOptionalParameter("self", self?.ToString().ToLowerInvariant())
                                 .AddOptionalParameter("author_id", authorId)
                                 .AddOptionalParameter("language", language?.Match(
                 static x => (global::System.Collections.Generic.IEnumerable<string?>)global::System.Linq.Enumerable.Select(x, static item => item),
                 static x => (global::System.Collections.Generic.IEnumerable<string?>)new string?[] { x },
-                static x => (global::System.Collections.Generic.IEnumerable<string?>)new string?[] { x?.ToString() },
                 validate: false), delimiter: ",", explode: true)
                                 .AddOptionalParameter("title_language", titleLanguage?.Match(
                 static x => (global::System.Collections.Generic.IEnumerable<string?>)global::System.Linq.Enumerable.Select(x, static item => item),
                 static x => (global::System.Collections.Generic.IEnumerable<string?>)new string?[] { x },
-                static x => (global::System.Collections.Generic.IEnumerable<string?>)new string?[] { x?.ToString() },
                 validate: false), delimiter: ",", explode: true)
                                 .AddOptionalParameter("sort_by", sortBy?.ToValueString())
                                 ;

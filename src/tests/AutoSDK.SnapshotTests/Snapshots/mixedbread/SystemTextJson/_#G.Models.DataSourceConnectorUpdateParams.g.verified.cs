@@ -34,8 +34,8 @@ namespace G
         /// Valid range: 15 seconds to 30 days
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("polling_interval")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.AnyOfJsonConverter<int?, string, object>))]
-        public global::G.AnyOf<int?, string, object>? PollingInterval { get; set; }
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.AnyOfJsonConverter<int?, string>))]
+        public global::G.AnyOf<int?, string>? PollingInterval { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -68,7 +68,7 @@ namespace G
             string? name,
             object? metadata,
             bool? triggerSync,
-            global::G.AnyOf<int?, string, object>? pollingInterval)
+            global::G.AnyOf<int?, string>? pollingInterval)
         {
             this.Name = name;
             this.Metadata = metadata;

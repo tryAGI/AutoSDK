@@ -13,7 +13,7 @@ namespace G
         /// At least one of those conditions should match
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("should")]
-        public global::G.AnyOf<global::G.Condition?, global::System.Collections.Generic.IList<global::G.Condition>, object>? Should { get; set; }
+        public global::G.AnyOf<global::G.Condition?, global::System.Collections.Generic.IList<global::G.Condition>>? Should { get; set; }
 
         /// <summary>
         /// At least minimum amount of given conditions should match
@@ -25,13 +25,13 @@ namespace G
         /// All conditions must match
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("must")]
-        public global::G.AnyOf<global::G.Condition?, global::System.Collections.Generic.IList<global::G.Condition>, object>? Must { get; set; }
+        public global::G.AnyOf<global::G.Condition?, global::System.Collections.Generic.IList<global::G.Condition>>? Must { get; set; }
 
         /// <summary>
         /// All conditions must NOT match
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("must_not")]
-        public global::G.AnyOf<global::G.Condition?, global::System.Collections.Generic.IList<global::G.Condition>, object>? MustNot { get; set; }
+        public global::G.AnyOf<global::G.Condition?, global::System.Collections.Generic.IList<global::G.Condition>>? MustNot { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -55,10 +55,10 @@ namespace G
         /// All conditions must NOT match
         /// </param>
         public Filter(
-            global::G.AnyOf<global::G.Condition?, global::System.Collections.Generic.IList<global::G.Condition>, object>? should,
+            global::G.AnyOf<global::G.Condition?, global::System.Collections.Generic.IList<global::G.Condition>>? should,
             global::G.MinShould? minShould,
-            global::G.AnyOf<global::G.Condition?, global::System.Collections.Generic.IList<global::G.Condition>, object>? must,
-            global::G.AnyOf<global::G.Condition?, global::System.Collections.Generic.IList<global::G.Condition>, object>? mustNot)
+            global::G.AnyOf<global::G.Condition?, global::System.Collections.Generic.IList<global::G.Condition>>? must,
+            global::G.AnyOf<global::G.Condition?, global::System.Collections.Generic.IList<global::G.Condition>>? mustNot)
         {
             this.Should = should;
             this.MinShould = minShould;

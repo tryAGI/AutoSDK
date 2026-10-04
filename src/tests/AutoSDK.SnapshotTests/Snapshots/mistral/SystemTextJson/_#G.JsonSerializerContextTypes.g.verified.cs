@@ -618,7 +618,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.AnyOf<string, object, global::System.Collections.Generic.IList<global::G.ContentChunk>>? Type146 { get; set; }
+        public global::G.AnyOf<string, global::System.Collections.Generic.IList<global::G.ContentChunk>>? Type146 { get; set; }
         /// <summary>
         /// 
         /// </summary>
@@ -1259,7 +1259,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.AnyOf<string, object, global::System.Collections.Generic.List<global::G.ContentChunk>>? ListType22 { get; set; }
+        public global::G.AnyOf<string, global::System.Collections.Generic.List<global::G.ContentChunk>>? ListType22 { get; set; }
         /// <summary>
         /// 
         /// </summary>

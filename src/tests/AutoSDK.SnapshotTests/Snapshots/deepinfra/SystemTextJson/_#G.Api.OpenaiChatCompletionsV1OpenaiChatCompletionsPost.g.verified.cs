@@ -602,7 +602,7 @@ namespace G
             double? minP = default,
             int? topK = default,
             int? maxTokens = default,
-            global::G.AnyOf<string, global::System.Collections.Generic.IList<string>, object>? stop = default,
+            global::G.AnyOf<string, global::System.Collections.Generic.IList<string>>? stop = default,
             int? n = default,
             double? presencePenalty = default,
             double? frequencyPenalty = default,

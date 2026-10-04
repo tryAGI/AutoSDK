@@ -49,7 +49,7 @@ namespace G
         /// Default Value: base
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("split")]
-        public global::G.AnyOf<global::System.Collections.Generic.IList<string>, string, object>? Split { get; set; }
+        public global::G.AnyOf<global::System.Collections.Generic.IList<string>, string>? Split { get; set; }
 
         /// <summary>
         /// 
@@ -101,7 +101,7 @@ namespace G
             global::System.DateTime? createdAt,
             object? metadata,
             global::System.Guid? sourceRunId,
-            global::G.AnyOf<global::System.Collections.Generic.IList<string>, string, object>? split,
+            global::G.AnyOf<global::System.Collections.Generic.IList<string>, string>? split,
             global::System.Guid? id,
             bool? useSourceRunIo,
             bool? overwrite)

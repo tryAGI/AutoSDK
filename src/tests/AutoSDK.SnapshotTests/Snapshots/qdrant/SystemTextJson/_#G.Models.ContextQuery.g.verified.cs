@@ -14,8 +14,7 @@ namespace G
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("context")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.ContextInputJsonConverter))]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::G.ContextInput Context { get; set; }
+        public global::G.ContextInput? Context { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -31,7 +30,7 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public ContextQuery(
-            global::G.ContextInput context)
+            global::G.ContextInput? context)
         {
             this.Context = context;
         }

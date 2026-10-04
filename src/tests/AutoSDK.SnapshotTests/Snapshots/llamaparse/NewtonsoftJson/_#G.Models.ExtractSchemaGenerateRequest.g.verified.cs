@@ -25,7 +25,7 @@ namespace G
         /// Optional schema to validate, refine, or extend during generation
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("data_schema")]
-        public global::G.AnyOf<object, string, object>? DataSchema { get; set; }
+        public global::G.AnyOf<object, string>? DataSchema { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -48,7 +48,7 @@ namespace G
         public ExtractSchemaGenerateRequest(
             string? prompt,
             global::System.Guid? fileId,
-            global::G.AnyOf<object, string, object>? dataSchema)
+            global::G.AnyOf<object, string>? dataSchema)
         {
             this.Prompt = prompt;
             this.FileId = fileId;

@@ -59,8 +59,8 @@ namespace G
         /// Threshold for full page image detection (0.0-1.0, default 0.8)
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("full_page_image_in_page_threshold")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.AnyOfJsonConverter<double?, string, object>))]
-        public global::G.AnyOf<double?, string, object>? FullPageImageInPageThreshold { get; set; }
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.AnyOfJsonConverter<double?, string>))]
+        public global::G.AnyOf<double?, string>? FullPageImageInPageThreshold { get; set; }
 
         /// <summary>
         /// Regex pattern to match against filename
@@ -90,141 +90,141 @@ namespace G
         /// Trigger if page has more than N characters
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("page_longer_than_n_chars")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.AnyOfJsonConverter<int?, string, object>))]
-        public global::G.AnyOf<int?, string, object>? PageLongerThanNChars { get; set; }
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.AnyOfJsonConverter<int?, string>))]
+        public global::G.AnyOf<int?, string>? PageLongerThanNChars { get; set; }
 
         /// <summary>
         /// Trigger if page has fewer than N characters
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("page_shorter_than_n_chars")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.AnyOfJsonConverter<int?, string, object>))]
-        public global::G.AnyOf<int?, string, object>? PageShorterThanNChars { get; set; }
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.AnyOfJsonConverter<int?, string>))]
+        public global::G.AnyOf<int?, string>? PageShorterThanNChars { get; set; }
 
         /// <summary>
         /// Trigger if page has more than N words
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("page_contains_at_least_n_words")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.AnyOfJsonConverter<int?, string, object>))]
-        public global::G.AnyOf<int?, string, object>? PageContainsAtLeastNWords { get; set; }
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.AnyOfJsonConverter<int?, string>))]
+        public global::G.AnyOf<int?, string>? PageContainsAtLeastNWords { get; set; }
 
         /// <summary>
         /// Trigger if page has fewer than N words
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("page_contains_at_most_n_words")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.AnyOfJsonConverter<int?, string, object>))]
-        public global::G.AnyOf<int?, string, object>? PageContainsAtMostNWords { get; set; }
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.AnyOfJsonConverter<int?, string>))]
+        public global::G.AnyOf<int?, string>? PageContainsAtMostNWords { get; set; }
 
         /// <summary>
         /// Trigger if page has more than N lines
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("page_contains_at_least_n_lines")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.AnyOfJsonConverter<int?, string, object>))]
-        public global::G.AnyOf<int?, string, object>? PageContainsAtLeastNLines { get; set; }
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.AnyOfJsonConverter<int?, string>))]
+        public global::G.AnyOf<int?, string>? PageContainsAtLeastNLines { get; set; }
 
         /// <summary>
         /// Trigger if page has fewer than N lines
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("page_contains_at_most_n_lines")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.AnyOfJsonConverter<int?, string, object>))]
-        public global::G.AnyOf<int?, string, object>? PageContainsAtMostNLines { get; set; }
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.AnyOfJsonConverter<int?, string>))]
+        public global::G.AnyOf<int?, string>? PageContainsAtMostNLines { get; set; }
 
         /// <summary>
         /// Trigger if page has more than N images
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("page_contains_at_least_n_images")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.AnyOfJsonConverter<int?, string, object>))]
-        public global::G.AnyOf<int?, string, object>? PageContainsAtLeastNImages { get; set; }
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.AnyOfJsonConverter<int?, string>))]
+        public global::G.AnyOf<int?, string>? PageContainsAtLeastNImages { get; set; }
 
         /// <summary>
         /// Trigger if page has fewer than N images
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("page_contains_at_most_n_images")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.AnyOfJsonConverter<int?, string, object>))]
-        public global::G.AnyOf<int?, string, object>? PageContainsAtMostNImages { get; set; }
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.AnyOfJsonConverter<int?, string>))]
+        public global::G.AnyOf<int?, string>? PageContainsAtMostNImages { get; set; }
 
         /// <summary>
         /// Trigger if page has more than N tables
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("page_contains_at_least_n_tables")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.AnyOfJsonConverter<int?, string, object>))]
-        public global::G.AnyOf<int?, string, object>? PageContainsAtLeastNTables { get; set; }
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.AnyOfJsonConverter<int?, string>))]
+        public global::G.AnyOf<int?, string>? PageContainsAtLeastNTables { get; set; }
 
         /// <summary>
         /// Trigger if page has fewer than N tables
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("page_contains_at_most_n_tables")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.AnyOfJsonConverter<int?, string, object>))]
-        public global::G.AnyOf<int?, string, object>? PageContainsAtMostNTables { get; set; }
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.AnyOfJsonConverter<int?, string>))]
+        public global::G.AnyOf<int?, string>? PageContainsAtMostNTables { get; set; }
 
         /// <summary>
         /// Trigger if page has more than N links
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("page_contains_at_least_n_links")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.AnyOfJsonConverter<int?, string, object>))]
-        public global::G.AnyOf<int?, string, object>? PageContainsAtLeastNLinks { get; set; }
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.AnyOfJsonConverter<int?, string>))]
+        public global::G.AnyOf<int?, string>? PageContainsAtLeastNLinks { get; set; }
 
         /// <summary>
         /// Trigger if page has fewer than N links
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("page_contains_at_most_n_links")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.AnyOfJsonConverter<int?, string, object>))]
-        public global::G.AnyOf<int?, string, object>? PageContainsAtMostNLinks { get; set; }
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.AnyOfJsonConverter<int?, string>))]
+        public global::G.AnyOf<int?, string>? PageContainsAtMostNLinks { get; set; }
 
         /// <summary>
         /// Trigger if page has more than N charts
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("page_contains_at_least_n_charts")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.AnyOfJsonConverter<int?, string, object>))]
-        public global::G.AnyOf<int?, string, object>? PageContainsAtLeastNCharts { get; set; }
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.AnyOfJsonConverter<int?, string>))]
+        public global::G.AnyOf<int?, string>? PageContainsAtLeastNCharts { get; set; }
 
         /// <summary>
         /// Trigger if page has fewer than N charts
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("page_contains_at_most_n_charts")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.AnyOfJsonConverter<int?, string, object>))]
-        public global::G.AnyOf<int?, string, object>? PageContainsAtMostNCharts { get; set; }
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.AnyOfJsonConverter<int?, string>))]
+        public global::G.AnyOf<int?, string>? PageContainsAtMostNCharts { get; set; }
 
         /// <summary>
         /// Trigger if page has more than N layout elements
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("page_contains_at_least_n_layout_elements")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.AnyOfJsonConverter<int?, string, object>))]
-        public global::G.AnyOf<int?, string, object>? PageContainsAtLeastNLayoutElements { get; set; }
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.AnyOfJsonConverter<int?, string>))]
+        public global::G.AnyOf<int?, string>? PageContainsAtLeastNLayoutElements { get; set; }
 
         /// <summary>
         /// Trigger if page has fewer than N layout elements
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("page_contains_at_most_n_layout_elements")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.AnyOfJsonConverter<int?, string, object>))]
-        public global::G.AnyOf<int?, string, object>? PageContainsAtMostNLayoutElements { get; set; }
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.AnyOfJsonConverter<int?, string>))]
+        public global::G.AnyOf<int?, string>? PageContainsAtMostNLayoutElements { get; set; }
 
         /// <summary>
         /// Trigger if page has more than N% numeric words
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("page_contains_at_least_n_percent_numbers")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.AnyOfJsonConverter<int?, string, object>))]
-        public global::G.AnyOf<int?, string, object>? PageContainsAtLeastNPercentNumbers { get; set; }
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.AnyOfJsonConverter<int?, string>))]
+        public global::G.AnyOf<int?, string>? PageContainsAtLeastNPercentNumbers { get; set; }
 
         /// <summary>
         /// Trigger if page has fewer than N% numeric words
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("page_contains_at_most_n_percent_numbers")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.AnyOfJsonConverter<int?, string, object>))]
-        public global::G.AnyOf<int?, string, object>? PageContainsAtMostNPercentNumbers { get; set; }
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.AnyOfJsonConverter<int?, string>))]
+        public global::G.AnyOf<int?, string>? PageContainsAtMostNPercentNumbers { get; set; }
 
         /// <summary>
         /// Trigger if page has more than N numeric words
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("page_contains_at_least_n_numbers")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.AnyOfJsonConverter<int?, string, object>))]
-        public global::G.AnyOf<int?, string, object>? PageContainsAtLeastNNumbers { get; set; }
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.AnyOfJsonConverter<int?, string>))]
+        public global::G.AnyOf<int?, string>? PageContainsAtLeastNNumbers { get; set; }
 
         /// <summary>
         /// Trigger if page has fewer than N numeric words
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("page_contains_at_most_n_numbers")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.AnyOfJsonConverter<int?, string, object>))]
-        public global::G.AnyOf<int?, string, object>? PageContainsAtMostNNumbers { get; set; }
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.AnyOfJsonConverter<int?, string>))]
+        public global::G.AnyOf<int?, string>? PageContainsAtMostNNumbers { get; set; }
 
         /// <summary>
         /// Regex pattern to match in page content
@@ -248,8 +248,8 @@ namespace G
         /// Confidence threshold for layout element detection
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("layout_element_in_page_confidence_threshold")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.AnyOfJsonConverter<double?, string, object>))]
-        public global::G.AnyOf<double?, string, object>? LayoutElementInPageConfidenceThreshold { get; set; }
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.AnyOfJsonConverter<double?, string>))]
+        public global::G.AnyOf<double?, string>? LayoutElementInPageConfidenceThreshold { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -379,35 +379,35 @@ namespace G
             bool? tableInPage,
             bool? imageInPage,
             bool? fullPageImageInPage,
-            global::G.AnyOf<double?, string, object>? fullPageImageInPageThreshold,
+            global::G.AnyOf<double?, string>? fullPageImageInPageThreshold,
             string? filenameRegexp,
             string? filenameRegexpMode,
             string? filenameMatchGlob,
             global::System.Collections.Generic.IList<string>? filenameMatchGlobList,
-            global::G.AnyOf<int?, string, object>? pageLongerThanNChars,
-            global::G.AnyOf<int?, string, object>? pageShorterThanNChars,
-            global::G.AnyOf<int?, string, object>? pageContainsAtLeastNWords,
-            global::G.AnyOf<int?, string, object>? pageContainsAtMostNWords,
-            global::G.AnyOf<int?, string, object>? pageContainsAtLeastNLines,
-            global::G.AnyOf<int?, string, object>? pageContainsAtMostNLines,
-            global::G.AnyOf<int?, string, object>? pageContainsAtLeastNImages,
-            global::G.AnyOf<int?, string, object>? pageContainsAtMostNImages,
-            global::G.AnyOf<int?, string, object>? pageContainsAtLeastNTables,
-            global::G.AnyOf<int?, string, object>? pageContainsAtMostNTables,
-            global::G.AnyOf<int?, string, object>? pageContainsAtLeastNLinks,
-            global::G.AnyOf<int?, string, object>? pageContainsAtMostNLinks,
-            global::G.AnyOf<int?, string, object>? pageContainsAtLeastNCharts,
-            global::G.AnyOf<int?, string, object>? pageContainsAtMostNCharts,
-            global::G.AnyOf<int?, string, object>? pageContainsAtLeastNLayoutElements,
-            global::G.AnyOf<int?, string, object>? pageContainsAtMostNLayoutElements,
-            global::G.AnyOf<int?, string, object>? pageContainsAtLeastNPercentNumbers,
-            global::G.AnyOf<int?, string, object>? pageContainsAtMostNPercentNumbers,
-            global::G.AnyOf<int?, string, object>? pageContainsAtLeastNNumbers,
-            global::G.AnyOf<int?, string, object>? pageContainsAtMostNNumbers,
+            global::G.AnyOf<int?, string>? pageLongerThanNChars,
+            global::G.AnyOf<int?, string>? pageShorterThanNChars,
+            global::G.AnyOf<int?, string>? pageContainsAtLeastNWords,
+            global::G.AnyOf<int?, string>? pageContainsAtMostNWords,
+            global::G.AnyOf<int?, string>? pageContainsAtLeastNLines,
+            global::G.AnyOf<int?, string>? pageContainsAtMostNLines,
+            global::G.AnyOf<int?, string>? pageContainsAtLeastNImages,
+            global::G.AnyOf<int?, string>? pageContainsAtMostNImages,
+            global::G.AnyOf<int?, string>? pageContainsAtLeastNTables,
+            global::G.AnyOf<int?, string>? pageContainsAtMostNTables,
+            global::G.AnyOf<int?, string>? pageContainsAtLeastNLinks,
+            global::G.AnyOf<int?, string>? pageContainsAtMostNLinks,
+            global::G.AnyOf<int?, string>? pageContainsAtLeastNCharts,
+            global::G.AnyOf<int?, string>? pageContainsAtMostNCharts,
+            global::G.AnyOf<int?, string>? pageContainsAtLeastNLayoutElements,
+            global::G.AnyOf<int?, string>? pageContainsAtMostNLayoutElements,
+            global::G.AnyOf<int?, string>? pageContainsAtLeastNPercentNumbers,
+            global::G.AnyOf<int?, string>? pageContainsAtMostNPercentNumbers,
+            global::G.AnyOf<int?, string>? pageContainsAtLeastNNumbers,
+            global::G.AnyOf<int?, string>? pageContainsAtMostNNumbers,
             string? regexpInPage,
             string? regexpInPageMode,
             string? layoutElementInPage,
-            global::G.AnyOf<double?, string, object>? layoutElementInPageConfidenceThreshold)
+            global::G.AnyOf<double?, string>? layoutElementInPageConfidenceThreshold)
         {
             this.ParsingConf = parsingConf ?? throw new global::System.ArgumentNullException(nameof(parsingConf));
             this.TriggerMode = triggerMode;

@@ -125,15 +125,15 @@ namespace G
         /// Optional metadata to be included in the webhook response. This should be a JSON string representing an object with a maximum depth of 2 levels and maximum size of 16KB. Useful for tracking internal IDs, job references, or other contextual information.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("webhook_metadata")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.AnyOfJsonConverter<string, object, object>))]
-        public global::G.AnyOf<string, object, object>? WebhookMetadata { get; set; }
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.AnyOfJsonConverter<string, object>))]
+        public global::G.AnyOf<string, object>? WebhookMetadata { get; set; }
 
         /// <summary>
         /// Detect entities in the transcript. Can be 'all' to detect all entities, a single entity type or category string, or a list of entity types/categories. Categories include 'pii', 'phi', 'pci', 'other', 'offensive_language'. When enabled, detected entities will be returned in the 'entities' field with their text, type, and character positions. Usage of this parameter will incur additional costs.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("entity_detection")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.AnyOfJsonConverter<string, global::System.Collections.Generic.IList<string>, object>))]
-        public global::G.AnyOf<string, global::System.Collections.Generic.IList<string>, object>? EntityDetection { get; set; }
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.AnyOfJsonConverter<string, global::System.Collections.Generic.IList<string>>))]
+        public global::G.AnyOf<string, global::System.Collections.Generic.IList<string>>? EntityDetection { get; set; }
 
         /// <summary>
         /// If true, the transcription will not have any filler words, false starts and non-speech sounds. Only supported with scribe_v2 model.<br/>
@@ -250,8 +250,8 @@ namespace G
             double? temperature,
             int? seed,
             bool? useMultiChannel,
-            global::G.AnyOf<string, object, object>? webhookMetadata,
-            global::G.AnyOf<string, global::System.Collections.Generic.IList<string>, object>? entityDetection,
+            global::G.AnyOf<string, object>? webhookMetadata,
+            global::G.AnyOf<string, global::System.Collections.Generic.IList<string>>? entityDetection,
             bool? noVerbatim,
             global::System.Collections.Generic.IList<string>? keyterms)
         {

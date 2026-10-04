@@ -26,7 +26,7 @@ namespace G
             bool? stream,
             int? logprobs,
             bool? echo,
-            global::G.AnyOf<string, global::System.Collections.Generic.IList<string>, object>? stop,
+            global::G.AnyOf<string, global::System.Collections.Generic.IList<string>>? stop,
             double? presencePenalty,
             double? frequencyPenalty,
             global::G.ResponseFormat? responseFormat,
@@ -127,7 +127,7 @@ The total length of input tokens and generated tokens is limited by the model's 
             Description = @"return prompt as part of the respons",
         };
 
-        private global::System.CommandLine.Option<global::G.AnyOf<string, global::System.Collections.Generic.IList<string>, object>?> Stop { get; } = new(
+        private global::System.CommandLine.Option<global::G.AnyOf<string, global::System.Collections.Generic.IList<string>>?> Stop { get; } = new(
             name: "stop")
         {
             Description = @"up to 16 sequences where the API will stop generating further tokens",

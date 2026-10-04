@@ -61,28 +61,15 @@ namespace G.JsonConverters
                     }
                 }
             }
-            var __score3 = 0;
-            {
-                var __ti = typeInfoResolver.GetTypeInfo(typeof(object), options);
-                if (__ti != null && __ti.Kind == global::System.Text.Json.Serialization.Metadata.JsonTypeInfoKind.Object)
-                {
-                    foreach (var __prop in __ti.Properties)
-                    {
-                        if (__jsonProps.Contains(__prop.Name)) __score3++;
-                    }
-                }
-            }
             var __bestScore = 0;
             var __bestIndex = -1;
             if (__score0 > __bestScore) { __bestScore = __score0; __bestIndex = 0; }
             if (__score1 > __bestScore) { __bestScore = __score1; __bestIndex = 1; }
             if (__score2 > __bestScore) { __bestScore = __score2; __bestIndex = 2; }
-            if (__score3 > __bestScore) { __bestScore = __score3; __bestIndex = 3; }
 
             global::System.Collections.Generic.IList<global::G.ProjectScoreCategory>? categorical = default;
             global::System.Collections.Generic.Dictionary<string, double>? weighted = default;
             global::System.Collections.Generic.IList<string>? minimum = default;
-            object? projectScoreCategoriesVariant4 = default;
             if (__bestIndex >= 0)
             {
                 if (__bestIndex == 0)
@@ -135,26 +122,9 @@ namespace G.JsonConverters
                     {
                     }
                 }
-
-                else if (__bestIndex == 3)
-                {
-                    try
-                    {
-
-                        var typeInfo = typeInfoResolver.GetTypeInfo(typeof(object), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<object> ??
-                                       throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(object).Name}");
-                        projectScoreCategoriesVariant4 = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
-                    }
-                    catch (global::System.Text.Json.JsonException)
-                    {
-                    }
-                    catch (global::System.InvalidOperationException)
-                    {
-                    }
-                }
             }
 
-            if (categorical == null && weighted == null && minimum == null && projectScoreCategoriesVariant4 == null)
+            if (categorical == null && weighted == null && minimum == null)
             {
                 try
                 {
@@ -171,7 +141,7 @@ namespace G.JsonConverters
                 }
             }
 
-            if (categorical == null && weighted == null && minimum == null && projectScoreCategoriesVariant4 == null)
+            if (categorical == null && weighted == null && minimum == null)
             {
                 try
                 {
@@ -188,7 +158,7 @@ namespace G.JsonConverters
                 }
             }
 
-            if (categorical == null && weighted == null && minimum == null && projectScoreCategoriesVariant4 == null)
+            if (categorical == null && weighted == null && minimum == null)
             {
                 try
                 {
@@ -205,31 +175,12 @@ namespace G.JsonConverters
                 }
             }
 
-            if (categorical == null && weighted == null && minimum == null && projectScoreCategoriesVariant4 == null)
-            {
-                try
-                {
-
-                    var typeInfo = typeInfoResolver.GetTypeInfo(typeof(object), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<object> ??
-                                   throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(object).Name}");
-                    projectScoreCategoriesVariant4 = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
-                }
-                catch (global::System.Text.Json.JsonException)
-                {
-                }
-                catch (global::System.InvalidOperationException)
-                {
-                }
-            }
-
             var __value = new global::G.ProjectScoreCategories(
                 categorical,
 
                 weighted,
 
-                minimum,
-
-                projectScoreCategoriesVariant4
+                minimum
                 );
 
             return __value;
@@ -261,12 +212,6 @@ namespace G.JsonConverters
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::System.Collections.Generic.IList<string>), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::System.Collections.Generic.IList<string>?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::System.Collections.Generic.IList<string>).Name}");
                 global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickMinimum(), typeInfo);
-            }
-            else if (value.IsProjectScoreCategoriesVariant4)
-            {
-                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(object), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<object?> ??
-                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(object).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickProjectScoreCategoriesVariant4(), typeInfo);
             }
         }
     }

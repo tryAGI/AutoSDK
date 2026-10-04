@@ -120,43 +120,6 @@ namespace G
         public global::G.ResponseFormatNullishText PickText() => Text is { } value
             ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Text' but the value was {ToString()}.");
-
-        /// <summary>
-        /// 
-        /// </summary>
-#if NET6_0_OR_GREATER
-        public object? ResponseFormatNullishVariant4 { get; init; }
-#else
-        public object? ResponseFormatNullishVariant4 { get; }
-#endif
-
-        /// <summary>
-        /// 
-        /// </summary>
-#if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(ResponseFormatNullishVariant4))]
-#endif
-        public bool IsResponseFormatNullishVariant4 => ResponseFormatNullishVariant4 != null;
-
-        /// <summary>
-        /// 
-        /// </summary>
-        public bool TryPickResponseFormatNullishVariant4(
-#if NET6_0_OR_GREATER
-            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
-#endif
-            out object? value)
-        {
-            value = ResponseFormatNullishVariant4;
-            return IsResponseFormatNullishVariant4;
-        }
-
-        /// <summary>
-        /// 
-        /// </summary>
-        public object PickResponseFormatNullishVariant4() => ResponseFormatNullishVariant4 is { } value
-            ? value
-            : throw new global::System.InvalidOperationException($"Expected union variant 'ResponseFormatNullishVariant4' but the value was {ToString()}.");
         /// <summary>
         /// 
         /// </summary>
@@ -232,21 +195,18 @@ namespace G
         public ResponseFormatNullish(
             global::G.ResponseFormatNullishJsonObject? jsonObject,
             global::G.ResponseFormatNullishJsonSchema? jsonSchema,
-            global::G.ResponseFormatNullishText? text,
-            object? responseFormatNullishVariant4
+            global::G.ResponseFormatNullishText? text
             )
         {
             JsonObject = jsonObject;
             JsonSchema = jsonSchema;
             Text = text;
-            ResponseFormatNullishVariant4 = responseFormatNullishVariant4;
         }
 
         /// <summary>
         /// 
         /// </summary>
         public object? Object =>
-            ResponseFormatNullishVariant4 as object ??
             Text as object ??
             JsonSchema as object ??
             JsonObject as object 
@@ -258,8 +218,7 @@ namespace G
         public override string? ToString() =>
             JsonObject?.ToString() ??
             JsonSchema?.ToString() ??
-            Text?.ToString() ??
-            ResponseFormatNullishVariant4?.ToString() 
+            Text?.ToString() 
             ;
 
         /// <summary>
@@ -267,7 +226,7 @@ namespace G
         /// </summary>
         public bool Validate()
         {
-            return IsJsonObject || IsJsonSchema || IsText || IsResponseFormatNullishVariant4;
+            return IsJsonObject || IsJsonSchema || IsText;
         }
 
         /// <summary>
@@ -277,7 +236,6 @@ namespace G
             global::System.Func<global::G.ResponseFormatNullishJsonObject, TResult>? jsonObject = null,
             global::System.Func<global::G.ResponseFormatNullishJsonSchema, TResult>? jsonSchema = null,
             global::System.Func<global::G.ResponseFormatNullishText, TResult>? text = null,
-            global::System.Func<object, TResult>? responseFormatNullishVariant4 = null,
             bool validate = true)
         {
             if (validate)
@@ -297,10 +255,6 @@ namespace G
             {
                 return text(__value2);
             }
-            else if (ResponseFormatNullishVariant4 is { } __value3 && responseFormatNullishVariant4 != null)
-            {
-                return responseFormatNullishVariant4(__value3);
-            }
 
             return default(TResult);
         }
@@ -314,8 +268,6 @@ namespace G
             global::System.Action<global::G.ResponseFormatNullishJsonSchema>? jsonSchema = null,
 
             global::System.Action<global::G.ResponseFormatNullishText>? text = null,
-
-            global::System.Action<object>? responseFormatNullishVariant4 = null,
             bool validate = true)
         {
             if (validate)
@@ -334,10 +286,6 @@ namespace G
             else if (Text is { } __value2)
             {
                 text?.Invoke(__value2);
-            }
-            else if (ResponseFormatNullishVariant4 is { } __value3)
-            {
-                responseFormatNullishVariant4?.Invoke(__value3);
             }
         }
 
@@ -348,7 +296,6 @@ namespace G
             global::System.Action<global::G.ResponseFormatNullishJsonObject>? jsonObject = null,
             global::System.Action<global::G.ResponseFormatNullishJsonSchema>? jsonSchema = null,
             global::System.Action<global::G.ResponseFormatNullishText>? text = null,
-            global::System.Action<object>? responseFormatNullishVariant4 = null,
             bool validate = true)
         {
             if (validate)
@@ -367,10 +314,6 @@ namespace G
             else if (Text is { } __value2)
             {
                 text?.Invoke(__value2);
-            }
-            else if (ResponseFormatNullishVariant4 is { } __value3)
-            {
-                responseFormatNullishVariant4?.Invoke(__value3);
             }
         }
 
@@ -387,8 +330,6 @@ namespace G
                 typeof(global::G.ResponseFormatNullishJsonSchema),
                 Text,
                 typeof(global::G.ResponseFormatNullishText),
-                ResponseFormatNullishVariant4,
-                typeof(object),
             };
             const int offset = unchecked((int)2166136261);
             const int prime = 16777619;
@@ -407,8 +348,7 @@ namespace G
             return
                 global::System.Collections.Generic.EqualityComparer<global::G.ResponseFormatNullishJsonObject?>.Default.Equals(JsonObject, other.JsonObject) &&
                 global::System.Collections.Generic.EqualityComparer<global::G.ResponseFormatNullishJsonSchema?>.Default.Equals(JsonSchema, other.JsonSchema) &&
-                global::System.Collections.Generic.EqualityComparer<global::G.ResponseFormatNullishText?>.Default.Equals(Text, other.Text) &&
-                global::System.Collections.Generic.EqualityComparer<object?>.Default.Equals(ResponseFormatNullishVariant4, other.ResponseFormatNullishVariant4) 
+                global::System.Collections.Generic.EqualityComparer<global::G.ResponseFormatNullishText?>.Default.Equals(Text, other.Text) 
                 ;
         }
 

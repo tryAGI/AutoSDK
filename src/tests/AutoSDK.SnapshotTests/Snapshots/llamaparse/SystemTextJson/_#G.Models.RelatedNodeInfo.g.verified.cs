@@ -20,8 +20,8 @@ namespace G
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("node_type")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.AnyOfJsonConverter<global::G.ObjectType?, string, object>))]
-        public global::G.AnyOf<global::G.ObjectType?, string, object>? NodeType { get; set; }
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.AnyOfJsonConverter<global::G.ObjectType?, string>))]
+        public global::G.AnyOf<global::G.ObjectType?, string>? NodeType { get; set; }
 
         /// <summary>
         /// 
@@ -62,7 +62,7 @@ namespace G
 #endif
         public RelatedNodeInfo(
             string nodeId,
-            global::G.AnyOf<global::G.ObjectType?, string, object>? nodeType,
+            global::G.AnyOf<global::G.ObjectType?, string>? nodeType,
             object? metadata,
             string? hash,
             string? className)

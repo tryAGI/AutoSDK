@@ -32,7 +32,7 @@ namespace G
         /// Table data as array of arrays (string, number, or null)
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("rows", Required = global::Newtonsoft.Json.Required.Always)]
-        public global::System.Collections.Generic.IList<global::System.Collections.Generic.IList<global::G.AnyOf<string, int?, double?, object>>> Rows { get; set; } = default!;
+        public global::System.Collections.Generic.IList<global::System.Collections.Generic.IList<global::G.AnyOf<string, int?, double?>?>> Rows { get; set; } = default!;
 
         /// <summary>
         /// HTML representation of the table
@@ -103,7 +103,7 @@ namespace G
         /// </param>
         public TableItem(
             string md,
-            global::System.Collections.Generic.IList<global::System.Collections.Generic.IList<global::G.AnyOf<string, int?, double?, object>>> rows,
+            global::System.Collections.Generic.IList<global::System.Collections.Generic.IList<global::G.AnyOf<string, int?, double?>?>> rows,
             string html,
             string csv,
             string? type,

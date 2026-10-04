@@ -61,12 +61,12 @@ namespace G
         partial void PrepareGetTriggersTypesBySlugArguments(
             global::System.Net.Http.HttpClient httpClient,
             ref string slug,
-            ref global::G.OneOf<object, string, global::System.Collections.Generic.Dictionary<string, string>>? toolkitVersions);
+            ref global::G.OneOf<string, global::System.Collections.Generic.Dictionary<string, string>>? toolkitVersions);
         partial void PrepareGetTriggersTypesBySlugRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
             string slug,
-            global::G.OneOf<object, string, global::System.Collections.Generic.Dictionary<string, string>>? toolkitVersions);
+            global::G.OneOf<string, global::System.Collections.Generic.Dictionary<string, string>>? toolkitVersions);
         partial void ProcessGetTriggersTypesBySlugResponse(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage);
@@ -90,7 +90,7 @@ namespace G
         /// <exception cref="global::G.ApiException"></exception>
         public async global::System.Threading.Tasks.Task<global::G.GetTriggersTypesBySlugResponse> GetTriggersTypesBySlugAsync(
             string slug,
-            global::G.OneOf<object, string, global::System.Collections.Generic.Dictionary<string, string>>? toolkitVersions = default,
+            global::G.OneOf<string, global::System.Collections.Generic.Dictionary<string, string>>? toolkitVersions = default,
             global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
@@ -117,7 +117,7 @@ namespace G
         /// <exception cref="global::G.ApiException"></exception>
         public async global::System.Threading.Tasks.Task<global::G.AutoSDKHttpResponse<global::G.GetTriggersTypesBySlugResponse>> GetTriggersTypesBySlugAsResponseAsync(
             string slug,
-            global::G.OneOf<object, string, global::System.Collections.Generic.Dictionary<string, string>>? toolkitVersions = default,
+            global::G.OneOf<string, global::System.Collections.Generic.Dictionary<string, string>>? toolkitVersions = default,
             global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {

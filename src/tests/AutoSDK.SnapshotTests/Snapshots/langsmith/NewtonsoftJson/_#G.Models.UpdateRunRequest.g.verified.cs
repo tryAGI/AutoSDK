@@ -31,7 +31,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("end_time")]
-        public global::G.OneOf<string, double?, object>? EndTime { get; set; }
+        public global::G.OneOf<string, double?>? EndTime { get; set; }
 
         /// <summary>
         /// 
@@ -120,7 +120,7 @@ namespace G
             global::System.Guid? traceId,
             string? dottedOrder,
             global::System.Guid? parentRunId,
-            global::G.OneOf<string, double?, object>? endTime,
+            global::G.OneOf<string, double?>? endTime,
             string? error,
             object? inputs,
             object? outputs,

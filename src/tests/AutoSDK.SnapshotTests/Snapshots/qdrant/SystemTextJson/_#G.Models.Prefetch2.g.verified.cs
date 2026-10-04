@@ -14,8 +14,8 @@ namespace G
         /// Default Value: openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("prefetch")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.AnyOfJsonConverter<global::G.Prefetch2, global::System.Collections.Generic.IList<global::G.Prefetch2>, object>))]
-        public global::G.AnyOf<global::G.Prefetch2, global::System.Collections.Generic.IList<global::G.Prefetch2>, object>? Prefetch { get; set; }
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.AnyOfJsonConverter<global::G.Prefetch2, global::System.Collections.Generic.IList<global::G.Prefetch2>>))]
+        public global::G.AnyOf<global::G.Prefetch2, global::System.Collections.Generic.IList<global::G.Prefetch2>>? Prefetch { get; set; }
 
         /// <summary>
         /// Query to perform. If missing without prefetches, returns points ordered by their IDs.
@@ -99,7 +99,7 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public Prefetch2(
-            global::G.AnyOf<global::G.Prefetch2, global::System.Collections.Generic.IList<global::G.Prefetch2>, object>? prefetch,
+            global::G.AnyOf<global::G.Prefetch2, global::System.Collections.Generic.IList<global::G.Prefetch2>>? prefetch,
             global::G.QueryInterface? query,
             string? @using,
             global::G.Filter? filter,

@@ -21,7 +21,7 @@ namespace G
         /// <exception cref="global::G.ApiException"></exception>
         global::System.Threading.Tasks.Task<global::G.GetTriggersTypesResponse> GetTriggersTypesAsync(
             global::System.Collections.Generic.IList<string>? toolkitSlugs = default,
-            global::G.OneOf<object, string, global::System.Collections.Generic.Dictionary<string, string>>? toolkitVersions = default,
+            global::G.OneOf<string, global::System.Collections.Generic.Dictionary<string, string>>? toolkitVersions = default,
             double? limit = default,
             string? cursor = default,
             global::G.AutoSDKRequestOptions? requestOptions = default,
@@ -42,7 +42,7 @@ namespace G
         /// <exception cref="global::G.ApiException"></exception>
         global::System.Threading.Tasks.Task<global::G.AutoSDKHttpResponse<global::G.GetTriggersTypesResponse>> GetTriggersTypesAsResponseAsync(
             global::System.Collections.Generic.IList<string>? toolkitSlugs = default,
-            global::G.OneOf<object, string, global::System.Collections.Generic.Dictionary<string, string>>? toolkitVersions = default,
+            global::G.OneOf<string, global::System.Collections.Generic.Dictionary<string, string>>? toolkitVersions = default,
             double? limit = default,
             string? cursor = default,
             global::G.AutoSDKRequestOptions? requestOptions = default,

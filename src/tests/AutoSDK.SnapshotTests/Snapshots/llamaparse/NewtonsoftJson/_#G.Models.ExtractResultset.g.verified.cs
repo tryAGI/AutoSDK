@@ -24,8 +24,8 @@ namespace G
         /// <summary>
         /// The data extracted from the file
         /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("data", Required = global::Newtonsoft.Json.Required.Always)]
-        public global::G.AnyOf<object, global::System.Collections.Generic.IList<object>, object> Data { get; set; } = default!;
+        [global::Newtonsoft.Json.JsonProperty("data")]
+        public global::G.AnyOf<object, global::System.Collections.Generic.IList<object>>? Data { get; set; }
 
         /// <summary>
         /// The metadata extracted from the file
@@ -48,17 +48,17 @@ namespace G
         /// <param name="extractionAgentId">
         /// The id of the extraction agent
         /// </param>
-        /// <param name="data">
-        /// The data extracted from the file
-        /// </param>
         /// <param name="extractionMetadata">
         /// The metadata extracted from the file
+        /// </param>
+        /// <param name="data">
+        /// The data extracted from the file
         /// </param>
         public ExtractResultset(
             global::System.Guid runId,
             global::System.Guid extractionAgentId,
-            global::G.AnyOf<object, global::System.Collections.Generic.IList<object>, object> data,
-            object extractionMetadata)
+            object extractionMetadata,
+            global::G.AnyOf<object, global::System.Collections.Generic.IList<object>>? data)
         {
             this.RunId = runId;
             this.ExtractionAgentId = extractionAgentId;

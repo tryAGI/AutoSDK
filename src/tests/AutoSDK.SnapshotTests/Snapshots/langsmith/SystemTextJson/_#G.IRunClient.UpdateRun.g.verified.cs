@@ -62,7 +62,7 @@ namespace G
             global::System.Guid? traceId = default,
             string? dottedOrder = default,
             global::System.Guid? parentRunId = default,
-            global::G.OneOf<string, double?, object>? endTime = default,
+            global::G.OneOf<string, double?>? endTime = default,
             string? error = default,
             object? inputs = default,
             object? outputs = default,

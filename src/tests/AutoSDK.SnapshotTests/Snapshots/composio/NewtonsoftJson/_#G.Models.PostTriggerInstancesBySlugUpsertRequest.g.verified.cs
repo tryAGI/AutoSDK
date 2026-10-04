@@ -52,7 +52,7 @@ namespace G
         /// </summary>
         /// <example>latest</example>
         [global::Newtonsoft.Json.JsonProperty("toolkit_versions")]
-        public global::G.AnyOf<string, global::System.Collections.Generic.Dictionary<string, string>, object>? ToolkitVersions { get; set; }
+        public global::G.AnyOf<string, global::System.Collections.Generic.Dictionary<string, string>>? ToolkitVersions { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -76,7 +76,7 @@ namespace G
         public PostTriggerInstancesBySlugUpsertRequest(
             string? connectedAccountId,
             global::System.Collections.Generic.Dictionary<string, object?>? triggerConfig2,
-            global::G.AnyOf<string, global::System.Collections.Generic.Dictionary<string, string>, object>? toolkitVersions)
+            global::G.AnyOf<string, global::System.Collections.Generic.Dictionary<string, string>>? toolkitVersions)
         {
             this.ConnectedAccountId = connectedAccountId;
             this.TriggerConfig2 = triggerConfig2;

@@ -72,15 +72,15 @@ namespace G
         /// Default Value: openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("texts")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.AnyOfJsonConverter<global::System.Collections.Generic.IList<string>, string, object>))]
-        public global::G.AnyOf<global::System.Collections.Generic.IList<string>, string, object>? Texts { get; set; }
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.AnyOfJsonConverter<global::System.Collections.Generic.IList<string>, string>))]
+        public global::G.AnyOf<global::System.Collections.Generic.IList<string>, string>? Texts { get; set; }
 
         /// <summary>
         /// Model tags
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("tags")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.AnyOfJsonConverter<global::System.Collections.Generic.IList<string>, string, object>))]
-        public global::G.AnyOf<global::System.Collections.Generic.IList<string>, string, object>? Tags { get; set; }
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.AnyOfJsonConverter<global::System.Collections.Generic.IList<string>, string>))]
+        public global::G.AnyOf<global::System.Collections.Generic.IList<string>, string>? Tags { get; set; }
 
         /// <summary>
         /// Enhance audio quality<br/>
@@ -149,8 +149,8 @@ namespace G
             byte[]? coverImage,
             string? coverImagename,
             global::G.CreateModelRequestTrainMode2 trainMode,
-            global::G.AnyOf<global::System.Collections.Generic.IList<string>, string, object>? texts,
-            global::G.AnyOf<global::System.Collections.Generic.IList<string>, string, object>? tags,
+            global::G.AnyOf<global::System.Collections.Generic.IList<string>, string>? texts,
+            global::G.AnyOf<global::System.Collections.Generic.IList<string>, string>? tags,
             bool? enhanceAudioQuality)
         {
             this.Visibility = visibility;

@@ -83,7 +83,7 @@ namespace G
             global::System.Guid pipelineId,
             string? session = default,
             global::G.EmbeddingConfigVariant13? embeddingConfig = default,
-            global::G.AnyOf<global::G.AutoTransformConfig, global::G.AdvancedModeTransformConfig, object>? transformConfig = default,
+            global::G.AnyOf<global::G.AutoTransformConfig, global::G.AdvancedModeTransformConfig>? transformConfig = default,
             global::G.SparseModelConfig? sparseModelConfig = default,
             global::System.Guid? dataSinkId = default,
             global::System.Guid? embeddingModelConfigId = default,

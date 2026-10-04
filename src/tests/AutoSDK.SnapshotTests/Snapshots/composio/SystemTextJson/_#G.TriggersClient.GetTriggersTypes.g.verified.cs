@@ -61,14 +61,14 @@ namespace G
         partial void PrepareGetTriggersTypesArguments(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Collections.Generic.IList<string>? toolkitSlugs,
-            ref global::G.OneOf<object, string, global::System.Collections.Generic.Dictionary<string, string>>? toolkitVersions,
+            ref global::G.OneOf<string, global::System.Collections.Generic.Dictionary<string, string>>? toolkitVersions,
             ref double? limit,
             ref string? cursor);
         partial void PrepareGetTriggersTypesRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
             global::System.Collections.Generic.IList<string>? toolkitSlugs,
-            global::G.OneOf<object, string, global::System.Collections.Generic.Dictionary<string, string>>? toolkitVersions,
+            global::G.OneOf<string, global::System.Collections.Generic.Dictionary<string, string>>? toolkitVersions,
             double? limit,
             string? cursor);
         partial void ProcessGetTriggersTypesResponse(
@@ -96,7 +96,7 @@ namespace G
         /// <exception cref="global::G.ApiException"></exception>
         public async global::System.Threading.Tasks.Task<global::G.GetTriggersTypesResponse> GetTriggersTypesAsync(
             global::System.Collections.Generic.IList<string>? toolkitSlugs = default,
-            global::G.OneOf<object, string, global::System.Collections.Generic.Dictionary<string, string>>? toolkitVersions = default,
+            global::G.OneOf<string, global::System.Collections.Generic.Dictionary<string, string>>? toolkitVersions = default,
             double? limit = default,
             string? cursor = default,
             global::G.AutoSDKRequestOptions? requestOptions = default,
@@ -129,7 +129,7 @@ namespace G
         /// <exception cref="global::G.ApiException"></exception>
         public async global::System.Threading.Tasks.Task<global::G.AutoSDKHttpResponse<global::G.GetTriggersTypesResponse>> GetTriggersTypesAsResponseAsync(
             global::System.Collections.Generic.IList<string>? toolkitSlugs = default,
-            global::G.OneOf<object, string, global::System.Collections.Generic.Dictionary<string, string>>? toolkitVersions = default,
+            global::G.OneOf<string, global::System.Collections.Generic.Dictionary<string, string>>? toolkitVersions = default,
             double? limit = default,
             string? cursor = default,
             global::G.AutoSDKRequestOptions? requestOptions = default,

@@ -486,7 +486,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.AnyOf<global::G.Condition?, global::System.Collections.Generic.IList<global::G.Condition>, object>? Type113 { get; set; }
+        public global::G.AnyOf<global::G.Condition?, global::System.Collections.Generic.IList<global::G.Condition>>? Type113 { get; set; }
         /// <summary>
         /// 
         /// </summary>
@@ -1730,7 +1730,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.AnyOf<global::G.Prefetch2, global::System.Collections.Generic.IList<global::G.Prefetch2>, object>? Type424 { get; set; }
+        public global::G.AnyOf<global::G.Prefetch2, global::System.Collections.Generic.IList<global::G.Prefetch2>>? Type424 { get; set; }
         /// <summary>
         /// 
         /// </summary>
@@ -1810,7 +1810,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.AnyOf<global::G.ContextPair, global::System.Collections.Generic.IList<global::G.ContextPair>, object>? Type444 { get; set; }
+        public global::G.AnyOf<global::G.ContextPair, global::System.Collections.Generic.IList<global::G.ContextPair>>? Type444 { get; set; }
         /// <summary>
         /// 
         /// </summary>
@@ -2475,7 +2475,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.AnyOf<global::G.Condition?, global::System.Collections.Generic.List<global::G.Condition>, object>? ListType9 { get; set; }
+        public global::G.AnyOf<global::G.Condition?, global::System.Collections.Generic.List<global::G.Condition>>? ListType9 { get; set; }
         /// <summary>
         /// 
         /// </summary>
@@ -2631,7 +2631,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.AnyOf<global::G.Prefetch2, global::System.Collections.Generic.List<global::G.Prefetch2>, object>? ListType48 { get; set; }
+        public global::G.AnyOf<global::G.Prefetch2, global::System.Collections.Generic.List<global::G.Prefetch2>>? ListType48 { get; set; }
         /// <summary>
         /// 
         /// </summary>
@@ -2643,7 +2643,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.AnyOf<global::G.ContextPair, global::System.Collections.Generic.List<global::G.ContextPair>, object>? ListType51 { get; set; }
+        public global::G.AnyOf<global::G.ContextPair, global::System.Collections.Generic.List<global::G.ContextPair>>? ListType51 { get; set; }
         /// <summary>
         /// 
         /// </summary>

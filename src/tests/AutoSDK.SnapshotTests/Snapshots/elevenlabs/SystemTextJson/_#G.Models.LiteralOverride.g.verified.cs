@@ -25,8 +25,8 @@ namespace G
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("constant_value")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.AnyOfJsonConverter<string, int?, double?, bool?, object>))]
-        public global::G.AnyOf<string, int?, double?, bool?, object>? ConstantValue { get; set; }
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.AnyOfJsonConverter<string, int?, double?, bool?>))]
+        public global::G.AnyOf<string, int?, double?, bool?>? ConstantValue { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -46,7 +46,7 @@ namespace G
         public LiteralOverride(
             string? description,
             string? dynamicVariable,
-            global::G.AnyOf<string, int?, double?, bool?, object>? constantValue)
+            global::G.AnyOf<string, int?, double?, bool?>? constantValue)
         {
             this.Description = description;
             this.DynamicVariable = dynamicVariable;

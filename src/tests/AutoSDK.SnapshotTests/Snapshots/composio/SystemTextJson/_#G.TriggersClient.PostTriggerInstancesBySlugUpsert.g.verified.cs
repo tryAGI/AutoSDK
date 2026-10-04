@@ -815,7 +815,7 @@ namespace G
             string slug,
             string? connectedAccountId = default,
             global::System.Collections.Generic.Dictionary<string, object?>? triggerConfig2 = default,
-            global::G.AnyOf<string, global::System.Collections.Generic.Dictionary<string, string>, object>? toolkitVersions = default,
+            global::G.AnyOf<string, global::System.Collections.Generic.Dictionary<string, string>>? toolkitVersions = default,
             global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {

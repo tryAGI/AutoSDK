@@ -52,7 +52,7 @@ namespace G
         /// Split per example: string, string array, or null
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("splits")]
-        public global::System.Collections.Generic.IList<global::G.OneOf<string, global::System.Collections.Generic.IList<string>, object>>? Splits { get; set; }
+        public global::System.Collections.Generic.IList<global::G.OneOf<string, global::System.Collections.Generic.IList<string>>?>? Splits { get; set; }
 
         /// <summary>
         /// Span IDs to link examples back to spans
@@ -91,7 +91,7 @@ namespace G
             string? description,
             global::System.Collections.Generic.IList<object>? outputs,
             global::System.Collections.Generic.IList<object>? metadata,
-            global::System.Collections.Generic.IList<global::G.OneOf<string, global::System.Collections.Generic.IList<string>, object>>? splits,
+            global::System.Collections.Generic.IList<global::G.OneOf<string, global::System.Collections.Generic.IList<string>>?>? splits,
             global::System.Collections.Generic.IList<string?>? spanIds)
         {
             this.Action = action;

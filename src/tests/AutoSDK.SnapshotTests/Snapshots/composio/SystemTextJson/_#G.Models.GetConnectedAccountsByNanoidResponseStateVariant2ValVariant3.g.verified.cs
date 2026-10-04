@@ -189,15 +189,15 @@ namespace G
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("expires_in")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.AnyOfJsonConverter<double?, string, object>))]
-        public global::G.AnyOf<double?, string, object>? ExpiresIn { get; set; }
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.AnyOfJsonConverter<double?, string>))]
+        public global::G.AnyOf<double?, string>? ExpiresIn { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("scope")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.AnyOfJsonConverter<string, global::System.Collections.Generic.IList<string>, object>))]
-        public global::G.AnyOf<string, global::System.Collections.Generic.IList<string>, object>? Scope { get; set; }
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.AnyOfJsonConverter<string, global::System.Collections.Generic.IList<string>>))]
+        public global::G.AnyOf<string, global::System.Collections.Generic.IList<string>>? Scope { get; set; }
 
         /// <summary>
         /// 
@@ -292,8 +292,8 @@ namespace G
             string? idToken,
             string? tokenType,
             string? refreshToken,
-            global::G.AnyOf<double?, string, object>? expiresIn,
-            global::G.AnyOf<string, global::System.Collections.Generic.IList<string>, object>? scope,
+            global::G.AnyOf<double?, string>? expiresIn,
+            global::G.AnyOf<string, global::System.Collections.Generic.IList<string>>? scope,
             string? webhookSignature,
             global::G.GetConnectedAccountsByNanoidResponseStateVariant2ValVariant3AuthedUser? authedUser)
         {

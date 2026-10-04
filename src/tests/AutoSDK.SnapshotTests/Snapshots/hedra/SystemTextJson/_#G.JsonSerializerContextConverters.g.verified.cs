@@ -39,12 +39,12 @@ namespace G
             typeof(global::G.JsonConverters.InputJsonConverter),
             typeof(global::G.JsonConverters.GenerateAssetPublicGenerationsPostRequestJsonConverter),
             typeof(global::G.JsonConverters.GenerateAssetPublicGenerationsPostResponseJsonConverter),
-            typeof(global::G.JsonConverters.AnyOfJsonConverter<global::System.Guid?, global::System.Collections.Generic.IList<global::System.Guid>, object>),
-            typeof(global::G.JsonConverters.AnyOfJsonConverter<global::System.Guid?, global::System.Collections.Generic.IList<global::System.Guid>, object>),
-            typeof(global::G.JsonConverters.AnyOfJsonConverter<global::System.Guid?, global::System.Collections.Generic.IList<global::System.Guid>, object>),
-            typeof(global::G.JsonConverters.AnyOfJsonConverter<global::System.Collections.Generic.IList<double>, global::System.Collections.Generic.IList<global::System.Collections.Generic.IList<double>>, object>),
+            typeof(global::G.JsonConverters.AnyOfJsonConverter<global::System.Guid?, global::System.Collections.Generic.IList<global::System.Guid>>),
+            typeof(global::G.JsonConverters.AnyOfJsonConverter<global::System.Guid?, global::System.Collections.Generic.IList<global::System.Guid>>),
+            typeof(global::G.JsonConverters.AnyOfJsonConverter<global::System.Guid?, global::System.Collections.Generic.IList<global::System.Guid>>),
+            typeof(global::G.JsonConverters.AnyOfJsonConverter<global::System.Collections.Generic.IList<double>, global::System.Collections.Generic.IList<global::System.Collections.Generic.IList<double>>>),
             typeof(global::G.JsonConverters.AnyOfJsonConverter<string, int?>),
-            typeof(global::G.JsonConverters.AnyOfJsonConverter<global::G.AssetType?, global::G.GenerationType?, object>),
+            typeof(global::G.JsonConverters.AnyOfJsonConverter<global::G.AssetType?, global::G.GenerationType?>),
             typeof(global::G.JsonConverters.UnixTimestampJsonConverter),
         };
     }

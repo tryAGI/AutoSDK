@@ -27,7 +27,7 @@ namespace G
         /// The value to compare against. Type depends on the field and operator.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("value")]
-        public global::G.OneOf<string, double?, bool?, byte[], object>? Value { get; set; }
+        public global::G.OneOf<string, double?, bool?, byte[]>? Value { get; set; }
 
         /// <summary>
         /// Required for nested fields (metadata, output, input_variables). Specifies which key within the nested object to filter on.
@@ -59,7 +59,7 @@ namespace G
         public StructuredFilter(
             global::G.StructuredFilterField field,
             global::G.StructuredFilterOperator @operator,
-            global::G.OneOf<string, double?, bool?, byte[], object>? value,
+            global::G.OneOf<string, double?, bool?, byte[]>? value,
             string? nestedKey)
         {
             this.Field = field;

@@ -74,7 +74,7 @@ namespace G
             ref string? upstreamRepoHandle,
             global::System.Collections.Generic.IList<global::System.Guid>? tagValueId,
             ref string? sortField,
-            ref global::G.AnyOf<string, string, object>? sortDirection);
+            ref string? sortDirection);
         partial void PrepareListReposRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
@@ -92,7 +92,7 @@ namespace G
             string? upstreamRepoHandle,
             global::System.Collections.Generic.IList<global::System.Guid>? tagValueId,
             string? sortField,
-            global::G.AnyOf<string, string, object>? sortDirection);
+            string? sortDirection);
         partial void ProcessListReposResponse(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage);
@@ -145,7 +145,7 @@ namespace G
             string? upstreamRepoHandle = default,
             global::System.Collections.Generic.IList<global::System.Guid>? tagValueId = default,
             string? sortField = default,
-            global::G.AnyOf<string, string, object>? sortDirection = default,
+            string? sortDirection = default,
             global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
@@ -214,7 +214,7 @@ namespace G
             string? upstreamRepoHandle = default,
             global::System.Collections.Generic.IList<global::System.Guid>? tagValueId = default,
             string? sortField = default,
-            global::G.AnyOf<string, string, object>? sortDirection = default,
+            string? sortDirection = default,
             global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
@@ -279,7 +279,7 @@ namespace G
                                 .AddOptionalParameter("upstream_repo_handle", upstreamRepoHandle)
                                 .AddOptionalParameter("tag_value_id", tagValueId, selector: static x => x.ToString() ?? throw new global::System.InvalidOperationException("A required query parameter returned null from ToString()."), delimiter: ",", explode: true)
                                 .AddOptionalParameter("sort_field", sortField)
-                                .AddOptionalParameter("sort_direction", sortDirection?.ToString())
+                                .AddOptionalParameter("sort_direction", sortDirection)
                                 ;
                             var __path = __pathBuilder.ToString();
                 __path = global::G.AutoSDKRequestOptionsSupport.AppendQueryParameters(

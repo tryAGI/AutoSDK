@@ -46,7 +46,7 @@ namespace G
         /// This field is semantically required and it is expected that end_time &gt;= start_time.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("end_time_unix_nano")]
-        public global::G.AnyOf<long?, string, object>? EndTimeUnixNano { get; set; }
+        public global::G.AnyOf<long?, string>? EndTimeUnixNano { get; set; }
 
         /// <summary>
         /// events is a collection of Event items. A span with no events is valid.
@@ -73,7 +73,7 @@ namespace G
         /// Default Value: SPAN_KIND_INTERNAL
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("kind")]
-        public global::G.AnyOf<global::G.OtlpKind?, int?, object>? Kind { get; set; }
+        public global::G.AnyOf<global::G.OtlpKind?, int?>? Kind { get; set; }
 
         /// <summary>
         /// 
@@ -109,7 +109,7 @@ namespace G
         /// This field is semantically required and it is expected that end_time &gt;= start_time.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("start_time_unix_nano")]
-        public global::G.AnyOf<long?, string, object>? StartTimeUnixNano { get; set; }
+        public global::G.AnyOf<long?, string>? StartTimeUnixNano { get; set; }
 
         /// <summary>
         /// An optional final status for this span. Semantically when Status isn't set, it means span's status code is unset, i.e. assume STATUS_CODE_UNSET (code = 0).
@@ -217,15 +217,15 @@ namespace G
             int? droppedAttributesCount,
             int? droppedEventsCount,
             int? droppedLinksCount,
-            global::G.AnyOf<long?, string, object>? endTimeUnixNano,
+            global::G.AnyOf<long?, string>? endTimeUnixNano,
             global::System.Collections.Generic.IList<global::G.OtlpEvent>? events,
             int? flags,
-            global::G.AnyOf<global::G.OtlpKind?, int?, object>? kind,
+            global::G.AnyOf<global::G.OtlpKind?, int?>? kind,
             object? links,
             string? name,
             string? parentSpanId,
             string? spanId,
-            global::G.AnyOf<long?, string, object>? startTimeUnixNano,
+            global::G.AnyOf<long?, string>? startTimeUnixNano,
             global::G.OtlpStatus? status,
             string? traceId,
             string? traceState)

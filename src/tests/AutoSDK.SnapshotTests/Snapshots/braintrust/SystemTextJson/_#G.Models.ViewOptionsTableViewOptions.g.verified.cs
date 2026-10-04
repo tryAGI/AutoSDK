@@ -97,8 +97,8 @@ namespace G
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("timeRangeFilter")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.AnyOfJsonConverter<string, global::G.ViewOptionsTableViewOptionsTimeRangeFilter, object>))]
-        public global::G.AnyOf<string, global::G.ViewOptionsTableViewOptionsTimeRangeFilter, object>? TimeRangeFilter { get; set; }
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.AnyOfJsonConverter<string, global::G.ViewOptionsTableViewOptionsTimeRangeFilter>))]
+        public global::G.AnyOf<string, global::G.ViewOptionsTableViewOptionsTimeRangeFilter>? TimeRangeFilter { get; set; }
 
         /// <summary>
         /// 
@@ -159,7 +159,7 @@ namespace G
             global::G.ViewOptionsTableViewOptionsSymbolGrouping? symbolGrouping,
             string? xAxisAggregation,
             global::System.Collections.Generic.IList<global::G.ViewOptionsTableViewOptionsChartAnnotation>? chartAnnotations,
-            global::G.AnyOf<string, global::G.ViewOptionsTableViewOptionsTimeRangeFilter, object>? timeRangeFilter,
+            global::G.AnyOf<string, global::G.ViewOptionsTableViewOptionsTimeRangeFilter>? timeRangeFilter,
             global::G.ViewOptionsTableViewOptionsQueryShape? queryShape,
             bool? freezeColumns)
         {

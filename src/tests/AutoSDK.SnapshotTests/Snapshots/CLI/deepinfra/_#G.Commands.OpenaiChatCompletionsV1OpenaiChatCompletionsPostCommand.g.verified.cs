@@ -23,7 +23,7 @@ namespace G
             double? minP,
             int? topK,
             int? maxTokens,
-            global::G.AnyOf<string, global::System.Collections.Generic.IList<string>, object>? stop,
+            global::G.AnyOf<string, global::System.Collections.Generic.IList<string>>? stop,
             int? n,
             double? presencePenalty,
             double? frequencyPenalty,
@@ -111,7 +111,7 @@ namespace G
 The total length of input tokens and generated tokens is limited by the model's context length. If explicitly set to None it will be the model's max context length minus input length or 16384, whichever is smaller.",
         };
 
-        private global::System.CommandLine.Option<global::G.AnyOf<string, global::System.Collections.Generic.IList<string>, object>?> Stop { get; } = new(
+        private global::System.CommandLine.Option<global::G.AnyOf<string, global::System.Collections.Generic.IList<string>>?> Stop { get; } = new(
             name: "stop")
         {
             Description = @"up to 16 sequences where the API will stop generating further tokens",

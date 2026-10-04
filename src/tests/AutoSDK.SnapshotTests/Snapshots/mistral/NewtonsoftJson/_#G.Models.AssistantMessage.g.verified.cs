@@ -13,7 +13,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("content")]
-        public global::G.AnyOf<string, object, global::System.Collections.Generic.IList<global::G.ContentChunk>>? Content { get; set; }
+        public global::G.AnyOf<string, global::System.Collections.Generic.IList<global::G.ContentChunk>>? Content { get; set; }
 
         /// <summary>
         /// 
@@ -54,7 +54,7 @@ namespace G
         /// Default Value: assistant
         /// </param>
         public AssistantMessage(
-            global::G.AnyOf<string, object, global::System.Collections.Generic.IList<global::G.ContentChunk>>? content,
+            global::G.AnyOf<string, global::System.Collections.Generic.IList<global::G.ContentChunk>>? content,
             global::System.Collections.Generic.IList<global::G.ToolCall>? toolCalls,
             bool? prefix,
             global::G.AssistantMessageRole? role)

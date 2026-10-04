@@ -25,7 +25,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("constant_value")]
-        public global::G.AnyOf<string, int?, double?, bool?, object>? ConstantValue { get; set; }
+        public global::G.AnyOf<string, int?, double?, bool?>? ConstantValue { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -42,7 +42,7 @@ namespace G
         public LiteralOverride(
             string? description,
             string? dynamicVariable,
-            global::G.AnyOf<string, int?, double?, bool?, object>? constantValue)
+            global::G.AnyOf<string, int?, double?, bool?>? constantValue)
         {
             this.Description = description;
             this.DynamicVariable = dynamicVariable;

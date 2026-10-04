@@ -62,13 +62,13 @@ namespace G
             global::System.Net.Http.HttpClient httpClient,
             ref string toolSlug,
             ref string? version,
-            ref global::G.OneOf<object, string, global::System.Collections.Generic.Dictionary<string, string>>? toolkitVersions);
+            ref global::G.OneOf<string, global::System.Collections.Generic.Dictionary<string, string>>? toolkitVersions);
         partial void PrepareGetToolsByToolSlugRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
             string toolSlug,
             string? version,
-            global::G.OneOf<object, string, global::System.Collections.Generic.Dictionary<string, string>>? toolkitVersions);
+            global::G.OneOf<string, global::System.Collections.Generic.Dictionary<string, string>>? toolkitVersions);
         partial void ProcessGetToolsByToolSlugResponse(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage);
@@ -91,7 +91,7 @@ namespace G
         public async global::System.Threading.Tasks.Task<global::G.Tool> GetToolsByToolSlugAsync(
             string toolSlug,
             string? version = default,
-            global::G.OneOf<object, string, global::System.Collections.Generic.Dictionary<string, string>>? toolkitVersions = default,
+            global::G.OneOf<string, global::System.Collections.Generic.Dictionary<string, string>>? toolkitVersions = default,
             global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
@@ -118,7 +118,7 @@ namespace G
         public async global::System.Threading.Tasks.Task<global::G.AutoSDKHttpResponse<global::G.Tool>> GetToolsByToolSlugAsResponseAsync(
             string toolSlug,
             string? version = default,
-            global::G.OneOf<object, string, global::System.Collections.Generic.Dictionary<string, string>>? toolkitVersions = default,
+            global::G.OneOf<string, global::System.Collections.Generic.Dictionary<string, string>>? toolkitVersions = default,
             global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {

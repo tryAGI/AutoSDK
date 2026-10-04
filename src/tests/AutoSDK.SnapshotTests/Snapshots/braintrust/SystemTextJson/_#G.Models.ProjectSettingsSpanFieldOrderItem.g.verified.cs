@@ -34,8 +34,8 @@ namespace G
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("layout")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.AnyOfJsonConverter<global::G.ProjectSettingsSpanFieldOrderItemLayoutVariant1?, global::G.ProjectSettingsSpanFieldOrderItemLayoutVariant2?, object>))]
-        public global::G.AnyOf<global::G.ProjectSettingsSpanFieldOrderItemLayoutVariant1?, global::G.ProjectSettingsSpanFieldOrderItemLayoutVariant2?, object>? Layout { get; set; }
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.AnyOfJsonConverter<global::G.ProjectSettingsSpanFieldOrderItemLayoutVariant1?, global::G.ProjectSettingsSpanFieldOrderItemLayoutVariant2?>))]
+        public global::G.AnyOf<global::G.ProjectSettingsSpanFieldOrderItemLayoutVariant1?, global::G.ProjectSettingsSpanFieldOrderItemLayoutVariant2?>? Layout { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -57,7 +57,7 @@ namespace G
             string objectType,
             string columnId,
             string position,
-            global::G.AnyOf<global::G.ProjectSettingsSpanFieldOrderItemLayoutVariant1?, global::G.ProjectSettingsSpanFieldOrderItemLayoutVariant2?, object>? layout)
+            global::G.AnyOf<global::G.ProjectSettingsSpanFieldOrderItemLayoutVariant1?, global::G.ProjectSettingsSpanFieldOrderItemLayoutVariant2?>? layout)
         {
             this.ObjectType = objectType ?? throw new global::System.ArgumentNullException(nameof(objectType));
             this.ColumnId = columnId ?? throw new global::System.ArgumentNullException(nameof(columnId));

@@ -86,7 +86,7 @@ namespace G
         /// up to 16 sequences where the API will stop generating further tokens
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("stop")]
-        public global::G.AnyOf<string, global::System.Collections.Generic.IList<string>, object>? Stop { get; set; }
+        public global::G.AnyOf<string, global::System.Collections.Generic.IList<string>>? Stop { get; set; }
 
         /// <summary>
         /// Positive values penalize new tokens based on whether they appear in the text so far, increasing the model's likelihood to talk about new topics.<br/>
@@ -221,7 +221,7 @@ namespace G
             bool? stream,
             int? logprobs,
             bool? echo,
-            global::G.AnyOf<string, global::System.Collections.Generic.IList<string>, object>? stop,
+            global::G.AnyOf<string, global::System.Collections.Generic.IList<string>>? stop,
             double? presencePenalty,
             double? frequencyPenalty,
             global::G.ResponseFormat? responseFormat,

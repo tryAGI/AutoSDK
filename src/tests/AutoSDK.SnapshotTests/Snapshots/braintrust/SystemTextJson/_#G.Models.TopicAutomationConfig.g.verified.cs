@@ -41,8 +41,8 @@ namespace G
         /// Execution scope for topic automation. Defaults to span-level execution.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("scope")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.AnyOfJsonConverter<global::G.SpanScope, global::G.TraceScope, global::G.GroupScope, object>))]
-        public global::G.AnyOf<global::G.SpanScope, global::G.TraceScope, global::G.GroupScope, object>? Scope { get; set; }
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.AnyOfJsonConverter<global::G.SpanScope, global::G.TraceScope, global::G.GroupScope>))]
+        public global::G.AnyOf<global::G.SpanScope, global::G.TraceScope, global::G.GroupScope>? Scope { get; set; }
 
         /// <summary>
         /// Optional data scope for topic automation.
@@ -61,8 +61,8 @@ namespace G
         /// Optional default time range for backfill operations.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("backfill_time_range")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.AnyOfJsonConverter<string, global::G.TopicAutomationConfigBackfillTimeRange, object>))]
-        public global::G.AnyOf<string, global::G.TopicAutomationConfigBackfillTimeRange, object>? BackfillTimeRange { get; set; }
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.AnyOfJsonConverter<string, global::G.TopicAutomationConfigBackfillTimeRange>))]
+        public global::G.AnyOf<string, global::G.TopicAutomationConfigBackfillTimeRange>? BackfillTimeRange { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -105,10 +105,10 @@ namespace G
             global::System.Collections.Generic.IList<global::G.AllOf<global::G.SavedFunctionId?, global::G.AnyOf<global::G.TopicAutomationConfigFacetFunctionVariant2Function, global::G.TopicAutomationConfigFacetFunctionVariant2Global>?>> facetFunctions,
             global::System.Collections.Generic.IList<global::G.TopicMapFunctionAutomation> topicMapFunctions,
             global::G.TopicAutomationConfigEventType eventType,
-            global::G.AnyOf<global::G.SpanScope, global::G.TraceScope, global::G.GroupScope, object>? scope,
+            global::G.AnyOf<global::G.SpanScope, global::G.TraceScope, global::G.GroupScope>? scope,
             global::G.TopicAutomationDataScope? dataScope,
             string? btqlFilter,
-            global::G.AnyOf<string, global::G.TopicAutomationConfigBackfillTimeRange, object>? backfillTimeRange)
+            global::G.AnyOf<string, global::G.TopicAutomationConfigBackfillTimeRange>? backfillTimeRange)
         {
             this.EventType = eventType;
             this.SamplingRate = samplingRate;

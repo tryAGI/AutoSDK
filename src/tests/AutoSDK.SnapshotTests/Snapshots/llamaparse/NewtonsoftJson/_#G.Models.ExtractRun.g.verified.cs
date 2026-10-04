@@ -89,7 +89,7 @@ namespace G
         /// The data extracted from the file
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("data")]
-        public global::G.AnyOf<object, global::System.Collections.Generic.IList<object>, object>? Data { get; set; }
+        public global::G.AnyOf<object, global::System.Collections.Generic.IList<object>>? Data { get; set; }
 
         /// <summary>
         /// The metadata extracted from the file
@@ -167,7 +167,7 @@ namespace G
             global::System.Guid? fileId,
             string? error,
             global::System.Guid? jobId,
-            global::G.AnyOf<object, global::System.Collections.Generic.IList<object>, object>? data,
+            global::G.AnyOf<object, global::System.Collections.Generic.IList<object>>? data,
             object? extractionMetadata)
         {
             this.Id = id;

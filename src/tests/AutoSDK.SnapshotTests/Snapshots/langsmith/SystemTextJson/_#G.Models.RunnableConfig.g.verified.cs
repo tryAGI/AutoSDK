@@ -25,8 +25,8 @@ namespace G
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("callbacks")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.AnyOfJsonConverter<global::System.Collections.Generic.IList<object>, object, object>))]
-        public global::G.AnyOf<global::System.Collections.Generic.IList<object>, object, object>? Callbacks { get; set; }
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.AnyOfJsonConverter<global::System.Collections.Generic.IList<object>, object>))]
+        public global::G.AnyOf<global::System.Collections.Generic.IList<object>, object>? Callbacks { get; set; }
 
         /// <summary>
         /// 
@@ -81,7 +81,7 @@ namespace G
         public RunnableConfig(
             global::System.Collections.Generic.IList<string>? tags,
             object? metadata,
-            global::G.AnyOf<global::System.Collections.Generic.IList<object>, object, object>? callbacks,
+            global::G.AnyOf<global::System.Collections.Generic.IList<object>, object>? callbacks,
             string? runName,
             int? maxConcurrency,
             int? recursionLimit,

@@ -62,7 +62,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.AnyOf<global::System.Collections.Generic.IList<global::G.ReferenceAudio>, global::System.Collections.Generic.IList<global::System.Collections.Generic.IList<global::G.ReferenceAudio>>, object>? Type7 { get; set; }
+        public global::G.AnyOf<global::System.Collections.Generic.IList<global::G.ReferenceAudio>, global::System.Collections.Generic.IList<global::System.Collections.Generic.IList<global::G.ReferenceAudio>>>? Type7 { get; set; }
         /// <summary>
         /// 
         /// </summary>
@@ -74,15 +74,15 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public object? Type10 { get; set; }
+        public global::G.AnyOf<string, global::System.Collections.Generic.IList<string>>? Type10 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.AnyOf<string, global::System.Collections.Generic.IList<string>, object>? Type11 { get; set; }
+        public global::System.Collections.Generic.IList<string>? Type11 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<string>? Type12 { get; set; }
+        public object? Type12 { get; set; }
         /// <summary>
         /// 
         /// </summary>
@@ -170,7 +170,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.AnyOf<global::System.Collections.Generic.IList<string>, string, object>? Type34 { get; set; }
+        public global::G.AnyOf<global::System.Collections.Generic.IList<string>, string>? Type34 { get; set; }
         /// <summary>
         /// 
         /// </summary>
@@ -198,256 +198,252 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.AnyOf<global::System.Collections.Generic.IList<string>, string>? Type41 { get; set; }
+        public global::G.PatchModelRequest2? Type41 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.PatchModelRequest2? Type42 { get; set; }
+        public global::G.PatchModelRequestVisibility2? Type42 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.PatchModelRequestVisibility2? Type43 { get; set; }
+        public global::G.PatchModelRequest3? Type43 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.PatchModelRequest3? Type44 { get; set; }
+        public global::G.PatchModelRequestVisibility3? Type44 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.PatchModelRequestVisibility3? Type45 { get; set; }
+        public global::G.PatchModelRequest4? Type45 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.PatchModelRequest4? Type46 { get; set; }
+        public global::G.PatchModelRequestVisibility4? Type46 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.PatchModelRequestVisibility4? Type47 { get; set; }
+        public global::G.CreateTtsModel? Type47 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.CreateTtsModel? Type48 { get; set; }
+        public global::G.GetModelSortBy? Type48 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.GetModelSortBy? Type49 { get; set; }
+        public global::G.CreateTtsResponse? Type49 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.CreateTtsResponse? Type50 { get; set; }
+        public global::G.CreateTtsResponse2? Type50 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.CreateTtsResponse2? Type51 { get; set; }
+        public global::System.Collections.Generic.IList<global::G.CreateTtsResponseItem>? Type51 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::G.CreateTtsResponseItem>? Type52 { get; set; }
+        public global::G.CreateTtsResponseItem? Type52 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.CreateTtsResponseItem? Type53 { get; set; }
+        public global::G.CreateTtsResponseItemIn? Type53 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.CreateTtsResponseItemIn? Type54 { get; set; }
+        public global::G.CreateAsrResponse? Type54 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.CreateAsrResponse? Type55 { get; set; }
+        public global::System.Collections.Generic.IList<global::G.ASRSegment>? Type55 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::G.ASRSegment>? Type56 { get; set; }
+        public global::G.CreateAsrResponse2? Type56 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.CreateAsrResponse2? Type57 { get; set; }
+        public global::G.CreateAsrResponse3? Type57 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.CreateAsrResponse3? Type58 { get; set; }
+        public global::System.Collections.Generic.IList<global::G.CreateAsrResponseItem>? Type58 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::G.CreateAsrResponseItem>? Type59 { get; set; }
+        public global::G.CreateAsrResponseItem? Type59 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.CreateAsrResponseItem? Type60 { get; set; }
+        public global::G.CreateAsrResponseItemIn? Type60 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.CreateAsrResponseItemIn? Type61 { get; set; }
+        public global::G.GetWalletPackageResponse? Type61 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.GetWalletPackageResponse? Type62 { get; set; }
+        public global::G.GetWalletPackageResponse2? Type62 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.GetWalletPackageResponse2? Type63 { get; set; }
+        public global::System.Collections.Generic.IList<global::G.GetWalletPackageResponseItem>? Type63 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::G.GetWalletPackageResponseItem>? Type64 { get; set; }
+        public global::G.GetWalletPackageResponseItem? Type64 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.GetWalletPackageResponseItem? Type65 { get; set; }
+        public global::G.GetWalletPackageResponseItemIn? Type65 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.GetWalletPackageResponseItemIn? Type66 { get; set; }
+        public global::G.GetWalletApiCreditResponse? Type66 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.GetWalletApiCreditResponse? Type67 { get; set; }
+        public global::G.GetWalletApiCreditResponse2? Type67 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.GetWalletApiCreditResponse2? Type68 { get; set; }
+        public global::System.Collections.Generic.IList<global::G.GetWalletApiCreditResponseItem>? Type68 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::G.GetWalletApiCreditResponseItem>? Type69 { get; set; }
+        public global::G.GetWalletApiCreditResponseItem? Type69 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.GetWalletApiCreditResponseItem? Type70 { get; set; }
+        public global::G.GetWalletApiCreditResponseItemIn? Type70 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.GetWalletApiCreditResponseItemIn? Type71 { get; set; }
+        public global::G.GetModelResponse? Type71 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.GetModelResponse? Type72 { get; set; }
+        public global::System.Collections.Generic.IList<global::G.ModelEntity>? Type72 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::G.ModelEntity>? Type73 { get; set; }
+        public global::System.Collections.Generic.IList<global::G.GetModelResponseItem>? Type73 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::G.GetModelResponseItem>? Type74 { get; set; }
+        public global::G.GetModelResponseItem? Type74 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.GetModelResponseItem? Type75 { get; set; }
+        public global::G.GetModelResponseItemIn? Type75 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.GetModelResponseItemIn? Type76 { get; set; }
+        public global::G.CreateModelResponse? Type76 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.CreateModelResponse? Type77 { get; set; }
+        public global::G.CreateModelResponseType? Type77 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.CreateModelResponseType? Type78 { get; set; }
+        public global::G.CreateModelResponseTrainMode? Type78 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.CreateModelResponseTrainMode? Type79 { get; set; }
+        public global::G.CreateModelResponseState? Type79 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.CreateModelResponseState? Type80 { get; set; }
+        public global::G.CreateModelResponseVisibility? Type80 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.CreateModelResponseVisibility? Type81 { get; set; }
+        public global::G.CreateModelResponse2? Type81 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.CreateModelResponse2? Type82 { get; set; }
+        public global::System.Collections.Generic.IList<global::G.CreateModelResponseItem>? Type82 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::G.CreateModelResponseItem>? Type83 { get; set; }
+        public global::G.CreateModelResponseItem? Type83 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.CreateModelResponseItem? Type84 { get; set; }
+        public global::G.CreateModelResponseItemIn? Type84 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.CreateModelResponseItemIn? Type85 { get; set; }
+        public global::G.GetModelResponse2? Type85 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.GetModelResponse2? Type86 { get; set; }
+        public global::G.GetModelResponseType? Type86 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.GetModelResponseType? Type87 { get; set; }
+        public global::G.GetModelResponseTrainMode? Type87 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.GetModelResponseTrainMode? Type88 { get; set; }
+        public global::G.GetModelResponseState? Type88 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.GetModelResponseState? Type89 { get; set; }
+        public global::G.GetModelResponseVisibility? Type89 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.GetModelResponseVisibility? Type90 { get; set; }
+        public global::G.GetModelResponse3? Type90 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.GetModelResponse3? Type91 { get; set; }
+        public global::System.Collections.Generic.IList<global::G.GetModelResponseItem2>? Type91 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::G.GetModelResponseItem2>? Type92 { get; set; }
+        public global::G.GetModelResponseItem2? Type92 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.GetModelResponseItem2? Type93 { get; set; }
+        public global::G.GetModelResponseItemIn2? Type93 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.GetModelResponseItemIn2? Type94 { get; set; }
+        public global::G.PatchModelResponse? Type94 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.PatchModelResponse? Type95 { get; set; }
+        public global::System.Collections.Generic.IList<global::G.PatchModelResponseItem>? Type95 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::G.PatchModelResponseItem>? Type96 { get; set; }
+        public global::G.PatchModelResponseItem? Type96 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.PatchModelResponseItem? Type97 { get; set; }
+        public global::G.PatchModelResponseItemIn? Type97 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.PatchModelResponseItemIn? Type98 { get; set; }
+        public global::G.DeleteModelResponse? Type98 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.DeleteModelResponse? Type99 { get; set; }
+        public global::System.Collections.Generic.IList<global::G.DeleteModelResponseItem>? Type99 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::G.DeleteModelResponseItem>? Type100 { get; set; }
+        public global::G.DeleteModelResponseItem? Type100 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.DeleteModelResponseItem? Type101 { get; set; }
-        /// <summary>
-        /// 
-        /// </summary>
-        public global::G.DeleteModelResponseItemIn? Type102 { get; set; }
+        public global::G.DeleteModelResponseItemIn? Type101 { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
-        public global::G.AnyOf<global::System.Collections.Generic.List<global::G.ReferenceAudio>, global::System.Collections.Generic.List<global::System.Collections.Generic.List<global::G.ReferenceAudio>>, object>? ListType0 { get; set; }
+        public global::G.AnyOf<global::System.Collections.Generic.List<global::G.ReferenceAudio>, global::System.Collections.Generic.List<global::System.Collections.Generic.List<global::G.ReferenceAudio>>>? ListType0 { get; set; }
         /// <summary>
         /// 
         /// </summary>
@@ -459,7 +455,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.AnyOf<string, global::System.Collections.Generic.List<string>, object>? ListType3 { get; set; }
+        public global::G.AnyOf<string, global::System.Collections.Generic.List<string>>? ListType3 { get; set; }
         /// <summary>
         /// 
         /// </summary>
@@ -479,54 +475,50 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.AnyOf<global::System.Collections.Generic.List<string>, string, object>? ListType8 { get; set; }
+        public global::G.AnyOf<global::System.Collections.Generic.List<string>, string>? ListType8 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.AnyOf<global::System.Collections.Generic.List<string>, string>? ListType9 { get; set; }
+        public global::System.Collections.Generic.List<global::G.CreateTtsResponseItem>? ListType9 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.List<global::G.CreateTtsResponseItem>? ListType10 { get; set; }
+        public global::System.Collections.Generic.List<global::G.ASRSegment>? ListType10 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.List<global::G.ASRSegment>? ListType11 { get; set; }
+        public global::System.Collections.Generic.List<global::G.CreateAsrResponseItem>? ListType11 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.List<global::G.CreateAsrResponseItem>? ListType12 { get; set; }
+        public global::System.Collections.Generic.List<global::G.GetWalletPackageResponseItem>? ListType12 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.List<global::G.GetWalletPackageResponseItem>? ListType13 { get; set; }
+        public global::System.Collections.Generic.List<global::G.GetWalletApiCreditResponseItem>? ListType13 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.List<global::G.GetWalletApiCreditResponseItem>? ListType14 { get; set; }
+        public global::System.Collections.Generic.List<global::G.ModelEntity>? ListType14 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.List<global::G.ModelEntity>? ListType15 { get; set; }
+        public global::System.Collections.Generic.List<global::G.GetModelResponseItem>? ListType15 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.List<global::G.GetModelResponseItem>? ListType16 { get; set; }
+        public global::System.Collections.Generic.List<global::G.CreateModelResponseItem>? ListType16 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.List<global::G.CreateModelResponseItem>? ListType17 { get; set; }
+        public global::System.Collections.Generic.List<global::G.GetModelResponseItem2>? ListType17 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.List<global::G.GetModelResponseItem2>? ListType18 { get; set; }
+        public global::System.Collections.Generic.List<global::G.PatchModelResponseItem>? ListType18 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.List<global::G.PatchModelResponseItem>? ListType19 { get; set; }
-        /// <summary>
-        /// 
-        /// </summary>
-        public global::System.Collections.Generic.List<global::G.DeleteModelResponseItem>? ListType20 { get; set; }
+        public global::System.Collections.Generic.List<global::G.DeleteModelResponseItem>? ListType19 { get; set; }
     }
 }

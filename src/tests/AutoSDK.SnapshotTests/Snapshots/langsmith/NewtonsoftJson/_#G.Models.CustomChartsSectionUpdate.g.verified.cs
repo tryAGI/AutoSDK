@@ -19,7 +19,7 @@ namespace G
         /// Default Value: {"__missing__":"__missing__"}
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("description")]
-        public global::G.AnyOf<string, global::G.Missing, object>? Description { get; set; }
+        public global::G.AnyOf<string, global::G.Missing>? Description { get; set; }
 
         /// <summary>
         /// Default Value: {"__missing__":"__missing__"}
@@ -47,7 +47,7 @@ namespace G
         /// </param>
         public CustomChartsSectionUpdate(
             global::G.AnyOf<string, global::G.Missing>? title,
-            global::G.AnyOf<string, global::G.Missing, object>? description,
+            global::G.AnyOf<string, global::G.Missing>? description,
             global::G.AnyOf<int?, global::G.Missing>? index)
         {
             this.Title = title;

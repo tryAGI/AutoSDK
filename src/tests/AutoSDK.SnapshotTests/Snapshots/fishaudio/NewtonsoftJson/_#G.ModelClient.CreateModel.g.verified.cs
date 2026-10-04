@@ -330,14 +330,6 @@ namespace G
                                         content: __contentTexts2,
                                         name: "\"texts\"");
                                 }
-                                else if ((request.Texts).GetValueOrDefault().TryPickValue3(out var __valueTexts3))
-                                {
-
-                                    var __contentTexts3 = new global::System.Net.Http.StringContent((__valueTexts3!).ToString() ?? string.Empty);
-                                    __httpRequestContent.Add(
-                                        content: __contentTexts3,
-                                        name: "\"texts\"");
-                                }
                             }
 
                             if (request.Tags != default)
@@ -360,14 +352,6 @@ namespace G
                                     var __contentTags2 = new global::System.Net.Http.StringContent(__valueTags2 ?? string.Empty);
                                     __httpRequestContent.Add(
                                         content: __contentTags2,
-                                        name: "\"tags\"");
-                                }
-                                else if ((request.Tags).GetValueOrDefault().TryPickValue3(out var __valueTags3))
-                                {
-
-                                    var __contentTags3 = new global::System.Net.Http.StringContent((__valueTags3!).ToString() ?? string.Empty);
-                                    __httpRequestContent.Add(
-                                        content: __contentTags3,
                                         name: "\"tags\"");
                                 }
                             }
@@ -799,8 +783,8 @@ namespace G
             byte[]? coverImage = default,
             string? coverImagename = default,
             global::G.CreateModelRequestTrainMode trainMode = default,
-            global::G.AnyOf<global::System.Collections.Generic.IList<string>, string, object>? texts = default,
-            global::G.AnyOf<global::System.Collections.Generic.IList<string>, string, object>? tags = default,
+            global::G.AnyOf<global::System.Collections.Generic.IList<string>, string>? texts = default,
+            global::G.AnyOf<global::System.Collections.Generic.IList<string>, string>? tags = default,
             bool? enhanceAudioQuality = default,
             global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default)

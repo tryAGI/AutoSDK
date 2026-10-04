@@ -52,8 +52,8 @@ namespace G
             typeof(global::G.JsonConverters.AnyOfJsonConverter<global::G.ModelPricingTime, global::G.ModelPricingUptime, global::G.ModelPricingTokens, global::G.ModelPricingInputLength, global::G.ModelPricingInputTokens, global::G.ModelPricingInputCharacterLength, global::G.ModelPricingImageUnits>),
             typeof(global::G.JsonConverters.AnyOfJsonConverter<global::G.ModelPricingTime, global::G.ModelPricingTokens, global::G.ModelPricingInputLength, global::G.ModelPricingInputTokens, global::G.ModelPricingUptime, global::G.ModelPricingInputCharacterLength, global::G.ModelPricingImageUnits>),
             typeof(global::G.JsonConverters.AnyOfJsonConverter<global::G.ChatCompletionToolMessage, global::G.ChatCompletionAssistantMessage, global::G.ChatCompletionUserMessage, global::G.ChatCompletionSystemMessage>),
-            typeof(global::G.JsonConverters.AnyOfJsonConverter<string, global::System.Collections.Generic.IList<string>, object>),
-            typeof(global::G.JsonConverters.AnyOfJsonConverter<string, global::System.Collections.Generic.IList<string>, object>),
+            typeof(global::G.JsonConverters.AnyOfJsonConverter<string, global::System.Collections.Generic.IList<string>>),
+            typeof(global::G.JsonConverters.AnyOfJsonConverter<string, global::System.Collections.Generic.IList<string>>),
             typeof(global::G.JsonConverters.AnyOfJsonConverter<global::System.Collections.Generic.IList<string>, string>),
             typeof(global::G.JsonConverters.UnixTimestampJsonConverter),
         };

@@ -37,7 +37,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("group_usage_limit")]
-        public global::G.AnyOf<int?, string, object>? GroupUsageLimit { get; set; }
+        public global::G.AnyOf<int?, string>? GroupUsageLimit { get; set; }
 
         /// <summary>
         /// 
@@ -72,7 +72,7 @@ namespace G
             string id,
             global::System.Collections.Generic.IList<string> members,
             global::System.Collections.Generic.IList<global::G.WorkspaceGroupPermission>? permissions,
-            global::G.AnyOf<int?, string, object>? groupUsageLimit,
+            global::G.AnyOf<int?, string>? groupUsageLimit,
             int? characterCount,
             string? scimExternalId)
         {

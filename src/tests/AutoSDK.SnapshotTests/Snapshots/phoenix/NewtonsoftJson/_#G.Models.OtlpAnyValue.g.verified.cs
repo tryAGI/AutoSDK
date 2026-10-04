@@ -31,13 +31,13 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("double_value")]
-        public global::G.AnyOf<double?, global::G.OtlpDoubleValue?, string, object>? DoubleValue { get; set; }
+        public global::G.AnyOf<double?, global::G.OtlpDoubleValue?, string>? DoubleValue { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("int_value")]
-        public global::G.AnyOf<int?, string, object>? IntValue { get; set; }
+        public global::G.AnyOf<int?, string>? IntValue { get; set; }
 
         /// <summary>
         /// 
@@ -71,8 +71,8 @@ namespace G
             global::G.OtlpArrayValue? arrayValue,
             bool? boolValue,
             string? bytesValue,
-            global::G.AnyOf<double?, global::G.OtlpDoubleValue?, string, object>? doubleValue,
-            global::G.AnyOf<int?, string, object>? intValue,
+            global::G.AnyOf<double?, global::G.OtlpDoubleValue?, string>? doubleValue,
+            global::G.AnyOf<int?, string>? intValue,
             object? kvlistValue,
             string? stringValue)
         {

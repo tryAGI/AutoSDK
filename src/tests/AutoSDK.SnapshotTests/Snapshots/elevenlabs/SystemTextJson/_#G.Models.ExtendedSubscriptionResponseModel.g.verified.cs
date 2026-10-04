@@ -168,8 +168,8 @@ namespace G
         /// The pending change for the user.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("pending_change")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.AnyOfJsonConverter<global::G.PendingSubscriptionSwitchResponseModel, global::G.PendingCancellationResponseModel, object>))]
-        public global::G.AnyOf<global::G.PendingSubscriptionSwitchResponseModel, global::G.PendingCancellationResponseModel, object>? PendingChange { get; set; }
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.AnyOfJsonConverter<global::G.PendingSubscriptionSwitchResponseModel, global::G.PendingCancellationResponseModel>))]
+        public global::G.AnyOf<global::G.PendingSubscriptionSwitchResponseModel, global::G.PendingCancellationResponseModel>? PendingChange { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -279,7 +279,7 @@ namespace G
             global::G.BillingPeriod? billingPeriod,
             global::G.CharacterRefreshPeriod? characterRefreshPeriod,
             global::G.InvoiceResponseModel? nextInvoice,
-            global::G.AnyOf<global::G.PendingSubscriptionSwitchResponseModel, global::G.PendingCancellationResponseModel, object>? pendingChange)
+            global::G.AnyOf<global::G.PendingSubscriptionSwitchResponseModel, global::G.PendingCancellationResponseModel>? pendingChange)
         {
             this.Tier = tier ?? throw new global::System.ArgumentNullException(nameof(tier));
             this.CharacterCount = characterCount;

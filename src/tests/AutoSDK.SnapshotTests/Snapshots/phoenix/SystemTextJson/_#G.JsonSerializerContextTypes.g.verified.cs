@@ -686,7 +686,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.AnyOf<double?, global::G.OtlpDoubleValue?, string, object>? Type163 { get; set; }
+        public global::G.AnyOf<double?, global::G.OtlpDoubleValue?, string>? Type163 { get; set; }
         /// <summary>
         /// 
         /// </summary>
@@ -694,7 +694,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.AnyOf<int?, string, object>? Type165 { get; set; }
+        public global::G.AnyOf<int?, string>? Type165 { get; set; }
         /// <summary>
         /// 
         /// </summary>
@@ -714,7 +714,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.AnyOf<long?, string, object>? Type170 { get; set; }
+        public global::G.AnyOf<long?, string>? Type170 { get; set; }
         /// <summary>
         /// 
         /// </summary>
@@ -734,7 +734,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.AnyOf<global::G.OtlpKind?, int?, object>? Type175 { get; set; }
+        public global::G.AnyOf<global::G.OtlpKind?, int?>? Type175 { get; set; }
         /// <summary>
         /// 
         /// </summary>
@@ -1214,7 +1214,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.AnyOf<bool?, int?, double?, string, object, global::System.Collections.Generic.IList<object>, object>? Type295 { get; set; }
+        public global::G.AnyOf<bool?, int?, double?, string, object, global::System.Collections.Generic.IList<object>>? Type295 { get; set; }
         /// <summary>
         /// 
         /// </summary>
@@ -1318,11 +1318,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::G.OneOf<string, global::System.Collections.Generic.IList<string>, object>>? Type321 { get; set; }
+        public global::System.Collections.Generic.IList<global::G.OneOf<string, global::System.Collections.Generic.IList<string>>?>? Type321 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.OneOf<string, global::System.Collections.Generic.IList<string>, object>? Type322 { get; set; }
+        public global::G.OneOf<string, global::System.Collections.Generic.IList<string>>? Type322 { get; set; }
         /// <summary>
         /// 
         /// </summary>
@@ -1507,7 +1507,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.AnyOf<bool?, int?, double?, string, object, global::System.Collections.Generic.List<object>, object>? ListType39 { get; set; }
+        public global::G.AnyOf<bool?, int?, double?, string, object, global::System.Collections.Generic.List<object>>? ListType39 { get; set; }
         /// <summary>
         /// 
         /// </summary>
@@ -1527,10 +1527,10 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.List<global::G.OneOf<string, global::System.Collections.Generic.List<string>, object>>? ListType44 { get; set; }
+        public global::System.Collections.Generic.List<global::G.OneOf<string, global::System.Collections.Generic.List<string>>?>? ListType44 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.OneOf<string, global::System.Collections.Generic.List<string>, object>? ListType45 { get; set; }
+        public global::G.OneOf<string, global::System.Collections.Generic.List<string>>? ListType45 { get; set; }
     }
 }

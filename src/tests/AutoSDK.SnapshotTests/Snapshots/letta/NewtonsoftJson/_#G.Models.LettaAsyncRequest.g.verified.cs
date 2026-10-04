@@ -21,7 +21,7 @@ namespace G
         /// Syntactic sugar for a single user message. Equivalent to messages=[{'role': 'user', 'content': input}].
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("input")]
-        public global::G.AnyOf<string, global::System.Collections.Generic.IList<global::G.InputVariant2Item2>, object>? Input { get; set; }
+        public global::G.AnyOf<string, global::System.Collections.Generic.IList<global::G.InputVariant2Item2>>? Input { get; set; }
 
         /// <summary>
         /// Maximum number of steps the agent should take to process the request.<br/>
@@ -161,7 +161,7 @@ namespace G
         /// </param>
         public LettaAsyncRequest(
             global::System.Collections.Generic.IList<global::G.AnyOf<global::G.MessageCreate, global::G.ApprovalCreate, global::G.ToolReturnCreate>>? messages,
-            global::G.AnyOf<string, global::System.Collections.Generic.IList<global::G.InputVariant2Item2>, object>? input,
+            global::G.AnyOf<string, global::System.Collections.Generic.IList<global::G.InputVariant2Item2>>? input,
             int? maxSteps,
             global::System.Collections.Generic.IList<global::G.MessageType>? includeReturnMessageTypes,
             global::System.Collections.Generic.IList<global::G.ClientToolSchema>? clientTools,

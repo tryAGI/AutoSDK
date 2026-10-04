@@ -13,8 +13,8 @@ namespace G
         /// At least one of those conditions should match
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("should")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.AnyOfJsonConverter<global::G.Condition?, global::System.Collections.Generic.IList<global::G.Condition>, object>))]
-        public global::G.AnyOf<global::G.Condition?, global::System.Collections.Generic.IList<global::G.Condition>, object>? Should { get; set; }
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.AnyOfJsonConverter<global::G.Condition?, global::System.Collections.Generic.IList<global::G.Condition>>))]
+        public global::G.AnyOf<global::G.Condition?, global::System.Collections.Generic.IList<global::G.Condition>>? Should { get; set; }
 
         /// <summary>
         /// At least minimum amount of given conditions should match
@@ -26,15 +26,15 @@ namespace G
         /// All conditions must match
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("must")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.AnyOfJsonConverter<global::G.Condition?, global::System.Collections.Generic.IList<global::G.Condition>, object>))]
-        public global::G.AnyOf<global::G.Condition?, global::System.Collections.Generic.IList<global::G.Condition>, object>? Must { get; set; }
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.AnyOfJsonConverter<global::G.Condition?, global::System.Collections.Generic.IList<global::G.Condition>>))]
+        public global::G.AnyOf<global::G.Condition?, global::System.Collections.Generic.IList<global::G.Condition>>? Must { get; set; }
 
         /// <summary>
         /// All conditions must NOT match
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("must_not")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.AnyOfJsonConverter<global::G.Condition?, global::System.Collections.Generic.IList<global::G.Condition>, object>))]
-        public global::G.AnyOf<global::G.Condition?, global::System.Collections.Generic.IList<global::G.Condition>, object>? MustNot { get; set; }
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.AnyOfJsonConverter<global::G.Condition?, global::System.Collections.Generic.IList<global::G.Condition>>))]
+        public global::G.AnyOf<global::G.Condition?, global::System.Collections.Generic.IList<global::G.Condition>>? MustNot { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -61,10 +61,10 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public Filter(
-            global::G.AnyOf<global::G.Condition?, global::System.Collections.Generic.IList<global::G.Condition>, object>? should,
+            global::G.AnyOf<global::G.Condition?, global::System.Collections.Generic.IList<global::G.Condition>>? should,
             global::G.MinShould? minShould,
-            global::G.AnyOf<global::G.Condition?, global::System.Collections.Generic.IList<global::G.Condition>, object>? must,
-            global::G.AnyOf<global::G.Condition?, global::System.Collections.Generic.IList<global::G.Condition>, object>? mustNot)
+            global::G.AnyOf<global::G.Condition?, global::System.Collections.Generic.IList<global::G.Condition>>? must,
+            global::G.AnyOf<global::G.Condition?, global::System.Collections.Generic.IList<global::G.Condition>>? mustNot)
         {
             this.Should = should;
             this.MinShould = minShould;

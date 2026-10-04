@@ -21,7 +21,7 @@ namespace G
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::G.ApiException"></exception>
         global::System.Threading.Tasks.Task<global::G.PagedResponseGeneration> ListPublicGenerationsGetAsync(
-            global::G.AnyOf<global::G.AssetType?, global::G.GenerationType?, object>? type = default,
+            global::G.AnyOf<global::G.AssetType?, global::G.GenerationType?>? type = default,
             global::System.DateTime? createdBefore = default,
             global::System.DateTime? createdAfter = default,
             string? promptQuery = default,
@@ -46,7 +46,7 @@ namespace G
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::G.ApiException"></exception>
         global::System.Threading.Tasks.Task<global::G.AutoSDKHttpResponse<global::G.PagedResponseGeneration>> ListPublicGenerationsGetAsResponseAsync(
-            global::G.AnyOf<global::G.AssetType?, global::G.GenerationType?, object>? type = default,
+            global::G.AnyOf<global::G.AssetType?, global::G.GenerationType?>? type = default,
             global::System.DateTime? createdBefore = default,
             global::System.DateTime? createdAfter = default,
             string? promptQuery = default,

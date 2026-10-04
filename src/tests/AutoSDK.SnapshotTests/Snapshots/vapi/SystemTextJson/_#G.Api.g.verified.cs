@@ -2279,7 +2279,7 @@ namespace G
                     new global::G.JsonConverters.OneOfJsonConverter<global::G.SimulationRunTargetAssistant, global::G.SimulationRunTargetSquad>(),
                     new global::G.JsonConverters.OneOfJsonConverter<global::G.SimulationRunSimulationEntry, global::G.SimulationRunSuiteEntry>(),
                     new global::G.JsonConverters.OneOfJsonConverter<global::G.SimulationRunTargetAssistant, global::G.SimulationRunTargetSquad>(),
-                    new global::G.JsonConverters.OneOfJsonConverter<double?, string, bool?, object>(),
+                    new global::G.JsonConverters.OneOfJsonConverter<double?, string, bool?>(),
                     new global::G.JsonConverters.OneOfJsonConverter<double?, string, bool?>(),
                     new global::G.JsonConverters.OneOfJsonConverter<global::G.SimulationHookCallStarted, global::G.SimulationHookCallEnded>(),
                     new global::G.JsonConverters.OneOfJsonConverter<global::G.JSONQueryOnCallTableWithStringTypeColumn, global::G.JSONQueryOnCallTableWithNumberTypeColumn, global::G.JSONQueryOnCallTableWithStructuredOutputColumn, global::G.JSONQueryOnEventsTable>(),

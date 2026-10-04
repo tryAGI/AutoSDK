@@ -26,7 +26,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("resource_id")]
-        public global::G.AnyOf<string, global::System.Guid?, object>? ResourceId { get; set; }
+        public global::G.AnyOf<string, global::System.Guid?>? ResourceId { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -43,7 +43,7 @@ namespace G
         public Scope(
             global::G.ScopeMethod method,
             string? resourceType,
-            global::G.AnyOf<string, global::System.Guid?, object>? resourceId)
+            global::G.AnyOf<string, global::System.Guid?>? resourceId)
         {
             this.Method = method;
             this.ResourceType = resourceType;

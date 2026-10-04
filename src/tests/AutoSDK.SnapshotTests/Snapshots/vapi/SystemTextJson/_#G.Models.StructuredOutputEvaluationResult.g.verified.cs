@@ -28,9 +28,8 @@ namespace G
         /// This is the value extracted from the call by the structured output.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("extractedValue")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.OneOfJsonConverter<double?, string, bool?, object>))]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::G.OneOf<double?, string, bool?, object> ExtractedValue { get; set; }
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.OneOfJsonConverter<double?, string, bool?>))]
+        public global::G.OneOf<double?, string, bool?>? ExtractedValue { get; set; }
 
         /// <summary>
         /// This is the expected value that was defined in the evaluation plan.
@@ -96,9 +95,6 @@ namespace G
         /// <param name="name">
         /// This is the name of the structured output.
         /// </param>
-        /// <param name="extractedValue">
-        /// This is the value extracted from the call by the structured output.
-        /// </param>
         /// <param name="expectedValue">
         /// This is the expected value that was defined in the evaluation plan.
         /// </param>
@@ -110,6 +106,9 @@ namespace G
         /// </param>
         /// <param name="required">
         /// This indicates whether this evaluation was required for the simulation to pass.
+        /// </param>
+        /// <param name="extractedValue">
+        /// This is the value extracted from the call by the structured output.
         /// </param>
         /// <param name="error">
         /// This contains any error that occurred during extraction.
@@ -126,11 +125,11 @@ namespace G
         public StructuredOutputEvaluationResult(
             string structuredOutputId,
             string name,
-            global::G.OneOf<double?, string, bool?, object> extractedValue,
             global::G.OneOf<double?, string, bool?> expectedValue,
             global::G.StructuredOutputEvaluationResultComparator comparator,
             bool passed,
             bool required,
+            global::G.OneOf<double?, string, bool?>? extractedValue,
             string? error,
             bool? isSkipped,
             string? skipReason)

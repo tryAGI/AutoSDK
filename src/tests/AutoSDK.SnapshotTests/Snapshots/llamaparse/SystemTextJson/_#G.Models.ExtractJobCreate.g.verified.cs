@@ -39,8 +39,8 @@ namespace G
         /// The data schema to override the extraction agent's data schema with
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("data_schema_override")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.AnyOfJsonConverter<object, string, object>))]
-        public global::G.AnyOf<object, string, object>? DataSchemaOverride { get; set; }
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.AnyOfJsonConverter<object, string>))]
+        public global::G.AnyOf<object, string>? DataSchemaOverride { get; set; }
 
         /// <summary>
         /// The config to override the extraction agent's config with
@@ -83,7 +83,7 @@ namespace G
             global::System.Guid fileId,
             global::G.ExtractJobCreatePriority? priority,
             global::System.Collections.Generic.IList<global::G.WebhookConfiguration>? webhookConfigurations,
-            global::G.AnyOf<object, string, object>? dataSchemaOverride,
+            global::G.AnyOf<object, string>? dataSchemaOverride,
             global::G.ExtractConfig? configOverride)
         {
             this.Priority = priority;

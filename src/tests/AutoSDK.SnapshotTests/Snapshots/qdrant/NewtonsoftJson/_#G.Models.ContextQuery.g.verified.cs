@@ -12,8 +12,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("context", Required = global::Newtonsoft.Json.Required.Always)]
-        public global::G.ContextInput Context { get; set; } = default!;
+        [global::Newtonsoft.Json.JsonProperty("context")]
+        public global::G.ContextInput? Context { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -26,7 +26,7 @@ namespace G
         /// </summary>
         /// <param name="context"></param>
         public ContextQuery(
-            global::G.ContextInput context)
+            global::G.ContextInput? context)
         {
             this.Context = context;
         }

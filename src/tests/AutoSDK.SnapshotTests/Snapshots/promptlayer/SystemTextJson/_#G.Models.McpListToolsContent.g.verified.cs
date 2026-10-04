@@ -38,8 +38,8 @@ namespace G
         /// Default Value: openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("error")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.AnyOfJsonConverter<string, object, object>))]
-        public global::G.AnyOf<string, object, object>? Error { get; set; }
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.AnyOfJsonConverter<string, object>))]
+        public global::G.AnyOf<string, object>? Error { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -71,7 +71,7 @@ namespace G
             string? id,
             string? serverLabel,
             global::System.Collections.Generic.IList<object>? tools,
-            global::G.AnyOf<string, object, object>? error)
+            global::G.AnyOf<string, object>? error)
         {
             this.Type = type;
             this.Id = id;
