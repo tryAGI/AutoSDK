@@ -13,6 +13,67 @@ namespace AutoSDK.UnitTests;
 public partial class NamingTests
 {
     [TestMethod]
+    public void StainlessOverloadPaths_UseDistinctNamesAndTheRealRequestPath()
+    {
+        var operations = PrepareOperations("""
+                                           paths:
+                                             /namespaces:
+                                               post:
+                                                 responses:
+                                                   '200':
+                                                     description: OK
+                                             /namespaces?stainless_overload=branchFrom:
+                                               post:
+                                                 responses:
+                                                   '200':
+                                                     description: OK
+                                             /namespaces?stainless_overload=copyFrom:
+                                               post:
+                                                 responses:
+                                                   '200':
+                                                     description: OK
+                                           """);
+
+        operations.Should().HaveCount(3);
+        operations.Select(operation => operation.MethodName).Should().OnlyHaveUniqueItems();
+        operations.Select(operation => operation.MethodName).Should().Contain(name => name.EndsWith("BranchFrom"));
+        operations.Select(operation => operation.MethodName).Should().Contain(name => name.EndsWith("CopyFrom"));
+        operations.Select(operation => operation.OperationPath).Should().OnlyContain(path => path == "/namespaces");
+    }
+
+    [TestMethod]
+    public void QueryBearingPathWithoutStainlessOverload_KeepsExistingBehavior()
+    {
+        var operations = PrepareOperations("""
+                                           paths:
+                                             /namespaces?beta=true:
+                                               get:
+                                                 responses:
+                                                   '200':
+                                                     description: OK
+                                           """);
+
+        operations.Should().ContainSingle()
+            .Which.OperationPath.Should().Be("/namespaces?beta=true");
+    }
+
+    [TestMethod]
+    public void MalformedStainlessOverload_ReportsClearError()
+    {
+        Action generate = () => PrepareOperations("""
+                                                  paths:
+                                                    /namespaces?stainless_overload=branchFrom&extra=true:
+                                                      post:
+                                                        responses:
+                                                          '200':
+                                                            description: OK
+                                                  """);
+
+        generate.Should().Throw<NotSupportedException>()
+            .WithMessage("*Expected ?stainless_overload=<name>*");
+    }
+
+    [TestMethod]
     [DataRow("media_transcribe", "media", "Transcribe")]
     [DataRow("media-transcribe", "media", "Transcribe")]
     [DataRow("mediaTranscribe", "media", "Transcribe")]

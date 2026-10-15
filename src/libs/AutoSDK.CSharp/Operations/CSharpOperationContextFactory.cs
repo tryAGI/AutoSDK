@@ -21,6 +21,7 @@ public static class CSharpOperationContextFactory
         IReadOnlyDictionary<string, Tag>? resolvedTags = null)
     {
         operation = operation ?? throw new ArgumentNullException(nameof(operation));
+        operationPath = operationPath ?? throw new ArgumentNullException(nameof(operationPath));
 
         var operationTags = operation.Tags;
         OpenApiTagReference? firstTag = null;
@@ -45,7 +46,8 @@ public static class CSharpOperationContextFactory
             }
         }
 
-        var context = new OperationContext(settings, globalSettings, operation, operationPath, operationType)
+        var (requestPath, overloadSuffix) = NormalizeOperationPath(operationPath);
+        var context = new OperationContext(settings, globalSettings, operation, requestPath, operationType)
         {
             Schemas = operationSchemas ?? (IReadOnlyCollection<SchemaContext>)[],
             Servers = effectiveServers,
@@ -55,9 +57,40 @@ public static class CSharpOperationContextFactory
             DocumentIdempotencyHeaders = documentIdempotencyHeaders ?? [],
             Tag = GetOperationTag(operation, settings, firstTag, resolvedTags),
         };
-        context.MethodName = context.GetMethodName();
+        context.MethodName = context.GetMethodName() + overloadSuffix;
 
         return context;
+    }
+
+    private static (string RequestPath, string OverloadSuffix) NormalizeOperationPath(string operationPath)
+    {
+        var queryIndex = operationPath.IndexOf('?');
+        if (queryIndex < 0)
+        {
+            return (operationPath, string.Empty);
+        }
+
+        const string marker = "?stainless_overload=";
+        var overload = operationPath.Substring(queryIndex);
+        if (!overload.StartsWith(marker, StringComparison.Ordinal))
+        {
+            return (operationPath, string.Empty);
+        }
+
+        if (overload.Length == marker.Length ||
+            overload.Substring(marker.Length).Any(character =>
+                !char.IsLetterOrDigit(character) && character is not ('_' or '-')))
+        {
+            throw new NotSupportedException(
+                $"OpenAPI path '{operationPath}' contains an invalid Stainless overload name. " +
+                "Expected ?stainless_overload=<name>.");
+        }
+
+        // Stainless uses this suffix to distinguish operations sharing the same HTTP route.
+        // It is metadata, not a query parameter sent to the provider.
+        return (
+            operationPath.Substring(0, queryIndex),
+            overload.Substring(marker.Length).ToPropertyName());
     }
 
     private static Tag GetOperationTag(
