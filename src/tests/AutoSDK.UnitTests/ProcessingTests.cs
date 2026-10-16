@@ -1,4 +1,4 @@
-﻿using System.Text.Json.Nodes;
+using System.Text.Json.Nodes;
 using AutoSDK.Extensions;
 using Microsoft.OpenApi;
 using Microsoft.OpenApi.Reader;
@@ -106,16 +106,13 @@ public class ProcessingTests : VerifyBase
         await Task.WhenAll(
             Verify(diagnostics?.Errors ?? [])
                 .UseDirectory($"Snapshots/Processing/DetectedDiscriminators/{resourceName}")
-                .AutoVerify()
                 .UseTextForParameters("Errors"),
             Verify(diagnostics?.Warnings ?? [])
                 .UseDirectory($"Snapshots/Processing/DetectedDiscriminators/{resourceName}")
-                .AutoVerify()
                 .UseTextForParameters("Warnings"),
             Verify(yamlOrJson)
                 .UseDirectory($"Snapshots/Processing/DetectedDiscriminators/{resourceName}")
                 .UseFileName("_")
-                .AutoVerify()
         );
     }
 

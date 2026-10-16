@@ -33,6 +33,10 @@
     <Using Include="AwesomeAssertions" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Compile Include="../AutoSDK.UnitTests/SnapshotPolicyTests.cs" Link="SnapshotPolicyTests.cs" />
+  </ItemGroup>
+
   <ItemGroup Label="Resources">
     <EmbeddedResource Include="$(MSBuildThisFileDirectory)../../../specs/*.*" Visible="false" />
     <AdditionalFiles Include="$(MSBuildThisFileDirectory)../../../specs/*.*" Visible="false" />

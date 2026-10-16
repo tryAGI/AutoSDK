@@ -27,10 +27,10 @@ dotnet test --filter "FullyQualifiedName~DataTests"
 dotnet test --filter "FullyQualifiedName~NamingTests"
 dotnet test --filter "FullyQualifiedName~JsonTests"
 
-# Auto-verify all snapshots (accepts all changes as new baselines)
-# Use after changes that cause expected widespread snapshot churn
-# (e.g., ordering fixes, formatting changes, template adjustments)
-AUTOSDK_AUTO_VERIFY=true dotnet test src/tests/AutoSDK.SnapshotTests/
+# Snapshot mismatches fail and leave .received files for review.
+# Review each received/verified diff, then explicitly copy only approved files
+# over their corresponding .verified baselines and rerun the affected tests.
+# AUTOSDK_AUTO_VERIFY is no longer supported.
 ```
 
 ## CLI Tool Development

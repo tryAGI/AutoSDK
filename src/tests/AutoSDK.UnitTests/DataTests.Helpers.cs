@@ -1,4 +1,4 @@
-﻿using AutoSDK.Models;
+using AutoSDK.Models;
 
 namespace AutoSDK.UnitTests;
 
@@ -17,30 +17,6 @@ public partial class DataTests : VerifyBase
         Data data,
         string resourceName)
     {
-        // var classesTask =
-        //     Verify(data.Classes
-        //             .Select(x => x with { Parents = [] })
-        //             .ToArray())
-        //         .UseDirectory($"Snapshots/{callerName}/Classes")
-        //         .UseFileName("_");
-        // var enumsTask =
-        //     Verify(data.Enums
-        //             .Select(x => x with { Parents = [] })
-        //             .ToArray())
-        //         .UseDirectory($"Snapshots/{callerName}/Enums")
-        //         .UseFileName("_");
-        // var methodsTask =
-        //     Verify(data.Methods)
-        //         .UseDirectory($"Snapshots/{callerName}/Methods")
-        //         .UseFileName("_");
-        // var anyOfsTask =
-        //     Verify(data.AnyOfs)
-        //         .UseDirectory($"Snapshots/{callerName}/AnyOfs")
-        //         .UseFileName("_");
-        // var typesTask =
-        //     Verify(data.Types)
-        //         .UseDirectory($"Snapshots/{callerName}/Types")
-        //         .UseFileName("_");
         var schemaStrings = ToSchemaStrings(data.Schemas);
         var schemasTask =
             Verify(schemaStrings)
@@ -51,15 +27,7 @@ public partial class DataTests : VerifyBase
                 .UseDirectory($"Snapshots/{resourceName}/ResolvedSchemas")
                 .UseFileName("_");
         
-        // classesTask = classesTask.AutoVerify();
-        // enumsTask = enumsTask.AutoVerify();
-        // methodsTask = methodsTask.AutoVerify();
-        // anyOfsTask = anyOfsTask.AutoVerify();
-        // typesTask = typesTask.AutoVerify();
-        schemasTask = schemasTask.AutoVerify();
-        resolvedSchemasTask = resolvedSchemasTask.AutoVerify();
-
-        return Task.WhenAll(schemasTask, resolvedSchemasTask); // classesTask, enumsTask, methodsTask, anyOfsTask, typesTask, 
+        return Task.WhenAll(schemasTask, resolvedSchemasTask);
     }
 
     private static List<string> ToSchemaStrings(IReadOnlyList<SchemaContext> schemas)

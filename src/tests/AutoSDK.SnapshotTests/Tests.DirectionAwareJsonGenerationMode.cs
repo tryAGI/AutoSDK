@@ -161,10 +161,6 @@ components:
         var verification = Verify(file.Text)
             .UseDirectory($"Snapshots/DirectionAwareJsonGenerationMode/{(directionAware ? "Enabled" : "Disabled")}")
             .UseFileName("_");
-        if (AutoVerifyEnabled)
-        {
-            verification = verification.AutoVerify();
-        }
 
         return verification;
     }
