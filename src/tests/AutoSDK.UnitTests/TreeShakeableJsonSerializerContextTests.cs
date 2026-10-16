@@ -194,7 +194,12 @@ components:
 """;
 
     [TestMethod]
-    public void GenerateFiles_GroupedCli_EmitsIndependentReachableContextsForLeafClients()
+    [DataRow("Catalogue.SourceGenerationContext", "AlbumsSourceGenerationContext", "ArtistsSourceGenerationContext")]
+    [DataRow("Catalogue.V2SourceGenerationContext", "V2SourceGenerationContext_Albums", "V2SourceGenerationContext_Artists")]
+    public void GenerateFiles_GroupedCli_EmitsIndependentReachableContextsForLeafClients(
+        string rootContext,
+        string albumsContextName,
+        string artistsContextName)
     {
         var settings = Settings.Default with
         {
@@ -205,26 +210,30 @@ components:
             GenerateConstructors = true,
             GenerateSdk = true,
             GenerateJsonSerializerContextTypes = true,
-            JsonSerializerContext = "Catalogue.SourceGenerationContext",
+            JsonSerializerContext = rootContext,
             GroupByTags = true,
             FromCli = true,
         };
 
+        var globalRootContext = $"global::{rootContext}";
+        var rootFileName = rootContext == "Catalogue.SourceGenerationContext"
+            ? "Catalogue.JsonSerializerContext.g.cs"
+            : "Catalogue.V2SourceGenerationContext.JsonSerializerContext.g.cs";
         var data = CSharpPipeline.PrepareAndEnrich(((Spec, settings), settings));
         var files = CSharpPipeline.GenerateFiles(data).ToDictionary(static x => x.Name, StringComparer.Ordinal);
 
-        files.Should().ContainKey("Catalogue.JsonSerializerContext.g.cs");
+        files.Should().ContainKey(rootFileName);
         files.Should().ContainKey("Catalogue.Albums.JsonSerializerContext.g.cs");
         files.Should().ContainKey("Catalogue.Artists.JsonSerializerContext.g.cs");
 
         files["Catalogue.AlbumsClient.g.cs"].Text
-            .Should().Contain("global::Catalogue.AlbumsSourceGenerationContext.Default")
-            .And.NotContain("global::Catalogue.SourceGenerationContext.Default");
+            .Should().Contain($"global::Catalogue.{albumsContextName}.Default")
+            .And.NotContain($"{globalRootContext}.Default");
         files["Catalogue.ArtistsClient.g.cs"].Text
-            .Should().Contain("global::Catalogue.ArtistsSourceGenerationContext.Default")
-            .And.NotContain("global::Catalogue.SourceGenerationContext.Default");
+            .Should().Contain($"global::Catalogue.{artistsContextName}.Default")
+            .And.NotContain($"{globalRootContext}.Default");
         files["Catalogue.CatalogueClient.g.cs"].Text
-            .Should().Contain("global::Catalogue.SourceGenerationContext.Default")
+            .Should().Contain($"{globalRootContext}.Default")
             .And.Contain("JsonSerializerContextProvider = JsonSerializerContextProvider");
 
         var albumsContext = files["Catalogue.Albums.JsonSerializerContext.g.cs"].Text;
@@ -243,7 +252,13 @@ components:
     }
 
     [TestMethod]
-    public void MonolithicPartition_KeepsThePublicContextAndRegistersOwnedModelsOnce()
+    [DataRow("SourceGenerationContext", "PartitionCoreSourceGenerationContext", "AlbumsSourceGenerationContext", "ArtistsSourceGenerationContext")]
+    [DataRow("V2Context", "V2Context_PartitionCore", "V2Context_Albums", "V2Context_Artists")]
+    public void MonolithicPartition_KeepsThePublicContextAndRegistersOwnedModelsOnce(
+        string rootContextName,
+        string coreContextName,
+        string albumsContextName,
+        string artistsContextName)
     {
         var settings = Settings.Default with
         {
@@ -254,7 +269,7 @@ components:
             GenerateConstructors = true,
             GenerateSdk = true,
             GenerateJsonSerializerContextTypes = true,
-            JsonSerializerContext = "Catalogue.SourceGenerationContext",
+            JsonSerializerContext = $"Catalogue.{rootContextName}",
             GroupByTags = true,
             FromCli = true,
         };
@@ -269,21 +284,54 @@ components:
             .ToDictionary(static file => file.Name, StringComparer.Ordinal);
 
         var root = contexts["Catalogue.JsonSerializerContext.g.cs"].Text;
-        root.Should().Contain("public sealed partial class SourceGenerationContext")
-            .And.Contain("global::Catalogue.PartitionCoreSourceGenerationContext.TypeInfoResolver")
-            .And.Contain("global::Catalogue.AlbumsSourceGenerationContext.TypeInfoResolver")
-            .And.Contain("global::Catalogue.ArtistsSourceGenerationContext.TypeInfoResolver")
+        root.Should().Contain($"public sealed partial class {rootContextName}")
+            .And.Contain($"global::Catalogue.{coreContextName}.TypeInfoResolver")
+            .And.Contain($"global::Catalogue.{albumsContextName}.TypeInfoResolver")
+            .And.Contain($"global::Catalogue.{artistsContextName}.TypeInfoResolver")
             .And.Contain("options.Converters.Add(")
-            .And.NotContain("PartitionCoreSourceGenerationContext.AddConverters(options)")
+            .And.NotContain($"{coreContextName}.AddConverters(options)")
             .And.NotContain("[global::System.Text.Json.Serialization.JsonSerializable(");
 
         var albums = contexts["Catalogue.Albums.JsonSerializerContext.g.cs"].Text;
         albums.Should().Contain("global::Catalogue.Album")
-            .And.Contain("global::Catalogue.PartitionCoreSourceGenerationContext.TypeInfoResolver")
+            .And.Contain($"global::Catalogue.{coreContextName}.TypeInfoResolver")
             .And.NotContain("global::Catalogue.Artist");
         var artists = contexts["Catalogue.Artists.JsonSerializerContext.g.cs"].Text;
         artists.Should().Contain("global::Catalogue.Artist")
             .And.NotContain("global::Catalogue.Album");
+    }
+
+    [TestMethod]
+    public void GenerateFiles_SplitByTags_CustomContextRetargetsModelsAndClientsConsistently()
+    {
+        var settings = Settings.Default with
+        {
+            Namespace = "Catalogue",
+            ClassName = "CatalogueClient",
+            GenerateModels = true,
+            GenerateMethods = true,
+            GenerateConstructors = true,
+            GenerateSdk = true,
+            GenerateJsonSerializerContextTypes = true,
+            JsonSerializerContext = "Catalogue.V2Context",
+            GroupByTags = true,
+            SplitByTags = true,
+            FromCli = true,
+        };
+        var data = CSharpPipeline.PrepareAndEnrich(((Spec, settings), settings));
+        var files = CSharpPipeline.GenerateFiles(data).ToDictionary(static file => file.Name, StringComparer.Ordinal);
+
+        files["Catalogue.Albums.JsonSerializerContext.g.cs"].Text
+            .Should().Contain("public sealed partial class V2Context_Albums");
+        files["Catalogue.Models.Album.Json.g.cs"].Text
+            .Should().Contain("global::Catalogue.V2Context_Albums.Default");
+        files["Catalogue.AlbumsClient.g.cs"].Text
+            .Should().Contain("global::Catalogue.V2Context_Albums.Default");
+        files["Catalogue.CatalogueClient.g.cs"].Text
+            .Should().Contain("global::Catalogue.V2Context_CatalogueClient.Default");
+        files["Catalogue.CatalogueClient.JsonSerializerContext.g.cs"].Text
+            .Should().Contain("global::Catalogue.V2Context_Albums.TypeInfoResolver")
+            .And.Contain("global::Catalogue.V2Context.TypeInfoResolver");
     }
 
     [TestMethod]

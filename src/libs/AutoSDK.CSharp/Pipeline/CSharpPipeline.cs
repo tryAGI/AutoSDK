@@ -517,7 +517,7 @@ public static class CSharpPipeline
         {
             if (tag.Name is not null)
             {
-                result[tag.Name] = GetPackageContextName(settings.Namespace, tag.SafeName);
+                result[tag.Name] = GetPackageContextName(settings, tag.SafeName);
             }
         }
 
@@ -650,7 +650,7 @@ public static class CSharpPipeline
                     .Where(type => IsReachableFromTag(type.CSharpTypeWithoutNullability, tag.Name, tagReachability))
                     .ToImmutableArray()
                     .AsEquatableArray();
-            var contextName = GetPackageContextName(data.Converters.Settings.Namespace, tag.SafeName);
+            var contextName = GetPackageContextName(data.Converters.Settings, tag.SafeName);
             files.Add(Sources.JsonSerializerContext(
                 CreatePackageContextClient(
                     data.Converters,
@@ -779,7 +779,7 @@ public static class CSharpPipeline
         {
             coreSafeName += "_";
         }
-        var coreContextName = GetPackageContextName(settings.Namespace, coreSafeName);
+        var coreContextName = GetPackageContextName(settings, coreSafeName);
         var coreClient = CreatePackageContextClient(
             data.Converters,
             coreSafeName,
@@ -847,7 +847,7 @@ public static class CSharpPipeline
                 continue;
             }
 
-            var contextName = GetPackageContextName(settings.Namespace, tag.SafeName);
+            var contextName = GetPackageContextName(settings, tag.SafeName);
             files.Add(Sources.JsonSerializerContext(
                 CreatePackageContextClient(
                     data.Converters,
@@ -960,7 +960,7 @@ public static class CSharpPipeline
                 continue;
             }
 
-            var contextName = GetPackageContextName(settings.Namespace, tag.SafeName);
+            var contextName = GetPackageContextName(settings, tag.SafeName);
             files.Add(Sources.JsonSerializerContext(
                 CreatePackageContextClient(
                     data.Converters,
@@ -985,7 +985,7 @@ public static class CSharpPipeline
                 CreatePackageContextClient(
                     data.Converters,
                     rootClassName,
-                    GetPackageContextName(settings.Namespace, rootClassName),
+                    GetPackageContextName(settings, rootClassName),
                     // The facade owns no models, so it contributes nothing of its own and picks up
                     // every package's converters through the chain.
                     ImmutableArray<string>.Empty),
@@ -1000,11 +1000,24 @@ public static class CSharpPipeline
     }
 
     /// <summary>
-    /// The context class a package owns, e.g. <c>Fixture.AlbumsSourceGenerationContext</c>.
+    /// The context class a tag, partition, or package owns. Custom root context names also
+    /// scope their child contexts: System.Text.Json source hint names ignore namespaces.
     /// </summary>
-    internal static string GetPackageContextName(string @namespace, string safeName)
+    internal static string GetPackageContextName(Settings settings, string safeName)
     {
-        return $"{@namespace}.{safeName}SourceGenerationContext";
+        var rootContext = settings.JsonSerializerContext;
+        var rootClassName = rootContext.Substring(rootContext.LastIndexOf('.') + 1);
+        if (rootClassName.StartsWith("global::", StringComparison.Ordinal))
+        {
+            rootClassName = rootClassName.Substring("global::".Length);
+        }
+
+        // Preserve existing public names for the default context. A custom context is the
+        // caller's explicit identity for another API generation in the same assembly.
+        var className = string.IsNullOrEmpty(rootClassName) || rootClassName == "SourceGenerationContext"
+            ? $"{safeName}SourceGenerationContext"
+            : $"{rootClassName}_{safeName}";
+        return $"{settings.Namespace}.{className}";
     }
 
     /// <summary>
@@ -1045,7 +1058,7 @@ public static class CSharpPipeline
             if (tag.Name is not null && owningTags.Contains(tag.Name))
             {
                 contextByClientClassName[CSharpClientNameGenerator.Generate(tag)] =
-                    GetPackageContextName(settings.Namespace, tag.SafeName);
+                    GetPackageContextName(settings, tag.SafeName);
             }
         }
 
@@ -1055,7 +1068,7 @@ public static class CSharpPipeline
         }
 
         var rootClassName = settings.ClassName.Replace(".", string.Empty);
-        contextByClientClassName[rootClassName] = GetPackageContextName(settings.Namespace, rootClassName);
+        contextByClientClassName[rootClassName] = GetPackageContextName(settings, rootClassName);
 
         return data.Clients
             .Select(client => contextByClientClassName.TryGetValue(client.ClassName, out var contextName)
@@ -1087,7 +1100,7 @@ public static class CSharpPipeline
             }
 
             contextByClientClassName[CSharpClientNameGenerator.Generate(tag)] =
-                GetPackageContextName(data.Converters.Settings.Namespace, tag.SafeName);
+                GetPackageContextName(data.Converters.Settings, tag.SafeName);
         }
 
         return data.Clients
