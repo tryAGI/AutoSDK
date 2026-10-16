@@ -1,3 +1,4 @@
+using System.Runtime.CompilerServices;
 using AutoSDK.Models;
 
 namespace AutoSDK.UnitTests;
@@ -15,19 +16,48 @@ public partial class DataTests : VerifyBase
 
     private Task VerifyAsync(
         Data data,
-        string resourceName)
+        string resourceName,
+        [CallerFilePath] string sourceFile = "")
     {
+        var root = Path.Combine(Path.GetDirectoryName(sourceFile)!, "Snapshots");
+        var directory = ResolveSnapshotDirectory(root, resourceName);
         var schemaStrings = ToSchemaStrings(data.Schemas);
         var schemasTask =
             Verify(schemaStrings)
-                .UseDirectory($"Snapshots/{resourceName}/Schemas")
+                .UseDirectory(Path.Combine(directory, "Schemas"))
                 .UseFileName("_");
         var resolvedSchemasTask =
             Verify(ToResolvedStrings(data.FilteredSchemas.Where(x => x.Parent == null), data.FilteredSchemas.Count))
-                .UseDirectory($"Snapshots/{resourceName}/ResolvedSchemas")
+                .UseDirectory(Path.Combine(directory, "ResolvedSchemas"))
                 .UseFileName("_");
         
         return Task.WhenAll(schemasTask, resolvedSchemasTask);
+    }
+
+    private static string ResolveSnapshotDirectory(string root, string resourceName)
+    {
+        // Older baselines use names such as OpenAi and HuggingFace, while spec names are
+        // lowercase. Resolve their actual spelling so Linux reads the same baselines as macOS.
+        return Directory.EnumerateDirectories(root)
+            .SingleOrDefault(path => string.Equals(Path.GetFileName(path), resourceName, StringComparison.OrdinalIgnoreCase))
+            ?? Path.Combine(root, resourceName);
+    }
+
+    [TestMethod]
+    public void SnapshotDirectoryResolution_PreservesExistingBaselineCase()
+    {
+        var root = Path.Combine(Path.GetTempPath(), Path.GetRandomFileName());
+        var canonical = Path.Combine(root, "OpenAi");
+        Directory.CreateDirectory(canonical);
+        try
+        {
+            ResolveSnapshotDirectory(root, "openai").Should().Be(canonical);
+            ResolveSnapshotDirectory(root, "new-spec").Should().Be(Path.Combine(root, "new-spec"));
+        }
+        finally
+        {
+            Directory.Delete(root, recursive: true);
+        }
     }
 
     private static List<string> ToSchemaStrings(IReadOnlyList<SchemaContext> schemas)
