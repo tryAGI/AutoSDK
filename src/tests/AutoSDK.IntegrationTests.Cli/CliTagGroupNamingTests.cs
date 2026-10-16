@@ -6,9 +6,18 @@ namespace AutoSDK.IntegrationTests;
 public class CliTagGroupNamingTests
 {
     [TestMethod]
-    [DataRow(true)]
-    [DataRow(false)]
-    public async Task Generate_WithFernGroupNameMatchingTagPascalCase_UsesUnsuffixedClientName_AndBuilds(bool groupByTags)
+    public Task Generate_WithFernGroupNameMatchingTagPascalCase_UsesUnsuffixedClientName_AndBuilds()
+    {
+        return GenerateTaggedClientAsync(groupByTags: true);
+    }
+
+    [TestMethod]
+    public Task Generate_WithTagsAndFlatClient_PreservesRootMethods_AndBuilds()
+    {
+        return GenerateTaggedClientAsync(groupByTags: false);
+    }
+
+    private static async Task GenerateTaggedClientAsync(bool groupByTags)
     {
         const string spec = """
 openapi: 3.0.1
