@@ -591,6 +591,11 @@ paths:
 
         // NDJSON catch block should populate ResponseBody
         generatedCode.Should().Contain("responseBody: __content,");
+        // EndOfStream performs a synchronous read; cancellation must reach the pending line read.
+        generatedCode.Should().NotContain("__reader.EndOfStream");
+        generatedCode.Should().Contain("ReadLineAsync(__effectiveCancellationToken)");
+        generatedCode.Should().Contain("__effectiveCancellationToken.ThrowIfCancellationRequested()");
+        generatedCode.Should().Contain("if (__content is null)");
     }
 
     [TestMethod]
