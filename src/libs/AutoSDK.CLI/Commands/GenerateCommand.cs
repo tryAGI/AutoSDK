@@ -414,6 +414,13 @@ internal sealed class GenerateCommand : Command
                       "For multi-channel specs, used as a prefix (e.g., 'Deepgram' produces 'DeepgramListenV1RealtimeClient').",
     };
 
+    private Option<bool> GroupByTags { get; } = new(
+        name: "--group-by-tags")
+    {
+        DefaultValueFactory = _ => Settings.Default.GroupByTags,
+        Description = "Group operations into tag clients. Set false to retain a flat client without changing OpenAPI tags.",
+    };
+
     private Option<string> JsonSerializerContextName { get; } = new(
         name: "--json-serializer-context")
     {
@@ -628,6 +635,7 @@ internal sealed class GenerateCommand : Command
         Options.Add(OpenApiOverrides);
         Options.Add(WebSocketClientClassName);
         Options.Add(JsonSerializerContextName);
+        Options.Add(GroupByTags);
         Options.Add(DirectionAwareJsonGenerationMode);
         Options.Add(TypesNamespace);
         Options.Add(NamespaceDelimiter);
@@ -668,6 +676,7 @@ internal sealed class GenerateCommand : Command
         var grpcOutputSubdirectory = parseResult.GetRequiredValue(GrpcOutputSubdirectory);
         
         var splitByTags = parseResult.GetRequiredValue(SplitByTags);
+        var groupByTags = parseResult.GetRequiredValue(GroupByTags);
         var packageIdValue = parseResult.GetRequiredValue(PackageId);
         var packagesOutputValue = parseResult.GetRequiredValue(PackagesOutput);
         var packageMapValue = parseResult.GetRequiredValue(PackageMap);
@@ -713,6 +722,11 @@ internal sealed class GenerateCommand : Command
 
         if (splitByTags)
         {
+            if (!groupByTags)
+            {
+                throw new ArgumentException("--split-by-tags requires --group-by-tags true.");
+            }
+
             if (singleFile)
             {
                 throw new ArgumentException("--split-by-tags and --single-file are mutually exclusive.");
@@ -758,6 +772,7 @@ internal sealed class GenerateCommand : Command
             TargetFramework = parseResult.GetRequiredValue(TargetFramework),
             Namespace = namespaceValue,
             ClassName = parseResult.GetRequiredValue(ClientClassName),
+            GroupByTags = groupByTags,
             ClsCompliantEnumPrefix = parseResult.GetRequiredValue(ClsCompliantEnumPrefix),
             IdentifierCharacterSet = parseResult.GetRequiredValue(IdentifierCharacterSetOption),
             MethodNamingConvention = parseResult.GetRequiredValue(MethodNamingConvention),

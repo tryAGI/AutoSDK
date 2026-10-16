@@ -6,7 +6,9 @@ namespace AutoSDK.IntegrationTests;
 public class CliTagGroupNamingTests
 {
     [TestMethod]
-    public async Task Generate_WithFernGroupNameMatchingTagPascalCase_UsesUnsuffixedClientName_AndBuilds()
+    [DataRow(true)]
+    [DataRow(false)]
+    public async Task Generate_WithFernGroupNameMatchingTagPascalCase_UsesUnsuffixedClientName_AndBuilds(bool groupByTags)
     {
         const string spec = """
 openapi: 3.0.1
@@ -49,17 +51,41 @@ components:
                         .Select(path => File.ReadAllTextAsync(path)));
                 var content = string.Join("\n\n", generatedContents);
 
-                content.Should().Contain("public partial class CorporaClient");
+                if (groupByTags)
+                {
+                    content.Should().Contain("public partial class CorporaClient");
+                }
+                else
+                {
+                    content.Should().NotContain("public partial class CorporaClient");
+                    content.Should().Contain("public partial class Api");
+                    content.Should().Contain("ListCorporaAsync(");
+                }
                 content.Should().NotContain("public partial class Corpora2Client");
                 content.Should().NotContain("Corpora2Command");
-            });
+            },
+            groupByTags: groupByTags);
+    }
+
+    [TestMethod]
+    public async Task Generate_SplitByTagsRejectsFlatClientBeforeReadingInput()
+    {
+        var repository = Path.GetFullPath(Path.Combine(Directory.GetCurrentDirectory(), "../../../../../.."));
+        var result = await RunDotnetAsync(repository,
+            "run", "--disable-build-servers", "--no-launch-profile",
+            "--project", "src/libs/AutoSDK.CLI", "--", "generate", "missing-input.json",
+            "--split-by-tags", "--group-by-tags", "false");
+        result.ExitCode.Should().NotBe(0);
+        (result.StandardOutput + result.StandardError).Should()
+            .Contain("--split-by-tags requires --group-by-tags true.");
     }
 
     private static async Task GenerateFromContentAsync(
         string fileName,
         string specContent,
         string targetFramework = "net8.0",
-        Func<string, Task>? assertGeneratedOutput = null)
+        Func<string, Task>? assertGeneratedOutput = null,
+        bool groupByTags = true)
     {
         var tempSpecDirectory = Path.Combine(Path.GetTempPath(), Path.GetRandomFileName());
         Directory.CreateDirectory(tempSpecDirectory);
@@ -69,7 +95,7 @@ components:
         try
         {
             await File.WriteAllTextAsync(specPath, specContent);
-            await GenerateAsync(specPath, targetFramework, assertGeneratedOutput);
+            await GenerateAsync(specPath, targetFramework, assertGeneratedOutput, groupByTags);
         }
         finally
         {
@@ -80,7 +106,8 @@ components:
     private static async Task GenerateAsync(
         string specPath,
         string targetFramework,
-        Func<string, Task>? assertGeneratedOutput)
+        Func<string, Task>? assertGeneratedOutput,
+        bool groupByTags)
     {
         var tempDirectory = Path.Combine(Path.GetTempPath(), Path.GetRandomFileName());
         Directory.CreateDirectory(tempDirectory);
@@ -98,6 +125,7 @@ components:
                 "--project", "src/libs/AutoSDK.CLI",
                 "generate", specPath,
                 "--namespace", "Oag",
+                "--group-by-tags", groupByTags ? "true" : "false",
                 "--targetFramework", targetFramework,
                 "--output", tempDirectory);
 
