@@ -108,7 +108,7 @@ namespace G
 
                             var __pathBuilder = new global::G.PathBuilder(
                                 path: $"/user/packages/{(global::System.Uri.EscapeDataString(packageType.ToValueString()))}/{packageName}/restore",
-                                baseUri: HttpClient.BaseAddress);
+                                baseUri: HttpClient.BaseAddress ?? new global::System.Uri("https://api.github.com/", global::System.UriKind.RelativeOrAbsolute));
                             __pathBuilder
                                 .AddOptionalParameter("token", token)
                                 ;

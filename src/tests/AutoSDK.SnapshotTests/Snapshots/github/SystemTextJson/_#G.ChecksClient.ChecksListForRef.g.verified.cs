@@ -165,7 +165,7 @@ namespace G
 
                             var __pathBuilder = new global::G.PathBuilder(
                                 path: $"/repos/{owner}/{repo}/commits/{@ref}/check-runs",
-                                baseUri: HttpClient.BaseAddress);
+                                baseUri: HttpClient.BaseAddress ?? new global::System.Uri("https://api.github.com/", global::System.UriKind.RelativeOrAbsolute));
                             __pathBuilder
                                 .AddOptionalParameter("check_name", checkName)
                                 .AddOptionalParameter("status", status?.ToValueString())

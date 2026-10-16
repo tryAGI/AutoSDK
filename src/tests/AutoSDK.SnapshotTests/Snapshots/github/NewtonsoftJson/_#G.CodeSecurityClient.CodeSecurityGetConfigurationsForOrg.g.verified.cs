@@ -131,7 +131,7 @@ namespace G
 
                             var __pathBuilder = new global::G.PathBuilder(
                                 path: $"/orgs/{org}/code-security/configurations",
-                                baseUri: HttpClient.BaseAddress);
+                                baseUri: HttpClient.BaseAddress ?? new global::System.Uri("https://api.github.com/", global::System.UriKind.RelativeOrAbsolute));
                             __pathBuilder
                                 .AddOptionalParameter("target_type", targetType?.ToValueString())
                                 .AddOptionalParameter("per_page", perPage?.ToString())

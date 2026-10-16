@@ -105,7 +105,7 @@ namespace G
 
                             var __pathBuilder = new global::G.PathBuilder(
                                 path: "/gists",
-                                baseUri: HttpClient.BaseAddress);
+                                baseUri: HttpClient.BaseAddress ?? new global::System.Uri("https://api.github.com/", global::System.UriKind.RelativeOrAbsolute));
                             __pathBuilder
                                 .AddOptionalParameter("since", since?.ToString("yyyy-MM-ddTHH:mm:ssZ"))
                                 .AddOptionalParameter("per_page", perPage?.ToString())

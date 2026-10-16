@@ -117,7 +117,7 @@ namespace G
 
                             var __pathBuilder = new global::G.PathBuilder(
                                 path: $"/projects/columns/{columnId}/cards",
-                                baseUri: HttpClient.BaseAddress);
+                                baseUri: HttpClient.BaseAddress ?? new global::System.Uri("https://api.github.com/", global::System.UriKind.RelativeOrAbsolute));
                             __pathBuilder
                                 .AddOptionalParameter("archived_state", archivedState?.ToValueString())
                                 .AddOptionalParameter("per_page", perPage?.ToString())

@@ -148,7 +148,7 @@ namespace G
 
                             var __pathBuilder = new global::G.PathBuilder(
                                 path: "/search/users",
-                                baseUri: HttpClient.BaseAddress);
+                                baseUri: HttpClient.BaseAddress ?? new global::System.Uri("https://api.github.com/", global::System.UriKind.RelativeOrAbsolute));
                             __pathBuilder
                                 .AddRequiredParameter("q", q)
                                 .AddOptionalParameter("sort", sort?.ToValueString())

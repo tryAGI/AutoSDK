@@ -97,7 +97,7 @@ namespace G
 
                             var __pathBuilder = new global::G.PathBuilder(
                                 path: "/organizations",
-                                baseUri: HttpClient.BaseAddress);
+                                baseUri: HttpClient.BaseAddress ?? new global::System.Uri("https://api.github.com/", global::System.UriKind.RelativeOrAbsolute));
                             __pathBuilder
                                 .AddOptionalParameter("since", since?.ToString())
                                 .AddOptionalParameter("per_page", perPage?.ToString())

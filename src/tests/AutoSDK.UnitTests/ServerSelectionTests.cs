@@ -219,6 +219,51 @@ paths:
         fileNames.Should().NotContain("G.ServerSelection.g.cs");
     }
 
+    [TestMethod]
+    public void GenerateEndPoint_GroupedInheritedServer_ResolvesDefaultWithoutMutatingSharedHttpClient()
+    {
+        var data = PrepareData("""
+openapi: 3.0.3
+info:
+  title: Mixed Inherited Servers
+  version: 1.0.0
+servers:
+  - url: https://api.example.com/v1
+paths:
+  /runs:
+    get:
+      operationId: listRuns
+      tags: [agent]
+      responses:
+        '204':
+          description: OK
+  /websets:
+    servers:
+      - url: https://api.example.com/websets
+    get:
+      operationId: listWebsets
+      tags: [websets]
+      responses:
+        '204':
+          description: OK
+""");
+
+        var agentClient = data.Clients.Single(x => x.ClassName == "AgentClient");
+        var method = data.Methods.Single(x => x.NotAsyncMethodName == "ListRuns");
+        var clientCode = Sources.GenerateClient(agentClient);
+        var methodCode = Sources.GenerateEndPoint(method);
+
+        agentClient.Servers.Should().ContainSingle().Which.Url.Should().Be("https://api.example.com/v1");
+        method.HasServerOverride.Should().BeFalse();
+        method.ClientUsesServerSelectionSupport.Should().BeFalse();
+        method.UsesServerSelectionSupport.Should().BeTrue();
+        agentClient.NeedsScopedServerResolver.Should().BeFalse();
+        clientCode.Should().NotContain("private global::System.Uri? ResolveBaseUri(");
+        clientCode.Should().NotContain("HttpClient.BaseAddress ??= baseUri ?? new global::System.Uri(DefaultBaseUrl);");
+        methodCode.Should().NotContain("s_ListRunsServers");
+        methodCode.Should().Contain("baseUri: HttpClient.BaseAddress ?? new global::System.Uri(\"https://api.example.com/v1\"");
+    }
+
     private static AutoSDK.Models.Data PrepareData(string yaml)
     {
         var settings = DefaultSettings;

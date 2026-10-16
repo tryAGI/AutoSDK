@@ -165,7 +165,7 @@ namespace G
 
                             var __pathBuilder = new global::G.PathBuilder(
                                 path: $"/repos/{owner}/{repo}/issues/comments",
-                                baseUri: HttpClient.BaseAddress);
+                                baseUri: HttpClient.BaseAddress ?? new global::System.Uri("https://api.github.com/", global::System.UriKind.RelativeOrAbsolute));
                             __pathBuilder
                                 .AddOptionalParameter("sort", sort?.ToValueString())
                                 .AddOptionalParameter("direction", direction?.ToValueString())

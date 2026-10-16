@@ -2680,7 +2680,8 @@ namespace {endPoint.Settings.Namespace}
             ? $@"ResolveBaseUri(
                 servers: s_{endPoint.NotAsyncMethodName}Servers,
                 defaultBaseUrl: ""{escapedBaseUrl}"")"
-            : endPoint.HasServerOverride && !string.IsNullOrWhiteSpace(endPoint.BaseUrl)
+            // Mixed-server clients leave BaseAddress unset; inherited defaults need a per-request fallback too.
+            : (endPoint.HasServerOverride || endPoint.UsesServerSelectionSupport) && !string.IsNullOrWhiteSpace(endPoint.BaseUrl)
                 ? $@"HttpClient.BaseAddress ?? new global::System.Uri(""{escapedBaseUrl}"", global::System.UriKind.RelativeOrAbsolute)"
                 : "HttpClient.BaseAddress";
         using var code = new PooledStringBuilder(1024);

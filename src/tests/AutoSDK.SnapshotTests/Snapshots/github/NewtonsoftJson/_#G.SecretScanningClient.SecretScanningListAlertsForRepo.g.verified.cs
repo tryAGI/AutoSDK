@@ -207,7 +207,7 @@ namespace G
 
                             var __pathBuilder = new global::G.PathBuilder(
                                 path: $"/repos/{owner}/{repo}/secret-scanning/alerts",
-                                baseUri: HttpClient.BaseAddress);
+                                baseUri: HttpClient.BaseAddress ?? new global::System.Uri("https://api.github.com/", global::System.UriKind.RelativeOrAbsolute));
                             __pathBuilder
                                 .AddOptionalParameter("state", state?.ToValueString())
                                 .AddOptionalParameter("secret_type", secretType)

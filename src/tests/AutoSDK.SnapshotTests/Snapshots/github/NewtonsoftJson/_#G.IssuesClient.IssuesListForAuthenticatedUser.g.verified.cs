@@ -205,7 +205,7 @@ namespace G
 
                             var __pathBuilder = new global::G.PathBuilder(
                                 path: "/user/issues",
-                                baseUri: HttpClient.BaseAddress);
+                                baseUri: HttpClient.BaseAddress ?? new global::System.Uri("https://api.github.com/", global::System.UriKind.RelativeOrAbsolute));
                             __pathBuilder
                                 .AddOptionalParameter("filter", filter?.ToValueString())
                                 .AddOptionalParameter("state", state?.ToValueString())

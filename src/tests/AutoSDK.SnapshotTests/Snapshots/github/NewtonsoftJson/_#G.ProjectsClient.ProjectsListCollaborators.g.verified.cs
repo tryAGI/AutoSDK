@@ -124,7 +124,7 @@ namespace G
 
                             var __pathBuilder = new global::G.PathBuilder(
                                 path: $"/projects/{projectId}/collaborators",
-                                baseUri: HttpClient.BaseAddress);
+                                baseUri: HttpClient.BaseAddress ?? new global::System.Uri("https://api.github.com/", global::System.UriKind.RelativeOrAbsolute));
                             __pathBuilder
                                 .AddOptionalParameter("affiliation", affiliation?.ToValueString())
                                 .AddOptionalParameter("per_page", perPage?.ToString())

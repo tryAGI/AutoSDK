@@ -107,7 +107,7 @@ namespace G
 
                             var __pathBuilder = new global::G.PathBuilder(
                                 path: $"/orgs/{org}/migrations/{migrationId}",
-                                baseUri: HttpClient.BaseAddress);
+                                baseUri: HttpClient.BaseAddress ?? new global::System.Uri("https://api.github.com/", global::System.UriKind.RelativeOrAbsolute));
                             __pathBuilder
                                 .AddOptionalParameter("exclude", exclude, selector: static x => x.ToValueString(), delimiter: ",", explode: true)
                                 ;

@@ -81,7 +81,7 @@ namespace G
 
                             var __pathBuilder = new global::G.PathBuilder(
                                 path: "/octocat",
-                                baseUri: HttpClient.BaseAddress);
+                                baseUri: HttpClient.BaseAddress ?? new global::System.Uri("https://api.github.com/", global::System.UriKind.RelativeOrAbsolute));
                             __pathBuilder
                                 .AddOptionalParameter("s", s)
                                 ;
@@ -376,7 +376,7 @@ namespace G
 
                             var __pathBuilder = new global::G.PathBuilder(
                                 path: "/octocat",
-                                baseUri: HttpClient.BaseAddress);
+                                baseUri: HttpClient.BaseAddress ?? new global::System.Uri("https://api.github.com/", global::System.UriKind.RelativeOrAbsolute));
                             __pathBuilder
                                 .AddOptionalParameter("s", s)
                                 ;

@@ -141,7 +141,7 @@ namespace G
 
                             var __pathBuilder = new global::G.PathBuilder(
                                 path: "/search/labels",
-                                baseUri: HttpClient.BaseAddress);
+                                baseUri: HttpClient.BaseAddress ?? new global::System.Uri("https://api.github.com/", global::System.UriKind.RelativeOrAbsolute));
                             __pathBuilder
                                 .AddRequiredParameter("repository_id", repositoryId.ToString() ?? throw new global::System.InvalidOperationException("A required query parameter returned null from ToString()."))
                                 .AddRequiredParameter("q", q)

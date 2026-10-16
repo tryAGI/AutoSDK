@@ -286,7 +286,7 @@ namespace G
 
                             var __pathBuilder = new global::G.PathBuilder(
                                 path: "/advisories",
-                                baseUri: HttpClient.BaseAddress);
+                                baseUri: HttpClient.BaseAddress ?? new global::System.Uri("https://api.github.com/", global::System.UriKind.RelativeOrAbsolute));
                             __pathBuilder
                                 .AddOptionalParameter("ghsa_id", ghsaId)
                                 .AddOptionalParameter("type", type?.ToValueString())

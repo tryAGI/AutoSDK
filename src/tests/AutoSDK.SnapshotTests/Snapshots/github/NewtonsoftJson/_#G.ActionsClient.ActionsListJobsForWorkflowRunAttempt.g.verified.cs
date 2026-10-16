@@ -135,7 +135,7 @@ namespace G
 
                             var __pathBuilder = new global::G.PathBuilder(
                                 path: $"/repos/{owner}/{repo}/actions/runs/{runId}/attempts/{attemptNumber}/jobs",
-                                baseUri: HttpClient.BaseAddress);
+                                baseUri: HttpClient.BaseAddress ?? new global::System.Uri("https://api.github.com/", global::System.UriKind.RelativeOrAbsolute));
                             __pathBuilder
                                 .AddOptionalParameter("per_page", perPage?.ToString())
                                 .AddOptionalParameter("page", page?.ToString())

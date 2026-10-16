@@ -147,7 +147,7 @@ namespace G
 
                             var __pathBuilder = new global::G.PathBuilder(
                                 path: $"/orgs/{org}/teams/{teamSlug}/discussions/{discussionNumber}/reactions",
-                                baseUri: HttpClient.BaseAddress);
+                                baseUri: HttpClient.BaseAddress ?? new global::System.Uri("https://api.github.com/", global::System.UriKind.RelativeOrAbsolute));
                             __pathBuilder
                                 .AddOptionalParameter("content", content?.ToValueString())
                                 .AddOptionalParameter("per_page", perPage?.ToString())

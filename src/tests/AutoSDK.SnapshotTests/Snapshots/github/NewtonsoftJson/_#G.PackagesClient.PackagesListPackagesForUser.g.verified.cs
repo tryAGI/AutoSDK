@@ -140,7 +140,7 @@ namespace G
 
                             var __pathBuilder = new global::G.PathBuilder(
                                 path: $"/users/{username}/packages",
-                                baseUri: HttpClient.BaseAddress);
+                                baseUri: HttpClient.BaseAddress ?? new global::System.Uri("https://api.github.com/", global::System.UriKind.RelativeOrAbsolute));
                             __pathBuilder
                                 .AddRequiredParameter("package_type", packageType.ToValueString())
                                 .AddOptionalParameter("visibility", visibility?.ToValueString())
