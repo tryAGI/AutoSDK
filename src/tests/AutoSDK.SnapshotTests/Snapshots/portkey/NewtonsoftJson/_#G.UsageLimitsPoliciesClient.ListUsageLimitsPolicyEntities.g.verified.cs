@@ -145,7 +145,7 @@ namespace G
 
                             var __pathBuilder = new global::G.PathBuilder(
                                 path: $"/policies/usage-limits/{policyUsageLimitsId}/entities",
-                                baseUri: HttpClient.BaseAddress);
+                                baseUri: HttpClient.BaseAddress ?? new global::System.Uri("https://api.portkey.ai/v1", global::System.UriKind.RelativeOrAbsolute));
                             __pathBuilder
                                 .AddOptionalParameter("status", status?.ToValueString())
                                 .AddOptionalParameter("search", search)

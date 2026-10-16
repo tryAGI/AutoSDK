@@ -217,7 +217,7 @@ namespace G
 
                             var __pathBuilder = new global::G.PathBuilder(
                                 path: $"/vector_stores/{vectorStoreId}/files/{fileId}",
-                                baseUri: HttpClient.BaseAddress);
+                                baseUri: HttpClient.BaseAddress ?? new global::System.Uri("https://api.portkey.ai/v1", global::System.UriKind.RelativeOrAbsolute));
                             var __path = __pathBuilder.ToString();
                 __path = global::G.AutoSDKRequestOptionsSupport.AppendQueryParameters(
                     path: __path,

@@ -143,7 +143,7 @@ namespace G
 
                             var __pathBuilder = new global::G.PathBuilder(
                                 path: "/policies/usage-limits",
-                                baseUri: HttpClient.BaseAddress);
+                                baseUri: HttpClient.BaseAddress ?? new global::System.Uri("https://api.portkey.ai/v1", global::System.UriKind.RelativeOrAbsolute));
                             __pathBuilder
                                 .AddOptionalParameter("workspace_id", workspaceId)
                                 .AddOptionalParameter("status", status?.ToValueString())
