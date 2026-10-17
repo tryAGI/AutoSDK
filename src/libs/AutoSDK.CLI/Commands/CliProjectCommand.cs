@@ -4325,7 +4325,7 @@ internal static class CliProjectScaffolder
                 var optionExpression = $"{usage.InstanceName}.{ParameterSymbolName(parameter)}";
                 var valueExpression = operation.SupportsBaseBody && CliProjectOperation.IsMergeableBaseBodyField(parameter)
                     ? GenerateBaseBodyMergeExpression(optionExpression, baseAccessor, CliProjectOperation.BaseBodyPropertyName(parameter), $"{usage.ParameterName}{parameter.ParameterName}")
-                    : $"parseResult.GetValue({optionExpression})";
+                    : $"parseResult.{(parameter.HasSchemaDefault ? "GetRequiredValue" : "GetValue")}({optionExpression})";
                 return $@"
                         var {usage.ParameterName}{ParameterSymbolName(parameter)} = {valueExpression};";
             })

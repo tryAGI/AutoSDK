@@ -457,6 +457,8 @@ components:
             - ephemeral
     ScrapeOptions:
       type: object
+      required:
+        - mode
       properties:
         formats:
           type: array
@@ -464,6 +466,9 @@ components:
             type: string
         onlyMainContent:
           type: boolean
+        mode:
+          type: string
+          default: search
         limit:
           type: integer
     WidgetLocation:
@@ -791,6 +796,8 @@ components:
                 .Single(path => Path.GetFileName(path).Contains("CrawlCommandApiCommand", StringComparison.Ordinal));
             var crawlCommand = await File.ReadAllTextAsync(crawlCommandPath).ConfigureAwait(false);
             crawlCommand.Should().Contain("ScrapeOptionsOptionSet.Create(@\"scrape\")");
+            // #418: schema defaults must retain their non-null contract in nested option sets.
+            crawlCommand.Should().Contain("parseResult.GetRequiredValue(ScrapeOptionsOptions.Mode)");
             crawlCommand.Should().Contain("--webhook-url");
             crawlCommand.Should().Contain("--webhook-header");
             crawlCommand.Should().Contain("--webhook-metadata");
@@ -948,6 +955,8 @@ components:
             Console.WriteLine(buildResult.StandardOutput);
             Console.WriteLine(buildResult.StandardError);
             buildResult.ExitCode.Should().Be(0);
+            buildResult.StandardOutput.Should().NotContain("CS8601");
+            buildResult.StandardError.Should().NotContain("CS8601");
             buildResult.StandardOutput.Should().NotContain("CS8604");
             buildResult.StandardError.Should().NotContain("CS8604");
 
