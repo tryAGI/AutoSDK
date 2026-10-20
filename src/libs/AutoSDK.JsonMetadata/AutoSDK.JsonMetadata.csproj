@@ -11,6 +11,7 @@
     <PackageTags>autosdk;json;source-generator;trimming;nativeaot</PackageTags>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="../../shared/SharedJsonMetadataProtocol.cs" Link="Internal/SharedJsonMetadataProtocol.cs" />
     <AdditionalFiles Include="AnalyzerReleases.Shipped.md;AnalyzerReleases.Unshipped.md" />
     <PackageReference Include="Microsoft.CodeAnalysis.CSharp" Version="4.8.0" PrivateAssets="all" />
     <PackageReference Include="System.Text.Json" Version="10.0.13" PrivateAssets="all" GeneratePathProperty="true" ExcludeAssets="all" />

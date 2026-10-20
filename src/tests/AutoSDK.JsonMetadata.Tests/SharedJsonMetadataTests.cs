@@ -89,9 +89,11 @@ public sealed class Unused
     }
 
     [TestMethod]
-    public void Generate_CompletesPartialMemberGraphsWithoutAddingIgnoredOrUnrelatedTypes()
+    [DataRow(false)]
+    [DataRow(true)]
+    public void Generate_CompletesPartialMemberGraphsWithoutAddingIgnoredOrUnrelatedTypes(bool isolatedFactories)
     {
-        var (compilation, result) = Generate("Metadata", extraSource: """
+        var source = """
 namespace Fixture;
 public sealed partial class Used
 {
@@ -128,7 +130,14 @@ public partial class Scope
         return System.Text.Json.JsonSerializer.Serialize(value, options);
     }
 }
-""");
+""";
+        if (isolatedFactories)
+        {
+            source = source.Replace("global::Fixture.SharedMetadata.Create_Used",
+                "global::Fixture.SharedMetadataFactory_Used.Create_Used", StringComparison.Ordinal);
+        }
+        var (compilation, result) = Generate("Metadata", extraSource: source,
+            manifestVersion: isolatedFactories ? 1 : null);
         result.Diagnostics.Should().NotContain(static diagnostic => diagnostic.Severity == DiagnosticSeverity.Error);
         compilation.GetDiagnostics().Should().NotContain(static diagnostic => diagnostic.Severity == DiagnosticSeverity.Error);
         var resolver = result.Results[0].GeneratedSources.Single(static source =>
@@ -193,7 +202,64 @@ public sealed partial class Used
             "a manifest location outside the user compilation must not crash the generator");
     }
 
-    private static (Compilation Compilation, GeneratorDriverRunResult Result) Generate(string mode, bool ordinaryContext = false, string? extraSource = null, bool warningsAsErrors = false, bool duplicateTypeInfoNames = false, bool specificWarningsAsErrors = false)
+
+    [TestMethod]
+    public void Generate_VersionedManifestKeepsOneIndependentFactoryPerType()
+    {
+        var (compilation, result) = Generate("Metadata", manifestVersion: 1);
+        result.Diagnostics.Should().NotContain(static diagnostic => diagnostic.Severity == DiagnosticSeverity.Error);
+        compilation.GetDiagnostics().Should().NotContain(static diagnostic => diagnostic.Severity == DiagnosticSeverity.Error);
+        var sources = result.Results[0].GeneratedSources;
+        var roots = sources.Select(source => CSharpSyntaxTree.ParseText(source.SourceText)
+            .GetRoot()).ToArray();
+        roots.SelectMany(static root => root.DescendantNodes())
+            .OfType<Microsoft.CodeAnalysis.CSharp.Syntax.MethodDeclarationSyntax>()
+            .Count(static method => method.Identifier.ValueText == "Create_Child").Should().Be(1);
+        roots.SelectMany(static root => root.DescendantNodes())
+            .OfType<Microsoft.CodeAnalysis.CSharp.Syntax.ClassDeclarationSyntax>()
+            .Should().Contain(static type => type.Identifier.ValueText == "SharedMetadataFactory_Child" &&
+                type.BaseList != null && type.BaseList.Types[0].Type.ToString() == "SharedMetadata");
+        using var stream = new MemoryStream();
+        var emitted = compilation.Emit(stream);
+        emitted.Success.Should().BeTrue(string.Join("\n", emitted.Diagnostics));
+        var assembly = System.Reflection.Assembly.Load(stream.ToArray());
+        assembly.GetTypes().Should().Contain(static type => type.Name == "SharedMetadataFactory_Child");
+    }
+
+    [TestMethod]
+    [DataRow(2)]
+    [DataRow(-1)]
+    public void Generate_RejectsIncompatibleManifestProtocolBeforeRunningStj(int version)
+    {
+        var (_, result) = Generate("Metadata", manifestVersion: version);
+        result.Diagnostics.Should().Contain(static diagnostic =>
+            diagnostic.Id == "AMETA003" && diagnostic.Severity == DiagnosticSeverity.Error &&
+            diagnostic.GetMessage().Contains("Fixture.autosdk-json-metadata", StringComparison.Ordinal));
+        result.Results[0].GeneratedSources.Should().BeEmpty();
+    }
+
+    [TestMethod]
+    public void Generate_ProtocolGuardRequiresAnalyzerSupportAndCompilesWithVersionOne()
+    {
+        const string guard = """
+namespace Fixture;
+internal static class MetadataGuard
+{
+    internal const int Version = global::AutoSDK.JsonMetadata.Generated.ManifestProtocol.Version1;
+}
+""";
+        var withoutAnalyzer = CSharpCompilation.Create("MissingAnalyzer",
+            [CSharpSyntaxTree.ParseText(guard)], References,
+            new CSharpCompilationOptions(OutputKind.DynamicallyLinkedLibrary));
+        withoutAnalyzer.GetDiagnostics().Should().Contain(static diagnostic =>
+            diagnostic.Severity == DiagnosticSeverity.Error &&
+            diagnostic.GetMessage().Contains("AutoSDK", StringComparison.Ordinal));
+        var (compilation, result) = Generate("Metadata", extraSource: guard, manifestVersion: 1);
+        result.Diagnostics.Should().NotContain(static diagnostic => diagnostic.Severity == DiagnosticSeverity.Error);
+        compilation.GetDiagnostics().Should().NotContain(static diagnostic => diagnostic.Severity == DiagnosticSeverity.Error);
+    }
+
+    private static (Compilation Compilation, GeneratorDriverRunResult Result) Generate(string mode, bool ordinaryContext = false, string? extraSource = null, bool warningsAsErrors = false, bool duplicateTypeInfoNames = false, bool specificWarningsAsErrors = false, int? manifestVersion = null)
     {
         var nameOverride = duplicateTypeInfoNames ? ", TypeInfoPropertyName = \"Collision\"" : string.Empty;
         var manifest = $$"""
@@ -205,6 +271,11 @@ namespace Fixture;
 [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Fixture.Unused){{nameOverride}})]
 internal sealed partial class SharedMetadata : global::System.Text.Json.Serialization.JsonSerializerContext { }
 """;
+        if (manifestVersion is { } version)
+        {
+            manifest = "// AutoSDK.JsonMetadata manifest-format: " +
+                version.ToString(System.Globalization.CultureInfo.InvariantCulture) + "\n" + manifest;
+        }
         var compilation = CSharpCompilation.Create("MetadataFixture",
             [CSharpSyntaxTree.ParseText(Models)], References,
             new CSharpCompilationOptions(OutputKind.DynamicallyLinkedLibrary,
