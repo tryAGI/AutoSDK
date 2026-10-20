@@ -276,7 +276,7 @@ public sealed class SharedJsonMetadataGenerator : IIncrementalGenerator
                 .WithAttributeLists(default)
                 .WithBaseList(isolatedFactories && create is not null
                     ? SyntaxFactory.BaseList(SyntaxFactory.SingletonSeparatedList<BaseTypeSyntax>(
-                        SyntaxFactory.SimpleBaseType(SyntaxFactory.IdentifierName(node.Identifier.ValueText)))))
+                        SyntaxFactory.SimpleBaseType(SyntaxFactory.IdentifierName(node.Identifier.ValueText))))
                     : null)
                 .WithModifiers(SyntaxFactory.TokenList(
                     SyntaxFactory.Token(SyntaxKind.InternalKeyword).WithTrailingTrivia(SyntaxFactory.Space),
