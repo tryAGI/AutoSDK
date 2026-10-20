@@ -16,7 +16,7 @@ diagnostics. A comparison generator run occurs only on the warning path.
 [abcbc22daa](https://github.com/tryAGI/AutoSDK/commit/abcbc22daa43bc85aca287cf037fe29ace2085a5)
 also preserves explicitly configured per-SYSLIB error severity, in addition to
 global TreatWarningsAsErrors. Focused tests: **9 passed, 0 failed**.
-[Code CI](https://github.com/tryAGI/AutoSDK/actions/runs/39507536724).
+[Code CI](https://github.com/tryAGI/AutoSDK/actions/runs/39507536724) **succeeded**.
 
 Both full source probes with the updated build-only analyzer passed with zero
 warnings/errors and byte-identical compiler-generated source maps:
@@ -95,7 +95,8 @@ All **8 image executions passed**. Both DLLs have the same **1,043 types,
 change across app edits within a profile. Every filesystem layer is reused for
 the no-op, although image configuration IDs can change.
 
-Image sizes are local, uncompressed, including a common runtime-deps base.
+Image Size fields are local Docker-reported values, including a common runtime-deps
+base. They are storage-engine-dependent and are not assumed uncompressed.
 No registry upload or compressed transfer was measured. This fixture uses one
 COPY for the whole publish directory, so real application edits change that
 layer even though only 19,904 / 8,704 bytes of individual files changed.
@@ -112,3 +113,27 @@ was changed. OpenAI already disables embedded symbols.
 The private Advantage harness, executable profiles and raw receipts were
 committed separately. Its Python footprint suite passed **39 tests**; a full
 Advantage backend rebuild was not repeated for that scoped MSBuild/Python change.
+
+## Cached dependency versus application layers
+
+Advantage already separates stable dependencies and app binaries in its image
+recipe. Repackaging the same preserved consumer snapshots with this grouping
+passed another **8 runtime executions**, without compiling again:
+
+| Split-layer metric | Preserve symbols | Remove symbols |
+| --- | ---: | ---: |
+| Docker-reported image Size | 85,024,194 B | 56,508,348 B |
+| Raw uncompressed layer sum | 211,779,584 B | 183,255,040 B |
+| Stable dependency COPY layer | 55,054,336 B | 26,542,080 B |
+| Application COPY layer | 122,880 B | 110,592 B |
+
+Raw byte sums use `docker history --human=false`. Both app edits change only
+the app layer; every dependency-layer digest remains identical. The no-op reuses
+all filesystem layers. Removing the SDK's symbols therefore saves overall image
+and dependency-layer space, but does not imply 28.5 MB saved on every warmed
+app-only upload. Registry compression, fresh ECS image pulls and full production
+payloads remain unmeasured.
+
+The durable harness supports `--repackage-only --layering split` from preserved
+snapshots, captures layer byte evidence before tags change, and keeps source
+compilation/cache timing separate from packaging.
