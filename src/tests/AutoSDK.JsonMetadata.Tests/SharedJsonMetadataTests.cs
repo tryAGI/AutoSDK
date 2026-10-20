@@ -227,7 +227,7 @@ public sealed partial class Used
     }
 
     [TestMethod]
-    [DataRow(2)]
+    [DataRow(3)]
     [DataRow(-1)]
     public void Generate_RejectsIncompatibleManifestProtocolBeforeRunningStj(int version)
     {
@@ -257,6 +257,73 @@ internal static class MetadataGuard
         var (compilation, result) = Generate("Metadata", extraSource: guard, manifestVersion: 1);
         result.Diagnostics.Should().NotContain(static diagnostic => diagnostic.Severity == DiagnosticSeverity.Error);
         compilation.GetDiagnostics().Should().NotContain(static diagnostic => diagnostic.Severity == DiagnosticSeverity.Error);
+    }
+
+
+    [TestMethod]
+    [DataRow(false)]
+    [DataRow(true)]
+    public void Generate_ScopedDependenciesAreCompletedOnceWithoutFlatteningParents(bool referenceChildScope)
+    {
+        var source = """
+namespace Fixture;
+public sealed partial class Used
+{
+    public PartialDetails? Details { get; set; }
+}
+public sealed class PartialDetails
+{
+    public byte[]? Bytes { get; set; }
+}
+public partial class ParentScope
+{
+    // The analyzer recognizes generated outgoing scope references independently of resolver code.
+    internal static object MetadataScope => ChildScope.MetadataScope;
+    private sealed partial class SharedMetadataResolver : System.Text.Json.Serialization.Metadata.IJsonTypeInfoResolver
+    {
+        public System.Text.Json.Serialization.Metadata.JsonTypeInfo? GetTypeInfo(
+            System.Type type, System.Text.Json.JsonSerializerOptions options)
+        {
+            if (type == typeof(Used)) return global::Fixture.SharedMetadataFactory_Used.Create_Used(options);
+            System.Text.Json.Serialization.Metadata.JsonTypeInfo? result = null;
+            ResolveAdditionalTypeInfo(type, options, ref result);
+            return result;
+        }
+        static partial void ResolveAdditionalTypeInfo(System.Type type, System.Text.Json.JsonSerializerOptions options,
+            ref System.Text.Json.Serialization.Metadata.JsonTypeInfo? result);
+    }
+}
+public partial class ChildScope
+{
+    internal static object MetadataScope => new object();
+    private sealed partial class SharedMetadataResolver : System.Text.Json.Serialization.Metadata.IJsonTypeInfoResolver
+    {
+        public System.Text.Json.Serialization.Metadata.JsonTypeInfo? GetTypeInfo(
+            System.Type type, System.Text.Json.JsonSerializerOptions options)
+        {
+            if (type == typeof(PartialDetails)) return global::Fixture.SharedMetadataFactory_PartialDetails.Create_PartialDetails(options);
+            System.Text.Json.Serialization.Metadata.JsonTypeInfo? result = null;
+            ResolveAdditionalTypeInfo(type, options, ref result);
+            return result;
+        }
+        static partial void ResolveAdditionalTypeInfo(System.Type type, System.Text.Json.JsonSerializerOptions options,
+            ref System.Text.Json.Serialization.Metadata.JsonTypeInfo? result);
+    }
+}
+""";
+        if (!referenceChildScope) source = source.Replace("ChildScope.MetadataScope", "new object()", StringComparison.Ordinal);
+        var (compilation, result) = Generate("Metadata", extraSource: source, manifestVersion: 2);
+        compilation.GetDiagnostics().Should().NotContain(static diagnostic => diagnostic.Severity == DiagnosticSeverity.Error);
+        var parent = result.Results[0].GeneratedSources.Single(static source =>
+            source.HintName == "AutoSDK.SharedDependencies.Fixture.ParentScope.g.cs").SourceText.ToString();
+        var child = result.Results[0].GeneratedSources.Single(static source =>
+            source.HintName == "AutoSDK.SharedDependencies.Fixture.ChildScope.g.cs").SourceText.ToString();
+        child.Should().Contain("typeof(byte[])").And.NotContain("Create_Used");
+        if (referenceChildScope)
+            parent.Should().NotContain("Create_PartialDetails").And.NotContain("typeof(byte[])");
+        else
+            parent.Should().Contain("Create_PartialDetails").And.Contain("typeof(byte[])");
+        parent.Should().NotContain("Create_Unused");
     }
 
     private static (Compilation Compilation, GeneratorDriverRunResult Result) Generate(string mode, bool ordinaryContext = false, string? extraSource = null, bool warningsAsErrors = false, bool duplicateTypeInfoNames = false, bool specificWarningsAsErrors = false, int? manifestVersion = null)
