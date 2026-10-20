@@ -32,6 +32,10 @@ namespace G.JsonConverters
             catch (global::System.InvalidOperationException)
             {
             }
+            catch (global::System.ArgumentOutOfRangeException __enumTokenException) when (__enumTokenException.ParamName == "reader")
+            {
+                // Legacy enum converters signal an incompatible JSON token with this exception.
+            }
 
             global::G.AgentOverrideConfig? agentOverrideConfig = default;
             try
@@ -46,6 +50,10 @@ namespace G.JsonConverters
             catch (global::System.InvalidOperationException)
             {
             }
+            catch (global::System.ArgumentOutOfRangeException __enumTokenException) when (__enumTokenException.ParamName == "reader")
+            {
+                // Legacy enum converters signal an incompatible JSON token with this exception.
+            }
 
             global::G.ConversationNodeVariant3? conversationNodeVariant3 = default;
             try
@@ -59,6 +67,10 @@ namespace G.JsonConverters
             }
             catch (global::System.InvalidOperationException)
             {
+            }
+            catch (global::System.ArgumentOutOfRangeException __enumTokenException) when (__enumTokenException.ParamName == "reader")
+            {
+                // Legacy enum converters signal an incompatible JSON token with this exception.
             }
             var __value = new global::G.ConversationNode(
                 @base,

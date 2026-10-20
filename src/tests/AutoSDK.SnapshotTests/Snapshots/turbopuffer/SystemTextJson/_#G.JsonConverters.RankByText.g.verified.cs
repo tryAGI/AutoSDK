@@ -217,6 +217,10 @@ namespace G.JsonConverters
                     catch (global::System.InvalidOperationException)
                     {
                     }
+                    catch (global::System.ArgumentOutOfRangeException __enumTokenException) when (__enumTokenException.ParamName == "reader")
+                    {
+                        // Legacy enum converters signal an incompatible JSON token with this exception.
+                    }
                 }
 
                 else if (__bestIndex == 1)
@@ -233,6 +237,10 @@ namespace G.JsonConverters
                     }
                     catch (global::System.InvalidOperationException)
                     {
+                    }
+                    catch (global::System.ArgumentOutOfRangeException __enumTokenException) when (__enumTokenException.ParamName == "reader")
+                    {
+                        // Legacy enum converters signal an incompatible JSON token with this exception.
                     }
                 }
 
@@ -251,6 +259,10 @@ namespace G.JsonConverters
                     catch (global::System.InvalidOperationException)
                     {
                     }
+                    catch (global::System.ArgumentOutOfRangeException __enumTokenException) when (__enumTokenException.ParamName == "reader")
+                    {
+                        // Legacy enum converters signal an incompatible JSON token with this exception.
+                    }
                 }
 
                 else if (__bestIndex == 3)
@@ -267,6 +279,10 @@ namespace G.JsonConverters
                     }
                     catch (global::System.InvalidOperationException)
                     {
+                    }
+                    catch (global::System.ArgumentOutOfRangeException __enumTokenException) when (__enumTokenException.ParamName == "reader")
+                    {
+                        // Legacy enum converters signal an incompatible JSON token with this exception.
                     }
                 }
 
@@ -285,6 +301,10 @@ namespace G.JsonConverters
                     catch (global::System.InvalidOperationException)
                     {
                     }
+                    catch (global::System.ArgumentOutOfRangeException __enumTokenException) when (__enumTokenException.ParamName == "reader")
+                    {
+                        // Legacy enum converters signal an incompatible JSON token with this exception.
+                    }
                 }
 
                 else if (__bestIndex == 5)
@@ -301,6 +321,10 @@ namespace G.JsonConverters
                     }
                     catch (global::System.InvalidOperationException)
                     {
+                    }
+                    catch (global::System.ArgumentOutOfRangeException __enumTokenException) when (__enumTokenException.ParamName == "reader")
+                    {
+                        // Legacy enum converters signal an incompatible JSON token with this exception.
                     }
                 }
 
@@ -319,6 +343,10 @@ namespace G.JsonConverters
                     catch (global::System.InvalidOperationException)
                     {
                     }
+                    catch (global::System.ArgumentOutOfRangeException __enumTokenException) when (__enumTokenException.ParamName == "reader")
+                    {
+                        // Legacy enum converters signal an incompatible JSON token with this exception.
+                    }
                 }
 
                 else if (__bestIndex == 7)
@@ -335,6 +363,10 @@ namespace G.JsonConverters
                     }
                     catch (global::System.InvalidOperationException)
                     {
+                    }
+                    catch (global::System.ArgumentOutOfRangeException __enumTokenException) when (__enumTokenException.ParamName == "reader")
+                    {
+                        // Legacy enum converters signal an incompatible JSON token with this exception.
                     }
                 }
 
@@ -353,6 +385,10 @@ namespace G.JsonConverters
                     catch (global::System.InvalidOperationException)
                     {
                     }
+                    catch (global::System.ArgumentOutOfRangeException __enumTokenException) when (__enumTokenException.ParamName == "reader")
+                    {
+                        // Legacy enum converters signal an incompatible JSON token with this exception.
+                    }
                 }
 
                 else if (__bestIndex == 9)
@@ -369,6 +405,10 @@ namespace G.JsonConverters
                     }
                     catch (global::System.InvalidOperationException)
                     {
+                    }
+                    catch (global::System.ArgumentOutOfRangeException __enumTokenException) when (__enumTokenException.ParamName == "reader")
+                    {
+                        // Legacy enum converters signal an incompatible JSON token with this exception.
                     }
                 }
 
@@ -387,6 +427,10 @@ namespace G.JsonConverters
                     catch (global::System.InvalidOperationException)
                     {
                     }
+                    catch (global::System.ArgumentOutOfRangeException __enumTokenException) when (__enumTokenException.ParamName == "reader")
+                    {
+                        // Legacy enum converters signal an incompatible JSON token with this exception.
+                    }
                 }
 
                 else if (__bestIndex == 11)
@@ -404,6 +448,10 @@ namespace G.JsonConverters
                     catch (global::System.InvalidOperationException)
                     {
                     }
+                    catch (global::System.ArgumentOutOfRangeException __enumTokenException) when (__enumTokenException.ParamName == "reader")
+                    {
+                        // Legacy enum converters signal an incompatible JSON token with this exception.
+                    }
                 }
 
                 else if (__bestIndex == 12)
@@ -420,6 +468,10 @@ namespace G.JsonConverters
                     }
                     catch (global::System.InvalidOperationException)
                     {
+                    }
+                    catch (global::System.ArgumentOutOfRangeException __enumTokenException) when (__enumTokenException.ParamName == "reader")
+                    {
+                        // Legacy enum converters signal an incompatible JSON token with this exception.
                     }
                 }
             }
@@ -439,6 +491,10 @@ namespace G.JsonConverters
                 catch (global::System.InvalidOperationException)
                 {
                 }
+                catch (global::System.ArgumentOutOfRangeException __enumTokenException) when (__enumTokenException.ParamName == "reader")
+                {
+                    // Legacy enum converters signal an incompatible JSON token with this exception.
+                }
             }
 
             if (rankByTextVariant1 == null && rankByTextVariant2 == null && rankByTextVariant3 == null && rankByTextVariant4 == null && rankByTextVariant5 == null && rankByTextVariant6 == null && rankByTextVariant7 == null && rankByTextVariant8 == null && filter == null && rankByTextVariant10 == null && rankByTextVariant11 == null && rankByTextVariant12 == null && rankByTextVariant13 == null)
@@ -455,6 +511,10 @@ namespace G.JsonConverters
                 }
                 catch (global::System.InvalidOperationException)
                 {
+                }
+                catch (global::System.ArgumentOutOfRangeException __enumTokenException) when (__enumTokenException.ParamName == "reader")
+                {
+                    // Legacy enum converters signal an incompatible JSON token with this exception.
                 }
             }
 
@@ -473,6 +533,10 @@ namespace G.JsonConverters
                 catch (global::System.InvalidOperationException)
                 {
                 }
+                catch (global::System.ArgumentOutOfRangeException __enumTokenException) when (__enumTokenException.ParamName == "reader")
+                {
+                    // Legacy enum converters signal an incompatible JSON token with this exception.
+                }
             }
 
             if (rankByTextVariant1 == null && rankByTextVariant2 == null && rankByTextVariant3 == null && rankByTextVariant4 == null && rankByTextVariant5 == null && rankByTextVariant6 == null && rankByTextVariant7 == null && rankByTextVariant8 == null && filter == null && rankByTextVariant10 == null && rankByTextVariant11 == null && rankByTextVariant12 == null && rankByTextVariant13 == null)
@@ -489,6 +553,10 @@ namespace G.JsonConverters
                 }
                 catch (global::System.InvalidOperationException)
                 {
+                }
+                catch (global::System.ArgumentOutOfRangeException __enumTokenException) when (__enumTokenException.ParamName == "reader")
+                {
+                    // Legacy enum converters signal an incompatible JSON token with this exception.
                 }
             }
 
@@ -507,6 +575,10 @@ namespace G.JsonConverters
                 catch (global::System.InvalidOperationException)
                 {
                 }
+                catch (global::System.ArgumentOutOfRangeException __enumTokenException) when (__enumTokenException.ParamName == "reader")
+                {
+                    // Legacy enum converters signal an incompatible JSON token with this exception.
+                }
             }
 
             if (rankByTextVariant1 == null && rankByTextVariant2 == null && rankByTextVariant3 == null && rankByTextVariant4 == null && rankByTextVariant5 == null && rankByTextVariant6 == null && rankByTextVariant7 == null && rankByTextVariant8 == null && filter == null && rankByTextVariant10 == null && rankByTextVariant11 == null && rankByTextVariant12 == null && rankByTextVariant13 == null)
@@ -523,6 +595,10 @@ namespace G.JsonConverters
                 }
                 catch (global::System.InvalidOperationException)
                 {
+                }
+                catch (global::System.ArgumentOutOfRangeException __enumTokenException) when (__enumTokenException.ParamName == "reader")
+                {
+                    // Legacy enum converters signal an incompatible JSON token with this exception.
                 }
             }
 
@@ -541,6 +617,10 @@ namespace G.JsonConverters
                 catch (global::System.InvalidOperationException)
                 {
                 }
+                catch (global::System.ArgumentOutOfRangeException __enumTokenException) when (__enumTokenException.ParamName == "reader")
+                {
+                    // Legacy enum converters signal an incompatible JSON token with this exception.
+                }
             }
 
             if (rankByTextVariant1 == null && rankByTextVariant2 == null && rankByTextVariant3 == null && rankByTextVariant4 == null && rankByTextVariant5 == null && rankByTextVariant6 == null && rankByTextVariant7 == null && rankByTextVariant8 == null && filter == null && rankByTextVariant10 == null && rankByTextVariant11 == null && rankByTextVariant12 == null && rankByTextVariant13 == null)
@@ -557,6 +637,10 @@ namespace G.JsonConverters
                 }
                 catch (global::System.InvalidOperationException)
                 {
+                }
+                catch (global::System.ArgumentOutOfRangeException __enumTokenException) when (__enumTokenException.ParamName == "reader")
+                {
+                    // Legacy enum converters signal an incompatible JSON token with this exception.
                 }
             }
 
@@ -575,6 +659,10 @@ namespace G.JsonConverters
                 catch (global::System.InvalidOperationException)
                 {
                 }
+                catch (global::System.ArgumentOutOfRangeException __enumTokenException) when (__enumTokenException.ParamName == "reader")
+                {
+                    // Legacy enum converters signal an incompatible JSON token with this exception.
+                }
             }
 
             if (rankByTextVariant1 == null && rankByTextVariant2 == null && rankByTextVariant3 == null && rankByTextVariant4 == null && rankByTextVariant5 == null && rankByTextVariant6 == null && rankByTextVariant7 == null && rankByTextVariant8 == null && filter == null && rankByTextVariant10 == null && rankByTextVariant11 == null && rankByTextVariant12 == null && rankByTextVariant13 == null)
@@ -591,6 +679,10 @@ namespace G.JsonConverters
                 }
                 catch (global::System.InvalidOperationException)
                 {
+                }
+                catch (global::System.ArgumentOutOfRangeException __enumTokenException) when (__enumTokenException.ParamName == "reader")
+                {
+                    // Legacy enum converters signal an incompatible JSON token with this exception.
                 }
             }
 
@@ -609,6 +701,10 @@ namespace G.JsonConverters
                 catch (global::System.InvalidOperationException)
                 {
                 }
+                catch (global::System.ArgumentOutOfRangeException __enumTokenException) when (__enumTokenException.ParamName == "reader")
+                {
+                    // Legacy enum converters signal an incompatible JSON token with this exception.
+                }
             }
 
             if (rankByTextVariant1 == null && rankByTextVariant2 == null && rankByTextVariant3 == null && rankByTextVariant4 == null && rankByTextVariant5 == null && rankByTextVariant6 == null && rankByTextVariant7 == null && rankByTextVariant8 == null && filter == null && rankByTextVariant10 == null && rankByTextVariant11 == null && rankByTextVariant12 == null && rankByTextVariant13 == null)
@@ -626,6 +722,10 @@ namespace G.JsonConverters
                 catch (global::System.InvalidOperationException)
                 {
                 }
+                catch (global::System.ArgumentOutOfRangeException __enumTokenException) when (__enumTokenException.ParamName == "reader")
+                {
+                    // Legacy enum converters signal an incompatible JSON token with this exception.
+                }
             }
 
             if (rankByTextVariant1 == null && rankByTextVariant2 == null && rankByTextVariant3 == null && rankByTextVariant4 == null && rankByTextVariant5 == null && rankByTextVariant6 == null && rankByTextVariant7 == null && rankByTextVariant8 == null && filter == null && rankByTextVariant10 == null && rankByTextVariant11 == null && rankByTextVariant12 == null && rankByTextVariant13 == null)
@@ -642,6 +742,10 @@ namespace G.JsonConverters
                 }
                 catch (global::System.InvalidOperationException)
                 {
+                }
+                catch (global::System.ArgumentOutOfRangeException __enumTokenException) when (__enumTokenException.ParamName == "reader")
+                {
+                    // Legacy enum converters signal an incompatible JSON token with this exception.
                 }
             }
 

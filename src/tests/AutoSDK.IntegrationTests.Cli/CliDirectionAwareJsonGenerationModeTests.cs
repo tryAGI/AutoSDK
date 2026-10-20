@@ -61,6 +61,14 @@ components:
       properties:
         payload:
           $ref: '#/components/schemas/RequestPayload'
+        target:
+          oneOf:
+            - type: string
+              enum: [preview, production]
+            - type: array
+              items:
+                type: string
+                enum: [preview, production]
     RequestPayload:
       type: object
       properties:
@@ -97,6 +105,15 @@ var request = new Oag.CreateItemRequest
 };
 Console.WriteLine(request.ToJson());
 Console.WriteLine(Oag.CreateItemRequest.FromJson(request.ToJson())!.ToJson());
+foreach (var json in new[] { "{\"target\":\"preview\"}", "{\"target\":[\"preview\",\"production\"]}" })
+{
+    var roundTrip = Oag.CreateItemRequest.FromJson(json)!.ToJson();
+    using var original = System.Text.Json.JsonDocument.Parse(json);
+    using var restored = System.Text.Json.JsonDocument.Parse(roundTrip);
+    if (original.RootElement.GetProperty("target").GetRawText() != restored.RootElement.GetProperty("target").GetRawText())
+        throw new InvalidOperationException("Enum/array union did not round-trip.");
+    Console.WriteLine(roundTrip);
+}
 
 var response = Oag.ItemResponse.FromJson("{\"items\":[{\"id\":\"42\"}]}")!;
 Console.WriteLine(response.ToJson());
