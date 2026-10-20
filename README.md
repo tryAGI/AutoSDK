@@ -168,6 +168,8 @@ By default every type in the generated `JsonSerializerContext` is registered wit
 
 For large SDKs, `--json-serializer-context-chunk-size <count>` (MSBuild: `AutoSDK_JsonSerializerContextChunkSize`) controls the maximum explicit registrations per context. The default remains 500; accepted values are 1–2000. A larger partition can reduce repeated transitive metadata graphs, but is an explicit per-SDK tuning choice: build, load all generated CLR types, exercise JSON round trips, and validate trimming/NativeAOT before adopting it. The registration count does not bound the number of methods that System.Text.Json generates for a transitive graph.
 
+Generated System.Text.Json polling conditions use the client's JSON metadata, including enum wire values and nullable fields. A custom context must retain metadata for the response graph. The older managed reflection-based condition signatures remain available with `RequiresUnreferencedCode` annotations; new generated methods use the context-aware overloads.
+
 Direction is propagated from every operation's request bodies, parameters, and success/error responses through `$ref`s, properties, array items, dictionary values, `oneOf`/`anyOf` variants, inheritance, and discriminator mappings. AsyncAPI specs are covered too: messages the client sends count as request usage, messages it receives (including the synthetic union wrappers generated for multi-message channels) count as response usage.
 
 | Classification | Emitted mode | Effect |

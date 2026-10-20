@@ -7,9 +7,12 @@ namespace AutoSDK.IntegrationTests;
 public sealed class CliProjectGenerationTests
 {
     [TestMethod]
-    [DataRow(true)]
-    [DataRow(false)]
-    public async Task CliProject_PreservesReviewedProjectWhenRequested(bool preserve)
+    public Task CliProject_PreservesExistingProjectAndRegeneratesSources() => CheckProjectPreservationAsync(preserve: true);
+
+    [TestMethod]
+    public Task CliProject_ReplacesExistingProjectByDefault() => CheckProjectPreservationAsync(preserve: false);
+
+    private static async Task CheckProjectPreservationAsync(bool preserve)
     {
         const string spec = """
 openapi: 3.0.1
@@ -94,6 +97,17 @@ servers:
 security:
   - BearerAuth: []
 paths:
+  /polling-probe:
+    get:
+      operationId: getPollingProbe
+      tags: [Widgets]
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/PollingProbe'
   /widgets:
     post:
       operationId: createWidget
@@ -454,6 +468,24 @@ components:
       type: http
       scheme: bearer
   schemas:
+    PollingProbe:
+      type: object
+      properties:
+        task_status:
+          type: string
+          enum: [in-progress, completed-with-output]
+        nullable_value:
+          type: string
+          nullable: true
+        values:
+          type: array
+          items:
+            type: string
+        child:
+          type: object
+          properties:
+            value/with~escape:
+              type: integer
     JobStart:
       type: object
       required:
@@ -674,6 +706,38 @@ components:
                     </Project>
                     """)
                 .ConfigureAwait(false);
+
+            var probeModel = Directory.EnumerateFiles(sdkDirectory, "*.Models.*.g.cs")
+                .Single(path => File.ReadAllText(path).Contains("JsonPropertyName(\"task_status\")", StringComparison.Ordinal));
+            var probeFileName = Path.GetFileName(probeModel);
+            var probeTypeName = probeFileName[(probeFileName.IndexOf(".Models.", StringComparison.Ordinal) + ".Models.".Length)..^5];
+            await File.WriteAllTextAsync(Path.Combine(sdkDirectory, "PollingAotProbe.cs"), """
+namespace Oag;
+
+public static class PollingAotProbe
+{
+    public static void AssertMetadataPolling()
+    {
+        var context = SourceGenerationContext.Default;
+        var body = PollingProbe.FromJson("{\"task_status\":\"completed-with-output\",\"nullable_value\":null,\"values\":[\"a\",\"Ж\"],\"child\":{\"value/with~escape\":7}}")
+            ?? throw new InvalidOperationException("Polling probe failed to parse.");
+        if (!AutoSDKPollingSupport.MatchesSimpleCondition(body, "/task_status", "==", "completed-with-output", context) ||
+            !AutoSDKPollingSupport.MatchesSimpleCondition(body, "/TaskStatus", "==", "completed-with-output", context) ||
+            !AutoSDKPollingSupport.MatchesSimpleCondition(body, "/nullable_value", "==", "null", context) ||
+            !AutoSDKPollingSupport.MatchesSimpleCondition(body, "/values/1", "==", "Ж", context) ||
+            !AutoSDKPollingSupport.MatchesSimpleCondition(body, "/child/value~1with~0escape", "==", "7", context) ||
+            !AutoSDKPollingSupport.MatchesRegexCondition(body, "/task_status", "^completed-", context) ||
+            AutoSDKPollingSupport.MatchesSimpleCondition(body, "/missing", "==", "null", context))
+        {
+            throw new InvalidOperationException("Metadata polling semantics changed.");
+        }
+    }
+}
+""").ConfigureAwait(false);
+
+            var probeSourcePath = Path.Combine(sdkDirectory, "PollingAotProbe.cs");
+            var probeSource = await File.ReadAllTextAsync(probeSourcePath).ConfigureAwait(false);
+            await File.WriteAllTextAsync(probeSourcePath, probeSource.Replace("PollingProbe.FromJson", probeTypeName + ".FromJson", StringComparison.Ordinal)).ConfigureAwait(false);
 
             var cliProjectResult = await RunDotnetAsync(
                     repositoryDirectory,
@@ -1010,7 +1074,24 @@ components:
 
                     internal static partial class WidgetsApiGroupCommand
                     {
-                        static partial void CustomizeCommand(ref Command command) => command.Aliases.Add("catalog");
+                        static partial void CustomizeCommand(ref Command command)
+                        {
+                            command.Aliases.Add("catalog");
+                            var check = new Command("array-json-self-test");
+                            check.SetAction(_ =>
+                            {
+                                global::Oag.PollingAotProbe.AssertMetadataPolling();
+                                var values = new[] { "quote\"", "line\nbreak", "Ж", string.Empty };
+                                using var document = global::System.Text.Json.JsonDocument.Parse(CliRuntime.SerializeStringArray(values));
+                                if (!document.RootElement.EnumerateArray().Select(item => item.GetString()).SequenceEqual(values))
+                                {
+                                    throw new InvalidOperationException("String-array JSON round trip failed.");
+                                }
+                                Console.WriteLine("CLI string-array JSON works without reflection.");
+                                return 0;
+                            });
+                            command.Subcommands.Add(check);
+                        }
                     }
 
                     internal static partial class {{listCommandClassName}}
@@ -1034,6 +1115,28 @@ components:
             buildResult.StandardError.Should().NotContain("CS8601");
             buildResult.StandardOutput.Should().NotContain("CS8604");
             buildResult.StandardError.Should().NotContain("CS8604");
+
+            var arrayJsonResult = await RunDotnetAsync(
+                    cliDirectory, "run", "--no-build", "--project", Path.Combine(cliDirectory, "Oag.CLI.csproj"),
+                    "--", "catalog", "array-json-self-test")
+                .ConfigureAwait(false);
+            arrayJsonResult.ExitCode.Should().Be(0, arrayJsonResult.StandardOutput + arrayJsonResult.StandardError);
+            arrayJsonResult.StandardOutput.Should().Contain("CLI string-array JSON works without reflection.");
+
+            var nativeDirectory = Path.Combine(cliDirectory, "native-smoke");
+            var nativePublish = await RunDotnetAsync(
+                    cliDirectory, "publish", Path.Combine(cliDirectory, "Oag.CLI.csproj"), "--disable-build-servers",
+                    "-c", "Release", "-p:PublishAot=true", "-p:PackAsTool=false", "-p:GeneratePackageOnBuild=false",
+                    "-p:MinVerVersionOverride=1.0.0", "-p:TreatWarningsAsErrors=true", "-p:ILLinkTreatWarningsAsErrors=true",
+                    "-p:JsonSerializerIsReflectionEnabledByDefault=false", "-o", nativeDirectory)
+                .ConfigureAwait(false);
+            nativePublish.ExitCode.Should().Be(0, nativePublish.StandardOutput + nativePublish.StandardError);
+            var nativeExecutable = Path.Combine(nativeDirectory, OperatingSystem.IsWindows() ? "Oag.CLI.exe" : "Oag.CLI");
+            var nativeArrayJson = await RunProcessAsync(
+                    cliDirectory, nativeExecutable, "catalog", "array-json-self-test")
+                .ConfigureAwait(false);
+            nativeArrayJson.ExitCode.Should().Be(0, nativeArrayJson.StandardOutput + nativeArrayJson.StandardError);
+            nativeArrayJson.StandardOutput.Should().Contain("CLI string-array JSON works without reflection.");
 
             var customizedCommandResult = await RunDotnetAsync(
                     cliDirectory,
@@ -1408,13 +1511,18 @@ paths:
         return Path.GetFullPath(Path.Combine(currentDirectory, "../../../../../.."));
     }
 
-    private static async Task<(int ExitCode, string StandardOutput, string StandardError)> RunDotnetAsync(
+    private static Task<(int ExitCode, string StandardOutput, string StandardError)> RunDotnetAsync(
         string workingDirectory,
+        params string[] arguments) => RunProcessAsync(workingDirectory, "dotnet", arguments);
+
+    private static async Task<(int ExitCode, string StandardOutput, string StandardError)> RunProcessAsync(
+        string workingDirectory,
+        string executable,
         params string[] arguments)
     {
         using var process = new Process
         {
-            StartInfo = new ProcessStartInfo("dotnet")
+            StartInfo = new ProcessStartInfo(executable)
             {
                 WorkingDirectory = workingDirectory,
                 RedirectStandardOutput = true,

@@ -1000,6 +1000,10 @@ namespace {endPoint.Settings.Namespace}
         PollingCriterion criterion,
         string responseVariableName)
     {
+        var contextArgument = endPoint.Settings.JsonSerializerType == global::AutoSDK.Serialization.Json.JsonSerializerType.SystemTextJson &&
+                              !string.IsNullOrWhiteSpace(endPoint.Settings.JsonSerializerContext)
+            ? ",\n                    jsonSerializerContext: JsonSerializerContext"
+            : string.Empty;
         return criterion switch
         {
             { Type: PollingCriterionType.Simple, ContextType: PollingCriterionContextType.StatusCode } => $@"global::{endPoint.Settings.Namespace}.AutoSDKPollingSupport.MatchesStatusCode(
@@ -1013,11 +1017,11 @@ namespace {endPoint.Settings.Namespace}
                     body: {responseVariableName}{(string.IsNullOrWhiteSpace(endPoint.SuccessResponse.Type.CSharpType) ? string.Empty : ".Body")},
                     jsonPointer: {criterion.JsonPointer.ToCSharpStringLiteral()},
                     @operator: {criterion.Operator.ToCSharpStringLiteral()},
-                    expectedValue: {criterion.ExpectedValue.ToCSharpStringLiteral()})",
+                    expectedValue: {criterion.ExpectedValue.ToCSharpStringLiteral()}{contextArgument})",
             { Type: PollingCriterionType.Regex, ContextType: PollingCriterionContextType.ResponseBody } => $@"global::{endPoint.Settings.Namespace}.AutoSDKPollingSupport.MatchesRegexCondition(
                     body: {responseVariableName}{(string.IsNullOrWhiteSpace(endPoint.SuccessResponse.Type.CSharpType) ? string.Empty : ".Body")},
                     jsonPointer: {criterion.JsonPointer.ToCSharpStringLiteral()},
-                    pattern: {criterion.Pattern.ToCSharpStringLiteral()})",
+                    pattern: {criterion.Pattern.ToCSharpStringLiteral()}{contextArgument})",
             _ => "false",
         };
     }

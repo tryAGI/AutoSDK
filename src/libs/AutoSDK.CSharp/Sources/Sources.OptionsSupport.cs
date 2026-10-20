@@ -1131,6 +1131,9 @@ namespace {settings.Namespace}
             return CompareValues(GetStatusCodeValue(statusCode), @operator, expectedValue);
         }}
 
+#if NET5_0_OR_GREATER
+        [global::System.Diagnostics.CodeAnalysis.RequiresUnreferencedCode(""Legacy polling reflection is not trimming-safe. Use the overload accepting a JsonSerializerContext."")]
+#endif
         {SharedNestedMemberModifier(settings)} static bool MatchesSimpleCondition(
             object? body,
             string jsonPointer,
@@ -1141,6 +1144,9 @@ namespace {settings.Namespace}
                    CompareValues(actualValue, @operator, expectedValue);
         }}
 
+#if NET5_0_OR_GREATER
+        [global::System.Diagnostics.CodeAnalysis.RequiresUnreferencedCode(""Legacy polling reflection is not trimming-safe. Use the overload accepting a JsonSerializerContext."")]
+#endif
         {SharedNestedMemberModifier(settings)} static bool MatchesRegexCondition(
             object? body,
             string jsonPointer,
@@ -1183,6 +1189,9 @@ namespace {settings.Namespace}
             }};
         }}
 
+#if NET5_0_OR_GREATER
+        [global::System.Diagnostics.CodeAnalysis.RequiresUnreferencedCode(""Legacy polling reflection is not trimming-safe. Use the overload accepting a JsonSerializerContext."")]
+#endif
         private static bool TryResolveJsonPointerValue(
             object? body,
             string jsonPointer,
@@ -1219,6 +1228,9 @@ namespace {settings.Namespace}
             return true;
         }}
 
+#if NET5_0_OR_GREATER
+        [global::System.Diagnostics.CodeAnalysis.RequiresUnreferencedCode(""Legacy polling reflection is not trimming-safe. Use the overload accepting a JsonSerializerContext."")]
+#endif
         private static bool TryGetJsonPointerSegmentValue(
             object? current,
             string segment,
@@ -1262,6 +1274,9 @@ namespace {settings.Namespace}
             return true;
         }}
 
+#if NET5_0_OR_GREATER
+        [global::System.Diagnostics.CodeAnalysis.RequiresUnreferencedCode(""Legacy polling reflection is not trimming-safe. Use the overload accepting a JsonSerializerContext."")]
+#endif
         private static global::System.Reflection.PropertyInfo? FindMatchingProperty(
             global::System.Type type,
             string segment)
@@ -1284,6 +1299,9 @@ namespace {settings.Namespace}
             return null;
         }}
 
+#if NET5_0_OR_GREATER
+        [global::System.Diagnostics.CodeAnalysis.RequiresUnreferencedCode(""Legacy polling reflection is not trimming-safe. Use the overload accepting a JsonSerializerContext."")]
+#endif
         private static bool TryMatchesJsonPropertyName(
             global::System.Reflection.PropertyInfo property,
             string segment)
@@ -1309,6 +1327,9 @@ namespace {settings.Namespace}
             return false;
         }}
 
+#if NET5_0_OR_GREATER
+        [global::System.Diagnostics.CodeAnalysis.RequiresUnreferencedCode(""Legacy polling reflection is not trimming-safe. Use the overload accepting a JsonSerializerContext."")]
+#endif
         private static string? ConvertValueToString(object? value)
         {{
             if (value == null)
@@ -1339,6 +1360,9 @@ namespace {settings.Namespace}
             return value.ToString();
         }}
 
+#if NET5_0_OR_GREATER
+        [global::System.Diagnostics.CodeAnalysis.RequiresUnreferencedCode(""Legacy polling reflection is not trimming-safe. Use the overload accepting a JsonSerializerContext."")]
+#endif
         private static bool TryGetWireValue(object value, out string? wireValue)
         {{
             wireValue = null;
@@ -1374,6 +1398,206 @@ namespace {settings.Namespace}
             wireValue = method.Invoke(null, new[] {{ value }}) as string;
             return wireValue != null;
         }}
+{(settings.JsonSerializerType == CSharpJsonSerializerType.SystemTextJson && !string.IsNullOrWhiteSpace(settings.JsonSerializerContext) ? GenerateMetadataPollingRuntimeSupport(settings) : string.Empty)}
     }}";
     }
+    private static string GenerateMetadataPollingRuntimeSupport(CSharpSettings settings)
+    {
+        return $$"""
+
+        {{SharedNestedMemberModifier(settings)}} static bool MatchesSimpleCondition(
+            object? body,
+            string jsonPointer,
+            string @operator,
+            string expectedValue,
+            global::System.Text.Json.Serialization.JsonSerializerContext jsonSerializerContext)
+        {
+            return TryResolveMetadataJsonPointer(body, jsonPointer, jsonSerializerContext, out var value) &&
+                   CompareValues(value, @operator, expectedValue);
+        }
+
+        {{SharedNestedMemberModifier(settings)}} static bool MatchesRegexCondition(
+            object? body,
+            string jsonPointer,
+            string pattern,
+            global::System.Text.Json.Serialization.JsonSerializerContext jsonSerializerContext)
+        {
+            return TryResolveMetadataJsonPointer(body, jsonPointer, jsonSerializerContext, out var value) &&
+                   MatchesRegexValue(value, pattern);
+        }
+
+        private static bool TryResolveMetadataJsonPointer(
+            object? body,
+            string jsonPointer,
+            global::System.Text.Json.Serialization.JsonSerializerContext context,
+            out string? value)
+        {
+            value = null;
+            object? current = body;
+            if (!string.IsNullOrEmpty(jsonPointer))
+            {
+                var segments = jsonPointer.Split(new[] { '/' }, global::System.StringSplitOptions.RemoveEmptyEntries);
+                foreach (var rawSegment in segments)
+                {
+                    var segment = rawSegment.Replace("~1", "/").Replace("~0", "~");
+                    if (!TryGetMetadataPointerSegment(current, segment, context, out current))
+                    {
+                        return false;
+                    }
+                }
+            }
+
+            value = ConvertMetadataPollingValue(current, context);
+            return true;
+        }
+
+        private static bool TryGetMetadataPointerSegment(
+            object? current,
+            string segment,
+            global::System.Text.Json.Serialization.JsonSerializerContext context,
+            out object? value)
+        {
+            value = null;
+            if (current == null)
+            {
+                return false;
+            }
+            if (current is global::System.Text.Json.JsonElement element)
+            {
+                return TryGetPollingElementSegment(element, segment, out value);
+            }
+            if (current is global::System.Collections.IDictionary dictionary)
+            {
+                foreach (global::System.Collections.DictionaryEntry entry in dictionary)
+                {
+                    if (entry.Key is string key && string.Equals(key, segment, global::System.StringComparison.OrdinalIgnoreCase))
+                    {
+                        value = entry.Value;
+                        return true;
+                    }
+                }
+            }
+            if (current is global::System.Collections.IList list &&
+                int.TryParse(segment, global::System.Globalization.NumberStyles.Integer, global::System.Globalization.CultureInfo.InvariantCulture, out var index) &&
+                index >= 0 && index < list.Count)
+            {
+                value = list[index];
+                return true;
+            }
+
+            var info = context.GetTypeInfo(current.GetType());
+            if (info == null)
+            {
+                return false;
+            }
+            if (info.Kind != global::System.Text.Json.Serialization.Metadata.JsonTypeInfoKind.Object)
+            {
+                return TryGetPollingElementSegment(global::System.Text.Json.JsonSerializer.SerializeToElement(current, info), segment, out value);
+            }
+            var property = FindPollingMetadataProperty(info, segment);
+            if (property?.Get == null)
+            {
+                return false;
+            }
+
+            value = property.Get(current);
+            return true;
+        }
+
+        private static bool TryGetPollingElementSegment(
+            global::System.Text.Json.JsonElement element,
+            string segment,
+            out object? value)
+        {
+            value = null;
+            if (element.ValueKind == global::System.Text.Json.JsonValueKind.Object)
+            {
+                foreach (var property in element.EnumerateObject())
+                {
+                    if (string.Equals(property.Name, segment, global::System.StringComparison.OrdinalIgnoreCase))
+                    {
+                        value = property.Value;
+                        return true;
+                    }
+                }
+            }
+            if (element.ValueKind == global::System.Text.Json.JsonValueKind.Array &&
+                int.TryParse(segment, global::System.Globalization.NumberStyles.Integer, global::System.Globalization.CultureInfo.InvariantCulture, out var index) &&
+                index >= 0 && index < element.GetArrayLength())
+            {
+                value = element[index];
+                return true;
+            }
+            return false;
+        }
+
+        private static global::System.Text.Json.Serialization.Metadata.JsonPropertyInfo? FindPollingMetadataProperty(
+            global::System.Text.Json.Serialization.Metadata.JsonTypeInfo info,
+            string segment)
+        {
+            // Prefer exact wire names before accepting the common CLR snake-case alias.
+            foreach (var property in info.Properties)
+            {
+                if (string.Equals(property.Name, segment, global::System.StringComparison.OrdinalIgnoreCase))
+                {
+                    return property;
+                }
+            }
+            var normalized = segment.Replace("_", string.Empty).Replace("-", string.Empty);
+            foreach (var property in info.Properties)
+            {
+                if (string.Equals(property.Name.Replace("_", string.Empty).Replace("-", string.Empty), normalized, global::System.StringComparison.OrdinalIgnoreCase))
+                {
+                    return property;
+                }
+            }
+            return null;
+        }
+
+        private static string? ConvertMetadataPollingValue(
+            object? value,
+            global::System.Text.Json.Serialization.JsonSerializerContext context)
+        {
+            if (value == null)
+            {
+                return "null";
+            }
+            if (value is string text)
+            {
+                return text;
+            }
+            if (value is global::System.Text.Json.JsonElement element)
+            {
+                return element.ValueKind == global::System.Text.Json.JsonValueKind.String
+                    ? element.GetString()
+                    : element.ValueKind == global::System.Text.Json.JsonValueKind.Null ? "null" : element.GetRawText();
+            }
+            var info = context.GetTypeInfo(value.GetType());
+            if (info?.Kind == global::System.Text.Json.Serialization.Metadata.JsonTypeInfoKind.Object)
+            {
+                var property = FindPollingMetadataProperty(info, "Value");
+                if (property?.Get?.Invoke(value) is string wireValue)
+                {
+                    return wireValue;
+                }
+            }
+            if (info != null && (value.GetType().IsEnum || info.Kind == global::System.Text.Json.Serialization.Metadata.JsonTypeInfoKind.None))
+            {
+                var serialized = global::System.Text.Json.JsonSerializer.SerializeToElement(value, info);
+                if (serialized.ValueKind == global::System.Text.Json.JsonValueKind.String)
+                {
+                    return serialized.GetString();
+                }
+            }
+            if (value is bool flag)
+            {
+                return flag ? "true" : "false";
+            }
+            return value is global::System.IFormattable formattable
+                ? formattable.ToString(null, global::System.Globalization.CultureInfo.InvariantCulture)
+                : value.ToString();
+        }
+""";
+    }
+
 }
