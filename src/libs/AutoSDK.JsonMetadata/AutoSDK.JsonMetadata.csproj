@@ -1,0 +1,24 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+    <IsRoslynComponent>true</IsRoslynComponent>
+    <EnforceExtendedAnalyzerRules>true</EnforceExtendedAnalyzerRules>
+    <IncludeBuildOutput>false</IncludeBuildOutput>
+    <DevelopmentDependency>true</DevelopmentDependency>
+    <IncludeSymbols>false</IncludeSymbols>
+    <Description>Build-only shared System.Text.Json metadata factories for AutoSDK-generated SDKs.</Description>
+    <PackageTags>autosdk;json;source-generator;trimming;nativeaot</PackageTags>
+  </PropertyGroup>
+  <ItemGroup>
+    <AdditionalFiles Include="AnalyzerReleases.Shipped.md;AnalyzerReleases.Unshipped.md" />
+    <PackageReference Include="Microsoft.CodeAnalysis.CSharp" Version="4.8.0" PrivateAssets="all" />
+    <PackageReference Include="System.Text.Json" Version="10.0.13" PrivateAssets="all" GeneratePathProperty="true" ExcludeAssets="all" />
+    <Reference Include="System.Text.Json.SourceGeneration">
+      <HintPath>$(PkgSystem_Text_Json)/analyzers/dotnet/roslyn4.4/cs/System.Text.Json.SourceGeneration.dll</HintPath>
+      <Private>true</Private>
+    </Reference>
+    <None Include="$(AssemblyName).props" Pack="true" PackagePath="build" />
+    <None Include="$(OutputPath)/$(AssemblyName).dll" Pack="true" PackagePath="analyzers/dotnet/cs" Visible="false" />
+    <None Include="$(OutputPath)/System.Text.Json.SourceGeneration.dll" Pack="true" PackagePath="analyzers/dotnet/cs" Visible="false" />
+  </ItemGroup>
+</Project>

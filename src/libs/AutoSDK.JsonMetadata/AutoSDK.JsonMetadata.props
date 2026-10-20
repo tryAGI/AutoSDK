@@ -1,0 +1,6 @@
+<Project>
+  <ItemGroup>
+    <AdditionalFiles Include="$(MSBuildProjectDirectory)/**/*.autosdk-json-metadata"
+                     Exclude="$(DefaultItemExcludes);$(DefaultExcludesInProjectFolder)" />
+  </ItemGroup>
+</Project>
