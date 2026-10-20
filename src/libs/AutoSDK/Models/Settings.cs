@@ -109,7 +109,7 @@ public record struct Settings(
     public const int DefaultJsonSerializerContextChunkSize = 500;
 
     /// <summary>Largest configurable context partition; consumers must validate CLR limits.</summary>
-    public const int MaximumJsonSerializerContextChunkSize = 1000;
+    public const int MaximumJsonSerializerContextChunkSize = 2000;
 
     /// <summary>Maximum explicit registrations per generated JSON context.</summary>
     public int JsonSerializerContextChunkSize { get; set; } = DefaultJsonSerializerContextChunkSize;

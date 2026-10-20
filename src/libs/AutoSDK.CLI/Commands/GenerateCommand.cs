@@ -439,7 +439,7 @@ internal sealed class GenerateCommand : Command
         name: "--json-serializer-context-chunk-size")
     {
         DefaultValueFactory = _ => Settings.Default.JsonSerializerContextChunkSize,
-        Description = "Maximum explicit registrations per JSON context (1-1000, default 500). Larger partitions reduce repeated STJ graphs; validate CLR limits and trimming before tuning.",
+        Description = "Maximum explicit registrations per JSON context (1-2000, default 500). Larger partitions reduce repeated STJ graphs; validate CLR limits and trimming before tuning.",
     };
 
     private Option<string> TypesNamespace { get; } = new(
@@ -686,7 +686,7 @@ internal sealed class GenerateCommand : Command
         var jsonSerializerContextChunkSize = parseResult.GetRequiredValue(JsonSerializerContextChunkSize);
         if (jsonSerializerContextChunkSize is < 1 or > Settings.MaximumJsonSerializerContextChunkSize)
         {
-            throw new ArgumentException("--json-serializer-context-chunk-size must be between 1 and 1000.");
+            throw new ArgumentException("--json-serializer-context-chunk-size must be between 1 and 2000.");
         }
 
         var splitByTags = parseResult.GetRequiredValue(SplitByTags);

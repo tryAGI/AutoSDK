@@ -55,7 +55,7 @@ public static partial class Sources
         if (maxAttributesPerContext is < 1 or > Settings.MaximumJsonSerializerContextChunkSize)
         {
             throw new ArgumentOutOfRangeException(nameof(client),
-                "JSON serializer context chunk size must be between 1 and 1000.");
+                "JSON serializer context chunk size must be between 1 and 2000.");
         }
 
         // Extract class name from fully-qualified JsonSerializerContext setting
