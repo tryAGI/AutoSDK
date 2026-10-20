@@ -98,6 +98,9 @@ public record struct CSharpSettings(
     string PackageMapPath,
     string StrongNamePublicKey)
 {
+    /// <summary>Maximum explicit registrations per generated JSON context.</summary>
+    public int JsonSerializerContextChunkSize { get; set; } = Settings.DefaultJsonSerializerContextChunkSize;
+
     public static CSharpSettings Default => FromSettings(Settings.Default);
 
     public static CSharpSettings FromSettings(Settings settings)
@@ -213,7 +216,10 @@ public record struct CSharpSettings(
             SplitByTags: settings.SplitByTags,
             BasePackageId: settings.BasePackageId,
             PackageMapPath: settings.PackageMapPath,
-            StrongNamePublicKey: settings.StrongNamePublicKey);
+            StrongNamePublicKey: settings.StrongNamePublicKey)
+        {
+            JsonSerializerContextChunkSize = settings.JsonSerializerContextChunkSize,
+        };
     }
 
     public Settings ToSettings()
@@ -329,7 +335,10 @@ public record struct CSharpSettings(
             SplitByTags: SplitByTags,
             BasePackageId: BasePackageId,
             PackageMapPath: PackageMapPath,
-            StrongNamePublicKey: StrongNamePublicKey);
+            StrongNamePublicKey: StrongNamePublicKey)
+        {
+            JsonSerializerContextChunkSize = JsonSerializerContextChunkSize,
+        };
     }
 
     public static implicit operator CSharpSettings(Settings settings)

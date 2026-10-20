@@ -139,7 +139,11 @@ public static class OptionsExtensions
             SplitByTags: options.GetBoolGlobalOption(nameof(Settings.SplitByTags), prefix, defaultValue: Settings.Default.SplitByTags),
             BasePackageId: options.GetGlobalOption(nameof(Settings.BasePackageId), prefix) ?? string.Empty,
             PackageMapPath: options.GetGlobalOption(nameof(Settings.PackageMapPath), prefix) ?? string.Empty,
-            StrongNamePublicKey: options.GetGlobalOption(nameof(Settings.StrongNamePublicKey), prefix) ?? string.Empty);
+            StrongNamePublicKey: options.GetGlobalOption(nameof(Settings.StrongNamePublicKey), prefix) ?? string.Empty)
+        {
+            JsonSerializerContextChunkSize = options.GetIntGlobalOption(nameof(Settings.JsonSerializerContextChunkSize), prefix,
+                defaultValue: Settings.Default.JsonSerializerContextChunkSize),
+        };
         
         string? GetOptionFromAdditionalText(string name)
         {

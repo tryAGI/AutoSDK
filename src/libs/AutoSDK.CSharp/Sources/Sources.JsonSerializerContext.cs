@@ -51,6 +51,13 @@ public static partial class Sources
             return string.Empty;
         }
 
+        var maxAttributesPerContext = client.Settings.JsonSerializerContextChunkSize;
+        if (maxAttributesPerContext is < 1 or > Settings.MaximumJsonSerializerContextChunkSize)
+        {
+            throw new ArgumentOutOfRangeException(nameof(client),
+                "JSON serializer context chunk size must be between 1 and 1000.");
+        }
+
         // Extract class name from fully-qualified JsonSerializerContext setting
         var contextClassName = GetJsonSerializerContextClassName(client);
         var typeInfoNames = generationState.TypeInfoNames;
@@ -74,7 +81,7 @@ public static partial class Sources
                 nullableValueTypes);
         var useChunkedContext =
             hasFallbacks ||
-            serializableTypeSet.SerializableTypes is { Length: > MaxJsonSerializableAttributesPerContext };
+            serializableTypeSet.SerializableTypes?.Length > maxAttributesPerContext;
         if (useChunkedContext)
         {
             serializableTypeSet = BuildJsonSerializableTypeSet(
@@ -112,6 +119,7 @@ public static partial class Sources
                 client,
                 contextClassName,
                 jsonSerializableAttributes,
+                maxAttributesPerContext,
                 fallbackContextNames,
                 deprecatedTypeNames,
                 includeFallbackConverters);
@@ -188,7 +196,6 @@ namespace {client.Settings.Namespace}
             .ToArray();
     }
 
-    private const int MaxJsonSerializableAttributesPerContext = 500;
 
     private static string GenerateEmptyJsonSerializerContext(
         Client client,
@@ -266,11 +273,12 @@ namespace {client.Settings.Namespace}
         Client client,
         string contextClassName,
         JsonSerializableAttributeRegistration[] jsonSerializableAttributes,
+        int maxAttributesPerContext,
         IReadOnlyList<string>? fallbackContextNames = null,
         IReadOnlyCollection<string>? deprecatedTypeNames = null,
         bool includeFallbackConverters = true)
     {
-        var chunks = SplitJsonSerializableAttributes(jsonSerializableAttributes)
+        var chunks = SplitJsonSerializableAttributes(jsonSerializableAttributes, maxAttributesPerContext)
             .ToArray();
         var chunkClassNames = chunks
             .Select((_, index) => $"{contextClassName}Chunk{index}")
@@ -727,13 +735,14 @@ namespace {client.Settings.Namespace}
     }
 
     private static IEnumerable<JsonSerializableAttributeRegistration[]> SplitJsonSerializableAttributes(
-        JsonSerializableAttributeRegistration[] jsonSerializableAttributes)
+        JsonSerializableAttributeRegistration[] jsonSerializableAttributes,
+        int maxAttributesPerContext)
     {
         var guardAttributeCount = jsonSerializableAttributes.Count(static registration => registration.IsGuard);
 
-        if (guardAttributeCount >= MaxJsonSerializableAttributesPerContext)
+        if (guardAttributeCount >= maxAttributesPerContext)
         {
-            foreach (var chunk in ChunkJsonSerializableAttributes(jsonSerializableAttributes))
+            foreach (var chunk in ChunkJsonSerializableAttributes(jsonSerializableAttributes, maxAttributesPerContext))
             {
                 yield return chunk;
             }
@@ -760,7 +769,7 @@ namespace {client.Settings.Namespace}
 
         var regularAttributesPerContext = Math.Max(
             1,
-            MaxJsonSerializableAttributesPerContext - guardAttributeCount);
+            maxAttributesPerContext - guardAttributeCount);
 
         for (var start = 0; start < regularAttributes.Length; start += regularAttributesPerContext)
         {
@@ -779,11 +788,12 @@ namespace {client.Settings.Namespace}
     }
 
     private static IEnumerable<JsonSerializableAttributeRegistration[]> ChunkJsonSerializableAttributes(
-        JsonSerializableAttributeRegistration[] jsonSerializableAttributes)
+        JsonSerializableAttributeRegistration[] jsonSerializableAttributes,
+        int maxAttributesPerContext)
     {
-        for (var start = 0; start < jsonSerializableAttributes.Length; start += MaxJsonSerializableAttributesPerContext)
+        for (var start = 0; start < jsonSerializableAttributes.Length; start += maxAttributesPerContext)
         {
-            var count = Math.Min(MaxJsonSerializableAttributesPerContext, jsonSerializableAttributes.Length - start);
+            var count = Math.Min(maxAttributesPerContext, jsonSerializableAttributes.Length - start);
             var chunk = new JsonSerializableAttributeRegistration[count];
             Array.Copy(jsonSerializableAttributes, start, chunk, 0, count);
             yield return chunk;

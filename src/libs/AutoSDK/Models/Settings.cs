@@ -105,6 +105,15 @@ public record struct Settings(
     string PackageMapPath,
     string StrongNamePublicKey)
 {
+    /// <summary>Default maximum explicit registrations per generated JSON context.</summary>
+    public const int DefaultJsonSerializerContextChunkSize = 500;
+
+    /// <summary>Largest configurable context partition; consumers must validate CLR limits.</summary>
+    public const int MaximumJsonSerializerContextChunkSize = 1000;
+
+    /// <summary>Maximum explicit registrations per generated JSON context.</summary>
+    public int JsonSerializerContextChunkSize { get; set; } = DefaultJsonSerializerContextChunkSize;
+
     /// <summary>
     /// Accessibility emitted for shared runtime members that generated tag assemblies must reach
     /// across an assembly boundary when <see cref="SplitByTags"/> is enabled.

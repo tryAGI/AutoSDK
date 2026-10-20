@@ -435,6 +435,13 @@ internal sealed class GenerateCommand : Command
         Description = "Infer serialization direction from the operation graph. With custom converters, set Metadata once for the whole context to omit unreachable fast-path writers; without converters, narrow safe individual registrations.",
     };
 
+    private Option<int> JsonSerializerContextChunkSize { get; } = new(
+        name: "--json-serializer-context-chunk-size")
+    {
+        DefaultValueFactory = _ => Settings.Default.JsonSerializerContextChunkSize,
+        Description = "Maximum explicit registrations per JSON context (1-1000, default 500). Larger partitions reduce repeated STJ graphs; validate CLR limits and trimming before tuning.",
+    };
+
     private Option<string> TypesNamespace { get; } = new(
         name: "--types-namespace")
     {
@@ -637,6 +644,7 @@ internal sealed class GenerateCommand : Command
         Options.Add(JsonSerializerContextName);
         Options.Add(GroupByTags);
         Options.Add(DirectionAwareJsonGenerationMode);
+        Options.Add(JsonSerializerContextChunkSize);
         Options.Add(TypesNamespace);
         Options.Add(NamespaceDelimiter);
         Options.Add(IncludeModels);
@@ -675,6 +683,12 @@ internal sealed class GenerateCommand : Command
         var apiOutputSubdirectory = parseResult.GetRequiredValue(ApiOutputSubdirectory);
         var grpcOutputSubdirectory = parseResult.GetRequiredValue(GrpcOutputSubdirectory);
         
+        var jsonSerializerContextChunkSize = parseResult.GetRequiredValue(JsonSerializerContextChunkSize);
+        if (jsonSerializerContextChunkSize is < 1 or > Settings.MaximumJsonSerializerContextChunkSize)
+        {
+            throw new ArgumentException("--json-serializer-context-chunk-size must be between 1 and 1000.");
+        }
+
         var splitByTags = parseResult.GetRequiredValue(SplitByTags);
         var groupByTags = parseResult.GetRequiredValue(GroupByTags);
         var packageIdValue = parseResult.GetRequiredValue(PackageId);
@@ -780,6 +794,7 @@ internal sealed class GenerateCommand : Command
             JsonSerializerContext = $"{namespaceValue}.{contextClassName}",
             GenerateJsonSerializerContextTypes = true,
             DirectionAwareJsonGenerationMode = parseResult.GetRequiredValue(DirectionAwareJsonGenerationMode),
+            JsonSerializerContextChunkSize = jsonSerializerContextChunkSize,
             GenerateModels = generateModels,
             IncludePaths = parseResult.GetRequiredValue(IncludePaths).ToImmutableArray(),
             ExcludePaths = parseResult.GetRequiredValue(ExcludePaths).ToImmutableArray(),
