@@ -7,6 +7,81 @@ namespace AutoSDK.IntegrationTests;
 public sealed class CliProjectGenerationTests
 {
     [TestMethod]
+    [DataRow(true)]
+    [DataRow(false)]
+    public async Task CliProject_PreservesReviewedProjectWhenRequested(bool preserve)
+    {
+        const string spec = """
+openapi: 3.0.1
+info:
+  title: Preservation fixture
+  version: 1.0.0
+paths:
+  /ping:
+    get:
+      operationId: getPing
+      responses:
+        '200':
+          description: Success
+""";
+        const string ownedProject = """
+<Project Sdk="Microsoft.NET.Sdk">
+  <!-- Reviewed package versions and owner settings must survive regeneration. -->
+  <PropertyGroup>
+    <TargetFramework>net10.0</TargetFramework>
+    <OwnerSetting>keep me</OwnerSetting>
+  </PropertyGroup>
+  <ItemGroup>
+    <PackageReference Include="MinVer" Version="8.0.0" />
+    <PackageReference Include="System.CommandLine" Version="2.0.13" />
+  </ItemGroup>
+</Project>
+""";
+        var root = Path.Combine(Path.GetTempPath(), Path.GetRandomFileName());
+        Directory.CreateDirectory(root);
+        try
+        {
+            var specPath = Path.Combine(root, "openapi.yaml");
+            var sdkProject = Path.Combine(root, "Sdk.csproj");
+            var output = Path.Combine(root, "cli");
+            var project = Path.Combine(output, "Fixture.CLI.csproj");
+            await File.WriteAllTextAsync(specPath, spec).ConfigureAwait(false);
+            await File.WriteAllTextAsync(sdkProject, "<Project Sdk=\"Microsoft.NET.Sdk\" />").ConfigureAwait(false);
+            var args = new[]
+            {
+                "run", "--disable-build-servers", "--no-launch-profile", "--project", "src/libs/AutoSDK.CLI",
+                "cli-project", specPath, "--sdk-project", sdkProject, "--namespace", "Fixture",
+                "--clientClassName", "FixtureClient", "--output", output, "--package-id", "Fixture.CLI",
+                "--preserve-project-file", preserve.ToString(),
+            };
+            var initial = await RunDotnetAsync(GetRepositoryDirectory(), args).ConfigureAwait(false);
+            initial.ExitCode.Should().Be(0, initial.StandardOutput + initial.StandardError);
+            File.Exists(project).Should().BeTrue("preservation must still create a missing project");
+            await File.WriteAllTextAsync(project, ownedProject).ConfigureAwait(false);
+            await File.WriteAllTextAsync(specPath, spec.Replace("getPing", "getStatus", StringComparison.Ordinal)).ConfigureAwait(false);
+            var regenerated = await RunDotnetAsync(GetRepositoryDirectory(), args).ConfigureAwait(false);
+            regenerated.ExitCode.Should().Be(0, regenerated.StandardOutput + regenerated.StandardError);
+            var actual = await File.ReadAllTextAsync(project).ConfigureAwait(false);
+            if (preserve)
+            {
+                actual.Should().Be(ownedProject);
+            }
+            else
+            {
+                actual.Should().NotContain("OwnerSetting");
+                actual.Should().Contain("Version=\"7.0.0\"");
+            }
+            Directory.EnumerateFiles(Path.Combine(output, "Commands"), "*.g.cs", SearchOption.AllDirectories)
+                .Select(File.ReadAllText).Should().Contain(source => source.Contains("GetStatusAsync", StringComparison.Ordinal),
+                    "preserving the project must not freeze generated command sources");
+        }
+        finally
+        {
+            Directory.Delete(root, recursive: true);
+        }
+    }
+
+    [TestMethod]
     public async Task CliProject_GeneratesPackAsToolApiCommands_AndBuilds()
     {
         const string spec = """

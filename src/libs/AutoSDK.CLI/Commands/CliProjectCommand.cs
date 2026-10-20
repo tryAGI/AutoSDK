@@ -91,6 +91,12 @@ internal sealed class CliProjectCommand : Command
         Description = "Generate only self-contained generated api command sources for an existing manual CLI project.",
     };
 
+    private Option<bool> PreserveProjectFile { get; } = new("--preserve-project-file")
+    {
+        DefaultValueFactory = _ => false,
+        Description = "Keep an existing CLI .csproj byte-for-byte while regenerating sources. Create the project normally if it does not exist.",
+    };
+
     private Option<bool> KeepApiGroup { get; } = new("--cli-keep-api-group")
     {
         DefaultValueFactory = _ => false,
@@ -182,6 +188,7 @@ internal sealed class CliProjectCommand : Command
         Options.Add(ToolCommandName);
         Options.Add(UserSecretsId);
         Options.Add(ApiOnly);
+        Options.Add(PreserveProjectFile);
         Options.Add(KeepApiGroup);
         Options.Add(ApiKeyEnvVars);
         Options.Add(CredentialFile);
@@ -331,7 +338,10 @@ internal sealed class CliProjectCommand : Command
             data,
             metadata,
             parseResult.GetRequiredValue(ApiOnly),
-            parseResult.GetRequiredValue(KeepApiGroup));
+            parseResult.GetRequiredValue(KeepApiGroup)) with
+        {
+            PreserveProjectFile = parseResult.GetRequiredValue(PreserveProjectFile),
+        };
 
         Console.WriteLine(model.ApiOnly
             ? $"Writing generated API command sources to {outputPath}..."
@@ -411,6 +421,8 @@ internal sealed record CliProjectModel(
     bool ApiOnly,
     bool KeepApiGroup)
 {
+    public bool PreserveProjectFile { get; init; }
+
     public static CliProjectModel Create(
         string outputPath,
         string sdkProjectPath,
@@ -1886,7 +1898,11 @@ internal static class CliProjectScaffolder
 
         if (!model.ApiOnly)
         {
-            await WriteFileAsync(model, $"{model.ProjectName}.csproj", GenerateProjectFile(model)).ConfigureAwait(false);
+            var projectFile = $"{model.ProjectName}.csproj";
+            if (!model.PreserveProjectFile || !File.Exists(Path.Combine(model.OutputPath, projectFile)))
+            {
+                await WriteFileAsync(model, projectFile, GenerateProjectFile(model)).ConfigureAwait(false);
+            }
             await WriteFileAsync(model, "README.md", GenerateReadme(model)).ConfigureAwait(false);
             await WriteFileAsync(model, "Program.cs", GenerateProgram(model)).ConfigureAwait(false);
         }

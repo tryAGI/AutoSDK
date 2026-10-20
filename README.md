@@ -290,6 +290,8 @@ Use `--package-map` to group small or closely related tags into one package, and
 
 A solution build wires the packages together with `ProjectReference`s, which resolve whatever is on disk — it never exercises the dependency graph a consumer actually restores. Verify that separately by packing to a local directory and restoring one tag package from it as a package; a consumer that names only `<id>.Issues` must pull `<id>.Core` in behind it. Measured on `tryAGI/GitHub.NET`'s configuration, that consumer restores 2 assemblies of the 48 while a metapackage consumer restores all 48 and keeps `new GitHubClient().Issues` working unchanged.
 
+For recurring `autosdk cli-project` generation, `--preserve-project-file` keeps an existing CLI `.csproj` byte-for-byte while still regenerating its sources, program and documentation. This preserves reviewed NuGet versions and owner build settings. A missing project is scaffolded normally; without the flag, project replacement keeps its existing behavior. Do not delete the project file before invoking this option. Settings such as target framework must be updated in the retained project explicitly when intended.
+
 Split mode needs at least two tags, and is rejected together with `--single-file`, `--generate-cli` and mixed-mode gRPC generation. (`--generate-cli` replaces model and client generation rather than adding to it, so there would be no clients to split — generate the family first, then run `autosdk cli-project` against it.)
 
 ## Vendor Extension Compatibility
