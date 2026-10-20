@@ -31,10 +31,16 @@ or instance serialization writers. Narrow resolvers call the canonical factory
 for each registered type. Factory dependencies remain visible to the IL linker.
 
 The analyzer preserves generated property, constructor, converter and callback
-metadata. It passes the caller's serializer options through resolver chains.
+metadata. It supplements schema-planned resolvers with missing reachable types
+from the compiled STJ factory graph, including handwritten partial/inherited
+members. Scopes without supplements compile the optional hook away.
+It passes the caller's serializer options through resolver chains.
 The analyzer and Roslyn are not runtime dependencies, and the CLI does not depend
 on this compiler component. Unsupported changes in the pinned generator's source
-shape produce AMETA001 instead of enabling reflection fallback.
+shape produce AMETA001 instead of enabling reflection fallback. The nested driver
+currently forwards errors but not warnings; warning propagation is tracked in
+[#437](https://github.com/tryAGI/AutoSDK/issues/437). Reported C# warning counts do
+not establish full nested-driver diagnostic coverage.
 
 The public aggregate context remains available for explicit serialization of
 arbitrary SDK models. Reading or explicitly assigning that context retains its
@@ -71,7 +77,8 @@ helpers, independent orphan components, primitive union converters, nullable
 scalar unions, and settings round trips.
 
 `SharedJsonMetadataTests` checks compilable static factories, coexistence with
-ordinary STJ contexts, rejection of instance writers, and projects without manifests.
+ordinary STJ contexts, partial-member/collection/cyclic/ignored dependencies,
+rejection of instance writers, and projects without manifests.
 
 `Generate_LargeMultiTagClient_TrimmedLeafRetainsOnlyReachableSerializerGraph`
 uses 40 tags with 36 models each and an unused endpoint within the live tag.
