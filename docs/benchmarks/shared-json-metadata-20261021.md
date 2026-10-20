@@ -175,7 +175,8 @@ correctness. No artificial SDK/runtime roots hide that defect.
   #430: symbol packaging; #431: precise standalone helper components; #432: warm
   dependency output; #433: scalar/API-hook compatibility; #435: timing coverage;
   #436: actionable error text before large bodies.
-- #437 is a diagnostic limitation: the nested official STJ driver currently
-  forwards errors as AMETA001 but does not forward its warnings. Reported compiler
-  warning counts are not a claim of complete nested-driver diagnostic coverage.
-  Warning propagation and a strict unsupported-member regression remain follow-up.
+- The .102 analyzer used in this original benchmark forwards nested errors but
+  omits warnings (#437), so its reported compiler warning counts do not establish
+  complete nested-driver diagnostic coverage. The bridge now forwards warnings;
+  [follow-up evidence](shared-json-followups-20261021.md) records strict diagnostic
+  tests, both large-SDK source rechecks, warm-cache correctness and symbol removal.
