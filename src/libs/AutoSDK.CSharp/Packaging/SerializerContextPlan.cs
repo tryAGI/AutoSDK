@@ -38,6 +38,7 @@ internal sealed class SerializerContextPlan
         var edges = new Dictionary<string, HashSet<string>>(StringComparer.Ordinal);
         void AddType(TypeData type)
         {
+            type = NormalizeMetadataType(type);
             var name = type.CSharpTypeWithoutNullability;
             if (string.IsNullOrWhiteSpace(name))
             {
@@ -270,6 +271,18 @@ internal sealed class SerializerContextPlan
             pair => pair.Value.Select(name => contextByType[name]).Distinct(StringComparer.Ordinal).ToArray(),
             StringComparer.Ordinal);
         return new SerializerContextPlan(groups, contextByType, contextsByOperation);
+    }
+
+    internal static TypeData NormalizeMetadataType(TypeData type)
+    {
+        // Nullable scalar unions can lose the parent schema's value-type flag when collapsed.
+        // JSON metadata follows the emitted runtime type. Keep this normalization local so
+        // existing model signatures and PrepareArguments ref/value hooks remain unchanged.
+        return type.CSharpTypeWithoutNullability is
+            "bool" or "byte" or "sbyte" or "short" or "ushort" or "int" or "uint" or "long" or "ulong"
+            or "float" or "double" or "decimal" or "char"
+            or "global::System.DateTime" or "global::System.DateTimeOffset" or "global::System.Guid"
+            ? type with { IsValueType = true } : type;
     }
 
     internal static string GetContextName(Settings settings, string kind, string identity)

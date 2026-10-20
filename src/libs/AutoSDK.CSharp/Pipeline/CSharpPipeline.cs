@@ -621,6 +621,7 @@ public static class CSharpPipeline
             ? Sources.CreateSharedJsonMetadataPlan(data with
             {
                 Types = data.Types.Concat(plan.Groups.SelectMany(static group => group.Types))
+                    .Select(SerializerContextPlan.NormalizeMetadataType)
                     .GroupBy(static type => (type.CSharpTypeWithNullability, type.IsValueType))
                     .Select(static group => group.First()).ToImmutableArray().AsEquatableArray(),
             })

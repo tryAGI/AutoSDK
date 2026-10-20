@@ -139,12 +139,11 @@ components:
     public void Plan_PreservesNullableValueTypesWhenMergingGraphNodes()
     {
         var data = Prepare();
-        data.Classes.Single(static model => model.ClassName == "Shared").Properties
-            .Single(static property => property.Id == "timestamp").Type.IsValueType.Should().BeTrue();
         var plan = SerializerContextPlan.Create(data);
         var shared = plan.Groups.Single(group => group.Name ==
             plan.ModelContexts["global::GraphFixture.Shared"]);
         shared.Types.Should().Contain(static type =>
+            type.IsValueType &&
             type.CSharpTypeWithoutNullability == "global::System.DateTime" &&
             type.CSharpTypeWithNullability == "global::System.DateTime?");
     }
