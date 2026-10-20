@@ -27,6 +27,8 @@ if (( shard_index >= shard_count )); then
   exit 2
 fi
 
+python3 -m unittest discover -s scripts -p 'test_test_shards.py'
+
 dotnet build "$project" --configuration "$configuration" --nologo
 
 tests=()
@@ -74,22 +76,20 @@ python3 scripts/plan-test-shards.py \
   "$shard_count" \
   "$shard_artifacts/plan.tsv"
 
-filters=()
 selected_tests=()
 while IFS=$'\t' read -r planned_shard _ test_name; do
   if [[ $planned_shard == "$shard_index" ]]; then
     selected_tests+=("$test_name")
-    filters+=("Name=$test_name")
   fi
 done < <(sed '1d' "$shard_artifacts/plan.tsv")
 
-if (( ${#filters[@]} == 0 )); then
+if (( ${#selected_tests[@]} == 0 )); then
   echo "Shard $shard_index has no tests." >&2
   exit 1
 fi
 
-filter=$(IFS='|'; printf '%s' "${filters[*]}")
 printf '%s\n' "${selected_tests[@]}" > "$shard_artifacts/membership.txt"
+filter=$(python3 scripts/build-test-filter.py "$shard_artifacts/membership.txt")
 printf 'key\tvalue\nproject\t%s\nshard_index\t%s\nshard_count\t%s\ndiscovered_tests\t%s\nselected_tests\t%s\n' \
   "$project" \
   "$shard_index" \
@@ -99,7 +99,7 @@ printf 'key\tvalue\nproject\t%s\nshard_index\t%s\nshard_count\t%s\ndiscovered_te
 printf 'Running shard %d of %d with %d of %d tests.\n' \
   "$((shard_index + 1))" \
   "$shard_count" \
-  "${#filters[@]}" \
+  "${#selected_tests[@]}" \
   "${#tests[@]}"
 
 set +e
