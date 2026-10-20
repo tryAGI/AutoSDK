@@ -4764,8 +4764,10 @@ components:
                     namespace Oag;
                     public sealed partial class AlphaModel0
                     {
+                        /// <summary>Mirrors the handwritten SDK byte-array serialization contract.</summary>
+                        [global::System.Diagnostics.CodeAnalysis.SuppressMessage("Performance", "CA1819", Justification = "The regression deliberately exercises an existing byte-array property API.")]
                         [global::System.Text.Json.Serialization.JsonPropertyName("bytes")]
-                        public byte[] Bytes => [1, 2, 3];
+                        public byte[] Bytes => global::System.Text.Encoding.UTF8.GetBytes(Value ?? global::System.String.Empty);
                     }
                     """);
             },
@@ -6648,7 +6650,7 @@ components:
             return response is { Count: 1 } &&
                    response[0].Value == "response-value" &&
                    handler.Body?.Contains("request-value", StringComparison.Ordinal) == true &&
-                   handler.Body.Contains("\"bytes\":\"AQID\"", StringComparison.Ordinal)
+                   handler.Body.Contains("\"bytes\":\"cmVxdWVzdC12YWx1ZQ==\"", StringComparison.Ordinal)
                 ? 0
                 : 1;
 
