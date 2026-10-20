@@ -73,12 +73,12 @@ namespace {client.Settings.Namespace}
                 ? $" = {serializer.CreateDefaultSettings(client.Converters)};"
                 : $" = new {serializer.GetOptionsType()}();")}
 {(suppressDeprecatedWarningsForJsonSerializerOptions ? "        #pragma warning restore CS0618 // Type or member is obsolete" : TrimmedLine)}" : shouldDeferJsonSerializerContext ? $@"
-        {SharedNestedMemberModifier(client.Settings)} global::System.Lazy<global::System.Text.Json.Serialization.JsonSerializerContext> JsonSerializerContextProvider {{ get; set; }} = new(() => {GetDefaultJsonSerializerContextExpression(client.Settings)});
+        {SharedNestedMemberModifier(client.Settings)} global::System.Lazy<global::System.Text.Json.Serialization.JsonSerializerContext>? JsonSerializerContextProvider {{ get; set; }}
 
         {string.Empty.ToXmlDocumentationSummary(level: 8)}
         public global::System.Text.Json.Serialization.JsonSerializerContext JsonSerializerContext
         {{
-            get => JsonSerializerContextProvider.Value;
+            get => JsonSerializerContextProvider?.Value ?? {GetDefaultJsonSerializerContextExpression(client.Settings)};
             set => JsonSerializerContextProvider = new(() => value);
         }}" : $@"
         {string.Empty.ToXmlDocumentationSummary(level: 8)}

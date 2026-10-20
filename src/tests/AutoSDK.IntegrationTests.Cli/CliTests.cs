@@ -4736,8 +4736,8 @@ components:
                     .ToArray();
                 typeInfoPropertyNames.Should().NotBeEmpty();
                 typeInfoPropertyNames.Should().OnlyContain(name => name.Length <= 120);
-                content.Should().Contain("new(() => global::HugeUnion.SourceGenerationContext.Default);");
-                content.Should().Contain("get => JsonSerializerContextProvider.Value;");
+                content.Should().Contain("get => JsonSerializerContextProvider?.Value ?? global::HugeUnion.SourceGenerationContext.Default;");
+                content.Should().NotContain("= new(() => global::HugeUnion.SourceGenerationContext.Default);");
             });
     }
 
@@ -4876,8 +4876,8 @@ components:
                 content.Should().Contain("TypeInfoPropertyName =");
                 content.Should().Contain("#pragma warning disable CS0618 // Type or member is obsolete");
                 content.Should().Contain(deprecatedPolicy);
-                content.Should().Contain("new(() => global::HugeUnionDeprecated.SourceGenerationContext.Default);");
-                content.Should().Contain("get => JsonSerializerContextProvider.Value;");
+                content.Should().Contain("get => JsonSerializerContextProvider?.Value ?? global::HugeUnionDeprecated.SourceGenerationContext.Default;");
+                content.Should().NotContain("= new(() => global::HugeUnionDeprecated.SourceGenerationContext.Default);");
             });
     }
 
@@ -6467,9 +6467,23 @@ components:
         var project = await File.ReadAllTextAsync(projectPath).ConfigureAwait(false);
         project = project.Replace(
             "<TreatWarningsAsErrors>true</TreatWarningsAsErrors>",
-            "<TreatWarningsAsErrors>true</TreatWarningsAsErrors>\n    <IsTrimmable>true</IsTrimmable>\n  </PropertyGroup>\n  <ItemGroup>\n    <Compile Remove=\"LeafConsumer/**/*.cs;RootConsumer/**/*.cs\" />\n  </ItemGroup>\n  <PropertyGroup>",
+            "<TreatWarningsAsErrors>true</TreatWarningsAsErrors>\n    <IsTrimmable>true</IsTrimmable>\n  </PropertyGroup>\n  <ItemGroup>\n    <Compile Remove=\"LeafConsumer/**/*.cs;RootConsumer/**/*.cs;AggregateConsumer/**/*.cs\" />\n  </ItemGroup>\n  <PropertyGroup>",
             StringComparison.Ordinal);
         await File.WriteAllTextAsync(projectPath, project).ConfigureAwait(false);
+        await File.WriteAllTextAsync(
+            Path.Combine(outputDirectory, "SourceGenerationContext.TestFactory.cs"),
+            """
+            namespace Oag;
+
+            public sealed partial class SourceGenerationContext
+            {
+                /// <summary>Creates a configured context for the propagation regression.</summary>
+                /// <param name="options">Serialization options.</param>
+                /// <returns>The configured aggregate context.</returns>
+                public static SourceGenerationContext CreateConfiguredForTests(
+                    global::System.Text.Json.JsonSerializerOptions options) => new(options);
+            }
+            """).ConfigureAwait(false);
 
         var leafAssembly = await PublishAndRunTreeShakeableConsumerAsync(
             outputDirectory,
@@ -6480,19 +6494,33 @@ components:
             "RootConsumer",
             useRootClient: true).ConfigureAwait(false);
 
+        var aggregateAssembly = await PublishAndRunTreeShakeableConsumerAsync(
+            outputDirectory,
+            "AggregateConsumer",
+            useRootClient: true,
+            useCustomRootContext: true).ConfigureAwait(false);
+
         var leafSize = new FileInfo(leafAssembly).Length;
         var rootSize = new FileInfo(rootAssembly).Length;
-        Console.WriteLine($"Tree-shakeable Oag.dll: leaf={leafSize:N0} bytes, root={rootSize:N0} bytes");
+        var aggregateSize = new FileInfo(aggregateAssembly).Length;
+        Console.WriteLine($"Tree-shakeable Oag.dll: leaf={leafSize:N0} bytes, scoped root={rootSize:N0} bytes, explicit aggregate={aggregateSize:N0} bytes");
 
         leafSize.Should().BeLessThan(
-            (long)(rootSize * 0.35),
-            $"one {modelsPerTag}-model tag graph should be materially smaller than the aggregate root graph");
+            (long)(aggregateSize * 0.35),
+            $"one {modelsPerTag}-model tag graph should be materially smaller than the explicit aggregate graph");
+        rootSize.Should().BeLessThan(
+            (long)(aggregateSize * 0.35),
+            "default root access should not retain other tag serializer graphs");
+        rootSize.Should().BeLessThanOrEqualTo(
+            leafSize + 16 * 1024,
+            "the root facade should only add small client metadata to the same live tag graph");
     }
 
     private static async Task<string> PublishAndRunTreeShakeableConsumerAsync(
         string outputDirectory,
         string consumerName,
-        bool useRootClient)
+        bool useRootClient,
+        bool useCustomRootContext = false)
     {
         var consumerDirectory = Path.Combine(outputDirectory, consumerName);
         var publishDirectory = Path.Combine(consumerDirectory, "publish");
@@ -6522,6 +6550,24 @@ components:
         var clientSetup = useRootClient
             ? "using var root = new OagClient(httpClient, disposeHttpClient: false);\nusing var client = root.Alpha;"
             : "using var client = new AlphaClient(httpClient, disposeHttpClient: false);";
+        if (useCustomRootContext)
+        {
+            clientSetup = """
+                using var root = new OagClient(httpClient, disposeHttpClient: false);
+                var configuredContext = SourceGenerationContext.CreateConfiguredForTests(
+                    new global::System.Text.Json.JsonSerializerOptions(SourceGenerationContext.Default.Options)
+                    {
+                        PropertyNameCaseInsensitive = true,
+                    });
+                root.JsonSerializerContext = configuredContext;
+                using var client = root.Alpha;
+                using var sibling = root.Beta;
+                if (!ReferenceEquals(client.JsonSerializerContext, configuredContext) ||
+                    !ReferenceEquals(sibling.JsonSerializerContext, configuredContext))
+                    return 2;
+                """;
+        }
+        var responsePropertyName = useCustomRootContext ? "VaLuE" : "value";
         await File.WriteAllTextAsync(
             Path.Combine(consumerDirectory, "Program.cs"),
             $$"""
@@ -6555,7 +6601,7 @@ components:
                     return new HttpResponseMessage(HttpStatusCode.OK)
                     {
                         Content = new StringContent(
-                            "[{\"value\":\"response-value\"}]",
+                            "[{\"{{responsePropertyName}}\":\"response-value\"}]",
                             Encoding.UTF8,
                             "application/json"),
                     };
