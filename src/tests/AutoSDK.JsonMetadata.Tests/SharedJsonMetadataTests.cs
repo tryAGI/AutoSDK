@@ -59,6 +59,17 @@ public sealed class Unused
     }
 
     [TestMethod]
+    public void Generate_CoexistsWithOrdinaryContextsWithoutTransformingThem()
+    {
+        var (compilation, result) = Generate("Metadata", ordinaryContext: true);
+        result.Diagnostics.Should().NotContain(static diagnostic => diagnostic.Severity == DiagnosticSeverity.Error);
+        compilation.GetDiagnostics().Should().NotContain(static diagnostic => diagnostic.Severity == DiagnosticSeverity.Error);
+        var shared = result.Results[0].GeneratedSources;
+        shared.Should().NotContain(static source => source.HintName.Contains("OrdinaryContext"));
+        shared.Should().Contain(static source => source.HintName.Contains("SharedMetadata"));
+    }
+
+    [TestMethod]
     public void Generate_RejectsInstanceBoundSerializationWriters()
     {
         var (_, result) = Generate("Serialization");
@@ -77,7 +88,7 @@ public sealed class Unused
         driver.GetRunResult().Results.SelectMany(static result => result.GeneratedSources).Should().BeEmpty();
     }
 
-    private static (Compilation Compilation, GeneratorDriverRunResult Result) Generate(string mode)
+    private static (Compilation Compilation, GeneratorDriverRunResult Result) Generate(string mode, bool ordinaryContext = false)
     {
         var manifest = $$"""
 #nullable enable
@@ -92,8 +103,17 @@ internal sealed partial class SharedMetadata : global::System.Text.Json.Serializ
             [CSharpSyntaxTree.ParseText(Models)], References,
             new CSharpCompilationOptions(OutputKind.DynamicallyLinkedLibrary,
                 nullableContextOptions: NullableContextOptions.Enable));
+        if (ordinaryContext)
+        {
+            compilation = compilation.AddSyntaxTrees(CSharpSyntaxTree.ParseText("""
+namespace Fixture;
+[System.Text.Json.Serialization.JsonSerializable(typeof(Used))]
+internal sealed partial class OrdinaryContext : System.Text.Json.Serialization.JsonSerializerContext { }
+"""));
+        }
         GeneratorDriver driver = CSharpGeneratorDriver.Create(
-            generators: [new SharedJsonMetadataGenerator().AsSourceGenerator()],
+            generators: [new SharedJsonMetadataGenerator().AsSourceGenerator(),
+                new System.Text.Json.SourceGeneration.JsonSourceGenerator().AsSourceGenerator()],
             additionalTexts: [new Manifest(manifest)]);
         driver = driver.RunGeneratorsAndUpdateCompilation(compilation, out var output, out _);
         return (output, driver.GetRunResult());

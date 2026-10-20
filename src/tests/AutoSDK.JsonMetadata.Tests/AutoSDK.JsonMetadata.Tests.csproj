@@ -4,9 +4,14 @@
   </PropertyGroup>
   <ItemGroup>
     <PackageReference Include="MSTest" Version="4.5.1" />
+    <PackageReference Include="GitHubActionsTestLogger" Version="3.0.5" PrivateAssets="all" />
     <PackageReference Include="AwesomeAssertions" Version="9.6.0" />
     <PackageReference Include="Microsoft.CodeAnalysis.CSharp" Version="4.8.0" />
     <ProjectReference Include="../../libs/AutoSDK.JsonMetadata/AutoSDK.JsonMetadata.csproj" />
+    <Reference Include="System.Text.Json.SourceGeneration">
+      <HintPath>$(NuGetPackageRoot)/system.text.json/10.0.13/analyzers/dotnet/roslyn4.4/cs/System.Text.Json.SourceGeneration.dll</HintPath>
+      <Private>true</Private>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
     <Using Include="Microsoft.VisualStudio.TestTools.UnitTesting" />
