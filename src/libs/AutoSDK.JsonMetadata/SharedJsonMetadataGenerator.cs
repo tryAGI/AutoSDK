@@ -89,6 +89,7 @@ public sealed class SharedJsonMetadataGenerator : IIncrementalGenerator
                     .Take(5).Select(static diagnostic => diagnostic.ToString()))));
             return;
         }
+        var factorySources = new List<(string Hint, SyntaxNode Root)>();
         foreach (var generator in result.Results)
         {
             foreach (var source in generator.GeneratedSources)
@@ -105,6 +106,7 @@ public sealed class SharedJsonMetadataGenerator : IIncrementalGenerator
                     continue;
                 }
                 var root = source.SyntaxTree.GetRoot(output.CancellationToken);
+                factorySources.Add((source.HintName, root));
                 var transformed = new FactoryRewriter().Visit(root);
                 if (transformed is null)
                 {
@@ -122,6 +124,7 @@ public sealed class SharedJsonMetadataGenerator : IIncrementalGenerator
                     SourceText.From(transformed.ToFullString(), Encoding.UTF8));
             }
         }
+        MetadataDependencyResolvers.Generate(output, csharp, factorySources);
     }
 
     private sealed class FactoryRewriter : CSharpSyntaxRewriter

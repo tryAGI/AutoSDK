@@ -12,7 +12,7 @@ public class SharedJsonMetadataTests
     private const string Models = """
 using System.Text.Json.Serialization;
 namespace Fixture;
-public sealed class Used
+public sealed partial class Used
 {
     public string? Value { get; set; }
     public Child? Child { get; set; }
@@ -88,7 +88,65 @@ public sealed class Unused
         driver.GetRunResult().Results.SelectMany(static result => result.GeneratedSources).Should().BeEmpty();
     }
 
-    private static (Compilation Compilation, GeneratorDriverRunResult Result) Generate(string mode, bool ordinaryContext = false)
+    [TestMethod]
+    public void Generate_CompletesPartialMemberGraphsWithoutAddingIgnoredOrUnrelatedTypes()
+    {
+        var (compilation, result) = Generate("Metadata", extraSource: """
+namespace Fixture;
+public sealed partial class Used
+{
+    public byte[]? Bytes { get; set; }
+    public PartialDetails? Details { get; set; }
+    [System.Text.Json.Serialization.JsonIgnore]
+    public Unused? Ignored { get; set; }
+}
+public sealed class PartialDetails
+{
+    public System.Collections.Generic.IList<byte[]>? Blobs { get; set; }
+    public Used? Parent { get; set; }
+}
+public partial class Scope
+{
+    private sealed partial class SharedMetadataResolver : System.Text.Json.Serialization.Metadata.IJsonTypeInfoResolver
+    {
+        public System.Text.Json.Serialization.Metadata.JsonTypeInfo? GetTypeInfo(
+            System.Type type, System.Text.Json.JsonSerializerOptions options)
+        {
+            if (type == typeof(Used)) return global::Fixture.SharedMetadata.Create_Used(options);
+            System.Text.Json.Serialization.Metadata.JsonTypeInfo? result = null;
+            ResolveAdditionalTypeInfo(type, options, ref result);
+            return result;
+        }
+        static partial void ResolveAdditionalTypeInfo(System.Type type, System.Text.Json.JsonSerializerOptions options,
+            ref System.Text.Json.Serialization.Metadata.JsonTypeInfo? result);
+    }
+    public static string Run()
+    {
+        var options = new System.Text.Json.JsonSerializerOptions { TypeInfoResolver = new SharedMetadataResolver() };
+        var value = System.Text.Json.JsonSerializer.Deserialize<Used>(
+            "{\"Value\":\"partial\",\"Bytes\":\"AQID\",\"Child\":{\"Count\":2},\"Details\":{\"Blobs\":[\"BAU=\"],\"Parent\":null}}", options)!;
+        return System.Text.Json.JsonSerializer.Serialize(value, options);
+    }
+}
+""");
+        result.Diagnostics.Should().NotContain(static diagnostic => diagnostic.Severity == DiagnosticSeverity.Error);
+        compilation.GetDiagnostics().Should().NotContain(static diagnostic => diagnostic.Severity == DiagnosticSeverity.Error);
+        var resolver = result.Results[0].GeneratedSources.Single(static source =>
+            source.HintName.StartsWith("AutoSDK.SharedDependencies.", StringComparison.Ordinal)).SourceText.ToString();
+        resolver.Should().Contain("Create_ByteArray").And.Contain("Create_PartialDetails");
+        resolver.Should().NotContain("Create_Unused");
+        using var stream = new MemoryStream();
+        var emitted = compilation.Emit(stream);
+        emitted.Success.Should().BeTrue(string.Join("\n", emitted.Diagnostics));
+        var assembly = System.Reflection.Assembly.Load(stream.ToArray());
+        var json = (string)assembly.GetType("Fixture.Scope")!.GetMethod("Run")!.Invoke(null, null)!;
+        using var document = System.Text.Json.JsonDocument.Parse(json);
+        document.RootElement.GetProperty("Bytes").GetString().Should().Be("AQID");
+        document.RootElement.GetProperty("Details").GetProperty("Blobs")[0].GetString().Should().Be("BAU=");
+        document.RootElement.TryGetProperty("Ignored", out _).Should().BeFalse();
+    }
+
+    private static (Compilation Compilation, GeneratorDriverRunResult Result) Generate(string mode, bool ordinaryContext = false, string? extraSource = null)
     {
         var manifest = $$"""
 #nullable enable
@@ -103,6 +161,10 @@ internal sealed partial class SharedMetadata : global::System.Text.Json.Serializ
             [CSharpSyntaxTree.ParseText(Models)], References,
             new CSharpCompilationOptions(OutputKind.DynamicallyLinkedLibrary,
                 nullableContextOptions: NullableContextOptions.Enable));
+        if (extraSource is not null)
+        {
+            compilation = compilation.AddSyntaxTrees(CSharpSyntaxTree.ParseText(extraSource));
+        }
         if (ordinaryContext)
         {
             compilation = compilation.AddSyntaxTrees(CSharpSyntaxTree.ParseText("""

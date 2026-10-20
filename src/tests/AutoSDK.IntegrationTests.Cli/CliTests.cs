@@ -4754,13 +4754,20 @@ components:
             specContent: spec,
             targetFramework: "net10.0",
             clientClassName: "OagClient",
-            assertGeneratedOutput: outputDirectory =>
+            assertGeneratedOutput: async outputDirectory =>
             {
                 File.Exists(Path.Combine(outputDirectory, "Oag.Alpha.JsonSerializerContext.g.cs"))
                     .Should().BeTrue();
                 File.Exists(Path.Combine(outputDirectory, "Oag.Delta.JsonSerializerContext.g.cs"))
                     .Should().BeTrue();
-                return Task.CompletedTask;
+                await File.WriteAllTextAsync(Path.Combine(outputDirectory, "AlphaModel0.Partial.cs"), """
+                    namespace Oag;
+                    public sealed partial class AlphaModel0
+                    {
+                        [global::System.Text.Json.Serialization.JsonPropertyName("bytes")]
+                        public byte[] Bytes => [1, 2, 3];
+                    }
+                    """);
             },
             assertBuiltOutput: outputDirectory => AssertTreeShakeableTrimmedConsumersAsync(
                 outputDirectory,
@@ -6640,7 +6647,8 @@ components:
                 request: [new AlphaModel0 { Value = "request-value" }]).ConfigureAwait(false);
             return response is { Count: 1 } &&
                    response[0].Value == "response-value" &&
-                   handler.Body?.Contains("request-value", StringComparison.Ordinal) == true
+                   handler.Body?.Contains("request-value", StringComparison.Ordinal) == true &&
+                   handler.Body.Contains("\"bytes\":\"AQID\"", StringComparison.Ordinal)
                 ? 0
                 : 1;
 

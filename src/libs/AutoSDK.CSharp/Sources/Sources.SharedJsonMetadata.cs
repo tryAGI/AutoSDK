@@ -91,7 +91,7 @@ namespace {client.Settings.Namespace}
         JsonSerializableAttributeRegistration[] registrations, SharedJsonMetadataPlan metadata)
     {
         builder.Append(@"
-        private sealed class SharedMetadataResolver : global::System.Text.Json.Serialization.Metadata.IJsonTypeInfoResolver
+        private sealed partial class SharedMetadataResolver : global::System.Text.Json.Serialization.Metadata.IJsonTypeInfoResolver
         {
             public global::System.Text.Json.Serialization.Metadata.JsonTypeInfo? GetTypeInfo(
                 global::System.Type type, global::System.Text.Json.JsonSerializerOptions options)
@@ -118,8 +118,14 @@ namespace {client.Settings.Namespace}
             }
         }
         builder.Append(@"
-                return null;
+                global::System.Text.Json.Serialization.Metadata.JsonTypeInfo? additional = null;
+                ResolveAdditionalTypeInfo(type, options, ref additional);
+                return additional;
             }
+
+            static partial void ResolveAdditionalTypeInfo(
+                global::System.Type type, global::System.Text.Json.JsonSerializerOptions options,
+                ref global::System.Text.Json.Serialization.Metadata.JsonTypeInfo? result);
         }
 ");
     }
