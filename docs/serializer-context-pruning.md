@@ -82,3 +82,9 @@ methods are absent and checks a material linked-size reduction.
 [#427](https://github.com/tryAGI/AutoSDK/issues/427) tracks real large-SDK acceptance;
 [#428](https://github.com/tryAGI/AutoSDK/issues/428) tracks metadata sharing and its
 compilation budget.
+
+## Real SDK acceptance
+
+See the [OpenAI and AppStoreConnect comparison](benchmarks/shared-json-metadata-20261021.md)
+for source/build/package costs, retained DTOs and factories, NativeAOT contracts,
+warm repeated publishes, and remaining symbol/cache limitations.
