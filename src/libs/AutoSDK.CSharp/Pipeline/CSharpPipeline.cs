@@ -117,12 +117,17 @@ public static class CSharpPipeline
     {
         var settings = data.Converters.Settings;
 
-        // Split packages retarget model defaults to the package that owns their metadata. Very
-        // large monolithic SDKs can reuse the same ownership graph to divide source-generation
-        // work, but retain one public facade context and all original model/client defaults.
+        // Split packages retarget model defaults to their owning package. Monolithic operation
+        // scopes keep endpoint and model helpers off the complete SDK's serializer graph, while
+        // preserving the public facade context for callers who explicitly request every model.
+        var serializerPlan = !settings.SplitByTags && settings.FromCli &&
+                             settings.ShouldGenerateJsonSerializerContextTypes() &&
+                             settings.UsesSystemTextJson() && settings.UseSharedJsonMetadata
+            ? SerializerContextPlan.Create(data)
+            : null;
         var modelOwners = settings.SplitByTags
             ? ModelOwnershipResolver.Resolve(data)
-            : ResolveLargeMonolithicContextOwners(data);
+            : serializerPlan is null ? ResolveLargeMonolithicContextOwners(data) : EmptyOwners;
         var partitionedMonolithicContext = !settings.SplitByTags && modelOwners.Count != 0;
         var tagReachability = !partitionedMonolithicContext && ShouldGenerateTreeShakeableTagContexts(data)
             ? TagOwnershipAnalyzer.Analyze(data.FilteredSchemas)
@@ -135,6 +140,26 @@ public static class CSharpPipeline
                 Classes = RetargetSerializerContext(data.Classes, modelOwners, contextNamesByTag),
                 Enums = RetargetSerializerContext(data.Enums, modelOwners, contextNamesByTag),
                 AnyOfs = RetargetSerializerContext(data.AnyOfs, modelOwners, contextNamesByTag),
+            };
+        }
+        if (serializerPlan is not null)
+        {
+            data = data with
+            {
+                Classes = data.Classes.Select(model => serializerPlan.ModelContexts.TryGetValue(model.GlobalClassName, out var context)
+                        ? model with { Settings = model.Settings with { JsonSerializerContext = context } } : model)
+                    .ToImmutableArray().AsEquatableArray(),
+                Enums = data.Enums.Select(model => serializerPlan.ModelContexts.TryGetValue(model.GlobalClassName, out var context)
+                        ? model with { Settings = model.Settings with { JsonSerializerContext = context } } : model)
+                    .ToImmutableArray().AsEquatableArray(),
+                AnyOfs = data.AnyOfs.Select(union => union.IsNamed &&
+                        serializerPlan.ModelContexts.TryGetValue($"global::{union.Namespace}.{union.Name}", out var context)
+                        ? union with { Settings = union.Settings with { JsonSerializerContext = context } } : union)
+                    .ToImmutableArray().AsEquatableArray(),
+                Methods = data.Methods.Select(method => serializerPlan.OperationContexts.TryGetValue(method.Id, out var contexts) &&
+                        contexts.Length != 0
+                        ? method with { JsonSerializerContextOverride = GetOperationContextName(data.Converters.Settings, method.Id, contexts) } : method)
+                    .ToImmutableArray().AsEquatableArray(),
             };
         }
         var webSocketMessageModels = data.Classes
@@ -319,7 +344,9 @@ public static class CSharpPipeline
             var serializerContextGenerationState = new Sources.JsonSerializerContextGenerationState();
             var serializerContextFiles = MeasurePhase(
                 "serializer_context",
-                () => settings.SplitByTags && modelOwners.Count != 0
+                () => serializerPlan is not null
+                    ? CreatePlannedJsonSerializerContexts(data, serializerPlan, cancellationToken)
+                    : settings.SplitByTags && modelOwners.Count != 0
                     ? CreatePackageJsonSerializerContexts(data, modelOwners, cancellationToken)
                     : partitionedMonolithicContext
                         ? CreateMonolithicPartitionJsonSerializerContexts(data, modelOwners, cancellationToken)
@@ -576,9 +603,70 @@ public static class CSharpPipeline
     private static readonly IReadOnlyDictionary<string, ImmutableArray<string>> EmptyTagReachability =
         new Dictionary<string, ImmutableArray<string>>(StringComparer.Ordinal);
 
-    // Contexts that retain a large fraction of the aggregate graph cost more to compile than the
-    // linker savings justify. Keep those clients on the aggregate context instead of multiplying
-    // near-root serializer graphs across every tag.
+    private static string GetOperationContextName(Settings settings, string operationId, string[] contexts)
+    {
+        if (contexts.Length == 1)
+        {
+            return contexts[0];
+        }
+        return SerializerContextPlan.GetContextName(settings, "Operation", operationId);
+    }
+
+    private static FileWithName[] CreatePlannedJsonSerializerContexts(
+        Models.Data data, SerializerContextPlan plan, CancellationToken cancellationToken)
+    {
+        var files = new List<FileWithName>();
+        var deprecated = data.Classes.Where(static model => model.IsDeprecated).ToArray();
+        var sharedMetadata = data.Converters.Settings.UseSharedJsonMetadata
+            ? Sources.CreateSharedJsonMetadataPlan(data with
+            {
+                Types = data.Types.Concat(plan.Groups.SelectMany(static group => group.Types))
+                    .GroupBy(static type => (type.CSharpTypeWithNullability, type.IsValueType))
+                    .Select(static group => group.First()).ToImmutableArray().AsEquatableArray(),
+            })
+            : null;
+        if (sharedMetadata is not null)
+        {
+            files.Add(sharedMetadata.Manifest);
+        }
+        void AddContext(string name, EquatableArray<TypeData> types, ImmutableArray<string> converters,
+            string[] fallbacks, bool includeFallbackConverters = true, string? fileName = null, bool internalContext = false)
+        {
+            var client = data.Converters with
+            {
+                FileNameWithoutExtension = fileName ?? name,
+                Settings = data.Converters.Settings with { JsonSerializerContext = name },
+                Converters = converters,
+            };
+            files.Add(Sources.JsonSerializerContext(client, types, new Sources.JsonSerializerContextGenerationState(),
+                fallbackContextNames: fallbacks.Select(static name => "global::" + name).ToArray(),
+                models: deprecated, includeFallbackConverters: includeFallbackConverters,
+                cancellationToken: cancellationToken, internalContext: internalContext, sharedMetadata: sharedMetadata));
+        }
+        foreach (var group in plan.Groups)
+        {
+            AddContext(group.Name, group.Types, group.Converters, [], internalContext: true);
+        }
+        foreach (var operation in plan.OperationContexts.Where(static pair => pair.Value.Length > 1))
+        {
+            AddContext(GetOperationContextName(data.Converters.Settings, operation.Key, operation.Value),
+                default, [], operation.Value, internalContext: true);
+        }
+        foreach (var tag in data.Tags.Where(static tag => tag.Name is not null))
+        {
+            var contexts = data.Methods.Where(method => string.Equals(method.Tag.Name, tag.Name, StringComparison.Ordinal))
+                .Where(method => plan.OperationContexts.ContainsKey(method.Id))
+                .SelectMany(method => plan.OperationContexts[method.Id])
+                .Distinct(StringComparer.Ordinal).ToArray();
+            AddContext(GetPackageContextName(data.Converters.Settings, tag.SafeName), default, [], contexts,
+                fileName: data.Converters.Settings.Namespace + "." + tag.SafeName);
+        }
+        AddContext(data.Converters.Settings.JsonSerializerContext, default,
+            data.Converters.Converters, plan.Groups.Select(static group => group.Name).ToArray(),
+            includeFallbackConverters: false, fileName: data.Converters.FileNameWithoutExtension);
+        return files.ToArray();
+    }
+
     private const int MaximumTagContextReachabilityPercentage = 35;
     private const int AggregateContextFallbackTagThreshold = 32;
     private const int AggregateContextFallbackTypeThreshold = 1000;
@@ -628,9 +716,9 @@ public static class CSharpPipeline
             return [];
         }
 
-        // A very large grouped SDK can otherwise make the compiler process the same source
-        // generation graph hundreds of times. Keep the public per-tag context types, but have
-        // them delegate to the already-generated aggregate context in this case.
+        // Compatibility profile for SDKs not yet migrated to the build-only metadata package.
+        // The shared-metadata path bypasses this method and emits no aggregate fallback.
+        // Keep legacy compilation costs stable during the coordinated rollout (#429).
         var reuseAggregateContext = data.Tags.Length >= AggregateContextFallbackTagThreshold &&
                                     data.Types.Length >= AggregateContextFallbackTypeThreshold;
         var aggregateContextName = data.Converters.Settings.JsonSerializerContext.StartsWith("global::", StringComparison.Ordinal)

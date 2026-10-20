@@ -105,6 +105,9 @@ public record struct Settings(
     string PackageMapPath,
     string StrongNamePublicKey)
 {
+    /// <summary>Use the build-only AutoSDK.JsonMetadata generator for shared metadata factories.</summary>
+    public bool UseSharedJsonMetadata { get; set; }
+
     /// <summary>Default maximum explicit registrations per generated JSON context.</summary>
     public const int DefaultJsonSerializerContextChunkSize = 500;
 

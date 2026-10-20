@@ -4742,9 +4742,11 @@ components:
     }
 
     [TestMethod]
-    public async Task Generate_LargeMultiTagClient_TrimmedLeafRetainsOnlyReachableSerializerGraph()
+    [DataRow(false)]
+    [DataRow(true)]
+    public async Task Generate_LargeMultiTagClient_TrimmedLeafRetainsOnlyReachableSerializerGraph(bool rawModelData)
     {
-        const int modelsPerTag = 180;
+        const int modelsPerTag = 36;
         var spec = CreateLargeMultiTagSerializerSpec(modelsPerTag);
 
         await GenerateFromContentAsync(
@@ -4762,7 +4764,8 @@ components:
             },
             assertBuiltOutput: outputDirectory => AssertTreeShakeableTrimmedConsumersAsync(
                 outputDirectory,
-                modelsPerTag));
+                modelsPerTag),
+            additionalArguments: ["--shared-json-metadata", "--generate-raw-model-data", rawModelData.ToString()]);
     }
 
     [TestMethod]
@@ -6189,6 +6192,22 @@ components:
 
 </Project>");
 
+            if (additionalArguments.Contains("--shared-json-metadata", StringComparer.Ordinal))
+            {
+                var projectPath = Path.Combine(tempDirectory, "Oag.csproj");
+                var project = await File.ReadAllTextAsync(projectPath);
+                var analyzer = System.Security.SecurityElement.Escape(
+                    typeof(AutoSDK.JsonMetadata.SharedJsonMetadataGenerator).Assembly.Location);
+                project = project.Replace("</Project>", $"""
+                  <ItemGroup>
+                    <Analyzer Include="{analyzer}" />
+                    <AdditionalFiles Include="**/*.autosdk-json-metadata" Exclude="$(DefaultItemExcludes)" />
+                  </ItemGroup>
+                </Project>
+                """, StringComparison.Ordinal);
+                await File.WriteAllTextAsync(projectPath, project);
+            }
+
             var buildResult = await RunDotnetAsync(
                 tempDirectory,
                 "build",
@@ -6393,7 +6412,9 @@ components:
 
     private static string CreateLargeMultiTagSerializerSpec(int modelsPerTag)
     {
-        var tags = new[] { "alpha", "beta", "gamma", "delta", "epsilon", "zeta", "eta", "theta" };
+        var tags = new[] { "alpha", "beta", "gamma", "delta", "epsilon", "zeta", "eta", "theta" }
+            .Concat(Enumerable.Range(0, 32).Select(static index => $"group{index}"))
+            .ToArray();
         var builder = new StringBuilder(
             """
             openapi: 3.0.3
@@ -6432,8 +6453,25 @@ components:
             builder.AppendLine($"                  $ref: '#/components/schemas/{modelPrefix}0'");
         }
 
+        builder.AppendLine("  /alpha/unused:");
+        builder.AppendLine("    get:");
+        builder.AppendLine("      operationId: getUnusedAlpha");
+        builder.AppendLine("      tags: [alpha]");
+        builder.AppendLine("      responses:");
+        builder.AppendLine("        '200':");
+        builder.AppendLine("          description: OK");
+        builder.AppendLine("          content:");
+        builder.AppendLine("            application/json:");
+        builder.AppendLine("              schema:");
+        builder.AppendLine("                $ref: '#/components/schemas/UnusedAlphaPayload'");
+
         builder.AppendLine("components:");
         builder.AppendLine("  schemas:");
+        builder.AppendLine("    UnusedAlphaPayload:");
+        builder.AppendLine("      type: object");
+        builder.AppendLine("      properties:");
+        builder.AppendLine("        unused:");
+        builder.AppendLine("          type: string");
         foreach (var tag in tags)
         {
             var modelPrefix = char.ToUpperInvariant(tag[0]) + tag.Substring(1) + "Model";
@@ -6442,6 +6480,10 @@ components:
                 builder.AppendLine($"    {modelPrefix}{index}:");
                 builder.AppendLine("      type: object");
                 builder.AppendLine("      properties:");
+                builder.AppendLine("        timestamp:");
+                builder.AppendLine("          type: string");
+                builder.AppendLine("          format: date-time");
+                builder.AppendLine("          nullable: true");
                 builder.AppendLine("        value:");
                 builder.AppendLine("          type: string");
                 builder.AppendLine("        description:");
@@ -6514,6 +6556,21 @@ components:
         rootSize.Should().BeLessThanOrEqualTo(
             leafSize + 16 * 1024,
             "the root facade should only add small client metadata to the same live tag graph");
+
+        foreach (var assembly in new[] { leafAssembly, rootAssembly })
+        {
+            using var stream = File.OpenRead(assembly);
+            using var image = new System.Reflection.PortableExecutable.PEReader(stream);
+            var metadata = System.Reflection.Metadata.PEReaderExtensions.GetMetadataReader(image);
+            var types = metadata.TypeDefinitions.Select(handle =>
+                metadata.GetString(metadata.GetTypeDefinition(handle).Name)).ToArray();
+            var methods = metadata.MethodDefinitions.Select(handle =>
+                metadata.GetString(metadata.GetMethodDefinition(handle).Name)).ToArray();
+            types.Should().Contain("AlphaModel0").And.NotContain("BetaModel0")
+                .And.NotContain("UnusedAlphaPayload");
+            methods.Should().NotContain(static name => name.Contains("UnusedAlphaPayload", StringComparison.Ordinal),
+                "the unused endpoint's serializer metadata must disappear along with its model");
+        }
     }
 
     private static async Task<string> PublishAndRunTreeShakeableConsumerAsync(

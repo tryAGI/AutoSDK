@@ -435,6 +435,12 @@ internal sealed class GenerateCommand : Command
         Description = "Infer serialization direction from the operation graph. With custom converters, set Metadata once for the whole context to omit unreachable fast-path writers; without converters, narrow safe individual registrations.",
     };
 
+    private Option<bool> SharedJsonMetadata { get; } = new(
+        name: "--shared-json-metadata")
+    {
+        Description = "Share JSON metadata factories across narrow contexts. Requires the build-only AutoSDK.JsonMetadata analyzer package; supports net10.0 monolithic SDKs.",
+    };
+
     private Option<int> JsonSerializerContextChunkSize { get; } = new(
         name: "--json-serializer-context-chunk-size")
     {
@@ -644,6 +650,7 @@ internal sealed class GenerateCommand : Command
         Options.Add(JsonSerializerContextName);
         Options.Add(GroupByTags);
         Options.Add(DirectionAwareJsonGenerationMode);
+        Options.Add(SharedJsonMetadata);
         Options.Add(JsonSerializerContextChunkSize);
         Options.Add(TypesNamespace);
         Options.Add(NamespaceDelimiter);
@@ -690,6 +697,11 @@ internal sealed class GenerateCommand : Command
         }
 
         var splitByTags = parseResult.GetRequiredValue(SplitByTags);
+        if (parseResult.GetRequiredValue(SharedJsonMetadata) &&
+            (splitByTags || !string.Equals(parseResult.GetRequiredValue(TargetFramework), "net10.0", StringComparison.OrdinalIgnoreCase)))
+        {
+            throw new ArgumentException("--shared-json-metadata requires a net10.0 monolithic SDK.");
+        }
         var groupByTags = parseResult.GetRequiredValue(GroupByTags);
         var packageIdValue = parseResult.GetRequiredValue(PackageId);
         var packagesOutputValue = parseResult.GetRequiredValue(PackagesOutput);
@@ -794,6 +806,7 @@ internal sealed class GenerateCommand : Command
             JsonSerializerContext = $"{namespaceValue}.{contextClassName}",
             GenerateJsonSerializerContextTypes = true,
             DirectionAwareJsonGenerationMode = parseResult.GetRequiredValue(DirectionAwareJsonGenerationMode),
+            UseSharedJsonMetadata = parseResult.GetRequiredValue(SharedJsonMetadata),
             JsonSerializerContextChunkSize = jsonSerializerContextChunkSize,
             GenerateModels = generateModels,
             IncludePaths = parseResult.GetRequiredValue(IncludePaths).ToImmutableArray(),

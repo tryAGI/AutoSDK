@@ -912,6 +912,7 @@ namespace {endPoint.Settings.Namespace}
             ? ";"
             : $@"
         {{
+{GenerateOperationJsonSerializerContext(endPoint)}
             var __pollingOptions = global::{endPoint.Settings.Namespace}.AutoSDKPollingSupport.ResolvePollingOptions(
                 pollingOptions: pollingOptions,
                 defaultInitialDelay: global::System.TimeSpan.FromSeconds({pollingOperation.DelaySeconds}),
@@ -1378,6 +1379,14 @@ namespace {endPoint.Settings.Namespace}
         }
     }
 
+    private static string GenerateOperationJsonSerializerContext(EndPoint endPoint)
+    {
+        return string.IsNullOrWhiteSpace(endPoint.JsonSerializerContextOverride)
+            ? TrimmedLine
+            : $@"            var JsonSerializerContext = JsonSerializerContextProvider?.Value ??
+                global::{endPoint.JsonSerializerContextOverride}.Default;";
+    }
+
     private static void AppendMethodCore(
         PooledStringBuilder builder,
         EndPoint endPoint,
@@ -1579,6 +1588,7 @@ namespace {endPoint.Settings.Namespace}
 
         builder.Append(@$"
         {{
+{GenerateOperationJsonSerializerContext(endPoint)}
 {(useMultipartStreamRequest
     ? GenerateMultipartStreamRequestInitialization(endPoint)
     : string.IsNullOrWhiteSpace(endPoint.RequestType.CSharpType) ||

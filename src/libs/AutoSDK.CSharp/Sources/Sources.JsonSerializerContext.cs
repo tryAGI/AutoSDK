@@ -39,6 +39,8 @@ public static partial class Sources
         IReadOnlyList<string>? fallbackContextNames = null,
         IReadOnlyCollection<ModelData>? models = null,
         bool includeFallbackConverters = true,
+        bool internalContext = false,
+        SharedJsonMetadataPlan? sharedMetadata = null,
         CancellationToken cancellationToken = default)
     {
         // Any non-null list -- empty included -- selects the chained shape. In a split family even
@@ -80,7 +82,7 @@ public static partial class Sources
                 typeComponents,
                 nullableValueTypes);
         var useChunkedContext =
-            hasFallbacks ||
+            hasFallbacks || sharedMetadata is not null ||
             serializableTypeSet.SerializableTypes?.Length > maxAttributesPerContext;
         if (useChunkedContext)
         {
@@ -106,7 +108,8 @@ public static partial class Sources
             return GenerateEmptyJsonSerializerContext(
                 client,
                 contextClassName,
-                deprecatedTypeNames);
+                deprecatedTypeNames,
+                internalContext);
         }
 
         if (useChunkedContext)
@@ -122,7 +125,9 @@ public static partial class Sources
                 maxAttributesPerContext,
                 fallbackContextNames,
                 deprecatedTypeNames,
-                includeFallbackConverters);
+                includeFallbackConverters,
+                internalContext,
+                sharedMetadata);
         }
 
         using var builder = new PooledStringBuilder(
@@ -138,7 +143,7 @@ namespace {client.Settings.Namespace}
         builder.Append('\n');
         AppendJsonSerializableAttributes(builder, jsonSerializableAttributes);
         builder.Append($@"
-    public sealed partial class {contextClassName} : global::System.Text.Json.Serialization.JsonSerializerContext
+    {(internalContext ? "internal" : "public")} sealed partial class {contextClassName} : global::System.Text.Json.Serialization.JsonSerializerContext
     {{
     }}
 }}");
@@ -200,7 +205,8 @@ namespace {client.Settings.Namespace}
     private static string GenerateEmptyJsonSerializerContext(
         Client client,
         string contextClassName,
-        IReadOnlyCollection<string> deprecatedTypeNames)
+        IReadOnlyCollection<string> deprecatedTypeNames,
+        bool internalContext = false)
     {
         using var builder = new PooledStringBuilder(
             1024 + client.Converters.Sum(static converter => converter.Length + 64));
@@ -213,7 +219,7 @@ namespace {client.Settings.Namespace}
 ");
         AppendJsonSourceGenerationOptionsAttribute(builder, client, deprecatedTypeNames: deprecatedTypeNames);
         builder.Append($@"
-    public sealed partial class {contextClassName} : global::System.Text.Json.Serialization.JsonSerializerContext
+    {(internalContext ? "internal" : "public")} sealed partial class {contextClassName} : global::System.Text.Json.Serialization.JsonSerializerContext
     {{
         private static readonly global::System.Text.Json.JsonSerializerOptions DefaultOptions = CreateDefaultOptions();
 
@@ -276,10 +282,13 @@ namespace {client.Settings.Namespace}
         int maxAttributesPerContext,
         IReadOnlyList<string>? fallbackContextNames = null,
         IReadOnlyCollection<string>? deprecatedTypeNames = null,
-        bool includeFallbackConverters = true)
+        bool includeFallbackConverters = true,
+        bool internalContext = false,
+        SharedJsonMetadataPlan? sharedMetadata = null)
     {
-        var chunks = SplitJsonSerializableAttributes(jsonSerializableAttributes, maxAttributesPerContext)
-            .ToArray();
+        var chunks = sharedMetadata is not null
+            ? Array.Empty<JsonSerializableAttributeRegistration[]>()
+            : SplitJsonSerializableAttributes(jsonSerializableAttributes, maxAttributesPerContext).ToArray();
         var chunkClassNames = chunks
             .Select((_, index) => $"{contextClassName}Chunk{index}")
             .ToArray();
@@ -289,6 +298,10 @@ namespace {client.Settings.Namespace}
         var resolverExpressions = chunkClassNames
             .Select(static className => $"new {className}(new global::System.Text.Json.JsonSerializerOptions())")
             .ToList();
+        if (sharedMetadata is not null && jsonSerializableAttributes.Length != 0)
+        {
+            resolverExpressions.Add("new SharedMetadataResolver()");
+        }
         if (fallbackContextNames is not null)
         {
             resolverExpressions.AddRange(fallbackContextNames.Select(static x => $"{x}.TypeInfoResolver"));
@@ -349,7 +362,7 @@ namespace {client.Settings.Namespace}
         }
 
         builder.Append($@"    {string.Empty.ToXmlDocumentationSummary(level: 4)}
-    public sealed partial class {contextClassName} : global::System.Text.Json.Serialization.JsonSerializerContext
+    {(internalContext ? "internal" : "public")} sealed partial class {contextClassName} : global::System.Text.Json.Serialization.JsonSerializerContext
     {{
         private static readonly global::System.Text.Json.Serialization.Metadata.IJsonTypeInfoResolver Resolver = new LazyChunkResolver();
 {(client.Settings.SplitByTags ? $@"
@@ -475,6 +488,11 @@ namespace {client.Settings.Namespace}
                 throw new global::System.NotSupportedException($""No generated enum converter is registered for '{typeToConvert}'."");
             }
         }");
+        }
+
+        if (sharedMetadata is not null && jsonSerializableAttributes.Length != 0)
+        {
+            AppendSharedMetadataResolver(builder, jsonSerializableAttributes, sharedMetadata);
         }
 
         builder.Append($@"
@@ -825,6 +843,20 @@ namespace {client.Settings.Namespace}
                 $"global::{client.Settings.Namespace}.{GetJsonSerializerContextTypesClassName(client)}",
                 "global::System.Collections.Generic.List<object>",
             };
+        if (client.Settings.UseSharedJsonMetadata)
+        {
+            // Ordinary STJ contexts discover these through emitted extension-data properties
+            // and collection metadata. Narrow resolvers must explicitly expose the same closure.
+            var extensionValue = client.Settings.GenerateRawModelData
+                ? "global::System.Text.Json.JsonElement" : "object";
+            contextTypes = contextTypes.Concat(new[]
+                {
+                    $"global::System.Collections.Generic.IDictionary<string, {extensionValue}>",
+                    "string",
+                    "object",
+                    "global::System.Text.Json.JsonElement",
+                }).ToArray();
+        }
         var serializableTypes = contextTypes
             .Concat(typeComponents.DistinctTypes)
             .Concat(contextNullableValueTypes)

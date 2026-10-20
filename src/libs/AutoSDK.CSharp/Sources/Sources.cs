@@ -313,6 +313,8 @@ public static partial class Sources
         IReadOnlyList<string>? fallbackContextNames = null,
         IReadOnlyCollection<ModelData>? models = null,
         bool includeFallbackConverters = true,
+        bool internalContext = false,
+        SharedJsonMetadataPlan? sharedMetadata = null,
         CancellationToken cancellationToken = default)
     {
         if (!client.Settings.FromCli ||
@@ -340,6 +342,8 @@ public static partial class Sources
                 fallbackContextNames,
                 models,
                 includeFallbackConverters,
+                internalContext,
+                sharedMetadata,
                 cancellationToken));
     }
 

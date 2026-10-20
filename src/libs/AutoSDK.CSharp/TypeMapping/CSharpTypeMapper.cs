@@ -84,7 +84,7 @@ public static class CSharpTypeMapper
                     CSharpTypeNullability: GetCSharpNullability(context),
                     IsBaseClass: false,
                     IsDerivedClass: false,
-                    IsValueType: IsValueType(context),
+                    IsValueType: IsKnownValueType(cachedType) || IsValueType(context),
                     IsNullable: context.IsNullable || context.IsNullableAnyOfLike,
                     IsArray: false,
                     IsEnum: false,
@@ -205,7 +205,7 @@ public static class CSharpTypeMapper
             CSharpTypeNullability: GetCSharpNullability(context),
             IsBaseClass: context.IsBaseClass,
             IsDerivedClass: context.IsDerivedClass,
-            IsValueType: IsValueType(context),
+            IsValueType: IsKnownValueType(type) || IsValueType(context),
             IsNullable: isNullable,
             IsArray: isArray,
             IsEnum: isEnum,
@@ -306,6 +306,13 @@ public static class CSharpTypeMapper
             UsesGeneratedJsonHelpers = false,
         }).WithCSharpComputedValues();
     }
+
+    // A nullable union can collapse to a BCL struct even though its parent schema no longer
+    // has the original scalar type/format. Classify the emitted runtime type in that case.
+    private static bool IsKnownValueType(string type) => type is
+        "bool" or "byte" or "sbyte" or "short" or "ushort" or "int" or "uint" or "long" or "ulong"
+        or "float" or "double" or "decimal" or "char"
+        or "global::System.DateTime" or "global::System.DateTimeOffset" or "global::System.Guid";
 
     public static bool IsValueType(SchemaContext context)
     {

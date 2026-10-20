@@ -98,6 +98,9 @@ public record struct CSharpSettings(
     string PackageMapPath,
     string StrongNamePublicKey)
 {
+    /// <summary>Use the build-only shared JSON metadata generator.</summary>
+    public bool UseSharedJsonMetadata { get; set; }
+
     /// <summary>Maximum explicit registrations per generated JSON context.</summary>
     public int JsonSerializerContextChunkSize { get; set; } = Settings.DefaultJsonSerializerContextChunkSize;
 
@@ -219,6 +222,7 @@ public record struct CSharpSettings(
             StrongNamePublicKey: settings.StrongNamePublicKey)
         {
             JsonSerializerContextChunkSize = settings.JsonSerializerContextChunkSize,
+            UseSharedJsonMetadata = settings.UseSharedJsonMetadata,
         };
     }
 
@@ -338,6 +342,7 @@ public record struct CSharpSettings(
             StrongNamePublicKey: StrongNamePublicKey)
         {
             JsonSerializerContextChunkSize = JsonSerializerContextChunkSize,
+            UseSharedJsonMetadata = UseSharedJsonMetadata,
         };
     }
 

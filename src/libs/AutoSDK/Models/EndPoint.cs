@@ -54,6 +54,8 @@ public record struct EndPoint(
     string PaginationNextUrlPropertyPath = ""
 )
 {
+    public string JsonSerializerContextOverride { get; set; } = string.Empty;
+
     public bool Stream => StreamFormat != StreamFormat.None;
     public bool RawStream => StreamFormat == StreamFormat.Binary;
     public bool EnumerableStream => Stream && !RawStream;
