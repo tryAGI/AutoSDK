@@ -74,6 +74,13 @@ components:
     Shared:
       type: object
       properties:
+        timestamps:
+          type: array
+          items:
+            anyOf:
+              - type: string
+                format: date
+              - type: 'null'
         timestamp:
           anyOf:
             - type: string
@@ -146,6 +153,25 @@ components:
             type.IsValueType &&
             type.CSharpTypeWithoutNullability == "global::System.DateTime" &&
             type.CSharpTypeWithNullability == "global::System.DateTime?");
+    }
+
+    [TestMethod]
+    public void SharedMetadata_RegistersNullableScalarsInsideCollectionGraphs()
+    {
+        var data = Prepare();
+        data = data with
+        {
+            Converters = data.Converters with
+            {
+                Settings = data.Converters.Settings with { UseSharedJsonMetadata = true },
+            },
+        };
+        var files = CSharpPipeline.GenerateFiles(data);
+        files.Where(static file => file.Name.EndsWith(".JsonSerializerContext.g.cs", StringComparison.Ordinal))
+            .Should().Contain(static file =>
+                file.Text.Contains("if (type == typeof(global::System.DateTime?))", StringComparison.Ordinal));
+        files.Single(static file => file.Name.EndsWith(".autosdk-json-metadata", StringComparison.Ordinal))
+            .Text.Should().Contain("typeof(global::System.DateTime?)");
     }
 
     [TestMethod]

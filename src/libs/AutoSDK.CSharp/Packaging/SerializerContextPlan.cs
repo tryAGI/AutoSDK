@@ -278,12 +278,31 @@ internal sealed class SerializerContextPlan
         // Nullable scalar unions can lose the parent schema's value-type flag when collapsed.
         // JSON metadata follows the emitted runtime type. Keep this normalization local so
         // existing model signatures and PrepareArguments ref/value hooks remain unchanged.
-        return type.CSharpTypeWithoutNullability is
-            "bool" or "byte" or "sbyte" or "short" or "ushort" or "int" or "uint" or "long" or "ulong"
-            or "float" or "double" or "decimal" or "char"
-            or "global::System.DateTime" or "global::System.DateTimeOffset" or "global::System.Guid"
-            ? type with { IsValueType = true } : type;
+        type = NormalizeRuntimeType(type);
+        if (!type.SubTypes.IsEmpty)
+        {
+            // Nullable discovery also inspects immediate collection/union children. Normalize
+            // that view as well; the graph walk separately visits deeper descendants.
+            type = type with
+            {
+                SubTypes = type.SubTypes.Select(static boxed =>
+                        NormalizeRuntimeType(boxed.Unbox<TypeData>()).Box())
+                    .ToImmutableArray().AsEquatableArray(),
+            };
+        }
+        return type;
     }
+
+    private static TypeData NormalizeRuntimeType(TypeData type) =>
+        type.CSharpTypeWithoutNullability switch
+        {
+            "bool" or "byte" or "sbyte" or "short" or "ushort" or "int" or "uint" or "long" or "ulong"
+                or "float" or "double" or "decimal" or "char"
+                or "global::System.DateTime" or "global::System.DateTimeOffset" or "global::System.Guid"
+                => type with { IsValueType = true },
+            "string" or "object" or "byte[]" => type with { IsValueType = false },
+            _ => type,
+        };
 
     internal static string GetContextName(Settings settings, string kind, string identity)
     {
