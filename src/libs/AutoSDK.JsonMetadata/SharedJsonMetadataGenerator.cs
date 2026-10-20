@@ -107,7 +107,8 @@ public sealed class SharedJsonMetadataGenerator : IIncrementalGenerator
                 {
                     message += " [" + warning.Location.GetLineSpan() + "]";
                 }
-                output.ReportDiagnostic(Diagnostic.Create(UpstreamWarning, location, message));
+                output.ReportDiagnostic(Diagnostic.Create(UpstreamWarning, location, warning.Severity,
+                    additionalLocations: null, properties: null, messageArgs: [message]));
             }
         }
 

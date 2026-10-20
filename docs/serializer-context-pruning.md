@@ -37,10 +37,12 @@ members. Scopes without supplements compile the optional hook away.
 It passes the caller's serializer options through resolver chains.
 The analyzer and Roslyn are not runtime dependencies, and the CLI does not depend
 on this compiler component. Unsupported changes in the pinned generator's source
-shape produce AMETA001 instead of enabling reflection fallback. The nested driver
-currently forwards errors but not warnings; warning propagation is tracked in
-[#437](https://github.com/tryAGI/AutoSDK/issues/437). Reported C# warning counts do
-not establish full nested-driver diagnostic coverage.
+shape produce AMETA001 instead of enabling reflection fallback. Nested STJ warnings
+are forwarded as AMETA002 with the original SYSLIB ID/message and source or manifest
+provenance. TreatWarningsAsErrors rejects these warnings. Ordinary-context warnings
+remain owned by the framework generator and are not duplicated. The comparison run
+is performed only when nested warnings exist; supported warning-free SDKs do not
+pay for a second generator run. See [#437](https://github.com/tryAGI/AutoSDK/issues/437).
 
 The public aggregate context remains available for explicit serialization of
 arbitrary SDK models. Reading or explicitly assigning that context retains its
@@ -78,7 +80,9 @@ scalar unions, and settings round trips.
 
 `SharedJsonMetadataTests` checks compilable static factories, coexistence with
 ordinary STJ contexts, partial-member/collection/cyclic/ignored dependencies,
-rejection of instance writers, and projects without manifests.
+rejection of instance writers, projects without manifests, inaccessible-member
+warning propagation, warnings-as-errors, ordinary-context diagnostic deduplication,
+and additional-manifest diagnostic provenance.
 
 `Generate_LargeMultiTagClient_TrimmedLeafRetainsOnlyReachableSerializerGraph`
 uses 40 tags with 36 models each and an unused endpoint within the live tag.

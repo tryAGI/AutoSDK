@@ -147,9 +147,12 @@ public partial class Scope
     }
 
     [TestMethod]
-    public void Generate_ForwardsWarningsAndHonorsWarningsAsErrors()
+    [DataRow(true, false)]
+    [DataRow(false, true)]
+    public void Generate_ForwardsWarningsAndHonorsWarningsAsErrors(bool warningsAsErrors, bool specificWarningsAsErrors)
     {
-        var (_, result) = Generate("Metadata", warningsAsErrors: true, extraSource: """
+        var (_, result) = Generate("Metadata", warningsAsErrors: warningsAsErrors,
+            specificWarningsAsErrors: specificWarningsAsErrors, extraSource: """
 namespace Fixture;
 public sealed partial class Used
 {
@@ -190,7 +193,7 @@ public sealed partial class Used
             "a manifest location outside the user compilation must not crash the generator");
     }
 
-    private static (Compilation Compilation, GeneratorDriverRunResult Result) Generate(string mode, bool ordinaryContext = false, string? extraSource = null, bool warningsAsErrors = false, bool duplicateTypeInfoNames = false)
+    private static (Compilation Compilation, GeneratorDriverRunResult Result) Generate(string mode, bool ordinaryContext = false, string? extraSource = null, bool warningsAsErrors = false, bool duplicateTypeInfoNames = false, bool specificWarningsAsErrors = false)
     {
         var nameOverride = duplicateTypeInfoNames ? ", TypeInfoPropertyName = \"Collision\"" : string.Empty;
         var manifest = $$"""
@@ -206,7 +209,10 @@ internal sealed partial class SharedMetadata : global::System.Text.Json.Serializ
             [CSharpSyntaxTree.ParseText(Models)], References,
             new CSharpCompilationOptions(OutputKind.DynamicallyLinkedLibrary,
                 nullableContextOptions: NullableContextOptions.Enable,
-                generalDiagnosticOption: warningsAsErrors ? ReportDiagnostic.Error : ReportDiagnostic.Default));
+                generalDiagnosticOption: warningsAsErrors ? ReportDiagnostic.Error : ReportDiagnostic.Default,
+                specificDiagnosticOptions: specificWarningsAsErrors
+                    ? new Dictionary<string, ReportDiagnostic> { ["SYSLIB1038"] = ReportDiagnostic.Error }
+                    : null));
         if (extraSource is not null)
         {
             compilation = compilation.AddSyntaxTrees(CSharpSyntaxTree.ParseText(extraSource));
