@@ -18,19 +18,23 @@ public sealed class SharedJsonMetadataGenerator : IIncrementalGenerator
         "AMETA001", "Shared JSON metadata generation failed",
         "{0}", "AutoSDK.JsonMetadata", DiagnosticSeverity.Error, isEnabledByDefault: true);
 
+    private static readonly DiagnosticDescriptor UpstreamWarning = new(
+        "AMETA002", "System.Text.Json source generation warning",
+        "{0}", "AutoSDK.JsonMetadata", DiagnosticSeverity.Warning, isEnabledByDefault: true);
+
     /// <inheritdoc />
     public void Initialize(IncrementalGeneratorInitializationContext context)
     {
         var manifests = context.AdditionalTextsProvider
             .Where(static file => file.Path.EndsWith(".autosdk-json-metadata", StringComparison.Ordinal))
-            .Select(static (file, token) => file.GetText(token))
+            .Select(static (file, token) => (Path: file.Path, Text: file.GetText(token)))
             .Collect();
         context.RegisterSourceOutput(context.CompilationProvider.Combine(manifests),
             static (output, input) => Generate(output, input.Left, input.Right));
     }
 
     private static void Generate(SourceProductionContext output, Compilation compilation,
-        ImmutableArray<SourceText?> manifests)
+        ImmutableArray<(string Path, SourceText? Text)> manifests)
     {
         if (manifests.IsEmpty)
         {
@@ -47,14 +51,14 @@ public sealed class SharedJsonMetadataGenerator : IIncrementalGenerator
         var sources = new List<SyntaxTree>(manifests.Length);
         for (var index = 0; index < manifests.Length; index++)
         {
-            if (manifests[index] is not { } text)
+            if (manifests[index].Text is not { } text)
             {
                 output.ReportDiagnostic(Diagnostic.Create(IncompatibleOutput, Location.None,
                     "A shared JSON metadata manifest could not be read."));
                 return;
             }
             sources.Add(CSharpSyntaxTree.ParseText(text, parseOptions,
-                path: "AutoSDK.SharedMetadata.Manifest" + index.ToString(System.Globalization.CultureInfo.InvariantCulture) + ".cs",
+                path: manifests[index].Path,
                 cancellationToken: output.CancellationToken));
         }
 
@@ -72,11 +76,38 @@ public sealed class SharedJsonMetadataGenerator : IIncrementalGenerator
         var result = driver.GetRunResult();
         foreach (var diagnostic in result.Diagnostics)
         {
-            if (diagnostic.Severity == DiagnosticSeverity.Error)
+            if (diagnostic.Severity == DiagnosticSeverity.Error && diagnostic.DefaultSeverity != DiagnosticSeverity.Warning)
             {
                 output.ReportDiagnostic(Diagnostic.Create(IncompatibleOutput, Location.None,
                     diagnostic.ToString()));
                 return;
+            }
+        }
+
+        var warnings = result.Diagnostics.Where(static diagnostic =>
+            diagnostic.DefaultSeverity == DiagnosticSeverity.Warning).ToArray();
+        if (warnings.Length > 0)
+        {
+            // The framework generator reports ordinary-context warnings itself. Only run the
+            // comparison on a warning path; supported SDKs pay no second generation cost.
+            var ordinary = driver.RunGenerators(csharp, output.CancellationToken).GetRunResult();
+            var alreadyReported = new HashSet<string>(ordinary.Diagnostics
+                .Where(static diagnostic => diagnostic.DefaultSeverity == DiagnosticSeverity.Warning)
+                .Select(DiagnosticIdentity), StringComparer.Ordinal);
+            foreach (var warning in warnings)
+            {
+                if (alreadyReported.Contains(DiagnosticIdentity(warning)))
+                {
+                    continue;
+                }
+                var location = warning.Location.SourceTree is { } tree && csharp.SyntaxTrees.Contains(tree)
+                    ? warning.Location : Location.None;
+                var message = warning.Id + ": " + warning.GetMessage(System.Globalization.CultureInfo.InvariantCulture);
+                if (location == Location.None && warning.Location != Location.None)
+                {
+                    message += " [" + warning.Location.GetLineSpan() + "]";
+                }
+                output.ReportDiagnostic(Diagnostic.Create(UpstreamWarning, location, message));
             }
         }
 
@@ -126,6 +157,10 @@ public sealed class SharedJsonMetadataGenerator : IIncrementalGenerator
         }
         MetadataDependencyResolvers.Generate(output, csharp, factorySources);
     }
+
+    private static string DiagnosticIdentity(Diagnostic diagnostic) => diagnostic.Id + "\n" +
+        diagnostic.GetMessage(System.Globalization.CultureInfo.InvariantCulture) + "\n" +
+        diagnostic.Location.GetLineSpan() + "\n" + diagnostic.Location.SourceSpan;
 
     private sealed class FactoryRewriter : CSharpSyntaxRewriter
     {

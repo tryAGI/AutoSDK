@@ -146,21 +146,67 @@ public partial class Scope
         document.RootElement.TryGetProperty("Ignored", out _).Should().BeFalse();
     }
 
-    private static (Compilation Compilation, GeneratorDriverRunResult Result) Generate(string mode, bool ordinaryContext = false, string? extraSource = null)
+    [TestMethod]
+    public void Generate_ForwardsWarningsAndHonorsWarningsAsErrors()
     {
+        var (_, result) = Generate("Metadata", warningsAsErrors: true, extraSource: """
+namespace Fixture;
+public sealed partial class Used
+{
+    [System.Text.Json.Serialization.JsonInclude]
+    private string? Hidden { get; set; }
+}
+""");
+        result.Diagnostics.Should().Contain(static diagnostic =>
+            diagnostic.Id == "AMETA002" && diagnostic.Severity == DiagnosticSeverity.Error &&
+            diagnostic.GetMessage().Contains("SYSLIB1038", StringComparison.Ordinal));
+    }
+
+    [TestMethod]
+    public void Generate_DoesNotRepeatOrdinaryContextWarnings()
+    {
+        var (_, result) = Generate("Metadata", ordinaryContext: true, extraSource: """
+namespace Fixture;
+public sealed partial class Used
+{
+    [System.Text.Json.Serialization.JsonInclude]
+    private string? Hidden { get; set; }
+}
+""");
+        result.Diagnostics.Count(static diagnostic => diagnostic.Id is "SYSLIB1038" or "AMETA002")
+            .Should().Be(1, "the framework generator already reports this ordinary-context warning");
+        result.Diagnostics.Should().Contain(static diagnostic => diagnostic.Id == "SYSLIB1038");
+        result.Diagnostics.Should().NotContain(static diagnostic => diagnostic.Id == "AMETA002");
+    }
+
+    [TestMethod]
+    public void Generate_PreservesWarningProvenanceFromAdditionalManifests()
+    {
+        var (_, result) = Generate("Metadata", duplicateTypeInfoNames: true);
+        result.Diagnostics.Should().Contain(static diagnostic => diagnostic.Id == "AMETA002" &&
+            diagnostic.GetMessage().Contains("SYSLIB1031", StringComparison.Ordinal) &&
+            diagnostic.GetMessage().Contains("Fixture.autosdk-json-metadata", StringComparison.Ordinal));
+        result.Diagnostics.Should().NotContain(static diagnostic => diagnostic.Id == "CS8785",
+            "a manifest location outside the user compilation must not crash the generator");
+    }
+
+    private static (Compilation Compilation, GeneratorDriverRunResult Result) Generate(string mode, bool ordinaryContext = false, string? extraSource = null, bool warningsAsErrors = false, bool duplicateTypeInfoNames = false)
+    {
+        var nameOverride = duplicateTypeInfoNames ? ", TypeInfoPropertyName = \"Collision\"" : string.Empty;
         var manifest = $$"""
 #nullable enable
 namespace Fixture;
 [global::System.Text.Json.Serialization.JsonSourceGenerationOptions(
     GenerationMode = global::System.Text.Json.Serialization.JsonSourceGenerationMode.{{mode}})]
-[global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Fixture.Used))]
-[global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Fixture.Unused))]
+[global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Fixture.Used){{nameOverride}})]
+[global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Fixture.Unused){{nameOverride}})]
 internal sealed partial class SharedMetadata : global::System.Text.Json.Serialization.JsonSerializerContext { }
 """;
         var compilation = CSharpCompilation.Create("MetadataFixture",
             [CSharpSyntaxTree.ParseText(Models)], References,
             new CSharpCompilationOptions(OutputKind.DynamicallyLinkedLibrary,
-                nullableContextOptions: NullableContextOptions.Enable));
+                nullableContextOptions: NullableContextOptions.Enable,
+                generalDiagnosticOption: warningsAsErrors ? ReportDiagnostic.Error : ReportDiagnostic.Default));
         if (extraSource is not null)
         {
             compilation = compilation.AddSyntaxTrees(CSharpSyntaxTree.ParseText(extraSource));
