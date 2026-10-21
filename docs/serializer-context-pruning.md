@@ -134,6 +134,8 @@ modes run in CI independently of source compilation.
 
 ## Real SDK acceptance
 
-See the [OpenAI and AppStoreConnect comparison](benchmarks/shared-json-metadata-20261021.md)
-for source/build/package costs, retained DTOs and factories, NativeAOT contracts,
-warm repeated publishes, and remaining symbol/cache limitations.
+See the [directed-components comparison](benchmarks/shared-json-components-20261021.md)
+for the current CLI/analyzer coordination, model-helper retention, whole SDK costs,
+NativeAOT, repeated publishes, Docker layers and measured context overhead.
+The [initial comparison](benchmarks/shared-json-metadata-20261021.md) preserves the
+older aggregate-fallback baseline and symbol/cache limitations.

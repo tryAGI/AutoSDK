@@ -1,0 +1,1666 @@
+{
+  "schemaVersion": 1,
+  "dateUtc": "2026-10-21",
+  "generatorCommit": "35d7033f4d1101ce84242e7d2ff2e32d7e9a71ea",
+  "sourceLinkedGeneratorFixCommit": "3d3b0ef7fb802e32cb0ffde3e27802d8ed0cab5c",
+  "publishedVersion": "0.35.0-preview.2.113",
+  "manifestProtocol": 2,
+  "environment": {
+    "sdk": "10.0.402",
+    "runtime": "10.0.13",
+    "architecture": "linux-arm64",
+    "cpuLimit": 2,
+    "sourceMemoryGiB": 16,
+    "consumerMemoryGiB": 6,
+    "swap": false,
+    "timing": "process seconds exclude host admission queue; single samples with warmed NuGet/runtime packs"
+  },
+  "cases": {
+    "OpenAI": {
+      "sourceBase": "f2fedc5807e4d697f58f4e1b116c71e8ee6b94b9",
+      "before": {
+        "generatorAssemblies": {
+          "AutoSDK.CSharp.dll": "856cd4c3aa859f7371051f044d58bb540aade9ed17330b2d3275cf413e76e2e1",
+          "AutoSDK.Docs.dll": "ff4caecfcbd4d9ffc8e7e9a2a382b75147e134c5001ad4e17b4b66e19ba5cfca",
+          "AutoSDK.CLI.dll": "26469b071abefc65f4b8299851e82683228d0a40f2ec56bd10f92608742b025d",
+          "AutoSDK.dll": "5442040e4063f24ff8f10796a6f959c8065b7510d06cd340bc0a5f09de8d19ac"
+        },
+        "generationCommand": [
+          "dotnet",
+          "/work/candidate-cli/AutoSDK.CLI.dll",
+          "generate",
+          "openapi.yaml",
+          "--namespace",
+          "tryAGI.OpenAI",
+          "--clientClassName",
+          "OpenAiClient",
+          "--targetFramework",
+          "net10.0",
+          "--output",
+          "Generated",
+          "--exclude-deprecated-operations",
+          "--generate-http-exception-hierarchy",
+          "--generate-retry-handler",
+          "--generate-pageable-helpers",
+          "--generate-multipart-upload-helpers",
+          "--ignore-openapi-errors",
+          "--direction-aware-json-generation-mode",
+          "--json-serializer-context-chunk-size",
+          "2000",
+          "--shared-json-metadata"
+        ],
+        "generate": {
+          "seconds": 10.426144500030205,
+          "exitCode": 0,
+          "log": "/Users/havendv/.cache/advantage/sdk-footprint/aggregate-retention-20261020/OpenAI-candidate-generate.log",
+          "peakCgroupBytes": 464891904
+        },
+        "source": {
+          "files": 15406,
+          "bytes": 100512906,
+          "contextFiles": 910,
+          "contextBytes": 24416034,
+          "registrations": 383
+        },
+        "build": {
+          "seconds": 171.48923262488097,
+          "exitCode": 0,
+          "log": "/Users/havendv/.cache/advantage/sdk-footprint/aggregate-retention-20261020/OpenAI-candidate-build.log",
+          "processSeconds": 163.586,
+          "userSeconds": 203.497,
+          "systemSeconds": 10.401,
+          "peakCgroupBytes": 10359869440
+        },
+        "noop": {
+          "seconds": 215.3650198339019,
+          "exitCode": 0,
+          "log": "/Users/havendv/.cache/advantage/sdk-footprint/aggregate-retention-20261020/OpenAI-candidate-noop.log",
+          "processSeconds": 3.455,
+          "userSeconds": 2.041,
+          "systemSeconds": 0.342,
+          "peakCgroupBytes": 139235328
+        },
+        "untrimmedDlls": {
+          "artifacts/OpenAIcandidate/bin/tryAGI.OpenAI/release_net10.0/tryAGI.OpenAI.dll": 73027072
+        },
+        "compilerGenerated": {
+          "files": 23829,
+          "bytes": 138532696
+        },
+        "package": {
+          "id": "tryAGI.OpenAI",
+          "version": "0.0.0-retention-candidate-f16ca28b0a5c",
+          "path": "feed/OpenAIcandidate/tryAGI.OpenAI.0.0.0-retention-candidate-f16ca28b0a5c.nupkg",
+          "bytes": 17643279,
+          "dllSha256": "f16ca28b0a5c70af45229c9829364fb8dc4d9f20252bdbd4292c3218de412ae6",
+          "result": {
+            "seconds": 3.512418291065842,
+            "exitCode": 0,
+            "log": "/Users/havendv/.cache/advantage/sdk-footprint/aggregate-retention-20261020/OpenAI-candidate-pack.log"
+          }
+        }
+      },
+      "after": {
+        "generatorAssemblies": {
+          "AutoSDK.CSharp.dll": "bac92eed0d27ab89d66b371640333a1313675457dd135a2ef222e07199a14752",
+          "AutoSDK.Docs.dll": "adbd95be6ac61cf63733f9a607c248116bd8d3f5973e6d9a80020427eacc86b3",
+          "AutoSDK.CLI.dll": "6e19d077c3baa75770d4e5729c83f773339fd85fd2e467045e0cea20ae8ca7d6",
+          "AutoSDK.dll": "17a4a6552271639921f41c011ffc86ac058be6f356260956e4d34c932b133250"
+        },
+        "generationCommand": [
+          "dotnet",
+          "/work/candidate-cli/AutoSDK.CLI.dll",
+          "generate",
+          "openapi.yaml",
+          "--namespace",
+          "tryAGI.OpenAI",
+          "--clientClassName",
+          "OpenAiClient",
+          "--targetFramework",
+          "net10.0",
+          "--output",
+          "Generated",
+          "--exclude-deprecated-operations",
+          "--generate-http-exception-hierarchy",
+          "--generate-retry-handler",
+          "--generate-pageable-helpers",
+          "--generate-multipart-upload-helpers",
+          "--ignore-openapi-errors",
+          "--direction-aware-json-generation-mode",
+          "--json-serializer-context-chunk-size",
+          "2000",
+          "--shared-json-metadata"
+        ],
+        "generate": {
+          "seconds": 13.867105917073786,
+          "exitCode": 0,
+          "log": "/Users/havendv/.cache/advantage/sdk-footprint/autosdk-components-final-20261021/OpenAI-candidate-generate.log",
+          "peakCgroupBytes": 494043136
+        },
+        "source": {
+          "files": 20727,
+          "bytes": 103801918,
+          "contextFiles": 6230,
+          "contextBytes": 27611676,
+          "registrations": 383
+        },
+        "build": {
+          "seconds": 109.45821604202501,
+          "exitCode": 0,
+          "log": "/Users/havendv/.cache/advantage/sdk-footprint/autosdk-components-final-20261021/OpenAI-candidate-build.log",
+          "processSeconds": 96.035,
+          "userSeconds": 129.466,
+          "systemSeconds": 5.334,
+          "peakCgroupBytes": 6988107776
+        },
+        "noop": {
+          "seconds": 18.485300874803215,
+          "exitCode": 0,
+          "log": "/Users/havendv/.cache/advantage/sdk-footprint/autosdk-components-final-20261021/OpenAI-candidate-noop.log",
+          "processSeconds": 3.325,
+          "userSeconds": 2.475,
+          "systemSeconds": 0.318,
+          "peakCgroupBytes": 149311488
+        },
+        "untrimmedDlls": {
+          "artifacts/OpenAIcandidate/bin/tryAGI.OpenAI/release_net10.0/tryAGI.OpenAI.dll": 53840896
+        },
+        "compilerGenerated": {
+          "files": 12893,
+          "bytes": 55287038
+        },
+        "package": {
+          "id": "tryAGI.OpenAI",
+          "version": "0.0.0-retention-candidate-85db2ff04386",
+          "path": "feed/OpenAIcandidate/tryAGI.OpenAI.0.0.0-retention-candidate-85db2ff04386.nupkg",
+          "bytes": 12477394,
+          "dllSha256": "85db2ff04386dc7acb35b57972aedc4d2533b06037dde2e08fc0f036b1dfb652",
+          "result": {
+            "seconds": 3.0595897079911083,
+            "exitCode": 0,
+            "log": "/Users/havendv/.cache/advantage/sdk-footprint/autosdk-components-final-20261021/OpenAI-candidate-pack.log"
+          }
+        }
+      },
+      "consumers": {
+        "leaf": {
+          "publish": {
+            "seconds": 21.37020791717805,
+            "exitCode": 0,
+            "log": "/Users/havendv/.cache/advantage/sdk-footprint/autosdk-components-final-20261021/OpenAICandidateLeaf-publish.log",
+            "processSeconds": 10.984,
+            "userSeconds": 13.875,
+            "systemSeconds": 1.245,
+            "memoryGiB": 6,
+            "peakCgroupBytes": 2346807296
+          },
+          "packageVersion": "0.0.0-retention-candidate-85db2ff04386",
+          "packageDllSha256": "85db2ff04386dc7acb35b57972aedc4d2533b06037dde2e08fc0f036b1dfb652",
+          "runtime": {
+            "seconds": 0.5672007910907269,
+            "exitCode": 0,
+            "log": "/Users/havendv/.cache/advantage/sdk-footprint/autosdk-components-final-20261021/OpenAICandidateLeaf-runtime.log"
+          },
+          "sdkBytes": 121856,
+          "passed": true
+        },
+        "helper": {
+          "publish": {
+            "seconds": 19.52891866583377,
+            "exitCode": 0,
+            "log": "/Users/havendv/.cache/advantage/sdk-footprint/autosdk-components-final-20261021/OpenAICandidateHelper-publish.log",
+            "processSeconds": 9.381,
+            "userSeconds": 11.947,
+            "systemSeconds": 1.052,
+            "memoryGiB": 6,
+            "peakCgroupBytes": 2295443456
+          },
+          "packageVersion": "0.0.0-retention-candidate-85db2ff04386",
+          "packageDllSha256": "85db2ff04386dc7acb35b57972aedc4d2533b06037dde2e08fc0f036b1dfb652",
+          "runtime": {
+            "seconds": 0.4650612089317292,
+            "exitCode": 0,
+            "log": "/Users/havendv/.cache/advantage/sdk-footprint/autosdk-components-final-20261021/OpenAICandidateHelper-runtime.log"
+          },
+          "sdkBytes": 38400,
+          "passed": true
+        },
+        "chat": {
+          "publish": {
+            "seconds": 21.314117084024474,
+            "exitCode": 0,
+            "log": "/Users/havendv/.cache/advantage/sdk-footprint/autosdk-components-final-20261021/OpenAICandidateChat-publish.log",
+            "processSeconds": 11.381,
+            "userSeconds": 14.29,
+            "systemSeconds": 1.175,
+            "memoryGiB": 6,
+            "peakCgroupBytes": 2373394432
+          },
+          "packageVersion": "0.0.0-retention-candidate-85db2ff04386",
+          "packageDllSha256": "85db2ff04386dc7acb35b57972aedc4d2533b06037dde2e08fc0f036b1dfb652",
+          "runtime": {
+            "seconds": 0.5645559581462294,
+            "exitCode": 0,
+            "log": "/Users/havendv/.cache/advantage/sdk-footprint/autosdk-components-final-20261021/OpenAICandidateChat-runtime.log"
+          },
+          "sdkBytes": 1110528,
+          "passed": true
+        },
+        "wrapper": {
+          "publish": {
+            "seconds": 19.828658750047907,
+            "exitCode": 0,
+            "log": "/Users/havendv/.cache/advantage/sdk-footprint/autosdk-components-final-20261021/OpenAICandidateWrapper-publish.log",
+            "processSeconds": 9.632,
+            "userSeconds": 12.122,
+            "systemSeconds": 1.04,
+            "memoryGiB": 6,
+            "peakCgroupBytes": 2290589696
+          },
+          "packageVersion": "0.0.0-retention-candidate-85db2ff04386",
+          "packageDllSha256": "85db2ff04386dc7acb35b57972aedc4d2533b06037dde2e08fc0f036b1dfb652",
+          "runtime": {
+            "seconds": 0.4378007920458913,
+            "exitCode": 0,
+            "log": "/Users/havendv/.cache/advantage/sdk-footprint/autosdk-components-final-20261021/OpenAICandidateWrapper-runtime.log"
+          },
+          "sdkBytes": 23040,
+          "passed": true
+        },
+        "root": {
+          "publish": {
+            "seconds": 24.58339908416383,
+            "exitCode": 0,
+            "log": "/Users/havendv/.cache/advantage/sdk-footprint/autosdk-components-final-20261021/OpenAICandidateRoot-publish.log",
+            "processSeconds": 12.196,
+            "userSeconds": 14.757,
+            "systemSeconds": 1.21,
+            "memoryGiB": 6,
+            "peakCgroupBytes": 2370433024
+          },
+          "packageVersion": "0.0.0-retention-candidate-85db2ff04386",
+          "packageDllSha256": "85db2ff04386dc7acb35b57972aedc4d2533b06037dde2e08fc0f036b1dfb652",
+          "runtime": {
+            "seconds": 0.5812717920634896,
+            "exitCode": 0,
+            "log": "/Users/havendv/.cache/advantage/sdk-footprint/autosdk-components-final-20261021/OpenAICandidateRoot-runtime.log"
+          },
+          "sdkBytes": 123392,
+          "passed": true
+        }
+      },
+      "nativeConsumers": {
+        "root": {
+          "publish": {
+            "seconds": 20.459809832973406,
+            "exitCode": 0,
+            "log": "/Users/havendv/.cache/advantage/sdk-footprint/autosdk-components-final-20261021/OpenAICandidateNativeRoot-publish.log",
+            "processSeconds": 10.517,
+            "userSeconds": 13.274,
+            "systemSeconds": 0.773,
+            "memoryGiB": 6,
+            "peakCgroupBytes": 765923328
+          },
+          "packageVersion": "0.0.0-retention-candidate-85db2ff04386",
+          "packageDllSha256": "85db2ff04386dc7acb35b57972aedc4d2533b06037dde2e08fc0f036b1dfb652",
+          "runtime": {
+            "seconds": 0.5396240409463644,
+            "exitCode": 0,
+            "log": "/Users/havendv/.cache/advantage/sdk-footprint/autosdk-components-final-20261021/OpenAICandidateNativeRoot-runtime.log"
+          },
+          "nativeExecutableBytes": 7619896,
+          "publishedBytes": 20604000,
+          "debugBytes": 12984104,
+          "passed": true
+        },
+        "helper": {
+          "publish": {
+            "seconds": 17.360701041994616,
+            "exitCode": 0,
+            "log": "/Users/havendv/.cache/advantage/sdk-footprint/autosdk-components-final-20261021/OpenAICandidateNativeHelper-publish.log",
+            "processSeconds": 6.731,
+            "userSeconds": 7.84,
+            "systemSeconds": 0.605,
+            "memoryGiB": 6,
+            "peakCgroupBytes": 521859072
+          },
+          "packageVersion": "0.0.0-retention-candidate-85db2ff04386",
+          "packageDllSha256": "85db2ff04386dc7acb35b57972aedc4d2533b06037dde2e08fc0f036b1dfb652",
+          "runtime": {
+            "seconds": 0.4098817917983979,
+            "exitCode": 0,
+            "log": "/Users/havendv/.cache/advantage/sdk-footprint/autosdk-components-final-20261021/OpenAICandidateNativeHelper-runtime.log"
+          },
+          "nativeExecutableBytes": 3234520,
+          "publishedBytes": 8560384,
+          "debugBytes": 5325864,
+          "passed": true
+        },
+        "chat": {
+          "publish": {
+            "seconds": 34.3173022500705,
+            "exitCode": 0,
+            "log": "/Users/havendv/.cache/advantage/sdk-footprint/autosdk-components-final-20261021/OpenAICandidateNativeChat-publish.log",
+            "processSeconds": 24.271,
+            "userSeconds": 30.696,
+            "systemSeconds": 1.216,
+            "memoryGiB": 6,
+            "peakCgroupBytes": 1420853248
+          },
+          "packageVersion": "0.0.0-retention-candidate-85db2ff04386",
+          "packageDllSha256": "85db2ff04386dc7acb35b57972aedc4d2533b06037dde2e08fc0f036b1dfb652",
+          "runtime": {
+            "seconds": 0.35327287507243454,
+            "exitCode": 0,
+            "log": "/Users/havendv/.cache/advantage/sdk-footprint/autosdk-components-final-20261021/OpenAICandidateNativeChat-runtime.log"
+          },
+          "nativeExecutableBytes": 15411704,
+          "publishedBytes": 52660424,
+          "debugBytes": 37248720,
+          "passed": true
+        },
+        "wrapper": {
+          "publish": {
+            "seconds": 13.887371333083138,
+            "exitCode": 0,
+            "log": "/Users/havendv/.cache/advantage/sdk-footprint/autosdk-components-final-20261021/OpenAICandidateNativeWrapper-publish.log",
+            "processSeconds": 8.959,
+            "userSeconds": 7.804,
+            "systemSeconds": 0.633,
+            "memoryGiB": 6,
+            "peakCgroupBytes": 491130880
+          },
+          "packageVersion": "0.0.0-retention-candidate-85db2ff04386",
+          "packageDllSha256": "85db2ff04386dc7acb35b57972aedc4d2533b06037dde2e08fc0f036b1dfb652",
+          "runtime": {
+            "seconds": 0.3993977091740817,
+            "exitCode": 0,
+            "log": "/Users/havendv/.cache/advantage/sdk-footprint/autosdk-components-final-20261021/OpenAICandidateNativeWrapper-runtime.log"
+          },
+          "nativeExecutableBytes": 3167656,
+          "publishedBytes": 8298944,
+          "debugBytes": 5131288,
+          "passed": true
+        }
+      },
+      "previousConsumers": {
+        "root": {
+          "publish": {
+            "seconds": 22.071779875084758,
+            "exitCode": 0,
+            "log": "/Users/havendv/.cache/advantage/sdk-footprint/aggregate-retention-20261020/OpenAICandidateRoot-publish.log",
+            "processSeconds": 19.242,
+            "userSeconds": 22.797,
+            "systemSeconds": 1.964,
+            "memoryGiB": 6,
+            "peakCgroupBytes": 3063750656
+          },
+          "packageVersion": "0.0.0-retention-candidate-f16ca28b0a5c",
+          "packageDllSha256": "f16ca28b0a5c70af45229c9829364fb8dc4d9f20252bdbd4292c3218de412ae6",
+          "runtime": {
+            "seconds": 0.7995376251637936,
+            "exitCode": 0,
+            "log": "/Users/havendv/.cache/advantage/sdk-footprint/aggregate-retention-20261020/OpenAICandidateRoot-runtime.log"
+          },
+          "sdkBytes": 110080,
+          "passed": true
+        },
+        "leaf": {
+          "publish": {
+            "seconds": 25.847597500076517,
+            "exitCode": 0,
+            "log": "/Users/havendv/.cache/advantage/sdk-footprint/aggregate-retention-20261020/OpenAICandidateLeaf-publish.log",
+            "processSeconds": 15.959,
+            "userSeconds": 19.607,
+            "systemSeconds": 1.496,
+            "memoryGiB": 6,
+            "peakCgroupBytes": 3080429568
+          },
+          "packageVersion": "0.0.0-retention-candidate-f16ca28b0a5c",
+          "packageDllSha256": "f16ca28b0a5c70af45229c9829364fb8dc4d9f20252bdbd4292c3218de412ae6",
+          "runtime": {
+            "seconds": 0.6683513747993857,
+            "exitCode": 0,
+            "log": "/Users/havendv/.cache/advantage/sdk-footprint/aggregate-retention-20261020/OpenAICandidateLeaf-runtime.log"
+          },
+          "sdkBytes": 109056,
+          "passed": true
+        },
+        "chat": {
+          "publish": {
+            "seconds": 33.40938016679138,
+            "exitCode": 0,
+            "log": "/Users/havendv/.cache/advantage/sdk-footprint/aggregate-retention-20261020/OpenAICandidateChat-publish.log",
+            "processSeconds": 15.596,
+            "userSeconds": 19.69,
+            "systemSeconds": 1.453,
+            "memoryGiB": 6,
+            "peakCgroupBytes": 3097239552
+          },
+          "packageVersion": "0.0.0-retention-candidate-f16ca28b0a5c",
+          "packageDllSha256": "f16ca28b0a5c70af45229c9829364fb8dc4d9f20252bdbd4292c3218de412ae6",
+          "runtime": {
+            "seconds": 0.7675008331425488,
+            "exitCode": 0,
+            "log": "/Users/havendv/.cache/advantage/sdk-footprint/aggregate-retention-20261020/OpenAICandidateChat-runtime.log"
+          },
+          "sdkBytes": 909312,
+          "passed": true
+        }
+      },
+      "previousNativeConsumers": {
+        "root": {
+          "publish": {
+            "seconds": 251.96966908406466,
+            "exitCode": 0,
+            "log": "/Users/havendv/.cache/advantage/sdk-footprint/aggregate-retention-20261020/OpenAICandidateNativeRoot-publish.log",
+            "processSeconds": 15.642,
+            "userSeconds": 19.082,
+            "systemSeconds": 0.962,
+            "memoryGiB": 6,
+            "peakCgroupBytes": 936583168
+          },
+          "packageVersion": "0.0.0-retention-candidate-f16ca28b0a5c",
+          "packageDllSha256": "f16ca28b0a5c70af45229c9829364fb8dc4d9f20252bdbd4292c3218de412ae6",
+          "runtime": {
+            "seconds": 0.5444482499733567,
+            "exitCode": 0,
+            "log": "/Users/havendv/.cache/advantage/sdk-footprint/aggregate-retention-20261020/OpenAICandidateNativeRoot-runtime.log"
+          },
+          "nativeExecutableBytes": 8241376,
+          "publishedBytes": 22102384,
+          "debugBytes": 13861008,
+          "passed": true
+        }
+      },
+      "previousHelper": {
+        "publish": {
+          "seconds": 33.03489379095845,
+          "exitCode": 0,
+          "log": "/Users/havendv/.cache/advantage/sdk-footprint/autosdk-components-final-20261021/OpenAIPreviousHelper-publish.log",
+          "processSeconds": 20.587,
+          "userSeconds": 18.859,
+          "systemSeconds": 1.64,
+          "memoryGiB": 6,
+          "peakCgroupBytes": 2970177536
+        },
+        "packageVersion": "0.0.0-retention-candidate-f16ca28b0a5c",
+        "packageDllSha256": "f16ca28b0a5c70af45229c9829364fb8dc4d9f20252bdbd4292c3218de412ae6",
+        "runtime": {
+          "seconds": 0.7075716669205576,
+          "exitCode": 0,
+          "log": "/Users/havendv/.cache/advantage/sdk-footprint/autosdk-components-final-20261021/OpenAIPreviousHelper-runtime.log"
+        },
+        "sdkBytes": 166912,
+        "passed": true
+      },
+      "previousHelperLoop": {
+        "firstRoundTripMs": 151.048,
+        "warm1000RoundTripsMs": 84.293,
+        "currentThreadAllocatedBytes": 15276960
+      },
+      "candidateHelperLoop": {
+        "firstRoundTripMs": 69.732,
+        "warm1000RoundTripsMs": 44.002,
+        "currentThreadAllocatedBytes": 15932960
+      },
+      "modelHelperAudit": {
+        "files": 2918,
+        "unintendedAggregateDefaults": []
+      },
+      "specSha256": "6d3a2bc88a0628519eb5fd69e3234329b91f888e2c4acf4beb1bd1b8706c337c",
+      "dockerCache": {
+        "sdk": "OpenAI",
+        "runtimeImage": "mcr.microsoft.com/dotnet/runtime-deps:10.0-noble",
+        "initial": {
+          "build": {
+            "seconds": 2.061578083084896,
+            "exitCode": 0,
+            "log": "/Users/havendv/.cache/advantage/sdk-footprint/autosdk-components-final-20261021/OpenAICandidateRoot-docker-initial.log"
+          },
+          "runtime": {
+            "seconds": 0.5177825419232249,
+            "exitCode": 0,
+            "log": "/Users/havendv/.cache/advantage/sdk-footprint/autosdk-components-final-20261021/OpenAICandidateRoot-docker-initial-runtime.log"
+          },
+          "imageId": "sha256:beaf690dd57f8def9db3911d76ccbaaef900e46b635bbb7a8ecd2f710f049fe3",
+          "dockerReportedSize": 56150318,
+          "layers": [
+            "sha256:9a354992483c962fa69075527e7a2690fd9103f53d2c10af083fb31f24335256",
+            "sha256:4d23bd53be1ba051e5220bc1771692ef982e935f4bb0ff5d5796d357821cb86b",
+            "sha256:eeeca93416f2a234fd92c5c93b2f7c8e6dfad57c72b9a76dacd96fca6126d203",
+            "sha256:6fab41c7453a6bf475561b3419324c2ac0de1fb2aa789e3447a2ca23267710a7",
+            "sha256:9332f9a12a9c105df060e5cb0574dc89631bdf7febd0ae997a5711df132012b5",
+            "sha256:e32b5deb44446cac55c7c010807e9f9b365fadfd82998a33968a65caf400437d"
+          ],
+          "rawHistoryLayerBytes": [
+            0,
+            118784,
+            25026560,
+            8192,
+            77824,
+            46080000,
+            0,
+            0,
+            110436352,
+            0,
+            0,
+            0
+          ],
+          "rawHistoryLayerBytesSum": 181747712,
+          "historySha256": "065e77981edf6527fa39db29f2fc5bbf89157902adc249c76cc260f462e998ce"
+        },
+        "noop": {
+          "build": {
+            "seconds": 0.45121941599063575,
+            "exitCode": 0,
+            "log": "/Users/havendv/.cache/advantage/sdk-footprint/autosdk-components-final-20261021/OpenAICandidateRoot-docker-noop.log"
+          },
+          "runtime": {
+            "seconds": 0.6090368749573827,
+            "exitCode": 0,
+            "log": "/Users/havendv/.cache/advantage/sdk-footprint/autosdk-components-final-20261021/OpenAICandidateRoot-docker-noop-runtime.log"
+          },
+          "imageId": "sha256:224e4df3307cbc1756e8dc9b177c2077269523fc2358d50825c6c9bbdff473f5",
+          "dockerReportedSize": 56150318,
+          "layers": [
+            "sha256:9a354992483c962fa69075527e7a2690fd9103f53d2c10af083fb31f24335256",
+            "sha256:4d23bd53be1ba051e5220bc1771692ef982e935f4bb0ff5d5796d357821cb86b",
+            "sha256:eeeca93416f2a234fd92c5c93b2f7c8e6dfad57c72b9a76dacd96fca6126d203",
+            "sha256:6fab41c7453a6bf475561b3419324c2ac0de1fb2aa789e3447a2ca23267710a7",
+            "sha256:9332f9a12a9c105df060e5cb0574dc89631bdf7febd0ae997a5711df132012b5",
+            "sha256:e32b5deb44446cac55c7c010807e9f9b365fadfd82998a33968a65caf400437d"
+          ],
+          "rawHistoryLayerBytes": [
+            0,
+            118784,
+            25026560,
+            8192,
+            77824,
+            46080000,
+            0,
+            0,
+            110436352,
+            0,
+            0,
+            0
+          ],
+          "rawHistoryLayerBytesSum": 181747712,
+          "historySha256": "e6842962932229ff687ce764985ad7de9f5070fa2535baf1d91faacf66d13c41"
+        },
+        "changed": {
+          "build": {
+            "seconds": 0.6194631250109524,
+            "exitCode": 0,
+            "log": "/Users/havendv/.cache/advantage/sdk-footprint/autosdk-components-final-20261021/OpenAICandidateRoot-docker-app-edit.log"
+          },
+          "runtime": {
+            "seconds": 0.7311598339583725,
+            "exitCode": 0,
+            "log": "/Users/havendv/.cache/advantage/sdk-footprint/autosdk-components-final-20261021/OpenAICandidateRoot-docker-app-edit-runtime.log"
+          },
+          "imageId": "sha256:2a7aa37fb6bd66d4b6c28c430f25eda8c9077f3cd2465f79dc1a4f3b725f3d6f",
+          "dockerReportedSize": 56150327,
+          "layers": [
+            "sha256:9a354992483c962fa69075527e7a2690fd9103f53d2c10af083fb31f24335256",
+            "sha256:4d23bd53be1ba051e5220bc1771692ef982e935f4bb0ff5d5796d357821cb86b",
+            "sha256:eeeca93416f2a234fd92c5c93b2f7c8e6dfad57c72b9a76dacd96fca6126d203",
+            "sha256:6fab41c7453a6bf475561b3419324c2ac0de1fb2aa789e3447a2ca23267710a7",
+            "sha256:9332f9a12a9c105df060e5cb0574dc89631bdf7febd0ae997a5711df132012b5",
+            "sha256:15ea624b6fd3278528126c8cf0b352c34dbdea7405357c28be738360f5cb4876"
+          ],
+          "rawHistoryLayerBytes": [
+            0,
+            118784,
+            25026560,
+            8192,
+            77824,
+            46080000,
+            0,
+            0,
+            110436352,
+            0,
+            0,
+            0
+          ],
+          "rawHistoryLayerBytesSum": 181747712,
+          "historySha256": "7ce03cc54beef6ee53ca225ebb2d7d6fcfc035b0b7c4a9d56cfd141ccfec7930"
+        },
+        "republish": {
+          "seconds": 30.893678333843127,
+          "exitCode": 0,
+          "log": "/Users/havendv/.cache/advantage/sdk-footprint/autosdk-components-final-20261021/OpenAICandidateRoot-docker-edit-publish.log",
+          "processSeconds": 9.58,
+          "userSeconds": 13.195,
+          "systemSeconds": 1.125
+        },
+        "dependencyFilesUnchanged": true,
+        "appFilesChanged": true,
+        "noopLayersReused": true,
+        "onlyAppLayerChanged": true
+      }
+    },
+    "AppStoreConnect": {
+      "sourceBase": "2d590ad604cddbc705795563c4fb0e6d035ac550",
+      "before": {
+        "generatorAssemblies": {
+          "AutoSDK.CSharp.dll": "856cd4c3aa859f7371051f044d58bb540aade9ed17330b2d3275cf413e76e2e1",
+          "AutoSDK.Docs.dll": "ff4caecfcbd4d9ffc8e7e9a2a382b75147e134c5001ad4e17b4b66e19ba5cfca",
+          "AutoSDK.CLI.dll": "26469b071abefc65f4b8299851e82683228d0a40f2ec56bd10f92608742b025d",
+          "AutoSDK.dll": "5442040e4063f24ff8f10796a6f959c8065b7510d06cd340bc0a5f09de8d19ac"
+        },
+        "generationCommand": [
+          "dotnet",
+          "/work/candidate-cli/AutoSDK.CLI.dll",
+          "generate",
+          "openapi.json",
+          "--namespace",
+          "AppStoreConnect",
+          "--clientClassName",
+          "AppStoreConnectClient",
+          "--targetFramework",
+          "net10.0",
+          "--output",
+          "Generated",
+          "--exclude-deprecated-operations",
+          "--generate-http-exception-hierarchy",
+          "--generate-retry-handler",
+          "--generate-pageable-helpers",
+          "--auto-detect-status-polling",
+          "--security-scheme",
+          "Http:Header:Bearer",
+          "--json-serializer-context-chunk-size",
+          "2000",
+          "--shared-json-metadata",
+          "--direction-aware-json-generation-mode"
+        ],
+        "generate": {
+          "seconds": 28.167572582839057,
+          "exitCode": 0,
+          "log": "/Users/havendv/.cache/advantage/sdk-footprint/aggregate-retention-20261020/AppStoreConnect-candidate-generate.log",
+          "peakCgroupBytes": 924246016
+        },
+        "source": {
+          "files": 29611,
+          "bytes": 198344823,
+          "contextFiles": 2852,
+          "contextBytes": 53735940,
+          "registrations": 0
+        },
+        "build": {
+          "seconds": 969.9305401670281,
+          "exitCode": 0,
+          "log": "/Users/havendv/.cache/advantage/sdk-footprint/aggregate-retention-20261020/AppStoreConnect-candidate-build.log",
+          "processSeconds": 935.512,
+          "userSeconds": 1102.932,
+          "systemSeconds": 19.676,
+          "peakCgroupBytes": 15858733056
+        },
+        "noop": {
+          "seconds": 6.6037690420635045,
+          "exitCode": 0,
+          "log": "/Users/havendv/.cache/advantage/sdk-footprint/aggregate-retention-20261020/AppStoreConnect-candidate-noop.log",
+          "processSeconds": 4.171,
+          "userSeconds": 2.886,
+          "systemSeconds": 0.474,
+          "peakCgroupBytes": 201338880
+        },
+        "untrimmedDlls": {
+          "artifacts/AppStoreConnectcandidate/bin/AppStoreConnect/release_net10.0/AppStoreConnect.dll": 132520960
+        },
+        "compilerGenerated": {
+          "files": 38312,
+          "bytes": 144741783
+        },
+        "package": {
+          "id": "AppStoreConnect",
+          "version": "0.0.0-retention-candidate-effba4f91f1a",
+          "path": "feed/AppStoreConnectcandidate/AppStoreConnect.0.0.0-retention-candidate-effba4f91f1a.nupkg",
+          "bytes": 55656382,
+          "dllSha256": "effba4f91f1aba132cb08b469a1137cf3651f877e7cd107f073d7a049cd54293",
+          "result": {
+            "seconds": 6.140265082940459,
+            "exitCode": 0,
+            "log": "/Users/havendv/.cache/advantage/sdk-footprint/aggregate-retention-20261020/AppStoreConnect-candidate-pack.log"
+          }
+        }
+      },
+      "after": {
+        "generatorAssemblies": {
+          "AutoSDK.CSharp.dll": "bac92eed0d27ab89d66b371640333a1313675457dd135a2ef222e07199a14752",
+          "AutoSDK.Docs.dll": "adbd95be6ac61cf63733f9a607c248116bd8d3f5973e6d9a80020427eacc86b3",
+          "AutoSDK.CLI.dll": "6e19d077c3baa75770d4e5729c83f773339fd85fd2e467045e0cea20ae8ca7d6",
+          "AutoSDK.dll": "17a4a6552271639921f41c011ffc86ac058be6f356260956e4d34c932b133250"
+        },
+        "generationCommand": [
+          "dotnet",
+          "/work/candidate-cli/AutoSDK.CLI.dll",
+          "generate",
+          "openapi.json",
+          "--namespace",
+          "AppStoreConnect",
+          "--clientClassName",
+          "AppStoreConnectClient",
+          "--targetFramework",
+          "net10.0",
+          "--output",
+          "Generated",
+          "--exclude-deprecated-operations",
+          "--generate-http-exception-hierarchy",
+          "--generate-retry-handler",
+          "--generate-pageable-helpers",
+          "--auto-detect-status-polling",
+          "--security-scheme",
+          "Http:Header:Bearer",
+          "--json-serializer-context-chunk-size",
+          "2000",
+          "--shared-json-metadata",
+          "--direction-aware-json-generation-mode"
+        ],
+        "generate": {
+          "seconds": 22.419610290788114,
+          "exitCode": 0,
+          "log": "/Users/havendv/.cache/advantage/sdk-footprint/autosdk-components-final-20261021/AppStoreConnect-candidate-generate.log",
+          "peakCgroupBytes": 960401408
+        },
+        "source": {
+          "files": 40723,
+          "bytes": 207451469,
+          "contextFiles": 13963,
+          "contextBytes": 62709134,
+          "registrations": 0
+        },
+        "build": {
+          "seconds": 974.1566368339118,
+          "exitCode": 0,
+          "log": "/Users/havendv/.cache/advantage/sdk-footprint/autosdk-components-final-20261021/AppStoreConnect-candidate-build.log",
+          "processSeconds": 960.718,
+          "userSeconds": 1202.853,
+          "systemSeconds": 22.968,
+          "peakCgroupBytes": 15939375104
+        },
+        "noop": {
+          "seconds": 15.94725349987857,
+          "exitCode": 0,
+          "log": "/Users/havendv/.cache/advantage/sdk-footprint/autosdk-components-final-20261021/AppStoreConnect-candidate-noop.log",
+          "processSeconds": 5.094,
+          "userSeconds": 3.591,
+          "systemSeconds": 0.507,
+          "peakCgroupBytes": 234381312
+        },
+        "untrimmedDlls": {
+          "artifacts/AppStoreConnectcandidate/bin/AppStoreConnect/release_net10.0/AppStoreConnect.dll": 117843456
+        },
+        "compilerGenerated": {
+          "files": 25446,
+          "bytes": 79909805
+        },
+        "package": {
+          "id": "AppStoreConnect",
+          "version": "0.0.0-retention-candidate-c36162ddb14d",
+          "path": "feed/AppStoreConnectcandidate/AppStoreConnect.0.0.0-retention-candidate-c36162ddb14d.nupkg",
+          "bytes": 43779357,
+          "dllSha256": "c36162ddb14d2d1d8c5ff7d89dd6237dd75e355c3e5676a2fe74b93dfd2fc297",
+          "result": {
+            "exitCode": 0,
+            "log": "/Users/havendv/.cache/advantage/sdk-footprint/autosdk-components-final-20261021/AppStoreConnect-candidate-pack.log"
+          }
+        }
+      },
+      "consumers": {
+        "root": {
+          "publish": {
+            "seconds": 25.65479795797728,
+            "exitCode": 0,
+            "log": "/Users/havendv/.cache/advantage/sdk-footprint/autosdk-components-final-20261021/AppStoreConnectCandidateRoot-publish.log",
+            "processSeconds": 16.55,
+            "userSeconds": 21.172,
+            "systemSeconds": 1.925,
+            "memoryGiB": 6,
+            "peakCgroupBytes": 4552224768
+          },
+          "packageVersion": "0.0.0-retention-candidate-c36162ddb14d",
+          "packageDllSha256": "c36162ddb14d2d1d8c5ff7d89dd6237dd75e355c3e5676a2fe74b93dfd2fc297",
+          "runtime": {
+            "seconds": 0.7204512499738485,
+            "exitCode": 0,
+            "log": "/Users/havendv/.cache/advantage/sdk-footprint/autosdk-components-final-20261021/AppStoreConnectCandidateRoot-runtime.log"
+          },
+          "sdkBytes": 20758016,
+          "passed": true
+        },
+        "helper": {
+          "publish": {
+            "seconds": 22.51738049997948,
+            "exitCode": 0,
+            "log": "/Users/havendv/.cache/advantage/sdk-footprint/autosdk-components-final-20261021/AppStoreConnectCandidateHelper-publish.log",
+            "processSeconds": 14.349,
+            "userSeconds": 19.486,
+            "systemSeconds": 1.883,
+            "memoryGiB": 6,
+            "peakCgroupBytes": 4226904064
+          },
+          "packageVersion": "0.0.0-retention-candidate-c36162ddb14d",
+          "packageDllSha256": "c36162ddb14d2d1d8c5ff7d89dd6237dd75e355c3e5676a2fe74b93dfd2fc297",
+          "runtime": {
+            "seconds": 0.4535644999705255,
+            "exitCode": 0,
+            "log": "/Users/havendv/.cache/advantage/sdk-footprint/autosdk-components-final-20261021/AppStoreConnectCandidateHelper-runtime.log"
+          },
+          "sdkBytes": 18572288,
+          "passed": true
+        },
+        "wrapper": {
+          "publish": {
+            "seconds": 28.53695704205893,
+            "exitCode": 0,
+            "log": "/Users/havendv/.cache/advantage/sdk-footprint/autosdk-components-final-20261021/AppStoreConnectCandidateWrapper-publish.log",
+            "processSeconds": 13.635,
+            "userSeconds": 18.271,
+            "systemSeconds": 1.743,
+            "memoryGiB": 6,
+            "peakCgroupBytes": 4234166272
+          },
+          "packageVersion": "0.0.0-retention-candidate-c36162ddb14d",
+          "packageDllSha256": "c36162ddb14d2d1d8c5ff7d89dd6237dd75e355c3e5676a2fe74b93dfd2fc297",
+          "runtime": {
+            "seconds": 0.4484659591689706,
+            "exitCode": 0,
+            "log": "/Users/havendv/.cache/advantage/sdk-footprint/autosdk-components-final-20261021/AppStoreConnectCandidateWrapper-runtime.log"
+          },
+          "sdkBytes": 18570752,
+          "passed": true
+        },
+        "leaf": {
+          "publish": {
+            "seconds": 21.682738583069295,
+            "exitCode": 0,
+            "log": "/Users/havendv/.cache/advantage/sdk-footprint/autosdk-components-final-20261021/AppStoreConnectCandidateLeaf-publish.log",
+            "processSeconds": 16.543,
+            "userSeconds": 21.954,
+            "systemSeconds": 1.831,
+            "memoryGiB": 6,
+            "peakCgroupBytes": 4441591808
+          },
+          "packageVersion": "0.0.0-retention-candidate-c36162ddb14d",
+          "packageDllSha256": "c36162ddb14d2d1d8c5ff7d89dd6237dd75e355c3e5676a2fe74b93dfd2fc297",
+          "runtime": {
+            "seconds": 0.6181143340654671,
+            "exitCode": 0,
+            "log": "/Users/havendv/.cache/advantage/sdk-footprint/autosdk-components-final-20261021/AppStoreConnectCandidateLeaf-runtime.log"
+          },
+          "sdkBytes": 20756992,
+          "passed": true
+        }
+      },
+      "nativeConsumers": {
+        "root": {
+          "publish": {
+            "seconds": 49.04548116703518,
+            "exitCode": 0,
+            "log": "/Users/havendv/.cache/advantage/sdk-footprint/autosdk-components-final-20261021/AppStoreConnectCandidateNativeRoot-publish.log",
+            "processSeconds": 38.885,
+            "userSeconds": 48.708,
+            "systemSeconds": 1.578,
+            "memoryGiB": 6,
+            "peakCgroupBytes": 2029232128
+          },
+          "packageVersion": "0.0.0-retention-candidate-c36162ddb14d",
+          "packageDllSha256": "c36162ddb14d2d1d8c5ff7d89dd6237dd75e355c3e5676a2fe74b93dfd2fc297",
+          "runtime": {
+            "seconds": 0.39909749990329146,
+            "exitCode": 0,
+            "log": "/Users/havendv/.cache/advantage/sdk-footprint/autosdk-components-final-20261021/AppStoreConnectCandidateNativeRoot-runtime.log"
+          },
+          "nativeExecutableBytes": 19342544,
+          "publishedBytes": 78747608,
+          "debugBytes": 59405064,
+          "passed": true
+        },
+        "wrapper": {
+          "publish": {
+            "seconds": 16.81593924993649,
+            "exitCode": 0,
+            "log": "/Users/havendv/.cache/advantage/sdk-footprint/autosdk-components-final-20261021/AppStoreConnectCandidateNativeWrapper-publish.log",
+            "processSeconds": 6.382,
+            "userSeconds": 7.691,
+            "systemSeconds": 0.68,
+            "memoryGiB": 6,
+            "peakCgroupBytes": 666066944
+          },
+          "packageVersion": "0.0.0-retention-candidate-c36162ddb14d",
+          "packageDllSha256": "c36162ddb14d2d1d8c5ff7d89dd6237dd75e355c3e5676a2fe74b93dfd2fc297",
+          "runtime": {
+            "seconds": 0.34895004192367196,
+            "exitCode": 0,
+            "log": "/Users/havendv/.cache/advantage/sdk-footprint/autosdk-components-final-20261021/AppStoreConnectCandidateNativeWrapper-runtime.log"
+          },
+          "nativeExecutableBytes": 3102048,
+          "publishedBytes": 8198920,
+          "debugBytes": 5096872,
+          "passed": true
+        },
+        "helper": {
+          "publish": {
+            "seconds": 28.537897791946307,
+            "exitCode": 0,
+            "log": "/Users/havendv/.cache/advantage/sdk-footprint/autosdk-components-final-20261021/AppStoreConnectCandidateNativeHelper-publish.log",
+            "processSeconds": 6.516,
+            "userSeconds": 7.921,
+            "systemSeconds": 0.626,
+            "memoryGiB": 6,
+            "peakCgroupBytes": 623894528
+          },
+          "packageVersion": "0.0.0-retention-candidate-c36162ddb14d",
+          "packageDllSha256": "c36162ddb14d2d1d8c5ff7d89dd6237dd75e355c3e5676a2fe74b93dfd2fc297",
+          "runtime": {
+            "seconds": 0.34504287503659725,
+            "exitCode": 0,
+            "log": "/Users/havendv/.cache/advantage/sdk-footprint/autosdk-components-final-20261021/AppStoreConnectCandidateNativeHelper-runtime.log"
+          },
+          "nativeExecutableBytes": 3102128,
+          "publishedBytes": 8199680,
+          "debugBytes": 5097552,
+          "passed": true
+        }
+      },
+      "previousConsumers": {
+        "root": {
+          "publish": {
+            "seconds": 28.676461125025526,
+            "exitCode": 0,
+            "log": "/Users/havendv/.cache/advantage/sdk-footprint/aggregate-retention-20261020/AppStoreConnectCandidateRoot-publish.log",
+            "processSeconds": 21.108,
+            "userSeconds": 27.711,
+            "systemSeconds": 1.985,
+            "memoryGiB": 6,
+            "peakCgroupBytes": 5009895424
+          },
+          "packageVersion": "0.0.0-retention-candidate-effba4f91f1a",
+          "packageDllSha256": "effba4f91f1aba132cb08b469a1137cf3651f877e7cd107f073d7a049cd54293",
+          "runtime": {
+            "seconds": 0.5823914168868214,
+            "exitCode": 0,
+            "log": "/Users/havendv/.cache/advantage/sdk-footprint/aggregate-retention-20261020/AppStoreConnectCandidateRoot-runtime.log"
+          },
+          "sdkBytes": 30166528,
+          "passed": true
+        },
+        "leaf": {
+          "publish": {
+            "seconds": 35.561056083999574,
+            "exitCode": 0,
+            "log": "/Users/havendv/.cache/advantage/sdk-footprint/aggregate-retention-20261020/AppStoreConnectCandidateLeaf-publish.log",
+            "processSeconds": 21.362,
+            "userSeconds": 28.026,
+            "systemSeconds": 1.88,
+            "memoryGiB": 6,
+            "peakCgroupBytes": 4927438848
+          },
+          "packageVersion": "0.0.0-retention-candidate-effba4f91f1a",
+          "packageDllSha256": "effba4f91f1aba132cb08b469a1137cf3651f877e7cd107f073d7a049cd54293",
+          "runtime": {
+            "seconds": 0.5977893751114607,
+            "exitCode": 0,
+            "log": "/Users/havendv/.cache/advantage/sdk-footprint/aggregate-retention-20261020/AppStoreConnectCandidateLeaf-runtime.log"
+          },
+          "sdkBytes": 30164992,
+          "passed": true
+        }
+      },
+      "previousNativeConsumers": {
+        "root": {
+          "publish": {
+            "seconds": 75.1998529159464,
+            "exitCode": 0,
+            "log": "/Users/havendv/.cache/advantage/sdk-footprint/aggregate-retention-20261020/AppStoreConnectCandidateNativeRoot-publish.log",
+            "processSeconds": 37.105,
+            "userSeconds": 46.368,
+            "systemSeconds": 1.521,
+            "memoryGiB": 6,
+            "peakCgroupBytes": 2306932736
+          },
+          "packageVersion": "0.0.0-retention-candidate-effba4f91f1a",
+          "packageDllSha256": "effba4f91f1aba132cb08b469a1137cf3651f877e7cd107f073d7a049cd54293",
+          "runtime": {
+            "seconds": 0.4265284580178559,
+            "exitCode": 0,
+            "log": "/Users/havendv/.cache/advantage/sdk-footprint/aggregate-retention-20261020/AppStoreConnectCandidateNativeRoot-runtime.log"
+          },
+          "nativeExecutableBytes": 19334848,
+          "publishedBytes": 77962824,
+          "debugBytes": 58627976,
+          "passed": true
+        }
+      },
+      "previousHelper": {
+        "publish": {
+          "seconds": 33.91814350010827,
+          "exitCode": 0,
+          "log": "/Users/havendv/.cache/advantage/sdk-footprint/autosdk-components-final-20261021/AppStoreConnectPreviousHelper-publish.log",
+          "processSeconds": 22.636,
+          "userSeconds": 21.705,
+          "systemSeconds": 2.252,
+          "memoryGiB": 6,
+          "peakCgroupBytes": 4809592832
+        },
+        "packageVersion": "0.0.0-retention-candidate-effba4f91f1a",
+        "packageDllSha256": "effba4f91f1aba132cb08b469a1137cf3651f877e7cd107f073d7a049cd54293",
+        "runtime": {
+          "seconds": 0.6296582079958171,
+          "exitCode": 0,
+          "log": "/Users/havendv/.cache/advantage/sdk-footprint/autosdk-components-final-20261021/AppStoreConnectPreviousHelper-runtime.log"
+        },
+        "sdkBytes": 28461568,
+        "passed": true
+      },
+      "previousHelperLoop": {
+        "firstRoundTripMs": 100.514,
+        "warm1000RoundTripsMs": 51.198,
+        "currentThreadAllocatedBytes": 7122944
+      },
+      "candidateHelperLoop": {
+        "firstRoundTripMs": 51.27,
+        "warm1000RoundTripsMs": 24.275,
+        "currentThreadAllocatedBytes": 7778944
+      },
+      "modelHelperAudit": {
+        "files": 5121,
+        "unintendedAggregateDefaults": []
+      },
+      "specSha256": "7518d3a94a8bd701ac25c1c601b95b8f53aad92091affb15a2a9d331713dac1a",
+      "dockerCache": {
+        "sdk": "AppStoreConnect",
+        "runtimeImage": "mcr.microsoft.com/dotnet/runtime-deps:10.0-noble",
+        "initial": {
+          "build": {
+            "seconds": 2.225580707890913,
+            "exitCode": 0,
+            "log": "/Users/havendv/.cache/advantage/sdk-footprint/autosdk-components-final-20261021/AppStoreConnectCandidateRoot-docker-initial.log"
+          },
+          "runtime": {
+            "seconds": 0.975971374893561,
+            "exitCode": 0,
+            "log": "/Users/havendv/.cache/advantage/sdk-footprint/autosdk-components-final-20261021/AppStoreConnectCandidateRoot-docker-initial-runtime.log"
+          },
+          "imageId": "sha256:b57a733582998ea80b7bb827947518430981c753939ee2bf17c7a10b2897c786",
+          "dockerReportedSize": 75274124,
+          "layers": [
+            "sha256:9a354992483c962fa69075527e7a2690fd9103f53d2c10af083fb31f24335256",
+            "sha256:4d23bd53be1ba051e5220bc1771692ef982e935f4bb0ff5d5796d357821cb86b",
+            "sha256:eeeca93416f2a234fd92c5c93b2f7c8e6dfad57c72b9a76dacd96fca6126d203",
+            "sha256:6fab41c7453a6bf475561b3419324c2ac0de1fb2aa789e3447a2ca23267710a7",
+            "sha256:1e0bf935734e049a2a415a1ff22a078b403c2521ba055780eceecc10f2b3eb4c",
+            "sha256:0fb740df83bf997c7ea41a92c7a4fcc217c3f4059631d99a2a5683855a11be1d"
+          ],
+          "rawHistoryLayerBytes": [
+            0,
+            122880,
+            45678592,
+            8192,
+            77824,
+            46080000,
+            0,
+            0,
+            110436352,
+            0,
+            0,
+            0
+          ],
+          "rawHistoryLayerBytesSum": 202403840,
+          "historySha256": "c2f00a02c62bb74eafe047c06c9f02ff1ece5178991da71622a5604e7db8fb18"
+        },
+        "noop": {
+          "build": {
+            "seconds": 1.475559249985963,
+            "exitCode": 0,
+            "log": "/Users/havendv/.cache/advantage/sdk-footprint/autosdk-components-final-20261021/AppStoreConnectCandidateRoot-docker-noop.log"
+          },
+          "runtime": {
+            "seconds": 0.6569117079488933,
+            "exitCode": 0,
+            "log": "/Users/havendv/.cache/advantage/sdk-footprint/autosdk-components-final-20261021/AppStoreConnectCandidateRoot-docker-noop-runtime.log"
+          },
+          "imageId": "sha256:22bd87c200d26824f8e18b3a0adcfd1a085807363aaddb6ee9942a4e5ab43204",
+          "dockerReportedSize": 75274124,
+          "layers": [
+            "sha256:9a354992483c962fa69075527e7a2690fd9103f53d2c10af083fb31f24335256",
+            "sha256:4d23bd53be1ba051e5220bc1771692ef982e935f4bb0ff5d5796d357821cb86b",
+            "sha256:eeeca93416f2a234fd92c5c93b2f7c8e6dfad57c72b9a76dacd96fca6126d203",
+            "sha256:6fab41c7453a6bf475561b3419324c2ac0de1fb2aa789e3447a2ca23267710a7",
+            "sha256:1e0bf935734e049a2a415a1ff22a078b403c2521ba055780eceecc10f2b3eb4c",
+            "sha256:0fb740df83bf997c7ea41a92c7a4fcc217c3f4059631d99a2a5683855a11be1d"
+          ],
+          "rawHistoryLayerBytes": [
+            0,
+            122880,
+            45678592,
+            8192,
+            77824,
+            46080000,
+            0,
+            0,
+            110436352,
+            0,
+            0,
+            0
+          ],
+          "rawHistoryLayerBytesSum": 202403840,
+          "historySha256": "3436d08c46b732e377a0316e9db4970f75c1917eda0ddb39e7cc5e82ae2b8902"
+        },
+        "changed": {
+          "build": {
+            "seconds": 0.6849654170218855,
+            "exitCode": 0,
+            "log": "/Users/havendv/.cache/advantage/sdk-footprint/autosdk-components-final-20261021/AppStoreConnectCandidateRoot-docker-app-edit.log"
+          },
+          "runtime": {
+            "seconds": 0.6304871249012649,
+            "exitCode": 0,
+            "log": "/Users/havendv/.cache/advantage/sdk-footprint/autosdk-components-final-20261021/AppStoreConnectCandidateRoot-docker-app-edit-runtime.log"
+          },
+          "imageId": "sha256:b81e78effb7567a2f37737c7bd7a4d58097322e1eeb4e684a9e71b0c6f90537d",
+          "dockerReportedSize": 75274140,
+          "layers": [
+            "sha256:9a354992483c962fa69075527e7a2690fd9103f53d2c10af083fb31f24335256",
+            "sha256:4d23bd53be1ba051e5220bc1771692ef982e935f4bb0ff5d5796d357821cb86b",
+            "sha256:eeeca93416f2a234fd92c5c93b2f7c8e6dfad57c72b9a76dacd96fca6126d203",
+            "sha256:6fab41c7453a6bf475561b3419324c2ac0de1fb2aa789e3447a2ca23267710a7",
+            "sha256:1e0bf935734e049a2a415a1ff22a078b403c2521ba055780eceecc10f2b3eb4c",
+            "sha256:a4a683ead14c178df7936b7edbd690281c47a0ad31b6e90336d775e874aac117"
+          ],
+          "rawHistoryLayerBytes": [
+            0,
+            122880,
+            45678592,
+            8192,
+            77824,
+            46080000,
+            0,
+            0,
+            110436352,
+            0,
+            0,
+            0
+          ],
+          "rawHistoryLayerBytesSum": 202403840,
+          "historySha256": "86f8f7786808d149bcb8a00b4aeaa7b89dd6b7a8859e73e6aae6a3a168a083c5"
+        },
+        "republish": {
+          "seconds": 34.44687466695905,
+          "exitCode": 0,
+          "log": "/Users/havendv/.cache/advantage/sdk-footprint/autosdk-components-final-20261021/AppStoreConnectCandidateRoot-docker-edit-publish.log",
+          "processSeconds": 15.015,
+          "userSeconds": 20.811,
+          "systemSeconds": 1.865
+        },
+        "dependencyFilesUnchanged": true,
+        "appFilesChanged": true,
+        "noopLayersReused": true,
+        "onlyAppLayerChanged": true
+      }
+    }
+  },
+  "checks": {
+    "adoption-audit.json": [
+      {
+        "project": "../OpenAI/src/libs/tryAGI.OpenAI/tryAGI.OpenAI.csproj",
+        "enabled": true,
+        "manifests": 1,
+        "analyzerVersion": "0.35.0-preview.2.113",
+        "errors": []
+      },
+      {
+        "project": "../AppStoreConnect/src/libs/AppStoreConnect/AppStoreConnect.csproj",
+        "enabled": true,
+        "manifests": 1,
+        "analyzerVersion": "0.35.0-preview.2.113",
+        "errors": []
+      },
+      {
+        "package": "/Users/havendv/.cache/advantage/sdk-footprint/autosdk-components-final-20261021/feed/OpenAIcandidate/tryAGI.OpenAI.0.0.0-retention-candidate-85db2ff04386.nupkg",
+        "errors": []
+      },
+      {
+        "package": "/Users/havendv/.cache/advantage/sdk-footprint/autosdk-components-final-20261021/feed/AppStoreConnectcandidate/AppStoreConnect.0.0.0-retention-candidate-c36162ddb14d.nupkg",
+        "errors": []
+      }
+    ],
+    "package-dependency-audit.json": [
+      {
+        "package": "/Users/havendv/.cache/advantage/sdk-footprint/autosdk-components-final-20261021/feed/OpenAIcandidate/tryAGI.OpenAI.0.0.0-retention-candidate-85db2ff04386.nupkg",
+        "errors": []
+      },
+      {
+        "package": "/Users/havendv/.cache/advantage/sdk-footprint/autosdk-components-final-20261021/feed/AppStoreConnectcandidate/AppStoreConnect.0.0.0-retention-candidate-c36162ddb14d.nupkg",
+        "errors": []
+      }
+    ],
+    "retention-metadata.json": {
+      "OpenAICandidateRoot": {
+        "file": "tryAGI.OpenAI.dll",
+        "bytes": 123392,
+        "types": 217,
+        "methods": 761,
+        "readyToRun": false,
+        "endpointMethods": [
+          "ListModelsAsync",
+          "ListModelsAsResponseAsync"
+        ],
+        "sampleTypeNames": [
+          "ListModelsResponse"
+        ],
+        "serializerFactoryCount": 37,
+        "serializerFactoryListSha256": "d82a2db11d55e3075af5454058ffc6d97bf7ec221d294ff438d2456a84e57944",
+        "unusedModelsAndFactoriesPruned": true
+      },
+      "OpenAICandidateLeaf": {
+        "file": "tryAGI.OpenAI.dll",
+        "bytes": 121856,
+        "types": 215,
+        "methods": 745,
+        "readyToRun": false,
+        "endpointMethods": [
+          "ListModelsAsync",
+          "ListModelsAsResponseAsync"
+        ],
+        "sampleTypeNames": [
+          "ListModelsResponse"
+        ],
+        "serializerFactoryCount": 37,
+        "serializerFactoryListSha256": "d82a2db11d55e3075af5454058ffc6d97bf7ec221d294ff438d2456a84e57944",
+        "unusedModelsAndFactoriesPruned": true
+      },
+      "OpenAICandidateChat": {
+        "file": "tryAGI.OpenAI.dll",
+        "bytes": 1110528,
+        "types": 1994,
+        "methods": 7316,
+        "readyToRun": false,
+        "endpointMethods": [
+          "CreateChatCompletionAsync",
+          "CreateChatCompletionAsResponseAsync"
+        ],
+        "sampleTypeNames": [
+          "CreateChatCompletionRequest"
+        ],
+        "serializerFactoryCount": 319,
+        "serializerFactoryListSha256": "785c7f348be43af260b41f254859aa533a60e042ede6fc80764174de9ee60918",
+        "unusedModelsAndFactoriesPruned": true
+      },
+      "OpenAICandidateHelper": {
+        "file": "tryAGI.OpenAI.dll",
+        "bytes": 38400,
+        "types": 74,
+        "methods": 218,
+        "readyToRun": false,
+        "endpointMethods": [],
+        "sampleTypeNames": [],
+        "serializerFactoryCount": 24,
+        "serializerFactoryListSha256": "5d253d765e64abfb4fcdc145943d007f3007d7bdcea8f0eb8166a470897b3a8f",
+        "unusedModelsAndFactoriesPruned": true
+      },
+      "OpenAICandidateWrapper": {
+        "file": "tryAGI.OpenAI.dll",
+        "bytes": 23040,
+        "types": 38,
+        "methods": 88,
+        "readyToRun": false,
+        "endpointMethods": [],
+        "sampleTypeNames": [],
+        "serializerFactoryCount": 18,
+        "serializerFactoryListSha256": "081581f686b8021ecb1268d7c44757223498ee6194f88cf6de75b195c09df708",
+        "unusedModelsAndFactoriesPruned": true
+      },
+      "AppStoreConnectCandidateRoot": {
+        "file": "AppStoreConnect.dll",
+        "bytes": 20758016,
+        "types": 3979,
+        "methods": 14671,
+        "readyToRun": false,
+        "endpointMethods": [
+          "BuildsGetCollectionAsync",
+          "BuildsGetCollectionAsResponseAsync"
+        ],
+        "sampleTypeNames": [
+          "BuildsResponse"
+        ],
+        "serializerFactoryCount": 618,
+        "serializerFactoryListSha256": "539e45aed7e9dd7a087fab4bced241585fc69b6292a66c624df507464eab0305",
+        "unusedModelsAndFactoriesPruned": true
+      },
+      "AppStoreConnectCandidateLeaf": {
+        "file": "AppStoreConnect.dll",
+        "bytes": 20756992,
+        "types": 3978,
+        "methods": 14661,
+        "readyToRun": false,
+        "endpointMethods": [
+          "BuildsGetCollectionAsync",
+          "BuildsGetCollectionAsResponseAsync"
+        ],
+        "sampleTypeNames": [
+          "BuildsResponse"
+        ],
+        "serializerFactoryCount": 618,
+        "serializerFactoryListSha256": "539e45aed7e9dd7a087fab4bced241585fc69b6292a66c624df507464eab0305",
+        "unusedModelsAndFactoriesPruned": true
+      },
+      "AppStoreConnectCandidateHelper": {
+        "file": "AppStoreConnect.dll",
+        "bytes": 18572288,
+        "types": 41,
+        "methods": 105,
+        "readyToRun": false,
+        "endpointMethods": [],
+        "sampleTypeNames": [],
+        "serializerFactoryCount": 16,
+        "serializerFactoryListSha256": "8646fabf98741feadb6c1505228f0839f754866d3b8b707ae470edcba868f8a2",
+        "unusedModelsAndFactoriesPruned": true
+      },
+      "AppStoreConnectCandidateWrapper": {
+        "file": "AppStoreConnect.dll",
+        "bytes": 18570752,
+        "types": 36,
+        "methods": 86,
+        "readyToRun": false,
+        "endpointMethods": [],
+        "sampleTypeNames": [],
+        "serializerFactoryCount": 16,
+        "serializerFactoryListSha256": "7cfbbf3be522704a293ecf11dbfacf80cbcadce8747fef8df68b893295f140a1",
+        "unusedModelsAndFactoriesPruned": true
+      }
+    },
+    "clr-load-result.json": {
+      "result": {
+        "seconds": 44.66992679191753,
+        "exitCode": 0,
+        "log": "/Users/havendv/.cache/advantage/sdk-footprint/autosdk-components-final-20261021/clr-load-check.log",
+        "processSeconds": 4.131,
+        "userSeconds": 3.817,
+        "systemSeconds": 0.549
+      },
+      "packages": {
+        "OpenAI": {
+          "id": "tryAGI.OpenAI",
+          "version": "0.0.0-retention-candidate-85db2ff04386",
+          "path": "feed/OpenAIcandidate/tryAGI.OpenAI.0.0.0-retention-candidate-85db2ff04386.nupkg",
+          "bytes": 12477394,
+          "dllSha256": "85db2ff04386dc7acb35b57972aedc4d2533b06037dde2e08fc0f036b1dfb652",
+          "result": {
+            "seconds": 3.0595897079911083,
+            "exitCode": 0,
+            "log": "/Users/havendv/.cache/advantage/sdk-footprint/autosdk-components-final-20261021/OpenAI-candidate-pack.log"
+          }
+        },
+        "AppStoreConnect": {
+          "id": "AppStoreConnect",
+          "version": "0.0.0-retention-candidate-c36162ddb14d",
+          "path": "feed/AppStoreConnectcandidate/AppStoreConnect.0.0.0-retention-candidate-c36162ddb14d.nupkg",
+          "bytes": 43779357,
+          "dllSha256": "c36162ddb14d2d1d8c5ff7d89dd6237dd75e355c3e5676a2fe74b93dfd2fc297",
+          "result": {
+            "exitCode": 0,
+            "log": "/Users/havendv/.cache/advantage/sdk-footprint/autosdk-components-final-20261021/AppStoreConnect-candidate-pack.log"
+          }
+        }
+      }
+    },
+    "warm-repeat-results.json": {
+      "OpenAICandidateRoot": [
+        {
+          "stage": "unchanged",
+          "publish": {
+            "seconds": 7.129440666874871,
+            "exitCode": 0,
+            "log": "/Users/havendv/.cache/advantage/sdk-footprint/autosdk-components-final-20261021/OpenAICandidateRoot-warm-unchanged.log",
+            "processSeconds": 0.86,
+            "userSeconds": 0.872,
+            "systemSeconds": 0.139
+          },
+          "runtime": {
+            "seconds": 0.4669432081282139,
+            "exitCode": 0,
+            "log": "/Users/havendv/.cache/advantage/sdk-footprint/autosdk-components-final-20261021/OpenAICandidateRoot-warm-unchanged-runtime.log"
+          },
+          "memoryGiB": 6
+        },
+        {
+          "stage": "app-change-1",
+          "publish": {
+            "seconds": 14.65655062487349,
+            "exitCode": 0,
+            "log": "/Users/havendv/.cache/advantage/sdk-footprint/autosdk-components-final-20261021/OpenAICandidateRoot-warm-app-change-1.log",
+            "processSeconds": 9.622,
+            "userSeconds": 13.104,
+            "systemSeconds": 1.186
+          },
+          "runtime": {
+            "seconds": 0.4971939579118043,
+            "exitCode": 0,
+            "log": "/Users/havendv/.cache/advantage/sdk-footprint/autosdk-components-final-20261021/OpenAICandidateRoot-warm-app-change-1-runtime.log"
+          },
+          "memoryGiB": 6
+        },
+        {
+          "stage": "app-change-2",
+          "publish": {
+            "seconds": 15.9200959589798,
+            "exitCode": 0,
+            "log": "/Users/havendv/.cache/advantage/sdk-footprint/autosdk-components-final-20261021/OpenAICandidateRoot-warm-app-change-2.log",
+            "processSeconds": 10.489,
+            "userSeconds": 14.45,
+            "systemSeconds": 1.352
+          },
+          "runtime": {
+            "seconds": 0.5155505000147969,
+            "exitCode": 0,
+            "log": "/Users/havendv/.cache/advantage/sdk-footprint/autosdk-components-final-20261021/OpenAICandidateRoot-warm-app-change-2-runtime.log"
+          },
+          "memoryGiB": 6
+        }
+      ]
+    },
+    "warm-repeat-app-results.json": {
+      "AppStoreConnectCandidateRoot": [
+        {
+          "stage": "unchanged",
+          "publish": {
+            "seconds": 11.259463458089158,
+            "exitCode": 0,
+            "log": "/Users/havendv/.cache/advantage/sdk-footprint/autosdk-components-final-20261021/AppStoreConnectCandidateRoot-warm-unchanged.log",
+            "processSeconds": 0.96,
+            "userSeconds": 0.996,
+            "systemSeconds": 0.153
+          },
+          "runtime": {
+            "seconds": 0.5705654581543058,
+            "exitCode": 0,
+            "log": "/Users/havendv/.cache/advantage/sdk-footprint/autosdk-components-final-20261021/AppStoreConnectCandidateRoot-warm-unchanged-runtime.log"
+          },
+          "memoryGiB": 6
+        },
+        {
+          "stage": "app-change-1",
+          "publish": {
+            "seconds": 26.637081624940038,
+            "exitCode": 0,
+            "log": "/Users/havendv/.cache/advantage/sdk-footprint/autosdk-components-final-20261021/AppStoreConnectCandidateRoot-warm-app-change-1.log",
+            "processSeconds": 21.045,
+            "userSeconds": 28.817,
+            "systemSeconds": 3.377
+          },
+          "runtime": {
+            "seconds": 0.8376554169226438,
+            "exitCode": 0,
+            "log": "/Users/havendv/.cache/advantage/sdk-footprint/autosdk-components-final-20261021/AppStoreConnectCandidateRoot-warm-app-change-1-runtime.log"
+          },
+          "memoryGiB": 6
+        },
+        {
+          "stage": "app-change-2",
+          "publish": {
+            "seconds": 71.46759737492539,
+            "exitCode": 0,
+            "log": "/Users/havendv/.cache/advantage/sdk-footprint/autosdk-components-final-20261021/AppStoreConnectCandidateRoot-warm-app-change-2.log",
+            "processSeconds": 14.3,
+            "userSeconds": 20.818,
+            "systemSeconds": 1.721
+          },
+          "runtime": {
+            "seconds": 0.5505573330447078,
+            "exitCode": 0,
+            "log": "/Users/havendv/.cache/advantage/sdk-footprint/autosdk-components-final-20261021/AppStoreConnectCandidateRoot-warm-app-change-2-runtime.log"
+          },
+          "memoryGiB": 6
+        }
+      ]
+    },
+    "openai-detailed-retention.json": [
+      {
+        "path": "/previous/publish/OpenAICandidateChat/tryAGI.OpenAI.dll",
+        "bytes": 909312,
+        "embeddedPdbCompressedBytes": 0,
+        "publicTypeCount": 386,
+        "publicTypeListSha256": "5bfcd2d6c81de9ce1a6546b5caefdec20d572c6ca798b6cc084443e2675809a5",
+        "allTypes": 563,
+        "metadataInfrastructureTypes": 141
+      },
+      {
+        "path": "/work/publish/OpenAICandidateChat/tryAGI.OpenAI.dll",
+        "bytes": 1110528,
+        "embeddedPdbCompressedBytes": 0,
+        "publicTypeCount": 386,
+        "publicTypeListSha256": "5bfcd2d6c81de9ce1a6546b5caefdec20d572c6ca798b6cc084443e2675809a5",
+        "allTypes": 1994,
+        "metadataInfrastructureTypes": 1572
+      },
+      {
+        "path": "/work/publish/OpenAICandidateHelper/tryAGI.OpenAI.dll",
+        "bytes": 38400,
+        "embeddedPdbCompressedBytes": 0,
+        "publicTypes": [
+          "tryAGI.OpenAI.ChatCompletionTokenLogprob",
+          "tryAGI.OpenAI.ChatCompletionTokenLogprobTopLogprob",
+          "tryAGI.OpenAI.JsonConverters.UnixTimestampJsonConverter"
+        ],
+        "allTypes": 74,
+        "metadataInfrastructureTypes": 70
+      },
+      {
+        "path": "/work/publish/OpenAIPreviousHelper/tryAGI.OpenAI.dll",
+        "bytes": 166912,
+        "embeddedPdbCompressedBytes": 0,
+        "publicTypeCount": 68,
+        "publicTypeListSha256": "6182edfe3de85b11d91b665375a9eeee571f16f12f67fb3593eb125b725a232d",
+        "allTypes": 105,
+        "metadataInfrastructureTypes": 34
+      },
+      {
+        "path": "/work/publish/OpenAICandidateWrapper/tryAGI.OpenAI.dll",
+        "bytes": 23040,
+        "embeddedPdbCompressedBytes": 0,
+        "publicTypes": [
+          "tryAGI.OpenAI.ConversationResourceMetadata",
+          "tryAGI.OpenAI.JsonConverters.UnixTimestampJsonConverter"
+        ],
+        "allTypes": 38,
+        "metadataInfrastructureTypes": 35
+      }
+    ],
+    "app-detailed-retention.json": [
+      {
+        "path": "/work/publish/AppStoreConnectCandidateRoot/AppStoreConnect.dll",
+        "bytes": 20758016,
+        "embeddedPdbCompressedBytes": 18666240,
+        "publicTypeCount": 757,
+        "publicTypeListSha256": "2915f4ce1fb012579681ab86a4e583cab85e1b8512c9cfa2cf7e0d010b2a2ac6",
+        "allTypes": 3979,
+        "metadataInfrastructureTypes": 3204
+      },
+      {
+        "path": "/work/publish/AppStoreConnectCandidateLeaf/AppStoreConnect.dll",
+        "bytes": 20756992,
+        "embeddedPdbCompressedBytes": 18666233,
+        "publicTypeCount": 756,
+        "publicTypeListSha256": "8c34afcb156ac750c420f2d26a78ea39bf73915397e666c1efbd15c4637f9435",
+        "allTypes": 3978,
+        "metadataInfrastructureTypes": 3204
+      },
+      {
+        "path": "/work/publish/AppStoreConnectCandidateHelper/AppStoreConnect.dll",
+        "bytes": 18572288,
+        "embeddedPdbCompressedBytes": 18548247,
+        "publicTypes": [
+          "AppStoreConnect.JsonConverters.UnixTimestampJsonConverter",
+          "AppStoreConnect.ResourceLinks"
+        ],
+        "allTypes": 41,
+        "metadataInfrastructureTypes": 38
+      },
+      {
+        "path": "/work/publish/AppStoreConnectCandidateWrapper/AppStoreConnect.dll",
+        "bytes": 18570752,
+        "embeddedPdbCompressedBytes": 18548070,
+        "publicTypes": [
+          "AppStoreConnect.AppAssetLibraryImageReadyForReviewAttributesVariant2",
+          "AppStoreConnect.JsonConverters.UnixTimestampJsonConverter"
+        ],
+        "allTypes": 36,
+        "metadataInfrastructureTypes": 33
+      },
+      {
+        "path": "/work/publish/AppStoreConnectPreviousHelper/AppStoreConnect.dll",
+        "bytes": 28461568,
+        "embeddedPdbCompressedBytes": 28426004,
+        "publicTypes": [
+          "AppStoreConnect.AlternativeDistributionKey",
+          "AppStoreConnect.AlternativeDistributionKeyAttributes",
+          "AppStoreConnect.AlternativeDistributionKeyResponse",
+          "AppStoreConnect.AlternativeDistributionKeyType",
+          "AppStoreConnect.AlternativeDistributionKeyTypeExtensions",
+          "AppStoreConnect.DocumentLinks",
+          "AppStoreConnect.JsonConverters.AlternativeDistributionKeyTypeJsonConverter",
+          "AppStoreConnect.JsonConverters.AlternativeDistributionKeyTypeNullableJsonConverter",
+          "AppStoreConnect.JsonConverters.UnixTimestampJsonConverter",
+          "AppStoreConnect.ResourceLinks"
+        ],
+        "allTypes": 24,
+        "metadataInfrastructureTypes": 13
+      }
+    ],
+    "allConsumerRuntimeContractsPassed": true,
+    "consumerRuntimeCount": 16,
+    "sdkCi": {
+      "AutoSDK": {
+        "runId": 39519593459,
+        "conclusion": "success"
+      },
+      "OpenAI": {
+        "runId": 39522006985,
+        "conclusion": "success"
+      },
+      "AppStoreConnect": {
+        "runId": 39522039100,
+        "conclusion": "success"
+      }
+    },
+    "modelHelperPublicTypeSetsCompared": true,
+    "chatPublicTypeSetsIdentical": true,
+    "fullClrTypeCounts": {
+      "OpenAI": 71053,
+      "AppStoreConnect": 147844
+    },
+    "newIssues": [
+      438,
+      439,
+      440,
+      441
+    ],
+    "canonicalCommits": {
+      "OpenAI": "b6b7a988700041adedfe2b7710b875248b0e9de4",
+      "AppStoreConnect": "e2f5b42e397381b0c7da5d3832020dc6ababd50e"
+    }
+  },
+  "provenanceNote": "Archive source bases are recorded per case. Canonical OpenAI later inherited spec update 4347ed857 before b6b7a9887 regeneration; AppStoreConnect canonical spec remains pinned. Whole source timings are archival-input samples, separate from current canonical CI."
+}
