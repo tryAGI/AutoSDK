@@ -1,0 +1,874 @@
+{
+  "schemaVersion": "autosdk.carriers-realtime.v1",
+  "implementationCommits": {
+    "carriers": "fadb3f26d86ee606f5dbe8a93ca842e709824ca4",
+    "manifestIsolation": "6dcc6419890fe34a9775b7e96936e2ee0af6a960",
+    "websocket": "c5936a68cf1f7ed6f0fc772cc2b55a060c1a2890"
+  },
+  "publishedRelease": {
+    "version": "0.35.0-preview.2.117",
+    "sourceCommit": "c5936a68cf1f7ed6f0fc772cc2b55a060c1a2890",
+    "ciRun": 39538658361,
+    "status": "success",
+    "artifactRepositoryCommitVerified": true,
+    "nugetAvailability": "CLI and analyzer 0.35.0-preview.2.117 confirmed in public flat-container indexes"
+  },
+  "resources": {
+    "source": {
+      "cpu": 2,
+      "memoryGiB": 16,
+      "swap": false
+    },
+    "publish": {
+      "cpu": 2,
+      "memoryGiB": 6,
+      "swap": false
+    },
+    "platform": "linux-arm64",
+    "sdk": "10.0.402",
+    "runtime": "10.0.13",
+    "reflectionSerialization": false,
+    "trimMode": "full",
+    "publishReadyToRun": false,
+    "liveProviderCalls": 0,
+    "timings": "single samples; inner process excludes host admission waits; not percentiles"
+  },
+  "inputs": {
+    "OpenAI": {
+      "baseSnapshot": "f2fedc5807e4d697f58f4e1b116c71e8ee6b94b9",
+      "specSha256": "6d3a2bc88a0628519eb5fd69e3234329b91f888e2c4acf4beb1bd1b8706c337c"
+    },
+    "AppStoreConnect": {
+      "baseSnapshot": "2d590ad604cddbc705795563c4fb0e6d035ac550",
+      "specSha256": "7518d3a94a8bd701ac25c1c601b95b8f53aad92091affb15a2a9d331713dac1a"
+    }
+  },
+  "costs": {
+    "previousComponents": {
+      "OpenAI": {
+        "dllBytes": 53840896,
+        "nugetBytes": 12477394,
+        "dllSha256": "85db2ff04386dc7acb35b57972aedc4d2533b06037dde2e08fc0f036b1dfb652",
+        "packageVersion": "0.0.0-retention-candidate-85db2ff04386",
+        "source": {
+          "files": 20727,
+          "bytes": 103801918,
+          "contextFiles": 6230,
+          "contextBytes": 27611676,
+          "registrations": 383
+        },
+        "compilerGenerated": {
+          "files": 12893,
+          "bytes": 55287038
+        },
+        "build": {
+          "processSeconds": 96.035,
+          "userSeconds": 129.466,
+          "systemSeconds": 5.334,
+          "peakCgroupBytes": 6988107776
+        },
+        "noop": {
+          "processSeconds": 3.325,
+          "userSeconds": 2.475,
+          "peakCgroupBytes": 149311488
+        },
+        "generatorAssemblies": {
+          "AutoSDK.CSharp.dll": "bac92eed0d27ab89d66b371640333a1313675457dd135a2ef222e07199a14752",
+          "AutoSDK.Docs.dll": "adbd95be6ac61cf63733f9a607c248116bd8d3f5973e6d9a80020427eacc86b3",
+          "AutoSDK.CLI.dll": "6e19d077c3baa75770d4e5729c83f773339fd85fd2e467045e0cea20ae8ca7d6",
+          "AutoSDK.dll": "17a4a6552271639921f41c011ffc86ac058be6f356260956e4d34c932b133250"
+        }
+      },
+      "AppStoreConnect": {
+        "dllBytes": 117843456,
+        "nugetBytes": 43779357,
+        "dllSha256": "c36162ddb14d2d1d8c5ff7d89dd6237dd75e355c3e5676a2fe74b93dfd2fc297",
+        "packageVersion": "0.0.0-retention-candidate-c36162ddb14d",
+        "source": {
+          "files": 40723,
+          "bytes": 207451469,
+          "contextFiles": 13963,
+          "contextBytes": 62709134,
+          "registrations": 0
+        },
+        "compilerGenerated": {
+          "files": 25446,
+          "bytes": 79909805
+        },
+        "build": {
+          "processSeconds": 960.718,
+          "userSeconds": 1202.853,
+          "systemSeconds": 22.968,
+          "peakCgroupBytes": 15939375104
+        },
+        "noop": {
+          "processSeconds": 5.094,
+          "userSeconds": 3.591,
+          "peakCgroupBytes": 234381312
+        },
+        "generatorAssemblies": {
+          "AutoSDK.CSharp.dll": "bac92eed0d27ab89d66b371640333a1313675457dd135a2ef222e07199a14752",
+          "AutoSDK.Docs.dll": "adbd95be6ac61cf63733f9a607c248116bd8d3f5973e6d9a80020427eacc86b3",
+          "AutoSDK.CLI.dll": "6e19d077c3baa75770d4e5729c83f773339fd85fd2e467045e0cea20ae8ca7d6",
+          "AutoSDK.dll": "17a4a6552271639921f41c011ffc86ac058be6f356260956e4d34c932b133250"
+        }
+      }
+    },
+    "carriers": {
+      "OpenAI": {
+        "dllBytes": 50182144,
+        "nugetBytes": 11740500,
+        "dllSha256": "155413bb5cc78865720253a1b87d14ef30159a6322373af6ee6bdf996efa5326",
+        "packageVersion": "0.0.0-retention-candidate-155413bb5cc7",
+        "source": {
+          "files": 20727,
+          "bytes": 96215354,
+          "contextFiles": 6230,
+          "contextBytes": 20024042,
+          "registrations": 383
+        },
+        "compilerGenerated": {
+          "files": 12893,
+          "bytes": 55287038
+        },
+        "build": {
+          "processSeconds": 94.407,
+          "userSeconds": 133.114,
+          "systemSeconds": 5.968,
+          "peakCgroupBytes": 6604267520
+        },
+        "noop": {
+          "processSeconds": 2.852,
+          "userSeconds": 2.099,
+          "peakCgroupBytes": 159682560
+        },
+        "generatorAssemblies": {
+          "AutoSDK.CSharp.dll": "d5dd5bca986be72ad0cd69de96a1cbb0cd657318d68e9c6d2fcc7cc4176cb1fd",
+          "AutoSDK.Docs.dll": "adbd95be6ac61cf63733f9a607c248116bd8d3f5973e6d9a80020427eacc86b3",
+          "AutoSDK.CLI.dll": "8c7c2b4e40b65fa2eae3a9512f09a89d11257c1e29c53e4fe869b5c88234cdca",
+          "AutoSDK.dll": "17a4a6552271639921f41c011ffc86ac058be6f356260956e4d34c932b133250"
+        }
+      },
+      "AppStoreConnect": {
+        "dllBytes": 109840896,
+        "nugetBytes": 41765828,
+        "dllSha256": "cef4ac6e1a1f3e96fb46588983383cb25743563b4bf1745af9df8f50d74b398d",
+        "packageVersion": "0.0.0-retention-candidate-cef4ac6e1a1f",
+        "source": {
+          "files": 40723,
+          "bytes": 190545825,
+          "contextFiles": 13963,
+          "contextBytes": 45802420,
+          "registrations": 0
+        },
+        "compilerGenerated": {
+          "files": 25446,
+          "bytes": 79909805
+        },
+        "build": {
+          "processSeconds": 898.147,
+          "userSeconds": 1111.184,
+          "systemSeconds": 22.817,
+          "peakCgroupBytes": 16580943872
+        },
+        "noop": {
+          "processSeconds": 6.607,
+          "userSeconds": 4.103,
+          "peakCgroupBytes": 235192320
+        },
+        "generatorAssemblies": {
+          "AutoSDK.CSharp.dll": "d5dd5bca986be72ad0cd69de96a1cbb0cd657318d68e9c6d2fcc7cc4176cb1fd",
+          "AutoSDK.Docs.dll": "adbd95be6ac61cf63733f9a607c248116bd8d3f5973e6d9a80020427eacc86b3",
+          "AutoSDK.CLI.dll": "8c7c2b4e40b65fa2eae3a9512f09a89d11257c1e29c53e4fe869b5c88234cdca",
+          "AutoSDK.dll": "17a4a6552271639921f41c011ffc86ac058be6f356260956e4d34c932b133250"
+        }
+      }
+    },
+    "carriersAndRealtime": {
+      "OpenAI": {
+        "dllBytes": 49724416,
+        "nugetBytes": 11648324,
+        "dllSha256": "daee84953446aa74c3db31431b24e7a173cac86b9908dcdc3283770240b4285e",
+        "packageVersion": "0.0.0-retention-candidate-daee84953446",
+        "source": {
+          "files": 21142,
+          "bytes": 97338006,
+          "contextFiles": 6597,
+          "contextBytes": 21062349,
+          "registrations": 0
+        },
+        "compilerGenerated": {
+          "files": 13081,
+          "bytes": 54241644
+        },
+        "build": {
+          "processSeconds": 90.282,
+          "userSeconds": 124.134,
+          "systemSeconds": 5.111,
+          "peakCgroupBytes": 6618808320
+        },
+        "noop": {
+          "processSeconds": 3.778,
+          "userSeconds": 2.225,
+          "peakCgroupBytes": 151072768
+        },
+        "generatorAssemblies": {
+          "AutoSDK.CSharp.dll": "f65e9b5e9cfeaf554e3f0ffe12c35e345001f26dd40125225eb290e178ab2183",
+          "AutoSDK.Docs.dll": "adbd95be6ac61cf63733f9a607c248116bd8d3f5973e6d9a80020427eacc86b3",
+          "AutoSDK.CLI.dll": "9fd3d11e82e60a811d47c3d97b8adab1a0d17b147f1a93a8644cb660cf140e1b",
+          "AutoSDK.dll": "17a4a6552271639921f41c011ffc86ac058be6f356260956e4d34c932b133250"
+        }
+      }
+    }
+  },
+  "consumers": {
+    "carriers": {
+      "AppStoreConnect-aot-consume-helper-result": {
+        "passed": true,
+        "sdkBytes": null,
+        "nativeExecutableBytes": 3102112,
+        "debugBytes": 5098112,
+        "publish": {
+          "processSeconds": 6.688,
+          "userSeconds": 8.001,
+          "peakCgroupBytes": 655491072
+        },
+        "packageDllSha256": "cef4ac6e1a1f3e96fb46588983383cb25743563b4bf1745af9df8f50d74b398d"
+      },
+      "AppStoreConnect-aot-consume-root-result": {
+        "passed": true,
+        "sdkBytes": null,
+        "nativeExecutableBytes": 19276992,
+        "debugBytes": 59241616,
+        "publish": {
+          "processSeconds": 39.681,
+          "userSeconds": 49.641,
+          "peakCgroupBytes": 2074828800
+        },
+        "packageDllSha256": "cef4ac6e1a1f3e96fb46588983383cb25743563b4bf1745af9df8f50d74b398d"
+      },
+      "AppStoreConnect-aot-consume-wrapper-result": {
+        "passed": true,
+        "sdkBytes": null,
+        "nativeExecutableBytes": 3102032,
+        "debugBytes": 5098056,
+        "publish": {
+          "processSeconds": 6.206,
+          "userSeconds": 7.535,
+          "peakCgroupBytes": 667951104
+        },
+        "packageDllSha256": "cef4ac6e1a1f3e96fb46588983383cb25743563b4bf1745af9df8f50d74b398d"
+      },
+      "AppStoreConnect-consume-helper-result": {
+        "passed": true,
+        "sdkBytes": 18571776,
+        "nativeExecutableBytes": null,
+        "debugBytes": null,
+        "publish": {
+          "processSeconds": 14.315,
+          "userSeconds": 18.936,
+          "peakCgroupBytes": 4152160256
+        },
+        "packageDllSha256": "cef4ac6e1a1f3e96fb46588983383cb25743563b4bf1745af9df8f50d74b398d"
+      },
+      "AppStoreConnect-consume-leaf-result": {
+        "passed": true,
+        "sdkBytes": 20634624,
+        "nativeExecutableBytes": null,
+        "debugBytes": null,
+        "publish": {
+          "processSeconds": 18.477,
+          "userSeconds": 22.925,
+          "peakCgroupBytes": 4163264512
+        },
+        "packageDllSha256": "cef4ac6e1a1f3e96fb46588983383cb25743563b4bf1745af9df8f50d74b398d"
+      },
+      "AppStoreConnect-consume-root-result": {
+        "passed": true,
+        "sdkBytes": 20636160,
+        "nativeExecutableBytes": null,
+        "debugBytes": null,
+        "publish": {
+          "processSeconds": 17.786,
+          "userSeconds": 22.028,
+          "peakCgroupBytes": 4288978944
+        },
+        "packageDllSha256": "cef4ac6e1a1f3e96fb46588983383cb25743563b4bf1745af9df8f50d74b398d"
+      },
+      "AppStoreConnect-consume-wrapper-result": {
+        "passed": true,
+        "sdkBytes": 18570752,
+        "nativeExecutableBytes": null,
+        "debugBytes": null,
+        "publish": {
+          "processSeconds": 18.602,
+          "userSeconds": 18.988,
+          "peakCgroupBytes": 4191453184
+        },
+        "packageDllSha256": "cef4ac6e1a1f3e96fb46588983383cb25743563b4bf1745af9df8f50d74b398d"
+      },
+      "OpenAI-aot-consume-chat-result": {
+        "passed": true,
+        "sdkBytes": null,
+        "nativeExecutableBytes": 15346160,
+        "debugBytes": 37186984,
+        "publish": {
+          "processSeconds": 24.572,
+          "userSeconds": 30.536,
+          "peakCgroupBytes": 1429872640
+        },
+        "packageDllSha256": "155413bb5cc78865720253a1b87d14ef30159a6322373af6ee6bdf996efa5326"
+      },
+      "OpenAI-aot-consume-helper-result": {
+        "passed": true,
+        "sdkBytes": null,
+        "nativeExecutableBytes": 3234512,
+        "debugBytes": 5325208,
+        "publish": {
+          "processSeconds": 7.423,
+          "userSeconds": 8.612,
+          "peakCgroupBytes": 492081152
+        },
+        "packageDllSha256": "155413bb5cc78865720253a1b87d14ef30159a6322373af6ee6bdf996efa5326"
+      },
+      "OpenAI-aot-consume-root-result": {
+        "passed": true,
+        "sdkBytes": null,
+        "nativeExecutableBytes": 7619888,
+        "debugBytes": 12980664,
+        "publish": {
+          "processSeconds": 10.626,
+          "userSeconds": 13.456,
+          "peakCgroupBytes": 769060864
+        },
+        "packageDllSha256": "155413bb5cc78865720253a1b87d14ef30159a6322373af6ee6bdf996efa5326"
+      },
+      "OpenAI-aot-consume-wrapper-result": {
+        "passed": true,
+        "sdkBytes": null,
+        "nativeExecutableBytes": 3167640,
+        "debugBytes": 5132304,
+        "publish": {
+          "processSeconds": 6.667,
+          "userSeconds": 7.614,
+          "peakCgroupBytes": 481529856
+        },
+        "packageDllSha256": "155413bb5cc78865720253a1b87d14ef30159a6322373af6ee6bdf996efa5326"
+      },
+      "OpenAI-consume-chat-result": {
+        "passed": true,
+        "sdkBytes": 1059840,
+        "nativeExecutableBytes": null,
+        "debugBytes": null,
+        "publish": {
+          "processSeconds": 10.767,
+          "userSeconds": 13.887,
+          "peakCgroupBytes": 2284322816
+        },
+        "packageDllSha256": "155413bb5cc78865720253a1b87d14ef30159a6322373af6ee6bdf996efa5326"
+      },
+      "OpenAI-consume-helper-result": {
+        "passed": true,
+        "sdkBytes": 37888,
+        "nativeExecutableBytes": null,
+        "debugBytes": null,
+        "publish": {
+          "processSeconds": 10.927,
+          "userSeconds": 13.959,
+          "peakCgroupBytes": 2214805504
+        },
+        "packageDllSha256": "155413bb5cc78865720253a1b87d14ef30159a6322373af6ee6bdf996efa5326"
+      },
+      "OpenAI-consume-leaf-result": {
+        "passed": true,
+        "sdkBytes": 119296,
+        "nativeExecutableBytes": null,
+        "debugBytes": null,
+        "publish": {
+          "processSeconds": 10.416,
+          "userSeconds": 13.347,
+          "peakCgroupBytes": 2286211072
+        },
+        "packageDllSha256": "155413bb5cc78865720253a1b87d14ef30159a6322373af6ee6bdf996efa5326"
+      },
+      "OpenAI-consume-root-result": {
+        "passed": true,
+        "sdkBytes": 120832,
+        "nativeExecutableBytes": null,
+        "debugBytes": null,
+        "publish": {
+          "processSeconds": 10.647,
+          "userSeconds": 13.605,
+          "peakCgroupBytes": 2293215232
+        },
+        "packageDllSha256": "155413bb5cc78865720253a1b87d14ef30159a6322373af6ee6bdf996efa5326"
+      },
+      "OpenAI-consume-wrapper-result": {
+        "passed": true,
+        "sdkBytes": 23040,
+        "nativeExecutableBytes": null,
+        "debugBytes": null,
+        "publish": {
+          "processSeconds": 9.392,
+          "userSeconds": 12.26,
+          "peakCgroupBytes": 2206310400
+        },
+        "packageDllSha256": "155413bb5cc78865720253a1b87d14ef30159a6322373af6ee6bdf996efa5326"
+      }
+    },
+    "finalHttp": {
+      "OpenAI-aot-consume-chat-result": {
+        "passed": true,
+        "sdkBytes": null,
+        "nativeExecutableBytes": 15346160,
+        "debugBytes": 37186984,
+        "publish": {
+          "processSeconds": 25.959,
+          "userSeconds": 32.497,
+          "peakCgroupBytes": 1455333376
+        },
+        "packageDllSha256": "daee84953446aa74c3db31431b24e7a173cac86b9908dcdc3283770240b4285e"
+      },
+      "OpenAI-aot-consume-helper-result": {
+        "passed": true,
+        "sdkBytes": null,
+        "nativeExecutableBytes": 3234512,
+        "debugBytes": 5325208,
+        "publish": {
+          "processSeconds": 6.454,
+          "userSeconds": 7.869,
+          "peakCgroupBytes": 485314560
+        },
+        "packageDllSha256": "daee84953446aa74c3db31431b24e7a173cac86b9908dcdc3283770240b4285e"
+      },
+      "OpenAI-aot-consume-root-result": {
+        "passed": true,
+        "sdkBytes": null,
+        "nativeExecutableBytes": 7619888,
+        "debugBytes": 12980664,
+        "publish": {
+          "processSeconds": 11,
+          "userSeconds": 14.469,
+          "peakCgroupBytes": 794566656
+        },
+        "packageDllSha256": "daee84953446aa74c3db31431b24e7a173cac86b9908dcdc3283770240b4285e"
+      },
+      "OpenAI-aot-consume-wrapper-result": {
+        "passed": true,
+        "sdkBytes": null,
+        "nativeExecutableBytes": 3167640,
+        "debugBytes": 5132304,
+        "publish": {
+          "processSeconds": 6.528,
+          "userSeconds": 7.692,
+          "peakCgroupBytes": 480686080
+        },
+        "packageDllSha256": "daee84953446aa74c3db31431b24e7a173cac86b9908dcdc3283770240b4285e"
+      },
+      "OpenAI-consume-chat-result": {
+        "passed": true,
+        "sdkBytes": 1059840,
+        "nativeExecutableBytes": null,
+        "debugBytes": null,
+        "publish": {
+          "processSeconds": 11.343,
+          "userSeconds": 14.965,
+          "peakCgroupBytes": 2323312640
+        },
+        "packageDllSha256": "daee84953446aa74c3db31431b24e7a173cac86b9908dcdc3283770240b4285e"
+      },
+      "OpenAI-consume-helper-result": {
+        "passed": true,
+        "sdkBytes": 37888,
+        "nativeExecutableBytes": null,
+        "debugBytes": null,
+        "publish": {
+          "processSeconds": 9.226,
+          "userSeconds": 12.325,
+          "peakCgroupBytes": 2221277184
+        },
+        "packageDllSha256": "daee84953446aa74c3db31431b24e7a173cac86b9908dcdc3283770240b4285e"
+      },
+      "OpenAI-consume-leaf-result": {
+        "passed": true,
+        "sdkBytes": 119296,
+        "nativeExecutableBytes": null,
+        "debugBytes": null,
+        "publish": {
+          "processSeconds": 10.17,
+          "userSeconds": 12.952,
+          "peakCgroupBytes": 2346819584
+        },
+        "packageDllSha256": "daee84953446aa74c3db31431b24e7a173cac86b9908dcdc3283770240b4285e"
+      },
+      "OpenAI-consume-root-result": {
+        "passed": true,
+        "sdkBytes": 120832,
+        "nativeExecutableBytes": null,
+        "debugBytes": null,
+        "publish": {
+          "processSeconds": 10.077,
+          "userSeconds": 12.529,
+          "peakCgroupBytes": 2297446400
+        },
+        "packageDllSha256": "daee84953446aa74c3db31431b24e7a173cac86b9908dcdc3283770240b4285e"
+      },
+      "OpenAI-consume-wrapper-result": {
+        "passed": true,
+        "sdkBytes": 23040,
+        "nativeExecutableBytes": null,
+        "debugBytes": null,
+        "publish": {
+          "processSeconds": 9.97,
+          "userSeconds": 12.852,
+          "peakCgroupBytes": 2217250816
+        },
+        "packageDllSha256": "daee84953446aa74c3db31431b24e7a173cac86b9908dcdc3283770240b4285e"
+      }
+    },
+    "realtimePrevious": {
+      "OpenAI-previous-rt-aot-consume-send-result": {
+        "passed": true,
+        "sdkBytes": null,
+        "nativeExecutableBytes": 17559336,
+        "debugBytes": 41134296,
+        "publish": {
+          "processSeconds": 31.674,
+          "userSeconds": 39.871,
+          "peakCgroupBytes": 1703071744
+        },
+        "packageDllSha256": "155413bb5cc78865720253a1b87d14ef30159a6322373af6ee6bdf996efa5326"
+      },
+      "OpenAI-previous-rt-aot-consume-typed-result": {
+        "passed": true,
+        "sdkBytes": null,
+        "nativeExecutableBytes": 16255544,
+        "debugBytes": 33339328,
+        "publish": {
+          "processSeconds": 31.747,
+          "userSeconds": 38.601,
+          "peakCgroupBytes": 1377222656
+        },
+        "packageDllSha256": "155413bb5cc78865720253a1b87d14ef30159a6322373af6ee6bdf996efa5326"
+      },
+      "OpenAI-previous-rt-aot-consume-union-result": {
+        "passed": true,
+        "sdkBytes": null,
+        "nativeExecutableBytes": 20849440,
+        "debugBytes": 45445944,
+        "publish": {
+          "processSeconds": 46.059,
+          "userSeconds": 51.885,
+          "peakCgroupBytes": 1737625600
+        },
+        "packageDllSha256": "155413bb5cc78865720253a1b87d14ef30159a6322373af6ee6bdf996efa5326"
+      },
+      "OpenAI-previous-rt-consume-send-result": {
+        "passed": true,
+        "sdkBytes": 2195968,
+        "nativeExecutableBytes": null,
+        "debugBytes": null,
+        "publish": {
+          "processSeconds": 12.049,
+          "userSeconds": 16.24,
+          "peakCgroupBytes": 2296565760
+        },
+        "packageDllSha256": "155413bb5cc78865720253a1b87d14ef30159a6322373af6ee6bdf996efa5326"
+      },
+      "OpenAI-previous-rt-consume-typed-result": {
+        "passed": true,
+        "sdkBytes": 2295808,
+        "nativeExecutableBytes": null,
+        "debugBytes": null,
+        "publish": {
+          "processSeconds": 10.624,
+          "userSeconds": 13.231,
+          "peakCgroupBytes": 2277974016
+        },
+        "packageDllSha256": "155413bb5cc78865720253a1b87d14ef30159a6322373af6ee6bdf996efa5326"
+      },
+      "OpenAI-previous-rt-consume-union-result": {
+        "passed": true,
+        "sdkBytes": 2323456,
+        "nativeExecutableBytes": null,
+        "debugBytes": null,
+        "publish": {
+          "processSeconds": 12.292,
+          "userSeconds": 16.08,
+          "peakCgroupBytes": 2294980608
+        },
+        "packageDllSha256": "155413bb5cc78865720253a1b87d14ef30159a6322373af6ee6bdf996efa5326"
+      }
+    },
+    "realtimeFinal": {
+      "OpenAI-candidate-rt-aot-consume-custom-result": {
+        "passed": true,
+        "sdkBytes": null,
+        "nativeExecutableBytes": 2972920,
+        "debugBytes": 5146288,
+        "publish": {
+          "processSeconds": 6.474,
+          "userSeconds": 7.63,
+          "peakCgroupBytes": 496041984
+        },
+        "packageDllSha256": "daee84953446aa74c3db31431b24e7a173cac86b9908dcdc3283770240b4285e"
+      },
+      "OpenAI-candidate-rt-aot-consume-send-result": {
+        "passed": true,
+        "sdkBytes": null,
+        "nativeExecutableBytes": 7214384,
+        "debugBytes": 11603760,
+        "publish": {
+          "processSeconds": 9.739,
+          "userSeconds": 12.618,
+          "peakCgroupBytes": 741195776
+        },
+        "packageDllSha256": "daee84953446aa74c3db31431b24e7a173cac86b9908dcdc3283770240b4285e"
+      },
+      "OpenAI-candidate-rt-aot-consume-typed-result": {
+        "passed": true,
+        "sdkBytes": null,
+        "nativeExecutableBytes": 2972632,
+        "debugBytes": 5126328,
+        "publish": {
+          "processSeconds": 5.993,
+          "userSeconds": 6.905,
+          "peakCgroupBytes": 478838784
+        },
+        "packageDllSha256": "daee84953446aa74c3db31431b24e7a173cac86b9908dcdc3283770240b4285e"
+      },
+      "OpenAI-candidate-rt-aot-consume-union-result": {
+        "passed": true,
+        "sdkBytes": null,
+        "nativeExecutableBytes": 17351736,
+        "debugBytes": 37399400,
+        "publish": {
+          "processSeconds": 25.392,
+          "userSeconds": 33.123,
+          "peakCgroupBytes": 1529982976
+        },
+        "packageDllSha256": "daee84953446aa74c3db31431b24e7a173cac86b9908dcdc3283770240b4285e"
+      },
+      "OpenAI-candidate-rt-consume-custom-result": {
+        "passed": true,
+        "sdkBytes": 34304,
+        "nativeExecutableBytes": null,
+        "debugBytes": null,
+        "publish": {
+          "processSeconds": 10.232,
+          "userSeconds": 13.038,
+          "peakCgroupBytes": 2251206656
+        },
+        "packageDllSha256": "daee84953446aa74c3db31431b24e7a173cac86b9908dcdc3283770240b4285e"
+      },
+      "OpenAI-candidate-rt-consume-send-result": {
+        "passed": true,
+        "sdkBytes": 37376,
+        "nativeExecutableBytes": null,
+        "debugBytes": null,
+        "publish": {
+          "processSeconds": 11.98,
+          "userSeconds": 16.055,
+          "peakCgroupBytes": 2273177600
+        },
+        "packageDllSha256": "daee84953446aa74c3db31431b24e7a173cac86b9908dcdc3283770240b4285e"
+      },
+      "OpenAI-candidate-rt-consume-typed-result": {
+        "passed": true,
+        "sdkBytes": 34304,
+        "nativeExecutableBytes": null,
+        "debugBytes": null,
+        "publish": {
+          "processSeconds": 10.819,
+          "userSeconds": 13.508,
+          "peakCgroupBytes": 2236395520
+        },
+        "packageDllSha256": "daee84953446aa74c3db31431b24e7a173cac86b9908dcdc3283770240b4285e"
+      },
+      "OpenAI-candidate-rt-consume-union-result": {
+        "passed": true,
+        "sdkBytes": 1595904,
+        "nativeExecutableBytes": null,
+        "debugBytes": null,
+        "publish": {
+          "processSeconds": 12.532,
+          "userSeconds": 15.942,
+          "peakCgroupBytes": 2344620032
+        },
+        "packageDllSha256": "daee84953446aa74c3db31431b24e7a173cac86b9908dcdc3283770240b4285e"
+      }
+    }
+  },
+  "retention": {
+    "chat": {
+      "previousTypes": 1994,
+      "currentTypes": 1675,
+      "publicNonContextTypes": 386,
+      "publicTypeSetUnchanged": true,
+      "publicTypeSetSha256": "03001a49cde8fb78b4ed908c667f933270de3fa96498696fdbbadda03accec91"
+    },
+    "httpRootRealtimeTypesAbsent": true,
+    "allClrTypesLoaded": {
+      "OpenAI": 57261,
+      "AppStoreConnect": 112085
+    }
+  },
+  "checks": {
+    "plannerAndWebSocketTests": 19,
+    "metadataTests": 17,
+    "cliDataRows": 4,
+    "loopbackProfiles": 8,
+    "largeFixture": "40 tags x 36 models; both extension-data representations; partial byte arrays, unions, custom contexts and nested helper pruning",
+    "currentRuntimeProfiles": 33
+  },
+  "futureIssues": [
+    441,
+    443,
+    444
+  ],
+  "resolvedIssues": [
+    440,
+    442
+  ],
+  "warm": {
+    "OpenAI": [
+      {
+        "stage": "unchanged",
+        "processSeconds": 0.891,
+        "runtimePassed": true
+      },
+      {
+        "stage": "app-change-1",
+        "processSeconds": 8.885,
+        "runtimePassed": true
+      },
+      {
+        "stage": "app-change-2",
+        "processSeconds": 8.983,
+        "runtimePassed": true
+      }
+    ],
+    "AppStoreConnect": [
+      {
+        "stage": "unchanged",
+        "processSeconds": 0.931,
+        "runtimePassed": true
+      },
+      {
+        "stage": "app-change-1",
+        "processSeconds": 13.878,
+        "runtimePassed": true
+      },
+      {
+        "stage": "app-change-2",
+        "processSeconds": 13.209,
+        "runtimePassed": true
+      }
+    ]
+  },
+  "docker": {
+    "OpenAI": {
+      "dependencyFilesUnchanged": true,
+      "appFilesChanged": true,
+      "noopLayersReused": true,
+      "onlyAppLayerChanged": true,
+      "initial": {
+        "buildSeconds": 1.1688503329642117,
+        "dockerReportedSize": 56149330,
+        "layers": [
+          "sha256:9a354992483c962fa69075527e7a2690fd9103f53d2c10af083fb31f24335256",
+          "sha256:4d23bd53be1ba051e5220bc1771692ef982e935f4bb0ff5d5796d357821cb86b",
+          "sha256:eeeca93416f2a234fd92c5c93b2f7c8e6dfad57c72b9a76dacd96fca6126d203",
+          "sha256:6fab41c7453a6bf475561b3419324c2ac0de1fb2aa789e3447a2ca23267710a7",
+          "sha256:04da3949705d434ffdf5377b9781bc381628daa3b954fe15ce45f2ca3d9747ba",
+          "sha256:60778366aa0aa741b6be5a691b7b0e589128fd570a74e3ec8d742daab80f363b"
+        ],
+        "runtimePassed": true
+      },
+      "noop": {
+        "buildSeconds": 0.5680780000984669,
+        "dockerReportedSize": 56149330,
+        "layers": [
+          "sha256:9a354992483c962fa69075527e7a2690fd9103f53d2c10af083fb31f24335256",
+          "sha256:4d23bd53be1ba051e5220bc1771692ef982e935f4bb0ff5d5796d357821cb86b",
+          "sha256:eeeca93416f2a234fd92c5c93b2f7c8e6dfad57c72b9a76dacd96fca6126d203",
+          "sha256:6fab41c7453a6bf475561b3419324c2ac0de1fb2aa789e3447a2ca23267710a7",
+          "sha256:04da3949705d434ffdf5377b9781bc381628daa3b954fe15ce45f2ca3d9747ba",
+          "sha256:60778366aa0aa741b6be5a691b7b0e589128fd570a74e3ec8d742daab80f363b"
+        ],
+        "runtimePassed": true
+      },
+      "changed": {
+        "buildSeconds": 0.6435064589604735,
+        "dockerReportedSize": 56149322,
+        "layers": [
+          "sha256:9a354992483c962fa69075527e7a2690fd9103f53d2c10af083fb31f24335256",
+          "sha256:4d23bd53be1ba051e5220bc1771692ef982e935f4bb0ff5d5796d357821cb86b",
+          "sha256:eeeca93416f2a234fd92c5c93b2f7c8e6dfad57c72b9a76dacd96fca6126d203",
+          "sha256:6fab41c7453a6bf475561b3419324c2ac0de1fb2aa789e3447a2ca23267710a7",
+          "sha256:04da3949705d434ffdf5377b9781bc381628daa3b954fe15ce45f2ca3d9747ba",
+          "sha256:c4d8273bc26a9ca883913c4c1c3b630a1b1a12775486ca5d8030d92bbab511c4"
+        ],
+        "runtimePassed": true
+      }
+    },
+    "AppStoreConnect": {
+      "dependencyFilesUnchanged": true,
+      "appFilesChanged": true,
+      "noopLayersReused": true,
+      "onlyAppLayerChanged": true,
+      "initial": {
+        "buildSeconds": 1.6755309591535479,
+        "dockerReportedSize": 75237565,
+        "layers": [
+          "sha256:9a354992483c962fa69075527e7a2690fd9103f53d2c10af083fb31f24335256",
+          "sha256:4d23bd53be1ba051e5220bc1771692ef982e935f4bb0ff5d5796d357821cb86b",
+          "sha256:eeeca93416f2a234fd92c5c93b2f7c8e6dfad57c72b9a76dacd96fca6126d203",
+          "sha256:6fab41c7453a6bf475561b3419324c2ac0de1fb2aa789e3447a2ca23267710a7",
+          "sha256:004218a8e6dc21478d9c1e835a84d98763652abc3fa3b14fd6bdd3694e4a2218",
+          "sha256:ce8ae1b14599bac98dff6aff8b922a06bb10568023851236919fae8e17c4d0ca"
+        ],
+        "runtimePassed": true
+      },
+      "noop": {
+        "buildSeconds": 0.5460637919604778,
+        "dockerReportedSize": 75237565,
+        "layers": [
+          "sha256:9a354992483c962fa69075527e7a2690fd9103f53d2c10af083fb31f24335256",
+          "sha256:4d23bd53be1ba051e5220bc1771692ef982e935f4bb0ff5d5796d357821cb86b",
+          "sha256:eeeca93416f2a234fd92c5c93b2f7c8e6dfad57c72b9a76dacd96fca6126d203",
+          "sha256:6fab41c7453a6bf475561b3419324c2ac0de1fb2aa789e3447a2ca23267710a7",
+          "sha256:004218a8e6dc21478d9c1e835a84d98763652abc3fa3b14fd6bdd3694e4a2218",
+          "sha256:ce8ae1b14599bac98dff6aff8b922a06bb10568023851236919fae8e17c4d0ca"
+        ],
+        "runtimePassed": true
+      },
+      "changed": {
+        "buildSeconds": 0.5493769999593496,
+        "dockerReportedSize": 75237554,
+        "layers": [
+          "sha256:9a354992483c962fa69075527e7a2690fd9103f53d2c10af083fb31f24335256",
+          "sha256:4d23bd53be1ba051e5220bc1771692ef982e935f4bb0ff5d5796d357821cb86b",
+          "sha256:eeeca93416f2a234fd92c5c93b2f7c8e6dfad57c72b9a76dacd96fca6126d203",
+          "sha256:6fab41c7453a6bf475561b3419324c2ac0de1fb2aa789e3447a2ca23267710a7",
+          "sha256:004218a8e6dc21478d9c1e835a84d98763652abc3fa3b14fd6bdd3694e4a2218",
+          "sha256:81b8248e4c937280b0f7ede063417ab411d0830b5c7e9cde2e0ebb8223a16c5c"
+        ],
+        "runtimePassed": true
+      }
+    }
+  },
+  "adoption": {
+    "OpenAI": {
+      "status": "Generated with released CLI; not committed/pushed because owner-only shared-checkout synchronization is required. Final current-spec regeneration remains pending.",
+      "head": "b6b7a988700041adedfe2b7710b875248b0e9de4",
+      "upstreamSpecCommit": "d955331e802f5c0ca4fdf4e44c15c68caea29a60"
+    },
+    "AppStoreConnect": {
+      "status": "committed and pushed; canonical full CI and trimming check passed",
+      "commit": "3ffb5f5155de72c9ad2e806558c551d09846084c",
+      "ciRun": 39541472616,
+      "ciStatus": "success"
+    }
+  }
+}

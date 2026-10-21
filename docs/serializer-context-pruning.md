@@ -173,8 +173,11 @@ modes run in CI independently of source compilation.
 
 ## Real SDK acceptance
 
-See the [directed-components comparison](benchmarks/shared-json-components-20261021.md)
-for the current CLI/analyzer coordination, model-helper retention, whole SDK costs,
+See the [carrier and Realtime comparison](benchmarks/shared-json-carriers-realtime-20261021.md)
+for compact context carriers, multiple-manifest isolation, real WebSocket contracts,
+full SDK costs, NativeAOT and repeated Docker/cache measurements.
+The [directed-components comparison](benchmarks/shared-json-components-20261021.md)
+records the preceding CLI/analyzer coordination, model-helper retention, whole SDK costs,
 NativeAOT, repeated publishes, Docker layers and measured context overhead.
 The [initial comparison](benchmarks/shared-json-metadata-20261021.md) preserves the
 older aggregate-fallback baseline and symbol/cache limitations.
