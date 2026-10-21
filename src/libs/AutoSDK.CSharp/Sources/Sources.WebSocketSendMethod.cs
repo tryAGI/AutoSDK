@@ -10,9 +10,16 @@ public static partial class Sources
     public static FileWithName WebSocketSendMethod(
         WebSocketEndPoint endPoint,
         ModelData messageModel = default,
-        CancellationToken cancellationToken = default)
+        CancellationToken cancellationToken = default) =>
+        WebSocketSendMethod(endPoint, messageModel, null, cancellationToken);
+
+    internal static FileWithName WebSocketSendMethod(
+        WebSocketEndPoint endPoint,
+        ModelData messageModel,
+        string? jsonSerializerContextName,
+        CancellationToken cancellationToken)
     {
-        var text = GenerateWebSocketSendMethod(endPoint, messageModel);
+        var text = GenerateWebSocketSendMethod(endPoint, messageModel, jsonSerializerContextName);
         if (string.IsNullOrWhiteSpace(text))
         {
             return FileWithName.Empty;
@@ -25,10 +32,18 @@ public static partial class Sources
 
     public static string GenerateWebSocketSendMethod(
         WebSocketEndPoint endPoint,
-        ModelData messageModel = default)
+        ModelData messageModel = default) =>
+        GenerateWebSocketSendMethod(endPoint, messageModel, null);
+
+    private static string GenerateWebSocketSendMethod(
+        WebSocketEndPoint endPoint,
+        ModelData messageModel,
+        string? jsonSerializerContextName)
     {
         var hasOptions = !endPoint.Settings.HasJsonSerializerContext();
         var messageTypeName = endPoint.MessageType.CSharpType;
+        var context = jsonSerializerContextName is null ? "JsonSerializerContext" :
+            $"(JsonSerializerContextProvider?.Value ?? global::{jsonSerializerContextName}.Default)";
 
         if (string.IsNullOrWhiteSpace(messageTypeName))
         {
@@ -57,7 +72,7 @@ public static partial class Sources
                 ? $"            await SendAsync({(endPoint.MessageType.IsEnum ? "message.ToValueString()" : "message")}, cancellationToken).ConfigureAwait(false);"
                 : $@"            var json = {(hasOptions
                     ? $"global::System.Text.Json.JsonSerializer.Serialize(message, typeof({nonNullableType}), JsonSerializerOptions)"
-                    : $"global::System.Text.Json.JsonSerializer.Serialize(message, typeof({nonNullableType}), JsonSerializerContext)")};
+                    : $"global::System.Text.Json.JsonSerializer.Serialize(message, typeof({nonNullableType}), {context})")};
 
             await SendAsync(json, cancellationToken).ConfigureAwait(false);";
 

@@ -5,17 +5,49 @@ namespace AutoSDK.Generation;
 
 public static partial class Sources
 {
+    // Typed parsing can be used with an external transport without rooting the any-event union.
+    internal static FileWithName WebSocketDeserializeMethod(WebSocketEndPoint endPoint, string contextName, string? suffix = null)
+    {
+        var type = endPoint.MessageType.CSharpTypeWithoutNullability;
+        var method = "Deserialize" + endPoint.MessageName.ToPropertyName() + "Message" + (suffix is null ? "" : "_" + suffix);
+        return new FileWithName(endPoint.Settings.Namespace + "." + endPoint.ClassName + "." + method + ".g.cs", $@"
+#nullable enable
+namespace {endPoint.Settings.Namespace}
+{{
+    public sealed partial class {endPoint.ClassName}
+    {{
+        /// <summary>Deserializes a {endPoint.MessageName.ClearForXml()} message using its own metadata graph.</summary>
+        /// <param name=""json"">The received JSON message.</param>
+        /// <returns>The typed message.</returns>
+        public {type} {method}(string json) =>
+            ({type})(global::System.Text.Json.JsonSerializer.Deserialize(json, typeof({type}),
+                JsonSerializerContextProvider?.Value ?? global::{contextName}.Default)
+                ?? throw new global::System.Text.Json.JsonException(""The received message was null.""));
+    }}
+}}".RemoveBlankLinesWhereOnlyWhitespaces());
+    }
+
     public static FileWithName WebSocketReceiveMethod(
         WebSocketClient wsClient,
-        CancellationToken cancellationToken = default)
+        CancellationToken cancellationToken = default) =>
+        WebSocketReceiveMethod(wsClient, null, cancellationToken);
+
+    internal static FileWithName WebSocketReceiveMethod(
+        WebSocketClient wsClient,
+        string? jsonSerializerContextName,
+        CancellationToken cancellationToken)
     {
         return new FileWithName(
             Name: $"{wsClient.Settings.Namespace}.{wsClient.ClassName}.ReceiveUpdates.g.cs",
-            Text: GenerateWebSocketReceiveMethod(wsClient));
+            Text: GenerateWebSocketReceiveMethod(wsClient, jsonSerializerContextName));
     }
 
-    public static string GenerateWebSocketReceiveMethod(
-        WebSocketClient wsClient)
+    public static string GenerateWebSocketReceiveMethod(WebSocketClient wsClient) =>
+        GenerateWebSocketReceiveMethod(wsClient, null);
+
+    private static string GenerateWebSocketReceiveMethod(
+        WebSocketClient wsClient,
+        string? jsonSerializerContextName)
     {
         var receiveEventType = wsClient.BaseReceiveEventType;
         // CSharpType already includes global:: prefix
@@ -27,6 +59,8 @@ public static partial class Sources
         }
 
         var hasOptions = !wsClient.Settings.HasJsonSerializerContext();
+        var context = jsonSerializerContextName is null ? "JsonSerializerContext" :
+            $"(JsonSerializerContextProvider?.Value ?? global::{jsonSerializerContextName}.Default)";
         var isValueType = wsClient.IsReceiveEventValueType || receiveEventType.IsValueType;
 
         string deserializeAndYield;
@@ -35,7 +69,7 @@ public static partial class Sources
             // Value types (structs/anyOf) — use non-generic Deserialize with cast (no null check needed for value types)
             var deserializeCall = hasOptions
                 ? $"global::System.Text.Json.JsonSerializer.Deserialize<{eventTypeName}>(json, JsonSerializerOptions)"
-                : $"({eventTypeName})global::System.Text.Json.JsonSerializer.Deserialize(json, typeof({eventTypeName}), JsonSerializerContext)!";
+                : $"({eventTypeName})global::System.Text.Json.JsonSerializer.Deserialize(json, typeof({eventTypeName}), {context})!";
             deserializeAndYield = $@"                    {eventTypeName} @event;
                     try
                     {{
@@ -65,7 +99,7 @@ public static partial class Sources
             // Reference types — null check with ?? throw
             var deserializeCall = hasOptions
                 ? $"global::System.Text.Json.JsonSerializer.Deserialize<{eventTypeName}>(json, JsonSerializerOptions)"
-                : $"({eventTypeName}?)global::System.Text.Json.JsonSerializer.Deserialize(json, typeof({eventTypeName}), JsonSerializerContext)";
+                : $"({eventTypeName}?)global::System.Text.Json.JsonSerializer.Deserialize(json, typeof({eventTypeName}), {context})";
             deserializeAndYield = $@"                    {eventTypeName} @event;
                     try
                     {{

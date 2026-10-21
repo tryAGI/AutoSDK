@@ -21,6 +21,8 @@ public static partial class Sources
     {
         var hasOptions = !wsClient.Settings.HasJsonSerializerContext();
         var eventSurface = GenerateWebSocketEventSurface(wsClient);
+        var scopedMetadata = wsClient.Settings.UseSharedJsonMetadata && wsClient.Settings.FromCli &&
+            wsClient.Settings.ShouldGenerateJsonSerializerContextTypes();
 
         return $@"
 #nullable enable
@@ -46,7 +48,14 @@ namespace {wsClient.Settings.Namespace}
 
         {string.Empty.ToXmlDocumentationSummary(level: 8)}
 {(hasOptions ? $@"
-        public global::System.Text.Json.JsonSerializerOptions JsonSerializerOptions {{ get; set; }} = new global::System.Text.Json.JsonSerializerOptions();" : $@"
+        public global::System.Text.Json.JsonSerializerOptions JsonSerializerOptions {{ get; set; }} = new global::System.Text.Json.JsonSerializerOptions();" : scopedMetadata ? $@"
+        private global::System.Lazy<global::System.Text.Json.Serialization.JsonSerializerContext>? JsonSerializerContextProvider;
+        /// <summary>Gets or sets the context used to override per-message defaults.</summary>
+        public global::System.Text.Json.Serialization.JsonSerializerContext JsonSerializerContext
+        {{
+            get => JsonSerializerContextProvider?.Value ?? {GetDefaultJsonSerializerContextExpression(wsClient.Settings)};
+            set => JsonSerializerContextProvider = new(() => value);
+        }}" : $@"
         public global::System.Text.Json.Serialization.JsonSerializerContext JsonSerializerContext {{ get; set; }} = {GetDefaultJsonSerializerContextExpression(wsClient.Settings)};")}
 
         /// <summary>

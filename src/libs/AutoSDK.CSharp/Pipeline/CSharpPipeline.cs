@@ -162,6 +162,9 @@ public static class CSharpPipeline
                     .ToImmutableArray().AsEquatableArray(),
             };
         }
+        string? WebSocketContext(TypeData type) =>
+            serializerPlan is not null && serializerPlan.ModelContexts.TryGetValue(type.CSharpTypeWithoutNullability, out var name)
+                ? name : null;
         var webSocketMessageModels = data.Classes
             .Where(x => data.WebSocketOperations.Any(y => string.Equals(
                 y.MessageType.CSharpTypeWithoutNullability,
@@ -432,7 +435,7 @@ public static class CSharpPipeline
                         .SelectMany(x => new[]
                         {
                             Sources.WebSocketClient(x, cancellationToken),
-                            Sources.WebSocketReceiveMethod(x, cancellationToken),
+                            Sources.WebSocketReceiveMethod(x, WebSocketContext(x.BaseReceiveEventType), cancellationToken),
                         })
                     .Concat(data.WebSocketClients
                         .Where(x => x.QueryParameters.Length > 0 &&
@@ -447,7 +450,7 @@ public static class CSharpPipeline
                             webSocketMessageModels.TryGetValue(x.MessageType.CSharpTypeWithoutNullability, out var model)
                                 ? model
                                 : default,
-                            cancellationToken))));
+                            WebSocketContext(x.MessageType), cancellationToken))));
         }
         else
         {
@@ -455,7 +458,7 @@ public static class CSharpPipeline
                 .SelectMany(x => new[]
                 {
                     Sources.WebSocketClient(x, cancellationToken),
-                    Sources.WebSocketReceiveMethod(x, cancellationToken),
+                    Sources.WebSocketReceiveMethod(x, WebSocketContext(x.BaseReceiveEventType), cancellationToken),
                 })
                 .Concat(data.WebSocketOperations
                     .Where(x => x.Direction == AutoSDK.Models.WebSocketDirection.Send)
@@ -464,9 +467,28 @@ public static class CSharpPipeline
                         webSocketMessageModels.TryGetValue(x.MessageType.CSharpTypeWithoutNullability, out var model)
                             ? model
                             : default,
-                        cancellationToken))));
+                        WebSocketContext(x.MessageType), cancellationToken))));
         }
 
+        if (serializerPlan is not null)
+        {
+            AddPhase("websocket-scoped-parsers", () => data.WebSocketOperations
+                .Where(static operation => operation.Direction == WebSocketDirection.Receive &&
+                    !operation.MessageType.IsBinary &&
+                    !string.Equals(operation.ContentType, "text/plain", StringComparison.OrdinalIgnoreCase) &&
+                    !string.Equals(operation.ContentType, "application/octet-stream", StringComparison.OrdinalIgnoreCase))
+                .Where(operation => WebSocketContext(operation.MessageType) is not null)
+                .GroupBy(static operation => (operation.Settings.Namespace, operation.ClassName, Name: operation.MessageName.ToPropertyName()))
+                .SelectMany(group =>
+                {
+                    var messages = group.GroupBy(static operation => operation.MessageType.CSharpTypeWithoutNullability,
+                            StringComparer.Ordinal).Select(static variants => variants.First()).ToArray();
+                    return messages.Select(operation => Sources.WebSocketDeserializeMethod(operation,
+                        WebSocketContext(operation.MessageType)!, messages.Length == 1 ? null :
+                            SerializerContextPlan.GetContextName(operation.Settings, "Message",
+                                operation.MessageType.CSharpTypeWithoutNullability).Split('_').Last()));
+                }));
+        }
         return new CSharpRenderResult(
             files.ToArray(),
             phases?.ToArray() ?? []);

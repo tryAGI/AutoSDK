@@ -88,6 +88,8 @@ Generate_RoboflowSdk	25.063626
 Generate_SarvamAISdk	13.954560
 Generate_SelectedLargeProfile_BuildsTrimsAndRunsWithoutUnrelatedModels	25.740424
 Generate_SerperSdk	13.350564
+Generate_SharedWebSocketScopes_TrimAndNativeAotPreserveOfflineContracts (False)	53.507370
+Generate_SharedWebSocketScopes_TrimAndNativeAotPreserveOfflineContracts (True)	31.838566
 Generate_ShotstackSdk	28.466034
 Generate_SpeechmaticsSdk	17.448367
 Generate_SplitByTagsRejectsFlatClientBeforeReadingInput	7.280837

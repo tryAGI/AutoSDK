@@ -8,7 +8,7 @@ using Google.Protobuf.Reflection;
 namespace AutoSDK.IntegrationTests;
 
 [TestClass]
-public class CliTests
+public partial class CliTests
 {
     [TestMethod]
     public async Task AuditRepresentations_WritesStableMachineReadableReportAndSummary()

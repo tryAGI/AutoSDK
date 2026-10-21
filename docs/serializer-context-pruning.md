@@ -66,6 +66,35 @@ arbitrary SDK models. Reading or explicitly assigning that context retains its
 complete graph. A custom context assigned to a root client still propagates to
 children and overrides operation defaults. This is deliberate caller ownership.
 
+## AsyncAPI and WebSocket scopes
+
+The same CLI flag applies to AsyncAPI generation. Generate each subtree with the
+same CLI version and use distinct serializer context names, for example
+`SourceGenerationContext` for HTTP and `RealtimeSourceGenerationContext` for
+Realtime. One build-only package reference discovers all manifests recursively.
+Dependency completion prefers each subtree's own factories for common BCL types.
+
+A WebSocket client initializes its default metadata lazily. Each typed send
+method uses the graph of its outgoing message. In the shared profile,
+`Deserialize{MessageName}Message(string json)` parses a selected inbound message
+using its own graph, including when an application supplies the transport.
+Names that normalize to the same C# identifier receive deterministic type-based
+suffixes when their payload types differ.
+
+For OpenAI Realtime, a typed parser is used as follows:
+
+```csharp
+using var client = new OpenAiRealtimeClient();
+var delta = client.DeserializeResponseTextDeltaMessage(receivedJson);
+```
+
+`ReceiveUpdatesAsync` accepts the complete advertised server-event union and
+retains every variant needed by that contract. Its transport, event dispatch,
+unknown-message handling and cancellation hooks keep their existing behavior.
+Assigning `JsonSerializerContext` overrides the defaults for sends, typed parsers
+and union receives. Explicitly reading its default getter retains the aggregate
+Realtime graph.
+
 ## Cost and caching
 
 Operation-specific System.Text.Json contexts alone are insufficient: their
@@ -74,8 +103,10 @@ library and compiler heap. Shared factories avoid generating a complete STJ
 context for each operation. One STJ compilation context discovers each implicit
 dependency once. Before C# compilation the analyzer relocates each factory into
 an independent holder, keeping compiler-generated lambda types below CLR method
-limits. Small component contexts compose a shared per-SDK runtime helper; enum
-converter lookup is lazy and indexed, with no process-wide type registry.
+limits. Internal components use static scope carriers and one shared options-bound
+context implementation, avoiding a derived context and default/scope holder family
+for each component. Public aggregate/tag context APIs retain their concrete types.
+Enum converter lookup is lazy and indexed, with no process-wide type registry.
 
 Measure these costs separately:
 
@@ -102,13 +133,21 @@ ordinary STJ contexts, partial-member/collection/cyclic/ignored dependencies,
 rejection of instance writers, projects without manifests, inaccessible-member
 warning propagation, warnings-as-errors, ordinary-context diagnostic deduplication,
 additional-manifest diagnostic provenance, version guards, isolated factories,
-and completion of compiled partial members without flattening reachable children.
+completion of compiled partial members without flattening reachable children,
+and local factory ownership across multiple manifests.
 
 `Generate_LargeMultiTagClient_TrimmedLeafRetainsOnlyReachableSerializerGraph`
 uses 40 tags with 36 models each and an unused endpoint within the live tag.
 It publishes and runs leaf, root, standalone nested-helper and explicitly configured aggregate consumers
 for both extension-data representations. It verifies unused DTO and serializer
 methods are absent and checks a material linked-size reduction.
+
+`Generate_SharedWebSocketScopes_TrimAndNativeAotPreserveOfflineContracts` publishes
+and executes isolated typed, send, union and caller-context consumers under both
+full trimming and NativeAOT. A loopback server verifies actual WebSocket frames,
+multiple known events and unknown/malformed messages; PE inspection checks unused
+message factories are absent. `ScopedWebSocketMetadataTests` also covers legacy
+profile isolation and normalized parser-name collisions.
 
 [#427](https://github.com/tryAGI/AutoSDK/issues/427) tracks real large-SDK acceptance;
 [#428](https://github.com/tryAGI/AutoSDK/issues/428) tracks metadata sharing and its
