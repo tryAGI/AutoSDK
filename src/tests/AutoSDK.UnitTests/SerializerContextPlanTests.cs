@@ -290,6 +290,12 @@ components:
         var shared = files.Single(file => file.Name.StartsWith(
             SerializerContextPlan.Create(data).ModelContexts["global::GraphFixture.Shared"] + ".", StringComparison.Ordinal));
         shared.Text.Should().Contain(".MetadataScope").And.NotContain("typeof(global::GraphFixture.FirstRequest)");
+        shared.Text.Should().Contain("internal static partial class")
+            .And.NotContain(": global::System.Text.Json.Serialization.JsonSerializerContext")
+            .And.NotContain("class ScopeHolder").And.NotContain("class DefaultHolder");
+        files.Single(static file => file.Name == "GraphFixture.JsonSerializerContext.g.cs").Text
+            .Should().Contain("public sealed partial class SourceGenerationContext")
+            .And.Contain("public static SourceGenerationContext Default");
     }
 
     [TestMethod]

@@ -29,8 +29,16 @@ public static partial class Sources
 namespace {client.Settings.Namespace}
 {{
     /// <summary>Source-generated JSON metadata for this scope.</summary>
-    {(internalContext ? "internal" : "public")} sealed partial class {name} : global::System.Text.Json.Serialization.JsonSerializerContext
+    {(internalContext ? "internal static partial class " + name : "public sealed partial class " + name + " : global::System.Text.Json.Serialization.JsonSerializerContext")}
     {{
+{(internalContext ? $@"
+        internal static readonly {scope} MetadataScope = new(
+                {(registrations.Length == 0 ? "null" : "new SharedMetadataResolver()")},
+                new global::System.Func<{scope}>[] {{
+{dependencies.Select(dependency => $"                    static () => global::{dependency}.MetadataScope,").Inject()}
+                }}, {(client.Converters.Length == 0 ? "null" : "ContributeConverters")});
+        internal static global::System.Text.Json.Serialization.JsonSerializerContext Default => MetadataScope.Default;
+" : $@"
         internal static {scope} MetadataScope => ScopeHolder.Value;
         internal static global::System.Text.Json.Serialization.Metadata.IJsonTypeInfoResolver TypeInfoResolver => MetadataScope;
         private static class ScopeHolder
@@ -54,6 +62,7 @@ namespace {client.Settings.Namespace}
         /// <inheritdoc />
         public override global::System.Text.Json.Serialization.Metadata.JsonTypeInfo? GetTypeInfo(global::System.Type type) =>
             MetadataScope.GetTypeInfo(type, Options);
+")}
         /// <summary>Adds converters required by this scope.</summary>
         [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Never)]
         public static void AddConverters(global::System.Text.Json.JsonSerializerOptions options) => MetadataScope.AddConverters(options);
@@ -122,12 +131,25 @@ namespace {client.Settings.Namespace}
     {{
 {intrinsic}
         private static readonly SharedMetadataResolver Intrinsic = new();
+        private readonly global::System.Lazy<ScopedContext> _default;
+        internal global::System.Text.Json.Serialization.JsonSerializerContext Default => _default.Value;
+        // One options-bound context implementation serves every internal component.
+        // Options are created lazily, after all component initializers have completed.
+        private sealed class ScopedContext : global::System.Text.Json.Serialization.JsonSerializerContext
+        {{
+            private readonly {name} _scope;
+            internal ScopedContext({name} scope) : base(scope.CreateOptions()) => _scope = scope;
+            protected override global::System.Text.Json.JsonSerializerOptions? GeneratedSerializerOptions => Options;
+            public override global::System.Text.Json.Serialization.Metadata.JsonTypeInfo? GetTypeInfo(global::System.Type type) =>
+                _scope.GetTypeInfo(type, Options);
+        }}
         private readonly global::System.Text.Json.Serialization.Metadata.IJsonTypeInfoResolver? _own;
         private readonly global::System.Func<{name}>[] _dependencies;
         private readonly global::System.Action<ConverterCollector>? _contribute;
         internal {name}(global::System.Text.Json.Serialization.Metadata.IJsonTypeInfoResolver? own,
             global::System.Func<{name}>[] dependencies, global::System.Action<ConverterCollector>? contribute)
         {{
+            _default = new global::System.Lazy<ScopedContext>(() => new ScopedContext(this));
             _own = own;
             _dependencies = dependencies;
             _contribute = contribute;
