@@ -19,6 +19,7 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Include="../../shared/SharedJsonMetadataProtocol.cs" Link="Internal/SharedJsonMetadataProtocol.cs" />
     <Compile Include="..\AutoSDK\**\*.cs" Exclude="..\AutoSDK\bin\**\*.*;..\AutoSDK\obj\**\*.*" />
     <Compile Include="..\AutoSDK.CSharp\**\*.cs" Exclude="..\AutoSDK.CSharp\bin\**\*.*;..\AutoSDK.CSharp\obj\**\*.*" />
   </ItemGroup>
