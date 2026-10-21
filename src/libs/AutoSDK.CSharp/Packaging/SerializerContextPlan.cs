@@ -9,13 +9,15 @@ namespace AutoSDK.Packaging;
 /// Groups metadata by the operations that need it. Shared models keep a shared context, while
 /// independent operation graphs never fall back to the complete SDK.
 /// </summary>
-internal sealed class SerializerContextPlan
+internal sealed partial class SerializerContextPlan
 {
-    internal sealed class Group(string name, EquatableArray<TypeData> types, ImmutableArray<string> converters)
+    internal sealed class Group(string name, EquatableArray<TypeData> types, ImmutableArray<string> converters,
+        ImmutableArray<string> dependencies = default)
     {
         internal string Name { get; } = name;
         internal EquatableArray<TypeData> Types { get; } = types;
         internal ImmutableArray<string> Converters { get; } = converters;
+        internal ImmutableArray<string> Dependencies { get; } = dependencies.IsDefault ? [] : dependencies;
     }
 
     public IReadOnlyList<Group> Groups { get; }
@@ -71,6 +73,22 @@ internal sealed class SerializerContextPlan
         foreach (var type in data.Types)
         {
             AddType(type);
+        }
+        if (data.Converters.Settings.UseSharedJsonMetadata)
+        {
+            // Some dictionary/empty-object wrappers are emitted as classes but omitted from
+            // Data.Types. Their public helpers still need an independently owned component.
+            foreach (var model in data.Classes.Concat(data.Enums))
+            {
+                AddType(CreateEmittedMetadataType(model.GlobalClassName, model.Namespace,
+                    model.Style is ModelStyle.Enumeration or ModelStyle.ReadonlyRecordStruct,
+                    model.Style == ModelStyle.Enumeration, model.IsDeprecated));
+            }
+            foreach (var union in data.AnyOfs.Where(static union => union.IsNamed))
+            {
+                AddType(CreateEmittedMetadataType($"global::{union.Namespace}.{union.Name}",
+                    union.Namespace, isValueType: true, isEnum: false, isDeprecated: false));
+            }
         }
         foreach (var model in data.Classes.Concat(data.Enums))
         {
@@ -157,14 +175,19 @@ internal sealed class SerializerContextPlan
             .GroupBy(static method => method.Id, StringComparer.Ordinal)
             .OrderBy(static group => group.Key, StringComparer.Ordinal)
             .ToArray();
+        var rootsByOperation = operations.ToDictionary(static group => group.Key,
+            group => group.SelectMany(GetOperationTypes).Select(static type => type.CSharpTypeWithoutNullability)
+                .Where(types.ContainsKey).Distinct(StringComparer.Ordinal).ToArray(), StringComparer.Ordinal);
+        if (data.Converters.Settings.UseSharedJsonMetadata)
+        {
+            return CreateComponents(data, types, edges, rootsByOperation);
+        }
         var users = types.Keys.ToDictionary(static name => name, static _ => new List<int>(), StringComparer.Ordinal);
-        var rootsByOperation = new Dictionary<string, string[]>(StringComparer.Ordinal);
         for (var index = 0; index < operations.Length; index++)
         {
             var roots = operations[index].SelectMany(GetOperationTypes)
                 .Select(static type => type.CSharpTypeWithoutNullability)
                 .Where(types.ContainsKey).Distinct(StringComparer.Ordinal).ToArray();
-            rootsByOperation.Add(operations[index].Key, roots);
             foreach (var name in Reach(roots))
             {
                 users[name].Add(index);
@@ -272,6 +295,16 @@ internal sealed class SerializerContextPlan
             StringComparer.Ordinal);
         return new SerializerContextPlan(groups, contextByType, contextsByOperation);
     }
+
+    private static TypeData CreateEmittedMetadataType(string name, string ns, bool isValueType, bool isEnum, bool isDeprecated) =>
+        TypeData.Default with
+        {
+            CSharpTypeRaw = name, CSharpTypeWithoutNullability = name, CSharpTypeWithNullability = name,
+            CSharpType = name, CSharpTypeWithNullabilityForValueTypes = name,
+            CSharpTypeWithNullabilityForNonValueTypes = name, ShortCSharpTypeWithoutNullability = name,
+            ShortCSharpTypeWithNullability = name, Namespace = ns, GeneratedNamespace = ns,
+            IsValueType = isValueType, IsEnum = isEnum, IsDeprecated = isDeprecated, IsComponent = true,
+        };
 
     internal static TypeData NormalizeMetadataType(TypeData type)
     {

@@ -1,5 +1,10 @@
 <Project Sdk="Microsoft.NET.Sdk">
 
+  <Import Project="Generated/AutoSDK.SharedJsonMetadata.props" Condition="Exists('Generated/AutoSDK.SharedJsonMetadata.props')" />
+  <ItemGroup Condition="'$(AutoSDKJsonMetadataVersion)' != ''">
+    <PackageReference Include="AutoSDK.JsonMetadata" Version="$(AutoSDKJsonMetadataVersion)" PrivateAssets="all" />
+  </ItemGroup>
+
   <PropertyGroup>
     <TargetFramework>net10.0</TargetFramework>
   </PropertyGroup>

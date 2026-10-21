@@ -187,6 +187,9 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v7
 
+      - name: Test shared metadata adoption audit
+        run: python3 -W error::ResourceWarning -m unittest discover -s scripts/tests -p test_audit_shared_json_metadata.py
+
       - name: Setup .NET
         uses: actions/setup-dotnet@v6
         with:

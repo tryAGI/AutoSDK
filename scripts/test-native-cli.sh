@@ -22,6 +22,7 @@ compare_generated() {
   local label=$1
   local spec=$2
   local namespace=$3
+  local extra_arguments=("${@:4}")
   local managed_output="$acceptance_directory/$label-managed"
   local native_output="$acceptance_directory/$label-native"
 
@@ -29,12 +30,14 @@ compare_generated() {
     --namespace "$namespace" \
     --targetFramework net10.0 \
     --output "$managed_output" \
+    "${extra_arguments[@]}" \
     --ignore-openapi-errors \
     --ignore-openapi-warnings >/dev/null
   run_native generate "$spec" \
     --namespace "$namespace" \
     --targetFramework net10.0 \
     --output "$native_output" \
+    "${extra_arguments[@]}" \
     --ignore-openapi-errors \
     --ignore-openapi-warnings >/dev/null
   diff -ru "$managed_output" "$native_output"
@@ -60,6 +63,7 @@ done
 
 compare_generated openapi30-yaml "$repository_directory/specs/petstore.yaml" NativeAot.OpenApi30Yaml
 compare_generated openapi30-json "$repository_directory/specs/native-aot-openapi30.json" NativeAot.OpenApi30Json
+compare_generated shared-json "$repository_directory/specs/native-aot-openapi30.json" NativeAot.SharedJson --shared-json-metadata
 compare_generated openapi31-yaml "$repository_directory/specs/callbacks-webhooks-links.yaml" NativeAot.OpenApi31Yaml
 compare_generated openapi31-json "$repository_directory/specs/native-aot-openapi31.json" NativeAot.OpenApi31Json
 compare_generated asyncapi-yaml "$repository_directory/specs/native-aot-asyncapi.yaml" NativeAot.AsyncApiYaml

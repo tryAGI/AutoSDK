@@ -1,3 +1,5 @@
+using System.Collections.Immutable;
+using AutoSDK.Extensions;
 using AutoSDK.Generation;
 using AutoSDK.Models;
 using AutoSDK.Packaging;
@@ -184,6 +186,110 @@ components:
             plan.ModelContexts["global::GraphFixture.UnusedA"]);
         unused.Types.Select(static type => type.CSharpTypeWithoutNullability)
             .Should().NotContain("global::GraphFixture.UnusedB");
+    }
+
+
+    [TestMethod]
+    public void SharedPlan_NestedHelpersAndOrphansFollowOnlyOutgoingDependencies()
+    {
+        var data = Prepare();
+        data = data with { Converters = data.Converters with
+            { Settings = data.Converters.Settings with { UseSharedJsonMetadata = true } } };
+        var plan = SerializerContextPlan.Create(data);
+        var sharedContext = plan.ModelContexts["global::GraphFixture.Shared"];
+        var shared = plan.Groups.Single(group => group.Name == sharedContext);
+        shared.Types.Select(static type => type.CSharpTypeWithoutNullability)
+            .Should().Equal("global::GraphFixture.Shared");
+        var reachable = new HashSet<string>(StringComparer.Ordinal);
+        var pending = new Stack<string>();
+        pending.Push(sharedContext);
+        while (pending.Count != 0)
+        {
+            var name = pending.Pop();
+            if (!reachable.Add(name)) continue;
+            foreach (var dependency in plan.Groups.Single(group => group.Name == name).Dependencies)
+                pending.Push(dependency);
+        }
+        reachable.Should().NotContain(plan.ModelContexts["global::GraphFixture.FirstRequest"])
+            .And.NotContain(plan.ModelContexts["global::GraphFixture.SecondResponse"])
+            .And.NotContain(plan.ModelContexts["global::GraphFixture.UnusedA"]);
+        plan.Groups.SelectMany(static group => group.Types)
+            .Select(static type => type.CSharpTypeWithoutNullability).Should().OnlyHaveUniqueItems();
+        plan.Groups.Should().Contain(group => group.Name == plan.ModelContexts["global::System.DateTime"] &&
+            group.Types.Any(type => type.CSharpTypeWithNullability == "global::System.DateTime?"));
+    }
+
+    [TestMethod]
+    public void SharedPlan_ComponentsKeepCyclesTogetherWithoutTheirParents()
+    {
+        var spec = Spec.Replace("    UnusedA:\n", """
+    CycleA:
+      type: object
+      properties:
+        child:
+          $ref: '#/components/schemas/CycleB'
+    CycleB:
+      type: object
+      properties:
+        child:
+          $ref: '#/components/schemas/CycleA'
+    CycleParent:
+      type: object
+      properties:
+        child:
+          $ref: '#/components/schemas/CycleA'
+    UnusedA:
+
+""", StringComparison.Ordinal);
+        var data = Prepare();
+        var settings = data.Converters.Settings with { UseSharedJsonMetadata = true };
+        data = AutoSDK.Generation.Data.Prepare(((spec, settings), settings));
+        var plan = SerializerContextPlan.Create(data);
+        plan.ModelContexts["global::GraphFixture.CycleA"].Should()
+            .Be(plan.ModelContexts["global::GraphFixture.CycleB"])
+            .And.NotBe(plan.ModelContexts["global::GraphFixture.CycleParent"]);
+        var cycle = plan.Groups.Single(group => group.Name == plan.ModelContexts["global::GraphFixture.CycleA"]);
+        cycle.Dependencies.Should().NotContain(plan.ModelContexts["global::GraphFixture.CycleParent"]);
+    }
+
+    [TestMethod]
+    public void SharedPlan_EmittedModelsOmittedFromRegisteredTypesNeverFallBackToTheAggregate()
+    {
+        var data = Prepare();
+        data = data with
+        {
+            Types = data.Types.Where(static type => type.CSharpTypeWithoutNullability != "global::GraphFixture.UnusedA")
+                .ToImmutableArray().AsEquatableArray(),
+            Converters = data.Converters with { Settings = data.Converters.Settings with { UseSharedJsonMetadata = true } },
+        };
+        var plan = SerializerContextPlan.Create(data);
+        foreach (var model in data.Classes.Concat(data.Enums))
+            plan.ModelContexts.Should().ContainKey(model.GlobalClassName);
+        var files = CSharpPipeline.GenerateFiles(data);
+        files.Single(static file => file.Name.EndsWith(".Models.UnusedA.Json.g.cs", StringComparison.Ordinal)).Text
+            .Should().Contain(plan.ModelContexts["global::GraphFixture.UnusedA"])
+            .And.NotContain("global::GraphFixture.SourceGenerationContext.Default");
+        files.Single(static file => file.Name.EndsWith(".autosdk-json-metadata", StringComparison.Ordinal)).Text
+            .Should().Contain("typeof(global::GraphFixture.UnusedA)");
+    }
+
+    [TestMethod]
+    public void SharedPlan_EmitsOneManifestAndCoordinatedBuildOnlyVersionBinding()
+    {
+        var data = Prepare();
+        data = data with { Converters = data.Converters with
+            { Settings = data.Converters.Settings with { UseSharedJsonMetadata = true } } };
+        var files = CSharpPipeline.GenerateFiles(data);
+        var manifest = files.Single(static file => file.Name.EndsWith(".autosdk-json-metadata", StringComparison.Ordinal));
+        manifest.Text.Should().StartWith("// AutoSDK.JsonMetadata manifest-format: 2\n");
+        manifest.Text.Split("JsonSourceGenerationOptions", StringSplitOptions.None).Length.Should().Be(2);
+        manifest.Text.Should().Contain("ManifestProtocol.Version2");
+        var binding = files.Single(static file => file.Name == "AutoSDK.SharedJsonMetadata.props");
+        binding.Text.Should().Contain("<AutoSDKJsonMetadataVersion>")
+            .And.Contain("<AutoSDKJsonMetadataManifestVersion>2</AutoSDKJsonMetadataManifestVersion>");
+        var shared = files.Single(file => file.Name.StartsWith(
+            SerializerContextPlan.Create(data).ModelContexts["global::GraphFixture.Shared"] + ".", StringComparison.Ordinal));
+        shared.Text.Should().Contain(".MetadataScope").And.NotContain("typeof(global::GraphFixture.FirstRequest)");
     }
 
     [TestMethod]

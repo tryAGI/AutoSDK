@@ -1,6 +1,7 @@
 using System.Collections.Immutable;
 using AutoSDK.Extensions;
 using AutoSDK.Helpers;
+using AutoSDK.Internal;
 using AutoSDK.Models;
 
 namespace AutoSDK.Generation;
@@ -11,11 +12,18 @@ public static partial class Sources
     {
         internal IReadOnlyDictionary<string, string> FactoryMethods { get; }
         internal FileWithName Manifest { get; }
+        internal FileWithName Runtime { get; }
+        internal FileWithName PackageBinding { get; }
+        internal string ScopeTypeName { get; }
 
-        internal SharedJsonMetadataPlan(IReadOnlyDictionary<string, string> factoryMethods, FileWithName manifest)
+        internal SharedJsonMetadataPlan(IReadOnlyDictionary<string, string> factoryMethods, FileWithName manifest,
+            FileWithName runtime, string scopeTypeName)
         {
             FactoryMethods = factoryMethods;
             Manifest = manifest;
+            Runtime = runtime;
+            PackageBinding = CreateSharedJsonMetadataPackageBinding();
+            ScopeTypeName = scopeTypeName;
         }
     }
 
@@ -33,9 +41,14 @@ public static partial class Sources
         var deprecated = data.Classes.Where(static model => model.IsDeprecated).ToArray();
         var registrations = GenerateJsonSerializableAttributeRegistrations(client, data.Types, typeSet,
             state.TypeInfoNames, nullable, deprecated.Select(static model => model.GlobalClassName).ToArray());
-        var chunks = SplitJsonSerializableAttributes(registrations, client.Settings.JsonSerializerContextChunkSize).ToArray();
+        // One STJ context discovers each compiled dependency once. The analyzer moves each
+        // factory into an independent holder before C# compilation, avoiding both repeated
+        // chunk closures and a giant compiler-generated closure type.
+        var chunks = new[] { registrations };
         var factories = new Dictionary<string, string>(StringComparer.Ordinal);
         using var builder = new PooledStringBuilder(4096 + registrations.Length * 160);
+        builder.Append(SharedJsonMetadataProtocol.HeaderPrefix +
+            SharedJsonMetadataProtocol.CurrentVersion.ToString(System.Globalization.CultureInfo.InvariantCulture) + "\n");
         builder.Append($@"
 #nullable enable
 namespace {client.Settings.Namespace}
@@ -77,18 +90,29 @@ namespace {client.Settings.Namespace}
                 {
                     var name = registration.TypeInfoPropertyName ?? state.TypeInfoNames.GetGenerated(registration.Type);
                     factories.Add(registration.Type,
-                        $"global::{client.Settings.Namespace}.{className}.Create_{name}");
+                        $"global::{client.Settings.Namespace}.{SharedJsonMetadataProtocol.FactoryHolderName(className, name)}.Create_{name}");
                 }
             }
         }
-        builder.Append(@"
-}");
+        builder.Append($@"
+    // Missing support means the CLI and analyzer package are not protocol-compatible.
+    internal static class {prefix}ProtocolGuard
+    {{
+        internal const int Version = {SharedJsonMetadataProtocol.GeneratedProtocolTypeName}.Version{SharedJsonMetadataProtocol.CurrentVersion};
+    }}
+}}");
         return new SharedJsonMetadataPlan(factories,
-            new FileWithName(client.Settings.Namespace + ".autosdk-json-metadata", builder.ToString()));
+            new FileWithName(client.Settings.Namespace + ".autosdk-json-metadata", builder.ToString()),
+            SharedJsonMetadataRuntime(client, factories), "global::" + client.Settings.Namespace + "." +
+                GetJsonSerializerContextClassName(client) + "MetadataScope");
     }
 
     private static void AppendSharedMetadataResolver(PooledStringBuilder builder,
-        JsonSerializableAttributeRegistration[] registrations, SharedJsonMetadataPlan metadata)
+        JsonSerializableAttributeRegistration[] registrations, SharedJsonMetadataPlan metadata) =>
+        AppendSharedMetadataResolver(builder, registrations, metadata.FactoryMethods);
+
+    private static void AppendSharedMetadataResolver(PooledStringBuilder builder,
+        JsonSerializableAttributeRegistration[] registrations, IReadOnlyDictionary<string, string> factoryMethods)
     {
         builder.Append(@"
         private sealed partial class SharedMetadataResolver : global::System.Text.Json.Serialization.Metadata.IJsonTypeInfoResolver
@@ -98,7 +122,7 @@ namespace {client.Settings.Namespace}
             {");
         foreach (var registration in registrations)
         {
-            if (!metadata.FactoryMethods.TryGetValue(registration.Type, out var factory))
+            if (!factoryMethods.TryGetValue(registration.Type, out var factory))
             {
                 throw new InvalidOperationException(
                     "A scoped JSON type has no shared metadata factory: " + registration.Type);

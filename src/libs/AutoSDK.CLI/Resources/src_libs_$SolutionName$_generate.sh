@@ -6,4 +6,5 @@ autosdk generate openapi.yaml \
   --clientClassName $ClientName$ \
   --targetFramework net10.0 \
   --output Generated \
+  --shared-json-metadata \
   --exclude-deprecated-operations

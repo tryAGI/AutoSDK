@@ -146,15 +146,15 @@ public static class CSharpPipeline
         {
             data = data with
             {
-                Classes = data.Classes.Select(model => serializerPlan.ModelContexts.TryGetValue(model.GlobalClassName, out var context)
-                        ? model with { Settings = model.Settings with { JsonSerializerContext = context } } : model)
+                Classes = data.Classes.Select(model => model with
+                    { Settings = model.Settings with { JsonSerializerContext = serializerPlan.ModelContexts[model.GlobalClassName] } })
                     .ToImmutableArray().AsEquatableArray(),
-                Enums = data.Enums.Select(model => serializerPlan.ModelContexts.TryGetValue(model.GlobalClassName, out var context)
-                        ? model with { Settings = model.Settings with { JsonSerializerContext = context } } : model)
+                Enums = data.Enums.Select(model => model with
+                    { Settings = model.Settings with { JsonSerializerContext = serializerPlan.ModelContexts[model.GlobalClassName] } })
                     .ToImmutableArray().AsEquatableArray(),
-                AnyOfs = data.AnyOfs.Select(union => union.IsNamed &&
-                        serializerPlan.ModelContexts.TryGetValue($"global::{union.Namespace}.{union.Name}", out var context)
-                        ? union with { Settings = union.Settings with { JsonSerializerContext = context } } : union)
+                AnyOfs = data.AnyOfs.Select(union => union.IsNamed
+                        ? union with { Settings = union.Settings with
+                            { JsonSerializerContext = serializerPlan.ModelContexts[$"global::{union.Namespace}.{union.Name}"] } } : union)
                     .ToImmutableArray().AsEquatableArray(),
                 Methods = data.Methods.Select(method => serializerPlan.OperationContexts.TryGetValue(method.Id, out var contexts) &&
                         contexts.Length != 0
@@ -629,6 +629,8 @@ public static class CSharpPipeline
         if (sharedMetadata is not null)
         {
             files.Add(sharedMetadata.Manifest);
+            files.Add(sharedMetadata.Runtime);
+            files.Add(sharedMetadata.PackageBinding);
         }
         void AddContext(string name, EquatableArray<TypeData> types, ImmutableArray<string> converters,
             string[] fallbacks, bool includeFallbackConverters = true, string? fileName = null, bool internalContext = false)
@@ -639,6 +641,11 @@ public static class CSharpPipeline
                 Settings = data.Converters.Settings with { JsonSerializerContext = name },
                 Converters = converters,
             };
+            if (sharedMetadata is not null)
+            {
+                files.Add(Sources.SharedJsonMetadataContext(client, types, fallbacks, sharedMetadata, internalContext, deprecated));
+                return;
+            }
             files.Add(Sources.JsonSerializerContext(client, types, new Sources.JsonSerializerContextGenerationState(),
                 fallbackContextNames: fallbacks.Select(static name => "global::" + name).ToArray(),
                 models: deprecated, includeFallbackConverters: includeFallbackConverters,
@@ -646,7 +653,7 @@ public static class CSharpPipeline
         }
         foreach (var group in plan.Groups)
         {
-            AddContext(group.Name, group.Types, group.Converters, [], internalContext: true);
+            AddContext(group.Name, group.Types, group.Converters, group.Dependencies.ToArray(), internalContext: true);
         }
         foreach (var operation in plan.OperationContexts.Where(static pair => pair.Value.Length > 1))
         {
@@ -663,7 +670,7 @@ public static class CSharpPipeline
                 fileName: data.Converters.Settings.Namespace + "." + tag.SafeName);
         }
         AddContext(data.Converters.Settings.JsonSerializerContext, default,
-            data.Converters.Converters, plan.Groups.Select(static group => group.Name).ToArray(),
+            sharedMetadata is null ? data.Converters.Converters : [], plan.Groups.Select(static group => group.Name).ToArray(),
             includeFallbackConverters: false, fileName: data.Converters.FileNameWithoutExtension);
         return files.ToArray();
     }

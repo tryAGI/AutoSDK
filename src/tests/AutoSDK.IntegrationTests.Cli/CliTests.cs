@@ -6481,6 +6481,12 @@ components:
         builder.AppendLine("      properties:");
         builder.AppendLine("        unused:");
         builder.AppendLine("          type: string");
+        builder.AppendLine("    DeprecatedPayload:");
+        builder.AppendLine("      type: object");
+        builder.AppendLine("      deprecated: true");
+        builder.AppendLine("      properties:");
+        builder.AppendLine("        value:");
+        builder.AppendLine("          type: string");
         foreach (var tag in tags)
         {
             var modelPrefix = char.ToUpperInvariant(tag[0]) + tag.Substring(1) + "Model";
@@ -6518,7 +6524,7 @@ components:
         var project = await File.ReadAllTextAsync(projectPath).ConfigureAwait(false);
         project = project.Replace(
             "<TreatWarningsAsErrors>true</TreatWarningsAsErrors>",
-            "<TreatWarningsAsErrors>true</TreatWarningsAsErrors>\n    <IsTrimmable>true</IsTrimmable>\n  </PropertyGroup>\n  <ItemGroup>\n    <Compile Remove=\"LeafConsumer/**/*.cs;RootConsumer/**/*.cs;AggregateConsumer/**/*.cs\" />\n  </ItemGroup>\n  <PropertyGroup>",
+            "<TreatWarningsAsErrors>true</TreatWarningsAsErrors>\n    <IsTrimmable>true</IsTrimmable>\n  </PropertyGroup>\n  <ItemGroup>\n    <Compile Remove=\"LeafConsumer/**/*.cs;RootConsumer/**/*.cs;AggregateConsumer/**/*.cs;HelperConsumer/**/*.cs\" />\n  </ItemGroup>\n  <PropertyGroup>",
             StringComparison.Ordinal);
         await File.WriteAllTextAsync(projectPath, project).ConfigureAwait(false);
         await File.WriteAllTextAsync(
@@ -6550,6 +6556,20 @@ components:
             "AggregateConsumer",
             useRootClient: true,
             useCustomRootContext: true).ConfigureAwait(false);
+
+        var helperAssembly = await PublishAndRunTreeShakeableConsumerAsync(
+            outputDirectory, "HelperConsumer", useRootClient: false,
+            helperModelIndex: modelsPerTag - 1).ConfigureAwait(false);
+        using (var stream = File.OpenRead(helperAssembly))
+        using (var image = new System.Reflection.PortableExecutable.PEReader(stream))
+        {
+            var metadata = System.Reflection.Metadata.PEReaderExtensions.GetMetadataReader(image);
+            var types = metadata.TypeDefinitions.Select(handle =>
+                metadata.GetString(metadata.GetTypeDefinition(handle).Name)).ToArray();
+            types.Should().Contain("AlphaModel" + (modelsPerTag - 1).ToString(System.Globalization.CultureInfo.InvariantCulture))
+                .And.NotContain("AlphaModel0").And.NotContain("BetaModel0")
+                .And.NotContain("UnusedAlphaPayload");
+        }
 
         var leafSize = new FileInfo(leafAssembly).Length;
         var rootSize = new FileInfo(rootAssembly).Length;
@@ -6586,7 +6606,8 @@ components:
         string outputDirectory,
         string consumerName,
         bool useRootClient,
-        bool useCustomRootContext = false)
+        bool useCustomRootContext = false,
+        int? helperModelIndex = null)
     {
         var consumerDirectory = Path.Combine(outputDirectory, consumerName);
         var publishDirectory = Path.Combine(consumerDirectory, "publish");
@@ -6636,6 +6657,12 @@ components:
         var responsePropertyName = useCustomRootContext ? "VaLuE" : "value";
         await File.WriteAllTextAsync(
             Path.Combine(consumerDirectory, "Program.cs"),
+            helperModelIndex is { } index ? $$$"""
+            using Oag;
+            var model = AlphaModel{{{index}}}.FromJson("{\"value\":\"nested-only\",\"extra\":{\"nested\":[1,{\"key\":true}]}}");
+            return model?.Value == "nested-only" && model.ToJson().Contains("nested-only", StringComparison.Ordinal) &&
+                model.ToJson().Contains("\"extra\"", StringComparison.Ordinal) ? 0 : 1;
+            """ :
             $$"""
             using System.Net;
             using System.Text;
@@ -6812,6 +6839,12 @@ components:
             Directory.EnumerateFiles(tempDirectory, "*", SearchOption.AllDirectories)
                 .Should()
                 .NotBeEmpty();
+            var generatedProject = await File.ReadAllTextAsync(Path.Combine(
+                tempDirectory, "src", "libs", "TestAPI", "TestAPI.csproj"));
+            generatedProject.Should().Contain("Generated/AutoSDK.SharedJsonMetadata.props")
+                .And.Contain("Version=\"$(AutoSDKJsonMetadataVersion)\" PrivateAssets=\"all\"");
+            (await File.ReadAllTextAsync(Path.Combine(tempDirectory, "src", "libs", "TestAPI", "generate.sh")))
+                .Should().Contain("--shared-json-metadata");
             var issueTemplateDirectory = Path.Combine(tempDirectory, ".github", "ISSUE_TEMPLATE");
             File.Exists(Path.Combine(issueTemplateDirectory, "bug-report.yml"))
                 .Should()
