@@ -326,6 +326,59 @@ public partial class ChildScope
         parent.Should().NotContain("Create_Unused");
     }
 
+    [TestMethod]
+    public void Generate_MultipleManifestsCompleteDependenciesUsingTheirOwnNamespaceFactories()
+    {
+        var models = new List<SyntaxTree>();
+        var manifests = new List<AdditionalText>();
+        foreach (var ns in new[] { "Alpha", "Beta" })
+        {
+            models.Add(CSharpSyntaxTree.ParseText($$"""
+namespace {{ns}}
+{
+    public sealed class Root { public bool Flag { get; set; } }
+    internal static partial class Scope
+    {
+        private sealed partial class SharedMetadataResolver : System.Text.Json.Serialization.Metadata.IJsonTypeInfoResolver
+        {
+            public System.Text.Json.Serialization.Metadata.JsonTypeInfo? GetTypeInfo(
+                System.Type type, System.Text.Json.JsonSerializerOptions options)
+            {
+                if (type == typeof(Root)) return global::{{ns}}.{{ns}}MetadataFactory_Root.Create_Root(options);
+                System.Text.Json.Serialization.Metadata.JsonTypeInfo? result = null;
+                ResolveAdditionalTypeInfo(type, options, ref result);
+                return result;
+            }
+            static partial void ResolveAdditionalTypeInfo(System.Type type, System.Text.Json.JsonSerializerOptions options,
+                ref System.Text.Json.Serialization.Metadata.JsonTypeInfo? result);
+        }
+    }
+}
+"""));
+            manifests.Add(new Manifest($$"""
+// AutoSDK.JsonMetadata manifest-format: 2
+namespace {{ns}};
+[System.Text.Json.Serialization.JsonSourceGenerationOptions(GenerationMode = System.Text.Json.Serialization.JsonSourceGenerationMode.Metadata)]
+[System.Text.Json.Serialization.JsonSerializable(typeof(Root))]
+internal sealed partial class {{ns}}Metadata : System.Text.Json.Serialization.JsonSerializerContext { }
+""", ns + ".autosdk-json-metadata"));
+        }
+        var compilation = CSharpCompilation.Create("MultipleManifests", models, References,
+            new CSharpCompilationOptions(OutputKind.DynamicallyLinkedLibrary, nullableContextOptions: NullableContextOptions.Enable));
+        GeneratorDriver driver = CSharpGeneratorDriver.Create(
+            generators: [new SharedJsonMetadataGenerator().AsSourceGenerator()], additionalTexts: manifests);
+        driver = driver.RunGeneratorsAndUpdateCompilation(compilation, out var output, out _);
+        output.GetDiagnostics().Should().NotContain(static diagnostic => diagnostic.Severity == DiagnosticSeverity.Error);
+        driver.GetRunResult().Diagnostics.Should().NotContain(static diagnostic => diagnostic.Severity == DiagnosticSeverity.Error);
+        var sources = driver.GetRunResult().Results[0].GeneratedSources;
+        foreach (var ns in new[] { "Alpha", "Beta" })
+        {
+            var source = sources.Single(source => source.HintName == "AutoSDK.SharedDependencies." + ns + ".Scope.g.cs").SourceText.ToString();
+            source.Should().Contain("global::" + ns + "." + ns + "MetadataFactory_Boolean.Create_Boolean(options)")
+                .And.NotContain("global::" + (ns == "Alpha" ? "Beta" : "Alpha") + ".");
+        }
+    }
+
     private static (Compilation Compilation, GeneratorDriverRunResult Result) Generate(string mode, bool ordinaryContext = false, string? extraSource = null, bool warningsAsErrors = false, bool duplicateTypeInfoNames = false, bool specificWarningsAsErrors = false, int? manifestVersion = null)
     {
         var nameOverride = duplicateTypeInfoNames ? ", TypeInfoPropertyName = \"Collision\"" : string.Empty;
@@ -371,9 +424,9 @@ internal sealed partial class OrdinaryContext : System.Text.Json.Serialization.J
         return (output, driver.GetRunResult());
     }
 
-    private sealed class Manifest(string text) : AdditionalText
+    private sealed class Manifest(string text, string path = "Fixture.autosdk-json-metadata") : AdditionalText
     {
-        public override string Path => "Fixture.autosdk-json-metadata";
+        public override string Path => path;
         public override SourceText GetText(CancellationToken cancellationToken = default) => SourceText.From(text);
     }
 }

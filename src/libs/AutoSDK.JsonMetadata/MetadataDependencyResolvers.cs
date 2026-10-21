@@ -22,6 +22,7 @@ internal static class MetadataDependencyResolvers
     {
         var byIdentity = new Dictionary<string, Factory>(StringComparer.Ordinal);
         var byType = new Dictionary<string, Factory>(StringComparer.Ordinal);
+        var byNamespace = new Dictionary<(string Namespace, string Type), Factory>();
         foreach (var source in sources.OrderBy(static source => source.Hint, StringComparer.Ordinal))
         {
             var declaration = source.Root.DescendantNodes().OfType<ClassDeclarationSyntax>().FirstOrDefault();
@@ -67,6 +68,8 @@ internal static class MetadataDependencyResolvers
             var identity = Namespace(declaration) + "." + declaration.Identifier.ValueText + "." + method.Identifier.ValueText;
             var factory = new Factory(identity, type, dependencies);
             byIdentity[identity] = factory;
+            var namespaceKey = (Namespace(declaration), factory.TypeKey);
+            if (!byNamespace.ContainsKey(namespaceKey)) byNamespace.Add(namespaceKey, factory);
             if (!byType.ContainsKey(factory.TypeKey))
             {
                 byType.Add(factory.TypeKey, factory);
@@ -126,6 +129,7 @@ internal static class MetadataDependencyResolvers
                 foreach (var child in current.Children)
                     if (scopeByName.TryGetValue(child, out var next)) remaining.Push(next);
             }
+            var ownerNamespace = Namespace(scope.Owner);
             var visited = new HashSet<string>(scope.Roots.Select(static factory => factory.TypeKey), StringComparer.Ordinal);
             var pending = new Stack<Factory>(scope.Roots);
             var additional = new List<Factory>();
@@ -134,7 +138,10 @@ internal static class MetadataDependencyResolvers
                 output.CancellationToken.ThrowIfCancellationRequested();
                 foreach (var dependency in pending.Pop().Dependencies)
                 {
-                    if (!byType.TryGetValue(dependency, out var factory) || !visited.Add(dependency)) continue;
+                    // Separate manifests may emit the same BCL type. Prefer this SDK subtree\'s
+                    // factory instead of rooting an otherwise unused sibling metadata namespace.
+                    if (!(byNamespace.TryGetValue((ownerNamespace, dependency), out var factory) ||
+                          byType.TryGetValue(dependency, out factory)) || !visited.Add(dependency)) continue;
                     if (ownersByType.TryGetValue(dependency, out var owners) && owners.Any(reachable.Contains)) continue;
                     additional.Add(factory);
                     pending.Push(factory);
