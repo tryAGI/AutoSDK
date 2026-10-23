@@ -229,6 +229,10 @@ modes run in CI independently of source compilation.
 
 ## Real SDK acceptance
 
+The [bounded-batches and options-cache comparison](benchmarks/shared-json-batches-and-cache-20261023.md)
+records protocol-2/protocol-3 controls, unchanged public models, embedded-debug
+attribution, SDK compilation, and 20 trimming/NativeAOT NuGet consumers.
+
 See the [carrier and Realtime comparison](benchmarks/shared-json-carriers-realtime-20261021.md)
 for compact context carriers, multiple-manifest isolation, real WebSocket contracts,
 full SDK costs, NativeAOT and repeated Docker/cache measurements.

@@ -1,0 +1,631 @@
+{
+  "date": "2026-10-23",
+  "baseline": {
+    "commit": "2b883054544681fbed1678b1a9e559ede815223b",
+    "manifestProtocol": 2,
+    "optionsCacheEnabled": true
+  },
+  "candidate": {
+    "commit": "9b08ce1201709714f11e5ce93b777460f266f51e",
+    "manifestProtocol": 3,
+    "optionsCacheEnabled": true,
+    "factoryBatchSize": 16,
+    "methodWeightBudget": 8192
+  },
+  "environment": {
+    "sdk": "10.0.402",
+    "runtime": "10.0.13",
+    "rid": "linux-arm64",
+    "sourceCpu": 2,
+    "sourceMemoryGiB": 16,
+    "consumerCpu": 2,
+    "consumerMemoryGiB": 6,
+    "swap": false,
+    "reflectionSerialization": false,
+    "runtimeNetwork": "none",
+    "publishedCliAnalyzerVersion": "0.35.0-preview.2.123"
+  },
+  "cases": {
+    "OpenAI": {
+      "sourceCommit": "84a08ba9ab63e778d040511dcda8be72d38e5181",
+      "specs": {
+        "openapi.yaml": "11ce7fc4b6ad9127e05dade75b0b1cf1cd8a6ed4441da10890d8b9a72e316d91",
+        "asyncapi.json": "90234a5fad81210218d7c764937a7be3be6f820e917f953defad23096dc08dee"
+      },
+      "publicTypesIdentical": true,
+      "dtoSourcesIdentical": true,
+      "dtoSourceFiles": 5470,
+      "dtoSourceIdentitySha256": "901f074672e74aec908a9c0f141f7424a37a72e40f7ad0d7d03b5516fbb55c00",
+      "variants": {
+        "candidate": {
+          "pe": {
+            "dllBytes": 48263680,
+            "embeddedPdbBytes": 0,
+            "dllMinusEmbeddedPdbPayloadBytes": 48263680,
+            "metadataBytes": 30001148,
+            "ilBodyBytes": 16911619,
+            "types": 42969,
+            "methods": 297387,
+            "fields": 160453,
+            "lambdaHolders": 11463,
+            "publicTypes": 13240,
+            "publicTypeNamesSha256": "C12AE57A83D725CBADF4A53C9F00A2BAE34C7956C3A05390B56F03ABB10F5CDF",
+            "factoryRelatedClrTypes": 4890
+          },
+          "sourceBuild": {
+            "wallSecondsIncludingQueue": 89.299046917,
+            "processSeconds": 84.734,
+            "userCpuSeconds": 121.787,
+            "systemCpuSeconds": 3.919,
+            "peakCgroupBytes": 6297350144
+          },
+          "unchangedSourceBuild": {
+            "wallSecondsIncludingQueue": 301.633780666,
+            "processSeconds": 2.792,
+            "userCpuSeconds": 2.011,
+            "systemCpuSeconds": 0.326,
+            "peakCgroupBytes": 148959232
+          },
+          "cliGeneratedSource": {
+            "files": 21160,
+            "bytes": 97235118,
+            "contextFiles": 6602,
+            "contextBytes": 20788771,
+            "registrations": 0
+          },
+          "compilerGeneratedSource": {
+            "files": 4039,
+            "bytes": 49796354
+          },
+          "manifestBytes": 2387375,
+          "package": {
+            "id": "tryAGI.OpenAI",
+            "version": "0.0.0-retention-candidate-2854e547ae4f",
+            "bytes": 11580899,
+            "dllSha256": "2854e547ae4f86c5472f0e3019b779f58d13a9b05f9d821f3a66568e92f05ba3"
+          },
+          "trimmed": {
+            "root": {
+              "publish": {
+                "wallSecondsIncludingQueue": 16.203727625,
+                "processSeconds": 11.727,
+                "userCpuSeconds": 14.514,
+                "systemCpuSeconds": 1.224,
+                "peakCgroupBytes": 2185314304
+              },
+              "sdkBytes": 120320,
+              "nativeExecutableBytes": null,
+              "publishedBytes": null,
+              "debugBytes": null,
+              "runtimePassed": true,
+              "helperProbe": null
+            },
+            "helper": {
+              "publish": {
+                "wallSecondsIncludingQueue": 13.138240708,
+                "processSeconds": 9.543,
+                "userCpuSeconds": 12.043,
+                "systemCpuSeconds": 1.097,
+                "peakCgroupBytes": 2120339456
+              },
+              "sdkBytes": 37376,
+              "nativeExecutableBytes": null,
+              "publishedBytes": null,
+              "debugBytes": null,
+              "runtimePassed": true,
+              "helperProbe": {
+                "firstMilliseconds": 69.81,
+                "warm1000Milliseconds": 17.459,
+                "allocatedBytes": 2011808
+              }
+            },
+            "chat": {
+              "publish": {
+                "wallSecondsIncludingQueue": 14.076069833,
+                "processSeconds": 11.272,
+                "userCpuSeconds": 14.963,
+                "systemCpuSeconds": 1.106,
+                "peakCgroupBytes": 2191564800
+              },
+              "sdkBytes": 1036288,
+              "nativeExecutableBytes": null,
+              "publishedBytes": null,
+              "debugBytes": null,
+              "runtimePassed": true,
+              "helperProbe": null
+            }
+          },
+          "nativeAot": {
+            "root": {
+              "publish": {
+                "wallSecondsIncludingQueue": 13.923436,
+                "processSeconds": 11.221,
+                "userCpuSeconds": 14.247,
+                "systemCpuSeconds": 0.856,
+                "peakCgroupBytes": 755650560
+              },
+              "sdkBytes": null,
+              "nativeExecutableBytes": 7625944,
+              "publishedBytes": 20615312,
+              "debugBytes": 12989368,
+              "runtimePassed": true,
+              "helperProbe": null
+            },
+            "helper": {
+              "publish": {
+                "wallSecondsIncludingQueue": 10.772749041,
+                "processSeconds": 6.5,
+                "userCpuSeconds": 7.758,
+                "systemCpuSeconds": 0.694,
+                "peakCgroupBytes": 496508928
+              },
+              "sdkBytes": null,
+              "nativeExecutableBytes": 3238552,
+              "publishedBytes": 8570200,
+              "debugBytes": 5331648,
+              "runtimePassed": true,
+              "helperProbe": {
+                "firstMilliseconds": 2.171,
+                "warm1000Milliseconds": 2.394,
+                "allocatedBytes": 2043728
+              }
+            },
+            "chat": {
+              "publish": {
+                "wallSecondsIncludingQueue": 29.227100375,
+                "processSeconds": 24.753,
+                "userCpuSeconds": 31.535,
+                "systemCpuSeconds": 1.358,
+                "peakCgroupBytes": 1487343616
+              },
+              "sdkBytes": null,
+              "nativeExecutableBytes": 15447976,
+              "publishedBytes": 52778320,
+              "debugBytes": 37330344,
+              "runtimePassed": true,
+              "helperProbe": null
+            }
+          }
+        },
+        "baseline": {
+          "pe": {
+            "dllBytes": 49863680,
+            "embeddedPdbBytes": 0,
+            "dllMinusEmbeddedPdbPayloadBytes": 49863680,
+            "metadataBytes": 31459352,
+            "ilBodyBytes": 17036241,
+            "types": 57306,
+            "methods": 313245,
+            "fields": 163856,
+            "lambdaHolders": 14867,
+            "publicTypes": 13240,
+            "publicTypeNamesSha256": "C12AE57A83D725CBADF4A53C9F00A2BAE34C7956C3A05390B56F03ABB10F5CDF",
+            "factoryRelatedClrTypes": 19227
+          },
+          "sourceBuild": {
+            "wallSecondsIncludingQueue": 230.687856292,
+            "processSeconds": 88.324,
+            "userCpuSeconds": 117.599,
+            "systemCpuSeconds": 10.132,
+            "peakCgroupBytes": 6290927616
+          },
+          "unchangedSourceBuild": {
+            "wallSecondsIncludingQueue": 38.721854416999996,
+            "processSeconds": 2.618,
+            "userCpuSeconds": 1.633,
+            "systemCpuSeconds": 0.266,
+            "peakCgroupBytes": 137932800
+          },
+          "cliGeneratedSource": {
+            "files": 21160,
+            "bytes": 97524682,
+            "contextFiles": 6602,
+            "contextBytes": 21077939,
+            "registrations": 0
+          },
+          "compilerGeneratedSource": {
+            "files": 13089,
+            "bytes": 54271529
+          },
+          "manifestBytes": 1789672,
+          "package": {
+            "id": "tryAGI.OpenAI",
+            "version": "0.0.0-retention-baseline-8dbf7b936b71",
+            "bytes": 11666754,
+            "dllSha256": "8dbf7b936b71bf0b46e5255f03de43d4c62462738624a54651d24df8cdf84c2c"
+          },
+          "trimmed": {
+            "root": {
+              "publish": {
+                "wallSecondsIncludingQueue": 17.330744917,
+                "processSeconds": 10.735,
+                "userCpuSeconds": 13.417,
+                "systemCpuSeconds": 1.153,
+                "peakCgroupBytes": 2298408960
+              },
+              "sdkBytes": 120832,
+              "nativeExecutableBytes": null,
+              "publishedBytes": null,
+              "debugBytes": null,
+              "runtimePassed": true,
+              "helperProbe": null
+            },
+            "helper": {
+              "publish": {
+                "wallSecondsIncludingQueue": 12.695586958,
+                "processSeconds": 9.876,
+                "userCpuSeconds": 12.977,
+                "systemCpuSeconds": 1.09,
+                "peakCgroupBytes": 2219261952
+              },
+              "sdkBytes": 37888,
+              "nativeExecutableBytes": null,
+              "publishedBytes": null,
+              "debugBytes": null,
+              "runtimePassed": true,
+              "helperProbe": {
+                "firstMilliseconds": 68.575,
+                "warm1000Milliseconds": 18.352,
+                "allocatedBytes": 2011808
+              }
+            },
+            "chat": {
+              "publish": {
+                "wallSecondsIncludingQueue": 14.02331825,
+                "processSeconds": 11.769,
+                "userCpuSeconds": 14.901,
+                "systemCpuSeconds": 1.142,
+                "peakCgroupBytes": 2324799488
+              },
+              "sdkBytes": 1064448,
+              "nativeExecutableBytes": null,
+              "publishedBytes": null,
+              "debugBytes": null,
+              "runtimePassed": true,
+              "helperProbe": null
+            }
+          },
+          "nativeAot": {
+            "root": {
+              "publish": {
+                "wallSecondsIncludingQueue": 15.850187042,
+                "processSeconds": 11.838,
+                "userCpuSeconds": 15.071,
+                "systemCpuSeconds": 0.945,
+                "peakCgroupBytes": 871366656
+              },
+              "sdkBytes": null,
+              "nativeExecutableBytes": 7619888,
+              "publishedBytes": 20601568,
+              "debugBytes": 12981680,
+              "runtimePassed": true,
+              "helperProbe": null
+            },
+            "helper": {
+              "publish": {
+                "wallSecondsIncludingQueue": 15.137407084,
+                "processSeconds": 6.839,
+                "userCpuSeconds": 8.236,
+                "systemCpuSeconds": 0.71,
+                "peakCgroupBytes": 499499008
+              },
+              "sdkBytes": null,
+              "nativeExecutableBytes": 3234512,
+              "publishedBytes": 8560048,
+              "debugBytes": 5325536,
+              "runtimePassed": true,
+              "helperProbe": {
+                "firstMilliseconds": 3.317,
+                "warm1000Milliseconds": 2.354,
+                "allocatedBytes": 2043728
+              }
+            },
+            "chat": {
+              "publish": {
+                "wallSecondsIncludingQueue": 30.854222167,
+                "processSeconds": 25.91,
+                "userCpuSeconds": 31.948,
+                "systemCpuSeconds": 1.246,
+                "peakCgroupBytes": 1434136576
+              },
+              "sdkBytes": null,
+              "nativeExecutableBytes": 15412728,
+              "publishedBytes": 52811232,
+              "debugBytes": 37398504,
+              "runtimePassed": true,
+              "helperProbe": null
+            }
+          }
+        }
+      }
+    },
+    "AppStoreConnect": {
+      "sourceCommit": "3ffb5f5155de72c9ad2e806558c551d09846084c",
+      "specs": {
+        "openapi.json": "7518d3a94a8bd701ac25c1c601b95b8f53aad92091affb15a2a9d331713dac1a"
+      },
+      "publicTypesIdentical": true,
+      "dtoSourcesIdentical": true,
+      "dtoSourceFiles": 9461,
+      "dtoSourceIdentitySha256": "5a988c047a34c150f57119a4dbecabe28653b9b92e4b43db1f95a9d164c99b4d",
+      "variants": {
+        "baseline": {
+          "pe": {
+            "dllBytes": 110009856,
+            "embeddedPdbBytes": 22131052,
+            "dllMinusEmbeddedPdbPayloadBytes": 87878804,
+            "metadataBytes": 57345344,
+            "ilBodyBytes": 28377601,
+            "types": 112087,
+            "methods": 532019,
+            "fields": 309070,
+            "lambdaHolders": 30314,
+            "publicTypes": 23314,
+            "publicTypeNamesSha256": "5696FFE29D1C893B481124DEE05BC74ED78EFA888FAEEC737749DDE1037D48BD",
+            "factoryRelatedClrTypes": 37112
+          },
+          "sourceBuild": {
+            "wallSecondsIncludingQueue": 870.6815087079999,
+            "processSeconds": 861.34,
+            "userCpuSeconds": 1097.022,
+            "systemCpuSeconds": 23.581,
+            "peakCgroupBytes": 16581058560
+          },
+          "unchangedSourceBuild": {
+            "wallSecondsIncludingQueue": 49.914966792,
+            "processSeconds": 6.172,
+            "userCpuSeconds": 4.275,
+            "systemCpuSeconds": 0.599,
+            "peakCgroupBytes": 233480192
+          },
+          "cliGeneratedSource": {
+            "files": 40723,
+            "bytes": 190648361,
+            "contextFiles": 13963,
+            "contextBytes": 45802420,
+            "registrations": 0
+          },
+          "compilerGeneratedSource": {
+            "files": 25446,
+            "bytes": 79909805
+          },
+          "manifestBytes": 5158840,
+          "package": {
+            "id": "AppStoreConnect",
+            "version": "0.0.0-retention-baseline-4e4c0c5825c6",
+            "bytes": 41795234,
+            "dllSha256": "4e4c0c5825c61b921c2b2088698f0946e91016b70f541c6d429b30ada13c6c1d"
+          },
+          "trimmed": {
+            "root": {
+              "publish": {
+                "wallSecondsIncludingQueue": 24.068310958,
+                "processSeconds": 18.524,
+                "userCpuSeconds": 23.388,
+                "systemCpuSeconds": 2.317,
+                "peakCgroupBytes": 4259606528
+              },
+              "sdkBytes": 20636160,
+              "nativeExecutableBytes": null,
+              "publishedBytes": null,
+              "debugBytes": null,
+              "runtimePassed": true,
+              "helperProbe": null
+            },
+            "helper": {
+              "publish": {
+                "wallSecondsIncludingQueue": 153.00315049999998,
+                "processSeconds": 13.619,
+                "userCpuSeconds": 17.719,
+                "systemCpuSeconds": 1.786,
+                "peakCgroupBytes": 4056367104
+              },
+              "sdkBytes": 18572288,
+              "nativeExecutableBytes": null,
+              "publishedBytes": null,
+              "debugBytes": null,
+              "runtimePassed": true,
+              "helperProbe": {
+                "firstMilliseconds": 50.734,
+                "warm1000Milliseconds": 12.0,
+                "allocatedBytes": 978560
+              }
+            }
+          },
+          "nativeAot": {
+            "root": {
+              "publish": {
+                "wallSecondsIncludingQueue": 100.789140458,
+                "processSeconds": 35.893,
+                "userCpuSeconds": 45.481,
+                "systemCpuSeconds": 1.683,
+                "peakCgroupBytes": 1998241792
+              },
+              "sdkBytes": null,
+              "nativeExecutableBytes": 19277000,
+              "publishedBytes": 78519584,
+              "debugBytes": 59242584,
+              "runtimePassed": true,
+              "helperProbe": null
+            },
+            "helper": {
+              "publish": {
+                "wallSecondsIncludingQueue": 381.60440225,
+                "processSeconds": 6.581,
+                "userCpuSeconds": 7.529,
+                "systemCpuSeconds": 0.946,
+                "peakCgroupBytes": 661843968
+              },
+              "sdkBytes": null,
+              "nativeExecutableBytes": 3102112,
+              "publishedBytes": 8200392,
+              "debugBytes": 5098280,
+              "runtimePassed": true,
+              "helperProbe": {
+                "firstMilliseconds": 1.1,
+                "warm1000Milliseconds": 2.399,
+                "allocatedBytes": 1010576
+              }
+            }
+          }
+        },
+        "candidate": {
+          "pe": {
+            "dllBytes": 94191104,
+            "embeddedPdbBytes": 10497845,
+            "dllMinusEmbeddedPdbPayloadBytes": 83693259,
+            "metadataBytes": 53459536,
+            "ilBodyBytes": 28112274,
+            "types": 82857,
+            "methods": 498306,
+            "fields": 301737,
+            "lambdaHolders": 22980,
+            "publicTypes": 23314,
+            "publicTypeNamesSha256": "5696FFE29D1C893B481124DEE05BC74ED78EFA888FAEEC737749DDE1037D48BD",
+            "factoryRelatedClrTypes": 7882
+          },
+          "sourceBuild": {
+            "wallSecondsIncludingQueue": 899.02637025,
+            "processSeconds": 827.63,
+            "userCpuSeconds": 1056.766,
+            "systemCpuSeconds": 21.171,
+            "peakCgroupBytes": 15037214720
+          },
+          "unchangedSourceBuild": {
+            "wallSecondsIncludingQueue": 9.648124208,
+            "processSeconds": 5.373,
+            "userCpuSeconds": 4.051,
+            "systemCpuSeconds": 0.492,
+            "peakCgroupBytes": 245952512
+          },
+          "cliGeneratedSource": {
+            "files": 40723,
+            "bytes": 189696012,
+            "contextFiles": 13963,
+            "contextBytes": 44850245,
+            "registrations": 0
+          },
+          "compilerGeneratedSource": {
+            "files": 6401,
+            "bytes": 69857912
+          },
+          "manifestBytes": 6774536,
+          "package": {
+            "id": "AppStoreConnect",
+            "version": "0.0.0-retention-candidate-fcea6877f746",
+            "bytes": 29756960,
+            "dllSha256": "fcea6877f7468e0deab2e3f4fb3f62d88a67b336b4c2124da7a029d83faa0372"
+          },
+          "trimmed": {
+            "root": {
+              "publish": {
+                "wallSecondsIncludingQueue": 209.145465125,
+                "processSeconds": 18.252,
+                "userCpuSeconds": 20.614,
+                "systemCpuSeconds": 4.532,
+                "peakCgroupBytes": 3819556864
+              },
+              "sdkBytes": 8846848,
+              "nativeExecutableBytes": null,
+              "publishedBytes": null,
+              "debugBytes": null,
+              "runtimePassed": true,
+              "helperProbe": null
+            },
+            "helper": {
+              "publish": {
+                "wallSecondsIncludingQueue": 69.284666125,
+                "processSeconds": 13.369,
+                "userCpuSeconds": 18.211,
+                "systemCpuSeconds": 1.824,
+                "peakCgroupBytes": 3713171456
+              },
+              "sdkBytes": 6842880,
+              "nativeExecutableBytes": null,
+              "publishedBytes": null,
+              "debugBytes": null,
+              "runtimePassed": true,
+              "helperProbe": {
+                "firstMilliseconds": 54.202,
+                "warm1000Milliseconds": 11.787,
+                "allocatedBytes": 978560
+              }
+            }
+          },
+          "nativeAot": {
+            "root": {
+              "publish": {
+                "wallSecondsIncludingQueue": 49.982423499999996,
+                "processSeconds": 38.352,
+                "userCpuSeconds": 46.909,
+                "systemCpuSeconds": 1.855,
+                "peakCgroupBytes": 1985126400
+              },
+              "sdkBytes": null,
+              "nativeExecutableBytes": 19237328,
+              "publishedBytes": 78248248,
+              "debugBytes": 59010920,
+              "runtimePassed": true,
+              "helperProbe": null
+            },
+            "helper": {
+              "publish": {
+                "wallSecondsIncludingQueue": 13.502481292,
+                "processSeconds": 6.713,
+                "userCpuSeconds": 7.719,
+                "systemCpuSeconds": 0.71,
+                "peakCgroupBytes": 549289984
+              },
+              "sdkBytes": null,
+              "nativeExecutableBytes": 3103200,
+              "publishedBytes": 8203984,
+              "debugBytes": 5100784,
+              "runtimePassed": true,
+              "helperProbe": {
+                "firstMilliseconds": 1.462,
+                "warm1000Milliseconds": 2.671,
+                "allocatedBytes": 1010576
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "runtimeConsumersPassed": 20,
+  "cacheRegression": {
+    "workload": "1000 recursive/polymorphic JSON model round trips, NativeAOT; red phase stops at warm cache assertion",
+    "before": {
+      "warmResolverCallbacks": 5000,
+      "allocatedBytes": 81830224,
+      "warmMilliseconds": 76.501
+    },
+    "after": {
+      "warmResolverCallbacks": 0,
+      "allocatedBytes": 2585056,
+      "warmMilliseconds": 2.395
+    },
+    "scope": "loop includes ordinary JSON/model allocations; timings are diagnostic samples"
+  },
+  "canonicalAdoption": {
+    "OpenAI": {
+      "commit": "8bad364b9784ea0590fdc1ba6fa581c458fe3936",
+      "generatedFilesEqualToTestedCandidate": 21162,
+      "ci": 39970069974
+    },
+    "AppStoreConnect": {
+      "commit": "66f568f4aeb69f59a1b8bc5f324555ac9c89e42c",
+      "generatedFilesEqualToTestedCandidate": 40724,
+      "ci": 39972213790
+    }
+  },
+  "autoSdkCi": 39963021658,
+  "limitations": [
+    "Single constrained source-build and publish samples; queue delay is separate.",
+    "DLL minus embedded PDB payload is not a separately rebuilt stripped assembly; alignment and debug-directory records remain.",
+    "NativeAOT executables can change slightly with code layout and consumer assembly identities; report absolute bytes.",
+    "This follow-up does not repeat the earlier three-profile Advantage/Docker-layer study.",
+    "Explicit aggregate caller contexts retain the complete graph; pruning is verified through a separate default-scope consumer.",
+    "Handwritten OpenAI MEAI/tool/speech aggregate references are tracked separately in OpenAI#452; MEAI linked-size acceptance is not claimed."
+  ]
+}
