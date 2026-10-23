@@ -97,7 +97,40 @@ components:
     [DataRow(true, "SourceGenerationContext")]
     [DataRow(true, "CustomJsonContext")]
     [DataRow(false, "SourceGenerationContext")]
-    public void SharedMetadata_TagClientsUseTheConfiguredFacade(bool shared, string rootContext)
+    public void SharedMetadata_TagClientsUseTheirPublicFacade(bool shared, string rootContext)
+    {
+        var files = CSharpPipeline.GenerateFiles(PrepareTagged(shared, rootContext, "GraphFixture"));
+        var client = files.Single(static file =>
+            file.Name == "GraphFixture.RealtimeClient.g.cs").Text;
+        var expected = rootContext == "SourceGenerationContext"
+            ? "RealtimeSourceGenerationContext" : rootContext + "_Realtime";
+        client.Should().Contain("global::GraphFixture." + expected + ".Default");
+        files.Should().Contain(file =>
+            file.Text.Contains("public sealed partial class " + expected, StringComparison.Ordinal));
+    }
+
+    [TestMethod]
+    [DataRow(false)]
+    [DataRow(true)]
+    public void ConsecutiveGeneration_PreservesHttpTagAndCustomApiRootContexts(bool shared)
+    {
+        var http = CSharpPipeline.GenerateFiles(PrepareTagged(shared, "SourceGenerationContext", "GraphFixture"));
+        var custom = CSharpPipeline.GenerateFiles(PrepareTagged(shared, "RealtimeSourceGenerationContext", "GraphFixture.Realtime"));
+        // Reproduce sequential CLI writes to one Generated directory, including overwrites.
+        var output = new Dictionary<string, string>(StringComparer.Ordinal);
+        foreach (var file in http.Concat(custom).Where(static file => !file.IsEmpty))
+            output[file.Name] = file.Text;
+
+        var httpContext = output["GraphFixture.Realtime.JsonSerializerContext.g.cs"].Replace("\r\n", "\n", StringComparison.Ordinal);
+        httpContext.Should().Contain("namespace GraphFixture\n")
+            .And.Contain("public sealed partial class RealtimeSourceGenerationContext");
+        var customContext = output["GraphFixture.Realtime.RealtimeSourceGenerationContext.JsonSerializerContext.g.cs"]
+            .Replace("\r\n", "\n", StringComparison.Ordinal);
+        customContext.Should().Contain("namespace GraphFixture.Realtime\n")
+            .And.Contain("public sealed partial class RealtimeSourceGenerationContext");
+    }
+
+    private static AutoSDK.Models.Data PrepareTagged(bool shared, string rootContext, string ns)
     {
         var spec = Spec.Replace("paths:", "tags:\n  - name: realtime\n  - name: other\npaths:", StringComparison.Ordinal)
             .Replace("operationId: first\n      tags: [same]", "operationId: first\n      tags: [realtime]", StringComparison.Ordinal)
@@ -107,7 +140,7 @@ components:
         // Converter emitter settings omit generation controls such as GroupByTags.
         var settings = Settings.Default with
         {
-            Namespace = "GraphFixture",
+            Namespace = ns,
             ClassName = "FixtureClient",
             FromCli = true,
             GenerateModels = true,
@@ -116,16 +149,9 @@ components:
             GenerateJsonSerializerContextTypes = true,
             GroupByTags = true,
             UseSharedJsonMetadata = shared,
-            JsonSerializerContext = "GraphFixture." + rootContext,
+            JsonSerializerContext = ns + "." + rootContext,
         };
-        var data = AutoSDK.Generation.Data.Prepare(((spec, settings), settings));
-        var files = CSharpPipeline.GenerateFiles(data);
-        var client = files.Single(static file =>
-            file.Name == "GraphFixture.RealtimeClient.g.cs").Text;
-        var expected = shared ? rootContext : "RealtimeSourceGenerationContext";
-        client.Should().Contain("global::GraphFixture." + expected + ".Default");
-        if (shared)
-            client.Should().NotContain("global::GraphFixture.RealtimeSourceGenerationContext.Default");
+        return AutoSDK.Generation.Data.Prepare(((spec, settings), settings));
     }
 
     private static AutoSDK.Models.Data Prepare()

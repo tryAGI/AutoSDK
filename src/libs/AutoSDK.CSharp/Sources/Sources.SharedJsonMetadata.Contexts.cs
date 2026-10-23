@@ -96,6 +96,9 @@ namespace {client.Settings.Namespace}
         }
         builder.Append("\n    }\n}");
         var fileName = client.FileNameWithoutExtension.TrimEnd('.');
+        // Match legacy custom-root filenames: another API's namespace can also be an HTTP tag.
+        if (!internalContext && name != "SourceGenerationContext" && fileName == client.Settings.Namespace)
+            fileName += "." + name;
         return new FileWithName(fileName + ".JsonSerializerContext.g.cs",
             builder.ToString().RemoveBlankLinesWhereOnlyWhitespaces());
     }

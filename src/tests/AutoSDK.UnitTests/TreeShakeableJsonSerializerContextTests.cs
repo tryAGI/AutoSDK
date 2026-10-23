@@ -369,6 +369,47 @@ components:
     }
 
     [TestMethod]
+    [DataRow("SourceGenerationContext")]
+    [DataRow("V2Context")]
+    public void SharedMetadata_PreservesLegacyPublicPartitionsWithoutDuplicatingRegistrations(string rootContext)
+    {
+        var settings = Settings.Default with
+        {
+            Namespace = "Catalogue",
+            ClassName = "CatalogueClient",
+            GenerateModels = true,
+            GenerateMethods = true,
+            GenerateConstructors = true,
+            GenerateSdk = true,
+            GenerateJsonSerializerContextTypes = true,
+            JsonSerializerContext = "Catalogue." + rootContext,
+            GroupByTags = true,
+            FromCli = true,
+            UseSharedJsonMetadata = true,
+        };
+        var data = CSharpPipeline.PrepareAndEnrich(((Spec, settings), settings));
+        var owners = new Dictionary<string, string>(ModelOwnershipResolver.Resolve(data), StringComparer.Ordinal)
+        {
+            ["global::Catalogue.Album"] = "albums-before-sdk-group-rename",
+        };
+        var plan = SerializerContextPlan.Create(data);
+        var metadata = Sources.CreateSharedJsonMetadataPlan(data);
+        var legacy = CSharpPipeline.CreateMonolithicPartitionJsonSerializerContexts(data, owners, CancellationToken.None);
+        var shared = CSharpPipeline.CreateMonolithicPartitionJsonSerializerContexts(data, owners, CancellationToken.None, plan, metadata);
+        var legacyNames = legacy.SelectMany(file => System.Text.RegularExpressions.Regex.Matches(file.Text,
+                @"public sealed partial class (\w+)").Select(static match => match.Groups[1].Value)).ToArray();
+        var sharedNames = shared.SelectMany(file => System.Text.RegularExpressions.Regex.Matches(file.Text,
+                @"public sealed partial class (\w+)").Select(static match => match.Groups[1].Value)).ToArray();
+        sharedNames.Should().BeEquivalentTo(legacyNames);
+        var orphan = shared.Single(static file => file.Name == "Catalogue.PartitionOrphan0.JsonSerializerContext.g.cs").Text;
+        orphan.Should().Contain("global::" + plan.ModelContexts["global::Catalogue.Album"] + ".MetadataScope")
+            .And.NotContain("JsonSerializable(");
+        shared.Single(static file => file.Name == "Catalogue.PartitionCore.JsonSerializerContext.g.cs").Text
+            .Should().Contain("public sealed partial class")
+            .And.NotContain("JsonSerializable(");
+    }
+
+    [TestMethod]
     public void GenerateFiles_GroupedCli_KeepsDenseLeafGraphsOnAggregateContext()
     {
         const string denseSpec = """

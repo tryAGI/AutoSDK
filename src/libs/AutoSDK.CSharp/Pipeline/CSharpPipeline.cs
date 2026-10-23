@@ -319,7 +319,7 @@ public static class CSharpPipeline
                 ? ApplyPackageSerializerContexts(data, modelOwners)
                 : partitionedMonolithicContext
                     ? ApplyMonolithicPartitionSerializerContexts(data, modelOwners)
-                : serializerPlan is null && tagReachability.Count != 0
+                : tagReachability.Count != 0
                     ? ApplyTagSerializerContexts(data, tagReachability)
                     : data.Clients;
             AddPhase("clients_auth", () => clients
@@ -702,6 +702,17 @@ public static class CSharpPipeline
         AddContext(data.Converters.Settings.JsonSerializerContext, default,
             sharedMetadata is null ? data.Converters.Converters : [], plan.Groups.Select(static group => group.Name).ToArray(),
             includeFallbackConverters: false, fileName: data.Converters.FileNameWithoutExtension);
+        if (sharedMetadata is not null)
+        {
+            var legacyOwners = ResolveLargeMonolithicContextOwners(data);
+            if (legacyOwners.Count != 0)
+            {
+                var names = new HashSet<string>(files.Select(static file => file.Name), StringComparer.Ordinal);
+                foreach (var compatibility in CreateMonolithicPartitionJsonSerializerContexts(
+                             data, legacyOwners, cancellationToken, plan, sharedMetadata))
+                    if (names.Add(compatibility.Name)) files.Add(compatibility);
+            }
+        }
         return files.ToArray();
     }
 
@@ -889,10 +900,31 @@ public static class CSharpPipeline
     internal static FileWithName[] CreateMonolithicPartitionJsonSerializerContexts(
         Models.Data data,
         IReadOnlyDictionary<string, string> modelOwners,
-        CancellationToken cancellationToken)
+        CancellationToken cancellationToken,
+        SerializerContextPlan? serializerPlan = null,
+        Sources.SharedJsonMetadataPlan? sharedMetadata = null)
     {
         var settings = data.Converters.Settings;
         var deprecatedModels = data.Classes.Where(static model => model.IsDeprecated).ToArray();
+
+        FileWithName EmitContext(Client client, EquatableArray<TypeData> types,
+            IReadOnlyList<string> fallbacks, bool includeFallbackConverters = true)
+        {
+            if (sharedMetadata is null)
+                return Sources.JsonSerializerContext(client, types, new Sources.JsonSerializerContextGenerationState(),
+                    fallbackContextNames: fallbacks, models: deprecatedModels,
+                    includeFallbackConverters: includeFallbackConverters, cancellationToken: cancellationToken);
+
+            var componentPlan = serializerPlan ?? throw new InvalidOperationException("Shared compatibility contexts require a serializer plan.");
+            var dependencies = types.Select(type => componentPlan.ModelContexts[
+                    SerializerContextPlan.NormalizeMetadataType(type).CSharpTypeWithoutNullability])
+                .Concat(fallbacks.Select(static name => name.StartsWith("global::", StringComparison.Ordinal) ? name.Substring(8) : name))
+                .Distinct(StringComparer.Ordinal).ToArray();
+            // Public compatibility identities reuse the existing component scopes and factories.
+            return Sources.SharedJsonMetadataContext(client, default, dependencies, sharedMetadata,
+                internalContext: false, models: deprecatedModels);
+        }
+
         var convertersByTag = ModelOwnershipResolver.ResolveConverters(data, modelOwners);
         var ownedConverters = new HashSet<string>(
             convertersByTag.Values.SelectMany(static converters => converters),
@@ -913,13 +945,7 @@ public static class CSharpPipeline
             coreConverters);
         var files = new List<FileWithName>(data.Tags.Length + 2)
         {
-            Sources.JsonSerializerContext(
-                coreClient,
-                GetCoreTypes(data, modelOwners),
-                new Sources.JsonSerializerContextGenerationState(),
-                fallbackContextNames: [],
-                models: deprecatedModels,
-                cancellationToken: cancellationToken),
+            EmitContext(coreClient, GetCoreTypes(data, modelOwners), []),
         };
 
         var collidingTypes = new HashSet<string>(
@@ -974,7 +1000,7 @@ public static class CSharpPipeline
             }
 
             var contextName = GetPackageContextName(settings, tag.SafeName);
-            files.Add(Sources.JsonSerializerContext(
+            files.Add(EmitContext(
                 CreatePackageContextClient(
                     data.Converters,
                     tag.SafeName,
@@ -983,21 +1009,12 @@ public static class CSharpPipeline
                         ? converters
                         : ImmutableArray<string>.Empty),
                 tagTypes.AddRange(sharedCollidingTypes).AsEquatableArray(),
-                new Sources.JsonSerializerContextGenerationState(),
-                fallbackContextNames: [$"global::{coreContextName}"],
-                models: deprecatedModels,
-                cancellationToken: cancellationToken));
+                [$"global::{coreContextName}"]));
             contextNames.Add($"global::{contextName}");
         }
 
-        files.Add(Sources.JsonSerializerContext(
-            data.Converters,
-            ImmutableArray<TypeData>.Empty.AsEquatableArray(),
-            new Sources.JsonSerializerContextGenerationState(),
-            fallbackContextNames: contextNames,
-            models: deprecatedModels,
-            includeFallbackConverters: false,
-            cancellationToken: cancellationToken));
+        files.Add(EmitContext(data.Converters, ImmutableArray<TypeData>.Empty.AsEquatableArray(),
+            contextNames, includeFallbackConverters: false));
         return files.ToArray();
     }
 
