@@ -327,12 +327,18 @@ public partial class ChildScope
     }
 
     [TestMethod]
-    public void Generate_MultipleManifestsCompleteDependenciesUsingTheirOwnNamespaceFactories()
+    [DataRow(false, false)]
+    [DataRow(true, false)]
+    [DataRow(false, true)]
+    [DataRow(true, true)]
+    public void Generate_MultipleManifestsCompleteDependenciesUsingTheirOwnNamespaceFactories(bool identicalContextNames,
+        bool ordinaryContext)
     {
         var models = new List<SyntaxTree>();
         var manifests = new List<AdditionalText>();
         foreach (var ns in new[] { "Alpha", "Beta" })
         {
+            var contextName = identicalContextNames ? "Metadata" : ns + "Metadata";
             models.Add(CSharpSyntaxTree.ParseText($$"""
 namespace {{ns}}
 {
@@ -344,7 +350,7 @@ namespace {{ns}}
             public System.Text.Json.Serialization.Metadata.JsonTypeInfo? GetTypeInfo(
                 System.Type type, System.Text.Json.JsonSerializerOptions options)
             {
-                if (type == typeof(Root)) return global::{{ns}}.{{ns}}MetadataFactory_Root.Create_Root(options);
+                if (type == typeof(Root)) return global::{{ns}}.{{contextName}}Factory_Root.Create_Root(options);
                 System.Text.Json.Serialization.Metadata.JsonTypeInfo? result = null;
                 ResolveAdditionalTypeInfo(type, options, ref result);
                 return result;
@@ -360,13 +366,24 @@ namespace {{ns}}
 namespace {{ns}};
 [System.Text.Json.Serialization.JsonSourceGenerationOptions(GenerationMode = System.Text.Json.Serialization.JsonSourceGenerationMode.Metadata)]
 [System.Text.Json.Serialization.JsonSerializable(typeof(Root))]
-internal sealed partial class {{ns}}Metadata : System.Text.Json.Serialization.JsonSerializerContext { }
+internal sealed partial class {{contextName}} : System.Text.Json.Serialization.JsonSerializerContext { }
 """, ns + ".autosdk-json-metadata"));
+        }
+        if (ordinaryContext)
+        {
+            var contextName = identicalContextNames ? "Metadata" : "AlphaMetadata";
+            models.Add(CSharpSyntaxTree.ParseText($$"""
+namespace Gamma;
+public sealed class Root { public bool Flag { get; set; } }
+[System.Text.Json.Serialization.JsonSerializable(typeof(Root))]
+internal sealed partial class {{contextName}} : System.Text.Json.Serialization.JsonSerializerContext { }
+"""));
         }
         var compilation = CSharpCompilation.Create("MultipleManifests", models, References,
             new CSharpCompilationOptions(OutputKind.DynamicallyLinkedLibrary, nullableContextOptions: NullableContextOptions.Enable));
         GeneratorDriver driver = CSharpGeneratorDriver.Create(
-            generators: [new SharedJsonMetadataGenerator().AsSourceGenerator()], additionalTexts: manifests);
+            generators: [new SharedJsonMetadataGenerator().AsSourceGenerator(),
+                new System.Text.Json.SourceGeneration.JsonSourceGenerator().AsSourceGenerator()], additionalTexts: manifests);
         driver = driver.RunGeneratorsAndUpdateCompilation(compilation, out var output, out _);
         output.GetDiagnostics().Should().NotContain(static diagnostic => diagnostic.Severity == DiagnosticSeverity.Error);
         driver.GetRunResult().Diagnostics.Should().NotContain(static diagnostic => diagnostic.Severity == DiagnosticSeverity.Error);
@@ -374,7 +391,8 @@ internal sealed partial class {{ns}}Metadata : System.Text.Json.Serialization.Js
         foreach (var ns in new[] { "Alpha", "Beta" })
         {
             var source = sources.Single(source => source.HintName == "AutoSDK.SharedDependencies." + ns + ".Scope.g.cs").SourceText.ToString();
-            source.Should().Contain("global::" + ns + "." + ns + "MetadataFactory_Boolean.Create_Boolean(options)")
+            var contextName = identicalContextNames ? "Metadata" : ns + "Metadata";
+            source.Should().Contain("global::" + ns + "." + contextName + "Factory_Boolean.Create_Boolean(options)")
                 .And.NotContain("global::" + (ns == "Alpha" ? "Beta" : "Alpha") + ".");
         }
     }

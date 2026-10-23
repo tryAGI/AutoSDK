@@ -100,7 +100,15 @@ public sealed partial class SourceGenerationContext
     }
 }
 """);
-                foreach (var mode in new[] { "typed", "send", "union", "custom" })
+                var manifest = Directory.GetFiles(directory, "*.autosdk-json-metadata", SearchOption.AllDirectories).Single();
+                var contextName = System.Text.RegularExpressions.Regex.Match(await File.ReadAllTextAsync(manifest),
+                    @"partial class (\w+) :.*JsonSerializerContext").Groups[1].Value;
+                contextName.Should().NotBeNullOrEmpty();
+                await File.WriteAllTextAsync(Path.Combine(directory, "Collision.autosdk-json-metadata"),
+                    ScopedCollisionManifest.Replace("__CONTEXT__", contextName, StringComparison.Ordinal));
+                await File.WriteAllTextAsync(Path.Combine(directory, "Collision.cs"),
+                    ScopedCollisionModels.Replace("__CONTEXT__", contextName, StringComparison.Ordinal));
+                foreach (var mode in new[] { "typed", "send", "union", "custom", "collision" })
                 {
                     var consumer = Path.Combine(directory, "Consumers", mode);
                     Directory.CreateDirectory(consumer);
@@ -118,7 +126,7 @@ public sealed partial class SourceGenerationContext
 </Project>
 """);
                     await File.WriteAllTextAsync(Path.Combine(consumer, "Program.cs"),
-                        ScopedWebSocketProgram.Replace("__MODE__", mode, StringComparison.Ordinal));
+                        ScopedWebSocketProgram.Replace("__MODE__", mode == "collision" ? "typed" : mode, StringComparison.Ordinal));
                     var publish = Path.Combine(consumer, "publish");
                     var result = await RunDotnetAsync(consumer, "publish", "Probe.csproj", "-c", "Release",
                         "-r", RuntimeInformation.RuntimeIdentifier, "-o", publish);
@@ -141,6 +149,45 @@ public sealed partial class SourceGenerationContext
             });
     }
 
+
+    private const string ScopedCollisionManifest = """
+// AutoSDK.JsonMetadata manifest-format: 2
+#nullable enable
+namespace Other;
+[System.Text.Json.Serialization.JsonSourceGenerationOptions(GenerationMode = System.Text.Json.Serialization.JsonSourceGenerationMode.Metadata)]
+[System.Text.Json.Serialization.JsonSerializable(typeof(Root))]
+internal sealed partial class __CONTEXT__ : System.Text.Json.Serialization.JsonSerializerContext { }
+""";
+
+    private const string ScopedCollisionModels = """
+#nullable enable
+namespace Other;
+/// <summary>A payload in a second metadata namespace.</summary>
+public sealed class Root
+{
+    /// <summary>Gets or sets the fixture flag.</summary>
+    public bool Flag { get; set; }
+    /// <summary>Parses a payload using this namespace's metadata.</summary>
+    /// <param name="json">The JSON payload.</param>
+    /// <returns>The parsed payload.</returns>
+    public static Root? Parse(string json)
+    {
+        var options = new System.Text.Json.JsonSerializerOptions { TypeInfoResolver = new Resolver() };
+        return System.Text.Json.JsonSerializer.Deserialize(json, __CONTEXT__Factory_Root.Create_Root(options));
+    }
+    private sealed class Resolver : System.Text.Json.Serialization.Metadata.IJsonTypeInfoResolver
+    {
+        public System.Text.Json.Serialization.Metadata.JsonTypeInfo? GetTypeInfo(
+            System.Type type, System.Text.Json.JsonSerializerOptions options)
+        {
+            if (type == typeof(Root)) return __CONTEXT__Factory_Root.Create_Root(options);
+            if (type == typeof(bool)) return __CONTEXT__Factory_Boolean.Create_Boolean(options);
+            return null;
+        }
+    }
+}
+""";
+
     private const string ScopedWebSocketProgram = """
 using System.Net;
 using System.Net.Sockets;
@@ -156,8 +203,12 @@ using var client = new RealtimeClient();
 var unknown = 0;
 client.UnknownMessage += (_, _) => unknown++;
 #endif
-#if TYPED || CUSTOM
+#if TYPED || CUSTOM || COLLISION
 {
+#if COLLISION
+    if (Other.Root.Parse("{\"Flag\":true}")?.Flag != true)
+        throw new InvalidOperationException("Equal context names resolved the wrong namespace factory.");
+#endif
 #if CUSTOM
     client.JsonSerializerContext = SourceGenerationContext.ConfiguredForTests();
 #endif

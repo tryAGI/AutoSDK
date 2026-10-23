@@ -83,6 +83,7 @@ public sealed class SharedJsonMetadataGenerator : IIncrementalGenerator
             }
         }
 
+        var originalContextNames = IsolateContextNames(sources, csharp, parseOptions, output.CancellationToken);
         var contextNames = new HashSet<string>(sources.SelectMany(tree =>
                 tree.GetRoot(output.CancellationToken).DescendantNodes().OfType<ClassDeclarationSyntax>())
             .Select(static declaration => declaration.Identifier.ValueText), StringComparer.Ordinal);
@@ -160,9 +161,15 @@ public sealed class SharedJsonMetadataGenerator : IIncrementalGenerator
                 }
                 var root = source.SyntaxTree.GetRoot(output.CancellationToken);
                 var declaration = root.DescendantNodes().OfType<ClassDeclarationSyntax>().FirstOrDefault();
+                var contextName = declaration?.Identifier.ValueText;
+                if (declaration is not null && originalContextNames.TryGetValue(
+                        Namespace(declaration) + "." + contextName, out var originalContextName))
+                {
+                    contextName = originalContextName;
+                }
                 var isolated = declaration is not null &&
-                    isolatedContexts.Contains(Namespace(declaration) + "." + declaration.Identifier.ValueText);
-                var transformed = new FactoryRewriter(isolated).Visit(root);
+                    isolatedContexts.Contains(Namespace(declaration) + "." + contextName);
+                var transformed = new FactoryRewriter(isolated, contextName, declaration?.Identifier.ValueText).Visit(root);
                 if (transformed is null)
                 {
                     output.ReportDiagnostic(Diagnostic.Create(IncompatibleOutput, Location.None,
@@ -189,6 +196,69 @@ public sealed class SharedJsonMetadataGenerator : IIncrementalGenerator
         MetadataDependencyResolvers.Generate(output, csharp, factorySources);
     }
 
+    private static Dictionary<string, string> IsolateContextNames(List<SyntaxTree> sources,
+        CSharpCompilation compilation, CSharpParseOptions parseOptions, CancellationToken cancellationToken)
+    {
+        var declarations = sources.SelectMany(tree => tree.GetRoot(cancellationToken)
+            .DescendantNodes().OfType<ClassDeclarationSyntax>()).ToArray();
+        var names = new HashSet<string>(declarations.Select(static declaration => declaration.Identifier.ValueText),
+            StringComparer.Ordinal);
+        var collisions = new HashSet<string>(declarations.GroupBy(static declaration => declaration.Identifier.ValueText,
+                StringComparer.Ordinal).Where(group => group.Select(declaration =>
+                Namespace(declaration) + "." + declaration.Identifier.ValueText).Distinct(StringComparer.Ordinal).Skip(1).Any())
+            .Select(static group => group.Key), StringComparer.Ordinal);
+        // Ordinary contexts are emitted by the framework generator as usual. Their names must
+        // not collide with a manifest context in this private generator invocation either.
+        foreach (var tree in compilation.SyntaxTrees)
+        {
+            foreach (var declaration in tree.GetRoot(cancellationToken).DescendantNodes(static node =>
+                         node is CompilationUnitSyntax or BaseNamespaceDeclarationSyntax or TypeDeclarationSyntax)
+                         .OfType<ClassDeclarationSyntax>())
+            {
+                if (names.Contains(declaration.Identifier.ValueText) && declaration.BaseList?.Types.Any(static type =>
+                        type.Type.ToString().EndsWith("JsonSerializerContext", StringComparison.Ordinal)) == true)
+                {
+                    collisions.Add(declaration.Identifier.ValueText);
+                }
+            }
+        }
+        var originals = new Dictionary<string, string>(StringComparer.Ordinal);
+        if (collisions.Count == 0)
+        {
+            return originals;
+        }
+        var aliases = new Dictionary<string, string>(StringComparer.Ordinal);
+        foreach (var declaration in declarations.Where(declaration => collisions.Contains(declaration.Identifier.ValueText)))
+        {
+            var identity = Namespace(declaration) + "." + declaration.Identifier.ValueText;
+            if (aliases.ContainsKey(identity))
+            {
+                continue;
+            }
+            using var hash = System.Security.Cryptography.SHA256.Create();
+            var suffix = BitConverter.ToString(hash.ComputeHash(Encoding.UTF8.GetBytes(identity)))
+                .Replace("-", string.Empty).Substring(0, 16);
+            var alias = declaration.Identifier.ValueText + "_AutoSDK_" + suffix;
+            while (!names.Add(alias))
+            {
+                alias += "_";
+            }
+            aliases.Add(identity, alias);
+            originals.Add(Namespace(declaration) + "." + alias, declaration.Identifier.ValueText);
+        }
+        for (var index = 0; index < sources.Count; index++)
+        {
+            var root = sources[index].GetRoot(cancellationToken);
+            var replacements = root.DescendantNodes().OfType<ClassDeclarationSyntax>()
+                .Where(declaration => aliases.ContainsKey(Namespace(declaration) + "." + declaration.Identifier.ValueText));
+            var renamed = root.ReplaceNodes(replacements, (original, rewritten) =>
+                rewritten.WithIdentifier(SyntaxFactory.Identifier(aliases[
+                    Namespace(original) + "." + original.Identifier.ValueText]).WithTriviaFrom(rewritten.Identifier)));
+            sources[index] = sources[index].WithRootAndOptions(renamed, parseOptions);
+        }
+        return originals;
+    }
+
     private static string DiagnosticIdentity(Diagnostic diagnostic) => diagnostic.Id + "\n" +
         diagnostic.GetMessage(System.Globalization.CultureInfo.InvariantCulture) + "\n" +
         diagnostic.Location.GetLineSpan() + "\n" + diagnostic.Location.SourceSpan;
@@ -212,16 +282,18 @@ public sealed class SharedJsonMetadataGenerator : IIncrementalGenerator
     private static string Namespace(SyntaxNode declaration) => string.Join(".", declaration.Ancestors()
         .OfType<BaseNamespaceDeclarationSyntax>().Reverse().Select(static item => item.Name.ToString()));
 
-    private sealed class FactoryRewriter(bool isolatedFactories) : CSharpSyntaxRewriter
+    private sealed class FactoryRewriter(bool isolatedFactories, string? originalContextName,
+        string? generatedContextName) : CSharpSyntaxRewriter
     {
         public override SyntaxNode? VisitClassDeclaration(ClassDeclarationSyntax node)
         {
             var create = node.Members.OfType<MethodDeclarationSyntax>()
                 .FirstOrDefault(static method => method.Identifier.ValueText.StartsWith("Create_", StringComparison.Ordinal));
+            var contextName = originalContextName ?? node.Identifier.ValueText;
             var holderName = isolatedFactories && create is not null
-                ? SharedJsonMetadataProtocol.FactoryHolderName(node.Identifier.ValueText,
+                ? SharedJsonMetadataProtocol.FactoryHolderName(contextName,
                     create.Identifier.ValueText.Substring("Create_".Length))
-                : node.Identifier.ValueText;
+                : contextName;
             var members = new List<MemberDeclarationSyntax>();
             foreach (var member in node.Members)
             {
@@ -276,7 +348,7 @@ public sealed class SharedJsonMetadataGenerator : IIncrementalGenerator
                 .WithAttributeLists(default)
                 .WithBaseList(isolatedFactories && create is not null
                     ? SyntaxFactory.BaseList(SyntaxFactory.SingletonSeparatedList<BaseTypeSyntax>(
-                        SyntaxFactory.SimpleBaseType(SyntaxFactory.IdentifierName(node.Identifier.ValueText))))
+                        SyntaxFactory.SimpleBaseType(SyntaxFactory.IdentifierName(contextName))))
                     : null)
                 .WithModifiers(SyntaxFactory.TokenList(
                     SyntaxFactory.Token(SyntaxKind.InternalKeyword).WithTrailingTrivia(SyntaxFactory.Space),
@@ -287,6 +359,11 @@ public sealed class SharedJsonMetadataGenerator : IIncrementalGenerator
                 .WithMembers(SyntaxFactory.List(members))
                 .WithLeadingTrivia(node.GetLeadingTrivia());
         }
+
+        public override SyntaxNode? VisitIdentifierName(IdentifierNameSyntax node) =>
+            originalContextName is not null && node.Identifier.ValueText == generatedContextName
+                ? node.WithIdentifier(SyntaxFactory.Identifier(originalContextName).WithTriviaFrom(node.Identifier))
+                : base.VisitIdentifierName(node);
 
         public override SyntaxNode? VisitAssignmentExpression(AssignmentExpressionSyntax node)
         {

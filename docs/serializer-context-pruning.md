@@ -69,10 +69,14 @@ children and overrides operation defaults. This is deliberate caller ownership.
 ## AsyncAPI and WebSocket scopes
 
 The same CLI flag applies to AsyncAPI generation. Generate each subtree with the
-same CLI version and use distinct serializer context names, for example
-`SourceGenerationContext` for HTTP and `RealtimeSourceGenerationContext` for
-Realtime. One build-only package reference discovers all manifests recursively.
-Dependency completion prefers each subtree's own factories for common BCL types.
+same CLI version. Contexts may share a simple name across different namespaces:
+the analyzer gives colliding contexts distinct identities only during its private
+STJ invocation and restores the expected namespace-local factory names afterward.
+This also isolates manifest contexts from ordinary framework-generated contexts.
+Names such as `SourceGenerationContext` for HTTP and `RealtimeSourceGenerationContext`
+for Realtime remain useful for clarity. One build-only package reference discovers
+all manifests recursively. Dependency completion prefers each subtree's own
+factories for common BCL types.
 
 A WebSocket client initializes its default metadata lazily. Each typed send
 method uses the graph of its outgoing message. In the shared profile,
