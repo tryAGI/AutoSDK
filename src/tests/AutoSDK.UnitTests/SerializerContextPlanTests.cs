@@ -104,10 +104,18 @@ components:
             .Replace("tags: [same]", "tags: [other]", StringComparison.Ordinal)
             .Replace("$ref: '#/components/schemas/FirstRequest'", "$ref: '#/components/schemas/UnusedA'", StringComparison.Ordinal)
             .Replace("$ref: '#/components/schemas/Shared'\n  /second:", "$ref: '#/components/schemas/UnusedA'\n  /second:", StringComparison.Ordinal);
-        var settings = Prepare().Converters.Settings with
+        // Converter emitter settings omit generation controls such as GroupByTags.
+        var settings = Settings.Default with
         {
-            UseSharedJsonMetadata = shared,
+            Namespace = "GraphFixture",
+            ClassName = "FixtureClient",
+            FromCli = true,
+            GenerateModels = true,
+            GenerateMethods = true,
             GenerateConstructors = true,
+            GenerateJsonSerializerContextTypes = true,
+            GroupByTags = true,
+            UseSharedJsonMetadata = shared,
             JsonSerializerContext = "GraphFixture." + rootContext,
         };
         var data = AutoSDK.Generation.Data.Prepare(((spec, settings), settings));

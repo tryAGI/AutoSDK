@@ -178,7 +178,7 @@ public class SharedJsonMetadataBatchTests
                     public JsonTypeInfo? GetTypeInfo(System.Type type, JsonSerializerOptions options)
                     {
                         if (type == typeof(Box<string?>))
-                            return SharedMetadataFactoryBatch0001.Create_NullableBox(options);
+                            return global::Fixture.SharedMetadataFactoryBatch0001.Create_NullableBox(options);
                         if (type == typeof(string))
                             return JsonMetadataServices.CreateValueInfo<string>(options, JsonMetadataServices.StringConverter);
                         JsonTypeInfo? result = null;
