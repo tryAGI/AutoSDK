@@ -121,8 +121,7 @@ components:
         var data = AutoSDK.Generation.Data.Prepare(((spec, settings), settings));
         var files = CSharpPipeline.GenerateFiles(data);
         var client = files.Single(static file =>
-            file.Text.Contains("class Realtime", StringComparison.Ordinal) &&
-            file.Text.Contains("JsonSerializerContextProvider?.Value", StringComparison.Ordinal)).Text;
+            file.Name == "GraphFixture.RealtimeClient.g.cs").Text;
         var expected = shared ? rootContext : "RealtimeSourceGenerationContext";
         client.Should().Contain("global::GraphFixture." + expected + ".Default");
         if (shared)
