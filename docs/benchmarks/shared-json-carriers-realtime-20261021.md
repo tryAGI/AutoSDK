@@ -144,13 +144,27 @@ AppStoreConnect was regenerated with the released CLI and pushed as
 [Canonical build, trimming and publication CI](https://github.com/tryAGI/AppStoreConnect/actions/runs/39541472616)
 passed.
 
-OpenAI's released-CLI output and generation flag are prepared locally, but its
-commit/push remain pending. A concurrent upstream spec update overlaps three
-generated files. The shared-checkout guard requires the owner to perform the
-protected restoration/fast-forward; it has not been bypassed. Final regeneration
-against that updated spec and canonical CI are still required. The controlled
-OpenAI benchmark/runtime results above are complete; they do not establish that
-the canonical OpenAI repository has been updated.
+OpenAI adoption completed on 2026-10-23 in
+[`84a08ba9ab63e778d040511dcda8be72d38e5181`](https://github.com/tryAGI/OpenAI/commit/84a08ba9ab63e778d040511dcda8be72d38e5181).
+The owner performed the protected shared-checkout synchronization; regeneration
+then used released CLI 0.35.0-preview.2.117 and the pinned spec from
+`52fba82af119f8314be7e2440086ba11175558d5`.
+[Full build, tests, trimming and publication CI](https://github.com/tryAGI/OpenAI/actions/runs/39945150476)
+passed.
+
+Seven additional canonical-package consumers passed in Linux ARM64 containers
+with networking disabled and a 512 MiB runtime limit: Realtime typed/send/union/custom
+and HTTP full trimming, plus typed Realtime and HTTP NativeAOT. Reflection
+serialization remained disabled. The typed Realtime linked SDK is 34,304 bytes
+and its native executable is 2,972,608 bytes; the HTTP linked SDK is 120,832 bytes
+and its native executable is 7,619,856 bytes. Debug sidecars are excluded.
+
+The current-spec full DLL is 49,759,744 bytes and the private validation NuGet is
+11,657,850 bytes. These are separate from the frozen-spec comparison above.
+The source build took 91.711 seconds of admitted process time (362.500 seconds
+including queue/container overhead); all seven publishes took 63.159 seconds
+of admitted process time (468.554 seconds including queue/container overhead).
+These are single samples with warmed dependency caches.
 
 ## Follow-ups
 

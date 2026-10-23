@@ -860,9 +860,87 @@
   },
   "adoption": {
     "OpenAI": {
-      "status": "Generated with released CLI; not committed/pushed because owner-only shared-checkout synchronization is required. Final current-spec regeneration remains pending.",
-      "head": "b6b7a988700041adedfe2b7710b875248b0e9de4",
-      "upstreamSpecCommit": "d955331e802f5c0ca4fdf4e44c15c68caea29a60"
+      "status": "committed and pushed; canonical full CI and seven trim/NativeAOT runtime profiles passed",
+      "commit": "84a08ba9ab63e778d040511dcda8be72d38e5181",
+      "upstreamSpecCommit": "52fba82af119f8314be7e2440086ba11175558d5",
+      "specSha256": "11ce7fc4b6ad9127e05dade75b0b1cf1cd8a6ed4441da10890d8b9a72e316d91",
+      "cliVersion": "0.35.0-preview.2.117",
+      "ciRun": 39945150476,
+      "ciStatus": "success",
+      "validatedOn": "2026-10-23",
+      "testPackage": {
+        "version": "0.0.0-canonical-52fba82af",
+        "private": true,
+        "bytes": 11657850,
+        "dllBytes": 49759744,
+        "dllSha256": "b950ffcebdda3bd0f5d1895390d8ba9faf62184838147530d53102ec84f678b8"
+      },
+      "sourceBuild": {
+        "exitCode": 0,
+        "processSeconds": 91.711,
+        "secondsIncludingAdmission": 362.4995774158742
+      },
+      "publish": {
+        "exitCode": 0,
+        "processSeconds": 63.159,
+        "secondsIncludingAdmission": 468.55445525003597
+      },
+      "runtime": {
+        "network": "none",
+        "memoryMiB": 512,
+        "reflectionSerialization": false,
+        "profiles": {
+          "typedtrim": {
+            "passed": true,
+            "exitCode": 0,
+            "sdkDllBytes": 34304,
+            "executableBytes": 77480,
+            "publishedBytesWithoutDebug": 22979104
+          },
+          "sendtrim": {
+            "passed": true,
+            "exitCode": 0,
+            "sdkDllBytes": 37376,
+            "executableBytes": 77480,
+            "publishedBytesWithoutDebug": 25005763
+          },
+          "uniontrim": {
+            "passed": true,
+            "exitCode": 0,
+            "sdkDllBytes": 1595904,
+            "executableBytes": 77480,
+            "publishedBytesWithoutDebug": 26779617
+          },
+          "customtrim": {
+            "passed": true,
+            "exitCode": 0,
+            "sdkDllBytes": 34304,
+            "executableBytes": 77480,
+            "publishedBytesWithoutDebug": 22993955
+          },
+          "httptrim": {
+            "passed": true,
+            "exitCode": 0,
+            "sdkDllBytes": 120832,
+            "executableBytes": 77480,
+            "publishedBytesWithoutDebug": 25012194
+          },
+          "typednative": {
+            "passed": true,
+            "exitCode": 0,
+            "sdkDllBytes": null,
+            "executableBytes": 2972608,
+            "publishedBytesWithoutDebug": 2972608
+          },
+          "httpnative": {
+            "passed": true,
+            "exitCode": 0,
+            "sdkDllBytes": null,
+            "executableBytes": 7619856,
+            "publishedBytesWithoutDebug": 7619856
+          }
+        }
+      }
     },
     "AppStoreConnect": {
       "status": "committed and pushed; canonical full CI and trimming check passed",
