@@ -99,8 +99,11 @@ components:
     [DataRow(false, "SourceGenerationContext")]
     public void SharedMetadata_TagClientsUseTheConfiguredFacade(bool shared, string rootContext)
     {
-        var spec = Spec.Replace("operationId: first\n      tags: [same]", "operationId: first\n      tags: [realtime]", StringComparison.Ordinal)
-            .Replace("tags: [same]", "tags: [other]", StringComparison.Ordinal);
+        var spec = Spec.Replace("paths:", "tags:\n  - name: realtime\n  - name: other\npaths:", StringComparison.Ordinal)
+            .Replace("operationId: first\n      tags: [same]", "operationId: first\n      tags: [realtime]", StringComparison.Ordinal)
+            .Replace("tags: [same]", "tags: [other]", StringComparison.Ordinal)
+            .Replace("$ref: '#/components/schemas/FirstRequest'", "$ref: '#/components/schemas/UnusedA'", StringComparison.Ordinal)
+            .Replace("$ref: '#/components/schemas/Shared'\n  /second:", "$ref: '#/components/schemas/UnusedA'\n  /second:", StringComparison.Ordinal);
         var settings = Prepare().Converters.Settings with
         {
             UseSharedJsonMetadata = shared,
@@ -108,7 +111,9 @@ components:
         };
         var data = AutoSDK.Generation.Data.Prepare(((spec, settings), settings));
         var files = CSharpPipeline.GenerateFiles(data);
-        var client = files.Single(static file => file.Name == "GraphFixture.RealtimeClient.g.cs").Text;
+        var client = files.Single(static file =>
+            file.Text.Contains("class Realtime", StringComparison.Ordinal) &&
+            file.Text.Contains("JsonSerializerContextProvider?.Value", StringComparison.Ordinal)).Text;
         var expected = shared ? rootContext : "RealtimeSourceGenerationContext";
         client.Should().Contain("global::GraphFixture." + expected + ".Default");
         if (shared)

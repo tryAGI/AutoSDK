@@ -97,8 +97,8 @@ public class SharedJsonMetadataBatchTests
                     var concrete = SharedMetadataFactoryBatch0000.Create_ConcreteStrings(options);
                     var nullableConcrete = SharedMetadataFactoryBatch0001.Create_ConcreteNullableStrings(options);
                     if (first.Type != second.Type || concrete.Type != nullableConcrete.Type ||
-                        SharedMetadataFactoryBatch0000.Create_Number(options).Type ==
-                        SharedMetadataFactoryBatch0000.Create_NullableNumber(options).Type)
+                        SharedMetadataFactoryBatch0000.Create_Int32(options).Type ==
+                        SharedMetadataFactoryBatch0000.Create_NullableInt32(options).Type)
                         throw new System.InvalidOperationException("Runtime type identity");
                     return JsonSerializer.Serialize((object)new List<string?> { "fixture", null }, second);
                 }
@@ -112,7 +112,7 @@ public class SharedJsonMetadataBatchTests
             """;
         const string manifest = """
             // AutoSDK.JsonMetadata manifest-format: 3
-            // AutoSDK.JsonMetadata factory-batch: Fixture.SharedMetadata|0|Strings,ConcreteStrings,Number,NullableNumber
+            // AutoSDK.JsonMetadata factory-batch: Fixture.SharedMetadata|0|Strings,ConcreteStrings,Int32,NullableInt32
             // AutoSDK.JsonMetadata factory-batch: Fixture.SharedMetadata|1|NullableStrings,ConcreteNullableStrings
             #nullable enable
             namespace Fixture;
@@ -121,8 +121,8 @@ public class SharedJsonMetadataBatchTests
             [System.Text.Json.Serialization.JsonSerializable(typeof(System.Collections.Generic.IList<string?>), TypeInfoPropertyName = "NullableStrings")]
             [System.Text.Json.Serialization.JsonSerializable(typeof(System.Collections.Generic.List<string>), TypeInfoPropertyName = "ConcreteStrings")]
             [System.Text.Json.Serialization.JsonSerializable(typeof(System.Collections.Generic.List<string?>), TypeInfoPropertyName = "ConcreteNullableStrings")]
-            [System.Text.Json.Serialization.JsonSerializable(typeof(int), TypeInfoPropertyName = "Number")]
-            [System.Text.Json.Serialization.JsonSerializable(typeof(int?), TypeInfoPropertyName = "NullableNumber")]
+            [System.Text.Json.Serialization.JsonSerializable(typeof(int), TypeInfoPropertyName = "Int32")]
+            [System.Text.Json.Serialization.JsonSerializable(typeof(int?), TypeInfoPropertyName = "NullableInt32")]
             internal sealed partial class SharedMetadata : System.Text.Json.Serialization.JsonSerializerContext { }
             """;
         var compilation = CSharpCompilation.Create("NullableAliasFixture" + Guid.NewGuid().ToString("N"),
@@ -139,6 +139,80 @@ public class SharedJsonMetadataBatchTests
         emitted.Success.Should().BeTrue(string.Join("\n", emitted.Diagnostics));
         var assembly = Assembly.Load(stream.ToArray());
         assembly.GetType("Fixture.Probe")!.GetMethod("Run")!.Invoke(null, null).Should().Be("[\"fixture\",null]");
+    }
+
+
+    [TestMethod]
+    public void Generate_NullableGenericAliasCompletesHandwrittenDependencies()
+    {
+        const string model = """
+            #nullable enable
+            using System.Text.Json;
+            using System.Text.Json.Serialization.Metadata;
+            namespace Fixture;
+            public sealed partial class Box<T> { public T? Value { get; set; } }
+            public sealed partial class Box<T> { public ExtraPayload? Extra { get; set; } }
+            public sealed class ExtraPayload { public string? Marker { get; set; } }
+            public static class Probe
+            {
+                public static string Run()
+                {
+                    var options = AliasScope.Options();
+                    var info = options.GetTypeInfo(typeof(Box<string?>));
+                    var original = new Box<string?> { Value = "fixture", Extra = new ExtraPayload { Marker = "retained" } };
+                    var serialized = JsonSerializer.Serialize((object)original, info);
+                    var value = JsonSerializer.Deserialize(serialized, info);
+                    return JsonSerializer.Serialize(value, info);
+                }
+            }
+            internal static partial class AliasScope
+            {
+                internal static JsonSerializerOptions Options()
+                {
+                    var options = new JsonSerializerOptions { TypeInfoResolver = new SharedMetadataResolver() };
+                    options.MakeReadOnly();
+                    return options;
+                }
+                private sealed partial class SharedMetadataResolver : IJsonTypeInfoResolver
+                {
+                    public JsonTypeInfo? GetTypeInfo(System.Type type, JsonSerializerOptions options)
+                    {
+                        if (type == typeof(Box<string?>))
+                            return SharedMetadataFactoryBatch0001.Create_NullableBox(options);
+                        JsonTypeInfo? result = null;
+                        ResolveAdditionalTypeInfo(type, options, ref result);
+                        return result;
+                    }
+                    static partial void ResolveAdditionalTypeInfo(System.Type type, JsonSerializerOptions options, ref JsonTypeInfo? result);
+                }
+            }
+            """;
+        const string manifest = """
+            // AutoSDK.JsonMetadata manifest-format: 3
+            // AutoSDK.JsonMetadata factory-batch: Fixture.SharedMetadata|0|Box
+            // AutoSDK.JsonMetadata factory-batch: Fixture.SharedMetadata|1|NullableBox
+            #nullable enable
+            namespace Fixture;
+            [System.Text.Json.Serialization.JsonSourceGenerationOptions(GenerationMode = System.Text.Json.Serialization.JsonSourceGenerationMode.Metadata)]
+            [System.Text.Json.Serialization.JsonSerializable(typeof(Box<string>), TypeInfoPropertyName = "Box")]
+            [System.Text.Json.Serialization.JsonSerializable(typeof(Box<string?>), TypeInfoPropertyName = "NullableBox")]
+            internal sealed partial class SharedMetadata : System.Text.Json.Serialization.JsonSerializerContext { }
+            """;
+        var compilation = CSharpCompilation.Create("NullableBoxAliasFixture" + Guid.NewGuid().ToString("N"),
+            [CSharpSyntaxTree.ParseText(model)], References,
+            new CSharpCompilationOptions(OutputKind.DynamicallyLinkedLibrary, nullableContextOptions: NullableContextOptions.Enable));
+        GeneratorDriver driver = CSharpGeneratorDriver.Create(
+            generators: [new SharedJsonMetadataGenerator().AsSourceGenerator()],
+            additionalTexts: [new Manifest(manifest)]);
+        driver = driver.RunGeneratorsAndUpdateCompilation(compilation, out var output, out _);
+        driver.GetRunResult().Diagnostics.Should().NotContain(static item => item.Severity == DiagnosticSeverity.Error);
+        output.GetDiagnostics().Should().NotContain(static item => item.Severity == DiagnosticSeverity.Error);
+        using var stream = new MemoryStream();
+        var emitted = output.Emit(stream);
+        emitted.Success.Should().BeTrue(string.Join("\n", emitted.Diagnostics));
+        var assembly = Assembly.Load(stream.ToArray());
+        var json = (string)assembly.GetType("Fixture.Probe")!.GetMethod("Run")!.Invoke(null, null)!;
+        json.Should().Contain("fixture").And.Contain("retained");
     }
 
     private static (Compilation Compilation, GeneratorDriverRunResult Result) Generate(
