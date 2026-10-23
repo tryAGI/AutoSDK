@@ -107,6 +107,7 @@ components:
         var settings = Prepare().Converters.Settings with
         {
             UseSharedJsonMetadata = shared,
+            GenerateConstructors = true,
             JsonSerializerContext = "GraphFixture." + rootContext,
         };
         var data = AutoSDK.Generation.Data.Prepare(((spec, settings), settings));

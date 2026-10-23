@@ -179,6 +179,8 @@ public class SharedJsonMetadataBatchTests
                     {
                         if (type == typeof(Box<string?>))
                             return SharedMetadataFactoryBatch0001.Create_NullableBox(options);
+                        if (type == typeof(string))
+                            return JsonMetadataServices.CreateValueInfo<string>(options, JsonMetadataServices.StringConverter);
                         JsonTypeInfo? result = null;
                         ResolveAdditionalTypeInfo(type, options, ref result);
                         return result;
