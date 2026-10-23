@@ -83,10 +83,24 @@ jobs:
           artifacts/test-shards-summary
           --expected-shards 8
 
+      - name: Refresh timing candidate from passed CI rows
+        if: ${{ !cancelled() }}
+        run: >-
+          python3 scripts/refresh-test-timings.py
+          artifacts/test-shards-input
+          src/tests/AutoSDK.IntegrationTests.Cli/test-timings.tsv
+          artifacts/test-shards-summary/timing-candidate
+          --run-url "https://github.com/${{ github.repository }}/actions/runs/${{ github.run_id }}"
+          --commit "${{ github.sha }}"
+          --runner-os "${{ runner.os }}"
+          --runner-arch "${{ runner.arch }}"
+
       - name: Publish job summary
+        if: always()
         run: cat artifacts/test-shards-summary/summary.md >> "$GITHUB_STEP_SUMMARY"
 
       - name: Upload shard summary
+        if: always()
         uses: actions/upload-artifact@v7
         with:
           name: cli-integration-summary
@@ -94,6 +108,7 @@ jobs:
           retention-days: 30
 
       - name: Enforce shard SLA
+        if: always()
         run: python3 scripts/check-test-shard-sla.py
           artifacts/test-shards-summary/shards.csv
           --expected-shards 8

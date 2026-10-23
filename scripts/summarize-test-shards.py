@@ -146,7 +146,7 @@ def write_summary(output_directory: Path, shards: tuple[ShardResult, ...], expec
                     f"{result.duration_seconds:.6f}" if result else "",
                 )
             )
-            if result is not None:
+            if result is not None and result.outcome == "Passed":
                 timing_rows.append((name, f"{result.duration_seconds:.6f}"))
 
     write_csv(

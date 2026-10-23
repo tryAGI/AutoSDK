@@ -3,8 +3,9 @@
 from __future__ import annotations
 
 import csv
-import statistics
-import sys
+import argparse
+import json
+from shard_timings import initial_estimates, positive_duration, read_catalog
 from dataclasses import dataclass
 from pathlib import Path
 
@@ -24,14 +25,7 @@ def read_tests(path: Path) -> tuple[str, ...]:
 
 
 def read_timings(path: Path) -> dict[str, float]:
-    if not path.exists():
-        return {}
-
-    with path.open(encoding="utf-8", newline="") as stream:
-        return {
-            row["test_name"]: float(row["duration_seconds"])
-            for row in csv.DictReader(stream, delimiter="\t")
-        }
+    return read_catalog(path)
 
 
 def plan_shards(
@@ -39,10 +33,13 @@ def plan_shards(
     timings: dict[str, float],
     shard_count: int,
 ) -> tuple[tuple[int, TestEstimate], ...]:
-    known_durations = [timings[name] for name in tests if name in timings]
-    fallback_duration = statistics.median(known_durations) if known_durations else 1.0
+    missing = sorted(set(tests) - timings.keys())
+    if missing:
+        raise ValueError("Missing exact-name timing estimates: " + ", ".join(missing))
+    if shard_count <= 0:
+        raise ValueError("Shard count must be positive")
     estimates = [
-        TestEstimate(name=name, duration_seconds=timings.get(name, fallback_duration))
+        TestEstimate(name=name, duration_seconds=positive_duration(timings[name]))
         for name in tests
     ]
     estimates.sort(key=lambda test: (-test.duration_seconds, test.name))
@@ -68,15 +65,14 @@ def write_plan(path: Path, assignments: tuple[tuple[int, TestEstimate], ...]) ->
 
 
 def main() -> None:
-    if len(sys.argv) != 5:
-        raise SystemExit(
-            "Usage: plan-test-shards.py <tests.txt> <timings.tsv> <shard-count> <output.tsv>"
-        )
-
-    tests_path = Path(sys.argv[1])
-    timings_path = Path(sys.argv[2])
-    shard_count = int(sys.argv[3])
-    output_path = Path(sys.argv[4])
+    parser = argparse.ArgumentParser(description="Plan shards with complete explicit timing coverage.")
+    parser.add_argument("tests_path", type=Path)
+    parser.add_argument("timings_path", type=Path)
+    parser.add_argument("shard_count", type=int)
+    parser.add_argument("output_path", type=Path)
+    parser.add_argument("--initial-estimates", type=Path)
+    args = parser.parse_args()
+    tests_path, timings_path, shard_count, output_path = args.tests_path, args.timings_path, args.shard_count, args.output_path
     if shard_count <= 0:
         raise SystemExit("Shard count must be positive.")
 
@@ -86,7 +82,14 @@ def main() -> None:
     if len(set(tests)) != len(tests):
         raise SystemExit("Test names must be unique.")
 
-    assignments = plan_shards(tests, read_timings(timings_path), shard_count)
+    measured = read_timings(timings_path)
+    seeds = initial_estimates(json.loads(args.initial_estimates.read_text())) if args.initial_estimates else {}
+    missing = sorted(set(tests) - measured.keys() - seeds.keys())
+    coverage = {"discovered": len(tests), "measured": len(set(tests) & measured.keys()),
+                "initial": sorted(set(tests) & (seeds.keys() - measured.keys())), "missing": missing}
+    output_path.with_suffix(".coverage.json").write_text(json.dumps(coverage, indent=2) + "\n")
+    print(json.dumps(coverage))
+    assignments = plan_shards(tests, {**seeds, **measured}, shard_count)
     write_plan(output_path, assignments)
 
 

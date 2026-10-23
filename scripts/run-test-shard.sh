@@ -70,11 +70,15 @@ rm -f \
   "$shard_artifacts/plan.tsv" \
   "$shard_artifacts/results.trx"
 printf '%s\n' "${tests[@]}" > "$shard_artifacts/discovered-tests.txt"
+estimate_arguments=()
+if [[ -n ${TEST_SHARD_INITIAL_ESTIMATES_FILE:-} ]]; then
+  estimate_arguments+=(--initial-estimates "$TEST_SHARD_INITIAL_ESTIMATES_FILE")
+fi
 python3 scripts/plan-test-shards.py \
   "$shard_artifacts/discovered-tests.txt" \
   "$timings_file" \
   "$shard_count" \
-  "$shard_artifacts/plan.tsv"
+  "$shard_artifacts/plan.tsv" "${estimate_arguments[@]}"
 
 selected_tests=()
 while IFS=$'\t' read -r planned_shard _ test_name; do
