@@ -20,8 +20,8 @@ namespace {endPoint.Settings.Namespace}
         /// <param name=""json"">The received JSON message.</param>
         /// <returns>The typed message.</returns>
         public {type} {method}(string json) =>
-            ({type})(global::System.Text.Json.JsonSerializer.Deserialize(json, typeof({type}),
-                JsonSerializerContextProvider?.Value ?? global::{contextName}.Default)
+            ({type})(global::System.Text.Json.JsonSerializer.Deserialize(json,
+                (JsonSerializerContextProvider?.Value ?? global::{contextName}.Default).Options.GetTypeInfo(typeof({type})))
                 ?? throw new global::System.Text.Json.JsonException(""The received message was null.""));
     }}
 }}".RemoveBlankLinesWhereOnlyWhitespaces());
@@ -61,6 +61,9 @@ namespace {endPoint.Settings.Namespace}
         var hasOptions = !wsClient.Settings.HasJsonSerializerContext();
         var context = jsonSerializerContextName is null ? "JsonSerializerContext" :
             $"(JsonSerializerContextProvider?.Value ?? global::{jsonSerializerContextName}.Default)";
+        var metadata = jsonSerializerContextName is null
+            ? $"typeof({eventTypeName}), {context}"
+            : $"{context}.Options.GetTypeInfo(typeof({eventTypeName}))";
         var isValueType = wsClient.IsReceiveEventValueType || receiveEventType.IsValueType;
 
         string deserializeAndYield;
@@ -69,7 +72,7 @@ namespace {endPoint.Settings.Namespace}
             // Value types (structs/anyOf) — use non-generic Deserialize with cast (no null check needed for value types)
             var deserializeCall = hasOptions
                 ? $"global::System.Text.Json.JsonSerializer.Deserialize<{eventTypeName}>(json, JsonSerializerOptions)"
-                : $"({eventTypeName})global::System.Text.Json.JsonSerializer.Deserialize(json, typeof({eventTypeName}), {context})!";
+                : $"({eventTypeName})global::System.Text.Json.JsonSerializer.Deserialize(json, {metadata})!";
             deserializeAndYield = $@"                    {eventTypeName} @event;
                     try
                     {{
@@ -99,7 +102,7 @@ namespace {endPoint.Settings.Namespace}
             // Reference types — null check with ?? throw
             var deserializeCall = hasOptions
                 ? $"global::System.Text.Json.JsonSerializer.Deserialize<{eventTypeName}>(json, JsonSerializerOptions)"
-                : $"({eventTypeName}?)global::System.Text.Json.JsonSerializer.Deserialize(json, typeof({eventTypeName}), {context})";
+                : $"({eventTypeName}?)global::System.Text.Json.JsonSerializer.Deserialize(json, {metadata})";
             deserializeAndYield = $@"                    {eventTypeName} @event;
                     try
                     {{

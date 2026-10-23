@@ -221,6 +221,16 @@ namespace {client.Settings.Namespace}
                     throw new global::System.NotSupportedException(typeToConvert.FullName);
         }}
     }}
+
+    // A lookup facade only: never assign it to JsonSerializerOptions.TypeInfoResolver.
+    // The framework cache stays owned by the caller's options and handles recursive graphs.
+    internal sealed class AutoSDKJsonMetadataCachedResolver : global::System.Text.Json.Serialization.Metadata.IJsonTypeInfoResolver
+    {{
+        internal static readonly AutoSDKJsonMetadataCachedResolver Instance = new();
+        public global::System.Text.Json.Serialization.Metadata.JsonTypeInfo? GetTypeInfo(
+            global::System.Type type, global::System.Text.Json.JsonSerializerOptions options) =>
+            options.TryGetTypeInfo(type, out var info) ? info : null;
+    }}
 }}");
     }
 }

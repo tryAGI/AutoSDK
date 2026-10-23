@@ -15,10 +15,14 @@ public static class JsonSerializationTypeExtensions
         };
     }
 
+    internal static IJsonSerializer GetSerializer(this JsonSerializerType type, bool useCachedMetadata) =>
+        useCachedMetadata && type == JsonSerializerType.SystemTextJson
+            ? SystemTextJsonSerializer.CachedInstance : type.GetSerializer();
+
     public static IJsonSerializer GetSerializer(this EmitterSettings settings)
     {
         return settings.UsesNewtonsoftJson()
             ? NewtonsoftJsonSerializer.Instance
-            : SystemTextJsonSerializer.Instance;
+            : settings.UseCachedJsonMetadata ? SystemTextJsonSerializer.CachedInstance : SystemTextJsonSerializer.Instance;
     }
 }

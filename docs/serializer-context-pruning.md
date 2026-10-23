@@ -66,6 +66,31 @@ arbitrary SDK models. Reading or explicitly assigning that context retains its
 complete graph. A custom context assigned to a root client still propagates to
 children and overrides operation defaults. This is deliberate caller ownership.
 
+## Options-bound metadata caching
+
+Shared-profile model helpers, HTTP bodies and WebSocket messages resolve their
+metadata through the read-only context's `JsonSerializerOptions.GetTypeInfo`
+cache. Union converters use `TryGetTypeInfo` to preserve nullable lookup behavior.
+This uses System.Text.Json's own options-bound cache, with no SDK-wide dictionary,
+additional model registry or retained caller-options collection.
+
+The context's `GetTypeInfo` callback remains a factory entry point: redirecting
+that callback to its own options cache would recurse because a
+`JsonSerializerContext` binds itself as the options resolver. The serializer call
+sites use cached `JsonTypeInfo` overloads instead. Caller contexts retain their
+own options, converters and metadata lifetimes; legacy generation is unchanged.
+
+`Generate_SharedMetadataCache_RespectsOptionsConcurrencyAndCycles` publishes and
+runs full trimming and NativeAOT consumers with reflection serialization disabled.
+It checks recursive and polymorphic models, nullable values, asynchronous reads,
+HTTP arrays, separate case options, caller converters, reference handling and
+concurrent first use. After warming a context, 1,000 model round trips and
+subsequent HTTP calls must perform zero further resolver callbacks. Concurrent
+cold calls may race inside the framework cache; the test checks correctness and
+a stable warm cache rather than requiring exactly one cold factory invocation.
+The fixture logs cold/warm callbacks, allocations and elapsed time; these include
+ordinary JSON/model work and are diagnostic samples rather than performance SLAs.
+
 ## AsyncAPI and WebSocket scopes
 
 The same CLI flag applies to AsyncAPI generation. Generate each subtree with the

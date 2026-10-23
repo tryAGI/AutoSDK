@@ -30,7 +30,10 @@ public static class SettingsConversions
             GenerateRawModelData: settings.GenerateRawModelData,
             GenerateJsonSerializerContextTypes: settings.GenerateJsonSerializerContextTypes,
             UseNewtonsoftJson: settings.JsonSerializerType == Serialization.Json.JsonSerializerType.NewtonsoftJson,
-            UseSystemTextJson: settings.JsonSerializerType == Serialization.Json.JsonSerializerType.SystemTextJson);
+            UseSystemTextJson: settings.JsonSerializerType == Serialization.Json.JsonSerializerType.SystemTextJson)
+        {
+            UseCachedJsonMetadata = settings.UseSharedJsonMetadata,
+        };
     }
 
     public static EnumNamingSettings ToEnumNamingSettings(this Settings settings)

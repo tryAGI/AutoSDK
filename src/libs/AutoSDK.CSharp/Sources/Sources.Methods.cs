@@ -2137,7 +2137,9 @@ namespace {endPoint.Settings.Namespace}
         }
 
         return settings.HasJsonSerializerContext()
-            ? $"global::System.Text.Json.JsonSerializer.Serialize({valueExpression}, {valueExpression}.GetType(), JsonSerializerContext)"
+            ? settings.UseCachedJsonMetadata
+                ? $"global::System.Text.Json.JsonSerializer.Serialize({valueExpression}, JsonSerializerContext.Options.GetTypeInfo({valueExpression}.GetType()))"
+                : $"global::System.Text.Json.JsonSerializer.Serialize({valueExpression}, {valueExpression}.GetType(), JsonSerializerContext)"
             : $"global::System.Text.Json.JsonSerializer.Serialize({valueExpression}, JsonSerializerOptions)";
     }
 
@@ -2413,7 +2415,9 @@ namespace {endPoint.Settings.Namespace}
         }
 
         return settings.HasJsonSerializerContext()
-            ? $"global::System.Text.Json.JsonSerializer.Serialize({valueExpression}, {valueExpression}.GetType(), JsonSerializerContext)"
+            ? settings.UseCachedJsonMetadata
+                ? $"global::System.Text.Json.JsonSerializer.Serialize({valueExpression}, JsonSerializerContext.Options.GetTypeInfo({valueExpression}.GetType()))"
+                : $"global::System.Text.Json.JsonSerializer.Serialize({valueExpression}, {valueExpression}.GetType(), JsonSerializerContext)"
             : $"global::System.Text.Json.JsonSerializer.Serialize({valueExpression}, JsonSerializerOptions)";
     }
 
@@ -2867,7 +2871,7 @@ namespace {endPoint.Settings.Namespace}
         bool wrapSuccessResponse,
         string cancellationTokenVariableName)
     {
-        var jsonSerializer = endPoint.Settings.JsonSerializerType.GetSerializer();
+        var jsonSerializer = endPoint.Settings.JsonSerializerType.GetSerializer(endPoint.Settings.UseSharedJsonMetadata);
 
         if (string.IsNullOrWhiteSpace(endPoint.SuccessResponse.Type.CSharpType))
         {
@@ -2966,7 +2970,7 @@ namespace {endPoint.Settings.Namespace}
         string readResponseAsStringExpression,
         int indentationLevel)
     {
-        var jsonSerializer = endPoint.Settings.JsonSerializerType.GetSerializer();
+        var jsonSerializer = endPoint.Settings.JsonSerializerType.GetSerializer(endPoint.Settings.UseSharedJsonMetadata);
 
         if (endPoint.StreamFormat == StreamFormat.ServerSentEvents)
         {
@@ -3556,7 +3560,7 @@ namespace {endPoint.Settings.Namespace}
             return TrimmedLine;
         }
 
-        var jsonSerializer = endPoint.Settings.JsonSerializerType.GetSerializer();
+        var jsonSerializer = endPoint.Settings.JsonSerializerType.GetSerializer(endPoint.Settings.UseSharedJsonMetadata);
         if (endPoint.IsMultipartFormData)
         {
             return NormalizedString.Create(indentationLevel, $@"

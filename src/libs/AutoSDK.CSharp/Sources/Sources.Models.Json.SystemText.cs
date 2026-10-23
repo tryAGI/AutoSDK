@@ -13,9 +13,20 @@ public static partial class Sources
         bool isBaseClass,
         bool hasJsonSerializerContext,
         string defaultJsonSerializerContext,
+        bool useCachedJsonMetadata,
         bool generateRawModelData,
         string rawModelDataMethods)
     {
+        var serializeType = isBaseClass ? $"typeof({className})" : "this.GetType()";
+        var deserializeType = $"typeof({(isBaseClass ? className : typeName)})";
+        // Context.GetTypeInfo stays the raw factory callback: the base context constructor
+        // binds Options.TypeInfoResolver to that context. Enter the options cache only here.
+        var serializeMetadata = useCachedJsonMetadata
+            ? $"jsonSerializerContext.Options.GetTypeInfo({serializeType})"
+            : serializeType + ",\n                jsonSerializerContext";
+        var deserializeMetadata = useCachedJsonMetadata
+            ? $"jsonSerializerContext.Options.GetTypeInfo({deserializeType})"
+            : deserializeType + ",\n                jsonSerializerContext";
         using var builder = new NormalizedPooledStringBuilder(8192);
         builder.Append($@"#nullable enable
 
@@ -29,8 +40,7 @@ namespace {@namespace}
         {{
             return global::System.Text.Json.JsonSerializer.Serialize(
                 this,
-                {(isBaseClass ? $"typeof({className})" : "this.GetType()")},
-                jsonSerializerContext);
+                {serializeMetadata});
         }}
 ");
 
@@ -78,8 +88,7 @@ namespace {@namespace}
         {{
             return global::System.Text.Json.JsonSerializer.Deserialize(
                 json,
-                typeof({(isBaseClass ? className : typeName)}),
-                jsonSerializerContext) as {(isBaseClass ? "T" : typeName)}{(isValueType ? "?" : "")};
+                {deserializeMetadata}) as {(isBaseClass ? "T" : typeName)}{(isValueType ? "?" : "")};
         }}
 ");
 
@@ -136,8 +145,7 @@ namespace {@namespace}
         {{
             return (await global::System.Text.Json.JsonSerializer.DeserializeAsync(
                 jsonStream,
-                typeof({(isBaseClass ? className : typeName)}),
-                jsonSerializerContext).ConfigureAwait(false)) as {(isBaseClass ? "T" : typeName)}{(isValueType ? "?" : "")};
+                {deserializeMetadata}).ConfigureAwait(false)) as {(isBaseClass ? "T" : typeName)}{(isValueType ? "?" : "")};
         }}
 ");
 

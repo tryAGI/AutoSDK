@@ -39,6 +39,10 @@ public static partial class Sources
             ? $"\n            var __hasValue = {string.Join(" || ", anyOfData.Properties.Select(x => $"{x.ParameterName} != null"))};\n"
             : "\n";
 
+        var cachedResolver = anyOfData.Settings.UseCachedJsonMetadata
+            ? $"\n            typeInfoResolver = global::{anyOfData.Settings.Namespace}.AutoSDKJsonMetadataCachedResolver.Instance;"
+            : string.Empty;
+
         string read;
         if (anyOfData.SubType == "AllOf")
         {
@@ -379,7 +383,7 @@ namespace {anyOfData.Namespace}.JsonConverters
             global::System.Text.Json.JsonSerializerOptions options)
         {{
             options = options ?? throw new global::System.ArgumentNullException(nameof(options));{(anyOfData.IsTrimming ? @"
-            var typeInfoResolver = options.TypeInfoResolver ?? throw new global::System.InvalidOperationException(""TypeInfoResolver is not set."");" : TrimmedLine)}
+            var typeInfoResolver = options.TypeInfoResolver ?? throw new global::System.InvalidOperationException(""TypeInfoResolver is not set."");" + cachedResolver : TrimmedLine)}
 
 {read}
 
@@ -393,7 +397,7 @@ namespace {anyOfData.Namespace}.JsonConverters
             global::System.Text.Json.JsonSerializerOptions options)
         {{
             options = options ?? throw new global::System.ArgumentNullException(nameof(options));{(anyOfData.IsTrimming ? @"
-            var typeInfoResolver = options.TypeInfoResolver ?? throw new global::System.InvalidOperationException(""TypeInfoResolver is not set."");" : TrimmedLine)}
+            var typeInfoResolver = options.TypeInfoResolver ?? throw new global::System.InvalidOperationException(""TypeInfoResolver is not set."");" + cachedResolver : TrimmedLine)}
 {(anyOfData.Settings.ValidateAnyOfs ? @$"
 
             if (!value.Validate())

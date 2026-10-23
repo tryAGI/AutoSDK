@@ -147,18 +147,26 @@ public static class CSharpPipeline
             data = data with
             {
                 Classes = data.Classes.Select(model => model with
-                    { Settings = model.Settings with { JsonSerializerContext = serializerPlan.ModelContexts[model.GlobalClassName] } })
+                    { Settings = model.Settings with
+                        { JsonSerializerContext = serializerPlan.ModelContexts[model.GlobalClassName], UseCachedJsonMetadata = true } })
                     .ToImmutableArray().AsEquatableArray(),
                 Enums = data.Enums.Select(model => model with
-                    { Settings = model.Settings with { JsonSerializerContext = serializerPlan.ModelContexts[model.GlobalClassName] } })
+                    { Settings = model.Settings with
+                        { JsonSerializerContext = serializerPlan.ModelContexts[model.GlobalClassName], UseCachedJsonMetadata = true } })
                     .ToImmutableArray().AsEquatableArray(),
                 AnyOfs = data.AnyOfs.Select(union => union.IsNamed
                         ? union with { Settings = union.Settings with
-                            { JsonSerializerContext = serializerPlan.ModelContexts[$"global::{union.Namespace}.{union.Name}"] } } : union)
+                            { JsonSerializerContext = serializerPlan.ModelContexts[$"global::{union.Namespace}.{union.Name}"],
+                                UseCachedJsonMetadata = true } }
+                        : union with { Settings = union.Settings with { UseCachedJsonMetadata = true } })
                     .ToImmutableArray().AsEquatableArray(),
-                Methods = data.Methods.Select(method => serializerPlan.OperationContexts.TryGetValue(method.Id, out var contexts) &&
-                        contexts.Length != 0
-                        ? method with { JsonSerializerContextOverride = GetOperationContextName(data.Converters.Settings, method.Id, contexts) } : method)
+                Methods = data.Methods.Select(method => method with
+                    {
+                        JsonSerializerContextOverride = serializerPlan.OperationContexts.TryGetValue(method.Id, out var contexts) &&
+                            contexts.Length != 0
+                            ? GetOperationContextName(data.Converters.Settings, method.Id, contexts)
+                            : method.JsonSerializerContextOverride,
+                    })
                     .ToImmutableArray().AsEquatableArray(),
             };
         }

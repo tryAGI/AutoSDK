@@ -110,6 +110,7 @@ public static partial class Sources
                 isBaseClass,
                 hasJsonSerializerContext,
                 defaultJsonSerializerContext,
+                settings.UseCachedJsonMetadata,
                 settings.GenerateRawModelData && !isValueType,
                 rawModelDataMethods);
         }

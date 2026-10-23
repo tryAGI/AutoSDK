@@ -15,6 +15,9 @@ public record struct EmitterSettings(
     bool UseNewtonsoftJson,
     bool UseSystemTextJson)
 {
+    /// <summary>Uses the caller-options metadata cache for the shared-factory profile.</summary>
+    public bool UseCachedJsonMetadata { get; init; }
+
     public static EmitterSettings Default => new(
         Namespace: string.Empty,
         NamingConvention: default,

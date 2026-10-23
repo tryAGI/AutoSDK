@@ -52,6 +52,9 @@ public static partial class Sources
 
         // CSharpType already includes global:: prefix and nullable suffix
         var nonNullableType = endPoint.MessageType.CSharpTypeWithoutNullability;
+        var metadata = jsonSerializerContextName is null
+            ? $"typeof({nonNullableType}), {context}"
+            : $"{context}.Options.GetTypeInfo(typeof({nonNullableType}))";
 
         var messageValidation = endPoint.MessageType.IsValueType
             ? string.Empty
@@ -72,7 +75,7 @@ public static partial class Sources
                 ? $"            await SendAsync({(endPoint.MessageType.IsEnum ? "message.ToValueString()" : "message")}, cancellationToken).ConfigureAwait(false);"
                 : $@"            var json = {(hasOptions
                     ? $"global::System.Text.Json.JsonSerializer.Serialize(message, typeof({nonNullableType}), JsonSerializerOptions)"
-                    : $"global::System.Text.Json.JsonSerializer.Serialize(message, typeof({nonNullableType}), {context})")};
+                    : $"global::System.Text.Json.JsonSerializer.Serialize(message, {metadata})")};
 
             await SendAsync(json, cancellationToken).ConfigureAwait(false);";
 
