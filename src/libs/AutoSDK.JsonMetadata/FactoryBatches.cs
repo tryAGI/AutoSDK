@@ -9,7 +9,7 @@ using System.Text;
 namespace AutoSDK.JsonMetadata;
 
 /// <summary>Compile-time layout only; never emits an aggregate runtime dispatcher.</summary>
-internal sealed class FactoryBatches
+internal sealed partial class FactoryBatches
 {
     // Allow ample room for compiler-generated closure methods below the CLR's 65,535 limit.
     internal const int MethodWeightBudget = 8192;

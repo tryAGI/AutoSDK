@@ -76,6 +76,71 @@ public class SharedJsonMetadataBatchTests
             item.Id == "AMETA003" && item.Severity == DiagnosticSeverity.Error);
     }
 
+
+    [TestMethod]
+    public void Generate_NullableReferenceRegistrationAliasesPreserveRuntimeIdentity()
+    {
+        const string model = """
+            #nullable enable
+            using System.Collections.Generic;
+            using System.Text.Json;
+            using System.Text.Json.Serialization.Metadata;
+            namespace Fixture;
+            public static class Probe
+            {
+                public static string Run()
+                {
+                    var options = new JsonSerializerOptions { TypeInfoResolver = new PrimitiveResolver() };
+                    options.MakeReadOnly();
+                    var first = SharedMetadataFactoryBatch0000.Create_Strings(options);
+                    var second = SharedMetadataFactoryBatch0001.Create_NullableStrings(options);
+                    var concrete = SharedMetadataFactoryBatch0000.Create_ConcreteStrings(options);
+                    var nullableConcrete = SharedMetadataFactoryBatch0001.Create_ConcreteNullableStrings(options);
+                    if (first.Type != second.Type || concrete.Type != nullableConcrete.Type ||
+                        SharedMetadataFactoryBatch0000.Create_Number(options).Type ==
+                        SharedMetadataFactoryBatch0000.Create_NullableNumber(options).Type)
+                        throw new System.InvalidOperationException("Runtime type identity");
+                    return JsonSerializer.Serialize((object)new List<string?> { "fixture", null }, second);
+                }
+            }
+            internal sealed class PrimitiveResolver : IJsonTypeInfoResolver
+            {
+                public JsonTypeInfo? GetTypeInfo(System.Type type, JsonSerializerOptions options) =>
+                    type == typeof(string) ? JsonMetadataServices.CreateValueInfo<string>(options, JsonMetadataServices.StringConverter) :
+                    type == typeof(int) ? JsonMetadataServices.CreateValueInfo<int>(options, JsonMetadataServices.Int32Converter) : null;
+            }
+            """;
+        const string manifest = """
+            // AutoSDK.JsonMetadata manifest-format: 3
+            // AutoSDK.JsonMetadata factory-batch: Fixture.SharedMetadata|0|Strings,ConcreteStrings,Number,NullableNumber
+            // AutoSDK.JsonMetadata factory-batch: Fixture.SharedMetadata|1|NullableStrings,ConcreteNullableStrings
+            #nullable enable
+            namespace Fixture;
+            [System.Text.Json.Serialization.JsonSourceGenerationOptions(GenerationMode = System.Text.Json.Serialization.JsonSourceGenerationMode.Metadata)]
+            [System.Text.Json.Serialization.JsonSerializable(typeof(System.Collections.Generic.IList<string>), TypeInfoPropertyName = "Strings")]
+            [System.Text.Json.Serialization.JsonSerializable(typeof(System.Collections.Generic.IList<string?>), TypeInfoPropertyName = "NullableStrings")]
+            [System.Text.Json.Serialization.JsonSerializable(typeof(System.Collections.Generic.List<string>), TypeInfoPropertyName = "ConcreteStrings")]
+            [System.Text.Json.Serialization.JsonSerializable(typeof(System.Collections.Generic.List<string?>), TypeInfoPropertyName = "ConcreteNullableStrings")]
+            [System.Text.Json.Serialization.JsonSerializable(typeof(int), TypeInfoPropertyName = "Number")]
+            [System.Text.Json.Serialization.JsonSerializable(typeof(int?), TypeInfoPropertyName = "NullableNumber")]
+            internal sealed partial class SharedMetadata : System.Text.Json.Serialization.JsonSerializerContext { }
+            """;
+        var compilation = CSharpCompilation.Create("NullableAliasFixture" + Guid.NewGuid().ToString("N"),
+            [CSharpSyntaxTree.ParseText(model)], References,
+            new CSharpCompilationOptions(OutputKind.DynamicallyLinkedLibrary, nullableContextOptions: NullableContextOptions.Enable));
+        GeneratorDriver driver = CSharpGeneratorDriver.Create(
+            generators: [new SharedJsonMetadataGenerator().AsSourceGenerator()],
+            additionalTexts: [new Manifest(manifest)]);
+        driver = driver.RunGeneratorsAndUpdateCompilation(compilation, out var output, out _);
+        driver.GetRunResult().Diagnostics.Should().NotContain(static item => item.Severity == DiagnosticSeverity.Error);
+        output.GetDiagnostics().Should().NotContain(static item => item.Severity == DiagnosticSeverity.Error);
+        using var stream = new MemoryStream();
+        var emitted = output.Emit(stream);
+        emitted.Success.Should().BeTrue(string.Join("\n", emitted.Diagnostics));
+        var assembly = Assembly.Load(stream.ToArray());
+        assembly.GetType("Fixture.Probe")!.GetMethod("Run")!.Invoke(null, null).Should().Be("[\"fixture\",null]");
+    }
+
     private static (Compilation Compilation, GeneratorDriverRunResult Result) Generate(
         int count, int properties, bool disableFirstBatch, string? failure = null)
     {

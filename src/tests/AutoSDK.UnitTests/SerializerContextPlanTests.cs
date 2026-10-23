@@ -92,6 +92,29 @@ components:
           type: string
 """;
 
+
+    [TestMethod]
+    [DataRow(true, "SourceGenerationContext")]
+    [DataRow(true, "CustomJsonContext")]
+    [DataRow(false, "SourceGenerationContext")]
+    public void SharedMetadata_TagClientsUseTheConfiguredFacade(bool shared, string rootContext)
+    {
+        var spec = Spec.Replace("operationId: first\n      tags: [same]", "operationId: first\n      tags: [realtime]", StringComparison.Ordinal)
+            .Replace("tags: [same]", "tags: [other]", StringComparison.Ordinal);
+        var settings = Prepare().Converters.Settings with
+        {
+            UseSharedJsonMetadata = shared,
+            JsonSerializerContext = "GraphFixture." + rootContext,
+        };
+        var data = AutoSDK.Generation.Data.Prepare(((spec, settings), settings));
+        var files = CSharpPipeline.GenerateFiles(data);
+        var client = files.Single(static file => file.Name == "GraphFixture.RealtimeClient.g.cs").Text;
+        var expected = shared ? rootContext : "RealtimeSourceGenerationContext";
+        client.Should().Contain("global::GraphFixture." + expected + ".Default");
+        if (shared)
+            client.Should().NotContain("global::GraphFixture.RealtimeSourceGenerationContext.Default");
+    }
+
     private static AutoSDK.Models.Data Prepare()
     {
         var settings = Settings.Default with

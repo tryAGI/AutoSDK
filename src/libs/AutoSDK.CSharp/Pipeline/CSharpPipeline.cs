@@ -319,7 +319,7 @@ public static class CSharpPipeline
                 ? ApplyPackageSerializerContexts(data, modelOwners)
                 : partitionedMonolithicContext
                     ? ApplyMonolithicPartitionSerializerContexts(data, modelOwners)
-                : tagReachability.Count != 0
+                : serializerPlan is null && tagReachability.Count != 0
                     ? ApplyTagSerializerContexts(data, tagReachability)
                     : data.Clients;
             AddPhase("clients_auth", () => clients
