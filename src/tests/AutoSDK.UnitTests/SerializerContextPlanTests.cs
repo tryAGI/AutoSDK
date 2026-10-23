@@ -281,12 +281,14 @@ components:
             { Settings = data.Converters.Settings with { UseSharedJsonMetadata = true } } };
         var files = CSharpPipeline.GenerateFiles(data);
         var manifest = files.Single(static file => file.Name.EndsWith(".autosdk-json-metadata", StringComparison.Ordinal));
-        manifest.Text.Should().StartWith("// AutoSDK.JsonMetadata manifest-format: 2\n");
+        manifest.Text.Should().StartWith("// AutoSDK.JsonMetadata manifest-format: 3\n");
         manifest.Text.Split("JsonSourceGenerationOptions", StringSplitOptions.None).Length.Should().Be(2);
-        manifest.Text.Should().Contain("ManifestProtocol.Version2");
+        manifest.Text.Should().Contain("ManifestProtocol.Version3")
+            .And.Contain("// AutoSDK.JsonMetadata factory-batch: GraphFixture.")
+            .And.Contain("TypeInfoPropertyName = ");
         var binding = files.Single(static file => file.Name == "AutoSDK.SharedJsonMetadata.props");
         binding.Text.Should().Contain("<AutoSDKJsonMetadataVersion>")
-            .And.Contain("<AutoSDKJsonMetadataManifestVersion>2</AutoSDKJsonMetadataManifestVersion>");
+            .And.Contain("<AutoSDKJsonMetadataManifestVersion>3</AutoSDKJsonMetadataManifestVersion>");
         var shared = files.Single(file => file.Name.StartsWith(
             SerializerContextPlan.Create(data).ModelContexts["global::GraphFixture.Shared"] + ".", StringComparison.Ordinal));
         shared.Text.Should().Contain(".MetadataScope").And.NotContain("typeof(global::GraphFixture.FirstRequest)");

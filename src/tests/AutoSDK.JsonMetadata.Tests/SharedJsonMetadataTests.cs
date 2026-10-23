@@ -227,7 +227,7 @@ public sealed partial class Used
     }
 
     [TestMethod]
-    [DataRow(3)]
+    [DataRow(4)]
     [DataRow(-1)]
     public void Generate_RejectsIncompatibleManifestProtocolBeforeRunningStj(int version)
     {
@@ -261,9 +261,11 @@ internal static class MetadataGuard
 
 
     [TestMethod]
-    [DataRow(false)]
-    [DataRow(true)]
-    public void Generate_ScopedDependenciesAreCompletedOnceWithoutFlatteningParents(bool referenceChildScope)
+    [DataRow(false, 2)]
+    [DataRow(true, 2)]
+    [DataRow(false, 3)]
+    [DataRow(true, 3)]
+    public void Generate_ScopedDependenciesAreCompletedOnceWithoutFlatteningParents(bool referenceChildScope, int manifestVersion)
     {
         var source = """
 namespace Fixture;
@@ -312,7 +314,12 @@ public partial class ChildScope
 }
 """;
         if (!referenceChildScope) source = source.Replace("ChildScope.MetadataScope", "new object()", StringComparison.Ordinal);
-        var (compilation, result) = Generate("Metadata", extraSource: source, manifestVersion: 2);
+        if (manifestVersion == 3)
+        {
+            source = source.Replace("SharedMetadataFactory_Used", "SharedMetadataFactoryBatch0000", StringComparison.Ordinal)
+                .Replace("SharedMetadataFactory_PartialDetails", "SharedMetadataFactoryBatchImplicit0000", StringComparison.Ordinal);
+        }
+        var (compilation, result) = Generate("Metadata", extraSource: source, manifestVersion: manifestVersion);
         compilation.GetDiagnostics().Should().NotContain(static diagnostic => diagnostic.Severity == DiagnosticSeverity.Error);
         var parent = result.Results[0].GeneratedSources.Single(static source =>
             source.HintName == "AutoSDK.SharedDependencies.Fixture.ParentScope.g.cs").SourceText.ToString();
@@ -400,15 +407,21 @@ internal sealed partial class {{contextName}} : System.Text.Json.Serialization.J
     private static (Compilation Compilation, GeneratorDriverRunResult Result) Generate(string mode, bool ordinaryContext = false, string? extraSource = null, bool warningsAsErrors = false, bool duplicateTypeInfoNames = false, bool specificWarningsAsErrors = false, int? manifestVersion = null)
     {
         var nameOverride = duplicateTypeInfoNames ? ", TypeInfoPropertyName = \"Collision\"" : string.Empty;
+        var usedName = manifestVersion == 3 ? ", TypeInfoPropertyName = \"Used\"" : nameOverride;
+        var unusedName = manifestVersion == 3 ? ", TypeInfoPropertyName = \"Unused\"" : nameOverride;
         var manifest = $$"""
 #nullable enable
 namespace Fixture;
 [global::System.Text.Json.Serialization.JsonSourceGenerationOptions(
     GenerationMode = global::System.Text.Json.Serialization.JsonSourceGenerationMode.{{mode}})]
-[global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Fixture.Used){{nameOverride}})]
-[global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Fixture.Unused){{nameOverride}})]
+[global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Fixture.Used){{usedName}})]
+[global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Fixture.Unused){{unusedName}})]
 internal sealed partial class SharedMetadata : global::System.Text.Json.Serialization.JsonSerializerContext { }
 """;
+        if (manifestVersion == 3)
+        {
+            manifest = "// AutoSDK.JsonMetadata factory-batch: Fixture.SharedMetadata|0|Unused,Used\n" + manifest;
+        }
         if (manifestVersion is { } version)
         {
             manifest = "// AutoSDK.JsonMetadata manifest-format: " +

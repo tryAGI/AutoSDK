@@ -34,6 +34,17 @@ class MetadataAuditTests(unittest.TestCase):
                     project.write_text(valid.replace(old, new))
                     self.assertTrue(audit.audit_project(project)["errors"])
             project.write_text(valid)
+            # Published protocol-2 SDKs remain valid; protocol-3 analyzers also accept
+            # older subtrees while an SDK migrates them. An older binding cannot emit 3.
+            manifest = generated / "Fixture.autosdk-json-metadata"
+            for binding_version, manifest_version, accepted in [(2, 2, True), (3, 2, True),
+                                                                (3, 3, True), (2, 3, False),
+                                                                (3, 4, False), (3, 1, False)]:
+                with self.subTest(binding=binding_version, manifest=manifest_version):
+                    binding.write_text(f"<Project><PropertyGroup><AutoSDKJsonMetadataVersion>1.2.3-preview.4</AutoSDKJsonMetadataVersion>"
+                                       f"<AutoSDKJsonMetadataManifestVersion>{binding_version}</AutoSDKJsonMetadataManifestVersion></PropertyGroup></Project>")
+                    manifest.write_text(f"// AutoSDK.JsonMetadata manifest-format: {manifest_version}\n")
+                    self.assertEqual(accepted, not audit.audit_project(project)["errors"])
             binding.unlink()
             self.assertTrue(audit.audit_project(project)["errors"])
 

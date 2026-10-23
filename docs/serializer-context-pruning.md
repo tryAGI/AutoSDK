@@ -66,6 +66,33 @@ arbitrary SDK models. Reading or explicitly assigning that context retains its
 complete graph. A custom context assigned to a root client still propagates to
 children and overrides operation defaults. This is deliberate caller ownership.
 
+## Bounded factory holders
+
+Protocol 3 groups up to 16 canonical factory methods in each field-free holder.
+The manifest records the complete ordered plan, including guarded registrations,
+so conditional compilation cannot shift another type's factory identity. Implicit
+dependencies discovered by STJ use separate bounded groups. Older unversioned,
+protocol-1 and protocol-2 manifests retain their existing factory ABI.
+
+The analyzer estimates compiler-generated method pressure from actual emitted
+methods, lambdas and local functions. Above a conservative weight of 8,192 it
+splits bodies into part holders behind the group's stable, at-most-16 forwarding
+methods. A single unusually large factory retains the previous isolated-factory
+compatibility path. The pinned compiler and large-DTO CLR-loading regression test
+guard this estimate; it is not an arbitrary DTO-size limit.
+
+Dependency completion analyzes each original factory separately before emission
+merges holders. Grouping therefore introduces no resolver dispatcher or sibling
+model dependency. Full-trimming PE checks verify that an unused model and its
+`Create_*` method disappear even when the used model shares its holder. CLR
+loading, guarded plans, malformed plans, inherited/partial dependencies, cycles
+and union/WebSocket NativeAOT contracts are tested separately.
+
+The build-only package accepts the older supported manifests during adoption.
+The migration audit accepts protocol-2 projects and protocol-3 bindings containing
+older subtrees; it rejects a newer manifest with an older binding. Regenerate
+with a matching published CLI/analyzer release to emit protocol 3.
+
 ## Options-bound metadata caching
 
 Shared-profile model helpers, HTTP bodies and WebSocket messages resolve their

@@ -68,7 +68,7 @@ namespace {client.Settings.Namespace}
                 // Constructed generics need explicit names because STJ normalizes nested
                 // nullable arguments differently. Keep conventional names for built-in types:
                 // STJ also uses their type-info names to select JsonMetadataServices converters.
-                var name = registration.TypeInfoPropertyName;
+                var name = registration.TypeInfoPropertyName ?? state.TypeInfoNames.GetGenerated(registration.Type);
                 if (registration.Type.Contains("<"))
                 {
                     var identity = Packaging.SerializerContextPlan.GetContextName(client.Settings,
@@ -78,6 +78,21 @@ namespace {client.Settings.Namespace}
                 return new JsonSerializableAttributeRegistration(registration.Type, name, generationMode: null,
                     registration.IsGuard, registration.IsDeprecated);
             }).ToArray();
+            var names = attributes.Select(static registration => registration.TypeInfoPropertyName!)
+                .Distinct(StringComparer.Ordinal).OrderBy(static name => name, StringComparer.Ordinal).ToArray();
+            var holders = new Dictionary<string, string>(StringComparer.Ordinal);
+            for (var offset = 0; offset < names.Length; offset += SharedJsonMetadataProtocol.FactoryBatchSize)
+            {
+                var batch = offset / SharedJsonMetadataProtocol.FactoryBatchSize;
+                var members = names.Skip(offset).Take(SharedJsonMetadataProtocol.FactoryBatchSize).ToArray();
+                builder.Append(SharedJsonMetadataProtocol.BatchPrefix + client.Settings.Namespace + "." + className +
+                    "|" + batch.ToString(System.Globalization.CultureInfo.InvariantCulture) + "|" +
+                    string.Join(",", members) + "\n");
+                foreach (var member in members)
+                {
+                    holders.Add(member, SharedJsonMetadataProtocol.FactoryBatchHolderName(className, batch));
+                }
+            }
             AppendJsonSerializableAttributes(builder, attributes);
             builder.Append($@"
     internal sealed partial class {className} : global::System.Text.Json.Serialization.JsonSerializerContext
@@ -90,7 +105,7 @@ namespace {client.Settings.Namespace}
                 {
                     var name = registration.TypeInfoPropertyName ?? state.TypeInfoNames.GetGenerated(registration.Type);
                     factories.Add(registration.Type,
-                        $"global::{client.Settings.Namespace}.{SharedJsonMetadataProtocol.FactoryHolderName(className, name)}.Create_{name}");
+                        $"global::{client.Settings.Namespace}.{holders[name]}.Create_{name}");
                 }
             }
         }

@@ -7,7 +7,8 @@ from pathlib import Path
 import xml.etree.ElementTree as ET
 import zipfile
 
-PROTOCOL = 2
+PROTOCOL = 3
+SUPPORTED_PROTOCOLS = {2, 3}
 BINDING = "Generated/AutoSDK.SharedJsonMetadata.props"
 
 
@@ -38,6 +39,7 @@ def audit_project(project, expected_version=None):
         errors.append("generated metadata package binding must be imported exactly once")
     binding = project.parent / BINDING
     version = None
+    binding_protocol = None
     if not binding.exists():
         errors.append("generated metadata package binding is missing")
     else:
@@ -45,14 +47,18 @@ def audit_project(project, expected_version=None):
         version = properties.findtext(".//AutoSDKJsonMetadataVersion")
         if not version or not re.fullmatch(r"\d+\.\d+\.\d+(?:-[0-9A-Za-z.-]+)?", version):
             errors.append("generated analyzer package version is invalid")
-        if properties.findtext(".//AutoSDKJsonMetadataManifestVersion") != str(PROTOCOL):
+        binding_protocol = properties.findtext(".//AutoSDKJsonMetadataManifestVersion")
+        if binding_protocol not in {str(value) for value in SUPPORTED_PROTOCOLS}:
             errors.append("generated binding has an incompatible manifest protocol")
         if expected_version is not None and version != expected_version:
             errors.append(f"generated analyzer version differs from expected CLI release {expected_version}")
     for manifest in manifests:
         with manifest.open(encoding="utf-8-sig") as stream:
             first = stream.readline().strip()
-        if first != f"// AutoSDK.JsonMetadata manifest-format: {PROTOCOL}":
+        match = re.fullmatch(r"// AutoSDK.JsonMetadata manifest-format: (\d+)", first)
+        protocol = int(match[1]) if match else None
+        if (protocol not in SUPPORTED_PROTOCOLS or binding_protocol is None or
+                not binding_protocol.isdigit() or protocol > int(binding_protocol)):
             errors.append(f"{manifest.name}: unversioned or incompatible manifest; regenerate with the matching CLI")
     return {"project": str(project), "enabled": enabled, "manifests": len(manifests),
             "analyzerVersion": version, "errors": errors}

@@ -1,4 +1,6 @@
 using System.Runtime.InteropServices;
+using System.Reflection.Metadata;
+using System.Reflection.PortableExecutable;
 
 namespace AutoSDK.IntegrationTests;
 
@@ -57,6 +59,11 @@ components:
             mapping:
               cat: '#/components/schemas/Cat'
               dog: '#/components/schemas/Dog'
+    EnvelopeUnused:
+      type: object
+      properties:
+        never:
+          type: string
     Cat:
       type: object
       required: [type]
@@ -87,6 +94,13 @@ components:
             additionalArguments: ["--shared-json-metadata"],
             assertBuiltOutput: async directory =>
             {
+                var manifest = await File.ReadAllTextAsync(Directory.GetFiles(
+                    directory, "*.autosdk-json-metadata", SearchOption.AllDirectories).Single());
+                var envelopeBatch = manifest.Split('\n').Single(static line =>
+                    line.StartsWith("// AutoSDK.JsonMetadata factory-batch:", StringComparison.Ordinal) &&
+                    line.Split('|')[2].Split(',').Contains("Envelope", StringComparer.Ordinal));
+                envelopeBatch.Split('|')[2].Split(',').Should().Contain("EnvelopeUnused",
+                    "the trimming fixture must exercise unused factories inside the live batch");
                 await File.WriteAllTextAsync(Path.Combine(directory, "ProbeContext.cs"), MetadataProbeContext);
                 var projectPath = Path.Combine(directory, "Oag.csproj");
                 var project = (await File.ReadAllTextAsync(projectPath)).Replace("</Project>",
@@ -118,7 +132,44 @@ components:
                 run.ExitCode.Should().Be(0, run.StandardOutput + run.StandardError);
                 run.StandardOutput.Should().Contain("metadata-cache-contract-passed")
                     .And.Contain("warm-lookups=0");
+                if (!nativeAot)
+                {
+                    await VerifyUnusedBatchedMetadataAsync(directory, Path.Combine(consumer, "Probe.csproj"));
+                }
             });
+    }
+
+    private static async Task VerifyUnusedBatchedMetadataAsync(string directory, string templateProject)
+    {
+        // The cache probe deliberately supplies an aggregate caller context, which retains
+        // the full graph. Verify pruning independently through the normal default model scope.
+        var consumer = Path.Combine(directory, "Consumers", "pruning");
+        Directory.CreateDirectory(consumer);
+        await File.WriteAllTextAsync(Path.Combine(consumer, "Pruning.csproj"), await File.ReadAllTextAsync(templateProject));
+        await File.WriteAllTextAsync(Path.Combine(consumer, "Program.cs"), """"
+using Oag;
+var model = Envelope.FromJson("""{"text":"first","next":{"text":"child"},"choice":{"type":"cat","name":"m"}}""");
+if (model?.Next?.Text != "child" || !model.ToJson().Contains("child", StringComparison.Ordinal)) return 2;
+Console.WriteLine("batched-pruning-contract-passed");
+return 0;
+"""");
+        var publish = Path.Combine(consumer, "publish");
+        var result = await RunDotnetAsync(consumer, "publish", "Pruning.csproj", "-c", "Release",
+            "-r", RuntimeInformation.RuntimeIdentifier, "-o", publish);
+        result.ExitCode.Should().Be(0, result.StandardOutput + result.StandardError);
+        using (var linkedStream = File.OpenRead(Path.Combine(publish, "Oag.dll")))
+        using (var pe = new PEReader(linkedStream))
+        {
+            var metadata = pe.GetMetadataReader();
+            metadata.TypeDefinitions.Select(handle => metadata.GetString(metadata.GetTypeDefinition(handle).Name))
+                .Should().NotContain("EnvelopeUnused");
+            metadata.MethodDefinitions.Select(handle => metadata.GetString(metadata.GetMethodDefinition(handle).Name))
+                .Should().NotContain("Create_EnvelopeUnused");
+        }
+        var run = await RunProcessAsync(Path.Combine(publish, OperatingSystem.IsWindows() ? "Pruning.exe" : "Pruning"), publish);
+        Console.WriteLine(run.StandardOutput);
+        run.ExitCode.Should().Be(0, run.StandardOutput + run.StandardError);
+        run.StandardOutput.Should().Contain("batched-pruning-contract-passed");
     }
 
     private const string MetadataProbeContext = """
