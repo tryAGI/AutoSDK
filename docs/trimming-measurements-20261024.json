@@ -1,0 +1,1000 @@
+{
+  "schemaVersion": 1,
+  "date": "2026-10-24",
+  "generator": {
+    "version": "0.35.0-preview.2.131",
+    "commit": "1d1c4729edbe49da7cfd20e8ae4562d656473302",
+    "source": "Published NuGet packages; repository commit verified"
+  },
+  "environment": {
+    "rid": "linux-arm64",
+    "sdk": "10.0.402",
+    "runtime": "10.0.13",
+    "image": "mcr.microsoft.com/dotnet/sdk:10.0-noble-aot",
+    "cpus": 2,
+    "memoryLimitGiB": 16,
+    "memorySamplingSeconds": 0.1,
+    "publishTimeoutSeconds": 300,
+    "readyToRun": false,
+    "reflectionSerialization": false,
+    "trimMode": "full",
+    "warm": "Same container, package/obj/output caches preserved; no-restore. appEdit changes application IL."
+  },
+  "limitations": [
+    "Single controlled cohort, no variance estimates.",
+    "This is package-consuming console application evidence, not a full Advantage backend or Docker image/deployment measurement.",
+    "Anthropic baseline HTTP NativeAOT publication timed out after 300 seconds inside the admitted container; no native size or warm timing exists.",
+    "ElevenLabs controlled baseline uses 91e123154cde9497445c9f337b3896ce56016542 and matching pinned specs, predating newer upstream API changes.",
+    "Public CLR type-name retention is not exhaustive binary/member compatibility testing.",
+    "Published directory sizes include runtime/debug files; nativeBytes counts the executable alone.",
+    "Symbol removal affects diagnostics and requires an explicit consumer choice."
+  ],
+  "sdks": {
+    "Anthropic": {
+      "baseCommit": "7e9bb0e671b03538032556b77a19b80b0ad06ee4",
+      "specHashes": {
+        "openapi.yaml": "d3cc0aa5048cf38bc3be28c403727e58dcaf9409e951562147daefe78722975c"
+      },
+      "variants": {
+        "baseline": {
+          "version": "0.0.0-rollout-baseline-20261024-r2",
+          "artifactLabel": "Anthropic-baseline-r2",
+          "build": {
+            "seconds": 166.248,
+            "userSeconds": 255.977,
+            "systemSeconds": 16.924
+          },
+          "sampledMemory": {
+            "intervalSeconds": 0.1,
+            "peakCgroupBytes": 12146982912,
+            "peakAnonymousBytes": 11765383168,
+            "samples": 1569
+          },
+          "fullPE": {
+            "unusedModelsRetained": [],
+            "dllBytes": 102707200,
+            "embeddedPdbBytes": 25503252,
+            "dllMinusEmbeddedPdbPayloadBytes": 77203948,
+            "metadataBytes": 43651272,
+            "ilBodyBytes": 31621863,
+            "types": 21691,
+            "methods": 369228,
+            "fields": 286034,
+            "factoryRelatedClrTypes": 0,
+            "lambdaHolders": 11206,
+            "publicTypes": 6455,
+            "publicTypeNamesSha256": "E2D25F7E74D1310A8B786E58DC8543CBA79172C50699DC2E2834AA02456C880D"
+          },
+          "consumers": {
+            "Anthropic-baseline-http-trim": {
+              "mode": "http",
+              "aot": false,
+              "first": {
+                "seconds": 38.062,
+                "userSeconds": 4.145,
+                "systemSeconds": 0.54
+              },
+              "warm": {
+                "seconds": 0.602,
+                "userSeconds": 0.446,
+                "systemSeconds": 0.072
+              },
+              "appEdit": {
+                "seconds": 34.331,
+                "userSeconds": 1.918,
+                "systemSeconds": 0.226
+              },
+              "passed": true,
+              "publishedBytes": 105850497,
+              "sdkBytes": 80918016,
+              "retention": {
+                "unusedModelsRetained": [
+                  "Message",
+                  "Tool"
+                ],
+                "dllBytes": 80918016,
+                "embeddedPdbBytes": 24758790,
+                "dllMinusEmbeddedPdbPayloadBytes": 56159226,
+                "metadataBytes": 33742748,
+                "ilBodyBytes": 24202291,
+                "types": 17453,
+                "methods": 284637,
+                "fields": 215150,
+                "factoryRelatedClrTypes": 0,
+                "lambdaHolders": 10739,
+                "publicTypes": 6309,
+                "publicTypeNamesSha256": "5E6D956F50742E5E7CEF7A792125D9353CD7D6CED776DA45B4DF4BE628CBD8E9"
+              }
+            },
+            "Anthropic-baseline-http-aot": {
+              "mode": "http",
+              "aot": true,
+              "first": {
+                "seconds": 300.031,
+                "userSeconds": 2.582,
+                "systemSeconds": 0.405
+              },
+              "warm": {},
+              "appEdit": {},
+              "passed": false,
+              "publishedBytes": null,
+              "publishExitCode": 124,
+              "publicationLimitSeconds": 300
+            },
+            "Anthropic-baseline-helper-trim": {
+              "mode": "helper",
+              "aot": false,
+              "first": {
+                "seconds": 37.527,
+                "userSeconds": 3.079,
+                "systemSeconds": 0.42
+              },
+              "warm": {
+                "seconds": 0.608,
+                "userSeconds": 0.529,
+                "systemSeconds": 0.073
+              },
+              "appEdit": {
+                "seconds": 35.399,
+                "userSeconds": 44.088,
+                "systemSeconds": 1.862
+              },
+              "passed": true,
+              "publishedBytes": 103743821,
+              "sdkBytes": 80803840,
+              "retention": {
+                "unusedModelsRetained": [
+                  "Message",
+                  "Tool"
+                ],
+                "dllBytes": 80803840,
+                "embeddedPdbBytes": 24756884,
+                "dllMinusEmbeddedPdbPayloadBytes": 56046956,
+                "metadataBytes": 33650480,
+                "ilBodyBytes": 24183052,
+                "types": 17413,
+                "methods": 284464,
+                "fields": 214978,
+                "factoryRelatedClrTypes": 0,
+                "lambdaHolders": 10735,
+                "publicTypes": 6279,
+                "publicTypeNamesSha256": "6A949E43CABC1876B1731A9CF2B987F9A08FB58C796C9A015941663AE291CFCE"
+              }
+            },
+            "Anthropic-baseline-unused-trim": {
+              "mode": "unused",
+              "aot": false,
+              "first": {
+                "seconds": 4.927,
+                "userSeconds": 2.457,
+                "systemSeconds": 0.32
+              },
+              "warm": {
+                "seconds": 0.596,
+                "userSeconds": 0.44,
+                "systemSeconds": 0.073
+              },
+              "appEdit": {
+                "seconds": 4.48,
+                "userSeconds": 1.767,
+                "systemSeconds": 0.204
+              },
+              "passed": true,
+              "publishedBytes": 22276037
+            }
+          },
+          "generatedSource": {
+            "files": 9105,
+            "bytes": 71701227
+          }
+        },
+        "candidate": {
+          "version": "0.0.0-rollout-candidate-20261024-r2",
+          "artifactLabel": "Anthropic-candidate-r2",
+          "build": {
+            "seconds": 119.791,
+            "userSeconds": 188.798,
+            "systemSeconds": 6.784
+          },
+          "sampledMemory": {
+            "intervalSeconds": 0.1,
+            "peakCgroupBytes": 7010729984,
+            "peakAnonymousBytes": 6437003264,
+            "samples": 1106
+          },
+          "fullPE": {
+            "unusedModelsRetained": [],
+            "dllBytes": 44550144,
+            "embeddedPdbBytes": 5011610,
+            "dllMinusEmbeddedPdbPayloadBytes": 39538534,
+            "metadataBytes": 23275812,
+            "ilBodyBytes": 15191580,
+            "types": 27310,
+            "methods": 225247,
+            "fields": 132595,
+            "factoryRelatedClrTypes": 3774,
+            "lambdaHolders": 8014,
+            "publicTypes": 6455,
+            "publicTypeNamesSha256": "E2D25F7E74D1310A8B786E58DC8543CBA79172C50699DC2E2834AA02456C880D"
+          },
+          "consumers": {
+            "Anthropic-candidate-http-trim": {
+              "mode": "http",
+              "aot": false,
+              "first": {
+                "seconds": 11.192,
+                "userSeconds": 3.918,
+                "systemSeconds": 0.466
+              },
+              "warm": {
+                "seconds": 0.577,
+                "userSeconds": 0.43,
+                "systemSeconds": 0.058
+              },
+              "appEdit": {
+                "seconds": 8.803,
+                "userSeconds": 11.932,
+                "systemSeconds": 0.902
+              },
+              "passed": true,
+              "publishedBytes": 28363910,
+              "sdkBytes": 3436032,
+              "retention": {
+                "unusedModelsRetained": [],
+                "dllBytes": 3436032,
+                "embeddedPdbBytes": 3172803,
+                "dllMinusEmbeddedPdbPayloadBytes": 263229,
+                "metadataBytes": 153240,
+                "ilBodyBytes": 102230,
+                "types": 331,
+                "methods": 1634,
+                "fields": 1027,
+                "factoryRelatedClrTypes": 109,
+                "lambdaHolders": 96,
+                "publicTypes": 81,
+                "publicTypeNamesSha256": "2697AE3B3317A9058348BB5BA8B78CD091B836D0AD8D0873984FD9CD9204C086"
+              }
+            },
+            "Anthropic-candidate-http-aot": {
+              "mode": "http",
+              "aot": true,
+              "first": {
+                "seconds": 12.345,
+                "userSeconds": 15.821,
+                "systemSeconds": 0.812
+              },
+              "warm": {
+                "seconds": 0.73,
+                "userSeconds": 0.57,
+                "systemSeconds": 0.121
+              },
+              "appEdit": {
+                "seconds": 17.044,
+                "userSeconds": 18.219,
+                "systemSeconds": 4.115
+              },
+              "passed": true,
+              "publishedBytes": 23410080,
+              "nativeBytes": 8547936
+            },
+            "Anthropic-candidate-helper-trim": {
+              "mode": "helper",
+              "aot": false,
+              "first": {
+                "seconds": 16.596,
+                "userSeconds": 5.022,
+                "systemSeconds": 2.212
+              },
+              "warm": {
+                "seconds": 0.585,
+                "userSeconds": 0.426,
+                "systemSeconds": 0.074
+              },
+              "appEdit": {
+                "seconds": 9.31,
+                "userSeconds": 1.979,
+                "systemSeconds": 0.214
+              },
+              "passed": true,
+              "publishedBytes": 26161870,
+              "sdkBytes": 3245056,
+              "retention": {
+                "unusedModelsRetained": [],
+                "dllBytes": 3245056,
+                "embeddedPdbBytes": 3158097,
+                "dllMinusEmbeddedPdbPayloadBytes": 86959,
+                "metadataBytes": 53072,
+                "ilBodyBytes": 29228,
+                "types": 115,
+                "methods": 551,
+                "fields": 316,
+                "factoryRelatedClrTypes": 48,
+                "lambdaHolders": 33,
+                "publicTypes": 17,
+                "publicTypeNamesSha256": "B9F3F83C4B7FBBC7A37723FE6479E27A4C45A79F55D296726E5B8169CFC6E30B"
+              }
+            },
+            "Anthropic-candidate-helper-aot": {
+              "mode": "helper",
+              "aot": true,
+              "first": {
+                "seconds": 6.118,
+                "userSeconds": 7.25,
+                "systemSeconds": 0.638
+              },
+              "warm": {
+                "seconds": 0.624,
+                "userSeconds": 0.472,
+                "systemSeconds": 0.085
+              },
+              "appEdit": {
+                "seconds": 6.184,
+                "userSeconds": 7.525,
+                "systemSeconds": 0.573
+              },
+              "passed": true,
+              "publishedBytes": 9260208,
+              "nativeBytes": 3578896
+            },
+            "Anthropic-candidate-unused-trim": {
+              "mode": "unused",
+              "aot": false,
+              "first": {
+                "seconds": 4.761,
+                "userSeconds": 2.24,
+                "systemSeconds": 0.284
+              },
+              "warm": {
+                "seconds": 0.577,
+                "userSeconds": 0.432,
+                "systemSeconds": 0.067
+              },
+              "appEdit": {
+                "seconds": 4.31,
+                "userSeconds": 1.716,
+                "systemSeconds": 0.188
+              },
+              "passed": true,
+              "publishedBytes": 22276037
+            },
+            "Anthropic-candidate-unused-aot": {
+              "mode": "unused",
+              "aot": true,
+              "first": {
+                "seconds": 3.826,
+                "userSeconds": 4.059,
+                "systemSeconds": 0.476
+              },
+              "warm": {
+                "seconds": 0.653,
+                "userSeconds": 0.497,
+                "systemSeconds": 0.081
+              },
+              "appEdit": {
+                "seconds": 2.942,
+                "userSeconds": 3.408,
+                "systemSeconds": 0.364
+              },
+              "passed": true,
+              "publishedBytes": 3769016,
+              "nativeBytes": 1319744
+            }
+          },
+          "generatedSource": {
+            "files": 13385,
+            "bytes": 83079134
+          }
+        }
+      },
+      "publishedGeneration": {
+        "version": "0.35.0-preview.2.131",
+        "specHashes": {
+          "openapi.yaml": "d3cc0aa5048cf38bc3be28c403727e58dcaf9409e951562147daefe78722975c"
+        },
+        "specsIdentical": true
+      },
+      "publicTypeCompatibility": {
+        "baseline": 6455,
+        "candidate": 6455,
+        "removed": [],
+        "added": []
+      }
+    },
+    "ElevenLabs": {
+      "baseCommit": "91e123154cde9497445c9f337b3896ce56016542",
+      "specHashes": {
+        "text-to-dialogue-multi-context-asyncapi.json": "210f3baf85d5b973f13c2637d327860a144aa4298403e54b76e954ed9c259240",
+        "text-to-dialogue-asyncapi.json": "0cfa02e1ca19014fcbf507be8aff4a09e26d21592b8958ef0b0c13a38ad24b6e",
+        "asyncapi.json": "bf5b2a0585b84cf73c578bf95c6f328c6042381402172e80ff0328a52c3e5005",
+        "openapi.json": "ec501dea2a976ea53dd4a91b641555a5e8c5b1c65307b3ffc05750549a5241fd"
+      },
+      "variants": {
+        "baseline": {
+          "version": "0.0.0-rollout-baseline-20261024-r2",
+          "artifactLabel": "ElevenLabs-baseline-r2",
+          "build": {
+            "seconds": 96.566,
+            "userSeconds": 164.959,
+            "systemSeconds": 4.238
+          },
+          "sampledMemory": {
+            "intervalSeconds": 0.1,
+            "peakCgroupBytes": 6585192448,
+            "peakAnonymousBytes": 5898317824,
+            "samples": 878
+          },
+          "fullPE": {
+            "unusedModelsRetained": [],
+            "dllBytes": 53872128,
+            "embeddedPdbBytes": 12807468,
+            "dllMinusEmbeddedPdbPayloadBytes": 41064660,
+            "metadataBytes": 24150740,
+            "ilBodyBytes": 15938923,
+            "types": 13488,
+            "methods": 198693,
+            "fields": 159708,
+            "factoryRelatedClrTypes": 0,
+            "lambdaHolders": 5499,
+            "publicTypes": 4658,
+            "publicTypeNamesSha256": "54AFA6395A7C87B2357737D054C5708C8DCA510451FC12F872C4A610E4A6ACF7"
+          },
+          "consumers": {
+            "ElevenLabs-baseline-http-trim": {
+              "mode": "http",
+              "aot": false,
+              "first": {
+                "seconds": 13.769,
+                "userSeconds": 2.449,
+                "systemSeconds": 0.352
+              },
+              "warm": {
+                "seconds": 0.621,
+                "userSeconds": 0.449,
+                "systemSeconds": 0.066
+              },
+              "appEdit": {
+                "seconds": 13.763,
+                "userSeconds": 1.845,
+                "systemSeconds": 0.264
+              },
+              "passed": true,
+              "publishedBytes": 50170932,
+              "sdkBytes": 25239552,
+              "retention": {
+                "unusedModelsRetained": [
+                  "VoiceResponseModel"
+                ],
+                "dllBytes": 25239552,
+                "embeddedPdbBytes": 11697259,
+                "dllMinusEmbeddedPdbPayloadBytes": 13542293,
+                "metadataBytes": 8431484,
+                "ilBodyBytes": 5424731,
+                "types": 4163,
+                "methods": 66151,
+                "fields": 49994,
+                "factoryRelatedClrTypes": 0,
+                "lambdaHolders": 2029,
+                "publicTypes": 2053,
+                "publicTypeNamesSha256": "C1FAEC61CD6B11BF35E2C98A02FCC8F75BC103535D2888EEE4E93F07DC3BA7C6"
+              }
+            },
+            "ElevenLabs-baseline-http-aot": {
+              "mode": "http",
+              "aot": true,
+              "first": {
+                "seconds": 159.409,
+                "userSeconds": 185.108,
+                "systemSeconds": 5.632
+              },
+              "warm": {
+                "seconds": 0.738,
+                "userSeconds": 0.454,
+                "systemSeconds": 0.06
+              },
+              "appEdit": {
+                "seconds": 139.679,
+                "userSeconds": 168.206,
+                "systemSeconds": 3.036
+              },
+              "passed": true,
+              "publishedBytes": 218909184,
+              "publishExitCode": 0,
+              "publicationLimitSeconds": 300,
+              "nativeBytes": 61622520
+            },
+            "ElevenLabs-baseline-helper-trim": {
+              "mode": "helper",
+              "aot": false,
+              "first": {
+                "seconds": 16.956,
+                "userSeconds": 2.02,
+                "systemSeconds": 0.317
+              },
+              "warm": {
+                "seconds": 0.555,
+                "userSeconds": 0.411,
+                "systemSeconds": 0.059
+              },
+              "appEdit": {
+                "seconds": 17.585,
+                "userSeconds": 1.608,
+                "systemSeconds": 0.186
+              },
+              "passed": true,
+              "publishedBytes": 64076032,
+              "sdkBytes": 41133568,
+              "retention": {
+                "unusedModelsRetained": [
+                  "VoiceResponseModel"
+                ],
+                "dllBytes": 41133568,
+                "embeddedPdbBytes": 12328024,
+                "dllMinusEmbeddedPdbPayloadBytes": 28805544,
+                "metadataBytes": 17707040,
+                "ilBodyBytes": 11746654,
+                "types": 8796,
+                "methods": 145606,
+                "fields": 109162,
+                "factoryRelatedClrTypes": 0,
+                "lambdaHolders": 4410,
+                "publicTypes": 4119,
+                "publicTypeNamesSha256": "FC70565A430D5B0B0171343440722A1339F38823B43140440BE2FA3FFB8EB019"
+              }
+            },
+            "ElevenLabs-baseline-ws-trim": {
+              "mode": "ws",
+              "aot": false,
+              "first": {
+                "seconds": 8.932,
+                "userSeconds": 2.36,
+                "systemSeconds": 0.335
+              },
+              "warm": {
+                "seconds": 0.568,
+                "userSeconds": 0.433,
+                "systemSeconds": 0.048
+              },
+              "appEdit": {
+                "seconds": 7.764,
+                "userSeconds": 1.63,
+                "systemSeconds": 0.169
+              },
+              "passed": true,
+              "publishedBytes": 34214692,
+              "sdkBytes": 11297280,
+              "retention": {
+                "unusedModelsRetained": [],
+                "dllBytes": 11297280,
+                "embeddedPdbBytes": 11155932,
+                "dllMinusEmbeddedPdbPayloadBytes": 141348,
+                "metadataBytes": 90340,
+                "ilBodyBytes": 45647,
+                "types": 60,
+                "methods": 704,
+                "fields": 475,
+                "factoryRelatedClrTypes": 0,
+                "lambdaHolders": 12,
+                "publicTypes": 45,
+                "publicTypeNamesSha256": "C7EEB8D3299BA4706EF5971F862D1674195C6D6913D1E8F33D69C73A6F30A13A"
+              }
+            },
+            "ElevenLabs-baseline-unused-trim": {
+              "mode": "unused",
+              "aot": false,
+              "first": {
+                "seconds": 4.313,
+                "userSeconds": 1.991,
+                "systemSeconds": 0.238
+              },
+              "warm": {
+                "seconds": 0.547,
+                "userSeconds": 0.389,
+                "systemSeconds": 0.058
+              },
+              "appEdit": {
+                "seconds": 3.71,
+                "userSeconds": 1.47,
+                "systemSeconds": 0.161
+              },
+              "passed": true,
+              "publishedBytes": 22275989
+            }
+          },
+          "generatedSource": {
+            "files": 6856,
+            "bytes": 46282349
+          }
+        },
+        "candidate": {
+          "version": "0.0.0-rollout-candidate-20261024-r2",
+          "artifactLabel": "ElevenLabs-candidate-r2",
+          "build": {
+            "seconds": 79.509,
+            "userSeconds": 131.838,
+            "systemSeconds": 4.239
+          },
+          "sampledMemory": {
+            "intervalSeconds": 0.1,
+            "peakCgroupBytes": 5306568704,
+            "peakAnonymousBytes": 4468748288,
+            "samples": 745
+          },
+          "fullPE": {
+            "unusedModelsRetained": [],
+            "dllBytes": 31776768,
+            "embeddedPdbBytes": 3806508,
+            "dllMinusEmbeddedPdbPayloadBytes": 27970260,
+            "metadataBytes": 17027784,
+            "ilBodyBytes": 10243683,
+            "types": 21036,
+            "methods": 169656,
+            "fields": 106664,
+            "factoryRelatedClrTypes": 2699,
+            "lambdaHolders": 6487,
+            "publicTypes": 4679,
+            "publicTypeNamesSha256": "2D7307FFF10D100B64457CAA0E9EC197D9C925778A98D09570515C319288A5BB"
+          },
+          "consumers": {
+            "ElevenLabs-candidate-http-trim": {
+              "mode": "http",
+              "aot": false,
+              "first": {
+                "seconds": 11.053,
+                "userSeconds": 14.169,
+                "systemSeconds": 1.118
+              },
+              "warm": {
+                "seconds": 0.644,
+                "userSeconds": 0.478,
+                "systemSeconds": 0.067
+              },
+              "appEdit": {
+                "seconds": 9.476,
+                "userSeconds": 12.416,
+                "systemSeconds": 0.878
+              },
+              "passed": true,
+              "publishedBytes": 28245561,
+              "sdkBytes": 3320832,
+              "retention": {
+                "unusedModelsRetained": [],
+                "dllBytes": 3320832,
+                "embeddedPdbBytes": 2493732,
+                "dllMinusEmbeddedPdbPayloadBytes": 827100,
+                "metadataBytes": 527932,
+                "ilBodyBytes": 286986,
+                "types": 1149,
+                "methods": 5487,
+                "fields": 3221,
+                "factoryRelatedClrTypes": 264,
+                "lambdaHolders": 301,
+                "publicTypes": 351,
+                "publicTypeNamesSha256": "6938C0585D8CC7B0E162800CB728AE3EF9B7DA2B32D1DD65BE68AE7B8B7AAFA8"
+              }
+            },
+            "ElevenLabs-candidate-http-aot": {
+              "mode": "http",
+              "aot": true,
+              "first": {
+                "seconds": 19.494,
+                "userSeconds": 25.317,
+                "systemSeconds": 0.924
+              },
+              "warm": {
+                "seconds": 0.597,
+                "userSeconds": 0.453,
+                "systemSeconds": 0.063
+              },
+              "appEdit": {
+                "seconds": 19.938,
+                "userSeconds": 26.622,
+                "systemSeconds": 0.927
+              },
+              "passed": true,
+              "publishedBytes": 43292328,
+              "nativeBytes": 13001192
+            },
+            "ElevenLabs-candidate-helper-trim": {
+              "mode": "helper",
+              "aot": false,
+              "first": {
+                "seconds": 8.467,
+                "userSeconds": 10.316,
+                "systemSeconds": 0.856
+              },
+              "warm": {
+                "seconds": 0.721,
+                "userSeconds": 0.521,
+                "systemSeconds": 0.085
+              },
+              "appEdit": {
+                "seconds": 7.629,
+                "userSeconds": 1.916,
+                "systemSeconds": 0.246
+              },
+              "passed": true,
+              "publishedBytes": 25371626,
+              "sdkBytes": 2490880,
+              "retention": {
+                "unusedModelsRetained": [],
+                "dllBytes": 2490880,
+                "embeddedPdbBytes": 2437811,
+                "dllMinusEmbeddedPdbPayloadBytes": 53069,
+                "metadataBytes": 34240,
+                "ilBodyBytes": 15301,
+                "types": 66,
+                "methods": 292,
+                "fields": 161,
+                "factoryRelatedClrTypes": 30,
+                "lambdaHolders": 18,
+                "publicTypes": 4,
+                "publicTypeNamesSha256": "48C17082308C16A3407D388A71D7CC485AB741C2ED221473446715ECA2E0653E"
+              }
+            },
+            "ElevenLabs-candidate-helper-aot": {
+              "mode": "helper",
+              "aot": true,
+              "first": {
+                "seconds": 6.262,
+                "userSeconds": 7.708,
+                "systemSeconds": 0.657
+              },
+              "warm": {
+                "seconds": 0.68,
+                "userSeconds": 0.508,
+                "systemSeconds": 0.077
+              },
+              "appEdit": {
+                "seconds": 4.957,
+                "userSeconds": 6.251,
+                "systemSeconds": 0.464
+              },
+              "passed": true,
+              "publishedBytes": 8623936,
+              "nativeBytes": 3304608
+            },
+            "ElevenLabs-candidate-ws-trim": {
+              "mode": "ws",
+              "aot": false,
+              "first": {
+                "seconds": 8.417,
+                "userSeconds": 10.465,
+                "systemSeconds": 0.882
+              },
+              "warm": {
+                "seconds": 0.752,
+                "userSeconds": 0.54,
+                "systemSeconds": 0.084
+              },
+              "appEdit": {
+                "seconds": 8.434,
+                "userSeconds": 10.687,
+                "systemSeconds": 0.878
+              },
+              "passed": true,
+              "publishedBytes": 25384101,
+              "sdkBytes": 2487808,
+              "retention": {
+                "unusedModelsRetained": [],
+                "dllBytes": 2487808,
+                "embeddedPdbBytes": 2437803,
+                "dllMinusEmbeddedPdbPayloadBytes": 50005,
+                "metadataBytes": 32892,
+                "ilBodyBytes": 13673,
+                "types": 52,
+                "methods": 280,
+                "fields": 149,
+                "factoryRelatedClrTypes": 10,
+                "lambdaHolders": 10,
+                "publicTypes": 11,
+                "publicTypeNamesSha256": "FC7E309DD0C9C6C24B9B498AB1FA3AE2025AAEF18E265A9404A98E339CB5D20F"
+              }
+            },
+            "ElevenLabs-candidate-ws-aot": {
+              "mode": "ws",
+              "aot": true,
+              "first": {
+                "seconds": 5.231,
+                "userSeconds": 6.261,
+                "systemSeconds": 0.538
+              },
+              "warm": {
+                "seconds": 0.605,
+                "userSeconds": 0.467,
+                "systemSeconds": 0.063
+              },
+              "appEdit": {
+                "seconds": 4.37,
+                "userSeconds": 5.636,
+                "systemSeconds": 0.404
+              },
+              "passed": true,
+              "publishedBytes": 8321832,
+              "nativeBytes": 3103408
+            },
+            "ElevenLabs-candidate-unused-trim": {
+              "mode": "unused",
+              "aot": false,
+              "first": {
+                "seconds": 4.878,
+                "userSeconds": 2.172,
+                "systemSeconds": 0.248
+              },
+              "warm": {
+                "seconds": 0.582,
+                "userSeconds": 0.434,
+                "systemSeconds": 0.054
+              },
+              "appEdit": {
+                "seconds": 4.028,
+                "userSeconds": 1.673,
+                "systemSeconds": 0.189
+              },
+              "passed": true,
+              "publishedBytes": 22275993
+            },
+            "ElevenLabs-candidate-unused-aot": {
+              "mode": "unused",
+              "aot": true,
+              "first": {
+                "seconds": 3.077,
+                "userSeconds": 3.401,
+                "systemSeconds": 0.352
+              },
+              "warm": {
+                "seconds": 0.574,
+                "userSeconds": 0.457,
+                "systemSeconds": 0.055
+              },
+              "appEdit": {
+                "seconds": 2.597,
+                "userSeconds": 3.081,
+                "systemSeconds": 0.328
+              },
+              "passed": true,
+              "publishedBytes": 3769032,
+              "nativeBytes": 1319744
+            }
+          },
+          "generatedSource": {
+            "files": 10036,
+            "bytes": 55303147
+          }
+        }
+      },
+      "publishedGeneration": {
+        "version": "0.35.0-preview.2.131",
+        "specHashes": {
+          "text-to-dialogue-multi-context-asyncapi.json": "210f3baf85d5b973f13c2637d327860a144aa4298403e54b76e954ed9c259240",
+          "text-to-dialogue-asyncapi.json": "0cfa02e1ca19014fcbf507be8aff4a09e26d21592b8958ef0b0c13a38ad24b6e",
+          "asyncapi.json": "bf5b2a0585b84cf73c578bf95c6f328c6042381402172e80ff0328a52c3e5005",
+          "openapi.json": "ec501dea2a976ea53dd4a91b641555a5e8c5b1c65307b3ffc05750549a5241fd"
+        },
+        "specsIdentical": true
+      },
+      "publicTypeCompatibility": {
+        "baseline": 4658,
+        "candidate": 4679,
+        "removed": [],
+        "added": [
+          "ElevenLabs.AgentsInsightsSourceGenerationContext",
+          "ElevenLabs.AudioEffectsSourceGenerationContext",
+          "ElevenLabs.AudioIsolationSourceGenerationContext",
+          "ElevenLabs.AudioNativeSourceGenerationContext",
+          "ElevenLabs.ConversationalAi2SourceGenerationContext",
+          "ElevenLabs.EnvironmentVariablesSourceGenerationContext",
+          "ElevenLabs.EnvironmentsSourceGenerationContext",
+          "ElevenLabs.FlowsSourceGenerationContext",
+          "ElevenLabs.ForcedAlignmentSourceGenerationContext",
+          "ElevenLabs.HistorySourceGenerationContext",
+          "ElevenLabs.MusicSourceGenerationContext",
+          "ElevenLabs.PronunciationDictionariesSourceGenerationContext",
+          "ElevenLabs.SpeechEngineSourceGenerationContext",
+          "ElevenLabs.SpeechToSpeechSourceGenerationContext",
+          "ElevenLabs.SpeechToText2SourceGenerationContext",
+          "ElevenLabs.TextToDialogueSourceGenerationContext",
+          "ElevenLabs.TextToSoundEffectsSourceGenerationContext",
+          "ElevenLabs.TextToSpeechSourceGenerationContext",
+          "ElevenLabs.TextToVoice2SourceGenerationContext",
+          "ElevenLabs.UserSourceGenerationContext",
+          "ElevenLabs.WebhooksSourceGenerationContext"
+        ]
+      }
+    }
+  },
+  "symbols": {
+    "property": "TrimmerRemoveSymbols=true",
+    "cases": {
+      "Anthropic-candidate-http-trim-no-symbols": {
+        "passed": true,
+        "variant": "candidate",
+        "mode": "http",
+        "pe": {
+          "unusedModelsRetained": [],
+          "dllBytes": 262656,
+          "embeddedPdbBytes": 0,
+          "dllMinusEmbeddedPdbPayloadBytes": 262656,
+          "metadataBytes": 153240,
+          "ilBodyBytes": 102230,
+          "types": 331,
+          "methods": 1634,
+          "fields": 1027,
+          "factoryRelatedClrTypes": 109,
+          "lambdaHolders": 96,
+          "publicTypes": 81,
+          "publicTypeNamesSha256": "2697AE3B3317A9058348BB5BA8B78CD091B836D0AD8D0873984FD9CD9204C086"
+        },
+        "seconds": 11.536
+      },
+      "Anthropic-candidate-helper-trim-no-symbols": {
+        "passed": true,
+        "variant": "candidate",
+        "mode": "helper",
+        "pe": {
+          "unusedModelsRetained": [],
+          "dllBytes": 86528,
+          "embeddedPdbBytes": 0,
+          "dllMinusEmbeddedPdbPayloadBytes": 86528,
+          "metadataBytes": 53072,
+          "ilBodyBytes": 29228,
+          "types": 115,
+          "methods": 551,
+          "fields": 316,
+          "factoryRelatedClrTypes": 48,
+          "lambdaHolders": 33,
+          "publicTypes": 17,
+          "publicTypeNamesSha256": "B9F3F83C4B7FBBC7A37723FE6479E27A4C45A79F55D296726E5B8169CFC6E30B"
+        },
+        "seconds": 8.872
+      },
+      "Anthropic-baseline-http-trim-no-symbols": {
+        "passed": true,
+        "variant": "baseline",
+        "mode": "http",
+        "pe": {
+          "unusedModelsRetained": [
+            "Message",
+            "Tool"
+          ],
+          "dllBytes": 56159232,
+          "embeddedPdbBytes": 0,
+          "dllMinusEmbeddedPdbPayloadBytes": 56159232,
+          "metadataBytes": 33742748,
+          "ilBodyBytes": 24202291,
+          "types": 17453,
+          "methods": 284637,
+          "fields": 215150,
+          "factoryRelatedClrTypes": 0,
+          "lambdaHolders": 10739,
+          "publicTypes": 6309,
+          "publicTypeNamesSha256": "5E6D956F50742E5E7CEF7A792125D9353CD7D6CED776DA45B4DF4BE628CBD8E9"
+        },
+        "seconds": 38.142
+      },
+      "Anthropic-baseline-helper-trim-no-symbols": {
+        "passed": true,
+        "variant": "baseline",
+        "mode": "helper",
+        "pe": {
+          "unusedModelsRetained": [
+            "Message",
+            "Tool"
+          ],
+          "dllBytes": 56046592,
+          "embeddedPdbBytes": 0,
+          "dllMinusEmbeddedPdbPayloadBytes": 56046592,
+          "metadataBytes": 33650480,
+          "ilBodyBytes": 24183052,
+          "types": 17413,
+          "methods": 284464,
+          "fields": 214978,
+          "factoryRelatedClrTypes": 0,
+          "lambdaHolders": 10735,
+          "publicTypes": 6279,
+          "publicTypeNamesSha256": "6A949E43CABC1876B1731A9CF2B987F9A08FB58C796C9A015941663AE291CFCE"
+        },
+        "seconds": 31.162
+      }
+    }
+  }
+}
