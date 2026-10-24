@@ -2,6 +2,7 @@ using System.CommandLine;
 using System.Diagnostics;
 using System.Runtime.InteropServices;
 using System.Xml.Linq;
+using AutoSDK.CLI.Trimming;
 
 namespace AutoSDK.CLI.Commands;
 
@@ -37,12 +38,30 @@ internal sealed class TrimCommand : Command
         Description = "Show full dotnet publish output",
     };
 
-    public TrimCommand() : base(name: "trim", description: "Validates trimming/NativeAOT compatibility for a .csproj")
+    private Option<bool> RemoveSymbols { get; } = new("--remove-symbols")
+    {
+        Description = "Remove managed symbols during trimming (reduces source/debug information). Native debug artifacts are reported separately.",
+    };
+
+    private Option<bool> NativeAot { get; } = new("--aot")
+    {
+        Description = "Publish with NativeAOT instead of managed trimming.",
+    };
+
+    private Option<string?> ReportJson { get; } = new("--report-json")
+    {
+        Description = "Write a JSON report with separate managed PE, embedded/external symbols, metadata and IL sizes.",
+    };
+
+    public TrimCommand() : base(name: "trim", description: "Validates trimming compatibility for a .csproj (use --aot for NativeAOT)")
     {
         Arguments.Add(CsprojPath);
         Options.Add(TargetFramework);
         Options.Add(RuntimeId);
         Options.Add(Verbose);
+        Options.Add(RemoveSymbols);
+        Options.Add(NativeAot);
+        Options.Add(ReportJson);
 
         SetAction(HandleAsync);
     }
@@ -53,6 +72,9 @@ internal sealed class TrimCommand : Command
         var targetFramework = parseResult.GetRequiredValue(TargetFramework);
         var runtimeId = parseResult.GetRequiredValue(RuntimeId);
         var verbose = parseResult.GetRequiredValue(Verbose);
+        var removeSymbols = parseResult.GetValue(RemoveSymbols);
+        var nativeAot = parseResult.GetValue(NativeAot);
+        var reportPath = parseResult.GetValue(ReportJson);
 
         var fullCsprojPath = Path.GetFullPath(csprojPath);
         if (!File.Exists(fullCsprojPath))
@@ -86,7 +108,9 @@ internal sealed class TrimCommand : Command
             ? GetRuntimeIdentifier()
             : runtimeId;
 
-        var tempDir = Path.Combine(projectDir, ".autosdk-trim");
+        var tempDir = Path.Combine(projectDir, ".autosdk-trim", Guid.NewGuid().ToString("N"));
+
+        var publishDir = Path.Combine(tempDir, "publish");
 
         try
         {
@@ -142,16 +166,8 @@ internal sealed class TrimCommand : Command
             await Console.Out.WriteLineAsync().ConfigureAwait(false);
 
             // Run dotnet publish
-            var psi = new ProcessStartInfo
-            {
-                FileName = "dotnet",
-                Arguments = "publish TrimmingCheck.csproj -c Release",
-                WorkingDirectory = tempDir,
-                RedirectStandardOutput = true,
-                RedirectStandardError = true,
-                UseShellExecute = false,
-                CreateNoWindow = true,
-            };
+            var psi = CreatePublishStartInfo(tempDir, publishDir, nativeAot, removeSymbols);
+            var stopwatch = Stopwatch.StartNew();
 
             using var process = Process.Start(psi);
             if (process == null)
@@ -165,6 +181,7 @@ internal sealed class TrimCommand : Command
             var stdoutTask = process.StandardOutput.ReadToEndAsync();
             var stderrTask = process.StandardError.ReadToEndAsync();
             await process.WaitForExitAsync().ConfigureAwait(false);
+            stopwatch.Stop();
             var stdout = await stdoutTask.ConfigureAwait(false);
             var stderr = await stderrTask.ConfigureAwait(false);
 
@@ -192,6 +209,28 @@ internal sealed class TrimCommand : Command
                             !l.Contains("0 Error", StringComparison.OrdinalIgnoreCase))
                 .Select(l => l.Trim())
                 .ToList();
+
+            var report = TrimReport.Collect(
+                publishDir, projectName, assemblyName, targetFramework, rid,
+                nativeAot, removeSymbols, stopwatch.Elapsed.TotalSeconds,
+                process.ExitCode, trimmingWarnings.Count);
+            await Console.Out.WriteLineAsync(
+                $"Published files: {report.PublishDirectoryBytes} bytes; external symbols: {report.ExternalSymbolBytes} bytes; application executable: {report.AppExecutableBytes} bytes.").ConfigureAwait(false);
+            var targetAssembly = report.Assemblies.FirstOrDefault(
+                assembly => string.Equals(assembly.File, assemblyName + ".dll", StringComparison.OrdinalIgnoreCase));
+            if (targetAssembly is not null)
+            {
+                await Console.Out.WriteLineAsync(
+                    $"Target DLL: {targetAssembly.FileBytes} bytes; embedded PDB: {targetAssembly.EmbeddedPortablePdbBytes} bytes; PE excluding embedded PDB: {targetAssembly.BytesWithoutEmbeddedPdbPayload} bytes.").ConfigureAwait(false);
+                await Console.Out.WriteLineAsync(
+                    $"Target metadata: {targetAssembly.MetadataBytes} bytes; IL: {targetAssembly.IlBytes} bytes.").ConfigureAwait(false);
+            }
+            await Console.Out.WriteLineAsync(
+                "The target assembly is rooted for compatibility; these sizes do not measure unused endpoint pruning.").ConfigureAwait(false);
+            if (!string.IsNullOrWhiteSpace(reportPath))
+            {
+                await report.WriteAsync(Path.GetFullPath(reportPath)).ConfigureAwait(false);
+            }
 
             if (trimmingWarnings.Count > 0)
             {
@@ -250,6 +289,27 @@ internal sealed class TrimCommand : Command
                 // Best effort cleanup
             }
         }
+    }
+
+    internal static ProcessStartInfo CreatePublishStartInfo(
+        string workingDirectory, string publishDirectory, bool nativeAot, bool removeSymbols)
+    {
+        var startInfo = new ProcessStartInfo
+        {
+            FileName = "dotnet",
+            WorkingDirectory = workingDirectory,
+            RedirectStandardOutput = true,
+            RedirectStandardError = true,
+            UseShellExecute = false,
+            CreateNoWindow = true,
+        };
+        foreach (var argument in new[] { "publish", "TrimmingCheck.csproj", "-c", "Release", "--output", publishDirectory })
+            startInfo.ArgumentList.Add(argument);
+        if (nativeAot)
+            startInfo.ArgumentList.Add("-p:PublishAot=true");
+        if (removeSymbols)
+            startInfo.ArgumentList.Add("-p:TrimmerRemoveSymbols=true");
+        return startInfo;
     }
 
     private static string GetRuntimeIdentifier()
