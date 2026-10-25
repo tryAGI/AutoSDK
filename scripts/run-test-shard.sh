@@ -78,7 +78,7 @@ python3 scripts/plan-test-shards.py \
   "$shard_artifacts/discovered-tests.txt" \
   "$timings_file" \
   "$shard_count" \
-  "$shard_artifacts/plan.tsv" "${estimate_arguments[@]}"
+  "$shard_artifacts/plan.tsv" --max-elapsed-seconds 720 --reserve-seconds 120 "${estimate_arguments[@]}"
 
 selected_tests=()
 while IFS=$'\t' read -r planned_shard _ test_name; do

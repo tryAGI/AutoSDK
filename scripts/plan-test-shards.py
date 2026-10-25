@@ -5,6 +5,7 @@ from __future__ import annotations
 import csv
 import argparse
 import json
+import math
 from shard_timings import initial_estimates, positive_duration, read_catalog
 from dataclasses import dataclass
 from pathlib import Path
@@ -64,6 +65,19 @@ def write_plan(path: Path, assignments: tuple[tuple[int, TestEstimate], ...]) ->
             writer.writerow((shard, f"{estimate.duration_seconds:.6f}", estimate.name))
 
 
+def check_budget(assignments: tuple[tuple[int, TestEstimate], ...], shard_count: int,
+                 max_elapsed_seconds: float, reserve_seconds: float) -> dict:
+    limit = positive_duration(max_elapsed_seconds)
+    if reserve_seconds < 0 or reserve_seconds >= limit or not math.isfinite(reserve_seconds):
+        raise ValueError("Reserve must be finite, non-negative and less than the elapsed-time limit")
+    loads = [0.0] * shard_count
+    for shard, estimate in assignments:
+        loads[shard] += estimate.duration_seconds
+    budget = {"max_elapsed_seconds": limit, "reserve_seconds": reserve_seconds,
+              "test_budget_seconds": limit - reserve_seconds, "estimated_shard_seconds": loads}
+    return budget
+
+
 def main() -> None:
     parser = argparse.ArgumentParser(description="Plan shards with complete explicit timing coverage.")
     parser.add_argument("tests_path", type=Path)
@@ -71,6 +85,8 @@ def main() -> None:
     parser.add_argument("shard_count", type=int)
     parser.add_argument("output_path", type=Path)
     parser.add_argument("--initial-estimates", type=Path)
+    parser.add_argument("--max-elapsed-seconds", type=float, default=720)
+    parser.add_argument("--reserve-seconds", type=float, default=120)
     args = parser.parse_args()
     tests_path, timings_path, shard_count, output_path = args.tests_path, args.timings_path, args.shard_count, args.output_path
     if shard_count <= 0:
@@ -90,6 +106,13 @@ def main() -> None:
     output_path.with_suffix(".coverage.json").write_text(json.dumps(coverage, indent=2) + "\n")
     print(json.dumps(coverage))
     assignments = plan_shards(tests, {**seeds, **measured}, shard_count)
+    budget = check_budget(assignments, shard_count, args.max_elapsed_seconds, args.reserve_seconds)
+    output_path.with_suffix(".budget.json").write_text(json.dumps(budget, indent=2) + "\n")
+    if max(budget["estimated_shard_seconds"]) > budget["test_budget_seconds"]:
+        raise SystemExit(f"Estimated shard workload exceeds {budget['test_budget_seconds']:.1f}s test budget "
+                         f"({args.max_elapsed_seconds:.1f}s limit minus {args.reserve_seconds:.1f}s reserve). "
+                         "Refresh CI timings, rebalance or optimize the tests before running.")
+    print(json.dumps(budget))
     write_plan(output_path, assignments)
 
 

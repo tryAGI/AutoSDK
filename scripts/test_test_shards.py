@@ -104,6 +104,36 @@ class TestShardTimings(unittest.TestCase):
             with self.assertRaisesRegex(ValueError, "duplicate"):
                 read_catalog(path)
 
+    def test_budget_reserves_setup_and_runner_variation_without_raising_sla(self):
+        plan = self.planner.plan_shards(("A", "B", "C", "D"), {"A": 350, "B": 300, "C": 250, "D": 200}, 2)
+        budget = self.planner.check_budget(plan, 2, 720, 120)
+        self.assertEqual(budget["test_budget_seconds"], 600)
+        self.assertEqual(sorted(budget["estimated_shard_seconds"]), [550, 550])
+        self.assertEqual(budget["max_elapsed_seconds"], 720)
+
+    def test_invalid_reserve_cannot_disable_budget(self):
+        for reserve in (-1, 720, float("nan"), float("inf")):
+            with self.subTest(reserve=reserve), self.assertRaises(ValueError):
+                self.planner.check_budget((), 1, 720, reserve)
+
+    def test_over_budget_plan_fails_before_emitting_membership(self):
+        import tempfile
+        import subprocess
+        import sys
+        import json
+        with tempfile.TemporaryDirectory() as directory:
+            root = Path(directory)
+            (root / "tests.txt").write_text("Slow\n")
+            (root / "timings.tsv").write_text("test_name\tduration_seconds\nSlow\t601\n")
+            result = subprocess.run([sys.executable, str(MODULE_PATH.with_name("plan-test-shards.py")),
+                                     str(root / "tests.txt"), str(root / "timings.tsv"), "1", str(root / "plan.tsv")],
+                                    capture_output=True, text=True)
+            self.assertNotEqual(result.returncode, 0)
+            self.assertIn("600.0s test budget", result.stderr)
+            budget = json.loads((root / "plan.budget.json").read_text())
+            self.assertEqual(budget["estimated_shard_seconds"], [601])
+            self.assertFalse((root / "plan.tsv").exists())
+
     def test_coverage_report_identifies_missing_exact_row(self):
         import tempfile
         import subprocess

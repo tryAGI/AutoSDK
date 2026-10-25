@@ -1,10 +1,1 @@
-{
-  "Generate_HeterogeneousSuccess_CompilesAndDispatchesActualRuntimeOutcome": {
-    "duration_seconds": 60,
-    "reason": "Conservative cold Linux CI estimate for generating, compiling and executing the synthetic client until the first passed CI timing sample"
-  },
-  "Generate_BinaryStreamResponse_ExposesMetadataBeforeBodyAndOwnsLifetime": {
-    "duration_seconds": 60,
-    "reason": "Conservative cold Linux CI estimate for generating, compiling and executing the synthetic stream-response client; local runtime regression measured 22 seconds, pending first passed CI timing sample"
-  }
-}
+{}

@@ -49,3 +49,20 @@ Before adopting a candidate, verify its run/commit against GitHub and compare
 together in a scoped commit. The workflow produces reviewable artifacts; it
 does not grant an untrusted run permission to push. Eight shards, the 720 second
 SLA, and all test cases remain unchanged.
+
+## Planning reserve
+
+The eight-shard CI lane retains its 720 second elapsed-time SLA. Planning permits
+at most 600 seconds of measured test work per shard, reserving 120 seconds for
+project build, test discovery, process startup and runner variation. The planner
+writes these limits and every projected load to `plan.budget.json` and fails
+before emitting an over-budget plan. The runtime summary still enforces actual
+elapsed time against 720 seconds.
+
+The 2026-10-26 catalog refresh uses all 194 passed Linux X64 samples from
+[run 40242096266](https://github.com/tryAGI/AutoSDK/actions/runs/40242096266)
+at `ced47adc5a77c908adceba1ff1932ef1e5339466`. Its original assignments spent
+392–746 seconds in tests, plus 11–15 seconds in setup. The refreshed plan assigns
+580–584 seconds of measured work per shard, leaving at least 136 seconds below
+the elapsed-time limit. These projections require confirmation by the next CI
+run; they are not a substitute for the runtime SLA check.
