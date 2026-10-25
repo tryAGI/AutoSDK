@@ -101,6 +101,10 @@ namespace {endPoint.Settings.Namespace}
         {{{GenerateServerDeclarations(endPoint.Servers, endPoint.Settings.Namespace, 12)}
         }};" : TrimmedLine)}
 ");
+        if (endPoint.HasHeterogeneousSuccessResponses)
+        {
+            builder.Append(GenerateSuccessResult(endPoint));
+        }
         if (!endPoint.AuthorizationRequirements.IsEmpty)
         {
             builder.Append('\n');
@@ -513,7 +517,7 @@ namespace {endPoint.Settings.Namespace}
 
     public static bool ShouldGenerateResponseStreamSupport(EndPoint endPoint)
     {
-        return endPoint.RawStream || ShouldGenerateStreamResponseMethod(endPoint);
+        return endPoint.HasHeterogeneousSuccessResponses || endPoint.RawStream || ShouldGenerateStreamResponseMethod(endPoint);
     }
 
     private static bool ShouldGenerateStreamResponseMethod(EndPoint endPoint)
@@ -1419,8 +1423,9 @@ namespace {endPoint.Settings.Namespace}
                 endPoint,
                 "__httpRequest",
                 "__effectiveCancellationToken",
-                forceResponseHeadersRead: returnStreamResponse);
+                forceResponseHeadersRead: returnStreamResponse || endPoint.HasHeterogeneousSuccessResponses);
         var methodReturnsResponseStream = endPoint.RawStream || returnStreamResponse;
+        var transfersResponseOwnership = methodReturnsResponseStream || endPoint.HasHeterogeneousSuccessResponses;
         var taskType = returnResponseWrapper
             ? $"global::System.Threading.Tasks.Task<{GetResponseWrapperType(endPoint)}>"
             : methodReturnsResponseStream
@@ -1802,7 +1807,7 @@ namespace {endPoint.Settings.Namespace}
                 {{
                     throw new global::System.InvalidOperationException(""No response received."");
                 }}
-{(methodReturnsResponseStream ? @"
+{(transfersResponseOwnership ? @"
                 try
                 {" : @"
                 using (__response)
@@ -1832,7 +1837,7 @@ namespace {endPoint.Settings.Namespace}
             readResponseAsStringExpression: "__effectiveReadResponseAsString",
             indentationLevel: 4);
         builder.Append($@"
-{(methodReturnsResponseStream ? @"
+{(transfersResponseOwnership ? @"
                 }
                 catch
                 {
@@ -3272,6 +3277,14 @@ namespace {endPoint.Settings.Namespace}
         if (hasErrorResponses)
         {
             builder.Append('\n');
+        }
+
+        if (endPoint.HasHeterogeneousSuccessResponses)
+        {
+            var handling = GenerateHeterogeneousResponseHandling(
+                endPoint, jsonSerializer, cancellationTokenVariableName, wrapSuccessResponse);
+            IndentedString.Append(builder, indentationLevel, $"{handling}");
+            return;
         }
 
         if (endPoint.RawStream || returnStreamResponse)

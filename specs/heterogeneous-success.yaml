@@ -1,0 +1,30 @@
+openapi: 3.0.3
+info:
+  title: Audio contract fixture
+  version: "1"
+paths:
+  /mixed:
+    get:
+      operationId: streamOrQueue
+      responses:
+        '200':
+          description: Raw audio
+          content:
+            audio/wav:
+              schema:
+                type: string
+                format: binary
+            audio/ogg:
+              schema:
+                type: string
+                format: binary
+        '202':
+          description: Queued
+          content:
+            application/json:
+              schema:
+                type: object
+                required: [id]
+                properties:
+                  id:
+                    type: string

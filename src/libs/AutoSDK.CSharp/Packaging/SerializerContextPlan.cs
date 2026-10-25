@@ -355,7 +355,14 @@ internal sealed partial class SerializerContextPlan
     {
         yield return method.RequestType;
         yield return method.RequestInitializationType;
-        yield return method.SuccessResponse.Type;
+        if (!method.HasHeterogeneousSuccessResponses)
+        {
+            yield return method.SuccessResponse.Type;
+        }
+        foreach (var response in method.SuccessResponses)
+        {
+            yield return response.Type;
+        }
         foreach (var response in method.ErrorResponses)
         {
             yield return response.Type;

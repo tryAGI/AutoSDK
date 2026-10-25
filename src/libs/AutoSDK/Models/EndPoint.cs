@@ -54,6 +54,10 @@ public record struct EndPoint(
     string PaginationNextUrlPropertyPath = ""
 )
 {
+    public EquatableArray<EndPointResponse> SuccessResponses { get; set; }
+
+    public bool HasHeterogeneousSuccessResponses => !SuccessResponses.IsEmpty;
+
     public string JsonSerializerContextOverride { get; set; } = string.Empty;
 
     public bool Stream => StreamFormat != StreamFormat.None;

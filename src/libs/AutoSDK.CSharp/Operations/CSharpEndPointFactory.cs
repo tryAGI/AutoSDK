@@ -114,6 +114,23 @@ public static class CSharpEndPointFactory
             .Select(x => CSharpEndPointResponseFactory.FromResponse(x, operation, preferredMimeType: preferredMimeType))
             .ToArray();
 
+        var hasMultipleSuccessStatuses = operation.Operation.Responses?.Keys.Count(
+            static key => key.StartsWith("2", StringComparison.OrdinalIgnoreCase)) > 1;
+        var allSuccessResponses = !hasMultipleSuccessStatuses ? [] : (operation.Operation.Responses ?? new Dictionary<string, IOpenApiResponse>())
+            .Where(static x => x.Key.StartsWith("2", StringComparison.OrdinalIgnoreCase))
+            .SelectMany(x => x.Value.Content is { Count: > 0 }
+                ? x.Value.Content.Keys.Select(mimeType => CSharpEndPointResponseFactory.FromResponse(x, operation, mimeType))
+                : [CSharpEndPointResponseFactory.FromResponse(x, operation)])
+            .ToArray();
+        var heterogeneousSuccessResponses =
+            successResponseOverride == null && streamFormatOverride == null &&
+            allSuccessResponses.Any(static x => x.Type.IsBinary) &&
+            allSuccessResponses.Select(static x => x.StatusCode).Distinct().Count() > 1 &&
+            allSuccessResponses.All(static x => string.IsNullOrEmpty(x.MimeType) ||
+                MediaTypeCapabilities.GetResponseSupport(x.MimeType) != MediaTypeTransportSupport.Streaming &&
+                MediaTypeCapabilities.GetResponseSupport(x.MimeType) != MediaTypeTransportSupport.Unsupported) &&
+            allSuccessResponses.Select(static x => (x.ContentType, x.Type.CSharpType)).Distinct().Count() > 1;
+
         var requestPropertySelection = GetRequestProperties(requestContext);
         var parameterCount = 0;
         foreach (var schema in operation.Schemas)
@@ -246,7 +263,7 @@ public static class CSharpEndPointFactory
             ? servers[0]
             : default;
 
-        return new EndPoint(
+        var endPoint = new EndPoint(
             Id: endPointId,
             ClassName: className,
             NotAsyncMethodName: notAsyncMethodName,
@@ -322,6 +339,24 @@ public static class CSharpEndPointFactory
                 operation.Operation.Extensions, "x-autosdk-pageable-next-url", out var pageableNextUrl)
                 ? pageableNextUrl
                 : string.Empty);
+
+        if (heterogeneousSuccessResponses)
+        {
+            var resultType = (TypeData.Default with
+            {
+                CSharpTypeRaw = $"global::{operation.Settings.Namespace}.{className}.{notAsyncMethodName}Result",
+                GeneratedNamespace = operation.Settings.Namespace,
+            }).WithCSharpComputedValues();
+            endPoint = endPoint with
+            {
+                SuccessResponses = allSuccessResponses.ToImmutableArray(),
+                SuccessResponse = successResponse with { Type = resultType },
+                StreamFormat = StreamFormat.None,
+                GenerateResponseWrapper = true,
+            };
+        }
+
+        return endPoint;
     }
 
     private static bool HasCallScopedSecurityOverride(OperationContext operation)

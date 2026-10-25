@@ -1172,6 +1172,21 @@ public static class Data
         string preferredRequestMediaType,
         string? requestMethodNameSuffix)
     {
+        if (operation.Operation.Responses?.Keys.Count(static key => key.StartsWith("2", StringComparison.OrdinalIgnoreCase)) > 1)
+        {
+            var heterogeneousEndPoint = CSharpEndPointFactory.CreateEndPointWithCache(
+                operation,
+                endPointCreationCache,
+                methodNameSuffix: requestMethodNameSuffix,
+                anyOfDatas: anyOfDatas,
+                preferredRequestMediaType: preferredRequestMediaType);
+            if (heterogeneousEndPoint.HasHeterogeneousSuccessResponses)
+            {
+                endPoints.Add(heterogeneousEndPoint);
+                return;
+            }
+        }
+
         var fernStreaming = FernStreamingMetadata.TryCreate(operation);
         var responseContentTypes = (operation.Operation.Responses ?? new Dictionary<string, IOpenApiResponse>())
             .SelectMany(response => (response.Value?.Content ?? new Dictionary<string, IOpenApiMediaType>())
