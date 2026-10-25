@@ -2409,7 +2409,6 @@ internal static class CliProjectScaffolder
                  using System.Globalization;
                  using System.Text;
                  using System.Text.Json;
-                 using System.Text.Json.Nodes;
                  using System.Text.Json.Serialization;
 
                  namespace {{model.RootNamespace}};
@@ -2762,7 +2761,7 @@ internal static class CliProjectScaffolder
 
                      public static string SerializeKeyValuePairs(IEnumerable<string> pairs)
                      {
-                         var objectNode = new JsonObject();
+                         var objectNode = new global::System.Text.Json.Nodes.JsonObject();
                          foreach (var pair in pairs)
                          {
                              var separatorIndex = pair.IndexOf('=', StringComparison.Ordinal);
@@ -2786,10 +2785,10 @@ internal static class CliProjectScaffolder
 
                      public static string SerializeStringArray(IEnumerable<string> values)
                      {
-                         var array = new JsonArray();
+                         var array = new global::System.Text.Json.Nodes.JsonArray();
                          foreach (var value in values)
                          {
-                             array.Add((JsonNode?)JsonValue.Create(value));
+                             array.Add((global::System.Text.Json.Nodes.JsonNode?)global::System.Text.Json.Nodes.JsonValue.Create(value));
                          }
 
                          return array.ToJsonString();
@@ -2862,8 +2861,8 @@ internal static class CliProjectScaffolder
 
                          var rootNode = ToJsonNode(value, typeof(T), context);
                          var items = itemsPropertyName == "$self"
-                             ? rootNode as JsonArray
-                             : rootNode?[itemsPropertyName] as JsonArray;
+                             ? rootNode as global::System.Text.Json.Nodes.JsonArray
+                             : rootNode?[itemsPropertyName] as global::System.Text.Json.Nodes.JsonArray;
                          if (items is null)
                          {
                              throw new CliException("The response does not contain a writable item collection for --output-dir.");
@@ -3055,10 +3054,10 @@ internal static class CliProjectScaffolder
                          return await File.ReadAllTextAsync(pathOrDash, cancellationToken).ConfigureAwait(false);
                      }
 
-                     private static JsonNode? ToJsonNode<T>(T value, Type type, JsonSerializerContext context)
+                     private static global::System.Text.Json.Nodes.JsonNode? ToJsonNode<T>(T value, Type type, JsonSerializerContext context)
                      {
                          var json = JsonSerializer.Serialize(value, type, context);
-                         return JsonNode.Parse(json);
+                         return global::System.Text.Json.Nodes.JsonNode.Parse(json);
                      }
 
                      private static JsonElement ToJsonElement<T>(T value, JsonSerializerContext context)
@@ -3258,18 +3257,18 @@ internal static class CliProjectScaffolder
                          builder.AppendLine(value);
                      }
 
-                     private static async global::System.Threading.Tasks.Task WriteItemFilesAsync(string outputDirectory, JsonArray items, CancellationToken cancellationToken = default)
+                     private static async global::System.Threading.Tasks.Task WriteItemFilesAsync(string outputDirectory, global::System.Text.Json.Nodes.JsonArray items, CancellationToken cancellationToken = default)
                      {
                          Directory.CreateDirectory(outputDirectory);
 
                          for (var index = 0; index < items.Count; index++)
                          {
-                             if (items[index] is not JsonNode itemNode)
+                             if (items[index] is not global::System.Text.Json.Nodes.JsonNode itemNode)
                              {
                                  continue;
                              }
 
-                             var itemObject = itemNode as JsonObject;
+                             var itemObject = itemNode as global::System.Text.Json.Nodes.JsonObject;
                              var baseName = itemObject is null
                                  ? $"{index + 1:000}"
                                  : SanitizeFileName(GetOutputItemName(itemObject) ?? $"{index + 1:000}");
@@ -3283,7 +3282,7 @@ internal static class CliProjectScaffolder
                                  wroteStructuredFile |= await TryWriteTextPropertyAsync(itemObject, outputDirectory, baseName, "raw_html", ".raw.html", cancellationToken).ConfigureAwait(false);
                                  wroteStructuredFile |= await TryWriteTextPropertyAsync(itemObject, outputDirectory, baseName, "text", ".txt", cancellationToken).ConfigureAwait(false);
 
-                                 if (TryGetNamedNode(itemObject, out var linksNode, "links") && linksNode is JsonArray links)
+                                 if (TryGetNamedNode(itemObject, out var linksNode, "links") && linksNode is global::System.Text.Json.Nodes.JsonArray links)
                                  {
                                      var linkLines = links
                                          .Select(static node => node?.GetValue<string>())
@@ -3309,7 +3308,7 @@ internal static class CliProjectScaffolder
                      }
 
                      private static async global::System.Threading.Tasks.Task<bool> TryWriteTextPropertyAsync(
-                         JsonObject item,
+                         global::System.Text.Json.Nodes.JsonObject item,
                          string outputDirectory,
                          string baseName,
                          string propertyName,
@@ -3334,7 +3333,7 @@ internal static class CliProjectScaffolder
                          return true;
                      }
 
-                     private static string? GetOutputItemName(JsonObject item)
+                     private static string? GetOutputItemName(global::System.Text.Json.Nodes.JsonObject item)
                      {
                          if (TryGetNamedNode(item, out var node, "url", "sourceUrl", "source_url", "id"))
                          {
@@ -3344,7 +3343,7 @@ internal static class CliProjectScaffolder
                          return null;
                      }
 
-                     private static bool TryGetNamedNode(JsonObject item, out JsonNode? node, params string[] names)
+                     private static bool TryGetNamedNode(global::System.Text.Json.Nodes.JsonObject item, out global::System.Text.Json.Nodes.JsonNode? node, params string[] names)
                      {
                          foreach (var property in item)
                          {

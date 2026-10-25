@@ -644,9 +644,37 @@ components:
             enum:
               - completed
               - errored
+    JsonValue:
+      type: object
+      properties:
+        label:
+          type: string
+    JsonNode:
+      type: object
+      properties:
+        label:
+          type: string
+    JsonArray:
+      type: object
+      properties:
+        label:
+          type: string
+    JsonObject:
+      type: object
+      properties:
+        label:
+          type: string
     Widget:
       type: object
       properties:
+        jsonValue:
+          $ref: '#/components/schemas/JsonValue'
+        jsonNode:
+          $ref: '#/components/schemas/JsonNode'
+        jsonArray:
+          $ref: '#/components/schemas/JsonArray'
+        jsonObject:
+          $ref: '#/components/schemas/JsonObject'
         status:
           type: string
           x-cli-format: key
@@ -691,6 +719,12 @@ components:
             Console.WriteLine(generateResult.StandardOutput);
             Console.WriteLine(generateResult.StandardError);
             generateResult.ExitCode.Should().Be(0);
+
+            foreach (var name in new[] { "JsonValue", "JsonNode", "JsonArray", "JsonObject" })
+            {
+                Directory.EnumerateFiles(sdkDirectory, $"*.Models.{name}.g.cs").Should().ContainSingle(
+                    "the generated SDK must contain the actual colliding framework name");
+            }
 
             var sdkProjectPath = Path.Combine(sdkDirectory, "Oag.csproj");
             await File.WriteAllTextAsync(
@@ -1043,6 +1077,10 @@ public static class PollingAotProbe
             runtime.Should().Contain("requestJson!");
             runtime.Should().Contain("pair.IndexOf('=', StringComparison.Ordinal)");
             runtime.Should().Contain("SerializeStringArray");
+            runtime.Should().Contain("global::System.Text.Json.Nodes.JsonValue.Create(value)");
+            runtime.Should().Contain("new global::System.Text.Json.Nodes.JsonArray()");
+            runtime.Should().Contain("new global::System.Text.Json.Nodes.JsonObject()");
+            runtime.Should().Contain("global::System.Text.Json.Nodes.JsonNode.Parse(json)");
             runtime.Should().Contain("TryWriteOutputDirectoryAsync");
             runtime.Should().Contain("GetCredentialFilePath()");
             runtime.Should().Contain("ReadCredentialFileAsync");
@@ -1080,12 +1118,23 @@ public static class PollingAotProbe
                             var check = new Command("array-json-self-test");
                             check.SetAction(_ =>
                             {
+                                if (global::System.Text.Json.JsonSerializer.IsReflectionEnabledByDefault)
+                                {
+                                    throw new InvalidOperationException("Reflection must be disabled in this regression.");
+                                }
                                 global::Oag.PollingAotProbe.AssertMetadataPolling();
                                 var values = new[] { "quote\"", "line\nbreak", "Ж", string.Empty };
                                 using var document = global::System.Text.Json.JsonDocument.Parse(CliRuntime.SerializeStringArray(values));
                                 if (!document.RootElement.EnumerateArray().Select(item => item.GetString()).SequenceEqual(values))
                                 {
                                     throw new InvalidOperationException("String-array JSON round trip failed.");
+                                }
+                                using var pairs = global::System.Text.Json.JsonDocument.Parse(
+                                    CliRuntime.SerializeKeyValuePairs(["quote=\"", "unicode=Ж"]));
+                                if (pairs.RootElement.GetProperty("quote").GetString() != "\"" ||
+                                    pairs.RootElement.GetProperty("unicode").GetString() != "Ж")
+                                {
+                                    throw new InvalidOperationException("Key-value JSON round trip failed.");
                                 }
                                 Console.WriteLine("CLI string-array JSON works without reflection.");
                                 return 0;
@@ -1105,7 +1154,8 @@ public static class PollingAotProbe
                     cliDirectory,
                     "build",
                     "--disable-build-servers",
-                    Path.Combine(cliDirectory, "Oag.CLI.csproj"))
+                    Path.Combine(cliDirectory, "Oag.CLI.csproj"),
+                    "-p:JsonSerializerIsReflectionEnabledByDefault=false")
                 .ConfigureAwait(false);
 
             Console.WriteLine(buildResult.StandardOutput);
@@ -1148,6 +1198,7 @@ public static class PollingAotProbe
             customizedCommandResult.ExitCode.Should().Be(0, customizedCommandResult.StandardError);
             customizedCommandResult.StandardOutput.Should().Contain("List widgets");
 
+            var trimmedDirectory = Path.Combine(cliDirectory, "trimmed-smoke");
             var publishResult = await RunDotnetAsync(
                     cliDirectory,
                     "publish",
@@ -1158,12 +1209,21 @@ public static class PollingAotProbe
                     "--self-contained", "true",
                     "-p:PublishTrimmed=true",
                     "-p:TrimMode=full",
-                    "-p:SuppressTrimAnalysisWarnings=false")
+                    "-p:SuppressTrimAnalysisWarnings=false",
+                    "-p:JsonSerializerIsReflectionEnabledByDefault=false",
+                    "-p:ILLinkTreatWarningsAsErrors=true",
+                    "-o", trimmedDirectory)
                 .ConfigureAwait(false);
 
             Console.WriteLine(publishResult.StandardOutput);
             Console.WriteLine(publishResult.StandardError);
             publishResult.ExitCode.Should().Be(0);
+            var trimmedExecutable = Path.Combine(trimmedDirectory, OperatingSystem.IsWindows() ? "Oag.CLI.exe" : "Oag.CLI");
+            var trimmedArrayJson = await RunProcessAsync(
+                    cliDirectory, trimmedExecutable, "catalog", "array-json-self-test")
+                .ConfigureAwait(false);
+            trimmedArrayJson.ExitCode.Should().Be(0, trimmedArrayJson.StandardOutput + trimmedArrayJson.StandardError);
+            trimmedArrayJson.StandardOutput.Should().Contain("CLI string-array JSON works without reflection.");
 
             var manualDirectory = Path.Combine(rootDirectory, "manual");
             var generatedApiDirectory = Path.Combine(manualDirectory, "GeneratedApi");
