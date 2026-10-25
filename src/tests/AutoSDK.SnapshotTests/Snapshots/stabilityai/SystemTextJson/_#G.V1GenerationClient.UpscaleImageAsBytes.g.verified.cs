@@ -672,6 +672,629 @@ namespace G
 
                                 return new global::G.ResponseStream(__response, __content);
                             }
+                            catch (global::System.OperationCanceledException)
+                            {
+                                throw;
+                            }
+                            catch (global::System.Exception __ex)
+                            {
+                                string? __content = null;
+                                try
+                                {
+                                    __content = await __response.Content.ReadAsStringAsync(
+                #if NET5_0_OR_GREATER
+                                        __effectiveCancellationToken
+                #endif
+                                    ).ConfigureAwait(false);
+                                }
+                                catch (global::System.Exception)
+                                {
+                                }
+
+                                throw global::G.ApiException.Create(
+                                    statusCode: __response.StatusCode,
+                                    message: __content ?? __response.ReasonPhrase ?? string.Empty,
+                                    innerException: __ex,
+                                    responseBody: __content,
+                                    responseHeaders: global::System.Linq.Enumerable.ToDictionary(
+                                        __response.Headers,
+                                        h => h.Key,
+                                        h => h.Value));
+                            }
+
+                }
+                catch
+                {
+                    __response.Dispose();
+                    throw;
+                }
+            }
+            finally
+            {
+                __httpRequest?.Dispose();
+            }
+        }
+        /// <summary>
+        /// image-to-image/upscale<br/>
+        /// Create a higher resolution version of an input image.<br/>
+        /// This operation outputs an image with a maximum pixel count of **4,194,304**. This is equivalent to dimensions such as `2048x2048` and `4096x1024`.<br/>
+        /// By default, the input image will be upscaled by a factor of 2.  For additional control over the output dimensions, a `width` or `height` parameter may be specified.
+        /// </summary>
+        /// <param name="engineId"></param>
+        /// <param name="accept">
+        /// Default Value: application/json
+        /// </param>
+        /// <param name="organization"></param>
+        /// <param name="request"></param>
+        /// <returns>The response metadata and an unbuffered body stream. The caller must dispose Body to release the HTTP response.</returns>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
+        /// <param name="cancellationToken">The token to cancel the operation with</param>
+        /// <exception cref="global::G.ApiException"></exception>
+        /// <remarks>
+        /// if [ -z "$STABILITY_API_KEY" ]; then<br/>
+        ///     echo "STABILITY_API_KEY environment variable is not set"<br/>
+        ///     exit 1<br/>
+        /// fi<br/>
+        /// OUTPUT_FILE=./out/v1_upscaled_image.png<br/>
+        /// BASE_URL=${API_HOST:-https://api.stability.ai}<br/>
+        /// URL="$BASE_URL/v1/generation/esrgan-v1-x2plus/image-to-image/upscale"<br/>
+        /// curl -f -sS -X POST "$URL" \<br/>
+        ///   -H 'Content-Type: multipart/form-data' \<br/>
+        ///   -H 'Accept: image/png' \<br/>
+        ///   -H "Authorization: Bearer $STABILITY_API_KEY" \<br/>
+        ///   -F 'image=@"../init_image.png"' \<br/>
+        ///   -F 'width=1024' \<br/>
+        ///   -o "$OUTPUT_FILE"
+        /// </remarks>
+        public async global::System.Threading.Tasks.Task<global::G.AutoSDKHttpResponse<global::System.IO.Stream>> UpscaleImageAsBytesAsStreamAsResponseAsync(
+            string engineId,
+
+            global::G.UpscaleImageRequestBody request,
+            global::G.UpscaleImageAccept? accept = default,
+            string? organization = default,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
+            global::System.Threading.CancellationToken cancellationToken = default)
+        {
+            request = request ?? throw new global::System.ArgumentNullException(nameof(request));
+
+            PrepareArguments(
+                client: HttpClient);
+            PrepareUpscaleImageAsBytesArguments(
+                httpClient: HttpClient,
+                engineId: ref engineId,
+                accept: ref accept,
+                organization: ref organization,
+                request: request);
+
+
+            var __authorizations = global::G.EndPointSecurityResolver.ResolveAuthorizations(
+                availableAuthorizations: Authorizations,
+                securityRequirements: s_UpscaleImageAsBytesSecurityRequirements,
+                operationName: "UpscaleImageAsBytesAsync");
+
+            using var __timeoutCancellationTokenSource = global::G.AutoSDKRequestOptionsSupport.CreateTimeoutCancellationTokenSource(
+                clientOptions: Options,
+                requestOptions: requestOptions,
+                cancellationToken: cancellationToken);
+            var __effectiveCancellationToken = __timeoutCancellationTokenSource?.Token ?? cancellationToken;
+            var __effectiveReadResponseAsString = global::G.AutoSDKRequestOptionsSupport.GetReadResponseAsString(
+                clientOptions: Options,
+                requestOptions: requestOptions,
+                fallbackValue: ReadResponseAsString);
+            var __maxAttempts = global::G.AutoSDKRequestOptionsSupport.GetMaxAttempts(
+                clientOptions: Options,
+                requestOptions: requestOptions,
+                supportsRetry: false);
+
+            global::System.Net.Http.HttpRequestMessage __CreateHttpRequest()
+            {
+
+                            var __pathBuilder = new global::G.PathBuilder(
+                                path: $"/v1/generation/{engineId}/image-to-image/upscale",
+                                baseUri: HttpClient.BaseAddress);
+                            var __path = __pathBuilder.ToString();
+                __path = global::G.AutoSDKRequestOptionsSupport.AppendQueryParameters(
+                    path: __path,
+                    clientParameters: Options.QueryParameters,
+                    requestParameters: requestOptions?.QueryParameters);
+                var __httpRequest = new global::System.Net.Http.HttpRequestMessage(
+                    method: global::System.Net.Http.HttpMethod.Post,
+                    requestUri: new global::System.Uri(__path, global::System.UriKind.RelativeOrAbsolute));
+#if NET6_0_OR_GREATER
+                __httpRequest.Version = global::System.Net.HttpVersion.Version11;
+                __httpRequest.VersionPolicy = global::System.Net.Http.HttpVersionPolicy.RequestVersionOrHigher;
+#endif
+
+                __httpRequest.Headers.TryAddWithoutValidation(
+                    "Accept",
+                    "image/png");
+
+            foreach (var __authorization in __authorizations)
+            {
+                if (__authorization.Type == "Http" ||
+                    __authorization.Type == "OAuth2" ||
+                    __authorization.Type == "OpenIdConnect")
+                {
+                    __httpRequest.Headers.Authorization = new global::System.Net.Http.Headers.AuthenticationHeaderValue(
+                        scheme: __authorization.Name,
+                        parameter: __authorization.Value);
+                }
+                else if (__authorization.Type == "ApiKey" &&
+                         __authorization.Location == "Header")
+                {
+                    __httpRequest.Headers.Add(__authorization.Name, __authorization.Value);
+                } 
+            }
+
+            if (accept != default)
+            {
+                __httpRequest.Headers.TryAddWithoutValidation("Accept", accept?.ToValueString() ?? string.Empty);
+            }
+            if (organization != default)
+            {
+                __httpRequest.Headers.TryAddWithoutValidation("Organization", organization.ToString());
+            }
+
+
+                            var __httpRequestContent = new global::System.Net.Http.MultipartFormDataContent();
+                            var __contentImage = new global::System.Net.Http.ByteArrayContent(request.Image ?? global::System.Array.Empty<byte>());
+                            __contentImage.Headers.ContentType = new global::System.Net.Http.Headers.MediaTypeHeaderValue(
+                                request.Imagename is null
+                                    ? "application/octet-stream"
+                                    : (global::System.IO.Path.GetExtension(request.Imagename) ?? string.Empty).ToLowerInvariant() switch
+                                    {
+                                        ".aac" => "audio/aac",
+                                        ".flac" => "audio/flac",
+                                        ".gif" => "image/gif",
+                                        ".jpeg" => "image/jpeg",
+                                        ".jpg" => "image/jpeg",
+                                        ".json" => "application/json",
+                                        ".m4a" => "audio/mp4",
+                                        ".mp3" => "audio/mpeg",
+                                        ".mp4" => "video/mp4",
+                                        ".mpeg" => "audio/mpeg",
+                                        ".mpga" => "audio/mpeg",
+                                        ".oga" => "audio/ogg",
+                                        ".ogg" => "audio/ogg",
+                                        ".opus" => "audio/ogg",
+                                        ".pdf" => "application/pdf",
+                                        ".png" => "image/png",
+                                        ".txt" => "text/plain",
+                                        ".wav" => "audio/wav",
+                                        ".weba" => "audio/webm",
+                                        ".webm" => "video/webm",
+                                        ".webp" => "image/webp",
+                                        _ => "application/octet-stream",
+                                    });
+                            __httpRequestContent.Add(
+                                content: __contentImage,
+                                name: "\"image\"",
+                                fileName: request.Imagename != null ? $"\"{request.Imagename}\"" : string.Empty);
+                            if (__contentImage.Headers.ContentDisposition != null)
+                            {
+                                __contentImage.Headers.ContentDisposition.FileNameStar = null;
+                            }
+
+                            if (request.Width != default)
+                            {
+
+                                __httpRequestContent.Add(
+                                    content: new global::System.Net.Http.StringContent(global::System.Convert.ToString(request.Width, global::System.Globalization.CultureInfo.InvariantCulture) ?? string.Empty),
+                                    name: "\"width\"");
+
+                            }
+                            if (request.Height != default)
+                            {
+
+                                __httpRequestContent.Add(
+                                    content: new global::System.Net.Http.StringContent(global::System.Convert.ToString(request.Height, global::System.Globalization.CultureInfo.InvariantCulture) ?? string.Empty),
+                                    name: "\"height\"");
+
+                            }
+
+                            __httpRequest.Content = __httpRequestContent;
+
+                global::G.AutoSDKRequestOptionsSupport.ApplyHeaders(
+                    request: __httpRequest,
+                    clientHeaders: Options.Headers,
+                    requestHeaders: requestOptions?.Headers);
+
+                PrepareRequest(
+                    client: HttpClient,
+                    request: __httpRequest);
+                PrepareUpscaleImageAsBytesRequest(
+                    httpClient: HttpClient,
+                    httpRequestMessage: __httpRequest,
+                    engineId: engineId,
+                    accept: accept,
+                    organization: organization,
+                    request: request);
+
+                global::G.AutoSDKHttpRequestOptions.StampAuthorizationOverride(__httpRequest);
+
+                return __httpRequest;
+            }
+
+            global::System.Net.Http.HttpRequestMessage? __httpRequest = null;
+            global::System.Net.Http.HttpResponseMessage? __response = null;
+            var __attemptNumber = 0;
+            try
+            {
+                for (var __attempt = 1; __attempt <= __maxAttempts; __attempt++)
+                {
+                    __attemptNumber = __attempt;
+                    __httpRequest = __CreateHttpRequest();
+                    await global::G.AutoSDKRequestOptionsSupport.OnBeforeRequestAsync(
+                            clientOptions: Options,
+                            context: global::G.AutoSDKRequestOptionsSupport.CreateHookContext(
+                                operationId: "UpscaleImageAsBytes",
+                                methodName: "UpscaleImageAsBytesAsync",
+                                pathTemplate: "$\"/v1/generation/{engineId}/image-to-image/upscale\"",
+                                httpMethod: "POST",
+                                baseUri: BaseUri,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
+                                response: null,
+                                exception: null,
+                                clientOptions: Options,
+                                requestOptions: requestOptions,
+                                attempt: __attempt,
+                                maxAttempts: __maxAttempts,
+                                willRetry: false,
+                                retryDelay: null,
+                                retryReason: global::System.String.Empty,
+                                cancellationToken: __effectiveCancellationToken)).ConfigureAwait(false);
+                    try
+                    {
+                        __response = await HttpClient.SendAsync(
+                request: __httpRequest,
+                completionOption: global::System.Net.Http.HttpCompletionOption.ResponseHeadersRead,
+                cancellationToken: __effectiveCancellationToken).ConfigureAwait(false);
+                    }
+                    catch (global::System.Net.Http.HttpRequestException __exception)
+                    {
+                        var __retryDelay = global::G.AutoSDKRequestOptionsSupport.GetRetryDelay(
+                            clientOptions: Options,
+                            requestOptions: requestOptions,
+                            response: null,
+                            attempt: __attempt);
+                        var __willRetry = __attempt < __maxAttempts && !__effectiveCancellationToken.IsCancellationRequested;
+                        await global::G.AutoSDKRequestOptionsSupport.OnAfterErrorAsync(
+                            clientOptions: Options,
+                            context: global::G.AutoSDKRequestOptionsSupport.CreateHookContext(
+                                operationId: "UpscaleImageAsBytes",
+                                methodName: "UpscaleImageAsBytesAsync",
+                                pathTemplate: "$\"/v1/generation/{engineId}/image-to-image/upscale\"",
+                                httpMethod: "POST",
+                                baseUri: BaseUri,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
+                                response: null,
+                                exception: __exception,
+                                clientOptions: Options,
+                                requestOptions: requestOptions,
+                                attempt: __attempt,
+                                maxAttempts: __maxAttempts,
+                                willRetry: __willRetry,
+                                retryDelay: __willRetry ? __retryDelay : (global::System.TimeSpan?)null,
+                                retryReason: "exception",
+                                cancellationToken: __effectiveCancellationToken)).ConfigureAwait(false);
+                        if (!__willRetry)
+                        {
+                            throw;
+                        }
+
+                        __httpRequest.Dispose();
+                        __httpRequest = null;
+                        await global::G.AutoSDKRequestOptionsSupport.DelayBeforeRetryAsync(
+                            retryDelay: __retryDelay,
+                            cancellationToken: __effectiveCancellationToken).ConfigureAwait(false);
+                        continue;
+                    }
+
+                    if (__response != null &&
+                        __attempt < __maxAttempts &&
+                        global::G.AutoSDKRequestOptionsSupport.ShouldRetryStatusCode(__response.StatusCode))
+                    {
+                        var __retryDelay = global::G.AutoSDKRequestOptionsSupport.GetRetryDelay(
+                            clientOptions: Options,
+                            requestOptions: requestOptions,
+                            response: __response,
+                            attempt: __attempt);
+                        await global::G.AutoSDKRequestOptionsSupport.OnAfterErrorAsync(
+                            clientOptions: Options,
+                            context: global::G.AutoSDKRequestOptionsSupport.CreateHookContext(
+                                operationId: "UpscaleImageAsBytes",
+                                methodName: "UpscaleImageAsBytesAsync",
+                                pathTemplate: "$\"/v1/generation/{engineId}/image-to-image/upscale\"",
+                                httpMethod: "POST",
+                                baseUri: BaseUri,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
+                                response: __response,
+                                exception: null,
+                                clientOptions: Options,
+                                requestOptions: requestOptions,
+                                attempt: __attempt,
+                                maxAttempts: __maxAttempts,
+                                willRetry: true,
+                                retryDelay: __retryDelay,
+                                retryReason: "status:" + ((int)__response.StatusCode).ToString(global::System.Globalization.CultureInfo.InvariantCulture),
+                                cancellationToken: __effectiveCancellationToken)).ConfigureAwait(false);
+                        __response.Dispose();
+                        __response = null;
+                        __httpRequest.Dispose();
+                        __httpRequest = null;
+                        await global::G.AutoSDKRequestOptionsSupport.DelayBeforeRetryAsync(
+                            retryDelay: __retryDelay,
+                            cancellationToken: __effectiveCancellationToken).ConfigureAwait(false);
+                        continue;
+                    }
+
+                    break;
+                }
+
+                if (__response == null)
+                {
+                    throw new global::System.InvalidOperationException("No response received.");
+                }
+
+                try
+                {
+
+                ProcessResponse(
+                    client: HttpClient,
+                    response: __response);
+                ProcessUpscaleImageAsBytesResponse(
+                    httpClient: HttpClient,
+                    httpResponseMessage: __response);
+                if (__response.IsSuccessStatusCode)
+                {
+                    await global::G.AutoSDKRequestOptionsSupport.OnAfterSuccessAsync(
+                            clientOptions: Options,
+                            context: global::G.AutoSDKRequestOptionsSupport.CreateHookContext(
+                                operationId: "UpscaleImageAsBytes",
+                                methodName: "UpscaleImageAsBytesAsync",
+                                pathTemplate: "$\"/v1/generation/{engineId}/image-to-image/upscale\"",
+                                httpMethod: "POST",
+                                baseUri: BaseUri,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
+                                response: __response,
+                                exception: null,
+                                clientOptions: Options,
+                                requestOptions: requestOptions,
+                                attempt: __attemptNumber,
+                                maxAttempts: __maxAttempts,
+                                willRetry: false,
+                                retryDelay: null,
+                                retryReason: global::System.String.Empty,
+                                cancellationToken: __effectiveCancellationToken)).ConfigureAwait(false);
+                }
+                else
+                {
+                    await global::G.AutoSDKRequestOptionsSupport.OnAfterErrorAsync(
+                            clientOptions: Options,
+                            context: global::G.AutoSDKRequestOptionsSupport.CreateHookContext(
+                                operationId: "UpscaleImageAsBytes",
+                                methodName: "UpscaleImageAsBytesAsync",
+                                pathTemplate: "$\"/v1/generation/{engineId}/image-to-image/upscale\"",
+                                httpMethod: "POST",
+                                baseUri: BaseUri,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
+                                response: __response,
+                                exception: null,
+                                clientOptions: Options,
+                                requestOptions: requestOptions,
+                                attempt: __attemptNumber,
+                                maxAttempts: __maxAttempts,
+                                willRetry: false,
+                                retryDelay: null,
+                                retryReason: global::System.String.Empty,
+                                cancellationToken: __effectiveCancellationToken)).ConfigureAwait(false);
+                }
+                            // bad_request: general error for invalid parameters <br/><br/>  <p style="display: flex; margin-top: -20px; margin-bottom: 0">More specific errors:</p>    - invalid_file_size: The file size of one or more of the provided files is invalid   - invalid_mime_type: The mime type of one or more of the provided files is invalid   - invalid_pixel_count: The requested image would exceed the maximum pixel count of 4,194,304
+                            if ((int)__response.StatusCode == 400)
+                            {
+                                string? __content_400 = null;
+                                global::System.Exception? __exception_400 = null;
+                                global::G.Error? __value_400 = null;
+                                try
+                                {
+                                    if (__effectiveReadResponseAsString)
+                                    {
+                                        __content_400 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
+                                        __value_400 = global::G.Error.FromJson(__content_400, JsonSerializerOptions);
+                                    }
+                                    else
+                                    {
+                                        __content_400 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
+
+                                        __value_400 = global::G.Error.FromJson(__content_400, JsonSerializerOptions);
+                                    }
+                                }
+                                catch (global::System.Exception __ex)
+                                {
+                                    __exception_400 = __ex;
+                                }
+
+
+                                throw global::G.ApiException<global::G.Error>.Create(
+                                    statusCode: __response.StatusCode,
+                                    message: __content_400 ?? __response.ReasonPhrase ?? string.Empty,
+                                    innerException: __exception_400,
+                                    responseBody: __content_400,
+                                    responseObject: __value_400,
+                                    responseHeaders: global::System.Linq.Enumerable.ToDictionary(
+                                        __response.Headers,
+                                        h => h.Key,
+                                        h => h.Value));
+                            }
+                            // unauthorized: API key missing or invalid
+                            if ((int)__response.StatusCode == 401)
+                            {
+                                string? __content_401 = null;
+                                global::System.Exception? __exception_401 = null;
+                                global::G.Error? __value_401 = null;
+                                try
+                                {
+                                    if (__effectiveReadResponseAsString)
+                                    {
+                                        __content_401 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
+                                        __value_401 = global::G.Error.FromJson(__content_401, JsonSerializerOptions);
+                                    }
+                                    else
+                                    {
+                                        __content_401 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
+
+                                        __value_401 = global::G.Error.FromJson(__content_401, JsonSerializerOptions);
+                                    }
+                                }
+                                catch (global::System.Exception __ex)
+                                {
+                                    __exception_401 = __ex;
+                                }
+
+
+                                throw global::G.ApiException<global::G.Error>.Create(
+                                    statusCode: __response.StatusCode,
+                                    message: __content_401 ?? __response.ReasonPhrase ?? string.Empty,
+                                    innerException: __exception_401,
+                                    responseBody: __content_401,
+                                    responseObject: __value_401,
+                                    responseHeaders: global::System.Linq.Enumerable.ToDictionary(
+                                        __response.Headers,
+                                        h => h.Key,
+                                        h => h.Value));
+                            }
+                            // permission_denied: You lack the necessary permissions to perform this action
+                            if ((int)__response.StatusCode == 403)
+                            {
+                                string? __content_403 = null;
+                                global::System.Exception? __exception_403 = null;
+                                global::G.Error? __value_403 = null;
+                                try
+                                {
+                                    if (__effectiveReadResponseAsString)
+                                    {
+                                        __content_403 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
+                                        __value_403 = global::G.Error.FromJson(__content_403, JsonSerializerOptions);
+                                    }
+                                    else
+                                    {
+                                        __content_403 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
+
+                                        __value_403 = global::G.Error.FromJson(__content_403, JsonSerializerOptions);
+                                    }
+                                }
+                                catch (global::System.Exception __ex)
+                                {
+                                    __exception_403 = __ex;
+                                }
+
+
+                                throw global::G.ApiException<global::G.Error>.Create(
+                                    statusCode: __response.StatusCode,
+                                    message: __content_403 ?? __response.ReasonPhrase ?? string.Empty,
+                                    innerException: __exception_403,
+                                    responseBody: __content_403,
+                                    responseObject: __value_403,
+                                    responseHeaders: global::System.Linq.Enumerable.ToDictionary(
+                                        __response.Headers,
+                                        h => h.Key,
+                                        h => h.Value));
+                            }
+                            // not_found: The requested resource was not found (e.g. specifing a model that does not exist)
+                            if ((int)__response.StatusCode == 404)
+                            {
+                                string? __content_404 = null;
+                                global::System.Exception? __exception_404 = null;
+                                global::G.Error? __value_404 = null;
+                                try
+                                {
+                                    if (__effectiveReadResponseAsString)
+                                    {
+                                        __content_404 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
+                                        __value_404 = global::G.Error.FromJson(__content_404, JsonSerializerOptions);
+                                    }
+                                    else
+                                    {
+                                        __content_404 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
+
+                                        __value_404 = global::G.Error.FromJson(__content_404, JsonSerializerOptions);
+                                    }
+                                }
+                                catch (global::System.Exception __ex)
+                                {
+                                    __exception_404 = __ex;
+                                }
+
+
+                                throw global::G.ApiException<global::G.Error>.Create(
+                                    statusCode: __response.StatusCode,
+                                    message: __content_404 ?? __response.ReasonPhrase ?? string.Empty,
+                                    innerException: __exception_404,
+                                    responseBody: __content_404,
+                                    responseObject: __value_404,
+                                    responseHeaders: global::System.Linq.Enumerable.ToDictionary(
+                                        __response.Headers,
+                                        h => h.Key,
+                                        h => h.Value));
+                            }
+                            // server_error: Some unexpected server error occurred
+                            if ((int)__response.StatusCode == 500)
+                            {
+                                string? __content_500 = null;
+                                global::System.Exception? __exception_500 = null;
+                                global::G.Error? __value_500 = null;
+                                try
+                                {
+                                    if (__effectiveReadResponseAsString)
+                                    {
+                                        __content_500 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
+                                        __value_500 = global::G.Error.FromJson(__content_500, JsonSerializerOptions);
+                                    }
+                                    else
+                                    {
+                                        __content_500 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
+
+                                        __value_500 = global::G.Error.FromJson(__content_500, JsonSerializerOptions);
+                                    }
+                                }
+                                catch (global::System.Exception __ex)
+                                {
+                                    __exception_500 = __ex;
+                                }
+
+
+                                throw global::G.ApiException<global::G.Error>.Create(
+                                    statusCode: __response.StatusCode,
+                                    message: __content_500 ?? __response.ReasonPhrase ?? string.Empty,
+                                    innerException: __exception_500,
+                                    responseBody: __content_500,
+                                    responseObject: __value_500,
+                                    responseHeaders: global::System.Linq.Enumerable.ToDictionary(
+                                        __response.Headers,
+                                        h => h.Key,
+                                        h => h.Value));
+                            }
+
+                            try
+                            {
+                                __response.EnsureSuccessStatusCode();
+
+                                var __content = await __response.Content.ReadAsStreamAsync(
+                #if NET5_0_OR_GREATER
+                                    __effectiveCancellationToken
+                #endif
+                                ).ConfigureAwait(false);
+
+                                return new global::G.AutoSDKHttpResponse<global::System.IO.Stream>(
+                                    statusCode: __response.StatusCode,
+                                    headers: global::G.AutoSDKHttpResponse.CreateHeaders(__response),
+                                    requestUri: __response.RequestMessage?.RequestUri,
+                                    body: new global::G.ResponseStream(__response, __content));
+                            }
+                            catch (global::System.OperationCanceledException)
+                            {
+                                throw;
+                            }
                             catch (global::System.Exception __ex)
                             {
                                 string? __content = null;
@@ -2661,6 +3284,649 @@ namespace G
                                 ).ConfigureAwait(false);
 
                                 return new global::G.ResponseStream(__response, __content);
+                            }
+                            catch (global::System.OperationCanceledException)
+                            {
+                                throw;
+                            }
+                            catch (global::System.Exception __ex)
+                            {
+                                string? __content = null;
+                                try
+                                {
+                                    __content = await __response.Content.ReadAsStringAsync(
+                #if NET5_0_OR_GREATER
+                                        __effectiveCancellationToken
+                #endif
+                                    ).ConfigureAwait(false);
+                                }
+                                catch (global::System.Exception)
+                                {
+                                }
+
+                                throw global::G.ApiException.Create(
+                                    statusCode: __response.StatusCode,
+                                    message: __content ?? __response.ReasonPhrase ?? string.Empty,
+                                    innerException: __ex,
+                                    responseBody: __content,
+                                    responseHeaders: global::System.Linq.Enumerable.ToDictionary(
+                                        __response.Headers,
+                                        h => h.Key,
+                                        h => h.Value));
+                            }
+
+                }
+                catch
+                {
+                    __response.Dispose();
+                    throw;
+                }
+            }
+            finally
+            {
+                __httpRequest?.Dispose();
+            }
+        }
+        /// <summary>
+        /// image-to-image/upscale<br/>
+        /// Create a higher resolution version of an input image.<br/>
+        /// This operation outputs an image with a maximum pixel count of **4,194,304**. This is equivalent to dimensions such as `2048x2048` and `4096x1024`.<br/>
+        /// By default, the input image will be upscaled by a factor of 2.  For additional control over the output dimensions, a `width` or `height` parameter may be specified.
+        /// </summary>
+        /// <param name="engineId"></param>
+        /// <param name="accept">
+        /// Default Value: application/json
+        /// </param>
+        /// <param name="organization"></param>
+        /// <param name="image">
+        /// Example: &lt;image binary&gt;
+        /// </param>
+        /// <param name="imagename">
+        /// Example: &lt;image binary&gt;
+        /// </param>
+        /// <param name="width">
+        /// Desired width of the output image.  Only one of `width` or `height` may be specified.
+        /// </param>
+        /// <param name="height">
+        /// Desired height of the output image.  Only one of `width` or `height` may be specified.
+        /// </param>
+        /// <returns>The response metadata and an unbuffered body stream. The caller must dispose Body to release the HTTP response.</returns>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
+        /// <param name="cancellationToken">The token to cancel the operation with</param>
+        /// <exception cref="global::G.ApiException"></exception>
+        /// <remarks>
+        /// if [ -z "$STABILITY_API_KEY" ]; then<br/>
+        ///     echo "STABILITY_API_KEY environment variable is not set"<br/>
+        ///     exit 1<br/>
+        /// fi<br/>
+        /// OUTPUT_FILE=./out/v1_upscaled_image.png<br/>
+        /// BASE_URL=${API_HOST:-https://api.stability.ai}<br/>
+        /// URL="$BASE_URL/v1/generation/esrgan-v1-x2plus/image-to-image/upscale"<br/>
+        /// curl -f -sS -X POST "$URL" \<br/>
+        ///   -H 'Content-Type: multipart/form-data' \<br/>
+        ///   -H 'Accept: image/png' \<br/>
+        ///   -H "Authorization: Bearer $STABILITY_API_KEY" \<br/>
+        ///   -F 'image=@"../init_image.png"' \<br/>
+        ///   -F 'width=1024' \<br/>
+        ///   -o "$OUTPUT_FILE"
+        /// </remarks>
+        public async global::System.Threading.Tasks.Task<global::G.AutoSDKHttpResponse<global::System.IO.Stream>> UpscaleImageAsBytesAsStreamAsResponseAsync(
+            string engineId,
+            global::System.IO.Stream image,
+            string imagename,
+            global::G.UpscaleImageAccept? accept = default,
+            string? organization = default,
+            int? width = default,
+            int? height = default,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
+            global::System.Threading.CancellationToken cancellationToken = default)
+        {
+
+            image = image ?? throw new global::System.ArgumentNullException(nameof(image));
+            var request = new global::G.UpscaleImageRequestBody
+            {
+                Image = global::System.Array.Empty<byte>(),
+                Imagename = imagename,
+                Width = width,
+                Height = height,
+            };
+            PrepareArguments(
+                client: HttpClient);
+            PrepareUpscaleImageAsBytesArguments(
+                httpClient: HttpClient,
+                engineId: ref engineId,
+                accept: ref accept,
+                organization: ref organization,
+                request: request);
+
+
+            var __authorizations = global::G.EndPointSecurityResolver.ResolveAuthorizations(
+                availableAuthorizations: Authorizations,
+                securityRequirements: s_UpscaleImageAsBytesSecurityRequirements,
+                operationName: "UpscaleImageAsBytesAsync");
+
+            using var __timeoutCancellationTokenSource = global::G.AutoSDKRequestOptionsSupport.CreateTimeoutCancellationTokenSource(
+                clientOptions: Options,
+                requestOptions: requestOptions,
+                cancellationToken: cancellationToken);
+            var __effectiveCancellationToken = __timeoutCancellationTokenSource?.Token ?? cancellationToken;
+            var __effectiveReadResponseAsString = global::G.AutoSDKRequestOptionsSupport.GetReadResponseAsString(
+                clientOptions: Options,
+                requestOptions: requestOptions,
+                fallbackValue: ReadResponseAsString);
+            var __maxAttempts = global::G.AutoSDKRequestOptionsSupport.GetMaxAttempts(
+                clientOptions: Options,
+                requestOptions: requestOptions,
+                supportsRetry: false);
+
+            global::System.Net.Http.HttpRequestMessage __CreateHttpRequest()
+            {
+
+                            var __pathBuilder = new global::G.PathBuilder(
+                                path: $"/v1/generation/{engineId}/image-to-image/upscale",
+                                baseUri: HttpClient.BaseAddress);
+                            var __path = __pathBuilder.ToString();
+                __path = global::G.AutoSDKRequestOptionsSupport.AppendQueryParameters(
+                    path: __path,
+                    clientParameters: Options.QueryParameters,
+                    requestParameters: requestOptions?.QueryParameters);
+                var __httpRequest = new global::System.Net.Http.HttpRequestMessage(
+                    method: global::System.Net.Http.HttpMethod.Post,
+                    requestUri: new global::System.Uri(__path, global::System.UriKind.RelativeOrAbsolute));
+#if NET6_0_OR_GREATER
+                __httpRequest.Version = global::System.Net.HttpVersion.Version11;
+                __httpRequest.VersionPolicy = global::System.Net.Http.HttpVersionPolicy.RequestVersionOrHigher;
+#endif
+
+                __httpRequest.Headers.TryAddWithoutValidation(
+                    "Accept",
+                    "image/png");
+
+            foreach (var __authorization in __authorizations)
+            {
+                if (__authorization.Type == "Http" ||
+                    __authorization.Type == "OAuth2" ||
+                    __authorization.Type == "OpenIdConnect")
+                {
+                    __httpRequest.Headers.Authorization = new global::System.Net.Http.Headers.AuthenticationHeaderValue(
+                        scheme: __authorization.Name,
+                        parameter: __authorization.Value);
+                }
+                else if (__authorization.Type == "ApiKey" &&
+                         __authorization.Location == "Header")
+                {
+                    __httpRequest.Headers.Add(__authorization.Name, __authorization.Value);
+                } 
+            }
+
+            if (accept != default)
+            {
+                __httpRequest.Headers.TryAddWithoutValidation("Accept", accept?.ToValueString() ?? string.Empty);
+            }
+            if (organization != default)
+            {
+                __httpRequest.Headers.TryAddWithoutValidation("Organization", organization.ToString());
+            }
+
+
+                            var __httpRequestContent = new global::System.Net.Http.MultipartFormDataContent();
+                            var __contentImage = new global::System.Net.Http.StreamContent(image);
+                            __contentImage.Headers.ContentType = new global::System.Net.Http.Headers.MediaTypeHeaderValue(
+                                request.Imagename is null
+                                    ? "application/octet-stream"
+                                    : (global::System.IO.Path.GetExtension(request.Imagename) ?? string.Empty).ToLowerInvariant() switch
+                                    {
+                                        ".aac" => "audio/aac",
+                                        ".flac" => "audio/flac",
+                                        ".gif" => "image/gif",
+                                        ".jpeg" => "image/jpeg",
+                                        ".jpg" => "image/jpeg",
+                                        ".json" => "application/json",
+                                        ".m4a" => "audio/mp4",
+                                        ".mp3" => "audio/mpeg",
+                                        ".mp4" => "video/mp4",
+                                        ".mpeg" => "audio/mpeg",
+                                        ".mpga" => "audio/mpeg",
+                                        ".oga" => "audio/ogg",
+                                        ".ogg" => "audio/ogg",
+                                        ".opus" => "audio/ogg",
+                                        ".pdf" => "application/pdf",
+                                        ".png" => "image/png",
+                                        ".txt" => "text/plain",
+                                        ".wav" => "audio/wav",
+                                        ".weba" => "audio/webm",
+                                        ".webm" => "video/webm",
+                                        ".webp" => "image/webp",
+                                        _ => "application/octet-stream",
+                                    });
+                            __httpRequestContent.Add(
+                                content: __contentImage,
+                                name: "\"image\"",
+                                fileName: request.Imagename != null ? $"\"{request.Imagename}\"" : string.Empty);
+                            if (__contentImage.Headers.ContentDisposition != null)
+                            {
+                                __contentImage.Headers.ContentDisposition.FileNameStar = null;
+                            }
+
+                            if (request.Width != default)
+                            {
+
+                                __httpRequestContent.Add(
+                                    content: new global::System.Net.Http.StringContent(global::System.Convert.ToString(request.Width, global::System.Globalization.CultureInfo.InvariantCulture) ?? string.Empty),
+                                    name: "\"width\"");
+
+                            }
+                            if (request.Height != default)
+                            {
+
+                                __httpRequestContent.Add(
+                                    content: new global::System.Net.Http.StringContent(global::System.Convert.ToString(request.Height, global::System.Globalization.CultureInfo.InvariantCulture) ?? string.Empty),
+                                    name: "\"height\"");
+
+                            }
+
+                            __httpRequest.Content = __httpRequestContent;
+
+                global::G.AutoSDKRequestOptionsSupport.ApplyHeaders(
+                    request: __httpRequest,
+                    clientHeaders: Options.Headers,
+                    requestHeaders: requestOptions?.Headers);
+
+                PrepareRequest(
+                    client: HttpClient,
+                    request: __httpRequest);
+                PrepareUpscaleImageAsBytesRequest(
+                    httpClient: HttpClient,
+                    httpRequestMessage: __httpRequest,
+                    engineId: engineId,
+                    accept: accept,
+                    organization: organization,
+                    request: request);
+
+                global::G.AutoSDKHttpRequestOptions.StampAuthorizationOverride(__httpRequest);
+
+                return __httpRequest;
+            }
+
+            global::System.Net.Http.HttpRequestMessage? __httpRequest = null;
+            global::System.Net.Http.HttpResponseMessage? __response = null;
+            var __attemptNumber = 0;
+            try
+            {
+                for (var __attempt = 1; __attempt <= __maxAttempts; __attempt++)
+                {
+                    __attemptNumber = __attempt;
+                    __httpRequest = __CreateHttpRequest();
+                    await global::G.AutoSDKRequestOptionsSupport.OnBeforeRequestAsync(
+                            clientOptions: Options,
+                            context: global::G.AutoSDKRequestOptionsSupport.CreateHookContext(
+                                operationId: "UpscaleImageAsBytes",
+                                methodName: "UpscaleImageAsBytesAsync",
+                                pathTemplate: "$\"/v1/generation/{engineId}/image-to-image/upscale\"",
+                                httpMethod: "POST",
+                                baseUri: BaseUri,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
+                                response: null,
+                                exception: null,
+                                clientOptions: Options,
+                                requestOptions: requestOptions,
+                                attempt: __attempt,
+                                maxAttempts: __maxAttempts,
+                                willRetry: false,
+                                retryDelay: null,
+                                retryReason: global::System.String.Empty,
+                                cancellationToken: __effectiveCancellationToken)).ConfigureAwait(false);
+                    try
+                    {
+                        __response = await HttpClient.SendAsync(
+                request: __httpRequest,
+                completionOption: global::System.Net.Http.HttpCompletionOption.ResponseHeadersRead,
+                cancellationToken: __effectiveCancellationToken).ConfigureAwait(false);
+                    }
+                    catch (global::System.Net.Http.HttpRequestException __exception)
+                    {
+                        var __retryDelay = global::G.AutoSDKRequestOptionsSupport.GetRetryDelay(
+                            clientOptions: Options,
+                            requestOptions: requestOptions,
+                            response: null,
+                            attempt: __attempt);
+                        var __willRetry = __attempt < __maxAttempts && !__effectiveCancellationToken.IsCancellationRequested;
+                        await global::G.AutoSDKRequestOptionsSupport.OnAfterErrorAsync(
+                            clientOptions: Options,
+                            context: global::G.AutoSDKRequestOptionsSupport.CreateHookContext(
+                                operationId: "UpscaleImageAsBytes",
+                                methodName: "UpscaleImageAsBytesAsync",
+                                pathTemplate: "$\"/v1/generation/{engineId}/image-to-image/upscale\"",
+                                httpMethod: "POST",
+                                baseUri: BaseUri,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
+                                response: null,
+                                exception: __exception,
+                                clientOptions: Options,
+                                requestOptions: requestOptions,
+                                attempt: __attempt,
+                                maxAttempts: __maxAttempts,
+                                willRetry: __willRetry,
+                                retryDelay: __willRetry ? __retryDelay : (global::System.TimeSpan?)null,
+                                retryReason: "exception",
+                                cancellationToken: __effectiveCancellationToken)).ConfigureAwait(false);
+                        if (!__willRetry)
+                        {
+                            throw;
+                        }
+
+                        __httpRequest.Dispose();
+                        __httpRequest = null;
+                        await global::G.AutoSDKRequestOptionsSupport.DelayBeforeRetryAsync(
+                            retryDelay: __retryDelay,
+                            cancellationToken: __effectiveCancellationToken).ConfigureAwait(false);
+                        continue;
+                    }
+
+                    if (__response != null &&
+                        __attempt < __maxAttempts &&
+                        global::G.AutoSDKRequestOptionsSupport.ShouldRetryStatusCode(__response.StatusCode))
+                    {
+                        var __retryDelay = global::G.AutoSDKRequestOptionsSupport.GetRetryDelay(
+                            clientOptions: Options,
+                            requestOptions: requestOptions,
+                            response: __response,
+                            attempt: __attempt);
+                        await global::G.AutoSDKRequestOptionsSupport.OnAfterErrorAsync(
+                            clientOptions: Options,
+                            context: global::G.AutoSDKRequestOptionsSupport.CreateHookContext(
+                                operationId: "UpscaleImageAsBytes",
+                                methodName: "UpscaleImageAsBytesAsync",
+                                pathTemplate: "$\"/v1/generation/{engineId}/image-to-image/upscale\"",
+                                httpMethod: "POST",
+                                baseUri: BaseUri,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
+                                response: __response,
+                                exception: null,
+                                clientOptions: Options,
+                                requestOptions: requestOptions,
+                                attempt: __attempt,
+                                maxAttempts: __maxAttempts,
+                                willRetry: true,
+                                retryDelay: __retryDelay,
+                                retryReason: "status:" + ((int)__response.StatusCode).ToString(global::System.Globalization.CultureInfo.InvariantCulture),
+                                cancellationToken: __effectiveCancellationToken)).ConfigureAwait(false);
+                        __response.Dispose();
+                        __response = null;
+                        __httpRequest.Dispose();
+                        __httpRequest = null;
+                        await global::G.AutoSDKRequestOptionsSupport.DelayBeforeRetryAsync(
+                            retryDelay: __retryDelay,
+                            cancellationToken: __effectiveCancellationToken).ConfigureAwait(false);
+                        continue;
+                    }
+
+                    break;
+                }
+
+                if (__response == null)
+                {
+                    throw new global::System.InvalidOperationException("No response received.");
+                }
+
+                try
+                {
+
+                ProcessResponse(
+                    client: HttpClient,
+                    response: __response);
+                ProcessUpscaleImageAsBytesResponse(
+                    httpClient: HttpClient,
+                    httpResponseMessage: __response);
+                if (__response.IsSuccessStatusCode)
+                {
+                    await global::G.AutoSDKRequestOptionsSupport.OnAfterSuccessAsync(
+                            clientOptions: Options,
+                            context: global::G.AutoSDKRequestOptionsSupport.CreateHookContext(
+                                operationId: "UpscaleImageAsBytes",
+                                methodName: "UpscaleImageAsBytesAsync",
+                                pathTemplate: "$\"/v1/generation/{engineId}/image-to-image/upscale\"",
+                                httpMethod: "POST",
+                                baseUri: BaseUri,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
+                                response: __response,
+                                exception: null,
+                                clientOptions: Options,
+                                requestOptions: requestOptions,
+                                attempt: __attemptNumber,
+                                maxAttempts: __maxAttempts,
+                                willRetry: false,
+                                retryDelay: null,
+                                retryReason: global::System.String.Empty,
+                                cancellationToken: __effectiveCancellationToken)).ConfigureAwait(false);
+                }
+                else
+                {
+                    await global::G.AutoSDKRequestOptionsSupport.OnAfterErrorAsync(
+                            clientOptions: Options,
+                            context: global::G.AutoSDKRequestOptionsSupport.CreateHookContext(
+                                operationId: "UpscaleImageAsBytes",
+                                methodName: "UpscaleImageAsBytesAsync",
+                                pathTemplate: "$\"/v1/generation/{engineId}/image-to-image/upscale\"",
+                                httpMethod: "POST",
+                                baseUri: BaseUri,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
+                                response: __response,
+                                exception: null,
+                                clientOptions: Options,
+                                requestOptions: requestOptions,
+                                attempt: __attemptNumber,
+                                maxAttempts: __maxAttempts,
+                                willRetry: false,
+                                retryDelay: null,
+                                retryReason: global::System.String.Empty,
+                                cancellationToken: __effectiveCancellationToken)).ConfigureAwait(false);
+                }
+                            // bad_request: general error for invalid parameters <br/><br/>  <p style="display: flex; margin-top: -20px; margin-bottom: 0">More specific errors:</p>    - invalid_file_size: The file size of one or more of the provided files is invalid   - invalid_mime_type: The mime type of one or more of the provided files is invalid   - invalid_pixel_count: The requested image would exceed the maximum pixel count of 4,194,304
+                            if ((int)__response.StatusCode == 400)
+                            {
+                                string? __content_400 = null;
+                                global::System.Exception? __exception_400 = null;
+                                global::G.Error? __value_400 = null;
+                                try
+                                {
+                                    if (__effectiveReadResponseAsString)
+                                    {
+                                        __content_400 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
+                                        __value_400 = global::G.Error.FromJson(__content_400, JsonSerializerOptions);
+                                    }
+                                    else
+                                    {
+                                        __content_400 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
+
+                                        __value_400 = global::G.Error.FromJson(__content_400, JsonSerializerOptions);
+                                    }
+                                }
+                                catch (global::System.Exception __ex)
+                                {
+                                    __exception_400 = __ex;
+                                }
+
+
+                                throw global::G.ApiException<global::G.Error>.Create(
+                                    statusCode: __response.StatusCode,
+                                    message: __content_400 ?? __response.ReasonPhrase ?? string.Empty,
+                                    innerException: __exception_400,
+                                    responseBody: __content_400,
+                                    responseObject: __value_400,
+                                    responseHeaders: global::System.Linq.Enumerable.ToDictionary(
+                                        __response.Headers,
+                                        h => h.Key,
+                                        h => h.Value));
+                            }
+                            // unauthorized: API key missing or invalid
+                            if ((int)__response.StatusCode == 401)
+                            {
+                                string? __content_401 = null;
+                                global::System.Exception? __exception_401 = null;
+                                global::G.Error? __value_401 = null;
+                                try
+                                {
+                                    if (__effectiveReadResponseAsString)
+                                    {
+                                        __content_401 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
+                                        __value_401 = global::G.Error.FromJson(__content_401, JsonSerializerOptions);
+                                    }
+                                    else
+                                    {
+                                        __content_401 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
+
+                                        __value_401 = global::G.Error.FromJson(__content_401, JsonSerializerOptions);
+                                    }
+                                }
+                                catch (global::System.Exception __ex)
+                                {
+                                    __exception_401 = __ex;
+                                }
+
+
+                                throw global::G.ApiException<global::G.Error>.Create(
+                                    statusCode: __response.StatusCode,
+                                    message: __content_401 ?? __response.ReasonPhrase ?? string.Empty,
+                                    innerException: __exception_401,
+                                    responseBody: __content_401,
+                                    responseObject: __value_401,
+                                    responseHeaders: global::System.Linq.Enumerable.ToDictionary(
+                                        __response.Headers,
+                                        h => h.Key,
+                                        h => h.Value));
+                            }
+                            // permission_denied: You lack the necessary permissions to perform this action
+                            if ((int)__response.StatusCode == 403)
+                            {
+                                string? __content_403 = null;
+                                global::System.Exception? __exception_403 = null;
+                                global::G.Error? __value_403 = null;
+                                try
+                                {
+                                    if (__effectiveReadResponseAsString)
+                                    {
+                                        __content_403 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
+                                        __value_403 = global::G.Error.FromJson(__content_403, JsonSerializerOptions);
+                                    }
+                                    else
+                                    {
+                                        __content_403 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
+
+                                        __value_403 = global::G.Error.FromJson(__content_403, JsonSerializerOptions);
+                                    }
+                                }
+                                catch (global::System.Exception __ex)
+                                {
+                                    __exception_403 = __ex;
+                                }
+
+
+                                throw global::G.ApiException<global::G.Error>.Create(
+                                    statusCode: __response.StatusCode,
+                                    message: __content_403 ?? __response.ReasonPhrase ?? string.Empty,
+                                    innerException: __exception_403,
+                                    responseBody: __content_403,
+                                    responseObject: __value_403,
+                                    responseHeaders: global::System.Linq.Enumerable.ToDictionary(
+                                        __response.Headers,
+                                        h => h.Key,
+                                        h => h.Value));
+                            }
+                            // not_found: The requested resource was not found (e.g. specifing a model that does not exist)
+                            if ((int)__response.StatusCode == 404)
+                            {
+                                string? __content_404 = null;
+                                global::System.Exception? __exception_404 = null;
+                                global::G.Error? __value_404 = null;
+                                try
+                                {
+                                    if (__effectiveReadResponseAsString)
+                                    {
+                                        __content_404 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
+                                        __value_404 = global::G.Error.FromJson(__content_404, JsonSerializerOptions);
+                                    }
+                                    else
+                                    {
+                                        __content_404 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
+
+                                        __value_404 = global::G.Error.FromJson(__content_404, JsonSerializerOptions);
+                                    }
+                                }
+                                catch (global::System.Exception __ex)
+                                {
+                                    __exception_404 = __ex;
+                                }
+
+
+                                throw global::G.ApiException<global::G.Error>.Create(
+                                    statusCode: __response.StatusCode,
+                                    message: __content_404 ?? __response.ReasonPhrase ?? string.Empty,
+                                    innerException: __exception_404,
+                                    responseBody: __content_404,
+                                    responseObject: __value_404,
+                                    responseHeaders: global::System.Linq.Enumerable.ToDictionary(
+                                        __response.Headers,
+                                        h => h.Key,
+                                        h => h.Value));
+                            }
+                            // server_error: Some unexpected server error occurred
+                            if ((int)__response.StatusCode == 500)
+                            {
+                                string? __content_500 = null;
+                                global::System.Exception? __exception_500 = null;
+                                global::G.Error? __value_500 = null;
+                                try
+                                {
+                                    if (__effectiveReadResponseAsString)
+                                    {
+                                        __content_500 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
+                                        __value_500 = global::G.Error.FromJson(__content_500, JsonSerializerOptions);
+                                    }
+                                    else
+                                    {
+                                        __content_500 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
+
+                                        __value_500 = global::G.Error.FromJson(__content_500, JsonSerializerOptions);
+                                    }
+                                }
+                                catch (global::System.Exception __ex)
+                                {
+                                    __exception_500 = __ex;
+                                }
+
+
+                                throw global::G.ApiException<global::G.Error>.Create(
+                                    statusCode: __response.StatusCode,
+                                    message: __content_500 ?? __response.ReasonPhrase ?? string.Empty,
+                                    innerException: __exception_500,
+                                    responseBody: __content_500,
+                                    responseObject: __value_500,
+                                    responseHeaders: global::System.Linq.Enumerable.ToDictionary(
+                                        __response.Headers,
+                                        h => h.Key,
+                                        h => h.Value));
+                            }
+
+                            try
+                            {
+                                __response.EnsureSuccessStatusCode();
+
+                                var __content = await __response.Content.ReadAsStreamAsync(
+                #if NET5_0_OR_GREATER
+                                    __effectiveCancellationToken
+                #endif
+                                ).ConfigureAwait(false);
+
+                                return new global::G.AutoSDKHttpResponse<global::System.IO.Stream>(
+                                    statusCode: __response.StatusCode,
+                                    headers: global::G.AutoSDKHttpResponse.CreateHeaders(__response),
+                                    requestUri: __response.RequestMessage?.RequestUri,
+                                    body: new global::G.ResponseStream(__response, __content));
+                            }
+                            catch (global::System.OperationCanceledException)
+                            {
+                                throw;
                             }
                             catch (global::System.Exception __ex)
                             {

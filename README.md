@@ -48,6 +48,19 @@ It also will include polyfills for .Net Framework/.Net Standard TargetFrameworks
 ## HTTP Artifacts
 `autosdk http` emits executable request files for regular OpenAPI path operations. It also surfaces response links and callbacks as commented documentation blocks next to the owning operation, and writes root-level OpenAPI webhooks to `webhooks.http` as inbound contract documentation instead of outbound client calls.
 
+## Binary downloads with response metadata
+
+For buffered binary endpoints, `<Method>AsStreamAsResponseAsync` returns an `AutoSDKHttpResponse<Stream>` with status, response/content headers, and the final request URI before reading the body. It uses `ResponseHeadersRead`; no custom OpenAPI extension or response-header declarations are required.
+
+```csharp
+var response = await client.DownloadFileAsStreamAsResponseAsync(cancellationToken: cancellationToken);
+await using var body = response.Body;
+// Inspect response.StatusCode, response.Headers, and response.RequestUri before reading.
+await body.CopyToAsync(destination, cancellationToken);
+```
+
+The caller owns `Body` and must dispose it, including when rejecting a download based on its headers. Disposing the stream releases the HTTP response; failed or canceled body reads also release it. Existing byte-array, stream, and buffered `AsResponseAsync` methods remain available. Use `AutoSDKConditionalRequests.SendAsync<Stream>` with the new method to preserve the ETag/304 conditional-request flow.
+
 ## OpenAPI 3.1 Compatibility
 AutoSDK normalizes the OpenAPI 3.1 / JSON Schema 2020-12 keywords it can translate cleanly into the current generation pipeline, including `unevaluatedProperties`, `prefixItems`, `unevaluatedItems`, `contentEncoding`, and `contentMediaType`.
 

@@ -1235,6 +1235,1192 @@ namespace G
 
                                 return new global::G.ResponseStream(__response, __content);
                             }
+                            catch (global::System.OperationCanceledException)
+                            {
+                                throw;
+                            }
+                            catch (global::System.Exception __ex)
+                            {
+                                string? __content = null;
+                                try
+                                {
+                                    __content = await __response.Content.ReadAsStringAsync(
+                #if NET5_0_OR_GREATER
+                                        __effectiveCancellationToken
+                #endif
+                                    ).ConfigureAwait(false);
+                                }
+                                catch (global::System.Exception)
+                                {
+                                }
+
+                                throw global::G.ApiException.Create(
+                                    statusCode: __response.StatusCode,
+                                    message: __content ?? __response.ReasonPhrase ?? string.Empty,
+                                    innerException: __ex,
+                                    responseBody: __content,
+                                    responseHeaders: global::System.Linq.Enumerable.ToDictionary(
+                                        __response.Headers,
+                                        h => h.Key,
+                                        h => h.Value));
+                            }
+
+                }
+                catch
+                {
+                    __response.Dispose();
+                    throw;
+                }
+            }
+            finally
+            {
+                __httpRequest?.Dispose();
+            }
+        }
+        /// <summary>
+        /// Image Editing v2 (Plus plan)<br/>
+        /// This endpoint processes an image and applies one or more edits: background removal, AI-generated backgrounds (background.prompt), realistic shadows (shadow.mode), relighting (lighting.mode), text removal (textRemoval.mode), background blur (background.blur.*), subject outline (outline.*), AI beautification (beautify.mode), Flat Lay (flatLay.*), Ghost Mannequin (ghostMannequin.*), Virtual Model (virtualModel.*), AI expand (expand.mode), AI uncrop (uncrop.mode), AI upscale (upscale.mode), and positioning/resizing (padding, margin, outputSize).<br/>
+        /// Parameters are grouped by feature using dot notation: background.* for backgrounds, shadow.* for shadows, lighting.* for relighting, outline.* for subject outlines, beautify.* for AI beautification, flatLay.* for flat lay generation, ghostMannequin.* for ghost mannequin generation, virtualModel.* for virtual model generation, expand.* for AI expand, uncrop.* for AI uncrop, upscale.* for AI upscale, export.* for output format, and segmentation.* for text-guided segmentation.<br/>
+        /// Edits can be combined in a single call.<br/>
+        /// It accepts an image file for the image. If you want to send a URL, please use the GET endpoint. For more details on the difference between the GET and POST endpoints, please have a look at our documentation: https://docs.photoroom.com/image-editing-api/which-endpoints-are-available.<br/>
+        /// If you only have a URL for your image (not a local file), use the GET endpoint instead — it is simpler to integrate. Use this POST endpoint when you need to upload image files directly as multipart/form-data.<br/>
+        /// Full documentation: https://docs.photoroom.com/image-editing-api-plus-plan/quickstart-guide<br/>
+        /// Feature documentation:<br/>
+        /// - [HD Background Removal](https://docs.photoroom.com/image-editing-api-plus-plan/hd-background-removal)<br/>
+        /// - [Positioning (padding, margin, scaling)](https://docs.photoroom.com/image-editing-api-plus-plan/positioning)<br/>
+        /// - [Output Size](https://docs.photoroom.com/image-editing-api-plus-plan/output-size)<br/>
+        /// - [Static Background](https://docs.photoroom.com/image-editing-api-plus-plan/static-background)<br/>
+        /// - [Background Blur](https://docs.photoroom.com/image-editing-api-plus-plan/background-blur)<br/>
+        /// - [Subject Outline](https://docs.photoroom.com/image-editing-api-plus-plan/subject-outline)<br/>
+        /// - [AI Shadows](https://docs.photoroom.com/image-editing-api-plus-plan/ai-shadows)<br/>
+        /// - [AI Backgrounds](https://docs.photoroom.com/image-editing-api-plus-plan/ai-backgrounds)<br/>
+        /// - [AI Relight](https://docs.photoroom.com/image-editing-api-plus-plan/ai-relight)<br/>
+        /// - [AI Text Removal](https://docs.photoroom.com/image-editing-api-plus-plan/ai-text-removal)<br/>
+        /// - [AI Expand](https://docs.photoroom.com/image-editing-api-plus-plan/ai-expand)<br/>
+        /// - [AI Uncrop](https://docs.photoroom.com/image-editing-api-plus-plan/ai-uncrop)<br/>
+        /// - [AI Beautifier](https://docs.photoroom.com/image-editing-api-plus-plan/ai-beautifier)<br/>
+        /// - [Flat Lay](https://docs.photoroom.com/image-editing-api-plus-plan/flat-lay)<br/>
+        /// - [Ghost Mannequin](https://docs.photoroom.com/image-editing-api-plus-plan/ghost-mannequin)<br/>
+        /// - [Virtual Model](https://docs.photoroom.com/image-editing-api-plus-plan/virtual-model)<br/>
+        /// - [AI Upscale](https://docs.photoroom.com/image-editing-api-plus-plan/alpha-ai-upscale)<br/>
+        /// - [Describe Any Change](https://docs.photoroom.com/image-editing-api-plus-plan/edit-with-ai)<br/>
+        /// - [Create Any Image](https://docs.photoroom.com/image-editing-api-plus-plan/alpha-create-any-image)<br/>
+        /// - [Text-Guided Segmentation](https://docs.photoroom.com/image-editing-api-plus-plan/alpha-text-guided-segmentation)<br/>
+        /// - [Sandbox Mode (free testing)](https://docs.photoroom.com/image-editing-api-plus-plan/sandbox-mode)
+        /// </summary>
+        /// <param name="request"></param>
+        /// <returns>The response metadata and an unbuffered body stream. The caller must dispose Body to release the HTTP response.</returns>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
+        /// <param name="cancellationToken">The token to cancel the operation with</param>
+        /// <exception cref="global::G.ApiException"></exception>
+        public async global::System.Threading.Tasks.Task<global::G.AutoSDKHttpResponse<global::System.IO.Stream>> EditImagePostAsStreamAsResponseAsync(
+
+            global::G.EditImagePostRequest request,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
+            global::System.Threading.CancellationToken cancellationToken = default)
+        {
+            request = request ?? throw new global::System.ArgumentNullException(nameof(request));
+
+            PrepareArguments(
+                client: HttpClient);
+            PrepareEditImagePostArguments(
+                httpClient: HttpClient,
+                request: request);
+
+
+            var __authorizations = global::G.EndPointSecurityResolver.ResolveAuthorizations(
+                availableAuthorizations: Authorizations,
+                securityRequirements: s_EditImagePostSecurityRequirements,
+                operationName: "EditImagePostAsync");
+
+            using var __timeoutCancellationTokenSource = global::G.AutoSDKRequestOptionsSupport.CreateTimeoutCancellationTokenSource(
+                clientOptions: Options,
+                requestOptions: requestOptions,
+                cancellationToken: cancellationToken);
+            var __effectiveCancellationToken = __timeoutCancellationTokenSource?.Token ?? cancellationToken;
+            var __effectiveReadResponseAsString = global::G.AutoSDKRequestOptionsSupport.GetReadResponseAsString(
+                clientOptions: Options,
+                requestOptions: requestOptions,
+                fallbackValue: ReadResponseAsString);
+            var __maxAttempts = global::G.AutoSDKRequestOptionsSupport.GetMaxAttempts(
+                clientOptions: Options,
+                requestOptions: requestOptions,
+                supportsRetry: false);
+
+            global::System.Net.Http.HttpRequestMessage __CreateHttpRequest()
+            {
+
+                            var __pathBuilder = new global::G.PathBuilder(
+                                path: "/v2/edit",
+                                baseUri: ResolveBaseUri(
+                                servers: s_EditImagePostServers,
+                                defaultBaseUrl: "https://image-api.photoroom.com/"));
+                            var __path = __pathBuilder.ToString();
+                __path = global::G.AutoSDKRequestOptionsSupport.AppendQueryParameters(
+                    path: __path,
+                    clientParameters: Options.QueryParameters,
+                    requestParameters: requestOptions?.QueryParameters);
+                var __httpRequest = new global::System.Net.Http.HttpRequestMessage(
+                    method: global::System.Net.Http.HttpMethod.Post,
+                    requestUri: new global::System.Uri(__path, global::System.UriKind.RelativeOrAbsolute));
+#if NET6_0_OR_GREATER
+                __httpRequest.Version = global::System.Net.HttpVersion.Version11;
+                __httpRequest.VersionPolicy = global::System.Net.Http.HttpVersionPolicy.RequestVersionOrHigher;
+#endif
+
+            foreach (var __authorization in __authorizations)
+            {
+                if (__authorization.Type == "Http" ||
+                    __authorization.Type == "OAuth2" ||
+                    __authorization.Type == "OpenIdConnect")
+                {
+                    __httpRequest.Headers.Authorization = new global::System.Net.Http.Headers.AuthenticationHeaderValue(
+                        scheme: __authorization.Name,
+                        parameter: __authorization.Value);
+                }
+                else if (__authorization.Type == "ApiKey" &&
+                         __authorization.Location == "Header")
+                {
+                    __httpRequest.Headers.Add(__authorization.Name, __authorization.Value);
+                } 
+            }
+
+                            var __httpRequestContent = new global::System.Net.Http.MultipartFormDataContent();
+                            if (request.BackgroundBlurMode != default)
+                            {
+
+                                __httpRequestContent.Add(
+                                    content: new global::System.Net.Http.StringContent(request.BackgroundBlurMode ?? string.Empty),
+                                    name: "\"background.blur.mode\"");
+
+                            }
+                            if (request.BackgroundBlurRadius != default)
+                            {
+
+                                __httpRequestContent.Add(
+                                    content: new global::System.Net.Http.StringContent(global::System.Convert.ToString(request.BackgroundBlurRadius, global::System.Globalization.CultureInfo.InvariantCulture) ?? string.Empty),
+                                    name: "\"background.blur.radius\"");
+
+                            }
+                            if (request.BackgroundColor != default)
+                            {
+
+                                __httpRequestContent.Add(
+                                    content: new global::System.Net.Http.StringContent(request.BackgroundColor ?? string.Empty),
+                                    name: "\"background.color\"");
+
+                            }
+                            if (request.BackgroundExpandPrompt != default)
+                            {
+
+                                __httpRequestContent.Add(
+                                    content: new global::System.Net.Http.StringContent(request.BackgroundExpandPrompt.ToString() ?? string.Empty),
+                                    name: "\"background.expandPrompt\"");
+
+                            }
+                            if (request.BackgroundGuidanceImageFile != default)
+                            {
+
+                                var __contentBackgroundGuidanceImageFile = new global::System.Net.Http.ByteArrayContent(request.BackgroundGuidanceImageFile ?? global::System.Array.Empty<byte>());
+                                __contentBackgroundGuidanceImageFile.Headers.ContentType = new global::System.Net.Http.Headers.MediaTypeHeaderValue(
+                                    request.BackgroundGuidanceImageFilename is null
+                                        ? "application/octet-stream"
+                                        : (global::System.IO.Path.GetExtension(request.BackgroundGuidanceImageFilename) ?? string.Empty).ToLowerInvariant() switch
+                                        {
+                                            ".aac" => "audio/aac",
+                                            ".flac" => "audio/flac",
+                                            ".gif" => "image/gif",
+                                            ".jpeg" => "image/jpeg",
+                                            ".jpg" => "image/jpeg",
+                                            ".json" => "application/json",
+                                            ".m4a" => "audio/mp4",
+                                            ".mp3" => "audio/mpeg",
+                                            ".mp4" => "video/mp4",
+                                            ".mpeg" => "audio/mpeg",
+                                            ".mpga" => "audio/mpeg",
+                                            ".oga" => "audio/ogg",
+                                            ".ogg" => "audio/ogg",
+                                            ".opus" => "audio/ogg",
+                                            ".pdf" => "application/pdf",
+                                            ".png" => "image/png",
+                                            ".txt" => "text/plain",
+                                            ".wav" => "audio/wav",
+                                            ".weba" => "audio/webm",
+                                            ".webm" => "video/webm",
+                                            ".webp" => "image/webp",
+                                            _ => "application/octet-stream",
+                                        });
+                                __httpRequestContent.Add(
+                                    content: __contentBackgroundGuidanceImageFile,
+                                    name: "\"background.guidance.imageFile\"",
+                                    fileName: request.BackgroundGuidanceImageFilename != null ? $"\"{request.BackgroundGuidanceImageFilename}\"" : string.Empty);
+                                if (__contentBackgroundGuidanceImageFile.Headers.ContentDisposition != null)
+                                {
+                                    __contentBackgroundGuidanceImageFile.Headers.ContentDisposition.FileNameStar = null;
+                                }
+
+                            }
+                            if (request.BackgroundGuidanceScale != default)
+                            {
+
+                                __httpRequestContent.Add(
+                                    content: new global::System.Net.Http.StringContent(global::System.Convert.ToString(request.BackgroundGuidanceScale, global::System.Globalization.CultureInfo.InvariantCulture) ?? string.Empty),
+                                    name: "\"background.guidance.scale\"");
+
+                            }
+                            if (request.BackgroundImageFile != default)
+                            {
+
+                                var __contentBackgroundImageFile = new global::System.Net.Http.ByteArrayContent(request.BackgroundImageFile ?? global::System.Array.Empty<byte>());
+                                __contentBackgroundImageFile.Headers.ContentType = new global::System.Net.Http.Headers.MediaTypeHeaderValue(
+                                    request.BackgroundImageFilename is null
+                                        ? "application/octet-stream"
+                                        : (global::System.IO.Path.GetExtension(request.BackgroundImageFilename) ?? string.Empty).ToLowerInvariant() switch
+                                        {
+                                            ".aac" => "audio/aac",
+                                            ".flac" => "audio/flac",
+                                            ".gif" => "image/gif",
+                                            ".jpeg" => "image/jpeg",
+                                            ".jpg" => "image/jpeg",
+                                            ".json" => "application/json",
+                                            ".m4a" => "audio/mp4",
+                                            ".mp3" => "audio/mpeg",
+                                            ".mp4" => "video/mp4",
+                                            ".mpeg" => "audio/mpeg",
+                                            ".mpga" => "audio/mpeg",
+                                            ".oga" => "audio/ogg",
+                                            ".ogg" => "audio/ogg",
+                                            ".opus" => "audio/ogg",
+                                            ".pdf" => "application/pdf",
+                                            ".png" => "image/png",
+                                            ".txt" => "text/plain",
+                                            ".wav" => "audio/wav",
+                                            ".weba" => "audio/webm",
+                                            ".webm" => "video/webm",
+                                            ".webp" => "image/webp",
+                                            _ => "application/octet-stream",
+                                        });
+                                __httpRequestContent.Add(
+                                    content: __contentBackgroundImageFile,
+                                    name: "\"background.imageFile\"",
+                                    fileName: request.BackgroundImageFilename != null ? $"\"{request.BackgroundImageFilename}\"" : string.Empty);
+                                if (__contentBackgroundImageFile.Headers.ContentDisposition != null)
+                                {
+                                    __contentBackgroundImageFile.Headers.ContentDisposition.FileNameStar = null;
+                                }
+
+                            }
+                            if (request.BackgroundNegativePrompt != default)
+                            {
+
+                                __httpRequestContent.Add(
+                                    content: new global::System.Net.Http.StringContent(request.BackgroundNegativePrompt ?? string.Empty),
+                                    name: "\"background.negativePrompt\"");
+
+                            }
+                            if (request.BackgroundPrompt != default)
+                            {
+
+                                __httpRequestContent.Add(
+                                    content: new global::System.Net.Http.StringContent(request.BackgroundPrompt ?? string.Empty),
+                                    name: "\"background.prompt\"");
+
+                            }
+                            if (request.BackgroundScaling != default)
+                            {
+
+                                __httpRequestContent.Add(
+                                    content: new global::System.Net.Http.StringContent(request.BackgroundScaling ?? string.Empty),
+                                    name: "\"background.scaling\"");
+
+                            }
+                            if (request.BackgroundSeed != default)
+                            {
+
+                                __httpRequestContent.Add(
+                                    content: new global::System.Net.Http.StringContent(global::System.Convert.ToString(request.BackgroundSeed, global::System.Globalization.CultureInfo.InvariantCulture) ?? string.Empty),
+                                    name: "\"background.seed\"");
+
+                            }
+                            if (request.BeautifyMode != default)
+                            {
+
+                                __httpRequestContent.Add(
+                                    content: new global::System.Net.Http.StringContent(request.BeautifyMode ?? string.Empty),
+                                    name: "\"beautify.mode\"");
+
+                            }
+                            if (request.BeautifySeed != default)
+                            {
+
+                                __httpRequestContent.Add(
+                                    content: new global::System.Net.Http.StringContent(global::System.Convert.ToString(request.BeautifySeed, global::System.Globalization.CultureInfo.InvariantCulture) ?? string.Empty),
+                                    name: "\"beautify.seed\"");
+
+                            }
+                            if (request.DescribeAnyChangeMode != default)
+                            {
+
+                                __httpRequestContent.Add(
+                                    content: new global::System.Net.Http.StringContent(request.DescribeAnyChangeMode ?? string.Empty),
+                                    name: "\"describeAnyChange.mode\"");
+
+                            }
+                            if (request.DescribeAnyChangePrompt != default)
+                            {
+
+                                __httpRequestContent.Add(
+                                    content: new global::System.Net.Http.StringContent(request.DescribeAnyChangePrompt ?? string.Empty),
+                                    name: "\"describeAnyChange.prompt\"");
+
+                            }
+                            if (request.DescribeAnyChangeSeed != default)
+                            {
+
+                                __httpRequestContent.Add(
+                                    content: new global::System.Net.Http.StringContent(global::System.Convert.ToString(request.DescribeAnyChangeSeed, global::System.Globalization.CultureInfo.InvariantCulture) ?? string.Empty),
+                                    name: "\"describeAnyChange.seed\"");
+
+                            }
+                            if (request.EditWithAIMode != default)
+                            {
+
+                                __httpRequestContent.Add(
+                                    content: new global::System.Net.Http.StringContent(request.EditWithAIMode ?? string.Empty),
+                                    name: "\"editWithAI.mode\"");
+
+                            }
+                            if (request.EditWithAIPrompt != default)
+                            {
+
+                                __httpRequestContent.Add(
+                                    content: new global::System.Net.Http.StringContent(request.EditWithAIPrompt ?? string.Empty),
+                                    name: "\"editWithAI.prompt\"");
+
+                            }
+                            if (request.EditWithAISeed != default)
+                            {
+
+                                __httpRequestContent.Add(
+                                    content: new global::System.Net.Http.StringContent(global::System.Convert.ToString(request.EditWithAISeed, global::System.Globalization.CultureInfo.InvariantCulture) ?? string.Empty),
+                                    name: "\"editWithAI.seed\"");
+
+                            }
+                            if (request.ExpandMode != default)
+                            {
+
+                                __httpRequestContent.Add(
+                                    content: new global::System.Net.Http.StringContent(request.ExpandMode ?? string.Empty),
+                                    name: "\"expand.mode\"");
+
+                            }
+                            if (request.ExpandSeed != default)
+                            {
+
+                                __httpRequestContent.Add(
+                                    content: new global::System.Net.Http.StringContent(global::System.Convert.ToString(request.ExpandSeed, global::System.Globalization.CultureInfo.InvariantCulture) ?? string.Empty),
+                                    name: "\"expand.seed\"");
+
+                            }
+                            if (request.ExportDpi != default)
+                            {
+
+                                __httpRequestContent.Add(
+                                    content: new global::System.Net.Http.StringContent(global::System.Convert.ToString(request.ExportDpi, global::System.Globalization.CultureInfo.InvariantCulture) ?? string.Empty),
+                                    name: "\"export.dpi\"");
+
+                            }
+                            if (request.ExportFormat != default)
+                            {
+
+                                __httpRequestContent.Add(
+                                    content: new global::System.Net.Http.StringContent(request.ExportFormat ?? string.Empty),
+                                    name: "\"export.format\"");
+
+                            }
+                            if (request.FlatLayMode != default)
+                            {
+
+                                __httpRequestContent.Add(
+                                    content: new global::System.Net.Http.StringContent(request.FlatLayMode ?? string.Empty),
+                                    name: "\"flatLay.mode\"");
+
+                            }
+                            if (request.FlatLayPrompt != default)
+                            {
+
+                                __httpRequestContent.Add(
+                                    content: new global::System.Net.Http.StringContent(request.FlatLayPrompt ?? string.Empty),
+                                    name: "\"flatLay.prompt\"");
+
+                            }
+                            if (request.FlatLaySize != default)
+                            {
+
+                                __httpRequestContent.Add(
+                                    content: new global::System.Net.Http.StringContent(request.FlatLaySize ?? string.Empty),
+                                    name: "\"flatLay.size\"");
+
+                            }
+                            if (request.GhostMannequinMode != default)
+                            {
+
+                                __httpRequestContent.Add(
+                                    content: new global::System.Net.Http.StringContent(request.GhostMannequinMode ?? string.Empty),
+                                    name: "\"ghostMannequin.mode\"");
+
+                            }
+                            if (request.GhostMannequinPrompt != default)
+                            {
+
+                                __httpRequestContent.Add(
+                                    content: new global::System.Net.Http.StringContent(request.GhostMannequinPrompt ?? string.Empty),
+                                    name: "\"ghostMannequin.prompt\"");
+
+                            }
+                            if (request.GhostMannequinSize != default)
+                            {
+
+                                __httpRequestContent.Add(
+                                    content: new global::System.Net.Http.StringContent(request.GhostMannequinSize ?? string.Empty),
+                                    name: "\"ghostMannequin.size\"");
+
+                            }
+                            if (request.HorizontalAlignment != default)
+                            {
+
+                                __httpRequestContent.Add(
+                                    content: new global::System.Net.Http.StringContent(request.HorizontalAlignment ?? string.Empty),
+                                    name: "\"horizontalAlignment\"");
+
+                            }
+                            if (request.IgnorePaddingAndSnapOnCroppedSides != default)
+                            {
+
+                                __httpRequestContent.Add(
+                                    content: new global::System.Net.Http.StringContent((global::System.Convert.ToString(request.IgnorePaddingAndSnapOnCroppedSides, global::System.Globalization.CultureInfo.InvariantCulture) ?? string.Empty).ToLowerInvariant()),
+                                    name: "\"ignorePaddingAndSnapOnCroppedSides\"");
+
+                            }
+                            if (request.ImageFile != default)
+                            {
+
+                                var __contentImageFile = new global::System.Net.Http.ByteArrayContent(request.ImageFile ?? global::System.Array.Empty<byte>());
+                                __contentImageFile.Headers.ContentType = new global::System.Net.Http.Headers.MediaTypeHeaderValue(
+                                    request.ImageFilename is null
+                                        ? "application/octet-stream"
+                                        : (global::System.IO.Path.GetExtension(request.ImageFilename) ?? string.Empty).ToLowerInvariant() switch
+                                        {
+                                            ".aac" => "audio/aac",
+                                            ".flac" => "audio/flac",
+                                            ".gif" => "image/gif",
+                                            ".jpeg" => "image/jpeg",
+                                            ".jpg" => "image/jpeg",
+                                            ".json" => "application/json",
+                                            ".m4a" => "audio/mp4",
+                                            ".mp3" => "audio/mpeg",
+                                            ".mp4" => "video/mp4",
+                                            ".mpeg" => "audio/mpeg",
+                                            ".mpga" => "audio/mpeg",
+                                            ".oga" => "audio/ogg",
+                                            ".ogg" => "audio/ogg",
+                                            ".opus" => "audio/ogg",
+                                            ".pdf" => "application/pdf",
+                                            ".png" => "image/png",
+                                            ".txt" => "text/plain",
+                                            ".wav" => "audio/wav",
+                                            ".weba" => "audio/webm",
+                                            ".webm" => "video/webm",
+                                            ".webp" => "image/webp",
+                                            _ => "application/octet-stream",
+                                        });
+                                __httpRequestContent.Add(
+                                    content: __contentImageFile,
+                                    name: "\"imageFile\"",
+                                    fileName: request.ImageFilename != null ? $"\"{request.ImageFilename}\"" : string.Empty);
+                                if (__contentImageFile.Headers.ContentDisposition != null)
+                                {
+                                    __contentImageFile.Headers.ContentDisposition.FileNameStar = null;
+                                }
+
+                            }
+                            if (request.ImageFromPromptPrompt != default)
+                            {
+
+                                __httpRequestContent.Add(
+                                    content: new global::System.Net.Http.StringContent(request.ImageFromPromptPrompt ?? string.Empty),
+                                    name: "\"imageFromPrompt.prompt\"");
+
+                            }
+                            if (request.ImageFromPromptSeed != default)
+                            {
+
+                                __httpRequestContent.Add(
+                                    content: new global::System.Net.Http.StringContent(global::System.Convert.ToString(request.ImageFromPromptSeed, global::System.Globalization.CultureInfo.InvariantCulture) ?? string.Empty),
+                                    name: "\"imageFromPrompt.seed\"");
+
+                            }
+                            if (request.ImageFromPromptSize != default)
+                            {
+
+                                __httpRequestContent.Add(
+                                    content: new global::System.Net.Http.StringContent(request.ImageFromPromptSize ?? string.Empty),
+                                    name: "\"imageFromPrompt.size\"");
+
+                            }
+                            if (request.KeepExistingAlphaChannel != default)
+                            {
+
+                                __httpRequestContent.Add(
+                                    content: new global::System.Net.Http.StringContent(request.KeepExistingAlphaChannel ?? string.Empty),
+                                    name: "\"keepExistingAlphaChannel\"");
+
+                            }
+                            if (request.Layers != default)
+                            {
+
+                                __httpRequestContent.Add(
+                                    content: new global::System.Net.Http.StringContent(request.Layers.ToString() ?? string.Empty),
+                                    name: "\"layers\"");
+
+                            }
+                            if (request.LightingMode != default)
+                            {
+
+                                __httpRequestContent.Add(
+                                    content: new global::System.Net.Http.StringContent(request.LightingMode ?? string.Empty),
+                                    name: "\"lighting.mode\"");
+
+                            }
+                            if (request.Margin != default)
+                            {
+
+                                __httpRequestContent.Add(
+                                    content: new global::System.Net.Http.StringContent(request.Margin ?? string.Empty),
+                                    name: "\"margin\"");
+
+                            }
+                            if (request.MarginBottom != default)
+                            {
+
+                                __httpRequestContent.Add(
+                                    content: new global::System.Net.Http.StringContent(request.MarginBottom ?? string.Empty),
+                                    name: "\"marginBottom\"");
+
+                            }
+                            if (request.MarginLeft != default)
+                            {
+
+                                __httpRequestContent.Add(
+                                    content: new global::System.Net.Http.StringContent(request.MarginLeft ?? string.Empty),
+                                    name: "\"marginLeft\"");
+
+                            }
+                            if (request.MarginRight != default)
+                            {
+
+                                __httpRequestContent.Add(
+                                    content: new global::System.Net.Http.StringContent(request.MarginRight ?? string.Empty),
+                                    name: "\"marginRight\"");
+
+                            }
+                            if (request.MarginTop != default)
+                            {
+
+                                __httpRequestContent.Add(
+                                    content: new global::System.Net.Http.StringContent(request.MarginTop ?? string.Empty),
+                                    name: "\"marginTop\"");
+
+                            }
+                            if (request.MaxHeight != default)
+                            {
+
+                                __httpRequestContent.Add(
+                                    content: new global::System.Net.Http.StringContent(global::System.Convert.ToString(request.MaxHeight, global::System.Globalization.CultureInfo.InvariantCulture) ?? string.Empty),
+                                    name: "\"maxHeight\"");
+
+                            }
+                            if (request.MaxWidth != default)
+                            {
+
+                                __httpRequestContent.Add(
+                                    content: new global::System.Net.Http.StringContent(global::System.Convert.ToString(request.MaxWidth, global::System.Globalization.CultureInfo.InvariantCulture) ?? string.Empty),
+                                    name: "\"maxWidth\"");
+
+                            }
+                            if (request.OutlineBlurRadius != default)
+                            {
+
+                                __httpRequestContent.Add(
+                                    content: new global::System.Net.Http.StringContent(global::System.Convert.ToString(request.OutlineBlurRadius, global::System.Globalization.CultureInfo.InvariantCulture) ?? string.Empty),
+                                    name: "\"outline.blurRadius\"");
+
+                            }
+                            if (request.OutlineColor != default)
+                            {
+
+                                __httpRequestContent.Add(
+                                    content: new global::System.Net.Http.StringContent(request.OutlineColor ?? string.Empty),
+                                    name: "\"outline.color\"");
+
+                            }
+                            if (request.OutlineWidth != default)
+                            {
+
+                                __httpRequestContent.Add(
+                                    content: new global::System.Net.Http.StringContent(global::System.Convert.ToString(request.OutlineWidth, global::System.Globalization.CultureInfo.InvariantCulture) ?? string.Empty),
+                                    name: "\"outline.width\"");
+
+                            }
+                            if (request.OutputSize != default)
+                            {
+
+                                __httpRequestContent.Add(
+                                    content: new global::System.Net.Http.StringContent(request.OutputSize ?? string.Empty),
+                                    name: "\"outputSize\"");
+
+                            }
+                            if (request.Padding != default)
+                            {
+
+                                __httpRequestContent.Add(
+                                    content: new global::System.Net.Http.StringContent(request.Padding ?? string.Empty),
+                                    name: "\"padding\"");
+
+                            }
+                            if (request.PaddingBottom != default)
+                            {
+
+                                __httpRequestContent.Add(
+                                    content: new global::System.Net.Http.StringContent(request.PaddingBottom ?? string.Empty),
+                                    name: "\"paddingBottom\"");
+
+                            }
+                            if (request.PaddingLeft != default)
+                            {
+
+                                __httpRequestContent.Add(
+                                    content: new global::System.Net.Http.StringContent(request.PaddingLeft ?? string.Empty),
+                                    name: "\"paddingLeft\"");
+
+                            }
+                            if (request.PaddingRight != default)
+                            {
+
+                                __httpRequestContent.Add(
+                                    content: new global::System.Net.Http.StringContent(request.PaddingRight ?? string.Empty),
+                                    name: "\"paddingRight\"");
+
+                            }
+                            if (request.PaddingTop != default)
+                            {
+
+                                __httpRequestContent.Add(
+                                    content: new global::System.Net.Http.StringContent(request.PaddingTop ?? string.Empty),
+                                    name: "\"paddingTop\"");
+
+                            }
+                            if (request.PreserveMetadata != default)
+                            {
+
+                                __httpRequestContent.Add(
+                                    content: new global::System.Net.Http.StringContent(request.PreserveMetadata ?? string.Empty),
+                                    name: "\"preserveMetadata\"");
+
+                            }
+                            if (request.ReferenceBox != default)
+                            {
+
+                                __httpRequestContent.Add(
+                                    content: new global::System.Net.Http.StringContent(request.ReferenceBox ?? string.Empty),
+                                    name: "\"referenceBox\"");
+
+                            }
+                            if (request.RemoveBackground != default)
+                            {
+
+                                __httpRequestContent.Add(
+                                    content: new global::System.Net.Http.StringContent((global::System.Convert.ToString(request.RemoveBackground, global::System.Globalization.CultureInfo.InvariantCulture) ?? string.Empty).ToLowerInvariant()),
+                                    name: "\"removeBackground\"");
+
+                            }
+                            if (request.Scaling != default)
+                            {
+
+                                __httpRequestContent.Add(
+                                    content: new global::System.Net.Http.StringContent(request.Scaling ?? string.Empty),
+                                    name: "\"scaling\"");
+
+                            }
+                            if (request.SegmentationMode != default)
+                            {
+
+                                __httpRequestContent.Add(
+                                    content: new global::System.Net.Http.StringContent(request.SegmentationMode ?? string.Empty),
+                                    name: "\"segmentation.mode\"");
+
+                            }
+                            if (request.SegmentationNegativePrompt != default)
+                            {
+
+                                __httpRequestContent.Add(
+                                    content: new global::System.Net.Http.StringContent(request.SegmentationNegativePrompt ?? string.Empty),
+                                    name: "\"segmentation.negativePrompt\"");
+
+                            }
+                            if (request.SegmentationPrompt != default)
+                            {
+
+                                __httpRequestContent.Add(
+                                    content: new global::System.Net.Http.StringContent(request.SegmentationPrompt ?? string.Empty),
+                                    name: "\"segmentation.prompt\"");
+
+                            }
+                            if (request.ShadowMode != default)
+                            {
+
+                                __httpRequestContent.Add(
+                                    content: new global::System.Net.Http.StringContent(request.ShadowMode ?? string.Empty),
+                                    name: "\"shadow.mode\"");
+
+                            }
+                            if (request.TemplateId != default)
+                            {
+
+                                __httpRequestContent.Add(
+                                    content: new global::System.Net.Http.StringContent(request.TemplateId.ToString() ?? string.Empty),
+                                    name: "\"templateId\"");
+
+                            }
+                            if (request.TextRemovalMode != default)
+                            {
+
+                                __httpRequestContent.Add(
+                                    content: new global::System.Net.Http.StringContent(request.TextRemovalMode ?? string.Empty),
+                                    name: "\"textRemoval.mode\"");
+
+                            }
+                            if (request.UncropMode != default)
+                            {
+
+                                __httpRequestContent.Add(
+                                    content: new global::System.Net.Http.StringContent(request.UncropMode ?? string.Empty),
+                                    name: "\"uncrop.mode\"");
+
+                            }
+                            if (request.UncropSeed != default)
+                            {
+
+                                __httpRequestContent.Add(
+                                    content: new global::System.Net.Http.StringContent(global::System.Convert.ToString(request.UncropSeed, global::System.Globalization.CultureInfo.InvariantCulture) ?? string.Empty),
+                                    name: "\"uncrop.seed\"");
+
+                            }
+                            if (request.UpscaleMode != default)
+                            {
+
+                                __httpRequestContent.Add(
+                                    content: new global::System.Net.Http.StringContent(request.UpscaleMode ?? string.Empty),
+                                    name: "\"upscale.mode\"");
+
+                            }
+                            if (request.VerticalAlignment != default)
+                            {
+
+                                __httpRequestContent.Add(
+                                    content: new global::System.Net.Http.StringContent(request.VerticalAlignment ?? string.Empty),
+                                    name: "\"verticalAlignment\"");
+
+                            }
+                            if (request.VirtualModelAdditionalProductImages != default)
+                            {
+
+                                __httpRequestContent.Add(
+                                    content: new global::System.Net.Http.StringContent(request.VirtualModelAdditionalProductImages.ToString() ?? string.Empty),
+                                    name: "\"virtualModel.additionalProductImages\"");
+
+                            }
+                            if (request.VirtualModelMode != default)
+                            {
+
+                                __httpRequestContent.Add(
+                                    content: new global::System.Net.Http.StringContent(request.VirtualModelMode ?? string.Empty),
+                                    name: "\"virtualModel.mode\"");
+
+                            }
+                            if (request.VirtualModelModel != default)
+                            {
+
+                                __httpRequestContent.Add(
+                                    content: new global::System.Net.Http.StringContent(request.VirtualModelModel.ToString() ?? string.Empty),
+                                    name: "\"virtualModel.model\"");
+
+                            }
+                            if (request.VirtualModelPose != default)
+                            {
+
+                                __httpRequestContent.Add(
+                                    content: new global::System.Net.Http.StringContent(request.VirtualModelPose ?? string.Empty),
+                                    name: "\"virtualModel.pose\"");
+
+                            }
+                            if (request.VirtualModelPrompt != default)
+                            {
+
+                                __httpRequestContent.Add(
+                                    content: new global::System.Net.Http.StringContent(request.VirtualModelPrompt ?? string.Empty),
+                                    name: "\"virtualModel.prompt\"");
+
+                            }
+                            if (request.VirtualModelQuality != default)
+                            {
+
+                                __httpRequestContent.Add(
+                                    content: new global::System.Net.Http.StringContent(request.VirtualModelQuality ?? string.Empty),
+                                    name: "\"virtualModel.quality\"");
+
+                            }
+                            if (request.VirtualModelScene != default)
+                            {
+
+                                __httpRequestContent.Add(
+                                    content: new global::System.Net.Http.StringContent(request.VirtualModelScene.ToString() ?? string.Empty),
+                                    name: "\"virtualModel.scene\"");
+
+                            }
+                            if (request.VirtualModelSize != default)
+                            {
+
+                                __httpRequestContent.Add(
+                                    content: new global::System.Net.Http.StringContent(request.VirtualModelSize ?? string.Empty),
+                                    name: "\"virtualModel.size\"");
+
+                            }
+
+                            __httpRequest.Content = __httpRequestContent;
+
+                global::G.AutoSDKRequestOptionsSupport.ApplyHeaders(
+                    request: __httpRequest,
+                    clientHeaders: Options.Headers,
+                    requestHeaders: requestOptions?.Headers);
+
+                PrepareRequest(
+                    client: HttpClient,
+                    request: __httpRequest);
+                PrepareEditImagePostRequest(
+                    httpClient: HttpClient,
+                    httpRequestMessage: __httpRequest,
+                    request: request);
+
+                return __httpRequest;
+            }
+
+            global::System.Net.Http.HttpRequestMessage? __httpRequest = null;
+            global::System.Net.Http.HttpResponseMessage? __response = null;
+            var __attemptNumber = 0;
+            try
+            {
+                for (var __attempt = 1; __attempt <= __maxAttempts; __attempt++)
+                {
+                    __attemptNumber = __attempt;
+                    __httpRequest = __CreateHttpRequest();
+                    await global::G.AutoSDKRequestOptionsSupport.OnBeforeRequestAsync(
+                            clientOptions: Options,
+                            context: global::G.AutoSDKRequestOptionsSupport.CreateHookContext(
+                                operationId: "EditImagePost",
+                                methodName: "EditImagePostAsync",
+                                pathTemplate: "\"/v2/edit\"",
+                                httpMethod: "POST",
+                                baseUri: BaseUri,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
+                                response: null,
+                                exception: null,
+                                clientOptions: Options,
+                                requestOptions: requestOptions,
+                                attempt: __attempt,
+                                maxAttempts: __maxAttempts,
+                                willRetry: false,
+                                retryDelay: null,
+                                retryReason: global::System.String.Empty,
+                                cancellationToken: __effectiveCancellationToken)).ConfigureAwait(false);
+                    try
+                    {
+                        __response = await HttpClient.SendAsync(
+                request: __httpRequest,
+                completionOption: global::System.Net.Http.HttpCompletionOption.ResponseHeadersRead,
+                cancellationToken: __effectiveCancellationToken).ConfigureAwait(false);
+                    }
+                    catch (global::System.Net.Http.HttpRequestException __exception)
+                    {
+                        var __retryDelay = global::G.AutoSDKRequestOptionsSupport.GetRetryDelay(
+                            clientOptions: Options,
+                            requestOptions: requestOptions,
+                            response: null,
+                            attempt: __attempt);
+                        var __willRetry = __attempt < __maxAttempts && !__effectiveCancellationToken.IsCancellationRequested;
+                        await global::G.AutoSDKRequestOptionsSupport.OnAfterErrorAsync(
+                            clientOptions: Options,
+                            context: global::G.AutoSDKRequestOptionsSupport.CreateHookContext(
+                                operationId: "EditImagePost",
+                                methodName: "EditImagePostAsync",
+                                pathTemplate: "\"/v2/edit\"",
+                                httpMethod: "POST",
+                                baseUri: BaseUri,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
+                                response: null,
+                                exception: __exception,
+                                clientOptions: Options,
+                                requestOptions: requestOptions,
+                                attempt: __attempt,
+                                maxAttempts: __maxAttempts,
+                                willRetry: __willRetry,
+                                retryDelay: __willRetry ? __retryDelay : (global::System.TimeSpan?)null,
+                                retryReason: "exception",
+                                cancellationToken: __effectiveCancellationToken)).ConfigureAwait(false);
+                        if (!__willRetry)
+                        {
+                            throw;
+                        }
+
+                        __httpRequest.Dispose();
+                        __httpRequest = null;
+                        await global::G.AutoSDKRequestOptionsSupport.DelayBeforeRetryAsync(
+                            retryDelay: __retryDelay,
+                            cancellationToken: __effectiveCancellationToken).ConfigureAwait(false);
+                        continue;
+                    }
+
+                    if (__response != null &&
+                        __attempt < __maxAttempts &&
+                        global::G.AutoSDKRequestOptionsSupport.ShouldRetryStatusCode(__response.StatusCode))
+                    {
+                        var __retryDelay = global::G.AutoSDKRequestOptionsSupport.GetRetryDelay(
+                            clientOptions: Options,
+                            requestOptions: requestOptions,
+                            response: __response,
+                            attempt: __attempt);
+                        await global::G.AutoSDKRequestOptionsSupport.OnAfterErrorAsync(
+                            clientOptions: Options,
+                            context: global::G.AutoSDKRequestOptionsSupport.CreateHookContext(
+                                operationId: "EditImagePost",
+                                methodName: "EditImagePostAsync",
+                                pathTemplate: "\"/v2/edit\"",
+                                httpMethod: "POST",
+                                baseUri: BaseUri,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
+                                response: __response,
+                                exception: null,
+                                clientOptions: Options,
+                                requestOptions: requestOptions,
+                                attempt: __attempt,
+                                maxAttempts: __maxAttempts,
+                                willRetry: true,
+                                retryDelay: __retryDelay,
+                                retryReason: "status:" + ((int)__response.StatusCode).ToString(global::System.Globalization.CultureInfo.InvariantCulture),
+                                cancellationToken: __effectiveCancellationToken)).ConfigureAwait(false);
+                        __response.Dispose();
+                        __response = null;
+                        __httpRequest.Dispose();
+                        __httpRequest = null;
+                        await global::G.AutoSDKRequestOptionsSupport.DelayBeforeRetryAsync(
+                            retryDelay: __retryDelay,
+                            cancellationToken: __effectiveCancellationToken).ConfigureAwait(false);
+                        continue;
+                    }
+
+                    break;
+                }
+
+                if (__response == null)
+                {
+                    throw new global::System.InvalidOperationException("No response received.");
+                }
+
+                try
+                {
+
+                ProcessResponse(
+                    client: HttpClient,
+                    response: __response);
+                ProcessEditImagePostResponse(
+                    httpClient: HttpClient,
+                    httpResponseMessage: __response);
+                if (__response.IsSuccessStatusCode)
+                {
+                    await global::G.AutoSDKRequestOptionsSupport.OnAfterSuccessAsync(
+                            clientOptions: Options,
+                            context: global::G.AutoSDKRequestOptionsSupport.CreateHookContext(
+                                operationId: "EditImagePost",
+                                methodName: "EditImagePostAsync",
+                                pathTemplate: "\"/v2/edit\"",
+                                httpMethod: "POST",
+                                baseUri: BaseUri,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
+                                response: __response,
+                                exception: null,
+                                clientOptions: Options,
+                                requestOptions: requestOptions,
+                                attempt: __attemptNumber,
+                                maxAttempts: __maxAttempts,
+                                willRetry: false,
+                                retryDelay: null,
+                                retryReason: global::System.String.Empty,
+                                cancellationToken: __effectiveCancellationToken)).ConfigureAwait(false);
+                }
+                else
+                {
+                    await global::G.AutoSDKRequestOptionsSupport.OnAfterErrorAsync(
+                            clientOptions: Options,
+                            context: global::G.AutoSDKRequestOptionsSupport.CreateHookContext(
+                                operationId: "EditImagePost",
+                                methodName: "EditImagePostAsync",
+                                pathTemplate: "\"/v2/edit\"",
+                                httpMethod: "POST",
+                                baseUri: BaseUri,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
+                                response: __response,
+                                exception: null,
+                                clientOptions: Options,
+                                requestOptions: requestOptions,
+                                attempt: __attemptNumber,
+                                maxAttempts: __maxAttempts,
+                                willRetry: false,
+                                retryDelay: null,
+                                retryReason: global::System.String.Empty,
+                                cancellationToken: __effectiveCancellationToken)).ConfigureAwait(false);
+                }
+                            // Bad Request
+                            if ((int)__response.StatusCode == 400)
+                            {
+                                string? __content_400 = null;
+                                global::System.Exception? __exception_400 = null;
+                                global::G.EditImageBadRequest? __value_400 = null;
+                                try
+                                {
+                                    if (__effectiveReadResponseAsString)
+                                    {
+                                        __content_400 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
+                                        __value_400 = global::G.EditImageBadRequest.FromJson(__content_400, JsonSerializerOptions);
+                                    }
+                                    else
+                                    {
+                                        __content_400 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
+
+                                        __value_400 = global::G.EditImageBadRequest.FromJson(__content_400, JsonSerializerOptions);
+                                    }
+                                }
+                                catch (global::System.Exception __ex)
+                                {
+                                    __exception_400 = __ex;
+                                }
+
+
+                                throw global::G.ApiException<global::G.EditImageBadRequest>.Create(
+                                    statusCode: __response.StatusCode,
+                                    message: __content_400 ?? __response.ReasonPhrase ?? string.Empty,
+                                    innerException: __exception_400,
+                                    responseBody: __content_400,
+                                    responseObject: __value_400,
+                                    responseHeaders: global::System.Linq.Enumerable.ToDictionary(
+                                        __response.Headers,
+                                        h => h.Key,
+                                        h => h.Value));
+                            }
+                            // Payment Required
+                            if ((int)__response.StatusCode == 402)
+                            {
+                                string? __content_402 = null;
+                                global::System.Exception? __exception_402 = null;
+                                global::G.PaymentError? __value_402 = null;
+                                try
+                                {
+                                    if (__effectiveReadResponseAsString)
+                                    {
+                                        __content_402 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
+                                        __value_402 = global::G.PaymentError.FromJson(__content_402, JsonSerializerOptions);
+                                    }
+                                    else
+                                    {
+                                        __content_402 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
+
+                                        __value_402 = global::G.PaymentError.FromJson(__content_402, JsonSerializerOptions);
+                                    }
+                                }
+                                catch (global::System.Exception __ex)
+                                {
+                                    __exception_402 = __ex;
+                                }
+
+
+                                throw global::G.ApiException<global::G.PaymentError>.Create(
+                                    statusCode: __response.StatusCode,
+                                    message: __content_402 ?? __response.ReasonPhrase ?? string.Empty,
+                                    innerException: __exception_402,
+                                    responseBody: __content_402,
+                                    responseObject: __value_402,
+                                    responseHeaders: global::System.Linq.Enumerable.ToDictionary(
+                                        __response.Headers,
+                                        h => h.Key,
+                                        h => h.Value));
+                            }
+                            // Internal Server Error
+                            if ((int)__response.StatusCode == 500)
+                            {
+                                string? __content_500 = null;
+                                global::System.Exception? __exception_500 = null;
+                                global::G.UnknownError? __value_500 = null;
+                                try
+                                {
+                                    if (__effectiveReadResponseAsString)
+                                    {
+                                        __content_500 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
+                                        __value_500 = global::G.UnknownError.FromJson(__content_500, JsonSerializerOptions);
+                                    }
+                                    else
+                                    {
+                                        __content_500 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
+
+                                        __value_500 = global::G.UnknownError.FromJson(__content_500, JsonSerializerOptions);
+                                    }
+                                }
+                                catch (global::System.Exception __ex)
+                                {
+                                    __exception_500 = __ex;
+                                }
+
+
+                                throw global::G.ApiException<global::G.UnknownError>.Create(
+                                    statusCode: __response.StatusCode,
+                                    message: __content_500 ?? __response.ReasonPhrase ?? string.Empty,
+                                    innerException: __exception_500,
+                                    responseBody: __content_500,
+                                    responseObject: __value_500,
+                                    responseHeaders: global::System.Linq.Enumerable.ToDictionary(
+                                        __response.Headers,
+                                        h => h.Key,
+                                        h => h.Value));
+                            }
+
+                            try
+                            {
+                                __response.EnsureSuccessStatusCode();
+
+                                var __content = await __response.Content.ReadAsStreamAsync(
+                #if NET5_0_OR_GREATER
+                                    __effectiveCancellationToken
+                #endif
+                                ).ConfigureAwait(false);
+
+                                return new global::G.AutoSDKHttpResponse<global::System.IO.Stream>(
+                                    statusCode: __response.StatusCode,
+                                    headers: global::G.AutoSDKHttpResponse.CreateHeaders(__response),
+                                    requestUri: __response.RequestMessage?.RequestUri,
+                                    body: new global::G.ResponseStream(__response, __content));
+                            }
+                            catch (global::System.OperationCanceledException)
+                            {
+                                throw;
+                            }
                             catch (global::System.Exception __ex)
                             {
                                 string? __content = null;

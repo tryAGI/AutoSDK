@@ -1,4 +1,4 @@
-﻿//HintName: G.IVoiceChangerClient.VoiceChangerBytes.g.cs
+//HintName: G.IVoiceChangerClient.VoiceChangerBytes.g.cs
 #nullable enable
 
 namespace G
@@ -36,6 +36,25 @@ namespace G
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::G.ApiException"></exception>
         global::System.Threading.Tasks.Task<global::System.IO.Stream> VoiceChangerBytesAsStreamAsync(
+            global::G.VoiceChangerBytesCartesiaVersion cartesiaVersion,
+
+            global::G.VoiceChangerBytesRequest request,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
+            global::System.Threading.CancellationToken cancellationToken = default);
+        /// <summary>
+        /// Voice Changer (Bytes)<br/>
+        /// Takes an audio file of speech, and returns an audio file of speech spoken with the same intonation, but with a different voice.<br/>
+        /// This endpoint is priced at 15 characters per second of input audio.
+        /// </summary>
+        /// <param name="cartesiaVersion">
+        /// Example: 2025-04-16
+        /// </param>
+        /// <param name="request"></param>
+        /// <returns>The response metadata and an unbuffered body stream. The caller must dispose Body to release the HTTP response.</returns>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
+        /// <param name="cancellationToken">The token to cancel the operation with</param>
+        /// <exception cref="global::G.ApiException"></exception>
+        global::System.Threading.Tasks.Task<global::G.AutoSDKHttpResponse<global::System.IO.Stream>> VoiceChangerBytesAsStreamAsResponseAsync(
             global::G.VoiceChangerBytesCartesiaVersion cartesiaVersion,
 
             global::G.VoiceChangerBytesRequest request,

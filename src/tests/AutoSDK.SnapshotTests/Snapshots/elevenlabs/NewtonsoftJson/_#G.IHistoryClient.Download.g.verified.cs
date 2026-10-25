@@ -1,4 +1,4 @@
-﻿//HintName: G.IHistoryClient.Download.g.cs
+//HintName: G.IHistoryClient.Download.g.cs
 #nullable enable
 
 namespace G
@@ -34,6 +34,24 @@ namespace G
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::G.ApiException"></exception>
         global::System.Threading.Tasks.Task<global::System.IO.Stream> DownloadAsStreamAsync(
+
+            global::G.BodyDownloadHistoryItemsV1HistoryDownloadPost request,
+            string? xiApiKey = default,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
+            global::System.Threading.CancellationToken cancellationToken = default);
+        /// <summary>
+        /// Download History Items<br/>
+        /// Download one or more history items. If one history item ID is provided, we will return a single audio file. If more than one history item IDs are provided, we will provide the history items packed into a .zip file.
+        /// </summary>
+        /// <param name="xiApiKey">
+        /// Your API key. This is required by most endpoints to access our API programmatically. You can view your xi-api-key using the 'Profile' tab on the website.
+        /// </param>
+        /// <param name="request"></param>
+        /// <returns>The response metadata and an unbuffered body stream. The caller must dispose Body to release the HTTP response.</returns>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
+        /// <param name="cancellationToken">The token to cancel the operation with</param>
+        /// <exception cref="global::G.ApiException"></exception>
+        global::System.Threading.Tasks.Task<global::G.AutoSDKHttpResponse<global::System.IO.Stream>> DownloadAsStreamAsResponseAsync(
 
             global::G.BodyDownloadHistoryItemsV1HistoryDownloadPost request,
             string? xiApiKey = default,

@@ -471,6 +471,438 @@ namespace G
 
                                 return new global::G.ResponseStream(__response, __content);
                             }
+                            catch (global::System.OperationCanceledException)
+                            {
+                                throw;
+                            }
+                            catch (global::System.Exception __ex)
+                            {
+                                string? __content = null;
+                                try
+                                {
+                                    __content = await __response.Content.ReadAsStringAsync(
+                #if NET5_0_OR_GREATER
+                                        __effectiveCancellationToken
+                #endif
+                                    ).ConfigureAwait(false);
+                                }
+                                catch (global::System.Exception)
+                                {
+                                }
+
+                                throw global::G.ApiException.Create(
+                                    statusCode: __response.StatusCode,
+                                    message: __content ?? __response.ReasonPhrase ?? string.Empty,
+                                    innerException: __ex,
+                                    responseBody: __content,
+                                    responseHeaders: global::System.Linq.Enumerable.ToDictionary(
+                                        __response.Headers,
+                                        h => h.Key,
+                                        h => h.Value));
+                            }
+
+                }
+                catch
+                {
+                    __response.Dispose();
+                    throw;
+                }
+            }
+            finally
+            {
+                __httpRequest?.Dispose();
+            }
+        }
+        /// <summary>
+        /// Text To Speech<br/>
+        /// Converts text into speech using a voice of your choice and returns audio.
+        /// </summary>
+        /// <param name="voiceId">
+        /// Voice ID to be used, you can use https://api.elevenlabs.io/v1/voices to list all the available voices.
+        /// </param>
+        /// <param name="enableLogging">
+        /// When enable_logging is set to false zero retention mode will be used for the request. This will mean history features are unavailable for this request, including request stitching. Zero retention mode may only be used by enterprise customers.<br/>
+        /// Default Value: true
+        /// </param>
+        /// <param name="optimizeStreamingLatency">
+        /// You can turn on latency optimizations at some cost of quality. The best possible final latency varies by model. Possible values:<br/>
+        /// 0 - default mode (no latency optimizations)<br/>
+        /// 1 - normal latency optimizations (about 50% of possible latency improvement of option 3)<br/>
+        /// 2 - strong latency optimizations (about 75% of possible latency improvement of option 3)<br/>
+        /// 3 - max latency optimizations<br/>
+        /// 4 - max latency optimizations, but also with text normalizer turned off for even more latency savings (best latency, but can mispronounce eg numbers and dates).<br/>
+        /// Defaults to None.
+        /// </param>
+        /// <param name="outputFormat">
+        /// Output format of the generated audio. Formatted as codec_sample_rate_bitrate. So an mp3 with 22.05kHz sample rate at 32kbs is represented as mp3_22050_32. MP3 with 192kbps bitrate requires you to be subscribed to Creator tier or above. PCM and WAV formats with 44.1kHz sample rate requires you to be subscribed to Pro tier or above. Note that the μ-law format (sometimes written mu-law, often approximated as u-law) is commonly used for Twilio audio inputs.<br/>
+        /// Default Value: mp3_44100_128
+        /// </param>
+        /// <param name="xiApiKey">
+        /// Your API key. This is required by most endpoints to access our API programmatically. You can view your xi-api-key using the 'Profile' tab on the website.
+        /// </param>
+        /// <param name="request"></param>
+        /// <returns>The response metadata and an unbuffered body stream. The caller must dispose Body to release the HTTP response.</returns>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
+        /// <param name="cancellationToken">The token to cancel the operation with</param>
+        /// <exception cref="global::G.ApiException"></exception>
+        public async global::System.Threading.Tasks.Task<global::G.AutoSDKHttpResponse<global::System.IO.Stream>> ConvertAsStreamAsResponseAsync(
+            string voiceId,
+
+            global::G.BodyTextToSpeechFull request,
+            bool? enableLogging = default,
+            int? optimizeStreamingLatency = default,
+            global::G.TextToSpeechFullOutputFormat? outputFormat = default,
+            string? xiApiKey = default,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
+            global::System.Threading.CancellationToken cancellationToken = default)
+        {
+            request = request ?? throw new global::System.ArgumentNullException(nameof(request));
+
+            PrepareArguments(
+                client: HttpClient);
+            PrepareConvertArguments(
+                httpClient: HttpClient,
+                voiceId: ref voiceId,
+                enableLogging: ref enableLogging,
+                optimizeStreamingLatency: optimizeStreamingLatency,
+                outputFormat: ref outputFormat,
+                xiApiKey: ref xiApiKey,
+                request: request);
+
+            var outputFormatValue = outputFormat switch
+            {
+                global::G.TextToSpeechFullOutputFormat.Alaw8000 => "alaw_8000",
+                global::G.TextToSpeechFullOutputFormat.Mp32205032 => "mp3_22050_32",
+                global::G.TextToSpeechFullOutputFormat.Mp32400048 => "mp3_24000_48",
+                global::G.TextToSpeechFullOutputFormat.Mp344100128 => "mp3_44100_128",
+                global::G.TextToSpeechFullOutputFormat.Mp344100192 => "mp3_44100_192",
+                global::G.TextToSpeechFullOutputFormat.Mp34410032 => "mp3_44100_32",
+                global::G.TextToSpeechFullOutputFormat.Mp34410064 => "mp3_44100_64",
+                global::G.TextToSpeechFullOutputFormat.Mp34410096 => "mp3_44100_96",
+                global::G.TextToSpeechFullOutputFormat.Opus48000128 => "opus_48000_128",
+                global::G.TextToSpeechFullOutputFormat.Opus48000192 => "opus_48000_192",
+                global::G.TextToSpeechFullOutputFormat.Opus4800032 => "opus_48000_32",
+                global::G.TextToSpeechFullOutputFormat.Opus4800064 => "opus_48000_64",
+                global::G.TextToSpeechFullOutputFormat.Opus4800096 => "opus_48000_96",
+                global::G.TextToSpeechFullOutputFormat.Pcm16000 => "pcm_16000",
+                global::G.TextToSpeechFullOutputFormat.Pcm22050 => "pcm_22050",
+                global::G.TextToSpeechFullOutputFormat.Pcm24000 => "pcm_24000",
+                global::G.TextToSpeechFullOutputFormat.Pcm32000 => "pcm_32000",
+                global::G.TextToSpeechFullOutputFormat.Pcm44100 => "pcm_44100",
+                global::G.TextToSpeechFullOutputFormat.Pcm48000 => "pcm_48000",
+                global::G.TextToSpeechFullOutputFormat.Pcm8000 => "pcm_8000",
+                global::G.TextToSpeechFullOutputFormat.Ulaw8000 => "ulaw_8000",
+                global::G.TextToSpeechFullOutputFormat.Wav16000 => "wav_16000",
+                global::G.TextToSpeechFullOutputFormat.Wav22050 => "wav_22050",
+                global::G.TextToSpeechFullOutputFormat.Wav24000 => "wav_24000",
+                global::G.TextToSpeechFullOutputFormat.Wav32000 => "wav_32000",
+                global::G.TextToSpeechFullOutputFormat.Wav44100 => "wav_44100",
+                global::G.TextToSpeechFullOutputFormat.Wav48000 => "wav_48000",
+                global::G.TextToSpeechFullOutputFormat.Wav8000 => "wav_8000",
+                _ => throw new global::System.NotImplementedException("Enum value not implemented."),
+            };
+            using var __timeoutCancellationTokenSource = global::G.AutoSDKRequestOptionsSupport.CreateTimeoutCancellationTokenSource(
+                clientOptions: Options,
+                requestOptions: requestOptions,
+                cancellationToken: cancellationToken);
+            var __effectiveCancellationToken = __timeoutCancellationTokenSource?.Token ?? cancellationToken;
+            var __effectiveReadResponseAsString = global::G.AutoSDKRequestOptionsSupport.GetReadResponseAsString(
+                clientOptions: Options,
+                requestOptions: requestOptions,
+                fallbackValue: ReadResponseAsString);
+            var __maxAttempts = global::G.AutoSDKRequestOptionsSupport.GetMaxAttempts(
+                clientOptions: Options,
+                requestOptions: requestOptions,
+                supportsRetry: true);
+
+            global::System.Net.Http.HttpRequestMessage __CreateHttpRequest()
+            {
+
+                            var __pathBuilder = new global::G.PathBuilder(
+                                path: $"/v1/text-to-speech/{voiceId}",
+                                baseUri: HttpClient.BaseAddress);
+                            __pathBuilder
+                                .AddOptionalParameter("enable_logging", enableLogging?.ToString().ToLowerInvariant())
+                                .AddOptionalParameter("optimize_streaming_latency", optimizeStreamingLatency?.ToString())
+                                .AddOptionalParameter("output_format", outputFormat?.ToValueString())
+                                ;
+                            var __path = __pathBuilder.ToString();
+                __path = global::G.AutoSDKRequestOptionsSupport.AppendQueryParameters(
+                    path: __path,
+                    clientParameters: Options.QueryParameters,
+                    requestParameters: requestOptions?.QueryParameters);
+                var __httpRequest = new global::System.Net.Http.HttpRequestMessage(
+                    method: global::System.Net.Http.HttpMethod.Post,
+                    requestUri: new global::System.Uri(__path, global::System.UriKind.RelativeOrAbsolute));
+#if NET6_0_OR_GREATER
+                __httpRequest.Version = global::System.Net.HttpVersion.Version11;
+                __httpRequest.VersionPolicy = global::System.Net.Http.HttpVersionPolicy.RequestVersionOrHigher;
+#endif
+
+            if (xiApiKey != default)
+            {
+                __httpRequest.Headers.TryAddWithoutValidation("xi-api-key", xiApiKey.ToString());
+            }
+
+                            var __httpRequestContentBody = request.ToJson(JsonSerializerOptions);
+                            var __httpRequestContent = new global::System.Net.Http.StringContent(
+                                content: __httpRequestContentBody,
+                                encoding: global::System.Text.Encoding.UTF8,
+                                mediaType: "application/json");
+                            __httpRequest.Content = __httpRequestContent;
+                global::G.AutoSDKRequestOptionsSupport.ApplyHeaders(
+                    request: __httpRequest,
+                    clientHeaders: Options.Headers,
+                    requestHeaders: requestOptions?.Headers);
+
+                PrepareRequest(
+                    client: HttpClient,
+                    request: __httpRequest);
+                PrepareConvertRequest(
+                    httpClient: HttpClient,
+                    httpRequestMessage: __httpRequest,
+                    voiceId: voiceId,
+                    enableLogging: enableLogging,
+                    optimizeStreamingLatency: optimizeStreamingLatency,
+                    outputFormat: outputFormat,
+                    xiApiKey: xiApiKey,
+                    request: request);
+
+                return __httpRequest;
+            }
+
+            global::System.Net.Http.HttpRequestMessage? __httpRequest = null;
+            global::System.Net.Http.HttpResponseMessage? __response = null;
+            var __attemptNumber = 0;
+            try
+            {
+                for (var __attempt = 1; __attempt <= __maxAttempts; __attempt++)
+                {
+                    __attemptNumber = __attempt;
+                    __httpRequest = __CreateHttpRequest();
+                    await global::G.AutoSDKRequestOptionsSupport.OnBeforeRequestAsync(
+                            clientOptions: Options,
+                            context: global::G.AutoSDKRequestOptionsSupport.CreateHookContext(
+                                operationId: "Convert",
+                                methodName: "ConvertAsync",
+                                pathTemplate: "$\"/v1/text-to-speech/{voiceId}\"",
+                                httpMethod: "POST",
+                                baseUri: BaseUri,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
+                                response: null,
+                                exception: null,
+                                clientOptions: Options,
+                                requestOptions: requestOptions,
+                                attempt: __attempt,
+                                maxAttempts: __maxAttempts,
+                                willRetry: false,
+                                retryDelay: null,
+                                retryReason: global::System.String.Empty,
+                                cancellationToken: __effectiveCancellationToken)).ConfigureAwait(false);
+                    try
+                    {
+                        __response = await HttpClient.SendAsync(
+                request: __httpRequest,
+                completionOption: global::System.Net.Http.HttpCompletionOption.ResponseHeadersRead,
+                cancellationToken: __effectiveCancellationToken).ConfigureAwait(false);
+                    }
+                    catch (global::System.Net.Http.HttpRequestException __exception)
+                    {
+                        var __retryDelay = global::G.AutoSDKRequestOptionsSupport.GetRetryDelay(
+                            clientOptions: Options,
+                            requestOptions: requestOptions,
+                            response: null,
+                            attempt: __attempt);
+                        var __willRetry = __attempt < __maxAttempts && !__effectiveCancellationToken.IsCancellationRequested;
+                        await global::G.AutoSDKRequestOptionsSupport.OnAfterErrorAsync(
+                            clientOptions: Options,
+                            context: global::G.AutoSDKRequestOptionsSupport.CreateHookContext(
+                                operationId: "Convert",
+                                methodName: "ConvertAsync",
+                                pathTemplate: "$\"/v1/text-to-speech/{voiceId}\"",
+                                httpMethod: "POST",
+                                baseUri: BaseUri,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
+                                response: null,
+                                exception: __exception,
+                                clientOptions: Options,
+                                requestOptions: requestOptions,
+                                attempt: __attempt,
+                                maxAttempts: __maxAttempts,
+                                willRetry: __willRetry,
+                                retryDelay: __willRetry ? __retryDelay : (global::System.TimeSpan?)null,
+                                retryReason: "exception",
+                                cancellationToken: __effectiveCancellationToken)).ConfigureAwait(false);
+                        if (!__willRetry)
+                        {
+                            throw;
+                        }
+
+                        __httpRequest.Dispose();
+                        __httpRequest = null;
+                        await global::G.AutoSDKRequestOptionsSupport.DelayBeforeRetryAsync(
+                            retryDelay: __retryDelay,
+                            cancellationToken: __effectiveCancellationToken).ConfigureAwait(false);
+                        continue;
+                    }
+
+                    if (__response != null &&
+                        __attempt < __maxAttempts &&
+                        global::G.AutoSDKRequestOptionsSupport.ShouldRetryStatusCode(__response.StatusCode))
+                    {
+                        var __retryDelay = global::G.AutoSDKRequestOptionsSupport.GetRetryDelay(
+                            clientOptions: Options,
+                            requestOptions: requestOptions,
+                            response: __response,
+                            attempt: __attempt);
+                        await global::G.AutoSDKRequestOptionsSupport.OnAfterErrorAsync(
+                            clientOptions: Options,
+                            context: global::G.AutoSDKRequestOptionsSupport.CreateHookContext(
+                                operationId: "Convert",
+                                methodName: "ConvertAsync",
+                                pathTemplate: "$\"/v1/text-to-speech/{voiceId}\"",
+                                httpMethod: "POST",
+                                baseUri: BaseUri,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
+                                response: __response,
+                                exception: null,
+                                clientOptions: Options,
+                                requestOptions: requestOptions,
+                                attempt: __attempt,
+                                maxAttempts: __maxAttempts,
+                                willRetry: true,
+                                retryDelay: __retryDelay,
+                                retryReason: "status:" + ((int)__response.StatusCode).ToString(global::System.Globalization.CultureInfo.InvariantCulture),
+                                cancellationToken: __effectiveCancellationToken)).ConfigureAwait(false);
+                        __response.Dispose();
+                        __response = null;
+                        __httpRequest.Dispose();
+                        __httpRequest = null;
+                        await global::G.AutoSDKRequestOptionsSupport.DelayBeforeRetryAsync(
+                            retryDelay: __retryDelay,
+                            cancellationToken: __effectiveCancellationToken).ConfigureAwait(false);
+                        continue;
+                    }
+
+                    break;
+                }
+
+                if (__response == null)
+                {
+                    throw new global::System.InvalidOperationException("No response received.");
+                }
+
+                try
+                {
+
+                ProcessResponse(
+                    client: HttpClient,
+                    response: __response);
+                ProcessConvertResponse(
+                    httpClient: HttpClient,
+                    httpResponseMessage: __response);
+                if (__response.IsSuccessStatusCode)
+                {
+                    await global::G.AutoSDKRequestOptionsSupport.OnAfterSuccessAsync(
+                            clientOptions: Options,
+                            context: global::G.AutoSDKRequestOptionsSupport.CreateHookContext(
+                                operationId: "Convert",
+                                methodName: "ConvertAsync",
+                                pathTemplate: "$\"/v1/text-to-speech/{voiceId}\"",
+                                httpMethod: "POST",
+                                baseUri: BaseUri,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
+                                response: __response,
+                                exception: null,
+                                clientOptions: Options,
+                                requestOptions: requestOptions,
+                                attempt: __attemptNumber,
+                                maxAttempts: __maxAttempts,
+                                willRetry: false,
+                                retryDelay: null,
+                                retryReason: global::System.String.Empty,
+                                cancellationToken: __effectiveCancellationToken)).ConfigureAwait(false);
+                }
+                else
+                {
+                    await global::G.AutoSDKRequestOptionsSupport.OnAfterErrorAsync(
+                            clientOptions: Options,
+                            context: global::G.AutoSDKRequestOptionsSupport.CreateHookContext(
+                                operationId: "Convert",
+                                methodName: "ConvertAsync",
+                                pathTemplate: "$\"/v1/text-to-speech/{voiceId}\"",
+                                httpMethod: "POST",
+                                baseUri: BaseUri,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
+                                response: __response,
+                                exception: null,
+                                clientOptions: Options,
+                                requestOptions: requestOptions,
+                                attempt: __attemptNumber,
+                                maxAttempts: __maxAttempts,
+                                willRetry: false,
+                                retryDelay: null,
+                                retryReason: global::System.String.Empty,
+                                cancellationToken: __effectiveCancellationToken)).ConfigureAwait(false);
+                }
+                            // Validation Error
+                            if ((int)__response.StatusCode == 422)
+                            {
+                                string? __content_422 = null;
+                                global::System.Exception? __exception_422 = null;
+                                global::G.HTTPValidationError? __value_422 = null;
+                                try
+                                {
+                                    if (__effectiveReadResponseAsString)
+                                    {
+                                        __content_422 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
+                                        __value_422 = global::G.HTTPValidationError.FromJson(__content_422, JsonSerializerOptions);
+                                    }
+                                    else
+                                    {
+                                        __content_422 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
+
+                                        __value_422 = global::G.HTTPValidationError.FromJson(__content_422, JsonSerializerOptions);
+                                    }
+                                }
+                                catch (global::System.Exception __ex)
+                                {
+                                    __exception_422 = __ex;
+                                }
+
+
+                                throw global::G.ApiException<global::G.HTTPValidationError>.Create(
+                                    statusCode: __response.StatusCode,
+                                    message: __content_422 ?? __response.ReasonPhrase ?? string.Empty,
+                                    innerException: __exception_422,
+                                    responseBody: __content_422,
+                                    responseObject: __value_422,
+                                    responseHeaders: global::System.Linq.Enumerable.ToDictionary(
+                                        __response.Headers,
+                                        h => h.Key,
+                                        h => h.Value));
+                            }
+
+                            try
+                            {
+                                __response.EnsureSuccessStatusCode();
+
+                                var __content = await __response.Content.ReadAsStreamAsync(
+                #if NET5_0_OR_GREATER
+                                    __effectiveCancellationToken
+                #endif
+                                ).ConfigureAwait(false);
+
+                                return new global::G.AutoSDKHttpResponse<global::System.IO.Stream>(
+                                    statusCode: __response.StatusCode,
+                                    headers: global::G.AutoSDKHttpResponse.CreateHeaders(__response),
+                                    requestUri: __response.RequestMessage?.RequestUri,
+                                    body: new global::G.ResponseStream(__response, __content));
+                            }
+                            catch (global::System.OperationCanceledException)
+                            {
+                                throw;
+                            }
                             catch (global::System.Exception __ex)
                             {
                                 string? __content = null;

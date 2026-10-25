@@ -408,6 +408,10 @@ namespace G
                                     requestUri: __response.RequestMessage?.RequestUri,
                                     body: new global::G.ResponseStream(__response, __content));
                             }
+                            catch (global::System.OperationCanceledException)
+                            {
+                                throw;
+                            }
                             catch (global::System.Exception __ex)
                             {
                                 string? __content = null;
@@ -861,6 +865,10 @@ namespace G
 
                                 return new global::G.ResponseStream(__response, __content);
                             }
+                            catch (global::System.OperationCanceledException)
+                            {
+                                throw;
+                            }
                             catch (global::System.Exception __ex)
                             {
                                 string? __content = null;
@@ -1275,6 +1283,10 @@ namespace G
                                     headers: global::G.AutoSDKHttpResponse.CreateHeaders(__response),
                                     requestUri: __response.RequestMessage?.RequestUri,
                                     body: new global::G.ResponseStream(__response, __content));
+                            }
+                            catch (global::System.OperationCanceledException)
+                            {
+                                throw;
                             }
                             catch (global::System.Exception __ex)
                             {

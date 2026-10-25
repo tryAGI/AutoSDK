@@ -1361,6 +1361,14 @@ namespace {endPoint.Settings.Namespace}
                 isInterface,
                 returnStreamResponse: true,
                 multipartStreamRequest: multipartStreamRequest);
+            builder.Append('\n');
+            AppendMethodCore(
+                builder,
+                endPoint,
+                isInterface,
+                returnResponseWrapper: true,
+                returnStreamResponse: true,
+                multipartStreamRequest: multipartStreamRequest);
         }
         else
         {
@@ -1399,11 +1407,6 @@ namespace {endPoint.Settings.Namespace}
         bool returnStreamResponse = false,
         bool multipartStreamRequest = false)
     {
-        if (returnResponseWrapper && returnStreamResponse)
-        {
-            throw new ArgumentException("A method cannot return both a response wrapper and a stream response.");
-        }
-
         var useMultipartStreamRequest = multipartStreamRequest && ShouldGenerateMultipartStreamMethods(endPoint);
         if (multipartStreamRequest && !useMultipartStreamRequest)
         {
@@ -1427,7 +1430,9 @@ namespace {endPoint.Settings.Namespace}
         var methodReturnsResponseStream = endPoint.RawStream || returnStreamResponse;
         var transfersResponseOwnership = methodReturnsResponseStream || endPoint.HasHeterogeneousSuccessResponses;
         var taskType = returnResponseWrapper
-            ? $"global::System.Threading.Tasks.Task<{GetResponseWrapperType(endPoint)}>"
+            ? returnStreamResponse
+                ? $"global::System.Threading.Tasks.Task<global::{endPoint.Settings.Namespace}.AutoSDKHttpResponse<global::System.IO.Stream>>"
+                : $"global::System.Threading.Tasks.Task<{GetResponseWrapperType(endPoint)}>"
             : methodReturnsResponseStream
             ? "global::System.Threading.Tasks.Task<global::System.IO.Stream>"
             : endPoint.EnumerableStream
@@ -1438,7 +1443,9 @@ namespace {endPoint.Settings.Namespace}
                 ? "global::System.Threading.Tasks.Task"
                 : $"global::System.Threading.Tasks.Task<{endPoint.SuccessResponse.Type.CSharpTypeWithoutNullability}>";
         var methodName = returnStreamResponse
-            ? GetStreamResponseMethodName(endPoint)
+            ? returnResponseWrapper
+                ? $"{endPoint.NotAsyncMethodName}AsStreamAsResponseAsync"
+                : GetStreamResponseMethodName(endPoint)
             : returnResponseWrapper
             ? GetResponseWrapperMethodName(endPoint)
             : endPoint.MethodName;
@@ -1475,6 +1482,11 @@ namespace {endPoint.Settings.Namespace}
         {
             builder.Append(@"
         /// <param name=""request""></param>");
+        }
+        if (returnStreamResponse && returnResponseWrapper)
+        {
+            builder.Append(@"
+        /// <returns>The response metadata and an unbuffered body stream. The caller must dispose Body to release the HTTP response.</returns>");
         }
         builder.Append($@"
         /// <param name=""requestOptions"">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
@@ -3307,6 +3319,10 @@ namespace {endPoint.Settings.Namespace}
                     requestUri: __response.RequestMessage?.RequestUri,
                     body: new global::{endPoint.GlobalSettings.Namespace}.ResponseStream(__response, __content));"
     : $"                return new global::{endPoint.GlobalSettings.Namespace}.ResponseStream(__response, __content);")}
+            }}
+            catch (global::System.OperationCanceledException)
+            {{
+                throw;
             }}
             catch (global::System.Exception __ex)
             {{

@@ -1,4 +1,4 @@
-﻿//HintName: G.IFilesClient.DownloadFile.g.cs
+//HintName: G.IFilesClient.DownloadFile.g.cs
 #nullable enable
 
 namespace G
@@ -24,6 +24,18 @@ namespace G
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::G.ApiException"></exception>
         global::System.Threading.Tasks.Task<global::System.IO.Stream> DownloadFileAsStreamAsync(
+            string fileId,
+            global::G.AutoSDKRequestOptions? requestOptions = default,
+            global::System.Threading.CancellationToken cancellationToken = default);
+        /// <summary>
+        /// Returns the contents of the specified file.
+        /// </summary>
+        /// <param name="fileId"></param>
+        /// <returns>The response metadata and an unbuffered body stream. The caller must dispose Body to release the HTTP response.</returns>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
+        /// <param name="cancellationToken">The token to cancel the operation with</param>
+        /// <exception cref="global::G.ApiException"></exception>
+        global::System.Threading.Tasks.Task<global::G.AutoSDKHttpResponse<global::System.IO.Stream>> DownloadFileAsStreamAsResponseAsync(
             string fileId,
             global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);

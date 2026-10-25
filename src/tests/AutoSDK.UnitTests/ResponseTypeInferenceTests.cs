@@ -75,6 +75,11 @@ paths:
         generatedCode.Should().Contain("return __response.Body;");
         generatedCode.Should().Contain("body: __content");
         generatedInterface.Should().Contain("Task<global::System.IO.Stream> GetAudioAsStreamAsync(");
+        generatedInterface.Should().Contain("Task<global::G.AutoSDKHttpResponse<global::System.IO.Stream>> GetAudioAsStreamAsResponseAsync(");
+        var wrappedStream = Sources.GenerateMethod(endPoint, returnResponseWrapper: true, returnStreamResponse: true);
+        wrappedStream.Should().Contain("HttpCompletionOption.ResponseHeadersRead");
+        wrappedStream.Should().Contain("body: new global::G.ResponseStream(__response, __content)");
+        wrappedStream.Should().NotContain("ReadAsByteArrayAsync");
         Sources.ShouldGenerateResponseStreamSupport(endPoint).Should().BeTrue();
     }
 
