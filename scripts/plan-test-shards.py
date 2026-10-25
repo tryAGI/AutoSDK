@@ -87,6 +87,7 @@ def main() -> None:
     parser.add_argument("--initial-estimates", type=Path)
     parser.add_argument("--max-elapsed-seconds", type=float, default=720)
     parser.add_argument("--reserve-seconds", type=float, default=120)
+    parser.add_argument("--duration-safety-factor", type=float, default=1.2)
     args = parser.parse_args()
     tests_path, timings_path, shard_count, output_path = args.tests_path, args.timings_path, args.shard_count, args.output_path
     if shard_count <= 0:
@@ -105,8 +106,12 @@ def main() -> None:
                 "initial": sorted(set(tests) & (seeds.keys() - measured.keys())), "missing": missing}
     output_path.with_suffix(".coverage.json").write_text(json.dumps(coverage, indent=2) + "\n")
     print(json.dumps(coverage))
-    assignments = plan_shards(tests, {**seeds, **measured}, shard_count)
+    if not math.isfinite(args.duration_safety_factor) or args.duration_safety_factor < 1:
+        parser.error("Duration safety factor must be finite and at least 1")
+    adjusted = {name: duration * args.duration_safety_factor for name, duration in {**seeds, **measured}.items()}
+    assignments = plan_shards(tests, adjusted, shard_count)
     budget = check_budget(assignments, shard_count, args.max_elapsed_seconds, args.reserve_seconds)
+    budget["duration_safety_factor"] = args.duration_safety_factor
     output_path.with_suffix(".budget.json").write_text(json.dumps(budget, indent=2) + "\n")
     if max(budget["estimated_shard_seconds"]) > budget["test_budget_seconds"]:
         raise SystemExit(f"Estimated shard workload exceeds {budget['test_budget_seconds']:.1f}s test budget "

@@ -55,3 +55,15 @@ def passed_samples(directory: Path) -> dict[str, dict]:
 
 def refresh(catalog: dict[str, float], samples: dict[str, dict]) -> dict[str, float]:
     return {**catalog, **{name: positive_duration(sample["duration_seconds"]) for name, sample in samples.items()}}
+
+def record_observation(previous: dict, observation: dict, window: int = 3) -> dict:
+    """Keep the slowest of recent passed CI cohorts, with its original attribution."""
+    history = previous.get("observations", [])
+    if not history and previous.get("source") == "ci":
+        history = [{key: value for key, value in previous.items() if key != "observations"}]
+    history = [entry for entry in history
+               if entry.get("source") == "ci" and entry.get("outcome") == "Passed"
+               and entry.get("run_url") != observation["run_url"]]
+    history = [*history, observation][-window:]
+    selected = max(history, key=lambda entry: positive_duration(entry["duration_seconds"]))
+    return {**selected, "observations": history}

@@ -72,6 +72,29 @@ class TestShardTimings(unittest.TestCase):
         self.assertEqual(initial_estimates({"Publish (True)": {"duration_seconds": 300, "reason": "Cold CI AOT estimate pending first sample"}}),
                          {"Publish (True)": 300})
 
+    def test_slow_ci_sample_keeps_its_attribution_until_window_expires(self):
+        from shard_timings import record_observation
+        def sample(run, duration):
+            return {"source": "ci", "outcome": "Passed", "run_url": f"run-{run}",
+                    "commit": str(run), "duration_seconds": duration}
+        entry = record_observation(sample(1, 100), sample(2, 40))
+        self.assertEqual(entry["duration_seconds"], 100)
+        self.assertEqual(entry["commit"], "1")
+        entry = record_observation(entry, sample(3, 50))
+        self.assertEqual(entry["duration_seconds"], 100)
+        entry = record_observation(entry, sample(4, 30))
+        self.assertEqual(entry["duration_seconds"], 50)
+        self.assertEqual(entry["commit"], "3")
+        self.assertEqual(len(entry["observations"]), 3)
+
+    def test_same_ci_cohort_does_not_duplicate_history_or_adopt_legacy_weight(self):
+        from shard_timings import record_observation
+        sample = {"source": "ci", "outcome": "Passed", "run_url": "run-1", "duration_seconds": 40}
+        entry = record_observation({"source": "legacy_unattributed", "duration_seconds": 999}, sample)
+        entry = record_observation(entry, sample)
+        self.assertEqual(entry["duration_seconds"], 40)
+        self.assertEqual(len(entry["observations"]), 1)
+
     def test_failed_rows_never_replace_previous_estimate(self):
         import tempfile
         from shard_timings import passed_samples, refresh
@@ -126,12 +149,30 @@ class TestShardTimings(unittest.TestCase):
             (root / "tests.txt").write_text("Slow\n")
             (root / "timings.tsv").write_text("test_name\tduration_seconds\nSlow\t601\n")
             result = subprocess.run([sys.executable, str(MODULE_PATH.with_name("plan-test-shards.py")),
-                                     str(root / "tests.txt"), str(root / "timings.tsv"), "1", str(root / "plan.tsv")],
+                                     str(root / "tests.txt"), str(root / "timings.tsv"), "1", str(root / "plan.tsv"), "--duration-safety-factor", "1"],
                                     capture_output=True, text=True)
             self.assertNotEqual(result.returncode, 0)
             self.assertIn("600.0s test budget", result.stderr)
             budget = json.loads((root / "plan.budget.json").read_text())
             self.assertEqual(budget["estimated_shard_seconds"], [601])
+            self.assertFalse((root / "plan.tsv").exists())
+
+    def test_variation_factor_rejects_a_raw_plan_that_fits_without_margin(self):
+        import tempfile
+        import subprocess
+        import sys
+        import json
+        with tempfile.TemporaryDirectory() as directory:
+            root = Path(directory)
+            (root / "tests.txt").write_text("Slow\n")
+            (root / "timings.tsv").write_text("test_name\tduration_seconds\nSlow\t510\n")
+            result = subprocess.run([sys.executable, str(MODULE_PATH.with_name("plan-test-shards.py")),
+                                     str(root / "tests.txt"), str(root / "timings.tsv"), "1", str(root / "plan.tsv")],
+                                    capture_output=True, text=True)
+            self.assertNotEqual(result.returncode, 0)
+            budget = json.loads((root / "plan.budget.json").read_text())
+            self.assertEqual(budget["estimated_shard_seconds"], [612])
+            self.assertEqual(budget["duration_safety_factor"], 1.2)
             self.assertFalse((root / "plan.tsv").exists())
 
     def test_coverage_report_identifies_missing_exact_row(self):

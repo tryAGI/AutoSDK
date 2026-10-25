@@ -6,7 +6,7 @@ import hashlib
 import json
 import re
 from pathlib import Path
-from shard_timings import passed_samples, read_catalog, refresh
+from shard_timings import passed_samples, read_catalog, refresh, record_observation
 
 def main() -> None:
     parser = argparse.ArgumentParser(description=__doc__)
@@ -42,8 +42,10 @@ def main() -> None:
         parser.error("Catalog/provenance hash mismatch; reconcile the catalog before refreshing")
     provenance = {name: prior.get("samples", {}).get(name, {"source": "legacy_unattributed"}) for name in tests}
     for name, sample in samples.items():
-        provenance[name] = {**sample, "source": "ci", "run_url": args.run_url, "commit": args.commit,
-                            "runner_os": args.runner_os, "runner_arch": args.runner_arch}
+        observation = {**sample, "source": "ci", "run_url": args.run_url, "commit": args.commit,
+                       "runner_os": args.runner_os, "runner_arch": args.runner_arch}
+        provenance[name] = record_observation(provenance[name], observation)
+        after[name] = provenance[name]["duration_seconds"]
     args.output_directory.mkdir(parents=True, exist_ok=True)
     target = args.output_directory / args.catalog.name
     with target.open("w", newline="") as stream:
@@ -51,10 +53,10 @@ def main() -> None:
         writer.writerow(["test_name", "duration_seconds"])
         writer.writerows((name, f"{after[name]:.6f}") for name in sorted(tests))
     target.with_suffix(".provenance.json").write_text(json.dumps({
-        "schema_version": 1, "catalog_sha256": hashlib.sha256(target.read_bytes()).hexdigest(),
+        "schema_version": 2, "catalog_sha256": hashlib.sha256(target.read_bytes()).hexdigest(),
         "base_catalog_sha256": hashlib.sha256(args.catalog.read_bytes()).hexdigest(),
         "samples": provenance,
     }, indent=2, sort_keys=True) + "\n")
-    print(f"Refreshed {len(samples)} passed CI rows; retained {len(tests)-len(samples)} existing estimates.")
+    print(f"Recorded {len(samples)} passed CI rows using a three-cohort upper bound; retained {len(tests)-len(samples)} existing estimates.")
 if __name__ == "__main__":
     main()
