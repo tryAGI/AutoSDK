@@ -1,0 +1,6 @@
+{
+  "Generate_HeterogeneousSuccess_CompilesAndDispatchesActualRuntimeOutcome": {
+    "duration_seconds": 60,
+    "reason": "Conservative cold Linux CI estimate for generating, compiling and executing the synthetic client until the first passed CI timing sample"
+  }
+}
