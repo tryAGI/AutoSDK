@@ -80,5 +80,6 @@ dotnet test src/tests/AutoSDK.IntegrationTests.Cli --filter FullyQualifiedName~C
 - SDK source-generator snapshots: 245 passed, including both serializers for this fixture.
   The two fixture snapshots were rechecked after the final metadata handling refinement.
 - Focused CLI integration tests: three passed, including the compiled fake-HTTP runtime regression.
+- The same runtime fixture also passed after NativeAOT publication for macOS arm64.
 
 These checks use synthetic HTTP responses; they do not claim provider or downstream SDK acceptance.

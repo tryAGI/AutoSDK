@@ -111,6 +111,7 @@ dotnet test "$project" \
   --configuration "$configuration" \
   --nologo \
   --logger GitHubActions \
+  --logger 'console;verbosity=normal' \
   --logger 'trx;LogFileName=results.trx' \
   --results-directory "$shard_artifacts" \
   --no-build \

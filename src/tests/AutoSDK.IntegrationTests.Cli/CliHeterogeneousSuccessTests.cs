@@ -13,7 +13,7 @@ public class CliHeterogeneousSuccessTests
         Directory.CreateDirectory(output);
         try
         {
-            await RunAsync(repository, "run", "--project", "src/libs/AutoSDK.CLI", "--",
+            await RunAsync(repository, "run", "--disable-build-servers", "--no-launch-profile", "--project", "src/libs/AutoSDK.CLI", "--",
                 "generate", Path.Combine(repository, "specs/heterogeneous-success.yaml"),
                 "--namespace", "AudioContract", "--clientClassName", "AudioClient",
                 "--targetFramework", "net10.0", "--output", output);
@@ -31,7 +31,7 @@ public class CliHeterogeneousSuccessTests
                 </Project>
                 """);
             await File.WriteAllTextAsync(Path.Combine(output, "Program.cs"), Runtime);
-            await RunAsync(output, "run", "--project", "Runtime.csproj");
+            await RunAsync(output, "run", "--disable-build-servers", "--no-launch-profile", "--project", "Runtime.csproj");
         }
         finally
         {
@@ -68,19 +68,24 @@ public class CliHeterogeneousSuccessTests
             process.StartInfo.ArgumentList.Add(argument);
         }
         process.Start();
-        var stdout = process.StandardOutput.ReadToEndAsync();
-        var stderr = process.StandardError.ReadToEndAsync();
         using var timeout = new CancellationTokenSource(TimeSpan.FromMinutes(3));
+        var stdout = process.StandardOutput.ReadToEndAsync(timeout.Token);
+        var stderr = process.StandardError.ReadToEndAsync(timeout.Token);
+        string messages;
         try
         {
             await process.WaitForExitAsync(timeout.Token);
+            // A child retaining a redirected pipe must not outlive the timeout either.
+            messages = await stdout.WaitAsync(timeout.Token) + await stderr.WaitAsync(timeout.Token);
         }
         catch
         {
-            process.Kill(entireProcessTree: true);
+            if (!process.HasExited)
+            {
+                process.Kill(entireProcessTree: true);
+            }
             throw;
         }
-        var messages = await stdout + await stderr;
         process.ExitCode.Should().Be(0, messages);
     }
 
