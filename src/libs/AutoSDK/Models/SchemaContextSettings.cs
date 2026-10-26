@@ -21,7 +21,8 @@ public record struct SchemaContextSettings(
     string NamespaceDelimiter,
     ExcludedModelNamespaceMode ExcludedModelNamespaceMode,
     IdentifierCharacterSet IdentifierCharacterSet = IdentifierCharacterSet.UnicodeLetters,
-    bool StripRedundantOperationIdTagPrefixes = false)
+    bool StripRedundantOperationIdTagPrefixes = false,
+    bool StableAnonymousUnionNames = false)
 {
     public static SchemaContextSettings Default => new(
         Namespace: string.Empty,

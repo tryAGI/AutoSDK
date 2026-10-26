@@ -244,6 +244,7 @@ public static class ModelNameGenerator
     public static void ResolveCollisions(IReadOnlyCollection<SchemaContext> contexts)
     {
         contexts = contexts ?? throw new ArgumentNullException(nameof(contexts));
+        ApplyStableAnonymousUnionNames(contexts);
         var groups = new Dictionary<string, List<SchemaContext>>(StringComparer.OrdinalIgnoreCase);
         while (true)
         {
@@ -280,6 +281,73 @@ public static class ModelNameGenerator
                 }
             }
         }
+    }
+
+    private static bool UsesStableAnonymousUnionName(SchemaContext context) =>
+        context.Settings.StableAnonymousUnionNames &&
+        context.ComponentId == null &&
+        !context.IsReference &&
+        !context.IsNullableUnionWrapper &&
+        context.IsAnyOfLikeStructure &&
+        !(context.Settings.UseExtensionNaming &&
+          OpenApiExtensions.TryGetTypeNameOverride(context.Schema.Extensions, out var name) &&
+          !string.IsNullOrWhiteSpace(name));
+
+    private static void ApplyStableAnonymousUnionNames(IReadOnlyCollection<SchemaContext> contexts)
+    {
+        foreach (var context in contexts.Where(UsesStableAnonymousUnionName))
+        {
+            var segments = new Stack<string>();
+            for (var owner = context; owner != null; owner = owner.Parent)
+            {
+                if (owner.ComponentId != null)
+                {
+                    segments.Push(owner.ComputeClassName());
+                    break;
+                }
+                if (owner.ComputeHelperName() is { } helper)
+                {
+                    segments.Push(helper);
+                }
+            }
+            // Keep the full property path: included + Item must not collapse to Include.
+            context.Id = CSharpPropertyNameGenerator.SanitizeName(
+                string.Concat(segments).ToClassName(), context.Settings.ClsCompliantEnumPrefix,
+                identifierCharacterSet: context.Settings.IdentifierCharacterSet);
+            // Always include the owner's digest: adding a new path that normalizes to the
+            // same C# name must not rename the existing union, either.
+            var bytes = global::System.Text.Encoding.UTF8.GetBytes(GetAnonymousUnionPath(context));
+#if NET6_0_OR_GREATER
+            var digest = global::System.Security.Cryptography.SHA256.HashData(bytes);
+#else
+            using var hash = global::System.Security.Cryptography.SHA256.Create();
+            var digest = hash.ComputeHash(bytes);
+#endif
+            context.Id += "_" + string.Concat(digest.Take(8).Select(value => value.ToString("x2", CultureInfo.InvariantCulture)));
+            context.ClassName = context.Id;
+        }
+    }
+
+    private static string GetAnonymousUnionPath(SchemaContext context)
+    {
+        var segments = new Stack<string>();
+        for (var owner = context; owner != null; owner = owner.Parent)
+        {
+            // Length-prefix raw segments so separators in schema/property names cannot alias.
+            var fields = new[]
+            {
+                owner.Hint?.ToString(), owner.ComponentId, owner.PropertyName,
+                owner.Hint is Hint.AnyOf or Hint.OneOf or Hint.AllOf ? owner.Index?.ToString(CultureInfo.InvariantCulture) : null,
+                owner.OperationType?.ToString(), owner.OperationPath, owner.Operation?.OperationId,
+                owner.Parameter?.Name, owner.ResponseStatusCode, owner.ContentType,
+            };
+            segments.Push(string.Concat(fields.Select(field => $"{field?.Length ?? 0}:{field}")));
+            if (owner.ComponentId != null)
+            {
+                break;
+            }
+        }
+        return string.Concat(segments);
     }
 
     private static int CountNonBasicTypes(IList<SchemaContext>? children)

@@ -89,7 +89,8 @@ public static class SettingsConversions
             NamespaceDelimiter: settings.NamespaceDelimiter,
             ExcludedModelNamespaceMode: settings.ExcludedModelNamespaceMode,
             IdentifierCharacterSet: settings.IdentifierCharacterSet,
-            StripRedundantOperationIdTagPrefixes: settings.StripRedundantOperationIdTagPrefixes);
+            StripRedundantOperationIdTagPrefixes: settings.StripRedundantOperationIdTagPrefixes,
+            StableAnonymousUnionNames: settings.StableAnonymousUnionNames);
     }
 
     public static EmitterSettings ToEmitterSettings(this SchemaContextSettings settings)

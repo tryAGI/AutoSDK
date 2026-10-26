@@ -66,6 +66,13 @@ AutoSDK normalizes the OpenAPI 3.1 / JSON Schema 2020-12 keywords it can transla
 
 Keywords that are still not representable in the current .NET model pipeline, such as `patternProperties` and `contains`/`minContains`/`maxContains`, now fail fast with a targeted error instead of being silently ignored.
 
+### Stable anonymous union names
+
+For SDKs that expose anonymous union wrappers, opt into owner/path-based names with
+`--stable-anonymous-union-names` (or `AutoSDK_StableAnonymousUnionNames=true`).
+This is an explicit public API migration; legacy naming remains the default.
+See [stability guarantees and migration steps](docs/stable-anonymous-union-names.md).
+
 ### Nullable unions
 
 An OpenAPI 3.1 schema shaped as `oneOf: [{ "type": "null" }, T]` is normalized to the nullable form of `T`; it does not generate a two-branch union wrapper. For example, `null | integer` becomes `int?`, while an array whose items are `null | integer` becomes a collection of `int?`. An optional property remains nullable independently of whether its value schema also permits null.

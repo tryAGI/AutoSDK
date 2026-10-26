@@ -98,6 +98,9 @@ public record struct CSharpSettings(
     string PackageMapPath,
     string StrongNamePublicKey)
 {
+    /// <summary>Derive anonymous union names from their owning schema and property path (opt-in API migration).</summary>
+    public bool StableAnonymousUnionNames { get; set; }
+
     /// <summary>Use the build-only shared JSON metadata generator.</summary>
     public bool UseSharedJsonMetadata { get; set; }
 
@@ -223,6 +226,7 @@ public record struct CSharpSettings(
         {
             JsonSerializerContextChunkSize = settings.JsonSerializerContextChunkSize,
             UseSharedJsonMetadata = settings.UseSharedJsonMetadata,
+            StableAnonymousUnionNames = settings.StableAnonymousUnionNames,
         };
     }
 
@@ -343,6 +347,7 @@ public record struct CSharpSettings(
         {
             JsonSerializerContextChunkSize = JsonSerializerContextChunkSize,
             UseSharedJsonMetadata = UseSharedJsonMetadata,
+            StableAnonymousUnionNames = StableAnonymousUnionNames,
         };
     }
 

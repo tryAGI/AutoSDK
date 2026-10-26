@@ -105,6 +105,9 @@ public record struct Settings(
     string PackageMapPath,
     string StrongNamePublicKey)
 {
+    /// <summary>Derive anonymous union names from their owning schema and property path (opt-in API migration).</summary>
+    public bool StableAnonymousUnionNames { get; set; }
+
     /// <summary>Use the build-only AutoSDK.JsonMetadata generator for shared metadata factories.</summary>
     public bool UseSharedJsonMetadata { get; set; }
 

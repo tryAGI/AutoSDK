@@ -141,6 +141,7 @@ public static class OptionsExtensions
             PackageMapPath: options.GetGlobalOption(nameof(Settings.PackageMapPath), prefix) ?? string.Empty,
             StrongNamePublicKey: options.GetGlobalOption(nameof(Settings.StrongNamePublicKey), prefix) ?? string.Empty)
         {
+            StableAnonymousUnionNames = options.GetBoolGlobalOption(nameof(Settings.StableAnonymousUnionNames), prefix),
             JsonSerializerContextChunkSize = options.GetIntGlobalOption(nameof(Settings.JsonSerializerContextChunkSize), prefix,
                 defaultValue: Settings.Default.JsonSerializerContextChunkSize),
         };

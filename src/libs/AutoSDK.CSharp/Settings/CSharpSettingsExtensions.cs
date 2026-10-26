@@ -167,7 +167,8 @@ public static class CSharpSettingsExtensions
             NamespaceDelimiter: settings.NamespaceDelimiter,
             ExcludedModelNamespaceMode: settings.ExcludedModelNamespaceMode,
             IdentifierCharacterSet: settings.IdentifierCharacterSet,
-            StripRedundantOperationIdTagPrefixes: settings.StripRedundantOperationIdTagPrefixes);
+            StripRedundantOperationIdTagPrefixes: settings.StripRedundantOperationIdTagPrefixes,
+            StableAnonymousUnionNames: settings.StableAnonymousUnionNames);
     }
 
     public static EnumNamingSettings ToEnumNamingSettings(this CSharpSettings settings)

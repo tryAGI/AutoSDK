@@ -435,6 +435,12 @@ internal sealed class GenerateCommand : Command
         Description = "Infer serialization direction from the operation graph. With custom converters, set Metadata once for the whole context to omit unreachable fast-path writers; without converters, narrow safe individual registrations.",
     };
 
+    private Option<bool> StableAnonymousUnionNames { get; } = new(
+        name: "--stable-anonymous-union-names")
+    {
+        Description = "Name anonymous unions after their owning schema and property path. Opt in when migrating public generated type names; legacy naming remains the default.",
+    };
+
     private Option<bool> SharedJsonMetadata { get; } = new(
         name: "--shared-json-metadata")
     {
@@ -651,6 +657,7 @@ internal sealed class GenerateCommand : Command
         Options.Add(GroupByTags);
         Options.Add(DirectionAwareJsonGenerationMode);
         Options.Add(SharedJsonMetadata);
+        Options.Add(StableAnonymousUnionNames);
         Options.Add(JsonSerializerContextChunkSize);
         Options.Add(TypesNamespace);
         Options.Add(NamespaceDelimiter);
@@ -807,6 +814,7 @@ internal sealed class GenerateCommand : Command
             GenerateJsonSerializerContextTypes = true,
             DirectionAwareJsonGenerationMode = parseResult.GetRequiredValue(DirectionAwareJsonGenerationMode),
             UseSharedJsonMetadata = parseResult.GetRequiredValue(SharedJsonMetadata),
+            StableAnonymousUnionNames = parseResult.GetRequiredValue(StableAnonymousUnionNames),
             JsonSerializerContextChunkSize = jsonSerializerContextChunkSize,
             GenerateModels = generateModels,
             IncludePaths = parseResult.GetRequiredValue(IncludePaths).ToImmutableArray(),
