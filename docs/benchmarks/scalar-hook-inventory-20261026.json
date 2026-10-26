@@ -1,0 +1,12 @@
+{
+  "scope": "*/src/libs/**/*.cs excluding Generated, obj, bin, Snapshots, *.g.cs, *.Generated.cs and AutoSDK itself",
+  "filesScanned": 885,
+  "implementations": [],
+  "callers": [
+    "../Anthropic/src/libs/Anthropic/AnthropicClient.Streaming.cs",
+    "../Gonka/src/libs/Gonka/GonkaClient.Streaming.cs",
+    "../OpenAI/src/libs/tryAGI.OpenAI/Extensions/OpenAiClient.TextToSpeechClient.cs",
+    "../Runway/src/libs/Runway/Extensions/RealtimeSessionsClient.Credentials.cs",
+    "../Soniox/src/libs/Soniox/Extensions/SonioxClient.TextToSpeech.cs"
+  ]
+}

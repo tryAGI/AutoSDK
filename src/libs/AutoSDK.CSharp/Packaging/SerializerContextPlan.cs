@@ -2,6 +2,7 @@ using System.Collections.Immutable;
 using AutoSDK.Extensions;
 using AutoSDK.Helpers;
 using AutoSDK.Models;
+using AutoSDK.TypeMapping;
 
 namespace AutoSDK.Packaging;
 
@@ -327,15 +328,7 @@ internal sealed partial class SerializerContextPlan
     }
 
     private static TypeData NormalizeRuntimeType(TypeData type) =>
-        type.CSharpTypeWithoutNullability switch
-        {
-            "bool" or "byte" or "sbyte" or "short" or "ushort" or "int" or "uint" or "long" or "ulong"
-                or "float" or "double" or "decimal" or "char"
-                or "global::System.DateTime" or "global::System.DateTimeOffset" or "global::System.Guid"
-                => type with { IsValueType = true },
-            "string" or "object" or "byte[]" => type with { IsValueType = false },
-            _ => type,
-        };
+        type with { IsValueType = type.IsRuntimeValueType() };
 
     internal static string GetContextName(Settings settings, string kind, string identity)
     {

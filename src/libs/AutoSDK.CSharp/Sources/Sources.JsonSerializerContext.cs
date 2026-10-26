@@ -1,6 +1,7 @@
 using AutoSDK.Extensions;
 using AutoSDK.Helpers;
 using AutoSDK.Models;
+using AutoSDK.TypeMapping;
 using System.Globalization;
 using System.Security.Cryptography;
 using System.Text;
@@ -1366,14 +1367,14 @@ namespace {client.Settings.Namespace}
         var referenceTypes = CreateStringSet(checked(types.Length * 2));
         foreach (var type in types)
         {
-            if (!type.IsValueType)
+            if (!type.IsRuntimeValueType())
             {
                 referenceTypes.Add(type.CSharpTypeWithoutNullability);
             }
             foreach (var boxedSubType in type.SubTypes)
             {
                 var subType = boxedSubType.Unbox<TypeData>();
-                if (!subType.IsValueType)
+                if (!subType.IsRuntimeValueType())
                 {
                     referenceTypes.Add(subType.CSharpTypeWithoutNullability);
                 }
@@ -1384,7 +1385,7 @@ namespace {client.Settings.Namespace}
         var nullableTypes = new List<string>();
         foreach (var type in types)
         {
-            if (type.IsValueType &&
+            if (type.IsRuntimeValueType() &&
                 !referenceTypes.Contains(type.CSharpTypeWithoutNullability) &&
                 type.CSharpTypeWithNullability != type.CSharpTypeWithoutNullability &&
                 type.CSharpTypeWithNullability.EndsWith("?", StringComparison.Ordinal) &&
@@ -1412,7 +1413,7 @@ namespace {client.Settings.Namespace}
         }
 
         if (types.Any(static x =>
-                x.IsValueType &&
+                x.IsRuntimeValueType() &&
                 x.CSharpTypeWithNullability != x.CSharpTypeWithoutNullability &&
                 $"Nullable{GetImplicitTypeInfoPropertyName(x.CSharpTypeWithoutNullability)}".Length > MaxGeneratedTypeInfoNameLength))
         {
@@ -1497,7 +1498,7 @@ namespace {client.Settings.Namespace}
         void GetContextNames(string type, out string first, out string? second)
         {
             typeDataByNullableType.TryGetValue(type, out var typeData);
-            if (typeData is { IsValueType: true } &&
+            if (typeData.IsRuntimeValueType() &&
                 type.EndsWith("?", StringComparison.Ordinal))
             {
                 var nonNullableName = typeInfoNames.GetImplicit(type.Substring(0, type.Length - 1));

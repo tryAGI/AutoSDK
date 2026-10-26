@@ -1,6 +1,7 @@
 using AutoSDK.Extensions;
 using AutoSDK.Helpers;
 using AutoSDK.Models;
+using AutoSDK.TypeMapping;
 
 namespace AutoSDK.Serialization.Json;
 
@@ -73,7 +74,7 @@ public class SystemTextJsonSerializer : IJsonSerializer
             ? typeData.ShortCSharpTypeWithoutNullability.Substring(0, index)
             : typeData.ShortCSharpTypeWithoutNullability;
 
-        return (typeData.IsValueType &&
+        return (typeData.IsRuntimeValueType() &&
                 (typeData.CSharpType.EndsWith("?", StringComparison.Ordinal) ||
                  makeNullableRootIfValueType) ? "Nullable" : string.Empty) + typeData switch
                  {

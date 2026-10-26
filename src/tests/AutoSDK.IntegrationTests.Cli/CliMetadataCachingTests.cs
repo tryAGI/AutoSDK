@@ -45,6 +45,25 @@ components:
           type: boolean
         count:
           type: integer
+        formatFlag:
+          format: boolean
+        password:
+          type: string
+          format: password
+        identifier:
+          $ref: '#/components/schemas/Identifier'
+        timestamp:
+          type: string
+          format: date-time
+        days:
+          type: array
+          items:
+            type: array
+            items:
+              anyOf:
+                - type: string
+                  format: date
+                - type: 'null'
         mode:
           type: string
           enum: [one, two]
@@ -59,6 +78,9 @@ components:
             mapping:
               cat: '#/components/schemas/Cat'
               dog: '#/components/schemas/Dog'
+    Identifier:
+      type: string
+      format: uuid
     EnvelopeUnused:
       type: object
       properties:
@@ -240,6 +262,22 @@ using (var stream = new MemoryStream(Encoding.UTF8.GetBytes(json)))
 }
 Check(Volatile.Read(ref lookups) == coldLookups, "Stream helper bypassed metadata caching.");
 Check(Envelope.FromJson(json)?.Next?.Text == "child", "Default scope failed.");
+
+// Emitted scalar categories must agree for plain, referenced, format-only and
+// collapsed nullable-union types, including nested nullable collection elements.
+var scalars = Envelope.FromJson("{\"flag\":true,\"count\":42,\"formatFlag\":true,\"password\":\"secret-fixture\",\"identifier\":\"d2719b2d-2f31-41ca-b965-5fcd14b811c5\",\"timestamp\":\"2026-10-21T12:34:56Z\",\"days\":[[null,\"2026-10-21\"]]}")!;
+using (var scalarJson = JsonDocument.Parse(scalars.ToJson()))
+{
+    var root = scalarJson.RootElement;
+    Check(root.GetProperty("flag").GetBoolean() && root.GetProperty("count").GetInt32() == 42, "Plain scalar metadata failed.");
+    Check(root.GetProperty("formatFlag").GetBoolean(), "Format-only scalar metadata failed.");
+    Check(root.GetProperty("password").GetString() == "secret-fixture", "Password is a CLR string.");
+    Check(root.GetProperty("identifier").GetGuid() == Guid.Parse("d2719b2d-2f31-41ca-b965-5fcd14b811c5"), "Referenced UUID metadata failed.");
+    Check(root.GetProperty("timestamp").GetDateTime().Year == 2026, "Date-time metadata failed.");
+    var days = root.GetProperty("days")[0];
+    Check(days[0].ValueKind == JsonValueKind.Null && days[1].GetDateTime().Date == new DateTime(2026, 10, 21),
+        "Nested nullable date metadata failed: " + days.GetRawText());
+}
 
 var insensitive = SourceGenerationContext.CreateProbeForTests(
     new JsonSerializerOptions { PropertyNameCaseInsensitive = true }, _ => { });
