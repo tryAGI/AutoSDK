@@ -23,6 +23,11 @@ def audit_project(project, expected_version=None):
             if node.get("Include") == "AutoSDK.JsonMetadata"]
     if not (enabled or manifests or refs):
         return {"project": str(project), "enabled": False, "errors": []}
+    frameworks = [node.text for node in tree.iter() if node.tag in {"TargetFramework", "TargetFrameworks"}]
+    if frameworks != ["net10.0"]:
+        errors.append("shared metadata requires a validated monolithic net10.0 project")
+    if generation.exists() and "--split-by-tags" in generation.read_text():
+        errors.append("shared metadata is unsupported for split-package generation")
     if not enabled:
         errors.append("generation script does not enable --shared-json-metadata")
     if not manifests:
@@ -70,19 +75,33 @@ def audit_package(package):
         root = ET.fromstring(archive.read(nuspec))
         dependencies = [node.get("id", "") for node in root.iter()
                         if node.tag.split("}")[-1] == "dependency"]
-    banned = [name for name in dependencies if name.lower().startswith("microsoft.codeanalysis")
-              or name.lower() in {"autosdk", "autosdk.csharp", "autosdk.jsonmetadata",
-                                 "system.text.json.sourcegeneration"}]
-    return {"package": str(package), "errors": ["build-only dependency leaked: " + name for name in banned]}
+        runtime_files = [name for name in archive.namelist()
+                         if name.lower().startswith(("lib/", "runtimes/"))
+                         and name.lower().endswith(".dll") and is_build_only(Path(name).stem)]
+    banned = [name for name in dependencies if is_build_only(name)]
+    return {"package": str(package), "errors": ["build-only dependency leaked: " + name for name in banned]
+            + ["build-only assembly in runtime assets: " + name for name in runtime_files]}
+
+
+def is_build_only(name):
+    return name.lower().startswith("microsoft.codeanalysis") or name.lower() in {
+        "autosdk", "autosdk.csharp", "autosdk.jsonmetadata", "autosdk.sourcegenerators",
+        "system.text.json.sourcegeneration"}
 
 
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
-    parser.add_argument("projects", nargs="+", type=Path)
+    parser.add_argument("projects", nargs="*", type=Path)
+    parser.add_argument("--workspace", type=Path, help="Read-only inventory of SDK projects under each repository")
     parser.add_argument("--expected-cli-version")
     parser.add_argument("--package", action="append", default=[], type=Path)
     args = parser.parse_args()
-    results = [audit_project(project, args.expected_cli_version) for project in args.projects]
+    projects = list(args.projects)
+    if args.workspace:
+        projects.extend(sorted(args.workspace.glob("*/src/libs/*/*.csproj")))
+    if not (projects or args.package):
+        parser.error("select projects, --workspace, or --package")
+    results = [audit_project(project, args.expected_cli_version) for project in dict.fromkeys(projects)]
     results.extend(audit_package(package) for package in args.package)
     print(json.dumps(results, indent=2))
     return 1 if any(result["errors"] for result in results) else 0

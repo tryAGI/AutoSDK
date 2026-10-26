@@ -447,6 +447,12 @@ internal sealed class GenerateCommand : Command
         Description = "Share JSON metadata factories across narrow contexts. Requires the build-only AutoSDK.JsonMetadata analyzer package; supports net10.0 monolithic SDKs.",
     };
 
+    private Option<string> SharedJsonMetadataProject { get; } = new("--shared-json-metadata-project")
+    {
+        Description = "Validate the consuming SDK project before emitting shared metadata.",
+        DefaultValueFactory = _ => string.Empty,
+    };
+
     private Option<int> JsonSerializerContextChunkSize { get; } = new(
         name: "--json-serializer-context-chunk-size")
     {
@@ -657,6 +663,7 @@ internal sealed class GenerateCommand : Command
         Options.Add(GroupByTags);
         Options.Add(DirectionAwareJsonGenerationMode);
         Options.Add(SharedJsonMetadata);
+        Options.Add(SharedJsonMetadataProject);
         Options.Add(StableAnonymousUnionNames);
         Options.Add(JsonSerializerContextChunkSize);
         Options.Add(TypesNamespace);
@@ -710,6 +717,15 @@ internal sealed class GenerateCommand : Command
             throw new ArgumentException("--shared-json-metadata requires a net10.0 monolithic SDK.");
         }
         var groupByTags = parseResult.GetRequiredValue(GroupByTags);
+        var metadataProject = parseResult.GetRequiredValue(SharedJsonMetadataProject);
+        if (!string.IsNullOrWhiteSpace(metadataProject) && !parseResult.GetRequiredValue(SharedJsonMetadata))
+        {
+            throw new ArgumentException("--shared-json-metadata-project requires --shared-json-metadata.");
+        }
+        if (parseResult.GetRequiredValue(SharedJsonMetadata))
+        {
+            SharedJsonMetadataProjectGuard.Validate(output, metadataProject);
+        }
         var packageIdValue = parseResult.GetRequiredValue(PackageId);
         var packagesOutputValue = parseResult.GetRequiredValue(PackagesOutput);
         var packageMapValue = parseResult.GetRequiredValue(PackageMap);

@@ -1,0 +1,39 @@
+{
+  "date": "2026-10-26",
+  "inventoryProjects": 262,
+  "enabled": [
+    {
+      "project": "../Anthropic/src/libs/Anthropic/Anthropic.csproj",
+      "enabled": true,
+      "manifests": 1,
+      "analyzerVersion": "0.35.0-preview.2.131",
+      "errors": [],
+      "repositoryCommit": "b6e1e994a6c84b008f9114ca23e2afcc54c763e5"
+    },
+    {
+      "project": "../AppStoreConnect/src/libs/AppStoreConnect/AppStoreConnect.csproj",
+      "enabled": true,
+      "manifests": 1,
+      "analyzerVersion": "0.35.0-preview.2.134",
+      "errors": [],
+      "repositoryCommit": "497ec12cb2e667c52f76bcfb7985487d44aa6bfc"
+    },
+    {
+      "project": "../ElevenLabs/src/libs/ElevenLabs/ElevenLabs.csproj",
+      "enabled": true,
+      "manifests": 4,
+      "analyzerVersion": "0.35.0-preview.2.131",
+      "errors": [],
+      "repositoryCommit": "c8eb1f22e10d8fdc16ae9aba81512009c97cb2c2"
+    },
+    {
+      "project": "../OpenAI/src/libs/tryAGI.OpenAI/tryAGI.OpenAI.csproj",
+      "enabled": true,
+      "manifests": 2,
+      "analyzerVersion": "0.35.0-preview.2.123",
+      "errors": [],
+      "repositoryCommit": "4155de02988590ee4b7dc6bfe9b2839f8c6b0285"
+    }
+  ],
+  "errorCount": 0
+}

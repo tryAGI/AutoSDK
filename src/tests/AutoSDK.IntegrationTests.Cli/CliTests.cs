@@ -6844,7 +6844,10 @@ components:
             generatedProject.Should().Contain("Generated/AutoSDK.SharedJsonMetadata.props")
                 .And.Contain("Version=\"$(AutoSDKJsonMetadataVersion)\" PrivateAssets=\"all\"");
             (await File.ReadAllTextAsync(Path.Combine(tempDirectory, "src", "libs", "TestAPI", "generate.sh")))
-                .Should().Contain("--shared-json-metadata");
+                .Should().Contain("--shared-json-metadata")
+                .And.Contain("--shared-json-metadata-project TestAPI.csproj")
+                .And.Contain("--clean-stale-files")
+                .And.NotContain("rm -rf Generated");
             var issueTemplateDirectory = Path.Combine(tempDirectory, ".github", "ISSUE_TEMPLATE");
             File.Exists(Path.Combine(issueTemplateDirectory, "bug-report.yml"))
                 .Should()

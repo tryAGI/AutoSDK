@@ -22,7 +22,7 @@ class MetadataAuditTests(unittest.TestCase):
             binding.write_text(f"<Project><PropertyGroup><AutoSDKJsonMetadataVersion>1.2.3-preview.4</AutoSDKJsonMetadataVersion>"
                                f"<AutoSDKJsonMetadataManifestVersion>{audit.PROTOCOL}</AutoSDKJsonMetadataManifestVersion></PropertyGroup></Project>")
             project = root / "Fixture.csproj"
-            valid = ('<Project><Import Project="Generated/AutoSDK.SharedJsonMetadata.props" />'
+            valid = ('<Project><PropertyGroup><TargetFramework>net10.0</TargetFramework></PropertyGroup><Import Project="Generated/AutoSDK.SharedJsonMetadata.props" />'
                      '<ItemGroup><PackageReference Include="AutoSDK.JsonMetadata" Version="$(AutoSDKJsonMetadataVersion)" '
                      'PrivateAssets="all" /></ItemGroup></Project>')
             project.write_text(valid)
@@ -66,6 +66,19 @@ class MetadataAuditTests(unittest.TestCase):
                     with zipfile.ZipFile(package, "w") as archive:
                         archive.writestr("Fixture.nuspec", f'<package><metadata><dependencies><dependency id="{dependency}" /></dependencies></metadata></package>')
                     self.assertEqual(expected, bool(audit.audit_package(package)["errors"]))
+
+    def test_build_assemblies_cannot_hide_in_runtime_assets(self):
+        with tempfile.TemporaryDirectory() as directory:
+            package = Path(directory) / "Fixture.nupkg"
+            for path, rejected in [("lib/net10.0/Microsoft.CodeAnalysis.CSharp.dll", True),
+                                   ("runtimes/linux-x64/lib/net10.0/AutoSDK.JsonMetadata.dll", True),
+                                   ("analyzers/dotnet/cs/AutoSDK.JsonMetadata.dll", False),
+                                   ("lib/net10.0/Fixture.dll", False)]:
+                with self.subTest(path=path):
+                    with zipfile.ZipFile(package, "w") as archive:
+                        archive.writestr("Fixture.nuspec", '<package><metadata /></package>')
+                        archive.writestr(path, b'fixture')
+                    self.assertEqual(rejected, bool(audit.audit_package(package)["errors"]))
 
 
 if __name__ == "__main__":
