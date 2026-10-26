@@ -13,16 +13,34 @@ internal static class SharedJsonMetadataProjectGuard
         var parent = Path.GetDirectoryName(path)!;
         var projects = (Directory.Exists(path) ? Directory.GetFiles(path, "*.csproj") : [])
             .Concat(Directory.Exists(parent) ? Directory.GetFiles(parent, "*.csproj") : []);
-        var configured = projects.Any(project =>
-            File.ReadAllText(project).Contains("AutoSDK.JsonMetadata", StringComparison.Ordinal) &&
-            XDocument.Load(project).Descendants().Any(node => node.Name.LocalName == "PackageReference" &&
-                (string?)node.Attribute("Include") == "AutoSDK.JsonMetadata"));
+        var configured = projects.Any(HasActiveAnalyzerReference);
         if (artifacts || configured)
         {
             throw new ArgumentException("This SDK already uses shared JSON metadata. Regenerate with " +
                 "--shared-json-metadata. To change profiles deliberately, remove the shared analyzer/binding " +
                 "configuration and generate into a fresh output directory.");
         }
+    }
+
+    private static bool HasActiveAnalyzerReference(string project)
+    {
+        if (!File.ReadAllText(project).Contains("AutoSDK.JsonMetadata", StringComparison.Ordinal))
+        {
+            return false;
+        }
+        var document = XDocument.Load(project);
+        var localVersion = document.Descendants().Any(node => node.Name.LocalName == "AutoSDKJsonMetadataVersion" &&
+            !string.IsNullOrWhiteSpace(node.Value));
+        var boundVersion = document.Descendants().Where(node => node.Name.LocalName == "Import")
+            .Select(node => (string?)node.Attribute("Project"))
+            .Where(value => value is not null && value.EndsWith("AutoSDK.SharedJsonMetadata.props", StringComparison.Ordinal))
+            .Any(value => File.Exists(Path.Combine(Path.GetDirectoryName(project)!, value!.Replace('\\', Path.DirectorySeparatorChar))));
+        return document.Descendants().Any(node => node.Name.LocalName == "PackageReference" &&
+            (string?)node.Attribute("Include") == "AutoSDK.JsonMetadata" &&
+            (localVersion || boundVersion ||
+             (string?)node.Attribute("Version") != "$(AutoSDKJsonMetadataVersion)" ||
+             !node.AncestorsAndSelf().Any(parent =>
+                 (string?)parent.Attribute("Condition") == "'$(AutoSDKJsonMetadataVersion)' != ''")));
     }
 
     internal static void Validate(string output, string project)

@@ -12,9 +12,11 @@ project before writing anything; normal invocations also discover a project in
 the output directory or beside it. Multiple projects require an explicit selection.
 Standalone output without a consuming project emits the binding and explicit
 project/analyzer setup instructions; it does not scaffold a consuming project.
-Existing shared artifacts or an analyzer reference also reject regeneration
+Existing shared artifacts or an active analyzer reference also reject regeneration
 without the shared flag, preventing silent profile drift. A deliberate switch
 requires removing the shared setup and choosing fresh output.
+The fresh scaffold's conditional reference remains inactive until a binding or
+explicit metadata version exists, so its first classic generation remains valid.
 The guard checks the literal net10.0 target, matching binding import and private,
 version-bound analyzer reference. Projects with custom imported setup must expose
 these properties directly before using this profile.

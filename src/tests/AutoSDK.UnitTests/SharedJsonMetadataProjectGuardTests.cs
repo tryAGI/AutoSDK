@@ -25,6 +25,19 @@ public sealed class SharedJsonMetadataProjectGuardTests
             File.WriteAllText(Path.Combine(directory, "Fixture.csproj"),
                 "<Project><ItemGroup><PackageReference Include=\"AutoSDK.JsonMetadata\" /></ItemGroup></Project>");
             action.Should().Throw<ArgumentException>(); // Also catches old scripts that removed Generated first.
+            const string freshScaffold = """
+                <Project><Import Project="Generated/AutoSDK.SharedJsonMetadata.props" Condition="Exists('Generated/AutoSDK.SharedJsonMetadata.props')" />
+                <ItemGroup Condition="'$(AutoSDKJsonMetadataVersion)' != ''"><PackageReference Include="AutoSDK.JsonMetadata"
+                Version="$(AutoSDKJsonMetadataVersion)" PrivateAssets="all" /></ItemGroup></Project>
+                """;
+            File.WriteAllText(Path.Combine(directory, "Fixture.csproj"), freshScaffold);
+            Guard.RejectProfileDowngrade(output); // First classic generation from a fresh scaffold has no active analyzer.
+            File.WriteAllText(binding, "existing binding");
+            action.Should().Throw<ArgumentException>();
+            File.Delete(binding);
+            File.WriteAllText(Path.Combine(directory, "Fixture.csproj"), freshScaffold.Replace("</Project>",
+                "<PropertyGroup><AutoSDKJsonMetadataVersion>1.0.0</AutoSDKJsonMetadataVersion></PropertyGroup></Project>", StringComparison.Ordinal));
+            action.Should().Throw<ArgumentException>(); // An explicitly configured version activates the conditional reference.
         }
         finally
         {
