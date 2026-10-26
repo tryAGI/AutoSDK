@@ -592,7 +592,7 @@ public partial class JsonTests
         file.Text.Should().Contain(
             "JsonSerializable(typeof(global::G.JsonElement), TypeInfoPropertyName = \"GJsonElement\")");
         Regex.Matches(file.Text, "\\[global::System.Text.Json.Serialization.JsonSerializable").Count
-            .Should().Be(524);
+            .Should().Be(525);
     }
 
     [TestMethod]
@@ -633,7 +633,7 @@ public partial class JsonTests
         Regex.Matches(file.Text, "internal sealed partial class SourceGenerationContextChunk").Count
             .Should().Be(7);
         Regex.Matches(file.Text, "\\[global::System.Text.Json.Serialization.JsonSerializable").Count
-            .Should().Be(3351);
+            .Should().Be(3352);
         file.Text.Should().NotContain("JsonSerializable(typeof(global::G.JsonSerializerContextTypes))");
     }
 

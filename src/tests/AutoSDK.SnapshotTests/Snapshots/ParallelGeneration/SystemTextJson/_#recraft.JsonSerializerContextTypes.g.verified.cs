@@ -27,6 +27,11 @@ namespace recraft
         public global::System.Collections.Generic.List<object>? ObjectList { get; set; }
 
         /// <summary>
+        /// String arrays used by dynamic JSON option values.
+        /// </summary>
+        public string[]? StringArray { get; set; }
+
+        /// <summary>
         /// 
         /// </summary>
         public global::System.Text.Json.JsonElement? JsonElement { get; set; }

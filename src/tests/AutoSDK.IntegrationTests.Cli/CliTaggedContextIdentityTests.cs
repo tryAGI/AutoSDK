@@ -22,6 +22,23 @@ public class CliTaggedContextIdentityTests
                 info = new { title = "Overlapping tags", version = "1.0.0" },
                 paths = Enumerable.Range(0, 8).ToDictionary(i => $"/items{i}", i => new
                 {
+                    post = new
+                    {
+                        operationId = $"postItem{i}",
+                        tags = new[] { $"items{i}" },
+                        requestBody = new
+                        {
+                            required = true,
+                            content = new Dictionary<string, object>
+                            {
+                                ["application/json"] = new
+                                {
+                                    schema = new Dictionary<string, string> { ["$ref"] = $"#/components/schemas/Item{i}" },
+                                },
+                            },
+                        },
+                        responses = new Dictionary<string, object> { ["204"] = new { description = "OK" } },
+                    },
                     get = new
                     {
                         operationId = $"getItem{i}",
@@ -103,6 +120,14 @@ if (v1.JsonSerializerContext is not Fixture.Items0SourceGenerationContext ||
 {
     throw new InvalidOperationException("Leaf clients did not use their own contexts.");
 }
+using var root = new Fixture.ApiClient(httpClient: new HttpClient(new RequestHandler()), baseUri: new Uri("https://example.test"));
+if (root.Items0.JsonSerializerContext is not Fixture.Items0SourceGenerationContext)
+    throw new InvalidOperationException("Root child must use its directed context.");
+await root.Items0.PostItem0Async(new Fixture.Item0 { AdditionalProperties = { ["include_timestamp_types"] = new[] { "word", "quote\"", "Ж" } } });
+root.JsonSerializerContext = CustomContext.Default;
+if (!ReferenceEquals(root.Items0.JsonSerializerContext, CustomContext.Default))
+    throw new InvalidOperationException("Explicit user context was not propagated.");
+await root.Items0.PostItem0Async(new Fixture.Item0 { AdditionalProperties = { ["include_timestamp_types"] = new[] { "word", "quote\"", "Ж" } } });
 Console.WriteLine("Both tagged API generations work without reflection.");
 
 static void Check(System.Text.Json.Serialization.JsonSerializerContext context, Type type)
@@ -112,6 +137,21 @@ static void Check(System.Text.Json.Serialization.JsonSerializerContext context, 
     if (JsonSerializer.Serialize(value, info) != "{\"id\":\"ok\"}")
     {
         throw new InvalidOperationException("Context round trip failed.");
+    }
+}
+
+[System.Text.Json.Serialization.JsonSerializable(typeof(Fixture.Item0))]
+[System.Text.Json.Serialization.JsonSerializable(typeof(string[]))]
+internal partial class CustomContext : System.Text.Json.Serialization.JsonSerializerContext { }
+
+internal sealed class RequestHandler : HttpMessageHandler
+{
+    protected override async Task<HttpResponseMessage> SendAsync(HttpRequestMessage request, CancellationToken cancellationToken)
+    {
+        using var document = JsonDocument.Parse(await request.Content!.ReadAsStringAsync(cancellationToken));
+        if (!document.RootElement.GetProperty("include_timestamp_types").EnumerateArray().Select(value => value.GetString())
+            .SequenceEqual(new[] { "word", "quote\"", "Ж" })) throw new InvalidOperationException("Dynamic array request mismatch.");
+        return new HttpResponseMessage(System.Net.HttpStatusCode.NoContent);
     }
 }
 """);
@@ -128,6 +168,12 @@ static void Check(System.Text.Json.Serialization.JsonSerializerContext context, 
             var nativeRun = await RunProcessAsync(executable, directory);
             nativeRun.ExitCode.Should().Be(0, nativeRun.StandardOutput + nativeRun.StandardError);
             nativeRun.StandardOutput.Should().Contain("Both tagged API generations work without reflection.");
+            var trimmedDirectory = Path.Combine(directory, "trimmed");
+            var trimmed = await RunDotnetAsync(directory, "publish", "Consumer.csproj", "--disable-build-servers", "-c", "Release",
+                "--self-contained", "true", "-p:PublishTrimmed=true", "-p:ILLinkTreatWarningsAsErrors=true", "-o", trimmedDirectory);
+            trimmed.ExitCode.Should().Be(0, trimmed.StandardOutput + trimmed.StandardError);
+            var trimmedRun = await RunProcessAsync(Path.Combine(trimmedDirectory, OperatingSystem.IsWindows() ? "Consumer.exe" : "Consumer"), directory);
+            trimmedRun.ExitCode.Should().Be(0, trimmedRun.StandardOutput + trimmedRun.StandardError);
         }
         finally
         {

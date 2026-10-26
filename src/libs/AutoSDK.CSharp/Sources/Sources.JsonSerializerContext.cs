@@ -830,18 +830,22 @@ namespace {client.Settings.Namespace}
         var contextNullableValueTypes = expandContextTypes
             ? nullableValueTypes
             : typeComponents.ExplicitNullableValueTypes;
+        // Preserve supported string[] extension-data options in every bounded context,
+        // including leaf clients (HumeAI include_timestamp_types), without reflection.
         var contextTypes = expandContextTypes
             ? new[]
             {
                 "global::System.Collections.Generic.Dictionary<string, string>",
                 "global::System.Collections.Generic.Dictionary<string, object>",
                 "global::System.Collections.Generic.List<object>",
+                "string[]",
                 "global::System.Text.Json.JsonElement?",
             }
             : new[]
             {
                 $"global::{client.Settings.Namespace}.{GetJsonSerializerContextTypesClassName(client)}",
                 "global::System.Collections.Generic.List<object>",
+                "string[]",
             };
         if (client.Settings.UseSharedJsonMetadata)
         {

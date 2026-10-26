@@ -43,7 +43,8 @@ namespace IXSocial
             }
         }
 
-        private static string BoundDiagnosticText(string value, int maximumLength = 512) =>
+        private static string BoundDiagnosticText(string? value, int maximumLength = 512) =>
+            value == null ? string.Empty :
             value.Length <= maximumLength ? value : value.Substring(0, maximumLength) + "... [truncated]";
 
         /// <summary>

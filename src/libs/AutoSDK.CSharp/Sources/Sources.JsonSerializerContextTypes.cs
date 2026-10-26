@@ -84,6 +84,11 @@ namespace {@namespace}
         /// </summary>
         public global::System.Collections.Generic.List<object>? ObjectList {{ get; set; }}
 
+        /// <summary>
+        /// String arrays used by dynamic JSON option values.
+        /// </summary>
+        public string[]? StringArray {{ get; set; }}
+
         {string.Empty.ToXmlDocumentationSummary(level: 8)}
         public global::System.Text.Json.JsonElement? JsonElement {{ get; set; }}
 ");
