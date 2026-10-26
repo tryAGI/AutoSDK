@@ -1,1 +1,18 @@
-{}
+{
+  "Generate_ValidateMixedAsyncApiUnions_OfflineContracts (False)": {
+    "duration_seconds": 90,
+    "reason": "Conservative cold CI estimate for new generated consumer regression; local managed/native runs passed, replace with first passed CI cohort."
+  },
+  "Generate_ValidateMixedAsyncApiUnions_OfflineContracts (True)": {
+    "duration_seconds": 180,
+    "reason": "Conservative cold CI estimate for new generated consumer regression; local managed/native runs passed, replace with first passed CI cohort."
+  },
+  "Trim_ReleasePackageGenerationDoesNotLeakIntoAnalysis (False)": {
+    "duration_seconds": 90,
+    "reason": "Conservative cold CI estimate for new generated consumer regression; local managed/native runs passed, replace with first passed CI cohort."
+  },
+  "Trim_ReleasePackageGenerationDoesNotLeakIntoAnalysis (True)": {
+    "duration_seconds": 180,
+    "reason": "Conservative cold CI estimate for new generated consumer regression; local managed/native runs passed, replace with first passed CI cohort."
+  }
+}
