@@ -19,7 +19,7 @@ namespace G.JsonConverters
                     var stringValue = reader.GetString();
                     if (stringValue != null)
                     {
-                        return global::G.ConversationItemCreatedPayloadTypeExtensions.ToEnum(stringValue) ?? default;
+                        return global::G.ConversationItemCreatedPayloadTypeExtensions.ToEnum(stringValue) ?? throw new global::System.Text.Json.JsonException($"Unknown discriminator value '{stringValue}' for global::G.ConversationItemCreatedPayloadType.");
                     }
                     
                     break;

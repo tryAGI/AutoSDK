@@ -413,7 +413,11 @@ public static class AsyncApiData
     {
         return model with
         {
-            RejectUnknownStringValues = model.SchemaContext.Parent?.Hint == Hint.Discriminator,
+            // Mixed JSON/binary event unions may have no common discriminator. A
+            // closed singleton still denotes one literal value: accepting a different
+            // string as its default makes shape fallback choose the wrong event.
+            RejectUnknownStringValues = model.SchemaContext.Parent?.Hint == Hint.Discriminator ||
+                                        (!model.IsOpenEnum && model.EnumValues.Length == 1),
         };
     }
 

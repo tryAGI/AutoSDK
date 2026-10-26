@@ -133,6 +133,13 @@ internal sealed class GenerateCommand : Command
         Description = "Generate validation methods for models",
     };
 
+    private Option<bool> ValidateAnyOfs { get; } = new(
+        name: "--validate-any-ofs")
+    {
+        DefaultValueFactory = _ => Settings.Default.ValidateAnyOfs,
+        Description = "Reject JSON that matches no oneOf/anyOf variant, including empty nested unions.",
+    };
+
     private Option<bool> GenerateRawModelData { get; } = new(
         name: "--generate-raw-model-data")
     {
@@ -620,6 +627,7 @@ internal sealed class GenerateCommand : Command
         Options.Add(IgnoreOpenApiErrors);
         Options.Add(IgnoreOpenApiWarnings);
         Options.Add(GenerateModelValidationMethods);
+        Options.Add(ValidateAnyOfs);
         Options.Add(GenerateRawModelData);
         Options.Add(ComputeDiscriminators);
         Options.Add(GenerateCli);
@@ -849,6 +857,7 @@ internal sealed class GenerateCommand : Command
             ExcludedModelNamespaceMode = parseResult.GetRequiredValue(ExcludedModelNamespaceMode),
             ComputeDiscriminators = parseResult.GetRequiredValue(ComputeDiscriminators),
             GenerateModelValidationMethods = parseResult.GetRequiredValue(GenerateModelValidationMethods),
+            ValidateAnyOfs = parseResult.GetRequiredValue(ValidateAnyOfs),
             GenerateRawModelData = parseResult.GetRequiredValue(GenerateRawModelData),
             IgnoreOpenApiErrors = parseResult.GetRequiredValue(IgnoreOpenApiErrors),
             IgnoreOpenApiWarnings = parseResult.GetRequiredValue(IgnoreOpenApiWarnings),

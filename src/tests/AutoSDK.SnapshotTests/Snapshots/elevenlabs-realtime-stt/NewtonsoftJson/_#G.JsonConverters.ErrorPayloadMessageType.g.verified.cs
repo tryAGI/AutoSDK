@@ -28,7 +28,7 @@ namespace G.JsonConverters
                     var stringValue = reader.Value as string ?? reader.ReadAsString();
                     if (stringValue != null)
                     {
-                        return global::G.ErrorPayloadMessageTypeExtensions.ToEnum(stringValue) ?? default;
+                        return global::G.ErrorPayloadMessageTypeExtensions.ToEnum(stringValue) ?? throw new global::Newtonsoft.Json.JsonSerializationException($"Unknown discriminator value '{stringValue}' for global::G.ErrorPayloadMessageType.");
                     }
 
                     break;

@@ -355,4 +355,57 @@ public class EnumGenerationTests
         result.Values.Select(static value => value.Name)
             .Should().Equal("Ready", "Ready2", "Ready3");
     }
+    [TestMethod]
+    [DataRow(JsonSerializerType.SystemTextJson)]
+    [DataRow(JsonSerializerType.NewtonsoftJson)]
+    public void MixedAsyncApiEvents_RejectForeignSingletonStrings(JsonSerializerType serializer)
+    {
+        const string json = """
+        {
+          "asyncapi":"3.0.0", "info":{"title":"Mixed events","version":"1"},
+          "channels":{"events":{"address":"/events","messages":{
+            "Alpha":{"$ref":"#/components/messages/Alpha"},
+            "Beta":{"$ref":"#/components/messages/Beta"},
+            "Audio":{"$ref":"#/components/messages/Audio"}}}},
+          "operations":{"receive":{"action":"receive","channel":{"$ref":"#/channels/events"},
+            "messages":[{"$ref":"#/channels/events/messages/Alpha"},
+              {"$ref":"#/channels/events/messages/Beta"},{"$ref":"#/channels/events/messages/Audio"}]}},
+          "components":{"messages":{
+            "Alpha":{"payload":{"$ref":"#/components/schemas/Alpha"}},
+            "Beta":{"payload":{"$ref":"#/components/schemas/Beta"}},
+            "Audio":{"payload":{"$ref":"#/components/schemas/Audio"}}},
+            "schemas":{
+              "Alpha":{"type":"object","required":["type"],"properties":{
+                "type":{"type":"string","enum":["alpha"]}}},
+              "Beta":{"type":"object","required":["type"],"properties":{
+                "type":{"type":"string","enum":["beta"]}}},
+              "Audio":{"type":"string","format":"binary"},
+              "Status":{"type":"string","enum":["ready","done"]},
+              "OpenStatus":{"type":"string","enum":["known"],"x-speakeasy-unknown-values":true}
+            }}
+        }
+        """;
+        var settings = DefaultSettings with
+        {
+            GenerateModels = true,
+            GenerateSdk = true,
+            TargetFramework = "net8.0",
+            JsonSerializerType = serializer,
+        };
+        var data = AsyncApiData.Prepare(((json, settings), GlobalSettings: settings));
+        var closedSingletons = data.Enums.Where(model => model.EnumValues.Length == 1 && !model.IsOpenEnum).ToArray();
+
+        data.AnyOfs.Single(union => union.Name == "ServerEvent").DiscriminatorPropertyName.Should().BeNullOrEmpty();
+        closedSingletons.Should().HaveCount(2);
+        foreach (var model in closedSingletons)
+        {
+            model.RejectUnknownStringValues.Should().BeTrue();
+            Sources.GenerateEnumJsonConverter(model).Should().Contain(serializer == JsonSerializerType.SystemTextJson
+                ? "throw new global::System.Text.Json.JsonException"
+                : "throw new global::Newtonsoft.Json.JsonSerializationException");
+        }
+        data.Enums.Single(model => model.ClassName == "Status").RejectUnknownStringValues.Should().BeFalse();
+        data.Enums.Single(model => model.ClassName == "OpenStatus").RejectUnknownStringValues.Should().BeFalse();
+    }
+
 }
