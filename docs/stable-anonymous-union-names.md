@@ -63,3 +63,24 @@ corrects affected union member names (for example the duplicated
 `AppEncryptionDeclarations1` / `AppEncryptionDeclarations2` pair becomes
 `AppEncryptionDeclarations` / `Apps`). Update explicit references to those members
 when regenerating an affected SDK, independently of the naming-mode migration.
+
+## Validation (2026-10-26)
+
+The complete pinned AppStoreConnect SDK at repository commit `497ec12cb` was
+regenerated in a temporary checkout using the new mode. Its `openapi.json` SHA-256
+is `7518d3a94a8bd701ac25c1c601b95b8f53aad92091affb15a2a9d331713dac1a`. The full SDK built with
+warnings treated as errors. A source consumer explicitly declaring
+`IList<BuildsResponseIncludedItem_e807cc9b04238d70>` was published for `osx-arm64`
+with `PublishTrimmed=true`, `JsonSerializerIsReflectionEnabledByDefault=false`,
+`TreatWarningsAsErrors=true` and `ILLinkTreatWarningsAsErrors=true`. The executable
+round-tripped all 12 included resource types while preserving their `type` and
+`id` fields. The shared-metadata analyzer was built from the same AutoSDK sources
+and restored from a temporary local feed because the matching preview was not yet
+available on NuGet. No provider credentials or network API calls were used.
+
+Array alternatives retain structural dispatch even if a discriminator mapping
+points to their schema: an array cannot carry an object discriminator property.
+The GitHub content response snapshots cover that boundary. Reviewed snapshots for
+ElevenLabs, Letta and LlamaParse also capture corrected prefix collisions such as
+`ReasoningContent` / `OmittedReasoningContent` and
+`OpenAIEmbeddingConfig` / `AzureOpenAIEmbeddingConfig`.

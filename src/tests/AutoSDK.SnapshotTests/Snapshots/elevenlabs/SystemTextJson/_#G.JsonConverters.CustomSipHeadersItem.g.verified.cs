@@ -22,26 +22,26 @@ namespace G.JsonConverters
                             throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::G.PhoneNumberTransferCustomSipHeaderDiscriminator)}");
             var discriminator = global::System.Text.Json.JsonSerializer.Deserialize(ref readerCopy, discriminatorTypeInfo);
 
-            global::G.CustomSIPHeader? dynamic1 = default;
-            if (discriminator?.Type == global::G.PhoneNumberTransferCustomSipHeaderDiscriminatorType.Dynamic)
+            global::G.CustomSIPHeader? @static = default;
+            if (discriminator?.Type == global::G.PhoneNumberTransferCustomSipHeaderDiscriminatorType.Static)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.CustomSIPHeader), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.CustomSIPHeader> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::G.CustomSIPHeader)}");
-                dynamic1 = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
+                @static = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
             }
-            global::G.CustomSIPHeaderWithDynamicVariable? dynamic2 = default;
+            global::G.CustomSIPHeaderWithDynamicVariable? dynamic = default;
             if (discriminator?.Type == global::G.PhoneNumberTransferCustomSipHeaderDiscriminatorType.Dynamic)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.CustomSIPHeaderWithDynamicVariable), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.CustomSIPHeaderWithDynamicVariable> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::G.CustomSIPHeaderWithDynamicVariable)}");
-                dynamic2 = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
+                dynamic = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
             }
 
             var __value = new global::G.CustomSipHeadersItem(
                 discriminator?.Type,
-                dynamic1,
+                @static,
 
-                dynamic2
+                dynamic
                 );
 
             return __value;
@@ -56,17 +56,17 @@ namespace G.JsonConverters
             options = options ?? throw new global::System.ArgumentNullException(nameof(options));
             var typeInfoResolver = options.TypeInfoResolver ?? throw new global::System.InvalidOperationException("TypeInfoResolver is not set.");
 
-            if (value.IsDynamic1)
+            if (value.IsStatic)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.CustomSIPHeader), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.CustomSIPHeader?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.CustomSIPHeader).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickDynamic1(), typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickStatic(), typeInfo);
             }
-            else if (value.IsDynamic2)
+            else if (value.IsDynamic)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.CustomSIPHeaderWithDynamicVariable), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.CustomSIPHeaderWithDynamicVariable?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.CustomSIPHeaderWithDynamicVariable).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickDynamic2(), typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickDynamic(), typeInfo);
             }
         }
     }

@@ -19,38 +19,38 @@ namespace G
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        public global::G.AzureOpenAIEmbeddingConfig? AzureEmbedding1 { get; init; }
+        public global::G.AzureOpenAIEmbeddingConfig? AzureEmbedding { get; init; }
 #else
-        public global::G.AzureOpenAIEmbeddingConfig? AzureEmbedding1 { get; }
+        public global::G.AzureOpenAIEmbeddingConfig? AzureEmbedding { get; }
 #endif
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(AzureEmbedding1))]
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(AzureEmbedding))]
 #endif
-        public bool IsAzureEmbedding1 => AzureEmbedding1 != null;
+        public bool IsAzureEmbedding => AzureEmbedding != null;
 
         /// <summary>
         /// 
         /// </summary>
-        public bool TryPickAzureEmbedding1(
+        public bool TryPickAzureEmbedding(
 #if NET6_0_OR_GREATER
             [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
 #endif
             out global::G.AzureOpenAIEmbeddingConfig? value)
         {
-            value = AzureEmbedding1;
-            return IsAzureEmbedding1;
+            value = AzureEmbedding;
+            return IsAzureEmbedding;
         }
 
         /// <summary>
         /// 
         /// </summary>
-        public global::G.AzureOpenAIEmbeddingConfig PickAzureEmbedding1() => AzureEmbedding1 is { } value
+        public global::G.AzureOpenAIEmbeddingConfig PickAzureEmbedding() => AzureEmbedding is { } value
             ? value
-            : throw new global::System.InvalidOperationException($"Expected union variant 'AzureEmbedding1' but the value was {ToString()}.");
+            : throw new global::System.InvalidOperationException($"Expected union variant 'AzureEmbedding' but the value was {ToString()}.");
 
         /// <summary>
         /// 
@@ -167,38 +167,38 @@ namespace G
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        public global::G.OpenAIEmbeddingConfig? AzureEmbedding2 { get; init; }
+        public global::G.OpenAIEmbeddingConfig? OpenaiEmbedding { get; init; }
 #else
-        public global::G.OpenAIEmbeddingConfig? AzureEmbedding2 { get; }
+        public global::G.OpenAIEmbeddingConfig? OpenaiEmbedding { get; }
 #endif
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(AzureEmbedding2))]
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(OpenaiEmbedding))]
 #endif
-        public bool IsAzureEmbedding2 => AzureEmbedding2 != null;
+        public bool IsOpenaiEmbedding => OpenaiEmbedding != null;
 
         /// <summary>
         /// 
         /// </summary>
-        public bool TryPickAzureEmbedding2(
+        public bool TryPickOpenaiEmbedding(
 #if NET6_0_OR_GREATER
             [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
 #endif
             out global::G.OpenAIEmbeddingConfig? value)
         {
-            value = AzureEmbedding2;
-            return IsAzureEmbedding2;
+            value = OpenaiEmbedding;
+            return IsOpenaiEmbedding;
         }
 
         /// <summary>
         /// 
         /// </summary>
-        public global::G.OpenAIEmbeddingConfig PickAzureEmbedding2() => AzureEmbedding2 is { } value
+        public global::G.OpenAIEmbeddingConfig PickOpenaiEmbedding() => OpenaiEmbedding is { } value
             ? value
-            : throw new global::System.InvalidOperationException($"Expected union variant 'AzureEmbedding2' but the value was {ToString()}.");
+            : throw new global::System.InvalidOperationException($"Expected union variant 'OpenaiEmbedding' but the value was {ToString()}.");
 
         /// <summary>
         /// 
@@ -281,20 +281,20 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator global::G.AzureOpenAIEmbeddingConfig?(EmbeddingConfigVariant1 @this) => @this.AzureEmbedding1;
+        public static implicit operator global::G.AzureOpenAIEmbeddingConfig?(EmbeddingConfigVariant1 @this) => @this.AzureEmbedding;
 
         /// <summary>
         /// 
         /// </summary>
         public EmbeddingConfigVariant1(global::G.AzureOpenAIEmbeddingConfig? value)
         {
-            AzureEmbedding1 = value;
+            AzureEmbedding = value;
         }
 
         /// <summary>
         /// 
         /// </summary>
-        public static EmbeddingConfigVariant1 FromAzureEmbedding1(global::G.AzureOpenAIEmbeddingConfig? value) => new EmbeddingConfigVariant1(value);
+        public static EmbeddingConfigVariant1 FromAzureEmbedding(global::G.AzureOpenAIEmbeddingConfig? value) => new EmbeddingConfigVariant1(value);
 
         /// <summary>
         /// 
@@ -373,20 +373,20 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator global::G.OpenAIEmbeddingConfig?(EmbeddingConfigVariant1 @this) => @this.AzureEmbedding2;
+        public static implicit operator global::G.OpenAIEmbeddingConfig?(EmbeddingConfigVariant1 @this) => @this.OpenaiEmbedding;
 
         /// <summary>
         /// 
         /// </summary>
         public EmbeddingConfigVariant1(global::G.OpenAIEmbeddingConfig? value)
         {
-            AzureEmbedding2 = value;
+            OpenaiEmbedding = value;
         }
 
         /// <summary>
         /// 
         /// </summary>
-        public static EmbeddingConfigVariant1 FromAzureEmbedding2(global::G.OpenAIEmbeddingConfig? value) => new EmbeddingConfigVariant1(value);
+        public static EmbeddingConfigVariant1 FromOpenaiEmbedding(global::G.OpenAIEmbeddingConfig? value) => new EmbeddingConfigVariant1(value);
 
         /// <summary>
         /// 
@@ -439,22 +439,22 @@ namespace G
         /// </summary>
         public EmbeddingConfigVariant1(
             global::G.EmbeddingModelConfigUpdateEmbeddingConfigVariant1DiscriminatorType? type,
-            global::G.AzureOpenAIEmbeddingConfig? azureEmbedding1,
+            global::G.AzureOpenAIEmbeddingConfig? azureEmbedding,
             global::G.CohereEmbeddingConfig? cohereEmbedding,
             global::G.GeminiEmbeddingConfig? geminiEmbedding,
             global::G.HuggingFaceInferenceAPIEmbeddingConfig? huggingfaceApiEmbedding,
-            global::G.OpenAIEmbeddingConfig? azureEmbedding2,
+            global::G.OpenAIEmbeddingConfig? openaiEmbedding,
             global::G.VertexAIEmbeddingConfig? vertexaiEmbedding,
             global::G.BedrockEmbeddingConfig? bedrockEmbedding
             )
         {
             Type = type;
 
-            AzureEmbedding1 = azureEmbedding1;
+            AzureEmbedding = azureEmbedding;
             CohereEmbedding = cohereEmbedding;
             GeminiEmbedding = geminiEmbedding;
             HuggingfaceApiEmbedding = huggingfaceApiEmbedding;
-            AzureEmbedding2 = azureEmbedding2;
+            OpenaiEmbedding = openaiEmbedding;
             VertexaiEmbedding = vertexaiEmbedding;
             BedrockEmbedding = bedrockEmbedding;
         }
@@ -465,22 +465,22 @@ namespace G
         public object? Object =>
             BedrockEmbedding as object ??
             VertexaiEmbedding as object ??
-            AzureEmbedding2 as object ??
+            OpenaiEmbedding as object ??
             HuggingfaceApiEmbedding as object ??
             GeminiEmbedding as object ??
             CohereEmbedding as object ??
-            AzureEmbedding1 as object 
+            AzureEmbedding as object 
             ;
 
         /// <summary>
         /// 
         /// </summary>
         public override string? ToString() =>
-            AzureEmbedding1?.ToString() ??
+            AzureEmbedding?.ToString() ??
             CohereEmbedding?.ToString() ??
             GeminiEmbedding?.ToString() ??
             HuggingfaceApiEmbedding?.ToString() ??
-            AzureEmbedding2?.ToString() ??
+            OpenaiEmbedding?.ToString() ??
             VertexaiEmbedding?.ToString() ??
             BedrockEmbedding?.ToString() 
             ;
@@ -490,18 +490,18 @@ namespace G
         /// </summary>
         public bool Validate()
         {
-            return IsAzureEmbedding1 && !IsCohereEmbedding && !IsGeminiEmbedding && !IsHuggingfaceApiEmbedding && !IsAzureEmbedding2 && !IsVertexaiEmbedding && !IsBedrockEmbedding || !IsAzureEmbedding1 && IsCohereEmbedding && !IsGeminiEmbedding && !IsHuggingfaceApiEmbedding && !IsAzureEmbedding2 && !IsVertexaiEmbedding && !IsBedrockEmbedding || !IsAzureEmbedding1 && !IsCohereEmbedding && IsGeminiEmbedding && !IsHuggingfaceApiEmbedding && !IsAzureEmbedding2 && !IsVertexaiEmbedding && !IsBedrockEmbedding || !IsAzureEmbedding1 && !IsCohereEmbedding && !IsGeminiEmbedding && IsHuggingfaceApiEmbedding && !IsAzureEmbedding2 && !IsVertexaiEmbedding && !IsBedrockEmbedding || !IsAzureEmbedding1 && !IsCohereEmbedding && !IsGeminiEmbedding && !IsHuggingfaceApiEmbedding && IsAzureEmbedding2 && !IsVertexaiEmbedding && !IsBedrockEmbedding || !IsAzureEmbedding1 && !IsCohereEmbedding && !IsGeminiEmbedding && !IsHuggingfaceApiEmbedding && !IsAzureEmbedding2 && IsVertexaiEmbedding && !IsBedrockEmbedding || !IsAzureEmbedding1 && !IsCohereEmbedding && !IsGeminiEmbedding && !IsHuggingfaceApiEmbedding && !IsAzureEmbedding2 && !IsVertexaiEmbedding && IsBedrockEmbedding;
+            return IsAzureEmbedding && !IsCohereEmbedding && !IsGeminiEmbedding && !IsHuggingfaceApiEmbedding && !IsOpenaiEmbedding && !IsVertexaiEmbedding && !IsBedrockEmbedding || !IsAzureEmbedding && IsCohereEmbedding && !IsGeminiEmbedding && !IsHuggingfaceApiEmbedding && !IsOpenaiEmbedding && !IsVertexaiEmbedding && !IsBedrockEmbedding || !IsAzureEmbedding && !IsCohereEmbedding && IsGeminiEmbedding && !IsHuggingfaceApiEmbedding && !IsOpenaiEmbedding && !IsVertexaiEmbedding && !IsBedrockEmbedding || !IsAzureEmbedding && !IsCohereEmbedding && !IsGeminiEmbedding && IsHuggingfaceApiEmbedding && !IsOpenaiEmbedding && !IsVertexaiEmbedding && !IsBedrockEmbedding || !IsAzureEmbedding && !IsCohereEmbedding && !IsGeminiEmbedding && !IsHuggingfaceApiEmbedding && IsOpenaiEmbedding && !IsVertexaiEmbedding && !IsBedrockEmbedding || !IsAzureEmbedding && !IsCohereEmbedding && !IsGeminiEmbedding && !IsHuggingfaceApiEmbedding && !IsOpenaiEmbedding && IsVertexaiEmbedding && !IsBedrockEmbedding || !IsAzureEmbedding && !IsCohereEmbedding && !IsGeminiEmbedding && !IsHuggingfaceApiEmbedding && !IsOpenaiEmbedding && !IsVertexaiEmbedding && IsBedrockEmbedding;
         }
 
         /// <summary>
         /// 
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<global::G.AzureOpenAIEmbeddingConfig, TResult>? azureEmbedding1 = null,
+            global::System.Func<global::G.AzureOpenAIEmbeddingConfig, TResult>? azureEmbedding = null,
             global::System.Func<global::G.CohereEmbeddingConfig, TResult>? cohereEmbedding = null,
             global::System.Func<global::G.GeminiEmbeddingConfig, TResult>? geminiEmbedding = null,
             global::System.Func<global::G.HuggingFaceInferenceAPIEmbeddingConfig, TResult>? huggingfaceApiEmbedding = null,
-            global::System.Func<global::G.OpenAIEmbeddingConfig, TResult>? azureEmbedding2 = null,
+            global::System.Func<global::G.OpenAIEmbeddingConfig, TResult>? openaiEmbedding = null,
             global::System.Func<global::G.VertexAIEmbeddingConfig, TResult>? vertexaiEmbedding = null,
             global::System.Func<global::G.BedrockEmbeddingConfig, TResult>? bedrockEmbedding = null,
             bool validate = true)
@@ -511,9 +511,9 @@ namespace G
                 Validate();
             }
 
-            if (AzureEmbedding1 is { } __value0 && azureEmbedding1 != null)
+            if (AzureEmbedding is { } __value0 && azureEmbedding != null)
             {
-                return azureEmbedding1(__value0);
+                return azureEmbedding(__value0);
             }
             else if (CohereEmbedding is { } __value1 && cohereEmbedding != null)
             {
@@ -527,9 +527,9 @@ namespace G
             {
                 return huggingfaceApiEmbedding(__value3);
             }
-            else if (AzureEmbedding2 is { } __value4 && azureEmbedding2 != null)
+            else if (OpenaiEmbedding is { } __value4 && openaiEmbedding != null)
             {
-                return azureEmbedding2(__value4);
+                return openaiEmbedding(__value4);
             }
             else if (VertexaiEmbedding is { } __value5 && vertexaiEmbedding != null)
             {
@@ -547,7 +547,7 @@ namespace G
         /// 
         /// </summary>
         public void Match(
-            global::System.Action<global::G.AzureOpenAIEmbeddingConfig>? azureEmbedding1 = null,
+            global::System.Action<global::G.AzureOpenAIEmbeddingConfig>? azureEmbedding = null,
 
             global::System.Action<global::G.CohereEmbeddingConfig>? cohereEmbedding = null,
 
@@ -555,7 +555,7 @@ namespace G
 
             global::System.Action<global::G.HuggingFaceInferenceAPIEmbeddingConfig>? huggingfaceApiEmbedding = null,
 
-            global::System.Action<global::G.OpenAIEmbeddingConfig>? azureEmbedding2 = null,
+            global::System.Action<global::G.OpenAIEmbeddingConfig>? openaiEmbedding = null,
 
             global::System.Action<global::G.VertexAIEmbeddingConfig>? vertexaiEmbedding = null,
 
@@ -567,9 +567,9 @@ namespace G
                 Validate();
             }
 
-            if (AzureEmbedding1 is { } __value0)
+            if (AzureEmbedding is { } __value0)
             {
-                azureEmbedding1?.Invoke(__value0);
+                azureEmbedding?.Invoke(__value0);
             }
             else if (CohereEmbedding is { } __value1)
             {
@@ -583,9 +583,9 @@ namespace G
             {
                 huggingfaceApiEmbedding?.Invoke(__value3);
             }
-            else if (AzureEmbedding2 is { } __value4)
+            else if (OpenaiEmbedding is { } __value4)
             {
-                azureEmbedding2?.Invoke(__value4);
+                openaiEmbedding?.Invoke(__value4);
             }
             else if (VertexaiEmbedding is { } __value5)
             {
@@ -601,11 +601,11 @@ namespace G
         /// 
         /// </summary>
         public void Switch(
-            global::System.Action<global::G.AzureOpenAIEmbeddingConfig>? azureEmbedding1 = null,
+            global::System.Action<global::G.AzureOpenAIEmbeddingConfig>? azureEmbedding = null,
             global::System.Action<global::G.CohereEmbeddingConfig>? cohereEmbedding = null,
             global::System.Action<global::G.GeminiEmbeddingConfig>? geminiEmbedding = null,
             global::System.Action<global::G.HuggingFaceInferenceAPIEmbeddingConfig>? huggingfaceApiEmbedding = null,
-            global::System.Action<global::G.OpenAIEmbeddingConfig>? azureEmbedding2 = null,
+            global::System.Action<global::G.OpenAIEmbeddingConfig>? openaiEmbedding = null,
             global::System.Action<global::G.VertexAIEmbeddingConfig>? vertexaiEmbedding = null,
             global::System.Action<global::G.BedrockEmbeddingConfig>? bedrockEmbedding = null,
             bool validate = true)
@@ -615,9 +615,9 @@ namespace G
                 Validate();
             }
 
-            if (AzureEmbedding1 is { } __value0)
+            if (AzureEmbedding is { } __value0)
             {
-                azureEmbedding1?.Invoke(__value0);
+                azureEmbedding?.Invoke(__value0);
             }
             else if (CohereEmbedding is { } __value1)
             {
@@ -631,9 +631,9 @@ namespace G
             {
                 huggingfaceApiEmbedding?.Invoke(__value3);
             }
-            else if (AzureEmbedding2 is { } __value4)
+            else if (OpenaiEmbedding is { } __value4)
             {
-                azureEmbedding2?.Invoke(__value4);
+                openaiEmbedding?.Invoke(__value4);
             }
             else if (VertexaiEmbedding is { } __value5)
             {
@@ -652,7 +652,7 @@ namespace G
         {
             var fields = new object?[]
             {
-                AzureEmbedding1,
+                AzureEmbedding,
                 typeof(global::G.AzureOpenAIEmbeddingConfig),
                 CohereEmbedding,
                 typeof(global::G.CohereEmbeddingConfig),
@@ -660,7 +660,7 @@ namespace G
                 typeof(global::G.GeminiEmbeddingConfig),
                 HuggingfaceApiEmbedding,
                 typeof(global::G.HuggingFaceInferenceAPIEmbeddingConfig),
-                AzureEmbedding2,
+                OpenaiEmbedding,
                 typeof(global::G.OpenAIEmbeddingConfig),
                 VertexaiEmbedding,
                 typeof(global::G.VertexAIEmbeddingConfig),
@@ -682,11 +682,11 @@ namespace G
         public bool Equals(EmbeddingConfigVariant1 other)
         {
             return
-                global::System.Collections.Generic.EqualityComparer<global::G.AzureOpenAIEmbeddingConfig?>.Default.Equals(AzureEmbedding1, other.AzureEmbedding1) &&
+                global::System.Collections.Generic.EqualityComparer<global::G.AzureOpenAIEmbeddingConfig?>.Default.Equals(AzureEmbedding, other.AzureEmbedding) &&
                 global::System.Collections.Generic.EqualityComparer<global::G.CohereEmbeddingConfig?>.Default.Equals(CohereEmbedding, other.CohereEmbedding) &&
                 global::System.Collections.Generic.EqualityComparer<global::G.GeminiEmbeddingConfig?>.Default.Equals(GeminiEmbedding, other.GeminiEmbedding) &&
                 global::System.Collections.Generic.EqualityComparer<global::G.HuggingFaceInferenceAPIEmbeddingConfig?>.Default.Equals(HuggingfaceApiEmbedding, other.HuggingfaceApiEmbedding) &&
-                global::System.Collections.Generic.EqualityComparer<global::G.OpenAIEmbeddingConfig?>.Default.Equals(AzureEmbedding2, other.AzureEmbedding2) &&
+                global::System.Collections.Generic.EqualityComparer<global::G.OpenAIEmbeddingConfig?>.Default.Equals(OpenaiEmbedding, other.OpenaiEmbedding) &&
                 global::System.Collections.Generic.EqualityComparer<global::G.VertexAIEmbeddingConfig?>.Default.Equals(VertexaiEmbedding, other.VertexaiEmbedding) &&
                 global::System.Collections.Generic.EqualityComparer<global::G.BedrockEmbeddingConfig?>.Default.Equals(BedrockEmbedding, other.BedrockEmbedding) 
                 ;

@@ -29,12 +29,12 @@ namespace G.JsonConverters
                                throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::G.ManagedOpenAIEmbeddingConfig)}");
                 managedOpenaiEmbedding = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
             }
-            global::G.AzureOpenAIEmbeddingConfig? azureEmbedding1 = default;
+            global::G.AzureOpenAIEmbeddingConfig? azureEmbedding = default;
             if (discriminator?.Type == global::G.PipelineEmbeddingConfigDiscriminatorType.AzureEmbedding)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.AzureOpenAIEmbeddingConfig), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.AzureOpenAIEmbeddingConfig> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::G.AzureOpenAIEmbeddingConfig)}");
-                azureEmbedding1 = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
+                azureEmbedding = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
             }
             global::G.CohereEmbeddingConfig? cohereEmbedding = default;
             if (discriminator?.Type == global::G.PipelineEmbeddingConfigDiscriminatorType.CohereEmbedding)
@@ -57,12 +57,12 @@ namespace G.JsonConverters
                                throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::G.HuggingFaceInferenceAPIEmbeddingConfig)}");
                 huggingfaceApiEmbedding = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
             }
-            global::G.OpenAIEmbeddingConfig? azureEmbedding2 = default;
-            if (discriminator?.Type == global::G.PipelineEmbeddingConfigDiscriminatorType.AzureEmbedding)
+            global::G.OpenAIEmbeddingConfig? openaiEmbedding = default;
+            if (discriminator?.Type == global::G.PipelineEmbeddingConfigDiscriminatorType.OpenaiEmbedding)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.OpenAIEmbeddingConfig), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.OpenAIEmbeddingConfig> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::G.OpenAIEmbeddingConfig)}");
-                azureEmbedding2 = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
+                openaiEmbedding = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
             }
             global::G.VertexAIEmbeddingConfig? vertexaiEmbedding = default;
             if (discriminator?.Type == global::G.PipelineEmbeddingConfigDiscriminatorType.VertexaiEmbedding)
@@ -83,7 +83,7 @@ namespace G.JsonConverters
                 discriminator?.Type,
                 managedOpenaiEmbedding,
 
-                azureEmbedding1,
+                azureEmbedding,
 
                 cohereEmbedding,
 
@@ -91,7 +91,7 @@ namespace G.JsonConverters
 
                 huggingfaceApiEmbedding,
 
-                azureEmbedding2,
+                openaiEmbedding,
 
                 vertexaiEmbedding,
 
@@ -116,11 +116,11 @@ namespace G.JsonConverters
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.ManagedOpenAIEmbeddingConfig).Name}");
                 global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickManagedOpenaiEmbedding(), typeInfo);
             }
-            else if (value.IsAzureEmbedding1)
+            else if (value.IsAzureEmbedding)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.AzureOpenAIEmbeddingConfig), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.AzureOpenAIEmbeddingConfig?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.AzureOpenAIEmbeddingConfig).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickAzureEmbedding1(), typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickAzureEmbedding(), typeInfo);
             }
             else if (value.IsCohereEmbedding)
             {
@@ -140,11 +140,11 @@ namespace G.JsonConverters
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.HuggingFaceInferenceAPIEmbeddingConfig).Name}");
                 global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickHuggingfaceApiEmbedding(), typeInfo);
             }
-            else if (value.IsAzureEmbedding2)
+            else if (value.IsOpenaiEmbedding)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.OpenAIEmbeddingConfig), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.OpenAIEmbeddingConfig?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.OpenAIEmbeddingConfig).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickAzureEmbedding2(), typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickOpenaiEmbedding(), typeInfo);
             }
             else if (value.IsVertexaiEmbedding)
             {

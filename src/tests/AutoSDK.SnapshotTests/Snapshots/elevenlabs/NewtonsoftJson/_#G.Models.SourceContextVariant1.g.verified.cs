@@ -19,75 +19,75 @@ namespace G
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        public global::G.SongSourceContext? MusicExploreSong1 { get; init; }
+        public global::G.SongSourceContext? Song { get; init; }
 #else
-        public global::G.SongSourceContext? MusicExploreSong1 { get; }
+        public global::G.SongSourceContext? Song { get; }
 #endif
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(MusicExploreSong1))]
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Song))]
 #endif
-        public bool IsMusicExploreSong1 => MusicExploreSong1 != null;
+        public bool IsSong => Song != null;
 
         /// <summary>
         /// 
         /// </summary>
-        public bool TryPickMusicExploreSong1(
+        public bool TryPickSong(
 #if NET6_0_OR_GREATER
             [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
 #endif
             out global::G.SongSourceContext? value)
         {
-            value = MusicExploreSong1;
-            return IsMusicExploreSong1;
+            value = Song;
+            return IsSong;
         }
 
         /// <summary>
         /// 
         /// </summary>
-        public global::G.SongSourceContext PickMusicExploreSong1() => MusicExploreSong1 is { } value
+        public global::G.SongSourceContext PickSong() => Song is { } value
             ? value
-            : throw new global::System.InvalidOperationException($"Expected union variant 'MusicExploreSong1' but the value was {ToString()}.");
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Song' but the value was {ToString()}.");
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        public global::G.MusicExploreSongSourceContext? MusicExploreSong2 { get; init; }
+        public global::G.MusicExploreSongSourceContext? MusicExploreSong { get; init; }
 #else
-        public global::G.MusicExploreSongSourceContext? MusicExploreSong2 { get; }
+        public global::G.MusicExploreSongSourceContext? MusicExploreSong { get; }
 #endif
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(MusicExploreSong2))]
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(MusicExploreSong))]
 #endif
-        public bool IsMusicExploreSong2 => MusicExploreSong2 != null;
+        public bool IsMusicExploreSong => MusicExploreSong != null;
 
         /// <summary>
         /// 
         /// </summary>
-        public bool TryPickMusicExploreSong2(
+        public bool TryPickMusicExploreSong(
 #if NET6_0_OR_GREATER
             [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
 #endif
             out global::G.MusicExploreSongSourceContext? value)
         {
-            value = MusicExploreSong2;
-            return IsMusicExploreSong2;
+            value = MusicExploreSong;
+            return IsMusicExploreSong;
         }
 
         /// <summary>
         /// 
         /// </summary>
-        public global::G.MusicExploreSongSourceContext PickMusicExploreSong2() => MusicExploreSong2 is { } value
+        public global::G.MusicExploreSongSourceContext PickMusicExploreSong() => MusicExploreSong is { } value
             ? value
-            : throw new global::System.InvalidOperationException($"Expected union variant 'MusicExploreSong2' but the value was {ToString()}.");
+            : throw new global::System.InvalidOperationException($"Expected union variant 'MusicExploreSong' but the value was {ToString()}.");
 
         /// <summary>
         /// Context for sound effect clips.
@@ -133,20 +133,20 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator global::G.SongSourceContext?(SourceContextVariant1 @this) => @this.MusicExploreSong1;
+        public static implicit operator global::G.SongSourceContext?(SourceContextVariant1 @this) => @this.Song;
 
         /// <summary>
         /// 
         /// </summary>
         public SourceContextVariant1(global::G.SongSourceContext? value)
         {
-            MusicExploreSong1 = value;
+            Song = value;
         }
 
         /// <summary>
         /// 
         /// </summary>
-        public static SourceContextVariant1 FromMusicExploreSong1(global::G.SongSourceContext? value) => new SourceContextVariant1(value);
+        public static SourceContextVariant1 FromSong(global::G.SongSourceContext? value) => new SourceContextVariant1(value);
 
         /// <summary>
         /// 
@@ -156,20 +156,20 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator global::G.MusicExploreSongSourceContext?(SourceContextVariant1 @this) => @this.MusicExploreSong2;
+        public static implicit operator global::G.MusicExploreSongSourceContext?(SourceContextVariant1 @this) => @this.MusicExploreSong;
 
         /// <summary>
         /// 
         /// </summary>
         public SourceContextVariant1(global::G.MusicExploreSongSourceContext? value)
         {
-            MusicExploreSong2 = value;
+            MusicExploreSong = value;
         }
 
         /// <summary>
         /// 
         /// </summary>
-        public static SourceContextVariant1 FromMusicExploreSong2(global::G.MusicExploreSongSourceContext? value) => new SourceContextVariant1(value);
+        public static SourceContextVariant1 FromMusicExploreSong(global::G.MusicExploreSongSourceContext? value) => new SourceContextVariant1(value);
 
         /// <summary>
         /// 
@@ -199,15 +199,15 @@ namespace G
         /// </summary>
         public SourceContextVariant1(
             global::G.ProjectExternalAudioResponseModelSourceContextVariant1DiscriminatorSourceType? sourceType,
-            global::G.SongSourceContext? musicExploreSong1,
-            global::G.MusicExploreSongSourceContext? musicExploreSong2,
+            global::G.SongSourceContext? song,
+            global::G.MusicExploreSongSourceContext? musicExploreSong,
             global::G.SfxSourceContext? sfx
             )
         {
             SourceType = sourceType;
 
-            MusicExploreSong1 = musicExploreSong1;
-            MusicExploreSong2 = musicExploreSong2;
+            Song = song;
+            MusicExploreSong = musicExploreSong;
             Sfx = sfx;
         }
 
@@ -216,16 +216,16 @@ namespace G
         /// </summary>
         public object? Object =>
             Sfx as object ??
-            MusicExploreSong2 as object ??
-            MusicExploreSong1 as object 
+            MusicExploreSong as object ??
+            Song as object 
             ;
 
         /// <summary>
         /// 
         /// </summary>
         public override string? ToString() =>
-            MusicExploreSong1?.ToString() ??
-            MusicExploreSong2?.ToString() ??
+            Song?.ToString() ??
+            MusicExploreSong?.ToString() ??
             Sfx?.ToString() 
             ;
 
@@ -234,15 +234,15 @@ namespace G
         /// </summary>
         public bool Validate()
         {
-            return IsMusicExploreSong1 && !IsMusicExploreSong2 && !IsSfx || !IsMusicExploreSong1 && IsMusicExploreSong2 && !IsSfx || !IsMusicExploreSong1 && !IsMusicExploreSong2 && IsSfx;
+            return IsSong && !IsMusicExploreSong && !IsSfx || !IsSong && IsMusicExploreSong && !IsSfx || !IsSong && !IsMusicExploreSong && IsSfx;
         }
 
         /// <summary>
         /// 
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<global::G.SongSourceContext, TResult>? musicExploreSong1 = null,
-            global::System.Func<global::G.MusicExploreSongSourceContext, TResult>? musicExploreSong2 = null,
+            global::System.Func<global::G.SongSourceContext, TResult>? song = null,
+            global::System.Func<global::G.MusicExploreSongSourceContext, TResult>? musicExploreSong = null,
             global::System.Func<global::G.SfxSourceContext, TResult>? sfx = null,
             bool validate = true)
         {
@@ -251,13 +251,13 @@ namespace G
                 Validate();
             }
 
-            if (MusicExploreSong1 is { } __value0 && musicExploreSong1 != null)
+            if (Song is { } __value0 && song != null)
             {
-                return musicExploreSong1(__value0);
+                return song(__value0);
             }
-            else if (MusicExploreSong2 is { } __value1 && musicExploreSong2 != null)
+            else if (MusicExploreSong is { } __value1 && musicExploreSong != null)
             {
-                return musicExploreSong2(__value1);
+                return musicExploreSong(__value1);
             }
             else if (Sfx is { } __value2 && sfx != null)
             {
@@ -271,9 +271,9 @@ namespace G
         /// 
         /// </summary>
         public void Match(
-            global::System.Action<global::G.SongSourceContext>? musicExploreSong1 = null,
+            global::System.Action<global::G.SongSourceContext>? song = null,
 
-            global::System.Action<global::G.MusicExploreSongSourceContext>? musicExploreSong2 = null,
+            global::System.Action<global::G.MusicExploreSongSourceContext>? musicExploreSong = null,
 
             global::System.Action<global::G.SfxSourceContext>? sfx = null,
             bool validate = true)
@@ -283,13 +283,13 @@ namespace G
                 Validate();
             }
 
-            if (MusicExploreSong1 is { } __value0)
+            if (Song is { } __value0)
             {
-                musicExploreSong1?.Invoke(__value0);
+                song?.Invoke(__value0);
             }
-            else if (MusicExploreSong2 is { } __value1)
+            else if (MusicExploreSong is { } __value1)
             {
-                musicExploreSong2?.Invoke(__value1);
+                musicExploreSong?.Invoke(__value1);
             }
             else if (Sfx is { } __value2)
             {
@@ -301,8 +301,8 @@ namespace G
         /// 
         /// </summary>
         public void Switch(
-            global::System.Action<global::G.SongSourceContext>? musicExploreSong1 = null,
-            global::System.Action<global::G.MusicExploreSongSourceContext>? musicExploreSong2 = null,
+            global::System.Action<global::G.SongSourceContext>? song = null,
+            global::System.Action<global::G.MusicExploreSongSourceContext>? musicExploreSong = null,
             global::System.Action<global::G.SfxSourceContext>? sfx = null,
             bool validate = true)
         {
@@ -311,13 +311,13 @@ namespace G
                 Validate();
             }
 
-            if (MusicExploreSong1 is { } __value0)
+            if (Song is { } __value0)
             {
-                musicExploreSong1?.Invoke(__value0);
+                song?.Invoke(__value0);
             }
-            else if (MusicExploreSong2 is { } __value1)
+            else if (MusicExploreSong is { } __value1)
             {
-                musicExploreSong2?.Invoke(__value1);
+                musicExploreSong?.Invoke(__value1);
             }
             else if (Sfx is { } __value2)
             {
@@ -332,9 +332,9 @@ namespace G
         {
             var fields = new object?[]
             {
-                MusicExploreSong1,
+                Song,
                 typeof(global::G.SongSourceContext),
-                MusicExploreSong2,
+                MusicExploreSong,
                 typeof(global::G.MusicExploreSongSourceContext),
                 Sfx,
                 typeof(global::G.SfxSourceContext),
@@ -354,8 +354,8 @@ namespace G
         public bool Equals(SourceContextVariant1 other)
         {
             return
-                global::System.Collections.Generic.EqualityComparer<global::G.SongSourceContext?>.Default.Equals(MusicExploreSong1, other.MusicExploreSong1) &&
-                global::System.Collections.Generic.EqualityComparer<global::G.MusicExploreSongSourceContext?>.Default.Equals(MusicExploreSong2, other.MusicExploreSong2) &&
+                global::System.Collections.Generic.EqualityComparer<global::G.SongSourceContext?>.Default.Equals(Song, other.Song) &&
+                global::System.Collections.Generic.EqualityComparer<global::G.MusicExploreSongSourceContext?>.Default.Equals(MusicExploreSong, other.MusicExploreSong) &&
                 global::System.Collections.Generic.EqualityComparer<global::G.SfxSourceContext?>.Default.Equals(Sfx, other.Sfx) 
                 ;
         }

@@ -50,12 +50,12 @@ namespace G.JsonConverters
                                throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::G.ToolReturnContent)}");
                 toolReturn = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
             }
-            global::G.ReasoningContent? omittedReasoning1 = default;
-            if (discriminator?.Type == global::G.MessageContentVariant1ItemDiscriminatorType.OmittedReasoning)
+            global::G.ReasoningContent? reasoning = default;
+            if (discriminator?.Type == global::G.MessageContentVariant1ItemDiscriminatorType.Reasoning)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.ReasoningContent), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.ReasoningContent> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::G.ReasoningContent)}");
-                omittedReasoning1 = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
+                reasoning = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
             }
             global::G.RedactedReasoningContent? redactedReasoning = default;
             if (discriminator?.Type == global::G.MessageContentVariant1ItemDiscriminatorType.RedactedReasoning)
@@ -64,12 +64,12 @@ namespace G.JsonConverters
                                throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::G.RedactedReasoningContent)}");
                 redactedReasoning = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
             }
-            global::G.OmittedReasoningContent? omittedReasoning2 = default;
+            global::G.OmittedReasoningContent? omittedReasoning = default;
             if (discriminator?.Type == global::G.MessageContentVariant1ItemDiscriminatorType.OmittedReasoning)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.OmittedReasoningContent), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.OmittedReasoningContent> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::G.OmittedReasoningContent)}");
-                omittedReasoning2 = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
+                omittedReasoning = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
             }
             global::G.SummarizedReasoningContent? summarizedReasoning = default;
             if (discriminator?.Type == global::G.MessageContentVariant1ItemDiscriminatorType.SummarizedReasoning)
@@ -89,11 +89,11 @@ namespace G.JsonConverters
 
                 toolReturn,
 
-                omittedReasoning1,
+                reasoning,
 
                 redactedReasoning,
 
-                omittedReasoning2,
+                omittedReasoning,
 
                 summarizedReasoning
                 );
@@ -134,11 +134,11 @@ namespace G.JsonConverters
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.ToolReturnContent).Name}");
                 global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickToolReturn(), typeInfo);
             }
-            else if (value.IsOmittedReasoning1)
+            else if (value.IsReasoning)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.ReasoningContent), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.ReasoningContent?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.ReasoningContent).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickOmittedReasoning1(), typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickReasoning(), typeInfo);
             }
             else if (value.IsRedactedReasoning)
             {
@@ -146,11 +146,11 @@ namespace G.JsonConverters
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.RedactedReasoningContent).Name}");
                 global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickRedactedReasoning(), typeInfo);
             }
-            else if (value.IsOmittedReasoning2)
+            else if (value.IsOmittedReasoning)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.OmittedReasoningContent), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.OmittedReasoningContent?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.OmittedReasoningContent).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickOmittedReasoning2(), typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickOmittedReasoning(), typeInfo);
             }
             else if (value.IsSummarizedReasoning)
             {

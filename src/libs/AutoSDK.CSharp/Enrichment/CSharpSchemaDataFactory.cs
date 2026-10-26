@@ -411,8 +411,10 @@ public static class CSharpSchemaDataFactory
         SchemaContext child,
         string discriminatorPropName)
     {
-        if (string.IsNullOrEmpty(discriminatorPropName))
+        if (string.IsNullOrEmpty(discriminatorPropName) || child.Schema.IsArray())
         {
+            // An array cannot carry an object discriminator property. Keep structural
+            // union dispatch when a mapped alternative is itself an array (GitHub content).
             return string.Empty;
         }
 

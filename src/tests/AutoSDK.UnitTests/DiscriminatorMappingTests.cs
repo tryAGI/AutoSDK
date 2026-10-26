@@ -58,4 +58,37 @@ public sealed class DiscriminatorMappingTests
         union.Properties[1].Type.CSharpTypeWithoutNullability.Should().Be(
             renameType ? "global::G.RenamedApplication" : "global::G.App");
     }
+    [TestMethod]
+    public void DiscriminatorMapping_ArrayAlternativeRetainsStructuralDispatch()
+    {
+        const string yaml = """
+        openapi: 3.0.3
+        info: {title: Test, version: '1.0'}
+        paths: {}
+        components:
+          schemas:
+            Response:
+              oneOf:
+                - $ref: '#/components/schemas/Directory'
+                - $ref: '#/components/schemas/File'
+              discriminator:
+                propertyName: type
+                mapping:
+                  dir: '#/components/schemas/Directory'
+                  file: '#/components/schemas/File'
+            Directory:
+              type: array
+              items: {type: string}
+            File:
+              type: object
+              properties:
+                type: {type: string, enum: [file]}
+        """;
+        var settings = Settings.Default with { Namespace = "G" };
+        var data = AutoSDK.Generation.Data.Prepare(((yaml, settings), GlobalSettings: settings));
+        var union = data.AnyOfs.Should().ContainSingle().Subject;
+        union.Properties[0].DiscriminatorJsonValue.Should().BeEmpty();
+        union.Properties[1].DiscriminatorJsonValue.Should().Be("file");
+    }
+
 }

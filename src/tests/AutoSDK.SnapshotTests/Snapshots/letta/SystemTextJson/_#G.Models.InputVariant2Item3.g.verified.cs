@@ -167,38 +167,38 @@ namespace G
         /// Sent via the Anthropic Messages API
         /// </summary>
 #if NET6_0_OR_GREATER
-        public global::G.ReasoningContent? OmittedReasoning1 { get; init; }
+        public global::G.ReasoningContent? Reasoning { get; init; }
 #else
-        public global::G.ReasoningContent? OmittedReasoning1 { get; }
+        public global::G.ReasoningContent? Reasoning { get; }
 #endif
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(OmittedReasoning1))]
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Reasoning))]
 #endif
-        public bool IsOmittedReasoning1 => OmittedReasoning1 != null;
+        public bool IsReasoning => Reasoning != null;
 
         /// <summary>
         /// 
         /// </summary>
-        public bool TryPickOmittedReasoning1(
+        public bool TryPickReasoning(
 #if NET6_0_OR_GREATER
             [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
 #endif
             out global::G.ReasoningContent? value)
         {
-            value = OmittedReasoning1;
-            return IsOmittedReasoning1;
+            value = Reasoning;
+            return IsReasoning;
         }
 
         /// <summary>
         /// 
         /// </summary>
-        public global::G.ReasoningContent PickOmittedReasoning1() => OmittedReasoning1 is { } value
+        public global::G.ReasoningContent PickReasoning() => Reasoning is { } value
             ? value
-            : throw new global::System.InvalidOperationException($"Expected union variant 'OmittedReasoning1' but the value was {ToString()}.");
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Reasoning' but the value was {ToString()}.");
 
         /// <summary>
         /// Sent via the Anthropic Messages API
@@ -241,38 +241,38 @@ namespace G
         /// A placeholder for reasoning content we know is present, but isn't returned by the provider (e.g. OpenAI GPT-5 on ChatCompletions)
         /// </summary>
 #if NET6_0_OR_GREATER
-        public global::G.OmittedReasoningContent? OmittedReasoning2 { get; init; }
+        public global::G.OmittedReasoningContent? OmittedReasoning { get; init; }
 #else
-        public global::G.OmittedReasoningContent? OmittedReasoning2 { get; }
+        public global::G.OmittedReasoningContent? OmittedReasoning { get; }
 #endif
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(OmittedReasoning2))]
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(OmittedReasoning))]
 #endif
-        public bool IsOmittedReasoning2 => OmittedReasoning2 != null;
+        public bool IsOmittedReasoning => OmittedReasoning != null;
 
         /// <summary>
         /// 
         /// </summary>
-        public bool TryPickOmittedReasoning2(
+        public bool TryPickOmittedReasoning(
 #if NET6_0_OR_GREATER
             [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
 #endif
             out global::G.OmittedReasoningContent? value)
         {
-            value = OmittedReasoning2;
-            return IsOmittedReasoning2;
+            value = OmittedReasoning;
+            return IsOmittedReasoning;
         }
 
         /// <summary>
         /// 
         /// </summary>
-        public global::G.OmittedReasoningContent PickOmittedReasoning2() => OmittedReasoning2 is { } value
+        public global::G.OmittedReasoningContent PickOmittedReasoning() => OmittedReasoning is { } value
             ? value
-            : throw new global::System.InvalidOperationException($"Expected union variant 'OmittedReasoning2' but the value was {ToString()}.");
+            : throw new global::System.InvalidOperationException($"Expected union variant 'OmittedReasoning' but the value was {ToString()}.");
 
         /// <summary>
         /// The style of reasoning content returned by the OpenAI Responses API
@@ -410,20 +410,20 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator global::G.ReasoningContent?(InputVariant2Item3 @this) => @this.OmittedReasoning1;
+        public static implicit operator global::G.ReasoningContent?(InputVariant2Item3 @this) => @this.Reasoning;
 
         /// <summary>
         /// 
         /// </summary>
         public InputVariant2Item3(global::G.ReasoningContent? value)
         {
-            OmittedReasoning1 = value;
+            Reasoning = value;
         }
 
         /// <summary>
         /// 
         /// </summary>
-        public static InputVariant2Item3 FromOmittedReasoning1(global::G.ReasoningContent? value) => new InputVariant2Item3(value);
+        public static InputVariant2Item3 FromReasoning(global::G.ReasoningContent? value) => new InputVariant2Item3(value);
 
         /// <summary>
         /// 
@@ -456,20 +456,20 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator global::G.OmittedReasoningContent?(InputVariant2Item3 @this) => @this.OmittedReasoning2;
+        public static implicit operator global::G.OmittedReasoningContent?(InputVariant2Item3 @this) => @this.OmittedReasoning;
 
         /// <summary>
         /// 
         /// </summary>
         public InputVariant2Item3(global::G.OmittedReasoningContent? value)
         {
-            OmittedReasoning2 = value;
+            OmittedReasoning = value;
         }
 
         /// <summary>
         /// 
         /// </summary>
-        public static InputVariant2Item3 FromOmittedReasoning2(global::G.OmittedReasoningContent? value) => new InputVariant2Item3(value);
+        public static InputVariant2Item3 FromOmittedReasoning(global::G.OmittedReasoningContent? value) => new InputVariant2Item3(value);
 
         /// <summary>
         /// 
@@ -503,9 +503,9 @@ namespace G
             global::G.ImageContent? image,
             global::G.ToolCallContent? toolCall,
             global::G.ToolReturnContent? toolReturn,
-            global::G.ReasoningContent? omittedReasoning1,
+            global::G.ReasoningContent? reasoning,
             global::G.RedactedReasoningContent? redactedReasoning,
-            global::G.OmittedReasoningContent? omittedReasoning2,
+            global::G.OmittedReasoningContent? omittedReasoning,
             global::G.SummarizedReasoningContent? summarizedReasoning
             )
         {
@@ -515,9 +515,9 @@ namespace G
             Image = image;
             ToolCall = toolCall;
             ToolReturn = toolReturn;
-            OmittedReasoning1 = omittedReasoning1;
+            Reasoning = reasoning;
             RedactedReasoning = redactedReasoning;
-            OmittedReasoning2 = omittedReasoning2;
+            OmittedReasoning = omittedReasoning;
             SummarizedReasoning = summarizedReasoning;
         }
 
@@ -526,9 +526,9 @@ namespace G
         /// </summary>
         public object? Object =>
             SummarizedReasoning as object ??
-            OmittedReasoning2 as object ??
+            OmittedReasoning as object ??
             RedactedReasoning as object ??
-            OmittedReasoning1 as object ??
+            Reasoning as object ??
             ToolReturn as object ??
             ToolCall as object ??
             Image as object ??
@@ -543,9 +543,9 @@ namespace G
             Image?.ToString() ??
             ToolCall?.ToString() ??
             ToolReturn?.ToString() ??
-            OmittedReasoning1?.ToString() ??
+            Reasoning?.ToString() ??
             RedactedReasoning?.ToString() ??
-            OmittedReasoning2?.ToString() ??
+            OmittedReasoning?.ToString() ??
             SummarizedReasoning?.ToString() 
             ;
 
@@ -554,7 +554,7 @@ namespace G
         /// </summary>
         public bool Validate()
         {
-            return IsText && !IsImage && !IsToolCall && !IsToolReturn && !IsOmittedReasoning1 && !IsRedactedReasoning && !IsOmittedReasoning2 && !IsSummarizedReasoning || !IsText && IsImage && !IsToolCall && !IsToolReturn && !IsOmittedReasoning1 && !IsRedactedReasoning && !IsOmittedReasoning2 && !IsSummarizedReasoning || !IsText && !IsImage && IsToolCall && !IsToolReturn && !IsOmittedReasoning1 && !IsRedactedReasoning && !IsOmittedReasoning2 && !IsSummarizedReasoning || !IsText && !IsImage && !IsToolCall && IsToolReturn && !IsOmittedReasoning1 && !IsRedactedReasoning && !IsOmittedReasoning2 && !IsSummarizedReasoning || !IsText && !IsImage && !IsToolCall && !IsToolReturn && IsOmittedReasoning1 && !IsRedactedReasoning && !IsOmittedReasoning2 && !IsSummarizedReasoning || !IsText && !IsImage && !IsToolCall && !IsToolReturn && !IsOmittedReasoning1 && IsRedactedReasoning && !IsOmittedReasoning2 && !IsSummarizedReasoning || !IsText && !IsImage && !IsToolCall && !IsToolReturn && !IsOmittedReasoning1 && !IsRedactedReasoning && IsOmittedReasoning2 && !IsSummarizedReasoning || !IsText && !IsImage && !IsToolCall && !IsToolReturn && !IsOmittedReasoning1 && !IsRedactedReasoning && !IsOmittedReasoning2 && IsSummarizedReasoning;
+            return IsText && !IsImage && !IsToolCall && !IsToolReturn && !IsReasoning && !IsRedactedReasoning && !IsOmittedReasoning && !IsSummarizedReasoning || !IsText && IsImage && !IsToolCall && !IsToolReturn && !IsReasoning && !IsRedactedReasoning && !IsOmittedReasoning && !IsSummarizedReasoning || !IsText && !IsImage && IsToolCall && !IsToolReturn && !IsReasoning && !IsRedactedReasoning && !IsOmittedReasoning && !IsSummarizedReasoning || !IsText && !IsImage && !IsToolCall && IsToolReturn && !IsReasoning && !IsRedactedReasoning && !IsOmittedReasoning && !IsSummarizedReasoning || !IsText && !IsImage && !IsToolCall && !IsToolReturn && IsReasoning && !IsRedactedReasoning && !IsOmittedReasoning && !IsSummarizedReasoning || !IsText && !IsImage && !IsToolCall && !IsToolReturn && !IsReasoning && IsRedactedReasoning && !IsOmittedReasoning && !IsSummarizedReasoning || !IsText && !IsImage && !IsToolCall && !IsToolReturn && !IsReasoning && !IsRedactedReasoning && IsOmittedReasoning && !IsSummarizedReasoning || !IsText && !IsImage && !IsToolCall && !IsToolReturn && !IsReasoning && !IsRedactedReasoning && !IsOmittedReasoning && IsSummarizedReasoning;
         }
 
         /// <summary>
@@ -565,9 +565,9 @@ namespace G
             global::System.Func<global::G.ImageContent, TResult>? image = null,
             global::System.Func<global::G.ToolCallContent, TResult>? toolCall = null,
             global::System.Func<global::G.ToolReturnContent, TResult>? toolReturn = null,
-            global::System.Func<global::G.ReasoningContent, TResult>? omittedReasoning1 = null,
+            global::System.Func<global::G.ReasoningContent, TResult>? reasoning = null,
             global::System.Func<global::G.RedactedReasoningContent, TResult>? redactedReasoning = null,
-            global::System.Func<global::G.OmittedReasoningContent, TResult>? omittedReasoning2 = null,
+            global::System.Func<global::G.OmittedReasoningContent, TResult>? omittedReasoning = null,
             global::System.Func<global::G.SummarizedReasoningContent, TResult>? summarizedReasoning = null,
             bool validate = true)
         {
@@ -592,17 +592,17 @@ namespace G
             {
                 return toolReturn(__value3);
             }
-            else if (OmittedReasoning1 is { } __value4 && omittedReasoning1 != null)
+            else if (Reasoning is { } __value4 && reasoning != null)
             {
-                return omittedReasoning1(__value4);
+                return reasoning(__value4);
             }
             else if (RedactedReasoning is { } __value5 && redactedReasoning != null)
             {
                 return redactedReasoning(__value5);
             }
-            else if (OmittedReasoning2 is { } __value6 && omittedReasoning2 != null)
+            else if (OmittedReasoning is { } __value6 && omittedReasoning != null)
             {
-                return omittedReasoning2(__value6);
+                return omittedReasoning(__value6);
             }
             else if (SummarizedReasoning is { } __value7 && summarizedReasoning != null)
             {
@@ -624,11 +624,11 @@ namespace G
 
             global::System.Action<global::G.ToolReturnContent>? toolReturn = null,
 
-            global::System.Action<global::G.ReasoningContent>? omittedReasoning1 = null,
+            global::System.Action<global::G.ReasoningContent>? reasoning = null,
 
             global::System.Action<global::G.RedactedReasoningContent>? redactedReasoning = null,
 
-            global::System.Action<global::G.OmittedReasoningContent>? omittedReasoning2 = null,
+            global::System.Action<global::G.OmittedReasoningContent>? omittedReasoning = null,
 
             global::System.Action<global::G.SummarizedReasoningContent>? summarizedReasoning = null,
             bool validate = true)
@@ -654,17 +654,17 @@ namespace G
             {
                 toolReturn?.Invoke(__value3);
             }
-            else if (OmittedReasoning1 is { } __value4)
+            else if (Reasoning is { } __value4)
             {
-                omittedReasoning1?.Invoke(__value4);
+                reasoning?.Invoke(__value4);
             }
             else if (RedactedReasoning is { } __value5)
             {
                 redactedReasoning?.Invoke(__value5);
             }
-            else if (OmittedReasoning2 is { } __value6)
+            else if (OmittedReasoning is { } __value6)
             {
-                omittedReasoning2?.Invoke(__value6);
+                omittedReasoning?.Invoke(__value6);
             }
             else if (SummarizedReasoning is { } __value7)
             {
@@ -680,9 +680,9 @@ namespace G
             global::System.Action<global::G.ImageContent>? image = null,
             global::System.Action<global::G.ToolCallContent>? toolCall = null,
             global::System.Action<global::G.ToolReturnContent>? toolReturn = null,
-            global::System.Action<global::G.ReasoningContent>? omittedReasoning1 = null,
+            global::System.Action<global::G.ReasoningContent>? reasoning = null,
             global::System.Action<global::G.RedactedReasoningContent>? redactedReasoning = null,
-            global::System.Action<global::G.OmittedReasoningContent>? omittedReasoning2 = null,
+            global::System.Action<global::G.OmittedReasoningContent>? omittedReasoning = null,
             global::System.Action<global::G.SummarizedReasoningContent>? summarizedReasoning = null,
             bool validate = true)
         {
@@ -707,17 +707,17 @@ namespace G
             {
                 toolReturn?.Invoke(__value3);
             }
-            else if (OmittedReasoning1 is { } __value4)
+            else if (Reasoning is { } __value4)
             {
-                omittedReasoning1?.Invoke(__value4);
+                reasoning?.Invoke(__value4);
             }
             else if (RedactedReasoning is { } __value5)
             {
                 redactedReasoning?.Invoke(__value5);
             }
-            else if (OmittedReasoning2 is { } __value6)
+            else if (OmittedReasoning is { } __value6)
             {
-                omittedReasoning2?.Invoke(__value6);
+                omittedReasoning?.Invoke(__value6);
             }
             else if (SummarizedReasoning is { } __value7)
             {
@@ -740,11 +740,11 @@ namespace G
                 typeof(global::G.ToolCallContent),
                 ToolReturn,
                 typeof(global::G.ToolReturnContent),
-                OmittedReasoning1,
+                Reasoning,
                 typeof(global::G.ReasoningContent),
                 RedactedReasoning,
                 typeof(global::G.RedactedReasoningContent),
-                OmittedReasoning2,
+                OmittedReasoning,
                 typeof(global::G.OmittedReasoningContent),
                 SummarizedReasoning,
                 typeof(global::G.SummarizedReasoningContent),
@@ -768,9 +768,9 @@ namespace G
                 global::System.Collections.Generic.EqualityComparer<global::G.ImageContent?>.Default.Equals(Image, other.Image) &&
                 global::System.Collections.Generic.EqualityComparer<global::G.ToolCallContent?>.Default.Equals(ToolCall, other.ToolCall) &&
                 global::System.Collections.Generic.EqualityComparer<global::G.ToolReturnContent?>.Default.Equals(ToolReturn, other.ToolReturn) &&
-                global::System.Collections.Generic.EqualityComparer<global::G.ReasoningContent?>.Default.Equals(OmittedReasoning1, other.OmittedReasoning1) &&
+                global::System.Collections.Generic.EqualityComparer<global::G.ReasoningContent?>.Default.Equals(Reasoning, other.Reasoning) &&
                 global::System.Collections.Generic.EqualityComparer<global::G.RedactedReasoningContent?>.Default.Equals(RedactedReasoning, other.RedactedReasoning) &&
-                global::System.Collections.Generic.EqualityComparer<global::G.OmittedReasoningContent?>.Default.Equals(OmittedReasoning2, other.OmittedReasoning2) &&
+                global::System.Collections.Generic.EqualityComparer<global::G.OmittedReasoningContent?>.Default.Equals(OmittedReasoning, other.OmittedReasoning) &&
                 global::System.Collections.Generic.EqualityComparer<global::G.SummarizedReasoningContent?>.Default.Equals(SummarizedReasoning, other.SummarizedReasoning) 
                 ;
         }

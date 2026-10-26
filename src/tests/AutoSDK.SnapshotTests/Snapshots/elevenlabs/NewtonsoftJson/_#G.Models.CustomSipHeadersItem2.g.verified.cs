@@ -19,38 +19,38 @@ namespace G
         /// Custom SIP header for phone transfers with a static (validated) value.
         /// </summary>
 #if NET6_0_OR_GREATER
-        public global::G.CustomSIPHeader? Dynamic1 { get; init; }
+        public global::G.CustomSIPHeader? Static { get; init; }
 #else
-        public global::G.CustomSIPHeader? Dynamic1 { get; }
+        public global::G.CustomSIPHeader? Static { get; }
 #endif
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Dynamic1))]
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Static))]
 #endif
-        public bool IsDynamic1 => Dynamic1 != null;
+        public bool IsStatic => Static != null;
 
         /// <summary>
         /// 
         /// </summary>
-        public bool TryPickDynamic1(
+        public bool TryPickStatic(
 #if NET6_0_OR_GREATER
             [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
 #endif
             out global::G.CustomSIPHeader? value)
         {
-            value = Dynamic1;
-            return IsDynamic1;
+            value = Static;
+            return IsStatic;
         }
 
         /// <summary>
         /// 
         /// </summary>
-        public global::G.CustomSIPHeader PickDynamic1() => Dynamic1 is { } value
+        public global::G.CustomSIPHeader PickStatic() => Static is { } value
             ? value
-            : throw new global::System.InvalidOperationException($"Expected union variant 'Dynamic1' but the value was {ToString()}.");
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Static' but the value was {ToString()}.");
 
         /// <summary>
         /// Custom SIP header for phone transfers with a dynamic variable reference.<br/>
@@ -58,38 +58,38 @@ namespace G
         /// Value is not validated here since it will be substituted with actual value later.
         /// </summary>
 #if NET6_0_OR_GREATER
-        public global::G.CustomSIPHeaderWithDynamicVariable? Dynamic2 { get; init; }
+        public global::G.CustomSIPHeaderWithDynamicVariable? Dynamic { get; init; }
 #else
-        public global::G.CustomSIPHeaderWithDynamicVariable? Dynamic2 { get; }
+        public global::G.CustomSIPHeaderWithDynamicVariable? Dynamic { get; }
 #endif
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Dynamic2))]
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Dynamic))]
 #endif
-        public bool IsDynamic2 => Dynamic2 != null;
+        public bool IsDynamic => Dynamic != null;
 
         /// <summary>
         /// 
         /// </summary>
-        public bool TryPickDynamic2(
+        public bool TryPickDynamic(
 #if NET6_0_OR_GREATER
             [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
 #endif
             out global::G.CustomSIPHeaderWithDynamicVariable? value)
         {
-            value = Dynamic2;
-            return IsDynamic2;
+            value = Dynamic;
+            return IsDynamic;
         }
 
         /// <summary>
         /// 
         /// </summary>
-        public global::G.CustomSIPHeaderWithDynamicVariable PickDynamic2() => Dynamic2 is { } value
+        public global::G.CustomSIPHeaderWithDynamicVariable PickDynamic() => Dynamic is { } value
             ? value
-            : throw new global::System.InvalidOperationException($"Expected union variant 'Dynamic2' but the value was {ToString()}.");
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Dynamic' but the value was {ToString()}.");
         /// <summary>
         /// 
         /// </summary>
@@ -98,20 +98,20 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator global::G.CustomSIPHeader?(CustomSipHeadersItem2 @this) => @this.Dynamic1;
+        public static implicit operator global::G.CustomSIPHeader?(CustomSipHeadersItem2 @this) => @this.Static;
 
         /// <summary>
         /// 
         /// </summary>
         public CustomSipHeadersItem2(global::G.CustomSIPHeader? value)
         {
-            Dynamic1 = value;
+            Static = value;
         }
 
         /// <summary>
         /// 
         /// </summary>
-        public static CustomSipHeadersItem2 FromDynamic1(global::G.CustomSIPHeader? value) => new CustomSipHeadersItem2(value);
+        public static CustomSipHeadersItem2 FromStatic(global::G.CustomSIPHeader? value) => new CustomSipHeadersItem2(value);
 
         /// <summary>
         /// 
@@ -121,50 +121,50 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator global::G.CustomSIPHeaderWithDynamicVariable?(CustomSipHeadersItem2 @this) => @this.Dynamic2;
+        public static implicit operator global::G.CustomSIPHeaderWithDynamicVariable?(CustomSipHeadersItem2 @this) => @this.Dynamic;
 
         /// <summary>
         /// 
         /// </summary>
         public CustomSipHeadersItem2(global::G.CustomSIPHeaderWithDynamicVariable? value)
         {
-            Dynamic2 = value;
+            Dynamic = value;
         }
 
         /// <summary>
         /// 
         /// </summary>
-        public static CustomSipHeadersItem2 FromDynamic2(global::G.CustomSIPHeaderWithDynamicVariable? value) => new CustomSipHeadersItem2(value);
+        public static CustomSipHeadersItem2 FromDynamic(global::G.CustomSIPHeaderWithDynamicVariable? value) => new CustomSipHeadersItem2(value);
 
         /// <summary>
         /// 
         /// </summary>
         public CustomSipHeadersItem2(
             global::G.WorkflowPhoneNumberNodeModelInputCustomSipHeaderDiscriminatorType? type,
-            global::G.CustomSIPHeader? dynamic1,
-            global::G.CustomSIPHeaderWithDynamicVariable? dynamic2
+            global::G.CustomSIPHeader? @static,
+            global::G.CustomSIPHeaderWithDynamicVariable? dynamic
             )
         {
             Type = type;
 
-            Dynamic1 = dynamic1;
-            Dynamic2 = dynamic2;
+            Static = @static;
+            Dynamic = dynamic;
         }
 
         /// <summary>
         /// 
         /// </summary>
         public object? Object =>
-            Dynamic2 as object ??
-            Dynamic1 as object 
+            Dynamic as object ??
+            Static as object 
             ;
 
         /// <summary>
         /// 
         /// </summary>
         public override string? ToString() =>
-            Dynamic1?.ToString() ??
-            Dynamic2?.ToString() 
+            Static?.ToString() ??
+            Dynamic?.ToString() 
             ;
 
         /// <summary>
@@ -172,15 +172,15 @@ namespace G
         /// </summary>
         public bool Validate()
         {
-            return IsDynamic1 && !IsDynamic2 || !IsDynamic1 && IsDynamic2;
+            return IsStatic && !IsDynamic || !IsStatic && IsDynamic;
         }
 
         /// <summary>
         /// 
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<global::G.CustomSIPHeader, TResult>? dynamic1 = null,
-            global::System.Func<global::G.CustomSIPHeaderWithDynamicVariable, TResult>? dynamic2 = null,
+            global::System.Func<global::G.CustomSIPHeader, TResult>? @static = null,
+            global::System.Func<global::G.CustomSIPHeaderWithDynamicVariable, TResult>? dynamic = null,
             bool validate = true)
         {
             if (validate)
@@ -188,13 +188,13 @@ namespace G
                 Validate();
             }
 
-            if (Dynamic1 is { } __value0 && dynamic1 != null)
+            if (Static is { } __value0 && @static != null)
             {
-                return dynamic1(__value0);
+                return @static(__value0);
             }
-            else if (Dynamic2 is { } __value1 && dynamic2 != null)
+            else if (Dynamic is { } __value1 && dynamic != null)
             {
-                return dynamic2(__value1);
+                return dynamic(__value1);
             }
 
             return default(TResult);
@@ -204,9 +204,9 @@ namespace G
         /// 
         /// </summary>
         public void Match(
-            global::System.Action<global::G.CustomSIPHeader>? dynamic1 = null,
+            global::System.Action<global::G.CustomSIPHeader>? @static = null,
 
-            global::System.Action<global::G.CustomSIPHeaderWithDynamicVariable>? dynamic2 = null,
+            global::System.Action<global::G.CustomSIPHeaderWithDynamicVariable>? dynamic = null,
             bool validate = true)
         {
             if (validate)
@@ -214,13 +214,13 @@ namespace G
                 Validate();
             }
 
-            if (Dynamic1 is { } __value0)
+            if (Static is { } __value0)
             {
-                dynamic1?.Invoke(__value0);
+                @static?.Invoke(__value0);
             }
-            else if (Dynamic2 is { } __value1)
+            else if (Dynamic is { } __value1)
             {
-                dynamic2?.Invoke(__value1);
+                dynamic?.Invoke(__value1);
             }
         }
 
@@ -228,8 +228,8 @@ namespace G
         /// 
         /// </summary>
         public void Switch(
-            global::System.Action<global::G.CustomSIPHeader>? dynamic1 = null,
-            global::System.Action<global::G.CustomSIPHeaderWithDynamicVariable>? dynamic2 = null,
+            global::System.Action<global::G.CustomSIPHeader>? @static = null,
+            global::System.Action<global::G.CustomSIPHeaderWithDynamicVariable>? dynamic = null,
             bool validate = true)
         {
             if (validate)
@@ -237,13 +237,13 @@ namespace G
                 Validate();
             }
 
-            if (Dynamic1 is { } __value0)
+            if (Static is { } __value0)
             {
-                dynamic1?.Invoke(__value0);
+                @static?.Invoke(__value0);
             }
-            else if (Dynamic2 is { } __value1)
+            else if (Dynamic is { } __value1)
             {
-                dynamic2?.Invoke(__value1);
+                dynamic?.Invoke(__value1);
             }
         }
 
@@ -254,9 +254,9 @@ namespace G
         {
             var fields = new object?[]
             {
-                Dynamic1,
+                Static,
                 typeof(global::G.CustomSIPHeader),
-                Dynamic2,
+                Dynamic,
                 typeof(global::G.CustomSIPHeaderWithDynamicVariable),
             };
             const int offset = unchecked((int)2166136261);
@@ -274,8 +274,8 @@ namespace G
         public bool Equals(CustomSipHeadersItem2 other)
         {
             return
-                global::System.Collections.Generic.EqualityComparer<global::G.CustomSIPHeader?>.Default.Equals(Dynamic1, other.Dynamic1) &&
-                global::System.Collections.Generic.EqualityComparer<global::G.CustomSIPHeaderWithDynamicVariable?>.Default.Equals(Dynamic2, other.Dynamic2) 
+                global::System.Collections.Generic.EqualityComparer<global::G.CustomSIPHeader?>.Default.Equals(Static, other.Static) &&
+                global::System.Collections.Generic.EqualityComparer<global::G.CustomSIPHeaderWithDynamicVariable?>.Default.Equals(Dynamic, other.Dynamic) 
                 ;
         }
 
