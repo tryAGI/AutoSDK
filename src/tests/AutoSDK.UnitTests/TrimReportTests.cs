@@ -73,6 +73,7 @@ public class TrimReportTests
         start.ArgumentList.Should().ContainInOrder("publish", "TrimmingCheck.csproj", "-c", "Release", "--output", "/work/publish directory");
         start.ArgumentList.Should().NotContain("-p:TrimmerRemoveSymbols=true");
         start.ArgumentList.Should().NotContain("-p:PublishAot=true");
+        start.ArgumentList.Should().Contain("-p:GeneratePackageOnBuild=false");
         start.Arguments.Should().BeEmpty();
     }
 

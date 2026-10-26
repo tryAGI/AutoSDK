@@ -305,6 +305,8 @@ internal sealed class TrimCommand : Command
         };
         foreach (var argument in new[] { "publish", "TrimmingCheck.csproj", "-c", "Release", "--output", publishDirectory })
             startInfo.ArgumentList.Add(argument);
+        // Analysis must not inherit SDK packaging from ancestor build props.
+        startInfo.ArgumentList.Add("-p:GeneratePackageOnBuild=false");
         if (nativeAot)
             startInfo.ArgumentList.Add("-p:PublishAot=true");
         if (removeSymbols)
