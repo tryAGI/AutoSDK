@@ -33,6 +33,10 @@ public sealed class SharedJsonMetadataProjectGuardTests
             File.WriteAllText(project, valid);
             Guard.Validate(output, project); // First generation does not require an existing manifest.
             Guard.Validate(output, string.Empty); // Normal regeneration discovers the consuming project.
+            Action overwriteRoot = () => Guard.Validate(directory, string.Empty);
+            overwriteRoot.Should().Throw<ArgumentException>(); // An import for Generated does not cover root output.
+            File.WriteAllText(project, valid.Replace("Generated/AutoSDK.SharedJsonMetadata.props", "AutoSDK.SharedJsonMetadata.props", StringComparison.Ordinal));
+            Guard.Validate(directory, string.Empty);
         }
         finally
         {

@@ -8,8 +8,9 @@ internal static class SharedJsonMetadataProjectGuard
     {
         var outputPath = Path.GetFullPath(output);
         var parent = Path.GetDirectoryName(outputPath)!;
+        var outputProjects = Directory.Exists(outputPath) ? Directory.GetFiles(outputPath, "*.csproj") : [];
         var projects = string.IsNullOrWhiteSpace(project)
-            ? Directory.Exists(parent) ? Directory.GetFiles(parent, "*.csproj") : []
+            ? outputProjects.Length > 0 ? outputProjects : Directory.Exists(parent) ? Directory.GetFiles(parent, "*.csproj") : []
             : [Path.GetFullPath(project)];
         if (projects.Length > 1)
         {
@@ -17,7 +18,11 @@ internal static class SharedJsonMetadataProjectGuard
         }
         if (projects.Length == 0)
         {
-            return; // Standalone generation emits its own project and analyzer binding.
+            Console.WriteLine("Shared JSON metadata requires a consuming net10.0 project: import the emitted " +
+                "AutoSDK.SharedJsonMetadata.props and reference AutoSDK.JsonMetadata with " +
+                "Version=\"$(AutoSDKJsonMetadataVersion)\" PrivateAssets=\"all\". " +
+                "Pass --shared-json-metadata-project on subsequent regeneration to validate that setup.");
+            return;
         }
 
         var path = projects[0];

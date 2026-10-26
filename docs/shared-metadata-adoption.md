@@ -8,9 +8,10 @@ The scaffold couples `--shared-json-metadata`, the generated version-binding pro
 and an `AutoSDK.JsonMetadata` PackageReference with `PrivateAssets="all"`.
 Its update script passes `--shared-json-metadata-project` and uses stale-file cleanup
 instead of deleting Generated before validation. The CLI validates the consuming
-project before writing anything; normal invocations also discover a project beside
-the output directory. Multiple projects require an explicit selection. Standalone
-output without a consuming project continues to emit its own project/binding.
+project before writing anything; normal invocations also discover a project in
+the output directory or beside it. Multiple projects require an explicit selection.
+Standalone output without a consuming project emits the binding and explicit
+project/analyzer setup instructions; it does not scaffold a consuming project.
 The guard checks the literal net10.0 target, matching binding import and private,
 version-bound analyzer reference. Projects with custom imported setup must expose
 these properties directly before using this profile.
