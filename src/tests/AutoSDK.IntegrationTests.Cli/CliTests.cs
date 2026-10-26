@@ -6843,6 +6843,17 @@ components:
                 tempDirectory, "src", "libs", "TestAPI", "TestAPI.csproj"));
             generatedProject.Should().Contain("Generated/AutoSDK.SharedJsonMetadata.props")
                 .And.Contain("Version=\"$(AutoSDKJsonMetadataVersion)\" PrivateAssets=\"all\"");
+            generatedProject.Should().Contain("<AutoSDKSymbolProfile></AutoSDKSymbolProfile>")
+                .And.Contain("<Import Project=\"../AutoSDK.Symbols.props\" />");
+            var symbolProfiles = await File.ReadAllTextAsync(Path.Combine(tempDirectory, "src", "libs", "AutoSDK.Symbols.props"));
+            symbolProfiles.Should().Be(await File.ReadAllTextAsync(Path.Combine(repositoryDirectory, "build", "AutoSDK.Symbols.props")));
+            var portableDirectory = Path.Combine(tempDirectory, "profiles", "portable");
+            var portableInit = await RunDotnetAsync(repositoryDirectory, "run", "--disable-build-servers", "--no-launch-profile",
+                "--project", "src/libs/AutoSDK.CLI", "init", "TestAPI", "TestApi", "http://localhost/testspec.yaml", "TestCompany",
+                "--symbol-profile", "portable", "--output", portableDirectory);
+            portableInit.ExitCode.Should().Be(0, portableInit.StandardOutput + portableInit.StandardError);
+            (await File.ReadAllTextAsync(Path.Combine(portableDirectory, "src", "libs", "TestAPI", "TestAPI.csproj")))
+                .Should().Contain("<AutoSDKSymbolProfile>portable</AutoSDKSymbolProfile>");
             (await File.ReadAllTextAsync(Path.Combine(tempDirectory, "src", "libs", "TestAPI", "generate.sh")))
                 .Should().Contain("--shared-json-metadata")
                 .And.Contain("--shared-json-metadata-project TestAPI.csproj")

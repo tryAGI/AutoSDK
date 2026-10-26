@@ -1,0 +1,26 @@
+<Project>
+  <!-- Explicit SDK packaging profiles. An empty profile leaves the existing policy intact. -->
+  <PropertyGroup Condition="'$(AutoSDKSymbolProfile)' == 'portable'">
+    <DebugType>portable</DebugType>
+    <DebugSymbols>true</DebugSymbols>
+    <IncludeSymbols>true</IncludeSymbols>
+    <SymbolPackageFormat>snupkg</SymbolPackageFormat>
+    <PublishRepositoryUrl>true</PublishRepositoryUrl>
+    <EmbedUntrackedSources>true</EmbedUntrackedSources>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(AutoSDKSymbolProfile)' == 'embedded'">
+    <DebugType>embedded</DebugType>
+    <DebugSymbols>true</DebugSymbols>
+    <IncludeSymbols>false</IncludeSymbols>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(AutoSDKSymbolProfile)' == 'none'">
+    <DebugType>none</DebugType>
+    <DebugSymbols>false</DebugSymbols>
+    <EmbedAllSources>false</EmbedAllSources>
+    <IncludeSymbols>false</IncludeSymbols>
+  </PropertyGroup>
+  <Target Name="ValidateAutoSDKSymbolProfile" BeforeTargets="PrepareForBuild"
+          Condition="'$(AutoSDKSymbolProfile)' != '' and '$(AutoSDKSymbolProfile)' != 'portable' and '$(AutoSDKSymbolProfile)' != 'embedded' and '$(AutoSDKSymbolProfile)' != 'none'">
+    <Error Text="AutoSDKSymbolProfile must be portable, embedded or none (or empty to inherit)." />
+  </Target>
+</Project>

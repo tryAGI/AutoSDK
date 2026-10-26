@@ -57,6 +57,12 @@ internal sealed class InitializeCommand : Command
         Description = "Adds integration tests to the solution",
     };
     
+    private Option<string> SymbolProfile { get; } = new("--symbol-profile")
+    {
+        DefaultValueFactory = _ => string.Empty,
+        Description = "Optional SDK symbol policy: portable, embedded or none. Omit to inherit the existing policy.",
+    };
+
     public InitializeCommand() : base(name: "init", description: "Creates a new solution with GitHub Actions.")
     {
         Arguments.Add(SolutionName);
@@ -66,6 +72,7 @@ internal sealed class InitializeCommand : Command
         Options.Add(Output);
         Options.Add(AddMkDocs);
         Options.Add(AddTests);
+        Options.Add(SymbolProfile);
 
         SetAction(HandleAsync);
     }
@@ -78,7 +85,12 @@ internal sealed class InitializeCommand : Command
         string company = parseResult.GetRequiredValue(Company);
         string outputPath = parseResult.GetRequiredValue(Output);
         bool addMkDocs = parseResult.GetRequiredValue(AddMkDocs);
-        bool addTests = parseResult.GetRequiredValue(AddTests); 
+        bool addTests = parseResult.GetRequiredValue(AddTests);
+        string symbolProfile = parseResult.GetRequiredValue(SymbolProfile);
+        if (symbolProfile is not ("" or "portable" or "embedded" or "none"))
+        {
+            throw new ArgumentException("--symbol-profile must be portable, embedded or none.");
+        }
             
         Console.WriteLine("Initializing...");
 
@@ -111,8 +123,9 @@ internal sealed class InitializeCommand : Command
             H.Resources.src_libs__SolutionName___SolutionName__csproj,
             H.Resources.src_libs__SolutionName__generate_sh,
             H.Resources.src_libs_Directory_Build_props,
+            H.Resources.src_libs_AutoSDK_Symbols_props,
         };
-        var replaces = new Dictionary<string, string>();
+        var replaces = new Dictionary<string, string> { ["$SymbolProfile$"] = symbolProfile };
         if (addMkDocs)
         {
             resources.AddRange(new []

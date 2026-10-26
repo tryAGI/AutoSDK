@@ -1,0 +1,214 @@
+{
+  "sourceCommit": "c33a096dfc36d0a6b442579331351f269ce447e9",
+  "image": "mcr.microsoft.com/dotnet/sdk:10.0.402-noble-aot",
+  "cpus": 2,
+  "sourceMemoryLimitGiB": 16,
+  "consumerMemoryLimitGiB": 6,
+  "profiles": [
+    {
+      "profile": "embedded",
+      "packExitCode": 0,
+      "packSeconds": 333.702,
+      "packPeakBytes": 14523817984,
+      "packCpuSeconds": 502.258,
+      "debug": {
+        "assembly": {
+          "File": "AppStoreConnect.dll",
+          "FileBytes": 95911936,
+          "EmbeddedPortablePdbBytes": 10609534,
+          "BytesWithoutEmbeddedPdbPayload": 85302402,
+          "MetadataBytes": 54214328,
+          "IlBytes": 28815808,
+          "TypeCount": 82909,
+          "MethodCount": 504505,
+          "FieldCount": 304106
+        },
+        "documents": 47139,
+        "embeddedSources": 6404,
+        "sourceLink": "{\"documents\":{\"/private/tmp/autosdk-430.FCvYYa/source/*\":\"https://raw.githubusercontent.com/tryAGI/AppStoreConnect/c33a096dfc36d0a6b442579331351f269ce447e9/*\"}}",
+        "externalPdbBytes": 0
+      },
+      "nupkgBytes": 30435697,
+      "snupkgBytes": 0,
+      "sdkPdbInMainPackage": false,
+      "publishExitCode": 0,
+      "publishSeconds": 22.806,
+      "publishPeakBytes": 3975110656,
+      "publishCpuSeconds": 30.154,
+      "runExitCode": 0,
+      "defaultHasSdkSourceLine": true,
+      "defaultSdkPdbPublished": false,
+      "publishBytes": 33018749,
+      "linkedDebug": {
+        "assembly": {
+          "File": "AppStoreConnect.dll",
+          "FileBytes": 8090624,
+          "EmbeddedPortablePdbBytes": 6909911,
+          "BytesWithoutEmbeddedPdbPayload": 1180713,
+          "MetadataBytes": 785436,
+          "IlBytes": 382747,
+          "TypeCount": 1637,
+          "MethodCount": 7816,
+          "FieldCount": 4333
+        },
+        "documents": 47139,
+        "embeddedSources": 6399,
+        "sourceLink": "{\"documents\":{\"/private/tmp/autosdk-430.FCvYYa/source/*\":\"https://raw.githubusercontent.com/tryAGI/AppStoreConnect/c33a096dfc36d0a6b442579331351f269ce447e9/*\"}}",
+        "externalPdbBytes": 0
+      },
+      "defaultImage": {
+        "buildExitCode": 0,
+        "runExitCode": 0,
+        "sdkPdbPresent": false,
+        "sdkSourceLine": true
+      },
+      "packageSha256": "df42f4d41b986eacaf75db817845e1846f7d485361926722d0c325476b7c2db9",
+      "symbolPackageSha256": [],
+      "sdkDllSha256": "757cb5bb6973c60333352d71848011e4d7ed398b0a17482ee17f043057505c84"
+    },
+    {
+      "profile": "portable",
+      "packExitCode": 0,
+      "packSeconds": 482.08,
+      "packPeakBytes": 13770694656,
+      "packCpuSeconds": 770.926,
+      "debug": {
+        "assembly": {
+          "File": "AppStoreConnect.dll",
+          "FileBytes": 85302272,
+          "EmbeddedPortablePdbBytes": 0,
+          "BytesWithoutEmbeddedPdbPayload": 85302272,
+          "MetadataBytes": 54214328,
+          "IlBytes": 28815808,
+          "TypeCount": 82909,
+          "MethodCount": 504505,
+          "FieldCount": 304106
+        },
+        "documents": 47139,
+        "embeddedSources": 6404,
+        "sourceLink": "{\"documents\":{\"/private/tmp/autosdk-430.FCvYYa/source/*\":\"https://raw.githubusercontent.com/tryAGI/AppStoreConnect/c33a096dfc36d0a6b442579331351f269ce447e9/*\"}}",
+        "externalPdbBytes": 31306820
+      },
+      "nupkgBytes": 20467736,
+      "snupkgBytes": 10609491,
+      "sdkPdbInMainPackage": false,
+      "publishExitCode": 0,
+      "publishSeconds": 24.582,
+      "publishPeakBytes": 3452071936,
+      "publishCpuSeconds": 27.268,
+      "runExitCode": 0,
+      "defaultHasSdkSourceLine": false,
+      "defaultSdkPdbPublished": false,
+      "publishBytes": 26108797,
+      "linkedDebug": {
+        "assembly": {
+          "File": "AppStoreConnect.dll",
+          "FileBytes": 1180672,
+          "EmbeddedPortablePdbBytes": 0,
+          "BytesWithoutEmbeddedPdbPayload": 1180672,
+          "MetadataBytes": 785436,
+          "IlBytes": 382747,
+          "TypeCount": 1637,
+          "MethodCount": 7816,
+          "FieldCount": 4333
+        },
+        "documents": 0,
+        "embeddedSources": 0,
+        "sourceLink": "",
+        "externalPdbBytes": 0
+      },
+      "diagnosticPublishExitCode": 0,
+      "diagnosticRunExitCode": 0,
+      "diagnosticHasSdkSourceLine": true,
+      "diagnosticSdkPdbPublished": true,
+      "defaultImage": {
+        "buildExitCode": 0,
+        "runExitCode": 0,
+        "sdkPdbPresent": false,
+        "sdkSourceLine": false
+      },
+      "diagnosticImage": {
+        "buildExitCode": 0,
+        "runExitCode": 0,
+        "sdkPdbPresent": true,
+        "sdkSourceLine": true
+      },
+      "packageSha256": "539c3caeb713f72d918b8d1d7a519adabf1ad612fad837dd0ef327d7050ce674",
+      "symbolPackageSha256": [
+        "7aaa217ab6566e329e8517c9c3082cb723729dae17ab4e551ee396be1b0e8f7e"
+      ],
+      "sdkDllSha256": "8c15bf088c1b0ab1b34cf858e010c0c4868efa094cd16ad0312df7bd188bf790"
+    },
+    {
+      "profile": "none",
+      "packExitCode": 0,
+      "packSeconds": 546.356,
+      "packPeakBytes": 14045761536,
+      "packCpuSeconds": 868.997,
+      "debug": {
+        "assembly": {
+          "File": "AppStoreConnect.dll",
+          "FileBytes": 84237312,
+          "EmbeddedPortablePdbBytes": 0,
+          "BytesWithoutEmbeddedPdbPayload": 84237312,
+          "MetadataBytes": 53758004,
+          "IlBytes": 28350762,
+          "TypeCount": 82909,
+          "MethodCount": 504505,
+          "FieldCount": 304106
+        },
+        "documents": 0,
+        "embeddedSources": 0,
+        "sourceLink": "",
+        "externalPdbBytes": 0
+      },
+      "nupkgBytes": 20008826,
+      "snupkgBytes": 0,
+      "sdkPdbInMainPackage": false,
+      "publishExitCode": 0,
+      "publishSeconds": 15.322,
+      "publishPeakBytes": 3481317376,
+      "publishCpuSeconds": 22.35,
+      "runExitCode": 0,
+      "defaultHasSdkSourceLine": false,
+      "defaultSdkPdbPublished": false,
+      "publishBytes": 26088825,
+      "linkedDebug": {
+        "assembly": {
+          "File": "AppStoreConnect.dll",
+          "FileBytes": 1160704,
+          "EmbeddedPortablePdbBytes": 0,
+          "BytesWithoutEmbeddedPdbPayload": 1160704,
+          "MetadataBytes": 778524,
+          "IlBytes": 371349,
+          "TypeCount": 1637,
+          "MethodCount": 7816,
+          "FieldCount": 4333
+        },
+        "documents": 0,
+        "embeddedSources": 0,
+        "sourceLink": "",
+        "externalPdbBytes": 0
+      },
+      "defaultImage": {
+        "buildExitCode": 0,
+        "runExitCode": 0,
+        "sdkPdbPresent": false,
+        "sdkSourceLine": false
+      },
+      "packageSha256": "9d136d2e60e3b15db23e5b84ed850478f9f3eacf8f443c9527c7db652156fc40",
+      "symbolPackageSha256": [],
+      "sdkDllSha256": "45cec446deb6d9fb84ee234edefbd655ffd225f7ee20f266ea8ddd0fadb76daa"
+    }
+  ],
+  "analyzerVersion": "0.35.0-preview.2.146",
+  "fixturePackageVersion": "1.0.0",
+  "sampleNotes": [
+    "Same read-only generated source checkout for every profile.",
+    "Portable source pack was repeated after correcting late profile import; failed packaging attempt excluded.",
+    "Initial offline consumer lacked fake authorization; final consumers and Docker image runs use fake auth and pass.",
+    "Portable and none source packs overlapped on a shared host; wall/CPU observations are not a causal symbol compile-speed comparison.",
+    "Cgroup memory.peak includes file cache; not comparable to anonymous-memory-only measurements.",
+    "DebugType=none also changes emitted metadata and IL bytes; only embedded versus portable is a code-footprint-identical comparison."
+  ]
+}
