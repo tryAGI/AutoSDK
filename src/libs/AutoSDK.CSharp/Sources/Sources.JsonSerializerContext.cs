@@ -889,6 +889,11 @@ namespace {client.Settings.Namespace}
         {
             implicitlyDiscoveredTypes.Add(type.Substring(0, type.Length - 1));
         }
+        // The aggregate context always contains JsonElement?, even when the spec does not.
+        if (contextTypes.Any(type => type.EndsWith("." + GetJsonSerializerContextTypesClassName(client), StringComparison.Ordinal)))
+        {
+            implicitlyDiscoveredTypes.Add("global::System.Text.Json.JsonElement");
+        }
         foreach (var type in contextTypes)
         {
             if (string.Equals(

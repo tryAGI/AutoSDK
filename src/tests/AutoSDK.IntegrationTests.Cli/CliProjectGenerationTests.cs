@@ -664,9 +664,30 @@ components:
       properties:
         label:
           type: string
+    JsonSerializer:
+      type: object
+      properties:
+        label:
+          type: string
+    JsonElement:
+      type: object
+      properties:
+        label:
+          type: string
+    JsonDocument:
+      type: object
+      properties:
+        label:
+          type: string
     Widget:
       type: object
       properties:
+        jsonSerializer:
+          $ref: '#/components/schemas/JsonSerializer'
+        jsonElement:
+          $ref: '#/components/schemas/JsonElement'
+        jsonDocument:
+          $ref: '#/components/schemas/JsonDocument'
         jsonValue:
           $ref: '#/components/schemas/JsonValue'
         jsonNode:
@@ -720,7 +741,7 @@ components:
             Console.WriteLine(generateResult.StandardError);
             generateResult.ExitCode.Should().Be(0);
 
-            foreach (var name in new[] { "JsonValue", "JsonNode", "JsonArray", "JsonObject" })
+            foreach (var name in new[] { "JsonValue", "JsonNode", "JsonArray", "JsonObject", "JsonSerializer", "JsonElement", "JsonDocument" })
             {
                 Directory.EnumerateFiles(sdkDirectory, $"*.Models.{name}.g.cs").Should().ContainSingle(
                     "the generated SDK must contain the actual colliding framework name");
