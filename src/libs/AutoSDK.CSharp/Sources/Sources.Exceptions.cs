@@ -66,6 +66,10 @@ public static partial class Sources
             return new global::{settings.Namespace}.ApiException<T>(message, innerException, statusCode);"
             : $@"            return new global::{settings.Namespace}.ApiException<T>(message, innerException, statusCode);";
 
+        var diagnosticPath = settings.UsesSystemTextJson()
+            ? "(InnerException as global::System.Text.Json.JsonException)?.Path"
+            : "(InnerException as global::Newtonsoft.Json.JsonSerializationException)?.Path ?? (InnerException as global::Newtonsoft.Json.JsonReaderException)?.Path";
+
         return $@"#nullable enable
 
 namespace {settings.Namespace}
@@ -87,6 +91,31 @@ namespace {settings.Namespace}
         /// For success-path failures (e.g. deserialization errors), the client attempts a best-effort read.
         /// </summary>
         public string? ResponseBody {{ get; set; }}
+
+        /// <summary>
+        /// Successful HTTP responses that fail during processing put the cause before a bounded body preview.
+        /// Inspect ResponseBody for the full response; HTTP service-error messages retain their existing format.
+        /// </summary>
+        public override string Message
+        {{
+            get
+            {{
+                if ((int)StatusCode < 200 || (int)StatusCode >= 300 || InnerException == null)
+                {{
+                    return base.Message;
+                }}
+
+                string? path = {diagnosticPath};
+                return ""Response processing failed after successful HTTP "" +
+                    ((int)StatusCode).ToString(global::System.Globalization.CultureInfo.InvariantCulture) + "": "" +
+                    InnerException.GetType().FullName + "": "" + BoundDiagnosticText(InnerException.Message) +
+                    (string.IsNullOrEmpty(path) ? string.Empty : "" Path: "" + BoundDiagnosticText(path, 256)) +
+                    ""\nResponse preview: "" + BoundDiagnosticText(base.Message);
+            }}
+        }}
+
+        private static string BoundDiagnosticText(string value, int maximumLength = 512) =>
+            value.Length <= maximumLength ? value : value.Substring(0, maximumLength) + ""... [truncated]"";
 
         /// <summary>
         /// The response headers.
