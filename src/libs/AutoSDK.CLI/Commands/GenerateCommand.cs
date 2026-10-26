@@ -726,6 +726,10 @@ internal sealed class GenerateCommand : Command
         {
             SharedJsonMetadataProjectGuard.Validate(output, metadataProject);
         }
+        else
+        {
+            SharedJsonMetadataProjectGuard.RejectProfileDowngrade(output);
+        }
         var packageIdValue = parseResult.GetRequiredValue(PackageId);
         var packagesOutputValue = parseResult.GetRequiredValue(PackagesOutput);
         var packageMapValue = parseResult.GetRequiredValue(PackageMap);

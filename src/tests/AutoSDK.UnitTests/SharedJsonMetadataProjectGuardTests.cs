@@ -7,6 +7,32 @@ namespace AutoSDK.UnitTests;
 public sealed class SharedJsonMetadataProjectGuardTests
 {
     [TestMethod]
+    public void ExistingSharedSdk_CannotSilentlyDropItsGenerationProfile()
+    {
+        var directory = Path.Combine(Path.GetTempPath(), "autosdk-profile-" + Guid.NewGuid().ToString("N"));
+        Directory.CreateDirectory(directory);
+        try
+        {
+            var output = Path.Combine(directory, "Generated");
+            Guard.RejectProfileDowngrade(output);
+            Directory.CreateDirectory(output);
+            var binding = Path.Combine(output, "AutoSDK.SharedJsonMetadata.props");
+            File.WriteAllText(binding, "existing binding");
+            Action action = () => Guard.RejectProfileDowngrade(output);
+            action.Should().Throw<ArgumentException>().WithMessage("*--shared-json-metadata*");
+            File.ReadAllText(binding).Should().Be("existing binding");
+            File.Delete(binding);
+            File.WriteAllText(Path.Combine(directory, "Fixture.csproj"),
+                "<Project><ItemGroup><PackageReference Include=\"AutoSDK.JsonMetadata\" /></ItemGroup></Project>");
+            action.Should().Throw<ArgumentException>(); // Also catches old scripts that removed Generated first.
+        }
+        finally
+        {
+            Directory.Delete(directory, recursive: true);
+        }
+    }
+
+    [TestMethod]
     public void Regeneration_RejectsMissingOrLeakingAnalyzerBeforeWriting()
     {
         var directory = Path.Combine(Path.GetTempPath(), "autosdk-guard-" + Guid.NewGuid().ToString("N"));

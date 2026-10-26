@@ -4,6 +4,27 @@ namespace AutoSDK.CLI.Commands;
 
 internal static class SharedJsonMetadataProjectGuard
 {
+    internal static void RejectProfileDowngrade(string output)
+    {
+        var path = Path.GetFullPath(output);
+        var artifacts = Directory.Exists(path) &&
+            (File.Exists(Path.Combine(path, "AutoSDK.SharedJsonMetadata.props")) ||
+             Directory.EnumerateFiles(path, "*.autosdk-json-metadata", SearchOption.AllDirectories).Any());
+        var parent = Path.GetDirectoryName(path)!;
+        var projects = (Directory.Exists(path) ? Directory.GetFiles(path, "*.csproj") : [])
+            .Concat(Directory.Exists(parent) ? Directory.GetFiles(parent, "*.csproj") : []);
+        var configured = projects.Any(project =>
+            File.ReadAllText(project).Contains("AutoSDK.JsonMetadata", StringComparison.Ordinal) &&
+            XDocument.Load(project).Descendants().Any(node => node.Name.LocalName == "PackageReference" &&
+                (string?)node.Attribute("Include") == "AutoSDK.JsonMetadata"));
+        if (artifacts || configured)
+        {
+            throw new ArgumentException("This SDK already uses shared JSON metadata. Regenerate with " +
+                "--shared-json-metadata. To change profiles deliberately, remove the shared analyzer/binding " +
+                "configuration and generate into a fresh output directory.");
+        }
+    }
+
     internal static void Validate(string output, string project)
     {
         var outputPath = Path.GetFullPath(output);
