@@ -52,3 +52,14 @@ and settings conversion. Full pinned AppStoreConnect regeneration and an offline
 consumer exercise all 12 `BuildsResponse.Included` variants with JSON reflection
 disabled, including a trimmed executable; these large-spec checks are performed
 separately from the fast naming tests.
+
+## Discriminator identity correction
+
+The AppStoreConnect serialization check also exposed a separate legacy bug:
+substring matching associated schema `App` with the mapping for
+`AppEncryptionDeclaration`. Exact raw schema identities now determine mapping
+selection, including when an extension changes a generated CLR name. This also
+corrects affected union member names (for example the duplicated
+`AppEncryptionDeclarations1` / `AppEncryptionDeclarations2` pair becomes
+`AppEncryptionDeclarations` / `Apps`). Update explicit references to those members
+when regenerating an affected SDK, independently of the naming-mode migration.

@@ -428,13 +428,23 @@ public static class CSharpSchemaDataFactory
                 childEnumStr = childDiscProp.Enum![0]?.GetString();
             }
 
-            foreach (var kvp in mapping)
+            // Match the raw schema identity, not a substring of its generated CLR name:
+            // App must not match AppEncryptionDeclaration, and naming overrides are legal.
+            var childReferenceId = child.ReferenceId ?? child.Schema.GetReferenceId() ?? child.ComponentId;
+            if (childReferenceId != null)
             {
-                if (kvp.Value.Reference?.Id?.Contains(child.Id) == true ||
-                    childEnumStr != null && childEnumStr == kvp.Key)
+                foreach (var kvp in mapping)
                 {
-                    return kvp.Key;
+                    if (string.Equals(kvp.Value.Reference?.Id, childReferenceId, StringComparison.Ordinal))
+                    {
+                        return kvp.Key;
+                    }
                 }
+            }
+
+            if (childEnumStr != null && mapping.ContainsKey(childEnumStr))
+            {
+                return childEnumStr;
             }
         }
 
