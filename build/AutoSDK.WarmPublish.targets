@@ -1,0 +1,13 @@
+<Project>
+  <!-- Opt-in workaround for .NET 10 warm trimmed publishes (#432).
+       Resolve the SDK's actual destination, including custom PublishDepsFilePath.
+       Recompute only the dependency manifest; preserve restore, compile and linker caches. -->
+  <Target Name="AutoSDKRefreshTrimmedDependencyFile"
+          BeforeTargets="GeneratePublishDependencyFile"
+          DependsOnTargets="_ComputeIntermediateDepsFilePath"
+          Condition="'$(PublishTrimmed)' == 'true' and '$(PublishAot)' != 'true' and '$(GenerateDependencyFile)' == 'true'">
+    <Error Condition="'$(IntermediateDepsFilePath)' == ''"
+           Text="AutoSDK warm-publish guard could not resolve the SDK dependency manifest path." />
+    <Delete Files="$(IntermediateDepsFilePath)" />
+  </Target>
+</Project>

@@ -1,0 +1,31 @@
+name: Warm trimmed publish contracts
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - build/AutoSDK.WarmPublish.targets
+      - scripts/check-warm-publish.py
+      - .github/workflows/warm-publish.yml
+permissions:
+  contents: read
+jobs:
+  warm-publish:
+    runs-on: ubuntu-latest
+    timeout-minutes: 12
+    steps:
+      - uses: actions/checkout@v7
+      - uses: actions/setup-dotnet@v6
+        with:
+          dotnet-version: 10.0.x
+      - name: Execute baseline and guarded trim/NativeAOT contracts
+        run: python3 scripts/check-warm-publish.py --output artifacts/warm-publish --rid linux-x64 --aot
+      - uses: actions/upload-artifact@v7
+        if: always()
+        with:
+          name: warm-publish-contracts
+          path: |
+            artifacts/warm-publish/**/*.log
+            artifacts/warm-publish/results.json
+            artifacts/warm-publish/dotnet-info.txt
+          retention-days: 14

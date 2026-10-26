@@ -1,0 +1,330 @@
+[
+  {
+    "profile": "trim",
+    "guard": false,
+    "package": false,
+    "stages": [
+      {
+        "stage": "read",
+        "publishExitCode": 0,
+        "runExitCode": 0,
+        "publishSeconds": 10.739,
+        "depsSha256": "9d21d960065d17e150acbf6317539b68c87dd431de66dd636ead4cf83c0f4cec",
+        "libraries": [
+          "Probe/1.0.0",
+          "runtimepack.Microsoft.NETCore.App.Runtime.linux-arm64/10.0.13"
+        ]
+      },
+      {
+        "stage": "write",
+        "publishExitCode": 0,
+        "runExitCode": 134,
+        "publishSeconds": 4.941,
+        "depsSha256": "9d21d960065d17e150acbf6317539b68c87dd431de66dd636ead4cf83c0f4cec",
+        "libraries": [
+          "Probe/1.0.0",
+          "runtimepack.Microsoft.NETCore.App.Runtime.linux-arm64/10.0.13"
+        ]
+      },
+      {
+        "stage": "fresh-output",
+        "publishExitCode": 0,
+        "runExitCode": 134,
+        "publishSeconds": 5.085,
+        "depsSha256": "9d21d960065d17e150acbf6317539b68c87dd431de66dd636ead4cf83c0f4cec",
+        "libraries": [
+          "Probe/1.0.0",
+          "runtimepack.Microsoft.NETCore.App.Runtime.linux-arm64/10.0.13"
+        ]
+      }
+    ]
+  },
+  {
+    "profile": "trim",
+    "guard": false,
+    "package": true,
+    "stages": [
+      {
+        "stage": "read",
+        "publishExitCode": 0,
+        "runExitCode": 0,
+        "publishSeconds": 4.878,
+        "depsSha256": "04676c380e73beff2c1b38cde9645a412771de6500f9d76018f7693e8d7b1353",
+        "libraries": [
+          "Probe/1.0.0",
+          "WarmSdk/1.0.0",
+          "runtimepack.Microsoft.NETCore.App.Runtime.linux-arm64/10.0.13"
+        ]
+      },
+      {
+        "stage": "write",
+        "publishExitCode": 0,
+        "runExitCode": 134,
+        "publishSeconds": 4.715,
+        "depsSha256": "04676c380e73beff2c1b38cde9645a412771de6500f9d76018f7693e8d7b1353",
+        "libraries": [
+          "Probe/1.0.0",
+          "WarmSdk/1.0.0",
+          "runtimepack.Microsoft.NETCore.App.Runtime.linux-arm64/10.0.13"
+        ]
+      },
+      {
+        "stage": "fresh-output",
+        "publishExitCode": 0,
+        "runExitCode": 134,
+        "publishSeconds": 4.547,
+        "depsSha256": "04676c380e73beff2c1b38cde9645a412771de6500f9d76018f7693e8d7b1353",
+        "libraries": [
+          "Probe/1.0.0",
+          "WarmSdk/1.0.0",
+          "runtimepack.Microsoft.NETCore.App.Runtime.linux-arm64/10.0.13"
+        ]
+      },
+      {
+        "stage": "removed-reference",
+        "publishExitCode": 0,
+        "runExitCode": 0,
+        "publishSeconds": 4.545,
+        "depsSha256": "353e47a50a61b7cf3d7a2e83b74995197c0c23ff01cf904d9f95d4ca6ff7c86b",
+        "libraries": [
+          "Probe/1.0.0",
+          "runtimepack.Microsoft.NETCore.App.Runtime.linux-arm64/10.0.13"
+        ]
+      }
+    ]
+  },
+  {
+    "profile": "trim",
+    "guard": true,
+    "package": false,
+    "stages": [
+      {
+        "stage": "read",
+        "publishExitCode": 0,
+        "runExitCode": 0,
+        "publishSeconds": 5.249,
+        "depsSha256": "9d21d960065d17e150acbf6317539b68c87dd431de66dd636ead4cf83c0f4cec",
+        "libraries": [
+          "Probe/1.0.0",
+          "runtimepack.Microsoft.NETCore.App.Runtime.linux-arm64/10.0.13"
+        ]
+      },
+      {
+        "stage": "write",
+        "publishExitCode": 0,
+        "runExitCode": 0,
+        "publishSeconds": 5.005,
+        "depsSha256": "f31a863dfbb037b3249b1c743d7cdf5a9e54aa2a4e0c03069f19aa1af07def48",
+        "libraries": [
+          "Probe/1.0.0",
+          "runtimepack.Microsoft.NETCore.App.Runtime.linux-arm64/10.0.13"
+        ]
+      },
+      {
+        "stage": "fresh-output",
+        "publishExitCode": 0,
+        "runExitCode": 0,
+        "publishSeconds": 4.969,
+        "depsSha256": "f31a863dfbb037b3249b1c743d7cdf5a9e54aa2a4e0c03069f19aa1af07def48",
+        "libraries": [
+          "Probe/1.0.0",
+          "runtimepack.Microsoft.NETCore.App.Runtime.linux-arm64/10.0.13"
+        ]
+      }
+    ]
+  },
+  {
+    "profile": "trim",
+    "guard": true,
+    "package": true,
+    "stages": [
+      {
+        "stage": "read",
+        "publishExitCode": 0,
+        "runExitCode": 0,
+        "publishSeconds": 4.873,
+        "depsSha256": "04676c380e73beff2c1b38cde9645a412771de6500f9d76018f7693e8d7b1353",
+        "libraries": [
+          "Probe/1.0.0",
+          "WarmSdk/1.0.0",
+          "runtimepack.Microsoft.NETCore.App.Runtime.linux-arm64/10.0.13"
+        ]
+      },
+      {
+        "stage": "write",
+        "publishExitCode": 0,
+        "runExitCode": 0,
+        "publishSeconds": 5.112,
+        "depsSha256": "607ee36bc403cb513b3b702e8030c22a05f7f0d8956f3e50296bcddc629345e0",
+        "libraries": [
+          "Probe/1.0.0",
+          "WarmSdk/1.0.0",
+          "runtimepack.Microsoft.NETCore.App.Runtime.linux-arm64/10.0.13"
+        ]
+      },
+      {
+        "stage": "fresh-output",
+        "publishExitCode": 0,
+        "runExitCode": 0,
+        "publishSeconds": 4.945,
+        "depsSha256": "607ee36bc403cb513b3b702e8030c22a05f7f0d8956f3e50296bcddc629345e0",
+        "libraries": [
+          "Probe/1.0.0",
+          "WarmSdk/1.0.0",
+          "runtimepack.Microsoft.NETCore.App.Runtime.linux-arm64/10.0.13"
+        ]
+      },
+      {
+        "stage": "removed-reference",
+        "publishExitCode": 0,
+        "runExitCode": 0,
+        "publishSeconds": 4.989,
+        "depsSha256": "353e47a50a61b7cf3d7a2e83b74995197c0c23ff01cf904d9f95d4ca6ff7c86b",
+        "libraries": [
+          "Probe/1.0.0",
+          "runtimepack.Microsoft.NETCore.App.Runtime.linux-arm64/10.0.13"
+        ]
+      }
+    ]
+  },
+  {
+    "profile": "aot",
+    "guard": false,
+    "package": false,
+    "stages": [
+      {
+        "stage": "read",
+        "publishExitCode": 0,
+        "runExitCode": 0,
+        "publishSeconds": 9.686,
+        "depsSha256": null,
+        "libraries": null
+      },
+      {
+        "stage": "write",
+        "publishExitCode": 0,
+        "runExitCode": 0,
+        "publishSeconds": 6.46,
+        "depsSha256": null,
+        "libraries": null
+      },
+      {
+        "stage": "fresh-output",
+        "publishExitCode": 0,
+        "runExitCode": 0,
+        "publishSeconds": 4.243,
+        "depsSha256": null,
+        "libraries": null
+      }
+    ]
+  },
+  {
+    "profile": "aot",
+    "guard": false,
+    "package": true,
+    "stages": [
+      {
+        "stage": "read",
+        "publishExitCode": 0,
+        "runExitCode": 0,
+        "publishSeconds": 4.53,
+        "depsSha256": null,
+        "libraries": null
+      },
+      {
+        "stage": "write",
+        "publishExitCode": 0,
+        "runExitCode": 0,
+        "publishSeconds": 4.337,
+        "depsSha256": null,
+        "libraries": null
+      },
+      {
+        "stage": "fresh-output",
+        "publishExitCode": 0,
+        "runExitCode": 0,
+        "publishSeconds": 4.091,
+        "depsSha256": null,
+        "libraries": null
+      },
+      {
+        "stage": "removed-reference",
+        "publishExitCode": 0,
+        "runExitCode": 0,
+        "publishSeconds": 3.651,
+        "depsSha256": null,
+        "libraries": null
+      }
+    ]
+  },
+  {
+    "profile": "aot",
+    "guard": true,
+    "package": false,
+    "stages": [
+      {
+        "stage": "read",
+        "publishExitCode": 0,
+        "runExitCode": 0,
+        "publishSeconds": 4.961,
+        "depsSha256": null,
+        "libraries": null
+      },
+      {
+        "stage": "write",
+        "publishExitCode": 0,
+        "runExitCode": 0,
+        "publishSeconds": 4.115,
+        "depsSha256": null,
+        "libraries": null
+      },
+      {
+        "stage": "fresh-output",
+        "publishExitCode": 0,
+        "runExitCode": 0,
+        "publishSeconds": 4.503,
+        "depsSha256": null,
+        "libraries": null
+      }
+    ]
+  },
+  {
+    "profile": "aot",
+    "guard": true,
+    "package": true,
+    "stages": [
+      {
+        "stage": "read",
+        "publishExitCode": 0,
+        "runExitCode": 0,
+        "publishSeconds": 4.379,
+        "depsSha256": null,
+        "libraries": null
+      },
+      {
+        "stage": "write",
+        "publishExitCode": 0,
+        "runExitCode": 0,
+        "publishSeconds": 4.247,
+        "depsSha256": null,
+        "libraries": null
+      },
+      {
+        "stage": "fresh-output",
+        "publishExitCode": 0,
+        "runExitCode": 0,
+        "publishSeconds": 4.513,
+        "depsSha256": null,
+        "libraries": null
+      },
+      {
+        "stage": "removed-reference",
+        "publishExitCode": 0,
+        "runExitCode": 0,
+        "publishSeconds": 3.17,
+        "depsSha256": null,
+        "libraries": null
+      }
+    ]
+  }
+]
