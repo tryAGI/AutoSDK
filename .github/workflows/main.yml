@@ -26,7 +26,7 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        shard: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11]
+        shard: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13]
     steps:
       - name: Checkout
         uses: actions/checkout@v7
@@ -51,7 +51,7 @@ jobs:
         run: ./scripts/run-test-shard.sh
           src/tests/AutoSDK.IntegrationTests.Cli/AutoSDK.IntegrationTests.Cli.csproj
           ${{ matrix.shard }}
-          12
+          14
           Release
 
       - name: Upload shard diagnostics
@@ -83,7 +83,7 @@ jobs:
         run: python3 scripts/summarize-test-shards.py
           artifacts/test-shards-input
           artifacts/test-shards-summary
-          --expected-shards 12
+          --expected-shards 14
 
       - name: Refresh timing candidate from passed CI rows
         if: ${{ !cancelled() }}
@@ -113,7 +113,7 @@ jobs:
         if: always()
         run: python3 scripts/check-test-shard-sla.py
           artifacts/test-shards-summary/shards.csv
-          --expected-shards 12
+          --expected-shards 14
           --max-elapsed-seconds 720
 
   test-cli:

@@ -100,6 +100,9 @@ public static class CSharpModelDataFactory
         var modelNamespace = context.GetGeneratedNamespace();
         var isEnum = context.Schema.IsEnum();
         var isOpenEnum = isEnum && context.Schema.IsOpenEnum();
+        ImmutableArray<PropertyData> enumValues = isEnum
+            ? ToImmutablePropertyDataArray(context.ComputeEnum())
+            : [];
 
         var className = context.Id;
         var externalClassName = context.Settings.NamingConvention switch
@@ -119,11 +122,11 @@ public static class CSharpModelDataFactory
             Settings: context.Settings.ToEmitterSettings(),
             Style: isEnum ? ModelStyle.Enumeration : context.Settings.ModelStyle,
             Properties: GetVisibleProperties(context),
-            EnumValues: isEnum
-                ? ToImmutablePropertyDataArray(context.ComputeEnum())
-                : [],
+            EnumValues: enumValues,
             IsOpenEnum: isOpenEnum,
-            RejectUnknownStringValues: false,
+            // Strict union validation must reject a foreign closed literal before
+            // shape fallback can accept it as the first variant's default enum.
+            RejectUnknownStringValues: context.Settings.ValidateAnyOfs && !isOpenEnum && enumValues.Length == 1,
             Summary: context.Schema.GetSummary(),
             Description: context.Schema.Description ?? string.Empty,
             IsDeprecated: context.Schema.IsDeprecated(),

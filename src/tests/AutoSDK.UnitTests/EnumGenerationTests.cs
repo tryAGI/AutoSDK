@@ -18,6 +18,32 @@ public class EnumGenerationTests
     };
 
     [TestMethod]
+    [DataRow(JsonSerializerType.SystemTextJson, false)]
+    [DataRow(JsonSerializerType.SystemTextJson, true)]
+    [DataRow(JsonSerializerType.NewtonsoftJson, false)]
+    [DataRow(JsonSerializerType.NewtonsoftJson, true)]
+    public void OpenApiUnionValidation_RejectsClosedLiteralStringsOnlyWhenRequested(JsonSerializerType serializer, bool validate)
+    {
+        const string spec = """
+        openapi: 3.0.3
+        info: { title: Literal validation, version: '1' }
+        paths: {}
+        components:
+          schemas:
+            Literal: { type: string, enum: [alpha] }
+            Multiple: { type: string, enum: [alpha, beta] }
+            Open: { type: string, enum: [alpha], x-speakeasy-unknown-values: allow }
+        """;
+        var settings = DefaultSettings with { JsonSerializerType = serializer, ValidateAnyOfs = validate };
+        var data = AutoSDK.Generation.Data.Prepare(((spec, settings), settings));
+        var literal = data.Enums.Single(x => x.ClassName == "Literal");
+        literal.RejectUnknownStringValues.Should().Be(validate);
+        Sources.GenerateEnumJsonConverter(literal).Should().Contain(validate ? "throw new" : "?? default");
+        data.Enums.Single(x => x.ClassName == "Multiple").RejectUnknownStringValues.Should().BeFalse();
+        data.Enums.Single(x => x.ClassName == "Open").RejectUnknownStringValues.Should().BeFalse();
+    }
+
+    [TestMethod]
     public void BooleanEnumDefault_EmitsBooleanLiteral()
     {
         const string yaml = """
