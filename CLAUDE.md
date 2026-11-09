@@ -51,6 +51,12 @@ dotnet tool uninstall --global autosdk.cli
 # Sync OpenAPI specs from sibling SDK repos into specs/
 ./scripts/sync-specs.sh
 
+# Commit and push what the script above prepared, one repo at a time. The review is mechanical, so it
+# is enforced rather than done by eye: the tree must hold exactly src/cli/<Project>/{Program.cs,
+# README.md,CliCompletion.cs} and nothing else, or it refuses — anything more means the tree also holds
+# a spec refresh, model drift, or another agent's work.
+scripts/commit-cli-completion.sh --dry-run Exa Deepgram
+
 # Bring one or more generated CLIs up to date with cli-project — in practice, add the `completion`
 # command to CLIs generated before AutoSDK emitted it. Runs ONLY the repo's own cli-project invocation
 # against its committed spec, never generate.sh, which would re-download the spec and mix upstream
@@ -185,6 +191,30 @@ the source, not a flag that happens to exist: a token is a promise.
 **These token names are a compatibility surface.** tryAGI/Runway and tryAGI/Firecrawl check them in
 `generate.sh`. Add tokens; do not rename or remove them. When adding an opt-in whose meaning has since
 changed, add a `behavior:` token rather than relying on the flag's presence.
+
+#### Response fields that are required *and* defaulted
+
+`generate` warns when a schema reachable from a response body declares a property `required` while
+also giving it a `default`. The generated deserializers enforce `required`, so a field the service
+omits turns a successful HTTP 200 into a `JsonException` — and a documented default is the spec
+saying the producer may omit it.
+
+This is not hypothetical: Anthropic's spec marked `caller` that way on 52 response block schemas and
+the API never sends it, so every response that used a server tool (web search, web fetch, code
+execution) failed to deserialize until `generate.sh` stripped it.
+
+`--relax-response-required` (`AutoSDK_RelaxResponseRequired`) drops those entries from `required`
+during document preparation. It is **off by default** on purpose: a finding is a candidate, not a
+confirmed defect — plenty of services do send a field that has a default (`UsageInfo.prompt_tokens`)
+— so the warning asks for a live test first. The same reasoning as `--reject-unknown-enum-values`,
+pointing the other way: leniency belongs on the response-reading path, where the service, not the
+caller, decides what arrives.
+
+`FindResponseRequiredWithDefault` / `RelaxResponseRequiredWithDefault` in
+`AutoSDK/Extensions/OpenApiResponseRequiredExtensions.cs` do the work; only schemas reachable from a
+response body are considered, because in a request body the pair is exactly what a default means.
+`scripts/audit_response_required_defaults.py` in the workspace repo runs the same check across every
+sibling SDK without generating.
 
 #### Generated CLI shell completion
 
