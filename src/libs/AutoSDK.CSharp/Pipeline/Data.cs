@@ -470,7 +470,8 @@ public static class Data
             : enums
                 .Select(x => x with
                 {
-                    RejectUnknownStringValues = ResolveRejectUnknownStringValues(x, enumDirections),
+                    RejectUnknownStringValues = ResolveRejectUnknownStringValues(
+                        x, enumDirections, settings.ValidateAnyOfs),
                     SchemaContext = default!,
                 })
                 .ToImmutableArray();
@@ -1621,19 +1622,26 @@ public static class Data
 
     /// <summary>
     /// Narrows the <c>RejectUnknownEnumValues</c> opt-in to enums that are not read back off the wire.
-    /// Single-value enums are left exactly as they were: those are discriminator consts, hardened by
-    /// <c>ValidateAnyOfs</c> for reasons that have nothing to do with direction, so this never moves a
-    /// snapshot that the discriminator path produced.
+    /// A single-value enum is left alone only when <c>ValidateAnyOfs</c> is on, because that setting
+    /// hardens discriminator consts for reasons unrelated to direction and this must not move the
+    /// snapshots it produces. With <c>ValidateAnyOfs</c> off the opt-in is the only source of the
+    /// strictness, so a single-value enum is narrowed like any other: Firecrawl's
+    /// <c>DELETE /crawl/{id}</c> answers with <c>status: "cancelled"</c> declared as a one-value enum,
+    /// and hardening that would throw on a successful cancel the day the wording changes.
     /// </summary>
     private static bool ResolveRejectUnknownStringValues(
         ModelData model,
-        Dictionary<string, JsonSerializationDirection>? directions)
+        Dictionary<string, JsonSerializationDirection>? directions,
+        bool validateAnyOfs)
     {
-        if (directions is null ||
-            !model.RejectUnknownStringValues ||
-            model.EnumValues.Length <= 1)
+        if (directions is null || !model.RejectUnknownStringValues)
         {
             return model.RejectUnknownStringValues;
+        }
+
+        if (validateAnyOfs && model.EnumValues.Length == 1)
+        {
+            return true;
         }
 
         var key = model.SchemaContext?.TypeData.CSharpTypeWithoutNullability;

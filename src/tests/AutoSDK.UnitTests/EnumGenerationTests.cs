@@ -48,6 +48,51 @@ public class EnumGenerationTests
     }
 
     [TestMethod]
+    [DataRow(false, false)]
+    [DataRow(true, true)]
+    public void RejectUnknownEnumValues_NarrowsSingleValueResponseEnumsUnlessValidateAnyOfsOwnsThem(
+        bool validateAnyOfs,
+        bool expectedStrict)
+    {
+        // A one-value enum in a response is still a response. Firecrawl's `DELETE /crawl/{id}` answers
+        // with `status: "cancelled"` declared exactly this way, and hardening it would throw on a
+        // successful cancel the day the service spells the word differently or adds a state.
+        //
+        // The exception is ValidateAnyOfs, which hardens single-literal discriminators for reasons that
+        // have nothing to do with direction. Where that setting is the source, the strictness stays, so
+        // this narrowing cannot move the snapshots the discriminator path produces.
+        const string spec = """
+        openapi: 3.0.3
+        info: { title: Single value response enum, version: '1' }
+        paths:
+          /jobs/{id}:
+            delete:
+              operationId: cancelJob
+              parameters:
+                - { name: id, in: path, required: true, schema: { type: string } }
+              responses:
+                '200':
+                  description: cancelled
+                  content:
+                    application/json:
+                      schema:
+                        type: object
+                        properties:
+                          status: { type: string, enum: [cancelled] }
+        """;
+        var settings = DefaultSettings with
+        {
+            RejectUnknownEnumValues = true,
+            ValidateAnyOfs = validateAnyOfs,
+        };
+        var data = AutoSDK.Generation.Data.Prepare(((spec, settings), settings));
+
+        var status = data.Enums.Single(x => x.ClassName.EndsWith("Status", StringComparison.Ordinal));
+        status.EnumValues.Should().HaveCount(1, "the spec declares exactly one value");
+        status.RejectUnknownStringValues.Should().Be(expectedStrict);
+    }
+
+    [TestMethod]
     public void RejectUnknownEnumValues_LeavesEnumsThatAreReadOffTheWireLenient()
     {
         // The converters are emitted per type and the same one deserializes responses, so hardening a
