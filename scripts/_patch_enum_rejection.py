@@ -48,7 +48,11 @@ def main():
     # direction analysis is built on OpenAPI operations and cannot classify a realtime message, and
     # measuring Deepgram's asyncapi generation showed the flag changes nothing there anyway (104
     # strict converters with it and without, already hardened by --validate-any-ofs).
-    invocations = re.findall(r"^autosdk generate +([^\s\\]+)", text, re.MULTILINE)
+    # tryAGI/OpenAI invokes the CLI through a variable — `"$autosdk_cli" generate` — rather than by
+    # name, so the launcher is matched as either form.
+    launcher = r'(?:autosdk|"\$autosdk_cli"|\$autosdk_cli)'
+    invocations = re.findall(
+        r"^" + launcher + r" generate +([^\s\\]+)", text, re.MULTILINE)
     if not invocations:
         raise SystemExit("no `autosdk generate` invocation to flag")
 
@@ -86,7 +90,8 @@ def main():
     patched = text
     for spec in openapi_specs:
         pattern = re.compile(
-            r"(^autosdk generate +" + re.escape(spec) + r"[^\n]*\\\n(?:[^\n]*\\\n)*?)"
+            r"(^" + launcher + r" generate +" + re.escape(spec)
+            + r"[^\n]*\\\n(?:[^\n]*\\\n)*?)"
             r"([ \t]*--output [^\n]*\\\n)",
             re.MULTILINE)
         patched, count = pattern.subn(

@@ -63,6 +63,12 @@ scripts/commit-cli-completion.sh --dry-run Exa Deepgram
 # drift into the diff. Never commits. Skips a dirty or stale checkout, and reports a CLI already current.
 scripts/regenerate-cli-completion.sh --dry-run Exa Deepgram
 
+# Print one autosdk invocation out of a generate.sh, bounded by the command itself. Use this instead
+# of slicing a script by line numbers: a line range cannot see where a command ends, and `sed -n
+# '50,65p'` on tryAGI/OpenAI once swept in the following `rm -rf ../tryAGI.OpenAI.CLI/GeneratedApi`,
+# which deleted 445 tracked files when run. It refuses to return text containing rm/mv/cp/rmdir.
+scripts/extract-invocation.sh <generate.sh> generate openapi.yaml
+
 # Commit and push what the enum script prepared. Enforces the shape: one src/libs/<Lib>/generate.sh
 # plus files under src/libs/<Lib>/Generated/ and nothing else, and refuses outright if the spec changed
 # — that would mean the regeneration re-downloaded it. It does not judge which converters hardened:
