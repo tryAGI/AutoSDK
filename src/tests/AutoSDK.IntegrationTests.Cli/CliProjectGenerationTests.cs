@@ -1194,26 +1194,6 @@ public static class PollingAotProbe
             arrayJsonResult.ExitCode.Should().Be(0, arrayJsonResult.StandardOutput + arrayJsonResult.StandardError);
             arrayJsonResult.StandardOutput.Should().Contain("CLI string-array JSON works without reflection.");
 
-            // The emitted `completion` command must describe the tree this CLI actually exposes, so a
-            // regenerated command surface cannot leave a stale word list behind in someone's shell.
-            foreach (var shell in new[] { "bash", "zsh", "fish" })
-            {
-                var completionResult = await RunDotnetAsync(
-                        cliDirectory, "run", "--no-build", "--project", Path.Combine(cliDirectory, "Oag.CLI.csproj"),
-                        "--", "completion", shell)
-                    .ConfigureAwait(false);
-                completionResult.ExitCode.Should().Be(0, completionResult.StandardOutput + completionResult.StandardError);
-                completionResult.StandardOutput.Should().Contain("widgets", $"{shell} completion should name the generated command group");
-                completionResult.StandardOutput.Should().Contain("completion", $"{shell} completion should list itself too");
-            }
-
-            var unsupportedShellResult = await RunDotnetAsync(
-                    cliDirectory, "run", "--no-build", "--project", Path.Combine(cliDirectory, "Oag.CLI.csproj"),
-                    "--", "completion", "powershell")
-                .ConfigureAwait(false);
-            unsupportedShellResult.ExitCode.Should().Be(2, "an unsupported shell is a usage error");
-            unsupportedShellResult.StandardError.Should().Contain("bash, zsh, fish");
-
             var nativeDirectory = Path.Combine(cliDirectory, "native-smoke");
             var nativePublish = await RunDotnetAsync(
                     cliDirectory, "publish", Path.Combine(cliDirectory, "Oag.CLI.csproj"), "--disable-build-servers",
@@ -1228,6 +1208,26 @@ public static class PollingAotProbe
                 .ConfigureAwait(false);
             nativeArrayJson.ExitCode.Should().Be(0, nativeArrayJson.StandardOutput + nativeArrayJson.StandardError);
             nativeArrayJson.StandardOutput.Should().Contain("CLI string-array JSON works without reflection.");
+
+            // The emitted `completion` command must describe the tree this CLI actually exposes, so a
+            // regenerated command surface cannot leave a stale word list behind in someone's shell.
+            // Driven through the NativeAOT binary rather than `dotnet run`: each `dotnet run` re-enters
+            // MSBuild even with --no-build, and four of them pushed this shard from 9 to 37 minutes,
+            // past the shard SLA. Running the published binary is both cheap and the stronger check,
+            // since the script is built by reflecting over `Option.ValueType` under trimming.
+            foreach (var shell in new[] { "bash", "zsh", "fish" })
+            {
+                var completionResult = await RunProcessAsync(cliDirectory, nativeExecutable, "completion", shell)
+                    .ConfigureAwait(false);
+                completionResult.ExitCode.Should().Be(0, completionResult.StandardOutput + completionResult.StandardError);
+                completionResult.StandardOutput.Should().Contain("widgets", $"{shell} completion should name the generated command group");
+                completionResult.StandardOutput.Should().Contain("completion", $"{shell} completion should list itself too");
+            }
+
+            var unsupportedShellResult = await RunProcessAsync(cliDirectory, nativeExecutable, "completion", "powershell")
+                .ConfigureAwait(false);
+            unsupportedShellResult.ExitCode.Should().Be(2, "an unsupported shell is a usage error");
+            unsupportedShellResult.StandardError.Should().Contain("bash, zsh, fish");
 
             var customizedCommandResult = await RunDotnetAsync(
                     cliDirectory,
