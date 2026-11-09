@@ -144,6 +144,26 @@ Important settings:
   on every poll and an enum of model ids the account returns that the spec is already known not to list;
   direction-aware narrowing brings that to 164, all of them `*Request*` enums.
 
+#### Capability discovery (`autosdk capabilities`)
+
+Downstream `generate.sh` scripts have to refuse to run against a CLI that is too old, because passing
+an opt-in flag to a build that accepts it but implements it differently produces a wrong SDK rather
+than an error. `autosdk capabilities` prints stable tokens for that check, one per line, `--json` for
+structured output, and `--require <token>...` to gate directly:
+
+```bash
+autosdk capabilities --require behavior:request-scoped-enum-rejection || exit 1
+```
+
+Two kinds of token. `flag:<command>:<option>` is derived at runtime from the options the commands
+actually register, so the listing cannot claim a flag the build lacks. `behavior:<name>` is a curated
+list in `CapabilitiesCommand` for semantics a flag name does not capture — the case that motivated it
+is a build that accepts `--reject-unknown-enum-values` but hardens response enums too.
+
+**These token names are a compatibility surface.** tryAGI/Runway and tryAGI/Firecrawl check them in
+`generate.sh`. Add tokens; do not rename or remove them. When adding an opt-in whose meaning has since
+changed, add a `behavior:` token rather than relying on the flag's presence.
+
 #### Generated CLI shell completion
 
 `cli-project` emits `CliCompletion.cs` and, for non-`--api-only` projects, wires
