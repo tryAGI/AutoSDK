@@ -26,11 +26,18 @@ if [[ $# -eq 0 ]]; then
   exit 2
 fi
 
+# A dry run writes nothing, and planning the batches before the CLI is ready is the main reason to run
+# one, so only a real run is gated.
 if ! autosdk capabilities --require "$CAPABILITY" >/dev/null 2>&1; then
-  echo "error: the installed autosdk.cli does not report $CAPABILITY." >&2
-  echo "       Patching repositories now would leave each one unable to regenerate." >&2
-  echo "       Run: dotnet tool update --global autosdk.cli --prerelease" >&2
-  exit 1
+  if [[ "$DRY_RUN" == true ]]; then
+    echo "note: the installed autosdk.cli does not report $CAPABILITY yet, so a real run would stop here." >&2
+    echo
+  else
+    echo "error: the installed autosdk.cli does not report $CAPABILITY." >&2
+    echo "       Patching repositories now would leave each one unable to regenerate." >&2
+    echo "       Run: dotnet tool update --global autosdk.cli --prerelease" >&2
+    exit 1
+  fi
 fi
 
 GUARD_SOURCE="$PARENT/Runway/src/libs/Runway/generate.sh"
@@ -74,8 +81,15 @@ for sdk in "$@"; do
     skipped+=("$sdk (already enabled)")
     continue
   fi
+  # `git status` must actually answer. Silencing its failure would make a path that is not a repository
+  # look clean, and this script's safety rests on being able to see uncommitted work before it writes.
+  if ! repo_status="$(git -C "$repo" status --porcelain 2>/dev/null)"; then
+    echo "SKIP  $sdk: not a git checkout, so uncommitted work cannot be ruled out"
+    skipped+=("$sdk (not a git checkout)")
+    continue
+  fi
   # A dirty checkout is someone else's work in progress; never regenerate over it.
-  if [[ -n "$(git -C "$repo" status --porcelain 2>/dev/null)" ]]; then
+  if [[ -n "$repo_status" ]]; then
     echo "SKIP  $sdk: checkout is dirty"
     skipped+=("$sdk (dirty)")
     continue
@@ -88,24 +102,63 @@ for sdk in "$@"; do
   fi
 
   echo "==> $sdk"
-  if python3 "$(dirname "${BASH_SOURCE[0]}")/_patch_enum_rejection.py" "$script" "$GUARD_SOURCE"; then
-    if (cd "$(dirname "$script")" && ./generate.sh >/dev/null 2>&1) &&
-       (cd "$repo" && dotnet build ./*.slnx -p:UseSharedCompilation=false >/dev/null 2>&1) &&
-       (cd "$repo" && dotnet test src/tests/IntegrationTests --no-build >/dev/null 2>&1); then
-      echo "    ok: regenerated, built, tests pass — review and commit by hand"
-      done_list+=("$sdk")
-    else
-      echo "    FAILED: generate/build/test — left in place for inspection" >&2
-      failed+=("$sdk")
-    fi
-  else
-    echo "    FAILED: could not patch generate.sh" >&2
-    failed+=("$sdk")
+  lib="$(dirname "$script")"
+
+  # Snapshot before touching anything, so a failure can be undone by copying files back. Plain copies
+  # on purpose: `git checkout`/`restore` would bulk-overwrite a shared worktree, which is exactly what
+  # must not happen here, and they are blocked in this environment for that reason.
+  snapshot="$(mktemp -d)"
+  cp "$script" "$snapshot/generate.sh"
+  if [[ -d "$lib/Generated" ]]; then
+    cp -R "$lib/Generated" "$snapshot/Generated"
   fi
+
+  restore_snapshot() {
+    cp "$snapshot/generate.sh" "$script"
+    if [[ -d "$snapshot/Generated" ]]; then
+      rm -rf "$lib/Generated"
+      cp -R "$snapshot/Generated" "$lib/Generated"
+    fi
+  }
+
+  if python3 "$(dirname "${BASH_SOURCE[0]}")/_patch_enum_rejection.py" "$script" "$GUARD_SOURCE" &&
+     (cd "$lib" && ./generate.sh >/dev/null 2>&1) &&
+     (cd "$repo" && dotnet build ./*.slnx -p:UseSharedCompilation=false >/dev/null 2>&1) &&
+     (cd "$repo" && dotnet test src/tests/IntegrationTests --no-build >/dev/null 2>&1); then
+    echo "    ok: regenerated, built, tests pass — review and commit by hand"
+    done_list+=("$sdk")
+  else
+    echo "    FAILED: patch/generate/build/test — restoring from snapshot" >&2
+    restore_snapshot
+    if [[ -n "$(git -C "$repo" status --porcelain 2>/dev/null)" ]]; then
+      echo "    WARNING: $sdk is still not clean after the restore; inspect it by hand" >&2
+      failed+=("$sdk (restore incomplete)")
+    else
+      echo "    restored: $sdk is clean again"
+      failed+=("$sdk (restored)")
+    fi
+  fi
+
+  rm -rf "$snapshot"
 done
 
 echo
 echo "prepared: ${#done_list[@]}  skipped: ${#skipped[@]}  failed: ${#failed[@]}"
+
+# The whole point of this script is that it leaves work for a person, so say exactly where that work is
+# rather than making them go and look.
+if [[ "$DRY_RUN" == false ]]; then
+  echo
+  echo "checkouts left with uncommitted changes (review and commit these):"
+  left=0
+  for sdk in "$@"; do
+    if [[ -n "$(git -C "$PARENT/$sdk" status --porcelain 2>/dev/null)" ]]; then
+      echo "  $sdk: $(git -C "$PARENT/$sdk" status --porcelain | wc -l | tr -d ' ') file(s)"
+      left=$((left + 1))
+    fi
+  done
+  [[ $left -eq 0 ]] && echo "  none"
+fi
 for entry in "${skipped[@]:-}"; do [[ -n "$entry" ]] && echo "  skipped: $entry"; done
 for entry in "${failed[@]:-}"; do [[ -n "$entry" ]] && echo "  failed:  $entry"; done
 [[ ${#failed[@]} -eq 0 ]]
