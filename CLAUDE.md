@@ -51,6 +51,13 @@ dotnet tool uninstall --global autosdk.cli
 # Sync OpenAPI specs from sibling SDK repos into specs/
 ./scripts/sync-specs.sh
 
+# Prepare --reject-unknown-enum-values in sibling SDKs that ship a CLI: patch generate.sh, regenerate,
+# build, test, report. Never commits or pushes — the flag changes how every enum deserializes, so the
+# diff wants a person. Refuses outright unless the installed autosdk.cli reports the capability, since
+# a repo patched before that version reaches NuGet cannot regenerate until it does. Run in small
+# batches; --dry-run first. Skips a dirty checkout, because that is someone else's work in progress.
+scripts/enable-enum-rejection.sh --dry-run Firecrawl AI21
+
 # Which sibling SDKs declare a one-value enum reachable from a response — the shape that makes
 # --reject-unknown-enum-values dangerous if the narrowing is wrong. Read the script's header for what
 # the counts do and do not mean. 96 of 220 specs as of 2026-11-09, 16 of the 52 SDKs that ship a CLI.
