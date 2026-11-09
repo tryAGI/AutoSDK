@@ -182,7 +182,8 @@ for sdk in "$@"; do
   if [[ ${#snapshot_paths[@]} -eq 0 ]]; then
     echo "    FAILED: no --output target or spec found to snapshot; refusing to patch" >&2
     failed+=("$sdk (nothing to snapshot)")
-    rm -rf "$snapshot"
+    rm -f "${runner:-}"
+  rm -rf "$snapshot"
     continue
   fi
 
@@ -200,8 +201,15 @@ for sdk in "$@"; do
     done
   }
 
+  # Run only the `autosdk generate` invocation out of the patched script, against the spec already
+  # committed here — never ./generate.sh, which re-downloads the spec first. Mixing a spec refresh into
+  # a diff that is supposed to be about one flag is what left AI21 with 483 changed files earlier, and
+  # repeating that across every remaining CLI SDK would make each diff unreviewable.
   if python3 "$(dirname "${BASH_SOURCE[0]}")/_patch_enum_rejection.py" "$script" "$GUARD_SOURCE" &&
-     (cd "$lib" && ./generate.sh >/dev/null 2>&1) &&
+     { invocation="$(awk '/^autosdk generate/{found=1} found{print} found && !/\\$/{exit}' "$script")";
+       [[ -n "$invocation" ]] || { echo "    FAILED: could not isolate the generate invocation" >&2; false; }; } &&
+     { runner="$(mktemp)"; printf '%s\n' "$invocation" > "$runner"; true; } &&
+     (cd "$lib" && bash "$runner" >/dev/null 2>&1) &&
      (cd "$repo" && dotnet build ./*.slnx -p:UseSharedCompilation=false >/dev/null 2>&1) &&
      (cd "$repo" && { tests="$(find_test_project "$repo")"; if [[ -n "$tests" ]]; then dotnet test "$tests" --no-build >/dev/null 2>&1; else echo "      no test project found; skipping tests" >&2; fi; }); then
     echo "    ok: regenerated, built, tests pass — review and commit by hand"
