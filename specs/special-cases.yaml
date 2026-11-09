@@ -54,6 +54,89 @@ paths:
             application/json:
               schema:
                 $ref: "#/components/schemas/Error"
+  /pets/by-ids/{petIds}:
+    get:
+      summary: Info for several pets at once
+      description: >-
+        An array-typed path parameter, serialized with the OpenAPI simple style: the items are
+        joined with commas.
+      operationId: showPetsByIds
+      tags:
+        - pets
+      parameters:
+        - name: petIds
+          in: path
+          required: true
+          description: The pet ids to look up.
+          schema:
+            type: array
+            items:
+              type: string
+      responses:
+        '200':
+          description: The requested pets
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Pets"
+        default:
+          description: unexpected error
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Error"
+  /pets/label/{petIds}:
+    get:
+      summary: Info for several pets, label style
+      description: >-
+        An array path parameter in the OpenAPI label style with explode, which renders as
+        `.a.b` rather than a comma-joined list.
+      operationId: showPetsByIdsLabel
+      tags:
+        - pets
+      parameters:
+        - name: petIds
+          in: path
+          required: true
+          style: label
+          explode: true
+          schema:
+            type: array
+            items:
+              type: string
+      responses:
+        '200':
+          description: The requested pets
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Pets"
+  /pets/matrix/{petIds}:
+    get:
+      summary: Info for several pets, matrix style
+      description: >-
+        An array path parameter in the OpenAPI matrix style without explode, which renders as
+        `;petIds=a,b`.
+      operationId: showPetsByIdsMatrix
+      tags:
+        - pets
+      parameters:
+        - name: petIds
+          in: path
+          required: true
+          style: matrix
+          explode: false
+          schema:
+            type: array
+            items:
+              type: string
+      responses:
+        '200':
+          description: The requested pets
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Pets"
   /pets?beta=true:
     get:
       summary: List all pets (beta)

@@ -17,12 +17,18 @@ public static class ParameterSerializer
         foreach (var parameter in parameters.Where(x => x.Location == ParameterLocation.Path))
         {
             var valueExpression = GetPathParameterValueExpression(parameter);
+
+            // A label or matrix array renders its own `.`/`;` prefix, because the separator repeats
+            // between items and cannot come from the template's single leading character.
+            var labelPrefix = IsSelfPrefixedPathExpression(parameter) ? string.Empty : ".";
+            var matrixPrefix = IsSelfPrefixedPathExpression(parameter) ? string.Empty : ";";
+
             path = path.Replace($"{{{parameter.Id}}}", $"{{{valueExpression}}}");
             path = path.Replace($"{{{parameter.Id}*}}", $"{{{valueExpression}}}");
-            path = path.Replace($"{{.{parameter.Id}}}", $"{{.{valueExpression}}}");
-            path = path.Replace($"{{.{parameter.Id}*}}", $"{{.{valueExpression}}}");
-            path = path.Replace($"{{;{parameter.Id}}}", $"{{;{valueExpression}}}");
-            path = path.Replace($"{{;{parameter.Id}*}}", $"{{;{valueExpression}}}");
+            path = path.Replace($"{{.{parameter.Id}}}", $"{{{labelPrefix}{valueExpression}}}");
+            path = path.Replace($"{{.{parameter.Id}*}}", $"{{{labelPrefix}{valueExpression}}}");
+            path = path.Replace($"{{;{parameter.Id}}}", $"{{{matrixPrefix}{valueExpression}}}");
+            path = path.Replace($"{{;{parameter.Id}*}}", $"{{{matrixPrefix}{valueExpression}}}");
         }
 
         return path;
@@ -30,6 +36,11 @@ public static class ParameterSerializer
 
     private static string GetPathParameterValueExpression(MethodParameter parameter)
     {
+        if (parameter.Type.IsArray && !parameter.Type.SubTypes.IsEmpty)
+        {
+            return GetArrayPathParameterValueExpression(parameter);
+        }
+
         if (!parameter.Type.IsEnum || parameter.Type.IsAnyOfLike)
         {
             return parameter.ArgumentName;
@@ -42,6 +53,54 @@ public static class ParameterSerializer
         }
 
         return $"(global::System.Uri.EscapeDataString({valueExpression}))";
+    }
+
+    /// <summary>
+    /// True when the generated expression for this path parameter already renders the `.` or `;`
+    /// that an RFC 6570 style template would otherwise supply.
+    /// </summary>
+    private static bool IsSelfPrefixedPathExpression(MethodParameter parameter)
+    {
+        return parameter.Type.IsArray &&
+               !parameter.Type.SubTypes.IsEmpty &&
+               parameter.Style is ParameterStyle.Label or ParameterStyle.Matrix;
+    }
+
+    /// <summary>
+    /// Renders an array path parameter per its OpenAPI style: `simple` joins the items with commas,
+    /// `label` prefixes with `.`, and `matrix` prefixes with `;{name}=`. `explode` repeats the
+    /// separator between items instead of joining them with commas.
+    /// </summary>
+    private static string GetArrayPathParameterValueExpression(MethodParameter parameter)
+    {
+        var itemParameter = (parameter with
+        {
+            Name = "x",
+            ParameterName = string.Empty,
+            ArgumentName = string.Empty,
+            Type = (parameter.Type.SubTypes[0].Unbox<TypeData>() with { CSharpTypeNullability = false }).WithCSharpComputedValues(),
+            IsRequired = true,
+        }).WithCSharpParameterNames();
+        var itemExpression = GetFirstSerializedValue(itemParameter) is { Length: > 0 } serialized
+            ? serialized
+            : "x";
+        var escapedItem = $"global::System.Uri.EscapeDataString({itemExpression})";
+
+        string Items(string selector) =>
+            $"global::System.Linq.Enumerable.Select({parameter.ParameterName}, static x => {selector})";
+
+        var name = parameter.Id;
+
+        return parameter.Style switch
+        {
+            ParameterStyle.Label => parameter.Explode
+                ? $"\".\" + string.Join(\".\", {Items(escapedItem)})"
+                : $"\".\" + string.Join(\",\", {Items(escapedItem)})",
+            ParameterStyle.Matrix => parameter.Explode
+                ? $"\";\" + string.Join(\";\", {Items($"\"{name}=\" + {escapedItem}")})"
+                : $"\";{name}=\" + string.Join(\",\", {Items(escapedItem)})",
+            _ => $"string.Join(\",\", {Items(escapedItem)})",
+        };
     }
 
     public static IList<MethodParameter> SerializeQueryParameters(IList<MethodParameter> parameters)

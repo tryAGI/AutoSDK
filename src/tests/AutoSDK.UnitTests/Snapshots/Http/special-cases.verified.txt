@@ -30,6 +30,39 @@ Accept: application/json
 # Description: unexpected error
 # Content-Type: application/json
 
+### Info for several pets at once
+# @name showPetsByIds
+GET {{host}}/pets/by-ids/{{petIds}}
+Accept: application/json
+
+## Responses
+# 200
+# Description: The requested pets
+# Content-Type: application/json
+# default
+# Description: unexpected error
+# Content-Type: application/json
+
+### Info for several pets, label style
+# @name showPetsByIdsLabel
+GET {{host}}/pets/label/{{petIds}}
+Accept: application/json
+
+## Responses
+# 200
+# Description: The requested pets
+# Content-Type: application/json
+
+### Info for several pets, matrix style
+# @name showPetsByIdsMatrix
+GET {{host}}/pets/matrix/{{petIds}}
+Accept: application/json
+
+## Responses
+# 200
+# Description: The requested pets
+# Content-Type: application/json
+
 ### List all pets (beta)
 # @name listPetsBeta
 GET {{host}}/pets

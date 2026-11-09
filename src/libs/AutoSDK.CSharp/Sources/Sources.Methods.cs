@@ -2,6 +2,7 @@ using AutoSDK.Extensions;
 using AutoSDK.Helpers;
 using AutoSDK.Models;
 using AutoSDK.Serialization.Json;
+using AutoSDK.TypeMapping;
 using Microsoft.OpenApi;
 
 namespace AutoSDK.Generation;
@@ -2571,7 +2572,12 @@ namespace {endPoint.Settings.Namespace}
     {
         if (parameter.Type.IsArray && !parameter.Type.SubTypes.IsEmpty)
         {
-            var itemType = parameter.Type.SubTypes[0].Unbox<TypeData>();
+            // The element of a nullable collection is not itself nullable: keeping the schema's
+            // nullability here would emit `HasValue` against a non-nullable element type.
+            var itemType = (parameter.Type.SubTypes[0].Unbox<TypeData>() with
+            {
+                CSharpTypeNullability = false,
+            }).WithCSharpComputedValues();
             var itemExpression = GenerateSerializedValueExpression(
                 itemType,
                 "__headerItem",
