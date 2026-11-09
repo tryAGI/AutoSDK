@@ -430,11 +430,23 @@ public static class Data
 #endif
 
         var jsonTypesAndOutputsTime = Stopwatch.StartNew();
+
+        // Two features need to know how each type is reached from the operation graph: picking the
+        // narrowest JsonSourceGenerationMode, and deciding which enums the RejectUnknownEnumValues
+        // opt-in may harden. The walk is over every filtered schema, so it is computed once here and
+        // handed to both rather than run per feature.
+        var schemaDirections =
+            (settings.DirectionAwareJsonGenerationMode && settings.GenerateJsonSerializerContextTypes) ||
+            settings.RejectUnknownEnumValues
+                ? skipModels ? null : JsonSerializationDirectionAnalyzer.Analyze(filteredSchemas)
+                : null;
+
         var types = CollectJsonSerializerContextTypes(
             filteredSchemas,
             generatedPolymorphicTypes,
             suppressedLegacyPolymorphicSchemas,
             skipModels,
+            schemaDirections,
             settings);
 
         var outputClasses = skipModels
@@ -451,9 +463,7 @@ public static class Data
         // can prove is reachable from a response. Absence of proof is not proof: an enum reached only
         // from requests, one not reachable from any operation, and a models-only generation with no
         // paths at all all keep the strictness that was asked for.
-        var enumDirections = settings.RejectUnknownEnumValues && !skipModels
-            ? JsonSerializationDirectionAnalyzer.Analyze(filteredSchemas)
-            : null;
+        var enumDirections = settings.RejectUnknownEnumValues ? schemaDirections : null;
 
         var outputEnums = skipModels
             ? ImmutableArray<ModelData>.Empty
@@ -1554,6 +1564,7 @@ public static class Data
         ImmutableArray<TypeData> generatedPolymorphicTypes,
         HashSet<SchemaContext> suppressedSchemas,
         bool skipModels,
+        Dictionary<string, JsonSerializationDirection>? schemaDirections,
         CSharpSettings settings)
     {
         if (skipModels || !settings.GenerateJsonSerializerContextTypes)
@@ -1600,14 +1611,12 @@ public static class Data
         }
         var types = typesBuilder.MoveToImmutable();
 
-        if (!settings.DirectionAwareJsonGenerationMode)
+        if (!settings.DirectionAwareJsonGenerationMode || schemaDirections is null)
         {
             return types;
         }
 
-        return JsonSerializationDirectionAnalyzer.ApplyDirections(
-            types,
-            JsonSerializationDirectionAnalyzer.Analyze(filteredSchemas));
+        return JsonSerializationDirectionAnalyzer.ApplyDirections(types, schemaDirections);
     }
 
     /// <summary>
