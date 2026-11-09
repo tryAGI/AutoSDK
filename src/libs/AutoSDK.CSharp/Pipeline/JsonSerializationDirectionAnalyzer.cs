@@ -22,14 +22,18 @@ public static class JsonSerializationDirectionAnalyzer
     /// treated as ambiguous by callers.
     /// </summary>
     public static Dictionary<string, JsonSerializationDirection> Analyze(
-        IReadOnlyList<SchemaContext> schemas)
+        IReadOnlyList<SchemaContext> schemas,
+        IReadOnlyCollection<string>? inboundOperationPaths = null)
     {
         schemas = schemas ?? throw new ArgumentNullException(nameof(schemas));
 
+        var inbound = inboundOperationPaths is { Count: > 0 }
+            ? new HashSet<string>(inboundOperationPaths, StringComparer.Ordinal)
+            : null;
         var roots = new List<(SchemaContext Root, JsonSerializationDirection Direction)>();
         for (var i = 0; i < schemas.Count; i++)
         {
-            var direction = GetRootDirection(schemas[i]);
+            var direction = GetRootDirection(schemas[i], inbound);
             if (direction != JsonSerializationDirection.None)
             {
                 roots.Add((schemas[i], direction));
@@ -210,20 +214,40 @@ public static class JsonSerializationDirectionAnalyzer
         }
     }
 
-    private static JsonSerializationDirection GetRootDirection(SchemaContext schema)
+    private static JsonSerializationDirection GetRootDirection(
+        SchemaContext schema,
+        HashSet<string>? inboundOperationPaths)
     {
         if (!schema.IsOperation)
         {
             return JsonSerializationDirection.None;
         }
 
-        return schema.Hint switch
+        var direction = schema.Hint switch
         {
             // Parameters are only ever written by the SDK, so they count as request usage.
             Hint.Request or Hint.Parameter => JsonSerializationDirection.Request,
             Hint.Response => JsonSerializationDirection.Response,
             _ => JsonSerializationDirection.None,
         };
+
+        // A webhook is an inbound operation: its requestBody is what the service sends and the SDK
+        // deserializes, so request and response are the other way round. Without this flip a webhook
+        // payload counts as SDK-written, which is how Gladia's 57 converters came out strict under
+        // --reject-unknown-enum-values even though the client only ever reads those enums.
+        if (inboundOperationPaths is not null &&
+            schema.OperationPath is { } path &&
+            inboundOperationPaths.Contains(path))
+        {
+            return direction switch
+            {
+                JsonSerializationDirection.Request => JsonSerializationDirection.Response,
+                JsonSerializationDirection.Response => JsonSerializationDirection.Request,
+                _ => direction,
+            };
+        }
+
+        return direction;
     }
 
     private static void AddDirection(

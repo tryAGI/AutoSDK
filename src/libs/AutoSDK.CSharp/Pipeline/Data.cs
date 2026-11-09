@@ -438,7 +438,11 @@ public static class Data
         var schemaDirections =
             (settings.DirectionAwareJsonGenerationMode && settings.GenerateJsonSerializerContextTypes) ||
             settings.RejectUnknownEnumValues
-                ? skipModels ? null : JsonSerializationDirectionAnalyzer.Analyze(filteredSchemas)
+                ? skipModels
+                    ? null
+                    : JsonSerializationDirectionAnalyzer.Analyze(
+                        filteredSchemas,
+                        openApiDocument.Webhooks?.Keys.ToList())
                 : null;
 
         var types = CollectJsonSerializerContextTypes(
@@ -1634,7 +1638,10 @@ public static class Data
         Dictionary<string, JsonSerializationDirection>? directions,
         bool validateAnyOfs)
     {
-        if (directions is null || !model.RejectUnknownStringValues)
+        // An empty map is no direction data, not "nothing is request-reachable": a spec with no paths
+        // yields one, and that is exactly the models-only generation where the opt-in must still apply
+        // everywhere. Only a populated map licenses narrowing.
+        if (directions is null || directions.Count == 0 || !model.RejectUnknownStringValues)
         {
             return model.RejectUnknownStringValues;
         }
@@ -1644,10 +1651,21 @@ public static class Data
             return true;
         }
 
-        var key = model.SchemaContext?.TypeData.CSharpTypeWithoutNullability;
+        // Strictness needs positive evidence that the value is something a caller supplies, not merely
+        // the absence of evidence that it arrives off the wire. An enum no operation reaches is not
+        // caller input either: Gladia declares its callback payload schemas as components, reachable
+        // from nothing, and hardening those would throw on a callback the moment the service adds an
+        // event. When the document yields no directions at all — a models-only generation with no
+        // paths — `directions` is null and the opt-in still applies everywhere, which is the case this
+        // default was originally protecting.
 
-        return string.IsNullOrEmpty(key) ||
-            !directions.TryGetValue(key!, out var direction) ||
+        var key = model.SchemaContext?.TypeData.CSharpTypeWithoutNullability;
+        if (string.IsNullOrEmpty(key) || !directions.TryGetValue(key!, out var direction))
+        {
+            return false;
+        }
+
+        return (direction & JsonSerializationDirection.Request) != 0 &&
             (direction & JsonSerializationDirection.Response) == 0;
     }
 

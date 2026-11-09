@@ -146,10 +146,12 @@ public class EnumGenerationTests
         // so the response side decides.
         data.Enums.Single(x => x.ClassName == "Bidirectional").RejectUnknownStringValues.Should().BeFalse();
 
-        // Absence of proof is not proof of a response path: an enum no operation reaches keeps the
-        // strictness that was asked for, which is also what makes the flag meaningful for a
-        // models-only generation with no paths at all.
-        data.Enums.Single(x => x.ClassName == "Unreachable").RejectUnknownStringValues.Should().BeTrue();
+        // Strictness needs positive evidence of caller input. An enum no operation reaches has none,
+        // so it is left lenient: Gladia declares its callback payload schemas as unreferenced
+        // components, and hardening those would throw on a callback the day the service adds an event.
+        // The models-only case — a spec with no paths at all, where there is no direction data to go on
+        // — is covered by RejectUnknownEnumValues_CoversMultiValueEnumsOnlyWhenRequested instead.
+        data.Enums.Single(x => x.ClassName == "Unreachable").RejectUnknownStringValues.Should().BeFalse();
     }
 
     [TestMethod]
