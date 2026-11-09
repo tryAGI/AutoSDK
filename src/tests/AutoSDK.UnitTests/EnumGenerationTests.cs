@@ -48,6 +48,61 @@ public class EnumGenerationTests
     }
 
     [TestMethod]
+    public void RejectUnknownEnumValues_TreatsAWebhookPayloadAsInbound()
+    {
+        // A webhook is an inbound operation: its requestBody is what the service sends and the SDK
+        // deserializes. Classifying that as request-direction — written by the SDK — is backwards, and
+        // it is how Gladia came out with 57 hardened converters including its webhook and callback
+        // event enums, which would have thrown the day Gladia added an event.
+        const string spec = """
+        openapi: 3.1.0
+        info: { title: Webhook direction, version: '1' }
+        paths:
+          /jobs:
+            post:
+              operationId: createJob
+              requestBody:
+                required: true
+                content:
+                  application/json:
+                    schema:
+                      type: object
+                      properties:
+                        quality: { $ref: '#/components/schemas/RequestOnly' }
+              responses:
+                '200': { description: ok }
+        webhooks:
+          jobFinished:
+            post:
+              operationId: onJobFinished
+              requestBody:
+                required: true
+                content:
+                  application/json:
+                    schema:
+                      type: object
+                      properties:
+                        event: { $ref: '#/components/schemas/WebhookEvent' }
+              responses:
+                '200': { description: acknowledged }
+        components:
+          schemas:
+            RequestOnly: { type: string, enum: [fast, slow] }
+            WebhookEvent: { type: string, enum: [finished, failed] }
+        """;
+        var settings = DefaultSettings with { RejectUnknownEnumValues = true };
+        var data = AutoSDK.Generation.Data.Prepare(((spec, settings), settings));
+
+        // Reached only through a real request body, so an undeclared value is the caller's typo.
+        data.Enums.Single(x => x.ClassName == "RequestOnly").RejectUnknownStringValues.Should().BeTrue();
+
+        // Reached only through a webhook's requestBody, which the SDK reads rather than writes.
+        data.Enums.Single(x => x.ClassName == "WebhookEvent").RejectUnknownStringValues.Should().BeFalse(
+            "a webhook payload is deserialized by the SDK, so an undeclared value means the service " +
+            "shipped something new rather than that a caller made a mistake");
+    }
+
+    [TestMethod]
     [DataRow(false, false)]
     [DataRow(true, true)]
     public void RejectUnknownEnumValues_NarrowsSingleValueResponseEnumsUnlessValidateAnyOfsOwnsThem(
