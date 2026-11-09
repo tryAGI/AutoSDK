@@ -140,6 +140,8 @@
     <CompilerVisibleProperty Include="AutoSDK_ComputeDiscriminators"/>
     <!-- Adds missing path parameters. true/false. Default: false -->
     <CompilerVisibleProperty Include="AutoSDK_AddMissingPathParameters"/>
+    <!-- Drops 'required' from response fields that also declare a default. true/false. Default: false -->
+    <CompilerVisibleProperty Include="AutoSDK_RelaxResponseRequired"/>
 
     <!-- Models generation -->
     <!-- true/false. Default: false -->

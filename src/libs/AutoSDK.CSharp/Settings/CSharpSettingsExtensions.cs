@@ -112,6 +112,7 @@ public static class CSharpSettingsExtensions
             SecuritySchemes: settings.SecuritySchemes,
             ComputeDiscriminators: settings.ComputeDiscriminators,
             AddMissingPathParameters: settings.AddMissingPathParameters,
+            RelaxResponseRequired: settings.RelaxResponseRequired,
             OpenApiOverrides: settings.OpenApiOverrides,
             UseExtensionNaming: settings.UseExtensionNaming);
     }

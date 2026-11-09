@@ -160,6 +160,12 @@ internal sealed class GenerateCommand : Command
         DefaultValueFactory = _ => Settings.Default.ComputeDiscriminators,
         Description = "Compute discriminators for polymorphic models",
     };
+    private Option<bool> RelaxResponseRequired { get; } = new(
+        name: "--relax-response-required")
+    {
+        DefaultValueFactory = _ => Settings.Default.RelaxResponseRequired,
+        Description = "Drop 'required' from response fields that also declare a default, so a field the service omits does not fail deserialization. Reported as a warning when off.",
+    };
     
     private Option<bool> GenerateCli { get; } = new(
         name: "--generate-cli")
@@ -638,6 +644,7 @@ internal sealed class GenerateCommand : Command
         Options.Add(RejectUnknownEnumValues);
         Options.Add(GenerateRawModelData);
         Options.Add(ComputeDiscriminators);
+        Options.Add(RelaxResponseRequired);
         Options.Add(GenerateCli);
         Options.Add(UseSystemNetHttpJson);
         Options.Add(GenerateHttpExceptionHierarchy);
@@ -864,6 +871,7 @@ internal sealed class GenerateCommand : Command
             NamespaceDelimiter = namespaceDelimiterValue,
             ExcludedModelNamespaceMode = parseResult.GetRequiredValue(ExcludedModelNamespaceMode),
             ComputeDiscriminators = parseResult.GetRequiredValue(ComputeDiscriminators),
+            RelaxResponseRequired = parseResult.GetRequiredValue(RelaxResponseRequired),
             GenerateModelValidationMethods = parseResult.GetRequiredValue(GenerateModelValidationMethods),
             ValidateAnyOfs = parseResult.GetRequiredValue(ValidateAnyOfs),
             RejectUnknownEnumValues = parseResult.GetRequiredValue(RejectUnknownEnumValues),
@@ -1095,6 +1103,8 @@ internal sealed class GenerateCommand : Command
         {
             Console.WriteLine("Warning: No endpoint or model files were generated. Check that the input specification contains supported paths/schemas and that any upstream fetch step succeeded.");
         }
+
+        WarnAboutResponseRequiredDefaults(coreResult.OpenApiDocument);
 
         if (settings.DirectionAwareJsonGenerationMode &&
             !data.Types.IsEmpty)
@@ -1406,6 +1416,43 @@ internal sealed class GenerateCommand : Command
         {
             yield return priorSnippetManifest;
         }
+    }
+
+    /// <summary>
+    /// Warns about response fields the spec declares required while also giving them a default.
+    /// </summary>
+    /// <remarks>
+    /// The generated deserializers enforce `required`, so a response field the service omits turns a
+    /// successful HTTP 200 into a JSON exception - and a documented default is the spec saying the
+    /// producer may omit it. These are candidates rather than confirmed defects, so this warns
+    /// rather than relaxing them: `--relax-response-required` does that when the surface warrants
+    /// it.
+    /// </remarks>
+    private static void WarnAboutResponseRequiredDefaults(
+        Microsoft.OpenApi.OpenApiDocument? document)
+    {
+        if (document is null)
+        {
+            return;
+        }
+
+        var findings = document.FindResponseRequiredWithDefault();
+        if (findings.Count == 0)
+        {
+            return;
+        }
+
+        var sample = string.Join(
+            ", ",
+            findings.Take(5).Select(static x => $"{x.Schema}.{x.Property}"));
+        var more = findings.Count > 5
+            ? $", and {findings.Count - 5} more"
+            : string.Empty;
+
+        Console.WriteLine(
+            $"Warning: {findings.Count} response field(s) are declared required and also have a default, " +
+            $"so the service may omit them and deserialization would fail: {sample}{more}. " +
+            "Cover those surfaces with a live test, or pass --relax-response-required.");
     }
 
     private static bool ShouldWarnAboutEmptyGeneratedSurface(

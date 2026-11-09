@@ -99,6 +99,7 @@ public static class OptionsExtensions
             DirectionAwareJsonGenerationMode: options.GetBoolGlobalOption(nameof(Settings.DirectionAwareJsonGenerationMode), prefix, defaultValue: Settings.Default.DirectionAwareJsonGenerationMode),
             ComputeDiscriminators: options.GetBoolGlobalOption(nameof(Settings.ComputeDiscriminators), prefix, defaultValue: Settings.Default.ComputeDiscriminators),
             AddMissingPathParameters: options.GetBoolGlobalOption(nameof(Settings.AddMissingPathParameters), prefix, defaultValue: Settings.Default.AddMissingPathParameters),
+            RelaxResponseRequired: options.GetBoolGlobalOption(nameof(Settings.RelaxResponseRequired), prefix, defaultValue: Settings.Default.RelaxResponseRequired),
             
             GenerateModels: options.GetBoolGlobalOption(nameof(Settings.GenerateModels), prefix, defaultValue: Settings.Default.GenerateModels),
             GenerateModelValidationMethods: options.GetBoolGlobalOption(nameof(Settings.GenerateModelValidationMethods), prefix, defaultValue: Settings.Default.GenerateModelValidationMethods),
