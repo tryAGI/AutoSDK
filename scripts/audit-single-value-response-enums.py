@@ -6,8 +6,8 @@ differently or adds a state. Firecrawl's `DELETE /crawl/{id}` answering `status:
 case that exposed it.
 
 Run this before enabling --reject-unknown-enum-values across repositories, to know where the narrowing
-has to be right. Measured 2026-11-09: 93 of 220 SDK specs have the shape, 16 of them among the 52 SDKs
-that ship a CLI.
+has to be right. Measured 2026-11-09: 96 of 220 SDK specs have the shape, 16 of them among the 52 SDKs
+that ship a CLI. Every spec parses; nothing is skipped.
 
 Scope, stated plainly:
 
@@ -22,6 +22,7 @@ Scope, stated plainly:
 
 Usage: python3 -I scripts/audit-single-value-response-enums.py [parent-directory]
 """
+import io
 import json
 import os
 import sys
@@ -32,11 +33,30 @@ ROOT = sys.argv[1] if len(sys.argv) > 1 else os.path.dirname(os.path.dirname(os.
 MAX_DEPTH = 40
 
 
+class TolerantLoader(yaml.SafeLoader):
+    """SafeLoader plus the YAML 1.1 tags some of these specs actually use.
+
+    `tag:yaml.org,2002:value` (the `=` default key) appears in Opik's spec and SafeLoader refuses to
+    construct it. The spec is upstream, so meeting it where it is beats failing on it.
+    """
+
+
+TolerantLoader.add_constructor(
+    "tag:yaml.org,2002:value",
+    lambda loader, node: loader.construct_scalar(node))
+
+
 def load(path):
-    with open(path, encoding="utf-8") as stream:
-        if path.endswith(".json"):
-            return json.load(stream)
-        return yaml.safe_load(stream)
+    text = io.open(path, encoding="utf-8").read()
+
+    # Content first, extension second. Helicone and Moonshot both ship JSON in a file named
+    # openapi.yaml, tab-indented — valid JSON, and invalid YAML precisely because of those tabs, which
+    # is what used to make them unreadable here. Nothing is rewritten to work around it.
+    stripped = text.lstrip()
+    if stripped.startswith(("{", "[")):
+        return json.loads(text)
+
+    return yaml.load(text, Loader=TolerantLoader)  # noqa: S506 - TolerantLoader derives from SafeLoader
 
 
 def resolve(doc, node, seen):

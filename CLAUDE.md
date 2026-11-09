@@ -53,7 +53,7 @@ dotnet tool uninstall --global autosdk.cli
 
 # Which sibling SDKs declare a one-value enum reachable from a response — the shape that makes
 # --reject-unknown-enum-values dangerous if the narrowing is wrong. Read the script's header for what
-# the counts do and do not mean. 93 of 220 specs as of 2026-11-09, 16 of the 52 SDKs that ship a CLI.
+# the counts do and do not mean. 96 of 220 specs as of 2026-11-09, 16 of the 52 SDKs that ship a CLI.
 python3 -I scripts/audit-single-value-response-enums.py
 
 # Pull/rebase all sibling SDK repos from origin/main.
