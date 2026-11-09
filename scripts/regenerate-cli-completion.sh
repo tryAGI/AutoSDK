@@ -58,12 +58,22 @@ for sdk in "$@"; do
     skipped+=("$sdk (dirty)")
     continue
   fi
+  # Fast-forward rather than skip. Nearly every one of these is behind — bots push spec refreshes and
+  # dependency bumps constantly, and a first pass found four repos 5 to 38 commits behind — so skipping
+  # meant doing it by hand 49 times. Safe here: the checkout is already verified clean, and --ff-only
+  # cannot merge or rewrite anything, so it fails rather than guessing when there is local work.
   git -C "$repo" fetch origin main --quiet 2>/dev/null || true
   behind="$(git -C "$repo" rev-list --count HEAD..origin/main 2>/dev/null || echo 0)"
   if [[ "$behind" != "0" ]]; then
-    echo "SKIP  $sdk: $behind commit(s) behind origin/main"
-    skipped+=("$sdk ($behind behind)")
-    continue
+    if [[ "$DRY_RUN" == true ]]; then
+      echo "      ($sdk is $behind behind; a real run would fast-forward it)"
+    elif git -C "$repo" pull --ff-only origin main --quiet 2>/dev/null; then
+      echo "      $sdk: fast-forwarded $behind commit(s)"
+    else
+      echo "SKIP  $sdk: $behind behind and cannot fast-forward; reconcile it by hand"
+      skipped+=("$sdk (cannot fast-forward)")
+      continue
+    fi
   fi
 
   if [[ "$DRY_RUN" == true ]]; then

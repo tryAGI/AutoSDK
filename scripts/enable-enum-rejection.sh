@@ -102,9 +102,15 @@ for sdk in "$@"; do
   behind="$(git -C "$repo" rev-list --count HEAD..origin/main 2>/dev/null || echo 0)"
   ahead="$(git -C "$repo" rev-list --count origin/main..HEAD 2>/dev/null || echo 0)"
   if [[ "$behind" != "0" ]]; then
-    echo "SKIP  $sdk: $behind commit(s) behind origin/main; run \`git pull --ff-only origin main\` first"
-    skipped+=("$sdk ($behind behind)")
-    continue
+    if [[ "$DRY_RUN" == true ]]; then
+      echo "      ($sdk is $behind behind; a real run would fast-forward it)"
+    elif git -C "$repo" pull --ff-only origin main --quiet 2>/dev/null; then
+      echo "      $sdk: fast-forwarded $behind commit(s)"
+    else
+      echo "SKIP  $sdk: $behind behind and cannot fast-forward; reconcile it by hand"
+      skipped+=("$sdk (cannot fast-forward)")
+      continue
+    fi
   fi
   if [[ "$ahead" != "0" ]]; then
     echo "SKIP  $sdk: $ahead unpushed commit(s); push or review them before regenerating"
