@@ -442,7 +442,7 @@ public static class Data
                     ? null
                     : JsonSerializationDirectionAnalyzer.Analyze(
                         filteredSchemas,
-                        openApiDocument.Webhooks?.Keys.ToList())
+                        CollectInboundOperationPaths(openApiDocument))
                 : null;
 
         var types = CollectJsonSerializerContextTypes(
@@ -1667,6 +1667,37 @@ public static class Data
 
         return (direction & JsonSerializationDirection.Request) != 0 &&
             (direction & JsonSerializationDirection.Response) == 0;
+    }
+
+    /// <summary>
+    /// The operation paths whose request body the SDK receives rather than sends: top-level webhooks,
+    /// and the path items of any operation's callbacks. Both are the service calling the client, so
+    /// their request and response directions are the reverse of an ordinary operation's.
+    /// </summary>
+    private static List<string> CollectInboundOperationPaths(OpenApiDocument document)
+    {
+        var paths = new List<string>();
+
+        if (document.Webhooks is not null)
+        {
+            paths.AddRange(document.Webhooks.Keys);
+        }
+
+        foreach (var pathItem in (document.Paths ?? []).Values)
+        {
+            foreach (var operation in pathItem.Operations?.Values ?? Enumerable.Empty<OpenApiOperation>())
+            {
+                foreach (var callback in operation.Callbacks?.Values ?? Enumerable.Empty<IOpenApiCallback>())
+                {
+                    if (callback.PathItems is not null)
+                    {
+                        paths.AddRange(callback.PathItems.Keys.Select(static key => key.ToString() ?? string.Empty));
+                    }
+                }
+            }
+        }
+
+        return paths;
     }
 
     private static EndPoint ResolveEndPointTag(

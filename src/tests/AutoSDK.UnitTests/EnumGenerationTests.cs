@@ -48,6 +48,59 @@ public class EnumGenerationTests
     }
 
     [TestMethod]
+    public void RejectUnknownEnumValues_TreatsACallbackPayloadAsInbound()
+    {
+        // Same inversion as a webhook, reached the other way: an operation's `callbacks` describe the
+        // service calling back into the client, so the callback's requestBody is read, not written.
+        // AssemblyAI is the case — its callback carries a transcript status, and hardening that would
+        // throw the day AssemblyAI adds a value to it.
+        const string spec = """
+        openapi: 3.1.0
+        info: { title: Callback direction, version: '1' }
+        paths:
+          /jobs:
+            post:
+              operationId: createJob
+              requestBody:
+                required: true
+                content:
+                  application/json:
+                    schema:
+                      type: object
+                      properties:
+                        quality: { $ref: '#/components/schemas/RequestOnly' }
+              responses:
+                '200': { description: ok }
+              callbacks:
+                jobDone:
+                  '{$request.body#/callbackUrl}':
+                    post:
+                      operationId: onJobDone
+                      requestBody:
+                        required: true
+                        content:
+                          application/json:
+                            schema:
+                              type: object
+                              properties:
+                                status: { $ref: '#/components/schemas/CallbackStatus' }
+                      responses:
+                        '200': { description: acknowledged }
+        components:
+          schemas:
+            RequestOnly: { type: string, enum: [fast, slow] }
+            CallbackStatus: { type: string, enum: [ready, failed] }
+        """;
+        var settings = DefaultSettings with { RejectUnknownEnumValues = true };
+        var data = AutoSDK.Generation.Data.Prepare(((spec, settings), settings));
+
+        data.Enums.Single(x => x.ClassName == "RequestOnly").RejectUnknownStringValues.Should().BeTrue();
+        data.Enums.Single(x => x.ClassName == "CallbackStatus").RejectUnknownStringValues.Should().BeFalse(
+            "a callback payload is deserialized by the SDK, so an undeclared value means the service " +
+            "shipped something new rather than that a caller made a mistake");
+    }
+
+    [TestMethod]
     public void RejectUnknownEnumValues_TreatsAWebhookPayloadAsInbound()
     {
         // A webhook is an inbound operation: its requestBody is what the service sends and the SDK
