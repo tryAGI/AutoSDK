@@ -1306,6 +1306,12 @@ public static class PollingAotProbe
             File.Exists(Path.Combine(generatedApiDirectory, "Program.cs")).Should().BeFalse();
             File.Exists(Path.Combine(generatedApiDirectory, "Commands", "AuthCommand.cs")).Should().BeFalse();
 
+            // An api-only project owns its Program.cs, so nothing here can wire a completion command.
+            // Emitting the file anyway only produced dead code: tryAGI/Runway gained an unwired
+            // duplicate of its own hand-written completion, and tryAGI/Firecrawl an unused file.
+            File.Exists(Path.Combine(generatedApiDirectory, "CliCompletion.cs")).Should().BeFalse(
+                "an api-only project cannot wire a completion command, so the file would be dead code");
+
             var apiOnlyApiCommand = await File.ReadAllTextAsync(Path.Combine(generatedApiDirectory, "Commands", "ApiCommand.g.cs")).ConfigureAwait(false);
             apiOnlyApiCommand.Should().Contain("command.Options.Add(CliOptions.ApiKey);");
 

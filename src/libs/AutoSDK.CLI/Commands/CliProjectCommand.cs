@@ -93,8 +93,14 @@ internal sealed class CliProjectCommand : Command
 
     private Option<bool> PreserveProjectFile { get; } = new("--preserve-project-file")
     {
+        DefaultValueFactory = _ => true,
+        Description = "Keep an existing CLI .csproj byte-for-byte while regenerating sources. On by default; pass --overwrite-project-file to rewrite it from the template instead.",
+    };
+
+    private Option<bool> OverwriteProjectFile { get; } = new("--overwrite-project-file")
+    {
         DefaultValueFactory = _ => false,
-        Description = "Keep an existing CLI .csproj byte-for-byte while regenerating sources. Create the project normally if it does not exist.",
+        Description = "Rewrite an existing CLI .csproj from the template. Off by default: the template pins its own package versions, so rewriting reverts dependency updates the repository has since taken.",
     };
 
     private Option<bool> KeepApiGroup { get; } = new("--cli-keep-api-group")
@@ -189,6 +195,7 @@ internal sealed class CliProjectCommand : Command
         Options.Add(UserSecretsId);
         Options.Add(ApiOnly);
         Options.Add(PreserveProjectFile);
+        Options.Add(OverwriteProjectFile);
         Options.Add(KeepApiGroup);
         Options.Add(ApiKeyEnvVars);
         Options.Add(CredentialFile);
@@ -341,6 +348,7 @@ internal sealed class CliProjectCommand : Command
             parseResult.GetRequiredValue(KeepApiGroup)) with
         {
             PreserveProjectFile = parseResult.GetRequiredValue(PreserveProjectFile),
+            OverwriteProjectFile = parseResult.GetRequiredValue(OverwriteProjectFile),
         };
 
         Console.WriteLine(model.ApiOnly
@@ -422,6 +430,8 @@ internal sealed record CliProjectModel(
     bool KeepApiGroup)
 {
     public bool PreserveProjectFile { get; init; }
+
+    public bool OverwriteProjectFile { get; init; }
 
     public static CliProjectModel Create(
         string outputPath,
@@ -1899,7 +1909,12 @@ internal static class CliProjectScaffolder
         if (!model.ApiOnly)
         {
             var projectFile = $"{model.ProjectName}.csproj";
-            if (!model.PreserveProjectFile || !File.Exists(Path.Combine(model.OutputPath, projectFile)))
+            // An existing .csproj belongs to the repository, and dependabot keeps its package
+            // versions current. The template pins its own, so rewriting one silently reverts those
+            // bumps: regenerating four CLI SDKs took MinVer from 8.0.0 back to 7.0.0 and
+            // System.CommandLine from 2.0.14 back to 2.0.7. So it is created when absent and left
+            // alone when present, unless --overwrite-project-file asks for the rewrite.
+            if (model.OverwriteProjectFile || !File.Exists(Path.Combine(model.OutputPath, projectFile)))
             {
                 await WriteFileAsync(model, projectFile, GenerateProjectFile(model)).ConfigureAwait(false);
             }
@@ -1910,7 +1925,16 @@ internal static class CliProjectScaffolder
         await WriteFileAsync(model, "CliOptions.cs", GenerateCliOptions(model)).ConfigureAwait(false);
         await WriteFileAsync(model, "CliException.cs", GenerateCliException(model)).ConfigureAwait(false);
         await WriteFileAsync(model, "CliRuntime.cs", GenerateCliRuntime(model)).ConfigureAwait(false);
-        await WriteFileAsync(model, "CliCompletion.cs", GenerateCliCompletion(model)).ConfigureAwait(false);
+        // Only for a project whose Program.cs this generator owns. The original intent was that an
+        // --api-only project would take the file and wire it itself, and that is not what happened:
+        // tryAGI/Runway already had its own hand-written completion and gained an unwired duplicate,
+        // while tryAGI/Firecrawl never wired the file at all. Either way it was dead code in a
+        // Generated directory, so api-only projects now get nothing and keep their own surface.
+        if (!model.ApiOnly)
+        {
+            await WriteFileAsync(model, "CliCompletion.cs", GenerateCliCompletion(model)).ConfigureAwait(false);
+        }
+
         if (!model.ApiOnly)
         {
             await WriteFileAsync(model, Path.Combine("Commands", "AuthCommand.cs"), GenerateAuthCommand(model)).ConfigureAwait(false);
