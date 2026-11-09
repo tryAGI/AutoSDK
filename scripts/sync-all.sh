@@ -8,7 +8,8 @@
 #
 # What it does:
 #   1. Fetches origin for each repo
-#   2. Fast-forwards or rebases local main onto origin/main
+#   2. Fast-forwards or rebases local main onto origin/main (dirty checkouts are skipped,
+#      never stashed — a dirty tree may be another agent's work in progress)
 #   3. Reports repos that are dirty, on non-main branches, or have conflicts
 
 set -uo pipefail
@@ -61,6 +62,7 @@ for repo_path in "$REPOS_DIR"/*/; do
 
     # Check for dirty working tree
     has_dirty=$(git -C "$repo_path" status --porcelain 2>/dev/null)
+    dirty_count=0
     if [[ -n "$has_dirty" ]]; then
         dirty_count=$(echo "$has_dirty" | wc -l | tr -d ' ')
         if [[ "$SHOW_DIRTY" == "true" ]]; then
@@ -87,15 +89,17 @@ for repo_path in "$REPOS_DIR"/*/; do
         continue
     fi
 
-    # Pull with rebase
+    # Never touch a dirty tree. The previous version stashed, rebased and popped, with every
+    # git call silenced by 2>/dev/null: a stash pop that hit a conflict left the work sitting in
+    # the stash while the tree looked clean, so the loss was silent. A dirty checkout here is
+    # normal — another agent, an editor or a build may be mid-write — so report it and move on.
     if [[ -n "$has_dirty" ]]; then
-        # Stash, rebase, pop
-        git -C "$repo_path" stash --quiet 2>/dev/null
-        result=$(git -C "$repo_path" pull --rebase origin main 2>&1)
-        git -C "$repo_path" stash pop --quiet 2>/dev/null
-    else
-        result=$(git -C "$repo_path" pull --rebase origin main 2>&1)
+        echo "  DIRTY: $repo_name ($dirty_count files) — left untouched, $behind commit(s) behind"
+        skipped=$((skipped + 1))
+        continue
     fi
+
+    result=$(git -C "$repo_path" pull --rebase origin main 2>&1)
 
     if echo "$result" | grep -qiE "conflict|error|fatal"; then
         echo "  ERROR: $repo_name — $result"
