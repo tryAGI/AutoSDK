@@ -1187,9 +1187,21 @@ public static class PollingAotProbe
             buildResult.StandardOutput.Should().NotContain("CS8604");
             buildResult.StandardError.Should().NotContain("CS8604");
 
+            // Invoke the built assembly directly for every check below. `dotnet run --no-build` skips
+            // compilation but still re-enters MSBuild to evaluate the project, and that cost is what
+            // pushed this shard past its 720s SLA once; `dotnet <dll>` is the same JIT runtime without it.
+            var jitAssembly = Path.Combine(cliDirectory, "bin", "Debug", "net10.0", "Oag.CLI.dll");
+            if (!File.Exists(jitAssembly))
+            {
+                var candidates = Directory.GetFiles(
+                    Path.Combine(cliDirectory, "bin"), "Oag.CLI.dll", SearchOption.AllDirectories);
+                candidates.Should().NotBeEmpty("the build must have produced Oag.CLI.dll");
+                Array.Sort(candidates, StringComparer.Ordinal);
+                jitAssembly = candidates[0];
+            }
+
             var arrayJsonResult = await RunDotnetAsync(
-                    cliDirectory, "run", "--no-build", "--project", Path.Combine(cliDirectory, "Oag.CLI.csproj"),
-                    "--", "catalog", "array-json-self-test")
+                    cliDirectory, jitAssembly, "catalog", "array-json-self-test")
                 .ConfigureAwait(false);
             arrayJsonResult.ExitCode.Should().Be(0, arrayJsonResult.StandardOutput + arrayJsonResult.StandardError);
             arrayJsonResult.StandardOutput.Should().Contain("CLI string-array JSON works without reflection.");
@@ -1230,11 +1242,7 @@ public static class PollingAotProbe
             unsupportedShellResult.StandardError.Should().Contain("bash, zsh, fish");
 
             var customizedCommandResult = await RunDotnetAsync(
-                    cliDirectory,
-                    "run",
-                    "--no-build",
-                    "--project", Path.Combine(cliDirectory, "Oag.CLI.csproj"),
-                    "--", "catalog", "show", "--help")
+                    cliDirectory, jitAssembly, "catalog", "show", "--help")
                 .ConfigureAwait(false);
             customizedCommandResult.ExitCode.Should().Be(0, customizedCommandResult.StandardError);
             customizedCommandResult.StandardOutput.Should().Contain("List widgets");
