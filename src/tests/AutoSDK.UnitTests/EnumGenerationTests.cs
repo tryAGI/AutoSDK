@@ -337,7 +337,9 @@ public class EnumGenerationTests
 
         discriminatorModel.RejectUnknownStringValues.Should().BeTrue();
         ordinaryModel.RejectUnknownStringValues.Should().BeFalse();
-        discriminatorConverter.Should().Contain("Unknown discriminator value '{stringValue}'");
+        // One wording for every closed enum: the converter rejects any undeclared value, and a
+        // discriminator is only the case where that was already switched on.
+        discriminatorConverter.Should().Contain("Unknown value '{stringValue}'");
         ordinaryConverter.Should().Contain("Extensions.ToEnum(stringValue) ?? default;");
 
         if (jsonSerializerType is JsonSerializerType.NewtonsoftJson)

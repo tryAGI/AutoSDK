@@ -8,10 +8,10 @@ public static partial class Sources
         CancellationToken cancellationToken = default)
     {
         var newtonsoftUnknownStringValue = model.RejectUnknownStringValues
-            ? $"throw new global::Newtonsoft.Json.JsonSerializationException($\"Unknown discriminator value '{{stringValue}}' for {model.GlobalClassName}.\")"
+            ? $"throw new global::Newtonsoft.Json.JsonSerializationException($\"Unknown value '{{stringValue}}' for {model.GlobalClassName}.\")"
             : "default";
         var systemTextJsonUnknownStringValue = model.RejectUnknownStringValues
-            ? $"throw new global::System.Text.Json.JsonException($\"Unknown discriminator value '{{stringValue}}' for {model.GlobalClassName}.\")"
+            ? $"throw new global::System.Text.Json.JsonException($\"Unknown value '{{stringValue}}' for {model.GlobalClassName}.\")"
             : "default";
 
         if (model.Settings.UsesNewtonsoftJson())

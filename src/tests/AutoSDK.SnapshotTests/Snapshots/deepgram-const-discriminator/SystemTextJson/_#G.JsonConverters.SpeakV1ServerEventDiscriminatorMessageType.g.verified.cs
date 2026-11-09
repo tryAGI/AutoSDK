@@ -19,7 +19,7 @@ namespace G.JsonConverters
                     var stringValue = reader.GetString();
                     if (stringValue != null)
                     {
-                        return global::G.SpeakV1ServerEventDiscriminatorMessageTypeExtensions.ToEnum(stringValue) ?? throw new global::System.Text.Json.JsonException($"Unknown discriminator value '{stringValue}' for global::G.SpeakV1ServerEventDiscriminatorMessageType.");
+                        return global::G.SpeakV1ServerEventDiscriminatorMessageTypeExtensions.ToEnum(stringValue) ?? throw new global::System.Text.Json.JsonException($"Unknown value '{stringValue}' for global::G.SpeakV1ServerEventDiscriminatorMessageType.");
                     }
                     
                     break;
