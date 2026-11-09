@@ -13,6 +13,28 @@
 set -euo pipefail
 
 PARENT="$(cd "$(dirname "${BASH_SOURCE[0]}")/../.." && pwd)"
+
+# The test project is discovered, not assumed. Four of the 52 CLI SDKs name it after the SDK —
+# AI21.IntegrationTests, and likewise DeepInfra, OpenAI and VoyageAI — so a hard-coded
+# src/tests/IntegrationTests made `dotnet test` fail with MSB1009 "Project file does not exist" and the
+# repo was reported as a test failure when nothing had been tested at all.
+find_test_project() {
+  local repo="$1" sdk candidate named="" integration="" any=""
+  sdk="$(basename "$repo")"
+  for candidate in "$repo"/src/tests/*/; do
+    [[ -d "$candidate" ]] || continue
+    compgen -G "$candidate"'*.csproj' >/dev/null || continue
+    case "$(basename "$candidate")" in
+      "$sdk".IntegrationTests) named="$candidate" ;;
+      *IntegrationTests) [[ -z "$integration" ]] && integration="$candidate" ;;
+    esac
+    [[ -z "$any" ]] && any="$candidate"
+  done
+  # Named after the SDK wins. OpenAI ships seven test projects, and taking the first that merely ends
+  # in IntegrationTests picked FreeLLM.IntegrationTests — running someone else's suite and calling it
+  # a pass.
+  printf '%s' "${named:-${integration:-$any}}"
+}
 CAPABILITY="behavior:request-scoped-enum-rejection"
 DRY_RUN=false
 
@@ -181,7 +203,7 @@ for sdk in "$@"; do
   if python3 "$(dirname "${BASH_SOURCE[0]}")/_patch_enum_rejection.py" "$script" "$GUARD_SOURCE" &&
      (cd "$lib" && ./generate.sh >/dev/null 2>&1) &&
      (cd "$repo" && dotnet build ./*.slnx -p:UseSharedCompilation=false >/dev/null 2>&1) &&
-     (cd "$repo" && dotnet test src/tests/IntegrationTests --no-build >/dev/null 2>&1); then
+     (cd "$repo" && { tests="$(find_test_project "$repo")"; if [[ -n "$tests" ]]; then dotnet test "$tests" --no-build >/dev/null 2>&1; else echo "      no test project found; skipping tests" >&2; fi; }); then
     echo "    ok: regenerated, built, tests pass — review and commit by hand"
     done_list+=("$sdk")
   else
