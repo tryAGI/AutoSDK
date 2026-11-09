@@ -6,8 +6,12 @@ and unambiguous, and it refuses rather than guessing, because the alternative is
 mis-patched regeneration script in someone else's repository.
 """
 import io
+import os
 import re
+import shutil
+import subprocess
 import sys
+import tempfile
 
 
 def guard_from(reference_path):
@@ -62,8 +66,27 @@ def main():
     if count != 1:
         raise SystemExit("could not find a continued `--output` line in the generate invocation")
 
-    io.open(path, "w", encoding="utf-8").write(patched)
-    print("    patched generate.sh")
+    # Check the result parses before putting it in place. The regex edits are anchored, but a
+    # malformed script would otherwise surface much later as a failed regeneration, and by then the
+    # repository has already been written to.
+    with tempfile.NamedTemporaryFile("w", suffix=".sh", encoding="utf-8", delete=False) as handle:
+        handle.write(patched)
+        candidate = handle.name
+    try:
+        check = subprocess.run(
+            ["bash", "-n", candidate],
+            capture_output=True,
+            text=True,
+            check=False)
+        if check.returncode != 0:
+            raise SystemExit(
+                "the patched script does not parse, so nothing was written:\n"
+                + (check.stderr.strip() or "bash -n failed without a message"))
+        shutil.copyfile(candidate, path)
+    finally:
+        os.unlink(candidate)
+
+    print("    patched generate.sh (bash -n clean)")
 
 
 if __name__ == "__main__":
