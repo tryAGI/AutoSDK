@@ -1721,13 +1721,13 @@ namespace {endPoint.Settings.Namespace}
 {endPoint.Parameters
     .Where(x => x is { Location: ParameterLocation.Header, IsRequired: true, IsIdempotencyHeader: false })
     .Select(x => $@"
-                __httpRequest.Headers.TryAddWithoutValidation(""{x.Id}"", {x.ParameterName}{(x.Type.IsEnum && !x.Type.IsAnyOfLike ? ".ToValueString()" : ".ToString()")});").Inject()}
+                __httpRequest.Headers.TryAddWithoutValidation(""{x.Id}"", {GenerateHeaderValueExpression(x, required: true)});").Inject()}
 {endPoint.Parameters
     .Where(x => x is { Location: ParameterLocation.Header, IsRequired: false, IsIdempotencyHeader: false })
     .Select(x => $@"
             if ({x.ParameterName} != default)
             {{
-                __httpRequest.Headers.TryAddWithoutValidation(""{x.Id}"", {x.ParameterName}{(x.Type.IsEnum && !x.Type.IsAnyOfLike ? "?.ToValueString() ?? string.Empty" : ".ToString()")});
+                __httpRequest.Headers.TryAddWithoutValidation(""{x.Id}"", {GenerateHeaderValueExpression(x, required: false)});
             }}").Inject()}
 {GenerateIdempotencyHeaderHandling(endPoint)}
 {(endPoint.Parameters.Any(x => x is { Location: ParameterLocation.Header }) ? "" : TrimmedLine)}
@@ -2558,6 +2558,40 @@ namespace {endPoint.Settings.Namespace}
             !property.Type.CSharpTypeNullability;
 
         return IsNullableLike(property.Type, isLiftedNullable);
+    }
+
+    /// <summary>
+    /// Serializes a header parameter value. Collection-typed headers are joined with the
+    /// OpenAPI `simple` style delimiter instead of falling back to <c>List&lt;T&gt;.ToString()</c>,
+    /// which would otherwise emit the CLR type name as the header value.
+    /// </summary>
+    private static string GenerateHeaderValueExpression(
+        MethodParameter parameter,
+        bool required)
+    {
+        if (parameter.Type.IsArray && !parameter.Type.SubTypes.IsEmpty)
+        {
+            var itemType = parameter.Type.SubTypes[0].Unbox<TypeData>();
+            var itemExpression = GenerateSerializedValueExpression(
+                itemType,
+                "__headerItem",
+                isNullableLike: IsNullableLike(itemType),
+                parameter.Settings);
+            var delimiter = string.IsNullOrEmpty(parameter.Delimiter)
+                ? ","
+                : parameter.Delimiter;
+
+            return $"string.Join(\"{delimiter}\", global::System.Linq.Enumerable.Select({parameter.ParameterName}, static __headerItem => {itemExpression}))";
+        }
+
+        if (parameter.Type.IsEnum && !parameter.Type.IsAnyOfLike)
+        {
+            return required
+                ? $"{parameter.ParameterName}.ToValueString()"
+                : $"{parameter.ParameterName}?.ToValueString() ?? string.Empty";
+        }
+
+        return $"{parameter.ParameterName}.ToString()";
     }
 
     private static bool IsNullableLike(
