@@ -32,6 +32,16 @@ internal sealed class CapabilitiesCommand : Command
             "--reject-unknown-enum-values hardens only enums that cannot appear in a response, including one-value enums, so a service shipping a new value does not break deserialization."),
         ("behavior:direction-aware-json-generation",
             "--direction-aware-json-generation-mode picks the narrowest JsonSourceGenerationMode per type from how that type is reached from the operation graph."),
+        ("behavior:pager-next-url-same-origin",
+            "--generate-pageable-helpers validates the origin of a body-embedded next-page URL before following it, so a hostile server cannot redirect the auth header to a host of its choosing. Unconditional, not opt-in."),
+        ("behavior:retry-handler-vendor-defaults",
+            "--generate-retry-handler sets the generated retry options to 3 attempts with a 500ms initial delay, instead of leaving the SDK single-attempt for callers to configure per call."),
+        ("behavior:idempotency-without-vendor-extension",
+            "--generate-idempotency-helpers adds the idempotency parameter to every mutating operation even when the spec declares neither x-fern-idempotent nor x-idempotency, and treats x-idempotency as an alias of the former."),
+        ("behavior:polymorphic-array-auto-detection",
+            "--generate-polymorphic-array-helpers detects oneOf{string-enum, object-with-type-const} array items on its own and rewrites the consuming property to the generated hierarchy, rather than only emitting the base class for variants to be hand-modelled against."),
+        ("behavior:call-scoped-auth",
+            "An operation marked x-call-scoped-auth stamps AuthorizationOverride on the outgoing request, so a consumer DelegatingHandler can tell a call-scoped credential from the account default and leave it alone."),
     ];
 
     private Option<bool> AsJson { get; } = new(

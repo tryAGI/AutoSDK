@@ -30,6 +30,14 @@ public class CapabilitiesCommandTests
         // produces an SDK that throws on ordinary replies.
         output.Should().Contain("behavior:request-scoped-enum-rejection");
         output.Should().Contain("behavior:direction-aware-json-generation");
+
+        // Each of these names a semantic that the flag's presence alone does not establish, and each was
+        // checked against the committed source before being claimed here — a token is a promise.
+        output.Should().Contain("behavior:pager-next-url-same-origin");
+        output.Should().Contain("behavior:retry-handler-vendor-defaults");
+        output.Should().Contain("behavior:idempotency-without-vendor-extension");
+        output.Should().Contain("behavior:polymorphic-array-auto-detection");
+        output.Should().Contain("behavior:call-scoped-auth");
     }
 
     [TestMethod]

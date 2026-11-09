@@ -163,7 +163,11 @@ autosdk capabilities --require behavior:request-scoped-enum-rejection || exit 1
 Two kinds of token. `flag:<command>:<option>` is derived at runtime from the options the commands
 actually register, so the listing cannot claim a flag the build lacks. `behavior:<name>` is a curated
 list in `CapabilitiesCommand` for semantics a flag name does not capture — the case that motivated it
-is a build that accepts `--reject-unknown-enum-values` but hardens response enums too.
+is a build that accepts `--reject-unknown-enum-values` but hardens response enums too. Seven today,
+covering request-scoped enum rejection, direction-aware JSON modes, same-origin validation of
+next-page URLs, the retry handler's vendor defaults, idempotency without a vendor extension,
+polymorphic-array auto-detection, and `x-call-scoped-auth`. Each one names behaviour checked against
+the source, not a flag that happens to exist: a token is a promise.
 
 **These token names are a compatibility surface.** tryAGI/Runway and tryAGI/Firecrawl check them in
 `generate.sh`. Add tokens; do not rename or remove them. When adding an opt-in whose meaning has since
