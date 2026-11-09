@@ -63,6 +63,14 @@ scripts/commit-cli-completion.sh --dry-run Exa Deepgram
 # drift into the diff. Never commits. Skips a dirty or stale checkout, and reports a CLI already current.
 scripts/regenerate-cli-completion.sh --dry-run Exa Deepgram
 
+# Commit and push what the enum script prepared. Enforces the shape: one src/libs/<Lib>/generate.sh
+# plus files under src/libs/<Lib>/Generated/ and nothing else, and refuses outright if the spec changed
+# — that would mean the regeneration re-downloaded it. It does not judge which converters hardened:
+# reading intent off a generated name does not work (AI21 hardens
+# ModifyAssistantRequestResponseLanguage, a `responseLanguage` field inside a request), and the
+# generator's own request-reachable rule decides that, with tests.
+scripts/commit-enum-rejection.sh --dry-run AudD APITemplate
+
 # Prepare --reject-unknown-enum-values in sibling SDKs that ship a CLI: patch generate.sh, regenerate,
 # build, test, report. Never commits or pushes — the flag changes how every enum deserializes, so the
 # diff wants a person. Refuses outright unless the installed autosdk.cli reports the capability, since
