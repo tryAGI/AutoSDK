@@ -51,6 +51,12 @@ dotnet tool uninstall --global autosdk.cli
 # Sync OpenAPI specs from sibling SDK repos into specs/
 ./scripts/sync-specs.sh
 
+# Bring one or more generated CLIs up to date with cli-project — in practice, add the `completion`
+# command to CLIs generated before AutoSDK emitted it. Runs ONLY the repo's own cli-project invocation
+# against its committed spec, never generate.sh, which would re-download the spec and mix upstream
+# drift into the diff. Never commits. Skips a dirty or stale checkout, and reports a CLI already current.
+scripts/regenerate-cli-completion.sh --dry-run Exa Deepgram
+
 # Prepare --reject-unknown-enum-values in sibling SDKs that ship a CLI: patch generate.sh, regenerate,
 # build, test, report. Never commits or pushes — the flag changes how every enum deserializes, so the
 # diff wants a person. Refuses outright unless the installed autosdk.cli reports the capability, since
