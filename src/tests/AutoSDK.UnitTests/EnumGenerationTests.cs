@@ -48,6 +48,66 @@ public class EnumGenerationTests
     }
 
     [TestMethod]
+    public void RejectUnknownEnumValues_LeavesEnumsThatAreReadOffTheWireLenient()
+    {
+        // The converters are emitted per type and the same one deserializes responses, so hardening a
+        // response-reachable enum turns a service adding a value into an exception on a normal reply.
+        // Runway is the case that proved it: with the flag on, 243 of its converters go strict,
+        // including the task status read on every poll and an enum of model ids the account returns
+        // that the spec is already known not to list.
+        const string spec = """
+        openapi: 3.0.3
+        info: { title: Enum direction, version: '1' }
+        paths:
+          /submit:
+            post:
+              operationId: submit
+              requestBody:
+                required: true
+                content:
+                  application/json:
+                    schema:
+                      type: object
+                      properties:
+                        quality: { $ref: '#/components/schemas/RequestOnly' }
+                        shared: { $ref: '#/components/schemas/Bidirectional' }
+              responses:
+                '200':
+                  description: ok
+                  content:
+                    application/json:
+                      schema:
+                        type: object
+                        properties:
+                          status: { $ref: '#/components/schemas/ResponseOnly' }
+                          shared: { $ref: '#/components/schemas/Bidirectional' }
+        components:
+          schemas:
+            RequestOnly: { type: string, enum: [vivid, natural] }
+            ResponseOnly: { type: string, enum: [pending, done] }
+            Bidirectional: { type: string, enum: [left, right] }
+            Unreachable: { type: string, enum: [alpha, beta] }
+        """;
+        var settings = DefaultSettings with { RejectUnknownEnumValues = true };
+        var data = AutoSDK.Generation.Data.Prepare(((spec, settings), settings));
+
+        // Caller input: a typo here is a mistake, so it should fail loudly.
+        data.Enums.Single(x => x.ClassName == "RequestOnly").RejectUnknownStringValues.Should().BeTrue();
+
+        // Read off the wire, so leniency is what lets the service move ahead of the spec.
+        data.Enums.Single(x => x.ClassName == "ResponseOnly").RejectUnknownStringValues.Should().BeFalse();
+
+        // One converter serves both directions and cannot be strict in one and lenient in the other,
+        // so the response side decides.
+        data.Enums.Single(x => x.ClassName == "Bidirectional").RejectUnknownStringValues.Should().BeFalse();
+
+        // Absence of proof is not proof of a response path: an enum no operation reaches keeps the
+        // strictness that was asked for, which is also what makes the flag meaningful for a
+        // models-only generation with no paths at all.
+        data.Enums.Single(x => x.ClassName == "Unreachable").RejectUnknownStringValues.Should().BeTrue();
+    }
+
+    [TestMethod]
     public void RejectUnknownEnumValues_IsOffByDefaultSoResponsesStayLenient()
     {
         // The same converters read responses, where a service adding an enum value must not break

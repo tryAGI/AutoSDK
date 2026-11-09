@@ -445,11 +445,22 @@ public static class Data
                     SchemaContext = default!,
                 })
                 .ToImmutableArray();
+        // `RejectUnknownEnumValues` hardens the generated converters, but a converter is emitted per
+        // type and the same one reads responses, where an undeclared value means the service shipped
+        // something new rather than that the caller made a typo. So back the opt-in off for any enum we
+        // can prove is reachable from a response. Absence of proof is not proof: an enum reached only
+        // from requests, one not reachable from any operation, and a models-only generation with no
+        // paths at all all keep the strictness that was asked for.
+        var enumDirections = settings.RejectUnknownEnumValues && !skipModels
+            ? JsonSerializationDirectionAnalyzer.Analyze(filteredSchemas)
+            : null;
+
         var outputEnums = skipModels
             ? ImmutableArray<ModelData>.Empty
             : enums
                 .Select(x => x with
                 {
+                    RejectUnknownStringValues = ResolveRejectUnknownStringValues(x, enumDirections),
                     SchemaContext = default!,
                 })
                 .ToImmutableArray();
@@ -1597,6 +1608,30 @@ public static class Data
         return JsonSerializationDirectionAnalyzer.ApplyDirections(
             types,
             JsonSerializationDirectionAnalyzer.Analyze(filteredSchemas));
+    }
+
+    /// <summary>
+    /// Narrows the <c>RejectUnknownEnumValues</c> opt-in to enums that are not read back off the wire.
+    /// Single-value enums are left exactly as they were: those are discriminator consts, hardened by
+    /// <c>ValidateAnyOfs</c> for reasons that have nothing to do with direction, so this never moves a
+    /// snapshot that the discriminator path produced.
+    /// </summary>
+    private static bool ResolveRejectUnknownStringValues(
+        ModelData model,
+        Dictionary<string, JsonSerializationDirection>? directions)
+    {
+        if (directions is null ||
+            !model.RejectUnknownStringValues ||
+            model.EnumValues.Length <= 1)
+        {
+            return model.RejectUnknownStringValues;
+        }
+
+        var key = model.SchemaContext?.TypeData.CSharpTypeWithoutNullability;
+
+        return string.IsNullOrEmpty(key) ||
+            !directions.TryGetValue(key!, out var direction) ||
+            (direction & JsonSerializationDirection.Response) == 0;
     }
 
     private static EndPoint ResolveEndPointTag(

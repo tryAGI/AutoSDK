@@ -128,9 +128,21 @@ Important settings:
 - `AutoSDK_UseExtensionNaming`: Use OpenAPI `x-` extensions for naming/grouping (default: true)
 - `AutoSDK_SplitByTags`: CLI-only. Emit a per-tag package family instead of one project (default: false)
 - `AutoSDK_RejectUnknownEnumValues`: Make the generated converters throw on an enum value the spec does
-  not declare instead of falling back to the default member (default: false). Opt-in on purpose — the
-  same converters read responses, where leniency lets a service add a value without breaking clients.
-  Turn it on for SDKs whose callers pass user input (a CLI, an agent) and want a typo to fail loudly.
+  not declare instead of falling back to the default member (default: false). Turn it on for SDKs whose
+  callers pass user input (a CLI, an agent) and want a typo to fail loudly.
+
+  The opt-in is **direction-aware**: a converter is emitted per type and the same one deserializes
+  responses, where an undeclared value means the service shipped something new rather than that the
+  caller made a typo. So `Data` backs the strictness off for any enum `JsonSerializationDirectionAnalyzer`
+  proves is reachable from a response, including one reached from both directions (a single converter
+  cannot be strict one way and lenient the other, so the response side decides). Absence of proof is not
+  proof: an enum reached only from requests, one no operation reaches, and a models-only generation with
+  no `paths` at all all keep the strictness that was asked for. Single-value enums are never touched —
+  those are discriminator consts hardened by `ValidateAnyOfs`, for reasons unrelated to direction.
+
+  Measured on tryAGI/Runway: the flag alone makes 243 converters strict, including the task status read
+  on every poll and an enum of model ids the account returns that the spec is already known not to list;
+  direction-aware narrowing brings that to 164, all of them `*Request*` enums.
 
 #### Generated CLI shell completion
 

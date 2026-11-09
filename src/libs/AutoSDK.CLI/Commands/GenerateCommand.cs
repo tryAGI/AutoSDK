@@ -144,7 +144,7 @@ internal sealed class GenerateCommand : Command
         name: "--reject-unknown-enum-values")
     {
         DefaultValueFactory = _ => Settings.Default.RejectUnknownEnumValues,
-        Description = "Throw instead of silently falling back to the default member when JSON carries an enum value the spec does not declare. Opt-in: the same converters read responses, where leniency lets a service add a value without breaking clients.",
+        Description = "Throw instead of silently falling back to the default member when JSON carries an enum value the spec does not declare. Applies to request-reachable enums only: an enum a response can carry stays lenient, so a service adding a value does not break clients.",
     };
 
     private Option<bool> GenerateRawModelData { get; } = new(
