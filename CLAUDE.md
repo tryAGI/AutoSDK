@@ -51,10 +51,13 @@ dotnet tool uninstall --global autosdk.cli
 # Sync OpenAPI specs from sibling SDK repos into specs/
 ./scripts/sync-specs.sh
 
-# Pull/rebase all sibling SDK repos from origin/main
+# Pull/rebase all sibling SDK repos from origin/main.
+# Dirty checkouts are reported and skipped, never stashed: a dirty tree here is
+# usually another agent's work in progress.
 ./scripts/sync-all.sh
 
-# Show repos with uncommitted changes
+# Same sync, plus a line for every repo with uncommitted changes.
+# --dirty is additive, not a dry run: clean repos are still pulled.
 ./scripts/sync-all.sh --dirty
 
 # Explicit parent directory
