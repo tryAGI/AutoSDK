@@ -38,6 +38,10 @@ public class CapabilitiesCommandTests
         output.Should().Contain("behavior:idempotency-without-vendor-extension");
         output.Should().Contain("behavior:polymorphic-array-auto-detection");
         output.Should().Contain("behavior:call-scoped-auth");
+
+        // Checked by tryAGI/AutoSDK's own regenerate-cli-completion.sh, which until now inferred the
+        // capability from a file turning up after the fact.
+        output.Should().Contain("behavior:cli-completion");
     }
 
     [TestMethod]

@@ -25,6 +25,18 @@ if [[ $# -eq 0 ]]; then
   exit 2
 fi
 
+# Ask the build whether it emits completion, rather than inferring it from a file turning up. A warning
+# and not a hard stop, unlike the gate in enable-enum-rejection.sh: there, a too-old CLI accepts the
+# flag and silently produces a wrong SDK, so refusing is the only safe answer. Here a too-old CLI
+# simply emits nothing, which the per-repo check below detects and reports, so stopping the whole run
+# would cost usability for no safety. It is also why this stays usable against a published CLI that
+# emits completion but predates the token.
+if ! autosdk capabilities --require behavior:cli-completion >/dev/null 2>&1; then
+  echo "note: the installed autosdk.cli does not report behavior:cli-completion." >&2
+  echo "      Continuing: a CLI that cannot emit it will be reported per repository instead." >&2
+  echo
+fi
+
 prepared=()
 skipped=()
 failed=()
@@ -106,7 +118,7 @@ for sdk in "$@"; do
       echo "    ok: completion added, built, tests pass — review and commit by hand"
       prepared+=("$sdk")
     else
-      echo "    ok: already up to date (no CliCompletion.cs appeared)"
+      echo "    ok: already up to date (CliCompletion.cs was already committed)"
       skipped+=("$sdk (already current)")
     fi
   else

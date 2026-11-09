@@ -40,6 +40,8 @@ internal sealed class CapabilitiesCommand : Command
             "--generate-idempotency-helpers adds the idempotency parameter to every mutating operation even when the spec declares neither x-fern-idempotent nor x-idempotency, and treats x-idempotency as an alias of the former."),
         ("behavior:polymorphic-array-auto-detection",
             "--generate-polymorphic-array-helpers detects oneOf{string-enum, object-with-type-const} array items on its own and rewrites the consuming property to the generated hierarchy, rather than only emitting the base class for variants to be hand-modelled against."),
+        ("behavior:cli-completion",
+            "cli-project emits CliCompletion.cs for every generated CLI project, and wires `completion bash|zsh|fish` into the generated Program.cs for projects that are not --api-only. The script is built by walking the live command tree, so it cannot go stale."),
         ("behavior:call-scoped-auth",
             "An operation marked x-call-scoped-auth stamps AuthorizationOverride on the outgoing request, so a consumer DelegatingHandler can tell a call-scoped credential from the account default and leave it alone."),
     ];
