@@ -124,6 +124,19 @@ Important settings:
 - `AutoSDK_MethodNamingConvention`: SimpleOperationId/MethodAndPath/OperationIdWithDots
 - `AutoSDK_UseExtensionNaming`: Use OpenAPI `x-` extensions for naming/grouping (default: true)
 - `AutoSDK_SplitByTags`: CLI-only. Emit a per-tag package family instead of one project (default: false)
+- `AutoSDK_RejectUnknownEnumValues`: Make the generated converters throw on an enum value the spec does
+  not declare instead of falling back to the default member (default: false). Opt-in on purpose — the
+  same converters read responses, where leniency lets a service add a value without breaking clients.
+  Turn it on for SDKs whose callers pass user input (a CLI, an agent) and want a typo to fail loudly.
+
+#### Generated CLI shell completion
+
+`cli-project` emits `CliCompletion.cs` and, for non-`--api-only` projects, wires
+`completion bash|zsh|fish` into the generated `Program.cs`. The script is built by walking the live
+`Command` tree at runtime — subcommands, option names, and the values of any enum-typed option read off
+`Option.ValueType` — so it describes the CLI as assembled, including hand-added commands, and cannot go
+stale the way a checked-in word list does. An `--api-only` project gets the file but wires it up itself,
+since it owns `Program.cs`.
 
 #### Split-by-tags package families (CLI only)
 
