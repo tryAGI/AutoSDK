@@ -9,7 +9,7 @@ public record struct CoreSettings(
     ImmutableArray<string> SecuritySchemes,
     bool ComputeDiscriminators,
     bool AddMissingPathParameters,
-    bool RelaxResponseRequired,
+    ResponseRequiredRelaxation RelaxResponseRequired,
     ImmutableArray<string> OpenApiOverrides,
     bool UseExtensionNaming)
 {
@@ -20,7 +20,7 @@ public record struct CoreSettings(
         SecuritySchemes: ImmutableArray<string>.Empty,
         ComputeDiscriminators: false,
         AddMissingPathParameters: true,
-        RelaxResponseRequired: false,
+        RelaxResponseRequired: ResponseRequiredRelaxation.None,
         OpenApiOverrides: ImmutableArray<string>.Empty,
         UseExtensionNaming: true);
 }

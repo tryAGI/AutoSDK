@@ -68,7 +68,7 @@ public record struct Settings(
     bool DirectionAwareJsonGenerationMode,
     bool ComputeDiscriminators,
     bool AddMissingPathParameters,
-    bool RelaxResponseRequired,
+    ResponseRequiredRelaxation RelaxResponseRequired,
 
     bool GenerateModels,
     bool GenerateModelValidationMethods,
@@ -203,7 +203,7 @@ public record struct Settings(
         DirectionAwareJsonGenerationMode: false,
         ComputeDiscriminators: false,
         AddMissingPathParameters: true,
-        RelaxResponseRequired: false,
+        RelaxResponseRequired: ResponseRequiredRelaxation.None,
         GenerateModels: false,
         GenerateModelValidationMethods: false,
         ValidateAnyOfs: false,

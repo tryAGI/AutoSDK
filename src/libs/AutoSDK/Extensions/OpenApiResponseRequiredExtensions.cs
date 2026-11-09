@@ -42,24 +42,36 @@ public static class OpenApiResponseRequiredExtensions
     }
 
     /// <summary>
-    /// Drops those fields from their schemas' <c>required</c> lists and returns how many were
-    /// relaxed. Leniency when reading a response is the same reasoning that keeps the generated enum
-    /// converters from throwing on a value the spec does not declare.
+    /// Drops <c>required</c> from response fields according to <paramref name="relaxation"/> and
+    /// returns how many entries were removed. Leniency when reading a response is the same
+    /// reasoning that keeps the generated enum converters from throwing on a value the spec does
+    /// not declare: what arrives is the service's call, not the caller's.
     /// </summary>
-    public static int RelaxResponseRequiredWithDefault(
-        this OpenApiDocument document)
+    public static int RelaxResponseRequired(
+        this OpenApiDocument document,
+        AutoSDK.Models.ResponseRequiredRelaxation relaxation)
     {
         document = document ?? throw new ArgumentNullException(nameof(document));
+
+        if (relaxation == AutoSDK.Models.ResponseRequiredRelaxation.None)
+        {
+            return 0;
+        }
 
         var relaxed = 0;
         foreach (var entry in EnumerateResponseReachableSchemas(document))
         {
             var schema = entry.Value;
-            var offending = FindRequiredWithDefault(schema).ToArray();
-            if (offending.Length == 0 || schema.Required is null)
+            if (schema.Required is not { Count: > 0 })
             {
                 continue;
             }
+
+            // `All` keeps discriminators: a const or single-value enum is what tells a union apart,
+            // and the service always sends it.
+            var offending = relaxation == AutoSDK.Models.ResponseRequiredRelaxation.All
+                ? FindRequiredExceptDiscriminators(schema).ToArray()
+                : FindRequiredWithDefault(schema).ToArray();
 
             foreach (var property in offending)
             {
@@ -71,6 +83,29 @@ public static class OpenApiResponseRequiredExtensions
         }
 
         return relaxed;
+    }
+
+    private static IEnumerable<string> FindRequiredExceptDiscriminators(
+        IOpenApiSchema schema)
+    {
+        if (schema.Required is not { Count: > 0 })
+        {
+            yield break;
+        }
+
+        var properties = schema.Properties;
+        foreach (var name in schema.Required)
+        {
+            if (properties is not null &&
+                properties.TryGetValue(name, out var property) &&
+                property is not null &&
+                IsDiscriminator(name, property))
+            {
+                continue;
+            }
+
+            yield return name;
+        }
     }
 
     private static IEnumerable<KeyValuePair<string, IOpenApiSchema>> EnumerateResponseReachableSchemas(

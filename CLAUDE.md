@@ -211,12 +211,22 @@ This is not hypothetical: Anthropic's spec marked `caller` that way on 52 respon
 the API never sends it, so every response that used a server tool (web search, web fetch, code
 execution) failed to deserialize until `generate.sh` stripped it.
 
-`--relax-response-required` (`AutoSDK_RelaxResponseRequired`) drops those entries from `required`
-during document preparation. It is **off by default** on purpose: a finding is a candidate, not a
-confirmed defect — plenty of services do send a field that has a default (`UsageInfo.prompt_tokens`)
-— so the warning asks for a live test first. The same reasoning as `--reject-unknown-enum-values`,
-pointing the other way: leniency belongs on the response-reading path, where the service, not the
-caller, decides what arrives.
+`--relax-response-required` (`AutoSDK_RelaxResponseRequired`) takes a mode and drops `required`
+during document preparation:
+
+| Mode | Drops | Use when |
+|------|-------|----------|
+| `None` (default) | nothing | the warning is enough; confirm against the real service first |
+| `Defaulted` | only where the property also declares a `default` | the spec contradicts itself |
+| `All` | every response field except discriminators | live traffic shows the service omits fields the spec demands, and listing them is not worth it |
+
+`None` is the default on purpose: a warning is a candidate, not a confirmed defect — plenty of
+services do send a field that has a default (`UsageInfo.prompt_tokens`). `All` exists because the
+warning only sees half the class: Label Studio's `UserSimple.username` is required with **no
+default** and never sent, so nothing static could flag it — it took a live response. Both are the
+same reasoning as `--reject-unknown-enum-values`, pointing the other way: leniency belongs on the
+response-reading path, where the service, not the caller, decides what arrives. `All` keeps
+discriminators required, since a const or single-value enum is what tells a union apart.
 
 `FindResponseRequiredWithDefault` / `RelaxResponseRequiredWithDefault` in
 `AutoSDK/Extensions/OpenApiResponseRequiredExtensions.cs` do the work; only schemas reachable from a

@@ -160,11 +160,11 @@ internal sealed class GenerateCommand : Command
         DefaultValueFactory = _ => Settings.Default.ComputeDiscriminators,
         Description = "Compute discriminators for polymorphic models",
     };
-    private Option<bool> RelaxResponseRequired { get; } = new(
+    private Option<ResponseRequiredRelaxation> RelaxResponseRequired { get; } = new(
         name: "--relax-response-required")
     {
         DefaultValueFactory = _ => Settings.Default.RelaxResponseRequired,
-        Description = "Drop 'required' from response fields that also declare a default, so a field the service omits does not fail deserialization. Reported as a warning when off.",
+        Description = "How much 'required' to drop from response fields so a field the service omits does not fail deserialization: None (default, reported as a warning), Defaulted (only where the property also declares a default), All (every response field except discriminators).",
     };
     
     private Option<bool> GenerateCli { get; } = new(

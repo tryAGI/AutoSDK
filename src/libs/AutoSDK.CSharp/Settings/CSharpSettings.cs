@@ -69,7 +69,7 @@ public record struct CSharpSettings(
     bool DirectionAwareJsonGenerationMode,
     bool ComputeDiscriminators,
     bool AddMissingPathParameters,
-    bool RelaxResponseRequired,
+    ResponseRequiredRelaxation RelaxResponseRequired,
     bool GenerateModels,
     bool GenerateModelValidationMethods,
     bool ValidateAnyOfs,

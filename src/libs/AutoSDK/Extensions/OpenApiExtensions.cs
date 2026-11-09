@@ -372,12 +372,12 @@ public static class OpenApiExtensions
         {
             openApiDocument.ApplyOpenApiOverrides(settings);
         }
-        if (settings.RelaxResponseRequired)
+        if (settings.RelaxResponseRequired != AutoSDK.Models.ResponseRequiredRelaxation.None)
         {
             // A response field that declares a default is one the service may omit, and the
             // generated deserializers enforce `required` - so the pair turns a successful HTTP 200
             // into a JSON exception.
-            openApiDocument.RelaxResponseRequiredWithDefault();
+            openApiDocument.RelaxResponseRequired(settings.RelaxResponseRequired);
         }
         if (settings.UseExtensionNaming)
         {
