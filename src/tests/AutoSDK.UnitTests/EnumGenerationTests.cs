@@ -22,6 +22,44 @@ public class EnumGenerationTests
     [DataRow(JsonSerializerType.SystemTextJson, true)]
     [DataRow(JsonSerializerType.NewtonsoftJson, false)]
     [DataRow(JsonSerializerType.NewtonsoftJson, true)]
+    public void RejectUnknownEnumValues_CoversMultiValueEnumsOnlyWhenRequested(JsonSerializerType serializer, bool reject)
+    {
+        // Without this flag the converters read an unknown value as `ToEnum(v) ?? default`, so a value
+        // the spec does not declare silently becomes the first member. ValidateAnyOfs only covers
+        // single-literal discriminators, which leaves every ordinary enum coercing.
+        const string spec = """
+        openapi: 3.0.3
+        info: { title: Enum input validation, version: '1' }
+        paths: {}
+        components:
+          schemas:
+            Flavor: { type: string, enum: [vivid, natural] }
+            Literal: { type: string, enum: [alpha] }
+            Open: { type: string, enum: [alpha, beta], x-speakeasy-unknown-values: allow }
+        """;
+        var settings = DefaultSettings with { JsonSerializerType = serializer, RejectUnknownEnumValues = reject };
+        var data = AutoSDK.Generation.Data.Prepare(((spec, settings), settings));
+
+        data.Enums.Single(x => x.ClassName == "Flavor").RejectUnknownStringValues.Should().Be(reject);
+        data.Enums.Single(x => x.ClassName == "Literal").RejectUnknownStringValues.Should().Be(reject);
+
+        // An open enum keeps its documented leniency either way.
+        data.Enums.Single(x => x.ClassName == "Open").RejectUnknownStringValues.Should().BeFalse();
+    }
+
+    [TestMethod]
+    public void RejectUnknownEnumValues_IsOffByDefaultSoResponsesStayLenient()
+    {
+        // The same converters read responses, where a service adding an enum value must not break
+        // existing clients. That is why this is opt-in rather than the new default.
+        Settings.Default.RejectUnknownEnumValues.Should().BeFalse();
+    }
+
+    [TestMethod]
+    [DataRow(JsonSerializerType.SystemTextJson, false)]
+    [DataRow(JsonSerializerType.SystemTextJson, true)]
+    [DataRow(JsonSerializerType.NewtonsoftJson, false)]
+    [DataRow(JsonSerializerType.NewtonsoftJson, true)]
     public void OpenApiUnionValidation_RejectsClosedLiteralStringsOnlyWhenRequested(JsonSerializerType serializer, bool validate)
     {
         const string spec = """

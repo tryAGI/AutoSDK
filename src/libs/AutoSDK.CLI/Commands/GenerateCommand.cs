@@ -140,6 +140,13 @@ internal sealed class GenerateCommand : Command
         Description = "Reject JSON that matches no oneOf/anyOf variant, including empty nested unions.",
     };
 
+    private Option<bool> RejectUnknownEnumValues { get; } = new(
+        name: "--reject-unknown-enum-values")
+    {
+        DefaultValueFactory = _ => Settings.Default.RejectUnknownEnumValues,
+        Description = "Throw instead of silently falling back to the default member when JSON carries an enum value the spec does not declare. Opt-in: the same converters read responses, where leniency lets a service add a value without breaking clients.",
+    };
+
     private Option<bool> GenerateRawModelData { get; } = new(
         name: "--generate-raw-model-data")
     {
@@ -628,6 +635,7 @@ internal sealed class GenerateCommand : Command
         Options.Add(IgnoreOpenApiWarnings);
         Options.Add(GenerateModelValidationMethods);
         Options.Add(ValidateAnyOfs);
+        Options.Add(RejectUnknownEnumValues);
         Options.Add(GenerateRawModelData);
         Options.Add(ComputeDiscriminators);
         Options.Add(GenerateCli);
@@ -858,6 +866,7 @@ internal sealed class GenerateCommand : Command
             ComputeDiscriminators = parseResult.GetRequiredValue(ComputeDiscriminators),
             GenerateModelValidationMethods = parseResult.GetRequiredValue(GenerateModelValidationMethods),
             ValidateAnyOfs = parseResult.GetRequiredValue(ValidateAnyOfs),
+            RejectUnknownEnumValues = parseResult.GetRequiredValue(RejectUnknownEnumValues),
             GenerateRawModelData = parseResult.GetRequiredValue(GenerateRawModelData),
             IgnoreOpenApiErrors = parseResult.GetRequiredValue(IgnoreOpenApiErrors),
             IgnoreOpenApiWarnings = parseResult.GetRequiredValue(IgnoreOpenApiWarnings),

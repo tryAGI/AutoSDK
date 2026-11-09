@@ -126,7 +126,16 @@ public static class CSharpModelDataFactory
             IsOpenEnum: isOpenEnum,
             // Strict union validation must reject a foreign closed literal before
             // shape fallback can accept it as the first variant's default enum.
-            RejectUnknownStringValues: context.Settings.ValidateAnyOfs && !isOpenEnum && enumValues.Length == 1,
+            //
+            // RejectUnknownEnumValues extends that to every closed enum, not just the single-literal
+            // discriminators. Without it the converter reads an unknown value as `ToEnum(v) ?? default`,
+            // so a typo in a request silently becomes the first member and the service renders something
+            // the caller never asked for. It stays opt-in because the same converter also reads
+            // responses, where leniency is what lets a service add an enum value without breaking
+            // existing clients.
+            RejectUnknownStringValues:
+                (context.Settings.ValidateAnyOfs && !isOpenEnum && enumValues.Length == 1) ||
+                (context.Settings.RejectUnknownEnumValues && !isOpenEnum && enumValues.Length > 0),
             Summary: context.Schema.GetSummary(),
             Description: context.Schema.Description ?? string.Empty,
             IsDeprecated: context.Schema.IsDeprecated(),

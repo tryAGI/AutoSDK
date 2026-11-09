@@ -103,6 +103,7 @@ public static class OptionsExtensions
             GenerateModels: options.GetBoolGlobalOption(nameof(Settings.GenerateModels), prefix, defaultValue: Settings.Default.GenerateModels),
             GenerateModelValidationMethods: options.GetBoolGlobalOption(nameof(Settings.GenerateModelValidationMethods), prefix, defaultValue: Settings.Default.GenerateModelValidationMethods),
             ValidateAnyOfs: options.GetBoolGlobalOption(nameof(Settings.ValidateAnyOfs), prefix, defaultValue: Settings.Default.ValidateAnyOfs),
+            RejectUnknownEnumValues: options.GetBoolGlobalOption(nameof(Settings.RejectUnknownEnumValues), prefix, defaultValue: Settings.Default.RejectUnknownEnumValues),
             GenerateRawModelData: options.GetBoolGlobalOption(nameof(Settings.GenerateRawModelData), prefix, defaultValue: Settings.Default.GenerateRawModelData),
             ModelStyle: options.GetEnumGlobalOption<ModelStyle>(nameof(Settings.ModelStyle), prefix),
             IncludeModels: (options.GetGlobalOption(nameof(Settings.IncludeModels), prefix)?.Split(';') ??

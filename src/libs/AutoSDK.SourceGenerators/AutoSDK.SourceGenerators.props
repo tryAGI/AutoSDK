@@ -148,6 +148,7 @@
     <CompilerVisibleProperty Include="AutoSDK_GenerateModelValidationMethods"/>
     <!-- true/false. Default: false -->
     <CompilerVisibleProperty Include="AutoSDK_ValidateAnyOfs"/>
+    <CompilerVisibleProperty Include="AutoSDK_RejectUnknownEnumValues"/>
     <!-- true/false. Default: false. Uses typed raw JSON extension data and raw model helper methods for forward-compatible models. -->
     <CompilerVisibleProperty Include="AutoSDK_GenerateRawModelData"/>
     <!-- Class/Record/ReadonlyRecordStruct. Default: Class -->
