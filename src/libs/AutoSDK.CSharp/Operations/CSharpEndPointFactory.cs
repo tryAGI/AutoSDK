@@ -199,7 +199,17 @@ public static class CSharpEndPointFactory
         ApplyIdempotencyHeaders(operation, parameters);
         DeduplicateMethodParameterNames(parameters);
 
-        var preparedPath = operation.OperationPath.PreparePath(parameters);
+        // A spec cannot declare two operations on the same path and method, so specs that expose a
+        // beta variant of an endpoint disambiguate it by appending a query string to the path key
+        // (`/v1/messages?beta=true`). `x-autosdk-path` lets such a spec say what the real request
+        // path is, so the disambiguator is not sent to the service.
+        var operationPath = OpenApiExtensions.TryGetExtensionStringValue(
+            operation.Operation.Extensions,
+            "x-autosdk-path",
+            out var pathOverride) && !string.IsNullOrWhiteSpace(pathOverride)
+            ? pathOverride
+            : operation.OperationPath;
+        var preparedPath = operationPath.PreparePath(parameters);
         var queryParameters = ParameterSerializer.SerializeQueryParametersImmutable(parameters);
 
         var successResponse = responses.Any(x => x.Is2XX && !string.IsNullOrWhiteSpace(x.Type.CSharpTypeRaw))

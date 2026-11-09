@@ -207,6 +207,10 @@ AutoSDK recognizes vendor extensions (`x-*`) in OpenAPI specs to improve generat
 - `x-label`: Fallback summary when `description` is empty
 - `x-stainless-const`: Mark properties as const (when `default` exists)
 - `x-codeSamples`: Code samples emitted as `<remarks>` XML docs
+- `x-autosdk-path`: The real request path for an operation, overriding the path key. A spec cannot
+  declare two operations on the same path and method, so a spec exposing a beta variant of an
+  endpoint keys it by appending a query string (`/v1/messages?beta=true`, as Anthropic's does);
+  without this extension that disambiguator is sent to the service as a bogus query parameter.
 
 **Gated by `UseExtensionNaming`** (breaking: affects generated names/structure):
 - `x-fern-sdk-method-name`: Override method names

@@ -54,6 +54,38 @@ paths:
             application/json:
               schema:
                 $ref: "#/components/schemas/Error"
+  /pets?beta=true:
+    get:
+      summary: List all pets (beta)
+      description: >-
+        A spec cannot declare two operations on the same path and method, so the beta variant is
+        keyed by a query string and states its real request path with x-autosdk-path.
+      operationId: listPetsBeta
+      x-autosdk-path: /pets
+      tags:
+        - pets
+      parameters:
+        - name: x-beta-features
+          in: header
+          description: Beta features to enable, sent as one comma-separated header.
+          required: false
+          schema:
+            type: array
+            items:
+              type: string
+      responses:
+        '200':
+          description: A paged array of pets
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Pets"
+        default:
+          description: unexpected error
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Error"
   /pets/{petId}:
     get:
       summary: Info for a specific pet

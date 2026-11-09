@@ -12,9 +12,13 @@
     Code(int)[pets],
     Message(string)[pets],
   ListPetsLimit(int)[pets],
+  ListPetsBetaXBetaFeatures(array)[pets],
+    ListPetsBetaXBetaFeaturesItem(string)[pets],
   ShowPetByIdPetId(string)[pets],
   Pets(ref)[pets],
   Error(ref)[pets],
+  Error(ref)[pets],
+  Pets(ref)[pets],
   Error(ref)[pets],
   Pet(ref)[pets],
   Error(ref)[pets]

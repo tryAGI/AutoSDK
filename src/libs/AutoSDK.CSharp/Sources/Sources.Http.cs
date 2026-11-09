@@ -68,8 +68,16 @@ public static partial class Sources
 
         var sb = new StringBuilder();
         var method = operation.OperationType.Method.ToUpperInvariant();
-        var path = ConvertPathToHttpVariables(operation.OperationPath);
         var op = operation.Operation;
+        // x-autosdk-path carries the real request path when the spec keys the operation by a path
+        // with a query string, which is how beta variants of an endpoint are disambiguated.
+        var operationPath = OpenApiExtensions.TryGetExtensionStringValue(
+            op.Extensions,
+            "x-autosdk-path",
+            out var pathOverride) && !string.IsNullOrWhiteSpace(pathOverride)
+            ? pathOverride
+            : operation.OperationPath;
+        var path = ConvertPathToHttpVariables(operationPath);
         var preferredContent = GetPreferredRequestContent(op);
 
         // Title line
@@ -79,7 +87,7 @@ public static partial class Sources
         var deprecated = op.IsDeprecated() ? "[DEPRECATED] " : "";
         var title = !string.IsNullOrWhiteSpace(summary)
             ? string.Concat(deprecated, summary)
-            : string.Concat(deprecated, method, " ", operation.OperationPath);
+            : string.Concat(deprecated, method, " ", operationPath);
 
         sb.Append("### ").AppendLine(title);
 

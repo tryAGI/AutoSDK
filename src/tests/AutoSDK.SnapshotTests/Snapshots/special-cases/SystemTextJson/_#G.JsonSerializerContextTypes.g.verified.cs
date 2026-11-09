@@ -64,10 +64,18 @@ namespace G
         /// 
         /// </summary>
         public int? Type6 { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::System.Collections.Generic.IList<string>? Type7 { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         public global::System.Collections.Generic.List<global::G.Pet>? ListType0 { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::System.Collections.Generic.List<string>? ListType1 { get; set; }
     }
 }

@@ -30,6 +30,20 @@ Accept: application/json
 # Description: unexpected error
 # Content-Type: application/json
 
+### List all pets (beta)
+# @name listPetsBeta
+GET {{host}}/pets
+x-beta-features: {{x-beta-features}}
+Accept: application/json
+
+## Responses
+# 200
+# Description: A paged array of pets
+# Content-Type: application/json
+# default
+# Description: unexpected error
+# Content-Type: application/json
+
 ### Info for a specific pet
 # @name showPetById
 GET {{host}}/pets/{{petId}}
