@@ -36,35 +36,66 @@ def main():
     if "reject-unknown-enum-values" in text:
         raise SystemExit("already patched")
 
-    # The guard needs somewhere to run from: the script must install the CLI before generating.
-    if not re.search(r"^install_autosdk_cli$", text, re.MULTILINE):
-        raise SystemExit("no bare `install_autosdk_cli` call to anchor the guard to")
+    # The guard needs somewhere to run from: the script must install the CLI before generating. The
+    # call may be indented, because several scripts make it inside a function or a conditional —
+    # Deepgram, Exa and tryAGI/OpenAI all do — so the guard call is inserted at the same indentation.
+    install_call = re.search(r"^([ \t]*)install_autosdk_cli[ \t]*$", text, re.MULTILINE)
+    if install_call is None:
+        raise SystemExit("no `install_autosdk_cli` call to anchor the guard to")
 
-    # Exactly one `autosdk generate` invocation, or the flag might land on the wrong one.
-    generate_calls = re.findall(r"^autosdk generate\b", text, re.MULTILINE)
-    if len(generate_calls) != 1:
-        raise SystemExit(f"expected one `autosdk generate` call, found {len(generate_calls)}")
+    # Several `autosdk generate` invocations are normal — Algolia, Exa and Deepgram each have two —
+    # so every one of them is flagged, except AsyncAPI inputs. Those are skipped deliberately: the
+    # direction analysis is built on OpenAPI operations and cannot classify a realtime message, and
+    # measuring Deepgram's asyncapi generation showed the flag changes nothing there anyway (104
+    # strict converters with it and without, already hardened by --validate-any-ofs).
+    invocations = re.findall(r"^autosdk generate +([^\s\\]+)", text, re.MULTILINE)
+    if not invocations:
+        raise SystemExit("no `autosdk generate` invocation to flag")
+
+    openapi_specs = [spec for spec in invocations if "asyncapi" not in spec.lower()]
+    if not openapi_specs:
+        raise SystemExit(
+            "every `autosdk generate` invocation here reads an AsyncAPI document; "
+            "the flag is not applicable")
 
     guard = guard_from(reference)
     guard_call = "require_autosdk_capability behavior:request-scoped-enum-rejection"
 
-    text = re.sub(
-        r"^install_autosdk_cli$",
-        guard + "install_autosdk_cli\n" + guard_call,
-        text,
-        count=1,
-        flags=re.MULTILINE)
+    indent = install_call.group(1)
+    if indent:
+        # Indented: the guard function still goes at top level, after the install helper's definition,
+        # and only the call follows the indented call site.
+        helper_end = re.search(r"^install_autosdk_cli\(\) \{.*?^\}\n", text, re.DOTALL | re.MULTILINE)
+        if helper_end is None:
+            raise SystemExit("could not find the install_autosdk_cli definition to place the guard after")
+        text = text[:helper_end.end()] + "\n" + guard + text[helper_end.end():]
+        install_call = re.search(r"^([ \t]*)install_autosdk_cli[ \t]*$", text, re.MULTILINE)
+        text = (text[:install_call.end()] + "\n" + indent + guard_call
+                + text[install_call.end():])
+    else:
+        text = re.sub(
+            r"^install_autosdk_cli$",
+            guard + "install_autosdk_cli\n" + guard_call,
+            text,
+            count=1,
+            flags=re.MULTILINE)
 
-    # Add the flag as its own continued line inside the generate invocation, keeping the backslash
-    # continuation intact. Anchored on `--output`, which every one of these scripts passes.
-    patched, count = re.subn(
-        r"(^  --output [^\n]*\\\n)",
-        r"\1  --reject-unknown-enum-values \\\n",
-        text,
-        count=1,
-        flags=re.MULTILINE)
-    if count != 1:
-        raise SystemExit("could not find a continued `--output` line in the generate invocation")
+    # Add the flag as its own continued line inside each chosen invocation, keeping the backslash
+    # continuation intact. Anchored on that invocation's `--output`, which every one of these scripts
+    # passes.
+    patched = text
+    for spec in openapi_specs:
+        pattern = re.compile(
+            r"(^autosdk generate +" + re.escape(spec) + r"[^\n]*\\\n(?:[^\n]*\\\n)*?)"
+            r"([ \t]*--output [^\n]*\\\n)",
+            re.MULTILINE)
+        patched, count = pattern.subn(
+            lambda m: m.group(1) + m.group(2) + "  --reject-unknown-enum-values \\\n",
+            patched,
+            count=1)
+        if count != 1:
+            raise SystemExit(
+                f"could not find a continued `--output` line for the invocation reading {spec}")
 
     # Check the result parses before putting it in place. The regex edits are anchored, but a
     # malformed script would otherwise surface much later as a failed regeneration, and by then the
