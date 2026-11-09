@@ -95,6 +95,23 @@ for sdk in "$@"; do
     continue
   fi
 
+  # Regenerating a stale checkout produces a diff against code that is no longer current, and the push
+  # would be refused anyway. These repositories run bots, so being tens of commits behind is normal:
+  # AI21 was 38 behind, Gladia 16 and Beatoven 5 the first time this was run.
+  git -C "$repo" fetch origin main --quiet 2>/dev/null || true
+  behind="$(git -C "$repo" rev-list --count HEAD..origin/main 2>/dev/null || echo 0)"
+  ahead="$(git -C "$repo" rev-list --count origin/main..HEAD 2>/dev/null || echo 0)"
+  if [[ "$behind" != "0" ]]; then
+    echo "SKIP  $sdk: $behind commit(s) behind origin/main; run \`git pull --ff-only origin main\` first"
+    skipped+=("$sdk ($behind behind)")
+    continue
+  fi
+  if [[ "$ahead" != "0" ]]; then
+    echo "SKIP  $sdk: $ahead unpushed commit(s); push or review them before regenerating"
+    skipped+=("$sdk ($ahead unpushed)")
+    continue
+  fi
+
   if [[ "$DRY_RUN" == true ]]; then
     echo "WOULD $sdk: patch $script, regenerate, build, test"
     done_list+=("$sdk (dry run)")
@@ -105,20 +122,54 @@ for sdk in "$@"; do
   lib="$(dirname "$script")"
 
   # Snapshot before touching anything, so a failure can be undone by copying files back. Plain copies
-  # on purpose: `git checkout`/`restore` would bulk-overwrite a shared worktree, which is exactly what
-  # must not happen here, and they are blocked in this environment for that reason.
+  # on purpose: the git commands that restore files from history bulk-overwrite a shared worktree,
+  # which is the thing that must not happen here, and they are blocked in this environment for that
+  # reason.
+  #
+  # Every path the script writes has to be covered, taken from its own `--output` arguments rather than
+  # assumed. The first version snapshotted `generate.sh` and `Generated/` only, and AI21 — whose script
+  # also emits a CLI project into ../../cli/AI21.CLI — came out of a failed run with 148 files still
+  # modified. The spec is covered too, since the script re-downloads it.
   snapshot="$(mktemp -d)"
+  snapshot_paths=()
+
   cp "$script" "$snapshot/generate.sh"
-  if [[ -d "$lib/Generated" ]]; then
-    cp -R "$lib/Generated" "$snapshot/Generated"
+  index=0
+  while IFS= read -r target; do
+    resolved="$lib/$target"
+    [[ -e "$resolved" ]] || continue
+    cp -R "$resolved" "$snapshot/out$index"
+    snapshot_paths+=("$index:$resolved")
+    index=$((index + 1))
+  done < <(grep -oE '^[[:space:]]*--output[[:space:]]+[^[:space:]\\]+' "$script" | awk '{print $2}')
+
+  for spec in "$lib"/openapi.* "$lib"/asyncapi.*; do
+    if [[ -f "$spec" ]]; then
+      cp "$spec" "$snapshot/spec$index"
+      snapshot_paths+=("spec$index:$spec")
+      index=$((index + 1))
+    fi
+  done
+
+  if [[ ${#snapshot_paths[@]} -eq 0 ]]; then
+    echo "    FAILED: no --output target or spec found to snapshot; refusing to patch" >&2
+    failed+=("$sdk (nothing to snapshot)")
+    rm -rf "$snapshot"
+    continue
   fi
 
   restore_snapshot() {
     cp "$snapshot/generate.sh" "$script"
-    if [[ -d "$snapshot/Generated" ]]; then
-      rm -rf "$lib/Generated"
-      cp -R "$snapshot/Generated" "$lib/Generated"
-    fi
+    for entry in "${snapshot_paths[@]}"; do
+      local key="${entry%%:*}"
+      local destination="${entry#*:}"
+      if [[ "$key" == spec* ]]; then
+        cp "$snapshot/$key" "$destination"
+      else
+        rm -rf "$destination"
+        cp -R "$snapshot/out$key" "$destination"
+      fi
+    done
   }
 
   if python3 "$(dirname "${BASH_SOURCE[0]}")/_patch_enum_rejection.py" "$script" "$GUARD_SOURCE" &&
