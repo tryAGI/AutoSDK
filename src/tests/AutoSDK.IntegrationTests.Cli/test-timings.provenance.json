@@ -142,7 +142,7 @@
       "trx_path": "cli-integration-shard-3/shard-3/results.trx",
       "trx_sha256": "aa78a5cd096efae2e8bc054c7e26478d31c42657010102a39e2ee9d93b5bd245"
     },
-    "CliProject_ReplacesExistingProjectByDefault": {
+    "CliProject_ReplacesExistingProjectWhenAsked": {
       "commit": "ced47adc5a77c908adceba1ff1932ef1e5339466",
       "duration_seconds": 13.293621,
       "observations": [

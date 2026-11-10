@@ -1914,7 +1914,13 @@ internal static class CliProjectScaffolder
             // bumps: regenerating four CLI SDKs took MinVer from 8.0.0 back to 7.0.0 and
             // System.CommandLine from 2.0.14 back to 2.0.7. So it is created when absent and left
             // alone when present, unless --overwrite-project-file asks for the rewrite.
-            if (model.OverwriteProjectFile || !File.Exists(Path.Combine(model.OutputPath, projectFile)))
+            // Replaced only when asked, by either route: --overwrite-project-file, or an explicit
+            // --preserve-project-file false. Switching the condition to the new option alone left the
+            // old one inert, which `CliProject_ReplacesExistingProjectByDefault` caught — it passes
+            // `--preserve-project-file false` and expects the rewrite.
+            if (model.OverwriteProjectFile ||
+                !model.PreserveProjectFile ||
+                !File.Exists(Path.Combine(model.OutputPath, projectFile)))
             {
                 await WriteFileAsync(model, projectFile, GenerateProjectFile(model)).ConfigureAwait(false);
             }

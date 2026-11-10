@@ -10,7 +10,7 @@ public sealed class CliProjectGenerationTests
     public Task CliProject_PreservesExistingProjectAndRegeneratesSources() => CheckProjectPreservationAsync(preserve: true);
 
     [TestMethod]
-    public Task CliProject_ReplacesExistingProjectByDefault() => CheckProjectPreservationAsync(preserve: false);
+    public Task CliProject_ReplacesExistingProjectWhenAsked() => CheckProjectPreservationAsync(preserve: false);
 
     private static async Task CheckProjectPreservationAsync(bool preserve)
     {
