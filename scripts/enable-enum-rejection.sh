@@ -209,14 +209,21 @@ for sdk in "$@"; do
   if python3 "$(dirname "${BASH_SOURCE[0]}")/_patch_enum_rejection.py" "$script" "$GUARD_SOURCE" &&
      { # Every invocation the patcher flagged, not just the first: Algolia and Exa each generate from
        # two OpenAPI specs, and regenerating only one would leave the other's converters stale.
-       mapfile -t flagged < <(awk '
+       # Collected with a read loop, not mapfile: this Mac's /bin/bash is 3.2, where mapfile does not
+       # exist, and under `set -u` the resulting unbound variable aborted the script before it could
+       # restore its snapshot.
+       flagged=""
+       while IFS= read -r flagged_line; do
+         flagged="$flagged$flagged_line
+"
+       done < <(awk '
          / generate +[^ \\]+/ { spec = $3 }
          /--reject-unknown-enum-values/ { if (spec != "") { print spec; spec = "" } }
        ' "$script")
-       [[ ${#flagged[@]} -gt 0 ]] || { echo "    FAILED: no flagged generate invocation found" >&2; false; }; } &&
+       [[ -n "$flagged" ]] || { echo "    FAILED: no flagged generate invocation found" >&2; false; }; } &&
      { runner="$(mktemp)"
        : > "$runner"
-       for flagged_spec in "${flagged[@]}"; do
+       for flagged_spec in $flagged; do
          one="$(bash "$EXTRACT" "$script" generate "$flagged_spec" 2>/dev/null)"
          [[ -n "$one" ]] || { echo "    FAILED: could not isolate the invocation reading $flagged_spec" >&2; false; break; }
          printf '%s\n\n' "$one" >> "$runner"
