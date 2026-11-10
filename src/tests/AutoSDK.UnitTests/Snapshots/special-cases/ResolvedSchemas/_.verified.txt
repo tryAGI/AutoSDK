@@ -1,4 +1,12 @@
 ﻿[
+  Match(oneOf)[],
+    MatchEqual(ref)[],
+    MatchRange(ref)[],
+  MatchEqual(class)[],
+    Equal(string)[],
+  MatchRange(class)[],
+    RangeFrom(int)[],
+  DefsUnion(anyOf)[],
   Pet(class)[pets],
     x4(string)[pets],
     x15(bool)[pets],
@@ -31,5 +39,7 @@
   Pets(ref)[pets],
   Error(ref)[pets],
   Pet(ref)[pets],
-  Error(ref)[pets]
+  Error(ref)[pets],
+  Match(ref)[],
+  DefsUnion(ref)[]
 ]

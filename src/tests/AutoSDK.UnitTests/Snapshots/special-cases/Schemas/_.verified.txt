@@ -1,4 +1,12 @@
 ﻿[
+  Match(oneOf),
+    MatchEqual(ref),
+    MatchRange(ref),
+  MatchEqual(class),
+    Equal(string),
+  MatchRange(class),
+    RangeFrom(int),
+  DefsUnion(anyOf),
   Pet(class),
     x4(string),
     x15(bool),
@@ -31,5 +39,7 @@
   Pets(ref),
   Error(ref),
   Pet(ref),
-  Error(ref)
+  Error(ref),
+  Match(ref),
+  DefsUnion(ref)
 ]
