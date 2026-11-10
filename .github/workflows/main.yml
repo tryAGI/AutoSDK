@@ -10,6 +10,19 @@ on:
 permissions:
   contents: write
 
+# Six consecutive pushes queued nine runs with nothing started, because every push to main builds,
+# tests and publishes a dev version — so superseded runs are pure waiting. Grouped by ref, which gives
+# each tag its own group, and cancellation is disabled for tags outright: a cancelled `release` or the
+# publish behind it is not something to risk for queue time.
+#
+# The residual risk on main is stated rather than glossed: a superseded run cancelled during
+# `nuget-trusted-publish` could push part of a multi-package set, leaving some packages without that
+# version. It is recoverable — the next push publishes a higher dev version, and a missing dev version
+# is harmless — and the window is the length of that one step.
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: ${{ !startsWith(github.ref, 'refs/tags/') }}
+
 jobs:
   publish:
     name: Publish

@@ -4,6 +4,12 @@ on:
     branches:
       - main
 
+# Unconditional here, unlike the publish workflow: nothing in this one publishes or releases, so a
+# superseded run is only a push the author has already replaced.
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
 jobs:
   test:
     name: Test
