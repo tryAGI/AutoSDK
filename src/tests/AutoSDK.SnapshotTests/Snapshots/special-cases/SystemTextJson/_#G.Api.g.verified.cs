@@ -1,4 +1,4 @@
-﻿//HintName: G.Api.g.cs
+//HintName: G.Api.g.cs
 
 #nullable enable
 
@@ -44,6 +44,7 @@ namespace G
                 DefaultIgnoreCondition = global::System.Text.Json.Serialization.JsonIgnoreCondition.WhenWritingNull,
                 Converters =
                 {
+                    new global::G.JsonConverters.MatchJsonConverter(),
                     new global::G.JsonConverters.UnixTimestampJsonConverter(),
                 }
             };

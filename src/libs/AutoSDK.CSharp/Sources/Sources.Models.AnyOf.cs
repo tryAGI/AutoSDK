@@ -20,6 +20,12 @@ public static partial class Sources
         var declarationName = !anyOfData.IsNamed
             ? $"{anyOfData.SubType}{types}"
             : anyOfData.Name;
+        // C# forbids a member whose name equals its enclosing type's, and a union schema really can
+        // be called `Match` - Mistral's filter DSL has one, which made the whole SDK fail to
+        // compile with CS0542. Rename the matcher in that one case; `Switch` below is already the
+        // void equivalent, so nothing is lost.
+        var matchMethodName = classNameWithoutTypes == "Match" ? "MatchValue" : "Match";
+
         var discriminatorPropertyType = anyOfData.DiscriminatorType != null && anyOfData.DiscriminatorPropertyName != null
             ? (anyOfData.DiscriminatorPropertyIsEnum
                 ? anyOfData.DiscriminatorPropertyTypeName ?? $"{anyOfData.DiscriminatorType.Value.CSharpTypeWithoutNullability}{anyOfData.DiscriminatorPropertyName}"
@@ -190,7 +196,7 @@ namespace {anyOfData.Namespace}
         }}
 
         {string.Empty.ToXmlDocumentationSummary(level: 8)}
-        public TResult? Match<TResult>(
+        public TResult? {matchMethodName}<TResult>(
 {anyOfData.Properties.Select(x => $@" 
             global::System.Func<{x.Type.CSharpTypeWithNullabilityForValueTypes}, TResult>? {x.ParameterName} = null,
 ").Inject()}
@@ -211,7 +217,7 @@ namespace {anyOfData.Namespace}
         }}
 
         {string.Empty.ToXmlDocumentationSummary(level: 8)}
-        public void Match(
+        public void {matchMethodName}(
 {anyOfData.Properties.Select(x => $@"
             global::System.Action<{x.Type.CSharpTypeWithNullabilityForValueTypes}>? {x.ParameterName} = null,
 ").Inject()}

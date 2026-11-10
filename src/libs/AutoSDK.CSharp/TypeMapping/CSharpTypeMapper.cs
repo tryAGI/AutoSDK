@@ -419,6 +419,16 @@ public static class CSharpTypeMapper
                 $"{FindArrayItemType(context.Children)}".AsArray(),
             ("array", _) => "byte[]",
 
+            // A union none of whose variants resolve cannot be expressed: unnamed, it used to render
+            // as `AnyOf<>` (CS0305); named, as a reference to a type that is never generated
+            // (CS0234). Either way the whole SDK stops compiling. The live cause is a 3.1 schema
+            // that keeps its variants in a JSON Schema `$defs` block and refs them as
+            // `#/$defs/Name` - Mistral's managed-index summary response - since those refs resolve
+            // to nothing. `object` keeps the operation usable, untyped, instead of failing the
+            // build. This has to precede the named case below, which would otherwise win.
+            (_, _) when (isAnyOf || isOneOf) &&
+                        GetDistinctChildTypes(context, isAnyOf ? Hint.AnyOf : Hint.OneOf) is { Length: 0 } => "object",
+
             (_, _) when context.IsNamedAnyOfLike => $"global::{generatedNamespace}.{context.Id}",
             (_, _) when context.IsDerivedClass => $"global::{generatedNamespace}.{context.Id}",
 

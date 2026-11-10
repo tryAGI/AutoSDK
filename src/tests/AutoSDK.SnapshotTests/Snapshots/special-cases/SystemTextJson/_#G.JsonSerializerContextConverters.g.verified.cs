@@ -1,4 +1,4 @@
-﻿//HintName: G.JsonSerializerContextConverters.g.cs
+//HintName: G.JsonSerializerContextConverters.g.cs
 
 #nullable enable
 
@@ -11,6 +11,7 @@ namespace G
     {
         private readonly global::System.Type[] _types = new global::System.Type[]
         {
+            typeof(global::G.JsonConverters.MatchJsonConverter),
             typeof(global::G.JsonConverters.UnixTimestampJsonConverter),
         };
     }

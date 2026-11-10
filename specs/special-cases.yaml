@@ -195,8 +195,67 @@ paths:
             application/json:
               schema:
                 $ref: "#/components/schemas/Error"
+  /match-named-union:
+    get:
+      operationId: getMatchNamedUnion
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Match'
+  /defs-union:
+    get:
+      operationId: getDefsUnion
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/DefsUnion'
 components:
   schemas:
+    # A union schema literally named `Match`. The generated matcher is called `Match` too, and C#
+    # forbids a member with its enclosing type's name - this shape produced CS0542 and took a whole
+    # SDK down. Mistral's filter DSL has one.
+    Match:
+      oneOf:
+        - $ref: '#/components/schemas/MatchEqual'
+        - $ref: '#/components/schemas/MatchRange'
+    MatchEqual:
+      type: object
+      required: [equal]
+      properties:
+        equal:
+          type: string
+    MatchRange:
+      type: object
+      required: [rangeFrom]
+      properties:
+        rangeFrom:
+          type: integer
+    # A union whose variants live in a JSON Schema `$defs` block, referenced as `#/$defs/...`. Those
+    # refs resolve to nothing, so every variant drops out and the union used to render as `AnyOf<>` -
+    # never valid C#, CS0305. It falls back to `object` instead.
+    DefsUnion:
+      anyOf:
+        - $ref: '#/$defs/DefsChunk'
+        - $ref: '#/$defs/DefsError'
+      $defs:
+        DefsChunk:
+          type: object
+          required: [content]
+          properties:
+            content:
+              type: string
+        DefsError:
+          type: object
+          required: [error]
+          properties:
+            error:
+              type: string
     Pet:
       type: object
       required:
