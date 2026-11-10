@@ -1,6 +1,6 @@
 {
   "base_catalog_sha256": "b4d56a770664bbfd4acd996a95728220e827d0f7303c2fc679f17a0d11fd7803",
-  "catalog_sha256": "4118a63f27891d13d55c7c9d068c1476914d67c80f4bba87ee92c374e054165e",
+  "catalog_sha256": "26f1402b4876d05acb06fc1123cc887c403dc4166521a0f45443fe1b0fc30220",
   "samples": {
     "AuditRepresentations_WritesStableMachineReadableReportAndSummary": {
       "commit": "9b1e11d8ac2af13df58150e61c3e652e4d221afd",
