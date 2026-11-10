@@ -13,6 +13,7 @@
 set -euo pipefail
 
 PARENT="$(cd "$(dirname "${BASH_SOURCE[0]}")/../.." && pwd)"
+EXTRACT="$(dirname "${BASH_SOURCE[0]}")/extract-invocation.sh"
 
 # The test project is discovered, not assumed. Four of the 52 CLI SDKs name it after the SDK —
 # AI21.IntegrationTests, and likewise DeepInfra, OpenAI and VoyageAI — so a hard-coded
@@ -206,9 +207,21 @@ for sdk in "$@"; do
   # a diff that is supposed to be about one flag is what left AI21 with 483 changed files earlier, and
   # repeating that across every remaining CLI SDK would make each diff unreviewable.
   if python3 "$(dirname "${BASH_SOURCE[0]}")/_patch_enum_rejection.py" "$script" "$GUARD_SOURCE" &&
-     { invocation="$(awk '/^autosdk generate/{found=1} found{print} found && !/\\$/{exit}' "$script")";
-       [[ -n "$invocation" ]] || { echo "    FAILED: could not isolate the generate invocation" >&2; false; }; } &&
-     { runner="$(mktemp)"; printf '%s\n' "$invocation" > "$runner"; true; } &&
+     { # Every invocation the patcher flagged, not just the first: Algolia and Exa each generate from
+       # two OpenAPI specs, and regenerating only one would leave the other's converters stale.
+       mapfile -t flagged < <(awk '
+         / generate +[^ \\]+/ { spec = $3 }
+         /--reject-unknown-enum-values/ { if (spec != "") { print spec; spec = "" } }
+       ' "$script")
+       [[ ${#flagged[@]} -gt 0 ]] || { echo "    FAILED: no flagged generate invocation found" >&2; false; }; } &&
+     { runner="$(mktemp)"
+       : > "$runner"
+       for flagged_spec in "${flagged[@]}"; do
+         one="$(bash "$EXTRACT" "$script" generate "$flagged_spec" 2>/dev/null)"
+         [[ -n "$one" ]] || { echo "    FAILED: could not isolate the invocation reading $flagged_spec" >&2; false; break; }
+         printf '%s\n\n' "$one" >> "$runner"
+       done
+       [[ -s "$runner" ]]; } &&
      (cd "$lib" && bash "$runner" >/dev/null 2>&1) &&
      (cd "$repo" && dotnet build ./*.slnx -p:UseSharedCompilation=false >/dev/null 2>&1) &&
      (cd "$repo" && { tests="$(find_test_project "$repo")"; if [[ -n "$tests" ]]; then dotnet test "$tests" --no-build >/dev/null 2>&1; else echo "      no test project found; skipping tests" >&2; fi; }); then

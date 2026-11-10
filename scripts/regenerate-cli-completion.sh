@@ -13,6 +13,7 @@
 set -euo pipefail
 
 PARENT="$(cd "$(dirname "${BASH_SOURCE[0]}")/../.." && pwd)"
+EXTRACT="$(dirname "${BASH_SOURCE[0]}")/extract-invocation.sh"
 
 # The test project is discovered, not assumed. Four of the 52 CLI SDKs name it after the SDK —
 # AI21.IntegrationTests, and likewise DeepInfra, OpenAI and VoyageAI — so a hard-coded
@@ -120,7 +121,7 @@ for sdk in "$@"; do
   lib="$(dirname "$script")"
 
   # Pull out just the cli-project call, keeping its line continuations, and run it as-is.
-  invocation="$(awk '/^autosdk cli-project/{found=1} found{print} found && !/\\$/{exit}' "$script")"
+  invocation="$(bash "$EXTRACT" "$script" cli-project 2>/dev/null)"
   if [[ -z "$invocation" ]]; then
     echo "    FAILED: could not isolate the cli-project invocation" >&2
     failed+=("$sdk (no invocation)")
