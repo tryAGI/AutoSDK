@@ -15,6 +15,12 @@ set -euo pipefail
 PARENT="$(cd "$(dirname "${BASH_SOURCE[0]}")/../.." && pwd)"
 EXTRACT="$(dirname "${BASH_SOURCE[0]}")/extract-invocation.sh"
 
+RUNNER_PREAMBLE='# The extracted invocation may begin with "$autosdk_cli", which only exists inside the generate.sh of the
+# generate.sh. Without this the runner invoked an empty command — that is why tryAGI/OpenAI failed the
+# batch while the same invocation ran fine by hand with the variable set.
+autosdk_cli="${AUTOSDK_EXECUTABLE:-autosdk}"
+'
+
 # The test project is discovered, not assumed. Four of the 52 CLI SDKs name it after the SDK —
 # AI21.IntegrationTests, and likewise DeepInfra, OpenAI and VoyageAI — so a hard-coded
 # src/tests/IntegrationTests made `dotnet test` fail with MSB1009 "Project file does not exist" and the
@@ -183,10 +189,22 @@ for sdk in "$@"; do
   if [[ ${#snapshot_paths[@]} -eq 0 ]]; then
     echo "    FAILED: no --output target or spec found to snapshot; refusing to patch" >&2
     failed+=("$sdk (nothing to snapshot)")
-    rm -f "${runner:-}"
+    needs_restore=false
+  trap - EXIT
+  rm -f "${runner:-}"
   rm -rf "$snapshot"
     continue
   fi
+
+  # An abort — not a failed command — used to bypass the restore below, which is how a patched
+  # generate.sh was left behind once. The trap closes that: it fires on any exit while this repo is
+  # mid-change, and is disarmed once the repo is finished with either way.
+  needs_restore=true
+  # Exits non-zero whenever it had to restore, rather than passing through $?. Measured on this
+  # machine: when `set -u` aborts on an unbound variable, bash 3.2 leaves the EXIT trap seeing $? = 0,
+  # so trusting it would report an aborted batch as a success — worse than the left-behind patch this
+  # trap exists to prevent. Having had to restore is itself the failure, so it is reported as one.
+  trap 'trap_status=$?; if [[ "${needs_restore:-false}" == true ]]; then restore_snapshot; echo "    restored $sdk after an abort" >&2; [[ $trap_status -ne 0 ]] || trap_status=1; fi; exit "$trap_status"' EXIT
 
   restore_snapshot() {
     cp "$snapshot/generate.sh" "$script"
@@ -222,7 +240,7 @@ for sdk in "$@"; do
        ' "$script")
        [[ -n "$flagged" ]] || { echo "    FAILED: no flagged generate invocation found" >&2; false; }; } &&
      { runner="$(mktemp)"
-       : > "$runner"
+       printf '%s' "$RUNNER_PREAMBLE" > "$runner"
        for flagged_spec in $flagged; do
          one="$(bash "$EXTRACT" "$script" generate "$flagged_spec" 2>/dev/null)"
          [[ -n "$one" ]] || { echo "    FAILED: could not isolate the invocation reading $flagged_spec" >&2; false; break; }
@@ -234,6 +252,7 @@ for sdk in "$@"; do
      (cd "$repo" && { tests="$(find_test_project "$repo")"; if [[ -n "$tests" ]]; then dotnet test "$tests" --no-build >/dev/null 2>&1; else echo "      no test project found; skipping tests" >&2; fi; }); then
     echo "    ok: regenerated, built, tests pass — review and commit by hand"
     done_list+=("$sdk")
+    needs_restore=false
   else
     echo "    FAILED: patch/generate/build/test — restoring from snapshot" >&2
     restore_snapshot

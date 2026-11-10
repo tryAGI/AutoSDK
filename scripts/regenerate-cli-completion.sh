@@ -15,6 +15,12 @@ set -euo pipefail
 PARENT="$(cd "$(dirname "${BASH_SOURCE[0]}")/../.." && pwd)"
 EXTRACT="$(dirname "${BASH_SOURCE[0]}")/extract-invocation.sh"
 
+RUNNER_PREAMBLE='# The extracted invocation may begin with "$autosdk_cli", which only exists inside the generate.sh of the
+# generate.sh. Without this the runner invoked an empty command — that is why tryAGI/OpenAI failed the
+# batch while the same invocation ran fine by hand with the variable set.
+autosdk_cli="${AUTOSDK_EXECUTABLE:-autosdk}"
+'
+
 # The test project is discovered, not assumed. Four of the 52 CLI SDKs name it after the SDK —
 # AI21.IntegrationTests, and likewise DeepInfra, OpenAI and VoyageAI — so a hard-coded
 # src/tests/IntegrationTests made `dotnet test` fail with MSB1009 "Project file does not exist" and the
@@ -132,7 +138,7 @@ for sdk in "$@"; do
   # continuations next to a space, which eval then reads as a literal space argument — Exa failed with
   # "' ' was not matched" until this was fixed. A file keeps the invocation exactly as written.
   runner="$(mktemp)"
-  printf '%s\n' "$invocation" > "$runner"
+  { printf '%s' "$RUNNER_PREAMBLE"; printf '%s\n' "$invocation"; } > "$runner"
 
   if (cd "$lib" && bash "$runner" >/dev/null 2>&1) &&
      (cd "$repo" && dotnet build ./*.slnx -p:UseSharedCompilation=false >/dev/null 2>&1) &&
