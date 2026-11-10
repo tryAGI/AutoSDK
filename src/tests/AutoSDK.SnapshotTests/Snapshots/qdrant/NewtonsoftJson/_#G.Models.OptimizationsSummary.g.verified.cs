@@ -1,4 +1,4 @@
-﻿//HintName: G.Models.OptimizationsSummary.g.cs
+//HintName: G.Models.OptimizationsSummary.g.cs
 
 #nullable enable
 
@@ -13,25 +13,25 @@ namespace G
         /// Number of pending optimizations in the queue. Each optimization will take one or more unoptimized segments and produce one optimized segment.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("queued_optimizations", Required = global::Newtonsoft.Json.Required.Always)]
-        public int QueuedOptimizations { get; set; } = default!;
+        public long QueuedOptimizations { get; set; } = default!;
 
         /// <summary>
         /// Number of unoptimized segments in the queue.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("queued_segments", Required = global::Newtonsoft.Json.Required.Always)]
-        public int QueuedSegments { get; set; } = default!;
+        public long QueuedSegments { get; set; } = default!;
 
         /// <summary>
         /// Number of points in unoptimized segments in the queue.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("queued_points", Required = global::Newtonsoft.Json.Required.Always)]
-        public int QueuedPoints { get; set; } = default!;
+        public long QueuedPoints { get; set; } = default!;
 
         /// <summary>
         /// Number of segments that don't require optimization.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("idle_segments", Required = global::Newtonsoft.Json.Required.Always)]
-        public int IdleSegments { get; set; } = default!;
+        public long IdleSegments { get; set; } = default!;
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -55,10 +55,10 @@ namespace G
         /// Number of segments that don't require optimization.
         /// </param>
         public OptimizationsSummary(
-            int queuedOptimizations,
-            int queuedSegments,
-            int queuedPoints,
-            int idleSegments)
+            long queuedOptimizations,
+            long queuedSegments,
+            long queuedPoints,
+            long idleSegments)
         {
             this.QueuedOptimizations = queuedOptimizations;
             this.QueuedSegments = queuedSegments;

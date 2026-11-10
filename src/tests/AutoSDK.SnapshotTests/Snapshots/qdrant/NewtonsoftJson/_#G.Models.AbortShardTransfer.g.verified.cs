@@ -1,4 +1,4 @@
-﻿//HintName: G.Models.AbortShardTransfer.g.cs
+//HintName: G.Models.AbortShardTransfer.g.cs
 
 #nullable enable
 
@@ -13,19 +13,19 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("shard_id", Required = global::Newtonsoft.Json.Required.Always)]
-        public int ShardId { get; set; } = default!;
+        public long ShardId { get; set; } = default!;
 
         /// <summary>
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("to_peer_id", Required = global::Newtonsoft.Json.Required.Always)]
-        public int ToPeerId { get; set; } = default!;
+        public long ToPeerId { get; set; } = default!;
 
         /// <summary>
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("from_peer_id", Required = global::Newtonsoft.Json.Required.Always)]
-        public int FromPeerId { get; set; } = default!;
+        public long FromPeerId { get; set; } = default!;
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -40,9 +40,9 @@ namespace G
         /// <param name="toPeerId"></param>
         /// <param name="fromPeerId"></param>
         public AbortShardTransfer(
-            int shardId,
-            int toPeerId,
-            int fromPeerId)
+            long shardId,
+            long toPeerId,
+            long fromPeerId)
         {
             this.ShardId = shardId;
             this.ToPeerId = toPeerId;

@@ -1,4 +1,4 @@
-﻿//HintName: G.Models.CollectionsTelemetry.g.cs
+//HintName: G.Models.CollectionsTelemetry.g.cs
 
 #nullable enable
 
@@ -14,13 +14,13 @@ namespace G
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("number_of_collections")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required int NumberOfCollections { get; set; }
+        public required long NumberOfCollections { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("max_collections")]
-        public int? MaxCollections { get; set; }
+        public long? MaxCollections { get; set; }
 
         /// <summary>
         /// 
@@ -51,8 +51,8 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public CollectionsTelemetry(
-            int numberOfCollections,
-            int? maxCollections,
+            long numberOfCollections,
+            long? maxCollections,
             global::System.Collections.Generic.IList<global::G.CollectionTelemetryEnum>? collections,
             global::System.Collections.Generic.IList<global::G.CollectionSnapshotTelemetry>? snapshots)
         {

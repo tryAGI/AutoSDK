@@ -655,8 +655,8 @@ namespace G
         public async global::System.Threading.Tasks.Task<global::G.RecommendPointGroupsResponse> RecommendPointGroupsAsync(
             string collectionName,
             string groupBy,
-            int groupSize,
-            int limit,
+            long groupSize,
+            long limit,
             global::G.ReadConsistency? consistency = default,
             int? timeout = default,
             global::G.ShardKeySelector? shardKey = default,

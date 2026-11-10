@@ -1,4 +1,4 @@
-﻿//HintName: G.ISearchClient.SearchMatrixPairs.g.cs
+//HintName: G.ISearchClient.SearchMatrixPairs.g.cs
 #nullable enable
 
 namespace G
@@ -98,8 +98,8 @@ namespace G
             int? timeout = default,
             global::G.ShardKeySelector? shardKey = default,
             global::G.Filter? filter = default,
-            int? sample = default,
-            int? limit = default,
+            long? sample = default,
+            long? limit = default,
             string? @using = default,
             global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);

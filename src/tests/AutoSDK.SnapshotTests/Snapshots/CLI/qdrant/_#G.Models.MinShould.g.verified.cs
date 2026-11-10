@@ -1,4 +1,4 @@
-﻿//HintName: G.Models.MinShould.g.cs
+//HintName: G.Models.MinShould.g.cs
 
 #nullable enable
 
@@ -21,7 +21,7 @@ namespace G
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("min_count")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required int MinCount { get; set; }
+        public required long MinCount { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -39,7 +39,7 @@ namespace G
 #endif
         public MinShould(
             global::System.Collections.Generic.IList<global::G.Condition> conditions,
-            int minCount)
+            long minCount)
         {
             this.Conditions = conditions ?? throw new global::System.ArgumentNullException(nameof(conditions));
             this.MinCount = minCount;

@@ -1,4 +1,4 @@
-﻿//HintName: G.Models.RemoteShardInfo.g.cs
+//HintName: G.Models.RemoteShardInfo.g.cs
 
 #nullable enable
 
@@ -13,7 +13,7 @@ namespace G
         /// Remote shard id
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("shard_id", Required = global::Newtonsoft.Json.Required.Always)]
-        public int ShardId { get; set; } = default!;
+        public long ShardId { get; set; } = default!;
 
         /// <summary>
         /// User-defined sharding key
@@ -25,7 +25,7 @@ namespace G
         /// Remote peer id
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("peer_id", Required = global::Newtonsoft.Json.Required.Always)]
-        public int PeerId { get; set; } = default!;
+        public long PeerId { get; set; } = default!;
 
         /// <summary>
         /// State of the single shard within a replica set.
@@ -56,8 +56,8 @@ namespace G
         /// User-defined sharding key
         /// </param>
         public RemoteShardInfo(
-            int shardId,
-            int peerId,
+            long shardId,
+            long peerId,
             global::G.ReplicaState state,
             global::G.ShardKey? shardKey)
         {

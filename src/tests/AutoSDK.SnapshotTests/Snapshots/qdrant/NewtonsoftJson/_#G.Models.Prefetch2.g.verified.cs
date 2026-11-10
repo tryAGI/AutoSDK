@@ -1,4 +1,4 @@
-﻿//HintName: G.Models.Prefetch2.g.cs
+//HintName: G.Models.Prefetch2.g.cs
 
 #nullable enable
 
@@ -50,7 +50,7 @@ namespace G
         /// Max number of points to return. Default is 10.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("limit")]
-        public int? Limit { get; set; }
+        public long? Limit { get; set; }
 
         /// <summary>
         /// The location to use for IDs lookup, if not specified - use the current collection and the 'using' vector Note: the other collection vectors should have the same vector size as the 'using' vector in the current collection<br/>
@@ -101,7 +101,7 @@ namespace G
             global::G.Filter? filter,
             global::G.SearchParams? @params,
             float? scoreThreshold,
-            int? limit,
+            long? limit,
             global::G.LookupLocation? lookupFrom)
         {
             this.Prefetch = prefetch;

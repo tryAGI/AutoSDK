@@ -1,4 +1,4 @@
-﻿//HintName: G.Models.SegmentInfo.g.cs
+//HintName: G.Models.SegmentInfo.g.cs
 
 #nullable enable
 
@@ -26,61 +26,61 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("num_vectors", Required = global::Newtonsoft.Json.Required.Always)]
-        public int NumVectors { get; set; } = default!;
+        public long NumVectors { get; set; } = default!;
 
         /// <summary>
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("num_points", Required = global::Newtonsoft.Json.Required.Always)]
-        public int NumPoints { get; set; } = default!;
+        public long NumPoints { get; set; } = default!;
 
         /// <summary>
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("num_deferred_points")]
-        public int? NumDeferredPoints { get; set; }
+        public long? NumDeferredPoints { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("num_deleted_deferred_points")]
-        public int? NumDeletedDeferredPoints { get; set; }
+        public long? NumDeletedDeferredPoints { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("num_indexed_vectors", Required = global::Newtonsoft.Json.Required.Always)]
-        public int NumIndexedVectors { get; set; } = default!;
+        public long NumIndexedVectors { get; set; } = default!;
 
         /// <summary>
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("num_deleted_vectors", Required = global::Newtonsoft.Json.Required.Always)]
-        public int NumDeletedVectors { get; set; } = default!;
+        public long NumDeletedVectors { get; set; } = default!;
 
         /// <summary>
         /// An ESTIMATION of effective amount of bytes used for vectors Do NOT rely on this number unless you know what you are doing
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("vectors_size_bytes", Required = global::Newtonsoft.Json.Required.Always)]
-        public int VectorsSizeBytes { get; set; } = default!;
+        public long VectorsSizeBytes { get; set; } = default!;
 
         /// <summary>
         /// An estimation of the effective amount of bytes used for payloads
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("payloads_size_bytes", Required = global::Newtonsoft.Json.Required.Always)]
-        public int PayloadsSizeBytes { get; set; } = default!;
+        public long PayloadsSizeBytes { get; set; } = default!;
 
         /// <summary>
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("ram_usage_bytes", Required = global::Newtonsoft.Json.Required.Always)]
-        public int RamUsageBytes { get; set; } = default!;
+        public long RamUsageBytes { get; set; } = default!;
 
         /// <summary>
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("disk_usage_bytes", Required = global::Newtonsoft.Json.Required.Always)]
-        public int DiskUsageBytes { get; set; } = default!;
+        public long DiskUsageBytes { get; set; } = default!;
 
         /// <summary>
         /// 
@@ -104,7 +104,7 @@ namespace G
         /// Internal ID from which points are deferred (hidden from reads). Only set for appendable segments.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("deferred_internal_id")]
-        public int? DeferredInternalId { get; set; }
+        public long? DeferredInternalId { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -142,20 +142,20 @@ namespace G
         public SegmentInfo(
             global::System.Guid uuid,
             global::G.SegmentType segmentType,
-            int numVectors,
-            int numPoints,
-            int numIndexedVectors,
-            int numDeletedVectors,
-            int vectorsSizeBytes,
-            int payloadsSizeBytes,
-            int ramUsageBytes,
-            int diskUsageBytes,
+            long numVectors,
+            long numPoints,
+            long numIndexedVectors,
+            long numDeletedVectors,
+            long vectorsSizeBytes,
+            long payloadsSizeBytes,
+            long ramUsageBytes,
+            long diskUsageBytes,
             bool isAppendable,
             global::System.Collections.Generic.Dictionary<string, global::G.PayloadIndexInfo> indexSchema,
             global::System.Collections.Generic.Dictionary<string, global::G.VectorDataInfo> vectorData,
-            int? numDeferredPoints,
-            int? numDeletedDeferredPoints,
-            int? deferredInternalId)
+            long? numDeferredPoints,
+            long? numDeletedDeferredPoints,
+            long? deferredInternalId)
         {
             this.Uuid = uuid;
             this.SegmentType = segmentType;

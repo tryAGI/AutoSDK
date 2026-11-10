@@ -1,4 +1,4 @@
-﻿//HintName: G.Models.DistributedClusterTelemetry.g.cs
+//HintName: G.Models.DistributedClusterTelemetry.g.cs
 
 #nullable enable
 
@@ -19,7 +19,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("number_of_peers")]
-        public int? NumberOfPeers { get; set; }
+        public long? NumberOfPeers { get; set; }
 
         /// <summary>
         /// 
@@ -42,7 +42,7 @@ namespace G
         public DistributedClusterTelemetry(
             bool enabled,
             global::System.Collections.Generic.Dictionary<string, global::G.DistributedPeerInfo> peers,
-            int? numberOfPeers)
+            long? numberOfPeers)
         {
             this.Enabled = enabled;
             this.NumberOfPeers = numberOfPeers;

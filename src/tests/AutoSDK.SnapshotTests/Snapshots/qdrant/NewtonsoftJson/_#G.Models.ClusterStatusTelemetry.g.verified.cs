@@ -1,4 +1,4 @@
-﻿//HintName: G.Models.ClusterStatusTelemetry.g.cs
+//HintName: G.Models.ClusterStatusTelemetry.g.cs
 
 #nullable enable
 
@@ -13,25 +13,25 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("number_of_peers", Required = global::Newtonsoft.Json.Required.Always)]
-        public int NumberOfPeers { get; set; } = default!;
+        public long NumberOfPeers { get; set; } = default!;
 
         /// <summary>
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("term", Required = global::Newtonsoft.Json.Required.Always)]
-        public int Term { get; set; } = default!;
+        public long Term { get; set; } = default!;
 
         /// <summary>
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("commit", Required = global::Newtonsoft.Json.Required.Always)]
-        public int Commit { get; set; } = default!;
+        public long Commit { get; set; } = default!;
 
         /// <summary>
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("pending_operations", Required = global::Newtonsoft.Json.Required.Always)]
-        public int PendingOperations { get; set; } = default!;
+        public long PendingOperations { get; set; } = default!;
 
         /// <summary>
         /// 
@@ -49,7 +49,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("peer_id")]
-        public int? PeerId { get; set; }
+        public long? PeerId { get; set; }
 
         /// <summary>
         /// Information about current consensus thread status
@@ -77,14 +77,14 @@ namespace G
         /// <param name="role"></param>
         /// <param name="peerId"></param>
         public ClusterStatusTelemetry(
-            int numberOfPeers,
-            int term,
-            int commit,
-            int pendingOperations,
+            long numberOfPeers,
+            long term,
+            long commit,
+            long pendingOperations,
             bool isVoter,
             global::G.ConsensusThreadStatus consensusThreadStatus,
             global::G.StateRole? role,
-            int? peerId)
+            long? peerId)
         {
             this.NumberOfPeers = numberOfPeers;
             this.Term = term;

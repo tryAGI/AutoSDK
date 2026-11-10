@@ -1,4 +1,4 @@
-﻿//HintName: G.Models.RecommendRequest.g.cs
+//HintName: G.Models.RecommendRequest.g.cs
 
 #nullable enable
 
@@ -53,13 +53,13 @@ namespace G
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("limit")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required int Limit { get; set; }
+        public required long Limit { get; set; }
 
         /// <summary>
         /// Offset of the first result to return. May be used to paginate results. Note: large offset values may cause performance issues.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("offset")]
-        public int? Offset { get; set; }
+        public long? Offset { get; set; }
 
         /// <summary>
         /// Select which payload to return with the response. Default is false.
@@ -151,14 +151,14 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public RecommendRequest(
-            int limit,
+            long limit,
             global::G.ShardKeySelector? shardKey,
             global::System.Collections.Generic.IList<global::G.RecommendExample>? positive,
             global::System.Collections.Generic.IList<global::G.RecommendExample>? negative,
             global::G.RecommendStrategy? strategy,
             global::G.Filter? filter,
             global::G.SearchParams? @params,
-            int? offset,
+            long? offset,
             global::G.WithPayloadInterface? withPayload,
             global::G.WithVector? withVector,
             float? scoreThreshold,

@@ -1,4 +1,4 @@
-﻿//HintName: G.Models.StrictModeMultivector.g.cs
+//HintName: G.Models.StrictModeMultivector.g.cs
 
 #nullable enable
 
@@ -13,7 +13,7 @@ namespace G
         /// Max number of vectors in a multivector
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("max_vectors")]
-        public int? MaxVectors { get; set; }
+        public long? MaxVectors { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -28,7 +28,7 @@ namespace G
         /// Max number of vectors in a multivector
         /// </param>
         public StrictModeMultivector(
-            int? maxVectors)
+            long? maxVectors)
         {
             this.MaxVectors = maxVectors;
         }

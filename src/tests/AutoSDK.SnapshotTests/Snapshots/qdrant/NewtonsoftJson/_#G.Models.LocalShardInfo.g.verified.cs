@@ -1,4 +1,4 @@
-﻿//HintName: G.Models.LocalShardInfo.g.cs
+//HintName: G.Models.LocalShardInfo.g.cs
 
 #nullable enable
 
@@ -13,7 +13,7 @@ namespace G
         /// Local shard id
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("shard_id", Required = global::Newtonsoft.Json.Required.Always)]
-        public int ShardId { get; set; } = default!;
+        public long ShardId { get; set; } = default!;
 
         /// <summary>
         /// User-defined sharding key
@@ -25,7 +25,7 @@ namespace G
         /// Number of points in the shard
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("points_count", Required = global::Newtonsoft.Json.Required.Always)]
-        public int PointsCount { get; set; } = default!;
+        public long PointsCount { get; set; } = default!;
 
         /// <summary>
         /// State of the single shard within a replica set.
@@ -56,8 +56,8 @@ namespace G
         /// User-defined sharding key
         /// </param>
         public LocalShardInfo(
-            int shardId,
-            int pointsCount,
+            long shardId,
+            long pointsCount,
             global::G.ReplicaState state,
             global::G.ShardKey? shardKey)
         {

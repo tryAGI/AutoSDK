@@ -1,4 +1,4 @@
-﻿//HintName: G.Models.RaftInfo.g.cs
+//HintName: G.Models.RaftInfo.g.cs
 
 #nullable enable
 
@@ -13,25 +13,25 @@ namespace G
         /// Raft divides time into terms of arbitrary length, each beginning with an election. If a candidate wins the election, it remains the leader for the rest of the term. The term number increases monotonically. Each server stores the current term number which is also exchanged in every communication.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("term", Required = global::Newtonsoft.Json.Required.Always)]
-        public int Term { get; set; } = default!;
+        public long Term { get; set; } = default!;
 
         /// <summary>
         /// The index of the latest committed (finalized) operation that this peer is aware of.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("commit", Required = global::Newtonsoft.Json.Required.Always)]
-        public int Commit { get; set; } = default!;
+        public long Commit { get; set; } = default!;
 
         /// <summary>
         /// Number of consensus operations pending to be applied on this peer
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("pending_operations", Required = global::Newtonsoft.Json.Required.Always)]
-        public int PendingOperations { get; set; } = default!;
+        public long PendingOperations { get; set; } = default!;
 
         /// <summary>
         /// Leader of the current term
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("leader")]
-        public int? Leader { get; set; }
+        public long? Leader { get; set; }
 
         /// <summary>
         /// Role of this peer in the current term
@@ -73,11 +73,11 @@ namespace G
         /// Role of this peer in the current term
         /// </param>
         public RaftInfo(
-            int term,
-            int commit,
-            int pendingOperations,
+            long term,
+            long commit,
+            long pendingOperations,
             bool isVoter,
-            int? leader,
+            long? leader,
             global::G.StateRole? role)
         {
             this.Term = term;

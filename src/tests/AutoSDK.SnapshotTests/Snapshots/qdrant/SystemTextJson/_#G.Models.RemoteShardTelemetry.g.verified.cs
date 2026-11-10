@@ -1,4 +1,4 @@
-﻿//HintName: G.Models.RemoteShardTelemetry.g.cs
+//HintName: G.Models.RemoteShardTelemetry.g.cs
 
 #nullable enable
 
@@ -14,14 +14,14 @@ namespace G
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("shard_id")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required int ShardId { get; set; }
+        public required long ShardId { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("peer_id")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required int PeerId { get; set; }
+        public required long PeerId { get; set; }
 
         /// <summary>
         /// 
@@ -52,8 +52,8 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public RemoteShardTelemetry(
-            int shardId,
-            int peerId,
+            long shardId,
+            long peerId,
             global::G.OperationDurationStatistics? searches,
             global::G.OperationDurationStatistics? updates)
         {

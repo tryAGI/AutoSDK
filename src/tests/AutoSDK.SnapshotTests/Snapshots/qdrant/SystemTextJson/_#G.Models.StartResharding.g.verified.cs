@@ -1,4 +1,4 @@
-﻿//HintName: G.Models.StartResharding.g.cs
+//HintName: G.Models.StartResharding.g.cs
 
 #nullable enable
 
@@ -23,7 +23,7 @@ namespace G
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("peer_id")]
-        public int? PeerId { get; set; }
+        public long? PeerId { get; set; }
 
         /// <summary>
         /// 
@@ -52,7 +52,7 @@ namespace G
 #endif
         public StartResharding(
             global::G.ReshardingDirection direction,
-            int? peerId,
+            long? peerId,
             global::G.ShardKey? shardKey)
         {
             this.Direction = direction;

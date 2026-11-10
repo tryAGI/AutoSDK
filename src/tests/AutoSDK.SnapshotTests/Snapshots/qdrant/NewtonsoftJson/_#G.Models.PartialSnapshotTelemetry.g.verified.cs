@@ -1,4 +1,4 @@
-﻿//HintName: G.Models.PartialSnapshotTelemetry.g.cs
+//HintName: G.Models.PartialSnapshotTelemetry.g.cs
 
 #nullable enable
 
@@ -13,7 +13,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("ongoing_create_snapshot_requests", Required = global::Newtonsoft.Json.Required.Always)]
-        public int OngoingCreateSnapshotRequests { get; set; } = default!;
+        public long OngoingCreateSnapshotRequests { get; set; } = default!;
 
         /// <summary>
         /// 
@@ -25,7 +25,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("recovery_timestamp", Required = global::Newtonsoft.Json.Required.Always)]
-        public int RecoveryTimestamp { get; set; } = default!;
+        public long RecoveryTimestamp { get; set; } = default!;
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -40,9 +40,9 @@ namespace G
         /// <param name="isRecovering"></param>
         /// <param name="recoveryTimestamp"></param>
         public PartialSnapshotTelemetry(
-            int ongoingCreateSnapshotRequests,
+            long ongoingCreateSnapshotRequests,
             bool isRecovering,
-            int recoveryTimestamp)
+            long recoveryTimestamp)
         {
             this.OngoingCreateSnapshotRequests = ongoingCreateSnapshotRequests;
             this.IsRecovering = isRecovering;

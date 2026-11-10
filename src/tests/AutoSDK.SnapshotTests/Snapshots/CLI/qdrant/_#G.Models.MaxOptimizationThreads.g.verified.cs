@@ -51,9 +51,9 @@ namespace G
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        public int? MaxOptimizationThreadsVariant2 { get; init; }
+        public long? MaxOptimizationThreadsVariant2 { get; init; }
 #else
-        public int? MaxOptimizationThreadsVariant2 { get; }
+        public long? MaxOptimizationThreadsVariant2 { get; }
 #endif
 
         /// <summary>
@@ -71,7 +71,7 @@ namespace G
 #if NET6_0_OR_GREATER
             [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
 #endif
-            out int? value)
+            out long? value)
         {
             value = MaxOptimizationThreadsVariant2;
             return IsMaxOptimizationThreadsVariant2;
@@ -80,7 +80,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public int PickMaxOptimizationThreadsVariant2() => MaxOptimizationThreadsVariant2 is { } value
+        public long PickMaxOptimizationThreadsVariant2() => MaxOptimizationThreadsVariant2 is { } value
             ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'MaxOptimizationThreadsVariant2' but the value was {ToString()}.");
         /// <summary>
@@ -109,17 +109,17 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator MaxOptimizationThreads(int value) => new MaxOptimizationThreads((int?)value);
+        public static implicit operator MaxOptimizationThreads(long value) => new MaxOptimizationThreads((long?)value);
 
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator int?(MaxOptimizationThreads @this) => @this.MaxOptimizationThreadsVariant2;
+        public static implicit operator long?(MaxOptimizationThreads @this) => @this.MaxOptimizationThreadsVariant2;
 
         /// <summary>
         /// 
         /// </summary>
-        public MaxOptimizationThreads(int? value)
+        public MaxOptimizationThreads(long? value)
         {
             MaxOptimizationThreadsVariant2 = value;
         }
@@ -127,14 +127,14 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static MaxOptimizationThreads FromMaxOptimizationThreadsVariant2(int? value) => new MaxOptimizationThreads(value);
+        public static MaxOptimizationThreads FromMaxOptimizationThreadsVariant2(long? value) => new MaxOptimizationThreads(value);
 
         /// <summary>
         /// 
         /// </summary>
         public MaxOptimizationThreads(
             global::G.MaxOptimizationThreadsSetting? setting,
-            int? maxOptimizationThreadsVariant2
+            long? maxOptimizationThreadsVariant2
             )
         {
             Setting = setting;
@@ -170,7 +170,7 @@ namespace G
         /// </summary>
         public TResult? Match<TResult>(
             global::System.Func<global::G.MaxOptimizationThreadsSetting?, TResult>? setting = null,
-            global::System.Func<int?, TResult>? maxOptimizationThreadsVariant2 = null,
+            global::System.Func<long?, TResult>? maxOptimizationThreadsVariant2 = null,
             bool validate = true)
         {
             if (validate)
@@ -196,7 +196,7 @@ namespace G
         public void Match(
             global::System.Action<global::G.MaxOptimizationThreadsSetting?>? setting = null,
 
-            global::System.Action<int?>? maxOptimizationThreadsVariant2 = null,
+            global::System.Action<long?>? maxOptimizationThreadsVariant2 = null,
             bool validate = true)
         {
             if (validate)
@@ -219,7 +219,7 @@ namespace G
         /// </summary>
         public void Switch(
             global::System.Action<global::G.MaxOptimizationThreadsSetting?>? setting = null,
-            global::System.Action<int?>? maxOptimizationThreadsVariant2 = null,
+            global::System.Action<long?>? maxOptimizationThreadsVariant2 = null,
             bool validate = true)
         {
             if (validate)
@@ -247,7 +247,7 @@ namespace G
                 Setting,
                 typeof(global::G.MaxOptimizationThreadsSetting),
                 MaxOptimizationThreadsVariant2,
-                typeof(int),
+                typeof(long),
             };
             const int offset = unchecked((int)2166136261);
             const int prime = 16777619;
@@ -265,7 +265,7 @@ namespace G
         {
             return
                 global::System.Collections.Generic.EqualityComparer<global::G.MaxOptimizationThreadsSetting?>.Default.Equals(Setting, other.Setting) &&
-                global::System.Collections.Generic.EqualityComparer<int?>.Default.Equals(MaxOptimizationThreadsVariant2, other.MaxOptimizationThreadsVariant2) 
+                global::System.Collections.Generic.EqualityComparer<long?>.Default.Equals(MaxOptimizationThreadsVariant2, other.MaxOptimizationThreadsVariant2) 
                 ;
         }
 

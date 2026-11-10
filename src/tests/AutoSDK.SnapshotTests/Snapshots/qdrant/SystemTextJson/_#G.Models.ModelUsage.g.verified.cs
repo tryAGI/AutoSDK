@@ -1,4 +1,4 @@
-﻿//HintName: G.Models.ModelUsage.g.cs
+//HintName: G.Models.ModelUsage.g.cs
 
 #nullable enable
 
@@ -14,7 +14,7 @@ namespace G
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("tokens")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required int Tokens { get; set; }
+        public required long Tokens { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -30,7 +30,7 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public ModelUsage(
-            int tokens)
+            long tokens)
         {
             this.Tokens = tokens;
         }

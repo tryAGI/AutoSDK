@@ -1,4 +1,4 @@
-﻿//HintName: G.Models.CollectionsAggregatedTelemetry.g.cs
+//HintName: G.Models.CollectionsAggregatedTelemetry.g.cs
 
 #nullable enable
 
@@ -13,7 +13,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("vectors", Required = global::Newtonsoft.Json.Required.Always)]
-        public int Vectors { get; set; } = default!;
+        public long Vectors { get; set; } = default!;
 
         /// <summary>
         /// Current state of the collection
@@ -42,7 +42,7 @@ namespace G
         /// </param>
         /// <param name="params"></param>
         public CollectionsAggregatedTelemetry(
-            int vectors,
+            long vectors,
             global::G.OptimizersStatus optimizersStatus,
             global::G.CollectionParams @params)
         {

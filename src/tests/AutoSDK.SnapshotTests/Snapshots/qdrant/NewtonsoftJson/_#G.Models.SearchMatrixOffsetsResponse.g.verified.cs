@@ -1,4 +1,4 @@
-﻿//HintName: G.Models.SearchMatrixOffsetsResponse.g.cs
+//HintName: G.Models.SearchMatrixOffsetsResponse.g.cs
 
 #nullable enable
 
@@ -13,13 +13,13 @@ namespace G
         /// Row indices of the matrix
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("offsets_row", Required = global::Newtonsoft.Json.Required.Always)]
-        public global::System.Collections.Generic.IList<int> OffsetsRow { get; set; } = default!;
+        public global::System.Collections.Generic.IList<long> OffsetsRow { get; set; } = default!;
 
         /// <summary>
         /// Column indices of the matrix
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("offsets_col", Required = global::Newtonsoft.Json.Required.Always)]
-        public global::System.Collections.Generic.IList<int> OffsetsCol { get; set; } = default!;
+        public global::System.Collections.Generic.IList<long> OffsetsCol { get; set; } = default!;
 
         /// <summary>
         /// Scores associated with matrix coordinates
@@ -55,8 +55,8 @@ namespace G
         /// Ids of the points in order
         /// </param>
         public SearchMatrixOffsetsResponse(
-            global::System.Collections.Generic.IList<int> offsetsRow,
-            global::System.Collections.Generic.IList<int> offsetsCol,
+            global::System.Collections.Generic.IList<long> offsetsRow,
+            global::System.Collections.Generic.IList<long> offsetsCol,
             global::System.Collections.Generic.IList<float> scores,
             global::System.Collections.Generic.IList<global::G.ExtendedPointId> ids)
         {

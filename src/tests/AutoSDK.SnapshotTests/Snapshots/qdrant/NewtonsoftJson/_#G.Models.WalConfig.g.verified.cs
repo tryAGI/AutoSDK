@@ -1,4 +1,4 @@
-﻿//HintName: G.Models.WalConfig.g.cs
+//HintName: G.Models.WalConfig.g.cs
 
 #nullable enable
 
@@ -13,20 +13,20 @@ namespace G
         /// Size of a single WAL segment in MB
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("wal_capacity_mb", Required = global::Newtonsoft.Json.Required.Always)]
-        public int WalCapacityMb { get; set; } = default!;
+        public long WalCapacityMb { get; set; } = default!;
 
         /// <summary>
         /// Number of WAL segments to create ahead of actually used ones
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("wal_segments_ahead", Required = global::Newtonsoft.Json.Required.Always)]
-        public int WalSegmentsAhead { get; set; } = default!;
+        public long WalSegmentsAhead { get; set; } = default!;
 
         /// <summary>
         /// Number of closed WAL segments to keep<br/>
         /// Default Value: 1
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("wal_retain_closed")]
-        public int? WalRetainClosed { get; set; }
+        public long? WalRetainClosed { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -48,9 +48,9 @@ namespace G
         /// Default Value: 1
         /// </param>
         public WalConfig(
-            int walCapacityMb,
-            int walSegmentsAhead,
-            int? walRetainClosed)
+            long walCapacityMb,
+            long walSegmentsAhead,
+            long? walRetainClosed)
         {
             this.WalCapacityMb = walCapacityMb;
             this.WalSegmentsAhead = walSegmentsAhead;

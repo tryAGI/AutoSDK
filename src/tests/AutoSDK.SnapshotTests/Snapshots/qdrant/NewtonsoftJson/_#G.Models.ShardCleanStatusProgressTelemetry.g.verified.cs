@@ -1,4 +1,4 @@
-﻿//HintName: G.Models.ShardCleanStatusProgressTelemetry.g.cs
+//HintName: G.Models.ShardCleanStatusProgressTelemetry.g.cs
 
 #nullable enable
 
@@ -13,7 +13,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("deleted_points", Required = global::Newtonsoft.Json.Required.Always)]
-        public int DeletedPoints { get; set; } = default!;
+        public long DeletedPoints { get; set; } = default!;
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -26,7 +26,7 @@ namespace G
         /// </summary>
         /// <param name="deletedPoints"></param>
         public ShardCleanStatusProgressTelemetry(
-            int deletedPoints)
+            long deletedPoints)
         {
             this.DeletedPoints = deletedPoints;
         }

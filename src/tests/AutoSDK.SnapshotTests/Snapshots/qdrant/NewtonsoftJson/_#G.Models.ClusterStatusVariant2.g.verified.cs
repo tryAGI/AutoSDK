@@ -1,4 +1,4 @@
-﻿//HintName: G.Models.ClusterStatusVariant2.g.cs
+//HintName: G.Models.ClusterStatusVariant2.g.cs
 
 #nullable enable
 
@@ -20,7 +20,7 @@ namespace G
         /// ID of this peer
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("peer_id", Required = global::Newtonsoft.Json.Required.Always)]
-        public int PeerId { get; set; } = default!;
+        public long PeerId { get; set; } = default!;
 
         /// <summary>
         /// Peers composition of the cluster with main information
@@ -72,7 +72,7 @@ namespace G
         /// </param>
         /// <param name="status"></param>
         public ClusterStatusVariant2(
-            int peerId,
+            long peerId,
             global::System.Collections.Generic.Dictionary<string, global::G.PeerInfo> peers,
             global::G.RaftInfo raftInfo,
             global::G.ConsensusThreadStatus consensusThreadStatus,

@@ -1,4 +1,4 @@
-﻿//HintName: G.Commands.DistributedCreateShardKeyCommand.g.cs
+//HintName: G.Commands.DistributedCreateShardKeyCommand.g.cs
 
 #nullable enable
 
@@ -15,9 +15,9 @@ namespace G
             string collectionName,
             int? timeout,
             global::G.ShardKey shardKey,
-            int? shardsNumber,
-            int? replicationFactor,
-            global::System.Collections.Generic.IList<int>? placement,
+            long? shardsNumber,
+            long? replicationFactor,
+            global::System.Collections.Generic.IList<long>? placement,
             global::G.ReplicaState? initialState,
             global::System.Threading.CancellationToken cancellationToken);
         partial void Complete(
@@ -45,19 +45,19 @@ namespace G
 If timeout is reached - request will return with service error.",
         };
 
-        private global::System.CommandLine.Option<int?> ShardsNumber { get; } = new(
+        private global::System.CommandLine.Option<long?> ShardsNumber { get; } = new(
             name: "shardsNumber")
         {
             Description = @"How many shards to create for this key If not specified, will use the default value from config",
         };
 
-        private global::System.CommandLine.Option<int?> ReplicationFactor { get; } = new(
+        private global::System.CommandLine.Option<long?> ReplicationFactor { get; } = new(
             name: "replicationFactor")
         {
             Description = @"How many replicas to create for each shard If not specified, will use the default value from config",
         };
 
-        private global::System.CommandLine.Option<global::System.Collections.Generic.IList<int>?> Placement { get; } = new(
+        private global::System.CommandLine.Option<global::System.Collections.Generic.IList<long>?> Placement { get; } = new(
             name: "placement")
         {
             Description = @"Placement of shards for this key List of peer ids, that can be used to place shards for this key If not specified, will be randomly placed among all peers",

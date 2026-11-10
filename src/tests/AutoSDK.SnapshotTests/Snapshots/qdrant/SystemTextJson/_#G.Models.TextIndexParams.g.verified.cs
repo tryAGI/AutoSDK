@@ -1,4 +1,4 @@
-﻿//HintName: G.Models.TextIndexParams.g.cs
+//HintName: G.Models.TextIndexParams.g.cs
 
 #nullable enable
 
@@ -27,13 +27,13 @@ namespace G
         /// Minimum characters to be tokenized.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("min_token_len")]
-        public int? MinTokenLen { get; set; }
+        public long? MinTokenLen { get; set; }
 
         /// <summary>
         /// Maximum characters to be tokenized.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("max_token_len")]
-        public int? MaxTokenLen { get; set; }
+        public long? MaxTokenLen { get; set; }
 
         /// <summary>
         /// If true, lowercase all tokens. Default: true.
@@ -121,8 +121,8 @@ namespace G
         public TextIndexParams(
             global::G.TextIndexType type,
             global::G.TokenizerType? tokenizer,
-            int? minTokenLen,
-            int? maxTokenLen,
+            long? minTokenLen,
+            long? maxTokenLen,
             bool? lowercase,
             bool? asciiFolding,
             bool? phraseMatching,

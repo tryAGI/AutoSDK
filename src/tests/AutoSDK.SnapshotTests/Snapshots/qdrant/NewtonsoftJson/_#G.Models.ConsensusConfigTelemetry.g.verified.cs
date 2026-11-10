@@ -1,4 +1,4 @@
-﻿//HintName: G.Models.ConsensusConfigTelemetry.g.cs
+//HintName: G.Models.ConsensusConfigTelemetry.g.cs
 
 #nullable enable
 
@@ -13,19 +13,19 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("max_message_queue_size", Required = global::Newtonsoft.Json.Required.Always)]
-        public int MaxMessageQueueSize { get; set; } = default!;
+        public long MaxMessageQueueSize { get; set; } = default!;
 
         /// <summary>
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("tick_period_ms", Required = global::Newtonsoft.Json.Required.Always)]
-        public int TickPeriodMs { get; set; } = default!;
+        public long TickPeriodMs { get; set; } = default!;
 
         /// <summary>
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("bootstrap_timeout_sec", Required = global::Newtonsoft.Json.Required.Always)]
-        public int BootstrapTimeoutSec { get; set; } = default!;
+        public long BootstrapTimeoutSec { get; set; } = default!;
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -40,9 +40,9 @@ namespace G
         /// <param name="tickPeriodMs"></param>
         /// <param name="bootstrapTimeoutSec"></param>
         public ConsensusConfigTelemetry(
-            int maxMessageQueueSize,
-            int tickPeriodMs,
-            int bootstrapTimeoutSec)
+            long maxMessageQueueSize,
+            long tickPeriodMs,
+            long bootstrapTimeoutSec)
         {
             this.MaxMessageQueueSize = maxMessageQueueSize;
             this.TickPeriodMs = tickPeriodMs;

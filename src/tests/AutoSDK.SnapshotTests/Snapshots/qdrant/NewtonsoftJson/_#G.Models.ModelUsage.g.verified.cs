@@ -1,4 +1,4 @@
-﻿//HintName: G.Models.ModelUsage.g.cs
+//HintName: G.Models.ModelUsage.g.cs
 
 #nullable enable
 
@@ -13,7 +13,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("tokens", Required = global::Newtonsoft.Json.Required.Always)]
-        public int Tokens { get; set; } = default!;
+        public long Tokens { get; set; } = default!;
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -26,7 +26,7 @@ namespace G
         /// </summary>
         /// <param name="tokens"></param>
         public ModelUsage(
-            int tokens)
+            long tokens)
         {
             this.Tokens = tokens;
         }

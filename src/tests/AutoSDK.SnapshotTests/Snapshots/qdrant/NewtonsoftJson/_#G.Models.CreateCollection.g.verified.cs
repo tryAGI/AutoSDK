@@ -1,4 +1,4 @@
-﻿//HintName: G.Models.CreateCollection.g.cs
+//HintName: G.Models.CreateCollection.g.cs
 
 #nullable enable
 
@@ -24,7 +24,7 @@ namespace G
         /// Default Value: openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("shard_number")]
-        public int? ShardNumber { get; set; }
+        public long? ShardNumber { get; set; }
 
         /// <summary>
         /// Sharding method Default is Auto - points are distributed across all available shards Custom - points are distributed across shards according to shard key<br/>
@@ -38,14 +38,14 @@ namespace G
         /// Default Value: openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("replication_factor")]
-        public int? ReplicationFactor { get; set; }
+        public long? ReplicationFactor { get; set; }
 
         /// <summary>
         /// Defines how many replicas should apply the operation for us to consider it successful. Increasing this number will make the collection more resilient to inconsistencies, but will also make it fail if not enough replicas are available. Does not have any performance impact.<br/>
         /// Default Value: openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("write_consistency_factor")]
-        public int? WriteConsistencyFactor { get; set; }
+        public long? WriteConsistencyFactor { get; set; }
 
         /// <summary>
         /// If true - point's payload will not be stored in memory. It will be read from the disk every time it is requested. This setting saves RAM by (slightly) increasing the response time. Note: those payload values that are involved in filtering and are indexed - remain in RAM.<br/>
@@ -159,10 +159,10 @@ namespace G
         /// </param>
         public CreateCollection(
             global::G.VectorsConfig? vectors,
-            int? shardNumber,
+            long? shardNumber,
             global::G.ShardingMethod? shardingMethod,
-            int? replicationFactor,
-            int? writeConsistencyFactor,
+            long? replicationFactor,
+            long? writeConsistencyFactor,
             bool? onDiskPayload,
             global::G.HnswConfigDiff? hnswConfig,
             global::G.WalConfigDiff? walConfig,

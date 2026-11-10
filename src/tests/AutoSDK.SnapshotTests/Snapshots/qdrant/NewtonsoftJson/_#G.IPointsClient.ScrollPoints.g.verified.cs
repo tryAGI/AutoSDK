@@ -1,4 +1,4 @@
-﻿//HintName: G.IPointsClient.ScrollPoints.g.cs
+//HintName: G.IPointsClient.ScrollPoints.g.cs
 #nullable enable
 
 namespace G
@@ -104,7 +104,7 @@ namespace G
             int? timeout = default,
             global::G.ShardKeySelector? shardKey = default,
             global::G.ExtendedPointId? offset = default,
-            int? limit = default,
+            long? limit = default,
             global::G.Filter? filter = default,
             global::G.WithPayloadInterface? withPayload = default,
             global::G.WithVector? withVector = default,

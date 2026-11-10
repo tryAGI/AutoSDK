@@ -1,4 +1,4 @@
-﻿//HintName: G.Commands.SearchQueryPointsCommand.g.cs
+//HintName: G.Commands.SearchQueryPointsCommand.g.cs
 
 #nullable enable
 
@@ -22,8 +22,8 @@ namespace G
             global::G.Filter? filter,
             global::G.SearchParams? @params,
             float? scoreThreshold,
-            int? limit,
-            int? offset,
+            long? limit,
+            long? offset,
             global::G.WithVector? withVector,
             global::G.WithPayloadInterface? withPayload,
             global::G.LookupLocation? lookupFrom,
@@ -94,13 +94,13 @@ namespace G
             Description = @"Return points with scores better than this threshold.",
         };
 
-        private global::System.CommandLine.Option<int?> Limit { get; } = new(
+        private global::System.CommandLine.Option<long?> Limit { get; } = new(
             name: "limit")
         {
             Description = @"Max number of points to return. Default is 10.",
         };
 
-        private global::System.CommandLine.Option<int?> Offset { get; } = new(
+        private global::System.CommandLine.Option<long?> Offset { get; } = new(
             name: "offset")
         {
             Description = @"Offset of the result. Skip this many points. Default is 0",

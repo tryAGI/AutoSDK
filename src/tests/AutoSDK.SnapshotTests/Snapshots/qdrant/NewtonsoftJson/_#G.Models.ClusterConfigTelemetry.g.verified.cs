@@ -1,4 +1,4 @@
-﻿//HintName: G.Models.ClusterConfigTelemetry.g.cs
+//HintName: G.Models.ClusterConfigTelemetry.g.cs
 
 #nullable enable
 
@@ -13,7 +13,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("grpc_timeout_ms", Required = global::Newtonsoft.Json.Required.Always)]
-        public int GrpcTimeoutMs { get; set; } = default!;
+        public long GrpcTimeoutMs { get; set; } = default!;
 
         /// <summary>
         /// 
@@ -40,7 +40,7 @@ namespace G
         /// <param name="p2p"></param>
         /// <param name="consensus"></param>
         public ClusterConfigTelemetry(
-            int grpcTimeoutMs,
+            long grpcTimeoutMs,
             global::G.P2pConfigTelemetry p2p,
             global::G.ConsensusConfigTelemetry consensus)
         {

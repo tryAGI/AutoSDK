@@ -1,4 +1,4 @@
-﻿//HintName: G.Models.VectorDataConfig.g.cs
+//HintName: G.Models.VectorDataConfig.g.cs
 
 #nullable enable
 
@@ -13,7 +13,7 @@ namespace G
         /// Size/dimensionality of the vectors used
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("size", Required = global::Newtonsoft.Json.Required.Always)]
-        public int Size { get; set; } = default!;
+        public long Size { get; set; } = default!;
 
         /// <summary>
         /// Type of internal tags, build from payload Distance function types used to compare vectors
@@ -83,7 +83,7 @@ namespace G
         /// Vector specific configuration to set specific storage element type
         /// </param>
         public VectorDataConfig(
-            int size,
+            long size,
             global::G.Distance distance,
             global::G.VectorStorageType storageType,
             global::G.Indexes index,

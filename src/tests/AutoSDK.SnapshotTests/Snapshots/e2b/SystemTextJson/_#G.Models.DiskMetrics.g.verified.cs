@@ -1,4 +1,4 @@
-﻿//HintName: G.Models.DiskMetrics.g.cs
+//HintName: G.Models.DiskMetrics.g.cs
 
 #nullable enable
 
@@ -35,14 +35,14 @@ namespace G
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("usedBytes")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required int UsedBytes { get; set; }
+        public required long UsedBytes { get; set; }
 
         /// <summary>
         /// Total space in bytes
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("totalBytes")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required int TotalBytes { get; set; }
+        public required long TotalBytes { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -75,8 +75,8 @@ namespace G
             string mountPoint,
             string device,
             string filesystemType,
-            int usedBytes,
-            int totalBytes)
+            long usedBytes,
+            long totalBytes)
         {
             this.MountPoint = mountPoint ?? throw new global::System.ArgumentNullException(nameof(mountPoint));
             this.Device = device ?? throw new global::System.ArgumentNullException(nameof(device));

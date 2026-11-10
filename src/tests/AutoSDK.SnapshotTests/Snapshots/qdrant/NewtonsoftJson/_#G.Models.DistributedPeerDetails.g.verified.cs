@@ -1,4 +1,4 @@
-﻿//HintName: G.Models.DistributedPeerDetails.g.cs
+//HintName: G.Models.DistributedPeerDetails.g.cs
 
 #nullable enable
 
@@ -31,19 +31,19 @@ namespace G
         /// Election term
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("term", Required = global::Newtonsoft.Json.Required.Always)]
-        public int Term { get; set; } = default!;
+        public long Term { get; set; } = default!;
 
         /// <summary>
         /// Latest accepted commit
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("commit", Required = global::Newtonsoft.Json.Required.Always)]
-        public int Commit { get; set; } = default!;
+        public long Commit { get; set; } = default!;
 
         /// <summary>
         /// Number of operations pending for being applied
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("num_pending_operations", Required = global::Newtonsoft.Json.Required.Always)]
-        public int NumPendingOperations { get; set; } = default!;
+        public long NumPendingOperations { get; set; } = default!;
 
         /// <summary>
         /// Information about current consensus thread status
@@ -84,9 +84,9 @@ namespace G
         public DistributedPeerDetails(
             string version,
             bool isVoter,
-            int term,
-            int commit,
-            int numPendingOperations,
+            long term,
+            long commit,
+            long numPendingOperations,
             global::G.ConsensusThreadStatus consensusThreadStatus,
             global::G.StateRole? role)
         {

@@ -1,4 +1,4 @@
-﻿//HintName: G.Models.MessageSendErrors.g.cs
+//HintName: G.Models.MessageSendErrors.g.cs
 
 #nullable enable
 
@@ -13,7 +13,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("count", Required = global::Newtonsoft.Json.Required.Always)]
-        public int Count { get; set; } = default!;
+        public long Count { get; set; } = default!;
 
         /// <summary>
         /// 
@@ -42,7 +42,7 @@ namespace G
         /// Timestamp of the latest error
         /// </param>
         public MessageSendErrors(
-            int count,
+            long count,
             string? latestError,
             global::System.DateTime? latestErrorTimestamp)
         {

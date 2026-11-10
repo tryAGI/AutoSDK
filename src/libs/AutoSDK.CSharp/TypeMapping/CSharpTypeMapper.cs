@@ -471,6 +471,17 @@ public static class CSharpTypeMapper
             ("integer", "int32") => "int",
             ("integer", "int16") => "short",
             ("integer", "uint8") => "byte",
+            // Unsigned formats map to the next signed type that holds their whole range, rather
+            // than to ulong/uint, which are not CLS-compliant and would break the SDKs that set
+            // CLSCompliant(true). Before this, they fell through to `int` and any value above
+            // 2^31 threw while deserializing a perfectly good response - Qdrant's `peer_id` is a
+            // u64 and did exactly that.
+            ("integer", "uint64") => "long",
+            ("integer", "uint32") => "long",
+            ("integer", "uint") => "long",
+            ("integer", "uint16") => "int",
+            ("integer", "int") => "int",
+            ("integer", "int8") => "sbyte",
             ("number", "float") => "float",
             ("number", "double") => "double",
             ("number", "decimal") => "decimal",

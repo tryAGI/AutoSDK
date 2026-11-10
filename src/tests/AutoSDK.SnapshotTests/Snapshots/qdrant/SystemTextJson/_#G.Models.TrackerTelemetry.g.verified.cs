@@ -1,4 +1,4 @@
-﻿//HintName: G.Models.TrackerTelemetry.g.cs
+//HintName: G.Models.TrackerTelemetry.g.cs
 
 #nullable enable
 
@@ -28,7 +28,7 @@ namespace G
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("segment_ids")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::System.Collections.Generic.IList<int> SegmentIds { get; set; }
+        public required global::System.Collections.Generic.IList<long> SegmentIds { get; set; }
 
         /// <summary>
         /// Segment UUIDs being optimized. Refers to same segments as in `segment_ids`, but trackable across restarts, and reflect their directory name.
@@ -94,7 +94,7 @@ namespace G
         public TrackerTelemetry(
             string name,
             global::System.Guid uuid,
-            global::System.Collections.Generic.IList<int> segmentIds,
+            global::System.Collections.Generic.IList<long> segmentIds,
             global::System.Collections.Generic.IList<global::System.Guid> segmentUuids,
             global::G.TrackerStatus status,
             global::System.DateTime startAt,

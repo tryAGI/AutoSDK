@@ -1,4 +1,4 @@
-﻿//HintName: G.Models.SegmentInfo.g.cs
+//HintName: G.Models.SegmentInfo.g.cs
 
 #nullable enable
 
@@ -29,68 +29,68 @@ namespace G
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("num_vectors")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required int NumVectors { get; set; }
+        public required long NumVectors { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("num_points")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required int NumPoints { get; set; }
+        public required long NumPoints { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("num_deferred_points")]
-        public int? NumDeferredPoints { get; set; }
+        public long? NumDeferredPoints { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("num_deleted_deferred_points")]
-        public int? NumDeletedDeferredPoints { get; set; }
+        public long? NumDeletedDeferredPoints { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("num_indexed_vectors")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required int NumIndexedVectors { get; set; }
+        public required long NumIndexedVectors { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("num_deleted_vectors")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required int NumDeletedVectors { get; set; }
+        public required long NumDeletedVectors { get; set; }
 
         /// <summary>
         /// An ESTIMATION of effective amount of bytes used for vectors Do NOT rely on this number unless you know what you are doing
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("vectors_size_bytes")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required int VectorsSizeBytes { get; set; }
+        public required long VectorsSizeBytes { get; set; }
 
         /// <summary>
         /// An estimation of the effective amount of bytes used for payloads
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("payloads_size_bytes")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required int PayloadsSizeBytes { get; set; }
+        public required long PayloadsSizeBytes { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("ram_usage_bytes")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required int RamUsageBytes { get; set; }
+        public required long RamUsageBytes { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("disk_usage_bytes")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required int DiskUsageBytes { get; set; }
+        public required long DiskUsageBytes { get; set; }
 
         /// <summary>
         /// 
@@ -117,7 +117,7 @@ namespace G
         /// Internal ID from which points are deferred (hidden from reads). Only set for appendable segments.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("deferred_internal_id")]
-        public int? DeferredInternalId { get; set; }
+        public long? DeferredInternalId { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -158,20 +158,20 @@ namespace G
         public SegmentInfo(
             global::System.Guid uuid,
             global::G.SegmentType segmentType,
-            int numVectors,
-            int numPoints,
-            int numIndexedVectors,
-            int numDeletedVectors,
-            int vectorsSizeBytes,
-            int payloadsSizeBytes,
-            int ramUsageBytes,
-            int diskUsageBytes,
+            long numVectors,
+            long numPoints,
+            long numIndexedVectors,
+            long numDeletedVectors,
+            long vectorsSizeBytes,
+            long payloadsSizeBytes,
+            long ramUsageBytes,
+            long diskUsageBytes,
             bool isAppendable,
             global::System.Collections.Generic.Dictionary<string, global::G.PayloadIndexInfo> indexSchema,
             global::System.Collections.Generic.Dictionary<string, global::G.VectorDataInfo> vectorData,
-            int? numDeferredPoints,
-            int? numDeletedDeferredPoints,
-            int? deferredInternalId)
+            long? numDeferredPoints,
+            long? numDeletedDeferredPoints,
+            long? deferredInternalId)
         {
             this.Uuid = uuid;
             this.SegmentType = segmentType;

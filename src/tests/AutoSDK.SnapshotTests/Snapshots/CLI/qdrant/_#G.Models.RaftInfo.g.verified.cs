@@ -1,4 +1,4 @@
-﻿//HintName: G.Models.RaftInfo.g.cs
+//HintName: G.Models.RaftInfo.g.cs
 
 #nullable enable
 
@@ -14,27 +14,27 @@ namespace G
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("term")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required int Term { get; set; }
+        public required long Term { get; set; }
 
         /// <summary>
         /// The index of the latest committed (finalized) operation that this peer is aware of.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("commit")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required int Commit { get; set; }
+        public required long Commit { get; set; }
 
         /// <summary>
         /// Number of consensus operations pending to be applied on this peer
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("pending_operations")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required int PendingOperations { get; set; }
+        public required long PendingOperations { get; set; }
 
         /// <summary>
         /// Leader of the current term
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("leader")]
-        public int? Leader { get; set; }
+        public long? Leader { get; set; }
 
         /// <summary>
         /// Role of this peer in the current term
@@ -80,11 +80,11 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public RaftInfo(
-            int term,
-            int commit,
-            int pendingOperations,
+            long term,
+            long commit,
+            long pendingOperations,
             bool isVoter,
-            int? leader,
+            long? leader,
             global::G.StateRole? role)
         {
             this.Term = term;

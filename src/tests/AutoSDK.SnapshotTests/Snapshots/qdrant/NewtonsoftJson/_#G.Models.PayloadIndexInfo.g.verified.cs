@@ -1,4 +1,4 @@
-﻿//HintName: G.Models.PayloadIndexInfo.g.cs
+//HintName: G.Models.PayloadIndexInfo.g.cs
 
 #nullable enable
 
@@ -26,7 +26,7 @@ namespace G
         /// Number of points indexed with this index
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("points", Required = global::Newtonsoft.Json.Required.Always)]
-        public int Points { get; set; } = default!;
+        public long Points { get; set; } = default!;
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -46,7 +46,7 @@ namespace G
         /// <param name="params"></param>
         public PayloadIndexInfo(
             global::G.PayloadSchemaType dataType,
-            int points,
+            long points,
             global::G.PayloadSchemaParams? @params)
         {
             this.DataType = dataType;

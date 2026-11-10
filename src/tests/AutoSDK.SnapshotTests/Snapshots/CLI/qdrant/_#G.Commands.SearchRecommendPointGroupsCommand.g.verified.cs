@@ -1,4 +1,4 @@
-﻿//HintName: G.Commands.SearchRecommendPointGroupsCommand.g.cs
+//HintName: G.Commands.SearchRecommendPointGroupsCommand.g.cs
 
 #nullable enable
 
@@ -27,8 +27,8 @@ namespace G
             global::G.UsingVector? @using,
             global::G.LookupLocation? lookupFrom,
             string groupBy,
-            int groupSize,
-            int limit,
+            long groupSize,
+            long limit,
             global::G.WithLookupInterface? withLookup,
             global::System.Threading.CancellationToken cancellationToken);
         partial void Complete(
@@ -49,13 +49,13 @@ namespace G
             Description = @"Payload field to group by, must be a string or number field. If the field contains more than 1 value, all values will be used for grouping. One point can be in multiple groups.",
         };
 
-        private global::System.CommandLine.Argument<int> GroupSize { get; } = new(
+        private global::System.CommandLine.Argument<long> GroupSize { get; } = new(
             name: "groupSize")
         {
             Description = @"Maximum amount of points to return per group",
         };
 
-        private global::System.CommandLine.Argument<int> Limit { get; } = new(
+        private global::System.CommandLine.Argument<long> Limit { get; } = new(
             name: "limit")
         {
             Description = @"Maximum amount of groups to return",

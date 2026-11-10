@@ -1,4 +1,4 @@
-﻿//HintName: G.Models.FacetRequest.g.cs
+//HintName: G.Models.FacetRequest.g.cs
 
 #nullable enable
 
@@ -26,7 +26,7 @@ namespace G
         /// Max number of hits to return. Default is 10.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("limit")]
-        public int? Limit { get; set; }
+        public long? Limit { get; set; }
 
         /// <summary>
         /// Filter conditions - only consider points that satisfy these conditions.
@@ -68,7 +68,7 @@ namespace G
         public FacetRequest(
             string key,
             global::G.ShardKeySelector? shardKey,
-            int? limit,
+            long? limit,
             global::G.Filter? filter,
             bool? exact)
         {

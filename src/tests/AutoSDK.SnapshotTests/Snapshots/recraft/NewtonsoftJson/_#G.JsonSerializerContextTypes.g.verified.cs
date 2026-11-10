@@ -83,79 +83,83 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.ResponseFormat? Type11 { get; set; }
+        public long? Type11 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.ImageSize? Type12 { get; set; }
+        public global::G.ResponseFormat? Type12 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.ImageSubStyle? Type13 { get; set; }
+        public global::G.ImageSize? Type13 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.GenerateImageResponse? Type14 { get; set; }
+        public global::G.ImageSubStyle? Type14 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::G.Image>? Type15 { get; set; }
+        public global::G.GenerateImageResponse? Type15 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.Image? Type16 { get; set; }
+        public global::System.Collections.Generic.IList<global::G.Image>? Type16 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.ImageColor? Type17 { get; set; }
+        public global::G.Image? Type17 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<int>? Type18 { get; set; }
+        public global::G.ImageColor? Type18 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<double>? Type19 { get; set; }
+        public global::System.Collections.Generic.IList<int>? Type19 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public double? Type20 { get; set; }
+        public global::System.Collections.Generic.IList<double>? Type20 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.ListStylesResponse? Type21 { get; set; }
+        public double? Type21 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::G.Style>? Type22 { get; set; }
+        public global::G.ListStylesResponse? Type22 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.Style? Type23 { get; set; }
+        public global::System.Collections.Generic.IList<global::G.Style>? Type23 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.ProcessImageRequest? Type24 { get; set; }
+        public global::G.Style? Type24 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.ProcessImageResponse? Type25 { get; set; }
+        public global::G.ProcessImageRequest? Type25 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.DateTime? Type26 { get; set; }
+        public global::G.ProcessImageResponse? Type26 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.User? Type27 { get; set; }
+        public global::System.DateTime? Type27 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::G.ImageColor>? Type28 { get; set; }
+        public global::G.User? Type28 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public object? Type29 { get; set; }
+        public global::System.Collections.Generic.IList<global::G.ImageColor>? Type29 { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
+        public object? Type30 { get; set; }
 
         /// <summary>
         /// 

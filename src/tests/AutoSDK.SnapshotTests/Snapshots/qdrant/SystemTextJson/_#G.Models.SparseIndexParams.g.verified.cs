@@ -1,4 +1,4 @@
-﻿//HintName: G.Models.SparseIndexParams.g.cs
+//HintName: G.Models.SparseIndexParams.g.cs
 
 #nullable enable
 
@@ -14,7 +14,7 @@ namespace G
         /// Note: this is number of vectors, not KiloBytes.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("full_scan_threshold")]
-        public int? FullScanThreshold { get; set; }
+        public long? FullScanThreshold { get; set; }
 
         /// <summary>
         /// Store index on disk. If set to false, the index will be stored in RAM. Default: false
@@ -53,7 +53,7 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public SparseIndexParams(
-            int? fullScanThreshold,
+            long? fullScanThreshold,
             bool? onDisk,
             global::G.Datatype? datatype)
         {

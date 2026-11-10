@@ -1,4 +1,4 @@
-﻿//HintName: G.Models.MemoryTelemetry.g.cs
+//HintName: G.Models.MemoryTelemetry.g.cs
 
 #nullable enable
 
@@ -13,31 +13,31 @@ namespace G
         /// Total number of bytes in active pages allocated by the application
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("active_bytes", Required = global::Newtonsoft.Json.Required.Always)]
-        public int ActiveBytes { get; set; } = default!;
+        public long ActiveBytes { get; set; } = default!;
 
         /// <summary>
         /// Total number of bytes allocated by the application
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("allocated_bytes", Required = global::Newtonsoft.Json.Required.Always)]
-        public int AllocatedBytes { get; set; } = default!;
+        public long AllocatedBytes { get; set; } = default!;
 
         /// <summary>
         /// Total number of bytes dedicated to metadata
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("metadata_bytes", Required = global::Newtonsoft.Json.Required.Always)]
-        public int MetadataBytes { get; set; } = default!;
+        public long MetadataBytes { get; set; } = default!;
 
         /// <summary>
         /// Maximum number of bytes in physically resident data pages mapped
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("resident_bytes", Required = global::Newtonsoft.Json.Required.Always)]
-        public int ResidentBytes { get; set; } = default!;
+        public long ResidentBytes { get; set; } = default!;
 
         /// <summary>
         /// Total number of bytes in virtual memory mappings
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("retained_bytes", Required = global::Newtonsoft.Json.Required.Always)]
-        public int RetainedBytes { get; set; } = default!;
+        public long RetainedBytes { get; set; } = default!;
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -64,11 +64,11 @@ namespace G
         /// Total number of bytes in virtual memory mappings
         /// </param>
         public MemoryTelemetry(
-            int activeBytes,
-            int allocatedBytes,
-            int metadataBytes,
-            int residentBytes,
-            int retainedBytes)
+            long activeBytes,
+            long allocatedBytes,
+            long metadataBytes,
+            long residentBytes,
+            long retainedBytes)
         {
             this.ActiveBytes = activeBytes;
             this.AllocatedBytes = allocatedBytes;

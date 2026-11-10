@@ -1,4 +1,4 @@
-﻿//HintName: recraft.Models.GenerateImageRequest.g.cs
+//HintName: recraft.Models.GenerateImageRequest.g.cs
 
 #nullable enable
 
@@ -39,7 +39,7 @@ namespace recraft
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("random_seed")]
-        public int? RandomSeed { get; set; }
+        public long? RandomSeed { get; set; }
 
         /// <summary>
         /// 
@@ -102,7 +102,7 @@ namespace recraft
             global::recraft.UserControls? controls,
             global::recraft.TransformModel? model,
             int? n,
-            int? randomSeed,
+            long? randomSeed,
             global::recraft.ResponseFormat? responseFormat,
             global::recraft.ImageSize? size,
             global::recraft.ImageStyle? style,

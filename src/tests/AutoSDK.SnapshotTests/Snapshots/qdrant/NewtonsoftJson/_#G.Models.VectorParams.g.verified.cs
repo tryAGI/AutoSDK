@@ -1,4 +1,4 @@
-﻿//HintName: G.Models.VectorParams.g.cs
+//HintName: G.Models.VectorParams.g.cs
 
 #nullable enable
 
@@ -13,7 +13,7 @@ namespace G
         /// Size of a vectors used
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("size", Required = global::Newtonsoft.Json.Required.Always)]
-        public int Size { get; set; } = default!;
+        public long Size { get; set; } = default!;
 
         /// <summary>
         /// Type of internal tags, build from payload Distance function types used to compare vectors
@@ -83,7 +83,7 @@ namespace G
         /// </param>
         /// <param name="multivectorConfig"></param>
         public VectorParams(
-            int size,
+            long size,
             global::G.Distance distance,
             global::G.HnswConfigDiff? hnswConfig,
             global::G.QuantizationConfig? quantizationConfig,

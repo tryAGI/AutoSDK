@@ -1,4 +1,4 @@
-﻿//HintName: G.Models.HnswConfig.g.cs
+//HintName: G.Models.HnswConfig.g.cs
 
 #nullable enable
 
@@ -14,28 +14,28 @@ namespace G
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("m")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required int M { get; set; }
+        public required long M { get; set; }
 
         /// <summary>
         /// Number of neighbours to consider during the index building. Larger the value - more accurate the search, more time required to build index.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("ef_construct")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required int EfConstruct { get; set; }
+        public required long EfConstruct { get; set; }
 
         /// <summary>
         /// Minimal size threshold (in KiloBytes) below which full-scan is preferred over HNSW search. This measures the total size of vectors being queried against. When the maximum estimated amount of points that a condition satisfies is smaller than `full_scan_threshold_kb`, the query planner will use full-scan search instead of HNSW index traversal for better performance. Note: 1Kb = 1 vector of size 256
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("full_scan_threshold")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required int FullScanThreshold { get; set; }
+        public required long FullScanThreshold { get; set; }
 
         /// <summary>
         /// Number of parallel threads used for background index building. If 0 - automatically select from 8 to 16. Best to keep between 8 and 16 to prevent likelihood of slow building or broken/inefficient HNSW graphs. On small CPUs, less threads are used.<br/>
         /// Default Value: 0
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("max_indexing_threads")]
-        public int? MaxIndexingThreads { get; set; }
+        public long? MaxIndexingThreads { get; set; }
 
         /// <summary>
         /// Store HNSW index on disk. If set to false, index will be stored in RAM. Default: false
@@ -47,7 +47,7 @@ namespace G
         /// Custom M param for hnsw graph built for payload index. If not set, default M will be used.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("payload_m")]
-        public int? PayloadM { get; set; }
+        public long? PayloadM { get; set; }
 
         /// <summary>
         /// Store copies of original and quantized vectors within the HNSW index file. Default: false. Enabling this option will trade the search speed for disk usage by reducing amount of random seeks during the search. Requires quantized vectors to be enabled. Multi-vectors are not supported.
@@ -90,12 +90,12 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public HnswConfig(
-            int m,
-            int efConstruct,
-            int fullScanThreshold,
-            int? maxIndexingThreads,
+            long m,
+            long efConstruct,
+            long fullScanThreshold,
+            long? maxIndexingThreads,
             bool? onDisk,
-            int? payloadM,
+            long? payloadM,
             bool? inlineStorage)
         {
             this.M = m;

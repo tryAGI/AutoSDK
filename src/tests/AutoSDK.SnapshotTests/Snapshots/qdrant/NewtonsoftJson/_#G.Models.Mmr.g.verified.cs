@@ -1,4 +1,4 @@
-﻿//HintName: G.Models.Mmr.g.cs
+//HintName: G.Models.Mmr.g.cs
 
 #nullable enable
 
@@ -22,7 +22,7 @@ namespace G
         /// If not specified, the `limit` value is used.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("candidates_limit")]
-        public int? CandidatesLimit { get; set; }
+        public long? CandidatesLimit { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -44,7 +44,7 @@ namespace G
         /// </param>
         public Mmr(
             float? diversity,
-            int? candidatesLimit)
+            long? candidatesLimit)
         {
             this.Diversity = diversity;
             this.CandidatesLimit = candidatesLimit;

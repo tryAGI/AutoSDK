@@ -1,4 +1,4 @@
-﻿//HintName: G.Models.MoveShard.g.cs
+//HintName: G.Models.MoveShard.g.cs
 
 #nullable enable
 
@@ -13,19 +13,19 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("shard_id", Required = global::Newtonsoft.Json.Required.Always)]
-        public int ShardId { get; set; } = default!;
+        public long ShardId { get; set; } = default!;
 
         /// <summary>
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("to_peer_id", Required = global::Newtonsoft.Json.Required.Always)]
-        public int ToPeerId { get; set; } = default!;
+        public long ToPeerId { get; set; } = default!;
 
         /// <summary>
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("from_peer_id", Required = global::Newtonsoft.Json.Required.Always)]
-        public int FromPeerId { get; set; } = default!;
+        public long FromPeerId { get; set; } = default!;
 
         /// <summary>
         /// Method for transferring the shard from one node to another
@@ -49,9 +49,9 @@ namespace G
         /// Method for transferring the shard from one node to another
         /// </param>
         public MoveShard(
-            int shardId,
-            int toPeerId,
-            int fromPeerId,
+            long shardId,
+            long toPeerId,
+            long fromPeerId,
             global::G.ShardTransferMethod? method)
         {
             this.ShardId = shardId;

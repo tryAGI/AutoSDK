@@ -1,4 +1,4 @@
-﻿//HintName: G.Models.PayloadIndexInfo.g.cs
+//HintName: G.Models.PayloadIndexInfo.g.cs
 
 #nullable enable
 
@@ -28,7 +28,7 @@ namespace G
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("points")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required int Points { get; set; }
+        public required long Points { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -51,7 +51,7 @@ namespace G
 #endif
         public PayloadIndexInfo(
             global::G.PayloadSchemaType dataType,
-            int points,
+            long points,
             global::G.PayloadSchemaParams? @params)
         {
             this.DataType = dataType;

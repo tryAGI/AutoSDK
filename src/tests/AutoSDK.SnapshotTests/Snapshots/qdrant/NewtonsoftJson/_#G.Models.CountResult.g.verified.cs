@@ -1,4 +1,4 @@
-﻿//HintName: G.Models.CountResult.g.cs
+//HintName: G.Models.CountResult.g.cs
 
 #nullable enable
 
@@ -13,7 +13,7 @@ namespace G
         /// Number of points which satisfy the conditions
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("count", Required = global::Newtonsoft.Json.Required.Always)]
-        public int Count { get; set; } = default!;
+        public long Count { get; set; } = default!;
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -28,7 +28,7 @@ namespace G
         /// Number of points which satisfy the conditions
         /// </param>
         public CountResult(
-            int count)
+            long count)
         {
             this.Count = count;
         }

@@ -1,4 +1,4 @@
-﻿//HintName: G.Models.CollectionInfo.g.cs
+//HintName: G.Models.CollectionInfo.g.cs
 
 #nullable enable
 
@@ -32,19 +32,19 @@ namespace G
         /// Approximate number of indexed vectors in the collection. Indexed vectors in large segments are faster to query, as it is stored in a specialized vector index.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("indexed_vectors_count")]
-        public int? IndexedVectorsCount { get; set; }
+        public long? IndexedVectorsCount { get; set; }
 
         /// <summary>
         /// Approximate number of points (vectors + payloads) in collection. Each point could be accessed by unique id.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("points_count")]
-        public int? PointsCount { get; set; }
+        public long? PointsCount { get; set; }
 
         /// <summary>
         /// Number of segments in collection. Each segment has independent vector as payload indexes
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("segments_count", Required = global::Newtonsoft.Json.Required.Always)]
-        public int SegmentsCount { get; set; } = default!;
+        public long SegmentsCount { get; set; } = default!;
 
         /// <summary>
         /// Information about the collection configuration
@@ -103,12 +103,12 @@ namespace G
         public CollectionInfo(
             global::G.CollectionStatus status,
             global::G.OptimizersStatus optimizerStatus,
-            int segmentsCount,
+            long segmentsCount,
             global::G.CollectionConfig config,
             global::System.Collections.Generic.Dictionary<string, global::G.PayloadIndexInfo> payloadSchema,
             global::System.Collections.Generic.IList<global::G.CollectionWarning>? warnings,
-            int? indexedVectorsCount,
-            int? pointsCount,
+            long? indexedVectorsCount,
+            long? pointsCount,
             global::G.UpdateQueueInfo? updateQueue)
         {
             this.Status = status;

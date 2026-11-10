@@ -1,4 +1,4 @@
-﻿//HintName: G.Models.StartResharding.g.cs
+//HintName: G.Models.StartResharding.g.cs
 
 #nullable enable
 
@@ -22,7 +22,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("peer_id")]
-        public int? PeerId { get; set; }
+        public long? PeerId { get; set; }
 
         /// <summary>
         /// 
@@ -48,7 +48,7 @@ namespace G
         /// <param name="shardKey"></param>
         public StartResharding(
             global::G.ReshardingDirection direction,
-            int? peerId,
+            long? peerId,
             global::G.ShardKey? shardKey)
         {
             this.Direction = direction;

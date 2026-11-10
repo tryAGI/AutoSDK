@@ -1,4 +1,4 @@
-﻿//HintName: G.Models.RestartTransfer.g.cs
+//HintName: G.Models.RestartTransfer.g.cs
 
 #nullable enable
 
@@ -13,19 +13,19 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("shard_id", Required = global::Newtonsoft.Json.Required.Always)]
-        public int ShardId { get; set; } = default!;
+        public long ShardId { get; set; } = default!;
 
         /// <summary>
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("from_peer_id", Required = global::Newtonsoft.Json.Required.Always)]
-        public int FromPeerId { get; set; } = default!;
+        public long FromPeerId { get; set; } = default!;
 
         /// <summary>
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("to_peer_id", Required = global::Newtonsoft.Json.Required.Always)]
-        public int ToPeerId { get; set; } = default!;
+        public long ToPeerId { get; set; } = default!;
 
         /// <summary>
         /// Methods for transferring a shard from one node to another.<br/>
@@ -58,9 +58,9 @@ namespace G
         /// - `resharding_stream_records` - Shard transfer for resharding: stream all records in batches until all points are transferred.
         /// </param>
         public RestartTransfer(
-            int shardId,
-            int fromPeerId,
-            int toPeerId,
+            long shardId,
+            long fromPeerId,
+            long toPeerId,
             global::G.ShardTransferMethod method)
         {
             this.ShardId = shardId;

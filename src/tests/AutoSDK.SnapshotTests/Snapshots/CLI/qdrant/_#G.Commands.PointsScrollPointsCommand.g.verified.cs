@@ -1,4 +1,4 @@
-﻿//HintName: G.Commands.PointsScrollPointsCommand.g.cs
+//HintName: G.Commands.PointsScrollPointsCommand.g.cs
 
 #nullable enable
 
@@ -17,7 +17,7 @@ namespace G
             int? timeout,
             global::G.ShardKeySelector? shardKey,
             global::G.ExtendedPointId? offset,
-            int? limit,
+            long? limit,
             global::G.Filter? filter,
             global::G.WithPayloadInterface? withPayload,
             global::G.WithVector? withVector,
@@ -59,7 +59,7 @@ namespace G
             Description = @"Start ID to read points from.",
         };
 
-        private global::System.CommandLine.Option<int?> Limit { get; } = new(
+        private global::System.CommandLine.Option<long?> Limit { get; } = new(
             name: "limit")
         {
             Description = @"Page size. Default: 10",

@@ -1,4 +1,4 @@
-﻿//HintName: G.Models.VectorParams.g.cs
+//HintName: G.Models.VectorParams.g.cs
 
 #nullable enable
 
@@ -14,7 +14,7 @@ namespace G
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("size")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required int Size { get; set; }
+        public required long Size { get; set; }
 
         /// <summary>
         /// Type of internal tags, build from payload Distance function types used to compare vectors
@@ -88,7 +88,7 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public VectorParams(
-            int size,
+            long size,
             global::G.Distance distance,
             global::G.HnswConfigDiff? hnswConfig,
             global::G.QuantizationConfig? quantizationConfig,

@@ -1,4 +1,4 @@
-﻿//HintName: G.Models.SearchParams.g.cs
+//HintName: G.Models.SearchParams.g.cs
 
 #nullable enable
 
@@ -13,7 +13,7 @@ namespace G
         /// Params relevant to HNSW index Size of the beam in a beam-search. Larger the value - more accurate the result, more time required for search.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("hnsw_ef")]
-        public int? HnswEf { get; set; }
+        public long? HnswEf { get; set; }
 
         /// <summary>
         /// Search without approximation. If set to true, search may run long but with exact results.<br/>
@@ -71,7 +71,7 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public SearchParams(
-            int? hnswEf,
+            long? hnswEf,
             bool? exact,
             global::G.QuantizationSearchParams? quantization,
             bool? indexedOnly,

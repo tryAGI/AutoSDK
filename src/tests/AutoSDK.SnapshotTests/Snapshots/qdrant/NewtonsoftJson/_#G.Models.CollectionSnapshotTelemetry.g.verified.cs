@@ -1,4 +1,4 @@
-﻿//HintName: G.Models.CollectionSnapshotTelemetry.g.cs
+//HintName: G.Models.CollectionSnapshotTelemetry.g.cs
 
 #nullable enable
 
@@ -19,19 +19,19 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("running_snapshots")]
-        public int? RunningSnapshots { get; set; }
+        public long? RunningSnapshots { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("running_snapshot_recovery")]
-        public int? RunningSnapshotRecovery { get; set; }
+        public long? RunningSnapshotRecovery { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("total_snapshot_creations")]
-        public int? TotalSnapshotCreations { get; set; }
+        public long? TotalSnapshotCreations { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -48,9 +48,9 @@ namespace G
         /// <param name="totalSnapshotCreations"></param>
         public CollectionSnapshotTelemetry(
             string id,
-            int? runningSnapshots,
-            int? runningSnapshotRecovery,
-            int? totalSnapshotCreations)
+            long? runningSnapshots,
+            long? runningSnapshotRecovery,
+            long? totalSnapshotCreations)
         {
             this.Id = id ?? throw new global::System.ArgumentNullException(nameof(id));
             this.RunningSnapshots = runningSnapshots;

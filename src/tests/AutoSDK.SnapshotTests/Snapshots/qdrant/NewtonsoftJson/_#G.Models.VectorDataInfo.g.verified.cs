@@ -1,4 +1,4 @@
-﻿//HintName: G.Models.VectorDataInfo.g.cs
+//HintName: G.Models.VectorDataInfo.g.cs
 
 #nullable enable
 
@@ -13,19 +13,19 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("num_vectors", Required = global::Newtonsoft.Json.Required.Always)]
-        public int NumVectors { get; set; } = default!;
+        public long NumVectors { get; set; } = default!;
 
         /// <summary>
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("num_indexed_vectors", Required = global::Newtonsoft.Json.Required.Always)]
-        public int NumIndexedVectors { get; set; } = default!;
+        public long NumIndexedVectors { get; set; } = default!;
 
         /// <summary>
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("num_deleted_vectors", Required = global::Newtonsoft.Json.Required.Always)]
-        public int NumDeletedVectors { get; set; } = default!;
+        public long NumDeletedVectors { get; set; } = default!;
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -40,9 +40,9 @@ namespace G
         /// <param name="numIndexedVectors"></param>
         /// <param name="numDeletedVectors"></param>
         public VectorDataInfo(
-            int numVectors,
-            int numIndexedVectors,
-            int numDeletedVectors)
+            long numVectors,
+            long numIndexedVectors,
+            long numDeletedVectors)
         {
             this.NumVectors = numVectors;
             this.NumIndexedVectors = numIndexedVectors;

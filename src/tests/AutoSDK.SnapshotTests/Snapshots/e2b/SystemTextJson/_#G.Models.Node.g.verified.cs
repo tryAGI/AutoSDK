@@ -1,4 +1,4 @@
-﻿//HintName: G.Models.Node.g.cs
+//HintName: G.Models.Node.g.cs
 
 #nullable enable
 
@@ -64,7 +64,7 @@ namespace G
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("sandboxCount")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required int SandboxCount { get; set; }
+        public required long SandboxCount { get; set; }
 
         /// <summary>
         /// Node metrics
@@ -78,14 +78,14 @@ namespace G
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("createSuccesses")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required int CreateSuccesses { get; set; }
+        public required long CreateSuccesses { get; set; }
 
         /// <summary>
         /// Number of sandbox create fails
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("createFails")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required int CreateFails { get; set; }
+        public required long CreateFails { get; set; }
 
         /// <summary>
         /// Number of starting Sandboxes
@@ -148,10 +148,10 @@ namespace G
             string clusterID,
             global::G.MachineInfo machineInfo,
             global::G.NodeStatus status,
-            int sandboxCount,
+            long sandboxCount,
             global::G.NodeMetrics metrics,
-            int createSuccesses,
-            int createFails,
+            long createSuccesses,
+            long createFails,
             int sandboxStartingCount)
         {
             this.Version = version ?? throw new global::System.ArgumentNullException(nameof(version));

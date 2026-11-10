@@ -1,4 +1,4 @@
-﻿//HintName: G.Commands.SearchRecommendPointsCommand.g.cs
+//HintName: G.Commands.SearchRecommendPointsCommand.g.cs
 
 #nullable enable
 
@@ -21,8 +21,8 @@ namespace G
             global::G.RecommendStrategy? strategy,
             global::G.Filter? filter,
             global::G.SearchParams? @params,
-            int limit,
-            int? offset,
+            long limit,
+            long? offset,
             global::G.WithPayloadInterface? withPayload,
             global::G.WithVector? withVector,
             float? scoreThreshold,
@@ -41,7 +41,7 @@ namespace G
             Description = @"Name of the collection to search in",
         };
 
-        private global::System.CommandLine.Argument<int> Limit { get; } = new(
+        private global::System.CommandLine.Argument<long> Limit { get; } = new(
             name: "limit")
         {
             Description = @"Max number of result to return",
@@ -95,7 +95,7 @@ namespace G
             Description = @"Additional search params",
         };
 
-        private global::System.CommandLine.Option<int?> Offset { get; } = new(
+        private global::System.CommandLine.Option<long?> Offset { get; } = new(
             name: "offset")
         {
             Description = @"Offset of the first result to return. May be used to paginate results. Note: large offset values may cause performance issues.",

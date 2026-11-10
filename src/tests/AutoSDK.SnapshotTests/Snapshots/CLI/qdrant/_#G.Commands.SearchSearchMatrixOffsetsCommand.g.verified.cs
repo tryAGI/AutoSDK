@@ -1,4 +1,4 @@
-﻿//HintName: G.Commands.SearchSearchMatrixOffsetsCommand.g.cs
+//HintName: G.Commands.SearchSearchMatrixOffsetsCommand.g.cs
 
 #nullable enable
 
@@ -17,8 +17,8 @@ namespace G
             int? timeout,
             global::G.ShardKeySelector? shardKey,
             global::G.Filter? filter,
-            int? sample,
-            int? limit,
+            long? sample,
+            long? limit,
             string? @using,
             global::System.Threading.CancellationToken cancellationToken);
         partial void Complete(
@@ -57,13 +57,13 @@ namespace G
             Description = @"Look only for points which satisfies this conditions",
         };
 
-        private global::System.CommandLine.Option<int?> Sample { get; } = new(
+        private global::System.CommandLine.Option<long?> Sample { get; } = new(
             name: "sample")
         {
             Description = @"How many points to select and search within. Default is 10.",
         };
 
-        private global::System.CommandLine.Option<int?> Limit { get; } = new(
+        private global::System.CommandLine.Option<long?> Limit { get; } = new(
             name: "limit")
         {
             Description = @"How many neighbours per sample to find. Default is 3.",

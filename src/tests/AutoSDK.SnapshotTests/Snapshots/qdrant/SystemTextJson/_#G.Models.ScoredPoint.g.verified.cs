@@ -1,4 +1,4 @@
-﻿//HintName: G.Models.ScoredPoint.g.cs
+//HintName: G.Models.ScoredPoint.g.cs
 
 #nullable enable
 
@@ -24,7 +24,7 @@ namespace G
         /// <example>3</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("version")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required int Version { get; set; }
+        public required long Version { get; set; }
 
         /// <summary>
         /// Points vector distance to the query vector<br/>
@@ -96,7 +96,7 @@ namespace G
 #endif
         public ScoredPoint(
             global::G.ExtendedPointId id,
-            int version,
+            long version,
             float score,
             global::G.Payload? payload,
             global::G.VectorStructOutput? vector,

@@ -1,4 +1,4 @@
-﻿//HintName: G.Models.WalConfigDiff.g.cs
+//HintName: G.Models.WalConfigDiff.g.cs
 
 #nullable enable
 
@@ -13,19 +13,19 @@ namespace G
         /// Size of a single WAL segment in MB
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("wal_capacity_mb")]
-        public int? WalCapacityMb { get; set; }
+        public long? WalCapacityMb { get; set; }
 
         /// <summary>
         /// Number of WAL segments to create ahead of actually used ones
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("wal_segments_ahead")]
-        public int? WalSegmentsAhead { get; set; }
+        public long? WalSegmentsAhead { get; set; }
 
         /// <summary>
         /// Number of closed WAL segments to retain
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("wal_retain_closed")]
-        public int? WalRetainClosed { get; set; }
+        public long? WalRetainClosed { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -46,9 +46,9 @@ namespace G
         /// Number of closed WAL segments to retain
         /// </param>
         public WalConfigDiff(
-            int? walCapacityMb,
-            int? walSegmentsAhead,
-            int? walRetainClosed)
+            long? walCapacityMb,
+            long? walSegmentsAhead,
+            long? walRetainClosed)
         {
             this.WalCapacityMb = walCapacityMb;
             this.WalSegmentsAhead = walSegmentsAhead;

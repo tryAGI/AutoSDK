@@ -20,7 +20,7 @@ namespace G
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("init_time_ms")]
-        public int? InitTimeMs { get; set; }
+        public long? InitTimeMs { get; set; }
 
         /// <summary>
         /// 
@@ -73,7 +73,7 @@ namespace G
 #endif
         public CollectionTelemetry(
             string id,
-            int? initTimeMs,
+            long? initTimeMs,
             global::G.CollectionConfigTelemetry? config,
             global::System.Collections.Generic.IList<global::G.ReplicaSetTelemetry>? shards,
             global::System.Collections.Generic.IList<global::G.ShardTransferInfo>? transfers,

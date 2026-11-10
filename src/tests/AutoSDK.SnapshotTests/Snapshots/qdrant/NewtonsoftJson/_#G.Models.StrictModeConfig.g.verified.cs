@@ -1,4 +1,4 @@
-﻿//HintName: G.Models.StrictModeConfig.g.cs
+//HintName: G.Models.StrictModeConfig.g.cs
 
 #nullable enable
 
@@ -19,13 +19,13 @@ namespace G
         /// Max allowed `limit` parameter for all APIs that don't have their own max limit.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("max_query_limit")]
-        public int? MaxQueryLimit { get; set; }
+        public long? MaxQueryLimit { get; set; }
 
         /// <summary>
         /// Max allowed `timeout` parameter.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("max_timeout")]
-        public int? MaxTimeout { get; set; }
+        public long? MaxTimeout { get; set; }
 
         /// <summary>
         /// Allow usage of unindexed fields in retrieval based (e.g. search) filters.
@@ -43,7 +43,7 @@ namespace G
         /// Max HNSW ef value allowed in search parameters.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("search_max_hnsw_ef")]
-        public int? SearchMaxHnswEf { get; set; }
+        public long? SearchMaxHnswEf { get; set; }
 
         /// <summary>
         /// Whether exact search is allowed.
@@ -61,55 +61,55 @@ namespace G
         /// Max batchsize when upserting
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("upsert_max_batchsize")]
-        public int? UpsertMaxBatchsize { get; set; }
+        public long? UpsertMaxBatchsize { get; set; }
 
         /// <summary>
         /// Max batchsize when searching
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("search_max_batchsize")]
-        public int? SearchMaxBatchsize { get; set; }
+        public long? SearchMaxBatchsize { get; set; }
 
         /// <summary>
         /// Max size of a collections vector storage in bytes, ignoring replicas.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("max_collection_vector_size_bytes")]
-        public int? MaxCollectionVectorSizeBytes { get; set; }
+        public long? MaxCollectionVectorSizeBytes { get; set; }
 
         /// <summary>
         /// Max number of read operations per minute per replica
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("read_rate_limit")]
-        public int? ReadRateLimit { get; set; }
+        public long? ReadRateLimit { get; set; }
 
         /// <summary>
         /// Max number of write operations per minute per replica
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("write_rate_limit")]
-        public int? WriteRateLimit { get; set; }
+        public long? WriteRateLimit { get; set; }
 
         /// <summary>
         /// Max size of a collections payload storage in bytes
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("max_collection_payload_size_bytes")]
-        public int? MaxCollectionPayloadSizeBytes { get; set; }
+        public long? MaxCollectionPayloadSizeBytes { get; set; }
 
         /// <summary>
         /// Max number of points estimated in a collection
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("max_points_count")]
-        public int? MaxPointsCount { get; set; }
+        public long? MaxPointsCount { get; set; }
 
         /// <summary>
         /// Max conditions a filter can have.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("filter_max_conditions")]
-        public int? FilterMaxConditions { get; set; }
+        public long? FilterMaxConditions { get; set; }
 
         /// <summary>
         /// Max size of a condition, eg. items in `MatchAny`.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("condition_max_size")]
-        public int? ConditionMaxSize { get; set; }
+        public long? ConditionMaxSize { get; set; }
 
         /// <summary>
         /// Multivector strict mode configuration
@@ -127,7 +127,7 @@ namespace G
         /// Max number of payload indexes in a collection
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("max_payload_index_count")]
-        public int? MaxPayloadIndexCount { get; set; }
+        public long? MaxPayloadIndexCount { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -200,25 +200,25 @@ namespace G
         /// </param>
         public StrictModeConfig(
             bool? enabled,
-            int? maxQueryLimit,
-            int? maxTimeout,
+            long? maxQueryLimit,
+            long? maxTimeout,
             bool? unindexedFilteringRetrieve,
             bool? unindexedFilteringUpdate,
-            int? searchMaxHnswEf,
+            long? searchMaxHnswEf,
             bool? searchAllowExact,
             double? searchMaxOversampling,
-            int? upsertMaxBatchsize,
-            int? searchMaxBatchsize,
-            int? maxCollectionVectorSizeBytes,
-            int? readRateLimit,
-            int? writeRateLimit,
-            int? maxCollectionPayloadSizeBytes,
-            int? maxPointsCount,
-            int? filterMaxConditions,
-            int? conditionMaxSize,
+            long? upsertMaxBatchsize,
+            long? searchMaxBatchsize,
+            long? maxCollectionVectorSizeBytes,
+            long? readRateLimit,
+            long? writeRateLimit,
+            long? maxCollectionPayloadSizeBytes,
+            long? maxPointsCount,
+            long? filterMaxConditions,
+            long? conditionMaxSize,
             global::System.Collections.Generic.Dictionary<string, global::G.StrictModeMultivector>? multivectorConfig,
             global::System.Collections.Generic.Dictionary<string, global::G.StrictModeSparse>? sparseConfig,
-            int? maxPayloadIndexCount)
+            long? maxPayloadIndexCount)
         {
             this.Enabled = enabled;
             this.MaxQueryLimit = maxQueryLimit;

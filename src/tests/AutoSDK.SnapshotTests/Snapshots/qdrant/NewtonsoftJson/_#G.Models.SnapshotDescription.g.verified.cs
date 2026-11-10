@@ -1,4 +1,4 @@
-﻿//HintName: G.Models.SnapshotDescription.g.cs
+//HintName: G.Models.SnapshotDescription.g.cs
 
 #nullable enable
 
@@ -25,7 +25,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("size", Required = global::Newtonsoft.Json.Required.Always)]
-        public int Size { get; set; } = default!;
+        public long Size { get; set; } = default!;
 
         /// <summary>
         /// 
@@ -48,7 +48,7 @@ namespace G
         /// <param name="checksum"></param>
         public SnapshotDescription(
             string name,
-            int size,
+            long size,
             string? creationTime,
             string? checksum)
         {

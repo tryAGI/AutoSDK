@@ -1,4 +1,4 @@
-﻿//HintName: G.Models.SearchGroupsRequest.g.cs
+//HintName: G.Models.SearchGroupsRequest.g.cs
 
 #nullable enable
 
@@ -69,14 +69,14 @@ namespace G
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("group_size")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required int GroupSize { get; set; }
+        public required long GroupSize { get; set; }
 
         /// <summary>
         /// Maximum amount of groups to return
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("limit")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required int Limit { get; set; }
+        public required long Limit { get; set; }
 
         /// <summary>
         /// Look for points in another collection using the group ids
@@ -136,8 +136,8 @@ namespace G
         public SearchGroupsRequest(
             global::G.NamedVectorStruct vector,
             string groupBy,
-            int groupSize,
-            int limit,
+            long groupSize,
+            long limit,
             global::G.ShardKeySelector? shardKey,
             global::G.Filter? filter,
             global::G.SearchParams? @params,

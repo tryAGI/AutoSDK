@@ -1,4 +1,4 @@
-﻿//HintName: G.Models.CollectionClusterInfo.g.cs
+//HintName: G.Models.CollectionClusterInfo.g.cs
 
 #nullable enable
 
@@ -13,13 +13,13 @@ namespace G
         /// ID of this peer
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("peer_id", Required = global::Newtonsoft.Json.Required.Always)]
-        public int PeerId { get; set; } = default!;
+        public long PeerId { get; set; } = default!;
 
         /// <summary>
         /// Total number of shards
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("shard_count", Required = global::Newtonsoft.Json.Required.Always)]
-        public int ShardCount { get; set; } = default!;
+        public long ShardCount { get; set; } = default!;
 
         /// <summary>
         /// Local shards
@@ -73,8 +73,8 @@ namespace G
         /// Resharding operations
         /// </param>
         public CollectionClusterInfo(
-            int peerId,
-            int shardCount,
+            long peerId,
+            long shardCount,
             global::System.Collections.Generic.IList<global::G.LocalShardInfo> localShards,
             global::System.Collections.Generic.IList<global::G.RemoteShardInfo> remoteShards,
             global::System.Collections.Generic.IList<global::G.ShardTransferInfo> shardTransfers,

@@ -1,4 +1,4 @@
-﻿//HintName: G.Models.ClusterConfigTelemetry.g.cs
+//HintName: G.Models.ClusterConfigTelemetry.g.cs
 
 #nullable enable
 
@@ -14,7 +14,7 @@ namespace G
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("grpc_timeout_ms")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required int GrpcTimeoutMs { get; set; }
+        public required long GrpcTimeoutMs { get; set; }
 
         /// <summary>
         /// 
@@ -46,7 +46,7 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public ClusterConfigTelemetry(
-            int grpcTimeoutMs,
+            long grpcTimeoutMs,
             global::G.P2pConfigTelemetry p2p,
             global::G.ConsensusConfigTelemetry consensus)
         {

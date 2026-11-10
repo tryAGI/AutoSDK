@@ -1,4 +1,4 @@
-﻿//HintName: G.Models.CollectionsTelemetry.g.cs
+//HintName: G.Models.CollectionsTelemetry.g.cs
 
 #nullable enable
 
@@ -13,13 +13,13 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("number_of_collections", Required = global::Newtonsoft.Json.Required.Always)]
-        public int NumberOfCollections { get; set; } = default!;
+        public long NumberOfCollections { get; set; } = default!;
 
         /// <summary>
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("max_collections")]
-        public int? MaxCollections { get; set; }
+        public long? MaxCollections { get; set; }
 
         /// <summary>
         /// 
@@ -47,8 +47,8 @@ namespace G
         /// <param name="collections"></param>
         /// <param name="snapshots"></param>
         public CollectionsTelemetry(
-            int numberOfCollections,
-            int? maxCollections,
+            long numberOfCollections,
+            long? maxCollections,
             global::System.Collections.Generic.IList<global::G.CollectionTelemetryEnum>? collections,
             global::System.Collections.Generic.IList<global::G.CollectionSnapshotTelemetry>? snapshots)
         {

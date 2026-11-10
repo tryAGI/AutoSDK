@@ -617,7 +617,7 @@ namespace G
             global::G.ReadConsistency? consistency = default,
             int? timeout = default,
             global::G.ShardKeySelector? shardKey = default,
-            int? limit = default,
+            long? limit = default,
             global::G.Filter? filter = default,
             bool? exact = default,
             global::G.AutoSDKRequestOptions? requestOptions = default,

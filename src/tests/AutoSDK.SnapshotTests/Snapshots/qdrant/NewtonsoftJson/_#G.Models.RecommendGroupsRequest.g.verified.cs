@@ -1,4 +1,4 @@
-﻿//HintName: G.Models.RecommendGroupsRequest.g.cs
+//HintName: G.Models.RecommendGroupsRequest.g.cs
 
 #nullable enable
 
@@ -91,13 +91,13 @@ namespace G
         /// Maximum amount of points to return per group
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("group_size", Required = global::Newtonsoft.Json.Required.Always)]
-        public int GroupSize { get; set; } = default!;
+        public long GroupSize { get; set; } = default!;
 
         /// <summary>
         /// Maximum amount of groups to return
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("limit", Required = global::Newtonsoft.Json.Required.Always)]
-        public int Limit { get; set; } = default!;
+        public long Limit { get; set; } = default!;
 
         /// <summary>
         /// Look for points in another collection using the group ids
@@ -167,8 +167,8 @@ namespace G
         /// </param>
         public RecommendGroupsRequest(
             string groupBy,
-            int groupSize,
-            int limit,
+            long groupSize,
+            long limit,
             global::G.ShardKeySelector? shardKey,
             global::System.Collections.Generic.IList<global::G.RecommendExample>? positive,
             global::System.Collections.Generic.IList<global::G.RecommendExample>? negative,

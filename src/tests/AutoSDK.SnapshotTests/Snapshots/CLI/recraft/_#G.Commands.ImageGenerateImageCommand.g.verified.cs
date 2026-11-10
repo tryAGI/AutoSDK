@@ -1,4 +1,4 @@
-﻿//HintName: G.Commands.ImageGenerateImageCommand.g.cs
+//HintName: G.Commands.ImageGenerateImageCommand.g.cs
 
 #nullable enable
 
@@ -16,7 +16,7 @@ namespace G
             global::G.TransformModel? model,
             int? n,
             string prompt,
-            int? randomSeed,
+            long? randomSeed,
             global::G.ResponseFormat? responseFormat,
             global::G.ImageSize? size,
             global::G.ImageStyle? style,
@@ -53,7 +53,7 @@ namespace G
             Description = @"",
         };
 
-        private global::System.CommandLine.Option<int?> RandomSeed { get; } = new(
+        private global::System.CommandLine.Option<long?> RandomSeed { get; } = new(
             name: "randomSeed")
         {
             Description = @"",

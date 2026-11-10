@@ -1,4 +1,4 @@
-﻿//HintName: G.Models.CollectionParams.g.cs
+//HintName: G.Models.CollectionParams.g.cs
 
 #nullable enable
 
@@ -23,7 +23,7 @@ namespace G
         /// Default Value: 1
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("shard_number")]
-        public int? ShardNumber { get; set; }
+        public long? ShardNumber { get; set; }
 
         /// <summary>
         /// Sharding method Default is Auto - points are distributed across all available shards Custom - points are distributed across shards according to shard key
@@ -36,26 +36,26 @@ namespace G
         /// Default Value: 1
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("replication_factor")]
-        public int? ReplicationFactor { get; set; }
+        public long? ReplicationFactor { get; set; }
 
         /// <summary>
         /// Defines how many replicas should apply the operation for us to consider it successful. Increasing this number will make the collection more resilient to inconsistencies, but will also make it fail if not enough replicas are available. Does not have any performance impact.<br/>
         /// Default Value: 1
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("write_consistency_factor")]
-        public int? WriteConsistencyFactor { get; set; }
+        public long? WriteConsistencyFactor { get; set; }
 
         /// <summary>
         /// Defines how many additional replicas should be processing read request at the same time. Default value is Auto, which means that fan-out will be determined automatically based on the busyness of the local replica. Having more than 0 might be useful to smooth latency spikes of individual nodes.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("read_fan_out_factor")]
-        public int? ReadFanOutFactor { get; set; }
+        public long? ReadFanOutFactor { get; set; }
 
         /// <summary>
         /// Define number of milliseconds to wait before attempting to read from another replica. This setting can help to reduce latency spikes in case of occasional slow replicas. Default is 0, which means delayed fan out request is disabled.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("read_fan_out_delay_ms")]
-        public int? ReadFanOutDelayMs { get; set; }
+        public long? ReadFanOutDelayMs { get; set; }
 
         /// <summary>
         /// If true - point's payload will not be stored in memory. It will be read from the disk every time it is requested. This setting saves RAM by (slightly) increasing the response time. Note: those payload values that are involved in filtering and are indexed - remain in RAM.<br/>
@@ -117,12 +117,12 @@ namespace G
         /// </param>
         public CollectionParams(
             global::G.VectorsConfig? vectors,
-            int? shardNumber,
+            long? shardNumber,
             global::G.ShardingMethod? shardingMethod,
-            int? replicationFactor,
-            int? writeConsistencyFactor,
-            int? readFanOutFactor,
-            int? readFanOutDelayMs,
+            long? replicationFactor,
+            long? writeConsistencyFactor,
+            long? readFanOutFactor,
+            long? readFanOutDelayMs,
             bool? onDiskPayload,
             global::System.Collections.Generic.Dictionary<string, global::G.SparseVectorParams>? sparseVectors)
         {

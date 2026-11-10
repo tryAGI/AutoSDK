@@ -14,9 +14,9 @@ namespace G
         /// Example: 42
         /// </summary>
 #if NET6_0_OR_GREATER
-        public int? ExtendedPointIdVariant1 { get; init; }
+        public long? ExtendedPointIdVariant1 { get; init; }
 #else
-        public int? ExtendedPointIdVariant1 { get; }
+        public long? ExtendedPointIdVariant1 { get; }
 #endif
 
         /// <summary>
@@ -34,7 +34,7 @@ namespace G
 #if NET6_0_OR_GREATER
             [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
 #endif
-            out int? value)
+            out long? value)
         {
             value = ExtendedPointIdVariant1;
             return IsExtendedPointIdVariant1;
@@ -43,7 +43,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public int PickExtendedPointIdVariant1() => ExtendedPointIdVariant1 is { } value
+        public long PickExtendedPointIdVariant1() => ExtendedPointIdVariant1 is { } value
             ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'ExtendedPointIdVariant1' but the value was {ToString()}.");
 
@@ -86,17 +86,17 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator ExtendedPointId(int value) => new ExtendedPointId((int?)value);
+        public static implicit operator ExtendedPointId(long value) => new ExtendedPointId((long?)value);
 
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator int?(ExtendedPointId @this) => @this.ExtendedPointIdVariant1;
+        public static implicit operator long?(ExtendedPointId @this) => @this.ExtendedPointIdVariant1;
 
         /// <summary>
         /// 
         /// </summary>
-        public ExtendedPointId(int? value)
+        public ExtendedPointId(long? value)
         {
             ExtendedPointIdVariant1 = value;
         }
@@ -104,7 +104,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static ExtendedPointId FromExtendedPointIdVariant1(int? value) => new ExtendedPointId(value);
+        public static ExtendedPointId FromExtendedPointIdVariant1(long? value) => new ExtendedPointId(value);
 
         /// <summary>
         /// 
@@ -133,7 +133,7 @@ namespace G
         /// 
         /// </summary>
         public ExtendedPointId(
-            int? extendedPointIdVariant1,
+            long? extendedPointIdVariant1,
             global::System.Guid? guid
             )
         {
@@ -169,7 +169,7 @@ namespace G
         /// 
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<int?, TResult>? extendedPointIdVariant1 = null,
+            global::System.Func<long?, TResult>? extendedPointIdVariant1 = null,
             global::System.Func<global::System.Guid?, TResult>? guid = null,
             bool validate = true)
         {
@@ -194,7 +194,7 @@ namespace G
         /// 
         /// </summary>
         public void Match(
-            global::System.Action<int?>? extendedPointIdVariant1 = null,
+            global::System.Action<long?>? extendedPointIdVariant1 = null,
 
             global::System.Action<global::System.Guid?>? guid = null,
             bool validate = true)
@@ -218,7 +218,7 @@ namespace G
         /// 
         /// </summary>
         public void Switch(
-            global::System.Action<int?>? extendedPointIdVariant1 = null,
+            global::System.Action<long?>? extendedPointIdVariant1 = null,
             global::System.Action<global::System.Guid?>? guid = null,
             bool validate = true)
         {
@@ -245,7 +245,7 @@ namespace G
             var fields = new object?[]
             {
                 ExtendedPointIdVariant1,
-                typeof(int),
+                typeof(long),
                 Guid,
                 typeof(global::System.Guid),
             };
@@ -264,7 +264,7 @@ namespace G
         public bool Equals(ExtendedPointId other)
         {
             return
-                global::System.Collections.Generic.EqualityComparer<int?>.Default.Equals(ExtendedPointIdVariant1, other.ExtendedPointIdVariant1) &&
+                global::System.Collections.Generic.EqualityComparer<long?>.Default.Equals(ExtendedPointIdVariant1, other.ExtendedPointIdVariant1) &&
                 global::System.Collections.Generic.EqualityComparer<global::System.Guid?>.Default.Equals(Guid, other.Guid) 
                 ;
         }

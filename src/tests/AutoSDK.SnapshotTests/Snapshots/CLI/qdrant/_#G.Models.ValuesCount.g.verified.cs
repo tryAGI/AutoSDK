@@ -1,4 +1,4 @@
-﻿//HintName: G.Models.ValuesCount.g.cs
+//HintName: G.Models.ValuesCount.g.cs
 
 #nullable enable
 
@@ -13,25 +13,25 @@ namespace G
         /// point.key.length() &lt; values_count.lt
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("lt")]
-        public int? Lt { get; set; }
+        public long? Lt { get; set; }
 
         /// <summary>
         /// point.key.length() &gt; values_count.gt
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("gt")]
-        public int? Gt { get; set; }
+        public long? Gt { get; set; }
 
         /// <summary>
         /// point.key.length() &gt;= values_count.gte
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("gte")]
-        public int? Gte { get; set; }
+        public long? Gte { get; set; }
 
         /// <summary>
         /// point.key.length() &lt;= values_count.lte
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("lte")]
-        public int? Lte { get; set; }
+        public long? Lte { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -58,10 +58,10 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public ValuesCount(
-            int? lt,
-            int? gt,
-            int? gte,
-            int? lte)
+            long? lt,
+            long? gt,
+            long? gte,
+            long? lte)
         {
             this.Lt = lt;
             this.Gt = gt;

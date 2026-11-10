@@ -1,4 +1,4 @@
-﻿//HintName: G.Models.DiskMetrics.g.cs
+//HintName: G.Models.DiskMetrics.g.cs
 
 #nullable enable
 
@@ -31,13 +31,13 @@ namespace G
         /// Used space in bytes
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("usedBytes", Required = global::Newtonsoft.Json.Required.Always)]
-        public int UsedBytes { get; set; } = default!;
+        public long UsedBytes { get; set; } = default!;
 
         /// <summary>
         /// Total space in bytes
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("totalBytes", Required = global::Newtonsoft.Json.Required.Always)]
-        public int TotalBytes { get; set; } = default!;
+        public long TotalBytes { get; set; } = default!;
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -67,8 +67,8 @@ namespace G
             string mountPoint,
             string device,
             string filesystemType,
-            int usedBytes,
-            int totalBytes)
+            long usedBytes,
+            long totalBytes)
         {
             this.MountPoint = mountPoint ?? throw new global::System.ArgumentNullException(nameof(mountPoint));
             this.Device = device ?? throw new global::System.ArgumentNullException(nameof(device));

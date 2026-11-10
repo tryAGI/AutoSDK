@@ -1,4 +1,4 @@
-﻿//HintName: G.Models.QueryRequest.g.cs
+//HintName: G.Models.QueryRequest.g.cs
 
 #nullable enable
 
@@ -56,13 +56,13 @@ namespace G
         /// Max number of points to return. Default is 10.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("limit")]
-        public int? Limit { get; set; }
+        public long? Limit { get; set; }
 
         /// <summary>
         /// Offset of the result. Skip this many points. Default is 0
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("offset")]
-        public int? Offset { get; set; }
+        public long? Offset { get; set; }
 
         /// <summary>
         /// Options for specifying which vectors to include into the response. Default is false.
@@ -136,8 +136,8 @@ namespace G
             global::G.Filter? filter,
             global::G.SearchParams? @params,
             float? scoreThreshold,
-            int? limit,
-            int? offset,
+            long? limit,
+            long? offset,
             global::G.WithVector? withVector,
             global::G.WithPayloadInterface? withPayload,
             global::G.LookupLocation? lookupFrom)

@@ -1,4 +1,4 @@
-﻿//HintName: G.Models.OperationDurationStatistics.g.cs
+//HintName: G.Models.OperationDurationStatistics.g.cs
 
 #nullable enable
 
@@ -14,13 +14,13 @@ namespace G
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("count")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required int Count { get; set; }
+        public required long Count { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("fail_count")]
-        public int? FailCount { get; set; }
+        public long? FailCount { get; set; }
 
         /// <summary>
         /// The average time taken by 128 latest operations, calculated as a weighted mean.
@@ -44,7 +44,7 @@ namespace G
         /// The total duration of all operations in microseconds.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("total_duration_micros")]
-        public int? TotalDurationMicros { get; set; }
+        public long? TotalDurationMicros { get; set; }
 
         /// <summary>
         /// 
@@ -80,12 +80,12 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public OperationDurationStatistics(
-            int count,
-            int? failCount,
+            long count,
+            long? failCount,
             float? avgDurationMicros,
             float? minDurationMicros,
             float? maxDurationMicros,
-            int? totalDurationMicros,
+            long? totalDurationMicros,
             global::System.DateTime? lastResponded)
         {
             this.Count = count;

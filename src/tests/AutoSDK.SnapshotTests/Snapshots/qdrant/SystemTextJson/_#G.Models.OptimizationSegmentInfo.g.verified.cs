@@ -1,4 +1,4 @@
-﻿//HintName: G.Models.OptimizationSegmentInfo.g.cs
+//HintName: G.Models.OptimizationSegmentInfo.g.cs
 
 #nullable enable
 
@@ -21,7 +21,7 @@ namespace G
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("points_count")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required int PointsCount { get; set; }
+        public required long PointsCount { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -43,7 +43,7 @@ namespace G
 #endif
         public OptimizationSegmentInfo(
             global::System.Guid uuid,
-            int pointsCount)
+            long pointsCount)
         {
             this.Uuid = uuid;
             this.PointsCount = pointsCount;

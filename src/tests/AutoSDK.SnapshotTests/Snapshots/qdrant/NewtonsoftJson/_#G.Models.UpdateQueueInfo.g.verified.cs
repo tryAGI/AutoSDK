@@ -1,4 +1,4 @@
-﻿//HintName: G.Models.UpdateQueueInfo.g.cs
+//HintName: G.Models.UpdateQueueInfo.g.cs
 
 #nullable enable
 
@@ -13,13 +13,13 @@ namespace G
         /// Number of elements in the queue
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("length", Required = global::Newtonsoft.Json.Required.Always)]
-        public int Length { get; set; } = default!;
+        public long Length { get; set; } = default!;
 
         /// <summary>
         /// Number of points that are deferred (i.e hidden from search as they're not yet optimized).
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("deferred_points")]
-        public int? DeferredPoints { get; set; }
+        public long? DeferredPoints { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -37,8 +37,8 @@ namespace G
         /// Number of points that are deferred (i.e hidden from search as they're not yet optimized).
         /// </param>
         public UpdateQueueInfo(
-            int length,
-            int? deferredPoints)
+            long length,
+            long? deferredPoints)
         {
             this.Length = length;
             this.DeferredPoints = deferredPoints;

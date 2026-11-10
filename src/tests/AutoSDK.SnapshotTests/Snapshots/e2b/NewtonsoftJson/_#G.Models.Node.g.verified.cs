@@ -1,4 +1,4 @@
-﻿//HintName: G.Models.Node.g.cs
+//HintName: G.Models.Node.g.cs
 
 #nullable enable
 
@@ -56,7 +56,7 @@ namespace G
         /// Number of sandboxes running on the node
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("sandboxCount", Required = global::Newtonsoft.Json.Required.Always)]
-        public int SandboxCount { get; set; } = default!;
+        public long SandboxCount { get; set; } = default!;
 
         /// <summary>
         /// Node metrics
@@ -68,13 +68,13 @@ namespace G
         /// Number of sandbox create successes
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("createSuccesses", Required = global::Newtonsoft.Json.Required.Always)]
-        public int CreateSuccesses { get; set; } = default!;
+        public long CreateSuccesses { get; set; } = default!;
 
         /// <summary>
         /// Number of sandbox create fails
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("createFails", Required = global::Newtonsoft.Json.Required.Always)]
-        public int CreateFails { get; set; } = default!;
+        public long CreateFails { get; set; } = default!;
 
         /// <summary>
         /// Number of starting Sandboxes
@@ -133,10 +133,10 @@ namespace G
             string clusterID,
             global::G.MachineInfo machineInfo,
             global::G.NodeStatus status,
-            int sandboxCount,
+            long sandboxCount,
             global::G.NodeMetrics metrics,
-            int createSuccesses,
-            int createFails,
+            long createSuccesses,
+            long createFails,
             int sandboxStartingCount)
         {
             this.Version = version ?? throw new global::System.ArgumentNullException(nameof(version));

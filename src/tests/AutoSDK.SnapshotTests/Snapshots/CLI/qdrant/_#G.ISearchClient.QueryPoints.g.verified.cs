@@ -1,4 +1,4 @@
-﻿//HintName: G.ISearchClient.QueryPoints.g.cs
+//HintName: G.ISearchClient.QueryPoints.g.cs
 #nullable enable
 
 namespace G
@@ -124,8 +124,8 @@ namespace G
             global::G.Filter? filter = default,
             global::G.SearchParams? @params = default,
             float? scoreThreshold = default,
-            int? limit = default,
-            int? offset = default,
+            long? limit = default,
+            long? offset = default,
             global::G.WithVector? withVector = default,
             global::G.WithPayloadInterface? withPayload = default,
             global::G.LookupLocation? lookupFrom = default,

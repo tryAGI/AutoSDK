@@ -1,4 +1,4 @@
-﻿//HintName: G.Models.RunningEnvironmentTelemetry.g.cs
+//HintName: G.Models.RunningEnvironmentTelemetry.g.cs
 
 #nullable enable
 
@@ -31,19 +31,19 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("cores")]
-        public int? Cores { get; set; }
+        public long? Cores { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("ram_size")]
-        public int? RamSize { get; set; }
+        public long? RamSize { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("disk_size")]
-        public int? DiskSize { get; set; }
+        public long? DiskSize { get; set; }
 
         /// <summary>
         /// 
@@ -86,9 +86,9 @@ namespace G
             string cpuFlags,
             string? distribution,
             string? distributionVersion,
-            int? cores,
-            int? ramSize,
-            int? diskSize,
+            long? cores,
+            long? ramSize,
+            long? diskSize,
             global::G.CpuEndian? cpuEndian,
             global::System.Collections.Generic.IList<global::G.GpuDeviceTelemetry>? gpuDevices)
         {

@@ -1,4 +1,4 @@
-﻿//HintName: G.ISearchClient.DiscoverPoints.g.cs
+//HintName: G.ISearchClient.DiscoverPoints.g.cs
 #nullable enable
 
 namespace G
@@ -130,7 +130,7 @@ namespace G
         [global::System.Obsolete("This method marked as deprecated.")]
         global::System.Threading.Tasks.Task<global::G.DiscoverPointsResponse> DiscoverPointsAsync(
             string collectionName,
-            int limit,
+            long limit,
             global::G.ReadConsistency? consistency = default,
             int? timeout = default,
             global::G.ShardKeySelector? shardKey = default,
@@ -138,7 +138,7 @@ namespace G
             global::System.Collections.Generic.IList<global::G.ContextExamplePair>? context = default,
             global::G.Filter? filter = default,
             global::G.SearchParams? @params = default,
-            int? offset = default,
+            long? offset = default,
             global::G.WithPayloadInterface? withPayload = default,
             global::G.WithVector? withVector = default,
             global::G.UsingVector? @using = default,

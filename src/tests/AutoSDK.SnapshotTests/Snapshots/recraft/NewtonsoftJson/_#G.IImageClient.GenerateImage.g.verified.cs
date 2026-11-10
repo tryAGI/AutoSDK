@@ -1,4 +1,4 @@
-﻿//HintName: G.IImageClient.GenerateImage.g.cs
+//HintName: G.IImageClient.GenerateImage.g.cs
 #nullable enable
 
 namespace G
@@ -50,7 +50,7 @@ namespace G
             global::G.UserControls? controls = default,
             global::G.TransformModel? model = default,
             int? n = default,
-            int? randomSeed = default,
+            long? randomSeed = default,
             global::G.ResponseFormat? responseFormat = default,
             global::G.ImageSize? size = default,
             global::G.ImageStyle? style = default,

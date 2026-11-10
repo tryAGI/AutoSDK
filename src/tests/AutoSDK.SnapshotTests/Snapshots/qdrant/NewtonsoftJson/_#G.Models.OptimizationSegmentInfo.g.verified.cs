@@ -1,4 +1,4 @@
-﻿//HintName: G.Models.OptimizationSegmentInfo.g.cs
+//HintName: G.Models.OptimizationSegmentInfo.g.cs
 
 #nullable enable
 
@@ -19,7 +19,7 @@ namespace G
         /// Number of non-deleted points in the segment.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("points_count", Required = global::Newtonsoft.Json.Required.Always)]
-        public int PointsCount { get; set; } = default!;
+        public long PointsCount { get; set; } = default!;
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -38,7 +38,7 @@ namespace G
         /// </param>
         public OptimizationSegmentInfo(
             global::System.Guid uuid,
-            int pointsCount)
+            long pointsCount)
         {
             this.Uuid = uuid;
             this.PointsCount = pointsCount;

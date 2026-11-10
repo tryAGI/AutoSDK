@@ -1,4 +1,4 @@
-﻿//HintName: G.Models.StrictModeSparseOutput.g.cs
+//HintName: G.Models.StrictModeSparseOutput.g.cs
 
 #nullable enable
 
@@ -13,7 +13,7 @@ namespace G
         /// Max length of sparse vector
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("max_length")]
-        public int? MaxLength { get; set; }
+        public long? MaxLength { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -28,7 +28,7 @@ namespace G
         /// Max length of sparse vector
         /// </param>
         public StrictModeSparseOutput(
-            int? maxLength)
+            long? maxLength)
         {
             this.MaxLength = maxLength;
         }

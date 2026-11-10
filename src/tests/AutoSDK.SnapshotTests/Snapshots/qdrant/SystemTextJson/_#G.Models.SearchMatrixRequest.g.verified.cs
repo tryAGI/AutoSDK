@@ -1,4 +1,4 @@
-﻿//HintName: G.Models.SearchMatrixRequest.g.cs
+//HintName: G.Models.SearchMatrixRequest.g.cs
 
 #nullable enable
 
@@ -25,13 +25,13 @@ namespace G
         /// How many points to select and search within. Default is 10.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("sample")]
-        public int? Sample { get; set; }
+        public long? Sample { get; set; }
 
         /// <summary>
         /// How many neighbours per sample to find. Default is 3.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("limit")]
-        public int? Limit { get; set; }
+        public long? Limit { get; set; }
 
         /// <summary>
         /// Define which vector name to use for querying. If missing, the default vector is used.
@@ -69,8 +69,8 @@ namespace G
         public SearchMatrixRequest(
             global::G.ShardKeySelector? shardKey,
             global::G.Filter? filter,
-            int? sample,
-            int? limit,
+            long? sample,
+            long? limit,
             string? @using)
         {
             this.ShardKey = shardKey;

@@ -1,4 +1,4 @@
-﻿//HintName: G.Models.ReshardingInfo.g.cs
+//HintName: G.Models.ReshardingInfo.g.cs
 
 #nullable enable
 
@@ -24,14 +24,14 @@ namespace G
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("shard_id")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required int ShardId { get; set; }
+        public required long ShardId { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("peer_id")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required int PeerId { get; set; }
+        public required long PeerId { get; set; }
 
         /// <summary>
         /// 
@@ -61,8 +61,8 @@ namespace G
 #endif
         public ReshardingInfo(
             global::G.ReshardingDirection direction,
-            int shardId,
-            int peerId,
+            long shardId,
+            long peerId,
             global::G.ShardKey? shardKey)
         {
             this.Direction = direction;

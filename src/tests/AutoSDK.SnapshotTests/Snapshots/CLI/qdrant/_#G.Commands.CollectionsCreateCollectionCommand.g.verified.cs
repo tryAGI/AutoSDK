@@ -1,4 +1,4 @@
-﻿//HintName: G.Commands.CollectionsCreateCollectionCommand.g.cs
+//HintName: G.Commands.CollectionsCreateCollectionCommand.g.cs
 
 #nullable enable
 
@@ -15,10 +15,10 @@ namespace G
             string collectionName,
             int? timeout,
             global::G.VectorsConfig? vectors,
-            int? shardNumber,
+            long? shardNumber,
             global::G.ShardingMethod? shardingMethod,
-            int? replicationFactor,
-            int? writeConsistencyFactor,
+            long? replicationFactor,
+            long? writeConsistencyFactor,
             bool? onDiskPayload,
             global::G.HnswConfigDiff? hnswConfig,
             global::G.WalConfigDiff? walConfig,
@@ -59,7 +59,7 @@ or multiple mode:
 { ""default"": { ""size"": 128, ""distance"": ""Cosine"" } }",
         };
 
-        private global::System.CommandLine.Option<int?> ShardNumber { get; } = new(
+        private global::System.CommandLine.Option<long?> ShardNumber { get; } = new(
             name: "shardNumber")
         {
             Description = @"For auto sharding: Number of shards in collection. - Default is 1 for standalone, otherwise equal to the number of nodes - Minimum is 1
@@ -73,13 +73,13 @@ For custom sharding: Number of shards in collection per shard group. - Default i
             Description = @"Sharding method Default is Auto - points are distributed across all available shards Custom - points are distributed across shards according to shard key",
         };
 
-        private global::System.CommandLine.Option<int?> ReplicationFactor { get; } = new(
+        private global::System.CommandLine.Option<long?> ReplicationFactor { get; } = new(
             name: "replicationFactor")
         {
             Description = @"Number of shards replicas. Default is 1 Minimum is 1",
         };
 
-        private global::System.CommandLine.Option<int?> WriteConsistencyFactor { get; } = new(
+        private global::System.CommandLine.Option<long?> WriteConsistencyFactor { get; } = new(
             name: "writeConsistencyFactor")
         {
             Description = @"Defines how many replicas should apply the operation for us to consider it successful. Increasing this number will make the collection more resilient to inconsistencies, but will also make it fail if not enough replicas are available. Does not have any performance impact.",

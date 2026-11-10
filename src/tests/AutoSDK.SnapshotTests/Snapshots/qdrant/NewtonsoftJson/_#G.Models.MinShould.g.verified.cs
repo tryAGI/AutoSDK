@@ -1,4 +1,4 @@
-﻿//HintName: G.Models.MinShould.g.cs
+//HintName: G.Models.MinShould.g.cs
 
 #nullable enable
 
@@ -19,7 +19,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("min_count", Required = global::Newtonsoft.Json.Required.Always)]
-        public int MinCount { get; set; } = default!;
+        public long MinCount { get; set; } = default!;
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -34,7 +34,7 @@ namespace G
         /// <param name="minCount"></param>
         public MinShould(
             global::System.Collections.Generic.IList<global::G.Condition> conditions,
-            int minCount)
+            long minCount)
         {
             this.Conditions = conditions ?? throw new global::System.ArgumentNullException(nameof(conditions));
             this.MinCount = minCount;

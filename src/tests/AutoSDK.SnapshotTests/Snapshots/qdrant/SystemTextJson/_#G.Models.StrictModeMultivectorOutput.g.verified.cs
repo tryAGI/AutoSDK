@@ -1,4 +1,4 @@
-﻿//HintName: G.Models.StrictModeMultivectorOutput.g.cs
+//HintName: G.Models.StrictModeMultivectorOutput.g.cs
 
 #nullable enable
 
@@ -13,7 +13,7 @@ namespace G
         /// Max number of vectors in a multivector
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("max_vectors")]
-        public int? MaxVectors { get; set; }
+        public long? MaxVectors { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -31,7 +31,7 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public StrictModeMultivectorOutput(
-            int? maxVectors)
+            long? maxVectors)
         {
             this.MaxVectors = maxVectors;
         }

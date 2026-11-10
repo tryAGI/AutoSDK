@@ -1,4 +1,4 @@
-﻿//HintName: G.Commands.PointsFacetCommand.g.cs
+//HintName: G.Commands.PointsFacetCommand.g.cs
 
 #nullable enable
 
@@ -17,7 +17,7 @@ namespace G
             int? timeout,
             global::G.ShardKeySelector? shardKey,
             string key,
-            int? limit,
+            long? limit,
             global::G.Filter? filter,
             bool? exact,
             global::System.Threading.CancellationToken cancellationToken);
@@ -57,7 +57,7 @@ namespace G
             Description = @"",
         };
 
-        private global::System.CommandLine.Option<int?> Limit { get; } = new(
+        private global::System.CommandLine.Option<long?> Limit { get; } = new(
             name: "limit")
         {
             Description = @"Max number of hits to return. Default is 10.",

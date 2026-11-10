@@ -1,4 +1,4 @@
-﻿//HintName: G.Models.NodeDetail.g.cs
+//HintName: G.Models.NodeDetail.g.cs
 
 #nullable enable
 
@@ -64,7 +64,7 @@ namespace G
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("sandboxCount")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required int SandboxCount { get; set; }
+        public required long SandboxCount { get; set; }
 
         /// <summary>
         /// Node metrics
@@ -85,14 +85,14 @@ namespace G
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("createSuccesses")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required int CreateSuccesses { get; set; }
+        public required long CreateSuccesses { get; set; }
 
         /// <summary>
         /// Number of sandbox create fails
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("createFails")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required int CreateFails { get; set; }
+        public required long CreateFails { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -148,11 +148,11 @@ namespace G
             string serviceInstanceID,
             global::G.MachineInfo machineInfo,
             global::G.NodeStatus status,
-            int sandboxCount,
+            long sandboxCount,
             global::G.NodeMetrics metrics,
             global::System.Collections.Generic.IList<string> cachedBuilds,
-            int createSuccesses,
-            int createFails)
+            long createSuccesses,
+            long createFails)
         {
             this.ClusterID = clusterID ?? throw new global::System.ArgumentNullException(nameof(clusterID));
             this.Version = version ?? throw new global::System.ArgumentNullException(nameof(version));

@@ -1,4 +1,4 @@
-﻿//HintName: G.Models.FacetValueHit.g.cs
+//HintName: G.Models.FacetValueHit.g.cs
 
 #nullable enable
 
@@ -22,7 +22,7 @@ namespace G
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("count")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required int Count { get; set; }
+        public required long Count { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -40,7 +40,7 @@ namespace G
 #endif
         public FacetValueHit(
             global::G.FacetValue value,
-            int count)
+            long count)
         {
             this.Value = value;
             this.Count = count;

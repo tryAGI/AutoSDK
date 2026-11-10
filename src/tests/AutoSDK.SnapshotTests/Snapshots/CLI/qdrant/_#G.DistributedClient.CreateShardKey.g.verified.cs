@@ -577,9 +577,9 @@ namespace G
             string collectionName,
             global::G.ShardKey shardKey,
             int? timeout = default,
-            int? shardsNumber = default,
-            int? replicationFactor = default,
-            global::System.Collections.Generic.IList<int>? placement = default,
+            long? shardsNumber = default,
+            long? replicationFactor = default,
+            global::System.Collections.Generic.IList<long>? placement = default,
             global::G.ReplicaState? initialState = default,
             global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default)

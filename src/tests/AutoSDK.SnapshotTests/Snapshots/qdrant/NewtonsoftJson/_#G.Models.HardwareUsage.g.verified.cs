@@ -1,4 +1,4 @@
-﻿//HintName: G.Models.HardwareUsage.g.cs
+//HintName: G.Models.HardwareUsage.g.cs
 
 #nullable enable
 
@@ -13,43 +13,43 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("cpu", Required = global::Newtonsoft.Json.Required.Always)]
-        public int Cpu { get; set; } = default!;
+        public long Cpu { get; set; } = default!;
 
         /// <summary>
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("payload_io_read", Required = global::Newtonsoft.Json.Required.Always)]
-        public int PayloadIoRead { get; set; } = default!;
+        public long PayloadIoRead { get; set; } = default!;
 
         /// <summary>
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("payload_io_write", Required = global::Newtonsoft.Json.Required.Always)]
-        public int PayloadIoWrite { get; set; } = default!;
+        public long PayloadIoWrite { get; set; } = default!;
 
         /// <summary>
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("payload_index_io_read", Required = global::Newtonsoft.Json.Required.Always)]
-        public int PayloadIndexIoRead { get; set; } = default!;
+        public long PayloadIndexIoRead { get; set; } = default!;
 
         /// <summary>
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("payload_index_io_write", Required = global::Newtonsoft.Json.Required.Always)]
-        public int PayloadIndexIoWrite { get; set; } = default!;
+        public long PayloadIndexIoWrite { get; set; } = default!;
 
         /// <summary>
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("vector_io_read", Required = global::Newtonsoft.Json.Required.Always)]
-        public int VectorIoRead { get; set; } = default!;
+        public long VectorIoRead { get; set; } = default!;
 
         /// <summary>
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("vector_io_write", Required = global::Newtonsoft.Json.Required.Always)]
-        public int VectorIoWrite { get; set; } = default!;
+        public long VectorIoWrite { get; set; } = default!;
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -68,13 +68,13 @@ namespace G
         /// <param name="vectorIoRead"></param>
         /// <param name="vectorIoWrite"></param>
         public HardwareUsage(
-            int cpu,
-            int payloadIoRead,
-            int payloadIoWrite,
-            int payloadIndexIoRead,
-            int payloadIndexIoWrite,
-            int vectorIoRead,
-            int vectorIoWrite)
+            long cpu,
+            long payloadIoRead,
+            long payloadIoWrite,
+            long payloadIndexIoRead,
+            long payloadIndexIoWrite,
+            long vectorIoRead,
+            long vectorIoWrite)
         {
             this.Cpu = cpu;
             this.PayloadIoRead = payloadIoRead;

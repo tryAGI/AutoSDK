@@ -1,4 +1,4 @@
-﻿//HintName: G.Models.SparseIndexConfig.g.cs
+//HintName: G.Models.SparseIndexConfig.g.cs
 
 #nullable enable
 
@@ -14,7 +14,7 @@ namespace G
         /// Note: this is number of vectors, not KiloBytes.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("full_scan_threshold")]
-        public int? FullScanThreshold { get; set; }
+        public long? FullScanThreshold { get; set; }
 
         /// <summary>
         /// Sparse index types
@@ -49,7 +49,7 @@ namespace G
         /// </param>
         public SparseIndexConfig(
             global::G.SparseIndexType indexType,
-            int? fullScanThreshold,
+            long? fullScanThreshold,
             global::G.VectorStorageDatatype? datatype)
         {
             this.FullScanThreshold = fullScanThreshold;

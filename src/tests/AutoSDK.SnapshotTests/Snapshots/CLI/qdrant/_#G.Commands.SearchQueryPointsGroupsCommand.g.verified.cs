@@ -1,4 +1,4 @@
-﻿//HintName: G.Commands.SearchQueryPointsGroupsCommand.g.cs
+//HintName: G.Commands.SearchQueryPointsGroupsCommand.g.cs
 
 #nullable enable
 
@@ -26,8 +26,8 @@ namespace G
             global::G.WithPayloadInterface? withPayload,
             global::G.LookupLocation? lookupFrom,
             string groupBy,
-            int? groupSize,
-            int? limit,
+            long? groupSize,
+            long? limit,
             global::G.WithLookupInterface? withLookup,
             global::System.Threading.CancellationToken cancellationToken);
         partial void Complete(
@@ -120,13 +120,13 @@ namespace G
             Description = @"The location to use for IDs lookup, if not specified - use the current collection and the 'using' vector Note: the other collection vectors should have the same vector size as the 'using' vector in the current collection",
         };
 
-        private global::System.CommandLine.Option<int?> GroupSize { get; } = new(
+        private global::System.CommandLine.Option<long?> GroupSize { get; } = new(
             name: "groupSize")
         {
             Description = @"Maximum amount of points to return per group. Default is 3.",
         };
 
-        private global::System.CommandLine.Option<int?> Limit { get; } = new(
+        private global::System.CommandLine.Option<long?> Limit { get; } = new(
             name: "limit")
         {
             Description = @"Maximum amount of groups to return. Default is 10.",

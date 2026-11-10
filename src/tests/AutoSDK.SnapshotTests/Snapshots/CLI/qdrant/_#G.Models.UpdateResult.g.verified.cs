@@ -1,4 +1,4 @@
-﻿//HintName: G.Models.UpdateResult.g.cs
+//HintName: G.Models.UpdateResult.g.cs
 
 #nullable enable
 
@@ -13,7 +13,7 @@ namespace G
         /// Sequential number of the operation
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("operation_id")]
-        public int? OperationId { get; set; }
+        public long? OperationId { get; set; }
 
         /// <summary>
         /// `Acknowledged` - Request is saved to WAL and will be process in a queue. `Completed` - Request is completed, changes are actual. `WaitTimeout` - Request is waiting for timeout.
@@ -43,7 +43,7 @@ namespace G
 #endif
         public UpdateResult(
             global::G.UpdateStatus status,
-            int? operationId)
+            long? operationId)
         {
             this.OperationId = operationId;
             this.Status = status;

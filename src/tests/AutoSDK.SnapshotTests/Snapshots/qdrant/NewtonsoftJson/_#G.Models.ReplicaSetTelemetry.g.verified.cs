@@ -1,4 +1,4 @@
-﻿//HintName: G.Models.ReplicaSetTelemetry.g.cs
+//HintName: G.Models.ReplicaSetTelemetry.g.cs
 
 #nullable enable
 
@@ -13,7 +13,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("id", Required = global::Newtonsoft.Json.Required.Always)]
-        public int Id { get; set; } = default!;
+        public long Id { get; set; } = default!;
 
         /// <summary>
         /// 
@@ -61,7 +61,7 @@ namespace G
         /// <param name="local"></param>
         /// <param name="partialSnapshot"></param>
         public ReplicaSetTelemetry(
-            int id,
+            long id,
             global::System.Collections.Generic.IList<global::G.RemoteShardTelemetry> remote,
             global::System.Collections.Generic.Dictionary<string, global::G.ReplicaState> replicateStates,
             global::G.ShardKey? key,

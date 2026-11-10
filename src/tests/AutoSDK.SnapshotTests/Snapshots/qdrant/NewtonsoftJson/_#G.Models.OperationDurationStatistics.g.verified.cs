@@ -1,4 +1,4 @@
-﻿//HintName: G.Models.OperationDurationStatistics.g.cs
+//HintName: G.Models.OperationDurationStatistics.g.cs
 
 #nullable enable
 
@@ -13,13 +13,13 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("count", Required = global::Newtonsoft.Json.Required.Always)]
-        public int Count { get; set; } = default!;
+        public long Count { get; set; } = default!;
 
         /// <summary>
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("fail_count")]
-        public int? FailCount { get; set; }
+        public long? FailCount { get; set; }
 
         /// <summary>
         /// The average time taken by 128 latest operations, calculated as a weighted mean.
@@ -43,7 +43,7 @@ namespace G
         /// The total duration of all operations in microseconds.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("total_duration_micros")]
-        public int? TotalDurationMicros { get; set; }
+        public long? TotalDurationMicros { get; set; }
 
         /// <summary>
         /// 
@@ -76,12 +76,12 @@ namespace G
         /// </param>
         /// <param name="lastResponded"></param>
         public OperationDurationStatistics(
-            int count,
-            int? failCount,
+            long count,
+            long? failCount,
             float? avgDurationMicros,
             float? minDurationMicros,
             float? maxDurationMicros,
-            int? totalDurationMicros,
+            long? totalDurationMicros,
             global::System.DateTime? lastResponded)
         {
             this.Count = count;

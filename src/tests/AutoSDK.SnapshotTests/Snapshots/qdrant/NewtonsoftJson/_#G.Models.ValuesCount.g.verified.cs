@@ -1,4 +1,4 @@
-﻿//HintName: G.Models.ValuesCount.g.cs
+//HintName: G.Models.ValuesCount.g.cs
 
 #nullable enable
 
@@ -13,25 +13,25 @@ namespace G
         /// point.key.length() &lt; values_count.lt
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("lt")]
-        public int? Lt { get; set; }
+        public long? Lt { get; set; }
 
         /// <summary>
         /// point.key.length() &gt; values_count.gt
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("gt")]
-        public int? Gt { get; set; }
+        public long? Gt { get; set; }
 
         /// <summary>
         /// point.key.length() &gt;= values_count.gte
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("gte")]
-        public int? Gte { get; set; }
+        public long? Gte { get; set; }
 
         /// <summary>
         /// point.key.length() &lt;= values_count.lte
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("lte")]
-        public int? Lte { get; set; }
+        public long? Lte { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -55,10 +55,10 @@ namespace G
         /// point.key.length() &lt;= values_count.lte
         /// </param>
         public ValuesCount(
-            int? lt,
-            int? gt,
-            int? gte,
-            int? lte)
+            long? lt,
+            long? gt,
+            long? gte,
+            long? lte)
         {
             this.Lt = lt;
             this.Gt = gt;

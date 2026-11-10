@@ -1,4 +1,4 @@
-﻿//HintName: G.Models.WalConfig.g.cs
+//HintName: G.Models.WalConfig.g.cs
 
 #nullable enable
 
@@ -14,21 +14,21 @@ namespace G
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("wal_capacity_mb")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required int WalCapacityMb { get; set; }
+        public required long WalCapacityMb { get; set; }
 
         /// <summary>
         /// Number of WAL segments to create ahead of actually used ones
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("wal_segments_ahead")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required int WalSegmentsAhead { get; set; }
+        public required long WalSegmentsAhead { get; set; }
 
         /// <summary>
         /// Number of closed WAL segments to keep<br/>
         /// Default Value: 1
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("wal_retain_closed")]
-        public int? WalRetainClosed { get; set; }
+        public long? WalRetainClosed { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -53,9 +53,9 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public WalConfig(
-            int walCapacityMb,
-            int walSegmentsAhead,
-            int? walRetainClosed)
+            long walCapacityMb,
+            long walSegmentsAhead,
+            long? walRetainClosed)
         {
             this.WalCapacityMb = walCapacityMb;
             this.WalSegmentsAhead = walSegmentsAhead;

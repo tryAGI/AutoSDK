@@ -1,4 +1,4 @@
-﻿//HintName: G.Models.ScrollRequest.g.cs
+//HintName: G.Models.ScrollRequest.g.cs
 
 #nullable enable
 
@@ -25,7 +25,7 @@ namespace G
         /// Page size. Default: 10
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("limit")]
-        public int? Limit { get; set; }
+        public long? Limit { get; set; }
 
         /// <summary>
         /// Look only for points which satisfies this conditions. If not provided - all points.
@@ -88,7 +88,7 @@ namespace G
         public ScrollRequest(
             global::G.ShardKeySelector? shardKey,
             global::G.ExtendedPointId? offset,
-            int? limit,
+            long? limit,
             global::G.Filter? filter,
             global::G.WithPayloadInterface? withPayload,
             global::G.WithVector? withVector,

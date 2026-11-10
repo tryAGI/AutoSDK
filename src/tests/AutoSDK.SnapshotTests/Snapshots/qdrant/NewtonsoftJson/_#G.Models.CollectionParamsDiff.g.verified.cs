@@ -1,4 +1,4 @@
-﻿//HintName: G.Models.CollectionParamsDiff.g.cs
+//HintName: G.Models.CollectionParamsDiff.g.cs
 
 #nullable enable
 
@@ -13,25 +13,25 @@ namespace G
         /// Number of replicas for each shard
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("replication_factor")]
-        public int? ReplicationFactor { get; set; }
+        public long? ReplicationFactor { get; set; }
 
         /// <summary>
         /// Minimal number successful responses from replicas to consider operation successful
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("write_consistency_factor")]
-        public int? WriteConsistencyFactor { get; set; }
+        public long? WriteConsistencyFactor { get; set; }
 
         /// <summary>
         /// Fan-out every read request to these many additional remote nodes (and return first available response)
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("read_fan_out_factor")]
-        public int? ReadFanOutFactor { get; set; }
+        public long? ReadFanOutFactor { get; set; }
 
         /// <summary>
         /// Delay in milliseconds before sending read requests to remote nodes
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("read_fan_out_delay_ms")]
-        public int? ReadFanOutDelayMs { get; set; }
+        public long? ReadFanOutDelayMs { get; set; }
 
         /// <summary>
         /// If true - point's payload will not be stored in memory. It will be read from the disk every time it is requested. This setting saves RAM by (slightly) increasing the response time. Note: those payload values that are involved in filtering and are indexed - remain in RAM.<br/>
@@ -66,10 +66,10 @@ namespace G
         /// Default Value: openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464
         /// </param>
         public CollectionParamsDiff(
-            int? replicationFactor,
-            int? writeConsistencyFactor,
-            int? readFanOutFactor,
-            int? readFanOutDelayMs,
+            long? replicationFactor,
+            long? writeConsistencyFactor,
+            long? readFanOutFactor,
+            long? readFanOutDelayMs,
             bool? onDiskPayload)
         {
             this.ReplicationFactor = replicationFactor;

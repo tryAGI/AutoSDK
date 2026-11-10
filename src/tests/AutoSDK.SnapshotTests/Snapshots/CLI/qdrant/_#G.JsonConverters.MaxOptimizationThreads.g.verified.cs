@@ -41,7 +41,7 @@ namespace G.JsonConverters
             }
             var __score1 = 0;
             {
-                var __ti = typeInfoResolver.GetTypeInfo(typeof(int), options);
+                var __ti = typeInfoResolver.GetTypeInfo(typeof(long), options);
                 if (__ti != null && __ti.Kind == global::System.Text.Json.Serialization.Metadata.JsonTypeInfoKind.Object)
                 {
                     foreach (var __prop in __ti.Properties)
@@ -56,7 +56,7 @@ namespace G.JsonConverters
             if (__score1 > __bestScore) { __bestScore = __score1; __bestIndex = 1; }
 
             global::G.MaxOptimizationThreadsSetting? setting = default;
-            int? maxOptimizationThreadsVariant2 = default;
+            long? maxOptimizationThreadsVariant2 = default;
             if (__bestIndex >= 0)
             {
                 if (__bestIndex == 0)
@@ -85,8 +85,8 @@ namespace G.JsonConverters
                     try
                     {
 
-                        var typeInfo = typeInfoResolver.GetTypeInfo(typeof(int), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<int> ??
-                                       throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(int).Name}");
+                        var typeInfo = typeInfoResolver.GetTypeInfo(typeof(long), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<long> ??
+                                       throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(long).Name}");
                         maxOptimizationThreadsVariant2 = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
                     }
                     catch (global::System.Text.Json.JsonException)
@@ -128,8 +128,8 @@ namespace G.JsonConverters
                 try
                 {
 
-                    var typeInfo = typeInfoResolver.GetTypeInfo(typeof(int), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<int> ??
-                                   throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(int).Name}");
+                    var typeInfo = typeInfoResolver.GetTypeInfo(typeof(long), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<long> ??
+                                   throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(long).Name}");
                     maxOptimizationThreadsVariant2 = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
                 }
                 catch (global::System.Text.Json.JsonException)
@@ -170,8 +170,8 @@ namespace G.JsonConverters
             }
             else if (value.IsMaxOptimizationThreadsVariant2)
             {
-                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(int), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<int> ??
-                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(int).Name}");
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(long), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<long> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(long).Name}");
                 global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickMaxOptimizationThreadsVariant2(), typeInfo);
             }
         }

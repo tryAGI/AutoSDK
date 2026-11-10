@@ -83,79 +83,83 @@ namespace recraft
         /// <summary>
         /// 
         /// </summary>
-        public global::recraft.ResponseFormat? Type11 { get; set; }
+        public long? Type11 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::recraft.ImageSize? Type12 { get; set; }
+        public global::recraft.ResponseFormat? Type12 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::recraft.ImageSubStyle? Type13 { get; set; }
+        public global::recraft.ImageSize? Type13 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::recraft.GenerateImageResponse? Type14 { get; set; }
+        public global::recraft.ImageSubStyle? Type14 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::recraft.Image>? Type15 { get; set; }
+        public global::recraft.GenerateImageResponse? Type15 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::recraft.Image? Type16 { get; set; }
+        public global::System.Collections.Generic.IList<global::recraft.Image>? Type16 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::recraft.ImageColor? Type17 { get; set; }
+        public global::recraft.Image? Type17 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<int>? Type18 { get; set; }
+        public global::recraft.ImageColor? Type18 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<double>? Type19 { get; set; }
+        public global::System.Collections.Generic.IList<int>? Type19 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public double? Type20 { get; set; }
+        public global::System.Collections.Generic.IList<double>? Type20 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::recraft.ListStylesResponse? Type21 { get; set; }
+        public double? Type21 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::recraft.Style>? Type22 { get; set; }
+        public global::recraft.ListStylesResponse? Type22 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::recraft.Style? Type23 { get; set; }
+        public global::System.Collections.Generic.IList<global::recraft.Style>? Type23 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::recraft.ProcessImageRequest? Type24 { get; set; }
+        public global::recraft.Style? Type24 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::recraft.ProcessImageResponse? Type25 { get; set; }
+        public global::recraft.ProcessImageRequest? Type25 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.DateTime? Type26 { get; set; }
+        public global::recraft.ProcessImageResponse? Type26 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::recraft.User? Type27 { get; set; }
+        public global::System.DateTime? Type27 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::recraft.ImageColor>? Type28 { get; set; }
+        public global::recraft.User? Type28 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public object? Type29 { get; set; }
+        public global::System.Collections.Generic.IList<global::recraft.ImageColor>? Type29 { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
+        public object? Type30 { get; set; }
 
         /// <summary>
         /// 

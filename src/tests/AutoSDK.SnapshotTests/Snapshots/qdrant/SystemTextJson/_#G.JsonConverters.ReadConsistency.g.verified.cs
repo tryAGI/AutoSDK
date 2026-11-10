@@ -30,7 +30,7 @@ namespace G.JsonConverters
 
             var __score0 = 0;
             {
-                var __ti = typeInfoResolver.GetTypeInfo(typeof(int), options);
+                var __ti = typeInfoResolver.GetTypeInfo(typeof(long), options);
                 if (__ti != null && __ti.Kind == global::System.Text.Json.Serialization.Metadata.JsonTypeInfoKind.Object)
                 {
                     foreach (var __prop in __ti.Properties)
@@ -55,7 +55,7 @@ namespace G.JsonConverters
             if (__score0 > __bestScore) { __bestScore = __score0; __bestIndex = 0; }
             if (__score1 > __bestScore) { __bestScore = __score1; __bestIndex = 1; }
 
-            int? readConsistencyVariant1 = default;
+            long? readConsistencyVariant1 = default;
             global::G.ReadConsistencyType? type = default;
             if (__bestIndex >= 0)
             {
@@ -64,8 +64,8 @@ namespace G.JsonConverters
                     try
                     {
 
-                        var typeInfo = typeInfoResolver.GetTypeInfo(typeof(int), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<int> ??
-                                       throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(int).Name}");
+                        var typeInfo = typeInfoResolver.GetTypeInfo(typeof(long), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<long> ??
+                                       throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(long).Name}");
                         readConsistencyVariant1 = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
                     }
                     catch (global::System.Text.Json.JsonException)
@@ -107,8 +107,8 @@ namespace G.JsonConverters
                 try
                 {
 
-                    var typeInfo = typeInfoResolver.GetTypeInfo(typeof(int), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<int> ??
-                                   throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(int).Name}");
+                    var typeInfo = typeInfoResolver.GetTypeInfo(typeof(long), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<long> ??
+                                   throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(long).Name}");
                     readConsistencyVariant1 = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
                 }
                 catch (global::System.Text.Json.JsonException)
@@ -164,8 +164,8 @@ namespace G.JsonConverters
 
             if (value.IsReadConsistencyVariant1)
             {
-                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(int), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<int> ??
-                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(int).Name}");
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(long), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<long> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(long).Name}");
                 global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickReadConsistencyVariant1(), typeInfo);
             }
             else if (value.IsType)

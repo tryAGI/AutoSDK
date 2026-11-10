@@ -1,4 +1,4 @@
-﻿//HintName: G.Models.DistributedShardTelemetry.g.cs
+//HintName: G.Models.DistributedShardTelemetry.g.cs
 
 #nullable enable
 
@@ -13,7 +13,7 @@ namespace G
         /// Shard ID
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("id", Required = global::Newtonsoft.Json.Required.Always)]
-        public int Id { get; set; } = default!;
+        public long Id { get; set; } = default!;
 
         /// <summary>
         /// Optional shard key
@@ -46,7 +46,7 @@ namespace G
         /// Optional shard key
         /// </param>
         public DistributedShardTelemetry(
-            int id,
+            long id,
             global::System.Collections.Generic.IList<global::G.DistributedReplicaTelemetry> replicas,
             global::G.ShardKey? key)
         {

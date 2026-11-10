@@ -1,4 +1,4 @@
-﻿//HintName: G.ISearchClient.SearchPointGroups.g.cs
+//HintName: G.ISearchClient.SearchPointGroups.g.cs
 #nullable enable
 
 namespace G
@@ -121,8 +121,8 @@ namespace G
             string collectionName,
             global::G.NamedVectorStruct vector,
             string groupBy,
-            int groupSize,
-            int limit,
+            long groupSize,
+            long limit,
             global::G.ReadConsistency? consistency = default,
             int? timeout = default,
             global::G.ShardKeySelector? shardKey = default,

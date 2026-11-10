@@ -1,4 +1,4 @@
-﻿//HintName: G.Models.P2pConfigTelemetry.g.cs
+//HintName: G.Models.P2pConfigTelemetry.g.cs
 
 #nullable enable
 
@@ -14,7 +14,7 @@ namespace G
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("connection_pool_size")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required int ConnectionPoolSize { get; set; }
+        public required long ConnectionPoolSize { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -30,7 +30,7 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public P2pConfigTelemetry(
-            int connectionPoolSize)
+            long connectionPoolSize)
         {
             this.ConnectionPoolSize = connectionPoolSize;
         }

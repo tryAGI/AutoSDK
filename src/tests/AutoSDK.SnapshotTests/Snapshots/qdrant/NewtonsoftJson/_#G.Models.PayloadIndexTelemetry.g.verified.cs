@@ -1,4 +1,4 @@
-﻿//HintName: G.Models.PayloadIndexTelemetry.g.cs
+//HintName: G.Models.PayloadIndexTelemetry.g.cs
 
 #nullable enable
 
@@ -25,19 +25,19 @@ namespace G
         /// The amount of values indexed for all points.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("points_values_count", Required = global::Newtonsoft.Json.Required.Always)]
-        public int PointsValuesCount { get; set; } = default!;
+        public long PointsValuesCount { get; set; } = default!;
 
         /// <summary>
         /// The amount of points that have at least one value indexed.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("points_count", Required = global::Newtonsoft.Json.Required.Always)]
-        public int PointsCount { get; set; } = default!;
+        public long PointsCount { get; set; } = default!;
 
         /// <summary>
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("histogram_bucket_size")]
-        public int? HistogramBucketSize { get; set; }
+        public long? HistogramBucketSize { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -59,10 +59,10 @@ namespace G
         /// <param name="histogramBucketSize"></param>
         public PayloadIndexTelemetry(
             string indexType,
-            int pointsValuesCount,
-            int pointsCount,
+            long pointsValuesCount,
+            long pointsCount,
             string? fieldName,
-            int? histogramBucketSize)
+            long? histogramBucketSize)
         {
             this.FieldName = fieldName;
             this.IndexType = indexType ?? throw new global::System.ArgumentNullException(nameof(indexType));

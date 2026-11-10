@@ -1,4 +1,4 @@
-﻿//HintName: G.Models.SparseVector.g.cs
+//HintName: G.Models.SparseVector.g.cs
 
 #nullable enable
 
@@ -13,7 +13,7 @@ namespace G
         /// Indices must be unique
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("indices", Required = global::Newtonsoft.Json.Required.Always)]
-        public global::System.Collections.Generic.IList<int> Indices { get; set; } = default!;
+        public global::System.Collections.Generic.IList<long> Indices { get; set; } = default!;
 
         /// <summary>
         /// Values and indices must be the same length
@@ -37,7 +37,7 @@ namespace G
         /// Values and indices must be the same length
         /// </param>
         public SparseVector(
-            global::System.Collections.Generic.IList<int> indices,
+            global::System.Collections.Generic.IList<long> indices,
             global::System.Collections.Generic.IList<float> values)
         {
             this.Indices = indices ?? throw new global::System.ArgumentNullException(nameof(indices));

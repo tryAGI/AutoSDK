@@ -1,4 +1,4 @@
-﻿//HintName: G.Models.TrackerTelemetry.g.cs
+//HintName: G.Models.TrackerTelemetry.g.cs
 
 #nullable enable
 
@@ -25,7 +25,7 @@ namespace G
         /// Internal segment IDs being optimized. These are local and in-memory, meaning that they can refer to different segments after a service restart.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("segment_ids", Required = global::Newtonsoft.Json.Required.Always)]
-        public global::System.Collections.Generic.IList<int> SegmentIds { get; set; } = default!;
+        public global::System.Collections.Generic.IList<long> SegmentIds { get; set; } = default!;
 
         /// <summary>
         /// Segment UUIDs being optimized. Refers to same segments as in `segment_ids`, but trackable across restarts, and reflect their directory name.
@@ -84,7 +84,7 @@ namespace G
         public TrackerTelemetry(
             string name,
             global::System.Guid uuid,
-            global::System.Collections.Generic.IList<int> segmentIds,
+            global::System.Collections.Generic.IList<long> segmentIds,
             global::System.Collections.Generic.IList<global::System.Guid> segmentUuids,
             global::G.TrackerStatus status,
             global::System.DateTime startAt,

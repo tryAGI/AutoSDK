@@ -1,4 +1,4 @@
-﻿//HintName: G.ISearchClient.RecommendPoints.g.cs
+//HintName: G.ISearchClient.RecommendPoints.g.cs
 #nullable enable
 
 namespace G
@@ -126,7 +126,7 @@ namespace G
         [global::System.Obsolete("This method marked as deprecated.")]
         global::System.Threading.Tasks.Task<global::G.RecommendPointsResponse> RecommendPointsAsync(
             string collectionName,
-            int limit,
+            long limit,
             global::G.ReadConsistency? consistency = default,
             int? timeout = default,
             global::G.ShardKeySelector? shardKey = default,
@@ -135,7 +135,7 @@ namespace G
             global::G.RecommendStrategy? strategy = default,
             global::G.Filter? filter = default,
             global::G.SearchParams? @params = default,
-            int? offset = default,
+            long? offset = default,
             global::G.WithPayloadInterface? withPayload = default,
             global::G.WithVector? withVector = default,
             float? scoreThreshold = default,

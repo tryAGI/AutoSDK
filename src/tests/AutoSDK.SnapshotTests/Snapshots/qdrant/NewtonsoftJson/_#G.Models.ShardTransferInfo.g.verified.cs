@@ -1,4 +1,4 @@
-﻿//HintName: G.Models.ShardTransferInfo.g.cs
+//HintName: G.Models.ShardTransferInfo.g.cs
 
 #nullable enable
 
@@ -13,26 +13,26 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("shard_id", Required = global::Newtonsoft.Json.Required.Always)]
-        public int ShardId { get; set; } = default!;
+        public long ShardId { get; set; } = default!;
 
         /// <summary>
         /// Target shard ID if different than source shard ID<br/>
         /// Used exclusively with `ReshardingStreamRecords` transfer method.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("to_shard_id")]
-        public int? ToShardId { get; set; }
+        public long? ToShardId { get; set; }
 
         /// <summary>
         /// Source peer id
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("from", Required = global::Newtonsoft.Json.Required.Always)]
-        public int From { get; set; } = default!;
+        public long From { get; set; } = default!;
 
         /// <summary>
         /// Destination peer id
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("to", Required = global::Newtonsoft.Json.Required.Always)]
-        public int To { get; set; } = default!;
+        public long To { get; set; } = default!;
 
         /// <summary>
         /// If `true` transfer is a synchronization of a replicas If `false` transfer is a moving of a shard from one peer to another
@@ -80,11 +80,11 @@ namespace G
         /// A human-readable report of the transfer progress. Available only on the source peer.
         /// </param>
         public ShardTransferInfo(
-            int shardId,
-            int from,
-            int to,
+            long shardId,
+            long from,
+            long to,
             bool sync,
-            int? toShardId,
+            long? toShardId,
             global::G.ShardTransferMethod? method,
             string? comment)
         {

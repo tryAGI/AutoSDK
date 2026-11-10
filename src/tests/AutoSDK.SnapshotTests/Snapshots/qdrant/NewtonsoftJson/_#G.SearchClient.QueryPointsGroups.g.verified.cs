@@ -655,8 +655,8 @@ namespace G
             global::G.WithVector? withVector = default,
             global::G.WithPayloadInterface? withPayload = default,
             global::G.LookupLocation? lookupFrom = default,
-            int? groupSize = default,
-            int? limit = default,
+            long? groupSize = default,
+            long? limit = default,
             global::G.WithLookupInterface? withLookup = default,
             global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default)

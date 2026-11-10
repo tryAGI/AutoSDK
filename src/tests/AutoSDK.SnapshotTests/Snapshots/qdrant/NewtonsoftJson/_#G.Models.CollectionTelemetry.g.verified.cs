@@ -19,7 +19,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("init_time_ms")]
-        public int? InitTimeMs { get; set; }
+        public long? InitTimeMs { get; set; }
 
         /// <summary>
         /// 
@@ -69,7 +69,7 @@ namespace G
         /// <param name="shardCleanTasks"></param>
         public CollectionTelemetry(
             string id,
-            int? initTimeMs,
+            long? initTimeMs,
             global::G.CollectionConfigTelemetry? config,
             global::System.Collections.Generic.IList<global::G.ReplicaSetTelemetry>? shards,
             global::System.Collections.Generic.IList<global::G.ShardTransferInfo>? transfers,

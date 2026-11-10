@@ -1,4 +1,4 @@
-﻿//HintName: G.Models.CreateShardingKey.g.cs
+//HintName: G.Models.CreateShardingKey.g.cs
 
 #nullable enable
 
@@ -21,19 +21,19 @@ namespace G
         /// How many shards to create for this key If not specified, will use the default value from config
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("shards_number")]
-        public int? ShardsNumber { get; set; }
+        public long? ShardsNumber { get; set; }
 
         /// <summary>
         /// How many replicas to create for each shard If not specified, will use the default value from config
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("replication_factor")]
-        public int? ReplicationFactor { get; set; }
+        public long? ReplicationFactor { get; set; }
 
         /// <summary>
         /// Placement of shards for this key List of peer ids, that can be used to place shards for this key If not specified, will be randomly placed among all peers
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("placement")]
-        public global::System.Collections.Generic.IList<int>? Placement { get; set; }
+        public global::System.Collections.Generic.IList<long>? Placement { get; set; }
 
         /// <summary>
         /// Initial state of the shards for this key If not specified, will be `Initializing` first and then `Active` Warning: do not change this unless you know what you are doing
@@ -68,9 +68,9 @@ namespace G
 #endif
         public CreateShardingKey(
             global::G.ShardKey shardKey,
-            int? shardsNumber,
-            int? replicationFactor,
-            global::System.Collections.Generic.IList<int>? placement,
+            long? shardsNumber,
+            long? replicationFactor,
+            global::System.Collections.Generic.IList<long>? placement,
             global::G.ReplicaState? initialState)
         {
             this.ShardKey = shardKey;

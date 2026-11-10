@@ -1,4 +1,4 @@
-﻿//HintName: G.Models.FacetValueHit.g.cs
+//HintName: G.Models.FacetValueHit.g.cs
 
 #nullable enable
 
@@ -19,7 +19,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("count", Required = global::Newtonsoft.Json.Required.Always)]
-        public int Count { get; set; } = default!;
+        public long Count { get; set; } = default!;
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -34,7 +34,7 @@ namespace G
         /// <param name="count"></param>
         public FacetValueHit(
             global::G.FacetValue value,
-            int count)
+            long count)
         {
             this.Value = value;
             this.Count = count;

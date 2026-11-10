@@ -1,4 +1,4 @@
-﻿//HintName: G.Models.NodeMetrics.g.cs
+//HintName: G.Models.NodeMetrics.g.cs
 
 #nullable enable
 
@@ -14,42 +14,42 @@ namespace G
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("allocatedCPU")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required int AllocatedCPU { get; set; }
+        public required long AllocatedCPU { get; set; }
 
         /// <summary>
         /// Node CPU usage percentage
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("cpuPercent")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required int CpuPercent { get; set; }
+        public required long CpuPercent { get; set; }
 
         /// <summary>
         /// Total number of CPU cores on the node
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("cpuCount")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required int CpuCount { get; set; }
+        public required long CpuCount { get; set; }
 
         /// <summary>
         /// Amount of allocated memory in bytes
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("allocatedMemoryBytes")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required int AllocatedMemoryBytes { get; set; }
+        public required long AllocatedMemoryBytes { get; set; }
 
         /// <summary>
         /// Node memory used in bytes
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("memoryUsedBytes")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required int MemoryUsedBytes { get; set; }
+        public required long MemoryUsedBytes { get; set; }
 
         /// <summary>
         /// Total node memory in bytes
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("memoryTotalBytes")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required int MemoryTotalBytes { get; set; }
+        public required long MemoryTotalBytes { get; set; }
 
         /// <summary>
         /// Detailed metrics for each disk/mount point
@@ -92,12 +92,12 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public NodeMetrics(
-            int allocatedCPU,
-            int cpuPercent,
-            int cpuCount,
-            int allocatedMemoryBytes,
-            int memoryUsedBytes,
-            int memoryTotalBytes,
+            long allocatedCPU,
+            long cpuPercent,
+            long cpuCount,
+            long allocatedMemoryBytes,
+            long memoryUsedBytes,
+            long memoryTotalBytes,
             global::System.Collections.Generic.IList<global::G.DiskMetrics> disks)
         {
             this.AllocatedCPU = allocatedCPU;

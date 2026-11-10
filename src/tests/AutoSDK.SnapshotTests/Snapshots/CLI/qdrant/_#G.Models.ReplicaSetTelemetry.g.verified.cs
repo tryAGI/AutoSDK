@@ -1,4 +1,4 @@
-﻿//HintName: G.Models.ReplicaSetTelemetry.g.cs
+//HintName: G.Models.ReplicaSetTelemetry.g.cs
 
 #nullable enable
 
@@ -14,7 +14,7 @@ namespace G
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("id")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required int Id { get; set; }
+        public required long Id { get; set; }
 
         /// <summary>
         /// 
@@ -67,7 +67,7 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public ReplicaSetTelemetry(
-            int id,
+            long id,
             global::System.Collections.Generic.IList<global::G.RemoteShardTelemetry> remote,
             global::System.Collections.Generic.Dictionary<string, global::G.ReplicaState> replicateStates,
             global::G.ShardKey? key,

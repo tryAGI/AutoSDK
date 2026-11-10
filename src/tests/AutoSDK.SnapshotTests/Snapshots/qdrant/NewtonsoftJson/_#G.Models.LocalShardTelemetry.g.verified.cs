@@ -1,4 +1,4 @@
-﻿//HintName: G.Models.LocalShardTelemetry.g.cs
+//HintName: G.Models.LocalShardTelemetry.g.cs
 
 #nullable enable
 
@@ -25,37 +25,37 @@ namespace G
         /// Total number of optimized points since the last start.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("total_optimized_points", Required = global::Newtonsoft.Json.Required.Always)]
-        public int TotalOptimizedPoints { get; set; } = default!;
+        public long TotalOptimizedPoints { get; set; } = default!;
 
         /// <summary>
         /// An ESTIMATION of effective amount of bytes used for vectors Do NOT rely on this number unless you know what you are doing
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("vectors_size_bytes")]
-        public int? VectorsSizeBytes { get; set; }
+        public long? VectorsSizeBytes { get; set; }
 
         /// <summary>
         /// An estimation of the effective amount of bytes used for payloads Do NOT rely on this number unless you know what you are doing
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("payloads_size_bytes")]
-        public int? PayloadsSizeBytes { get; set; }
+        public long? PayloadsSizeBytes { get; set; }
 
         /// <summary>
         /// Sum of segment points This is an approximate number Do NOT rely on this number unless you know what you are doing
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("num_points")]
-        public int? NumPoints { get; set; }
+        public long? NumPoints { get; set; }
 
         /// <summary>
         /// Sum of number of vectors in all segments This is an approximate number Do NOT rely on this number unless you know what you are doing
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("num_vectors")]
-        public int? NumVectors { get; set; }
+        public long? NumVectors { get; set; }
 
         /// <summary>
         /// Sum of number of vectors across all segments, grouped by their name. This is an approximate number. Do NOT rely on this number unless you know what you are doing
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("num_vectors_by_name")]
-        public global::System.Collections.Generic.Dictionary<string, int>? NumVectorsByName { get; set; }
+        public global::System.Collections.Generic.Dictionary<string, long>? NumVectorsByName { get; set; }
 
         /// <summary>
         /// 
@@ -79,7 +79,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("indexed_only_excluded_vectors")]
-        public global::System.Collections.Generic.Dictionary<string, int>? IndexedOnlyExcludedVectors { get; set; }
+        public global::System.Collections.Generic.Dictionary<string, long>? IndexedOnlyExcludedVectors { get; set; }
 
         /// <summary>
         /// Update queue status
@@ -124,18 +124,18 @@ namespace G
         /// Update queue status
         /// </param>
         public LocalShardTelemetry(
-            int totalOptimizedPoints,
+            long totalOptimizedPoints,
             string? variantName,
             global::G.ShardStatus? status,
-            int? vectorsSizeBytes,
-            int? payloadsSizeBytes,
-            int? numPoints,
-            int? numVectors,
-            global::System.Collections.Generic.Dictionary<string, int>? numVectorsByName,
+            long? vectorsSizeBytes,
+            long? payloadsSizeBytes,
+            long? numPoints,
+            long? numVectors,
+            global::System.Collections.Generic.Dictionary<string, long>? numVectorsByName,
             global::System.Collections.Generic.IList<global::G.SegmentTelemetry>? segments,
             global::G.OptimizerTelemetry? optimizations,
             bool? asyncScorer,
-            global::System.Collections.Generic.Dictionary<string, int>? indexedOnlyExcludedVectors,
+            global::System.Collections.Generic.Dictionary<string, long>? indexedOnlyExcludedVectors,
             global::G.ShardUpdateQueueInfo? updateQueue)
         {
             this.VariantName = variantName;

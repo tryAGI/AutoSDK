@@ -1,4 +1,4 @@
-﻿//HintName: G.ICollectionsClient.CreateCollection.g.cs
+//HintName: G.ICollectionsClient.CreateCollection.g.cs
 #nullable enable
 
 namespace G
@@ -102,10 +102,10 @@ namespace G
             string collectionName,
             int? timeout = default,
             global::G.VectorsConfig? vectors = default,
-            int? shardNumber = default,
+            long? shardNumber = default,
             global::G.ShardingMethod? shardingMethod = default,
-            int? replicationFactor = default,
-            int? writeConsistencyFactor = default,
+            long? replicationFactor = default,
+            long? writeConsistencyFactor = default,
             bool? onDiskPayload = default,
             global::G.HnswConfigDiff? hnswConfig = default,
             global::G.WalConfigDiff? walConfig = default,

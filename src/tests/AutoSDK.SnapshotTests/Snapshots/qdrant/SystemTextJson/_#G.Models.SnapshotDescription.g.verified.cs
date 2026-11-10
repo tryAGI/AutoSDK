@@ -1,4 +1,4 @@
-﻿//HintName: G.Models.SnapshotDescription.g.cs
+//HintName: G.Models.SnapshotDescription.g.cs
 
 #nullable enable
 
@@ -27,7 +27,7 @@ namespace G
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("size")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required int Size { get; set; }
+        public required long Size { get; set; }
 
         /// <summary>
         /// 
@@ -53,7 +53,7 @@ namespace G
 #endif
         public SnapshotDescription(
             string name,
-            int size,
+            long size,
             string? creationTime,
             string? checksum)
         {

@@ -1,4 +1,4 @@
-﻿//HintName: G.Models.QueryGroupsRequest.g.cs
+//HintName: G.Models.QueryGroupsRequest.g.cs
 
 #nullable enable
 
@@ -81,13 +81,13 @@ namespace G
         /// Maximum amount of points to return per group. Default is 3.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("group_size")]
-        public int? GroupSize { get; set; }
+        public long? GroupSize { get; set; }
 
         /// <summary>
         /// Maximum amount of groups to return. Default is 10.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("limit")]
-        public int? Limit { get; set; }
+        public long? Limit { get; set; }
 
         /// <summary>
         /// Look for points in another collection using the group ids
@@ -158,8 +158,8 @@ namespace G
             global::G.WithVector? withVector,
             global::G.WithPayloadInterface? withPayload,
             global::G.LookupLocation? lookupFrom,
-            int? groupSize,
-            int? limit,
+            long? groupSize,
+            long? limit,
             global::G.WithLookupInterface? withLookup)
         {
             this.ShardKey = shardKey;

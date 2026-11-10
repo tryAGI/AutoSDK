@@ -1,4 +1,4 @@
-﻿//HintName: G.Models.GenerateImageRequest.g.cs
+//HintName: G.Models.GenerateImageRequest.g.cs
 
 #nullable enable
 
@@ -38,7 +38,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("random_seed")]
-        public int? RandomSeed { get; set; }
+        public long? RandomSeed { get; set; }
 
         /// <summary>
         /// 
@@ -98,7 +98,7 @@ namespace G
             global::G.UserControls? controls,
             global::G.TransformModel? model,
             int? n,
-            int? randomSeed,
+            long? randomSeed,
             global::G.ResponseFormat? responseFormat,
             global::G.ImageSize? size,
             global::G.ImageStyle? style,

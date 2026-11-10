@@ -1,4 +1,4 @@
-﻿//HintName: G.Models.Replica.g.cs
+//HintName: G.Models.Replica.g.cs
 
 #nullable enable
 
@@ -13,13 +13,13 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("shard_id", Required = global::Newtonsoft.Json.Required.Always)]
-        public int ShardId { get; set; } = default!;
+        public long ShardId { get; set; } = default!;
 
         /// <summary>
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("peer_id", Required = global::Newtonsoft.Json.Required.Always)]
-        public int PeerId { get; set; } = default!;
+        public long PeerId { get; set; } = default!;
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -33,8 +33,8 @@ namespace G
         /// <param name="shardId"></param>
         /// <param name="peerId"></param>
         public Replica(
-            int shardId,
-            int peerId)
+            long shardId,
+            long peerId)
         {
             this.ShardId = shardId;
             this.PeerId = peerId;

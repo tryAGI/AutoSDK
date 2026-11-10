@@ -1,4 +1,4 @@
-﻿//HintName: G.Models.ProgressTree.g.cs
+//HintName: G.Models.ProgressTree.g.cs
 
 #nullable enable
 
@@ -38,13 +38,13 @@ namespace G
         /// Number of completed units of work, if applicable.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("done")]
-        public int? Done { get; set; }
+        public long? Done { get; set; }
 
         /// <summary>
         /// Total number of units of work, if applicable and known.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("total")]
-        public int? Total { get; set; }
+        public long? Total { get; set; }
 
         /// <summary>
         /// Child operations.
@@ -90,8 +90,8 @@ namespace G
             global::System.DateTime? startedAt,
             global::System.DateTime? finishedAt,
             double? durationSec,
-            int? done,
-            int? total,
+            long? done,
+            long? total,
             global::System.Collections.Generic.IList<global::G.ProgressTree>? children)
         {
             this.Name = name ?? throw new global::System.ArgumentNullException(nameof(name));

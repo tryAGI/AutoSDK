@@ -410,7 +410,7 @@ namespace recraft
             global::recraft.UserControls? controls = default,
             global::recraft.TransformModel? model = default,
             int? n = default,
-            int? randomSeed = default,
+            long? randomSeed = default,
             global::recraft.ResponseFormat? responseFormat = default,
             global::recraft.ImageSize? size = default,
             global::recraft.ImageStyle? style = default,
