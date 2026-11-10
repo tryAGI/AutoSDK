@@ -47,6 +47,12 @@ paths:
             text/event-stream:
               schema:
                 $ref: '#/components/schemas/EventChunk'
+        '429':
+          description: Too many requests
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/StreamError'
 components:
   schemas:
     MessageRequest:
@@ -101,3 +107,12 @@ components:
       properties:
         token:
           type: string
+    StreamError:
+      type: object
+      required:
+        - code
+      properties:
+        code:
+          type: string
+        retry_after:
+          type: integer

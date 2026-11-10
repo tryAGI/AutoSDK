@@ -3031,6 +3031,21 @@ namespace {endPoint.Settings.Namespace}
 
         if (endPoint.StreamFormat == StreamFormat.ServerSentEvents)
         {
+            // A stream fails the same ways a buffered call does, so it gets the same typed
+            // exceptions: without this, every error on a streaming operation arrived as the
+            // non-generic ApiException with a raw body, while the buffered sibling of the same
+            // operation handed the caller a parsed error object.
+            if (AppendErrorResponses(
+                    builder,
+                    endPoint,
+                    jsonSerializer,
+                    cancellationTokenVariableName,
+                    readResponseAsStringExpression,
+                    indentationLevel))
+            {
+                builder.Append('\n');
+            }
+
             IndentedString.Append(builder, indentationLevel, $@"
             try
             {{

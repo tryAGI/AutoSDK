@@ -68,6 +68,14 @@ namespace G
         /// 
         /// </summary>
         public global::G.EventChunk? Type7 { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::G.StreamError? Type8 { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
+        public int? Type9 { get; set; }
 
     }
 }
