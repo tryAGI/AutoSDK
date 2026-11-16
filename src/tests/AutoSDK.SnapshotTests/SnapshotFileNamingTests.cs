@@ -44,6 +44,104 @@ public sealed class SnapshotFileNamingTests
     }
 
     /// <summary>
+    /// The test above reads the filesystem, and the filesystem is the one place this defect is
+    /// invisible. A rename that changes only casing can land on disk while git keeps recording the
+    /// old spelling: on a case-insensitive filesystem both names address the same file, so nothing
+    /// locally can tell them apart — and a Linux CI checkout materializes the *index* spelling,
+    /// which is then the name that goes missing.
+    ///
+    /// This happened to letta's `ToolJsonSchema`/`ToolJSONSchema2` pair: eight index entries held
+    /// the opposite casing to the files on disk, and the test above saw a clean tree. Reconcile with
+    /// `git rm --cached` on the stale spelling followed by `git add` on the real one, which leaves
+    /// the working file untouched.
+    /// </summary>
+    [TestMethod]
+    public void EverySnapshotIsRecordedInGitUnderItsNameOnDisk()
+    {
+        var snapshots = Path.Combine(GetProjectDirectory(), "Snapshots");
+        if (!Directory.Exists(snapshots))
+        {
+            Assert.Inconclusive($"Expected '{snapshots}' to exist.");
+            return;
+        }
+
+        var indexed = ReadGitIndexPaths(snapshots);
+        if (indexed == null)
+        {
+            Assert.Inconclusive("git is not available, or this is not a working tree.");
+            return;
+        }
+
+        var onDisk = Directory
+            .EnumerateFiles(snapshots, "*", SearchOption.AllDirectories)
+            .Select(x => Path.GetRelativePath(snapshots, x).Replace('\\', '/'))
+            .ToHashSet(StringComparer.Ordinal);
+
+        // Only paths present on both sides can disagree about casing. A path in one and not the
+        // other is an ordinary add or delete, which git reports perfectly well on its own.
+        var diskByLowercase = onDisk.ToLookup(x => x.ToLowerInvariant(), StringComparer.Ordinal);
+        var mismatches = indexed
+            .Where(x => !onDisk.Contains(x))
+            .SelectMany(indexPath => diskByLowercase[indexPath.ToLowerInvariant()]
+                .Select(diskPath =>
+                    $"{diskPath}{Environment.NewLine}" +
+                    $"    is recorded in git as: {indexPath}"))
+            .OrderBy(x => x, StringComparer.Ordinal);
+
+        string.Join(Environment.NewLine, mismatches).Should().BeEmpty(
+            "a file whose git-recorded name differs from its name on disk only in casing is " +
+            "checked out under the recorded spelling, so a case-sensitive CI runner looks for a " +
+            "file that is not there while nothing is visibly wrong locally. Reconcile each one " +
+            "with `git rm --cached <recorded name>` then `git add <name on disk>`");
+    }
+
+    /// <summary>
+    /// The snapshot paths git has in its index, relative to the snapshots directory. `-z` is what
+    /// makes this safe to parse: without it git quotes and escapes unusual characters, and every
+    /// baseline's name begins with `_#`.
+    /// </summary>
+    private static IReadOnlyCollection<string>? ReadGitIndexPaths(string snapshots)
+    {
+        try
+        {
+            using var process = System.Diagnostics.Process.Start(new System.Diagnostics.ProcessStartInfo
+            {
+                FileName = "git",
+                ArgumentList = { "-C", snapshots, "ls-files", "-z", "--full-name", "--", "." },
+                RedirectStandardOutput = true,
+                RedirectStandardError = true,
+                UseShellExecute = false,
+            });
+            if (process == null)
+            {
+                return null;
+            }
+
+            var output = process.StandardOutput.ReadToEnd();
+            process.WaitForExit();
+            if (process.ExitCode != 0)
+            {
+                return null;
+            }
+
+            // `--full-name` is relative to the repository root, so trim back to the snapshots
+            // directory to compare against the enumeration above.
+            const string marker = "Snapshots/";
+            return output
+                .Split('\0', StringSplitOptions.RemoveEmptyEntries)
+                .Select(x => x.LastIndexOf(marker, StringComparison.Ordinal) is var at && at >= 0
+                    ? x[(at + marker.Length)..]
+                    : x)
+                .ToHashSet(StringComparer.Ordinal);
+        }
+        catch (Exception exception) when (
+            exception is System.ComponentModel.Win32Exception or InvalidOperationException or IOException)
+        {
+            return null;
+        }
+    }
+
+    /// <summary>
     /// A `.verified.cs` baseline is named after the hint name of the file it captures, which the
     /// baseline itself records in its first line.
     /// </summary>
