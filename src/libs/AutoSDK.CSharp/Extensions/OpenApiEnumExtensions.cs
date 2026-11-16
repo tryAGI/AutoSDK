@@ -49,13 +49,13 @@ public static class OpenApiEnumExtensions
 
         if (schema.IsConst() && schema.Default == null &&
             !context.TypeData.IsEnum &&
-            !(schema.Enum?.Any() ?? false))
+            !(schema.Enum?.Count > 0))
         {
             return GetConstLiteral(context);
         }
 
         var defaultString = schema.Default?.GetString();
-        if ((schema.Enum?.Any() ?? false) && schema.Default is JsonValue && !string.IsNullOrWhiteSpace(defaultString))
+        if ((schema.Enum?.Count > 0) && schema.Default is JsonValue && !string.IsNullOrWhiteSpace(defaultString))
         {
             if (context.TypeData.CSharpTypeWithoutNullability == "bool" &&
                 bool.TryParse(defaultString, out var booleanDefault))
@@ -73,11 +73,11 @@ public static class OpenApiEnumExtensions
 
             return context.TypeData.CSharpTypeWithoutNullability + "." + result.Name;
         }
-        if ((schema.AnyOf?.Any(x => x.Enum?.Any() ?? false) ?? false) && schema.Default != null)
+        if ((schema.AnyOf?.Any(x => x.Enum?.Count > 0) ?? false) && schema.Default != null)
         {
             var enumChildContext = context.Children
                 .Where(x => x.Hint is Hint.AnyOf)
-                .First(x => x.Schema.Enum?.Any() ?? false);
+                .First(x => x.Schema.Enum?.Count > 0);
             var @enum = enumChildContext.ComputeEnum();
             var defaultEnumValue = defaultString ?? string.Empty;
             var value = @enum.TryGetValue(defaultEnumValue, out var result) ? result.Name : "";
@@ -105,11 +105,11 @@ public static class OpenApiEnumExtensions
 
             return enumChildContext.TypeData.CSharpTypeWithoutNullability + "." + value;
         }
-        if ((schema.OneOf?.Any(x => x.Enum?.Any() ?? false) ?? false) && schema.Default != null)
+        if ((schema.OneOf?.Any(x => x.Enum?.Count > 0) ?? false) && schema.Default != null)
         {
             var enumChildContext = context.Children
                 .Where(x => x.Hint is Hint.OneOf)
-                .First(x => x.Schema.Enum?.Any() ?? false);
+                .First(x => x.Schema.Enum?.Count > 0);
             var @enum = enumChildContext.ComputeEnum();
             if (!@enum.TryGetValue(defaultString ?? string.Empty, out var result))
             {
@@ -121,11 +121,11 @@ public static class OpenApiEnumExtensions
 
             return enumChildContext.TypeData.CSharpTypeWithoutNullability + "." + result.Name;
         }
-        if ((schema.AllOf?.Any(x => x.Enum?.Any() ?? false) ?? false) && schema.Default != null)
+        if ((schema.AllOf?.Any(x => x.Enum?.Count > 0) ?? false) && schema.Default != null)
         {
             var enumChildContext = context.Children
                 .Where(x => x.Hint is Hint.AllOf)
-                .First(x => x.Schema.Enum?.Any() ?? false);
+                .First(x => x.Schema.Enum?.Count > 0);
             var @enum = enumChildContext.ComputeEnum();
             if (!@enum.TryGetValue(defaultString ?? string.Empty, out var result))
             {

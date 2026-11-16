@@ -296,11 +296,11 @@ public static class OpenApiExtensions
                     ? "Document is null"
                     : "Document is null: " + string.Join("; ", diagnosticMessages));
         }
-        if (!settings.IgnoreOpenApiErrors && diagnostics?.Errors.Any() == true)
+        if (!settings.IgnoreOpenApiErrors && diagnostics?.Errors.Count > 0)
         {
             throw new AggregateException(diagnostics.Errors.Select(x => new InvalidOperationException(x.Message)));
         }
-        if (!settings.IgnoreOpenApiWarnings && diagnostics?.Warnings.Any() == true)
+        if (!settings.IgnoreOpenApiWarnings && diagnostics?.Warnings.Count > 0)
         {
             throw new AggregateException(diagnostics.Warnings.Select(x => new InvalidOperationException(x.Message)));
         }
