@@ -1,4 +1,4 @@
-﻿//HintName: G.IMcpServersClient.McpUpdateMcpServer.g.cs
+//HintName: G.IMcpServersClient.McpUpdateMcpServer.g.cs
 #nullable enable
 
 namespace G
@@ -51,7 +51,7 @@ namespace G
         /// <exception cref="global::System.InvalidOperationException"></exception>
         global::System.Threading.Tasks.Task<global::G.AnyOf<global::G.StdioMCPServer, global::G.SSEMCPServer, global::G.StreamableHTTPMCPServer>> McpUpdateMcpServerAsync(
             string mcpServerId,
-            global::G.Config4 config,
+            global::G.Config9 config,
             string? serverName = default,
             global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);

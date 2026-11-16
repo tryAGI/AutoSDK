@@ -64,7 +64,7 @@ namespace G
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::G.ApiException"></exception>
-        public async global::System.Threading.Tasks.Task<global::G.Function2> PatchFunctionIdAsync(
+        public async global::System.Threading.Tasks.Task<global::G.Function> PatchFunctionIdAsync(
             global::System.Guid functionId,
 
             global::G.PatchFunction request,
@@ -92,7 +92,7 @@ namespace G
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::G.ApiException"></exception>
-        public async global::System.Threading.Tasks.Task<global::G.AutoSDKHttpResponse<global::G.Function2>> PatchFunctionIdAsResponseAsync(
+        public async global::System.Threading.Tasks.Task<global::G.AutoSDKHttpResponse<global::G.Function>> PatchFunctionIdAsResponseAsync(
             global::System.Guid functionId,
 
             global::G.PatchFunction request,
@@ -567,9 +567,9 @@ namespace G
                                 {
                                     __response.EnsureSuccessStatusCode();
 
-                                    var __value = global::G.Function2.FromJson(__content, JsonSerializerOptions) ??
+                                    var __value = global::G.Function.FromJson(__content, JsonSerializerOptions) ??
                                         throw new global::System.InvalidOperationException($"Response deserialization failed for \"{__content}\" ");
-                                    return new global::G.AutoSDKHttpResponse<global::G.Function2>(
+                                    return new global::G.AutoSDKHttpResponse<global::G.Function>(
                                         statusCode: __response.StatusCode,
                                         headers: global::G.AutoSDKHttpResponse.CreateHeaders(__response),
                                         requestUri: __response.RequestMessage?.RequestUri,
@@ -599,9 +599,9 @@ namespace G
                 #endif
                                     ).ConfigureAwait(false);
 
-                                    var __value = await global::G.Function2.FromJsonStreamAsync(__content, JsonSerializerOptions).ConfigureAwait(false) ??
+                                    var __value = await global::G.Function.FromJsonStreamAsync(__content, JsonSerializerOptions).ConfigureAwait(false) ??
                                         throw new global::System.InvalidOperationException("Response deserialization failed.");
-                                    return new global::G.AutoSDKHttpResponse<global::G.Function2>(
+                                    return new global::G.AutoSDKHttpResponse<global::G.Function>(
                                         statusCode: __response.StatusCode,
                                         headers: global::G.AutoSDKHttpResponse.CreateHeaders(__response),
                                         requestUri: __response.RequestMessage?.RequestUri,
@@ -664,7 +664,7 @@ namespace G
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
-        public async global::System.Threading.Tasks.Task<global::G.Function2> PatchFunctionIdAsync(
+        public async global::System.Threading.Tasks.Task<global::G.Function> PatchFunctionIdAsync(
             global::System.Guid functionId,
             string? name = default,
             string? description = default,

@@ -1,4 +1,4 @@
-﻿//HintName: G.Models.ASTLessThanOperatorNodeOutput.g.cs
+//HintName: G.Models.ASTLessThanOperatorNodeOutput.g.cs
 
 #nullable enable
 
@@ -20,17 +20,17 @@ namespace G
         /// Left operand of the binary operator.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("left")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.Left8JsonConverter))]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.Left4JsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::G.Left8 Left { get; set; }
+        public required global::G.Left4 Left { get; set; }
 
         /// <summary>
         /// Right operand of the binary operator.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("right")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.Right8JsonConverter))]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.Right4JsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::G.Right8 Right { get; set; }
+        public required global::G.Right4 Right { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -54,8 +54,8 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public ASTLessThanOperatorNodeOutput(
-            global::G.Left8 left,
-            global::G.Right8 right,
+            global::G.Left4 left,
+            global::G.Right4 right,
             string type = "lt_operator")
         {
             this.Type = type;

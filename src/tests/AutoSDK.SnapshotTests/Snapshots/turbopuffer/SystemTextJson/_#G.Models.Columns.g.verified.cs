@@ -1,4 +1,4 @@
-﻿//HintName: G.Models.Columns.g.cs
+//HintName: G.Models.Columns.g.cs
 
 #nullable enable
 
@@ -20,8 +20,8 @@ namespace G
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("vector")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.OneOfJsonConverter<global::System.Collections.Generic.IList<global::G.Vector2>, global::G.Vector2?>))]
-        public global::G.OneOf<global::System.Collections.Generic.IList<global::G.Vector2>, global::G.Vector2?>? Vector { get; set; }
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.OneOfJsonConverter<global::System.Collections.Generic.IList<global::G.Vector>, global::G.Vector?>))]
+        public global::G.OneOf<global::System.Collections.Generic.IList<global::G.Vector>, global::G.Vector?>? Vector { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -41,7 +41,7 @@ namespace G
 #endif
         public Columns(
             global::System.Collections.Generic.IList<global::G.Id> id,
-            global::G.OneOf<global::System.Collections.Generic.IList<global::G.Vector2>, global::G.Vector2?>? vector)
+            global::G.OneOf<global::System.Collections.Generic.IList<global::G.Vector>, global::G.Vector?>? vector)
         {
             this.Id = id ?? throw new global::System.ArgumentNullException(nameof(id));
             this.Vector = vector;

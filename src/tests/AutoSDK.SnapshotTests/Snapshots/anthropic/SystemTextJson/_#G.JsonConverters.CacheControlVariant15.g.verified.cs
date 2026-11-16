@@ -18,15 +18,15 @@ namespace G.JsonConverters
 
 
             var readerCopy = reader;
-            var discriminatorTypeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.BetaComputerUseTool20250124CacheControlVariant1Discriminator), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.BetaComputerUseTool20250124CacheControlVariant1Discriminator> ??
-                            throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::G.BetaComputerUseTool20250124CacheControlVariant1Discriminator)}");
+            var discriminatorTypeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.TextEditor20250124CacheControlVariant1Discriminator), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.TextEditor20250124CacheControlVariant1Discriminator> ??
+                            throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::G.TextEditor20250124CacheControlVariant1Discriminator)}");
             var discriminator = global::System.Text.Json.JsonSerializer.Deserialize(ref readerCopy, discriminatorTypeInfo);
 
-            global::G.BetaCacheControlEphemeral? ephemeral = default;
-            if (discriminator?.Type == global::G.BetaComputerUseTool20250124CacheControlVariant1DiscriminatorType.Ephemeral)
+            global::G.CacheControlEphemeral? ephemeral = default;
+            if (discriminator?.Type == global::G.TextEditor20250124CacheControlVariant1DiscriminatorType.Ephemeral)
             {
-                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.BetaCacheControlEphemeral), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.BetaCacheControlEphemeral> ??
-                               throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::G.BetaCacheControlEphemeral)}");
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.CacheControlEphemeral), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.CacheControlEphemeral> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::G.CacheControlEphemeral)}");
                 ephemeral = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
             }
 
@@ -49,8 +49,8 @@ namespace G.JsonConverters
 
             if (value.IsEphemeral)
             {
-                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.BetaCacheControlEphemeral), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.BetaCacheControlEphemeral?> ??
-                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.BetaCacheControlEphemeral).Name}");
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.CacheControlEphemeral), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.CacheControlEphemeral?> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.CacheControlEphemeral).Name}");
                 global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickEphemeral(), typeInfo);
             }
         }

@@ -1,4 +1,4 @@
-﻿//HintName: G.Models.SystemMessage.g.cs
+//HintName: G.Models.SystemMessage.g.cs
 
 #nullable enable
 
@@ -27,7 +27,7 @@ namespace G
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("content")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::System.Collections.Generic.IList<global::G.ContentItem2> Content { get; set; }
+        public required global::System.Collections.Generic.IList<global::G.ContentItem3> Content { get; set; }
 
         /// <summary>
         /// Default Value: system
@@ -65,7 +65,7 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public SystemMessage(
-            global::System.Collections.Generic.IList<global::G.ContentItem2> content,
+            global::System.Collections.Generic.IList<global::G.ContentItem3> content,
             global::System.Collections.Generic.IList<string>? inputVariables,
             global::G.SystemMessageTemplateFormat? templateFormat,
             string? role,

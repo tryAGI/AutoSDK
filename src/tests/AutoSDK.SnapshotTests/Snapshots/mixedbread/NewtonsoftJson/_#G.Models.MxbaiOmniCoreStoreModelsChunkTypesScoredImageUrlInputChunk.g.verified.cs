@@ -1,4 +1,4 @@
-﻿//HintName: G.Models.MxbaiOmniCoreStoreModelsChunkTypesScoredImageUrlInputChunk.g.cs
+//HintName: G.Models.MxbaiOmniCoreStoreModelsChunkTypesScoredImageUrlInputChunk.g.cs
 
 #nullable enable
 
@@ -26,7 +26,7 @@ namespace G
         /// metadata of the chunk
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("generated_metadata")]
-        public global::G.GeneratedMetadataVariant110? GeneratedMetadata { get; set; }
+        public global::G.GeneratedMetadataVariant17? GeneratedMetadata { get; set; }
 
         /// <summary>
         /// model used for this chunk
@@ -155,7 +155,7 @@ namespace G
             string filename,
             string storeId,
             string? mimeType,
-            global::G.GeneratedMetadataVariant110? generatedMetadata,
+            global::G.GeneratedMetadataVariant17? generatedMetadata,
             string? model,
             string? externalId,
             object? metadata,

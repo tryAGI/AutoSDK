@@ -1,4 +1,4 @@
-﻿//HintName: G.Models.XAIModelSettings.g.cs
+//HintName: G.Models.XAIModelSettings.g.cs
 
 #nullable enable
 
@@ -41,7 +41,7 @@ namespace G
         /// The response format for the model.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("response_format")]
-        public global::G.ResponseFormatVariant115? ResponseFormat { get; set; }
+        public global::G.ResponseFormatVariant13? ResponseFormat { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -76,7 +76,7 @@ namespace G
             bool? parallelToolCalls,
             string? providerType,
             double? temperature,
-            global::G.ResponseFormatVariant115? responseFormat)
+            global::G.ResponseFormatVariant13? responseFormat)
         {
             this.MaxOutputTokens = maxOutputTokens;
             this.ParallelToolCalls = parallelToolCalls;

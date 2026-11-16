@@ -100,7 +100,7 @@ namespace G
             global::System.Guid? projectId = default,
             global::System.Guid? organizationId = default,
             string? session = default,
-            global::G.EmbeddingConfigVariant12? embeddingConfig = default,
+            global::G.EmbeddingConfigVariant1? embeddingConfig = default,
             global::G.AnyOf<global::G.AutoTransformConfig, global::G.AdvancedModeTransformConfig>? transformConfig = default,
             global::G.SparseModelConfig? sparseModelConfig = default,
             global::System.Guid? dataSinkId = default,

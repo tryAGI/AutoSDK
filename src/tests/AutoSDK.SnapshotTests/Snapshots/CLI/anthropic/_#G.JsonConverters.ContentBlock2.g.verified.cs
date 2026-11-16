@@ -18,36 +18,36 @@ namespace G.JsonConverters
 
 
             var readerCopy = reader;
-            var discriminatorTypeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.ContentBlockStartEventContentBlockDiscriminator), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.ContentBlockStartEventContentBlockDiscriminator> ??
-                            throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::G.ContentBlockStartEventContentBlockDiscriminator)}");
+            var discriminatorTypeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.BetaContentBlockStartEventContentBlockDiscriminator), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.BetaContentBlockStartEventContentBlockDiscriminator> ??
+                            throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::G.BetaContentBlockStartEventContentBlockDiscriminator)}");
             var discriminator = global::System.Text.Json.JsonSerializer.Deserialize(ref readerCopy, discriminatorTypeInfo);
 
-            global::G.ResponseTextBlock? text = default;
-            if (discriminator?.Type == global::G.ContentBlockStartEventContentBlockDiscriminatorType.Text)
+            global::G.BetaResponseTextBlock? text = default;
+            if (discriminator?.Type == global::G.BetaContentBlockStartEventContentBlockDiscriminatorType.Text)
             {
-                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.ResponseTextBlock), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.ResponseTextBlock> ??
-                               throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::G.ResponseTextBlock)}");
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.BetaResponseTextBlock), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.BetaResponseTextBlock> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::G.BetaResponseTextBlock)}");
                 text = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
             }
-            global::G.ResponseToolUseBlock? toolUse = default;
-            if (discriminator?.Type == global::G.ContentBlockStartEventContentBlockDiscriminatorType.ToolUse)
+            global::G.BetaResponseToolUseBlock? toolUse = default;
+            if (discriminator?.Type == global::G.BetaContentBlockStartEventContentBlockDiscriminatorType.ToolUse)
             {
-                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.ResponseToolUseBlock), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.ResponseToolUseBlock> ??
-                               throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::G.ResponseToolUseBlock)}");
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.BetaResponseToolUseBlock), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.BetaResponseToolUseBlock> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::G.BetaResponseToolUseBlock)}");
                 toolUse = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
             }
-            global::G.ResponseThinkingBlock? thinking = default;
-            if (discriminator?.Type == global::G.ContentBlockStartEventContentBlockDiscriminatorType.Thinking)
+            global::G.BetaResponseThinkingBlock? thinking = default;
+            if (discriminator?.Type == global::G.BetaContentBlockStartEventContentBlockDiscriminatorType.Thinking)
             {
-                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.ResponseThinkingBlock), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.ResponseThinkingBlock> ??
-                               throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::G.ResponseThinkingBlock)}");
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.BetaResponseThinkingBlock), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.BetaResponseThinkingBlock> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::G.BetaResponseThinkingBlock)}");
                 thinking = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
             }
-            global::G.ResponseRedactedThinkingBlock? redactedThinking = default;
-            if (discriminator?.Type == global::G.ContentBlockStartEventContentBlockDiscriminatorType.RedactedThinking)
+            global::G.BetaResponseRedactedThinkingBlock? redactedThinking = default;
+            if (discriminator?.Type == global::G.BetaContentBlockStartEventContentBlockDiscriminatorType.RedactedThinking)
             {
-                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.ResponseRedactedThinkingBlock), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.ResponseRedactedThinkingBlock> ??
-                               throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::G.ResponseRedactedThinkingBlock)}");
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.BetaResponseRedactedThinkingBlock), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.BetaResponseRedactedThinkingBlock> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::G.BetaResponseRedactedThinkingBlock)}");
                 redactedThinking = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
             }
 
@@ -76,26 +76,26 @@ namespace G.JsonConverters
 
             if (value.IsText)
             {
-                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.ResponseTextBlock), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.ResponseTextBlock?> ??
-                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.ResponseTextBlock).Name}");
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.BetaResponseTextBlock), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.BetaResponseTextBlock?> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.BetaResponseTextBlock).Name}");
                 global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickText(), typeInfo);
             }
             else if (value.IsToolUse)
             {
-                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.ResponseToolUseBlock), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.ResponseToolUseBlock?> ??
-                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.ResponseToolUseBlock).Name}");
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.BetaResponseToolUseBlock), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.BetaResponseToolUseBlock?> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.BetaResponseToolUseBlock).Name}");
                 global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickToolUse(), typeInfo);
             }
             else if (value.IsThinking)
             {
-                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.ResponseThinkingBlock), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.ResponseThinkingBlock?> ??
-                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.ResponseThinkingBlock).Name}");
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.BetaResponseThinkingBlock), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.BetaResponseThinkingBlock?> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.BetaResponseThinkingBlock).Name}");
                 global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickThinking(), typeInfo);
             }
             else if (value.IsRedactedThinking)
             {
-                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.ResponseRedactedThinkingBlock), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.ResponseRedactedThinkingBlock?> ??
-                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.ResponseRedactedThinkingBlock).Name}");
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.BetaResponseRedactedThinkingBlock), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.BetaResponseRedactedThinkingBlock?> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.BetaResponseRedactedThinkingBlock).Name}");
                 global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickRedactedThinking(), typeInfo);
             }
         }

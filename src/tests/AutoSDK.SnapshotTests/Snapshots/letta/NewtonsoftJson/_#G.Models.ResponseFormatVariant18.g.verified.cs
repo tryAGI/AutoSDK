@@ -13,7 +13,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.InternalTemplateAgentCreateResponseFormatVariant1DiscriminatorType? Type { get; }
+        public global::G.OpenAIModelSettingsResponseFormatVariant1DiscriminatorType? Type { get; }
 
         /// <summary>
         /// Response format for plain text responses.
@@ -198,7 +198,7 @@ namespace G
         /// 
         /// </summary>
         public ResponseFormatVariant18(
-            global::G.InternalTemplateAgentCreateResponseFormatVariant1DiscriminatorType? type,
+            global::G.OpenAIModelSettingsResponseFormatVariant1DiscriminatorType? type,
             global::G.TextResponseFormat? text,
             global::G.JsonSchemaResponseFormat? jsonSchema,
             global::G.JsonObjectResponseFormat? jsonObject

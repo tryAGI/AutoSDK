@@ -13,7 +13,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.AzureModelSettingsResponseFormatVariant1DiscriminatorType? Type { get; }
+        public global::G.XAIModelSettingsResponseFormatVariant1DiscriminatorType? Type { get; }
 
         /// <summary>
         /// Response format for plain text responses.
@@ -198,7 +198,7 @@ namespace G
         /// 
         /// </summary>
         public ResponseFormatVariant13(
-            global::G.AzureModelSettingsResponseFormatVariant1DiscriminatorType? type,
+            global::G.XAIModelSettingsResponseFormatVariant1DiscriminatorType? type,
             global::G.TextResponseFormat? text,
             global::G.JsonSchemaResponseFormat? jsonSchema,
             global::G.JsonObjectResponseFormat? jsonObject

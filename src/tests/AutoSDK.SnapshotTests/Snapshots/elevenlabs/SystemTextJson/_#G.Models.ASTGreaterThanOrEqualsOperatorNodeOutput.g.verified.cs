@@ -1,4 +1,4 @@
-﻿//HintName: G.Models.ASTGreaterThanOrEqualsOperatorNodeOutput.g.cs
+//HintName: G.Models.ASTGreaterThanOrEqualsOperatorNodeOutput.g.cs
 
 #nullable enable
 
@@ -20,17 +20,17 @@ namespace G
         /// Left operand of the binary operator.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("left")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.Left6JsonConverter))]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.Left12JsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::G.Left6 Left { get; set; }
+        public required global::G.Left12 Left { get; set; }
 
         /// <summary>
         /// Right operand of the binary operator.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("right")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.Right6JsonConverter))]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.Right12JsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::G.Right6 Right { get; set; }
+        public required global::G.Right12 Right { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -54,8 +54,8 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public ASTGreaterThanOrEqualsOperatorNodeOutput(
-            global::G.Left6 left,
-            global::G.Right6 right,
+            global::G.Left12 left,
+            global::G.Right12 right,
             string type = "gte_operator")
         {
             this.Type = type;

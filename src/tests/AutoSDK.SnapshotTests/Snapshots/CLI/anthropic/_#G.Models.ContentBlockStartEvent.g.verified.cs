@@ -1,4 +1,4 @@
-﻿//HintName: G.Models.ContentBlockStartEvent.g.cs
+//HintName: G.Models.ContentBlockStartEvent.g.cs
 
 #nullable enable
 
@@ -28,9 +28,9 @@ namespace G
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("content_block")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.ContentBlock2JsonConverter))]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.ContentBlockJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::G.ContentBlock2 ContentBlock { get; set; }
+        public required global::G.ContentBlock ContentBlock { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -51,7 +51,7 @@ namespace G
 #endif
         public ContentBlockStartEvent(
             int index,
-            global::G.ContentBlock2 contentBlock,
+            global::G.ContentBlock contentBlock,
             global::G.ContentBlockStartEventType type = global::G.ContentBlockStartEventType.ContentBlockStart)
         {
             this.Type = type;

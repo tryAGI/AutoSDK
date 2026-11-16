@@ -1,4 +1,4 @@
-﻿//HintName: G.Models.Tool.g.cs
+//HintName: G.Models.Tool.g.cs
 
 #nullable enable
 
@@ -36,7 +36,7 @@ namespace G
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("cache_control")]
-        public global::G.CacheControlVariant120? CacheControl { get; set; }
+        public global::G.CacheControlVariant119? CacheControl { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -67,7 +67,7 @@ namespace G
             string name,
             global::G.InputSchema inputSchema,
             string? description,
-            global::G.CacheControlVariant120? cacheControl)
+            global::G.CacheControlVariant119? cacheControl)
         {
             this.Description = description;
             this.Name = name ?? throw new global::System.ArgumentNullException(nameof(name));

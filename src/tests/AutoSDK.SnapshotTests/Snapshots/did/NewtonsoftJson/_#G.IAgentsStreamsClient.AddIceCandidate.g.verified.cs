@@ -1,4 +1,4 @@
-﻿//HintName: G.IAgentsStreamsClient.AddIceCandidate.g.cs
+//HintName: G.IAgentsStreamsClient.AddIceCandidate.g.cs
 #nullable enable
 
 namespace G
@@ -15,11 +15,11 @@ namespace G
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::G.ApiException"></exception>
-        global::System.Threading.Tasks.Task<global::G.AddIceCandidateResponse> AddIceCandidateAsync(
+        global::System.Threading.Tasks.Task<global::G.AddIceCandidateResponse4> AddIceCandidateAsync(
             string agentId,
             string streamId,
 
-            global::G.AllOf<global::G.AnyOf<global::G.AddIceCandidateRequestVariant12, object>?, global::G.AddIceCandidateRequest2> request,
+            global::G.AllOf<global::G.AnyOf<global::G.AddIceCandidateRequestVariant14, object>?, global::G.AddIceCandidateRequest4> request,
             global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
@@ -32,11 +32,11 @@ namespace G
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::G.ApiException"></exception>
-        global::System.Threading.Tasks.Task<global::G.AutoSDKHttpResponse<global::G.AddIceCandidateResponse>> AddIceCandidateAsResponseAsync(
+        global::System.Threading.Tasks.Task<global::G.AutoSDKHttpResponse<global::G.AddIceCandidateResponse4>> AddIceCandidateAsResponseAsync(
             string agentId,
             string streamId,
 
-            global::G.AllOf<global::G.AnyOf<global::G.AddIceCandidateRequestVariant12, object>?, global::G.AddIceCandidateRequest2> request,
+            global::G.AllOf<global::G.AnyOf<global::G.AddIceCandidateRequestVariant14, object>?, global::G.AddIceCandidateRequest4> request,
             global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
@@ -48,7 +48,7 @@ namespace G
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
-        global::System.Threading.Tasks.Task<global::G.AddIceCandidateResponse> AddIceCandidateAsync(
+        global::System.Threading.Tasks.Task<global::G.AddIceCandidateResponse4> AddIceCandidateAsync(
             string agentId,
             string streamId,
             global::G.AutoSDKRequestOptions? requestOptions = default,

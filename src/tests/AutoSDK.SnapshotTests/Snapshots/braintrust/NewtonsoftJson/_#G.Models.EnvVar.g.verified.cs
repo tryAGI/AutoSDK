@@ -1,4 +1,4 @@
-﻿//HintName: G.Models.EnvVar.g.cs
+//HintName: G.Models.EnvVar.g.cs
 
 #nullable enable
 
@@ -19,8 +19,8 @@ namespace G
         /// The type of the object the environment variable is scoped for
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("object_type", Required = global::Newtonsoft.Json.Required.Always)]
-        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.EnvVarObjectType2JsonConverter))]
-        public global::G.EnvVarObjectType2 ObjectType { get; set; } = default!;
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.EnvVarObjectTypeJsonConverter))]
+        public global::G.EnvVarObjectType ObjectType { get; set; } = default!;
 
         /// <summary>
         /// The id of the object the environment variable is scoped for
@@ -105,7 +105,7 @@ namespace G
         /// </param>
         public EnvVar(
             global::System.Guid id,
-            global::G.EnvVarObjectType2 objectType,
+            global::G.EnvVarObjectType objectType,
             global::System.Guid objectId,
             string name,
             global::System.DateTime? created,

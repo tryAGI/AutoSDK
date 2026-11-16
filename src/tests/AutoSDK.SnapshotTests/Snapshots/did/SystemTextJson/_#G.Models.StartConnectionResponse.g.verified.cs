@@ -1,4 +1,4 @@
-﻿//HintName: G.Models.StartConnectionResponse.g.cs
+//HintName: G.Models.StartConnectionResponse.g.cs
 
 #nullable enable
 
@@ -13,7 +13,8 @@ namespace G
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("status")]
-        public string? Status { get; set; }
+        [global::System.Text.Json.Serialization.JsonRequired]
+        public required string Status { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -29,9 +30,9 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public StartConnectionResponse(
-            string? status)
+            string status)
         {
-            this.Status = status;
+            this.Status = status ?? throw new global::System.ArgumentNullException(nameof(status));
         }
 
         /// <summary>

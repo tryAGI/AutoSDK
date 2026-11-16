@@ -1,4 +1,4 @@
-﻿//HintName: G.Models.ExtractContentCreateParams.g.cs
+//HintName: G.Models.ExtractContentCreateParams.g.cs
 
 #nullable enable
 
@@ -13,9 +13,9 @@ namespace G
         /// The content to extract from
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("content")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.AnyOfJsonConverter<string, global::System.Collections.Generic.IList<string>, global::System.Collections.Generic.IList<global::G.AnyOf<global::G.TextInput, global::G.ImageUrlInput2>>>))]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.AnyOfJsonConverter<string, global::System.Collections.Generic.IList<string>, global::System.Collections.Generic.IList<global::G.AnyOf<global::G.TextInput, global::G.ImageUrlInput>>>))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::G.AnyOf<string, global::System.Collections.Generic.IList<string>, global::System.Collections.Generic.IList<global::G.AnyOf<global::G.TextInput, global::G.ImageUrlInput2>>> Content { get; set; }
+        public required global::G.AnyOf<string, global::System.Collections.Generic.IList<string>, global::System.Collections.Generic.IList<global::G.AnyOf<global::G.TextInput, global::G.ImageUrlInput>>> Content { get; set; }
 
         /// <summary>
         /// The JSON schema to use for extraction
@@ -52,7 +52,7 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public ExtractContentCreateParams(
-            global::G.AnyOf<string, global::System.Collections.Generic.IList<string>, global::System.Collections.Generic.IList<global::G.AnyOf<global::G.TextInput, global::G.ImageUrlInput2>>> content,
+            global::G.AnyOf<string, global::System.Collections.Generic.IList<string>, global::System.Collections.Generic.IList<global::G.AnyOf<global::G.TextInput, global::G.ImageUrlInput>>> content,
             object jsonSchema,
             string? instructions)
         {

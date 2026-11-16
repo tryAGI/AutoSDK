@@ -1,4 +1,4 @@
-﻿//HintName: G.Api.g.cs
+//HintName: G.Api.g.cs
 
 #nullable enable
 
@@ -47,7 +47,7 @@ namespace G
                 {
                     new global::G.JsonConverters.QueryResultJsonConverter(),
                     new global::G.JsonConverters.IdJsonConverter(),
-                    new global::G.JsonConverters.Vector2JsonConverter(),
+                    new global::G.JsonConverters.VectorJsonConverter(),
                     new global::G.JsonConverters.VectorEncodingJsonConverter(),
                     new global::G.JsonConverters.DistanceMetricJsonConverter(),
                     new global::G.JsonConverters.IncludeAttributesJsonConverter(),
@@ -65,8 +65,8 @@ namespace G
                     new global::G.JsonConverters.OneOfJsonConverter<global::G.NamespaceMetadataEncryptionVariant1, global::G.NamespaceMetadataEncryptionVariant2>(),
                     new global::G.JsonConverters.OneOfJsonConverter<global::G.NamespaceMetadataIndexIndexUpToDate, global::G.NamespaceMetadataIndexIndexUpdating>(),
                     new global::G.JsonConverters.OneOfJsonConverter<string, global::G.WriteCopyFromNamespace>(),
-                    new global::G.JsonConverters.AnyOfJsonConverter<int?, global::G.Limit2>(),
-                    new global::G.JsonConverters.OneOfJsonConverter<global::System.Collections.Generic.IList<global::G.Vector2>, global::G.Vector2?>(),
+                    new global::G.JsonConverters.AnyOfJsonConverter<int?, global::G.Limit>(),
+                    new global::G.JsonConverters.OneOfJsonConverter<global::System.Collections.Generic.IList<global::G.Vector>, global::G.Vector?>(),
                     new global::G.JsonConverters.AllOfJsonConverter<global::G.QueryConfig, global::G.Query>(),
                     new global::G.JsonConverters.AllOfJsonConverter<global::G.QueryConfig, global::G.Query>(),
                     new global::G.JsonConverters.AllOfJsonConverter<global::G.QueryConfig, global::G.CreateNamespacesMultiQueryRequest2>(),

@@ -1,4 +1,4 @@
-﻿//HintName: G.IAgentsClient.ListAgentSources.g.cs
+//HintName: G.IAgentsClient.ListAgentSources.g.cs
 #nullable enable
 
 namespace G
@@ -34,7 +34,7 @@ namespace G
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::G.ApiException"></exception>
         [global::System.Obsolete("This method marked as deprecated.")]
-        global::System.Threading.Tasks.Task<global::System.Collections.Generic.IList<global::G.Source2>> ListAgentSourcesAsync(
+        global::System.Threading.Tasks.Task<global::System.Collections.Generic.IList<global::G.Source>> ListAgentSourcesAsync(
             string agentId,
             string? before = default,
             string? after = default,
@@ -72,7 +72,7 @@ namespace G
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::G.ApiException"></exception>
         [global::System.Obsolete("This method marked as deprecated.")]
-        global::System.Threading.Tasks.Task<global::G.AutoSDKHttpResponse<global::System.Collections.Generic.IList<global::G.Source2>>> ListAgentSourcesAsResponseAsync(
+        global::System.Threading.Tasks.Task<global::G.AutoSDKHttpResponse<global::System.Collections.Generic.IList<global::G.Source>>> ListAgentSourcesAsResponseAsync(
             string agentId,
             string? before = default,
             string? after = default,

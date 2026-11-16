@@ -77,33 +77,9 @@ namespace G
 
                     new global::G.JsonConverters.CreateModelRequestTrainModeNullableJsonConverter(),
 
-                    new global::G.JsonConverters.CreateModelRequestVisibility2JsonConverter(),
-
-                    new global::G.JsonConverters.CreateModelRequestVisibility2NullableJsonConverter(),
-
-                    new global::G.JsonConverters.CreateModelRequestType2JsonConverter(),
-
-                    new global::G.JsonConverters.CreateModelRequestType2NullableJsonConverter(),
-
-                    new global::G.JsonConverters.CreateModelRequestTrainMode2JsonConverter(),
-
-                    new global::G.JsonConverters.CreateModelRequestTrainMode2NullableJsonConverter(),
-
                     new global::G.JsonConverters.PatchModelRequestVisibilityJsonConverter(),
 
                     new global::G.JsonConverters.PatchModelRequestVisibilityNullableJsonConverter(),
-
-                    new global::G.JsonConverters.PatchModelRequestVisibility2JsonConverter(),
-
-                    new global::G.JsonConverters.PatchModelRequestVisibility2NullableJsonConverter(),
-
-                    new global::G.JsonConverters.PatchModelRequestVisibility3JsonConverter(),
-
-                    new global::G.JsonConverters.PatchModelRequestVisibility3NullableJsonConverter(),
-
-                    new global::G.JsonConverters.PatchModelRequestVisibility4JsonConverter(),
-
-                    new global::G.JsonConverters.PatchModelRequestVisibility4NullableJsonConverter(),
 
                     new global::G.JsonConverters.CreateTtsModelJsonConverter(),
 
@@ -128,10 +104,6 @@ namespace G
                     new global::G.JsonConverters.GetWalletApiCreditResponseItemInJsonConverter(),
 
                     new global::G.JsonConverters.GetWalletApiCreditResponseItemInNullableJsonConverter(),
-
-                    new global::G.JsonConverters.GetModelResponseItemInJsonConverter(),
-
-                    new global::G.JsonConverters.GetModelResponseItemInNullableJsonConverter(),
 
                     new global::G.JsonConverters.CreateModelResponseTypeJsonConverter(),
 
@@ -169,9 +141,9 @@ namespace G
 
                     new global::G.JsonConverters.GetModelResponseVisibilityNullableJsonConverter(),
 
-                    new global::G.JsonConverters.GetModelResponseItemIn2JsonConverter(),
+                    new global::G.JsonConverters.GetModelResponseItemInJsonConverter(),
 
-                    new global::G.JsonConverters.GetModelResponseItemIn2NullableJsonConverter(),
+                    new global::G.JsonConverters.GetModelResponseItemInNullableJsonConverter(),
 
                     new global::G.JsonConverters.PatchModelResponseItemInJsonConverter(),
 

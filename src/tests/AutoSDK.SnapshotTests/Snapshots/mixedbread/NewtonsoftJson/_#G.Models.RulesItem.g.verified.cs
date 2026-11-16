@@ -13,7 +13,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.MxbaiOmniApiRoutesV1DeprecatedVectorStoresModelsSearchRuleCreateParamsRuleDiscriminatorType? Type { get; }
+        public global::G.MxbaiOmniApiRoutesV1StoresRulesModelsSearchRuleResponseRuleDiscriminatorType? Type { get; }
 
         /// <summary>
         /// Represents a string query substitution rule for a vector store search.
@@ -258,7 +258,7 @@ namespace G
         /// 
         /// </summary>
         public RulesItem(
-            global::G.MxbaiOmniApiRoutesV1DeprecatedVectorStoresModelsSearchRuleCreateParamsRuleDiscriminatorType? type,
+            global::G.MxbaiOmniApiRoutesV1StoresRulesModelsSearchRuleResponseRuleDiscriminatorType? type,
             global::G.QueryStringSubstitutionRule? queryString,
             global::G.QueryRegexSubstitutionRule? queryRegex,
             global::G.ChunkSearchResultRule? chunkSearchResult,

@@ -1,4 +1,4 @@
-﻿//HintName: G.Models.TextInputChunk.g.cs
+//HintName: G.Models.TextInputChunk.g.cs
 
 #nullable enable
 
@@ -26,7 +26,7 @@ namespace G
         /// metadata of the chunk
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("generated_metadata")]
-        public global::G.GeneratedMetadataVariant13? GeneratedMetadata { get; set; }
+        public global::G.GeneratedMetadataVariant1? GeneratedMetadata { get; set; }
 
         /// <summary>
         /// model used for this chunk
@@ -90,7 +90,7 @@ namespace G
         public TextInputChunk(
             int chunkIndex,
             string? mimeType,
-            global::G.GeneratedMetadataVariant13? generatedMetadata,
+            global::G.GeneratedMetadataVariant1? generatedMetadata,
             string? model,
             string? type,
             int? offset,

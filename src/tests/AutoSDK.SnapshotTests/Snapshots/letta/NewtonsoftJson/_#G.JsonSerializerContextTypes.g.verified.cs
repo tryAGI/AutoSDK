@@ -323,11 +323,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::G.Source2>? Type71 { get; set; }
+        public global::System.Collections.Generic.IList<global::G.Source>? Type71 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.Source2? Type72 { get; set; }
+        public global::G.Source? Type72 { get; set; }
         /// <summary>
         /// 
         /// </summary>
@@ -371,7 +371,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.ResponseFormatVariant12? Type83 { get; set; }
+        public global::G.ResponseFormatVariant112? Type83 { get; set; }
         /// <summary>
         /// 
         /// </summary>
@@ -423,11 +423,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.AnyOf<global::G.ToolCall2, global::G.ToolCallDelta>? Type96 { get; set; }
+        public global::G.AnyOf<global::G.ToolCall, global::G.ToolCallDelta>? Type96 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.ToolCall2? Type97 { get; set; }
+        public global::G.ToolCall? Type97 { get; set; }
         /// <summary>
         /// 
         /// </summary>
@@ -435,11 +435,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.AnyOf<global::System.Collections.Generic.IList<global::G.ToolCall2>, global::G.ToolCallDelta>? Type99 { get; set; }
+        public global::G.AnyOf<global::System.Collections.Generic.IList<global::G.ToolCall>, global::G.ToolCallDelta>? Type99 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::G.ToolCall2>? Type100 { get; set; }
+        public global::System.Collections.Generic.IList<global::G.ToolCall>? Type100 { get; set; }
         /// <summary>
         /// 
         /// </summary>
@@ -527,7 +527,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.ResponseFormatVariant13? Type122 { get; set; }
+        public global::G.ResponseFormatVariant16? Type122 { get; set; }
         /// <summary>
         /// 
         /// </summary>
@@ -563,7 +563,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.ResponseFormatVariant14? Type131 { get; set; }
+        public global::G.ResponseFormatVariant19? Type131 { get; set; }
         /// <summary>
         /// 
         /// </summary>
@@ -835,7 +835,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.ModelSettingsVariant12? Type199 { get; set; }
+        public global::G.ModelSettingsVariant17? Type199 { get; set; }
         /// <summary>
         /// 
         /// </summary>
@@ -851,7 +851,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.ModelSettingsVariant13? Type203 { get; set; }
+        public global::G.ModelSettingsVariant18? Type203 { get; set; }
         /// <summary>
         /// 
         /// </summary>
@@ -911,7 +911,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.ModelSettingsVariant14? Type218 { get; set; }
+        public global::G.ModelSettingsVariant13? Type218 { get; set; }
         /// <summary>
         /// 
         /// </summary>
@@ -943,15 +943,15 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.AnyOf<string, global::System.Collections.Generic.IList<global::G.InputVariant2Item>>? Type226 { get; set; }
+        public global::G.AnyOf<string, global::System.Collections.Generic.IList<global::G.InputVariant2Item5>>? Type226 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::G.InputVariant2Item>? Type227 { get; set; }
+        public global::System.Collections.Generic.IList<global::G.InputVariant2Item5>? Type227 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.InputVariant2Item? Type228 { get; set; }
+        public global::G.InputVariant2Item5? Type228 { get; set; }
         /// <summary>
         /// 
         /// </summary>
@@ -1023,11 +1023,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::G.ToolRulesVariant1Item2>? Type246 { get; set; }
+        public global::System.Collections.Generic.IList<global::G.ToolRulesVariant1Item3>? Type246 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.ToolRulesVariant1Item2? Type247 { get; set; }
+        public global::G.ToolRulesVariant1Item3? Type247 { get; set; }
         /// <summary>
         /// 
         /// </summary>
@@ -1043,7 +1043,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.ModelSettingsVariant15? Type251 { get; set; }
+        public global::G.ModelSettingsVariant14? Type251 { get; set; }
         /// <summary>
         /// 
         /// </summary>
@@ -1055,7 +1055,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.ResponseFormatVariant15? Type254 { get; set; }
+        public global::G.ResponseFormatVariant17? Type254 { get; set; }
         /// <summary>
         /// 
         /// </summary>
@@ -1087,7 +1087,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.ModelSettingsVariant16? Type262 { get; set; }
+        public global::G.ModelSettingsVariant15? Type262 { get; set; }
         /// <summary>
         /// 
         /// </summary>
@@ -1103,7 +1103,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.Config? Type266 { get; set; }
+        public global::G.Config8? Type266 { get; set; }
         /// <summary>
         /// 
         /// </summary>
@@ -1127,7 +1127,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.ResponseFormatVariant16? Type272 { get; set; }
+        public global::G.ResponseFormatVariant110? Type272 { get; set; }
         /// <summary>
         /// 
         /// </summary>
@@ -1275,7 +1275,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.ResponseFormatVariant17? Type309 { get; set; }
+        public global::G.ResponseFormatVariant15? Type309 { get; set; }
         /// <summary>
         /// 
         /// </summary>
@@ -1435,7 +1435,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.Source? Type349 { get; set; }
+        public global::G.Source2? Type349 { get; set; }
         /// <summary>
         /// 
         /// </summary>
@@ -1471,11 +1471,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::G.ToolRulesVariant1Item3>? Type358 { get; set; }
+        public global::System.Collections.Generic.IList<global::G.ToolRulesVariant1Item4>? Type358 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.ToolRulesVariant1Item3? Type359 { get; set; }
+        public global::G.ToolRulesVariant1Item4? Type359 { get; set; }
         /// <summary>
         /// 
         /// </summary>
@@ -1487,7 +1487,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.ModelSettingsVariant17? Type362 { get; set; }
+        public global::G.ModelSettingsVariant19? Type362 { get; set; }
         /// <summary>
         /// 
         /// </summary>
@@ -1499,7 +1499,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.ResponseFormatVariant18? Type365 { get; set; }
+        public global::G.ResponseFormatVariant114? Type365 { get; set; }
         /// <summary>
         /// 
         /// </summary>
@@ -1559,7 +1559,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.ResponseFormatVariant19? Type380 { get; set; }
+        public global::G.ResponseFormatVariant117? Type380 { get; set; }
         /// <summary>
         /// 
         /// </summary>
@@ -1631,15 +1631,15 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.AnyOf<string, global::System.Collections.Generic.IList<global::G.InputVariant2Item4>>? Type398 { get; set; }
+        public global::G.AnyOf<string, global::System.Collections.Generic.IList<global::G.InputVariant2Item>>? Type398 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::G.InputVariant2Item4>? Type399 { get; set; }
+        public global::System.Collections.Generic.IList<global::G.InputVariant2Item>? Type399 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.InputVariant2Item4? Type400 { get; set; }
+        public global::G.InputVariant2Item? Type400 { get; set; }
         /// <summary>
         /// 
         /// </summary>
@@ -1687,15 +1687,15 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.AnyOf<string, global::System.Collections.Generic.IList<global::G.InputVariant2Item5>>? Type412 { get; set; }
+        public global::G.AnyOf<string, global::System.Collections.Generic.IList<global::G.InputVariant2Item4>>? Type412 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::G.InputVariant2Item5>? Type413 { get; set; }
+        public global::System.Collections.Generic.IList<global::G.InputVariant2Item4>? Type413 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.InputVariant2Item5? Type414 { get; set; }
+        public global::G.InputVariant2Item4? Type414 { get; set; }
         /// <summary>
         /// 
         /// </summary>
@@ -1791,11 +1791,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::G.ContentVariant1Item>? Type438 { get; set; }
+        public global::System.Collections.Generic.IList<global::G.ContentVariant1Item4>? Type438 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.ContentVariant1Item? Type439 { get; set; }
+        public global::G.ContentVariant1Item4? Type439 { get; set; }
         /// <summary>
         /// 
         /// </summary>
@@ -1891,7 +1891,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.ResponseFormatVariant110? Type463 { get; set; }
+        public global::G.ResponseFormatVariant116? Type463 { get; set; }
         /// <summary>
         /// 
         /// </summary>
@@ -1919,7 +1919,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.ResponseFormatVariant111? Type470 { get; set; }
+        public global::G.ResponseFormatVariant18? Type470 { get; set; }
         /// <summary>
         /// 
         /// </summary>
@@ -1935,7 +1935,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.ResponseFormatVariant112? Type474 { get; set; }
+        public global::G.ResponseFormatVariant113? Type474 { get; set; }
         /// <summary>
         /// 
         /// </summary>
@@ -2183,7 +2183,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.ResponseFormatVariant113? Type536 { get; set; }
+        public global::G.ResponseFormatVariant111? Type536 { get; set; }
         /// <summary>
         /// 
         /// </summary>
@@ -2219,7 +2219,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.ToolJSONSchema2? Type545 { get; set; }
+        public global::G.ToolJSONSchema? Type545 { get; set; }
         /// <summary>
         /// 
         /// </summary>
@@ -2271,11 +2271,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::G.ToolRulesVariant1Item4>? Type558 { get; set; }
+        public global::System.Collections.Generic.IList<global::G.ToolRulesVariant1Item2>? Type558 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.ToolRulesVariant1Item4? Type559 { get; set; }
+        public global::G.ToolRulesVariant1Item2? Type559 { get; set; }
         /// <summary>
         /// 
         /// </summary>
@@ -2287,7 +2287,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.ModelSettingsVariant18? Type562 { get; set; }
+        public global::G.ModelSettingsVariant12? Type562 { get; set; }
         /// <summary>
         /// 
         /// </summary>
@@ -2299,7 +2299,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.ResponseFormatVariant114? Type565 { get; set; }
+        public global::G.ResponseFormatVariant12? Type565 { get; set; }
         /// <summary>
         /// 
         /// </summary>
@@ -2319,7 +2319,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.ModelSettingsVariant19? Type570 { get; set; }
+        public global::G.ModelSettingsVariant16? Type570 { get; set; }
         /// <summary>
         /// 
         /// </summary>
@@ -2335,7 +2335,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.Config4? Type574 { get; set; }
+        public global::G.Config9? Type574 { get; set; }
         /// <summary>
         /// 
         /// </summary>
@@ -2419,7 +2419,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.ResponseFormatVariant115? Type595 { get; set; }
+        public global::G.ResponseFormatVariant13? Type595 { get; set; }
         /// <summary>
         /// 
         /// </summary>
@@ -2431,7 +2431,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.ResponseFormatVariant116? Type598 { get; set; }
+        public global::G.ResponseFormatVariant14? Type598 { get; set; }
         /// <summary>
         /// 
         /// </summary>
@@ -2479,7 +2479,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.ResponseFormatVariant117? Type610 { get; set; }
+        public global::G.ResponseFormatVariant115? Type610 { get; set; }
         /// <summary>
         /// 
         /// </summary>
@@ -3255,7 +3255,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.ProducerConfig2? Type804 { get; set; }
+        public global::G.ProducerConfig3? Type804 { get; set; }
         /// <summary>
         /// 
         /// </summary>
@@ -3303,7 +3303,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.ProducerConfig3? Type816 { get; set; }
+        public global::G.ProducerConfig2? Type816 { get; set; }
         /// <summary>
         /// 
         /// </summary>
@@ -4307,11 +4307,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::G.DataItem>? Type1067 { get; set; }
+        public global::System.Collections.Generic.IList<global::G.DataItem2>? Type1067 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.DataItem? Type1068 { get; set; }
+        public global::G.DataItem2? Type1068 { get; set; }
         /// <summary>
         /// 
         /// </summary>
@@ -4363,11 +4363,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::G.DataItem2>? Type1081 { get; set; }
+        public global::System.Collections.Generic.IList<global::G.DataItem>? Type1081 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.DataItem2? Type1082 { get; set; }
+        public global::G.DataItem? Type1082 { get; set; }
         /// <summary>
         /// 
         /// </summary>
@@ -4827,7 +4827,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.Config5? Type1197 { get; set; }
+        public global::G.Config3? Type1197 { get; set; }
         /// <summary>
         /// 
         /// </summary>
@@ -4891,7 +4891,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.Config6? Type1213 { get; set; }
+        public global::G.Config? Type1213 { get; set; }
         /// <summary>
         /// 
         /// </summary>
@@ -4947,7 +4947,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.Config7? Type1227 { get; set; }
+        public global::G.Config2? Type1227 { get; set; }
         /// <summary>
         /// 
         /// </summary>
@@ -5007,7 +5007,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.Config8? Type1242 { get; set; }
+        public global::G.Config4? Type1242 { get; set; }
         /// <summary>
         /// 
         /// </summary>
@@ -5079,7 +5079,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.Config9? Type1260 { get; set; }
+        public global::G.Config5? Type1260 { get; set; }
         /// <summary>
         /// 
         /// </summary>
@@ -5324,7 +5324,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.List<global::G.Source2>? ListType12 { get; set; }
+        public global::System.Collections.Generic.List<global::G.Source>? ListType12 { get; set; }
         /// <summary>
         /// 
         /// </summary>
@@ -5340,11 +5340,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.AnyOf<global::System.Collections.Generic.List<global::G.ToolCall2>, global::G.ToolCallDelta>? ListType16 { get; set; }
+        public global::G.AnyOf<global::System.Collections.Generic.List<global::G.ToolCall>, global::G.ToolCallDelta>? ListType16 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.List<global::G.ToolCall2>? ListType17 { get; set; }
+        public global::System.Collections.Generic.List<global::G.ToolCall>? ListType17 { get; set; }
         /// <summary>
         /// 
         /// </summary>
@@ -5416,11 +5416,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.AnyOf<string, global::System.Collections.Generic.List<global::G.InputVariant2Item>>? ListType35 { get; set; }
+        public global::G.AnyOf<string, global::System.Collections.Generic.List<global::G.InputVariant2Item5>>? ListType35 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.List<global::G.InputVariant2Item>? ListType36 { get; set; }
+        public global::System.Collections.Generic.List<global::G.InputVariant2Item5>? ListType36 { get; set; }
         /// <summary>
         /// 
         /// </summary>
@@ -5436,7 +5436,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.List<global::G.ToolRulesVariant1Item2>? ListType40 { get; set; }
+        public global::System.Collections.Generic.List<global::G.ToolRulesVariant1Item3>? ListType40 { get; set; }
         /// <summary>
         /// 
         /// </summary>
@@ -5456,7 +5456,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.List<global::G.ToolRulesVariant1Item3>? ListType45 { get; set; }
+        public global::System.Collections.Generic.List<global::G.ToolRulesVariant1Item4>? ListType45 { get; set; }
         /// <summary>
         /// 
         /// </summary>
@@ -5476,11 +5476,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.AnyOf<string, global::System.Collections.Generic.List<global::G.InputVariant2Item4>>? ListType50 { get; set; }
+        public global::G.AnyOf<string, global::System.Collections.Generic.List<global::G.InputVariant2Item>>? ListType50 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.List<global::G.InputVariant2Item4>? ListType51 { get; set; }
+        public global::System.Collections.Generic.List<global::G.InputVariant2Item>? ListType51 { get; set; }
         /// <summary>
         /// 
         /// </summary>
@@ -5492,11 +5492,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.AnyOf<string, global::System.Collections.Generic.List<global::G.InputVariant2Item5>>? ListType54 { get; set; }
+        public global::G.AnyOf<string, global::System.Collections.Generic.List<global::G.InputVariant2Item4>>? ListType54 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.List<global::G.InputVariant2Item5>? ListType55 { get; set; }
+        public global::System.Collections.Generic.List<global::G.InputVariant2Item4>? ListType55 { get; set; }
         /// <summary>
         /// 
         /// </summary>
@@ -5512,7 +5512,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.List<global::G.ContentVariant1Item>? ListType59 { get; set; }
+        public global::System.Collections.Generic.List<global::G.ContentVariant1Item4>? ListType59 { get; set; }
         /// <summary>
         /// 
         /// </summary>
@@ -5584,7 +5584,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.List<global::G.ToolRulesVariant1Item4>? ListType77 { get; set; }
+        public global::System.Collections.Generic.List<global::G.ToolRulesVariant1Item2>? ListType77 { get; set; }
         /// <summary>
         /// 
         /// </summary>
@@ -5908,7 +5908,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.List<global::G.DataItem>? ListType158 { get; set; }
+        public global::System.Collections.Generic.List<global::G.DataItem2>? ListType158 { get; set; }
         /// <summary>
         /// 
         /// </summary>
@@ -5920,7 +5920,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.List<global::G.DataItem2>? ListType161 { get; set; }
+        public global::System.Collections.Generic.List<global::G.DataItem>? ListType161 { get; set; }
         /// <summary>
         /// 
         /// </summary>

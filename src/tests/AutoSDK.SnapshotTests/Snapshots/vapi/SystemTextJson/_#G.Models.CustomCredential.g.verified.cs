@@ -1,4 +1,4 @@
-﻿//HintName: G.Models.CustomCredential.g.cs
+//HintName: G.Models.CustomCredential.g.cs
 
 #nullable enable
 
@@ -20,9 +20,9 @@ namespace G
         /// This is the authentication plan. Supports OAuth2 RFC 6749, HMAC signing, and Bearer authentication.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("authenticationPlan")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.AuthenticationPlan5JsonConverter))]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.AuthenticationPlanJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::G.AuthenticationPlan5 AuthenticationPlan { get; set; }
+        public required global::G.AuthenticationPlan AuthenticationPlan { get; set; }
 
         /// <summary>
         /// This is the encryption plan for encrypting sensitive data. Currently supports public-key encryption.
@@ -109,7 +109,7 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public CustomCredential(
-            global::G.AuthenticationPlan5 authenticationPlan,
+            global::G.AuthenticationPlan authenticationPlan,
             string id,
             string orgId,
             global::System.DateTime createdAt,

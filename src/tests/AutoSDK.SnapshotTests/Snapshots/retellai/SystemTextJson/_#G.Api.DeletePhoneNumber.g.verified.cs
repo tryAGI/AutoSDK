@@ -364,19 +364,19 @@ namespace G
                             {
                                 string? __content_422 = null;
                                 global::System.Exception? __exception_422 = null;
-                                global::G.DeletePhoneNumberResponse2? __value_422 = null;
+                                global::G.DeletePhoneNumberResponse? __value_422 = null;
                                 try
                                 {
                                     if (__effectiveReadResponseAsString)
                                     {
                                         __content_422 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
-                                        __value_422 = global::G.DeletePhoneNumberResponse2.FromJson(__content_422, JsonSerializerOptions);
+                                        __value_422 = global::G.DeletePhoneNumberResponse.FromJson(__content_422, JsonSerializerOptions);
                                     }
                                     else
                                     {
                                         __content_422 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
 
-                                        __value_422 = global::G.DeletePhoneNumberResponse2.FromJson(__content_422, JsonSerializerOptions);
+                                        __value_422 = global::G.DeletePhoneNumberResponse.FromJson(__content_422, JsonSerializerOptions);
                                     }
                                 }
                                 catch (global::System.Exception __ex)
@@ -385,7 +385,7 @@ namespace G
                                 }
 
 
-                                throw global::G.ApiException<global::G.DeletePhoneNumberResponse2>.Create(
+                                throw global::G.ApiException<global::G.DeletePhoneNumberResponse>.Create(
                                     statusCode: __response.StatusCode,
                                     message: __content_422 ?? __response.ReasonPhrase ?? string.Empty,
                                     innerException: __exception_422,
@@ -401,19 +401,19 @@ namespace G
                             {
                                 string? __content_500 = null;
                                 global::System.Exception? __exception_500 = null;
-                                global::G.DeletePhoneNumberResponse3? __value_500 = null;
+                                global::G.DeletePhoneNumberResponse? __value_500 = null;
                                 try
                                 {
                                     if (__effectiveReadResponseAsString)
                                     {
                                         __content_500 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
-                                        __value_500 = global::G.DeletePhoneNumberResponse3.FromJson(__content_500, JsonSerializerOptions);
+                                        __value_500 = global::G.DeletePhoneNumberResponse.FromJson(__content_500, JsonSerializerOptions);
                                     }
                                     else
                                     {
                                         __content_500 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
 
-                                        __value_500 = global::G.DeletePhoneNumberResponse3.FromJson(__content_500, JsonSerializerOptions);
+                                        __value_500 = global::G.DeletePhoneNumberResponse.FromJson(__content_500, JsonSerializerOptions);
                                     }
                                 }
                                 catch (global::System.Exception __ex)
@@ -422,7 +422,7 @@ namespace G
                                 }
 
 
-                                throw global::G.ApiException<global::G.DeletePhoneNumberResponse3>.Create(
+                                throw global::G.ApiException<global::G.DeletePhoneNumberResponse>.Create(
                                     statusCode: __response.StatusCode,
                                     message: __content_500 ?? __response.ReasonPhrase ?? string.Empty,
                                     innerException: __exception_500,

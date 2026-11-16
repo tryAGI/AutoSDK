@@ -13,7 +13,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.UpdateAgentModelSettingsVariant1DiscriminatorProviderType? ProviderType { get; }
+        public global::G.CompactionSettingsOutputModelSettingsVariant1DiscriminatorProviderType? ProviderType { get; }
 
         /// <summary>
         /// 
@@ -798,7 +798,7 @@ namespace G
         /// 
         /// </summary>
         public ModelSettingsVariant18(
-            global::G.UpdateAgentModelSettingsVariant1DiscriminatorProviderType? providerType,
+            global::G.CompactionSettingsOutputModelSettingsVariant1DiscriminatorProviderType? providerType,
             global::G.OpenAIModelSettings? openai,
             global::G.AnthropicModelSettings? anthropic,
             global::G.GoogleAIModelSettings? googleAi,

@@ -41,11 +41,11 @@ namespace G
             };
         partial void PrepareGetPrompt2025ProductionVersionArguments(
             global::System.Net.Http.HttpClient httpClient,
-            global::G.GetPrompt2025ProductionVersionRequest2 request);
+            global::G.GetPrompt2025ProductionVersionRequest request);
         partial void PrepareGetPrompt2025ProductionVersionRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
-            global::G.GetPrompt2025ProductionVersionRequest2 request);
+            global::G.GetPrompt2025ProductionVersionRequest request);
         partial void ProcessGetPrompt2025ProductionVersionResponse(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage);
@@ -64,7 +64,7 @@ namespace G
         /// <exception cref="global::G.ApiException"></exception>
         public async global::System.Threading.Tasks.Task<global::G.ResultPrompt2025VersionString> GetPrompt2025ProductionVersionAsync(
 
-            global::G.GetPrompt2025ProductionVersionRequest2 request,
+            global::G.GetPrompt2025ProductionVersionRequest request,
             global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
@@ -86,7 +86,7 @@ namespace G
         /// <exception cref="global::G.ApiException"></exception>
         public async global::System.Threading.Tasks.Task<global::G.AutoSDKHttpResponse<global::G.ResultPrompt2025VersionString>> GetPrompt2025ProductionVersionAsResponseAsync(
 
-            global::G.GetPrompt2025ProductionVersionRequest2 request,
+            global::G.GetPrompt2025ProductionVersionRequest request,
             global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
@@ -461,7 +461,7 @@ namespace G
             global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
-            var __request = new global::G.GetPrompt2025ProductionVersionRequest2
+            var __request = new global::G.GetPrompt2025ProductionVersionRequest
             {
                 PromptId = promptId,
             };

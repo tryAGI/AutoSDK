@@ -1,4 +1,4 @@
-﻿//HintName: G.Models.Property.g.cs
+//HintName: G.Models.Property.g.cs
 
 #nullable enable
 
@@ -25,7 +25,7 @@ namespace G
         /// Configuration specific to modules in a property context.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("moduleConfig")]
-        public global::G.PropertyModuleConfig? ModuleConfig { get; set; }
+        public global::G.PropertyModuleConfig2? ModuleConfig { get; set; }
 
         /// <summary>
         /// The name of the property. Multiple words should be concatenated in camelCase, e.g. `nameOfAuthor`.
@@ -121,7 +121,7 @@ namespace G
             global::System.Collections.Generic.IList<global::G.DataTypeItem> dataType,
             string name,
             string? description,
-            global::G.PropertyModuleConfig? moduleConfig,
+            global::G.PropertyModuleConfig2? moduleConfig,
             bool? indexInverted,
             bool? indexFilterable,
             bool? indexSearchable,

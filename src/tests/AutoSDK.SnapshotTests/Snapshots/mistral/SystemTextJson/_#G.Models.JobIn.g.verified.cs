@@ -1,4 +1,4 @@
-﻿//HintName: G.Models.JobIn.g.cs
+//HintName: G.Models.JobIn.g.cs
 
 #nullable enable
 
@@ -39,7 +39,7 @@ namespace G
         /// A list of integrations to enable for your fine-tuning job.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("integrations")]
-        public global::System.Collections.Generic.IList<global::G.IntegrationsVariant1Item3>? Integrations { get; set; }
+        public global::System.Collections.Generic.IList<global::G.IntegrationsVariant1Item5>? Integrations { get; set; }
 
         /// <summary>
         /// This field will be required in a future release.
@@ -122,7 +122,7 @@ namespace G
             global::System.Collections.Generic.IList<global::G.TrainingFile>? trainingFiles,
             global::System.Collections.Generic.IList<global::System.Guid>? validationFiles,
             string? suffix,
-            global::System.Collections.Generic.IList<global::G.IntegrationsVariant1Item3>? integrations,
+            global::System.Collections.Generic.IList<global::G.IntegrationsVariant1Item5>? integrations,
             bool? autoStart,
             double? invalidSampleSkipPercentage,
             global::G.FineTuneableModelType? jobType,

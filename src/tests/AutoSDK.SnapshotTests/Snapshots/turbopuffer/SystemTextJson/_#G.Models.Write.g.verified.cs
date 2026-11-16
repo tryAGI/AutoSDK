@@ -112,7 +112,7 @@ namespace G
         /// The encryption configuration for a namespace.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("encryption")]
-        public global::G.Encryption2? Encryption { get; set; }
+        public global::G.Encryption? Encryption { get; set; }
 
         /// <summary>
         /// Disables write throttling (HTTP 429 responses) during high-volume ingestion.
@@ -196,7 +196,7 @@ namespace G
             global::G.PatchByFilter? patchByFilter,
             bool? patchByFilterAllowPartial,
             bool? returnAffectedIds,
-            global::G.Encryption2? encryption,
+            global::G.Encryption? encryption,
             bool? disableBackpressure)
         {
             this.UpsertColumns = upsertColumns;

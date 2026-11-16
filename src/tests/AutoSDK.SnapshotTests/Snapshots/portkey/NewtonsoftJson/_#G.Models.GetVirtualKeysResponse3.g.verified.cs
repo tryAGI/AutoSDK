@@ -1,4 +1,4 @@
-﻿//HintName: G.Models.GetVirtualKeysResponse3.g.cs
+//HintName: G.Models.GetVirtualKeysResponse3.g.cs
 
 #nullable enable
 
@@ -19,7 +19,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("data")]
-        public global::G.GetVirtualKeysResponseData2? Data { get; set; }
+        public global::G.GetVirtualKeysResponseData? Data { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -34,7 +34,7 @@ namespace G
         /// <param name="data"></param>
         public GetVirtualKeysResponse3(
             bool? success,
-            global::G.GetVirtualKeysResponseData2? data)
+            global::G.GetVirtualKeysResponseData? data)
         {
             this.Success = success;
             this.Data = data;

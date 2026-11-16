@@ -332,19 +332,19 @@ namespace G
                             {
                                 string? __content_403 = null;
                                 global::System.Exception? __exception_403 = null;
-                                global::G.DeleteOrganizationResponse2? __value_403 = null;
+                                global::G.DeleteOrganizationResponse? __value_403 = null;
                                 try
                                 {
                                     if (__effectiveReadResponseAsString)
                                     {
                                         __content_403 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
-                                        __value_403 = global::G.DeleteOrganizationResponse2.FromJson(__content_403, JsonSerializerOptions);
+                                        __value_403 = global::G.DeleteOrganizationResponse.FromJson(__content_403, JsonSerializerOptions);
                                     }
                                     else
                                     {
                                         __content_403 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
 
-                                        __value_403 = global::G.DeleteOrganizationResponse2.FromJson(__content_403, JsonSerializerOptions);
+                                        __value_403 = global::G.DeleteOrganizationResponse.FromJson(__content_403, JsonSerializerOptions);
                                     }
                                 }
                                 catch (global::System.Exception __ex)
@@ -353,7 +353,7 @@ namespace G
                                 }
 
 
-                                throw global::G.ApiException<global::G.DeleteOrganizationResponse2>.Create(
+                                throw global::G.ApiException<global::G.DeleteOrganizationResponse>.Create(
                                     statusCode: __response.StatusCode,
                                     message: __content_403 ?? __response.ReasonPhrase ?? string.Empty,
                                     innerException: __exception_403,
@@ -369,19 +369,19 @@ namespace G
                             {
                                 string? __content_404 = null;
                                 global::System.Exception? __exception_404 = null;
-                                global::G.DeleteOrganizationResponse3? __value_404 = null;
+                                global::G.DeleteOrganizationResponse? __value_404 = null;
                                 try
                                 {
                                     if (__effectiveReadResponseAsString)
                                     {
                                         __content_404 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
-                                        __value_404 = global::G.DeleteOrganizationResponse3.FromJson(__content_404, JsonSerializerOptions);
+                                        __value_404 = global::G.DeleteOrganizationResponse.FromJson(__content_404, JsonSerializerOptions);
                                     }
                                     else
                                     {
                                         __content_404 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
 
-                                        __value_404 = global::G.DeleteOrganizationResponse3.FromJson(__content_404, JsonSerializerOptions);
+                                        __value_404 = global::G.DeleteOrganizationResponse.FromJson(__content_404, JsonSerializerOptions);
                                     }
                                 }
                                 catch (global::System.Exception __ex)
@@ -390,7 +390,7 @@ namespace G
                                 }
 
 
-                                throw global::G.ApiException<global::G.DeleteOrganizationResponse3>.Create(
+                                throw global::G.ApiException<global::G.DeleteOrganizationResponse>.Create(
                                     statusCode: __response.StatusCode,
                                     message: __content_404 ?? __response.ReasonPhrase ?? string.Empty,
                                     innerException: __exception_404,

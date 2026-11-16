@@ -1,4 +1,4 @@
-﻿//HintName: G.Models.CreateCustomCredentialDTO.g.cs
+//HintName: G.Models.CreateCustomCredentialDTO.g.cs
 
 #nullable enable
 
@@ -20,7 +20,7 @@ namespace G
         /// This is the authentication plan. Supports OAuth2 RFC 6749, HMAC signing, and Bearer authentication.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("authenticationPlan", Required = global::Newtonsoft.Json.Required.Always)]
-        public global::G.AuthenticationPlan6 AuthenticationPlan { get; set; } = default!;
+        public global::G.AuthenticationPlan3 AuthenticationPlan { get; set; } = default!;
 
         /// <summary>
         /// This is the encryption plan for encrypting sensitive data. Currently supports public-key encryption.
@@ -54,7 +54,7 @@ namespace G
         /// This is the name of credential. This is just for your reference.
         /// </param>
         public CreateCustomCredentialDTO(
-            global::G.AuthenticationPlan6 authenticationPlan,
+            global::G.AuthenticationPlan3 authenticationPlan,
             global::G.CreateCustomCredentialDTOProvider provider,
             global::G.PublicKeyEncryptionPlan? encryptionPlan,
             string? name)

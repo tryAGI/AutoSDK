@@ -1,4 +1,4 @@
-﻿//HintName: G.Models.GetToolDependentAgentsResponseModel.g.cs
+//HintName: G.Models.GetToolDependentAgentsResponseModel.g.cs
 
 #nullable enable
 
@@ -13,7 +13,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("agents", Required = global::Newtonsoft.Json.Required.Always)]
-        public global::System.Collections.Generic.IList<global::G.AgentsItem3> Agents { get; set; } = default!;
+        public global::System.Collections.Generic.IList<global::G.AgentsItem2> Agents { get; set; } = default!;
 
         /// <summary>
         /// 
@@ -47,7 +47,7 @@ namespace G
         /// <param name="branches"></param>
         /// <param name="nextCursor"></param>
         public GetToolDependentAgentsResponseModel(
-            global::System.Collections.Generic.IList<global::G.AgentsItem3> agents,
+            global::System.Collections.Generic.IList<global::G.AgentsItem2> agents,
             bool hasMore,
             global::System.Collections.Generic.IList<global::G.DependentBranchInfo>? branches,
             string? nextCursor)

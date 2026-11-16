@@ -1,4 +1,4 @@
-﻿//HintName: G.Models.ListBatchTestsV2Response4.g.cs
+//HintName: G.Models.ListBatchTestsV2Response4.g.cs
 
 #nullable enable
 
@@ -13,8 +13,8 @@ namespace G
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("status")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.ListBatchTestsV2ResponseStatus2JsonConverter))]
-        public global::G.ListBatchTestsV2ResponseStatus2? Status { get; set; }
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.ListBatchTestsV2ResponseStatusJsonConverter))]
+        public global::G.ListBatchTestsV2ResponseStatus? Status { get; set; }
 
         /// <summary>
         /// Example: API key is missing or invalid.
@@ -40,7 +40,7 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public ListBatchTestsV2Response4(
-            global::G.ListBatchTestsV2ResponseStatus2? status,
+            global::G.ListBatchTestsV2ResponseStatus? status,
             string? message)
         {
             this.Status = status;

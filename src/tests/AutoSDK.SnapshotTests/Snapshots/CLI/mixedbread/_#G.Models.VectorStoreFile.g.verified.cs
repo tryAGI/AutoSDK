@@ -1,4 +1,4 @@
-﻿//HintName: G.Models.VectorStoreFile.g.cs
+//HintName: G.Models.VectorStoreFile.g.cs
 
 #nullable enable
 
@@ -79,7 +79,7 @@ namespace G
         /// chunks
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("chunks")]
-        public global::System.Collections.Generic.IList<global::G.ChunksVariant1Item4>? Chunks { get; set; }
+        public global::System.Collections.Generic.IList<global::G.ChunksVariant1Item2>? Chunks { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -139,7 +139,7 @@ namespace G
             int? version,
             long? usageBytes,
             string? @object,
-            global::System.Collections.Generic.IList<global::G.ChunksVariant1Item4>? chunks)
+            global::System.Collections.Generic.IList<global::G.ChunksVariant1Item2>? chunks)
         {
             this.Id = id ?? throw new global::System.ArgumentNullException(nameof(id));
             this.Filename = filename;

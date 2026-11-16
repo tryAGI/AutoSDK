@@ -13,7 +13,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.BetaRequestToolUseBlockCacheControlVariant1DiscriminatorType? Type { get; }
+        public global::G.BetaRequestImageBlockCacheControlVariant1DiscriminatorType? Type { get; }
 
         /// <summary>
         /// 
@@ -78,7 +78,7 @@ namespace G
         /// 
         /// </summary>
         public CacheControlVariant110(
-            global::G.BetaRequestToolUseBlockCacheControlVariant1DiscriminatorType? type,
+            global::G.BetaRequestImageBlockCacheControlVariant1DiscriminatorType? type,
             global::G.BetaCacheControlEphemeral? ephemeral
             )
         {

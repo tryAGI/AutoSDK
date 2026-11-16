@@ -1,4 +1,4 @@
-﻿//HintName: G.IAgentClient.Generate.g.cs
+//HintName: G.IAgentClient.Generate.g.cs
 #nullable enable
 
 namespace G
@@ -14,7 +14,7 @@ namespace G
         /// <exception cref="global::G.ApiException"></exception>
         global::System.Threading.Tasks.Task<global::G.ResultChatCompletionOrContentStringReasoningStringCallsAnyString> GenerateAsync(
 
-            global::G.AllOf<global::G.OpenAIChatRequest, global::G.GenerateRequest4> request,
+            global::G.AllOf<global::G.OpenAIChatRequest, global::G.GenerateRequest2> request,
             global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
@@ -26,7 +26,7 @@ namespace G
         /// <exception cref="global::G.ApiException"></exception>
         global::System.Threading.Tasks.Task<global::G.AutoSDKHttpResponse<global::G.ResultChatCompletionOrContentStringReasoningStringCallsAnyString>> GenerateAsResponseAsync(
 
-            global::G.AllOf<global::G.OpenAIChatRequest, global::G.GenerateRequest4> request,
+            global::G.AllOf<global::G.OpenAIChatRequest, global::G.GenerateRequest2> request,
             global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>

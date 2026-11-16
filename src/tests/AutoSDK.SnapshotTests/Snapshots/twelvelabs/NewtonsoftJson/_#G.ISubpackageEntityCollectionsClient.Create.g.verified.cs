@@ -1,4 +1,4 @@
-﻿//HintName: G.ISubpackageEntityCollectionsClient.Create.g.cs
+//HintName: G.ISubpackageEntityCollectionsClient.Create.g.cs
 #nullable enable
 
 namespace G
@@ -17,7 +17,7 @@ namespace G
         global::System.Threading.Tasks.Task<global::G.EntityCollection> CreateAsync(
             string xApiKey,
 
-            global::G.CreateRequest5 request,
+            global::G.CreateRequest2 request,
             global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
@@ -32,7 +32,7 @@ namespace G
         global::System.Threading.Tasks.Task<global::G.AutoSDKHttpResponse<global::G.EntityCollection>> CreateAsResponseAsync(
             string xApiKey,
 
-            global::G.CreateRequest5 request,
+            global::G.CreateRequest2 request,
             global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>

@@ -1,4 +1,4 @@
-﻿//HintName: G.Models.LettaSchemasAgentFileAgentSchema.g.cs
+//HintName: G.Models.LettaSchemasAgentFileAgentSchema.g.cs
 
 #pragma warning disable CS0618 // Type or member is obsolete
 
@@ -292,7 +292,7 @@ namespace G
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("response_format")]
         [global::System.Obsolete("This property marked as deprecated.")]
-        public global::G.ResponseFormatVariant117? ResponseFormat { get; set; }
+        public global::G.ResponseFormatVariant115? ResponseFormat { get; set; }
 
         /// <summary>
         /// The timezone of the agent (IANA format).

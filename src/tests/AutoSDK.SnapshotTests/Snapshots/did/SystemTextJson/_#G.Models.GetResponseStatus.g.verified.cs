@@ -1,11 +1,11 @@
-﻿//HintName: G.Models.GetResponseStatus.g.cs
+//HintName: G.Models.GetResponseStatus.g.cs
 
 #nullable enable
 
 namespace G
 {
     /// <summary>
-    /// The status of the avatar
+    /// 
     /// </summary>
     public enum GetResponseStatus
     {
@@ -20,23 +20,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        Draft,
-        /// <summary>
-        /// 
-        /// </summary>
         Error,
-        /// <summary>
-        /// 
-        /// </summary>
-        Rejected,
-        /// <summary>
-        /// 
-        /// </summary>
-        Started,
-        /// <summary>
-        /// 
-        /// </summary>
-        TrainingStarted,
         /// <summary>
         /// 
         /// </summary>
@@ -57,11 +41,7 @@ namespace G
             {
                 GetResponseStatus.Created => "created",
                 GetResponseStatus.Done => "done",
-                GetResponseStatus.Draft => "draft",
                 GetResponseStatus.Error => "error",
-                GetResponseStatus.Rejected => "rejected",
-                GetResponseStatus.Started => "started",
-                GetResponseStatus.TrainingStarted => "training-started",
                 GetResponseStatus.Validating => "validating",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
@@ -75,11 +55,7 @@ namespace G
             {
                 "created" => GetResponseStatus.Created,
                 "done" => GetResponseStatus.Done,
-                "draft" => GetResponseStatus.Draft,
                 "error" => GetResponseStatus.Error,
-                "rejected" => GetResponseStatus.Rejected,
-                "started" => GetResponseStatus.Started,
-                "training-started" => GetResponseStatus.TrainingStarted,
                 "validating" => GetResponseStatus.Validating,
                 _ => null,
             };

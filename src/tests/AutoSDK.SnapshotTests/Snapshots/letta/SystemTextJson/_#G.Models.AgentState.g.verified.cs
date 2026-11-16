@@ -1,4 +1,4 @@
-﻿//HintName: G.Models.AgentState.g.cs
+//HintName: G.Models.AgentState.g.cs
 
 #pragma warning disable CS0618 // Type or member is obsolete
 
@@ -158,7 +158,7 @@ namespace G
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("sources")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::System.Collections.Generic.IList<global::G.Source2> Sources { get; set; }
+        public required global::System.Collections.Generic.IList<global::G.Source> Sources { get; set; }
 
         /// <summary>
         /// The tags associated with the agent.
@@ -445,7 +445,7 @@ namespace G
             global::G.Memory memory,
             global::System.Collections.Generic.IList<global::G.Block> blocks,
             global::System.Collections.Generic.IList<global::G.Tool> tools,
-            global::System.Collections.Generic.IList<global::G.Source2> sources,
+            global::System.Collections.Generic.IList<global::G.Source> sources,
             global::System.Collections.Generic.IList<string> tags,
             string? createdById,
             string? lastUpdatedById,

@@ -1,4 +1,4 @@
-﻿//HintName: G.Models.GoogleVertexModelSettings.g.cs
+//HintName: G.Models.GoogleVertexModelSettings.g.cs
 
 #nullable enable
 

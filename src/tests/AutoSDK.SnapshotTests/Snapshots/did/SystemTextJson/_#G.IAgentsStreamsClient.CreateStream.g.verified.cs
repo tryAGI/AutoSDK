@@ -1,4 +1,4 @@
-﻿//HintName: G.IAgentsStreamsClient.CreateStream.g.cs
+//HintName: G.IAgentsStreamsClient.CreateStream.g.cs
 #nullable enable
 
 namespace G
@@ -17,7 +17,7 @@ namespace G
         global::System.Threading.Tasks.Task<global::G.CreateStreamResponse> CreateStreamAsync(
             string agentId,
 
-            global::G.CreateStreamRequest request,
+            global::G.CreateStreamRequest2 request,
             global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
@@ -32,7 +32,7 @@ namespace G
         global::System.Threading.Tasks.Task<global::G.AutoSDKHttpResponse<global::G.CreateStreamResponse>> CreateStreamAsResponseAsync(
             string agentId,
 
-            global::G.CreateStreamRequest request,
+            global::G.CreateStreamRequest2 request,
             global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>

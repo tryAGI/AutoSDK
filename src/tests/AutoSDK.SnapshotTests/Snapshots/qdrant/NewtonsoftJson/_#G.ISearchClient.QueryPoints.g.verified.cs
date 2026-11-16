@@ -118,7 +118,7 @@ namespace G
             global::G.ReadConsistency? consistency = default,
             int? timeout = default,
             global::G.ShardKeySelector? shardKey = default,
-            global::G.AnyOf<global::G.Prefetch2, global::System.Collections.Generic.IList<global::G.Prefetch2>>? prefetch = default,
+            global::G.AnyOf<global::G.Prefetch, global::System.Collections.Generic.IList<global::G.Prefetch>>? prefetch = default,
             global::G.QueryInterface? query = default,
             string? @using = default,
             global::G.Filter? filter = default,

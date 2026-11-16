@@ -1,4 +1,4 @@
-﻿//HintName: G.ISourcesClient.ListSources.g.cs
+//HintName: G.ISourcesClient.ListSources.g.cs
 #nullable enable
 
 namespace G
@@ -13,7 +13,7 @@ namespace G
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::G.ApiException"></exception>
         [global::System.Obsolete("This method marked as deprecated.")]
-        global::System.Threading.Tasks.Task<global::System.Collections.Generic.IList<global::G.Source2>> ListSourcesAsync(
+        global::System.Threading.Tasks.Task<global::System.Collections.Generic.IList<global::G.Source>> ListSourcesAsync(
             global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
@@ -24,7 +24,7 @@ namespace G
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::G.ApiException"></exception>
         [global::System.Obsolete("This method marked as deprecated.")]
-        global::System.Threading.Tasks.Task<global::G.AutoSDKHttpResponse<global::System.Collections.Generic.IList<global::G.Source2>>> ListSourcesAsResponseAsync(
+        global::System.Threading.Tasks.Task<global::G.AutoSDKHttpResponse<global::System.Collections.Generic.IList<global::G.Source>>> ListSourcesAsResponseAsync(
             global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }

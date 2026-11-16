@@ -1,4 +1,4 @@
-﻿//HintName: G.Models.ChatCompletionChunkChoiceDelta.g.cs
+//HintName: G.Models.ChatCompletionChunkChoiceDelta.g.cs
 
 #pragma warning disable CS0618 // Type or member is obsolete
 
@@ -34,7 +34,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("tool_calls")]
-        public global::System.Collections.Generic.IList<global::G.ToolChoice2>? ToolCalls { get; set; }
+        public global::System.Collections.Generic.IList<global::G.ToolChoice>? ToolCalls { get; set; }
 
         /// <summary>
         /// 
@@ -60,7 +60,7 @@ namespace G
             global::G.ChatCompletionChunkChoiceDeltaRole role,
             int? tokenId,
             string? content,
-            global::System.Collections.Generic.IList<global::G.ToolChoice2>? toolCalls)
+            global::System.Collections.Generic.IList<global::G.ToolChoice>? toolCalls)
         {
             this.TokenId = tokenId;
             this.Role = role;

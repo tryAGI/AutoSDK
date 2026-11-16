@@ -1,4 +1,4 @@
-﻿//HintName: G.Models.ListExportRequestsV2Response5.g.cs
+//HintName: G.Models.ListExportRequestsV2Response5.g.cs
 
 #nullable enable
 
@@ -13,8 +13,8 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("status")]
-        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.ListExportRequestsV2ResponseStatus3JsonConverter))]
-        public global::G.ListExportRequestsV2ResponseStatus3? Status { get; set; }
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.ListExportRequestsV2ResponseStatusJsonConverter))]
+        public global::G.ListExportRequestsV2ResponseStatus? Status { get; set; }
 
         /// <summary>
         /// Example: Account rate limited, please throttle your requests.
@@ -37,7 +37,7 @@ namespace G
         /// Example: Account rate limited, please throttle your requests.
         /// </param>
         public ListExportRequestsV2Response5(
-            global::G.ListExportRequestsV2ResponseStatus3? status,
+            global::G.ListExportRequestsV2ResponseStatus? status,
             string? message)
         {
             this.Status = status;

@@ -1,4 +1,4 @@
-﻿//HintName: G.JsonSerializerContextConverters.g.cs
+//HintName: G.JsonSerializerContextConverters.g.cs
 
 #nullable enable
 
@@ -703,8 +703,6 @@ namespace G
             typeof(global::G.JsonConverters.VirtualKeysStatusNullableJsonConverter),
             typeof(global::G.JsonConverters.VirtualKeysObjectJsonConverter),
             typeof(global::G.JsonConverters.VirtualKeysObjectNullableJsonConverter),
-            typeof(global::G.JsonConverters.InviteRole2JsonConverter),
-            typeof(global::G.JsonConverters.InviteRole2NullableJsonConverter),
             typeof(global::G.JsonConverters.InviteStatusJsonConverter),
             typeof(global::G.JsonConverters.InviteStatusNullableJsonConverter),
             typeof(global::G.JsonConverters.InviteListObjectJsonConverter),
@@ -1037,7 +1035,7 @@ namespace G
             typeof(global::G.JsonConverters.CodeInterpreterToolOutputJsonConverter),
             typeof(global::G.JsonConverters.ComputerActionJsonConverter),
             typeof(global::G.JsonConverters.ComputerToolCallOutputResourceJsonConverter),
-            typeof(global::G.JsonConverters.Content3JsonConverter),
+            typeof(global::G.JsonConverters.ContentJsonConverter),
             typeof(global::G.JsonConverters.ResponseJsonConverter),
             typeof(global::G.JsonConverters.ResponseStreamEventJsonConverter),
             typeof(global::G.JsonConverters.AssistantsApiResponseFormatOptionJsonConverter),

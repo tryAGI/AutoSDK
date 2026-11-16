@@ -9,12 +9,12 @@ namespace G
         partial void PrepareCreateArguments(
             global::System.Net.Http.HttpClient httpClient,
             ref string xApiKey,
-            global::G.CreateRequest9 request);
+            global::G.CreateRequest5 request);
         partial void PrepareCreateRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
             string xApiKey,
-            global::G.CreateRequest9 request);
+            global::G.CreateRequest5 request);
         partial void ProcessCreateResponse(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage);
@@ -61,7 +61,7 @@ namespace G
         public async global::System.Threading.Tasks.Task<global::G.EmbeddingResponse> CreateAsync(
             string xApiKey,
 
-            global::G.CreateRequest9 request,
+            global::G.CreateRequest5 request,
             global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
@@ -112,7 +112,7 @@ namespace G
         public async global::System.Threading.Tasks.Task<global::G.AutoSDKHttpResponse<global::G.EmbeddingResponse>> CreateAsResponseAsync(
             string xApiKey,
 
-            global::G.CreateRequest9 request,
+            global::G.CreateRequest5 request,
             global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
@@ -708,7 +708,7 @@ namespace G
             global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
-            var __request = new global::G.CreateRequest9
+            var __request = new global::G.CreateRequest5
             {
                 ModelName = modelName,
                 Text = text,

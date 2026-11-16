@@ -14,7 +14,7 @@ namespace G
         /// <exception cref="global::G.ApiException"></exception>
         global::System.Threading.Tasks.Task<global::G.CreateAsrResponse> CreateAsrWithMessagePackAsync(
 
-            global::G.CreateAsrRequest2 request,
+            global::G.CreateAsrRequest request,
             global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
@@ -26,7 +26,7 @@ namespace G
         /// <exception cref="global::G.ApiException"></exception>
         global::System.Threading.Tasks.Task<global::G.AutoSDKHttpResponse<global::G.CreateAsrResponse>> CreateAsrWithMessagePackAsResponseAsync(
 
-            global::G.CreateAsrRequest2 request,
+            global::G.CreateAsrRequest request,
             global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>

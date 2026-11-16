@@ -1,11 +1,11 @@
-﻿//HintName: G.Models.ApiTokenBlacklistCreateResponse3.g.cs
+//HintName: G.Models.ApiTokenBlacklistCreateResponse3.g.cs
 
 #nullable enable
 
 namespace G
 {
     /// <summary>
-    /// Unspecified response body
+    /// 
     /// </summary>
     public sealed partial class ApiTokenBlacklistCreateResponse3
     {

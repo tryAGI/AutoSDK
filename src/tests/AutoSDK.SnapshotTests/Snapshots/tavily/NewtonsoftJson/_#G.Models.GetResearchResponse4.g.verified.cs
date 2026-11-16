@@ -1,4 +1,4 @@
-﻿//HintName: G.Models.GetResearchResponse4.g.cs
+//HintName: G.Models.GetResearchResponse4.g.cs
 
 #nullable enable
 
@@ -13,7 +13,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("detail")]
-        public global::G.GetResearchResponseDetail2? Detail { get; set; }
+        public global::G.GetResearchResponseDetail? Detail { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -26,7 +26,7 @@ namespace G
         /// </summary>
         /// <param name="detail"></param>
         public GetResearchResponse4(
-            global::G.GetResearchResponseDetail2? detail)
+            global::G.GetResearchResponseDetail? detail)
         {
             this.Detail = detail;
         }

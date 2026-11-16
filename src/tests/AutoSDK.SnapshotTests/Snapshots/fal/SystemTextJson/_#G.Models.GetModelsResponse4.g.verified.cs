@@ -1,4 +1,4 @@
-﻿//HintName: G.Models.GetModelsResponse4.g.cs
+//HintName: G.Models.GetModelsResponse4.g.cs
 
 #nullable enable
 
@@ -14,7 +14,7 @@ namespace G
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("error")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::G.GetModelsResponseError3 Error { get; set; }
+        public required global::G.GetModelsResponseError Error { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -32,7 +32,7 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public GetModelsResponse4(
-            global::G.GetModelsResponseError3 error)
+            global::G.GetModelsResponseError error)
         {
             this.Error = error ?? throw new global::System.ArgumentNullException(nameof(error));
         }

@@ -1,4 +1,4 @@
-﻿//HintName: G.Models.LettaBatchRequest.g.cs
+//HintName: G.Models.LettaBatchRequest.g.cs
 
 #pragma warning disable CS0618 // Type or member is obsolete
 

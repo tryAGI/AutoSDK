@@ -18,29 +18,29 @@ namespace G.JsonConverters
 
 
             var readerCopy = reader;
-            var discriminatorTypeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.RequestTextBlockCitationsVariant1ItemDiscriminator), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.RequestTextBlockCitationsVariant1ItemDiscriminator> ??
-                            throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::G.RequestTextBlockCitationsVariant1ItemDiscriminator)}");
+            var discriminatorTypeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.BetaRequestTextBlockCitationsVariant1ItemDiscriminator), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.BetaRequestTextBlockCitationsVariant1ItemDiscriminator> ??
+                            throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::G.BetaRequestTextBlockCitationsVariant1ItemDiscriminator)}");
             var discriminator = global::System.Text.Json.JsonSerializer.Deserialize(ref readerCopy, discriminatorTypeInfo);
 
-            global::G.RequestCharLocationCitation? charLocation = default;
-            if (discriminator?.Type == global::G.RequestTextBlockCitationsVariant1ItemDiscriminatorType.CharLocation)
+            global::G.BetaRequestCharLocationCitation? charLocation = default;
+            if (discriminator?.Type == global::G.BetaRequestTextBlockCitationsVariant1ItemDiscriminatorType.CharLocation)
             {
-                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.RequestCharLocationCitation), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.RequestCharLocationCitation> ??
-                               throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::G.RequestCharLocationCitation)}");
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.BetaRequestCharLocationCitation), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.BetaRequestCharLocationCitation> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::G.BetaRequestCharLocationCitation)}");
                 charLocation = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
             }
-            global::G.RequestPageLocationCitation? pageLocation = default;
-            if (discriminator?.Type == global::G.RequestTextBlockCitationsVariant1ItemDiscriminatorType.PageLocation)
+            global::G.BetaRequestPageLocationCitation? pageLocation = default;
+            if (discriminator?.Type == global::G.BetaRequestTextBlockCitationsVariant1ItemDiscriminatorType.PageLocation)
             {
-                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.RequestPageLocationCitation), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.RequestPageLocationCitation> ??
-                               throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::G.RequestPageLocationCitation)}");
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.BetaRequestPageLocationCitation), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.BetaRequestPageLocationCitation> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::G.BetaRequestPageLocationCitation)}");
                 pageLocation = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
             }
-            global::G.RequestContentBlockLocationCitation? contentBlockLocation = default;
-            if (discriminator?.Type == global::G.RequestTextBlockCitationsVariant1ItemDiscriminatorType.ContentBlockLocation)
+            global::G.BetaRequestContentBlockLocationCitation? contentBlockLocation = default;
+            if (discriminator?.Type == global::G.BetaRequestTextBlockCitationsVariant1ItemDiscriminatorType.ContentBlockLocation)
             {
-                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.RequestContentBlockLocationCitation), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.RequestContentBlockLocationCitation> ??
-                               throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::G.RequestContentBlockLocationCitation)}");
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.BetaRequestContentBlockLocationCitation), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.BetaRequestContentBlockLocationCitation> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::G.BetaRequestContentBlockLocationCitation)}");
                 contentBlockLocation = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
             }
 
@@ -67,20 +67,20 @@ namespace G.JsonConverters
 
             if (value.IsCharLocation)
             {
-                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.RequestCharLocationCitation), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.RequestCharLocationCitation?> ??
-                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.RequestCharLocationCitation).Name}");
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.BetaRequestCharLocationCitation), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.BetaRequestCharLocationCitation?> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.BetaRequestCharLocationCitation).Name}");
                 global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickCharLocation(), typeInfo);
             }
             else if (value.IsPageLocation)
             {
-                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.RequestPageLocationCitation), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.RequestPageLocationCitation?> ??
-                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.RequestPageLocationCitation).Name}");
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.BetaRequestPageLocationCitation), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.BetaRequestPageLocationCitation?> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.BetaRequestPageLocationCitation).Name}");
                 global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickPageLocation(), typeInfo);
             }
             else if (value.IsContentBlockLocation)
             {
-                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.RequestContentBlockLocationCitation), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.RequestContentBlockLocationCitation?> ??
-                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.RequestContentBlockLocationCitation).Name}");
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.BetaRequestContentBlockLocationCitation), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.BetaRequestContentBlockLocationCitation?> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.BetaRequestContentBlockLocationCitation).Name}");
                 global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickContentBlockLocation(), typeInfo);
             }
         }

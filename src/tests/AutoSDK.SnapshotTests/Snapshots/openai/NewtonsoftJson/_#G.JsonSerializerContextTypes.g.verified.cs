@@ -1163,7 +1163,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.Content6? Type281 { get; set; }
+        public global::G.Content? Type281 { get; set; }
         /// <summary>
         /// 
         /// </summary>
@@ -3127,7 +3127,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.Image2? Type772 { get; set; }
+        public global::G.Image? Type772 { get; set; }
         /// <summary>
         /// 
         /// </summary>
@@ -3183,7 +3183,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::G.Image2>? Type786 { get; set; }
+        public global::System.Collections.Generic.IList<global::G.Image>? Type786 { get; set; }
         /// <summary>
         /// 
         /// </summary>
@@ -3507,11 +3507,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::G.Model14>? Type867 { get; set; }
+        public global::System.Collections.Generic.IList<global::G.Model>? Type867 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.Model14? Type868 { get; set; }
+        public global::G.Model? Type868 { get; set; }
         /// <summary>
         /// 
         /// </summary>
@@ -4251,7 +4251,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.Prompt2? Type1053 { get; set; }
+        public global::G.Prompt? Type1053 { get; set; }
         /// <summary>
         /// 
         /// </summary>
@@ -6699,7 +6699,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.Filters2? Type1665 { get; set; }
+        public global::G.Filters? Type1665 { get; set; }
         /// <summary>
         /// 
         /// </summary>
@@ -7528,7 +7528,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.List<global::G.Image2>? ListType99 { get; set; }
+        public global::System.Collections.Generic.List<global::G.Image>? ListType99 { get; set; }
         /// <summary>
         /// 
         /// </summary>
@@ -7580,7 +7580,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.List<global::G.Model14>? ListType112 { get; set; }
+        public global::System.Collections.Generic.List<global::G.Model>? ListType112 { get; set; }
         /// <summary>
         /// 
         /// </summary>

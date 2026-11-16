@@ -1,4 +1,4 @@
-﻿//HintName: G.Models.DeleteRequestPayloadsResponse7.g.cs
+//HintName: G.Models.DeleteRequestPayloadsResponse7.g.cs
 
 #nullable enable
 
@@ -14,7 +14,7 @@ namespace G
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("error")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::G.DeleteRequestPayloadsResponseError6 Error { get; set; }
+        public required global::G.DeleteRequestPayloadsResponseError Error { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -32,7 +32,7 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public DeleteRequestPayloadsResponse7(
-            global::G.DeleteRequestPayloadsResponseError6 error)
+            global::G.DeleteRequestPayloadsResponseError error)
         {
             this.Error = error ?? throw new global::System.ArgumentNullException(nameof(error));
         }

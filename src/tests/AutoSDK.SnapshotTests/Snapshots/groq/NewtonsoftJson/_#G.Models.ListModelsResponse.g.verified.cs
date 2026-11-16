@@ -1,4 +1,4 @@
-﻿//HintName: G.Models.ListModelsResponse.g.cs
+//HintName: G.Models.ListModelsResponse.g.cs
 
 #nullable enable
 
@@ -20,7 +20,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("data", Required = global::Newtonsoft.Json.Required.Always)]
-        public global::System.Collections.Generic.IList<global::G.Model6> Data { get; set; } = default!;
+        public global::System.Collections.Generic.IList<global::G.Model> Data { get; set; } = default!;
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -34,7 +34,7 @@ namespace G
         /// <param name="data"></param>
         /// <param name="object"></param>
         public ListModelsResponse(
-            global::System.Collections.Generic.IList<global::G.Model6> data,
+            global::System.Collections.Generic.IList<global::G.Model> data,
             global::G.ListModelsResponseObject @object)
         {
             this.Object = @object;

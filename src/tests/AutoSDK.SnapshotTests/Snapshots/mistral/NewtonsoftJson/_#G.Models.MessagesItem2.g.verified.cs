@@ -13,7 +13,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.InstructRequestMessageDiscriminatorRole? Role { get; }
+        public global::G.ChatCompletionRequestMessageDiscriminatorRole? Role { get; }
 
         /// <summary>
         /// 
@@ -258,7 +258,7 @@ namespace G
         /// 
         /// </summary>
         public MessagesItem2(
-            global::G.InstructRequestMessageDiscriminatorRole? role,
+            global::G.ChatCompletionRequestMessageDiscriminatorRole? role,
             global::G.SystemMessage? system,
             global::G.UserMessage? user,
             global::G.AssistantMessage? assistant,

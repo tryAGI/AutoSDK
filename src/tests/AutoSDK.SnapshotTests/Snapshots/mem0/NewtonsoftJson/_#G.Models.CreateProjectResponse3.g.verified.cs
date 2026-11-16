@@ -1,4 +1,4 @@
-﻿//HintName: G.Models.CreateProjectResponse3.g.cs
+//HintName: G.Models.CreateProjectResponse3.g.cs
 
 #nullable enable
 
@@ -10,9 +10,9 @@ namespace G
     public sealed partial class CreateProjectResponse3
     {
         /// <summary>
-        /// Example: Project could not be created.
+        /// Example: Unauthorized to create projects in this organization.
         /// </summary>
-        /// <example>Project could not be created.</example>
+        /// <example>Unauthorized to create projects in this organization.</example>
         [global::Newtonsoft.Json.JsonProperty("message")]
         public string? Message { get; set; }
 
@@ -26,7 +26,7 @@ namespace G
         /// Initializes a new instance of the <see cref="CreateProjectResponse3" /> class.
         /// </summary>
         /// <param name="message">
-        /// Example: Project could not be created.
+        /// Example: Unauthorized to create projects in this organization.
         /// </param>
         public CreateProjectResponse3(
             string? message)

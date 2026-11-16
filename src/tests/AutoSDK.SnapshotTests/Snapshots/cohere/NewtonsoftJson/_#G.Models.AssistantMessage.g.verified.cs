@@ -1,4 +1,4 @@
-﻿//HintName: G.Models.AssistantMessage.g.cs
+//HintName: G.Models.AssistantMessage.g.cs
 
 #nullable enable
 
@@ -32,7 +32,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("content")]
-        public global::G.OneOf<string, global::System.Collections.Generic.IList<global::G.ContentVariant2Item>>? Content { get; set; }
+        public global::G.OneOf<string, global::System.Collections.Generic.IList<global::G.ContentVariant2Item2>>? Content { get; set; }
 
         /// <summary>
         /// 
@@ -60,7 +60,7 @@ namespace G
             global::G.AssistantMessageRole role,
             global::System.Collections.Generic.IList<global::G.ToolCallV2>? toolCalls,
             string? toolPlan,
-            global::G.OneOf<string, global::System.Collections.Generic.IList<global::G.ContentVariant2Item>>? content,
+            global::G.OneOf<string, global::System.Collections.Generic.IList<global::G.ContentVariant2Item2>>? content,
             global::System.Collections.Generic.IList<global::G.Citation>? citations)
         {
             this.Role = role;

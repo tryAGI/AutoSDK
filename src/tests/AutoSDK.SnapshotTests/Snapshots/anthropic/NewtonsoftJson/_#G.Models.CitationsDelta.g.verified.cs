@@ -1,4 +1,4 @@
-﻿//HintName: G.Models.CitationsDelta.g.cs
+//HintName: G.Models.CitationsDelta.g.cs
 
 #nullable enable
 
@@ -21,7 +21,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("citation", Required = global::Newtonsoft.Json.Required.Always)]
-        public global::G.Citation2 Citation { get; set; } = default!;
+        public global::G.Citation Citation { get; set; } = default!;
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -37,7 +37,7 @@ namespace G
         /// Default Value: citations_delta
         /// </param>
         public CitationsDelta(
-            global::G.Citation2 citation,
+            global::G.Citation citation,
             global::G.CitationsDeltaType type = global::G.CitationsDeltaType.CitationsDelta)
         {
             this.Type = type;

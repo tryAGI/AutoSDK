@@ -1,4 +1,4 @@
-﻿//HintName: G.Models.GetConvAIDashboardSettingsResponseModel.g.cs
+//HintName: G.Models.GetConvAIDashboardSettingsResponseModel.g.cs
 
 #nullable enable
 
@@ -13,7 +13,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("charts")]
-        public global::System.Collections.Generic.IList<global::G.ChartsItem>? Charts { get; set; }
+        public global::System.Collections.Generic.IList<global::G.ChartsItem2>? Charts { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -26,7 +26,7 @@ namespace G
         /// </summary>
         /// <param name="charts"></param>
         public GetConvAIDashboardSettingsResponseModel(
-            global::System.Collections.Generic.IList<global::G.ChartsItem>? charts)
+            global::System.Collections.Generic.IList<global::G.ChartsItem2>? charts)
         {
             this.Charts = charts;
         }

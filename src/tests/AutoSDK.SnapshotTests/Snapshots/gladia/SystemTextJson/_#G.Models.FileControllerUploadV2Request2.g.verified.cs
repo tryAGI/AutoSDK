@@ -1,4 +1,4 @@
-﻿//HintName: G.Models.FileControllerUploadV2Request2.g.cs
+//HintName: G.Models.FileControllerUploadV2Request2.g.cs
 
 #nullable enable
 
@@ -10,10 +10,16 @@ namespace G
     public sealed partial class FileControllerUploadV2Request2
     {
         /// <summary>
-        /// The URL of the audio or video file to be uploaded.
+        /// The file to be uploaded. This should be an audio or video file.
         /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("audio_url")]
-        public string? AudioUrl { get; set; }
+        [global::System.Text.Json.Serialization.JsonPropertyName("audio")]
+        public byte[]? Audio { get; set; }
+
+        /// <summary>
+        /// The file to be uploaded. This should be an audio or video file.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("audioname")]
+        public string? Audioname { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -24,16 +30,21 @@ namespace G
         /// <summary>
         /// Initializes a new instance of the <see cref="FileControllerUploadV2Request2" /> class.
         /// </summary>
-        /// <param name="audioUrl">
-        /// The URL of the audio or video file to be uploaded.
+        /// <param name="audio">
+        /// The file to be uploaded. This should be an audio or video file.
+        /// </param>
+        /// <param name="audioname">
+        /// The file to be uploaded. This should be an audio or video file.
         /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public FileControllerUploadV2Request2(
-            string? audioUrl)
+            byte[]? audio,
+            string? audioname)
         {
-            this.AudioUrl = audioUrl;
+            this.Audio = audio;
+            this.Audioname = audioname;
         }
 
         /// <summary>

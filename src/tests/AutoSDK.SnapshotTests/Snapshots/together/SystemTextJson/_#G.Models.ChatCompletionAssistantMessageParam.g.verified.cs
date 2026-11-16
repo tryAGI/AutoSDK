@@ -1,4 +1,4 @@
-﻿//HintName: G.Models.ChatCompletionAssistantMessageParam.g.cs
+//HintName: G.Models.ChatCompletionAssistantMessageParam.g.cs
 
 #pragma warning disable CS0618 // Type or member is obsolete
 
@@ -34,7 +34,7 @@ namespace G
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("tool_calls")]
-        public global::System.Collections.Generic.IList<global::G.ToolChoice2>? ToolCalls { get; set; }
+        public global::System.Collections.Generic.IList<global::G.ToolChoice>? ToolCalls { get; set; }
 
         /// <summary>
         /// 
@@ -63,7 +63,7 @@ namespace G
             string? content,
             global::G.ChatCompletionAssistantMessageParamRole role,
             string? name,
-            global::System.Collections.Generic.IList<global::G.ToolChoice2>? toolCalls)
+            global::System.Collections.Generic.IList<global::G.ToolChoice>? toolCalls)
         {
             this.Content = content;
             this.Role = role;

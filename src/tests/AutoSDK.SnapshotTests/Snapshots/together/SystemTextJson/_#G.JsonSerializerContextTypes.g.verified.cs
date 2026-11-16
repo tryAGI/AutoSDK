@@ -211,11 +211,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::G.ToolChoice2>? Type43 { get; set; }
+        public global::System.Collections.Generic.IList<global::G.ToolChoice>? Type43 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.ToolChoice2? Type44 { get; set; }
+        public global::G.ToolChoice? Type44 { get; set; }
         /// <summary>
         /// 
         /// </summary>
@@ -279,7 +279,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.OneOf<string, global::G.ToolChoice2>? Type60 { get; set; }
+        public global::G.OneOf<string, global::G.ToolChoice>? Type60 { get; set; }
         /// <summary>
         /// 
         /// </summary>
@@ -543,15 +543,15 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::G.FinetuneEvent>? Type126 { get; set; }
+        public global::System.Collections.Generic.IList<global::G.FinetuneEvent2>? Type126 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.FinetuneEvent? Type127 { get; set; }
+        public global::G.FinetuneEvent2? Type127 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.FinetuneEventObject? Type128 { get; set; }
+        public global::G.FinetuneEventObject2? Type128 { get; set; }
         /// <summary>
         /// 
         /// </summary>
@@ -575,15 +575,15 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::G.FineTuneEvent2>? Type134 { get; set; }
+        public global::System.Collections.Generic.IList<global::G.FineTuneEvent>? Type134 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.FineTuneEvent2? Type135 { get; set; }
+        public global::G.FineTuneEvent? Type135 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.FineTuneEventObject2? Type136 { get; set; }
+        public global::G.FineTuneEventObject? Type136 { get; set; }
         /// <summary>
         /// 
         /// </summary>
@@ -591,35 +591,31 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.FineTuneEventType2? Type138 { get; set; }
+        public global::G.FinetuneDownloadResult? Type138 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.FinetuneDownloadResult? Type139 { get; set; }
+        public global::G.FinetuneDownloadResultObject? Type139 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.FinetuneDownloadResultObject? Type140 { get; set; }
+        public global::G.FullTrainingTypeType? Type140 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.FullTrainingTypeType? Type141 { get; set; }
+        public global::G.LoRATrainingTypeType? Type141 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.LoRATrainingTypeType? Type142 { get; set; }
+        public global::G.CreateImagesGenerationsRequest? Type142 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.CreateImagesGenerationsRequest? Type143 { get; set; }
+        public global::G.CreateFineTunesRequest? Type143 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.CreateFineTunesRequest? Type144 { get; set; }
-        /// <summary>
-        /// 
-        /// </summary>
-        public global::G.OneOf<global::G.FullTrainingType, global::G.LoRATrainingType>? Type145 { get; set; }
+        public global::G.OneOf<global::G.FullTrainingType, global::G.LoRATrainingType>? Type144 { get; set; }
 
         /// <summary>
         /// 
@@ -660,7 +656,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.List<global::G.ToolChoice2>? ListType9 { get; set; }
+        public global::System.Collections.Generic.List<global::G.ToolChoice>? ListType9 { get; set; }
         /// <summary>
         /// 
         /// </summary>
@@ -696,7 +692,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.List<global::G.FinetuneEvent>? ListType18 { get; set; }
+        public global::System.Collections.Generic.List<global::G.FinetuneEvent2>? ListType18 { get; set; }
         /// <summary>
         /// 
         /// </summary>
@@ -704,6 +700,6 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.List<global::G.FineTuneEvent2>? ListType20 { get; set; }
+        public global::System.Collections.Generic.List<global::G.FineTuneEvent>? ListType20 { get; set; }
     }
 }

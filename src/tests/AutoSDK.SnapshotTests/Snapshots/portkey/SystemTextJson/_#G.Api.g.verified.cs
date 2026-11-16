@@ -1,4 +1,4 @@
-﻿//HintName: G.Api.g.cs
+//HintName: G.Api.g.cs
 
 #nullable enable
 
@@ -740,8 +740,6 @@ namespace G
                     new global::G.JsonConverters.VirtualKeysStatusNullableJsonConverter(),
                     new global::G.JsonConverters.VirtualKeysObjectJsonConverter(),
                     new global::G.JsonConverters.VirtualKeysObjectNullableJsonConverter(),
-                    new global::G.JsonConverters.InviteRole2JsonConverter(),
-                    new global::G.JsonConverters.InviteRole2NullableJsonConverter(),
                     new global::G.JsonConverters.InviteStatusJsonConverter(),
                     new global::G.JsonConverters.InviteStatusNullableJsonConverter(),
                     new global::G.JsonConverters.InviteListObjectJsonConverter(),
@@ -1074,7 +1072,7 @@ namespace G
                     new global::G.JsonConverters.CodeInterpreterToolOutputJsonConverter(),
                     new global::G.JsonConverters.ComputerActionJsonConverter(),
                     new global::G.JsonConverters.ComputerToolCallOutputResourceJsonConverter(),
-                    new global::G.JsonConverters.Content3JsonConverter(),
+                    new global::G.JsonConverters.ContentJsonConverter(),
                     new global::G.JsonConverters.ResponseJsonConverter(),
                     new global::G.JsonConverters.ResponseStreamEventJsonConverter(),
                     new global::G.JsonConverters.AssistantsApiResponseFormatOptionJsonConverter(),

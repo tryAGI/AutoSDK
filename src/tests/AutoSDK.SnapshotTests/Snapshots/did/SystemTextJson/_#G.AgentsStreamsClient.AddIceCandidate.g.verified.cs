@@ -46,13 +46,13 @@ namespace G
             global::System.Net.Http.HttpClient httpClient,
             ref string agentId,
             ref string streamId,
-            global::G.AllOf<global::G.AnyOf<global::G.AddIceCandidateRequestVariant12, object>?, global::G.AddIceCandidateRequest2> request);
+            global::G.AllOf<global::G.AnyOf<global::G.AddIceCandidateRequestVariant14, object>?, global::G.AddIceCandidateRequest4> request);
         partial void PrepareAddIceCandidateRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
             string agentId,
             string streamId,
-            global::G.AllOf<global::G.AnyOf<global::G.AddIceCandidateRequestVariant12, object>?, global::G.AddIceCandidateRequest2> request);
+            global::G.AllOf<global::G.AnyOf<global::G.AddIceCandidateRequestVariant14, object>?, global::G.AddIceCandidateRequest4> request);
         partial void ProcessAddIceCandidateResponse(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage);
@@ -72,11 +72,11 @@ namespace G
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::G.ApiException"></exception>
-        public async global::System.Threading.Tasks.Task<global::G.AddIceCandidateResponse> AddIceCandidateAsync(
+        public async global::System.Threading.Tasks.Task<global::G.AddIceCandidateResponse4> AddIceCandidateAsync(
             string agentId,
             string streamId,
 
-            global::G.AllOf<global::G.AnyOf<global::G.AddIceCandidateRequestVariant12, object>?, global::G.AddIceCandidateRequest2> request,
+            global::G.AllOf<global::G.AnyOf<global::G.AddIceCandidateRequestVariant14, object>?, global::G.AddIceCandidateRequest4> request,
             global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
@@ -101,11 +101,11 @@ namespace G
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::G.ApiException"></exception>
-        public async global::System.Threading.Tasks.Task<global::G.AutoSDKHttpResponse<global::G.AddIceCandidateResponse>> AddIceCandidateAsResponseAsync(
+        public async global::System.Threading.Tasks.Task<global::G.AutoSDKHttpResponse<global::G.AddIceCandidateResponse4>> AddIceCandidateAsResponseAsync(
             string agentId,
             string streamId,
 
-            global::G.AllOf<global::G.AnyOf<global::G.AddIceCandidateRequestVariant12, object>?, global::G.AddIceCandidateRequest2> request,
+            global::G.AllOf<global::G.AnyOf<global::G.AddIceCandidateRequestVariant14, object>?, global::G.AddIceCandidateRequest4> request,
             global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
@@ -377,19 +377,19 @@ namespace G
                             {
                                 string? __content_400 = null;
                                 global::System.Exception? __exception_400 = null;
-                                global::G.AddIceCandidateResponse2? __value_400 = null;
+                                global::G.AddIceCandidateResponse5? __value_400 = null;
                                 try
                                 {
                                     if (__effectiveReadResponseAsString)
                                     {
                                         __content_400 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
-                                        __value_400 = global::G.AddIceCandidateResponse2.FromJson(__content_400, JsonSerializerOptions);
+                                        __value_400 = global::G.AddIceCandidateResponse5.FromJson(__content_400, JsonSerializerOptions);
                                     }
                                     else
                                     {
                                         __content_400 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
 
-                                        __value_400 = global::G.AddIceCandidateResponse2.FromJson(__content_400, JsonSerializerOptions);
+                                        __value_400 = global::G.AddIceCandidateResponse5.FromJson(__content_400, JsonSerializerOptions);
                                     }
                                 }
                                 catch (global::System.Exception __ex)
@@ -398,7 +398,7 @@ namespace G
                                 }
 
 
-                                throw global::G.ApiException<global::G.AddIceCandidateResponse2>.Create(
+                                throw global::G.ApiException<global::G.AddIceCandidateResponse5>.Create(
                                     statusCode: __response.StatusCode,
                                     message: __content_400 ?? __response.ReasonPhrase ?? string.Empty,
                                     innerException: __exception_400,
@@ -414,19 +414,19 @@ namespace G
                             {
                                 string? __content_401 = null;
                                 global::System.Exception? __exception_401 = null;
-                                global::G.AddIceCandidateResponse3? __value_401 = null;
+                                global::G.AddIceCandidateResponse6? __value_401 = null;
                                 try
                                 {
                                     if (__effectiveReadResponseAsString)
                                     {
                                         __content_401 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
-                                        __value_401 = global::G.AddIceCandidateResponse3.FromJson(__content_401, JsonSerializerOptions);
+                                        __value_401 = global::G.AddIceCandidateResponse6.FromJson(__content_401, JsonSerializerOptions);
                                     }
                                     else
                                     {
                                         __content_401 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
 
-                                        __value_401 = global::G.AddIceCandidateResponse3.FromJson(__content_401, JsonSerializerOptions);
+                                        __value_401 = global::G.AddIceCandidateResponse6.FromJson(__content_401, JsonSerializerOptions);
                                     }
                                 }
                                 catch (global::System.Exception __ex)
@@ -435,7 +435,7 @@ namespace G
                                 }
 
 
-                                throw global::G.ApiException<global::G.AddIceCandidateResponse3>.Create(
+                                throw global::G.ApiException<global::G.AddIceCandidateResponse6>.Create(
                                     statusCode: __response.StatusCode,
                                     message: __content_401 ?? __response.ReasonPhrase ?? string.Empty,
                                     innerException: __exception_401,
@@ -468,9 +468,9 @@ namespace G
                                 {
                                     __response.EnsureSuccessStatusCode();
 
-                                    var __value = global::G.AddIceCandidateResponse.FromJson(__content, JsonSerializerOptions) ??
+                                    var __value = global::G.AddIceCandidateResponse4.FromJson(__content, JsonSerializerOptions) ??
                                         throw new global::System.InvalidOperationException($"Response deserialization failed for \"{__content}\" ");
-                                    return new global::G.AutoSDKHttpResponse<global::G.AddIceCandidateResponse>(
+                                    return new global::G.AutoSDKHttpResponse<global::G.AddIceCandidateResponse4>(
                                         statusCode: __response.StatusCode,
                                         headers: global::G.AutoSDKHttpResponse.CreateHeaders(__response),
                                         requestUri: __response.RequestMessage?.RequestUri,
@@ -500,9 +500,9 @@ namespace G
                 #endif
                                     ).ConfigureAwait(false);
 
-                                    var __value = await global::G.AddIceCandidateResponse.FromJsonStreamAsync(__content, JsonSerializerOptions).ConfigureAwait(false) ??
+                                    var __value = await global::G.AddIceCandidateResponse4.FromJsonStreamAsync(__content, JsonSerializerOptions).ConfigureAwait(false) ??
                                         throw new global::System.InvalidOperationException("Response deserialization failed.");
-                                    return new global::G.AutoSDKHttpResponse<global::G.AddIceCandidateResponse>(
+                                    return new global::G.AutoSDKHttpResponse<global::G.AddIceCandidateResponse4>(
                                         statusCode: __response.StatusCode,
                                         headers: global::G.AutoSDKHttpResponse.CreateHeaders(__response),
                                         requestUri: __response.RequestMessage?.RequestUri,
@@ -551,13 +551,13 @@ namespace G
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
-        public async global::System.Threading.Tasks.Task<global::G.AddIceCandidateResponse> AddIceCandidateAsync(
+        public async global::System.Threading.Tasks.Task<global::G.AddIceCandidateResponse4> AddIceCandidateAsync(
             string agentId,
             string streamId,
             global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
-            var __request = new global::G.AllOf<global::G.AnyOf<global::G.AddIceCandidateRequestVariant12, object>?, global::G.AddIceCandidateRequest2>
+            var __request = new global::G.AllOf<global::G.AnyOf<global::G.AddIceCandidateRequestVariant14, object>?, global::G.AddIceCandidateRequest4>
             {
             };
 

@@ -10,13 +10,13 @@ namespace G
             global::System.Net.Http.HttpClient httpClient,
             ref string entityCollectionId,
             ref string xApiKey,
-            global::G.CreateRequest6 request);
+            global::G.CreateRequest4 request);
         partial void PrepareCreateRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
             string entityCollectionId,
             string xApiKey,
-            global::G.CreateRequest6 request);
+            global::G.CreateRequest4 request);
         partial void ProcessCreateResponse(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage);
@@ -40,7 +40,7 @@ namespace G
             string entityCollectionId,
             string xApiKey,
 
-            global::G.CreateRequest6 request,
+            global::G.CreateRequest4 request,
             global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
@@ -69,7 +69,7 @@ namespace G
             string entityCollectionId,
             string xApiKey,
 
-            global::G.CreateRequest6 request,
+            global::G.CreateRequest4 request,
             global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
@@ -492,7 +492,7 @@ namespace G
             global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
-            var __request = new global::G.CreateRequest6
+            var __request = new global::G.CreateRequest4
             {
                 Name = name,
                 Description = description,

@@ -1,4 +1,4 @@
-﻿//HintName: G.Models.DeleteAnnotationConfigResponseBody.g.cs
+//HintName: G.Models.DeleteAnnotationConfigResponseBody.g.cs
 
 #nullable enable
 
@@ -13,7 +13,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("data", Required = global::Newtonsoft.Json.Required.Always)]
-        public global::G.Data3 Data { get; set; } = default!;
+        public global::G.Data5 Data { get; set; } = default!;
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -26,7 +26,7 @@ namespace G
         /// </summary>
         /// <param name="data"></param>
         public DeleteAnnotationConfigResponseBody(
-            global::G.Data3 data)
+            global::G.Data5 data)
         {
             this.Data = data;
         }

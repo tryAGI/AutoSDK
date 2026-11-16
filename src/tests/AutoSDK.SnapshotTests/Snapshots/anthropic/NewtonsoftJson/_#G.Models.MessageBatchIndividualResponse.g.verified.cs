@@ -1,4 +1,4 @@
-﻿//HintName: G.Models.MessageBatchIndividualResponse.g.cs
+//HintName: G.Models.MessageBatchIndividualResponse.g.cs
 
 #nullable enable
 
@@ -21,7 +21,7 @@ namespace G
         /// Contains a Message output if processing was successful, an error response if processing failed, or the reason why processing was not attempted, such as cancellation or expiration.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("result", Required = global::Newtonsoft.Json.Required.Always)]
-        public global::G.Result2 Result { get; set; } = default!;
+        public global::G.Result Result { get; set; } = default!;
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -42,7 +42,7 @@ namespace G
         /// </param>
         public MessageBatchIndividualResponse(
             string customId,
-            global::G.Result2 result)
+            global::G.Result result)
         {
             this.CustomId = customId ?? throw new global::System.ArgumentNullException(nameof(customId));
             this.Result = result;

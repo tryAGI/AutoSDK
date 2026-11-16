@@ -1,4 +1,4 @@
-﻿//HintName: G.Models.MxbaiOmniApiRoutesV1StoresRulesModelsSearchRuleCreateParams.g.cs
+//HintName: G.Models.MxbaiOmniApiRoutesV1StoresRulesModelsSearchRuleCreateParams.g.cs
 
 #nullable enable
 
@@ -21,7 +21,7 @@ namespace G
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("rules")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::System.Collections.Generic.IList<global::G.RulesItem3> Rules { get; set; }
+        public required global::System.Collections.Generic.IList<global::G.RulesItem2> Rules { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -43,7 +43,7 @@ namespace G
 #endif
         public MxbaiOmniApiRoutesV1StoresRulesModelsSearchRuleCreateParams(
             string query,
-            global::System.Collections.Generic.IList<global::G.RulesItem3> rules)
+            global::System.Collections.Generic.IList<global::G.RulesItem2> rules)
         {
             this.Query = query ?? throw new global::System.ArgumentNullException(nameof(query));
             this.Rules = rules ?? throw new global::System.ArgumentNullException(nameof(rules));

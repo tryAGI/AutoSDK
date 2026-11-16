@@ -1,4 +1,4 @@
-﻿//HintName: G.Models.GetFunctionResponse.g.cs
+//HintName: G.Models.GetFunctionResponse.g.cs
 
 #nullable enable
 
@@ -13,7 +13,7 @@ namespace G
         /// A list of function objects
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("objects", Required = global::Newtonsoft.Json.Required.Always)]
-        public global::System.Collections.Generic.IList<global::G.Function2> Objects { get; set; } = default!;
+        public global::System.Collections.Generic.IList<global::G.Function> Objects { get; set; } = default!;
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -28,7 +28,7 @@ namespace G
         /// A list of function objects
         /// </param>
         public GetFunctionResponse(
-            global::System.Collections.Generic.IList<global::G.Function2> objects)
+            global::System.Collections.Generic.IList<global::G.Function> objects)
         {
             this.Objects = objects ?? throw new global::System.ArgumentNullException(nameof(objects));
         }

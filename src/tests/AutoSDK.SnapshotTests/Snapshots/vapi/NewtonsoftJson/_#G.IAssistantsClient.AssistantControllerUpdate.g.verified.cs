@@ -1,4 +1,4 @@
-﻿//HintName: G.IAssistantsClient.AssistantControllerUpdate.g.cs
+//HintName: G.IAssistantsClient.AssistantControllerUpdate.g.cs
 #nullable enable
 
 namespace G

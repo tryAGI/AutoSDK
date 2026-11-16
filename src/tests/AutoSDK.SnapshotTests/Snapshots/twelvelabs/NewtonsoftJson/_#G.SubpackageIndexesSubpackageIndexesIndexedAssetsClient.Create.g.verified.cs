@@ -10,13 +10,13 @@ namespace G
             global::System.Net.Http.HttpClient httpClient,
             ref string indexId,
             ref string xApiKey,
-            global::G.CreateRequest4 request);
+            global::G.CreateRequest3 request);
         partial void PrepareCreateRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
             string indexId,
             string xApiKey,
-            global::G.CreateRequest4 request);
+            global::G.CreateRequest3 request);
         partial void ProcessCreateResponse(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage);
@@ -48,7 +48,7 @@ namespace G
             string indexId,
             string xApiKey,
 
-            global::G.CreateRequest4 request,
+            global::G.CreateRequest3 request,
             global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
@@ -85,7 +85,7 @@ namespace G
             string indexId,
             string xApiKey,
 
-            global::G.CreateRequest4 request,
+            global::G.CreateRequest3 request,
             global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
@@ -571,7 +571,7 @@ namespace G
             global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
-            var __request = new global::G.CreateRequest4
+            var __request = new global::G.CreateRequest3
             {
                 AssetId = assetId,
                 EnableVideoStream = enableVideoStream,

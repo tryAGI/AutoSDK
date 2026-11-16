@@ -1,4 +1,4 @@
-﻿//HintName: G.IConversationsClient.CreateConversation.g.cs
+//HintName: G.IConversationsClient.CreateConversation.g.cs
 #nullable enable
 
 namespace G
@@ -66,7 +66,7 @@ namespace G
             string? summary = default,
             global::System.Collections.Generic.IList<string>? isolatedBlockLabels = default,
             string? model = default,
-            global::G.ModelSettingsVariant16? modelSettings = default,
+            global::G.ModelSettingsVariant15? modelSettings = default,
             global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }

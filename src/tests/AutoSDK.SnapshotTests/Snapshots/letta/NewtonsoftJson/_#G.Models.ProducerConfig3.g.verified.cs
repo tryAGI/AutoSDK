@@ -13,15 +13,15 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.PipelinesPreviewPipelineRequestProducerConfigDiscriminatorType? Type { get; }
+        public global::G.PipelinesUpdatePipelineProducerConfigRequestProducerConfigDiscriminatorType? Type { get; }
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        public global::G.PipelinesPreviewPipelineRequestProducerConfigVariant1? SlackChannelReader { get; init; }
+        public global::G.PipelinesUpdatePipelineProducerConfigRequestProducerConfigVariant1? SlackChannelReader { get; init; }
 #else
-        public global::G.PipelinesPreviewPipelineRequestProducerConfigVariant1? SlackChannelReader { get; }
+        public global::G.PipelinesUpdatePipelineProducerConfigRequestProducerConfigVariant1? SlackChannelReader { get; }
 #endif
 
         /// <summary>
@@ -39,7 +39,7 @@ namespace G
 #if NET6_0_OR_GREATER
             [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
 #endif
-            out global::G.PipelinesPreviewPipelineRequestProducerConfigVariant1? value)
+            out global::G.PipelinesUpdatePipelineProducerConfigRequestProducerConfigVariant1? value)
         {
             value = SlackChannelReader;
             return IsSlackChannelReader;
@@ -48,7 +48,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.PipelinesPreviewPipelineRequestProducerConfigVariant1 PickSlackChannelReader() => SlackChannelReader is { } value
+        public global::G.PipelinesUpdatePipelineProducerConfigRequestProducerConfigVariant1 PickSlackChannelReader() => SlackChannelReader is { } value
             ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'SlackChannelReader' but the value was {ToString()}.");
 
@@ -56,9 +56,9 @@ namespace G
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        public global::G.PipelinesPreviewPipelineRequestProducerConfigVariant2? CustomWebhook { get; init; }
+        public global::G.PipelinesUpdatePipelineProducerConfigRequestProducerConfigVariant2? CustomWebhook { get; init; }
 #else
-        public global::G.PipelinesPreviewPipelineRequestProducerConfigVariant2? CustomWebhook { get; }
+        public global::G.PipelinesUpdatePipelineProducerConfigRequestProducerConfigVariant2? CustomWebhook { get; }
 #endif
 
         /// <summary>
@@ -76,7 +76,7 @@ namespace G
 #if NET6_0_OR_GREATER
             [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
 #endif
-            out global::G.PipelinesPreviewPipelineRequestProducerConfigVariant2? value)
+            out global::G.PipelinesUpdatePipelineProducerConfigRequestProducerConfigVariant2? value)
         {
             value = CustomWebhook;
             return IsCustomWebhook;
@@ -85,23 +85,23 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.PipelinesPreviewPipelineRequestProducerConfigVariant2 PickCustomWebhook() => CustomWebhook is { } value
+        public global::G.PipelinesUpdatePipelineProducerConfigRequestProducerConfigVariant2 PickCustomWebhook() => CustomWebhook is { } value
             ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'CustomWebhook' but the value was {ToString()}.");
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator ProducerConfig3(global::G.PipelinesPreviewPipelineRequestProducerConfigVariant1 value) => new ProducerConfig3((global::G.PipelinesPreviewPipelineRequestProducerConfigVariant1?)value);
+        public static implicit operator ProducerConfig3(global::G.PipelinesUpdatePipelineProducerConfigRequestProducerConfigVariant1 value) => new ProducerConfig3((global::G.PipelinesUpdatePipelineProducerConfigRequestProducerConfigVariant1?)value);
 
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator global::G.PipelinesPreviewPipelineRequestProducerConfigVariant1?(ProducerConfig3 @this) => @this.SlackChannelReader;
+        public static implicit operator global::G.PipelinesUpdatePipelineProducerConfigRequestProducerConfigVariant1?(ProducerConfig3 @this) => @this.SlackChannelReader;
 
         /// <summary>
         /// 
         /// </summary>
-        public ProducerConfig3(global::G.PipelinesPreviewPipelineRequestProducerConfigVariant1? value)
+        public ProducerConfig3(global::G.PipelinesUpdatePipelineProducerConfigRequestProducerConfigVariant1? value)
         {
             SlackChannelReader = value;
         }
@@ -109,22 +109,22 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static ProducerConfig3 FromSlackChannelReader(global::G.PipelinesPreviewPipelineRequestProducerConfigVariant1? value) => new ProducerConfig3(value);
+        public static ProducerConfig3 FromSlackChannelReader(global::G.PipelinesUpdatePipelineProducerConfigRequestProducerConfigVariant1? value) => new ProducerConfig3(value);
 
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator ProducerConfig3(global::G.PipelinesPreviewPipelineRequestProducerConfigVariant2 value) => new ProducerConfig3((global::G.PipelinesPreviewPipelineRequestProducerConfigVariant2?)value);
+        public static implicit operator ProducerConfig3(global::G.PipelinesUpdatePipelineProducerConfigRequestProducerConfigVariant2 value) => new ProducerConfig3((global::G.PipelinesUpdatePipelineProducerConfigRequestProducerConfigVariant2?)value);
 
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator global::G.PipelinesPreviewPipelineRequestProducerConfigVariant2?(ProducerConfig3 @this) => @this.CustomWebhook;
+        public static implicit operator global::G.PipelinesUpdatePipelineProducerConfigRequestProducerConfigVariant2?(ProducerConfig3 @this) => @this.CustomWebhook;
 
         /// <summary>
         /// 
         /// </summary>
-        public ProducerConfig3(global::G.PipelinesPreviewPipelineRequestProducerConfigVariant2? value)
+        public ProducerConfig3(global::G.PipelinesUpdatePipelineProducerConfigRequestProducerConfigVariant2? value)
         {
             CustomWebhook = value;
         }
@@ -132,15 +132,15 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static ProducerConfig3 FromCustomWebhook(global::G.PipelinesPreviewPipelineRequestProducerConfigVariant2? value) => new ProducerConfig3(value);
+        public static ProducerConfig3 FromCustomWebhook(global::G.PipelinesUpdatePipelineProducerConfigRequestProducerConfigVariant2? value) => new ProducerConfig3(value);
 
         /// <summary>
         /// 
         /// </summary>
         public ProducerConfig3(
-            global::G.PipelinesPreviewPipelineRequestProducerConfigDiscriminatorType? type,
-            global::G.PipelinesPreviewPipelineRequestProducerConfigVariant1? slackChannelReader,
-            global::G.PipelinesPreviewPipelineRequestProducerConfigVariant2? customWebhook
+            global::G.PipelinesUpdatePipelineProducerConfigRequestProducerConfigDiscriminatorType? type,
+            global::G.PipelinesUpdatePipelineProducerConfigRequestProducerConfigVariant1? slackChannelReader,
+            global::G.PipelinesUpdatePipelineProducerConfigRequestProducerConfigVariant2? customWebhook
             )
         {
             Type = type;
@@ -177,8 +177,8 @@ namespace G
         /// 
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<global::G.PipelinesPreviewPipelineRequestProducerConfigVariant1, TResult>? slackChannelReader = null,
-            global::System.Func<global::G.PipelinesPreviewPipelineRequestProducerConfigVariant2, TResult>? customWebhook = null,
+            global::System.Func<global::G.PipelinesUpdatePipelineProducerConfigRequestProducerConfigVariant1, TResult>? slackChannelReader = null,
+            global::System.Func<global::G.PipelinesUpdatePipelineProducerConfigRequestProducerConfigVariant2, TResult>? customWebhook = null,
             bool validate = true)
         {
             if (validate)
@@ -202,9 +202,9 @@ namespace G
         /// 
         /// </summary>
         public void Match(
-            global::System.Action<global::G.PipelinesPreviewPipelineRequestProducerConfigVariant1>? slackChannelReader = null,
+            global::System.Action<global::G.PipelinesUpdatePipelineProducerConfigRequestProducerConfigVariant1>? slackChannelReader = null,
 
-            global::System.Action<global::G.PipelinesPreviewPipelineRequestProducerConfigVariant2>? customWebhook = null,
+            global::System.Action<global::G.PipelinesUpdatePipelineProducerConfigRequestProducerConfigVariant2>? customWebhook = null,
             bool validate = true)
         {
             if (validate)
@@ -226,8 +226,8 @@ namespace G
         /// 
         /// </summary>
         public void Switch(
-            global::System.Action<global::G.PipelinesPreviewPipelineRequestProducerConfigVariant1>? slackChannelReader = null,
-            global::System.Action<global::G.PipelinesPreviewPipelineRequestProducerConfigVariant2>? customWebhook = null,
+            global::System.Action<global::G.PipelinesUpdatePipelineProducerConfigRequestProducerConfigVariant1>? slackChannelReader = null,
+            global::System.Action<global::G.PipelinesUpdatePipelineProducerConfigRequestProducerConfigVariant2>? customWebhook = null,
             bool validate = true)
         {
             if (validate)
@@ -253,9 +253,9 @@ namespace G
             var fields = new object?[]
             {
                 SlackChannelReader,
-                typeof(global::G.PipelinesPreviewPipelineRequestProducerConfigVariant1),
+                typeof(global::G.PipelinesUpdatePipelineProducerConfigRequestProducerConfigVariant1),
                 CustomWebhook,
-                typeof(global::G.PipelinesPreviewPipelineRequestProducerConfigVariant2),
+                typeof(global::G.PipelinesUpdatePipelineProducerConfigRequestProducerConfigVariant2),
             };
             const int offset = unchecked((int)2166136261);
             const int prime = 16777619;
@@ -272,8 +272,8 @@ namespace G
         public bool Equals(ProducerConfig3 other)
         {
             return
-                global::System.Collections.Generic.EqualityComparer<global::G.PipelinesPreviewPipelineRequestProducerConfigVariant1?>.Default.Equals(SlackChannelReader, other.SlackChannelReader) &&
-                global::System.Collections.Generic.EqualityComparer<global::G.PipelinesPreviewPipelineRequestProducerConfigVariant2?>.Default.Equals(CustomWebhook, other.CustomWebhook) 
+                global::System.Collections.Generic.EqualityComparer<global::G.PipelinesUpdatePipelineProducerConfigRequestProducerConfigVariant1?>.Default.Equals(SlackChannelReader, other.SlackChannelReader) &&
+                global::System.Collections.Generic.EqualityComparer<global::G.PipelinesUpdatePipelineProducerConfigRequestProducerConfigVariant2?>.Default.Equals(CustomWebhook, other.CustomWebhook) 
                 ;
         }
 

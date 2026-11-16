@@ -1,4 +1,4 @@
-﻿//HintName: G.Models.QaViewFilter.g.cs
+//HintName: G.Models.QaViewFilter.g.cs
 
 #pragma warning disable CS0618 // Type or member is obsolete
 
@@ -72,7 +72,7 @@ namespace G
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("disconnection_reasons")]
         [global::System.Obsolete("This property marked as deprecated.")]
-        public global::System.Collections.Generic.IList<global::G.DisconnectionReason4>? DisconnectionReasons { get; set; }
+        public global::System.Collections.Generic.IList<global::G.DisconnectionReason>? DisconnectionReasons { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

@@ -6,227 +6,163 @@
 namespace G
 {
     /// <summary>
-    /// The MCP server configuration (Stdio, SSE, or Streamable HTTP)
+    /// 
     /// </summary>
     public readonly partial struct Config : global::System.IEquatable<Config>
     {
         /// <summary>
         /// 
         /// </summary>
-        public global::G.CreateMCPServerRequestConfigDiscriminatorMcpServerType? McpServerType { get; }
+        public global::G.PipelinesListPipelinesResponsePipelineConfigDiscriminatorType? Type { get; }
 
         /// <summary>
-        /// Create a new Stdio MCP server
+        /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        public global::G.CreateStdioMCPServer? Stdio { get; init; }
+        public global::G.PipelinesListPipelinesResponsePipelineConfigVariant1? SlackChannelReader { get; init; }
 #else
-        public global::G.CreateStdioMCPServer? Stdio { get; }
+        public global::G.PipelinesListPipelinesResponsePipelineConfigVariant1? SlackChannelReader { get; }
 #endif
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Stdio))]
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(SlackChannelReader))]
 #endif
-        public bool IsStdio => Stdio != null;
+        public bool IsSlackChannelReader => SlackChannelReader != null;
 
         /// <summary>
         /// 
         /// </summary>
-        public bool TryPickStdio(
+        public bool TryPickSlackChannelReader(
 #if NET6_0_OR_GREATER
             [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
 #endif
-            out global::G.CreateStdioMCPServer? value)
+            out global::G.PipelinesListPipelinesResponsePipelineConfigVariant1? value)
         {
-            value = Stdio;
-            return IsStdio;
+            value = SlackChannelReader;
+            return IsSlackChannelReader;
         }
 
         /// <summary>
         /// 
         /// </summary>
-        public global::G.CreateStdioMCPServer PickStdio() => Stdio is { } value
+        public global::G.PipelinesListPipelinesResponsePipelineConfigVariant1 PickSlackChannelReader() => SlackChannelReader is { } value
             ? value
-            : throw new global::System.InvalidOperationException($"Expected union variant 'Stdio' but the value was {ToString()}.");
+            : throw new global::System.InvalidOperationException($"Expected union variant 'SlackChannelReader' but the value was {ToString()}.");
 
         /// <summary>
-        /// Create a new SSE MCP server
+        /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        public global::G.CreateSSEMCPServer? Sse { get; init; }
+        public global::G.PipelinesListPipelinesResponsePipelineConfigVariant2? CustomWebhook { get; init; }
 #else
-        public global::G.CreateSSEMCPServer? Sse { get; }
+        public global::G.PipelinesListPipelinesResponsePipelineConfigVariant2? CustomWebhook { get; }
 #endif
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Sse))]
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(CustomWebhook))]
 #endif
-        public bool IsSse => Sse != null;
+        public bool IsCustomWebhook => CustomWebhook != null;
 
         /// <summary>
         /// 
         /// </summary>
-        public bool TryPickSse(
+        public bool TryPickCustomWebhook(
 #if NET6_0_OR_GREATER
             [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
 #endif
-            out global::G.CreateSSEMCPServer? value)
+            out global::G.PipelinesListPipelinesResponsePipelineConfigVariant2? value)
         {
-            value = Sse;
-            return IsSse;
+            value = CustomWebhook;
+            return IsCustomWebhook;
         }
 
         /// <summary>
         /// 
         /// </summary>
-        public global::G.CreateSSEMCPServer PickSse() => Sse is { } value
+        public global::G.PipelinesListPipelinesResponsePipelineConfigVariant2 PickCustomWebhook() => CustomWebhook is { } value
             ? value
-            : throw new global::System.InvalidOperationException($"Expected union variant 'Sse' but the value was {ToString()}.");
-
+            : throw new global::System.InvalidOperationException($"Expected union variant 'CustomWebhook' but the value was {ToString()}.");
         /// <summary>
-        /// Create a new Streamable HTTP MCP server
+        /// 
         /// </summary>
-#if NET6_0_OR_GREATER
-        public global::G.CreateStreamableHTTPMCPServer? StreamableHttp { get; init; }
-#else
-        public global::G.CreateStreamableHTTPMCPServer? StreamableHttp { get; }
-#endif
+        public static implicit operator Config(global::G.PipelinesListPipelinesResponsePipelineConfigVariant1 value) => new Config((global::G.PipelinesListPipelinesResponsePipelineConfigVariant1?)value);
 
         /// <summary>
         /// 
         /// </summary>
-#if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(StreamableHttp))]
-#endif
-        public bool IsStreamableHttp => StreamableHttp != null;
+        public static implicit operator global::G.PipelinesListPipelinesResponsePipelineConfigVariant1?(Config @this) => @this.SlackChannelReader;
 
         /// <summary>
         /// 
         /// </summary>
-        public bool TryPickStreamableHttp(
-#if NET6_0_OR_GREATER
-            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
-#endif
-            out global::G.CreateStreamableHTTPMCPServer? value)
+        public Config(global::G.PipelinesListPipelinesResponsePipelineConfigVariant1? value)
         {
-            value = StreamableHttp;
-            return IsStreamableHttp;
+            SlackChannelReader = value;
         }
 
         /// <summary>
         /// 
         /// </summary>
-        public global::G.CreateStreamableHTTPMCPServer PickStreamableHttp() => StreamableHttp is { } value
-            ? value
-            : throw new global::System.InvalidOperationException($"Expected union variant 'StreamableHttp' but the value was {ToString()}.");
-        /// <summary>
-        /// 
-        /// </summary>
-        public static implicit operator Config(global::G.CreateStdioMCPServer value) => new Config((global::G.CreateStdioMCPServer?)value);
+        public static Config FromSlackChannelReader(global::G.PipelinesListPipelinesResponsePipelineConfigVariant1? value) => new Config(value);
 
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator global::G.CreateStdioMCPServer?(Config @this) => @this.Stdio;
+        public static implicit operator Config(global::G.PipelinesListPipelinesResponsePipelineConfigVariant2 value) => new Config((global::G.PipelinesListPipelinesResponsePipelineConfigVariant2?)value);
 
         /// <summary>
         /// 
         /// </summary>
-        public Config(global::G.CreateStdioMCPServer? value)
+        public static implicit operator global::G.PipelinesListPipelinesResponsePipelineConfigVariant2?(Config @this) => @this.CustomWebhook;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public Config(global::G.PipelinesListPipelinesResponsePipelineConfigVariant2? value)
         {
-            Stdio = value;
+            CustomWebhook = value;
         }
 
         /// <summary>
         /// 
         /// </summary>
-        public static Config FromStdio(global::G.CreateStdioMCPServer? value) => new Config(value);
-
-        /// <summary>
-        /// 
-        /// </summary>
-        public static implicit operator Config(global::G.CreateSSEMCPServer value) => new Config((global::G.CreateSSEMCPServer?)value);
-
-        /// <summary>
-        /// 
-        /// </summary>
-        public static implicit operator global::G.CreateSSEMCPServer?(Config @this) => @this.Sse;
-
-        /// <summary>
-        /// 
-        /// </summary>
-        public Config(global::G.CreateSSEMCPServer? value)
-        {
-            Sse = value;
-        }
-
-        /// <summary>
-        /// 
-        /// </summary>
-        public static Config FromSse(global::G.CreateSSEMCPServer? value) => new Config(value);
-
-        /// <summary>
-        /// 
-        /// </summary>
-        public static implicit operator Config(global::G.CreateStreamableHTTPMCPServer value) => new Config((global::G.CreateStreamableHTTPMCPServer?)value);
-
-        /// <summary>
-        /// 
-        /// </summary>
-        public static implicit operator global::G.CreateStreamableHTTPMCPServer?(Config @this) => @this.StreamableHttp;
-
-        /// <summary>
-        /// 
-        /// </summary>
-        public Config(global::G.CreateStreamableHTTPMCPServer? value)
-        {
-            StreamableHttp = value;
-        }
-
-        /// <summary>
-        /// 
-        /// </summary>
-        public static Config FromStreamableHttp(global::G.CreateStreamableHTTPMCPServer? value) => new Config(value);
+        public static Config FromCustomWebhook(global::G.PipelinesListPipelinesResponsePipelineConfigVariant2? value) => new Config(value);
 
         /// <summary>
         /// 
         /// </summary>
         public Config(
-            global::G.CreateMCPServerRequestConfigDiscriminatorMcpServerType? mcpServerType,
-            global::G.CreateStdioMCPServer? stdio,
-            global::G.CreateSSEMCPServer? sse,
-            global::G.CreateStreamableHTTPMCPServer? streamableHttp
+            global::G.PipelinesListPipelinesResponsePipelineConfigDiscriminatorType? type,
+            global::G.PipelinesListPipelinesResponsePipelineConfigVariant1? slackChannelReader,
+            global::G.PipelinesListPipelinesResponsePipelineConfigVariant2? customWebhook
             )
         {
-            McpServerType = mcpServerType;
+            Type = type;
 
-            Stdio = stdio;
-            Sse = sse;
-            StreamableHttp = streamableHttp;
+            SlackChannelReader = slackChannelReader;
+            CustomWebhook = customWebhook;
         }
 
         /// <summary>
         /// 
         /// </summary>
         public object? Object =>
-            StreamableHttp as object ??
-            Sse as object ??
-            Stdio as object 
+            CustomWebhook as object ??
+            SlackChannelReader as object 
             ;
 
         /// <summary>
         /// 
         /// </summary>
         public override string? ToString() =>
-            Stdio?.ToString() ??
-            Sse?.ToString() ??
-            StreamableHttp?.ToString() 
+            SlackChannelReader?.ToString() ??
+            CustomWebhook?.ToString() 
             ;
 
         /// <summary>
@@ -234,16 +170,15 @@ namespace G
         /// </summary>
         public bool Validate()
         {
-            return IsStdio && !IsSse && !IsStreamableHttp || !IsStdio && IsSse && !IsStreamableHttp || !IsStdio && !IsSse && IsStreamableHttp;
+            return IsSlackChannelReader && !IsCustomWebhook || !IsSlackChannelReader && IsCustomWebhook;
         }
 
         /// <summary>
         /// 
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<global::G.CreateStdioMCPServer, TResult>? stdio = null,
-            global::System.Func<global::G.CreateSSEMCPServer, TResult>? sse = null,
-            global::System.Func<global::G.CreateStreamableHTTPMCPServer, TResult>? streamableHttp = null,
+            global::System.Func<global::G.PipelinesListPipelinesResponsePipelineConfigVariant1, TResult>? slackChannelReader = null,
+            global::System.Func<global::G.PipelinesListPipelinesResponsePipelineConfigVariant2, TResult>? customWebhook = null,
             bool validate = true)
         {
             if (validate)
@@ -251,17 +186,13 @@ namespace G
                 Validate();
             }
 
-            if (Stdio is { } __value0 && stdio != null)
+            if (SlackChannelReader is { } __value0 && slackChannelReader != null)
             {
-                return stdio(__value0);
+                return slackChannelReader(__value0);
             }
-            else if (Sse is { } __value1 && sse != null)
+            else if (CustomWebhook is { } __value1 && customWebhook != null)
             {
-                return sse(__value1);
-            }
-            else if (StreamableHttp is { } __value2 && streamableHttp != null)
-            {
-                return streamableHttp(__value2);
+                return customWebhook(__value1);
             }
 
             return default(TResult);
@@ -271,11 +202,9 @@ namespace G
         /// 
         /// </summary>
         public void Match(
-            global::System.Action<global::G.CreateStdioMCPServer>? stdio = null,
+            global::System.Action<global::G.PipelinesListPipelinesResponsePipelineConfigVariant1>? slackChannelReader = null,
 
-            global::System.Action<global::G.CreateSSEMCPServer>? sse = null,
-
-            global::System.Action<global::G.CreateStreamableHTTPMCPServer>? streamableHttp = null,
+            global::System.Action<global::G.PipelinesListPipelinesResponsePipelineConfigVariant2>? customWebhook = null,
             bool validate = true)
         {
             if (validate)
@@ -283,17 +212,13 @@ namespace G
                 Validate();
             }
 
-            if (Stdio is { } __value0)
+            if (SlackChannelReader is { } __value0)
             {
-                stdio?.Invoke(__value0);
+                slackChannelReader?.Invoke(__value0);
             }
-            else if (Sse is { } __value1)
+            else if (CustomWebhook is { } __value1)
             {
-                sse?.Invoke(__value1);
-            }
-            else if (StreamableHttp is { } __value2)
-            {
-                streamableHttp?.Invoke(__value2);
+                customWebhook?.Invoke(__value1);
             }
         }
 
@@ -301,9 +226,8 @@ namespace G
         /// 
         /// </summary>
         public void Switch(
-            global::System.Action<global::G.CreateStdioMCPServer>? stdio = null,
-            global::System.Action<global::G.CreateSSEMCPServer>? sse = null,
-            global::System.Action<global::G.CreateStreamableHTTPMCPServer>? streamableHttp = null,
+            global::System.Action<global::G.PipelinesListPipelinesResponsePipelineConfigVariant1>? slackChannelReader = null,
+            global::System.Action<global::G.PipelinesListPipelinesResponsePipelineConfigVariant2>? customWebhook = null,
             bool validate = true)
         {
             if (validate)
@@ -311,17 +235,13 @@ namespace G
                 Validate();
             }
 
-            if (Stdio is { } __value0)
+            if (SlackChannelReader is { } __value0)
             {
-                stdio?.Invoke(__value0);
+                slackChannelReader?.Invoke(__value0);
             }
-            else if (Sse is { } __value1)
+            else if (CustomWebhook is { } __value1)
             {
-                sse?.Invoke(__value1);
-            }
-            else if (StreamableHttp is { } __value2)
-            {
-                streamableHttp?.Invoke(__value2);
+                customWebhook?.Invoke(__value1);
             }
         }
 
@@ -332,12 +252,10 @@ namespace G
         {
             var fields = new object?[]
             {
-                Stdio,
-                typeof(global::G.CreateStdioMCPServer),
-                Sse,
-                typeof(global::G.CreateSSEMCPServer),
-                StreamableHttp,
-                typeof(global::G.CreateStreamableHTTPMCPServer),
+                SlackChannelReader,
+                typeof(global::G.PipelinesListPipelinesResponsePipelineConfigVariant1),
+                CustomWebhook,
+                typeof(global::G.PipelinesListPipelinesResponsePipelineConfigVariant2),
             };
             const int offset = unchecked((int)2166136261);
             const int prime = 16777619;
@@ -354,9 +272,8 @@ namespace G
         public bool Equals(Config other)
         {
             return
-                global::System.Collections.Generic.EqualityComparer<global::G.CreateStdioMCPServer?>.Default.Equals(Stdio, other.Stdio) &&
-                global::System.Collections.Generic.EqualityComparer<global::G.CreateSSEMCPServer?>.Default.Equals(Sse, other.Sse) &&
-                global::System.Collections.Generic.EqualityComparer<global::G.CreateStreamableHTTPMCPServer?>.Default.Equals(StreamableHttp, other.StreamableHttp) 
+                global::System.Collections.Generic.EqualityComparer<global::G.PipelinesListPipelinesResponsePipelineConfigVariant1?>.Default.Equals(SlackChannelReader, other.SlackChannelReader) &&
+                global::System.Collections.Generic.EqualityComparer<global::G.PipelinesListPipelinesResponsePipelineConfigVariant2?>.Default.Equals(CustomWebhook, other.CustomWebhook) 
                 ;
         }
 

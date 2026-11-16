@@ -82,7 +82,7 @@ namespace G
         global::System.Threading.Tasks.Task<global::G.Pipeline> UpdateExistingPipelineApiV1PipelinesPipelineIdPutAsync(
             global::System.Guid pipelineId,
             string? session = default,
-            global::G.EmbeddingConfigVariant13? embeddingConfig = default,
+            global::G.EmbeddingConfigVariant12? embeddingConfig = default,
             global::G.AnyOf<global::G.AutoTransformConfig, global::G.AdvancedModeTransformConfig>? transformConfig = default,
             global::G.SparseModelConfig? sparseModelConfig = default,
             global::System.Guid? dataSinkId = default,

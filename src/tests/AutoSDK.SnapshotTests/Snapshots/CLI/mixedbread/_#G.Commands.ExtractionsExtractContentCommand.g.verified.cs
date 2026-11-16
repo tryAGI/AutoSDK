@@ -1,4 +1,4 @@
-﻿//HintName: G.Commands.ExtractionsExtractContentCommand.g.cs
+//HintName: G.Commands.ExtractionsExtractContentCommand.g.cs
 
 #nullable enable
 
@@ -12,7 +12,7 @@ namespace G
         partial void Initialize();
         partial void Validate(
             global::System.CommandLine.ParseResult parseResult,
-            global::G.AnyOf<string, global::System.Collections.Generic.IList<string>, global::System.Collections.Generic.IList<global::G.AnyOf<global::G.TextInput, global::G.ImageUrlInput2>>> content,
+            global::G.AnyOf<string, global::System.Collections.Generic.IList<string>, global::System.Collections.Generic.IList<global::G.AnyOf<global::G.TextInput, global::G.ImageUrlInput>>> content,
             object jsonSchema,
             string? instructions,
             global::System.Threading.CancellationToken cancellationToken);
@@ -22,7 +22,7 @@ namespace G
             global::G.ExtractionResult response,
             global::System.Threading.CancellationToken cancellationToken);
 
-        private global::System.CommandLine.Argument<global::G.AnyOf<string, global::System.Collections.Generic.IList<string>, global::System.Collections.Generic.IList<global::G.AnyOf<global::G.TextInput, global::G.ImageUrlInput2>>>> Content { get; } = new(
+        private global::System.CommandLine.Argument<global::G.AnyOf<string, global::System.Collections.Generic.IList<string>, global::System.Collections.Generic.IList<global::G.AnyOf<global::G.TextInput, global::G.ImageUrlInput>>>> Content { get; } = new(
             name: "content")
         {
             Description = @"The content to extract from",

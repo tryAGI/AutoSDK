@@ -378,19 +378,19 @@ namespace G
                             {
                                 string? __content_404 = null;
                                 global::System.Exception? __exception_404 = null;
-                                global::G.Delete2Response2? __value_404 = null;
+                                global::G.Delete2Response? __value_404 = null;
                                 try
                                 {
                                     if (__effectiveReadResponseAsString)
                                     {
                                         __content_404 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
-                                        __value_404 = global::G.Delete2Response2.FromJson(__content_404, JsonSerializerOptions);
+                                        __value_404 = global::G.Delete2Response.FromJson(__content_404, JsonSerializerOptions);
                                     }
                                     else
                                     {
                                         __content_404 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
 
-                                        __value_404 = global::G.Delete2Response2.FromJson(__content_404, JsonSerializerOptions);
+                                        __value_404 = global::G.Delete2Response.FromJson(__content_404, JsonSerializerOptions);
                                     }
                                 }
                                 catch (global::System.Exception __ex)
@@ -399,7 +399,7 @@ namespace G
                                 }
 
 
-                                throw global::G.ApiException<global::G.Delete2Response2>.Create(
+                                throw global::G.ApiException<global::G.Delete2Response>.Create(
                                     statusCode: __response.StatusCode,
                                     message: __content_404 ?? __response.ReasonPhrase ?? string.Empty,
                                     innerException: __exception_404,
@@ -415,19 +415,19 @@ namespace G
                             {
                                 string? __content_500 = null;
                                 global::System.Exception? __exception_500 = null;
-                                global::G.Delete2Response3? __value_500 = null;
+                                global::G.Delete2Response? __value_500 = null;
                                 try
                                 {
                                     if (__effectiveReadResponseAsString)
                                     {
                                         __content_500 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
-                                        __value_500 = global::G.Delete2Response3.FromJson(__content_500, JsonSerializerOptions);
+                                        __value_500 = global::G.Delete2Response.FromJson(__content_500, JsonSerializerOptions);
                                     }
                                     else
                                     {
                                         __content_500 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
 
-                                        __value_500 = global::G.Delete2Response3.FromJson(__content_500, JsonSerializerOptions);
+                                        __value_500 = global::G.Delete2Response.FromJson(__content_500, JsonSerializerOptions);
                                     }
                                 }
                                 catch (global::System.Exception __ex)
@@ -436,7 +436,7 @@ namespace G
                                 }
 
 
-                                throw global::G.ApiException<global::G.Delete2Response3>.Create(
+                                throw global::G.ApiException<global::G.Delete2Response>.Create(
                                     statusCode: __response.StatusCode,
                                     message: __content_500 ?? __response.ReasonPhrase ?? string.Empty,
                                     innerException: __exception_500,

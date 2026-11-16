@@ -18,33 +18,33 @@ namespace G.JsonConverters
 
 
             var readerCopy = reader;
-            var discriminatorTypeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.VectorStoreFileChunksVariant1ItemDiscriminator), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.VectorStoreFileChunksVariant1ItemDiscriminator> ??
-                            throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::G.VectorStoreFileChunksVariant1ItemDiscriminator)}");
+            var discriminatorTypeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.StoreFileChunksVariant1ItemDiscriminator), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.StoreFileChunksVariant1ItemDiscriminator> ??
+                            throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::G.StoreFileChunksVariant1ItemDiscriminator)}");
             var discriminator = global::System.Text.Json.JsonSerializer.Deserialize(ref readerCopy, discriminatorTypeInfo);
 
             global::G.TextInputChunk? text = default;
-            if (discriminator?.Type == global::G.VectorStoreFileChunksVariant1ItemDiscriminatorType.Text)
+            if (discriminator?.Type == global::G.StoreFileChunksVariant1ItemDiscriminatorType.Text)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.TextInputChunk), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.TextInputChunk> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::G.TextInputChunk)}");
                 text = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
             }
             global::G.ImageUrlInputChunk? imageUrl = default;
-            if (discriminator?.Type == global::G.VectorStoreFileChunksVariant1ItemDiscriminatorType.ImageUrl)
+            if (discriminator?.Type == global::G.StoreFileChunksVariant1ItemDiscriminatorType.ImageUrl)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.ImageUrlInputChunk), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.ImageUrlInputChunk> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::G.ImageUrlInputChunk)}");
                 imageUrl = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
             }
             global::G.AudioUrlInputChunk? audioUrl = default;
-            if (discriminator?.Type == global::G.VectorStoreFileChunksVariant1ItemDiscriminatorType.AudioUrl)
+            if (discriminator?.Type == global::G.StoreFileChunksVariant1ItemDiscriminatorType.AudioUrl)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.AudioUrlInputChunk), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.AudioUrlInputChunk> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::G.AudioUrlInputChunk)}");
                 audioUrl = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
             }
             global::G.VideoUrlInputChunk? videoUrl = default;
-            if (discriminator?.Type == global::G.VectorStoreFileChunksVariant1ItemDiscriminatorType.VideoUrl)
+            if (discriminator?.Type == global::G.StoreFileChunksVariant1ItemDiscriminatorType.VideoUrl)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.VideoUrlInputChunk), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.VideoUrlInputChunk> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::G.VideoUrlInputChunk)}");

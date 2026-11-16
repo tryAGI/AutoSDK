@@ -1,4 +1,4 @@
-﻿//HintName: G.Models.CreateRequest6.g.cs
+//HintName: G.Models.CreateRequest6.g.cs
 
 #nullable enable
 
@@ -10,40 +10,41 @@ namespace G
     public sealed partial class CreateRequest6
     {
         /// <summary>
-        /// The name of the entity. Make sure you use a succinct and descriptive name.
+        /// The unique identifier of the index to which the video is being uploaded.
         /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("name", Required = global::Newtonsoft.Json.Required.Always)]
-        public string Name { get; set; } = default!;
+        [global::Newtonsoft.Json.JsonProperty("index_id", Required = global::Newtonsoft.Json.Required.Always)]
+        public string IndexId { get; set; } = default!;
 
         /// <summary>
-        /// An optional description of the entity.
+        /// Specify this parameter to upload a video from your local file system.
         /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("description")]
-        public string? Description { get; set; }
+        [global::Newtonsoft.Json.JsonProperty("video_file")]
+        public byte[]? VideoFile { get; set; }
 
         /// <summary>
-        /// Optional metadata for the entity, provided as key-value pairs to store additional context or attributes. Use metadata to categorize or describe the entity for easier management and search. Keys must be of type `string`, and values can be of type `string`, `integer`, `float`, or `boolean`.<br/>
-        /// **Example**:<br/>
-        /// ```json<br/>
-        /// {<br/>
-        ///   "sport": "soccer",<br/>
-        ///   "teamId": 42,<br/>
-        ///   "performanceScore": 8.7,<br/>
-        ///   "isActive": true<br/>
-        /// }<br/>
-        /// ```<br/>
-        /// &lt;Note title="Note"&gt;<br/>
-        ///   To store complex data types such as objects or arrays, convert them to string values before including them in the metadata.<br/>
-        /// &lt;/Note&gt;
+        /// Specify this parameter to upload a video from your local file system.
         /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("metadata")]
-        public global::G.EntityCollectionsEntityCollectionIdEntitiesPostRequestBodyContentApplicationJsonSchemaMetadata? Metadata { get; set; }
+        [global::Newtonsoft.Json.JsonProperty("video_filename")]
+        public string? VideoFilename { get; set; }
 
         /// <summary>
-        /// An array of asset IDs to associate with the entity. You must provide at least one value.
+        /// Specify this parameter to upload a video from a publicly accessible URL.
         /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("asset_ids", Required = global::Newtonsoft.Json.Required.Always)]
-        public global::System.Collections.Generic.IList<string> AssetIds { get; set; } = default!;
+        [global::Newtonsoft.Json.JsonProperty("video_url")]
+        public string? VideoUrl { get; set; }
+
+        /// <summary>
+        /// This parameter indicates if the platform stores the video for streaming. When set to `true`, the platform stores the video, and you can retrieve its URL by calling the [`GET`](/v1.3/api-reference/videos/retrieve) method of the `/indexes/{index-id}/videos/{video-id}` endpoint. You can then use this URL to access the stream over the &lt;a href="https://en.wikipedia.org/wiki/HTTP_Live_Streaming" target="_blank"&gt;HLS&lt;/a&gt; protocol.<br/>
+        /// Default Value: true
+        /// </summary>
+        [global::Newtonsoft.Json.JsonProperty("enable_video_stream")]
+        public bool? EnableVideoStream { get; set; }
+
+        /// <summary>
+        /// Metadata that helps you categorize your videos. You can specify a list of keys and values. Keys must be of type `string`, and values can be of the following types: `string`, `integer`, `float` or `boolean`.
+        /// </summary>
+        [global::Newtonsoft.Json.JsonProperty("user_metadata")]
+        public string? UserMetadata { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -54,40 +55,39 @@ namespace G
         /// <summary>
         /// Initializes a new instance of the <see cref="CreateRequest6" /> class.
         /// </summary>
-        /// <param name="name">
-        /// The name of the entity. Make sure you use a succinct and descriptive name.
+        /// <param name="indexId">
+        /// The unique identifier of the index to which the video is being uploaded.
         /// </param>
-        /// <param name="assetIds">
-        /// An array of asset IDs to associate with the entity. You must provide at least one value.
+        /// <param name="videoFile">
+        /// Specify this parameter to upload a video from your local file system.
         /// </param>
-        /// <param name="description">
-        /// An optional description of the entity.
+        /// <param name="videoFilename">
+        /// Specify this parameter to upload a video from your local file system.
         /// </param>
-        /// <param name="metadata">
-        /// Optional metadata for the entity, provided as key-value pairs to store additional context or attributes. Use metadata to categorize or describe the entity for easier management and search. Keys must be of type `string`, and values can be of type `string`, `integer`, `float`, or `boolean`.<br/>
-        /// **Example**:<br/>
-        /// ```json<br/>
-        /// {<br/>
-        ///   "sport": "soccer",<br/>
-        ///   "teamId": 42,<br/>
-        ///   "performanceScore": 8.7,<br/>
-        ///   "isActive": true<br/>
-        /// }<br/>
-        /// ```<br/>
-        /// &lt;Note title="Note"&gt;<br/>
-        ///   To store complex data types such as objects or arrays, convert them to string values before including them in the metadata.<br/>
-        /// &lt;/Note&gt;
+        /// <param name="videoUrl">
+        /// Specify this parameter to upload a video from a publicly accessible URL.
+        /// </param>
+        /// <param name="enableVideoStream">
+        /// This parameter indicates if the platform stores the video for streaming. When set to `true`, the platform stores the video, and you can retrieve its URL by calling the [`GET`](/v1.3/api-reference/videos/retrieve) method of the `/indexes/{index-id}/videos/{video-id}` endpoint. You can then use this URL to access the stream over the &lt;a href="https://en.wikipedia.org/wiki/HTTP_Live_Streaming" target="_blank"&gt;HLS&lt;/a&gt; protocol.<br/>
+        /// Default Value: true
+        /// </param>
+        /// <param name="userMetadata">
+        /// Metadata that helps you categorize your videos. You can specify a list of keys and values. Keys must be of type `string`, and values can be of the following types: `string`, `integer`, `float` or `boolean`.
         /// </param>
         public CreateRequest6(
-            string name,
-            global::System.Collections.Generic.IList<string> assetIds,
-            string? description,
-            global::G.EntityCollectionsEntityCollectionIdEntitiesPostRequestBodyContentApplicationJsonSchemaMetadata? metadata)
+            string indexId,
+            byte[]? videoFile,
+            string? videoFilename,
+            string? videoUrl,
+            bool? enableVideoStream,
+            string? userMetadata)
         {
-            this.Name = name ?? throw new global::System.ArgumentNullException(nameof(name));
-            this.Description = description;
-            this.Metadata = metadata;
-            this.AssetIds = assetIds ?? throw new global::System.ArgumentNullException(nameof(assetIds));
+            this.IndexId = indexId ?? throw new global::System.ArgumentNullException(nameof(indexId));
+            this.VideoFile = videoFile;
+            this.VideoFilename = videoFilename;
+            this.VideoUrl = videoUrl;
+            this.EnableVideoStream = enableVideoStream;
+            this.UserMetadata = userMetadata;
         }
 
         /// <summary>

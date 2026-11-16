@@ -1,4 +1,4 @@
-﻿//HintName: G.Models.PipelinesPreviewPipelineRequest.g.cs
+//HintName: G.Models.PipelinesPreviewPipelineRequest.g.cs
 
 #nullable enable
 
@@ -28,9 +28,9 @@ namespace G
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("producer_config")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.ProducerConfig3JsonConverter))]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.ProducerConfig2JsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::G.ProducerConfig3 ProducerConfig { get; set; }
+        public required global::G.ProducerConfig2 ProducerConfig { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -50,7 +50,7 @@ namespace G
         public PipelinesPreviewPipelineRequest(
             global::G.PipelinesPreviewPipelineRequestIntegrationType integrationType,
             string integrationId,
-            global::G.ProducerConfig3 producerConfig)
+            global::G.ProducerConfig2 producerConfig)
         {
             this.IntegrationType = integrationType;
             this.IntegrationId = integrationId ?? throw new global::System.ArgumentNullException(nameof(integrationId));

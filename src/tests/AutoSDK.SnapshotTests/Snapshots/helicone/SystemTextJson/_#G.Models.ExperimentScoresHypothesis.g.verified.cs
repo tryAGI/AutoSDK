@@ -1,4 +1,4 @@
-﻿//HintName: G.Models.ExperimentScoresHypothesis.g.cs
+//HintName: G.Models.ExperimentScoresHypothesis.g.cs
 
 #nullable enable
 
@@ -14,7 +14,7 @@ namespace G
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("scores")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::System.Collections.Generic.Dictionary<string, global::G.Score2> Scores { get; set; }
+        public required global::System.Collections.Generic.Dictionary<string, global::G.Score> Scores { get; set; }
 
         /// <summary>
         /// 
@@ -40,7 +40,7 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public ExperimentScoresHypothesis(
-            global::System.Collections.Generic.Dictionary<string, global::G.Score2> scores,
+            global::System.Collections.Generic.Dictionary<string, global::G.Score> scores,
             double runsCount)
         {
             this.Scores = scores ?? throw new global::System.ArgumentNullException(nameof(scores));

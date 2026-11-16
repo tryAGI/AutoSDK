@@ -13,15 +13,15 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.ContentBlockStartEventContentBlockDiscriminatorType? Type { get; }
+        public global::G.BetaContentBlockStartEventContentBlockDiscriminatorType? Type { get; }
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        public global::G.ResponseTextBlock? Text { get; init; }
+        public global::G.BetaResponseTextBlock? Text { get; init; }
 #else
-        public global::G.ResponseTextBlock? Text { get; }
+        public global::G.BetaResponseTextBlock? Text { get; }
 #endif
 
         /// <summary>
@@ -39,7 +39,7 @@ namespace G
 #if NET6_0_OR_GREATER
             [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
 #endif
-            out global::G.ResponseTextBlock? value)
+            out global::G.BetaResponseTextBlock? value)
         {
             value = Text;
             return IsText;
@@ -48,7 +48,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.ResponseTextBlock PickText() => Text is { } value
+        public global::G.BetaResponseTextBlock PickText() => Text is { } value
             ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Text' but the value was {ToString()}.");
 
@@ -56,9 +56,9 @@ namespace G
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        public global::G.ResponseToolUseBlock? ToolUse { get; init; }
+        public global::G.BetaResponseToolUseBlock? ToolUse { get; init; }
 #else
-        public global::G.ResponseToolUseBlock? ToolUse { get; }
+        public global::G.BetaResponseToolUseBlock? ToolUse { get; }
 #endif
 
         /// <summary>
@@ -76,7 +76,7 @@ namespace G
 #if NET6_0_OR_GREATER
             [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
 #endif
-            out global::G.ResponseToolUseBlock? value)
+            out global::G.BetaResponseToolUseBlock? value)
         {
             value = ToolUse;
             return IsToolUse;
@@ -85,7 +85,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.ResponseToolUseBlock PickToolUse() => ToolUse is { } value
+        public global::G.BetaResponseToolUseBlock PickToolUse() => ToolUse is { } value
             ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'ToolUse' but the value was {ToString()}.");
 
@@ -93,9 +93,9 @@ namespace G
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        public global::G.ResponseThinkingBlock? Thinking { get; init; }
+        public global::G.BetaResponseThinkingBlock? Thinking { get; init; }
 #else
-        public global::G.ResponseThinkingBlock? Thinking { get; }
+        public global::G.BetaResponseThinkingBlock? Thinking { get; }
 #endif
 
         /// <summary>
@@ -113,7 +113,7 @@ namespace G
 #if NET6_0_OR_GREATER
             [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
 #endif
-            out global::G.ResponseThinkingBlock? value)
+            out global::G.BetaResponseThinkingBlock? value)
         {
             value = Thinking;
             return IsThinking;
@@ -122,7 +122,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.ResponseThinkingBlock PickThinking() => Thinking is { } value
+        public global::G.BetaResponseThinkingBlock PickThinking() => Thinking is { } value
             ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Thinking' but the value was {ToString()}.");
 
@@ -130,9 +130,9 @@ namespace G
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        public global::G.ResponseRedactedThinkingBlock? RedactedThinking { get; init; }
+        public global::G.BetaResponseRedactedThinkingBlock? RedactedThinking { get; init; }
 #else
-        public global::G.ResponseRedactedThinkingBlock? RedactedThinking { get; }
+        public global::G.BetaResponseRedactedThinkingBlock? RedactedThinking { get; }
 #endif
 
         /// <summary>
@@ -150,7 +150,7 @@ namespace G
 #if NET6_0_OR_GREATER
             [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
 #endif
-            out global::G.ResponseRedactedThinkingBlock? value)
+            out global::G.BetaResponseRedactedThinkingBlock? value)
         {
             value = RedactedThinking;
             return IsRedactedThinking;
@@ -159,23 +159,23 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.ResponseRedactedThinkingBlock PickRedactedThinking() => RedactedThinking is { } value
+        public global::G.BetaResponseRedactedThinkingBlock PickRedactedThinking() => RedactedThinking is { } value
             ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'RedactedThinking' but the value was {ToString()}.");
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator ContentBlock2(global::G.ResponseTextBlock value) => new ContentBlock2((global::G.ResponseTextBlock?)value);
+        public static implicit operator ContentBlock2(global::G.BetaResponseTextBlock value) => new ContentBlock2((global::G.BetaResponseTextBlock?)value);
 
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator global::G.ResponseTextBlock?(ContentBlock2 @this) => @this.Text;
+        public static implicit operator global::G.BetaResponseTextBlock?(ContentBlock2 @this) => @this.Text;
 
         /// <summary>
         /// 
         /// </summary>
-        public ContentBlock2(global::G.ResponseTextBlock? value)
+        public ContentBlock2(global::G.BetaResponseTextBlock? value)
         {
             Text = value;
         }
@@ -183,22 +183,22 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static ContentBlock2 FromText(global::G.ResponseTextBlock? value) => new ContentBlock2(value);
+        public static ContentBlock2 FromText(global::G.BetaResponseTextBlock? value) => new ContentBlock2(value);
 
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator ContentBlock2(global::G.ResponseToolUseBlock value) => new ContentBlock2((global::G.ResponseToolUseBlock?)value);
+        public static implicit operator ContentBlock2(global::G.BetaResponseToolUseBlock value) => new ContentBlock2((global::G.BetaResponseToolUseBlock?)value);
 
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator global::G.ResponseToolUseBlock?(ContentBlock2 @this) => @this.ToolUse;
+        public static implicit operator global::G.BetaResponseToolUseBlock?(ContentBlock2 @this) => @this.ToolUse;
 
         /// <summary>
         /// 
         /// </summary>
-        public ContentBlock2(global::G.ResponseToolUseBlock? value)
+        public ContentBlock2(global::G.BetaResponseToolUseBlock? value)
         {
             ToolUse = value;
         }
@@ -206,22 +206,22 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static ContentBlock2 FromToolUse(global::G.ResponseToolUseBlock? value) => new ContentBlock2(value);
+        public static ContentBlock2 FromToolUse(global::G.BetaResponseToolUseBlock? value) => new ContentBlock2(value);
 
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator ContentBlock2(global::G.ResponseThinkingBlock value) => new ContentBlock2((global::G.ResponseThinkingBlock?)value);
+        public static implicit operator ContentBlock2(global::G.BetaResponseThinkingBlock value) => new ContentBlock2((global::G.BetaResponseThinkingBlock?)value);
 
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator global::G.ResponseThinkingBlock?(ContentBlock2 @this) => @this.Thinking;
+        public static implicit operator global::G.BetaResponseThinkingBlock?(ContentBlock2 @this) => @this.Thinking;
 
         /// <summary>
         /// 
         /// </summary>
-        public ContentBlock2(global::G.ResponseThinkingBlock? value)
+        public ContentBlock2(global::G.BetaResponseThinkingBlock? value)
         {
             Thinking = value;
         }
@@ -229,22 +229,22 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static ContentBlock2 FromThinking(global::G.ResponseThinkingBlock? value) => new ContentBlock2(value);
+        public static ContentBlock2 FromThinking(global::G.BetaResponseThinkingBlock? value) => new ContentBlock2(value);
 
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator ContentBlock2(global::G.ResponseRedactedThinkingBlock value) => new ContentBlock2((global::G.ResponseRedactedThinkingBlock?)value);
+        public static implicit operator ContentBlock2(global::G.BetaResponseRedactedThinkingBlock value) => new ContentBlock2((global::G.BetaResponseRedactedThinkingBlock?)value);
 
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator global::G.ResponseRedactedThinkingBlock?(ContentBlock2 @this) => @this.RedactedThinking;
+        public static implicit operator global::G.BetaResponseRedactedThinkingBlock?(ContentBlock2 @this) => @this.RedactedThinking;
 
         /// <summary>
         /// 
         /// </summary>
-        public ContentBlock2(global::G.ResponseRedactedThinkingBlock? value)
+        public ContentBlock2(global::G.BetaResponseRedactedThinkingBlock? value)
         {
             RedactedThinking = value;
         }
@@ -252,17 +252,17 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static ContentBlock2 FromRedactedThinking(global::G.ResponseRedactedThinkingBlock? value) => new ContentBlock2(value);
+        public static ContentBlock2 FromRedactedThinking(global::G.BetaResponseRedactedThinkingBlock? value) => new ContentBlock2(value);
 
         /// <summary>
         /// 
         /// </summary>
         public ContentBlock2(
-            global::G.ContentBlockStartEventContentBlockDiscriminatorType? type,
-            global::G.ResponseTextBlock? text,
-            global::G.ResponseToolUseBlock? toolUse,
-            global::G.ResponseThinkingBlock? thinking,
-            global::G.ResponseRedactedThinkingBlock? redactedThinking
+            global::G.BetaContentBlockStartEventContentBlockDiscriminatorType? type,
+            global::G.BetaResponseTextBlock? text,
+            global::G.BetaResponseToolUseBlock? toolUse,
+            global::G.BetaResponseThinkingBlock? thinking,
+            global::G.BetaResponseRedactedThinkingBlock? redactedThinking
             )
         {
             Type = type;
@@ -305,10 +305,10 @@ namespace G
         /// 
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<global::G.ResponseTextBlock, TResult>? text = null,
-            global::System.Func<global::G.ResponseToolUseBlock, TResult>? toolUse = null,
-            global::System.Func<global::G.ResponseThinkingBlock, TResult>? thinking = null,
-            global::System.Func<global::G.ResponseRedactedThinkingBlock, TResult>? redactedThinking = null,
+            global::System.Func<global::G.BetaResponseTextBlock, TResult>? text = null,
+            global::System.Func<global::G.BetaResponseToolUseBlock, TResult>? toolUse = null,
+            global::System.Func<global::G.BetaResponseThinkingBlock, TResult>? thinking = null,
+            global::System.Func<global::G.BetaResponseRedactedThinkingBlock, TResult>? redactedThinking = null,
             bool validate = true)
         {
             if (validate)
@@ -340,13 +340,13 @@ namespace G
         /// 
         /// </summary>
         public void Match(
-            global::System.Action<global::G.ResponseTextBlock>? text = null,
+            global::System.Action<global::G.BetaResponseTextBlock>? text = null,
 
-            global::System.Action<global::G.ResponseToolUseBlock>? toolUse = null,
+            global::System.Action<global::G.BetaResponseToolUseBlock>? toolUse = null,
 
-            global::System.Action<global::G.ResponseThinkingBlock>? thinking = null,
+            global::System.Action<global::G.BetaResponseThinkingBlock>? thinking = null,
 
-            global::System.Action<global::G.ResponseRedactedThinkingBlock>? redactedThinking = null,
+            global::System.Action<global::G.BetaResponseRedactedThinkingBlock>? redactedThinking = null,
             bool validate = true)
         {
             if (validate)
@@ -376,10 +376,10 @@ namespace G
         /// 
         /// </summary>
         public void Switch(
-            global::System.Action<global::G.ResponseTextBlock>? text = null,
-            global::System.Action<global::G.ResponseToolUseBlock>? toolUse = null,
-            global::System.Action<global::G.ResponseThinkingBlock>? thinking = null,
-            global::System.Action<global::G.ResponseRedactedThinkingBlock>? redactedThinking = null,
+            global::System.Action<global::G.BetaResponseTextBlock>? text = null,
+            global::System.Action<global::G.BetaResponseToolUseBlock>? toolUse = null,
+            global::System.Action<global::G.BetaResponseThinkingBlock>? thinking = null,
+            global::System.Action<global::G.BetaResponseRedactedThinkingBlock>? redactedThinking = null,
             bool validate = true)
         {
             if (validate)
@@ -413,13 +413,13 @@ namespace G
             var fields = new object?[]
             {
                 Text,
-                typeof(global::G.ResponseTextBlock),
+                typeof(global::G.BetaResponseTextBlock),
                 ToolUse,
-                typeof(global::G.ResponseToolUseBlock),
+                typeof(global::G.BetaResponseToolUseBlock),
                 Thinking,
-                typeof(global::G.ResponseThinkingBlock),
+                typeof(global::G.BetaResponseThinkingBlock),
                 RedactedThinking,
-                typeof(global::G.ResponseRedactedThinkingBlock),
+                typeof(global::G.BetaResponseRedactedThinkingBlock),
             };
             const int offset = unchecked((int)2166136261);
             const int prime = 16777619;
@@ -436,10 +436,10 @@ namespace G
         public bool Equals(ContentBlock2 other)
         {
             return
-                global::System.Collections.Generic.EqualityComparer<global::G.ResponseTextBlock?>.Default.Equals(Text, other.Text) &&
-                global::System.Collections.Generic.EqualityComparer<global::G.ResponseToolUseBlock?>.Default.Equals(ToolUse, other.ToolUse) &&
-                global::System.Collections.Generic.EqualityComparer<global::G.ResponseThinkingBlock?>.Default.Equals(Thinking, other.Thinking) &&
-                global::System.Collections.Generic.EqualityComparer<global::G.ResponseRedactedThinkingBlock?>.Default.Equals(RedactedThinking, other.RedactedThinking) 
+                global::System.Collections.Generic.EqualityComparer<global::G.BetaResponseTextBlock?>.Default.Equals(Text, other.Text) &&
+                global::System.Collections.Generic.EqualityComparer<global::G.BetaResponseToolUseBlock?>.Default.Equals(ToolUse, other.ToolUse) &&
+                global::System.Collections.Generic.EqualityComparer<global::G.BetaResponseThinkingBlock?>.Default.Equals(Thinking, other.Thinking) &&
+                global::System.Collections.Generic.EqualityComparer<global::G.BetaResponseRedactedThinkingBlock?>.Default.Equals(RedactedThinking, other.RedactedThinking) 
                 ;
         }
 

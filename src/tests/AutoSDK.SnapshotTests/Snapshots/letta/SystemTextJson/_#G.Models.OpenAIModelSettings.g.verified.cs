@@ -1,4 +1,4 @@
-﻿//HintName: G.Models.OpenAIModelSettings.g.cs
+//HintName: G.Models.OpenAIModelSettings.g.cs
 
 #nullable enable
 
@@ -48,7 +48,7 @@ namespace G
         /// The response format for the model.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("response_format")]
-        public global::G.ResponseFormatVariant111? ResponseFormat { get; set; }
+        public global::G.ResponseFormatVariant18? ResponseFormat { get; set; }
 
         /// <summary>
         /// Enable strict mode for tool calling. When true, tool outputs are guaranteed to match JSON schemas.<br/>
@@ -102,7 +102,7 @@ namespace G
             string? providerType,
             double? temperature,
             global::G.OpenAIReasoning? reasoning,
-            global::G.ResponseFormatVariant111? responseFormat,
+            global::G.ResponseFormatVariant18? responseFormat,
             bool? strict)
         {
             this.MaxOutputTokens = maxOutputTokens;

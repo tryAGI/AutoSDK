@@ -1,4 +1,4 @@
-﻿//HintName: G.Models.ToolMessage.g.cs
+//HintName: G.Models.ToolMessage.g.cs
 
 #nullable enable
 
@@ -27,7 +27,7 @@ namespace G
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("content")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::System.Collections.Generic.IList<global::G.ContentItem5> Content { get; set; }
+        public required global::System.Collections.Generic.IList<global::G.ContentItem> Content { get; set; }
 
         /// <summary>
         /// Default Value: tool
@@ -73,7 +73,7 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public ToolMessage(
-            global::System.Collections.Generic.IList<global::G.ContentItem5> content,
+            global::System.Collections.Generic.IList<global::G.ContentItem> content,
             string toolCallId,
             global::System.Collections.Generic.IList<string>? inputVariables,
             global::G.ToolMessageTemplateFormat? templateFormat,

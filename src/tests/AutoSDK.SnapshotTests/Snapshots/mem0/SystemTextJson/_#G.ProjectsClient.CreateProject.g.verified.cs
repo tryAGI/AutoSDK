@@ -352,19 +352,19 @@ namespace G
                             {
                                 string? __content_403 = null;
                                 global::System.Exception? __exception_403 = null;
-                                global::G.CreateProjectResponse2? __value_403 = null;
+                                global::G.CreateProjectResponse3? __value_403 = null;
                                 try
                                 {
                                     if (__effectiveReadResponseAsString)
                                     {
                                         __content_403 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
-                                        __value_403 = global::G.CreateProjectResponse2.FromJson(__content_403, JsonSerializerOptions);
+                                        __value_403 = global::G.CreateProjectResponse3.FromJson(__content_403, JsonSerializerOptions);
                                     }
                                     else
                                     {
                                         __content_403 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
 
-                                        __value_403 = global::G.CreateProjectResponse2.FromJson(__content_403, JsonSerializerOptions);
+                                        __value_403 = global::G.CreateProjectResponse3.FromJson(__content_403, JsonSerializerOptions);
                                     }
                                 }
                                 catch (global::System.Exception __ex)
@@ -373,7 +373,7 @@ namespace G
                                 }
 
 
-                                throw global::G.ApiException<global::G.CreateProjectResponse2>.Create(
+                                throw global::G.ApiException<global::G.CreateProjectResponse3>.Create(
                                     statusCode: __response.StatusCode,
                                     message: __content_403 ?? __response.ReasonPhrase ?? string.Empty,
                                     innerException: __exception_403,
@@ -389,19 +389,19 @@ namespace G
                             {
                                 string? __content_400 = null;
                                 global::System.Exception? __exception_400 = null;
-                                global::G.CreateProjectResponse3? __value_400 = null;
+                                global::G.CreateProjectResponse2? __value_400 = null;
                                 try
                                 {
                                     if (__effectiveReadResponseAsString)
                                     {
                                         __content_400 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
-                                        __value_400 = global::G.CreateProjectResponse3.FromJson(__content_400, JsonSerializerOptions);
+                                        __value_400 = global::G.CreateProjectResponse2.FromJson(__content_400, JsonSerializerOptions);
                                     }
                                     else
                                     {
                                         __content_400 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
 
-                                        __value_400 = global::G.CreateProjectResponse3.FromJson(__content_400, JsonSerializerOptions);
+                                        __value_400 = global::G.CreateProjectResponse2.FromJson(__content_400, JsonSerializerOptions);
                                     }
                                 }
                                 catch (global::System.Exception __ex)
@@ -410,7 +410,7 @@ namespace G
                                 }
 
 
-                                throw global::G.ApiException<global::G.CreateProjectResponse3>.Create(
+                                throw global::G.ApiException<global::G.CreateProjectResponse2>.Create(
                                     statusCode: __response.StatusCode,
                                     message: __content_400 ?? __response.ReasonPhrase ?? string.Empty,
                                     innerException: __exception_400,

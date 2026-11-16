@@ -1,4 +1,4 @@
-﻿//HintName: G.IClipsStreamsClient.CreateClipStream.g.cs
+//HintName: G.IClipsStreamsClient.CreateClipStream.g.cs
 #nullable enable
 
 #pragma warning disable CS0618 // Type or member is obsolete
@@ -20,7 +20,7 @@ namespace G
         global::System.Threading.Tasks.Task<global::G.CreateClipStreamResponse> CreateClipStreamAsync(
             string id,
 
-            global::G.CreateClipStreamRequest2 request,
+            global::G.CreateClipStreamRequest request,
             string? xApiKeyExternal = default,
             global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
@@ -37,7 +37,7 @@ namespace G
         global::System.Threading.Tasks.Task<global::G.AutoSDKHttpResponse<global::G.CreateClipStreamResponse>> CreateClipStreamAsResponseAsync(
             string id,
 
-            global::G.CreateClipStreamRequest2 request,
+            global::G.CreateClipStreamRequest request,
             string? xApiKeyExternal = default,
             global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
@@ -76,12 +76,12 @@ namespace G
         [global::System.Obsolete("This method marked as deprecated.")]
         global::System.Threading.Tasks.Task<global::G.CreateClipStreamResponse> CreateClipStreamAsync(
             string id,
-            global::G.AnyOf<global::G.CreateClipStreamRequestScriptVariant12, global::G.CreateClipStreamRequestScriptVariant22> script,
+            global::G.AnyOf<global::G.CreateClipStreamRequestScriptVariant1, global::G.CreateClipStreamRequestScriptVariant2> script,
             string? xApiKeyExternal = default,
             string? sessionId = default,
-            global::G.CreateClipStreamRequestConfig2? config = default,
+            global::G.CreateClipStreamRequestConfig? config = default,
             string? createdBy = default,
-            global::G.CreateClipStreamRequestPresenterConfig2? presenterConfig = default,
+            global::G.CreateClipStreamRequestPresenterConfig? presenterConfig = default,
             string? userData = default,
             string? name = default,
             string? resultUrl = default,

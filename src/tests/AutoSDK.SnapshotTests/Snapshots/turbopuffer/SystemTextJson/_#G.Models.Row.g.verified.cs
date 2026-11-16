@@ -1,4 +1,4 @@
-﻿//HintName: G.Models.Row.g.cs
+//HintName: G.Models.Row.g.cs
 
 #nullable enable
 
@@ -21,8 +21,8 @@ namespace G
         /// A vector embedding associated with a document.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("vector")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.Vector2JsonConverter))]
-        public global::G.Vector2? Vector { get; set; }
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.VectorJsonConverter))]
+        public global::G.Vector? Vector { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -44,7 +44,7 @@ namespace G
 #endif
         public Row(
             global::G.Id id,
-            global::G.Vector2? vector)
+            global::G.Vector? vector)
         {
             this.Id = id;
             this.Vector = vector;

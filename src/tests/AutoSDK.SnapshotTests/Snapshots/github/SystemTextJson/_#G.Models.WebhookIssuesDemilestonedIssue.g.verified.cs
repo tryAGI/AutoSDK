@@ -27,7 +27,7 @@ namespace G
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("assignees")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::System.Collections.Generic.IList<global::G.WebhookIssuesDemilestonedIssueAssignee2?> Assignees { get; set; }
+        public required global::System.Collections.Generic.IList<global::G.WebhookIssuesDemilestonedIssueAssignee?> Assignees { get; set; }
 
         /// <summary>
         /// How the author is associated with the repository.
@@ -265,7 +265,7 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public WebhookIssuesDemilestonedIssue(
-            global::System.Collections.Generic.IList<global::G.WebhookIssuesDemilestonedIssueAssignee2?> assignees,
+            global::System.Collections.Generic.IList<global::G.WebhookIssuesDemilestonedIssueAssignee?> assignees,
             global::G.WebhookIssuesDemilestonedIssueAuthorAssociation authorAssociation,
             int comments,
             string commentsUrl,

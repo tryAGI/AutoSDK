@@ -1,4 +1,4 @@
-﻿//HintName: G.Models.Query.g.cs
+//HintName: G.Models.Query.g.cs
 
 #nullable enable
 
@@ -61,7 +61,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("limit")]
-        public global::G.AnyOf<int?, global::G.Limit2>? Limit { get; set; }
+        public global::G.AnyOf<int?, global::G.Limit>? Limit { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -106,7 +106,7 @@ namespace G
             object? aggregateBy,
             global::System.Collections.Generic.IList<string>? groupBy,
             global::G.DistanceMetric? distanceMetric,
-            global::G.AnyOf<int?, global::G.Limit2>? limit)
+            global::G.AnyOf<int?, global::G.Limit>? limit)
         {
             this.RankBy = rankBy;
             this.TopK = topK;

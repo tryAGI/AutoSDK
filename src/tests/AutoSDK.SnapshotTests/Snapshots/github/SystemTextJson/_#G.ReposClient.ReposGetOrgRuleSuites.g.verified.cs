@@ -68,7 +68,7 @@ namespace G
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::G.ApiException"></exception>
-        public async global::System.Threading.Tasks.Task<global::System.Collections.Generic.IList<global::G.RuleSuite>> ReposGetOrgRuleSuitesAsync(
+        public async global::System.Threading.Tasks.Task<global::System.Collections.Generic.IList<global::G.RuleSuite2>> ReposGetOrgRuleSuitesAsync(
             string org,
             string? @ref = default,
             int? repositoryName = default,
@@ -119,7 +119,7 @@ namespace G
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::G.ApiException"></exception>
-        public async global::System.Threading.Tasks.Task<global::G.AutoSDKHttpResponse<global::System.Collections.Generic.IList<global::G.RuleSuite>>> ReposGetOrgRuleSuitesAsResponseAsync(
+        public async global::System.Threading.Tasks.Task<global::G.AutoSDKHttpResponse<global::System.Collections.Generic.IList<global::G.RuleSuite2>>> ReposGetOrgRuleSuitesAsResponseAsync(
             string org,
             string? @ref = default,
             int? repositoryName = default,
@@ -480,9 +480,9 @@ namespace G
                                 {
                                     __response.EnsureSuccessStatusCode();
 
-                                    var __value = global::System.Text.Json.JsonSerializer.Deserialize<global::System.Collections.Generic.IList<global::G.RuleSuite>?>(__content, JsonSerializerOptions) ??
+                                    var __value = global::System.Text.Json.JsonSerializer.Deserialize<global::System.Collections.Generic.IList<global::G.RuleSuite2>?>(__content, JsonSerializerOptions) ??
                                         throw new global::System.InvalidOperationException($"Response deserialization failed for \"{__content}\" ");
-                                    return new global::G.AutoSDKHttpResponse<global::System.Collections.Generic.IList<global::G.RuleSuite>>(
+                                    return new global::G.AutoSDKHttpResponse<global::System.Collections.Generic.IList<global::G.RuleSuite2>>(
                                         statusCode: __response.StatusCode,
                                         headers: global::G.AutoSDKHttpResponse.CreateHeaders(__response),
                                         requestUri: __response.RequestMessage?.RequestUri,
@@ -512,9 +512,9 @@ namespace G
                 #endif
                                     ).ConfigureAwait(false);
 
-                                    var __value = await global::System.Text.Json.JsonSerializer.DeserializeAsync<global::System.Collections.Generic.IList<global::G.RuleSuite>?>(__content, JsonSerializerOptions).ConfigureAwait(false) ??
+                                    var __value = await global::System.Text.Json.JsonSerializer.DeserializeAsync<global::System.Collections.Generic.IList<global::G.RuleSuite2>?>(__content, JsonSerializerOptions).ConfigureAwait(false) ??
                                         throw new global::System.InvalidOperationException("Response deserialization failed.");
-                                    return new global::G.AutoSDKHttpResponse<global::System.Collections.Generic.IList<global::G.RuleSuite>>(
+                                    return new global::G.AutoSDKHttpResponse<global::System.Collections.Generic.IList<global::G.RuleSuite2>>(
                                         statusCode: __response.StatusCode,
                                         headers: global::G.AutoSDKHttpResponse.CreateHeaders(__response),
                                         requestUri: __response.RequestMessage?.RequestUri,

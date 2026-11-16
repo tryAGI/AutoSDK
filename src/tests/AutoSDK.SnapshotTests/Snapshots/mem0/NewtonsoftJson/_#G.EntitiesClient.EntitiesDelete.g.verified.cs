@@ -347,19 +347,19 @@ namespace G
                             {
                                 string? __content_400 = null;
                                 global::System.Exception? __exception_400 = null;
-                                global::G.EntitiesDeleteResponse2? __value_400 = null;
+                                global::G.EntitiesDeleteResponse? __value_400 = null;
                                 try
                                 {
                                     if (__effectiveReadResponseAsString)
                                     {
                                         __content_400 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
-                                        __value_400 = global::G.EntitiesDeleteResponse2.FromJson(__content_400, JsonSerializerOptions);
+                                        __value_400 = global::G.EntitiesDeleteResponse.FromJson(__content_400, JsonSerializerOptions);
                                     }
                                     else
                                     {
                                         __content_400 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
 
-                                        __value_400 = global::G.EntitiesDeleteResponse2.FromJson(__content_400, JsonSerializerOptions);
+                                        __value_400 = global::G.EntitiesDeleteResponse.FromJson(__content_400, JsonSerializerOptions);
                                     }
                                 }
                                 catch (global::System.Exception __ex)
@@ -368,7 +368,7 @@ namespace G
                                 }
 
 
-                                throw global::G.ApiException<global::G.EntitiesDeleteResponse2>.Create(
+                                throw global::G.ApiException<global::G.EntitiesDeleteResponse>.Create(
                                     statusCode: __response.StatusCode,
                                     message: __content_400 ?? __response.ReasonPhrase ?? string.Empty,
                                     innerException: __exception_400,

@@ -1,4 +1,4 @@
-﻿//HintName: G.Models.ServerlessListRequestsByEndpointResponse5.g.cs
+//HintName: G.Models.ServerlessListRequestsByEndpointResponse5.g.cs
 
 #nullable enable
 
@@ -14,7 +14,7 @@ namespace G
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("error")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::G.ServerlessListRequestsByEndpointResponseError4 Error { get; set; }
+        public required global::G.ServerlessListRequestsByEndpointResponseError Error { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -32,7 +32,7 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public ServerlessListRequestsByEndpointResponse5(
-            global::G.ServerlessListRequestsByEndpointResponseError4 error)
+            global::G.ServerlessListRequestsByEndpointResponseError error)
         {
             this.Error = error ?? throw new global::System.ArgumentNullException(nameof(error));
         }

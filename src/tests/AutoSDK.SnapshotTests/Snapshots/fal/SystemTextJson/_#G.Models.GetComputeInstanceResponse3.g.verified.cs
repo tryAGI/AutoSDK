@@ -1,4 +1,4 @@
-﻿//HintName: G.Models.GetComputeInstanceResponse3.g.cs
+//HintName: G.Models.GetComputeInstanceResponse3.g.cs
 
 #nullable enable
 
@@ -14,7 +14,7 @@ namespace G
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("error")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::G.GetComputeInstanceResponseError2 Error { get; set; }
+        public required global::G.GetComputeInstanceResponseError Error { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -32,7 +32,7 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public GetComputeInstanceResponse3(
-            global::G.GetComputeInstanceResponseError2 error)
+            global::G.GetComputeInstanceResponseError error)
         {
             this.Error = error ?? throw new global::System.ArgumentNullException(nameof(error));
         }

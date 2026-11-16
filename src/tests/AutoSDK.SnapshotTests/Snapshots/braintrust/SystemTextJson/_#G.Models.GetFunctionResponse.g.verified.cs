@@ -1,4 +1,4 @@
-﻿//HintName: G.Models.GetFunctionResponse.g.cs
+//HintName: G.Models.GetFunctionResponse.g.cs
 
 #nullable enable
 
@@ -14,7 +14,7 @@ namespace G
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("objects")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::System.Collections.Generic.IList<global::G.Function2> Objects { get; set; }
+        public required global::System.Collections.Generic.IList<global::G.Function> Objects { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -32,7 +32,7 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public GetFunctionResponse(
-            global::System.Collections.Generic.IList<global::G.Function2> objects)
+            global::System.Collections.Generic.IList<global::G.Function> objects)
         {
             this.Objects = objects ?? throw new global::System.ArgumentNullException(nameof(objects));
         }

@@ -1,4 +1,4 @@
-﻿//HintName: G.Models.PromptVersionData.g.cs
+//HintName: G.Models.PromptVersionData.g.cs
 
 #nullable enable
 

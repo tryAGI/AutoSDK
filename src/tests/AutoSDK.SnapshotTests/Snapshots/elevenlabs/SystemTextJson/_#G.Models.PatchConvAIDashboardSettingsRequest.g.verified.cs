@@ -1,4 +1,4 @@
-﻿//HintName: G.Models.PatchConvAIDashboardSettingsRequest.g.cs
+//HintName: G.Models.PatchConvAIDashboardSettingsRequest.g.cs
 
 #nullable enable
 
@@ -13,7 +13,7 @@ namespace G
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("charts")]
-        public global::System.Collections.Generic.IList<global::G.ChartsItem2>? Charts { get; set; }
+        public global::System.Collections.Generic.IList<global::G.ChartsItem>? Charts { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -29,7 +29,7 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public PatchConvAIDashboardSettingsRequest(
-            global::System.Collections.Generic.IList<global::G.ChartsItem2>? charts)
+            global::System.Collections.Generic.IList<global::G.ChartsItem>? charts)
         {
             this.Charts = charts;
         }

@@ -1,4 +1,4 @@
-﻿//HintName: G.Models.EmbeddingCreateParams.g.cs
+//HintName: G.Models.EmbeddingCreateParams.g.cs
 
 #nullable enable
 
@@ -48,8 +48,8 @@ namespace G
         /// Default Value: float
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("encoding_format")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.AnyOfJsonConverter<global::G.EncodingFormat3?, global::System.Collections.Generic.IList<global::G.EncodingFormat3>>))]
-        public global::G.AnyOf<global::G.EncodingFormat3?, global::System.Collections.Generic.IList<global::G.EncodingFormat3>>? EncodingFormat { get; set; }
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.AnyOfJsonConverter<global::G.EncodingFormat?, global::System.Collections.Generic.IList<global::G.EncodingFormat>>))]
+        public global::G.AnyOf<global::G.EncodingFormat?, global::System.Collections.Generic.IList<global::G.EncodingFormat>>? EncodingFormat { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -89,7 +89,7 @@ namespace G
             int? dimensions,
             string? prompt,
             bool? normalized,
-            global::G.AnyOf<global::G.EncodingFormat3?, global::System.Collections.Generic.IList<global::G.EncodingFormat3>>? encodingFormat)
+            global::G.AnyOf<global::G.EncodingFormat?, global::System.Collections.Generic.IList<global::G.EncodingFormat>>? encodingFormat)
         {
             this.Model = model ?? throw new global::System.ArgumentNullException(nameof(model));
             this.Input = input;

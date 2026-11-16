@@ -11,14 +11,14 @@ namespace G
             ref string indexId,
             ref string indexedAssetId,
             ref string xApiKey,
-            global::G.UpdateRequest2 request);
+            global::G.UpdateRequest4 request);
         partial void PrepareUpdateRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
             string indexId,
             string indexedAssetId,
             string xApiKey,
-            global::G.UpdateRequest2 request);
+            global::G.UpdateRequest4 request);
         partial void ProcessUpdateResponse(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage);
@@ -44,7 +44,7 @@ namespace G
             string indexedAssetId,
             string xApiKey,
 
-            global::G.UpdateRequest2 request,
+            global::G.UpdateRequest4 request,
             global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
@@ -76,7 +76,7 @@ namespace G
             string indexedAssetId,
             string xApiKey,
 
-            global::G.UpdateRequest2 request,
+            global::G.UpdateRequest4 request,
             global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
@@ -500,7 +500,7 @@ namespace G
             global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
-            var __request = new global::G.UpdateRequest2
+            var __request = new global::G.UpdateRequest4
             {
                 UserMetadata = userMetadata,
             };

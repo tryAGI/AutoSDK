@@ -1,4 +1,4 @@
-﻿//HintName: G.Models.MxbaiOmniApiRoutesV1StoresRulesModelsSearchRuleSpecificDeleteParams.g.cs
+//HintName: G.Models.MxbaiOmniApiRoutesV1StoresRulesModelsSearchRuleSpecificDeleteParams.g.cs
 
 #nullable enable
 
@@ -13,7 +13,7 @@ namespace G
         /// The specific rule to delete from the rules array
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("rule", Required = global::Newtonsoft.Json.Required.Always)]
-        public global::G.Rule2 Rule { get; set; } = default!;
+        public global::G.Rule Rule { get; set; } = default!;
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -28,7 +28,7 @@ namespace G
         /// The specific rule to delete from the rules array
         /// </param>
         public MxbaiOmniApiRoutesV1StoresRulesModelsSearchRuleSpecificDeleteParams(
-            global::G.Rule2 rule)
+            global::G.Rule rule)
         {
             this.Rule = rule;
         }

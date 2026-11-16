@@ -13,7 +13,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.GetKnowledgeBaseSummaryURLResponseModelDependentAgentDiscriminatorType? Type { get; }
+        public global::G.GetKnowledgeBaseSummaryTextResponseModelDependentAgentDiscriminatorType? Type { get; }
 
         /// <summary>
         /// 
@@ -139,7 +139,7 @@ namespace G
         /// 
         /// </summary>
         public DependentAgentsItem4(
-            global::G.GetKnowledgeBaseSummaryURLResponseModelDependentAgentDiscriminatorType? type,
+            global::G.GetKnowledgeBaseSummaryTextResponseModelDependentAgentDiscriminatorType? type,
             global::G.DependentAvailableAgentIdentifier? available,
             global::G.DependentUnknownAgentIdentifier? unknown
             )

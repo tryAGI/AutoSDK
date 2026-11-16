@@ -419,15 +419,15 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.OneOf<string, global::System.Collections.Generic.IList<global::G.ContentVariant2Item>>? Type95 { get; set; }
+        public global::G.OneOf<string, global::System.Collections.Generic.IList<global::G.ContentVariant2Item2>>? Type95 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::G.ContentVariant2Item>? Type96 { get; set; }
+        public global::System.Collections.Generic.IList<global::G.ContentVariant2Item2>? Type96 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.ContentVariant2Item? Type97 { get; set; }
+        public global::G.ContentVariant2Item2? Type97 { get; set; }
         /// <summary>
         /// 
         /// </summary>
@@ -451,15 +451,15 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.OneOf<string, global::System.Collections.Generic.IList<global::G.ContentVariant2Item2>>? Type103 { get; set; }
+        public global::G.OneOf<string, global::System.Collections.Generic.IList<global::G.ContentVariant2Item>>? Type103 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::G.ContentVariant2Item2>? Type104 { get; set; }
+        public global::System.Collections.Generic.IList<global::G.ContentVariant2Item>? Type104 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.ContentVariant2Item2? Type105 { get; set; }
+        public global::G.ContentVariant2Item? Type105 { get; set; }
         /// <summary>
         /// 
         /// </summary>
@@ -1503,1487 +1503,139 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.UnauthorizedErrorBody2? Type366 { get; set; }
+        public global::G.UnprocessableEntityErrorBody? Type366 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.UnprocessableEntityErrorBody? Type367 { get; set; }
+        public global::G.GatewayTimeoutErrorBody? Type367 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.GatewayTimeoutErrorBody? Type368 { get; set; }
+        public global::G.ForbiddenErrorBody? Type368 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.ForbiddenErrorBody? Type369 { get; set; }
+        public global::G.InternalServerErrorBody? Type369 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.InternalServerErrorBody? Type370 { get; set; }
+        public global::G.ServiceUnavailableErrorBody? Type370 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.ServiceUnavailableErrorBody? Type371 { get; set; }
+        public global::G.NotImplementedErrorBody? Type371 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.NotImplementedErrorBody? Type372 { get; set; }
+        public global::G.TooManyRequestsErrorBody? Type372 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.TooManyRequestsErrorBody? Type373 { get; set; }
+        public global::G.InvalidTokenErrorBody? Type373 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.InvalidTokenErrorBody? Type374 { get; set; }
+        public global::G.OneOf<global::G.ChatResponse, global::G.StreamedChatResponseV2?>? Type374 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.OneOf<global::G.ChatResponse, global::G.StreamedChatResponseV2?>? Type375 { get; set; }
+        public global::G.EmbedResponse? Type375 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.NotFoundErrorBody2? Type376 { get; set; }
+        public global::G.EmbedResponseDiscriminator? Type376 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.UnauthorizedErrorBody3? Type377 { get; set; }
+        public global::G.EmbedResponseDiscriminatorResponseType? Type377 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.BadRequestErrorBody2? Type378 { get; set; }
+        public global::G.RerankResponse? Type378 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.UnauthorizedErrorBody4? Type379 { get; set; }
+        public global::System.Collections.Generic.IList<global::G.RerankResponseResultsItem>? Type379 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.UnprocessableEntityErrorBody2? Type380 { get; set; }
+        public global::G.RerankResponseResultsItem? Type380 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.GatewayTimeoutErrorBody2? Type381 { get; set; }
+        public global::G.RerankResponseResultsItemDocument? Type381 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.ForbiddenErrorBody2? Type382 { get; set; }
+        public global::G.V2RerankResponse? Type382 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.InternalServerErrorBody2? Type383 { get; set; }
+        public global::System.Collections.Generic.IList<global::G.V2RerankResponseResultsItem>? Type383 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.ServiceUnavailableErrorBody2? Type384 { get; set; }
+        public global::G.V2RerankResponseResultsItem? Type384 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.NotImplementedErrorBody2? Type385 { get; set; }
+        public global::G.ClassifyResponse? Type385 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.TooManyRequestsErrorBody2? Type386 { get; set; }
+        public global::System.Collections.Generic.IList<global::G.ClassifyResponseClassification>? Type386 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.InvalidTokenErrorBody2? Type387 { get; set; }
+        public global::G.ClassifyResponseClassification? Type387 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.NotFoundErrorBody3? Type388 { get; set; }
+        public global::System.Collections.Generic.Dictionary<string, global::G.ClassifyResponseClassificationLabels2>? Type388 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.UnauthorizedErrorBody5? Type389 { get; set; }
+        public global::G.ClassifyResponseClassificationLabels2? Type389 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.BadRequestErrorBody3? Type390 { get; set; }
+        public global::G.ClassifyResponseClassificationClassificationType? Type390 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.UnauthorizedErrorBody6? Type391 { get; set; }
+        public global::G.DatasetsCreateResponse? Type391 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.UnprocessableEntityErrorBody3? Type392 { get; set; }
+        public global::G.DatasetsListResponse? Type392 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.GatewayTimeoutErrorBody3? Type393 { get; set; }
+        public global::System.Collections.Generic.IList<global::G.Dataset>? Type393 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.ForbiddenErrorBody3? Type394 { get; set; }
+        public global::G.DatasetsGetUsageResponse? Type394 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.InternalServerErrorBody3? Type395 { get; set; }
+        public global::G.DatasetsGetResponse? Type395 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.ServiceUnavailableErrorBody3? Type396 { get; set; }
+        public global::G.SummarizeResponse? Type396 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.NotImplementedErrorBody3? Type397 { get; set; }
+        public global::G.TokenizeResponse? Type397 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.TooManyRequestsErrorBody3? Type398 { get; set; }
+        public global::G.DetokenizeResponse? Type398 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.InvalidTokenErrorBody3? Type399 { get; set; }
-        /// <summary>
-        /// 
-        /// </summary>
-        public global::G.EmbedResponse? Type400 { get; set; }
-        /// <summary>
-        /// 
-        /// </summary>
-        public global::G.EmbedResponseDiscriminator? Type401 { get; set; }
-        /// <summary>
-        /// 
-        /// </summary>
-        public global::G.EmbedResponseDiscriminatorResponseType? Type402 { get; set; }
-        /// <summary>
-        /// 
-        /// </summary>
-        public global::G.NotFoundErrorBody4? Type403 { get; set; }
-        /// <summary>
-        /// 
-        /// </summary>
-        public global::G.UnauthorizedErrorBody7? Type404 { get; set; }
-        /// <summary>
-        /// 
-        /// </summary>
-        public global::G.BadRequestErrorBody4? Type405 { get; set; }
-        /// <summary>
-        /// 
-        /// </summary>
-        public global::G.UnauthorizedErrorBody8? Type406 { get; set; }
-        /// <summary>
-        /// 
-        /// </summary>
-        public global::G.UnprocessableEntityErrorBody4? Type407 { get; set; }
-        /// <summary>
-        /// 
-        /// </summary>
-        public global::G.GatewayTimeoutErrorBody4? Type408 { get; set; }
-        /// <summary>
-        /// 
-        /// </summary>
-        public global::G.ForbiddenErrorBody4? Type409 { get; set; }
-        /// <summary>
-        /// 
-        /// </summary>
-        public global::G.InternalServerErrorBody4? Type410 { get; set; }
-        /// <summary>
-        /// 
-        /// </summary>
-        public global::G.ServiceUnavailableErrorBody4? Type411 { get; set; }
-        /// <summary>
-        /// 
-        /// </summary>
-        public global::G.NotImplementedErrorBody4? Type412 { get; set; }
-        /// <summary>
-        /// 
-        /// </summary>
-        public global::G.TooManyRequestsErrorBody4? Type413 { get; set; }
-        /// <summary>
-        /// 
-        /// </summary>
-        public global::G.InvalidTokenErrorBody4? Type414 { get; set; }
-        /// <summary>
-        /// 
-        /// </summary>
-        public global::G.NotFoundErrorBody5? Type415 { get; set; }
-        /// <summary>
-        /// 
-        /// </summary>
-        public global::G.UnauthorizedErrorBody9? Type416 { get; set; }
-        /// <summary>
-        /// 
-        /// </summary>
-        public global::G.BadRequestErrorBody5? Type417 { get; set; }
-        /// <summary>
-        /// 
-        /// </summary>
-        public global::G.UnauthorizedErrorBody10? Type418 { get; set; }
-        /// <summary>
-        /// 
-        /// </summary>
-        public global::G.UnprocessableEntityErrorBody5? Type419 { get; set; }
-        /// <summary>
-        /// 
-        /// </summary>
-        public global::G.GatewayTimeoutErrorBody5? Type420 { get; set; }
-        /// <summary>
-        /// 
-        /// </summary>
-        public global::G.ForbiddenErrorBody5? Type421 { get; set; }
-        /// <summary>
-        /// 
-        /// </summary>
-        public global::G.InternalServerErrorBody5? Type422 { get; set; }
-        /// <summary>
-        /// 
-        /// </summary>
-        public global::G.ServiceUnavailableErrorBody5? Type423 { get; set; }
-        /// <summary>
-        /// 
-        /// </summary>
-        public global::G.NotImplementedErrorBody5? Type424 { get; set; }
-        /// <summary>
-        /// 
-        /// </summary>
-        public global::G.TooManyRequestsErrorBody5? Type425 { get; set; }
-        /// <summary>
-        /// 
-        /// </summary>
-        public global::G.InvalidTokenErrorBody5? Type426 { get; set; }
-        /// <summary>
-        /// 
-        /// </summary>
-        public global::G.NotFoundErrorBody6? Type427 { get; set; }
-        /// <summary>
-        /// 
-        /// </summary>
-        public global::G.UnauthorizedErrorBody11? Type428 { get; set; }
-        /// <summary>
-        /// 
-        /// </summary>
-        public global::G.BadRequestErrorBody6? Type429 { get; set; }
-        /// <summary>
-        /// 
-        /// </summary>
-        public global::G.UnauthorizedErrorBody12? Type430 { get; set; }
-        /// <summary>
-        /// 
-        /// </summary>
-        public global::G.UnprocessableEntityErrorBody6? Type431 { get; set; }
-        /// <summary>
-        /// 
-        /// </summary>
-        public global::G.GatewayTimeoutErrorBody6? Type432 { get; set; }
-        /// <summary>
-        /// 
-        /// </summary>
-        public global::G.ForbiddenErrorBody6? Type433 { get; set; }
-        /// <summary>
-        /// 
-        /// </summary>
-        public global::G.InternalServerErrorBody6? Type434 { get; set; }
-        /// <summary>
-        /// 
-        /// </summary>
-        public global::G.ServiceUnavailableErrorBody6? Type435 { get; set; }
-        /// <summary>
-        /// 
-        /// </summary>
-        public global::G.NotImplementedErrorBody6? Type436 { get; set; }
-        /// <summary>
-        /// 
-        /// </summary>
-        public global::G.TooManyRequestsErrorBody6? Type437 { get; set; }
-        /// <summary>
-        /// 
-        /// </summary>
-        public global::G.InvalidTokenErrorBody6? Type438 { get; set; }
-        /// <summary>
-        /// 
-        /// </summary>
-        public global::G.NotFoundErrorBody7? Type439 { get; set; }
-        /// <summary>
-        /// 
-        /// </summary>
-        public global::G.UnauthorizedErrorBody13? Type440 { get; set; }
-        /// <summary>
-        /// 
-        /// </summary>
-        public global::G.BadRequestErrorBody7? Type441 { get; set; }
-        /// <summary>
-        /// 
-        /// </summary>
-        public global::G.UnauthorizedErrorBody14? Type442 { get; set; }
-        /// <summary>
-        /// 
-        /// </summary>
-        public global::G.UnprocessableEntityErrorBody7? Type443 { get; set; }
-        /// <summary>
-        /// 
-        /// </summary>
-        public global::G.GatewayTimeoutErrorBody7? Type444 { get; set; }
-        /// <summary>
-        /// 
-        /// </summary>
-        public global::G.ForbiddenErrorBody7? Type445 { get; set; }
-        /// <summary>
-        /// 
-        /// </summary>
-        public global::G.InternalServerErrorBody7? Type446 { get; set; }
-        /// <summary>
-        /// 
-        /// </summary>
-        public global::G.ServiceUnavailableErrorBody7? Type447 { get; set; }
-        /// <summary>
-        /// 
-        /// </summary>
-        public global::G.NotImplementedErrorBody7? Type448 { get; set; }
-        /// <summary>
-        /// 
-        /// </summary>
-        public global::G.TooManyRequestsErrorBody7? Type449 { get; set; }
-        /// <summary>
-        /// 
-        /// </summary>
-        public global::G.InvalidTokenErrorBody7? Type450 { get; set; }
-        /// <summary>
-        /// 
-        /// </summary>
-        public global::G.NotFoundErrorBody8? Type451 { get; set; }
-        /// <summary>
-        /// 
-        /// </summary>
-        public global::G.UnauthorizedErrorBody15? Type452 { get; set; }
-        /// <summary>
-        /// 
-        /// </summary>
-        public global::G.BadRequestErrorBody8? Type453 { get; set; }
-        /// <summary>
-        /// 
-        /// </summary>
-        public global::G.UnauthorizedErrorBody16? Type454 { get; set; }
-        /// <summary>
-        /// 
-        /// </summary>
-        public global::G.UnprocessableEntityErrorBody8? Type455 { get; set; }
-        /// <summary>
-        /// 
-        /// </summary>
-        public global::G.GatewayTimeoutErrorBody8? Type456 { get; set; }
-        /// <summary>
-        /// 
-        /// </summary>
-        public global::G.ForbiddenErrorBody8? Type457 { get; set; }
-        /// <summary>
-        /// 
-        /// </summary>
-        public global::G.InternalServerErrorBody8? Type458 { get; set; }
-        /// <summary>
-        /// 
-        /// </summary>
-        public global::G.ServiceUnavailableErrorBody8? Type459 { get; set; }
-        /// <summary>
-        /// 
-        /// </summary>
-        public global::G.NotImplementedErrorBody8? Type460 { get; set; }
-        /// <summary>
-        /// 
-        /// </summary>
-        public global::G.TooManyRequestsErrorBody8? Type461 { get; set; }
-        /// <summary>
-        /// 
-        /// </summary>
-        public global::G.InvalidTokenErrorBody8? Type462 { get; set; }
-        /// <summary>
-        /// 
-        /// </summary>
-        public global::G.NotFoundErrorBody9? Type463 { get; set; }
-        /// <summary>
-        /// 
-        /// </summary>
-        public global::G.UnauthorizedErrorBody17? Type464 { get; set; }
-        /// <summary>
-        /// 
-        /// </summary>
-        public global::G.BadRequestErrorBody9? Type465 { get; set; }
-        /// <summary>
-        /// 
-        /// </summary>
-        public global::G.UnauthorizedErrorBody18? Type466 { get; set; }
-        /// <summary>
-        /// 
-        /// </summary>
-        public global::G.UnprocessableEntityErrorBody9? Type467 { get; set; }
-        /// <summary>
-        /// 
-        /// </summary>
-        public global::G.GatewayTimeoutErrorBody9? Type468 { get; set; }
-        /// <summary>
-        /// 
-        /// </summary>
-        public global::G.ForbiddenErrorBody9? Type469 { get; set; }
-        /// <summary>
-        /// 
-        /// </summary>
-        public global::G.InternalServerErrorBody9? Type470 { get; set; }
-        /// <summary>
-        /// 
-        /// </summary>
-        public global::G.ServiceUnavailableErrorBody9? Type471 { get; set; }
-        /// <summary>
-        /// 
-        /// </summary>
-        public global::G.NotImplementedErrorBody9? Type472 { get; set; }
-        /// <summary>
-        /// 
-        /// </summary>
-        public global::G.TooManyRequestsErrorBody9? Type473 { get; set; }
-        /// <summary>
-        /// 
-        /// </summary>
-        public global::G.InvalidTokenErrorBody9? Type474 { get; set; }
-        /// <summary>
-        /// 
-        /// </summary>
-        public global::G.RerankResponse? Type475 { get; set; }
-        /// <summary>
-        /// 
-        /// </summary>
-        public global::System.Collections.Generic.IList<global::G.RerankResponseResultsItem>? Type476 { get; set; }
-        /// <summary>
-        /// 
-        /// </summary>
-        public global::G.RerankResponseResultsItem? Type477 { get; set; }
-        /// <summary>
-        /// 
-        /// </summary>
-        public global::G.RerankResponseResultsItemDocument? Type478 { get; set; }
-        /// <summary>
-        /// 
-        /// </summary>
-        public global::G.NotFoundErrorBody10? Type479 { get; set; }
-        /// <summary>
-        /// 
-        /// </summary>
-        public global::G.UnauthorizedErrorBody19? Type480 { get; set; }
-        /// <summary>
-        /// 
-        /// </summary>
-        public global::G.BadRequestErrorBody10? Type481 { get; set; }
-        /// <summary>
-        /// 
-        /// </summary>
-        public global::G.UnauthorizedErrorBody20? Type482 { get; set; }
-        /// <summary>
-        /// 
-        /// </summary>
-        public global::G.UnprocessableEntityErrorBody10? Type483 { get; set; }
-        /// <summary>
-        /// 
-        /// </summary>
-        public global::G.GatewayTimeoutErrorBody10? Type484 { get; set; }
-        /// <summary>
-        /// 
-        /// </summary>
-        public global::G.ForbiddenErrorBody10? Type485 { get; set; }
-        /// <summary>
-        /// 
-        /// </summary>
-        public global::G.InternalServerErrorBody10? Type486 { get; set; }
-        /// <summary>
-        /// 
-        /// </summary>
-        public global::G.ServiceUnavailableErrorBody10? Type487 { get; set; }
-        /// <summary>
-        /// 
-        /// </summary>
-        public global::G.NotImplementedErrorBody10? Type488 { get; set; }
-        /// <summary>
-        /// 
-        /// </summary>
-        public global::G.TooManyRequestsErrorBody10? Type489 { get; set; }
-        /// <summary>
-        /// 
-        /// </summary>
-        public global::G.InvalidTokenErrorBody10? Type490 { get; set; }
-        /// <summary>
-        /// 
-        /// </summary>
-        public global::G.V2RerankResponse? Type491 { get; set; }
-        /// <summary>
-        /// 
-        /// </summary>
-        public global::System.Collections.Generic.IList<global::G.V2RerankResponseResultsItem>? Type492 { get; set; }
-        /// <summary>
-        /// 
-        /// </summary>
-        public global::G.V2RerankResponseResultsItem? Type493 { get; set; }
-        /// <summary>
-        /// 
-        /// </summary>
-        public global::G.NotFoundErrorBody11? Type494 { get; set; }
-        /// <summary>
-        /// 
-        /// </summary>
-        public global::G.UnauthorizedErrorBody21? Type495 { get; set; }
-        /// <summary>
-        /// 
-        /// </summary>
-        public global::G.BadRequestErrorBody11? Type496 { get; set; }
-        /// <summary>
-        /// 
-        /// </summary>
-        public global::G.UnauthorizedErrorBody22? Type497 { get; set; }
-        /// <summary>
-        /// 
-        /// </summary>
-        public global::G.UnprocessableEntityErrorBody11? Type498 { get; set; }
-        /// <summary>
-        /// 
-        /// </summary>
-        public global::G.GatewayTimeoutErrorBody11? Type499 { get; set; }
-        /// <summary>
-        /// 
-        /// </summary>
-        public global::G.ForbiddenErrorBody11? Type500 { get; set; }
-        /// <summary>
-        /// 
-        /// </summary>
-        public global::G.InternalServerErrorBody11? Type501 { get; set; }
-        /// <summary>
-        /// 
-        /// </summary>
-        public global::G.ServiceUnavailableErrorBody11? Type502 { get; set; }
-        /// <summary>
-        /// 
-        /// </summary>
-        public global::G.NotImplementedErrorBody11? Type503 { get; set; }
-        /// <summary>
-        /// 
-        /// </summary>
-        public global::G.TooManyRequestsErrorBody11? Type504 { get; set; }
-        /// <summary>
-        /// 
-        /// </summary>
-        public global::G.InvalidTokenErrorBody11? Type505 { get; set; }
-        /// <summary>
-        /// 
-        /// </summary>
-        public global::G.ClassifyResponse? Type506 { get; set; }
-        /// <summary>
-        /// 
-        /// </summary>
-        public global::System.Collections.Generic.IList<global::G.ClassifyResponseClassification>? Type507 { get; set; }
-        /// <summary>
-        /// 
-        /// </summary>
-        public global::G.ClassifyResponseClassification? Type508 { get; set; }
-        /// <summary>
-        /// 
-        /// </summary>
-        public global::System.Collections.Generic.Dictionary<string, global::G.ClassifyResponseClassificationLabels2>? Type509 { get; set; }
-        /// <summary>
-        /// 
-        /// </summary>
-        public global::G.ClassifyResponseClassificationLabels2? Type510 { get; set; }
-        /// <summary>
-        /// 
-        /// </summary>
-        public global::G.ClassifyResponseClassificationClassificationType? Type511 { get; set; }
-        /// <summary>
-        /// 
-        /// </summary>
-        public global::G.NotFoundErrorBody12? Type512 { get; set; }
-        /// <summary>
-        /// 
-        /// </summary>
-        public global::G.UnauthorizedErrorBody23? Type513 { get; set; }
-        /// <summary>
-        /// 
-        /// </summary>
-        public global::G.BadRequestErrorBody12? Type514 { get; set; }
-        /// <summary>
-        /// 
-        /// </summary>
-        public global::G.UnauthorizedErrorBody24? Type515 { get; set; }
-        /// <summary>
-        /// 
-        /// </summary>
-        public global::G.UnprocessableEntityErrorBody12? Type516 { get; set; }
-        /// <summary>
-        /// 
-        /// </summary>
-        public global::G.GatewayTimeoutErrorBody12? Type517 { get; set; }
-        /// <summary>
-        /// 
-        /// </summary>
-        public global::G.ForbiddenErrorBody12? Type518 { get; set; }
-        /// <summary>
-        /// 
-        /// </summary>
-        public global::G.InternalServerErrorBody12? Type519 { get; set; }
-        /// <summary>
-        /// 
-        /// </summary>
-        public global::G.ServiceUnavailableErrorBody12? Type520 { get; set; }
-        /// <summary>
-        /// 
-        /// </summary>
-        public global::G.NotImplementedErrorBody12? Type521 { get; set; }
-        /// <summary>
-        /// 
-        /// </summary>
-        public global::G.TooManyRequestsErrorBody12? Type522 { get; set; }
-        /// <summary>
-        /// 
-        /// </summary>
-        public global::G.InvalidTokenErrorBody12? Type523 { get; set; }
-        /// <summary>
-        /// 
-        /// </summary>
-        public global::G.DatasetsCreateResponse? Type524 { get; set; }
-        /// <summary>
-        /// 
-        /// </summary>
-        public global::G.NotFoundErrorBody13? Type525 { get; set; }
-        /// <summary>
-        /// 
-        /// </summary>
-        public global::G.UnauthorizedErrorBody25? Type526 { get; set; }
-        /// <summary>
-        /// 
-        /// </summary>
-        public global::G.BadRequestErrorBody13? Type527 { get; set; }
-        /// <summary>
-        /// 
-        /// </summary>
-        public global::G.UnauthorizedErrorBody26? Type528 { get; set; }
-        /// <summary>
-        /// 
-        /// </summary>
-        public global::G.UnprocessableEntityErrorBody13? Type529 { get; set; }
-        /// <summary>
-        /// 
-        /// </summary>
-        public global::G.GatewayTimeoutErrorBody13? Type530 { get; set; }
-        /// <summary>
-        /// 
-        /// </summary>
-        public global::G.ForbiddenErrorBody13? Type531 { get; set; }
-        /// <summary>
-        /// 
-        /// </summary>
-        public global::G.InternalServerErrorBody13? Type532 { get; set; }
-        /// <summary>
-        /// 
-        /// </summary>
-        public global::G.ServiceUnavailableErrorBody13? Type533 { get; set; }
-        /// <summary>
-        /// 
-        /// </summary>
-        public global::G.NotImplementedErrorBody13? Type534 { get; set; }
-        /// <summary>
-        /// 
-        /// </summary>
-        public global::G.TooManyRequestsErrorBody13? Type535 { get; set; }
-        /// <summary>
-        /// 
-        /// </summary>
-        public global::G.InvalidTokenErrorBody13? Type536 { get; set; }
-        /// <summary>
-        /// 
-        /// </summary>
-        public global::G.DatasetsListResponse? Type537 { get; set; }
-        /// <summary>
-        /// 
-        /// </summary>
-        public global::System.Collections.Generic.IList<global::G.Dataset>? Type538 { get; set; }
-        /// <summary>
-        /// 
-        /// </summary>
-        public global::G.NotFoundErrorBody14? Type539 { get; set; }
-        /// <summary>
-        /// 
-        /// </summary>
-        public global::G.UnauthorizedErrorBody27? Type540 { get; set; }
-        /// <summary>
-        /// 
-        /// </summary>
-        public global::G.BadRequestErrorBody14? Type541 { get; set; }
-        /// <summary>
-        /// 
-        /// </summary>
-        public global::G.UnauthorizedErrorBody28? Type542 { get; set; }
-        /// <summary>
-        /// 
-        /// </summary>
-        public global::G.UnprocessableEntityErrorBody14? Type543 { get; set; }
-        /// <summary>
-        /// 
-        /// </summary>
-        public global::G.GatewayTimeoutErrorBody14? Type544 { get; set; }
-        /// <summary>
-        /// 
-        /// </summary>
-        public global::G.ForbiddenErrorBody14? Type545 { get; set; }
-        /// <summary>
-        /// 
-        /// </summary>
-        public global::G.InternalServerErrorBody14? Type546 { get; set; }
-        /// <summary>
-        /// 
-        /// </summary>
-        public global::G.ServiceUnavailableErrorBody14? Type547 { get; set; }
-        /// <summary>
-        /// 
-        /// </summary>
-        public global::G.NotImplementedErrorBody14? Type548 { get; set; }
-        /// <summary>
-        /// 
-        /// </summary>
-        public global::G.TooManyRequestsErrorBody14? Type549 { get; set; }
-        /// <summary>
-        /// 
-        /// </summary>
-        public global::G.InvalidTokenErrorBody14? Type550 { get; set; }
-        /// <summary>
-        /// 
-        /// </summary>
-        public global::G.DatasetsGetUsageResponse? Type551 { get; set; }
-        /// <summary>
-        /// 
-        /// </summary>
-        public global::G.NotFoundErrorBody15? Type552 { get; set; }
-        /// <summary>
-        /// 
-        /// </summary>
-        public global::G.UnauthorizedErrorBody29? Type553 { get; set; }
-        /// <summary>
-        /// 
-        /// </summary>
-        public global::G.BadRequestErrorBody15? Type554 { get; set; }
-        /// <summary>
-        /// 
-        /// </summary>
-        public global::G.UnauthorizedErrorBody30? Type555 { get; set; }
-        /// <summary>
-        /// 
-        /// </summary>
-        public global::G.UnprocessableEntityErrorBody15? Type556 { get; set; }
-        /// <summary>
-        /// 
-        /// </summary>
-        public global::G.GatewayTimeoutErrorBody15? Type557 { get; set; }
-        /// <summary>
-        /// 
-        /// </summary>
-        public global::G.ForbiddenErrorBody15? Type558 { get; set; }
-        /// <summary>
-        /// 
-        /// </summary>
-        public global::G.InternalServerErrorBody15? Type559 { get; set; }
-        /// <summary>
-        /// 
-        /// </summary>
-        public global::G.ServiceUnavailableErrorBody15? Type560 { get; set; }
-        /// <summary>
-        /// 
-        /// </summary>
-        public global::G.NotImplementedErrorBody15? Type561 { get; set; }
-        /// <summary>
-        /// 
-        /// </summary>
-        public global::G.TooManyRequestsErrorBody15? Type562 { get; set; }
-        /// <summary>
-        /// 
-        /// </summary>
-        public global::G.InvalidTokenErrorBody15? Type563 { get; set; }
-        /// <summary>
-        /// 
-        /// </summary>
-        public global::G.DatasetsGetResponse? Type564 { get; set; }
-        /// <summary>
-        /// 
-        /// </summary>
-        public global::G.NotFoundErrorBody16? Type565 { get; set; }
-        /// <summary>
-        /// 
-        /// </summary>
-        public global::G.UnauthorizedErrorBody31? Type566 { get; set; }
-        /// <summary>
-        /// 
-        /// </summary>
-        public global::G.BadRequestErrorBody16? Type567 { get; set; }
-        /// <summary>
-        /// 
-        /// </summary>
-        public global::G.UnauthorizedErrorBody32? Type568 { get; set; }
-        /// <summary>
-        /// 
-        /// </summary>
-        public global::G.UnprocessableEntityErrorBody16? Type569 { get; set; }
-        /// <summary>
-        /// 
-        /// </summary>
-        public global::G.GatewayTimeoutErrorBody16? Type570 { get; set; }
-        /// <summary>
-        /// 
-        /// </summary>
-        public global::G.ForbiddenErrorBody16? Type571 { get; set; }
-        /// <summary>
-        /// 
-        /// </summary>
-        public global::G.InternalServerErrorBody16? Type572 { get; set; }
-        /// <summary>
-        /// 
-        /// </summary>
-        public global::G.ServiceUnavailableErrorBody16? Type573 { get; set; }
-        /// <summary>
-        /// 
-        /// </summary>
-        public global::G.NotImplementedErrorBody16? Type574 { get; set; }
-        /// <summary>
-        /// 
-        /// </summary>
-        public global::G.TooManyRequestsErrorBody16? Type575 { get; set; }
-        /// <summary>
-        /// 
-        /// </summary>
-        public global::G.InvalidTokenErrorBody16? Type576 { get; set; }
-        /// <summary>
-        /// 
-        /// </summary>
-        public global::G.NotFoundErrorBody17? Type577 { get; set; }
-        /// <summary>
-        /// 
-        /// </summary>
-        public global::G.UnauthorizedErrorBody33? Type578 { get; set; }
-        /// <summary>
-        /// 
-        /// </summary>
-        public global::G.BadRequestErrorBody17? Type579 { get; set; }
-        /// <summary>
-        /// 
-        /// </summary>
-        public global::G.UnauthorizedErrorBody34? Type580 { get; set; }
-        /// <summary>
-        /// 
-        /// </summary>
-        public global::G.UnprocessableEntityErrorBody17? Type581 { get; set; }
-        /// <summary>
-        /// 
-        /// </summary>
-        public global::G.GatewayTimeoutErrorBody17? Type582 { get; set; }
-        /// <summary>
-        /// 
-        /// </summary>
-        public global::G.ForbiddenErrorBody17? Type583 { get; set; }
-        /// <summary>
-        /// 
-        /// </summary>
-        public global::G.InternalServerErrorBody17? Type584 { get; set; }
-        /// <summary>
-        /// 
-        /// </summary>
-        public global::G.ServiceUnavailableErrorBody17? Type585 { get; set; }
-        /// <summary>
-        /// 
-        /// </summary>
-        public global::G.NotImplementedErrorBody17? Type586 { get; set; }
-        /// <summary>
-        /// 
-        /// </summary>
-        public global::G.TooManyRequestsErrorBody17? Type587 { get; set; }
-        /// <summary>
-        /// 
-        /// </summary>
-        public global::G.InvalidTokenErrorBody17? Type588 { get; set; }
-        /// <summary>
-        /// 
-        /// </summary>
-        public global::G.SummarizeResponse? Type589 { get; set; }
-        /// <summary>
-        /// 
-        /// </summary>
-        public global::G.NotFoundErrorBody18? Type590 { get; set; }
-        /// <summary>
-        /// 
-        /// </summary>
-        public global::G.UnauthorizedErrorBody35? Type591 { get; set; }
-        /// <summary>
-        /// 
-        /// </summary>
-        public global::G.BadRequestErrorBody18? Type592 { get; set; }
-        /// <summary>
-        /// 
-        /// </summary>
-        public global::G.UnauthorizedErrorBody36? Type593 { get; set; }
-        /// <summary>
-        /// 
-        /// </summary>
-        public global::G.UnprocessableEntityErrorBody18? Type594 { get; set; }
-        /// <summary>
-        /// 
-        /// </summary>
-        public global::G.GatewayTimeoutErrorBody18? Type595 { get; set; }
-        /// <summary>
-        /// 
-        /// </summary>
-        public global::G.ForbiddenErrorBody18? Type596 { get; set; }
-        /// <summary>
-        /// 
-        /// </summary>
-        public global::G.InternalServerErrorBody18? Type597 { get; set; }
-        /// <summary>
-        /// 
-        /// </summary>
-        public global::G.ServiceUnavailableErrorBody18? Type598 { get; set; }
-        /// <summary>
-        /// 
-        /// </summary>
-        public global::G.NotImplementedErrorBody18? Type599 { get; set; }
-        /// <summary>
-        /// 
-        /// </summary>
-        public global::G.TooManyRequestsErrorBody18? Type600 { get; set; }
-        /// <summary>
-        /// 
-        /// </summary>
-        public global::G.InvalidTokenErrorBody18? Type601 { get; set; }
-        /// <summary>
-        /// 
-        /// </summary>
-        public global::G.TokenizeResponse? Type602 { get; set; }
-        /// <summary>
-        /// 
-        /// </summary>
-        public global::G.NotFoundErrorBody19? Type603 { get; set; }
-        /// <summary>
-        /// 
-        /// </summary>
-        public global::G.UnauthorizedErrorBody37? Type604 { get; set; }
-        /// <summary>
-        /// 
-        /// </summary>
-        public global::G.BadRequestErrorBody19? Type605 { get; set; }
-        /// <summary>
-        /// 
-        /// </summary>
-        public global::G.UnauthorizedErrorBody38? Type606 { get; set; }
-        /// <summary>
-        /// 
-        /// </summary>
-        public global::G.UnprocessableEntityErrorBody19? Type607 { get; set; }
-        /// <summary>
-        /// 
-        /// </summary>
-        public global::G.GatewayTimeoutErrorBody19? Type608 { get; set; }
-        /// <summary>
-        /// 
-        /// </summary>
-        public global::G.ForbiddenErrorBody19? Type609 { get; set; }
-        /// <summary>
-        /// 
-        /// </summary>
-        public global::G.InternalServerErrorBody19? Type610 { get; set; }
-        /// <summary>
-        /// 
-        /// </summary>
-        public global::G.ServiceUnavailableErrorBody19? Type611 { get; set; }
-        /// <summary>
-        /// 
-        /// </summary>
-        public global::G.NotImplementedErrorBody19? Type612 { get; set; }
-        /// <summary>
-        /// 
-        /// </summary>
-        public global::G.TooManyRequestsErrorBody19? Type613 { get; set; }
-        /// <summary>
-        /// 
-        /// </summary>
-        public global::G.InvalidTokenErrorBody19? Type614 { get; set; }
-        /// <summary>
-        /// 
-        /// </summary>
-        public global::G.DetokenizeResponse? Type615 { get; set; }
-        /// <summary>
-        /// 
-        /// </summary>
-        public global::G.NotFoundErrorBody20? Type616 { get; set; }
-        /// <summary>
-        /// 
-        /// </summary>
-        public global::G.UnauthorizedErrorBody39? Type617 { get; set; }
-        /// <summary>
-        /// 
-        /// </summary>
-        public global::G.BadRequestErrorBody20? Type618 { get; set; }
-        /// <summary>
-        /// 
-        /// </summary>
-        public global::G.UnauthorizedErrorBody40? Type619 { get; set; }
-        /// <summary>
-        /// 
-        /// </summary>
-        public global::G.UnprocessableEntityErrorBody20? Type620 { get; set; }
-        /// <summary>
-        /// 
-        /// </summary>
-        public global::G.GatewayTimeoutErrorBody20? Type621 { get; set; }
-        /// <summary>
-        /// 
-        /// </summary>
-        public global::G.ForbiddenErrorBody20? Type622 { get; set; }
-        /// <summary>
-        /// 
-        /// </summary>
-        public global::G.InternalServerErrorBody20? Type623 { get; set; }
-        /// <summary>
-        /// 
-        /// </summary>
-        public global::G.ServiceUnavailableErrorBody20? Type624 { get; set; }
-        /// <summary>
-        /// 
-        /// </summary>
-        public global::G.NotImplementedErrorBody20? Type625 { get; set; }
-        /// <summary>
-        /// 
-        /// </summary>
-        public global::G.TooManyRequestsErrorBody20? Type626 { get; set; }
-        /// <summary>
-        /// 
-        /// </summary>
-        public global::G.InvalidTokenErrorBody20? Type627 { get; set; }
-        /// <summary>
-        /// 
-        /// </summary>
-        public global::G.NotFoundErrorBody21? Type628 { get; set; }
-        /// <summary>
-        /// 
-        /// </summary>
-        public global::G.UnauthorizedErrorBody41? Type629 { get; set; }
-        /// <summary>
-        /// 
-        /// </summary>
-        public global::G.BadRequestErrorBody21? Type630 { get; set; }
-        /// <summary>
-        /// 
-        /// </summary>
-        public global::G.UnauthorizedErrorBody42? Type631 { get; set; }
-        /// <summary>
-        /// 
-        /// </summary>
-        public global::G.UnprocessableEntityErrorBody21? Type632 { get; set; }
-        /// <summary>
-        /// 
-        /// </summary>
-        public global::G.GatewayTimeoutErrorBody21? Type633 { get; set; }
-        /// <summary>
-        /// 
-        /// </summary>
-        public global::G.ForbiddenErrorBody21? Type634 { get; set; }
-        /// <summary>
-        /// 
-        /// </summary>
-        public global::G.InternalServerErrorBody21? Type635 { get; set; }
-        /// <summary>
-        /// 
-        /// </summary>
-        public global::G.ServiceUnavailableErrorBody21? Type636 { get; set; }
-        /// <summary>
-        /// 
-        /// </summary>
-        public global::G.NotImplementedErrorBody21? Type637 { get; set; }
-        /// <summary>
-        /// 
-        /// </summary>
-        public global::G.TooManyRequestsErrorBody21? Type638 { get; set; }
-        /// <summary>
-        /// 
-        /// </summary>
-        public global::G.InvalidTokenErrorBody21? Type639 { get; set; }
-        /// <summary>
-        /// 
-        /// </summary>
-        public global::G.NotFoundErrorBody22? Type640 { get; set; }
-        /// <summary>
-        /// 
-        /// </summary>
-        public global::G.UnauthorizedErrorBody43? Type641 { get; set; }
-        /// <summary>
-        /// 
-        /// </summary>
-        public global::G.BadRequestErrorBody22? Type642 { get; set; }
-        /// <summary>
-        /// 
-        /// </summary>
-        public global::G.UnauthorizedErrorBody44? Type643 { get; set; }
-        /// <summary>
-        /// 
-        /// </summary>
-        public global::G.UnprocessableEntityErrorBody22? Type644 { get; set; }
-        /// <summary>
-        /// 
-        /// </summary>
-        public global::G.GatewayTimeoutErrorBody22? Type645 { get; set; }
-        /// <summary>
-        /// 
-        /// </summary>
-        public global::G.ForbiddenErrorBody22? Type646 { get; set; }
-        /// <summary>
-        /// 
-        /// </summary>
-        public global::G.InternalServerErrorBody22? Type647 { get; set; }
-        /// <summary>
-        /// 
-        /// </summary>
-        public global::G.ServiceUnavailableErrorBody22? Type648 { get; set; }
-        /// <summary>
-        /// 
-        /// </summary>
-        public global::G.NotImplementedErrorBody22? Type649 { get; set; }
-        /// <summary>
-        /// 
-        /// </summary>
-        public global::G.TooManyRequestsErrorBody22? Type650 { get; set; }
-        /// <summary>
-        /// 
-        /// </summary>
-        public global::G.InvalidTokenErrorBody22? Type651 { get; set; }
-        /// <summary>
-        /// 
-        /// </summary>
-        public global::G.NotFoundErrorBody23? Type652 { get; set; }
-        /// <summary>
-        /// 
-        /// </summary>
-        public global::G.UnauthorizedErrorBody45? Type653 { get; set; }
-        /// <summary>
-        /// 
-        /// </summary>
-        public global::G.BadRequestErrorBody23? Type654 { get; set; }
-        /// <summary>
-        /// 
-        /// </summary>
-        public global::G.UnauthorizedErrorBody46? Type655 { get; set; }
-        /// <summary>
-        /// 
-        /// </summary>
-        public global::G.UnprocessableEntityErrorBody23? Type656 { get; set; }
-        /// <summary>
-        /// 
-        /// </summary>
-        public global::G.GatewayTimeoutErrorBody23? Type657 { get; set; }
-        /// <summary>
-        /// 
-        /// </summary>
-        public global::G.ForbiddenErrorBody23? Type658 { get; set; }
-        /// <summary>
-        /// 
-        /// </summary>
-        public global::G.InternalServerErrorBody23? Type659 { get; set; }
-        /// <summary>
-        /// 
-        /// </summary>
-        public global::G.ServiceUnavailableErrorBody23? Type660 { get; set; }
-        /// <summary>
-        /// 
-        /// </summary>
-        public global::G.NotImplementedErrorBody23? Type661 { get; set; }
-        /// <summary>
-        /// 
-        /// </summary>
-        public global::G.TooManyRequestsErrorBody23? Type662 { get; set; }
-        /// <summary>
-        /// 
-        /// </summary>
-        public global::G.InvalidTokenErrorBody23? Type663 { get; set; }
-        /// <summary>
-        /// 
-        /// </summary>
-        public global::G.NotFoundErrorBody24? Type664 { get; set; }
-        /// <summary>
-        /// 
-        /// </summary>
-        public global::G.UnauthorizedErrorBody47? Type665 { get; set; }
-        /// <summary>
-        /// 
-        /// </summary>
-        public global::G.BadRequestErrorBody24? Type666 { get; set; }
-        /// <summary>
-        /// 
-        /// </summary>
-        public global::G.UnauthorizedErrorBody48? Type667 { get; set; }
-        /// <summary>
-        /// 
-        /// </summary>
-        public global::G.UnprocessableEntityErrorBody24? Type668 { get; set; }
-        /// <summary>
-        /// 
-        /// </summary>
-        public global::G.GatewayTimeoutErrorBody24? Type669 { get; set; }
-        /// <summary>
-        /// 
-        /// </summary>
-        public global::G.ForbiddenErrorBody24? Type670 { get; set; }
-        /// <summary>
-        /// 
-        /// </summary>
-        public global::G.InternalServerErrorBody24? Type671 { get; set; }
-        /// <summary>
-        /// 
-        /// </summary>
-        public global::G.ServiceUnavailableErrorBody24? Type672 { get; set; }
-        /// <summary>
-        /// 
-        /// </summary>
-        public global::G.NotImplementedErrorBody24? Type673 { get; set; }
-        /// <summary>
-        /// 
-        /// </summary>
-        public global::G.TooManyRequestsErrorBody24? Type674 { get; set; }
-        /// <summary>
-        /// 
-        /// </summary>
-        public global::G.InvalidTokenErrorBody24? Type675 { get; set; }
-        /// <summary>
-        /// 
-        /// </summary>
-        public global::G.NotFoundErrorBody25? Type676 { get; set; }
-        /// <summary>
-        /// 
-        /// </summary>
-        public global::G.UnauthorizedErrorBody49? Type677 { get; set; }
-        /// <summary>
-        /// 
-        /// </summary>
-        public global::G.BadRequestErrorBody25? Type678 { get; set; }
-        /// <summary>
-        /// 
-        /// </summary>
-        public global::G.UnauthorizedErrorBody50? Type679 { get; set; }
-        /// <summary>
-        /// 
-        /// </summary>
-        public global::G.UnprocessableEntityErrorBody25? Type680 { get; set; }
-        /// <summary>
-        /// 
-        /// </summary>
-        public global::G.GatewayTimeoutErrorBody25? Type681 { get; set; }
-        /// <summary>
-        /// 
-        /// </summary>
-        public global::G.ForbiddenErrorBody25? Type682 { get; set; }
-        /// <summary>
-        /// 
-        /// </summary>
-        public global::G.InternalServerErrorBody25? Type683 { get; set; }
-        /// <summary>
-        /// 
-        /// </summary>
-        public global::G.ServiceUnavailableErrorBody25? Type684 { get; set; }
-        /// <summary>
-        /// 
-        /// </summary>
-        public global::G.NotImplementedErrorBody25? Type685 { get; set; }
-        /// <summary>
-        /// 
-        /// </summary>
-        public global::G.TooManyRequestsErrorBody25? Type686 { get; set; }
-        /// <summary>
-        /// 
-        /// </summary>
-        public global::G.InvalidTokenErrorBody25? Type687 { get; set; }
-        /// <summary>
-        /// 
-        /// </summary>
-        public global::G.NotFoundErrorBody26? Type688 { get; set; }
-        /// <summary>
-        /// 
-        /// </summary>
-        public global::G.UnauthorizedErrorBody51? Type689 { get; set; }
-        /// <summary>
-        /// 
-        /// </summary>
-        public global::G.BadRequestErrorBody26? Type690 { get; set; }
-        /// <summary>
-        /// 
-        /// </summary>
-        public global::G.UnauthorizedErrorBody52? Type691 { get; set; }
-        /// <summary>
-        /// 
-        /// </summary>
-        public global::G.UnprocessableEntityErrorBody26? Type692 { get; set; }
-        /// <summary>
-        /// 
-        /// </summary>
-        public global::G.GatewayTimeoutErrorBody26? Type693 { get; set; }
-        /// <summary>
-        /// 
-        /// </summary>
-        public global::G.ForbiddenErrorBody26? Type694 { get; set; }
-        /// <summary>
-        /// 
-        /// </summary>
-        public global::G.InternalServerErrorBody26? Type695 { get; set; }
-        /// <summary>
-        /// 
-        /// </summary>
-        public global::G.ServiceUnavailableErrorBody26? Type696 { get; set; }
-        /// <summary>
-        /// 
-        /// </summary>
-        public global::G.NotImplementedErrorBody26? Type697 { get; set; }
-        /// <summary>
-        /// 
-        /// </summary>
-        public global::G.TooManyRequestsErrorBody26? Type698 { get; set; }
-        /// <summary>
-        /// 
-        /// </summary>
-        public global::G.InvalidTokenErrorBody26? Type699 { get; set; }
-        /// <summary>
-        /// 
-        /// </summary>
-        public global::G.NotFoundErrorBody27? Type700 { get; set; }
-        /// <summary>
-        /// 
-        /// </summary>
-        public global::G.UnauthorizedErrorBody53? Type701 { get; set; }
-        /// <summary>
-        /// 
-        /// </summary>
-        public global::G.BadRequestErrorBody27? Type702 { get; set; }
-        /// <summary>
-        /// 
-        /// </summary>
-        public global::G.UnauthorizedErrorBody54? Type703 { get; set; }
-        /// <summary>
-        /// 
-        /// </summary>
-        public global::G.UnprocessableEntityErrorBody27? Type704 { get; set; }
-        /// <summary>
-        /// 
-        /// </summary>
-        public global::G.GatewayTimeoutErrorBody27? Type705 { get; set; }
-        /// <summary>
-        /// 
-        /// </summary>
-        public global::G.ForbiddenErrorBody27? Type706 { get; set; }
-        /// <summary>
-        /// 
-        /// </summary>
-        public global::G.InternalServerErrorBody27? Type707 { get; set; }
-        /// <summary>
-        /// 
-        /// </summary>
-        public global::G.ServiceUnavailableErrorBody27? Type708 { get; set; }
-        /// <summary>
-        /// 
-        /// </summary>
-        public global::G.NotImplementedErrorBody27? Type709 { get; set; }
-        /// <summary>
-        /// 
-        /// </summary>
-        public global::G.TooManyRequestsErrorBody27? Type710 { get; set; }
-        /// <summary>
-        /// 
-        /// </summary>
-        public global::G.InvalidTokenErrorBody27? Type711 { get; set; }
-        /// <summary>
-        /// 
-        /// </summary>
-        public global::G.NotFoundErrorBody28? Type712 { get; set; }
-        /// <summary>
-        /// 
-        /// </summary>
-        public global::G.UnauthorizedErrorBody55? Type713 { get; set; }
-        /// <summary>
-        /// 
-        /// </summary>
-        public global::G.BadRequestErrorBody28? Type714 { get; set; }
-        /// <summary>
-        /// 
-        /// </summary>
-        public global::G.UnauthorizedErrorBody56? Type715 { get; set; }
-        /// <summary>
-        /// 
-        /// </summary>
-        public global::G.UnprocessableEntityErrorBody28? Type716 { get; set; }
-        /// <summary>
-        /// 
-        /// </summary>
-        public global::G.GatewayTimeoutErrorBody28? Type717 { get; set; }
-        /// <summary>
-        /// 
-        /// </summary>
-        public global::G.ForbiddenErrorBody28? Type718 { get; set; }
-        /// <summary>
-        /// 
-        /// </summary>
-        public global::G.InternalServerErrorBody28? Type719 { get; set; }
-        /// <summary>
-        /// 
-        /// </summary>
-        public global::G.ServiceUnavailableErrorBody28? Type720 { get; set; }
-        /// <summary>
-        /// 
-        /// </summary>
-        public global::G.NotImplementedErrorBody28? Type721 { get; set; }
-        /// <summary>
-        /// 
-        /// </summary>
-        public global::G.TooManyRequestsErrorBody28? Type722 { get; set; }
-        /// <summary>
-        /// 
-        /// </summary>
-        public global::G.InvalidTokenErrorBody28? Type723 { get; set; }
-        /// <summary>
-        /// 
-        /// </summary>
-        public global::G.CheckApiKeyResponse? Type724 { get; set; }
-        /// <summary>
-        /// 
-        /// </summary>
-        public global::G.NotFoundErrorBody29? Type725 { get; set; }
-        /// <summary>
-        /// 
-        /// </summary>
-        public global::G.UnauthorizedErrorBody57? Type726 { get; set; }
-        /// <summary>
-        /// 
-        /// </summary>
-        public global::G.BadRequestErrorBody29? Type727 { get; set; }
-        /// <summary>
-        /// 
-        /// </summary>
-        public global::G.UnauthorizedErrorBody58? Type728 { get; set; }
-        /// <summary>
-        /// 
-        /// </summary>
-        public global::G.UnprocessableEntityErrorBody29? Type729 { get; set; }
-        /// <summary>
-        /// 
-        /// </summary>
-        public global::G.GatewayTimeoutErrorBody29? Type730 { get; set; }
-        /// <summary>
-        /// 
-        /// </summary>
-        public global::G.ForbiddenErrorBody29? Type731 { get; set; }
-        /// <summary>
-        /// 
-        /// </summary>
-        public global::G.InternalServerErrorBody29? Type732 { get; set; }
-        /// <summary>
-        /// 
-        /// </summary>
-        public global::G.ServiceUnavailableErrorBody29? Type733 { get; set; }
-        /// <summary>
-        /// 
-        /// </summary>
-        public global::G.NotImplementedErrorBody29? Type734 { get; set; }
-        /// <summary>
-        /// 
-        /// </summary>
-        public global::G.TooManyRequestsErrorBody29? Type735 { get; set; }
-        /// <summary>
-        /// 
-        /// </summary>
-        public global::G.InvalidTokenErrorBody29? Type736 { get; set; }
+        public global::G.CheckApiKeyResponse? Type399 { get; set; }
 
         /// <summary>
         /// 
@@ -3040,11 +1692,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.OneOf<string, global::System.Collections.Generic.List<global::G.ContentVariant2Item>>? ListType13 { get; set; }
+        public global::G.OneOf<string, global::System.Collections.Generic.List<global::G.ContentVariant2Item2>>? ListType13 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.List<global::G.ContentVariant2Item>? ListType14 { get; set; }
+        public global::System.Collections.Generic.List<global::G.ContentVariant2Item2>? ListType14 { get; set; }
         /// <summary>
         /// 
         /// </summary>
@@ -3052,11 +1704,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.OneOf<string, global::System.Collections.Generic.List<global::G.ContentVariant2Item2>>? ListType16 { get; set; }
+        public global::G.OneOf<string, global::System.Collections.Generic.List<global::G.ContentVariant2Item>>? ListType16 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.List<global::G.ContentVariant2Item2>? ListType17 { get; set; }
+        public global::System.Collections.Generic.List<global::G.ContentVariant2Item>? ListType17 { get; set; }
         /// <summary>
         /// 
         /// </summary>

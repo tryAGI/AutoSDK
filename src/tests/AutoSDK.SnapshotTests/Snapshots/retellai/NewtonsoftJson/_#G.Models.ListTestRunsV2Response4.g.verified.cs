@@ -1,4 +1,4 @@
-﻿//HintName: G.Models.ListTestRunsV2Response4.g.cs
+//HintName: G.Models.ListTestRunsV2Response4.g.cs
 
 #nullable enable
 
@@ -13,8 +13,8 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("status")]
-        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.ListTestRunsV2ResponseStatus2JsonConverter))]
-        public global::G.ListTestRunsV2ResponseStatus2? Status { get; set; }
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.ListTestRunsV2ResponseStatusJsonConverter))]
+        public global::G.ListTestRunsV2ResponseStatus? Status { get; set; }
 
         /// <summary>
         /// Example: API key is missing or invalid.
@@ -37,7 +37,7 @@ namespace G
         /// Example: API key is missing or invalid.
         /// </param>
         public ListTestRunsV2Response4(
-            global::G.ListTestRunsV2ResponseStatus2? status,
+            global::G.ListTestRunsV2ResponseStatus? status,
             string? message)
         {
             this.Status = status;

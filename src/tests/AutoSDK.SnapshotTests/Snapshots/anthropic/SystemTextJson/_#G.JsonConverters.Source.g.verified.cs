@@ -18,46 +18,28 @@ namespace G.JsonConverters
 
 
             var readerCopy = reader;
-            var discriminatorTypeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.BetaRequestDocumentBlockSourceDiscriminator), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.BetaRequestDocumentBlockSourceDiscriminator> ??
-                            throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::G.BetaRequestDocumentBlockSourceDiscriminator)}");
+            var discriminatorTypeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.RequestImageBlockSourceDiscriminator), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.RequestImageBlockSourceDiscriminator> ??
+                            throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::G.RequestImageBlockSourceDiscriminator)}");
             var discriminator = global::System.Text.Json.JsonSerializer.Deserialize(ref readerCopy, discriminatorTypeInfo);
 
-            global::G.BetaBase64PDFSource? base64 = default;
-            if (discriminator?.Type == global::G.BetaRequestDocumentBlockSourceDiscriminatorType.Base64)
+            global::G.Base64ImageSource? base64 = default;
+            if (discriminator?.Type == global::G.RequestImageBlockSourceDiscriminatorType.Base64)
             {
-                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.BetaBase64PDFSource), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.BetaBase64PDFSource> ??
-                               throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::G.BetaBase64PDFSource)}");
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.Base64ImageSource), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.Base64ImageSource> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::G.Base64ImageSource)}");
                 base64 = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
             }
-            global::G.BetaPlainTextSource? text = default;
-            if (discriminator?.Type == global::G.BetaRequestDocumentBlockSourceDiscriminatorType.Text)
+            global::G.URLImageSource? url = default;
+            if (discriminator?.Type == global::G.RequestImageBlockSourceDiscriminatorType.Url)
             {
-                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.BetaPlainTextSource), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.BetaPlainTextSource> ??
-                               throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::G.BetaPlainTextSource)}");
-                text = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
-            }
-            global::G.BetaContentBlockSource? content = default;
-            if (discriminator?.Type == global::G.BetaRequestDocumentBlockSourceDiscriminatorType.Content)
-            {
-                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.BetaContentBlockSource), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.BetaContentBlockSource> ??
-                               throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::G.BetaContentBlockSource)}");
-                content = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
-            }
-            global::G.BetaURLPDFSource? url = default;
-            if (discriminator?.Type == global::G.BetaRequestDocumentBlockSourceDiscriminatorType.Url)
-            {
-                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.BetaURLPDFSource), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.BetaURLPDFSource> ??
-                               throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::G.BetaURLPDFSource)}");
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.URLImageSource), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.URLImageSource> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::G.URLImageSource)}");
                 url = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
             }
 
             var __value = new global::G.Source(
                 discriminator?.Type,
                 base64,
-
-                text,
-
-                content,
 
                 url
                 );
@@ -76,26 +58,14 @@ namespace G.JsonConverters
 
             if (value.IsBase64)
             {
-                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.BetaBase64PDFSource), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.BetaBase64PDFSource?> ??
-                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.BetaBase64PDFSource).Name}");
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.Base64ImageSource), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.Base64ImageSource?> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.Base64ImageSource).Name}");
                 global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickBase64(), typeInfo);
-            }
-            else if (value.IsText)
-            {
-                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.BetaPlainTextSource), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.BetaPlainTextSource?> ??
-                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.BetaPlainTextSource).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickText(), typeInfo);
-            }
-            else if (value.IsContent)
-            {
-                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.BetaContentBlockSource), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.BetaContentBlockSource?> ??
-                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.BetaContentBlockSource).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickContent(), typeInfo);
             }
             else if (value.IsUrl)
             {
-                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.BetaURLPDFSource), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.BetaURLPDFSource?> ??
-                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.BetaURLPDFSource).Name}");
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.URLImageSource), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.URLImageSource?> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.URLImageSource).Name}");
                 global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickUrl(), typeInfo);
             }
         }

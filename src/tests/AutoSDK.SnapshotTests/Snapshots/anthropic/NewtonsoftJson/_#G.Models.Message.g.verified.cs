@@ -59,7 +59,7 @@ namespace G
         /// ```
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("content", Required = global::Newtonsoft.Json.Required.Always)]
-        public global::System.Collections.Generic.IList<global::G.ContentBlock3> Content { get; set; } = default!;
+        public global::System.Collections.Generic.IList<global::G.ContentBlock> Content { get; set; } = default!;
 
         /// <summary>
         /// The model that will complete your prompt.\n\nSee [models](https://docs.anthropic.com/en/docs/models-overview) for additional details and options.
@@ -166,7 +166,7 @@ namespace G
         /// </param>
         public Message(
             string id,
-            global::System.Collections.Generic.IList<global::G.ContentBlock3> content,
+            global::System.Collections.Generic.IList<global::G.ContentBlock> content,
             global::G.Model model,
             global::G.Usage usage,
             global::G.MessageStopReason? stopReason,

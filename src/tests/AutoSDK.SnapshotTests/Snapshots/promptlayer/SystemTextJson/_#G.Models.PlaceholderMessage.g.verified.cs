@@ -1,4 +1,4 @@
-﻿//HintName: G.Models.PlaceholderMessage.g.cs
+//HintName: G.Models.PlaceholderMessage.g.cs
 
 #nullable enable
 

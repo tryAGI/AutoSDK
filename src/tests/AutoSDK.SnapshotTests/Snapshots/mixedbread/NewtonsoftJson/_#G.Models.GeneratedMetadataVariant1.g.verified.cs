@@ -13,7 +13,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.AudioUrlInputChunkGeneratedMetadataVariant1DiscriminatorType? Type { get; }
+        public global::G.TextInputChunkGeneratedMetadataVariant1DiscriminatorType? Type { get; }
 
         /// <summary>
         /// 
@@ -438,7 +438,7 @@ namespace G
         /// 
         /// </summary>
         public GeneratedMetadataVariant1(
-            global::G.AudioUrlInputChunkGeneratedMetadataVariant1DiscriminatorType? type,
+            global::G.TextInputChunkGeneratedMetadataVariant1DiscriminatorType? type,
             global::G.MarkdownChunkGeneratedMetadata? markdown,
             global::G.TextChunkGeneratedMetadata? text,
             global::G.PDFChunkGeneratedMetadata? pdf,

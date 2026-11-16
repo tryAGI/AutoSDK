@@ -1,4 +1,4 @@
-﻿//HintName: G.Models.VideoUrlInputChunk.g.cs
+//HintName: G.Models.VideoUrlInputChunk.g.cs
 
 #nullable enable
 

@@ -1,4 +1,4 @@
-﻿//HintName: G.Models.PromptAgentAPIModelInput.g.cs
+//HintName: G.Models.PromptAgentAPIModelInput.g.cs
 
 #pragma warning disable CS0618 // Type or member is obsolete
 
@@ -124,7 +124,7 @@ namespace G
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("tools")]
         [global::System.Obsolete("This property marked as deprecated.")]
-        public global::System.Collections.Generic.IList<global::G.ToolsItem2>? Tools { get; set; }
+        public global::System.Collections.Generic.IList<global::G.ToolsItem>? Tools { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

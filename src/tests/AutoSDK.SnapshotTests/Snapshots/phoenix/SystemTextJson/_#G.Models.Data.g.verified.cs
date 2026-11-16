@@ -13,220 +13,284 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.CreateAnnotationConfigResponseBodyDataDiscriminatorType? Type { get; }
+        public global::G.GetViewerResponseBodyDataDiscriminatorAuthMethod? AuthMethod { get; }
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        public global::G.CategoricalAnnotationConfig? Categorical { get; init; }
+        public global::G.LocalUser? Local { get; init; }
 #else
-        public global::G.CategoricalAnnotationConfig? Categorical { get; }
+        public global::G.LocalUser? Local { get; }
 #endif
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Categorical))]
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Local))]
 #endif
-        public bool IsCategorical => Categorical != null;
+        public bool IsLocal => Local != null;
 
         /// <summary>
         /// 
         /// </summary>
-        public bool TryPickCategorical(
+        public bool TryPickLocal(
 #if NET6_0_OR_GREATER
             [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
 #endif
-            out global::G.CategoricalAnnotationConfig? value)
+            out global::G.LocalUser? value)
         {
-            value = Categorical;
-            return IsCategorical;
+            value = Local;
+            return IsLocal;
         }
 
         /// <summary>
         /// 
         /// </summary>
-        public global::G.CategoricalAnnotationConfig PickCategorical() => Categorical is { } value
+        public global::G.LocalUser PickLocal() => Local is { } value
             ? value
-            : throw new global::System.InvalidOperationException($"Expected union variant 'Categorical' but the value was {ToString()}.");
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Local' but the value was {ToString()}.");
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        public global::G.ContinuousAnnotationConfig? Continuous { get; init; }
+        public global::G.OAuth2User? Oauth2 { get; init; }
 #else
-        public global::G.ContinuousAnnotationConfig? Continuous { get; }
+        public global::G.OAuth2User? Oauth2 { get; }
 #endif
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Continuous))]
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Oauth2))]
 #endif
-        public bool IsContinuous => Continuous != null;
+        public bool IsOauth2 => Oauth2 != null;
 
         /// <summary>
         /// 
         /// </summary>
-        public bool TryPickContinuous(
+        public bool TryPickOauth2(
 #if NET6_0_OR_GREATER
             [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
 #endif
-            out global::G.ContinuousAnnotationConfig? value)
+            out global::G.OAuth2User? value)
         {
-            value = Continuous;
-            return IsContinuous;
+            value = Oauth2;
+            return IsOauth2;
         }
 
         /// <summary>
         /// 
         /// </summary>
-        public global::G.ContinuousAnnotationConfig PickContinuous() => Continuous is { } value
+        public global::G.OAuth2User PickOauth2() => Oauth2 is { } value
             ? value
-            : throw new global::System.InvalidOperationException($"Expected union variant 'Continuous' but the value was {ToString()}.");
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Oauth2' but the value was {ToString()}.");
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        public global::G.FreeformAnnotationConfig? Freeform { get; init; }
+        public global::G.LDAPUser? Ldap { get; init; }
 #else
-        public global::G.FreeformAnnotationConfig? Freeform { get; }
+        public global::G.LDAPUser? Ldap { get; }
 #endif
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Freeform))]
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Ldap))]
 #endif
-        public bool IsFreeform => Freeform != null;
+        public bool IsLdap => Ldap != null;
 
         /// <summary>
         /// 
         /// </summary>
-        public bool TryPickFreeform(
+        public bool TryPickLdap(
 #if NET6_0_OR_GREATER
             [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
 #endif
-            out global::G.FreeformAnnotationConfig? value)
+            out global::G.LDAPUser? value)
         {
-            value = Freeform;
-            return IsFreeform;
+            value = Ldap;
+            return IsLdap;
         }
 
         /// <summary>
         /// 
         /// </summary>
-        public global::G.FreeformAnnotationConfig PickFreeform() => Freeform is { } value
+        public global::G.LDAPUser PickLdap() => Ldap is { } value
             ? value
-            : throw new global::System.InvalidOperationException($"Expected union variant 'Freeform' but the value was {ToString()}.");
-        /// <summary>
-        /// 
-        /// </summary>
-        public static implicit operator Data(global::G.CategoricalAnnotationConfig value) => new Data((global::G.CategoricalAnnotationConfig?)value);
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Ldap' but the value was {ToString()}.");
 
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator global::G.CategoricalAnnotationConfig?(Data @this) => @this.Categorical;
+#if NET6_0_OR_GREATER
+        public global::G.AnonymousUser? Anonymous { get; init; }
+#else
+        public global::G.AnonymousUser? Anonymous { get; }
+#endif
 
         /// <summary>
         /// 
         /// </summary>
-        public Data(global::G.CategoricalAnnotationConfig? value)
+#if NET6_0_OR_GREATER
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Anonymous))]
+#endif
+        public bool IsAnonymous => Anonymous != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickAnonymous(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.AnonymousUser? value)
         {
-            Categorical = value;
+            value = Anonymous;
+            return IsAnonymous;
         }
 
         /// <summary>
         /// 
         /// </summary>
-        public static Data FromCategorical(global::G.CategoricalAnnotationConfig? value) => new Data(value);
+        public global::G.AnonymousUser PickAnonymous() => Anonymous is { } value
+            ? value
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Anonymous' but the value was {ToString()}.");
+        /// <summary>
+        /// 
+        /// </summary>
+        public static implicit operator Data(global::G.LocalUser value) => new Data((global::G.LocalUser?)value);
 
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator Data(global::G.ContinuousAnnotationConfig value) => new Data((global::G.ContinuousAnnotationConfig?)value);
+        public static implicit operator global::G.LocalUser?(Data @this) => @this.Local;
 
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator global::G.ContinuousAnnotationConfig?(Data @this) => @this.Continuous;
-
-        /// <summary>
-        /// 
-        /// </summary>
-        public Data(global::G.ContinuousAnnotationConfig? value)
+        public Data(global::G.LocalUser? value)
         {
-            Continuous = value;
+            Local = value;
         }
 
         /// <summary>
         /// 
         /// </summary>
-        public static Data FromContinuous(global::G.ContinuousAnnotationConfig? value) => new Data(value);
+        public static Data FromLocal(global::G.LocalUser? value) => new Data(value);
 
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator Data(global::G.FreeformAnnotationConfig value) => new Data((global::G.FreeformAnnotationConfig?)value);
+        public static implicit operator Data(global::G.OAuth2User value) => new Data((global::G.OAuth2User?)value);
 
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator global::G.FreeformAnnotationConfig?(Data @this) => @this.Freeform;
+        public static implicit operator global::G.OAuth2User?(Data @this) => @this.Oauth2;
 
         /// <summary>
         /// 
         /// </summary>
-        public Data(global::G.FreeformAnnotationConfig? value)
+        public Data(global::G.OAuth2User? value)
         {
-            Freeform = value;
+            Oauth2 = value;
         }
 
         /// <summary>
         /// 
         /// </summary>
-        public static Data FromFreeform(global::G.FreeformAnnotationConfig? value) => new Data(value);
+        public static Data FromOauth2(global::G.OAuth2User? value) => new Data(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static implicit operator Data(global::G.LDAPUser value) => new Data((global::G.LDAPUser?)value);
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static implicit operator global::G.LDAPUser?(Data @this) => @this.Ldap;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public Data(global::G.LDAPUser? value)
+        {
+            Ldap = value;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static Data FromLdap(global::G.LDAPUser? value) => new Data(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static implicit operator Data(global::G.AnonymousUser value) => new Data((global::G.AnonymousUser?)value);
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static implicit operator global::G.AnonymousUser?(Data @this) => @this.Anonymous;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public Data(global::G.AnonymousUser? value)
+        {
+            Anonymous = value;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static Data FromAnonymous(global::G.AnonymousUser? value) => new Data(value);
 
         /// <summary>
         /// 
         /// </summary>
         public Data(
-            global::G.CreateAnnotationConfigResponseBodyDataDiscriminatorType? type,
-            global::G.CategoricalAnnotationConfig? categorical,
-            global::G.ContinuousAnnotationConfig? continuous,
-            global::G.FreeformAnnotationConfig? freeform
+            global::G.GetViewerResponseBodyDataDiscriminatorAuthMethod? authMethod,
+            global::G.LocalUser? local,
+            global::G.OAuth2User? oauth2,
+            global::G.LDAPUser? ldap,
+            global::G.AnonymousUser? anonymous
             )
         {
-            Type = type;
+            AuthMethod = authMethod;
 
-            Categorical = categorical;
-            Continuous = continuous;
-            Freeform = freeform;
+            Local = local;
+            Oauth2 = oauth2;
+            Ldap = ldap;
+            Anonymous = anonymous;
         }
 
         /// <summary>
         /// 
         /// </summary>
         public object? Object =>
-            Freeform as object ??
-            Continuous as object ??
-            Categorical as object 
+            Anonymous as object ??
+            Ldap as object ??
+            Oauth2 as object ??
+            Local as object 
             ;
 
         /// <summary>
         /// 
         /// </summary>
         public override string? ToString() =>
-            Categorical?.ToString() ??
-            Continuous?.ToString() ??
-            Freeform?.ToString() 
+            Local?.ToString() ??
+            Oauth2?.ToString() ??
+            Ldap?.ToString() ??
+            Anonymous?.ToString() 
             ;
 
         /// <summary>
@@ -234,16 +298,17 @@ namespace G
         /// </summary>
         public bool Validate()
         {
-            return IsCategorical && !IsContinuous && !IsFreeform || !IsCategorical && IsContinuous && !IsFreeform || !IsCategorical && !IsContinuous && IsFreeform;
+            return IsLocal && !IsOauth2 && !IsLdap && !IsAnonymous || !IsLocal && IsOauth2 && !IsLdap && !IsAnonymous || !IsLocal && !IsOauth2 && IsLdap && !IsAnonymous || !IsLocal && !IsOauth2 && !IsLdap && IsAnonymous;
         }
 
         /// <summary>
         /// 
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<global::G.CategoricalAnnotationConfig, TResult>? categorical = null,
-            global::System.Func<global::G.ContinuousAnnotationConfig, TResult>? continuous = null,
-            global::System.Func<global::G.FreeformAnnotationConfig, TResult>? freeform = null,
+            global::System.Func<global::G.LocalUser, TResult>? local = null,
+            global::System.Func<global::G.OAuth2User, TResult>? oauth2 = null,
+            global::System.Func<global::G.LDAPUser, TResult>? ldap = null,
+            global::System.Func<global::G.AnonymousUser, TResult>? anonymous = null,
             bool validate = true)
         {
             if (validate)
@@ -251,17 +316,21 @@ namespace G
                 Validate();
             }
 
-            if (Categorical is { } __value0 && categorical != null)
+            if (Local is { } __value0 && local != null)
             {
-                return categorical(__value0);
+                return local(__value0);
             }
-            else if (Continuous is { } __value1 && continuous != null)
+            else if (Oauth2 is { } __value1 && oauth2 != null)
             {
-                return continuous(__value1);
+                return oauth2(__value1);
             }
-            else if (Freeform is { } __value2 && freeform != null)
+            else if (Ldap is { } __value2 && ldap != null)
             {
-                return freeform(__value2);
+                return ldap(__value2);
+            }
+            else if (Anonymous is { } __value3 && anonymous != null)
+            {
+                return anonymous(__value3);
             }
 
             return default(TResult);
@@ -271,11 +340,13 @@ namespace G
         /// 
         /// </summary>
         public void Match(
-            global::System.Action<global::G.CategoricalAnnotationConfig>? categorical = null,
+            global::System.Action<global::G.LocalUser>? local = null,
 
-            global::System.Action<global::G.ContinuousAnnotationConfig>? continuous = null,
+            global::System.Action<global::G.OAuth2User>? oauth2 = null,
 
-            global::System.Action<global::G.FreeformAnnotationConfig>? freeform = null,
+            global::System.Action<global::G.LDAPUser>? ldap = null,
+
+            global::System.Action<global::G.AnonymousUser>? anonymous = null,
             bool validate = true)
         {
             if (validate)
@@ -283,17 +354,21 @@ namespace G
                 Validate();
             }
 
-            if (Categorical is { } __value0)
+            if (Local is { } __value0)
             {
-                categorical?.Invoke(__value0);
+                local?.Invoke(__value0);
             }
-            else if (Continuous is { } __value1)
+            else if (Oauth2 is { } __value1)
             {
-                continuous?.Invoke(__value1);
+                oauth2?.Invoke(__value1);
             }
-            else if (Freeform is { } __value2)
+            else if (Ldap is { } __value2)
             {
-                freeform?.Invoke(__value2);
+                ldap?.Invoke(__value2);
+            }
+            else if (Anonymous is { } __value3)
+            {
+                anonymous?.Invoke(__value3);
             }
         }
 
@@ -301,9 +376,10 @@ namespace G
         /// 
         /// </summary>
         public void Switch(
-            global::System.Action<global::G.CategoricalAnnotationConfig>? categorical = null,
-            global::System.Action<global::G.ContinuousAnnotationConfig>? continuous = null,
-            global::System.Action<global::G.FreeformAnnotationConfig>? freeform = null,
+            global::System.Action<global::G.LocalUser>? local = null,
+            global::System.Action<global::G.OAuth2User>? oauth2 = null,
+            global::System.Action<global::G.LDAPUser>? ldap = null,
+            global::System.Action<global::G.AnonymousUser>? anonymous = null,
             bool validate = true)
         {
             if (validate)
@@ -311,17 +387,21 @@ namespace G
                 Validate();
             }
 
-            if (Categorical is { } __value0)
+            if (Local is { } __value0)
             {
-                categorical?.Invoke(__value0);
+                local?.Invoke(__value0);
             }
-            else if (Continuous is { } __value1)
+            else if (Oauth2 is { } __value1)
             {
-                continuous?.Invoke(__value1);
+                oauth2?.Invoke(__value1);
             }
-            else if (Freeform is { } __value2)
+            else if (Ldap is { } __value2)
             {
-                freeform?.Invoke(__value2);
+                ldap?.Invoke(__value2);
+            }
+            else if (Anonymous is { } __value3)
+            {
+                anonymous?.Invoke(__value3);
             }
         }
 
@@ -332,12 +412,14 @@ namespace G
         {
             var fields = new object?[]
             {
-                Categorical,
-                typeof(global::G.CategoricalAnnotationConfig),
-                Continuous,
-                typeof(global::G.ContinuousAnnotationConfig),
-                Freeform,
-                typeof(global::G.FreeformAnnotationConfig),
+                Local,
+                typeof(global::G.LocalUser),
+                Oauth2,
+                typeof(global::G.OAuth2User),
+                Ldap,
+                typeof(global::G.LDAPUser),
+                Anonymous,
+                typeof(global::G.AnonymousUser),
             };
             const int offset = unchecked((int)2166136261);
             const int prime = 16777619;
@@ -354,9 +436,10 @@ namespace G
         public bool Equals(Data other)
         {
             return
-                global::System.Collections.Generic.EqualityComparer<global::G.CategoricalAnnotationConfig?>.Default.Equals(Categorical, other.Categorical) &&
-                global::System.Collections.Generic.EqualityComparer<global::G.ContinuousAnnotationConfig?>.Default.Equals(Continuous, other.Continuous) &&
-                global::System.Collections.Generic.EqualityComparer<global::G.FreeformAnnotationConfig?>.Default.Equals(Freeform, other.Freeform) 
+                global::System.Collections.Generic.EqualityComparer<global::G.LocalUser?>.Default.Equals(Local, other.Local) &&
+                global::System.Collections.Generic.EqualityComparer<global::G.OAuth2User?>.Default.Equals(Oauth2, other.Oauth2) &&
+                global::System.Collections.Generic.EqualityComparer<global::G.LDAPUser?>.Default.Equals(Ldap, other.Ldap) &&
+                global::System.Collections.Generic.EqualityComparer<global::G.AnonymousUser?>.Default.Equals(Anonymous, other.Anonymous) 
                 ;
         }
 

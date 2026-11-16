@@ -1,4 +1,4 @@
-﻿//HintName: G.Models.PromptVersion.g.cs
+//HintName: G.Models.PromptVersion.g.cs
 
 #nullable enable
 
@@ -13,7 +13,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("prompt_template", Required = global::Newtonsoft.Json.Required.Always)]
-        public global::G.PromptTemplate3 PromptTemplate { get; set; } = default!;
+        public global::G.PromptTemplate PromptTemplate { get; set; } = default!;
 
         /// <summary>
         /// 
@@ -40,7 +40,7 @@ namespace G
         /// <param name="commitMessage"></param>
         /// <param name="metadata"></param>
         public PromptVersion(
-            global::G.PromptTemplate3 promptTemplate,
+            global::G.PromptTemplate promptTemplate,
             string? commitMessage,
             global::G.Metadata? metadata)
         {

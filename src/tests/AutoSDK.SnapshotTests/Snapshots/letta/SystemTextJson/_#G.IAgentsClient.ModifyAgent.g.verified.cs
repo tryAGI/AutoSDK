@@ -1,4 +1,4 @@
-﻿//HintName: G.IAgentsClient.ModifyAgent.g.cs
+//HintName: G.IAgentsClient.ModifyAgent.g.cs
 #nullable enable
 
 #pragma warning disable CS0618 // Type or member is obsolete
@@ -152,7 +152,7 @@ namespace G
             global::System.Collections.Generic.IList<string>? blockIds = default,
             global::System.Collections.Generic.IList<string>? tags = default,
             string? system = default,
-            global::System.Collections.Generic.IList<global::G.ToolRulesVariant1Item4>? toolRules = default,
+            global::System.Collections.Generic.IList<global::G.ToolRulesVariant1Item2>? toolRules = default,
             global::System.Collections.Generic.IList<string>? messageIds = default,
             string? description = default,
             object? metadata = default,
@@ -165,7 +165,7 @@ namespace G
             bool? messageBufferAutoclear = default,
             string? model = default,
             string? embedding = default,
-            global::G.ModelSettingsVariant18? modelSettings = default,
+            global::G.ModelSettingsVariant12? modelSettings = default,
             global::G.CompactionSettingsInput? compactionSettings = default,
             int? contextWindowLimit = default,
             global::G.EmbeddingConfig? embeddingConfig = default,

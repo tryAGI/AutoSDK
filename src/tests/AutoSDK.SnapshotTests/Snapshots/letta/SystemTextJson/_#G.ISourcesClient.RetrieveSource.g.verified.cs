@@ -1,4 +1,4 @@
-﻿//HintName: G.ISourcesClient.RetrieveSource.g.cs
+//HintName: G.ISourcesClient.RetrieveSource.g.cs
 #nullable enable
 
 namespace G
@@ -16,7 +16,7 @@ namespace G
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::G.ApiException"></exception>
         [global::System.Obsolete("This method marked as deprecated.")]
-        global::System.Threading.Tasks.Task<global::G.Source2> RetrieveSourceAsync(
+        global::System.Threading.Tasks.Task<global::G.Source> RetrieveSourceAsync(
             string sourceId,
             global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
@@ -31,7 +31,7 @@ namespace G
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::G.ApiException"></exception>
         [global::System.Obsolete("This method marked as deprecated.")]
-        global::System.Threading.Tasks.Task<global::G.AutoSDKHttpResponse<global::G.Source2>> RetrieveSourceAsResponseAsync(
+        global::System.Threading.Tasks.Task<global::G.AutoSDKHttpResponse<global::G.Source>> RetrieveSourceAsResponseAsync(
             string sourceId,
             global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);

@@ -1,4 +1,4 @@
-﻿//HintName: G.Models.MxbaiOmniApiRoutesV1StoresRulesModelsSearchRuleResponse.g.cs
+//HintName: G.Models.MxbaiOmniApiRoutesV1StoresRulesModelsSearchRuleResponse.g.cs
 
 #nullable enable
 
@@ -38,7 +38,7 @@ namespace G
         /// The rules to apply
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("rules", Required = global::Newtonsoft.Json.Required.Always)]
-        public global::System.Collections.Generic.IList<global::G.RulesItem4> Rules { get; set; } = default!;
+        public global::System.Collections.Generic.IList<global::G.RulesItem> Rules { get; set; } = default!;
 
         /// <summary>
         /// When the rule was created
@@ -87,7 +87,7 @@ namespace G
             string id,
             string query,
             string storeId,
-            global::System.Collections.Generic.IList<global::G.RulesItem4> rules,
+            global::System.Collections.Generic.IList<global::G.RulesItem> rules,
             global::System.DateTime createdAt,
             global::System.DateTime updatedAt,
             string? @object)

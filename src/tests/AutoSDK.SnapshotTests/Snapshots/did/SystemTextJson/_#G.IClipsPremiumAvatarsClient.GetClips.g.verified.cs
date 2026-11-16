@@ -1,4 +1,4 @@
-﻿//HintName: G.IClipsPremiumAvatarsClient.GetClips.g.cs
+//HintName: G.IClipsPremiumAvatarsClient.GetClips.g.cs
 #nullable enable
 
 namespace G
@@ -15,7 +15,7 @@ namespace G
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::G.ApiException"></exception>
-        global::System.Threading.Tasks.Task<global::G.GetClipsResponse2> GetClipsAsync(
+        global::System.Threading.Tasks.Task<global::G.GetClipsResponse> GetClipsAsync(
             double? limit = default,
             string? token = default,
             global::G.AutoSDKRequestOptions? requestOptions = default,
@@ -30,7 +30,7 @@ namespace G
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::G.ApiException"></exception>
-        global::System.Threading.Tasks.Task<global::G.AutoSDKHttpResponse<global::G.GetClipsResponse2>> GetClipsAsResponseAsync(
+        global::System.Threading.Tasks.Task<global::G.AutoSDKHttpResponse<global::G.GetClipsResponse>> GetClipsAsResponseAsync(
             double? limit = default,
             string? token = default,
             global::G.AutoSDKRequestOptions? requestOptions = default,

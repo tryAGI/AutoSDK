@@ -1,4 +1,4 @@
-﻿//HintName: G.Models.HierarchicalChunkerOptionsDocumentsRequest.g.cs
+//HintName: G.Models.HierarchicalChunkerOptionsDocumentsRequest.g.cs
 
 #nullable enable
 
@@ -21,7 +21,7 @@ namespace G
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("sources")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::System.Collections.Generic.IList<global::G.SourcesItem2> Sources { get; set; }
+        public required global::System.Collections.Generic.IList<global::G.SourcesItem3> Sources { get; set; }
 
         /// <summary>
         /// If true, the output will include both the chunks and the converted document.<br/>
@@ -35,8 +35,8 @@ namespace G
         /// Default Value: {"kind":"inbody"}
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("target")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.Target2JsonConverter))]
-        public global::G.Target2? Target { get; set; }
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.Target3JsonConverter))]
+        public global::G.Target3? Target { get; set; }
 
         /// <summary>
         /// Options specific to the chunker.
@@ -75,10 +75,10 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public HierarchicalChunkerOptionsDocumentsRequest(
-            global::System.Collections.Generic.IList<global::G.SourcesItem2> sources,
+            global::System.Collections.Generic.IList<global::G.SourcesItem3> sources,
             global::G.ConvertDocumentsRequestOptions? convertOptions,
             bool? includeConvertedDoc,
-            global::G.Target2? target,
+            global::G.Target3? target,
             global::G.HierarchicalChunkerOptions? chunkingOptions)
         {
             this.ConvertOptions = convertOptions;

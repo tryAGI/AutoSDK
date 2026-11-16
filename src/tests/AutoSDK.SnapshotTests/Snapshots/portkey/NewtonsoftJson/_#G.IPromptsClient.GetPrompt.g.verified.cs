@@ -1,4 +1,4 @@
-﻿//HintName: G.IPromptsClient.GetPrompt.g.cs
+//HintName: G.IPromptsClient.GetPrompt.g.cs
 #nullable enable
 
 namespace G
@@ -12,7 +12,7 @@ namespace G
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::G.ApiException"></exception>
-        global::System.Threading.Tasks.Task<global::G.Prompt2> GetPromptAsync(
+        global::System.Threading.Tasks.Task<global::G.Prompt> GetPromptAsync(
             string promptId,
             global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
@@ -23,7 +23,7 @@ namespace G
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::G.ApiException"></exception>
-        global::System.Threading.Tasks.Task<global::G.AutoSDKHttpResponse<global::G.Prompt2>> GetPromptAsResponseAsync(
+        global::System.Threading.Tasks.Task<global::G.AutoSDKHttpResponse<global::G.Prompt>> GetPromptAsResponseAsync(
             string promptId,
             global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);

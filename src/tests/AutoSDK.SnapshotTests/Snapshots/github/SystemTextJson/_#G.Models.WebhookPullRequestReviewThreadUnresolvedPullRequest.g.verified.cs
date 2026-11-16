@@ -34,7 +34,7 @@ namespace G
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("assignees")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::System.Collections.Generic.IList<global::G.WebhookPullRequestReviewThreadUnresolvedPullRequestAssignee2?> Assignees { get; set; }
+        public required global::System.Collections.Generic.IList<global::G.WebhookPullRequestReviewThreadUnresolvedPullRequestAssignee?> Assignees { get; set; }
 
         /// <summary>
         /// How the author is associated with the repository.
@@ -311,7 +311,7 @@ namespace G
 #endif
         public WebhookPullRequestReviewThreadUnresolvedPullRequest(
             global::G.WebhookPullRequestReviewThreadUnresolvedPullRequestLinks links,
-            global::System.Collections.Generic.IList<global::G.WebhookPullRequestReviewThreadUnresolvedPullRequestAssignee2?> assignees,
+            global::System.Collections.Generic.IList<global::G.WebhookPullRequestReviewThreadUnresolvedPullRequestAssignee?> assignees,
             global::G.WebhookPullRequestReviewThreadUnresolvedPullRequestAuthorAssociation authorAssociation,
             global::G.WebhookPullRequestReviewThreadUnresolvedPullRequestBase @base,
             string commentsUrl,

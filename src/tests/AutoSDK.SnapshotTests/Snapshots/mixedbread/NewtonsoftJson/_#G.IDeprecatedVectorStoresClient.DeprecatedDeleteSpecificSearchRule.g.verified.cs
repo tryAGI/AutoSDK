@@ -1,4 +1,4 @@
-﻿//HintName: G.IDeprecatedVectorStoresClient.DeprecatedDeleteSpecificSearchRule.g.cs
+//HintName: G.IDeprecatedVectorStoresClient.DeprecatedDeleteSpecificSearchRule.g.cs
 #nullable enable
 
 namespace G
@@ -69,7 +69,7 @@ namespace G
         global::System.Threading.Tasks.Task<global::G.MxbaiOmniApiRoutesV1DeprecatedVectorStoresModelsSearchRuleSpecificDeleted> DeprecatedDeleteSpecificSearchRuleAsync(
             global::G.AnyOf<string, global::System.Guid?> vectorStoreIdentifier,
             global::System.Guid ruleId,
-            global::G.Rule rule,
+            global::G.Rule2 rule,
             global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }

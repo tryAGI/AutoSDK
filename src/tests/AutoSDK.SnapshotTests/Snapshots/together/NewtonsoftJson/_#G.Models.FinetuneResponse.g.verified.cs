@@ -1,4 +1,4 @@
-﻿//HintName: G.Models.FinetuneResponse.g.cs
+//HintName: G.Models.FinetuneResponse.g.cs
 
 #nullable enable
 
@@ -128,7 +128,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("events")]
-        public global::System.Collections.Generic.IList<global::G.FinetuneEvent>? Events { get; set; }
+        public global::System.Collections.Generic.IList<global::G.FinetuneEvent2>? Events { get; set; }
 
         /// <summary>
         /// 
@@ -228,7 +228,7 @@ namespace G
             int? evalSteps,
             global::G.FinetuneResponseTrainingType? trainingType,
             string? jobId,
-            global::System.Collections.Generic.IList<global::G.FinetuneEvent>? events,
+            global::System.Collections.Generic.IList<global::G.FinetuneEvent2>? events,
             int? tokenCount,
             int? paramCount,
             int? totalPrice,

@@ -1,4 +1,4 @@
-﻿//HintName: G.Api.g.cs
+//HintName: G.Api.g.cs
 
 #nullable enable
 
@@ -269,10 +269,6 @@ namespace G
                     new global::G.JsonConverters.UploadDatasetRequestActionJsonConverter(),
 
                     new global::G.JsonConverters.UploadDatasetRequestActionNullableJsonConverter(),
-
-                    new global::G.JsonConverters.UploadDatasetRequestAction2JsonConverter(),
-
-                    new global::G.JsonConverters.UploadDatasetRequestAction2NullableJsonConverter(),
 
                     new global::G.JsonConverters.ListProjectTracesSortJsonConverter(),
 

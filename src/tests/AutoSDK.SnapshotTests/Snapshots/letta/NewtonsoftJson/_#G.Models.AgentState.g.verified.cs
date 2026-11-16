@@ -1,4 +1,4 @@
-﻿//HintName: G.Models.AgentState.g.cs
+//HintName: G.Models.AgentState.g.cs
 
 #pragma warning disable CS0618 // Type or member is obsolete
 
@@ -149,7 +149,7 @@ namespace G
         /// Deprecated: Use `folders` field instead. The sources used by the agent.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("sources", Required = global::Newtonsoft.Json.Required.Always)]
-        public global::System.Collections.Generic.IList<global::G.Source2> Sources { get; set; } = default!;
+        public global::System.Collections.Generic.IList<global::G.Source> Sources { get; set; } = default!;
 
         /// <summary>
         /// The tags associated with the agent.
@@ -432,7 +432,7 @@ namespace G
             global::G.Memory memory,
             global::System.Collections.Generic.IList<global::G.Block> blocks,
             global::System.Collections.Generic.IList<global::G.Tool> tools,
-            global::System.Collections.Generic.IList<global::G.Source2> sources,
+            global::System.Collections.Generic.IList<global::G.Source> sources,
             global::System.Collections.Generic.IList<string> tags,
             string? createdById,
             string? lastUpdatedById,

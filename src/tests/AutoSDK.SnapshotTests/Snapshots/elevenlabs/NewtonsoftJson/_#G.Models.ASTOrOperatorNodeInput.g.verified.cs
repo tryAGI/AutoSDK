@@ -1,4 +1,4 @@
-﻿//HintName: G.Models.ASTOrOperatorNodeInput.g.cs
+//HintName: G.Models.ASTOrOperatorNodeInput.g.cs
 
 #nullable enable
 
@@ -19,7 +19,7 @@ namespace G
         /// Child nodes of the logical operator.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("children", Required = global::Newtonsoft.Json.Required.Always)]
-        public global::System.Collections.Generic.IList<global::G.ChildrenItem3> Children { get; set; } = default!;
+        public global::System.Collections.Generic.IList<global::G.ChildrenItem> Children { get; set; } = default!;
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -37,7 +37,7 @@ namespace G
         /// Default Value: or_operator
         /// </param>
         public ASTOrOperatorNodeInput(
-            global::System.Collections.Generic.IList<global::G.ChildrenItem3> children,
+            global::System.Collections.Generic.IList<global::G.ChildrenItem> children,
             string? type)
         {
             this.Type = type;

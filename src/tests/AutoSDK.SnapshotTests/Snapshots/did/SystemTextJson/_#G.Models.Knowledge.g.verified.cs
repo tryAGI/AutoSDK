@@ -1,4 +1,4 @@
-﻿//HintName: G.Models.Knowledge.g.cs
+//HintName: G.Models.Knowledge.g.cs
 
 #pragma warning disable CS0618 // Type or member is obsolete
 
@@ -22,8 +22,8 @@ namespace G
         /// The provider of the knowledge base
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("provider")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.KnowledgeProvider2JsonConverter))]
-        public global::G.KnowledgeProvider2? Provider { get; set; }
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.KnowledgeProviderJsonConverter))]
+        public global::G.KnowledgeProvider? Provider { get; set; }
 
         /// <summary>
         /// List of messages to be showen as chat starter questions for the user to ask
@@ -57,7 +57,7 @@ namespace G
 #endif
         public Knowledge(
             string id,
-            global::G.KnowledgeProvider2? provider)
+            global::G.KnowledgeProvider? provider)
         {
             this.Id = id ?? throw new global::System.ArgumentNullException(nameof(id));
             this.Provider = provider;

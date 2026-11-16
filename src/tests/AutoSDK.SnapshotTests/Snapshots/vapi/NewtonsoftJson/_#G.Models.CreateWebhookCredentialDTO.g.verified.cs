@@ -1,4 +1,4 @@
-﻿//HintName: G.Models.CreateWebhookCredentialDTO.g.cs
+//HintName: G.Models.CreateWebhookCredentialDTO.g.cs
 
 #nullable enable
 
@@ -20,7 +20,7 @@ namespace G
         /// This is the authentication plan. Supports OAuth2 RFC 6749, HMAC signing, and Bearer authentication.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("authenticationPlan", Required = global::Newtonsoft.Json.Required.Always)]
-        public global::G.AuthenticationPlan2 AuthenticationPlan { get; set; } = default!;
+        public global::G.AuthenticationPlan6 AuthenticationPlan { get; set; } = default!;
 
         /// <summary>
         /// This is the name of credential. This is just for your reference.
@@ -45,7 +45,7 @@ namespace G
         /// This is the name of credential. This is just for your reference.
         /// </param>
         public CreateWebhookCredentialDTO(
-            global::G.AuthenticationPlan2 authenticationPlan,
+            global::G.AuthenticationPlan6 authenticationPlan,
             global::G.CreateWebhookCredentialDTOProvider provider,
             string? name)
         {

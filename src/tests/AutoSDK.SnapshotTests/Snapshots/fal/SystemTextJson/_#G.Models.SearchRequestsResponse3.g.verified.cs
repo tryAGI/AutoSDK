@@ -1,4 +1,4 @@
-﻿//HintName: G.Models.SearchRequestsResponse3.g.cs
+//HintName: G.Models.SearchRequestsResponse3.g.cs
 
 #nullable enable
 
@@ -14,7 +14,7 @@ namespace G
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("error")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::G.SearchRequestsResponseError2 Error { get; set; }
+        public required global::G.SearchRequestsResponseError Error { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -32,7 +32,7 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public SearchRequestsResponse3(
-            global::G.SearchRequestsResponseError2 error)
+            global::G.SearchRequestsResponseError error)
         {
             this.Error = error ?? throw new global::System.ArgumentNullException(nameof(error));
         }

@@ -1,4 +1,4 @@
-﻿//HintName: G.Models.ExperimentDatasetRow.g.cs
+//HintName: G.Models.ExperimentDatasetRow.g.cs
 
 #nullable enable
 
@@ -37,7 +37,7 @@ namespace G
         /// Construct a type with a set of properties K of type T
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("scores", Required = global::Newtonsoft.Json.Required.Always)]
-        public global::System.Collections.Generic.Dictionary<string, global::G.Score2> Scores { get; set; } = default!;
+        public global::System.Collections.Generic.Dictionary<string, global::G.Score> Scores { get; set; } = default!;
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -60,7 +60,7 @@ namespace G
             global::G.ExperimentDatasetRowInputRecord inputRecord,
             double rowIndex,
             string columnId,
-            global::System.Collections.Generic.Dictionary<string, global::G.Score2> scores)
+            global::System.Collections.Generic.Dictionary<string, global::G.Score> scores)
         {
             this.RowId = rowId ?? throw new global::System.ArgumentNullException(nameof(rowId));
             this.InputRecord = inputRecord ?? throw new global::System.ArgumentNullException(nameof(inputRecord));

@@ -18,26 +18,26 @@ namespace G.JsonConverters
 
 
             var readerCopy = reader;
-            var discriminatorTypeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.HybridChunkerOptionsDocumentsRequestSourceDiscriminator), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.HybridChunkerOptionsDocumentsRequestSourceDiscriminator> ??
-                            throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::G.HybridChunkerOptionsDocumentsRequestSourceDiscriminator)}");
+            var discriminatorTypeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.HierarchicalChunkerOptionsDocumentsRequestSourceDiscriminator), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.HierarchicalChunkerOptionsDocumentsRequestSourceDiscriminator> ??
+                            throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::G.HierarchicalChunkerOptionsDocumentsRequestSourceDiscriminator)}");
             var discriminator = global::System.Text.Json.JsonSerializer.Deserialize(ref readerCopy, discriminatorTypeInfo);
 
             global::G.FileSourceRequest? file = default;
-            if (discriminator?.Kind == global::G.HybridChunkerOptionsDocumentsRequestSourceDiscriminatorKind.File)
+            if (discriminator?.Kind == global::G.HierarchicalChunkerOptionsDocumentsRequestSourceDiscriminatorKind.File)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.FileSourceRequest), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.FileSourceRequest> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::G.FileSourceRequest)}");
                 file = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
             }
             global::G.HttpSourceRequest? http = default;
-            if (discriminator?.Kind == global::G.HybridChunkerOptionsDocumentsRequestSourceDiscriminatorKind.Http)
+            if (discriminator?.Kind == global::G.HierarchicalChunkerOptionsDocumentsRequestSourceDiscriminatorKind.Http)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.HttpSourceRequest), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.HttpSourceRequest> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::G.HttpSourceRequest)}");
                 http = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
             }
             global::G.S3SourceRequest? s3 = default;
-            if (discriminator?.Kind == global::G.HybridChunkerOptionsDocumentsRequestSourceDiscriminatorKind.S3)
+            if (discriminator?.Kind == global::G.HierarchicalChunkerOptionsDocumentsRequestSourceDiscriminatorKind.S3)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.S3SourceRequest), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.S3SourceRequest> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::G.S3SourceRequest)}");

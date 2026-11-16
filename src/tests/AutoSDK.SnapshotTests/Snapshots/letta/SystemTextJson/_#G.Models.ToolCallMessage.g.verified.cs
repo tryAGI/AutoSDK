@@ -1,4 +1,4 @@
-﻿//HintName: G.Models.ToolCallMessage.g.cs
+//HintName: G.Models.ToolCallMessage.g.cs
 
 #pragma warning disable CS0618 // Type or member is obsolete
 
@@ -83,16 +83,16 @@ namespace G
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("tool_call")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.AnyOfJsonConverter<global::G.ToolCall2, global::G.ToolCallDelta>))]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.AnyOfJsonConverter<global::G.ToolCall, global::G.ToolCallDelta>))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::G.AnyOf<global::G.ToolCall2, global::G.ToolCallDelta> ToolCall { get; set; }
+        public required global::G.AnyOf<global::G.ToolCall, global::G.ToolCallDelta> ToolCall { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("tool_calls")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.AnyOfJsonConverter<global::System.Collections.Generic.IList<global::G.ToolCall2>, global::G.ToolCallDelta>))]
-        public global::G.AnyOf<global::System.Collections.Generic.IList<global::G.ToolCall2>, global::G.ToolCallDelta>? ToolCalls { get; set; }
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.AnyOfJsonConverter<global::System.Collections.Generic.IList<global::G.ToolCall>, global::G.ToolCallDelta>))]
+        public global::G.AnyOf<global::System.Collections.Generic.IList<global::G.ToolCall>, global::G.ToolCallDelta>? ToolCalls { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -124,7 +124,7 @@ namespace G
         public ToolCallMessage(
             string id,
             global::System.DateTime date,
-            global::G.AnyOf<global::G.ToolCall2, global::G.ToolCallDelta> toolCall,
+            global::G.AnyOf<global::G.ToolCall, global::G.ToolCallDelta> toolCall,
             string? name,
             string? messageType,
             string? otid,
@@ -133,7 +133,7 @@ namespace G
             bool? isErr,
             int? seqId,
             string? runId,
-            global::G.AnyOf<global::System.Collections.Generic.IList<global::G.ToolCall2>, global::G.ToolCallDelta>? toolCalls)
+            global::G.AnyOf<global::System.Collections.Generic.IList<global::G.ToolCall>, global::G.ToolCallDelta>? toolCalls)
         {
             this.Id = id ?? throw new global::System.ArgumentNullException(nameof(id));
             this.Date = date;

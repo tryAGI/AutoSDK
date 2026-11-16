@@ -1,19 +1,27 @@
-﻿//HintName: G.Models.PropertyModuleConfig.g.cs
+//HintName: G.Models.PropertyModuleConfig.g.cs
 
 #nullable enable
 
 namespace G
 {
     /// <summary>
-    /// Configuration specific to modules in a property context.
+    /// E.g. `text2vec-transformers`, `text2vec-openai`.
     /// </summary>
     public sealed partial class PropertyModuleConfig
     {
         /// <summary>
-        /// E.g. `text2vec-transformers`, `text2vec-openai`.
+        /// If true, the whole property will NOT be included in vectorization.<br/>
+        /// Default Value: false
         /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("<module_name>")]
-        public global::G.PropertyModuleConfig2? x_moduleName_ { get; set; }
+        [global::Newtonsoft.Json.JsonProperty("skip")]
+        public bool? Skip { get; set; }
+
+        /// <summary>
+        /// Whether the name of the property is used in determining the object vector.<br/>
+        /// Default Value: true
+        /// </summary>
+        [global::Newtonsoft.Json.JsonProperty("vectorizePropertyName")]
+        public bool? VectorizePropertyName { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -24,13 +32,20 @@ namespace G
         /// <summary>
         /// Initializes a new instance of the <see cref="PropertyModuleConfig" /> class.
         /// </summary>
-        /// <param name="x_moduleName_">
-        /// E.g. `text2vec-transformers`, `text2vec-openai`.
+        /// <param name="skip">
+        /// If true, the whole property will NOT be included in vectorization.<br/>
+        /// Default Value: false
+        /// </param>
+        /// <param name="vectorizePropertyName">
+        /// Whether the name of the property is used in determining the object vector.<br/>
+        /// Default Value: true
         /// </param>
         public PropertyModuleConfig(
-            global::G.PropertyModuleConfig2? x_moduleName_)
+            bool? skip,
+            bool? vectorizePropertyName)
         {
-            this.x_moduleName_ = x_moduleName_;
+            this.Skip = skip;
+            this.VectorizePropertyName = vectorizePropertyName;
         }
 
         /// <summary>

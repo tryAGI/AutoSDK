@@ -1,4 +1,4 @@
-﻿//HintName: G.Models.ConvAIStoredSecretDependencies.g.cs
+//HintName: G.Models.ConvAIStoredSecretDependencies.g.cs
 
 #nullable enable
 
@@ -14,7 +14,7 @@ namespace G
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("tools")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::System.Collections.Generic.IList<global::G.ToolsItem> Tools { get; set; }
+        public required global::System.Collections.Generic.IList<global::G.ToolsItem3> Tools { get; set; }
 
         /// <summary>
         /// 
@@ -53,7 +53,7 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public ConvAIStoredSecretDependencies(
-            global::System.Collections.Generic.IList<global::G.ToolsItem> tools,
+            global::System.Collections.Generic.IList<global::G.ToolsItem3> tools,
             global::System.Collections.Generic.IList<global::G.AgentsItem> agents,
             global::System.Collections.Generic.IList<global::G.SecretDependencyType> others,
             global::System.Collections.Generic.IList<global::G.DependentPhoneNumberIdentifier>? phoneNumbers)

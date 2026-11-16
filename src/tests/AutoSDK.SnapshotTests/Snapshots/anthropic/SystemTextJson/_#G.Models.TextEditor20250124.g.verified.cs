@@ -1,4 +1,4 @@
-﻿//HintName: G.Models.TextEditor20250124.g.cs
+//HintName: G.Models.TextEditor20250124.g.cs
 
 #nullable enable
 
@@ -13,7 +13,7 @@ namespace G
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("cache_control")]
-        public global::G.CacheControlVariant119? CacheControl { get; set; }
+        public global::G.CacheControlVariant15? CacheControl { get; set; }
 
         /// <summary>
         /// 
@@ -49,7 +49,7 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public TextEditor20250124(
-            global::G.CacheControlVariant119? cacheControl,
+            global::G.CacheControlVariant15? cacheControl,
             global::G.TextEditor20250124Type type,
             global::G.TextEditor20250124Name name)
         {

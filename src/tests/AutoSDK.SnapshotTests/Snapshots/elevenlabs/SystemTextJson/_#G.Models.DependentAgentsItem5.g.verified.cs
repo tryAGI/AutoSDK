@@ -13,7 +13,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.MCPServerResponseModelDependentAgentDiscriminatorType? Type { get; }
+        public global::G.GetKnowledgeBaseSummaryFolderResponseModelDependentAgentDiscriminatorType? Type { get; }
 
         /// <summary>
         /// 
@@ -139,7 +139,7 @@ namespace G
         /// 
         /// </summary>
         public DependentAgentsItem5(
-            global::G.MCPServerResponseModelDependentAgentDiscriminatorType? type,
+            global::G.GetKnowledgeBaseSummaryFolderResponseModelDependentAgentDiscriminatorType? type,
             global::G.DependentAvailableAgentIdentifier? available,
             global::G.DependentUnknownAgentIdentifier? unknown
             )

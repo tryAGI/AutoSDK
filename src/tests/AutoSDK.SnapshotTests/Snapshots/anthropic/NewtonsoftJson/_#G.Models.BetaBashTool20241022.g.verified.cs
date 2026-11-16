@@ -1,4 +1,4 @@
-﻿//HintName: G.Models.BetaBashTool20241022.g.cs
+//HintName: G.Models.BetaBashTool20241022.g.cs
 
 #nullable enable
 
@@ -13,7 +13,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("cache_control")]
-        public global::G.CacheControlVariant12? CacheControl { get; set; }
+        public global::G.CacheControlVariant18? CacheControl { get; set; }
 
         /// <summary>
         /// 
@@ -46,7 +46,7 @@ namespace G
         /// This is how the tool will be called by the model and in tool_use blocks.
         /// </param>
         public BetaBashTool20241022(
-            global::G.CacheControlVariant12? cacheControl,
+            global::G.CacheControlVariant18? cacheControl,
             global::G.BetaBashTool20241022Type type,
             global::G.BetaBashTool20241022Name name)
         {

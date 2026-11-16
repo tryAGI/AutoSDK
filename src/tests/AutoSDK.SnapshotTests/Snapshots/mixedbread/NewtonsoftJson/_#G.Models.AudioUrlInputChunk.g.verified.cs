@@ -1,4 +1,4 @@
-﻿//HintName: G.Models.AudioUrlInputChunk.g.cs
+//HintName: G.Models.AudioUrlInputChunk.g.cs
 
 #nullable enable
 
@@ -26,7 +26,7 @@ namespace G
         /// metadata of the chunk
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("generated_metadata")]
-        public global::G.GeneratedMetadataVariant1? GeneratedMetadata { get; set; }
+        public global::G.GeneratedMetadataVariant12? GeneratedMetadata { get; set; }
 
         /// <summary>
         /// model used for this chunk
@@ -107,7 +107,7 @@ namespace G
             int chunkIndex,
             int samplingRate,
             string? mimeType,
-            global::G.GeneratedMetadataVariant1? generatedMetadata,
+            global::G.GeneratedMetadataVariant12? generatedMetadata,
             string? model,
             string? type,
             string? transcription,

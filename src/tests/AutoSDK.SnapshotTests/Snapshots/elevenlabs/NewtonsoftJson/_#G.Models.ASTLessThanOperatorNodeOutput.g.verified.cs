@@ -1,4 +1,4 @@
-﻿//HintName: G.Models.ASTLessThanOperatorNodeOutput.g.cs
+//HintName: G.Models.ASTLessThanOperatorNodeOutput.g.cs
 
 #nullable enable
 
@@ -20,13 +20,13 @@ namespace G
         /// Left operand of the binary operator.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("left", Required = global::Newtonsoft.Json.Required.Always)]
-        public global::G.Left8 Left { get; set; } = default!;
+        public global::G.Left4 Left { get; set; } = default!;
 
         /// <summary>
         /// Right operand of the binary operator.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("right", Required = global::Newtonsoft.Json.Required.Always)]
-        public global::G.Right8 Right { get; set; } = default!;
+        public global::G.Right4 Right { get; set; } = default!;
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -47,8 +47,8 @@ namespace G
         /// Default Value: lt_operator
         /// </param>
         public ASTLessThanOperatorNodeOutput(
-            global::G.Left8 left,
-            global::G.Right8 right,
+            global::G.Left4 left,
+            global::G.Right4 right,
             string type = "lt_operator")
         {
             this.Type = type;

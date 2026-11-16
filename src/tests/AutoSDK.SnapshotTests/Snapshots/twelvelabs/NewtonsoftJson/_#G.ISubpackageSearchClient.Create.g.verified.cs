@@ -1,4 +1,4 @@
-﻿//HintName: G.ISubpackageSearchClient.Create.g.cs
+//HintName: G.ISubpackageSearchClient.Create.g.cs
 #nullable enable
 
 namespace G
@@ -35,7 +35,7 @@ namespace G
         global::System.Threading.Tasks.Task<global::G.SearchResults> CreateAsync(
             string xApiKey,
 
-            global::G.CreateRequest7 request,
+            global::G.CreateRequest8 request,
             global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
@@ -68,7 +68,7 @@ namespace G
         global::System.Threading.Tasks.Task<global::G.AutoSDKHttpResponse<global::G.SearchResults>> CreateAsResponseAsync(
             string xApiKey,
 
-            global::G.CreateRequest7 request,
+            global::G.CreateRequest8 request,
             global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>

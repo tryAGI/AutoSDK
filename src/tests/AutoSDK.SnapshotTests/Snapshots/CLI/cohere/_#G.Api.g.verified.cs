@@ -1,4 +1,4 @@
-﻿//HintName: G.Api.g.cs
+//HintName: G.Api.g.cs
 
 #nullable enable
 
@@ -209,8 +209,8 @@ namespace G
                     new global::G.JsonConverters.StreamedChatResponseJsonConverter(),
                     new global::G.JsonConverters.ContentJsonConverter(),
                     new global::G.JsonConverters.SourceJsonConverter(),
-                    new global::G.JsonConverters.ContentVariant2ItemJsonConverter(),
                     new global::G.JsonConverters.ContentVariant2Item2JsonConverter(),
+                    new global::G.JsonConverters.ContentVariant2ItemJsonConverter(),
                     new global::G.JsonConverters.ToolContentJsonConverter(),
                     new global::G.JsonConverters.ChatMessageV2JsonConverter(),
                     new global::G.JsonConverters.ResponseFormatV2JsonConverter(),
@@ -234,8 +234,8 @@ namespace G
                     new global::G.JsonConverters.EmbedContentJsonConverter(),
                     new global::G.JsonConverters.EmbedResponseJsonConverter(),
                     new global::G.JsonConverters.OneOfJsonConverter<string, global::System.Collections.Generic.IList<global::G.Content>>(),
-                    new global::G.JsonConverters.OneOfJsonConverter<string, global::System.Collections.Generic.IList<global::G.ContentVariant2Item>>(),
                     new global::G.JsonConverters.OneOfJsonConverter<string, global::System.Collections.Generic.IList<global::G.ContentVariant2Item2>>(),
+                    new global::G.JsonConverters.OneOfJsonConverter<string, global::System.Collections.Generic.IList<global::G.ContentVariant2Item>>(),
                     new global::G.JsonConverters.OneOfJsonConverter<string, global::System.Collections.Generic.IList<global::G.ToolContent>>(),
                     new global::G.JsonConverters.OneOfJsonConverter<string, global::G.Document>(),
                     new global::G.JsonConverters.OneOfJsonConverter<string, global::G.RerankDocument>(),

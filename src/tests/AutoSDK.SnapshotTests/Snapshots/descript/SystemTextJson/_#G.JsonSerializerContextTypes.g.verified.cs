@@ -219,7 +219,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.Result? Type45 { get; set; }
+        public global::G.Result2? Type45 { get; set; }
         /// <summary>
         /// 
         /// </summary>
@@ -267,7 +267,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.Result2? Type57 { get; set; }
+        public global::G.Result? Type57 { get; set; }
         /// <summary>
         /// 
         /// </summary>

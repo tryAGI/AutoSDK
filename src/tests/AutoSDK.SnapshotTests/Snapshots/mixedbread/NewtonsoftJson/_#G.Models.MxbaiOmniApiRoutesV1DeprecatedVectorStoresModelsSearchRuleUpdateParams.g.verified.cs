@@ -1,4 +1,4 @@
-﻿//HintName: G.Models.MxbaiOmniApiRoutesV1DeprecatedVectorStoresModelsSearchRuleUpdateParams.g.cs
+//HintName: G.Models.MxbaiOmniApiRoutesV1DeprecatedVectorStoresModelsSearchRuleUpdateParams.g.cs
 
 #nullable enable
 
@@ -19,7 +19,7 @@ namespace G
         /// The rules to apply on query matches
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("rules")]
-        public global::System.Collections.Generic.IList<global::G.RulesVariant1Item>? Rules { get; set; }
+        public global::System.Collections.Generic.IList<global::G.RulesVariant1Item2>? Rules { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -38,7 +38,7 @@ namespace G
         /// </param>
         public MxbaiOmniApiRoutesV1DeprecatedVectorStoresModelsSearchRuleUpdateParams(
             string? query,
-            global::System.Collections.Generic.IList<global::G.RulesVariant1Item>? rules)
+            global::System.Collections.Generic.IList<global::G.RulesVariant1Item2>? rules)
         {
             this.Query = query;
             this.Rules = rules;

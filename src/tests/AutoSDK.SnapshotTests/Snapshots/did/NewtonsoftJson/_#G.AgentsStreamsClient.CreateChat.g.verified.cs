@@ -45,12 +45,12 @@ namespace G
         partial void PrepareCreateChatArguments(
             global::System.Net.Http.HttpClient httpClient,
             ref string agentId,
-            global::G.CreateChatRequest2 request);
+            global::G.CreateChatRequest request);
         partial void PrepareCreateChatRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
             string agentId,
-            global::G.CreateChatRequest2 request);
+            global::G.CreateChatRequest request);
         partial void ProcessCreateChatResponse(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage);
@@ -72,7 +72,7 @@ namespace G
         public async global::System.Threading.Tasks.Task<string> CreateChatAsync(
             string agentId,
 
-            global::G.CreateChatRequest2 request,
+            global::G.CreateChatRequest request,
             global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
@@ -98,7 +98,7 @@ namespace G
         public async global::System.Threading.Tasks.Task<global::G.AutoSDKHttpResponse<string>> CreateChatAsResponseAsync(
             string agentId,
 
-            global::G.CreateChatRequest2 request,
+            global::G.CreateChatRequest request,
             global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
@@ -512,7 +512,7 @@ namespace G
             global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
-            var __request = new global::G.CreateChatRequest2
+            var __request = new global::G.CreateChatRequest
             {
                 Persist = persist,
             };

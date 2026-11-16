@@ -1,4 +1,4 @@
-﻿//HintName: G.Models.AlertFilter.g.cs
+//HintName: G.Models.AlertFilter.g.cs
 
 #pragma warning disable CS0618 // Type or member is obsolete
 
@@ -46,7 +46,7 @@ namespace G
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("disconnection_reasons")]
         [global::System.Obsolete("This property marked as deprecated.")]
-        public global::System.Collections.Generic.IList<global::G.DisconnectionReason4>? DisconnectionReasons { get; set; }
+        public global::System.Collections.Generic.IList<global::G.DisconnectionReason>? DisconnectionReasons { get; set; }
 
         /// <summary>
         /// Deprecated: use 'status_code' instead. API error codes to filter on (for API Error Count metrics).

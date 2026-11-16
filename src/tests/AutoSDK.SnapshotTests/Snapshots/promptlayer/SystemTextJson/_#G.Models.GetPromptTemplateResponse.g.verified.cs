@@ -1,4 +1,4 @@
-﻿//HintName: G.Models.GetPromptTemplateResponse.g.cs
+//HintName: G.Models.GetPromptTemplateResponse.g.cs
 
 #nullable enable
 
@@ -27,9 +27,9 @@ namespace G
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("prompt_template")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.PromptTemplateJsonConverter))]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.PromptTemplate3JsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::G.PromptTemplate PromptTemplate { get; set; }
+        public required global::G.PromptTemplate3 PromptTemplate { get; set; }
 
         /// <summary>
         /// 
@@ -79,7 +79,7 @@ namespace G
         public GetPromptTemplateResponse(
             int id,
             string promptName,
-            global::G.PromptTemplate promptTemplate,
+            global::G.PromptTemplate3 promptTemplate,
             global::G.Metadata? metadata,
             string? commitMessage,
             object? llmKwargs,

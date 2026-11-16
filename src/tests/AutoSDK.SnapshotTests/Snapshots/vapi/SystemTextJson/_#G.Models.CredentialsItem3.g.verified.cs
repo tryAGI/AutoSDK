@@ -13,7 +13,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.CreateAssistantDTOCredentialDiscriminatorProvider? Provider { get; }
+        public global::G.AssistantOverridesCredentialDiscriminatorProvider? Provider { get; }
 
         /// <summary>
         /// 
@@ -3378,7 +3378,7 @@ namespace G
         /// 
         /// </summary>
         public CredentialsItem3(
-            global::G.CreateAssistantDTOCredentialDiscriminatorProvider? provider,
+            global::G.AssistantOverridesCredentialDiscriminatorProvider? provider,
             global::G.CreateAnthropicCredentialDTO? anthropic,
             global::G.CreateAnthropicBedrockCredentialDTO? anthropicBedrock,
             global::G.CreateAnyscaleCredentialDTO? anyscale,

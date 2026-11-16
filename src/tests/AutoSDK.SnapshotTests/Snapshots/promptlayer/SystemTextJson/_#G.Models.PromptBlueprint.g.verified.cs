@@ -1,4 +1,4 @@
-﻿//HintName: G.Models.PromptBlueprint.g.cs
+//HintName: G.Models.PromptBlueprint.g.cs
 
 #nullable enable
 
@@ -13,9 +13,9 @@ namespace G
         /// The prompt template. Either a CompletionPrompt (type: 'completion') or ChatPrompt (type: 'chat').
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("prompt_template")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.PromptTemplate5JsonConverter))]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.PromptTemplate2JsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::G.PromptTemplate5 PromptTemplate { get; set; }
+        public required global::G.PromptTemplate2 PromptTemplate { get; set; }
 
         /// <summary>
         /// Default Value: openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464
@@ -93,7 +93,7 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public PromptBlueprint(
-            global::G.PromptTemplate5 promptTemplate,
+            global::G.PromptTemplate2 promptTemplate,
             string? commitMessage,
             global::G.Metadata? metadata,
             string? providerBaseUrlName,

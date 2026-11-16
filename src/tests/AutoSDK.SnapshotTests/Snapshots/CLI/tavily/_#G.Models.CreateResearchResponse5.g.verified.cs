@@ -1,4 +1,4 @@
-﻿//HintName: G.Models.CreateResearchResponse5.g.cs
+//HintName: G.Models.CreateResearchResponse5.g.cs
 
 #nullable enable
 
@@ -13,7 +13,7 @@ namespace G
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("detail")]
-        public global::G.CreateResearchResponseDetail4? Detail { get; set; }
+        public global::G.CreateResearchResponseDetail? Detail { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -29,7 +29,7 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public CreateResearchResponse5(
-            global::G.CreateResearchResponseDetail4? detail)
+            global::G.CreateResearchResponseDetail? detail)
         {
             this.Detail = detail;
         }

@@ -1,4 +1,4 @@
-﻿//HintName: G.Models.ImageContent.g.cs
+//HintName: G.Models.ImageContent.g.cs
 
 #nullable enable
 
@@ -20,7 +20,7 @@ namespace G
         /// The source of the image.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("source", Required = global::Newtonsoft.Json.Required.Always)]
-        public global::G.Source Source { get; set; } = default!;
+        public global::G.Source2 Source { get; set; } = default!;
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -39,7 +39,7 @@ namespace G
         /// Default Value: image
         /// </param>
         public ImageContent(
-            global::G.Source source,
+            global::G.Source2 source,
             string? type)
         {
             this.Type = type;

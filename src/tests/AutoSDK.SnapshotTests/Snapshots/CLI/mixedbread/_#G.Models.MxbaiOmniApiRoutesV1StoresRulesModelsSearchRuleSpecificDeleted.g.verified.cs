@@ -1,4 +1,4 @@
-﻿//HintName: G.Models.MxbaiOmniApiRoutesV1StoresRulesModelsSearchRuleSpecificDeleted.g.cs
+//HintName: G.Models.MxbaiOmniApiRoutesV1StoresRulesModelsSearchRuleSpecificDeleted.g.cs
 
 #nullable enable
 
@@ -27,9 +27,9 @@ namespace G
         /// The specific rule that was deleted
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("deleted_rule")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.DeletedRule2JsonConverter))]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.DeletedRuleJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::G.DeletedRule2 DeletedRule { get; set; }
+        public required global::G.DeletedRule DeletedRule { get; set; }
 
         /// <summary>
         /// Number of rules remaining in the array
@@ -65,7 +65,7 @@ namespace G
 #endif
         public MxbaiOmniApiRoutesV1StoresRulesModelsSearchRuleSpecificDeleted(
             string id,
-            global::G.DeletedRule2 deletedRule,
+            global::G.DeletedRule deletedRule,
             int remainingRules,
             string? @object)
         {

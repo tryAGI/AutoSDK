@@ -1,4 +1,4 @@
-﻿//HintName: G.Models.DeleteStreamResponse5.g.cs
+//HintName: G.Models.DeleteStreamResponse5.g.cs
 
 #nullable enable
 
@@ -13,8 +13,7 @@ namespace G
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("status")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required string Status { get; set; }
+        public string? Status { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -30,9 +29,9 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public DeleteStreamResponse5(
-            string status)
+            string? status)
         {
-            this.Status = status ?? throw new global::System.ArgumentNullException(nameof(status));
+            this.Status = status;
         }
 
         /// <summary>

@@ -1,4 +1,4 @@
-﻿//HintName: G.Models.ToolMessage.g.cs
+//HintName: G.Models.ToolMessage.g.cs
 
 #nullable enable
 
@@ -26,7 +26,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("content", Required = global::Newtonsoft.Json.Required.Always)]
-        public global::System.Collections.Generic.IList<global::G.ContentItem5> Content { get; set; } = default!;
+        public global::System.Collections.Generic.IList<global::G.ContentItem> Content { get; set; } = default!;
 
         /// <summary>
         /// Default Value: tool
@@ -68,7 +68,7 @@ namespace G
         /// </param>
         /// <param name="name"></param>
         public ToolMessage(
-            global::System.Collections.Generic.IList<global::G.ContentItem5> content,
+            global::System.Collections.Generic.IList<global::G.ContentItem> content,
             string toolCallId,
             global::System.Collections.Generic.IList<string>? inputVariables,
             global::G.ToolMessageTemplateFormat? templateFormat,

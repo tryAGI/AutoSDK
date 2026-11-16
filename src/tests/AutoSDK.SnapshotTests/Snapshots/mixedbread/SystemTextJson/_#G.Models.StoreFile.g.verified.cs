@@ -97,7 +97,7 @@ namespace G
         /// chunks
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("chunks")]
-        public global::System.Collections.Generic.IList<global::G.ChunksVariant1Item3>? Chunks { get; set; }
+        public global::System.Collections.Generic.IList<global::G.ChunksVariant1Item4>? Chunks { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -169,7 +169,7 @@ namespace G
             int? usageTokens,
             global::G.StoreFileConfig? config,
             string? @object,
-            global::System.Collections.Generic.IList<global::G.ChunksVariant1Item3>? chunks)
+            global::System.Collections.Generic.IList<global::G.ChunksVariant1Item4>? chunks)
         {
             this.Id = id ?? throw new global::System.ArgumentNullException(nameof(id));
             this.Filename = filename;

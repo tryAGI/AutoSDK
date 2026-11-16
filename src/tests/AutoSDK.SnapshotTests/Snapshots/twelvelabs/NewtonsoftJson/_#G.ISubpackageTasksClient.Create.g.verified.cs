@@ -1,4 +1,4 @@
-﻿//HintName: G.ISubpackageTasksClient.Create.g.cs
+//HintName: G.ISubpackageTasksClient.Create.g.cs
 #nullable enable
 
 namespace G
@@ -34,7 +34,7 @@ namespace G
         global::System.Threading.Tasks.Task<global::G.TasksCreateResponse200> CreateAsync(
             string xApiKey,
 
-            global::G.CreateRequest3 request,
+            global::G.CreateRequest6 request,
             global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
@@ -66,7 +66,7 @@ namespace G
         global::System.Threading.Tasks.Task<global::G.AutoSDKHttpResponse<global::G.TasksCreateResponse200>> CreateAsResponseAsync(
             string xApiKey,
 
-            global::G.CreateRequest3 request,
+            global::G.CreateRequest6 request,
             global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>

@@ -1,4 +1,4 @@
-﻿//HintName: G.Models.ClientSideAccessTokensListClientSideAccessTokensResponseTokenPolicy.g.cs
+//HintName: G.Models.ClientSideAccessTokensListClientSideAccessTokensResponseTokenPolicy.g.cs
 
 #nullable enable
 
@@ -21,7 +21,7 @@ namespace G
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("data")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::System.Collections.Generic.IList<global::G.DataItem2> Data { get; set; }
+        public required global::System.Collections.Generic.IList<global::G.DataItem> Data { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -38,7 +38,7 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public ClientSideAccessTokensListClientSideAccessTokensResponseTokenPolicy(
-            global::System.Collections.Generic.IList<global::G.DataItem2> data,
+            global::System.Collections.Generic.IList<global::G.DataItem> data,
             global::G.ClientSideAccessTokensListClientSideAccessTokensResponseTokenPolicyVersion version)
         {
             this.Version = version;

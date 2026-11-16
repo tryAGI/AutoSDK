@@ -1,4 +1,4 @@
-﻿//HintName: G.Models.InternalTemplateAgentCreate.g.cs
+//HintName: G.Models.InternalTemplateAgentCreate.g.cs
 
 #pragma warning disable CS0618 // Type or member is obsolete
 
@@ -58,7 +58,7 @@ namespace G
         /// The tool rules governing the agent.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("tool_rules")]
-        public global::System.Collections.Generic.IList<global::G.ToolRulesVariant1Item3>? ToolRules { get; set; }
+        public global::System.Collections.Generic.IList<global::G.ToolRulesVariant1Item4>? ToolRules { get; set; }
 
         /// <summary>
         /// The tags associated with the agent.
@@ -155,7 +155,7 @@ namespace G
         /// The model settings for the agent.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("model_settings")]
-        public global::G.ModelSettingsVariant17? ModelSettings { get; set; }
+        public global::G.ModelSettingsVariant19? ModelSettings { get; set; }
 
         /// <summary>
         /// The compaction settings configuration used for compaction.
@@ -293,7 +293,7 @@ namespace G
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("response_format")]
         [global::System.Obsolete("This property marked as deprecated.")]
-        public global::G.ResponseFormatVariant18? ResponseFormat { get; set; }
+        public global::G.ResponseFormatVariant114? ResponseFormat { get; set; }
 
         /// <summary>
         /// The timezone of the agent (IANA format).
@@ -463,7 +463,7 @@ namespace G
             global::System.Collections.Generic.IList<string>? toolIds,
             global::System.Collections.Generic.IList<string>? folderIds,
             global::System.Collections.Generic.IList<string>? blockIds,
-            global::System.Collections.Generic.IList<global::G.ToolRulesVariant1Item3>? toolRules,
+            global::System.Collections.Generic.IList<global::G.ToolRulesVariant1Item4>? toolRules,
             global::System.Collections.Generic.IList<string>? tags,
             string? system,
             global::G.AgentType? agentType,
@@ -475,7 +475,7 @@ namespace G
             object? metadata,
             string? model,
             string? embedding,
-            global::G.ModelSettingsVariant17? modelSettings,
+            global::G.ModelSettingsVariant19? modelSettings,
             global::G.CompactionSettingsInput? compactionSettings,
             int? contextWindowLimit,
             global::System.Collections.Generic.Dictionary<string, string>? secrets,

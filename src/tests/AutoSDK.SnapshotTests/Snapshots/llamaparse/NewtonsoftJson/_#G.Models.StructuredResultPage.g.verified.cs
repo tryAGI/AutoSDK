@@ -1,4 +1,4 @@
-﻿//HintName: G.Models.StructuredResultPage.g.cs
+//HintName: G.Models.StructuredResultPage.g.cs
 
 #nullable enable
 
@@ -19,7 +19,7 @@ namespace G
         /// List of structured items on the page
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("items", Required = global::Newtonsoft.Json.Required.Always)]
-        public global::System.Collections.Generic.IList<global::G.ItemsItem4> Items { get; set; } = default!;
+        public global::System.Collections.Generic.IList<global::G.ItemsItem3> Items { get; set; } = default!;
 
         /// <summary>
         /// Width of the page in points
@@ -66,7 +66,7 @@ namespace G
         /// </param>
         public StructuredResultPage(
             int pageNumber,
-            global::System.Collections.Generic.IList<global::G.ItemsItem4> items,
+            global::System.Collections.Generic.IList<global::G.ItemsItem3> items,
             double pageWidth,
             double pageHeight,
             bool success = true)

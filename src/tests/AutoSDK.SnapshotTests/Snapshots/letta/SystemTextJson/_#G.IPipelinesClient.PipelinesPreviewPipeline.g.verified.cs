@@ -1,4 +1,4 @@
-﻿//HintName: G.IPipelinesClient.PipelinesPreviewPipeline.g.cs
+//HintName: G.IPipelinesClient.PipelinesPreviewPipeline.g.cs
 #nullable enable
 
 namespace G
@@ -44,7 +44,7 @@ namespace G
         global::System.Threading.Tasks.Task<global::G.PipelinesPreviewPipelineResponse> PipelinesPreviewPipelineAsync(
             global::G.PipelinesPreviewPipelineRequestIntegrationType integrationType,
             string integrationId,
-            global::G.ProducerConfig3 producerConfig,
+            global::G.ProducerConfig2 producerConfig,
             global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }

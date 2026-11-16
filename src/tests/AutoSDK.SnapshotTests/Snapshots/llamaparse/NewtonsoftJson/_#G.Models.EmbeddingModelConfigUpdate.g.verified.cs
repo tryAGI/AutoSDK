@@ -1,4 +1,4 @@
-﻿//HintName: G.Models.EmbeddingModelConfigUpdate.g.cs
+//HintName: G.Models.EmbeddingModelConfigUpdate.g.cs
 
 #nullable enable
 
@@ -19,7 +19,7 @@ namespace G
         /// The embedding configuration for the embedding model config.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("embedding_config")]
-        public global::G.EmbeddingConfigVariant1? EmbeddingConfig { get; set; }
+        public global::G.EmbeddingConfigVariant13? EmbeddingConfig { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -38,7 +38,7 @@ namespace G
         /// </param>
         public EmbeddingModelConfigUpdate(
             string? name,
-            global::G.EmbeddingConfigVariant1? embeddingConfig)
+            global::G.EmbeddingConfigVariant13? embeddingConfig)
         {
             this.Name = name;
             this.EmbeddingConfig = embeddingConfig;

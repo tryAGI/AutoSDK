@@ -1,4 +1,4 @@
-﻿//HintName: G.Models.Create1Response3.g.cs
+//HintName: G.Models.Create1Response3.g.cs
 
 #nullable enable
 
@@ -10,30 +10,33 @@ namespace G
     public sealed partial class Create1Response3
     {
         /// <summary>
-        /// 
+        /// The ID of the avatar
         /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("kind")]
+        [global::System.Text.Json.Serialization.JsonPropertyName("id")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required string Kind { get; set; }
+        public required string Id { get; set; }
 
         /// <summary>
-        /// 
+        /// The status of the avatar
         /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("description")]
+        [global::System.Text.Json.Serialization.JsonPropertyName("status")]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.Create1ResponseStatusJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required string Description { get; set; }
+        public required global::G.Create1ResponseStatus Status { get; set; }
 
         /// <summary>
-        /// 
+        /// An identifier of this avatar
         /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("details")]
-        public object? Details { get; set; }
+        [global::System.Text.Json.Serialization.JsonPropertyName("object")]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.Create1ResponseObjectJsonConverter))]
+        public global::G.Create1ResponseObject Object { get; set; }
 
         /// <summary>
-        /// 
+        /// Avatar creation time as iso-8601 string
         /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("internal")]
-        public string? Internal { get; set; }
+        [global::System.Text.Json.Serialization.JsonPropertyName("created_at")]
+        [global::System.Text.Json.Serialization.JsonRequired]
+        public required string CreatedAt { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -44,23 +47,31 @@ namespace G
         /// <summary>
         /// Initializes a new instance of the <see cref="Create1Response3" /> class.
         /// </summary>
-        /// <param name="kind"></param>
-        /// <param name="description"></param>
-        /// <param name="details"></param>
-        /// <param name="internal"></param>
+        /// <param name="id">
+        /// The ID of the avatar
+        /// </param>
+        /// <param name="status">
+        /// The status of the avatar
+        /// </param>
+        /// <param name="createdAt">
+        /// Avatar creation time as iso-8601 string
+        /// </param>
+        /// <param name="object">
+        /// An identifier of this avatar
+        /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public Create1Response3(
-            string kind,
-            string description,
-            object? details,
-            string? @internal)
+            string id,
+            global::G.Create1ResponseStatus status,
+            string createdAt,
+            global::G.Create1ResponseObject @object)
         {
-            this.Kind = kind ?? throw new global::System.ArgumentNullException(nameof(kind));
-            this.Description = description ?? throw new global::System.ArgumentNullException(nameof(description));
-            this.Details = details;
-            this.Internal = @internal;
+            this.Id = id ?? throw new global::System.ArgumentNullException(nameof(id));
+            this.Status = status;
+            this.Object = @object;
+            this.CreatedAt = createdAt ?? throw new global::System.ArgumentNullException(nameof(createdAt));
         }
 
         /// <summary>

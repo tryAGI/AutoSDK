@@ -151,7 +151,10 @@ public static class Data
         var anyOfBuilder = ImmutableArray.CreateBuilder<AnyOfData>(anyOfCount);
         foreach (var schema in filteredSchemas)
         {
+            // A structural duplicate is the same case as a reference: another context already
+            // emits this model, and this one only needs to resolve to its name.
             if (schema.IsReference ||
+                schema.IsStructuralDuplicate ||
                 IsSuppressedLegacyPolymorphicSchema(schema, suppressedLegacyPolymorphicSchemas))
             {
                 continue;
@@ -178,9 +181,12 @@ public static class Data
             }
         }
 
-        var classes = classesBuilder.MoveToImmutable();
-        var enums = enumsBuilder.MoveToImmutable();
-        var anyOfDatas = anyOfBuilder.MoveToImmutable();
+        // ToImmutable, not MoveToImmutable: the builders are pre-sized from a count taken before
+        // structural duplicates are filtered out above, so fewer items are added than reserved and
+        // MoveToImmutable requires Count to equal Capacity exactly.
+        var classes = classesBuilder.ToImmutable();
+        var enums = enumsBuilder.ToImmutable();
+        var anyOfDatas = anyOfBuilder.ToImmutable();
         schemaModelsTime.Stop();
         collectSchemasTime.Stop();
 #if NET

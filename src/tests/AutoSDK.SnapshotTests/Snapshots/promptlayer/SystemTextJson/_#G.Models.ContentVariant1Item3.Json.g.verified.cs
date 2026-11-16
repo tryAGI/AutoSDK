@@ -1,4 +1,4 @@
-﻿//HintName: G.Models.ContentVariant1Item3.Json.g.cs
+//HintName: G.Models.ContentVariant1Item3.Json.g.cs
 #nullable enable
 
 namespace G

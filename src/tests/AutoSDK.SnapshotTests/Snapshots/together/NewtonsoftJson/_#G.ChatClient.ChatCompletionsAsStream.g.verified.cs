@@ -722,7 +722,7 @@ namespace G
             global::G.OneOf<global::G.ChatCompletionRequestFunctionCallEnum?, global::G.ChatCompletionRequestFunctionCallEnum2>? functionCall = default,
             global::G.ChatCompletionRequestResponseFormat? responseFormat = default,
             global::System.Collections.Generic.IList<global::G.ToolsPart>? tools = default,
-            global::G.OneOf<string, global::G.ToolChoice2>? toolChoice = default,
+            global::G.OneOf<string, global::G.ToolChoice>? toolChoice = default,
             string? safetyModel = default,
             global::G.AutoSDKRequestOptions? requestOptions = default,
             [global::System.Runtime.CompilerServices.EnumeratorCancellation] global::System.Threading.CancellationToken cancellationToken = default)

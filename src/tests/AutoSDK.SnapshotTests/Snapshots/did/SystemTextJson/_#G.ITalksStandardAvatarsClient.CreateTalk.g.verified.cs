@@ -1,4 +1,4 @@
-﻿//HintName: G.ITalksStandardAvatarsClient.CreateTalk.g.cs
+//HintName: G.ITalksStandardAvatarsClient.CreateTalk.g.cs
 #nullable enable
 
 namespace G
@@ -15,7 +15,7 @@ namespace G
         /// <exception cref="global::G.ApiException"></exception>
         global::System.Threading.Tasks.Task<global::G.CreateTalkResponse> CreateTalkAsync(
 
-            global::G.CreateTalkRequest2 request,
+            global::G.CreateTalkRequest request,
             string? xApiKeyExternal = default,
             global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
@@ -29,7 +29,7 @@ namespace G
         /// <exception cref="global::G.ApiException"></exception>
         global::System.Threading.Tasks.Task<global::G.AutoSDKHttpResponse<global::G.CreateTalkResponse>> CreateTalkAsResponseAsync(
 
-            global::G.CreateTalkRequest2 request,
+            global::G.CreateTalkRequest request,
             string? xApiKeyExternal = default,
             global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
@@ -66,10 +66,10 @@ namespace G
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         global::System.Threading.Tasks.Task<global::G.CreateTalkResponse> CreateTalkAsync(
-            global::G.AnyOf<global::G.CreateTalkRequestScriptVariant12, global::G.CreateTalkRequestScriptVariant22> script,
+            global::G.AnyOf<global::G.CreateTalkRequestScriptVariant1, global::G.CreateTalkRequestScriptVariant2> script,
             string? xApiKeyExternal = default,
             string? sourceUrl = default,
-            global::G.CreateTalkRequestConfig2? config = default,
+            global::G.CreateTalkRequestConfig? config = default,
             string? userData = default,
             string? name = default,
             string? webhook = default,

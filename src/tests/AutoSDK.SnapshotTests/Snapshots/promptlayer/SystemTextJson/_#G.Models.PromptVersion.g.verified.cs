@@ -1,4 +1,4 @@
-﻿//HintName: G.Models.PromptVersion.g.cs
+//HintName: G.Models.PromptVersion.g.cs
 
 #nullable enable
 
@@ -13,9 +13,9 @@ namespace G
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("prompt_template")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.PromptTemplate3JsonConverter))]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.PromptTemplateJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::G.PromptTemplate3 PromptTemplate { get; set; }
+        public required global::G.PromptTemplate PromptTemplate { get; set; }
 
         /// <summary>
         /// 
@@ -45,7 +45,7 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public PromptVersion(
-            global::G.PromptTemplate3 promptTemplate,
+            global::G.PromptTemplate promptTemplate,
             string? commitMessage,
             global::G.Metadata? metadata)
         {

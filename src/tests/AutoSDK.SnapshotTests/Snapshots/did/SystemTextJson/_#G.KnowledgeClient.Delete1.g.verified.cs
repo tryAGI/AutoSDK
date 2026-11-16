@@ -66,7 +66,7 @@ namespace G
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::G.ApiException"></exception>
-        public async global::System.Threading.Tasks.Task<global::G.Delete1Response4> Delete1Async(
+        public async global::System.Threading.Tasks.Task<global::G.Delete1Response2> Delete1Async(
             string knowledgeId,
             global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default)
@@ -87,7 +87,7 @@ namespace G
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::G.ApiException"></exception>
-        public async global::System.Threading.Tasks.Task<global::G.AutoSDKHttpResponse<global::G.Delete1Response4>> Delete1AsResponseAsync(
+        public async global::System.Threading.Tasks.Task<global::G.AutoSDKHttpResponse<global::G.Delete1Response2>> Delete1AsResponseAsync(
             string knowledgeId,
             global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default)
@@ -350,19 +350,19 @@ namespace G
                             {
                                 string? __content_401 = null;
                                 global::System.Exception? __exception_401 = null;
-                                global::G.Delete1Response5? __value_401 = null;
+                                global::G.Delete1Response? __value_401 = null;
                                 try
                                 {
                                     if (__effectiveReadResponseAsString)
                                     {
                                         __content_401 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
-                                        __value_401 = global::G.Delete1Response5.FromJson(__content_401, JsonSerializerOptions);
+                                        __value_401 = global::G.Delete1Response.FromJson(__content_401, JsonSerializerOptions);
                                     }
                                     else
                                     {
                                         __content_401 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
 
-                                        __value_401 = global::G.Delete1Response5.FromJson(__content_401, JsonSerializerOptions);
+                                        __value_401 = global::G.Delete1Response.FromJson(__content_401, JsonSerializerOptions);
                                     }
                                 }
                                 catch (global::System.Exception __ex)
@@ -371,7 +371,7 @@ namespace G
                                 }
 
 
-                                throw global::G.ApiException<global::G.Delete1Response5>.Create(
+                                throw global::G.ApiException<global::G.Delete1Response>.Create(
                                     statusCode: __response.StatusCode,
                                     message: __content_401 ?? __response.ReasonPhrase ?? string.Empty,
                                     innerException: __exception_401,
@@ -404,9 +404,9 @@ namespace G
                                 {
                                     __response.EnsureSuccessStatusCode();
 
-                                    var __value = global::G.Delete1Response4.FromJson(__content, JsonSerializerOptions) ??
+                                    var __value = global::G.Delete1Response2.FromJson(__content, JsonSerializerOptions) ??
                                         throw new global::System.InvalidOperationException($"Response deserialization failed for \"{__content}\" ");
-                                    return new global::G.AutoSDKHttpResponse<global::G.Delete1Response4>(
+                                    return new global::G.AutoSDKHttpResponse<global::G.Delete1Response2>(
                                         statusCode: __response.StatusCode,
                                         headers: global::G.AutoSDKHttpResponse.CreateHeaders(__response),
                                         requestUri: __response.RequestMessage?.RequestUri,
@@ -436,9 +436,9 @@ namespace G
                 #endif
                                     ).ConfigureAwait(false);
 
-                                    var __value = await global::G.Delete1Response4.FromJsonStreamAsync(__content, JsonSerializerOptions).ConfigureAwait(false) ??
+                                    var __value = await global::G.Delete1Response2.FromJsonStreamAsync(__content, JsonSerializerOptions).ConfigureAwait(false) ??
                                         throw new global::System.InvalidOperationException("Response deserialization failed.");
-                                    return new global::G.AutoSDKHttpResponse<global::G.Delete1Response4>(
+                                    return new global::G.AutoSDKHttpResponse<global::G.Delete1Response2>(
                                         statusCode: __response.StatusCode,
                                         headers: global::G.AutoSDKHttpResponse.CreateHeaders(__response),
                                         requestUri: __response.RequestMessage?.RequestUri,

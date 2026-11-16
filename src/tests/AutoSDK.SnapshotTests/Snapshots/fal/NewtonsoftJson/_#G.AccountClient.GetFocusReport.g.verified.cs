@@ -533,19 +533,19 @@ namespace G
                             {
                                 string? __content_401 = null;
                                 global::System.Exception? __exception_401 = null;
-                                global::G.GetFocusReportResponse2? __value_401 = null;
+                                global::G.GetFocusReportResponse? __value_401 = null;
                                 try
                                 {
                                     if (__effectiveReadResponseAsString)
                                     {
                                         __content_401 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
-                                        __value_401 = global::G.GetFocusReportResponse2.FromJson(__content_401, JsonSerializerOptions);
+                                        __value_401 = global::G.GetFocusReportResponse.FromJson(__content_401, JsonSerializerOptions);
                                     }
                                     else
                                     {
                                         __content_401 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
 
-                                        __value_401 = global::G.GetFocusReportResponse2.FromJson(__content_401, JsonSerializerOptions);
+                                        __value_401 = global::G.GetFocusReportResponse.FromJson(__content_401, JsonSerializerOptions);
                                     }
                                 }
                                 catch (global::System.Exception __ex)
@@ -554,7 +554,7 @@ namespace G
                                 }
 
 
-                                throw global::G.ApiException<global::G.GetFocusReportResponse2>.Create(
+                                throw global::G.ApiException<global::G.GetFocusReportResponse>.Create(
                                     statusCode: __response.StatusCode,
                                     message: __content_401 ?? __response.ReasonPhrase ?? string.Empty,
                                     innerException: __exception_401,
@@ -570,19 +570,19 @@ namespace G
                             {
                                 string? __content_403 = null;
                                 global::System.Exception? __exception_403 = null;
-                                global::G.GetFocusReportResponse3? __value_403 = null;
+                                global::G.GetFocusReportResponse? __value_403 = null;
                                 try
                                 {
                                     if (__effectiveReadResponseAsString)
                                     {
                                         __content_403 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
-                                        __value_403 = global::G.GetFocusReportResponse3.FromJson(__content_403, JsonSerializerOptions);
+                                        __value_403 = global::G.GetFocusReportResponse.FromJson(__content_403, JsonSerializerOptions);
                                     }
                                     else
                                     {
                                         __content_403 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
 
-                                        __value_403 = global::G.GetFocusReportResponse3.FromJson(__content_403, JsonSerializerOptions);
+                                        __value_403 = global::G.GetFocusReportResponse.FromJson(__content_403, JsonSerializerOptions);
                                     }
                                 }
                                 catch (global::System.Exception __ex)
@@ -591,7 +591,7 @@ namespace G
                                 }
 
 
-                                throw global::G.ApiException<global::G.GetFocusReportResponse3>.Create(
+                                throw global::G.ApiException<global::G.GetFocusReportResponse>.Create(
                                     statusCode: __response.StatusCode,
                                     message: __content_403 ?? __response.ReasonPhrase ?? string.Empty,
                                     innerException: __exception_403,
@@ -607,19 +607,19 @@ namespace G
                             {
                                 string? __content_429 = null;
                                 global::System.Exception? __exception_429 = null;
-                                global::G.GetFocusReportResponse4? __value_429 = null;
+                                global::G.GetFocusReportResponse? __value_429 = null;
                                 try
                                 {
                                     if (__effectiveReadResponseAsString)
                                     {
                                         __content_429 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
-                                        __value_429 = global::G.GetFocusReportResponse4.FromJson(__content_429, JsonSerializerOptions);
+                                        __value_429 = global::G.GetFocusReportResponse.FromJson(__content_429, JsonSerializerOptions);
                                     }
                                     else
                                     {
                                         __content_429 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
 
-                                        __value_429 = global::G.GetFocusReportResponse4.FromJson(__content_429, JsonSerializerOptions);
+                                        __value_429 = global::G.GetFocusReportResponse.FromJson(__content_429, JsonSerializerOptions);
                                     }
                                 }
                                 catch (global::System.Exception __ex)
@@ -628,7 +628,7 @@ namespace G
                                 }
 
 
-                                throw global::G.ApiException<global::G.GetFocusReportResponse4>.Create(
+                                throw global::G.ApiException<global::G.GetFocusReportResponse>.Create(
                                     statusCode: __response.StatusCode,
                                     message: __content_429 ?? __response.ReasonPhrase ?? string.Empty,
                                     innerException: __exception_429,
@@ -644,19 +644,19 @@ namespace G
                             {
                                 string? __content_500 = null;
                                 global::System.Exception? __exception_500 = null;
-                                global::G.GetFocusReportResponse5? __value_500 = null;
+                                global::G.GetFocusReportResponse? __value_500 = null;
                                 try
                                 {
                                     if (__effectiveReadResponseAsString)
                                     {
                                         __content_500 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
-                                        __value_500 = global::G.GetFocusReportResponse5.FromJson(__content_500, JsonSerializerOptions);
+                                        __value_500 = global::G.GetFocusReportResponse.FromJson(__content_500, JsonSerializerOptions);
                                     }
                                     else
                                     {
                                         __content_500 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
 
-                                        __value_500 = global::G.GetFocusReportResponse5.FromJson(__content_500, JsonSerializerOptions);
+                                        __value_500 = global::G.GetFocusReportResponse.FromJson(__content_500, JsonSerializerOptions);
                                     }
                                 }
                                 catch (global::System.Exception __ex)
@@ -665,7 +665,7 @@ namespace G
                                 }
 
 
-                                throw global::G.ApiException<global::G.GetFocusReportResponse5>.Create(
+                                throw global::G.ApiException<global::G.GetFocusReportResponse>.Create(
                                     statusCode: __response.StatusCode,
                                     message: __content_500 ?? __response.ReasonPhrase ?? string.Empty,
                                     innerException: __exception_500,

@@ -1,4 +1,4 @@
-﻿//HintName: G.Models.ContentBlockDeltaEvent.g.cs
+//HintName: G.Models.ContentBlockDeltaEvent.g.cs
 
 #nullable enable
 
@@ -27,7 +27,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("delta", Required = global::Newtonsoft.Json.Required.Always)]
-        public global::G.Delta2 Delta { get; set; } = default!;
+        public global::G.Delta Delta { get; set; } = default!;
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -45,7 +45,7 @@ namespace G
         /// </param>
         public ContentBlockDeltaEvent(
             int index,
-            global::G.Delta2 delta,
+            global::G.Delta delta,
             global::G.ContentBlockDeltaEventType type = global::G.ContentBlockDeltaEventType.ContentBlockDelta)
         {
             this.Type = type;

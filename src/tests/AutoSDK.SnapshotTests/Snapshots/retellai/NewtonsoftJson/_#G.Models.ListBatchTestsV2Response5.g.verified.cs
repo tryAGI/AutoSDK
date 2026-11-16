@@ -1,4 +1,4 @@
-﻿//HintName: G.Models.ListBatchTestsV2Response5.g.cs
+//HintName: G.Models.ListBatchTestsV2Response5.g.cs
 
 #nullable enable
 
@@ -13,8 +13,8 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("status")]
-        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.ListBatchTestsV2ResponseStatus3JsonConverter))]
-        public global::G.ListBatchTestsV2ResponseStatus3? Status { get; set; }
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.ListBatchTestsV2ResponseStatusJsonConverter))]
+        public global::G.ListBatchTestsV2ResponseStatus? Status { get; set; }
 
         /// <summary>
         /// Example: Account rate limited, please throttle your requests.
@@ -37,7 +37,7 @@ namespace G
         /// Example: Account rate limited, please throttle your requests.
         /// </param>
         public ListBatchTestsV2Response5(
-            global::G.ListBatchTestsV2ResponseStatus3? status,
+            global::G.ListBatchTestsV2ResponseStatus? status,
             string? message)
         {
             this.Status = status;

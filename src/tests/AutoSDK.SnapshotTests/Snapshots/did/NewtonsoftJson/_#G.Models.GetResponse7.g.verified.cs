@@ -1,4 +1,4 @@
-﻿//HintName: G.Models.GetResponse7.g.cs
+//HintName: G.Models.GetResponse7.g.cs
 
 #nullable enable
 
@@ -12,57 +12,26 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("id", Required = global::Newtonsoft.Json.Required.Always)]
-        public string Id { get; set; } = default!;
+        [global::Newtonsoft.Json.JsonProperty("kind", Required = global::Newtonsoft.Json.Required.Always)]
+        public string Kind { get; set; } = default!;
 
         /// <summary>
         /// 
         /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("created_at", Required = global::Newtonsoft.Json.Required.Always)]
-        public string CreatedAt { get; set; } = default!;
+        [global::Newtonsoft.Json.JsonProperty("description", Required = global::Newtonsoft.Json.Required.Always)]
+        public string Description { get; set; } = default!;
 
         /// <summary>
         /// 
         /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("name", Required = global::Newtonsoft.Json.Required.Always)]
-        public string Name { get; set; } = default!;
+        [global::Newtonsoft.Json.JsonProperty("details")]
+        public object? Details { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("modified_at", Required = global::Newtonsoft.Json.Required.Always)]
-        public string ModifiedAt { get; set; } = default!;
-
-        /// <summary>
-        /// 
-        /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("created_by", Required = global::Newtonsoft.Json.Required.Always)]
-        public string CreatedBy { get; set; } = default!;
-
-        /// <summary>
-        /// 
-        /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("thumbnail_url", Required = global::Newtonsoft.Json.Required.Always)]
-        public string ThumbnailUrl { get; set; } = default!;
-
-        /// <summary>
-        /// 
-        /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("video_url", Required = global::Newtonsoft.Json.Required.Always)]
-        public string VideoUrl { get; set; } = default!;
-
-        /// <summary>
-        /// 
-        /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("status", Required = global::Newtonsoft.Json.Required.Always)]
-        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.GetResponseStatus2JsonConverter))]
-        public global::G.GetResponseStatus2 Status { get; set; } = default!;
-
-        /// <summary>
-        /// 
-        /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("error")]
-        public global::G.GetResponseError2? Error { get; set; }
+        [global::Newtonsoft.Json.JsonProperty("internal")]
+        public string? Internal { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -73,35 +42,20 @@ namespace G
         /// <summary>
         /// Initializes a new instance of the <see cref="GetResponse7" /> class.
         /// </summary>
-        /// <param name="id"></param>
-        /// <param name="createdAt"></param>
-        /// <param name="name"></param>
-        /// <param name="modifiedAt"></param>
-        /// <param name="createdBy"></param>
-        /// <param name="thumbnailUrl"></param>
-        /// <param name="videoUrl"></param>
-        /// <param name="status"></param>
-        /// <param name="error"></param>
+        /// <param name="kind"></param>
+        /// <param name="description"></param>
+        /// <param name="details"></param>
+        /// <param name="internal"></param>
         public GetResponse7(
-            string id,
-            string createdAt,
-            string name,
-            string modifiedAt,
-            string createdBy,
-            string thumbnailUrl,
-            string videoUrl,
-            global::G.GetResponseStatus2 status,
-            global::G.GetResponseError2? error)
+            string kind,
+            string description,
+            object? details,
+            string? @internal)
         {
-            this.Id = id ?? throw new global::System.ArgumentNullException(nameof(id));
-            this.CreatedAt = createdAt ?? throw new global::System.ArgumentNullException(nameof(createdAt));
-            this.Name = name ?? throw new global::System.ArgumentNullException(nameof(name));
-            this.ModifiedAt = modifiedAt ?? throw new global::System.ArgumentNullException(nameof(modifiedAt));
-            this.CreatedBy = createdBy ?? throw new global::System.ArgumentNullException(nameof(createdBy));
-            this.ThumbnailUrl = thumbnailUrl ?? throw new global::System.ArgumentNullException(nameof(thumbnailUrl));
-            this.VideoUrl = videoUrl ?? throw new global::System.ArgumentNullException(nameof(videoUrl));
-            this.Status = status;
-            this.Error = error;
+            this.Kind = kind ?? throw new global::System.ArgumentNullException(nameof(kind));
+            this.Description = description ?? throw new global::System.ArgumentNullException(nameof(description));
+            this.Details = details;
+            this.Internal = @internal;
         }
 
         /// <summary>

@@ -1,4 +1,4 @@
-﻿//HintName: G.Models.FinetuneListEvents.g.cs
+//HintName: G.Models.FinetuneListEvents.g.cs
 
 #nullable enable
 
@@ -13,7 +13,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("data", Required = global::Newtonsoft.Json.Required.Always)]
-        public global::System.Collections.Generic.IList<global::G.FineTuneEvent2> Data { get; set; } = default!;
+        public global::System.Collections.Generic.IList<global::G.FineTuneEvent> Data { get; set; } = default!;
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -26,7 +26,7 @@ namespace G
         /// </summary>
         /// <param name="data"></param>
         public FinetuneListEvents(
-            global::System.Collections.Generic.IList<global::G.FineTuneEvent2> data)
+            global::System.Collections.Generic.IList<global::G.FineTuneEvent> data)
         {
             this.Data = data ?? throw new global::System.ArgumentNullException(nameof(data));
         }

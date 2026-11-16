@@ -366,19 +366,19 @@ namespace G
                             {
                                 string? __content_409 = null;
                                 global::System.Exception? __exception_409 = null;
-                                global::G.PullsMergeResponse2? __value_409 = null;
+                                global::G.PullsMergeResponse? __value_409 = null;
                                 try
                                 {
                                     if (__effectiveReadResponseAsString)
                                     {
                                         __content_409 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
-                                        __value_409 = global::G.PullsMergeResponse2.FromJson(__content_409, JsonSerializerOptions);
+                                        __value_409 = global::G.PullsMergeResponse.FromJson(__content_409, JsonSerializerOptions);
                                     }
                                     else
                                     {
                                         __content_409 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
 
-                                        __value_409 = global::G.PullsMergeResponse2.FromJson(__content_409, JsonSerializerOptions);
+                                        __value_409 = global::G.PullsMergeResponse.FromJson(__content_409, JsonSerializerOptions);
                                     }
                                 }
                                 catch (global::System.Exception __ex)
@@ -387,7 +387,7 @@ namespace G
                                 }
 
 
-                                throw global::G.ApiException<global::G.PullsMergeResponse2>.Create(
+                                throw global::G.ApiException<global::G.PullsMergeResponse>.Create(
                                     statusCode: __response.StatusCode,
                                     message: __content_409 ?? __response.ReasonPhrase ?? string.Empty,
                                     innerException: __exception_409,

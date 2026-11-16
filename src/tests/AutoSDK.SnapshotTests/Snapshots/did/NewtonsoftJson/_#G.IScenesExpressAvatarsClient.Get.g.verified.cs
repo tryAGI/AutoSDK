@@ -1,4 +1,4 @@
-﻿//HintName: G.IScenesExpressAvatarsClient.Get.g.cs
+//HintName: G.IScenesExpressAvatarsClient.Get.g.cs
 #nullable enable
 
 namespace G
@@ -12,7 +12,7 @@ namespace G
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::G.ApiException"></exception>
-        global::System.Threading.Tasks.Task<global::G.GetResponse> GetAsync(
+        global::System.Threading.Tasks.Task<global::G.GetResponse6> GetAsync(
             string id,
             global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
@@ -23,7 +23,7 @@ namespace G
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::G.ApiException"></exception>
-        global::System.Threading.Tasks.Task<global::G.AutoSDKHttpResponse<global::G.GetResponse>> GetAsResponseAsync(
+        global::System.Threading.Tasks.Task<global::G.AutoSDKHttpResponse<global::G.GetResponse6>> GetAsResponseAsync(
             string id,
             global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);

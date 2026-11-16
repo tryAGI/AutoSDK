@@ -1,4 +1,4 @@
-﻿//HintName: G.Models.ExperimentDatasetRow.g.cs
+//HintName: G.Models.ExperimentDatasetRow.g.cs
 
 #nullable enable
 
@@ -42,7 +42,7 @@ namespace G
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("scores")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::System.Collections.Generic.Dictionary<string, global::G.Score2> Scores { get; set; }
+        public required global::System.Collections.Generic.Dictionary<string, global::G.Score> Scores { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -68,7 +68,7 @@ namespace G
             global::G.ExperimentDatasetRowInputRecord inputRecord,
             double rowIndex,
             string columnId,
-            global::System.Collections.Generic.Dictionary<string, global::G.Score2> scores)
+            global::System.Collections.Generic.Dictionary<string, global::G.Score> scores)
         {
             this.RowId = rowId ?? throw new global::System.ArgumentNullException(nameof(rowId));
             this.InputRecord = inputRecord ?? throw new global::System.ArgumentNullException(nameof(inputRecord));

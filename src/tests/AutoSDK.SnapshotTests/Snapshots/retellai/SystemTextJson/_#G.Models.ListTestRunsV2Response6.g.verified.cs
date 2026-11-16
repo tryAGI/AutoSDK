@@ -1,4 +1,4 @@
-﻿//HintName: G.Models.ListTestRunsV2Response6.g.cs
+//HintName: G.Models.ListTestRunsV2Response6.g.cs
 
 #nullable enable
 
@@ -13,8 +13,8 @@ namespace G
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("status")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.ListTestRunsV2ResponseStatus4JsonConverter))]
-        public global::G.ListTestRunsV2ResponseStatus4? Status { get; set; }
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.ListTestRunsV2ResponseStatusJsonConverter))]
+        public global::G.ListTestRunsV2ResponseStatus? Status { get; set; }
 
         /// <summary>
         /// Example: Account rate limited, please throttle your requests.
@@ -40,7 +40,7 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public ListTestRunsV2Response6(
-            global::G.ListTestRunsV2ResponseStatus4? status,
+            global::G.ListTestRunsV2ResponseStatus? status,
             string? message)
         {
             this.Status = status;

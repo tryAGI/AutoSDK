@@ -1,4 +1,4 @@
-﻿//HintName: G.Models.CreateChatCompletionResponse7.g.cs
+//HintName: G.Models.CreateChatCompletionResponse7.g.cs
 
 #nullable enable
 
@@ -13,8 +13,8 @@ namespace G
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("status")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.CreateChatCompletionResponseStatus6JsonConverter))]
-        public global::G.CreateChatCompletionResponseStatus6? Status { get; set; }
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.CreateChatCompletionResponseStatusJsonConverter))]
+        public global::G.CreateChatCompletionResponseStatus? Status { get; set; }
 
         /// <summary>
         /// Example: An unexpected server error occurred.
@@ -40,7 +40,7 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public CreateChatCompletionResponse7(
-            global::G.CreateChatCompletionResponseStatus6? status,
+            global::G.CreateChatCompletionResponseStatus? status,
             string? message)
         {
             this.Status = status;

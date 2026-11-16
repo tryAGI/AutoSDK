@@ -1,4 +1,4 @@
-﻿//HintName: G.Models.AgentsCompletionRequest.g.cs
+//HintName: G.Models.AgentsCompletionRequest.g.cs
 
 #nullable enable
 
@@ -56,7 +56,7 @@ namespace G
         /// Default Value: auto
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("tool_choice")]
-        public global::G.AnyOf<global::G.ToolChoice2, global::G.ToolChoiceEnum?>? ToolChoice { get; set; }
+        public global::G.AnyOf<global::G.ToolChoice, global::G.ToolChoiceEnum?>? ToolChoice { get; set; }
 
         /// <summary>
         /// presence_penalty determines how much the model penalizes the repetition of words or phrases. A higher presence penalty encourages the model to use a wider variety of words and phrases, making the output more diverse and creative.<br/>
@@ -157,7 +157,7 @@ namespace G
             int? randomSeed,
             global::G.ResponseFormat? responseFormat,
             global::System.Collections.Generic.IList<global::G.Tool>? tools,
-            global::G.AnyOf<global::G.ToolChoice2, global::G.ToolChoiceEnum?>? toolChoice,
+            global::G.AnyOf<global::G.ToolChoice, global::G.ToolChoiceEnum?>? toolChoice,
             double? presencePenalty,
             double? frequencyPenalty,
             int? n,

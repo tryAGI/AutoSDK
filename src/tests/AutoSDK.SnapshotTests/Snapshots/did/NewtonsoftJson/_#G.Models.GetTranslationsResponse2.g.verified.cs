@@ -1,4 +1,4 @@
-﻿//HintName: G.Models.GetTranslationsResponse2.g.cs
+//HintName: G.Models.GetTranslationsResponse2.g.cs
 
 #nullable enable
 
@@ -12,14 +12,26 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("translations", Required = global::Newtonsoft.Json.Required.Always)]
-        public global::System.Collections.Generic.IList<global::G.GetTranslationsResponseTranslation2> Translations { get; set; } = default!;
+        [global::Newtonsoft.Json.JsonProperty("kind", Required = global::Newtonsoft.Json.Required.Always)]
+        public string Kind { get; set; } = default!;
 
         /// <summary>
         /// 
         /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("token")]
-        public string? Token { get; set; }
+        [global::Newtonsoft.Json.JsonProperty("description", Required = global::Newtonsoft.Json.Required.Always)]
+        public string Description { get; set; } = default!;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::Newtonsoft.Json.JsonProperty("details")]
+        public object? Details { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::Newtonsoft.Json.JsonProperty("internal")]
+        public string? Internal { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -30,14 +42,20 @@ namespace G
         /// <summary>
         /// Initializes a new instance of the <see cref="GetTranslationsResponse2" /> class.
         /// </summary>
-        /// <param name="translations"></param>
-        /// <param name="token"></param>
+        /// <param name="kind"></param>
+        /// <param name="description"></param>
+        /// <param name="details"></param>
+        /// <param name="internal"></param>
         public GetTranslationsResponse2(
-            global::System.Collections.Generic.IList<global::G.GetTranslationsResponseTranslation2> translations,
-            string? token)
+            string kind,
+            string description,
+            object? details,
+            string? @internal)
         {
-            this.Translations = translations ?? throw new global::System.ArgumentNullException(nameof(translations));
-            this.Token = token;
+            this.Kind = kind ?? throw new global::System.ArgumentNullException(nameof(kind));
+            this.Description = description ?? throw new global::System.ArgumentNullException(nameof(description));
+            this.Details = details;
+            this.Internal = @internal;
         }
 
         /// <summary>

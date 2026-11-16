@@ -1,4 +1,4 @@
-﻿//HintName: G.IClipsPremiumAvatarsClient.CreateClip.g.cs
+//HintName: G.IClipsPremiumAvatarsClient.CreateClip.g.cs
 #nullable enable
 
 namespace G
@@ -13,9 +13,9 @@ namespace G
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::G.ApiException"></exception>
-        global::System.Threading.Tasks.Task<global::G.CreateClipResponse2> CreateClipAsync(
+        global::System.Threading.Tasks.Task<global::G.CreateClipResponse> CreateClipAsync(
 
-            global::G.CreateClipRequest2 request,
+            global::G.CreateClipRequest request,
             string? xApiKeyExternal = default,
             global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
@@ -27,9 +27,9 @@ namespace G
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::G.ApiException"></exception>
-        global::System.Threading.Tasks.Task<global::G.AutoSDKHttpResponse<global::G.CreateClipResponse2>> CreateClipAsResponseAsync(
+        global::System.Threading.Tasks.Task<global::G.AutoSDKHttpResponse<global::G.CreateClipResponse>> CreateClipAsResponseAsync(
 
-            global::G.CreateClipRequest2 request,
+            global::G.CreateClipRequest request,
             string? xApiKeyExternal = default,
             global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
@@ -75,14 +75,14 @@ namespace G
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
-        global::System.Threading.Tasks.Task<global::G.CreateClipResponse2> CreateClipAsync(
-            global::G.AnyOf<global::G.CreateClipRequestScriptVariant12, global::G.CreateClipRequestScriptVariant22> script,
+        global::System.Threading.Tasks.Task<global::G.CreateClipResponse> CreateClipAsync(
+            global::G.AnyOf<global::G.CreateClipRequestScriptVariant1, global::G.CreateClipRequestScriptVariant2> script,
             string? xApiKeyExternal = default,
             string? presenterId = default,
             string? driverId = default,
-            global::G.CreateClipRequestConfig2? config = default,
-            global::G.CreateClipRequestPresenterConfig2? presenterConfig = default,
-            global::G.CreateClipRequestBackground2? background = default,
+            global::G.CreateClipRequestConfig? config = default,
+            global::G.CreateClipRequestPresenterConfig? presenterConfig = default,
+            global::G.CreateClipRequestBackground? background = default,
             string? userData = default,
             string? name = default,
             string? webhook = default,

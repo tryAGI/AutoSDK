@@ -1,4 +1,4 @@
-﻿//HintName: G.IInternalTemplatesClient.CreateInternalTemplateGroup.g.cs
+//HintName: G.IInternalTemplatesClient.CreateInternalTemplateGroup.g.cs
 #nullable enable
 
 #pragma warning disable CS0618 // Type or member is obsolete

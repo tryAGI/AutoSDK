@@ -393,19 +393,19 @@ namespace G
                             {
                                 string? __content_401 = null;
                                 global::System.Exception? __exception_401 = null;
-                                global::G.UpdatePhoneNumberResponse2? __value_401 = null;
+                                global::G.UpdatePhoneNumberResponse? __value_401 = null;
                                 try
                                 {
                                     if (__effectiveReadResponseAsString)
                                     {
                                         __content_401 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
-                                        __value_401 = global::G.UpdatePhoneNumberResponse2.FromJson(__content_401, JsonSerializerOptions);
+                                        __value_401 = global::G.UpdatePhoneNumberResponse.FromJson(__content_401, JsonSerializerOptions);
                                     }
                                     else
                                     {
                                         __content_401 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
 
-                                        __value_401 = global::G.UpdatePhoneNumberResponse2.FromJson(__content_401, JsonSerializerOptions);
+                                        __value_401 = global::G.UpdatePhoneNumberResponse.FromJson(__content_401, JsonSerializerOptions);
                                     }
                                 }
                                 catch (global::System.Exception __ex)
@@ -414,7 +414,7 @@ namespace G
                                 }
 
 
-                                throw global::G.ApiException<global::G.UpdatePhoneNumberResponse2>.Create(
+                                throw global::G.ApiException<global::G.UpdatePhoneNumberResponse>.Create(
                                     statusCode: __response.StatusCode,
                                     message: __content_401 ?? __response.ReasonPhrase ?? string.Empty,
                                     innerException: __exception_401,
@@ -430,19 +430,19 @@ namespace G
                             {
                                 string? __content_422 = null;
                                 global::System.Exception? __exception_422 = null;
-                                global::G.UpdatePhoneNumberResponse3? __value_422 = null;
+                                global::G.UpdatePhoneNumberResponse? __value_422 = null;
                                 try
                                 {
                                     if (__effectiveReadResponseAsString)
                                     {
                                         __content_422 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
-                                        __value_422 = global::G.UpdatePhoneNumberResponse3.FromJson(__content_422, JsonSerializerOptions);
+                                        __value_422 = global::G.UpdatePhoneNumberResponse.FromJson(__content_422, JsonSerializerOptions);
                                     }
                                     else
                                     {
                                         __content_422 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
 
-                                        __value_422 = global::G.UpdatePhoneNumberResponse3.FromJson(__content_422, JsonSerializerOptions);
+                                        __value_422 = global::G.UpdatePhoneNumberResponse.FromJson(__content_422, JsonSerializerOptions);
                                     }
                                 }
                                 catch (global::System.Exception __ex)
@@ -451,7 +451,7 @@ namespace G
                                 }
 
 
-                                throw global::G.ApiException<global::G.UpdatePhoneNumberResponse3>.Create(
+                                throw global::G.ApiException<global::G.UpdatePhoneNumberResponse>.Create(
                                     statusCode: __response.StatusCode,
                                     message: __content_422 ?? __response.ReasonPhrase ?? string.Empty,
                                     innerException: __exception_422,
@@ -467,19 +467,19 @@ namespace G
                             {
                                 string? __content_500 = null;
                                 global::System.Exception? __exception_500 = null;
-                                global::G.UpdatePhoneNumberResponse4? __value_500 = null;
+                                global::G.UpdatePhoneNumberResponse? __value_500 = null;
                                 try
                                 {
                                     if (__effectiveReadResponseAsString)
                                     {
                                         __content_500 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
-                                        __value_500 = global::G.UpdatePhoneNumberResponse4.FromJson(__content_500, JsonSerializerOptions);
+                                        __value_500 = global::G.UpdatePhoneNumberResponse.FromJson(__content_500, JsonSerializerOptions);
                                     }
                                     else
                                     {
                                         __content_500 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
 
-                                        __value_500 = global::G.UpdatePhoneNumberResponse4.FromJson(__content_500, JsonSerializerOptions);
+                                        __value_500 = global::G.UpdatePhoneNumberResponse.FromJson(__content_500, JsonSerializerOptions);
                                     }
                                 }
                                 catch (global::System.Exception __ex)
@@ -488,7 +488,7 @@ namespace G
                                 }
 
 
-                                throw global::G.ApiException<global::G.UpdatePhoneNumberResponse4>.Create(
+                                throw global::G.ApiException<global::G.UpdatePhoneNumberResponse>.Create(
                                     statusCode: __response.StatusCode,
                                     message: __content_500 ?? __response.ReasonPhrase ?? string.Empty,
                                     innerException: __exception_500,

@@ -1,4 +1,4 @@
-﻿//HintName: G.Models.GetAnnotationConfigsResponseBody.g.cs
+//HintName: G.Models.GetAnnotationConfigsResponseBody.g.cs
 
 #nullable enable
 
@@ -14,7 +14,7 @@ namespace G
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("data")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::System.Collections.Generic.IList<global::G.DataItem> Data { get; set; }
+        public required global::System.Collections.Generic.IList<global::G.DataItem2> Data { get; set; }
 
         /// <summary>
         /// 
@@ -37,7 +37,7 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public GetAnnotationConfigsResponseBody(
-            global::System.Collections.Generic.IList<global::G.DataItem> data,
+            global::System.Collections.Generic.IList<global::G.DataItem2> data,
             string? nextCursor)
         {
             this.Data = data ?? throw new global::System.ArgumentNullException(nameof(data));

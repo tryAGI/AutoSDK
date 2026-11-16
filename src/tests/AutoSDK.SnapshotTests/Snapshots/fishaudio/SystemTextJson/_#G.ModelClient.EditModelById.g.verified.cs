@@ -29,12 +29,12 @@ namespace G
         partial void PrepareEditModelByIdArguments(
             global::System.Net.Http.HttpClient httpClient,
             ref string id,
-            global::G.PatchModelRequest3 request);
+            global::G.PatchModelRequest request);
         partial void PrepareEditModelByIdRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
             string id,
-            global::G.PatchModelRequest3 request);
+            global::G.PatchModelRequest request);
         partial void ProcessEditModelByIdResponse(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage);
@@ -50,7 +50,7 @@ namespace G
         public async global::System.Threading.Tasks.Task EditModelByIdAsync(
             string id,
 
-            global::G.PatchModelRequest3 request,
+            global::G.PatchModelRequest request,
             global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
@@ -73,7 +73,7 @@ namespace G
         public async global::System.Threading.Tasks.Task<global::G.AutoSDKHttpResponse> EditModelByIdAsResponseAsync(
             string id,
 
-            global::G.PatchModelRequest3 request,
+            global::G.PatchModelRequest request,
             global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
@@ -611,12 +611,12 @@ namespace G
             string? description = default,
             byte[]? coverImage = default,
             string? coverImagename = default,
-            global::G.PatchModelRequestVisibility3? visibility = default,
+            global::G.PatchModelRequestVisibility? visibility = default,
             global::G.AnyOf<global::System.Collections.Generic.IList<string>, string>? tags = default,
             global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
-            var __request = new global::G.PatchModelRequest3
+            var __request = new global::G.PatchModelRequest
             {
                 Title = title,
                 Description = description,

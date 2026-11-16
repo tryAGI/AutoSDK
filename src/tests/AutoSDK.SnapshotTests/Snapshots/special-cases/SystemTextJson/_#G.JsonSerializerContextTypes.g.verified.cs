@@ -91,27 +91,39 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.Pet? Type13 { get; set; }
+        public global::G.CasedEvent2? Type13 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public bool? Type14 { get; set; }
+        public global::G.CasedEVENTPayload? Type14 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public long? Type15 { get; set; }
+        public global::G.CasedEVENT? Type15 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::G.Pet>? Type16 { get; set; }
+        public global::G.Pet? Type16 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.Error? Type17 { get; set; }
+        public bool? Type17 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<string>? Type18 { get; set; }
+        public long? Type18 { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::System.Collections.Generic.IList<global::G.Pet>? Type19 { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::G.Error? Type20 { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::System.Collections.Generic.IList<string>? Type21 { get; set; }
 
         /// <summary>
         /// 

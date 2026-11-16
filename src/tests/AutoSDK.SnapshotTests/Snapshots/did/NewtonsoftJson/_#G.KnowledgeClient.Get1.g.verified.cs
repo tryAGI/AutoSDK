@@ -341,19 +341,19 @@ namespace G
                             {
                                 string? __content_401 = null;
                                 global::System.Exception? __exception_401 = null;
-                                global::G.Get1Response5? __value_401 = null;
+                                global::G.Get1Response? __value_401 = null;
                                 try
                                 {
                                     if (__effectiveReadResponseAsString)
                                     {
                                         __content_401 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
-                                        __value_401 = global::G.Get1Response5.FromJson(__content_401, JsonSerializerOptions);
+                                        __value_401 = global::G.Get1Response.FromJson(__content_401, JsonSerializerOptions);
                                     }
                                     else
                                     {
                                         __content_401 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
 
-                                        __value_401 = global::G.Get1Response5.FromJson(__content_401, JsonSerializerOptions);
+                                        __value_401 = global::G.Get1Response.FromJson(__content_401, JsonSerializerOptions);
                                     }
                                 }
                                 catch (global::System.Exception __ex)
@@ -362,7 +362,7 @@ namespace G
                                 }
 
 
-                                throw global::G.ApiException<global::G.Get1Response5>.Create(
+                                throw global::G.ApiException<global::G.Get1Response>.Create(
                                     statusCode: __response.StatusCode,
                                     message: __content_401 ?? __response.ReasonPhrase ?? string.Empty,
                                     innerException: __exception_401,

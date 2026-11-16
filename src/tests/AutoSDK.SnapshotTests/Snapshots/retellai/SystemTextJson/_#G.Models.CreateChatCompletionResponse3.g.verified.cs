@@ -1,4 +1,4 @@
-﻿//HintName: G.Models.CreateChatCompletionResponse3.g.cs
+//HintName: G.Models.CreateChatCompletionResponse3.g.cs
 
 #nullable enable
 
@@ -13,8 +13,8 @@ namespace G
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("status")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.CreateChatCompletionResponseStatus2JsonConverter))]
-        public global::G.CreateChatCompletionResponseStatus2? Status { get; set; }
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.CreateChatCompletionResponseStatusJsonConverter))]
+        public global::G.CreateChatCompletionResponseStatus? Status { get; set; }
 
         /// <summary>
         /// Example: API key is missing or invalid.
@@ -40,7 +40,7 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public CreateChatCompletionResponse3(
-            global::G.CreateChatCompletionResponseStatus2? status,
+            global::G.CreateChatCompletionResponseStatus? status,
             string? message)
         {
             this.Status = status;

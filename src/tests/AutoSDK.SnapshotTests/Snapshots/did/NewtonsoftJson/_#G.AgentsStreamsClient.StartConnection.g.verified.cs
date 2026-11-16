@@ -72,7 +72,7 @@ namespace G
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::G.ApiException"></exception>
-        public async global::System.Threading.Tasks.Task<global::G.StartConnectionResponse> StartConnectionAsync(
+        public async global::System.Threading.Tasks.Task<global::G.StartConnectionResponse4> StartConnectionAsync(
             string agentId,
             string streamId,
 
@@ -101,7 +101,7 @@ namespace G
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::G.ApiException"></exception>
-        public async global::System.Threading.Tasks.Task<global::G.AutoSDKHttpResponse<global::G.StartConnectionResponse>> StartConnectionAsResponseAsync(
+        public async global::System.Threading.Tasks.Task<global::G.AutoSDKHttpResponse<global::G.StartConnectionResponse4>> StartConnectionAsResponseAsync(
             string agentId,
             string streamId,
 
@@ -379,19 +379,19 @@ namespace G
                             {
                                 string? __content_400 = null;
                                 global::System.Exception? __exception_400 = null;
-                                global::G.StartConnectionResponse2? __value_400 = null;
+                                global::G.StartConnectionResponse5? __value_400 = null;
                                 try
                                 {
                                     if (__effectiveReadResponseAsString)
                                     {
                                         __content_400 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
-                                        __value_400 = global::G.StartConnectionResponse2.FromJson(__content_400, JsonSerializerOptions);
+                                        __value_400 = global::G.StartConnectionResponse5.FromJson(__content_400, JsonSerializerOptions);
                                     }
                                     else
                                     {
                                         __content_400 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
 
-                                        __value_400 = global::G.StartConnectionResponse2.FromJson(__content_400, JsonSerializerOptions);
+                                        __value_400 = global::G.StartConnectionResponse5.FromJson(__content_400, JsonSerializerOptions);
                                     }
                                 }
                                 catch (global::System.Exception __ex)
@@ -400,7 +400,7 @@ namespace G
                                 }
 
 
-                                throw global::G.ApiException<global::G.StartConnectionResponse2>.Create(
+                                throw global::G.ApiException<global::G.StartConnectionResponse5>.Create(
                                     statusCode: __response.StatusCode,
                                     message: __content_400 ?? __response.ReasonPhrase ?? string.Empty,
                                     innerException: __exception_400,
@@ -416,19 +416,19 @@ namespace G
                             {
                                 string? __content_401 = null;
                                 global::System.Exception? __exception_401 = null;
-                                global::G.StartConnectionResponse3? __value_401 = null;
+                                global::G.StartConnectionResponse6? __value_401 = null;
                                 try
                                 {
                                     if (__effectiveReadResponseAsString)
                                     {
                                         __content_401 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
-                                        __value_401 = global::G.StartConnectionResponse3.FromJson(__content_401, JsonSerializerOptions);
+                                        __value_401 = global::G.StartConnectionResponse6.FromJson(__content_401, JsonSerializerOptions);
                                     }
                                     else
                                     {
                                         __content_401 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
 
-                                        __value_401 = global::G.StartConnectionResponse3.FromJson(__content_401, JsonSerializerOptions);
+                                        __value_401 = global::G.StartConnectionResponse6.FromJson(__content_401, JsonSerializerOptions);
                                     }
                                 }
                                 catch (global::System.Exception __ex)
@@ -437,7 +437,7 @@ namespace G
                                 }
 
 
-                                throw global::G.ApiException<global::G.StartConnectionResponse3>.Create(
+                                throw global::G.ApiException<global::G.StartConnectionResponse6>.Create(
                                     statusCode: __response.StatusCode,
                                     message: __content_401 ?? __response.ReasonPhrase ?? string.Empty,
                                     innerException: __exception_401,
@@ -470,9 +470,9 @@ namespace G
                                 {
                                     __response.EnsureSuccessStatusCode();
 
-                                    var __value = global::G.StartConnectionResponse.FromJson(__content, JsonSerializerOptions) ??
+                                    var __value = global::G.StartConnectionResponse4.FromJson(__content, JsonSerializerOptions) ??
                                         throw new global::System.InvalidOperationException($"Response deserialization failed for \"{__content}\" ");
-                                    return new global::G.AutoSDKHttpResponse<global::G.StartConnectionResponse>(
+                                    return new global::G.AutoSDKHttpResponse<global::G.StartConnectionResponse4>(
                                         statusCode: __response.StatusCode,
                                         headers: global::G.AutoSDKHttpResponse.CreateHeaders(__response),
                                         requestUri: __response.RequestMessage?.RequestUri,
@@ -502,9 +502,9 @@ namespace G
                 #endif
                                     ).ConfigureAwait(false);
 
-                                    var __value = await global::G.StartConnectionResponse.FromJsonStreamAsync(__content, JsonSerializerOptions).ConfigureAwait(false) ??
+                                    var __value = await global::G.StartConnectionResponse4.FromJsonStreamAsync(__content, JsonSerializerOptions).ConfigureAwait(false) ??
                                         throw new global::System.InvalidOperationException("Response deserialization failed.");
-                                    return new global::G.AutoSDKHttpResponse<global::G.StartConnectionResponse>(
+                                    return new global::G.AutoSDKHttpResponse<global::G.StartConnectionResponse4>(
                                         statusCode: __response.StatusCode,
                                         headers: global::G.AutoSDKHttpResponse.CreateHeaders(__response),
                                         requestUri: __response.RequestMessage?.RequestUri,
@@ -560,7 +560,7 @@ namespace G
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
-        public async global::System.Threading.Tasks.Task<global::G.StartConnectionResponse> StartConnectionAsync(
+        public async global::System.Threading.Tasks.Task<global::G.StartConnectionResponse4> StartConnectionAsync(
             string agentId,
             string streamId,
             global::G.StartConnectionRequestAnswer answer,

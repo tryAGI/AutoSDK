@@ -151,7 +151,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.Encryption2? Type28 { get; set; }
+        public global::G.Encryption? Type28 { get; set; }
         /// <summary>
         /// 
         /// </summary>
@@ -183,11 +183,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.AnyOf<int?, global::G.Limit2>? Type36 { get; set; }
+        public global::G.AnyOf<int?, global::G.Limit>? Type36 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.Limit2? Type37 { get; set; }
+        public global::G.Limit? Type37 { get; set; }
         /// <summary>
         /// 
         /// </summary>
@@ -243,15 +243,15 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.OneOf<global::System.Collections.Generic.IList<global::G.Vector2>, global::G.Vector2?>? Type51 { get; set; }
+        public global::G.OneOf<global::System.Collections.Generic.IList<global::G.Vector>, global::G.Vector?>? Type51 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::G.Vector2>? Type52 { get; set; }
+        public global::System.Collections.Generic.IList<global::G.Vector>? Type52 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.Vector2? Type53 { get; set; }
+        public global::G.Vector? Type53 { get; set; }
         /// <summary>
         /// 
         /// </summary>
@@ -432,11 +432,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.OneOf<global::System.Collections.Generic.List<global::G.Vector2>, global::G.Vector2?>? ListType6 { get; set; }
+        public global::G.OneOf<global::System.Collections.Generic.List<global::G.Vector>, global::G.Vector?>? ListType6 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.List<global::G.Vector2>? ListType7 { get; set; }
+        public global::System.Collections.Generic.List<global::G.Vector>? ListType7 { get; set; }
         /// <summary>
         /// 
         /// </summary>

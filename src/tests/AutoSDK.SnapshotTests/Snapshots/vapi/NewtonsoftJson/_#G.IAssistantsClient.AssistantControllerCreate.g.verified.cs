@@ -1,4 +1,4 @@
-﻿//HintName: G.IAssistantsClient.AssistantControllerCreate.g.cs
+//HintName: G.IAssistantsClient.AssistantControllerCreate.g.cs
 #nullable enable
 
 namespace G
@@ -181,7 +181,7 @@ namespace G
             bool? modelOutputInMessagesEnabled = default,
             global::System.Collections.Generic.IList<global::G.TransportConfigurationTwilio>? transportConfigurations = default,
             global::G.LangfuseObservabilityPlan? observabilityPlan = default,
-            global::System.Collections.Generic.IList<global::G.CredentialsItem3>? credentials = default,
+            global::System.Collections.Generic.IList<global::G.CredentialsItem4>? credentials = default,
             global::System.Collections.Generic.IList<global::G.OneOf<global::G.CallHookCallEnding, global::G.CallHookAssistantSpeechInterrupted, global::G.CallHookCustomerSpeechInterrupted, global::G.CallHookCustomerSpeechTimeout, global::G.SessionCreatedHook>>? hooks = default,
             string? name = default,
             string? voicemailMessage = default,

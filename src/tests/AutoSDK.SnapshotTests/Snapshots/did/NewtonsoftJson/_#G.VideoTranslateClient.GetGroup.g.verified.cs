@@ -65,7 +65,7 @@ namespace G
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::G.ApiException"></exception>
-        public async global::System.Threading.Tasks.Task<global::G.GetGroupResponse2> GetGroupAsync(
+        public async global::System.Threading.Tasks.Task<global::G.GetGroupResponse> GetGroupAsync(
             string id,
             global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default)
@@ -85,7 +85,7 @@ namespace G
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::G.ApiException"></exception>
-        public async global::System.Threading.Tasks.Task<global::G.AutoSDKHttpResponse<global::G.GetGroupResponse2>> GetGroupAsResponseAsync(
+        public async global::System.Threading.Tasks.Task<global::G.AutoSDKHttpResponse<global::G.GetGroupResponse>> GetGroupAsResponseAsync(
             string id,
             global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default)
@@ -348,19 +348,19 @@ namespace G
                             {
                                 string? __content_401 = null;
                                 global::System.Exception? __exception_401 = null;
-                                global::G.GetGroupResponse3? __value_401 = null;
+                                global::G.GetGroupResponse2? __value_401 = null;
                                 try
                                 {
                                     if (__effectiveReadResponseAsString)
                                     {
                                         __content_401 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
-                                        __value_401 = global::G.GetGroupResponse3.FromJson(__content_401, JsonSerializerOptions);
+                                        __value_401 = global::G.GetGroupResponse2.FromJson(__content_401, JsonSerializerOptions);
                                     }
                                     else
                                     {
                                         __content_401 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
 
-                                        __value_401 = global::G.GetGroupResponse3.FromJson(__content_401, JsonSerializerOptions);
+                                        __value_401 = global::G.GetGroupResponse2.FromJson(__content_401, JsonSerializerOptions);
                                     }
                                 }
                                 catch (global::System.Exception __ex)
@@ -369,7 +369,7 @@ namespace G
                                 }
 
 
-                                throw global::G.ApiException<global::G.GetGroupResponse3>.Create(
+                                throw global::G.ApiException<global::G.GetGroupResponse2>.Create(
                                     statusCode: __response.StatusCode,
                                     message: __content_401 ?? __response.ReasonPhrase ?? string.Empty,
                                     innerException: __exception_401,
@@ -385,19 +385,19 @@ namespace G
                             {
                                 string? __content_404 = null;
                                 global::System.Exception? __exception_404 = null;
-                                global::G.GetGroupResponse4? __value_404 = null;
+                                global::G.GetGroupResponse3? __value_404 = null;
                                 try
                                 {
                                     if (__effectiveReadResponseAsString)
                                     {
                                         __content_404 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
-                                        __value_404 = global::G.GetGroupResponse4.FromJson(__content_404, JsonSerializerOptions);
+                                        __value_404 = global::G.GetGroupResponse3.FromJson(__content_404, JsonSerializerOptions);
                                     }
                                     else
                                     {
                                         __content_404 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
 
-                                        __value_404 = global::G.GetGroupResponse4.FromJson(__content_404, JsonSerializerOptions);
+                                        __value_404 = global::G.GetGroupResponse3.FromJson(__content_404, JsonSerializerOptions);
                                     }
                                 }
                                 catch (global::System.Exception __ex)
@@ -406,7 +406,7 @@ namespace G
                                 }
 
 
-                                throw global::G.ApiException<global::G.GetGroupResponse4>.Create(
+                                throw global::G.ApiException<global::G.GetGroupResponse3>.Create(
                                     statusCode: __response.StatusCode,
                                     message: __content_404 ?? __response.ReasonPhrase ?? string.Empty,
                                     innerException: __exception_404,
@@ -439,9 +439,9 @@ namespace G
                                 {
                                     __response.EnsureSuccessStatusCode();
 
-                                    var __value = global::G.GetGroupResponse2.FromJson(__content, JsonSerializerOptions) ??
+                                    var __value = global::G.GetGroupResponse.FromJson(__content, JsonSerializerOptions) ??
                                         throw new global::System.InvalidOperationException($"Response deserialization failed for \"{__content}\" ");
-                                    return new global::G.AutoSDKHttpResponse<global::G.GetGroupResponse2>(
+                                    return new global::G.AutoSDKHttpResponse<global::G.GetGroupResponse>(
                                         statusCode: __response.StatusCode,
                                         headers: global::G.AutoSDKHttpResponse.CreateHeaders(__response),
                                         requestUri: __response.RequestMessage?.RequestUri,
@@ -471,9 +471,9 @@ namespace G
                 #endif
                                     ).ConfigureAwait(false);
 
-                                    var __value = await global::G.GetGroupResponse2.FromJsonStreamAsync(__content, JsonSerializerOptions).ConfigureAwait(false) ??
+                                    var __value = await global::G.GetGroupResponse.FromJsonStreamAsync(__content, JsonSerializerOptions).ConfigureAwait(false) ??
                                         throw new global::System.InvalidOperationException("Response deserialization failed.");
-                                    return new global::G.AutoSDKHttpResponse<global::G.GetGroupResponse2>(
+                                    return new global::G.AutoSDKHttpResponse<global::G.GetGroupResponse>(
                                         statusCode: __response.StatusCode,
                                         headers: global::G.AutoSDKHttpResponse.CreateHeaders(__response),
                                         requestUri: __response.RequestMessage?.RequestUri,

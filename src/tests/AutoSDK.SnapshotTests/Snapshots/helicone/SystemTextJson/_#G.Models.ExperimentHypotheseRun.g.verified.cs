@@ -1,4 +1,4 @@
-﻿//HintName: G.Models.ExperimentHypotheseRun.g.cs
+//HintName: G.Models.ExperimentHypotheseRun.g.cs
 
 #nullable enable
 
@@ -20,7 +20,7 @@ namespace G
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("scores")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::System.Collections.Generic.Dictionary<string, global::G.Score2> Scores { get; set; }
+        public required global::System.Collections.Generic.Dictionary<string, global::G.Score> Scores { get; set; }
 
         /// <summary>
         /// 
@@ -62,7 +62,7 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public ExperimentHypotheseRun(
-            global::System.Collections.Generic.Dictionary<string, global::G.Score2> scores,
+            global::System.Collections.Generic.Dictionary<string, global::G.Score> scores,
             string resultRequestId,
             string datasetRowId,
             global::G.RequestObj? request,

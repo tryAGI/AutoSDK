@@ -9,12 +9,12 @@ namespace G
         partial void PrepareCreateArguments(
             global::System.Net.Http.HttpClient httpClient,
             ref string xApiKey,
-            global::G.CreateRequest2 request);
+            global::G.CreateRequest7 request);
         partial void PrepareCreateRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
             string xApiKey,
-            global::G.CreateRequest2 request);
+            global::G.CreateRequest7 request);
         partial void ProcessCreateResponse(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage);
@@ -49,7 +49,7 @@ namespace G
         public async global::System.Threading.Tasks.Task<global::G.Asset> CreateAsync(
             string xApiKey,
 
-            global::G.CreateRequest2 request,
+            global::G.CreateRequest7 request,
             global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
@@ -88,7 +88,7 @@ namespace G
         public async global::System.Threading.Tasks.Task<global::G.AutoSDKHttpResponse<global::G.Asset>> CreateAsResponseAsync(
             string xApiKey,
 
-            global::G.CreateRequest2 request,
+            global::G.CreateRequest7 request,
             global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
@@ -571,7 +571,7 @@ namespace G
             global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
-            var __request = new global::G.CreateRequest2
+            var __request = new global::G.CreateRequest7
             {
                 Method = method,
                 File = file,

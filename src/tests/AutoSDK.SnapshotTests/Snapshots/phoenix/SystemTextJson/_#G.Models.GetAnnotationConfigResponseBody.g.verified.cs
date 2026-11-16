@@ -1,4 +1,4 @@
-﻿//HintName: G.Models.GetAnnotationConfigResponseBody.g.cs
+//HintName: G.Models.GetAnnotationConfigResponseBody.g.cs
 
 #nullable enable
 
@@ -13,9 +13,9 @@ namespace G
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("data")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.Data4JsonConverter))]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.Data3JsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::G.Data4 Data { get; set; }
+        public required global::G.Data3 Data { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -31,7 +31,7 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public GetAnnotationConfigResponseBody(
-            global::G.Data4 data)
+            global::G.Data3 data)
         {
             this.Data = data;
         }

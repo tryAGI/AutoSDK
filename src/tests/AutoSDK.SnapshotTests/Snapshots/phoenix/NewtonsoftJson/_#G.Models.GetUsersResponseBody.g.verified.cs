@@ -1,4 +1,4 @@
-﻿//HintName: G.Models.GetUsersResponseBody.g.cs
+//HintName: G.Models.GetUsersResponseBody.g.cs
 
 #nullable enable
 
@@ -13,7 +13,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("data", Required = global::Newtonsoft.Json.Required.Always)]
-        public global::System.Collections.Generic.IList<global::G.DataItem2> Data { get; set; } = default!;
+        public global::System.Collections.Generic.IList<global::G.DataItem> Data { get; set; } = default!;
 
         /// <summary>
         /// 
@@ -33,7 +33,7 @@ namespace G
         /// <param name="data"></param>
         /// <param name="nextCursor"></param>
         public GetUsersResponseBody(
-            global::System.Collections.Generic.IList<global::G.DataItem2> data,
+            global::System.Collections.Generic.IList<global::G.DataItem> data,
             string? nextCursor)
         {
             this.Data = data ?? throw new global::System.ArgumentNullException(nameof(data));

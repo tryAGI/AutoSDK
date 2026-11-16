@@ -1,4 +1,4 @@
-﻿//HintName: G.Models.LettaSchemasMessageToolReturnOutput.g.cs
+//HintName: G.Models.LettaSchemasMessageToolReturnOutput.g.cs
 
 #nullable enable
 

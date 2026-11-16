@@ -1,4 +1,4 @@
-﻿//HintName: G.JsonSerializerContextConverters.g.cs
+//HintName: G.JsonSerializerContextConverters.g.cs
 
 #nullable enable
 
@@ -361,8 +361,8 @@ namespace G
             typeof(global::G.JsonConverters.AnyOfJsonConverter<global::G.ChatCompletion, global::G.ResultSuccessChatCompletionOrContentStringReasoningStringCallsAnyData>),
             typeof(global::G.JsonConverters.AnyOfJsonConverter<double?, global::System.DateTime?, string>),
             typeof(global::G.JsonConverters.AllOfJsonConverter<global::G.DataOverTimeRequest, global::G.GetPropertiesOverTimeRequest2>),
-            typeof(global::G.JsonConverters.AllOfJsonConverter<global::G.OpenAIChatRequest, global::G.GenerateRequest2>),
             typeof(global::G.JsonConverters.AllOfJsonConverter<global::G.OpenAIChatRequest, global::G.GenerateRequest4>),
+            typeof(global::G.JsonConverters.AllOfJsonConverter<global::G.OpenAIChatRequest, global::G.GenerateRequest2>),
             typeof(global::G.JsonConverters.AnyOfJsonConverter<global::G.DeleteProviderKeyResponseVariant1, global::G.DeleteProviderKeyResponseVariant2>),
             typeof(global::G.JsonConverters.AnyOfJsonConverter<global::G.DecryptedProviderKey, global::G.GetProviderKeyResponse2>),
             typeof(global::G.JsonConverters.AnyOfJsonConverter<global::G.CreateProviderKeyResponseVariant1, global::G.CreateProviderKeyResponseVariant2>),

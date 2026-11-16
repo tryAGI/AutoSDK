@@ -379,10 +379,10 @@ namespace G
                     new global::G.JsonConverters.AnyOfJsonConverter<global::G.Condition?, global::System.Collections.Generic.IList<global::G.Condition>>(),
                     new global::G.JsonConverters.AnyOfJsonConverter<global::G.Condition?, global::System.Collections.Generic.IList<global::G.Condition>>(),
                     new global::G.JsonConverters.AnyOfJsonConverter<global::G.Condition?, global::System.Collections.Generic.IList<global::G.Condition>>(),
-                    new global::G.JsonConverters.AnyOfJsonConverter<global::G.Prefetch2, global::System.Collections.Generic.IList<global::G.Prefetch2>>(),
-                    new global::G.JsonConverters.AnyOfJsonConverter<global::G.Prefetch2, global::System.Collections.Generic.IList<global::G.Prefetch2>>(),
+                    new global::G.JsonConverters.AnyOfJsonConverter<global::G.Prefetch, global::System.Collections.Generic.IList<global::G.Prefetch>>(),
+                    new global::G.JsonConverters.AnyOfJsonConverter<global::G.Prefetch, global::System.Collections.Generic.IList<global::G.Prefetch>>(),
                     new global::G.JsonConverters.AnyOfJsonConverter<global::G.ContextPair, global::System.Collections.Generic.IList<global::G.ContextPair>>(),
-                    new global::G.JsonConverters.AnyOfJsonConverter<global::G.Prefetch2, global::System.Collections.Generic.IList<global::G.Prefetch2>>(),
+                    new global::G.JsonConverters.AnyOfJsonConverter<global::G.Prefetch, global::System.Collections.Generic.IList<global::G.Prefetch>>(),
                     new global::G.JsonConverters.UnixTimestampJsonConverter(),
                 }
             };

@@ -18,33 +18,33 @@ namespace G.JsonConverters
 
 
             var readerCopy = reader;
-            var discriminatorTypeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.HybridChunkerOptionsDocumentsRequestTargetDiscriminator), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.HybridChunkerOptionsDocumentsRequestTargetDiscriminator> ??
-                            throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::G.HybridChunkerOptionsDocumentsRequestTargetDiscriminator)}");
+            var discriminatorTypeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.HierarchicalChunkerOptionsDocumentsRequestTargetDiscriminator), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.HierarchicalChunkerOptionsDocumentsRequestTargetDiscriminator> ??
+                            throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::G.HierarchicalChunkerOptionsDocumentsRequestTargetDiscriminator)}");
             var discriminator = global::System.Text.Json.JsonSerializer.Deserialize(ref readerCopy, discriminatorTypeInfo);
 
             global::G.InBodyTarget? inbody = default;
-            if (discriminator?.Kind == global::G.HybridChunkerOptionsDocumentsRequestTargetDiscriminatorKind.Inbody)
+            if (discriminator?.Kind == global::G.HierarchicalChunkerOptionsDocumentsRequestTargetDiscriminatorKind.Inbody)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.InBodyTarget), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.InBodyTarget> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::G.InBodyTarget)}");
                 inbody = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
             }
             global::G.ZipTarget? zip = default;
-            if (discriminator?.Kind == global::G.HybridChunkerOptionsDocumentsRequestTargetDiscriminatorKind.Zip)
+            if (discriminator?.Kind == global::G.HierarchicalChunkerOptionsDocumentsRequestTargetDiscriminatorKind.Zip)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.ZipTarget), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.ZipTarget> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::G.ZipTarget)}");
                 zip = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
             }
             global::G.S3Target? s3 = default;
-            if (discriminator?.Kind == global::G.HybridChunkerOptionsDocumentsRequestTargetDiscriminatorKind.S3)
+            if (discriminator?.Kind == global::G.HierarchicalChunkerOptionsDocumentsRequestTargetDiscriminatorKind.S3)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.S3Target), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.S3Target> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::G.S3Target)}");
                 s3 = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
             }
             global::G.PutTarget? put = default;
-            if (discriminator?.Kind == global::G.HybridChunkerOptionsDocumentsRequestTargetDiscriminatorKind.Put)
+            if (discriminator?.Kind == global::G.HierarchicalChunkerOptionsDocumentsRequestTargetDiscriminatorKind.Put)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.PutTarget), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.PutTarget> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::G.PutTarget)}");

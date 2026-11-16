@@ -1,4 +1,4 @@
-﻿//HintName: G.Models.StoreEventListResponse.g.cs
+//HintName: G.Models.StoreEventListResponse.g.cs
 
 #nullable enable
 
@@ -26,7 +26,7 @@ namespace G
         /// The list of store events
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("data", Required = global::Newtonsoft.Json.Required.Always)]
-        public global::System.Collections.Generic.IList<global::G.DataItem> Data { get; set; } = default!;
+        public global::System.Collections.Generic.IList<global::G.DataItem2> Data { get; set; } = default!;
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -49,7 +49,7 @@ namespace G
         /// </param>
         public StoreEventListResponse(
             global::G.CursorPaginationResponse pagination,
-            global::System.Collections.Generic.IList<global::G.DataItem> data,
+            global::System.Collections.Generic.IList<global::G.DataItem2> data,
             string? @object)
         {
             this.Pagination = pagination ?? throw new global::System.ArgumentNullException(nameof(pagination));

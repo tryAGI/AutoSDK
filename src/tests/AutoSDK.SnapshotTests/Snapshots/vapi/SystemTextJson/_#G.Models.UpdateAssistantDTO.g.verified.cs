@@ -1,4 +1,4 @@
-﻿//HintName: G.Models.UpdateAssistantDTO.g.cs
+//HintName: G.Models.UpdateAssistantDTO.g.cs
 
 #nullable enable
 

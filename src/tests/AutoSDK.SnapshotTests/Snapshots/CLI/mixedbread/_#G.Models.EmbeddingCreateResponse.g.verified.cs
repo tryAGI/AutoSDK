@@ -1,4 +1,4 @@
-﻿//HintName: G.Models.EmbeddingCreateResponse.g.cs
+//HintName: G.Models.EmbeddingCreateResponse.g.cs
 
 #nullable enable
 
@@ -49,9 +49,9 @@ namespace G
         /// The encoding formats of the embeddings.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("encoding_format")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.AnyOfJsonConverter<global::G.EncodingFormat3?, global::System.Collections.Generic.IList<global::G.EncodingFormat3>>))]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.AnyOfJsonConverter<global::G.EncodingFormat?, global::System.Collections.Generic.IList<global::G.EncodingFormat>>))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::G.AnyOf<global::G.EncodingFormat3?, global::System.Collections.Generic.IList<global::G.EncodingFormat3>> EncodingFormat { get; set; }
+        public required global::G.AnyOf<global::G.EncodingFormat?, global::System.Collections.Generic.IList<global::G.EncodingFormat>> EncodingFormat { get; set; }
 
         /// <summary>
         /// The number of dimensions used for the embeddings.
@@ -98,7 +98,7 @@ namespace G
             string model,
             global::G.AnyOf<global::System.Collections.Generic.IList<global::G.Embedding>, global::System.Collections.Generic.IList<global::G.MultiEncodingEmbedding>> data,
             bool normalized,
-            global::G.AnyOf<global::G.EncodingFormat3?, global::System.Collections.Generic.IList<global::G.EncodingFormat3>> encodingFormat,
+            global::G.AnyOf<global::G.EncodingFormat?, global::System.Collections.Generic.IList<global::G.EncodingFormat>> encodingFormat,
             string? @object,
             int? dimensions)
         {

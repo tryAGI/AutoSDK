@@ -9,12 +9,12 @@ namespace G
         partial void PrepareCreateArguments(
             global::System.Net.Http.HttpClient httpClient,
             ref string xApiKey,
-            global::G.CreateRequest8 request);
+            global::G.CreateRequest request);
         partial void PrepareCreateRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
             string xApiKey,
-            global::G.CreateRequest8 request);
+            global::G.CreateRequest request);
         partial void ProcessCreateResponse(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage);
@@ -52,7 +52,7 @@ namespace G
         public async global::System.Threading.Tasks.Task<global::G.EmbedTasksCreateResponse200> CreateAsync(
             string xApiKey,
 
-            global::G.CreateRequest8 request,
+            global::G.CreateRequest request,
             global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
@@ -94,7 +94,7 @@ namespace G
         public async global::System.Threading.Tasks.Task<global::G.AutoSDKHttpResponse<global::G.EmbedTasksCreateResponse200>> CreateAsResponseAsync(
             string xApiKey,
 
-            global::G.CreateRequest8 request,
+            global::G.CreateRequest request,
             global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
@@ -640,7 +640,7 @@ namespace G
             global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
-            var __request = new global::G.CreateRequest8
+            var __request = new global::G.CreateRequest
             {
                 ModelName = modelName,
                 VideoFile = videoFile,

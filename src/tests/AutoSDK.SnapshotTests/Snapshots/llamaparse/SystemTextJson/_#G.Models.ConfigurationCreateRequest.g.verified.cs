@@ -1,4 +1,4 @@
-﻿//HintName: G.Models.ConfigurationCreateRequest.g.cs
+//HintName: G.Models.ConfigurationCreateRequest.g.cs
 
 #nullable enable
 
@@ -20,9 +20,9 @@ namespace G
         /// Product-specific configuration parameters.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("parameters")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.ParametersJsonConverter))]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.Parameters2JsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::G.Parameters Parameters { get; set; }
+        public required global::G.Parameters2 Parameters { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -44,7 +44,7 @@ namespace G
 #endif
         public ConfigurationCreateRequest(
             string name,
-            global::G.Parameters parameters)
+            global::G.Parameters2 parameters)
         {
             this.Name = name ?? throw new global::System.ArgumentNullException(nameof(name));
             this.Parameters = parameters;

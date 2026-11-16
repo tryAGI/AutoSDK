@@ -1,4 +1,6 @@
-﻿//HintName: G.Models.Create1Response.g.cs
+//HintName: G.Models.Create1Response.g.cs
+
+#pragma warning disable CS0618 // Type or member is obsolete
 
 #nullable enable
 
@@ -10,33 +12,75 @@ namespace G
     public sealed partial class Create1Response
     {
         /// <summary>
-        /// The ID of the avatar
+        /// Type of object to be stored
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("type")]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.Create1ResponseTypeJsonConverter))]
+        [global::System.Text.Json.Serialization.JsonRequired]
+        public required global::G.Create1ResponseType Type { get; set; }
+
+        /// <summary>
+        /// Description of knowledge
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("description")]
+        [global::System.Text.Json.Serialization.JsonRequired]
+        public required string Description { get; set; }
+
+        /// <summary>
+        /// Who created the data
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("created_by")]
+        [global::System.Text.Json.Serialization.JsonRequired]
+        public required string CreatedBy { get; set; }
+
+        /// <summary>
+        /// Name of knowledge
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("name")]
+        [global::System.Text.Json.Serialization.JsonRequired]
+        public required string Name { get; set; }
+
+        /// <summary>
+        /// List of messages to be showen as chat starter questions for the user to ask<br/>
+        /// Use agent.starter_messages instead
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("starter_message")]
+        [global::System.Obsolete("This property marked as deprecated.")]
+        public global::System.Collections.Generic.IList<string>? StarterMessage { get; set; }
+
+        /// <summary>
+        /// Status of entity
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("status")]
+        public string? Status { get; set; }
+
+        /// <summary>
+        /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("id")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required string Id { get; set; }
 
         /// <summary>
-        /// The status of the avatar
+        /// 
         /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("status")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.Create1ResponseStatusJsonConverter))]
+        [global::System.Text.Json.Serialization.JsonPropertyName("owner_id")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::G.Create1ResponseStatus Status { get; set; }
+        public required string OwnerId { get; set; }
 
         /// <summary>
-        /// An identifier of this avatar
-        /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("object")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.Create1ResponseObjectJsonConverter))]
-        public global::G.Create1ResponseObject Object { get; set; }
-
-        /// <summary>
-        /// Avatar creation time as iso-8601 string
+        /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("created_at")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required string CreatedAt { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("modified_at")]
+        [global::System.Text.Json.Serialization.JsonRequired]
+        public required string ModifiedAt { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -47,31 +91,48 @@ namespace G
         /// <summary>
         /// Initializes a new instance of the <see cref="Create1Response" /> class.
         /// </summary>
-        /// <param name="id">
-        /// The ID of the avatar
+        /// <param name="type">
+        /// Type of object to be stored
         /// </param>
+        /// <param name="description">
+        /// Description of knowledge
+        /// </param>
+        /// <param name="createdBy">
+        /// Who created the data
+        /// </param>
+        /// <param name="name">
+        /// Name of knowledge
+        /// </param>
+        /// <param name="id"></param>
+        /// <param name="ownerId"></param>
+        /// <param name="createdAt"></param>
+        /// <param name="modifiedAt"></param>
         /// <param name="status">
-        /// The status of the avatar
-        /// </param>
-        /// <param name="createdAt">
-        /// Avatar creation time as iso-8601 string
-        /// </param>
-        /// <param name="object">
-        /// An identifier of this avatar
+        /// Status of entity
         /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public Create1Response(
+            global::G.Create1ResponseType type,
+            string description,
+            string createdBy,
+            string name,
             string id,
-            global::G.Create1ResponseStatus status,
+            string ownerId,
             string createdAt,
-            global::G.Create1ResponseObject @object)
+            string modifiedAt,
+            string? status)
         {
-            this.Id = id ?? throw new global::System.ArgumentNullException(nameof(id));
+            this.Type = type;
+            this.Description = description ?? throw new global::System.ArgumentNullException(nameof(description));
+            this.CreatedBy = createdBy ?? throw new global::System.ArgumentNullException(nameof(createdBy));
+            this.Name = name ?? throw new global::System.ArgumentNullException(nameof(name));
             this.Status = status;
-            this.Object = @object;
+            this.Id = id ?? throw new global::System.ArgumentNullException(nameof(id));
+            this.OwnerId = ownerId ?? throw new global::System.ArgumentNullException(nameof(ownerId));
             this.CreatedAt = createdAt ?? throw new global::System.ArgumentNullException(nameof(createdAt));
+            this.ModifiedAt = modifiedAt ?? throw new global::System.ArgumentNullException(nameof(modifiedAt));
         }
 
         /// <summary>

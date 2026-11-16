@@ -1,11 +1,11 @@
-﻿//HintName: G.Models.GetResponseError.g.cs
+//HintName: G.Models.GetResponseError.g.cs
 
 #nullable enable
 
 namespace G
 {
     /// <summary>
-    /// The error that failed the training process.
+    /// 
     /// </summary>
     public sealed partial class GetResponseError
     {

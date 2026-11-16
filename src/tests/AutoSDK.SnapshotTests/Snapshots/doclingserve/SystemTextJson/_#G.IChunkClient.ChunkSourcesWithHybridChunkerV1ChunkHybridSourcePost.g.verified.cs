@@ -1,4 +1,4 @@
-﻿//HintName: G.IChunkClient.ChunkSourcesWithHybridChunkerV1ChunkHybridSourcePost.g.cs
+//HintName: G.IChunkClient.ChunkSourcesWithHybridChunkerV1ChunkHybridSourcePost.g.cs
 #nullable enable
 
 namespace G
@@ -54,10 +54,10 @@ namespace G
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         global::System.Threading.Tasks.Task<global::G.ChunkDocumentResponse> ChunkSourcesWithHybridChunkerV1ChunkHybridSourcePostAsync(
-            global::System.Collections.Generic.IList<global::G.SourcesItem3> sources,
+            global::System.Collections.Generic.IList<global::G.SourcesItem2> sources,
             global::G.ConvertDocumentsRequestOptions? convertOptions = default,
             bool? includeConvertedDoc = default,
-            global::G.Target3? target = default,
+            global::G.Target2? target = default,
             global::G.HybridChunkerOptions? chunkingOptions = default,
             global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);

@@ -415,19 +415,19 @@ namespace G
                             {
                                 string? __content_401 = null;
                                 global::System.Exception? __exception_401 = null;
-                                global::G.GetMCPToolsResponse2? __value_401 = null;
+                                global::G.GetMCPToolsResponse? __value_401 = null;
                                 try
                                 {
                                     if (__effectiveReadResponseAsString)
                                     {
                                         __content_401 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
-                                        __value_401 = global::G.GetMCPToolsResponse2.FromJson(__content_401, JsonSerializerOptions);
+                                        __value_401 = global::G.GetMCPToolsResponse.FromJson(__content_401, JsonSerializerOptions);
                                     }
                                     else
                                     {
                                         __content_401 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
 
-                                        __value_401 = global::G.GetMCPToolsResponse2.FromJson(__content_401, JsonSerializerOptions);
+                                        __value_401 = global::G.GetMCPToolsResponse.FromJson(__content_401, JsonSerializerOptions);
                                     }
                                 }
                                 catch (global::System.Exception __ex)
@@ -436,7 +436,7 @@ namespace G
                                 }
 
 
-                                throw global::G.ApiException<global::G.GetMCPToolsResponse2>.Create(
+                                throw global::G.ApiException<global::G.GetMCPToolsResponse>.Create(
                                     statusCode: __response.StatusCode,
                                     message: __content_401 ?? __response.ReasonPhrase ?? string.Empty,
                                     innerException: __exception_401,
@@ -452,19 +452,19 @@ namespace G
                             {
                                 string? __content_422 = null;
                                 global::System.Exception? __exception_422 = null;
-                                global::G.GetMCPToolsResponse3? __value_422 = null;
+                                global::G.GetMCPToolsResponse? __value_422 = null;
                                 try
                                 {
                                     if (__effectiveReadResponseAsString)
                                     {
                                         __content_422 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
-                                        __value_422 = global::G.GetMCPToolsResponse3.FromJson(__content_422, JsonSerializerOptions);
+                                        __value_422 = global::G.GetMCPToolsResponse.FromJson(__content_422, JsonSerializerOptions);
                                     }
                                     else
                                     {
                                         __content_422 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
 
-                                        __value_422 = global::G.GetMCPToolsResponse3.FromJson(__content_422, JsonSerializerOptions);
+                                        __value_422 = global::G.GetMCPToolsResponse.FromJson(__content_422, JsonSerializerOptions);
                                     }
                                 }
                                 catch (global::System.Exception __ex)
@@ -473,7 +473,7 @@ namespace G
                                 }
 
 
-                                throw global::G.ApiException<global::G.GetMCPToolsResponse3>.Create(
+                                throw global::G.ApiException<global::G.GetMCPToolsResponse>.Create(
                                     statusCode: __response.StatusCode,
                                     message: __content_422 ?? __response.ReasonPhrase ?? string.Empty,
                                     innerException: __exception_422,
@@ -489,19 +489,19 @@ namespace G
                             {
                                 string? __content_500 = null;
                                 global::System.Exception? __exception_500 = null;
-                                global::G.GetMCPToolsResponse4? __value_500 = null;
+                                global::G.GetMCPToolsResponse? __value_500 = null;
                                 try
                                 {
                                     if (__effectiveReadResponseAsString)
                                     {
                                         __content_500 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
-                                        __value_500 = global::G.GetMCPToolsResponse4.FromJson(__content_500, JsonSerializerOptions);
+                                        __value_500 = global::G.GetMCPToolsResponse.FromJson(__content_500, JsonSerializerOptions);
                                     }
                                     else
                                     {
                                         __content_500 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
 
-                                        __value_500 = global::G.GetMCPToolsResponse4.FromJson(__content_500, JsonSerializerOptions);
+                                        __value_500 = global::G.GetMCPToolsResponse.FromJson(__content_500, JsonSerializerOptions);
                                     }
                                 }
                                 catch (global::System.Exception __ex)
@@ -510,7 +510,7 @@ namespace G
                                 }
 
 
-                                throw global::G.ApiException<global::G.GetMCPToolsResponse4>.Create(
+                                throw global::G.ApiException<global::G.GetMCPToolsResponse>.Create(
                                     statusCode: __response.StatusCode,
                                     message: __content_500 ?? __response.ReasonPhrase ?? string.Empty,
                                     innerException: __exception_500,

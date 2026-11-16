@@ -1,4 +1,4 @@
-﻿//HintName: G.Models.ImagesResponse.g.cs
+//HintName: G.Models.ImagesResponse.g.cs
 
 #nullable enable
 
@@ -20,7 +20,7 @@ namespace G
         /// The list of generated images.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("data")]
-        public global::System.Collections.Generic.IList<global::G.Image2>? Data { get; set; }
+        public global::System.Collections.Generic.IList<global::G.Image>? Data { get; set; }
 
         /// <summary>
         /// For `gpt-image-1` only, the token usage information for the image generation.
@@ -48,7 +48,7 @@ namespace G
         /// </param>
         public ImagesResponse(
             global::System.DateTimeOffset created,
-            global::System.Collections.Generic.IList<global::G.Image2>? data,
+            global::System.Collections.Generic.IList<global::G.Image>? data,
             global::G.ImagesResponseUsage? usage)
         {
             this.Created = created;

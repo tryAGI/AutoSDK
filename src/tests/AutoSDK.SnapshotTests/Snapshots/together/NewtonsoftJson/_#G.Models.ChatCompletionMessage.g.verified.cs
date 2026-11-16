@@ -1,4 +1,4 @@
-﻿//HintName: G.Models.ChatCompletionMessage.g.cs
+//HintName: G.Models.ChatCompletionMessage.g.cs
 
 #pragma warning disable CS0618 // Type or member is obsolete
 
@@ -28,7 +28,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("tool_calls")]
-        public global::System.Collections.Generic.IList<global::G.ToolChoice2>? ToolCalls { get; set; }
+        public global::System.Collections.Generic.IList<global::G.ToolChoice>? ToolCalls { get; set; }
 
         /// <summary>
         /// 
@@ -52,7 +52,7 @@ namespace G
         public ChatCompletionMessage(
             string? content,
             global::G.ChatCompletionMessageRole role,
-            global::System.Collections.Generic.IList<global::G.ToolChoice2>? toolCalls)
+            global::System.Collections.Generic.IList<global::G.ToolChoice>? toolCalls)
         {
             this.Content = content;
             this.Role = role;

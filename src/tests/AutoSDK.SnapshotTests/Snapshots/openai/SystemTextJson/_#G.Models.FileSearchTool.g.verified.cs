@@ -1,4 +1,4 @@
-﻿//HintName: G.Models.FileSearchTool.g.cs
+//HintName: G.Models.FileSearchTool.g.cs
 
 #nullable enable
 
@@ -41,7 +41,7 @@ namespace G
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("filters")]
-        public global::G.Filters2? Filters { get; set; }
+        public global::G.Filters? Filters { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -71,7 +71,7 @@ namespace G
             global::System.Collections.Generic.IList<string> vectorStoreIds,
             int? maxNumResults,
             global::G.RankingOptions? rankingOptions,
-            global::G.Filters2? filters,
+            global::G.Filters? filters,
             global::G.FileSearchToolType type = global::G.FileSearchToolType.FileSearch)
         {
             this.Type = type;

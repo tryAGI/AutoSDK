@@ -1,4 +1,4 @@
-﻿//HintName: G.Models.UpdateAgent.g.cs
+//HintName: G.Models.UpdateAgent.g.cs
 
 #pragma warning disable CS0618 // Type or member is obsolete
 
@@ -58,7 +58,7 @@ namespace G
         /// The tool rules governing the agent.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("tool_rules")]
-        public global::System.Collections.Generic.IList<global::G.ToolRulesVariant1Item4>? ToolRules { get; set; }
+        public global::System.Collections.Generic.IList<global::G.ToolRulesVariant1Item2>? ToolRules { get; set; }
 
         /// <summary>
         /// The ids of the messages in the agent's in-context memory.
@@ -136,7 +136,7 @@ namespace G
         /// The model settings for the agent.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("model_settings")]
-        public global::G.ModelSettingsVariant18? ModelSettings { get; set; }
+        public global::G.ModelSettingsVariant12? ModelSettings { get; set; }
 
         /// <summary>
         /// The compaction settings configuration used for compaction.
@@ -182,7 +182,7 @@ namespace G
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("response_format")]
         [global::System.Obsolete("This property marked as deprecated.")]
-        public global::G.ResponseFormatVariant114? ResponseFormat { get; set; }
+        public global::G.ResponseFormatVariant12? ResponseFormat { get; set; }
 
         /// <summary>
         /// Deprecated: Use `model` field to configure max output tokens instead. The maximum number of tokens to generate, including reasoning step.
@@ -351,7 +351,7 @@ namespace G
             global::System.Collections.Generic.IList<string>? blockIds,
             global::System.Collections.Generic.IList<string>? tags,
             string? system,
-            global::System.Collections.Generic.IList<global::G.ToolRulesVariant1Item4>? toolRules,
+            global::System.Collections.Generic.IList<global::G.ToolRulesVariant1Item2>? toolRules,
             global::System.Collections.Generic.IList<string>? messageIds,
             string? description,
             object? metadata,
@@ -364,7 +364,7 @@ namespace G
             bool? messageBufferAutoclear,
             string? model,
             string? embedding,
-            global::G.ModelSettingsVariant18? modelSettings,
+            global::G.ModelSettingsVariant12? modelSettings,
             global::G.CompactionSettingsInput? compactionSettings,
             int? contextWindowLimit,
             global::G.EmbeddingConfig? embeddingConfig,

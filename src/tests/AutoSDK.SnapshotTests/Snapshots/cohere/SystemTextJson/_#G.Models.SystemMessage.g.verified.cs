@@ -1,4 +1,4 @@
-﻿//HintName: G.Models.SystemMessage.g.cs
+//HintName: G.Models.SystemMessage.g.cs
 
 #nullable enable
 
@@ -20,9 +20,9 @@ namespace G
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("content")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.OneOfJsonConverter<string, global::System.Collections.Generic.IList<global::G.ContentVariant2Item2>>))]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.OneOfJsonConverter<string, global::System.Collections.Generic.IList<global::G.ContentVariant2Item>>))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::G.OneOf<string, global::System.Collections.Generic.IList<global::G.ContentVariant2Item2>> Content { get; set; }
+        public required global::G.OneOf<string, global::System.Collections.Generic.IList<global::G.ContentVariant2Item>> Content { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -39,7 +39,7 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public SystemMessage(
-            global::G.OneOf<string, global::System.Collections.Generic.IList<global::G.ContentVariant2Item2>> content,
+            global::G.OneOf<string, global::System.Collections.Generic.IList<global::G.ContentVariant2Item>> content,
             global::G.SystemMessageRole role)
         {
             this.Role = role;

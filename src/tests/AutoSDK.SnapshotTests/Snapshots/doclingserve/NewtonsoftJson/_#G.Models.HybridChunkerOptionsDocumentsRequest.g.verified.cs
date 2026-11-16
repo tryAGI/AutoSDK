@@ -1,4 +1,4 @@
-﻿//HintName: G.Models.HybridChunkerOptionsDocumentsRequest.g.cs
+//HintName: G.Models.HybridChunkerOptionsDocumentsRequest.g.cs
 
 #nullable enable
 
@@ -20,7 +20,7 @@ namespace G
         /// List of input document sources to process.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("sources", Required = global::Newtonsoft.Json.Required.Always)]
-        public global::System.Collections.Generic.IList<global::G.SourcesItem3> Sources { get; set; } = default!;
+        public global::System.Collections.Generic.IList<global::G.SourcesItem2> Sources { get; set; } = default!;
 
         /// <summary>
         /// If true, the output will include both the chunks and the converted document.<br/>
@@ -34,7 +34,7 @@ namespace G
         /// Default Value: {"kind":"inbody"}
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("target")]
-        public global::G.Target3? Target { get; set; }
+        public global::G.Target2? Target { get; set; }
 
         /// <summary>
         /// Options specific to the chunker.
@@ -70,10 +70,10 @@ namespace G
         /// Options specific to the chunker.
         /// </param>
         public HybridChunkerOptionsDocumentsRequest(
-            global::System.Collections.Generic.IList<global::G.SourcesItem3> sources,
+            global::System.Collections.Generic.IList<global::G.SourcesItem2> sources,
             global::G.ConvertDocumentsRequestOptions? convertOptions,
             bool? includeConvertedDoc,
-            global::G.Target3? target,
+            global::G.Target2? target,
             global::G.HybridChunkerOptions? chunkingOptions)
         {
             this.ConvertOptions = convertOptions;

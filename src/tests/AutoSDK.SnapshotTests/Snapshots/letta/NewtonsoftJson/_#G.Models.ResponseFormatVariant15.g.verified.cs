@@ -13,7 +13,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.CreateAgentRequestResponseFormatVariant1DiscriminatorType? Type { get; }
+        public global::G.GroqModelSettingsResponseFormatVariant1DiscriminatorType? Type { get; }
 
         /// <summary>
         /// Response format for plain text responses.
@@ -198,7 +198,7 @@ namespace G
         /// 
         /// </summary>
         public ResponseFormatVariant15(
-            global::G.CreateAgentRequestResponseFormatVariant1DiscriminatorType? type,
+            global::G.GroqModelSettingsResponseFormatVariant1DiscriminatorType? type,
             global::G.TextResponseFormat? text,
             global::G.JsonSchemaResponseFormat? jsonSchema,
             global::G.JsonObjectResponseFormat? jsonObject

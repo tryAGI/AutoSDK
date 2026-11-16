@@ -1,4 +1,4 @@
-﻿//HintName: G.Models.SearchCommunityVoiceResponse5.g.cs
+//HintName: G.Models.SearchCommunityVoiceResponse5.g.cs
 
 #nullable enable
 
@@ -13,8 +13,8 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("status")]
-        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.SearchCommunityVoiceResponseStatus4JsonConverter))]
-        public global::G.SearchCommunityVoiceResponseStatus4? Status { get; set; }
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.SearchCommunityVoiceResponseStatusJsonConverter))]
+        public global::G.SearchCommunityVoiceResponseStatus? Status { get; set; }
 
         /// <summary>
         /// Example: An unexpected server error occurred.
@@ -37,7 +37,7 @@ namespace G
         /// Example: An unexpected server error occurred.
         /// </param>
         public SearchCommunityVoiceResponse5(
-            global::G.SearchCommunityVoiceResponseStatus4? status,
+            global::G.SearchCommunityVoiceResponseStatus? status,
             string? message)
         {
             this.Status = status;

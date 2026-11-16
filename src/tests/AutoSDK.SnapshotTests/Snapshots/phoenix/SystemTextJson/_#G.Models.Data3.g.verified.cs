@@ -13,7 +13,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.DeleteAnnotationConfigResponseBodyDataDiscriminatorType? Type { get; }
+        public global::G.GetAnnotationConfigResponseBodyDataDiscriminatorType? Type { get; }
 
         /// <summary>
         /// 
@@ -198,7 +198,7 @@ namespace G
         /// 
         /// </summary>
         public Data3(
-            global::G.DeleteAnnotationConfigResponseBodyDataDiscriminatorType? type,
+            global::G.GetAnnotationConfigResponseBodyDataDiscriminatorType? type,
             global::G.CategoricalAnnotationConfig? categorical,
             global::G.ContinuousAnnotationConfig? continuous,
             global::G.FreeformAnnotationConfig? freeform

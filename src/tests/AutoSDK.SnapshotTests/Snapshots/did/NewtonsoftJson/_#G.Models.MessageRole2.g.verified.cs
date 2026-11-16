@@ -1,4 +1,4 @@
-﻿//HintName: G.Models.MessageRole2.g.cs
+//HintName: G.Models.MessageRole2.g.cs
 
 #nullable enable
 
@@ -18,18 +18,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="function")]
-        Function,
-        /// <summary>
-        /// 
-        /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="system")]
         System,
-        /// <summary>
-        /// 
-        /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="tool")]
-        Tool,
         /// <summary>
         /// 
         /// </summary>
@@ -50,9 +40,7 @@ namespace G
             return value switch
             {
                 MessageRole2.Assistant => "assistant",
-                MessageRole2.Function => "function",
                 MessageRole2.System => "system",
-                MessageRole2.Tool => "tool",
                 MessageRole2.User => "user",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
@@ -65,9 +53,7 @@ namespace G
             return value switch
             {
                 "assistant" => MessageRole2.Assistant,
-                "function" => MessageRole2.Function,
                 "system" => MessageRole2.System,
-                "tool" => MessageRole2.Tool,
                 "user" => MessageRole2.User,
                 _ => null,
             };

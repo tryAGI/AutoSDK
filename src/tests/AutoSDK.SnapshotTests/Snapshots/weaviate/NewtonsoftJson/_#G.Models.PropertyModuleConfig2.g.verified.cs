@@ -1,27 +1,19 @@
-﻿//HintName: G.Models.PropertyModuleConfig2.g.cs
+//HintName: G.Models.PropertyModuleConfig2.g.cs
 
 #nullable enable
 
 namespace G
 {
     /// <summary>
-    /// E.g. `text2vec-transformers`, `text2vec-openai`.
+    /// Configuration specific to modules in a property context.
     /// </summary>
     public sealed partial class PropertyModuleConfig2
     {
         /// <summary>
-        /// If true, the whole property will NOT be included in vectorization.<br/>
-        /// Default Value: false
+        /// E.g. `text2vec-transformers`, `text2vec-openai`.
         /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("skip")]
-        public bool? Skip { get; set; }
-
-        /// <summary>
-        /// Whether the name of the property is used in determining the object vector.<br/>
-        /// Default Value: true
-        /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("vectorizePropertyName")]
-        public bool? VectorizePropertyName { get; set; }
+        [global::Newtonsoft.Json.JsonProperty("<module_name>")]
+        public global::G.PropertyModuleConfig? x_moduleName_ { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -32,20 +24,13 @@ namespace G
         /// <summary>
         /// Initializes a new instance of the <see cref="PropertyModuleConfig2" /> class.
         /// </summary>
-        /// <param name="skip">
-        /// If true, the whole property will NOT be included in vectorization.<br/>
-        /// Default Value: false
-        /// </param>
-        /// <param name="vectorizePropertyName">
-        /// Whether the name of the property is used in determining the object vector.<br/>
-        /// Default Value: true
+        /// <param name="x_moduleName_">
+        /// E.g. `text2vec-transformers`, `text2vec-openai`.
         /// </param>
         public PropertyModuleConfig2(
-            bool? skip,
-            bool? vectorizePropertyName)
+            global::G.PropertyModuleConfig? x_moduleName_)
         {
-            this.Skip = skip;
-            this.VectorizePropertyName = vectorizePropertyName;
+            this.x_moduleName_ = x_moduleName_;
         }
 
         /// <summary>

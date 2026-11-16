@@ -526,7 +526,7 @@ namespace G
             int? randomSeed = default,
             global::G.ResponseFormat? responseFormat = default,
             global::System.Collections.Generic.IList<global::G.Tool>? tools = default,
-            global::G.AnyOf<global::G.ToolChoice2, global::G.ToolChoiceEnum?>? toolChoice = default,
+            global::G.AnyOf<global::G.ToolChoice, global::G.ToolChoiceEnum?>? toolChoice = default,
             double? presencePenalty = default,
             double? frequencyPenalty = default,
             int? n = default,

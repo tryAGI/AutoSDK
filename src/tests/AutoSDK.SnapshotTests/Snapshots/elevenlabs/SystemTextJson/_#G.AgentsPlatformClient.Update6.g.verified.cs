@@ -460,7 +460,7 @@ namespace G
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<global::G.GetConvAIDashboardSettingsResponseModel> Update6Async(
             string? xiApiKey = default,
-            global::System.Collections.Generic.IList<global::G.ChartsItem2>? charts = default,
+            global::System.Collections.Generic.IList<global::G.ChartsItem>? charts = default,
             global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {

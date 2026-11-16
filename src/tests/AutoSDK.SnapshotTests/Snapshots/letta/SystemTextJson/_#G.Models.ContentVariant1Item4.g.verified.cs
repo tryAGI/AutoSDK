@@ -1,0 +1,802 @@
+//HintName: G.Models.ContentVariant1Item4.g.cs
+#pragma warning disable CS0618 // Type or member is obsolete
+
+#nullable enable
+
+namespace G
+{
+    /// <summary>
+    /// 
+    /// </summary>
+    public readonly partial struct ContentVariant1Item4 : global::System.IEquatable<ContentVariant1Item4>
+    {
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::G.MessageContentVariant1ItemDiscriminatorType? Type { get; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+#if NET6_0_OR_GREATER
+        public global::G.TextContent? Text { get; init; }
+#else
+        public global::G.TextContent? Text { get; }
+#endif
+
+        /// <summary>
+        /// 
+        /// </summary>
+#if NET6_0_OR_GREATER
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Text))]
+#endif
+        public bool IsText => Text != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickText(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.TextContent? value)
+        {
+            value = Text;
+            return IsText;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::G.TextContent PickText() => Text is { } value
+            ? value
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Text' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
+#if NET6_0_OR_GREATER
+        public global::G.ImageContent? Image { get; init; }
+#else
+        public global::G.ImageContent? Image { get; }
+#endif
+
+        /// <summary>
+        /// 
+        /// </summary>
+#if NET6_0_OR_GREATER
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Image))]
+#endif
+        public bool IsImage => Image != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickImage(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.ImageContent? value)
+        {
+            value = Image;
+            return IsImage;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::G.ImageContent PickImage() => Image is { } value
+            ? value
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Image' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
+#if NET6_0_OR_GREATER
+        public global::G.ToolCallContent? ToolCall { get; init; }
+#else
+        public global::G.ToolCallContent? ToolCall { get; }
+#endif
+
+        /// <summary>
+        /// 
+        /// </summary>
+#if NET6_0_OR_GREATER
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(ToolCall))]
+#endif
+        public bool IsToolCall => ToolCall != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickToolCall(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.ToolCallContent? value)
+        {
+            value = ToolCall;
+            return IsToolCall;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::G.ToolCallContent PickToolCall() => ToolCall is { } value
+            ? value
+            : throw new global::System.InvalidOperationException($"Expected union variant 'ToolCall' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
+#if NET6_0_OR_GREATER
+        public global::G.ToolReturnContent? ToolReturn { get; init; }
+#else
+        public global::G.ToolReturnContent? ToolReturn { get; }
+#endif
+
+        /// <summary>
+        /// 
+        /// </summary>
+#if NET6_0_OR_GREATER
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(ToolReturn))]
+#endif
+        public bool IsToolReturn => ToolReturn != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickToolReturn(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.ToolReturnContent? value)
+        {
+            value = ToolReturn;
+            return IsToolReturn;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::G.ToolReturnContent PickToolReturn() => ToolReturn is { } value
+            ? value
+            : throw new global::System.InvalidOperationException($"Expected union variant 'ToolReturn' but the value was {ToString()}.");
+
+        /// <summary>
+        /// Sent via the Anthropic Messages API
+        /// </summary>
+#if NET6_0_OR_GREATER
+        public global::G.ReasoningContent? Reasoning { get; init; }
+#else
+        public global::G.ReasoningContent? Reasoning { get; }
+#endif
+
+        /// <summary>
+        /// 
+        /// </summary>
+#if NET6_0_OR_GREATER
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Reasoning))]
+#endif
+        public bool IsReasoning => Reasoning != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickReasoning(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.ReasoningContent? value)
+        {
+            value = Reasoning;
+            return IsReasoning;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::G.ReasoningContent PickReasoning() => Reasoning is { } value
+            ? value
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Reasoning' but the value was {ToString()}.");
+
+        /// <summary>
+        /// Sent via the Anthropic Messages API
+        /// </summary>
+#if NET6_0_OR_GREATER
+        public global::G.RedactedReasoningContent? RedactedReasoning { get; init; }
+#else
+        public global::G.RedactedReasoningContent? RedactedReasoning { get; }
+#endif
+
+        /// <summary>
+        /// 
+        /// </summary>
+#if NET6_0_OR_GREATER
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(RedactedReasoning))]
+#endif
+        public bool IsRedactedReasoning => RedactedReasoning != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickRedactedReasoning(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.RedactedReasoningContent? value)
+        {
+            value = RedactedReasoning;
+            return IsRedactedReasoning;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::G.RedactedReasoningContent PickRedactedReasoning() => RedactedReasoning is { } value
+            ? value
+            : throw new global::System.InvalidOperationException($"Expected union variant 'RedactedReasoning' but the value was {ToString()}.");
+
+        /// <summary>
+        /// A placeholder for reasoning content we know is present, but isn't returned by the provider (e.g. OpenAI GPT-5 on ChatCompletions)
+        /// </summary>
+#if NET6_0_OR_GREATER
+        public global::G.OmittedReasoningContent? OmittedReasoning { get; init; }
+#else
+        public global::G.OmittedReasoningContent? OmittedReasoning { get; }
+#endif
+
+        /// <summary>
+        /// 
+        /// </summary>
+#if NET6_0_OR_GREATER
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(OmittedReasoning))]
+#endif
+        public bool IsOmittedReasoning => OmittedReasoning != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickOmittedReasoning(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.OmittedReasoningContent? value)
+        {
+            value = OmittedReasoning;
+            return IsOmittedReasoning;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::G.OmittedReasoningContent PickOmittedReasoning() => OmittedReasoning is { } value
+            ? value
+            : throw new global::System.InvalidOperationException($"Expected union variant 'OmittedReasoning' but the value was {ToString()}.");
+
+        /// <summary>
+        /// The style of reasoning content returned by the OpenAI Responses API
+        /// </summary>
+#if NET6_0_OR_GREATER
+        public global::G.SummarizedReasoningContent? SummarizedReasoning { get; init; }
+#else
+        public global::G.SummarizedReasoningContent? SummarizedReasoning { get; }
+#endif
+
+        /// <summary>
+        /// 
+        /// </summary>
+#if NET6_0_OR_GREATER
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(SummarizedReasoning))]
+#endif
+        public bool IsSummarizedReasoning => SummarizedReasoning != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickSummarizedReasoning(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::G.SummarizedReasoningContent? value)
+        {
+            value = SummarizedReasoning;
+            return IsSummarizedReasoning;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::G.SummarizedReasoningContent PickSummarizedReasoning() => SummarizedReasoning is { } value
+            ? value
+            : throw new global::System.InvalidOperationException($"Expected union variant 'SummarizedReasoning' but the value was {ToString()}.");
+        /// <summary>
+        /// 
+        /// </summary>
+        public static implicit operator ContentVariant1Item4(global::G.TextContent value) => new ContentVariant1Item4((global::G.TextContent?)value);
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static implicit operator global::G.TextContent?(ContentVariant1Item4 @this) => @this.Text;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public ContentVariant1Item4(global::G.TextContent? value)
+        {
+            Text = value;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static ContentVariant1Item4 FromText(global::G.TextContent? value) => new ContentVariant1Item4(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static implicit operator ContentVariant1Item4(global::G.ImageContent value) => new ContentVariant1Item4((global::G.ImageContent?)value);
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static implicit operator global::G.ImageContent?(ContentVariant1Item4 @this) => @this.Image;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public ContentVariant1Item4(global::G.ImageContent? value)
+        {
+            Image = value;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static ContentVariant1Item4 FromImage(global::G.ImageContent? value) => new ContentVariant1Item4(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static implicit operator ContentVariant1Item4(global::G.ToolCallContent value) => new ContentVariant1Item4((global::G.ToolCallContent?)value);
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static implicit operator global::G.ToolCallContent?(ContentVariant1Item4 @this) => @this.ToolCall;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public ContentVariant1Item4(global::G.ToolCallContent? value)
+        {
+            ToolCall = value;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static ContentVariant1Item4 FromToolCall(global::G.ToolCallContent? value) => new ContentVariant1Item4(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static implicit operator ContentVariant1Item4(global::G.ToolReturnContent value) => new ContentVariant1Item4((global::G.ToolReturnContent?)value);
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static implicit operator global::G.ToolReturnContent?(ContentVariant1Item4 @this) => @this.ToolReturn;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public ContentVariant1Item4(global::G.ToolReturnContent? value)
+        {
+            ToolReturn = value;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static ContentVariant1Item4 FromToolReturn(global::G.ToolReturnContent? value) => new ContentVariant1Item4(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static implicit operator ContentVariant1Item4(global::G.ReasoningContent value) => new ContentVariant1Item4((global::G.ReasoningContent?)value);
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static implicit operator global::G.ReasoningContent?(ContentVariant1Item4 @this) => @this.Reasoning;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public ContentVariant1Item4(global::G.ReasoningContent? value)
+        {
+            Reasoning = value;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static ContentVariant1Item4 FromReasoning(global::G.ReasoningContent? value) => new ContentVariant1Item4(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static implicit operator ContentVariant1Item4(global::G.RedactedReasoningContent value) => new ContentVariant1Item4((global::G.RedactedReasoningContent?)value);
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static implicit operator global::G.RedactedReasoningContent?(ContentVariant1Item4 @this) => @this.RedactedReasoning;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public ContentVariant1Item4(global::G.RedactedReasoningContent? value)
+        {
+            RedactedReasoning = value;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static ContentVariant1Item4 FromRedactedReasoning(global::G.RedactedReasoningContent? value) => new ContentVariant1Item4(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static implicit operator ContentVariant1Item4(global::G.OmittedReasoningContent value) => new ContentVariant1Item4((global::G.OmittedReasoningContent?)value);
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static implicit operator global::G.OmittedReasoningContent?(ContentVariant1Item4 @this) => @this.OmittedReasoning;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public ContentVariant1Item4(global::G.OmittedReasoningContent? value)
+        {
+            OmittedReasoning = value;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static ContentVariant1Item4 FromOmittedReasoning(global::G.OmittedReasoningContent? value) => new ContentVariant1Item4(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static implicit operator ContentVariant1Item4(global::G.SummarizedReasoningContent value) => new ContentVariant1Item4((global::G.SummarizedReasoningContent?)value);
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static implicit operator global::G.SummarizedReasoningContent?(ContentVariant1Item4 @this) => @this.SummarizedReasoning;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public ContentVariant1Item4(global::G.SummarizedReasoningContent? value)
+        {
+            SummarizedReasoning = value;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static ContentVariant1Item4 FromSummarizedReasoning(global::G.SummarizedReasoningContent? value) => new ContentVariant1Item4(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public ContentVariant1Item4(
+            global::G.MessageContentVariant1ItemDiscriminatorType? type,
+            global::G.TextContent? text,
+            global::G.ImageContent? image,
+            global::G.ToolCallContent? toolCall,
+            global::G.ToolReturnContent? toolReturn,
+            global::G.ReasoningContent? reasoning,
+            global::G.RedactedReasoningContent? redactedReasoning,
+            global::G.OmittedReasoningContent? omittedReasoning,
+            global::G.SummarizedReasoningContent? summarizedReasoning
+            )
+        {
+            Type = type;
+
+            Text = text;
+            Image = image;
+            ToolCall = toolCall;
+            ToolReturn = toolReturn;
+            Reasoning = reasoning;
+            RedactedReasoning = redactedReasoning;
+            OmittedReasoning = omittedReasoning;
+            SummarizedReasoning = summarizedReasoning;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public object? Object =>
+            SummarizedReasoning as object ??
+            OmittedReasoning as object ??
+            RedactedReasoning as object ??
+            Reasoning as object ??
+            ToolReturn as object ??
+            ToolCall as object ??
+            Image as object ??
+            Text as object 
+            ;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public override string? ToString() =>
+            Text?.ToString() ??
+            Image?.ToString() ??
+            ToolCall?.ToString() ??
+            ToolReturn?.ToString() ??
+            Reasoning?.ToString() ??
+            RedactedReasoning?.ToString() ??
+            OmittedReasoning?.ToString() ??
+            SummarizedReasoning?.ToString() 
+            ;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool Validate()
+        {
+            return IsText && !IsImage && !IsToolCall && !IsToolReturn && !IsReasoning && !IsRedactedReasoning && !IsOmittedReasoning && !IsSummarizedReasoning || !IsText && IsImage && !IsToolCall && !IsToolReturn && !IsReasoning && !IsRedactedReasoning && !IsOmittedReasoning && !IsSummarizedReasoning || !IsText && !IsImage && IsToolCall && !IsToolReturn && !IsReasoning && !IsRedactedReasoning && !IsOmittedReasoning && !IsSummarizedReasoning || !IsText && !IsImage && !IsToolCall && IsToolReturn && !IsReasoning && !IsRedactedReasoning && !IsOmittedReasoning && !IsSummarizedReasoning || !IsText && !IsImage && !IsToolCall && !IsToolReturn && IsReasoning && !IsRedactedReasoning && !IsOmittedReasoning && !IsSummarizedReasoning || !IsText && !IsImage && !IsToolCall && !IsToolReturn && !IsReasoning && IsRedactedReasoning && !IsOmittedReasoning && !IsSummarizedReasoning || !IsText && !IsImage && !IsToolCall && !IsToolReturn && !IsReasoning && !IsRedactedReasoning && IsOmittedReasoning && !IsSummarizedReasoning || !IsText && !IsImage && !IsToolCall && !IsToolReturn && !IsReasoning && !IsRedactedReasoning && !IsOmittedReasoning && IsSummarizedReasoning;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public TResult? Match<TResult>(
+            global::System.Func<global::G.TextContent, TResult>? text = null,
+            global::System.Func<global::G.ImageContent, TResult>? image = null,
+            global::System.Func<global::G.ToolCallContent, TResult>? toolCall = null,
+            global::System.Func<global::G.ToolReturnContent, TResult>? toolReturn = null,
+            global::System.Func<global::G.ReasoningContent, TResult>? reasoning = null,
+            global::System.Func<global::G.RedactedReasoningContent, TResult>? redactedReasoning = null,
+            global::System.Func<global::G.OmittedReasoningContent, TResult>? omittedReasoning = null,
+            global::System.Func<global::G.SummarizedReasoningContent, TResult>? summarizedReasoning = null,
+            bool validate = true)
+        {
+            if (validate)
+            {
+                Validate();
+            }
+
+            if (Text is { } __value0 && text != null)
+            {
+                return text(__value0);
+            }
+            else if (Image is { } __value1 && image != null)
+            {
+                return image(__value1);
+            }
+            else if (ToolCall is { } __value2 && toolCall != null)
+            {
+                return toolCall(__value2);
+            }
+            else if (ToolReturn is { } __value3 && toolReturn != null)
+            {
+                return toolReturn(__value3);
+            }
+            else if (Reasoning is { } __value4 && reasoning != null)
+            {
+                return reasoning(__value4);
+            }
+            else if (RedactedReasoning is { } __value5 && redactedReasoning != null)
+            {
+                return redactedReasoning(__value5);
+            }
+            else if (OmittedReasoning is { } __value6 && omittedReasoning != null)
+            {
+                return omittedReasoning(__value6);
+            }
+            else if (SummarizedReasoning is { } __value7 && summarizedReasoning != null)
+            {
+                return summarizedReasoning(__value7);
+            }
+
+            return default(TResult);
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public void Match(
+            global::System.Action<global::G.TextContent>? text = null,
+
+            global::System.Action<global::G.ImageContent>? image = null,
+
+            global::System.Action<global::G.ToolCallContent>? toolCall = null,
+
+            global::System.Action<global::G.ToolReturnContent>? toolReturn = null,
+
+            global::System.Action<global::G.ReasoningContent>? reasoning = null,
+
+            global::System.Action<global::G.RedactedReasoningContent>? redactedReasoning = null,
+
+            global::System.Action<global::G.OmittedReasoningContent>? omittedReasoning = null,
+
+            global::System.Action<global::G.SummarizedReasoningContent>? summarizedReasoning = null,
+            bool validate = true)
+        {
+            if (validate)
+            {
+                Validate();
+            }
+
+            if (Text is { } __value0)
+            {
+                text?.Invoke(__value0);
+            }
+            else if (Image is { } __value1)
+            {
+                image?.Invoke(__value1);
+            }
+            else if (ToolCall is { } __value2)
+            {
+                toolCall?.Invoke(__value2);
+            }
+            else if (ToolReturn is { } __value3)
+            {
+                toolReturn?.Invoke(__value3);
+            }
+            else if (Reasoning is { } __value4)
+            {
+                reasoning?.Invoke(__value4);
+            }
+            else if (RedactedReasoning is { } __value5)
+            {
+                redactedReasoning?.Invoke(__value5);
+            }
+            else if (OmittedReasoning is { } __value6)
+            {
+                omittedReasoning?.Invoke(__value6);
+            }
+            else if (SummarizedReasoning is { } __value7)
+            {
+                summarizedReasoning?.Invoke(__value7);
+            }
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public void Switch(
+            global::System.Action<global::G.TextContent>? text = null,
+            global::System.Action<global::G.ImageContent>? image = null,
+            global::System.Action<global::G.ToolCallContent>? toolCall = null,
+            global::System.Action<global::G.ToolReturnContent>? toolReturn = null,
+            global::System.Action<global::G.ReasoningContent>? reasoning = null,
+            global::System.Action<global::G.RedactedReasoningContent>? redactedReasoning = null,
+            global::System.Action<global::G.OmittedReasoningContent>? omittedReasoning = null,
+            global::System.Action<global::G.SummarizedReasoningContent>? summarizedReasoning = null,
+            bool validate = true)
+        {
+            if (validate)
+            {
+                Validate();
+            }
+
+            if (Text is { } __value0)
+            {
+                text?.Invoke(__value0);
+            }
+            else if (Image is { } __value1)
+            {
+                image?.Invoke(__value1);
+            }
+            else if (ToolCall is { } __value2)
+            {
+                toolCall?.Invoke(__value2);
+            }
+            else if (ToolReturn is { } __value3)
+            {
+                toolReturn?.Invoke(__value3);
+            }
+            else if (Reasoning is { } __value4)
+            {
+                reasoning?.Invoke(__value4);
+            }
+            else if (RedactedReasoning is { } __value5)
+            {
+                redactedReasoning?.Invoke(__value5);
+            }
+            else if (OmittedReasoning is { } __value6)
+            {
+                omittedReasoning?.Invoke(__value6);
+            }
+            else if (SummarizedReasoning is { } __value7)
+            {
+                summarizedReasoning?.Invoke(__value7);
+            }
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public override int GetHashCode()
+        {
+            var fields = new object?[]
+            {
+                Text,
+                typeof(global::G.TextContent),
+                Image,
+                typeof(global::G.ImageContent),
+                ToolCall,
+                typeof(global::G.ToolCallContent),
+                ToolReturn,
+                typeof(global::G.ToolReturnContent),
+                Reasoning,
+                typeof(global::G.ReasoningContent),
+                RedactedReasoning,
+                typeof(global::G.RedactedReasoningContent),
+                OmittedReasoning,
+                typeof(global::G.OmittedReasoningContent),
+                SummarizedReasoning,
+                typeof(global::G.SummarizedReasoningContent),
+            };
+            const int offset = unchecked((int)2166136261);
+            const int prime = 16777619;
+            static int HashCodeAggregator(int hashCode, object? value) => value == null
+                ? (hashCode ^ 0) * prime
+                : (hashCode ^ value.GetHashCode()) * prime;
+
+            return global::System.Linq.Enumerable.Aggregate(fields, offset, HashCodeAggregator);
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool Equals(ContentVariant1Item4 other)
+        {
+            return
+                global::System.Collections.Generic.EqualityComparer<global::G.TextContent?>.Default.Equals(Text, other.Text) &&
+                global::System.Collections.Generic.EqualityComparer<global::G.ImageContent?>.Default.Equals(Image, other.Image) &&
+                global::System.Collections.Generic.EqualityComparer<global::G.ToolCallContent?>.Default.Equals(ToolCall, other.ToolCall) &&
+                global::System.Collections.Generic.EqualityComparer<global::G.ToolReturnContent?>.Default.Equals(ToolReturn, other.ToolReturn) &&
+                global::System.Collections.Generic.EqualityComparer<global::G.ReasoningContent?>.Default.Equals(Reasoning, other.Reasoning) &&
+                global::System.Collections.Generic.EqualityComparer<global::G.RedactedReasoningContent?>.Default.Equals(RedactedReasoning, other.RedactedReasoning) &&
+                global::System.Collections.Generic.EqualityComparer<global::G.OmittedReasoningContent?>.Default.Equals(OmittedReasoning, other.OmittedReasoning) &&
+                global::System.Collections.Generic.EqualityComparer<global::G.SummarizedReasoningContent?>.Default.Equals(SummarizedReasoning, other.SummarizedReasoning) 
+                ;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static bool operator ==(ContentVariant1Item4 obj1, ContentVariant1Item4 obj2)
+        {
+            return global::System.Collections.Generic.EqualityComparer<ContentVariant1Item4>.Default.Equals(obj1, obj2);
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static bool operator !=(ContentVariant1Item4 obj1, ContentVariant1Item4 obj2)
+        {
+            return !(obj1 == obj2);
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public override bool Equals(object? obj)
+        {
+            return obj is ContentVariant1Item4 o && Equals(o);
+        }
+    }
+}

@@ -1,4 +1,4 @@
-﻿//HintName: G.Models.Delete1Response2.g.cs
+//HintName: G.Models.Delete1Response2.g.cs
 
 #nullable enable
 
@@ -12,28 +12,16 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("kind")]
+        [global::System.Text.Json.Serialization.JsonPropertyName("knowledge")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required string Kind { get; set; }
+        public required bool Knowledge { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("description")]
+        [global::System.Text.Json.Serialization.JsonPropertyName("deletedDocuments")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required string Description { get; set; }
-
-        /// <summary>
-        /// 
-        /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("details")]
-        public object? Details { get; set; }
-
-        /// <summary>
-        /// 
-        /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("internal")]
-        public string? Internal { get; set; }
+        public required object DeletedDocuments { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -44,23 +32,17 @@ namespace G
         /// <summary>
         /// Initializes a new instance of the <see cref="Delete1Response2" /> class.
         /// </summary>
-        /// <param name="kind"></param>
-        /// <param name="description"></param>
-        /// <param name="details"></param>
-        /// <param name="internal"></param>
+        /// <param name="knowledge"></param>
+        /// <param name="deletedDocuments"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public Delete1Response2(
-            string kind,
-            string description,
-            object? details,
-            string? @internal)
+            bool knowledge,
+            object deletedDocuments)
         {
-            this.Kind = kind ?? throw new global::System.ArgumentNullException(nameof(kind));
-            this.Description = description ?? throw new global::System.ArgumentNullException(nameof(description));
-            this.Details = details;
-            this.Internal = @internal;
+            this.Knowledge = knowledge;
+            this.DeletedDocuments = deletedDocuments ?? throw new global::System.ArgumentNullException(nameof(deletedDocuments));
         }
 
         /// <summary>

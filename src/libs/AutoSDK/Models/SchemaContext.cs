@@ -126,6 +126,23 @@ public class SchemaContext(
     public string? ComponentId { get; set; }
     public bool IsComponent => ComponentId != null || ResolvedReference?.IsComponent == true;
     public bool IsFilteredOutModel { get; set; }
+
+    /// <summary>
+    /// The context this one is a verbatim copy of, when the spec repeated the same inline schema.
+    /// </summary>
+    /// <remarks>
+    /// Set by <c>ModelNameGenerator.ResolveCollisions</c> when two contexts want the same generated
+    /// name and <c>OpenApiSchemaStructuralComparer</c> finds they describe the same shape. Such a
+    /// context keeps the canonical name instead of being numbered, and no model is emitted for it -
+    /// otherwise two files would be produced under one name, which the Roslyn generator rejects
+    /// outright and the CLI resolves by silent overwrite.
+    /// </remarks>
+    public SchemaContext? DuplicateOf { get; set; }
+
+    /// <summary>
+    /// True when another context already emits this one's model.
+    /// </summary>
+    public bool IsStructuralDuplicate => DuplicateOf != null;
     public IReadOnlyDictionary<string, SchemaContext>? ComponentSchemas { get; set; }
     
     public string? OperationPath { get; set; }

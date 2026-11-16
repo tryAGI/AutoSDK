@@ -1,4 +1,4 @@
-﻿//HintName: G.IDeprecatedVectorStoresClient.DeprecatedUpdateSearchRule.g.cs
+//HintName: G.IDeprecatedVectorStoresClient.DeprecatedUpdateSearchRule.g.cs
 #nullable enable
 
 namespace G
@@ -73,7 +73,7 @@ namespace G
             global::G.AnyOf<string, global::System.Guid?> vectorStoreIdentifier,
             global::System.Guid ruleId,
             string? query = default,
-            global::System.Collections.Generic.IList<global::G.RulesVariant1Item>? rules = default,
+            global::System.Collections.Generic.IList<global::G.RulesVariant1Item2>? rules = default,
             global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }

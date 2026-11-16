@@ -1,4 +1,4 @@
-﻿//HintName: G.Models.CreateStreamResponse3.g.cs
+//HintName: G.Models.CreateStreamResponse3.g.cs
 
 #nullable enable
 
@@ -12,26 +12,26 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("session_id")]
-        public string? SessionId { get; set; }
+        [global::Newtonsoft.Json.JsonProperty("kind", Required = global::Newtonsoft.Json.Required.Always)]
+        public string Kind { get; set; } = default!;
 
         /// <summary>
-        /// Id of the stream - should be returned as *path parameter* in all streaming request to the same stream
+        /// 
         /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("id", Required = global::Newtonsoft.Json.Required.Always)]
-        public string Id { get; set; } = default!;
+        [global::Newtonsoft.Json.JsonProperty("description", Required = global::Newtonsoft.Json.Required.Always)]
+        public string Description { get; set; } = default!;
 
         /// <summary>
-        /// Jsep offer object used to create a peer connection
+        /// 
         /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("jsep", Required = global::Newtonsoft.Json.Required.Always)]
-        public global::G.CreateStreamResponseJsep2 Jsep { get; set; } = default!;
+        [global::Newtonsoft.Json.JsonProperty("details")]
+        public object? Details { get; set; }
 
         /// <summary>
-        /// ICE servers used to create a peer connection
+        /// 
         /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("ice_servers", Required = global::Newtonsoft.Json.Required.Always)]
-        public global::System.Collections.Generic.IList<global::G.CreateStreamResponseIceServer2> IceServers { get; set; } = default!;
+        [global::Newtonsoft.Json.JsonProperty("internal")]
+        public string? Internal { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -42,26 +42,20 @@ namespace G
         /// <summary>
         /// Initializes a new instance of the <see cref="CreateStreamResponse3" /> class.
         /// </summary>
-        /// <param name="id">
-        /// Id of the stream - should be returned as *path parameter* in all streaming request to the same stream
-        /// </param>
-        /// <param name="jsep">
-        /// Jsep offer object used to create a peer connection
-        /// </param>
-        /// <param name="iceServers">
-        /// ICE servers used to create a peer connection
-        /// </param>
-        /// <param name="sessionId"></param>
+        /// <param name="kind"></param>
+        /// <param name="description"></param>
+        /// <param name="details"></param>
+        /// <param name="internal"></param>
         public CreateStreamResponse3(
-            string id,
-            global::G.CreateStreamResponseJsep2 jsep,
-            global::System.Collections.Generic.IList<global::G.CreateStreamResponseIceServer2> iceServers,
-            string? sessionId)
+            string kind,
+            string description,
+            object? details,
+            string? @internal)
         {
-            this.SessionId = sessionId;
-            this.Id = id ?? throw new global::System.ArgumentNullException(nameof(id));
-            this.Jsep = jsep ?? throw new global::System.ArgumentNullException(nameof(jsep));
-            this.IceServers = iceServers ?? throw new global::System.ArgumentNullException(nameof(iceServers));
+            this.Kind = kind ?? throw new global::System.ArgumentNullException(nameof(kind));
+            this.Description = description ?? throw new global::System.ArgumentNullException(nameof(description));
+            this.Details = details;
+            this.Internal = @internal;
         }
 
         /// <summary>

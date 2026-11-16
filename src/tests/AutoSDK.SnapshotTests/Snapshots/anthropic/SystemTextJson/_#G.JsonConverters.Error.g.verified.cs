@@ -18,71 +18,71 @@ namespace G.JsonConverters
 
 
             var readerCopy = reader;
-            var discriminatorTypeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.BetaErrorResponseErrorDiscriminator), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.BetaErrorResponseErrorDiscriminator> ??
-                            throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::G.BetaErrorResponseErrorDiscriminator)}");
+            var discriminatorTypeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.ErrorResponseErrorDiscriminator), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.ErrorResponseErrorDiscriminator> ??
+                            throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::G.ErrorResponseErrorDiscriminator)}");
             var discriminator = global::System.Text.Json.JsonSerializer.Deserialize(ref readerCopy, discriminatorTypeInfo);
 
-            global::G.BetaInvalidRequestError? invalidRequestError = default;
-            if (discriminator?.Type == global::G.BetaErrorResponseErrorDiscriminatorType.InvalidRequestError)
+            global::G.InvalidRequestError? invalidRequestError = default;
+            if (discriminator?.Type == global::G.ErrorResponseErrorDiscriminatorType.InvalidRequestError)
             {
-                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.BetaInvalidRequestError), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.BetaInvalidRequestError> ??
-                               throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::G.BetaInvalidRequestError)}");
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.InvalidRequestError), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.InvalidRequestError> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::G.InvalidRequestError)}");
                 invalidRequestError = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
             }
-            global::G.BetaAuthenticationError? authenticationError = default;
-            if (discriminator?.Type == global::G.BetaErrorResponseErrorDiscriminatorType.AuthenticationError)
+            global::G.AuthenticationError? authenticationError = default;
+            if (discriminator?.Type == global::G.ErrorResponseErrorDiscriminatorType.AuthenticationError)
             {
-                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.BetaAuthenticationError), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.BetaAuthenticationError> ??
-                               throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::G.BetaAuthenticationError)}");
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.AuthenticationError), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.AuthenticationError> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::G.AuthenticationError)}");
                 authenticationError = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
             }
-            global::G.BetaBillingError? billingError = default;
-            if (discriminator?.Type == global::G.BetaErrorResponseErrorDiscriminatorType.BillingError)
+            global::G.BillingError? billingError = default;
+            if (discriminator?.Type == global::G.ErrorResponseErrorDiscriminatorType.BillingError)
             {
-                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.BetaBillingError), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.BetaBillingError> ??
-                               throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::G.BetaBillingError)}");
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.BillingError), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.BillingError> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::G.BillingError)}");
                 billingError = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
             }
-            global::G.BetaPermissionError? permissionError = default;
-            if (discriminator?.Type == global::G.BetaErrorResponseErrorDiscriminatorType.PermissionError)
+            global::G.PermissionError? permissionError = default;
+            if (discriminator?.Type == global::G.ErrorResponseErrorDiscriminatorType.PermissionError)
             {
-                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.BetaPermissionError), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.BetaPermissionError> ??
-                               throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::G.BetaPermissionError)}");
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.PermissionError), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.PermissionError> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::G.PermissionError)}");
                 permissionError = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
             }
-            global::G.BetaNotFoundError? notFoundError = default;
-            if (discriminator?.Type == global::G.BetaErrorResponseErrorDiscriminatorType.NotFoundError)
+            global::G.NotFoundError? notFoundError = default;
+            if (discriminator?.Type == global::G.ErrorResponseErrorDiscriminatorType.NotFoundError)
             {
-                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.BetaNotFoundError), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.BetaNotFoundError> ??
-                               throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::G.BetaNotFoundError)}");
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.NotFoundError), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.NotFoundError> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::G.NotFoundError)}");
                 notFoundError = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
             }
-            global::G.BetaRateLimitError? rateLimitError = default;
-            if (discriminator?.Type == global::G.BetaErrorResponseErrorDiscriminatorType.RateLimitError)
+            global::G.RateLimitError? rateLimitError = default;
+            if (discriminator?.Type == global::G.ErrorResponseErrorDiscriminatorType.RateLimitError)
             {
-                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.BetaRateLimitError), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.BetaRateLimitError> ??
-                               throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::G.BetaRateLimitError)}");
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.RateLimitError), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.RateLimitError> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::G.RateLimitError)}");
                 rateLimitError = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
             }
-            global::G.BetaGatewayTimeoutError? timeoutError = default;
-            if (discriminator?.Type == global::G.BetaErrorResponseErrorDiscriminatorType.TimeoutError)
+            global::G.GatewayTimeoutError? timeoutError = default;
+            if (discriminator?.Type == global::G.ErrorResponseErrorDiscriminatorType.TimeoutError)
             {
-                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.BetaGatewayTimeoutError), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.BetaGatewayTimeoutError> ??
-                               throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::G.BetaGatewayTimeoutError)}");
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.GatewayTimeoutError), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.GatewayTimeoutError> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::G.GatewayTimeoutError)}");
                 timeoutError = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
             }
-            global::G.BetaAPIError? apiError = default;
-            if (discriminator?.Type == global::G.BetaErrorResponseErrorDiscriminatorType.ApiError)
+            global::G.APIError? apiError = default;
+            if (discriminator?.Type == global::G.ErrorResponseErrorDiscriminatorType.ApiError)
             {
-                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.BetaAPIError), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.BetaAPIError> ??
-                               throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::G.BetaAPIError)}");
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.APIError), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.APIError> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::G.APIError)}");
                 apiError = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
             }
-            global::G.BetaOverloadedError? overloadedError = default;
-            if (discriminator?.Type == global::G.BetaErrorResponseErrorDiscriminatorType.OverloadedError)
+            global::G.OverloadedError? overloadedError = default;
+            if (discriminator?.Type == global::G.ErrorResponseErrorDiscriminatorType.OverloadedError)
             {
-                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.BetaOverloadedError), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.BetaOverloadedError> ??
-                               throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::G.BetaOverloadedError)}");
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.OverloadedError), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.OverloadedError> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::G.OverloadedError)}");
                 overloadedError = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
             }
 
@@ -121,56 +121,56 @@ namespace G.JsonConverters
 
             if (value.IsInvalidRequestError)
             {
-                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.BetaInvalidRequestError), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.BetaInvalidRequestError?> ??
-                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.BetaInvalidRequestError).Name}");
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.InvalidRequestError), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.InvalidRequestError?> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.InvalidRequestError).Name}");
                 global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickInvalidRequestError(), typeInfo);
             }
             else if (value.IsAuthenticationError)
             {
-                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.BetaAuthenticationError), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.BetaAuthenticationError?> ??
-                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.BetaAuthenticationError).Name}");
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.AuthenticationError), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.AuthenticationError?> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.AuthenticationError).Name}");
                 global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickAuthenticationError(), typeInfo);
             }
             else if (value.IsBillingError)
             {
-                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.BetaBillingError), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.BetaBillingError?> ??
-                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.BetaBillingError).Name}");
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.BillingError), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.BillingError?> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.BillingError).Name}");
                 global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickBillingError(), typeInfo);
             }
             else if (value.IsPermissionError)
             {
-                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.BetaPermissionError), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.BetaPermissionError?> ??
-                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.BetaPermissionError).Name}");
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.PermissionError), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.PermissionError?> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.PermissionError).Name}");
                 global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickPermissionError(), typeInfo);
             }
             else if (value.IsNotFoundError)
             {
-                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.BetaNotFoundError), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.BetaNotFoundError?> ??
-                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.BetaNotFoundError).Name}");
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.NotFoundError), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.NotFoundError?> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.NotFoundError).Name}");
                 global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickNotFoundError(), typeInfo);
             }
             else if (value.IsRateLimitError)
             {
-                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.BetaRateLimitError), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.BetaRateLimitError?> ??
-                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.BetaRateLimitError).Name}");
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.RateLimitError), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.RateLimitError?> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.RateLimitError).Name}");
                 global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickRateLimitError(), typeInfo);
             }
             else if (value.IsTimeoutError)
             {
-                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.BetaGatewayTimeoutError), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.BetaGatewayTimeoutError?> ??
-                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.BetaGatewayTimeoutError).Name}");
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.GatewayTimeoutError), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.GatewayTimeoutError?> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.GatewayTimeoutError).Name}");
                 global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickTimeoutError(), typeInfo);
             }
             else if (value.IsApiError)
             {
-                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.BetaAPIError), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.BetaAPIError?> ??
-                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.BetaAPIError).Name}");
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.APIError), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.APIError?> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.APIError).Name}");
                 global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickApiError(), typeInfo);
             }
             else if (value.IsOverloadedError)
             {
-                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.BetaOverloadedError), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.BetaOverloadedError?> ??
-                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.BetaOverloadedError).Name}");
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.OverloadedError), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.OverloadedError?> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.OverloadedError).Name}");
                 global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickOverloadedError(), typeInfo);
             }
         }

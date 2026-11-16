@@ -1,4 +1,4 @@
-﻿//HintName: G.Commands.DeprecatedVectorStoresDeprecatedDeleteSpecificSearchRuleCommand.g.cs
+//HintName: G.Commands.DeprecatedVectorStoresDeprecatedDeleteSpecificSearchRuleCommand.g.cs
 
 #nullable enable
 
@@ -14,7 +14,7 @@ namespace G
             global::System.CommandLine.ParseResult parseResult,
             global::G.AnyOf<string, global::System.Guid?> vectorStoreIdentifier,
             global::System.Guid ruleId,
-            global::G.Rule rule,
+            global::G.Rule2 rule,
             global::System.Threading.CancellationToken cancellationToken);
         partial void Complete(
             global::System.CommandLine.ParseResult parseResult,
@@ -34,7 +34,7 @@ namespace G
             Description = @"The ID of the search rule",
         };
 
-        private global::System.CommandLine.Argument<global::G.Rule> Rule { get; } = new(
+        private global::System.CommandLine.Argument<global::G.Rule2> Rule { get; } = new(
             name: "rule")
         {
             Description = @"The specific rule to delete from the rules array",

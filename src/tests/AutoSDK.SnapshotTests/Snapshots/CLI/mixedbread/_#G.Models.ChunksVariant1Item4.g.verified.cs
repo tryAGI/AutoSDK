@@ -13,7 +13,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.VectorStoreFileChunksVariant1ItemDiscriminatorType? Type { get; }
+        public global::G.StoreFileChunksVariant1ItemDiscriminatorType? Type { get; }
 
         /// <summary>
         /// 
@@ -258,7 +258,7 @@ namespace G
         /// 
         /// </summary>
         public ChunksVariant1Item4(
-            global::G.VectorStoreFileChunksVariant1ItemDiscriminatorType? type,
+            global::G.StoreFileChunksVariant1ItemDiscriminatorType? type,
             global::G.TextInputChunk? text,
             global::G.ImageUrlInputChunk? imageUrl,
             global::G.AudioUrlInputChunk? audioUrl,

@@ -1,4 +1,4 @@
-﻿//HintName: G.Models.ConfigurationResponse.g.cs
+//HintName: G.Models.ConfigurationResponse.g.cs
 
 #nullable enable
 
@@ -54,9 +54,9 @@ namespace G
         /// Product-specific configuration parameters.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("parameters")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.Parameters2JsonConverter))]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.ParametersJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::G.Parameters2 Parameters { get; set; }
+        public required global::G.Parameters Parameters { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -96,7 +96,7 @@ namespace G
             string name,
             global::G.ConfigurationResponseProductType productType,
             string version,
-            global::G.Parameters2 parameters,
+            global::G.Parameters parameters,
             global::System.DateTime? createdAt,
             global::System.DateTime? updatedAt)
         {

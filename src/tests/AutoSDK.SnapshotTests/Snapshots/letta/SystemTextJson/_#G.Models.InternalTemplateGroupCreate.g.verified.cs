@@ -1,4 +1,4 @@
-﻿//HintName: G.Models.InternalTemplateGroupCreate.g.cs
+//HintName: G.Models.InternalTemplateGroupCreate.g.cs
 
 #pragma warning disable CS0618 // Type or member is obsolete
 

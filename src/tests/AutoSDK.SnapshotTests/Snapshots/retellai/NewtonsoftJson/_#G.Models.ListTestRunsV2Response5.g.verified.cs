@@ -1,4 +1,4 @@
-﻿//HintName: G.Models.ListTestRunsV2Response5.g.cs
+//HintName: G.Models.ListTestRunsV2Response5.g.cs
 
 #nullable enable
 
@@ -13,8 +13,8 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("status")]
-        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.ListTestRunsV2ResponseStatus3JsonConverter))]
-        public global::G.ListTestRunsV2ResponseStatus3? Status { get; set; }
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.ListTestRunsV2ResponseStatusJsonConverter))]
+        public global::G.ListTestRunsV2ResponseStatus? Status { get; set; }
 
         /// <summary>
         /// Example: The requested resource was not found.
@@ -37,7 +37,7 @@ namespace G
         /// Example: The requested resource was not found.
         /// </param>
         public ListTestRunsV2Response5(
-            global::G.ListTestRunsV2ResponseStatus3? status,
+            global::G.ListTestRunsV2ResponseStatus? status,
             string? message)
         {
             this.Status = status;

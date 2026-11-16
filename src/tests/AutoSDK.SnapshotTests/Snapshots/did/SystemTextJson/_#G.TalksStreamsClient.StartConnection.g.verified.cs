@@ -46,13 +46,13 @@ namespace G
             global::System.Net.Http.HttpClient httpClient,
             ref string id,
             ref string? cookie,
-            global::G.StartConnectionRequest2 request);
+            global::G.StartConnectionRequest request);
         partial void PrepareStartConnectionRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
             string id,
             string? cookie,
-            global::G.StartConnectionRequest2 request);
+            global::G.StartConnectionRequest request);
         partial void ProcessStartConnectionResponse(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage);
@@ -73,10 +73,10 @@ namespace G
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::G.ApiException"></exception>
         [global::System.Obsolete("This method marked as deprecated.")]
-        public async global::System.Threading.Tasks.Task<global::G.StartConnectionResponse4> StartConnectionAsync(
+        public async global::System.Threading.Tasks.Task<global::G.StartConnectionResponse> StartConnectionAsync(
             string id,
 
-            global::G.StartConnectionRequest2 request,
+            global::G.StartConnectionRequest request,
             string? cookie = default,
             global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default)
@@ -103,10 +103,10 @@ namespace G
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::G.ApiException"></exception>
         [global::System.Obsolete("This method marked as deprecated.")]
-        public async global::System.Threading.Tasks.Task<global::G.AutoSDKHttpResponse<global::G.StartConnectionResponse4>> StartConnectionAsResponseAsync(
+        public async global::System.Threading.Tasks.Task<global::G.AutoSDKHttpResponse<global::G.StartConnectionResponse>> StartConnectionAsResponseAsync(
             string id,
 
-            global::G.StartConnectionRequest2 request,
+            global::G.StartConnectionRequest request,
             string? cookie = default,
             global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default)
@@ -387,19 +387,19 @@ namespace G
                             {
                                 string? __content_400 = null;
                                 global::System.Exception? __exception_400 = null;
-                                global::G.StartConnectionResponse5? __value_400 = null;
+                                global::G.StartConnectionResponse2? __value_400 = null;
                                 try
                                 {
                                     if (__effectiveReadResponseAsString)
                                     {
                                         __content_400 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
-                                        __value_400 = global::G.StartConnectionResponse5.FromJson(__content_400, JsonSerializerOptions);
+                                        __value_400 = global::G.StartConnectionResponse2.FromJson(__content_400, JsonSerializerOptions);
                                     }
                                     else
                                     {
                                         __content_400 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
 
-                                        __value_400 = global::G.StartConnectionResponse5.FromJson(__content_400, JsonSerializerOptions);
+                                        __value_400 = global::G.StartConnectionResponse2.FromJson(__content_400, JsonSerializerOptions);
                                     }
                                 }
                                 catch (global::System.Exception __ex)
@@ -408,7 +408,7 @@ namespace G
                                 }
 
 
-                                throw global::G.ApiException<global::G.StartConnectionResponse5>.Create(
+                                throw global::G.ApiException<global::G.StartConnectionResponse2>.Create(
                                     statusCode: __response.StatusCode,
                                     message: __content_400 ?? __response.ReasonPhrase ?? string.Empty,
                                     innerException: __exception_400,
@@ -424,19 +424,19 @@ namespace G
                             {
                                 string? __content_401 = null;
                                 global::System.Exception? __exception_401 = null;
-                                global::G.StartConnectionResponse6? __value_401 = null;
+                                global::G.StartConnectionResponse3? __value_401 = null;
                                 try
                                 {
                                     if (__effectiveReadResponseAsString)
                                     {
                                         __content_401 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
-                                        __value_401 = global::G.StartConnectionResponse6.FromJson(__content_401, JsonSerializerOptions);
+                                        __value_401 = global::G.StartConnectionResponse3.FromJson(__content_401, JsonSerializerOptions);
                                     }
                                     else
                                     {
                                         __content_401 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
 
-                                        __value_401 = global::G.StartConnectionResponse6.FromJson(__content_401, JsonSerializerOptions);
+                                        __value_401 = global::G.StartConnectionResponse3.FromJson(__content_401, JsonSerializerOptions);
                                     }
                                 }
                                 catch (global::System.Exception __ex)
@@ -445,7 +445,7 @@ namespace G
                                 }
 
 
-                                throw global::G.ApiException<global::G.StartConnectionResponse6>.Create(
+                                throw global::G.ApiException<global::G.StartConnectionResponse3>.Create(
                                     statusCode: __response.StatusCode,
                                     message: __content_401 ?? __response.ReasonPhrase ?? string.Empty,
                                     innerException: __exception_401,
@@ -478,9 +478,9 @@ namespace G
                                 {
                                     __response.EnsureSuccessStatusCode();
 
-                                    var __value = global::G.StartConnectionResponse4.FromJson(__content, JsonSerializerOptions) ??
+                                    var __value = global::G.StartConnectionResponse.FromJson(__content, JsonSerializerOptions) ??
                                         throw new global::System.InvalidOperationException($"Response deserialization failed for \"{__content}\" ");
-                                    return new global::G.AutoSDKHttpResponse<global::G.StartConnectionResponse4>(
+                                    return new global::G.AutoSDKHttpResponse<global::G.StartConnectionResponse>(
                                         statusCode: __response.StatusCode,
                                         headers: global::G.AutoSDKHttpResponse.CreateHeaders(__response),
                                         requestUri: __response.RequestMessage?.RequestUri,
@@ -510,9 +510,9 @@ namespace G
                 #endif
                                     ).ConfigureAwait(false);
 
-                                    var __value = await global::G.StartConnectionResponse4.FromJsonStreamAsync(__content, JsonSerializerOptions).ConfigureAwait(false) ??
+                                    var __value = await global::G.StartConnectionResponse.FromJsonStreamAsync(__content, JsonSerializerOptions).ConfigureAwait(false) ??
                                         throw new global::System.InvalidOperationException("Response deserialization failed.");
-                                    return new global::G.AutoSDKHttpResponse<global::G.StartConnectionResponse4>(
+                                    return new global::G.AutoSDKHttpResponse<global::G.StartConnectionResponse>(
                                         statusCode: __response.StatusCode,
                                         headers: global::G.AutoSDKHttpResponse.CreateHeaders(__response),
                                         requestUri: __response.RequestMessage?.RequestUri,
@@ -569,15 +569,15 @@ namespace G
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         [global::System.Obsolete("This method marked as deprecated.")]
-        public async global::System.Threading.Tasks.Task<global::G.StartConnectionResponse4> StartConnectionAsync(
+        public async global::System.Threading.Tasks.Task<global::G.StartConnectionResponse> StartConnectionAsync(
             string id,
-            global::G.StartConnectionRequestAnswer2 answer,
+            global::G.StartConnectionRequestAnswer answer,
             string? cookie = default,
             string? sessionId = default,
             global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
-            var __request = new global::G.StartConnectionRequest2
+            var __request = new global::G.StartConnectionRequest
             {
                 SessionId = sessionId,
                 Answer = answer,

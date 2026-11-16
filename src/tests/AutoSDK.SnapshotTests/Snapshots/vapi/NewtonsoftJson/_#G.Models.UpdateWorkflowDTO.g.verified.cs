@@ -1,4 +1,4 @@
-﻿//HintName: G.Models.UpdateWorkflowDTO.g.cs
+//HintName: G.Models.UpdateWorkflowDTO.g.cs
 
 #nullable enable
 
@@ -60,7 +60,7 @@ namespace G
         /// These are dynamic credentials that will be used for the workflow calls. By default, all the credentials are available for use in the call but you can supplement an additional credentials using this. Dynamic credentials override existing credentials.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("credentials")]
-        public global::System.Collections.Generic.IList<global::G.CredentialsItem8>? Credentials { get; set; }
+        public global::System.Collections.Generic.IList<global::G.CredentialsItem2>? Credentials { get; set; }
 
         /// <summary>
         /// This is the voicemail detection plan for the workflow.
@@ -301,7 +301,7 @@ namespace G
             global::G.LangfuseObservabilityPlan? observabilityPlan,
             global::G.OneOf<global::G.UpdateWorkflowDTOBackgroundSound?, string>? backgroundSound,
             global::System.Collections.Generic.IList<global::G.OneOf<global::G.CallHookCallEnding, global::G.CallHookAssistantSpeechInterrupted, global::G.CallHookCustomerSpeechInterrupted, global::G.CallHookCustomerSpeechTimeout, global::G.CallHookModelResponseTimeout>>? hooks,
-            global::System.Collections.Generic.IList<global::G.CredentialsItem8>? credentials,
+            global::System.Collections.Generic.IList<global::G.CredentialsItem2>? credentials,
             global::G.OneOf<global::G.UpdateWorkflowDTOVoicemailDetection?, global::G.GoogleVoicemailDetectionPlan, global::G.OpenAIVoicemailDetectionPlan, global::G.TwilioVoicemailDetectionPlan, global::G.VapiVoicemailDetectionPlan>? voicemailDetection,
             double? maxDurationSeconds,
             string? name,

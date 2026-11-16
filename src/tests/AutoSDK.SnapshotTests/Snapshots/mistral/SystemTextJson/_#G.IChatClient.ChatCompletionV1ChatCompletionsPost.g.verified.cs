@@ -1,4 +1,4 @@
-﻿//HintName: G.IChatClient.ChatCompletionV1ChatCompletionsPost.g.cs
+//HintName: G.IChatClient.ChatCompletionV1ChatCompletionsPost.g.cs
 #nullable enable
 
 namespace G
@@ -86,7 +86,7 @@ namespace G
         /// <exception cref="global::System.InvalidOperationException"></exception>
         global::System.Threading.Tasks.Task<global::G.ChatCompletionResponse> ChatCompletionV1ChatCompletionsPostAsync(
             string model,
-            global::System.Collections.Generic.IList<global::G.MessagesItem> messages,
+            global::System.Collections.Generic.IList<global::G.MessagesItem2> messages,
             double? temperature = default,
             double? topP = default,
             int? maxTokens = default,
@@ -94,7 +94,7 @@ namespace G
             int? randomSeed = default,
             global::G.ResponseFormat? responseFormat = default,
             global::System.Collections.Generic.IList<global::G.Tool>? tools = default,
-            global::G.AnyOf<global::G.ToolChoice2, global::G.ToolChoiceEnum?>? toolChoice = default,
+            global::G.AnyOf<global::G.ToolChoice, global::G.ToolChoiceEnum?>? toolChoice = default,
             double? presencePenalty = default,
             double? frequencyPenalty = default,
             int? n = default,

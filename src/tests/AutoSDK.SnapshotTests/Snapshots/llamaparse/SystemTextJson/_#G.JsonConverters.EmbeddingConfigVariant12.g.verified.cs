@@ -18,54 +18,54 @@ namespace G.JsonConverters
 
 
             var readerCopy = reader;
-            var discriminatorTypeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.PipelineCreateEmbeddingConfigVariant1Discriminator), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.PipelineCreateEmbeddingConfigVariant1Discriminator> ??
-                            throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::G.PipelineCreateEmbeddingConfigVariant1Discriminator)}");
+            var discriminatorTypeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.PipelineUpdateEmbeddingConfigVariant1Discriminator), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.PipelineUpdateEmbeddingConfigVariant1Discriminator> ??
+                            throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::G.PipelineUpdateEmbeddingConfigVariant1Discriminator)}");
             var discriminator = global::System.Text.Json.JsonSerializer.Deserialize(ref readerCopy, discriminatorTypeInfo);
 
             global::G.AzureOpenAIEmbeddingConfig? azureEmbedding = default;
-            if (discriminator?.Type == global::G.PipelineCreateEmbeddingConfigVariant1DiscriminatorType.AzureEmbedding)
+            if (discriminator?.Type == global::G.PipelineUpdateEmbeddingConfigVariant1DiscriminatorType.AzureEmbedding)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.AzureOpenAIEmbeddingConfig), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.AzureOpenAIEmbeddingConfig> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::G.AzureOpenAIEmbeddingConfig)}");
                 azureEmbedding = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
             }
             global::G.CohereEmbeddingConfig? cohereEmbedding = default;
-            if (discriminator?.Type == global::G.PipelineCreateEmbeddingConfigVariant1DiscriminatorType.CohereEmbedding)
+            if (discriminator?.Type == global::G.PipelineUpdateEmbeddingConfigVariant1DiscriminatorType.CohereEmbedding)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.CohereEmbeddingConfig), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.CohereEmbeddingConfig> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::G.CohereEmbeddingConfig)}");
                 cohereEmbedding = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
             }
             global::G.GeminiEmbeddingConfig? geminiEmbedding = default;
-            if (discriminator?.Type == global::G.PipelineCreateEmbeddingConfigVariant1DiscriminatorType.GeminiEmbedding)
+            if (discriminator?.Type == global::G.PipelineUpdateEmbeddingConfigVariant1DiscriminatorType.GeminiEmbedding)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.GeminiEmbeddingConfig), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.GeminiEmbeddingConfig> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::G.GeminiEmbeddingConfig)}");
                 geminiEmbedding = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
             }
             global::G.HuggingFaceInferenceAPIEmbeddingConfig? huggingfaceApiEmbedding = default;
-            if (discriminator?.Type == global::G.PipelineCreateEmbeddingConfigVariant1DiscriminatorType.HuggingfaceApiEmbedding)
+            if (discriminator?.Type == global::G.PipelineUpdateEmbeddingConfigVariant1DiscriminatorType.HuggingfaceApiEmbedding)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.HuggingFaceInferenceAPIEmbeddingConfig), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.HuggingFaceInferenceAPIEmbeddingConfig> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::G.HuggingFaceInferenceAPIEmbeddingConfig)}");
                 huggingfaceApiEmbedding = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
             }
             global::G.OpenAIEmbeddingConfig? openaiEmbedding = default;
-            if (discriminator?.Type == global::G.PipelineCreateEmbeddingConfigVariant1DiscriminatorType.OpenaiEmbedding)
+            if (discriminator?.Type == global::G.PipelineUpdateEmbeddingConfigVariant1DiscriminatorType.OpenaiEmbedding)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.OpenAIEmbeddingConfig), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.OpenAIEmbeddingConfig> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::G.OpenAIEmbeddingConfig)}");
                 openaiEmbedding = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
             }
             global::G.VertexAIEmbeddingConfig? vertexaiEmbedding = default;
-            if (discriminator?.Type == global::G.PipelineCreateEmbeddingConfigVariant1DiscriminatorType.VertexaiEmbedding)
+            if (discriminator?.Type == global::G.PipelineUpdateEmbeddingConfigVariant1DiscriminatorType.VertexaiEmbedding)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.VertexAIEmbeddingConfig), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.VertexAIEmbeddingConfig> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::G.VertexAIEmbeddingConfig)}");
                 vertexaiEmbedding = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
             }
             global::G.BedrockEmbeddingConfig? bedrockEmbedding = default;
-            if (discriminator?.Type == global::G.PipelineCreateEmbeddingConfigVariant1DiscriminatorType.BedrockEmbedding)
+            if (discriminator?.Type == global::G.PipelineUpdateEmbeddingConfigVariant1DiscriminatorType.BedrockEmbedding)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.BedrockEmbeddingConfig), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.BedrockEmbeddingConfig> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::G.BedrockEmbeddingConfig)}");

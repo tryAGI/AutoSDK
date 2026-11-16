@@ -1,4 +1,4 @@
-﻿//HintName: G.Models.GetClipsResponse2.g.cs
+//HintName: G.Models.GetClipsResponse2.g.cs
 
 #nullable enable
 
@@ -12,15 +12,28 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("clips")]
+        [global::System.Text.Json.Serialization.JsonPropertyName("kind")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::System.Collections.Generic.IList<global::G.GetClipsResponseClip2> Clips { get; set; }
+        public required string Kind { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("token")]
-        public string? Token { get; set; }
+        [global::System.Text.Json.Serialization.JsonPropertyName("description")]
+        [global::System.Text.Json.Serialization.JsonRequired]
+        public required string Description { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("details")]
+        public object? Details { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("internal")]
+        public string? Internal { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -31,17 +44,23 @@ namespace G
         /// <summary>
         /// Initializes a new instance of the <see cref="GetClipsResponse2" /> class.
         /// </summary>
-        /// <param name="clips"></param>
-        /// <param name="token"></param>
+        /// <param name="kind"></param>
+        /// <param name="description"></param>
+        /// <param name="details"></param>
+        /// <param name="internal"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public GetClipsResponse2(
-            global::System.Collections.Generic.IList<global::G.GetClipsResponseClip2> clips,
-            string? token)
+            string kind,
+            string description,
+            object? details,
+            string? @internal)
         {
-            this.Clips = clips ?? throw new global::System.ArgumentNullException(nameof(clips));
-            this.Token = token;
+            this.Kind = kind ?? throw new global::System.ArgumentNullException(nameof(kind));
+            this.Description = description ?? throw new global::System.ArgumentNullException(nameof(description));
+            this.Details = details;
+            this.Internal = @internal;
         }
 
         /// <summary>

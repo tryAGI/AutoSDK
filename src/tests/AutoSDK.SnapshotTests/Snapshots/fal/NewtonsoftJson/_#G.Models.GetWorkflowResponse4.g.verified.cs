@@ -1,4 +1,4 @@
-﻿//HintName: G.Models.GetWorkflowResponse4.g.cs
+//HintName: G.Models.GetWorkflowResponse4.g.cs
 
 #nullable enable
 
@@ -13,7 +13,7 @@ namespace G
         /// Error details
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("error", Required = global::Newtonsoft.Json.Required.Always)]
-        public global::G.GetWorkflowResponseError3 Error { get; set; } = default!;
+        public global::G.GetWorkflowResponseError Error { get; set; } = default!;
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -28,7 +28,7 @@ namespace G
         /// Error details
         /// </param>
         public GetWorkflowResponse4(
-            global::G.GetWorkflowResponseError3 error)
+            global::G.GetWorkflowResponseError error)
         {
             this.Error = error ?? throw new global::System.ArgumentNullException(nameof(error));
         }

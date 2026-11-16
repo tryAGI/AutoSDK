@@ -18,36 +18,36 @@ namespace G.JsonConverters
 
 
             var readerCopy = reader;
-            var discriminatorTypeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.BetaMessageBatchIndividualResponseResultDiscriminator), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.BetaMessageBatchIndividualResponseResultDiscriminator> ??
-                            throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::G.BetaMessageBatchIndividualResponseResultDiscriminator)}");
+            var discriminatorTypeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.MessageBatchIndividualResponseResultDiscriminator), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.MessageBatchIndividualResponseResultDiscriminator> ??
+                            throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::G.MessageBatchIndividualResponseResultDiscriminator)}");
             var discriminator = global::System.Text.Json.JsonSerializer.Deserialize(ref readerCopy, discriminatorTypeInfo);
 
-            global::G.BetaSucceededResult? succeeded = default;
-            if (discriminator?.Type == global::G.BetaMessageBatchIndividualResponseResultDiscriminatorType.Succeeded)
+            global::G.SucceededResult? succeeded = default;
+            if (discriminator?.Type == global::G.MessageBatchIndividualResponseResultDiscriminatorType.Succeeded)
             {
-                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.BetaSucceededResult), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.BetaSucceededResult> ??
-                               throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::G.BetaSucceededResult)}");
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.SucceededResult), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.SucceededResult> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::G.SucceededResult)}");
                 succeeded = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
             }
-            global::G.BetaErroredResult? errored = default;
-            if (discriminator?.Type == global::G.BetaMessageBatchIndividualResponseResultDiscriminatorType.Errored)
+            global::G.ErroredResult? errored = default;
+            if (discriminator?.Type == global::G.MessageBatchIndividualResponseResultDiscriminatorType.Errored)
             {
-                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.BetaErroredResult), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.BetaErroredResult> ??
-                               throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::G.BetaErroredResult)}");
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.ErroredResult), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.ErroredResult> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::G.ErroredResult)}");
                 errored = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
             }
-            global::G.BetaCanceledResult? canceled = default;
-            if (discriminator?.Type == global::G.BetaMessageBatchIndividualResponseResultDiscriminatorType.Canceled)
+            global::G.CanceledResult? canceled = default;
+            if (discriminator?.Type == global::G.MessageBatchIndividualResponseResultDiscriminatorType.Canceled)
             {
-                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.BetaCanceledResult), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.BetaCanceledResult> ??
-                               throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::G.BetaCanceledResult)}");
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.CanceledResult), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.CanceledResult> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::G.CanceledResult)}");
                 canceled = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
             }
-            global::G.BetaExpiredResult? expired = default;
-            if (discriminator?.Type == global::G.BetaMessageBatchIndividualResponseResultDiscriminatorType.Expired)
+            global::G.ExpiredResult? expired = default;
+            if (discriminator?.Type == global::G.MessageBatchIndividualResponseResultDiscriminatorType.Expired)
             {
-                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.BetaExpiredResult), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.BetaExpiredResult> ??
-                               throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::G.BetaExpiredResult)}");
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.ExpiredResult), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.ExpiredResult> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::G.ExpiredResult)}");
                 expired = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
             }
 
@@ -76,26 +76,26 @@ namespace G.JsonConverters
 
             if (value.IsSucceeded)
             {
-                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.BetaSucceededResult), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.BetaSucceededResult?> ??
-                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.BetaSucceededResult).Name}");
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.SucceededResult), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.SucceededResult?> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.SucceededResult).Name}");
                 global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickSucceeded(), typeInfo);
             }
             else if (value.IsErrored)
             {
-                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.BetaErroredResult), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.BetaErroredResult?> ??
-                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.BetaErroredResult).Name}");
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.ErroredResult), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.ErroredResult?> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.ErroredResult).Name}");
                 global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickErrored(), typeInfo);
             }
             else if (value.IsCanceled)
             {
-                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.BetaCanceledResult), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.BetaCanceledResult?> ??
-                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.BetaCanceledResult).Name}");
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.CanceledResult), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.CanceledResult?> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.CanceledResult).Name}");
                 global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickCanceled(), typeInfo);
             }
             else if (value.IsExpired)
             {
-                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.BetaExpiredResult), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.BetaExpiredResult?> ??
-                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.BetaExpiredResult).Name}");
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.ExpiredResult), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.ExpiredResult?> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.ExpiredResult).Name}");
                 global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickExpired(), typeInfo);
             }
         }

@@ -14,15 +14,15 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.MessageBatchIndividualResponseResultDiscriminatorType? Type { get; }
+        public global::G.BetaMessageBatchIndividualResponseResultDiscriminatorType? Type { get; }
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        public global::G.SucceededResult? Succeeded { get; init; }
+        public global::G.BetaSucceededResult? Succeeded { get; init; }
 #else
-        public global::G.SucceededResult? Succeeded { get; }
+        public global::G.BetaSucceededResult? Succeeded { get; }
 #endif
 
         /// <summary>
@@ -40,7 +40,7 @@ namespace G
 #if NET6_0_OR_GREATER
             [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
 #endif
-            out global::G.SucceededResult? value)
+            out global::G.BetaSucceededResult? value)
         {
             value = Succeeded;
             return IsSucceeded;
@@ -49,7 +49,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.SucceededResult PickSucceeded() => Succeeded is { } value
+        public global::G.BetaSucceededResult PickSucceeded() => Succeeded is { } value
             ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Succeeded' but the value was {ToString()}.");
 
@@ -57,9 +57,9 @@ namespace G
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        public global::G.ErroredResult? Errored { get; init; }
+        public global::G.BetaErroredResult? Errored { get; init; }
 #else
-        public global::G.ErroredResult? Errored { get; }
+        public global::G.BetaErroredResult? Errored { get; }
 #endif
 
         /// <summary>
@@ -77,7 +77,7 @@ namespace G
 #if NET6_0_OR_GREATER
             [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
 #endif
-            out global::G.ErroredResult? value)
+            out global::G.BetaErroredResult? value)
         {
             value = Errored;
             return IsErrored;
@@ -86,7 +86,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.ErroredResult PickErrored() => Errored is { } value
+        public global::G.BetaErroredResult PickErrored() => Errored is { } value
             ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Errored' but the value was {ToString()}.");
 
@@ -94,9 +94,9 @@ namespace G
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        public global::G.CanceledResult? Canceled { get; init; }
+        public global::G.BetaCanceledResult? Canceled { get; init; }
 #else
-        public global::G.CanceledResult? Canceled { get; }
+        public global::G.BetaCanceledResult? Canceled { get; }
 #endif
 
         /// <summary>
@@ -114,7 +114,7 @@ namespace G
 #if NET6_0_OR_GREATER
             [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
 #endif
-            out global::G.CanceledResult? value)
+            out global::G.BetaCanceledResult? value)
         {
             value = Canceled;
             return IsCanceled;
@@ -123,7 +123,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.CanceledResult PickCanceled() => Canceled is { } value
+        public global::G.BetaCanceledResult PickCanceled() => Canceled is { } value
             ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Canceled' but the value was {ToString()}.");
 
@@ -131,9 +131,9 @@ namespace G
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        public global::G.ExpiredResult? Expired { get; init; }
+        public global::G.BetaExpiredResult? Expired { get; init; }
 #else
-        public global::G.ExpiredResult? Expired { get; }
+        public global::G.BetaExpiredResult? Expired { get; }
 #endif
 
         /// <summary>
@@ -151,7 +151,7 @@ namespace G
 #if NET6_0_OR_GREATER
             [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
 #endif
-            out global::G.ExpiredResult? value)
+            out global::G.BetaExpiredResult? value)
         {
             value = Expired;
             return IsExpired;
@@ -160,23 +160,23 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.ExpiredResult PickExpired() => Expired is { } value
+        public global::G.BetaExpiredResult PickExpired() => Expired is { } value
             ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Expired' but the value was {ToString()}.");
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator Result2(global::G.SucceededResult value) => new Result2((global::G.SucceededResult?)value);
+        public static implicit operator Result2(global::G.BetaSucceededResult value) => new Result2((global::G.BetaSucceededResult?)value);
 
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator global::G.SucceededResult?(Result2 @this) => @this.Succeeded;
+        public static implicit operator global::G.BetaSucceededResult?(Result2 @this) => @this.Succeeded;
 
         /// <summary>
         /// 
         /// </summary>
-        public Result2(global::G.SucceededResult? value)
+        public Result2(global::G.BetaSucceededResult? value)
         {
             Succeeded = value;
         }
@@ -184,22 +184,22 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static Result2 FromSucceeded(global::G.SucceededResult? value) => new Result2(value);
+        public static Result2 FromSucceeded(global::G.BetaSucceededResult? value) => new Result2(value);
 
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator Result2(global::G.ErroredResult value) => new Result2((global::G.ErroredResult?)value);
+        public static implicit operator Result2(global::G.BetaErroredResult value) => new Result2((global::G.BetaErroredResult?)value);
 
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator global::G.ErroredResult?(Result2 @this) => @this.Errored;
+        public static implicit operator global::G.BetaErroredResult?(Result2 @this) => @this.Errored;
 
         /// <summary>
         /// 
         /// </summary>
-        public Result2(global::G.ErroredResult? value)
+        public Result2(global::G.BetaErroredResult? value)
         {
             Errored = value;
         }
@@ -207,22 +207,22 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static Result2 FromErrored(global::G.ErroredResult? value) => new Result2(value);
+        public static Result2 FromErrored(global::G.BetaErroredResult? value) => new Result2(value);
 
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator Result2(global::G.CanceledResult value) => new Result2((global::G.CanceledResult?)value);
+        public static implicit operator Result2(global::G.BetaCanceledResult value) => new Result2((global::G.BetaCanceledResult?)value);
 
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator global::G.CanceledResult?(Result2 @this) => @this.Canceled;
+        public static implicit operator global::G.BetaCanceledResult?(Result2 @this) => @this.Canceled;
 
         /// <summary>
         /// 
         /// </summary>
-        public Result2(global::G.CanceledResult? value)
+        public Result2(global::G.BetaCanceledResult? value)
         {
             Canceled = value;
         }
@@ -230,22 +230,22 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static Result2 FromCanceled(global::G.CanceledResult? value) => new Result2(value);
+        public static Result2 FromCanceled(global::G.BetaCanceledResult? value) => new Result2(value);
 
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator Result2(global::G.ExpiredResult value) => new Result2((global::G.ExpiredResult?)value);
+        public static implicit operator Result2(global::G.BetaExpiredResult value) => new Result2((global::G.BetaExpiredResult?)value);
 
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator global::G.ExpiredResult?(Result2 @this) => @this.Expired;
+        public static implicit operator global::G.BetaExpiredResult?(Result2 @this) => @this.Expired;
 
         /// <summary>
         /// 
         /// </summary>
-        public Result2(global::G.ExpiredResult? value)
+        public Result2(global::G.BetaExpiredResult? value)
         {
             Expired = value;
         }
@@ -253,17 +253,17 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static Result2 FromExpired(global::G.ExpiredResult? value) => new Result2(value);
+        public static Result2 FromExpired(global::G.BetaExpiredResult? value) => new Result2(value);
 
         /// <summary>
         /// 
         /// </summary>
         public Result2(
-            global::G.MessageBatchIndividualResponseResultDiscriminatorType? type,
-            global::G.SucceededResult? succeeded,
-            global::G.ErroredResult? errored,
-            global::G.CanceledResult? canceled,
-            global::G.ExpiredResult? expired
+            global::G.BetaMessageBatchIndividualResponseResultDiscriminatorType? type,
+            global::G.BetaSucceededResult? succeeded,
+            global::G.BetaErroredResult? errored,
+            global::G.BetaCanceledResult? canceled,
+            global::G.BetaExpiredResult? expired
             )
         {
             Type = type;
@@ -306,10 +306,10 @@ namespace G
         /// 
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<global::G.SucceededResult, TResult>? succeeded = null,
-            global::System.Func<global::G.ErroredResult, TResult>? errored = null,
-            global::System.Func<global::G.CanceledResult, TResult>? canceled = null,
-            global::System.Func<global::G.ExpiredResult, TResult>? expired = null,
+            global::System.Func<global::G.BetaSucceededResult, TResult>? succeeded = null,
+            global::System.Func<global::G.BetaErroredResult, TResult>? errored = null,
+            global::System.Func<global::G.BetaCanceledResult, TResult>? canceled = null,
+            global::System.Func<global::G.BetaExpiredResult, TResult>? expired = null,
             bool validate = true)
         {
             if (validate)
@@ -341,13 +341,13 @@ namespace G
         /// 
         /// </summary>
         public void Match(
-            global::System.Action<global::G.SucceededResult>? succeeded = null,
+            global::System.Action<global::G.BetaSucceededResult>? succeeded = null,
 
-            global::System.Action<global::G.ErroredResult>? errored = null,
+            global::System.Action<global::G.BetaErroredResult>? errored = null,
 
-            global::System.Action<global::G.CanceledResult>? canceled = null,
+            global::System.Action<global::G.BetaCanceledResult>? canceled = null,
 
-            global::System.Action<global::G.ExpiredResult>? expired = null,
+            global::System.Action<global::G.BetaExpiredResult>? expired = null,
             bool validate = true)
         {
             if (validate)
@@ -377,10 +377,10 @@ namespace G
         /// 
         /// </summary>
         public void Switch(
-            global::System.Action<global::G.SucceededResult>? succeeded = null,
-            global::System.Action<global::G.ErroredResult>? errored = null,
-            global::System.Action<global::G.CanceledResult>? canceled = null,
-            global::System.Action<global::G.ExpiredResult>? expired = null,
+            global::System.Action<global::G.BetaSucceededResult>? succeeded = null,
+            global::System.Action<global::G.BetaErroredResult>? errored = null,
+            global::System.Action<global::G.BetaCanceledResult>? canceled = null,
+            global::System.Action<global::G.BetaExpiredResult>? expired = null,
             bool validate = true)
         {
             if (validate)
@@ -414,13 +414,13 @@ namespace G
             var fields = new object?[]
             {
                 Succeeded,
-                typeof(global::G.SucceededResult),
+                typeof(global::G.BetaSucceededResult),
                 Errored,
-                typeof(global::G.ErroredResult),
+                typeof(global::G.BetaErroredResult),
                 Canceled,
-                typeof(global::G.CanceledResult),
+                typeof(global::G.BetaCanceledResult),
                 Expired,
-                typeof(global::G.ExpiredResult),
+                typeof(global::G.BetaExpiredResult),
             };
             const int offset = unchecked((int)2166136261);
             const int prime = 16777619;
@@ -437,10 +437,10 @@ namespace G
         public bool Equals(Result2 other)
         {
             return
-                global::System.Collections.Generic.EqualityComparer<global::G.SucceededResult?>.Default.Equals(Succeeded, other.Succeeded) &&
-                global::System.Collections.Generic.EqualityComparer<global::G.ErroredResult?>.Default.Equals(Errored, other.Errored) &&
-                global::System.Collections.Generic.EqualityComparer<global::G.CanceledResult?>.Default.Equals(Canceled, other.Canceled) &&
-                global::System.Collections.Generic.EqualityComparer<global::G.ExpiredResult?>.Default.Equals(Expired, other.Expired) 
+                global::System.Collections.Generic.EqualityComparer<global::G.BetaSucceededResult?>.Default.Equals(Succeeded, other.Succeeded) &&
+                global::System.Collections.Generic.EqualityComparer<global::G.BetaErroredResult?>.Default.Equals(Errored, other.Errored) &&
+                global::System.Collections.Generic.EqualityComparer<global::G.BetaCanceledResult?>.Default.Equals(Canceled, other.Canceled) &&
+                global::System.Collections.Generic.EqualityComparer<global::G.BetaExpiredResult?>.Default.Equals(Expired, other.Expired) 
                 ;
         }
 

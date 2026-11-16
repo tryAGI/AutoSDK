@@ -1,4 +1,4 @@
-﻿//HintName: G.Models.GoogleLLM.g.cs
+//HintName: G.Models.GoogleLLM.g.cs
 
 #nullable enable
 
@@ -52,8 +52,8 @@ namespace G
         /// The model to use
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("model")]
-        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.GoogleLLMModel2JsonConverter))]
-        public global::G.GoogleLLMModel2? Model { get; set; }
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.GoogleLLMModelJsonConverter))]
+        public global::G.GoogleLLMModel? Model { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -95,7 +95,7 @@ namespace G
             global::G.GoogleLLMTemplate? template,
             global::G.GoogleLLMPromptCustomization? promptCustomization,
             double? temperature,
-            global::G.GoogleLLMModel2? model)
+            global::G.GoogleLLMModel? model)
         {
             this.Provider = provider;
             this.Instructions = instructions;

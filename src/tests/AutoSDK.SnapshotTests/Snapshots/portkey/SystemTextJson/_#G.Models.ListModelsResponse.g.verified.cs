@@ -1,4 +1,4 @@
-﻿//HintName: G.Models.ListModelsResponse.g.cs
+//HintName: G.Models.ListModelsResponse.g.cs
 
 #nullable enable
 
@@ -21,7 +21,7 @@ namespace G
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("data")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::System.Collections.Generic.IList<global::G.Model11> Data { get; set; }
+        public required global::System.Collections.Generic.IList<global::G.Model> Data { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -38,7 +38,7 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public ListModelsResponse(
-            global::System.Collections.Generic.IList<global::G.Model11> data,
+            global::System.Collections.Generic.IList<global::G.Model> data,
             global::G.ListModelsResponseObject @object)
         {
             this.Object = @object;

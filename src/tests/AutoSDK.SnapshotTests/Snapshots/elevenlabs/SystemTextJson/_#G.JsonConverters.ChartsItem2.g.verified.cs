@@ -18,26 +18,26 @@ namespace G.JsonConverters
 
 
             var readerCopy = reader;
-            var discriminatorTypeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.PatchConvAIDashboardSettingsRequestChartDiscriminator), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.PatchConvAIDashboardSettingsRequestChartDiscriminator> ??
-                            throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::G.PatchConvAIDashboardSettingsRequestChartDiscriminator)}");
+            var discriminatorTypeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.GetConvAIDashboardSettingsResponseModelChartDiscriminator), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.GetConvAIDashboardSettingsResponseModelChartDiscriminator> ??
+                            throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::G.GetConvAIDashboardSettingsResponseModelChartDiscriminator)}");
             var discriminator = global::System.Text.Json.JsonSerializer.Deserialize(ref readerCopy, discriminatorTypeInfo);
 
             global::G.DashboardCallSuccessChartModel? callSuccess = default;
-            if (discriminator?.Type == global::G.PatchConvAIDashboardSettingsRequestChartDiscriminatorType.CallSuccess)
+            if (discriminator?.Type == global::G.GetConvAIDashboardSettingsResponseModelChartDiscriminatorType.CallSuccess)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.DashboardCallSuccessChartModel), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.DashboardCallSuccessChartModel> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::G.DashboardCallSuccessChartModel)}");
                 callSuccess = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
             }
             global::G.DashboardCriteriaChartModel? criteria = default;
-            if (discriminator?.Type == global::G.PatchConvAIDashboardSettingsRequestChartDiscriminatorType.Criteria)
+            if (discriminator?.Type == global::G.GetConvAIDashboardSettingsResponseModelChartDiscriminatorType.Criteria)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.DashboardCriteriaChartModel), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.DashboardCriteriaChartModel> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::G.DashboardCriteriaChartModel)}");
                 criteria = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
             }
             global::G.DashboardDataCollectionChartModel? dataCollection = default;
-            if (discriminator?.Type == global::G.PatchConvAIDashboardSettingsRequestChartDiscriminatorType.DataCollection)
+            if (discriminator?.Type == global::G.GetConvAIDashboardSettingsResponseModelChartDiscriminatorType.DataCollection)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.DashboardDataCollectionChartModel), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.DashboardDataCollectionChartModel> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::G.DashboardDataCollectionChartModel)}");

@@ -1,4 +1,4 @@
-﻿//HintName: G.Models.AssistantMessage.g.cs
+//HintName: G.Models.AssistantMessage.g.cs
 
 #pragma warning disable CS0618 // Type or member is obsolete
 
@@ -28,7 +28,7 @@ namespace G
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("content")]
-        public global::System.Collections.Generic.IList<global::G.ContentVariant1Item>? Content { get; set; }
+        public global::System.Collections.Generic.IList<global::G.ContentVariant1Item2>? Content { get; set; }
 
         /// <summary>
         /// Default Value: assistant
@@ -82,7 +82,7 @@ namespace G
         public AssistantMessage(
             global::System.Collections.Generic.IList<string>? inputVariables,
             global::G.AssistantMessageTemplateFormat? templateFormat,
-            global::System.Collections.Generic.IList<global::G.ContentVariant1Item>? content,
+            global::System.Collections.Generic.IList<global::G.ContentVariant1Item2>? content,
             string? role,
             string? name,
             global::System.Collections.Generic.IList<global::G.ToolCall>? toolCalls)

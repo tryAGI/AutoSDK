@@ -13,7 +13,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.TextEditor20250124CacheControlVariant1DiscriminatorType? Type { get; }
+        public global::G.ToolCacheControlVariant1DiscriminatorType? Type { get; }
 
         /// <summary>
         /// 
@@ -78,7 +78,7 @@ namespace G
         /// 
         /// </summary>
         public CacheControlVariant119(
-            global::G.TextEditor20250124CacheControlVariant1DiscriminatorType? type,
+            global::G.ToolCacheControlVariant1DiscriminatorType? type,
             global::G.CacheControlEphemeral? ephemeral
             )
         {

@@ -1,4 +1,4 @@
-﻿//HintName: G.Models.ImageUrlInputChunk.g.cs
+//HintName: G.Models.ImageUrlInputChunk.g.cs
 
 #nullable enable
 
@@ -26,7 +26,7 @@ namespace G
         /// metadata of the chunk
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("generated_metadata")]
-        public global::G.GeneratedMetadataVariant12? GeneratedMetadata { get; set; }
+        public global::G.GeneratedMetadataVariant13? GeneratedMetadata { get; set; }
 
         /// <summary>
         /// model used for this chunk
@@ -97,7 +97,7 @@ namespace G
         public ImageUrlInputChunk(
             int chunkIndex,
             string? mimeType,
-            global::G.GeneratedMetadataVariant12? generatedMetadata,
+            global::G.GeneratedMetadataVariant13? generatedMetadata,
             string? model,
             string? type,
             string? ocrText,

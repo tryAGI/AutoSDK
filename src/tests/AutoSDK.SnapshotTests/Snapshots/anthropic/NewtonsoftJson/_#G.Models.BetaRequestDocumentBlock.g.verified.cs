@@ -1,4 +1,4 @@
-﻿//HintName: G.Models.BetaRequestDocumentBlock.g.cs
+//HintName: G.Models.BetaRequestDocumentBlock.g.cs
 
 #nullable enable
 
@@ -13,7 +13,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("cache_control")]
-        public global::G.CacheControlVariant16? CacheControl { get; set; }
+        public global::G.CacheControlVariant115? CacheControl { get; set; }
 
         /// <summary>
         /// 
@@ -26,7 +26,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("source", Required = global::Newtonsoft.Json.Required.Always)]
-        public global::G.Source Source { get; set; } = default!;
+        public global::G.Source4 Source { get; set; } = default!;
 
         /// <summary>
         /// 
@@ -62,8 +62,8 @@ namespace G
         /// <param name="context"></param>
         /// <param name="citations"></param>
         public BetaRequestDocumentBlock(
-            global::G.Source source,
-            global::G.CacheControlVariant16? cacheControl,
+            global::G.Source4 source,
+            global::G.CacheControlVariant115? cacheControl,
             global::G.BetaRequestDocumentBlockType type,
             string? title,
             string? context,

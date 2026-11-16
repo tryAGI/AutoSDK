@@ -1,4 +1,4 @@
-﻿//HintName: G.ISubpackageAssetsClient.Create.g.cs
+//HintName: G.ISubpackageAssetsClient.Create.g.cs
 #nullable enable
 
 namespace G
@@ -30,7 +30,7 @@ namespace G
         global::System.Threading.Tasks.Task<global::G.Asset> CreateAsync(
             string xApiKey,
 
-            global::G.CreateRequest2 request,
+            global::G.CreateRequest7 request,
             global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
@@ -58,7 +58,7 @@ namespace G
         global::System.Threading.Tasks.Task<global::G.AutoSDKHttpResponse<global::G.Asset>> CreateAsResponseAsync(
             string xApiKey,
 
-            global::G.CreateRequest2 request,
+            global::G.CreateRequest7 request,
             global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>

@@ -1,4 +1,4 @@
-﻿//HintName: G.Models.ListTestCaseDefinitionsV2Response6.g.cs
+//HintName: G.Models.ListTestCaseDefinitionsV2Response6.g.cs
 
 #nullable enable
 
@@ -13,8 +13,8 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("status")]
-        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.ListTestCaseDefinitionsV2ResponseStatus4JsonConverter))]
-        public global::G.ListTestCaseDefinitionsV2ResponseStatus4? Status { get; set; }
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.ListTestCaseDefinitionsV2ResponseStatusJsonConverter))]
+        public global::G.ListTestCaseDefinitionsV2ResponseStatus? Status { get; set; }
 
         /// <summary>
         /// Example: An unexpected server error occurred.
@@ -37,7 +37,7 @@ namespace G
         /// Example: An unexpected server error occurred.
         /// </param>
         public ListTestCaseDefinitionsV2Response6(
-            global::G.ListTestCaseDefinitionsV2ResponseStatus4? status,
+            global::G.ListTestCaseDefinitionsV2ResponseStatus? status,
             string? message)
         {
             this.Status = status;

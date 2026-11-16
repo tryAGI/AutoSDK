@@ -1,4 +1,4 @@
-﻿//HintName: G.Models.CompletionPrompt.g.cs
+//HintName: G.Models.CompletionPrompt.g.cs
 
 #nullable enable
 
@@ -13,7 +13,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("content", Required = global::Newtonsoft.Json.Required.Always)]
-        public global::System.Collections.Generic.IList<global::G.ContentItem> Content { get; set; } = default!;
+        public global::System.Collections.Generic.IList<global::G.ContentItem4> Content { get; set; } = default!;
 
         /// <summary>
         /// Default Value: []
@@ -55,7 +55,7 @@ namespace G
         /// Default Value: completion
         /// </param>
         public CompletionPrompt(
-            global::System.Collections.Generic.IList<global::G.ContentItem> content,
+            global::System.Collections.Generic.IList<global::G.ContentItem4> content,
             global::System.Collections.Generic.IList<string>? inputVariables,
             global::G.CompletionPromptTemplateFormat? templateFormat,
             global::G.CompletionPromptType? type)

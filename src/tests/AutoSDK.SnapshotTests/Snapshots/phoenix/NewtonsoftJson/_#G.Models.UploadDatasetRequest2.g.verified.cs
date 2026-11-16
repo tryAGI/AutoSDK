@@ -1,4 +1,4 @@
-﻿//HintName: G.Models.UploadDatasetRequest2.g.cs
+//HintName: G.Models.UploadDatasetRequest2.g.cs
 
 #nullable enable
 
@@ -13,8 +13,8 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("action")]
-        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.UploadDatasetRequestAction2JsonConverter))]
-        public global::G.UploadDatasetRequestAction2? Action { get; set; }
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.UploadDatasetRequestActionJsonConverter))]
+        public global::G.UploadDatasetRequestAction? Action { get; set; }
 
         /// <summary>
         /// 
@@ -108,7 +108,7 @@ namespace G
             global::System.Collections.Generic.IList<string> outputKeys,
             byte[] file,
             string filename,
-            global::G.UploadDatasetRequestAction2? action,
+            global::G.UploadDatasetRequestAction? action,
             string? description,
             global::System.Collections.Generic.IList<string>? metadataKeys,
             global::System.Collections.Generic.IList<string>? splitKeys,

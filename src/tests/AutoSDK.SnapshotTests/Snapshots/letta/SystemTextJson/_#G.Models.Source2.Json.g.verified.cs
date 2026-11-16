@@ -1,9 +1,9 @@
-﻿//HintName: G.Models.Source2.Json.g.cs
+//HintName: G.Models.Source2.Json.g.cs
 #nullable enable
 
 namespace G
 {
-    public sealed partial class Source2
+    public readonly partial struct Source2
     {
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerContext.
@@ -42,7 +42,7 @@ namespace G
             return global::System.Text.Json.JsonSerializer.Deserialize(
                 json,
                 typeof(global::G.Source2),
-                jsonSerializerContext) as global::G.Source2;
+                jsonSerializerContext) as global::G.Source2?;
         }
 
         /// <summary>
@@ -71,7 +71,7 @@ namespace G
             return (await global::System.Text.Json.JsonSerializer.DeserializeAsync(
                 jsonStream,
                 typeof(global::G.Source2),
-                jsonSerializerContext).ConfigureAwait(false)) as global::G.Source2;
+                jsonSerializerContext).ConfigureAwait(false)) as global::G.Source2?;
         }
 
         /// <summary>

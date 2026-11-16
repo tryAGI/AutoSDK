@@ -1,4 +1,4 @@
-﻿//HintName: G.Models.AlertFilterDisconnectionReason.g.cs
+//HintName: G.Models.AlertFilterDisconnectionReason.g.cs
 
 #nullable enable
 
@@ -13,7 +13,7 @@ namespace G
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("value")]
-        public global::System.Collections.Generic.IList<global::G.DisconnectionReason4>? Value { get; set; }
+        public global::System.Collections.Generic.IList<global::G.DisconnectionReason>? Value { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -29,7 +29,7 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public AlertFilterDisconnectionReason(
-            global::System.Collections.Generic.IList<global::G.DisconnectionReason4>? value)
+            global::System.Collections.Generic.IList<global::G.DisconnectionReason>? value)
         {
             this.Value = value;
         }

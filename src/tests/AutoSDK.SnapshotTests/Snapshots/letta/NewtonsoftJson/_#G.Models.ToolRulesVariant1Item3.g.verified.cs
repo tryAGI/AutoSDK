@@ -13,7 +13,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.InternalTemplateAgentCreateToolRulesVariant1ItemDiscriminatorType? Type { get; }
+        public global::G.CreateAgentRequestToolRulesVariant1ItemDiscriminatorType? Type { get; }
 
         /// <summary>
         /// A ToolRule represents a tool that can be invoked by the agent.
@@ -558,7 +558,7 @@ namespace G
         /// 
         /// </summary>
         public ToolRulesVariant1Item3(
-            global::G.InternalTemplateAgentCreateToolRulesVariant1ItemDiscriminatorType? type,
+            global::G.CreateAgentRequestToolRulesVariant1ItemDiscriminatorType? type,
             global::G.ChildToolRule? constrainChildTools,
             global::G.InitToolRule? runFirst,
             global::G.TerminalToolRule? exitLoop,

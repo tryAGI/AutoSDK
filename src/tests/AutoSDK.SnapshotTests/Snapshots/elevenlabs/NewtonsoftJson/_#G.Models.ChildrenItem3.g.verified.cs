@@ -13,15 +13,15 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.ASTOrOperatorNodeInputChildrenItemDiscriminatorType? Type { get; }
+        public global::G.ASTOrOperatorNodeOutputChildrenItemDiscriminatorType? Type { get; }
 
         /// <summary>
         /// String literal.
         /// </summary>
 #if NET6_0_OR_GREATER
-        public global::G.ASTStringNodeInput? StringLiteral { get; init; }
+        public global::G.ASTStringNodeOutput? StringLiteral { get; init; }
 #else
-        public global::G.ASTStringNodeInput? StringLiteral { get; }
+        public global::G.ASTStringNodeOutput? StringLiteral { get; }
 #endif
 
         /// <summary>
@@ -39,7 +39,7 @@ namespace G
 #if NET6_0_OR_GREATER
             [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
 #endif
-            out global::G.ASTStringNodeInput? value)
+            out global::G.ASTStringNodeOutput? value)
         {
             value = StringLiteral;
             return IsStringLiteral;
@@ -48,7 +48,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.ASTStringNodeInput PickStringLiteral() => StringLiteral is { } value
+        public global::G.ASTStringNodeOutput PickStringLiteral() => StringLiteral is { } value
             ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'StringLiteral' but the value was {ToString()}.");
 
@@ -56,9 +56,9 @@ namespace G
         /// Number literal.
         /// </summary>
 #if NET6_0_OR_GREATER
-        public global::G.ASTNumberNodeInput? NumberLiteral { get; init; }
+        public global::G.ASTNumberNodeOutput? NumberLiteral { get; init; }
 #else
-        public global::G.ASTNumberNodeInput? NumberLiteral { get; }
+        public global::G.ASTNumberNodeOutput? NumberLiteral { get; }
 #endif
 
         /// <summary>
@@ -76,7 +76,7 @@ namespace G
 #if NET6_0_OR_GREATER
             [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
 #endif
-            out global::G.ASTNumberNodeInput? value)
+            out global::G.ASTNumberNodeOutput? value)
         {
             value = NumberLiteral;
             return IsNumberLiteral;
@@ -85,7 +85,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.ASTNumberNodeInput PickNumberLiteral() => NumberLiteral is { } value
+        public global::G.ASTNumberNodeOutput PickNumberLiteral() => NumberLiteral is { } value
             ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'NumberLiteral' but the value was {ToString()}.");
 
@@ -93,9 +93,9 @@ namespace G
         /// Boolean literal.
         /// </summary>
 #if NET6_0_OR_GREATER
-        public global::G.ASTBooleanNodeInput? BooleanLiteral { get; init; }
+        public global::G.ASTBooleanNodeOutput? BooleanLiteral { get; init; }
 #else
-        public global::G.ASTBooleanNodeInput? BooleanLiteral { get; }
+        public global::G.ASTBooleanNodeOutput? BooleanLiteral { get; }
 #endif
 
         /// <summary>
@@ -113,7 +113,7 @@ namespace G
 #if NET6_0_OR_GREATER
             [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
 #endif
-            out global::G.ASTBooleanNodeInput? value)
+            out global::G.ASTBooleanNodeOutput? value)
         {
             value = BooleanLiteral;
             return IsBooleanLiteral;
@@ -122,7 +122,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.ASTBooleanNodeInput PickBooleanLiteral() => BooleanLiteral is { } value
+        public global::G.ASTBooleanNodeOutput PickBooleanLiteral() => BooleanLiteral is { } value
             ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'BooleanLiteral' but the value was {ToString()}.");
 
@@ -130,9 +130,9 @@ namespace G
         /// Prompt evaluated by an LLM to a boolean value.
         /// </summary>
 #if NET6_0_OR_GREATER
-        public global::G.ASTLLMNodeInput? Llm { get; init; }
+        public global::G.ASTLLMNodeOutput? Llm { get; init; }
 #else
-        public global::G.ASTLLMNodeInput? Llm { get; }
+        public global::G.ASTLLMNodeOutput? Llm { get; }
 #endif
 
         /// <summary>
@@ -150,7 +150,7 @@ namespace G
 #if NET6_0_OR_GREATER
             [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
 #endif
-            out global::G.ASTLLMNodeInput? value)
+            out global::G.ASTLLMNodeOutput? value)
         {
             value = Llm;
             return IsLlm;
@@ -159,7 +159,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.ASTLLMNodeInput PickLlm() => Llm is { } value
+        public global::G.ASTLLMNodeOutput PickLlm() => Llm is { } value
             ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Llm' but the value was {ToString()}.");
 
@@ -167,9 +167,9 @@ namespace G
         /// Reference to a dynamic variable.
         /// </summary>
 #if NET6_0_OR_GREATER
-        public global::G.ASTDynamicVariableNodeInput? DynamicVariable { get; init; }
+        public global::G.ASTDynamicVariableNodeOutput? DynamicVariable { get; init; }
 #else
-        public global::G.ASTDynamicVariableNodeInput? DynamicVariable { get; }
+        public global::G.ASTDynamicVariableNodeOutput? DynamicVariable { get; }
 #endif
 
         /// <summary>
@@ -187,7 +187,7 @@ namespace G
 #if NET6_0_OR_GREATER
             [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
 #endif
-            out global::G.ASTDynamicVariableNodeInput? value)
+            out global::G.ASTDynamicVariableNodeOutput? value)
         {
             value = DynamicVariable;
             return IsDynamicVariable;
@@ -196,7 +196,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.ASTDynamicVariableNodeInput PickDynamicVariable() => DynamicVariable is { } value
+        public global::G.ASTDynamicVariableNodeOutput PickDynamicVariable() => DynamicVariable is { } value
             ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'DynamicVariable' but the value was {ToString()}.");
 
@@ -204,9 +204,9 @@ namespace G
         /// Evaluates to true if any child is true.
         /// </summary>
 #if NET6_0_OR_GREATER
-        public global::G.ASTOrOperatorNodeInput? OrOperator { get; init; }
+        public global::G.ASTOrOperatorNodeOutput? OrOperator { get; init; }
 #else
-        public global::G.ASTOrOperatorNodeInput? OrOperator { get; }
+        public global::G.ASTOrOperatorNodeOutput? OrOperator { get; }
 #endif
 
         /// <summary>
@@ -224,7 +224,7 @@ namespace G
 #if NET6_0_OR_GREATER
             [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
 #endif
-            out global::G.ASTOrOperatorNodeInput? value)
+            out global::G.ASTOrOperatorNodeOutput? value)
         {
             value = OrOperator;
             return IsOrOperator;
@@ -233,7 +233,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.ASTOrOperatorNodeInput PickOrOperator() => OrOperator is { } value
+        public global::G.ASTOrOperatorNodeOutput PickOrOperator() => OrOperator is { } value
             ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'OrOperator' but the value was {ToString()}.");
 
@@ -241,9 +241,9 @@ namespace G
         /// Evaluates to true if all children are true.
         /// </summary>
 #if NET6_0_OR_GREATER
-        public global::G.ASTAndOperatorNodeInput? AndOperator { get; init; }
+        public global::G.ASTAndOperatorNodeOutput? AndOperator { get; init; }
 #else
-        public global::G.ASTAndOperatorNodeInput? AndOperator { get; }
+        public global::G.ASTAndOperatorNodeOutput? AndOperator { get; }
 #endif
 
         /// <summary>
@@ -261,7 +261,7 @@ namespace G
 #if NET6_0_OR_GREATER
             [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
 #endif
-            out global::G.ASTAndOperatorNodeInput? value)
+            out global::G.ASTAndOperatorNodeOutput? value)
         {
             value = AndOperator;
             return IsAndOperator;
@@ -270,7 +270,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.ASTAndOperatorNodeInput PickAndOperator() => AndOperator is { } value
+        public global::G.ASTAndOperatorNodeOutput PickAndOperator() => AndOperator is { } value
             ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'AndOperator' but the value was {ToString()}.");
 
@@ -278,9 +278,9 @@ namespace G
         /// Evaluates to true if the left value equals the right.
         /// </summary>
 #if NET6_0_OR_GREATER
-        public global::G.ASTEqualsOperatorNodeInput? EqOperator { get; init; }
+        public global::G.ASTEqualsOperatorNodeOutput? EqOperator { get; init; }
 #else
-        public global::G.ASTEqualsOperatorNodeInput? EqOperator { get; }
+        public global::G.ASTEqualsOperatorNodeOutput? EqOperator { get; }
 #endif
 
         /// <summary>
@@ -298,7 +298,7 @@ namespace G
 #if NET6_0_OR_GREATER
             [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
 #endif
-            out global::G.ASTEqualsOperatorNodeInput? value)
+            out global::G.ASTEqualsOperatorNodeOutput? value)
         {
             value = EqOperator;
             return IsEqOperator;
@@ -307,7 +307,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.ASTEqualsOperatorNodeInput PickEqOperator() => EqOperator is { } value
+        public global::G.ASTEqualsOperatorNodeOutput PickEqOperator() => EqOperator is { } value
             ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'EqOperator' but the value was {ToString()}.");
 
@@ -315,9 +315,9 @@ namespace G
         /// Evaluates to true if the left value does not equal the right.
         /// </summary>
 #if NET6_0_OR_GREATER
-        public global::G.ASTNotEqualsOperatorNodeInput? NeqOperator { get; init; }
+        public global::G.ASTNotEqualsOperatorNodeOutput? NeqOperator { get; init; }
 #else
-        public global::G.ASTNotEqualsOperatorNodeInput? NeqOperator { get; }
+        public global::G.ASTNotEqualsOperatorNodeOutput? NeqOperator { get; }
 #endif
 
         /// <summary>
@@ -335,7 +335,7 @@ namespace G
 #if NET6_0_OR_GREATER
             [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
 #endif
-            out global::G.ASTNotEqualsOperatorNodeInput? value)
+            out global::G.ASTNotEqualsOperatorNodeOutput? value)
         {
             value = NeqOperator;
             return IsNeqOperator;
@@ -344,7 +344,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.ASTNotEqualsOperatorNodeInput PickNeqOperator() => NeqOperator is { } value
+        public global::G.ASTNotEqualsOperatorNodeOutput PickNeqOperator() => NeqOperator is { } value
             ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'NeqOperator' but the value was {ToString()}.");
 
@@ -352,9 +352,9 @@ namespace G
         /// Evaluates to true if the left value is greater than the right.
         /// </summary>
 #if NET6_0_OR_GREATER
-        public global::G.ASTGreaterThanOperatorNodeInput? GtOperator { get; init; }
+        public global::G.ASTGreaterThanOperatorNodeOutput? GtOperator { get; init; }
 #else
-        public global::G.ASTGreaterThanOperatorNodeInput? GtOperator { get; }
+        public global::G.ASTGreaterThanOperatorNodeOutput? GtOperator { get; }
 #endif
 
         /// <summary>
@@ -372,7 +372,7 @@ namespace G
 #if NET6_0_OR_GREATER
             [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
 #endif
-            out global::G.ASTGreaterThanOperatorNodeInput? value)
+            out global::G.ASTGreaterThanOperatorNodeOutput? value)
         {
             value = GtOperator;
             return IsGtOperator;
@@ -381,7 +381,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.ASTGreaterThanOperatorNodeInput PickGtOperator() => GtOperator is { } value
+        public global::G.ASTGreaterThanOperatorNodeOutput PickGtOperator() => GtOperator is { } value
             ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'GtOperator' but the value was {ToString()}.");
 
@@ -389,9 +389,9 @@ namespace G
         /// Evaluates to true if the left value is less than the right.
         /// </summary>
 #if NET6_0_OR_GREATER
-        public global::G.ASTLessThanOperatorNodeInput? LtOperator { get; init; }
+        public global::G.ASTLessThanOperatorNodeOutput? LtOperator { get; init; }
 #else
-        public global::G.ASTLessThanOperatorNodeInput? LtOperator { get; }
+        public global::G.ASTLessThanOperatorNodeOutput? LtOperator { get; }
 #endif
 
         /// <summary>
@@ -409,7 +409,7 @@ namespace G
 #if NET6_0_OR_GREATER
             [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
 #endif
-            out global::G.ASTLessThanOperatorNodeInput? value)
+            out global::G.ASTLessThanOperatorNodeOutput? value)
         {
             value = LtOperator;
             return IsLtOperator;
@@ -418,7 +418,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.ASTLessThanOperatorNodeInput PickLtOperator() => LtOperator is { } value
+        public global::G.ASTLessThanOperatorNodeOutput PickLtOperator() => LtOperator is { } value
             ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'LtOperator' but the value was {ToString()}.");
 
@@ -426,9 +426,9 @@ namespace G
         /// Evaluates to true if the left value is greater than or equal to the right.
         /// </summary>
 #if NET6_0_OR_GREATER
-        public global::G.ASTGreaterThanOrEqualsOperatorNodeInput? GteOperator { get; init; }
+        public global::G.ASTGreaterThanOrEqualsOperatorNodeOutput? GteOperator { get; init; }
 #else
-        public global::G.ASTGreaterThanOrEqualsOperatorNodeInput? GteOperator { get; }
+        public global::G.ASTGreaterThanOrEqualsOperatorNodeOutput? GteOperator { get; }
 #endif
 
         /// <summary>
@@ -446,7 +446,7 @@ namespace G
 #if NET6_0_OR_GREATER
             [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
 #endif
-            out global::G.ASTGreaterThanOrEqualsOperatorNodeInput? value)
+            out global::G.ASTGreaterThanOrEqualsOperatorNodeOutput? value)
         {
             value = GteOperator;
             return IsGteOperator;
@@ -455,7 +455,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.ASTGreaterThanOrEqualsOperatorNodeInput PickGteOperator() => GteOperator is { } value
+        public global::G.ASTGreaterThanOrEqualsOperatorNodeOutput PickGteOperator() => GteOperator is { } value
             ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'GteOperator' but the value was {ToString()}.");
 
@@ -463,9 +463,9 @@ namespace G
         /// Evaluates to true if the left value is less than or equal to the right.
         /// </summary>
 #if NET6_0_OR_GREATER
-        public global::G.ASTLessThanOrEqualsOperatorNodeInput? LteOperator { get; init; }
+        public global::G.ASTLessThanOrEqualsOperatorNodeOutput? LteOperator { get; init; }
 #else
-        public global::G.ASTLessThanOrEqualsOperatorNodeInput? LteOperator { get; }
+        public global::G.ASTLessThanOrEqualsOperatorNodeOutput? LteOperator { get; }
 #endif
 
         /// <summary>
@@ -483,7 +483,7 @@ namespace G
 #if NET6_0_OR_GREATER
             [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
 #endif
-            out global::G.ASTLessThanOrEqualsOperatorNodeInput? value)
+            out global::G.ASTLessThanOrEqualsOperatorNodeOutput? value)
         {
             value = LteOperator;
             return IsLteOperator;
@@ -492,23 +492,23 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.ASTLessThanOrEqualsOperatorNodeInput PickLteOperator() => LteOperator is { } value
+        public global::G.ASTLessThanOrEqualsOperatorNodeOutput PickLteOperator() => LteOperator is { } value
             ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'LteOperator' but the value was {ToString()}.");
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator ChildrenItem3(global::G.ASTStringNodeInput value) => new ChildrenItem3((global::G.ASTStringNodeInput?)value);
+        public static implicit operator ChildrenItem3(global::G.ASTStringNodeOutput value) => new ChildrenItem3((global::G.ASTStringNodeOutput?)value);
 
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator global::G.ASTStringNodeInput?(ChildrenItem3 @this) => @this.StringLiteral;
+        public static implicit operator global::G.ASTStringNodeOutput?(ChildrenItem3 @this) => @this.StringLiteral;
 
         /// <summary>
         /// 
         /// </summary>
-        public ChildrenItem3(global::G.ASTStringNodeInput? value)
+        public ChildrenItem3(global::G.ASTStringNodeOutput? value)
         {
             StringLiteral = value;
         }
@@ -516,22 +516,22 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static ChildrenItem3 FromStringLiteral(global::G.ASTStringNodeInput? value) => new ChildrenItem3(value);
+        public static ChildrenItem3 FromStringLiteral(global::G.ASTStringNodeOutput? value) => new ChildrenItem3(value);
 
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator ChildrenItem3(global::G.ASTNumberNodeInput value) => new ChildrenItem3((global::G.ASTNumberNodeInput?)value);
+        public static implicit operator ChildrenItem3(global::G.ASTNumberNodeOutput value) => new ChildrenItem3((global::G.ASTNumberNodeOutput?)value);
 
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator global::G.ASTNumberNodeInput?(ChildrenItem3 @this) => @this.NumberLiteral;
+        public static implicit operator global::G.ASTNumberNodeOutput?(ChildrenItem3 @this) => @this.NumberLiteral;
 
         /// <summary>
         /// 
         /// </summary>
-        public ChildrenItem3(global::G.ASTNumberNodeInput? value)
+        public ChildrenItem3(global::G.ASTNumberNodeOutput? value)
         {
             NumberLiteral = value;
         }
@@ -539,22 +539,22 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static ChildrenItem3 FromNumberLiteral(global::G.ASTNumberNodeInput? value) => new ChildrenItem3(value);
+        public static ChildrenItem3 FromNumberLiteral(global::G.ASTNumberNodeOutput? value) => new ChildrenItem3(value);
 
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator ChildrenItem3(global::G.ASTBooleanNodeInput value) => new ChildrenItem3((global::G.ASTBooleanNodeInput?)value);
+        public static implicit operator ChildrenItem3(global::G.ASTBooleanNodeOutput value) => new ChildrenItem3((global::G.ASTBooleanNodeOutput?)value);
 
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator global::G.ASTBooleanNodeInput?(ChildrenItem3 @this) => @this.BooleanLiteral;
+        public static implicit operator global::G.ASTBooleanNodeOutput?(ChildrenItem3 @this) => @this.BooleanLiteral;
 
         /// <summary>
         /// 
         /// </summary>
-        public ChildrenItem3(global::G.ASTBooleanNodeInput? value)
+        public ChildrenItem3(global::G.ASTBooleanNodeOutput? value)
         {
             BooleanLiteral = value;
         }
@@ -562,22 +562,22 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static ChildrenItem3 FromBooleanLiteral(global::G.ASTBooleanNodeInput? value) => new ChildrenItem3(value);
+        public static ChildrenItem3 FromBooleanLiteral(global::G.ASTBooleanNodeOutput? value) => new ChildrenItem3(value);
 
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator ChildrenItem3(global::G.ASTLLMNodeInput value) => new ChildrenItem3((global::G.ASTLLMNodeInput?)value);
+        public static implicit operator ChildrenItem3(global::G.ASTLLMNodeOutput value) => new ChildrenItem3((global::G.ASTLLMNodeOutput?)value);
 
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator global::G.ASTLLMNodeInput?(ChildrenItem3 @this) => @this.Llm;
+        public static implicit operator global::G.ASTLLMNodeOutput?(ChildrenItem3 @this) => @this.Llm;
 
         /// <summary>
         /// 
         /// </summary>
-        public ChildrenItem3(global::G.ASTLLMNodeInput? value)
+        public ChildrenItem3(global::G.ASTLLMNodeOutput? value)
         {
             Llm = value;
         }
@@ -585,22 +585,22 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static ChildrenItem3 FromLlm(global::G.ASTLLMNodeInput? value) => new ChildrenItem3(value);
+        public static ChildrenItem3 FromLlm(global::G.ASTLLMNodeOutput? value) => new ChildrenItem3(value);
 
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator ChildrenItem3(global::G.ASTDynamicVariableNodeInput value) => new ChildrenItem3((global::G.ASTDynamicVariableNodeInput?)value);
+        public static implicit operator ChildrenItem3(global::G.ASTDynamicVariableNodeOutput value) => new ChildrenItem3((global::G.ASTDynamicVariableNodeOutput?)value);
 
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator global::G.ASTDynamicVariableNodeInput?(ChildrenItem3 @this) => @this.DynamicVariable;
+        public static implicit operator global::G.ASTDynamicVariableNodeOutput?(ChildrenItem3 @this) => @this.DynamicVariable;
 
         /// <summary>
         /// 
         /// </summary>
-        public ChildrenItem3(global::G.ASTDynamicVariableNodeInput? value)
+        public ChildrenItem3(global::G.ASTDynamicVariableNodeOutput? value)
         {
             DynamicVariable = value;
         }
@@ -608,22 +608,22 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static ChildrenItem3 FromDynamicVariable(global::G.ASTDynamicVariableNodeInput? value) => new ChildrenItem3(value);
+        public static ChildrenItem3 FromDynamicVariable(global::G.ASTDynamicVariableNodeOutput? value) => new ChildrenItem3(value);
 
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator ChildrenItem3(global::G.ASTOrOperatorNodeInput value) => new ChildrenItem3((global::G.ASTOrOperatorNodeInput?)value);
+        public static implicit operator ChildrenItem3(global::G.ASTOrOperatorNodeOutput value) => new ChildrenItem3((global::G.ASTOrOperatorNodeOutput?)value);
 
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator global::G.ASTOrOperatorNodeInput?(ChildrenItem3 @this) => @this.OrOperator;
+        public static implicit operator global::G.ASTOrOperatorNodeOutput?(ChildrenItem3 @this) => @this.OrOperator;
 
         /// <summary>
         /// 
         /// </summary>
-        public ChildrenItem3(global::G.ASTOrOperatorNodeInput? value)
+        public ChildrenItem3(global::G.ASTOrOperatorNodeOutput? value)
         {
             OrOperator = value;
         }
@@ -631,22 +631,22 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static ChildrenItem3 FromOrOperator(global::G.ASTOrOperatorNodeInput? value) => new ChildrenItem3(value);
+        public static ChildrenItem3 FromOrOperator(global::G.ASTOrOperatorNodeOutput? value) => new ChildrenItem3(value);
 
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator ChildrenItem3(global::G.ASTAndOperatorNodeInput value) => new ChildrenItem3((global::G.ASTAndOperatorNodeInput?)value);
+        public static implicit operator ChildrenItem3(global::G.ASTAndOperatorNodeOutput value) => new ChildrenItem3((global::G.ASTAndOperatorNodeOutput?)value);
 
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator global::G.ASTAndOperatorNodeInput?(ChildrenItem3 @this) => @this.AndOperator;
+        public static implicit operator global::G.ASTAndOperatorNodeOutput?(ChildrenItem3 @this) => @this.AndOperator;
 
         /// <summary>
         /// 
         /// </summary>
-        public ChildrenItem3(global::G.ASTAndOperatorNodeInput? value)
+        public ChildrenItem3(global::G.ASTAndOperatorNodeOutput? value)
         {
             AndOperator = value;
         }
@@ -654,22 +654,22 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static ChildrenItem3 FromAndOperator(global::G.ASTAndOperatorNodeInput? value) => new ChildrenItem3(value);
+        public static ChildrenItem3 FromAndOperator(global::G.ASTAndOperatorNodeOutput? value) => new ChildrenItem3(value);
 
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator ChildrenItem3(global::G.ASTEqualsOperatorNodeInput value) => new ChildrenItem3((global::G.ASTEqualsOperatorNodeInput?)value);
+        public static implicit operator ChildrenItem3(global::G.ASTEqualsOperatorNodeOutput value) => new ChildrenItem3((global::G.ASTEqualsOperatorNodeOutput?)value);
 
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator global::G.ASTEqualsOperatorNodeInput?(ChildrenItem3 @this) => @this.EqOperator;
+        public static implicit operator global::G.ASTEqualsOperatorNodeOutput?(ChildrenItem3 @this) => @this.EqOperator;
 
         /// <summary>
         /// 
         /// </summary>
-        public ChildrenItem3(global::G.ASTEqualsOperatorNodeInput? value)
+        public ChildrenItem3(global::G.ASTEqualsOperatorNodeOutput? value)
         {
             EqOperator = value;
         }
@@ -677,22 +677,22 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static ChildrenItem3 FromEqOperator(global::G.ASTEqualsOperatorNodeInput? value) => new ChildrenItem3(value);
+        public static ChildrenItem3 FromEqOperator(global::G.ASTEqualsOperatorNodeOutput? value) => new ChildrenItem3(value);
 
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator ChildrenItem3(global::G.ASTNotEqualsOperatorNodeInput value) => new ChildrenItem3((global::G.ASTNotEqualsOperatorNodeInput?)value);
+        public static implicit operator ChildrenItem3(global::G.ASTNotEqualsOperatorNodeOutput value) => new ChildrenItem3((global::G.ASTNotEqualsOperatorNodeOutput?)value);
 
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator global::G.ASTNotEqualsOperatorNodeInput?(ChildrenItem3 @this) => @this.NeqOperator;
+        public static implicit operator global::G.ASTNotEqualsOperatorNodeOutput?(ChildrenItem3 @this) => @this.NeqOperator;
 
         /// <summary>
         /// 
         /// </summary>
-        public ChildrenItem3(global::G.ASTNotEqualsOperatorNodeInput? value)
+        public ChildrenItem3(global::G.ASTNotEqualsOperatorNodeOutput? value)
         {
             NeqOperator = value;
         }
@@ -700,22 +700,22 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static ChildrenItem3 FromNeqOperator(global::G.ASTNotEqualsOperatorNodeInput? value) => new ChildrenItem3(value);
+        public static ChildrenItem3 FromNeqOperator(global::G.ASTNotEqualsOperatorNodeOutput? value) => new ChildrenItem3(value);
 
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator ChildrenItem3(global::G.ASTGreaterThanOperatorNodeInput value) => new ChildrenItem3((global::G.ASTGreaterThanOperatorNodeInput?)value);
+        public static implicit operator ChildrenItem3(global::G.ASTGreaterThanOperatorNodeOutput value) => new ChildrenItem3((global::G.ASTGreaterThanOperatorNodeOutput?)value);
 
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator global::G.ASTGreaterThanOperatorNodeInput?(ChildrenItem3 @this) => @this.GtOperator;
+        public static implicit operator global::G.ASTGreaterThanOperatorNodeOutput?(ChildrenItem3 @this) => @this.GtOperator;
 
         /// <summary>
         /// 
         /// </summary>
-        public ChildrenItem3(global::G.ASTGreaterThanOperatorNodeInput? value)
+        public ChildrenItem3(global::G.ASTGreaterThanOperatorNodeOutput? value)
         {
             GtOperator = value;
         }
@@ -723,22 +723,22 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static ChildrenItem3 FromGtOperator(global::G.ASTGreaterThanOperatorNodeInput? value) => new ChildrenItem3(value);
+        public static ChildrenItem3 FromGtOperator(global::G.ASTGreaterThanOperatorNodeOutput? value) => new ChildrenItem3(value);
 
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator ChildrenItem3(global::G.ASTLessThanOperatorNodeInput value) => new ChildrenItem3((global::G.ASTLessThanOperatorNodeInput?)value);
+        public static implicit operator ChildrenItem3(global::G.ASTLessThanOperatorNodeOutput value) => new ChildrenItem3((global::G.ASTLessThanOperatorNodeOutput?)value);
 
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator global::G.ASTLessThanOperatorNodeInput?(ChildrenItem3 @this) => @this.LtOperator;
+        public static implicit operator global::G.ASTLessThanOperatorNodeOutput?(ChildrenItem3 @this) => @this.LtOperator;
 
         /// <summary>
         /// 
         /// </summary>
-        public ChildrenItem3(global::G.ASTLessThanOperatorNodeInput? value)
+        public ChildrenItem3(global::G.ASTLessThanOperatorNodeOutput? value)
         {
             LtOperator = value;
         }
@@ -746,22 +746,22 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static ChildrenItem3 FromLtOperator(global::G.ASTLessThanOperatorNodeInput? value) => new ChildrenItem3(value);
+        public static ChildrenItem3 FromLtOperator(global::G.ASTLessThanOperatorNodeOutput? value) => new ChildrenItem3(value);
 
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator ChildrenItem3(global::G.ASTGreaterThanOrEqualsOperatorNodeInput value) => new ChildrenItem3((global::G.ASTGreaterThanOrEqualsOperatorNodeInput?)value);
+        public static implicit operator ChildrenItem3(global::G.ASTGreaterThanOrEqualsOperatorNodeOutput value) => new ChildrenItem3((global::G.ASTGreaterThanOrEqualsOperatorNodeOutput?)value);
 
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator global::G.ASTGreaterThanOrEqualsOperatorNodeInput?(ChildrenItem3 @this) => @this.GteOperator;
+        public static implicit operator global::G.ASTGreaterThanOrEqualsOperatorNodeOutput?(ChildrenItem3 @this) => @this.GteOperator;
 
         /// <summary>
         /// 
         /// </summary>
-        public ChildrenItem3(global::G.ASTGreaterThanOrEqualsOperatorNodeInput? value)
+        public ChildrenItem3(global::G.ASTGreaterThanOrEqualsOperatorNodeOutput? value)
         {
             GteOperator = value;
         }
@@ -769,22 +769,22 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static ChildrenItem3 FromGteOperator(global::G.ASTGreaterThanOrEqualsOperatorNodeInput? value) => new ChildrenItem3(value);
+        public static ChildrenItem3 FromGteOperator(global::G.ASTGreaterThanOrEqualsOperatorNodeOutput? value) => new ChildrenItem3(value);
 
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator ChildrenItem3(global::G.ASTLessThanOrEqualsOperatorNodeInput value) => new ChildrenItem3((global::G.ASTLessThanOrEqualsOperatorNodeInput?)value);
+        public static implicit operator ChildrenItem3(global::G.ASTLessThanOrEqualsOperatorNodeOutput value) => new ChildrenItem3((global::G.ASTLessThanOrEqualsOperatorNodeOutput?)value);
 
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator global::G.ASTLessThanOrEqualsOperatorNodeInput?(ChildrenItem3 @this) => @this.LteOperator;
+        public static implicit operator global::G.ASTLessThanOrEqualsOperatorNodeOutput?(ChildrenItem3 @this) => @this.LteOperator;
 
         /// <summary>
         /// 
         /// </summary>
-        public ChildrenItem3(global::G.ASTLessThanOrEqualsOperatorNodeInput? value)
+        public ChildrenItem3(global::G.ASTLessThanOrEqualsOperatorNodeOutput? value)
         {
             LteOperator = value;
         }
@@ -792,26 +792,26 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static ChildrenItem3 FromLteOperator(global::G.ASTLessThanOrEqualsOperatorNodeInput? value) => new ChildrenItem3(value);
+        public static ChildrenItem3 FromLteOperator(global::G.ASTLessThanOrEqualsOperatorNodeOutput? value) => new ChildrenItem3(value);
 
         /// <summary>
         /// 
         /// </summary>
         public ChildrenItem3(
-            global::G.ASTOrOperatorNodeInputChildrenItemDiscriminatorType? type,
-            global::G.ASTStringNodeInput? stringLiteral,
-            global::G.ASTNumberNodeInput? numberLiteral,
-            global::G.ASTBooleanNodeInput? booleanLiteral,
-            global::G.ASTLLMNodeInput? llm,
-            global::G.ASTDynamicVariableNodeInput? dynamicVariable,
-            global::G.ASTOrOperatorNodeInput? orOperator,
-            global::G.ASTAndOperatorNodeInput? andOperator,
-            global::G.ASTEqualsOperatorNodeInput? eqOperator,
-            global::G.ASTNotEqualsOperatorNodeInput? neqOperator,
-            global::G.ASTGreaterThanOperatorNodeInput? gtOperator,
-            global::G.ASTLessThanOperatorNodeInput? ltOperator,
-            global::G.ASTGreaterThanOrEqualsOperatorNodeInput? gteOperator,
-            global::G.ASTLessThanOrEqualsOperatorNodeInput? lteOperator
+            global::G.ASTOrOperatorNodeOutputChildrenItemDiscriminatorType? type,
+            global::G.ASTStringNodeOutput? stringLiteral,
+            global::G.ASTNumberNodeOutput? numberLiteral,
+            global::G.ASTBooleanNodeOutput? booleanLiteral,
+            global::G.ASTLLMNodeOutput? llm,
+            global::G.ASTDynamicVariableNodeOutput? dynamicVariable,
+            global::G.ASTOrOperatorNodeOutput? orOperator,
+            global::G.ASTAndOperatorNodeOutput? andOperator,
+            global::G.ASTEqualsOperatorNodeOutput? eqOperator,
+            global::G.ASTNotEqualsOperatorNodeOutput? neqOperator,
+            global::G.ASTGreaterThanOperatorNodeOutput? gtOperator,
+            global::G.ASTLessThanOperatorNodeOutput? ltOperator,
+            global::G.ASTGreaterThanOrEqualsOperatorNodeOutput? gteOperator,
+            global::G.ASTLessThanOrEqualsOperatorNodeOutput? lteOperator
             )
         {
             Type = type;
@@ -881,19 +881,19 @@ namespace G
         /// 
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<global::G.ASTStringNodeInput, TResult>? stringLiteral = null,
-            global::System.Func<global::G.ASTNumberNodeInput, TResult>? numberLiteral = null,
-            global::System.Func<global::G.ASTBooleanNodeInput, TResult>? booleanLiteral = null,
-            global::System.Func<global::G.ASTLLMNodeInput, TResult>? llm = null,
-            global::System.Func<global::G.ASTDynamicVariableNodeInput, TResult>? dynamicVariable = null,
-            global::System.Func<global::G.ASTOrOperatorNodeInput, TResult>? orOperator = null,
-            global::System.Func<global::G.ASTAndOperatorNodeInput, TResult>? andOperator = null,
-            global::System.Func<global::G.ASTEqualsOperatorNodeInput, TResult>? eqOperator = null,
-            global::System.Func<global::G.ASTNotEqualsOperatorNodeInput, TResult>? neqOperator = null,
-            global::System.Func<global::G.ASTGreaterThanOperatorNodeInput, TResult>? gtOperator = null,
-            global::System.Func<global::G.ASTLessThanOperatorNodeInput, TResult>? ltOperator = null,
-            global::System.Func<global::G.ASTGreaterThanOrEqualsOperatorNodeInput, TResult>? gteOperator = null,
-            global::System.Func<global::G.ASTLessThanOrEqualsOperatorNodeInput, TResult>? lteOperator = null,
+            global::System.Func<global::G.ASTStringNodeOutput, TResult>? stringLiteral = null,
+            global::System.Func<global::G.ASTNumberNodeOutput, TResult>? numberLiteral = null,
+            global::System.Func<global::G.ASTBooleanNodeOutput, TResult>? booleanLiteral = null,
+            global::System.Func<global::G.ASTLLMNodeOutput, TResult>? llm = null,
+            global::System.Func<global::G.ASTDynamicVariableNodeOutput, TResult>? dynamicVariable = null,
+            global::System.Func<global::G.ASTOrOperatorNodeOutput, TResult>? orOperator = null,
+            global::System.Func<global::G.ASTAndOperatorNodeOutput, TResult>? andOperator = null,
+            global::System.Func<global::G.ASTEqualsOperatorNodeOutput, TResult>? eqOperator = null,
+            global::System.Func<global::G.ASTNotEqualsOperatorNodeOutput, TResult>? neqOperator = null,
+            global::System.Func<global::G.ASTGreaterThanOperatorNodeOutput, TResult>? gtOperator = null,
+            global::System.Func<global::G.ASTLessThanOperatorNodeOutput, TResult>? ltOperator = null,
+            global::System.Func<global::G.ASTGreaterThanOrEqualsOperatorNodeOutput, TResult>? gteOperator = null,
+            global::System.Func<global::G.ASTLessThanOrEqualsOperatorNodeOutput, TResult>? lteOperator = null,
             bool validate = true)
         {
             if (validate)
@@ -961,31 +961,31 @@ namespace G
         /// 
         /// </summary>
         public void Match(
-            global::System.Action<global::G.ASTStringNodeInput>? stringLiteral = null,
+            global::System.Action<global::G.ASTStringNodeOutput>? stringLiteral = null,
 
-            global::System.Action<global::G.ASTNumberNodeInput>? numberLiteral = null,
+            global::System.Action<global::G.ASTNumberNodeOutput>? numberLiteral = null,
 
-            global::System.Action<global::G.ASTBooleanNodeInput>? booleanLiteral = null,
+            global::System.Action<global::G.ASTBooleanNodeOutput>? booleanLiteral = null,
 
-            global::System.Action<global::G.ASTLLMNodeInput>? llm = null,
+            global::System.Action<global::G.ASTLLMNodeOutput>? llm = null,
 
-            global::System.Action<global::G.ASTDynamicVariableNodeInput>? dynamicVariable = null,
+            global::System.Action<global::G.ASTDynamicVariableNodeOutput>? dynamicVariable = null,
 
-            global::System.Action<global::G.ASTOrOperatorNodeInput>? orOperator = null,
+            global::System.Action<global::G.ASTOrOperatorNodeOutput>? orOperator = null,
 
-            global::System.Action<global::G.ASTAndOperatorNodeInput>? andOperator = null,
+            global::System.Action<global::G.ASTAndOperatorNodeOutput>? andOperator = null,
 
-            global::System.Action<global::G.ASTEqualsOperatorNodeInput>? eqOperator = null,
+            global::System.Action<global::G.ASTEqualsOperatorNodeOutput>? eqOperator = null,
 
-            global::System.Action<global::G.ASTNotEqualsOperatorNodeInput>? neqOperator = null,
+            global::System.Action<global::G.ASTNotEqualsOperatorNodeOutput>? neqOperator = null,
 
-            global::System.Action<global::G.ASTGreaterThanOperatorNodeInput>? gtOperator = null,
+            global::System.Action<global::G.ASTGreaterThanOperatorNodeOutput>? gtOperator = null,
 
-            global::System.Action<global::G.ASTLessThanOperatorNodeInput>? ltOperator = null,
+            global::System.Action<global::G.ASTLessThanOperatorNodeOutput>? ltOperator = null,
 
-            global::System.Action<global::G.ASTGreaterThanOrEqualsOperatorNodeInput>? gteOperator = null,
+            global::System.Action<global::G.ASTGreaterThanOrEqualsOperatorNodeOutput>? gteOperator = null,
 
-            global::System.Action<global::G.ASTLessThanOrEqualsOperatorNodeInput>? lteOperator = null,
+            global::System.Action<global::G.ASTLessThanOrEqualsOperatorNodeOutput>? lteOperator = null,
             bool validate = true)
         {
             if (validate)
@@ -1051,19 +1051,19 @@ namespace G
         /// 
         /// </summary>
         public void Switch(
-            global::System.Action<global::G.ASTStringNodeInput>? stringLiteral = null,
-            global::System.Action<global::G.ASTNumberNodeInput>? numberLiteral = null,
-            global::System.Action<global::G.ASTBooleanNodeInput>? booleanLiteral = null,
-            global::System.Action<global::G.ASTLLMNodeInput>? llm = null,
-            global::System.Action<global::G.ASTDynamicVariableNodeInput>? dynamicVariable = null,
-            global::System.Action<global::G.ASTOrOperatorNodeInput>? orOperator = null,
-            global::System.Action<global::G.ASTAndOperatorNodeInput>? andOperator = null,
-            global::System.Action<global::G.ASTEqualsOperatorNodeInput>? eqOperator = null,
-            global::System.Action<global::G.ASTNotEqualsOperatorNodeInput>? neqOperator = null,
-            global::System.Action<global::G.ASTGreaterThanOperatorNodeInput>? gtOperator = null,
-            global::System.Action<global::G.ASTLessThanOperatorNodeInput>? ltOperator = null,
-            global::System.Action<global::G.ASTGreaterThanOrEqualsOperatorNodeInput>? gteOperator = null,
-            global::System.Action<global::G.ASTLessThanOrEqualsOperatorNodeInput>? lteOperator = null,
+            global::System.Action<global::G.ASTStringNodeOutput>? stringLiteral = null,
+            global::System.Action<global::G.ASTNumberNodeOutput>? numberLiteral = null,
+            global::System.Action<global::G.ASTBooleanNodeOutput>? booleanLiteral = null,
+            global::System.Action<global::G.ASTLLMNodeOutput>? llm = null,
+            global::System.Action<global::G.ASTDynamicVariableNodeOutput>? dynamicVariable = null,
+            global::System.Action<global::G.ASTOrOperatorNodeOutput>? orOperator = null,
+            global::System.Action<global::G.ASTAndOperatorNodeOutput>? andOperator = null,
+            global::System.Action<global::G.ASTEqualsOperatorNodeOutput>? eqOperator = null,
+            global::System.Action<global::G.ASTNotEqualsOperatorNodeOutput>? neqOperator = null,
+            global::System.Action<global::G.ASTGreaterThanOperatorNodeOutput>? gtOperator = null,
+            global::System.Action<global::G.ASTLessThanOperatorNodeOutput>? ltOperator = null,
+            global::System.Action<global::G.ASTGreaterThanOrEqualsOperatorNodeOutput>? gteOperator = null,
+            global::System.Action<global::G.ASTLessThanOrEqualsOperatorNodeOutput>? lteOperator = null,
             bool validate = true)
         {
             if (validate)
@@ -1133,31 +1133,31 @@ namespace G
             var fields = new object?[]
             {
                 StringLiteral,
-                typeof(global::G.ASTStringNodeInput),
+                typeof(global::G.ASTStringNodeOutput),
                 NumberLiteral,
-                typeof(global::G.ASTNumberNodeInput),
+                typeof(global::G.ASTNumberNodeOutput),
                 BooleanLiteral,
-                typeof(global::G.ASTBooleanNodeInput),
+                typeof(global::G.ASTBooleanNodeOutput),
                 Llm,
-                typeof(global::G.ASTLLMNodeInput),
+                typeof(global::G.ASTLLMNodeOutput),
                 DynamicVariable,
-                typeof(global::G.ASTDynamicVariableNodeInput),
+                typeof(global::G.ASTDynamicVariableNodeOutput),
                 OrOperator,
-                typeof(global::G.ASTOrOperatorNodeInput),
+                typeof(global::G.ASTOrOperatorNodeOutput),
                 AndOperator,
-                typeof(global::G.ASTAndOperatorNodeInput),
+                typeof(global::G.ASTAndOperatorNodeOutput),
                 EqOperator,
-                typeof(global::G.ASTEqualsOperatorNodeInput),
+                typeof(global::G.ASTEqualsOperatorNodeOutput),
                 NeqOperator,
-                typeof(global::G.ASTNotEqualsOperatorNodeInput),
+                typeof(global::G.ASTNotEqualsOperatorNodeOutput),
                 GtOperator,
-                typeof(global::G.ASTGreaterThanOperatorNodeInput),
+                typeof(global::G.ASTGreaterThanOperatorNodeOutput),
                 LtOperator,
-                typeof(global::G.ASTLessThanOperatorNodeInput),
+                typeof(global::G.ASTLessThanOperatorNodeOutput),
                 GteOperator,
-                typeof(global::G.ASTGreaterThanOrEqualsOperatorNodeInput),
+                typeof(global::G.ASTGreaterThanOrEqualsOperatorNodeOutput),
                 LteOperator,
-                typeof(global::G.ASTLessThanOrEqualsOperatorNodeInput),
+                typeof(global::G.ASTLessThanOrEqualsOperatorNodeOutput),
             };
             const int offset = unchecked((int)2166136261);
             const int prime = 16777619;
@@ -1174,19 +1174,19 @@ namespace G
         public bool Equals(ChildrenItem3 other)
         {
             return
-                global::System.Collections.Generic.EqualityComparer<global::G.ASTStringNodeInput?>.Default.Equals(StringLiteral, other.StringLiteral) &&
-                global::System.Collections.Generic.EqualityComparer<global::G.ASTNumberNodeInput?>.Default.Equals(NumberLiteral, other.NumberLiteral) &&
-                global::System.Collections.Generic.EqualityComparer<global::G.ASTBooleanNodeInput?>.Default.Equals(BooleanLiteral, other.BooleanLiteral) &&
-                global::System.Collections.Generic.EqualityComparer<global::G.ASTLLMNodeInput?>.Default.Equals(Llm, other.Llm) &&
-                global::System.Collections.Generic.EqualityComparer<global::G.ASTDynamicVariableNodeInput?>.Default.Equals(DynamicVariable, other.DynamicVariable) &&
-                global::System.Collections.Generic.EqualityComparer<global::G.ASTOrOperatorNodeInput?>.Default.Equals(OrOperator, other.OrOperator) &&
-                global::System.Collections.Generic.EqualityComparer<global::G.ASTAndOperatorNodeInput?>.Default.Equals(AndOperator, other.AndOperator) &&
-                global::System.Collections.Generic.EqualityComparer<global::G.ASTEqualsOperatorNodeInput?>.Default.Equals(EqOperator, other.EqOperator) &&
-                global::System.Collections.Generic.EqualityComparer<global::G.ASTNotEqualsOperatorNodeInput?>.Default.Equals(NeqOperator, other.NeqOperator) &&
-                global::System.Collections.Generic.EqualityComparer<global::G.ASTGreaterThanOperatorNodeInput?>.Default.Equals(GtOperator, other.GtOperator) &&
-                global::System.Collections.Generic.EqualityComparer<global::G.ASTLessThanOperatorNodeInput?>.Default.Equals(LtOperator, other.LtOperator) &&
-                global::System.Collections.Generic.EqualityComparer<global::G.ASTGreaterThanOrEqualsOperatorNodeInput?>.Default.Equals(GteOperator, other.GteOperator) &&
-                global::System.Collections.Generic.EqualityComparer<global::G.ASTLessThanOrEqualsOperatorNodeInput?>.Default.Equals(LteOperator, other.LteOperator) 
+                global::System.Collections.Generic.EqualityComparer<global::G.ASTStringNodeOutput?>.Default.Equals(StringLiteral, other.StringLiteral) &&
+                global::System.Collections.Generic.EqualityComparer<global::G.ASTNumberNodeOutput?>.Default.Equals(NumberLiteral, other.NumberLiteral) &&
+                global::System.Collections.Generic.EqualityComparer<global::G.ASTBooleanNodeOutput?>.Default.Equals(BooleanLiteral, other.BooleanLiteral) &&
+                global::System.Collections.Generic.EqualityComparer<global::G.ASTLLMNodeOutput?>.Default.Equals(Llm, other.Llm) &&
+                global::System.Collections.Generic.EqualityComparer<global::G.ASTDynamicVariableNodeOutput?>.Default.Equals(DynamicVariable, other.DynamicVariable) &&
+                global::System.Collections.Generic.EqualityComparer<global::G.ASTOrOperatorNodeOutput?>.Default.Equals(OrOperator, other.OrOperator) &&
+                global::System.Collections.Generic.EqualityComparer<global::G.ASTAndOperatorNodeOutput?>.Default.Equals(AndOperator, other.AndOperator) &&
+                global::System.Collections.Generic.EqualityComparer<global::G.ASTEqualsOperatorNodeOutput?>.Default.Equals(EqOperator, other.EqOperator) &&
+                global::System.Collections.Generic.EqualityComparer<global::G.ASTNotEqualsOperatorNodeOutput?>.Default.Equals(NeqOperator, other.NeqOperator) &&
+                global::System.Collections.Generic.EqualityComparer<global::G.ASTGreaterThanOperatorNodeOutput?>.Default.Equals(GtOperator, other.GtOperator) &&
+                global::System.Collections.Generic.EqualityComparer<global::G.ASTLessThanOperatorNodeOutput?>.Default.Equals(LtOperator, other.LtOperator) &&
+                global::System.Collections.Generic.EqualityComparer<global::G.ASTGreaterThanOrEqualsOperatorNodeOutput?>.Default.Equals(GteOperator, other.GteOperator) &&
+                global::System.Collections.Generic.EqualityComparer<global::G.ASTLessThanOrEqualsOperatorNodeOutput?>.Default.Equals(LteOperator, other.LteOperator) 
                 ;
         }
 

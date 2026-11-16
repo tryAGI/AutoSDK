@@ -1,4 +1,4 @@
-﻿//HintName: G.Models.EmbeddingModelConfigCreate.g.cs
+//HintName: G.Models.EmbeddingModelConfigCreate.g.cs
 
 #nullable enable
 

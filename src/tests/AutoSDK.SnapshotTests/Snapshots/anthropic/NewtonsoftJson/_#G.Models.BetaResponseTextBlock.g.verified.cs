@@ -1,4 +1,4 @@
-﻿//HintName: G.Models.BetaResponseTextBlock.g.cs
+//HintName: G.Models.BetaResponseTextBlock.g.cs
 
 #nullable enable
 
@@ -29,7 +29,7 @@ namespace G
         /// Default Value: openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("citations")]
-        public global::System.Collections.Generic.IList<global::G.CitationsVariant1Item2>? Citations { get; set; }
+        public global::System.Collections.Generic.IList<global::G.CitationsVariant1Item4>? Citations { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -51,7 +51,7 @@ namespace G
         /// </param>
         public BetaResponseTextBlock(
             string text,
-            global::System.Collections.Generic.IList<global::G.CitationsVariant1Item2>? citations,
+            global::System.Collections.Generic.IList<global::G.CitationsVariant1Item4>? citations,
             global::G.BetaResponseTextBlockType type = global::G.BetaResponseTextBlockType.Text)
         {
             this.Type = type;

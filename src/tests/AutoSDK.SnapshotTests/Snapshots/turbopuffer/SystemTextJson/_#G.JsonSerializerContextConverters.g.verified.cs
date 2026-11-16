@@ -1,4 +1,4 @@
-﻿//HintName: G.JsonSerializerContextConverters.g.cs
+//HintName: G.JsonSerializerContextConverters.g.cs
 
 #nullable enable
 
@@ -13,7 +13,7 @@ namespace G
         {
             typeof(global::G.JsonConverters.QueryResultJsonConverter),
             typeof(global::G.JsonConverters.IdJsonConverter),
-            typeof(global::G.JsonConverters.Vector2JsonConverter),
+            typeof(global::G.JsonConverters.VectorJsonConverter),
             typeof(global::G.JsonConverters.VectorEncodingJsonConverter),
             typeof(global::G.JsonConverters.DistanceMetricJsonConverter),
             typeof(global::G.JsonConverters.IncludeAttributesJsonConverter),
@@ -31,8 +31,8 @@ namespace G
             typeof(global::G.JsonConverters.OneOfJsonConverter<global::G.NamespaceMetadataEncryptionVariant1, global::G.NamespaceMetadataEncryptionVariant2>),
             typeof(global::G.JsonConverters.OneOfJsonConverter<global::G.NamespaceMetadataIndexIndexUpToDate, global::G.NamespaceMetadataIndexIndexUpdating>),
             typeof(global::G.JsonConverters.OneOfJsonConverter<string, global::G.WriteCopyFromNamespace>),
-            typeof(global::G.JsonConverters.AnyOfJsonConverter<int?, global::G.Limit2>),
-            typeof(global::G.JsonConverters.OneOfJsonConverter<global::System.Collections.Generic.IList<global::G.Vector2>, global::G.Vector2?>),
+            typeof(global::G.JsonConverters.AnyOfJsonConverter<int?, global::G.Limit>),
+            typeof(global::G.JsonConverters.OneOfJsonConverter<global::System.Collections.Generic.IList<global::G.Vector>, global::G.Vector?>),
             typeof(global::G.JsonConverters.AllOfJsonConverter<global::G.QueryConfig, global::G.Query>),
             typeof(global::G.JsonConverters.AllOfJsonConverter<global::G.QueryConfig, global::G.Query>),
             typeof(global::G.JsonConverters.AllOfJsonConverter<global::G.QueryConfig, global::G.CreateNamespacesMultiQueryRequest2>),

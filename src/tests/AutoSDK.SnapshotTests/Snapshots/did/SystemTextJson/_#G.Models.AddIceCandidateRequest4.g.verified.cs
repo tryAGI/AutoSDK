@@ -1,4 +1,4 @@
-﻿//HintName: G.Models.AddIceCandidateRequest4.g.cs
+//HintName: G.Models.AddIceCandidateRequest4.g.cs
 
 #nullable enable
 

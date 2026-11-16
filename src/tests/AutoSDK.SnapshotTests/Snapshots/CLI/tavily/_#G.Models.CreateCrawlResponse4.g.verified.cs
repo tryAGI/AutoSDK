@@ -1,4 +1,4 @@
-﻿//HintName: G.Models.CreateCrawlResponse4.g.cs
+//HintName: G.Models.CreateCrawlResponse4.g.cs
 
 #nullable enable
 
@@ -13,7 +13,7 @@ namespace G
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("detail")]
-        public global::G.CreateCrawlResponseDetail3? Detail { get; set; }
+        public global::G.CreateCrawlResponseDetail? Detail { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -29,7 +29,7 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public CreateCrawlResponse4(
-            global::G.CreateCrawlResponseDetail3? detail)
+            global::G.CreateCrawlResponseDetail? detail)
         {
             this.Detail = detail;
         }

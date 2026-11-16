@@ -48,7 +48,7 @@ namespace G
         /// The response format for the model.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("response_format")]
-        public global::G.ResponseFormatVariant12? ResponseFormat { get; set; }
+        public global::G.ResponseFormatVariant112? ResponseFormat { get; set; }
 
         /// <summary>
         /// Soft control for how verbose model output should be, used for GPT-5 models.
@@ -117,7 +117,7 @@ namespace G
             string? providerType,
             double? temperature,
             global::G.AnthropicThinking? thinking,
-            global::G.ResponseFormatVariant12? responseFormat,
+            global::G.ResponseFormatVariant112? responseFormat,
             global::G.AnthropicModelSettingsVerbosity? verbosity,
             global::G.AnthropicModelSettingsEffort? effort,
             bool? strict)

@@ -10,13 +10,13 @@ namespace G
             global::System.Net.Http.HttpClient httpClient,
             ref string entityCollectionId,
             ref string xApiKey,
-            global::G.UpdateRequest4 request);
+            global::G.UpdateRequest3 request);
         partial void PrepareUpdateRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
             string entityCollectionId,
             string xApiKey,
-            global::G.UpdateRequest4 request);
+            global::G.UpdateRequest3 request);
         partial void ProcessUpdateResponse(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage);
@@ -40,7 +40,7 @@ namespace G
             string entityCollectionId,
             string xApiKey,
 
-            global::G.UpdateRequest4 request,
+            global::G.UpdateRequest3 request,
             global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
@@ -69,7 +69,7 @@ namespace G
             string entityCollectionId,
             string xApiKey,
 
-            global::G.UpdateRequest4 request,
+            global::G.UpdateRequest3 request,
             global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
@@ -472,7 +472,7 @@ namespace G
             global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
-            var __request = new global::G.UpdateRequest4
+            var __request = new global::G.UpdateRequest3
             {
                 Name = name,
                 Description = description,

@@ -1,4 +1,4 @@
-﻿//HintName: G.ITalksStreamsClient.StartConnection.g.cs
+//HintName: G.ITalksStreamsClient.StartConnection.g.cs
 #nullable enable
 
 namespace G
@@ -16,10 +16,10 @@ namespace G
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::G.ApiException"></exception>
         [global::System.Obsolete("This method marked as deprecated.")]
-        global::System.Threading.Tasks.Task<global::G.StartConnectionResponse4> StartConnectionAsync(
+        global::System.Threading.Tasks.Task<global::G.StartConnectionResponse> StartConnectionAsync(
             string id,
 
-            global::G.StartConnectionRequest2 request,
+            global::G.StartConnectionRequest request,
             string? cookie = default,
             global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
@@ -34,10 +34,10 @@ namespace G
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::G.ApiException"></exception>
         [global::System.Obsolete("This method marked as deprecated.")]
-        global::System.Threading.Tasks.Task<global::G.AutoSDKHttpResponse<global::G.StartConnectionResponse4>> StartConnectionAsResponseAsync(
+        global::System.Threading.Tasks.Task<global::G.AutoSDKHttpResponse<global::G.StartConnectionResponse>> StartConnectionAsResponseAsync(
             string id,
 
-            global::G.StartConnectionRequest2 request,
+            global::G.StartConnectionRequest request,
             string? cookie = default,
             global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
@@ -58,9 +58,9 @@ namespace G
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         [global::System.Obsolete("This method marked as deprecated.")]
-        global::System.Threading.Tasks.Task<global::G.StartConnectionResponse4> StartConnectionAsync(
+        global::System.Threading.Tasks.Task<global::G.StartConnectionResponse> StartConnectionAsync(
             string id,
-            global::G.StartConnectionRequestAnswer2 answer,
+            global::G.StartConnectionRequestAnswer answer,
             string? cookie = default,
             string? sessionId = default,
             global::G.AutoSDKRequestOptions? requestOptions = default,

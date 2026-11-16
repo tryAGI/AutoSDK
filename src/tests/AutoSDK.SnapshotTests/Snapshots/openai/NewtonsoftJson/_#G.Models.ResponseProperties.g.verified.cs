@@ -1,4 +1,4 @@
-﻿//HintName: G.Models.ResponseProperties.g.cs
+//HintName: G.Models.ResponseProperties.g.cs
 
 #nullable enable
 
@@ -83,7 +83,7 @@ namespace G
         /// [Learn more](/docs/guides/text?api-mode=responses#reusable-prompts).
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("prompt")]
-        public global::G.Prompt2? Prompt { get; set; }
+        public global::G.Prompt? Prompt { get; set; }
 
         /// <summary>
         /// The truncation strategy to use for the model response.<br/>
@@ -175,7 +175,7 @@ namespace G
             global::G.ResponsePropertiesText? text,
             global::System.Collections.Generic.IList<global::G.Tool>? tools,
             global::G.OneOf<global::G.ToolChoiceOptions?, global::G.ToolChoiceTypes, global::G.ToolChoiceFunction>? toolChoice,
-            global::G.Prompt2? prompt,
+            global::G.Prompt? prompt,
             global::G.ResponsePropertiesTruncation? truncation)
         {
             this.PreviousResponseId = previousResponseId;

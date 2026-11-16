@@ -1,4 +1,4 @@
-﻿//HintName: G.Models.CreateCrawlResponse5.g.cs
+//HintName: G.Models.CreateCrawlResponse5.g.cs
 
 #nullable enable
 
@@ -13,7 +13,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("detail")]
-        public global::G.CreateCrawlResponseDetail4? Detail { get; set; }
+        public global::G.CreateCrawlResponseDetail? Detail { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -26,7 +26,7 @@ namespace G
         /// </summary>
         /// <param name="detail"></param>
         public CreateCrawlResponse5(
-            global::G.CreateCrawlResponseDetail4? detail)
+            global::G.CreateCrawlResponseDetail? detail)
         {
             this.Detail = detail;
         }

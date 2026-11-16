@@ -13,7 +13,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.MxbaiOmniApiRoutesV1DeprecatedVectorStoresModelsScoredAudioUrlInputChunkGeneratedMetadataVariant1DiscriminatorType? Type { get; }
+        public global::G.MxbaiOmniCoreStoreModelsChunkTypesScoredTextInputChunkGeneratedMetadataVariant1DiscriminatorType? Type { get; }
 
         /// <summary>
         /// 
@@ -438,7 +438,7 @@ namespace G
         /// 
         /// </summary>
         public GeneratedMetadataVariant15(
-            global::G.MxbaiOmniApiRoutesV1DeprecatedVectorStoresModelsScoredAudioUrlInputChunkGeneratedMetadataVariant1DiscriminatorType? type,
+            global::G.MxbaiOmniCoreStoreModelsChunkTypesScoredTextInputChunkGeneratedMetadataVariant1DiscriminatorType? type,
             global::G.MarkdownChunkGeneratedMetadata? markdown,
             global::G.TextChunkGeneratedMetadata? text,
             global::G.PDFChunkGeneratedMetadata? pdf,

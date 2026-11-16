@@ -1,4 +1,4 @@
-﻿//HintName: G.IModelsClient.RetrieveModel.g.cs
+//HintName: G.IModelsClient.RetrieveModel.g.cs
 #nullable enable
 
 namespace G
@@ -14,7 +14,7 @@ namespace G
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::G.ApiException"></exception>
-        global::System.Threading.Tasks.Task<global::G.Model11> RetrieveModelAsync(
+        global::System.Threading.Tasks.Task<global::G.Model> RetrieveModelAsync(
             string model,
             global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
@@ -27,7 +27,7 @@ namespace G
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::G.ApiException"></exception>
-        global::System.Threading.Tasks.Task<global::G.AutoSDKHttpResponse<global::G.Model11>> RetrieveModelAsResponseAsync(
+        global::System.Threading.Tasks.Task<global::G.AutoSDKHttpResponse<global::G.Model>> RetrieveModelAsResponseAsync(
             string model,
             global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);

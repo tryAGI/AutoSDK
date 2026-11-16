@@ -11,14 +11,14 @@ namespace G
             ref string indexId,
             ref string videoId,
             ref string xApiKey,
-            global::G.UpdateRequest3 request);
+            global::G.UpdateRequest2 request);
         partial void PrepareUpdateRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
             string indexId,
             string videoId,
             string xApiKey,
-            global::G.UpdateRequest3 request);
+            global::G.UpdateRequest2 request);
         partial void ProcessUpdateResponse(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage);
@@ -45,7 +45,7 @@ namespace G
             string videoId,
             string xApiKey,
 
-            global::G.UpdateRequest3 request,
+            global::G.UpdateRequest2 request,
             global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
@@ -78,7 +78,7 @@ namespace G
             string videoId,
             string xApiKey,
 
-            global::G.UpdateRequest3 request,
+            global::G.UpdateRequest2 request,
             global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
@@ -503,7 +503,7 @@ namespace G
             global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
-            var __request = new global::G.UpdateRequest3
+            var __request = new global::G.UpdateRequest2
             {
                 UserMetadata = userMetadata,
             };

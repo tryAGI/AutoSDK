@@ -13,15 +13,15 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.ClientSideAccessTokensCreateClientSideAccessTokenResponsePolicyDataItemDiscriminatorType? Type { get; }
+        public global::G.ClientSideAccessTokensListClientSideAccessTokensResponseTokenPolicyDataItemDiscriminatorType? Type { get; }
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        public global::G.ClientSideAccessTokensCreateClientSideAccessTokenResponsePolicyDataItemVariant1? Agent { get; init; }
+        public global::G.ClientSideAccessTokensListClientSideAccessTokensResponseTokenPolicyDataItemVariant1? Agent { get; init; }
 #else
-        public global::G.ClientSideAccessTokensCreateClientSideAccessTokenResponsePolicyDataItemVariant1? Agent { get; }
+        public global::G.ClientSideAccessTokensListClientSideAccessTokensResponseTokenPolicyDataItemVariant1? Agent { get; }
 #endif
 
         /// <summary>
@@ -39,7 +39,7 @@ namespace G
 #if NET6_0_OR_GREATER
             [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
 #endif
-            out global::G.ClientSideAccessTokensCreateClientSideAccessTokenResponsePolicyDataItemVariant1? value)
+            out global::G.ClientSideAccessTokensListClientSideAccessTokensResponseTokenPolicyDataItemVariant1? value)
         {
             value = Agent;
             return IsAgent;
@@ -48,23 +48,23 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.ClientSideAccessTokensCreateClientSideAccessTokenResponsePolicyDataItemVariant1 PickAgent() => Agent is { } value
+        public global::G.ClientSideAccessTokensListClientSideAccessTokensResponseTokenPolicyDataItemVariant1 PickAgent() => Agent is { } value
             ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Agent' but the value was {ToString()}.");
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator DataItem(global::G.ClientSideAccessTokensCreateClientSideAccessTokenResponsePolicyDataItemVariant1 value) => new DataItem((global::G.ClientSideAccessTokensCreateClientSideAccessTokenResponsePolicyDataItemVariant1?)value);
+        public static implicit operator DataItem(global::G.ClientSideAccessTokensListClientSideAccessTokensResponseTokenPolicyDataItemVariant1 value) => new DataItem((global::G.ClientSideAccessTokensListClientSideAccessTokensResponseTokenPolicyDataItemVariant1?)value);
 
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator global::G.ClientSideAccessTokensCreateClientSideAccessTokenResponsePolicyDataItemVariant1?(DataItem @this) => @this.Agent;
+        public static implicit operator global::G.ClientSideAccessTokensListClientSideAccessTokensResponseTokenPolicyDataItemVariant1?(DataItem @this) => @this.Agent;
 
         /// <summary>
         /// 
         /// </summary>
-        public DataItem(global::G.ClientSideAccessTokensCreateClientSideAccessTokenResponsePolicyDataItemVariant1? value)
+        public DataItem(global::G.ClientSideAccessTokensListClientSideAccessTokensResponseTokenPolicyDataItemVariant1? value)
         {
             Agent = value;
         }
@@ -72,14 +72,14 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static DataItem FromAgent(global::G.ClientSideAccessTokensCreateClientSideAccessTokenResponsePolicyDataItemVariant1? value) => new DataItem(value);
+        public static DataItem FromAgent(global::G.ClientSideAccessTokensListClientSideAccessTokensResponseTokenPolicyDataItemVariant1? value) => new DataItem(value);
 
         /// <summary>
         /// 
         /// </summary>
         public DataItem(
-            global::G.ClientSideAccessTokensCreateClientSideAccessTokenResponsePolicyDataItemDiscriminatorType? type,
-            global::G.ClientSideAccessTokensCreateClientSideAccessTokenResponsePolicyDataItemVariant1? agent
+            global::G.ClientSideAccessTokensListClientSideAccessTokensResponseTokenPolicyDataItemDiscriminatorType? type,
+            global::G.ClientSideAccessTokensListClientSideAccessTokensResponseTokenPolicyDataItemVariant1? agent
             )
         {
             Type = type;
@@ -113,7 +113,7 @@ namespace G
         /// 
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<global::G.ClientSideAccessTokensCreateClientSideAccessTokenResponsePolicyDataItemVariant1, TResult>? agent = null,
+            global::System.Func<global::G.ClientSideAccessTokensListClientSideAccessTokensResponseTokenPolicyDataItemVariant1, TResult>? agent = null,
             bool validate = true)
         {
             if (validate)
@@ -133,7 +133,7 @@ namespace G
         /// 
         /// </summary>
         public void Match(
-            global::System.Action<global::G.ClientSideAccessTokensCreateClientSideAccessTokenResponsePolicyDataItemVariant1>? agent = null,
+            global::System.Action<global::G.ClientSideAccessTokensListClientSideAccessTokensResponseTokenPolicyDataItemVariant1>? agent = null,
             bool validate = true)
         {
             if (validate)
@@ -151,7 +151,7 @@ namespace G
         /// 
         /// </summary>
         public void Switch(
-            global::System.Action<global::G.ClientSideAccessTokensCreateClientSideAccessTokenResponsePolicyDataItemVariant1>? agent = null,
+            global::System.Action<global::G.ClientSideAccessTokensListClientSideAccessTokensResponseTokenPolicyDataItemVariant1>? agent = null,
             bool validate = true)
         {
             if (validate)
@@ -173,7 +173,7 @@ namespace G
             var fields = new object?[]
             {
                 Agent,
-                typeof(global::G.ClientSideAccessTokensCreateClientSideAccessTokenResponsePolicyDataItemVariant1),
+                typeof(global::G.ClientSideAccessTokensListClientSideAccessTokensResponseTokenPolicyDataItemVariant1),
             };
             const int offset = unchecked((int)2166136261);
             const int prime = 16777619;
@@ -190,7 +190,7 @@ namespace G
         public bool Equals(DataItem other)
         {
             return
-                global::System.Collections.Generic.EqualityComparer<global::G.ClientSideAccessTokensCreateClientSideAccessTokenResponsePolicyDataItemVariant1?>.Default.Equals(Agent, other.Agent) 
+                global::System.Collections.Generic.EqualityComparer<global::G.ClientSideAccessTokensListClientSideAccessTokensResponseTokenPolicyDataItemVariant1?>.Default.Equals(Agent, other.Agent) 
                 ;
         }
 

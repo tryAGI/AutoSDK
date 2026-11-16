@@ -1,4 +1,4 @@
-﻿//HintName: G.IConversationsClient.SendConversationMessage.g.cs
+//HintName: G.IConversationsClient.SendConversationMessage.g.cs
 #nullable enable
 
 #pragma warning disable CS0618 // Type or member is obsolete
@@ -125,7 +125,7 @@ namespace G
         global::System.Threading.Tasks.Task<global::G.LettaResponse> SendConversationMessageAsync(
             string conversationId,
             global::System.Collections.Generic.IList<global::G.AnyOf<global::G.MessageCreate, global::G.ApprovalCreate, global::G.ToolReturnCreate>>? messages = default,
-            global::G.AnyOf<string, global::System.Collections.Generic.IList<global::G.InputVariant2Item>>? input = default,
+            global::G.AnyOf<string, global::System.Collections.Generic.IList<global::G.InputVariant2Item5>>? input = default,
             int? maxSteps = default,
             global::System.Collections.Generic.IList<global::G.MessageType>? includeReturnMessageTypes = default,
             global::System.Collections.Generic.IList<global::G.ClientToolSchema>? clientTools = default,

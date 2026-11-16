@@ -543,7 +543,7 @@ namespace G
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<global::G.PipelinesUpdatePipelineProducerConfigResponse> PipelinesUpdatePipelineProducerConfigAsync(
             string pipelineId,
-            global::G.ProducerConfig2 producerConfig,
+            global::G.ProducerConfig3 producerConfig,
             global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {

@@ -1,4 +1,4 @@
-﻿//HintName: G.ISubpackageIndexesSubpackageIndexesIndexedAssetsClient.Update.g.cs
+//HintName: G.ISubpackageIndexesSubpackageIndexesIndexedAssetsClient.Update.g.cs
 #nullable enable
 
 namespace G
@@ -21,7 +21,7 @@ namespace G
             string indexedAssetId,
             string xApiKey,
 
-            global::G.UpdateRequest2 request,
+            global::G.UpdateRequest4 request,
             global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
@@ -40,7 +40,7 @@ namespace G
             string indexedAssetId,
             string xApiKey,
 
-            global::G.UpdateRequest2 request,
+            global::G.UpdateRequest4 request,
             global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>

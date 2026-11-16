@@ -1,26 +1,25 @@
-﻿//HintName: G.Models.ImageUrlInput2.g.cs
+//HintName: G.Models.ImageUrlInput2.g.cs
 
 #nullable enable
 
 namespace G
 {
     /// <summary>
-    /// Model for image input validation.
+    /// Model for image URL validation.
     /// </summary>
     public sealed partial class ImageUrlInput2
     {
         /// <summary>
-        /// Input type identifier<br/>
-        /// Default Value: image_url
+        /// The image URL. Can be either a URL or a Data URI.
         /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("type")]
-        public string? Type { get; set; }
+        [global::Newtonsoft.Json.JsonProperty("url", Required = global::Newtonsoft.Json.Required.Always)]
+        public string Url { get; set; } = default!;
 
         /// <summary>
-        /// The image input specification.
+        /// The image format/mimetype
         /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("image_url", Required = global::Newtonsoft.Json.Required.Always)]
-        public global::G.ImageUrlInput ImageUrl { get; set; } = default!;
+        [global::Newtonsoft.Json.JsonProperty("format")]
+        public string? Format { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -31,19 +30,18 @@ namespace G
         /// <summary>
         /// Initializes a new instance of the <see cref="ImageUrlInput2" /> class.
         /// </summary>
-        /// <param name="imageUrl">
-        /// The image input specification.
+        /// <param name="url">
+        /// The image URL. Can be either a URL or a Data URI.
         /// </param>
-        /// <param name="type">
-        /// Input type identifier<br/>
-        /// Default Value: image_url
+        /// <param name="format">
+        /// The image format/mimetype
         /// </param>
         public ImageUrlInput2(
-            global::G.ImageUrlInput imageUrl,
-            string? type)
+            string url,
+            string? format)
         {
-            this.Type = type;
-            this.ImageUrl = imageUrl ?? throw new global::System.ArgumentNullException(nameof(imageUrl));
+            this.Url = url;
+            this.Format = format;
         }
 
         /// <summary>

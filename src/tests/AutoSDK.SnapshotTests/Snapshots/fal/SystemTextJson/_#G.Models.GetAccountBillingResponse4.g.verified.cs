@@ -1,4 +1,4 @@
-﻿//HintName: G.Models.GetAccountBillingResponse4.g.cs
+//HintName: G.Models.GetAccountBillingResponse4.g.cs
 
 #nullable enable
 
@@ -14,7 +14,7 @@ namespace G
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("error")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::G.GetAccountBillingResponseError3 Error { get; set; }
+        public required global::G.GetAccountBillingResponseError Error { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -32,7 +32,7 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public GetAccountBillingResponse4(
-            global::G.GetAccountBillingResponseError3 error)
+            global::G.GetAccountBillingResponseError error)
         {
             this.Error = error ?? throw new global::System.ArgumentNullException(nameof(error));
         }

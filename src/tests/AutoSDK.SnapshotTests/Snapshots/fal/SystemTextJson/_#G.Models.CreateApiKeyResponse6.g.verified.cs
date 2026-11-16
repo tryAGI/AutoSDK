@@ -1,4 +1,4 @@
-﻿//HintName: G.Models.CreateApiKeyResponse6.g.cs
+//HintName: G.Models.CreateApiKeyResponse6.g.cs
 
 #nullable enable
 
@@ -14,7 +14,7 @@ namespace G
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("error")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::G.CreateApiKeyResponseError5 Error { get; set; }
+        public required global::G.CreateApiKeyResponseError Error { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -32,7 +32,7 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public CreateApiKeyResponse6(
-            global::G.CreateApiKeyResponseError5 error)
+            global::G.CreateApiKeyResponseError error)
         {
             this.Error = error ?? throw new global::System.ArgumentNullException(nameof(error));
         }

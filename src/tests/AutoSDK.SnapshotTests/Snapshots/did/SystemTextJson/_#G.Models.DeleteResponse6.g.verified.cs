@@ -1,4 +1,4 @@
-﻿//HintName: G.Models.DeleteResponse6.g.cs
+//HintName: G.Models.DeleteResponse6.g.cs
 
 #nullable enable
 

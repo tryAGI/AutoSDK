@@ -1,4 +1,4 @@
-﻿//HintName: G.Models.UpdateMCPServerRequest.g.cs
+//HintName: G.Models.UpdateMCPServerRequest.g.cs
 
 #nullable enable
 
@@ -19,9 +19,9 @@ namespace G
         /// The MCP server configuration updates (Stdio, SSE, or Streamable HTTP)
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("config")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.Config4JsonConverter))]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.Config9JsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::G.Config4 Config { get; set; }
+        public required global::G.Config9 Config { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -42,7 +42,7 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public UpdateMCPServerRequest(
-            global::G.Config4 config,
+            global::G.Config9 config,
             string? serverName)
         {
             this.ServerName = serverName;

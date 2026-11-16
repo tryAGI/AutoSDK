@@ -1,4 +1,4 @@
-﻿//HintName: G.JsonSerializerContextConverters.g.cs
+//HintName: G.JsonSerializerContextConverters.g.cs
 
 #nullable enable
 
@@ -65,18 +65,16 @@ namespace G
             typeof(global::G.JsonConverters.FinetuneResponseTrainingTypeDiscriminatorTypeNullableJsonConverter),
             typeof(global::G.JsonConverters.FinetuneJobStatusJsonConverter),
             typeof(global::G.JsonConverters.FinetuneJobStatusNullableJsonConverter),
-            typeof(global::G.JsonConverters.FinetuneEventObjectJsonConverter),
-            typeof(global::G.JsonConverters.FinetuneEventObjectNullableJsonConverter),
+            typeof(global::G.JsonConverters.FinetuneEventObject2JsonConverter),
+            typeof(global::G.JsonConverters.FinetuneEventObject2NullableJsonConverter),
             typeof(global::G.JsonConverters.FinetuneEventLevelsJsonConverter),
             typeof(global::G.JsonConverters.FinetuneEventLevelsNullableJsonConverter),
             typeof(global::G.JsonConverters.FinetuneEventTypeJsonConverter),
             typeof(global::G.JsonConverters.FinetuneEventTypeNullableJsonConverter),
-            typeof(global::G.JsonConverters.FineTuneEventObject2JsonConverter),
-            typeof(global::G.JsonConverters.FineTuneEventObject2NullableJsonConverter),
+            typeof(global::G.JsonConverters.FineTuneEventObjectJsonConverter),
+            typeof(global::G.JsonConverters.FineTuneEventObjectNullableJsonConverter),
             typeof(global::G.JsonConverters.FineTuneEventLevelJsonConverter),
             typeof(global::G.JsonConverters.FineTuneEventLevelNullableJsonConverter),
-            typeof(global::G.JsonConverters.FineTuneEventType2JsonConverter),
-            typeof(global::G.JsonConverters.FineTuneEventType2NullableJsonConverter),
             typeof(global::G.JsonConverters.FinetuneDownloadResultObjectJsonConverter),
             typeof(global::G.JsonConverters.FinetuneDownloadResultObjectNullableJsonConverter),
             typeof(global::G.JsonConverters.FullTrainingTypeTypeJsonConverter),
@@ -92,7 +90,7 @@ namespace G
             typeof(global::G.JsonConverters.AllOfJsonConverter<global::G.FinishReason?, object>),
             typeof(global::G.JsonConverters.AllOfJsonConverter<object, global::G.LogprobsPart>),
             typeof(global::G.JsonConverters.OneOfJsonConverter<global::G.ChatCompletionRequestFunctionCallEnum?, global::G.ChatCompletionRequestFunctionCallEnum2>),
-            typeof(global::G.JsonConverters.OneOfJsonConverter<string, global::G.ToolChoice2>),
+            typeof(global::G.JsonConverters.OneOfJsonConverter<string, global::G.ToolChoice>),
             typeof(global::G.JsonConverters.AllOfJsonConverter<global::G.UsageData, object>),
             typeof(global::G.JsonConverters.OneOfJsonConverter<string, global::System.Collections.Generic.IList<string>>),
             typeof(global::G.JsonConverters.OneOfJsonConverter<global::G.FullTrainingType, global::G.LoRATrainingType>),

@@ -1,4 +1,4 @@
-﻿//HintName: G.Models.CompletionJobOut.g.cs
+//HintName: G.Models.CompletionJobOut.g.cs
 
 #nullable enable
 

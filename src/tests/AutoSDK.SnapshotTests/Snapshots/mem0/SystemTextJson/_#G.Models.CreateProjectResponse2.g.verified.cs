@@ -1,4 +1,4 @@
-﻿//HintName: G.Models.CreateProjectResponse2.g.cs
+//HintName: G.Models.CreateProjectResponse2.g.cs
 
 #nullable enable
 
@@ -10,9 +10,9 @@ namespace G
     public sealed partial class CreateProjectResponse2
     {
         /// <summary>
-        /// Example: Unauthorized to create projects in this organization.
+        /// Example: Project could not be created.
         /// </summary>
-        /// <example>Unauthorized to create projects in this organization.</example>
+        /// <example>Project could not be created.</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("message")]
         public string? Message { get; set; }
 
@@ -26,7 +26,7 @@ namespace G
         /// Initializes a new instance of the <see cref="CreateProjectResponse2" /> class.
         /// </summary>
         /// <param name="message">
-        /// Example: Unauthorized to create projects in this organization.
+        /// Example: Project could not be created.
         /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]

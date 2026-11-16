@@ -1,4 +1,4 @@
-﻿//HintName: G.Models.ChatCompletionRequest.g.cs
+//HintName: G.Models.ChatCompletionRequest.g.cs
 
 #nullable enable
 
@@ -142,7 +142,7 @@ namespace G
         /// Controls which (if any) function is called by the model. By default uses `auto`, which lets the model pick between generating a message or calling a function.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("tool_choice")]
-        public global::G.OneOf<string, global::G.ToolChoice2>? ToolChoice { get; set; }
+        public global::G.OneOf<string, global::G.ToolChoice>? ToolChoice { get; set; }
 
         /// <summary>
         /// The name of the moderation model used to validate tokens. Choose from the available moderation models found [here](https://docs.together.ai/docs/inference-models#moderation-models).<br/>
@@ -252,7 +252,7 @@ namespace G
             global::G.OneOf<global::G.ChatCompletionRequestFunctionCallEnum?, global::G.ChatCompletionRequestFunctionCallEnum2>? functionCall,
             global::G.ChatCompletionRequestResponseFormat? responseFormat,
             global::System.Collections.Generic.IList<global::G.ToolsPart>? tools,
-            global::G.OneOf<string, global::G.ToolChoice2>? toolChoice,
+            global::G.OneOf<string, global::G.ToolChoice>? toolChoice,
             string? safetyModel)
         {
             this.Messages = messages ?? throw new global::System.ArgumentNullException(nameof(messages));

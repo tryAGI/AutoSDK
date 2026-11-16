@@ -13,7 +13,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.PatchConvAIDashboardSettingsRequestChartDiscriminatorType? Type { get; }
+        public global::G.GetConvAIDashboardSettingsResponseModelChartDiscriminatorType? Type { get; }
 
         /// <summary>
         /// 
@@ -198,7 +198,7 @@ namespace G
         /// 
         /// </summary>
         public ChartsItem2(
-            global::G.PatchConvAIDashboardSettingsRequestChartDiscriminatorType? type,
+            global::G.GetConvAIDashboardSettingsResponseModelChartDiscriminatorType? type,
             global::G.DashboardCallSuccessChartModel? callSuccess,
             global::G.DashboardCriteriaChartModel? criteria,
             global::G.DashboardDataCollectionChartModel? dataCollection

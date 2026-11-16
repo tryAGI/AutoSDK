@@ -951,7 +951,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.Model6? Type228 { get; set; }
+        public global::G.Model? Type228 { get; set; }
         /// <summary>
         /// 
         /// </summary>
@@ -967,7 +967,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::G.Model6>? Type232 { get; set; }
+        public global::System.Collections.Generic.IList<global::G.Model>? Type232 { get; set; }
         /// <summary>
         /// 
         /// </summary>
@@ -1504,7 +1504,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.List<global::G.Model6>? ListType40 { get; set; }
+        public global::System.Collections.Generic.List<global::G.Model>? ListType40 { get; set; }
         /// <summary>
         /// 
         /// </summary>

@@ -1,4 +1,4 @@
-﻿//HintName: G.Commands.StoresUpdateSearchRuleCommand.g.cs
+//HintName: G.Commands.StoresUpdateSearchRuleCommand.g.cs
 
 #nullable enable
 
@@ -15,7 +15,7 @@ namespace G
             global::G.AnyOf<string, global::System.Guid?> storeIdentifier,
             global::System.Guid ruleId,
             string? query,
-            global::System.Collections.Generic.IList<global::G.RulesVariant1Item2>? rules,
+            global::System.Collections.Generic.IList<global::G.RulesVariant1Item>? rules,
             global::System.Threading.CancellationToken cancellationToken);
         partial void Complete(
             global::System.CommandLine.ParseResult parseResult,
@@ -41,7 +41,7 @@ namespace G
             Description = @"The query pattern to match",
         };
 
-        private global::System.CommandLine.Option<global::System.Collections.Generic.IList<global::G.RulesVariant1Item2>?> Rules { get; } = new(
+        private global::System.CommandLine.Option<global::System.Collections.Generic.IList<global::G.RulesVariant1Item>?> Rules { get; } = new(
             name: "rules")
         {
             Description = @"The rules to apply on query matches",

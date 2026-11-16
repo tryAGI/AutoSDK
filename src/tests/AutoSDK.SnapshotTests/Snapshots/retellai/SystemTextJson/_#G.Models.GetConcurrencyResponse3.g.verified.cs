@@ -1,4 +1,4 @@
-﻿//HintName: G.Models.GetConcurrencyResponse3.g.cs
+//HintName: G.Models.GetConcurrencyResponse3.g.cs
 
 #nullable enable
 
@@ -13,8 +13,8 @@ namespace G
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("status")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.GetConcurrencyResponseStatus2JsonConverter))]
-        public global::G.GetConcurrencyResponseStatus2? Status { get; set; }
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.GetConcurrencyResponseStatusJsonConverter))]
+        public global::G.GetConcurrencyResponseStatus? Status { get; set; }
 
         /// <summary>
         /// Example: An unexpected server error occurred.
@@ -40,7 +40,7 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public GetConcurrencyResponse3(
-            global::G.GetConcurrencyResponseStatus2? status,
+            global::G.GetConcurrencyResponseStatus? status,
             string? message)
         {
             this.Status = status;

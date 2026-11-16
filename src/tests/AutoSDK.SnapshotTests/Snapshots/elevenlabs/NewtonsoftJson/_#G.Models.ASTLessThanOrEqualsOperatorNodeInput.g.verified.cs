@@ -1,4 +1,4 @@
-﻿//HintName: G.Models.ASTLessThanOrEqualsOperatorNodeInput.g.cs
+//HintName: G.Models.ASTLessThanOrEqualsOperatorNodeInput.g.cs
 
 #nullable enable
 

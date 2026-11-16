@@ -1,4 +1,4 @@
-﻿//HintName: G.Api.g.cs
+//HintName: G.Api.g.cs
 
 #nullable enable
 
@@ -99,18 +99,16 @@ namespace G
                     new global::G.JsonConverters.FinetuneResponseTrainingTypeDiscriminatorTypeNullableJsonConverter(),
                     new global::G.JsonConverters.FinetuneJobStatusJsonConverter(),
                     new global::G.JsonConverters.FinetuneJobStatusNullableJsonConverter(),
-                    new global::G.JsonConverters.FinetuneEventObjectJsonConverter(),
-                    new global::G.JsonConverters.FinetuneEventObjectNullableJsonConverter(),
+                    new global::G.JsonConverters.FinetuneEventObject2JsonConverter(),
+                    new global::G.JsonConverters.FinetuneEventObject2NullableJsonConverter(),
                     new global::G.JsonConverters.FinetuneEventLevelsJsonConverter(),
                     new global::G.JsonConverters.FinetuneEventLevelsNullableJsonConverter(),
                     new global::G.JsonConverters.FinetuneEventTypeJsonConverter(),
                     new global::G.JsonConverters.FinetuneEventTypeNullableJsonConverter(),
-                    new global::G.JsonConverters.FineTuneEventObject2JsonConverter(),
-                    new global::G.JsonConverters.FineTuneEventObject2NullableJsonConverter(),
+                    new global::G.JsonConverters.FineTuneEventObjectJsonConverter(),
+                    new global::G.JsonConverters.FineTuneEventObjectNullableJsonConverter(),
                     new global::G.JsonConverters.FineTuneEventLevelJsonConverter(),
                     new global::G.JsonConverters.FineTuneEventLevelNullableJsonConverter(),
-                    new global::G.JsonConverters.FineTuneEventType2JsonConverter(),
-                    new global::G.JsonConverters.FineTuneEventType2NullableJsonConverter(),
                     new global::G.JsonConverters.FinetuneDownloadResultObjectJsonConverter(),
                     new global::G.JsonConverters.FinetuneDownloadResultObjectNullableJsonConverter(),
                     new global::G.JsonConverters.FullTrainingTypeTypeJsonConverter(),
@@ -126,7 +124,7 @@ namespace G
                     new global::G.JsonConverters.AllOfJsonConverter<global::G.FinishReason?, object>(),
                     new global::G.JsonConverters.AllOfJsonConverter<object, global::G.LogprobsPart>(),
                     new global::G.JsonConverters.OneOfJsonConverter<global::G.ChatCompletionRequestFunctionCallEnum?, global::G.ChatCompletionRequestFunctionCallEnum2>(),
-                    new global::G.JsonConverters.OneOfJsonConverter<string, global::G.ToolChoice2>(),
+                    new global::G.JsonConverters.OneOfJsonConverter<string, global::G.ToolChoice>(),
                     new global::G.JsonConverters.AllOfJsonConverter<global::G.UsageData, object>(),
                     new global::G.JsonConverters.OneOfJsonConverter<string, global::System.Collections.Generic.IList<string>>(),
                     new global::G.JsonConverters.OneOfJsonConverter<global::G.FullTrainingType, global::G.LoRATrainingType>(),

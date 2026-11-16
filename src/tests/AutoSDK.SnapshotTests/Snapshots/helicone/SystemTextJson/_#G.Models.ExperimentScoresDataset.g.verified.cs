@@ -1,4 +1,4 @@
-﻿//HintName: G.Models.ExperimentScoresDataset.g.cs
+//HintName: G.Models.ExperimentScoresDataset.g.cs
 
 #nullable enable
 
@@ -14,7 +14,7 @@ namespace G
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("scores")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::System.Collections.Generic.Dictionary<string, global::G.Score2> Scores { get; set; }
+        public required global::System.Collections.Generic.Dictionary<string, global::G.Score> Scores { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -32,7 +32,7 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public ExperimentScoresDataset(
-            global::System.Collections.Generic.Dictionary<string, global::G.Score2> scores)
+            global::System.Collections.Generic.Dictionary<string, global::G.Score> scores)
         {
             this.Scores = scores ?? throw new global::System.ArgumentNullException(nameof(scores));
         }

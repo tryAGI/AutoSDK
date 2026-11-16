@@ -18,33 +18,33 @@ namespace G.JsonConverters
 
 
             var readerCopy = reader;
-            var discriminatorTypeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.MxbaiOmniApiRoutesV1DeprecatedVectorStoresModelsSearchRuleSpecificDeleteParamsRuleDiscriminator), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.MxbaiOmniApiRoutesV1DeprecatedVectorStoresModelsSearchRuleSpecificDeleteParamsRuleDiscriminator> ??
-                            throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::G.MxbaiOmniApiRoutesV1DeprecatedVectorStoresModelsSearchRuleSpecificDeleteParamsRuleDiscriminator)}");
+            var discriminatorTypeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.MxbaiOmniApiRoutesV1StoresRulesModelsSearchRuleSpecificDeleteParamsRuleDiscriminator), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.MxbaiOmniApiRoutesV1StoresRulesModelsSearchRuleSpecificDeleteParamsRuleDiscriminator> ??
+                            throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::G.MxbaiOmniApiRoutesV1StoresRulesModelsSearchRuleSpecificDeleteParamsRuleDiscriminator)}");
             var discriminator = global::System.Text.Json.JsonSerializer.Deserialize(ref readerCopy, discriminatorTypeInfo);
 
             global::G.QueryStringSubstitutionRule? queryString = default;
-            if (discriminator?.Type == global::G.MxbaiOmniApiRoutesV1DeprecatedVectorStoresModelsSearchRuleSpecificDeleteParamsRuleDiscriminatorType.QueryString)
+            if (discriminator?.Type == global::G.MxbaiOmniApiRoutesV1StoresRulesModelsSearchRuleSpecificDeleteParamsRuleDiscriminatorType.QueryString)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.QueryStringSubstitutionRule), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.QueryStringSubstitutionRule> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::G.QueryStringSubstitutionRule)}");
                 queryString = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
             }
             global::G.QueryRegexSubstitutionRule? queryRegex = default;
-            if (discriminator?.Type == global::G.MxbaiOmniApiRoutesV1DeprecatedVectorStoresModelsSearchRuleSpecificDeleteParamsRuleDiscriminatorType.QueryRegex)
+            if (discriminator?.Type == global::G.MxbaiOmniApiRoutesV1StoresRulesModelsSearchRuleSpecificDeleteParamsRuleDiscriminatorType.QueryRegex)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.QueryRegexSubstitutionRule), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.QueryRegexSubstitutionRule> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::G.QueryRegexSubstitutionRule)}");
                 queryRegex = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
             }
             global::G.ChunkSearchResultRule? chunkSearchResult = default;
-            if (discriminator?.Type == global::G.MxbaiOmniApiRoutesV1DeprecatedVectorStoresModelsSearchRuleSpecificDeleteParamsRuleDiscriminatorType.ChunkSearchResult)
+            if (discriminator?.Type == global::G.MxbaiOmniApiRoutesV1StoresRulesModelsSearchRuleSpecificDeleteParamsRuleDiscriminatorType.ChunkSearchResult)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.ChunkSearchResultRule), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.ChunkSearchResultRule> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::G.ChunkSearchResultRule)}");
                 chunkSearchResult = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
             }
             global::G.FileSearchResultRule? fileSearchResult = default;
-            if (discriminator?.Type == global::G.MxbaiOmniApiRoutesV1DeprecatedVectorStoresModelsSearchRuleSpecificDeleteParamsRuleDiscriminatorType.FileSearchResult)
+            if (discriminator?.Type == global::G.MxbaiOmniApiRoutesV1StoresRulesModelsSearchRuleSpecificDeleteParamsRuleDiscriminatorType.FileSearchResult)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.FileSearchResultRule), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.FileSearchResultRule> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::G.FileSearchResultRule)}");

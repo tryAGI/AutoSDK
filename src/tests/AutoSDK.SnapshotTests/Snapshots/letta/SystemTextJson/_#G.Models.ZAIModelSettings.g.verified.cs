@@ -1,4 +1,4 @@
-﻿//HintName: G.Models.ZAIModelSettings.g.cs
+//HintName: G.Models.ZAIModelSettings.g.cs
 
 #nullable enable
 
@@ -41,7 +41,7 @@ namespace G
         /// The response format for the model.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("response_format")]
-        public global::G.ResponseFormatVariant116? ResponseFormat { get; set; }
+        public global::G.ResponseFormatVariant14? ResponseFormat { get; set; }
 
         /// <summary>
         /// The thinking configuration for GLM-4.5+ models.<br/>
@@ -90,7 +90,7 @@ namespace G
             bool? parallelToolCalls,
             string? providerType,
             double? temperature,
-            global::G.ResponseFormatVariant116? responseFormat,
+            global::G.ResponseFormatVariant14? responseFormat,
             global::G.ZAIThinking? thinking)
         {
             this.MaxOutputTokens = maxOutputTokens;

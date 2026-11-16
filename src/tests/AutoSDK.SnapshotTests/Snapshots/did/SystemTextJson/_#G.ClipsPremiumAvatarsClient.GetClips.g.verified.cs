@@ -70,7 +70,7 @@ namespace G
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::G.ApiException"></exception>
-        public async global::System.Threading.Tasks.Task<global::G.GetClipsResponse2> GetClipsAsync(
+        public async global::System.Threading.Tasks.Task<global::G.GetClipsResponse> GetClipsAsync(
             double? limit = default,
             string? token = default,
             global::G.AutoSDKRequestOptions? requestOptions = default,
@@ -95,7 +95,7 @@ namespace G
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::G.ApiException"></exception>
-        public async global::System.Threading.Tasks.Task<global::G.AutoSDKHttpResponse<global::G.GetClipsResponse2>> GetClipsAsResponseAsync(
+        public async global::System.Threading.Tasks.Task<global::G.AutoSDKHttpResponse<global::G.GetClipsResponse>> GetClipsAsResponseAsync(
             double? limit = default,
             string? token = default,
             global::G.AutoSDKRequestOptions? requestOptions = default,
@@ -365,19 +365,19 @@ namespace G
                             {
                                 string? __content_401 = null;
                                 global::System.Exception? __exception_401 = null;
-                                global::G.GetClipsResponse3? __value_401 = null;
+                                global::G.GetClipsResponse2? __value_401 = null;
                                 try
                                 {
                                     if (__effectiveReadResponseAsString)
                                     {
                                         __content_401 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
-                                        __value_401 = global::G.GetClipsResponse3.FromJson(__content_401, JsonSerializerOptions);
+                                        __value_401 = global::G.GetClipsResponse2.FromJson(__content_401, JsonSerializerOptions);
                                     }
                                     else
                                     {
                                         __content_401 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
 
-                                        __value_401 = global::G.GetClipsResponse3.FromJson(__content_401, JsonSerializerOptions);
+                                        __value_401 = global::G.GetClipsResponse2.FromJson(__content_401, JsonSerializerOptions);
                                     }
                                 }
                                 catch (global::System.Exception __ex)
@@ -386,7 +386,7 @@ namespace G
                                 }
 
 
-                                throw global::G.ApiException<global::G.GetClipsResponse3>.Create(
+                                throw global::G.ApiException<global::G.GetClipsResponse2>.Create(
                                     statusCode: __response.StatusCode,
                                     message: __content_401 ?? __response.ReasonPhrase ?? string.Empty,
                                     innerException: __exception_401,
@@ -419,9 +419,9 @@ namespace G
                                 {
                                     __response.EnsureSuccessStatusCode();
 
-                                    var __value = global::G.GetClipsResponse2.FromJson(__content, JsonSerializerOptions) ??
+                                    var __value = global::G.GetClipsResponse.FromJson(__content, JsonSerializerOptions) ??
                                         throw new global::System.InvalidOperationException($"Response deserialization failed for \"{__content}\" ");
-                                    return new global::G.AutoSDKHttpResponse<global::G.GetClipsResponse2>(
+                                    return new global::G.AutoSDKHttpResponse<global::G.GetClipsResponse>(
                                         statusCode: __response.StatusCode,
                                         headers: global::G.AutoSDKHttpResponse.CreateHeaders(__response),
                                         requestUri: __response.RequestMessage?.RequestUri,
@@ -451,9 +451,9 @@ namespace G
                 #endif
                                     ).ConfigureAwait(false);
 
-                                    var __value = await global::G.GetClipsResponse2.FromJsonStreamAsync(__content, JsonSerializerOptions).ConfigureAwait(false) ??
+                                    var __value = await global::G.GetClipsResponse.FromJsonStreamAsync(__content, JsonSerializerOptions).ConfigureAwait(false) ??
                                         throw new global::System.InvalidOperationException("Response deserialization failed.");
-                                    return new global::G.AutoSDKHttpResponse<global::G.GetClipsResponse2>(
+                                    return new global::G.AutoSDKHttpResponse<global::G.GetClipsResponse>(
                                         statusCode: __response.StatusCode,
                                         headers: global::G.AutoSDKHttpResponse.CreateHeaders(__response),
                                         requestUri: __response.RequestMessage?.RequestUri,

@@ -1,4 +1,4 @@
-﻿//HintName: G.Models.ScoredVectorStoreFile.g.cs
+//HintName: G.Models.ScoredVectorStoreFile.g.cs
 
 #nullable enable
 
@@ -76,7 +76,7 @@ namespace G
         /// Array of scored file chunks
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("chunks")]
-        public global::System.Collections.Generic.IList<global::G.ChunksVariant1Item2>? Chunks { get; set; }
+        public global::System.Collections.Generic.IList<global::G.ChunksVariant1Item3>? Chunks { get; set; }
 
         /// <summary>
         /// score of the file
@@ -143,7 +143,7 @@ namespace G
             int? version,
             long? usageBytes,
             string? @object,
-            global::System.Collections.Generic.IList<global::G.ChunksVariant1Item2>? chunks)
+            global::System.Collections.Generic.IList<global::G.ChunksVariant1Item3>? chunks)
         {
             this.Id = id ?? throw new global::System.ArgumentNullException(nameof(id));
             this.Filename = filename;

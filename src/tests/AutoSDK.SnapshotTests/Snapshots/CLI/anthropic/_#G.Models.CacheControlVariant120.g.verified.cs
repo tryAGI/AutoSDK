@@ -13,15 +13,15 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.ToolCacheControlVariant1DiscriminatorType? Type { get; }
+        public global::G.BetaToolCacheControlVariant1DiscriminatorType? Type { get; }
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        public global::G.CacheControlEphemeral? Ephemeral { get; init; }
+        public global::G.BetaCacheControlEphemeral? Ephemeral { get; init; }
 #else
-        public global::G.CacheControlEphemeral? Ephemeral { get; }
+        public global::G.BetaCacheControlEphemeral? Ephemeral { get; }
 #endif
 
         /// <summary>
@@ -39,7 +39,7 @@ namespace G
 #if NET6_0_OR_GREATER
             [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
 #endif
-            out global::G.CacheControlEphemeral? value)
+            out global::G.BetaCacheControlEphemeral? value)
         {
             value = Ephemeral;
             return IsEphemeral;
@@ -48,23 +48,23 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.CacheControlEphemeral PickEphemeral() => Ephemeral is { } value
+        public global::G.BetaCacheControlEphemeral PickEphemeral() => Ephemeral is { } value
             ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Ephemeral' but the value was {ToString()}.");
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator CacheControlVariant120(global::G.CacheControlEphemeral value) => new CacheControlVariant120((global::G.CacheControlEphemeral?)value);
+        public static implicit operator CacheControlVariant120(global::G.BetaCacheControlEphemeral value) => new CacheControlVariant120((global::G.BetaCacheControlEphemeral?)value);
 
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator global::G.CacheControlEphemeral?(CacheControlVariant120 @this) => @this.Ephemeral;
+        public static implicit operator global::G.BetaCacheControlEphemeral?(CacheControlVariant120 @this) => @this.Ephemeral;
 
         /// <summary>
         /// 
         /// </summary>
-        public CacheControlVariant120(global::G.CacheControlEphemeral? value)
+        public CacheControlVariant120(global::G.BetaCacheControlEphemeral? value)
         {
             Ephemeral = value;
         }
@@ -72,14 +72,14 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static CacheControlVariant120 FromEphemeral(global::G.CacheControlEphemeral? value) => new CacheControlVariant120(value);
+        public static CacheControlVariant120 FromEphemeral(global::G.BetaCacheControlEphemeral? value) => new CacheControlVariant120(value);
 
         /// <summary>
         /// 
         /// </summary>
         public CacheControlVariant120(
-            global::G.ToolCacheControlVariant1DiscriminatorType? type,
-            global::G.CacheControlEphemeral? ephemeral
+            global::G.BetaToolCacheControlVariant1DiscriminatorType? type,
+            global::G.BetaCacheControlEphemeral? ephemeral
             )
         {
             Type = type;
@@ -113,7 +113,7 @@ namespace G
         /// 
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<global::G.CacheControlEphemeral, TResult>? ephemeral = null,
+            global::System.Func<global::G.BetaCacheControlEphemeral, TResult>? ephemeral = null,
             bool validate = true)
         {
             if (validate)
@@ -133,7 +133,7 @@ namespace G
         /// 
         /// </summary>
         public void Match(
-            global::System.Action<global::G.CacheControlEphemeral>? ephemeral = null,
+            global::System.Action<global::G.BetaCacheControlEphemeral>? ephemeral = null,
             bool validate = true)
         {
             if (validate)
@@ -151,7 +151,7 @@ namespace G
         /// 
         /// </summary>
         public void Switch(
-            global::System.Action<global::G.CacheControlEphemeral>? ephemeral = null,
+            global::System.Action<global::G.BetaCacheControlEphemeral>? ephemeral = null,
             bool validate = true)
         {
             if (validate)
@@ -173,7 +173,7 @@ namespace G
             var fields = new object?[]
             {
                 Ephemeral,
-                typeof(global::G.CacheControlEphemeral),
+                typeof(global::G.BetaCacheControlEphemeral),
             };
             const int offset = unchecked((int)2166136261);
             const int prime = 16777619;
@@ -190,7 +190,7 @@ namespace G
         public bool Equals(CacheControlVariant120 other)
         {
             return
-                global::System.Collections.Generic.EqualityComparer<global::G.CacheControlEphemeral?>.Default.Equals(Ephemeral, other.Ephemeral) 
+                global::System.Collections.Generic.EqualityComparer<global::G.BetaCacheControlEphemeral?>.Default.Equals(Ephemeral, other.Ephemeral) 
                 ;
         }
 

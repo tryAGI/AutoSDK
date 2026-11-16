@@ -1,4 +1,4 @@
-﻿//HintName: G.ITalksStreamsClient.AddIceCandidate.g.cs
+//HintName: G.ITalksStreamsClient.AddIceCandidate.g.cs
 #nullable enable
 
 namespace G
@@ -16,10 +16,10 @@ namespace G
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::G.ApiException"></exception>
         [global::System.Obsolete("This method marked as deprecated.")]
-        global::System.Threading.Tasks.Task<global::G.AddIceCandidateResponse4> AddIceCandidateAsync(
+        global::System.Threading.Tasks.Task<global::G.AddIceCandidateResponse> AddIceCandidateAsync(
             string id,
 
-            global::G.AllOf<global::G.AnyOf<global::G.AddIceCandidateRequestVariant14, object>?, global::G.AddIceCandidateRequest4> request,
+            global::G.AllOf<global::G.AnyOf<global::G.AddIceCandidateRequestVariant12, object>?, global::G.AddIceCandidateRequest2> request,
             string? cookie = default,
             global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
@@ -34,10 +34,10 @@ namespace G
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::G.ApiException"></exception>
         [global::System.Obsolete("This method marked as deprecated.")]
-        global::System.Threading.Tasks.Task<global::G.AutoSDKHttpResponse<global::G.AddIceCandidateResponse4>> AddIceCandidateAsResponseAsync(
+        global::System.Threading.Tasks.Task<global::G.AutoSDKHttpResponse<global::G.AddIceCandidateResponse>> AddIceCandidateAsResponseAsync(
             string id,
 
-            global::G.AllOf<global::G.AnyOf<global::G.AddIceCandidateRequestVariant14, object>?, global::G.AddIceCandidateRequest4> request,
+            global::G.AllOf<global::G.AnyOf<global::G.AddIceCandidateRequestVariant12, object>?, global::G.AddIceCandidateRequest2> request,
             string? cookie = default,
             global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
@@ -51,7 +51,7 @@ namespace G
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         [global::System.Obsolete("This method marked as deprecated.")]
-        global::System.Threading.Tasks.Task<global::G.AddIceCandidateResponse4> AddIceCandidateAsync(
+        global::System.Threading.Tasks.Task<global::G.AddIceCandidateResponse> AddIceCandidateAsync(
             string id,
             string? cookie = default,
             global::G.AutoSDKRequestOptions? requestOptions = default,

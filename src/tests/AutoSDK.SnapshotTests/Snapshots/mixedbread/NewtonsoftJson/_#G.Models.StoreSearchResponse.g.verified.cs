@@ -1,4 +1,4 @@
-﻿//HintName: G.Models.StoreSearchResponse.g.cs
+//HintName: G.Models.StoreSearchResponse.g.cs
 
 #nullable enable
 
@@ -20,7 +20,7 @@ namespace G
         /// The list of scored store file chunks
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("data", Required = global::Newtonsoft.Json.Required.Always)]
-        public global::System.Collections.Generic.IList<global::G.DataItem2> Data { get; set; } = default!;
+        public global::System.Collections.Generic.IList<global::G.DataItem> Data { get; set; } = default!;
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -39,7 +39,7 @@ namespace G
         /// Default Value: list
         /// </param>
         public StoreSearchResponse(
-            global::System.Collections.Generic.IList<global::G.DataItem2> data,
+            global::System.Collections.Generic.IList<global::G.DataItem> data,
             string? @object)
         {
             this.Object = @object;

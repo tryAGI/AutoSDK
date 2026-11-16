@@ -1,4 +1,4 @@
-﻿//HintName: G.IPrompt2025V2Client.GetPrompt2025EnvironmentVersion.g.cs
+//HintName: G.IPrompt2025V2Client.GetPrompt2025EnvironmentVersion.g.cs
 #nullable enable
 
 namespace G
@@ -14,7 +14,7 @@ namespace G
         /// <exception cref="global::G.ApiException"></exception>
         global::System.Threading.Tasks.Task<global::G.ResultPrompt2025VersionString> GetPrompt2025EnvironmentVersionAsync(
 
-            global::G.GetPrompt2025EnvironmentVersionRequest2 request,
+            global::G.GetPrompt2025EnvironmentVersionRequest request,
             global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
@@ -26,7 +26,7 @@ namespace G
         /// <exception cref="global::G.ApiException"></exception>
         global::System.Threading.Tasks.Task<global::G.AutoSDKHttpResponse<global::G.ResultPrompt2025VersionString>> GetPrompt2025EnvironmentVersionAsResponseAsync(
 
-            global::G.GetPrompt2025EnvironmentVersionRequest2 request,
+            global::G.GetPrompt2025EnvironmentVersionRequest request,
             global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>

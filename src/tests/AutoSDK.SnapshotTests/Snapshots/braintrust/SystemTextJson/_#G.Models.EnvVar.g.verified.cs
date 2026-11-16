@@ -1,4 +1,4 @@
-﻿//HintName: G.Models.EnvVar.g.cs
+//HintName: G.Models.EnvVar.g.cs
 
 #nullable enable
 
@@ -20,9 +20,9 @@ namespace G
         /// The type of the object the environment variable is scoped for
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("object_type")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.EnvVarObjectType2JsonConverter))]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.EnvVarObjectTypeJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::G.EnvVarObjectType2 ObjectType { get; set; }
+        public required global::G.EnvVarObjectType ObjectType { get; set; }
 
         /// <summary>
         /// The id of the object the environment variable is scoped for
@@ -112,7 +112,7 @@ namespace G
 #endif
         public EnvVar(
             global::System.Guid id,
-            global::G.EnvVarObjectType2 objectType,
+            global::G.EnvVarObjectType objectType,
             global::System.Guid objectId,
             string name,
             global::System.DateTime? created,

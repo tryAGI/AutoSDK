@@ -18,54 +18,54 @@ namespace G.JsonConverters
 
 
             var readerCopy = reader;
-            var discriminatorTypeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.MxbaiOmniCoreStoreModelsChunkTypesScoredImageUrlInputChunkGeneratedMetadataVariant1Discriminator), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.MxbaiOmniCoreStoreModelsChunkTypesScoredImageUrlInputChunkGeneratedMetadataVariant1Discriminator> ??
-                            throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::G.MxbaiOmniCoreStoreModelsChunkTypesScoredImageUrlInputChunkGeneratedMetadataVariant1Discriminator)}");
+            var discriminatorTypeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.MxbaiOmniApiRoutesV1DeprecatedVectorStoresModelsScoredAudioUrlInputChunkGeneratedMetadataVariant1Discriminator), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.MxbaiOmniApiRoutesV1DeprecatedVectorStoresModelsScoredAudioUrlInputChunkGeneratedMetadataVariant1Discriminator> ??
+                            throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::G.MxbaiOmniApiRoutesV1DeprecatedVectorStoresModelsScoredAudioUrlInputChunkGeneratedMetadataVariant1Discriminator)}");
             var discriminator = global::System.Text.Json.JsonSerializer.Deserialize(ref readerCopy, discriminatorTypeInfo);
 
             global::G.MarkdownChunkGeneratedMetadata? markdown = default;
-            if (discriminator?.Type == global::G.MxbaiOmniCoreStoreModelsChunkTypesScoredImageUrlInputChunkGeneratedMetadataVariant1DiscriminatorType.Markdown)
+            if (discriminator?.Type == global::G.MxbaiOmniApiRoutesV1DeprecatedVectorStoresModelsScoredAudioUrlInputChunkGeneratedMetadataVariant1DiscriminatorType.Markdown)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.MarkdownChunkGeneratedMetadata), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.MarkdownChunkGeneratedMetadata> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::G.MarkdownChunkGeneratedMetadata)}");
                 markdown = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
             }
             global::G.TextChunkGeneratedMetadata? text = default;
-            if (discriminator?.Type == global::G.MxbaiOmniCoreStoreModelsChunkTypesScoredImageUrlInputChunkGeneratedMetadataVariant1DiscriminatorType.Text)
+            if (discriminator?.Type == global::G.MxbaiOmniApiRoutesV1DeprecatedVectorStoresModelsScoredAudioUrlInputChunkGeneratedMetadataVariant1DiscriminatorType.Text)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.TextChunkGeneratedMetadata), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.TextChunkGeneratedMetadata> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::G.TextChunkGeneratedMetadata)}");
                 text = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
             }
             global::G.PDFChunkGeneratedMetadata? pdf = default;
-            if (discriminator?.Type == global::G.MxbaiOmniCoreStoreModelsChunkTypesScoredImageUrlInputChunkGeneratedMetadataVariant1DiscriminatorType.Pdf)
+            if (discriminator?.Type == global::G.MxbaiOmniApiRoutesV1DeprecatedVectorStoresModelsScoredAudioUrlInputChunkGeneratedMetadataVariant1DiscriminatorType.Pdf)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.PDFChunkGeneratedMetadata), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.PDFChunkGeneratedMetadata> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::G.PDFChunkGeneratedMetadata)}");
                 pdf = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
             }
             global::G.CodeChunkGeneratedMetadata? code = default;
-            if (discriminator?.Type == global::G.MxbaiOmniCoreStoreModelsChunkTypesScoredImageUrlInputChunkGeneratedMetadataVariant1DiscriminatorType.Code)
+            if (discriminator?.Type == global::G.MxbaiOmniApiRoutesV1DeprecatedVectorStoresModelsScoredAudioUrlInputChunkGeneratedMetadataVariant1DiscriminatorType.Code)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.CodeChunkGeneratedMetadata), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.CodeChunkGeneratedMetadata> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::G.CodeChunkGeneratedMetadata)}");
                 code = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
             }
             global::G.AudioChunkGeneratedMetadata? audio = default;
-            if (discriminator?.Type == global::G.MxbaiOmniCoreStoreModelsChunkTypesScoredImageUrlInputChunkGeneratedMetadataVariant1DiscriminatorType.Audio)
+            if (discriminator?.Type == global::G.MxbaiOmniApiRoutesV1DeprecatedVectorStoresModelsScoredAudioUrlInputChunkGeneratedMetadataVariant1DiscriminatorType.Audio)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.AudioChunkGeneratedMetadata), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.AudioChunkGeneratedMetadata> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::G.AudioChunkGeneratedMetadata)}");
                 audio = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
             }
             global::G.VideoChunkGeneratedMetadata? video = default;
-            if (discriminator?.Type == global::G.MxbaiOmniCoreStoreModelsChunkTypesScoredImageUrlInputChunkGeneratedMetadataVariant1DiscriminatorType.Video)
+            if (discriminator?.Type == global::G.MxbaiOmniApiRoutesV1DeprecatedVectorStoresModelsScoredAudioUrlInputChunkGeneratedMetadataVariant1DiscriminatorType.Video)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.VideoChunkGeneratedMetadata), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.VideoChunkGeneratedMetadata> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::G.VideoChunkGeneratedMetadata)}");
                 video = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
             }
             global::G.ImageChunkGeneratedMetadata? image = default;
-            if (discriminator?.Type == global::G.MxbaiOmniCoreStoreModelsChunkTypesScoredImageUrlInputChunkGeneratedMetadataVariant1DiscriminatorType.Image)
+            if (discriminator?.Type == global::G.MxbaiOmniApiRoutesV1DeprecatedVectorStoresModelsScoredAudioUrlInputChunkGeneratedMetadataVariant1DiscriminatorType.Image)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.ImageChunkGeneratedMetadata), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.ImageChunkGeneratedMetadata> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::G.ImageChunkGeneratedMetadata)}");

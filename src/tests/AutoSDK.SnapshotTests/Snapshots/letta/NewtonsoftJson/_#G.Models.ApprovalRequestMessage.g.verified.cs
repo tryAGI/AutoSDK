@@ -1,4 +1,4 @@
-﻿//HintName: G.Models.ApprovalRequestMessage.g.cs
+//HintName: G.Models.ApprovalRequestMessage.g.cs
 
 #pragma warning disable CS0618 // Type or member is obsolete
 
@@ -81,13 +81,13 @@ namespace G
         /// The tool call that has been requested by the llm to run
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("tool_call", Required = global::Newtonsoft.Json.Required.Always)]
-        public global::G.AnyOf<global::G.ToolCall2, global::G.ToolCallDelta> ToolCall { get; set; } = default!;
+        public global::G.AnyOf<global::G.ToolCall, global::G.ToolCallDelta> ToolCall { get; set; } = default!;
 
         /// <summary>
         /// The tool calls that have been requested by the llm to run, which are pending approval
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("tool_calls")]
-        public global::G.AnyOf<global::System.Collections.Generic.IList<global::G.ToolCall2>, global::G.ToolCallDelta>? ToolCalls { get; set; }
+        public global::G.AnyOf<global::System.Collections.Generic.IList<global::G.ToolCall>, global::G.ToolCallDelta>? ToolCalls { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -120,7 +120,7 @@ namespace G
         public ApprovalRequestMessage(
             string id,
             global::System.DateTime date,
-            global::G.AnyOf<global::G.ToolCall2, global::G.ToolCallDelta> toolCall,
+            global::G.AnyOf<global::G.ToolCall, global::G.ToolCallDelta> toolCall,
             string? name,
             string? messageType,
             string? otid,
@@ -129,7 +129,7 @@ namespace G
             bool? isErr,
             int? seqId,
             string? runId,
-            global::G.AnyOf<global::System.Collections.Generic.IList<global::G.ToolCall2>, global::G.ToolCallDelta>? toolCalls)
+            global::G.AnyOf<global::System.Collections.Generic.IList<global::G.ToolCall>, global::G.ToolCallDelta>? toolCalls)
         {
             this.Id = id ?? throw new global::System.ArgumentNullException(nameof(id));
             this.Date = date;

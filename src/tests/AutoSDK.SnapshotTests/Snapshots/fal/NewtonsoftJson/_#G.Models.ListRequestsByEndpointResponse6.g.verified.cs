@@ -1,4 +1,4 @@
-﻿//HintName: G.Models.ListRequestsByEndpointResponse6.g.cs
+//HintName: G.Models.ListRequestsByEndpointResponse6.g.cs
 
 #nullable enable
 
@@ -13,7 +13,7 @@ namespace G
         /// Error details
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("error", Required = global::Newtonsoft.Json.Required.Always)]
-        public global::G.ListRequestsByEndpointResponseError5 Error { get; set; } = default!;
+        public global::G.ListRequestsByEndpointResponseError Error { get; set; } = default!;
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -28,7 +28,7 @@ namespace G
         /// Error details
         /// </param>
         public ListRequestsByEndpointResponse6(
-            global::G.ListRequestsByEndpointResponseError5 error)
+            global::G.ListRequestsByEndpointResponseError error)
         {
             this.Error = error ?? throw new global::System.ArgumentNullException(nameof(error));
         }

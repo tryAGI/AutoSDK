@@ -13,7 +13,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.ASTNotEqualsOperatorNodeOutputLeftDiscriminatorType? Type { get; }
+        public global::G.ASTGreaterThanOrEqualsOperatorNodeOutputLeftDiscriminatorType? Type { get; }
 
         /// <summary>
         /// String literal.
@@ -798,7 +798,7 @@ namespace G
         /// 
         /// </summary>
         public Left12(
-            global::G.ASTNotEqualsOperatorNodeOutputLeftDiscriminatorType? type,
+            global::G.ASTGreaterThanOrEqualsOperatorNodeOutputLeftDiscriminatorType? type,
             global::G.ASTStringNodeOutput? stringLiteral,
             global::G.ASTNumberNodeOutput? numberLiteral,
             global::G.ASTBooleanNodeOutput? booleanLiteral,

@@ -28,11 +28,11 @@ namespace G
             };
         partial void PrepareFileControllerUploadV2Arguments(
             global::System.Net.Http.HttpClient httpClient,
-            global::G.FileControllerUploadV2Request request);
+            global::G.FileControllerUploadV2Request2 request);
         partial void PrepareFileControllerUploadV2Request(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
-            global::G.FileControllerUploadV2Request request);
+            global::G.FileControllerUploadV2Request2 request);
         partial void ProcessFileControllerUploadV2Response(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage);
@@ -51,7 +51,7 @@ namespace G
         /// <exception cref="global::G.ApiException"></exception>
         public async global::System.Threading.Tasks.Task<global::G.AudioUploadResponse> FileControllerUploadV2Async(
 
-            global::G.FileControllerUploadV2Request request,
+            global::G.FileControllerUploadV2Request2 request,
             global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
@@ -73,7 +73,7 @@ namespace G
         /// <exception cref="global::G.ApiException"></exception>
         public async global::System.Threading.Tasks.Task<global::G.AutoSDKHttpResponse<global::G.AudioUploadResponse>> FileControllerUploadV2AsResponseAsync(
 
-            global::G.FileControllerUploadV2Request request,
+            global::G.FileControllerUploadV2Request2 request,
             global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
@@ -493,7 +493,7 @@ namespace G
             global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
-            var __request = new global::G.FileControllerUploadV2Request
+            var __request = new global::G.FileControllerUploadV2Request2
             {
                 Audio = audio,
                 Audioname = audioname,

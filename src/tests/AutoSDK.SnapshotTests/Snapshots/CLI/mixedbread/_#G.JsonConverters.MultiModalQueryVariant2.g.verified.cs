@@ -22,11 +22,11 @@ namespace G.JsonConverters
                             throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::G.MultiModalQueryVariant2Discriminator)}");
             var discriminator = global::System.Text.Json.JsonSerializer.Deserialize(ref readerCopy, discriminatorTypeInfo);
 
-            global::G.ImageUrlInput2? imageUrl = default;
+            global::G.ImageUrlInput? imageUrl = default;
             if (discriminator?.Type == global::G.MultiModalQueryVariant2DiscriminatorType.ImageUrl)
             {
-                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.ImageUrlInput2), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.ImageUrlInput2> ??
-                               throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::G.ImageUrlInput2)}");
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.ImageUrlInput), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.ImageUrlInput> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::G.ImageUrlInput)}");
                 imageUrl = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
             }
             global::G.TextInput? text = default;
@@ -58,8 +58,8 @@ namespace G.JsonConverters
 
             if (value.IsImageUrl)
             {
-                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.ImageUrlInput2), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.ImageUrlInput2?> ??
-                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.ImageUrlInput2).Name}");
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.ImageUrlInput), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.ImageUrlInput?> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.ImageUrlInput).Name}");
                 global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickImageUrl(), typeInfo);
             }
             else if (value.IsText)

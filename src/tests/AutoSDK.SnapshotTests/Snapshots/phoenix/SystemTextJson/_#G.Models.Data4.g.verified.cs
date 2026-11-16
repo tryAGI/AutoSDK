@@ -13,7 +13,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.GetAnnotationConfigResponseBodyDataDiscriminatorType? Type { get; }
+        public global::G.CreateAnnotationConfigResponseBodyDataDiscriminatorType? Type { get; }
 
         /// <summary>
         /// 
@@ -198,7 +198,7 @@ namespace G
         /// 
         /// </summary>
         public Data4(
-            global::G.GetAnnotationConfigResponseBodyDataDiscriminatorType? type,
+            global::G.CreateAnnotationConfigResponseBodyDataDiscriminatorType? type,
             global::G.CategoricalAnnotationConfig? categorical,
             global::G.ContinuousAnnotationConfig? continuous,
             global::G.FreeformAnnotationConfig? freeform

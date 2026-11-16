@@ -41,11 +41,11 @@ namespace G
             };
         partial void PrepareGenerateArguments(
             global::System.Net.Http.HttpClient httpClient,
-            global::G.AllOf<global::G.OpenAIChatRequest, global::G.GenerateRequest2> request);
+            global::G.AllOf<global::G.OpenAIChatRequest, global::G.GenerateRequest4> request);
         partial void PrepareGenerateRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
-            global::G.AllOf<global::G.OpenAIChatRequest, global::G.GenerateRequest2> request);
+            global::G.AllOf<global::G.OpenAIChatRequest, global::G.GenerateRequest4> request);
         partial void ProcessGenerateResponse(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage);
@@ -64,7 +64,7 @@ namespace G
         /// <exception cref="global::G.ApiException"></exception>
         public async global::System.Threading.Tasks.Task<global::G.ResultChatCompletionOrContentStringReasoningStringCallsAnyString> GenerateAsync(
 
-            global::G.AllOf<global::G.OpenAIChatRequest, global::G.GenerateRequest2> request,
+            global::G.AllOf<global::G.OpenAIChatRequest, global::G.GenerateRequest4> request,
             global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
@@ -86,7 +86,7 @@ namespace G
         /// <exception cref="global::G.ApiException"></exception>
         public async global::System.Threading.Tasks.Task<global::G.AutoSDKHttpResponse<global::G.ResultChatCompletionOrContentStringReasoningStringCallsAnyString>> GenerateAsResponseAsync(
 
-            global::G.AllOf<global::G.OpenAIChatRequest, global::G.GenerateRequest2> request,
+            global::G.AllOf<global::G.OpenAIChatRequest, global::G.GenerateRequest4> request,
             global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
@@ -457,7 +457,7 @@ namespace G
             global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
-            var __request = new global::G.AllOf<global::G.OpenAIChatRequest, global::G.GenerateRequest2>
+            var __request = new global::G.AllOf<global::G.OpenAIChatRequest, global::G.GenerateRequest4>
             {
             };
 

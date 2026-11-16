@@ -1,4 +1,4 @@
-﻿//HintName: G.Models.Transcription.g.cs
+//HintName: G.Models.Transcription.g.cs
 
 #nullable enable
 
@@ -19,8 +19,8 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("version", Required = global::Newtonsoft.Json.Required.Always)]
-        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.TranscriptionVersion2JsonConverter))]
-        public global::G.TranscriptionVersion2 Version { get; set; } = default!;
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.TranscriptionVersionJsonConverter))]
+        public global::G.TranscriptionVersion Version { get; set; } = default!;
 
         /// <summary>
         /// 
@@ -42,7 +42,7 @@ namespace G
         /// <param name="selected"></param>
         public Transcription(
             string url,
-            global::G.TranscriptionVersion2 version,
+            global::G.TranscriptionVersion version,
             bool? selected)
         {
             this.Url = url ?? throw new global::System.ArgumentNullException(nameof(url));

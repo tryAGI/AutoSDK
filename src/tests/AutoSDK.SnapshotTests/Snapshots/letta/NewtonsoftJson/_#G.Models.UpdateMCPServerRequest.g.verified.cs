@@ -1,4 +1,4 @@
-﻿//HintName: G.Models.UpdateMCPServerRequest.g.cs
+//HintName: G.Models.UpdateMCPServerRequest.g.cs
 
 #nullable enable
 
@@ -19,7 +19,7 @@ namespace G
         /// The MCP server configuration updates (Stdio, SSE, or Streamable HTTP)
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("config", Required = global::Newtonsoft.Json.Required.Always)]
-        public global::G.Config4 Config { get; set; } = default!;
+        public global::G.Config9 Config { get; set; } = default!;
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -37,7 +37,7 @@ namespace G
         /// The name of the MCP server
         /// </param>
         public UpdateMCPServerRequest(
-            global::G.Config4 config,
+            global::G.Config9 config,
             string? serverName)
         {
             this.ServerName = serverName;

@@ -1,4 +1,4 @@
-﻿//HintName: G.Models.TransferDestination2.Json.g.cs
+//HintName: G.Models.TransferDestination2.Json.g.cs
 #nullable enable
 
 namespace G

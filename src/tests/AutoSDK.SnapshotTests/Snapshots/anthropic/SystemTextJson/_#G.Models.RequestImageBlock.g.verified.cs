@@ -1,4 +1,4 @@
-﻿//HintName: G.Models.RequestImageBlock.g.cs
+//HintName: G.Models.RequestImageBlock.g.cs
 
 #nullable enable
 
@@ -13,7 +13,7 @@ namespace G
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("cache_control")]
-        public global::G.CacheControlVariant115? CacheControl { get; set; }
+        public global::G.CacheControlVariant13? CacheControl { get; set; }
 
         /// <summary>
         /// 
@@ -26,9 +26,9 @@ namespace G
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("source")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.Source4JsonConverter))]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.SourceJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::G.Source4 Source { get; set; }
+        public required global::G.Source Source { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -46,8 +46,8 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public RequestImageBlock(
-            global::G.Source4 source,
-            global::G.CacheControlVariant115? cacheControl,
+            global::G.Source source,
+            global::G.CacheControlVariant13? cacheControl,
             global::G.RequestImageBlockType type)
         {
             this.CacheControl = cacheControl;

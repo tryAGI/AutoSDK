@@ -13,284 +13,156 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.StoreSearchResponseDataItemDiscriminatorType? Type { get; }
+        public global::G.StoreEventListResponseDataItemDiscriminatorType? Type { get; }
 
         /// <summary>
-        /// 
+        /// Represents an ingestion event in a vector store.
         /// </summary>
 #if NET6_0_OR_GREATER
-        public global::G.MxbaiOmniCoreStoreModelsChunkTypesScoredTextInputChunk? Text { get; init; }
+        public global::G.StoreIngestionEvent? Ingestion { get; init; }
 #else
-        public global::G.MxbaiOmniCoreStoreModelsChunkTypesScoredTextInputChunk? Text { get; }
+        public global::G.StoreIngestionEvent? Ingestion { get; }
 #endif
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Text))]
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Ingestion))]
 #endif
-        public bool IsText => Text != null;
+        public bool IsIngestion => Ingestion != null;
 
         /// <summary>
         /// 
         /// </summary>
-        public bool TryPickText(
+        public bool TryPickIngestion(
 #if NET6_0_OR_GREATER
             [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
 #endif
-            out global::G.MxbaiOmniCoreStoreModelsChunkTypesScoredTextInputChunk? value)
+            out global::G.StoreIngestionEvent? value)
         {
-            value = Text;
-            return IsText;
+            value = Ingestion;
+            return IsIngestion;
         }
 
         /// <summary>
         /// 
         /// </summary>
-        public global::G.MxbaiOmniCoreStoreModelsChunkTypesScoredTextInputChunk PickText() => Text is { } value
+        public global::G.StoreIngestionEvent PickIngestion() => Ingestion is { } value
             ? value
-            : throw new global::System.InvalidOperationException($"Expected union variant 'Text' but the value was {ToString()}.");
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Ingestion' but the value was {ToString()}.");
 
         /// <summary>
-        /// 
+        /// Represents a search event in a vector store.
         /// </summary>
 #if NET6_0_OR_GREATER
-        public global::G.MxbaiOmniCoreStoreModelsChunkTypesScoredImageUrlInputChunk? ImageUrl { get; init; }
+        public global::G.StoreSearchEvent? Search { get; init; }
 #else
-        public global::G.MxbaiOmniCoreStoreModelsChunkTypesScoredImageUrlInputChunk? ImageUrl { get; }
+        public global::G.StoreSearchEvent? Search { get; }
 #endif
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(ImageUrl))]
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Search))]
 #endif
-        public bool IsImageUrl => ImageUrl != null;
+        public bool IsSearch => Search != null;
 
         /// <summary>
         /// 
         /// </summary>
-        public bool TryPickImageUrl(
+        public bool TryPickSearch(
 #if NET6_0_OR_GREATER
             [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
 #endif
-            out global::G.MxbaiOmniCoreStoreModelsChunkTypesScoredImageUrlInputChunk? value)
+            out global::G.StoreSearchEvent? value)
         {
-            value = ImageUrl;
-            return IsImageUrl;
+            value = Search;
+            return IsSearch;
         }
 
         /// <summary>
         /// 
         /// </summary>
-        public global::G.MxbaiOmniCoreStoreModelsChunkTypesScoredImageUrlInputChunk PickImageUrl() => ImageUrl is { } value
+        public global::G.StoreSearchEvent PickSearch() => Search is { } value
             ? value
-            : throw new global::System.InvalidOperationException($"Expected union variant 'ImageUrl' but the value was {ToString()}.");
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Search' but the value was {ToString()}.");
+        /// <summary>
+        /// 
+        /// </summary>
+        public static implicit operator DataItem2(global::G.StoreIngestionEvent value) => new DataItem2((global::G.StoreIngestionEvent?)value);
 
         /// <summary>
         /// 
         /// </summary>
-#if NET6_0_OR_GREATER
-        public global::G.MxbaiOmniCoreStoreModelsChunkTypesScoredAudioUrlInputChunk? AudioUrl { get; init; }
-#else
-        public global::G.MxbaiOmniCoreStoreModelsChunkTypesScoredAudioUrlInputChunk? AudioUrl { get; }
-#endif
+        public static implicit operator global::G.StoreIngestionEvent?(DataItem2 @this) => @this.Ingestion;
 
         /// <summary>
         /// 
         /// </summary>
-#if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(AudioUrl))]
-#endif
-        public bool IsAudioUrl => AudioUrl != null;
-
-        /// <summary>
-        /// 
-        /// </summary>
-        public bool TryPickAudioUrl(
-#if NET6_0_OR_GREATER
-            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
-#endif
-            out global::G.MxbaiOmniCoreStoreModelsChunkTypesScoredAudioUrlInputChunk? value)
+        public DataItem2(global::G.StoreIngestionEvent? value)
         {
-            value = AudioUrl;
-            return IsAudioUrl;
+            Ingestion = value;
         }
 
         /// <summary>
         /// 
         /// </summary>
-        public global::G.MxbaiOmniCoreStoreModelsChunkTypesScoredAudioUrlInputChunk PickAudioUrl() => AudioUrl is { } value
-            ? value
-            : throw new global::System.InvalidOperationException($"Expected union variant 'AudioUrl' but the value was {ToString()}.");
+        public static DataItem2 FromIngestion(global::G.StoreIngestionEvent? value) => new DataItem2(value);
 
         /// <summary>
         /// 
         /// </summary>
-#if NET6_0_OR_GREATER
-        public global::G.MxbaiOmniCoreStoreModelsChunkTypesScoredVideoUrlInputChunk? VideoUrl { get; init; }
-#else
-        public global::G.MxbaiOmniCoreStoreModelsChunkTypesScoredVideoUrlInputChunk? VideoUrl { get; }
-#endif
+        public static implicit operator DataItem2(global::G.StoreSearchEvent value) => new DataItem2((global::G.StoreSearchEvent?)value);
 
         /// <summary>
         /// 
         /// </summary>
-#if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(VideoUrl))]
-#endif
-        public bool IsVideoUrl => VideoUrl != null;
+        public static implicit operator global::G.StoreSearchEvent?(DataItem2 @this) => @this.Search;
 
         /// <summary>
         /// 
         /// </summary>
-        public bool TryPickVideoUrl(
-#if NET6_0_OR_GREATER
-            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
-#endif
-            out global::G.MxbaiOmniCoreStoreModelsChunkTypesScoredVideoUrlInputChunk? value)
+        public DataItem2(global::G.StoreSearchEvent? value)
         {
-            value = VideoUrl;
-            return IsVideoUrl;
+            Search = value;
         }
 
         /// <summary>
         /// 
         /// </summary>
-        public global::G.MxbaiOmniCoreStoreModelsChunkTypesScoredVideoUrlInputChunk PickVideoUrl() => VideoUrl is { } value
-            ? value
-            : throw new global::System.InvalidOperationException($"Expected union variant 'VideoUrl' but the value was {ToString()}.");
-        /// <summary>
-        /// 
-        /// </summary>
-        public static implicit operator DataItem2(global::G.MxbaiOmniCoreStoreModelsChunkTypesScoredTextInputChunk value) => new DataItem2((global::G.MxbaiOmniCoreStoreModelsChunkTypesScoredTextInputChunk?)value);
-
-        /// <summary>
-        /// 
-        /// </summary>
-        public static implicit operator global::G.MxbaiOmniCoreStoreModelsChunkTypesScoredTextInputChunk?(DataItem2 @this) => @this.Text;
-
-        /// <summary>
-        /// 
-        /// </summary>
-        public DataItem2(global::G.MxbaiOmniCoreStoreModelsChunkTypesScoredTextInputChunk? value)
-        {
-            Text = value;
-        }
-
-        /// <summary>
-        /// 
-        /// </summary>
-        public static DataItem2 FromText(global::G.MxbaiOmniCoreStoreModelsChunkTypesScoredTextInputChunk? value) => new DataItem2(value);
-
-        /// <summary>
-        /// 
-        /// </summary>
-        public static implicit operator DataItem2(global::G.MxbaiOmniCoreStoreModelsChunkTypesScoredImageUrlInputChunk value) => new DataItem2((global::G.MxbaiOmniCoreStoreModelsChunkTypesScoredImageUrlInputChunk?)value);
-
-        /// <summary>
-        /// 
-        /// </summary>
-        public static implicit operator global::G.MxbaiOmniCoreStoreModelsChunkTypesScoredImageUrlInputChunk?(DataItem2 @this) => @this.ImageUrl;
-
-        /// <summary>
-        /// 
-        /// </summary>
-        public DataItem2(global::G.MxbaiOmniCoreStoreModelsChunkTypesScoredImageUrlInputChunk? value)
-        {
-            ImageUrl = value;
-        }
-
-        /// <summary>
-        /// 
-        /// </summary>
-        public static DataItem2 FromImageUrl(global::G.MxbaiOmniCoreStoreModelsChunkTypesScoredImageUrlInputChunk? value) => new DataItem2(value);
-
-        /// <summary>
-        /// 
-        /// </summary>
-        public static implicit operator DataItem2(global::G.MxbaiOmniCoreStoreModelsChunkTypesScoredAudioUrlInputChunk value) => new DataItem2((global::G.MxbaiOmniCoreStoreModelsChunkTypesScoredAudioUrlInputChunk?)value);
-
-        /// <summary>
-        /// 
-        /// </summary>
-        public static implicit operator global::G.MxbaiOmniCoreStoreModelsChunkTypesScoredAudioUrlInputChunk?(DataItem2 @this) => @this.AudioUrl;
-
-        /// <summary>
-        /// 
-        /// </summary>
-        public DataItem2(global::G.MxbaiOmniCoreStoreModelsChunkTypesScoredAudioUrlInputChunk? value)
-        {
-            AudioUrl = value;
-        }
-
-        /// <summary>
-        /// 
-        /// </summary>
-        public static DataItem2 FromAudioUrl(global::G.MxbaiOmniCoreStoreModelsChunkTypesScoredAudioUrlInputChunk? value) => new DataItem2(value);
-
-        /// <summary>
-        /// 
-        /// </summary>
-        public static implicit operator DataItem2(global::G.MxbaiOmniCoreStoreModelsChunkTypesScoredVideoUrlInputChunk value) => new DataItem2((global::G.MxbaiOmniCoreStoreModelsChunkTypesScoredVideoUrlInputChunk?)value);
-
-        /// <summary>
-        /// 
-        /// </summary>
-        public static implicit operator global::G.MxbaiOmniCoreStoreModelsChunkTypesScoredVideoUrlInputChunk?(DataItem2 @this) => @this.VideoUrl;
-
-        /// <summary>
-        /// 
-        /// </summary>
-        public DataItem2(global::G.MxbaiOmniCoreStoreModelsChunkTypesScoredVideoUrlInputChunk? value)
-        {
-            VideoUrl = value;
-        }
-
-        /// <summary>
-        /// 
-        /// </summary>
-        public static DataItem2 FromVideoUrl(global::G.MxbaiOmniCoreStoreModelsChunkTypesScoredVideoUrlInputChunk? value) => new DataItem2(value);
+        public static DataItem2 FromSearch(global::G.StoreSearchEvent? value) => new DataItem2(value);
 
         /// <summary>
         /// 
         /// </summary>
         public DataItem2(
-            global::G.StoreSearchResponseDataItemDiscriminatorType? type,
-            global::G.MxbaiOmniCoreStoreModelsChunkTypesScoredTextInputChunk? text,
-            global::G.MxbaiOmniCoreStoreModelsChunkTypesScoredImageUrlInputChunk? imageUrl,
-            global::G.MxbaiOmniCoreStoreModelsChunkTypesScoredAudioUrlInputChunk? audioUrl,
-            global::G.MxbaiOmniCoreStoreModelsChunkTypesScoredVideoUrlInputChunk? videoUrl
+            global::G.StoreEventListResponseDataItemDiscriminatorType? type,
+            global::G.StoreIngestionEvent? ingestion,
+            global::G.StoreSearchEvent? search
             )
         {
             Type = type;
 
-            Text = text;
-            ImageUrl = imageUrl;
-            AudioUrl = audioUrl;
-            VideoUrl = videoUrl;
+            Ingestion = ingestion;
+            Search = search;
         }
 
         /// <summary>
         /// 
         /// </summary>
         public object? Object =>
-            VideoUrl as object ??
-            AudioUrl as object ??
-            ImageUrl as object ??
-            Text as object 
+            Search as object ??
+            Ingestion as object 
             ;
 
         /// <summary>
         /// 
         /// </summary>
         public override string? ToString() =>
-            Text?.ToString() ??
-            ImageUrl?.ToString() ??
-            AudioUrl?.ToString() ??
-            VideoUrl?.ToString() 
+            Ingestion?.ToString() ??
+            Search?.ToString() 
             ;
 
         /// <summary>
@@ -298,17 +170,15 @@ namespace G
         /// </summary>
         public bool Validate()
         {
-            return IsText && !IsImageUrl && !IsAudioUrl && !IsVideoUrl || !IsText && IsImageUrl && !IsAudioUrl && !IsVideoUrl || !IsText && !IsImageUrl && IsAudioUrl && !IsVideoUrl || !IsText && !IsImageUrl && !IsAudioUrl && IsVideoUrl;
+            return IsIngestion && !IsSearch || !IsIngestion && IsSearch;
         }
 
         /// <summary>
         /// 
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<global::G.MxbaiOmniCoreStoreModelsChunkTypesScoredTextInputChunk, TResult>? text = null,
-            global::System.Func<global::G.MxbaiOmniCoreStoreModelsChunkTypesScoredImageUrlInputChunk, TResult>? imageUrl = null,
-            global::System.Func<global::G.MxbaiOmniCoreStoreModelsChunkTypesScoredAudioUrlInputChunk, TResult>? audioUrl = null,
-            global::System.Func<global::G.MxbaiOmniCoreStoreModelsChunkTypesScoredVideoUrlInputChunk, TResult>? videoUrl = null,
+            global::System.Func<global::G.StoreIngestionEvent, TResult>? ingestion = null,
+            global::System.Func<global::G.StoreSearchEvent, TResult>? search = null,
             bool validate = true)
         {
             if (validate)
@@ -316,21 +186,13 @@ namespace G
                 Validate();
             }
 
-            if (Text is { } __value0 && text != null)
+            if (Ingestion is { } __value0 && ingestion != null)
             {
-                return text(__value0);
+                return ingestion(__value0);
             }
-            else if (ImageUrl is { } __value1 && imageUrl != null)
+            else if (Search is { } __value1 && search != null)
             {
-                return imageUrl(__value1);
-            }
-            else if (AudioUrl is { } __value2 && audioUrl != null)
-            {
-                return audioUrl(__value2);
-            }
-            else if (VideoUrl is { } __value3 && videoUrl != null)
-            {
-                return videoUrl(__value3);
+                return search(__value1);
             }
 
             return default(TResult);
@@ -340,13 +202,9 @@ namespace G
         /// 
         /// </summary>
         public void Match(
-            global::System.Action<global::G.MxbaiOmniCoreStoreModelsChunkTypesScoredTextInputChunk>? text = null,
+            global::System.Action<global::G.StoreIngestionEvent>? ingestion = null,
 
-            global::System.Action<global::G.MxbaiOmniCoreStoreModelsChunkTypesScoredImageUrlInputChunk>? imageUrl = null,
-
-            global::System.Action<global::G.MxbaiOmniCoreStoreModelsChunkTypesScoredAudioUrlInputChunk>? audioUrl = null,
-
-            global::System.Action<global::G.MxbaiOmniCoreStoreModelsChunkTypesScoredVideoUrlInputChunk>? videoUrl = null,
+            global::System.Action<global::G.StoreSearchEvent>? search = null,
             bool validate = true)
         {
             if (validate)
@@ -354,21 +212,13 @@ namespace G
                 Validate();
             }
 
-            if (Text is { } __value0)
+            if (Ingestion is { } __value0)
             {
-                text?.Invoke(__value0);
+                ingestion?.Invoke(__value0);
             }
-            else if (ImageUrl is { } __value1)
+            else if (Search is { } __value1)
             {
-                imageUrl?.Invoke(__value1);
-            }
-            else if (AudioUrl is { } __value2)
-            {
-                audioUrl?.Invoke(__value2);
-            }
-            else if (VideoUrl is { } __value3)
-            {
-                videoUrl?.Invoke(__value3);
+                search?.Invoke(__value1);
             }
         }
 
@@ -376,10 +226,8 @@ namespace G
         /// 
         /// </summary>
         public void Switch(
-            global::System.Action<global::G.MxbaiOmniCoreStoreModelsChunkTypesScoredTextInputChunk>? text = null,
-            global::System.Action<global::G.MxbaiOmniCoreStoreModelsChunkTypesScoredImageUrlInputChunk>? imageUrl = null,
-            global::System.Action<global::G.MxbaiOmniCoreStoreModelsChunkTypesScoredAudioUrlInputChunk>? audioUrl = null,
-            global::System.Action<global::G.MxbaiOmniCoreStoreModelsChunkTypesScoredVideoUrlInputChunk>? videoUrl = null,
+            global::System.Action<global::G.StoreIngestionEvent>? ingestion = null,
+            global::System.Action<global::G.StoreSearchEvent>? search = null,
             bool validate = true)
         {
             if (validate)
@@ -387,21 +235,13 @@ namespace G
                 Validate();
             }
 
-            if (Text is { } __value0)
+            if (Ingestion is { } __value0)
             {
-                text?.Invoke(__value0);
+                ingestion?.Invoke(__value0);
             }
-            else if (ImageUrl is { } __value1)
+            else if (Search is { } __value1)
             {
-                imageUrl?.Invoke(__value1);
-            }
-            else if (AudioUrl is { } __value2)
-            {
-                audioUrl?.Invoke(__value2);
-            }
-            else if (VideoUrl is { } __value3)
-            {
-                videoUrl?.Invoke(__value3);
+                search?.Invoke(__value1);
             }
         }
 
@@ -412,14 +252,10 @@ namespace G
         {
             var fields = new object?[]
             {
-                Text,
-                typeof(global::G.MxbaiOmniCoreStoreModelsChunkTypesScoredTextInputChunk),
-                ImageUrl,
-                typeof(global::G.MxbaiOmniCoreStoreModelsChunkTypesScoredImageUrlInputChunk),
-                AudioUrl,
-                typeof(global::G.MxbaiOmniCoreStoreModelsChunkTypesScoredAudioUrlInputChunk),
-                VideoUrl,
-                typeof(global::G.MxbaiOmniCoreStoreModelsChunkTypesScoredVideoUrlInputChunk),
+                Ingestion,
+                typeof(global::G.StoreIngestionEvent),
+                Search,
+                typeof(global::G.StoreSearchEvent),
             };
             const int offset = unchecked((int)2166136261);
             const int prime = 16777619;
@@ -436,10 +272,8 @@ namespace G
         public bool Equals(DataItem2 other)
         {
             return
-                global::System.Collections.Generic.EqualityComparer<global::G.MxbaiOmniCoreStoreModelsChunkTypesScoredTextInputChunk?>.Default.Equals(Text, other.Text) &&
-                global::System.Collections.Generic.EqualityComparer<global::G.MxbaiOmniCoreStoreModelsChunkTypesScoredImageUrlInputChunk?>.Default.Equals(ImageUrl, other.ImageUrl) &&
-                global::System.Collections.Generic.EqualityComparer<global::G.MxbaiOmniCoreStoreModelsChunkTypesScoredAudioUrlInputChunk?>.Default.Equals(AudioUrl, other.AudioUrl) &&
-                global::System.Collections.Generic.EqualityComparer<global::G.MxbaiOmniCoreStoreModelsChunkTypesScoredVideoUrlInputChunk?>.Default.Equals(VideoUrl, other.VideoUrl) 
+                global::System.Collections.Generic.EqualityComparer<global::G.StoreIngestionEvent?>.Default.Equals(Ingestion, other.Ingestion) &&
+                global::System.Collections.Generic.EqualityComparer<global::G.StoreSearchEvent?>.Default.Equals(Search, other.Search) 
                 ;
         }
 

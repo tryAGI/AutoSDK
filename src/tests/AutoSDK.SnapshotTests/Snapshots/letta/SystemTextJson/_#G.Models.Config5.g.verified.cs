@@ -13,15 +13,15 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.PipelinesCreatePipelineResponsePipelineConfigDiscriminatorType? Type { get; }
+        public global::G.PipelinesUpdatePipelineProducerConfigResponsePipelineConfigDiscriminatorType? Type { get; }
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        public global::G.PipelinesCreatePipelineResponsePipelineConfigVariant1? SlackChannelReader { get; init; }
+        public global::G.PipelinesUpdatePipelineProducerConfigResponsePipelineConfigVariant1? SlackChannelReader { get; init; }
 #else
-        public global::G.PipelinesCreatePipelineResponsePipelineConfigVariant1? SlackChannelReader { get; }
+        public global::G.PipelinesUpdatePipelineProducerConfigResponsePipelineConfigVariant1? SlackChannelReader { get; }
 #endif
 
         /// <summary>
@@ -39,7 +39,7 @@ namespace G
 #if NET6_0_OR_GREATER
             [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
 #endif
-            out global::G.PipelinesCreatePipelineResponsePipelineConfigVariant1? value)
+            out global::G.PipelinesUpdatePipelineProducerConfigResponsePipelineConfigVariant1? value)
         {
             value = SlackChannelReader;
             return IsSlackChannelReader;
@@ -48,7 +48,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.PipelinesCreatePipelineResponsePipelineConfigVariant1 PickSlackChannelReader() => SlackChannelReader is { } value
+        public global::G.PipelinesUpdatePipelineProducerConfigResponsePipelineConfigVariant1 PickSlackChannelReader() => SlackChannelReader is { } value
             ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'SlackChannelReader' but the value was {ToString()}.");
 
@@ -56,9 +56,9 @@ namespace G
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        public global::G.PipelinesCreatePipelineResponsePipelineConfigVariant2? CustomWebhook { get; init; }
+        public global::G.PipelinesUpdatePipelineProducerConfigResponsePipelineConfigVariant2? CustomWebhook { get; init; }
 #else
-        public global::G.PipelinesCreatePipelineResponsePipelineConfigVariant2? CustomWebhook { get; }
+        public global::G.PipelinesUpdatePipelineProducerConfigResponsePipelineConfigVariant2? CustomWebhook { get; }
 #endif
 
         /// <summary>
@@ -76,7 +76,7 @@ namespace G
 #if NET6_0_OR_GREATER
             [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
 #endif
-            out global::G.PipelinesCreatePipelineResponsePipelineConfigVariant2? value)
+            out global::G.PipelinesUpdatePipelineProducerConfigResponsePipelineConfigVariant2? value)
         {
             value = CustomWebhook;
             return IsCustomWebhook;
@@ -85,23 +85,23 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.PipelinesCreatePipelineResponsePipelineConfigVariant2 PickCustomWebhook() => CustomWebhook is { } value
+        public global::G.PipelinesUpdatePipelineProducerConfigResponsePipelineConfigVariant2 PickCustomWebhook() => CustomWebhook is { } value
             ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'CustomWebhook' but the value was {ToString()}.");
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator Config5(global::G.PipelinesCreatePipelineResponsePipelineConfigVariant1 value) => new Config5((global::G.PipelinesCreatePipelineResponsePipelineConfigVariant1?)value);
+        public static implicit operator Config5(global::G.PipelinesUpdatePipelineProducerConfigResponsePipelineConfigVariant1 value) => new Config5((global::G.PipelinesUpdatePipelineProducerConfigResponsePipelineConfigVariant1?)value);
 
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator global::G.PipelinesCreatePipelineResponsePipelineConfigVariant1?(Config5 @this) => @this.SlackChannelReader;
+        public static implicit operator global::G.PipelinesUpdatePipelineProducerConfigResponsePipelineConfigVariant1?(Config5 @this) => @this.SlackChannelReader;
 
         /// <summary>
         /// 
         /// </summary>
-        public Config5(global::G.PipelinesCreatePipelineResponsePipelineConfigVariant1? value)
+        public Config5(global::G.PipelinesUpdatePipelineProducerConfigResponsePipelineConfigVariant1? value)
         {
             SlackChannelReader = value;
         }
@@ -109,22 +109,22 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static Config5 FromSlackChannelReader(global::G.PipelinesCreatePipelineResponsePipelineConfigVariant1? value) => new Config5(value);
+        public static Config5 FromSlackChannelReader(global::G.PipelinesUpdatePipelineProducerConfigResponsePipelineConfigVariant1? value) => new Config5(value);
 
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator Config5(global::G.PipelinesCreatePipelineResponsePipelineConfigVariant2 value) => new Config5((global::G.PipelinesCreatePipelineResponsePipelineConfigVariant2?)value);
+        public static implicit operator Config5(global::G.PipelinesUpdatePipelineProducerConfigResponsePipelineConfigVariant2 value) => new Config5((global::G.PipelinesUpdatePipelineProducerConfigResponsePipelineConfigVariant2?)value);
 
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator global::G.PipelinesCreatePipelineResponsePipelineConfigVariant2?(Config5 @this) => @this.CustomWebhook;
+        public static implicit operator global::G.PipelinesUpdatePipelineProducerConfigResponsePipelineConfigVariant2?(Config5 @this) => @this.CustomWebhook;
 
         /// <summary>
         /// 
         /// </summary>
-        public Config5(global::G.PipelinesCreatePipelineResponsePipelineConfigVariant2? value)
+        public Config5(global::G.PipelinesUpdatePipelineProducerConfigResponsePipelineConfigVariant2? value)
         {
             CustomWebhook = value;
         }
@@ -132,15 +132,15 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static Config5 FromCustomWebhook(global::G.PipelinesCreatePipelineResponsePipelineConfigVariant2? value) => new Config5(value);
+        public static Config5 FromCustomWebhook(global::G.PipelinesUpdatePipelineProducerConfigResponsePipelineConfigVariant2? value) => new Config5(value);
 
         /// <summary>
         /// 
         /// </summary>
         public Config5(
-            global::G.PipelinesCreatePipelineResponsePipelineConfigDiscriminatorType? type,
-            global::G.PipelinesCreatePipelineResponsePipelineConfigVariant1? slackChannelReader,
-            global::G.PipelinesCreatePipelineResponsePipelineConfigVariant2? customWebhook
+            global::G.PipelinesUpdatePipelineProducerConfigResponsePipelineConfigDiscriminatorType? type,
+            global::G.PipelinesUpdatePipelineProducerConfigResponsePipelineConfigVariant1? slackChannelReader,
+            global::G.PipelinesUpdatePipelineProducerConfigResponsePipelineConfigVariant2? customWebhook
             )
         {
             Type = type;
@@ -177,8 +177,8 @@ namespace G
         /// 
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<global::G.PipelinesCreatePipelineResponsePipelineConfigVariant1, TResult>? slackChannelReader = null,
-            global::System.Func<global::G.PipelinesCreatePipelineResponsePipelineConfigVariant2, TResult>? customWebhook = null,
+            global::System.Func<global::G.PipelinesUpdatePipelineProducerConfigResponsePipelineConfigVariant1, TResult>? slackChannelReader = null,
+            global::System.Func<global::G.PipelinesUpdatePipelineProducerConfigResponsePipelineConfigVariant2, TResult>? customWebhook = null,
             bool validate = true)
         {
             if (validate)
@@ -202,9 +202,9 @@ namespace G
         /// 
         /// </summary>
         public void Match(
-            global::System.Action<global::G.PipelinesCreatePipelineResponsePipelineConfigVariant1>? slackChannelReader = null,
+            global::System.Action<global::G.PipelinesUpdatePipelineProducerConfigResponsePipelineConfigVariant1>? slackChannelReader = null,
 
-            global::System.Action<global::G.PipelinesCreatePipelineResponsePipelineConfigVariant2>? customWebhook = null,
+            global::System.Action<global::G.PipelinesUpdatePipelineProducerConfigResponsePipelineConfigVariant2>? customWebhook = null,
             bool validate = true)
         {
             if (validate)
@@ -226,8 +226,8 @@ namespace G
         /// 
         /// </summary>
         public void Switch(
-            global::System.Action<global::G.PipelinesCreatePipelineResponsePipelineConfigVariant1>? slackChannelReader = null,
-            global::System.Action<global::G.PipelinesCreatePipelineResponsePipelineConfigVariant2>? customWebhook = null,
+            global::System.Action<global::G.PipelinesUpdatePipelineProducerConfigResponsePipelineConfigVariant1>? slackChannelReader = null,
+            global::System.Action<global::G.PipelinesUpdatePipelineProducerConfigResponsePipelineConfigVariant2>? customWebhook = null,
             bool validate = true)
         {
             if (validate)
@@ -253,9 +253,9 @@ namespace G
             var fields = new object?[]
             {
                 SlackChannelReader,
-                typeof(global::G.PipelinesCreatePipelineResponsePipelineConfigVariant1),
+                typeof(global::G.PipelinesUpdatePipelineProducerConfigResponsePipelineConfigVariant1),
                 CustomWebhook,
-                typeof(global::G.PipelinesCreatePipelineResponsePipelineConfigVariant2),
+                typeof(global::G.PipelinesUpdatePipelineProducerConfigResponsePipelineConfigVariant2),
             };
             const int offset = unchecked((int)2166136261);
             const int prime = 16777619;
@@ -272,8 +272,8 @@ namespace G
         public bool Equals(Config5 other)
         {
             return
-                global::System.Collections.Generic.EqualityComparer<global::G.PipelinesCreatePipelineResponsePipelineConfigVariant1?>.Default.Equals(SlackChannelReader, other.SlackChannelReader) &&
-                global::System.Collections.Generic.EqualityComparer<global::G.PipelinesCreatePipelineResponsePipelineConfigVariant2?>.Default.Equals(CustomWebhook, other.CustomWebhook) 
+                global::System.Collections.Generic.EqualityComparer<global::G.PipelinesUpdatePipelineProducerConfigResponsePipelineConfigVariant1?>.Default.Equals(SlackChannelReader, other.SlackChannelReader) &&
+                global::System.Collections.Generic.EqualityComparer<global::G.PipelinesUpdatePipelineProducerConfigResponsePipelineConfigVariant2?>.Default.Equals(CustomWebhook, other.CustomWebhook) 
                 ;
         }
 

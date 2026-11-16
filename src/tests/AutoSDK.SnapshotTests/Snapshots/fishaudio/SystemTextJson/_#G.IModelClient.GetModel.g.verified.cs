@@ -1,4 +1,4 @@
-﻿//HintName: G.IModelClient.GetModel.g.cs
+//HintName: G.IModelClient.GetModel.g.cs
 #nullable enable
 
 namespace G
@@ -38,7 +38,7 @@ namespace G
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::G.ApiException"></exception>
-        global::System.Threading.Tasks.Task<global::G.GetModelResponse> GetModelAsync(
+        global::System.Threading.Tasks.Task<global::G.GetModelResponse3> GetModelAsync(
             int? pageSize = default,
             int? pageNumber = default,
             string? title = default,
@@ -83,7 +83,7 @@ namespace G
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::G.ApiException"></exception>
-        global::System.Threading.Tasks.Task<global::G.AutoSDKHttpResponse<global::G.GetModelResponse>> GetModelAsResponseAsync(
+        global::System.Threading.Tasks.Task<global::G.AutoSDKHttpResponse<global::G.GetModelResponse3>> GetModelAsResponseAsync(
             int? pageSize = default,
             int? pageNumber = default,
             string? title = default,

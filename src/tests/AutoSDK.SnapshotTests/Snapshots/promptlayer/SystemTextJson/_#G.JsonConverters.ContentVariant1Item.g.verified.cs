@@ -18,145 +18,145 @@ namespace G.JsonConverters
 
 
             var readerCopy = reader;
-            var discriminatorTypeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.AssistantMessageContentVariant1ItemDiscriminator), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.AssistantMessageContentVariant1ItemDiscriminator> ??
-                            throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::G.AssistantMessageContentVariant1ItemDiscriminator)}");
+            var discriminatorTypeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.FunctionMessageContentVariant1ItemDiscriminator), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.FunctionMessageContentVariant1ItemDiscriminator> ??
+                            throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::G.FunctionMessageContentVariant1ItemDiscriminator)}");
             var discriminator = global::System.Text.Json.JsonSerializer.Deserialize(ref readerCopy, discriminatorTypeInfo);
 
             global::G.TextContent? text = default;
-            if (discriminator?.Type == global::G.AssistantMessageContentVariant1ItemDiscriminatorType.Text)
+            if (discriminator?.Type == global::G.FunctionMessageContentVariant1ItemDiscriminatorType.Text)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.TextContent), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.TextContent> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::G.TextContent)}");
                 text = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
             }
             global::G.ThinkingContent? thinking = default;
-            if (discriminator?.Type == global::G.AssistantMessageContentVariant1ItemDiscriminatorType.Thinking)
+            if (discriminator?.Type == global::G.FunctionMessageContentVariant1ItemDiscriminatorType.Thinking)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.ThinkingContent), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.ThinkingContent> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::G.ThinkingContent)}");
                 thinking = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
             }
             global::G.CodeContent? code = default;
-            if (discriminator?.Type == global::G.AssistantMessageContentVariant1ItemDiscriminatorType.Code)
+            if (discriminator?.Type == global::G.FunctionMessageContentVariant1ItemDiscriminatorType.Code)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.CodeContent), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.CodeContent> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::G.CodeContent)}");
                 code = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
             }
             global::G.ImageContent? imageUrl = default;
-            if (discriminator?.Type == global::G.AssistantMessageContentVariant1ItemDiscriminatorType.ImageUrl)
+            if (discriminator?.Type == global::G.FunctionMessageContentVariant1ItemDiscriminatorType.ImageUrl)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.ImageContent), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.ImageContent> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::G.ImageContent)}");
                 imageUrl = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
             }
             global::G.MediaContent? media = default;
-            if (discriminator?.Type == global::G.AssistantMessageContentVariant1ItemDiscriminatorType.Media)
+            if (discriminator?.Type == global::G.FunctionMessageContentVariant1ItemDiscriminatorType.Media)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.MediaContent), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.MediaContent> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::G.MediaContent)}");
                 media = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
             }
             global::G.MediaVariable? mediaVariable = default;
-            if (discriminator?.Type == global::G.AssistantMessageContentVariant1ItemDiscriminatorType.MediaVariable)
+            if (discriminator?.Type == global::G.FunctionMessageContentVariant1ItemDiscriminatorType.MediaVariable)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.MediaVariable), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.MediaVariable> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::G.MediaVariable)}");
                 mediaVariable = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
             }
             global::G.OutputMediaContent? outputMedia = default;
-            if (discriminator?.Type == global::G.AssistantMessageContentVariant1ItemDiscriminatorType.OutputMedia)
+            if (discriminator?.Type == global::G.FunctionMessageContentVariant1ItemDiscriminatorType.OutputMedia)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.OutputMediaContent), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.OutputMediaContent> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::G.OutputMediaContent)}");
                 outputMedia = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
             }
             global::G.ServerToolUseContent? serverToolUse = default;
-            if (discriminator?.Type == global::G.AssistantMessageContentVariant1ItemDiscriminatorType.ServerToolUse)
+            if (discriminator?.Type == global::G.FunctionMessageContentVariant1ItemDiscriminatorType.ServerToolUse)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.ServerToolUseContent), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.ServerToolUseContent> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::G.ServerToolUseContent)}");
                 serverToolUse = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
             }
             global::G.WebSearchToolResultContent? webSearchToolResult = default;
-            if (discriminator?.Type == global::G.AssistantMessageContentVariant1ItemDiscriminatorType.WebSearchToolResult)
+            if (discriminator?.Type == global::G.FunctionMessageContentVariant1ItemDiscriminatorType.WebSearchToolResult)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.WebSearchToolResultContent), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.WebSearchToolResultContent> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::G.WebSearchToolResultContent)}");
                 webSearchToolResult = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
             }
             global::G.CodeExecutionResultContent? codeExecutionResult = default;
-            if (discriminator?.Type == global::G.AssistantMessageContentVariant1ItemDiscriminatorType.CodeExecutionResult)
+            if (discriminator?.Type == global::G.FunctionMessageContentVariant1ItemDiscriminatorType.CodeExecutionResult)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.CodeExecutionResultContent), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.CodeExecutionResultContent> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::G.CodeExecutionResultContent)}");
                 codeExecutionResult = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
             }
             global::G.McpListToolsContent? mcpListTools = default;
-            if (discriminator?.Type == global::G.AssistantMessageContentVariant1ItemDiscriminatorType.McpListTools)
+            if (discriminator?.Type == global::G.FunctionMessageContentVariant1ItemDiscriminatorType.McpListTools)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.McpListToolsContent), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.McpListToolsContent> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::G.McpListToolsContent)}");
                 mcpListTools = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
             }
             global::G.McpCallContent? mcpCall = default;
-            if (discriminator?.Type == global::G.AssistantMessageContentVariant1ItemDiscriminatorType.McpCall)
+            if (discriminator?.Type == global::G.FunctionMessageContentVariant1ItemDiscriminatorType.McpCall)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.McpCallContent), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.McpCallContent> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::G.McpCallContent)}");
                 mcpCall = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
             }
             global::G.McpApprovalRequestContent? mcpApprovalRequest = default;
-            if (discriminator?.Type == global::G.AssistantMessageContentVariant1ItemDiscriminatorType.McpApprovalRequest)
+            if (discriminator?.Type == global::G.FunctionMessageContentVariant1ItemDiscriminatorType.McpApprovalRequest)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.McpApprovalRequestContent), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.McpApprovalRequestContent> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::G.McpApprovalRequestContent)}");
                 mcpApprovalRequest = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
             }
             global::G.McpApprovalResponseContent? mcpApprovalResponse = default;
-            if (discriminator?.Type == global::G.AssistantMessageContentVariant1ItemDiscriminatorType.McpApprovalResponse)
+            if (discriminator?.Type == global::G.FunctionMessageContentVariant1ItemDiscriminatorType.McpApprovalResponse)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.McpApprovalResponseContent), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.McpApprovalResponseContent> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::G.McpApprovalResponseContent)}");
                 mcpApprovalResponse = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
             }
             global::G.BashCodeExecutionToolResultContent? bashCodeExecutionToolResult = default;
-            if (discriminator?.Type == global::G.AssistantMessageContentVariant1ItemDiscriminatorType.BashCodeExecutionToolResult)
+            if (discriminator?.Type == global::G.FunctionMessageContentVariant1ItemDiscriminatorType.BashCodeExecutionToolResult)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.BashCodeExecutionToolResultContent), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.BashCodeExecutionToolResultContent> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::G.BashCodeExecutionToolResultContent)}");
                 bashCodeExecutionToolResult = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
             }
             global::G.TextEditorCodeExecutionToolResultContent? textEditorCodeExecutionToolResult = default;
-            if (discriminator?.Type == global::G.AssistantMessageContentVariant1ItemDiscriminatorType.TextEditorCodeExecutionToolResult)
+            if (discriminator?.Type == global::G.FunctionMessageContentVariant1ItemDiscriminatorType.TextEditorCodeExecutionToolResult)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.TextEditorCodeExecutionToolResultContent), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.TextEditorCodeExecutionToolResultContent> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::G.TextEditorCodeExecutionToolResultContent)}");
                 textEditorCodeExecutionToolResult = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
             }
             global::G.ShellCallContent? shellCall = default;
-            if (discriminator?.Type == global::G.AssistantMessageContentVariant1ItemDiscriminatorType.ShellCall)
+            if (discriminator?.Type == global::G.FunctionMessageContentVariant1ItemDiscriminatorType.ShellCall)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.ShellCallContent), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.ShellCallContent> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::G.ShellCallContent)}");
                 shellCall = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
             }
             global::G.ShellCallOutputContent? shellCallOutput = default;
-            if (discriminator?.Type == global::G.AssistantMessageContentVariant1ItemDiscriminatorType.ShellCallOutput)
+            if (discriminator?.Type == global::G.FunctionMessageContentVariant1ItemDiscriminatorType.ShellCallOutput)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.ShellCallOutputContent), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.ShellCallOutputContent> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::G.ShellCallOutputContent)}");
                 shellCallOutput = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
             }
             global::G.ApplyPatchCallContent? applyPatchCall = default;
-            if (discriminator?.Type == global::G.AssistantMessageContentVariant1ItemDiscriminatorType.ApplyPatchCall)
+            if (discriminator?.Type == global::G.FunctionMessageContentVariant1ItemDiscriminatorType.ApplyPatchCall)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.ApplyPatchCallContent), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.ApplyPatchCallContent> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::G.ApplyPatchCallContent)}");
                 applyPatchCall = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
             }
             global::G.ApplyPatchCallOutputContent? applyPatchCallOutput = default;
-            if (discriminator?.Type == global::G.AssistantMessageContentVariant1ItemDiscriminatorType.ApplyPatchCallOutput)
+            if (discriminator?.Type == global::G.FunctionMessageContentVariant1ItemDiscriminatorType.ApplyPatchCallOutput)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.ApplyPatchCallOutputContent), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.ApplyPatchCallOutputContent> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::G.ApplyPatchCallOutputContent)}");

@@ -1,4 +1,4 @@
-﻿//HintName: G.Models.Message.g.cs
+//HintName: G.Models.Message.g.cs
 
 #nullable enable
 
@@ -13,8 +13,8 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("role", Required = global::Newtonsoft.Json.Required.Always)]
-        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.MessageRoleJsonConverter))]
-        public global::G.MessageRole Role { get; set; } = default!;
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.MessageRole2JsonConverter))]
+        public global::G.MessageRole2 Role { get; set; } = default!;
 
         /// <summary>
         /// 
@@ -41,7 +41,7 @@ namespace G
         /// <param name="content"></param>
         /// <param name="createdAt"></param>
         public Message(
-            global::G.MessageRole role,
+            global::G.MessageRole2 role,
             string content,
             string createdAt)
         {

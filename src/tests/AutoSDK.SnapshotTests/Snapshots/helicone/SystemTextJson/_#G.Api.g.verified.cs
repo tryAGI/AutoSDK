@@ -1,4 +1,4 @@
-﻿//HintName: G.Api.g.cs
+//HintName: G.Api.g.cs
 
 #nullable enable
 
@@ -397,8 +397,8 @@ namespace G
                     new global::G.JsonConverters.AnyOfJsonConverter<global::G.ChatCompletion, global::G.ResultSuccessChatCompletionOrContentStringReasoningStringCallsAnyData>(),
                     new global::G.JsonConverters.AnyOfJsonConverter<double?, global::System.DateTime?, string>(),
                     new global::G.JsonConverters.AllOfJsonConverter<global::G.DataOverTimeRequest, global::G.GetPropertiesOverTimeRequest2>(),
-                    new global::G.JsonConverters.AllOfJsonConverter<global::G.OpenAIChatRequest, global::G.GenerateRequest2>(),
                     new global::G.JsonConverters.AllOfJsonConverter<global::G.OpenAIChatRequest, global::G.GenerateRequest4>(),
+                    new global::G.JsonConverters.AllOfJsonConverter<global::G.OpenAIChatRequest, global::G.GenerateRequest2>(),
                     new global::G.JsonConverters.AnyOfJsonConverter<global::G.DeleteProviderKeyResponseVariant1, global::G.DeleteProviderKeyResponseVariant2>(),
                     new global::G.JsonConverters.AnyOfJsonConverter<global::G.DecryptedProviderKey, global::G.GetProviderKeyResponse2>(),
                     new global::G.JsonConverters.AnyOfJsonConverter<global::G.CreateProviderKeyResponseVariant1, global::G.CreateProviderKeyResponseVariant2>(),

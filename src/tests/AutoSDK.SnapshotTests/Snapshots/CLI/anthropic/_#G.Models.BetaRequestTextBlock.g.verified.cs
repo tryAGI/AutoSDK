@@ -1,4 +1,4 @@
-﻿//HintName: G.Models.BetaRequestTextBlock.g.cs
+//HintName: G.Models.BetaRequestTextBlock.g.cs
 
 #nullable enable
 
@@ -13,13 +13,13 @@ namespace G
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("cache_control")]
-        public global::G.CacheControlVariant18? CacheControl { get; set; }
+        public global::G.CacheControlVariant16? CacheControl { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("citations")]
-        public global::System.Collections.Generic.IList<global::G.CitationsVariant1Item>? Citations { get; set; }
+        public global::System.Collections.Generic.IList<global::G.CitationsVariant1Item3>? Citations { get; set; }
 
         /// <summary>
         /// 
@@ -53,8 +53,8 @@ namespace G
 #endif
         public BetaRequestTextBlock(
             string text,
-            global::G.CacheControlVariant18? cacheControl,
-            global::System.Collections.Generic.IList<global::G.CitationsVariant1Item>? citations,
+            global::G.CacheControlVariant16? cacheControl,
+            global::System.Collections.Generic.IList<global::G.CitationsVariant1Item3>? citations,
             global::G.BetaRequestTextBlockType type)
         {
             this.CacheControl = cacheControl;

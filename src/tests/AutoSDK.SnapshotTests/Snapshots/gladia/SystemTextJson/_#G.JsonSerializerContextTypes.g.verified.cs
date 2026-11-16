@@ -919,11 +919,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.FileControllerUploadV2Request? Type220 { get; set; }
+        public global::G.FileControllerUploadV2Request2? Type220 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.FileControllerUploadV2Request2? Type221 { get; set; }
+        public global::G.FileControllerUploadV2Request? Type221 { get; set; }
         /// <summary>
         /// 
         /// </summary>

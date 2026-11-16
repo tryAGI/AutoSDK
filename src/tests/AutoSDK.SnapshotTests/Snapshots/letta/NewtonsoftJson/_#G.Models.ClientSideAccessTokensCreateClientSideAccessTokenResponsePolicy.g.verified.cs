@@ -1,4 +1,4 @@
-﻿//HintName: G.Models.ClientSideAccessTokensCreateClientSideAccessTokenResponsePolicy.g.cs
+//HintName: G.Models.ClientSideAccessTokensCreateClientSideAccessTokenResponsePolicy.g.cs
 
 #nullable enable
 
@@ -20,7 +20,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("data", Required = global::Newtonsoft.Json.Required.Always)]
-        public global::System.Collections.Generic.IList<global::G.DataItem> Data { get; set; } = default!;
+        public global::System.Collections.Generic.IList<global::G.DataItem2> Data { get; set; } = default!;
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -34,7 +34,7 @@ namespace G
         /// <param name="data"></param>
         /// <param name="version"></param>
         public ClientSideAccessTokensCreateClientSideAccessTokenResponsePolicy(
-            global::System.Collections.Generic.IList<global::G.DataItem> data,
+            global::System.Collections.Generic.IList<global::G.DataItem2> data,
             global::G.ClientSideAccessTokensCreateClientSideAccessTokenResponsePolicyVersion version)
         {
             this.Version = version;

@@ -19,9 +19,9 @@ namespace G
         /// Model for image input validation.
         /// </summary>
 #if NET6_0_OR_GREATER
-        public global::G.ImageUrlInput2? ImageUrl { get; init; }
+        public global::G.ImageUrlInput? ImageUrl { get; init; }
 #else
-        public global::G.ImageUrlInput2? ImageUrl { get; }
+        public global::G.ImageUrlInput? ImageUrl { get; }
 #endif
 
         /// <summary>
@@ -39,7 +39,7 @@ namespace G
 #if NET6_0_OR_GREATER
             [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
 #endif
-            out global::G.ImageUrlInput2? value)
+            out global::G.ImageUrlInput? value)
         {
             value = ImageUrl;
             return IsImageUrl;
@@ -48,7 +48,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.ImageUrlInput2 PickImageUrl() => ImageUrl is { } value
+        public global::G.ImageUrlInput PickImageUrl() => ImageUrl is { } value
             ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'ImageUrl' but the value was {ToString()}.");
 
@@ -94,17 +94,17 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator MultiModalQueryVariant2(global::G.ImageUrlInput2 value) => new MultiModalQueryVariant2((global::G.ImageUrlInput2?)value);
+        public static implicit operator MultiModalQueryVariant2(global::G.ImageUrlInput value) => new MultiModalQueryVariant2((global::G.ImageUrlInput?)value);
 
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator global::G.ImageUrlInput2?(MultiModalQueryVariant2 @this) => @this.ImageUrl;
+        public static implicit operator global::G.ImageUrlInput?(MultiModalQueryVariant2 @this) => @this.ImageUrl;
 
         /// <summary>
         /// 
         /// </summary>
-        public MultiModalQueryVariant2(global::G.ImageUrlInput2? value)
+        public MultiModalQueryVariant2(global::G.ImageUrlInput? value)
         {
             ImageUrl = value;
         }
@@ -112,7 +112,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static MultiModalQueryVariant2 FromImageUrl(global::G.ImageUrlInput2? value) => new MultiModalQueryVariant2(value);
+        public static MultiModalQueryVariant2 FromImageUrl(global::G.ImageUrlInput? value) => new MultiModalQueryVariant2(value);
 
         /// <summary>
         /// 
@@ -142,7 +142,7 @@ namespace G
         /// </summary>
         public MultiModalQueryVariant2(
             global::G.MultiModalQueryVariant2DiscriminatorType? type,
-            global::G.ImageUrlInput2? imageUrl,
+            global::G.ImageUrlInput? imageUrl,
             global::G.TextInput? text
             )
         {
@@ -180,7 +180,7 @@ namespace G
         /// 
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<global::G.ImageUrlInput2, TResult>? imageUrl = null,
+            global::System.Func<global::G.ImageUrlInput, TResult>? imageUrl = null,
             global::System.Func<global::G.TextInput, TResult>? text = null,
             bool validate = true)
         {
@@ -205,7 +205,7 @@ namespace G
         /// 
         /// </summary>
         public void Match(
-            global::System.Action<global::G.ImageUrlInput2>? imageUrl = null,
+            global::System.Action<global::G.ImageUrlInput>? imageUrl = null,
 
             global::System.Action<global::G.TextInput>? text = null,
             bool validate = true)
@@ -229,7 +229,7 @@ namespace G
         /// 
         /// </summary>
         public void Switch(
-            global::System.Action<global::G.ImageUrlInput2>? imageUrl = null,
+            global::System.Action<global::G.ImageUrlInput>? imageUrl = null,
             global::System.Action<global::G.TextInput>? text = null,
             bool validate = true)
         {
@@ -256,7 +256,7 @@ namespace G
             var fields = new object?[]
             {
                 ImageUrl,
-                typeof(global::G.ImageUrlInput2),
+                typeof(global::G.ImageUrlInput),
                 Text,
                 typeof(global::G.TextInput),
             };
@@ -275,7 +275,7 @@ namespace G
         public bool Equals(MultiModalQueryVariant2 other)
         {
             return
-                global::System.Collections.Generic.EqualityComparer<global::G.ImageUrlInput2?>.Default.Equals(ImageUrl, other.ImageUrl) &&
+                global::System.Collections.Generic.EqualityComparer<global::G.ImageUrlInput?>.Default.Equals(ImageUrl, other.ImageUrl) &&
                 global::System.Collections.Generic.EqualityComparer<global::G.TextInput?>.Default.Equals(Text, other.Text) 
                 ;
         }

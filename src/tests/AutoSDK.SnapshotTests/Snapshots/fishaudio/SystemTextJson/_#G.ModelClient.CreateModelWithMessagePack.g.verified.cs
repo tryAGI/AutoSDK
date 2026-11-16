@@ -28,11 +28,11 @@ namespace G
             };
         partial void PrepareCreateModelWithMessagePackArguments(
             global::System.Net.Http.HttpClient httpClient,
-            global::G.CreateModelRequest2 request);
+            global::G.CreateModelRequest request);
         partial void PrepareCreateModelWithMessagePackRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
-            global::G.CreateModelRequest2 request);
+            global::G.CreateModelRequest request);
         partial void ProcessCreateModelWithMessagePackResponse(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage);
@@ -51,7 +51,7 @@ namespace G
         /// <exception cref="global::G.ApiException"></exception>
         public async global::System.Threading.Tasks.Task<global::G.CreateModelResponse> CreateModelWithMessagePackAsync(
 
-            global::G.CreateModelRequest2 request,
+            global::G.CreateModelRequest request,
             global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
@@ -73,7 +73,7 @@ namespace G
         /// <exception cref="global::G.ApiException"></exception>
         public async global::System.Threading.Tasks.Task<global::G.AutoSDKHttpResponse<global::G.CreateModelResponse>> CreateModelWithMessagePackAsResponseAsync(
 
-            global::G.CreateModelRequest2 request,
+            global::G.CreateModelRequest request,
             global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
@@ -556,19 +556,19 @@ namespace G
         public async global::System.Threading.Tasks.Task<global::G.CreateModelResponse> CreateModelWithMessagePackAsync(
             string title,
             global::G.AnyOf<global::System.Collections.Generic.IList<byte[]>, byte[]> voices,
-            global::G.CreateModelRequestVisibility2? visibility = default,
-            global::G.CreateModelRequestType2 type = default,
+            global::G.CreateModelRequestVisibility? visibility = default,
+            global::G.CreateModelRequestType type = default,
             string? description = default,
             byte[]? coverImage = default,
             string? coverImagename = default,
-            global::G.CreateModelRequestTrainMode2 trainMode = default,
+            global::G.CreateModelRequestTrainMode trainMode = default,
             global::G.AnyOf<global::System.Collections.Generic.IList<string>, string>? texts = default,
             global::G.AnyOf<global::System.Collections.Generic.IList<string>, string>? tags = default,
             bool? enhanceAudioQuality = default,
             global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
-            var __request = new global::G.CreateModelRequest2
+            var __request = new global::G.CreateModelRequest
             {
                 Visibility = visibility,
                 Type = type,

@@ -545,7 +545,7 @@ namespace G
         public async global::System.Threading.Tasks.Task<global::G.MxbaiOmniApiRoutesV1StoresRulesModelsSearchRuleResponse> CreateSearchRuleAsync(
             global::G.AnyOf<string, global::System.Guid?> storeIdentifier,
             string query,
-            global::System.Collections.Generic.IList<global::G.RulesItem3> rules,
+            global::System.Collections.Generic.IList<global::G.RulesItem2> rules,
             global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {

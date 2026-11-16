@@ -45,12 +45,12 @@ namespace G
         partial void PrepareCreateStreamArguments(
             global::System.Net.Http.HttpClient httpClient,
             ref string agentId,
-            global::G.CreateStreamRequest request);
+            global::G.CreateStreamRequest2 request);
         partial void PrepareCreateStreamRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
             string agentId,
-            global::G.CreateStreamRequest request);
+            global::G.CreateStreamRequest2 request);
         partial void ProcessCreateStreamResponse(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage);
@@ -72,7 +72,7 @@ namespace G
         public async global::System.Threading.Tasks.Task<global::G.CreateStreamResponse> CreateStreamAsync(
             string agentId,
 
-            global::G.CreateStreamRequest request,
+            global::G.CreateStreamRequest2 request,
             global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
@@ -98,7 +98,7 @@ namespace G
         public async global::System.Threading.Tasks.Task<global::G.AutoSDKHttpResponse<global::G.CreateStreamResponse>> CreateStreamAsResponseAsync(
             string agentId,
 
-            global::G.CreateStreamRequest request,
+            global::G.CreateStreamRequest2 request,
             global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
@@ -370,19 +370,19 @@ namespace G
                             {
                                 string? __content_401 = null;
                                 global::System.Exception? __exception_401 = null;
-                                global::G.CreateStreamResponse2? __value_401 = null;
+                                global::G.CreateStreamResponse3? __value_401 = null;
                                 try
                                 {
                                     if (__effectiveReadResponseAsString)
                                     {
                                         __content_401 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
-                                        __value_401 = global::G.CreateStreamResponse2.FromJson(__content_401, JsonSerializerOptions);
+                                        __value_401 = global::G.CreateStreamResponse3.FromJson(__content_401, JsonSerializerOptions);
                                     }
                                     else
                                     {
                                         __content_401 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
 
-                                        __value_401 = global::G.CreateStreamResponse2.FromJson(__content_401, JsonSerializerOptions);
+                                        __value_401 = global::G.CreateStreamResponse3.FromJson(__content_401, JsonSerializerOptions);
                                     }
                                 }
                                 catch (global::System.Exception __ex)
@@ -391,7 +391,7 @@ namespace G
                                 }
 
 
-                                throw global::G.ApiException<global::G.CreateStreamResponse2>.Create(
+                                throw global::G.ApiException<global::G.CreateStreamResponse3>.Create(
                                     statusCode: __response.StatusCode,
                                     message: __content_401 ?? __response.ReasonPhrase ?? string.Empty,
                                     innerException: __exception_401,
@@ -536,7 +536,7 @@ namespace G
             global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
-            var __request = new global::G.CreateStreamRequest
+            var __request = new global::G.CreateStreamRequest2
             {
                 Fluent = fluent,
                 SessionTimeout = sessionTimeout,

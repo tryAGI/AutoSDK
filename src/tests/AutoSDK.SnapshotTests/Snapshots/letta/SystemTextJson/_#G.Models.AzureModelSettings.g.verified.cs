@@ -1,4 +1,4 @@
-﻿//HintName: G.Models.AzureModelSettings.g.cs
+//HintName: G.Models.AzureModelSettings.g.cs
 
 #nullable enable
 
@@ -41,7 +41,7 @@ namespace G
         /// The response format for the model.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("response_format")]
-        public global::G.ResponseFormatVariant13? ResponseFormat { get; set; }
+        public global::G.ResponseFormatVariant16? ResponseFormat { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -79,7 +79,7 @@ namespace G
             bool? parallelToolCalls,
             string? providerType,
             double? temperature,
-            global::G.ResponseFormatVariant13? responseFormat)
+            global::G.ResponseFormatVariant16? responseFormat)
         {
             this.MaxOutputTokens = maxOutputTokens;
             this.ParallelToolCalls = parallelToolCalls;

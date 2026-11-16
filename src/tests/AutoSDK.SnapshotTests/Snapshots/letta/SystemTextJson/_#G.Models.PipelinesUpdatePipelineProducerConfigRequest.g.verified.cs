@@ -1,4 +1,4 @@
-﻿//HintName: G.Models.PipelinesUpdatePipelineProducerConfigRequest.g.cs
+//HintName: G.Models.PipelinesUpdatePipelineProducerConfigRequest.g.cs
 
 #nullable enable
 
@@ -13,9 +13,9 @@ namespace G
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("producer_config")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.ProducerConfig2JsonConverter))]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.ProducerConfig3JsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::G.ProducerConfig2 ProducerConfig { get; set; }
+        public required global::G.ProducerConfig3 ProducerConfig { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -31,7 +31,7 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public PipelinesUpdatePipelineProducerConfigRequest(
-            global::G.ProducerConfig2 producerConfig)
+            global::G.ProducerConfig3 producerConfig)
         {
             this.ProducerConfig = producerConfig;
         }

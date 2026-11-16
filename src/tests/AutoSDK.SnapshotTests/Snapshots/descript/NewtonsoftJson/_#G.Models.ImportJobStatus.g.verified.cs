@@ -1,4 +1,4 @@
-﻿//HintName: G.Models.ImportJobStatus.g.cs
+//HintName: G.Models.ImportJobStatus.g.cs
 
 #nullable enable
 
@@ -87,7 +87,7 @@ namespace G
         /// Job result (only present when job_state is stopped)
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("result")]
-        public global::G.Result? Result { get; set; }
+        public global::G.Result2? Result { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -149,7 +149,7 @@ namespace G
             global::G.ImportJobStatusJobType jobType,
             global::System.DateTime? stoppedAt,
             global::G.ImportJobStatusProgress? progress,
-            global::G.Result? result)
+            global::G.Result2? result)
         {
             this.JobId = jobId;
             this.JobType = jobType;

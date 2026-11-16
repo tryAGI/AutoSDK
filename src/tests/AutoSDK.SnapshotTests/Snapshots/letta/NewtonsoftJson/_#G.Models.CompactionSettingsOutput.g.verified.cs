@@ -1,4 +1,4 @@
-﻿//HintName: G.Models.CompactionSettingsOutput.g.cs
+//HintName: G.Models.CompactionSettingsOutput.g.cs
 
 #nullable enable
 
@@ -21,7 +21,7 @@ namespace G
         /// Optional model settings used to override defaults for the summarizer model.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("model_settings")]
-        public global::G.ModelSettingsVariant13? ModelSettings { get; set; }
+        public global::G.ModelSettingsVariant18? ModelSettings { get; set; }
 
         /// <summary>
         /// The prompt to use for summarization. If None, uses mode-specific default.
@@ -92,7 +92,7 @@ namespace G
         /// </param>
         public CompactionSettingsOutput(
             string? model,
-            global::G.ModelSettingsVariant13? modelSettings,
+            global::G.ModelSettingsVariant18? modelSettings,
             string? prompt,
             bool? promptAcknowledgement,
             int? clipChars,

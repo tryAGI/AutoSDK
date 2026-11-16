@@ -1,4 +1,4 @@
-﻿//HintName: G.Models.FunctionMessage.g.cs
+//HintName: G.Models.FunctionMessage.g.cs
 
 #nullable enable
 
@@ -26,7 +26,7 @@ namespace G
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("content")]
-        public global::System.Collections.Generic.IList<global::G.ContentVariant1Item2>? Content { get; set; }
+        public global::System.Collections.Generic.IList<global::G.ContentVariant1Item>? Content { get; set; }
 
         /// <summary>
         /// Default Value: function
@@ -68,7 +68,7 @@ namespace G
             string name,
             global::System.Collections.Generic.IList<string>? inputVariables,
             global::G.FunctionMessageTemplateFormat? templateFormat,
-            global::System.Collections.Generic.IList<global::G.ContentVariant1Item2>? content,
+            global::System.Collections.Generic.IList<global::G.ContentVariant1Item>? content,
             string? role)
         {
             this.InputVariables = inputVariables;

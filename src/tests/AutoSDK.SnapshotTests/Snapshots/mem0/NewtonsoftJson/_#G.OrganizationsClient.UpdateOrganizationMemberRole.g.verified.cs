@@ -389,19 +389,19 @@ namespace G
                             {
                                 string? __content_404 = null;
                                 global::System.Exception? __exception_404 = null;
-                                global::G.UpdateOrganizationMemberRoleResponse3? __value_404 = null;
+                                global::G.UpdateOrganizationMemberRoleResponse? __value_404 = null;
                                 try
                                 {
                                     if (__effectiveReadResponseAsString)
                                     {
                                         __content_404 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
-                                        __value_404 = global::G.UpdateOrganizationMemberRoleResponse3.FromJson(__content_404, JsonSerializerOptions);
+                                        __value_404 = global::G.UpdateOrganizationMemberRoleResponse.FromJson(__content_404, JsonSerializerOptions);
                                     }
                                     else
                                     {
                                         __content_404 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
 
-                                        __value_404 = global::G.UpdateOrganizationMemberRoleResponse3.FromJson(__content_404, JsonSerializerOptions);
+                                        __value_404 = global::G.UpdateOrganizationMemberRoleResponse.FromJson(__content_404, JsonSerializerOptions);
                                     }
                                 }
                                 catch (global::System.Exception __ex)
@@ -410,7 +410,7 @@ namespace G
                                 }
 
 
-                                throw global::G.ApiException<global::G.UpdateOrganizationMemberRoleResponse3>.Create(
+                                throw global::G.ApiException<global::G.UpdateOrganizationMemberRoleResponse>.Create(
                                     statusCode: __response.StatusCode,
                                     message: __content_404 ?? __response.ReasonPhrase ?? string.Empty,
                                     innerException: __exception_404,

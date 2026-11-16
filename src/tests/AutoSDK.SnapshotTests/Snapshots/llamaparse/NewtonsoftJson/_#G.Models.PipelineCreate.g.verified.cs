@@ -13,7 +13,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("embedding_config")]
-        public global::G.EmbeddingConfigVariant12? EmbeddingConfig { get; set; }
+        public global::G.EmbeddingConfigVariant1? EmbeddingConfig { get; set; }
 
         /// <summary>
         /// Configuration for the transformation.
@@ -136,7 +136,7 @@ namespace G
         /// </param>
         public PipelineCreate(
             string name,
-            global::G.EmbeddingConfigVariant12? embeddingConfig,
+            global::G.EmbeddingConfigVariant1? embeddingConfig,
             global::G.AnyOf<global::G.AutoTransformConfig, global::G.AdvancedModeTransformConfig>? transformConfig,
             global::G.SparseModelConfig? sparseModelConfig,
             global::System.Guid? dataSinkId,

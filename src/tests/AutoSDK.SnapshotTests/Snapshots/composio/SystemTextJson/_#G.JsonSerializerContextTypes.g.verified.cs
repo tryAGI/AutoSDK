@@ -4739,567 +4739,559 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.PostTriggerInstancesBySlugUpsertResponse2? Type1175 { get; set; }
+        public global::G.GetTriggerInstancesActiveResponse? Type1175 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.PostTriggerInstancesBySlugUpsertResponseDeprecated2? Type1176 { get; set; }
+        public global::System.Collections.Generic.IList<global::G.GetTriggerInstancesActiveResponseItem>? Type1176 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.GetTriggerInstancesActiveResponse? Type1177 { get; set; }
+        public global::G.GetTriggerInstancesActiveResponseItem? Type1177 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::G.GetTriggerInstancesActiveResponseItem>? Type1178 { get; set; }
+        public global::G.GetTriggerInstancesActiveResponseItemDeprecated? Type1178 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.GetTriggerInstancesActiveResponseItem? Type1179 { get; set; }
+        public global::G.DeleteTriggerInstancesManageByTriggerIdResponse? Type1179 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.GetTriggerInstancesActiveResponseItemDeprecated? Type1180 { get; set; }
+        public global::G.PatchTriggerInstancesManageByTriggerIdResponse? Type1180 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.DeleteTriggerInstancesManageByTriggerIdResponse? Type1181 { get; set; }
+        public global::G.PatchTriggerInstancesManageByTriggerIdResponseStatus? Type1181 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.PatchTriggerInstancesManageByTriggerIdResponse? Type1182 { get; set; }
+        public global::G.GetTriggersTypesBySlugResponse? Type1182 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.PatchTriggerInstancesManageByTriggerIdResponseStatus? Type1183 { get; set; }
+        public global::G.GetTriggersTypesBySlugResponseType? Type1183 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.GetTriggersTypesBySlugResponse? Type1184 { get; set; }
+        public global::G.GetTriggersTypesBySlugResponseToolkit? Type1184 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.GetTriggersTypesBySlugResponseType? Type1185 { get; set; }
+        public global::G.GetTriggersTypesResponse? Type1185 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.GetTriggersTypesBySlugResponseToolkit? Type1186 { get; set; }
+        public global::System.Collections.Generic.IList<global::G.GetTriggersTypesResponseItem>? Type1186 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.GetTriggersTypesResponse? Type1187 { get; set; }
+        public global::G.GetTriggersTypesResponseItem? Type1187 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::G.GetTriggersTypesResponseItem>? Type1188 { get; set; }
+        public global::G.GetTriggersTypesResponseItemType? Type1188 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.GetTriggersTypesResponseItem? Type1189 { get; set; }
+        public global::G.GetTriggersTypesResponseItemToolkit? Type1189 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.GetTriggersTypesResponseItemType? Type1190 { get; set; }
+        public global::G.GetMcpServersResponse? Type1190 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.GetTriggersTypesResponseItemToolkit? Type1191 { get; set; }
+        public global::System.Collections.Generic.IList<global::G.GetMcpServersResponseItem>? Type1191 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.GetMcpServersResponse? Type1192 { get; set; }
+        public global::G.GetMcpServersResponseItem? Type1192 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::G.GetMcpServersResponseItem>? Type1193 { get; set; }
+        public global::G.GetMcpServersResponseItemCommands? Type1193 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.GetMcpServersResponseItem? Type1194 { get; set; }
+        public global::G.PostMcpServersResponse? Type1194 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.GetMcpServersResponseItemCommands? Type1195 { get; set; }
+        public global::G.PostMcpServersResponseCommands? Type1195 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.PostMcpServersResponse? Type1196 { get; set; }
+        public global::G.PostMcpServersCustomResponse? Type1196 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.PostMcpServersResponseCommands? Type1197 { get; set; }
+        public global::G.PostMcpServersCustomResponseCommands? Type1197 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.PostMcpServersCustomResponse? Type1198 { get; set; }
+        public global::G.PostMcpServersGenerateResponse? Type1198 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.PostMcpServersCustomResponseCommands? Type1199 { get; set; }
+        public global::G.GetMcpByIdResponse? Type1199 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.PostMcpServersGenerateResponse? Type1200 { get; set; }
+        public global::G.GetMcpByIdResponseCommands? Type1200 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.GetMcpByIdResponse? Type1201 { get; set; }
+        public global::G.PatchMcpByIdResponse? Type1201 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.GetMcpByIdResponseCommands? Type1202 { get; set; }
+        public global::G.PatchMcpByIdResponseCommands? Type1202 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.PatchMcpByIdResponse? Type1203 { get; set; }
+        public global::G.DeleteMcpByIdResponse? Type1203 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.PatchMcpByIdResponseCommands? Type1204 { get; set; }
+        public global::G.GetMcpAppByAppKeyResponse? Type1204 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.DeleteMcpByIdResponse? Type1205 { get; set; }
+        public global::System.Collections.Generic.IList<global::G.GetMcpAppByAppKeyResponseItem>? Type1205 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.GetMcpAppByAppKeyResponse? Type1206 { get; set; }
+        public global::G.GetMcpAppByAppKeyResponseItem? Type1206 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::G.GetMcpAppByAppKeyResponseItem>? Type1207 { get; set; }
+        public global::G.GetMcpAppByAppKeyResponseItemCommands? Type1207 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.GetMcpAppByAppKeyResponseItem? Type1208 { get; set; }
+        public global::G.GetMcpServersByServerIdInstancesResponse? Type1208 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.GetMcpAppByAppKeyResponseItemCommands? Type1209 { get; set; }
+        public global::System.Collections.Generic.IList<global::G.GetMcpServersByServerIdInstancesResponseInstance>? Type1209 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.GetMcpServersByServerIdInstancesResponse? Type1210 { get; set; }
+        public global::G.GetMcpServersByServerIdInstancesResponseInstance? Type1210 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::G.GetMcpServersByServerIdInstancesResponseInstance>? Type1211 { get; set; }
+        public global::G.PostMcpServersByServerIdInstancesResponse? Type1211 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.GetMcpServersByServerIdInstancesResponseInstance? Type1212 { get; set; }
+        public global::G.DeleteMcpServersByServerIdInstancesByInstanceIdResponse? Type1212 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.PostMcpServersByServerIdInstancesResponse? Type1213 { get; set; }
+        public global::G.GetFilesListResponse? Type1213 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.DeleteMcpServersByServerIdInstancesByInstanceIdResponse? Type1214 { get; set; }
+        public global::System.Collections.Generic.IList<global::G.GetFilesListResponseItem>? Type1214 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.GetFilesListResponse? Type1215 { get; set; }
+        public global::G.GetFilesListResponseItem? Type1215 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::G.GetFilesListResponseItem>? Type1216 { get; set; }
+        public global::G.PostFilesUploadRequestResponse? Type1216 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.GetFilesListResponseItem? Type1217 { get; set; }
+        public global::G.PostFilesUploadRequestResponseType? Type1217 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.PostFilesUploadRequestResponse? Type1218 { get; set; }
+        public global::G.PostFilesUploadRequestResponseMetadata? Type1218 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.PostFilesUploadRequestResponseType? Type1219 { get; set; }
+        public global::G.PostFilesUploadRequestResponseMetadataStorageBackend? Type1219 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.PostFilesUploadRequestResponseMetadata? Type1220 { get; set; }
+        public global::G.GetMigrationGetNanoidResponse? Type1220 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.PostFilesUploadRequestResponseMetadataStorageBackend? Type1221 { get; set; }
+        public global::G.PostLabsToolRouterSessionResponse? Type1221 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.GetMigrationGetNanoidResponse? Type1222 { get; set; }
+        public global::G.PostToolRouterSessionResponse? Type1222 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.PostLabsToolRouterSessionResponse? Type1223 { get; set; }
+        public global::G.PostToolRouterSessionResponseMcp? Type1223 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.PostToolRouterSessionResponse? Type1224 { get; set; }
+        public global::G.PostToolRouterSessionResponseMcpType? Type1224 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.PostToolRouterSessionResponseMcp? Type1225 { get; set; }
+        public global::G.PostToolRouterSessionResponseConfig? Type1225 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.PostToolRouterSessionResponseMcpType? Type1226 { get; set; }
+        public global::G.AnyOf<global::G.PostToolRouterSessionResponseConfigToolkitsVariant1, global::G.PostToolRouterSessionResponseConfigToolkitsVariant2>? Type1226 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.PostToolRouterSessionResponseConfig? Type1227 { get; set; }
+        public global::G.PostToolRouterSessionResponseConfigToolkitsVariant1? Type1227 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.AnyOf<global::G.PostToolRouterSessionResponseConfigToolkitsVariant1, global::G.PostToolRouterSessionResponseConfigToolkitsVariant2>? Type1228 { get; set; }
+        public global::G.PostToolRouterSessionResponseConfigToolkitsVariant2? Type1228 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.PostToolRouterSessionResponseConfigToolkitsVariant1? Type1229 { get; set; }
+        public global::G.PostToolRouterSessionResponseConfigManageConnections? Type1229 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.PostToolRouterSessionResponseConfigToolkitsVariant2? Type1230 { get; set; }
+        public global::G.PostToolRouterSessionResponseConfigToolsVariant1? Type1230 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.PostToolRouterSessionResponseConfigManageConnections? Type1231 { get; set; }
+        public global::G.PostToolRouterSessionResponseConfigToolsVariant2? Type1231 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.PostToolRouterSessionResponseConfigToolsVariant1? Type1232 { get; set; }
+        public global::G.PostToolRouterSessionResponseConfigToolsVariant3? Type1232 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.PostToolRouterSessionResponseConfigToolsVariant2? Type1233 { get; set; }
+        public global::G.PostToolRouterSessionResponseConfigToolsVariant3Tags? Type1233 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.PostToolRouterSessionResponseConfigToolsVariant3? Type1234 { get; set; }
+        public global::System.Collections.Generic.IList<global::G.PostToolRouterSessionResponseConfigToolsVariant3TagsEnabledItem>? Type1234 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.PostToolRouterSessionResponseConfigToolsVariant3Tags? Type1235 { get; set; }
+        public global::G.PostToolRouterSessionResponseConfigToolsVariant3TagsEnabledItem? Type1235 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::G.PostToolRouterSessionResponseConfigToolsVariant3TagsEnabledItem>? Type1236 { get; set; }
+        public global::System.Collections.Generic.IList<global::G.PostToolRouterSessionResponseConfigToolsVariant3TagsDisabledItem>? Type1236 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.PostToolRouterSessionResponseConfigToolsVariant3TagsEnabledItem? Type1237 { get; set; }
+        public global::G.PostToolRouterSessionResponseConfigToolsVariant3TagsDisabledItem? Type1237 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::G.PostToolRouterSessionResponseConfigToolsVariant3TagsDisabledItem>? Type1238 { get; set; }
+        public global::G.PostToolRouterSessionResponseConfigTags? Type1238 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.PostToolRouterSessionResponseConfigToolsVariant3TagsDisabledItem? Type1239 { get; set; }
+        public global::System.Collections.Generic.IList<global::G.PostToolRouterSessionResponseConfigTagsEnabledItem>? Type1239 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.PostToolRouterSessionResponseConfigTags? Type1240 { get; set; }
+        public global::G.PostToolRouterSessionResponseConfigTagsEnabledItem? Type1240 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::G.PostToolRouterSessionResponseConfigTagsEnabledItem>? Type1241 { get; set; }
+        public global::System.Collections.Generic.IList<global::G.PostToolRouterSessionResponseConfigTagsDisabledItem>? Type1241 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.PostToolRouterSessionResponseConfigTagsEnabledItem? Type1242 { get; set; }
+        public global::G.PostToolRouterSessionResponseConfigTagsDisabledItem? Type1242 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::G.PostToolRouterSessionResponseConfigTagsDisabledItem>? Type1243 { get; set; }
+        public global::G.PostToolRouterSessionResponseConfigWorkbench? Type1243 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.PostToolRouterSessionResponseConfigTagsDisabledItem? Type1244 { get; set; }
+        public global::G.PostToolRouterSessionResponseExperimental? Type1244 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.PostToolRouterSessionResponseConfigWorkbench? Type1245 { get; set; }
+        public global::System.Collections.Generic.IList<global::G.PostToolRouterSessionResponseExperimentalCustomToolkit>? Type1245 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.PostToolRouterSessionResponseExperimental? Type1246 { get; set; }
+        public global::G.PostToolRouterSessionResponseExperimentalCustomToolkit? Type1246 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::G.PostToolRouterSessionResponseExperimentalCustomToolkit>? Type1247 { get; set; }
+        public global::System.Collections.Generic.IList<global::G.PostToolRouterSessionResponseExperimentalCustomToolkitTool>? Type1247 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.PostToolRouterSessionResponseExperimentalCustomToolkit? Type1248 { get; set; }
+        public global::G.PostToolRouterSessionResponseExperimentalCustomToolkitTool? Type1248 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::G.PostToolRouterSessionResponseExperimentalCustomToolkitTool>? Type1249 { get; set; }
+        public global::System.Collections.Generic.IList<global::G.PostToolRouterSessionResponseExperimentalCustomTool>? Type1249 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.PostToolRouterSessionResponseExperimentalCustomToolkitTool? Type1250 { get; set; }
+        public global::G.PostToolRouterSessionResponseExperimentalCustomTool? Type1250 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::G.PostToolRouterSessionResponseExperimentalCustomTool>? Type1251 { get; set; }
+        public global::G.PostToolRouterSessionBySessionIdExecuteResponse? Type1251 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.PostToolRouterSessionResponseExperimentalCustomTool? Type1252 { get; set; }
+        public global::G.PostToolRouterSessionBySessionIdExecuteMetaResponse? Type1252 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.PostToolRouterSessionBySessionIdExecuteResponse? Type1253 { get; set; }
+        public global::G.GetToolRouterSessionBySessionIdResponse? Type1253 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.PostToolRouterSessionBySessionIdExecuteMetaResponse? Type1254 { get; set; }
+        public global::G.GetToolRouterSessionBySessionIdResponseMcp? Type1254 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.GetToolRouterSessionBySessionIdResponse? Type1255 { get; set; }
+        public global::G.GetToolRouterSessionBySessionIdResponseMcpType? Type1255 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.GetToolRouterSessionBySessionIdResponseMcp? Type1256 { get; set; }
+        public global::G.GetToolRouterSessionBySessionIdResponseConfig? Type1256 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.GetToolRouterSessionBySessionIdResponseMcpType? Type1257 { get; set; }
+        public global::G.GetToolRouterSessionBySessionIdResponseConfigToolkitsVariant1? Type1257 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.GetToolRouterSessionBySessionIdResponseConfig? Type1258 { get; set; }
+        public global::G.GetToolRouterSessionBySessionIdResponseConfigToolkitsVariant2? Type1258 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.GetToolRouterSessionBySessionIdResponseConfigToolkitsVariant1? Type1259 { get; set; }
+        public global::G.GetToolRouterSessionBySessionIdResponseConfigManageConnections? Type1259 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.GetToolRouterSessionBySessionIdResponseConfigToolkitsVariant2? Type1260 { get; set; }
+        public global::G.GetToolRouterSessionBySessionIdResponseConfigToolsVariant1? Type1260 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.GetToolRouterSessionBySessionIdResponseConfigManageConnections? Type1261 { get; set; }
+        public global::G.GetToolRouterSessionBySessionIdResponseConfigToolsVariant2? Type1261 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.GetToolRouterSessionBySessionIdResponseConfigToolsVariant1? Type1262 { get; set; }
+        public global::G.GetToolRouterSessionBySessionIdResponseConfigToolsVariant3? Type1262 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.GetToolRouterSessionBySessionIdResponseConfigToolsVariant2? Type1263 { get; set; }
+        public global::G.GetToolRouterSessionBySessionIdResponseConfigToolsVariant3Tags? Type1263 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.GetToolRouterSessionBySessionIdResponseConfigToolsVariant3? Type1264 { get; set; }
+        public global::System.Collections.Generic.IList<global::G.GetToolRouterSessionBySessionIdResponseConfigToolsVariant3TagsEnabledItem>? Type1264 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.GetToolRouterSessionBySessionIdResponseConfigToolsVariant3Tags? Type1265 { get; set; }
+        public global::G.GetToolRouterSessionBySessionIdResponseConfigToolsVariant3TagsEnabledItem? Type1265 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::G.GetToolRouterSessionBySessionIdResponseConfigToolsVariant3TagsEnabledItem>? Type1266 { get; set; }
+        public global::System.Collections.Generic.IList<global::G.GetToolRouterSessionBySessionIdResponseConfigToolsVariant3TagsDisabledItem>? Type1266 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.GetToolRouterSessionBySessionIdResponseConfigToolsVariant3TagsEnabledItem? Type1267 { get; set; }
+        public global::G.GetToolRouterSessionBySessionIdResponseConfigToolsVariant3TagsDisabledItem? Type1267 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::G.GetToolRouterSessionBySessionIdResponseConfigToolsVariant3TagsDisabledItem>? Type1268 { get; set; }
+        public global::G.GetToolRouterSessionBySessionIdResponseConfigTags? Type1268 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.GetToolRouterSessionBySessionIdResponseConfigToolsVariant3TagsDisabledItem? Type1269 { get; set; }
+        public global::System.Collections.Generic.IList<global::G.GetToolRouterSessionBySessionIdResponseConfigTagsEnabledItem>? Type1269 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.GetToolRouterSessionBySessionIdResponseConfigTags? Type1270 { get; set; }
+        public global::G.GetToolRouterSessionBySessionIdResponseConfigTagsEnabledItem? Type1270 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::G.GetToolRouterSessionBySessionIdResponseConfigTagsEnabledItem>? Type1271 { get; set; }
+        public global::System.Collections.Generic.IList<global::G.GetToolRouterSessionBySessionIdResponseConfigTagsDisabledItem>? Type1271 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.GetToolRouterSessionBySessionIdResponseConfigTagsEnabledItem? Type1272 { get; set; }
+        public global::G.GetToolRouterSessionBySessionIdResponseConfigTagsDisabledItem? Type1272 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::G.GetToolRouterSessionBySessionIdResponseConfigTagsDisabledItem>? Type1273 { get; set; }
+        public global::G.GetToolRouterSessionBySessionIdResponseConfigWorkbench? Type1273 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.GetToolRouterSessionBySessionIdResponseConfigTagsDisabledItem? Type1274 { get; set; }
+        public global::G.GetToolRouterSessionBySessionIdResponseExperimental? Type1274 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.GetToolRouterSessionBySessionIdResponseConfigWorkbench? Type1275 { get; set; }
+        public global::System.Collections.Generic.IList<global::G.GetToolRouterSessionBySessionIdResponseExperimentalCustomToolkit>? Type1275 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.GetToolRouterSessionBySessionIdResponseExperimental? Type1276 { get; set; }
+        public global::G.GetToolRouterSessionBySessionIdResponseExperimentalCustomToolkit? Type1276 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::G.GetToolRouterSessionBySessionIdResponseExperimentalCustomToolkit>? Type1277 { get; set; }
+        public global::System.Collections.Generic.IList<global::G.GetToolRouterSessionBySessionIdResponseExperimentalCustomToolkitTool>? Type1277 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.GetToolRouterSessionBySessionIdResponseExperimentalCustomToolkit? Type1278 { get; set; }
+        public global::G.GetToolRouterSessionBySessionIdResponseExperimentalCustomToolkitTool? Type1278 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::G.GetToolRouterSessionBySessionIdResponseExperimentalCustomToolkitTool>? Type1279 { get; set; }
+        public global::System.Collections.Generic.IList<global::G.GetToolRouterSessionBySessionIdResponseExperimentalCustomTool>? Type1279 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.GetToolRouterSessionBySessionIdResponseExperimentalCustomToolkitTool? Type1280 { get; set; }
+        public global::G.GetToolRouterSessionBySessionIdResponseExperimentalCustomTool? Type1280 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::G.GetToolRouterSessionBySessionIdResponseExperimentalCustomTool>? Type1281 { get; set; }
+        public global::G.PostToolRouterSessionBySessionIdLinkResponse? Type1281 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.GetToolRouterSessionBySessionIdResponseExperimentalCustomTool? Type1282 { get; set; }
+        public global::G.PostToolRouterSessionBySessionIdProxyExecuteResponse? Type1282 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.PostToolRouterSessionBySessionIdLinkResponse? Type1283 { get; set; }
+        public global::G.PostToolRouterSessionBySessionIdProxyExecuteResponseBinaryData? Type1283 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.PostToolRouterSessionBySessionIdProxyExecuteResponse? Type1284 { get; set; }
+        public global::G.GetToolRouterSessionBySessionIdToolsResponse? Type1284 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.PostToolRouterSessionBySessionIdProxyExecuteResponseBinaryData? Type1285 { get; set; }
+        public global::G.PostToolRouterSessionBySessionIdSearchResponse? Type1285 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.GetToolRouterSessionBySessionIdToolsResponse? Type1286 { get; set; }
+        public global::System.Collections.Generic.IList<global::G.PostToolRouterSessionBySessionIdSearchResponseResult>? Type1286 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.PostToolRouterSessionBySessionIdSearchResponse? Type1287 { get; set; }
+        public global::G.PostToolRouterSessionBySessionIdSearchResponseResult? Type1287 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::G.PostToolRouterSessionBySessionIdSearchResponseResult>? Type1288 { get; set; }
+        public global::System.Collections.Generic.IList<global::G.PostToolRouterSessionBySessionIdSearchResponseResultReferenceWorkbenchSnippet>? Type1288 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.PostToolRouterSessionBySessionIdSearchResponseResult? Type1289 { get; set; }
+        public global::G.PostToolRouterSessionBySessionIdSearchResponseResultReferenceWorkbenchSnippet? Type1289 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::G.PostToolRouterSessionBySessionIdSearchResponseResultReferenceWorkbenchSnippet>? Type1290 { get; set; }
+        public global::System.Collections.Generic.Dictionary<string, global::System.Collections.Generic.IList<string>>? Type1290 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.PostToolRouterSessionBySessionIdSearchResponseResultReferenceWorkbenchSnippet? Type1291 { get; set; }
+        public global::System.Collections.Generic.IList<global::G.PostToolRouterSessionBySessionIdSearchResponseToolkitConnectionStatuse>? Type1291 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.Dictionary<string, global::System.Collections.Generic.IList<string>>? Type1292 { get; set; }
+        public global::G.PostToolRouterSessionBySessionIdSearchResponseToolkitConnectionStatuse? Type1292 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::G.PostToolRouterSessionBySessionIdSearchResponseToolkitConnectionStatuse>? Type1293 { get; set; }
+        public global::System.Collections.Generic.IList<global::G.PostToolRouterSessionBySessionIdSearchResponseToolkitConnectionStatuseAccount>? Type1293 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.PostToolRouterSessionBySessionIdSearchResponseToolkitConnectionStatuse? Type1294 { get; set; }
+        public global::G.PostToolRouterSessionBySessionIdSearchResponseToolkitConnectionStatuseAccount? Type1294 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::G.PostToolRouterSessionBySessionIdSearchResponseToolkitConnectionStatuseAccount>? Type1295 { get; set; }
+        public global::G.PostToolRouterSessionBySessionIdSearchResponseToolkitConnectionStatuseAccountSelection? Type1295 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.PostToolRouterSessionBySessionIdSearchResponseToolkitConnectionStatuseAccount? Type1296 { get; set; }
+        public global::System.Collections.Generic.Dictionary<string, global::G.PostToolRouterSessionBySessionIdSearchResponseToolSchemas2>? Type1296 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.PostToolRouterSessionBySessionIdSearchResponseToolkitConnectionStatuseAccountSelection? Type1297 { get; set; }
+        public global::G.PostToolRouterSessionBySessionIdSearchResponseToolSchemas2? Type1297 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.Dictionary<string, global::G.PostToolRouterSessionBySessionIdSearchResponseToolSchemas2>? Type1298 { get; set; }
+        public global::G.PostToolRouterSessionBySessionIdSearchResponseToolSchemasSchemaRef? Type1298 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.PostToolRouterSessionBySessionIdSearchResponseToolSchemas2? Type1299 { get; set; }
+        public global::G.PostToolRouterSessionBySessionIdSearchResponseToolSchemasSchemaRefTool? Type1299 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.PostToolRouterSessionBySessionIdSearchResponseToolSchemasSchemaRef? Type1300 { get; set; }
+        public global::G.PostToolRouterSessionBySessionIdSearchResponseToolSchemasSchemaRefArgs? Type1300 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.PostToolRouterSessionBySessionIdSearchResponseToolSchemasSchemaRefTool? Type1301 { get; set; }
+        public global::G.PostToolRouterSessionBySessionIdSearchResponseTimeInfo? Type1301 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.PostToolRouterSessionBySessionIdSearchResponseToolSchemasSchemaRefArgs? Type1302 { get; set; }
+        public global::G.PostToolRouterSessionBySessionIdSearchResponseSession? Type1302 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.PostToolRouterSessionBySessionIdSearchResponseTimeInfo? Type1303 { get; set; }
+        public global::G.GetToolRouterSessionBySessionIdMountsByMountIdItemsResponse? Type1303 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.PostToolRouterSessionBySessionIdSearchResponseSession? Type1304 { get; set; }
+        public global::System.Collections.Generic.IList<global::G.GetToolRouterSessionBySessionIdMountsByMountIdItemsResponseItem>? Type1304 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.GetToolRouterSessionBySessionIdMountsByMountIdItemsResponse? Type1305 { get; set; }
+        public global::G.GetToolRouterSessionBySessionIdMountsByMountIdItemsResponseItem? Type1305 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::G.GetToolRouterSessionBySessionIdMountsByMountIdItemsResponseItem>? Type1306 { get; set; }
+        public global::G.PostToolRouterSessionBySessionIdMountsByMountIdDownloadUrlResponse? Type1306 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.GetToolRouterSessionBySessionIdMountsByMountIdItemsResponseItem? Type1307 { get; set; }
+        public global::G.PostToolRouterSessionBySessionIdMountsByMountIdUploadUrlResponse? Type1307 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.PostToolRouterSessionBySessionIdMountsByMountIdDownloadUrlResponse? Type1308 { get; set; }
+        public global::G.PostToolRouterSessionBySessionIdMountsByMountIdDeleteResponse? Type1308 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.PostToolRouterSessionBySessionIdMountsByMountIdUploadUrlResponse? Type1309 { get; set; }
+        public global::G.GetToolkitsChangelogResponse? Type1309 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.PostToolRouterSessionBySessionIdMountsByMountIdDeleteResponse? Type1310 { get; set; }
+        public global::System.Collections.Generic.IList<global::G.GetToolkitsChangelogResponseItem>? Type1310 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.GetToolkitsChangelogResponse? Type1311 { get; set; }
+        public global::G.GetToolkitsChangelogResponseItem? Type1311 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::G.GetToolkitsChangelogResponseItem>? Type1312 { get; set; }
+        public global::System.Collections.Generic.IList<global::G.GetToolkitsChangelogResponseItemVersion>? Type1312 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.GetToolkitsChangelogResponseItem? Type1313 { get; set; }
-        /// <summary>
-        /// 
-        /// </summary>
-        public global::System.Collections.Generic.IList<global::G.GetToolkitsChangelogResponseItemVersion>? Type1314 { get; set; }
-        /// <summary>
-        /// 
-        /// </summary>
-        public global::G.GetToolkitsChangelogResponseItemVersion? Type1315 { get; set; }
+        public global::G.GetToolkitsChangelogResponseItemVersion? Type1313 { get; set; }
 
         /// <summary>
         /// 

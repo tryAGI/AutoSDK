@@ -1,4 +1,4 @@
-﻿//HintName: G.Models.MxbaiOmniApiRoutesV1DeprecatedVectorStoresModelsSearchRuleResponse.g.cs
+//HintName: G.Models.MxbaiOmniApiRoutesV1DeprecatedVectorStoresModelsSearchRuleResponse.g.cs
 
 #nullable enable
 
@@ -42,7 +42,7 @@ namespace G
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("rules")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::System.Collections.Generic.IList<global::G.RulesItem2> Rules { get; set; }
+        public required global::System.Collections.Generic.IList<global::G.RulesItem3> Rules { get; set; }
 
         /// <summary>
         /// When the rule was created
@@ -96,7 +96,7 @@ namespace G
             string id,
             string query,
             string vectorStoreId,
-            global::System.Collections.Generic.IList<global::G.RulesItem2> rules,
+            global::System.Collections.Generic.IList<global::G.RulesItem3> rules,
             global::System.DateTime createdAt,
             global::System.DateTime updatedAt,
             string? @object)

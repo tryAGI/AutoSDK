@@ -1,4 +1,4 @@
-﻿//HintName: G.Models.Message.g.cs
+//HintName: G.Models.Message.g.cs
 
 #nullable enable
 
@@ -116,7 +116,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("tool_calls")]
-        public global::System.Collections.Generic.IList<global::G.FunctionCall2>? ToolCalls { get; set; }
+        public global::System.Collections.Generic.IList<global::G.FunctionCall>? ToolCalls { get; set; }
 
         /// <summary>
         /// 
@@ -214,7 +214,7 @@ namespace G
             string? imageUrl,
             string? timestamp,
             string? toolCallId,
-            global::System.Collections.Generic.IList<global::G.FunctionCall2>? toolCalls,
+            global::System.Collections.Generic.IList<global::G.FunctionCall>? toolCalls,
             string? mimeType,
             string? content,
             string? name,

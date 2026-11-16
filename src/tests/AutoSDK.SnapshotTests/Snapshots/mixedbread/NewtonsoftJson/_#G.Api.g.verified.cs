@@ -1,4 +1,4 @@
-﻿//HintName: G.Api.g.cs
+//HintName: G.Api.g.cs
 
 #nullable enable
 
@@ -68,9 +68,9 @@ namespace G
 
                     new global::G.JsonConverters.ElementTypeNullableJsonConverter(),
 
-                    new global::G.JsonConverters.EncodingFormat3JsonConverter(),
+                    new global::G.JsonConverters.EncodingFormatJsonConverter(),
 
-                    new global::G.JsonConverters.EncodingFormat3NullableJsonConverter(),
+                    new global::G.JsonConverters.EncodingFormatNullableJsonConverter(),
 
                     new global::G.JsonConverters.ImageUrlInputChunkGeneratedMetadataVariant1DiscriminatorTypeJsonConverter(),
 

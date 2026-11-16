@@ -1,4 +1,4 @@
-﻿//HintName: G.Models.AgentJobStatus.g.cs
+//HintName: G.Models.AgentJobStatus.g.cs
 
 #nullable enable
 
@@ -95,8 +95,8 @@ namespace G
         /// Job result (only present when job_state is stopped)
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("result")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.Result2JsonConverter))]
-        public global::G.Result2? Result { get; set; }
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.ResultJsonConverter))]
+        public global::G.Result? Result { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -162,7 +162,7 @@ namespace G
             global::G.AgentJobStatusJobType jobType,
             global::System.DateTime? stoppedAt,
             global::G.AgentJobStatusProgress? progress,
-            global::G.Result2? result)
+            global::G.Result? result)
         {
             this.JobId = jobId;
             this.JobType = jobType;

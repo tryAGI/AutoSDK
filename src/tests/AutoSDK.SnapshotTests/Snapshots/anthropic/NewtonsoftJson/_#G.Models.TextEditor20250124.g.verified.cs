@@ -1,4 +1,4 @@
-﻿//HintName: G.Models.TextEditor20250124.g.cs
+//HintName: G.Models.TextEditor20250124.g.cs
 
 #nullable enable
 
@@ -13,7 +13,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("cache_control")]
-        public global::G.CacheControlVariant119? CacheControl { get; set; }
+        public global::G.CacheControlVariant15? CacheControl { get; set; }
 
         /// <summary>
         /// 
@@ -46,7 +46,7 @@ namespace G
         /// This is how the tool will be called by the model and in tool_use blocks.
         /// </param>
         public TextEditor20250124(
-            global::G.CacheControlVariant119? cacheControl,
+            global::G.CacheControlVariant15? cacheControl,
             global::G.TextEditor20250124Type type,
             global::G.TextEditor20250124Name name)
         {

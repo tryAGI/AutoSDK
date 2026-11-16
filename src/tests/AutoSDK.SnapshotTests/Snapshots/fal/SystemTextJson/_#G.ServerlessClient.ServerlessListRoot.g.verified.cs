@@ -362,19 +362,19 @@ namespace G
                             {
                                 string? __content_429 = null;
                                 global::System.Exception? __exception_429 = null;
-                                global::G.ServerlessListRootResponse2? __value_429 = null;
+                                global::G.ServerlessListRootResponse? __value_429 = null;
                                 try
                                 {
                                     if (__effectiveReadResponseAsString)
                                     {
                                         __content_429 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
-                                        __value_429 = global::G.ServerlessListRootResponse2.FromJson(__content_429, JsonSerializerOptions);
+                                        __value_429 = global::G.ServerlessListRootResponse.FromJson(__content_429, JsonSerializerOptions);
                                     }
                                     else
                                     {
                                         __content_429 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
 
-                                        __value_429 = global::G.ServerlessListRootResponse2.FromJson(__content_429, JsonSerializerOptions);
+                                        __value_429 = global::G.ServerlessListRootResponse.FromJson(__content_429, JsonSerializerOptions);
                                     }
                                 }
                                 catch (global::System.Exception __ex)
@@ -383,7 +383,7 @@ namespace G
                                 }
 
 
-                                throw global::G.ApiException<global::G.ServerlessListRootResponse2>.Create(
+                                throw global::G.ApiException<global::G.ServerlessListRootResponse>.Create(
                                     statusCode: __response.StatusCode,
                                     message: __content_429 ?? __response.ReasonPhrase ?? string.Empty,
                                     innerException: __exception_429,
@@ -399,19 +399,19 @@ namespace G
                             {
                                 string? __content_500 = null;
                                 global::System.Exception? __exception_500 = null;
-                                global::G.ServerlessListRootResponse3? __value_500 = null;
+                                global::G.ServerlessListRootResponse? __value_500 = null;
                                 try
                                 {
                                     if (__effectiveReadResponseAsString)
                                     {
                                         __content_500 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
-                                        __value_500 = global::G.ServerlessListRootResponse3.FromJson(__content_500, JsonSerializerOptions);
+                                        __value_500 = global::G.ServerlessListRootResponse.FromJson(__content_500, JsonSerializerOptions);
                                     }
                                     else
                                     {
                                         __content_500 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
 
-                                        __value_500 = global::G.ServerlessListRootResponse3.FromJson(__content_500, JsonSerializerOptions);
+                                        __value_500 = global::G.ServerlessListRootResponse.FromJson(__content_500, JsonSerializerOptions);
                                     }
                                 }
                                 catch (global::System.Exception __ex)
@@ -420,7 +420,7 @@ namespace G
                                 }
 
 
-                                throw global::G.ApiException<global::G.ServerlessListRootResponse3>.Create(
+                                throw global::G.ApiException<global::G.ServerlessListRootResponse>.Create(
                                     statusCode: __response.StatusCode,
                                     message: __content_500 ?? __response.ReasonPhrase ?? string.Empty,
                                     innerException: __exception_500,

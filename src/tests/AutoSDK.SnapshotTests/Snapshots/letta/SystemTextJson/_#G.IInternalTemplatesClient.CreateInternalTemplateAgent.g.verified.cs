@@ -1,4 +1,4 @@
-﻿//HintName: G.IInternalTemplatesClient.CreateInternalTemplateAgent.g.cs
+//HintName: G.IInternalTemplatesClient.CreateInternalTemplateAgent.g.cs
 #nullable enable
 
 #pragma warning disable CS0618 // Type or member is obsolete
@@ -150,7 +150,7 @@ namespace G
             global::System.Collections.Generic.IList<string>? toolIds = default,
             global::System.Collections.Generic.IList<string>? folderIds = default,
             global::System.Collections.Generic.IList<string>? blockIds = default,
-            global::System.Collections.Generic.IList<global::G.ToolRulesVariant1Item3>? toolRules = default,
+            global::System.Collections.Generic.IList<global::G.ToolRulesVariant1Item4>? toolRules = default,
             global::System.Collections.Generic.IList<string>? tags = default,
             string? system = default,
             global::G.AgentType? agentType = default,
@@ -162,7 +162,7 @@ namespace G
             object? metadata = default,
             string? model = default,
             string? embedding = default,
-            global::G.ModelSettingsVariant17? modelSettings = default,
+            global::G.ModelSettingsVariant19? modelSettings = default,
             global::G.CompactionSettingsInput? compactionSettings = default,
             int? contextWindowLimit = default,
             global::System.Collections.Generic.Dictionary<string, string>? secrets = default,

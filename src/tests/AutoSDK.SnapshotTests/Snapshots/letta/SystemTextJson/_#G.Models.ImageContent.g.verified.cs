@@ -1,4 +1,4 @@
-﻿//HintName: G.Models.ImageContent.g.cs
+//HintName: G.Models.ImageContent.g.cs
 
 #nullable enable
 
@@ -20,9 +20,9 @@ namespace G
         /// The source of the image.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("source")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.SourceJsonConverter))]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.Source2JsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::G.Source Source { get; set; }
+        public required global::G.Source2 Source { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -44,7 +44,7 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public ImageContent(
-            global::G.Source source,
+            global::G.Source2 source,
             string? type)
         {
             this.Type = type;

@@ -13,15 +13,15 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.ResponseTextBlockCitationsVariant1ItemDiscriminatorType? Type { get; }
+        public global::G.BetaResponseTextBlockCitationsVariant1ItemDiscriminatorType? Type { get; }
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        public global::G.ResponseCharLocationCitation? CharLocation { get; init; }
+        public global::G.BetaResponseCharLocationCitation? CharLocation { get; init; }
 #else
-        public global::G.ResponseCharLocationCitation? CharLocation { get; }
+        public global::G.BetaResponseCharLocationCitation? CharLocation { get; }
 #endif
 
         /// <summary>
@@ -39,7 +39,7 @@ namespace G
 #if NET6_0_OR_GREATER
             [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
 #endif
-            out global::G.ResponseCharLocationCitation? value)
+            out global::G.BetaResponseCharLocationCitation? value)
         {
             value = CharLocation;
             return IsCharLocation;
@@ -48,7 +48,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.ResponseCharLocationCitation PickCharLocation() => CharLocation is { } value
+        public global::G.BetaResponseCharLocationCitation PickCharLocation() => CharLocation is { } value
             ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'CharLocation' but the value was {ToString()}.");
 
@@ -56,9 +56,9 @@ namespace G
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        public global::G.ResponsePageLocationCitation? PageLocation { get; init; }
+        public global::G.BetaResponsePageLocationCitation? PageLocation { get; init; }
 #else
-        public global::G.ResponsePageLocationCitation? PageLocation { get; }
+        public global::G.BetaResponsePageLocationCitation? PageLocation { get; }
 #endif
 
         /// <summary>
@@ -76,7 +76,7 @@ namespace G
 #if NET6_0_OR_GREATER
             [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
 #endif
-            out global::G.ResponsePageLocationCitation? value)
+            out global::G.BetaResponsePageLocationCitation? value)
         {
             value = PageLocation;
             return IsPageLocation;
@@ -85,7 +85,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.ResponsePageLocationCitation PickPageLocation() => PageLocation is { } value
+        public global::G.BetaResponsePageLocationCitation PickPageLocation() => PageLocation is { } value
             ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'PageLocation' but the value was {ToString()}.");
 
@@ -93,9 +93,9 @@ namespace G
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        public global::G.ResponseContentBlockLocationCitation? ContentBlockLocation { get; init; }
+        public global::G.BetaResponseContentBlockLocationCitation? ContentBlockLocation { get; init; }
 #else
-        public global::G.ResponseContentBlockLocationCitation? ContentBlockLocation { get; }
+        public global::G.BetaResponseContentBlockLocationCitation? ContentBlockLocation { get; }
 #endif
 
         /// <summary>
@@ -113,7 +113,7 @@ namespace G
 #if NET6_0_OR_GREATER
             [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
 #endif
-            out global::G.ResponseContentBlockLocationCitation? value)
+            out global::G.BetaResponseContentBlockLocationCitation? value)
         {
             value = ContentBlockLocation;
             return IsContentBlockLocation;
@@ -122,23 +122,23 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.ResponseContentBlockLocationCitation PickContentBlockLocation() => ContentBlockLocation is { } value
+        public global::G.BetaResponseContentBlockLocationCitation PickContentBlockLocation() => ContentBlockLocation is { } value
             ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'ContentBlockLocation' but the value was {ToString()}.");
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator CitationsVariant1Item4(global::G.ResponseCharLocationCitation value) => new CitationsVariant1Item4((global::G.ResponseCharLocationCitation?)value);
+        public static implicit operator CitationsVariant1Item4(global::G.BetaResponseCharLocationCitation value) => new CitationsVariant1Item4((global::G.BetaResponseCharLocationCitation?)value);
 
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator global::G.ResponseCharLocationCitation?(CitationsVariant1Item4 @this) => @this.CharLocation;
+        public static implicit operator global::G.BetaResponseCharLocationCitation?(CitationsVariant1Item4 @this) => @this.CharLocation;
 
         /// <summary>
         /// 
         /// </summary>
-        public CitationsVariant1Item4(global::G.ResponseCharLocationCitation? value)
+        public CitationsVariant1Item4(global::G.BetaResponseCharLocationCitation? value)
         {
             CharLocation = value;
         }
@@ -146,22 +146,22 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static CitationsVariant1Item4 FromCharLocation(global::G.ResponseCharLocationCitation? value) => new CitationsVariant1Item4(value);
+        public static CitationsVariant1Item4 FromCharLocation(global::G.BetaResponseCharLocationCitation? value) => new CitationsVariant1Item4(value);
 
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator CitationsVariant1Item4(global::G.ResponsePageLocationCitation value) => new CitationsVariant1Item4((global::G.ResponsePageLocationCitation?)value);
+        public static implicit operator CitationsVariant1Item4(global::G.BetaResponsePageLocationCitation value) => new CitationsVariant1Item4((global::G.BetaResponsePageLocationCitation?)value);
 
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator global::G.ResponsePageLocationCitation?(CitationsVariant1Item4 @this) => @this.PageLocation;
+        public static implicit operator global::G.BetaResponsePageLocationCitation?(CitationsVariant1Item4 @this) => @this.PageLocation;
 
         /// <summary>
         /// 
         /// </summary>
-        public CitationsVariant1Item4(global::G.ResponsePageLocationCitation? value)
+        public CitationsVariant1Item4(global::G.BetaResponsePageLocationCitation? value)
         {
             PageLocation = value;
         }
@@ -169,22 +169,22 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static CitationsVariant1Item4 FromPageLocation(global::G.ResponsePageLocationCitation? value) => new CitationsVariant1Item4(value);
+        public static CitationsVariant1Item4 FromPageLocation(global::G.BetaResponsePageLocationCitation? value) => new CitationsVariant1Item4(value);
 
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator CitationsVariant1Item4(global::G.ResponseContentBlockLocationCitation value) => new CitationsVariant1Item4((global::G.ResponseContentBlockLocationCitation?)value);
+        public static implicit operator CitationsVariant1Item4(global::G.BetaResponseContentBlockLocationCitation value) => new CitationsVariant1Item4((global::G.BetaResponseContentBlockLocationCitation?)value);
 
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator global::G.ResponseContentBlockLocationCitation?(CitationsVariant1Item4 @this) => @this.ContentBlockLocation;
+        public static implicit operator global::G.BetaResponseContentBlockLocationCitation?(CitationsVariant1Item4 @this) => @this.ContentBlockLocation;
 
         /// <summary>
         /// 
         /// </summary>
-        public CitationsVariant1Item4(global::G.ResponseContentBlockLocationCitation? value)
+        public CitationsVariant1Item4(global::G.BetaResponseContentBlockLocationCitation? value)
         {
             ContentBlockLocation = value;
         }
@@ -192,16 +192,16 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static CitationsVariant1Item4 FromContentBlockLocation(global::G.ResponseContentBlockLocationCitation? value) => new CitationsVariant1Item4(value);
+        public static CitationsVariant1Item4 FromContentBlockLocation(global::G.BetaResponseContentBlockLocationCitation? value) => new CitationsVariant1Item4(value);
 
         /// <summary>
         /// 
         /// </summary>
         public CitationsVariant1Item4(
-            global::G.ResponseTextBlockCitationsVariant1ItemDiscriminatorType? type,
-            global::G.ResponseCharLocationCitation? charLocation,
-            global::G.ResponsePageLocationCitation? pageLocation,
-            global::G.ResponseContentBlockLocationCitation? contentBlockLocation
+            global::G.BetaResponseTextBlockCitationsVariant1ItemDiscriminatorType? type,
+            global::G.BetaResponseCharLocationCitation? charLocation,
+            global::G.BetaResponsePageLocationCitation? pageLocation,
+            global::G.BetaResponseContentBlockLocationCitation? contentBlockLocation
             )
         {
             Type = type;
@@ -241,9 +241,9 @@ namespace G
         /// 
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<global::G.ResponseCharLocationCitation, TResult>? charLocation = null,
-            global::System.Func<global::G.ResponsePageLocationCitation, TResult>? pageLocation = null,
-            global::System.Func<global::G.ResponseContentBlockLocationCitation, TResult>? contentBlockLocation = null,
+            global::System.Func<global::G.BetaResponseCharLocationCitation, TResult>? charLocation = null,
+            global::System.Func<global::G.BetaResponsePageLocationCitation, TResult>? pageLocation = null,
+            global::System.Func<global::G.BetaResponseContentBlockLocationCitation, TResult>? contentBlockLocation = null,
             bool validate = true)
         {
             if (validate)
@@ -271,11 +271,11 @@ namespace G
         /// 
         /// </summary>
         public void Match(
-            global::System.Action<global::G.ResponseCharLocationCitation>? charLocation = null,
+            global::System.Action<global::G.BetaResponseCharLocationCitation>? charLocation = null,
 
-            global::System.Action<global::G.ResponsePageLocationCitation>? pageLocation = null,
+            global::System.Action<global::G.BetaResponsePageLocationCitation>? pageLocation = null,
 
-            global::System.Action<global::G.ResponseContentBlockLocationCitation>? contentBlockLocation = null,
+            global::System.Action<global::G.BetaResponseContentBlockLocationCitation>? contentBlockLocation = null,
             bool validate = true)
         {
             if (validate)
@@ -301,9 +301,9 @@ namespace G
         /// 
         /// </summary>
         public void Switch(
-            global::System.Action<global::G.ResponseCharLocationCitation>? charLocation = null,
-            global::System.Action<global::G.ResponsePageLocationCitation>? pageLocation = null,
-            global::System.Action<global::G.ResponseContentBlockLocationCitation>? contentBlockLocation = null,
+            global::System.Action<global::G.BetaResponseCharLocationCitation>? charLocation = null,
+            global::System.Action<global::G.BetaResponsePageLocationCitation>? pageLocation = null,
+            global::System.Action<global::G.BetaResponseContentBlockLocationCitation>? contentBlockLocation = null,
             bool validate = true)
         {
             if (validate)
@@ -333,11 +333,11 @@ namespace G
             var fields = new object?[]
             {
                 CharLocation,
-                typeof(global::G.ResponseCharLocationCitation),
+                typeof(global::G.BetaResponseCharLocationCitation),
                 PageLocation,
-                typeof(global::G.ResponsePageLocationCitation),
+                typeof(global::G.BetaResponsePageLocationCitation),
                 ContentBlockLocation,
-                typeof(global::G.ResponseContentBlockLocationCitation),
+                typeof(global::G.BetaResponseContentBlockLocationCitation),
             };
             const int offset = unchecked((int)2166136261);
             const int prime = 16777619;
@@ -354,9 +354,9 @@ namespace G
         public bool Equals(CitationsVariant1Item4 other)
         {
             return
-                global::System.Collections.Generic.EqualityComparer<global::G.ResponseCharLocationCitation?>.Default.Equals(CharLocation, other.CharLocation) &&
-                global::System.Collections.Generic.EqualityComparer<global::G.ResponsePageLocationCitation?>.Default.Equals(PageLocation, other.PageLocation) &&
-                global::System.Collections.Generic.EqualityComparer<global::G.ResponseContentBlockLocationCitation?>.Default.Equals(ContentBlockLocation, other.ContentBlockLocation) 
+                global::System.Collections.Generic.EqualityComparer<global::G.BetaResponseCharLocationCitation?>.Default.Equals(CharLocation, other.CharLocation) &&
+                global::System.Collections.Generic.EqualityComparer<global::G.BetaResponsePageLocationCitation?>.Default.Equals(PageLocation, other.PageLocation) &&
+                global::System.Collections.Generic.EqualityComparer<global::G.BetaResponseContentBlockLocationCitation?>.Default.Equals(ContentBlockLocation, other.ContentBlockLocation) 
                 ;
         }
 

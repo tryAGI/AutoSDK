@@ -64,7 +64,7 @@ namespace G
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::G.ApiException"></exception>
         [global::System.Obsolete("This method marked as deprecated.")]
-        public async global::System.Threading.Tasks.Task<global::G.Source2> CreateSourceAsync(
+        public async global::System.Threading.Tasks.Task<global::G.Source> CreateSourceAsync(
 
             global::G.SourceCreate request,
             global::G.AutoSDKRequestOptions? requestOptions = default,
@@ -88,7 +88,7 @@ namespace G
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::G.ApiException"></exception>
         [global::System.Obsolete("This method marked as deprecated.")]
-        public async global::System.Threading.Tasks.Task<global::G.AutoSDKHttpResponse<global::G.Source2>> CreateSourceAsResponseAsync(
+        public async global::System.Threading.Tasks.Task<global::G.AutoSDKHttpResponse<global::G.Source>> CreateSourceAsResponseAsync(
 
             global::G.SourceCreate request,
             global::G.AutoSDKRequestOptions? requestOptions = default,
@@ -414,9 +414,9 @@ namespace G
                                 {
                                     __response.EnsureSuccessStatusCode();
 
-                                    var __value = global::G.Source2.FromJson(__content, JsonSerializerOptions) ??
+                                    var __value = global::G.Source.FromJson(__content, JsonSerializerOptions) ??
                                         throw new global::System.InvalidOperationException($"Response deserialization failed for \"{__content}\" ");
-                                    return new global::G.AutoSDKHttpResponse<global::G.Source2>(
+                                    return new global::G.AutoSDKHttpResponse<global::G.Source>(
                                         statusCode: __response.StatusCode,
                                         headers: global::G.AutoSDKHttpResponse.CreateHeaders(__response),
                                         requestUri: __response.RequestMessage?.RequestUri,
@@ -446,9 +446,9 @@ namespace G
                 #endif
                                     ).ConfigureAwait(false);
 
-                                    var __value = await global::G.Source2.FromJsonStreamAsync(__content, JsonSerializerOptions).ConfigureAwait(false) ??
+                                    var __value = await global::G.Source.FromJsonStreamAsync(__content, JsonSerializerOptions).ConfigureAwait(false) ??
                                         throw new global::System.InvalidOperationException("Response deserialization failed.");
-                                    return new global::G.AutoSDKHttpResponse<global::G.Source2>(
+                                    return new global::G.AutoSDKHttpResponse<global::G.Source>(
                                         statusCode: __response.StatusCode,
                                         headers: global::G.AutoSDKHttpResponse.CreateHeaders(__response),
                                         requestUri: __response.RequestMessage?.RequestUri,
@@ -517,7 +517,7 @@ namespace G
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         [global::System.Obsolete("This method marked as deprecated.")]
-        public async global::System.Threading.Tasks.Task<global::G.Source2> CreateSourceAsync(
+        public async global::System.Threading.Tasks.Task<global::G.Source> CreateSourceAsync(
             string name,
             string? description = default,
             string? instructions = default,

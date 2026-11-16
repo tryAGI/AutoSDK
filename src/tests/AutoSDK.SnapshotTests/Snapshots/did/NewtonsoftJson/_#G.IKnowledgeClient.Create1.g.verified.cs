@@ -1,4 +1,4 @@
-﻿//HintName: G.IKnowledgeClient.Create1.g.cs
+//HintName: G.IKnowledgeClient.Create1.g.cs
 #nullable enable
 
 #pragma warning disable CS0618 // Type or member is obsolete
@@ -16,9 +16,9 @@ namespace G
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::G.ApiException"></exception>
-        global::System.Threading.Tasks.Task<global::G.Create1Response5> Create1Async(
+        global::System.Threading.Tasks.Task<global::G.Create1Response> Create1Async(
 
-            global::G.Create1Request2 request,
+            global::G.Create1Request request,
             global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
@@ -30,9 +30,9 @@ namespace G
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::G.ApiException"></exception>
-        global::System.Threading.Tasks.Task<global::G.AutoSDKHttpResponse<global::G.Create1Response5>> Create1AsResponseAsync(
+        global::System.Threading.Tasks.Task<global::G.AutoSDKHttpResponse<global::G.Create1Response>> Create1AsResponseAsync(
 
-            global::G.Create1Request2 request,
+            global::G.Create1Request request,
             global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
@@ -49,7 +49,7 @@ namespace G
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
-        global::System.Threading.Tasks.Task<global::G.Create1Response5> Create1Async(
+        global::System.Threading.Tasks.Task<global::G.Create1Response> Create1Async(
             string description,
             string name,
             global::G.AutoSDKRequestOptions? requestOptions = default,

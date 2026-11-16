@@ -1,4 +1,4 @@
-﻿//HintName: G.Api.g.cs
+//HintName: G.Api.g.cs
 
 #nullable enable
 
@@ -731,10 +731,6 @@ namespace G
                     new global::G.JsonConverters.PatchOrganizationMembersOutputStatusJsonConverter(),
 
                     new global::G.JsonConverters.PatchOrganizationMembersOutputStatusNullableJsonConverter(),
-
-                    new global::G.JsonConverters.EnvVarObjectType2JsonConverter(),
-
-                    new global::G.JsonConverters.EnvVarObjectType2NullableJsonConverter(),
 
                     new global::G.JsonConverters.EnvVarSecretCategoryJsonConverter(),
 

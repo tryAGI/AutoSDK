@@ -42,7 +42,7 @@ namespace G
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("cache_control")]
-        public global::G.CacheControlVariant113? CacheControl { get; set; }
+        public global::G.CacheControlVariant120? CacheControl { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -75,7 +75,7 @@ namespace G
             global::G.BetaInputSchema inputSchema,
             global::G.BetaToolType? type,
             string? description,
-            global::G.CacheControlVariant113? cacheControl)
+            global::G.CacheControlVariant120? cacheControl)
         {
             this.Type = type;
             this.Description = description;

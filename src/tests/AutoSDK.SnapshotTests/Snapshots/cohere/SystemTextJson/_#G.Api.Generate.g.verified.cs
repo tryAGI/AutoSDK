@@ -388,19 +388,19 @@ namespace G
                             {
                                 string? __content_400 = null;
                                 global::System.Exception? __exception_400 = null;
-                                global::G.NotFoundErrorBody3? __value_400 = null;
+                                global::G.NotFoundErrorBody? __value_400 = null;
                                 try
                                 {
                                     if (__effectiveReadResponseAsString)
                                     {
                                         __content_400 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
-                                        __value_400 = global::G.NotFoundErrorBody3.FromJson(__content_400, JsonSerializerOptions);
+                                        __value_400 = global::G.NotFoundErrorBody.FromJson(__content_400, JsonSerializerOptions);
                                     }
                                     else
                                     {
                                         __content_400 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
 
-                                        __value_400 = global::G.NotFoundErrorBody3.FromJson(__content_400, JsonSerializerOptions);
+                                        __value_400 = global::G.NotFoundErrorBody.FromJson(__content_400, JsonSerializerOptions);
                                     }
                                 }
                                 catch (global::System.Exception __ex)
@@ -409,7 +409,7 @@ namespace G
                                 }
 
 
-                                throw global::G.ApiException<global::G.NotFoundErrorBody3>.Create(
+                                throw global::G.ApiException<global::G.NotFoundErrorBody>.Create(
                                     statusCode: __response.StatusCode,
                                     message: __content_400 ?? __response.ReasonPhrase ?? string.Empty,
                                     innerException: __exception_400,
@@ -425,19 +425,19 @@ namespace G
                             {
                                 string? __content_401 = null;
                                 global::System.Exception? __exception_401 = null;
-                                global::G.UnauthorizedErrorBody5? __value_401 = null;
+                                global::G.UnauthorizedErrorBody? __value_401 = null;
                                 try
                                 {
                                     if (__effectiveReadResponseAsString)
                                     {
                                         __content_401 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
-                                        __value_401 = global::G.UnauthorizedErrorBody5.FromJson(__content_401, JsonSerializerOptions);
+                                        __value_401 = global::G.UnauthorizedErrorBody.FromJson(__content_401, JsonSerializerOptions);
                                     }
                                     else
                                     {
                                         __content_401 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
 
-                                        __value_401 = global::G.UnauthorizedErrorBody5.FromJson(__content_401, JsonSerializerOptions);
+                                        __value_401 = global::G.UnauthorizedErrorBody.FromJson(__content_401, JsonSerializerOptions);
                                     }
                                 }
                                 catch (global::System.Exception __ex)
@@ -446,7 +446,7 @@ namespace G
                                 }
 
 
-                                throw global::G.ApiException<global::G.UnauthorizedErrorBody5>.Create(
+                                throw global::G.ApiException<global::G.UnauthorizedErrorBody>.Create(
                                     statusCode: __response.StatusCode,
                                     message: __content_401 ?? __response.ReasonPhrase ?? string.Empty,
                                     innerException: __exception_401,
@@ -462,19 +462,19 @@ namespace G
                             {
                                 string? __content_403 = null;
                                 global::System.Exception? __exception_403 = null;
-                                global::G.BadRequestErrorBody3? __value_403 = null;
+                                global::G.BadRequestErrorBody? __value_403 = null;
                                 try
                                 {
                                     if (__effectiveReadResponseAsString)
                                     {
                                         __content_403 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
-                                        __value_403 = global::G.BadRequestErrorBody3.FromJson(__content_403, JsonSerializerOptions);
+                                        __value_403 = global::G.BadRequestErrorBody.FromJson(__content_403, JsonSerializerOptions);
                                     }
                                     else
                                     {
                                         __content_403 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
 
-                                        __value_403 = global::G.BadRequestErrorBody3.FromJson(__content_403, JsonSerializerOptions);
+                                        __value_403 = global::G.BadRequestErrorBody.FromJson(__content_403, JsonSerializerOptions);
                                     }
                                 }
                                 catch (global::System.Exception __ex)
@@ -483,7 +483,7 @@ namespace G
                                 }
 
 
-                                throw global::G.ApiException<global::G.BadRequestErrorBody3>.Create(
+                                throw global::G.ApiException<global::G.BadRequestErrorBody>.Create(
                                     statusCode: __response.StatusCode,
                                     message: __content_403 ?? __response.ReasonPhrase ?? string.Empty,
                                     innerException: __exception_403,
@@ -499,19 +499,19 @@ namespace G
                             {
                                 string? __content_404 = null;
                                 global::System.Exception? __exception_404 = null;
-                                global::G.UnauthorizedErrorBody6? __value_404 = null;
+                                global::G.UnauthorizedErrorBody? __value_404 = null;
                                 try
                                 {
                                     if (__effectiveReadResponseAsString)
                                     {
                                         __content_404 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
-                                        __value_404 = global::G.UnauthorizedErrorBody6.FromJson(__content_404, JsonSerializerOptions);
+                                        __value_404 = global::G.UnauthorizedErrorBody.FromJson(__content_404, JsonSerializerOptions);
                                     }
                                     else
                                     {
                                         __content_404 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
 
-                                        __value_404 = global::G.UnauthorizedErrorBody6.FromJson(__content_404, JsonSerializerOptions);
+                                        __value_404 = global::G.UnauthorizedErrorBody.FromJson(__content_404, JsonSerializerOptions);
                                     }
                                 }
                                 catch (global::System.Exception __ex)
@@ -520,7 +520,7 @@ namespace G
                                 }
 
 
-                                throw global::G.ApiException<global::G.UnauthorizedErrorBody6>.Create(
+                                throw global::G.ApiException<global::G.UnauthorizedErrorBody>.Create(
                                     statusCode: __response.StatusCode,
                                     message: __content_404 ?? __response.ReasonPhrase ?? string.Empty,
                                     innerException: __exception_404,
@@ -536,19 +536,19 @@ namespace G
                             {
                                 string? __content_422 = null;
                                 global::System.Exception? __exception_422 = null;
-                                global::G.UnprocessableEntityErrorBody3? __value_422 = null;
+                                global::G.UnprocessableEntityErrorBody? __value_422 = null;
                                 try
                                 {
                                     if (__effectiveReadResponseAsString)
                                     {
                                         __content_422 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
-                                        __value_422 = global::G.UnprocessableEntityErrorBody3.FromJson(__content_422, JsonSerializerOptions);
+                                        __value_422 = global::G.UnprocessableEntityErrorBody.FromJson(__content_422, JsonSerializerOptions);
                                     }
                                     else
                                     {
                                         __content_422 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
 
-                                        __value_422 = global::G.UnprocessableEntityErrorBody3.FromJson(__content_422, JsonSerializerOptions);
+                                        __value_422 = global::G.UnprocessableEntityErrorBody.FromJson(__content_422, JsonSerializerOptions);
                                     }
                                 }
                                 catch (global::System.Exception __ex)
@@ -557,7 +557,7 @@ namespace G
                                 }
 
 
-                                throw global::G.ApiException<global::G.UnprocessableEntityErrorBody3>.Create(
+                                throw global::G.ApiException<global::G.UnprocessableEntityErrorBody>.Create(
                                     statusCode: __response.StatusCode,
                                     message: __content_422 ?? __response.ReasonPhrase ?? string.Empty,
                                     innerException: __exception_422,
@@ -573,19 +573,19 @@ namespace G
                             {
                                 string? __content_429 = null;
                                 global::System.Exception? __exception_429 = null;
-                                global::G.GatewayTimeoutErrorBody3? __value_429 = null;
+                                global::G.GatewayTimeoutErrorBody? __value_429 = null;
                                 try
                                 {
                                     if (__effectiveReadResponseAsString)
                                     {
                                         __content_429 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
-                                        __value_429 = global::G.GatewayTimeoutErrorBody3.FromJson(__content_429, JsonSerializerOptions);
+                                        __value_429 = global::G.GatewayTimeoutErrorBody.FromJson(__content_429, JsonSerializerOptions);
                                     }
                                     else
                                     {
                                         __content_429 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
 
-                                        __value_429 = global::G.GatewayTimeoutErrorBody3.FromJson(__content_429, JsonSerializerOptions);
+                                        __value_429 = global::G.GatewayTimeoutErrorBody.FromJson(__content_429, JsonSerializerOptions);
                                     }
                                 }
                                 catch (global::System.Exception __ex)
@@ -594,7 +594,7 @@ namespace G
                                 }
 
 
-                                throw global::G.ApiException<global::G.GatewayTimeoutErrorBody3>.Create(
+                                throw global::G.ApiException<global::G.GatewayTimeoutErrorBody>.Create(
                                     statusCode: __response.StatusCode,
                                     message: __content_429 ?? __response.ReasonPhrase ?? string.Empty,
                                     innerException: __exception_429,
@@ -610,19 +610,19 @@ namespace G
                             {
                                 string? __content_498 = null;
                                 global::System.Exception? __exception_498 = null;
-                                global::G.ForbiddenErrorBody3? __value_498 = null;
+                                global::G.ForbiddenErrorBody? __value_498 = null;
                                 try
                                 {
                                     if (__effectiveReadResponseAsString)
                                     {
                                         __content_498 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
-                                        __value_498 = global::G.ForbiddenErrorBody3.FromJson(__content_498, JsonSerializerOptions);
+                                        __value_498 = global::G.ForbiddenErrorBody.FromJson(__content_498, JsonSerializerOptions);
                                     }
                                     else
                                     {
                                         __content_498 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
 
-                                        __value_498 = global::G.ForbiddenErrorBody3.FromJson(__content_498, JsonSerializerOptions);
+                                        __value_498 = global::G.ForbiddenErrorBody.FromJson(__content_498, JsonSerializerOptions);
                                     }
                                 }
                                 catch (global::System.Exception __ex)
@@ -631,7 +631,7 @@ namespace G
                                 }
 
 
-                                throw global::G.ApiException<global::G.ForbiddenErrorBody3>.Create(
+                                throw global::G.ApiException<global::G.ForbiddenErrorBody>.Create(
                                     statusCode: __response.StatusCode,
                                     message: __content_498 ?? __response.ReasonPhrase ?? string.Empty,
                                     innerException: __exception_498,
@@ -647,19 +647,19 @@ namespace G
                             {
                                 string? __content_499 = null;
                                 global::System.Exception? __exception_499 = null;
-                                global::G.InternalServerErrorBody3? __value_499 = null;
+                                global::G.InternalServerErrorBody? __value_499 = null;
                                 try
                                 {
                                     if (__effectiveReadResponseAsString)
                                     {
                                         __content_499 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
-                                        __value_499 = global::G.InternalServerErrorBody3.FromJson(__content_499, JsonSerializerOptions);
+                                        __value_499 = global::G.InternalServerErrorBody.FromJson(__content_499, JsonSerializerOptions);
                                     }
                                     else
                                     {
                                         __content_499 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
 
-                                        __value_499 = global::G.InternalServerErrorBody3.FromJson(__content_499, JsonSerializerOptions);
+                                        __value_499 = global::G.InternalServerErrorBody.FromJson(__content_499, JsonSerializerOptions);
                                     }
                                 }
                                 catch (global::System.Exception __ex)
@@ -668,7 +668,7 @@ namespace G
                                 }
 
 
-                                throw global::G.ApiException<global::G.InternalServerErrorBody3>.Create(
+                                throw global::G.ApiException<global::G.InternalServerErrorBody>.Create(
                                     statusCode: __response.StatusCode,
                                     message: __content_499 ?? __response.ReasonPhrase ?? string.Empty,
                                     innerException: __exception_499,
@@ -684,19 +684,19 @@ namespace G
                             {
                                 string? __content_500 = null;
                                 global::System.Exception? __exception_500 = null;
-                                global::G.ServiceUnavailableErrorBody3? __value_500 = null;
+                                global::G.ServiceUnavailableErrorBody? __value_500 = null;
                                 try
                                 {
                                     if (__effectiveReadResponseAsString)
                                     {
                                         __content_500 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
-                                        __value_500 = global::G.ServiceUnavailableErrorBody3.FromJson(__content_500, JsonSerializerOptions);
+                                        __value_500 = global::G.ServiceUnavailableErrorBody.FromJson(__content_500, JsonSerializerOptions);
                                     }
                                     else
                                     {
                                         __content_500 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
 
-                                        __value_500 = global::G.ServiceUnavailableErrorBody3.FromJson(__content_500, JsonSerializerOptions);
+                                        __value_500 = global::G.ServiceUnavailableErrorBody.FromJson(__content_500, JsonSerializerOptions);
                                     }
                                 }
                                 catch (global::System.Exception __ex)
@@ -705,7 +705,7 @@ namespace G
                                 }
 
 
-                                throw global::G.ApiException<global::G.ServiceUnavailableErrorBody3>.Create(
+                                throw global::G.ApiException<global::G.ServiceUnavailableErrorBody>.Create(
                                     statusCode: __response.StatusCode,
                                     message: __content_500 ?? __response.ReasonPhrase ?? string.Empty,
                                     innerException: __exception_500,
@@ -721,19 +721,19 @@ namespace G
                             {
                                 string? __content_501 = null;
                                 global::System.Exception? __exception_501 = null;
-                                global::G.NotImplementedErrorBody3? __value_501 = null;
+                                global::G.NotImplementedErrorBody? __value_501 = null;
                                 try
                                 {
                                     if (__effectiveReadResponseAsString)
                                     {
                                         __content_501 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
-                                        __value_501 = global::G.NotImplementedErrorBody3.FromJson(__content_501, JsonSerializerOptions);
+                                        __value_501 = global::G.NotImplementedErrorBody.FromJson(__content_501, JsonSerializerOptions);
                                     }
                                     else
                                     {
                                         __content_501 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
 
-                                        __value_501 = global::G.NotImplementedErrorBody3.FromJson(__content_501, JsonSerializerOptions);
+                                        __value_501 = global::G.NotImplementedErrorBody.FromJson(__content_501, JsonSerializerOptions);
                                     }
                                 }
                                 catch (global::System.Exception __ex)
@@ -742,7 +742,7 @@ namespace G
                                 }
 
 
-                                throw global::G.ApiException<global::G.NotImplementedErrorBody3>.Create(
+                                throw global::G.ApiException<global::G.NotImplementedErrorBody>.Create(
                                     statusCode: __response.StatusCode,
                                     message: __content_501 ?? __response.ReasonPhrase ?? string.Empty,
                                     innerException: __exception_501,
@@ -758,19 +758,19 @@ namespace G
                             {
                                 string? __content_503 = null;
                                 global::System.Exception? __exception_503 = null;
-                                global::G.TooManyRequestsErrorBody3? __value_503 = null;
+                                global::G.TooManyRequestsErrorBody? __value_503 = null;
                                 try
                                 {
                                     if (__effectiveReadResponseAsString)
                                     {
                                         __content_503 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
-                                        __value_503 = global::G.TooManyRequestsErrorBody3.FromJson(__content_503, JsonSerializerOptions);
+                                        __value_503 = global::G.TooManyRequestsErrorBody.FromJson(__content_503, JsonSerializerOptions);
                                     }
                                     else
                                     {
                                         __content_503 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
 
-                                        __value_503 = global::G.TooManyRequestsErrorBody3.FromJson(__content_503, JsonSerializerOptions);
+                                        __value_503 = global::G.TooManyRequestsErrorBody.FromJson(__content_503, JsonSerializerOptions);
                                     }
                                 }
                                 catch (global::System.Exception __ex)
@@ -779,7 +779,7 @@ namespace G
                                 }
 
 
-                                throw global::G.ApiException<global::G.TooManyRequestsErrorBody3>.Create(
+                                throw global::G.ApiException<global::G.TooManyRequestsErrorBody>.Create(
                                     statusCode: __response.StatusCode,
                                     message: __content_503 ?? __response.ReasonPhrase ?? string.Empty,
                                     innerException: __exception_503,
@@ -795,19 +795,19 @@ namespace G
                             {
                                 string? __content_504 = null;
                                 global::System.Exception? __exception_504 = null;
-                                global::G.InvalidTokenErrorBody3? __value_504 = null;
+                                global::G.InvalidTokenErrorBody? __value_504 = null;
                                 try
                                 {
                                     if (__effectiveReadResponseAsString)
                                     {
                                         __content_504 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
-                                        __value_504 = global::G.InvalidTokenErrorBody3.FromJson(__content_504, JsonSerializerOptions);
+                                        __value_504 = global::G.InvalidTokenErrorBody.FromJson(__content_504, JsonSerializerOptions);
                                     }
                                     else
                                     {
                                         __content_504 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
 
-                                        __value_504 = global::G.InvalidTokenErrorBody3.FromJson(__content_504, JsonSerializerOptions);
+                                        __value_504 = global::G.InvalidTokenErrorBody.FromJson(__content_504, JsonSerializerOptions);
                                     }
                                 }
                                 catch (global::System.Exception __ex)
@@ -816,7 +816,7 @@ namespace G
                                 }
 
 
-                                throw global::G.ApiException<global::G.InvalidTokenErrorBody3>.Create(
+                                throw global::G.ApiException<global::G.InvalidTokenErrorBody>.Create(
                                     statusCode: __response.StatusCode,
                                     message: __content_504 ?? __response.ReasonPhrase ?? string.Empty,
                                     innerException: __exception_504,

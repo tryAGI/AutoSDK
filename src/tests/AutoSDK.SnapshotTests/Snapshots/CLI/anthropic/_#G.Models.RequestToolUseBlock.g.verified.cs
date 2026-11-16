@@ -1,4 +1,4 @@
-﻿//HintName: G.Models.RequestToolUseBlock.g.cs
+//HintName: G.Models.RequestToolUseBlock.g.cs
 
 #nullable enable
 
@@ -13,7 +13,7 @@ namespace G
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("cache_control")]
-        public global::G.CacheControlVariant118? CacheControl { get; set; }
+        public global::G.CacheControlVariant14? CacheControl { get; set; }
 
         /// <summary>
         /// 
@@ -64,7 +64,7 @@ namespace G
             string id,
             string name,
             object input,
-            global::G.CacheControlVariant118? cacheControl,
+            global::G.CacheControlVariant14? cacheControl,
             global::G.RequestToolUseBlockType type)
         {
             this.CacheControl = cacheControl;

@@ -1,4 +1,4 @@
-﻿//HintName: G.IAgentsPlatformClient.Update6.g.cs
+//HintName: G.IAgentsPlatformClient.Update6.g.cs
 #nullable enable
 
 namespace G
@@ -52,7 +52,7 @@ namespace G
         /// <exception cref="global::System.InvalidOperationException"></exception>
         global::System.Threading.Tasks.Task<global::G.GetConvAIDashboardSettingsResponseModel> Update6Async(
             string? xiApiKey = default,
-            global::System.Collections.Generic.IList<global::G.ChartsItem2>? charts = default,
+            global::System.Collections.Generic.IList<global::G.ChartsItem>? charts = default,
             global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }

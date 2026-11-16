@@ -1,4 +1,4 @@
-﻿//HintName: G.Models.CreateChatCompletionResponse4.g.cs
+//HintName: G.Models.CreateChatCompletionResponse4.g.cs
 
 #nullable enable
 
@@ -13,8 +13,8 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("status")]
-        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.CreateChatCompletionResponseStatus3JsonConverter))]
-        public global::G.CreateChatCompletionResponseStatus3? Status { get; set; }
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.CreateChatCompletionResponseStatusJsonConverter))]
+        public global::G.CreateChatCompletionResponseStatus? Status { get; set; }
 
         /// <summary>
         /// Example: Trial has ended, please add payment method.
@@ -37,7 +37,7 @@ namespace G
         /// Example: Trial has ended, please add payment method.
         /// </param>
         public CreateChatCompletionResponse4(
-            global::G.CreateChatCompletionResponseStatus3? status,
+            global::G.CreateChatCompletionResponseStatus? status,
             string? message)
         {
             this.Status = status;

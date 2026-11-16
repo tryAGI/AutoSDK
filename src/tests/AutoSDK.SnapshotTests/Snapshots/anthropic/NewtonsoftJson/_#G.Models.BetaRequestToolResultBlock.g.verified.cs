@@ -1,4 +1,4 @@
-﻿//HintName: G.Models.BetaRequestToolResultBlock.g.cs
+//HintName: G.Models.BetaRequestToolResultBlock.g.cs
 
 #nullable enable
 
@@ -13,7 +13,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("cache_control")]
-        public global::G.CacheControlVariant19? CacheControl { get; set; }
+        public global::G.CacheControlVariant116? CacheControl { get; set; }
 
         /// <summary>
         /// 
@@ -38,7 +38,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("content")]
-        public global::G.AnyOf<string, global::System.Collections.Generic.IList<global::G.ContentVariant2Item>>? Content { get; set; }
+        public global::G.AnyOf<string, global::System.Collections.Generic.IList<global::G.ContentVariant2Item2>>? Content { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -56,10 +56,10 @@ namespace G
         /// <param name="content"></param>
         public BetaRequestToolResultBlock(
             string toolUseId,
-            global::G.CacheControlVariant19? cacheControl,
+            global::G.CacheControlVariant116? cacheControl,
             global::G.BetaRequestToolResultBlockType type,
             bool? isError,
-            global::G.AnyOf<string, global::System.Collections.Generic.IList<global::G.ContentVariant2Item>>? content)
+            global::G.AnyOf<string, global::System.Collections.Generic.IList<global::G.ContentVariant2Item2>>? content)
         {
             this.CacheControl = cacheControl;
             this.Type = type;

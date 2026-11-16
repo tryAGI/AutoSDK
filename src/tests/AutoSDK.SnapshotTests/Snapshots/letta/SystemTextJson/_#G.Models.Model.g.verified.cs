@@ -186,7 +186,7 @@ namespace G
         /// The response format for the model's output. Supports text, json_object, and json_schema (structured outputs). Can be set via model_settings.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("response_format")]
-        public global::G.ResponseFormatVariant110? ResponseFormat { get; set; }
+        public global::G.ResponseFormatVariant116? ResponseFormat { get; set; }
 
         /// <summary>
         /// Enable strict mode for tool calling. When true, tool schemas include strict: true and additionalProperties: false, guaranteeing tool outputs match JSON schemas.<br/>
@@ -298,7 +298,7 @@ namespace G
             string? providerName,
             string? modelType,
             global::G.ModelEffort? effort,
-            global::G.ResponseFormatVariant110? responseFormat,
+            global::G.ResponseFormatVariant116? responseFormat,
             bool? strict,
             bool? returnLogprobs,
             int? topLogprobs,

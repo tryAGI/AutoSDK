@@ -1,4 +1,4 @@
-﻿//HintName: G.Models.ListExportRequestsV2Response6.g.cs
+//HintName: G.Models.ListExportRequestsV2Response6.g.cs
 
 #nullable enable
 
@@ -13,8 +13,8 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("status")]
-        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.ListExportRequestsV2ResponseStatus4JsonConverter))]
-        public global::G.ListExportRequestsV2ResponseStatus4? Status { get; set; }
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.ListExportRequestsV2ResponseStatusJsonConverter))]
+        public global::G.ListExportRequestsV2ResponseStatus? Status { get; set; }
 
         /// <summary>
         /// Example: An unexpected server error occurred.
@@ -37,7 +37,7 @@ namespace G
         /// Example: An unexpected server error occurred.
         /// </param>
         public ListExportRequestsV2Response6(
-            global::G.ListExportRequestsV2ResponseStatus4? status,
+            global::G.ListExportRequestsV2ResponseStatus? status,
             string? message)
         {
             this.Status = status;

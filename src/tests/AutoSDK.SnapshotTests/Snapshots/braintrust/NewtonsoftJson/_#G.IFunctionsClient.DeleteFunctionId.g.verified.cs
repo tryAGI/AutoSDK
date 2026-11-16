@@ -1,4 +1,4 @@
-﻿//HintName: G.IFunctionsClient.DeleteFunctionId.g.cs
+//HintName: G.IFunctionsClient.DeleteFunctionId.g.cs
 #nullable enable
 
 namespace G
@@ -15,7 +15,7 @@ namespace G
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::G.ApiException"></exception>
-        global::System.Threading.Tasks.Task<global::G.Function2> DeleteFunctionIdAsync(
+        global::System.Threading.Tasks.Task<global::G.Function> DeleteFunctionIdAsync(
             global::System.Guid functionId,
             global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
@@ -29,7 +29,7 @@ namespace G
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::G.ApiException"></exception>
-        global::System.Threading.Tasks.Task<global::G.AutoSDKHttpResponse<global::G.Function2>> DeleteFunctionIdAsResponseAsync(
+        global::System.Threading.Tasks.Task<global::G.AutoSDKHttpResponse<global::G.Function>> DeleteFunctionIdAsResponseAsync(
             global::System.Guid functionId,
             global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);

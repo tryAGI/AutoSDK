@@ -45,12 +45,12 @@ namespace G
         partial void PrepareCreateClipArguments(
             global::System.Net.Http.HttpClient httpClient,
             ref string? xApiKeyExternal,
-            global::G.CreateClipRequest2 request);
+            global::G.CreateClipRequest request);
         partial void PrepareCreateClipRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
             string? xApiKeyExternal,
-            global::G.CreateClipRequest2 request);
+            global::G.CreateClipRequest request);
         partial void ProcessCreateClipResponse(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage);
@@ -68,9 +68,9 @@ namespace G
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::G.ApiException"></exception>
-        public async global::System.Threading.Tasks.Task<global::G.CreateClipResponse2> CreateClipAsync(
+        public async global::System.Threading.Tasks.Task<global::G.CreateClipResponse> CreateClipAsync(
 
-            global::G.CreateClipRequest2 request,
+            global::G.CreateClipRequest request,
             string? xApiKeyExternal = default,
             global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default)
@@ -93,9 +93,9 @@ namespace G
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::G.ApiException"></exception>
-        public async global::System.Threading.Tasks.Task<global::G.AutoSDKHttpResponse<global::G.CreateClipResponse2>> CreateClipAsResponseAsync(
+        public async global::System.Threading.Tasks.Task<global::G.AutoSDKHttpResponse<global::G.CreateClipResponse>> CreateClipAsResponseAsync(
 
-            global::G.CreateClipRequest2 request,
+            global::G.CreateClipRequest request,
             string? xApiKeyExternal = default,
             global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default)
@@ -374,19 +374,19 @@ namespace G
                             {
                                 string? __content_400 = null;
                                 global::System.Exception? __exception_400 = null;
-                                global::G.CreateClipResponse3? __value_400 = null;
+                                global::G.CreateClipResponse2? __value_400 = null;
                                 try
                                 {
                                     if (__effectiveReadResponseAsString)
                                     {
                                         __content_400 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
-                                        __value_400 = global::G.CreateClipResponse3.FromJson(__content_400, JsonSerializerOptions);
+                                        __value_400 = global::G.CreateClipResponse2.FromJson(__content_400, JsonSerializerOptions);
                                     }
                                     else
                                     {
                                         __content_400 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
 
-                                        __value_400 = global::G.CreateClipResponse3.FromJson(__content_400, JsonSerializerOptions);
+                                        __value_400 = global::G.CreateClipResponse2.FromJson(__content_400, JsonSerializerOptions);
                                     }
                                 }
                                 catch (global::System.Exception __ex)
@@ -395,7 +395,7 @@ namespace G
                                 }
 
 
-                                throw global::G.ApiException<global::G.CreateClipResponse3>.Create(
+                                throw global::G.ApiException<global::G.CreateClipResponse2>.Create(
                                     statusCode: __response.StatusCode,
                                     message: __content_400 ?? __response.ReasonPhrase ?? string.Empty,
                                     innerException: __exception_400,
@@ -411,19 +411,19 @@ namespace G
                             {
                                 string? __content_401 = null;
                                 global::System.Exception? __exception_401 = null;
-                                global::G.CreateClipResponse4? __value_401 = null;
+                                global::G.CreateClipResponse3? __value_401 = null;
                                 try
                                 {
                                     if (__effectiveReadResponseAsString)
                                     {
                                         __content_401 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
-                                        __value_401 = global::G.CreateClipResponse4.FromJson(__content_401, JsonSerializerOptions);
+                                        __value_401 = global::G.CreateClipResponse3.FromJson(__content_401, JsonSerializerOptions);
                                     }
                                     else
                                     {
                                         __content_401 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
 
-                                        __value_401 = global::G.CreateClipResponse4.FromJson(__content_401, JsonSerializerOptions);
+                                        __value_401 = global::G.CreateClipResponse3.FromJson(__content_401, JsonSerializerOptions);
                                     }
                                 }
                                 catch (global::System.Exception __ex)
@@ -432,7 +432,7 @@ namespace G
                                 }
 
 
-                                throw global::G.ApiException<global::G.CreateClipResponse4>.Create(
+                                throw global::G.ApiException<global::G.CreateClipResponse3>.Create(
                                     statusCode: __response.StatusCode,
                                     message: __content_401 ?? __response.ReasonPhrase ?? string.Empty,
                                     innerException: __exception_401,
@@ -448,19 +448,19 @@ namespace G
                             {
                                 string? __content_402 = null;
                                 global::System.Exception? __exception_402 = null;
-                                global::G.CreateClipResponse5? __value_402 = null;
+                                global::G.CreateClipResponse4? __value_402 = null;
                                 try
                                 {
                                     if (__effectiveReadResponseAsString)
                                     {
                                         __content_402 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
-                                        __value_402 = global::G.CreateClipResponse5.FromJson(__content_402, JsonSerializerOptions);
+                                        __value_402 = global::G.CreateClipResponse4.FromJson(__content_402, JsonSerializerOptions);
                                     }
                                     else
                                     {
                                         __content_402 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
 
-                                        __value_402 = global::G.CreateClipResponse5.FromJson(__content_402, JsonSerializerOptions);
+                                        __value_402 = global::G.CreateClipResponse4.FromJson(__content_402, JsonSerializerOptions);
                                     }
                                 }
                                 catch (global::System.Exception __ex)
@@ -469,7 +469,7 @@ namespace G
                                 }
 
 
-                                throw global::G.ApiException<global::G.CreateClipResponse5>.Create(
+                                throw global::G.ApiException<global::G.CreateClipResponse4>.Create(
                                     statusCode: __response.StatusCode,
                                     message: __content_402 ?? __response.ReasonPhrase ?? string.Empty,
                                     innerException: __exception_402,
@@ -485,19 +485,19 @@ namespace G
                             {
                                 string? __content_403 = null;
                                 global::System.Exception? __exception_403 = null;
-                                global::G.CreateClipResponse6? __value_403 = null;
+                                global::G.CreateClipResponse5? __value_403 = null;
                                 try
                                 {
                                     if (__effectiveReadResponseAsString)
                                     {
                                         __content_403 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
-                                        __value_403 = global::G.CreateClipResponse6.FromJson(__content_403, JsonSerializerOptions);
+                                        __value_403 = global::G.CreateClipResponse5.FromJson(__content_403, JsonSerializerOptions);
                                     }
                                     else
                                     {
                                         __content_403 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
 
-                                        __value_403 = global::G.CreateClipResponse6.FromJson(__content_403, JsonSerializerOptions);
+                                        __value_403 = global::G.CreateClipResponse5.FromJson(__content_403, JsonSerializerOptions);
                                     }
                                 }
                                 catch (global::System.Exception __ex)
@@ -506,7 +506,7 @@ namespace G
                                 }
 
 
-                                throw global::G.ApiException<global::G.CreateClipResponse6>.Create(
+                                throw global::G.ApiException<global::G.CreateClipResponse5>.Create(
                                     statusCode: __response.StatusCode,
                                     message: __content_403 ?? __response.ReasonPhrase ?? string.Empty,
                                     innerException: __exception_403,
@@ -522,19 +522,19 @@ namespace G
                             {
                                 string? __content_451 = null;
                                 global::System.Exception? __exception_451 = null;
-                                global::G.CreateClipResponse7? __value_451 = null;
+                                global::G.CreateClipResponse6? __value_451 = null;
                                 try
                                 {
                                     if (__effectiveReadResponseAsString)
                                     {
                                         __content_451 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
-                                        __value_451 = global::G.CreateClipResponse7.FromJson(__content_451, JsonSerializerOptions);
+                                        __value_451 = global::G.CreateClipResponse6.FromJson(__content_451, JsonSerializerOptions);
                                     }
                                     else
                                     {
                                         __content_451 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
 
-                                        __value_451 = global::G.CreateClipResponse7.FromJson(__content_451, JsonSerializerOptions);
+                                        __value_451 = global::G.CreateClipResponse6.FromJson(__content_451, JsonSerializerOptions);
                                     }
                                 }
                                 catch (global::System.Exception __ex)
@@ -543,7 +543,7 @@ namespace G
                                 }
 
 
-                                throw global::G.ApiException<global::G.CreateClipResponse7>.Create(
+                                throw global::G.ApiException<global::G.CreateClipResponse6>.Create(
                                     statusCode: __response.StatusCode,
                                     message: __content_451 ?? __response.ReasonPhrase ?? string.Empty,
                                     innerException: __exception_451,
@@ -576,9 +576,9 @@ namespace G
                                 {
                                     __response.EnsureSuccessStatusCode();
 
-                                    var __value = global::G.CreateClipResponse2.FromJson(__content, JsonSerializerOptions) ??
+                                    var __value = global::G.CreateClipResponse.FromJson(__content, JsonSerializerOptions) ??
                                         throw new global::System.InvalidOperationException($"Response deserialization failed for \"{__content}\" ");
-                                    return new global::G.AutoSDKHttpResponse<global::G.CreateClipResponse2>(
+                                    return new global::G.AutoSDKHttpResponse<global::G.CreateClipResponse>(
                                         statusCode: __response.StatusCode,
                                         headers: global::G.AutoSDKHttpResponse.CreateHeaders(__response),
                                         requestUri: __response.RequestMessage?.RequestUri,
@@ -608,9 +608,9 @@ namespace G
                 #endif
                                     ).ConfigureAwait(false);
 
-                                    var __value = await global::G.CreateClipResponse2.FromJsonStreamAsync(__content, JsonSerializerOptions).ConfigureAwait(false) ??
+                                    var __value = await global::G.CreateClipResponse.FromJsonStreamAsync(__content, JsonSerializerOptions).ConfigureAwait(false) ??
                                         throw new global::System.InvalidOperationException("Response deserialization failed.");
-                                    return new global::G.AutoSDKHttpResponse<global::G.CreateClipResponse2>(
+                                    return new global::G.AutoSDKHttpResponse<global::G.CreateClipResponse>(
                                         statusCode: __response.StatusCode,
                                         headers: global::G.AutoSDKHttpResponse.CreateHeaders(__response),
                                         requestUri: __response.RequestMessage?.RequestUri,
@@ -692,14 +692,14 @@ namespace G
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
-        public async global::System.Threading.Tasks.Task<global::G.CreateClipResponse2> CreateClipAsync(
-            global::G.AnyOf<global::G.CreateClipRequestScriptVariant12, global::G.CreateClipRequestScriptVariant22> script,
+        public async global::System.Threading.Tasks.Task<global::G.CreateClipResponse> CreateClipAsync(
+            global::G.AnyOf<global::G.CreateClipRequestScriptVariant1, global::G.CreateClipRequestScriptVariant2> script,
             string? xApiKeyExternal = default,
             string? presenterId = default,
             string? driverId = default,
-            global::G.CreateClipRequestConfig2? config = default,
-            global::G.CreateClipRequestPresenterConfig2? presenterConfig = default,
-            global::G.CreateClipRequestBackground2? background = default,
+            global::G.CreateClipRequestConfig? config = default,
+            global::G.CreateClipRequestPresenterConfig? presenterConfig = default,
+            global::G.CreateClipRequestBackground? background = default,
             string? userData = default,
             string? name = default,
             string? webhook = default,
@@ -707,7 +707,7 @@ namespace G
             global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
-            var __request = new global::G.CreateClipRequest2
+            var __request = new global::G.CreateClipRequest
             {
                 PresenterId = presenterId,
                 DriverId = driverId,

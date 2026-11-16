@@ -1,4 +1,4 @@
-﻿//HintName: G.Models.GetKnowledgeBaseSummaryFolderResponseModel.g.cs
+//HintName: G.Models.GetKnowledgeBaseSummaryFolderResponseModel.g.cs
 
 #pragma warning disable CS0618 // Type or member is obsolete
 
@@ -58,7 +58,7 @@ namespace G
         /// This field is deprecated and will be removed in the future, use the separate endpoint to get dependent agents instead.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("dependent_agents", Required = global::Newtonsoft.Json.Required.Always)]
-        public global::System.Collections.Generic.IList<global::G.DependentAgentsItem2> DependentAgents { get; set; } = default!;
+        public global::System.Collections.Generic.IList<global::G.DependentAgentsItem5> DependentAgents { get; set; } = default!;
 
         /// <summary>
         /// 
@@ -106,7 +106,7 @@ namespace G
             global::G.KnowledgeBaseDocumentMetadataResponseModel metadata,
             global::System.Collections.Generic.IList<global::G.DocumentUsageModeEnum> supportedUsages,
             global::G.ResourceAccessInfo accessInfo,
-            global::System.Collections.Generic.IList<global::G.DependentAgentsItem2> dependentAgents,
+            global::System.Collections.Generic.IList<global::G.DependentAgentsItem5> dependentAgents,
             int childrenCount,
             string? folderParentId,
             global::System.Collections.Generic.IList<global::G.KnowledgeBaseFolderPathSegmentSummaryResponseModel>? folderPath,

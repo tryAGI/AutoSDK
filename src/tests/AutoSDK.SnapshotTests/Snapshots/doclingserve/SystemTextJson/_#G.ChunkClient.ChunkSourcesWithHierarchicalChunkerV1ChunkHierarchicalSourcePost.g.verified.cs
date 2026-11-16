@@ -483,10 +483,10 @@ namespace G
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<global::G.ChunkDocumentResponse> ChunkSourcesWithHierarchicalChunkerV1ChunkHierarchicalSourcePostAsync(
-            global::System.Collections.Generic.IList<global::G.SourcesItem2> sources,
+            global::System.Collections.Generic.IList<global::G.SourcesItem3> sources,
             global::G.ConvertDocumentsRequestOptions? convertOptions = default,
             bool? includeConvertedDoc = default,
-            global::G.Target2? target = default,
+            global::G.Target3? target = default,
             global::G.HierarchicalChunkerOptions? chunkingOptions = default,
             global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default)

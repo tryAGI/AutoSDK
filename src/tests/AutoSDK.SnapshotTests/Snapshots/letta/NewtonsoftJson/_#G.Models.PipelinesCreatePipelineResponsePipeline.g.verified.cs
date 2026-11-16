@@ -1,4 +1,4 @@
-﻿//HintName: G.Models.PipelinesCreatePipelineResponsePipeline.g.cs
+//HintName: G.Models.PipelinesCreatePipelineResponsePipeline.g.cs
 
 #nullable enable
 
@@ -56,7 +56,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("config", Required = global::Newtonsoft.Json.Required.Always)]
-        public global::G.Config5 Config { get; set; } = default!;
+        public global::G.Config3 Config { get; set; } = default!;
 
         /// <summary>
         /// 
@@ -159,7 +159,7 @@ namespace G
             string projectId,
             global::G.PipelinesCreatePipelineResponsePipelineIntegrationType integrationType,
             string feedId,
-            global::G.Config5 config,
+            global::G.Config3 config,
             global::System.DateTime createdAt,
             global::System.DateTime updatedAt,
             string? integrationId,

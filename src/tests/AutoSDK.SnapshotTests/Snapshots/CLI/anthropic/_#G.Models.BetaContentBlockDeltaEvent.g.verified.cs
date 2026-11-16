@@ -1,4 +1,4 @@
-﻿//HintName: G.Models.BetaContentBlockDeltaEvent.g.cs
+//HintName: G.Models.BetaContentBlockDeltaEvent.g.cs
 
 #nullable enable
 
@@ -28,9 +28,9 @@ namespace G
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("delta")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.DeltaJsonConverter))]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.Delta2JsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::G.Delta Delta { get; set; }
+        public required global::G.Delta2 Delta { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -51,7 +51,7 @@ namespace G
 #endif
         public BetaContentBlockDeltaEvent(
             int index,
-            global::G.Delta delta,
+            global::G.Delta2 delta,
             global::G.BetaContentBlockDeltaEventType type = global::G.BetaContentBlockDeltaEventType.ContentBlockDelta)
         {
             this.Type = type;

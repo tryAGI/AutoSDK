@@ -1,4 +1,4 @@
-﻿//HintName: G.Models.ASTOrOperatorNodeInput.g.cs
+//HintName: G.Models.ASTOrOperatorNodeInput.g.cs
 
 #nullable enable
 
@@ -20,7 +20,7 @@ namespace G
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("children")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::System.Collections.Generic.IList<global::G.ChildrenItem3> Children { get; set; }
+        public required global::System.Collections.Generic.IList<global::G.ChildrenItem> Children { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -41,7 +41,7 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public ASTOrOperatorNodeInput(
-            global::System.Collections.Generic.IList<global::G.ChildrenItem3> children,
+            global::System.Collections.Generic.IList<global::G.ChildrenItem> children,
             string? type)
         {
             this.Type = type;

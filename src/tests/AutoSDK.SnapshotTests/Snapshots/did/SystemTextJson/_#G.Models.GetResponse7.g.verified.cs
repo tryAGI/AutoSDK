@@ -1,4 +1,4 @@
-﻿//HintName: G.Models.GetResponse7.g.cs
+//HintName: G.Models.GetResponse7.g.cs
 
 #nullable enable
 
@@ -12,65 +12,28 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("id")]
+        [global::System.Text.Json.Serialization.JsonPropertyName("kind")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required string Id { get; set; }
+        public required string Kind { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("created_at")]
+        [global::System.Text.Json.Serialization.JsonPropertyName("description")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required string CreatedAt { get; set; }
+        public required string Description { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("name")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required string Name { get; set; }
+        [global::System.Text.Json.Serialization.JsonPropertyName("details")]
+        public object? Details { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("modified_at")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required string ModifiedAt { get; set; }
-
-        /// <summary>
-        /// 
-        /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("created_by")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required string CreatedBy { get; set; }
-
-        /// <summary>
-        /// 
-        /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("thumbnail_url")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required string ThumbnailUrl { get; set; }
-
-        /// <summary>
-        /// 
-        /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("video_url")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required string VideoUrl { get; set; }
-
-        /// <summary>
-        /// 
-        /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("status")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.GetResponseStatus2JsonConverter))]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::G.GetResponseStatus2 Status { get; set; }
-
-        /// <summary>
-        /// 
-        /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("error")]
-        public global::G.GetResponseError2? Error { get; set; }
+        [global::System.Text.Json.Serialization.JsonPropertyName("internal")]
+        public string? Internal { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -81,38 +44,23 @@ namespace G
         /// <summary>
         /// Initializes a new instance of the <see cref="GetResponse7" /> class.
         /// </summary>
-        /// <param name="id"></param>
-        /// <param name="createdAt"></param>
-        /// <param name="name"></param>
-        /// <param name="modifiedAt"></param>
-        /// <param name="createdBy"></param>
-        /// <param name="thumbnailUrl"></param>
-        /// <param name="videoUrl"></param>
-        /// <param name="status"></param>
-        /// <param name="error"></param>
+        /// <param name="kind"></param>
+        /// <param name="description"></param>
+        /// <param name="details"></param>
+        /// <param name="internal"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public GetResponse7(
-            string id,
-            string createdAt,
-            string name,
-            string modifiedAt,
-            string createdBy,
-            string thumbnailUrl,
-            string videoUrl,
-            global::G.GetResponseStatus2 status,
-            global::G.GetResponseError2? error)
+            string kind,
+            string description,
+            object? details,
+            string? @internal)
         {
-            this.Id = id ?? throw new global::System.ArgumentNullException(nameof(id));
-            this.CreatedAt = createdAt ?? throw new global::System.ArgumentNullException(nameof(createdAt));
-            this.Name = name ?? throw new global::System.ArgumentNullException(nameof(name));
-            this.ModifiedAt = modifiedAt ?? throw new global::System.ArgumentNullException(nameof(modifiedAt));
-            this.CreatedBy = createdBy ?? throw new global::System.ArgumentNullException(nameof(createdBy));
-            this.ThumbnailUrl = thumbnailUrl ?? throw new global::System.ArgumentNullException(nameof(thumbnailUrl));
-            this.VideoUrl = videoUrl ?? throw new global::System.ArgumentNullException(nameof(videoUrl));
-            this.Status = status;
-            this.Error = error;
+            this.Kind = kind ?? throw new global::System.ArgumentNullException(nameof(kind));
+            this.Description = description ?? throw new global::System.ArgumentNullException(nameof(description));
+            this.Details = details;
+            this.Internal = @internal;
         }
 
         /// <summary>

@@ -1,4 +1,4 @@
-﻿//HintName: G.Models.Agent.g.cs
+//HintName: G.Models.Agent.g.cs
 
 #nullable enable
 
@@ -26,7 +26,7 @@ namespace G
         /// Types of presenters below, you could choose 1 option
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("presenter")]
-        public global::G.AnyOf<global::G.AgentPresenterPhotoAvatar2, global::G.AgentPresenterVideoAvatar2, global::G.AgentPresenterExpressiveAvatar2>? Presenter { get; set; }
+        public global::G.AnyOf<global::G.AgentPresenterPhotoAvatar, global::G.AgentPresenterVideoAvatar, global::G.AgentPresenterExpressiveAvatar>? Presenter { get; set; }
 
         /// <summary>
         /// Configuration for the Large Language Model used by the Agent to generate responses.
@@ -134,7 +134,7 @@ namespace G
         public Agent(
             string id,
             string? previewDescription,
-            global::G.AnyOf<global::G.AgentPresenterPhotoAvatar2, global::G.AgentPresenterVideoAvatar2, global::G.AgentPresenterExpressiveAvatar2>? presenter,
+            global::G.AnyOf<global::G.AgentPresenterPhotoAvatar, global::G.AgentPresenterVideoAvatar, global::G.AgentPresenterExpressiveAvatar>? presenter,
             global::G.AnyOf<global::G.AgentLlmOpenAI, global::G.AgentLlmVariant2, global::G.AgentLlmVariant3, global::G.AgentLlmDId, global::G.AgentLlmGoogle>? llm,
             global::G.AgentProvider? provider,
             global::G.AgentKnowledge? knowledge,

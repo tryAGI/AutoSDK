@@ -231,11 +231,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::G.ContentItem>? Type48 { get; set; }
+        public global::System.Collections.Generic.IList<global::G.ContentItem4>? Type48 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.ContentItem? Type49 { get; set; }
+        public global::G.ContentItem4? Type49 { get; set; }
         /// <summary>
         /// 
         /// </summary>
@@ -491,11 +491,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::G.ContentItem2>? Type113 { get; set; }
+        public global::System.Collections.Generic.IList<global::G.ContentItem3>? Type113 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.ContentItem2? Type114 { get; set; }
+        public global::G.ContentItem3? Type114 { get; set; }
         /// <summary>
         /// 
         /// </summary>
@@ -515,11 +515,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::G.ContentItem3>? Type119 { get; set; }
+        public global::System.Collections.Generic.IList<global::G.ContentItem2>? Type119 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.ContentItem3? Type120 { get; set; }
+        public global::G.ContentItem2? Type120 { get; set; }
         /// <summary>
         /// 
         /// </summary>
@@ -539,11 +539,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::G.ContentVariant1Item>? Type125 { get; set; }
+        public global::System.Collections.Generic.IList<global::G.ContentVariant1Item2>? Type125 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.ContentVariant1Item? Type126 { get; set; }
+        public global::G.ContentVariant1Item2? Type126 { get; set; }
         /// <summary>
         /// 
         /// </summary>
@@ -571,11 +571,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::G.ContentVariant1Item2>? Type133 { get; set; }
+        public global::System.Collections.Generic.IList<global::G.ContentVariant1Item>? Type133 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.ContentVariant1Item2? Type134 { get; set; }
+        public global::G.ContentVariant1Item? Type134 { get; set; }
         /// <summary>
         /// 
         /// </summary>
@@ -595,11 +595,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::G.ContentItem4>? Type139 { get; set; }
+        public global::System.Collections.Generic.IList<global::G.ContentItem5>? Type139 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.ContentItem4? Type140 { get; set; }
+        public global::G.ContentItem5? Type140 { get; set; }
         /// <summary>
         /// 
         /// </summary>
@@ -675,7 +675,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.PromptTemplate? Type159 { get; set; }
+        public global::G.PromptTemplate3? Type159 { get; set; }
         /// <summary>
         /// 
         /// </summary>
@@ -695,7 +695,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.PromptTemplate2? Type164 { get; set; }
+        public global::G.PromptTemplate5? Type164 { get; set; }
         /// <summary>
         /// 
         /// </summary>
@@ -731,7 +731,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.PromptTemplate3? Type173 { get; set; }
+        public global::G.PromptTemplate? Type173 { get; set; }
         /// <summary>
         /// 
         /// </summary>
@@ -775,11 +775,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::G.ContentItem5>? Type184 { get; set; }
+        public global::System.Collections.Generic.IList<global::G.ContentItem>? Type184 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.ContentItem5? Type185 { get; set; }
+        public global::G.ContentItem? Type185 { get; set; }
         /// <summary>
         /// 
         /// </summary>
@@ -891,7 +891,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.PromptTemplate5? Type213 { get; set; }
+        public global::G.PromptTemplate2? Type213 { get; set; }
         /// <summary>
         /// 
         /// </summary>
@@ -1539,103 +1539,99 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.CreateDraftDatasetVersionResponse2? Type375 { get; set; }
+        public global::G.AddRequestLogToDatasetVersionResponse? Type375 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.AddRequestLogToDatasetVersionResponse? Type376 { get; set; }
+        public global::G.SaveDraftDatasetVersionResponse? Type376 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.SaveDraftDatasetVersionResponse? Type377 { get; set; }
+        public global::G.AnyOf<global::G.BadRequestError, global::G.ValidationError>? Type377 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.AnyOf<global::G.BadRequestError, global::G.ValidationError>? Type378 { get; set; }
+        public global::G.OneOf<global::System.Collections.Generic.Dictionary<string, global::G.GetWorkflowVersionExecutionResultsResponseVariant12>, object>? Type378 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.OneOf<global::System.Collections.Generic.Dictionary<string, global::G.GetWorkflowVersionExecutionResultsResponseVariant12>, object>? Type379 { get; set; }
+        public global::System.Collections.Generic.Dictionary<string, global::G.GetWorkflowVersionExecutionResultsResponseVariant12>? Type379 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.Dictionary<string, global::G.GetWorkflowVersionExecutionResultsResponseVariant12>? Type380 { get; set; }
+        public global::G.GetWorkflowVersionExecutionResultsResponseVariant12? Type380 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.GetWorkflowVersionExecutionResultsResponseVariant12? Type381 { get; set; }
+        public global::G.OneOf<global::System.Collections.Generic.Dictionary<string, global::G.GetWorkflowVersionExecutionResultsResponseVariant13>, object>? Type381 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.OneOf<global::System.Collections.Generic.Dictionary<string, global::G.GetWorkflowVersionExecutionResultsResponseVariant14>, object>? Type382 { get; set; }
+        public global::System.Collections.Generic.Dictionary<string, global::G.GetWorkflowVersionExecutionResultsResponseVariant13>? Type382 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.Dictionary<string, global::G.GetWorkflowVersionExecutionResultsResponseVariant14>? Type383 { get; set; }
+        public global::G.GetWorkflowVersionExecutionResultsResponseVariant13? Type383 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.GetWorkflowVersionExecutionResultsResponseVariant14? Type384 { get; set; }
+        public global::G.ListWorkflowsResponse? Type384 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.ListWorkflowsResponse? Type385 { get; set; }
+        public global::System.Collections.Generic.IList<global::G.ListWorkflowsResponseItem>? Type385 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::G.ListWorkflowsResponseItem>? Type386 { get; set; }
+        public global::G.ListWorkflowsResponseItem? Type386 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.ListWorkflowsResponseItem? Type387 { get; set; }
+        public global::G.ListWorkflowsResponse2? Type387 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.ListWorkflowsResponse2? Type388 { get; set; }
+        public global::G.ListWorkflowsResponse3? Type388 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.ListWorkflowsResponse3? Type389 { get; set; }
+        public global::G.GetWorkflowResponse? Type389 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.GetWorkflowResponse? Type390 { get; set; }
+        public global::System.Collections.Generic.IList<global::G.GetWorkflowResponseNode>? Type390 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::G.GetWorkflowResponseNode>? Type391 { get; set; }
+        public global::G.GetWorkflowResponseNode? Type391 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.GetWorkflowResponseNode? Type392 { get; set; }
+        public global::System.Collections.Generic.IList<global::G.GetWorkflowResponseEdge>? Type392 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::G.GetWorkflowResponseEdge>? Type393 { get; set; }
+        public global::G.GetWorkflowResponseEdge? Type393 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.GetWorkflowResponseEdge? Type394 { get; set; }
+        public global::G.GetWorkflowLabelsResponse? Type394 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.GetWorkflowLabelsResponse? Type395 { get; set; }
+        public global::System.Collections.Generic.IList<global::G.GetWorkflowLabelsResponseReleaseLabel>? Type395 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::G.GetWorkflowLabelsResponseReleaseLabel>? Type396 { get; set; }
+        public global::G.GetWorkflowLabelsResponseReleaseLabel? Type396 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.GetWorkflowLabelsResponseReleaseLabel? Type397 { get; set; }
+        public global::G.AnyOf<global::G.FolderExistsError, string>? Type397 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.AnyOf<global::G.FolderExistsError, string>? Type398 { get; set; }
-        /// <summary>
-        /// 
-        /// </summary>
-        public global::G.GetRequestSearchSuggestionsResponse? Type399 { get; set; }
+        public global::G.GetRequestSearchSuggestionsResponse? Type398 { get; set; }
 
         /// <summary>
         /// 
@@ -1684,7 +1680,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.List<global::G.ContentItem>? ListType11 { get; set; }
+        public global::System.Collections.Generic.List<global::G.ContentItem4>? ListType11 { get; set; }
         /// <summary>
         /// 
         /// </summary>
@@ -1700,15 +1696,15 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.List<global::G.ContentItem2>? ListType15 { get; set; }
+        public global::System.Collections.Generic.List<global::G.ContentItem3>? ListType15 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.List<global::G.ContentItem3>? ListType16 { get; set; }
+        public global::System.Collections.Generic.List<global::G.ContentItem2>? ListType16 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.List<global::G.ContentVariant1Item>? ListType17 { get; set; }
+        public global::System.Collections.Generic.List<global::G.ContentVariant1Item2>? ListType17 { get; set; }
         /// <summary>
         /// 
         /// </summary>
@@ -1716,11 +1712,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.List<global::G.ContentVariant1Item2>? ListType19 { get; set; }
+        public global::System.Collections.Generic.List<global::G.ContentVariant1Item>? ListType19 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.List<global::G.ContentItem4>? ListType20 { get; set; }
+        public global::System.Collections.Generic.List<global::G.ContentItem5>? ListType20 { get; set; }
         /// <summary>
         /// 
         /// </summary>
@@ -1748,7 +1744,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.List<global::G.ContentItem5>? ListType27 { get; set; }
+        public global::System.Collections.Generic.List<global::G.ContentItem>? ListType27 { get; set; }
         /// <summary>
         /// 
         /// </summary>

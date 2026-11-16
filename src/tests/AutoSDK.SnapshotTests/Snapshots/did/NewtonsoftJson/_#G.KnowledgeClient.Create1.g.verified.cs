@@ -46,11 +46,11 @@ namespace G
             };
         partial void PrepareCreate1Arguments(
             global::System.Net.Http.HttpClient httpClient,
-            global::G.Create1Request2 request);
+            global::G.Create1Request request);
         partial void PrepareCreate1Request(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
-            global::G.Create1Request2 request);
+            global::G.Create1Request request);
         partial void ProcessCreate1Response(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage);
@@ -69,9 +69,9 @@ namespace G
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::G.ApiException"></exception>
-        public async global::System.Threading.Tasks.Task<global::G.Create1Response5> Create1Async(
+        public async global::System.Threading.Tasks.Task<global::G.Create1Response> Create1Async(
 
-            global::G.Create1Request2 request,
+            global::G.Create1Request request,
             global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
@@ -93,9 +93,9 @@ namespace G
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::G.ApiException"></exception>
-        public async global::System.Threading.Tasks.Task<global::G.AutoSDKHttpResponse<global::G.Create1Response5>> Create1AsResponseAsync(
+        public async global::System.Threading.Tasks.Task<global::G.AutoSDKHttpResponse<global::G.Create1Response>> Create1AsResponseAsync(
 
-            global::G.Create1Request2 request,
+            global::G.Create1Request request,
             global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
@@ -365,19 +365,19 @@ namespace G
                             {
                                 string? __content_401 = null;
                                 global::System.Exception? __exception_401 = null;
-                                global::G.Create1Response6? __value_401 = null;
+                                global::G.Create1Response2? __value_401 = null;
                                 try
                                 {
                                     if (__effectiveReadResponseAsString)
                                     {
                                         __content_401 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
-                                        __value_401 = global::G.Create1Response6.FromJson(__content_401, JsonSerializerOptions);
+                                        __value_401 = global::G.Create1Response2.FromJson(__content_401, JsonSerializerOptions);
                                     }
                                     else
                                     {
                                         __content_401 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
 
-                                        __value_401 = global::G.Create1Response6.FromJson(__content_401, JsonSerializerOptions);
+                                        __value_401 = global::G.Create1Response2.FromJson(__content_401, JsonSerializerOptions);
                                     }
                                 }
                                 catch (global::System.Exception __ex)
@@ -386,7 +386,7 @@ namespace G
                                 }
 
 
-                                throw global::G.ApiException<global::G.Create1Response6>.Create(
+                                throw global::G.ApiException<global::G.Create1Response2>.Create(
                                     statusCode: __response.StatusCode,
                                     message: __content_401 ?? __response.ReasonPhrase ?? string.Empty,
                                     innerException: __exception_401,
@@ -419,9 +419,9 @@ namespace G
                                 {
                                     __response.EnsureSuccessStatusCode();
 
-                                    var __value = global::G.Create1Response5.FromJson(__content, JsonSerializerOptions) ??
+                                    var __value = global::G.Create1Response.FromJson(__content, JsonSerializerOptions) ??
                                         throw new global::System.InvalidOperationException($"Response deserialization failed for \"{__content}\" ");
-                                    return new global::G.AutoSDKHttpResponse<global::G.Create1Response5>(
+                                    return new global::G.AutoSDKHttpResponse<global::G.Create1Response>(
                                         statusCode: __response.StatusCode,
                                         headers: global::G.AutoSDKHttpResponse.CreateHeaders(__response),
                                         requestUri: __response.RequestMessage?.RequestUri,
@@ -451,9 +451,9 @@ namespace G
                 #endif
                                     ).ConfigureAwait(false);
 
-                                    var __value = await global::G.Create1Response5.FromJsonStreamAsync(__content, JsonSerializerOptions).ConfigureAwait(false) ??
+                                    var __value = await global::G.Create1Response.FromJsonStreamAsync(__content, JsonSerializerOptions).ConfigureAwait(false) ??
                                         throw new global::System.InvalidOperationException("Response deserialization failed.");
-                                    return new global::G.AutoSDKHttpResponse<global::G.Create1Response5>(
+                                    return new global::G.AutoSDKHttpResponse<global::G.Create1Response>(
                                         statusCode: __response.StatusCode,
                                         headers: global::G.AutoSDKHttpResponse.CreateHeaders(__response),
                                         requestUri: __response.RequestMessage?.RequestUri,
@@ -507,13 +507,13 @@ namespace G
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
-        public async global::System.Threading.Tasks.Task<global::G.Create1Response5> Create1Async(
+        public async global::System.Threading.Tasks.Task<global::G.Create1Response> Create1Async(
             string description,
             string name,
             global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
-            var __request = new global::G.Create1Request2
+            var __request = new global::G.Create1Request
             {
                 Description = description,
                 Name = name,

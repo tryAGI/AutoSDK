@@ -13,7 +13,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.AnthropicModelSettingsResponseFormatVariant1DiscriminatorType? Type { get; }
+        public global::G.UpdateAgentResponseFormatVariant1DiscriminatorType? Type { get; }
 
         /// <summary>
         /// Response format for plain text responses.
@@ -198,7 +198,7 @@ namespace G
         /// 
         /// </summary>
         public ResponseFormatVariant12(
-            global::G.AnthropicModelSettingsResponseFormatVariant1DiscriminatorType? type,
+            global::G.UpdateAgentResponseFormatVariant1DiscriminatorType? type,
             global::G.TextResponseFormat? text,
             global::G.JsonSchemaResponseFormat? jsonSchema,
             global::G.JsonObjectResponseFormat? jsonObject

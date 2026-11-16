@@ -1,4 +1,4 @@
-﻿//HintName: G.ISubpackageEntityCollectionsSubpackageEntityCollectionsEntitiesClient.Create.g.cs
+//HintName: G.ISubpackageEntityCollectionsSubpackageEntityCollectionsEntitiesClient.Create.g.cs
 #nullable enable
 
 namespace G
@@ -19,7 +19,7 @@ namespace G
             string entityCollectionId,
             string xApiKey,
 
-            global::G.CreateRequest6 request,
+            global::G.CreateRequest4 request,
             global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
@@ -36,7 +36,7 @@ namespace G
             string entityCollectionId,
             string xApiKey,
 
-            global::G.CreateRequest6 request,
+            global::G.CreateRequest4 request,
             global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>

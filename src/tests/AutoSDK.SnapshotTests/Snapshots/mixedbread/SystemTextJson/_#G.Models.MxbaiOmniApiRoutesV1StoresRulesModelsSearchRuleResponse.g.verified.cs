@@ -1,4 +1,4 @@
-﻿//HintName: G.Models.MxbaiOmniApiRoutesV1StoresRulesModelsSearchRuleResponse.g.cs
+//HintName: G.Models.MxbaiOmniApiRoutesV1StoresRulesModelsSearchRuleResponse.g.cs
 
 #nullable enable
 
@@ -42,7 +42,7 @@ namespace G
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("rules")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::System.Collections.Generic.IList<global::G.RulesItem4> Rules { get; set; }
+        public required global::System.Collections.Generic.IList<global::G.RulesItem> Rules { get; set; }
 
         /// <summary>
         /// When the rule was created
@@ -96,7 +96,7 @@ namespace G
             string id,
             string query,
             string storeId,
-            global::System.Collections.Generic.IList<global::G.RulesItem4> rules,
+            global::System.Collections.Generic.IList<global::G.RulesItem> rules,
             global::System.DateTime createdAt,
             global::System.DateTime updatedAt,
             string? @object)

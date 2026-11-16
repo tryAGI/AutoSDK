@@ -46,13 +46,13 @@ namespace G
             global::System.Net.Http.HttpClient httpClient,
             ref string agentId,
             ref string streamId,
-            global::G.DeleteStreamRequest2 request);
+            global::G.DeleteStreamRequest request);
         partial void PrepareDeleteStreamRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
             string agentId,
             string streamId,
-            global::G.DeleteStreamRequest2 request);
+            global::G.DeleteStreamRequest request);
         partial void ProcessDeleteStreamResponse(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage);
@@ -71,11 +71,11 @@ namespace G
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::G.ApiException"></exception>
-        public async global::System.Threading.Tasks.Task<global::G.DeleteStreamResponse> DeleteStreamAsync(
+        public async global::System.Threading.Tasks.Task<global::G.DeleteStreamResponse5> DeleteStreamAsync(
             string agentId,
             string streamId,
 
-            global::G.DeleteStreamRequest2 request,
+            global::G.DeleteStreamRequest request,
             global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
@@ -99,11 +99,11 @@ namespace G
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::G.ApiException"></exception>
-        public async global::System.Threading.Tasks.Task<global::G.AutoSDKHttpResponse<global::G.DeleteStreamResponse>> DeleteStreamAsResponseAsync(
+        public async global::System.Threading.Tasks.Task<global::G.AutoSDKHttpResponse<global::G.DeleteStreamResponse5>> DeleteStreamAsResponseAsync(
             string agentId,
             string streamId,
 
-            global::G.DeleteStreamRequest2 request,
+            global::G.DeleteStreamRequest request,
             global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
@@ -377,19 +377,19 @@ namespace G
                             {
                                 string? __content_400 = null;
                                 global::System.Exception? __exception_400 = null;
-                                global::G.DeleteStreamResponse2? __value_400 = null;
+                                global::G.DeleteStreamResponse6? __value_400 = null;
                                 try
                                 {
                                     if (__effectiveReadResponseAsString)
                                     {
                                         __content_400 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
-                                        __value_400 = global::G.DeleteStreamResponse2.FromJson(__content_400, JsonSerializerOptions);
+                                        __value_400 = global::G.DeleteStreamResponse6.FromJson(__content_400, JsonSerializerOptions);
                                     }
                                     else
                                     {
                                         __content_400 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
 
-                                        __value_400 = global::G.DeleteStreamResponse2.FromJson(__content_400, JsonSerializerOptions);
+                                        __value_400 = global::G.DeleteStreamResponse6.FromJson(__content_400, JsonSerializerOptions);
                                     }
                                 }
                                 catch (global::System.Exception __ex)
@@ -398,7 +398,7 @@ namespace G
                                 }
 
 
-                                throw global::G.ApiException<global::G.DeleteStreamResponse2>.Create(
+                                throw global::G.ApiException<global::G.DeleteStreamResponse6>.Create(
                                     statusCode: __response.StatusCode,
                                     message: __content_400 ?? __response.ReasonPhrase ?? string.Empty,
                                     innerException: __exception_400,
@@ -414,19 +414,19 @@ namespace G
                             {
                                 string? __content_401 = null;
                                 global::System.Exception? __exception_401 = null;
-                                global::G.DeleteStreamResponse3? __value_401 = null;
+                                global::G.DeleteStreamResponse7? __value_401 = null;
                                 try
                                 {
                                     if (__effectiveReadResponseAsString)
                                     {
                                         __content_401 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
-                                        __value_401 = global::G.DeleteStreamResponse3.FromJson(__content_401, JsonSerializerOptions);
+                                        __value_401 = global::G.DeleteStreamResponse7.FromJson(__content_401, JsonSerializerOptions);
                                     }
                                     else
                                     {
                                         __content_401 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
 
-                                        __value_401 = global::G.DeleteStreamResponse3.FromJson(__content_401, JsonSerializerOptions);
+                                        __value_401 = global::G.DeleteStreamResponse7.FromJson(__content_401, JsonSerializerOptions);
                                     }
                                 }
                                 catch (global::System.Exception __ex)
@@ -435,7 +435,7 @@ namespace G
                                 }
 
 
-                                throw global::G.ApiException<global::G.DeleteStreamResponse3>.Create(
+                                throw global::G.ApiException<global::G.DeleteStreamResponse7>.Create(
                                     statusCode: __response.StatusCode,
                                     message: __content_401 ?? __response.ReasonPhrase ?? string.Empty,
                                     innerException: __exception_401,
@@ -451,19 +451,19 @@ namespace G
                             {
                                 string? __content_404 = null;
                                 global::System.Exception? __exception_404 = null;
-                                global::G.DeleteStreamResponse4? __value_404 = null;
+                                global::G.DeleteStreamResponse8? __value_404 = null;
                                 try
                                 {
                                     if (__effectiveReadResponseAsString)
                                     {
                                         __content_404 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
-                                        __value_404 = global::G.DeleteStreamResponse4.FromJson(__content_404, JsonSerializerOptions);
+                                        __value_404 = global::G.DeleteStreamResponse8.FromJson(__content_404, JsonSerializerOptions);
                                     }
                                     else
                                     {
                                         __content_404 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
 
-                                        __value_404 = global::G.DeleteStreamResponse4.FromJson(__content_404, JsonSerializerOptions);
+                                        __value_404 = global::G.DeleteStreamResponse8.FromJson(__content_404, JsonSerializerOptions);
                                     }
                                 }
                                 catch (global::System.Exception __ex)
@@ -472,7 +472,7 @@ namespace G
                                 }
 
 
-                                throw global::G.ApiException<global::G.DeleteStreamResponse4>.Create(
+                                throw global::G.ApiException<global::G.DeleteStreamResponse8>.Create(
                                     statusCode: __response.StatusCode,
                                     message: __content_404 ?? __response.ReasonPhrase ?? string.Empty,
                                     innerException: __exception_404,
@@ -505,9 +505,9 @@ namespace G
                                 {
                                     __response.EnsureSuccessStatusCode();
 
-                                    var __value = global::G.DeleteStreamResponse.FromJson(__content, JsonSerializerOptions) ??
+                                    var __value = global::G.DeleteStreamResponse5.FromJson(__content, JsonSerializerOptions) ??
                                         throw new global::System.InvalidOperationException($"Response deserialization failed for \"{__content}\" ");
-                                    return new global::G.AutoSDKHttpResponse<global::G.DeleteStreamResponse>(
+                                    return new global::G.AutoSDKHttpResponse<global::G.DeleteStreamResponse5>(
                                         statusCode: __response.StatusCode,
                                         headers: global::G.AutoSDKHttpResponse.CreateHeaders(__response),
                                         requestUri: __response.RequestMessage?.RequestUri,
@@ -537,9 +537,9 @@ namespace G
                 #endif
                                     ).ConfigureAwait(false);
 
-                                    var __value = await global::G.DeleteStreamResponse.FromJsonStreamAsync(__content, JsonSerializerOptions).ConfigureAwait(false) ??
+                                    var __value = await global::G.DeleteStreamResponse5.FromJsonStreamAsync(__content, JsonSerializerOptions).ConfigureAwait(false) ??
                                         throw new global::System.InvalidOperationException("Response deserialization failed.");
-                                    return new global::G.AutoSDKHttpResponse<global::G.DeleteStreamResponse>(
+                                    return new global::G.AutoSDKHttpResponse<global::G.DeleteStreamResponse5>(
                                         statusCode: __response.StatusCode,
                                         headers: global::G.AutoSDKHttpResponse.CreateHeaders(__response),
                                         requestUri: __response.RequestMessage?.RequestUri,
@@ -588,14 +588,14 @@ namespace G
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
-        public async global::System.Threading.Tasks.Task<global::G.DeleteStreamResponse> DeleteStreamAsync(
+        public async global::System.Threading.Tasks.Task<global::G.DeleteStreamResponse5> DeleteStreamAsync(
             string agentId,
             string streamId,
             string? sessionId = default,
             global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
-            var __request = new global::G.DeleteStreamRequest2
+            var __request = new global::G.DeleteStreamRequest
             {
                 SessionId = sessionId,
             };

@@ -1,4 +1,4 @@
-﻿//HintName: G.Models.DeveloperMessage.g.cs
+//HintName: G.Models.DeveloperMessage.g.cs
 
 #nullable enable
 
@@ -27,7 +27,7 @@ namespace G
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("content")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::System.Collections.Generic.IList<global::G.ContentItem4> Content { get; set; }
+        public required global::System.Collections.Generic.IList<global::G.ContentItem5> Content { get; set; }
 
         /// <summary>
         /// Default Value: developer
@@ -65,7 +65,7 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public DeveloperMessage(
-            global::System.Collections.Generic.IList<global::G.ContentItem4> content,
+            global::System.Collections.Generic.IList<global::G.ContentItem5> content,
             global::System.Collections.Generic.IList<string>? inputVariables,
             global::G.DeveloperMessageTemplateFormat? templateFormat,
             string? role,

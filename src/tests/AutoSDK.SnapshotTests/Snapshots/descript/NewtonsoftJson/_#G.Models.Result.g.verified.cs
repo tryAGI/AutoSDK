@@ -13,15 +13,15 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.ImportJobStatusResultDiscriminatorStatus? Status { get; }
+        public global::G.AgentJobStatusResultDiscriminatorStatus? Status { get; }
 
         /// <summary>
-        /// Result when media was imported (fully or partially)
+        /// Result when Agent edit completed successfully
         /// </summary>
 #if NET6_0_OR_GREATER
-        public global::G.ImportSuccessResult? Success { get; init; }
+        public global::G.AgentSuccessResult? Success { get; init; }
 #else
-        public global::G.ImportSuccessResult? Success { get; }
+        public global::G.AgentSuccessResult? Success { get; }
 #endif
 
         /// <summary>
@@ -39,7 +39,7 @@ namespace G
 #if NET6_0_OR_GREATER
             [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
 #endif
-            out global::G.ImportSuccessResult? value)
+            out global::G.AgentSuccessResult? value)
         {
             value = Success;
             return IsSuccess;
@@ -48,17 +48,17 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.ImportSuccessResult PickSuccess() => Success is { } value
+        public global::G.AgentSuccessResult PickSuccess() => Success is { } value
             ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Success' but the value was {ToString()}.");
 
         /// <summary>
-        /// Result when job failed completely
+        /// Result when Agent edit failed
         /// </summary>
 #if NET6_0_OR_GREATER
-        public global::G.ImportErrorResult? Error { get; init; }
+        public global::G.AgentErrorResult? Error { get; init; }
 #else
-        public global::G.ImportErrorResult? Error { get; }
+        public global::G.AgentErrorResult? Error { get; }
 #endif
 
         /// <summary>
@@ -76,7 +76,7 @@ namespace G
 #if NET6_0_OR_GREATER
             [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
 #endif
-            out global::G.ImportErrorResult? value)
+            out global::G.AgentErrorResult? value)
         {
             value = Error;
             return IsError;
@@ -85,23 +85,23 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.ImportErrorResult PickError() => Error is { } value
+        public global::G.AgentErrorResult PickError() => Error is { } value
             ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Error' but the value was {ToString()}.");
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator Result(global::G.ImportSuccessResult value) => new Result((global::G.ImportSuccessResult?)value);
+        public static implicit operator Result(global::G.AgentSuccessResult value) => new Result((global::G.AgentSuccessResult?)value);
 
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator global::G.ImportSuccessResult?(Result @this) => @this.Success;
+        public static implicit operator global::G.AgentSuccessResult?(Result @this) => @this.Success;
 
         /// <summary>
         /// 
         /// </summary>
-        public Result(global::G.ImportSuccessResult? value)
+        public Result(global::G.AgentSuccessResult? value)
         {
             Success = value;
         }
@@ -109,22 +109,22 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static Result FromSuccess(global::G.ImportSuccessResult? value) => new Result(value);
+        public static Result FromSuccess(global::G.AgentSuccessResult? value) => new Result(value);
 
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator Result(global::G.ImportErrorResult value) => new Result((global::G.ImportErrorResult?)value);
+        public static implicit operator Result(global::G.AgentErrorResult value) => new Result((global::G.AgentErrorResult?)value);
 
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator global::G.ImportErrorResult?(Result @this) => @this.Error;
+        public static implicit operator global::G.AgentErrorResult?(Result @this) => @this.Error;
 
         /// <summary>
         /// 
         /// </summary>
-        public Result(global::G.ImportErrorResult? value)
+        public Result(global::G.AgentErrorResult? value)
         {
             Error = value;
         }
@@ -132,15 +132,15 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static Result FromError(global::G.ImportErrorResult? value) => new Result(value);
+        public static Result FromError(global::G.AgentErrorResult? value) => new Result(value);
 
         /// <summary>
         /// 
         /// </summary>
         public Result(
-            global::G.ImportJobStatusResultDiscriminatorStatus? status,
-            global::G.ImportSuccessResult? success,
-            global::G.ImportErrorResult? error
+            global::G.AgentJobStatusResultDiscriminatorStatus? status,
+            global::G.AgentSuccessResult? success,
+            global::G.AgentErrorResult? error
             )
         {
             Status = status;
@@ -177,8 +177,8 @@ namespace G
         /// 
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<global::G.ImportSuccessResult, TResult>? success = null,
-            global::System.Func<global::G.ImportErrorResult, TResult>? error = null,
+            global::System.Func<global::G.AgentSuccessResult, TResult>? success = null,
+            global::System.Func<global::G.AgentErrorResult, TResult>? error = null,
             bool validate = true)
         {
             if (validate)
@@ -202,9 +202,9 @@ namespace G
         /// 
         /// </summary>
         public void Match(
-            global::System.Action<global::G.ImportSuccessResult>? success = null,
+            global::System.Action<global::G.AgentSuccessResult>? success = null,
 
-            global::System.Action<global::G.ImportErrorResult>? error = null,
+            global::System.Action<global::G.AgentErrorResult>? error = null,
             bool validate = true)
         {
             if (validate)
@@ -226,8 +226,8 @@ namespace G
         /// 
         /// </summary>
         public void Switch(
-            global::System.Action<global::G.ImportSuccessResult>? success = null,
-            global::System.Action<global::G.ImportErrorResult>? error = null,
+            global::System.Action<global::G.AgentSuccessResult>? success = null,
+            global::System.Action<global::G.AgentErrorResult>? error = null,
             bool validate = true)
         {
             if (validate)
@@ -253,9 +253,9 @@ namespace G
             var fields = new object?[]
             {
                 Success,
-                typeof(global::G.ImportSuccessResult),
+                typeof(global::G.AgentSuccessResult),
                 Error,
-                typeof(global::G.ImportErrorResult),
+                typeof(global::G.AgentErrorResult),
             };
             const int offset = unchecked((int)2166136261);
             const int prime = 16777619;
@@ -272,8 +272,8 @@ namespace G
         public bool Equals(Result other)
         {
             return
-                global::System.Collections.Generic.EqualityComparer<global::G.ImportSuccessResult?>.Default.Equals(Success, other.Success) &&
-                global::System.Collections.Generic.EqualityComparer<global::G.ImportErrorResult?>.Default.Equals(Error, other.Error) 
+                global::System.Collections.Generic.EqualityComparer<global::G.AgentSuccessResult?>.Default.Equals(Success, other.Success) &&
+                global::System.Collections.Generic.EqualityComparer<global::G.AgentErrorResult?>.Default.Equals(Error, other.Error) 
                 ;
         }
 

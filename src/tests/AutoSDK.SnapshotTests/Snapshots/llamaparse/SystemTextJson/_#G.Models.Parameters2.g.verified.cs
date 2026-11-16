@@ -13,7 +13,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.ConfigurationResponseParametersDiscriminatorProductType? ProductType { get; }
+        public global::G.ConfigurationCreateRequestParametersDiscriminatorProductType? ProductType { get; }
 
         /// <summary>
         /// Typed parameters for a *split v1* product configuration.
@@ -322,7 +322,7 @@ namespace G
         /// 
         /// </summary>
         public Parameters2(
-            global::G.ConfigurationResponseParametersDiscriminatorProductType? productType,
+            global::G.ConfigurationCreateRequestParametersDiscriminatorProductType? productType,
             global::G.SplitV1Parameters? splitV1,
             global::G.ExtractV2Parameters? extractV2,
             global::G.ClassifyV2Parameters? classifyV2,

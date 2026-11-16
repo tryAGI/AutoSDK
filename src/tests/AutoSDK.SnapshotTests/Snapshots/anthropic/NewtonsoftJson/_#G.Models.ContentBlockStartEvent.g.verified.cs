@@ -1,4 +1,4 @@
-﻿//HintName: G.Models.ContentBlockStartEvent.g.cs
+//HintName: G.Models.ContentBlockStartEvent.g.cs
 
 #nullable enable
 
@@ -27,7 +27,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("content_block", Required = global::Newtonsoft.Json.Required.Always)]
-        public global::G.ContentBlock2 ContentBlock { get; set; } = default!;
+        public global::G.ContentBlock ContentBlock { get; set; } = default!;
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -45,7 +45,7 @@ namespace G
         /// </param>
         public ContentBlockStartEvent(
             int index,
-            global::G.ContentBlock2 contentBlock,
+            global::G.ContentBlock contentBlock,
             global::G.ContentBlockStartEventType type = global::G.ContentBlockStartEventType.ContentBlockStart)
         {
             this.Type = type;

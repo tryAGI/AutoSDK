@@ -1,4 +1,4 @@
-﻿//HintName: G.Models.ExperimentScoresHypothesis.g.cs
+//HintName: G.Models.ExperimentScoresHypothesis.g.cs
 
 #nullable enable
 
@@ -13,7 +13,7 @@ namespace G
         /// Construct a type with a set of properties K of type T
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("scores", Required = global::Newtonsoft.Json.Required.Always)]
-        public global::System.Collections.Generic.Dictionary<string, global::G.Score2> Scores { get; set; } = default!;
+        public global::System.Collections.Generic.Dictionary<string, global::G.Score> Scores { get; set; } = default!;
 
         /// <summary>
         /// 
@@ -35,7 +35,7 @@ namespace G
         /// </param>
         /// <param name="runsCount"></param>
         public ExperimentScoresHypothesis(
-            global::System.Collections.Generic.Dictionary<string, global::G.Score2> scores,
+            global::System.Collections.Generic.Dictionary<string, global::G.Score> scores,
             double runsCount)
         {
             this.Scores = scores ?? throw new global::System.ArgumentNullException(nameof(scores));

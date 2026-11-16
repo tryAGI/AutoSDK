@@ -1,4 +1,4 @@
-﻿//HintName: G.Models.Invite.g.cs
+//HintName: G.Models.Invite.g.cs
 
 #nullable enable
 
@@ -32,8 +32,8 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("role")]
-        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.InviteRole2JsonConverter))]
-        public global::G.InviteRole2? Role { get; set; }
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.InviteRoleJsonConverter))]
+        public global::G.InviteRole? Role { get; set; }
 
         /// <summary>
         /// 
@@ -90,7 +90,7 @@ namespace G
             string? @object,
             global::System.Guid? id,
             string? email,
-            global::G.InviteRole2? role,
+            global::G.InviteRole? role,
             global::System.DateTime? createdAt,
             global::System.DateTime? expiresAt,
             global::System.DateTime? acceptedAt,

@@ -1,37 +1,55 @@
-﻿//HintName: G.Models.Create1Request2.g.cs
-
-#pragma warning disable CS0618 // Type or member is obsolete
+//HintName: G.Models.Create1Request2.g.cs
 
 #nullable enable
 
 namespace G
 {
     /// <summary>
-    /// Construct a type with the properties of T except for those in type K.
+    /// 
     /// </summary>
     public sealed partial class Create1Request2
     {
         /// <summary>
-        /// Description of knowledge
+        /// The URL of the source video to create an avatar from<br/>
+        /// Example: https://path.to.directory/movie.mp4
         /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("description")]
+        /// <example>https://path.to.directory/movie.mp4</example>
+        [global::System.Text.Json.Serialization.JsonPropertyName("source_url")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required string Description { get; set; }
+        public required string SourceUrl { get; set; }
 
         /// <summary>
-        /// Name of knowledge
+        /// Unique identifier of a valid consent video
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("consent_id")]
+        public string? ConsentId { get; set; }
+
+        /// <summary>
+        /// A name for the avatar
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("name")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required string Name { get; set; }
+        public string? Name { get; set; }
 
         /// <summary>
-        /// List of messages to be showen as chat starter questions for the user to ask<br/>
-        /// Use agent.starter_messages instead
+        /// A webhook URL for sending the payload including animate details<br/>
+        /// In a case of empty value, the webhook will not be triggered<br/>
+        /// Example: https://host.domain.tld/to/webhook
         /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("starter_message")]
-        [global::System.Obsolete("This property marked as deprecated.")]
-        public global::System.Collections.Generic.IList<string>? StarterMessage { get; set; }
+        /// <example>https://host.domain.tld/to/webhook</example>
+        [global::System.Text.Json.Serialization.JsonPropertyName("webhook")]
+        public string? Webhook { get; set; }
+
+        /// <summary>
+        /// Non-sensitive custom data that will be added to the scene response and webhook.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("user_data")]
+        public string? UserData { get; set; }
+
+        /// <summary>
+        /// Whether the video is a green screen video
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("is_greenscreen")]
+        public bool? IsGreenscreen { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -42,21 +60,44 @@ namespace G
         /// <summary>
         /// Initializes a new instance of the <see cref="Create1Request2" /> class.
         /// </summary>
-        /// <param name="description">
-        /// Description of knowledge
+        /// <param name="sourceUrl">
+        /// The URL of the source video to create an avatar from<br/>
+        /// Example: https://path.to.directory/movie.mp4
+        /// </param>
+        /// <param name="consentId">
+        /// Unique identifier of a valid consent video
         /// </param>
         /// <param name="name">
-        /// Name of knowledge
+        /// A name for the avatar
+        /// </param>
+        /// <param name="webhook">
+        /// A webhook URL for sending the payload including animate details<br/>
+        /// In a case of empty value, the webhook will not be triggered<br/>
+        /// Example: https://host.domain.tld/to/webhook
+        /// </param>
+        /// <param name="userData">
+        /// Non-sensitive custom data that will be added to the scene response and webhook.
+        /// </param>
+        /// <param name="isGreenscreen">
+        /// Whether the video is a green screen video
         /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public Create1Request2(
-            string description,
-            string name)
+            string sourceUrl,
+            string? consentId,
+            string? name,
+            string? webhook,
+            string? userData,
+            bool? isGreenscreen)
         {
-            this.Description = description ?? throw new global::System.ArgumentNullException(nameof(description));
-            this.Name = name ?? throw new global::System.ArgumentNullException(nameof(name));
+            this.SourceUrl = sourceUrl ?? throw new global::System.ArgumentNullException(nameof(sourceUrl));
+            this.ConsentId = consentId;
+            this.Name = name;
+            this.Webhook = webhook;
+            this.UserData = userData;
+            this.IsGreenscreen = isGreenscreen;
         }
 
         /// <summary>

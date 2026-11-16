@@ -1,4 +1,4 @@
-﻿//HintName: G.Models.RequestImageBlock.g.cs
+//HintName: G.Models.RequestImageBlock.g.cs
 
 #nullable enable
 
@@ -13,7 +13,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("cache_control")]
-        public global::G.CacheControlVariant115? CacheControl { get; set; }
+        public global::G.CacheControlVariant13? CacheControl { get; set; }
 
         /// <summary>
         /// 
@@ -26,7 +26,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("source", Required = global::Newtonsoft.Json.Required.Always)]
-        public global::G.Source4 Source { get; set; } = default!;
+        public global::G.Source Source { get; set; } = default!;
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -41,8 +41,8 @@ namespace G
         /// <param name="cacheControl"></param>
         /// <param name="type"></param>
         public RequestImageBlock(
-            global::G.Source4 source,
-            global::G.CacheControlVariant115? cacheControl,
+            global::G.Source source,
+            global::G.CacheControlVariant13? cacheControl,
             global::G.RequestImageBlockType type)
         {
             this.CacheControl = cacheControl;

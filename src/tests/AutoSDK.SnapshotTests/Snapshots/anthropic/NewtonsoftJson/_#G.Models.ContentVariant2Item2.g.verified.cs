@@ -13,15 +13,15 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.RequestToolResultBlockContentVariant2ItemDiscriminatorType? Type { get; }
+        public global::G.BetaRequestToolResultBlockContentVariant2ItemDiscriminatorType? Type { get; }
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        public global::G.RequestTextBlock? Text { get; init; }
+        public global::G.BetaRequestTextBlock? Text { get; init; }
 #else
-        public global::G.RequestTextBlock? Text { get; }
+        public global::G.BetaRequestTextBlock? Text { get; }
 #endif
 
         /// <summary>
@@ -39,7 +39,7 @@ namespace G
 #if NET6_0_OR_GREATER
             [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
 #endif
-            out global::G.RequestTextBlock? value)
+            out global::G.BetaRequestTextBlock? value)
         {
             value = Text;
             return IsText;
@@ -48,7 +48,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.RequestTextBlock PickText() => Text is { } value
+        public global::G.BetaRequestTextBlock PickText() => Text is { } value
             ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Text' but the value was {ToString()}.");
 
@@ -56,9 +56,9 @@ namespace G
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        public global::G.RequestImageBlock? Image { get; init; }
+        public global::G.BetaRequestImageBlock? Image { get; init; }
 #else
-        public global::G.RequestImageBlock? Image { get; }
+        public global::G.BetaRequestImageBlock? Image { get; }
 #endif
 
         /// <summary>
@@ -76,7 +76,7 @@ namespace G
 #if NET6_0_OR_GREATER
             [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
 #endif
-            out global::G.RequestImageBlock? value)
+            out global::G.BetaRequestImageBlock? value)
         {
             value = Image;
             return IsImage;
@@ -85,23 +85,23 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.RequestImageBlock PickImage() => Image is { } value
+        public global::G.BetaRequestImageBlock PickImage() => Image is { } value
             ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Image' but the value was {ToString()}.");
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator ContentVariant2Item2(global::G.RequestTextBlock value) => new ContentVariant2Item2((global::G.RequestTextBlock?)value);
+        public static implicit operator ContentVariant2Item2(global::G.BetaRequestTextBlock value) => new ContentVariant2Item2((global::G.BetaRequestTextBlock?)value);
 
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator global::G.RequestTextBlock?(ContentVariant2Item2 @this) => @this.Text;
+        public static implicit operator global::G.BetaRequestTextBlock?(ContentVariant2Item2 @this) => @this.Text;
 
         /// <summary>
         /// 
         /// </summary>
-        public ContentVariant2Item2(global::G.RequestTextBlock? value)
+        public ContentVariant2Item2(global::G.BetaRequestTextBlock? value)
         {
             Text = value;
         }
@@ -109,22 +109,22 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static ContentVariant2Item2 FromText(global::G.RequestTextBlock? value) => new ContentVariant2Item2(value);
+        public static ContentVariant2Item2 FromText(global::G.BetaRequestTextBlock? value) => new ContentVariant2Item2(value);
 
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator ContentVariant2Item2(global::G.RequestImageBlock value) => new ContentVariant2Item2((global::G.RequestImageBlock?)value);
+        public static implicit operator ContentVariant2Item2(global::G.BetaRequestImageBlock value) => new ContentVariant2Item2((global::G.BetaRequestImageBlock?)value);
 
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator global::G.RequestImageBlock?(ContentVariant2Item2 @this) => @this.Image;
+        public static implicit operator global::G.BetaRequestImageBlock?(ContentVariant2Item2 @this) => @this.Image;
 
         /// <summary>
         /// 
         /// </summary>
-        public ContentVariant2Item2(global::G.RequestImageBlock? value)
+        public ContentVariant2Item2(global::G.BetaRequestImageBlock? value)
         {
             Image = value;
         }
@@ -132,15 +132,15 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static ContentVariant2Item2 FromImage(global::G.RequestImageBlock? value) => new ContentVariant2Item2(value);
+        public static ContentVariant2Item2 FromImage(global::G.BetaRequestImageBlock? value) => new ContentVariant2Item2(value);
 
         /// <summary>
         /// 
         /// </summary>
         public ContentVariant2Item2(
-            global::G.RequestToolResultBlockContentVariant2ItemDiscriminatorType? type,
-            global::G.RequestTextBlock? text,
-            global::G.RequestImageBlock? image
+            global::G.BetaRequestToolResultBlockContentVariant2ItemDiscriminatorType? type,
+            global::G.BetaRequestTextBlock? text,
+            global::G.BetaRequestImageBlock? image
             )
         {
             Type = type;
@@ -177,8 +177,8 @@ namespace G
         /// 
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<global::G.RequestTextBlock, TResult>? text = null,
-            global::System.Func<global::G.RequestImageBlock, TResult>? image = null,
+            global::System.Func<global::G.BetaRequestTextBlock, TResult>? text = null,
+            global::System.Func<global::G.BetaRequestImageBlock, TResult>? image = null,
             bool validate = true)
         {
             if (validate)
@@ -202,9 +202,9 @@ namespace G
         /// 
         /// </summary>
         public void Match(
-            global::System.Action<global::G.RequestTextBlock>? text = null,
+            global::System.Action<global::G.BetaRequestTextBlock>? text = null,
 
-            global::System.Action<global::G.RequestImageBlock>? image = null,
+            global::System.Action<global::G.BetaRequestImageBlock>? image = null,
             bool validate = true)
         {
             if (validate)
@@ -226,8 +226,8 @@ namespace G
         /// 
         /// </summary>
         public void Switch(
-            global::System.Action<global::G.RequestTextBlock>? text = null,
-            global::System.Action<global::G.RequestImageBlock>? image = null,
+            global::System.Action<global::G.BetaRequestTextBlock>? text = null,
+            global::System.Action<global::G.BetaRequestImageBlock>? image = null,
             bool validate = true)
         {
             if (validate)
@@ -253,9 +253,9 @@ namespace G
             var fields = new object?[]
             {
                 Text,
-                typeof(global::G.RequestTextBlock),
+                typeof(global::G.BetaRequestTextBlock),
                 Image,
-                typeof(global::G.RequestImageBlock),
+                typeof(global::G.BetaRequestImageBlock),
             };
             const int offset = unchecked((int)2166136261);
             const int prime = 16777619;
@@ -272,8 +272,8 @@ namespace G
         public bool Equals(ContentVariant2Item2 other)
         {
             return
-                global::System.Collections.Generic.EqualityComparer<global::G.RequestTextBlock?>.Default.Equals(Text, other.Text) &&
-                global::System.Collections.Generic.EqualityComparer<global::G.RequestImageBlock?>.Default.Equals(Image, other.Image) 
+                global::System.Collections.Generic.EqualityComparer<global::G.BetaRequestTextBlock?>.Default.Equals(Text, other.Text) &&
+                global::System.Collections.Generic.EqualityComparer<global::G.BetaRequestImageBlock?>.Default.Equals(Image, other.Image) 
                 ;
         }
 

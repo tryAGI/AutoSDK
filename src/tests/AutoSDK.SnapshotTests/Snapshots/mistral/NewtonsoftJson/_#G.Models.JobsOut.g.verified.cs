@@ -1,4 +1,4 @@
-﻿//HintName: G.Models.JobsOut.g.cs
+//HintName: G.Models.JobsOut.g.cs
 
 #nullable enable
 
@@ -13,7 +13,7 @@ namespace G
         /// Default Value: []
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("data")]
-        public global::System.Collections.Generic.IList<global::G.DataItem2>? Data { get; set; }
+        public global::System.Collections.Generic.IList<global::G.DataItem>? Data { get; set; }
 
         /// <summary>
         /// Default Value: list
@@ -46,7 +46,7 @@ namespace G
         /// </param>
         public JobsOut(
             int total,
-            global::System.Collections.Generic.IList<global::G.DataItem2>? data,
+            global::System.Collections.Generic.IList<global::G.DataItem>? data,
             global::G.JobsOutObject? @object)
         {
             this.Data = data;

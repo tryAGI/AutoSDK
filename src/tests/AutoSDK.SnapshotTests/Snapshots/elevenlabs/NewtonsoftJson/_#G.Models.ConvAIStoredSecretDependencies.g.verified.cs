@@ -1,4 +1,4 @@
-﻿//HintName: G.Models.ConvAIStoredSecretDependencies.g.cs
+//HintName: G.Models.ConvAIStoredSecretDependencies.g.cs
 
 #nullable enable
 
@@ -13,7 +13,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("tools", Required = global::Newtonsoft.Json.Required.Always)]
-        public global::System.Collections.Generic.IList<global::G.ToolsItem> Tools { get; set; } = default!;
+        public global::System.Collections.Generic.IList<global::G.ToolsItem3> Tools { get; set; } = default!;
 
         /// <summary>
         /// 
@@ -47,7 +47,7 @@ namespace G
         /// <param name="others"></param>
         /// <param name="phoneNumbers"></param>
         public ConvAIStoredSecretDependencies(
-            global::System.Collections.Generic.IList<global::G.ToolsItem> tools,
+            global::System.Collections.Generic.IList<global::G.ToolsItem3> tools,
             global::System.Collections.Generic.IList<global::G.AgentsItem> agents,
             global::System.Collections.Generic.IList<global::G.SecretDependencyType> others,
             global::System.Collections.Generic.IList<global::G.DependentPhoneNumberIdentifier>? phoneNumbers)

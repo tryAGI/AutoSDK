@@ -1,4 +1,4 @@
-﻿//HintName: G.Api.g.cs
+//HintName: G.Api.g.cs
 
 #nullable enable
 
@@ -217,46 +217,6 @@ namespace G
                     new global::G.JsonConverters.FaceSquareDtoOverlapJsonConverter(),
 
                     new global::G.JsonConverters.FaceSquareDtoOverlapNullableJsonConverter(),
-
-                    new global::G.JsonConverters.CreateTalkRequestScriptVariant1TypeJsonConverter(),
-
-                    new global::G.JsonConverters.CreateTalkRequestScriptVariant1TypeNullableJsonConverter(),
-
-                    new global::G.JsonConverters.CreateTalkRequestScriptVariant1ProviderMicrosoftTypeJsonConverter(),
-
-                    new global::G.JsonConverters.CreateTalkRequestScriptVariant1ProviderMicrosoftTypeNullableJsonConverter(),
-
-                    new global::G.JsonConverters.CreateTalkRequestScriptVariant1ProviderElevenLabsTypeJsonConverter(),
-
-                    new global::G.JsonConverters.CreateTalkRequestScriptVariant1ProviderElevenLabsTypeNullableJsonConverter(),
-
-                    new global::G.JsonConverters.CreateTalkRequestScriptVariant1ProviderAmazonTypeJsonConverter(),
-
-                    new global::G.JsonConverters.CreateTalkRequestScriptVariant1ProviderAmazonTypeNullableJsonConverter(),
-
-                    new global::G.JsonConverters.CreateTalkRequestScriptVariant1ProviderAmazonVoiceIdJsonConverter(),
-
-                    new global::G.JsonConverters.CreateTalkRequestScriptVariant1ProviderAmazonVoiceIdNullableJsonConverter(),
-
-                    new global::G.JsonConverters.CreateTalkRequestScriptVariant1ProviderGoogleTypeJsonConverter(),
-
-                    new global::G.JsonConverters.CreateTalkRequestScriptVariant1ProviderGoogleTypeNullableJsonConverter(),
-
-                    new global::G.JsonConverters.CreateTalkRequestScriptVariant1ProviderOpenAITypeJsonConverter(),
-
-                    new global::G.JsonConverters.CreateTalkRequestScriptVariant1ProviderOpenAITypeNullableJsonConverter(),
-
-                    new global::G.JsonConverters.CreateTalkRequestScriptVariant2TypeJsonConverter(),
-
-                    new global::G.JsonConverters.CreateTalkRequestScriptVariant2TypeNullableJsonConverter(),
-
-                    new global::G.JsonConverters.CreateTalkRequestConfigResultFormatJsonConverter(),
-
-                    new global::G.JsonConverters.CreateTalkRequestConfigResultFormatNullableJsonConverter(),
-
-                    new global::G.JsonConverters.CreateTalkRequestConfigDriverExpressionsExpressionExpressionJsonConverter(),
-
-                    new global::G.JsonConverters.CreateTalkRequestConfigDriverExpressionsExpressionExpressionNullableJsonConverter(),
 
                     new global::G.JsonConverters.GetTalkDtoStatusJsonConverter(),
 
@@ -522,10 +482,6 @@ namespace G
 
                     new global::G.JsonConverters.DIdLLMPromptCustomizationKnowledgeSourceNullableJsonConverter(),
 
-                    new global::G.JsonConverters.DIdLLMModel2JsonConverter(),
-
-                    new global::G.JsonConverters.DIdLLMModel2NullableJsonConverter(),
-
                     new global::G.JsonConverters.GoogleLLMModelJsonConverter(),
 
                     new global::G.JsonConverters.GoogleLLMModelNullableJsonConverter(),
@@ -541,10 +497,6 @@ namespace G
                     new global::G.JsonConverters.GoogleLLMPromptCustomizationKnowledgeSourceJsonConverter(),
 
                     new global::G.JsonConverters.GoogleLLMPromptCustomizationKnowledgeSourceNullableJsonConverter(),
-
-                    new global::G.JsonConverters.GoogleLLMModel2JsonConverter(),
-
-                    new global::G.JsonConverters.GoogleLLMModel2NullableJsonConverter(),
 
                     new global::G.JsonConverters.LLMConfigOpenAIProviderJsonConverter(),
 
@@ -622,10 +574,6 @@ namespace G
 
                     new global::G.JsonConverters.KnowledgeEmbedderProviderNullableJsonConverter(),
 
-                    new global::G.JsonConverters.KnowledgeProvider2JsonConverter(),
-
-                    new global::G.JsonConverters.KnowledgeProvider2NullableJsonConverter(),
-
                     new global::G.JsonConverters.AgentUseCaseJsonConverter(),
 
                     new global::G.JsonConverters.AgentUseCaseNullableJsonConverter(),
@@ -649,70 +597,6 @@ namespace G
                     new global::G.JsonConverters.AssetCloudProviderJsonConverter(),
 
                     new global::G.JsonConverters.AssetCloudProviderNullableJsonConverter(),
-
-                    new global::G.JsonConverters.AssetStatus2JsonConverter(),
-
-                    new global::G.JsonConverters.AssetStatus2NullableJsonConverter(),
-
-                    new global::G.JsonConverters.AgentPresenterPhotoAvatarType2JsonConverter(),
-
-                    new global::G.JsonConverters.AgentPresenterPhotoAvatarType2NullableJsonConverter(),
-
-                    new global::G.JsonConverters.AgentPresenterPhotoAvatarVoiceMicrosoftType2JsonConverter(),
-
-                    new global::G.JsonConverters.AgentPresenterPhotoAvatarVoiceMicrosoftType2NullableJsonConverter(),
-
-                    new global::G.JsonConverters.AgentPresenterPhotoAvatarVoiceElevenLabsType2JsonConverter(),
-
-                    new global::G.JsonConverters.AgentPresenterPhotoAvatarVoiceElevenLabsType2NullableJsonConverter(),
-
-                    new global::G.JsonConverters.AgentPresenterPhotoAvatarVoiceElevenLabsAccess2JsonConverter(),
-
-                    new global::G.JsonConverters.AgentPresenterPhotoAvatarVoiceElevenLabsAccess2NullableJsonConverter(),
-
-                    new global::G.JsonConverters.AgentPresenterPhotoAvatarVoiceOpenAIType2JsonConverter(),
-
-                    new global::G.JsonConverters.AgentPresenterPhotoAvatarVoiceOpenAIType2NullableJsonConverter(),
-
-                    new global::G.JsonConverters.AgentPresenterVideoAvatarType2JsonConverter(),
-
-                    new global::G.JsonConverters.AgentPresenterVideoAvatarType2NullableJsonConverter(),
-
-                    new global::G.JsonConverters.AgentPresenterVideoAvatarVoiceMicrosoftType2JsonConverter(),
-
-                    new global::G.JsonConverters.AgentPresenterVideoAvatarVoiceMicrosoftType2NullableJsonConverter(),
-
-                    new global::G.JsonConverters.AgentPresenterVideoAvatarVoiceElevenLabsType2JsonConverter(),
-
-                    new global::G.JsonConverters.AgentPresenterVideoAvatarVoiceElevenLabsType2NullableJsonConverter(),
-
-                    new global::G.JsonConverters.AgentPresenterVideoAvatarVoiceElevenLabsAccess2JsonConverter(),
-
-                    new global::G.JsonConverters.AgentPresenterVideoAvatarVoiceElevenLabsAccess2NullableJsonConverter(),
-
-                    new global::G.JsonConverters.AgentPresenterVideoAvatarVoiceOpenAIType2JsonConverter(),
-
-                    new global::G.JsonConverters.AgentPresenterVideoAvatarVoiceOpenAIType2NullableJsonConverter(),
-
-                    new global::G.JsonConverters.AgentPresenterExpressiveAvatarType2JsonConverter(),
-
-                    new global::G.JsonConverters.AgentPresenterExpressiveAvatarType2NullableJsonConverter(),
-
-                    new global::G.JsonConverters.AgentPresenterExpressiveAvatarVoiceMicrosoftType2JsonConverter(),
-
-                    new global::G.JsonConverters.AgentPresenterExpressiveAvatarVoiceMicrosoftType2NullableJsonConverter(),
-
-                    new global::G.JsonConverters.AgentPresenterExpressiveAvatarVoiceElevenLabsType2JsonConverter(),
-
-                    new global::G.JsonConverters.AgentPresenterExpressiveAvatarVoiceElevenLabsType2NullableJsonConverter(),
-
-                    new global::G.JsonConverters.AgentPresenterExpressiveAvatarVoiceElevenLabsAccess2JsonConverter(),
-
-                    new global::G.JsonConverters.AgentPresenterExpressiveAvatarVoiceElevenLabsAccess2NullableJsonConverter(),
-
-                    new global::G.JsonConverters.AgentPresenterExpressiveAvatarVoiceOpenAIType2JsonConverter(),
-
-                    new global::G.JsonConverters.AgentPresenterExpressiveAvatarVoiceOpenAIType2NullableJsonConverter(),
 
                     new global::G.JsonConverters.AgentLlmOpenAIProviderJsonConverter(),
 
@@ -818,9 +702,9 @@ namespace G
 
                     new global::G.JsonConverters.RoleNullableJsonConverter(),
 
-                    new global::G.JsonConverters.MessageRoleJsonConverter(),
+                    new global::G.JsonConverters.MessageRole2JsonConverter(),
 
-                    new global::G.JsonConverters.MessageRoleNullableJsonConverter(),
+                    new global::G.JsonConverters.MessageRole2NullableJsonConverter(),
 
                     new global::G.JsonConverters.StreamScriptVariant1TypeJsonConverter(),
 
@@ -986,14 +870,6 @@ namespace G
 
                     new global::G.JsonConverters.ClipStatusNullableJsonConverter(),
 
-                    new global::G.JsonConverters.CreateClipResponseObjectJsonConverter(),
-
-                    new global::G.JsonConverters.CreateClipResponseObjectNullableJsonConverter(),
-
-                    new global::G.JsonConverters.CreateClipResponseStatusJsonConverter(),
-
-                    new global::G.JsonConverters.CreateClipResponseStatusNullableJsonConverter(),
-
                     new global::G.JsonConverters.ClipConfigResultFormatJsonConverter(),
 
                     new global::G.JsonConverters.ClipConfigResultFormatNullableJsonConverter(),
@@ -1022,66 +898,6 @@ namespace G
 
                     new global::G.JsonConverters.ClipPresenterConfigCropVariant2TypeNullableJsonConverter(),
 
-                    new global::G.JsonConverters.CreateClipRequestScriptVariant1TypeJsonConverter(),
-
-                    new global::G.JsonConverters.CreateClipRequestScriptVariant1TypeNullableJsonConverter(),
-
-                    new global::G.JsonConverters.CreateClipRequestScriptVariant1ProviderMicrosoftTypeJsonConverter(),
-
-                    new global::G.JsonConverters.CreateClipRequestScriptVariant1ProviderMicrosoftTypeNullableJsonConverter(),
-
-                    new global::G.JsonConverters.CreateClipRequestScriptVariant1ProviderElevenLabsTypeJsonConverter(),
-
-                    new global::G.JsonConverters.CreateClipRequestScriptVariant1ProviderElevenLabsTypeNullableJsonConverter(),
-
-                    new global::G.JsonConverters.CreateClipRequestScriptVariant1ProviderAmazonTypeJsonConverter(),
-
-                    new global::G.JsonConverters.CreateClipRequestScriptVariant1ProviderAmazonTypeNullableJsonConverter(),
-
-                    new global::G.JsonConverters.CreateClipRequestScriptVariant1ProviderAmazonVoiceIdJsonConverter(),
-
-                    new global::G.JsonConverters.CreateClipRequestScriptVariant1ProviderAmazonVoiceIdNullableJsonConverter(),
-
-                    new global::G.JsonConverters.CreateClipRequestScriptVariant1ProviderGoogleTypeJsonConverter(),
-
-                    new global::G.JsonConverters.CreateClipRequestScriptVariant1ProviderGoogleTypeNullableJsonConverter(),
-
-                    new global::G.JsonConverters.CreateClipRequestScriptVariant1ProviderOpenAITypeJsonConverter(),
-
-                    new global::G.JsonConverters.CreateClipRequestScriptVariant1ProviderOpenAITypeNullableJsonConverter(),
-
-                    new global::G.JsonConverters.CreateClipRequestScriptVariant2TypeJsonConverter(),
-
-                    new global::G.JsonConverters.CreateClipRequestScriptVariant2TypeNullableJsonConverter(),
-
-                    new global::G.JsonConverters.CreateClipRequestConfigResultFormatJsonConverter(),
-
-                    new global::G.JsonConverters.CreateClipRequestConfigResultFormatNullableJsonConverter(),
-
-                    new global::G.JsonConverters.CreateClipRequestPresenterConfigCropVariant1TypeJsonConverter(),
-
-                    new global::G.JsonConverters.CreateClipRequestPresenterConfigCropVariant1TypeNullableJsonConverter(),
-
-                    new global::G.JsonConverters.CreateClipRequestPresenterConfigCropVariant2TypeJsonConverter(),
-
-                    new global::G.JsonConverters.CreateClipRequestPresenterConfigCropVariant2TypeNullableJsonConverter(),
-
-                    new global::G.JsonConverters.GetClipResponseConfigResultFormatJsonConverter(),
-
-                    new global::G.JsonConverters.GetClipResponseConfigResultFormatNullableJsonConverter(),
-
-                    new global::G.JsonConverters.GetClipResponseStatusJsonConverter(),
-
-                    new global::G.JsonConverters.GetClipResponseStatusNullableJsonConverter(),
-
-                    new global::G.JsonConverters.GetClipsResponseClipConfigResultFormatJsonConverter(),
-
-                    new global::G.JsonConverters.GetClipsResponseClipConfigResultFormatNullableJsonConverter(),
-
-                    new global::G.JsonConverters.GetClipsResponseClipStatusJsonConverter(),
-
-                    new global::G.JsonConverters.GetClipsResponseClipStatusNullableJsonConverter(),
-
                     new global::G.JsonConverters.ClipStreamConfigResultFormatJsonConverter(),
 
                     new global::G.JsonConverters.ClipStreamConfigResultFormatNullableJsonConverter(),
@@ -1093,18 +909,6 @@ namespace G
                     new global::G.JsonConverters.TranscriptionVersionJsonConverter(),
 
                     new global::G.JsonConverters.TranscriptionVersionNullableJsonConverter(),
-
-                    new global::G.JsonConverters.TranscriptionVersion2JsonConverter(),
-
-                    new global::G.JsonConverters.TranscriptionVersion2NullableJsonConverter(),
-
-                    new global::G.JsonConverters.GetTranslationResponseStatusJsonConverter(),
-
-                    new global::G.JsonConverters.GetTranslationResponseStatusNullableJsonConverter(),
-
-                    new global::G.JsonConverters.GetTranslationResponseTranscriptionVersionJsonConverter(),
-
-                    new global::G.JsonConverters.GetTranslationResponseTranscriptionVersionNullableJsonConverter(),
 
                     new global::G.JsonConverters.CreateTranslationResponseDtoTranslationStatusJsonConverter(),
 
@@ -1133,26 +937,6 @@ namespace G
                     new global::G.JsonConverters.GroupTranslationTranscriptionVersionJsonConverter(),
 
                     new global::G.JsonConverters.GroupTranslationTranscriptionVersionNullableJsonConverter(),
-
-                    new global::G.JsonConverters.GetGroupResponseStatusJsonConverter(),
-
-                    new global::G.JsonConverters.GetGroupResponseStatusNullableJsonConverter(),
-
-                    new global::G.JsonConverters.GetGroupResponseTranslationStatusJsonConverter(),
-
-                    new global::G.JsonConverters.GetGroupResponseTranslationStatusNullableJsonConverter(),
-
-                    new global::G.JsonConverters.GetGroupResponseTranslationTranscriptionVersionJsonConverter(),
-
-                    new global::G.JsonConverters.GetGroupResponseTranslationTranscriptionVersionNullableJsonConverter(),
-
-                    new global::G.JsonConverters.GetTranslationsResponseTranslationStatusJsonConverter(),
-
-                    new global::G.JsonConverters.GetTranslationsResponseTranslationStatusNullableJsonConverter(),
-
-                    new global::G.JsonConverters.GetTranslationsResponseTranslationTranscriptionVersionJsonConverter(),
-
-                    new global::G.JsonConverters.GetTranslationsResponseTranslationTranscriptionVersionNullableJsonConverter(),
 
                     new global::G.JsonConverters.SceneAvatarStatusJsonConverter(),
 
@@ -1570,9 +1354,9 @@ namespace G
 
                     new global::G.JsonConverters.TriggerEventTypeChatEndNullableJsonConverter(),
 
-                    new global::G.JsonConverters.MessageRole2JsonConverter(),
+                    new global::G.JsonConverters.MessageRoleJsonConverter(),
 
-                    new global::G.JsonConverters.MessageRole2NullableJsonConverter(),
+                    new global::G.JsonConverters.MessageRoleNullableJsonConverter(),
 
                     new global::G.JsonConverters.ToolResultOutputVariant1TypeJsonConverter(),
 
@@ -2682,37 +2466,9 @@ namespace G
 
                     new global::G.JsonConverters.UnifiedCreateVideoStreamRequestScriptAudioTypeNullableJsonConverter(),
 
-                    new global::G.JsonConverters.CreateVideoStreamRequestScriptTextTypeJsonConverter(),
-
-                    new global::G.JsonConverters.CreateVideoStreamRequestScriptTextTypeNullableJsonConverter(),
-
-                    new global::G.JsonConverters.CreateVideoStreamRequestScriptTextProviderMicrosoftTypeJsonConverter(),
-
-                    new global::G.JsonConverters.CreateVideoStreamRequestScriptTextProviderMicrosoftTypeNullableJsonConverter(),
-
-                    new global::G.JsonConverters.CreateVideoStreamRequestScriptTextProviderElevenLabsTypeJsonConverter(),
-
-                    new global::G.JsonConverters.CreateVideoStreamRequestScriptTextProviderElevenLabsTypeNullableJsonConverter(),
-
-                    new global::G.JsonConverters.CreateVideoStreamRequestScriptTextProviderElevenLabsAccessJsonConverter(),
-
-                    new global::G.JsonConverters.CreateVideoStreamRequestScriptTextProviderElevenLabsAccessNullableJsonConverter(),
-
-                    new global::G.JsonConverters.CreateVideoStreamRequestScriptTextProviderOpenAITypeJsonConverter(),
-
-                    new global::G.JsonConverters.CreateVideoStreamRequestScriptTextProviderOpenAITypeNullableJsonConverter(),
-
-                    new global::G.JsonConverters.CreateVideoStreamRequestScriptAudioTypeJsonConverter(),
-
-                    new global::G.JsonConverters.CreateVideoStreamRequestScriptAudioTypeNullableJsonConverter(),
-
                     new global::G.JsonConverters.ChatModeJsonConverter(),
 
                     new global::G.JsonConverters.ChatModeNullableJsonConverter(),
-
-                    new global::G.JsonConverters.ChatResponseChatModeJsonConverter(),
-
-                    new global::G.JsonConverters.ChatResponseChatModeNullableJsonConverter(),
 
                     new global::G.JsonConverters.IChatPayloadMessageRoleJsonConverter(),
 
@@ -3006,113 +2762,49 @@ namespace G
 
                     new global::G.JsonConverters.InitTalkStreamRequestCompatibilityModeNullableJsonConverter(),
 
-                    new global::G.JsonConverters.CreateTalkStreamRequestScriptVariant1TypeJsonConverter(),
-
-                    new global::G.JsonConverters.CreateTalkStreamRequestScriptVariant1TypeNullableJsonConverter(),
-
-                    new global::G.JsonConverters.CreateTalkStreamRequestScriptVariant1ProviderMicrosoftTypeJsonConverter(),
-
-                    new global::G.JsonConverters.CreateTalkStreamRequestScriptVariant1ProviderMicrosoftTypeNullableJsonConverter(),
-
-                    new global::G.JsonConverters.CreateTalkStreamRequestScriptVariant1ProviderElevenLabsTypeJsonConverter(),
-
-                    new global::G.JsonConverters.CreateTalkStreamRequestScriptVariant1ProviderElevenLabsTypeNullableJsonConverter(),
-
-                    new global::G.JsonConverters.CreateTalkStreamRequestScriptVariant1ProviderElevenLabsAccessJsonConverter(),
-
-                    new global::G.JsonConverters.CreateTalkStreamRequestScriptVariant1ProviderElevenLabsAccessNullableJsonConverter(),
-
-                    new global::G.JsonConverters.CreateTalkStreamRequestScriptVariant1ProviderOpenAITypeJsonConverter(),
-
-                    new global::G.JsonConverters.CreateTalkStreamRequestScriptVariant1ProviderOpenAITypeNullableJsonConverter(),
-
-                    new global::G.JsonConverters.CreateTalkStreamRequestScriptVariant2TypeJsonConverter(),
-
-                    new global::G.JsonConverters.CreateTalkStreamRequestScriptVariant2TypeNullableJsonConverter(),
-
-                    new global::G.JsonConverters.CreateTalkStreamRequestConfigVariant1ResultFormatJsonConverter(),
-
-                    new global::G.JsonConverters.CreateTalkStreamRequestConfigVariant1ResultFormatNullableJsonConverter(),
-
                     new global::G.JsonConverters.InitClipStreamRequestCompatibilityModeJsonConverter(),
 
                     new global::G.JsonConverters.InitClipStreamRequestCompatibilityModeNullableJsonConverter(),
 
-                    new global::G.JsonConverters.CreateClipStreamRequestScriptVariant1TypeJsonConverter(),
+                    new global::G.JsonConverters.CreateTalkRequestScriptVariant1TypeJsonConverter(),
 
-                    new global::G.JsonConverters.CreateClipStreamRequestScriptVariant1TypeNullableJsonConverter(),
+                    new global::G.JsonConverters.CreateTalkRequestScriptVariant1TypeNullableJsonConverter(),
 
-                    new global::G.JsonConverters.CreateClipStreamRequestScriptVariant1ProviderMicrosoftTypeJsonConverter(),
+                    new global::G.JsonConverters.CreateTalkRequestScriptVariant1ProviderMicrosoftTypeJsonConverter(),
 
-                    new global::G.JsonConverters.CreateClipStreamRequestScriptVariant1ProviderMicrosoftTypeNullableJsonConverter(),
+                    new global::G.JsonConverters.CreateTalkRequestScriptVariant1ProviderMicrosoftTypeNullableJsonConverter(),
 
-                    new global::G.JsonConverters.CreateClipStreamRequestScriptVariant1ProviderElevenLabsTypeJsonConverter(),
+                    new global::G.JsonConverters.CreateTalkRequestScriptVariant1ProviderElevenLabsTypeJsonConverter(),
 
-                    new global::G.JsonConverters.CreateClipStreamRequestScriptVariant1ProviderElevenLabsTypeNullableJsonConverter(),
+                    new global::G.JsonConverters.CreateTalkRequestScriptVariant1ProviderElevenLabsTypeNullableJsonConverter(),
 
-                    new global::G.JsonConverters.CreateClipStreamRequestScriptVariant1ProviderElevenLabsAccessJsonConverter(),
+                    new global::G.JsonConverters.CreateTalkRequestScriptVariant1ProviderAmazonTypeJsonConverter(),
 
-                    new global::G.JsonConverters.CreateClipStreamRequestScriptVariant1ProviderElevenLabsAccessNullableJsonConverter(),
+                    new global::G.JsonConverters.CreateTalkRequestScriptVariant1ProviderAmazonTypeNullableJsonConverter(),
 
-                    new global::G.JsonConverters.CreateClipStreamRequestScriptVariant1ProviderOpenAITypeJsonConverter(),
+                    new global::G.JsonConverters.CreateTalkRequestScriptVariant1ProviderAmazonVoiceIdJsonConverter(),
 
-                    new global::G.JsonConverters.CreateClipStreamRequestScriptVariant1ProviderOpenAITypeNullableJsonConverter(),
+                    new global::G.JsonConverters.CreateTalkRequestScriptVariant1ProviderAmazonVoiceIdNullableJsonConverter(),
 
-                    new global::G.JsonConverters.CreateClipStreamRequestScriptVariant2TypeJsonConverter(),
+                    new global::G.JsonConverters.CreateTalkRequestScriptVariant1ProviderGoogleTypeJsonConverter(),
 
-                    new global::G.JsonConverters.CreateClipStreamRequestScriptVariant2TypeNullableJsonConverter(),
+                    new global::G.JsonConverters.CreateTalkRequestScriptVariant1ProviderGoogleTypeNullableJsonConverter(),
 
-                    new global::G.JsonConverters.CreateClipStreamRequestConfigResultFormatJsonConverter(),
+                    new global::G.JsonConverters.CreateTalkRequestScriptVariant1ProviderOpenAITypeJsonConverter(),
 
-                    new global::G.JsonConverters.CreateClipStreamRequestConfigResultFormatNullableJsonConverter(),
+                    new global::G.JsonConverters.CreateTalkRequestScriptVariant1ProviderOpenAITypeNullableJsonConverter(),
 
-                    new global::G.JsonConverters.CreateClipStreamRequestPresenterConfigCropVariant1TypeJsonConverter(),
+                    new global::G.JsonConverters.CreateTalkRequestScriptVariant2TypeJsonConverter(),
 
-                    new global::G.JsonConverters.CreateClipStreamRequestPresenterConfigCropVariant1TypeNullableJsonConverter(),
+                    new global::G.JsonConverters.CreateTalkRequestScriptVariant2TypeNullableJsonConverter(),
 
-                    new global::G.JsonConverters.CreateClipStreamRequestPresenterConfigCropVariant2TypeJsonConverter(),
+                    new global::G.JsonConverters.CreateTalkRequestConfigResultFormatJsonConverter(),
 
-                    new global::G.JsonConverters.CreateClipStreamRequestPresenterConfigCropVariant2TypeNullableJsonConverter(),
+                    new global::G.JsonConverters.CreateTalkRequestConfigResultFormatNullableJsonConverter(),
 
-                    new global::G.JsonConverters.CreateTalkRequestScriptVariant1Type2JsonConverter(),
+                    new global::G.JsonConverters.CreateTalkRequestConfigDriverExpressionsExpressionExpressionJsonConverter(),
 
-                    new global::G.JsonConverters.CreateTalkRequestScriptVariant1Type2NullableJsonConverter(),
-
-                    new global::G.JsonConverters.CreateTalkRequestScriptVariant1ProviderMicrosoftType2JsonConverter(),
-
-                    new global::G.JsonConverters.CreateTalkRequestScriptVariant1ProviderMicrosoftType2NullableJsonConverter(),
-
-                    new global::G.JsonConverters.CreateTalkRequestScriptVariant1ProviderElevenLabsType2JsonConverter(),
-
-                    new global::G.JsonConverters.CreateTalkRequestScriptVariant1ProviderElevenLabsType2NullableJsonConverter(),
-
-                    new global::G.JsonConverters.CreateTalkRequestScriptVariant1ProviderAmazonType2JsonConverter(),
-
-                    new global::G.JsonConverters.CreateTalkRequestScriptVariant1ProviderAmazonType2NullableJsonConverter(),
-
-                    new global::G.JsonConverters.CreateTalkRequestScriptVariant1ProviderAmazonVoiceId2JsonConverter(),
-
-                    new global::G.JsonConverters.CreateTalkRequestScriptVariant1ProviderAmazonVoiceId2NullableJsonConverter(),
-
-                    new global::G.JsonConverters.CreateTalkRequestScriptVariant1ProviderGoogleType2JsonConverter(),
-
-                    new global::G.JsonConverters.CreateTalkRequestScriptVariant1ProviderGoogleType2NullableJsonConverter(),
-
-                    new global::G.JsonConverters.CreateTalkRequestScriptVariant1ProviderOpenAIType2JsonConverter(),
-
-                    new global::G.JsonConverters.CreateTalkRequestScriptVariant1ProviderOpenAIType2NullableJsonConverter(),
-
-                    new global::G.JsonConverters.CreateTalkRequestScriptVariant2Type2JsonConverter(),
-
-                    new global::G.JsonConverters.CreateTalkRequestScriptVariant2Type2NullableJsonConverter(),
-
-                    new global::G.JsonConverters.CreateTalkRequestConfigResultFormat2JsonConverter(),
-
-                    new global::G.JsonConverters.CreateTalkRequestConfigResultFormat2NullableJsonConverter(),
-
-                    new global::G.JsonConverters.CreateTalkRequestConfigDriverExpressionsExpressionExpression2JsonConverter(),
-
-                    new global::G.JsonConverters.CreateTalkRequestConfigDriverExpressionsExpressionExpression2NullableJsonConverter(),
+                    new global::G.JsonConverters.CreateTalkRequestConfigDriverExpressionsExpressionExpressionNullableJsonConverter(),
 
                     new global::G.JsonConverters.UpdatePresenterAttributesRequestVariant1VoiceMicrosoftTypeJsonConverter(),
 
@@ -3146,49 +2838,49 @@ namespace G
 
                     new global::G.JsonConverters.TrainClipRequestGenderNullableJsonConverter(),
 
-                    new global::G.JsonConverters.CreateClipRequestScriptVariant1Type2JsonConverter(),
+                    new global::G.JsonConverters.CreateClipRequestScriptVariant1TypeJsonConverter(),
 
-                    new global::G.JsonConverters.CreateClipRequestScriptVariant1Type2NullableJsonConverter(),
+                    new global::G.JsonConverters.CreateClipRequestScriptVariant1TypeNullableJsonConverter(),
 
-                    new global::G.JsonConverters.CreateClipRequestScriptVariant1ProviderMicrosoftType2JsonConverter(),
+                    new global::G.JsonConverters.CreateClipRequestScriptVariant1ProviderMicrosoftTypeJsonConverter(),
 
-                    new global::G.JsonConverters.CreateClipRequestScriptVariant1ProviderMicrosoftType2NullableJsonConverter(),
+                    new global::G.JsonConverters.CreateClipRequestScriptVariant1ProviderMicrosoftTypeNullableJsonConverter(),
 
-                    new global::G.JsonConverters.CreateClipRequestScriptVariant1ProviderElevenLabsType2JsonConverter(),
+                    new global::G.JsonConverters.CreateClipRequestScriptVariant1ProviderElevenLabsTypeJsonConverter(),
 
-                    new global::G.JsonConverters.CreateClipRequestScriptVariant1ProviderElevenLabsType2NullableJsonConverter(),
+                    new global::G.JsonConverters.CreateClipRequestScriptVariant1ProviderElevenLabsTypeNullableJsonConverter(),
 
-                    new global::G.JsonConverters.CreateClipRequestScriptVariant1ProviderAmazonType2JsonConverter(),
+                    new global::G.JsonConverters.CreateClipRequestScriptVariant1ProviderAmazonTypeJsonConverter(),
 
-                    new global::G.JsonConverters.CreateClipRequestScriptVariant1ProviderAmazonType2NullableJsonConverter(),
+                    new global::G.JsonConverters.CreateClipRequestScriptVariant1ProviderAmazonTypeNullableJsonConverter(),
 
-                    new global::G.JsonConverters.CreateClipRequestScriptVariant1ProviderAmazonVoiceId2JsonConverter(),
+                    new global::G.JsonConverters.CreateClipRequestScriptVariant1ProviderAmazonVoiceIdJsonConverter(),
 
-                    new global::G.JsonConverters.CreateClipRequestScriptVariant1ProviderAmazonVoiceId2NullableJsonConverter(),
+                    new global::G.JsonConverters.CreateClipRequestScriptVariant1ProviderAmazonVoiceIdNullableJsonConverter(),
 
-                    new global::G.JsonConverters.CreateClipRequestScriptVariant1ProviderGoogleType2JsonConverter(),
+                    new global::G.JsonConverters.CreateClipRequestScriptVariant1ProviderGoogleTypeJsonConverter(),
 
-                    new global::G.JsonConverters.CreateClipRequestScriptVariant1ProviderGoogleType2NullableJsonConverter(),
+                    new global::G.JsonConverters.CreateClipRequestScriptVariant1ProviderGoogleTypeNullableJsonConverter(),
 
-                    new global::G.JsonConverters.CreateClipRequestScriptVariant1ProviderOpenAIType2JsonConverter(),
+                    new global::G.JsonConverters.CreateClipRequestScriptVariant1ProviderOpenAITypeJsonConverter(),
 
-                    new global::G.JsonConverters.CreateClipRequestScriptVariant1ProviderOpenAIType2NullableJsonConverter(),
+                    new global::G.JsonConverters.CreateClipRequestScriptVariant1ProviderOpenAITypeNullableJsonConverter(),
 
-                    new global::G.JsonConverters.CreateClipRequestScriptVariant2Type2JsonConverter(),
+                    new global::G.JsonConverters.CreateClipRequestScriptVariant2TypeJsonConverter(),
 
-                    new global::G.JsonConverters.CreateClipRequestScriptVariant2Type2NullableJsonConverter(),
+                    new global::G.JsonConverters.CreateClipRequestScriptVariant2TypeNullableJsonConverter(),
 
-                    new global::G.JsonConverters.CreateClipRequestConfigResultFormat2JsonConverter(),
+                    new global::G.JsonConverters.CreateClipRequestConfigResultFormatJsonConverter(),
 
-                    new global::G.JsonConverters.CreateClipRequestConfigResultFormat2NullableJsonConverter(),
+                    new global::G.JsonConverters.CreateClipRequestConfigResultFormatNullableJsonConverter(),
 
-                    new global::G.JsonConverters.CreateClipRequestPresenterConfigCropVariant1Type2JsonConverter(),
+                    new global::G.JsonConverters.CreateClipRequestPresenterConfigCropVariant1TypeJsonConverter(),
 
-                    new global::G.JsonConverters.CreateClipRequestPresenterConfigCropVariant1Type2NullableJsonConverter(),
+                    new global::G.JsonConverters.CreateClipRequestPresenterConfigCropVariant1TypeNullableJsonConverter(),
 
-                    new global::G.JsonConverters.CreateClipRequestPresenterConfigCropVariant2Type2JsonConverter(),
+                    new global::G.JsonConverters.CreateClipRequestPresenterConfigCropVariant2TypeJsonConverter(),
 
-                    new global::G.JsonConverters.CreateClipRequestPresenterConfigCropVariant2Type2NullableJsonConverter(),
+                    new global::G.JsonConverters.CreateClipRequestPresenterConfigCropVariant2TypeNullableJsonConverter(),
 
                     new global::G.JsonConverters.Create2RequestScriptTextTypeJsonConverter(),
 
@@ -3518,37 +3210,29 @@ namespace G
 
                     new global::G.JsonConverters.UpdateRequestLlmGoogleModelNullableJsonConverter(),
 
-                    new global::G.JsonConverters.CreateStreamRequestCompatibilityModeJsonConverter(),
+                    new global::G.JsonConverters.CreateVideoStreamRequestScriptTextTypeJsonConverter(),
 
-                    new global::G.JsonConverters.CreateStreamRequestCompatibilityModeNullableJsonConverter(),
+                    new global::G.JsonConverters.CreateVideoStreamRequestScriptTextTypeNullableJsonConverter(),
 
-                    new global::G.JsonConverters.StartConnectionRequestAnswerTypeJsonConverter(),
+                    new global::G.JsonConverters.CreateVideoStreamRequestScriptTextProviderMicrosoftTypeJsonConverter(),
 
-                    new global::G.JsonConverters.StartConnectionRequestAnswerTypeNullableJsonConverter(),
+                    new global::G.JsonConverters.CreateVideoStreamRequestScriptTextProviderMicrosoftTypeNullableJsonConverter(),
 
-                    new global::G.JsonConverters.CreateVideoStreamRequestScriptTextType2JsonConverter(),
+                    new global::G.JsonConverters.CreateVideoStreamRequestScriptTextProviderElevenLabsTypeJsonConverter(),
 
-                    new global::G.JsonConverters.CreateVideoStreamRequestScriptTextType2NullableJsonConverter(),
+                    new global::G.JsonConverters.CreateVideoStreamRequestScriptTextProviderElevenLabsTypeNullableJsonConverter(),
 
-                    new global::G.JsonConverters.CreateVideoStreamRequestScriptTextProviderMicrosoftType2JsonConverter(),
+                    new global::G.JsonConverters.CreateVideoStreamRequestScriptTextProviderElevenLabsAccessJsonConverter(),
 
-                    new global::G.JsonConverters.CreateVideoStreamRequestScriptTextProviderMicrosoftType2NullableJsonConverter(),
+                    new global::G.JsonConverters.CreateVideoStreamRequestScriptTextProviderElevenLabsAccessNullableJsonConverter(),
 
-                    new global::G.JsonConverters.CreateVideoStreamRequestScriptTextProviderElevenLabsType2JsonConverter(),
+                    new global::G.JsonConverters.CreateVideoStreamRequestScriptTextProviderOpenAITypeJsonConverter(),
 
-                    new global::G.JsonConverters.CreateVideoStreamRequestScriptTextProviderElevenLabsType2NullableJsonConverter(),
+                    new global::G.JsonConverters.CreateVideoStreamRequestScriptTextProviderOpenAITypeNullableJsonConverter(),
 
-                    new global::G.JsonConverters.CreateVideoStreamRequestScriptTextProviderElevenLabsAccess2JsonConverter(),
+                    new global::G.JsonConverters.CreateVideoStreamRequestScriptAudioTypeJsonConverter(),
 
-                    new global::G.JsonConverters.CreateVideoStreamRequestScriptTextProviderElevenLabsAccess2NullableJsonConverter(),
-
-                    new global::G.JsonConverters.CreateVideoStreamRequestScriptTextProviderOpenAIType2JsonConverter(),
-
-                    new global::G.JsonConverters.CreateVideoStreamRequestScriptTextProviderOpenAIType2NullableJsonConverter(),
-
-                    new global::G.JsonConverters.CreateVideoStreamRequestScriptAudioType2JsonConverter(),
-
-                    new global::G.JsonConverters.CreateVideoStreamRequestScriptAudioType2NullableJsonConverter(),
+                    new global::G.JsonConverters.CreateVideoStreamRequestScriptAudioTypeNullableJsonConverter(),
 
                     new global::G.JsonConverters.ChatRequestMessageRoleJsonConverter(),
 
@@ -3614,41 +3298,41 @@ namespace G
 
                     new global::G.JsonConverters.CreateStreamRequestFaceOverlapNullableJsonConverter(),
 
-                    new global::G.JsonConverters.CreateStreamRequestCompatibilityMode2JsonConverter(),
+                    new global::G.JsonConverters.CreateStreamRequestCompatibilityModeJsonConverter(),
 
-                    new global::G.JsonConverters.CreateStreamRequestCompatibilityMode2NullableJsonConverter(),
+                    new global::G.JsonConverters.CreateStreamRequestCompatibilityModeNullableJsonConverter(),
 
-                    new global::G.JsonConverters.StartConnectionRequestAnswerType2JsonConverter(),
+                    new global::G.JsonConverters.StartConnectionRequestAnswerTypeJsonConverter(),
 
-                    new global::G.JsonConverters.StartConnectionRequestAnswerType2NullableJsonConverter(),
+                    new global::G.JsonConverters.StartConnectionRequestAnswerTypeNullableJsonConverter(),
 
-                    new global::G.JsonConverters.CreateTalkStreamRequestScriptVariant1Type2JsonConverter(),
+                    new global::G.JsonConverters.CreateTalkStreamRequestScriptVariant1TypeJsonConverter(),
 
-                    new global::G.JsonConverters.CreateTalkStreamRequestScriptVariant1Type2NullableJsonConverter(),
+                    new global::G.JsonConverters.CreateTalkStreamRequestScriptVariant1TypeNullableJsonConverter(),
 
-                    new global::G.JsonConverters.CreateTalkStreamRequestScriptVariant1ProviderMicrosoftType2JsonConverter(),
+                    new global::G.JsonConverters.CreateTalkStreamRequestScriptVariant1ProviderMicrosoftTypeJsonConverter(),
 
-                    new global::G.JsonConverters.CreateTalkStreamRequestScriptVariant1ProviderMicrosoftType2NullableJsonConverter(),
+                    new global::G.JsonConverters.CreateTalkStreamRequestScriptVariant1ProviderMicrosoftTypeNullableJsonConverter(),
 
-                    new global::G.JsonConverters.CreateTalkStreamRequestScriptVariant1ProviderElevenLabsType2JsonConverter(),
+                    new global::G.JsonConverters.CreateTalkStreamRequestScriptVariant1ProviderElevenLabsTypeJsonConverter(),
 
-                    new global::G.JsonConverters.CreateTalkStreamRequestScriptVariant1ProviderElevenLabsType2NullableJsonConverter(),
+                    new global::G.JsonConverters.CreateTalkStreamRequestScriptVariant1ProviderElevenLabsTypeNullableJsonConverter(),
 
-                    new global::G.JsonConverters.CreateTalkStreamRequestScriptVariant1ProviderElevenLabsAccess2JsonConverter(),
+                    new global::G.JsonConverters.CreateTalkStreamRequestScriptVariant1ProviderElevenLabsAccessJsonConverter(),
 
-                    new global::G.JsonConverters.CreateTalkStreamRequestScriptVariant1ProviderElevenLabsAccess2NullableJsonConverter(),
+                    new global::G.JsonConverters.CreateTalkStreamRequestScriptVariant1ProviderElevenLabsAccessNullableJsonConverter(),
 
-                    new global::G.JsonConverters.CreateTalkStreamRequestScriptVariant1ProviderOpenAIType2JsonConverter(),
+                    new global::G.JsonConverters.CreateTalkStreamRequestScriptVariant1ProviderOpenAITypeJsonConverter(),
 
-                    new global::G.JsonConverters.CreateTalkStreamRequestScriptVariant1ProviderOpenAIType2NullableJsonConverter(),
+                    new global::G.JsonConverters.CreateTalkStreamRequestScriptVariant1ProviderOpenAITypeNullableJsonConverter(),
 
-                    new global::G.JsonConverters.CreateTalkStreamRequestScriptVariant2Type2JsonConverter(),
+                    new global::G.JsonConverters.CreateTalkStreamRequestScriptVariant2TypeJsonConverter(),
 
-                    new global::G.JsonConverters.CreateTalkStreamRequestScriptVariant2Type2NullableJsonConverter(),
+                    new global::G.JsonConverters.CreateTalkStreamRequestScriptVariant2TypeNullableJsonConverter(),
 
-                    new global::G.JsonConverters.CreateTalkStreamRequestConfigVariant1ResultFormat2JsonConverter(),
+                    new global::G.JsonConverters.CreateTalkStreamRequestConfigVariant1ResultFormatJsonConverter(),
 
-                    new global::G.JsonConverters.CreateTalkStreamRequestConfigVariant1ResultFormat2NullableJsonConverter(),
+                    new global::G.JsonConverters.CreateTalkStreamRequestConfigVariant1ResultFormatNullableJsonConverter(),
 
                     new global::G.JsonConverters.CreateStream1RequestCompatibilityModeJsonConverter(),
 
@@ -3658,41 +3342,41 @@ namespace G
 
                     new global::G.JsonConverters.StartConnection1RequestAnswerTypeNullableJsonConverter(),
 
-                    new global::G.JsonConverters.CreateClipStreamRequestScriptVariant1Type2JsonConverter(),
+                    new global::G.JsonConverters.CreateClipStreamRequestScriptVariant1TypeJsonConverter(),
 
-                    new global::G.JsonConverters.CreateClipStreamRequestScriptVariant1Type2NullableJsonConverter(),
+                    new global::G.JsonConverters.CreateClipStreamRequestScriptVariant1TypeNullableJsonConverter(),
 
-                    new global::G.JsonConverters.CreateClipStreamRequestScriptVariant1ProviderMicrosoftType2JsonConverter(),
+                    new global::G.JsonConverters.CreateClipStreamRequestScriptVariant1ProviderMicrosoftTypeJsonConverter(),
 
-                    new global::G.JsonConverters.CreateClipStreamRequestScriptVariant1ProviderMicrosoftType2NullableJsonConverter(),
+                    new global::G.JsonConverters.CreateClipStreamRequestScriptVariant1ProviderMicrosoftTypeNullableJsonConverter(),
 
-                    new global::G.JsonConverters.CreateClipStreamRequestScriptVariant1ProviderElevenLabsType2JsonConverter(),
+                    new global::G.JsonConverters.CreateClipStreamRequestScriptVariant1ProviderElevenLabsTypeJsonConverter(),
 
-                    new global::G.JsonConverters.CreateClipStreamRequestScriptVariant1ProviderElevenLabsType2NullableJsonConverter(),
+                    new global::G.JsonConverters.CreateClipStreamRequestScriptVariant1ProviderElevenLabsTypeNullableJsonConverter(),
 
-                    new global::G.JsonConverters.CreateClipStreamRequestScriptVariant1ProviderElevenLabsAccess2JsonConverter(),
+                    new global::G.JsonConverters.CreateClipStreamRequestScriptVariant1ProviderElevenLabsAccessJsonConverter(),
 
-                    new global::G.JsonConverters.CreateClipStreamRequestScriptVariant1ProviderElevenLabsAccess2NullableJsonConverter(),
+                    new global::G.JsonConverters.CreateClipStreamRequestScriptVariant1ProviderElevenLabsAccessNullableJsonConverter(),
 
-                    new global::G.JsonConverters.CreateClipStreamRequestScriptVariant1ProviderOpenAIType2JsonConverter(),
+                    new global::G.JsonConverters.CreateClipStreamRequestScriptVariant1ProviderOpenAITypeJsonConverter(),
 
-                    new global::G.JsonConverters.CreateClipStreamRequestScriptVariant1ProviderOpenAIType2NullableJsonConverter(),
+                    new global::G.JsonConverters.CreateClipStreamRequestScriptVariant1ProviderOpenAITypeNullableJsonConverter(),
 
-                    new global::G.JsonConverters.CreateClipStreamRequestScriptVariant2Type2JsonConverter(),
+                    new global::G.JsonConverters.CreateClipStreamRequestScriptVariant2TypeJsonConverter(),
 
-                    new global::G.JsonConverters.CreateClipStreamRequestScriptVariant2Type2NullableJsonConverter(),
+                    new global::G.JsonConverters.CreateClipStreamRequestScriptVariant2TypeNullableJsonConverter(),
 
-                    new global::G.JsonConverters.CreateClipStreamRequestConfigResultFormat2JsonConverter(),
+                    new global::G.JsonConverters.CreateClipStreamRequestConfigResultFormatJsonConverter(),
 
-                    new global::G.JsonConverters.CreateClipStreamRequestConfigResultFormat2NullableJsonConverter(),
+                    new global::G.JsonConverters.CreateClipStreamRequestConfigResultFormatNullableJsonConverter(),
 
-                    new global::G.JsonConverters.CreateClipStreamRequestPresenterConfigCropVariant1Type2JsonConverter(),
+                    new global::G.JsonConverters.CreateClipStreamRequestPresenterConfigCropVariant1TypeJsonConverter(),
 
-                    new global::G.JsonConverters.CreateClipStreamRequestPresenterConfigCropVariant1Type2NullableJsonConverter(),
+                    new global::G.JsonConverters.CreateClipStreamRequestPresenterConfigCropVariant1TypeNullableJsonConverter(),
 
-                    new global::G.JsonConverters.CreateClipStreamRequestPresenterConfigCropVariant2Type2JsonConverter(),
+                    new global::G.JsonConverters.CreateClipStreamRequestPresenterConfigCropVariant2TypeJsonConverter(),
 
-                    new global::G.JsonConverters.CreateClipStreamRequestPresenterConfigCropVariant2Type2NullableJsonConverter(),
+                    new global::G.JsonConverters.CreateClipStreamRequestPresenterConfigCropVariant2TypeNullableJsonConverter(),
 
                     new global::G.JsonConverters.ListMyAgentsSortByJsonConverter(),
 
@@ -3810,29 +3494,29 @@ namespace G
 
                     new global::G.JsonConverters.TrainClipResponseStatusNullableJsonConverter(),
 
-                    new global::G.JsonConverters.CreateClipResponseObject2JsonConverter(),
+                    new global::G.JsonConverters.CreateClipResponseObjectJsonConverter(),
 
-                    new global::G.JsonConverters.CreateClipResponseObject2NullableJsonConverter(),
+                    new global::G.JsonConverters.CreateClipResponseObjectNullableJsonConverter(),
 
-                    new global::G.JsonConverters.CreateClipResponseStatus2JsonConverter(),
+                    new global::G.JsonConverters.CreateClipResponseStatusJsonConverter(),
 
-                    new global::G.JsonConverters.CreateClipResponseStatus2NullableJsonConverter(),
+                    new global::G.JsonConverters.CreateClipResponseStatusNullableJsonConverter(),
 
-                    new global::G.JsonConverters.GetClipsResponseClipConfigResultFormat2JsonConverter(),
+                    new global::G.JsonConverters.GetClipsResponseClipConfigResultFormatJsonConverter(),
 
-                    new global::G.JsonConverters.GetClipsResponseClipConfigResultFormat2NullableJsonConverter(),
+                    new global::G.JsonConverters.GetClipsResponseClipConfigResultFormatNullableJsonConverter(),
 
-                    new global::G.JsonConverters.GetClipsResponseClipStatus2JsonConverter(),
+                    new global::G.JsonConverters.GetClipsResponseClipStatusJsonConverter(),
 
-                    new global::G.JsonConverters.GetClipsResponseClipStatus2NullableJsonConverter(),
+                    new global::G.JsonConverters.GetClipsResponseClipStatusNullableJsonConverter(),
 
-                    new global::G.JsonConverters.GetClipResponseConfigResultFormat2JsonConverter(),
+                    new global::G.JsonConverters.GetClipResponseConfigResultFormatJsonConverter(),
 
-                    new global::G.JsonConverters.GetClipResponseConfigResultFormat2NullableJsonConverter(),
+                    new global::G.JsonConverters.GetClipResponseConfigResultFormatNullableJsonConverter(),
 
-                    new global::G.JsonConverters.GetClipResponseStatus2JsonConverter(),
+                    new global::G.JsonConverters.GetClipResponseStatusJsonConverter(),
 
-                    new global::G.JsonConverters.GetClipResponseStatus2NullableJsonConverter(),
+                    new global::G.JsonConverters.GetClipResponseStatusNullableJsonConverter(),
 
                     new global::G.JsonConverters.DeleteClipResponseConfigResultFormatJsonConverter(),
 
@@ -3850,33 +3534,33 @@ namespace G
 
                     new global::G.JsonConverters.CreateResponseTranslationTranscriptionVersionNullableJsonConverter(),
 
-                    new global::G.JsonConverters.GetTranslationsResponseTranslationStatus2JsonConverter(),
+                    new global::G.JsonConverters.GetTranslationsResponseTranslationStatusJsonConverter(),
 
-                    new global::G.JsonConverters.GetTranslationsResponseTranslationStatus2NullableJsonConverter(),
+                    new global::G.JsonConverters.GetTranslationsResponseTranslationStatusNullableJsonConverter(),
 
-                    new global::G.JsonConverters.GetTranslationsResponseTranslationTranscriptionVersion2JsonConverter(),
+                    new global::G.JsonConverters.GetTranslationsResponseTranslationTranscriptionVersionJsonConverter(),
 
-                    new global::G.JsonConverters.GetTranslationsResponseTranslationTranscriptionVersion2NullableJsonConverter(),
+                    new global::G.JsonConverters.GetTranslationsResponseTranslationTranscriptionVersionNullableJsonConverter(),
 
-                    new global::G.JsonConverters.GetGroupResponseStatus2JsonConverter(),
+                    new global::G.JsonConverters.GetGroupResponseStatusJsonConverter(),
 
-                    new global::G.JsonConverters.GetGroupResponseStatus2NullableJsonConverter(),
+                    new global::G.JsonConverters.GetGroupResponseStatusNullableJsonConverter(),
 
-                    new global::G.JsonConverters.GetGroupResponseTranslationStatus2JsonConverter(),
+                    new global::G.JsonConverters.GetGroupResponseTranslationStatusJsonConverter(),
 
-                    new global::G.JsonConverters.GetGroupResponseTranslationStatus2NullableJsonConverter(),
+                    new global::G.JsonConverters.GetGroupResponseTranslationStatusNullableJsonConverter(),
 
-                    new global::G.JsonConverters.GetGroupResponseTranslationTranscriptionVersion2JsonConverter(),
+                    new global::G.JsonConverters.GetGroupResponseTranslationTranscriptionVersionJsonConverter(),
 
-                    new global::G.JsonConverters.GetGroupResponseTranslationTranscriptionVersion2NullableJsonConverter(),
+                    new global::G.JsonConverters.GetGroupResponseTranslationTranscriptionVersionNullableJsonConverter(),
 
-                    new global::G.JsonConverters.GetTranslationResponseStatus2JsonConverter(),
+                    new global::G.JsonConverters.GetTranslationResponseStatusJsonConverter(),
 
-                    new global::G.JsonConverters.GetTranslationResponseStatus2NullableJsonConverter(),
+                    new global::G.JsonConverters.GetTranslationResponseStatusNullableJsonConverter(),
 
-                    new global::G.JsonConverters.GetTranslationResponseTranscriptionVersion2JsonConverter(),
+                    new global::G.JsonConverters.GetTranslationResponseTranscriptionVersionJsonConverter(),
 
-                    new global::G.JsonConverters.GetTranslationResponseTranscriptionVersion2NullableJsonConverter(),
+                    new global::G.JsonConverters.GetTranslationResponseTranscriptionVersionNullableJsonConverter(),
 
                     new global::G.JsonConverters.Create1ResponseStatusJsonConverter(),
 
@@ -3894,9 +3578,9 @@ namespace G
 
                     new global::G.JsonConverters.GetAvatarsResponseAvatarObjectNullableJsonConverter(),
 
-                    new global::G.JsonConverters.GetResponseStatusJsonConverter(),
+                    new global::G.JsonConverters.GetResponseStatus2JsonConverter(),
 
-                    new global::G.JsonConverters.GetResponseStatusNullableJsonConverter(),
+                    new global::G.JsonConverters.GetResponseStatus2NullableJsonConverter(),
 
                     new global::G.JsonConverters.GetResponseObjectJsonConverter(),
 
@@ -4650,13 +4334,9 @@ namespace G
 
                     new global::G.JsonConverters.DeleteResponseVariant1KnowledgeProviderNullableJsonConverter(),
 
-                    new global::G.JsonConverters.CreateStreamResponseJsepTypeJsonConverter(),
+                    new global::G.JsonConverters.ChatResponseChatModeJsonConverter(),
 
-                    new global::G.JsonConverters.CreateStreamResponseJsepTypeNullableJsonConverter(),
-
-                    new global::G.JsonConverters.ChatResponseChatMode2JsonConverter(),
-
-                    new global::G.JsonConverters.ChatResponseChatMode2NullableJsonConverter(),
+                    new global::G.JsonConverters.ChatResponseChatModeNullableJsonConverter(),
 
                     new global::G.JsonConverters.GetChatLogsResponseStatusJsonConverter(),
 
@@ -4742,9 +4422,9 @@ namespace G
 
                     new global::G.JsonConverters.ListResponseConsentStatusNullableJsonConverter(),
 
-                    new global::G.JsonConverters.GetResponseStatus2JsonConverter(),
+                    new global::G.JsonConverters.GetResponseStatusJsonConverter(),
 
-                    new global::G.JsonConverters.GetResponseStatus2NullableJsonConverter(),
+                    new global::G.JsonConverters.GetResponseStatusNullableJsonConverter(),
 
                     new global::G.JsonConverters.GetSettingsResponseAgentsLlmModelJsonConverter(),
 
@@ -4802,9 +4482,9 @@ namespace G
 
                     new global::G.JsonConverters.DeleteAnimationResponseConfigResultFormatNullableJsonConverter(),
 
-                    new global::G.JsonConverters.CreateStreamResponseJsepType2JsonConverter(),
+                    new global::G.JsonConverters.CreateStreamResponseJsepTypeJsonConverter(),
 
-                    new global::G.JsonConverters.CreateStreamResponseJsepType2NullableJsonConverter(),
+                    new global::G.JsonConverters.CreateStreamResponseJsepTypeNullableJsonConverter(),
 
                     new global::G.JsonConverters.CreateStream1ResponseJsepTypeJsonConverter(),
 

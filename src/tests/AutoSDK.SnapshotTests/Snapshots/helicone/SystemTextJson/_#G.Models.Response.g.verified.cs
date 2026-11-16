@@ -1,4 +1,4 @@
-﻿//HintName: G.Models.Response.g.cs
+//HintName: G.Models.Response.g.cs
 
 #nullable enable
 
@@ -73,7 +73,7 @@ namespace G
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("tool_calls")]
-        public global::System.Collections.Generic.IList<global::G.FunctionCall2>? ToolCalls { get; set; }
+        public global::System.Collections.Generic.IList<global::G.FunctionCall>? ToolCalls { get; set; }
 
         /// <summary>
         /// 
@@ -160,7 +160,7 @@ namespace G
             string? imageUrl,
             string? timestamp,
             string? toolCallId,
-            global::System.Collections.Generic.IList<global::G.FunctionCall2>? toolCalls,
+            global::System.Collections.Generic.IList<global::G.FunctionCall>? toolCalls,
             string? text,
             string? name,
             string? id)

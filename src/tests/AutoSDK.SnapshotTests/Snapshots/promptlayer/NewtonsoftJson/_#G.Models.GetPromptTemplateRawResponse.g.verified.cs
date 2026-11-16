@@ -1,4 +1,4 @@
-﻿//HintName: G.Models.GetPromptTemplateRawResponse.g.cs
+//HintName: G.Models.GetPromptTemplateRawResponse.g.cs
 
 #nullable enable
 
@@ -43,7 +43,7 @@ namespace G
         /// The prompt template content. When resolve_snippets is true (default), snippets are expanded. When false, raw @@@snippet@@@ references are preserved.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("prompt_template", Required = global::Newtonsoft.Json.Required.Always)]
-        public global::G.PromptTemplate2 PromptTemplate { get; set; } = default!;
+        public global::G.PromptTemplate5 PromptTemplate { get; set; } = default!;
 
         /// <summary>
         /// Model configuration including provider, model name, and parameters.
@@ -130,7 +130,7 @@ namespace G
             string promptName,
             int version,
             int workspaceId,
-            global::G.PromptTemplate2 promptTemplate,
+            global::G.PromptTemplate5 promptTemplate,
             global::System.Collections.Generic.IList<global::G.SnippetReference> snippets,
             global::G.Metadata? metadata,
             string? commitMessage,

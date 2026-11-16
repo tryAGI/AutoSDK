@@ -1,4 +1,4 @@
-﻿//HintName: G.Models.FeedbackSchema.g.cs
+//HintName: G.Models.FeedbackSchema.g.cs
 
 #nullable enable
 
@@ -85,7 +85,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("feedback_source")]
-        public global::G.FeedbackSource3? FeedbackSource { get; set; }
+        public global::G.FeedbackSource? FeedbackSource { get; set; }
 
         /// <summary>
         /// 
@@ -129,7 +129,7 @@ namespace G
             global::System.Guid? comparativeExperimentId,
             global::System.Guid? runId,
             global::System.Guid? sessionId,
-            global::G.FeedbackSource3? feedbackSource,
+            global::G.FeedbackSource? feedbackSource,
             object? extra)
         {
             this.CreatedAt = createdAt;

@@ -1,4 +1,4 @@
-﻿//HintName: G.IAgentsStreamsClient.CreateChat.g.cs
+//HintName: G.IAgentsStreamsClient.CreateChat.g.cs
 #nullable enable
 
 namespace G
@@ -17,7 +17,7 @@ namespace G
         global::System.Threading.Tasks.Task<string> CreateChatAsync(
             string agentId,
 
-            global::G.CreateChatRequest2 request,
+            global::G.CreateChatRequest request,
             global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
@@ -32,7 +32,7 @@ namespace G
         global::System.Threading.Tasks.Task<global::G.AutoSDKHttpResponse<string>> CreateChatAsResponseAsync(
             string agentId,
 
-            global::G.CreateChatRequest2 request,
+            global::G.CreateChatRequest request,
             global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>

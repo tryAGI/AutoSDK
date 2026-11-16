@@ -253,6 +253,10 @@ public static class ModelNameGenerator
             foreach (var context in contexts)
             {
                 if (context.IsReference ||
+                    // Already settled as a copy of another context, and deliberately keeps its
+                    // name. Leaving it in the grouping would keep reporting a collision that is
+                    // never resolved, and the loop below would not terminate.
+                    context.IsStructuralDuplicate ||
                     context.IsNullableUnionWrapper ||
                     (!context.IsClass && !context.IsEnum && !context.IsAnyOfLikeStructure))
                 {
@@ -275,9 +279,59 @@ public static class ModelNameGenerator
             foreach (var group in groups.Values)
             {
                 if (group.Count <= 1) continue;
+
+                // Order the group by something that does not depend on how the contexts were
+                // enumerated. Which member keeps the un-suffixed name used to fall out of
+                // collection order, and the CLI and the Roslyn generator walk the graph
+                // differently - so together.yaml generated `FineTuneEvent2` referencing
+                // `FineTuneEventType` in one pipeline and `FineTuneEventType2` in the other, and
+                // only one of them compiled. A schema named in `components` wins, and the owner
+                // path breaks any remaining tie.
+                group.Sort(static (left, right) =>
+                {
+                    var byComponent = (right.ComponentId != null).CompareTo(left.ComponentId != null);
+                    return byComponent != 0
+                        ? byComponent
+                        : string.CompareOrdinal(
+                            GetAnonymousUnionPath(left),
+                            GetAnonymousUnionPath(right));
+                });
+
+                // Contexts that want the same name AND describe the same shape are not a collision:
+                // the spec repeated one inline schema and a fresh context was built per occurrence.
+                // Numbering them produced `InvalidTokenErrorBody11` and twenty-odd siblings - 55% of
+                // every numbered name in the workspace. They keep the un-suffixed name and are
+                // marked so only one model is emitted for them; the number is reserved for contexts
+                // that really do describe something different.
+                // The canonical member has to be one that actually emits a model, or its copies
+                // would resolve to a type nothing defines. together.yaml is the case: the context
+                // that sorts first there is filtered out, so pointing `FineTuneEvent2` at its
+                // `FineTuneEventType` produced a reference to a type that was never generated.
+                var canEmit = group[0].IsModel && !group[0].IsFilteredOutModel;
+
+                var number = 2;
                 for (var i = 1; i < group.Count; i++)
                 {
-                    group[i].Id += $"{i + 1}";
+                    if (canEmit &&
+                        OpenApiSchemaStructuralComparer.AreStructurallyEqual(
+                            group[0].Schema,
+                            group[i].Schema))
+                    {
+                        group[i].DuplicateOf = group[0];
+                        // And it has to answer to the canonical member's name, not its own. The
+                        // grouping is case-insensitive, so a duplicate's spelling is only the same
+                        // as the canonical's when the collision was exact-case. together.yaml
+                        // declares both `FinetuneEvent` and `FineTuneEvent`: their nested
+                        // `...EventType` schemas collide, the canonical emits as
+                        // `FinetuneEventType`, and a duplicate left holding `FineTuneEventType`
+                        // made every reference to it point at a type nothing defines.
+                        group[i].Id = group[0].Id;
+                        continue;
+                    }
+
+                    group[i].DuplicateOf = null;
+                    group[i].Id += $"{number}";
+                    number++;
                 }
             }
         }

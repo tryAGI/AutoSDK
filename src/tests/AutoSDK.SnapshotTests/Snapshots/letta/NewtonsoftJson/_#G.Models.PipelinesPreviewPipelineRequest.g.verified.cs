@@ -1,4 +1,4 @@
-﻿//HintName: G.Models.PipelinesPreviewPipelineRequest.g.cs
+//HintName: G.Models.PipelinesPreviewPipelineRequest.g.cs
 
 #nullable enable
 
@@ -26,7 +26,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("producer_config", Required = global::Newtonsoft.Json.Required.Always)]
-        public global::G.ProducerConfig3 ProducerConfig { get; set; } = default!;
+        public global::G.ProducerConfig2 ProducerConfig { get; set; } = default!;
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -43,7 +43,7 @@ namespace G
         public PipelinesPreviewPipelineRequest(
             global::G.PipelinesPreviewPipelineRequestIntegrationType integrationType,
             string integrationId,
-            global::G.ProducerConfig3 producerConfig)
+            global::G.ProducerConfig2 producerConfig)
         {
             this.IntegrationType = integrationType;
             this.IntegrationId = integrationId ?? throw new global::System.ArgumentNullException(nameof(integrationId));

@@ -1,4 +1,4 @@
-﻿//HintName: G.Models.ErrorResponse.g.cs
+//HintName: G.Models.ErrorResponse.g.cs
 
 #nullable enable
 
@@ -21,7 +21,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("error", Required = global::Newtonsoft.Json.Required.Always)]
-        public global::G.Error2 Error { get; set; } = default!;
+        public global::G.Error Error { get; set; } = default!;
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -37,7 +37,7 @@ namespace G
         /// Default Value: error
         /// </param>
         public ErrorResponse(
-            global::G.Error2 error,
+            global::G.Error error,
             global::G.ErrorResponseType type = global::G.ErrorResponseType.Error)
         {
             this.Type = type;

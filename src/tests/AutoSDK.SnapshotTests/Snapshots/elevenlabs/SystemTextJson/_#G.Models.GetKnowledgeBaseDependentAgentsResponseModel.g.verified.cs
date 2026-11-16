@@ -1,4 +1,4 @@
-﻿//HintName: G.Models.GetKnowledgeBaseDependentAgentsResponseModel.g.cs
+//HintName: G.Models.GetKnowledgeBaseDependentAgentsResponseModel.g.cs
 
 #nullable enable
 
@@ -14,7 +14,7 @@ namespace G
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("agents")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::System.Collections.Generic.IList<global::G.AgentsItem2> Agents { get; set; }
+        public required global::System.Collections.Generic.IList<global::G.AgentsItem3> Agents { get; set; }
 
         /// <summary>
         /// 
@@ -52,7 +52,7 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public GetKnowledgeBaseDependentAgentsResponseModel(
-            global::System.Collections.Generic.IList<global::G.AgentsItem2> agents,
+            global::System.Collections.Generic.IList<global::G.AgentsItem3> agents,
             bool hasMore,
             global::System.Collections.Generic.IList<global::G.DependentBranchInfo>? branches,
             string? nextCursor)

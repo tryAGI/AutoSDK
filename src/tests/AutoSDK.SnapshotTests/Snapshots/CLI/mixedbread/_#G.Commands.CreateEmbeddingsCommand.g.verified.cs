@@ -1,4 +1,4 @@
-﻿//HintName: G.Commands.CreateEmbeddingsCommand.g.cs
+//HintName: G.Commands.CreateEmbeddingsCommand.g.cs
 
 #nullable enable
 
@@ -17,7 +17,7 @@ namespace G
             int? dimensions,
             string? prompt,
             bool? normalized,
-            global::G.AnyOf<global::G.EncodingFormat3?, global::System.Collections.Generic.IList<global::G.EncodingFormat3>>? encodingFormat,
+            global::G.AnyOf<global::G.EncodingFormat?, global::System.Collections.Generic.IList<global::G.EncodingFormat>>? encodingFormat,
             global::System.Threading.CancellationToken cancellationToken);
         partial void Complete(
             global::System.CommandLine.ParseResult parseResult,
@@ -55,7 +55,7 @@ namespace G
             Description = @"Whether to normalize the embeddings.",
         };
 
-        private global::System.CommandLine.Option<global::G.AnyOf<global::G.EncodingFormat3?, global::System.Collections.Generic.IList<global::G.EncodingFormat3>>?> EncodingFormat { get; } = new(
+        private global::System.CommandLine.Option<global::G.AnyOf<global::G.EncodingFormat?, global::System.Collections.Generic.IList<global::G.EncodingFormat>>?> EncodingFormat { get; } = new(
             name: "encodingFormat")
         {
             Description = @"The encoding format(s) of the embeddings. Can be a single format or a list of formats.",

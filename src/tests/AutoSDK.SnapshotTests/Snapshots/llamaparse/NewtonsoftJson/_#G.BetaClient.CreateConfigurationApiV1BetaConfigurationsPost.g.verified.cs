@@ -540,7 +540,7 @@ namespace G
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<global::G.ConfigurationResponse> CreateConfigurationApiV1BetaConfigurationsPostAsync(
             string name,
-            global::G.Parameters parameters,
+            global::G.Parameters2 parameters,
             global::System.Guid? projectId = default,
             global::System.Guid? organizationId = default,
             string? session = default,

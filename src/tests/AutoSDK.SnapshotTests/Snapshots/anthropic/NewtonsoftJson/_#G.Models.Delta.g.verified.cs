@@ -13,15 +13,15 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.BetaContentBlockDeltaEventDeltaDiscriminatorType? Type { get; }
+        public global::G.ContentBlockDeltaEventDeltaDiscriminatorType? Type { get; }
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        public global::G.BetaTextContentBlockDelta? TextDelta { get; init; }
+        public global::G.TextContentBlockDelta? TextDelta { get; init; }
 #else
-        public global::G.BetaTextContentBlockDelta? TextDelta { get; }
+        public global::G.TextContentBlockDelta? TextDelta { get; }
 #endif
 
         /// <summary>
@@ -39,7 +39,7 @@ namespace G
 #if NET6_0_OR_GREATER
             [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
 #endif
-            out global::G.BetaTextContentBlockDelta? value)
+            out global::G.TextContentBlockDelta? value)
         {
             value = TextDelta;
             return IsTextDelta;
@@ -48,7 +48,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.BetaTextContentBlockDelta PickTextDelta() => TextDelta is { } value
+        public global::G.TextContentBlockDelta PickTextDelta() => TextDelta is { } value
             ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'TextDelta' but the value was {ToString()}.");
 
@@ -56,9 +56,9 @@ namespace G
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        public global::G.BetaInputJsonContentBlockDelta? InputJsonDelta { get; init; }
+        public global::G.InputJsonContentBlockDelta? InputJsonDelta { get; init; }
 #else
-        public global::G.BetaInputJsonContentBlockDelta? InputJsonDelta { get; }
+        public global::G.InputJsonContentBlockDelta? InputJsonDelta { get; }
 #endif
 
         /// <summary>
@@ -76,7 +76,7 @@ namespace G
 #if NET6_0_OR_GREATER
             [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
 #endif
-            out global::G.BetaInputJsonContentBlockDelta? value)
+            out global::G.InputJsonContentBlockDelta? value)
         {
             value = InputJsonDelta;
             return IsInputJsonDelta;
@@ -85,7 +85,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.BetaInputJsonContentBlockDelta PickInputJsonDelta() => InputJsonDelta is { } value
+        public global::G.InputJsonContentBlockDelta PickInputJsonDelta() => InputJsonDelta is { } value
             ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'InputJsonDelta' but the value was {ToString()}.");
 
@@ -93,9 +93,9 @@ namespace G
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        public global::G.BetaCitationsDelta? CitationsDelta { get; init; }
+        public global::G.CitationsDelta? CitationsDelta { get; init; }
 #else
-        public global::G.BetaCitationsDelta? CitationsDelta { get; }
+        public global::G.CitationsDelta? CitationsDelta { get; }
 #endif
 
         /// <summary>
@@ -113,7 +113,7 @@ namespace G
 #if NET6_0_OR_GREATER
             [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
 #endif
-            out global::G.BetaCitationsDelta? value)
+            out global::G.CitationsDelta? value)
         {
             value = CitationsDelta;
             return IsCitationsDelta;
@@ -122,7 +122,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.BetaCitationsDelta PickCitationsDelta() => CitationsDelta is { } value
+        public global::G.CitationsDelta PickCitationsDelta() => CitationsDelta is { } value
             ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'CitationsDelta' but the value was {ToString()}.");
 
@@ -130,9 +130,9 @@ namespace G
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        public global::G.BetaThinkingContentBlockDelta? ThinkingDelta { get; init; }
+        public global::G.ThinkingContentBlockDelta? ThinkingDelta { get; init; }
 #else
-        public global::G.BetaThinkingContentBlockDelta? ThinkingDelta { get; }
+        public global::G.ThinkingContentBlockDelta? ThinkingDelta { get; }
 #endif
 
         /// <summary>
@@ -150,7 +150,7 @@ namespace G
 #if NET6_0_OR_GREATER
             [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
 #endif
-            out global::G.BetaThinkingContentBlockDelta? value)
+            out global::G.ThinkingContentBlockDelta? value)
         {
             value = ThinkingDelta;
             return IsThinkingDelta;
@@ -159,7 +159,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.BetaThinkingContentBlockDelta PickThinkingDelta() => ThinkingDelta is { } value
+        public global::G.ThinkingContentBlockDelta PickThinkingDelta() => ThinkingDelta is { } value
             ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'ThinkingDelta' but the value was {ToString()}.");
 
@@ -167,9 +167,9 @@ namespace G
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        public global::G.BetaSignatureContentBlockDelta? SignatureDelta { get; init; }
+        public global::G.SignatureContentBlockDelta? SignatureDelta { get; init; }
 #else
-        public global::G.BetaSignatureContentBlockDelta? SignatureDelta { get; }
+        public global::G.SignatureContentBlockDelta? SignatureDelta { get; }
 #endif
 
         /// <summary>
@@ -187,7 +187,7 @@ namespace G
 #if NET6_0_OR_GREATER
             [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
 #endif
-            out global::G.BetaSignatureContentBlockDelta? value)
+            out global::G.SignatureContentBlockDelta? value)
         {
             value = SignatureDelta;
             return IsSignatureDelta;
@@ -196,23 +196,23 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.BetaSignatureContentBlockDelta PickSignatureDelta() => SignatureDelta is { } value
+        public global::G.SignatureContentBlockDelta PickSignatureDelta() => SignatureDelta is { } value
             ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'SignatureDelta' but the value was {ToString()}.");
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator Delta(global::G.BetaTextContentBlockDelta value) => new Delta((global::G.BetaTextContentBlockDelta?)value);
+        public static implicit operator Delta(global::G.TextContentBlockDelta value) => new Delta((global::G.TextContentBlockDelta?)value);
 
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator global::G.BetaTextContentBlockDelta?(Delta @this) => @this.TextDelta;
+        public static implicit operator global::G.TextContentBlockDelta?(Delta @this) => @this.TextDelta;
 
         /// <summary>
         /// 
         /// </summary>
-        public Delta(global::G.BetaTextContentBlockDelta? value)
+        public Delta(global::G.TextContentBlockDelta? value)
         {
             TextDelta = value;
         }
@@ -220,22 +220,22 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static Delta FromTextDelta(global::G.BetaTextContentBlockDelta? value) => new Delta(value);
+        public static Delta FromTextDelta(global::G.TextContentBlockDelta? value) => new Delta(value);
 
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator Delta(global::G.BetaInputJsonContentBlockDelta value) => new Delta((global::G.BetaInputJsonContentBlockDelta?)value);
+        public static implicit operator Delta(global::G.InputJsonContentBlockDelta value) => new Delta((global::G.InputJsonContentBlockDelta?)value);
 
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator global::G.BetaInputJsonContentBlockDelta?(Delta @this) => @this.InputJsonDelta;
+        public static implicit operator global::G.InputJsonContentBlockDelta?(Delta @this) => @this.InputJsonDelta;
 
         /// <summary>
         /// 
         /// </summary>
-        public Delta(global::G.BetaInputJsonContentBlockDelta? value)
+        public Delta(global::G.InputJsonContentBlockDelta? value)
         {
             InputJsonDelta = value;
         }
@@ -243,22 +243,22 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static Delta FromInputJsonDelta(global::G.BetaInputJsonContentBlockDelta? value) => new Delta(value);
+        public static Delta FromInputJsonDelta(global::G.InputJsonContentBlockDelta? value) => new Delta(value);
 
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator Delta(global::G.BetaCitationsDelta value) => new Delta((global::G.BetaCitationsDelta?)value);
+        public static implicit operator Delta(global::G.CitationsDelta value) => new Delta((global::G.CitationsDelta?)value);
 
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator global::G.BetaCitationsDelta?(Delta @this) => @this.CitationsDelta;
+        public static implicit operator global::G.CitationsDelta?(Delta @this) => @this.CitationsDelta;
 
         /// <summary>
         /// 
         /// </summary>
-        public Delta(global::G.BetaCitationsDelta? value)
+        public Delta(global::G.CitationsDelta? value)
         {
             CitationsDelta = value;
         }
@@ -266,22 +266,22 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static Delta FromCitationsDelta(global::G.BetaCitationsDelta? value) => new Delta(value);
+        public static Delta FromCitationsDelta(global::G.CitationsDelta? value) => new Delta(value);
 
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator Delta(global::G.BetaThinkingContentBlockDelta value) => new Delta((global::G.BetaThinkingContentBlockDelta?)value);
+        public static implicit operator Delta(global::G.ThinkingContentBlockDelta value) => new Delta((global::G.ThinkingContentBlockDelta?)value);
 
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator global::G.BetaThinkingContentBlockDelta?(Delta @this) => @this.ThinkingDelta;
+        public static implicit operator global::G.ThinkingContentBlockDelta?(Delta @this) => @this.ThinkingDelta;
 
         /// <summary>
         /// 
         /// </summary>
-        public Delta(global::G.BetaThinkingContentBlockDelta? value)
+        public Delta(global::G.ThinkingContentBlockDelta? value)
         {
             ThinkingDelta = value;
         }
@@ -289,22 +289,22 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static Delta FromThinkingDelta(global::G.BetaThinkingContentBlockDelta? value) => new Delta(value);
+        public static Delta FromThinkingDelta(global::G.ThinkingContentBlockDelta? value) => new Delta(value);
 
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator Delta(global::G.BetaSignatureContentBlockDelta value) => new Delta((global::G.BetaSignatureContentBlockDelta?)value);
+        public static implicit operator Delta(global::G.SignatureContentBlockDelta value) => new Delta((global::G.SignatureContentBlockDelta?)value);
 
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator global::G.BetaSignatureContentBlockDelta?(Delta @this) => @this.SignatureDelta;
+        public static implicit operator global::G.SignatureContentBlockDelta?(Delta @this) => @this.SignatureDelta;
 
         /// <summary>
         /// 
         /// </summary>
-        public Delta(global::G.BetaSignatureContentBlockDelta? value)
+        public Delta(global::G.SignatureContentBlockDelta? value)
         {
             SignatureDelta = value;
         }
@@ -312,18 +312,18 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static Delta FromSignatureDelta(global::G.BetaSignatureContentBlockDelta? value) => new Delta(value);
+        public static Delta FromSignatureDelta(global::G.SignatureContentBlockDelta? value) => new Delta(value);
 
         /// <summary>
         /// 
         /// </summary>
         public Delta(
-            global::G.BetaContentBlockDeltaEventDeltaDiscriminatorType? type,
-            global::G.BetaTextContentBlockDelta? textDelta,
-            global::G.BetaInputJsonContentBlockDelta? inputJsonDelta,
-            global::G.BetaCitationsDelta? citationsDelta,
-            global::G.BetaThinkingContentBlockDelta? thinkingDelta,
-            global::G.BetaSignatureContentBlockDelta? signatureDelta
+            global::G.ContentBlockDeltaEventDeltaDiscriminatorType? type,
+            global::G.TextContentBlockDelta? textDelta,
+            global::G.InputJsonContentBlockDelta? inputJsonDelta,
+            global::G.CitationsDelta? citationsDelta,
+            global::G.ThinkingContentBlockDelta? thinkingDelta,
+            global::G.SignatureContentBlockDelta? signatureDelta
             )
         {
             Type = type;
@@ -369,11 +369,11 @@ namespace G
         /// 
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<global::G.BetaTextContentBlockDelta, TResult>? textDelta = null,
-            global::System.Func<global::G.BetaInputJsonContentBlockDelta, TResult>? inputJsonDelta = null,
-            global::System.Func<global::G.BetaCitationsDelta, TResult>? citationsDelta = null,
-            global::System.Func<global::G.BetaThinkingContentBlockDelta, TResult>? thinkingDelta = null,
-            global::System.Func<global::G.BetaSignatureContentBlockDelta, TResult>? signatureDelta = null,
+            global::System.Func<global::G.TextContentBlockDelta, TResult>? textDelta = null,
+            global::System.Func<global::G.InputJsonContentBlockDelta, TResult>? inputJsonDelta = null,
+            global::System.Func<global::G.CitationsDelta, TResult>? citationsDelta = null,
+            global::System.Func<global::G.ThinkingContentBlockDelta, TResult>? thinkingDelta = null,
+            global::System.Func<global::G.SignatureContentBlockDelta, TResult>? signatureDelta = null,
             bool validate = true)
         {
             if (validate)
@@ -409,15 +409,15 @@ namespace G
         /// 
         /// </summary>
         public void Match(
-            global::System.Action<global::G.BetaTextContentBlockDelta>? textDelta = null,
+            global::System.Action<global::G.TextContentBlockDelta>? textDelta = null,
 
-            global::System.Action<global::G.BetaInputJsonContentBlockDelta>? inputJsonDelta = null,
+            global::System.Action<global::G.InputJsonContentBlockDelta>? inputJsonDelta = null,
 
-            global::System.Action<global::G.BetaCitationsDelta>? citationsDelta = null,
+            global::System.Action<global::G.CitationsDelta>? citationsDelta = null,
 
-            global::System.Action<global::G.BetaThinkingContentBlockDelta>? thinkingDelta = null,
+            global::System.Action<global::G.ThinkingContentBlockDelta>? thinkingDelta = null,
 
-            global::System.Action<global::G.BetaSignatureContentBlockDelta>? signatureDelta = null,
+            global::System.Action<global::G.SignatureContentBlockDelta>? signatureDelta = null,
             bool validate = true)
         {
             if (validate)
@@ -451,11 +451,11 @@ namespace G
         /// 
         /// </summary>
         public void Switch(
-            global::System.Action<global::G.BetaTextContentBlockDelta>? textDelta = null,
-            global::System.Action<global::G.BetaInputJsonContentBlockDelta>? inputJsonDelta = null,
-            global::System.Action<global::G.BetaCitationsDelta>? citationsDelta = null,
-            global::System.Action<global::G.BetaThinkingContentBlockDelta>? thinkingDelta = null,
-            global::System.Action<global::G.BetaSignatureContentBlockDelta>? signatureDelta = null,
+            global::System.Action<global::G.TextContentBlockDelta>? textDelta = null,
+            global::System.Action<global::G.InputJsonContentBlockDelta>? inputJsonDelta = null,
+            global::System.Action<global::G.CitationsDelta>? citationsDelta = null,
+            global::System.Action<global::G.ThinkingContentBlockDelta>? thinkingDelta = null,
+            global::System.Action<global::G.SignatureContentBlockDelta>? signatureDelta = null,
             bool validate = true)
         {
             if (validate)
@@ -493,15 +493,15 @@ namespace G
             var fields = new object?[]
             {
                 TextDelta,
-                typeof(global::G.BetaTextContentBlockDelta),
+                typeof(global::G.TextContentBlockDelta),
                 InputJsonDelta,
-                typeof(global::G.BetaInputJsonContentBlockDelta),
+                typeof(global::G.InputJsonContentBlockDelta),
                 CitationsDelta,
-                typeof(global::G.BetaCitationsDelta),
+                typeof(global::G.CitationsDelta),
                 ThinkingDelta,
-                typeof(global::G.BetaThinkingContentBlockDelta),
+                typeof(global::G.ThinkingContentBlockDelta),
                 SignatureDelta,
-                typeof(global::G.BetaSignatureContentBlockDelta),
+                typeof(global::G.SignatureContentBlockDelta),
             };
             const int offset = unchecked((int)2166136261);
             const int prime = 16777619;
@@ -518,11 +518,11 @@ namespace G
         public bool Equals(Delta other)
         {
             return
-                global::System.Collections.Generic.EqualityComparer<global::G.BetaTextContentBlockDelta?>.Default.Equals(TextDelta, other.TextDelta) &&
-                global::System.Collections.Generic.EqualityComparer<global::G.BetaInputJsonContentBlockDelta?>.Default.Equals(InputJsonDelta, other.InputJsonDelta) &&
-                global::System.Collections.Generic.EqualityComparer<global::G.BetaCitationsDelta?>.Default.Equals(CitationsDelta, other.CitationsDelta) &&
-                global::System.Collections.Generic.EqualityComparer<global::G.BetaThinkingContentBlockDelta?>.Default.Equals(ThinkingDelta, other.ThinkingDelta) &&
-                global::System.Collections.Generic.EqualityComparer<global::G.BetaSignatureContentBlockDelta?>.Default.Equals(SignatureDelta, other.SignatureDelta) 
+                global::System.Collections.Generic.EqualityComparer<global::G.TextContentBlockDelta?>.Default.Equals(TextDelta, other.TextDelta) &&
+                global::System.Collections.Generic.EqualityComparer<global::G.InputJsonContentBlockDelta?>.Default.Equals(InputJsonDelta, other.InputJsonDelta) &&
+                global::System.Collections.Generic.EqualityComparer<global::G.CitationsDelta?>.Default.Equals(CitationsDelta, other.CitationsDelta) &&
+                global::System.Collections.Generic.EqualityComparer<global::G.ThinkingContentBlockDelta?>.Default.Equals(ThinkingDelta, other.ThinkingDelta) &&
+                global::System.Collections.Generic.EqualityComparer<global::G.SignatureContentBlockDelta?>.Default.Equals(SignatureDelta, other.SignatureDelta) 
                 ;
         }
 

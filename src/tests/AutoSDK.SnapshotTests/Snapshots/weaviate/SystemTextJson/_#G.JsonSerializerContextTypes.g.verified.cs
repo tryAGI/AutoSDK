@@ -331,11 +331,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.PropertyModuleConfig? Type73 { get; set; }
+        public global::G.PropertyModuleConfig2? Type73 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.PropertyModuleConfig2? Type74 { get; set; }
+        public global::G.PropertyModuleConfig? Type74 { get; set; }
         /// <summary>
         /// 
         /// </summary>

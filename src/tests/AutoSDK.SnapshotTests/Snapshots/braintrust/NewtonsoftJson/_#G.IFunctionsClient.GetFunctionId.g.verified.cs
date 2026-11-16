@@ -1,4 +1,4 @@
-﻿//HintName: G.IFunctionsClient.GetFunctionId.g.cs
+//HintName: G.IFunctionsClient.GetFunctionId.g.cs
 #nullable enable
 
 namespace G
@@ -23,7 +23,7 @@ namespace G
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::G.ApiException"></exception>
-        global::System.Threading.Tasks.Task<global::G.Function2> GetFunctionIdAsync(
+        global::System.Threading.Tasks.Task<global::G.Function> GetFunctionIdAsync(
             global::System.Guid functionId,
             string? version = default,
             string? environment = default,
@@ -47,7 +47,7 @@ namespace G
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::G.ApiException"></exception>
-        global::System.Threading.Tasks.Task<global::G.AutoSDKHttpResponse<global::G.Function2>> GetFunctionIdAsResponseAsync(
+        global::System.Threading.Tasks.Task<global::G.AutoSDKHttpResponse<global::G.Function>> GetFunctionIdAsResponseAsync(
             global::System.Guid functionId,
             string? version = default,
             string? environment = default,

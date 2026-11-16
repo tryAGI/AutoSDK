@@ -13,7 +13,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.HybridChunkerOptionsDocumentsRequestSourceDiscriminatorKind? Kind { get; }
+        public global::G.HierarchicalChunkerOptionsDocumentsRequestSourceDiscriminatorKind? Kind { get; }
 
         /// <summary>
         /// 
@@ -198,7 +198,7 @@ namespace G
         /// 
         /// </summary>
         public SourcesItem3(
-            global::G.HybridChunkerOptionsDocumentsRequestSourceDiscriminatorKind? kind,
+            global::G.HierarchicalChunkerOptionsDocumentsRequestSourceDiscriminatorKind? kind,
             global::G.FileSourceRequest? file,
             global::G.HttpSourceRequest? http,
             global::G.S3SourceRequest? s3

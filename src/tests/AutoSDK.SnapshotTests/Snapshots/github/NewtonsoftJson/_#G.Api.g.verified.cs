@@ -1,4 +1,4 @@
-﻿//HintName: G.Api.g.cs
+//HintName: G.Api.g.cs
 
 #nullable enable
 
@@ -765,6 +765,10 @@ namespace G
 
                     new global::G.JsonConverters.RepositoryRulesetCurrentUserCanBypassNullableJsonConverter(),
 
+                    new global::G.JsonConverters.RuleSuiteEvaluationResult2JsonConverter(),
+
+                    new global::G.JsonConverters.RuleSuiteEvaluationResult2NullableJsonConverter(),
+
                     new global::G.JsonConverters.RuleSuiteResultJsonConverter(),
 
                     new global::G.JsonConverters.RuleSuiteResultNullableJsonConverter(),
@@ -772,14 +776,6 @@ namespace G
                     new global::G.JsonConverters.RuleSuiteEvaluationResultJsonConverter(),
 
                     new global::G.JsonConverters.RuleSuiteEvaluationResultNullableJsonConverter(),
-
-                    new global::G.JsonConverters.RuleSuiteResult2JsonConverter(),
-
-                    new global::G.JsonConverters.RuleSuiteResult2NullableJsonConverter(),
-
-                    new global::G.JsonConverters.RuleSuiteEvaluationResult2JsonConverter(),
-
-                    new global::G.JsonConverters.RuleSuiteEvaluationResult2NullableJsonConverter(),
 
                     new global::G.JsonConverters.RuleSuiteRuleEvaluationEnforcementJsonConverter(),
 
@@ -1281,10 +1277,6 @@ namespace G
 
                     new global::G.JsonConverters.WebhooksIssueAssigneeTypeNullableJsonConverter(),
 
-                    new global::G.JsonConverters.WebhooksIssueAssigneeType2JsonConverter(),
-
-                    new global::G.JsonConverters.WebhooksIssueAssigneeType2NullableJsonConverter(),
-
                     new global::G.JsonConverters.WebhooksIssueAuthorAssociationJsonConverter(),
 
                     new global::G.JsonConverters.WebhooksIssueAuthorAssociationNullableJsonConverter(),
@@ -1468,10 +1460,6 @@ namespace G
                     new global::G.JsonConverters.WebhooksIssue2AssigneeTypeJsonConverter(),
 
                     new global::G.JsonConverters.WebhooksIssue2AssigneeTypeNullableJsonConverter(),
-
-                    new global::G.JsonConverters.WebhooksIssue2AssigneeType2JsonConverter(),
-
-                    new global::G.JsonConverters.WebhooksIssue2AssigneeType2NullableJsonConverter(),
 
                     new global::G.JsonConverters.WebhooksIssue2AuthorAssociationJsonConverter(),
 
@@ -1760,10 +1748,6 @@ namespace G
                     new global::G.JsonConverters.WebhooksPullRequest5AssigneeTypeJsonConverter(),
 
                     new global::G.JsonConverters.WebhooksPullRequest5AssigneeTypeNullableJsonConverter(),
-
-                    new global::G.JsonConverters.WebhooksPullRequest5AssigneeType2JsonConverter(),
-
-                    new global::G.JsonConverters.WebhooksPullRequest5AssigneeType2NullableJsonConverter(),
 
                     new global::G.JsonConverters.WebhooksPullRequest5AuthorAssociationJsonConverter(),
 
@@ -3405,10 +3389,6 @@ namespace G
 
                     new global::G.JsonConverters.WebhookIssueCommentCreatedIssueIssue1AssigneeTypeNullableJsonConverter(),
 
-                    new global::G.JsonConverters.WebhookIssueCommentCreatedIssueIssue1AssigneeType2JsonConverter(),
-
-                    new global::G.JsonConverters.WebhookIssueCommentCreatedIssueIssue1AssigneeType2NullableJsonConverter(),
-
                     new global::G.JsonConverters.WebhookIssueCommentCreatedIssueIssue1AuthorAssociationJsonConverter(),
 
                     new global::G.JsonConverters.WebhookIssueCommentCreatedIssueIssue1AuthorAssociationNullableJsonConverter(),
@@ -3597,10 +3577,6 @@ namespace G
 
                     new global::G.JsonConverters.WebhookIssueCommentDeletedIssueIssue1AssigneeTypeNullableJsonConverter(),
 
-                    new global::G.JsonConverters.WebhookIssueCommentDeletedIssueIssue1AssigneeType2JsonConverter(),
-
-                    new global::G.JsonConverters.WebhookIssueCommentDeletedIssueIssue1AssigneeType2NullableJsonConverter(),
-
                     new global::G.JsonConverters.WebhookIssueCommentDeletedIssueIssue1AuthorAssociationJsonConverter(),
 
                     new global::G.JsonConverters.WebhookIssueCommentDeletedIssueIssue1AuthorAssociationNullableJsonConverter(),
@@ -3788,10 +3764,6 @@ namespace G
                     new global::G.JsonConverters.WebhookIssueCommentEditedIssueIssue1AssigneeTypeJsonConverter(),
 
                     new global::G.JsonConverters.WebhookIssueCommentEditedIssueIssue1AssigneeTypeNullableJsonConverter(),
-
-                    new global::G.JsonConverters.WebhookIssueCommentEditedIssueIssue1AssigneeType2JsonConverter(),
-
-                    new global::G.JsonConverters.WebhookIssueCommentEditedIssueIssue1AssigneeType2NullableJsonConverter(),
 
                     new global::G.JsonConverters.WebhookIssueCommentEditedIssueIssue1AuthorAssociationJsonConverter(),
 
@@ -3985,10 +3957,6 @@ namespace G
 
                     new global::G.JsonConverters.WebhookIssuesClosedIssueIssue1AssigneeTypeNullableJsonConverter(),
 
-                    new global::G.JsonConverters.WebhookIssuesClosedIssueIssue1AssigneeType2JsonConverter(),
-
-                    new global::G.JsonConverters.WebhookIssuesClosedIssueIssue1AssigneeType2NullableJsonConverter(),
-
                     new global::G.JsonConverters.WebhookIssuesClosedIssueIssue1AuthorAssociationJsonConverter(),
 
                     new global::G.JsonConverters.WebhookIssuesClosedIssueIssue1AuthorAssociationNullableJsonConverter(),
@@ -4173,10 +4141,6 @@ namespace G
 
                     new global::G.JsonConverters.WebhookIssuesDeletedIssueAssigneeTypeNullableJsonConverter(),
 
-                    new global::G.JsonConverters.WebhookIssuesDeletedIssueAssigneeType2JsonConverter(),
-
-                    new global::G.JsonConverters.WebhookIssuesDeletedIssueAssigneeType2NullableJsonConverter(),
-
                     new global::G.JsonConverters.WebhookIssuesDeletedIssueAuthorAssociationJsonConverter(),
 
                     new global::G.JsonConverters.WebhookIssuesDeletedIssueAuthorAssociationNullableJsonConverter(),
@@ -4356,10 +4320,6 @@ namespace G
                     new global::G.JsonConverters.WebhookIssuesDemilestonedIssueAssigneeTypeJsonConverter(),
 
                     new global::G.JsonConverters.WebhookIssuesDemilestonedIssueAssigneeTypeNullableJsonConverter(),
-
-                    new global::G.JsonConverters.WebhookIssuesDemilestonedIssueAssigneeType2JsonConverter(),
-
-                    new global::G.JsonConverters.WebhookIssuesDemilestonedIssueAssigneeType2NullableJsonConverter(),
 
                     new global::G.JsonConverters.WebhookIssuesDemilestonedIssueAuthorAssociationJsonConverter(),
 
@@ -4541,10 +4501,6 @@ namespace G
 
                     new global::G.JsonConverters.WebhookIssuesEditedIssueAssigneeTypeNullableJsonConverter(),
 
-                    new global::G.JsonConverters.WebhookIssuesEditedIssueAssigneeType2JsonConverter(),
-
-                    new global::G.JsonConverters.WebhookIssuesEditedIssueAssigneeType2NullableJsonConverter(),
-
                     new global::G.JsonConverters.WebhookIssuesEditedIssueAuthorAssociationJsonConverter(),
 
                     new global::G.JsonConverters.WebhookIssuesEditedIssueAuthorAssociationNullableJsonConverter(),
@@ -4724,10 +4680,6 @@ namespace G
                     new global::G.JsonConverters.WebhookIssuesLabeledIssueAssigneeTypeJsonConverter(),
 
                     new global::G.JsonConverters.WebhookIssuesLabeledIssueAssigneeTypeNullableJsonConverter(),
-
-                    new global::G.JsonConverters.WebhookIssuesLabeledIssueAssigneeType2JsonConverter(),
-
-                    new global::G.JsonConverters.WebhookIssuesLabeledIssueAssigneeType2NullableJsonConverter(),
 
                     new global::G.JsonConverters.WebhookIssuesLabeledIssueAuthorAssociationJsonConverter(),
 
@@ -4909,10 +4861,6 @@ namespace G
 
                     new global::G.JsonConverters.WebhookIssuesLockedIssueAssigneeTypeNullableJsonConverter(),
 
-                    new global::G.JsonConverters.WebhookIssuesLockedIssueAssigneeType2JsonConverter(),
-
-                    new global::G.JsonConverters.WebhookIssuesLockedIssueAssigneeType2NullableJsonConverter(),
-
                     new global::G.JsonConverters.WebhookIssuesLockedIssueAuthorAssociationJsonConverter(),
 
                     new global::G.JsonConverters.WebhookIssuesLockedIssueAuthorAssociationNullableJsonConverter(),
@@ -5093,10 +5041,6 @@ namespace G
 
                     new global::G.JsonConverters.WebhookIssuesMilestonedIssueAssigneeTypeNullableJsonConverter(),
 
-                    new global::G.JsonConverters.WebhookIssuesMilestonedIssueAssigneeType2JsonConverter(),
-
-                    new global::G.JsonConverters.WebhookIssuesMilestonedIssueAssigneeType2NullableJsonConverter(),
-
                     new global::G.JsonConverters.WebhookIssuesMilestonedIssueAuthorAssociationJsonConverter(),
 
                     new global::G.JsonConverters.WebhookIssuesMilestonedIssueAuthorAssociationNullableJsonConverter(),
@@ -5276,10 +5220,6 @@ namespace G
                     new global::G.JsonConverters.WebhookIssuesOpenedChangesOldIssueAssigneeTypeJsonConverter(),
 
                     new global::G.JsonConverters.WebhookIssuesOpenedChangesOldIssueAssigneeTypeNullableJsonConverter(),
-
-                    new global::G.JsonConverters.WebhookIssuesOpenedChangesOldIssueAssigneeType2JsonConverter(),
-
-                    new global::G.JsonConverters.WebhookIssuesOpenedChangesOldIssueAssigneeType2NullableJsonConverter(),
 
                     new global::G.JsonConverters.WebhookIssuesOpenedChangesOldIssueAuthorAssociationJsonConverter(),
 
@@ -5464,10 +5404,6 @@ namespace G
                     new global::G.JsonConverters.WebhookIssuesOpenedIssueAssigneeTypeJsonConverter(),
 
                     new global::G.JsonConverters.WebhookIssuesOpenedIssueAssigneeTypeNullableJsonConverter(),
-
-                    new global::G.JsonConverters.WebhookIssuesOpenedIssueAssigneeType2JsonConverter(),
-
-                    new global::G.JsonConverters.WebhookIssuesOpenedIssueAssigneeType2NullableJsonConverter(),
 
                     new global::G.JsonConverters.WebhookIssuesOpenedIssueAuthorAssociationJsonConverter(),
 
@@ -5837,10 +5773,6 @@ namespace G
 
                     new global::G.JsonConverters.WebhookIssuesTransferredChangesNewIssueAssigneeTypeNullableJsonConverter(),
 
-                    new global::G.JsonConverters.WebhookIssuesTransferredChangesNewIssueAssigneeType2JsonConverter(),
-
-                    new global::G.JsonConverters.WebhookIssuesTransferredChangesNewIssueAssigneeType2NullableJsonConverter(),
-
                     new global::G.JsonConverters.WebhookIssuesTransferredChangesNewIssueAuthorAssociationJsonConverter(),
 
                     new global::G.JsonConverters.WebhookIssuesTransferredChangesNewIssueAuthorAssociationNullableJsonConverter(),
@@ -6036,10 +5968,6 @@ namespace G
                     new global::G.JsonConverters.WebhookIssuesUnlockedIssueAssigneeTypeJsonConverter(),
 
                     new global::G.JsonConverters.WebhookIssuesUnlockedIssueAssigneeTypeNullableJsonConverter(),
-
-                    new global::G.JsonConverters.WebhookIssuesUnlockedIssueAssigneeType2JsonConverter(),
-
-                    new global::G.JsonConverters.WebhookIssuesUnlockedIssueAssigneeType2NullableJsonConverter(),
 
                     new global::G.JsonConverters.WebhookIssuesUnlockedIssueAuthorAssociationJsonConverter(),
 
@@ -6573,10 +6501,6 @@ namespace G
 
                     new global::G.JsonConverters.WebhookPullRequestAssignedPullRequestAssigneeTypeNullableJsonConverter(),
 
-                    new global::G.JsonConverters.WebhookPullRequestAssignedPullRequestAssigneeType2JsonConverter(),
-
-                    new global::G.JsonConverters.WebhookPullRequestAssignedPullRequestAssigneeType2NullableJsonConverter(),
-
                     new global::G.JsonConverters.WebhookPullRequestAssignedPullRequestAuthorAssociationJsonConverter(),
 
                     new global::G.JsonConverters.WebhookPullRequestAssignedPullRequestAuthorAssociationNullableJsonConverter(),
@@ -6697,10 +6621,6 @@ namespace G
 
                     new global::G.JsonConverters.WebhookPullRequestAutoMergeDisabledPullRequestAssigneeTypeNullableJsonConverter(),
 
-                    new global::G.JsonConverters.WebhookPullRequestAutoMergeDisabledPullRequestAssigneeType2JsonConverter(),
-
-                    new global::G.JsonConverters.WebhookPullRequestAutoMergeDisabledPullRequestAssigneeType2NullableJsonConverter(),
-
                     new global::G.JsonConverters.WebhookPullRequestAutoMergeDisabledPullRequestAuthorAssociationJsonConverter(),
 
                     new global::G.JsonConverters.WebhookPullRequestAutoMergeDisabledPullRequestAuthorAssociationNullableJsonConverter(),
@@ -6820,10 +6740,6 @@ namespace G
                     new global::G.JsonConverters.WebhookPullRequestAutoMergeEnabledPullRequestAssigneeTypeJsonConverter(),
 
                     new global::G.JsonConverters.WebhookPullRequestAutoMergeEnabledPullRequestAssigneeTypeNullableJsonConverter(),
-
-                    new global::G.JsonConverters.WebhookPullRequestAutoMergeEnabledPullRequestAssigneeType2JsonConverter(),
-
-                    new global::G.JsonConverters.WebhookPullRequestAutoMergeEnabledPullRequestAssigneeType2NullableJsonConverter(),
 
                     new global::G.JsonConverters.WebhookPullRequestAutoMergeEnabledPullRequestAuthorAssociationJsonConverter(),
 
@@ -6957,10 +6873,6 @@ namespace G
 
                     new global::G.JsonConverters.WebhookPullRequestDequeuedPullRequestAssigneeTypeNullableJsonConverter(),
 
-                    new global::G.JsonConverters.WebhookPullRequestDequeuedPullRequestAssigneeType2JsonConverter(),
-
-                    new global::G.JsonConverters.WebhookPullRequestDequeuedPullRequestAssigneeType2NullableJsonConverter(),
-
                     new global::G.JsonConverters.WebhookPullRequestDequeuedPullRequestAuthorAssociationJsonConverter(),
 
                     new global::G.JsonConverters.WebhookPullRequestDequeuedPullRequestAuthorAssociationNullableJsonConverter(),
@@ -7089,10 +7001,6 @@ namespace G
 
                     new global::G.JsonConverters.WebhookPullRequestEnqueuedPullRequestAssigneeTypeNullableJsonConverter(),
 
-                    new global::G.JsonConverters.WebhookPullRequestEnqueuedPullRequestAssigneeType2JsonConverter(),
-
-                    new global::G.JsonConverters.WebhookPullRequestEnqueuedPullRequestAssigneeType2NullableJsonConverter(),
-
                     new global::G.JsonConverters.WebhookPullRequestEnqueuedPullRequestAuthorAssociationJsonConverter(),
 
                     new global::G.JsonConverters.WebhookPullRequestEnqueuedPullRequestAuthorAssociationNullableJsonConverter(),
@@ -7212,10 +7120,6 @@ namespace G
                     new global::G.JsonConverters.WebhookPullRequestLabeledPullRequestAssigneeTypeJsonConverter(),
 
                     new global::G.JsonConverters.WebhookPullRequestLabeledPullRequestAssigneeTypeNullableJsonConverter(),
-
-                    new global::G.JsonConverters.WebhookPullRequestLabeledPullRequestAssigneeType2JsonConverter(),
-
-                    new global::G.JsonConverters.WebhookPullRequestLabeledPullRequestAssigneeType2NullableJsonConverter(),
 
                     new global::G.JsonConverters.WebhookPullRequestLabeledPullRequestAuthorAssociationJsonConverter(),
 
@@ -7497,10 +7401,6 @@ namespace G
 
                     new global::G.JsonConverters.WebhookPullRequestReviewCommentCreatedPullRequestAssigneeTypeNullableJsonConverter(),
 
-                    new global::G.JsonConverters.WebhookPullRequestReviewCommentCreatedPullRequestAssigneeType2JsonConverter(),
-
-                    new global::G.JsonConverters.WebhookPullRequestReviewCommentCreatedPullRequestAssigneeType2NullableJsonConverter(),
-
                     new global::G.JsonConverters.WebhookPullRequestReviewCommentCreatedPullRequestAuthorAssociationJsonConverter(),
 
                     new global::G.JsonConverters.WebhookPullRequestReviewCommentCreatedPullRequestAuthorAssociationNullableJsonConverter(),
@@ -7616,10 +7516,6 @@ namespace G
                     new global::G.JsonConverters.WebhookPullRequestReviewCommentDeletedPullRequestAssigneeTypeJsonConverter(),
 
                     new global::G.JsonConverters.WebhookPullRequestReviewCommentDeletedPullRequestAssigneeTypeNullableJsonConverter(),
-
-                    new global::G.JsonConverters.WebhookPullRequestReviewCommentDeletedPullRequestAssigneeType2JsonConverter(),
-
-                    new global::G.JsonConverters.WebhookPullRequestReviewCommentDeletedPullRequestAssigneeType2NullableJsonConverter(),
 
                     new global::G.JsonConverters.WebhookPullRequestReviewCommentDeletedPullRequestAuthorAssociationJsonConverter(),
 
@@ -7737,10 +7633,6 @@ namespace G
 
                     new global::G.JsonConverters.WebhookPullRequestReviewCommentEditedPullRequestAssigneeTypeNullableJsonConverter(),
 
-                    new global::G.JsonConverters.WebhookPullRequestReviewCommentEditedPullRequestAssigneeType2JsonConverter(),
-
-                    new global::G.JsonConverters.WebhookPullRequestReviewCommentEditedPullRequestAssigneeType2NullableJsonConverter(),
-
                     new global::G.JsonConverters.WebhookPullRequestReviewCommentEditedPullRequestAuthorAssociationJsonConverter(),
 
                     new global::G.JsonConverters.WebhookPullRequestReviewCommentEditedPullRequestAuthorAssociationNullableJsonConverter(),
@@ -7856,10 +7748,6 @@ namespace G
                     new global::G.JsonConverters.WebhookPullRequestReviewDismissedPullRequestAssigneeTypeJsonConverter(),
 
                     new global::G.JsonConverters.WebhookPullRequestReviewDismissedPullRequestAssigneeTypeNullableJsonConverter(),
-
-                    new global::G.JsonConverters.WebhookPullRequestReviewDismissedPullRequestAssigneeType2JsonConverter(),
-
-                    new global::G.JsonConverters.WebhookPullRequestReviewDismissedPullRequestAssigneeType2NullableJsonConverter(),
 
                     new global::G.JsonConverters.WebhookPullRequestReviewDismissedPullRequestAuthorAssociationJsonConverter(),
 
@@ -7989,10 +7877,6 @@ namespace G
 
                     new global::G.JsonConverters.WebhookPullRequestReviewEditedPullRequestAssigneeTypeNullableJsonConverter(),
 
-                    new global::G.JsonConverters.WebhookPullRequestReviewEditedPullRequestAssigneeType2JsonConverter(),
-
-                    new global::G.JsonConverters.WebhookPullRequestReviewEditedPullRequestAssigneeType2NullableJsonConverter(),
-
                     new global::G.JsonConverters.WebhookPullRequestReviewEditedPullRequestAuthorAssociationJsonConverter(),
 
                     new global::G.JsonConverters.WebhookPullRequestReviewEditedPullRequestAuthorAssociationNullableJsonConverter(),
@@ -8076,10 +7960,6 @@ namespace G
                     new global::G.JsonConverters.WebhookPullRequestReviewRequestRemovedVariant1PullRequestAssigneeTypeJsonConverter(),
 
                     new global::G.JsonConverters.WebhookPullRequestReviewRequestRemovedVariant1PullRequestAssigneeTypeNullableJsonConverter(),
-
-                    new global::G.JsonConverters.WebhookPullRequestReviewRequestRemovedVariant1PullRequestAssigneeType2JsonConverter(),
-
-                    new global::G.JsonConverters.WebhookPullRequestReviewRequestRemovedVariant1PullRequestAssigneeType2NullableJsonConverter(),
 
                     new global::G.JsonConverters.WebhookPullRequestReviewRequestRemovedVariant1PullRequestAuthorAssociationJsonConverter(),
 
@@ -8204,10 +8084,6 @@ namespace G
                     new global::G.JsonConverters.WebhookPullRequestReviewRequestRemovedVariant2PullRequestAssigneeTypeJsonConverter(),
 
                     new global::G.JsonConverters.WebhookPullRequestReviewRequestRemovedVariant2PullRequestAssigneeTypeNullableJsonConverter(),
-
-                    new global::G.JsonConverters.WebhookPullRequestReviewRequestRemovedVariant2PullRequestAssigneeType2JsonConverter(),
-
-                    new global::G.JsonConverters.WebhookPullRequestReviewRequestRemovedVariant2PullRequestAssigneeType2NullableJsonConverter(),
 
                     new global::G.JsonConverters.WebhookPullRequestReviewRequestRemovedVariant2PullRequestAuthorAssociationJsonConverter(),
 
@@ -8337,10 +8213,6 @@ namespace G
 
                     new global::G.JsonConverters.WebhookPullRequestReviewRequestedVariant1PullRequestAssigneeTypeNullableJsonConverter(),
 
-                    new global::G.JsonConverters.WebhookPullRequestReviewRequestedVariant1PullRequestAssigneeType2JsonConverter(),
-
-                    new global::G.JsonConverters.WebhookPullRequestReviewRequestedVariant1PullRequestAssigneeType2NullableJsonConverter(),
-
                     new global::G.JsonConverters.WebhookPullRequestReviewRequestedVariant1PullRequestAuthorAssociationJsonConverter(),
 
                     new global::G.JsonConverters.WebhookPullRequestReviewRequestedVariant1PullRequestAuthorAssociationNullableJsonConverter(),
@@ -8464,10 +8336,6 @@ namespace G
                     new global::G.JsonConverters.WebhookPullRequestReviewRequestedVariant2PullRequestAssigneeTypeJsonConverter(),
 
                     new global::G.JsonConverters.WebhookPullRequestReviewRequestedVariant2PullRequestAssigneeTypeNullableJsonConverter(),
-
-                    new global::G.JsonConverters.WebhookPullRequestReviewRequestedVariant2PullRequestAssigneeType2JsonConverter(),
-
-                    new global::G.JsonConverters.WebhookPullRequestReviewRequestedVariant2PullRequestAssigneeType2NullableJsonConverter(),
 
                     new global::G.JsonConverters.WebhookPullRequestReviewRequestedVariant2PullRequestAuthorAssociationJsonConverter(),
 
@@ -8597,10 +8465,6 @@ namespace G
 
                     new global::G.JsonConverters.WebhookPullRequestReviewSubmittedPullRequestAssigneeTypeNullableJsonConverter(),
 
-                    new global::G.JsonConverters.WebhookPullRequestReviewSubmittedPullRequestAssigneeType2JsonConverter(),
-
-                    new global::G.JsonConverters.WebhookPullRequestReviewSubmittedPullRequestAssigneeType2NullableJsonConverter(),
-
                     new global::G.JsonConverters.WebhookPullRequestReviewSubmittedPullRequestAuthorAssociationJsonConverter(),
 
                     new global::G.JsonConverters.WebhookPullRequestReviewSubmittedPullRequestAuthorAssociationNullableJsonConverter(),
@@ -8717,10 +8581,6 @@ namespace G
 
                     new global::G.JsonConverters.WebhookPullRequestReviewThreadResolvedPullRequestAssigneeTypeNullableJsonConverter(),
 
-                    new global::G.JsonConverters.WebhookPullRequestReviewThreadResolvedPullRequestAssigneeType2JsonConverter(),
-
-                    new global::G.JsonConverters.WebhookPullRequestReviewThreadResolvedPullRequestAssigneeType2NullableJsonConverter(),
-
                     new global::G.JsonConverters.WebhookPullRequestReviewThreadResolvedPullRequestAuthorAssociationJsonConverter(),
 
                     new global::G.JsonConverters.WebhookPullRequestReviewThreadResolvedPullRequestAuthorAssociationNullableJsonConverter(),
@@ -8825,10 +8685,6 @@ namespace G
 
                     new global::G.JsonConverters.WebhookPullRequestReviewThreadUnresolvedPullRequestAssigneeTypeNullableJsonConverter(),
 
-                    new global::G.JsonConverters.WebhookPullRequestReviewThreadUnresolvedPullRequestAssigneeType2JsonConverter(),
-
-                    new global::G.JsonConverters.WebhookPullRequestReviewThreadUnresolvedPullRequestAssigneeType2NullableJsonConverter(),
-
                     new global::G.JsonConverters.WebhookPullRequestReviewThreadUnresolvedPullRequestAuthorAssociationJsonConverter(),
 
                     new global::G.JsonConverters.WebhookPullRequestReviewThreadUnresolvedPullRequestAuthorAssociationNullableJsonConverter(),
@@ -8932,10 +8788,6 @@ namespace G
                     new global::G.JsonConverters.WebhookPullRequestSynchronizePullRequestAssigneeTypeJsonConverter(),
 
                     new global::G.JsonConverters.WebhookPullRequestSynchronizePullRequestAssigneeTypeNullableJsonConverter(),
-
-                    new global::G.JsonConverters.WebhookPullRequestSynchronizePullRequestAssigneeType2JsonConverter(),
-
-                    new global::G.JsonConverters.WebhookPullRequestSynchronizePullRequestAssigneeType2NullableJsonConverter(),
 
                     new global::G.JsonConverters.WebhookPullRequestSynchronizePullRequestAuthorAssociationJsonConverter(),
 
@@ -9057,10 +8909,6 @@ namespace G
 
                     new global::G.JsonConverters.WebhookPullRequestUnassignedPullRequestAssigneeTypeNullableJsonConverter(),
 
-                    new global::G.JsonConverters.WebhookPullRequestUnassignedPullRequestAssigneeType2JsonConverter(),
-
-                    new global::G.JsonConverters.WebhookPullRequestUnassignedPullRequestAssigneeType2NullableJsonConverter(),
-
                     new global::G.JsonConverters.WebhookPullRequestUnassignedPullRequestAuthorAssociationJsonConverter(),
 
                     new global::G.JsonConverters.WebhookPullRequestUnassignedPullRequestAuthorAssociationNullableJsonConverter(),
@@ -9181,10 +9029,6 @@ namespace G
 
                     new global::G.JsonConverters.WebhookPullRequestUnlabeledPullRequestAssigneeTypeNullableJsonConverter(),
 
-                    new global::G.JsonConverters.WebhookPullRequestUnlabeledPullRequestAssigneeType2JsonConverter(),
-
-                    new global::G.JsonConverters.WebhookPullRequestUnlabeledPullRequestAssigneeType2NullableJsonConverter(),
-
                     new global::G.JsonConverters.WebhookPullRequestUnlabeledPullRequestAuthorAssociationJsonConverter(),
 
                     new global::G.JsonConverters.WebhookPullRequestUnlabeledPullRequestAuthorAssociationNullableJsonConverter(),
@@ -9304,10 +9148,6 @@ namespace G
                     new global::G.JsonConverters.WebhookPullRequestUnlockedPullRequestAssigneeTypeJsonConverter(),
 
                     new global::G.JsonConverters.WebhookPullRequestUnlockedPullRequestAssigneeTypeNullableJsonConverter(),
-
-                    new global::G.JsonConverters.WebhookPullRequestUnlockedPullRequestAssigneeType2JsonConverter(),
-
-                    new global::G.JsonConverters.WebhookPullRequestUnlockedPullRequestAssigneeType2NullableJsonConverter(),
 
                     new global::G.JsonConverters.WebhookPullRequestUnlockedPullRequestAuthorAssociationJsonConverter(),
 

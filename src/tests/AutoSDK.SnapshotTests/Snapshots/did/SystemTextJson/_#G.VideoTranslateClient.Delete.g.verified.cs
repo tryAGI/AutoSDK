@@ -341,19 +341,19 @@ namespace G
                             {
                                 string? __content_401 = null;
                                 global::System.Exception? __exception_401 = null;
-                                global::G.DeleteResponse? __value_401 = null;
+                                global::G.DeleteResponse4? __value_401 = null;
                                 try
                                 {
                                     if (__effectiveReadResponseAsString)
                                     {
                                         __content_401 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
-                                        __value_401 = global::G.DeleteResponse.FromJson(__content_401, JsonSerializerOptions);
+                                        __value_401 = global::G.DeleteResponse4.FromJson(__content_401, JsonSerializerOptions);
                                     }
                                     else
                                     {
                                         __content_401 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
 
-                                        __value_401 = global::G.DeleteResponse.FromJson(__content_401, JsonSerializerOptions);
+                                        __value_401 = global::G.DeleteResponse4.FromJson(__content_401, JsonSerializerOptions);
                                     }
                                 }
                                 catch (global::System.Exception __ex)
@@ -362,7 +362,7 @@ namespace G
                                 }
 
 
-                                throw global::G.ApiException<global::G.DeleteResponse>.Create(
+                                throw global::G.ApiException<global::G.DeleteResponse4>.Create(
                                     statusCode: __response.StatusCode,
                                     message: __content_401 ?? __response.ReasonPhrase ?? string.Empty,
                                     innerException: __exception_401,
@@ -378,19 +378,19 @@ namespace G
                             {
                                 string? __content_404 = null;
                                 global::System.Exception? __exception_404 = null;
-                                global::G.DeleteResponse2? __value_404 = null;
+                                global::G.DeleteResponse5? __value_404 = null;
                                 try
                                 {
                                     if (__effectiveReadResponseAsString)
                                     {
                                         __content_404 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
-                                        __value_404 = global::G.DeleteResponse2.FromJson(__content_404, JsonSerializerOptions);
+                                        __value_404 = global::G.DeleteResponse5.FromJson(__content_404, JsonSerializerOptions);
                                     }
                                     else
                                     {
                                         __content_404 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
 
-                                        __value_404 = global::G.DeleteResponse2.FromJson(__content_404, JsonSerializerOptions);
+                                        __value_404 = global::G.DeleteResponse5.FromJson(__content_404, JsonSerializerOptions);
                                     }
                                 }
                                 catch (global::System.Exception __ex)
@@ -399,7 +399,7 @@ namespace G
                                 }
 
 
-                                throw global::G.ApiException<global::G.DeleteResponse2>.Create(
+                                throw global::G.ApiException<global::G.DeleteResponse5>.Create(
                                     statusCode: __response.StatusCode,
                                     message: __content_404 ?? __response.ReasonPhrase ?? string.Empty,
                                     innerException: __exception_404,
@@ -415,19 +415,19 @@ namespace G
                             {
                                 string? __content_409 = null;
                                 global::System.Exception? __exception_409 = null;
-                                global::G.DeleteResponse3? __value_409 = null;
+                                global::G.DeleteResponse6? __value_409 = null;
                                 try
                                 {
                                     if (__effectiveReadResponseAsString)
                                     {
                                         __content_409 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
-                                        __value_409 = global::G.DeleteResponse3.FromJson(__content_409, JsonSerializerOptions);
+                                        __value_409 = global::G.DeleteResponse6.FromJson(__content_409, JsonSerializerOptions);
                                     }
                                     else
                                     {
                                         __content_409 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
 
-                                        __value_409 = global::G.DeleteResponse3.FromJson(__content_409, JsonSerializerOptions);
+                                        __value_409 = global::G.DeleteResponse6.FromJson(__content_409, JsonSerializerOptions);
                                     }
                                 }
                                 catch (global::System.Exception __ex)
@@ -436,7 +436,7 @@ namespace G
                                 }
 
 
-                                throw global::G.ApiException<global::G.DeleteResponse3>.Create(
+                                throw global::G.ApiException<global::G.DeleteResponse6>.Create(
                                     statusCode: __response.StatusCode,
                                     message: __content_409 ?? __response.ReasonPhrase ?? string.Empty,
                                     innerException: __exception_409,

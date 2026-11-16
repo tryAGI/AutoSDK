@@ -1,4 +1,4 @@
-﻿//HintName: G.Models.ListPhoneNumbersV2Response4.g.cs
+//HintName: G.Models.ListPhoneNumbersV2Response4.g.cs
 
 #nullable enable
 
@@ -13,8 +13,8 @@ namespace G
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("status")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.ListPhoneNumbersV2ResponseStatus2JsonConverter))]
-        public global::G.ListPhoneNumbersV2ResponseStatus2? Status { get; set; }
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.ListPhoneNumbersV2ResponseStatusJsonConverter))]
+        public global::G.ListPhoneNumbersV2ResponseStatus? Status { get; set; }
 
         /// <summary>
         /// Example: An unexpected server error occurred.
@@ -40,7 +40,7 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public ListPhoneNumbersV2Response4(
-            global::G.ListPhoneNumbersV2ResponseStatus2? status,
+            global::G.ListPhoneNumbersV2ResponseStatus? status,
             string? message)
         {
             this.Status = status;

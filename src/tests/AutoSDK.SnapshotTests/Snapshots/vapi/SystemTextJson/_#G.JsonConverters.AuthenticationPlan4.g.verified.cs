@@ -18,26 +18,26 @@ namespace G.JsonConverters
 
 
             var readerCopy = reader;
-            var discriminatorTypeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.WebhookCredentialAuthenticationPlanDiscriminator), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.WebhookCredentialAuthenticationPlanDiscriminator> ??
-                            throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::G.WebhookCredentialAuthenticationPlanDiscriminator)}");
+            var discriminatorTypeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.UpdateCustomCredentialDTOAuthenticationPlanDiscriminator), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.UpdateCustomCredentialDTOAuthenticationPlanDiscriminator> ??
+                            throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::G.UpdateCustomCredentialDTOAuthenticationPlanDiscriminator)}");
             var discriminator = global::System.Text.Json.JsonSerializer.Deserialize(ref readerCopy, discriminatorTypeInfo);
 
             global::G.OAuth2AuthenticationPlan? oauth2 = default;
-            if (discriminator?.Type == global::G.WebhookCredentialAuthenticationPlanDiscriminatorType.Oauth2)
+            if (discriminator?.Type == global::G.UpdateCustomCredentialDTOAuthenticationPlanDiscriminatorType.Oauth2)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.OAuth2AuthenticationPlan), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.OAuth2AuthenticationPlan> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::G.OAuth2AuthenticationPlan)}");
                 oauth2 = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
             }
             global::G.HMACAuthenticationPlan? hmac = default;
-            if (discriminator?.Type == global::G.WebhookCredentialAuthenticationPlanDiscriminatorType.Hmac)
+            if (discriminator?.Type == global::G.UpdateCustomCredentialDTOAuthenticationPlanDiscriminatorType.Hmac)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.HMACAuthenticationPlan), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.HMACAuthenticationPlan> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::G.HMACAuthenticationPlan)}");
                 hmac = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
             }
             global::G.BearerAuthenticationPlan? bearer = default;
-            if (discriminator?.Type == global::G.WebhookCredentialAuthenticationPlanDiscriminatorType.Bearer)
+            if (discriminator?.Type == global::G.UpdateCustomCredentialDTOAuthenticationPlanDiscriminatorType.Bearer)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.BearerAuthenticationPlan), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.BearerAuthenticationPlan> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::G.BearerAuthenticationPlan)}");

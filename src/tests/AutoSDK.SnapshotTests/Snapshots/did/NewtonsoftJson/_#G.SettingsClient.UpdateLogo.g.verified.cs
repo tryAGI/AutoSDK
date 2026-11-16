@@ -433,19 +433,19 @@ namespace G
                             {
                                 string? __content_401 = null;
                                 global::System.Exception? __exception_401 = null;
-                                global::G.UpdateLogoResponse2? __value_401 = null;
+                                global::G.UpdateLogoResponse? __value_401 = null;
                                 try
                                 {
                                     if (__effectiveReadResponseAsString)
                                     {
                                         __content_401 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
-                                        __value_401 = global::G.UpdateLogoResponse2.FromJson(__content_401, JsonSerializerOptions);
+                                        __value_401 = global::G.UpdateLogoResponse.FromJson(__content_401, JsonSerializerOptions);
                                     }
                                     else
                                     {
                                         __content_401 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
 
-                                        __value_401 = global::G.UpdateLogoResponse2.FromJson(__content_401, JsonSerializerOptions);
+                                        __value_401 = global::G.UpdateLogoResponse.FromJson(__content_401, JsonSerializerOptions);
                                     }
                                 }
                                 catch (global::System.Exception __ex)
@@ -454,7 +454,7 @@ namespace G
                                 }
 
 
-                                throw global::G.ApiException<global::G.UpdateLogoResponse2>.Create(
+                                throw global::G.ApiException<global::G.UpdateLogoResponse>.Create(
                                     statusCode: __response.StatusCode,
                                     message: __content_401 ?? __response.ReasonPhrase ?? string.Empty,
                                     innerException: __exception_401,
@@ -470,19 +470,19 @@ namespace G
                             {
                                 string? __content_415 = null;
                                 global::System.Exception? __exception_415 = null;
-                                global::G.UpdateLogoResponse3? __value_415 = null;
+                                global::G.UpdateLogoResponse? __value_415 = null;
                                 try
                                 {
                                     if (__effectiveReadResponseAsString)
                                     {
                                         __content_415 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
-                                        __value_415 = global::G.UpdateLogoResponse3.FromJson(__content_415, JsonSerializerOptions);
+                                        __value_415 = global::G.UpdateLogoResponse.FromJson(__content_415, JsonSerializerOptions);
                                     }
                                     else
                                     {
                                         __content_415 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
 
-                                        __value_415 = global::G.UpdateLogoResponse3.FromJson(__content_415, JsonSerializerOptions);
+                                        __value_415 = global::G.UpdateLogoResponse.FromJson(__content_415, JsonSerializerOptions);
                                     }
                                 }
                                 catch (global::System.Exception __ex)
@@ -491,7 +491,7 @@ namespace G
                                 }
 
 
-                                throw global::G.ApiException<global::G.UpdateLogoResponse3>.Create(
+                                throw global::G.ApiException<global::G.UpdateLogoResponse>.Create(
                                     statusCode: __response.StatusCode,
                                     message: __content_415 ?? __response.ReasonPhrase ?? string.Empty,
                                     innerException: __exception_415,
@@ -988,19 +988,19 @@ namespace G
                             {
                                 string? __content_401 = null;
                                 global::System.Exception? __exception_401 = null;
-                                global::G.UpdateLogoResponse2? __value_401 = null;
+                                global::G.UpdateLogoResponse? __value_401 = null;
                                 try
                                 {
                                     if (__effectiveReadResponseAsString)
                                     {
                                         __content_401 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
-                                        __value_401 = global::G.UpdateLogoResponse2.FromJson(__content_401, JsonSerializerOptions);
+                                        __value_401 = global::G.UpdateLogoResponse.FromJson(__content_401, JsonSerializerOptions);
                                     }
                                     else
                                     {
                                         __content_401 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
 
-                                        __value_401 = global::G.UpdateLogoResponse2.FromJson(__content_401, JsonSerializerOptions);
+                                        __value_401 = global::G.UpdateLogoResponse.FromJson(__content_401, JsonSerializerOptions);
                                     }
                                 }
                                 catch (global::System.Exception __ex)
@@ -1009,7 +1009,7 @@ namespace G
                                 }
 
 
-                                throw global::G.ApiException<global::G.UpdateLogoResponse2>.Create(
+                                throw global::G.ApiException<global::G.UpdateLogoResponse>.Create(
                                     statusCode: __response.StatusCode,
                                     message: __content_401 ?? __response.ReasonPhrase ?? string.Empty,
                                     innerException: __exception_401,
@@ -1025,19 +1025,19 @@ namespace G
                             {
                                 string? __content_415 = null;
                                 global::System.Exception? __exception_415 = null;
-                                global::G.UpdateLogoResponse3? __value_415 = null;
+                                global::G.UpdateLogoResponse? __value_415 = null;
                                 try
                                 {
                                     if (__effectiveReadResponseAsString)
                                     {
                                         __content_415 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
-                                        __value_415 = global::G.UpdateLogoResponse3.FromJson(__content_415, JsonSerializerOptions);
+                                        __value_415 = global::G.UpdateLogoResponse.FromJson(__content_415, JsonSerializerOptions);
                                     }
                                     else
                                     {
                                         __content_415 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
 
-                                        __value_415 = global::G.UpdateLogoResponse3.FromJson(__content_415, JsonSerializerOptions);
+                                        __value_415 = global::G.UpdateLogoResponse.FromJson(__content_415, JsonSerializerOptions);
                                     }
                                 }
                                 catch (global::System.Exception __ex)
@@ -1046,7 +1046,7 @@ namespace G
                                 }
 
 
-                                throw global::G.ApiException<global::G.UpdateLogoResponse3>.Create(
+                                throw global::G.ApiException<global::G.UpdateLogoResponse>.Create(
                                     statusCode: __response.StatusCode,
                                     message: __content_415 ?? __response.ReasonPhrase ?? string.Empty,
                                     innerException: __exception_415,
@@ -1503,19 +1503,19 @@ namespace G
                             {
                                 string? __content_401 = null;
                                 global::System.Exception? __exception_401 = null;
-                                global::G.UpdateLogoResponse2? __value_401 = null;
+                                global::G.UpdateLogoResponse? __value_401 = null;
                                 try
                                 {
                                     if (__effectiveReadResponseAsString)
                                     {
                                         __content_401 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
-                                        __value_401 = global::G.UpdateLogoResponse2.FromJson(__content_401, JsonSerializerOptions);
+                                        __value_401 = global::G.UpdateLogoResponse.FromJson(__content_401, JsonSerializerOptions);
                                     }
                                     else
                                     {
                                         __content_401 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
 
-                                        __value_401 = global::G.UpdateLogoResponse2.FromJson(__content_401, JsonSerializerOptions);
+                                        __value_401 = global::G.UpdateLogoResponse.FromJson(__content_401, JsonSerializerOptions);
                                     }
                                 }
                                 catch (global::System.Exception __ex)
@@ -1524,7 +1524,7 @@ namespace G
                                 }
 
 
-                                throw global::G.ApiException<global::G.UpdateLogoResponse2>.Create(
+                                throw global::G.ApiException<global::G.UpdateLogoResponse>.Create(
                                     statusCode: __response.StatusCode,
                                     message: __content_401 ?? __response.ReasonPhrase ?? string.Empty,
                                     innerException: __exception_401,
@@ -1540,19 +1540,19 @@ namespace G
                             {
                                 string? __content_415 = null;
                                 global::System.Exception? __exception_415 = null;
-                                global::G.UpdateLogoResponse3? __value_415 = null;
+                                global::G.UpdateLogoResponse? __value_415 = null;
                                 try
                                 {
                                     if (__effectiveReadResponseAsString)
                                     {
                                         __content_415 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
-                                        __value_415 = global::G.UpdateLogoResponse3.FromJson(__content_415, JsonSerializerOptions);
+                                        __value_415 = global::G.UpdateLogoResponse.FromJson(__content_415, JsonSerializerOptions);
                                     }
                                     else
                                     {
                                         __content_415 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
 
-                                        __value_415 = global::G.UpdateLogoResponse3.FromJson(__content_415, JsonSerializerOptions);
+                                        __value_415 = global::G.UpdateLogoResponse.FromJson(__content_415, JsonSerializerOptions);
                                     }
                                 }
                                 catch (global::System.Exception __ex)
@@ -1561,7 +1561,7 @@ namespace G
                                 }
 
 
-                                throw global::G.ApiException<global::G.UpdateLogoResponse3>.Create(
+                                throw global::G.ApiException<global::G.UpdateLogoResponse>.Create(
                                     statusCode: __response.StatusCode,
                                     message: __content_415 ?? __response.ReasonPhrase ?? string.Empty,
                                     innerException: __exception_415,

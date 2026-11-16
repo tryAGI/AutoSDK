@@ -1,4 +1,4 @@
-﻿//HintName: G.ISourcesClient.CreateSource.g.cs
+//HintName: G.ISourcesClient.CreateSource.g.cs
 #nullable enable
 
 namespace G
@@ -14,7 +14,7 @@ namespace G
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::G.ApiException"></exception>
         [global::System.Obsolete("This method marked as deprecated.")]
-        global::System.Threading.Tasks.Task<global::G.Source2> CreateSourceAsync(
+        global::System.Threading.Tasks.Task<global::G.Source> CreateSourceAsync(
 
             global::G.SourceCreate request,
             global::G.AutoSDKRequestOptions? requestOptions = default,
@@ -28,7 +28,7 @@ namespace G
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::G.ApiException"></exception>
         [global::System.Obsolete("This method marked as deprecated.")]
-        global::System.Threading.Tasks.Task<global::G.AutoSDKHttpResponse<global::G.Source2>> CreateSourceAsResponseAsync(
+        global::System.Threading.Tasks.Task<global::G.AutoSDKHttpResponse<global::G.Source>> CreateSourceAsResponseAsync(
 
             global::G.SourceCreate request,
             global::G.AutoSDKRequestOptions? requestOptions = default,
@@ -62,7 +62,7 @@ namespace G
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         [global::System.Obsolete("This method marked as deprecated.")]
-        global::System.Threading.Tasks.Task<global::G.Source2> CreateSourceAsync(
+        global::System.Threading.Tasks.Task<global::G.Source> CreateSourceAsync(
             string name,
             string? description = default,
             string? instructions = default,

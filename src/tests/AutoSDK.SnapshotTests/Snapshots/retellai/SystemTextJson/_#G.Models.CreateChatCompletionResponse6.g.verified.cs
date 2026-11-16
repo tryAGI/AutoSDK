@@ -1,4 +1,4 @@
-﻿//HintName: G.Models.CreateChatCompletionResponse6.g.cs
+//HintName: G.Models.CreateChatCompletionResponse6.g.cs
 
 #nullable enable
 
@@ -13,8 +13,8 @@ namespace G
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("status")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.CreateChatCompletionResponseStatus5JsonConverter))]
-        public global::G.CreateChatCompletionResponseStatus5? Status { get; set; }
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.CreateChatCompletionResponseStatusJsonConverter))]
+        public global::G.CreateChatCompletionResponseStatus? Status { get; set; }
 
         /// <summary>
         /// Example: Account rate limited, please throttle your requests.
@@ -40,7 +40,7 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public CreateChatCompletionResponse6(
-            global::G.CreateChatCompletionResponseStatus5? status,
+            global::G.CreateChatCompletionResponseStatus? status,
             string? message)
         {
             this.Status = status;

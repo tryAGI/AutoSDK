@@ -203,7 +203,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.Data? Type41 { get; set; }
+        public global::G.Data4? Type41 { get; set; }
         /// <summary>
         /// 
         /// </summary>
@@ -391,7 +391,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.Data3? Type88 { get; set; }
+        public global::G.Data5? Type88 { get; set; }
         /// <summary>
         /// 
         /// </summary>
@@ -419,7 +419,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.Data4? Type95 { get; set; }
+        public global::G.Data3? Type95 { get; set; }
         /// <summary>
         /// 
         /// </summary>
@@ -435,11 +435,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::G.DataItem>? Type99 { get; set; }
+        public global::System.Collections.Generic.IList<global::G.DataItem2>? Type99 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.DataItem? Type100 { get; set; }
+        public global::G.DataItem2? Type100 { get; set; }
         /// <summary>
         /// 
         /// </summary>
@@ -563,11 +563,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::G.DataItem2>? Type131 { get; set; }
+        public global::System.Collections.Generic.IList<global::G.DataItem>? Type131 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.DataItem2? Type132 { get; set; }
+        public global::G.DataItem? Type132 { get; set; }
         /// <summary>
         /// 
         /// </summary>
@@ -583,7 +583,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.Data5? Type136 { get; set; }
+        public global::G.Data? Type136 { get; set; }
         /// <summary>
         /// 
         /// </summary>
@@ -1335,23 +1335,19 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.UploadDatasetRequestAction2? Type324 { get; set; }
+        public byte[]? Type324 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public byte[]? Type325 { get; set; }
+        public global::G.ListProjectTracesSort? Type325 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.ListProjectTracesSort? Type326 { get; set; }
+        public global::G.ListProjectTracesOrder? Type326 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.ListProjectTracesOrder? Type327 { get; set; }
-        /// <summary>
-        /// 
-        /// </summary>
-        public global::G.ListProjectSessionsOrder? Type328 { get; set; }
+        public global::G.ListProjectSessionsOrder? Type327 { get; set; }
 
         /// <summary>
         /// 
@@ -1396,7 +1392,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.List<global::G.DataItem>? ListType10 { get; set; }
+        public global::System.Collections.Generic.List<global::G.DataItem2>? ListType10 { get; set; }
         /// <summary>
         /// 
         /// </summary>
@@ -1432,7 +1428,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.List<global::G.DataItem2>? ListType19 { get; set; }
+        public global::System.Collections.Generic.List<global::G.DataItem>? ListType19 { get; set; }
         /// <summary>
         /// 
         /// </summary>

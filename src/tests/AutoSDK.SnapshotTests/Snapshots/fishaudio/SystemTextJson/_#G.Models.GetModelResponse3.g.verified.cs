@@ -1,4 +1,4 @@
-﻿//HintName: G.Models.GetModelResponse3.g.cs
+//HintName: G.Models.GetModelResponse3.g.cs
 
 #nullable enable
 
@@ -12,16 +12,16 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("status")]
+        [global::System.Text.Json.Serialization.JsonPropertyName("total")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required int Status { get; set; }
+        public required int Total { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("message")]
+        [global::System.Text.Json.Serialization.JsonPropertyName("items")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required string Message { get; set; }
+        public required global::System.Collections.Generic.IList<global::G.ModelEntity> Items { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -32,17 +32,17 @@ namespace G
         /// <summary>
         /// Initializes a new instance of the <see cref="GetModelResponse3" /> class.
         /// </summary>
-        /// <param name="status"></param>
-        /// <param name="message"></param>
+        /// <param name="total"></param>
+        /// <param name="items"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public GetModelResponse3(
-            int status,
-            string message)
+            int total,
+            global::System.Collections.Generic.IList<global::G.ModelEntity> items)
         {
-            this.Status = status;
-            this.Message = message ?? throw new global::System.ArgumentNullException(nameof(message));
+            this.Total = total;
+            this.Items = items ?? throw new global::System.ArgumentNullException(nameof(items));
         }
 
         /// <summary>

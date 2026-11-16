@@ -1,4 +1,4 @@
-﻿//HintName: G.Models.CreateConversation.g.cs
+//HintName: G.Models.CreateConversation.g.cs
 
 #nullable enable
 
@@ -31,7 +31,7 @@ namespace G
         /// The model settings for this conversation (overrides agent's model settings).
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("model_settings")]
-        public global::G.ModelSettingsVariant16? ModelSettings { get; set; }
+        public global::G.ModelSettingsVariant15? ModelSettings { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -61,7 +61,7 @@ namespace G
             string? summary,
             global::System.Collections.Generic.IList<string>? isolatedBlockLabels,
             string? model,
-            global::G.ModelSettingsVariant16? modelSettings)
+            global::G.ModelSettingsVariant15? modelSettings)
         {
             this.Summary = summary;
             this.IsolatedBlockLabels = isolatedBlockLabels;

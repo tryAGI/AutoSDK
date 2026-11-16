@@ -1,4 +1,4 @@
-﻿//HintName: G.Models.BetaBashTool20250124.g.cs
+//HintName: G.Models.BetaBashTool20250124.g.cs
 
 #nullable enable
 
@@ -13,7 +13,7 @@ namespace G
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("cache_control")]
-        public global::G.CacheControlVariant13? CacheControl { get; set; }
+        public global::G.CacheControlVariant19? CacheControl { get; set; }
 
         /// <summary>
         /// 
@@ -49,7 +49,7 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public BetaBashTool20250124(
-            global::G.CacheControlVariant13? cacheControl,
+            global::G.CacheControlVariant19? cacheControl,
             global::G.BetaBashTool20250124Type type,
             global::G.BetaBashTool20250124Name name)
         {

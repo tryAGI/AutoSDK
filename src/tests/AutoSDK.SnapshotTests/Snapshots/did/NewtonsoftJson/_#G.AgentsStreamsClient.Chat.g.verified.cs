@@ -74,7 +74,7 @@ namespace G
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::G.ApiException"></exception>
-        public async global::System.Threading.Tasks.Task<global::G.ChatResponse2> ChatAsync(
+        public async global::System.Threading.Tasks.Task<global::G.ChatResponse> ChatAsync(
             string agentId,
             string chatId,
 
@@ -103,7 +103,7 @@ namespace G
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::G.ApiException"></exception>
-        public async global::System.Threading.Tasks.Task<global::G.AutoSDKHttpResponse<global::G.ChatResponse2>> ChatAsResponseAsync(
+        public async global::System.Threading.Tasks.Task<global::G.AutoSDKHttpResponse<global::G.ChatResponse>> ChatAsResponseAsync(
             string agentId,
             string chatId,
 
@@ -381,19 +381,19 @@ namespace G
                             {
                                 string? __content_401 = null;
                                 global::System.Exception? __exception_401 = null;
-                                global::G.ChatResponse3? __value_401 = null;
+                                global::G.ChatResponse2? __value_401 = null;
                                 try
                                 {
                                     if (__effectiveReadResponseAsString)
                                     {
                                         __content_401 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
-                                        __value_401 = global::G.ChatResponse3.FromJson(__content_401, JsonSerializerOptions);
+                                        __value_401 = global::G.ChatResponse2.FromJson(__content_401, JsonSerializerOptions);
                                     }
                                     else
                                     {
                                         __content_401 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
 
-                                        __value_401 = global::G.ChatResponse3.FromJson(__content_401, JsonSerializerOptions);
+                                        __value_401 = global::G.ChatResponse2.FromJson(__content_401, JsonSerializerOptions);
                                     }
                                 }
                                 catch (global::System.Exception __ex)
@@ -402,7 +402,7 @@ namespace G
                                 }
 
 
-                                throw global::G.ApiException<global::G.ChatResponse3>.Create(
+                                throw global::G.ApiException<global::G.ChatResponse2>.Create(
                                     statusCode: __response.StatusCode,
                                     message: __content_401 ?? __response.ReasonPhrase ?? string.Empty,
                                     innerException: __exception_401,
@@ -435,9 +435,9 @@ namespace G
                                 {
                                     __response.EnsureSuccessStatusCode();
 
-                                    var __value = global::G.ChatResponse2.FromJson(__content, JsonSerializerOptions) ??
+                                    var __value = global::G.ChatResponse.FromJson(__content, JsonSerializerOptions) ??
                                         throw new global::System.InvalidOperationException($"Response deserialization failed for \"{__content}\" ");
-                                    return new global::G.AutoSDKHttpResponse<global::G.ChatResponse2>(
+                                    return new global::G.AutoSDKHttpResponse<global::G.ChatResponse>(
                                         statusCode: __response.StatusCode,
                                         headers: global::G.AutoSDKHttpResponse.CreateHeaders(__response),
                                         requestUri: __response.RequestMessage?.RequestUri,
@@ -467,9 +467,9 @@ namespace G
                 #endif
                                     ).ConfigureAwait(false);
 
-                                    var __value = await global::G.ChatResponse2.FromJsonStreamAsync(__content, JsonSerializerOptions).ConfigureAwait(false) ??
+                                    var __value = await global::G.ChatResponse.FromJsonStreamAsync(__content, JsonSerializerOptions).ConfigureAwait(false) ??
                                         throw new global::System.InvalidOperationException("Response deserialization failed.");
-                                    return new global::G.AutoSDKHttpResponse<global::G.ChatResponse2>(
+                                    return new global::G.AutoSDKHttpResponse<global::G.ChatResponse>(
                                         statusCode: __response.StatusCode,
                                         headers: global::G.AutoSDKHttpResponse.CreateHeaders(__response),
                                         requestUri: __response.RequestMessage?.RequestUri,
@@ -529,7 +529,7 @@ namespace G
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
-        public async global::System.Threading.Tasks.Task<global::G.ChatResponse2> ChatAsync(
+        public async global::System.Threading.Tasks.Task<global::G.ChatResponse> ChatAsync(
             string agentId,
             string chatId,
             global::System.Collections.Generic.IList<global::G.ChatRequestMessage> messages,

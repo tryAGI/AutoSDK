@@ -13,7 +13,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.CreateWebhookCredentialDTOAuthenticationPlanDiscriminatorType? Type { get; }
+        public global::G.WebhookCredentialAuthenticationPlanDiscriminatorType? Type { get; }
 
         /// <summary>
         /// 
@@ -198,7 +198,7 @@ namespace G
         /// 
         /// </summary>
         public AuthenticationPlan2(
-            global::G.CreateWebhookCredentialDTOAuthenticationPlanDiscriminatorType? type,
+            global::G.WebhookCredentialAuthenticationPlanDiscriminatorType? type,
             global::G.OAuth2AuthenticationPlan? oauth2,
             global::G.HMACAuthenticationPlan? hmac,
             global::G.BearerAuthenticationPlan? bearer

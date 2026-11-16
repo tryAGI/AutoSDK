@@ -1,4 +1,4 @@
-﻿//HintName: G.Models.MxbaiOmniApiRoutesV1DeprecatedVectorStoresModelsScoredAudioUrlInputChunk.g.cs
+//HintName: G.Models.MxbaiOmniApiRoutesV1DeprecatedVectorStoresModelsScoredAudioUrlInputChunk.g.cs
 
 #nullable enable
 
@@ -26,7 +26,7 @@ namespace G
         /// metadata of the chunk
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("generated_metadata")]
-        public global::G.GeneratedMetadataVariant15? GeneratedMetadata { get; set; }
+        public global::G.GeneratedMetadataVariant110? GeneratedMetadata { get; set; }
 
         /// <summary>
         /// model used for this chunk
@@ -156,7 +156,7 @@ namespace G
             string vectorStoreId,
             int samplingRate,
             string? mimeType,
-            global::G.GeneratedMetadataVariant15? generatedMetadata,
+            global::G.GeneratedMetadataVariant110? generatedMetadata,
             string? model,
             object? metadata,
             string? type,

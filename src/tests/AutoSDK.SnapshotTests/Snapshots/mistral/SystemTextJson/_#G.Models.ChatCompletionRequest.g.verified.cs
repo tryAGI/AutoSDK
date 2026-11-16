@@ -1,4 +1,4 @@
-﻿//HintName: G.Models.ChatCompletionRequest.g.cs
+//HintName: G.Models.ChatCompletionRequest.g.cs
 
 #nullable enable
 
@@ -60,7 +60,7 @@ namespace G
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("messages")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::System.Collections.Generic.IList<global::G.MessagesItem> Messages { get; set; }
+        public required global::System.Collections.Generic.IList<global::G.MessagesItem2> Messages { get; set; }
 
         /// <summary>
         /// 
@@ -78,8 +78,8 @@ namespace G
         /// Default Value: auto
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("tool_choice")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.AnyOfJsonConverter<global::G.ToolChoice2, global::G.ToolChoiceEnum?>))]
-        public global::G.AnyOf<global::G.ToolChoice2, global::G.ToolChoiceEnum?>? ToolChoice { get; set; }
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.AnyOfJsonConverter<global::G.ToolChoice, global::G.ToolChoiceEnum?>))]
+        public global::G.AnyOf<global::G.ToolChoice, global::G.ToolChoiceEnum?>? ToolChoice { get; set; }
 
         /// <summary>
         /// presence_penalty determines how much the model penalizes the repetition of words or phrases. A higher presence penalty encourages the model to use a wider variety of words and phrases, making the output more diverse and creative.<br/>
@@ -188,7 +188,7 @@ namespace G
 #endif
         public ChatCompletionRequest(
             string model,
-            global::System.Collections.Generic.IList<global::G.MessagesItem> messages,
+            global::System.Collections.Generic.IList<global::G.MessagesItem2> messages,
             double? temperature,
             double? topP,
             int? maxTokens,
@@ -197,7 +197,7 @@ namespace G
             int? randomSeed,
             global::G.ResponseFormat? responseFormat,
             global::System.Collections.Generic.IList<global::G.Tool>? tools,
-            global::G.AnyOf<global::G.ToolChoice2, global::G.ToolChoiceEnum?>? toolChoice,
+            global::G.AnyOf<global::G.ToolChoice, global::G.ToolChoiceEnum?>? toolChoice,
             double? presencePenalty,
             double? frequencyPenalty,
             int? n,

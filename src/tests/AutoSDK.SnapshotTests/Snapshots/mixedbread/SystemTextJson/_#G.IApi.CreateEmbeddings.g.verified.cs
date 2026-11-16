@@ -1,4 +1,4 @@
-﻿//HintName: G.IApi.CreateEmbeddings.g.cs
+//HintName: G.IApi.CreateEmbeddings.g.cs
 #nullable enable
 
 namespace G
@@ -76,7 +76,7 @@ namespace G
             int? dimensions = default,
             string? prompt = default,
             bool? normalized = default,
-            global::G.AnyOf<global::G.EncodingFormat3?, global::System.Collections.Generic.IList<global::G.EncodingFormat3>>? encodingFormat = default,
+            global::G.AnyOf<global::G.EncodingFormat?, global::System.Collections.Generic.IList<global::G.EncodingFormat>>? encodingFormat = default,
             global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }

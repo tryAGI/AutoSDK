@@ -1,4 +1,4 @@
-﻿//HintName: G.Models.UpdateCustomCredentialDTO.g.cs
+//HintName: G.Models.UpdateCustomCredentialDTO.g.cs
 
 #nullable enable
 
@@ -13,8 +13,8 @@ namespace G
         /// This is the authentication plan. Supports OAuth2 RFC 6749, HMAC signing, and Bearer authentication.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("authenticationPlan")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.AuthenticationPlan9JsonConverter))]
-        public global::G.AuthenticationPlan9? AuthenticationPlan { get; set; }
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.AuthenticationPlan4JsonConverter))]
+        public global::G.AuthenticationPlan4? AuthenticationPlan { get; set; }
 
         /// <summary>
         /// This is the encryption plan for encrypting sensitive data. Currently supports public-key encryption.
@@ -50,7 +50,7 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public UpdateCustomCredentialDTO(
-            global::G.AuthenticationPlan9? authenticationPlan,
+            global::G.AuthenticationPlan4? authenticationPlan,
             global::G.PublicKeyEncryptionPlan? encryptionPlan,
             string? name)
         {

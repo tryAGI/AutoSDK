@@ -1,4 +1,4 @@
-﻿//HintName: G.Models.ExtractContentCreateParams.g.cs
+//HintName: G.Models.ExtractContentCreateParams.g.cs
 
 #nullable enable
 
@@ -13,7 +13,7 @@ namespace G
         /// The content to extract from
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("content", Required = global::Newtonsoft.Json.Required.Always)]
-        public global::G.AnyOf<string, global::System.Collections.Generic.IList<string>, global::System.Collections.Generic.IList<global::G.AnyOf<global::G.TextInput, global::G.ImageUrlInput2>>> Content { get; set; } = default!;
+        public global::G.AnyOf<string, global::System.Collections.Generic.IList<string>, global::System.Collections.Generic.IList<global::G.AnyOf<global::G.TextInput, global::G.ImageUrlInput>>> Content { get; set; } = default!;
 
         /// <summary>
         /// The JSON schema to use for extraction
@@ -46,7 +46,7 @@ namespace G
         /// Additional instructions for the extraction
         /// </param>
         public ExtractContentCreateParams(
-            global::G.AnyOf<string, global::System.Collections.Generic.IList<string>, global::System.Collections.Generic.IList<global::G.AnyOf<global::G.TextInput, global::G.ImageUrlInput2>>> content,
+            global::G.AnyOf<string, global::System.Collections.Generic.IList<string>, global::System.Collections.Generic.IList<global::G.AnyOf<global::G.TextInput, global::G.ImageUrlInput>>> content,
             object jsonSchema,
             string? instructions)
         {

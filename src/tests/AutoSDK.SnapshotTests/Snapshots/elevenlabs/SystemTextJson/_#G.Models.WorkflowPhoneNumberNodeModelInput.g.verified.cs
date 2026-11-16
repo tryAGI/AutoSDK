@@ -1,4 +1,4 @@
-﻿//HintName: G.Models.WorkflowPhoneNumberNodeModelInput.g.cs
+//HintName: G.Models.WorkflowPhoneNumberNodeModelInput.g.cs
 
 #nullable enable
 

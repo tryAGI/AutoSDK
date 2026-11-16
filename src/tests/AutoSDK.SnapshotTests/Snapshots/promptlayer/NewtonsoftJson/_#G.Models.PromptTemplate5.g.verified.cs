@@ -6,14 +6,14 @@
 namespace G
 {
     /// <summary>
-    /// The prompt template. Either a CompletionPrompt (type: 'completion') or ChatPrompt (type: 'chat').
+    /// The prompt template content. When resolve_snippets is true (default), snippets are expanded. When false, raw @@@snippet@@@ references are preserved.
     /// </summary>
     public readonly partial struct PromptTemplate5 : global::System.IEquatable<PromptTemplate5>
     {
         /// <summary>
         /// 
         /// </summary>
-        public global::G.PromptBlueprintPromptTemplateDiscriminatorType? Type { get; }
+        public global::G.GetPromptTemplateRawResponsePromptTemplateDiscriminatorType? Type { get; }
 
         /// <summary>
         /// 
@@ -138,7 +138,7 @@ namespace G
         /// 
         /// </summary>
         public PromptTemplate5(
-            global::G.PromptBlueprintPromptTemplateDiscriminatorType? type,
+            global::G.GetPromptTemplateRawResponsePromptTemplateDiscriminatorType? type,
             global::G.CompletionPrompt? completion,
             global::G.ChatPrompt? chat
             )
@@ -170,7 +170,7 @@ namespace G
         /// </summary>
         public bool Validate()
         {
-            return IsCompletion || IsChat;
+            return IsCompletion && !IsChat || !IsCompletion && IsChat;
         }
 
         /// <summary>

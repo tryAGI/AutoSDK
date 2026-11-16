@@ -1,4 +1,4 @@
-﻿//HintName: G.Models.Message.g.cs
+//HintName: G.Models.Message.g.cs
 
 #nullable enable
 
@@ -80,7 +80,7 @@ namespace G
         /// The content of the message.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("content")]
-        public global::System.Collections.Generic.IList<global::G.ContentVariant1Item>? Content { get; set; }
+        public global::System.Collections.Generic.IList<global::G.ContentVariant1Item4>? Content { get; set; }
 
         /// <summary>
         /// For role user/assistant: the (optional) name of the participant. For role tool/function: the name of the function called.
@@ -271,7 +271,7 @@ namespace G
             string? id,
             string? agentId,
             string? model,
-            global::System.Collections.Generic.IList<global::G.ContentVariant1Item>? content,
+            global::System.Collections.Generic.IList<global::G.ContentVariant1Item4>? content,
             string? name,
             global::System.Collections.Generic.IList<global::G.ChatCompletionMessageFunctionToolCallOutput>? toolCalls,
             string? toolCallId,

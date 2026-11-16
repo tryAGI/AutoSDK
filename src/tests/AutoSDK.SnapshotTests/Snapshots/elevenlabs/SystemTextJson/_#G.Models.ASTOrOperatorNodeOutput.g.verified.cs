@@ -1,4 +1,4 @@
-﻿//HintName: G.Models.ASTOrOperatorNodeOutput.g.cs
+//HintName: G.Models.ASTOrOperatorNodeOutput.g.cs
 
 #nullable enable
 
@@ -21,7 +21,7 @@ namespace G
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("children")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::System.Collections.Generic.IList<global::G.ChildrenItem4> Children { get; set; }
+        public required global::System.Collections.Generic.IList<global::G.ChildrenItem3> Children { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -42,7 +42,7 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public ASTOrOperatorNodeOutput(
-            global::System.Collections.Generic.IList<global::G.ChildrenItem4> children,
+            global::System.Collections.Generic.IList<global::G.ChildrenItem3> children,
             string type = "or_operator")
         {
             this.Type = type;

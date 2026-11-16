@@ -1,4 +1,4 @@
-﻿//HintName: G.Models.ListConversationFlowComponentsV2Response4.g.cs
+//HintName: G.Models.ListConversationFlowComponentsV2Response4.g.cs
 
 #nullable enable
 
@@ -13,8 +13,8 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("status")]
-        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.ListConversationFlowComponentsV2ResponseStatus2JsonConverter))]
-        public global::G.ListConversationFlowComponentsV2ResponseStatus2? Status { get; set; }
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.ListConversationFlowComponentsV2ResponseStatusJsonConverter))]
+        public global::G.ListConversationFlowComponentsV2ResponseStatus? Status { get; set; }
 
         /// <summary>
         /// Example: The requested resource was not found.
@@ -37,7 +37,7 @@ namespace G
         /// Example: The requested resource was not found.
         /// </param>
         public ListConversationFlowComponentsV2Response4(
-            global::G.ListConversationFlowComponentsV2ResponseStatus2? status,
+            global::G.ListConversationFlowComponentsV2ResponseStatus? status,
             string? message)
         {
             this.Status = status;

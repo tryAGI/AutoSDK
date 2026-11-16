@@ -1,4 +1,4 @@
-﻿//HintName: G.Models.EstimatePricingResponse3.g.cs
+//HintName: G.Models.EstimatePricingResponse3.g.cs
 
 #nullable enable
 
@@ -13,7 +13,7 @@ namespace G
         /// Error details
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("error", Required = global::Newtonsoft.Json.Required.Always)]
-        public global::G.EstimatePricingResponseError2 Error { get; set; } = default!;
+        public global::G.EstimatePricingResponseError Error { get; set; } = default!;
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -28,7 +28,7 @@ namespace G
         /// Error details
         /// </param>
         public EstimatePricingResponse3(
-            global::G.EstimatePricingResponseError2 error)
+            global::G.EstimatePricingResponseError error)
         {
             this.Error = error ?? throw new global::System.ArgumentNullException(nameof(error));
         }

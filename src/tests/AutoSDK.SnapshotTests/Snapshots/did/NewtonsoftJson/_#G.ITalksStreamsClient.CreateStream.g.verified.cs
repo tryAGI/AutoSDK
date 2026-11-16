@@ -1,4 +1,4 @@
-﻿//HintName: G.ITalksStreamsClient.CreateStream.g.cs
+//HintName: G.ITalksStreamsClient.CreateStream.g.cs
 #nullable enable
 
 namespace G
@@ -15,9 +15,9 @@ namespace G
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::G.ApiException"></exception>
         [global::System.Obsolete("This method marked as deprecated.")]
-        global::System.Threading.Tasks.Task<global::G.CreateStreamResponse3> CreateStreamAsync(
+        global::System.Threading.Tasks.Task<global::G.CreateStreamResponse> CreateStreamAsync(
 
-            global::G.CreateStreamRequest2 request,
+            global::G.CreateStreamRequest request,
             string? userAgent = default,
             global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
@@ -31,9 +31,9 @@ namespace G
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::G.ApiException"></exception>
         [global::System.Obsolete("This method marked as deprecated.")]
-        global::System.Threading.Tasks.Task<global::G.AutoSDKHttpResponse<global::G.CreateStreamResponse3>> CreateStreamAsResponseAsync(
+        global::System.Threading.Tasks.Task<global::G.AutoSDKHttpResponse<global::G.CreateStreamResponse>> CreateStreamAsResponseAsync(
 
-            global::G.CreateStreamRequest2 request,
+            global::G.CreateStreamRequest request,
             string? userAgent = default,
             global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
@@ -78,12 +78,12 @@ namespace G
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         [global::System.Obsolete("This method marked as deprecated.")]
-        global::System.Threading.Tasks.Task<global::G.CreateStreamResponse3> CreateStreamAsync(
+        global::System.Threading.Tasks.Task<global::G.CreateStreamResponse> CreateStreamAsync(
             string sourceUrl,
             string? userAgent = default,
             global::G.CreateStreamRequestFace? face = default,
             global::G.CreateStreamRequestConfig? config = default,
-            global::G.CreateStreamRequestCompatibilityMode2? compatibilityMode = default,
+            global::G.CreateStreamRequestCompatibilityMode? compatibilityMode = default,
             bool? streamWarmup = default,
             double? sessionTimeout = default,
             double? outputResolution = default,

@@ -1,4 +1,4 @@
-﻿//HintName: G.Models.AssistantOverrides.g.cs
+//HintName: G.Models.AssistantOverrides.g.cs
 
 #nullable enable
 
@@ -121,7 +121,7 @@ namespace G
         /// These are dynamic credentials that will be used for the assistant calls. By default, all the credentials are available for use in the call but you can supplement an additional credentials using this. Dynamic credentials override existing credentials.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("credentials")]
-        public global::System.Collections.Generic.IList<global::G.CredentialsItem2>? Credentials { get; set; }
+        public global::System.Collections.Generic.IList<global::G.CredentialsItem3>? Credentials { get; set; }
 
         /// <summary>
         /// This is a set of actions that will be performed on certain events.
@@ -428,7 +428,7 @@ namespace G
             bool? modelOutputInMessagesEnabled,
             global::System.Collections.Generic.IList<global::G.TransportConfigurationTwilio>? transportConfigurations,
             global::G.LangfuseObservabilityPlan? observabilityPlan,
-            global::System.Collections.Generic.IList<global::G.CredentialsItem2>? credentials,
+            global::System.Collections.Generic.IList<global::G.CredentialsItem3>? credentials,
             global::System.Collections.Generic.IList<global::G.OneOf<global::G.CallHookCallEnding, global::G.CallHookAssistantSpeechInterrupted, global::G.CallHookCustomerSpeechInterrupted, global::G.CallHookCustomerSpeechTimeout, global::G.SessionCreatedHook>>? hooks,
             global::System.Collections.Generic.IList<global::G.OneOf<global::G.CreateApiRequestToolDTO, global::G.CreateBashToolDTO, global::G.CreateCodeToolDTO, global::G.CreateComputerToolDTO, global::G.CreateDtmfToolDTO, global::G.CreateEndCallToolDTO, global::G.CreateFunctionToolDTO, global::G.CreateGoHighLevelCalendarAvailabilityToolDTO, global::G.CreateGoHighLevelCalendarEventCreateToolDTO, global::G.CreateGoHighLevelContactCreateToolDTO, global::G.CreateGoHighLevelContactGetToolDTO, global::G.CreateGoogleCalendarCheckAvailabilityToolDTO, global::G.CreateGoogleCalendarCreateEventToolDTO, global::G.CreateGoogleSheetsRowAppendToolDTO, global::G.CreateHandoffToolDTO, global::G.CreateMcpToolDTO, global::G.CreateQueryToolDTO, global::G.CreateSlackSendMessageToolDTO, global::G.CreateSmsToolDTO, global::G.CreateTextEditorToolDTO, global::G.CreateTransferCallToolDTO, global::G.CreateSipRequestToolDTO, global::G.CreateVoicemailToolDTO>>? tools_append,
             object? variableValues,

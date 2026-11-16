@@ -1,4 +1,4 @@
-﻿//HintName: G.Models.Delete1Response2.g.cs
+//HintName: G.Models.Delete1Response2.g.cs
 
 #nullable enable
 
@@ -12,26 +12,14 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("kind", Required = global::Newtonsoft.Json.Required.Always)]
-        public string Kind { get; set; } = default!;
+        [global::Newtonsoft.Json.JsonProperty("knowledge", Required = global::Newtonsoft.Json.Required.Always)]
+        public bool Knowledge { get; set; } = default!;
 
         /// <summary>
         /// 
         /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("description", Required = global::Newtonsoft.Json.Required.Always)]
-        public string Description { get; set; } = default!;
-
-        /// <summary>
-        /// 
-        /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("details")]
-        public object? Details { get; set; }
-
-        /// <summary>
-        /// 
-        /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("internal")]
-        public string? Internal { get; set; }
+        [global::Newtonsoft.Json.JsonProperty("deletedDocuments", Required = global::Newtonsoft.Json.Required.Always)]
+        public object DeletedDocuments { get; set; } = default!;
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -42,20 +30,14 @@ namespace G
         /// <summary>
         /// Initializes a new instance of the <see cref="Delete1Response2" /> class.
         /// </summary>
-        /// <param name="kind"></param>
-        /// <param name="description"></param>
-        /// <param name="details"></param>
-        /// <param name="internal"></param>
+        /// <param name="knowledge"></param>
+        /// <param name="deletedDocuments"></param>
         public Delete1Response2(
-            string kind,
-            string description,
-            object? details,
-            string? @internal)
+            bool knowledge,
+            object deletedDocuments)
         {
-            this.Kind = kind ?? throw new global::System.ArgumentNullException(nameof(kind));
-            this.Description = description ?? throw new global::System.ArgumentNullException(nameof(description));
-            this.Details = details;
-            this.Internal = @internal;
+            this.Knowledge = knowledge;
+            this.DeletedDocuments = deletedDocuments ?? throw new global::System.ArgumentNullException(nameof(deletedDocuments));
         }
 
         /// <summary>

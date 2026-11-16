@@ -1,4 +1,4 @@
-﻿//HintName: G.Models.RequestTextBlock.g.cs
+//HintName: G.Models.RequestTextBlock.g.cs
 
 #nullable enable
 
@@ -13,13 +13,13 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("cache_control")]
-        public global::G.CacheControlVariant116? CacheControl { get; set; }
+        public global::G.CacheControlVariant1? CacheControl { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("citations")]
-        public global::System.Collections.Generic.IList<global::G.CitationsVariant1Item3>? Citations { get; set; }
+        public global::System.Collections.Generic.IList<global::G.CitationsVariant1Item>? Citations { get; set; }
 
         /// <summary>
         /// 
@@ -49,8 +49,8 @@ namespace G
         /// <param name="type"></param>
         public RequestTextBlock(
             string text,
-            global::G.CacheControlVariant116? cacheControl,
-            global::System.Collections.Generic.IList<global::G.CitationsVariant1Item3>? citations,
+            global::G.CacheControlVariant1? cacheControl,
+            global::System.Collections.Generic.IList<global::G.CitationsVariant1Item>? citations,
             global::G.RequestTextBlockType type)
         {
             this.CacheControl = cacheControl;

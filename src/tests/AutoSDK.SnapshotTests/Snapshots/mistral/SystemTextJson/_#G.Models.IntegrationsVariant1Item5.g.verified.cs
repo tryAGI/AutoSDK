@@ -13,15 +13,15 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.CompletionDetailedJobOutIntegrationsVariant1ItemDiscriminatorType? Type { get; }
+        public global::G.JobInIntegrationsVariant1ItemDiscriminatorType? Type { get; }
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        public global::G.WandbIntegrationOut? Wandb { get; init; }
+        public global::G.WandbIntegration? Wandb { get; init; }
 #else
-        public global::G.WandbIntegrationOut? Wandb { get; }
+        public global::G.WandbIntegration? Wandb { get; }
 #endif
 
         /// <summary>
@@ -39,7 +39,7 @@ namespace G
 #if NET6_0_OR_GREATER
             [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
 #endif
-            out global::G.WandbIntegrationOut? value)
+            out global::G.WandbIntegration? value)
         {
             value = Wandb;
             return IsWandb;
@@ -48,23 +48,23 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.WandbIntegrationOut PickWandb() => Wandb is { } value
+        public global::G.WandbIntegration PickWandb() => Wandb is { } value
             ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Wandb' but the value was {ToString()}.");
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator IntegrationsVariant1Item5(global::G.WandbIntegrationOut value) => new IntegrationsVariant1Item5((global::G.WandbIntegrationOut?)value);
+        public static implicit operator IntegrationsVariant1Item5(global::G.WandbIntegration value) => new IntegrationsVariant1Item5((global::G.WandbIntegration?)value);
 
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator global::G.WandbIntegrationOut?(IntegrationsVariant1Item5 @this) => @this.Wandb;
+        public static implicit operator global::G.WandbIntegration?(IntegrationsVariant1Item5 @this) => @this.Wandb;
 
         /// <summary>
         /// 
         /// </summary>
-        public IntegrationsVariant1Item5(global::G.WandbIntegrationOut? value)
+        public IntegrationsVariant1Item5(global::G.WandbIntegration? value)
         {
             Wandb = value;
         }
@@ -72,14 +72,14 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static IntegrationsVariant1Item5 FromWandb(global::G.WandbIntegrationOut? value) => new IntegrationsVariant1Item5(value);
+        public static IntegrationsVariant1Item5 FromWandb(global::G.WandbIntegration? value) => new IntegrationsVariant1Item5(value);
 
         /// <summary>
         /// 
         /// </summary>
         public IntegrationsVariant1Item5(
-            global::G.CompletionDetailedJobOutIntegrationsVariant1ItemDiscriminatorType? type,
-            global::G.WandbIntegrationOut? wandb
+            global::G.JobInIntegrationsVariant1ItemDiscriminatorType? type,
+            global::G.WandbIntegration? wandb
             )
         {
             Type = type;
@@ -113,7 +113,7 @@ namespace G
         /// 
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<global::G.WandbIntegrationOut, TResult>? wandb = null,
+            global::System.Func<global::G.WandbIntegration, TResult>? wandb = null,
             bool validate = true)
         {
             if (validate)
@@ -133,7 +133,7 @@ namespace G
         /// 
         /// </summary>
         public void Match(
-            global::System.Action<global::G.WandbIntegrationOut>? wandb = null,
+            global::System.Action<global::G.WandbIntegration>? wandb = null,
             bool validate = true)
         {
             if (validate)
@@ -151,7 +151,7 @@ namespace G
         /// 
         /// </summary>
         public void Switch(
-            global::System.Action<global::G.WandbIntegrationOut>? wandb = null,
+            global::System.Action<global::G.WandbIntegration>? wandb = null,
             bool validate = true)
         {
             if (validate)
@@ -173,7 +173,7 @@ namespace G
             var fields = new object?[]
             {
                 Wandb,
-                typeof(global::G.WandbIntegrationOut),
+                typeof(global::G.WandbIntegration),
             };
             const int offset = unchecked((int)2166136261);
             const int prime = 16777619;
@@ -190,7 +190,7 @@ namespace G
         public bool Equals(IntegrationsVariant1Item5 other)
         {
             return
-                global::System.Collections.Generic.EqualityComparer<global::G.WandbIntegrationOut?>.Default.Equals(Wandb, other.Wandb) 
+                global::System.Collections.Generic.EqualityComparer<global::G.WandbIntegration?>.Default.Equals(Wandb, other.Wandb) 
                 ;
         }
 

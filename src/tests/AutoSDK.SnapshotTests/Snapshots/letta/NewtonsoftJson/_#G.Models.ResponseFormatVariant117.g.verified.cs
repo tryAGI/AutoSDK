@@ -13,7 +13,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.LettaSchemasAgentFileAgentSchemaResponseFormatVariant1DiscriminatorType? Type { get; }
+        public global::G.LLMConfigResponseFormatVariant1DiscriminatorType? Type { get; }
 
         /// <summary>
         /// Response format for plain text responses.
@@ -198,7 +198,7 @@ namespace G
         /// 
         /// </summary>
         public ResponseFormatVariant117(
-            global::G.LettaSchemasAgentFileAgentSchemaResponseFormatVariant1DiscriminatorType? type,
+            global::G.LLMConfigResponseFormatVariant1DiscriminatorType? type,
             global::G.TextResponseFormat? text,
             global::G.JsonSchemaResponseFormat? jsonSchema,
             global::G.JsonObjectResponseFormat? jsonObject

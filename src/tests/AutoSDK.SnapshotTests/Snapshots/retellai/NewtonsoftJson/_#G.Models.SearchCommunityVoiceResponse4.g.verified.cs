@@ -1,4 +1,4 @@
-﻿//HintName: G.Models.SearchCommunityVoiceResponse4.g.cs
+//HintName: G.Models.SearchCommunityVoiceResponse4.g.cs
 
 #nullable enable
 
@@ -13,8 +13,8 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("status")]
-        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.SearchCommunityVoiceResponseStatus3JsonConverter))]
-        public global::G.SearchCommunityVoiceResponseStatus3? Status { get; set; }
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.SearchCommunityVoiceResponseStatusJsonConverter))]
+        public global::G.SearchCommunityVoiceResponseStatus? Status { get; set; }
 
         /// <summary>
         /// Example: Account rate limited, please throttle your requests.
@@ -37,7 +37,7 @@ namespace G
         /// Example: Account rate limited, please throttle your requests.
         /// </param>
         public SearchCommunityVoiceResponse4(
-            global::G.SearchCommunityVoiceResponseStatus3? status,
+            global::G.SearchCommunityVoiceResponseStatus? status,
             string? message)
         {
             this.Status = status;

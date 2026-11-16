@@ -18,12 +18,12 @@ namespace G.JsonConverters
 
 
             var readerCopy = reader;
-            var discriminatorTypeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.BetaRequestDocumentBlockCacheControlVariant1Discriminator), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.BetaRequestDocumentBlockCacheControlVariant1Discriminator> ??
-                            throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::G.BetaRequestDocumentBlockCacheControlVariant1Discriminator)}");
+            var discriminatorTypeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.BetaRequestTextBlockCacheControlVariant1Discriminator), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.BetaRequestTextBlockCacheControlVariant1Discriminator> ??
+                            throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::G.BetaRequestTextBlockCacheControlVariant1Discriminator)}");
             var discriminator = global::System.Text.Json.JsonSerializer.Deserialize(ref readerCopy, discriminatorTypeInfo);
 
             global::G.BetaCacheControlEphemeral? ephemeral = default;
-            if (discriminator?.Type == global::G.BetaRequestDocumentBlockCacheControlVariant1DiscriminatorType.Ephemeral)
+            if (discriminator?.Type == global::G.BetaRequestTextBlockCacheControlVariant1DiscriminatorType.Ephemeral)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.BetaCacheControlEphemeral), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.BetaCacheControlEphemeral> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::G.BetaCacheControlEphemeral)}");

@@ -1,4 +1,4 @@
-﻿//HintName: G.ITalksStreamsClient.DeleteStream.g.cs
+//HintName: G.ITalksStreamsClient.DeleteStream.g.cs
 #nullable enable
 
 namespace G
@@ -15,10 +15,10 @@ namespace G
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::G.ApiException"></exception>
         [global::System.Obsolete("This method marked as deprecated.")]
-        global::System.Threading.Tasks.Task<global::G.DeleteStreamResponse5> DeleteStreamAsync(
+        global::System.Threading.Tasks.Task<global::G.DeleteStreamResponse> DeleteStreamAsync(
             string id,
 
-            global::G.DeleteStreamRequest3 request,
+            global::G.DeleteStreamRequest request,
             string? cookie = default,
             global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
@@ -32,10 +32,10 @@ namespace G
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::G.ApiException"></exception>
         [global::System.Obsolete("This method marked as deprecated.")]
-        global::System.Threading.Tasks.Task<global::G.AutoSDKHttpResponse<global::G.DeleteStreamResponse5>> DeleteStreamAsResponseAsync(
+        global::System.Threading.Tasks.Task<global::G.AutoSDKHttpResponse<global::G.DeleteStreamResponse>> DeleteStreamAsResponseAsync(
             string id,
 
-            global::G.DeleteStreamRequest3 request,
+            global::G.DeleteStreamRequest request,
             string? cookie = default,
             global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
@@ -49,7 +49,7 @@ namespace G
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         [global::System.Obsolete("This method marked as deprecated.")]
-        global::System.Threading.Tasks.Task<global::G.DeleteStreamResponse5> DeleteStreamAsync(
+        global::System.Threading.Tasks.Task<global::G.DeleteStreamResponse> DeleteStreamAsync(
             string id,
             string? cookie = default,
             string? sessionId = default,

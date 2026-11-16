@@ -1727,15 +1727,15 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.AnyOf<global::G.Prefetch2, global::System.Collections.Generic.IList<global::G.Prefetch2>>? Type422 { get; set; }
+        public global::G.AnyOf<global::G.Prefetch, global::System.Collections.Generic.IList<global::G.Prefetch>>? Type422 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.Prefetch2? Type423 { get; set; }
+        public global::G.Prefetch? Type423 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::G.Prefetch2>? Type424 { get; set; }
+        public global::System.Collections.Generic.IList<global::G.Prefetch>? Type424 { get; set; }
         /// <summary>
         /// 
         /// </summary>
@@ -2628,11 +2628,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.AnyOf<global::G.Prefetch2, global::System.Collections.Generic.List<global::G.Prefetch2>>? ListType47 { get; set; }
+        public global::G.AnyOf<global::G.Prefetch, global::System.Collections.Generic.List<global::G.Prefetch>>? ListType47 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.List<global::G.Prefetch2>? ListType48 { get; set; }
+        public global::System.Collections.Generic.List<global::G.Prefetch>? ListType48 { get; set; }
         /// <summary>
         /// 
         /// </summary>

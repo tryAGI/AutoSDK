@@ -46,13 +46,13 @@ namespace G
             global::System.Net.Http.HttpClient httpClient,
             ref string agentId,
             ref string streamId,
-            global::G.CreateVideoStreamRequest2 request);
+            global::G.CreateVideoStreamRequest request);
         partial void PrepareCreateVideoStreamRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
             string agentId,
             string streamId,
-            global::G.CreateVideoStreamRequest2 request);
+            global::G.CreateVideoStreamRequest request);
         partial void ProcessCreateVideoStreamResponse(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage);
@@ -71,11 +71,11 @@ namespace G
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::G.ApiException"></exception>
-        public async global::System.Threading.Tasks.Task<global::G.AllOf<global::G.CreateVideoStreamResponseVariant12, global::G.CreateVideoStreamResponseVariant22>> CreateVideoStreamAsync(
+        public async global::System.Threading.Tasks.Task<global::G.AllOf<global::G.CreateVideoStreamResponseVariant1, global::G.CreateVideoStreamResponseVariant2>> CreateVideoStreamAsync(
             string agentId,
             string streamId,
 
-            global::G.CreateVideoStreamRequest2 request,
+            global::G.CreateVideoStreamRequest request,
             global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
@@ -99,11 +99,11 @@ namespace G
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::G.ApiException"></exception>
-        public async global::System.Threading.Tasks.Task<global::G.AutoSDKHttpResponse<global::G.AllOf<global::G.CreateVideoStreamResponseVariant12, global::G.CreateVideoStreamResponseVariant22>>> CreateVideoStreamAsResponseAsync(
+        public async global::System.Threading.Tasks.Task<global::G.AutoSDKHttpResponse<global::G.AllOf<global::G.CreateVideoStreamResponseVariant1, global::G.CreateVideoStreamResponseVariant2>>> CreateVideoStreamAsResponseAsync(
             string agentId,
             string streamId,
 
-            global::G.CreateVideoStreamRequest2 request,
+            global::G.CreateVideoStreamRequest request,
             global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
@@ -377,19 +377,19 @@ namespace G
                             {
                                 string? __content_400 = null;
                                 global::System.Exception? __exception_400 = null;
-                                global::G.CreateVideoStreamResponse3? __value_400 = null;
+                                global::G.CreateVideoStreamResponse2? __value_400 = null;
                                 try
                                 {
                                     if (__effectiveReadResponseAsString)
                                     {
                                         __content_400 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
-                                        __value_400 = global::G.CreateVideoStreamResponse3.FromJson(__content_400, JsonSerializerOptions);
+                                        __value_400 = global::G.CreateVideoStreamResponse2.FromJson(__content_400, JsonSerializerOptions);
                                     }
                                     else
                                     {
                                         __content_400 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
 
-                                        __value_400 = global::G.CreateVideoStreamResponse3.FromJson(__content_400, JsonSerializerOptions);
+                                        __value_400 = global::G.CreateVideoStreamResponse2.FromJson(__content_400, JsonSerializerOptions);
                                     }
                                 }
                                 catch (global::System.Exception __ex)
@@ -398,7 +398,7 @@ namespace G
                                 }
 
 
-                                throw global::G.ApiException<global::G.CreateVideoStreamResponse3>.Create(
+                                throw global::G.ApiException<global::G.CreateVideoStreamResponse2>.Create(
                                     statusCode: __response.StatusCode,
                                     message: __content_400 ?? __response.ReasonPhrase ?? string.Empty,
                                     innerException: __exception_400,
@@ -414,19 +414,19 @@ namespace G
                             {
                                 string? __content_401 = null;
                                 global::System.Exception? __exception_401 = null;
-                                global::G.CreateVideoStreamResponse4? __value_401 = null;
+                                global::G.CreateVideoStreamResponse3? __value_401 = null;
                                 try
                                 {
                                     if (__effectiveReadResponseAsString)
                                     {
                                         __content_401 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
-                                        __value_401 = global::G.CreateVideoStreamResponse4.FromJson(__content_401, JsonSerializerOptions);
+                                        __value_401 = global::G.CreateVideoStreamResponse3.FromJson(__content_401, JsonSerializerOptions);
                                     }
                                     else
                                     {
                                         __content_401 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
 
-                                        __value_401 = global::G.CreateVideoStreamResponse4.FromJson(__content_401, JsonSerializerOptions);
+                                        __value_401 = global::G.CreateVideoStreamResponse3.FromJson(__content_401, JsonSerializerOptions);
                                     }
                                 }
                                 catch (global::System.Exception __ex)
@@ -435,7 +435,7 @@ namespace G
                                 }
 
 
-                                throw global::G.ApiException<global::G.CreateVideoStreamResponse4>.Create(
+                                throw global::G.ApiException<global::G.CreateVideoStreamResponse3>.Create(
                                     statusCode: __response.StatusCode,
                                     message: __content_401 ?? __response.ReasonPhrase ?? string.Empty,
                                     innerException: __exception_401,
@@ -468,9 +468,9 @@ namespace G
                                 {
                                     __response.EnsureSuccessStatusCode();
 
-                                    var __value = global::G.AllOf<global::G.CreateVideoStreamResponseVariant12, global::G.CreateVideoStreamResponseVariant22>.FromJson(__content, JsonSerializerOptions) ??
+                                    var __value = global::G.AllOf<global::G.CreateVideoStreamResponseVariant1, global::G.CreateVideoStreamResponseVariant2>.FromJson(__content, JsonSerializerOptions) ??
                                         throw new global::System.InvalidOperationException($"Response deserialization failed for \"{__content}\" ");
-                                    return new global::G.AutoSDKHttpResponse<global::G.AllOf<global::G.CreateVideoStreamResponseVariant12, global::G.CreateVideoStreamResponseVariant22>>(
+                                    return new global::G.AutoSDKHttpResponse<global::G.AllOf<global::G.CreateVideoStreamResponseVariant1, global::G.CreateVideoStreamResponseVariant2>>(
                                         statusCode: __response.StatusCode,
                                         headers: global::G.AutoSDKHttpResponse.CreateHeaders(__response),
                                         requestUri: __response.RequestMessage?.RequestUri,
@@ -500,9 +500,9 @@ namespace G
                 #endif
                                     ).ConfigureAwait(false);
 
-                                    var __value = await global::G.AllOf<global::G.CreateVideoStreamResponseVariant12, global::G.CreateVideoStreamResponseVariant22>.FromJsonStreamAsync(__content, JsonSerializerOptions).ConfigureAwait(false) ??
+                                    var __value = await global::G.AllOf<global::G.CreateVideoStreamResponseVariant1, global::G.CreateVideoStreamResponseVariant2>.FromJsonStreamAsync(__content, JsonSerializerOptions).ConfigureAwait(false) ??
                                         throw new global::System.InvalidOperationException("Response deserialization failed.");
-                                    return new global::G.AutoSDKHttpResponse<global::G.AllOf<global::G.CreateVideoStreamResponseVariant12, global::G.CreateVideoStreamResponseVariant22>>(
+                                    return new global::G.AutoSDKHttpResponse<global::G.AllOf<global::G.CreateVideoStreamResponseVariant1, global::G.CreateVideoStreamResponseVariant2>>(
                                         statusCode: __response.StatusCode,
                                         headers: global::G.AutoSDKHttpResponse.CreateHeaders(__response),
                                         requestUri: __response.RequestMessage?.RequestUri,
@@ -552,15 +552,15 @@ namespace G
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
-        public async global::System.Threading.Tasks.Task<global::G.AllOf<global::G.CreateVideoStreamResponseVariant12, global::G.CreateVideoStreamResponseVariant22>> CreateVideoStreamAsync(
+        public async global::System.Threading.Tasks.Task<global::G.AllOf<global::G.CreateVideoStreamResponseVariant1, global::G.CreateVideoStreamResponseVariant2>> CreateVideoStreamAsync(
             string agentId,
             string streamId,
-            global::G.AnyOf<global::G.CreateVideoStreamRequestScriptText2, global::G.CreateVideoStreamRequestScriptAudio2> script,
+            global::G.AnyOf<global::G.CreateVideoStreamRequestScriptText, global::G.CreateVideoStreamRequestScriptAudio> script,
             string? sessionId = default,
             global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
-            var __request = new global::G.CreateVideoStreamRequest2
+            var __request = new global::G.CreateVideoStreamRequest
             {
                 SessionId = sessionId,
                 Script = script,

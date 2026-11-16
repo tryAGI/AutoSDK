@@ -1,4 +1,4 @@
-﻿//HintName: G.Models.ConfigurationCreateRequest.g.cs
+//HintName: G.Models.ConfigurationCreateRequest.g.cs
 
 #nullable enable
 
@@ -19,7 +19,7 @@ namespace G
         /// Product-specific configuration parameters.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("parameters", Required = global::Newtonsoft.Json.Required.Always)]
-        public global::G.Parameters Parameters { get; set; } = default!;
+        public global::G.Parameters2 Parameters { get; set; } = default!;
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -38,7 +38,7 @@ namespace G
         /// </param>
         public ConfigurationCreateRequest(
             string name,
-            global::G.Parameters parameters)
+            global::G.Parameters2 parameters)
         {
             this.Name = name ?? throw new global::System.ArgumentNullException(nameof(name));
             this.Parameters = parameters;

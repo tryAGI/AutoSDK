@@ -1,4 +1,4 @@
-﻿//HintName: G.Models.DIdLLM.g.cs
+//HintName: G.Models.DIdLLM.g.cs
 
 #nullable enable
 
@@ -52,8 +52,8 @@ namespace G
         /// The model to use
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("model")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.DIdLLMModel2JsonConverter))]
-        public global::G.DIdLLMModel2? Model { get; set; }
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.DIdLLMModelJsonConverter))]
+        public global::G.DIdLLMModel? Model { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -98,7 +98,7 @@ namespace G
             global::G.DIdLLMTemplate? template,
             global::G.DIdLLMPromptCustomization? promptCustomization,
             double? temperature,
-            global::G.DIdLLMModel2? model)
+            global::G.DIdLLMModel? model)
         {
             this.Provider = provider;
             this.Instructions = instructions;

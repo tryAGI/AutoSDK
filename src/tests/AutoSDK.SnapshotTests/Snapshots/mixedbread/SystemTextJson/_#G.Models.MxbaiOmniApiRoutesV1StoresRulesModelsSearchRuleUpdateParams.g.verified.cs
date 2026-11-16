@@ -1,4 +1,4 @@
-﻿//HintName: G.Models.MxbaiOmniApiRoutesV1StoresRulesModelsSearchRuleUpdateParams.g.cs
+//HintName: G.Models.MxbaiOmniApiRoutesV1StoresRulesModelsSearchRuleUpdateParams.g.cs
 
 #nullable enable
 
@@ -19,7 +19,7 @@ namespace G
         /// The rules to apply on query matches
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("rules")]
-        public global::System.Collections.Generic.IList<global::G.RulesVariant1Item2>? Rules { get; set; }
+        public global::System.Collections.Generic.IList<global::G.RulesVariant1Item>? Rules { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -41,7 +41,7 @@ namespace G
 #endif
         public MxbaiOmniApiRoutesV1StoresRulesModelsSearchRuleUpdateParams(
             string? query,
-            global::System.Collections.Generic.IList<global::G.RulesVariant1Item2>? rules)
+            global::System.Collections.Generic.IList<global::G.RulesVariant1Item>? rules)
         {
             this.Query = query;
             this.Rules = rules;

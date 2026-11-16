@@ -361,19 +361,19 @@ namespace G
                             {
                                 string? __content_403 = null;
                                 global::System.Exception? __exception_403 = null;
-                                global::G.AddProjectMemberResponse2? __value_403 = null;
+                                global::G.AddProjectMemberResponse? __value_403 = null;
                                 try
                                 {
                                     if (__effectiveReadResponseAsString)
                                     {
                                         __content_403 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
-                                        __value_403 = global::G.AddProjectMemberResponse2.FromJson(__content_403, JsonSerializerOptions);
+                                        __value_403 = global::G.AddProjectMemberResponse.FromJson(__content_403, JsonSerializerOptions);
                                     }
                                     else
                                     {
                                         __content_403 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
 
-                                        __value_403 = global::G.AddProjectMemberResponse2.FromJson(__content_403, JsonSerializerOptions);
+                                        __value_403 = global::G.AddProjectMemberResponse.FromJson(__content_403, JsonSerializerOptions);
                                     }
                                 }
                                 catch (global::System.Exception __ex)
@@ -382,7 +382,7 @@ namespace G
                                 }
 
 
-                                throw global::G.ApiException<global::G.AddProjectMemberResponse2>.Create(
+                                throw global::G.ApiException<global::G.AddProjectMemberResponse>.Create(
                                     statusCode: __response.StatusCode,
                                     message: __content_403 ?? __response.ReasonPhrase ?? string.Empty,
                                     innerException: __exception_403,
@@ -398,19 +398,19 @@ namespace G
                             {
                                 string? __content_404 = null;
                                 global::System.Exception? __exception_404 = null;
-                                global::G.AddProjectMemberResponse3? __value_404 = null;
+                                global::G.AddProjectMemberResponse? __value_404 = null;
                                 try
                                 {
                                     if (__effectiveReadResponseAsString)
                                     {
                                         __content_404 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
-                                        __value_404 = global::G.AddProjectMemberResponse3.FromJson(__content_404, JsonSerializerOptions);
+                                        __value_404 = global::G.AddProjectMemberResponse.FromJson(__content_404, JsonSerializerOptions);
                                     }
                                     else
                                     {
                                         __content_404 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
 
-                                        __value_404 = global::G.AddProjectMemberResponse3.FromJson(__content_404, JsonSerializerOptions);
+                                        __value_404 = global::G.AddProjectMemberResponse.FromJson(__content_404, JsonSerializerOptions);
                                     }
                                 }
                                 catch (global::System.Exception __ex)
@@ -419,7 +419,7 @@ namespace G
                                 }
 
 
-                                throw global::G.ApiException<global::G.AddProjectMemberResponse3>.Create(
+                                throw global::G.ApiException<global::G.AddProjectMemberResponse>.Create(
                                     statusCode: __response.StatusCode,
                                     message: __content_404 ?? __response.ReasonPhrase ?? string.Empty,
                                     innerException: __exception_404,

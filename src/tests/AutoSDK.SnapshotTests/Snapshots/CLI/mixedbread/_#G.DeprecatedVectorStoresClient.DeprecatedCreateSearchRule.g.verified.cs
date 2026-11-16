@@ -533,7 +533,7 @@ namespace G
         public async global::System.Threading.Tasks.Task<global::G.MxbaiOmniApiRoutesV1DeprecatedVectorStoresModelsSearchRuleResponse> DeprecatedCreateSearchRuleAsync(
             global::G.AnyOf<string, global::System.Guid?> vectorStoreIdentifier,
             string query,
-            global::System.Collections.Generic.IList<global::G.RulesItem> rules,
+            global::System.Collections.Generic.IList<global::G.RulesItem4> rules,
             global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {

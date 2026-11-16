@@ -28,11 +28,11 @@ namespace G
             };
         partial void PrepareCreateAsrWithMessagePackArguments(
             global::System.Net.Http.HttpClient httpClient,
-            global::G.CreateAsrRequest2 request);
+            global::G.CreateAsrRequest request);
         partial void PrepareCreateAsrWithMessagePackRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
-            global::G.CreateAsrRequest2 request);
+            global::G.CreateAsrRequest request);
         partial void ProcessCreateAsrWithMessagePackResponse(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage);
@@ -51,7 +51,7 @@ namespace G
         /// <exception cref="global::G.ApiException"></exception>
         public async global::System.Threading.Tasks.Task<global::G.CreateAsrResponse> CreateAsrWithMessagePackAsync(
 
-            global::G.CreateAsrRequest2 request,
+            global::G.CreateAsrRequest request,
             global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
@@ -73,7 +73,7 @@ namespace G
         /// <exception cref="global::G.ApiException"></exception>
         public async global::System.Threading.Tasks.Task<global::G.AutoSDKHttpResponse<global::G.CreateAsrResponse>> CreateAsrWithMessagePackAsResponseAsync(
 
-            global::G.CreateAsrRequest2 request,
+            global::G.CreateAsrRequest request,
             global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
@@ -573,7 +573,7 @@ namespace G
             global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
-            var __request = new global::G.CreateAsrRequest2
+            var __request = new global::G.CreateAsrRequest
             {
                 Audio = audio,
                 Audioname = audioname,

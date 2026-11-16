@@ -522,7 +522,7 @@ namespace G
             string conversationId,
             string? summary = default,
             string? model = default,
-            global::G.ModelSettingsVariant19? modelSettings = default,
+            global::G.ModelSettingsVariant16? modelSettings = default,
             global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {

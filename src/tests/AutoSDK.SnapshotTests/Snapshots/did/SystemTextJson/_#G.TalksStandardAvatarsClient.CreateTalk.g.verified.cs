@@ -45,12 +45,12 @@ namespace G
         partial void PrepareCreateTalkArguments(
             global::System.Net.Http.HttpClient httpClient,
             ref string? xApiKeyExternal,
-            global::G.CreateTalkRequest2 request);
+            global::G.CreateTalkRequest request);
         partial void PrepareCreateTalkRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
             string? xApiKeyExternal,
-            global::G.CreateTalkRequest2 request);
+            global::G.CreateTalkRequest request);
         partial void ProcessCreateTalkResponse(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage);
@@ -70,7 +70,7 @@ namespace G
         /// <exception cref="global::G.ApiException"></exception>
         public async global::System.Threading.Tasks.Task<global::G.CreateTalkResponse> CreateTalkAsync(
 
-            global::G.CreateTalkRequest2 request,
+            global::G.CreateTalkRequest request,
             string? xApiKeyExternal = default,
             global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default)
@@ -95,7 +95,7 @@ namespace G
         /// <exception cref="global::G.ApiException"></exception>
         public async global::System.Threading.Tasks.Task<global::G.AutoSDKHttpResponse<global::G.CreateTalkResponse>> CreateTalkAsResponseAsync(
 
-            global::G.CreateTalkRequest2 request,
+            global::G.CreateTalkRequest request,
             string? xApiKeyExternal = default,
             global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default)
@@ -683,10 +683,10 @@ namespace G
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<global::G.CreateTalkResponse> CreateTalkAsync(
-            global::G.AnyOf<global::G.CreateTalkRequestScriptVariant12, global::G.CreateTalkRequestScriptVariant22> script,
+            global::G.AnyOf<global::G.CreateTalkRequestScriptVariant1, global::G.CreateTalkRequestScriptVariant2> script,
             string? xApiKeyExternal = default,
             string? sourceUrl = default,
-            global::G.CreateTalkRequestConfig2? config = default,
+            global::G.CreateTalkRequestConfig? config = default,
             string? userData = default,
             string? name = default,
             string? webhook = default,
@@ -694,7 +694,7 @@ namespace G
             global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
-            var __request = new global::G.CreateTalkRequest2
+            var __request = new global::G.CreateTalkRequest
             {
                 SourceUrl = sourceUrl,
                 Script = script,

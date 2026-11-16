@@ -1,4 +1,4 @@
-﻿//HintName: G.Models.CreateExtractResponse3.g.cs
+//HintName: G.Models.CreateExtractResponse3.g.cs
 
 #nullable enable
 
@@ -13,7 +13,7 @@ namespace G
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("detail")]
-        public global::G.CreateExtractResponseDetail2? Detail { get; set; }
+        public global::G.CreateExtractResponseDetail? Detail { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -29,7 +29,7 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public CreateExtractResponse3(
-            global::G.CreateExtractResponseDetail2? detail)
+            global::G.CreateExtractResponseDetail? detail)
         {
             this.Detail = detail;
         }

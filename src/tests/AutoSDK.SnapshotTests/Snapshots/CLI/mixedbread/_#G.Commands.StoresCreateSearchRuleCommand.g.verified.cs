@@ -1,4 +1,4 @@
-﻿//HintName: G.Commands.StoresCreateSearchRuleCommand.g.cs
+//HintName: G.Commands.StoresCreateSearchRuleCommand.g.cs
 
 #nullable enable
 
@@ -14,7 +14,7 @@ namespace G
             global::System.CommandLine.ParseResult parseResult,
             global::G.AnyOf<string, global::System.Guid?> storeIdentifier,
             string query,
-            global::System.Collections.Generic.IList<global::G.RulesItem3> rules,
+            global::System.Collections.Generic.IList<global::G.RulesItem2> rules,
             global::System.Threading.CancellationToken cancellationToken);
         partial void Complete(
             global::System.CommandLine.ParseResult parseResult,
@@ -34,7 +34,7 @@ namespace G
             Description = @"The query pattern to match",
         };
 
-        private global::System.CommandLine.Argument<global::System.Collections.Generic.IList<global::G.RulesItem3>> Rules { get; } = new(
+        private global::System.CommandLine.Argument<global::System.Collections.Generic.IList<global::G.RulesItem2>> Rules { get; } = new(
             name: "rules")
         {
             Description = @"The rules to apply on query matches",

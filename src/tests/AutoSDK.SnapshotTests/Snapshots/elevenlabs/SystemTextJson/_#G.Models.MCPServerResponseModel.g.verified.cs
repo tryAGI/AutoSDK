@@ -1,4 +1,4 @@
-﻿//HintName: G.Models.MCPServerResponseModel.g.cs
+//HintName: G.Models.MCPServerResponseModel.g.cs
 
 #nullable enable
 
@@ -33,7 +33,7 @@ namespace G
         /// List of agents that depend on this MCP Server.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("dependent_agents")]
-        public global::System.Collections.Generic.IList<global::G.DependentAgentsItem5>? DependentAgents { get; set; }
+        public global::System.Collections.Generic.IList<global::G.DependentAgentsItem>? DependentAgents { get; set; }
 
         /// <summary>
         /// The metadata of the MCP Server
@@ -70,7 +70,7 @@ namespace G
             global::G.MCPServerConfigOutput config,
             global::G.MCPServerMetadataResponseModel metadata,
             global::G.ResourceAccessInfo? accessInfo,
-            global::System.Collections.Generic.IList<global::G.DependentAgentsItem5>? dependentAgents)
+            global::System.Collections.Generic.IList<global::G.DependentAgentsItem>? dependentAgents)
         {
             this.Id = id ?? throw new global::System.ArgumentNullException(nameof(id));
             this.Config = config ?? throw new global::System.ArgumentNullException(nameof(config));

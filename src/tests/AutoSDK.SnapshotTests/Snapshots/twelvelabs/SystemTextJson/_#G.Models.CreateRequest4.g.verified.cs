@@ -1,4 +1,4 @@
-﻿//HintName: G.Models.CreateRequest4.g.cs
+//HintName: G.Models.CreateRequest4.g.cs
 
 #nullable enable
 
@@ -10,18 +10,42 @@ namespace G
     public sealed partial class CreateRequest4
     {
         /// <summary>
-        /// The unique identifier of the asset to index.
+        /// The name of the entity. Make sure you use a succinct and descriptive name.
         /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("asset_id")]
+        [global::System.Text.Json.Serialization.JsonPropertyName("name")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required string AssetId { get; set; }
+        public required string Name { get; set; }
 
         /// <summary>
-        /// This parameter indicates if the platform stores the video for streaming. When set to `true`, the platform stores the video, and you can retrieve its URL by calling the [`GET`](/v1.3/api-reference/videos/retrieve) method of the `/indexes/{index-id}/indexed-assets/{indexed-asset-id}` endpoint. You can then use this URL to access the stream over the &lt;a href="https://en.wikipedia.org/wiki/HTTP_Live_Streaming" target="_blank"&gt;HLS&lt;/a&gt; protocol.<br/>
-        /// Default Value: false
+        /// An optional description of the entity.
         /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("enable_video_stream")]
-        public bool? EnableVideoStream { get; set; }
+        [global::System.Text.Json.Serialization.JsonPropertyName("description")]
+        public string? Description { get; set; }
+
+        /// <summary>
+        /// Optional metadata for the entity, provided as key-value pairs to store additional context or attributes. Use metadata to categorize or describe the entity for easier management and search. Keys must be of type `string`, and values can be of type `string`, `integer`, `float`, or `boolean`.<br/>
+        /// **Example**:<br/>
+        /// ```json<br/>
+        /// {<br/>
+        ///   "sport": "soccer",<br/>
+        ///   "teamId": 42,<br/>
+        ///   "performanceScore": 8.7,<br/>
+        ///   "isActive": true<br/>
+        /// }<br/>
+        /// ```<br/>
+        /// &lt;Note title="Note"&gt;<br/>
+        ///   To store complex data types such as objects or arrays, convert them to string values before including them in the metadata.<br/>
+        /// &lt;/Note&gt;
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("metadata")]
+        public global::G.EntityCollectionsEntityCollectionIdEntitiesPostRequestBodyContentApplicationJsonSchemaMetadata? Metadata { get; set; }
+
+        /// <summary>
+        /// An array of asset IDs to associate with the entity. You must provide at least one value.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("asset_ids")]
+        [global::System.Text.Json.Serialization.JsonRequired]
+        public required global::System.Collections.Generic.IList<string> AssetIds { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -32,22 +56,43 @@ namespace G
         /// <summary>
         /// Initializes a new instance of the <see cref="CreateRequest4" /> class.
         /// </summary>
-        /// <param name="assetId">
-        /// The unique identifier of the asset to index.
+        /// <param name="name">
+        /// The name of the entity. Make sure you use a succinct and descriptive name.
         /// </param>
-        /// <param name="enableVideoStream">
-        /// This parameter indicates if the platform stores the video for streaming. When set to `true`, the platform stores the video, and you can retrieve its URL by calling the [`GET`](/v1.3/api-reference/videos/retrieve) method of the `/indexes/{index-id}/indexed-assets/{indexed-asset-id}` endpoint. You can then use this URL to access the stream over the &lt;a href="https://en.wikipedia.org/wiki/HTTP_Live_Streaming" target="_blank"&gt;HLS&lt;/a&gt; protocol.<br/>
-        /// Default Value: false
+        /// <param name="assetIds">
+        /// An array of asset IDs to associate with the entity. You must provide at least one value.
+        /// </param>
+        /// <param name="description">
+        /// An optional description of the entity.
+        /// </param>
+        /// <param name="metadata">
+        /// Optional metadata for the entity, provided as key-value pairs to store additional context or attributes. Use metadata to categorize or describe the entity for easier management and search. Keys must be of type `string`, and values can be of type `string`, `integer`, `float`, or `boolean`.<br/>
+        /// **Example**:<br/>
+        /// ```json<br/>
+        /// {<br/>
+        ///   "sport": "soccer",<br/>
+        ///   "teamId": 42,<br/>
+        ///   "performanceScore": 8.7,<br/>
+        ///   "isActive": true<br/>
+        /// }<br/>
+        /// ```<br/>
+        /// &lt;Note title="Note"&gt;<br/>
+        ///   To store complex data types such as objects or arrays, convert them to string values before including them in the metadata.<br/>
+        /// &lt;/Note&gt;
         /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public CreateRequest4(
-            string assetId,
-            bool? enableVideoStream)
+            string name,
+            global::System.Collections.Generic.IList<string> assetIds,
+            string? description,
+            global::G.EntityCollectionsEntityCollectionIdEntitiesPostRequestBodyContentApplicationJsonSchemaMetadata? metadata)
         {
-            this.AssetId = assetId ?? throw new global::System.ArgumentNullException(nameof(assetId));
-            this.EnableVideoStream = enableVideoStream;
+            this.Name = name ?? throw new global::System.ArgumentNullException(nameof(name));
+            this.Description = description;
+            this.Metadata = metadata;
+            this.AssetIds = assetIds ?? throw new global::System.ArgumentNullException(nameof(assetIds));
         }
 
         /// <summary>

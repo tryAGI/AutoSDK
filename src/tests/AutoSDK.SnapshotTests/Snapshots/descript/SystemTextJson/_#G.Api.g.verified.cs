@@ -1,4 +1,4 @@
-﻿//HintName: G.Api.g.cs
+//HintName: G.Api.g.cs
 
 #nullable enable
 
@@ -91,8 +91,8 @@ namespace G
                     new global::G.JsonConverters.ListJobsTypeNullableJsonConverter(),
                     new global::G.JsonConverters.GetStatusResponseStatusJsonConverter(),
                     new global::G.JsonConverters.GetStatusResponseStatusNullableJsonConverter(),
-                    new global::G.JsonConverters.ResultJsonConverter(),
                     new global::G.JsonConverters.Result2JsonConverter(),
+                    new global::G.JsonConverters.ResultJsonConverter(),
                     new global::G.JsonConverters.JobStatusJsonConverter(),
                     new global::G.JsonConverters.OneOfJsonConverter<global::G.ImportProjectMediaRequestAddMediaUrlImport, global::G.ImportProjectMediaRequestAddMediaMultitrackSequence>(),
                     new global::G.JsonConverters.UnixTimestampJsonConverter(),

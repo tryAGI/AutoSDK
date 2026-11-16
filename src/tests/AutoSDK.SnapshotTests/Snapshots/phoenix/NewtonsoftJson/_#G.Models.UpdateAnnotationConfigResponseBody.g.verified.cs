@@ -1,4 +1,4 @@
-﻿//HintName: G.Models.UpdateAnnotationConfigResponseBody.g.cs
+//HintName: G.Models.UpdateAnnotationConfigResponseBody.g.cs
 
 #nullable enable
 

@@ -1,4 +1,4 @@
-﻿//HintName: G.Models.HeaderItem.g.cs
+//HintName: G.Models.HeaderItem.g.cs
 
 #nullable enable
 

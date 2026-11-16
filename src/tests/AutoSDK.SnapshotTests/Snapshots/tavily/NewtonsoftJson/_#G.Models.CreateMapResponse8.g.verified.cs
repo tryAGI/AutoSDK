@@ -1,4 +1,4 @@
-﻿//HintName: G.Models.CreateMapResponse8.g.cs
+//HintName: G.Models.CreateMapResponse8.g.cs
 
 #nullable enable
 
@@ -13,7 +13,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("detail")]
-        public global::G.CreateMapResponseDetail7? Detail { get; set; }
+        public global::G.CreateMapResponseDetail? Detail { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -26,7 +26,7 @@ namespace G
         /// </summary>
         /// <param name="detail"></param>
         public CreateMapResponse8(
-            global::G.CreateMapResponseDetail7? detail)
+            global::G.CreateMapResponseDetail? detail)
         {
             this.Detail = detail;
         }

@@ -34,7 +34,7 @@ namespace G
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("json_schema")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::G.ToolJSONSchema2 JsonSchema { get; set; }
+        public required global::G.ToolJSONSchema JsonSchema { get; set; }
 
         /// <summary>
         /// 
@@ -117,7 +117,7 @@ namespace G
         public LettaSerializeSchemasPydanticAgentSchemaToolSchema(
             string createdAt,
             string description,
-            global::G.ToolJSONSchema2 jsonSchema,
+            global::G.ToolJSONSchema jsonSchema,
             string name,
             int returnCharLimit,
             string sourceType,

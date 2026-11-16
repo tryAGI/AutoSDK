@@ -13,7 +13,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.SystemMessageContentVariant2ItemDiscriminatorType? Type { get; }
+        public global::G.AssistantMessageContentVariant2ItemDiscriminatorType? Type { get; }
 
         /// <summary>
         /// Text content of the message.
@@ -78,7 +78,7 @@ namespace G
         /// 
         /// </summary>
         public ContentVariant2Item2(
-            global::G.SystemMessageContentVariant2ItemDiscriminatorType? type,
+            global::G.AssistantMessageContentVariant2ItemDiscriminatorType? type,
             global::G.TextContent? text
             )
         {

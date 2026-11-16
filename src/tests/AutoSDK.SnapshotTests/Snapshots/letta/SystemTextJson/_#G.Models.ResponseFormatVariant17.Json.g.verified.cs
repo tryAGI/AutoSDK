@@ -1,4 +1,4 @@
-﻿//HintName: G.Models.ResponseFormatVariant17.Json.g.cs
+//HintName: G.Models.ResponseFormatVariant17.Json.g.cs
 #nullable enable
 
 namespace G

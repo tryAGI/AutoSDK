@@ -1,4 +1,4 @@
-﻿//HintName: G.Models.Row.g.cs
+//HintName: G.Models.Row.g.cs
 
 #nullable enable
 
@@ -19,7 +19,7 @@ namespace G
         /// A vector embedding associated with a document.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("vector")]
-        public global::G.Vector2? Vector { get; set; }
+        public global::G.Vector? Vector { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -38,7 +38,7 @@ namespace G
         /// </param>
         public Row(
             global::G.Id id,
-            global::G.Vector2? vector)
+            global::G.Vector? vector)
         {
             this.Id = id;
             this.Vector = vector;

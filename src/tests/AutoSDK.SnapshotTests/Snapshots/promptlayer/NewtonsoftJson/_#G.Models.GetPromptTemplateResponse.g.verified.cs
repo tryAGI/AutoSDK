@@ -1,4 +1,4 @@
-﻿//HintName: G.Models.GetPromptTemplateResponse.g.cs
+//HintName: G.Models.GetPromptTemplateResponse.g.cs
 
 #nullable enable
 
@@ -25,7 +25,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("prompt_template", Required = global::Newtonsoft.Json.Required.Always)]
-        public global::G.PromptTemplate PromptTemplate { get; set; } = default!;
+        public global::G.PromptTemplate3 PromptTemplate { get; set; } = default!;
 
         /// <summary>
         /// 
@@ -72,7 +72,7 @@ namespace G
         public GetPromptTemplateResponse(
             int id,
             string promptName,
-            global::G.PromptTemplate promptTemplate,
+            global::G.PromptTemplate3 promptTemplate,
             global::G.Metadata? metadata,
             string? commitMessage,
             object? llmKwargs,

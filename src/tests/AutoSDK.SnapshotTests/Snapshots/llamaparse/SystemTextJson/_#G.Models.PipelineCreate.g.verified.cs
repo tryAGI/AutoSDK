@@ -13,7 +13,7 @@ namespace G
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("embedding_config")]
-        public global::G.EmbeddingConfigVariant12? EmbeddingConfig { get; set; }
+        public global::G.EmbeddingConfigVariant1? EmbeddingConfig { get; set; }
 
         /// <summary>
         /// Configuration for the transformation.
@@ -141,7 +141,7 @@ namespace G
 #endif
         public PipelineCreate(
             string name,
-            global::G.EmbeddingConfigVariant12? embeddingConfig,
+            global::G.EmbeddingConfigVariant1? embeddingConfig,
             global::G.AnyOf<global::G.AutoTransformConfig, global::G.AdvancedModeTransformConfig>? transformConfig,
             global::G.SparseModelConfig? sparseModelConfig,
             global::System.Guid? dataSinkId,

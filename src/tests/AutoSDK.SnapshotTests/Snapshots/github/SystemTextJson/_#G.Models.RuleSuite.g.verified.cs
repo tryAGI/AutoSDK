@@ -1,11 +1,11 @@
-﻿//HintName: G.Models.RuleSuite.g.cs
+//HintName: G.Models.RuleSuite.g.cs
 
 #nullable enable
 
 namespace G
 {
     /// <summary>
-    /// 
+    /// Response
     /// </summary>
     public sealed partial class RuleSuite
     {
@@ -72,11 +72,17 @@ namespace G
         public global::G.RuleSuiteResult? Result { get; set; }
 
         /// <summary>
-        /// The result of the rule evaluations for rules with the `active` and `evaluate` enforcement statuses, demonstrating whether rules would pass or fail if all rules in the rule suite were `active`.
+        /// The result of the rule evaluations for rules with the `active` and `evaluate` enforcement statuses, demonstrating whether rules would pass or fail if all rules in the rule suite were `active`. Null if no rules with `evaluate` enforcement status were run.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("evaluation_result")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.RuleSuiteEvaluationResultJsonConverter))]
         public global::G.RuleSuiteEvaluationResult? EvaluationResult { get; set; }
+
+        /// <summary>
+        /// Details on the evaluated rules.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("rule_evaluations")]
+        public global::System.Collections.Generic.IList<global::G.RuleSuiteRuleEvaluation>? RuleEvaluations { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -118,7 +124,10 @@ namespace G
         /// The result of the rule evaluations for rules with the `active` enforcement status.
         /// </param>
         /// <param name="evaluationResult">
-        /// The result of the rule evaluations for rules with the `active` and `evaluate` enforcement statuses, demonstrating whether rules would pass or fail if all rules in the rule suite were `active`.
+        /// The result of the rule evaluations for rules with the `active` and `evaluate` enforcement statuses, demonstrating whether rules would pass or fail if all rules in the rule suite were `active`. Null if no rules with `evaluate` enforcement status were run.
+        /// </param>
+        /// <param name="ruleEvaluations">
+        /// Details on the evaluated rules.
         /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
@@ -134,7 +143,8 @@ namespace G
             string? repositoryName,
             global::System.DateTime? pushedAt,
             global::G.RuleSuiteResult? result,
-            global::G.RuleSuiteEvaluationResult? evaluationResult)
+            global::G.RuleSuiteEvaluationResult? evaluationResult,
+            global::System.Collections.Generic.IList<global::G.RuleSuiteRuleEvaluation>? ruleEvaluations)
         {
             this.Id = id;
             this.ActorId = actorId;
@@ -147,6 +157,7 @@ namespace G
             this.PushedAt = pushedAt;
             this.Result = result;
             this.EvaluationResult = evaluationResult;
+            this.RuleEvaluations = ruleEvaluations;
         }
 
         /// <summary>

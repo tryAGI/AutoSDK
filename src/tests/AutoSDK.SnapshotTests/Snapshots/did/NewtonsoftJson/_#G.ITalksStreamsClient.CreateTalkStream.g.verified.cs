@@ -1,4 +1,4 @@
-﻿//HintName: G.ITalksStreamsClient.CreateTalkStream.g.cs
+//HintName: G.ITalksStreamsClient.CreateTalkStream.g.cs
 #nullable enable
 
 #pragma warning disable CS0618 // Type or member is obsolete
@@ -21,7 +21,7 @@ namespace G
         global::System.Threading.Tasks.Task<global::G.CreateTalkStreamResponse> CreateTalkStreamAsync(
             string id,
 
-            global::G.CreateTalkStreamRequest2 request,
+            global::G.CreateTalkStreamRequest request,
             string? xApiKeyExternal = default,
             string? cookie = default,
             global::G.AutoSDKRequestOptions? requestOptions = default,
@@ -40,7 +40,7 @@ namespace G
         global::System.Threading.Tasks.Task<global::G.AutoSDKHttpResponse<global::G.CreateTalkStreamResponse>> CreateTalkStreamAsResponseAsync(
             string id,
 
-            global::G.CreateTalkStreamRequest2 request,
+            global::G.CreateTalkStreamRequest request,
             string? xApiKeyExternal = default,
             string? cookie = default,
             global::G.AutoSDKRequestOptions? requestOptions = default,
@@ -75,11 +75,11 @@ namespace G
         [global::System.Obsolete("This method marked as deprecated.")]
         global::System.Threading.Tasks.Task<global::G.CreateTalkStreamResponse> CreateTalkStreamAsync(
             string id,
-            global::G.AnyOf<global::G.CreateTalkStreamRequestScriptVariant12, global::G.CreateTalkStreamRequestScriptVariant22> script,
+            global::G.AnyOf<global::G.CreateTalkStreamRequestScriptVariant1, global::G.CreateTalkStreamRequestScriptVariant2> script,
             string? xApiKeyExternal = default,
             string? cookie = default,
             string? sessionId = default,
-            global::G.AllOf<global::G.CreateTalkStreamRequestConfigVariant12, global::G.CreateTalkStreamRequestConfigVariant22>? config = default,
+            global::G.AllOf<global::G.CreateTalkStreamRequestConfigVariant1, global::G.CreateTalkStreamRequestConfigVariant2>? config = default,
             string? userData = default,
             string? name = default,
             double? audioOptimization = default,

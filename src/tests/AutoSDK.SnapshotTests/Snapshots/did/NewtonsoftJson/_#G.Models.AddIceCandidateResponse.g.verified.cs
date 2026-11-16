@@ -1,4 +1,4 @@
-﻿//HintName: G.Models.AddIceCandidateResponse.g.cs
+//HintName: G.Models.AddIceCandidateResponse.g.cs
 
 #nullable enable
 
@@ -12,8 +12,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("status")]
-        public string? Status { get; set; }
+        [global::Newtonsoft.Json.JsonProperty("status", Required = global::Newtonsoft.Json.Required.Always)]
+        public string Status { get; set; } = default!;
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -26,9 +26,9 @@ namespace G
         /// </summary>
         /// <param name="status"></param>
         public AddIceCandidateResponse(
-            string? status)
+            string status)
         {
-            this.Status = status;
+            this.Status = status ?? throw new global::System.ArgumentNullException(nameof(status));
         }
 
         /// <summary>

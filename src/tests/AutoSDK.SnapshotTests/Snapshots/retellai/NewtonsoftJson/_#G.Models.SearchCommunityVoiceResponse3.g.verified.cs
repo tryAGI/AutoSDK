@@ -1,4 +1,4 @@
-﻿//HintName: G.Models.SearchCommunityVoiceResponse3.g.cs
+//HintName: G.Models.SearchCommunityVoiceResponse3.g.cs
 
 #nullable enable
 
@@ -13,8 +13,8 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("status")]
-        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.SearchCommunityVoiceResponseStatus2JsonConverter))]
-        public global::G.SearchCommunityVoiceResponseStatus2? Status { get; set; }
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.SearchCommunityVoiceResponseStatusJsonConverter))]
+        public global::G.SearchCommunityVoiceResponseStatus? Status { get; set; }
 
         /// <summary>
         /// Example: API key is missing or invalid.
@@ -37,7 +37,7 @@ namespace G
         /// Example: API key is missing or invalid.
         /// </param>
         public SearchCommunityVoiceResponse3(
-            global::G.SearchCommunityVoiceResponseStatus2? status,
+            global::G.SearchCommunityVoiceResponseStatus? status,
             string? message)
         {
             this.Status = status;

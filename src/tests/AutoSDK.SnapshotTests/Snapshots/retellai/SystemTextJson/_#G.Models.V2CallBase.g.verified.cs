@@ -1,4 +1,4 @@
-﻿//HintName: G.Models.V2CallBase.g.cs
+//HintName: G.Models.V2CallBase.g.cs
 
 #nullable enable
 
@@ -235,8 +235,8 @@ namespace G
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("disconnection_reason")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.DisconnectionReason4JsonConverter))]
-        public global::G.DisconnectionReason4? DisconnectionReason { get; set; }
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.DisconnectionReasonJsonConverter))]
+        public global::G.DisconnectionReason? DisconnectionReason { get; set; }
 
         /// <summary>
         /// The destination number or identifier where the call was transferred to. Only populated when the disconnection reason was `call_transfer`. Can be a phone number or a SIP URI. SIP URIs are prefixed with "sip:" and may include a ";transport=..." portion (if transport is known) where the transport type can be "tls", "tcp" or "udp".<br/>
@@ -424,7 +424,7 @@ namespace G
             string? publicLogUrl,
             string? knowledgeBaseRetrievedContentsUrl,
             global::G.V2CallBaseLatency? latency,
-            global::G.DisconnectionReason4? disconnectionReason,
+            global::G.DisconnectionReason? disconnectionReason,
             string? transferDestination,
             global::G.CallAnalysis? callAnalysis,
             global::G.V2CallBaseCallCost? callCost,

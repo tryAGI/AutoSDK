@@ -1,4 +1,4 @@
-﻿//HintName: G.Models.BetaCitationsDelta.g.cs
+//HintName: G.Models.BetaCitationsDelta.g.cs
 
 #nullable enable
 
@@ -21,9 +21,9 @@ namespace G
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("citation")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.CitationJsonConverter))]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.Citation2JsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::G.Citation Citation { get; set; }
+        public required global::G.Citation2 Citation { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -42,7 +42,7 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public BetaCitationsDelta(
-            global::G.Citation citation,
+            global::G.Citation2 citation,
             global::G.BetaCitationsDeltaType type = global::G.BetaCitationsDeltaType.CitationsDelta)
         {
             this.Type = type;

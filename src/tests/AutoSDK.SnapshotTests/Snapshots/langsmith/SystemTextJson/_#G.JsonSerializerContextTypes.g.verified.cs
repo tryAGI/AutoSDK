@@ -903,7 +903,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.FeedbackSource3? Type216 { get; set; }
+        public global::G.FeedbackSource? Type216 { get; set; }
         /// <summary>
         /// 
         /// </summary>

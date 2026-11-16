@@ -343,19 +343,19 @@ namespace G
                             {
                                 string? __content_401 = null;
                                 global::System.Exception? __exception_401 = null;
-                                global::G.DeleteResponse6? __value_401 = null;
+                                global::G.DeleteResponse3? __value_401 = null;
                                 try
                                 {
                                     if (__effectiveReadResponseAsString)
                                     {
                                         __content_401 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
-                                        __value_401 = global::G.DeleteResponse6.FromJson(__content_401, JsonSerializerOptions);
+                                        __value_401 = global::G.DeleteResponse3.FromJson(__content_401, JsonSerializerOptions);
                                     }
                                     else
                                     {
                                         __content_401 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
 
-                                        __value_401 = global::G.DeleteResponse6.FromJson(__content_401, JsonSerializerOptions);
+                                        __value_401 = global::G.DeleteResponse3.FromJson(__content_401, JsonSerializerOptions);
                                     }
                                 }
                                 catch (global::System.Exception __ex)
@@ -364,7 +364,7 @@ namespace G
                                 }
 
 
-                                throw global::G.ApiException<global::G.DeleteResponse6>.Create(
+                                throw global::G.ApiException<global::G.DeleteResponse3>.Create(
                                     statusCode: __response.StatusCode,
                                     message: __content_401 ?? __response.ReasonPhrase ?? string.Empty,
                                     innerException: __exception_401,

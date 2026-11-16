@@ -1,4 +1,4 @@
-﻿//HintName: G.IStoresClient.DeleteSpecificSearchRule.g.cs
+//HintName: G.IStoresClient.DeleteSpecificSearchRule.g.cs
 #nullable enable
 
 namespace G
@@ -84,7 +84,7 @@ namespace G
         global::System.Threading.Tasks.Task<global::G.MxbaiOmniApiRoutesV1StoresRulesModelsSearchRuleSpecificDeleted> DeleteSpecificSearchRuleAsync(
             global::G.AnyOf<string, global::System.Guid?> storeIdentifier,
             global::System.Guid ruleId,
-            global::G.Rule2 rule,
+            global::G.Rule rule,
             global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }

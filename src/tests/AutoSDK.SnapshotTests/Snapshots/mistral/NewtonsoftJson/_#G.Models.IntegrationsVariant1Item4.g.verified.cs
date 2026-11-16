@@ -13,7 +13,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.ClassifierDetailedJobOutIntegrationsVariant1ItemDiscriminatorType? Type { get; }
+        public global::G.CompletionDetailedJobOutIntegrationsVariant1ItemDiscriminatorType? Type { get; }
 
         /// <summary>
         /// 
@@ -78,7 +78,7 @@ namespace G
         /// 
         /// </summary>
         public IntegrationsVariant1Item4(
-            global::G.ClassifierDetailedJobOutIntegrationsVariant1ItemDiscriminatorType? type,
+            global::G.CompletionDetailedJobOutIntegrationsVariant1ItemDiscriminatorType? type,
             global::G.WandbIntegrationOut? wandb
             )
         {

@@ -14,7 +14,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.HierarchicalChunkerOptionsDocumentsRequestTargetDiscriminatorKind? Kind { get; }
+        public global::G.HybridChunkerOptionsDocumentsRequestTargetDiscriminatorKind? Kind { get; }
 
         /// <summary>
         /// 
@@ -259,7 +259,7 @@ namespace G
         /// 
         /// </summary>
         public Target2(
-            global::G.HierarchicalChunkerOptionsDocumentsRequestTargetDiscriminatorKind? kind,
+            global::G.HybridChunkerOptionsDocumentsRequestTargetDiscriminatorKind? kind,
             global::G.InBodyTarget? inbody,
             global::G.ZipTarget? zip,
             global::G.S3Target? s3,

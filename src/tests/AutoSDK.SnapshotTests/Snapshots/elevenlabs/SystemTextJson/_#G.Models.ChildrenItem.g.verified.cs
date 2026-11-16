@@ -13,7 +13,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.ASTAndOperatorNodeInputChildrenItemDiscriminatorType? Type { get; }
+        public global::G.ASTOrOperatorNodeInputChildrenItemDiscriminatorType? Type { get; }
 
         /// <summary>
         /// String literal.
@@ -798,7 +798,7 @@ namespace G
         /// 
         /// </summary>
         public ChildrenItem(
-            global::G.ASTAndOperatorNodeInputChildrenItemDiscriminatorType? type,
+            global::G.ASTOrOperatorNodeInputChildrenItemDiscriminatorType? type,
             global::G.ASTStringNodeInput? stringLiteral,
             global::G.ASTNumberNodeInput? numberLiteral,
             global::G.ASTBooleanNodeInput? booleanLiteral,

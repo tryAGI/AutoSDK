@@ -1,4 +1,4 @@
-﻿//HintName: G.IEmbeddingModelConfigsClient.UpdateEmbeddingModelConfigApiV1EmbeddingModelConfigsEmbeddingModelConfigIdPut.g.cs
+//HintName: G.IEmbeddingModelConfigsClient.UpdateEmbeddingModelConfigApiV1EmbeddingModelConfigsEmbeddingModelConfigIdPut.g.cs
 #nullable enable
 
 namespace G
@@ -70,7 +70,7 @@ namespace G
             global::System.Guid? organizationId = default,
             string? session = default,
             string? name = default,
-            global::G.EmbeddingConfigVariant1? embeddingConfig = default,
+            global::G.EmbeddingConfigVariant13? embeddingConfig = default,
             global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }

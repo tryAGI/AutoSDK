@@ -13,7 +13,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.LettaStreamingRequestInputVariant2ItemDiscriminatorType? Type { get; }
+        public global::G.ConversationMessageRequestInputVariant2ItemDiscriminatorType? Type { get; }
 
         /// <summary>
         /// 
@@ -498,7 +498,7 @@ namespace G
         /// 
         /// </summary>
         public InputVariant2Item5(
-            global::G.LettaStreamingRequestInputVariant2ItemDiscriminatorType? type,
+            global::G.ConversationMessageRequestInputVariant2ItemDiscriminatorType? type,
             global::G.TextContent? text,
             global::G.ImageContent? image,
             global::G.ToolCallContent? toolCall,

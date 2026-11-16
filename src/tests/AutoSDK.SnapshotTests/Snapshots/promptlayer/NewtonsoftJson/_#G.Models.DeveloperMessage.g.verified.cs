@@ -1,4 +1,4 @@
-﻿//HintName: G.Models.DeveloperMessage.g.cs
+//HintName: G.Models.DeveloperMessage.g.cs
 
 #nullable enable
 
@@ -26,7 +26,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("content", Required = global::Newtonsoft.Json.Required.Always)]
-        public global::System.Collections.Generic.IList<global::G.ContentItem4> Content { get; set; } = default!;
+        public global::System.Collections.Generic.IList<global::G.ContentItem5> Content { get; set; } = default!;
 
         /// <summary>
         /// Default Value: developer
@@ -61,7 +61,7 @@ namespace G
         /// </param>
         /// <param name="name"></param>
         public DeveloperMessage(
-            global::System.Collections.Generic.IList<global::G.ContentItem4> content,
+            global::System.Collections.Generic.IList<global::G.ContentItem5> content,
             global::System.Collections.Generic.IList<string>? inputVariables,
             global::G.DeveloperMessageTemplateFormat? templateFormat,
             string? role,

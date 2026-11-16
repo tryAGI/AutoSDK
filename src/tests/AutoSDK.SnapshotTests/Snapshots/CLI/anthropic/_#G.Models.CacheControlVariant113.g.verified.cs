@@ -13,7 +13,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.BetaToolCacheControlVariant1DiscriminatorType? Type { get; }
+        public global::G.BetaTextEditor20241022CacheControlVariant1DiscriminatorType? Type { get; }
 
         /// <summary>
         /// 
@@ -78,7 +78,7 @@ namespace G
         /// 
         /// </summary>
         public CacheControlVariant113(
-            global::G.BetaToolCacheControlVariant1DiscriminatorType? type,
+            global::G.BetaTextEditor20241022CacheControlVariant1DiscriminatorType? type,
             global::G.BetaCacheControlEphemeral? ephemeral
             )
         {

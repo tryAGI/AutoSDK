@@ -1,4 +1,4 @@
-﻿//HintName: G.ISourcesClient.ModifySource.g.cs
+//HintName: G.ISourcesClient.ModifySource.g.cs
 #nullable enable
 
 namespace G
@@ -17,7 +17,7 @@ namespace G
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::G.ApiException"></exception>
         [global::System.Obsolete("This method marked as deprecated.")]
-        global::System.Threading.Tasks.Task<global::G.Source2> ModifySourceAsync(
+        global::System.Threading.Tasks.Task<global::G.Source> ModifySourceAsync(
             string sourceId,
 
             global::G.SourceUpdate request,
@@ -35,7 +35,7 @@ namespace G
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::G.ApiException"></exception>
         [global::System.Obsolete("This method marked as deprecated.")]
-        global::System.Threading.Tasks.Task<global::G.AutoSDKHttpResponse<global::G.Source2>> ModifySourceAsResponseAsync(
+        global::System.Threading.Tasks.Task<global::G.AutoSDKHttpResponse<global::G.Source>> ModifySourceAsResponseAsync(
             string sourceId,
 
             global::G.SourceUpdate request,
@@ -67,7 +67,7 @@ namespace G
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         [global::System.Obsolete("This method marked as deprecated.")]
-        global::System.Threading.Tasks.Task<global::G.Source2> ModifySourceAsync(
+        global::System.Threading.Tasks.Task<global::G.Source> ModifySourceAsync(
             string sourceId,
             string? name = default,
             string? description = default,

@@ -1,4 +1,4 @@
-﻿//HintName: G.Models.Asset.g.cs
+//HintName: G.Models.Asset.g.cs
 
 #nullable enable
 
@@ -67,8 +67,8 @@ namespace G
         /// Current status for this asset lifecycle
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("status")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.AssetStatus2JsonConverter))]
-        public global::G.AssetStatus2? Status { get; set; }
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.AssetStatusJsonConverter))]
+        public global::G.AssetStatus? Status { get; set; }
 
         /// <summary>
         /// Moderation error details when status is error
@@ -127,7 +127,7 @@ namespace G
             string? name,
             global::System.Collections.Generic.IList<string>? tags,
             string? thumbnailUrl,
-            global::G.AssetStatus2? status,
+            global::G.AssetStatus? status,
             global::G.AssetError? error)
         {
             this.Id = id ?? throw new global::System.ArgumentNullException(nameof(id));

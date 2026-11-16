@@ -1,4 +1,4 @@
-﻿//HintName: G.IFileManagementClient.FileControllerUploadV2.g.cs
+//HintName: G.IFileManagementClient.FileControllerUploadV2.g.cs
 #nullable enable
 
 namespace G
@@ -14,7 +14,7 @@ namespace G
         /// <exception cref="global::G.ApiException"></exception>
         global::System.Threading.Tasks.Task<global::G.AudioUploadResponse> FileControllerUploadV2Async(
 
-            global::G.FileControllerUploadV2Request request,
+            global::G.FileControllerUploadV2Request2 request,
             global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
@@ -26,7 +26,7 @@ namespace G
         /// <exception cref="global::G.ApiException"></exception>
         global::System.Threading.Tasks.Task<global::G.AutoSDKHttpResponse<global::G.AudioUploadResponse>> FileControllerUploadV2AsResponseAsync(
 
-            global::G.FileControllerUploadV2Request request,
+            global::G.FileControllerUploadV2Request2 request,
             global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>

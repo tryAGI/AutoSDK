@@ -1,4 +1,4 @@
-﻿//HintName: G.Models.Query.g.cs
+//HintName: G.Models.Query.g.cs
 
 #nullable enable
 
@@ -63,8 +63,8 @@ namespace G
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("limit")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.AnyOfJsonConverter<int?, global::G.Limit2>))]
-        public global::G.AnyOf<int?, global::G.Limit2>? Limit { get; set; }
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.AnyOfJsonConverter<int?, global::G.Limit>))]
+        public global::G.AnyOf<int?, global::G.Limit>? Limit { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -112,7 +112,7 @@ namespace G
             object? aggregateBy,
             global::System.Collections.Generic.IList<string>? groupBy,
             global::G.DistanceMetric? distanceMetric,
-            global::G.AnyOf<int?, global::G.Limit2>? limit)
+            global::G.AnyOf<int?, global::G.Limit>? limit)
         {
             this.RankBy = rankBy;
             this.TopK = topK;

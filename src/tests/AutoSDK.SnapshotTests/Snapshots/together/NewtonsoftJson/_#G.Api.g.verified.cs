@@ -1,4 +1,4 @@
-﻿//HintName: G.Api.g.cs
+//HintName: G.Api.g.cs
 
 #nullable enable
 
@@ -150,9 +150,9 @@ namespace G
 
                     new global::G.JsonConverters.FinetuneJobStatusNullableJsonConverter(),
 
-                    new global::G.JsonConverters.FinetuneEventObjectJsonConverter(),
+                    new global::G.JsonConverters.FinetuneEventObject2JsonConverter(),
 
-                    new global::G.JsonConverters.FinetuneEventObjectNullableJsonConverter(),
+                    new global::G.JsonConverters.FinetuneEventObject2NullableJsonConverter(),
 
                     new global::G.JsonConverters.FinetuneEventLevelsJsonConverter(),
 
@@ -162,17 +162,13 @@ namespace G
 
                     new global::G.JsonConverters.FinetuneEventTypeNullableJsonConverter(),
 
-                    new global::G.JsonConverters.FineTuneEventObject2JsonConverter(),
+                    new global::G.JsonConverters.FineTuneEventObjectJsonConverter(),
 
-                    new global::G.JsonConverters.FineTuneEventObject2NullableJsonConverter(),
+                    new global::G.JsonConverters.FineTuneEventObjectNullableJsonConverter(),
 
                     new global::G.JsonConverters.FineTuneEventLevelJsonConverter(),
 
                     new global::G.JsonConverters.FineTuneEventLevelNullableJsonConverter(),
-
-                    new global::G.JsonConverters.FineTuneEventType2JsonConverter(),
-
-                    new global::G.JsonConverters.FineTuneEventType2NullableJsonConverter(),
 
                     new global::G.JsonConverters.FinetuneDownloadResultObjectJsonConverter(),
 

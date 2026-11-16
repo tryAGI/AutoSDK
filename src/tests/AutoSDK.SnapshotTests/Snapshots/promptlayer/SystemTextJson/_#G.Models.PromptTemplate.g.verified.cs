@@ -13,7 +13,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.GetPromptTemplateResponsePromptTemplateDiscriminatorType? Type { get; }
+        public global::G.PromptVersionPromptTemplateDiscriminatorType? Type { get; }
 
         /// <summary>
         /// 
@@ -138,7 +138,7 @@ namespace G
         /// 
         /// </summary>
         public PromptTemplate(
-            global::G.GetPromptTemplateResponsePromptTemplateDiscriminatorType? type,
+            global::G.PromptVersionPromptTemplateDiscriminatorType? type,
             global::G.CompletionPrompt? completion,
             global::G.ChatPrompt? chat
             )

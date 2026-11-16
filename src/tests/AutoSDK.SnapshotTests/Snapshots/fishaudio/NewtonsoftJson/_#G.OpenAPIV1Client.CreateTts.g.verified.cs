@@ -453,19 +453,19 @@ namespace G
                             {
                                 string? __content_402 = null;
                                 global::System.Exception? __exception_402 = null;
-                                global::G.CreateTtsResponse2? __value_402 = null;
+                                global::G.CreateTtsResponse? __value_402 = null;
                                 try
                                 {
                                     if (__effectiveReadResponseAsString)
                                     {
                                         __content_402 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
-                                        __value_402 = global::G.CreateTtsResponse2.FromJson(__content_402, JsonSerializerOptions);
+                                        __value_402 = global::G.CreateTtsResponse.FromJson(__content_402, JsonSerializerOptions);
                                     }
                                     else
                                     {
                                         __content_402 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
 
-                                        __value_402 = global::G.CreateTtsResponse2.FromJson(__content_402, JsonSerializerOptions);
+                                        __value_402 = global::G.CreateTtsResponse.FromJson(__content_402, JsonSerializerOptions);
                                     }
                                 }
                                 catch (global::System.Exception __ex)
@@ -474,7 +474,7 @@ namespace G
                                 }
 
 
-                                throw global::G.ApiException<global::G.CreateTtsResponse2>.Create(
+                                throw global::G.ApiException<global::G.CreateTtsResponse>.Create(
                                     statusCode: __response.StatusCode,
                                     message: __content_402 ?? __response.ReasonPhrase ?? string.Empty,
                                     innerException: __exception_402,

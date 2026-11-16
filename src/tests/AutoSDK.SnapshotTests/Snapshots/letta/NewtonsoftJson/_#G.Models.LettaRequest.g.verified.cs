@@ -1,4 +1,4 @@
-﻿//HintName: G.Models.LettaRequest.g.cs
+//HintName: G.Models.LettaRequest.g.cs
 
 #pragma warning disable CS0618 // Type or member is obsolete
 
@@ -21,7 +21,7 @@ namespace G
         /// Syntactic sugar for a single user message. Equivalent to messages=[{'role': 'user', 'content': input}].
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("input")]
-        public global::G.AnyOf<string, global::System.Collections.Generic.IList<global::G.InputVariant2Item4>>? Input { get; set; }
+        public global::G.AnyOf<string, global::System.Collections.Generic.IList<global::G.InputVariant2Item>>? Input { get; set; }
 
         /// <summary>
         /// Maximum number of steps the agent should take to process the request.<br/>
@@ -152,7 +152,7 @@ namespace G
         /// </param>
         public LettaRequest(
             global::System.Collections.Generic.IList<global::G.AnyOf<global::G.MessageCreate, global::G.ApprovalCreate, global::G.ToolReturnCreate>>? messages,
-            global::G.AnyOf<string, global::System.Collections.Generic.IList<global::G.InputVariant2Item4>>? input,
+            global::G.AnyOf<string, global::System.Collections.Generic.IList<global::G.InputVariant2Item>>? input,
             int? maxSteps,
             global::System.Collections.Generic.IList<global::G.MessageType>? includeReturnMessageTypes,
             global::System.Collections.Generic.IList<global::G.ClientToolSchema>? clientTools,

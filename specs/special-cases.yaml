@@ -225,6 +225,27 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/PartialMappedEvent'
+  /case-only-collision:
+    get:
+      operationId: getCaseOnlyCollision
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/CasedEvent'
+    post:
+      operationId: postCaseOnlyCollision
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/CasedEVENT'
+      responses:
+        '200':
+          description: OK
 components:
   schemas:
     # A discriminator whose `mapping` is PARTIAL: the second entry points at a schema name that does
@@ -299,6 +320,35 @@ components:
           properties:
             error:
               type: string
+    # Two components whose names differ ONLY in case, each carrying an identical inline payload.
+    # Collision groups are keyed case-insensitively, so both payloads land in one group and the
+    # second is a structural duplicate of the first - it emits no model of its own and has to answer
+    # to the canonical member's name. Keeping its own spelling made every reference to it point at a
+    # type nothing defines, which is specs/together.yaml's `FinetuneEvent`/`FineTuneEvent` pair and
+    # the CS0234 it produced. The parents themselves differ in shape, so they are numbered rather
+    # than deduplicated - that is the half that already worked.
+    CasedEvent:
+      type: object
+      required: [payload]
+      properties:
+        payload:
+          type: object
+          required: [id]
+          properties:
+            id:
+              type: string
+    CasedEVENT:
+      type: object
+      required: [payload]
+      properties:
+        payload:
+          type: object
+          required: [id]
+          properties:
+            id:
+              type: string
+        onlyHere:
+          type: string
     Pet:
       type: object
       required:

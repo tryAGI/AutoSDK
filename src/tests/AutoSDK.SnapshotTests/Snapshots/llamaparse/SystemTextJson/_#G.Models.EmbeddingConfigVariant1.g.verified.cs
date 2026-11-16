@@ -13,7 +13,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.EmbeddingModelConfigUpdateEmbeddingConfigVariant1DiscriminatorType? Type { get; }
+        public global::G.PipelineCreateEmbeddingConfigVariant1DiscriminatorType? Type { get; }
 
         /// <summary>
         /// 
@@ -438,7 +438,7 @@ namespace G
         /// 
         /// </summary>
         public EmbeddingConfigVariant1(
-            global::G.EmbeddingModelConfigUpdateEmbeddingConfigVariant1DiscriminatorType? type,
+            global::G.PipelineCreateEmbeddingConfigVariant1DiscriminatorType? type,
             global::G.AzureOpenAIEmbeddingConfig? azureEmbedding,
             global::G.CohereEmbeddingConfig? cohereEmbedding,
             global::G.GeminiEmbeddingConfig? geminiEmbedding,

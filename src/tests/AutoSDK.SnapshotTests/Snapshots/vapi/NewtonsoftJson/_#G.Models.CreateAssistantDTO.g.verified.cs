@@ -1,4 +1,4 @@
-﻿//HintName: G.Models.CreateAssistantDTO.g.cs
+//HintName: G.Models.CreateAssistantDTO.g.cs
 
 #nullable enable
 
@@ -121,7 +121,7 @@ namespace G
         /// These are dynamic credentials that will be used for the assistant calls. By default, all the credentials are available for use in the call but you can supplement an additional credentials using this. Dynamic credentials override existing credentials.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("credentials")]
-        public global::System.Collections.Generic.IList<global::G.CredentialsItem3>? Credentials { get; set; }
+        public global::System.Collections.Generic.IList<global::G.CredentialsItem4>? Credentials { get; set; }
 
         /// <summary>
         /// This is a set of actions that will be performed on certain events.
@@ -402,7 +402,7 @@ namespace G
             bool? modelOutputInMessagesEnabled,
             global::System.Collections.Generic.IList<global::G.TransportConfigurationTwilio>? transportConfigurations,
             global::G.LangfuseObservabilityPlan? observabilityPlan,
-            global::System.Collections.Generic.IList<global::G.CredentialsItem3>? credentials,
+            global::System.Collections.Generic.IList<global::G.CredentialsItem4>? credentials,
             global::System.Collections.Generic.IList<global::G.OneOf<global::G.CallHookCallEnding, global::G.CallHookAssistantSpeechInterrupted, global::G.CallHookCustomerSpeechInterrupted, global::G.CallHookCustomerSpeechTimeout, global::G.SessionCreatedHook>>? hooks,
             string? name,
             string? voicemailMessage,

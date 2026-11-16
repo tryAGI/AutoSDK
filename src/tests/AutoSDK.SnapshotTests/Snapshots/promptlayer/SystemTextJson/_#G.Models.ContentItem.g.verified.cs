@@ -13,7 +13,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.CompletionPromptContentItemDiscriminatorType? Type { get; }
+        public global::G.ToolMessageContentItemDiscriminatorType? Type { get; }
 
         /// <summary>
         /// 
@@ -1218,7 +1218,7 @@ namespace G
         /// 
         /// </summary>
         public ContentItem(
-            global::G.CompletionPromptContentItemDiscriminatorType? type,
+            global::G.ToolMessageContentItemDiscriminatorType? type,
             global::G.TextContent? text,
             global::G.ThinkingContent? thinking,
             global::G.CodeContent? code,

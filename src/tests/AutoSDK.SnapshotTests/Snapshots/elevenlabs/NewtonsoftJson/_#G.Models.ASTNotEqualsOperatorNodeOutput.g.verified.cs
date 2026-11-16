@@ -1,4 +1,4 @@
-﻿//HintName: G.Models.ASTNotEqualsOperatorNodeOutput.g.cs
+//HintName: G.Models.ASTNotEqualsOperatorNodeOutput.g.cs
 
 #nullable enable
 
@@ -20,13 +20,13 @@ namespace G
         /// Left operand of the binary operator.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("left", Required = global::Newtonsoft.Json.Required.Always)]
-        public global::G.Left12 Left { get; set; } = default!;
+        public global::G.Left6 Left { get; set; } = default!;
 
         /// <summary>
         /// Right operand of the binary operator.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("right", Required = global::Newtonsoft.Json.Required.Always)]
-        public global::G.Right12 Right { get; set; } = default!;
+        public global::G.Right6 Right { get; set; } = default!;
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -47,8 +47,8 @@ namespace G
         /// Default Value: neq_operator
         /// </param>
         public ASTNotEqualsOperatorNodeOutput(
-            global::G.Left12 left,
-            global::G.Right12 right,
+            global::G.Left6 left,
+            global::G.Right6 right,
             string type = "neq_operator")
         {
             this.Type = type;

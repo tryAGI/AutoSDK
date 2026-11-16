@@ -1,4 +1,4 @@
-﻿//HintName: G.Models.CacheControlVariant117.Json.g.cs
+//HintName: G.Models.CacheControlVariant117.Json.g.cs
 #nullable enable
 
 namespace G

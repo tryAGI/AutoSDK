@@ -486,7 +486,7 @@ namespace G
             global::System.Collections.Generic.IList<global::G.TrainingFile>? trainingFiles = default,
             global::System.Collections.Generic.IList<global::System.Guid>? validationFiles = default,
             string? suffix = default,
-            global::System.Collections.Generic.IList<global::G.IntegrationsVariant1Item3>? integrations = default,
+            global::System.Collections.Generic.IList<global::G.IntegrationsVariant1Item5>? integrations = default,
             bool? autoStart = default,
             double? invalidSampleSkipPercentage = default,
             global::G.FineTuneableModelType? jobType = default,

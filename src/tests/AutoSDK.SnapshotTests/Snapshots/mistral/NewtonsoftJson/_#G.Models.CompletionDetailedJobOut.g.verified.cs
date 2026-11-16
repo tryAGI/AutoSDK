@@ -1,4 +1,4 @@
-﻿//HintName: G.Models.CompletionDetailedJobOut.g.cs
+//HintName: G.Models.CompletionDetailedJobOut.g.cs
 
 #nullable enable
 
@@ -82,7 +82,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("integrations")]
-        public global::System.Collections.Generic.IList<global::G.IntegrationsVariant1Item5>? Integrations { get; set; }
+        public global::System.Collections.Generic.IList<global::G.IntegrationsVariant1Item4>? Integrations { get; set; }
 
         /// <summary>
         /// 
@@ -184,7 +184,7 @@ namespace G
             global::G.CompletionDetailedJobOutObject? @object,
             string? fineTunedModel,
             string? suffix,
-            global::System.Collections.Generic.IList<global::G.IntegrationsVariant1Item5>? integrations,
+            global::System.Collections.Generic.IList<global::G.IntegrationsVariant1Item4>? integrations,
             int? trainedTokens,
             global::G.JobMetadataOut? metadata,
             global::G.CompletionDetailedJobOutJobType? jobType,

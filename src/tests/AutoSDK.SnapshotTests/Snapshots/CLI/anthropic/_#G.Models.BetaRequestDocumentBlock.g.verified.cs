@@ -1,4 +1,4 @@
-﻿//HintName: G.Models.BetaRequestDocumentBlock.g.cs
+//HintName: G.Models.BetaRequestDocumentBlock.g.cs
 
 #nullable enable
 
@@ -13,7 +13,7 @@ namespace G
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("cache_control")]
-        public global::G.CacheControlVariant16? CacheControl { get; set; }
+        public global::G.CacheControlVariant115? CacheControl { get; set; }
 
         /// <summary>
         /// 
@@ -26,9 +26,9 @@ namespace G
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("source")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.SourceJsonConverter))]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.Source4JsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::G.Source Source { get; set; }
+        public required global::G.Source4 Source { get; set; }
 
         /// <summary>
         /// 
@@ -67,8 +67,8 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public BetaRequestDocumentBlock(
-            global::G.Source source,
-            global::G.CacheControlVariant16? cacheControl,
+            global::G.Source4 source,
+            global::G.CacheControlVariant115? cacheControl,
             global::G.BetaRequestDocumentBlockType type,
             string? title,
             string? context,

@@ -1,4 +1,4 @@
-﻿//HintName: G.Models.GeneratedMetadataVariant112.Json.g.cs
+//HintName: G.Models.GeneratedMetadataVariant112.Json.g.cs
 #nullable enable
 
 namespace G

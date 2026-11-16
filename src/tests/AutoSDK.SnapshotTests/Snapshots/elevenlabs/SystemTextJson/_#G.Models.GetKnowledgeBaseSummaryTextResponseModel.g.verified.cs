@@ -1,4 +1,4 @@
-﻿//HintName: G.Models.GetKnowledgeBaseSummaryTextResponseModel.g.cs
+//HintName: G.Models.GetKnowledgeBaseSummaryTextResponseModel.g.cs
 
 #pragma warning disable CS0618 // Type or member is obsolete
 
@@ -64,7 +64,7 @@ namespace G
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("dependent_agents")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::System.Collections.Generic.IList<global::G.DependentAgentsItem3> DependentAgents { get; set; }
+        public required global::System.Collections.Generic.IList<global::G.DependentAgentsItem4> DependentAgents { get; set; }
 
         /// <summary>
         /// 
@@ -108,7 +108,7 @@ namespace G
             global::G.KnowledgeBaseDocumentMetadataResponseModel metadata,
             global::System.Collections.Generic.IList<global::G.DocumentUsageModeEnum> supportedUsages,
             global::G.ResourceAccessInfo accessInfo,
-            global::System.Collections.Generic.IList<global::G.DependentAgentsItem3> dependentAgents,
+            global::System.Collections.Generic.IList<global::G.DependentAgentsItem4> dependentAgents,
             string? folderParentId,
             global::System.Collections.Generic.IList<global::G.KnowledgeBaseFolderPathSegmentSummaryResponseModel>? folderPath,
             string type = "text")

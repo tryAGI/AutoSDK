@@ -1,4 +1,4 @@
-﻿//HintName: G.Models.ChatResponse2.g.cs
+//HintName: G.Models.ChatResponse2.g.cs
 
 #nullable enable
 
@@ -12,33 +12,26 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("matches", Required = global::Newtonsoft.Json.Required.Always)]
-        public global::System.Collections.Generic.IList<global::G.ChatResponseMatche2> Matches { get; set; } = default!;
+        [global::Newtonsoft.Json.JsonProperty("kind", Required = global::Newtonsoft.Json.Required.Always)]
+        public string Kind { get; set; } = default!;
 
         /// <summary>
         /// 
         /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("documentIds", Required = global::Newtonsoft.Json.Required.Always)]
-        public global::System.Collections.Generic.IList<string> DocumentIds { get; set; } = default!;
+        [global::Newtonsoft.Json.JsonProperty("description", Required = global::Newtonsoft.Json.Required.Always)]
+        public string Description { get; set; } = default!;
 
         /// <summary>
         /// 
         /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("result")]
-        public string? Result { get; set; }
+        [global::Newtonsoft.Json.JsonProperty("details")]
+        public object? Details { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("chatMode")]
-        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.ChatResponseChatMode2JsonConverter))]
-        public global::G.ChatResponseChatMode2? ChatMode { get; set; }
-
-        /// <summary>
-        /// 
-        /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("videoId")]
-        public string? VideoId { get; set; }
+        [global::Newtonsoft.Json.JsonProperty("internal")]
+        public string? Internal { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -49,23 +42,20 @@ namespace G
         /// <summary>
         /// Initializes a new instance of the <see cref="ChatResponse2" /> class.
         /// </summary>
-        /// <param name="matches"></param>
-        /// <param name="documentIds"></param>
-        /// <param name="result"></param>
-        /// <param name="chatMode"></param>
-        /// <param name="videoId"></param>
+        /// <param name="kind"></param>
+        /// <param name="description"></param>
+        /// <param name="details"></param>
+        /// <param name="internal"></param>
         public ChatResponse2(
-            global::System.Collections.Generic.IList<global::G.ChatResponseMatche2> matches,
-            global::System.Collections.Generic.IList<string> documentIds,
-            string? result,
-            global::G.ChatResponseChatMode2? chatMode,
-            string? videoId)
+            string kind,
+            string description,
+            object? details,
+            string? @internal)
         {
-            this.Matches = matches ?? throw new global::System.ArgumentNullException(nameof(matches));
-            this.DocumentIds = documentIds ?? throw new global::System.ArgumentNullException(nameof(documentIds));
-            this.Result = result;
-            this.ChatMode = chatMode;
-            this.VideoId = videoId;
+            this.Kind = kind ?? throw new global::System.ArgumentNullException(nameof(kind));
+            this.Description = description ?? throw new global::System.ArgumentNullException(nameof(description));
+            this.Details = details;
+            this.Internal = @internal;
         }
 
         /// <summary>

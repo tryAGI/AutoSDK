@@ -1,4 +1,4 @@
-﻿//HintName: G.Models.ModelList.g.cs
+//HintName: G.Models.ModelList.g.cs
 
 #nullable enable
 
@@ -19,7 +19,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("data")]
-        public global::System.Collections.Generic.IList<global::G.DataItem>? Data { get; set; }
+        public global::System.Collections.Generic.IList<global::G.DataItem2>? Data { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -36,7 +36,7 @@ namespace G
         /// <param name="data"></param>
         public ModelList(
             string? @object,
-            global::System.Collections.Generic.IList<global::G.DataItem>? data)
+            global::System.Collections.Generic.IList<global::G.DataItem2>? data)
         {
             this.Object = @object;
             this.Data = data;

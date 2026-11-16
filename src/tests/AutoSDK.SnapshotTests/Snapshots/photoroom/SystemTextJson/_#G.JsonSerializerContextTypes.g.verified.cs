@@ -379,35 +379,19 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.EditImageGetResponse3? Type85 { get; set; }
+        public global::G.EditImagePostResponse? Type85 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.EditImageGetResponseError3? Type86 { get; set; }
+        public global::G.EditImagePostResponseError? Type86 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.EditImagePostResponse? Type87 { get; set; }
+        public global::G.EditImagePostResponse2? Type87 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.EditImagePostResponseError? Type88 { get; set; }
-        /// <summary>
-        /// 
-        /// </summary>
-        public global::G.EditImagePostResponse2? Type89 { get; set; }
-        /// <summary>
-        /// 
-        /// </summary>
-        public global::G.EditImagePostResponseError2? Type90 { get; set; }
-        /// <summary>
-        /// 
-        /// </summary>
-        public global::G.EditImagePostResponse3? Type91 { get; set; }
-        /// <summary>
-        /// 
-        /// </summary>
-        public global::G.EditImagePostResponseError3? Type92 { get; set; }
+        public global::G.EditImagePostResponseError2? Type88 { get; set; }
 
         /// <summary>
         /// 

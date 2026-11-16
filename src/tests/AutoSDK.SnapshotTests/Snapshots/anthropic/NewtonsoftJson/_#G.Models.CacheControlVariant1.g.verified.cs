@@ -13,7 +13,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.BashTool20250124CacheControlVariant1DiscriminatorType? Type { get; }
+        public global::G.RequestTextBlockCacheControlVariant1DiscriminatorType? Type { get; }
 
         /// <summary>
         /// 
@@ -78,7 +78,7 @@ namespace G
         /// 
         /// </summary>
         public CacheControlVariant1(
-            global::G.BashTool20250124CacheControlVariant1DiscriminatorType? type,
+            global::G.RequestTextBlockCacheControlVariant1DiscriminatorType? type,
             global::G.CacheControlEphemeral? ephemeral
             )
         {

@@ -1,4 +1,4 @@
-﻿//HintName: G.Models.MxbaiOmniApiRoutesV1StoresRulesModelsSearchRuleCreateParams.g.cs
+//HintName: G.Models.MxbaiOmniApiRoutesV1StoresRulesModelsSearchRuleCreateParams.g.cs
 
 #nullable enable
 
@@ -19,7 +19,7 @@ namespace G
         /// The rules to apply on query matches
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("rules", Required = global::Newtonsoft.Json.Required.Always)]
-        public global::System.Collections.Generic.IList<global::G.RulesItem3> Rules { get; set; } = default!;
+        public global::System.Collections.Generic.IList<global::G.RulesItem2> Rules { get; set; } = default!;
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -38,7 +38,7 @@ namespace G
         /// </param>
         public MxbaiOmniApiRoutesV1StoresRulesModelsSearchRuleCreateParams(
             string query,
-            global::System.Collections.Generic.IList<global::G.RulesItem3> rules)
+            global::System.Collections.Generic.IList<global::G.RulesItem2> rules)
         {
             this.Query = query ?? throw new global::System.ArgumentNullException(nameof(query));
             this.Rules = rules ?? throw new global::System.ArgumentNullException(nameof(rules));

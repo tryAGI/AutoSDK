@@ -18,22 +18,22 @@ namespace G.JsonConverters
 
 
             var readerCopy = reader;
-            var discriminatorTypeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.PipelinesCreatePipelineResponsePipelineConfigDiscriminator), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.PipelinesCreatePipelineResponsePipelineConfigDiscriminator> ??
-                            throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::G.PipelinesCreatePipelineResponsePipelineConfigDiscriminator)}");
+            var discriminatorTypeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.PipelinesUpdatePipelineProducerConfigResponsePipelineConfigDiscriminator), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.PipelinesUpdatePipelineProducerConfigResponsePipelineConfigDiscriminator> ??
+                            throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::G.PipelinesUpdatePipelineProducerConfigResponsePipelineConfigDiscriminator)}");
             var discriminator = global::System.Text.Json.JsonSerializer.Deserialize(ref readerCopy, discriminatorTypeInfo);
 
-            global::G.PipelinesCreatePipelineResponsePipelineConfigVariant1? slackChannelReader = default;
-            if (discriminator?.Type == global::G.PipelinesCreatePipelineResponsePipelineConfigDiscriminatorType.SlackChannelReader)
+            global::G.PipelinesUpdatePipelineProducerConfigResponsePipelineConfigVariant1? slackChannelReader = default;
+            if (discriminator?.Type == global::G.PipelinesUpdatePipelineProducerConfigResponsePipelineConfigDiscriminatorType.SlackChannelReader)
             {
-                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.PipelinesCreatePipelineResponsePipelineConfigVariant1), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.PipelinesCreatePipelineResponsePipelineConfigVariant1> ??
-                               throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::G.PipelinesCreatePipelineResponsePipelineConfigVariant1)}");
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.PipelinesUpdatePipelineProducerConfigResponsePipelineConfigVariant1), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.PipelinesUpdatePipelineProducerConfigResponsePipelineConfigVariant1> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::G.PipelinesUpdatePipelineProducerConfigResponsePipelineConfigVariant1)}");
                 slackChannelReader = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
             }
-            global::G.PipelinesCreatePipelineResponsePipelineConfigVariant2? customWebhook = default;
-            if (discriminator?.Type == global::G.PipelinesCreatePipelineResponsePipelineConfigDiscriminatorType.CustomWebhook)
+            global::G.PipelinesUpdatePipelineProducerConfigResponsePipelineConfigVariant2? customWebhook = default;
+            if (discriminator?.Type == global::G.PipelinesUpdatePipelineProducerConfigResponsePipelineConfigDiscriminatorType.CustomWebhook)
             {
-                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.PipelinesCreatePipelineResponsePipelineConfigVariant2), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.PipelinesCreatePipelineResponsePipelineConfigVariant2> ??
-                               throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::G.PipelinesCreatePipelineResponsePipelineConfigVariant2)}");
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.PipelinesUpdatePipelineProducerConfigResponsePipelineConfigVariant2), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.PipelinesUpdatePipelineProducerConfigResponsePipelineConfigVariant2> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::G.PipelinesUpdatePipelineProducerConfigResponsePipelineConfigVariant2)}");
                 customWebhook = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
             }
 
@@ -58,14 +58,14 @@ namespace G.JsonConverters
 
             if (value.IsSlackChannelReader)
             {
-                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.PipelinesCreatePipelineResponsePipelineConfigVariant1), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.PipelinesCreatePipelineResponsePipelineConfigVariant1?> ??
-                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.PipelinesCreatePipelineResponsePipelineConfigVariant1).Name}");
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.PipelinesUpdatePipelineProducerConfigResponsePipelineConfigVariant1), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.PipelinesUpdatePipelineProducerConfigResponsePipelineConfigVariant1?> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.PipelinesUpdatePipelineProducerConfigResponsePipelineConfigVariant1).Name}");
                 global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickSlackChannelReader(), typeInfo);
             }
             else if (value.IsCustomWebhook)
             {
-                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.PipelinesCreatePipelineResponsePipelineConfigVariant2), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.PipelinesCreatePipelineResponsePipelineConfigVariant2?> ??
-                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.PipelinesCreatePipelineResponsePipelineConfigVariant2).Name}");
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.PipelinesUpdatePipelineProducerConfigResponsePipelineConfigVariant2), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.PipelinesUpdatePipelineProducerConfigResponsePipelineConfigVariant2?> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.PipelinesUpdatePipelineProducerConfigResponsePipelineConfigVariant2).Name}");
                 global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickCustomWebhook(), typeInfo);
             }
         }

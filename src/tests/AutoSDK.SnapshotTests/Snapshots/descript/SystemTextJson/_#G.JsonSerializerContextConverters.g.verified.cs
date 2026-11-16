@@ -1,4 +1,4 @@
-﻿//HintName: G.JsonSerializerContextConverters.g.cs
+//HintName: G.JsonSerializerContextConverters.g.cs
 
 #nullable enable
 
@@ -57,8 +57,8 @@ namespace G
             typeof(global::G.JsonConverters.ListJobsTypeNullableJsonConverter),
             typeof(global::G.JsonConverters.GetStatusResponseStatusJsonConverter),
             typeof(global::G.JsonConverters.GetStatusResponseStatusNullableJsonConverter),
-            typeof(global::G.JsonConverters.ResultJsonConverter),
             typeof(global::G.JsonConverters.Result2JsonConverter),
+            typeof(global::G.JsonConverters.ResultJsonConverter),
             typeof(global::G.JsonConverters.JobStatusJsonConverter),
             typeof(global::G.JsonConverters.OneOfJsonConverter<global::G.ImportProjectMediaRequestAddMediaUrlImport, global::G.ImportProjectMediaRequestAddMediaMultitrackSequence>),
             typeof(global::G.JsonConverters.UnixTimestampJsonConverter),

@@ -1,4 +1,4 @@
-﻿//HintName: G.JsonSerializerContextConverters.g.cs
+//HintName: G.JsonSerializerContextConverters.g.cs
 
 #nullable enable
 
@@ -355,8 +355,6 @@ namespace G
             typeof(global::G.JsonConverters.ImageRenderingModeNullableJsonConverter),
             typeof(global::G.JsonConverters.PatchOrganizationMembersOutputStatusJsonConverter),
             typeof(global::G.JsonConverters.PatchOrganizationMembersOutputStatusNullableJsonConverter),
-            typeof(global::G.JsonConverters.EnvVarObjectType2JsonConverter),
-            typeof(global::G.JsonConverters.EnvVarObjectType2NullableJsonConverter),
             typeof(global::G.JsonConverters.EnvVarSecretCategoryJsonConverter),
             typeof(global::G.JsonConverters.EnvVarSecretCategoryNullableJsonConverter),
             typeof(global::G.JsonConverters.PromptDataToolFunctionVariant2FunctionTypeJsonConverter),

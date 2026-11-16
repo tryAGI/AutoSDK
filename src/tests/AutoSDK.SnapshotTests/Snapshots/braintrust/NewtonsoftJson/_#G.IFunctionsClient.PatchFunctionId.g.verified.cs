@@ -1,4 +1,4 @@
-﻿//HintName: G.IFunctionsClient.PatchFunctionId.g.cs
+//HintName: G.IFunctionsClient.PatchFunctionId.g.cs
 #nullable enable
 
 namespace G
@@ -16,7 +16,7 @@ namespace G
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::G.ApiException"></exception>
-        global::System.Threading.Tasks.Task<global::G.Function2> PatchFunctionIdAsync(
+        global::System.Threading.Tasks.Task<global::G.Function> PatchFunctionIdAsync(
             global::System.Guid functionId,
 
             global::G.PatchFunction request,
@@ -33,7 +33,7 @@ namespace G
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::G.ApiException"></exception>
-        global::System.Threading.Tasks.Task<global::G.AutoSDKHttpResponse<global::G.Function2>> PatchFunctionIdAsResponseAsync(
+        global::System.Threading.Tasks.Task<global::G.AutoSDKHttpResponse<global::G.Function>> PatchFunctionIdAsResponseAsync(
             global::System.Guid functionId,
 
             global::G.PatchFunction request,
@@ -62,7 +62,7 @@ namespace G
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
-        global::System.Threading.Tasks.Task<global::G.Function2> PatchFunctionIdAsync(
+        global::System.Threading.Tasks.Task<global::G.Function> PatchFunctionIdAsync(
             global::System.Guid functionId,
             string? name = default,
             string? description = default,

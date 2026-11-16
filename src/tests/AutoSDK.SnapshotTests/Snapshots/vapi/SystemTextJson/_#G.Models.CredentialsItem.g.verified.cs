@@ -13,7 +13,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.WorkflowUserEditableCredentialDiscriminatorProvider? Provider { get; }
+        public global::G.CreateWorkflowDTOCredentialDiscriminatorProvider? Provider { get; }
 
         /// <summary>
         /// 
@@ -3378,7 +3378,7 @@ namespace G
         /// 
         /// </summary>
         public CredentialsItem(
-            global::G.WorkflowUserEditableCredentialDiscriminatorProvider? provider,
+            global::G.CreateWorkflowDTOCredentialDiscriminatorProvider? provider,
             global::G.CreateAnthropicCredentialDTO? anthropic,
             global::G.CreateAnthropicBedrockCredentialDTO? anthropicBedrock,
             global::G.CreateAnyscaleCredentialDTO? anyscale,

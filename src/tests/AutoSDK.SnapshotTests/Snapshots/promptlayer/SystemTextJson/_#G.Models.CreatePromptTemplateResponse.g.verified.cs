@@ -1,4 +1,4 @@
-﻿//HintName: G.Models.CreatePromptTemplateResponse.g.cs
+//HintName: G.Models.CreatePromptTemplateResponse.g.cs
 
 #nullable enable
 

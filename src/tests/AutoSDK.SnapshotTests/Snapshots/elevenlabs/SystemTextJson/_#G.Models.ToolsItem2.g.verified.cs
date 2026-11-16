@@ -13,16 +13,16 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.PromptAgentAPIModelInputToolDiscriminatorType? Type { get; }
+        public global::G.PromptAgentAPIModelOutputToolDiscriminatorType? Type { get; }
 
         /// <summary>
         /// A webhook tool is a tool that calls an external webhook from our server<br/>
         /// Example: {"response_timeout_secs":20,"type":"webhook"}
         /// </summary>
 #if NET6_0_OR_GREATER
-        public global::G.WebhookToolConfigInput? Webhook { get; init; }
+        public global::G.WebhookToolConfigOutput? Webhook { get; init; }
 #else
-        public global::G.WebhookToolConfigInput? Webhook { get; }
+        public global::G.WebhookToolConfigOutput? Webhook { get; }
 #endif
 
         /// <summary>
@@ -40,7 +40,7 @@ namespace G
 #if NET6_0_OR_GREATER
             [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
 #endif
-            out global::G.WebhookToolConfigInput? value)
+            out global::G.WebhookToolConfigOutput? value)
         {
             value = Webhook;
             return IsWebhook;
@@ -49,7 +49,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.WebhookToolConfigInput PickWebhook() => Webhook is { } value
+        public global::G.WebhookToolConfigOutput PickWebhook() => Webhook is { } value
             ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Webhook' but the value was {ToString()}.");
 
@@ -58,9 +58,9 @@ namespace G
         /// Example: {"expects_response":false,"type":"client"}
         /// </summary>
 #if NET6_0_OR_GREATER
-        public global::G.ClientToolConfigInput? Client { get; init; }
+        public global::G.ClientToolConfigOutput? Client { get; init; }
 #else
-        public global::G.ClientToolConfigInput? Client { get; }
+        public global::G.ClientToolConfigOutput? Client { get; }
 #endif
 
         /// <summary>
@@ -78,7 +78,7 @@ namespace G
 #if NET6_0_OR_GREATER
             [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
 #endif
-            out global::G.ClientToolConfigInput? value)
+            out global::G.ClientToolConfigOutput? value)
         {
             value = Client;
             return IsClient;
@@ -87,7 +87,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.ClientToolConfigInput PickClient() => Client is { } value
+        public global::G.ClientToolConfigOutput PickClient() => Client is { } value
             ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Client' but the value was {ToString()}.");
 
@@ -95,9 +95,9 @@ namespace G
         /// A system tool is a tool that is used to call a system method in the server
         /// </summary>
 #if NET6_0_OR_GREATER
-        public global::G.SystemToolConfigInput? System { get; init; }
+        public global::G.SystemToolConfigOutput? System { get; init; }
 #else
-        public global::G.SystemToolConfigInput? System { get; }
+        public global::G.SystemToolConfigOutput? System { get; }
 #endif
 
         /// <summary>
@@ -115,7 +115,7 @@ namespace G
 #if NET6_0_OR_GREATER
             [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
 #endif
-            out global::G.SystemToolConfigInput? value)
+            out global::G.SystemToolConfigOutput? value)
         {
             value = System;
             return IsSystem;
@@ -124,7 +124,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.SystemToolConfigInput PickSystem() => System is { } value
+        public global::G.SystemToolConfigOutput PickSystem() => System is { } value
             ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'System' but the value was {ToString()}.");
 
@@ -132,9 +132,9 @@ namespace G
         /// An MCP tool configuration that can be used to call MCP servers
         /// </summary>
 #if NET6_0_OR_GREATER
-        public global::G.MCPToolConfigInput? Mcp { get; init; }
+        public global::G.MCPToolConfigOutput? Mcp { get; init; }
 #else
-        public global::G.MCPToolConfigInput? Mcp { get; }
+        public global::G.MCPToolConfigOutput? Mcp { get; }
 #endif
 
         /// <summary>
@@ -152,7 +152,7 @@ namespace G
 #if NET6_0_OR_GREATER
             [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
 #endif
-            out global::G.MCPToolConfigInput? value)
+            out global::G.MCPToolConfigOutput? value)
         {
             value = Mcp;
             return IsMcp;
@@ -161,7 +161,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.MCPToolConfigInput PickMcp() => Mcp is { } value
+        public global::G.MCPToolConfigOutput PickMcp() => Mcp is { } value
             ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Mcp' but the value was {ToString()}.");
 
@@ -169,9 +169,9 @@ namespace G
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        public global::G.ApiIntegrationWebhookToolConfigInput? ApiIntegrationWebhook { get; init; }
+        public global::G.ApiIntegrationWebhookToolConfigOutput? ApiIntegrationWebhook { get; init; }
 #else
-        public global::G.ApiIntegrationWebhookToolConfigInput? ApiIntegrationWebhook { get; }
+        public global::G.ApiIntegrationWebhookToolConfigOutput? ApiIntegrationWebhook { get; }
 #endif
 
         /// <summary>
@@ -189,7 +189,7 @@ namespace G
 #if NET6_0_OR_GREATER
             [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
 #endif
-            out global::G.ApiIntegrationWebhookToolConfigInput? value)
+            out global::G.ApiIntegrationWebhookToolConfigOutput? value)
         {
             value = ApiIntegrationWebhook;
             return IsApiIntegrationWebhook;
@@ -198,7 +198,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.ApiIntegrationWebhookToolConfigInput PickApiIntegrationWebhook() => ApiIntegrationWebhook is { } value
+        public global::G.ApiIntegrationWebhookToolConfigOutput PickApiIntegrationWebhook() => ApiIntegrationWebhook is { } value
             ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'ApiIntegrationWebhook' but the value was {ToString()}.");
 
@@ -241,17 +241,17 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator ToolsItem2(global::G.WebhookToolConfigInput value) => new ToolsItem2((global::G.WebhookToolConfigInput?)value);
+        public static implicit operator ToolsItem2(global::G.WebhookToolConfigOutput value) => new ToolsItem2((global::G.WebhookToolConfigOutput?)value);
 
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator global::G.WebhookToolConfigInput?(ToolsItem2 @this) => @this.Webhook;
+        public static implicit operator global::G.WebhookToolConfigOutput?(ToolsItem2 @this) => @this.Webhook;
 
         /// <summary>
         /// 
         /// </summary>
-        public ToolsItem2(global::G.WebhookToolConfigInput? value)
+        public ToolsItem2(global::G.WebhookToolConfigOutput? value)
         {
             Webhook = value;
         }
@@ -259,22 +259,22 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static ToolsItem2 FromWebhook(global::G.WebhookToolConfigInput? value) => new ToolsItem2(value);
+        public static ToolsItem2 FromWebhook(global::G.WebhookToolConfigOutput? value) => new ToolsItem2(value);
 
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator ToolsItem2(global::G.ClientToolConfigInput value) => new ToolsItem2((global::G.ClientToolConfigInput?)value);
+        public static implicit operator ToolsItem2(global::G.ClientToolConfigOutput value) => new ToolsItem2((global::G.ClientToolConfigOutput?)value);
 
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator global::G.ClientToolConfigInput?(ToolsItem2 @this) => @this.Client;
+        public static implicit operator global::G.ClientToolConfigOutput?(ToolsItem2 @this) => @this.Client;
 
         /// <summary>
         /// 
         /// </summary>
-        public ToolsItem2(global::G.ClientToolConfigInput? value)
+        public ToolsItem2(global::G.ClientToolConfigOutput? value)
         {
             Client = value;
         }
@@ -282,22 +282,22 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static ToolsItem2 FromClient(global::G.ClientToolConfigInput? value) => new ToolsItem2(value);
+        public static ToolsItem2 FromClient(global::G.ClientToolConfigOutput? value) => new ToolsItem2(value);
 
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator ToolsItem2(global::G.SystemToolConfigInput value) => new ToolsItem2((global::G.SystemToolConfigInput?)value);
+        public static implicit operator ToolsItem2(global::G.SystemToolConfigOutput value) => new ToolsItem2((global::G.SystemToolConfigOutput?)value);
 
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator global::G.SystemToolConfigInput?(ToolsItem2 @this) => @this.System;
+        public static implicit operator global::G.SystemToolConfigOutput?(ToolsItem2 @this) => @this.System;
 
         /// <summary>
         /// 
         /// </summary>
-        public ToolsItem2(global::G.SystemToolConfigInput? value)
+        public ToolsItem2(global::G.SystemToolConfigOutput? value)
         {
             System = value;
         }
@@ -305,22 +305,22 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static ToolsItem2 FromSystem(global::G.SystemToolConfigInput? value) => new ToolsItem2(value);
+        public static ToolsItem2 FromSystem(global::G.SystemToolConfigOutput? value) => new ToolsItem2(value);
 
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator ToolsItem2(global::G.MCPToolConfigInput value) => new ToolsItem2((global::G.MCPToolConfigInput?)value);
+        public static implicit operator ToolsItem2(global::G.MCPToolConfigOutput value) => new ToolsItem2((global::G.MCPToolConfigOutput?)value);
 
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator global::G.MCPToolConfigInput?(ToolsItem2 @this) => @this.Mcp;
+        public static implicit operator global::G.MCPToolConfigOutput?(ToolsItem2 @this) => @this.Mcp;
 
         /// <summary>
         /// 
         /// </summary>
-        public ToolsItem2(global::G.MCPToolConfigInput? value)
+        public ToolsItem2(global::G.MCPToolConfigOutput? value)
         {
             Mcp = value;
         }
@@ -328,22 +328,22 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static ToolsItem2 FromMcp(global::G.MCPToolConfigInput? value) => new ToolsItem2(value);
+        public static ToolsItem2 FromMcp(global::G.MCPToolConfigOutput? value) => new ToolsItem2(value);
 
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator ToolsItem2(global::G.ApiIntegrationWebhookToolConfigInput value) => new ToolsItem2((global::G.ApiIntegrationWebhookToolConfigInput?)value);
+        public static implicit operator ToolsItem2(global::G.ApiIntegrationWebhookToolConfigOutput value) => new ToolsItem2((global::G.ApiIntegrationWebhookToolConfigOutput?)value);
 
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator global::G.ApiIntegrationWebhookToolConfigInput?(ToolsItem2 @this) => @this.ApiIntegrationWebhook;
+        public static implicit operator global::G.ApiIntegrationWebhookToolConfigOutput?(ToolsItem2 @this) => @this.ApiIntegrationWebhook;
 
         /// <summary>
         /// 
         /// </summary>
-        public ToolsItem2(global::G.ApiIntegrationWebhookToolConfigInput? value)
+        public ToolsItem2(global::G.ApiIntegrationWebhookToolConfigOutput? value)
         {
             ApiIntegrationWebhook = value;
         }
@@ -351,7 +351,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static ToolsItem2 FromApiIntegrationWebhook(global::G.ApiIntegrationWebhookToolConfigInput? value) => new ToolsItem2(value);
+        public static ToolsItem2 FromApiIntegrationWebhook(global::G.ApiIntegrationWebhookToolConfigOutput? value) => new ToolsItem2(value);
 
         /// <summary>
         /// 
@@ -380,12 +380,12 @@ namespace G
         /// 
         /// </summary>
         public ToolsItem2(
-            global::G.PromptAgentAPIModelInputToolDiscriminatorType? type,
-            global::G.WebhookToolConfigInput? webhook,
-            global::G.ClientToolConfigInput? client,
-            global::G.SystemToolConfigInput? system,
-            global::G.MCPToolConfigInput? mcp,
-            global::G.ApiIntegrationWebhookToolConfigInput? apiIntegrationWebhook,
+            global::G.PromptAgentAPIModelOutputToolDiscriminatorType? type,
+            global::G.WebhookToolConfigOutput? webhook,
+            global::G.ClientToolConfigOutput? client,
+            global::G.SystemToolConfigOutput? system,
+            global::G.MCPToolConfigOutput? mcp,
+            global::G.ApiIntegrationWebhookToolConfigOutput? apiIntegrationWebhook,
             global::G.SMBToolConfig? smb
             )
         {
@@ -435,11 +435,11 @@ namespace G
         /// 
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<global::G.WebhookToolConfigInput, TResult>? webhook = null,
-            global::System.Func<global::G.ClientToolConfigInput, TResult>? client = null,
-            global::System.Func<global::G.SystemToolConfigInput, TResult>? system = null,
-            global::System.Func<global::G.MCPToolConfigInput, TResult>? mcp = null,
-            global::System.Func<global::G.ApiIntegrationWebhookToolConfigInput, TResult>? apiIntegrationWebhook = null,
+            global::System.Func<global::G.WebhookToolConfigOutput, TResult>? webhook = null,
+            global::System.Func<global::G.ClientToolConfigOutput, TResult>? client = null,
+            global::System.Func<global::G.SystemToolConfigOutput, TResult>? system = null,
+            global::System.Func<global::G.MCPToolConfigOutput, TResult>? mcp = null,
+            global::System.Func<global::G.ApiIntegrationWebhookToolConfigOutput, TResult>? apiIntegrationWebhook = null,
             global::System.Func<global::G.SMBToolConfig, TResult>? smb = null,
             bool validate = true)
         {
@@ -480,15 +480,15 @@ namespace G
         /// 
         /// </summary>
         public void Match(
-            global::System.Action<global::G.WebhookToolConfigInput>? webhook = null,
+            global::System.Action<global::G.WebhookToolConfigOutput>? webhook = null,
 
-            global::System.Action<global::G.ClientToolConfigInput>? client = null,
+            global::System.Action<global::G.ClientToolConfigOutput>? client = null,
 
-            global::System.Action<global::G.SystemToolConfigInput>? system = null,
+            global::System.Action<global::G.SystemToolConfigOutput>? system = null,
 
-            global::System.Action<global::G.MCPToolConfigInput>? mcp = null,
+            global::System.Action<global::G.MCPToolConfigOutput>? mcp = null,
 
-            global::System.Action<global::G.ApiIntegrationWebhookToolConfigInput>? apiIntegrationWebhook = null,
+            global::System.Action<global::G.ApiIntegrationWebhookToolConfigOutput>? apiIntegrationWebhook = null,
 
             global::System.Action<global::G.SMBToolConfig>? smb = null,
             bool validate = true)
@@ -528,11 +528,11 @@ namespace G
         /// 
         /// </summary>
         public void Switch(
-            global::System.Action<global::G.WebhookToolConfigInput>? webhook = null,
-            global::System.Action<global::G.ClientToolConfigInput>? client = null,
-            global::System.Action<global::G.SystemToolConfigInput>? system = null,
-            global::System.Action<global::G.MCPToolConfigInput>? mcp = null,
-            global::System.Action<global::G.ApiIntegrationWebhookToolConfigInput>? apiIntegrationWebhook = null,
+            global::System.Action<global::G.WebhookToolConfigOutput>? webhook = null,
+            global::System.Action<global::G.ClientToolConfigOutput>? client = null,
+            global::System.Action<global::G.SystemToolConfigOutput>? system = null,
+            global::System.Action<global::G.MCPToolConfigOutput>? mcp = null,
+            global::System.Action<global::G.ApiIntegrationWebhookToolConfigOutput>? apiIntegrationWebhook = null,
             global::System.Action<global::G.SMBToolConfig>? smb = null,
             bool validate = true)
         {
@@ -575,15 +575,15 @@ namespace G
             var fields = new object?[]
             {
                 Webhook,
-                typeof(global::G.WebhookToolConfigInput),
+                typeof(global::G.WebhookToolConfigOutput),
                 Client,
-                typeof(global::G.ClientToolConfigInput),
+                typeof(global::G.ClientToolConfigOutput),
                 System,
-                typeof(global::G.SystemToolConfigInput),
+                typeof(global::G.SystemToolConfigOutput),
                 Mcp,
-                typeof(global::G.MCPToolConfigInput),
+                typeof(global::G.MCPToolConfigOutput),
                 ApiIntegrationWebhook,
-                typeof(global::G.ApiIntegrationWebhookToolConfigInput),
+                typeof(global::G.ApiIntegrationWebhookToolConfigOutput),
                 Smb,
                 typeof(global::G.SMBToolConfig),
             };
@@ -602,11 +602,11 @@ namespace G
         public bool Equals(ToolsItem2 other)
         {
             return
-                global::System.Collections.Generic.EqualityComparer<global::G.WebhookToolConfigInput?>.Default.Equals(Webhook, other.Webhook) &&
-                global::System.Collections.Generic.EqualityComparer<global::G.ClientToolConfigInput?>.Default.Equals(Client, other.Client) &&
-                global::System.Collections.Generic.EqualityComparer<global::G.SystemToolConfigInput?>.Default.Equals(System, other.System) &&
-                global::System.Collections.Generic.EqualityComparer<global::G.MCPToolConfigInput?>.Default.Equals(Mcp, other.Mcp) &&
-                global::System.Collections.Generic.EqualityComparer<global::G.ApiIntegrationWebhookToolConfigInput?>.Default.Equals(ApiIntegrationWebhook, other.ApiIntegrationWebhook) &&
+                global::System.Collections.Generic.EqualityComparer<global::G.WebhookToolConfigOutput?>.Default.Equals(Webhook, other.Webhook) &&
+                global::System.Collections.Generic.EqualityComparer<global::G.ClientToolConfigOutput?>.Default.Equals(Client, other.Client) &&
+                global::System.Collections.Generic.EqualityComparer<global::G.SystemToolConfigOutput?>.Default.Equals(System, other.System) &&
+                global::System.Collections.Generic.EqualityComparer<global::G.MCPToolConfigOutput?>.Default.Equals(Mcp, other.Mcp) &&
+                global::System.Collections.Generic.EqualityComparer<global::G.ApiIntegrationWebhookToolConfigOutput?>.Default.Equals(ApiIntegrationWebhook, other.ApiIntegrationWebhook) &&
                 global::System.Collections.Generic.EqualityComparer<global::G.SMBToolConfig?>.Default.Equals(Smb, other.Smb) 
                 ;
         }

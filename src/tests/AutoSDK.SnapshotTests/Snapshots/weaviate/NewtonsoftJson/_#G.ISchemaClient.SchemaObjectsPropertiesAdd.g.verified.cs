@@ -1,4 +1,4 @@
-﻿//HintName: G.ISchemaClient.SchemaObjectsPropertiesAdd.g.cs
+//HintName: G.ISchemaClient.SchemaObjectsPropertiesAdd.g.cs
 #nullable enable
 
 namespace G
@@ -82,7 +82,7 @@ namespace G
             global::System.Collections.Generic.IList<global::G.DataTypeItem> dataType,
             string name,
             string? description = default,
-            global::G.PropertyModuleConfig? moduleConfig = default,
+            global::G.PropertyModuleConfig2? moduleConfig = default,
             bool? indexInverted = default,
             bool? indexFilterable = default,
             bool? indexSearchable = default,

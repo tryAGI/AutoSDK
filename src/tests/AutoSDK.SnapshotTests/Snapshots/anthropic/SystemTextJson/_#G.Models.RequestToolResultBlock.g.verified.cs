@@ -1,4 +1,4 @@
-﻿//HintName: G.Models.RequestToolResultBlock.g.cs
+//HintName: G.Models.RequestToolResultBlock.g.cs
 
 #nullable enable
 
@@ -13,7 +13,7 @@ namespace G
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("cache_control")]
-        public global::G.CacheControlVariant117? CacheControl { get; set; }
+        public global::G.CacheControlVariant111? CacheControl { get; set; }
 
         /// <summary>
         /// 
@@ -39,8 +39,8 @@ namespace G
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("content")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.AnyOfJsonConverter<string, global::System.Collections.Generic.IList<global::G.ContentVariant2Item2>>))]
-        public global::G.AnyOf<string, global::System.Collections.Generic.IList<global::G.ContentVariant2Item2>>? Content { get; set; }
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.AnyOfJsonConverter<string, global::System.Collections.Generic.IList<global::G.ContentVariant2Item>>))]
+        public global::G.AnyOf<string, global::System.Collections.Generic.IList<global::G.ContentVariant2Item>>? Content { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -61,10 +61,10 @@ namespace G
 #endif
         public RequestToolResultBlock(
             string toolUseId,
-            global::G.CacheControlVariant117? cacheControl,
+            global::G.CacheControlVariant111? cacheControl,
             global::G.RequestToolResultBlockType type,
             bool? isError,
-            global::G.AnyOf<string, global::System.Collections.Generic.IList<global::G.ContentVariant2Item2>>? content)
+            global::G.AnyOf<string, global::System.Collections.Generic.IList<global::G.ContentVariant2Item>>? content)
         {
             this.CacheControl = cacheControl;
             this.Type = type;

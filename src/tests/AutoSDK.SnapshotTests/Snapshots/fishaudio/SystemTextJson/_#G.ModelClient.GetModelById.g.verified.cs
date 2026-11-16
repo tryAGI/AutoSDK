@@ -49,7 +49,7 @@ namespace G
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::G.ApiException"></exception>
-        public async global::System.Threading.Tasks.Task<global::G.GetModelResponse2> GetModelByIdAsync(
+        public async global::System.Threading.Tasks.Task<global::G.GetModelResponse> GetModelByIdAsync(
             string id,
             global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default)
@@ -69,7 +69,7 @@ namespace G
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::G.ApiException"></exception>
-        public async global::System.Threading.Tasks.Task<global::G.AutoSDKHttpResponse<global::G.GetModelResponse2>> GetModelByIdAsResponseAsync(
+        public async global::System.Threading.Tasks.Task<global::G.AutoSDKHttpResponse<global::G.GetModelResponse>> GetModelByIdAsResponseAsync(
             string id,
             global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default)
@@ -332,19 +332,19 @@ namespace G
                             {
                                 string? __content_404 = null;
                                 global::System.Exception? __exception_404 = null;
-                                global::G.GetModelResponse3? __value_404 = null;
+                                global::G.GetModelResponse2? __value_404 = null;
                                 try
                                 {
                                     if (__effectiveReadResponseAsString)
                                     {
                                         __content_404 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
-                                        __value_404 = global::G.GetModelResponse3.FromJson(__content_404, JsonSerializerOptions);
+                                        __value_404 = global::G.GetModelResponse2.FromJson(__content_404, JsonSerializerOptions);
                                     }
                                     else
                                     {
                                         __content_404 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
 
-                                        __value_404 = global::G.GetModelResponse3.FromJson(__content_404, JsonSerializerOptions);
+                                        __value_404 = global::G.GetModelResponse2.FromJson(__content_404, JsonSerializerOptions);
                                     }
                                 }
                                 catch (global::System.Exception __ex)
@@ -353,7 +353,7 @@ namespace G
                                 }
 
 
-                                throw global::G.ApiException<global::G.GetModelResponse3>.Create(
+                                throw global::G.ApiException<global::G.GetModelResponse2>.Create(
                                     statusCode: __response.StatusCode,
                                     message: __content_404 ?? __response.ReasonPhrase ?? string.Empty,
                                     innerException: __exception_404,
@@ -369,19 +369,19 @@ namespace G
                             {
                                 string? __content_422 = null;
                                 global::System.Exception? __exception_422 = null;
-                                global::System.Collections.Generic.IList<global::G.GetModelResponseItem2>? __value_422 = null;
+                                global::System.Collections.Generic.IList<global::G.GetModelResponseItem>? __value_422 = null;
                                 try
                                 {
                                     if (__effectiveReadResponseAsString)
                                     {
                                         __content_422 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
-                                        __value_422 = global::System.Text.Json.JsonSerializer.Deserialize<global::System.Collections.Generic.IList<global::G.GetModelResponseItem2>?>(__content_422, JsonSerializerOptions);
+                                        __value_422 = global::System.Text.Json.JsonSerializer.Deserialize<global::System.Collections.Generic.IList<global::G.GetModelResponseItem>?>(__content_422, JsonSerializerOptions);
                                     }
                                     else
                                     {
                                         __content_422 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
 
-                                        __value_422 = global::System.Text.Json.JsonSerializer.Deserialize<global::System.Collections.Generic.IList<global::G.GetModelResponseItem2>?>(__content_422, JsonSerializerOptions);
+                                        __value_422 = global::System.Text.Json.JsonSerializer.Deserialize<global::System.Collections.Generic.IList<global::G.GetModelResponseItem>?>(__content_422, JsonSerializerOptions);
                                     }
                                 }
                                 catch (global::System.Exception __ex)
@@ -390,7 +390,7 @@ namespace G
                                 }
 
 
-                                throw global::G.ApiException<global::System.Collections.Generic.IList<global::G.GetModelResponseItem2>>.Create(
+                                throw global::G.ApiException<global::System.Collections.Generic.IList<global::G.GetModelResponseItem>>.Create(
                                     statusCode: __response.StatusCode,
                                     message: __content_422 ?? __response.ReasonPhrase ?? string.Empty,
                                     innerException: __exception_422,
@@ -423,9 +423,9 @@ namespace G
                                 {
                                     __response.EnsureSuccessStatusCode();
 
-                                    var __value = global::G.GetModelResponse2.FromJson(__content, JsonSerializerOptions) ??
+                                    var __value = global::G.GetModelResponse.FromJson(__content, JsonSerializerOptions) ??
                                         throw new global::System.InvalidOperationException($"Response deserialization failed for \"{__content}\" ");
-                                    return new global::G.AutoSDKHttpResponse<global::G.GetModelResponse2>(
+                                    return new global::G.AutoSDKHttpResponse<global::G.GetModelResponse>(
                                         statusCode: __response.StatusCode,
                                         headers: global::G.AutoSDKHttpResponse.CreateHeaders(__response),
                                         requestUri: __response.RequestMessage?.RequestUri,
@@ -455,9 +455,9 @@ namespace G
                 #endif
                                     ).ConfigureAwait(false);
 
-                                    var __value = await global::G.GetModelResponse2.FromJsonStreamAsync(__content, JsonSerializerOptions).ConfigureAwait(false) ??
+                                    var __value = await global::G.GetModelResponse.FromJsonStreamAsync(__content, JsonSerializerOptions).ConfigureAwait(false) ??
                                         throw new global::System.InvalidOperationException("Response deserialization failed.");
-                                    return new global::G.AutoSDKHttpResponse<global::G.GetModelResponse2>(
+                                    return new global::G.AutoSDKHttpResponse<global::G.GetModelResponse>(
                                         statusCode: __response.StatusCode,
                                         headers: global::G.AutoSDKHttpResponse.CreateHeaders(__response),
                                         requestUri: __response.RequestMessage?.RequestUri,

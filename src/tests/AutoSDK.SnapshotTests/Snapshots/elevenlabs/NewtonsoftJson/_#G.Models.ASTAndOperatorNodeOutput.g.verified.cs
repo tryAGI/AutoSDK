@@ -1,4 +1,4 @@
-﻿//HintName: G.Models.ASTAndOperatorNodeOutput.g.cs
+//HintName: G.Models.ASTAndOperatorNodeOutput.g.cs
 
 #nullable enable
 
@@ -20,7 +20,7 @@ namespace G
         /// Child nodes of the logical operator.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("children", Required = global::Newtonsoft.Json.Required.Always)]
-        public global::System.Collections.Generic.IList<global::G.ChildrenItem2> Children { get; set; } = default!;
+        public global::System.Collections.Generic.IList<global::G.ChildrenItem4> Children { get; set; } = default!;
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -38,7 +38,7 @@ namespace G
         /// Default Value: and_operator
         /// </param>
         public ASTAndOperatorNodeOutput(
-            global::System.Collections.Generic.IList<global::G.ChildrenItem2> children,
+            global::System.Collections.Generic.IList<global::G.ChildrenItem4> children,
             string type = "and_operator")
         {
             this.Type = type;

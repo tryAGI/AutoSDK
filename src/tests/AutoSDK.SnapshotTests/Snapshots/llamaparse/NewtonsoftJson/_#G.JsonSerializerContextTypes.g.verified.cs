@@ -683,7 +683,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.Parameters? Type161 { get; set; }
+        public global::G.Parameters2? Type161 { get; set; }
         /// <summary>
         /// 
         /// </summary>
@@ -727,7 +727,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.Parameters2? Type172 { get; set; }
+        public global::G.Parameters? Type172 { get; set; }
         /// <summary>
         /// 
         /// </summary>
@@ -939,7 +939,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.EmbeddingConfigVariant1? Type225 { get; set; }
+        public global::G.EmbeddingConfigVariant13? Type225 { get; set; }
         /// <summary>
         /// 
         /// </summary>
@@ -1807,7 +1807,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.EmbeddingConfigVariant12? Type442 { get; set; }
+        public global::G.EmbeddingConfigVariant1? Type442 { get; set; }
         /// <summary>
         /// 
         /// </summary>
@@ -1867,7 +1867,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.EmbeddingConfigVariant13? Type457 { get; set; }
+        public global::G.EmbeddingConfigVariant12? Type457 { get; set; }
         /// <summary>
         /// 
         /// </summary>
@@ -2047,11 +2047,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::G.ItemsItem4>? Type502 { get; set; }
+        public global::System.Collections.Generic.IList<global::G.ItemsItem3>? Type502 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.ItemsItem4? Type503 { get; set; }
+        public global::G.ItemsItem3? Type503 { get; set; }
         /// <summary>
         /// 
         /// </summary>
@@ -2504,7 +2504,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.List<global::G.ItemsItem4>? ListType62 { get; set; }
+        public global::System.Collections.Generic.List<global::G.ItemsItem3>? ListType62 { get; set; }
         /// <summary>
         /// 
         /// </summary>

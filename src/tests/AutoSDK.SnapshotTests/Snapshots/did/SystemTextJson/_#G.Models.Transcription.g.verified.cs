@@ -1,4 +1,4 @@
-﻿//HintName: G.Models.Transcription.g.cs
+//HintName: G.Models.Transcription.g.cs
 
 #nullable enable
 
@@ -20,9 +20,9 @@ namespace G
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("version")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.TranscriptionVersion2JsonConverter))]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.TranscriptionVersionJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::G.TranscriptionVersion2 Version { get; set; }
+        public required global::G.TranscriptionVersion Version { get; set; }
 
         /// <summary>
         /// 
@@ -47,7 +47,7 @@ namespace G
 #endif
         public Transcription(
             string url,
-            global::G.TranscriptionVersion2 version,
+            global::G.TranscriptionVersion version,
             bool? selected)
         {
             this.Url = url ?? throw new global::System.ArgumentNullException(nameof(url));

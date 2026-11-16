@@ -1,4 +1,4 @@
-﻿//HintName: G.Models.CreateChatCompletionResponse5.g.cs
+//HintName: G.Models.CreateChatCompletionResponse5.g.cs
 
 #nullable enable
 
@@ -13,8 +13,8 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("status")]
-        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.CreateChatCompletionResponseStatus4JsonConverter))]
-        public global::G.CreateChatCompletionResponseStatus4? Status { get; set; }
+        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.CreateChatCompletionResponseStatusJsonConverter))]
+        public global::G.CreateChatCompletionResponseStatus? Status { get; set; }
 
         /// <summary>
         /// Example: Cannot find requested asset under given api key.
@@ -37,7 +37,7 @@ namespace G
         /// Example: Cannot find requested asset under given api key.
         /// </param>
         public CreateChatCompletionResponse5(
-            global::G.CreateChatCompletionResponseStatus4? status,
+            global::G.CreateChatCompletionResponseStatus? status,
             string? message)
         {
             this.Status = status;

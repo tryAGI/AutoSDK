@@ -1243,7 +1243,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.FunctionCall2? Type301 { get; set; }
+        public global::G.FunctionCall? Type301 { get; set; }
         /// <summary>
         /// 
         /// </summary>
@@ -1271,7 +1271,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::G.FunctionCall2>? Type308 { get; set; }
+        public global::System.Collections.Generic.IList<global::G.FunctionCall>? Type308 { get; set; }
         /// <summary>
         /// 
         /// </summary>
@@ -3247,11 +3247,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.Score2? Type802 { get; set; }
+        public global::G.Score? Type802 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.Dictionary<string, global::G.Score2>? Type803 { get; set; }
+        public global::System.Collections.Generic.Dictionary<string, global::G.Score>? Type803 { get; set; }
         /// <summary>
         /// 
         /// </summary>
@@ -3831,495 +3831,483 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.GetPrompt2025VersionRequest2? Type948 { get; set; }
+        public global::G.CreatePromptRequest? Type948 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.GetPrompt2025EnvironmentVersionRequest2? Type949 { get; set; }
+        public global::G.UpdatePromptUserDefinedIdRequest? Type949 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.GetPrompt2025ProductionVersionRequest2? Type950 { get; set; }
+        public global::G.PromotePromptVersionToProductionRequest? Type950 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.CreatePromptRequest? Type951 { get; set; }
+        public global::G.GetInputsRequest? Type951 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.UpdatePromptUserDefinedIdRequest? Type952 { get; set; }
+        public global::G.CreateNewExperimentRequest? Type952 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.PromotePromptVersionToProductionRequest? Type953 { get; set; }
+        public global::G.AddManualRowToExperimentRequest? Type953 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.GetInputsRequest? Type954 { get; set; }
+        public global::G.AddManualRowsToExperimentBatchRequest? Type954 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.CreateNewExperimentRequest? Type955 { get; set; }
+        public global::G.DeleteExperimentTableRowsRequest? Type955 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.AddManualRowToExperimentRequest? Type956 { get; set; }
+        public global::G.CreateExperimentTableRowBatchRequest? Type956 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.AddManualRowsToExperimentBatchRequest? Type957 { get; set; }
+        public global::System.Collections.Generic.IList<global::G.CreateExperimentTableRowBatchRequestRow>? Type957 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.DeleteExperimentTableRowsRequest? Type958 { get; set; }
+        public global::G.CreateExperimentTableRowBatchRequestRow? Type958 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.CreateExperimentTableRowBatchRequest? Type959 { get; set; }
+        public global::G.UpdateExperimentTableRowRequest? Type959 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::G.CreateExperimentTableRowBatchRequestRow>? Type960 { get; set; }
+        public global::G.RunHypothesisRequest? Type960 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.CreateExperimentTableRowBatchRequestRow? Type961 { get; set; }
+        public global::G.CreateExperimentEvaluatorRequest? Type961 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.UpdateExperimentTableRowRequest? Type962 { get; set; }
+        public global::G.GetRequestsByIdsRequest? Type962 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.RunHypothesisRequest? Type963 { get; set; }
+        public global::G.FeedbackRequestRequest? Type963 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.CreateExperimentEvaluatorRequest? Type964 { get; set; }
+        public global::G.PutPropertyRequest? Type964 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.GetRequestsByIdsRequest? Type965 { get; set; }
+        public global::G.AddToWaitlistRequest? Type965 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.FeedbackRequestRequest? Type966 { get; set; }
+        public global::G.TrackShareRequest? Type966 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.PutPropertyRequest? Type967 { get; set; }
+        public global::G.TrackShareRequestPlatform? Type967 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.AddToWaitlistRequest? Type968 { get; set; }
+        public global::G.UpdateKeyRequest? Type968 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.TrackShareRequest? Type969 { get; set; }
+        public global::G.GetUserMetricsOverviewRequest? Type969 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.TrackShareRequestPlatform? Type970 { get; set; }
+        public global::G.UpdateSessionFeedbackRequest? Type970 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.UpdateKeyRequest? Type971 { get; set; }
+        public global::G.UpdateSessionTagRequest? Type971 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.GetUserMetricsOverviewRequest? Type972 { get; set; }
+        public global::G.AllOf<global::G.DataOverTimeRequest, global::G.GetPropertiesOverTimeRequest2>? Type972 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.UpdateSessionFeedbackRequest? Type973 { get; set; }
+        public global::G.GetPropertiesOverTimeRequest2? Type973 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.UpdateSessionTagRequest? Type974 { get; set; }
+        public global::G.HidePropertyRequest? Type974 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.AllOf<global::G.DataOverTimeRequest, global::G.GetPropertiesOverTimeRequest2>? Type975 { get; set; }
+        public global::G.RestorePropertyRequest? Type975 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.GetPropertiesOverTimeRequest2? Type976 { get; set; }
+        public global::G.SearchPropertiesRequest? Type976 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.HidePropertyRequest? Type977 { get; set; }
+        public global::G.AllOf<global::G.OpenAIChatRequest, global::G.GenerateRequest4>? Type977 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.RestorePropertyRequest? Type978 { get; set; }
+        public global::G.GenerateRequest4? Type978 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.SearchPropertiesRequest? Type979 { get; set; }
+        public global::G.RequestsThroughHeliconeRequest? Type979 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.AllOf<global::G.OpenAIChatRequest, global::G.GenerateRequest2>? Type980 { get; set; }
+        public global::G.GetApiKeyRequest? Type980 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.GenerateRequest2? Type981 { get; set; }
+        public global::G.AddSessionRequest? Type981 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.RequestsThroughHeliconeRequest? Type982 { get; set; }
+        public global::System.Collections.Generic.IList<global::G.ModelsToCompare>? Type982 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.GetApiKeyRequest? Type983 { get; set; }
+        public global::G.GetSecurityRequest? Type983 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.AddSessionRequest? Type984 { get; set; }
+        public global::G.CreateNewEmptyExperimentRequest? Type984 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::G.ModelsToCompare>? Type985 { get; set; }
+        public global::G.CreateExperimentCellRequest? Type985 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.GetSecurityRequest? Type986 { get; set; }
+        public global::G.UpdateExperimentCellRequest? Type986 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.CreateNewEmptyExperimentRequest? Type987 { get; set; }
+        public global::G.CreateExperimentColumnRequest? Type987 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.CreateExperimentCellRequest? Type988 { get; set; }
+        public global::G.CreateExperimentTableRowRequest? Type988 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.UpdateExperimentCellRequest? Type989 { get; set; }
+        public global::G.CreateExperimentTableRowWithCellsBatchRequest? Type989 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.CreateExperimentColumnRequest? Type990 { get; set; }
+        public global::System.Collections.Generic.IList<global::G.CreateExperimentTableRowWithCellsBatchRequestRow>? Type990 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.CreateExperimentTableRowRequest? Type991 { get; set; }
+        public global::G.CreateExperimentTableRowWithCellsBatchRequestRow? Type991 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.CreateExperimentTableRowWithCellsBatchRequest? Type992 { get; set; }
+        public global::System.Collections.Generic.IList<global::G.CreateExperimentTableRowWithCellsBatchRequestRowCell>? Type992 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::G.CreateExperimentTableRowWithCellsBatchRequestRow>? Type993 { get; set; }
+        public global::G.CreateExperimentTableRowWithCellsBatchRequestRowCell? Type993 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.CreateExperimentTableRowWithCellsBatchRequestRow? Type994 { get; set; }
+        public global::G.UpdateExperimentMetaRequest? Type994 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::G.CreateExperimentTableRowWithCellsBatchRequestRowCell>? Type995 { get; set; }
+        public global::G.CreateNewExperimentHypothesisRequest? Type995 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.CreateExperimentTableRowWithCellsBatchRequestRowCell? Type996 { get; set; }
+        public global::G.CreateNewExperimentHypothesisRequestStatus? Type996 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.UpdateExperimentMetaRequest? Type997 { get; set; }
+        public global::G.CreateExperimentEvaluatorOldRequest? Type997 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.CreateNewExperimentHypothesisRequest? Type998 { get; set; }
+        public global::G.GetExperimentsOldRequest? Type998 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.CreateNewExperimentHypothesisRequestStatus? Type999 { get; set; }
+        public global::G.GetDatasetsRequest? Type999 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.CreateExperimentEvaluatorOldRequest? Type1000 { get; set; }
+        public global::G.InsertDatasetRowRequest? Type1000 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.GetExperimentsOldRequest? Type1001 { get; set; }
+        public global::G.CreateDatasetRowRequest? Type1001 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.GetDatasetsRequest? Type1002 { get; set; }
+        public global::G.MutateDatasetRequest? Type1002 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.InsertDatasetRowRequest? Type1003 { get; set; }
+        public global::G.QueryHeliconeDatasetRowsRequest? Type1003 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.CreateDatasetRowRequest? Type1004 { get; set; }
+        public global::G.QueryHeliconeDatasetRequest? Type1004 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.MutateDatasetRequest? Type1005 { get; set; }
+        public global::G.UpdateHeliconeDatasetRequestRequest? Type1005 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.QueryHeliconeDatasetRowsRequest? Type1006 { get; set; }
+        public global::G.AddEvalRequest? Type1006 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.QueryHeliconeDatasetRequest? Type1007 { get; set; }
+        public global::G.UpdateAlertBannerActiveRequest? Type1007 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.UpdateHeliconeDatasetRequestRequest? Type1008 { get; set; }
+        public global::G.AllOf<global::G.OpenAIChatRequest, global::G.GenerateRequest2>? Type1008 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.AddEvalRequest? Type1009 { get; set; }
+        public global::G.GenerateRequest2? Type1009 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.UpdateAlertBannerActiveRequest? Type1010 { get; set; }
+        public global::G.UpsertThreadMessageRequest? Type1010 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.AllOf<global::G.OpenAIChatRequest, global::G.GenerateRequest4>? Type1011 { get; set; }
+        public global::G.UpsertThreadMessageRequestMetadata? Type1011 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.GenerateRequest4? Type1012 { get; set; }
+        public global::G.SearchDocsRequest? Type1012 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.UpsertThreadMessageRequest? Type1013 { get; set; }
+        public global::G.AddOnsProductType? Type1013 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.UpsertThreadMessageRequestMetadata? Type1014 { get; set; }
+        public global::G.DeleteAddOnsProductType? Type1014 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.SearchDocsRequest? Type1015 { get; set; }
+        public global::G.GetSpendBreakdownTimeRange? Type1015 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.AddOnsProductType? Type1016 { get; set; }
+        public global::G.AnyOf<global::G.DeleteProviderKeyResponseVariant1, global::G.DeleteProviderKeyResponseVariant2>? Type1016 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.DeleteAddOnsProductType? Type1017 { get; set; }
+        public global::G.DeleteProviderKeyResponseVariant1? Type1017 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.GetSpendBreakdownTimeRange? Type1018 { get; set; }
+        public global::G.DeleteProviderKeyResponseVariant1ProviderName? Type1018 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.AnyOf<global::G.DeleteProviderKeyResponseVariant1, global::G.DeleteProviderKeyResponseVariant2>? Type1019 { get; set; }
+        public global::G.DeleteProviderKeyResponseVariant2? Type1019 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.DeleteProviderKeyResponseVariant1? Type1020 { get; set; }
+        public global::G.AnyOf<global::G.DecryptedProviderKey, global::G.GetProviderKeyResponse2>? Type1020 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.DeleteProviderKeyResponseVariant1ProviderName? Type1021 { get; set; }
+        public global::G.GetProviderKeyResponse2? Type1021 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.DeleteProviderKeyResponseVariant2? Type1022 { get; set; }
+        public global::G.AnyOf<global::G.CreateProviderKeyResponseVariant1, global::G.CreateProviderKeyResponseVariant2>? Type1022 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.AnyOf<global::G.DecryptedProviderKey, global::G.GetProviderKeyResponse2>? Type1023 { get; set; }
+        public global::G.CreateProviderKeyResponseVariant1? Type1023 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.GetProviderKeyResponse2? Type1024 { get; set; }
+        public global::G.CreateProviderKeyResponseVariant2? Type1024 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.AnyOf<global::G.CreateProviderKeyResponseVariant1, global::G.CreateProviderKeyResponseVariant2>? Type1025 { get; set; }
+        public global::G.AnyOf<global::System.Collections.Generic.IList<global::G.ProviderKeyRow>, global::G.GetProviderKeysResponse2>? Type1025 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.CreateProviderKeyResponseVariant1? Type1026 { get; set; }
+        public global::System.Collections.Generic.IList<global::G.ProviderKeyRow>? Type1026 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.CreateProviderKeyResponseVariant2? Type1027 { get; set; }
+        public global::G.GetProviderKeysResponse2? Type1027 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.AnyOf<global::System.Collections.Generic.IList<global::G.ProviderKeyRow>, global::G.GetProviderKeysResponse2>? Type1028 { get; set; }
+        public global::G.AnyOf<global::G.CreateAPIKeyResponseVariant1, global::G.CreateAPIKeyResponseVariant2>? Type1028 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::G.ProviderKeyRow>? Type1029 { get; set; }
+        public global::G.CreateAPIKeyResponseVariant1? Type1029 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.GetProviderKeysResponse2? Type1030 { get; set; }
+        public global::G.CreateAPIKeyResponseVariant2? Type1030 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.AnyOf<global::G.CreateAPIKeyResponseVariant1, global::G.CreateAPIKeyResponseVariant2>? Type1031 { get; set; }
+        public global::G.AnyOf<global::G.CreateProxyKeyResponseVariant1, global::G.CreateProxyKeyResponseVariant2>? Type1031 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.CreateAPIKeyResponseVariant1? Type1032 { get; set; }
+        public global::G.CreateProxyKeyResponseVariant1? Type1032 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.CreateAPIKeyResponseVariant2? Type1033 { get; set; }
+        public global::G.CreateProxyKeyResponseVariant2? Type1033 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.AnyOf<global::G.CreateProxyKeyResponseVariant1, global::G.CreateProxyKeyResponseVariant2>? Type1034 { get; set; }
+        public global::G.AnyOf<global::G.DeleteAPIKeyResponseVariant1, global::G.DeleteAPIKeyResponseVariant2>? Type1034 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.CreateProxyKeyResponseVariant1? Type1035 { get; set; }
+        public global::G.DeleteAPIKeyResponseVariant1? Type1035 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.CreateProxyKeyResponseVariant2? Type1036 { get; set; }
+        public global::G.DeleteAPIKeyResponseVariant2? Type1036 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.AnyOf<global::G.DeleteAPIKeyResponseVariant1, global::G.DeleteAPIKeyResponseVariant2>? Type1037 { get; set; }
+        public global::G.AnyOf<global::G.UpdateAPIKeyResponseVariant1, global::G.UpdateAPIKeyResponseVariant2>? Type1037 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.DeleteAPIKeyResponseVariant1? Type1038 { get; set; }
+        public global::G.UpdateAPIKeyResponseVariant1? Type1038 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.DeleteAPIKeyResponseVariant2? Type1039 { get; set; }
+        public global::G.UpdateAPIKeyResponseVariant2? Type1039 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.AnyOf<global::G.UpdateAPIKeyResponseVariant1, global::G.UpdateAPIKeyResponseVariant2>? Type1040 { get; set; }
+        public global::G.CreateCloudGatewayCheckoutSessionResponse? Type1040 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.UpdateAPIKeyResponseVariant1? Type1041 { get; set; }
+        public global::G.PreviewInvoiceResponse? Type1041 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.UpdateAPIKeyResponseVariant2? Type1042 { get; set; }
+        public global::System.Collections.Generic.IList<global::G.LLMUsage>? Type1042 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.CreateCloudGatewayCheckoutSessionResponse? Type1043 { get; set; }
+        public global::G.PreviewInvoiceResponseDiscount? Type1043 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.PreviewInvoiceResponse? Type1044 { get; set; }
+        public global::G.PreviewInvoiceResponseDiscountCoupon? Type1044 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::G.LLMUsage>? Type1045 { get; set; }
+        public global::G.PreviewInvoiceResponseLines? Type1045 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.PreviewInvoiceResponseDiscount? Type1046 { get; set; }
+        public global::System.Collections.Generic.IList<global::G.PreviewInvoiceResponseLinesDataItem>? Type1046 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.PreviewInvoiceResponseDiscountCoupon? Type1047 { get; set; }
+        public global::G.PreviewInvoiceResponseLinesDataItem? Type1047 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.PreviewInvoiceResponseLines? Type1048 { get; set; }
+        public global::G.GetSubscriptionResponse? Type1048 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::G.PreviewInvoiceResponseLinesDataItem>? Type1049 { get; set; }
+        public global::System.Collections.Generic.IList<global::G.GetSubscriptionResponseItem>? Type1049 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.PreviewInvoiceResponseLinesDataItem? Type1050 { get; set; }
+        public global::G.GetSubscriptionResponseItem? Type1050 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.GetSubscriptionResponse? Type1051 { get; set; }
+        public global::G.GetSubscriptionResponseItemPrice? Type1051 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::G.GetSubscriptionResponseItem>? Type1052 { get; set; }
+        public global::G.GetSubscriptionResponseItemPriceProduct? Type1052 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.GetSubscriptionResponseItem? Type1053 { get; set; }
+        public global::G.DisableAutoTopoffResponse? Type1053 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.GetSubscriptionResponseItemPrice? Type1054 { get; set; }
+        public global::System.Collections.Generic.IList<global::G.PaymentMethod>? Type1054 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.GetSubscriptionResponseItemPriceProduct? Type1055 { get; set; }
+        public global::G.CreateSetupSessionResponse? Type1055 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.DisableAutoTopoffResponse? Type1056 { get; set; }
+        public global::G.RemovePaymentMethodResponse? Type1056 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::G.PaymentMethod>? Type1057 { get; set; }
+        public global::G.AnyOf<global::G.ResultSuccessUnknown, global::G.ResultErrorUnknown>? Type1057 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.CreateSetupSessionResponse? Type1058 { get; set; }
+        public global::G.AnyOf<global::G.ValidationResult, object>? Type1058 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.RemovePaymentMethodResponse? Type1059 { get; set; }
+        public global::G.AnyOf<global::G.ResultErrorString, global::G.ResultSuccessString, global::G.ResultSuccessUnknownArray, global::G.HidePropertyResponse2>? Type1059 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.AnyOf<global::G.ResultSuccessUnknown, global::G.ResultErrorUnknown>? Type1060 { get; set; }
+        public global::G.HidePropertyResponse2? Type1060 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.AnyOf<global::G.ValidationResult, object>? Type1061 { get; set; }
+        public global::G.HidePropertyResponseData? Type1061 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.AnyOf<global::G.ResultErrorString, global::G.ResultSuccessString, global::G.ResultSuccessUnknownArray, global::G.HidePropertyResponse2>? Type1062 { get; set; }
+        public global::G.AnyOf<global::G.ResultErrorString, global::G.ResultSuccessString, global::G.ResultSuccessUnknownArray, global::G.RestorePropertyResponse2>? Type1062 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.HidePropertyResponse2? Type1063 { get; set; }
+        public global::G.RestorePropertyResponse2? Type1063 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.HidePropertyResponseData? Type1064 { get; set; }
+        public global::G.RestorePropertyResponseData? Type1064 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.AnyOf<global::G.ResultErrorString, global::G.ResultSuccessString, global::G.ResultSuccessUnknownArray, global::G.RestorePropertyResponse2>? Type1065 { get; set; }
+        public global::G.AnyOf<global::G.ResultErrorString, global::G.ResultSuccessUnknown>? Type1065 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.RestorePropertyResponse2? Type1066 { get; set; }
+        public global::G.AnyOf<global::G.ResultErrorUnknown, global::G.ResultSuccessAny>? Type1066 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.RestorePropertyResponseData? Type1067 { get; set; }
-        /// <summary>
-        /// 
-        /// </summary>
-        public global::G.AnyOf<global::G.ResultErrorString, global::G.ResultSuccessUnknown>? Type1068 { get; set; }
-        /// <summary>
-        /// 
-        /// </summary>
-        public global::G.AnyOf<global::G.ResultErrorUnknown, global::G.ResultSuccessAny>? Type1069 { get; set; }
-        /// <summary>
-        /// 
-        /// </summary>
-        public global::System.Collections.Generic.IList<global::G.Customer>? Type1070 { get; set; }
+        public global::System.Collections.Generic.IList<global::G.Customer>? Type1067 { get; set; }
 
         /// <summary>
         /// 
@@ -4464,7 +4452,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.List<global::G.FunctionCall2>? ListType35 { get; set; }
+        public global::System.Collections.Generic.List<global::G.FunctionCall>? ListType35 { get; set; }
         /// <summary>
         /// 
         /// </summary>

@@ -1,4 +1,4 @@
-﻿//HintName: G.Models.Message.g.cs
+//HintName: G.Models.Message.g.cs
 
 #nullable enable
 
@@ -13,9 +13,9 @@ namespace G
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("role")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.MessageRoleJsonConverter))]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.MessageRole2JsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::G.MessageRole Role { get; set; }
+        public required global::G.MessageRole2 Role { get; set; }
 
         /// <summary>
         /// 
@@ -47,7 +47,7 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public Message(
-            global::G.MessageRole role,
+            global::G.MessageRole2 role,
             string content,
             string createdAt)
         {

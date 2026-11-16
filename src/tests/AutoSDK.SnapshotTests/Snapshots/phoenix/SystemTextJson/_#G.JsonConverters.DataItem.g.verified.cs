@@ -18,39 +18,39 @@ namespace G.JsonConverters
 
 
             var readerCopy = reader;
-            var discriminatorTypeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.GetAnnotationConfigsResponseBodyDataItemDiscriminator), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.GetAnnotationConfigsResponseBodyDataItemDiscriminator> ??
-                            throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::G.GetAnnotationConfigsResponseBodyDataItemDiscriminator)}");
+            var discriminatorTypeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.GetUsersResponseBodyDataItemDiscriminator), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.GetUsersResponseBodyDataItemDiscriminator> ??
+                            throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::G.GetUsersResponseBodyDataItemDiscriminator)}");
             var discriminator = global::System.Text.Json.JsonSerializer.Deserialize(ref readerCopy, discriminatorTypeInfo);
 
-            global::G.CategoricalAnnotationConfig? categorical = default;
-            if (discriminator?.Type == global::G.GetAnnotationConfigsResponseBodyDataItemDiscriminatorType.Categorical)
+            global::G.LocalUser? local = default;
+            if (discriminator?.AuthMethod == global::G.GetUsersResponseBodyDataItemDiscriminatorAuthMethod.Local)
             {
-                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.CategoricalAnnotationConfig), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.CategoricalAnnotationConfig> ??
-                               throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::G.CategoricalAnnotationConfig)}");
-                categorical = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.LocalUser), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.LocalUser> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::G.LocalUser)}");
+                local = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
             }
-            global::G.ContinuousAnnotationConfig? continuous = default;
-            if (discriminator?.Type == global::G.GetAnnotationConfigsResponseBodyDataItemDiscriminatorType.Continuous)
+            global::G.OAuth2User? oauth2 = default;
+            if (discriminator?.AuthMethod == global::G.GetUsersResponseBodyDataItemDiscriminatorAuthMethod.Oauth2)
             {
-                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.ContinuousAnnotationConfig), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.ContinuousAnnotationConfig> ??
-                               throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::G.ContinuousAnnotationConfig)}");
-                continuous = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.OAuth2User), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.OAuth2User> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::G.OAuth2User)}");
+                oauth2 = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
             }
-            global::G.FreeformAnnotationConfig? freeform = default;
-            if (discriminator?.Type == global::G.GetAnnotationConfigsResponseBodyDataItemDiscriminatorType.Freeform)
+            global::G.LDAPUser? ldap = default;
+            if (discriminator?.AuthMethod == global::G.GetUsersResponseBodyDataItemDiscriminatorAuthMethod.Ldap)
             {
-                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.FreeformAnnotationConfig), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.FreeformAnnotationConfig> ??
-                               throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::G.FreeformAnnotationConfig)}");
-                freeform = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.LDAPUser), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.LDAPUser> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::G.LDAPUser)}");
+                ldap = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
             }
 
             var __value = new global::G.DataItem(
-                discriminator?.Type,
-                categorical,
+                discriminator?.AuthMethod,
+                local,
 
-                continuous,
+                oauth2,
 
-                freeform
+                ldap
                 );
 
             return __value;
@@ -65,23 +65,23 @@ namespace G.JsonConverters
             options = options ?? throw new global::System.ArgumentNullException(nameof(options));
             var typeInfoResolver = options.TypeInfoResolver ?? throw new global::System.InvalidOperationException("TypeInfoResolver is not set.");
 
-            if (value.IsCategorical)
+            if (value.IsLocal)
             {
-                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.CategoricalAnnotationConfig), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.CategoricalAnnotationConfig?> ??
-                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.CategoricalAnnotationConfig).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickCategorical(), typeInfo);
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.LocalUser), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.LocalUser?> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.LocalUser).Name}");
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickLocal(), typeInfo);
             }
-            else if (value.IsContinuous)
+            else if (value.IsOauth2)
             {
-                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.ContinuousAnnotationConfig), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.ContinuousAnnotationConfig?> ??
-                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.ContinuousAnnotationConfig).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickContinuous(), typeInfo);
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.OAuth2User), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.OAuth2User?> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.OAuth2User).Name}");
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickOauth2(), typeInfo);
             }
-            else if (value.IsFreeform)
+            else if (value.IsLdap)
             {
-                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.FreeformAnnotationConfig), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.FreeformAnnotationConfig?> ??
-                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.FreeformAnnotationConfig).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickFreeform(), typeInfo);
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.LDAPUser), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.LDAPUser?> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.LDAPUser).Name}");
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickLdap(), typeInfo);
             }
         }
     }

@@ -13,15 +13,15 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.BetaErrorResponseErrorDiscriminatorType? Type { get; }
+        public global::G.ErrorResponseErrorDiscriminatorType? Type { get; }
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        public global::G.BetaInvalidRequestError? InvalidRequestError { get; init; }
+        public global::G.InvalidRequestError? InvalidRequestError { get; init; }
 #else
-        public global::G.BetaInvalidRequestError? InvalidRequestError { get; }
+        public global::G.InvalidRequestError? InvalidRequestError { get; }
 #endif
 
         /// <summary>
@@ -39,7 +39,7 @@ namespace G
 #if NET6_0_OR_GREATER
             [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
 #endif
-            out global::G.BetaInvalidRequestError? value)
+            out global::G.InvalidRequestError? value)
         {
             value = InvalidRequestError;
             return IsInvalidRequestError;
@@ -48,7 +48,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.BetaInvalidRequestError PickInvalidRequestError() => InvalidRequestError is { } value
+        public global::G.InvalidRequestError PickInvalidRequestError() => InvalidRequestError is { } value
             ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'InvalidRequestError' but the value was {ToString()}.");
 
@@ -56,9 +56,9 @@ namespace G
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        public global::G.BetaAuthenticationError? AuthenticationError { get; init; }
+        public global::G.AuthenticationError? AuthenticationError { get; init; }
 #else
-        public global::G.BetaAuthenticationError? AuthenticationError { get; }
+        public global::G.AuthenticationError? AuthenticationError { get; }
 #endif
 
         /// <summary>
@@ -76,7 +76,7 @@ namespace G
 #if NET6_0_OR_GREATER
             [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
 #endif
-            out global::G.BetaAuthenticationError? value)
+            out global::G.AuthenticationError? value)
         {
             value = AuthenticationError;
             return IsAuthenticationError;
@@ -85,7 +85,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.BetaAuthenticationError PickAuthenticationError() => AuthenticationError is { } value
+        public global::G.AuthenticationError PickAuthenticationError() => AuthenticationError is { } value
             ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'AuthenticationError' but the value was {ToString()}.");
 
@@ -93,9 +93,9 @@ namespace G
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        public global::G.BetaBillingError? BillingError { get; init; }
+        public global::G.BillingError? BillingError { get; init; }
 #else
-        public global::G.BetaBillingError? BillingError { get; }
+        public global::G.BillingError? BillingError { get; }
 #endif
 
         /// <summary>
@@ -113,7 +113,7 @@ namespace G
 #if NET6_0_OR_GREATER
             [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
 #endif
-            out global::G.BetaBillingError? value)
+            out global::G.BillingError? value)
         {
             value = BillingError;
             return IsBillingError;
@@ -122,7 +122,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.BetaBillingError PickBillingError() => BillingError is { } value
+        public global::G.BillingError PickBillingError() => BillingError is { } value
             ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'BillingError' but the value was {ToString()}.");
 
@@ -130,9 +130,9 @@ namespace G
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        public global::G.BetaPermissionError? PermissionError { get; init; }
+        public global::G.PermissionError? PermissionError { get; init; }
 #else
-        public global::G.BetaPermissionError? PermissionError { get; }
+        public global::G.PermissionError? PermissionError { get; }
 #endif
 
         /// <summary>
@@ -150,7 +150,7 @@ namespace G
 #if NET6_0_OR_GREATER
             [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
 #endif
-            out global::G.BetaPermissionError? value)
+            out global::G.PermissionError? value)
         {
             value = PermissionError;
             return IsPermissionError;
@@ -159,7 +159,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.BetaPermissionError PickPermissionError() => PermissionError is { } value
+        public global::G.PermissionError PickPermissionError() => PermissionError is { } value
             ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'PermissionError' but the value was {ToString()}.");
 
@@ -167,9 +167,9 @@ namespace G
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        public global::G.BetaNotFoundError? NotFoundError { get; init; }
+        public global::G.NotFoundError? NotFoundError { get; init; }
 #else
-        public global::G.BetaNotFoundError? NotFoundError { get; }
+        public global::G.NotFoundError? NotFoundError { get; }
 #endif
 
         /// <summary>
@@ -187,7 +187,7 @@ namespace G
 #if NET6_0_OR_GREATER
             [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
 #endif
-            out global::G.BetaNotFoundError? value)
+            out global::G.NotFoundError? value)
         {
             value = NotFoundError;
             return IsNotFoundError;
@@ -196,7 +196,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.BetaNotFoundError PickNotFoundError() => NotFoundError is { } value
+        public global::G.NotFoundError PickNotFoundError() => NotFoundError is { } value
             ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'NotFoundError' but the value was {ToString()}.");
 
@@ -204,9 +204,9 @@ namespace G
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        public global::G.BetaRateLimitError? RateLimitError { get; init; }
+        public global::G.RateLimitError? RateLimitError { get; init; }
 #else
-        public global::G.BetaRateLimitError? RateLimitError { get; }
+        public global::G.RateLimitError? RateLimitError { get; }
 #endif
 
         /// <summary>
@@ -224,7 +224,7 @@ namespace G
 #if NET6_0_OR_GREATER
             [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
 #endif
-            out global::G.BetaRateLimitError? value)
+            out global::G.RateLimitError? value)
         {
             value = RateLimitError;
             return IsRateLimitError;
@@ -233,7 +233,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.BetaRateLimitError PickRateLimitError() => RateLimitError is { } value
+        public global::G.RateLimitError PickRateLimitError() => RateLimitError is { } value
             ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'RateLimitError' but the value was {ToString()}.");
 
@@ -241,9 +241,9 @@ namespace G
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        public global::G.BetaGatewayTimeoutError? TimeoutError { get; init; }
+        public global::G.GatewayTimeoutError? TimeoutError { get; init; }
 #else
-        public global::G.BetaGatewayTimeoutError? TimeoutError { get; }
+        public global::G.GatewayTimeoutError? TimeoutError { get; }
 #endif
 
         /// <summary>
@@ -261,7 +261,7 @@ namespace G
 #if NET6_0_OR_GREATER
             [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
 #endif
-            out global::G.BetaGatewayTimeoutError? value)
+            out global::G.GatewayTimeoutError? value)
         {
             value = TimeoutError;
             return IsTimeoutError;
@@ -270,7 +270,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.BetaGatewayTimeoutError PickTimeoutError() => TimeoutError is { } value
+        public global::G.GatewayTimeoutError PickTimeoutError() => TimeoutError is { } value
             ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'TimeoutError' but the value was {ToString()}.");
 
@@ -278,9 +278,9 @@ namespace G
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        public global::G.BetaAPIError? ApiError { get; init; }
+        public global::G.APIError? ApiError { get; init; }
 #else
-        public global::G.BetaAPIError? ApiError { get; }
+        public global::G.APIError? ApiError { get; }
 #endif
 
         /// <summary>
@@ -298,7 +298,7 @@ namespace G
 #if NET6_0_OR_GREATER
             [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
 #endif
-            out global::G.BetaAPIError? value)
+            out global::G.APIError? value)
         {
             value = ApiError;
             return IsApiError;
@@ -307,7 +307,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.BetaAPIError PickApiError() => ApiError is { } value
+        public global::G.APIError PickApiError() => ApiError is { } value
             ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'ApiError' but the value was {ToString()}.");
 
@@ -315,9 +315,9 @@ namespace G
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        public global::G.BetaOverloadedError? OverloadedError { get; init; }
+        public global::G.OverloadedError? OverloadedError { get; init; }
 #else
-        public global::G.BetaOverloadedError? OverloadedError { get; }
+        public global::G.OverloadedError? OverloadedError { get; }
 #endif
 
         /// <summary>
@@ -335,7 +335,7 @@ namespace G
 #if NET6_0_OR_GREATER
             [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
 #endif
-            out global::G.BetaOverloadedError? value)
+            out global::G.OverloadedError? value)
         {
             value = OverloadedError;
             return IsOverloadedError;
@@ -344,23 +344,23 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.BetaOverloadedError PickOverloadedError() => OverloadedError is { } value
+        public global::G.OverloadedError PickOverloadedError() => OverloadedError is { } value
             ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'OverloadedError' but the value was {ToString()}.");
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator Error(global::G.BetaInvalidRequestError value) => new Error((global::G.BetaInvalidRequestError?)value);
+        public static implicit operator Error(global::G.InvalidRequestError value) => new Error((global::G.InvalidRequestError?)value);
 
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator global::G.BetaInvalidRequestError?(Error @this) => @this.InvalidRequestError;
+        public static implicit operator global::G.InvalidRequestError?(Error @this) => @this.InvalidRequestError;
 
         /// <summary>
         /// 
         /// </summary>
-        public Error(global::G.BetaInvalidRequestError? value)
+        public Error(global::G.InvalidRequestError? value)
         {
             InvalidRequestError = value;
         }
@@ -368,22 +368,22 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static Error FromInvalidRequestError(global::G.BetaInvalidRequestError? value) => new Error(value);
+        public static Error FromInvalidRequestError(global::G.InvalidRequestError? value) => new Error(value);
 
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator Error(global::G.BetaAuthenticationError value) => new Error((global::G.BetaAuthenticationError?)value);
+        public static implicit operator Error(global::G.AuthenticationError value) => new Error((global::G.AuthenticationError?)value);
 
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator global::G.BetaAuthenticationError?(Error @this) => @this.AuthenticationError;
+        public static implicit operator global::G.AuthenticationError?(Error @this) => @this.AuthenticationError;
 
         /// <summary>
         /// 
         /// </summary>
-        public Error(global::G.BetaAuthenticationError? value)
+        public Error(global::G.AuthenticationError? value)
         {
             AuthenticationError = value;
         }
@@ -391,22 +391,22 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static Error FromAuthenticationError(global::G.BetaAuthenticationError? value) => new Error(value);
+        public static Error FromAuthenticationError(global::G.AuthenticationError? value) => new Error(value);
 
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator Error(global::G.BetaBillingError value) => new Error((global::G.BetaBillingError?)value);
+        public static implicit operator Error(global::G.BillingError value) => new Error((global::G.BillingError?)value);
 
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator global::G.BetaBillingError?(Error @this) => @this.BillingError;
+        public static implicit operator global::G.BillingError?(Error @this) => @this.BillingError;
 
         /// <summary>
         /// 
         /// </summary>
-        public Error(global::G.BetaBillingError? value)
+        public Error(global::G.BillingError? value)
         {
             BillingError = value;
         }
@@ -414,22 +414,22 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static Error FromBillingError(global::G.BetaBillingError? value) => new Error(value);
+        public static Error FromBillingError(global::G.BillingError? value) => new Error(value);
 
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator Error(global::G.BetaPermissionError value) => new Error((global::G.BetaPermissionError?)value);
+        public static implicit operator Error(global::G.PermissionError value) => new Error((global::G.PermissionError?)value);
 
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator global::G.BetaPermissionError?(Error @this) => @this.PermissionError;
+        public static implicit operator global::G.PermissionError?(Error @this) => @this.PermissionError;
 
         /// <summary>
         /// 
         /// </summary>
-        public Error(global::G.BetaPermissionError? value)
+        public Error(global::G.PermissionError? value)
         {
             PermissionError = value;
         }
@@ -437,22 +437,22 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static Error FromPermissionError(global::G.BetaPermissionError? value) => new Error(value);
+        public static Error FromPermissionError(global::G.PermissionError? value) => new Error(value);
 
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator Error(global::G.BetaNotFoundError value) => new Error((global::G.BetaNotFoundError?)value);
+        public static implicit operator Error(global::G.NotFoundError value) => new Error((global::G.NotFoundError?)value);
 
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator global::G.BetaNotFoundError?(Error @this) => @this.NotFoundError;
+        public static implicit operator global::G.NotFoundError?(Error @this) => @this.NotFoundError;
 
         /// <summary>
         /// 
         /// </summary>
-        public Error(global::G.BetaNotFoundError? value)
+        public Error(global::G.NotFoundError? value)
         {
             NotFoundError = value;
         }
@@ -460,22 +460,22 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static Error FromNotFoundError(global::G.BetaNotFoundError? value) => new Error(value);
+        public static Error FromNotFoundError(global::G.NotFoundError? value) => new Error(value);
 
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator Error(global::G.BetaRateLimitError value) => new Error((global::G.BetaRateLimitError?)value);
+        public static implicit operator Error(global::G.RateLimitError value) => new Error((global::G.RateLimitError?)value);
 
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator global::G.BetaRateLimitError?(Error @this) => @this.RateLimitError;
+        public static implicit operator global::G.RateLimitError?(Error @this) => @this.RateLimitError;
 
         /// <summary>
         /// 
         /// </summary>
-        public Error(global::G.BetaRateLimitError? value)
+        public Error(global::G.RateLimitError? value)
         {
             RateLimitError = value;
         }
@@ -483,22 +483,22 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static Error FromRateLimitError(global::G.BetaRateLimitError? value) => new Error(value);
+        public static Error FromRateLimitError(global::G.RateLimitError? value) => new Error(value);
 
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator Error(global::G.BetaGatewayTimeoutError value) => new Error((global::G.BetaGatewayTimeoutError?)value);
+        public static implicit operator Error(global::G.GatewayTimeoutError value) => new Error((global::G.GatewayTimeoutError?)value);
 
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator global::G.BetaGatewayTimeoutError?(Error @this) => @this.TimeoutError;
+        public static implicit operator global::G.GatewayTimeoutError?(Error @this) => @this.TimeoutError;
 
         /// <summary>
         /// 
         /// </summary>
-        public Error(global::G.BetaGatewayTimeoutError? value)
+        public Error(global::G.GatewayTimeoutError? value)
         {
             TimeoutError = value;
         }
@@ -506,22 +506,22 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static Error FromTimeoutError(global::G.BetaGatewayTimeoutError? value) => new Error(value);
+        public static Error FromTimeoutError(global::G.GatewayTimeoutError? value) => new Error(value);
 
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator Error(global::G.BetaAPIError value) => new Error((global::G.BetaAPIError?)value);
+        public static implicit operator Error(global::G.APIError value) => new Error((global::G.APIError?)value);
 
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator global::G.BetaAPIError?(Error @this) => @this.ApiError;
+        public static implicit operator global::G.APIError?(Error @this) => @this.ApiError;
 
         /// <summary>
         /// 
         /// </summary>
-        public Error(global::G.BetaAPIError? value)
+        public Error(global::G.APIError? value)
         {
             ApiError = value;
         }
@@ -529,22 +529,22 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static Error FromApiError(global::G.BetaAPIError? value) => new Error(value);
+        public static Error FromApiError(global::G.APIError? value) => new Error(value);
 
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator Error(global::G.BetaOverloadedError value) => new Error((global::G.BetaOverloadedError?)value);
+        public static implicit operator Error(global::G.OverloadedError value) => new Error((global::G.OverloadedError?)value);
 
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator global::G.BetaOverloadedError?(Error @this) => @this.OverloadedError;
+        public static implicit operator global::G.OverloadedError?(Error @this) => @this.OverloadedError;
 
         /// <summary>
         /// 
         /// </summary>
-        public Error(global::G.BetaOverloadedError? value)
+        public Error(global::G.OverloadedError? value)
         {
             OverloadedError = value;
         }
@@ -552,22 +552,22 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static Error FromOverloadedError(global::G.BetaOverloadedError? value) => new Error(value);
+        public static Error FromOverloadedError(global::G.OverloadedError? value) => new Error(value);
 
         /// <summary>
         /// 
         /// </summary>
         public Error(
-            global::G.BetaErrorResponseErrorDiscriminatorType? type,
-            global::G.BetaInvalidRequestError? invalidRequestError,
-            global::G.BetaAuthenticationError? authenticationError,
-            global::G.BetaBillingError? billingError,
-            global::G.BetaPermissionError? permissionError,
-            global::G.BetaNotFoundError? notFoundError,
-            global::G.BetaRateLimitError? rateLimitError,
-            global::G.BetaGatewayTimeoutError? timeoutError,
-            global::G.BetaAPIError? apiError,
-            global::G.BetaOverloadedError? overloadedError
+            global::G.ErrorResponseErrorDiscriminatorType? type,
+            global::G.InvalidRequestError? invalidRequestError,
+            global::G.AuthenticationError? authenticationError,
+            global::G.BillingError? billingError,
+            global::G.PermissionError? permissionError,
+            global::G.NotFoundError? notFoundError,
+            global::G.RateLimitError? rateLimitError,
+            global::G.GatewayTimeoutError? timeoutError,
+            global::G.APIError? apiError,
+            global::G.OverloadedError? overloadedError
             )
         {
             Type = type;
@@ -625,15 +625,15 @@ namespace G
         /// 
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<global::G.BetaInvalidRequestError, TResult>? invalidRequestError = null,
-            global::System.Func<global::G.BetaAuthenticationError, TResult>? authenticationError = null,
-            global::System.Func<global::G.BetaBillingError, TResult>? billingError = null,
-            global::System.Func<global::G.BetaPermissionError, TResult>? permissionError = null,
-            global::System.Func<global::G.BetaNotFoundError, TResult>? notFoundError = null,
-            global::System.Func<global::G.BetaRateLimitError, TResult>? rateLimitError = null,
-            global::System.Func<global::G.BetaGatewayTimeoutError, TResult>? timeoutError = null,
-            global::System.Func<global::G.BetaAPIError, TResult>? apiError = null,
-            global::System.Func<global::G.BetaOverloadedError, TResult>? overloadedError = null,
+            global::System.Func<global::G.InvalidRequestError, TResult>? invalidRequestError = null,
+            global::System.Func<global::G.AuthenticationError, TResult>? authenticationError = null,
+            global::System.Func<global::G.BillingError, TResult>? billingError = null,
+            global::System.Func<global::G.PermissionError, TResult>? permissionError = null,
+            global::System.Func<global::G.NotFoundError, TResult>? notFoundError = null,
+            global::System.Func<global::G.RateLimitError, TResult>? rateLimitError = null,
+            global::System.Func<global::G.GatewayTimeoutError, TResult>? timeoutError = null,
+            global::System.Func<global::G.APIError, TResult>? apiError = null,
+            global::System.Func<global::G.OverloadedError, TResult>? overloadedError = null,
             bool validate = true)
         {
             if (validate)
@@ -685,23 +685,23 @@ namespace G
         /// 
         /// </summary>
         public void Match(
-            global::System.Action<global::G.BetaInvalidRequestError>? invalidRequestError = null,
+            global::System.Action<global::G.InvalidRequestError>? invalidRequestError = null,
 
-            global::System.Action<global::G.BetaAuthenticationError>? authenticationError = null,
+            global::System.Action<global::G.AuthenticationError>? authenticationError = null,
 
-            global::System.Action<global::G.BetaBillingError>? billingError = null,
+            global::System.Action<global::G.BillingError>? billingError = null,
 
-            global::System.Action<global::G.BetaPermissionError>? permissionError = null,
+            global::System.Action<global::G.PermissionError>? permissionError = null,
 
-            global::System.Action<global::G.BetaNotFoundError>? notFoundError = null,
+            global::System.Action<global::G.NotFoundError>? notFoundError = null,
 
-            global::System.Action<global::G.BetaRateLimitError>? rateLimitError = null,
+            global::System.Action<global::G.RateLimitError>? rateLimitError = null,
 
-            global::System.Action<global::G.BetaGatewayTimeoutError>? timeoutError = null,
+            global::System.Action<global::G.GatewayTimeoutError>? timeoutError = null,
 
-            global::System.Action<global::G.BetaAPIError>? apiError = null,
+            global::System.Action<global::G.APIError>? apiError = null,
 
-            global::System.Action<global::G.BetaOverloadedError>? overloadedError = null,
+            global::System.Action<global::G.OverloadedError>? overloadedError = null,
             bool validate = true)
         {
             if (validate)
@@ -751,15 +751,15 @@ namespace G
         /// 
         /// </summary>
         public void Switch(
-            global::System.Action<global::G.BetaInvalidRequestError>? invalidRequestError = null,
-            global::System.Action<global::G.BetaAuthenticationError>? authenticationError = null,
-            global::System.Action<global::G.BetaBillingError>? billingError = null,
-            global::System.Action<global::G.BetaPermissionError>? permissionError = null,
-            global::System.Action<global::G.BetaNotFoundError>? notFoundError = null,
-            global::System.Action<global::G.BetaRateLimitError>? rateLimitError = null,
-            global::System.Action<global::G.BetaGatewayTimeoutError>? timeoutError = null,
-            global::System.Action<global::G.BetaAPIError>? apiError = null,
-            global::System.Action<global::G.BetaOverloadedError>? overloadedError = null,
+            global::System.Action<global::G.InvalidRequestError>? invalidRequestError = null,
+            global::System.Action<global::G.AuthenticationError>? authenticationError = null,
+            global::System.Action<global::G.BillingError>? billingError = null,
+            global::System.Action<global::G.PermissionError>? permissionError = null,
+            global::System.Action<global::G.NotFoundError>? notFoundError = null,
+            global::System.Action<global::G.RateLimitError>? rateLimitError = null,
+            global::System.Action<global::G.GatewayTimeoutError>? timeoutError = null,
+            global::System.Action<global::G.APIError>? apiError = null,
+            global::System.Action<global::G.OverloadedError>? overloadedError = null,
             bool validate = true)
         {
             if (validate)
@@ -813,23 +813,23 @@ namespace G
             var fields = new object?[]
             {
                 InvalidRequestError,
-                typeof(global::G.BetaInvalidRequestError),
+                typeof(global::G.InvalidRequestError),
                 AuthenticationError,
-                typeof(global::G.BetaAuthenticationError),
+                typeof(global::G.AuthenticationError),
                 BillingError,
-                typeof(global::G.BetaBillingError),
+                typeof(global::G.BillingError),
                 PermissionError,
-                typeof(global::G.BetaPermissionError),
+                typeof(global::G.PermissionError),
                 NotFoundError,
-                typeof(global::G.BetaNotFoundError),
+                typeof(global::G.NotFoundError),
                 RateLimitError,
-                typeof(global::G.BetaRateLimitError),
+                typeof(global::G.RateLimitError),
                 TimeoutError,
-                typeof(global::G.BetaGatewayTimeoutError),
+                typeof(global::G.GatewayTimeoutError),
                 ApiError,
-                typeof(global::G.BetaAPIError),
+                typeof(global::G.APIError),
                 OverloadedError,
-                typeof(global::G.BetaOverloadedError),
+                typeof(global::G.OverloadedError),
             };
             const int offset = unchecked((int)2166136261);
             const int prime = 16777619;
@@ -846,15 +846,15 @@ namespace G
         public bool Equals(Error other)
         {
             return
-                global::System.Collections.Generic.EqualityComparer<global::G.BetaInvalidRequestError?>.Default.Equals(InvalidRequestError, other.InvalidRequestError) &&
-                global::System.Collections.Generic.EqualityComparer<global::G.BetaAuthenticationError?>.Default.Equals(AuthenticationError, other.AuthenticationError) &&
-                global::System.Collections.Generic.EqualityComparer<global::G.BetaBillingError?>.Default.Equals(BillingError, other.BillingError) &&
-                global::System.Collections.Generic.EqualityComparer<global::G.BetaPermissionError?>.Default.Equals(PermissionError, other.PermissionError) &&
-                global::System.Collections.Generic.EqualityComparer<global::G.BetaNotFoundError?>.Default.Equals(NotFoundError, other.NotFoundError) &&
-                global::System.Collections.Generic.EqualityComparer<global::G.BetaRateLimitError?>.Default.Equals(RateLimitError, other.RateLimitError) &&
-                global::System.Collections.Generic.EqualityComparer<global::G.BetaGatewayTimeoutError?>.Default.Equals(TimeoutError, other.TimeoutError) &&
-                global::System.Collections.Generic.EqualityComparer<global::G.BetaAPIError?>.Default.Equals(ApiError, other.ApiError) &&
-                global::System.Collections.Generic.EqualityComparer<global::G.BetaOverloadedError?>.Default.Equals(OverloadedError, other.OverloadedError) 
+                global::System.Collections.Generic.EqualityComparer<global::G.InvalidRequestError?>.Default.Equals(InvalidRequestError, other.InvalidRequestError) &&
+                global::System.Collections.Generic.EqualityComparer<global::G.AuthenticationError?>.Default.Equals(AuthenticationError, other.AuthenticationError) &&
+                global::System.Collections.Generic.EqualityComparer<global::G.BillingError?>.Default.Equals(BillingError, other.BillingError) &&
+                global::System.Collections.Generic.EqualityComparer<global::G.PermissionError?>.Default.Equals(PermissionError, other.PermissionError) &&
+                global::System.Collections.Generic.EqualityComparer<global::G.NotFoundError?>.Default.Equals(NotFoundError, other.NotFoundError) &&
+                global::System.Collections.Generic.EqualityComparer<global::G.RateLimitError?>.Default.Equals(RateLimitError, other.RateLimitError) &&
+                global::System.Collections.Generic.EqualityComparer<global::G.GatewayTimeoutError?>.Default.Equals(TimeoutError, other.TimeoutError) &&
+                global::System.Collections.Generic.EqualityComparer<global::G.APIError?>.Default.Equals(ApiError, other.ApiError) &&
+                global::System.Collections.Generic.EqualityComparer<global::G.OverloadedError?>.Default.Equals(OverloadedError, other.OverloadedError) 
                 ;
         }
 

@@ -1,4 +1,4 @@
-﻿//HintName: G.Models.DeleteRequestPayloadsResponse4.g.cs
+//HintName: G.Models.DeleteRequestPayloadsResponse4.g.cs
 
 #nullable enable
 
@@ -13,7 +13,7 @@ namespace G
         /// Error details
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("error", Required = global::Newtonsoft.Json.Required.Always)]
-        public global::G.DeleteRequestPayloadsResponseError3 Error { get; set; } = default!;
+        public global::G.DeleteRequestPayloadsResponseError Error { get; set; } = default!;
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -28,7 +28,7 @@ namespace G
         /// Error details
         /// </param>
         public DeleteRequestPayloadsResponse4(
-            global::G.DeleteRequestPayloadsResponseError3 error)
+            global::G.DeleteRequestPayloadsResponseError error)
         {
             this.Error = error ?? throw new global::System.ArgumentNullException(nameof(error));
         }

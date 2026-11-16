@@ -1,4 +1,4 @@
-﻿//HintName: G.Models.CreateApiKeyResponse6.g.cs
+//HintName: G.Models.CreateApiKeyResponse6.g.cs
 
 #nullable enable
 
@@ -13,7 +13,7 @@ namespace G
         /// Error details
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("error", Required = global::Newtonsoft.Json.Required.Always)]
-        public global::G.CreateApiKeyResponseError5 Error { get; set; } = default!;
+        public global::G.CreateApiKeyResponseError Error { get; set; } = default!;
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -28,7 +28,7 @@ namespace G
         /// Error details
         /// </param>
         public CreateApiKeyResponse6(
-            global::G.CreateApiKeyResponseError5 error)
+            global::G.CreateApiKeyResponseError error)
         {
             this.Error = error ?? throw new global::System.ArgumentNullException(nameof(error));
         }

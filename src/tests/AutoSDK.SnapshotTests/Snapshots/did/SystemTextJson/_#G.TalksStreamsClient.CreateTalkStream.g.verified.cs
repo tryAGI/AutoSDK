@@ -49,14 +49,14 @@ namespace G
             ref string id,
             ref string? xApiKeyExternal,
             ref string? cookie,
-            global::G.CreateTalkStreamRequest2 request);
+            global::G.CreateTalkStreamRequest request);
         partial void PrepareCreateTalkStreamRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
             string id,
             string? xApiKeyExternal,
             string? cookie,
-            global::G.CreateTalkStreamRequest2 request);
+            global::G.CreateTalkStreamRequest request);
         partial void ProcessCreateTalkStreamResponse(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage);
@@ -80,7 +80,7 @@ namespace G
         public async global::System.Threading.Tasks.Task<global::G.CreateTalkStreamResponse> CreateTalkStreamAsync(
             string id,
 
-            global::G.CreateTalkStreamRequest2 request,
+            global::G.CreateTalkStreamRequest request,
             string? xApiKeyExternal = default,
             string? cookie = default,
             global::G.AutoSDKRequestOptions? requestOptions = default,
@@ -112,7 +112,7 @@ namespace G
         public async global::System.Threading.Tasks.Task<global::G.AutoSDKHttpResponse<global::G.CreateTalkStreamResponse>> CreateTalkStreamAsResponseAsync(
             string id,
 
-            global::G.CreateTalkStreamRequest2 request,
+            global::G.CreateTalkStreamRequest request,
             string? xApiKeyExternal = default,
             string? cookie = default,
             global::G.AutoSDKRequestOptions? requestOptions = default,
@@ -595,11 +595,11 @@ namespace G
         [global::System.Obsolete("This method marked as deprecated.")]
         public async global::System.Threading.Tasks.Task<global::G.CreateTalkStreamResponse> CreateTalkStreamAsync(
             string id,
-            global::G.AnyOf<global::G.CreateTalkStreamRequestScriptVariant12, global::G.CreateTalkStreamRequestScriptVariant22> script,
+            global::G.AnyOf<global::G.CreateTalkStreamRequestScriptVariant1, global::G.CreateTalkStreamRequestScriptVariant2> script,
             string? xApiKeyExternal = default,
             string? cookie = default,
             string? sessionId = default,
-            global::G.AllOf<global::G.CreateTalkStreamRequestConfigVariant12, global::G.CreateTalkStreamRequestConfigVariant22>? config = default,
+            global::G.AllOf<global::G.CreateTalkStreamRequestConfigVariant1, global::G.CreateTalkStreamRequestConfigVariant2>? config = default,
             string? userData = default,
             string? name = default,
             double? audioOptimization = default,
@@ -607,7 +607,7 @@ namespace G
             global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
-            var __request = new global::G.CreateTalkStreamRequest2
+            var __request = new global::G.CreateTalkStreamRequest
             {
                 SessionId = sessionId,
                 Script = script,

@@ -1,4 +1,4 @@
-﻿//HintName: G.Models.BedrockModelSettings.g.cs
+//HintName: G.Models.BedrockModelSettings.g.cs
 
 #nullable enable
 
@@ -41,7 +41,7 @@ namespace G
         /// The response format for the model.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("response_format")]
-        public global::G.ResponseFormatVariant14? ResponseFormat { get; set; }
+        public global::G.ResponseFormatVariant19? ResponseFormat { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -76,7 +76,7 @@ namespace G
             bool? parallelToolCalls,
             string? providerType,
             double? temperature,
-            global::G.ResponseFormatVariant14? responseFormat)
+            global::G.ResponseFormatVariant19? responseFormat)
         {
             this.MaxOutputTokens = maxOutputTokens;
             this.ParallelToolCalls = parallelToolCalls;

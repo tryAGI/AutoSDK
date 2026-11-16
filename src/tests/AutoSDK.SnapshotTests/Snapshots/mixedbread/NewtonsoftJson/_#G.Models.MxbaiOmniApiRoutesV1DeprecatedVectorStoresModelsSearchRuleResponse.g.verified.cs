@@ -1,4 +1,4 @@
-﻿//HintName: G.Models.MxbaiOmniApiRoutesV1DeprecatedVectorStoresModelsSearchRuleResponse.g.cs
+//HintName: G.Models.MxbaiOmniApiRoutesV1DeprecatedVectorStoresModelsSearchRuleResponse.g.cs
 
 #nullable enable
 
@@ -38,7 +38,7 @@ namespace G
         /// The rules to apply
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("rules", Required = global::Newtonsoft.Json.Required.Always)]
-        public global::System.Collections.Generic.IList<global::G.RulesItem2> Rules { get; set; } = default!;
+        public global::System.Collections.Generic.IList<global::G.RulesItem3> Rules { get; set; } = default!;
 
         /// <summary>
         /// When the rule was created
@@ -87,7 +87,7 @@ namespace G
             string id,
             string query,
             string vectorStoreId,
-            global::System.Collections.Generic.IList<global::G.RulesItem2> rules,
+            global::System.Collections.Generic.IList<global::G.RulesItem3> rules,
             global::System.DateTime createdAt,
             global::System.DateTime updatedAt,
             string? @object)

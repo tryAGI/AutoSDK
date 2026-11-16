@@ -1,4 +1,4 @@
-﻿//HintName: G.Models.PipelinesGetPipelineResponsePipeline.g.cs
+//HintName: G.Models.PipelinesGetPipelineResponsePipeline.g.cs
 
 #nullable enable
 
@@ -62,9 +62,9 @@ namespace G
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("config")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.Config7JsonConverter))]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.Config2JsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::G.Config7 Config { get; set; }
+        public required global::G.Config2 Config { get; set; }
 
         /// <summary>
         /// 
@@ -172,7 +172,7 @@ namespace G
             string projectId,
             global::G.PipelinesGetPipelineResponsePipelineIntegrationType integrationType,
             string feedId,
-            global::G.Config7 config,
+            global::G.Config2 config,
             global::System.DateTime createdAt,
             global::System.DateTime updatedAt,
             string? integrationId,

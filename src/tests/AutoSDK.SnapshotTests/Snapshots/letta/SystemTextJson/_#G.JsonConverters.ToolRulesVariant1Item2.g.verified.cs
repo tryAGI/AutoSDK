@@ -18,68 +18,68 @@ namespace G.JsonConverters
 
 
             var readerCopy = reader;
-            var discriminatorTypeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.CreateAgentRequestToolRulesVariant1ItemDiscriminator), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.CreateAgentRequestToolRulesVariant1ItemDiscriminator> ??
-                            throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::G.CreateAgentRequestToolRulesVariant1ItemDiscriminator)}");
+            var discriminatorTypeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.UpdateAgentToolRulesVariant1ItemDiscriminator), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.UpdateAgentToolRulesVariant1ItemDiscriminator> ??
+                            throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::G.UpdateAgentToolRulesVariant1ItemDiscriminator)}");
             var discriminator = global::System.Text.Json.JsonSerializer.Deserialize(ref readerCopy, discriminatorTypeInfo);
 
             global::G.ChildToolRule? constrainChildTools = default;
-            if (discriminator?.Type == global::G.CreateAgentRequestToolRulesVariant1ItemDiscriminatorType.ConstrainChildTools)
+            if (discriminator?.Type == global::G.UpdateAgentToolRulesVariant1ItemDiscriminatorType.ConstrainChildTools)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.ChildToolRule), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.ChildToolRule> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::G.ChildToolRule)}");
                 constrainChildTools = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
             }
             global::G.InitToolRule? runFirst = default;
-            if (discriminator?.Type == global::G.CreateAgentRequestToolRulesVariant1ItemDiscriminatorType.RunFirst)
+            if (discriminator?.Type == global::G.UpdateAgentToolRulesVariant1ItemDiscriminatorType.RunFirst)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.InitToolRule), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.InitToolRule> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::G.InitToolRule)}");
                 runFirst = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
             }
             global::G.TerminalToolRule? exitLoop = default;
-            if (discriminator?.Type == global::G.CreateAgentRequestToolRulesVariant1ItemDiscriminatorType.ExitLoop)
+            if (discriminator?.Type == global::G.UpdateAgentToolRulesVariant1ItemDiscriminatorType.ExitLoop)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.TerminalToolRule), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.TerminalToolRule> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::G.TerminalToolRule)}");
                 exitLoop = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
             }
             global::G.ConditionalToolRule? conditional = default;
-            if (discriminator?.Type == global::G.CreateAgentRequestToolRulesVariant1ItemDiscriminatorType.Conditional)
+            if (discriminator?.Type == global::G.UpdateAgentToolRulesVariant1ItemDiscriminatorType.Conditional)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.ConditionalToolRule), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.ConditionalToolRule> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::G.ConditionalToolRule)}");
                 conditional = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
             }
             global::G.ContinueToolRule? continueLoop = default;
-            if (discriminator?.Type == global::G.CreateAgentRequestToolRulesVariant1ItemDiscriminatorType.ContinueLoop)
+            if (discriminator?.Type == global::G.UpdateAgentToolRulesVariant1ItemDiscriminatorType.ContinueLoop)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.ContinueToolRule), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.ContinueToolRule> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::G.ContinueToolRule)}");
                 continueLoop = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
             }
             global::G.RequiredBeforeExitToolRule? requiredBeforeExit = default;
-            if (discriminator?.Type == global::G.CreateAgentRequestToolRulesVariant1ItemDiscriminatorType.RequiredBeforeExit)
+            if (discriminator?.Type == global::G.UpdateAgentToolRulesVariant1ItemDiscriminatorType.RequiredBeforeExit)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.RequiredBeforeExitToolRule), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.RequiredBeforeExitToolRule> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::G.RequiredBeforeExitToolRule)}");
                 requiredBeforeExit = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
             }
             global::G.MaxCountPerStepToolRule? maxCountPerStep = default;
-            if (discriminator?.Type == global::G.CreateAgentRequestToolRulesVariant1ItemDiscriminatorType.MaxCountPerStep)
+            if (discriminator?.Type == global::G.UpdateAgentToolRulesVariant1ItemDiscriminatorType.MaxCountPerStep)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.MaxCountPerStepToolRule), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.MaxCountPerStepToolRule> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::G.MaxCountPerStepToolRule)}");
                 maxCountPerStep = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
             }
             global::G.ParentToolRule? parentLastTool = default;
-            if (discriminator?.Type == global::G.CreateAgentRequestToolRulesVariant1ItemDiscriminatorType.ParentLastTool)
+            if (discriminator?.Type == global::G.UpdateAgentToolRulesVariant1ItemDiscriminatorType.ParentLastTool)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.ParentToolRule), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.ParentToolRule> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::G.ParentToolRule)}");
                 parentLastTool = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
             }
             global::G.RequiresApprovalToolRule? requiresApproval = default;
-            if (discriminator?.Type == global::G.CreateAgentRequestToolRulesVariant1ItemDiscriminatorType.RequiresApproval)
+            if (discriminator?.Type == global::G.UpdateAgentToolRulesVariant1ItemDiscriminatorType.RequiresApproval)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.RequiresApprovalToolRule), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.RequiresApprovalToolRule> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::G.RequiresApprovalToolRule)}");

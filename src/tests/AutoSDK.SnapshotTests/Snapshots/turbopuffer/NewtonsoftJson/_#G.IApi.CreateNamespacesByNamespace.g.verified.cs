@@ -105,7 +105,7 @@ namespace G
             global::G.PatchByFilter? patchByFilter = default,
             bool? patchByFilterAllowPartial = default,
             bool? returnAffectedIds = default,
-            global::G.Encryption2? encryption = default,
+            global::G.Encryption? encryption = default,
             bool? disableBackpressure = default,
             global::G.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);

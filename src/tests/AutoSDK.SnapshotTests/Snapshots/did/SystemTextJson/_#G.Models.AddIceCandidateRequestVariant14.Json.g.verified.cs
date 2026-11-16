@@ -1,4 +1,4 @@
-﻿//HintName: G.Models.AddIceCandidateRequestVariant14.Json.g.cs
+//HintName: G.Models.AddIceCandidateRequestVariant14.Json.g.cs
 #nullable enable
 
 namespace G

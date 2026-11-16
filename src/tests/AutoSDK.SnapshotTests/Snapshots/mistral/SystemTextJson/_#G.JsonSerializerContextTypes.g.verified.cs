@@ -107,11 +107,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::G.DataItem>? Type17 { get; set; }
+        public global::System.Collections.Generic.IList<global::G.DataItem2>? Type17 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.DataItem? Type18 { get; set; }
+        public global::G.DataItem2? Type18 { get; set; }
         /// <summary>
         /// 
         /// </summary>
@@ -299,11 +299,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::G.DataItem2>? Type65 { get; set; }
+        public global::System.Collections.Generic.IList<global::G.DataItem>? Type65 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.DataItem2? Type66 { get; set; }
+        public global::G.DataItem? Type66 { get; set; }
         /// <summary>
         /// 
         /// </summary>
@@ -371,11 +371,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::G.IntegrationsVariant1Item3>? Type83 { get; set; }
+        public global::System.Collections.Generic.IList<global::G.IntegrationsVariant1Item5>? Type83 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.IntegrationsVariant1Item3? Type84 { get; set; }
+        public global::G.IntegrationsVariant1Item5? Type84 { get; set; }
         /// <summary>
         /// 
         /// </summary>
@@ -439,11 +439,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::G.IntegrationsVariant1Item4>? Type100 { get; set; }
+        public global::System.Collections.Generic.IList<global::G.IntegrationsVariant1Item3>? Type100 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.IntegrationsVariant1Item4? Type101 { get; set; }
+        public global::G.IntegrationsVariant1Item3? Type101 { get; set; }
         /// <summary>
         /// 
         /// </summary>
@@ -491,11 +491,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::G.IntegrationsVariant1Item5>? Type113 { get; set; }
+        public global::System.Collections.Generic.IList<global::G.IntegrationsVariant1Item4>? Type113 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.IntegrationsVariant1Item5? Type114 { get; set; }
+        public global::G.IntegrationsVariant1Item4? Type114 { get; set; }
         /// <summary>
         /// 
         /// </summary>
@@ -655,11 +655,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::G.MessagesItem>? Type154 { get; set; }
+        public global::System.Collections.Generic.IList<global::G.MessagesItem2>? Type154 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.MessagesItem? Type155 { get; set; }
+        public global::G.MessagesItem2? Type155 { get; set; }
         /// <summary>
         /// 
         /// </summary>
@@ -695,11 +695,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.AnyOf<global::G.ToolChoice2, global::G.ToolChoiceEnum?>? Type164 { get; set; }
+        public global::G.AnyOf<global::G.ToolChoice, global::G.ToolChoiceEnum?>? Type164 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.ToolChoice2? Type165 { get; set; }
+        public global::G.ToolChoice? Type165 { get; set; }
         /// <summary>
         /// 
         /// </summary>
@@ -811,11 +811,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::G.MessagesItem2>? Type193 { get; set; }
+        public global::System.Collections.Generic.IList<global::G.MessagesItem>? Type193 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.MessagesItem2? Type194 { get; set; }
+        public global::G.MessagesItem? Type194 { get; set; }
         /// <summary>
         /// 
         /// </summary>
@@ -1184,7 +1184,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.List<global::G.DataItem>? ListType2 { get; set; }
+        public global::System.Collections.Generic.List<global::G.DataItem2>? ListType2 { get; set; }
         /// <summary>
         /// 
         /// </summary>
@@ -1212,7 +1212,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.List<global::G.DataItem2>? ListType9 { get; set; }
+        public global::System.Collections.Generic.List<global::G.DataItem>? ListType9 { get; set; }
         /// <summary>
         /// 
         /// </summary>
@@ -1220,7 +1220,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.List<global::G.IntegrationsVariant1Item3>? ListType11 { get; set; }
+        public global::System.Collections.Generic.List<global::G.IntegrationsVariant1Item5>? ListType11 { get; set; }
         /// <summary>
         /// 
         /// </summary>
@@ -1232,7 +1232,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.List<global::G.IntegrationsVariant1Item4>? ListType14 { get; set; }
+        public global::System.Collections.Generic.List<global::G.IntegrationsVariant1Item3>? ListType14 { get; set; }
         /// <summary>
         /// 
         /// </summary>
@@ -1248,7 +1248,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.List<global::G.IntegrationsVariant1Item5>? ListType18 { get; set; }
+        public global::System.Collections.Generic.List<global::G.IntegrationsVariant1Item4>? ListType18 { get; set; }
         /// <summary>
         /// 
         /// </summary>
@@ -1280,7 +1280,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.List<global::G.MessagesItem>? ListType26 { get; set; }
+        public global::System.Collections.Generic.List<global::G.MessagesItem2>? ListType26 { get; set; }
         /// <summary>
         /// 
         /// </summary>
@@ -1304,7 +1304,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.List<global::G.MessagesItem2>? ListType32 { get; set; }
+        public global::System.Collections.Generic.List<global::G.MessagesItem>? ListType32 { get; set; }
         /// <summary>
         /// 
         /// </summary>

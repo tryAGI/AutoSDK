@@ -1,4 +1,4 @@
-﻿//HintName: G.Models.ConfigurationResponse.g.cs
+//HintName: G.Models.ConfigurationResponse.g.cs
 
 #nullable enable
 
@@ -50,7 +50,7 @@ namespace G
         /// Product-specific configuration parameters.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("parameters", Required = global::Newtonsoft.Json.Required.Always)]
-        public global::G.Parameters2 Parameters { get; set; } = default!;
+        public global::G.Parameters Parameters { get; set; } = default!;
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -87,7 +87,7 @@ namespace G
             string name,
             global::G.ConfigurationResponseProductType productType,
             string version,
-            global::G.Parameters2 parameters,
+            global::G.Parameters parameters,
             global::System.DateTime? createdAt,
             global::System.DateTime? updatedAt)
         {

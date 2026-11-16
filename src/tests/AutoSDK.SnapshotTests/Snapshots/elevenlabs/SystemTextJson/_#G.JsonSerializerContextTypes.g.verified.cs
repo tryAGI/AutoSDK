@@ -75,11 +75,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::G.ChildrenItem>? Type9 { get; set; }
+        public global::System.Collections.Generic.IList<global::G.ChildrenItem2>? Type9 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.ChildrenItem? Type10 { get; set; }
+        public global::G.ChildrenItem2? Type10 { get; set; }
         /// <summary>
         /// 
         /// </summary>
@@ -143,11 +143,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::G.ChildrenItem2>? Type26 { get; set; }
+        public global::System.Collections.Generic.IList<global::G.ChildrenItem4>? Type26 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.ChildrenItem2? Type27 { get; set; }
+        public global::G.ChildrenItem4? Type27 { get; set; }
         /// <summary>
         /// 
         /// </summary>
@@ -259,7 +259,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.Left3? Type55 { get; set; }
+        public global::G.Left7? Type55 { get; set; }
         /// <summary>
         /// 
         /// </summary>
@@ -271,7 +271,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.Right3? Type58 { get; set; }
+        public global::G.Right7? Type58 { get; set; }
         /// <summary>
         /// 
         /// </summary>
@@ -283,7 +283,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.Left4? Type61 { get; set; }
+        public global::G.Left8? Type61 { get; set; }
         /// <summary>
         /// 
         /// </summary>
@@ -295,7 +295,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.Right4? Type64 { get; set; }
+        public global::G.Right8? Type64 { get; set; }
         /// <summary>
         /// 
         /// </summary>
@@ -307,7 +307,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.Left5? Type67 { get; set; }
+        public global::G.Left11? Type67 { get; set; }
         /// <summary>
         /// 
         /// </summary>
@@ -319,7 +319,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.Right5? Type70 { get; set; }
+        public global::G.Right11? Type70 { get; set; }
         /// <summary>
         /// 
         /// </summary>
@@ -331,7 +331,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.Left6? Type73 { get; set; }
+        public global::G.Left12? Type73 { get; set; }
         /// <summary>
         /// 
         /// </summary>
@@ -343,7 +343,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.Right6? Type76 { get; set; }
+        public global::G.Right12? Type76 { get; set; }
         /// <summary>
         /// 
         /// </summary>
@@ -355,7 +355,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.Left7? Type79 { get; set; }
+        public global::G.Left3? Type79 { get; set; }
         /// <summary>
         /// 
         /// </summary>
@@ -367,7 +367,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.Right7? Type82 { get; set; }
+        public global::G.Right3? Type82 { get; set; }
         /// <summary>
         /// 
         /// </summary>
@@ -379,7 +379,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.Left8? Type85 { get; set; }
+        public global::G.Left4? Type85 { get; set; }
         /// <summary>
         /// 
         /// </summary>
@@ -391,7 +391,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.Right8? Type88 { get; set; }
+        public global::G.Right4? Type88 { get; set; }
         /// <summary>
         /// 
         /// </summary>
@@ -451,7 +451,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.Left11? Type103 { get; set; }
+        public global::G.Left5? Type103 { get; set; }
         /// <summary>
         /// 
         /// </summary>
@@ -463,7 +463,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.Right11? Type106 { get; set; }
+        public global::G.Right5? Type106 { get; set; }
         /// <summary>
         /// 
         /// </summary>
@@ -475,7 +475,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.Left12? Type109 { get; set; }
+        public global::G.Left6? Type109 { get; set; }
         /// <summary>
         /// 
         /// </summary>
@@ -487,7 +487,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.Right12? Type112 { get; set; }
+        public global::G.Right6? Type112 { get; set; }
         /// <summary>
         /// 
         /// </summary>
@@ -503,11 +503,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::G.ChildrenItem3>? Type116 { get; set; }
+        public global::System.Collections.Generic.IList<global::G.ChildrenItem>? Type116 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.ChildrenItem3? Type117 { get; set; }
+        public global::G.ChildrenItem? Type117 { get; set; }
         /// <summary>
         /// 
         /// </summary>
@@ -519,11 +519,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::G.ChildrenItem4>? Type120 { get; set; }
+        public global::System.Collections.Generic.IList<global::G.ChildrenItem3>? Type120 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.ChildrenItem4? Type121 { get; set; }
+        public global::G.ChildrenItem3? Type121 { get; set; }
         /// <summary>
         /// 
         /// </summary>
@@ -2283,11 +2283,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::G.ToolsItem>? Type561 { get; set; }
+        public global::System.Collections.Generic.IList<global::G.ToolsItem3>? Type561 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.ToolsItem? Type562 { get; set; }
+        public global::G.ToolsItem3? Type562 { get; set; }
         /// <summary>
         /// 
         /// </summary>
@@ -3603,11 +3603,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::G.ChartsItem>? Type891 { get; set; }
+        public global::System.Collections.Generic.IList<global::G.ChartsItem2>? Type891 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.ChartsItem? Type892 { get; set; }
+        public global::G.ChartsItem2? Type892 { get; set; }
         /// <summary>
         /// 
         /// </summary>
@@ -3655,11 +3655,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::G.AgentsItem2>? Type904 { get; set; }
+        public global::System.Collections.Generic.IList<global::G.AgentsItem3>? Type904 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.AgentsItem2? Type905 { get; set; }
+        public global::G.AgentsItem3? Type905 { get; set; }
         /// <summary>
         /// 
         /// </summary>
@@ -3735,11 +3735,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::G.DependentAgentsItem>? Type924 { get; set; }
+        public global::System.Collections.Generic.IList<global::G.DependentAgentsItem3>? Type924 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.DependentAgentsItem? Type925 { get; set; }
+        public global::G.DependentAgentsItem3? Type925 { get; set; }
         /// <summary>
         /// 
         /// </summary>
@@ -3751,11 +3751,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::G.DependentAgentsItem2>? Type928 { get; set; }
+        public global::System.Collections.Generic.IList<global::G.DependentAgentsItem5>? Type928 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.DependentAgentsItem2? Type929 { get; set; }
+        public global::G.DependentAgentsItem5? Type929 { get; set; }
         /// <summary>
         /// 
         /// </summary>
@@ -3767,11 +3767,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::G.DependentAgentsItem3>? Type932 { get; set; }
+        public global::System.Collections.Generic.IList<global::G.DependentAgentsItem4>? Type932 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.DependentAgentsItem3? Type933 { get; set; }
+        public global::G.DependentAgentsItem4? Type933 { get; set; }
         /// <summary>
         /// 
         /// </summary>
@@ -3783,11 +3783,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::G.DependentAgentsItem4>? Type936 { get; set; }
+        public global::System.Collections.Generic.IList<global::G.DependentAgentsItem2>? Type936 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.DependentAgentsItem4? Type937 { get; set; }
+        public global::G.DependentAgentsItem2? Type937 { get; set; }
         /// <summary>
         /// 
         /// </summary>
@@ -3979,11 +3979,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::G.AgentsItem3>? Type985 { get; set; }
+        public global::System.Collections.Generic.IList<global::G.AgentsItem2>? Type985 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.AgentsItem3? Type986 { get; set; }
+        public global::G.AgentsItem2? Type986 { get; set; }
         /// <summary>
         /// 
         /// </summary>
@@ -4339,11 +4339,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::G.DependentAgentsItem5>? Type1075 { get; set; }
+        public global::System.Collections.Generic.IList<global::G.DependentAgentsItem>? Type1075 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.DependentAgentsItem5? Type1076 { get; set; }
+        public global::G.DependentAgentsItem? Type1076 { get; set; }
         /// <summary>
         /// 
         /// </summary>
@@ -4583,11 +4583,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::G.ChartsItem2>? Type1136 { get; set; }
+        public global::System.Collections.Generic.IList<global::G.ChartsItem>? Type1136 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.ChartsItem2? Type1137 { get; set; }
+        public global::G.ChartsItem? Type1137 { get; set; }
         /// <summary>
         /// 
         /// </summary>
@@ -4931,11 +4931,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::G.ToolsItem2>? Type1223 { get; set; }
+        public global::System.Collections.Generic.IList<global::G.ToolsItem>? Type1223 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.ToolsItem2? Type1224 { get; set; }
+        public global::G.ToolsItem? Type1224 { get; set; }
         /// <summary>
         /// 
         /// </summary>
@@ -4967,11 +4967,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::G.ToolsItem3>? Type1232 { get; set; }
+        public global::System.Collections.Generic.IList<global::G.ToolsItem2>? Type1232 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.ToolsItem3? Type1233 { get; set; }
+        public global::G.ToolsItem2? Type1233 { get; set; }
         /// <summary>
         /// 
         /// </summary>
@@ -6644,19 +6644,19 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.List<global::G.ChildrenItem>? ListType1 { get; set; }
+        public global::System.Collections.Generic.List<global::G.ChildrenItem2>? ListType1 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.List<global::G.ChildrenItem2>? ListType2 { get; set; }
+        public global::System.Collections.Generic.List<global::G.ChildrenItem4>? ListType2 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.List<global::G.ChildrenItem3>? ListType3 { get; set; }
+        public global::System.Collections.Generic.List<global::G.ChildrenItem>? ListType3 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.List<global::G.ChildrenItem4>? ListType4 { get; set; }
+        public global::System.Collections.Generic.List<global::G.ChildrenItem3>? ListType4 { get; set; }
         /// <summary>
         /// 
         /// </summary>
@@ -6792,7 +6792,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.List<global::G.ToolsItem>? ListType38 { get; set; }
+        public global::System.Collections.Generic.List<global::G.ToolsItem3>? ListType38 { get; set; }
         /// <summary>
         /// 
         /// </summary>
@@ -6928,7 +6928,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.List<global::G.ChartsItem>? ListType72 { get; set; }
+        public global::System.Collections.Generic.List<global::G.ChartsItem2>? ListType72 { get; set; }
         /// <summary>
         /// 
         /// </summary>
@@ -6940,7 +6940,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.List<global::G.AgentsItem2>? ListType75 { get; set; }
+        public global::System.Collections.Generic.List<global::G.AgentsItem3>? ListType75 { get; set; }
         /// <summary>
         /// 
         /// </summary>
@@ -6960,19 +6960,19 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.List<global::G.DependentAgentsItem>? ListType80 { get; set; }
+        public global::System.Collections.Generic.List<global::G.DependentAgentsItem3>? ListType80 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.List<global::G.DependentAgentsItem2>? ListType81 { get; set; }
+        public global::System.Collections.Generic.List<global::G.DependentAgentsItem5>? ListType81 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.List<global::G.DependentAgentsItem3>? ListType82 { get; set; }
+        public global::System.Collections.Generic.List<global::G.DependentAgentsItem4>? ListType82 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.List<global::G.DependentAgentsItem4>? ListType83 { get; set; }
+        public global::System.Collections.Generic.List<global::G.DependentAgentsItem2>? ListType83 { get; set; }
         /// <summary>
         /// 
         /// </summary>
@@ -7012,7 +7012,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.List<global::G.AgentsItem3>? ListType93 { get; set; }
+        public global::System.Collections.Generic.List<global::G.AgentsItem2>? ListType93 { get; set; }
         /// <summary>
         /// 
         /// </summary>
@@ -7072,7 +7072,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.List<global::G.DependentAgentsItem5>? ListType108 { get; set; }
+        public global::System.Collections.Generic.List<global::G.DependentAgentsItem>? ListType108 { get; set; }
         /// <summary>
         /// 
         /// </summary>
@@ -7104,7 +7104,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.List<global::G.ChartsItem2>? ListType116 { get; set; }
+        public global::System.Collections.Generic.List<global::G.ChartsItem>? ListType116 { get; set; }
         /// <summary>
         /// 
         /// </summary>
@@ -7144,11 +7144,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.List<global::G.ToolsItem2>? ListType126 { get; set; }
+        public global::System.Collections.Generic.List<global::G.ToolsItem>? ListType126 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.List<global::G.ToolsItem3>? ListType127 { get; set; }
+        public global::System.Collections.Generic.List<global::G.ToolsItem2>? ListType127 { get; set; }
         /// <summary>
         /// 
         /// </summary>

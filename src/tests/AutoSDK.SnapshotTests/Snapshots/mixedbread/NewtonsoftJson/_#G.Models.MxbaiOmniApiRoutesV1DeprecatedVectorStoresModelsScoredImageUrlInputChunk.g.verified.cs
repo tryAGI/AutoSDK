@@ -1,4 +1,4 @@
-﻿//HintName: G.Models.MxbaiOmniApiRoutesV1DeprecatedVectorStoresModelsScoredImageUrlInputChunk.g.cs
+//HintName: G.Models.MxbaiOmniApiRoutesV1DeprecatedVectorStoresModelsScoredImageUrlInputChunk.g.cs
 
 #nullable enable
 
@@ -26,7 +26,7 @@ namespace G
         /// metadata of the chunk
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("generated_metadata")]
-        public global::G.GeneratedMetadataVariant16? GeneratedMetadata { get; set; }
+        public global::G.GeneratedMetadataVariant111? GeneratedMetadata { get; set; }
 
         /// <summary>
         /// model used for this chunk
@@ -146,7 +146,7 @@ namespace G
             string filename,
             string vectorStoreId,
             string? mimeType,
-            global::G.GeneratedMetadataVariant16? generatedMetadata,
+            global::G.GeneratedMetadataVariant111? generatedMetadata,
             string? model,
             object? metadata,
             string? type,

@@ -13,15 +13,15 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.ScoredVectorStoreFileChunksVariant1ItemDiscriminatorType? Type { get; }
+        public global::G.VectorStoreFileChunksVariant1ItemDiscriminatorType? Type { get; }
 
         /// <summary>
-        /// Scored text chunk for deprecated API.
+        /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        public global::G.MxbaiOmniApiRoutesV1DeprecatedVectorStoresModelsScoredTextInputChunk? Text { get; init; }
+        public global::G.TextInputChunk? Text { get; init; }
 #else
-        public global::G.MxbaiOmniApiRoutesV1DeprecatedVectorStoresModelsScoredTextInputChunk? Text { get; }
+        public global::G.TextInputChunk? Text { get; }
 #endif
 
         /// <summary>
@@ -39,7 +39,7 @@ namespace G
 #if NET6_0_OR_GREATER
             [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
 #endif
-            out global::G.MxbaiOmniApiRoutesV1DeprecatedVectorStoresModelsScoredTextInputChunk? value)
+            out global::G.TextInputChunk? value)
         {
             value = Text;
             return IsText;
@@ -48,17 +48,17 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.MxbaiOmniApiRoutesV1DeprecatedVectorStoresModelsScoredTextInputChunk PickText() => Text is { } value
+        public global::G.TextInputChunk PickText() => Text is { } value
             ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Text' but the value was {ToString()}.");
 
         /// <summary>
-        /// Scored image chunk for deprecated API.
+        /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        public global::G.MxbaiOmniApiRoutesV1DeprecatedVectorStoresModelsScoredImageUrlInputChunk? ImageUrl { get; init; }
+        public global::G.ImageUrlInputChunk? ImageUrl { get; init; }
 #else
-        public global::G.MxbaiOmniApiRoutesV1DeprecatedVectorStoresModelsScoredImageUrlInputChunk? ImageUrl { get; }
+        public global::G.ImageUrlInputChunk? ImageUrl { get; }
 #endif
 
         /// <summary>
@@ -76,7 +76,7 @@ namespace G
 #if NET6_0_OR_GREATER
             [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
 #endif
-            out global::G.MxbaiOmniApiRoutesV1DeprecatedVectorStoresModelsScoredImageUrlInputChunk? value)
+            out global::G.ImageUrlInputChunk? value)
         {
             value = ImageUrl;
             return IsImageUrl;
@@ -85,17 +85,17 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.MxbaiOmniApiRoutesV1DeprecatedVectorStoresModelsScoredImageUrlInputChunk PickImageUrl() => ImageUrl is { } value
+        public global::G.ImageUrlInputChunk PickImageUrl() => ImageUrl is { } value
             ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'ImageUrl' but the value was {ToString()}.");
 
         /// <summary>
-        /// Scored audio chunk for deprecated API.
+        /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        public global::G.MxbaiOmniApiRoutesV1DeprecatedVectorStoresModelsScoredAudioUrlInputChunk? AudioUrl { get; init; }
+        public global::G.AudioUrlInputChunk? AudioUrl { get; init; }
 #else
-        public global::G.MxbaiOmniApiRoutesV1DeprecatedVectorStoresModelsScoredAudioUrlInputChunk? AudioUrl { get; }
+        public global::G.AudioUrlInputChunk? AudioUrl { get; }
 #endif
 
         /// <summary>
@@ -113,7 +113,7 @@ namespace G
 #if NET6_0_OR_GREATER
             [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
 #endif
-            out global::G.MxbaiOmniApiRoutesV1DeprecatedVectorStoresModelsScoredAudioUrlInputChunk? value)
+            out global::G.AudioUrlInputChunk? value)
         {
             value = AudioUrl;
             return IsAudioUrl;
@@ -122,17 +122,17 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.MxbaiOmniApiRoutesV1DeprecatedVectorStoresModelsScoredAudioUrlInputChunk PickAudioUrl() => AudioUrl is { } value
+        public global::G.AudioUrlInputChunk PickAudioUrl() => AudioUrl is { } value
             ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'AudioUrl' but the value was {ToString()}.");
 
         /// <summary>
-        /// Scored video chunk for deprecated API.
+        /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        public global::G.MxbaiOmniApiRoutesV1DeprecatedVectorStoresModelsScoredVideoUrlInputChunk? VideoUrl { get; init; }
+        public global::G.VideoUrlInputChunk? VideoUrl { get; init; }
 #else
-        public global::G.MxbaiOmniApiRoutesV1DeprecatedVectorStoresModelsScoredVideoUrlInputChunk? VideoUrl { get; }
+        public global::G.VideoUrlInputChunk? VideoUrl { get; }
 #endif
 
         /// <summary>
@@ -150,7 +150,7 @@ namespace G
 #if NET6_0_OR_GREATER
             [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
 #endif
-            out global::G.MxbaiOmniApiRoutesV1DeprecatedVectorStoresModelsScoredVideoUrlInputChunk? value)
+            out global::G.VideoUrlInputChunk? value)
         {
             value = VideoUrl;
             return IsVideoUrl;
@@ -159,23 +159,23 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.MxbaiOmniApiRoutesV1DeprecatedVectorStoresModelsScoredVideoUrlInputChunk PickVideoUrl() => VideoUrl is { } value
+        public global::G.VideoUrlInputChunk PickVideoUrl() => VideoUrl is { } value
             ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'VideoUrl' but the value was {ToString()}.");
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator ChunksVariant1Item2(global::G.MxbaiOmniApiRoutesV1DeprecatedVectorStoresModelsScoredTextInputChunk value) => new ChunksVariant1Item2((global::G.MxbaiOmniApiRoutesV1DeprecatedVectorStoresModelsScoredTextInputChunk?)value);
+        public static implicit operator ChunksVariant1Item2(global::G.TextInputChunk value) => new ChunksVariant1Item2((global::G.TextInputChunk?)value);
 
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator global::G.MxbaiOmniApiRoutesV1DeprecatedVectorStoresModelsScoredTextInputChunk?(ChunksVariant1Item2 @this) => @this.Text;
+        public static implicit operator global::G.TextInputChunk?(ChunksVariant1Item2 @this) => @this.Text;
 
         /// <summary>
         /// 
         /// </summary>
-        public ChunksVariant1Item2(global::G.MxbaiOmniApiRoutesV1DeprecatedVectorStoresModelsScoredTextInputChunk? value)
+        public ChunksVariant1Item2(global::G.TextInputChunk? value)
         {
             Text = value;
         }
@@ -183,22 +183,22 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static ChunksVariant1Item2 FromText(global::G.MxbaiOmniApiRoutesV1DeprecatedVectorStoresModelsScoredTextInputChunk? value) => new ChunksVariant1Item2(value);
+        public static ChunksVariant1Item2 FromText(global::G.TextInputChunk? value) => new ChunksVariant1Item2(value);
 
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator ChunksVariant1Item2(global::G.MxbaiOmniApiRoutesV1DeprecatedVectorStoresModelsScoredImageUrlInputChunk value) => new ChunksVariant1Item2((global::G.MxbaiOmniApiRoutesV1DeprecatedVectorStoresModelsScoredImageUrlInputChunk?)value);
+        public static implicit operator ChunksVariant1Item2(global::G.ImageUrlInputChunk value) => new ChunksVariant1Item2((global::G.ImageUrlInputChunk?)value);
 
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator global::G.MxbaiOmniApiRoutesV1DeprecatedVectorStoresModelsScoredImageUrlInputChunk?(ChunksVariant1Item2 @this) => @this.ImageUrl;
+        public static implicit operator global::G.ImageUrlInputChunk?(ChunksVariant1Item2 @this) => @this.ImageUrl;
 
         /// <summary>
         /// 
         /// </summary>
-        public ChunksVariant1Item2(global::G.MxbaiOmniApiRoutesV1DeprecatedVectorStoresModelsScoredImageUrlInputChunk? value)
+        public ChunksVariant1Item2(global::G.ImageUrlInputChunk? value)
         {
             ImageUrl = value;
         }
@@ -206,22 +206,22 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static ChunksVariant1Item2 FromImageUrl(global::G.MxbaiOmniApiRoutesV1DeprecatedVectorStoresModelsScoredImageUrlInputChunk? value) => new ChunksVariant1Item2(value);
+        public static ChunksVariant1Item2 FromImageUrl(global::G.ImageUrlInputChunk? value) => new ChunksVariant1Item2(value);
 
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator ChunksVariant1Item2(global::G.MxbaiOmniApiRoutesV1DeprecatedVectorStoresModelsScoredAudioUrlInputChunk value) => new ChunksVariant1Item2((global::G.MxbaiOmniApiRoutesV1DeprecatedVectorStoresModelsScoredAudioUrlInputChunk?)value);
+        public static implicit operator ChunksVariant1Item2(global::G.AudioUrlInputChunk value) => new ChunksVariant1Item2((global::G.AudioUrlInputChunk?)value);
 
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator global::G.MxbaiOmniApiRoutesV1DeprecatedVectorStoresModelsScoredAudioUrlInputChunk?(ChunksVariant1Item2 @this) => @this.AudioUrl;
+        public static implicit operator global::G.AudioUrlInputChunk?(ChunksVariant1Item2 @this) => @this.AudioUrl;
 
         /// <summary>
         /// 
         /// </summary>
-        public ChunksVariant1Item2(global::G.MxbaiOmniApiRoutesV1DeprecatedVectorStoresModelsScoredAudioUrlInputChunk? value)
+        public ChunksVariant1Item2(global::G.AudioUrlInputChunk? value)
         {
             AudioUrl = value;
         }
@@ -229,22 +229,22 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static ChunksVariant1Item2 FromAudioUrl(global::G.MxbaiOmniApiRoutesV1DeprecatedVectorStoresModelsScoredAudioUrlInputChunk? value) => new ChunksVariant1Item2(value);
+        public static ChunksVariant1Item2 FromAudioUrl(global::G.AudioUrlInputChunk? value) => new ChunksVariant1Item2(value);
 
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator ChunksVariant1Item2(global::G.MxbaiOmniApiRoutesV1DeprecatedVectorStoresModelsScoredVideoUrlInputChunk value) => new ChunksVariant1Item2((global::G.MxbaiOmniApiRoutesV1DeprecatedVectorStoresModelsScoredVideoUrlInputChunk?)value);
+        public static implicit operator ChunksVariant1Item2(global::G.VideoUrlInputChunk value) => new ChunksVariant1Item2((global::G.VideoUrlInputChunk?)value);
 
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator global::G.MxbaiOmniApiRoutesV1DeprecatedVectorStoresModelsScoredVideoUrlInputChunk?(ChunksVariant1Item2 @this) => @this.VideoUrl;
+        public static implicit operator global::G.VideoUrlInputChunk?(ChunksVariant1Item2 @this) => @this.VideoUrl;
 
         /// <summary>
         /// 
         /// </summary>
-        public ChunksVariant1Item2(global::G.MxbaiOmniApiRoutesV1DeprecatedVectorStoresModelsScoredVideoUrlInputChunk? value)
+        public ChunksVariant1Item2(global::G.VideoUrlInputChunk? value)
         {
             VideoUrl = value;
         }
@@ -252,17 +252,17 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static ChunksVariant1Item2 FromVideoUrl(global::G.MxbaiOmniApiRoutesV1DeprecatedVectorStoresModelsScoredVideoUrlInputChunk? value) => new ChunksVariant1Item2(value);
+        public static ChunksVariant1Item2 FromVideoUrl(global::G.VideoUrlInputChunk? value) => new ChunksVariant1Item2(value);
 
         /// <summary>
         /// 
         /// </summary>
         public ChunksVariant1Item2(
-            global::G.ScoredVectorStoreFileChunksVariant1ItemDiscriminatorType? type,
-            global::G.MxbaiOmniApiRoutesV1DeprecatedVectorStoresModelsScoredTextInputChunk? text,
-            global::G.MxbaiOmniApiRoutesV1DeprecatedVectorStoresModelsScoredImageUrlInputChunk? imageUrl,
-            global::G.MxbaiOmniApiRoutesV1DeprecatedVectorStoresModelsScoredAudioUrlInputChunk? audioUrl,
-            global::G.MxbaiOmniApiRoutesV1DeprecatedVectorStoresModelsScoredVideoUrlInputChunk? videoUrl
+            global::G.VectorStoreFileChunksVariant1ItemDiscriminatorType? type,
+            global::G.TextInputChunk? text,
+            global::G.ImageUrlInputChunk? imageUrl,
+            global::G.AudioUrlInputChunk? audioUrl,
+            global::G.VideoUrlInputChunk? videoUrl
             )
         {
             Type = type;
@@ -305,10 +305,10 @@ namespace G
         /// 
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<global::G.MxbaiOmniApiRoutesV1DeprecatedVectorStoresModelsScoredTextInputChunk, TResult>? text = null,
-            global::System.Func<global::G.MxbaiOmniApiRoutesV1DeprecatedVectorStoresModelsScoredImageUrlInputChunk, TResult>? imageUrl = null,
-            global::System.Func<global::G.MxbaiOmniApiRoutesV1DeprecatedVectorStoresModelsScoredAudioUrlInputChunk, TResult>? audioUrl = null,
-            global::System.Func<global::G.MxbaiOmniApiRoutesV1DeprecatedVectorStoresModelsScoredVideoUrlInputChunk, TResult>? videoUrl = null,
+            global::System.Func<global::G.TextInputChunk, TResult>? text = null,
+            global::System.Func<global::G.ImageUrlInputChunk, TResult>? imageUrl = null,
+            global::System.Func<global::G.AudioUrlInputChunk, TResult>? audioUrl = null,
+            global::System.Func<global::G.VideoUrlInputChunk, TResult>? videoUrl = null,
             bool validate = true)
         {
             if (validate)
@@ -340,13 +340,13 @@ namespace G
         /// 
         /// </summary>
         public void Match(
-            global::System.Action<global::G.MxbaiOmniApiRoutesV1DeprecatedVectorStoresModelsScoredTextInputChunk>? text = null,
+            global::System.Action<global::G.TextInputChunk>? text = null,
 
-            global::System.Action<global::G.MxbaiOmniApiRoutesV1DeprecatedVectorStoresModelsScoredImageUrlInputChunk>? imageUrl = null,
+            global::System.Action<global::G.ImageUrlInputChunk>? imageUrl = null,
 
-            global::System.Action<global::G.MxbaiOmniApiRoutesV1DeprecatedVectorStoresModelsScoredAudioUrlInputChunk>? audioUrl = null,
+            global::System.Action<global::G.AudioUrlInputChunk>? audioUrl = null,
 
-            global::System.Action<global::G.MxbaiOmniApiRoutesV1DeprecatedVectorStoresModelsScoredVideoUrlInputChunk>? videoUrl = null,
+            global::System.Action<global::G.VideoUrlInputChunk>? videoUrl = null,
             bool validate = true)
         {
             if (validate)
@@ -376,10 +376,10 @@ namespace G
         /// 
         /// </summary>
         public void Switch(
-            global::System.Action<global::G.MxbaiOmniApiRoutesV1DeprecatedVectorStoresModelsScoredTextInputChunk>? text = null,
-            global::System.Action<global::G.MxbaiOmniApiRoutesV1DeprecatedVectorStoresModelsScoredImageUrlInputChunk>? imageUrl = null,
-            global::System.Action<global::G.MxbaiOmniApiRoutesV1DeprecatedVectorStoresModelsScoredAudioUrlInputChunk>? audioUrl = null,
-            global::System.Action<global::G.MxbaiOmniApiRoutesV1DeprecatedVectorStoresModelsScoredVideoUrlInputChunk>? videoUrl = null,
+            global::System.Action<global::G.TextInputChunk>? text = null,
+            global::System.Action<global::G.ImageUrlInputChunk>? imageUrl = null,
+            global::System.Action<global::G.AudioUrlInputChunk>? audioUrl = null,
+            global::System.Action<global::G.VideoUrlInputChunk>? videoUrl = null,
             bool validate = true)
         {
             if (validate)
@@ -413,13 +413,13 @@ namespace G
             var fields = new object?[]
             {
                 Text,
-                typeof(global::G.MxbaiOmniApiRoutesV1DeprecatedVectorStoresModelsScoredTextInputChunk),
+                typeof(global::G.TextInputChunk),
                 ImageUrl,
-                typeof(global::G.MxbaiOmniApiRoutesV1DeprecatedVectorStoresModelsScoredImageUrlInputChunk),
+                typeof(global::G.ImageUrlInputChunk),
                 AudioUrl,
-                typeof(global::G.MxbaiOmniApiRoutesV1DeprecatedVectorStoresModelsScoredAudioUrlInputChunk),
+                typeof(global::G.AudioUrlInputChunk),
                 VideoUrl,
-                typeof(global::G.MxbaiOmniApiRoutesV1DeprecatedVectorStoresModelsScoredVideoUrlInputChunk),
+                typeof(global::G.VideoUrlInputChunk),
             };
             const int offset = unchecked((int)2166136261);
             const int prime = 16777619;
@@ -436,10 +436,10 @@ namespace G
         public bool Equals(ChunksVariant1Item2 other)
         {
             return
-                global::System.Collections.Generic.EqualityComparer<global::G.MxbaiOmniApiRoutesV1DeprecatedVectorStoresModelsScoredTextInputChunk?>.Default.Equals(Text, other.Text) &&
-                global::System.Collections.Generic.EqualityComparer<global::G.MxbaiOmniApiRoutesV1DeprecatedVectorStoresModelsScoredImageUrlInputChunk?>.Default.Equals(ImageUrl, other.ImageUrl) &&
-                global::System.Collections.Generic.EqualityComparer<global::G.MxbaiOmniApiRoutesV1DeprecatedVectorStoresModelsScoredAudioUrlInputChunk?>.Default.Equals(AudioUrl, other.AudioUrl) &&
-                global::System.Collections.Generic.EqualityComparer<global::G.MxbaiOmniApiRoutesV1DeprecatedVectorStoresModelsScoredVideoUrlInputChunk?>.Default.Equals(VideoUrl, other.VideoUrl) 
+                global::System.Collections.Generic.EqualityComparer<global::G.TextInputChunk?>.Default.Equals(Text, other.Text) &&
+                global::System.Collections.Generic.EqualityComparer<global::G.ImageUrlInputChunk?>.Default.Equals(ImageUrl, other.ImageUrl) &&
+                global::System.Collections.Generic.EqualityComparer<global::G.AudioUrlInputChunk?>.Default.Equals(AudioUrl, other.AudioUrl) &&
+                global::System.Collections.Generic.EqualityComparer<global::G.VideoUrlInputChunk?>.Default.Equals(VideoUrl, other.VideoUrl) 
                 ;
         }
 

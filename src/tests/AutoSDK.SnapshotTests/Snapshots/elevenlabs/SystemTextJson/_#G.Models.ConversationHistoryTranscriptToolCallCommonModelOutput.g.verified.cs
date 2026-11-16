@@ -1,4 +1,4 @@
-﻿//HintName: G.Models.ConversationHistoryTranscriptToolCallCommonModelOutput.g.cs
+//HintName: G.Models.ConversationHistoryTranscriptToolCallCommonModelOutput.g.cs
 
 #nullable enable
 

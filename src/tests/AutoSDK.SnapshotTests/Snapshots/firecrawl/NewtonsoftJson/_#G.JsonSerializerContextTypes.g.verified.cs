@@ -395,283 +395,215 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.ScrapeAndExtractFromUrlResponse2? Type89 { get; set; }
+        public global::G.ScrapeAndExtractFromUrlsResponse? Type89 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.ScrapeAndExtractFromUrlResponse3? Type90 { get; set; }
+        public global::G.GetBatchScrapeStatusResponse? Type90 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.ScrapeAndExtractFromUrlsResponse? Type91 { get; set; }
+        public global::G.CancelBatchScrapeResponse? Type91 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.ScrapeAndExtractFromUrlsResponse2? Type92 { get; set; }
+        public global::G.CancelBatchScrapeResponse2? Type92 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.ScrapeAndExtractFromUrlsResponse3? Type93 { get; set; }
+        public global::G.CancelBatchScrapeResponse3? Type93 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.GetBatchScrapeStatusResponse? Type94 { get; set; }
+        public global::G.GetBatchScrapeErrorsResponse? Type94 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.GetBatchScrapeStatusResponse2? Type95 { get; set; }
+        public global::G.GetCrawlStatusResponse? Type95 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.GetBatchScrapeStatusResponse3? Type96 { get; set; }
+        public global::G.CancelCrawlResponse? Type96 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.CancelBatchScrapeResponse? Type97 { get; set; }
+        public global::G.CancelCrawlResponseStatus? Type97 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.CancelBatchScrapeResponse2? Type98 { get; set; }
+        public global::G.CancelCrawlResponse2? Type98 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.CancelBatchScrapeResponse3? Type99 { get; set; }
+        public global::G.CancelCrawlResponse3? Type99 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.GetBatchScrapeErrorsResponse? Type100 { get; set; }
+        public global::G.GetCrawlErrorsResponse? Type100 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.GetBatchScrapeErrorsResponse2? Type101 { get; set; }
+        public global::G.CrawlUrlsResponse? Type101 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.GetBatchScrapeErrorsResponse3? Type102 { get; set; }
+        public global::G.MapUrlsResponse? Type102 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.GetCrawlStatusResponse? Type103 { get; set; }
+        public global::G.ExtractDataResponse? Type103 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.GetCrawlStatusResponse2? Type104 { get; set; }
+        public global::G.GetActiveCrawlsResponse? Type104 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.GetCrawlStatusResponse3? Type105 { get; set; }
+        public global::System.Collections.Generic.IList<global::G.GetActiveCrawlsResponseCrawl>? Type105 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.CancelCrawlResponse? Type106 { get; set; }
+        public global::G.GetActiveCrawlsResponseCrawl? Type106 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.CancelCrawlResponseStatus? Type107 { get; set; }
+        public global::System.Guid? Type107 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.CancelCrawlResponse2? Type108 { get; set; }
+        public global::G.GetActiveCrawlsResponseCrawlOptions? Type108 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.CancelCrawlResponse3? Type109 { get; set; }
+        public global::G.GetActiveCrawlsResponse2? Type109 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.GetCrawlErrorsResponse? Type110 { get; set; }
+        public global::G.GetActiveCrawlsResponse3? Type110 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.GetCrawlErrorsResponse2? Type111 { get; set; }
+        public global::G.GetActiveCrawlsResponse4? Type111 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.GetCrawlErrorsResponse3? Type112 { get; set; }
+        public global::G.StartDeepResearchResponse? Type112 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.CrawlUrlsResponse? Type113 { get; set; }
+        public global::G.StartDeepResearchResponse2? Type113 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.CrawlUrlsResponse2? Type114 { get; set; }
+        public global::G.GetDeepResearchStatusResponse? Type114 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.CrawlUrlsResponse3? Type115 { get; set; }
+        public global::G.GetDeepResearchStatusResponseData? Type115 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.MapUrlsResponse? Type116 { get; set; }
+        public global::System.Collections.Generic.IList<global::G.GetDeepResearchStatusResponseDataActivitie>? Type116 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.MapUrlsResponse2? Type117 { get; set; }
+        public global::G.GetDeepResearchStatusResponseDataActivitie? Type117 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.MapUrlsResponse3? Type118 { get; set; }
+        public global::System.Collections.Generic.IList<global::G.GetDeepResearchStatusResponseDataSource>? Type118 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.ExtractDataResponse? Type119 { get; set; }
+        public global::G.GetDeepResearchStatusResponseDataSource? Type119 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.ExtractDataResponse2? Type120 { get; set; }
+        public global::G.GetDeepResearchStatusResponseDataStatus? Type120 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.GetActiveCrawlsResponse? Type121 { get; set; }
+        public global::G.GetDeepResearchStatusResponse2? Type121 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::G.GetActiveCrawlsResponseCrawl>? Type122 { get; set; }
+        public global::G.GetCreditUsageResponse? Type122 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.GetActiveCrawlsResponseCrawl? Type123 { get; set; }
+        public global::G.GetCreditUsageResponseData? Type123 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Guid? Type124 { get; set; }
+        public global::G.GetCreditUsageResponse2? Type124 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.GetActiveCrawlsResponseCrawlOptions? Type125 { get; set; }
+        public global::G.GetCreditUsageResponse3? Type125 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.GetActiveCrawlsResponse2? Type126 { get; set; }
+        public global::G.GetTokenUsageResponse? Type126 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.GetActiveCrawlsResponse3? Type127 { get; set; }
+        public global::G.GetTokenUsageResponseData? Type127 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.GetActiveCrawlsResponse4? Type128 { get; set; }
+        public global::G.GetTokenUsageResponse2? Type128 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.StartDeepResearchResponse? Type129 { get; set; }
+        public global::G.GetTokenUsageResponse3? Type129 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.StartDeepResearchResponse2? Type130 { get; set; }
+        public global::G.SearchAndScrapeResponse? Type130 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.GetDeepResearchStatusResponse? Type131 { get; set; }
+        public global::System.Collections.Generic.IList<global::G.SearchAndScrapeResponseDataItem>? Type131 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.GetDeepResearchStatusResponseData? Type132 { get; set; }
+        public global::G.SearchAndScrapeResponseDataItem? Type132 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::G.GetDeepResearchStatusResponseDataActivitie>? Type133 { get; set; }
+        public global::G.SearchAndScrapeResponseDataItemMetadata? Type133 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.GetDeepResearchStatusResponseDataActivitie? Type134 { get; set; }
+        public global::G.SearchAndScrapeResponse2? Type134 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::G.GetDeepResearchStatusResponseDataSource>? Type135 { get; set; }
+        public global::G.SearchAndScrapeResponse3? Type135 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.GetDeepResearchStatusResponseDataSource? Type136 { get; set; }
+        public global::G.GenerateLLMsTxtResponse? Type136 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.GetDeepResearchStatusResponseDataStatus? Type137 { get; set; }
+        public global::G.GenerateLLMsTxtResponse2? Type137 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.GetDeepResearchStatusResponse2? Type138 { get; set; }
+        public global::G.GetLLMsTxtStatusResponse? Type138 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.GetCreditUsageResponse? Type139 { get; set; }
+        public global::G.GetLLMsTxtStatusResponseStatus? Type139 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.GetCreditUsageResponseData? Type140 { get; set; }
+        public global::G.GetLLMsTxtStatusResponseData? Type140 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.GetCreditUsageResponse2? Type141 { get; set; }
-        /// <summary>
-        /// 
-        /// </summary>
-        public global::G.GetCreditUsageResponse3? Type142 { get; set; }
-        /// <summary>
-        /// 
-        /// </summary>
-        public global::G.GetTokenUsageResponse? Type143 { get; set; }
-        /// <summary>
-        /// 
-        /// </summary>
-        public global::G.GetTokenUsageResponseData? Type144 { get; set; }
-        /// <summary>
-        /// 
-        /// </summary>
-        public global::G.GetTokenUsageResponse2? Type145 { get; set; }
-        /// <summary>
-        /// 
-        /// </summary>
-        public global::G.GetTokenUsageResponse3? Type146 { get; set; }
-        /// <summary>
-        /// 
-        /// </summary>
-        public global::G.SearchAndScrapeResponse? Type147 { get; set; }
-        /// <summary>
-        /// 
-        /// </summary>
-        public global::System.Collections.Generic.IList<global::G.SearchAndScrapeResponseDataItem>? Type148 { get; set; }
-        /// <summary>
-        /// 
-        /// </summary>
-        public global::G.SearchAndScrapeResponseDataItem? Type149 { get; set; }
-        /// <summary>
-        /// 
-        /// </summary>
-        public global::G.SearchAndScrapeResponseDataItemMetadata? Type150 { get; set; }
-        /// <summary>
-        /// 
-        /// </summary>
-        public global::G.SearchAndScrapeResponse2? Type151 { get; set; }
-        /// <summary>
-        /// 
-        /// </summary>
-        public global::G.SearchAndScrapeResponse3? Type152 { get; set; }
-        /// <summary>
-        /// 
-        /// </summary>
-        public global::G.GenerateLLMsTxtResponse? Type153 { get; set; }
-        /// <summary>
-        /// 
-        /// </summary>
-        public global::G.GenerateLLMsTxtResponse2? Type154 { get; set; }
-        /// <summary>
-        /// 
-        /// </summary>
-        public global::G.GetLLMsTxtStatusResponse? Type155 { get; set; }
-        /// <summary>
-        /// 
-        /// </summary>
-        public global::G.GetLLMsTxtStatusResponseStatus? Type156 { get; set; }
-        /// <summary>
-        /// 
-        /// </summary>
-        public global::G.GetLLMsTxtStatusResponseData? Type157 { get; set; }
-        /// <summary>
-        /// 
-        /// </summary>
-        public global::G.GetLLMsTxtStatusResponse2? Type158 { get; set; }
+        public global::G.GetLLMsTxtStatusResponse2? Type141 { get; set; }
 
         /// <summary>
         /// 

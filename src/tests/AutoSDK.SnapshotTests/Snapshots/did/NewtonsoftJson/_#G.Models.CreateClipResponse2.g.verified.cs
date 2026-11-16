@@ -1,4 +1,4 @@
-﻿//HintName: G.Models.CreateClipResponse2.g.cs
+//HintName: G.Models.CreateClipResponse2.g.cs
 
 #nullable enable
 
@@ -10,30 +10,28 @@ namespace G
     public sealed partial class CreateClipResponse2
     {
         /// <summary>
-        /// The ID of the clip
+        /// 
         /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("id", Required = global::Newtonsoft.Json.Required.Always)]
-        public string Id { get; set; } = default!;
+        [global::Newtonsoft.Json.JsonProperty("kind", Required = global::Newtonsoft.Json.Required.Always)]
+        public string Kind { get; set; } = default!;
 
         /// <summary>
-        /// An identifier of this clip
+        /// 
         /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("object")]
-        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.CreateClipResponseObject2JsonConverter))]
-        public global::G.CreateClipResponseObject2 Object { get; set; }
+        [global::Newtonsoft.Json.JsonProperty("description", Required = global::Newtonsoft.Json.Required.Always)]
+        public string Description { get; set; } = default!;
 
         /// <summary>
-        /// Clip creation time as iso-8601 string
+        /// 
         /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("created_at", Required = global::Newtonsoft.Json.Required.Always)]
-        public string CreatedAt { get; set; } = default!;
+        [global::Newtonsoft.Json.JsonProperty("details")]
+        public object? Details { get; set; }
 
         /// <summary>
-        /// The status of the clip
+        /// 
         /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("status", Required = global::Newtonsoft.Json.Required.Always)]
-        [global::Newtonsoft.Json.JsonConverter(typeof(global::G.JsonConverters.CreateClipResponseStatus2JsonConverter))]
-        public global::G.CreateClipResponseStatus2 Status { get; set; } = default!;
+        [global::Newtonsoft.Json.JsonProperty("internal")]
+        public string? Internal { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -44,28 +42,20 @@ namespace G
         /// <summary>
         /// Initializes a new instance of the <see cref="CreateClipResponse2" /> class.
         /// </summary>
-        /// <param name="id">
-        /// The ID of the clip
-        /// </param>
-        /// <param name="createdAt">
-        /// Clip creation time as iso-8601 string
-        /// </param>
-        /// <param name="status">
-        /// The status of the clip
-        /// </param>
-        /// <param name="object">
-        /// An identifier of this clip
-        /// </param>
+        /// <param name="kind"></param>
+        /// <param name="description"></param>
+        /// <param name="details"></param>
+        /// <param name="internal"></param>
         public CreateClipResponse2(
-            string id,
-            string createdAt,
-            global::G.CreateClipResponseStatus2 status,
-            global::G.CreateClipResponseObject2 @object)
+            string kind,
+            string description,
+            object? details,
+            string? @internal)
         {
-            this.Id = id ?? throw new global::System.ArgumentNullException(nameof(id));
-            this.Object = @object;
-            this.CreatedAt = createdAt ?? throw new global::System.ArgumentNullException(nameof(createdAt));
-            this.Status = status;
+            this.Kind = kind ?? throw new global::System.ArgumentNullException(nameof(kind));
+            this.Description = description ?? throw new global::System.ArgumentNullException(nameof(description));
+            this.Details = details;
+            this.Internal = @internal;
         }
 
         /// <summary>

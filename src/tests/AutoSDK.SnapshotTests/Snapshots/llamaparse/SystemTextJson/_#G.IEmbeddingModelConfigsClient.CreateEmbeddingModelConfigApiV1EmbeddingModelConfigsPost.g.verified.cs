@@ -1,4 +1,4 @@
-﻿//HintName: G.IEmbeddingModelConfigsClient.CreateEmbeddingModelConfigApiV1EmbeddingModelConfigsPost.g.cs
+//HintName: G.IEmbeddingModelConfigsClient.CreateEmbeddingModelConfigApiV1EmbeddingModelConfigsPost.g.cs
 #nullable enable
 
 namespace G
