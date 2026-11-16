@@ -27,6 +27,14 @@ dotnet test --filter "FullyQualifiedName~DataTests"
 dotnet test --filter "FullyQualifiedName~NamingTests"
 dotnet test --filter "FullyQualifiedName~JsonTests"
 
+# One spec's snapshot tests, in seconds instead of the whole suite's four minutes.
+# The property is `Name`, which for a DataRow includes the arguments
+# (`SdkGenerator ("llamaparse.yaml",SystemTextJson)`). `DisplayName` is an xUnit
+# property: MSTest silently matches nothing, and reports "No test matches the
+# given testcase filter" rather than an error, so a run that proves nothing looks
+# like a run that passed.
+dotnet test --filter "Name~llamaparse"
+
 # Snapshot mismatches fail and leave .received files for review.
 # Review each received/verified diff, then explicitly copy only approved files
 # over their corresponding .verified baselines and rerun the affected tests.
