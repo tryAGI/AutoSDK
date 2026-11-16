@@ -215,8 +215,51 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/DefsUnion'
+  /partial-discriminator-mapping:
+    get:
+      operationId: getPartialDiscriminatorMapping
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/PartialMappedEvent'
 components:
   schemas:
+    # A discriminator whose `mapping` is PARTIAL: the second entry points at a schema name that does
+    # not exist (a misspelling - Mistral's responses stream does exactly this for half its entries).
+    # The invalid entry is dropped upstream, but the variant it described still declares its own wire
+    # value as a `const`, and that const is what the per-variant discriminator value is computed
+    # from. Taking only the mapping keys left the generated enum short of that member while the
+    # converter still referenced it, which is CS0117 - 16 of them on Mistral.
+    PartialMappedEvent:
+      oneOf:
+        - $ref: '#/components/schemas/MappedStartEvent'
+        - $ref: '#/components/schemas/MappedStopEvent'
+      discriminator:
+        propertyName: kind
+        mapping:
+          start: '#/components/schemas/MappedStartEvent'
+          stop: '#/components/schemas/MappedMisspelledEvent'
+    MappedStartEvent:
+      type: object
+      required: [kind]
+      properties:
+        kind:
+          type: string
+          const: start
+        startedAt:
+          type: string
+    MappedStopEvent:
+      type: object
+      required: [kind]
+      properties:
+        kind:
+          type: string
+          const: stop
+        reason:
+          type: string
     # A union schema literally named `Match`. The generated matcher is called `Match` too, and C#
     # forbids a member with its enclosing type's name - this shape produced CS0542 and took a whole
     # SDK down. Mistral's filter DSL has one.

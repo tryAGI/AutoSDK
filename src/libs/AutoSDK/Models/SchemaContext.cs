@@ -796,23 +796,30 @@ public class SchemaContext(
              schema.Discriminator.Mapping is { Count: > 0 }))
         {
             var discriminatorEnumValues = new List<JsonNode>();
+            var seen = new HashSet<string>(StringComparer.Ordinal);
             if (schema.Discriminator.Mapping is { Count: > 0 } mapping)
             {
                 foreach (var key in mapping.Keys)
                 {
-                    if (JsonValue.Create(key) is { } node)
+                    if (seen.Add(key) && JsonValue.Create(key) is { } node)
                     {
                         discriminatorEnumValues.Add(node);
                     }
                 }
             }
-            else
+
+            // Both sources, not one or the other. A mapping can be partial - an entry whose $ref
+            // does not resolve is dropped upstream - and the variant it was meant to describe still
+            // declares its own wire value as a `const`. Taking only the mapping keys then left the
+            // enum short of members that the per-variant discriminator value is computed from, so
+            // the generated converter referenced enum members that did not exist: 16 CS0117 on
+            // Mistral's responses stream, whose mapping misspells half its own schema names.
+            // Both are real values declared by the spec, and `seen` keeps the union deduplicated.
             {
                 var variantSchemas = (schema.OneOf as IEnumerable<IOpenApiSchema>)
                     ?? (schema.AnyOf as IEnumerable<IOpenApiSchema>)
                     ?? (schema.AllOf as IEnumerable<IOpenApiSchema>)
                     ?? [];
-                var seen = new HashSet<string>(StringComparer.Ordinal);
                 foreach (var variant in variantSchemas)
                 {
                     var resolved = variant.ResolveIfRequired();

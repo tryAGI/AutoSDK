@@ -1,4 +1,4 @@
-﻿//HintName: G.Models.AssistantOverridesCredentialDiscriminatorProvider.g.cs
+//HintName: G.Models.AssistantOverridesCredentialDiscriminatorProvider.g.cs
 
 #nullable enable
 
@@ -9,6 +9,10 @@ namespace G
     /// </summary>
     public enum AssistantOverridesCredentialDiscriminatorProvider
     {
+        /// <summary>
+        /// 
+        /// </summary>
+        x11labs,
         /// <summary>
         /// 
         /// </summary>
@@ -247,6 +251,7 @@ namespace G
         {
             return value switch
             {
+                AssistantOverridesCredentialDiscriminatorProvider.x11labs => "11labs",
                 AssistantOverridesCredentialDiscriminatorProvider.Anthropic => "anthropic",
                 AssistantOverridesCredentialDiscriminatorProvider.AnthropicBedrock => "anthropic-bedrock",
                 AssistantOverridesCredentialDiscriminatorProvider.Anyscale => "anyscale",
@@ -313,6 +318,7 @@ namespace G
         {
             return value switch
             {
+                "11labs" => AssistantOverridesCredentialDiscriminatorProvider.x11labs,
                 "anthropic" => AssistantOverridesCredentialDiscriminatorProvider.Anthropic,
                 "anthropic-bedrock" => AssistantOverridesCredentialDiscriminatorProvider.AnthropicBedrock,
                 "anyscale" => AssistantOverridesCredentialDiscriminatorProvider.Anyscale,

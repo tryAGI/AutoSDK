@@ -39,51 +39,79 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.Match? Type0 { get; set; }
+        public global::G.PartialMappedEvent? Type0 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.MatchEqual? Type1 { get; set; }
+        public global::G.MappedStartEvent? Type1 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.MatchRange? Type2 { get; set; }
+        public global::G.MappedStopEvent? Type2 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public string? Type3 { get; set; }
+        public global::G.PartialMappedEventDiscriminator? Type3 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public int? Type4 { get; set; }
+        public global::G.PartialMappedEventDiscriminatorKind? Type4 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public object? Type5 { get; set; }
+        public string? Type5 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.Pet? Type6 { get; set; }
+        public global::G.Match? Type6 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public bool? Type7 { get; set; }
+        public global::G.MatchEqual? Type7 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public long? Type8 { get; set; }
+        public global::G.MatchRange? Type8 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::G.Pet>? Type9 { get; set; }
+        public int? Type9 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.Error? Type10 { get; set; }
+        public global::G.DefsUnion? Type10 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<string>? Type11 { get; set; }
+        public global::G.DefsChunk? Type11 { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::G.DefsError? Type12 { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::G.Pet? Type13 { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool? Type14 { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
+        public long? Type15 { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::System.Collections.Generic.IList<global::G.Pet>? Type16 { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::G.Error? Type17 { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::System.Collections.Generic.IList<string>? Type18 { get; set; }
 
         /// <summary>
         /// 

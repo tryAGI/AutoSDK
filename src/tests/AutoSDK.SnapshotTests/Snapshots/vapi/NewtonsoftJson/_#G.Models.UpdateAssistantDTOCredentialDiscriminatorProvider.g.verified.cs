@@ -1,4 +1,4 @@
-﻿//HintName: G.Models.UpdateAssistantDTOCredentialDiscriminatorProvider.g.cs
+//HintName: G.Models.UpdateAssistantDTOCredentialDiscriminatorProvider.g.cs
 
 #nullable enable
 
@@ -10,6 +10,11 @@ namespace G
     [global::System.Runtime.Serialization.DataContract]
     public enum UpdateAssistantDTOCredentialDiscriminatorProvider
     {
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Runtime.Serialization.EnumMember(Value="11labs")]
+        x11labs,
         /// <summary>
         /// 
         /// </summary>
@@ -304,6 +309,7 @@ namespace G
         {
             return value switch
             {
+                UpdateAssistantDTOCredentialDiscriminatorProvider.x11labs => "11labs",
                 UpdateAssistantDTOCredentialDiscriminatorProvider.Anthropic => "anthropic",
                 UpdateAssistantDTOCredentialDiscriminatorProvider.AnthropicBedrock => "anthropic-bedrock",
                 UpdateAssistantDTOCredentialDiscriminatorProvider.Anyscale => "anyscale",
@@ -370,6 +376,7 @@ namespace G
         {
             return value switch
             {
+                "11labs" => UpdateAssistantDTOCredentialDiscriminatorProvider.x11labs,
                 "anthropic" => UpdateAssistantDTOCredentialDiscriminatorProvider.Anthropic,
                 "anthropic-bedrock" => UpdateAssistantDTOCredentialDiscriminatorProvider.AnthropicBedrock,
                 "anyscale" => UpdateAssistantDTOCredentialDiscriminatorProvider.Anyscale,

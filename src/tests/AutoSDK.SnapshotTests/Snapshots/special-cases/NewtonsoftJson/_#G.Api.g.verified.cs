@@ -1,4 +1,4 @@
-﻿//HintName: G.Api.g.cs
+//HintName: G.Api.g.cs
 
 #nullable enable
 
@@ -41,6 +41,10 @@ namespace G
             {
                 Converters =
                 {
+                    new global::G.JsonConverters.PartialMappedEventDiscriminatorKindJsonConverter(),
+
+                    new global::G.JsonConverters.PartialMappedEventDiscriminatorKindNullableJsonConverter(),
+
                     new global::G.JsonConverters.UnixTimestampJsonConverter(),
                 }
             };

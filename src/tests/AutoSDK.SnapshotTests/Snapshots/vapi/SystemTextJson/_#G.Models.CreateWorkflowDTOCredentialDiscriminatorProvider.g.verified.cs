@@ -1,4 +1,4 @@
-﻿//HintName: G.Models.CreateWorkflowDTOCredentialDiscriminatorProvider.g.cs
+//HintName: G.Models.CreateWorkflowDTOCredentialDiscriminatorProvider.g.cs
 
 #nullable enable
 
@@ -9,6 +9,10 @@ namespace G
     /// </summary>
     public enum CreateWorkflowDTOCredentialDiscriminatorProvider
     {
+        /// <summary>
+        /// 
+        /// </summary>
+        x11labs,
         /// <summary>
         /// 
         /// </summary>
@@ -247,6 +251,7 @@ namespace G
         {
             return value switch
             {
+                CreateWorkflowDTOCredentialDiscriminatorProvider.x11labs => "11labs",
                 CreateWorkflowDTOCredentialDiscriminatorProvider.Anthropic => "anthropic",
                 CreateWorkflowDTOCredentialDiscriminatorProvider.AnthropicBedrock => "anthropic-bedrock",
                 CreateWorkflowDTOCredentialDiscriminatorProvider.Anyscale => "anyscale",
@@ -313,6 +318,7 @@ namespace G
         {
             return value switch
             {
+                "11labs" => CreateWorkflowDTOCredentialDiscriminatorProvider.x11labs,
                 "anthropic" => CreateWorkflowDTOCredentialDiscriminatorProvider.Anthropic,
                 "anthropic-bedrock" => CreateWorkflowDTOCredentialDiscriminatorProvider.AnthropicBedrock,
                 "anyscale" => CreateWorkflowDTOCredentialDiscriminatorProvider.Anyscale,

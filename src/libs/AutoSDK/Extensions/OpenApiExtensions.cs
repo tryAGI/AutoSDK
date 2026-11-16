@@ -484,6 +484,11 @@ public static class OpenApiExtensions
 #endif
             if (jsonNode is JsonObject rootObject)
             {
+                // Before anything else, and regardless of the declared version: a schema may keep
+                // its subschemas in a JSON Schema `$defs` block, and nothing downstream resolves
+                // `#/$defs/Name`.
+                HoistLocalDefs(rootObject);
+
                 if (IsOpenApi31Document(rootObject))
                 {
                     var unsupportedKeywords = new List<string>();
@@ -546,6 +551,42 @@ public static class OpenApiExtensions
         var allocBeforeYamlCompatibilityNormalization = GC.GetTotalAllocatedBytes(precise: true);
 #endif
         var normalizedText = NormalizeOpenApi3YamlCompatibilityKeywords(text);
+
+        // A YAML document is normalized as text, so the `$defs` hoist - which needs the object
+        // graph - would be skipped, and a YAML spec is the common case (Mistral's is one). Only
+        // when the text actually mentions `$defs` is it worth converting to JSON to do the hoist;
+        // every other spec pays a single substring check.
+        if (normalizedText.Contains("$defs"))
+        {
+            try
+            {
+                // Not gated on the declared version: `$defs` reaches a 3.0 document too, via tools
+                // that bundle a standalone JSON Schema, and there it is just as unresolvable.
+                if (YamlJsonConverter.Parse(normalizedText) is JsonObject yamlRootObject)
+                {
+                    HoistLocalDefs(yamlRootObject);
+                    normalizedText = yamlRootObject.ToJsonString();
+
+                    var hoistedResult = OpenApiDocument.Parse(
+                        normalizedText,
+                        format: "json",
+                        settings: readerSettings);
+                    jsonSyntaxTime.Stop();
+                    parsingTimes = new OpenApiParsingTimes(
+                        JsonSyntax: jsonSyntaxTime.Elapsed,
+                        CompatibilityNormalization: TimeSpan.Zero,
+                        MicrosoftReader: TimeSpan.Zero,
+                        CompatibilityWalker: TimeSpan.Zero,
+                        PostProcessing: TimeSpan.Zero,
+                        AllocJsonSyntax: yamlAllocJsonSyntax);
+                    return hoistedResult;
+                }
+            }
+            catch (JsonException)
+            {
+                // Not convertible - fall through and let the YAML reader report it.
+            }
+        }
         yamlCompatibilityNormalizationTime.Stop();
 #if NET
         var yamlAllocCompatibilityNormalization = GC.GetTotalAllocatedBytes(precise: true) - allocBeforeYamlCompatibilityNormalization;
@@ -1755,6 +1796,174 @@ info:
             "AutoSDK cannot translate array contains constraints into the current model pipeline yet.");
 
         return changed;
+    }
+
+    /// <summary>
+    /// Moves every schema-local JSON Schema <c>$defs</c> block into <c>components.schemas</c> and
+    /// repoints the <c>#/$defs/Name</c> references at it.
+    /// </summary>
+    /// <remarks>
+    /// OpenAPI 3.1 is JSON Schema 2020-12, so a schema may legally carry its subschemas in a
+    /// <c>$defs</c> block and reference them as <c>#/$defs/Name</c>. Read literally that pointer
+    /// means the <i>document</i> root, which in an OpenAPI document has no <c>$defs</c>, so the
+    /// references dangle - and a union whose variants all dangle used to render as <c>AnyOf&lt;&gt;</c>
+    /// and fail to compile. This shape comes from tools that bundle a standalone JSON Schema into a
+    /// spec; Mistral's managed-index summary response is the live example.
+    ///
+    /// Hoisting is done on the raw document, before parsing, because the reader does not surface
+    /// <c>$defs</c> at all - and it means everything downstream (naming, deduplication, converters)
+    /// sees ordinary components with no special cases.
+    ///
+    /// A definition whose name is already taken in <c>components.schemas</c> by <i>different</i>
+    /// content is left alone rather than renamed or overwritten: renaming would need every
+    /// reference rewritten per subtree, and overwriting would corrupt the existing component. Those
+    /// keep today's behaviour, which is the <c>object</c> fallback.
+    /// </remarks>
+    private static void HoistLocalDefs(JsonObject rootObject)
+    {
+        var defs = new Dictionary<string, JsonNode>(StringComparer.Ordinal);
+        var ambiguous = new HashSet<string>(StringComparer.Ordinal);
+        CollectLocalDefs(rootObject, defs, ambiguous);
+        foreach (var name in ambiguous)
+        {
+            defs.Remove(name);
+        }
+
+        if (defs.Count == 0)
+        {
+            return;
+        }
+
+        if (rootObject["components"] is not JsonObject components)
+        {
+            components = new JsonObject();
+            rootObject["components"] = components;
+        }
+
+        if (components["schemas"] is not JsonObject schemas)
+        {
+            schemas = new JsonObject();
+            components["schemas"] = schemas;
+        }
+
+        var hoisted = new HashSet<string>(StringComparer.Ordinal);
+        foreach (var def in defs)
+        {
+            if (schemas.ContainsKey(def.Key))
+            {
+                // Same name already a component. Only safe when it is the same schema.
+                if (string.Equals(
+                        schemas[def.Key]?.ToJsonString(),
+                        def.Value.ToJsonString(),
+                        StringComparison.Ordinal))
+                {
+                    hoisted.Add(def.Key);
+                }
+
+                continue;
+            }
+
+            schemas[def.Key] = def.Value.DeepClone();
+            hoisted.Add(def.Key);
+        }
+
+        if (hoisted.Count > 0)
+        {
+            RepointLocalDefRefs(rootObject, hoisted);
+        }
+    }
+
+    private static void CollectLocalDefs(
+        JsonNode? node,
+        Dictionary<string, JsonNode> defs,
+        HashSet<string> ambiguous)
+    {
+        switch (node)
+        {
+            case JsonObject jsonObject:
+                if (jsonObject["$defs"] is JsonObject localDefs)
+                {
+                    foreach (var entry in localDefs)
+                    {
+                        if (entry.Value is null)
+                        {
+                            continue;
+                        }
+
+                        if (defs.TryGetValue(entry.Key, out var existing))
+                        {
+                            // Two `$defs` blocks defining the same name differently. `#/$defs/Name`
+                            // is written as though each schema were its own document, so there is
+                            // no way to tell which one a given reference meant. Hoisting either
+                            // would silently point half the references at the wrong schema, which
+                            // is worse than not resolving them, so this name is left out
+                            // altogether and keeps the `object` fallback.
+                            if (!string.Equals(
+                                    existing.ToJsonString(),
+                                    entry.Value.ToJsonString(),
+                                    StringComparison.Ordinal))
+                            {
+                                ambiguous.Add(entry.Key);
+                            }
+
+                            continue;
+                        }
+
+                        defs[entry.Key] = entry.Value;
+                    }
+                }
+
+                foreach (var property in jsonObject)
+                {
+                    CollectLocalDefs(property.Value, defs, ambiguous);
+                }
+
+                break;
+
+            case JsonArray jsonArray:
+                foreach (var item in jsonArray)
+                {
+                    CollectLocalDefs(item, defs, ambiguous);
+                }
+
+                break;
+        }
+    }
+
+    private static void RepointLocalDefRefs(JsonNode? node, HashSet<string> hoisted)
+    {
+        switch (node)
+        {
+            case JsonObject jsonObject:
+                if (jsonObject["$ref"]?.GetValue<string>() is { } reference &&
+                    reference.StartsWith("#/$defs/", StringComparison.Ordinal))
+                {
+                    var name = reference.Substring("#/$defs/".Length);
+                    if (hoisted.Contains(name))
+                    {
+                        jsonObject["$ref"] = $"#/components/schemas/{name}";
+                    }
+                }
+
+                // The block itself is now redundant, and leaving it would have the 3.1 walk
+                // descend into schemas that are also components - the same schema twice.
+                jsonObject.Remove("$defs");
+
+                foreach (var property in jsonObject)
+                {
+                    RepointLocalDefRefs(property.Value, hoisted);
+                }
+
+                break;
+
+            case JsonArray jsonArray:
+                foreach (var item in jsonArray)
+                {
+                    RepointLocalDefRefs(item, hoisted);
+                }
+
+                break;
+        }
     }
 
     private static bool NormalizeContentEncodingKeyword(JsonObject jsonObject)

@@ -1,4 +1,4 @@
-﻿//HintName: G.Models.WorkflowUserEditableCredentialDiscriminatorProvider.g.cs
+//HintName: G.Models.WorkflowUserEditableCredentialDiscriminatorProvider.g.cs
 
 #nullable enable
 
@@ -10,6 +10,11 @@ namespace G
     [global::System.Runtime.Serialization.DataContract]
     public enum WorkflowUserEditableCredentialDiscriminatorProvider
     {
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Runtime.Serialization.EnumMember(Value="11labs")]
+        x11labs,
         /// <summary>
         /// 
         /// </summary>
@@ -304,6 +309,7 @@ namespace G
         {
             return value switch
             {
+                WorkflowUserEditableCredentialDiscriminatorProvider.x11labs => "11labs",
                 WorkflowUserEditableCredentialDiscriminatorProvider.Anthropic => "anthropic",
                 WorkflowUserEditableCredentialDiscriminatorProvider.AnthropicBedrock => "anthropic-bedrock",
                 WorkflowUserEditableCredentialDiscriminatorProvider.Anyscale => "anyscale",
@@ -370,6 +376,7 @@ namespace G
         {
             return value switch
             {
+                "11labs" => WorkflowUserEditableCredentialDiscriminatorProvider.x11labs,
                 "anthropic" => WorkflowUserEditableCredentialDiscriminatorProvider.Anthropic,
                 "anthropic-bedrock" => WorkflowUserEditableCredentialDiscriminatorProvider.AnthropicBedrock,
                 "anyscale" => WorkflowUserEditableCredentialDiscriminatorProvider.Anyscale,

@@ -1,4 +1,4 @@
-﻿//HintName: G.Models.AssistantCredentialDiscriminatorProvider.g.cs
+//HintName: G.Models.AssistantCredentialDiscriminatorProvider.g.cs
 
 #nullable enable
 
@@ -10,6 +10,11 @@ namespace G
     [global::System.Runtime.Serialization.DataContract]
     public enum AssistantCredentialDiscriminatorProvider
     {
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Runtime.Serialization.EnumMember(Value="11labs")]
+        x11labs,
         /// <summary>
         /// 
         /// </summary>
@@ -304,6 +309,7 @@ namespace G
         {
             return value switch
             {
+                AssistantCredentialDiscriminatorProvider.x11labs => "11labs",
                 AssistantCredentialDiscriminatorProvider.Anthropic => "anthropic",
                 AssistantCredentialDiscriminatorProvider.AnthropicBedrock => "anthropic-bedrock",
                 AssistantCredentialDiscriminatorProvider.Anyscale => "anyscale",
@@ -370,6 +376,7 @@ namespace G
         {
             return value switch
             {
+                "11labs" => AssistantCredentialDiscriminatorProvider.x11labs,
                 "anthropic" => AssistantCredentialDiscriminatorProvider.Anthropic,
                 "anthropic-bedrock" => AssistantCredentialDiscriminatorProvider.AnthropicBedrock,
                 "anyscale" => AssistantCredentialDiscriminatorProvider.Anyscale,
