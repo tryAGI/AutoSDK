@@ -307,6 +307,12 @@ public static class ModelNameGenerator
                 // would resolve to a type nothing defines. together.yaml is the case: the context
                 // that sorts first there is filtered out, so pointing `FineTuneEvent2` at its
                 // `FineTuneEventType` produced a reference to a type that was never generated.
+                //
+                // Taking the first member that DOES emit, and moving it to the front so the
+                // un-suffixed name goes to a type that exists, was measured and rejected: across
+                // the 120 snapshot specs it recovered only 2 of the 112 remaining copies and
+                // removed 13 types, while adding 30 numbered names and renaming types in 28 specs.
+                // More digits in names is the opposite of the point.
                 var canEmit = group[0].IsModel && !group[0].IsFilteredOutModel;
 
                 var number = 2;
