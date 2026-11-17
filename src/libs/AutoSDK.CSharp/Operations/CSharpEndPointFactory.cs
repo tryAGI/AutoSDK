@@ -244,6 +244,23 @@ public static class CSharpEndPointFactory
             streamFormat = streamFormatValue;
         }
 
+        // A streaming media type on a 2XX is the only thing that makes AutoSDK emit an
+        // `IAsyncEnumerable` method, and enumerating events means deserializing each one into a
+        // type. A response that declares `text/event-stream` (or NDJSON, or an AWS event stream)
+        // and carries no schema at all gives it nothing to enumerate: the method's return type
+        // cannot be written, and code generation threw `InvalidOperationException` out of a
+        // `Parallel.For` worker, which failed the whole run over one operation.
+        //
+        // Weaviate's `POST /mcp` is that operation - it lists `text/event-stream` among its
+        // `produces` while describing its 200 only as "JSON-RPC response or SSE stream". Treating
+        // such a response as the ordinary one it is loses nothing that could have been generated,
+        // and the CLI reports it, so the spec gap stays visible instead of becoming a crash.
+        if (streamFormat is not StreamFormat.None and not StreamFormat.Binary &&
+            string.IsNullOrWhiteSpace(successResponse.Type.CSharpTypeRaw))
+        {
+            streamFormat = StreamFormat.None;
+        }
+
         var pollingOperations = streamFormat == StreamFormat.None
             ? operation.Operation.GetPollingOperations()
             : ImmutableArray<PollingOperation>.Empty.AsEquatableArray();

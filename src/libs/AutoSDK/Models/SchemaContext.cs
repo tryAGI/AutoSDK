@@ -527,7 +527,7 @@ public class SchemaContext(
             return "allOf";
         }
 
-        return schema.Type.ToTypeString() ?? "class";
+        return schema.ToTypeStringWithFormatFallback() ?? "class";
     }
 
     public bool IsRequired =>

@@ -45,6 +45,65 @@ public static class OpenApiSchemaExtensions
     }
 
     /// <summary>
+    /// The JSON type a <c>format</c> can only belong to, or null when the format says nothing.
+    /// </summary>
+    /// <remarks>
+    /// A schema that gives a <c>format</c> and no <c>type</c> is incomplete - a format is an
+    /// annotation on a type, not a type - but it is not ambiguous, and it happens for reasons the
+    /// document's author did not choose. Weaviate's spec is the case that forced this: it declares
+    /// <c>"type": ["string", "null"]</c> on seven properties, which is JSON Schema syntax, inside a
+    /// <c>swagger: "2.0"</c> document, where the 2.0 schema object has no array form. The reader
+    /// cannot represent that, so it hands over a schema whose type is simply absent while the
+    /// <c>format: date-time</c> survives - and the type mapper threw
+    /// <c>NotSupportedException</c> on the first one it reached, which aborted the whole generation.
+    ///
+    /// Only formats that one JSON type can carry are listed. A format nobody agrees on, or one that
+    /// several types use, returns null and leaves the schema as typeless as it was.
+    /// </remarks>
+    public static string? InferTypeFromFormat(string? format)
+    {
+        if (string.IsNullOrWhiteSpace(format))
+        {
+            return null;
+        }
+
+        return format!.ToLowerInvariant() switch
+        {
+            "date-time" or "date" or "time" or "duration" or
+            "uuid" or "guid" or
+            "email" or "idn-email" or
+            "hostname" or "idn-hostname" or
+            "ipv4" or "ipv6" or
+            "uri" or "url" or "uri-reference" or "uri-template" or "iri" or
+            "byte" or "binary" or "password" or "char" or "string" or
+            "regex" or "json-pointer" or "relative-json-pointer" => "string",
+
+            "int8" or "int16" or "int32" or "int64" or
+            "uint8" or "uint16" or "uint32" or "uint64" => "integer",
+
+            "float" or "double" or "decimal" => "number",
+
+            _ => null,
+        };
+    }
+
+    /// <summary>
+    /// The schema's type as a lowercase string, falling back to what its <c>format</c> implies.
+    /// </summary>
+    /// <remarks>
+    /// Use this rather than <see cref="ToTypeString(JsonSchemaType?)"/> wherever a missing type
+    /// would be treated as "no type at all", so that the two places deciding what a schema is - the
+    /// context tree and the C# type mapper - cannot reach different conclusions about the same
+    /// schema. See <see cref="InferTypeFromFormat"/> for why a schema arrives without a type.
+    /// </remarks>
+    public static string? ToTypeStringWithFormatFallback(this IOpenApiSchema schema)
+    {
+        schema = schema ?? throw new ArgumentNullException(nameof(schema));
+
+        return schema.Type.ToTypeString() ?? InferTypeFromFormat(schema.Format);
+    }
+
+    /// <summary>
     /// Checks if the schema is a reference (OpenApiSchemaReference).
     /// </summary>
     public static bool IsSchemaReference(this IOpenApiSchema schema)

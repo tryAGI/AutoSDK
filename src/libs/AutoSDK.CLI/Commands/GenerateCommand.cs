@@ -1105,6 +1105,7 @@ internal sealed class GenerateCommand : Command
         }
 
         WarnAboutResponseRequiredDefaults(coreResult.OpenApiDocument);
+        WarnAboutStreamingResponsesWithoutSchema(coreResult.OpenApiDocument);
 
         if (settings.DirectionAwareJsonGenerationMode &&
             !data.Types.IsEmpty)
@@ -1453,6 +1454,41 @@ internal sealed class GenerateCommand : Command
             $"Warning: {findings.Count} response field(s) are declared required and also have a default, " +
             $"so the service may omit them and deserialization would fail: {sample}{more}. " +
             "Cover those surfaces with a live test, or pass --relax-response-required.");
+    }
+
+    /// <summary>
+    /// Reports the 2XX responses that declare a streaming media type but no payload.
+    /// </summary>
+    /// <remarks>
+    /// The generator demotes these to ordinary responses so one such operation cannot fail the
+    /// whole run, which means the lost streaming method is invisible in the output. This is the
+    /// only place it is visible.
+    /// </remarks>
+    private static void WarnAboutStreamingResponsesWithoutSchema(
+        Microsoft.OpenApi.OpenApiDocument? document)
+    {
+        if (document is null)
+        {
+            return;
+        }
+
+        var findings = document.FindStreamingResponsesWithoutSchema();
+        if (findings.Count == 0)
+        {
+            return;
+        }
+
+        var sample = string.Join(
+            ", ",
+            findings.Take(5).Select(static x => $"{x.Operation} ({x.MediaType})"));
+        var more = findings.Count > 5
+            ? $", and {findings.Count - 5} more"
+            : string.Empty;
+
+        Console.WriteLine(
+            $"Warning: {findings.Count} response(s) declare a streaming media type with no schema, " +
+            $"so no streaming method could be generated for them: {sample}{more}. " +
+            "Give each one a response schema in the spec to get its streaming method back.");
     }
 
     private static bool ShouldWarnAboutEmptyGeneratedSurface(

@@ -520,6 +520,13 @@ public static class CSharpTypeMapper
             (null, null) => "object",
             ("null", _) => "object",
             ("any", _) => "object",
+
+            // A schema with no type and a format nothing recognizes. The format is an annotation on
+            // a type, never a type itself, so an unrecognized one carries no type information at
+            // all - which leaves exactly the `(null, null)` case two lines up, already answered
+            // with `object`. Throwing instead, purely because an unknown annotation string is
+            // present, aborts the entire generation over one vendor extension.
+            (null, _) => "object",
             _ => throw new NotSupportedException(
                 $"Type {context.Schema.Type} (normalized: {schemaTypeAndFormat.Type ?? "<null>"}, format: {schemaTypeAndFormat.Format ?? "<null>"}, id: {context.Id}, context type: {context.Type}) is not supported."),
         };
@@ -527,7 +534,7 @@ public static class CSharpTypeMapper
 
     private static (string? Type, string? Format) GetSchemaTypeAndFormat(IOpenApiSchema schema)
     {
-        var type = schema.Type.ToTypeString();
+        var type = schema.ToTypeStringWithFormatFallback();
         return (
             string.IsNullOrWhiteSpace(type) ? null : type,
             NormalizeSchemaFormat(schema.Format));
