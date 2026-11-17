@@ -355,13 +355,13 @@ namespace G
                                     if (__effectiveReadResponseAsString)
                                     {
                                         __content_301 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
-                                        __value_301 = global::G.BasicError.FromJson(__content_301, JsonSerializerOptions);
+                                        __value_301 = __content_301 is not { Length: > 0 } ? null : global::G.BasicError.FromJson(__content_301, JsonSerializerOptions);
                                     }
                                     else
                                     {
                                         __content_301 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
 
-                                        __value_301 = global::G.BasicError.FromJson(__content_301, JsonSerializerOptions);
+                                        __value_301 = __content_301 is not { Length: > 0 } ? null : global::G.BasicError.FromJson(__content_301, JsonSerializerOptions);
                                     }
                                 }
                                 catch (global::System.Exception __ex)
@@ -372,7 +372,7 @@ namespace G
 
                                 throw global::G.ApiException<global::G.BasicError>.Create(
                                     statusCode: __response.StatusCode,
-                                    message: __content_301 ?? __response.ReasonPhrase ?? string.Empty,
+                                    message: __content_301 is { Length: > 0 } ? __content_301 : __response.ReasonPhrase ?? string.Empty,
                                     innerException: __exception_301,
                                     responseBody: __content_301,
                                     responseObject: __value_301,
@@ -415,7 +415,7 @@ namespace G
                                 {
                                     throw global::G.ApiException.Create(
                                         statusCode: __response.StatusCode,
-                                        message: __content ?? __response.ReasonPhrase ?? string.Empty,
+                                        message: __content is { Length: > 0 } ? __content : __response.ReasonPhrase ?? string.Empty,
                                         innerException: __ex,
                                         responseBody: __content,
                                         responseHeaders: global::System.Linq.Enumerable.ToDictionary(
@@ -460,7 +460,7 @@ namespace G
 
                                     throw global::G.ApiException.Create(
                                         statusCode: __response.StatusCode,
-                                        message: __content ?? __response.ReasonPhrase ?? string.Empty,
+                                        message: __content is { Length: > 0 } ? __content : __response.ReasonPhrase ?? string.Empty,
                                         innerException: __ex,
                                         responseBody: __content,
                                         responseHeaders: global::System.Linq.Enumerable.ToDictionary(

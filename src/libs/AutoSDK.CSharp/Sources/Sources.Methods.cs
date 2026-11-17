@@ -3068,7 +3068,7 @@ namespace {endPoint.Settings.Namespace}
 
                 throw global::{endPoint.GlobalSettings.Namespace}.ApiException.Create(
                     statusCode: __response.StatusCode,
-                    message: __content ?? __response.ReasonPhrase ?? string.Empty,
+                    message: __content is {{ Length: > 0 }} ? __content : __response.ReasonPhrase ?? string.Empty,
                     innerException: __ex,
                     responseBody: __content,
                     responseHeaders: global::System.Linq.Enumerable.ToDictionary(
@@ -3235,7 +3235,7 @@ namespace {endPoint.Settings.Namespace}
 
                 throw global::{endPoint.GlobalSettings.Namespace}.ApiException.Create(
                     statusCode: __response.StatusCode,
-                    message: __content ?? __response.ReasonPhrase ?? string.Empty,
+                    message: __content is {{ Length: > 0 }} ? __content : __response.ReasonPhrase ?? string.Empty,
                     innerException: __ex,
                     responseBody: __content,
                     responseHeaders: global::System.Linq.Enumerable.ToDictionary(
@@ -3300,7 +3300,7 @@ namespace {endPoint.Settings.Namespace}
 
                 throw global::{endPoint.GlobalSettings.Namespace}.ApiException.Create(
                     statusCode: __response.StatusCode,
-                    message: __content ?? __response.ReasonPhrase ?? string.Empty,
+                    message: __content is {{ Length: > 0 }} ? __content : __response.ReasonPhrase ?? string.Empty,
                     innerException: __ex,
                     responseBody: __content,
                     responseHeaders: global::System.Linq.Enumerable.ToDictionary(
@@ -3396,7 +3396,7 @@ namespace {endPoint.Settings.Namespace}
 
                 throw global::{endPoint.GlobalSettings.Namespace}.ApiException.Create(
                     statusCode: __response.StatusCode,
-                    message: __content ?? __response.ReasonPhrase ?? string.Empty,
+                    message: __content is {{ Length: > 0 }} ? __content : __response.ReasonPhrase ?? string.Empty,
                     innerException: __ex,
                     responseBody: __content,
                     responseHeaders: global::System.Linq.Enumerable.ToDictionary(
@@ -3453,7 +3453,7 @@ namespace {endPoint.Settings.Namespace}
                     throw global::{endPoint.GlobalSettings.Namespace}.ApiException.Create(
                         statusCode: __response.StatusCode,
                         message: {(endPoint.ContentType == ContentType.String
-                            ? "__content ?? __response.ReasonPhrase ?? string.Empty"
+                            ? "__content is { Length: > 0 } ? __content : __response.ReasonPhrase ?? string.Empty"
                             : "__response.ReasonPhrase ?? string.Empty")},
                         innerException: __ex,
                         responseBody: {(endPoint.ContentType == ContentType.String ? "__content" : "null")},
@@ -3487,7 +3487,7 @@ namespace {endPoint.Settings.Namespace}
 
                     throw global::{endPoint.GlobalSettings.Namespace}.ApiException.Create(
                         statusCode: __response.StatusCode,
-                        message: __content ?? __response.ReasonPhrase ?? string.Empty,
+                        message: __content is {{ Length: > 0 }} ? __content : __response.ReasonPhrase ?? string.Empty,
                         innerException: __ex,
                         responseBody: __content,
                         responseHeaders: global::System.Linq.Enumerable.ToDictionary(
@@ -3589,13 +3589,13 @@ namespace {endPoint.Settings.Namespace}
                     {{
                         {contentVariableName} = await __response.Content.ReadAsStringAsync({cancellationTokenVariableName}).ConfigureAwait(false);
 {(hasResponseType ? TrimmedLine + $@"
-                        __value_{response.StatusCode} = {jsonSerializer.GenerateDeserializeCall(contentVariableName, response.Type, endPoint.Settings.JsonSerializerContext)};" : TrimmedLine)}
+                        __value_{response.StatusCode} = {contentVariableName} is not {{ Length: > 0 }} ? null : {jsonSerializer.GenerateDeserializeCall(contentVariableName, response.Type, endPoint.Settings.JsonSerializerContext)};" : TrimmedLine)}
                     }}
                     else
                     {{
                         {contentVariableName} = await __response.Content.ReadAsStringAsync({cancellationTokenVariableName}).ConfigureAwait(false);
 {(hasResponseType ? $@"
-                        __value_{response.StatusCode} = {jsonSerializer.GenerateDeserializeCall(contentVariableName, response.Type, endPoint.Settings.JsonSerializerContext)};" : TrimmedLine)}
+                        __value_{response.StatusCode} = {contentVariableName} is not {{ Length: > 0 }} ? null : {jsonSerializer.GenerateDeserializeCall(contentVariableName, response.Type, endPoint.Settings.JsonSerializerContext)};" : TrimmedLine)}
                     }}
                 }}
                 catch (global::System.Exception __ex)
@@ -3606,7 +3606,7 @@ namespace {endPoint.Settings.Namespace}
 {(hasResponseType ? $@"
                 throw global::{endPoint.GlobalSettings.Namespace}.ApiException<{response.Type.CSharpTypeWithNullabilityForValueTypes}>.Create(
                     statusCode: __response.StatusCode,
-                    message: {contentVariableName} ?? __response.ReasonPhrase ?? string.Empty,
+                    message: {(contentVariableName + " is { Length: > 0 } ? " + contentVariableName + " : __response.ReasonPhrase ?? string.Empty")},
                     innerException: __exception_{response.StatusCode},
                     responseBody: {contentVariableName},
                     responseObject: __value_{response.StatusCode},
@@ -3617,7 +3617,7 @@ namespace {endPoint.Settings.Namespace}
     : $@"
                 throw global::{endPoint.GlobalSettings.Namespace}.ApiException.Create(
                     statusCode: __response.StatusCode,
-                    message: {contentVariableName} ?? __response.ReasonPhrase ?? string.Empty,
+                    message: {(contentVariableName + " is { Length: > 0 } ? " + contentVariableName + " : __response.ReasonPhrase ?? string.Empty")},
                     innerException: __exception_{response.StatusCode},
                     responseBody: {contentVariableName},
                     responseHeaders: global::System.Linq.Enumerable.ToDictionary(

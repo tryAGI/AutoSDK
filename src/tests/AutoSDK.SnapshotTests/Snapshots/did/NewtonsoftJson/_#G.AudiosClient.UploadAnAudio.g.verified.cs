@@ -442,13 +442,13 @@ namespace G
                                     if (__effectiveReadResponseAsString)
                                     {
                                         __content_400 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
-                                        __value_400 = global::G.UploadAnAudioResponse2.FromJson(__content_400, JsonSerializerOptions);
+                                        __value_400 = __content_400 is not { Length: > 0 } ? null : global::G.UploadAnAudioResponse2.FromJson(__content_400, JsonSerializerOptions);
                                     }
                                     else
                                     {
                                         __content_400 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
 
-                                        __value_400 = global::G.UploadAnAudioResponse2.FromJson(__content_400, JsonSerializerOptions);
+                                        __value_400 = __content_400 is not { Length: > 0 } ? null : global::G.UploadAnAudioResponse2.FromJson(__content_400, JsonSerializerOptions);
                                     }
                                 }
                                 catch (global::System.Exception __ex)
@@ -459,7 +459,7 @@ namespace G
 
                                 throw global::G.ApiException<global::G.UploadAnAudioResponse2>.Create(
                                     statusCode: __response.StatusCode,
-                                    message: __content_400 ?? __response.ReasonPhrase ?? string.Empty,
+                                    message: __content_400 is { Length: > 0 } ? __content_400 : __response.ReasonPhrase ?? string.Empty,
                                     innerException: __exception_400,
                                     responseBody: __content_400,
                                     responseObject: __value_400,
@@ -479,13 +479,13 @@ namespace G
                                     if (__effectiveReadResponseAsString)
                                     {
                                         __content_401 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
-                                        __value_401 = global::G.UploadAnAudioResponse3.FromJson(__content_401, JsonSerializerOptions);
+                                        __value_401 = __content_401 is not { Length: > 0 } ? null : global::G.UploadAnAudioResponse3.FromJson(__content_401, JsonSerializerOptions);
                                     }
                                     else
                                     {
                                         __content_401 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
 
-                                        __value_401 = global::G.UploadAnAudioResponse3.FromJson(__content_401, JsonSerializerOptions);
+                                        __value_401 = __content_401 is not { Length: > 0 } ? null : global::G.UploadAnAudioResponse3.FromJson(__content_401, JsonSerializerOptions);
                                     }
                                 }
                                 catch (global::System.Exception __ex)
@@ -496,7 +496,7 @@ namespace G
 
                                 throw global::G.ApiException<global::G.UploadAnAudioResponse3>.Create(
                                     statusCode: __response.StatusCode,
-                                    message: __content_401 ?? __response.ReasonPhrase ?? string.Empty,
+                                    message: __content_401 is { Length: > 0 } ? __content_401 : __response.ReasonPhrase ?? string.Empty,
                                     innerException: __exception_401,
                                     responseBody: __content_401,
                                     responseObject: __value_401,
@@ -516,13 +516,13 @@ namespace G
                                     if (__effectiveReadResponseAsString)
                                     {
                                         __content_402 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
-                                        __value_402 = global::G.UploadAnAudioResponse4.FromJson(__content_402, JsonSerializerOptions);
+                                        __value_402 = __content_402 is not { Length: > 0 } ? null : global::G.UploadAnAudioResponse4.FromJson(__content_402, JsonSerializerOptions);
                                     }
                                     else
                                     {
                                         __content_402 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
 
-                                        __value_402 = global::G.UploadAnAudioResponse4.FromJson(__content_402, JsonSerializerOptions);
+                                        __value_402 = __content_402 is not { Length: > 0 } ? null : global::G.UploadAnAudioResponse4.FromJson(__content_402, JsonSerializerOptions);
                                     }
                                 }
                                 catch (global::System.Exception __ex)
@@ -533,7 +533,7 @@ namespace G
 
                                 throw global::G.ApiException<global::G.UploadAnAudioResponse4>.Create(
                                     statusCode: __response.StatusCode,
-                                    message: __content_402 ?? __response.ReasonPhrase ?? string.Empty,
+                                    message: __content_402 is { Length: > 0 } ? __content_402 : __response.ReasonPhrase ?? string.Empty,
                                     innerException: __exception_402,
                                     responseBody: __content_402,
                                     responseObject: __value_402,
@@ -553,13 +553,13 @@ namespace G
                                     if (__effectiveReadResponseAsString)
                                     {
                                         __content_415 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
-                                        __value_415 = global::G.UploadAnAudioResponse5.FromJson(__content_415, JsonSerializerOptions);
+                                        __value_415 = __content_415 is not { Length: > 0 } ? null : global::G.UploadAnAudioResponse5.FromJson(__content_415, JsonSerializerOptions);
                                     }
                                     else
                                     {
                                         __content_415 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
 
-                                        __value_415 = global::G.UploadAnAudioResponse5.FromJson(__content_415, JsonSerializerOptions);
+                                        __value_415 = __content_415 is not { Length: > 0 } ? null : global::G.UploadAnAudioResponse5.FromJson(__content_415, JsonSerializerOptions);
                                     }
                                 }
                                 catch (global::System.Exception __ex)
@@ -570,7 +570,7 @@ namespace G
 
                                 throw global::G.ApiException<global::G.UploadAnAudioResponse5>.Create(
                                     statusCode: __response.StatusCode,
-                                    message: __content_415 ?? __response.ReasonPhrase ?? string.Empty,
+                                    message: __content_415 is { Length: > 0 } ? __content_415 : __response.ReasonPhrase ?? string.Empty,
                                     innerException: __exception_415,
                                     responseBody: __content_415,
                                     responseObject: __value_415,
@@ -590,13 +590,13 @@ namespace G
                                     if (__effectiveReadResponseAsString)
                                     {
                                         __content_451 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
-                                        __value_451 = global::G.UploadAnAudioResponse6.FromJson(__content_451, JsonSerializerOptions);
+                                        __value_451 = __content_451 is not { Length: > 0 } ? null : global::G.UploadAnAudioResponse6.FromJson(__content_451, JsonSerializerOptions);
                                     }
                                     else
                                     {
                                         __content_451 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
 
-                                        __value_451 = global::G.UploadAnAudioResponse6.FromJson(__content_451, JsonSerializerOptions);
+                                        __value_451 = __content_451 is not { Length: > 0 } ? null : global::G.UploadAnAudioResponse6.FromJson(__content_451, JsonSerializerOptions);
                                     }
                                 }
                                 catch (global::System.Exception __ex)
@@ -607,7 +607,7 @@ namespace G
 
                                 throw global::G.ApiException<global::G.UploadAnAudioResponse6>.Create(
                                     statusCode: __response.StatusCode,
-                                    message: __content_451 ?? __response.ReasonPhrase ?? string.Empty,
+                                    message: __content_451 is { Length: > 0 } ? __content_451 : __response.ReasonPhrase ?? string.Empty,
                                     innerException: __exception_451,
                                     responseBody: __content_451,
                                     responseObject: __value_451,
@@ -650,7 +650,7 @@ namespace G
                                 {
                                     throw global::G.ApiException.Create(
                                         statusCode: __response.StatusCode,
-                                        message: __content ?? __response.ReasonPhrase ?? string.Empty,
+                                        message: __content is { Length: > 0 } ? __content : __response.ReasonPhrase ?? string.Empty,
                                         innerException: __ex,
                                         responseBody: __content,
                                         responseHeaders: global::System.Linq.Enumerable.ToDictionary(
@@ -695,7 +695,7 @@ namespace G
 
                                     throw global::G.ApiException.Create(
                                         statusCode: __response.StatusCode,
-                                        message: __content ?? __response.ReasonPhrase ?? string.Empty,
+                                        message: __content is { Length: > 0 } ? __content : __response.ReasonPhrase ?? string.Empty,
                                         innerException: __ex,
                                         responseBody: __content,
                                         responseHeaders: global::System.Linq.Enumerable.ToDictionary(

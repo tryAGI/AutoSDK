@@ -393,7 +393,7 @@ namespace G
 
                                 throw global::G.ApiException.Create(
                                     statusCode: __response.StatusCode,
-                                    message: __content_304 ?? __response.ReasonPhrase ?? string.Empty,
+                                    message: __content_304 is { Length: > 0 } ? __content_304 : __response.ReasonPhrase ?? string.Empty,
                                     innerException: __exception_304,
                                     responseBody: __content_304,
                                     responseHeaders: global::System.Linq.Enumerable.ToDictionary(
@@ -412,13 +412,13 @@ namespace G
                                     if (__effectiveReadResponseAsString)
                                     {
                                         __content_404 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
-                                        __value_404 = global::G.BasicError.FromJson(__content_404, JsonSerializerOptions);
+                                        __value_404 = __content_404 is not { Length: > 0 } ? null : global::G.BasicError.FromJson(__content_404, JsonSerializerOptions);
                                     }
                                     else
                                     {
                                         __content_404 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
 
-                                        __value_404 = global::G.BasicError.FromJson(__content_404, JsonSerializerOptions);
+                                        __value_404 = __content_404 is not { Length: > 0 } ? null : global::G.BasicError.FromJson(__content_404, JsonSerializerOptions);
                                     }
                                 }
                                 catch (global::System.Exception __ex)
@@ -429,7 +429,7 @@ namespace G
 
                                 throw global::G.ApiException<global::G.BasicError>.Create(
                                     statusCode: __response.StatusCode,
-                                    message: __content_404 ?? __response.ReasonPhrase ?? string.Empty,
+                                    message: __content_404 is { Length: > 0 } ? __content_404 : __response.ReasonPhrase ?? string.Empty,
                                     innerException: __exception_404,
                                     responseBody: __content_404,
                                     responseObject: __value_404,
@@ -449,13 +449,13 @@ namespace G
                                     if (__effectiveReadResponseAsString)
                                     {
                                         __content_403 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
-                                        __value_403 = global::G.BasicError.FromJson(__content_403, JsonSerializerOptions);
+                                        __value_403 = __content_403 is not { Length: > 0 } ? null : global::G.BasicError.FromJson(__content_403, JsonSerializerOptions);
                                     }
                                     else
                                     {
                                         __content_403 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
 
-                                        __value_403 = global::G.BasicError.FromJson(__content_403, JsonSerializerOptions);
+                                        __value_403 = __content_403 is not { Length: > 0 } ? null : global::G.BasicError.FromJson(__content_403, JsonSerializerOptions);
                                     }
                                 }
                                 catch (global::System.Exception __ex)
@@ -466,7 +466,7 @@ namespace G
 
                                 throw global::G.ApiException<global::G.BasicError>.Create(
                                     statusCode: __response.StatusCode,
-                                    message: __content_403 ?? __response.ReasonPhrase ?? string.Empty,
+                                    message: __content_403 is { Length: > 0 } ? __content_403 : __response.ReasonPhrase ?? string.Empty,
                                     innerException: __exception_403,
                                     responseBody: __content_403,
                                     responseObject: __value_403,
@@ -486,13 +486,13 @@ namespace G
                                     if (__effectiveReadResponseAsString)
                                     {
                                         __content_422 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
-                                        __value_422 = global::G.ValidationError.FromJson(__content_422, JsonSerializerOptions);
+                                        __value_422 = __content_422 is not { Length: > 0 } ? null : global::G.ValidationError.FromJson(__content_422, JsonSerializerOptions);
                                     }
                                     else
                                     {
                                         __content_422 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
 
-                                        __value_422 = global::G.ValidationError.FromJson(__content_422, JsonSerializerOptions);
+                                        __value_422 = __content_422 is not { Length: > 0 } ? null : global::G.ValidationError.FromJson(__content_422, JsonSerializerOptions);
                                     }
                                 }
                                 catch (global::System.Exception __ex)
@@ -503,7 +503,7 @@ namespace G
 
                                 throw global::G.ApiException<global::G.ValidationError>.Create(
                                     statusCode: __response.StatusCode,
-                                    message: __content_422 ?? __response.ReasonPhrase ?? string.Empty,
+                                    message: __content_422 is { Length: > 0 } ? __content_422 : __response.ReasonPhrase ?? string.Empty,
                                     innerException: __exception_422,
                                     responseBody: __content_422,
                                     responseObject: __value_422,
@@ -546,7 +546,7 @@ namespace G
                                 {
                                     throw global::G.ApiException.Create(
                                         statusCode: __response.StatusCode,
-                                        message: __content ?? __response.ReasonPhrase ?? string.Empty,
+                                        message: __content is { Length: > 0 } ? __content : __response.ReasonPhrase ?? string.Empty,
                                         innerException: __ex,
                                         responseBody: __content,
                                         responseHeaders: global::System.Linq.Enumerable.ToDictionary(
@@ -591,7 +591,7 @@ namespace G
 
                                     throw global::G.ApiException.Create(
                                         statusCode: __response.StatusCode,
-                                        message: __content ?? __response.ReasonPhrase ?? string.Empty,
+                                        message: __content is { Length: > 0 } ? __content : __response.ReasonPhrase ?? string.Empty,
                                         innerException: __ex,
                                         responseBody: __content,
                                         responseHeaders: global::System.Linq.Enumerable.ToDictionary(

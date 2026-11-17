@@ -385,13 +385,13 @@ namespace G
                                     if (__effectiveReadResponseAsString)
                                     {
                                         __content_404 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
-                                        __value_404 = global::G.MemoryFilesListDirectoryResponse2.FromJson(__content_404, JsonSerializerOptions);
+                                        __value_404 = __content_404 is not { Length: > 0 } ? null : global::G.MemoryFilesListDirectoryResponse2.FromJson(__content_404, JsonSerializerOptions);
                                     }
                                     else
                                     {
                                         __content_404 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
 
-                                        __value_404 = global::G.MemoryFilesListDirectoryResponse2.FromJson(__content_404, JsonSerializerOptions);
+                                        __value_404 = __content_404 is not { Length: > 0 } ? null : global::G.MemoryFilesListDirectoryResponse2.FromJson(__content_404, JsonSerializerOptions);
                                     }
                                 }
                                 catch (global::System.Exception __ex)
@@ -402,7 +402,7 @@ namespace G
 
                                 throw global::G.ApiException<global::G.MemoryFilesListDirectoryResponse2>.Create(
                                     statusCode: __response.StatusCode,
-                                    message: __content_404 ?? __response.ReasonPhrase ?? string.Empty,
+                                    message: __content_404 is { Length: > 0 } ? __content_404 : __response.ReasonPhrase ?? string.Empty,
                                     innerException: __exception_404,
                                     responseBody: __content_404,
                                     responseObject: __value_404,
@@ -422,13 +422,13 @@ namespace G
                                     if (__effectiveReadResponseAsString)
                                     {
                                         __content_501 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
-                                        __value_501 = global::G.MemoryFilesListDirectoryResponse3.FromJson(__content_501, JsonSerializerOptions);
+                                        __value_501 = __content_501 is not { Length: > 0 } ? null : global::G.MemoryFilesListDirectoryResponse3.FromJson(__content_501, JsonSerializerOptions);
                                     }
                                     else
                                     {
                                         __content_501 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
 
-                                        __value_501 = global::G.MemoryFilesListDirectoryResponse3.FromJson(__content_501, JsonSerializerOptions);
+                                        __value_501 = __content_501 is not { Length: > 0 } ? null : global::G.MemoryFilesListDirectoryResponse3.FromJson(__content_501, JsonSerializerOptions);
                                     }
                                 }
                                 catch (global::System.Exception __ex)
@@ -439,7 +439,7 @@ namespace G
 
                                 throw global::G.ApiException<global::G.MemoryFilesListDirectoryResponse3>.Create(
                                     statusCode: __response.StatusCode,
-                                    message: __content_501 ?? __response.ReasonPhrase ?? string.Empty,
+                                    message: __content_501 is { Length: > 0 } ? __content_501 : __response.ReasonPhrase ?? string.Empty,
                                     innerException: __exception_501,
                                     responseBody: __content_501,
                                     responseObject: __value_501,
@@ -482,7 +482,7 @@ namespace G
                                 {
                                     throw global::G.ApiException.Create(
                                         statusCode: __response.StatusCode,
-                                        message: __content ?? __response.ReasonPhrase ?? string.Empty,
+                                        message: __content is { Length: > 0 } ? __content : __response.ReasonPhrase ?? string.Empty,
                                         innerException: __ex,
                                         responseBody: __content,
                                         responseHeaders: global::System.Linq.Enumerable.ToDictionary(
@@ -527,7 +527,7 @@ namespace G
 
                                     throw global::G.ApiException.Create(
                                         statusCode: __response.StatusCode,
-                                        message: __content ?? __response.ReasonPhrase ?? string.Empty,
+                                        message: __content is { Length: > 0 } ? __content : __response.ReasonPhrase ?? string.Empty,
                                         innerException: __ex,
                                         responseBody: __content,
                                         responseHeaders: global::System.Linq.Enumerable.ToDictionary(
