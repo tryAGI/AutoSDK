@@ -491,7 +491,14 @@ public static class CSharpTypeMapper
             ("integer", "uint") => "long",
             ("integer", "uint16") => "int",
             ("integer", "int") => "int",
-            ("integer", "int8") => "sbyte",
+            // `int8` follows the same rule as the unsigned formats above, for the same reason:
+            // `sbyte` is not CLS-compliant, so it is `CS3001` in a public signature of an SDK that
+            // sets CLSCompliant(true) - which most of them do - and the library simply stops
+            // compiling. `short` is the narrowest signed type that holds the whole range, so this
+            // is a widening and not a loss, and any declared `minimum`/`maximum` still describes
+            // the real bounds. tryAGI/Julep is the case: three `format: int8` fields, three
+            // `CS3001`s, no build, on a spec that had not changed at all.
+            ("integer", "int8") => "short",
             ("number", "float") => "float",
             ("number", "double") => "double",
             ("number", "decimal") => "decimal",

@@ -66,6 +66,41 @@ public partial class DataTests
     }
 
     [TestMethod]
+    public void TypeMapper_KeepsEveryIntegerFormatClsCompliant()
+    {
+        // The table above `int8` states the rule - unsigned formats map to the next *signed* type
+        // that holds their range, because `ulong`/`uint` are not CLS-compliant and break the SDKs
+        // that set CLSCompliant(true) - and `int8` used to contradict it by mapping to `sbyte`.
+        // tryAGI/Julep is what that cost: three `CS3001`s and no build, on an unchanged spec.
+        var notClsCompliant = new[] { "sbyte", "ushort", "uint", "ulong" };
+
+        foreach (var format in new[]
+                 {
+                     "int8", "int16", "int32", "int64",
+                     "uint8", "uint16", "uint32", "uint64", "uint", "int",
+                 })
+        {
+            var mapped = CSharpTypeMapper.GetCSharpType(new SchemaContext(
+                DefaultSettings.ToSchemaContextSettings(),
+                new OpenApiSchema { Type = JsonSchemaType.Integer, Format = format },
+                $"Integer{format}",
+                "class"));
+
+            notClsCompliant.Should().NotContain(mapped, $"`format: {format}` maps to {mapped}");
+        }
+    }
+
+    [TestMethod]
+    public void TypeMapper_WidensInt8ToShortWithoutLosingRange()
+    {
+        CSharpTypeMapper.GetCSharpType(new SchemaContext(
+            DefaultSettings.ToSchemaContextSettings(),
+            new OpenApiSchema { Type = JsonSchemaType.Integer, Format = "int8" },
+            "JulepKMultiplier",
+            "class")).Should().Be("short");
+    }
+
+    [TestMethod]
     public void InferTypeFromFormat_IsSilentWhereItHasNothingToSay()
     {
         OpenApiSchemaExtensions.InferTypeFromFormat(null).Should().BeNull();
